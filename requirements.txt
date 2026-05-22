@@ -1,3 +1,4 @@
-requests>=2.31.0
-pyyaml>=6.0.1
+requests==2.32.3
+pyyaml==6.0.2
+defusedxml==0.7.1
 parallel-web-tools[all]>=0.0.14

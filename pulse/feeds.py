@@ -6,6 +6,7 @@ from datetime import datetime, timezone, timedelta
 from html.parser import HTMLParser
 from typing import Dict, List
 from xml.etree import ElementTree as ET
+import defusedxml.ElementTree as _safe_ET  # M4: blocks XML bomb / XXE
 
 import requests
 import yaml
@@ -154,7 +155,7 @@ def fetch_feed(name: str, url: str, tags: List[str], lookback_hours: int, extra_
         headers = {**REQUEST_HEADERS, **(extra_headers or {})}
         resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
         resp.raise_for_status()
-        root = ET.fromstring(resp.content)
+        root = _safe_ET.fromstring(resp.content)
 
         # Detect Atom vs RSS
         tag = root.tag.lower()

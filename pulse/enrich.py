@@ -66,11 +66,15 @@ def enrich_with_parallel(findings: List[Dict], max_items: int = 10) -> List[Dict
         logger.warning("PARALLEL_API_KEY not set — skipping Parallel AI enrichment")
         return findings
 
-    # Locate parallel-cli: try PATH first, then the Python scripts directory
-    # (pip installs entry-points alongside the interpreter, not always in PATH)
-    cli = shutil.which("parallel-cli") or str(Path(sys.executable).parent / "parallel-cli")
-    if not Path(cli).exists():
-        logger.warning(f"parallel-cli not found (tried PATH and {cli}) — skipping enrichment")
+    # Locate parallel-cli in PATH only (L2: no fallback to arbitrary fs paths)
+    cli = shutil.which("parallel-cli")
+    if not cli:
+        # Also check the scripts dir next to sys.executable — pip puts entry-points there
+        candidate = Path(sys.executable).parent / "parallel-cli"
+        if candidate.is_file():
+            cli = str(candidate)
+    if not cli:
+        logger.warning("parallel-cli not found in PATH — skipping enrichment")
         return findings
     logger.info(f"parallel-cli found at {cli}")
 

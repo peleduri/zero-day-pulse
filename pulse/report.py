@@ -1,5 +1,7 @@
+import html as _html_mod
 import json
 import logging
+import re
 import textwrap
 from datetime import datetime, timezone
 from pathlib import Path
@@ -74,8 +76,9 @@ def generate_markdown_report(findings: List[Dict], timestamp: str) -> str:
         cve_str = " | ".join(f"`{c}`" for c in cves) if cves else "_No CVE_"
         source  = f.get("source", "Unknown")
         pub     = (f.get("published") or "")[:10] or "unknown date"
-        link    = f.get("link", "")
-        summary = f.get("summary", "")
+        link    = _safe_url(f.get("link", ""))
+        # H2: strip any residual HTML so markdown renderers can't execute it
+        summary = _html_mod.escape(f.get("summary", ""))
 
         lines += [f"## {i}. {badge} — {title}", ""]
         lines += [f"**CVE:** {cve_str} &nbsp;|&nbsp; **Source:** {source} &nbsp;|&nbsp; **Published:** {pub}"]
@@ -109,11 +112,15 @@ def _badge_key(f: Dict) -> str:
 
 
 def _esc(text: str) -> str:
-    return (str(text)
-            .replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-            .replace('"', "&quot;"))
+    # L1: use stdlib so both " and ' are escaped
+    return _html_mod.escape(str(text), quote=True)
+
+
+_SAFE_URL_RE = re.compile(r'^https?://', re.IGNORECASE)
+
+def _safe_url(url: str) -> str:
+    # H1: block javascript: and other non-http schemes
+    return url if _SAFE_URL_RE.match(url) else ""
 
 
 def _enrichment_html(enrichment: Dict | None) -> str:
@@ -163,8 +170,9 @@ def _finding_card(f: Dict) -> str:
     pub    = _esc((f.get("published") or "")[:10] or "—")
     summary = _esc((f.get("summary") or "")[:400])
 
-    title_html = (f'<a href="{_esc(link)}" target="_blank" rel="noopener">{title}</a>'
-                  if link else title)
+    safe_link  = _safe_url(link)
+    title_html = (f'<a href="{_esc(safe_link)}" target="_blank" rel="noopener">{title}</a>'
+                  if safe_link else title)
     cve_html = " ".join(f'<code class="cve">{_esc(c)}</code>' for c in cves) if cves else '<span class="no-cve">No CVE</span>'
 
     return textwrap.dedent(f"""\

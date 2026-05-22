@@ -1,5 +1,8 @@
 name: Zero Day Pulse
 
+# M1: deny all permissions by default; each job grants only what it needs
+permissions: {}
+
 on:
   schedule:
     - cron: '0 */6 * * *'
@@ -23,12 +26,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        # H3: pinned to immutable SHA (v4.3.1)
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        # M5: fetch-depth 1 (default) — full history not needed
 
       - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+        # H3: pinned to immutable SHA (v6.2.0)
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: '3.11'
           cache: pip
@@ -37,19 +41,23 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Zero Day Pulse
+        # C1: inputs passed via env vars, never interpolated into the shell command
         env:
           PARALLEL_API_KEY: ${{ secrets.PARALLEL_API_KEY }}
+          LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours || '24' }}
+          MAX_ENRICH: ${{ github.event.inputs.max_enrich || '10' }}
         run: |
           python main.py \
-            --lookback-hours ${{ github.event.inputs.lookback_hours || '24' }} \
-            --max-enrich ${{ github.event.inputs.max_enrich || '10' }} \
+            --lookback-hours "$LOOKBACK_HOURS" \
+            --max-enrich "$MAX_ENRICH" \
             --output-dir reports
 
       - name: Commit reports and HTML dashboard
+        # M2: only stage latest.* and docs/ — timestamped files are gitignored
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add reports/ docs/
+          git add reports/latest.json reports/latest.md docs/
           if git diff --cached --quiet; then
             echo "No new files to commit"
           else
@@ -58,7 +66,8 @@ jobs:
           fi
 
       - name: Upload report artifacts
-        uses: actions/upload-artifact@v4
+        # H3: pinned to immutable SHA (v7.0.1)
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: zero-day-pulse-${{ github.run_number }}
@@ -66,13 +75,15 @@ jobs:
           retention-days: 30
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        # H3: pinned to immutable SHA (v5.0.0)
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: docs/
 
       - name: Post report to tracking issue
         if: always()
-        uses: actions/github-script@v7
+        # H3: pinned to immutable SHA (v9.0.0)
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
         with:
           script: |
             const fs   = require('fs');
@@ -82,8 +93,8 @@ jobs:
               console.log('No report generated — skipping issue update');
               return;
             }
-            const runUrl    = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-            const pagesUrl  = `https://${context.repo.owner}.github.io/${context.repo.repo}/`;
+            const runUrl   = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const pagesUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/`;
             let body = fs.readFileSync(latestMd, 'utf8');
             body += `\n\n---\n[Live dashboard](${pagesUrl}) · [Raw JSON](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/reports/latest.json) · [Action run](${runUrl})`;
             const { data: issues } = await github.rest.issues.listForRepo({
@@ -123,4 +134,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        # H3: pinned to immutable SHA (v5.0.0)
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128

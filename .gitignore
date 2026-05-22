@@ -6,3 +6,6 @@ venv/
 dist/
 build/
 .env
+# M2: only latest.* is committed; timestamped archives stay local
+reports/pulse_*.json
+reports/pulse_*.md
