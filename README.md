@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 
-> Automated zero-day and actively-exploited vulnerability monitor — collects signals from 13 public sources every 6 hours, enriches each finding with [Parallel AI](https://parallel.ai) deep research, and publishes a live dashboard to GitHub Pages.
+> Automated zero-day and actively-exploited vulnerability monitor — collects signals from 20+ public sources every 6 hours, enriches each finding with [Parallel AI](https://parallel.ai) deep research, and publishes a live dashboard to GitHub Pages.
 
 **[Live Dashboard →](https://peleduri.github.io/zero-day-pulse/)** &nbsp;|&nbsp; **[Latest Report →](reports/latest.md)**
 
@@ -14,7 +14,7 @@
 
 Every 6 hours a GitHub Action:
 
-1. **Collects** vulnerability signals from 13 public RSS/Atom feeds and the [CISA Known Exploited Vulnerabilities (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog
+1. **Collects** vulnerability signals from 20+ public RSS/Atom feeds and the [CISA Known Exploited Vulnerabilities (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog, including [GitHub Security Advisories](https://github.com/advisories) via the REST API
 2. **Filters** for zero-day keywords, actively-exploited indicators, and CVE references — deduplicating across sources
 3. **Enriches** the top findings using `parallel-cli enrich`: CVSS score, PoC availability, patch status, threat actors, and mitigations — all researched automatically
 4. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and a comment on a pinned tracking issue
@@ -23,7 +23,7 @@ Every 6 hours a GitHub Action:
 RSS feeds + CISA KEV
         │
         ▼ pulse/feeds.py
-  Feed collector (13 sources)
+  Feed collector (20+ sources)
         │
         ▼ pulse/filter.py
   Zero-day signal filter
@@ -64,34 +64,28 @@ RSS feeds + CISA KEV
 | Source | Type | Signal |
 |---|---|---|
 | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | JSON | ⭐ Confirmed active exploitation |
-| [NVD Recent CVEs](https://nvd.nist.gov) | RSS | All new CVEs |
+| [GitHub Security Advisories](https://github.com/advisories) | JSON API | OSS ecosystem CVEs |
 | [CISA US-CERT Alerts](https://www.cisa.gov/uscert/ncas/alerts) | RSS | ICS / critical infrastructure |
 | [Exploit-DB](https://www.exploit-db.com) | RSS | Public exploits & PoCs |
-| [Packet Storm Security](https://packetstormsecurity.com) | RSS | Exploits & advisories |
 | [Full Disclosure](https://seclists.org/fulldisclosure/) | RSS | Researcher disclosures |
-| [GitHub Security Advisories](https://github.com/advisories) | Atom | OSS ecosystem |
 
-### Cloud provider bulletins
+### Cloud provider security
 | Source | Type | Signal |
 |---|---|---|
-| [AWS Security Bulletins](https://aws.amazon.com/security/security-bulletins/) | RSS | Official AWS CVEs & advisories |
 | [AWS Security Blog](https://aws.amazon.com/blogs/security/) | RSS | AWS threat research |
-| [Microsoft Security Response Center](https://msrc.microsoft.com/blog/) | RSS | Azure / Microsoft CVEs |
-| [Google Cloud Security Bulletins](https://cloud.google.com/support/bulletins) | RSS | GCP CVEs & advisories |
 | [Google Security Blog](https://security.googleblog.com) | Atom | Google threat research |
 
 ### Cloud & container security research
 | Source | Type | Signal |
 |---|---|---|
 | [Kubernetes Security](https://kubernetes.io) | RSS | K8s CVEs & announcements |
-| [Wiz Research](https://www.wiz.io/blog) | RSS | Cloud misconfigs & vulns |
-| [Sysdig](https://sysdig.com/blog/) | RSS | Container & runtime security |
+| [Falco](https://falco.org/blog) | RSS | Cloud-native runtime security |
 | [Aqua Security](https://blog.aquasec.com) | RSS | Container & Kubernetes |
-| [Snyk](https://snyk.io/blog/) | RSS | Cloud dependencies & containers |
+| [Wiz Research](https://www.wiz.io/blog) | RSS | Cloud misconfigs & vulns |
 | [Unit 42](https://unit42.paloaltonetworks.com) | RSS | Cloud threat intel |
-| [Lacework](https://www.lacework.com/blog/) | RSS | Cloud detection & research |
-| [CrowdStrike](https://www.crowdstrike.com/blog/) | RSS | Cloud threat intel |
+| [CrowdStrike](https://www.crowdstrike.com/en-us/blog/) | RSS | Cloud threat intel |
 | [Tenable](https://www.tenable.com/blog) | RSS | Cloud vulnerability research |
+| [Snyk](https://snyk.io/blog/) | RSS | Cloud dependencies & containers |
 
 ### AI agents, coding tools & IDE extensions
 | Source | Type | Signal |
@@ -101,9 +95,7 @@ RSS feeds + CISA KEV
 | [Protect AI](https://protectai.com/blog) | RSS | MLSecOps research |
 | [Trail of Bits](https://blog.trailofbits.com) | RSS | AI/ML security audits |
 | [HuggingFace Blog](https://huggingface.co/blog) | RSS | Model & supply chain issues |
-| [LangChain Blog](https://blog.langchain.dev) | RSS | Agent framework security |
-| [OpenAI News](https://openai.com/news) | RSS | LLM safety & security |
-| [Anthropic News](https://www.anthropic.com/news) | RSS | LLM safety & security |
+| [OpenAI Blog](https://openai.com/blog) | RSS | LLM safety & security |
 | [JetBrains Security](https://blog.jetbrains.com/tag/security/) | RSS | IDE plugin vulnerabilities |
 | [VS Code](https://code.visualstudio.com) | RSS | Extension & IDE security |
 | [Checkmarx Research](https://checkmarx.com/blog) | RSS | AI supply chain & SAST |
