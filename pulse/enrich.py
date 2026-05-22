@@ -3,6 +3,7 @@ import logging
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 from typing import Dict, List
@@ -65,9 +66,13 @@ def enrich_with_parallel(findings: List[Dict], max_items: int = 10) -> List[Dict
         logger.warning("PARALLEL_API_KEY not set — skipping Parallel AI enrichment")
         return findings
 
-    if not shutil.which("parallel-cli"):
-        logger.warning("parallel-cli not found in PATH — skipping enrichment")
+    # Locate parallel-cli: try PATH first, then the Python scripts directory
+    # (pip installs entry-points alongside the interpreter, not always in PATH)
+    cli = shutil.which("parallel-cli") or str(Path(sys.executable).parent / "parallel-cli")
+    if not Path(cli).exists():
+        logger.warning(f"parallel-cli not found (tried PATH and {cli}) — skipping enrichment")
         return findings
+    logger.info(f"parallel-cli found at {cli}")
 
     to_enrich = findings[:max_items]
     rest = findings[max_items:]
@@ -79,7 +84,7 @@ def enrich_with_parallel(findings: List[Dict], max_items: int = 10) -> List[Dict
         input_path.write_text(json.dumps(items, indent=2))
 
         cmd = [
-            "parallel-cli", "enrich", "run",
+            cli, "enrich", "run",
             "--source-type", "json",
             "--source", str(input_path),
             "--target", str(output_path),

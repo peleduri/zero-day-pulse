@@ -3,12 +3,33 @@ import logging
 import re
 import time
 from datetime import datetime, timezone, timedelta
+from html.parser import HTMLParser
 from typing import Dict, List
 from xml.etree import ElementTree as ET
 
 import requests
 import yaml
 from pathlib import Path
+
+
+class _HTMLStripper(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self._parts: List[str] = []
+
+    def handle_data(self, data: str) -> None:
+        self._parts.append(data)
+
+    def get_text(self) -> str:
+        return " ".join(" ".join(self._parts).split())
+
+
+def strip_html(text: str) -> str:
+    if "<" not in text:
+        return text.strip()
+    s = _HTMLStripper()
+    s.feed(html.unescape(text))
+    return s.get_text()
 
 logger = logging.getLogger(__name__)
 
@@ -76,7 +97,7 @@ def _parse_rss(root: ET.Element, name: str, tags: List[str], cutoff: datetime) -
             continue
 
         link = _text(item, "link", "guid")
-        summary = _text(item, "description", "content:encoded") or ""
+        summary = strip_html(_text(item, "description", "content:encoded") or "")
 
         entries.append({
             "id":        link or _text(item, "guid"),
@@ -113,7 +134,7 @@ def _parse_atom(root: ET.Element, name: str, tags: List[str], cutoff: datetime) 
             link = lel.get("href", "") if lel is not None else ""
 
         summary_el = entry.find(f"{{{a}}}summary") or entry.find(f"{{{a}}}content")
-        summary = html.unescape((summary_el.text or "").strip()) if summary_el is not None else ""
+        summary = strip_html((summary_el.text or "") if summary_el is not None else "")
 
         entries.append({
             "id":        _text(entry, f"{{{a}}}id") or link,
