@@ -1,3 +1,5 @@
+import csv
+import io
 import json
 import logging
 import os
@@ -39,6 +41,12 @@ def _prepare_input(findings: List[Dict]) -> List[Dict]:
     ]
 
 
+_INPUT_COLS = frozenset(
+    ("vulnerability_id", "title", "description", "source", "published", "reference_link",
+     "batch_id", "insertion_timestamp")
+)
+
+
 def _merge_enrichment(findings: List[Dict], enriched_rows: List[Dict]) -> List[Dict]:
     enriched_by_id = {
         row.get("vulnerability_id", ""): row
@@ -51,7 +59,7 @@ def _merge_enrichment(findings: List[Dict], enriched_rows: List[Dict]) -> List[D
         enrichment = {
             k: v
             for k, v in enriched_by_id.get(vid, {}).items()
-            if k not in ("vulnerability_id", "title", "description", "source", "published", "reference_link")
+            if k not in _INPUT_COLS
         }
         result.append({**f, "enrichment": enrichment if enrichment else None})
     return result
@@ -83,14 +91,11 @@ def enrich_with_parallel(findings: List[Dict], max_items: int = 10) -> List[Dict
     items = _prepare_input(to_enrich)
 
     with tempfile.TemporaryDirectory() as tmpdir:
-        input_path = Path(tmpdir) / "input.json"
-        output_path = Path(tmpdir) / "enriched.json"
-        input_path.write_text(json.dumps(items, indent=2))
+        output_path = Path(tmpdir) / "enriched.csv"
 
         cmd = [
             cli, "enrich", "run",
-            "--source-type", "json",
-            "--source", str(input_path),
+            "--data", json.dumps(items),
             "--target", str(output_path),
             "--intent", ENRICH_INTENT,
         ]
@@ -105,13 +110,14 @@ def enrich_with_parallel(findings: List[Dict], max_items: int = 10) -> List[Dict
                 env={**os.environ, "PARALLEL_API_KEY": api_key},
             )
             if proc.returncode != 0:
-                logger.error(f"parallel-cli enrich failed (exit {proc.returncode}):\n{proc.stderr[:1000]}")
+                logger.error(
+                    f"parallel-cli enrich failed (exit {proc.returncode}):\n"
+                    f"{(proc.stderr or proc.stdout)[:1000]}"
+                )
                 return findings
 
             raw = output_path.read_text()
-            enriched_rows = json.loads(raw)
-            if not isinstance(enriched_rows, list):
-                enriched_rows = [enriched_rows]
+            enriched_rows = list(csv.DictReader(io.StringIO(raw)))
 
             enriched = _merge_enrichment(to_enrich, enriched_rows)
             logger.info(f"Enrichment complete — {len(enriched)} findings processed")
@@ -119,8 +125,6 @@ def enrich_with_parallel(findings: List[Dict], max_items: int = 10) -> List[Dict
 
         except subprocess.TimeoutExpired:
             logger.error("parallel-cli enrich timed out after 600s")
-        except json.JSONDecodeError as e:
-            logger.error(f"Failed to parse enrichment output: {e}")
         except Exception as e:
             logger.error(f"Enrichment error: {e}")
 

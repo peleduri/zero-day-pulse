@@ -8,6 +8,29 @@ from typing import Dict, List
 from xml.etree import ElementTree as ET
 import defusedxml.ElementTree as _safe_ET  # M4: blocks XML bomb / XXE
 
+# Common RSS/Atom namespace prefixes that some publishers omit from the root element.
+_MISSING_NS_MAP: Dict[bytes, bytes] = {
+    b"content":  b"http://purl.org/rss/1.0/modules/content/",
+    b"dc":       b"http://purl.org/dc/elements/1.1/",
+    b"media":    b"http://search.yahoo.com/mrss/",
+    b"georss":   b"http://www.georss.org/georss",
+    b"slash":    b"http://purl.org/rss/1.0/modules/slash/",
+    b"sy":       b"http://purl.org/rss/1.0/modules/syndication/",
+}
+
+
+def _patch_namespaces(raw: bytes) -> bytes:
+    """Inject missing xmlns declarations into the root element to prevent parse failures."""
+    to_inject = []
+    for prefix, ns_uri in _MISSING_NS_MAP.items():
+        decl = b"xmlns:" + prefix
+        if (prefix + b":") in raw and decl not in raw:
+            to_inject.append(decl + b'="' + ns_uri + b'"')
+    if not to_inject:
+        return raw
+    injection = b" " + b" ".join(to_inject)
+    return re.sub(rb"(<(?![?!])[^>]+?)(\/?>)", lambda m: m.group(1) + injection + m.group(2), raw, count=1)
+
 import requests
 import yaml
 from pathlib import Path
@@ -92,13 +115,13 @@ def _attr(el: ET.Element | None, tag: str, attr: str, ns: Dict | None = None) ->
 def _parse_rss(root: ET.Element, name: str, tags: List[str], cutoff: datetime) -> List[Dict]:
     entries = []
     for item in root.findall(".//item"):
-        pub_raw = _text(item, "pubDate", "dc:date")
+        pub_raw = _text(item, "pubDate", "dc:date", ns=NS)
         published = _parse_date(pub_raw)
         if published and published < cutoff:
             continue
 
         link = _text(item, "link", "guid")
-        summary = strip_html(_text(item, "description", "content:encoded") or "")
+        summary = strip_html(_text(item, "description", "content:encoded", ns=NS) or "")
 
         entries.append({
             "id":        link or _text(item, "guid"),
@@ -155,7 +178,7 @@ def fetch_feed(name: str, url: str, tags: List[str], lookback_hours: int, extra_
         headers = {**REQUEST_HEADERS, **(extra_headers or {})}
         resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
         resp.raise_for_status()
-        root = _safe_ET.fromstring(resp.content)
+        root = _safe_ET.fromstring(_patch_namespaces(resp.content))
 
         # Detect Atom vs RSS
         tag = root.tag.lower()
@@ -209,6 +232,39 @@ def fetch_cisa_kev(lookback_hours: int) -> List[Dict]:
     return entries
 
 
+def fetch_github_advisories(lookback_hours: int) -> List[Dict]:
+    """Fetch GitHub Security Advisories via the REST API (Atom endpoint returns 406)."""
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
+    url = "https://api.github.com/advisories"
+    entries = []
+    try:
+        params = {"per_page": 100, "sort": "published", "direction": "desc"}
+        headers = {**REQUEST_HEADERS, "Accept": "application/vnd.github+json"}
+        resp = requests.get(url, headers=headers, params=params, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+        for adv in resp.json():
+            published_raw = adv.get("published_at", "")
+            published = _parse_date(published_raw)
+            if published and published < cutoff:
+                break  # sorted newest-first, so we can stop early
+            cve_id = adv.get("cve_id") or ""
+            ghsa_id = adv.get("ghsa_id", "")
+            entries.append({
+                "id":        cve_id or ghsa_id,
+                "title":     adv.get("summary", ghsa_id),
+                "summary":   (adv.get("description") or "")[:2000],
+                "link":      adv.get("html_url", f"https://github.com/advisories/{ghsa_id}"),
+                "published": published_raw,
+                "source":    "GitHub Security Advisories",
+                "tags":      ["github", "advisories", "oss"],
+                "cve_ids":   [cve_id] if cve_id else [],
+            })
+        logger.info(f"[GitHub Advisories] {len(entries)} entries (cutoff {lookback_hours}h)")
+    except Exception as e:
+        logger.warning(f"[GitHub Advisories] failed: {e}")
+    return entries
+
+
 def load_config() -> Dict:
     with open(CONFIG_PATH) as f:
         return yaml.safe_load(f)
@@ -230,5 +286,6 @@ def collect_all_feeds(lookback_hours: int = 24) -> List[Dict]:
         time.sleep(0.3)
 
     all_entries.extend(fetch_cisa_kev(lookback_hours))
+    all_entries.extend(fetch_github_advisories(lookback_hours))
     logger.info(f"Total raw entries: {len(all_entries)}")
     return all_entries
