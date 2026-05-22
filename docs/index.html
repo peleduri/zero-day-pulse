@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">15</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-05-22 19:45 UTC</div>
+            <div class="generated">Updated 2026-05-22 20:13 UTC</div>
           </header>
           <main>
             <article class="card card-kev">
@@ -164,6 +164,24 @@
   <p class='summary'>In March 2026, attackers exploited a pull_request_target misconfiguration in the aquasecurity/trivy-action GitHub Action to exfiltrate organization and repository secrets, then used those credentials to backdoor LiteLLM on PyPI (see Trivy’s post-mortem for the full timeline). zizmor is a static analyzer that GitHub Actions users run to catch exactly these misconfigurations before they ship. When G…</p>
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cqp8-fcvh-x7r3" target="_blank" rel="noopener">Pydantic AI: SSRF cloud-metadata blocklist bypass via IPv4-mapped IPv6 (Incomplete fix of CVE-2026-25580)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46678</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>## Summary
+
+When an application using Pydantic AI opts a URL into `force_download=&#x27;allow-local&#x27;` (which disables the default block on private/internal IPs), the cloud-metadata blocklist could be bypassed by encoding the metadata IP in an IPv6 transition form (IPv4-mapped IPv6, 6to4, or NAT64). Dual-stack and translated networks route the IPv6 wrapper to the underlying IPv4 endpoint, exposing cloud…</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -343,6 +361,328 @@ The vulnerabilities in question are listed below -
 
 
   CVE-2025-34291 (CVSS score: 9.4) - An origin validation error vulnerability in Langflow that could</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j3vx-cx2r-pvg8" target="_blank" rel="noopener">Network-AI: Unauthenticated Cross-Origin MCP Tool Invocation via Empty Default Secret</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46701</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'># Unauthenticated Cross-Origin MCP Tool Invocation via Empty Default Secret
+
+| Field            | Value |
+| ---------------- | ----- |
+| Repository       | Jovancoding/Network-AI |
+| Affected version | v5.4.4 (commit c12686e181f231cf8d7bcf836a96d78f0f0877ac) |
+
+## Summary
+
+The MCP SSE server defaults to an empty secret (`process.env[&#x27;NETWORK_AI_MCP_SECRET&#x27;] ?? &#x27;&#x27;` at `bin/mcp-server.ts:89`), which…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f396-4rp4-7v2j" target="_blank" rel="noopener">Boxlite: Path Traversal Vulnerability Leads to Arbitrary File Write on the Host</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46703</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>#### Summary
+
+Boxlite is a sandbox service that allows users to create lightweight virtual machines (Boxes) and run OCI containers within them. Boxlite allows users to specify the OCI image used by containers in the sandbox. However, when processing tar entries in OCI images, Boxlite does not account for the possibility that entries may be symlinks pointing to absolute paths. An attacker can craft…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g6ww-w5j2-r7x3" target="_blank" rel="noopener">BoxLite: Permission Bypass Allows Modification of Read-Only Files</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46695</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>#### Summary
+
+Boxlite is a sandbox service that allows users to create lightweight virtual machines (Boxes) and launch OCI containers within them to run untrusted code.
+
+One of the core security features claimed by Boxlite is the ability to mount host directories in read-only mode (read_only=True) into the VM via the virtiofs protocol (a host-guest shared filesystem protocol designed specifically …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fqw6-gf59-qr4w" target="_blank" rel="noopener">containerd user ID handling bypass allows runAsNonRoot evasion</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46680</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Impact
+A bug was found in containerd where containers launched with a numeric `User` directive that cannot be parsed as a 32-bit integer are incorrectly treated as a username. If a crafted image provides an `/etc/passwd` file mapping this large numeric string to root, the container ultimately runs as root (UID 0). This allows the Kubernetes `runAsNonRoot` restriction to be bypassed, causing un…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-45vw-wh46-2vx8" target="_blank" rel="noopener">Twig: Arbitrary PHP code execution via `_self.(&lt;string&gt;)` macro-reference compilation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46640</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Description
+
+The `obj.(expr)` dynamic-attribute syntax (added in 3.15.0 as the replacement for the deprecated `attribute()` function) lets the attribute be an arbitrary expression. When the receiver is `_self` (or any `{% import %}` alias) and the parenthesised expression is a string literal, `DotExpressionParser` short-circuits to the macro-call path and concatenates the attacker-controlled s…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-24x9-r6q4-q93w" target="_blank" rel="noopener">Twig: `template_from_string()` escapes a SourcePolicy-driven sandbox via synthesized template name</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46634</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Description
+
+When the sandbox is enabled selectively via `SourcePolicyInterface` (and not globally), a sandboxed template that is allowed to call `template_from_string` and `include` can render an arbitrary inner template with no security policy enforcement.
+
+`Environment::createTemplate()` compiles the inner string under a synthesized name (`__string_template__&lt;hash&gt;`), so a name/path-based `…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7p85-w9px-jpjp" target="_blank" rel="noopener">Twig: PHP code injection via `{% use %}` template name</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46633</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Description
+
+`Compiler::string()` escapes `&quot;`, `$`, `\`, NUL and TAB when generating PHP double-quoted string literals, but does not escape single quotes. In `ModuleNode::compileConstructor()`, the template name from a `{% use %}` tag is compiled via `subcompile()` -&gt; `string()` and placed inside a surrounding PHP single-quoted string literal. A template name containing a single quote terminat…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-35wc-cvqg-78fp" target="_blank" rel="noopener">twig/intl-extra: Unbounded formatter memoisation in keyed on template-controlled arguments</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46629</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Description
+
+`IntlExtension` memoises every `\IntlDateFormatter` and `\NumberFormatter` it creates in instance-level arrays keyed on a hash that includes `locale`, `pattern`, `attrs` and other values that are ordinary named arguments of the `format_datetime` / `format_date` / `format_time` / `format_number` / `format_currency` filters. There is no size limit and no eviction.
+
+A template that i…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g9f8-wqj9-fjw5" target="_blank" rel="noopener">Russh: Unchecked CryptoVec allocation and growth handling is reachable</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46673</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Title
+Unchecked `CryptoVec` allocation and growth handling was reachable from local agent inputs in current `russh` releases and from remote SSH traffic in historical pre-`0.58.0` releases
+
+### Summary
+`CryptoVec` used unchecked capacity growth, unchecked length arithmetic, and unsafe allocation/locking paths. In current `russh` releases, local SSH agent peers could still feed attacker-control…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xq32-9g7q-7297" target="_blank" rel="noopener">FlaskBB: SSRF in get_image_info() via unrestricted avatar URL</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46556</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>###Summary
+A Server-Side Request Forgery (SSRF) vulnerability in get_image_info() allows any authenticated user to force the server to send HTTP requests to arbitrary internal endpoints, including cloud metadata services (e.g., AWS 169.254.169.254). This is a blind SSRF with confirmed internal port scanning and internal API triggering capabilities. CVSS 6.5 Medium.
+
+###Details
+In flaskbb/utils/hel…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-99vc-2jx2-688p" target="_blank" rel="noopener">NocoDB: Missing File Size Enforcement in Upload-by-URL Allows Denial of Service via Disk Exhaustion</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46551</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Summary
+
+The `uploadViaURL` path in the v1/v2 attachment API did not enforce `NC_ATTACHMENT_FIELD_SIZE` against the remote `content-length` or against the response stream. An authenticated user (Editor+) could direct the server to download arbitrarily large files, exhausting disk space and causing denial of service.
+
+### Details
+
+In `packages/nocodb/src/services/attachments.service.ts`, the HE…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m5qg-rvjq-727p" target="_blank" rel="noopener">NocoDB: OAuth Token Scope Not Enforced at ACL Layer Allows Scope Escalation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46549</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Summary
+
+The OAuth token strategy attached `oauth_scope` and `oauth_granted_resources` to the request user, but the ACL middleware never consulted either. An OAuth token issued with a restricted scope (e.g. MCP-only) therefore inherited the full permissions of the underlying user across all routes; the `granted_resources.base_id` restriction was bypassed on org-level endpoints that don&#x27;t popul…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2c5x-4jgf-88mj" target="_blank" rel="noopener">NocoDB: SSRF Protection Bypass in Notification Webhook Plugins (Slack, Discord, Mattermost, Teams)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46548</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Summary
+
+The `request-filtering-agent` SSRF protection was non-functional in the four notification webhook plugins (Slack, Discord, Mattermost, Teams) because `httpAgent` / `httpsAgent` were passed as part of the request **body** rather than the axios **config**. An authenticated user with hook-creation permission could direct outbound POST requests to arbitrary internal hosts.
+
+### Details
+
+`…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cr22-wjx7-2w6m" target="_blank" rel="noopener">MCP Server Kubernetes: Tool Access Control Bypass via Presentation-Layer Filtering Without Execution-Layer Enforcement</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46519</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>## Summary
+
+`mcp-server-kubernetes` exposes three environment variables (`ALLOW_ONLY_READONLY_TOOLS`, `ALLOW_ONLY_NON_DESTRUCTIVE_TOOLS`, `ALLOWED_TOOLS`) documented as access controls for restricting which Kubernetes operations are available. These controls are enforced at the tool discovery layer (`tools/list`) but not at the execution layer (`tools/call`). Any client that knows a tool name can …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c5fp-p67m-gq56" target="_blank" rel="noopener">Snappy : SSRF and local file read via the xsl-style-sheet option</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46683</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Impact
+
+It impacts applications where:
+- the PHP daemon run with root permissions ;
+- the application is either running outside a container or has sensitive file access ;
+
+It could happens with this kind of workflows:
+
+```php
+$stylesheet = $_GET[&#x27;stylesheet&#x27;]; // = ‘file:///etc/passwd’
+$pdf = new Knp\Snappy\Pdf(‘/usr/local/bin/wkhtmltopdf’);
+ $pdf-&gt;generate(‘page.html’, ‘out.pdf’, [
+   ‘xsl-st…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-85g2-pmrx-r49q" target="_blank" rel="noopener">Fission runtime pods automount the fission-fetcher service-account token into the user function   container, granting function code namespace-wide secret / configmap read</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-46617</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-21</span>
+          </div>
+          <p class='summary'>### Summary
+
+Fission runtime pods were created with `ServiceAccountName: fission-fetcher`, and the `fission-fetcher` ServiceAccount was granted namespace-wide `get` on `secrets` and `configmaps` (it needs that to load function code, env vars, and config). The runtime pod&#x27;s automounted token was reachable from inside the user&#x27;s function container at `/var/run/secrets/kubernetes.io/serviceaccount/to…</p>
 
         </article>
 
