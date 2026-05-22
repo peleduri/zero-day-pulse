@@ -1,8 +1,254 @@
 {
-  "generated": "2026-05-22T19:23:40.279808+00:00",
-  "total": 0,
-  "kev": 0,
-  "zero_day": 0,
+  "generated": "2026-05-22T19:45:49.021180+00:00",
+  "total": 15,
+  "kev": 1,
+  "zero_day": 12,
   "enriched": 0,
-  "findings": []
+  "findings": [
+    {
+      "id": "CVE-2026-9082",
+      "title": "CVE-2026-9082 \u2014 Drupal Core SQL Injection Vulnerability",
+      "summary": "Vendor: Drupal | Product: Core. Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-05-27)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-9082",
+      "published": "2026-05-22",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-9082"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
+      "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
+      "summary": "Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched versions of SimpleHelp RMM since January 2025. SimpleHelp versions 5.5.7 and earlier contain several vulnerabilities, including CVE-2024-57727 \u2014a path traversal vulnerability. 1 Ransomware actors likely leveraged CVE-2024-57727 to access downstream customers\u2019 unpatched SimpleHelp RMM for disruption of services in double extortion compromises. 1 CISA added CVE-2024-57727 to its Known Exploited Vulnerabilities (KEV) Catalog on Feb. 13, 2025. CISA urges software vendors, downstream customers, and end users to immediately implement the Mitigations listed in this advisory based on confirmed compromise or risk of compromise. Download the PDF version of this report: AA25-163A Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider (PDF, 420.49 KB ) Mitigations CISA recommends organizations implement the mitigations below to respond to emerging ransomware activity exploiting SimpleHelp software. These mitigations align with the Cross-Sector Cybersecurity Performance Goals (CPGs) developed by CISA and the National Institute of Standards and Technology (NIST). The CPGs provide a minimum set of practices and protections that CISA and NIST recommend all organizations implement. CISA and NIST based the CPGs on existing cybersecurity frameworks and guidance to protect against the most common and impactful threats, tactics, techniques, and procedures. Visit CISA\u2019s CPGs webpage for more information on the CPGs, including additional recommended baseline protections. These mitigations apply to all critical infrastructure ",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
+      "published": "Thu, 12 Jun 2025 10:29:54 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [
+        "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
+      "title": "We hardened zizmor's GitHub Actions static analyzer",
+      "summary": "In March 2026, attackers exploited a pull_request_target misconfiguration in the aquasecurity/trivy-action GitHub Action to exfiltrate organization and repository secrets, then used those credentials to backdoor LiteLLM on PyPI (see Trivy\u2019s post-mortem for the full timeline). zizmor is a static analyzer that GitHub Actions users run to catch exactly these misconfigurations before they ship. When GitHub Actions added support for YAML anchors in September 2025, a small but high-value slice of the ecosystem started writing workflows that zizmor could only analyze on a best-effort basis. Over the past three months, Trail of Bits collaborated with the zizmor maintainers to bring zizmor \u2019s anchor support up to full coverage. First, we fixed parsing bugs that caused crashes, produced wrong-location findings, and silently mishandled aliased values. Second, we surfaced deserialization edge cases that broke zizmor on otherwise valid workflows. Finally, we helped align zizmor \u2019s expression evaluator with GitHub\u2019s own Known Answer Tests . We validated all of this against a new corpus of 41,253 workflows from 6,612 high-value open-source repositories. The result: 20 filed issues, 15 merged pull requests. Building the test corpus To understand how anchors are used in CI today and to stress-test zizmor against the full variety of YAML it encounters in the wild, we built a corpus of real workflows. We used BigQuery\u2019s GitHub dataset to identify the 10,000 most-starred repositories created between 2022 and 2025, filtered to the 6,612 that use GitHub Actions, and downloaded every workflow file. That gave us 41,253 YAML files. Figure 1: Building a testing corpus When we ran zizmor against the corpus, it crashed on 45 of the 41,253 workflows. That\u2019s a low rate, but each crash means a bug in zizmor . How anchors are used in the wild zizmor \u2019s anchor support was deliberately limited, and for good reason. YAML anchors make workflows non-local: an alias defined in one place changes behavior",
+      "link": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
+      "published": "2026-05-22T11:00:00+00:00",
+      "source": "Trail of Bits Blog",
+      "tags": [
+        "ai",
+        "research",
+        "audit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
+      "title": "AI threats in the wild: The current state of prompt injections on the web",
+      "summary": "Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise AI agents. But while the danger of IPI is widely discussed, are threat actors actually exploiting this vector today \u2013 and if so, how? To answer these questions and to uncover real-world abuse, we initiated a broad sweep of the public web to monitor for known indirect prompt injection patterns. This is what we found. The threat of indirect prompt injection Unlike a direct injection where a user \"jailbreaks\" a chatbot, IPI occurs when an AI system processes content\u2014like a website, email, or document\u2014that contains malicious instructions. When the AI reads this poisoned content, it may silently follow the attacker's commands instead of the user's original intent. This is not a new area of concern for us and Google has been working tirelessly to combat these threats. Our efforts involve cross-functional collaboration between researchers at Google DeepMind (GDM) and defenders like the Google Threat Intelligence Group (GTIG). We have previously detailed our work in this area and researchers have further highlighted the evolving nature of these vulnerabilities. Despite this collective focus, a fundamental question remains: to what degree are real-world malicious actors currently operationalizing these attacks? Proactive monitoring at Google The landscape of IPI on the web There are many channels through which attackers might try to send prompt injections. However, one location is particularly easy to observe - the public web. Here, threat actors may simply seed prompt injections on websites in hope of corrupting AI systems that browse them. Public research confirms these attacks ar",
+      "link": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
+      "published": "2026-04-23T17:38:00.001-04:00",
+      "source": "Google Security Blog",
+      "tags": [
+        "cloud",
+        "google",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
+      "title": "Google Workspace\u2019s continuous approach to mitigating indirect prompt injections",
+      "summary": "Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user\u2019s query. This may even be possible without any input directly from the user. IPI is not the kind of technical problem you \u201csolve\u201d and move on. Sophisticated LLMs with increasing use of agentic automation combined with a wide range of content create an ultra-dynamic and evolving playground for adversarial attacks. That\u2019s why Google takes a sophisticated and comprehensive approach to these attacks. We\u2019re continuously improving LLM resistance to IPI attacks and launching AI application capabilities with ever-improving defenses. Staying ahead of the latest indirect prompt injection attacks is critical to our mission of securing Workspace with Gemini. In our previous blog \u201c Mitigating prompt injection attacks with a layered defense strategy \u201d, we reviewed the layered architecture of our IPI defenses. In this blog, we\u2019ll share more detail on the continuous approach we take to improve these defenses and to solve for new attacks. New attack discovery By proactively discovering and cataloging new attack vectors through internal and external programs, we can identify vulnerabilities and deploy robust defenses ahead of adversarial activity. Human Red-Teaming Human Red-Teaming uses adversarial simulations to uncover security and safety vulnerabilities. Specialized teams execute attacks based on realistic user profiles to exploit weaknesses, coordinating with product teams to resolve identified issues. Automated Red-Teaming Automated Red-Teaming is done via dynamic, machine-learning-driven frameworks to stress-test environments. By algorithmically generating and iterating on attack payloads, we can mi",
+      "link": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
+      "published": "2026-04-02T12:00:00.003-04:00",
+      "source": "Google Security Blog",
+      "tags": [
+        "cloud",
+        "google",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
+      "title": "Architecting Security for Agentic Capabilities in Chrome",
+      "summary": "Posted by Nathan Parker, Chrome security team Chrome has been advancing the web\u2019s security for well over 15 years, and we\u2019re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to share our approach and some new innovations to improve the safety of agentic browsing. The primary new threat facing all agentic browsers is indirect prompt injection . It can appear in malicious sites, third-party content in iframes, or from user-generated content like user reviews, and can cause the agent to take unwanted actions such as initiating financial transactions or exfiltrating sensitive data. Given this open challenge, we are investing in a layered defense that includes both deterministic and probabilistic defenses to make it difficult and costly for attackers to cause harm. Designing safe agentic browsing for Chrome has involved deep collaboration of security experts across Google. We built on Gemini's existing protections and agent security principles and have implemented several new layers for Chrome. We\u2019re introducing a user alignment critic where the agent\u2019s actions are vetted by a separate model that is isolated from untrusted content. We\u2019re also extending Chrome\u2019s origin-isolation capabilities to constrain what origins the agent can interact with, to just those that are relevant to the task. Our layered defense also includes user confirmations for critical steps, real-time detection of threats , and red-teaming and response . We\u2019ll step through these layers below. Checking agent outputs with User Alignment Critic The main planning model for Gemini uses page content shared in Chrome to decide what action to take next. Exposure to untrusted web content means it is inherently vulnerable to indirect prompt injection. We use techniques like spotlighting that di",
+      "link": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
+      "published": "2025-12-08T13:03:00.001-05:00",
+      "source": "Google Security Blog",
+      "tags": [
+        "cloud",
+        "google",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
+      "title": "Rust in Android: move fast and fix things",
+      "summary": "Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn\u2019t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vulnerabilities for the first time. Updated data for 2025. This data covers first-party and third-party (open source) code changes to the Android platform across C, C++, Java, Kotlin, and Rust. This post is published a couple of months before the end of 2025, but Android\u2019s industry-standard 90-day patch window means that these results are very likely close to final. We can and will accelerate patching when necessary. We adopted Rust for its security and are seeing a 1000x reduction in memory safety vulnerability density compared to Android\u2019s C and C++ code . But the biggest surprise was Rust's impact on software delivery. With Rust changes having a 4x lower rollback rate and spending 25% less time in code review , the safer path is now also the faster one. In this post, we dig into the data behind this shift and also cover: How we\u2019re expanding our reach: We're pushing to make secure code the default across our entire software stack. We have updates on Rust adoption in first-party apps, the Linux kernel, and firmware. Our first rust memory safety vulnerability...almost: We'll analyze a near-miss memory safety bug in unsafe Rust: how it happened, how it was mitigated, and steps we're taking to prevent recurrence. It\u2019s also a good chance to answer the question \u201cif Rust can have memory safety issues, why bother at all?\u201d Building Better Software, Faster Developing an operating system requires the low-level control and predictability of systems programming languages like C, C++, and Rust. While Java and Kotlin are important for Android platform development, their role is complementa",
+      "link": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html",
+      "published": "2025-11-13T11:59:00.001-05:00",
+      "source": "Google Security Blog",
+      "tags": [
+        "cloud",
+        "google",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
+      "title": "Mitigating prompt injection attacks with a layered defense strategy",
+      "summary": "Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve hidden malicious instructions within external data sources. These may include emails, documents, or calendar invites that instruct AI to exfiltrate user data or execute other rogue actions. As more governments, businesses, and individuals adopt generative AI to get more done, this subtle yet potentially potent attack becomes increasingly pertinent across the industry, demanding immediate attention and robust security measures. At Google, our teams have a longstanding precedent of investing in a defense-in-depth strategy, including robust evaluation, threat analysis, AI security best practices , AI red-teaming , adversarial training, and model hardening for generative AI tools. This approach enables safer adoption of Gemini in Google Workspace and the Gemini app (we refer to both in this blog as \u201cGemini\u201d for simplicity). Below we describe our prompt injection mitigation product strategy based on extensive research, development, and deployment of improved security mitigations. A layered security approach Google has taken a layered security approach introducing security measures designed for each stage of the prompt lifecycle. From Gemini 2.5 model hardening, to purpose-built machine learning (ML) models detecting malicious instructions, to system-level safeguards, we are meaningfully elevating the difficulty, expense, and complexity faced by an attacker. This approach compels adversaries to resort to methods that are either more easily identified or demand greater resources. Our model training with adversarial data significantly enhanced our defenses against indirect prompt ",
+      "link": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
+      "published": "2025-06-13T12:03:00.009-04:00",
+      "source": "Google Security Blog",
+      "tags": [
+        "cloud",
+        "google",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+      "title": "Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System",
+      "summary": "Executive summary People\u2019s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, they also leverage compromised devices and trusted connections to pivot into other networks. These actors often modify routers to maintain persistent, long-term access to networks. This activity partially overlaps with cyber threat actor reporting by the cybersecurity industry\u2014commonly referred to as Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, and GhostEmperor, among others. The authoring agencies are not adopting a particular commercial naming convention and hereafter refer to those responsible for the cyber threat activity more generically as \u201cAdvanced Persistent Threat (APT) actors\u201d throughout this advisory. This cluster of cyber threat activity has been observed in the United States, Australia, Canada, New Zealand, the United Kingdom, and other areas globally. This Cybersecurity Advisory (CSA) includes observations from various government and industry investigations where the APT actors targeted internal enterprise environments, as well as systems and networks that deliver services directly to customers. This CSA details the tactics, techniques, and procedures (TTPs) leveraged by these APT actors to facilitate detection and threat hunting, and provides mitigation guidance to reduce the risk from these APT actors and their TTPs. This CSA is being released by the following authoring and co-sealing agencies: United States National Security Agency (NSA) United States Cybersecurity and Infrastructure Security Agency (CISA) United States Federal Bureau of Investigation (FBI) United States Department of Defense Cyber Crime Center (DC3) Australian Signals Directorate\u2019s Austra",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+      "published": "Mon, 25 Aug 2025 09:36:40 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
+      "title": "Russian GRU Targeting Western Logistics Entities and Technology Companies",
+      "summary": "Executive Summary This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165\u2014tracked in the cybersecurity community under several names (see \u201c Cybersecurity Industry Tracking \u201d). The actors\u2019 cyber espionage-oriented campaign, targeting technology companies and logistics entities, uses a mix of previously disclosed tactics, techniques, and procedures (TTPs). The authoring agencies expect similar targeting and TTP use to continue. Executives and network defenders at logistics entities and technology companies should recognize the elevated threat of unit 26165 targeting, increase monitoring and threat hunting for known TTPs and indicators of compromise (IOCs), and posture network defenses with a presumption of targeting. This cyber espionage-oriented campaign targeting logistics entities and technology companies uses a mix of previously disclosed TTPs and is likely connected to these actors\u2019 wide scale targeting of IP cameras in Ukraine and bordering NATO nations. The following authors and co-sealers are releasing this CSA: United States National Security Agency (NSA) United States Federal Bureau of Investigation (FBI) United Kingdom National Cyber Security Centre (NCSC-UK) Germany Federal Intelligence Service (BND) Bundesnachrichtendienst Germany Federal Office for Information Security (BSI) Bundesamt f\u00fcr Sicherheit in der Informationstechnik Germany Federal Office for the Protection of the Constitution (BfV) Bundesamt f\u00fcr Verfassungsschutz Czech Republic Military Intelligence (VZ) Vojensk\u00e9 zpravodajstv\u00ed Czech Republic National Cyber and Infor",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
+      "published": "Mon, 12 May 2025 12:49:12 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-apex-one-zero-day-exploited-in-attacks/",
+      "title": "Trend Micro warns of Apex One zero-day exploited in the wild",
+      "summary": "Japanese cybersecurity software company Trend Micro has addressed an Apex One zero-day vulnerability exploited in attacks targeting Windows systems. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-apex-one-zero-day-exploited-in-attacks/",
+      "published": "2026-05-22T13:39:19+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://unit42.paloaltonetworks.com/roadtools-cloud-attacks/",
+      "title": "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud",
+      "summary": "Open-source framework ROADtools is being misused by threat actors for cloud intrusions. Learn how to identify its malicious use. The post Paved With Intent: ROADtools and Nation-State Tactics in the Cloud appeared first on Unit 42 .",
+      "link": "https://unit42.paloaltonetworks.com/roadtools-cloud-attacks/",
+      "published": "2026-05-22T10:00:24+00:00",
+      "source": "Unit 42 (Palo Alto)",
+      "tags": [
+        "cloud",
+        "research",
+        "threat-intel"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/trendai-patches-apex-one-zero-day-exploited-in-the-wild/",
+      "title": "TrendAI Patches Apex One Zero-Day Exploited in the Wild",
+      "summary": "CVE-2026-34926 is a directory traversal flaw that can be exploited against the on-premise version of Apex One. The post TrendAI Patches Apex One Zero-Day Exploited in the Wild appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/trendai-patches-apex-one-zero-day-exploited-in-the-wild/",
+      "published": "2026-05-22T08:19:24+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-34926"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html",
+      "title": "CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Langflow and Trend Micro Apex One to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities in question are listed below -\n\n\n  CVE-2025-34291 (CVSS score: 9.4) - An origin validation error vulnerability in Langflow that could",
+      "link": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html",
+      "published": "2026-05-22T05:47:33+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2025-34291"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
+      "title": "Bringing Rust to the Pixel Baseband",
+      "summary": "Posted by Jiacheng Lu, Software Engineer, Google Pixel Team Google is continuously advancing the security of Pixel devices. We have been focusing on hardening the cellular baseband modem against exploitation. Recognizing the risks associated within the complex modem firmware, Pixel 9 shipped with mitigations against a range of memory-safety vulnerabilities. For Pixel 10, Google is advancing its proactive security measures further. Following our previous discussion on \"Deploying Rust in Existing Firmware Codebases\" , this post shares a concrete application: integrating a memory-safe Rust DNS(Domain Name System) parser into the modem firmware. The new Rust-based DNS parser significantly reduces our security risk by mitigating an entire class of vulnerabilities in a risky area, while also laying the foundation for broader adoption of memory-safe code in other areas. Here we share our experience of working on it, and hope it can inspire the use of more memory safe languages in low-level environments. Why Modem Memory Safety Can\u2019t Wait In recent years, we have seen increasing interest in the cellular modem from attackers and security researchers. For example, Google's Project Zero gained remote code execution on Pixel modems over the Internet. Pixel modem has tens of Megabytes of executable code. Given the complexity and remote attack surface of the modem, other critical memory safety vulnerabilities may remain in the predominantly memory-unsafe firmware code. Why DNS? The DNS protocol is most commonly known in the context of browsers finding websites. With the evolution of cellular technology, modern cellular communications have migrated to digital data networks; consequently, even basic operations such as call forwarding rely on DNS services. DNS is a complex protocol and requires parsing of untrusted data, which can lead to vulnerabilities, particularly when implemented in a memory-unsafe language (example: CVE-2024-27227 ). Implementing the DNS parser in Rust offers ",
+      "link": "http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html",
+      "published": "2026-04-10T11:12:00.001-04:00",
+      "source": "Google Security Blog",
+      "tags": [
+        "cloud",
+        "google",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2024-27227"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    }
+  ]
 }

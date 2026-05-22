@@ -1,127 +1,371 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="1800">
-  <title>Zero Day Pulse</title>
-  <style>
-    :root {
-      --bg: #0d1117; --surface: #161b22; --surface2: #1c2128;
-      --border: #30363d; --text: #e6edf3; --muted: #8b949e;
-      --red: #f85149; --red-dim: rgba(248,81,73,.15);
-      --orange: #f0883e; --orange-dim: rgba(240,136,62,.15);
-      --yellow: #d29922; --yellow-dim: rgba(210,153,34,.15);
-      --blue: #58a6ff; --blue-dim: rgba(88,166,255,.15);
-      --green: #3fb950;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            font-size: 15px; line-height: 1.6; }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: .85em; }
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="refresh" content="1800">
+          <title>Zero Day Pulse</title>
+          <style>
+            :root {
+              --bg: #0d1117; --surface: #161b22; --surface2: #1c2128;
+              --border: #30363d; --text: #e6edf3; --muted: #8b949e;
+              --red: #f85149; --red-dim: rgba(248,81,73,.15);
+              --orange: #f0883e; --orange-dim: rgba(240,136,62,.15);
+              --yellow: #d29922; --yellow-dim: rgba(210,153,34,.15);
+              --blue: #58a6ff; --blue-dim: rgba(88,166,255,.15);
+              --green: #3fb950;
+            }
+            *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+            body { background: var(--bg); color: var(--text);
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+                    font-size: 15px; line-height: 1.6; }
+            a { color: var(--blue); text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: .85em; }
 
-    /* ── header ── */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 2rem;
-      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
-    }
-    .brand { display: flex; align-items: center; gap: .6rem; }
-    .pulse-dot {
-      width: 12px; height: 12px; border-radius: 50%;
-      background: var(--red);
-      box-shadow: 0 0 0 0 var(--red);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(248,81,73,.7); }
-      70%  { box-shadow: 0 0 0 8px rgba(248,81,73,0); }
-      100% { box-shadow: 0 0 0 0 rgba(248,81,73,0); }
-    }
-    .brand h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.5px; }
-    .stats { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .stat { display: flex; flex-direction: column; align-items: center; min-width: 48px; }
-    .stat-value { font-size: 1.5rem; font-weight: 700; line-height: 1; }
-    .stat-value.kev     { color: var(--red); }
-    .stat-value.zeroday { color: var(--orange); }
-    .stat-value.enriched { color: var(--green); }
-    .stat-label { font-size: .65rem; text-transform: uppercase;
-                   letter-spacing: .05em; color: var(--muted); margin-top: .15rem; }
-    .generated { margin-left: auto; font-size: .8rem; color: var(--muted); }
+            /* ── header ── */
+            header {
+              border-bottom: 1px solid var(--border);
+              padding: 1.25rem 2rem;
+              display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+            }
+            .brand { display: flex; align-items: center; gap: .6rem; }
+            .pulse-dot {
+              width: 12px; height: 12px; border-radius: 50%;
+              background: var(--red);
+              box-shadow: 0 0 0 0 var(--red);
+              animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+              0%   { box-shadow: 0 0 0 0 rgba(248,81,73,.7); }
+              70%  { box-shadow: 0 0 0 8px rgba(248,81,73,0); }
+              100% { box-shadow: 0 0 0 0 rgba(248,81,73,0); }
+            }
+            .brand h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.5px; }
+            .stats { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+            .stat { display: flex; flex-direction: column; align-items: center; min-width: 48px; }
+            .stat-value { font-size: 1.5rem; font-weight: 700; line-height: 1; }
+            .stat-value.kev     { color: var(--red); }
+            .stat-value.zeroday { color: var(--orange); }
+            .stat-value.enriched { color: var(--green); }
+            .stat-label { font-size: .65rem; text-transform: uppercase;
+                           letter-spacing: .05em; color: var(--muted); margin-top: .15rem; }
+            .generated { margin-left: auto; font-size: .8rem; color: var(--muted); }
 
-    /* ── main ── */
-    main { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; display: flex; flex-direction: column; gap: .875rem; }
+            /* ── main ── */
+            main { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; display: flex; flex-direction: column; gap: .875rem; }
 
-    /* ── cards ── */
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 1.1rem 1.25rem;
-      border-left: 3px solid var(--border);
-    }
-    .card-kev     { border-left-color: var(--red);    background: linear-gradient(90deg, var(--red-dim) 0%, var(--surface) 60%); }
-    .card-zeroday { border-left-color: var(--orange); background: linear-gradient(90deg, var(--orange-dim) 0%, var(--surface) 60%); }
-    .card-high    { border-left-color: var(--yellow); background: linear-gradient(90deg, var(--yellow-dim) 0%, var(--surface) 60%); }
+            /* ── cards ── */
+            .card {
+              background: var(--surface); border: 1px solid var(--border);
+              border-radius: 8px; padding: 1.1rem 1.25rem;
+              border-left: 3px solid var(--border);
+            }
+            .card-kev     { border-left-color: var(--red);    background: linear-gradient(90deg, var(--red-dim) 0%, var(--surface) 60%); }
+            .card-zeroday { border-left-color: var(--orange); background: linear-gradient(90deg, var(--orange-dim) 0%, var(--surface) 60%); }
+            .card-high    { border-left-color: var(--yellow); background: linear-gradient(90deg, var(--yellow-dim) 0%, var(--surface) 60%); }
 
-    .card-top { display: flex; align-items: flex-start; gap: .6rem; margin-bottom: .5rem; }
-    .badge { font-size: .68rem; font-weight: 700; padding: .2rem .5rem;
-              border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: .15rem; }
-    .badge-kev     { background: var(--red);    color: #fff; }
-    .badge-zeroday { background: var(--orange); color: #fff; }
-    .badge-high    { background: var(--yellow); color: #fff; }
-    .badge-info    { background: var(--border); color: var(--muted); }
+            .card-top { display: flex; align-items: flex-start; gap: .6rem; margin-bottom: .5rem; }
+            .badge { font-size: .68rem; font-weight: 700; padding: .2rem .5rem;
+                      border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: .15rem; }
+            .badge-kev     { background: var(--red);    color: #fff; }
+            .badge-zeroday { background: var(--orange); color: #fff; }
+            .badge-high    { background: var(--yellow); color: #fff; }
+            .badge-info    { background: var(--border); color: var(--muted); }
 
-    .card-title { font-size: .95rem; font-weight: 600; line-height: 1.4; }
-    .card-meta  { font-size: .78rem; color: var(--muted); margin-bottom: .6rem;
-                   display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; }
-    .cve { background: var(--blue-dim); color: var(--blue);
-            border: 1px solid rgba(88,166,255,.25); border-radius: 4px;
-            padding: .05rem .35rem; }
-    .no-cve { color: var(--muted); font-style: italic; font-size: .78rem; }
-    .meta-sep { color: var(--border); }
-    .summary { font-size: .85rem; color: var(--muted); margin-bottom: .5rem; }
+            .card-title { font-size: .95rem; font-weight: 600; line-height: 1.4; }
+            .card-meta  { font-size: .78rem; color: var(--muted); margin-bottom: .6rem;
+                           display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; }
+            .cve { background: var(--blue-dim); color: var(--blue);
+                    border: 1px solid rgba(88,166,255,.25); border-radius: 4px;
+                    padding: .05rem .35rem; }
+            .no-cve { color: var(--muted); font-style: italic; font-size: .78rem; }
+            .meta-sep { color: var(--border); }
+            .summary { font-size: .85rem; color: var(--muted); margin-bottom: .5rem; }
 
-    /* ── enrichment ── */
-    .enrichment {
-      margin-top: .75rem; padding-top: .75rem;
-      border-top: 1px solid var(--border);
-    }
-    .enrich-header { font-size: .7rem; text-transform: uppercase;
-                       letter-spacing: .06em; color: var(--green);
-                       font-weight: 600; margin-bottom: .5rem; }
-    .enrich-row { display: flex; gap: .5rem; font-size: .82rem;
-                   padding: .2rem 0; border-bottom: 1px solid var(--surface2); }
-    .enrich-row:last-child { border-bottom: none; }
-    .enrich-label { color: var(--muted); flex-shrink: 0; width: 160px; }
-    .enrich-value { color: var(--text); }
+            /* ── enrichment ── */
+            .enrichment {
+              margin-top: .75rem; padding-top: .75rem;
+              border-top: 1px solid var(--border);
+            }
+            .enrich-header { font-size: .7rem; text-transform: uppercase;
+                               letter-spacing: .06em; color: var(--green);
+                               font-weight: 600; margin-bottom: .5rem; }
+            .enrich-row { display: flex; gap: .5rem; font-size: .82rem;
+                           padding: .2rem 0; border-bottom: 1px solid var(--surface2); }
+            .enrich-row:last-child { border-bottom: none; }
+            .enrich-label { color: var(--muted); flex-shrink: 0; width: 160px; }
+            .enrich-value { color: var(--text); }
 
-    /* ── misc ── */
-    .empty { text-align: center; color: var(--muted); padding: 3rem; font-size: .9rem; }
-    footer { text-align: center; color: var(--muted); font-size: .78rem; padding: 1.5rem; border-top: 1px solid var(--border); }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="brand">
-      <span class="pulse-dot"></span>
-      <h1>Zero Day Pulse</h1>
-    </div>
-    <div class="stats">
-      <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-      <div class="stat"><span class="stat-value zeroday">0</span><span class="stat-label">Zero-Days</span></div>
-      <div class="stat"><span class="stat-value">0</span><span class="stat-label">Total</span></div>
-      <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
-    </div>
-    <div class="generated">Updated 2026-05-22 19:23 UTC</div>
-  </header>
-  <main>
-    <div class="empty">No actionable findings in this period.</div>
-  </main>
-  <footer>
-    Powered by <a href="https://github.com/peleduri/zero-day-pulse" target="_blank" rel="noopener">GitHub</a> · <a href="https://parallel.ai" target="_blank" rel="noopener">Parallel AI</a>
-    · refreshes every 30 min
-  </footer>
-</body>
-</html>
+            /* ── misc ── */
+            .empty { text-align: center; color: var(--muted); padding: 3rem; font-size: .9rem; }
+            footer { text-align: center; color: var(--muted); font-size: .78rem; padding: 1.5rem; border-top: 1px solid var(--border); }
+          </style>
+        </head>
+        <body>
+          <header>
+            <div class="brand">
+              <span class="pulse-dot"></span>
+              <h1>Zero Day Pulse</h1>
+            </div>
+            <div class="stats">
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">15</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
+            </div>
+            <div class="generated">Updated 2026-05-22 19:45 UTC</div>
+          </header>
+          <main>
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-9082" target="_blank" rel="noopener">CVE-2026-9082 — Drupal Core SQL Injection Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-9082</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-05-22</span>
+  </div>
+  <p class='summary'>Vendor: Drupal | Product: Core. Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavaila…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a" target="_blank" rel="noopener">Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2024-57727</code>
+    <span class="meta-sep">·</span>
+    <span>CISA US-CERT Alerts</span>
+    <span class="meta-sep">·</span>
+    <span>Thu, 12 Ju</span>
+  </div>
+  <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/" target="_blank" rel="noopener">We hardened zizmor&#x27;s GitHub Actions static analyzer</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Trail of Bits Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-05-22</span>
+  </div>
+  <p class='summary'>In March 2026, attackers exploited a pull_request_target misconfiguration in the aquasecurity/trivy-action GitHub Action to exfiltrate organization and repository secrets, then used those credentials to backdoor LiteLLM on PyPI (see Trivy’s post-mortem for the full timeline). zizmor is a static analyzer that GitHub Actions users run to catch exactly these misconfigurations before they ship. When G…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html" target="_blank" rel="noopener">AI threats in the wild: The current state of prompt injections on the web</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Google Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-04-23</span>
+  </div>
+  <p class='summary'>Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise …</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html" target="_blank" rel="noopener">Google Workspace’s continuous approach to mitigating indirect prompt injections</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Google Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-04-02</span>
+  </div>
+  <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user’s query. This m…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="http://security.googleblog.com/2025/12/architecting-security-for-agentic.html" target="_blank" rel="noopener">Architecting Security for Agentic Capabilities in Chrome</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Google Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2025-12-08</span>
+  </div>
+  <p class='summary'>Posted by Nathan Parker, Chrome security team Chrome has been advancing the web’s security for well over 15 years, and we’re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to s…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html" target="_blank" rel="noopener">Rust in Android: move fast and fix things</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Google Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2025-11-13</span>
+  </div>
+  <p class='summary'>Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn’t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vul…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html" target="_blank" rel="noopener">Mitigating prompt injection attacks with a layered defense strategy</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Google Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2025-06-13</span>
+  </div>
+  <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a" target="_blank" rel="noopener">Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>CISA US-CERT Alerts</span>
+    <span class="meta-sep">·</span>
+    <span>Mon, 25 Au</span>
+  </div>
+  <p class='summary'>Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a" target="_blank" rel="noopener">Russian GRU Targeting Western Logistics Entities and Technology Companies</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>CISA US-CERT Alerts</span>
+    <span class="meta-sep">·</span>
+    <span>Mon, 12 Ma</span>
+  </div>
+  <p class='summary'>Executive Summary This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-apex-one-zero-day-exploited-in-attacks/" target="_blank" rel="noopener">Trend Micro warns of Apex One zero-day exploited in the wild</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-05-22</span>
+  </div>
+  <p class='summary'>Japanese cybersecurity software company Trend Micro has addressed an Apex One zero-day vulnerability exploited in attacks targeting Windows systems. [...]</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://unit42.paloaltonetworks.com/roadtools-cloud-attacks/" target="_blank" rel="noopener">Paved With Intent: ROADtools and Nation-State Tactics in the Cloud</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Unit 42 (Palo Alto)</span>
+    <span class="meta-sep">·</span>
+    <span>2026-05-22</span>
+  </div>
+  <p class='summary'>Open-source framework ROADtools is being misused by threat actors for cloud intrusions. Learn how to identify its malicious use. The post Paved With Intent: ROADtools and Nation-State Tactics in the Cloud appeared first on Unit 42 .</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/trendai-patches-apex-one-zero-day-exploited-in-the-wild/" target="_blank" rel="noopener">TrendAI Patches Apex One Zero-Day Exploited in the Wild</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-34926</code>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-05-22</span>
+  </div>
+  <p class='summary'>CVE-2026-34926 is a directory traversal flaw that can be exploited against the on-premise version of Apex One. The post TrendAI Patches Apex One Zero-Day Exploited in the Wild appeared first on SecurityWeek .</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html" target="_blank" rel="noopener">CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2025-34291</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-05-22</span>
+          </div>
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Langflow and Trend Micro Apex One to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
+
+The vulnerabilities in question are listed below -
+
+
+  CVE-2025-34291 (CVSS score: 9.4) - An origin validation error vulnerability in Langflow that could</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html" target="_blank" rel="noopener">Bringing Rust to the Pixel Baseband</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2024-27227</code>
+    <span class="meta-sep">·</span>
+    <span>Google Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-04-10</span>
+  </div>
+  <p class='summary'>Posted by Jiacheng Lu, Software Engineer, Google Pixel Team Google is continuously advancing the security of Pixel devices. We have been focusing on hardening the cellular baseband modem against exploitation. Recognizing the risks associated within the complex modem firmware, Pixel 9 shipped with mitigations against a range of memory-safety vulnerabilities. For Pixel 10, Google is advancing its pr…</p>
+
+</article>
+
+          </main>
+          <footer>
+            Powered by <a href="https://github.com/peleduri/zero-day-pulse" target="_blank" rel="noopener">GitHub</a> · <a href="https://parallel.ai" target="_blank" rel="noopener">Parallel AI</a>
+            · refreshes every 30 min
+          </footer>
+        </body>
+        </html>
