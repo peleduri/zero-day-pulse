@@ -1,0 +1,74 @@
+feeds:
+  - name: NVD Recent CVEs
+    url: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
+    tags: [nvd, cve]
+
+  - name: CISA US-CERT Alerts
+    url: https://www.cisa.gov/uscert/ncas/alerts.xml
+    tags: [cisa, ics]
+
+  - name: Exploit-DB
+    url: https://www.exploit-db.com/rss.xml
+    tags: [exploit, poc]
+
+  - name: SANS Internet Storm Center
+    url: https://isc.sans.edu/rssfeed_full.xml
+    tags: [sans, isc]
+
+  - name: GitHub Security Advisories
+    url: https://github.com/advisories.atom
+    tags: [github, advisories]
+
+  - name: Packet Storm Security
+    url: https://rss.packetstormsecurity.com/files/
+    tags: [exploit, poc]
+
+  - name: The Hacker News Security
+    url: https://feeds.feedburner.com/TheHackersNews
+    tags: [news, zeroday]
+
+  - name: Bleeping Computer
+    url: https://www.bleepingcomputer.com/feed/
+    tags: [news, malware]
+
+  - name: SecurityWeek
+    url: https://feeds.feedburner.com/Securityweek
+    tags: [news, research]
+
+  - name: Full Disclosure
+    url: https://seclists.org/rss/fulldisclosure.rss
+    tags: [disclosure, exploit]
+
+  - name: Rapid7 Blog
+    url: https://blog.rapid7.com/rss/
+    tags: [research, metasploit]
+
+  - name: Google Project Zero
+    url: https://googleprojectzero.blogspot.com/feeds/posts/default
+    tags: [research, zeroday]
+
+zero_day_keywords:
+  - zero-day
+  - zero day
+  - 0-day
+  - 0day
+  - actively exploited
+  - exploited in the wild
+  - in the wild
+  - no patch
+  - unpatched
+  - before patch
+  - patch bypass
+  - nation-state
+  - state-sponsored
+
+high_severity_keywords:
+  - critical
+  - remote code execution
+  - unauthenticated rce
+  - pre-auth
+  - wormable
+  - supply chain
+  - backdoor
+
+cisa_kev_url: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
