@@ -2,7 +2,7 @@ name: Zero Day Pulse
 
 on:
   schedule:
-    - cron: '0 */6 * * *'   # every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
       lookback_hours:
@@ -18,14 +18,14 @@ jobs:
   pulse:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # commit reports back to repo
-      issues: write     # create/update tracking issue
+      contents: write
+      issues: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # needed for git push
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -45,13 +45,13 @@ jobs:
             --max-enrich ${{ github.event.inputs.max_enrich || '10' }} \
             --output-dir reports
 
-      - name: Commit reports to repository
+      - name: Commit reports and HTML dashboard
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add reports/
+          git add reports/ docs/
           if git diff --cached --quiet; then
-            echo "No new report files to commit"
+            echo "No new files to commit"
           else
             git commit -m "pulse: add report $(date -u '+%Y-%m-%d %H:%M UTC')"
             git push origin HEAD
@@ -65,6 +65,11 @@ jobs:
           path: reports/
           retention-days: 30
 
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
       - name: Post report to tracking issue
         if: always()
         uses: actions/github-script@v7
@@ -72,20 +77,15 @@ jobs:
           script: |
             const fs   = require('fs');
             const path = require('path');
-
             const latestMd = path.join('reports', 'latest.md');
             if (!fs.existsSync(latestMd)) {
               console.log('No report generated — skipping issue update');
               return;
             }
-
-            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-            const repoUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}`;
-            const reportUrl = `${repoUrl}/blob/main/reports/latest.md`;
+            const runUrl    = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const pagesUrl  = `https://${context.repo.owner}.github.io/${context.repo.repo}/`;
             let body = fs.readFileSync(latestMd, 'utf8');
-            body += `\n\n---\n[View raw JSON](${repoUrl}/blob/main/reports/latest.json) · [Action run](${runUrl})`;
-
-            // Find existing open pulse-tracking issue
+            body += `\n\n---\n[Live dashboard](${pagesUrl}) · [Raw JSON](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/reports/latest.json) · [Action run](${runUrl})`;
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo:  context.repo.repo,
@@ -93,22 +93,34 @@ jobs:
               state:  'open',
               per_page: 1,
             });
-
             if (issues.length > 0) {
               await github.rest.issues.createComment({
-                owner:        context.repo.owner,
-                repo:         context.repo.repo,
+                owner: context.repo.owner, repo: context.repo.repo,
                 issue_number: issues[0].number,
-                body:         body.substring(0, 65000),
+                body: body.substring(0, 65000),
               });
               console.log(`Updated tracking issue #${issues[0].number}`);
             } else {
               const { data: issue } = await github.rest.issues.create({
-                owner:  context.repo.owner,
-                repo:   context.repo.repo,
-                title:  '🚨 Zero Day Pulse — Active Vulnerability Tracker',
-                body:   body.substring(0, 65000),
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: '🚨 Zero Day Pulse — Active Vulnerability Tracker',
+                body:  body.substring(0, 65000),
                 labels: ['zero-day-pulse'],
               });
               console.log(`Created tracking issue #${issue.number}`);
             }
+
+  deploy-pages:
+    needs: pulse
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
