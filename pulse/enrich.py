@@ -13,7 +13,19 @@ from typing import Dict, List
 logger = logging.getLogger(__name__)
 
 ENRICH_INTENT = """
-For this security vulnerability, research and provide ALL of the following fields:
+For this security vulnerability, research and provide ALL of the following fields. Fields MUST be returned in structured JSON format where specified. Add EPSS score (0.0 to 1.0) and percentile for all CVEs that match a cve_id provided during enrichment.
+
+- technical_details: Concise technical explanation of the vulnerability mechanism and attack vector
+- affected_products: Comma-separated list of affected software/hardware products and specific versions
+- cvss_score: CVSS v3.x base score (numeric, e.g. 9.8) if publicly available
+- cvss_vector: CVSS v3 vector string (e.g. CVSS:3.1/AV:N/AC:L/...) if available
+- exploit_available: Structured object {boolean, url?: string} indicating existence and source URL of PoC/exploit.
+- patch_available: Structured object {boolean, url?: string} indicating official patch status and advisory URL.
+- active_exploitation: Structured object {boolean, sources?: list[string]} confirming wild exploitation and listing cited sources.
+- threat_actors: Known threat actor groups or campaigns (or 'None known').
+- mitigation: Specific workaround or hardening steps if no patch is available.
+- vendor_advisory: Single URL to the official vendor security advisory or bulletin, if applicable.
+
 - technical_details: Concise technical explanation of the vulnerability mechanism and attack vector
 - affected_products: Comma-separated list of affected software/hardware products and specific versions
 - cvss_score: CVSS v3.x base score (numeric, e.g. 9.8) if publicly available
