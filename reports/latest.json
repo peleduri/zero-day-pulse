@@ -1,0 +1,88 @@
+{
+  "generated": "2026-05-22T13:59:04.988138+00:00",
+  "total": 5,
+  "kev": 0,
+  "zero_day": 5,
+  "enriched": 0,
+  "findings": [
+    {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
+      "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
+      "summary": "<h2><strong>Summary</strong></h2>\n<p>The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched versions of SimpleHelp RMM since January 2025.</p>\n<p>SimpleHelp versions 5.5.7 and earlier contain several vulnerabilities, including <a href=\"https://www.cve.org/CVERecord?id=CVE-2024-57727\" target=\"_blank\" title=\"CVE-2024-57727\">CVE-2024-57727</a>\u2014a path traversal vulnerability.<a href=\"https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a#note1\" title=\"Note1\"><sup>1</sup></a><sup> </sup>Ransomware actors likely leveraged CVE-2024-57727 to access downstream customers\u2019 unpatched SimpleHelp RMM for disruption of services in double extortion compromises.<a href=\"https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a#note1\" title=\"Note 1\"><sup>1</sup></a><sup>\u00a0</sup></p>\n<p>CISA added CVE-2024-57727 to its <a href=\"https://www.cisa.gov/known-exploited-vulnerabilities-catalog\" title=\"Known Exploited Vulnerabilities Catalog\">Known Exploited Vulnerabilities (KEV) Catalog</a> on Feb. 13, 2025.</p>\n<p>CISA urges software vendors, downstream customers, and end users to immediately implement the <strong>Mitigations </strong>listed in this advisory based on confirmed compromise or risk of compromise.</p>\n<p>Download the PDF version of this report:</p>\n\n\n\n\n\n<div class=\"c-file\">\n    <div class=\"c-file__download\">\n    <a href=\"/sites/default/files/2025-06/aa25-163a-ransomware-simplehelp-rmm-compromise.pdf\" class=\"c-file__link\" target=\"_blank\">AA25-163A Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider</a>\n    <span class=\"c-file__size\">(PDF,       420.49 ",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
+      "published": "Thu, 12 Jun 2025 10:29:54 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [
+        "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+      "title": "Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System",
+      "summary": "<h2><strong>Executive summary</strong></h2>\n<p>People\u2019s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, they also leverage compromised devices and trusted connections to pivot into other networks. These actors often modify routers to maintain persistent, long-term access to networks.\u00a0</p>\n<p>This activity partially overlaps with cyber threat actor reporting by the cybersecurity industry\u2014commonly referred to as Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, and GhostEmperor, among others. The authoring agencies are not adopting a particular commercial naming convention and hereafter refer to those responsible for the cyber threat activity more generically as \u201cAdvanced Persistent Threat (APT) actors\u201d throughout this advisory. This cluster of cyber threat activity has been observed in the United States, Australia, Canada, New Zealand, the United Kingdom, and other areas globally.</p>\n<p>This Cybersecurity Advisory (CSA) includes observations from various government and industry investigations where the APT actors targeted internal enterprise environments, as well as systems and networks that deliver services directly to customers. This CSA details the tactics, techniques, and procedures (TTPs) leveraged by these APT actors to facilitate detection and threat hunting, and provides mitigation guidance to reduce the risk from these APT actors and their TTPs.</p>\n<p>This CSA is being released by the following authoring and co-sealing agencies:</p>\n<ul>\n<li>United States National Security Agency (NSA)</li>\n<li>United States Cybersecurity and Infrastructure Security Agency (CISA)</li>\n<li>United States Federal Bureau of Investigation (FBI)</li>\n<li>United St",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+      "published": "Mon, 25 Aug 2025 09:36:40 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
+      "title": "Russian GRU Targeting Western Logistics Entities and Technology Companies",
+      "summary": "<h2><strong>Executive Summary</strong></h2>\n<p>This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165\u2014tracked in the cybersecurity community under several names (see \u201c<a href=\"https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a#CybersecurityIndustryTracking\" title=\"CybersecurityIndustryTracking\">Cybersecurity Industry Tracking</a>\u201d). The actors\u2019 cyber espionage-oriented campaign, targeting technology companies and logistics entities, uses a mix of previously disclosed tactics, techniques, and procedures (TTPs). The authoring agencies expect similar targeting and TTP use to continue.</p>\n<p>Executives and network defenders at logistics entities and technology companies should recognize the elevated threat of unit 26165 targeting, increase monitoring and threat hunting for known TTPs and indicators of compromise (IOCs), and posture network defenses with a presumption of targeting.</p>\n<p>This cyber espionage-oriented campaign targeting logistics entities and technology companies uses a mix of previously disclosed TTPs and is likely connected to these actors\u2019 wide scale targeting of IP cameras in Ukraine and bordering NATO nations.</p>\n<p>The following authors and co-sealers are releasing this CSA:</p>\n<ul>\n<li>United States National Security Agency (NSA)</li>\n<li>United States Federal Bureau of Investigation (FBI)</li>\n<li>United Kingdom National Cyber Security Centre (NCSC-UK)</li>\n<li>Germany Federal Intelligence Service (BND)\u00a0Bundesnachrichtendienst</li>\n<li>Germany Federal Office for Information Security (BSI)\u00a0Bundesamt",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
+      "published": "Mon, 12 May 2025 12:49:12 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-apex-one-zero-day-exploited-in-attacks/",
+      "title": "Trend Micro warns of Apex One zero-day exploited in the wild",
+      "summary": "Japanese cybersecurity software company Trend Micro has addressed an Apex One zero-day vulnerability exploited in attacks targeting Windows systems. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-apex-one-zero-day-exploited-in-attacks/",
+      "published": "2026-05-22T13:39:19+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/trendai-patches-apex-one-zero-day-exploited-in-the-wild/",
+      "title": "TrendAI Patches Apex One Zero-Day Exploited in the Wild",
+      "summary": "<p>CVE-2026-34926 is a directory traversal flaw that can be exploited against the on-premise version of Apex One.</p>\n<p>The post <a href=\"https://www.securityweek.com/trendai-patches-apex-one-zero-day-exploited-in-the-wild/\">TrendAI Patches Apex One Zero-Day Exploited in the Wild</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "link": "https://www.securityweek.com/trendai-patches-apex-one-zero-day-exploited-in-the-wild/",
+      "published": "2026-05-22T08:19:24+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-34926"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    }
+  ]
+}
