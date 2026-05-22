@@ -60,6 +60,7 @@ RSS feeds + CISA KEV
 
 ## Feed sources
 
+### Vulnerability databases
 | Source | Type | Signal |
 |---|---|---|
 | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | JSON | ⭐ Confirmed active exploitation |
@@ -67,16 +68,43 @@ RSS feeds + CISA KEV
 | [CISA US-CERT Alerts](https://www.cisa.gov/uscert/ncas/alerts) | RSS | ICS / critical infrastructure |
 | [Exploit-DB](https://www.exploit-db.com) | RSS | Public exploits & PoCs |
 | [Packet Storm Security](https://packetstormsecurity.com) | RSS | Exploits & advisories |
-| [SANS Internet Storm Center](https://isc.sans.edu) | RSS | Threat intel |
+| [Full Disclosure](https://seclists.org/fulldisclosure/) | RSS | Researcher disclosures |
 | [GitHub Security Advisories](https://github.com/advisories) | Atom | OSS ecosystem |
-| [Google Project Zero](https://googleprojectzero.blogspot.com) | Atom | In-depth zero-day research |
+
+### Cloud provider bulletins
+| Source | Type | Signal |
+|---|---|---|
+| [AWS Security Bulletins](https://aws.amazon.com/security/security-bulletins/) | RSS | Official AWS CVEs & advisories |
+| [AWS Security Blog](https://aws.amazon.com/blogs/security/) | RSS | AWS threat research |
+| [Microsoft Security Response Center](https://msrc.microsoft.com/blog/) | RSS | Azure / Microsoft CVEs |
+| [Google Cloud Security Bulletins](https://cloud.google.com/support/bulletins) | RSS | GCP CVEs & advisories |
+| [Google Security Blog](https://security.googleblog.com) | Atom | Google threat research |
+
+### Cloud & container security research
+| Source | Type | Signal |
+|---|---|---|
+| [Kubernetes Security](https://kubernetes.io) | RSS | K8s CVEs & announcements |
+| [Wiz Research](https://www.wiz.io/blog) | RSS | Cloud misconfigs & vulns |
+| [Sysdig](https://sysdig.com/blog/) | RSS | Container & runtime security |
+| [Aqua Security](https://blog.aquasec.com) | RSS | Container & Kubernetes |
+| [Snyk](https://snyk.io/blog/) | RSS | Cloud dependencies & containers |
+| [Unit 42](https://unit42.paloaltonetworks.com) | RSS | Cloud threat intel |
+| [Lacework](https://www.lacework.com/blog/) | RSS | Cloud detection & research |
+| [CrowdStrike](https://www.crowdstrike.com/blog/) | RSS | Cloud threat intel |
+| [Tenable](https://www.tenable.com/blog) | RSS | Cloud vulnerability research |
+
+### Security news
+| Source | Type | Signal |
+|---|---|---|
 | [The Hacker News](https://thehackernews.com) | RSS | Breaking security news |
 | [Bleeping Computer](https://www.bleepingcomputer.com) | RSS | Malware & breach coverage |
 | [SecurityWeek](https://www.securityweek.com) | RSS | Research & analysis |
-| [Full Disclosure](https://seclists.org/fulldisclosure/) | RSS | Researcher disclosures |
-| [Rapid7 Blog](https://blog.rapid7.com) | RSS | Metasploit & research |
+| [The Record](https://therecord.media) | RSS | Threat intelligence news |
+| [SANS Internet Storm Center](https://isc.sans.edu) | RSS | Daily threat intel |
+| [Rapid7](https://blog.rapid7.com) | RSS | Metasploit & research |
+| [Google Project Zero](https://googleprojectzero.blogspot.com) | Atom | In-depth zero-day research |
 
-Feed list is fully configurable in [`config/feeds.yaml`](config/feeds.yaml) — no code changes needed.
+Feed list and all keywords are fully configurable in [`config/feeds.yaml`](config/feeds.yaml) — no code changes needed.
 
 ---
 
