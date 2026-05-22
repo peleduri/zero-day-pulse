@@ -1,6 +1,6 @@
 feeds:
   - name: NVD Recent CVEs
-    url: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
+    url: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml
     tags: [nvd, cve]
 
   - name: CISA US-CERT Alerts
@@ -18,9 +18,11 @@ feeds:
   - name: GitHub Security Advisories
     url: https://github.com/advisories.atom
     tags: [github, advisories]
+    headers:
+      Accept: application/atom+xml
 
   - name: Packet Storm Security
-    url: https://rss.packetstormsecurity.com/files/
+    url: https://packetstormsecurity.com/files/rss/
     tags: [exploit, poc]
 
   - name: The Hacker News Security

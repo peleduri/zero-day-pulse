@@ -76,5 +76,5 @@ def filter_zero_days(entries: List[Dict]) -> List[Dict]:
         reverse=True,
     )
 
-    logger.info(f"Filtered to {len(filtered)} actionable findings ({sum(e.get('is_kev') for e in filtered)} KEV)")
+    logger.info(f"Filtered to {len(filtered)} actionable findings ({sum(1 for e in filtered if e.get('is_kev'))} KEV)")
     return filtered

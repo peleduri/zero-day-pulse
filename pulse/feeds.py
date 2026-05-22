@@ -127,10 +127,11 @@ def _parse_atom(root: ET.Element, name: str, tags: List[str], cutoff: datetime) 
     return entries
 
 
-def fetch_feed(name: str, url: str, tags: List[str], lookback_hours: int) -> List[Dict]:
+def fetch_feed(name: str, url: str, tags: List[str], lookback_hours: int, extra_headers: Dict | None = None) -> List[Dict]:
     cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
     try:
-        resp = requests.get(url, headers=REQUEST_HEADERS, timeout=REQUEST_TIMEOUT)
+        headers = {**REQUEST_HEADERS, **(extra_headers or {})}
+        resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
         resp.raise_for_status()
         root = ET.fromstring(resp.content)
 
@@ -201,6 +202,7 @@ def collect_all_feeds(lookback_hours: int = 24) -> List[Dict]:
             feed_cfg["url"],
             feed_cfg.get("tags", []),
             lookback_hours,
+            extra_headers=feed_cfg.get("headers"),
         )
         all_entries.extend(entries)
         time.sleep(0.3)
