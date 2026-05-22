@@ -1,36 +1,60 @@
-# Zero Day Pulse
+# Zero Day Pulse 🔴
 
 [![Zero Day Pulse](https://github.com/peleduri/zero-day-pulse/actions/workflows/zero-day-pulse.yml/badge.svg)](https://github.com/peleduri/zero-day-pulse/actions/workflows/zero-day-pulse.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 
-An automated, open-source monitor that collects zero-day and actively-exploited vulnerability signals from public RSS feeds and the [CISA Known Exploited Vulnerabilities (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog, then enriches each finding with deep research powered by [Parallel AI](https://parallel.ai).
+> Automated zero-day and actively-exploited vulnerability monitor — collects signals from 13 public sources every 6 hours, enriches each finding with [Parallel AI](https://parallel.ai) deep research, and publishes a live dashboard to GitHub Pages.
 
-**Latest public report → [`reports/latest.md`](reports/latest.md)**
+**[Live Dashboard →](https://peleduri.github.io/zero-day-pulse/)** &nbsp;|&nbsp; **[Latest Report →](reports/latest.md)**
 
 ---
 
-## How it works
+## What it does
+
+Every 6 hours a GitHub Action:
+
+1. **Collects** vulnerability signals from 13 public RSS/Atom feeds and the [CISA Known Exploited Vulnerabilities (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog
+2. **Filters** for zero-day keywords, actively-exploited indicators, and CVE references — deduplicating across sources
+3. **Enriches** the top findings using `parallel-cli enrich`: CVSS score, PoC availability, patch status, threat actors, and mitigations — all researched automatically
+4. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and a comment on a pinned tracking issue
 
 ```
 RSS feeds + CISA KEV
         │
-        ▼
-  Feed collector          pulse/feeds.py
+        ▼ pulse/feeds.py
+  Feed collector (13 sources)
         │
-        ▼
-  Zero-day filter         pulse/filter.py
-  (keywords + CVE IDs)
+        ▼ pulse/filter.py
+  Zero-day signal filter
+  (keywords · CVE IDs · dedup)
         │
-        ▼
-  Parallel AI enrich      pulse/enrich.py
-  (PoC, patch, CVSS, …)
+        ▼ pulse/enrich.py
+  Parallel AI enrichment
+  (CVSS · PoC · patch · actors)
         │
-        ▼
-  Markdown + JSON report  pulse/report.py
-  committed to repo
+        ▼ pulse/report.py
+  HTML dashboard + MD/JSON report
+  → GitHub Pages + repo commit
 ```
 
-The GitHub Action runs every 6 hours, commits the latest report to `reports/`, and appends a comment to a pinned tracking issue.
+---
+
+## Example output
+
+```
+🔴 CISA KEV — CVE-2026-34926 — TrendAI Apex One Zero-Day Exploited in the Wild
+   CVE: CVE-2026-34926 | Source: SecurityWeek | Published: 2026-05-22
+
+   ✨ Parallel AI Enrichment:
+   - Technical Details: Directory traversal in on-premise Apex One agent
+   - CVSS Score: 9.8
+   - Exploit Available: true — PoC published on GitHub
+   - Patch Available: true — Apex One SP1 Patch 1 (build 13088)
+   - Active Exploitation: true — confirmed by CISA KEV catalog
+   - Threat Actors: APT41
+   - Mitigation: Apply vendor patch immediately; restrict agent management port
+```
 
 ---
 
@@ -38,49 +62,62 @@ The GitHub Action runs every 6 hours, commits the latest report to `reports/`, a
 
 | Source | Type | Signal |
 |---|---|---|
+| [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | JSON | ⭐ Confirmed active exploitation |
 | [NVD Recent CVEs](https://nvd.nist.gov) | RSS | All new CVEs |
-| [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | JSON | Confirmed active exploitation |
-| [CISA US-CERT Alerts](https://www.cisa.gov/uscert/ncas/alerts) | RSS | ICS/critical infrastructure |
+| [CISA US-CERT Alerts](https://www.cisa.gov/uscert/ncas/alerts) | RSS | ICS / critical infrastructure |
 | [Exploit-DB](https://www.exploit-db.com) | RSS | Public exploits & PoCs |
 | [Packet Storm Security](https://packetstormsecurity.com) | RSS | Exploits & advisories |
 | [SANS Internet Storm Center](https://isc.sans.edu) | RSS | Threat intel |
 | [GitHub Security Advisories](https://github.com/advisories) | Atom | OSS ecosystem |
-| [The Hacker News](https://thehackernews.com) | RSS | Breaking news |
-| [Bleeping Computer](https://www.bleepingcomputer.com) | RSS | Malware & breaches |
+| [Google Project Zero](https://googleprojectzero.blogspot.com) | Atom | In-depth zero-day research |
+| [The Hacker News](https://thehackernews.com) | RSS | Breaking security news |
+| [Bleeping Computer](https://www.bleepingcomputer.com) | RSS | Malware & breach coverage |
 | [SecurityWeek](https://www.securityweek.com) | RSS | Research & analysis |
 | [Full Disclosure](https://seclists.org/fulldisclosure/) | RSS | Researcher disclosures |
 | [Rapid7 Blog](https://blog.rapid7.com) | RSS | Metasploit & research |
-| [Google Project Zero](https://googleprojectzero.blogspot.com) | Atom | In-depth zero-day research |
+
+Feed list is fully configurable in [`config/feeds.yaml`](config/feeds.yaml) — no code changes needed.
 
 ---
 
-## Setup (fork & run)
+## Fork & run your own instance
 
 ### 1. Fork this repository
 
-### 2. Add the Parallel AI API key secret
+### 2. Add your Parallel AI API key
 
-In your fork: **Settings → Secrets and variables → Actions → New repository secret**
+**Settings → Secrets and variables → Actions → New repository secret**
 
-| Secret name | Value |
+| Secret | Value |
 |---|---|
 | `PARALLEL_API_KEY` | Your key from [platform.parallel.ai](https://platform.parallel.ai) |
 
-### 3. Enable GitHub Actions
+Without this secret the pipeline still runs — it just skips the AI enrichment step.
 
-Actions → *(enable if prompted)*
+### 3. Enable GitHub Pages
 
-The workflow will run automatically every 6 hours.  
-To trigger it manually: **Actions → Zero Day Pulse → Run workflow**.
+**Settings → Pages → Source → GitHub Actions**
+
+### 4. Create the tracking issue label
+
+**Issues → Labels → New label** — name: `zero-day-pulse`, color: `#e11d48`
+
+### 5. Trigger the first run
+
+**Actions → Zero Day Pulse → Run workflow**
+
+Your dashboard will be live at `https://<your-username>.github.io/zero-day-pulse/`.
 
 ---
 
 ## Run locally
 
 ```bash
+git clone https://github.com/peleduri/zero-day-pulse
+cd zero-day-pulse
 pip install -r requirements.txt
 
-# Without enrichment (no API key needed)
+# No API key needed — skips enrichment
 python main.py --skip-enrichment --lookback-hours 48
 
 # With Parallel AI enrichment
@@ -90,41 +127,60 @@ python main.py --lookback-hours 24 --max-enrich 10
 
 Reports are written to `reports/latest.md` and `reports/latest.json`.
 
----
+### CLI options
 
-## Report format
-
-Each finding includes:
-
-- **Severity badge** — 🔴 CISA KEV / 🟠 Zero-Day / 🟡 High Severity
-- CVE IDs, source feed, published date
-- Original summary from the feed
-- **Parallel AI enrichment** (when `PARALLEL_API_KEY` is set):
-  - Technical details of the exploit mechanism
-  - Affected products & versions
-  - CVSS score & vector
-  - PoC / exploit availability
-  - Patch status
-  - Active exploitation evidence
-  - Known threat actors
-  - Mitigation advice
-  - Vendor advisory link
+| Flag | Default | Description |
+|---|---|---|
+| `--lookback-hours` | `24` | How far back to collect entries |
+| `--max-enrich` | `10` | Max findings to enrich with Parallel AI |
+| `--output-dir` | `reports` | Output directory for reports |
+| `--skip-enrichment` | off | Skip Parallel AI enrichment |
 
 ---
 
-## Options
+## Project structure
 
 ```
-python main.py --help
-
-  --lookback-hours  Hours to look back for new vulnerabilities (default: 24)
-  --max-enrich      Max findings to enrich with Parallel AI (default: 10)
-  --output-dir      Directory to write reports into (default: reports)
-  --skip-enrichment Skip Parallel AI enrichment
+zero-day-pulse/
+├── .github/workflows/
+│   └── zero-day-pulse.yml   # Scheduled GitHub Action (every 6h)
+├── config/
+│   └── feeds.yaml           # Feed URLs and zero-day keywords
+├── pulse/
+│   ├── feeds.py             # RSS/Atom + CISA KEV collection
+│   ├── filter.py            # Zero-day signal detection & dedup
+│   ├── enrich.py            # Parallel AI CLI enrichment wrapper
+│   └── report.py            # HTML dashboard + MD/JSON generation
+├── docs/
+│   └── index.html           # GitHub Pages dashboard (auto-generated)
+├── reports/
+│   ├── latest.md            # Latest report (Markdown)
+│   └── latest.json          # Latest report (JSON)
+└── main.py                  # CLI entry point
 ```
+
+---
+
+## Security
+
+This tool fetches content from external sources and renders it publicly. The following mitigations are in place:
+
+- **XSS**: All external content is HTML-escaped before rendering; `javascript:` and `data:` URL schemes are blocked
+- **XML bomb / XXE**: Feed parsing uses [`defusedxml`](https://github.com/tiran/defusedxml)
+- **Supply chain**: All GitHub Actions are pinned to immutable commit SHAs; Python dependencies are pinned with `==`
+- **Shell injection**: `workflow_dispatch` inputs are passed via environment variables, never interpolated into shell commands
+- **Secrets**: `PARALLEL_API_KEY` is handled exclusively via GitHub Actions secrets — never logged or committed
+
+---
+
+## Contributing
+
+Pull requests are welcome. To add a new feed, edit [`config/feeds.yaml`](config/feeds.yaml) — no Python changes needed. To add new zero-day keywords, update the `zero_day_keywords` list in the same file.
+
+Please open an issue before submitting large changes.
 
 ---
 
 ## License
 
-MIT
+[MIT](LICENSE) — free to fork, modify, and run your own instance.
