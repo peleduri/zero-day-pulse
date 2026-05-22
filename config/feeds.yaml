@@ -79,6 +79,51 @@ feeds:
     url: https://snyk.io/blog/feed/
     tags: [cloud, container, dependencies, oss]
 
+  # ── AI agents, coding tools & IDE security ───────────────────────────────
+  - name: Embrace The Red (Prompt Injection Research)
+    url: https://embracethered.com/blog/index.xml
+    tags: [ai, prompt-injection, agent, research]
+
+  - name: Simon Willison's Blog
+    url: https://simonwillison.net/atom/entries/
+    tags: [ai, llm, agent, research]
+
+  - name: Protect AI Blog
+    url: https://protectai.com/blog/rss.xml
+    tags: [ai, mlsec, research]
+
+  - name: Trail of Bits Blog
+    url: https://blog.trailofbits.com/feed
+    tags: [ai, research, audit]
+
+  - name: HuggingFace Blog
+    url: https://huggingface.co/blog/feed.xml
+    tags: [ai, ml, model, supply-chain]
+
+  - name: LangChain Blog
+    url: https://blog.langchain.dev/rss/
+    tags: [ai, agent, framework]
+
+  - name: OpenAI News
+    url: https://openai.com/news/rss/
+    tags: [ai, llm, safety]
+
+  - name: Anthropic News
+    url: https://www.anthropic.com/rss.xml
+    tags: [ai, llm, safety]
+
+  - name: JetBrains Security Blog
+    url: https://blog.jetbrains.com/tag/security/feed/
+    tags: [ide, jetbrains, plugin]
+
+  - name: VS Code Release Notes
+    url: https://code.visualstudio.com/feed.xml
+    tags: [ide, vscode, extension]
+
+  - name: Checkmarx Research
+    url: https://checkmarx.com/blog/feed/
+    tags: [ai, supply-chain, oss, sast]
+
   # ── Security news ─────────────────────────────────────────────────────────
   - name: SANS Internet Storm Center
     url: https://isc.sans.edu/rssfeed_full.xml
@@ -137,6 +182,17 @@ zero_day_keywords:
   - abuse in the wild
   - attackers are exploiting
   - threat actors exploiting
+  # AI / agent exploitation signals
+  - prompt injection
+  - indirect prompt injection
+  - tool poisoning
+  - agent hijacking
+  - jailbreak
+  - system prompt leak
+  - model exfiltration
+  - malicious extension
+  - malicious plugin
+  - malicious mcp
 
 high_severity_keywords:
   # Generic severity signals
@@ -183,5 +239,28 @@ high_severity_keywords:
   - image poisoning
   - dependency confusion
   - typosquatting
+  # AI / coding agent signals
+  - mcp server
+  - mcp vulnerability
+  - ai agent
+  - copilot
+  - cursor
+  - codeium
+  - github copilot
+  - vscode extension
+  - jetbrains plugin
+  - ide extension
+  - rag poisoning
+  - context injection
+  - shadow prompt
+  - training data poisoning
+  - model backdoor
+  - pickle exploit
+  - unsafe deserialization
+  - jupyter
+  - notebook execution
+  - ai supply chain
+  - llm vulnerability
+  - embedding attack
 
 cisa_kev_url: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json

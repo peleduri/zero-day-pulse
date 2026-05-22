@@ -93,6 +93,21 @@ RSS feeds + CISA KEV
 | [CrowdStrike](https://www.crowdstrike.com/blog/) | RSS | Cloud threat intel |
 | [Tenable](https://www.tenable.com/blog) | RSS | Cloud vulnerability research |
 
+### AI agents, coding tools & IDE extensions
+| Source | Type | Signal |
+|---|---|---|
+| [Embrace The Red](https://embracethered.com) | RSS | ⭐ Prompt injection & agent attacks |
+| [Simon Willison](https://simonwillison.net) | Atom | LLM security research |
+| [Protect AI](https://protectai.com/blog) | RSS | MLSecOps research |
+| [Trail of Bits](https://blog.trailofbits.com) | RSS | AI/ML security audits |
+| [HuggingFace Blog](https://huggingface.co/blog) | RSS | Model & supply chain issues |
+| [LangChain Blog](https://blog.langchain.dev) | RSS | Agent framework security |
+| [OpenAI News](https://openai.com/news) | RSS | LLM safety & security |
+| [Anthropic News](https://www.anthropic.com/news) | RSS | LLM safety & security |
+| [JetBrains Security](https://blog.jetbrains.com/tag/security/) | RSS | IDE plugin vulnerabilities |
+| [VS Code](https://code.visualstudio.com) | RSS | Extension & IDE security |
+| [Checkmarx Research](https://checkmarx.com/blog) | RSS | AI supply chain & SAST |
+
 ### Security news
 | Source | Type | Signal |
 |---|---|---|
