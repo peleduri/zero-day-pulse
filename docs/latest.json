@@ -1,8 +1,8 @@
 {
-  "generated": "2026-05-23T01:55:00.564906+00:00",
-  "total": 20,
+  "generated": "2026-05-23T08:05:59.230858+00:00",
+  "total": 21,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 14,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,45 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE\u20112024\u201157727 is an unauthenticated path\u2011traversal vulnerability in SimpleHelp that allows attackers to download arbitrary files from the server (e.g., serverconfig.xml containing hashed passwords). Exploitation can lead to full server compromise, especially when combined with other SimpleHelp flaws such as arbitrary file upload and privilege escalation.",
-        "affected_products": "SimpleHelp versions 5.5.7 and earlier (including v5.5, v5.4 up to 5.4.9, v5.3 up to 5.3.8)",
-        "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "true - https://horizon3.ai/attack-research/disclosures/critical-vulnerabilities-in-simplehelp-remote-support-software/",
-        "patch_available": "true - https://simple-help.com/kb---security-vulnerabilities-01-2025",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors, including groups such as DragonForce as reported by Sophos",
-        "mitigation": "Upgrade immediately to patched SimpleHelp versions (v5.5.8, v5.4.10, v5.3.9); isolate or stop internet\u2011exposed SimpleHelp instances; hunt for compromise indicators such as unexpected API tokens and suspicious executables; apply vendor\u2011provided patches; follow CISA mitigation guidance if patching is not immediately possible.",
-        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
+        "technical_details": "Path traversal vulnerabilities in SimpleHelp RMM allow unauthenticated remote attackers to retrieve sensitive files (logs, configs, credentials) and potentially move laterally to compromise downstream customers.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) versions 5.5.7 and earlier",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "Public PoCs and walkthroughs are available (e.g., TryHackMe and Medium articles).",
+        "patch_available": "Patch availability unclear; no official patch URL available.",
+        "active_exploitation": "Confirmed active exploitation reported by CISA and security vendors; ransomware actors leveraged unpatched SimpleHelp RMM in the wild.",
+        "threat_actors": "Ransomware actors (unspecified groups)",
+        "mitigation": "Apply vendor updates if available; isolate/unplug affected RMM servers from internet; block or monitor SimpleHelp default ports; enforce network segmentation, multi\u2011factor authentication, rotate credentials, implement endpoint detection and response, and maintain regular backups.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
+    },
+    {
+      "id": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+      "title": "Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added a recently patched critical security flaw impacting Drupal Core to its Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation.\n\nThe vulnerability in question is CVE-2026-9082 (CVSS score: 6.5), an SQL injection vulnerability affecting all supported versions of Drupal Core.\n\n\"Drupal Core",
+      "link": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+      "published": "2026-05-23T07:23:48+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-9082"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "SQL injection in Drupal Core database abstraction layer allows an unauthenticated attacker to send specially crafted requests, resulting in arbitrary SQL execution on sites using PostgreSQL.",
+        "affected_products": "Drupal Core (all supported versions) \u2013 PostgreSQL-backed installations",
+        "cvss_score": "6.5",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+        "exploit_available": "Public PoC and exploit reports published; example: https://www.tenable.com/blog/cve-2026-9082-highly-critical-sql-injection-vulnerability-in-drupal-core-sa-core-2026-004",
+        "patch_available": "Yes \u2014 official Drupal patch available in SA-CORE-2026-004: https://www.drupal.org/sa-core-2026-004",
+        "active_exploitation": "Confirmed active exploitation; reported by CISA KEV catalog and The Hacker News article.",
+        "threat_actors": "None known",
+        "mitigation": "Apply the SA-CORE-2026-004 patch immediately; temporarily restrict public access, deploy WAF rules to block exploit patterns, and audit PostgreSQL\u2011backed sites.",
+        "vendor_advisory": "https://www.drupal.org/sa-core-2026-004"
       }
     },
     {
@@ -50,15 +79,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Attackers exploited a pull_request_target misconfiguration in the aquasecurity/trivy-action to run malicious code during CI runs. The injected malware (TeamPCP Cloud stealer) captured runner memory, harvested SSH, cloud, and Kubernetes secrets, encrypted the data with AES\u2011256+RSA\u20114096, and exfiltrated it. Using the stolen credentials, they published malicious LiteLLM versions 1.82.7 and 1.82.8 to PyPI, enabling further compromise.",
-        "affected_products": "aquasecurity/trivy-action (GitHub Action), LiteLLM 1.82.7, LiteLLM 1.82.8, zizmor",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "A `pull_request_target` workflow misconfiguration let untrusted code execute with access to repository and organization secrets. Attackers used stolen CI credentials to force\u2011push malicious tags to `aquasecurity/trivy-action` and `aquasecurity/setup-trivy`, and published litellm PyPI versions 1.82.7/1.82.8 containing malicious payloads. The pre\u2011hardening version of zizmor could not correctly analyze YAML anchors, missing the misconfiguration.",
+        "affected_products": "aquasecurity/trivy-action (multiple malicious tags), aquasecurity/setup-trivy, litellm PyPI packages versions 1.82.7 and 1.82.8, zizmor (pre\u20112026\u201105\u201122 version)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Update zizmor to the latest version with full YAML anchor support; avoid using pull_request_target in GitHub Actions; enforce least\u2011privilege CI/CD credentials; monitor for unauthorized PyPI package releases; rotate any compromised secrets immediately.",
+        "exploit_available": "No public PoC is publicly released; the exploitation was observed through malicious litellm packages (see Trend Micro report).",
+        "patch_available": "Trail of Bits released a hardened version of zizmor with fixes (see https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/). No official vendor patch for the GitHub Actions platform.",
+        "active_exploitation": "Confirmed active exploitation reported by the Trivy advisory and Trend Micro/Snyk analyses.",
+        "threat_actors": "TeamPCP",
+        "mitigation": "Avoid using `pull_request_target` with untrusted code, restrict secret and token permissions, rotate any compromised credentials, remove or replace malicious Git tags, verify published packages (especially litellm), and run the hardened zizmor release for static analysis. Apply least\u2011privilege principles to actions and OIDC tokens.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -78,16 +107,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) \u2013 attackers place malicious instructions or payloads in web content, comments, or other untrusted inputs which AI agents ingest; when agents incorporate that content into their context or execution (e.g., code\u2011review actions, agent plugins), injected instructions can override intended prompts or cause unauthorized actions (\"Comment and Control\" is an example exploiting AI agents' elevated access).",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect Prompt Injection (IPI) involves adversarial content on web pages or third\u2011party artifacts (e.g., comments, GitHub Action messages) that AI agents ingest, causing the agents to execute injected instructions. The \"Comment and Control\" technique weaponizes an AI agent's elevated access to process untrusted user data.",
+        "affected_products": "Claude Code (versions prior to fixed releases)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Treat external/untrusted content as adversarial input; apply input sanitization and filtering, implement strict prompt/role separation and safety policies, least\u2011privilege for agent actions, on\u2011model mitigations (e.g., model\u2011level instruction resistance), runtime checks and human\u2011in\u2011the\u2011loop for high\u2011risk actions, restrict agent access to code execution or secrets, and patch vendor components when advisories are issued.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "exploit_available": "Public proof\u2011of\u2011concepts are described in the SentinelOne vulnerability database and The Hacker News article.",
+        "patch_available": "A patch has been released for Anthropic's Claude Code; details at https://www.anthropic.com/security.",
+        "active_exploitation": "Confirmed active exploitation has been reported in the wild, as described in the Google Security Blog.",
+        "threat_actors": "None known",
+        "mitigation": "Harden agents by filtering untrusted content, limiting agent privileges, sandboxing, using allowlists, and monitoring. Anthropic has published a patch for Claude Code.",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -106,16 +135,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection works by embedding malicious instructions into auxiliary data sources or tool outputs that the LLM consumes, causing the model to execute those instructions as part of its response generation.",
-        "affected_products": "Google Workspace (Gemini integration)",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect prompt injection (IPI) occurs when malicious instructions are injected into data sources or tools the LLM consults while fulfilling a user query (e.g., documents, web content, plugins). The LLM can be influenced to follow injected instructions because those instructions appear in contextual input or tool outputs, sometimes without explicit user input. IPI is an architectural/behavioral threat requiring layered mitigations rather than a single patch.",
+        "affected_products": "Google Workspace (Gemini in Workspace, Gemini\u2011powered apps)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "exploit_available": "No public proof-of-concept or weaponized exploit for this specific Google advisory.",
+        "patch_available": "No vendor patch (IPI is an application/architecture threat rather than a software bug).",
+        "active_exploitation": "Reports of IPI\u2011style attacks in the wild have been published, but no public reports attribute active exploitation specifically to this Google advisory at time of publication.",
         "threat_actors": "None known",
-        "mitigation": "Implement continuous monitoring of data sources, enforce strict content filtering for LLM inputs, and restrict or audit automated agentic actions within Workspace.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
+        "mitigation": "Layered defenses as recommended by Google: (1) input/data provenance and filtering, (2) instruction/context attribution and strict prompt engineering, (3) tool/data access controls and least privilege, (4) model-level instruction filters and refusal behaviors, (5) detection/monitoring and human\u2011in\u2011the\u2011loop review for high\u2011risk actions, (6) content validation and canonicalization of external data sources.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
       }
     },
     {
@@ -134,16 +163,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The primary new threat facing all agentic browsers is indirect prompt injection\u2014malicious instructions hidden in web content (pages, iframes, user\u2011generated content) that can influence an agentic model to take unwanted actions (e.g., financial transactions or data exfiltration). Chrome limits model exposure with origin gating, uses a separate User Alignment Critic to vet actions, runs a real\u2011time prompt\u2011injection classifier, enforces deterministic checks on model\u2011generated URLs, and requires user confirmations for sensitive actions.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect prompt injection occurs when malicious content on a website, iframe, or user\u2011generated input injects instructions that cause the AI agent to perform unintended actions such as financial transactions or data exfiltration. The injected prompt is treated as part of the agent\u2019s planning input, leading it to execute the attacker\u2011supplied commands.",
+        "affected_products": "Chrome (agentic browsing feature), Gemini in Chrome",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "No public proof-of-concept exploit is known.",
+        "patch_available": "No traditional patch has been released; security is addressed via architectural mitigations described in the vendor advisory.",
+        "active_exploitation": "No confirmed active exploitation of Chrome\u2019s agentic browsing feature has been reported.",
         "threat_actors": "None known",
-        "mitigation": "Key mitigations include: a User Alignment Critic that vets agent actions; origin gating (Origin Sets) to restrict readable/writable origins; a real\u2011time prompt\u2011injection classifier; deterministic checks on model\u2011generated URLs; mandatory user confirmations and transparent work\u2011log for critical steps; continuous red\u2011teaming, monitoring and response; and updated Vulnerability Rewards Program (VRP) guidance for reporting agentic\u2011capability vulnerabilities.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "mitigation": "Deploy a user\u2011alignment critic model isolated from untrusted content to vet agent actions; extend Chrome\u2019s origin\u2011isolation into \u2018Agent Origin Sets\u2019 to limit accessible origins; require explicit user confirmation for sensitive actions (banking, medical sites, password manager, purchases); run a real\u2011time prompt\u2011injection classifier in parallel with the planning model; continuously red\u2011team with generated malicious sites.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
     {
@@ -162,16 +191,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A linear buffer overflow in unsafe Rust code of the CrabbyAVIF image decoder could overwrite adjacent memory. Android\u2019s Scudo hardened allocator placed guard pages around secondary allocations, making the overflow non\u2011exploitable.",
-        "affected_products": "Android platform (CrabbyAVIF component)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2013 https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
-        "active_exploitation": "Active exploitation status unknown.",
+        "technical_details": "Race condition in Rust\u2011based Android Binder (rust_binder) unsafe block removing nodes from a linked death_list without proper synchronization leading to linked\u2011list corruption, kernel panics and local denial\u2011of\u2011service.",
+        "affected_products": "Linux kernel 6.18+ with Rust Binder driver enabled (CONFIG_ANDROID_BINDER_IPC_RUST=y); some Android downstream kernels with Rust Binder backports",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "No public PoC known; no evidence of exploitation in the wild as of reports.",
+        "patch_available": "Official patches available (Linux kernel fixes referenced in advisories). See kernel patch links in advisories.",
+        "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Update Android devices to the security patch level 2025-11-01 or later, which includes the CrabbyAVIF fix (link above). If immediate update is not possible, ensure Scudo is enabled to retain the non\u2011exploitable state.",
-        "vendor_advisory": "https://source.android.com/security/bulletin/2025-11-01"
+        "mitigation": "Apply official kernel patches or rebuild kernels without CONFIG_ANDROID_BINDER_IPC_RUST; restrict local access and monitor logs for rust_binder crashes. Scudo allocator reduces exploitability for buffer\u2011overflow issues in other Rust components.",
+        "vendor_advisory": "https://blog.google/security/rust-in-android-move-fast-fix-things/"
       }
     },
     {
@@ -190,15 +219,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection \u2014 hidden malicious instructions embedded in external data sources (emails, documents, calendar invites, web content) that instruct generative AI systems to exfiltrate data or perform unauthorized actions; attack leverages AI systems that ingest multiple external data sources without adequate provenance, policy enforcement, or context isolation.",
+        "technical_details": "Indirect prompt injections embed hidden malicious instructions within external data sources that are later incorporated into AI prompts, leading to unauthorized actions such as data exfiltration or command execution.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "exploit_available": "No public proof\u2011of\u2011concept exploit is known for this vulnerability.",
+        "patch_available": "No official patch has been released for this vulnerability.",
+        "active_exploitation": "No confirmed active exploitation has been reported for this vulnerability.",
         "threat_actors": "None known",
-        "mitigation": "Layered defense strategy: provenance and source validation, content sanitization/filters, strict policy enforcement and action gating, least\u2011privilege for data access, telemetry and anomaly detection, and user confirmations for high\u2011risk actions. Use model\u2011restricted action interfaces and deny unsafe content by default.",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -217,16 +246,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state\u2011sponsored actors infiltrated and backdoored major telecom routers and leveraged compromised devices and trusted connections to pivot, modify routers for persistent long\u2011term access to networks.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Actors modify router configurations for lateral movement and use virtualized containers on network devices to evade detection, leveraging publicly known CVEs in Cisco IOS/IOS XE and Ivanti products to gain initial access.",
+        "affected_products": "Cisco IOS XE, Cisco IOS, Ivanti",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon (UNCXXXXX), OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Inventory SD\u2011WAN and router devices; apply vendor updates; isolate and rebuild compromised devices; rotate credentials; implement network segmentation and monitoring per CISA guidance.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponised exploit is referenced in the advisory.",
+        "patch_available": "Patches have been released by the affected vendors (Cisco, Ivanti); see the advisory for details.",
+        "active_exploitation": "Confirmed active exploitation has been reported; the advisory includes IOCs and notes that the actors are currently exploiting the listed CVEs.",
+        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
+        "mitigation": "Prioritize patching, disable unused ports/protocols, harden credentials, monitor firmware/software integrity, and follow Cisco Guest Shell mitigation and hardening guides.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -244,17 +273,34 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "GRU Unit 26165 conducts espionage by abusing spear\u2011phishing and malicious calendar invites to trigger Outlook NTLM relay (CVE\u20112023\u201123397), delivering arbitrary code via crafted WinRAR archives (CVE\u20112023\u201138831), and exploiting XSS/command execution flaws in Roundcube Webmail (CVE\u20112020\u201112641, CVE\u20112020\u201135730, CVE\u20112021\u201144026). Compromised systems are leveraged with native tools (Impacket, PsExec, Certipy) for lateral movement, Active Directory data exfiltration, and credential theft, while vulnerable SOHO devices and VPNs provide footholds.",
-        "affected_products": "IP camera brands/models (various), RARLAB WinRAR (CVE-2023-38831), Roundcube Webmail (CVE-2020-12641, CVE-2020-35730, CVE-2021-44026), Microsoft Outlook (CVE-2023-23397), exposed VPN infrastructure, corporate VPNs, SOHO device models",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true - https://aka.ms/CVE-2023-23397ScriptDoc",
-        "patch_available": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
-        "active_exploitation": "true",
-        "threat_actors": "GRU Unit 26165 (APT28 / Fancy Bear / Forest Blizzard / Blue Delta)",
-        "mitigation": "Apply vendor patches and firmware updates; disable or harden NTLM and legacy protocols; harden email infrastructure and monitor for NTLM relay and suspicious calendar invites; implement network segmentation and Zero Trust controls; restrict RDP/VPN access and monitor logs; disable remote access on IP cameras, update firmware, and place cameras behind firewalls.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+        "technical_details": "GRU Unit 26165 conducted spearphishing with malicious links to fake login pages, performed credential\u2011guessing/password spraying, exploited internet\u2011facing services and known CVEs (Outlook NTLM CVE\u20112023\u201123397, WinRAR CVE\u20112023\u201138831, Roundcube CVEs) to harvest NTLM hashes, access mailboxes, and move laterally using tools such as Impacket, PsExec, RDP, Certipy, and OpenSSH; they also manipulated mailbox permissions for sustained email collection and exfiltrated data via OpenSSH or attacker infrastructure.",
+        "affected_products": "WinRAR (CVE-2023-38831), Microsoft Outlook/Exchange (CVE-2023-23397), Roundcube Webmail (CVE-2020-12641, CVE-2020-35730, CVE-2021-44026), IP camera firmware (various vendor\u2011specific CVEs)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Yes \u2013 CISA reports that the actors weaponized Outlook NTLM (CVE\u20112023\u201123397) and other listed CVEs in the campaign.",
+        "patch_available": "No single vendor patch for this advisory; apply vendor/maintainer patches and updates for the affected products (see vendor CVE advisories).",
+        "active_exploitation": "Confirmed \u2013 CISA reports active exploitation in this espionage campaign, including weaponized use of CVE\u20112023\u201123397 and other CVEs.",
+        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165 \u2013 tracked as APT28 / Fancy Bear / Forest Blizzard / Blue Delta.",
+        "mitigation": "Apply vendor patches/firmware updates; enable EDR and monitoring on mail servers and domain controllers; block and alert on NTLM/SMB traffic to external hosts; enable Windows attack surface reduction rules and executable allow\u2011listing; implement network segmentation and zero\u2011trust principles; harden and update IP cameras and disable unnecessary remote access; collect and monitor Windows logs and alert on suspicious use of legitimate utilities.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
+    },
+    {
+      "id": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
+      "title": "LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root",
+      "summary": "A maximum-severity security vulnerability impacting LiteSpeed User-End cPanel Plugin has come under active exploitation in the wild.\n\nThe flaw, tracked as CVE-2026-48172 (CVSS score: 10.0), relates to an instance of incorrect privilege assignment that an attacker could abuse to run arbitrary scripts with elevated permissions.\n\n\"Any cPanel user (including an attacker or a compromised account) may",
+      "link": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
+      "published": "2026-05-23T07:35:13+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-48172"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/trend-micro-warns-of-apex-one-zero-day-exploited-in-attacks/",
@@ -269,19 +315,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "A directory traversal vulnerability in the on\u2011premises Apex One server allows a pre\u2011authenticated attacker with access to the Apex One Server to modify key server files/tables enabling code injection or malicious modifications.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://success.trendmicro.com/en-US/solution/KA-0023430",
-        "active_exploitation": "true \u2014 Bleeping Computer, SecurityWeek, SecurityAffairs, CISA",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Apply Trend Micro\u2019s vendor updates/patches; restrict network access to Apex One Server, harden server access, monitor logs for suspicious file modifications.",
-        "vendor_advisory": "https://success.trendmicro.com/en-US/solution/KA-0023430"
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://unit42.paloaltonetworks.com/roadtools-cloud-attacks/",
@@ -420,23 +454,6 @@
       ],
       "cve_ids": [
         "CVE-2026-46717"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html",
-      "title": "CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Langflow and Trend Micro Apex One to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities in question are listed below -\n\n\n  CVE-2025-34291 (CVSS score: 9.4) - An origin validation error vulnerability in Langflow that could",
-      "link": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html",
-      "published": "2026-05-22T05:47:33+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2025-34291"
       ],
       "is_zero_day": false,
       "is_high_severity": true
