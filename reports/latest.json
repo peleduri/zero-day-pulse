@@ -1,6 +1,6 @@
 {
-  "generated": "2026-05-23T18:55:24.340076+00:00",
-  "total": 17,
+  "generated": "2026-05-24T02:01:27.238744+00:00",
+  "total": 11,
   "kev": 0,
   "zero_day": 10,
   "enriched": 10,
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "SimpleHelp remote support software (v5.5.7 and earlier) is vulnerable to path\u2011traversal (CWE\u201122). An attacker can send a specially crafted HTTP request to retrieve arbitrary files from the server without authentication.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management, versions 5.5.7 and earlier",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC available at https://github.com/imjdl/CVE-2024-57727",
-        "patch_available": "Patch available: SimpleHelp version 5.5.8 fixes the CVE\u20112024\u201157727 issue. Download from the vendor KB page.",
-        "active_exploitation": "Confirmed active exploitation: CISA lists CVE\u20112024\u201157727 in its KEV catalog and reports ransomware actors (DragonForce) leveraging unpatched SimpleHelp instances.",
-        "threat_actors": "DragonForce ransomware group",
-        "mitigation": "Apply SimpleHelp version 5.5.8 immediately. Until patched, isolate SimpleHelp servers, restrict inbound/outbound network traffic, and conduct threat\u2011hunting for signs of compromise as recommended by CISA.",
-        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
+        "technical_details": "CVE-2024-57727 is a path traversal vulnerability in SimpleHelp 5.5.7 and earlier that permits unauthenticated attackers to read sensitive files (logs, configs, credentials) and potentially gain elevated access to the application, enabling downstream compromise.",
+        "affected_products": "SimpleHelp Remote Support (versions 5.5.7 and earlier)",
+        "cvss_score": "7.5",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "Public proof\u2011of\u2011concept and weaponized exploit activity reported; see SecurityWeek article.",
+        "patch_available": "Vendor released patched versions (post\u20115.5.7); see vendor advisory URL.",
+        "active_exploitation": "Confirmed active exploitation in the wild reported by CISA and security media.",
+        "threat_actors": "DragonForce ransomware operators and other generic ransomware actors",
+        "mitigation": "Immediately update SimpleHelp to a patched version (post\u20115.5.7), do not expose instances to the Internet, apply vendor\u2011provided mitigations, restrict network access to management interfaces, rotate any credentials exposed in logs or configuration files, and monitor for indicators of compromise per CISA guidance.",
+        "vendor_advisory": "https://guides.simple-help.com/kb---security-vulnerabilities-01-2025"
       }
     },
     {
@@ -51,15 +51,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "SQL injection in Drupal Core database abstraction API allowing specially crafted requests to cause arbitrary SQL injection on sites using PostgreSQL, leading to data disclosure and potential privilege escalation or RCE.",
-        "affected_products": "Drupal core versions >=8.9.0 <10.4.10, >=10.5.0 <10.5.10, >=10.6.0 <10.6.9, >=11.0.0 <11.1.10, >=11.2.0 <11.2.12, >=11.3.0 <11.3.10",
+        "technical_details": "An SQL injection in Drupal Core\u2019s database abstraction/entity query handling that allows unauthenticated attackers to inject SQL against PostgreSQL\u2011backed sites, leading to data disclosure or modification.",
+        "affected_products": "Drupal Core versions from 8.9.0 before 10.4.10, from 10.5.0 before 10.5.10, from 10.6.0 before 10.6.9, from 11.0.0 before 11.1.10, from 11.2.0 before 11.2.12, from 11.3.0 before 11.3.10",
         "cvss_score": "6.5",
         "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-        "exploit_available": "Public exploit/PoC observed in the wild as probe/attack attempts; Imperva reported >15,000 attack attempts across ~6,000 sites. No confirmed publicly\u2011published full weaponized PoC URL.",
-        "patch_available": "Yes \u2014 Drupal released patched versions (11.3.10, 11.2.12, 11.1.10, 10.6.9, 10.5.10, 10.4.10) and manual patches for older branches (9.5 and 8.9). See vendor advisory.",
-        "active_exploitation": "Yes \u2014 CISA added CVE\u20112026\u20119082 to the KEV catalog based on evidence of active exploitation; Drupal acknowledged exploit attempts; Imperva reported widespread probing activity.",
+        "exploit_available": "Public proof\u2011of\u2011concept/working exploit reported (research writeups and PoC published) \u2013 examples: https://miggo.io/post/the-death-of-patch-first-exploiting-and-mitigating-drupal-cve-2026-9082-under-60-minutes, https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+        "patch_available": "Yes \u2013 official Drupal security advisory with patches: https://www.drupal.org/sa-core-2026-004",
+        "active_exploitation": "Confirmed \u2013 CISA added CVE\u20112026\u20119082 to its KEV catalog based on evidence of active exploitation.",
         "threat_actors": "None known",
-        "mitigation": "Immediately apply vendor updates or manual patches; if using PostgreSQL, prioritize updates. Review Twig/Symfony dependency updates and restrict who can update Twig templates; monitor logs and block probing IPs; isolate vulnerable sites until patched.",
+        "mitigation": "Apply vendor patches immediately; if unable to patch, disable or restrict access to vulnerable endpoints, implement Web Application Firewall rules to block suspicious entity\u2011query parameters, and restrict external access to the site until patched.",
         "vendor_advisory": "https://www.drupal.org/sa-core-2026-004"
       }
     },
@@ -79,16 +79,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) \u2013 adversaries seed malicious instructions in public web content (hidden page text, comments, repository files, etc.) that AI agents which browse or ingest that content may execute, leading to secret leakage, policy bypasses, or undesired actions.",
-        "affected_products": "AI agents/systems that ingest untrusted web content (general class) \u2014 specific products/versions not listed",
-        "cvss_score": "-1.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "No public PoC or weaponized exploit detailed in the advisory; exploit availability not reported",
-        "patch_available": "No vendor patch for \u2018IPI\u2019 as it is an attack class rather than a single product vulnerability; vendor advisory URL provided above.",
-        "active_exploitation": "Google Threat Intelligence observed real\u2011world IPI attempts on public web pages during their sweep; active exploitation reported as observed attempts.",
+        "technical_details": "Indirect Prompt Injection (IPI): attackers embed malicious instructions into web content (HTML, text, hidden code) that AI agents may consume when crawling or summarizing pages; when parsed by an AI agent, these instructions can cause data exfiltration, destructive commands, or manipulation of outputs. Detection is hampered by benign uses of similar text and false positives; attacks observed include invisible/injected prompts, SEO manipulations, infinite-stream traps, and low-sophistication exfiltration attempts.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public PoC or weaponized exploit reported for the IPI examples identified by Google; research indicates attackers are experimenting but not widely productionized (no PoC URL).",
+        "patch_available": "Vendors (e.g., Google, Microsoft, Anthropic) have issued mitigations/patches for specific prompt\u2011injection issues in recent months; for this Google blog entry there is no single vendor advisory URL. Microsoft assigned CVE-2026-21520 to a Copilot Studio issue and patched it (see vendor advisories).",
+        "active_exploitation": "Google\u2019s analysis found experimental/malicious IPI instances on the public web but no evidence of large\u2011scale, highly sophisticated, productionized exploitation; trend shows a 32% relative increase in malicious detections between Nov 2025 and Feb 2026, indicating growing interest and likely future escalation.",
         "threat_actors": "None known",
-        "mitigation": "Harden agents: restrict browsing of untrusted web content; apply content sanitization and canonicalization; implement instruction\u2011following constraints and provenance checks; use allowlists and denylisting for sources; rate\u2011limit and monitor; apply output filtering and secret redaction.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "mitigation": "Layered defenses: input filtering and pattern matching, LLM-based intent classification, human review for high-risk cases, product hardening by vendors (model- and agent-level safeguards), AI Vulnerability Reward Programs to surface issues, and monitoring/common-crawl scanning to detect campaign activity.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -107,16 +107,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when an attacker injects malicious instructions into data or tools that an LLM ingests (web content, documents, connectors, or tool outputs), causing the model or agentic workflows to perform unintended actions or reveal sensitive data without direct user input.",
-        "affected_products": "Gemini (in Workspace) and Google Workspace apps that integrate Gemini",
-        "cvss_score": "-9999.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept or weaponized exploit known.",
-        "patch_available": "Patch not applicable; mitigation guidance provided in vendor advisory: https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/",
-        "active_exploitation": "Reports indicate growing occurrence of IPI probes and opportunistic payloads in the wild but no confirmed large\u2011scale successful exploitation campaigns tied to named threat actor groups.",
+        "technical_details": "Indirect prompt injection (IPI) occurs when malicious instructions are embedded within data or secondary tools (documents, web content, plug\u2011ins, etc.) consumed by an LLM\u2011enabled system; the attacker\u2019s content causes the model or agentic automation to follow unintended instructions without direct user input.",
+        "affected_products": "Google Workspace (features integrating Gemini and multi\u2011source AI tools)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "No public PoC or weaponized exploit reported",
+        "patch_available": "No single patch; vendor guidance and ongoing mitigations documented at the advisory URL above",
+        "active_exploitation": "No confirmed widespread active exploitation reported; Google has observed increasing malicious IPI attempts on public web content but notes sophistication remains low",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses including input/source provenance and trust checks, content sanitization and quarantine, tool and connector hardening, strict access controls and least privilege, human review for high\u2011risk actions, continuous monitoring and anomaly detection, and model\u2011level instruction filtering and guardrails.",
-        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+        "mitigation": "Layered defenses including input provenance and integrity controls, model instruction filtering, content\u2011classification and sanitization, limiting agentic tool access, runtime checks and human review/approval workflows; continuous monitoring and threat analysis.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -135,16 +135,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The primary new threat is \"indirect prompt injection,\" where web content can influence an agentic browser's internal prompts or agent instructions via indirect channels (e.g., content that is not a direct instruction but is interpreted by agents), enabling malicious sites to cause unsafe agent actions or data exfiltration. Google described layered defenses including prompt\u2011sourcing restrictions, origin access controls, and an additional supervisory agent to validate actions.",
-        "affected_products": "Chrome (agentic/Gemini-enabled browsing features)",
+        "technical_details": "Indirect prompt injection\u2014malicious site or third\u2011party content provides instructions that influence agentic AI behavior; mitigations include origin restrictions, prompt\u2011injection detection/filters, and secondary monitoring agent to prevent unsafe AI actions.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept or weaponized exploit has been reported.",
-        "patch_available": "Google described new layered defenses and design changes for agentic browsing in Chrome, which are being shipped as Chrome updates and built\u2011in mitigations in Gemini for Chrome. See advisory for details.",
-        "active_exploitation": "No confirmed active exploitation in the wild reported.",
+        "exploit_available": "None known",
+        "patch_available": "Google announced layered defenses and mitigations in Chrome for agentic/Gemini features (advisory: https://blog.google/security/architecting-security-for-agentic/)",
+        "active_exploitation": "No confirmed active exploitation of a specific CVE reported; Google and other sources have observed increasing indirect prompt\u2011injection attempts in the wild.",
         "threat_actors": "None known",
-        "mitigation": "Use the latest Chrome updates that include the new defenses; operators should restrict agent capabilities, apply origin\u2011based restrictions, validate and sanitize inputs to agents, and monitor agent actions. End users should keep Chrome up to date and avoid untrusted sites when using agentic features.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "mitigation": "Use the latest Chrome updates (contains announced defenses), restrict extensions & untrusted content, follow vendor guidance in the advisory URL.",
+        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
       }
     },
     {
@@ -163,15 +163,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A linear buffer overflow in the CrabbyAVIF library would have overwritten adjacent memory, but Android\u2019s Scudo hardened allocator placed guard pages around secondary allocations, making the overflow non\u2011exploitable.",
-        "affected_products": "Android platform (CrabbyAVIF component) \u2013 all versions receiving the patch.",
+        "technical_details": "A linear buffer overflow in the Rust\u2011implemented CrabbyAVIF image decoder could overwrite adjacent memory, but Android\u2019s Scudo hardened allocator places guard pages around secondary allocations, rendering the overflow non\u2011exploitable.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit is available.",
-        "patch_available": "https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
-        "active_exploitation": "No active exploitation has been reported.",
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is available.",
+        "patch_available": "Patch released via commit 5262cd9befecb4f8865925c23eb543f19967e050 in the Android source repository.",
+        "active_exploitation": "No active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Use Android\u2019s Scudo hardened allocator, which places guard pages around secondary allocations to prevent exploitation of buffer overflows.",
+        "mitigation": "Android\u2019s Scudo hardened allocator renders the vulnerability non\u2011exploitable by placing guard pages around secondary allocations.",
         "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
@@ -191,16 +191,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when untrusted external content (e.g., emails, documents, calendar invites, or SharePoint form fields) contains crafted instructions that are ingested into an LLM\u2019s context and interpreted as trusted system or role directives, allowing the model to execute unintended actions such as data exfiltration. The ShareLeak attack on Copilot Studio injected a payload via a SharePoint comment that concatenated with the agent\u2019s system prompt, overriding it and causing the agent to query data sources and email the results.",
-        "affected_products": "Google Gemini (Gemini app and Gemini in Workspace), Microsoft Copilot Studio",
+        "technical_details": "Indirect prompt injection involves embedding hidden malicious instructions in external data sources (emails, documents, calendar invites) that the AI model processes. When the model incorporates this data into its prompt, it may execute unintended commands, leading to actions like data exfiltration or unauthorized operations.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is publicly available.",
-        "patch_available": "Microsoft service\u2011side update (Jan 15, 2026) for Copilot Studio; Google mitigations are built into Gemini service \u2013 no separate patch required.",
-        "active_exploitation": "No confirmed widespread active exploitation has been reported.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Public proof\u2011of\u2011concepts and exploits have been observed for indirect prompt injection attacks.",
+        "patch_available": "A patch fixing the issue is available in version 1.3 (see NVD entry).",
+        "active_exploitation": "Active exploitation has been reported in 2025\u20112026 across several AI platforms.",
         "threat_actors": "None known",
-        "mitigation": "Google: layered defenses including prompt\u2011injection content classifiers, security thought reinforcement, markdown sanitization, suspicious URL redaction, user\u2011confirmation framework, and end\u2011user security notifications. Microsoft: restrict Copilot Studio access, audit environments, rotate secrets, enforce least\u2011privilege runtime controls, and apply service\u2011side remediation.",
-        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/ https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21520"
+        "mitigation": "Apply a layered defense: validate and sanitize inputs at every stage of the prompt lifecycle, enforce strict context separation between user data and prompts, and monitor AI behavior for anomalies.",
+        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
       }
     },
     {
@@ -218,16 +218,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Exploitation of publicly known CVEs in router operating systems (e.g., CVE\u20112023\u201120198, CVE\u20112018\u20110171) allows initial access; attackers then modify router configurations, employ virtualized containers on devices, and create GRE/IPsec tunnels or static routes to pivot and exfiltrate data.",
-        "affected_products": "Cisco IOS, Cisco IOS XE, Cisco NX\u2011OS, Ivanti Connect Secure, Ivanti Policy Secure, other network appliances",
+        "technical_details": "Actors gain initial access by exploiting publicly known CVEs such as CVE-2023-20198 (Cisco IOS XE web UI authentication bypass) and CVE-2018-0171 (Cisco Smart Install RCE). They achieve persistence by modifying router configurations, enabling traffic mirroring (SPAN/RSPAN/ERSPAN), configuring GRE/IPsec tunnels, creating accounts, and executing Tcl/Python scripts on the device.",
+        "affected_products": "Cisco IOS XE (CVE-2023-20198, CVE-2023-20273), Cisco Smart Install (CVE-2018-0171), Ivanti products (CVE-2024-21887)",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public tooling and PoCs (e.g., siet.py, map.tcl, tclproxy.tcl) are referenced in the advisory and CVE records.",
-        "patch_available": "Vendors (e.g., Cisco, Ivanti) have published patches for the listed CVEs; organisations should apply vendor\u2011recommended updates.",
-        "active_exploitation": "Confirmed active exploitation reported by authoring agencies; actors have exploited publicly known CVEs since at least 2021.",
+        "exploit_available": "No public proof\u2011of\u2011concept exploit is specifically referenced in the advisory.",
+        "patch_available": "Patches for CVE-2023-20198, CVE-2023-20273, CVE-2018-0171, and CVE-2024-21887 have been released by the affected vendors. See the CISA advisory for links to the vendor advisories.",
+        "active_exploitation": "Yes, active exploitation of CVE-2023-20198, CVE-2023-20273, CVE-2018-0171, and CVE-2024-21887 has been reported.",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Prioritize patching; disable unused ports/protocols; change default administrative credentials; require public\u2011key authentication; use vendor\u2011recommended OS versions; monitor configurations; harden credentials and services.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+        "mitigation": "Prioritize patching of known exploited CVEs; disable unused ports/protocols; require public\u2011key authentication; change default credentials; use vendor\u2011recommended OS versions; monitor firmware and software integrity; review logs for signs such as creation of PCAPs, SPAN sessions, or log clearing.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -245,15 +245,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "The actors exploit publicly disclosed vulnerabilities such as WinRAR's CVE-2023-38831, Outlook's NTLM flaw (CVE-2023-23397), and Roundcube flaws (CVE-2020-35730, CVE-2020-12641) through methods including exploitation of internet\u2011facing services, SQL injection, credential guessing, and spear\u2011phishing. These techniques provide initial access to corporate VPNs, mail servers, and IP cameras, enabling deeper network penetration.",
-        "affected_products": "WinRAR (CVE-2023-38831), Microsoft Outlook (CVE-2023-23397), Roundcube (CVE-2020-35730, CVE-2020-12641)",
-        "cvss_score": "0.0",
+        "technical_details": "The campaign exploits Outlook NTLM (CVE-2023-23397) to harvest hashes, leverages WinRAR (CVE-2023-38831) and Roundcube Webmail vulnerabilities for code execution or credential theft, and uses tools like Impacket, PsExec, and RDP for lateral movement and data exfiltration.",
+        "affected_products": "WinRAR (CVE-2023-38831), Roundcube Webmail (CVE-2020-12641, CVE-2020-35730, CVE-2021-44026), Microsoft Outlook (CVE-2023-23397) and various SOHO devices (see advisory for full list).",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit known.",
-        "patch_available": "Patch information is provided via the advisory; no separate patch URL is given.",
-        "active_exploitation": "Active exploitation reported in the wild.",
-        "threat_actors": "APT28, Fancy Bear, Forest Blizzard, Blue Delta",
-        "mitigation": "Apply security patches and firmware updates to all devices; ensure devices are supported; disable remote access if unnecessary; enable authenticated RTSP for IP cameras; utilize endpoint detection and response (EDR); implement network segmentation; enable logging and monitoring; collect and monitor Windows logs; enable attack surface reduction rules; audit IP camera accounts.",
+        "exploit_available": "Exploited in the wild; no public proof\u2011of\u2011concept links provided.",
+        "patch_available": "Vendor-specific patches are available; see the CISA advisory for details.",
+        "active_exploitation": "Confirmed active exploitation in the wild by GRU unit 26165 (APT28/Fancy Bear).",
+        "threat_actors": "GRU unit 26165 (APT28 / Fancy Bear / Forest Blizzard / Blue Delta).",
+        "mitigation": "Apply all vendor security patches and firmware updates, implement network segmentation/Zero Trust, enable EDR, block external NTLM/SMB traffic, harden IP cameras (disable remote access/UPnP, enable MFA), and conduct continuous monitoring and threat hunting as outlined by CISA.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
@@ -274,125 +274,17 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Incorrect privilege assignment in the LiteSpeed User-End cPanel Plugin\u2019s lsws.redisAble handling allows any cPanel user (including unauthenticated/compromised accounts) to invoke functionality that runs arbitrary scripts with elevated (root) permissions; the vulnerability stems from mishandling of Redis enable/disable features and improper authorization checks on the endpoint.",
-        "affected_products": "LiteSpeed User\u2011End cPanel Plugin versions 2.3 through 2.4.4 (fixed in 2.4.5)",
+        "technical_details": "Incorrect privilege assignment in the lsws.redisAble function (related to Redis enable/disable handling) allows any cPanel user (including an attacker or compromised account) to execute arbitrary scripts with root privileges.",
+        "affected_products": "LiteSpeed User-End cPanel Plugin versions 2.3 through 2.4.4 (fixed in 2.4.5; additional fixes in cPanel plugin v2.4.7 / WHM plugin v5.3.1.0)",
         "cvss_score": "10.0",
         "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-        "exploit_available": "No public PoC or exploit URL confirmed in the sources reviewed.",
-        "patch_available": "LiteSpeed released a patched plugin version 2.4.5 (updates to User-End cPanel Plugin) \u2013 upgrade to 2.4.5 or later. (Patch/advisory: https://www.litespeedtech.com/products/litespeed-web-server/control-panel-support/release-log)",
-        "active_exploitation": "Confirmed active exploitation in the wild reported in multiple sources (LiteSpeed advisory and security reporting).",
+        "exploit_available": "Active exploitation in the wild reported; no public PoC or weaponized exploit URL confirmed.",
+        "patch_available": "Yes \u2014 LiteSpeed released fixes (cPanel plugin v2.4.5 and later; recommend upgrade to v2.4.7 bundled with WHM plugin v5.3.1.0).",
+        "active_exploitation": "Confirmed active exploitation reported by LiteSpeed and multiple security sources (The Hacker News, NVD/INCIBE advisories).",
         "threat_actors": "None known",
-        "mitigation": "If patch cannot be applied immediately, block or audit suspicious requests invoking the lsws.redisAble/cpanel_jsonapi_func=redisAble endpoint; detect compromise with: grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null and investigate IPs; restrict cPanel user access, isolate affected hosts, and remove/rotate compromised credentials.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Immediate upgrade to patched plugin versions; if unable to patch, remove/uninstall the user-end cPanel plugin (/usr/local/lsws/admin/misc/lscmctl cpanelplugin --uninstall). Detection IOCs: grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null and review/block suspicious IPs.",
+        "vendor_advisory": "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
       }
-    },
-    {
-      "id": "CVE-2026-47124",
-      "title": "Nezha Monitoring: Nezha WebSocket server stream discloses cross-tenant server telemetry to authenticated members",
-      "summary": "### Summary\n\nAny authenticated non-admin member can connect to the server-status WebSocket and receive telemetry for all servers, including servers owned by other users. The normal server list API filters objects by `HasPermission`, but the WebSocket stream treats the presence of any authenticated user as authorization for the full unfiltered server list.\n\n### Details\n\nThe server WebSocket route is registered under the optional-auth group in `cmd/dashboard/controller/controller.go:71-73`:\n\n```go\noptionalAuth := api.Group(\"\", optionalAuthMw)\noptionalAuth.GET(\"/ws/server\", commonHandler(serverStream))\n```\n\n`serverStream` treats any `CtxKeyAuthorizedUser` as a member, without checking admin role or per-server ownership, in `cmd/dashboard/controller/ws.go:123-139`:\n\n```go\nu, isMember := c.Get(model.CtxKeyAuthorizedUser)\nvar userId uint64\nif isMember {\n    userId = u.(*model.User).ID\n}\n...\nstat, err := getServerStat(count == 0, isMember)\n```\n\nThe authorization boolean is then used as a full/guest switch in `getServerStat` in `cmd/dashboard/controller/ws.go:160-184`:\n\n```go\nif authorized {\n    serverList = singleton.ServerShared.GetSortedList()\n} else {\n    serverList = singleton.ServerShared.GetSortedListForGuest()\n}\n...\nservers = append(servers, model.StreamServer{\n    ID:           server.ID,\n    Name:         server.Name,\n    PublicNote:   utils.IfOr(withPublicNote, server.PublicNote, \"\"),\n    DisplayIndex: server.DisplayIndex,\n    Host:         utils.IfOr(authorized, server.Host, server.Host.Filter()),\n    State:        server.State,\n    CountryCode:  countryCode,\n    LastActive:   server.LastActive,\n})\n```\n\nFor authenticated members, `GetSortedList()` returns all servers and `server.Host` is not filtered. There is no call to `server.HasPermission(c)`.\n\nThe streamed response model in `model/server_api.go:5-20` includes server ID/name, public note, host details, runtime state, country code, last active time, and global online count. Host and state fields include platf",
-      "link": "https://github.com/advisories/GHSA-hvv7-hfrh-7gxj",
-      "published": "2026-05-23T00:18:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47124"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-46716",
-      "title": "Nezha Monitoring: RoleMember can run shell on every server (cross-tenant RCE) via POST /api/v1/cron",
-      "summary": "## Summary\n\n`nezha`'s dashboard supports two user roles: `RoleAdmin` (Role==0) and `RoleMember` (Role==1). The cron routes `POST /api/v1/cron` and `PATCH /api/v1/cron/:id` are wired through `commonHandler` (any authenticated user) rather than `adminHandler`, and the per-server permission check on cron creation has a vacuous-true bypass.\n\nA `RoleMember` user can create a scheduled cron task with `Cover=CronCoverAll, Servers=[]` and an arbitrary `Command`. At every tick of the scheduler, the dashboard pushes that command to **every server in the global `ServerShared` map** \u2014 including servers that belong to other tenants (admin's servers, other members' servers). Each agent runs the command and returns the output, which is then sent to the attacker's own NotificationGroup \u2192 attacker-controlled webhook.\n\nNet effect: any `RoleMember` (including a self-bound OAuth2 user, if the dashboard has OAuth2 configured) gets pre-validated cross-tenant RCE on every nezha-monitored host in the deployment.\n\n## Affected versions\n\nCommit `50dc8e660326b9f22990898142c58b7a5312b42a` and earlier on `master`.\n\n## The auth gate\n\n```go\n// cmd/dashboard/controller/controller.go:131-135\nauth.GET(\"/cron\", listHandler(listCron))\nauth.POST(\"/cron\", commonHandler(createCron))                    // <-- commonHandler, not adminHandler\nauth.PATCH(\"/cron/:id\", commonHandler(updateCron))               // <-- ditto\nauth.GET(\"/cron/:id/manual\", commonHandler(manualTriggerCron))\nauth.POST(\"/batch-delete/cron\", commonHandler(batchDeleteCron))\n```\n\nCompare with `/user` (adminHandler-gated). `commonHandler` (controller.go:214-218) only requires JWT auth \u2014 any role passes.\n\n## The vacuous-true permission bypass\n\n```go\n// cmd/dashboard/controller/cron.go:45-85\nfunc createCron(c *gin.Context) (uint64, error) {\n    var cf model.CronForm\n    var cr model.Cron\n    if err := c.ShouldBindJSON(&cf); err != nil { return 0, err }\n\n    // BUG: empty cf.Servers iterates zero items, returns true vacuously.\n    if !singleto",
-      "link": "https://github.com/advisories/GHSA-99gv-2m7h-3hh9",
-      "published": "2026-05-23T00:17:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-46716"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47125",
-      "title": "Arcane: Missing admin authorization on global variables endpoint",
-      "summary": "## Summary\n\nThe `PUT /api/environments/{id}/templates/variables` endpoint, which writes the system-wide `.env.global` file used for variable substitution in every project's compose file, is missing an admin authorization check. Any authenticated non-admin user can call this endpoint with their bearer token or API key and overwrite the global environment variables that are merged into every project deployment. By overriding values like `REGISTRY`, `IMAGE`, `DATABASE_URL`, or `SECRET_KEY` that other users reference via `${VAR}` in compose files, an attacker can redirect image pulls to attacker-controlled registries (supply-chain RCE on the Docker host), exfiltrate database credentials, or disrupt all projects.\n\n## Details\n\nThe endpoint is registered at `backend/internal/huma/handlers/templates.go:374`:\n\n```go\nhuma.Register(api, huma.Operation{\n    OperationID: \"updateGlobalVariables\",\n    Method:      \"PUT\",\n    Path:        \"/environments/{id}/templates/variables\",\n    ...\n    Security: []map[string][]string{\n        {\"BearerAuth\": {}},\n        {\"ApiKeyAuth\": {}},\n    },\n}, h.UpdateGlobalVariables)\n```\n\nThe handler at `backend/internal/huma/handlers/templates.go:889` performs no role check:\n\n```go\nfunc (h *TemplateHandler) UpdateGlobalVariables(ctx context.Context, input *UpdateGlobalVariablesInput) (*UpdateGlobalVariablesOutput, error) {\n    if h.templateService == nil {\n        return nil, huma.Error500InternalServerError(\"service not available\")\n    }\n\n    if input.EnvironmentID != \"0\" {\n        return h.updateGlobalVariablesForRemoteEnvironmentInternal(ctx, input)\n    }\n\n    if err := h.templateService.UpdateGlobalVariables(ctx, input.Body.Variables); err != nil {\n        return nil, huma.Error500InternalServerError((&common.GlobalVariablesUpdateError{Err: err}).Error())\n    }\n    ...\n}\n```\n\nThis is anomalous compared to every other admin-sensitive handler in the codebase, all of which begin with `if err := checkAdmin(ctx); err != nil { return nil, err }` (see `u",
-      "link": "https://github.com/advisories/GHSA-jpjh-jm2p-39hh",
-      "published": "2026-05-23T00:16:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47125"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47138",
-      "title": "Parse Server: Pre-authentication denial of service via client version header regex backtracking",
-      "summary": "### Impact\n\nAn unauthenticated attacker who knows a publicly-known Parse Application ID can submit a single HTTP request whose client SDK version field contains adversarial input that triggers polynomial backtracking in a request-header parser. The parsing runs before session authentication and before rate limiting on every `/parse/*` request, so the request consumes seconds to minutes of synchronous CPU on a Node.js worker before any access control evaluates it. A small number of concurrent requests can saturate a worker; a single large request via the body-field variant can pin a worker for minutes. Production deployments running the default configuration are affected.\n\n### Patches\n\nThe client SDK version capture and parsing have been removed entirely. The Parse JS SDK compatibility table defines a strict version-pinned contract between Parse Server and the Parse JS SDK; server-side adaptation to client SDK version is an obsolete pattern that contradicts that contract. The vulnerable parser, the `clientSDK` parameter that threaded its output through routers, and the legacy code path it gated are all removed. The `X-Parse-Client-Version` header and `_ClientVersion` JSON body field are now silently ignored on every request; supported Parse SDKs are unaffected.\n\n### Workarounds\n\nDeploy a reverse proxy or WAF in front of Parse Server that strips or strictly size-limits the `X-Parse-Client-Version` header AND the `_ClientVersion` field in JSON request bodies on every `/parse/*` route before forwarding to the server. A header-size cap alone is insufficient: the body-field variant requires inspection of JSON content. Upgrading to the patched version is the recommended remediation.",
-      "link": "https://github.com/advisories/GHSA-38m6-82c8-4xfm",
-      "published": "2026-05-23T00:11:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47138"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47120",
-      "title": "Nezha Monitoring: RoleMember can fire other users' cron tasks via AlertRule.FailTriggerTasks (no ownership check)",
-      "summary": "## Summary\n\n`createAlertRule` and `createService` (and their `update*` siblings) accept `FailTriggerTasks []uint64` and `RecoverTriggerTasks []uint64` \u2014 IDs of cron tasks to fire when the alert/service trips. The validation function only validates the alert's `Rules.Ignore` server map; it never checks that the cron task IDs in `FailTriggerTasks` / `RecoverTriggerTasks` belong to the caller.\n\nWhen the alert fires, `singleton.CronShared.SendTriggerTasks(taskIDs, triggerServer)` (`service/singleton/crontask.go:113-127`) looks up those task IDs in the global cron registry and executes them via `CronTrigger`. For non-`AlertTrigger` cover modes, `CronTrigger` fans the command out to every server in `ServerShared.Range` with no ownership check.\n\nNet effect: a `RoleMember` can attach their alert rule (or service monitor) to **another user's** cron task ID \u2014 including admin's crons. When the alert trips, the admin's cron command runs across every server (or every server in its allow/deny list).\n\nThis is the same fanout/auth-bypass class as `NEZHA-002` (cron creation), but reachable by a different code path: even if `/cron` writes are restricted to admin, this `/alert-rule` and `/service` writes are member-reachable and let a member invoke pre-existing admin crons.\n\n## Affected versions\n\nCommit `50dc8e660326b9f22990898142c58b7a5312b42a` and earlier on `master`.\n\n## Reachability chain\n\n1. `POST /api/v1/alert-rule` (or `POST /api/v1/service`) is `commonHandler`-gated \u2014 any authenticated user.\n2. `createAlertRule` / `createService` accepts `FailTriggerTasks` and `RecoverTriggerTasks` from the request body without validating ownership.\n3. `validateRule` (`cmd/dashboard/controller/alertrule.go:169-196`) only checks `rule.Ignore` server IDs \u2014 not the trigger task IDs.\n4. `validateServers` (`cmd/dashboard/controller/service.go:543-549`) only checks the service's `SkipServers` map \u2014 not the trigger task IDs.\n5. When the alert/service trips: `service/singleton/alertsentinel.go:170, 18",
-      "link": "https://github.com/advisories/GHSA-rxf6-wjh4-jfj6",
-      "published": "2026-05-23T00:08:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47120"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-46717",
-      "title": "Nezha Monitoring: RoleMember-reachable SSRF with full response-body reflection via POST /api/v1/notification",
-      "summary": "## Summary\n\nnezha's dashboard supports two user roles: `RoleAdmin` (Role==0) and `RoleMember` (Role==1). The notification routes `POST /api/v1/notification` and `PATCH /api/v1/notification/:id` are wired through `commonHandler` rather than `adminHandler` \u2014 so a `RoleMember` user can call them. These handlers synchronously `Send()` an HTTP request to a user-controlled URL and reflect the *entire* response body (no size limit) back to the caller on any non-2xx response.\n\nNet effect: a low-privilege `RoleMember` can read intranet HTTP response bodies via the dashboard's hub.\n\n## Affected versions\n\nCommit `50dc8e660326b9f22990898142c58b7a5312b42a` and earlier on `master`.\n\n## Reachability chain\n\n```\ncmd/dashboard/controller/controller.go:121-122\n    auth.GET(\"/notification\", listHandler(listNotification))\n    auth.POST(\"/notification\", commonHandler(createNotification))   // <-- commonHandler, not adminHandler\n```\n\nFor comparison, `/user` routes ARE gated by `adminHandler`:\n\n```\nauth.GET(\"/user\", adminHandler(listUser))\nauth.POST(\"/user\", adminHandler(createUser))\nauth.POST(\"/batch-delete/user\", adminHandler(batchDeleteUser))\n```\n\n`adminHandler` (controller.go:220-236) explicitly enforces `user.Role.IsAdmin()`. `commonHandler` (controller.go:214-218) does not.\n\n## The vulnerable handler\n\n```go\n// cmd/dashboard/controller/notification.go:46-83\nfunc createNotification(c *gin.Context) (uint64, error) {\n    var nf model.NotificationForm\n    if err := c.ShouldBindJSON(&nf); err != nil { return 0, err }\n    var n model.Notification\n    n.UserID = getUid(c)\n    n.Name = nf.Name\n    n.RequestMethod = nf.RequestMethod\n    n.RequestType = nf.RequestType\n    n.RequestHeader = nf.RequestHeader\n    n.RequestBody = nf.RequestBody\n    n.URL = nf.URL\n    ...\n    ns := model.NotificationServerBundle{Notification: &n, Server: nil, Loc: singleton.Loc}\n    if !nf.SkipCheck {\n        if err := ns.Send(singleton.Localizer.T(\"a test message\")); err != nil {\n            return 0, err   // <-- ",
-      "link": "https://github.com/advisories/GHSA-w4g9-mxgg-j532",
-      "published": "2026-05-23T00:08:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-46717"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
