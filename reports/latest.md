@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-05-26 09:34 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-05-26 14:37 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,20 +13,42 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Path traversal vulnerability allowing unauthenticated remote attackers to retrieve arbitrary files (e.g., logs, configuration files, credentials) from the SimpleHelp server.
-- **Affected Products:** SimpleHelp version 5.5.7 and earlier
+- **Technical Details:** CVE-2024-57727 is a path traversal vulnerability in SimpleHelp (v5.5.7 and earlier) enabling unauthenticated attackers to retrieve logs, configuration files, credentials and potentially gain access to downstream systems.
+- **Affected Products:** SimpleHelp remote support software v5.5.7 and earlier
 - **CVSS Score:** 7.5
-- **CVSS Vector:** CVSS vector unavailable.
+- **CVSS Vector:** CVSS vector unavailable
 - **Exploit Available:** true (https://medium.com/@RosanaFS/simplehelp-cve-2024-57727-tryhackme-walkthrough-9f88c2061fb9)
 - **Patch Available:** true (http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570)
+- **Active Exploitation:** true (https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a)
+- **Threat Actors:** Ransomware actors (e.g., DragonForce)
+- **Mitigation:** Apply vendor patch to v5.5.8 immediately; if unable, isolate SimpleHelp RMM from internet, restrict access to management interfaces, apply network segmentation, rotate exposed credentials, enable logging and monitoring, and follow CISA incident response guidance.
+- **Vendor Advisory:** http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know
+
+---
+
+## 2. 🟠 Zero-Day — Hackers Exploited KnowledgeDeliver Zero-Day for Web Shell Deployment
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-05-26
+**Reference:** <https://www.securityweek.com/hackers-exploited-knowledgedeliver-zero-day-for-web-shell-deployment/>
+
+> Hardcoded machineKey values in a configuration file enabled ViewState deserialization attacks leading to remote code execution. The post Hackers Exploited KnowledgeDeliver Zero-Day for Web Shell Deployment appeared first on SecurityWeek .
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Hard‑coded ASP.NET machineKey values enable attackers who obtain the key to create malicious __VIEWSTATE payloads that bypass validation, causing deserialization and unauthenticated remote code execution; the breach culminates in deployment of in‑memory BLUEBEAM (Godzilla) web shells.
+- **Affected Products:** Digital Knowledge KnowledgeDeliver (installations deployed before Feb 24, 2026)
+- **CVSS Score:** 7.5
+- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+- **Exploit Available:** true
+- **Patch Available:** true
 - **Active Exploitation:** true
-- **Threat Actors:** None known
-- **Mitigation:** Upgrade SimpleHelp to version 5.5.8 or later; restrict network access to the RMM service until patched.
+- **Threat Actors:** Unknown specific group; Mandiant reports an "unknown threat actor"
+- **Mitigation:** Immediately rotate machineKey to unique cryptographically strong values per instance; restrict external access (IP allowlist); monitor Event ID 1316 and ViewState integrity failures, and hunt for suspicious w3wp.exe child processes and related IOCs.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 2. 🟠 Zero-Day — Iranian Hackers Deploy MiniFast and MiniJunk V2 via Phishing and SEO Poisoning
+## 3. 🟠 Zero-Day — Iranian Hackers Deploy MiniFast and MiniJunk V2 via Phishing and SEO Poisoning
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-05-26
 **Reference:** <https://thehackernews.com/2026/05/iranian-hackers-deploy-minifast-and.html>
@@ -37,7 +59,7 @@ The activity, besides embracing
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Campaign uses SEO poisoning and phishing lures impersonating aviation and software organizations to deliver MiniFast (AI‑assisted) and MiniJunk V2 malware. Distribution is via malicious search results, phishing emails with links/attachments, and cloud‑hosted installers/C2 on platforms like Azure. Payloads focus on espionage, data collection, and persistence.
+- **Technical Details:** Campaigns use SEO poisoning and spear/phishing lures to deliver MiniFast (AI‑assisted) and MiniJunk V2 implants. Delivery vectors include malicious links and attachments; implants perform espionage (recon, credential harvesting, persistence) and likely leverage cloud services (reported abuse of Microsoft Azure) for hosting C2 and payloads.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
@@ -45,34 +67,8 @@ The activity, besides embracing
 - **Patch Available:** false
 - **Active Exploitation:** true
 - **Threat Actors:** Nimbus Manticore (aka Screening Serpens, UNC1549)
-- **Mitigation:** Block known malicious domains/URLs, implement phishing‑resistant MFA, apply email filtering and URL rewriting/ATP, endpoint detection and response with YARA/signature for MiniFast/MiniJunk, restrict execution of unsigned installers, network egress filtering to known C2, user training, and monitor for indicators of compromise from published reports.
+- **Mitigation:** Increase email security and phishing awareness; block known malicious domains and SEO‑poisoned landing pages; implement URL filtering and web proxying; enable EDR/anti‑malware with YARA/signature and behavior detections; disable/limit macros and script execution; apply least‑privilege and multi‑factor authentication; isolate and investigate suspected hosts.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
-
----
-
-## 3. 🟠 Zero-Day — ⚡ Weekly Recap: Linux Flaws, Defender 0-Days, Router Botnets, and Supply Chain Chaos
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-05-25
-**Reference:** <https://thehackernews.com/2026/05/weekly-recap-linux-flaws-defender-0.html>
-
-> Monday recap. Same mess, new week.
-
-A sketchy dev tool got people pwned, old bugs came back from the dead, and security products somehow needed protecting from themselves. A bunch of companies spent the week checking old boxes and forgotten servers they should&#x27;ve patched years ago. Good times.
-
-Phishing crews are getting smarter too - less obvious scam junk, more targeted stuff that actually
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Two local privilege escalation vulnerabilities (CVE-2026-43284 and CVE-2026-43500) allow an unprivileged local user to gain root by abusing kernel networking and memory‑fragment handling in the xfrm/ESP (esp4, esp6) and rxrpc subsystems, leading to corrupted state and privilege escalation.
-- **Affected Products:** Linux kernel xfrm/ESP fragmentation handling (esp4, esp6) and rxrpc subsystems; kernel versions prior to May 2026 patches
-- **CVSS Score:** 7.8
-- **CVSS Vector:** CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
-- **Exploit Available:** true (http://darkreading.com/vulnerabilities-threats/dirty-frag-exploit-blow-up-enterprise-linux-distros, https://nsfocusglobal.com/linux-kernel-privilege-escalation-vulnerability-dirty-frag-alert/)
-- **Patch Available:** true (http://canonical.com/blog/dirty-frag-linux-vulnerability-fixes-available, http://ubuntu.com/blog/dirty-frag-linux-vulnerability-fixes-available)
-- **Active Exploitation:** true (http://darkreading.com/vulnerabilities-threats/dirty-frag-exploit-blow-up-enterprise-linux-distros, http://socprime.com/active-threats/dirty-frag-linux-vulnerability-analysis)
-- **Threat Actors:** None known
-- **Mitigation:** Apply the kernel patches released by the distributions immediately. If patching cannot be done promptly, limit untrusted local access, remove unnecessary setuid binaries, enforce container/VM isolation, and consider disabling the affected xfrm/ESP and rxrpc subsystems.
-- **Vendor Advisory:** http://canonical.com/blog/dirty-frag-linux-vulnerability-fixes-available
 
 ---
 
@@ -85,16 +81,16 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) tricks agents by placing maliciously crafted prompts or instructions in external web content (e.g., comments, README, web pages) that agents retrieve and execute, causing them to follow attacker‑supplied instructions or expose sensitive data. The "Comment and Control" chain weaponized agent elevated access and ability to process untrusted user content.
-- **Affected Products:** Anthropic Claude Code (Claude Code Security Review), agent runtimes that ingest web content
+- **Technical Details:** Indirect Prompt Injection (IPI) occurs when adversarial content hosted on public web pages or other untrusted sources contains instructions or payloads that an LLM‑powered agent ingests as part of its context, causing it to execute unintended actions (data exfiltration, API key theft, command execution via agent frameworks). Attack vectors include crafted web pages, embedded comments, README files, or other content that agents fetch when following web browsing or tool‑use capabilities.
+- **Affected Products:** Affected products unavailable
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (source: https://sentinelone.com/vulnerability-database/cve-2026-39861)
-- **Patch Available:** true (source: https://truefoundry.com/blog/claude-code-prompt-injection)
-- **Active Exploitation:** true (sources: https://blog.google/security/prompt-injections-web/, https://sentinelone.com/vulnerability-database/cve-2026-39861)
+- **Exploit Available:** true — https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads
+- **Patch Available:** false — https://microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks
+- **Active Exploitation:** true — Sources: https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 - **Threat Actors:** None known
-- **Mitigation:** Harden AI agent ingestion and isolation, treat web content as untrusted, sanitize/whitelist sources, limit agent elevated access, enforce runtime policy controls and provenance checks.
-- **Vendor Advisory:** https://blog.google/security/prompt-injections-web/
+- **Mitigation:** Implement input provenance controls, remote content filtering, strict instruction parsing, principle of least privilege for agents, sanitize and ignore untrusted web-origin instructions, use model grounding and instruction allowlists/denylists, robust content security policies.
+- **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
 
@@ -107,15 +103,15 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) is an attack technique where adversaries inject malicious instructions into data sources or tools consumed by an LLM (e.g., web content, documents, or integrated tool outputs) so the model follows these instructions during user query processing. IPI can occur without direct user input and exploits agentic automation and multi‑source retrieval behaviors in complex LLM‑enabled applications.
-- **Affected Products:** Google Workspace products using Gemini integrations (Workspace with Gemini and Gemini-in-Workspace integrations)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** false
-- **Threat Actors:** None known
-- **Mitigation:** Google recommends a layered defense including content filtering, source trust and provenance checks, model response validation, restricting agentic tool actions, principle‑of‑least‑privilege for tool/data access, user‑visible provenance indicators, continuous monitoring and telemetry, and rapid patching/response processes.
+- **Technical Details:** Indirect prompt injection (IPI) exploits the ability of large language models to consume data from multiple sources. By inserting crafted malicious instructions into those sources or associated tools, an attacker can steer the model’s output or actions even when the user does not directly provide malicious input.
+- **Affected Products:** Google Workspace (Gemini), Gemini CLI
+- **CVSS Score:** 10.0
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true
+- **Active Exploitation:** true
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Apply the latest Google Workspace and Gemini CLI patches, enable Google’s continuous mitigation controls, monitor logs for anomalous prompt activity, and restrict the use of automated agents that can ingest untrusted data.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
@@ -129,15 +125,15 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The primary new threat facing all agentic browsers is indirect prompt injection. Malicious instructions embedded in web content, iframes, or user‑generated content can cause the agent to take unwanted actions such as financial transactions or data exfiltration. Chrome mitigates this with a user‑alignment critic, origin‑set gating, a real‑time prompt‑injection classifier, and user confirmations for sensitive actions.
-- **Affected Products:** Affected products unavailable
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** true — https://blog.google/security/architecting-security-for-agentic/
-- **Active Exploitation:** Active exploitation status unknown
-- **Threat Actors:** None known
-- **Mitigation:** Use the latest Chrome updates (auto‑update delivers fixes). Enable agentic features only when needed and monitor work logs; rely on Chrome’s origin isolation, user confirmations, and Safe Browsing. For researchers, follow the updated Vulnerability Rewards Program guidelines and report issues to Google.
+- **Technical Details:** Chrome's agentic features face "indirect prompt injection": malicious instructions embedded in web content (pages, iframes, UGC) can influence an agent to perform unwanted actions (e.g., transactions, exfiltration). Google describes layered defenses: origin gating, a User Alignment Critic classifier, planner/gating function separation, explicit user confirmations for sensitive actions, Safe Browsing and on‑device scam detection, and work‑logs for transparency.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** false.
+- **Patch Available:** true; https://blog.google/security/architecting-security-for-agentic/
+- **Active Exploitation:** false.
+- **Threat Actors:** None known.
+- **Mitigation:** Use Google’s layered defenses and hardening: enable the latest Chrome updates with agentic protections; rely on origin gating and user confirmations; monitor Safe Browsing and on‑device protections; follow Google guidance in the vendor advisory; consider blocking agentic browsers in high‑risk environments per Gartner/NCSC guidance.
 - **Vendor Advisory:** https://blog.google/security/architecting-security-for-agentic/
 
 ---
@@ -151,16 +147,16 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** CVE-2025-68260 is a critical race condition in the Rust implementation of the Android Binder subsystem inside the Linux kernel, allowing potentially unsafe concurrent access that could be exploited to achieve memory‑corruption or privilege escalation.
-- **Affected Products:** Android operating system (Rust‑based Binder subsystem), Linux kernel (Rust implementation)
+- **Technical Details:** Google reports that adopting Rust in Android reduced memory‑safety vulnerability density (2025 data shows memory safety vulnerabilities fell below 20% of total vulnerabilities), reflecting a prevention‑first strategy focused on new code; Rust prevents classes of memory‑safety bugs common in C/C++.
+- **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** Active exploitation status unknown.
 - **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-12-01
+- **Mitigation:** Use memory‑safe languages (Rust) for new code, prioritize vulnerability prevention in code changes, continue auditing C/C++ components and apply defensive coding and sanitizers.
+- **Vendor Advisory:** http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
 
 ---
 
@@ -173,7 +169,7 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) is an attack vector where hidden or malicious instructions embedded in external content (emails, documents, calendar invites, websites, third‑party data) manipulate generative AI models to exfiltrate data or perform unauthorized actions. The attack relies on the model processing untrusted content that contains covert commands.
+- **Technical Details:** Indirect prompt injection (IPI) is an attack where hidden or external instructions (e.g., in emails, documents, calendar invites, or web content) are crafted to manipulate generative AI systems that ingest external data, causing them to disclose sensitive information or perform unauthorized actions. The mechanism relies on models browsing or ingesting untrusted external content which contains adversarial instructions that the model treats as part of its prompt.
 - **Affected Products:** Affected products unavailable
 - **CVSS Score:** CVSS score unavailable
 - **CVSS Vector:** CVSS vector unavailable
@@ -181,7 +177,7 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 - **Patch Available:** false
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Use a layered defense — validate content provenance, apply input sanitization and output filtering, restrict model access to sensitive data, implement telemetry/monitoring for anomalous model behavior, use allowlists/denylists for external sources, and apply continuous updates to detection rules.
+- **Mitigation:** Apply a layered defense strategy including input provenance and validation (treat external data as untrusted), content filtering and sanitization, model instruction hardening (instruction‑following constraints and refusal policies), strict data access controls and least‑privilege for model actions, rate‑limiting and monitoring for anomalous queries, and use of browser/browsing isolation when allowing models to access web content.
 - **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
 
 ---
@@ -195,15 +191,15 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** PRC state‑sponsored actors compromise large backbone routers (telecom PE/CE), modify router firmware or configuration to maintain persistent, long‑term access, leverage compromised devices and trusted connections to pivot into other networks, and use these footholds for espionage and lateral movement.
-- **Affected Products:** Affected products unavailable.
+- **Technical Details:** Actors modify routers to maintain persistent, long‑term access and leverage compromised devices and trusted connections to pivot into other networks.
+- **Affected Products:** Backbone routers, Provider Edge (PE) routers, Customer Edge (CE) routers
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
-- **Threat Actors:** Salt Typhoon (UNC4841/Volt Typhoon), OPERATOR PANDA, RedMike, UNC5807, GhostEmperor, and other PRC state‑sponsored actors
-- **Mitigation:** Prioritize discovery and isolation of compromised infrastructure (especially routers), apply vendor‑recommended mitigations and firmware updates where available, rotate credentials and keys, segment networks and restrict privileged access, monitor for indicators of compromise and unusual routing/telemetry, implement robust logging and multi‑factor authentication, and follow CISA’s specific response playbooks.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
+- **Mitigation:** Follow CISA’s mitigation guidance: simulate the threat scenarios, apply router hardening best practices, enforce network segmentation, and regularly update firmware.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
 
 ---
@@ -217,16 +213,16 @@ Phishing crews are getting smarter too - less obvious scam junk, more targeted s
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
+- **Technical Details:** Technical details unavailable
+- **Affected Products:** Affected products unavailable
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** Exploit availability unknown
+- **Patch Available:** Patch availability unknown
 - **Active Exploitation:** true
 - **Threat Actors:** Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165 (aka APT28)
-- **Mitigation:** Apply standard hardening: implement multi-factor authentication, network segmentation, endpoint detection and response, monitor for anomalous access, patch and inventory systems, restrict privileged access, and follow CISA/NSA joint advisory detection and mitigation guidance.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Mitigation:** Follow advisory hardening and detection recommendations (network segmentation, multifactor authentication, patching where applicable, enhanced monitoring/logging, restrict remote access, incident response planning). See vendor advisory for full mitigations.
+- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
 
 ---
 
@@ -259,14 +255,16 @@ The vulnerability, tracked as CVE-2026-5426 (CVSS score: 7.5), stems from the us
 
 ---
 
-## 14. 🟡 High Severity — Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks
+## 14. 🟡 High Severity — Microsoft Patches SharePoint RCE Flaw CVE-2026-45659 Across Server Versions
 
-**CVE:** `CVE-2026-26980` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-05-25
-**Reference:** <https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html>
+**CVE:** `CVE-2026-45659` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-05-26
+**Reference:** <https://thehackernews.com/2026/05/microsoft-patches-sharepoint-rce-flaw.html>
 
-> Threat actors are exploiting a recently disclosed critical security flaw in Ghost CMS to inject malicious JavaScript code with an aim to fuel ClickFix attacks.
+> Microsoft has rolled out updates to fix a remote code execution vulnerability impacting SharePoint that could be exploited by bad actors in attacks without requiring any specialized conditions to be met.
 
-According to QiAnXin XLab, the activity involves the exploitation of CVE-2026-26980 (CVSS score: 9.4), an SQL injection vulnerability in Ghost&#x27;s Content API that could allow an unauthenticated attacker to read arbitrary data from the
+The vulnerability, tracked as CVE-2026-45659, carries a CVSS score of 8.8. It has been assigned an important severity.
+
+&quot;Deserialization of untrusted data in Microsoft Office SharePoint allo…
 
 ---
 
