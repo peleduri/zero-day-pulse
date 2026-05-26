@@ -1,10 +1,41 @@
 {
-  "generated": "2026-05-26T14:37:21.694676+00:00",
-  "total": 15,
-  "kev": 0,
-  "zero_day": 13,
+  "generated": "2026-05-26T19:54:39.813145+00:00",
+  "total": 20,
+  "kev": 1,
+  "zero_day": 14,
   "enriched": 10,
   "findings": [
+    {
+      "id": "CVE-2026-48172",
+      "title": "CVE-2026-48172 \u2014 LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
+      "summary": "Vendor: LiteSpeed | Product: cPanel Plugin. LiteSpeed cPanel Plugin contains privilege escalation vulnerability that is exposed via the user-end cPanel plugin, which can be abused by any cPanel user account to execute arbitrary scripts with root privileges. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-05-29)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48172",
+      "published": "2026-05-26",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-48172"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "The vulnerability arises from improper validation of the `lsws.redisAble` (or `cpanel_jsonapi_func=redisAble`) function, which can be invoked by any cPanel user to execute arbitrary shell commands as the root user, leading to full privilege escalation.",
+        "affected_products": "LiteSpeed User-End cPanel Plugin versions 2.3 \u2013 2.4.4",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true (https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/)",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Upgrade the LiteSpeed User\u2011End cPanel Plugin to version 2.4.7 or later (bundled with WHM Plugin 5.3.1.0). If immediate patching is not possible, uninstall the user\u2011end plugin with `/usr/local/lsws/admin/misc/lscmctl cpanelplugin --uninstall`. Additionally, scan logs with `grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null` and block any suspicious IPs.",
+        "vendor_advisory": "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
+      }
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -22,16 +53,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a path traversal vulnerability in SimpleHelp (v5.5.7 and earlier) enabling unauthenticated attackers to retrieve logs, configuration files, credentials and potentially gain access to downstream systems.",
-        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
+        "technical_details": "Path traversal vulnerabilities in SimpleHelp 5.5.7 and earlier allow unauthenticated remote attackers to retrieve logs, configuration files, and credentials, and potentially log in with high privileges.",
+        "affected_products": "SimpleHelp remote support / RMM versions 5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true (https://medium.com/@RosanaFS/simplehelp-cve-2024-57727-tryhackme-walkthrough-9f88c2061fb9)",
-        "patch_available": "true (http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570)",
-        "active_exploitation": "true (https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a)",
-        "threat_actors": "Ransomware actors (e.g., DragonForce)",
-        "mitigation": "Apply vendor patch to v5.5.8 immediately; if unable, isolate SimpleHelp RMM from internet, restrict access to management interfaces, apply network segmentation, rotate exposed credentials, enable logging and monitoring, and follow CISA incident response guidance.",
-        "vendor_advisory": "http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "DragonForce",
+        "mitigation": "Apply vendor patch/update to SimpleHelp 5.5.8 immediately; if unable to patch, isolate SimpleHelp servers from public internet, restrict access via firewall/VPN, rotate credentials stored in SimpleHelp, and audit logs for suspicious access.",
+        "vendor_advisory": "https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570"
       }
     },
     {
@@ -49,15 +80,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Hard\u2011coded ASP.NET machineKey values enable attackers who obtain the key to create malicious __VIEWSTATE payloads that bypass validation, causing deserialization and unauthenticated remote code execution; the breach culminates in deployment of in\u2011memory BLUEBEAM (Godzilla) web shells.",
-        "affected_products": "Digital Knowledge KnowledgeDeliver (installations deployed before Feb 24, 2026)",
+        "technical_details": "Hardcoded identical ASP.NET machineKey values in KnowledgeDeliver web.config allowed attackers who obtained the key to craft malicious ViewState (__VIEWSTATE) payloads that deserialize on the server, enabling unauthenticated remote code execution and in\u2011memory web shell deployment.",
+        "affected_products": "KnowledgeDeliver (all deployments before 2026-02-24)",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "true",
-        "patch_available": "true",
+        "patch_available": "false",
         "active_exploitation": "true",
-        "threat_actors": "Unknown specific group; Mandiant reports an \"unknown threat actor\"",
-        "mitigation": "Immediately rotate machineKey to unique cryptographically strong values per instance; restrict external access (IP allowlist); monitor Event ID 1316 and ViewState integrity failures, and hunt for suspicious w3wp.exe child processes and related IOCs.",
+        "threat_actors": "None known",
+        "mitigation": "Rotate machineKey for each instance, restrict LMS access to known IP ranges, monitor IIS and application logs, hunt for indicators (Event ID 1316, suspicious w3wp.exe activity, file tampering, anomalous User-Agent strings).",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -76,15 +107,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Campaigns use SEO poisoning and spear/phishing lures to deliver MiniFast (AI\u2011assisted) and MiniJunk V2 implants. Delivery vectors include malicious links and attachments; implants perform espionage (recon, credential harvesting, persistence) and likely leverage cloud services (reported abuse of Microsoft Azure) for hosting C2 and payloads.",
-        "affected_products": "Affected products unavailable.",
+        "technical_details": "The campaign uses SEO\u2011poisoned search results to lure victims to a fake Oracle SQL Developer download page. The installer drops the MiniFast backdoor, which communicates over HTTP for tasking, file exfiltration, and additional payload download. MiniFast supports file operations, process enumeration, command execution via cmd.exe, DLL loading, ZIP creation, scheduled\u2011task persistence, and privilege escalation via runas. MiniJunk V2 is used for initial payload delivery through AppDomain hijacking.",
+        "affected_products": "Oracle SQL Developer",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
+        "exploit_available": "true",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
-        "threat_actors": "Nimbus Manticore (aka Screening Serpens, UNC1549)",
-        "mitigation": "Increase email security and phishing awareness; block known malicious domains and SEO\u2011poisoned landing pages; implement URL filtering and web proxying; enable EDR/anti\u2011malware with YARA/signature and behavior detections; disable/limit macros and script execution; apply least\u2011privilege and multi\u2011factor authentication; isolate and investigate suspected hosts.",
+        "threat_actors": "Nimbus Manticore (also known as Screening Serpens and UNC1549)",
+        "mitigation": "Validate software downloads by using official vendor sites; block or monitor traffic to known malicious domains; employ endpoint detection and response solutions; disable execution of unsigned installers; regularly audit scheduled tasks and running processes for suspicious activity.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -104,15 +135,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial content hosted on public web pages or other untrusted sources contains instructions or payloads that an LLM\u2011powered agent ingests as part of its context, causing it to execute unintended actions (data exfiltration, API key theft, command execution via agent frameworks). Attack vectors include crafted web pages, embedded comments, README files, or other content that agents fetch when following web browsing or tool\u2011use capabilities.",
-        "affected_products": "Affected products unavailable",
+        "technical_details": "Indirect Prompt Injection (IPI) is an attack where adversaries place maliciously crafted content on web pages or other data sources that AI agents consume, causing the agent to follow attacker\u2011controlled instructions or disclose sensitive data. The attack chain requires injecting adversarial prompts into contexts consumed by models (e.g., web text, code contexts).",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2014 https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads",
-        "patch_available": "false \u2014 https://microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks",
-        "active_exploitation": "true \u2014 Sources: https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Implement input provenance controls, remote content filtering, strict instruction parsing, principle of least privilege for agents, sanitize and ignore untrusted web-origin instructions, use model grounding and instruction allowlists/denylists, robust content security policies.",
+        "mitigation": "Hardening includes continuous monitoring for IPI payloads, input sanitization/validation, context filtering, content provenance and sourcing controls, model instruction\u2011following constraints, and vendor mitigations described by Google; refer to the vendor advisory for details.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -132,15 +163,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) exploits the ability of large language models to consume data from multiple sources. By inserting crafted malicious instructions into those sources or associated tools, an attacker can steer the model\u2019s output or actions even when the user does not directly provide malicious input.",
-        "affected_products": "Google Workspace (Gemini), Gemini CLI",
-        "cvss_score": "10.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Apply the latest Google Workspace and Gemini CLI patches, enable Google\u2019s continuous mitigation controls, monitor logs for anomalous prompt activity, and restrict the use of automated agents that can ingest untrusted data.",
+        "technical_details": "Indirect prompt injection (IPI) is a class of attacks where adversaries embed malicious instructions in data or tools consumed indirectly by an LLM (e.g., content in Workspace apps or web data), causing the model or agentic workflows to follow those instructions. Attack surface includes multi-source data, tool chaining, and agent automation.",
+        "affected_products": "Google Workspace with Gemini (e.g., Gmail, Docs); specific versions unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "false",
+        "active_exploitation": "Active exploitation status unknown",
+        "threat_actors": "None known",
+        "mitigation": "Defense-in-depth continuous approach: human and automated red\u2011teaming; Google AI VRP; vulnerability cataloging and synthetic data generation; deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies governed by a centralized Policy Engine); ML\u2011based defenses retrained on synthetic variants; LLM model hardening to ignore embedded harmful instructions; monitoring of public disclosures and rapid config \"point fixes\" (e.g., regex takedowns).",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -160,15 +191,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Chrome's agentic features face \"indirect prompt injection\": malicious instructions embedded in web content (pages, iframes, UGC) can influence an agent to perform unwanted actions (e.g., transactions, exfiltration). Google describes layered defenses: origin gating, a User Alignment Critic classifier, planner/gating function separation, explicit user confirmations for sensitive actions, Safe Browsing and on\u2011device scam detection, and work\u2011logs for transparency.",
+        "technical_details": "Indirect prompt injection occurs when untrusted web content (malicious pages, iframes, user\u2011generated content) crafts inputs that influence an agent/planner model to perform unwanted actions (e.g., financial transactions, data exfiltration). Chrome limits model exposure via origin gating, uses an isolated alignment critic to vet actions, runs a parallel prompt\u2011injection classifier, and requires user confirmations for impactful actions.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false.",
-        "patch_available": "true; https://blog.google/security/architecting-security-for-agentic/",
-        "active_exploitation": "false.",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://blog.google/security/architecting-security-for-agentic/",
+        "active_exploitation": "false",
         "threat_actors": "None known.",
-        "mitigation": "Use Google\u2019s layered defenses and hardening: enable the latest Chrome updates with agentic protections; rely on origin gating and user confirmations; monitor Safe Browsing and on\u2011device protections; follow Google guidance in the vendor advisory; consider blocking agentic browsers in high\u2011risk environments per Gartner/NCSC guidance.",
+        "mitigation": "Layered defenses described by Google: User Alignment Critic (isolated vetting model), Origin Sets (readable vs read\u2011writeable origin gating), deterministic checks on model\u2011generated URLs, user confirmations for sensitive actions, prompt\u2011injection classifier running in parallel, Safe Browsing integration, red\u2011teaming and VRP updates.",
         "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
       }
     },
@@ -188,16 +219,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Google reports that adopting Rust in Android reduced memory\u2011safety vulnerability density (2025 data shows memory safety vulnerabilities fell below 20% of total vulnerabilities), reflecting a prevention\u2011first strategy focused on new code; Rust prevents classes of memory\u2011safety bugs common in C/C++.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Race condition in the Rust implementation of the Android Binder IPC subsystem caused by an unsafe block that corrupts the prev and next pointers of a linked list, potentially leading to kernel panic or system crash (DoS).",
+        "affected_products": "Linux kernel 6.18 and later with CONFIG_ANDROID_BINDER_IPC_RUST=y; some Android kernels with 6.12.x backports",
+        "cvss_score": "4.6",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use memory\u2011safe languages (Rust) for new code, prioritize vulnerability prevention in code changes, continue auditing C/C++ components and apply defensive coding and sanitizers.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Apply the official kernel patches; restrict local access to the Binder driver; monitor system logs for rust_binder crashes; review and disable the CONFIG_ANDROID_BINDER_IPC_RUST kernel configuration if not required.",
+        "vendor_advisory": "https://ubuntu.com/security/CVE-2025-68260"
       }
     },
     {
@@ -216,15 +247,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is an attack where hidden or external instructions (e.g., in emails, documents, calendar invites, or web content) are crafted to manipulate generative AI systems that ingest external data, causing them to disclose sensitive information or perform unauthorized actions. The mechanism relies on models browsing or ingesting untrusted external content which contains adversarial instructions that the model treats as part of its prompt.",
-        "affected_products": "Affected products unavailable",
+        "technical_details": "Indirect prompt injection occurs when hidden malicious instructions in external data sources (emails, documents, calendar invites, or embedded URLs/images) cause a generative\u2011AI assistant to perform unintended actions or exfiltrate data. The attack leverages the model\u2019s ability to follow natural\u2011language instructions embedded in content it processes, allowing an adversary to trigger malicious behavior without directly interacting with the model.",
+        "affected_products": "Gemini 2.5, Gemini (Google Workspace)",
         "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
         "exploit_available": "false",
         "patch_available": "false",
-        "active_exploitation": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Apply a layered defense strategy including input provenance and validation (treat external data as untrusted), content filtering and sanitization, model instruction hardening (instruction\u2011following constraints and refusal policies), strict data access controls and least\u2011privilege for model actions, rate\u2011limiting and monitoring for anomalous queries, and use of browser/browsing isolation when allowing models to access web content.",
+        "mitigation": "Use layered defenses \u2014 model hardening/adversarial training, content classifiers, markdown sanitization (no external image rendering), suspicious URL detection/redaction (Safe Browsing), contextual user confirmation for risky actions, end\u2011user security notifications, and follow Google help center guidance. Monitor vendor advisories and apply recommended configuration changes.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -243,16 +274,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Actors modify routers to maintain persistent, long\u2011term access and leverage compromised devices and trusted connections to pivot into other networks.",
-        "affected_products": "Backbone routers, Provider Edge (PE) routers, Customer Edge (CE) routers",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "technical_details": "PRC state-sponsored APTs compromise internet-exposed network-edge devices (routers, provider edge/customer edge) by exploiting publicly known CVEs and weak/default credentials, gaining administrative access to modify configurations (ACLs, routes, open ports), enable traffic mirroring or tunneling, run virtual containers or scripts on-device for persistence and lateral movement, and exfiltrate or redirect traffic.",
+        "affected_products": "Cisco IOS XE, Cisco IOS, Ivanti Connect Secure, Ivanti Policy, Fortinet firewalls, Juniper firewalls, Nokia routers and switches, Sierra Wireless devices, SonicWall firewalls",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "Patch availability unknown",
+        "active_exploitation": "true",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Follow CISA\u2019s mitigation guidance: simulate the threat scenarios, apply router hardening best practices, enforce network segmentation, and regularly update firmware.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+        "mitigation": "Prioritize patching known exploited CVEs; monitor router configs/logs for unexpected ACLs, GRE/IPsec tunnels, SPAN/RSPAN/ERSPAN, unexpected virtual containers; disable unused services/protocols; change default credentials; enforce PKI/public-key auth for admin access; perform firmware image/hash integrity checks and inventory; apply Cisco-specific Guest Shell hardening as recommended",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -268,19 +299,25 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Technical details unavailable",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "Patch availability unknown",
-        "active_exploitation": "true",
-        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165 (aka APT28)",
-        "mitigation": "Follow advisory hardening and detection recommendations (network segmentation, multifactor authentication, patching where applicable, enhanced monitoring/logging, restrict remote access, incident response planning). See vendor advisory for full mitigations.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
-      }
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-48047",
+      "title": "XWiki Platform vulnerable to potential arbitrary file writing using path traversal from (subwiki) admin",
+      "summary": "### Impact\nA potential path traversal vulnerability allow an attacker who manages to get a malicious WebJar extension installed on the wiki to write arbitrary files. While the consequences could be severe like overriding configuration files and setting the superadmin password, the attack first requires that the attacker already has admin access to at least a subwiki to be able to install a malicious extension. Further, the attacker needs to publish a malicious extension in an extension repository that is configured in the instance.\n\n### Patches\nThis vulnerability has been patched in XWiki 16.10.17, 17.4.9, 17.10.3, and 18.0.0RC1.\n\n### Workarounds\nXWiki is not aware of any workarounds except for being careful whom developers grant script and admin rights to.\n\n### Resources\n* https://jira.xwiki.org/browse/XWIKI-23902\n* https://github.com/xwiki/xwiki-platform/commit/9f747fcd3200259a1de51957d3f5f6acc8e3816c",
+      "link": "https://github.com/advisories/GHSA-vgwr-23fq-pr7g",
+      "published": "2026-05-26T19:33:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48047"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-drupal-vulnerability/",
@@ -330,6 +367,64 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-28445",
+      "title": "Typebot has Stored XSS via Rating Block Custom Icon that Bypasses isUnsafe Sandbox in Builder Preview",
+      "summary": "## Summary\nThe rating block's custom icon feature accepts arbitrary HTML/SVG via the `customIcon.svg` field and renders it using Solid's `innerHTML` directive without any sanitization. When a malicious typebot is imported or crafted by a workspace collaborator, the payload executes in the builder's DOM context (builder.typebot.io), bypassing the `isUnsafe` Web Worker sandbox that protects Script blocks during preview. This allows session hijacking and privilege escalation within the builder application.\n\n## Severity\n**High** (CVSS 3.1: 8.7)\n\n`CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:N`\n\n- **Attack Vector:** Network \u2014 malicious typebot can be delivered via import/template sharing or crafted by a collaborator\n- **Attack Complexity:** Low \u2014 payload is a trivial HTML injection, no special conditions required\n- **Privileges Required:** Low \u2014 attacker needs either collaborator access to a workspace or the ability to distribute a typebot template\n- **User Interaction:** Required \u2014 victim must preview the bot in the builder\n- **Scope:** Changed \u2014 the vulnerable component (embed JS rating renderer) impacts the builder application's authentication context, a different security scope\n- **Confidentiality Impact:** High \u2014 full access to builder session cookies, auth tokens, and API access\n- **Integrity Impact:** High \u2014 can modify bots, workspace settings, or perform any action as the victim user\n- **Availability Impact:** None \u2014 no denial of service vector\n\n- **Builder preview context (CONFIRMED):** This is the real vulnerability. The rating block innerHTML bypasses the `isUnsafe` sandbox mechanism that protects against imported/untrusted Script blocks. The builder preview renders inline on the builder's origin with `'unsafe-inline'` CSP, giving the attacker full access to the victim's builder session.\n- **Viewer/embed context (NOT incremental):** Bot creators already have intentional arbitrary JavaScript execution via Script blocks in production mode (`executeScript.ts:22-24`",
+      "link": "https://github.com/advisories/GHSA-6m7c-xfhp-p9fh",
+      "published": "2026-05-26T17:39:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-28445"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://kubernetes.io/blog/2026/05/26/reconciling-unfixed-kubernetes-cves/",
+      "title": "Reconciling the Past: Correcting Records for Unfixed Kubernetes CVEs",
+      "summary": "The Kubernetes project relies on transparency to empower cluster administrators and security researchers. One important way we do that is by publishing CVE records into the Common Vulnerabilities and Exposures database. As part of our ongoing effort to mature the official Kubernetes CVE Feed , we have identified some discrepancies. CVE records for a few older, unfixed issues incorrectly include a fixed version field. The Kubernetes Security Response Committee (SRC) will correct the affected CVE records on June 1, 2026. This may result in vulnerability scanners identifying these vulnerabilities in places where they were previously not detected. To help reduce confusion, this post provides a technical update on three vulnerabilities that were disclosed in previous years but remain unfixed: CVE-2020-8561 , CVE-2020-8562 , and CVE-2021-25740 . Why we are updating these records now While these vulnerabilities have been public for several years, the recent work to generate official Open Source Vulnerabilities (OSV) files revealed that their corresponding CVE records did not accurately reflect their status. Specifically, some records suggested a fixed version existed, when in reality, these issues are architectural design trade-offs that cannot be fully remediated through code without breaking fundamental Kubernetes functionality. Correcting these records is vital for the community for: Automation Fidelity : Modern vulnerability scanners depend on precise version ranges. Inaccurate fixed tags lead to false negatives, giving users a false sense of security. Risk Documentation : By formalizing these as unfixed , we ensure that platform providers and administrators are aware of the persistent need for administrative mitigations. For completeness, we should also mention that CVE-2020-8554 is an unfixed CVE with a correct CVE record stating that it affects all versions. That record will also be updated to use a more-standardized version number format. Technical analysis of unfi",
+      "link": "https://kubernetes.io/blog/2026/05/26/reconciling-unfixed-kubernetes-cves/",
+      "published": "2026-05-26T17:30:00+00:00",
+      "source": "Kubernetes Security Announcements",
+      "tags": [
+        "cloud",
+        "kubernetes",
+        "k8s",
+        "container"
+      ],
+      "cve_ids": [
+        "CVE-2020-8561",
+        "CVE-2020-8562",
+        "CVE-2021-25740",
+        "CVE-2020-8554"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2025-66407",
+      "title": "Weblate has a Server-Side Request Forgery issue",
+      "summary": "### Impact\nThe Create Component functionality in Weblate allows authorized users to add new translation components by specifying both a version control system and a source code repository URL to pull from. However, the repository URL field is not validated or sanitized, allowing an attacker to supply arbitrary protocols, hostnames, and IP addresses, including localhost, internal network addresses, and local filenames.\n\nWhen the Mercurial version control system is selected, Weblate exposes the full server-side HTTP response for the provided URL. This effectively creates a server-side request forgery (SSRF) primitive that can probe internal services and return their contents. In addition to accessing internal HTTP endpoints, the behavior also enables local file enumeration by attempting file:// requests. While file contents may not always be returned, the application\u2019s error messages clearly differentiate between files that exist and files that do not, revealing information about the server\u2019s filesystem layout.\n\n\n\nIn cloud environments, this behavior is particularly dangerous, as internal-only endpoints such as cloud metadata services may be accessible, potentially leading to credential disclosure and full environment compromise.\n\n### Patches\n\nThis has been addressed in the Weblate 5.15 release.\n\n* https://github.com/WeblateOrg/weblate/pull/17103\n* https://github.com/WeblateOrg/weblate/pull/17102\n\n### Workarounds\n\nRemoving Mercurial from [VCS_BACKENDS](https://docs.weblate.org/en/latest/admin/config.html#vcs-backends) avoids this vulnerability, as the Git backend is not affected. The Git backend was already configured to block the file protocol and does not expose the HTTP response content in the error message.\n\n### References\nThanks to Jason Marcello for responsible disclosure.",
+      "link": "https://github.com/advisories/GHSA-hfpv-mc5v-p9mm",
+      "published": "2026-05-26T16:41:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-66407"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/05/microsoft-patches-sharepoint-rce-flaw.html",
