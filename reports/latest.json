@@ -1,8 +1,8 @@
 {
-  "generated": "2026-05-27T02:09:41.586653+00:00",
-  "total": 32,
+  "generated": "2026-05-27T08:59:47.899454+00:00",
+  "total": 30,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 12,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated path traversal in SimpleHelp that lets remote attackers download arbitrary files by sending specially crafted HTTP requests.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management versions 5.5.7 and earlier",
+        "technical_details": "Multiple path traversal vulnerabilities in SimpleHelp remote support software v5.5.7 and earlier enable unauthenticated remote attackers to traverse directories and access or manipulate files on the server.",
+        "affected_products": "SimpleHelp Remote Support Software version 5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof-of-concept/weaponized exploit reported (see SecurityWeek).",
-        "patch_available": "Patches released in SimpleHelp versions 5.5.8, 5.4.10, and 5.3.9",
-        "active_exploitation": "Confirmed active exploitation reported by CISA (AA25-163A) and FortiGuard.",
-        "threat_actors": "DragonForce ransomware group and other ransomware operators",
-        "mitigation": "Upgrade to the patched SimpleHelp versions; if patching is not possible, isolate or block internet\u2011exposed SimpleHelp servers, conduct threat hunting, and monitor network traffic per CISA guidance.",
-        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true (http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know)",
+        "active_exploitation": "true",
+        "threat_actors": "DragonForce ransomware group",
+        "mitigation": "Apply the SimpleHelp patch (upgrade to a version newer than 5.5.7), restrict network access to the RMM service, and disable remote support features if they are not required.",
+        "vendor_advisory": "http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
       }
     },
     {
@@ -49,15 +49,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability arises from hard\u2011coded identical ASP.NET machineKey values in KnowledgeDeliver\u2019s web.config. Attackers can craft signed ViewState payloads that the server accepts and deserializes, achieving unauthenticated remote code execution and in\u2011memory deployment of the BLUEBEAM/Godzilla web shell.",
-        "affected_products": "Digital Knowledge KnowledgeDeliver (versions released before February 24, 2026)",
-        "cvss_score": "7.5",
+        "technical_details": "ViewState deserialization RCE due to identical hardcoded ASP.NET machineKey across deployments; attacker crafts signed __VIEWSTATE payloads to trigger unsafe deserialization and remote code execution, enabling in\u2011memory .NET web shell (BLUEBEAM/Godzilla) deployment and subsequent Cobalt Strike.",
+        "affected_products": "KnowledgeDeliver (Digital Knowledge) installations deployed before Feb 24, 2026 using the vendor\u2011supplied web.config with hardcoded ASP.NET machineKey.",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept is available.",
-        "patch_available": "Patch available: Vendor released fixes after Feb\u202f24\u202f2026 \u2014 update KnowledgeDeliver to versions released after Feb\u202f24\u202f2026.",
-        "active_exploitation": "Yes \u2014 confirmed active exploitation in the wild, reported by Mandiant, Google Cloud Threat Intelligence, BleepingComputer, and SecurityWeek.",
-        "threat_actors": "Unknown specific group; an unknown threat actor observed by Mandiant deployed the BLUEBEAM/Godzilla web shell.",
-        "mitigation": "Rotate and generate unique, cryptographically strong ASP.NET machineKey values in web.config for each deployment; update KnowledgeDeliver to versions released after Feb\u202f24\u202f2026; restrict LMS access to trusted IP ranges; implement WAF rules to block suspicious __VIEWSTATE payloads; disable ViewState if possible; monitor for indicators such as large/malformed __VIEWSTATE, IIS deserialization errors, w3wp.exe spawning, and web\u2011shell artifacts.",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Rotate machineKey to unique cryptographically strong values for each instance; restrict LMS access to known IP ranges; monitor Windows Application event logs (Event ID 1316), w3wp.exe suspicious child processes, file integrity on .js/.aspx/.config, anomalous User-Agent strings; perform thorough investigation and remediation.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -76,42 +76,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Hard\u2011coded ASP.NET machineKey values allow attackers to craft a malicious ViewState payload that bypasses validation and deserializes arbitrary objects, resulting in remote code execution.",
-        "affected_products": "Digital Knowledge KnowledgeDeliver (all deployments prior to February 24, 2026)",
+        "technical_details": "KnowledgeDeliver used a standardized web.config with hard\u2011coded ASP.NET machineKey (decryptionKey/validationKey). The shared machineKey allowed attackers to craft malicious __VIEWSTATE payloads, leading to ViewState deserialization and unauthenticated remote code execution. Exploitation resulted in in\u2011memory .NET web shells (BLUEBEAM/Godzilla) and subsequent Cobalt\u00a0Strike deployment.",
+        "affected_products": "Digital Knowledge KnowledgeDeliver (all deployments prior to 2026-02-24)",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "No public proof-of-concept available; exploitation observed in the wild.",
-        "patch_available": "Vendor released patches for Digital Knowledge KnowledgeDeliver in versions released after February 24, 2026.",
-        "active_exploitation": "Confirmed active exploitation reported by Mandiant, with attackers deploying Godzilla web shells and Cobalt Strike backdoors.",
-        "threat_actors": "Mandiant reported attackers deploying Godzilla web shells and Cobalt Strike; no specific APT identified.",
-        "mitigation": "Update KnowledgeDeliver to versions released after February 24, 2026; audit and replace hard\u2011coded machineKey values with unique cryptographically strong keys; restrict access to the application; implement WAF rules to block malicious ViewState payloads; monitor for large or malformed __VIEWSTATE parameters and web\u2011shell indicators.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
-    },
-    {
-      "id": "https://thehackernews.com/2026/05/iranian-hackers-deploy-minifast-and.html",
-      "title": "Iranian Hackers Deploy MiniFast and MiniJunk V2 via Phishing and SEO Poisoning",
-      "summary": "The Iranian state-sponsored threat actor known as Nimbus Manticore (aka Screening Serpens and UNC1549) has been attributed to a fresh campaign using lures impersonating organizations in the aviation and software sectors across the U.S., Europe, and the Middle East following the joint U.S.-Israeli military campaign against the country in late February 2026.\n\nThe activity, besides embracing",
-      "link": "https://thehackernews.com/2026/05/iranian-hackers-deploy-minifast-and.html",
-      "published": "2026-05-26T07:13:05+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "The actor used SEO\u2011poisoned search results and spear\u2011phishing lures impersonating aviation and software vendors to deliver installers/attachments that deploy MiniFast (an AI\u2011assisted backdoor) and MiniJunk V2. Delivery included malicious installers and hosting via cloud services (e.g., Microsoft Azure) and side\u2011loading/injection techniques to run within legitimate process contexts.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit reported.",
-        "patch_available": "Patch unavailable.",
-        "active_exploitation": "Confirmed active exploitation reported by The Hacker News and Check Point Research (campaigns in May 2026 using MiniFast and MiniJunk V2 via phishing and SEO poisoning).",
-        "threat_actors": "Nimbus Manticore (aka Screening Serpens, UNC1549)",
-        "mitigation": "Harden email defenses and user awareness; block known malicious domains and SEO-poisoned URLs; deploy/ensure EDR and up\u2011to\u2011date AV with behavioral detection; restrict execution from user download folders; apply least\u2011privilege and MFA for accounts; monitor for indicators of compromise reported by vendors/researchers.",
+        "exploit_available": "true \u2014 source: https://cloud.google.com/blog/topics/threat-intelligence/knowledgedeliver-viewstate-deserialization-vulnerability, https://www.securityweek.com/hackers-exploited-knowledgedeliver-zero-day-for-web-shell-deployment/",
+        "patch_available": "true \u2014 Patch advisory URL unavailable.",
+        "active_exploitation": "true \u2014 confirmed in the wild (Mandiant/Google Cloud blog; SecurityWeek).",
+        "threat_actors": "Unknown threat actor(s) (Mandiant observed deployment of Godzilla/BLUEBEAM and subsequent Cobalt Strike Beacon activity)",
+        "mitigation": "Rotate to unique, cryptographically strong machineKey per instance; restrict LMS access to trusted IPs; monitor ASP.NET event logs (Event ID 1316 / Event code 4009), watch w3wp.exe child processes, use file integrity monitoring for .js/.aspx/.config changes, and watch for anomalous User\u2011Agent strings. Hunt using the published IoCs.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -131,16 +104,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI system processes untrusted content\u2014such as a website, email, or document\u2014that contains malicious instructions, allowing attackers to embed prompts that the model may execute.",
+        "technical_details": "An attacker hides malicious prompt text in a web page (e.g., in comments, hidden HTML elements, or scripts). An AI agent that crawls or is fed the page reads the hidden text as part of its prompt, leading the model to follow the attacker\u2019s instructions, which can result in data leakage, command execution, or influence over downstream tasks.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is currently available.",
-        "patch_available": "No official vendor \"patch\" for IPI; see Google Security Blog for mitigation information.",
-        "active_exploitation": "Limited malicious instances observed; no evidence of large\u2011scale, sophisticated active exploitation.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Apply layered defenses: model hardening, red\u2011team testing, AI Vulnerability Reward Program, content sanitization, prompt validation, and rate/timeout controls.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "1. Restrict AI agents from directly ingesting arbitrary web pages; use curated data sources. 2. Implement robust input sanitization and filter hidden HTML/comments for suspicious prompts. 3. Apply prompt\u2011guardrails or sandboxing to validate model outputs before acting on them. 4. Monitor and log anomalous AI responses for early detection of injection attempts.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -159,16 +132,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) involves attackers injecting malicious instructions into data or tools consumed by LLMs, influencing model behavior without direct user input. The vulnerability arises from complex AI applications that integrate multiple data sources, such as Google Workspace with Gemini, allowing crafted content or tool outputs to steer the model.",
-        "affected_products": "Google Workspace features integrating Gemini (e.g., Gmail, Docs).",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect prompt injection (IPI) occurs when an attacker embeds malicious instructions within external data or tools that an LLM consumes while fulfilling a user\u2019s request. The model may follow those injected instructions because agentic workflows surface external content into the model\u2019s context, allowing attackers to override or influence the system or user instructions.",
+        "affected_products": "Google Workspace (features integrating Gemini and other LLM\u2011powered Workspace apps); Gemini in Workspace (no specific versions listed)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is linked in the advisory.",
-        "patch_available": "No single patch available; defenses are described in the advisory.",
-        "active_exploitation": "No confirmed public reports of active exploitation are mentioned in the advisory.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Google recommends layered defenses: deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies, centralized policy engine, quick config point\u2011fixes), ML\u2011based defenses (retraining on synthetic attack variants), LLM\u2011based defenses (prompt engineering), and Gemini model hardening, supplemented by continuous red\u2011teaming and VRP engagement.",
-        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+        "mitigation": "Apply Google's layered defenses \u2014 content\u2011source filtering and validation, model grounding and instruction scrubbing, strict tool/data access controls, monitoring and anomaly detection, user education and prompt design best practices; implement least\u2011privilege for agents and limit autonomous actions.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -187,15 +160,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) allows malicious content on web pages or third\u2011party resources to manipulate the instructions or context of an AI agent in Chrome\u2019s agentic browsing, causing the agent to perform unintended or unsafe actions.",
-        "affected_products": "Google Chrome (agentic browsing / Gemini\u2011in\u2011Chrome features) \u2014 versions with agentic capabilities rolled out starting Dec 2025.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit reported.",
-        "patch_available": "Apply the latest Chrome updates that include the layered security features for agentic browsing.",
-        "active_exploitation": "Google observed an increase in indirect prompt injection attempts on public sites but did not report confirmed widespread active exploitation; researchers/Google flagged rising attempts.",
+        "technical_details": "Indirect prompt injection: untrusted web content (pages, iframes, UGC, ads) can craft text that manipulates an agent/planner model into taking unwanted actions (financial transactions, data exfiltration). Chrome\u2019s mitigations focus on layered defenses: a separate User Alignment Critic that vets planned actions without direct access to untrusted content; Agent Origin Sets (read-only vs read-write origins) enforced by a gating function; runtime prompt\u2011injection classifiers; deterministic checks for sensitive navigations and actions; user confirmations for sensitive steps; and continuous red\u2011teaming and monitoring.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Apply the latest Chrome updates; enable Chrome\u2019s agentic\u2011safety features and layered defenses as described by Google; follow the guidance in the advisory.",
+        "mitigation": "Use Chrome\u2019s layered defenses: ensure Chrome is updated (auto-update), enforce origin gating and user confirmations, rely on the User Alignment Critic and prompt\u2011injection classifiers, avoid sharing sensitive credentials to agents, and follow Google VRP guidance to report issues. For vendors: implement origin isolation, action\u2011vetting critics, real\u2011time injection detection, and user\u2011in\u2011the\u2011loop confirmations.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -215,16 +188,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Google reports that shifting new Android code toward Rust and focusing on memory\u2011safety in new code reduced memory\u2011safety vulnerability density substantially in 2025, with memory\u2011safety vulnerabilities falling below 20% of total vulnerabilities; covers changes across C/C++ and Rust adoption.",
-        "affected_products": "Android platform (first-party and third-party open-source components written in C, C++, Java, Kotlin and Rust)",
-        "cvss_score": "-999.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "None known",
-        "patch_available": "Official vendor advisory describes adoption of Rust and platform changes; no single patch or CVE-specific fix URL provided in advisory",
-        "active_exploitation": "No confirmed active exploitation reported in the advisory",
+        "technical_details": "A linear buffer overflow in the CrabbyAVIF component of Android's media stack. The overflow would have allowed out\u2011of\u2011bounds writes, but Android's Scudo hardened allocator placed guard pages around secondary allocations, rendering the bug non\u2011exploitable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Continue migrating new code to memory-safe languages (Rust), apply standard Android security updates, follow vendor guidance in advisory",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Apply the latest Android platform updates that include the CrabbyAVIF patch; the Scudo hardened allocator already provides defense-in-depth by using guard pages to prevent exploitation.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
     {
@@ -243,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection embeds malicious instructions inside external data sources (web pages, documents, emails, calendar invites). When an LLM ingests that data (via browsing, document parsing, or context assembly), the hidden instructions can influence model outputs to exfiltrate secrets or perform unauthorized actions.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit known.",
-        "patch_available": "No vendor patch; guidance/advisory published at the URL above.",
-        "active_exploitation": "Confirmed increase in indirect prompt injection attempts in the wild per Google analysis and independent research (reports from Google, X\u2011Labs, Forcepoint and others).",
-        "threat_actors": "None known.",
-        "mitigation": "Layered defenses \u2014 input sanitization and provenance checks, restrict or disable autonomous browsing of untrusted external content, prompt allowlisting and hardening, require user confirmation before sensitive actions, least\u2011privilege access for models, telemetry and monitoring for anomalous model behavior.",
+        "technical_details": "Indirect prompt injection (IPI) embeds malicious instructions in external data (emails, documents, calendar invites) that aim to manipulate LLM outputs or exfiltrate data. The attack vector relies on hidden instructions that the model may inadvertently execute, leading to data leakage or unauthorized actions.",
+        "affected_products": "Gemini (Google Workspace), Gemini app",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "Active exploitation status unknown",
+        "threat_actors": "None known",
+        "mitigation": "Deploy layered defenses: apply vendor mitigations (Gemini model hardening and content classifiers), enable product\u2011provided security features (URL redaction, markdown sanitization, user confirmation prompts), train users to recognize suspicious content, and follow the Help Center guidance (https://support.google.com/docs/answer/16204578).",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -270,15 +243,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Actors exploit known CVEs and misconfigurations to gain initial access to edge/backbone routers, then modify router configurations and firmware, create accounts, alter AAA/TACACS+ settings, enable packet capture (Embedded Packet Capture/PCAP), create SPAN/RSPAN/ERSPAN sessions, change ACLs, open ports, execute Tcl scripts, use SNMP and SSH for command execution, and mirror/capture traffic to collect credentials and pivot to other networks.",
-        "affected_products": "Cisco IOS and IOS XE devices (including routers), broadly: backbone routers, PE and CE routers; advisory notes potential targeting of Fortinet firewalls, Juniper firewalls, Microsoft Exchange, Nokia routers/switches, Sierra Wireless devices, SonicWall (Exact versions not enumerated) \u2014 Affected products unavailable for specific versions.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No zero-day exploitation observed; actors exploit publicly known CVEs (examples cited by industry: CVE-2023-20198, CVE-2018-0171, CVE-2023-20273, CVE-2024-21887, CVE-2024-3400). No public PoC/weaponized exploit URL specified in the advisory.",
-        "patch_available": "Vendors (e.g., Cisco, Ivanti, Palo Alto) have released patches for specific CVEs referenced; advisory links to vendor hardening resources but does not list a single vendor patch URL. Patch/advisory URLs: CISA advisory (above) links to Cisco resources: Cisco Software Checker and hardening guides.",
-        "active_exploitation": "Yes \u2014 confirmed active exploitation in the wild of routers and infrastructure via publicly known CVEs and configuration weaknesses; advisory and allied reporting describe persistent, long-term operations and exploitation of known CVEs. Sources: CISA advisory, SecurityWeek, Canadian Centre for Cyber Security.",
-        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
-        "mitigation": "Prioritize patching known exploited CVEs; disable unused ports/protocols; use encrypted/authenticated management protocols (SSH/SFTP/HTTPS); change default credentials; require public-key authentication for admin roles; perform firmware/software integrity/hash verification; monitor logs and configurations; validate runtime image integrity; follow vendor hardening guides (Cisco IOS/IOS XE hardening); enforce network segmentation and disable unneeded services.",
+        "technical_details": "APT actors exploit publicly known CVEs and weak/default credentials on exposed edge/network devices to create unauthorized administrative accounts, enable web/management services, execute scripts (TCL/Python) or run containers (Guest Shell/IOx), modify ACLs, open ports, configure GRE/IPsec tunnels and SPAN/RSPAN/ERSPAN to mirror/exfiltrate traffic, and maintain persistent access for long\u2011term collection and lateral movement.",
+        "affected_products": "Cisco IOS, Cisco IOS XE, Cisco NX\u2011OS (including Guest Shell/IOx), Ivanti Connect Secure, Ivanti Policy, Fortinet (firewalls), Juniper (firewalls/routers), Nokia routers/switches, Sierra Wireless devices, SonicWall firewalls, and other edge/network devices",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true \u2014 https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+        "patch_available": "true \u2014 https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+        "active_exploitation": "true \u2014 https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
+        "mitigation": "Prioritize patching of known exploited CVEs; disable unused ports/protocols and outbound management access; enforce strong/unique admin credentials and public\u2011key auth; monitor firmware/software integrity and validate hashes; monitor logs for on\u2011box PCAP/monitor\u2011session creation and suspicious ACL changes; follow vendor hardening guidance (Cisco IOS/XE/NX\u2011OS hardening guides).",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -292,6 +265,33 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "GRU 85th GTsSS (Unit 26165) \u2014 tracked as APT28 (Russian state-sponsored)",
+        "mitigation": "Follow CISA/CSA mitigations and hardening guidance in advisory (network segmentation, multi-factor authentication, monitoring/logging, patching, supply-chain risk management).",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+      }
+    },
+    {
+      "id": "https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-litespeed-cpanel-plugin-zero-day/",
+      "title": "CISA Urges Immediate Patching of Exploited LiteSpeed cPanel Plugin Zero-Day",
+      "summary": "Resolved last week, the vulnerability was exploited in the wild as a zero-day to execute scripts with root privileges. The post CISA Urges Immediate Patching of Exploited LiteSpeed cPanel Plugin Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-litespeed-cpanel-plugin-zero-day/",
+      "published": "2026-05-27T06:55:44+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -311,38 +311,6 @@
       ],
       "cve_ids": [
         "CVE-2026-48047"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-drupal-vulnerability/",
-      "title": "CISA orders feds to patch actively exploited Drupal vulnerability",
-      "summary": "CISA has given U.S. government agencies until Wednesday evening to secure their servers against an SQL injection vulnerability in the Drupal content management system (CMS) that it flagged as actively exploited. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-drupal-vulnerability/",
-      "published": "2026-05-26T08:46:45+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/05/knowledgedeliver-lms-flaw-exploited-to.html",
-      "title": "KnowledgeDeliver LMS Flaw Exploited to Deploy Godzilla and Cobalt Strike",
-      "summary": "A now-patched high-severity security flaw affecting Digital Knowledge KnowledgeDeliver, a Learning Management System (LMS) popular in Japan, was exploited as a zero-day to deliver the Godzilla web shell and ultimately facilitate the deployment of Cobalt Strike Beacon.\n\nThe vulnerability, tracked as CVE-2026-5426 (CVSS score: 7.5), stems from the use of hard-coded ASP.NET machine keys, leading to",
-      "link": "https://thehackernews.com/2026/05/knowledgedeliver-lms-flaw-exploited-to.html",
-      "published": "2026-05-26T05:19:38+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-5426"
       ],
       "is_zero_day": true,
       "is_high_severity": false
