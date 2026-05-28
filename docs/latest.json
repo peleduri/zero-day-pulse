@@ -1,8 +1,8 @@
 {
-  "generated": "2026-05-28T09:43:59.380125+00:00",
-  "total": 24,
+  "generated": "2026-05-28T15:04:22.434753+00:00",
+  "total": 27,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 14,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,98 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a path traversal vulnerability in SimpleHelp RMM (v5.5.7 and earlier) that enables unauthenticated remote attackers to retrieve logs, configuration files, and credentials and potentially log in with elevated privileges, allowing access to downstream customer environments.",
-        "affected_products": "SimpleHelp Remote Support/Software versions 5.5.7 and earlier",
+        "technical_details": "Multiple path traversal vulnerabilities in SimpleHelp 5.5.7 and earlier allow unauthenticated remote attackers to retrieve logs, configuration files, credentials, and potentially log in with elevated privileges, enabling compromise of downstream customers.",
+        "affected_products": "SimpleHelp Remote Support / Remote Monitoring and Management (RMM) versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-        "exploit_available": "true",
-        "patch_available": "true",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true - https://medium.com/@RosanaFS/simplehelp-cve-2024-57727-tryhackme-walkthrough-9f88c2061fb9",
+        "patch_available": "true - http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
         "active_exploitation": "true",
-        "threat_actors": "DragonForce",
-        "mitigation": "Immediately upgrade SimpleHelp to v5.5.8 or later; if immediate patching not possible, isolate/segregate RMM servers from sensitive networks, restrict network access to management interfaces (firewall/ACLs to trusted IPs), rotate credentials/passwords and secrets stored in SimpleHelp, audit logs for indicators of compromise, and monitor outbound traffic for suspicious activity.",
+        "threat_actors": "Ransomware actors / DragonForce",
+        "mitigation": "Apply vendor patch/update to 5.5.8 or later immediately; isolate/unplug unpatched SimpleHelp servers from internet-facing access; audit logs and credentials; rotate exposed credentials; follow CISA advisory incident response guidance.",
         "vendor_advisory": "http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+      }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/new-gogs-zero-day-flaw-lets-hackers-get-remote-code-execution/",
+      "title": "New Gogs zero-day flaw lets hackers get remote code execution",
+      "summary": "An unpatched zero-day vulnerability in the Gogs self-hosted Git service can allow attackers to gain remote code execution (RCE) on Internet-facing instances. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-gogs-zero-day-flaw-lets-hackers-get-remote-code-execution/",
+      "published": "2026-05-28T14:25:43+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Symlink bypass of the PutContents API allows authenticated users with repo creation/modify rights to commit a symlink pointing outside the repository and then use the API to overwrite arbitrary files (e.g., .git/config), resulting in remote code execution.",
+        "affected_products": "Gogs <= 0.13.3 (fixed in v0.13.4)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true \u2014 https://wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit",
+        "patch_available": "true \u2014 https://github.com/gogs/gogs/releases/tag/v0.13.4",
+        "active_exploitation": "true \u2014 https://wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit",
+        "threat_actors": "None known",
+        "mitigation": "Upgrade to v0.13.4 or later; if upgrade is not possible, disable open\u2011registration, restrict internet exposure (VPN/allow\u2011list), monitor for suspicious repositories and PutContents activity, and apply IoC detections provided by Wiz.",
+        "vendor_advisory": "https://github.com/gogs/gogs/security/advisories"
+      }
+    },
+    {
+      "id": "https://www.securityweek.com/critical-forticlient-ems-vulnerability-exploited-in-fresh-attacks/",
+      "title": "Critical FortiClient EMS Vulnerability Exploited in Fresh Attacks",
+      "summary": "Fortinet rolled out hotfixes for the security defect in April, warning that it had been exploited in the wild as a zero-day and urging immediate patching. The post Critical FortiClient EMS Vulnerability Exploited in Fresh Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/critical-forticlient-ems-vulnerability-exploited-in-fresh-attacks/",
+      "published": "2026-05-28T12:55:47+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Improper Access Control (CWE\u2011284) \u2013 a pre\u2011authentication API access bypass in FortiClient EMS that permits unauthenticated attackers to execute unauthorized code or commands via specially crafted requests.",
+        "affected_products": "FortiClient EMS 7.4.5, FortiClient EMS 7.4.6",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true - http://fortiguard.fortinet.com/psirt/FG-IR-26-099",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Install the emergency hotfix for FortiClient EMS 7.4.5 and 7.4.6, or upgrade to FortiClient EMS 7.4.7 when released; follow the vendor's hotfix installation instructions.",
+        "vendor_advisory": "http://fortiguard.fortinet.com/psirt/FG-IR-26-099"
+      }
+    },
+    {
+      "id": "https://www.tenable.com/blog/how-cyberattackers-inflate-malicious-package-npm-download-counts",
+      "title": "Download pumping: New npm deception technique for supply chain attacks",
+      "summary": "Learn how attackers exploit automated bot traffic as part of software supply chain attacks to artificially inflate download counters and mask malicious payloads as legitimate. Key takeaways Volume doesn\u2019t equal trust. Packages with numerous versions and high download counts might seem legitimate, but attackers can easily manipulate those metrics. Attackers exploit automated infrastructure. By initially flooding the registry with numerous benign versions of a package, threat actors trigger automatic downloads from mirrors, scanners, and analysis bots, which artificially inflate traffic. Although old download-inflation techniques still work, attackers are developing new sophisticated techniques to deceive developers into installing malicious packages. Downloads count metric Following recent software supply chain attacks in which Tenable has seen attackers steal access tokens and secrets from developer workstations and CI/CD build servers, we started actively monitoring and analyzing npm packages uploaded to the public registry. Initially, we used download counts as a primary metric to determine package relevance. During our monitoring, we identified a recurring anomaly: Brand new packages displayed unusually high download counts within hours of upload. Upon further investigation, we discovered that those packages also had many versions. We found that packages whose content got updated frequently \u2014 usually by systematically uploading many new versions for the same package \u2014 had an unusually high downloads count. We observed this technique being used deliberately in the wild for the first time in our analysis of the malicious \u201cambar-src\u201d package , which reached more than 50,000 downloads in three days after attackers uploaded more than 700 versions. We named this technique \u201cdownload pumping.\u201d Developers and security tools frequently use download counts as one of the metrics to assess a package's legitimacy. Since there is no simple method for determining if a package is",
+      "link": "https://www.tenable.com/blog/how-cyberattackers-inflate-malicious-package-npm-download-counts",
+      "published": "2026-05-28T10:00:00+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Attackers first flood the npm registry with numerous benign versions of a package, causing automated tools and mirrors to download them and artificially inflate the package's download count. Once the package appears popular and trustworthy, later versions embed malicious code that is then delivered to downstream users who trust the high download metrics.",
+        "affected_products": "@antv npm packages (multiple versions)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Shai\u2011Hulud (also known as Mini\u2011Shai\u2011Hulud / TeamPCP)",
+        "mitigation": "1. Maintain an up\u2011to\u2011date inventory of all npm packages used in your environment. 2. Monitor package download trends for sudden spikes that are not correlated with legitimate usage. 3. Enforce strict package signing and provenance verification (e.g., Sigstore) before accepting new versions. 4. Limit automatic fetching of packages from mirrors and configure CI pipelines to use vetted, signed sources only.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -56,37 +138,10 @@
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "Exploit availability unknown.",
         "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "Threat actors unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Salt Typhoon, Black Basta (and other groups referenced in the Tenable model).",
         "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "Vendor advisory URL unavailable."
-      }
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-gives-feds-4-days-to-patch-actively-exploited-cpanel-plugin-flaw/",
-      "title": "CISA gives feds 4 days to patch actively exploited cPanel plugin flaw",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has given U.S. federal agencies four days to secure their servers against a critical vulnerability in the LiteSpeed cPanel user-end plugin, which is actively being exploited in attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-gives-feds-4-days-to-patch-actively-exploited-cpanel-plugin-flaw/",
-      "published": "2026-05-27T10:06:17+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Incorrect privilege assignment in the LiteSpeed User-End cPanel Plugin (lsws.redisAble function) allows an authenticated cPanel user to execute arbitrary scripts as root, enabling privilege escalation to root.",
-        "affected_products": "LiteSpeed User-End cPanel Plugin versions 2.3 through 2.4.4 (i.e., before 2.4.5)",
-        "cvss_score": "10.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Remove or upgrade the plugin; apply vendor updates. cPanel auto-removed the LiteSpeed plugin during nightly updates (May 19, 2026) as a mitigation; vendors recommend upgrading to fixed plugin version 2.4.7 / WHM plugin v5.3.1 per advisory summaries.",
-        "vendor_advisory": "https://support.cpanel.net/hc/en-us/articles/40599423437079-Security-LiteSpeed-plugin-automatically-removed-during-nightly-update-May-19-2026"
       }
     },
     {
@@ -105,15 +160,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial content on the web (or other untrusted content) is ingested into an AI agent's context and contains malicious instructions or payloads that override or manipulate the agent's intended prompts, causing it to reveal secrets, perform unauthorized actions, or misuse APIs. Attack vectors observed include crafted web content and payloads embedded in otherwise legitimate pages that are likely to be read by agents during browsing or content retrieval.",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when attacker\u2011controlled web content or third\u2011party data contains hidden instructions that an AI agent ingests, causing the agent to execute attacker\u2011specified behaviors despite system instructions. The attacker places payloads in web pages or documents the agent fetches, and the concatenated prompt lets those instructions influence or override legitimate commands.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Hardening recommendations include restricting or sanitizing external content before including it in agent context, validating and canonicalizing sources, using content allowlists, employing model grounding/verifiable sources, prompting-level defenses (explicit instruction locking, context separation), and monitoring for anomalous agent behavior.",
+        "mitigation": "Use layered defenses and hardening for AI agents (input filtering, content provenance, sandboxing, model instruction isolation). See Google layered\u2011defense guidance and Forcepoint payload analysis.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -133,16 +188,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) enables attackers to influence LLM behavior by injecting malicious instructions into data or tools the LLM consumes (e.g., documents, URLs, tool outputs). In multi-source AI apps like Workspace with Gemini, injected instructions can be executed by the model during query completion without direct user input, exploiting agentic automation and tool chaining.",
-        "affected_products": "Google Workspace (Gemini-enabled): Gmail, Docs, and other Workspace apps",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when malicious instructions are embedded in data sources (web pages, emails, documents) that an LLM ingests; these embedded instructions can influence the model\u2019s behavior or agentic tool use without direct user input. Google\u2019s blog details discovery (human & automated red\u2011teaming, public web sweeps), synthetic\u2011data generation, deterministic/ML/LLM defenses, and model hardening for Gemini.",
+        "affected_products": "Google Workspace (Gmail, Docs, other Workspace apps) with Gemini integration",
         "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "Patch availability unknown",
-        "active_exploitation": "Active exploitation status unknown",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses including human and automated red\u2011teaming, Google AI VRP, synthetic\u2011attack data generation, deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies via a centralized Policy Engine), ML\u2011based defenses retrained on synthetic attack variants, LLM\u2011based defenses and Gemini model hardening to detect and ignore harmful embedded instructions. Ongoing monitoring, vulnerability cataloging, and simulation testing across Workspace apps (e.g., Gmail, Docs) are recommended.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
+        "mitigation": "Deterministic defenses (user confirmation, URL sanitization, tool chaining policies, centralized policy engine and config \"point fixes\"), ML\u2011based defenses (synthetic\u2011data retraining), LLM\u2011based defenses (prompt engineering), Gemini model hardening; ongoing monitoring and VRP engagement.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
       }
     },
     {
@@ -161,16 +216,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The primary threat is indirect prompt injection, where malicious sites or third\u2011party content manipulate the prompts supplied to the agentic browser assistant, allowing attackers to influence AI actions. Chrome\u2019s layered defenses monitor for such injections, restrict origin access, and block unsafe AI actions.",
-        "affected_products": "Chrome (agentic browsing / Gemini integration)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "Indirect prompt injection: malicious or third\u2011party content (web pages, embedded resources, comments) can supply crafted instructions that agentic browsing components (Gemini in Chrome or agent runtimes) may treat as high\u2011level directives, enabling influence over agent actions or data exfiltration.",
+        "affected_products": "Chrome (agentic browsing / Gemini in Chrome)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true \u2014 http://pymnts.com/google/2025/google-adds-security-layers-to-safeguard-agentic-browsing-with-chrome",
-        "active_exploitation": "Active exploitation status unknown",
+        "patch_available": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use Chrome's new layered defenses for agentic browsing (prompt injection protections, origin access restrictions, unsafe\u2011AI\u2011action prevention); keep Chrome updated.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "mitigation": "Enable Chrome\u2019s updated agentic protections (shipped with Gemini in Chrome); apply origin restrictions, restrict agent access to local resources, require explicit user authorization for sensitive actions, and keep Chrome/Gemini up to date.",
+        "vendor_advisory": "https://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
     {
@@ -189,16 +244,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A near\u2011miss linear buffer overflow was identified in CrabbyAVIF (external/rust/crabbyavif) in unsafe Rust; Scudo hardened allocator\u2019s guard pages rendered the overflow non\u2011exploitable and the issue was fixed pre\u2011release.",
+        "technical_details": "The documented Rust-related issue (CVE-2025-68260) is a race condition in rust_binder where an unsafe remove operation can run concurrently with list manipulation (Node::release moving items to a local list while other threads may remove items), leading to memory corruption/crashes due to prev/next pointer corruption.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 patch: https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
-        "active_exploitation": "false",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2025-11-01",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Use Scudo hardened allocator (guard pages); improved crash reporting to detect overflows into Scudo guard pages; increased unsafe\u2011Rust review and training; encapsulate unsafe code and follow safety\u2011comment practices.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+        "mitigation": "Apply the 2025-11-01 Android security updates (or later) and associated AOSP/kernel patches; update devices to the latest security patch level and vendor\u2011supplied updates. Follow Android platform mitigations (enable latest platform protections, Google Play Protect) while patches are applied.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-11-01"
       }
     },
     {
@@ -217,15 +272,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when hidden malicious instructions are embedded within external data sources (emails, documents, calendar invites, or other ingested data) that an AI system reads and incorporates into its prompt context; these hidden instructions can cause the model to exfiltrate sensitive data or perform unauthorized actions. Defenses are layered and include input sanitization/labeling, source provenance/trust signals, model behavior constraints, context filtering, and workspace-level safeguards.",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "Indirect prompt injection (IPI) embeds malicious instructions in external data sources such as emails, documents, calendar invites, or hidden web code. When an AI assistant processes this data, it follows the hidden instructions, potentially exfiltrating data or performing unauthorized actions.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
-        "active_exploitation": "false",
+        "patch_available": "true \u2014 vendor guidance/advisory URL: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
+        "active_exploitation": "true \u2014 sources: Forcepoint (10 Indirect Prompt Injection Payloads Caught in the Wild), SecurityWeek analysis",
         "threat_actors": "None known",
-        "mitigation": "Implement layered defenses: (1) restrict and validate external data sources before ingestion; (2) sanitize and remove instructions from user-provided content (e.g., strip or neutralize imperative directives); (3) add provenance and trust metadata and enforce policies to prefer trusted sources; (4) apply context/windowing and prompt engineering to limit sensitive data exposure; (5) enforce model output constraints and red\u2011team/test for IPI payloads; (6) deploy vendor recommendations/advisories (see vendor advisory URL).",
+        "mitigation": "Use layered defense: input provenance and parsing, content sanitization, model instruction filtering, limiting high\u2011risk data in prompts, applying role\u2011based access controls, user confirmation for sensitive actions, and monitoring/telemetry.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -242,19 +297,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "PRC\u2011linked actors compromise large backbone, PE, and CE routers and IoT devices, modify router firmware/configuration to maintain persistent, long\u2011term access, create tunnels (e.g., GRE) and pivot from trusted connections into other networks to exfiltrate data and support espionage.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unavailable.",
-        "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon (and associated industry aliases OPERATOR PANDA, RedMike, UNC5807, GhostEmperor)",
-        "mitigation": "Inventory and isolate affected routers/IoT; apply vendor firmware/patches where available; rotate credentials and keys; restrict management plane access (ACLs, network segmentation, disable unused services); monitor for config/firmware changes, anomalous GRE tunnels, unusual egress; follow CISA/NSA mitigation guidance.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
@@ -269,19 +312,22 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Adversaries exploited internet\u2011facing services (VPNs, SQL injection) and specific software flaws: WinRAR code\u2011execution (CVE\u20112023\u201138831), Outlook NTLM relay via malicious calendar invites (CVE\u20112023\u201123397) to harvest NTLM hashes, and Roundcube command injection (CVE\u20112020\u201112641, CVE\u20112020\u201135730, CVE\u20112021\u201144026) to execute shell commands and access mail.",
-        "affected_products": "WinRAR (CVE-2023-38831), Roundcube Webmail (CVE-2020-12641; CVE-2020-35730; CVE-2021-44026), Outlook (CVE-2023-23397)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true - https://aka.ms/CVE-2023-23397ScriptDoc",
-        "patch_available": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
-        "active_exploitation": "true",
-        "threat_actors": "GRU unit 26165 (tracked as APT28 / Fancy Bear / Forest Blizzard / Blue Delta)",
-        "mitigation": "Employ network segmentation and Zero Trust principles, block or monitor hosting/API mocking services, apply all vendor patches and firmware updates (including IP cameras), disable unnecessary remote access, enforce MFA, monitor for known tools and behaviors, and use the Microsoft script (https://aka.ms/CVE-2023-23397ScriptDoc) to detect malicious Outlook calendar invites.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/05/microsoft-slams-public-zero-day.html",
+      "title": "Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal",
+      "summary": "Microsoft has come out strongly in favor of Coordinated Vulnerability Disclosure (CVD), urging the research community to share their findings and give affected vendors an opportunity to better understand the impact and address them before they are publicly disclosed.\n\nThe development comes after a researcher named Chaotic Eclipse (aka Nightmare-Eclipse) disclosed details of multiple zero-day",
+      "link": "https://thehackernews.com/2026/05/microsoft-slams-public-zero-day.html",
+      "published": "2026-05-28T13:53:52+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "CVE-2026-25879",
