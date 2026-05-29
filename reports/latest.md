@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-05-28 20:04 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-05-29 02:01 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,16 +13,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Unauthenticated remote attackers can exploit multiple path traversal vulnerabilities in SimpleHelp 5.5.7 and earlier to retrieve logs, configuration files, and credentials, potentially leading to full server compromise.
-- **Affected Products:** SimpleHelp Remote Support / RMM 5.5.7 and earlier
+- **Technical Details:** An unauthenticated path traversal vulnerability enables remote attackers to traverse directories and read arbitrary files (including logs, configuration files, and credentials) on vulnerable SimpleHelp servers.
+- **Affected Products:** SimpleHelp 5.5.7 and earlier
 - **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (https://medium.com/@RosanaFS/simplehelp-cve-2024-57727-tryhackme-walkthrough-9f88c2061fb9)
-- **Patch Available:** true (https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570)
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true
 - **Active Exploitation:** true
-- **Threat Actors:** Ransomware actors (e.g., DragonForce ransomware operators)
-- **Mitigation:** Upgrade to SimpleHelp 5.5.8 or later; if patching cannot be applied immediately, segment the SimpleHelp server, enforce IP allowlists/firewall rules to limit access, rotate credentials found in logs/config files, and monitor for indicators of compromise.
-- **Vendor Advisory:** https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570
+- **Threat Actors:** Ransomware actors (unspecified groups)
+- **Mitigation:** Upgrade SimpleHelp to version 5.5.8 or later. If immediate patching is not possible, disable remote access to the SimpleHelp service and monitor for anomalous file access.
+- **Vendor Advisory:** http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570
 
 ---
 
@@ -35,15 +35,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Improper handling of symbolic links in Gogs repository file editing allows attackers to overwrite files outside the repository via symlink traversal, leading to remote code execution.
-- **Affected Products:** Gogs (self-hosted Git service)
+- **Technical Details:** Improper handling of symbolic links in Gogs' repository file editing feature allows an attacker to craft symlinks that cause file overwrite outside the repository, which can be leveraged to execute arbitrary code on the host.
+- **Affected Products:** Gogs (self‑hosted Git service)
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
+- **Exploit Available:** true (source: http://wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit)
+- **Patch Available:** false
+- **Active Exploitation:** true (sources: http://diamatix.com/active-gogs-vulnerability-code-execution-2026, http://securityweek.com/unpatched-gogs-zero-day-exploited-for-months, http://thehackernews.com/2025/12/unpatched-gogs-zero-day-exploited.html, http://bleepingcomputer.com/news/security/unpatched-gogs-zero-day-rce-flaw-actively-exploited-in-attacks)
 - **Threat Actors:** None known
-- **Mitigation:** Block Internet‑facing Gogs instances; restrict access to trusted networks; remove or disable the repository file‑editing feature; monitor and restore from backups; apply vendor patch when available.
+- **Mitigation:** Mitigation steps unavailable.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
@@ -57,15 +57,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** An improper access control (CWE‑284) in the FortiClient EMS API permits unauthenticated attackers to send crafted requests that execute unauthorized commands or code via the EMS management pathway, enabling remote code execution.
+- **Technical Details:** Improper access control (CWE-284) in FortiClient EMS allows an unauthenticated attacker to execute unauthorized code or commands via crafted requests.
 - **Affected Products:** FortiClient EMS 7.4.5, FortiClient EMS 7.4.6
-- **CVSS Score:** 9.8
-- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** false
 - **Patch Available:** true
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Apply Fortinet hotfixes immediately or upgrade to 7.4.7+, follow Fortinet EMS release notes/hotfix installation instructions; disable or unexpose EMS management interfaces from untrusted networks; follow CISA KEV guidance per BOD 22-01.
+- **Mitigation:** Install the FortiClient EMS hotfix for 7.4.5 and 7.4.6; upgrade to 7.4.7 when available. If unable to patch, restrict network access to EMS, isolate EMS management interfaces, and monitor for suspicious activity.
 - **Vendor Advisory:** https://fortiguard.fortinet.com/psirt/FG-IR-26-099
 
 ---
@@ -79,15 +79,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Attackers systematically publish a large number of versions of an npm package (hundreds), which triggers automated downloads by repository mirrors, analysis bots, and scanners for each new version — amplifying download counts (each version yields ~100‑150 automated downloads). After inflating trust metrics and release history with benign versions, a malicious version is published to deliver payloads (e.g., via postinstall scripts).
+- **Technical Details:** Attackers publish large numbers of benign package versions to public registries, triggering automated mirrors, scanners and analysis bots to download each version (approx. 100–150 automated downloads per version), thereby inflating download counts and creating a dense version history; after establishing apparent legitimacy attackers later publish malicious payloads (example: “ambar-src” had 724 versions, ~50,000 downloads) — Tenable validated via PoC that version flooding and direct tarball requests produce inflated metrics.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true — https://www.tenable.com/blog/how-cyberattackers-inflate-malicious-package-npm-download-counts
-- **Patch Available:** false — Patch availability unknown.
-- **Active Exploitation:** true — https://www.tenable.com/blog/how-cyberattackers-inflate-malicious-package-npm-download-counts
-- **Threat Actors:** None known.
-- **Mitigation:** Do not rely on download counts or version history as trust signals; adopt version pinning, enforce minimum package‑age restrictions (wait 3‑4 days before allowing new packages/versions), use security scanners and community feed to detect malicious packages, enforce least‑privilege and ephemeral CI/CD runners, restrict outbound network access from build servers, and use supply‑chain visibility tools (e.g., Tenable One, Nessus inventory plugins) to detect compromised packages.
+- **Exploit Available:** true - https://www.tenable.com/blog/how-cyberattackers-inflate-malicious-package-npm-download-counts
+- **Patch Available:** false
+- **Active Exploitation:** true - https://www.tenable.com/blog/how-cyberattackers-inflate-malicious-package-npm-download-counts
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Do not rely on download counts or version history; use version pinning, enforce minimum package‑age restrictions (3–4 days), use ephemeral CI/CD runners, enforce least‑privilege network access, and use security tooling/registry features like npm package‑age checks and stronger publisher authentication.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
@@ -101,15 +101,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) is an attack vector where adversaries place malicious or adversarial content on public web pages or other untrusted sources that AI agents ingest, causing the agent to follow attacker‑controlled instructions or reveal sensitive data. The mechanism exploits agent context windows and chaining of tools/abilities, leveraging elevated access to escalate impact.
-- **Affected Products:** Affected products unavailable
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** true — see vendor advisory: http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
-- **Active Exploitation:** true — Google Threat Intelligence observed indirect prompt injection attempts in the wild.
+- **Technical Details:** Indirect Prompt Injection (IPI) is adversarially crafted content seeded on public web pages that persuades or overrides an AI agent's system/user instructions when the agent browses or ingests that content, causing it to reveal secrets, execute privileged actions, or perform malicious tasks. Attack vectors include specially formatted payloads embedded in web pages, code‑review contexts, or documentation that an AI tool will parse.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** true
+- **Patch Available:** false
+- **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Harden agent runtimes: validate and sanitize external content, apply strict provenance and allowlisting, enforce least privilege for agent capabilities, instrument monitoring/auditing of agent actions, use system cards/runtime security reviews and detect anomalous instruction‑like inputs. See vendor advisory for recommended mitigations.
+- **Mitigation:** Treat web content as untrusted; restrict AI agent browsing and elevated privileges; sanitize and canonicalize scraped content; apply strict instruction‑guardrails and output filters; monitor for IPI patterns and block known payloads; apply vendor patches where specific product issues are identified (e.g., Anthropic patched Claude Code).
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
@@ -123,15 +123,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) enables an attacker to influence an LLM’s behavior by inserting malicious instructions into secondary data sources or tools the model uses when completing a user’s query (e.g., documents, web content, or tool outputs), potentially without any direct user input. IPI leverages the model’s reliance on external content and agentic automation to cause unintended actions or outputs.
-- **Affected Products:** Google Workspace with Gemini integrations
+- **Technical Details:** Indirect prompt injection (IPI) leverages data or tool inputs fed to a large language model (LLM) to embed malicious instructions. By contaminating these inputs, an attacker can steer the LLM's response or trigger unwanted actions without the user providing explicit malicious prompts.
+- **Affected Products:** Google Workspace (Gemini integration)
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** false
 - **Patch Available:** false
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Layered defenses including continuous monitoring of external inputs, sanitization and provenance checks of data sources, restrict agentic tool access, apply least‑privilege controls for automated actions, user‑facing warnings/confirmations for sensitive operations, and ongoing model and workflow hardening as described by Google.
+- **Mitigation:** Implement layered defenses: 1) Apply content‑filtering on data inputs to LLMs; 2) Deploy real‑time analytics to detect and block IPI URLs (Stage 3 redirect); 3) Enforce strict validation of tool outputs used by the LLM; 4) Monitor for known IPI indicators of compromise.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
@@ -145,15 +145,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection can appear in malicious sites, iframes, or user‑generated content and cause the agentic browsing feature to perform unwanted actions such as financial transactions or data exfiltration. The attack works by injecting crafted prompts that steer the model’s planning module toward malicious behavior.
-- **Affected Products:** Google Chrome (agentic browsing / Gemini in Chrome) — specific affected versions unavailable
+- **Technical Details:** The primary issue is indirect prompt injection (IPI): untrusted web content can influence an agentic browser's AI by injecting prompts via web pages or third‑party resources, causing unintended or unsafe AI actions. Defenses focus on detecting and blocking IPI, constraining origin‑based access, and adding runtime checks to prevent unsafe agent behaviors.
+- **Affected Products:** Chrome (agentic browsing / Gemini integration) — specific versions unavailable
 - **CVSS Score:** CVSS score unavailable
 - **CVSS Vector:** CVSS vector unavailable
 - **Exploit Available:** false
 - **Patch Available:** Patch availability unknown
-- **Active Exploitation:** Active exploitation status unknown
+- **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Use Chrome’s built‑in layered defenses (User Alignment Critic, Agent Origin Sets/origin gating, user confirmations for sensitive actions, prompt‑injection classifier, real‑time Safe Browsing), follow Google VRP guidance to report issues, and keep Chrome auto‑updates enabled.
+- **Mitigation:** Use Chrome's new layered defenses for agentic browsing: block prompt injections, restrict origin access, prevent unsafe AI actions; follow vendor guidance to limit agentic features on untrusted sites and apply least‑privilege origin access.
 - **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 
 ---
@@ -167,16 +167,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
+- **Technical Details:** Linear buffer overflow in CrabbyAVIF (unsafe Rust) was neutralized by Android's Scudo hardened allocator, which added guard pages surrounding allocations, turning the overflow into a non‑exploitable crash.
 - **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **CVSS Score:** 8.1
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true — https://blog.google/security/rust-in-android-move-fast-fix-things
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** false
+- **Patch Available:** true - https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050
+- **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-11-01
+- **Mitigation:** Deploy and maintain the Scudo hardened allocator, improve crash reporting to detect overflow attempts, conduct unsafe‑Rust code reviews and training, and encapsulate unsafe blocks.
+- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-08-01
 
 ---
 
@@ -189,15 +189,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injections embed malicious instructions within external data sources (emails, documents, calendar invites) that downstream LLMs may follow. Google hardened Gemini 2.5 with adversarial training, content‑classifier models, markdown sanitization, suspicious‑URL redaction, user confirmation, and security‑thought reinforcement to detect and block such instructions.
-- **Affected Products:** Gemini, Gemini in Google Workspace (Gmail)
+- **Technical Details:** Indirect prompt injection (IPI) is an attack where malicious instructions are embedded in external data sources (emails, documents, calendar invites, web content) that are then ingested by generative AI systems or AI agents, causing the model or agent to execute unauthorized actions (data exfiltration or command execution) by treating the hidden instructions as part of user prompts or context. Attack vectors include poisoned third‑party content, comments in code/repos, or crafted files that are consumed by automated agents.
+- **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** false
-- **Threat Actors:** None known
-- **Mitigation:** Layered defenses – model hardening (adversarial training), prompt‑injection content classifiers, security thought reinforcement, markdown sanitization, suspicious‑URL redaction (using Google Safe Browsing), contextual user confirmations for risky actions, and end‑user security mitigation notifications with help‑center guidance.
+- **Exploit Available:** false.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** true.
+- **Threat Actors:** None known.
+- **Mitigation:** Layered defenses: input sanitization and provenance checks; minimizing sensitive data in contexts; strict tool/agent capability gating and permissions; model instruction filtering and red‑teaming; monitoring and anomaly detection; use of content provenance and content signatures; user confirmation for high‑risk actions.
 - **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
 
 ---
@@ -211,16 +211,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Actors exploit known CVEs (e.g., CVE-2023-20198 authentication bypass, CVE-2018-0171 Smart Install RCE) and misconfigurations to gain initial access, modify ACLs, open ports, run commands in on‑box Linux containers, stage tools, create accounts, mirror traffic via SPAN/RSPAN/ERSPAN, and establish tunnels for exfiltration, often using publicly available scripting tools.
-- **Affected Products:** Cisco IOS, Cisco IOS XE, Cisco NX-OS, Ivanti Connect Secure/Policy, Fortinet (potential), Juniper (potential), Nokia (potential), Sierra Wireless (potential)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** true
-- **Patch Available:** true
+- **Technical Details:** PRC state-sponsored actors target large backbone routers and provider edge (PE) and customer edge (CE) routers, modify router firmware/configuration to maintain persistent, long‑term access, and pivot via compromised devices and trusted connections into government, telecom, transportation, lodging, and military networks.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
-- **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Prioritize patching the referenced CVEs; disable unused ports and protocols; enforce strong credentials and public‑key authentication; monitor logs and configuration changes (ACLs, tunnels, unexpected containers); verify firmware/image integrity; follow vendor hardening guides (e.g., Cisco IOS/XE hardening, Cisco Software Checker).
-- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
+- **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor, Chinese state-sponsored actors (general)
+- **Mitigation:** Apply vendor‑provided router patches if available; isolate and rebuild compromised routers; restrict and monitor management interfaces; apply strong authentication (MFA) for admin access; segment networks and limit trust relationships; monitor for persistence (firmware/configuration changes), rotate credentials and keys; implement network telemetry and detection for anomalous routing/traffic.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
@@ -244,7 +244,22 @@ The development comes after a researcher named Chaotic Eclipse (aka Nightmare-Ec
 
 ---
 
-## 13. 🟡 High Severity — nono: Sandbox escape on Linux via D-Bus: `systemd-run --user`
+## 13. 🟡 High Severity — Dulwich has an arbitrary file write via NTFS-hostile tree entries on Windows
+
+**CVE:** `CVE-2026-42305` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
+**Reference:** <https://github.com/advisories/GHSA-897w-fcg9-f6xj>
+
+> ## Impact
+
+Arbitrary file write leading to remote code execution when cloning or checking out a malicious Git repository on Windows.
+
+Dulwich&#x27;s path-element validator accepted tree entries whose filenames contained bytes that Windows interprets as structural path syntax:
+
+  - \ — the Windows path separator. A single tree entry named .git\hooks\pre-commit.exe was treated as one valid filename …
+
+---
+
+## 14. 🟡 High Severity — nono: Sandbox escape on Linux via D-Bus: `systemd-run --user`
 
 **CVE:** `CVE-2026-47128` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-27vp-2mmc-vmh3>
@@ -259,7 +274,7 @@ Threat scenario: Running Aider, Claude Code, OpenCode or similar tools with &quo
 
 ---
 
-## 14. 🟡 High Severity — local-deep-research has an SSRF bypass in `safe_get`
+## 15. 🟡 High Severity — local-deep-research has an SSRF bypass in `safe_get`
 
 **CVE:** `CVE-2026-46526` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-g23j-2vwm-5c25>
@@ -274,7 +289,7 @@ The current project uses `validate_url` to validate the input URL. The main logi
 
 ---
 
-## 15. 🟡 High Severity — compliance-trestle Vulnerable to Remote Code Execution via Recursive Server-Side Template Injection (SSTI)
+## 16. 🟡 High Severity — compliance-trestle Vulnerable to Remote Code Execution via Recursive Server-Side Template Injection (SSTI)
 
 **CVE:** `CVE-2026-46439` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-gg2g-p7xc-qqmm>
@@ -285,7 +300,7 @@ The current project uses `validate_url` to validate the input URL. The main logi
 
 ---
 
-## 16. 🟡 High Severity — compliance-trestle Vulnerable to SSRF in Remote Fetching Subsystem
+## 17. 🟡 High Severity — compliance-trestle Vulnerable to SSRF in Remote Fetching Subsystem
 
 **CVE:** `CVE-2026-46380` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-w76h-q7c6-jpjp>
@@ -297,7 +312,7 @@ The HTTPSFetcher._do_fetch() method passes a user-supplied URL directly to reque
 
 ---
 
-## 17. 🟡 High Severity — OpenCTI: Privilege escalation via graphQL API is abusable by organization admins, due to incorrect ACL on userEdit relationAdd
+## 18. 🟡 High Severity — OpenCTI: Privilege escalation via graphQL API is abusable by organization admins, due to incorrect ACL on userEdit relationAdd
 
 **CVE:** `CVE-2026-44730` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-q537-qhj4-wcjx>
@@ -310,7 +325,7 @@ Full platform access, access to sensitive or proprietary information.
 
 ---
 
-## 18. 🟡 High Severity — OpenBao's cross-namespace lease revocation via legacy sys/revoke path bypasses ACL
+## 19. 🟡 High Severity — OpenBao's cross-namespace lease revocation via legacy sys/revoke path bypasses ACL
 
 **CVE:** `CVE-2026-45808` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-v8v8-cm84-m686>
@@ -325,7 +340,7 @@ This will be addressed in v2.5.4.
 
 ---
 
-## 19. 🟡 High Severity — Symfony's Mailtrap Mailer Webhook Parser Never Verifies the X-Mt-Signature HMAC — Unauthenticated Webhook Event Injection
+## 20. 🟡 High Severity — Symfony's Mailtrap Mailer Webhook Parser Never Verifies the X-Mt-Signature HMAC — Unauthenticated Webhook Event Injection
 
 **CVE:** `CVE-2026-45755` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-59f3-vp2f-mp9w>
@@ -336,7 +351,7 @@ The Mailtrap mailer bridge ships a webhook request parser used to authenticate a
 
 ---
 
-## 20. 🟡 High Severity — Symfony's Mailjet Mailer Webhook Parser Never Verifies the Configured Secret — Unauthenticated Webhook Event Injection
+## 21. 🟡 High Severity — Symfony's Mailjet Mailer Webhook Parser Never Verifies the Configured Secret — Unauthenticated Webhook Event Injection
 
 **CVE:** `CVE-2026-45754` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-64hg-93w9-fc35>
@@ -347,7 +362,7 @@ The Mailjet mailer bridge and the LOX24 SMS notifier bridge both ship webhook re
 
 ---
 
-## 21. 🟡 High Severity — opentelemetry-go's Schema ParseFile leaks file descriptors on each parse
+## 22. 🟡 High Severity — opentelemetry-go's Schema ParseFile leaks file descriptors on each parse
 
 **CVE:** `CVE-2026-45287` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-995v-fvrw-c78m>
@@ -358,7 +373,7 @@ The Mailjet mailer bridge and the LOX24 SMS notifier bridge both ship webhook re
 
 ---
 
-## 22. 🟡 High Severity — opentelemetry-go's baggage parsing no longer caps raw header length
+## 23. 🟡 High Severity — opentelemetry-go's baggage parsing no longer caps raw header length
 
 **CVE:** `CVE-2026-41178` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-5wrp-cwcj-q835>
@@ -374,7 +389,7 @@ The commit removes the upfront baggage-string length check and the per-member si
 
 ---
 
-## 23. 🟡 High Severity — Capsule TenantResource RawItems Cluster-Scoped Resource Creation Vulnerability
+## 24. 🟡 High Severity — Capsule TenantResource RawItems Cluster-Scoped Resource Creation Vulnerability
 
 **CVE:** `CVE-2026-22872` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-qjjm-7j9w-pw72>
@@ -388,7 +403,7 @@ The Capsule Controller runs with cluster-admin privileges. Although the TenantRe
 
 ---
 
-## 24. 🟡 High Severity — Capsule Namespace Hijacking via subresource
+## 25. 🟡 High Severity — Capsule Namespace Hijacking via subresource
 
 **CVE:** `CVE-2026-30963` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-28
 **Reference:** <https://github.com/advisories/GHSA-2ww6-hf35-mfjm>
@@ -398,128 +413,7 @@ To defend against namespace hijacking achieved through update/patch operations o
 
 ---
 
-## 25. 🟡 High Severity — FUXA's Unauthenticated Project Data Disclosure Exposes Server-Side Scripts and Device Configurations
-
-**CVE:** `CVE-2026-47717` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-q3w6-q3hc-c5x6>
-
-> ### Summary
-
-The GET /api/project endpoint exposes sensitive project configuration data to guest-context requests even when secureEnabled is enabled.
-
-### Details
-
-File: `server/api/projects/index.js`
-
-```javascript
-prjApp.get(&quot;/api/project&quot;, secureFnc, function(req, res) {
-    const permission = checkGroupsFnc(req);
-    runtime.project.getProject(req.userId, permission).then(result =&gt…
-
----
-
-## 26. 🟡 High Severity — Yamcs Vulnerable to Authenticated Remote Code Execution (RCE) via Jython Algorithm Code Injection
-
-**CVE:** `CVE-2026-46621` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-2g95-6x5q-xjwj>
-
-> ### Summary
-A Server-Side Code Injection vulnerability exists in the Yamcs script evaluation engine for Python algorithms. The application dynamically compiles and evaluates user-controlled algorithm text using Jython (via the JSR-223 ScriptEngine API) without enforcing a secure sandbox. An authenticated user with the `ChangeMissionDatabase` privilege can exploit this by overriding the algorithm l…
-
----
-
-## 27. 🟡 High Severity — Yamcs Vulnerable to Remote Code Execution via Mission Database algorithm override
-
-**CVE:** `CVE-2026-46562` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-vmwp-vh32-rj75>
-
-> # Remote Code Execution via Mission Database algorithm override
-
-## Summary
-
-The Nashorn `ScriptEngine` used to evaluate user-supplied algorithm text in `MdbOverrideApi.updateAlgorithm` is constructed without a `ClassFilter`, allowing a user with the `ChangeMissionDatabase` privilege to execute arbitrary Java code on the Yamcs server. In Yamcs&#x27;s default configuration (no `security.yaml`), the…
-
----
-
-## 28. 🟡 High Severity — Pimcore has a CustomReports Share Bypass
-
-**CVE:** `CVE-2026-45704` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-jwcc-gv4m-93x6>
-
-> ### Summary
-
-`CustomReports` uses inconsistent authorization between the report listing endpoint and the report detail endpoint.
-
-- The listing flow filters reports based on report-sharing rules
-- The detail flow only checks generic `reports` or `reports_config` permissions
-
-As a result, a low-privileged backend user who was not granted access to a report can still read that report directly by nam…
-
----
-
-## 29. 🟡 High Severity — AsyncSSH `AuthorizedKeysFile %u` path traversal allows attacker-selected authorized keys to authenticate a traversal username
-
-**CVE:** `CVE-2026-45309` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-g794-3fmp-753h>
-
-> ## Summary
-AsyncSSH 2.22.0 expands the OpenSSH-compatible `AuthorizedKeysFile` `%u` token with the raw SSH username during pre-authentication server config reload. A server configured with a documented per-user key pattern such as `AuthorizedKeysFile authorized_keys/%u` can be made to read an authorized-keys file outside the intended directory when the SSH username contains path traversal segments…
-
----
-
-## 30. 🟡 High Severity — Symfony hardened the parser when handling untrusted input
-
-**CVE:** `CVE-2026-45133` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-c2p3-7m5p-cv8x>
-
-> ### Description
-
-`Symfony\Component\Yaml\Parser` is the entry point for parsing YAML strings into PHP values via `Yaml::parse()`. When the parser is exposed to attacker-controlled input, deeply nested mappings or sequences cause both the block-level (`Parser::parseBlock()`) and inline (`Inline::parseSequence()` / `Inline::parseMapping()`) parsers to recurse without a depth limit. A crafted documen…
-
----
-
-## 31. 🟡 High Severity — Automad has Broken Access Control: Unauthenticated exposure of administrator bcrypt password hashes and TOTP secrets via public API endpoint
-
-**CVE:** `CVE-2026-45332` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-xm76-r88j-vm3g>
-
-> ### Summary
-
- A Broken Access Control vulnerability allows an unauthenticated attacker to retrieve the bcrypt password hash of every administrator account with a single POST request. The `/_api/user-collection/create-first-user` setup endpoint remains publicly accessible once initial configuration is complete and returns full serialized user data in the JSON response body.  
-
-### Details
-
-Affected…
-
----
-
-## 32. 🟡 High Severity — Symfony has Unauthenticated PHP Object Deserialization in MonologBridge server:log Listener
-
-**CVE:** `CVE-2026-45077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-m7v2-7gxm-vc2v>
-
-> ### Description
-
-`Symfony\Bridge\Monolog\Command\ServerLogCommand` (the `server:log` console command) is a development-time helper that opens a TCP listener and displays log records pushed to it by the application&#x27;s logging pipeline. Two unsafe defaults combine into a remotely reachable PHP object-deserialization sink:
-
-1. The listener binds to `0.0.0.0:9911` by default; it accepts connection…
-
----
-
-## 33. 🟡 High Severity — Symfony has Email Header / SMTP Command Injection via CRLF in Symfony\Component\Mime\Address
-
-**CVE:** `CVE-2026-45067` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-27
-**Reference:** <https://github.com/advisories/GHSA-qpmx-3rfj-7rhv>
-
-> ### Description
-
-`Symfony\Component\Mime\Address` is the value-object every Symfony Mailer address (to/cc/bcc/from/reply-to) flows through; its constructor is documented as validating the address and throwing on invalid input, so developers treat it as a security boundary.
-
-The constructor accepts email addresses whose local-part (the part before `@`) is an RFC-5322 *quoted string* containing raw …
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
