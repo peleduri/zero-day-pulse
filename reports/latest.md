@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-05-30 01:55 UTC &nbsp;|&nbsp; **Total:** 53 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 38 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-05-30 08:16 UTC &nbsp;|&nbsp; **Total:** 52 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 37 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,16 +13,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Unauthenticated remote attackers can exploit path‑traversal vulnerabilities to read logs, configuration files, and credentials, then use the retrieved data to log in with high‑privilege accounts and access downstream managed systems.
-- **Affected Products:** SimpleHelp Remote Support / RMM v5.5.7 and earlier
+- **Technical Details:** CVE‑2024‑57727 is a path traversal vulnerability in SimpleHelp Remote Monitoring and Management that lets an unauthenticated attacker craft HTTP requests to download arbitrary files (e.g., serverconfig.xml) from the host, enabling credential theft and further privilege escalation.
+- **Affected Products:** SimpleHelp Remote Monitoring and Management (RMM) versions 5.5.7 and earlier
 - **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
-- **Patch Available:** true
-- **Active Exploitation:** true
-- **Threat Actors:** DragonForce ransomware
-- **Mitigation:** Apply the SimpleHelp 5.5.8 patch. If patching cannot be done immediately, isolate/unexpose SimpleHelp servers, implement network segmentation, rotate credentials stored in SimpleHelp, audit logs for suspicious activity, and follow CISA mitigation recommendations.
-- **Vendor Advisory:** https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570
+- **Exploit Available:** Public proofs of concept have been published; examples are referenced in the vendor blog and Horizon3.ai disclosures.
+- **Patch Available:** Yes – patches are available in SimpleHelp versions 5.5.8 and later.
+- **Active Exploitation:** Confirmed – CISA reports active exploitation by ransomware groups such as DragonForce and Medusa.
+- **Threat Actors:** DragonForce, Medusa (and other ransomware operators reported by CISA)
+- **Mitigation:** Isolate affected SimpleHelp servers, block internet traffic to them, upgrade immediately to SimpleHelp 5.5.8 or later, inspect configuration files for compromise, and perform threat‑hunting for suspicious executables and network traffic as advised by CISA.
+- **Vendor Advisory:** http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know
 
 ---
 
@@ -39,16 +39,16 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The fix added a strict equality check (options.require === false) to block nesting:true with require:false. By omitting the require option (options.require is undefined), the check is bypassed, and the subsequent destructuring defaults requireOpts to false, re‑enabling the insecure combination and allowing full remote code execution from sandboxed code.
-- **Affected Products:** vm2 (npm package) – all versions prior to the patched release addressing GHSA-m4wx-m65x-ghrr
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** A fix for GHSA-8hg8-63c5-gwmx (CVE-2023-37903) added a guard in nodevm.js that checks options.require === false when nesting:true to prevent full require during nested VM creation. Because the check used strict equality, callers that omit the require option (options.require === undefined) bypass the guard; later destructuring sets requireOpts = false by default, resulting in the insecure combination nesting:true with require effectively false and allowing creation of nested contexts that enable escaping the sandbox and achieving remote code execution.
+- **Affected Products:** vm2 npm package versions prior to 3.11.0 (notably 3.10.4 and earlier)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
-- **Patch Available:** true
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** None known.
-- **Mitigation:** As a workaround, ensure code explicitly sets `require: false` when using `nesting: true`, or avoid using `nesting: true` entirely until a confirmed patched vm2 release is installed. Consider removing or replacing vm2 with a maintained sandboxing alternative and audit dependencies. Monitor the vendor advisory and upgrade to the fixed vm2 version when published.
-- **Vendor Advisory:** https://github.com/advisories/GHSA-m4wx-m65x-ghrr
+- **Exploit Available:** Public PoC available at https://semgrep.dev/blog/2026/calling-back-to-vm2-and-escaping-sandbox
+- **Patch Available:** Yes — upstream vm2 released fixes (see GitHub Security Advisory and release notes).
+- **Active Exploitation:** Reports of active exploitation documented in news coverage (e.g., BleepingComputer).
+- **Threat Actors:** None known
+- **Mitigation:** Do not run untrusted code using vulnerable vm2 versions; upgrade to fixed vm2 >= 3.11.0 (or latest patched release). If immediate upgrade impossible, block use of nesting:true with untrusted input and ensure explicit require option is provided (do not rely on options.require === false guard). Consider running sandboxed workloads in separate hardened processes/containers and apply runtime process‑level restrictions (seccomp, user namespaces).
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
@@ -61,13 +61,13 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The vulnerability stems from improper handling of symbolic links and argument injection in Gogs' repository file editing and pull‑request processing, allowing authenticated attackers to craft malicious branch names or symlinks that overwrite files and execute arbitrary code.
-- **Affected Products:** Gogs
+- **Technical Details:** Authenticated attackers can exploit an argument injection flaw via pull requests with malicious branch names, and misuse of symbolic links in Gogs' repository file editing allows file overwrite and remote code execution.
+- **Affected Products:** Gogs (any version prior to a fix)
 - **CVSS Score:** 9.4
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (http://github.com/zAbuQasem/gogs-CVE-2025-8110)
-- **Patch Available:** false
-- **Active Exploitation:** true
+- **Exploit Available:** Proof of Concept available at https://github.com/zAbuQasem/gogs-CVE-2025-8110
+- **Patch Available:** No official patch available yet.
+- **Active Exploitation:** Yes, active exploitation reported in the wild (CISA KEV entry and security reports).
 - **Threat Actors:** None known
 - **Mitigation:** Mitigation steps unavailable.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
@@ -83,16 +83,16 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) occurs when adversarial content on the web (hidden text, specially crafted pages or payloads) is ingested by AI agents’ context windows and causes the agent to follow attacker‑controlled instructions or reveal sensitive data. Attackers host or inject malicious prompts into sources the agent reads, often using dynamic content or encoding to evade detection.
-- **Affected Products:** Affected products unavailable
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** true
+- **Technical Details:** Sandbox escape via symlink creation in workspace: a sandboxed process can create symlinks pointing outside the workspace; an unsandboxed process later follows the symlink and writes outside, enabled by a prompt injection (TOCTOU/symlink‑following path traversal).
+- **Affected Products:** Anthropic Claude Code < 2.1.64
+- **CVSS Score:** 7.7
+- **CVSS Vector:** CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+- **Exploit Available:** No public PoC/weaponized exploit reported.
+- **Patch Available:** Patch available: Anthropic released Claude Code 2.1.64 (https://github.com/anthropics/claude-code/security/advisories/GHSA-vp62-r36r-9xqp)
+- **Active Exploitation:** No confirmed active exploitation reported.
 - **Threat Actors:** None known
-- **Mitigation:** Monitor and filter external content before it reaches agent context; apply prompt‑hygiene and instruction‑sanitization layers; limit agent actions and sensitive‑data access; use provenance/trust signals and rate‑limit or sandbox agent capabilities. Refer to Google advisory for recommended detections and mitigations.
-- **Vendor Advisory:** https://blog.google/security/prompt-injections-web/
+- **Mitigation:** Update to Claude Code 2.1.64 or later; avoid processing untrusted content; run Claude Code in an isolated environment; monitor for suspicious symlinks and unexpected writes.
+- **Vendor Advisory:** https://github.com/anthropics/claude-code/security/advisories/GHSA-vp62-r36r-9xqp
 
 ---
 
@@ -105,15 +105,15 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) is an attack where adversaries place malicious instructions or payloads into data sources or tools that an LLM-powered application consumes (e.g., documents, web content, connectors). When the LLM accesses those sources during user request processing, the injected instructions can influence model behavior without direct user input, causing data exfiltration, execution of unintended actions, or compromised responses.
-- **Affected Products:** Google Workspace (Gemini in Workspace)
-- **CVSS Score:** CVSS score unavailable
+- **Technical Details:** Indirect Prompt Injection (IPI) is an attack technique that injects malicious instructions into data sources or tools an LLM consumes (e.g., web content, documents, tool outputs) to influence model behavior while processing a user’s query; attacks can succeed without direct user input and exploit agentic automation and multi‑source contexts.
+- **Affected Products:** Google Workspace (features including Gmail, Docs) when used with Gemini
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** Patch availability unknown
-- **Active Exploitation:** true
+- **Exploit Available:** No public proof-of-concept or weaponized exploit reported
+- **Patch Available:** No single "patch" — Google reports ongoing, continuously‑deployed mitigations and provides the advisory URL above.
+- **Active Exploitation:** No confirmed active exploitation in the wild reported in the vendor advisory or cited prior reports.
 - **Threat Actors:** None known
-- **Mitigation:** Layered defenses including data-source sanitization and filtering, strict tool and connector access controls, model behavior controls (instruction-following limits and guardrails), input/output validation, monitoring/telemetry for anomalous agent behavior, and continuous updates to detection signatures and policies. Refer to Google's vendor advisory for implementation details.
+- **Mitigation:** Defense-in-depth including continuous discovery (human and automated red‑teaming, VRP, OSINT), synthetic-data-driven ML retraining, deterministic defenses (URL sanitization, user confirmation, policy engine tool‑chaining controls, regex takedowns), LLM‑based defenses via prompt engineering, and Gemini model hardening; operational recommendation: enable layered controls, apply URL/tool sanitization policies, enforce user confirmations for risky tool actions, and participate in vendor guidance.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
@@ -127,15 +127,15 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The primary new threat facing all agentic browsers is indirect prompt injection, where malicious sites or comments embed instructions that the browser may interpret as prompts, leading to unintended actions. Chrome mitigates this by implementing transparency, permission prompts, and context isolation for agentic operations.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Indirect prompt injection (IPI) occurs when untrusted web content (pages, iframes, UGC, ads) manipulates an agent’s planning model to perform unwanted actions such as financial transactions or data exfiltration. Chrome counters include a User Alignment Critic that vets planned actions, Agent Origin Sets limiting readable/writeable origins, a prompt‑injection classifier, deterministic checks for sensitive URLs/actions, user confirmations, and continuous red‑teaming/monitoring.
+- **Affected Products:** Chrome (agentic capabilities with Gemini)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** No public PoC or weaponized exploit reported.
+- **Patch Available:** Chrome auto‑update delivers fixes; no discrete patch URL provided.
+- **Active Exploitation:** No confirmed active exploitation reported.
 - **Threat Actors:** None known
-- **Mitigation:** Limit agent capabilities by requiring explicit user consent for actions, isolate the agent execution context from web content, sanitize and do not automatically execute content‑derived instructions, and employ permission prompts and provenance indicators.
+- **Mitigation:** Use of User Alignment Critic, origin gating (read‑only vs read‑write origins), real‑time prompt‑injection classifier, deterministic sensitive‑site checks, user confirmations for sensitive actions, and Chrome auto‑update for fixes.
 - **Vendor Advisory:** https://blog.google/security/architecting-security-for-agentic/
 
 ---
@@ -150,14 +150,14 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 **Parallel AI Enrichment:**
 
 - **Technical Details:** Technical details unavailable.
-- **Affected Products:** Android platform (first‑party and third‑party code across C, C++, Java, Kotlin, and Rust)
-- **CVSS Score:** CVSS score unavailable.
+- **Affected Products:** Android platform (first‑party and third‑party/open‑source components across C, C++, Java, Kotlin, and Rust)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** No public exploit available.
+- **Patch Available:** No patch available or applicable.
+- **Active Exploitation:** No confirmed active exploitation reported.
 - **Threat Actors:** None known
-- **Mitigation:** Adopt memory‑safe languages (Rust) for new components, continue fuzzing and sanitizers, apply upstream fixes from Android/security advisories, follow Google Security Blog guidance.
+- **Mitigation:** Mitigation steps unavailable.
 - **Vendor Advisory:** http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
 
 ---
@@ -171,16 +171,16 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) embeds hidden or malicious instructions in external data sources (web pages, emails, documents, calendar invites, plugin/tool outputs). When a generative AI system ingests that external content as part of a prompt or toolchain, the hidden instructions can influence the model to reveal sensitive data, perform unauthorized actions, or change behavior. Attack variants include hidden HTML/JS instructions, poisoned tool/plugin responses, and malicious toolchain outputs.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** true
+- **Technical Details:** Indirect prompt injection (IPI) is an attack where hidden malicious instructions are embedded within external data sources (web content, emails, documents, invites). Agentic AI or LLM‑powered features that ingest external content can unwittingly execute these instructions, leading to data exfiltration or unsafe actions.
+- **Affected Products:** Affected products unavailable (general class: agentic browsers and LLM‑integrated apps such as Gemini for Chrome and Workspace apps)
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** No public PoC/weaponized exploit reported in prior context
+- **Patch Available:** Not applicable; mitigation guidance and layered defenses provided by vendors (see vendor advisory)
+- **Active Exploitation:** Reports of increasing IPI attempts on public web (sources: Google analyses, security news) but no confirmed large‑scale exploitation detailed
 - **Threat Actors:** None known
-- **Mitigation:** Implement layered defenses across the prompt lifecycle: sanitize and normalize inputs; verify provenance and authenticity of external content; enforce strict permissioning and sandboxing for tools/plugins; apply least‑privilege access to sensitive data; use model‑side instruction filtering and policy layers; monitor for anomalous outputs; control supply‑chain for plugins and tool outputs.
-- **Vendor Advisory:** https://blog.google/security/mitigating-prompt-injection-attacks/
+- **Mitigation:** Apply layered defense: input provenance checks, origin‑restricted content access, content sanitization/whitelisting, agent‑level policy enforcement, least‑privilege data access, user confirmation for sensitive actions, monitoring/alerting for anomalous agent behavior.
+- **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
 
 ---
 
@@ -193,15 +193,15 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Actors target large backbone, provider edge (PE) and customer edge (CE) routers, leverage compromised devices and trusted connections to pivot into other networks, and modify routers to maintain persistent, long‑term access.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Actors compromise backbone, provider edge, and customer edge routers, modify firmware or configuration to maintain persistent access, and use trusted connections to pivot into adjacent networks, enabling long‑term espionage.
+- **Affected Products:** Backbone routers, Provider Edge (PE) routers, Customer Edge (CE) routers
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
+- **Exploit Available:** No public exploit or PoC available.
+- **Patch Available:** No official patch available.
+- **Active Exploitation:** Confirmed active exploitation; actors have obtained persistent access to government, telecom, transportation, lodging, and military infrastructure networks.
 - **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Hardening advice includes monitoring for unauthorized router modifications, applying vendor firmware updates where available, segmenting networks, restricting trusted connections, and following CISA/NSA mitigation guidance.
+- **Mitigation:** Apply latest firmware updates to backbone, PE, and CE routers; segment and isolate critical network segments; enforce strong authentication and access controls; monitor for anomalous router behavior; implement network‑level intrusion detection and blacklist known malicious IPs.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
 
 ---
@@ -215,20 +215,33 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Actors leveraged credential‑stuffing and brute‑force, spear‑phishing, and exploited specific vulnerabilities: Outlook NTLM relay (CVE‑2023‑23397), Roundcube XSS/command execution (CVE‑2020‑12641, CVE‑2020‑35730, CVE‑2021‑44026), WinRAR arbitrary code execution (CVE‑2023‑38831), and flaws in internet‑facing VPN/SOHO devices to gain initial access and persist, then exfiltrated data via native tools and staged uploads.
+- **Affected Products:** Microsoft Outlook (CVE‑2023‑23397), WinRAR (CVE‑2023‑38831), Roundcube Webmail (versions before 1.4.4, 1.2.13, 1.3.x before 1.3.16, 1.4.x before 1.4.10), Internet‑facing VPNs and SOHO devices
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
-- **Threat Actors:** GRU 85th Main Special Service Center (85th GTsSS), military unit 26165 (aka APT28)
-- **Mitigation:** Follow advisory hardening and detection recommendations (general mitigations in CSA); specific patch/workaround info unavailable.
+- **Exploit Available:** Public proof‑of‑concept exploits exist for CVE‑2023‑23397 (Outlook) and CVE‑2023‑38831 (WinRAR); weaponised exploitation has been observed in GRU‑attributed campaigns.
+- **Patch Available:** Patch available from Microsoft for CVE‑2023‑23397, from RARLAB for CVE‑2023‑38831, and from Roundcube for CVE‑2020‑12641, CVE‑2020‑35730, and CVE‑2021‑44026.
+- **Active Exploitation:** Yes—CISA, FBI, and NSA joint advisories report active exploitation of these CVEs by GRU‑attributed campaigns targeting logistics and technology companies.
+- **Threat Actors:** GRU 85th Main Special Service Center (unit 26165), also known as APT28, Fancy Bear, Forest Blizzard, BlueDelta.
+- **Mitigation:** Prioritize applying vendor patches; disable or harden NTLM and legacy authentication protocols; enforce MFA; monitor authentication logs; restrict remote access; audit and remove unnecessary mailbox permissions; inventory and secure SOHO devices; monitor PowerShell and scheduled tasks; follow vendor‑recommended hardening guidance.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 11. 🟠 Zero-Day — PraisonAI: Arbitrary code execution via unguarded `spec.loader.exec_module` in `agents_generator.py` - sibling of CVE-2026-44334
+## 11. 🟠 Zero-Day — PAN-OS GlobalProtect Authentication Bypass (CVE-2026-0257) Under Active Exploitation
+
+**CVE:** `CVE-2026-0257` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-05-30
+**Reference:** <https://thehackernews.com/2026/05/pan-os-globalprotect-authentication.html>
+
+> Palo Alto Networks has warned that a recently disclosed medium-severity security flaw impacting PAN-OS and Prisma Access has come under active exploitation in the wild.
+
+The vulnerability, tracked as CVE-2026-0257 (CVSS score: 7.8), refers to a case of authentication bypass that could be exploited by bad actors to set up VPN connections.
+
+&quot;Authentication bypass vulnerabilities in the
+
+---
+
+## 12. 🟠 Zero-Day — PraisonAI: Arbitrary code execution via unguarded `spec.loader.exec_module` in `agents_generator.py` - sibling of CVE-2026-44334
 
 **CVE:** `CVE-2026-47398` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://github.com/advisories/GHSA-78r8-wwqv-r299>
@@ -239,7 +252,7 @@ When `require` is not specified, `options.require` is `undefined`, not `false`. 
 
 ---
 
-## 12. 🟠 Zero-Day — ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface
+## 13. 🟠 Zero-Day — ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html>
@@ -252,7 +265,7 @@ The technique has been codenamed ChatGPhish by Permiso Security.
 
 ---
 
-## 13. 🟠 Zero-Day — Axios has a Patch Bypass: Proxy-Authorization Header Injection via Prototype Pollution — Incomplete Null-Prototype Fix
+## 14. 🟠 Zero-Day — Axios has a Patch Bypass: Proxy-Authorization Header Injection via Prototype Pollution — Incomplete Null-Prototype Fix
 
 **CVE:** `CVE-2026-44489` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://github.com/advisories/GHSA-654m-c8p4-x5fp>
@@ -265,23 +278,12 @@ The `Object.create(null)` fix introduced in Axios 1.15.2 (GHSA-q8qp-cvcw-x6jj) p
 
 ---
 
-## 14. 🟠 Zero-Day — Microsoft calls zero-day releases ‘never justifiable’ as researcher threatens to drop more
+## 15. 🟠 Zero-Day — Microsoft calls zero-day releases ‘never justifiable’ as researcher threatens to drop more
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://therecord.media/microsoft-calls-zero-day-releases-never-justifiable-as-researcher-threatens-more>
 
 > Each vulnerability was published with working proof-of-concept code to the Microsoft-owned code repository GitHub, making them immediately available to both attackers and security professionals.
-
----
-
-## 15. 🟠 Zero-Day — Kimsuky Deploys HTTPSpy, Expands Arsenal with HelloDoor and VS Code Tunnels
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-05-29
-**Reference:** <https://thehackernews.com/2026/05/kimsuky-deploys-httpspy-expands-arsenal.html>
-
-> The North Korean state-sponsored threat actor known as Kimsuky (aka Velvet Chollima) has been attributed to a fresh set of cyber attacks targeting South Korean military and corporate entities through March and April 2026.
-
-&quot;Kimsuky employed a range of tailored social engineering tactics, such as spoofing security software installation pages and crafting a fake Webex meeting page that leverage…
 
 ---
 
@@ -702,16 +704,7 @@ The `localPromise` constructor was changed to call `this.then(undefined, eater)`
 
 ---
 
-## 48. 🟡 High Severity — Rapid7 Observed Exploitation of PAN-OS GlobalProtect Authentication Bypass Vulnerability (CVE-2026-0257)
-
-**CVE:** `CVE-2026-0257` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-05-29
-**Reference:** <https://www.rapid7.com/blog/post/etr-rapid7-observed-exploitation-of-pan-os-globalprotect-authentication-bypass-vulnerability-cve-2026-0257>
-
-> Overview On May 13, 2026, Palo Alto Networks published a security advisory for CVE-2026-0257, a medium severity authentication bypass affecting PAN-OS and Prisma Access when a specific configuration is present. Successful exploitation of this vulnerability allows a remote unauthenticated attacker to successfully establish a VPN connection through the GlobalProtect gateway of an affected appliance.…
-
----
-
-## 49. 🟡 High Severity — axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge
+## 48. 🟡 High Severity — axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge
 
 **CVE:** `CVE-2026-44495` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://github.com/advisories/GHSA-3g43-6gmg-66jw>
@@ -724,7 +717,7 @@ Axios does not itself create the prototype pollution. Expl…
 
 ---
 
-## 50. 🟡 High Severity — axios Vulnerable to Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`
+## 49. 🟡 High Severity — axios Vulnerable to Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`
 
 **CVE:** `CVE-2026-44494` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://github.com/advisories/GHSA-35jp-ww65-95wh>
@@ -737,7 +730,7 @@ The Axios library is vulnerable to a Prototype Pollution &quot;Gadget&quot; atta
 
 ---
 
-## 51. 🟡 High Severity — Froxlor has privilege escalation in SSH key synchronization via symlinked `authorized_keys` path
+## 50. 🟡 High Severity — Froxlor has privilege escalation in SSH key synchronization via symlinked `authorized_keys` path
 
 **CVE:** `CVE-2026-41236` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://github.com/advisories/GHSA-mq5v-pxpm-8jw2>
@@ -749,7 +742,7 @@ If an attacker controls a shell-enabled customer account and can modify files in
 
 ---
 
-## 52. 🟡 High Severity — GitHub CLI has an incorrect authorization header in API requests to TUF repository mirrors via `gh attestation`, `gh release verify`, and `gh release verify-asset` commands
+## 51. 🟡 High Severity — GitHub CLI has an incorrect authorization header in API requests to TUF repository mirrors via `gh attestation`, `gh release verify`, and `gh release verify-asset` commands
 
 **CVE:** `CVE-2026-48501` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-05-29
 **Reference:** <https://github.com/advisories/GHSA-8xvp-7hj6-mcj9>
@@ -764,7 +757,7 @@ GitHub CLI incorrectly includes an authorization header in API requests to TUF r
 
 ---
 
-## 53. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 52. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
