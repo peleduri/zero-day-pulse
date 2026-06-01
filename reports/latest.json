@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-01T02:31:45.642278+00:00",
-  "total": 9,
+  "generated": "2026-06-01T11:08:05.030891+00:00",
+  "total": 11,
   "kev": 0,
-  "zero_day": 8,
-  "enriched": 9,
+  "zero_day": 9,
+  "enriched": 10,
   "findings": [
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
@@ -22,16 +22,43 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Path traversal (directory traversal) vulnerabilities in the SimpleHelp web interface allow unauthenticated remote attackers to retrieve arbitrary files, such as logs, configuration files, and credentials, by requesting crafted paths that escape the intended directory.",
-        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is an unauthenticated directory traversal vulnerability in SimpleHelp server (versions 5.5.7 and earlier) that permits attackers to retrieve arbitrary files, such as configuration files containing hashed or reversible passwords, enabling credential theft and further compromise.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) server and client \u2013 versions 5.5.7 and earlier (including 5.4.10)",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "true - https://www.offsec.com/blog/cve-2024-57727/",
-        "patch_available": "true - http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors",
-        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later; if immediate patching is not possible, restrict access to SimpleHelp instances via network segmentation, firewall rules, and disabling public access; rotate credentials, review logs, and apply least\u2011privilege and monitoring controls.",
-        "vendor_advisory": "http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570"
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Public proof\u2011of\u2011concept walkthroughs are available (e.g., Medium/TryHackMe write\u2011ups). No vendor\u2011released exploit code.",
+        "patch_available": "Yes \u2013 patches released in SimpleHelp version 5.5.8 (and later). Details at https://simple-help.com/kb---security-vulnerabilities-01-2025 and downloads at https://simple-help.com/downloads.",
+        "active_exploitation": "Yes \u2013 confirmed active exploitation reported by CISA and security vendors.",
+        "threat_actors": "DragonForce ransomware group",
+        "mitigation": "Isolate or stop the vulnerable SimpleHelp server, upgrade immediately to version 5.5.8 or later, determine installed version via /allversions, perform threat hunting, restrict exposure of remote services, and apply compensating controls as needed.",
+        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
+      }
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html",
+      "title": "Critical WP Maps Pro Flaw Actively Exploited to Create Admin Accounts",
+      "summary": "Threat actors are attempting to actively exploit a critical security flaw impacting WP Maps Pro, a WordPress plugin that has had over 15,000 sales on the Envato Market, to create malicious administrator accounts on susceptible sites.\n\nWP Maps Pro allows site owners to embed customizable Google Maps and OpenStreetMap with markers, listings, and advanced location features on WordPress sites. It is",
+      "link": "https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html",
+      "published": "2026-06-01T08:45:29+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Unauthenticated AJAX action wpgmp_temp_access_ajax is registered with wp_ajax_nopriv_ and protected only by a nonce (fc-call-nonce) that is exposed on the frontend via wp_localize_script. An attacker can POST action with check_temp=false, triggering wpgmp_temp_access_support(), which calls wp_insert_user() to create an administrator account and returns a magic login URL that invokes wp_set_auth_cookie(), giving full admin takeover.",
+        "affected_products": "WP Maps Pro (wp-google-map-gold) <= 6.1.0",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "Public proof\u2011of\u2011concept exploit available on GitHub: https://github.com/xShadow-Here/CVE-2026-8732",
+        "patch_available": "Patched in WP Maps Pro version 6.1.1 (released May 20, 2026). Details at https://www.wordfence.com/blog/2026/05/15000-wordpress-sites-affected-by-administrator-account-creation-vulnerability-in-wp-maps-pro-wordpress-plugin/",
+        "active_exploitation": "Yes \u2013 Wordfence reported active exploitation, blocking 2,858 attacks in 24\u202fhours; also reported by The Hacker News.",
+        "threat_actors": "None known",
+        "mitigation": "Update WP Maps Pro to version 6.1.1 or later. Apply the Wordfence firewall rule (premium/response users received it May\u202f18\u202f2026; free users June\u202f17\u202f2026). As a temporary workaround, block admin\u2011ajax POSTs for action wpgmp_temp_access_ajax or add a capability check, or remove/disable the plugin until patched.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -50,16 +77,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) involves placing malicious prompt fragments in user\u2011controlled data (e.g., web pages, documents) that are later fed to an AI model, causing the model to execute the injected instructions as if they were legitimate. This can manipulate the AI\u2019s behavior, leak information, or trigger actions such as remote code execution in integrated agent frameworks.",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI system reads content (e.g., a website, email, or document) that includes malicious instructions, leading the model to silently follow those instructions. The blog categorizes observed IPI attempts into harmless pranks, helpful guidance, SEO manipulation, deterring AI agents, and malicious actions like data exfiltration and destruction.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
+        "exploit_available": "No public exploit or PoC is known at this time.",
+        "patch_available": "No official patch is available at this time.",
+        "active_exploitation": "Confirmed active exploitation has been observed, with a reported 32% increase in malicious IPI detections over the specified period.",
         "threat_actors": "None known",
-        "mitigation": "Implement strict input validation and sanitization for any data fed to LLMs, apply instruction\u2011level filtering to block malicious prompts, isolate AI model calls in sandboxed environments, and monitor model outputs for anomalous behavior. Deploy layered defenses as described by Google\u2019s new safeguards.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Implement a layered defense strategy, continuously harden AI models, conduct red\u2011team pressure testing, and participate in the AI Vulnerability Reward Program for ongoing detection and remediation.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -78,15 +105,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) targets LLM\u2011based applications that combine multiple data sources and tools by injecting malicious instructions into the data or tools the LLM consumes during query completion, potentially influencing model behavior without direct user input.",
-        "affected_products": "Google Workspace with Gemini (general; specific versions unavailable)",
-        "cvss_score": "CVSS score unavailable",
+        "technical_details": "Indirect Prompt Injection (IPI) is an attack vector where malicious instructions are injected into external data sources or tools that a complex AI system (e.g., Workspace with Gemini) consumes during response generation; these instructions can influence LLM behavior even without user input.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "false",
+        "exploit_available": "No public PoC or weaponized exploit reported",
+        "patch_available": "No vendor patch; Google describes layered mitigations and continuous monitoring rather than a single patch (see advisory).",
+        "active_exploitation": "No confirmed reports of active exploitation in the wild reported in the advisory.",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses including data-source vetting, input/output filtering, sanitization of external content, privilege separation for tools/agents, monitoring and anomaly detection, and continuous updates to model/tooling per Google\u2019s continuous approach.",
+        "mitigation": "Google recommends a layered defense: monitoring the web for known IPI patterns, hardened input handling, provenance and trust signals, instruction\u2011scoping, tool/data access controls, continuous monitoring and updates, and other hardening measures described in the advisory.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -106,16 +133,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The primary new threat facing all agentic browsers is indirect prompt injection (IPI). Malicious or user\u2011generated web content can influence an agent to take unwanted actions (e.g., financial transactions or data exfiltration). Chrome mitigates this with a User Alignment Critic, Agent Origin Sets, deterministic URL checks, a real\u2011time IPI detection classifier, user confirmations for sensitive actions, and continuous red\u2011teaming.",
+        "technical_details": "The vulnerability allows a malicious web page to inject crafted prompts into the Gemini AI agent, causing it to execute unintended actions. This indirect prompt injection bypasses origin restrictions and can lead to unsafe AI behaviors.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true \u2014 Patch/advisory URL: https://blog.google/security/architecting-security-for-agentic/",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "Public exploit for CVE-2026-0628 reported; see LinkedIn post.",
+        "patch_available": "Patch unavailable.",
+        "active_exploitation": "Confirmed active exploitation reported in a public LinkedIn post.",
         "threat_actors": "None known",
-        "mitigation": "Deploy layered defenses: User Alignment Critic, origin gating (read\u2011only vs read\u2011write sets), deterministic URL checks, a prompt\u2011injection classifier, user confirmations for sensitive actions, Safe Browsing integration, continuous red\u2011teaming, and updated VRP guidance. If a formal patch is needed, Chrome auto\u2011update delivers fixes.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
     {
@@ -134,16 +161,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The report attributes reductions in memory\u2011safety vulnerabilities (use\u2011after\u2011free, buffer overflows, etc.) by adopting Rust in Android components; the underlying mechanism is prevention of memory\u2011safety bugs via Rust\u2019s ownership/borrow checker rather than runtime patches.",
-        "affected_products": "Android platform (first\u2011party and third\u2011party/open\u2011source components across C, C++, Java, Kotlin, Rust)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2025-11-01, https://source.android.com/docs/security/bulletin/2025-12-01",
-        "active_exploitation": "false",
+        "technical_details": "Data summary indicates a reduction in memory\u2011safety vulnerabilities due to adoption of Rust across Android components; specific vulnerability mechanism details not provided.",
+        "affected_products": "Android platform (first\u2011party and third\u2011party open\u2011source components across C, C++, Java, Kotlin, and Rust)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "None known",
+        "patch_available": "Patch information not specified in provided sources; vendor advisory URL unavailable.",
+        "active_exploitation": "No confirmed active exploitation reported in the provided sources.",
         "threat_actors": "None known",
-        "mitigation": "Apply official Android Security Bulletin updates; prefer memory\u2011safe languages (Rust) for new code; follow Google hardening guidance in the blog post.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Ongoing migration to Rust for new code and prevention\u2011focused memory\u2011safety strategy; no specific workaround provided.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -162,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) embeds hidden malicious instructions within external data sources (emails, documents, calendar invites) that can influence AI agents; Google describes a layered defense across the prompt lifecycle including training with adversarial data, input sanitation, agent\u2011side policies, and runtime controls to detect and block IPI.",
+        "technical_details": "Indirect prompt injection \u2014 hidden or embedded instructions in external data sources (emails, documents, calendar invites, web content) are fetched by an AI agent and concatenated into prompts, causing the model to execute or disclose sensitive information. The attack chain often combines data\u2011sourcing, prompt construction, policy/whitelist bypass, and action execution. Research shows examples targeting coding assistants and developer tools.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
-        "active_exploitation": "false",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Public PoCs are available; see Forcepoint report, Infosecurity Magazine article, and the Cursor GitHub security advisory.",
+        "patch_available": "Patch not applicable (mitigations and guidance published; no single product patch).",
+        "active_exploitation": "In\u2011the\u2011wild payloads have been reported by researchers (Forcepoint, Infosecurity). No large\u2011scale confirmed campaigns are known.",
         "threat_actors": "None known",
-        "mitigation": "Apply layered defenses \u2014 sanitize and validate external content, use model and system\u2011level adversarial training, enforce least\u2011privilege data access for agents, implement runtime filtering and policy enforcement, monitor for anomalous agent behaviors; follow vendor guidance: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
+        "mitigation": "Layered defenses including: input sanitization and validation, least\u2011privilege access to external data, strict output handling and redaction, provenance and source validation, runtime policy enforcement (command whitelists/blacklists), human\u2011in\u2011the\u2011loop for sensitive actions, telemetry and anomaly detection, and secure prompt design.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -189,16 +216,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Actors compromise large backbone, provider\u2011edge (PE) and customer\u2011edge (CE) routers, use compromised devices and trusted connections to pivot into other networks, and modify routers to maintain persistent, long\u2011term access.",
+        "technical_details": "Actors focus on compromising routers (backbone, PE, CE), modifying firmware or configuration to maintain persistent, long\u2011term access, and leveraging trusted connections to pivot into other networks for espionage.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon (also tracked as OPERATOR PANDA, RedMike, UNC5807, GhostEmperor)",
-        "mitigation": "Follow CISA/NSA/FBI mitigation guidance in AA25-239A \u2014 harden routers, update device credentials, monitor for unauthorized configuration changes, segment networks, apply vendor patches where available, restrict management plane access, and use network monitoring and EDR.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+        "exploit_available": "Exploit available: None known/public PoC unavailable.",
+        "patch_available": "Patch information varies by vendor; check vendor advisories.",
+        "active_exploitation": "Confirmed active exploitation reported: Yes \u2014 PRC state-sponsored actors targeting telecommunications, government, transportation, lodging, and military infrastructure.",
+        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
+        "mitigation": "Mitigation: segment networks, restrict and harden management access, update firmware, apply vendor hardening guidance, monitor and isolate compromised devices.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -216,16 +243,45 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Actors gain initial footholds by exploiting public vulnerabilities (e.g., WinRAR CVE\u20112023\u201138831) and via spearphishing/password spraying. After compromise they use tools like Impacket, PsExec, RDP, Certipy and ADExplorer to move laterally, modify Exchange mailbox permissions, archive data, and exfiltrate information.",
+        "affected_products": "WinRAR (CVE-2023-38831), Roundcube Webmail (versions listed in advisory)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Russian GRU 85th GTsSS (Unit 26165) / APT28",
-        "mitigation": "Follow CSA recommended mitigations \u2014 harden external\u2011facing services, enforce MFA, apply network segmentation, monitor for indicators of compromise, block known malicious infrastructure, and follow incident response guidance from CISA/FBI/NSA.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+        "exploit_available": "Exploitation of CVE-2023-38831 (WinRAR) is documented; no public PoC linked in the advisory.",
+        "patch_available": "Vendor fixes are available for CVE-2023-38831 and Roundcube CVEs via vendor advisories referenced in the CVE records; specific URLs are not provided in the CSA.",
+        "active_exploitation": "Confirmed active exploitation since 2022 with observed intrusions and exploitation of CVE\u20112023\u201138831 and other techniques; advisory provides specific IOCs and dates.",
+        "threat_actors": "GRU 85th Main Special Service Center (unit 26165) \u2014 known as APT28, Fancy Bear, Forest Blizzard, BlueDelta",
+        "mitigation": "Network segmentation, deploy endpoint detection & response (EDR), enforce multi\u2011factor authentication (MFA), implement application allow\u2011listing, restrict VPN access, monitor logs, harden IP cameras (disable UPnP/P2P, enable authenticated RTSP), and maintain regular patching of vulnerable software.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
+    },
+    {
+      "id": "https://www.securityweek.com/recent-palo-alto-networks-vulnerability-exploited-for-weeks/",
+      "title": "Recent Palo Alto Networks Vulnerability Exploited for Weeks",
+      "summary": "Hackers began exploiting CVE-2026-0257, an authentication bypass in Palo Alto Networks PAN-OS, four days after public disclosure. The post Recent Palo Alto Networks Vulnerability Exploited for Weeks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/recent-palo-alto-networks-vulnerability-exploited-for-weeks/",
+      "published": "2026-06-01T10:00:00+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-0257"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Authentication override cookie misuse \u2013 the GlobalProtect authentication\u2011override cookies can be forged when the certificate used to encrypt/decrypt those cookies is reused with other services, enabling an attacker to craft valid cookies and gain an unauthorized VPN session via the portal/gateway.",
+        "affected_products": "PAN\u2011OS GlobalProtect portal/gateway \u2013 PAN\u2011OS 12.1 (<12.1.4\u2011h6), 11.2 (<11.2.4\u2011h17, <11.2.7\u2011h14, <11.2.10\u2011h7, <11.2.12), 11.1 (<11.1.4\u2011h33, ...), 10.2 (<10.2.7\u2011h34, ...); Prisma Access older builds.",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "Public proof\u2011of\u2011concept script published on GitHub (https://github.com/sfewer-r7/CVE-2026-0257); Rapid7 confirmed exploit.",
+        "patch_available": "Yes \u2013 vendor published PAN\u2011OS fixes; see advisory for patched versions.",
+        "active_exploitation": "Confirmed \u2013 Rapid7 observed successful exploitation beginning May 17, 2026; SecurityWeek reported exploitation within weeks of disclosure; CISA added the CVE to its KEV catalog on 05/29/2026.",
+        "threat_actors": "None known",
+        "mitigation": "Apply vendor patches immediately; if patches cannot be applied, disable the authentication\u2011override feature or generate a dedicated certificate exclusive to that feature. Follow CISA KEV guidance for federal agencies.",
+        "vendor_advisory": "https://security.paloaltonetworks.com/CVE-2026-0257"
       }
     },
     {
@@ -244,19 +300,7 @@
         "CVE-2024-27227"
       ],
       "is_zero_day": false,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "A malicious DNS response can trigger out\u2011of\u2011bounds reads, writes, and other memory issues when parsed by a memory\u2011unsafe DNS parser (CVE\u20112024\u201127227). Implementing a memory\u2011safe Rust DNS parser eliminates these memory\u2011safety errors.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true \u2014 http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html",
-        "active_exploitation": "false",
-        "threat_actors": "None known",
-        "mitigation": "Replace memory\u2011unsafe DNS parser with Rust implementation to reduce memory\u2011safety vulnerabilities; general hardening of baseband firmware and memory\u2011safety mitigations.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html"
-      }
+      "is_high_severity": true
     }
   ]
 }
