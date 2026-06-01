@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-31T19:03:39.635568+00:00",
+  "generated": "2026-06-01T02:31:45.642278+00:00",
   "total": 9,
   "kev": 0,
   "zero_day": 8,
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated remote attackers can exploit a path\u2011traversal bug in SimpleHelp Remote Support (RMM) versions \u22645.5.7 to retrieve files such as logs, configuration files, and credentials from the server.",
-        "affected_products": "SimpleHelp Remote Support (RMM) version 5.5.7 and earlier",
+        "technical_details": "Path traversal (directory traversal) vulnerabilities in the SimpleHelp web interface allow unauthenticated remote attackers to retrieve arbitrary files, such as logs, configuration files, and credentials, by requesting crafted paths that escape the intended directory.",
+        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "false",
-        "patch_available": "true",
+        "exploit_available": "true - https://www.offsec.com/blog/cve-2024-57727/",
+        "patch_available": "true - http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
         "active_exploitation": "true",
-        "threat_actors": "Ransomware actors (unspecified groups)",
-        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later; if immediate patching is not possible, restrict network exposure of SimpleHelp, block access to its web interface, enforce network segmentation, and rotate credentials.",
-        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "threat_actors": "Ransomware actors",
+        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later; if immediate patching is not possible, restrict access to SimpleHelp instances via network segmentation, firewall rules, and disabling public access; rotate credentials, review logs, and apply least\u2011privilege and monitoring controls.",
+        "vendor_advisory": "http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570"
       }
     },
     {
@@ -50,16 +50,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI systems process content (webpages, emails, docs) that contain malicious instructions. Google scanned Common Crawl using pattern\u2011matching signatures, LLM\u2011based classification (Gemini) and manual validation, identifying categories like harmless pranks, SEO manipulation, deterring AI agents, and malicious instructions for data exfiltration or destruction.",
+        "technical_details": "Indirect Prompt Injection (IPI) involves placing malicious prompt fragments in user\u2011controlled data (e.g., web pages, documents) that are later fed to an AI model, causing the model to execute the injected instructions as if they were legitimate. This can manipulate the AI\u2019s behavior, leak information, or trigger actions such as remote code execution in integrated agent frameworks.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "Patch availability unknown",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses including pattern filtering, LLM\u2011based intent classification, human validation, hardened model safeguards (Google\u2019s Secure AI Framework / product hardening), and participation in the AI Vulnerability Reward Program.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "mitigation": "Implement strict input validation and sanitization for any data fed to LLMs, apply instruction\u2011level filtering to block malicious prompts, isolate AI model calls in sandboxed environments, and monitor model outputs for anomalous behavior. Deploy layered defenses as described by Google\u2019s new safeguards.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -78,15 +78,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) enables attackers to influence LLM behavior by injecting malicious instructions into the data or tools the LLM consumes, potentially without direct user input. Google\u2019s defenses include discovery (human/automated red\u2011teaming, VRP, OSINT), synthetic data generation, ML/LLM retraining, deterministic controls, and model hardening to detect and ignore injected instructions.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Use layered defenses described by Google: user confirmation, URL sanitization, tool chaining policies, centralized Policy Engine configs, deterministic defenses (e.g., regex takedowns), ML-based defenses (retraining with synthetic attack data), LLM-based defenses (prompt engineering), Gemini model hardening.",
+        "technical_details": "Indirect prompt injection (IPI) targets LLM\u2011based applications that combine multiple data sources and tools by injecting malicious instructions into the data or tools the LLM consumes during query completion, potentially influencing model behavior without direct user input.",
+        "affected_products": "Google Workspace with Gemini (general; specific versions unavailable)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Layered defenses including data-source vetting, input/output filtering, sanitization of external content, privilege separation for tools/agents, monitoring and anomaly detection, and continuous updates to model/tooling per Google\u2019s continuous approach.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -106,16 +106,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is the primary threat: malicious or third\u2011party page content can influence agentic AI instructions, causing it to take unsafe actions by injecting prompts indirectly through web content or included resources. Chrome\u2019s mitigations add layered defenses (prompt\u2011injection blocking, origin\u2011access restrictions, an overseer AI agent) to restrict the agent\u2019s ability to accept or act on untrusted content.",
-        "affected_products": "Google Chrome (agentic browsing / Gemini integration) \u2014 specific affected versions unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
-        "active_exploitation": "Active exploitation status unknown",
+        "technical_details": "The primary new threat facing all agentic browsers is indirect prompt injection (IPI). Malicious or user\u2011generated web content can influence an agent to take unwanted actions (e.g., financial transactions or data exfiltration). Chrome mitigates this with a User Alignment Critic, Agent Origin Sets, deterministic URL checks, a real\u2011time IPI detection classifier, user confirmations for sensitive actions, and continuous red\u2011teaming.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true \u2014 Patch/advisory URL: https://blog.google/security/architecting-security-for-agentic/",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Apply Google's layered defenses/updates, restrict agentic browsing to trusted sites, disable agentic capabilities where not needed, enforce origin isolation and content sanitization, and monitor agent actions. See vendor advisory for details.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "mitigation": "Deploy layered defenses: User Alignment Critic, origin gating (read\u2011only vs read\u2011write sets), deterministic URL checks, a prompt\u2011injection classifier, user confirmations for sensitive actions, Safe Browsing integration, continuous red\u2011teaming, and updated VRP guidance. If a formal patch is needed, Chrome auto\u2011update delivers fixes.",
+        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
       }
     },
     {
@@ -134,15 +134,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html",
-        "active_exploitation": "Active exploitation status unknown.",
+        "technical_details": "The report attributes reductions in memory\u2011safety vulnerabilities (use\u2011after\u2011free, buffer overflows, etc.) by adopting Rust in Android components; the underlying mechanism is prevention of memory\u2011safety bugs via Rust\u2019s ownership/borrow checker rather than runtime patches.",
+        "affected_products": "Android platform (first\u2011party and third\u2011party/open\u2011source components across C, C++, Java, Kotlin, Rust)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2025-11-01, https://source.android.com/docs/security/bulletin/2025-12-01",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Continue migrating new Android platform code to memory\u2011safe languages (Rust) and prioritize vulnerability prevention in new code; apply general hardening best practices.",
+        "mitigation": "Apply official Android Security Bulletin updates; prefer memory\u2011safe languages (Rust) for new code; follow Google hardening guidance in the blog post.",
         "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
@@ -162,15 +162,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection attacks embed hidden malicious instructions in external data sources (emails, documents, calendar invites, web content) that a generative AI may ingest during the prompt lifecycle; these instructions can cause the AI to exfiltrate data or perform unauthorized actions unless mitigated by layered defenses (input validation/sanitization, content provenance checks, model instruction filtering, least\u2011privilege access controls, user confirmation/approval, and monitoring).",
+        "technical_details": "Indirect prompt injection (IPI) embeds hidden malicious instructions within external data sources (emails, documents, calendar invites) that can influence AI agents; Google describes a layered defense across the prompt lifecycle including training with adversarial data, input sanitation, agent\u2011side policies, and runtime controls to detect and block IPI.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "false \u2014 advisory/mitigations published at the vendor URL above",
-        "active_exploitation": "Active exploitation status unknown",
+        "patch_available": "true \u2014 http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Implement layered defenses per Google's advisory: (1) treat external content as untrusted and sanitize/normalize inputs; (2) propagate and check provenance/metadata for context; (3) apply instruction filtering and prompt integrity checks; (4) enforce least\u2011privilege access for model actions and data access; (5) require explicit user confirmation for sensitive operations and outputs; (6) monitor and log model interactions for anomalous behavior.",
+        "mitigation": "Apply layered defenses \u2014 sanitize and validate external content, use model and system\u2011level adversarial training, enforce least\u2011privilege data access for agents, implement runtime filtering and policy enforcement, monitor for anomalous agent behaviors; follow vendor guidance: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -189,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state-sponsored actors target large backbone, provider-edge (PE), and customer-edge (CE) routers and other network devices (including compromised routers and trusted connections) to maintain persistent, long-term access and pivot to downstream networks; actors modify router configurations and firmware to establish covert access and persistence.",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "Patch availability unknown",
+        "technical_details": "Actors compromise large backbone, provider\u2011edge (PE) and customer\u2011edge (CE) routers, use compromised devices and trusted connections to pivot into other networks, and modify routers to maintain persistent, long\u2011term access.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
-        "mitigation": "Isolate and harden network-device management interfaces; change and centralize credentials; apply vendor firmware/OS updates when available; inventory and monitor network devices for unauthorized configuration changes; segment networks and restrict lateral movement; deploy detection for C2 traffic and known IOCs; block suspicious external connections.",
+        "threat_actors": "Salt Typhoon (also tracked as OPERATOR PANDA, RedMike, UNC5807, GhostEmperor)",
+        "mitigation": "Follow CISA/NSA/FBI mitigation guidance in AA25-239A \u2014 harden routers, update device credentials, monitor for unauthorized configuration changes, segment networks, apply vendor patches where available, restrict management plane access, and use network monitoring and EDR.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -216,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "The campaign leverages phishing and compromised websites for initial access, harvests credentials, and employs living\u2011off\u2011the\u2011land binaries and custom malware to conduct reconnaissance, establish persistence, and move laterally within Western logistics and technology organizations.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "Exploit availability unknown.",
         "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
-        "threat_actors": "Russian GRU (85th GTsSS, Unit 26165) \u2013 also tracked as APT28",
-        "mitigation": "Implement multi\u2011factor authentication, network segmentation, least privilege, phishing\u2011resistant controls, regular patch management, and monitor for GRU\u2011specific IOCs and TTPs as outlined in the advisory.",
+        "threat_actors": "Russian GRU 85th GTsSS (Unit 26165) / APT28",
+        "mitigation": "Follow CSA recommended mitigations \u2014 harden external\u2011facing services, enforce MFA, apply network segmentation, monitor for indicators of compromise, block known malicious infrastructure, and follow incident response guidance from CISA/FBI/NSA.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
@@ -246,16 +246,16 @@
       "is_zero_day": false,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A crafted DNS response can trigger out\u2011of\u2011bounds reads, writes, and other memory corruptions in the modem's DNS parser implemented in a memory\u2011unsafe language.",
-        "affected_products": "Google Pixel devices (modem firmware)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "Patch availability unknown",
-        "active_exploitation": "Active exploitation status unknown",
+        "technical_details": "A malicious DNS response can trigger out\u2011of\u2011bounds reads, writes, and other memory issues when parsed by a memory\u2011unsafe DNS parser (CVE\u20112024\u201127227). Implementing a memory\u2011safe Rust DNS parser eliminates these memory\u2011safety errors.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true \u2014 http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Adopt the Rust\u2011based DNS parser in future firmware releases; avoid parsing untrusted DNS responses in memory\u2011unsafe code and apply vendor updates when available.",
-        "vendor_advisory": "https://source.android.com/security/bulletin/pixel/2024-03-01"
+        "mitigation": "Replace memory\u2011unsafe DNS parser with Rust implementation to reduce memory\u2011safety vulnerabilities; general hardening of baseband firmware and memory\u2011safety mitigations.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html"
       }
     }
   ]

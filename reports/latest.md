@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-05-31 19:03 UTC &nbsp;|&nbsp; **Total:** 9 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 9
+> **Generated:** 2026-06-01 02:31 UTC &nbsp;|&nbsp; **Total:** 9 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 9
 
 ---
 
@@ -13,16 +13,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Unauthenticated remote attackers can exploit a path‑traversal bug in SimpleHelp Remote Support (RMM) versions ≤5.5.7 to retrieve files such as logs, configuration files, and credentials from the server.
-- **Affected Products:** SimpleHelp Remote Support (RMM) version 5.5.7 and earlier
+- **Technical Details:** Path traversal (directory traversal) vulnerabilities in the SimpleHelp web interface allow unauthenticated remote attackers to retrieve arbitrary files, such as logs, configuration files, and credentials, by requesting crafted paths that escape the intended directory.
+- **Affected Products:** SimpleHelp remote support software v5.5.7 and earlier
 - **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-- **Exploit Available:** false
-- **Patch Available:** true
+- **Exploit Available:** true - https://www.offsec.com/blog/cve-2024-57727/
+- **Patch Available:** true - http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570
 - **Active Exploitation:** true
-- **Threat Actors:** Ransomware actors (unspecified groups)
-- **Mitigation:** Upgrade to SimpleHelp 5.5.8 or later; if immediate patching is not possible, restrict network exposure of SimpleHelp, block access to its web interface, enforce network segmentation, and rotate credentials.
-- **Vendor Advisory:** http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **Threat Actors:** Ransomware actors
+- **Mitigation:** Upgrade to SimpleHelp 5.5.8 or later; if immediate patching is not possible, restrict access to SimpleHelp instances via network segmentation, firewall rules, and disabling public access; rotate credentials, review logs, and apply least‑privilege and monitoring controls.
+- **Vendor Advisory:** http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570
 
 ---
 
@@ -35,16 +35,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) occurs when AI systems process content (webpages, emails, docs) that contain malicious instructions. Google scanned Common Crawl using pattern‑matching signatures, LLM‑based classification (Gemini) and manual validation, identifying categories like harmless pranks, SEO manipulation, deterring AI agents, and malicious instructions for data exfiltration or destruction.
+- **Technical Details:** Indirect Prompt Injection (IPI) involves placing malicious prompt fragments in user‑controlled data (e.g., web pages, documents) that are later fed to an AI model, causing the model to execute the injected instructions as if they were legitimate. This can manipulate the AI’s behavior, leak information, or trigger actions such as remote code execution in integrated agent frameworks.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** Patch availability unknown
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Layered defenses including pattern filtering, LLM‑based intent classification, human validation, hardened model safeguards (Google’s Secure AI Framework / product hardening), and participation in the AI Vulnerability Reward Program.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
+- **Mitigation:** Implement strict input validation and sanitization for any data fed to LLMs, apply instruction‑level filtering to block malicious prompts, isolate AI model calls in sandboxed environments, and monitor model outputs for anomalous behavior. Deploy layered defenses as described by Google’s new safeguards.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
@@ -57,15 +57,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) enables attackers to influence LLM behavior by injecting malicious instructions into the data or tools the LLM consumes, potentially without direct user input. Google’s defenses include discovery (human/automated red‑teaming, VRP, OSINT), synthetic data generation, ML/LLM retraining, deterministic controls, and model hardening to detect and ignore injected instructions.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** Threat actors unknown.
-- **Mitigation:** Use layered defenses described by Google: user confirmation, URL sanitization, tool chaining policies, centralized Policy Engine configs, deterministic defenses (e.g., regex takedowns), ML-based defenses (retraining with synthetic attack data), LLM-based defenses (prompt engineering), Gemini model hardening.
+- **Technical Details:** Indirect prompt injection (IPI) targets LLM‑based applications that combine multiple data sources and tools by injecting malicious instructions into the data or tools the LLM consumes during query completion, potentially influencing model behavior without direct user input.
+- **Affected Products:** Google Workspace with Gemini (general; specific versions unavailable)
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** false
+- **Patch Available:** false
+- **Active Exploitation:** false
+- **Threat Actors:** None known
+- **Mitigation:** Layered defenses including data-source vetting, input/output filtering, sanitization of external content, privilege separation for tools/agents, monitoring and anomaly detection, and continuous updates to model/tooling per Google’s continuous approach.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
@@ -79,16 +79,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) is the primary threat: malicious or third‑party page content can influence agentic AI instructions, causing it to take unsafe actions by injecting prompts indirectly through web content or included resources. Chrome’s mitigations add layered defenses (prompt‑injection blocking, origin‑access restrictions, an overseer AI agent) to restrict the agent’s ability to accept or act on untrusted content.
-- **Affected Products:** Google Chrome (agentic browsing / Gemini integration) — specific affected versions unavailable
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** true — http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
-- **Active Exploitation:** Active exploitation status unknown
+- **Technical Details:** The primary new threat facing all agentic browsers is indirect prompt injection (IPI). Malicious or user‑generated web content can influence an agent to take unwanted actions (e.g., financial transactions or data exfiltration). Chrome mitigates this with a User Alignment Critic, Agent Origin Sets, deterministic URL checks, a real‑time IPI detection classifier, user confirmations for sensitive actions, and continuous red‑teaming.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true — Patch/advisory URL: https://blog.google/security/architecting-security-for-agentic/
+- **Active Exploitation:** Active exploitation status unknown.
 - **Threat Actors:** None known
-- **Mitigation:** Apply Google's layered defenses/updates, restrict agentic browsing to trusted sites, disable agentic capabilities where not needed, enforce origin isolation and content sanitization, and monitor agent actions. See vendor advisory for details.
-- **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
+- **Mitigation:** Deploy layered defenses: User Alignment Critic, origin gating (read‑only vs read‑write sets), deterministic URL checks, a prompt‑injection classifier, user confirmations for sensitive actions, Safe Browsing integration, continuous red‑teaming, and updated VRP guidance. If a formal patch is needed, Chrome auto‑update delivers fixes.
+- **Vendor Advisory:** https://blog.google/security/architecting-security-for-agentic/
 
 ---
 
@@ -101,15 +101,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true — http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
-- **Active Exploitation:** Active exploitation status unknown.
+- **Technical Details:** The report attributes reductions in memory‑safety vulnerabilities (use‑after‑free, buffer overflows, etc.) by adopting Rust in Android components; the underlying mechanism is prevention of memory‑safety bugs via Rust’s ownership/borrow checker rather than runtime patches.
+- **Affected Products:** Android platform (first‑party and third‑party/open‑source components across C, C++, Java, Kotlin, Rust)
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** false
+- **Patch Available:** true — https://source.android.com/docs/security/bulletin/2025-11-01, https://source.android.com/docs/security/bulletin/2025-12-01
+- **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Continue migrating new Android platform code to memory‑safe languages (Rust) and prioritize vulnerability prevention in new code; apply general hardening best practices.
+- **Mitigation:** Apply official Android Security Bulletin updates; prefer memory‑safe languages (Rust) for new code; follow Google hardening guidance in the blog post.
 - **Vendor Advisory:** http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
 
 ---
@@ -123,15 +123,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection attacks embed hidden malicious instructions in external data sources (emails, documents, calendar invites, web content) that a generative AI may ingest during the prompt lifecycle; these instructions can cause the AI to exfiltrate data or perform unauthorized actions unless mitigated by layered defenses (input validation/sanitization, content provenance checks, model instruction filtering, least‑privilege access controls, user confirmation/approval, and monitoring).
+- **Technical Details:** Indirect prompt injection (IPI) embeds hidden malicious instructions within external data sources (emails, documents, calendar invites) that can influence AI agents; Google describes a layered defense across the prompt lifecycle including training with adversarial data, input sanitation, agent‑side policies, and runtime controls to detect and block IPI.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** false
-- **Patch Available:** false — advisory/mitigations published at the vendor URL above
-- **Active Exploitation:** Active exploitation status unknown
+- **Patch Available:** true — http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
+- **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Implement layered defenses per Google's advisory: (1) treat external content as untrusted and sanitize/normalize inputs; (2) propagate and check provenance/metadata for context; (3) apply instruction filtering and prompt integrity checks; (4) enforce least‑privilege access for model actions and data access; (5) require explicit user confirmation for sensitive operations and outputs; (6) monitor and log model interactions for anomalous behavior.
+- **Mitigation:** Apply layered defenses — sanitize and validate external content, use model and system‑level adversarial training, enforce least‑privilege data access for agents, implement runtime filtering and policy enforcement, monitor for anomalous agent behaviors; follow vendor guidance: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
 - **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
 
 ---
@@ -145,15 +145,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** PRC state-sponsored actors target large backbone, provider-edge (PE), and customer-edge (CE) routers and other network devices (including compromised routers and trusted connections) to maintain persistent, long-term access and pivot to downstream networks; actors modify router configurations and firmware to establish covert access and persistence.
-- **Affected Products:** Affected products unavailable
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** Exploit availability unknown
-- **Patch Available:** Patch availability unknown
+- **Technical Details:** Actors compromise large backbone, provider‑edge (PE) and customer‑edge (CE) routers, use compromised devices and trusted connections to pivot into other networks, and modify routers to maintain persistent, long‑term access.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
-- **Threat Actors:** Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor
-- **Mitigation:** Isolate and harden network-device management interfaces; change and centralize credentials; apply vendor firmware/OS updates when available; inventory and monitor network devices for unauthorized configuration changes; segment networks and restrict lateral movement; deploy detection for C2 traffic and known IOCs; block suspicious external connections.
+- **Threat Actors:** Salt Typhoon (also tracked as OPERATOR PANDA, RedMike, UNC5807, GhostEmperor)
+- **Mitigation:** Follow CISA/NSA/FBI mitigation guidance in AA25-239A — harden routers, update device credentials, monitor for unauthorized configuration changes, segment networks, apply vendor patches where available, restrict management plane access, and use network monitoring and EDR.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
 
 ---
@@ -167,15 +167,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The campaign leverages phishing and compromised websites for initial access, harvests credentials, and employs living‑off‑the‑land binaries and custom malware to conduct reconnaissance, establish persistence, and move laterally within Western logistics and technology organizations.
+- **Technical Details:** Technical details unavailable.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
-- **Threat Actors:** Russian GRU (85th GTsSS, Unit 26165) – also tracked as APT28
-- **Mitigation:** Implement multi‑factor authentication, network segmentation, least privilege, phishing‑resistant controls, regular patch management, and monitor for GRU‑specific IOCs and TTPs as outlined in the advisory.
+- **Threat Actors:** Russian GRU 85th GTsSS (Unit 26165) / APT28
+- **Mitigation:** Follow CSA recommended mitigations — harden external‑facing services, enforce MFA, apply network segmentation, monitor for indicators of compromise, block known malicious infrastructure, and follow incident response guidance from CISA/FBI/NSA.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
 
 ---
@@ -189,15 +189,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** A crafted DNS response can trigger out‑of‑bounds reads, writes, and other memory corruptions in the modem's DNS parser implemented in a memory‑unsafe language.
-- **Affected Products:** Google Pixel devices (modem firmware)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** Exploit availability unknown
-- **Patch Available:** Patch availability unknown
-- **Active Exploitation:** Active exploitation status unknown
+- **Technical Details:** A malicious DNS response can trigger out‑of‑bounds reads, writes, and other memory issues when parsed by a memory‑unsafe DNS parser (CVE‑2024‑27227). Implementing a memory‑safe Rust DNS parser eliminates these memory‑safety errors.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true — http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html
+- **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Adopt the Rust‑based DNS parser in future firmware releases; avoid parsing untrusted DNS responses in memory‑unsafe code and apply vendor updates when available.
-- **Vendor Advisory:** https://source.android.com/security/bulletin/pixel/2024-03-01
+- **Mitigation:** Replace memory‑unsafe DNS parser with Rust implementation to reduce memory‑safety vulnerabilities; general hardening of baseband firmware and memory‑safety mitigations.
+- **Vendor Advisory:** http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html
 
 ---
