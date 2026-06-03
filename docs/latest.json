@@ -1,72 +1,10 @@
 {
-  "generated": "2026-06-02T20:35:48.575647+00:00",
-  "total": 15,
-  "kev": 2,
+  "generated": "2026-06-03T02:36:55.506315+00:00",
+  "total": 14,
+  "kev": 0,
   "zero_day": 12,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2022-0492",
-      "title": "CVE-2022-0492 \u2014 Linux Kernel Improper Authentication Vulnerability",
-      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains an improper authentication vulnerability which could allow for privilege escalation via the cgroups v1 release_agent feature. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2022-0492",
-      "published": "2026-06-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2022-0492"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Vulnerability in cgroup_release_agent_write (kernel/cgroup/cgroup\u2011v1.c) allows the cgroups v1 release_agent feature to run an attacker\u2011controlled binary as root when notify_on_release is enabled, provided the container runs as root, AppArmor/SELinux are disabled, seccomp is off, and unprivileged user namespaces are permitted. This enables container escape and local privilege escalation.",
-        "affected_products": "Linux kernel (cgroup_release_agent_write in kernel/cgroup/cgroup\u2011v1.c); patched in mainline 5.17\u2011rc3 and Ubuntu kernels 5.13.0-37.42, 5.4.0-1069.73, etc.",
-        "cvss_score": "7.8",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (https://www.rapid7.com/db/modules/exploit/linux/local/docker_cgroup_escape)",
-        "patch_available": "true (https://ubuntu.com/security/CVE-2022-0492)",
-        "active_exploitation": "false",
-        "threat_actors": "None known",
-        "mitigation": "Install the patched kernel (e.g., Ubuntu kernel 5.17\u2011rc3 or back\u2011ported packages). If patching is not possible, disable unprivileged user namespaces, avoid privileged containers, enable AppArmor/SELinux and seccomp filters, and use runtime detection tools such as Falco.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
-    },
-    {
-      "id": "CVE-2025-48595",
-      "title": "CVE-2025-48595 \u2014 Android Framework Integer Overflow Vulnerability",
-      "summary": "Vendor: Android | Product: Framework. Android Framework contains an integer overflow vulnerability that allows for code execution that could allow for local privilege escalation. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-48595",
-      "published": "2026-06-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2025-48595"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "An integer overflow (CWE\u2011190) in multiple locations of the Android Framework/Qualcomm components allows local privilege escalation without requiring any user interaction.",
-        "affected_products": "Android Framework on devices receiving June 2026 security updates (affected OEM/SoC-specific Android builds)",
-        "cvss_score": "8.4",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2026/2026-06-01",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Install the June 2026 Android security updates from device OEMs immediately; until patched, follow least\u2011privilege policies, avoid installing untrusted apps, and restrict app and USB debugging access.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -84,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Multiple path traversal (directory traversal) vulnerabilities allow unauthenticated remote attackers to retrieve logs, configuration files, and credentials, potentially accessing downstream customers.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) v5.5.7 and earlier",
+        "technical_details": "Path traversal (directory traversal) vulnerability allowing unauthenticated remote attackers to read sensitive files such as logs, configuration files, and credentials from SimpleHelp servers (affects v5.5.7 and earlier).",
+        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2013 https://medium.com/@RosanaFS/simplehelp-cve-2024-57727-tryhackme-walkthrough-9f88c2061fb9",
-        "patch_available": "true \u2013 https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true - http://tenable.com/cve/CVE-2024-57727",
+        "patch_available": "true - https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know",
         "active_exploitation": "true",
-        "threat_actors": "Ransomware actors",
-        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later; if a patch cannot be applied, isolate/unexpose SimpleHelp instances from the internet, restrict access via firewall or VPN, rotate credentials, and monitor for compromise.",
-        "vendor_advisory": "https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570"
+        "threat_actors": "Ransomware actors (e.g., DragonForce-associated ransomware actors)",
+        "mitigation": "Upgrade SimpleHelp to 5.5.8 or later; if immediate patching not possible, isolate/unexpose SimpleHelp management interfaces from public networks, block access to admin ports, apply network segmentation, and monitor for suspicious activity and credential theft.",
+        "vendor_advisory": "https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
       }
     },
     {
@@ -113,16 +51,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "An integer overflow (CWE\u2011190) in multiple locations of the Android Framework/Qualcomm components allows local privilege escalation without requiring any user interaction.",
-        "affected_products": "Android Framework on devices receiving June 2026 security updates (affected OEM/SoC-specific Android builds)",
+        "technical_details": "CVE-2025-48595 enables code execution via an integer overflow, resulting in local privilege escalation on Android without requiring any user interaction.",
+        "affected_products": "Android operating system (June 2026 security patch), Framework component",
         "cvss_score": "8.4",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2026/2026-06-01",
+        "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Install the June 2026 Android security updates from device OEMs immediately; until patched, follow least\u2011privilege policies, avoid installing untrusted apps, and restrict app and USB debugging access.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
+        "mitigation": "Apply the June 2026 Android security patch (available via the official Android security bulletin) to remediate CVE-2025-48595.",
+        "vendor_advisory": "http://source.android.com/docs/security/bulletin/2026/2026-06-01"
       }
     },
     {
@@ -140,15 +78,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The actively exploited zero\u2011day affects display/graphics code (Qualcomm display driver/memory allocation handling) leading to memory corruption that can be leveraged for remote code execution or privilege escalation when processed by vulnerable drivers/components.",
-        "affected_products": "Android devices (security patch level 2026-06-01); includes Qualcomm display drivers on multiple Qualcomm chipsets (e.g., CVE-2026-21385)",
+        "technical_details": "Local attackers can exploit the actively abused high\u2011severity Android Framework vulnerability (CVE-2025-48595) to obtain code execution and escalate privileges on devices running Android 14 or later.",
+        "affected_products": "Android 14, Android 15, Android 16, Android 16 QPR2",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2026/2026-06-01",
-        "active_exploitation": "true \u2014 https://www.bleepingcomputer.com/news/security/google-fixes-one-actively-exploited-android-zero-day-124-flaws/",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Install the June 2026 Android security updates (apply security patch level 2026-06-01); if patch cannot be applied, minimize exposure by restricting untrusted apps, disable unnecessary peripherals, and follow vendor hardening guidance.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true (https://source.android.com/docs/security/bulletin/2026/2026-06-01)",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply the June 2026 Android security patches (security patch level 2026\u201106\u201105 or later) to all affected devices.",
         "vendor_advisory": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
       }
     },
@@ -168,7 +106,7 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when malicious content on public web pages (often hidden or encoded) is processed by AI agents and causes the agent to execute unintended instructions or reveal sensitive data. Attackers craft content that looks benign to humans but includes instructions targeting LLM system prompts or tool calls, leveraging chain\u2011of\u2011thought/style triggers and encoding to evade simple filters.",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI systems process external content (websites, emails, documents) containing malicious instructions which the AI may follow. Google scanned Common Crawl using pattern\u2011matching, LLM\u2011based classification (Gemini), and human validation; observed categories include harmless pranks, helpful guidance, SEO manipulation, deterring AI agents, and malicious attempts (data exfiltration, destruction). Many observed attacks were low\u2011sophistication experiments on public web pages.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
@@ -176,8 +114,8 @@
         "patch_available": "false",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Follow Google guidance: harden input handling for AI agents (sanitize/whitelist ingestion sources, provenance checks, content filtering, model output constraints, multi\u2011layered defenses), monitor for IPI payload patterns, and apply best practices recommended in vendor blog posts.",
-        "vendor_advisory": "https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "mitigation": "Use layered defenses \u2014 harden AI models and products (e.g., Google\u2019s red\u2011team testing, defenses in Gemini), pattern\u2011based filtering combined with LLM classification and human review, limit agent autonomy and external content handling, resource/time limits to avoid streaming/infinite\u2011text traps, and participation in vulnerability disclosure programs (e.g., Google AI Vulnerability Reward Program).",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -196,15 +134,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when an attacker injects malicious instructions into data or tools consumed by an LLM (including hidden website code or payloads embedded in third\u2011party content), causing the model or agentic automation to follow those instructions even without user input.",
-        "affected_products": "Google Workspace with Gemini",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "Indirect prompt injection (IPI) injects malicious instructions into data or tool inputs (e.g., web pages, calendar event descriptions) that are later ingested by an LLM. The model then follows the attacker\u2011supplied instruction, leading to actions like credential theft, API key exfiltration, or unauthorized financial transactions.",
+        "affected_products": "Google Workspace, Gemini, Google Calendar",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true \u2014 http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
-        "active_exploitation": "true \u2014 see citations",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses and continuous mitigation by vendor: content filtering, provenance checks, tool and data source hardening, agent policy controls, and monitoring; see Google\u2019s white paper and blog posts for implementation guidance.",
+        "mitigation": "Deploy a layered defense: conduct regular human and automated red\u2011team exercises, continuously monitor for IPI indicators, retrain ML\u2011based detectors, harden prompts and model configurations, and iteratively update defenses as new vectors are discovered.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -224,16 +162,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection in agentic browsing \u2014 attackers can place crafted content (pages, iframes, user\u2011generated content) that influence the agent\u2019s planning model to perform unwanted actions (e.g., financial transactions, data exfiltration).",
-        "affected_products": "Chrome (agentic capabilities, Gemini in Chrome)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "Indirect prompt injection (IPI) is an evolving threat vector where malicious content on web pages or other inputs manipulates agentic AI prompts to cause unsafe or unauthorized actions. It can appear in malicious sites and via indirect payloads that influence AI agents\u2019 behavior.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true \u2014 https://blog.google/security/architecting-security-for-agentic/",
-        "active_exploitation": "false",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses: user confirmations for sensitive actions, origin gating (Agent Origin Sets), User Alignment Critic, real\u2011time prompt\u2011injection classifiers, deterministic checks for model\u2011generated URLs, continuous red\u2011teaming and updates via Chrome auto\u2011update. Follow updated VRP rules to report issues.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "mitigation": "Restrict origin access, block prompt injections, add layered defenses and watch\u2011over agents; follow vendor guidance in Chrome security blog post.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -252,15 +190,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable",
-        "affected_products": "Android platform (first\u2011party and third\u2011party/open\u2011source components across C, C++, Java, Kotlin, Rust) \u2013 versions unspecified",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Android (unspecified versions)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "Patch availability unknown",
-        "active_exploitation": "false",
+        "patch_available": "false",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Continue migrating new and replacement Android platform code to memory\u2011safe languages (Rust), perform rigorous code review, fuzzing, and security testing per Google\u2019s guidance.",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
@@ -280,15 +218,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Google describes \"indirect prompt injections\" as hidden malicious instructions within external data sources (emails, documents, calendar invites) that aim to manipulate generative AI to exfiltrate data or perform rogue actions. Mitigations include model hardening (adversarial training), prompt\u2011injection content classifiers, security thought reinforcement, markdown sanitization, suspicious URL redaction, and a user\u2011confirmation (HITL) framework.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "None known.",
-        "mitigation": "Use layered defenses described by Google: model hardening/adversarial training; prompt\u2011injection content classifiers; security thought reinforcement (injecting guidance to ignore adversarial instructions); markdown sanitization and external\u2011image suppression; suspicious\u2011URL detection/redaction (Safe Browsing); contextual user confirmation for risky actions; end\u2011user notifications and help\u2011center guidance.",
+        "technical_details": "Indirect prompt injection embeds hidden malicious instructions in external data sources (emails, documents, calendar invites, web content, or retrieval results). When a generative AI ingests such external content as context or retrieval\u2011augmented input, the hidden instructions can influence the model\u2019s outputs or prompt\u2011following behavior to exfiltrate data, perform unauthorized actions, or override safety constraints. Attack mechanisms include contaminated retrieval results, hidden HTML/metadata payloads, or attacker\u2011controlled content returned by integrated web/document sources. The attack leverages models' tendency to follow instructions present in contextual inputs and imperfect input sanitization or provenance checks.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Layered defenses including input provenance and origin tracking, stricter retrieval filters and sanitization of external content, instruction\u2011scoped parsing (separating user instructions from untrusted content), output filtering and red\u2011team testing, model fine\u2011tuning to resist following arbitrary embedded instructions, strict access controls for data egress, user warnings and consent, and monitoring/alerting for anomalous model behavior.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -305,7 +243,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Actors exploit publicly known CVEs and weak credentials to gain initial access to edge/backbone routers, modify router configurations for lateral movement, enable on\u2011box PCAP or SPAN/ERSPAN, create tunnels, alter AAA (TACACS+/RADIUS) to capture credentials, create privileged accounts, execute commands via SNMP/SSH/HTTP, and run virtual containers on devices for persistence and evasion.",
+        "affected_products": "large backbone routers, provider\u2011edge (PE) routers, customer\u2011edge (CE) routers, Cisco IOS/XE, Ivanti Connect Secure/Policy, Palo Alto Networks, Fortinet, Juniper, Nokia, Sierra Wireless, SonicWall",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
+        "mitigation": "Prioritize patching of the listed CVEs, monitor and audit router configurations, enforce SNMPv3, disable unused protocols, change default credentials, require public\u2011key authentication, verify firmware hashes, monitor PCAP/tunnel activity, and follow the threat\u2011hunting guidance provided in the advisory.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
@@ -320,7 +270,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Russian GRU 85th GTsSS (Unit 26165) / APT28.",
+        "mitigation": "Implement network segmentation, multifactor authentication, patch management, monitor for indicators of compromise (see CISA advisory AA25-141A for IOCs), restrict remote access, and apply principle of least privilege.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-weblogic-flaw/",
@@ -353,6 +315,23 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/critical-kirki-flaw-exploited-to-hijack-wordpress-admin-accounts/",
+      "title": "Critical Kirki flaw exploited to hijack WordPress admin accounts",
+      "summary": "Hackers are exploiting a critical privilege escalation vulnerability (CVE-2026-8206) in the Kirki plugin for WordPress to take over any user account, including those belonging to administrators. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-kirki-flaw-exploited-to-hijack-wordpress-admin-accounts/",
+      "published": "2026-06-02T22:12:57+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-8206"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
