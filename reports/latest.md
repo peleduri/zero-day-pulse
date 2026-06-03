@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-03 02:36 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-03 10:32 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,16 +13,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Path traversal (directory traversal) vulnerability allowing unauthenticated remote attackers to read sensitive files such as logs, configuration files, and credentials from SimpleHelp servers (affects v5.5.7 and earlier).
+- **Technical Details:** Path traversal(s) in the SimpleHelp web interface allow unauthenticated attackers to retrieve logs, configuration files, and credentials, leading to downstream compromise.
 - **Affected Products:** SimpleHelp remote support software v5.5.7 and earlier
 - **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** true - http://tenable.com/cve/CVE-2024-57727
-- **Patch Available:** true - https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know
-- **Active Exploitation:** true
-- **Threat Actors:** Ransomware actors (e.g., DragonForce-associated ransomware actors)
-- **Mitigation:** Upgrade SimpleHelp to 5.5.8 or later; if immediate patching not possible, isolate/unexpose SimpleHelp management interfaces from public networks, block access to admin ports, apply network segmentation, and monitor for suspicious activity and credential theft.
-- **Vendor Advisory:** https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know
+- **Exploit Available:** Public PoC is available – OffSec blog: https://www.offsec.com/blog/cve-2024-57727/
+- **Patch Available:** SimpleHelp 5.5.8 fixes released – see vendor advisory: https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570
+- **Active Exploitation:** Yes – confirmed active exploitation reported by CISA (AA25-163A).
+- **Threat Actors:** Ransomware operators (e.g., DragonForce) and generic ransomware actors
+- **Mitigation:** Upgrade to SimpleHelp v5.5.8. If immediate patching is impossible, restrict access to SimpleHelp management interfaces (network segmentation, firewall rules, IP allowlists), monitor for suspicious access and credential theft, and rotate exposed credentials.
+- **Vendor Advisory:** https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570
 
 ---
 
@@ -37,16 +37,16 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** CVE-2025-48595 enables code execution via an integer overflow, resulting in local privilege escalation on Android without requiring any user interaction.
-- **Affected Products:** Android operating system (June 2026 security patch), Framework component
+- **Technical Details:** Integer overflow in the Android Framework that permits elevation of privilege (local/remote escalation) with no user interaction; enables attackers to gain elevated system privileges on affected Android versions.
+- **Affected Products:** Android 14, Android 15, Android 16, Android 16-qpr2
 - **CVSS Score:** 8.4
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** true
-- **Active Exploitation:** true
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** No public PoC or weaponized exploit reported; exploit availability: not known / none public
+- **Patch Available:** Official vendor patch available; security patch level 2026-06-05 or later addresses the issue.
+- **Active Exploitation:** Confirmed limited, targeted active exploitation reported by Google and multiple security outlets (limited/targeted in the wild).
 - **Threat Actors:** None known
-- **Mitigation:** Apply the June 2026 Android security patch (available via the official Android security bulletin) to remediate CVE-2025-48595.
-- **Vendor Advisory:** http://source.android.com/docs/security/bulletin/2026/2026-06-01
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2026/2026-06-01
 
 ---
 
@@ -59,15 +59,15 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Local attackers can exploit the actively abused high‑severity Android Framework vulnerability (CVE-2025-48595) to obtain code execution and escalate privileges on devices running Android 14 or later.
-- **Affected Products:** Android 14, Android 15, Android 16, Android 16 QPR2
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** A no‑interaction privilege escalation vulnerability (CVE‑2025‑48595) in the Android Framework affecting Android 14‑16 allows attackers to gain elevated privileges without user interaction.
+- **Affected Products:** Android 14, Android 15, Android 16
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true (https://source.android.com/docs/security/bulletin/2026/2026-06-01)
-- **Active Exploitation:** true
+- **Exploit Available:** No public proof‑of‑concept is available; exploitation is confirmed in the wild.
+- **Patch Available:** June 2026 Android security patches are available at the Android security bulletin.
+- **Active Exploitation:** Active exploitation has been confirmed in targeted attacks, as reported by security news outlets.
 - **Threat Actors:** None known
-- **Mitigation:** Apply the June 2026 Android security patches (security patch level 2026‑06‑05 or later) to all affected devices.
+- **Mitigation:** Apply the June 2026 Android security patches (security patch level 2026-06-05 or later).
 - **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2026/2026-06-01
 
 ---
@@ -81,16 +81,16 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) occurs when AI systems process external content (websites, emails, documents) containing malicious instructions which the AI may follow. Google scanned Common Crawl using pattern‑matching, LLM‑based classification (Gemini), and human validation; observed categories include harmless pranks, helpful guidance, SEO manipulation, deterring AI agents, and malicious attempts (data exfiltration, destruction). Many observed attacks were low‑sophistication experiments on public web pages.
+- **Technical Details:** Indirect Prompt Injection (IPI) — adversaries seed malicious prompt‑instruction payloads on web content scanned or browsed by AI agents, aiming to corrupt agent behavior by causing it to follow attacker‑supplied instructions (10 new IPI payloads observed in the wild).
 - **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** true
+- **Exploit Available:** No public PoC or weaponized exploit reported.
+- **Patch Available:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html (no vendor patch noted)
+- **Active Exploitation:** Yes — security researchers observed 10 new indirect prompt injection payloads caught in the wild (sources: Google Security Blog, Infosecurity Magazine, Forcepoint).
 - **Threat Actors:** None known
-- **Mitigation:** Use layered defenses — harden AI models and products (e.g., Google’s red‑team testing, defenses in Gemini), pattern‑based filtering combined with LLM classification and human review, limit agent autonomy and external content handling, resource/time limits to avoid streaming/infinite‑text traps, and participation in vulnerability disclosure programs (e.g., Google AI Vulnerability Reward Program).
-- **Vendor Advisory:** https://blog.google/security/prompt-injections-web/
+- **Mitigation:** Harden agent prompt handling: treat external web content as untrusted, use strict input sanitization and prompt templates that do not accept or execute external instructions; apply browsing rules to ignore instructions in fetched content; monitor for anomalous outputs.
+- **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
 
@@ -103,16 +103,16 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) injects malicious instructions into data or tool inputs (e.g., web pages, calendar event descriptions) that are later ingested by an LLM. The model then follows the attacker‑supplied instruction, leading to actions like credential theft, API key exfiltration, or unauthorized financial transactions.
-- **Affected Products:** Google Workspace, Gemini, Google Calendar
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** true
+- **Technical Details:** Indirect prompt injection (IPI) is an attack where malicious instructions are injected into data or tools consumed by an LLM (e.g., web content, attachments, integrated apps), causing the model or agentic automation to follow attacker‑supplied instructions without direct user input.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** Exploit unavailable
+- **Patch Available:** Patch not applicable; mitigations and defense‑in‑depth guidance provided at vendor advisory URL above.
+- **Active Exploitation:** Reports indicate in‑the‑wild IPI payloads were observed (research reports April 2026) but no attribution to specific threat actor groups; active exploitation has been reported in research summaries.
 - **Threat Actors:** None known
-- **Mitigation:** Deploy a layered defense: conduct regular human and automated red‑team exercises, continuously monitor for IPI indicators, retrain ML‑based detectors, harden prompts and model configurations, and iteratively update defenses as new vectors are discovered.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
+- **Mitigation:** Layered defenses including input sanitization, model‑level instruction filters, runtime tooling restrictions, provenance and source‑trust controls, continuous monitoring and telemetry, and defense‑in‑depth as described in Google’s whitepaper/blog guidance.
+- **Vendor Advisory:** http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections
 
 ---
 
@@ -125,16 +125,16 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) is an evolving threat vector where malicious content on web pages or other inputs manipulates agentic AI prompts to cause unsafe or unauthorized actions. It can appear in malicious sites and via indirect payloads that influence AI agents’ behavior.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Indirect prompt injection allows a malicious site to inject crafted prompts into the AI agent’s context, causing the agent to execute unintended commands or reveal information.
+- **Affected Products:** Google Chrome (latest stable), Gemini for Chrome (preview/agentic browsing)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** true
-- **Active Exploitation:** true
+- **Exploit Available:** No public proof-of-concept or exploit is currently known.
+- **Patch Available:** No separate patch; security improvements are built into Chrome via updated architecture and defenses.
+- **Active Exploitation:** No confirmed active exploitation in the wild has been reported.
 - **Threat Actors:** None known
-- **Mitigation:** Restrict origin access, block prompt injections, add layered defenses and watch‑over agents; follow vendor guidance in Chrome security blog post.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Mitigation:** Enable Chrome’s built‑in layered defenses that block prompt injection, restrict cross‑origin AI agent access, and enforce safety checks on AI‑generated actions.
+- **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 
 ---
 
@@ -147,16 +147,16 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Android (unspecified versions)
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** A linear buffer overflow in the Rust‑based CrabbyAVIF image processing library, where input data could exceed the allocated buffer size, leading to potential memory corruption.
+- **Affected Products:** Android – CrabbyAVIF library
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** No public exploit available.
+- **Patch Available:** https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050
+- **Active Exploitation:** No active exploitation reported.
 - **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
+- **Mitigation:** Use of Android's Scudo hardened allocator, which places guard pages around secondary allocations, making the buffer overflow non‑exploitable.
+- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-08-01
 
 ---
 
@@ -169,16 +169,16 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection embeds hidden malicious instructions in external data sources (emails, documents, calendar invites, web content, or retrieval results). When a generative AI ingests such external content as context or retrieval‑augmented input, the hidden instructions can influence the model’s outputs or prompt‑following behavior to exfiltrate data, perform unauthorized actions, or override safety constraints. Attack mechanisms include contaminated retrieval results, hidden HTML/metadata payloads, or attacker‑controlled content returned by integrated web/document sources. The attack leverages models' tendency to follow instructions present in contextual inputs and imperfect input sanitization or provenance checks.
-- **Affected Products:** Affected products unavailable
-- **CVSS Score:** CVSS score unavailable
+- **Technical Details:** Indirect prompt injection involves hidden malicious instructions embedded in external data sources (emails, documents, calendar invites, HTML/SVG comments, image metadata, vector‑DB chunks) that are later ingested by LLM‑enabled workflows, leading to unauthorized actions or data exfiltration.
+- **Affected Products:** Gemini (Google Workspace, Gemini app)
+- **CVSS Score:** -1.0
 - **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** true
+- **Exploit Available:** PoC examples are described in third‑party research; no single public weaponized exploit URL from the vendor.
+- **Patch Available:** No vendor patch; mitigations are provided via model hardening and security controls.
+- **Active Exploitation:** Reporting of active tests and detections by third‑party researchers; no confirmed publicized APT campaign attribution.
 - **Threat Actors:** None known
-- **Mitigation:** Layered defenses including input provenance and origin tracking, stricter retrieval filters and sanitization of external content, instruction‑scoped parsing (separating user instructions from untrusted content), output filtering and red‑team testing, model fine‑tuning to resist following arbitrary embedded instructions, strict access controls for data egress, user warnings and consent, and monitoring/alerting for anomalous model behavior.
-- **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
+- **Mitigation:** Layered defenses: model hardening (Gemini 2.5), prompt‑injection content classifiers, markdown sanitization, suspicious URL redaction (Safe Browsing), user‑confirmation framework (Human‑In‑The‑Loop), end‑user security notifications; additionally limit AI permissions, sanitize inputs, monitor AI behavior, and conduct red‑team exercises.
+- **Vendor Advisory:** https://blog.google/security/mitigating-prompt-injection-attacks/
 
 ---
 
@@ -191,15 +191,15 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Actors exploit publicly known CVEs and weak credentials to gain initial access to edge/backbone routers, modify router configurations for lateral movement, enable on‑box PCAP or SPAN/ERSPAN, create tunnels, alter AAA (TACACS+/RADIUS) to capture credentials, create privileged accounts, execute commands via SNMP/SSH/HTTP, and run virtual containers on devices for persistence and evasion.
-- **Affected Products:** large backbone routers, provider‑edge (PE) routers, customer‑edge (CE) routers, Cisco IOS/XE, Ivanti Connect Secure/Policy, Palo Alto Networks, Fortinet, Juniper, Nokia, Sierra Wireless, SonicWall
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
-- **Patch Available:** true
-- **Active Exploitation:** true
+- **Technical Details:** Actors exploit publicly known CVEs in network edge devices (examples: CVE-2023-20198, CVE-2023-20273, CVE-2018-0171, CVE-2024-21887) to create admin accounts, modify router configs, enable tunnels, mirror traffic (SPAN/RSPAN/ERSPAN), abuse Guest Shell containers, modify ACLs, open ports, and install persistence tooling.
+- **Affected Products:** Cisco IOS, Cisco IOS XE, Cisco NX-OS, Ivanti Connect Secure, Ivanti Policy, Palo Alto, Fortinet, Juniper, Nokia, Sierra Wireless, SonicWall
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** Public exploit/tooling referenced (e.g., siet.py, map.tcl, tclproxy.tcl, wodSSHServer) and known CVE exploits; PoC URLs not provided in advisory.
+- **Patch Available:** Vendor patches exist for many referenced CVEs (see Cisco, Ivanti advisories linked from CISA advisory); advisory contains vendor hardening guidance and links.
+- **Active Exploitation:** Confirmed active exploitation reported in advisory and supporting industry analysis; advisory lists historically exploited CVEs and notes APT actors routinely exploit Internet-exposed devices for persistent access.
 - **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Prioritize patching of the listed CVEs, monitor and audit router configurations, enforce SNMPv3, disable unused protocols, change default credentials, require public‑key authentication, verify firmware hashes, monitor PCAP/tunnel activity, and follow the threat‑hunting guidance provided in the advisory.
+- **Mitigation:** Prioritize patching vulnerable edge devices; follow vendor hardening guides (Cisco IOS/IOS XE hardening, Cisco Software Checker), disable/monitor Guest Shell, audit and harden SNMP, rotate and strengthen credentials, monitor logs, hunt for indicators (CISA provides JSON/XML IOC lists), follow CISA/NSA/FBI guidance.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
 
 ---
@@ -213,20 +213,38 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
+- **Technical Details:** The campaign leverages spear‑phishing emails to harvest credentials, employs living‑off‑the‑land tools and custom web shells for persistence, escalates privileges on compromised hosts, and hijacks accounts to move laterally within logistics and technology supply‑chain networks.
 - **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
-- **Threat Actors:** Russian GRU 85th GTsSS (Unit 26165) / APT28.
-- **Mitigation:** Implement network segmentation, multifactor authentication, patch management, monitor for indicators of compromise (see CISA advisory AA25-141A for IOCs), restrict remote access, and apply principle of least privilege.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Exploit Available:** No public proof-of-concept or weaponised exploit is reported.
+- **Patch Available:** No universal vendor patch is available; the advisory describes tactics and mitigations instead.
+- **Active Exploitation:** Yes – sustained targeting and intrusions by the Russian GRU (85th GTsSS / Unit 26165) have been reported.
+- **Threat Actors:** GRU 85th GTsSS (Unit 26165), also known as APT28/Fancy Bear.
+- **Mitigation:** Apply multi‑factor authentication, segment networks, deploy EDR/IDS, patch known vulnerabilities, hunt for web shells and anomalous activity, enforce least‑privilege, monitor supply‑chain accounts, and follow CISA/FBI/NCSC mitigation recommendations.
+- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
 
 ---
 
-## 11. 🟠 Zero-Day — CISA flags two-year-old Oracle flaw as actively exploited in attacks
+## 11. 🟠 Zero-Day — Microsoft Tries to Calm Legal Threat Fears After Zero-Day Disclosure Backlash
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-06-03
+**Reference:** <https://www.securityweek.com/microsoft-tries-to-calm-legal-threat-fears-after-zero-day-disclosure-backlash/>
+
+> Microsoft responds to backlash over its threats of legal action against researchers who publicly disclose zero-day vulnerabilities. The post Microsoft Tries to Calm Legal Threat Fears After Zero-Day Disclosure Backlash appeared first on SecurityWeek .
+
+---
+
+## 12. 🟠 Zero-Day — VS Code zero-day lets hackers steal GitHub tokens in one click
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-06-03
+**Reference:** <https://www.bleepingcomputer.com/news/security/vs-code-zero-day-lets-hackers-steal-github-tokens-in-one-click/>
+
+> A security researcher has released exploit code for a Visual Studio Code (VS Code) zero-day vulnerability that allows attackers to steal GitHub authentication tokens by tricking users into clicking a link. [...]
+
+---
+
+## 13. 🟠 Zero-Day — CISA flags two-year-old Oracle flaw as actively exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-06-02
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-weblogic-flaw/>
@@ -235,7 +253,7 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 ---
 
-## 12. 🟠 Zero-Day — Oracle WebLogic Vulnerability Exploited in the Wild
+## 14. 🟠 Zero-Day — Oracle WebLogic Vulnerability Exploited in the Wild
 
 **CVE:** `CVE-2024-21182` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-06-02
 **Reference:** <https://www.securityweek.com/oracle-weblogic-vulnerability-exploited-in-the-wild/>
@@ -244,7 +262,7 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 ---
 
-## 13. 🟡 High Severity — Critical Kirki flaw exploited to hijack WordPress admin accounts
+## 15. 🟡 High Severity — Critical Kirki flaw exploited to hijack WordPress admin accounts
 
 **CVE:** `CVE-2026-8206` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-06-02
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-kirki-flaw-exploited-to-hijack-wordpress-admin-accounts/>
@@ -253,7 +271,7 @@ Tracked as CVE-2025-48595 (CVSS score: 8.4), the security flaw has been describe
 
 ---
 
-## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
