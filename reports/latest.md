@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-04 09:43 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-04 14:33 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,22 +13,22 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** CVE‑2024‑57727 is a directory traversal vulnerability in SimpleHelp RMM (≤ 5.5.7) that allows unauthenticated attackers to read arbitrary files on the target system, enabling retrieval of logs, configuration data, and credentials.
-- **Affected Products:** SimpleHelp Remote Monitoring and Management (RMM) versions 5.5.7 and earlier
+- **Technical Details:** CVE-2024-57727 is a directory/path traversal vulnerability in SimpleHelp's web component that lets unauthenticated attackers read arbitrary files (e.g., logs, configuration, credentials) by crafting requests that traverse the filesystem.
+- **Affected Products:** SimpleHelp remote support/RMM v5.5.7 and earlier
 - **CVSS Score:** 7.5
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true (https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570)
-- **Active Exploitation:** true
-- **Threat Actors:** DragonForce ransomware
-- **Mitigation:** Upgrade SimpleHelp to version 5.5.8 or later. Apply network segmentation or firewall rules to restrict external access to the RMM service until the patch is applied.
-- **Vendor Advisory:** http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+- **Exploit Available:** true - https://www.offsec.com/blog/cve-2024-57727/
+- **Patch Available:** true - https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know
+- **Active Exploitation:** true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a
+- **Threat Actors:** Ransomware actors (likely DragonForce/other ransomware operators)
+- **Mitigation:** Upgrade to SimpleHelp 5.5.8 or later. If immediate patching is not possible, restrict access to the SimpleHelp web interface using network controls (IP allowlists, VPN, firewall rules), isolate RMM servers, rotate stored credentials, and monitor for suspicious activity.
+- **Vendor Advisory:** https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know
 
 ---
 
 ## 2. 🟠 Zero-Day — CISA Adds Exploited Magento RCE Flaw CVE-2026-45247 to KEV Catalog
 
-**CVE:** `CVE-2026-45247` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-04
+**CVE:** `CVE-2026-45247` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://thehackernews.com/2026/06/cisa-adds-exploited-magento-rce-flaw.html>
 
 > The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a critical flaw impacting Mirasvit Cache Warmer, a popular Magento full-page cache extension, to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild.
@@ -37,42 +37,20 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Unauthenticated PHP object injection (CWE-502) via the CacheWarmer cookie. The extension unserializes attacker‑controlled cookie data, and crafted serialized objects combined with Magento gadget chains lead to remote code execution.
-- **Affected Products:** Mirasvit Full Page Cache Warmer for Magento 2 versions before 1.11.12
+- **Technical Details:** A PHP object injection vulnerability allows unauthenticated attackers to achieve remote code execution by sending a crafted serialized PHP object in the CacheWarmer cookie, exploiting deserialization of untrusted data.
+- **Affected Products:** Mirasvit Full Page Cache Warmer for Magento 2, versions prior to 1.11.12
 - **CVSS Score:** 9.8
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
+- **CVSS Vector:** CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
+- **Exploit Available:** false
 - **Patch Available:** true
 - **Active Exploitation:** true
 - **Threat Actors:** Threat actors unknown.
-- **Mitigation:** Update to version 1.11.12 or later. Additionally, block or monitor HTTP requests with CacheWarmer cookies containing base64‑encoded serialized objects (patterns Tz|Qz|YT) and apply WAF rules to drop such requests.
-- **Vendor Advisory:** https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer
-
----
-
-## 3. 🟠 Zero-Day — The sorry state of skill distribution
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Trail of Bits Blog &nbsp;|&nbsp; **Published:** 2026-06-03
-**Reference:** <https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/>
-
-> Public skill marketplaces are being flooded with malicious skills that steal credentials, exfiltrate data, and hijack agents. In response, a segment of the security industry released skill scanners, a new family of tools designed to detect malicious skills before they’re installed. But we tested them, and they don’t work. We recently bypassed ClawHub’s malicious skill detector , Cisco’s agent skil…
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Trail of Bits demonstrated four bypasses against public skill scanners: (1) large newline padding to bypass OpenClaw/ClawHub truncation and VirusTotal/Code Insight confusion; (2) use of .docx (ZIP) containing embedded script to hide malicious instructions referenced by SKILL.md; (3) Python bytecode (.pyc) poisoning where precompiled bytecode contains malicious behavior not visible in source; (4) prompt‑injection framed as benign configuration (e.g., changing npm/yarn registries). Scanners missed these due to truncated context, ignoring opaque file types, limited file‑scope analysis, and susceptibility of LLM‑based analyzers to crafted natural‑language explanations.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** false
-- **Threat Actors:** None known
-- **Mitigation:** Do not trust public skill marketplaces for sensitive agents; curate internal skill repositories, whitelist sources, restrict allowable file types, perform exhaustive repository traversal and inspect binaries/compiled artifacts, use strict format validation (agentskills.io spec), pin and vet dependencies, require human review for skills that include binaries, archives, or external registry configuration. Cisco submitted PRs to harden skill‑scanner (strict format validation and expanded language support) but these are partial mitigations.
+- **Mitigation:** Update the Mirasvit Full Page Cache Warmer extension to version 1.11.12 or later.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -81,20 +59,20 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Prompt injection manipulates Large Language Models by embedding crafted instructions within user input or external content, causing the model to follow attacker‑supplied commands. Indirect prompt injection seeds malicious prompts on websites or other data sources that AI systems process, allowing the attacker to corrupt the model's behavior. The “Comment and Control” variant weaponizes comments in code or documentation to achieve the same effect.
-- **Affected Products:** Microsoft Copilot Studio (CVE-2026-21520), MS‑Agent (CVE-2026-2256), EmailGPT (CVE-2024-5184), Claude Code, Gemini CLI, GitHub Copilot
+- **Technical Details:** Attackers hide malicious prompts in web pages using techniques like CSS display:none, 1‑pixel fonts, HTML comments, meta namespaces, Base64 encoding, or canvas OCR. When an LLM‑enabled agent parses the page, it treats the hidden text as a valid instruction, leading to actions such as credential theft, financial fraud, data destruction, or DoS.
+- **Affected Products:** LLM‑based browser agents, code assistants (e.g., GitHub Copilot, Claude Code), AI‑powered ad review systems, AI agents with payment or navigation capabilities
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** true
 - **Patch Available:** false
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Treat the LLM as untrusted; implement robust input and output validation and sanitization; add human oversight and controls in LLM workflows; harden system prompts; limit exposure of sensitive data to the model; monitor and block known malicious prompt patterns.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Mitigation:** Enforce a data‑instruction boundary (treat web content as untrusted), sanitize inputs, use heuristics to detect concealed payloads, restrict agent privileges (no payment/exec/navigation without explicit human confirmation), deploy web‑scale filtering (WAF, URL blocklists), and follow OWASP LLM prompt injection mitigation recommendations.
+- **Vendor Advisory:** https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -103,20 +81,20 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) occurs when attacker‑controlled content embedded in data sources or tools used by an LLM contains malicious instructions that the model ingests and follows while fulfilling a user query (no explicit user prompt needed). Attack surface includes integrated connectors, web content, files, and third‑party tools; mitigations focus on provenance, policy‑based instruction sanitization, and reducing agentic automation surface area.
-- **Affected Products:** Google Workspace (including Gemini integrations)
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true - https://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads
-- **Patch Available:** false - http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
-- **Active Exploitation:** true - https://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://infosecurity-magazine.com/news/researchers-10-wild-indirect
+- **Technical Details:** Indirect prompt injection (IPI) is an attack where adversaries inject malicious instructions into data sources (documents, web pages, emails, metadata) that LLMs ingest; attacks exploit AI agents’ ingestion of external content to cause unauthorized actions or data exfiltration. Google’s whitepaper describes attack techniques (hidden HTML comments, metadata spoofing, authority impersonation, system‑override tags) and an IPI kill chain involving poisoned content → agent ingestion → execution → covert exfiltration.
+- **Affected Products:** Google Workspace (Gemini app; Gemini in Gmail, Docs editors, Drive, Chat)
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** false
+- **Patch Available:** false
+- **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Google recommends layered defenses including input provenance and filtering, strict tool/data vetting, runtime instruction filtering, safe defaults and least‑privilege for agentic actions, continuous red‑team testing and telemetry/monitoring.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
+- **Mitigation:** Google’s layered defenses include prompt‑injection content classifiers, security thought reinforcement, markdown sanitization and suspicious‑URL redaction (Google Safe Browsing), user confirmation framework, end‑user security mitigation notifications, deterministic defenses (URL sanitization, tool‑chaining policies, policy engine), ML‑based and LLM‑based defenses, Gemini model hardening, plus human & automated red‑team testing, vulnerability cataloging, and automated mitigations (regex takedowns, config updates).
+- **Vendor Advisory:** http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -125,20 +103,20 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection: malicious web content can influence agentic browser prompts/actions by injecting or manipulating prompts delivered to the agent; mitigations include layered defenses restricting origin access, blocking indirect prompt injections, and limiting unsafe AI actions.
-- **Affected Products:** Chrome (agentic/Gemini features)
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
+- **Technical Details:** Indirect prompt injection (IPI) is a class of attacks where malicious or untrusted web content (including pages, iframes, or user‑generated content) influences an agent planning model to take unwanted actions such as financial transactions or data exfiltration. In Chrome, the planner can be exposed to page content which may cause goal‑hijacking or leaking of sensitive data across origins.
+- **Affected Products:** Google Chrome (agentic/Gemini agent capabilities)
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** Exploit availability unknown
 - **Patch Available:** true — http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
-- **Active Exploitation:** false
+- **Active Exploitation:** Active exploitation status unknown
 - **Threat Actors:** None known
-- **Mitigation:** Use Chrome’s layered defenses: restrict origin access, block indirect prompt injections, limit agent actions to trusted UI flows, and apply vendor updates.
+- **Mitigation:** Chrome’s mitigations include a User Alignment Critic (a separate high‑trust model that vets actions), Agent Origin Sets with read‑only and read‑writable origins, deterministic user confirmations for sensitive actions, a parallel prompt‑injection classifier, real‑time Safe Browsing/on‑device AI scanning, continuous red‑team testing, and updated VRP guidance. Users should keep Chrome updated to benefit from these built‑in controls.
 - **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -147,20 +125,20 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Rust’s ownership/borrow‑checker model eliminates many memory‑safety bugs (e.g., use‑after‑free, buffer overflows) by enforcing compile‑time safety guarantees, which the blog cites as the reason for a 1000× reduction in memory‑safety vulnerability density in Android.
+- **Technical Details:** The blog post discusses Google's strategy of using Rust in Android to improve memory safety, reporting that memory‑safety vulnerabilities fell below 20% of total vulnerabilities in 2025.
 - **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
 - **Exploit Available:** false
-- **Patch Available:** true
+- **Patch Available:** Patch availability unknown
 - **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Use Rust and memory‑safety practices in Android; continue migrating risky components to memory‑safe languages.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Mitigation:** Mitigation steps unavailable
+- **Vendor Advisory:** http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -169,20 +147,20 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injections hide malicious instructions in external data sources such as emails, documents, or calendar invites that LLM‑based assistants may read and act upon. Google counters this by adding model‑level resilience, content classifiers that detect malicious instructions, sanitization/redaction of suspicious URLs and external content, and requiring user confirmation before performing risky actions.
-- **Affected Products:** Gemini
+- **Technical Details:** Indirect prompt injection (IPI) occurs when an AI system processes external content—such as emails, documents, calendar invites, or web pages—that contains malicious instructions. These instructions can cause the model to exfiltrate data or perform rogue actions. Google mitigates IPI using model hardening (adversarial training), dedicated content classifiers, markdown sanitization, suspicious‑URL redaction, user‑confirmation frameworks, and end‑user mitigation notifications.
+- **Affected Products:** Gemini (Gemini app and Gemini in Google Workspace); other affected products unavailable
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** Active exploitation status unknown.
 - **Threat Actors:** None known
-- **Mitigation:** Model hardening (Gemini 2.5), prompt injection content classifiers, security thought reinforcement, markdown sanitization and suspicious URL redaction, user confirmation framework, end‑user security mitigation notifications, adversarial training, red‑team testing, and collaborations with industry partners.
-- **Vendor Advisory:** https://blog.google/security/mitigating-prompt-injection-attacks
+- **Mitigation:** Apply Google’s layered defenses where available (use updated Gemini versions and Workspace integrations with built‑in classifiers and URL redaction), enable user confirmation/HITL for risky operations, sanitize or strip external content before feeding to AI agents, employ content filters and suspicious‑URL detection, and follow Google Help Center guidance (https://support.google.com/docs/answer/16204578).
+- **Vendor Advisory:** https://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 8. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -191,20 +169,20 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Chinese state‑sponsored actors compromise backbone, provider edge (PE), and customer edge (CE) routers and leverage compromised devices and trusted connections to pivot. Actors modify routers to maintain persistent, long‑term access and use these access points for global espionage operations.
-- **Affected Products:** Affected products unavailable.
+- **Technical Details:** State‑sponsored actors infiltrate backbone, provider edge (PE) and customer edge (CE) routers, modify firmware or configuration to embed persistent backdoors, and leverage trusted network connections to pivot laterally across the infrastructure.
+- **Affected Products:** backbone routers, provider edge (PE) routers, customer edge (CE) routers
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
 - **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Implement CISA and NSA hardening guidance: detect and disrupt persistent router compromises, apply network segmentation, audit trusted connections, monitor for unusual configurations and persistence mechanisms, rotate credentials, restrict administrative access, and deploy vendor-provided updates where available.
+- **Mitigation:** Implement strict network segmentation between backbone, provider edge, and customer edge segments; enforce strong, multi‑factor authentication on router management interfaces; regularly audit router configurations for unauthorized changes; apply vendor security patches promptly; monitor logs for abnormal traffic or configuration changes; disable unused services and enforce principle of least privilege.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
 
 ---
 
-## 10. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 9. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -219,14 +197,14 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** Russian GRU (85th Main Special Service Center, Military Unit 26165)
-- **Mitigation:** Mitigation steps unavailable.
+- **Active Exploitation:** true
+- **Threat Actors:** GRU 85th Main Special Service Center (85th GTsSS), unit 26165 (aka APT28) and associated Russian state-sponsored actors.
+- **Mitigation:** Follow CISA/US‑CERT recommended mitigations in the advisory (network segmentation, multifactor authentication, logging and monitoring, incident response readiness, apply vendor updates where available). Specific vendor mitigation steps unavailable.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
 
 ---
 
-## 11. 🟠 Zero-Day — Beyond the Zero-Day: See Your Network Like an Attacker | Webinar with HD Moore
+## 10. 🟠 Zero-Day — Beyond the Zero-Day: See Your Network Like an Attacker | Webinar with HD Moore
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://thehackernews.com/2026/06/beyond-zero-day-see-your-network-like.html>
@@ -235,40 +213,46 @@ The vulnerability, tracked as CVE-2026-45247 (CVSS score: 9.8), is a case of des
 
 That is a question about the shape of your network, and most teams have the shape wrong. HD Moore, creator of…
 
----
+**Parallel AI Enrichment:**
 
-## 12. 🟠 Zero-Day — Acer working to patch max severity zero-days in Wave 7 routers
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-06-03
-**Reference:** <https://www.bleepingcomputer.com/news/security/acer-warns-of-max-severity-zero-days-affecting-wave-7-routers/>
-
-> Acer is working to address two maximum-severity zero-day vulnerabilities affecting its Wave 7 mesh routers. [...]
-
----
-
-## 13. 🟠 Zero-Day — Unpatched Windows Search URI Vulnerability Lets Attackers Steal NTLMv2 Hashes
-
-**CVE:** `CVE-2026-33829` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-03
-**Reference:** <https://thehackernews.com/2026/06/unpatched-windows-search-uri.html>
-
-> Cybersecurity researchers have disclosed details of an unpatched issue that could be exploited to disclose a user&#x27;s NTLMv2 hash to the attacker.
-
-Like in the case of CVE-2026-33829, which impacted the Windows Snipping Tool&#x27;s ms-screensketch: URI handler, the newly flagged issue resides in the search: URI handler, per Huntress.
-
-CVE-2026-33829 refers to a spoofing vulnerability that could…
+- **Technical Details:** Technical details unavailable.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 14. 🟠 Zero-Day — Microsoft Tries to Calm Legal Threat Fears After Zero-Day Disclosure Backlash
+## 11. 🟡 High Severity — Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-06-03
-**Reference:** <https://www.securityweek.com/microsoft-tries-to-calm-legal-threat-fears-after-zero-day-disclosure-backlash/>
+**CVE:** `CVE-2026-44487` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-04
+**Reference:** <https://github.com/advisories/GHSA-p92q-9vqr-4j8v>
 
-> Microsoft responds to backlash over its threats of legal action against researchers who publicly disclose zero-day vulnerabilities. The post Microsoft Tries to Calm Legal Threat Fears After Zero-Day Disclosure Backlash appeared first on SecurityWeek .
+> ## Summary
+
+Axios’s Node.js HTTP adapter may forward a `Proxy-Authorization` header to a redirected origin during specific proxy-to-direct redirect flows.
+
+This affects Node.js usage, where an initial HTTP request is sent through an authenticated HTTP proxy, redirects are followed, and the redirected URL is no longer proxied. Under affected redirect shapes, the final origin can receive the proxy c…
 
 ---
 
-## 15. 🟡 High Severity — browserstack-runner vulnerable to Remote Code Execution via vm sandbox escape in _log HTTP handler
+## 12. 🟡 High Severity — Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection
+
+**CVE:** `CVE-2026-44486` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-04
+**Reference:** <https://github.com/advisories/GHSA-j5f8-grm9-p9fc>
+
+> ### Summary
+
+Axios’ Node.js HTTP adapter can leak proxy credentials to a redirect target in affected versions. When a request is sent through an authenticated proxy, Axios may add a `Proxy-Authorization` header. If Axios then follows a redirect and the redirected request is no longer sent through that proxy, the stale `Proxy-Authorization` header can remain on the redirected request and be sent to…
+
+---
+
+## 13. 🟡 High Severity — browserstack-runner vulnerable to Remote Code Execution via vm sandbox escape in _log HTTP handler
 
 **CVE:** `CVE-2026-49143` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-6vr3-7wcx-v5g5>
@@ -283,7 +267,7 @@ When `browserstack-runner` starts, it creates an HTTP server on port 8888 (confi
 
 ---
 
-## 16. 🟡 High Severity — Jupyter Enterprise Gateway: Kubernetes Manifest Injection in Jinja2 Template Rendering
+## 14. 🟡 High Severity — Jupyter Enterprise Gateway: Kubernetes Manifest Injection in Jinja2 Template Rendering
 
 **CVE:** `CVE-2026-44182` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-cfw7-6c5v-2wjq>
@@ -298,7 +282,7 @@ The server interpolates untrusted environment variables (e.g., `KERNEL_XXX`) int
 
 ---
 
-## 17. 🟡 High Severity — Jupyter Enterprise Gateway: Jinja2 Template Server Side Template Injection resulting in Remote Code Execution
+## 15. 🟡 High Severity — Jupyter Enterprise Gateway: Jinja2 Template Server Side Template Injection resulting in Remote Code Execution
 
 **CVE:** `CVE-2026-44181` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-f49j-v924-fx9w>
@@ -311,7 +295,7 @@ The code can use or steal the Kubernetes service account token, which can steal 
 
 ---
 
-## 18. 🟡 High Severity — Jupyter Enterprise Gateway: ContainerProcessProxy._enforce_prohibited_ids Bypass
+## 16. 🟡 High Severity — Jupyter Enterprise Gateway: ContainerProcessProxy._enforce_prohibited_ids Bypass
 
 **CVE:** `CVE-2026-44180` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-chq7-94j8-cj28>
@@ -327,7 +311,7 @@ https://github.com/jupyter-server/enterprise_gatewa…
 
 ---
 
-## 19. 🟡 High Severity — Docling Core: Unsafe remote filename resolution
+## 17. 🟡 High Severity — Docling Core: Unsafe remote filename resolution
 
 **CVE:** `CVE-2026-44023` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-jmmv-h3mp-59v8>
@@ -342,7 +326,7 @@ Patched in `docling-core` `2.…
 
 ---
 
-## 20. 🟡 High Severity — Docling: Unsafe URI and Path Handling in HTML Backend
+## 18. 🟡 High Severity — Docling: Unsafe URI and Path Handling in HTML Backend
 
 **CVE:** `CVE-2026-47214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-q29v-xc37-wh5m>
@@ -356,7 +340,7 @@ The HTML backend did not perform sufficient validation during resource handling:
 
 ---
 
-## 21. 🟡 High Severity — Docling: Unsafe XML Entity Expansion in USPTO Patent Backend
+## 19. 🟡 High Severity — Docling: Unsafe XML Entity Expansion in USPTO Patent Backend
 
 **CVE:** `CVE-2026-44020` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-m88r-rg27-5xfg>
@@ -369,7 +353,7 @@ The USPTO patent XML parser used the standard `xml.sax.parseString()` without pr
 
 ---
 
-## 22. 🟡 High Severity — Docling: Unsafe Archive Extraction and XML Parsing in METS-GBS Backend
+## 20. 🟡 High Severity — Docling: Unsafe Archive Extraction and XML Parsing in METS-GBS Backend
 
 **CVE:** `CVE-2026-44018` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-r3xg-rg9j-67fv>
@@ -384,7 +368,7 @@ An attacker could craft malicious METS-GBS archives that, when p…
 
 ---
 
-## 23. 🟡 High Severity — Docling: Unsafe Playwright-based HTML Rendering
+## 21. 🟡 High Severity — Docling: Unsafe Playwright-based HTML Rendering
 
 **CVE:** `CVE-2026-44016` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-pj2v-ggqh-cmq2>
@@ -394,7 +378,7 @@ In versions `&gt;= 2.82.0, &lt; 2.91.0`, if the HTML backend was explicitly conf
 
 ---
 
-## 24. 🟡 High Severity — backpack/crud is vulnerable to Cross-Site Scripting (XSS)
+## 22. 🟡 High Severity — backpack/crud is vulnerable to Cross-Site Scripting (XSS)
 
 **CVE:** `CVE-2022-31114` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-m8xx-3x29-84h8>
@@ -405,7 +389,7 @@ It’s a “*moderate*” vulnerability… but being an admin panel, take this s
 
 ---
 
-## 25. 🟡 High Severity — Docling: Unsafe Zip Extraction in EasyOCR Model Download
+## 23. 🟡 High Severity — Docling: Unsafe Zip Extraction in EasyOCR Model Download
 
 **CVE:** `CVE-2026-44017` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-03
 **Reference:** <https://github.com/advisories/GHSA-cjqg-rq2h-2fvj>
@@ -416,7 +400,7 @@ In versions `&lt; 2.91.0`, The EasyOCR model download functionality extracted ZI
 
 ---
 
-## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
