@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-05T09:27:17.708178+00:00",
+  "generated": "2026-06-05T14:22:15.097560+00:00",
   "total": 27,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 13,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,43 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Multiple unauthenticated path traversal vulnerabilities in SimpleHelp 5.5.7 and earlier allow remote attackers to retrieve logs, configuration files, and credentials by abusing path traversal/file read endpoints.",
-        "affected_products": "SimpleHelp remote support / RMM software, versions 5.5.7 and earlier",
+        "technical_details": "CVE\u20112024\u201157727 is a path traversal vulnerability that lets an unauthenticated attacker retrieve arbitrary files (e.g., serverconfig.xml) via crafted HTTP requests, and can be combined with privilege\u2011escalation and file\u2011upload flaws to achieve full server compromise.",
+        "affected_products": "SimpleHelp Remote Support / RMM \u2014 versions 5.5.7 and earlier",
         "cvss_score": "7.5",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Public technical disclosure and PoC\u2011style descriptions are available via Horizon3.ai (see source link).",
+        "patch_available": "Yes \u2014 patches released in SimpleHelp versions 5.5.8 through 5.5.15. Advisory URL: https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know",
+        "active_exploitation": "Confirmed \u2013 CISA added CVE\u20112024\u201157727 to the KEV catalog and reports ransomware actors leveraging it; multiple industry write\u2011ups corroborate active exploitation.",
+        "threat_actors": "DragonForce, Medusa (and other ransomware groups reported)",
+        "mitigation": "Isolate or stop vulnerable SimpleHelp servers, upgrade immediately, hunt for compromise indicators, block/monitor SimpleHelp network traffic, do not expose remote services to the Internet, and follow vendor guidance.",
+        "vendor_advisory": "https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+      }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/what-2026-dbir-confirms-attacks-are-living-in-the-browser/",
+      "title": "What 2026 DBIR Confirms: Attacks Are Living in the Browser",
+      "summary": "Phishing, shadow AI, malicious extensions, and credential theft increasingly happen inside the browser. Keep Aware explains what the 2026 Verizon DBIR reveals about browser-layer security gaps and modern attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/what-2026-dbir-confirms-attacks-are-living-in-the-browser/",
+      "published": "2026-06-05T14:00:10+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Attacks operate at the browser layer via malicious or compromised browser extensions and AI plugins that collect/exfiltrate browsing context and credentials, phishing pages and credential harvesting, in\u2011browser command execution (ClickFix\u2011style) and exploitation of vulnerable browser\u2011facing components.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors",
-        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later. If immediate upgrade is not possible, isolate/unexpose SimpleHelp management interfaces from the Internet, restrict access via network ACLs/firewalls, and monitor for suspicious access.",
-        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "exploit_available": "No specific public PoC or weaponized exploit for a single named vulnerability cited; exploit information unavailable.",
+        "patch_available": "No specific vendor patch known; patch information unavailable.",
+        "active_exploitation": "DBIR and reporting confirm active browser\u2011layer attacks (malicious extensions, phishing pages, credential theft, 'ClickFix' style attacks and shadow AI plugins) are occurring in the wild.",
+        "threat_actors": "None known",
+        "mitigation": "Apply CIS/DBIR recommendations: enforce browser extension control/whitelisting, require MFA, use DNS/web filtering, deploy browser isolation or zero\u2011trust browser controls, inventory and remove unauthorized AI/browser extensions, continuous vulnerability management and timely patching, endpoint anti\u2011malware and privilege management.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -51,15 +78,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "An authenticated local attacker with netadmin (admin) privileges can exploit a flaw in the vManage CLI to escalate to root, enabling arbitrary command execution and full system compromise via the management appliance CLI.",
-        "affected_products": "Cisco Catalyst SD\u2011WAN Manager (formerly SD\u2011WAN vManage)",
-        "cvss_score": "8.8",
-        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx",
-        "active_exploitation": "true \u2014 https://www.bleepingcomputer.com/news/security/new-cisco-sd-wan-flaw-exploited-in-zero-day-attacks-to-gain-root/, https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx",
+        "technical_details": "Insufficient validation of user-supplied input in the CLI of Cisco Catalyst SD-WAN Manager allows an authenticated, local attacker to upload a crafted file and execute arbitrary commands as root.",
+        "affected_products": "Cisco Catalyst SD-WAN Manager (formerly SD-WAN vManage) \u2013 affected CLI component",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Public exploit/PoC reports: news sources report active exploitation; no confirmed public PoC URL found in sources.",
+        "patch_available": "Patch unavailable. Cisco states no fix currently; monitoring and mitigation guidance provided in advisory.",
+        "active_exploitation": "Confirmed active exploitation reported by Cisco and multiple security news outlets (Cisco advisory, Bleeping Computer, Help Net Security).",
         "threat_actors": "None known",
-        "mitigation": "Apply Cisco published updates immediately; restrict access to SD\u2011WAN Manager administrative interfaces, rotate credentials, and follow Cisco/CISA hardening and compromise\u2011assessment guidance. If unable to patch, isolate vManage from untrusted networks and enforce MFA and least\u2011privilege for admin accounts.",
+        "mitigation": "Follow Cisco advisory mitigations and hardening guidance (restrict access to management interfaces, apply recommended configuration/workarounds in advisory).",
         "vendor_advisory": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx"
       }
     },
@@ -81,13 +108,13 @@
       "enrichment": {
         "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "Exploit not applicable / Exploit information unavailable.",
+        "patch_available": "Patch not applicable / Patch information unavailable.",
+        "active_exploitation": "None reported / active exploitation information unavailable.",
         "threat_actors": "None known",
-        "mitigation": "\u2022 Implement continuous vulnerability discovery and inventory (network, agent, cloud, OT).\n\u2022 Use risk\u2011based prioritization (e.g., VPR) to focus remediation.\n\u2022 Deploy AI\u2011enabled defensive tooling and automate remediation workflows (e.g., Tenable Hexa AI/Tenable One).\n\u2022 Inventory and secure AI assets, models, and libraries; apply AI usage policies.\n\u2022 Apply credentialed scanning and non\u2011intrusive methods for classified/OT environments.",
+        "mitigation": "General mitigation and hardening guidance available in the blog (use exposure management, continuous detection, VPR prioritization, Tenable Hexa AI automation, Tenable One AI Exposure for inventory and policy enforcement).",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -107,16 +134,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversaries seed malicious prompt content on web pages or other content sources that AI systems browse or ingest; the malicious content is crafted to override or manipulate the agent's instructions, causing data exfiltration, privileged action, or policy\u2011violating outputs.",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial content seeded on web pages is consumed by AI agents or browsing-enabled LLMs, causing the agent to follow malicious instructions or leak secrets (examples observed include financial fraud, data destruction, and API key theft via crafted web content and payloads delivered through webpages and RAG sources).",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
+        "exploit_available": "No public exploit or PoC known.",
+        "patch_available": "No vendor patch available.",
+        "active_exploitation": "Confirmed active exploitation in the wild.",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses: content provenance and integrity checks, sanitization and strict input handling, model instruction isolation (ignore untrusted instructions), allow\u2011listing of trusted data sources, rate\u2011limiting and monitoring for anomalous agent behavior, and adversarial monitoring of public web for seeded IPI payloads.",
-        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
+        "mitigation": "Hardening and mitigations include multi\u2011layered defenses: input sanitization and filtering, provenance/trust signals, browsing content validation, denylist/allowlist policies, RAG pipeline hardening, model\u2011level guardrails, and monitoring for anomalous agent behavior.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -135,15 +162,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) exploits the ability of large language models to incorporate external data or tool outputs into their reasoning, allowing an attacker to embed malicious instructions that cause the model to act contrary to the intended query without any direct user interaction.",
-        "affected_products": "Google Workspace (Gemini integration)",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect prompt injection (IPI) occurs when adversarial instructions are embedded in external data, documents, web content, or tooling that a large language model consumes. These malicious instructions can modify the model's output even though the user did not provide direct input, leveraging the model's reliance on external sources and agentic automation.",
+        "affected_products": "Google Workspace (features integrating Gemini and agentic automation)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "exploit_available": "No public proof-of-concept or weaponized exploit reported.",
+        "patch_available": "Vendor does not list a single \"patch\"; mitigation is provided via a continuous layered strategy.",
+        "active_exploitation": "Reports of in\u2011the\u2011wild indirect prompt injection payloads (Forcepoint) but no confirmed mass exploitation tied to a named threat actor.",
         "threat_actors": "None known",
-        "mitigation": "Implement Google\u2019s layered defense strategy: sanitize all inputs to LLMs, enforce strict prompting policies, monitor LLM outputs for anomalous behavior, and apply runtime protections to block malicious instruction injection.",
+        "mitigation": "Implement continuous, layered defenses: verify content provenance and trust signals, vet documents and tools before ingestion, sanitize/filter external content, restrict privileges of agentic tools, use secondary model checks for validation, enforce strict access controls, and maintain robust logging, monitoring and rapid response processes.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -163,15 +190,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The primary new threat described is \"indirect prompt injection,\" where malicious web content manipulates agentic browser prompts or inputs to cause unsafe AI\u2011driven actions; Chrome added layered defenses to block prompt injections, restrict origin access, and prevent unsafe AI actions.",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "true \u2014 vendor advisory published: http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
-        "active_exploitation": "false",
+        "technical_details": "Indirect prompt injection\u2014malicious or adversarial web content (including third\u2011party iframes or user\u2011generated content) can influence an agentic planner model to take unintended actions (e.g., financial transactions or data exfiltration). Chrome's mitigations include a separate User Alignment Critic that vets planned actions using only metadata, Agent Origin Sets to restrict readable and writable origins, deterministic checks for model\u2011generated URLs, prompt\u2011injection classifiers, user confirmations for sensitive steps, and continuous red\u2011teaming and monitoring.",
+        "affected_products": "Chrome (agentic/Gemini-enabled features)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public PoC or weaponized exploit reported",
+        "patch_available": "No single patch; mitigations and features implemented in Chrome as described in the advisory; Chrome auto\u2011update used to deliver fixes. Vendor advisory provided.",
+        "active_exploitation": "No confirmed active exploitation reported in the advisory or prior trusted research.",
         "threat_actors": "None known",
-        "mitigation": "Use Chrome's layered defenses (updated agentic browsing protections), avoid untrusted sites when using agentic features, and follow vendor guidance in the advisory; consider restricting origin access and limiting automated AI actions until patches are applied.",
+        "mitigation": "Use Chrome's layered defenses\u2014user confirmations for sensitive actions, origin\u2011gating (Agent Origin Sets) limiting read vs read\u2011write origins, User Alignment Critic to veto misaligned actions, real\u2011time prompt\u2011injection detection, and keep Chrome auto\u2011updates enabled.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -191,16 +218,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Google reports a 1000\u00d7 reduction in memory\u2011safety vulnerability density when migrating Android components to Rust, lowering memory\u2011safety bugs to below 20% of total vulnerabilities in 2025 across C, C++, Java, Kotlin, and Rust code.",
-        "affected_products": "Android platform (C, C++, Java, Kotlin, Rust)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://blog.google/security/rust-in-android-move-fast-fix-things/",
-        "active_exploitation": "false",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "No public PoC or weaponized exploit mentioned in the blog post.",
+        "patch_available": "Official patches are distributed via Android Security Bulletins and platform updates; specific patch URLs are not provided in the blog post.",
+        "active_exploitation": "No confirmed active exploitation reported in the blog post.",
         "threat_actors": "None known",
-        "mitigation": "Adopt Rust for new Android components, limit unsafe Rust usage, continue rigorous code review, fuzzing, automated testing, and backport security fixes to existing C/C++ components where feasible.",
-        "vendor_advisory": "https://blog.google/security/rust-in-android-move-fast-fix-things/"
+        "mitigation": "Continue to apply Android security updates promptly; use app sandboxing and least\u2011privilege configurations.",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
     {
@@ -219,15 +246,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection attacks embed hidden malicious instructions in external data sources (emails, documents, calendar invites, web content) which downstream generative AI systems ingest and execute, leading to data exfiltration or unauthorized actions. Google's guidance describes a layered defense across the prompt lifecycle: input validation and filtering, provenance and source-trust checks, context trimming, model-level instruction hardening, sandboxing of model outputs, and monitoring/alerting.",
+        "technical_details": "Indirect prompt injection (IPI) involves malicious instructions embedded in external data sources (emails, documents, calendar invites, web content) that cause AI systems to treat the content as instructions, leading to data leakage or unauthorized actions.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "false",
+        "exploit_available": "No public PoC or weaponized exploit known",
+        "patch_available": "No vendor patch; mitigation guidance provided in advisory: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
+        "active_exploitation": "Reports of increased indirect prompt injection attempts in the wild have been observed by multiple vendors but no confirmed widescale active exploitation of a specific CVE.",
         "threat_actors": "None known",
-        "mitigation": "Implement layered defenses: validate and sanitize inputs, block suspicious content, maintain provenance metadata, restrict model capabilities for sensitive actions, apply instruction filters and hardening, use isolation/sandboxing for agent actions, rate-limit and log model requests, and monitor for anomalies. Follow vendor advisory URL for vendor\u2011specific recommendations.",
+        "mitigation": "Use layered defenses per vendor advisory: treat external content as untrusted, apply input sanitization and canonicalization, enforce least privilege for model outputs and data access, add explicit instruction\u2011guard rails, add multi\u2011layer detection and telemetry, and keep models/clients updated. See vendor advisory for details.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -246,15 +273,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Backbone routers, provider edge (PE) routers, customer edge (CE) routers",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Actors gain initial access by exploiting publicly known CVEs (e.g., CVE\u20112023\u201120198) using the Web Services Management Agent endpoints to bypass authentication and create unauthorized admin accounts. Persistence is achieved by modifying ACLs to allow attacker\u2011controlled IPs, opening standard/non\u2011standard ports (SSH, SFTP, RDP, FTP, HTTP/HTTPS), and enabling HTTP/HTTPS servers on Cisco devices. After compromise, they execute commands via SNMP, SSH, web UI, and TCL scripts, and use SPAN/RSPAN/ERSPAN to capture in\u2011transit traffic for collection of subscriber data, configurations, and credentials.",
+        "affected_products": "Cisco IOS / IOS XE (CVE-2018-0171, CVE-2023-20198, CVE-2023-20273); Ivanti (CVE-2024-21887, CVE-2023-46805); Palo Alto Networks (CVE-2024-3400); also potentially Fortinet firewalls, Juniper firewalls, Microsoft Exchange, Nokia routers & switches, Sierra Wireless devices, SonicWall firewalls.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "No public proof\u2011of\u2011concept URLs are provided; however, publicly available tools such as siet.py, map.tcl, tclproxy.tcl, and wodSSHServer are referenced as being used by the actors.",
+        "patch_available": "Vendor patches are available from the affected vendors (e.g., Cisco, Ivanti, Palo Alto Networks). Specific patch URLs are not provided in the advisory.",
+        "active_exploitation": "Confirmed active exploitation in the wild has been reported; the actors have successfully exploited publicly known CVEs to gain persistent access to government, telecom, transportation, lodging, and military infrastructure networks globally.",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Mitigation steps unavailable.",
+        "mitigation": "Disable all unused ports and protocols; change default administrative credentials; require public\u2011key authentication; use encrypted management protocols (SSH, SFTP, HTTPS); deploy vendor\u2011recommended OS versions and apply all security updates; follow Cisco hardening guides; monitor device logs; audit non\u2011root accounts; review ACL changes and traffic mirroring configurations.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -271,19 +298,22 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "The advisory describes a long\u2011running GRU espionage campaign using brute\u2011force access, credential theft, and standard cyber\u2011espionage TTPs to target Western logistics and technology companies; specific vulnerability mechanism details are unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), unit 26165 (also tracked as APT28)",
-        "mitigation": "Follow CISA/FBI/NSA recommended mitigations: enforce multi\u2011factor authentication, strengthen remote access, patch and harden systems, monitor for brute\u2011force and credential access, implement least privilege and logging/monitoring.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
-      }
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/",
+      "title": "In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA",
+      "summary": "Other noteworthy stories that might have slipped under the radar: Ultrahuman data leak, The Gentlemen ransomware analysis, Hola Browser bundles miner. The post In Other News: Anthropic Maps AI Threats, Unpatched Comodo Flaw, Palantir Chief Eyed for CISA appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/in-other-news-anthropic-maps-ai-threats-unpatched-comodo-flaw-palantir-chief-eyed-for-cisa/",
+      "published": "2026-06-05T13:05:06+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "CVE-2026-48015",
@@ -532,42 +562,6 @@
       ],
       "cve_ids": [
         "CVE-2026-44476"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44487",
-      "title": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
-      "summary": "## Summary\n\nAxios\u2019s Node.js HTTP adapter may forward a `Proxy-Authorization` header to a redirected origin during specific proxy-to-direct redirect flows.\n\nThis affects Node.js usage, where an initial HTTP request is sent through an authenticated HTTP proxy, redirects are followed, and the redirected URL is no longer proxied. Under affected redirect shapes, the final origin can receive the proxy credential that was intended only for the outbound proxy.\n\n## Impact\n\nA malicious or attacker-controlled origin can cause an axios client to disclose its configured proxy credentials if all required conditions are present.\n\nThe leak is limited to Node.js HTTP adapter requests. Browser, XHR, fetch, and React Native adapter paths are not affected by this Node-specific proxy handling path.\n\nThe practical impact depends on the leaked credentials. If the credential is reusable and the proxy is reachable by the attacker, the attacker may be able to authenticate to that proxy, subject to the proxy\u2019s own network exposure, authorisation policy, and credential scope.\n\n## Affected Functionality\n\nAffected functionality requires all of the following:\n\n- Axios running in Node.js with the HTTP adapter.\n- An initial `http://` request using an authenticated proxy from `config.proxy` or proxy environment variables.\n- Redirect following enabled.\n- A redirect target for which no proxy applies, such as no matching `HTTPS_PROXY` or a matching `NO_PROXY`.\n- A redirect shape treated as same-host or otherwise not stripped by the redirect layer\u2019s confidential-header handling.\n\nUnaffected functionality includes browser adapters, requests with `maxRedirects: 0`, requests without proxy credentials, and redirect flows where the redirect layer strips `Proxy-Authorization` before axios reconfigures the redirected request.\n\n## Technical Details\n\nIn affected versions, `lib/adapters/http.js` adds `Proxy-Authorization` in `setProxy()` when a proxy with credentials is used.\n\nAxios also installs redirect proxy h",
-      "link": "https://github.com/advisories/GHSA-p92q-9vqr-4j8v",
-      "published": "2026-06-04T14:19:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44487"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44486",
-      "title": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
-      "summary": "### Summary\n\nAxios\u2019 Node.js HTTP adapter can leak proxy credentials to a redirect target in affected versions. When a request is sent through an authenticated proxy, Axios may add a `Proxy-Authorization` header. If Axios then follows a redirect and the redirected request is no longer sent through that proxy, the stale `Proxy-Authorization` header can remain on the redirected request and be sent to the redirect target.\n\nThis affects Node.js's use of Axios with automatic redirects enabled and an authenticated proxy configuration. Browser adapters are not affected.\n\n### Impact\n\nAn attacker who controls a server that the victim application requests can redirect the request so that the attacker-controlled redirect target receives the victim\u2019s proxy credentials.\n\nThe most relevant case is a Node.js application using an authenticated `HTTP_PROXY` for an initial `http://` request, with redirects enabled, where the redirect target resolves to no proxy, such as an `https://` URL when `HTTPS_PROXY` is unset.\n\nThis does not affect browser, XHR, or fetch adapter behaviour. It also does not affect requests with `maxRedirects: 0`.\n\n### Affected Functionality\n\nAffected functionality is limited to the Node.js HTTP adapter in `lib/adapters/http.js`.\n\nRelevant inputs and settings include:\n\n- `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY`.\n- Authenticated proxy URLs such as `http://user:pass@proxy.example:8080`.\n- Automatic redirect following through `follow-redirects`.\n- Axios proxy handling in `setProxy()`.\n- Redirect proxy handling through `beforeRedirects.proxy`.\n\n### Technical Details\n\nIn affected v1 releases, `setProxy()` adds `Proxy-Authorization` when a proxy with credentials is selected, but redirect handling calls `setProxy()` again without first clearing any existing proxy authorization header.\n\nIf the redirected URL resolves to no proxy, `setProxy()` does not add a new proxy configuration and also does not remove the old header. The redirected request can therefore carry the s",
-      "link": "https://github.com/advisories/GHSA-j5f8-grm9-p9fc",
-      "published": "2026-06-04T14:15:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44486"
       ],
       "is_zero_day": false,
       "is_high_severity": true
