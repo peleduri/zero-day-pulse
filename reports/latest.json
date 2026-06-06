@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-06T08:24:20.545978+00:00",
+  "generated": "2026-06-06T13:06:04.020170+00:00",
   "total": 26,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 14,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Path traversal vulnerability that allows an attacker to read arbitrary files (logs, configuration files, credentials) from SimpleHelp installations via crafted requests to the web interface.",
-        "affected_products": "SimpleHelp remote support / RMM software \u2013 versions 5.5.7 and earlier (including 5.5.x prior to 5.5.8, 5.4.x prior to 5.4.10, 5.3.x prior to 5.3.9).",
+        "technical_details": "CVE-2024-57727 is a directory traversal (path traversal) vulnerability in SimpleHelp remote support software that lets unauthenticated attackers read sensitive files by supplying malicious file paths.",
+        "affected_products": "SimpleHelp remote support software (version 5.5.7 and earlier)",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC exists; see OffSec blog for details.",
-        "patch_available": "Yes \u2014 SimpleHelp released version 5.5.8 that fixes the vulnerability. Advisory/Download URL: https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
-        "active_exploitation": "Confirmed \u2014 CISA reports ransomware actors leveraged unpatched SimpleHelp (including CVE\u20112024\u201157727) to compromise downstream customers.",
-        "threat_actors": "Ransomware actors (unspecified groups)",
-        "mitigation": "Apply vendor patch/update to SimpleHelp 5.5.8 or later; if immediate patching not possible, restrict access to the SimpleHelp administrative interface (IP allow\u2011listing, network segmentation, deny internet exposure), block or filter malicious request patterns at the perimeter, rotate any exposed credentials, review logs for suspicious access, and conduct incident response if compromise is suspected.",
-        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true (http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know)",
+        "active_exploitation": "true (http://cisa.gov/news-events/cybersecurity-advisories/aa25-163a)",
+        "threat_actors": "Ransomware actors (unspecified)",
+        "mitigation": "Upgrade SimpleHelp to a version newer than 5.5.7 (or apply the vendor\u2011provided patch) and ensure all remote agents are updated.",
+        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -49,16 +49,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "An integer overflow occurs when processing CENC subsample data in FFmpeg, causing an out\u2011of\u2011bounds write that can allow an attacker to execute arbitrary code (RCE).",
-        "affected_products": "FFmpeg versions prior to 8.1",
-        "cvss_score": "0.0",
+        "technical_details": "The 21 FFmpeg vulnerabilities consist of heap and stack buffer overflows, integer overflows, and out\u2011of\u2011bounds reads/writes in various codec and demuxer components. Exploitable examples include a heap buffer overflow in the RTP AV1 depacketizer (DFVULN\u2011127) that can overwrite an AVBuffer.free function pointer to achieve remote code execution, and integer overflow in libswscale/utils.c that leads to undersized allocations and subsequent memory corruption.",
+        "affected_products": "libavformat/mpegts.c, libswscale/utils.c, fftools/ffmpeg_opt.c, libavformat/yuv4mpegenc.c, libavformat/mpegtsenc.c, libavcodec/mpegvideo_enc.c, libavformat/img2enc.c, libavcodec/vp9.c, libavformat/dashdec.c, rtpdec_av1.c, graph.c, rtpdec_jpeg.c, ffmpeg_demux.c",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concept exploits are available for several of the FFmpeg CVEs (e.g., CVE-2026-40962). See the CVE pages for details.",
-        "patch_available": "An official patch is available; upgrading to FFmpeg version 8.1 or later resolves the vulnerabilities. See the CVE advisory for details.",
-        "active_exploitation": "No confirmed active exploitation reported.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Upgrade FFmpeg to version 8.1 or later. If immediate upgrade is not possible, disable CENC subsample processing or restrict media inputs that use the vulnerable codec.",
-        "vendor_advisory": "https://cvefeed.io/vuln/detail/CVE-2026-40962"
+        "mitigation": "1. Update FFmpeg to the latest upstream build or apply distribution security updates as soon as they are released. 2. Prioritize systems that ingest untrusted RTSP or AV1\u2011over\u2011RTP streams, since those are highlighted as high\u2011risk vectors. 3. Ensure that any embedded copies of FFmpeg in applications, containers, or appliances are also patched, not only the system\u2011level package.",
+        "vendor_advisory": "https://ffmpeg.org/security.html"
       }
     },
     {
@@ -79,15 +79,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The `kubectl_generic` tool in `mcp-server-kubernetes` passes user\u2011supplied flags directly to `kubectl` without any allowlist, allowing an attacker with limited cluster access to inject structured JSON into application logs; when a privileged operator reads those logs, the injected flags cause `kubectl` to execute with attacker\u2011controlled arguments, leading to bearer token exfiltration.",
-        "affected_products": "mcp-server-kubernetes (npm package) \u2013 kubectl_generic tool; specific versions unavailable",
-        "cvss_score": "0.0",
+        "technical_details": "The vulnerability stems from passing user-supplied flags directly to kubectl without an allowlist in the kubectl_generic tool. This permits injection of kubectl flags or commands via crafted log output; when an operator using a privileged kubeconfig invokes log\u2011reading functionality, those flags are forwarded to kubectl, enabling extraction of bearer tokens or escalation to cluster\u2011admin actions.",
+        "affected_products": "mcp-server-kubernetes \u2014 kubectl_generic",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept or weaponized exploit is known.",
-        "patch_available": "No official patch has been released yet; mitigation guidance is provided in the vendor advisory.",
-        "active_exploitation": "No confirmed active exploitation has been reported.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true \u2014 https://github.com/advisories/GHSA-6mx4-4h42-r8vh",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Avoid using `mcp-server-kubernetes` until patched; do not use `kubectl_generic` with privileged kubeconfigs; restrict operator access to privileged kubeconfigs; sanitize or disallow reading untrusted logs into privileged contexts; implement allow\u2011listing of kubectl flags and validate inputs.",
+        "mitigation": "Apply the vendor\u2011released updates per the advisory. If patching is not yet possible, restrict usage of the MCP server to least\u2011privileged kubeconfigs, avoid letting privileged operators use untrusted logs directly, implement input allowlisting/validation for kubectl flags, restrict who can deploy or write application logs, and rotate any exposed tokens and credentials.",
         "vendor_advisory": "https://github.com/advisories/GHSA-6mx4-4h42-r8vh"
       }
     },
@@ -106,15 +106,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
+        "technical_details": "Browser\u2011based attacks exploit extensions that can read/modify page content and exfiltrate data, and social\u2011engineering techniques such as ClickFix that start in the browser and then compromise the endpoint with info\u2011stealers and remote\u2011access tools.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit information unavailable.",
-        "patch_available": "Patch information unavailable.",
-        "active_exploitation": "Active, widespread browser\u2011based credential theft observed by Keep Aware and reported in the Verizon 2026 DBIR.",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Restrict/monitor extensions, implement allow\u2011list policies by extension ID, block risky AI extensions, deploy in\u2011browser DLP and credential\u2011protection tools, and provide user training on malicious\u2011extension and phishing risks.",
+        "mitigation": "Deploy browser\u2011layer visibility and controls, govern and block high\u2011risk/unauthorized extensions, enforce MFA and strong credential hygiene, apply DLP and sanctioned AI controls, provide user training, and monitor browser session artifacts.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -134,16 +134,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI systems process web/email/document content that contains malicious instructions; Google's scan of Common Crawl found examples including data\u2011exfiltration and destructive instructions but mostly low\u2011sophistication experiments and pranks.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI systems process content (websites, email, documents) that contains malicious instructions; attackers embed payloads in public web pages that, if followed by an AI agent, could cause data exfiltration, destruction, or other malicious outcomes. Google analyzed Common Crawl snapshots, classified candidates with Gemini, and performed human validation; observed categories included pranks, helpful guidance, SEO manipulation, deterring AI agents, and malicious attempts.",
+        "affected_products": "Google Gemini (and Gemini\u2011powered products), Google Workspace (and AI agents that browse the public web)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit reported; exploit_available: None known.",
-        "patch_available": "Patch unavailable; mitigation guidance provided in the Google blog.",
-        "active_exploitation": "Google observed a small number of malicious prompt injections and a 32% relative increase in detections between Nov 2025 and Feb 2026; no confirmed large\u2011scale exploitation reported.",
+        "exploit_available": "false",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses \u2014 pattern matching, LLM\u2011based classification, human validation; refer to Google\u2019s Workspace continuous\u2011mitigation guidance and layered defense strategy.",
-        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
+        "mitigation": "Use layered defenses \u2014 pattern matching filters, LLM\u2011based classification of candidate content, human validation for high\u2011confidence cases; harden models and products (red\u2011team testing), invest in detection at scale, share intelligence, and participate in vulnerability reward programs. See Google\u2019s Workspace mitigations blog for product\u2011specific controls.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -162,15 +162,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is a class of attacks where an adversary injects malicious instructions into data sources or tools that a complex AI application consults while fulfilling a user query. Because the LLM can incorporate external content (documents, web pages, tool outputs) into its context or agentic planning, injected instructions in those sources can influence model behavior without direct user input. Attack flow typically: (1) attacker plants malicious payload in a data source or accessible tool output, (2) the AI agent retrieves that content while answering a user query or executing tasks, (3) the model follows the injected instructions, producing unwanted or harmful actions or outputs.",
-        "affected_products": "Google Workspace (Gemini in Workspace and Workspace apps using multi\u2011source data); other LLM\u2011based multi\u2011data\u2011source agentic systems (specific versions unavailable)",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect prompt injection (IPI) is an attack technique that injects malicious instructions into data or tools used by an LLM\u2011powered application (e.g., Workspace with Gemini), allowing the attacker to influence the model\u2019s behavior even without direct user input.",
+        "affected_products": "Google Workspace with Gemini",
+        "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit reported",
-        "patch_available": "No official patch; mitigation measures are described in the vendor advisory.",
-        "active_exploitation": "Reports of increased indirect prompt injection attempts in the wild and observed payloads, but no confirmed, widely\u2011weaponized exploit tied to a specific CVE.",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses: content provenance and validation, input/output sanitization, strict tool access controls and scopes for agents, rate\u2011limiting and anomaly detection on tool outputs, prompt and instruction filtering on ingested data, user confirmation for high\u2011risk actions, and continuous monitoring and updates to detection rules.",
+        "mitigation": "Google\u2019s continuous, layered defense strategy: defense\u2011in\u2011depth for Gemini and Workspace apps (input validation, contextual filtering, tooling restrictions, monitoring, and updates). Use least privilege for tool access and restrict agentic automation; apply Google\u2019s recommended mitigations in the advisory.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -190,16 +190,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability stems from insufficient policy enforcement in Chrome's <webview> tag. A malicious extension can use the declarativeNetRequest API to modify requests to gemini.google.com/app, inject JavaScript into the privileged Gemini WebView context, and thereby gain elevated permissions such as camera, microphone, file system access, screenshot capture, and arbitrary code execution.",
-        "affected_products": "Google Chrome versions prior to 143.0.7499.192 (Desktop Stable), 143.0.7499.192 (Android), and 142.0.7444.265 (Extended Stable desktop).",
-        "cvss_score": "8.8",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "A public PoC exploit is available and indexed via VulnCheck\u2019s XDB, referencing a GitHub repository.",
-        "patch_available": "Yes. Patch released in Chrome 143.0.7499.192+ for Linux, 143.0.7499.193+ for Windows/macOS, 143.0.7499.192 for Android, and 142.0.7444.265+ for Extended Stable desktop.",
-        "active_exploitation": "No confirmed active exploitation in the wild has been reported.",
+        "technical_details": "Indirect prompt injection occurs when a malicious or third\u2011party web page supplies hidden instructions that are injected into the agentic AI\u2019s prompt, steering its decisions in a way that benefits the attacker. This attack vector leverages the AI\u2019s ability to interpret page content as part of its reasoning process.",
+        "affected_products": "Chrome (agentic browsing / Gemini integration)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true - http://blog.google/security/architecting-security-for-agentic",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Update Chrome to the patched versions, audit and allow\u2011list extensions, enable Chrome Enhanced Protection, avoid running browsers with local administrator accounts, consider browser isolation, and temporarily disable Gemini if not needed.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "mitigation": "Enable Chrome's updated agentic security features/updates; apply the layered defenses announced by Google, including a supervisory AI, origin access restrictions, and safe action constraints.",
+        "vendor_advisory": "http://blog.google/security/architecting-security-for-agentic"
       }
     },
     {
@@ -218,16 +218,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
+        "technical_details": "A near\u2011miss linear buffer overflow in the Rust crate CrabbyAVIF (CVE\u20112025\u201148530) was discovered and fixed pre\u2011release; Android\u2019s Scudo hardened allocator uses guard pages around secondary allocations, turning the overflow into a noisy crash and rendering the issue non\u2011exploitable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit details unavailable",
-        "patch_available": "Patch availability varies by specific vulnerabilities; Google\u2019s blog post (Rust in Android: move fast and fix things) summarizes platform\u2011wide progress but does not list per\u2011vulnerability advisories or patch URLs. For specific fixes, consult Android Security Bulletins and individual CVE advisories.",
-        "active_exploitation": "Active exploitation reports unavailable",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2025/2025-08-01",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Ensure devices run builds that include the vendor patch; enable Android\u2019s Scudo hardened allocator where possible; keep Android updated following the security bulletin; employ sandboxing and other runtime mitigations.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025/2025-08-01"
       }
     },
     {
@@ -246,16 +246,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) hides malicious instructions inside external content (emails, documents, calendar invites, images, URLs) that an LLM will read later; attackers aim to get the assistant to exfiltrate data or perform actions. Google\u2019s layered defenses combine model hardening (Gemini 2.5 adversarial training), ML detectors for malicious instructions, markdown sanitization/suspicious\u2011URL redaction, security\u2011thought reinforcement, user confirmation/HITL, and system\u2011level safeguards.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit reported",
-        "patch_available": "Google has deployed mitigations in Gemini (model hardening, detection, sanitization, URL redaction, user confirmation). See vendor advisory: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
-        "active_exploitation": "No confirmed active exploitation reported in the vendor advisory; Google has conducted monitoring but does not report a named active campaign.",
+        "technical_details": "Indirect prompt injection (IPI) embeds malicious instructions in external data sources (emails, documents, calendar invites) which LLM\u2011powered assistants may ingest; attackers aim to cause data exfiltration or rogue actions by shaping input the assistant reads.",
+        "affected_products": "Gemini (Gemini app, Gemini in Google Workspace), Gemini 2.5",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use layered controls: model hardening/adversarial training, ML\u2011based instruction detection, input sanitization (markdown/image URL blocking), suspicious\u2011URL redaction (Safe Browsing), security\u2011thought reinforcement, explicit user confirmation for risky actions, end\u2011user mitigation notifications, red\u2011team testing, and apply vendor guidance in Google\u2019s Help Center (https://support.google.com/docs/answer/16204578).",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+        "mitigation": "Use layered defenses \u2014 adversarial training/model hardening, prompt\u2011injection content classifiers, markdown sanitization and suspicious\u2011URL redaction, user confirmation framework, and end\u2011user security mitigation notifications. Follow Google guidance and help\u2011center recommendations.",
+        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
       }
     },
     {
@@ -273,15 +273,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Actors compromise routers by injecting malicious code, configuring GRE tunnels to exfiltrate data, and leveraging trusted connections to pivot within networks, achieving persistent access.",
-        "affected_products": "Backbone routers, provider edge (PE) routers, customer edge (CE) routers, IoT devices",
-        "cvss_score": "0.0",
+        "technical_details": "PRC state-sponsored actors target large backbone routers and provider edge/customer edge routers, modify routers to maintain persistent long\u2011term access, and pivot via compromised devices and trusted connections into other networks.",
+        "affected_products": "backbone routers, provider edge (PE) routers, customer edge (CE) routers, other compromised networking devices",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit or proof\u2011of\u2011concept is known.",
-        "patch_available": "No official patch has been released.",
-        "active_exploitation": "Yes, active exploitation has been reported.",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Simulate the attack to test defenses, segment networks, enforce strong authentication on routers, apply available firmware updates, and monitor for unauthorized GRE tunnels or unusual traffic.",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "Patch availability unknown",
+        "active_exploitation": "true",
+        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
+        "mitigation": "Hardening and mitigation guidance per advisory (segmentation of management networks, restrict administrative access, monitor router configurations and firmware integrity, apply vendor patches and recommendations, implement least\u2011privilege access and logging/monitoring)",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -297,6 +297,23 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/cisa-adds-actively-exploited-solarwinds.html",
+      "title": "CISA Adds Actively Exploited SolarWinds Serv-U DoS Flaw to KEV Catalog",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added a high-severity security flaw impacting SolarWinds Serv-U  multi-protocol file server software to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-28318 (CVSS score: 7.5), is a denial-of-service (DoS) bug that causes the service to crash",
+      "link": "https://thehackernews.com/2026/06/cisa-adds-actively-exploited-solarwinds.html",
+      "published": "2026-06-06T08:14:31+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-28318"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -525,23 +542,6 @@
       ],
       "cve_ids": [
         "CVE-2026-45726"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/06/hackers-exploit-critical-everest-forms.html",
-      "title": "Hackers Exploit Critical Everest Forms Pro WordPress Plugin Flaw to Take Over Sites",
-      "summary": "Threat actors are actively exploiting a critical security flaw in Everest Forms Pro, a WordPress plugin with about 4,000 active installations, to execute arbitrary code, leading to a complete site compromise.\n\nThe vulnerability in question is CVE-2026-3300 (CVSS score: 9.8), a remote code execution bug impacting all versions of the plugin up to, and including, 1.9.12. A patch for the flaw was",
-      "link": "https://thehackernews.com/2026/06/hackers-exploit-critical-everest-forms.html",
-      "published": "2026-06-05T08:38:59+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-3300"
       ],
       "is_zero_day": false,
       "is_high_severity": true
