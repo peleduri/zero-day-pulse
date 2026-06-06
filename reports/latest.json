@@ -1,41 +1,10 @@
 {
-  "generated": "2026-06-05T19:30:30.663870+00:00",
-  "total": 27,
-  "kev": 1,
-  "zero_day": 14,
+  "generated": "2026-06-06T01:59:01.197956+00:00",
+  "total": 25,
+  "kev": 0,
+  "zero_day": 12,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-28318",
-      "title": "CVE-2026-28318 \u2014 SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
-      "summary": "Vendor: SolarWinds | Product: Serv-U. SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-19)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-28318",
-      "published": "2026-06-05",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-28318"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "SolarWinds Serv\u2011U contains an uncontrolled resource consumption vulnerability where specially crafted POST requests using the Content\u2011Encoding: deflate header can crash the Serv\u2011U service without authentication.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Apply mitigations per vendor instructions in the SolarWinds advisory, follow applicable BOD 22-01 guidance for cloud services, or discontinue use if mitigations are unavailable.",
-        "vendor_advisory": "https://www.solarwinds.com/trust-center/security-advisories/CVE-2026-28318"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -53,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a directory traversal vulnerability in the SimpleHelp web interface that permits unauthenticated remote attackers to read arbitrary files on the server by supplying crafted path input to vulnerable endpoints.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management versions 5.5.7 and earlier",
+        "technical_details": "The vulnerability is a directory/path traversal flaw that lets unauthenticated attackers read arbitrary files on the SimpleHelp server.",
+        "affected_products": "SimpleHelp remote support software version 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors",
-        "mitigation": "Upgrade SimpleHelp to version 5.5.8 or later. If immediate upgrade is not possible, restrict access to SimpleHelp management interfaces to trusted IPs, block Internet access to the service, employ network segmentation and monitoring, and apply least\u2011privilege access controls.",
-        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Public proof\u2011of\u2011concept discussion is available at https://www.offsec.com/blog/cve-2024-57727/",
+        "patch_available": "Patch is available in SimpleHelp version 5.5.8; download at https://simple-help.com/downloads",
+        "active_exploitation": "Confirmed active exploitation in the wild by ransomware actors exploiting unpatched SimpleHelp instances.",
+        "threat_actors": "Ransomware actors (unspecified) as reported by CISA",
+        "mitigation": "Change administrator and technician passwords, restrict IP addresses, isolate the SimpleHelp server, and upgrade to SimpleHelp v5.5.8 (or apply patches for 5.4.10 and 5.3.9).",
+        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -83,15 +52,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The kubectl_generic tool in mcp-server-kubernetes passes user-supplied flags directly to kubectl without any allowlist, enabling a privilege escalation attack. An attacker with limited access can plant a structured JSON line in application logs; when an operator with a privileged kubeconfig uses the MCP server to read those logs and an AI agent follows the injected instruction, kubectl_generic can be coerced to execute kubectl commands that exfiltrate the Kubernetes bearer token.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "The kubectl_generic tool in mcp-server-kubernetes passes user\u2011supplied flags directly to kubectl without any allowlist; an attacker can inject a crafted JSON line into logs that causes a privileged operator or AI agent to run kubectl with attacker\u2011controlled flags, enabling Kubernetes bearer token exfiltration.",
+        "affected_products": "mcp-server-kubernetes (npm package) \u2013 specific versions not listed",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "No public PoC or weaponized exploit reported",
+        "patch_available": "Vendor advisory posted; patch details not provided in the advisory.",
+        "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Remove or disable the kubectl_generic command; do not allow privileged kubeconfigs to be used with untrusted MCP servers or agents; sanitize and do not auto-execute user-supplied flags; implement an allowlist for kubectl flags and require manual review of logs containing structured input.",
+        "mitigation": "Do not use unvalidated user\u2011supplied flags; upgrade to a patched version if released; restrict operator access and avoid using privileged kubeconfigs when viewing untrusted logs; sanitize or filter log content before passing to kubectl_generic.",
         "vendor_advisory": "https://github.com/advisories/GHSA-6mx4-4h42-r8vh"
       }
     },
@@ -110,15 +79,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
+        "technical_details": "Attackers are shifting initial access and data\u2011exfiltration vectors into the browser: credential theft via phishing or page/script interception, malicious or high\u2011risk extensions that can read/modify page content and exfiltrate data, ClickFix social\u2011engineering that executes code from the browser onto the host, and Shadow AI where users paste sensitive data into personal AI services outside corporate DLP visibility.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Implement browser\u2011layer visibility, enforce governance of AI use within browsers, control and monitor high\u2011risk extensions, and deploy detection for credential theft occurring inside browsers.",
+        "exploit_available": "Exploit availability information unavailable",
+        "patch_available": "Patch information unavailable.",
+        "active_exploitation": "Active in\u2011the\u2011wild browser\u2011based credential theft, malicious extensions, ClickFix social engineering, and Shadow AI usage were observed by Keep Aware and reflected in the Verizon 2026 DBIR.",
+        "threat_actors": "None known",
+        "mitigation": "Implement browser\u2011layer visibility and controls (browser telemetry/monitoring), restrict/allowlist extensions with stronger controls, block or monitor uploads to personal AI services, deploy in\u2011browser phishing detection and credential\u2011protection measures, enforce MFA and short\u2011lived credentials, use corporate\u2011managed AI tooling, and user training on ClickFix/social\u2011engineering.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -139,44 +108,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A CLI vulnerability in Cisco Catalyst SD\u2011WAN Manager that allows an authenticated, local attacker to execute arbitrary commands as root via the management CLI.",
+        "technical_details": "CLI input validation flaw in the Cisco Catalyst SD\u2011WAN Manager allows an authenticated, local attacker to upload a crafted file and execute arbitrary commands as root via the CLI.",
         "affected_products": "Cisco Catalyst SD\u2011WAN Manager (formerly SD\u2011WAN vManage)",
         "cvss_score": "7.8",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Active exploitation reported; no public PoC or weaponized exploit URL confirmed.",
+        "patch_available": "No vendor patch available as of 2026-06-05; Cisco advisory shows vulnerability disclosure but no fixed release listed.",
+        "active_exploitation": "Confirmed active exploitation reported by multiple sources (Cisco advisory, NVD, Bleeping Computer, SecurityWeek).",
         "threat_actors": "None known",
-        "mitigation": "Restrict local/SSH access to the management interface, follow CISA/agency guidance to inventory SD\u2011WAN systems, apply available compensating controls, and monitor for indicators of compromise.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
-    },
-    {
-      "id": "https://www.tenable.com/blog/summary-june-2026-ai-executive-order-requirements",
-      "title": "The June 2026 AI Executive Order: What federal agencies need to know and how Tenable can help",
-      "summary": "On June 2, 2026, the White House signed an Executive Order directing federal agencies to harden their systems with AI-enabled cyber defenses and to stand up a new AI cybersecurity clearinghouse \u2014 most of it on a 30-day clock. Here\u2019s what the EO requires and how Tenable can help. Key takeaways: The new AI Security Executive Order will require national security and civilian federal agencies to prioritize cyber defenses to account for new frontier AI model capabilities. Tenable is well positioned to help federal agencies gain visibility across their environments, including AI assets, and to prioritize the vulnerabilities and other exposures that pose the highest risk; Tenable AI-enabled exposure management capabilities can help support vulnerability remediation and automate multi-step remediation workflows. The vulnerability and patching clearinghouse which will be developed under the Executive Order will require strong engagement from private sector partners, including Tenable, to drive actionable insights on AI-associated vulnerabilities and mitigation prioritization. On June 2, 2026, the President signed an Executive Order (EO) titled \u201c Promoting Advanced Artificial Intelligence Innovation and Security .\u201d The direction is clear and the calls to action are fast-moving. Within 30 days: Federal agencies must begin hardening their information systems with AI-enabled cyber defenses. CISA must issue new directives or guidance for civilian agencies. The Department of the Treasury (Treasury), with the National Security Agency (NSA) and the Cybersecurity and Infrastructure Security Agency (CISA), must stand up a new AI cybersecurity clearinghouse focused on finding and fixing software vulnerabilities. Within 60 days, Treasury, with the Department of War (DoW), NSA and CISA, in consultation with the White House and other agencies, must establish a classified benchmarking process to assess the capabilities of frontier AI models through voluntary collaboration with AI developer",
-      "link": "https://www.tenable.com/blog/summary-june-2026-ai-executive-order-requirements",
-      "published": "2026-06-04T23:33:00+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Agencies should harden systems with AI-enabled cyber defenses and inventory AI assets; Tenable One AI Exposure can help agencies discover and inventory AI tools and libraries and apply AI usage policies across the environment to help prioritize vulnerabilities and automate remediation workflows.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Restrict local authenticated access to SD\u2011WAN Manager (vManage), apply least privilege for accounts, monitor for suspicious file uploads and command execution, and follow Cisco/CISA guidance to inventory and assess for compromise.",
+        "vendor_advisory": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx"
       }
     },
     {
@@ -195,16 +136,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI agents ingest attacker\u2011controlled content (web pages, documents, files) that contain malicious instructions. The attacker poisons the content\u2014often hidden via CSS, HTML comments, metadata, or special tags\u2014so the model treats the embedded instructions as authoritative, leading to actions such as data exfiltration, command execution, financial transactions, or content suppression. Observed techniques include CSS concealment, HTML comment injection, system\u2011prompt tag spoofing, magic\u2011string impersonation, meta\u2011namespace injection, accessibility\u2011attribute abuse, and TOCTOU sandbox\u2011escape chains (e.g., the Antigravity IDE chain).",
+        "technical_details": "Indirect Prompt Injection (IPI) involves seeding malicious prompt payloads into web\u2011hosted content or other data sources which are then ingested by AI agents or LLMs during browsing or retrieval\u2011augmented workflows; payloads attempt to override or subvert model instructions to perform fraud, data exfiltration, API key theft, code manipulation or destructive actions. Prior research describes 10 verified IPI payloads spanning financial fraud, data destruction, API key theft and AI abuse.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Implement layered defenses: restrict AI agents from accessing untrusted external content; enforce strict parsing that separates data from instructions; sanitize or strip hidden/high\u2011risk HTML elements (CSS, comments, metadata) before ingestion; conduct quarterly IPI red\u2011team exercises using Forcepoint\u2019s payload taxonomy; apply vendor patches (e.g., the Antigravity IDE patch).",
-        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
+        "exploit_available": "Public in\u2011the\u2011wild indirect prompt injection (IPI) payloads disclosed by Forcepoint X\u2011Labs; PoCs observed on live websites.",
+        "patch_available": "Vendor advisory URL unavailable. (No vendor patch referenced in prior research.)",
+        "active_exploitation": "Yes \u2014 confirmed in\u2011the\u2011wild IPI payloads observed on live websites, reported by Forcepoint X\u2011Labs and summarized in Google\u2019s Threat Intelligence blog.",
+        "threat_actors": "None known",
+        "mitigation": "Mitigations recommended include: (1) Treat untrusted web content and retrieved documents as adversarial input \u2014 implement strict input filtering and sanitization; (2) Use immutable, policy\u2011enforced system prompts and context separation (don\u2019t allow external content to override system instructions); (3) Apply retrieval provenance and content integrity checks before feeding into LLMs; (4) Limit models\u2019 direct access to sensitive APIs/credentials and use scoped, monitored service accounts; (5) Monitor and alert on anomalous model outputs and risky actions; (6) Conduct regular sweeps of public\u2011facing content for known IPI patterns.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -223,16 +164,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) hides malicious instructions in data sources (web pages, docs, emails, calendar invites, metadata, hidden HTML/CSS, or images). When the LLM ingests that data during a request, the embedded instructions are treated as part of the prompt, allowing data exfiltration, command execution, or content manipulation. Noma Labs demonstrated a zero\u2011click attack (GeminiJack) where a shared document with hidden instructions caused Gemini Enterprise/Vertex AI Search to exfiltrate Gmail, Calendar, and Docs content via an invisible image request. Forcepoint cataloged live payloads using CSS display:none, tiny fonts, metadata abuse, and magic\u2011string spoofing to poison AI inputs.",
-        "affected_products": "Google Gemini Enterprise (Gemini in Workspace), Vertex AI Search (prior deployments)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true \u2014 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/",
-        "patch_available": "true \u2014 http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
-        "active_exploitation": "true \u2014 http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://hackread.com/hackers-hidden-site-instruction-attack-ai-assistants",
+        "technical_details": "Indirect prompt injection (IPI) is an attack by which adversaries inject malicious instructions into data or tools consumed by an LLM (e.g., web content, documents, or tool outputs) so the model follows those instructions instead of the user\u2019s intent; attacks can be delivered indirectly via multiple data sources used by agentic or multi\u2011source AI applications.",
+        "affected_products": "Google Workspace with Gemini (Gmail, Docs, other Workspace apps)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public PoC or weaponized exploit referenced in the vendor post.",
+        "patch_available": "No specific \"patch\" \u2014 Google describes continuous defenses and model hardening; no vendor patch URL.",
+        "active_exploitation": "Google reports monitoring public web IPI attempts and an increase in observed malicious attempts; however, no confirmed widespread weaponized exploit in production has been cited.",
         "threat_actors": "None known",
-        "mitigation": "Use Google\u2019s layered defenses \u2013 prompt\u2011injection content classifiers, markdown/URL sanitization, suspicious URL redaction, security thought\u2011reinforcement, user\u2011confirmation framework, end\u2011user mitigation notifications, model hardening, and ML\u2011based defenses; additionally block IPI URLs at network gateways (e.g., Forcepoint protections).",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
+        "mitigation": "Deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies via a centralized Policy Engine), ML\u2011based defenses retrained with synthetic attack data, Gemini model hardening, extensive red\u2011team testing (human & automated), Google AI VRP, synthetic data generation and end\u2011to\u2011end simulation/testing.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
       }
     },
     {
@@ -251,15 +192,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) \u2013 attacker\u2011controlled web content crafts inputs that influence agentic browser prompts or agent instructions, causing the agent to perform unsafe actions or disclose sensitive data. Google\u2019s design adds a supervising agent and layered restrictions to limit origin access and unsafe actions.",
-        "affected_products": "Chrome (agentic browsing / Gemini integration)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
-        "active_exploitation": "Active exploitation status unknown",
+        "technical_details": "The vulnerability is indirect prompt injection: attacker\u2011controlled web content can influence or manipulate prompts sent to agentic AI capabilities in Chrome, allowing malicious sites to affect AI behaviour.",
+        "affected_products": "Google Chrome (agentic/Gemini-enabled browsing)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept or weaponized exploit reported.",
+        "patch_available": "Google announced layered defenses for agentic browsing in Chrome; no separate patch URL beyond the vendor advisory.",
+        "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Use Chrome\u2019s new layered defenses (restrict origin access, block indirect prompt injections), avoid visiting untrusted sites, and disable agentic/assistant features until mitigations are fully deployed.",
+        "mitigation": "Use the vendor\u2011provided layered defenses built into Chrome; keep Chrome updated; follow Chrome hardening guidance, restrict untrusted content access, and limit agentic actions.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -279,16 +220,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A linear buffer overflow in the CrabbyAVIF Rust crate's unsafe code path was discovered and fixed pre\u2011release; Android's Scudo hardened allocator used guard pages to turn the overflow into a crash, rendering it non\u2011exploitable. Tracked as CVE\u20112025\u201148530.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 patch: https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
-        "active_exploitation": "false",
+        "exploit_available": "Exploit information unavailable.",
+        "patch_available": "Patch information unavailable.",
+        "active_exploitation": "Active exploitation information unavailable.",
         "threat_actors": "None known",
-        "mitigation": "Apply the official patch above; use Scudo hardened allocator (already default on many Android devices); follow unsafe Rust review practices and training as described in Google\u2019s guidance.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -305,7 +246,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI system processes external content (webpages, emails, documents, calendar invites) that contains hidden malicious instructions, causing the model to follow those instructions unintentionally.",
+        "affected_products": "Gemini (including Gemini in Google Workspace), Gemini 2.5",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit published.",
+        "patch_available": "No separate patch published; Google describes built\u2011in and service\u2011side defenses and ongoing model hardening.",
+        "active_exploitation": "Google observed experiments on the public web and a 32% increase in detections (Nov\u202f2025\u2013Feb\u202f2026) with low sophistication; no confirmed widespread weaponized exploits reported.",
+        "threat_actors": "None known",
+        "mitigation": "Layered defenses: prompt injection content classifiers; security thought reinforcement; markdown sanitization and suspicious URL redaction; user confirmation/HITL framework; end\u2011user mitigation notifications; adversarial training and model hardening (Gemini 2.5).",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -320,7 +273,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Actors implant malicious code or firmware on routers, create unauthorized GRE tunnels for exfiltration, modify routing tables and ACLs, and leverage compromised devices and trusted connections to pivot and maintain persistent, long\u2011term access to target networks.",
+        "affected_products": "Large backbone routers, provider\u2011edge (PE) routers, and customer\u2011edge (CE) routers from multiple telecom\u2011grade vendors.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Public proofs\u2011of\u2011concept may exist for individual CVEs, but no single publicly released exploit covering the overall activity is referenced.",
+        "patch_available": "Vendor patches exist for some exploited vulnerabilities; specific patch URLs vary by vendor.",
+        "active_exploitation": "Confirmed active exploitation in the wild by PRC\u2011linked actors (Salt Typhoon/RedMike, OPERATOR PANDA, UNC5807, GhostEmperor) has been reported.",
+        "threat_actors": "Salt Typhoon (RedMike), OPERATOR PANDA, UNC5807, GhostEmperor",
+        "mitigation": "Restrict administrative access, rotate credentials and keys, apply vendor patches, validate device integrity (firmware/boot configs), monitor for GRE tunnels and abnormal configurations, segment and limit management\u2011plane access, and use vendor\u2011supported integrity checks and logging.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
@@ -353,11 +318,11 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-48015",
-      "title": "Shopware: Stored XSS via SVG file upload \u2014 no SVG sanitization",
-      "summary": "SVG files are in the `allowed_extensions` whitelist and can be uploaded by any admin user via the media manager. There is zero SVG content sanitization anywhere in the upload pipeline. A malicious SVG with JavaScript (`onload`, `<script>`, `<foreignObject>`) executes in the context of the Shopware domain when accessed.\n\n## The Problem\n\nIn `src/Core/Framework/Resources/config/packages/shopware.yaml`, line 194:\n\n```yaml\nallowed_extensions: [\"jpg\", \"jpeg\", \"png\", \"webp\", \"avif\", \"gif\", \"svg\", ...]\n```\n\nSVG is whitelisted. The upload path (`MediaUploadController` \u2192 `FileSaver` \u2192 `TypeDetector`) recognizes SVG as `ImageType` with `VECTOR_GRAPHIC` flag, but no code strips JavaScript, event handlers, or external entity references from the SVG XML.\n\nA search of the entire codebase for SVG sanitization returns \u2014 no `DOMPurify`, no `svg-sanitize`, no `strip_tags` on SVG content, nothing.\n\n## Impact\n\nStored XSS affecting all users who view the uploaded SVG. In an e-commerce context, this can lead to admin account takeover, customer data theft, or malicious plugin installation.\n\n## Suggested Fix\n\nEither:\n\n1. **Remove SVG from `allowed_extensions`** if SVG upload is not a core requirement\n2. **Sanitize SVG content** on upload using a library like `enshrined/svg-sanitize` (strips scripts, event handlers, external references)\n3. **Serve SVGs with `Content-Disposition: attachment`** to prevent inline rendering\n4. **Serve SVGs from a separate domain** (like Nextcloud's `usercontent.apps.nextcloud.com`)\n\nOption 2 is the most practical \u2014 `enshrined/svg-sanitize` is already used by WordPress and other PHP projects.\n\nRegards & BG,\nKeyvan Hardani",
-      "link": "https://github.com/advisories/GHSA-xvhc-gm7j-mhmc",
-      "published": "2026-06-04T19:35:26Z",
+      "id": "CVE-2026-47716",
+      "title": "Bugsink: Issue bulk actions can affect another project\u2019s issue if its UUID is known",
+      "summary": "### Description\nBugsink\u2019s issue list supports bulk actions such as resolving or muting selected issues. In affected versions, the issue list view authorizes access through the project in the URL, but applies the requested bulk action to the submitted issue IDs without also requiring those issues to belong to that project.\n\nThis is a project-boundary authorization issue: a logged-in user with access to one project can change the state of an issue in another project. However, the issue is mitigated by two factors. First, the attacker needs to already know a valid target issue UUID; there is no issue enumeration path here, and guessing UUIDs is not practical. Second, Bugsink is commonly self-hosted within a single trust domain, and Hosted Bugsink gives each tenant a separate Bugsink instance, so cross-project access does not normally imply cross-tenant access.\n\nThis has been fixed by requiring bulk issue actions to operate only on issues belonging to the authorized project.\n\n### Impact\n\nLow-severity cross-project issue state modification, requiring authentication and prior knowledge of a valid issue UUID.",
+      "link": "https://github.com/advisories/GHSA-g5vc-q7qc-v939",
+      "published": "2026-06-05T21:43:56Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -365,10 +330,63 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-48015"
+        "CVE-2026-47716"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47715",
+      "title": "Bugsink: Issue event views can show an event from another project if its UUID is known",
+      "summary": "### Description\n\nBugsink issue event pages accept a direct event identifier from the URL and, in affected versions, look up that event without also requiring it to belong to the issue in the URL.\n\nThis is a project-boundary authorization issue: a logged-in user with access to one project can view another project\u2019s event data through an issue they are allowed to access. However, the issue is mitigated by two factors. First, the attacker needs to already know a valid target event UUID; there is no event enumeration path here, and guessing UUIDs is not practical. Second, Bugsink is commonly self-hosted within a single trust domain, and Hosted Bugsink gives each tenant a separate Bugsink instance, so cross-project access does not normally imply cross-tenant access.\n\nThe affected views include the stacktrace, details, and breadcrumbs pages for an issue event.\n\nThis has been fixed by requiring direct event lookups to match both the authorized issue and the project.\n\n### Impact\nLow-severity cross-project event data exposure, requiring authentication and prior knowledge of a valid event UUID.",
+      "link": "https://github.com/advisories/GHSA-vx2f-6m6h-9frf",
+      "published": "2026-06-05T21:43:23Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47715"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47744",
+      "title": "Shopper: Authorization bypass and RBAC privilege escalation in team settings",
+      "summary": "## Impact\n\nTwo distinct authorization defects in the team settings allowed any authenticated panel user to take over the RBAC system:\n\n- `Settings/Team/Index` had no `mount()` authorization. Any authenticated user could load the page and use its public actions to create new roles and delete other users, including administrators.\n- `Settings/Team/RolePermission` gated its write actions on the read-only `view_users` permission. Any user holding `view_users` could grant themselves or any other user arbitrary permissions, including `manage_users` and `edit_orders`, effectively escalating to full panel administrator from a read-only account.\n\nCombined, these two defects allow a low-privilege authenticated user to obtain administrator privileges and remove the legitimate administrators from the panel.\n\n## Patches\n\nFixed in `v2.8.0`:\n\n- `Settings/Team/Index::mount()` now authorizes against `manage_users`.\n- `Settings/Team/RolePermission` write actions now require `manage_users` instead of `view_users`.\n\nUpgrade via:\n\n```bash\ncomposer require shopper/admin:^2.8\n```\n\n## Workarounds\n\nNone. Upgrade to `v2.8.0`.",
+      "link": "https://github.com/advisories/GHSA-c3qp-2ggw-xjg7",
+      "published": "2026-06-05T20:35:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47744"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-05-06-2026",
+      "title": "Weekly Metasploit Update: Apache ActiveMQ RCE, Gogs Rebase RCE, and Windows Kernel Pointer Enum",
+      "summary": "When Open Source is a bit too Open Several fun modules landed this week, including an Apache RCE, Windows Kernel pointer collection, and Gogs RCE via naming. Leading off is Gogs' RCE that allows an attacker to execute commands by naming their branch --exec and requesting a rebase. Another useful post module by CharlesQuinnDev enumerates the Kernel pointers leaked via the popular NtQuerySystemInformation technique. Those exposed pointers, combined with a good write primitive, make local privilege escalation easier to accomplish. Several local privilege escalations already use that technique, so exposing just that technique was a great call! New module content (3) Apache ActiveMQ RCE via Jolokia addNetworkConnector Authors: dinosn and h00die Type: Exploit Pull request: #21497 contributed by h00die Path: multi/http/apache_activemq_jolokia_rce AttackerKB reference: CVE-2026-34197 Adds a new exploit module exploit/multi/http/apache_activemq_jolokia_rce targeting CVE-2026-34197 in Apache ActiveMQ. The module abuses the Jolokia JMX-over-HTTP API exposed at /api/jolokia/ by calling the addNetworkConnector() MBean operation with a crafted brokerConfig=xbean:http://... URI. ActiveMQ fetches the attacker-controlled URL and instantiates it as a Spring XML application context, achieving remote code execution via a java.lang.ProcessBuilder bean. Authentication is required to exploit this vulnerability. Gogs Git Rebase Argument Injection RCE Author: Crypto-Cat Type: Exploit Pull request: #21515 contributed by jburgess-r7 Path: multi/http/gogs_rebase_rce This adds an exploit module for the Gogs rebase Remote Code Execution (RCE) vulnerability. The module leverages an argument injection flaw residing in the pull request merge workflow of Gogs versions < = 0.14.2 and < = 0.15.0+dev. Windows Kernel Pointer Exposure Enumerator Author: CharlesQuinnDev Type: Post Pull request: #21039 contributed by CharlesQuinnDev Path: windows/gather/windows_kernel_pointer_enum Adds a new post module fo",
+      "link": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-05-06-2026",
+      "published": "2026-06-05T17:01:48+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-34197"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-48017",
@@ -509,60 +527,6 @@
       ],
       "cve_ids": [
         "CVE-2026-3300"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47703",
-      "title": "AdGuard Home: DoQ-to-UDP State Reduction and Source-Port Oracle",
-      "summary": "## Summary\n\nThis report covers the client-triggered DoQ forwarding path in:\n\n- `dnsproxy` `v0.81.2` (`adguard/dnsproxy:v0.81.2`)\n- `AdGuard Home` `v0.107.74` (`adguard/adguardhome:latest`, image version label `v0.107.74`)\n\nThe issue was reproduced on `2026-04-25` with the products configured through\ntheir documented DoQ listener and plain UDP upstream surfaces. The scope is the\ninternal backend UDP hop created when a DoQ query is forwarded to a `udp://`\nupstream.\n\nOn that path, the backend DNS `ID` is not preserved as an independent source of\nentropy. For both products, the backend observer saw `dns_id=0` for every\nsampled client-triggered query on the tested path. Repeated reruns then showed\nthe same `txid=0` behavior and the same positive source-port oracle on every\nsampled run. A separate quoted-port ICMP oracle distinguished the correct\nbackend UDP source port from a wrong one with a stable, client-visible behavior\nchange.\n\nAttached evidence:\n\n- `dnsproxy` oracle path on `v0.81.2`: [attachments/artifacts/g03/20260425T141500Z-g03-v0812/summary.txt](attachments/artifacts/g03/20260425T141500Z-g03-v0812/summary.txt)\n- `dnsproxy` `v0.81.2` repeatability: [attachments/artifacts/g03/repeatability-v0812.md](attachments/artifacts/g03/repeatability-v0812.md)\n- `dnsproxy` steering follow-up on `v0.81.2`: [attachments/artifacts/g04/20260425T141900Z-g04-v0812/summary.txt](attachments/artifacts/g04/20260425T141900Z-g04-v0812/summary.txt)\n- `AdGuard Home` oracle path: [attachments/artifacts/g05/20260425T113000Z-g05/summary.txt](attachments/artifacts/g05/20260425T113000Z-g05/summary.txt)\n\n## Root Cause Analysis\n\nThe observable behavior is consistent across both products:\n\n1. A DoQ client query is accepted on the frontend listener.\n2. The query is forwarded over a backend UDP leg.\n3. On that backend leg, the forwarded DNS `ID` collapses to `0` on the\n   client-triggered path instead of remaining a fresh per-query variable.\n4. The backend UDP source port is still allocated per qu",
-      "link": "https://github.com/advisories/GHSA-xgx4-4h9w-53pv",
-      "published": "2026-06-04T19:50:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47703"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48013",
-      "title": "Shopware: SSRF in Media External-Link Endpoint Bypasses IP Validation",
-      "summary": "## Summary\n\nThe `/api/_action/media/external-link` endpoint allows authenticated admin users to make server-side HTTP HEAD requests to arbitrary internal IP addresses. While the parallel `uploadFromURL` flow validates target IPs against private/reserved ranges via `FileUrlValidator`, the `linkURL` flow only performs a URL format check (regex for `http://` or `https://` prefix), allowing SSRF to internal network services and cloud metadata endpoints.\n\n## Details\n\nThe vulnerability is an inconsistency between two URL-handling flows in `MediaUploadService`.\n\n**Vulnerable path** (`external-link`):\n\n`MediaUploadV2Controller::externalLink()` at `src/Core/Content/Media/Api/MediaUploadV2Controller.php:66` takes a user-supplied `url` parameter and passes it to `MediaUploadService::linkURL()` at `src/Core/Content/Media/Upload/MediaUploadService.php:134`.\n\n`linkURL()` calls `getContentSizeFromValidExternalUrl($url)` at line 159, which only validates via `validateExternalUrl()`:\n\n```php\n// src/Core/Content/Media/Upload/MediaUploadService.php:207-212\npublic static function validateExternalUrl(string $url): void\n{\n    if (!preg_match('/^https?:\\/\\/.+/', $url)) {\n        throw MediaException::invalidUrl($url);\n    }\n}\n```\n\nThen makes a server-side HEAD request with no IP filtering:\n\n```php\n// src/Core/Content/Media/Upload/MediaUploadService.php:292-300\nprivate function getContentSizeFromValidExternalUrl(string $url): int\n{\n    $this->validateExternalUrl($url);\n\n    $headers = $this->httpClient->request('HEAD', $url)->getHeaders();\n    if (!\\array_key_exists('content-length', $headers)) {\n        throw MediaException::fileNotFound($url);\n    }\n\n    return (int) $headers['content-length'][0];\n}\n```\n\n**Protected path** (`upload_by_url`):\n\nIn contrast, `uploadFromURL` uses `FileFetcher::fetchFromURL()` which calls `FileUrlValidator::isValid()`:\n\n```php\n// src/Core/Content/Media/File/FileFetcher.php:64\nif ($this->enableUrlValidation && !$this->fileUrlValidator->isValid($url)) {\n    thr",
-      "link": "https://github.com/advisories/GHSA-gq96-5pfx-f4vc",
-      "published": "2026-06-04T19:36:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48013"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48014",
-      "title": "Shopware: Admin API ACL Bypass in Order State Transition Endpoints",
-      "summary": "## Summary\nThis is a vertical authorization bypass in the Admin API affecting order state transition features (`/api/_action/order/{orderId}/state/{transition}` and similar transaction/delivery transition routes). The root cause is that the transition action routes do not declare required server-side ACL privileges, allowing low-privileged users to pass the authorization boundary. As a result, authenticated users without `order:update` can still change order states, causing real security impact such as operational integrity loss, automation workflow misuse, and fulfillment/settlement/support process disruption.\n\n## Description\nShopware\u2019s permission model requires server-side enforcement independent of UI guards. However, the dedicated order-state transition action endpoints are missing ACL metadata, so accounts without regular order update privileges can still submit transition requests that are processed by the backend. In real reproduction, the same low-privileged account receives 403 on the normal order update API, while the transition action API succeeds with 200 and updates order state in the database. The key point is that reproduction is possible through direct API calls regardless of UI access restrictions or hidden buttons. This is not a functional edge case; it is an implementation gap in authorization boundaries that enables privilege escalation behavior where a \u201cread/limited-edit\u201d user can control order lifecycle states.\n\n### Expected Behavior\n- Order, order-transaction, and order-delivery transition endpoints must perform explicit server-side ACL checks.\n- Requests should be rejected unless the caller has the proper entity update privileges, such as `order:update`, `order_transaction:update`, or `order_delivery:update`.\n- If an account gets 403 on the normal order update API, transition actions on the same protected resource should also be blocked by equivalent policy.\n- Even if transition internals use SYSTEM_SCOPE, caller authorization must be validat",
-      "link": "https://github.com/advisories/GHSA-f8q6-3g5w-jjr6",
-      "published": "2026-06-04T19:33:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48014"
       ],
       "is_zero_day": false,
       "is_high_severity": true
