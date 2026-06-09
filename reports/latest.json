@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-09T01:56:39.947006+00:00",
-  "total": 29,
+  "generated": "2026-06-09T08:58:26.672835+00:00",
+  "total": 33,
   "kev": 0,
-  "zero_day": 16,
+  "zero_day": 19,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,72 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated path traversal allowing attackers to read sensitive files such as logs, configuration files, and credentials via crafted requests against SimpleHelp RMM.",
-        "affected_products": "SimpleHelp remote support / RMM, versions 5.5.7 and earlier",
+        "technical_details": "CVE\u20112024\u201157727 is a directory\u2011traversal vulnerability in SimpleHelp Remote Support versions \u22645.5.7 that permits unauthenticated remote attackers to read arbitrary files via crafted file paths, enabling retrieval of logs, configuration files, and credentials.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) version 5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concept available (e.g., Offsec blog at http://offsec.com/blog/cve-2024-57727)",
-        "patch_available": "Yes \u2013 vendor has released a patch; see vendor advisory (http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability) and SimpleHelp blog (http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know)",
-        "active_exploitation": "Confirmed \u2013 CISA advisory reports ransomware actors exploiting unpatched SimpleHelp RMM in the wild since January 2025.",
-        "threat_actors": "DragonForce ransomware group and other unidentified ransomware actors",
-        "mitigation": "Upgrade to a fixed SimpleHelp version. If a patch is unavailable, isolate/unexpose SimpleHelp instances, restrict network access, and follow CISA guidance (https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a).",
+        "exploit_available": "No public exploit or PoC known.",
+        "patch_available": "SimpleHelp 5.5.8 patch is available on the vendor download page.",
+        "active_exploitation": "Yes, ransomware actors have actively exploited CVE\u20112024\u201157727 in the wild.",
+        "threat_actors": "Ransomware actors (unspecified)",
+        "mitigation": "Upgrade to SimpleHelp version 5.5.8 or later. If immediate upgrade is not possible, restrict remote access to the RMM service and apply network segmentation.",
         "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+      }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-check-point-flaw-exploited-by-ransomware-gangs/",
+      "title": "CISA gives feds 3 days to patch Check Point VPN bug exploited as zero-day",
+      "summary": "CISA has ordered U.S. government agencies to secure their Check Point Remote Access VPN and Mobile Access deployments against a critical vulnerability exploited in zero-day attacks by Qilin ransomware affiliates. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-check-point-flaw-exploited-by-ransomware-gangs/",
+      "published": "2026-06-09T08:18:39+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "CVE-2026-50751 is an authentication bypass vulnerability in Check Point Remote Access VPN that allows an unauthenticated attacker to bypass the normal login process and gain access to the VPN service.",
+        "affected_products": "Check Point Remote Access VPN, Check Point Mobile Access",
+        "cvss_score": "-1.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploitation observed in the wild by Qilin ransomware affiliates; no public PoC or exploit code URL is known.",
+        "patch_available": "Patch is available through Check Point's security advisory (URL unavailable).",
+        "active_exploitation": "Confirmed active exploitation in the wild by Qilin ransomware affiliates, as reported by multiple sources.",
+        "threat_actors": "Qilin ransomware affiliates",
+        "mitigation": "Apply the Check Point security patch once released, enforce multi\u2011factor authentication, restrict VPN access to trusted IP ranges, and follow CISA guidance to secure Remote Access VPN and Mobile Access deployments.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
+      "title": "LiteLLM Flaw CVE-2026-42271 Exploited in the Wild, Chains to Unauthenticated RCE",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a high-severity flaw impacting BerriAI LiteLLM to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-42271 (CVSS score: 8.7), is a command injection vulnerability that could allow any authenticated user to run arbitrary commands on the",
+      "link": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
+      "published": "2026-06-09T06:26:14+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-42271"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Command injection vulnerability allowing an authenticated user to execute arbitrary commands on the host via LiteLLM\u2019s request handling.",
+        "affected_products": "LiteLLM (BerriAI LiteLLM) versions 1.74.2 through before 1.83.7",
+        "cvss_score": "8.7",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Public proof-of-concept / exploit reports exist in media; specific PoC URL unavailable.",
+        "patch_available": "Patch available in LiteLLM versions >= 1.83.7 (upgrade to 1.83.7 or later). Patch/advisory URL unavailable.",
+        "active_exploitation": "Confirmed reports of active exploitation in the wild (media reports).",
+        "threat_actors": "None known",
+        "mitigation": "Upgrade LiteLLM to 1.83.7 or later; restrict access to the LiteLLM instance, enforce strong authentication, apply network segmentation, and monitor for suspicious commands.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -52,15 +108,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The helper File::prohibitWrappers calls parse_url($filename, PHP_URL_SCHEME) and then checks is_string($scheme) && strlen($scheme) > 1 to reject stream wrappers such as phar://, php://, data:// or expect://. When the input has the form phar:///path/file.phar/inner with three or more slashes after the scheme, parse_url returns boolean false instead of the scheme string, causing the is_string branch to be skipped and the wrapper check to be bypassed.",
-        "affected_products": "PHPOffice/PhpSpreadsheet",
+        "technical_details": "A bypass exists in PHPSpreadsheet's File::prohibitWrappers helper; it calls parse_url($filename, PHP_URL_SCHEME) and checks is_string($scheme) && strlen($scheme) > 1 to reject stream wrappers. When an input uses a scheme with three or more slashes after the scheme (e.g., phar:///path/file.phar/inner), parse_url returns boolean false, skipping the is_string branch and allowing the wrapper to bypass the check.",
+        "affected_products": "PHPSpreadsheet (specific affected versions: unspecified)",
         "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or exploit identified.",
-        "patch_available": "Patch is available via the advisory at https://github.com/advisories/GHSA-87m4-826x-3crx",
-        "active_exploitation": "No confirmed reports of active exploitation found.",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Public PoC availability unknown",
+        "patch_available": "Yes \u2014 vendor advisory at https://github.com/advisories/GHSA-87m4-826x-3crx",
+        "active_exploitation": "None known",
         "threat_actors": "None known",
-        "mitigation": "Apply the vendor advisory/patch from the GHSA link or implement additional validation to detect schemes even when parse_url returns false (e.g., explicit pattern matching for known wrappers or normalize/strip extra slashes before parse_url).",
+        "mitigation": "Validate wrapper usage differently (do not rely solely on parse_url scheme result); normalize inputs and explicitly detect wrapper prefixes; apply vendor patch when available.",
         "vendor_advisory": "https://github.com/advisories/GHSA-87m4-826x-3crx"
       }
     },
@@ -83,16 +139,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability affects deployments that use the deprecated IKEv1 key exchange protocol where gateways accept legacy Remote Access clients and do not require a machine certificate. It is an improper authentication flaw (CWE\u2011287) caused by a logic flow weakness in how Remote Access and Mobile Access handle legacy IKEv1 authentication.",
-        "affected_products": "Check Point Remote Access VPN, Check Point Mobile Access, Check Point Spark Firewall",
+        "technical_details": "Improper authentication (CWE\u2011287) caused by a logic flow weakness in the IKEv1 implementation, permitting remote access clients to bypass credential checks when the gateway accepts legacy IKEv1 connections without requiring a machine certificate.",
+        "affected_products": "Check Point Remote Access VPN, Check Point Mobile Access, Check Point Spark Firewall (deployments using deprecated IKEv1)",
         "cvss_score": "9.3",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept or weaponized exploit is known.",
-        "patch_available": "No official patch currently available.",
-        "active_exploitation": "Active exploitation has been reported, with activity dating back to May 7, 2026.",
+        "exploit_available": "No public proof\u2011of\u2011concept or exploit is currently known.",
+        "patch_available": "Patch released via vendor hotfix; see vendor advisory.",
+        "active_exploitation": "Confirmed active exploitation reported by Check Point Research and Rapid7.",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Apply the Check Point hotfix referenced in the advisory, disable IKEv1 usage, and require machine certificates for VPN connections. Until a patch is applied, restrict VPN access to clients using supported IKEv2.",
+        "vendor_advisory": "http://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol"
       }
     },
     {
@@ -110,15 +166,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Path traversal/symlink handling flaw in Gogs repository file\u2011editing functionality allows attackers to overwrite files outside the repository (via symlink), leading to remote code execution.",
-        "affected_products": "Gogs",
+        "technical_details": "The flaw is a path\u2011traversal via symlinks that bypasses a prior RCE fix, enabling attackers to overwrite arbitrary files outside the repository and achieve remote code execution.",
+        "affected_products": "Gogs (self\u2011hosted Git service)",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC available at https://github.com/zAbuQasem/gogs-CVE-2025-8110",
-        "patch_available": "Gogs has released a patch; vendor patch URL: https://github.com/gogs/gogs/releases",
-        "active_exploitation": "Confirmed active exploitation; over 700 Gogs instances compromised, and the vulnerability is listed in the CISA Known Exploited Vulnerabilities (KEV) catalog.",
+        "exploit_available": "Proof of Concept available at http://github.com/zAbuQasem/gogs-CVE-2025-8110",
+        "patch_available": "A patch is available; see https://www.bleepingcomputer.com/news/security/gogs-patches-critical-zero-day-enabling-remote-code-execution/",
+        "active_exploitation": "Confirmed active exploitation; see Wiz Research, SecurityWeek, The Hacker News, and Bleeping Computer reports.",
         "threat_actors": "None known",
-        "mitigation": "Apply the vendor patch immediately; if the patch cannot be applied, take affected instances offline or restrict network exposure, disable web\u2011based editing features, and audit/restore overwritten files.",
+        "mitigation": "Apply the latest Gogs patch referenced in the Bleeping Computer article and upgrade to the patched version.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -137,15 +193,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A logic flow weakness in Remote Access and Mobile Access certificate validation during deprecated IKEv1 key exchange allows an unauthenticated remote attacker to bypass user authentication and establish a VPN connection without valid credentials.",
-        "affected_products": "Check Point Remote Access VPN, Mobile Access (SSL VPN), Spark Firewall; versions R80.20.X, R80.40, R81, R81.10, R81.10.X, R81.20, R82, R82.00.X, R82.10 (when using deprecated IKEv1).",
+        "technical_details": "A logic flow/improper authentication weakness in certificate validation during the deprecated IKEv1 key exchange in Remote Access and Mobile Access components allows an unauthenticated remote attacker to bypass user authentication and establish a VPN session without a valid password. A related issue (CVE\u20112026\u201150752) affects certificate validation for site\u2011to\u2011site VPNs, enabling potential MITM attacks.",
+        "affected_products": "Check Point Remote Access VPN, Mobile Access (SSL VPN), Spark Firewall, Quantum Security Gateway; versions: R80.20.X, R80.40, R81, R81.10, R81.20 Jumbo Hotfix Take 141 or below, R82 Jumbo Hotfix Take 103 or below, R82.10 Jumbo Hotfix Take 19 or below, Spark Firewall R80.20.X, R81.10.X, R82.00.X",
         "cvss_score": "9.3",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC disclosed.",
-        "patch_available": "Patch is available \u2013 hotfixes are provided via the vendor support advisory.",
-        "active_exploitation": "Yes \u2013 active exploitation has been confirmed, with activity reported from May 7, 2026 and increased in early June; at least one incident linked to a Qilin ransomware affiliate.",
-        "threat_actors": "Qilin ransomware gang (at least one confirmed incident); otherwise financially motivated ransomware affiliates.",
-        "mitigation": "Apply the Check Point hotfixes immediately. If patching cannot be performed, disable legacy remote access client support, configure Remote Access VPN to use IKEv2 only, require machine\u2011certificate authentication, enable IPS with latest signatures, and review logs for suspicious activity.",
+        "exploit_available": "No public PoC reported; exploitation has been observed in the wild but no public exploit is available.",
+        "patch_available": "Patch available: Yes \u2013 Check Point released emergency hotfixes for CVE\u20112026\u201150751 and CVE\u20112026\u201150752 (see https://support.checkpoint.com/results/sk/sk185033).",
+        "active_exploitation": "Yes \u2013 Check Point observed active exploitation beginning May\u202f7\u202f2026, with multiple reports confirming exploitation in the wild and linkage to the Qilin ransomware operation.",
+        "threat_actors": "Qilin ransomware",
+        "mitigation": "Remove support for legacy Remote Access client; configure Remote Access VPN authentication to IKEv2 only; require machine certificate authentication; enable IPS and download the latest signatures.",
         "vendor_advisory": "https://support.checkpoint.com/results/sk/sk185033"
       }
     },
@@ -165,16 +221,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection via content poisoning: an attacker creates a crafted Google Doc/Calendar/Gmail, shares it with a target, and Gemini Enterprise\u2019s retrieval system pulls the malicious content into its context, causing the model to execute attacker\u2011controlled commands.",
-        "affected_products": "Google Gemini Enterprise",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial content placed in external corpora (web pages, documents, or retrieval sources) is retrieved by an LLM system (RAG or agentic browsing) and causes the model to follow malicious instructions \u2014 e.g., sandbox escape or data exfiltration demonstrated in end\u2011to\u2011end IPI exploits and the GeminiJack zero\u2011click vulnerability.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC available at https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/",
-        "patch_available": "Patch not yet released; mitigation provided by Google security team.",
-        "active_exploitation": "Confirmed active exploitation; increase of malicious IPI attempts reported and a disclosed zero\u2011click exploit (GeminiJack).",
+        "exploit_available": "Public PoCs reported in research (arXiv paper, Noma Labs writeup, Forcepoint report).",
+        "patch_available": "Vendor advisory URL unavailable.",
+        "active_exploitation": "Confirmed active exploitation reported in research and vendor blog posts; examples include the GeminiJack zero\u2011click exploit and other IPI payloads observed in the wild.",
         "threat_actors": "None known",
-        "mitigation": "Apply Google\u2019s mitigation fixing instruction/content confusion in the RAG pipeline; restrict sharing of Google Docs/Calendar/Gmail with untrusted parties; employ content sanitization and monitor for abnormal prompt injection activity.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Follow vendor guidance: avoid trusting untrusted web content, harden retrieval/grounding pipelines, apply input sanitization, source\u2011filtering and provenance tracking.",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -193,16 +249,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) injects malicious instructions into data sources or tools the LLM uses while fulfilling a user query; an attacker can influence model behavior (including zero\u2011click cases) by poisoning external content or tool outputs that the agentic LLM ingests. CVE\u20112025\u201154131 can be triggered when chained with IPI and was fixed in version 1.3.",
-        "affected_products": "Google Workspace with Gemini integrations / Gemini Enterprise (fixed in version 1.3)",
-        "cvss_score": "-999.0",
+        "technical_details": "Indirect prompt injection (IPI) exploits the fact that large language models process data and tool outputs as part of a prompt. By embedding malicious instructions into those inputs, an attacker can steer the model\u2019s response or actions, potentially without any explicit user query. The GeminiJack case demonstrates a zero\u2011click scenario where the injection occurs within Gemini Enterprise\u2019s internal data handling.",
+        "affected_products": "Google Workspace (Gemini app), Gemini Enterprise",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is known.",
-        "patch_available": "Fixed in version 1.3; details referenced in NVD entry.",
-        "active_exploitation": "No confirmed active exploitation in the wild; only research disclosure by Noma Labs.",
+        "exploit_available": "Proof\u2011of\u2011concept disclosed by Noma Labs (http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability).",
+        "patch_available": "No official patch currently available; mitigation is provided via Google\u2019s layered defense strategy.",
+        "active_exploitation": "Yes. Reports of IPI payloads in the wild (Forcepoint) and a zero\u2011click exploit (GeminiJack) disclosed by Noma Labs show active exploitation.",
         "threat_actors": "None known",
-        "mitigation": "Implement layered defenses: data provenance controls, instrumented tool access, input/output sanitization, continuous monitoring and hardening.",
-        "vendor_advisory": "http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
+        "mitigation": "Implement Google\u2019s layered defense approach: validate and sanitize all data inputs to Gemini, isolate Gemini execution environments, monitor for anomalous tool usage, and enforce strict permission controls for integrations within Google Workspace.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -221,15 +277,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection: malicious web content injects prompts into the agentic browser's AI, causing it to perform unintended actions; mitigated by layered defenses and a secondary AI agent.",
-        "affected_products": "Chrome (agentic/Gemini-enabled builds; specific versions not listed)",
+        "technical_details": "Indirect prompt injection allows malicious sites or content to inject instructions into the context of agentic AI browsers, enabling data exfiltration or triggering further vulnerabilities when chained.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "No public PoC or weaponized exploit reported.",
-        "patch_available": "No separate patch URL; mitigation is described in the vendor advisory.",
-        "active_exploitation": "No confirmed active exploitation reported.",
+        "exploit_available": "Public PoC available at http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability and referenced in the NVD CVE entry.",
+        "patch_available": "No official patch available; Google provides layered defenses and mitigations described in the advisory.",
+        "active_exploitation": "Confirmed active exploitation reported by Noma Labs (GeminiJack) and referenced in the NVD CVE entry.",
         "threat_actors": "None known",
-        "mitigation": "Enable Chrome's new layered defenses for agentic browsing, which include site\u2011origin restrictions and a secondary AI agent to detect and block indirect prompt injection.",
+        "mitigation": "Disable or restrict agentic browsing features; apply layered defenses including prompt\u2011injection filtering, origin\u2011access restrictions, and limiting unsafe AI actions as described by Google.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -247,19 +303,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC or exploit information unavailable.",
-        "patch_available": "Patch information unavailable.",
-        "active_exploitation": "No confirmed active exploitation reported.",
-        "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -275,19 +319,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when hidden or external instructions embedded in documents, web content, emails, or other data sources are ingested by an AI system and cause it to follow attacker\u2011supplied instructions (e.g., exfiltrate data or perform unauthorized actions). Google\u2019s advisory explains IPIs target the prompt lifecycle and recommends layered controls at ingestion, parsing, execution, and output stages.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No single public, vendor\u2011issued PoC; independent researchers have published in\u2011the\u2011wild payloads and PoCs (see Forcepoint report).",
-        "patch_available": "No vendor patch; Google published defensive guidance and layered\u2011mitigation recommendations at the advisory URL.",
-        "active_exploitation": "Yes \u2013 multiple security vendors and researchers reported in\u2011the\u2011wild indirect prompt injection payloads and detections.",
-        "threat_actors": "None known",
-        "mitigation": "Use defense\u2011in\u2011depth: sanitize and classify external inputs before they reach LLMs, strip or neutralize embedded instructions, apply strict context separation, use model output filters and hallucination detection, enforce least\u2011privilege access for models, and monitor for anomalous behavior. See Google advisory for detailed controls.",
-        "vendor_advisory": "http://blog.google/security/mitigating-prompt-injection-attacks"
-      }
+      "is_high_severity": true
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -316,6 +348,38 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/google-patches-fifth-chrome-zero-day-bug-exploited-in-attacks-this-year/",
+      "title": "Google patches new Chrome zero-day flaw exploited in the wild",
+      "summary": "Google has released emergency updates to patch another Chrome zero-day vulnerability that has been exploited in the wild, the fifth such flaw patched since the start of the year. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/google-patches-fifth-chrome-zero-day-bug-exploited-in-attacks-this-year/",
+      "published": "2026-06-09T06:56:27+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/google-patches-5th-chrome-zero-day-exploited-in-2026/",
+      "title": "Google Patches 5th Chrome Zero-Day Exploited in 2026",
+      "summary": "The vulnerability is tracked as CVE-2026-11645 and it was reported in late April by an anonymous researcher. The post Google Patches 5th Chrome Zero-Day Exploited in 2026 appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/google-patches-5th-chrome-zero-day-exploited-in-2026/",
+      "published": "2026-06-09T05:57:40+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-11645"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -368,19 +432,21 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/solarwinds-patches-exploited-serv-u-vulnerability/",
-      "title": "SolarWinds Serv-U Vulnerability Exploited in the Wild",
-      "summary": "Unauthenticated attackers can exploit the flaw via specially crafted POST requests that crash the Serv-U service. The post SolarWinds Serv-U Vulnerability Exploited in the Wild appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/solarwinds-patches-exploited-serv-u-vulnerability/",
-      "published": "2026-06-08T07:52:28+00:00",
-      "source": "SecurityWeek",
+      "id": "https://seclists.org/fulldisclosure/2026/Jun/2",
+      "title": "SEC Consult SA-20260608-0 :: Privilege Escalation via Binary Planting in Genetec-provided RabbitMQ in multiple Genetec products",
+      "summary": "Posted by SEC Consult Vulnerability Lab via Fulldisclosure on Jun 08 SEC Consult Vulnerability Lab Security Advisory < 20260608-0 > ======================================================================= title: Privilege Escalation via Binary Planting product: Genetec-provided RabbitMQ in multiple Genetec products vulnerable version: Multiple products, see below. fixed version: Multiple products, see below. CVE number: CVE-2026-25112 ...",
+      "link": "https://seclists.org/fulldisclosure/2026/Jun/2",
+      "published": "2026-06-09T05:32:32+00:00",
+      "source": "Full Disclosure",
       "tags": [
-        "news",
-        "research"
+        "disclosure",
+        "exploit"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-25112"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-47735",
