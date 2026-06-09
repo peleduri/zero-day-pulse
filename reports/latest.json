@@ -1,72 +1,10 @@
 {
-  "generated": "2026-06-08T20:00:40.835383+00:00",
-  "total": 21,
-  "kev": 2,
-  "zero_day": 14,
+  "generated": "2026-06-09T01:56:39.947006+00:00",
+  "total": 29,
+  "kev": 0,
+  "zero_day": 16,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-42271",
-      "title": "CVE-2026-42271 \u2014 BerriAI LiteLLM Command Injection Vulnerability",
-      "summary": "Vendor: BerriAI | Product: LiteLLM. BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-22)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42271",
-      "published": "2026-06-08",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-42271"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Two preview endpoints (/mcp-rest/test/connection and /mcp-rest/test/tools/list) accepted full server configurations including command, args, and env fields. When a stdio configuration was supplied, the server spawned the supplied command as a subprocess with proxy process privileges, enabling arbitrary command execution (CWE\u201177/CWE\u201178).",
-        "affected_products": "BerriAI LiteLLM versions >=1.74.2 and <1.83.7",
-        "cvss_score": "8.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "No public PoC or weaponized exploit reported in major sources; the claim on LinkedIn is uncorroborated.",
-        "patch_available": "Yes \u2014 fixed in LiteLLM v1.83.7; advisory: https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g; release: https://github.com/BerriAI/litellm/releases/tag/v1.83.7-stable",
-        "active_exploitation": "No confirmed widespread exploitation reported by primary sources; the LinkedIn claim of exploitation is uncorroborated.",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade to LiteLLM v1.83.7 or later. If upgrade is not possible, disable or block the /mcp-rest/test/connection and /mcp-rest/test/tools/list endpoints via firewall/reverse\u2011proxy, revoke or restrict unnecessary API keys, disable stdio transport, and set disable_error_logs: true as a temporary workaround.",
-        "vendor_advisory": "https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g"
-      }
-    },
-    {
-      "id": "CVE-2026-50751",
-      "title": "CVE-2026-50751 \u2014 Check Point Security Gateway Improper Authentication Vulnerability",
-      "summary": "Vendor: Check Point | Product: Security Gateway. Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-11)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751",
-      "published": "2026-06-08",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-50751"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Authentication bypass in deprecated IKEv1 key\u2011exchange due to a logic flow weakness in Remote Access and Mobile Access certificate validation, enabling a VPN session to be established without a valid user password.",
-        "affected_products": "Mobile Access / SSL VPN, Remote Access VPN, Spark Firewall (versions: R80.20.X (EOS), R80.40 (EOS), R81 (EOS), R81.10 (EOS), R81.10.X, R81.20, R82, R82.00.X, R82.10)",
-        "cvss_score": "9.3",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Public proof-of-concept not identified.",
-        "patch_available": "Yes \u2013 Check Point has released hotfixes (see SK185033).",
-        "active_exploitation": "Yes \u2013 active exploitation in the wild has been observed.",
-        "threat_actors": "Qilin ransomware; other financially motivated ransomware affiliates (medium confidence)",
-        "mitigation": "Apply the Check Point hotfixes immediately; alternatively, disable/deprecate IKEv1, require machine certificates for connections, audit logs and configurations, and follow the guidance in SK185033.",
-        "vendor_advisory": "https://support.checkpoint.com/results/sk/sk185033"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -84,16 +22,46 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability is a directory/path traversal that lets unauthenticated remote attackers read arbitrary files, potentially exposing logs, configuration files, and credentials.",
-        "affected_products": "SimpleHelp remote support software version 5.5.7 and earlier",
+        "technical_details": "Unauthenticated path traversal allowing attackers to read sensitive files such as logs, configuration files, and credentials via crafted requests against SimpleHelp RMM.",
+        "affected_products": "SimpleHelp remote support / RMM, versions 5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public exploit reported; no public PoC link provided.",
-        "patch_available": "Patch released by vendor; see vendor advisory.",
-        "active_exploitation": "Active exploitation reported by ransomware actors as described in the CISA advisory.",
-        "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
+        "exploit_available": "Public proof\u2011of\u2011concept available (e.g., Offsec blog at http://offsec.com/blog/cve-2024-57727)",
+        "patch_available": "Yes \u2013 vendor has released a patch; see vendor advisory (http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability) and SimpleHelp blog (http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know)",
+        "active_exploitation": "Confirmed \u2013 CISA advisory reports ransomware actors exploiting unpatched SimpleHelp RMM in the wild since January 2025.",
+        "threat_actors": "DragonForce ransomware group and other unidentified ransomware actors",
+        "mitigation": "Upgrade to a fixed SimpleHelp version. If a patch is unavailable, isolate/unexpose SimpleHelp instances, restrict network access, and follow CISA guidance (https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a).",
         "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+      }
+    },
+    {
+      "id": "CVE-2026-45034",
+      "title": "PHPSpreadsheet has a patch bypass for CVE-2026-34084 ",
+      "summary": "## Summary\n\nCVE-2026-34084 was patched by the helper `File::prohibitWrappers`. The helper calls `parse_url($filename, PHP_URL_SCHEME)` and then checks `is_string($scheme) && strlen($scheme) > 1` to reject stream wrappers such as `phar://`, `php://`, `data://` or `expect://`. The check is not equivalent to \"does the path contain a wrapper\". When the input has the form `phar:///path/file.phar/inner` with three or more slashes after the scheme, `parse_url` returns boolean `false` instead of returning the scheme string. The `is_string($scheme)` branch is therefore skipped, the helper returns without throwing, and the caller proceeds. PHP's stream layer, however, still treats `phar:///...` as a valid phar wrapper and opens the underlying phar file. The result is that `IOFactory::load($attackerPath)` walks past the patch and still touches the phar wrapper. On PHP 7.x, simply reaching the phar wrapper via `is_file` is enough for PHP to automatically deserialize the phar metadata, which in turn invokes the magic methods `__wakeup` and `__destruct` of an attacker controlled object and gives full RCE. On PHP 8.x, automatic metadata deserialization for plain file ops was removed, so the chain at the PhpSpreadsheet layer reduces to a phar wrapper file read primitive, and RCE only resurfaces if the downstream consumer ever calls `Phar::getMetadata`.\n\n## Vulnerable code\n\nThe file `vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Shared/File.php` is byte identical across all six latest tags listed below:\n\n```php\npublic static function prohibitWrappers(string $filename): void\n{\n    $scheme = parse_url($filename, PHP_URL_SCHEME);\n    if (is_string($scheme) && strlen($scheme) > 1) {\n        throw new Exception(\"Stream wrappers are not permitted as file paths: {$filename}\");\n    }\n}\n```\n\nFor input `phar://x/dummy.csv` the call returns the string `\"phar\"` and the throw fires correctly. For input `phar:///work/exploit.phar/dummy.csv` the same call returns `false` and the throw is skip",
+      "link": "https://github.com/advisories/GHSA-87m4-826x-3crx",
+      "published": "2026-06-08T23:00:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45034"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "The helper File::prohibitWrappers calls parse_url($filename, PHP_URL_SCHEME) and then checks is_string($scheme) && strlen($scheme) > 1 to reject stream wrappers such as phar://, php://, data:// or expect://. When the input has the form phar:///path/file.phar/inner with three or more slashes after the scheme, parse_url returns boolean false instead of the scheme string, causing the is_string branch to be skipped and the wrapper check to be bypassed.",
+        "affected_products": "PHPOffice/PhpSpreadsheet",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public PoC or exploit identified.",
+        "patch_available": "Patch is available via the advisory at https://github.com/advisories/GHSA-87m4-826x-3crx",
+        "active_exploitation": "No confirmed reports of active exploitation found.",
+        "threat_actors": "None known",
+        "mitigation": "Apply the vendor advisory/patch from the GHSA link or implement additional validation to detect schemes even when parse_url returns false (e.g., explicit pattern matching for known wrappers or normalize/strip extra slashes before parse_url).",
+        "vendor_advisory": "https://github.com/advisories/GHSA-87m4-826x-3crx"
       }
     },
     {
@@ -115,16 +83,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Authentication bypass in deprecated IKEv1 key\u2011exchange due to a logic flow weakness in Remote Access and Mobile Access certificate validation, enabling a VPN session to be established without a valid user password.",
-        "affected_products": "Mobile Access / SSL VPN, Remote Access VPN, Spark Firewall (versions: R80.20.X (EOS), R80.40 (EOS), R81 (EOS), R81.10 (EOS), R81.10.X, R81.20, R82, R82.00.X, R82.10)",
+        "technical_details": "The vulnerability affects deployments that use the deprecated IKEv1 key exchange protocol where gateways accept legacy Remote Access clients and do not require a machine certificate. It is an improper authentication flaw (CWE\u2011287) caused by a logic flow weakness in how Remote Access and Mobile Access handle legacy IKEv1 authentication.",
+        "affected_products": "Check Point Remote Access VPN, Check Point Mobile Access, Check Point Spark Firewall",
         "cvss_score": "9.3",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Public proof-of-concept not identified.",
-        "patch_available": "Yes \u2013 Check Point has released hotfixes (see SK185033).",
-        "active_exploitation": "Yes \u2013 active exploitation in the wild has been observed.",
-        "threat_actors": "Qilin ransomware; other financially motivated ransomware affiliates (medium confidence)",
-        "mitigation": "Apply the Check Point hotfixes immediately; alternatively, disable/deprecate IKEv1, require machine certificates for connections, audit logs and configurations, and follow the guidance in SK185033.",
-        "vendor_advisory": "https://support.checkpoint.com/results/sk/sk185033"
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept or weaponized exploit is known.",
+        "patch_available": "No official patch currently available.",
+        "active_exploitation": "Active exploitation has been reported, with activity dating back to May 7, 2026.",
+        "threat_actors": "None known",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -142,15 +110,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Path traversal / symlink handling flaw in Gogs repository file\u2011editing functionality allows attackers to overwrite files outside the repository (including application files), enabling remote code execution when web\u2011accessible files or service processes are replaced.",
-        "affected_products": "Gogs (self\u2011hosted Git service)",
+        "technical_details": "Path traversal/symlink handling flaw in Gogs repository file\u2011editing functionality allows attackers to overwrite files outside the repository (via symlink), leading to remote code execution.",
+        "affected_products": "Gogs",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC exists \u2014 https://github.com/zAbuQasem/gogs-CVE-2025-8110",
-        "patch_available": "Yes \u2014 vendor has released a patch (see CISA directive).",
-        "active_exploitation": "Confirmed active exploitation in the wild; over 700 compromised instances reported.",
-        "threat_actors": "None known.",
-        "mitigation": "Apply vendor patch immediately; if patch unavailable, restrict Internet exposure of Gogs instances, disable repository file\u2011editing web functionality, remove/deny untrusted users, and enforce network controls (firewall, IP allowlists).",
+        "exploit_available": "Public PoC available at https://github.com/zAbuQasem/gogs-CVE-2025-8110",
+        "patch_available": "Gogs has released a patch; vendor patch URL: https://github.com/gogs/gogs/releases",
+        "active_exploitation": "Confirmed active exploitation; over 700 Gogs instances compromised, and the vulnerability is listed in the CISA Known Exploited Vulnerabilities (KEV) catalog.",
+        "threat_actors": "None known",
+        "mitigation": "Apply the vendor patch immediately; if the patch cannot be applied, take affected instances offline or restrict network exposure, disable web\u2011based editing features, and audit/restore overwritten files.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -169,15 +137,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "An authentication bypass vulnerability in Check Point Remote Access VPN/Mobile Access when configured to use deprecated IKEv1 key exchange, allowing unauthenticated remote attackers to bypass authentication and establish a remote access VPN connection (CVE\u20112026\u201150751).",
-        "affected_products": "Check Point Remote Access VPN, Mobile Access deployments and Spark firewalls configured to use deprecated IKEv1 key exchange and accepting legacy Remote Access clients without mandatory machine certificate.",
-        "cvss_score": "0.0",
+        "technical_details": "A logic flow weakness in Remote Access and Mobile Access certificate validation during deprecated IKEv1 key exchange allows an unauthenticated remote attacker to bypass user authentication and establish a VPN connection without valid credentials.",
+        "affected_products": "Check Point Remote Access VPN, Mobile Access (SSL VPN), Spark Firewall; versions R80.20.X, R80.40, R81, R81.10, R81.10.X, R81.20, R82, R82.00.X, R82.10 (when using deprecated IKEv1).",
+        "cvss_score": "9.3",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC/weaponized exploit reported in sources reviewed.",
-        "patch_available": "Yes \u2014 Check Point released security updates/hotfixes for the issue.",
-        "active_exploitation": "Yes \u2014 Check Point observed active exploitation starting May 7, with a surge in early June; a few dozen organizations were affected and at least one confirmed incident was linked to Qilin ransomware.",
-        "threat_actors": "Qilin ransomware gang",
-        "mitigation": "Remove support for legacy remote access client; configure Remote Access VPN Authentication to IKEv2 only; require Machine Certificate Authentication; enable IPS and download signatures.",
+        "exploit_available": "No public PoC disclosed.",
+        "patch_available": "Patch is available \u2013 hotfixes are provided via the vendor support advisory.",
+        "active_exploitation": "Yes \u2013 active exploitation has been confirmed, with activity reported from May 7, 2026 and increased in early June; at least one incident linked to a Qilin ransomware affiliate.",
+        "threat_actors": "Qilin ransomware gang (at least one confirmed incident); otherwise financially motivated ransomware affiliates.",
+        "mitigation": "Apply the Check Point hotfixes immediately. If patching cannot be performed, disable legacy remote access client support, configure Remote Access VPN to use IKEv2 only, require machine\u2011certificate authentication, enable IPS with latest signatures, and review logs for suspicious activity.",
         "vendor_advisory": "https://support.checkpoint.com/results/sk/sk185033"
       }
     },
@@ -197,15 +165,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) \u2013 attackers place adversarial instructions inside external content retrieved by LLM\u2011based systems (e.g., web pages or knowledge corpora) so the model executes those instructions when processing user queries; impacts RAG and agentic systems where retrieval or tool\u2011use bridges attacker\u2011controlled content into the model context.",
-        "affected_products": "Affected products unavailable.",
+        "technical_details": "Indirect Prompt Injection via content poisoning: an attacker creates a crafted Google Doc/Calendar/Gmail, shares it with a target, and Gemini Enterprise\u2019s retrieval system pulls the malicious content into its context, causing the model to execute attacker\u2011controlled commands.",
+        "affected_products": "Google Gemini Enterprise",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Proof\u2011of\u2011concept and end\u2011to\u2011end IPI exploits have been demonstrated (see arXiv 2601.07072).",
-        "patch_available": "Google addressed the GeminiJack issue per vendor post; patch/advisory URL unavailable.",
-        "active_exploitation": "Confirmed active exploitation: security reports and research demonstrate real\u2011world IPI examples and a zero\u2011click GeminiJack vulnerability indicating active abuse.",
+        "exploit_available": "Public PoC available at https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/",
+        "patch_available": "Patch not yet released; mitigation provided by Google security team.",
+        "active_exploitation": "Confirmed active exploitation; increase of malicious IPI attempts reported and a disclosed zero\u2011click exploit (GeminiJack).",
         "threat_actors": "None known",
-        "mitigation": "Harden retrieval and validation controls: sanitize/trust\u2011boundary retrieval results, apply provenance and content filtering, enforce instruction\u2011safety layers, minimize automatic execution of retrieved instructions, use model fine\u2011tuning or instruction guards, and monitor for anomalous agent behavior.",
+        "mitigation": "Apply Google\u2019s mitigation fixing instruction/content confusion in the RAG pipeline; restrict sharing of Google Docs/Calendar/Gmail with untrusted parties; employ content sanitization and monitor for abnormal prompt injection activity.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -225,16 +193,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) enables attackers to inject malicious instructions into data sources (emails, documents, calendar invites) consumed by LLMs or agents; GeminiJack used specially crafted content to trigger Gemini Enterprise to follow attacker\u2011supplied instructions without user interaction.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect prompt injection (IPI) injects malicious instructions into data sources or tools the LLM uses while fulfilling a user query; an attacker can influence model behavior (including zero\u2011click cases) by poisoning external content or tool outputs that the agentic LLM ingests. CVE\u20112025\u201154131 can be triggered when chained with IPI and was fixed in version 1.3.",
+        "affected_products": "Google Workspace with Gemini integrations / Gemini Enterprise (fixed in version 1.3)",
+        "cvss_score": "-999.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC/weaponized exploit: Reports indicate a zero\u2011click exploit named \"GeminiJack\" was discovered; PoC details reported by Noma Labs and security media\u2014no official public exploit URL confirmed.",
-        "patch_available": "Google released mitigations for Workspace/Gemini Enterprise per Google Security Blog; patch/advisory URL: http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections",
-        "active_exploitation": "Reports of vulnerability discovery; no public widespread exploitation confirmed.",
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is known.",
+        "patch_available": "Fixed in version 1.3; details referenced in NVD entry.",
+        "active_exploitation": "No confirmed active exploitation in the wild; only research disclosure by Noma Labs.",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses: input sanitization, provenance/metadata checks, content classification, sandboxing agentic actions, restricting automated actions on untrusted sources, user prompts/confirmation for high-risk actions, continuous monitoring and model hardening as described in Google\u2019s advisory.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Implement layered defenses: data provenance controls, instrumented tool access, input/output sanitization, continuous monitoring and hardening.",
+        "vendor_advisory": "http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
       }
     },
     {
@@ -253,15 +221,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection allows a malicious site to inject or modify prompts that the browser\u2011integrated AI model processes, potentially causing the model to perform unsafe actions on behalf of the user.",
-        "affected_products": "Google Chrome (latest version as of December\u202f2025)",
+        "technical_details": "Indirect prompt injection: malicious web content injects prompts into the agentic browser's AI, causing it to perform unintended actions; mitigated by layered defenses and a secondary AI agent.",
+        "affected_products": "Chrome (agentic/Gemini-enabled builds; specific versions not listed)",
         "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit known.",
-        "patch_available": "Patch incorporated in Chrome updates; no separate patch advisory URL.",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "No public PoC or weaponized exploit reported.",
+        "patch_available": "No separate patch URL; mitigation is described in the vendor advisory.",
         "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Chrome\u2019s built\u2011in layered defenses block indirect prompt injections, limit cross\u2011origin access for AI prompts, and enforce safe\u2011action policies. Users should keep Chrome updated to receive these protections.",
+        "mitigation": "Enable Chrome's new layered defenses for agentic browsing, which include site\u2011origin restrictions and a secondary AI agent to detect and block indirect prompt injection.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -281,16 +249,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The post reports Android\u2019s shift to using Rust for new components reduces memory\u2011safety vulnerabilities by preventing classes of memory\u2011corruption bugs common in C/C++; Rust\u2019s ownership/borrowing model, strong type system, and safe standard library eliminate many use\u2011after\u2011free, buffer overflow, and related errors, while unsafe blocks are minimized and audited.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "None known",
-        "patch_available": "Patch information not applicable \u2014 the source is an informational Google Security Blog post about Rust adoption rather than a single vulnerability; no vendor patch URL provided.",
-        "active_exploitation": "None known",
+        "exploit_available": "Public PoC or exploit information unavailable.",
+        "patch_available": "Patch information unavailable.",
+        "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Continue migrating new code to memory\u2011safe languages (Rust), apply code auditing and fuzzing, sandboxing, and backport security fixes to C/C++ components where Rust conversion is not yet possible.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -307,7 +275,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection (IPI) occurs when hidden or external instructions embedded in documents, web content, emails, or other data sources are ingested by an AI system and cause it to follow attacker\u2011supplied instructions (e.g., exfiltrate data or perform unauthorized actions). Google\u2019s advisory explains IPIs target the prompt lifecycle and recommends layered controls at ingestion, parsing, execution, and output stages.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No single public, vendor\u2011issued PoC; independent researchers have published in\u2011the\u2011wild payloads and PoCs (see Forcepoint report).",
+        "patch_available": "No vendor patch; Google published defensive guidance and layered\u2011mitigation recommendations at the advisory URL.",
+        "active_exploitation": "Yes \u2013 multiple security vendors and researchers reported in\u2011the\u2011wild indirect prompt injection payloads and detections.",
+        "threat_actors": "None known",
+        "mitigation": "Use defense\u2011in\u2011depth: sanitize and classify external inputs before they reach LLMs, strip or neutralize embedded instructions, apply strict context separation, use model output filters and hallucination detection, enforce least\u2011privilege access for models, and monitor for anomalous behavior. See Google advisory for detailed controls.",
+        "vendor_advisory": "http://blog.google/security/mitigating-prompt-injection-attacks"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -336,6 +316,24 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-47734",
+      "title": "Dulwich has unbounded memory allocation in receive-pack from crafted thin packs",
+      "summary": "## Impact\n\nAn uncontrolled-resource-consumption (memory exhaustion) denial-of-service vulnerability (CWE-400 / CWE-789).\n\nA client with push access could push a tiny crafted thin pack (~174 bytes)  whose delta header declares a huge   dest_size. When dulwich ingested it via  add_thin_pack / apply_delta, it would  allocate hundreds of MB of memory based on that attacker-controlled size, with no relationship to the actual bytes received.\n\nWho is impacted: Operators running a Dulwich-based Git server that exposes git-receive-pack (i.e. accepts pushes) -\nfor example via dulwich.server functionality, the HTTP  smart server, or anything built on ReceivePackHandler. \n\n## Patches\n\nPatched in 1.2.5.\n\nadd_thin_pack now accepts a max_input_size keyword (bytes; 0/None = unlimited, matching git's semantics), and ReceivePackHandler reads receive.maxInputSize from the repository config and passes it through. Wire reads are counted and a PackInputTooLarge exception is raised once the cap is exceeded - equivalent to git index-pack --max-input-size.\n\nUsers should upgrade to Dulwich 1.2.5 or later and set receive.maxInputSize in their server's repository config to a sane bound for their environment.\n\n## Workarounds\n\nOn unpatched versions, receive.maxInputSize has no effect, so it cannot be used as a workaround. Until upgrading, operators should:\n\n- Restrict dulwich-receive-pack (push) access to trusted, authenticated clients only, or disable it entirely on servers that only need to serve fetches.\n- Run the server under an OS-level memory limit (e.g. ulimit, cgroups/MemoryMax, or a container memory limit) so a malicious push is killed rather than taking down the host.\n\n##  Resources\n\n- git's receive.maxInputSize / git index-pack --max-input-size documentation \n- Reported by Liyi, Ziyue, Strick, Maurice and Chenchen @ University of Sydney",
+      "link": "https://github.com/advisories/GHSA-xrvj-v92f-53gj",
+      "published": "2026-06-08T23:43:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47734"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -383,6 +381,150 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-47735",
+      "title": "Arc has an authenticated arbitrary local-file read via DuckDB I/O functions that bypasses RBAC table-level checks",
+      "summary": "### Summary\n\nArc's user-SQL validator (`internal/api/query.go:ValidateSQLRequest`) blocked only `read_parquet(` and `arc_partition_agg(` via regex denylist. The broader DuckDB I/O function family \u2014 `read_csv_auto`, `read_csv`, `read_json`, `read_json_auto`, `read_text`, `read_blob`, `glob`, `parquet_metadata`, `parquet_schema`, `read_xlsx`, etc. \u2014 was not blocked. RBAC table-reference extraction inspected only `FROM`/`JOIN` clauses, so scalar table functions in the `SELECT` list slipped past both layers.\n\n### Impact\n\nAny authenticated user, including a token with `permissions: []`, can read arbitrary local files via:\n\n```\nPOST /api/v1/query\nAuthorization: Bearer <token>\n{\"sql\": \"SELECT * FROM read_csv_auto('/etc/passwd', header=false, columns={'l':'VARCHAR'}) LIMIT 5\"}\n```\n\nConfirmed reachable targets:\n\n- `auth.db` \u2014 bcrypt hashes for every API token, plus legacy SHA-256 rows.\n- `arc.toml` \u2014 S3 secrets, TLS keys.\n- `/proc/self/environ` \u2014 environment-variable secrets.\n- Cross-tenant Parquet files \u2014 bypasses RBAC because the tenant scope is enforced at the table layer, not on raw file paths.\n- SSRF when `httpfs` is loaded (any S3-backed deployment) \u2014 `read_csv_auto('http://169.254.169.254/latest/meta-data/...')` reaches instance metadata IPs.\n\n### Patches\n\nFixed in 2026.06.1 (PR #442) via a structural sandbox at the DuckDB layer:\n\n1. `SET GLOBAL allowed_directories = [...]` enumerates Arc's legitimate filesystem prefixes (storage roots + tier prefixes + import upload dir + compaction temp).\n2. `SET GLOBAL enable_external_access = false` (one-way at runtime).\n3. Verified by reading back the flag.\n\nAfter lockdown, DuckDB refuses to open any file outside the allowlist and refuses further `INSTALL`/`LOAD`. Already-loaded extensions remain callable.\n\n### Workarounds\n\n- Restrict API access to known-trusted networks via firewall rules.\n- Temporary mitigation: add `read_csv*`/`read_json*`/`glob` etc. to `dangerousSQLPattern` in `internal/api/query.go` pending 2026.06.1.\n\n### ",
+      "link": "https://github.com/advisories/GHSA-p2j4-c4g6-rpf5",
+      "published": "2026-06-08T23:51:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47735"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47726",
+      "title": "nebula-mesh: GET /api/v1/audit-log discloses all entries to any operator",
+      "summary": "`internal/api/audit.go:12` \u2014 `handleGetAuditLog` does no admin check. The route is bearer-auth gated only; any operator API key returns the full audit log via `store.ListAuditEntries` (up to limit=1000). This includes cross-tenant actor names, host/CA/operator IDs, action timestamps, and masked-IP entries from rate-limit refusals \u2014 enough surface for a tenant to enumerate the server's activity, infer staffing patterns, or identify high-value targets.\n\n## Affected\nAll released versions up to v0.3.1.\n\n## Reproducer\n```\ncurl -H \"Authorization: Bearer <any-operator-key>\" \\\n  https://server/api/v1/audit-log?limit=1000\n```\n\n## Suggested fix\nTwo options, either acceptable:\n\n1. `if !actorIsAdmin(ctx) { 403 }` \u2014 strictest; matches the \"operator management is admin-only\" stance.\n2. Scope to actor: filter `store.ListAuditEntries` by `actor.Username` plus a subquery of CA IDs the actor owns. Operators see their own audit entries plus entries against their CA's resources.\n\nRecommend option 1 unless the UI needs per-operator audit views.\n\n## Suggested patch\n\nVerified locally: `go vet`, `go test -race -count=1 ./...`, `golangci-lint v2.12` all clean.\n\n```diff\ndiff --git a/internal/api/audit.go b/internal/api/audit.go\nindex 3236631..57b57ce 100644\n--- a/internal/api/audit.go\n+++ b/internal/api/audit.go\n@@ -10,6 +10,10 @@ import (\n const defaultAuditLimit = 100\n \n func (s *Server) handleGetAuditLog(w http.ResponseWriter, r *http.Request) {\n+\tif !actorIsAdmin(r.Context()) {\n+\t\twriteError(w, http.StatusForbidden, \"audit log access requires the admin role\")\n+\t\treturn\n+\t}\n \tfilter := store.AuditFilter{\n \t\tAction: r.URL.Query().Get(\"action\"),\n \t\tLimit:  defaultAuditLimit,\ndiff --git a/internal/api/audit_admin_test.go b/internal/api/audit_admin_test.go\nnew file mode 100644\nindex 0000000..47e1ca4\n--- /dev/null\n+++ b/internal/api/audit_admin_test.go\n@@ -0,0 +1,62 @@\n+package api\n+\n+import (\n+\t\"context\"\n+\t\"crypto/sha256\"\n+\t\"encoding/hex\"\n+\t\"net/http\"\n+\t\"net/http/httptest\"\n+\t\"testing\"\n+\n+\t\"gi",
+      "link": "https://github.com/advisories/GHSA-qm33-p5p9-f8vg",
+      "published": "2026-06-08T23:35:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47726"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47725",
+      "title": "nebula-mesh's web UI lacks CSRF tokens on /ui/* mutating endpoints",
+      "summary": "Every `/ui/*` POST / PUT / PATCH / DELETE route processes the request as soon as the session cookie validates. `SameSite=Lax` on the session cookie prevents most cross-site form submits but does not protect:\n\n- top-level form-submit navigations from third-party pages (some browsers still send Lax cookies on top-level POSTs)\n- same-registrable-domain attackers (sibling-subdomain XSS, subdomain takeover)\n- the `GET /ui/logout` route, which a third-party `<img src=\".../ui/logout\">` can force-trigger\n\nThe admin UI signs CA certificates, mints API keys, rotates / retires / deletes CAs, disables operators, and changes server settings. CSRF here is a real privilege escalation, not just annoyance.\n\n## Affected\nAll released versions up to v0.3.2.\n\n## Suggested fix\nDouble-submit cookie: a 32-byte `crypto/rand` token in a non-HttpOnly `_csrf` cookie, echoed in either `X-CSRF-Token` (htmx) or a `_csrf` form field (HTML forms). Compared in constant time. Rotated on every privilege transition (`Login`, OIDC `StartAuthenticatedSession`, `CompleteTwoFactor`, `Logout`) so pre-auth fixation cannot survive promotion. Rejections audit-logged as `ui.csrf.rejected` with reason; response body stays opaque.\n\n`/ui/logout` becomes POST so it is no longer reachable via `<img>` tags.\n\nFix coordinates with the Secure-cookie advisory disclosed concurrently \u2014 the `_csrf` cookie inherits the same `Secure`-attribute derivation.\n\n## Reproducer\nWith an authenticated operator session in browser tab A, open the following minimal HTML in any other tab:\n\n```html\n<form action=\"https://nebula.example.com/ui/cas/{ca-id}/delete\" method=\"POST\">\n  <button>Click for free puppy</button>\n</form>\n```\n\nClick. The CA is deleted \u2014 the server processes the POST because the session cookie is automatically attached and there is no other check. The same trick works for force-rotate, retire, mint API keys, disable operators, etc.\n\nAlternative force-logout: `<img src=\"https://nebula.example.com/ui/logout\">` placed on an at",
+      "link": "https://github.com/advisories/GHSA-273q-qgh5-wrj6",
+      "published": "2026-06-08T23:09:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47725"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47724",
+      "title": "nebula-mesh: API endpoints lack ownership checks, enabling cross-operator privilege escalation",
+      "summary": "The `/api/v1/*` route surface trusts the bearer token alone for authorisation on most endpoints. The codebase itself admits this at `internal/api/hosts.go:384`: *\"API trusts the bearer token for authorisation; per-CA ownership is enforced only in the Web layer.\"*\n\nThe Web UI gates state-changing routes through `loadAccessibleCA` (`internal/web/cas.go`); CA-management endpoints in `internal/api/cas.go` ALSO have proper `canAccessCA` gates. **The gap is on the host, network, firewall, mobile-bundle, and most operator endpoints.** Combined with the per-operator CA model from ADR 0002, this gives any non-admin operator API key broad cross-tenant access \u2014 instant privilege escalation in the worst case.\n\n## Affected\nAll released versions prior to v0.3.4.\n\n## Exploit chain\n\n### A) Mint admin API key from any operator key (instant privilege escalation)\n`internal/api/operators.go:118` \u2014 `handleCreateOperatorAPIKey` does no admin check and no actor/target-operator ownership check. Any operator key can call it for any operator (including admins) and receive a fresh bearer.\n\n```\ncurl -X POST -H \"Authorization: Bearer <low-priv-key>\" \\\n  https://server/api/v1/operators/<admin-id>/api-keys \\\n  -H 'Content-Type: application/json' -d '{\"name\":\"oops\"}'\n# Returns: {\"key\":\"<32-byte admin bearer>\",\"entry\":{...}}\n```\n\nReuse the returned key for subsequent requests \u2192 full admin.\n\n### B) Cross-operator host takeover via reenroll\n`internal/api/hosts.go:321,330` \u2192 `mintEnrollmentTokenForHost`. Looks up host by URL param, mints a single-use enrollment token, returns it. No ownership check.\n\n```\ncurl -X POST -H \"Authorization: Bearer <low-priv-key>\" \\\n  https://server/api/v1/hosts/<victim-host-id>/reenroll\n# Returns: {\"enrollment_token\":\"<uuid>\",...}\n```\n\nCaller POSTs `/api/v1/enroll` with their own X25519 + Ed25519 keypairs. `enroll.go:175` overwrites `signing_pub_pem`; `SaveCertificateAndEnrollHost` overwrites the cert. Legitimate agent's next signed poll fails `bad_signature`. Attacker now",
+      "link": "https://github.com/advisories/GHSA-598g-h2vc-h5vg",
+      "published": "2026-06-08T23:09:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47724"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47723",
+      "title": "nebula-mesh: Web UI and API responses lack security headers (CSP, X-Frame-Options, HSTS, etc.)",
+      "summary": "None of the response paths in `internal/web/` or `internal/api/` set the standard browser-security headers. `grep` for `Content-Security-Policy`, `X-Frame-Options`, `Strict-Transport-Security`, `X-Content-Type-Options`, `Referrer-Policy` returns zero matches across the codebase.\n\n## Impact\nThe admin UI signs CA certificates, mints API keys (returned inline once per page), displays TOTP QR codes, and exposes operator-management forms. Missing `X-Frame-Options: DENY` / `frame-ancestors 'none'` is a real clickjacking lever against an admin browsing `/ui/operators/*` or `/ui/cas/*`. Missing `X-Content-Type-Options: nosniff` allows MIME confusion on any user-supplied content surface. Missing HSTS on TLS deployments leaves a downgrade window.\n\n## Affected\nAll released versions up to v0.3.0.\n\n## Suggested fix\nA single response-header middleware mounted at the chi router root in both `/ui/*` and `/api/*` paths:\n\n```go\nfunc securityHeadersMiddleware(next http.Handler) http.Handler {\n    return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {\n        h := rw.Header()\n        h.Set(\"Content-Security-Policy\",\n            \"default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'\")\n        h.Set(\"X-Content-Type-Options\", \"nosniff\")\n        h.Set(\"Referrer-Policy\", \"same-origin\")\n        h.Set(\"X-Frame-Options\", \"DENY\")  // belt-and-braces; CSP frame-ancestors is the modern path\n        if r.TLS != nil {\n            h.Set(\"Strict-Transport-Security\", \"max-age=31536000; includeSubDomains\")\n        }\n        next.ServeHTTP(rw, r)\n    })\n}\n```\n\nThe inline `<script>` in `layout.html` for CSRF wiring (added in the CSRF advisory) will need either a nonce, a hash in CSP, or external-file extraction. Easiest path: a nonce per request (`crypto/rand`, base64) injected into both the CSP header and the script's `nonce=\"\"` attribute.",
+      "link": "https://github.com/advisories/GHSA-w7w5-5gcp-38rw",
+      "published": "2026-06-08T23:08:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47723"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47722",
+      "title": "nebula-mesh: Host advanced overrides allow YAML injection into agent config.yml",
+      "summary": "`internal/configgen/generator.go:86,108,119` interpolates the operator-supplied `ListenHost` and `TunDevice` fields raw into a `text/template` that produces the agent's `config.yml`. `internal/web/advanced.go:20-35` accepts both with only `strings.TrimSpace` \u2014 no character or shape validation.\n\n## Exploit\nAn operator (or attacker with any operator key, given the cross-tenant CRUD advisory) sets `adv_tun_device` to:\n\n```\nnebula0\nlighthouse:\n  am_lighthouse: true\n  hosts: [\"10.0.0.1\"]\n#\n```\n\nThe agent fetches the rendered config on its next signed poll. On config reload, it loads the injected YAML keys: the host self-promotes to lighthouse, attracts mesh traffic, or sets `am_relay: true` to be selected as a relay. The `ListenHost` field has the same shape.\n\n## Affected\nAll released versions prior to v0.3.2.\n\n## Threat model\n- **Today**: operator can compromise their own host's config (trivially allowed if they own the host, but they can also set lighthouse/relay flags that the operator-create form does NOT expose \u2014 privilege uplift within their own tenant).\n- **Combined with the critical /api/v1 authz advisory**: any operator key can mutate ANOTHER tenant's host overrides and inject YAML there.\n- **Post-fix of the authz advisory**: still relevant \u2014 the agent unconditionally trusts whatever config the server hands it, so any future operator-impersonation bug re-amplifies this.\n\n## Suggested fix\nTwo options, either acceptable:\n\n1. **Input validation** in `parseAdvancedFromForm` (`internal/web/advanced.go`):\n   - `ListenHost`: regex `^[A-Za-z0-9.:\\[\\]_-]+$` (IPv4/IPv6/hostname)\n   - `TunDevice`: regex `^[A-Za-z0-9_-]{1,15}$` (Linux IFNAMSIZ caps at 15)\n   Reject invalid input with a form-level error; do not write to the host row.\n\n2. **Safer marshalling**: switch `configgen/generator.go` to marshal a typed Go struct via `gopkg.in/yaml.v3` (which escapes correctly) instead of `text/template` string-concat. Larger change, but eliminates this entire injection class.\n\nOption",
+      "link": "https://github.com/advisories/GHSA-7hp6-g3pq-3pc3",
+      "published": "2026-06-08T23:08:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47722"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47719",
+      "title": "FUXA: Unauthenticated SSRF via Socket.IO DEVICE_WEBAPI_REQUEST and DEVICE_PROPERTY with response reading",
+      "summary": "## Summary\n\nAn unauthenticated attacker (Alice) connects to FUXA's Socket.IO endpoint and emits a `device-webapi-request` event whose `property.address` field names an arbitrary URL. FUXA's `DEVICE_WEBAPI_REQUEST` handler at `server/runtime/index.js:296` calls `axios.get(address)` server-side and broadcasts the full response body back on the same event via `io.emit`. The companion handler `DEVICE_PROPERTY` at `server/runtime/index.js:153` has the same miss against OPC UA and ODBC endpoints. Both handlers skip the `isSocketWriteAuthorized()` check that the other write-capable events (`DEVICE_VALUES` at line 182, `DEVICE_ENABLE` at line 358) call. Alice reads cloud instance metadata, scans internal services, and connects to any OPC UA server or ODBC database the FUXA host can reach, then receives the results.\n\n## Details\n\n**Vulnerable handlers**: `server/runtime/index.js:153-171, 296-316`:\n\n```javascript\nsocket.on(Events.IoEventTypes.DEVICE_PROPERTY, (message) => {\n    try {\n        if (message && message.endpoint && message.type) {\n            devices.getSupportedProperty(message.endpoint, message.type).then(result => {\n                message.result = result;\n                io.emit(Events.IoEventTypes.DEVICE_PROPERTY, message);\n            })\n            // ...\n        }\n    }\n    // ...\n});\n\nsocket.on(Events.IoEventTypes.DEVICE_WEBAPI_REQUEST, (message) => {\n    try {\n        if (message && message.property) {\n            devices.getRequestResult(message.property).then(result => {\n                message.result = result;\n                io.emit(Events.IoEventTypes.DEVICE_WEBAPI_REQUEST, message);\n            })\n            // ...\n        }\n    }\n    // ...\n});\n```\n\n**Sink**: `server/runtime/devices/httprequest/index.js:471` for the webapi path:\n\n```javascript\nif (property.method === 'GET') {\n    axios.get(property.address).then(res => {\n        resolve(res.data);\n    // ...\n```\n\nAlice fully controls `property.address`, and `io.emit` echoes the response body back o",
+      "link": "https://github.com/advisories/GHSA-w86f-rf9w-h3x6",
+      "published": "2026-06-08T23:06:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47719"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45536",
+      "title": "Netty: Unix-socket fd receive leaks descriptors when peer sends two at once",
+      "summary": "netty_unix_socket_recvFd sets msg_control to `char control[CMSG_SPACE(sizeof(int))]` (line 940) \u2014 24 bytes on 64-bit Linux. A peer-sent SCM_RIGHTS cmsg carrying two ints has cmsg_len = CMSG_LEN(8) = 24, which fits exactly with no MSG_CTRUNC, so the kernel installs both fds in the receiving process. The subsequent check `cmsg->cmsg_len == CMSG_LEN(sizeof(int))` (line 972, expected 20) fails, the branch that would read the fd is skipped, and neither installed fd is closed. The for(;;) loop calls recvmsg again (non-blocking \u2192 EAGAIN \u2192 Java maps to 0 \u2192 read loop exits normally), leaving two leaked fds per message. There is no MSG_CTRUNC handling. Reachable via Epoll/KQueue DomainSocketChannel when the application opts into DomainSocketReadMode.FILE_DESCRIPTORS (non-default).",
+      "link": "https://github.com/advisories/GHSA-w573-9ffj-6ff9",
+      "published": "2026-06-08T23:01:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45536"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-44893",
