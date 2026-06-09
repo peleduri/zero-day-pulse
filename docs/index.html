@@ -109,15 +109,63 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">3</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">17</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">30</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">31</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">10</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-06-09 14:18 UTC</div>
+            <div class="generated">Updated 2026-06-09 19:56 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-11645" target="_blank" rel="noopener">CVE-2026-11645 — Google Chromium V8 Out-of-Bounds Read and Write Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-11645</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-06-09</span>
+  </div>
+  <p class='summary'>Vendor: Google | Product: Chromium V8. Google Chromium V8 out-of-bounds read and write vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply mitigations per vendor …</p>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Out‑of‑bounds read and write in V8 allows crafted JavaScript/HTML to corrupt memory, leading to arbitrary code execution inside the renderer sandbox.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Google Chrome &lt; 149.0.7827.103 (Windows 149.0.7827.102, macOS 149.0.7827.103, Linux 149.0.7827.102); other Chromium‑based browsers (Microsoft Edge, Opera) that embed the vulnerable V8 version</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the vendor updates immediately; follow BOD 22-01 guidance for cloud services; if patches cannot be applied, discontinue use or isolate affected systems; limit exposure by blocking untrusted HTML content, using content filters and script‑blocking extensions.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://chromereleases.googleblog.com/</span></div></div>
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-7473" target="_blank" rel="noopener">CVE-2026-7473 — Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-7473</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-06-09</span>
+  </div>
+  <p class='summary'>Vendor: Arista | Product: Extensible Operating System. Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-…</p>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">When an Arista EOS device is configured as a tunnel endpoint (VXLAN VTEP, GRE endpoint, or IP decap group), it may decapsulate packets whose destination IP matches the configured decap IP without verifying the tunnel protocol type, causing unexpected decapsulation and forwarding of non‑configured tunnel traffic.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Arista EOS 4.36.x, 4.35.x, 4.34.x, 4.33.x, 4.32.x, 4.31.x, 4.30.x, trains older than 4.30.x, trains newer than 4.36.x; platforms 7020R, 7280R/R2, 7500R/R2 (limited exposure on 7280R3, 7500R3, 7800R3)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">5.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply ACLs on upstream devices or on the decapsulation switch to restrict tunnel types/ports/IPs (examples for VXLAN, GRE, GUE, IP‑in‑IP using IP/MAC ACLs and UDF‑based MAC ACLs). Follow BOD 22‑01 guidance for cloud services; discontinue use if mitigations are unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137</span></div></div>
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-20245" target="_blank" rel="noopener">CVE-2026-20245 — Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-20245</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-06-09</span>
+  </div>
+  <p class='summary'>Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system. Required action: Apply mitigations per vendor instructions, follow applicab…</p>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Improper encoding/escaping of CLI output allows an authenticated, local attacker to inject crafted input that is executed as a root command, resulting in privilege escalation.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Cisco Catalyst SD-WAN Manager (formerly SD-WAN vManage)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Threat actors unknown.</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply mitigations per Cisco&#x27;s advisory, follow BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx</span></div></div>
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a" target="_blank" rel="noopener">Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider</a></h2>
@@ -130,7 +178,39 @@
     <span>Thu, 12 Ju</span>
   </div>
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">An unauthenticated remote attacker can exploit a directory traversal flaw in SimpleHelp remote support software (≤ v5.5.7) to read sensitive files by supplying crafted file paths.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">SimpleHelp Remote Support Software version 5.5.7 and earlier</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.5</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Ransomware actors (unspecified)</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Update SimpleHelp to version 5.5.8 or later. If immediate patching is not possible, restrict remote access, enforce least‑privilege network segmentation, and monitor for suspicious file‑access activity.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2024-57727 is a path‑traversal (directory traversal) vulnerability in SimpleHelp 5.5.7 and earlier that lets an unauthenticated remote attacker craft requests to traverse directories and read arbitrary files (e.g., logs, configuration files, credentials) from the server.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">SimpleHelp Remote Support / Remote Monitoring and Management (RMM) — versions 5.5.7 and earlier</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.5</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Ransomware actors (including groups linked to DragonForce and other ransomware operators)</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Immediately upgrade SimpleHelp to version 5.5.8 or later; if patching is delayed, restrict network access to the SimpleHelp server (block inbound access from untrusted networks, apply firewall rules, use network segmentation), rotate credentials and secrets found on compromised instances, review logs for suspicious access, and follow CISA/vendor incident‑response guidance.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know</span></div></div>
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.tenable.com/blog/microsofts-june-2026-patch-tuesday-addresses-198-cves-cve-2026-49160-cve-2026-50507" target="_blank" rel="noopener">Microsoft’s June 2026 Patch Tuesday Addresses 198 CVEs ( CVE-2026-49160, CVE-2026-50507)</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-49160</code> <code class="cve">CVE-2026-50507</code> <code class="cve">CVE-2025-10263</code> <code class="cve">CVE-2026-8863</code>
+    <span class="meta-sep">·</span>
+    <span>Tenable Security Research</span>
+    <span class="meta-sep">·</span>
+    <span>2026-06-09</span>
+  </div>
+  <p class='summary'>32 Critical 166 Important 0 Moderate 0 Low Microsoft addresses 198 CVEs in the largest Patch Tuesday release, including three zero-days. Microsoft patched 198 CVEs in its June 2026 Patch Tuesday release, with 32 rated critical and 166 rated as important. Our counts omitted 6 CVEs that were already addressed by Microsoft via servicing and do not require additional customer action to resolve as well…</p>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Denial‑of‑service vulnerability in HTTP.sys where specially crafted HTTP/2 requests with a large number of headers trigger resource exhaustion in the HTTP/2/HTTP/3 stack, causing service disruption.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Windows HTTP.sys</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.5</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the June 2026 Microsoft updates. As a temporary measure, configure the MaxHeadersCount registry setting to limit the number of headers in HTTP/2 and HTTP/3 requests and consider rate‑limiting suspicious HTTP/2 traffic.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-49160</span></div></div>
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/" target="_blank" rel="noopener">Microsoft June 2026 Patch Tuesday fixes 3 zero-day, 200 flaws</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-06-09</span>
+  </div>
+  <p class='summary'>Today is Microsoft&#x27;s June 2026 Patch Tuesday, with security updates for 200 flaws and three publicly disclosed zero-day vulnerabilities. [...]</p>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Technical details unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true - https://msrc.microsoft.com/update-guide/</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply Microsoft June 2026 updates immediately; follow vendor guidance.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://msrc.microsoft.com/update-guide/</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -146,7 +226,7 @@
     <span>2026-06-09</span>
   </div>
   <p class='summary'>CISA has ordered U.S. government agencies to secure their Check Point Remote Access VPN and Mobile Access deployments against a critical vulnerability exploited in zero-day attacks by Qilin ransomware affiliates. [...]</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The flaw enables unauthenticated remote attackers to bypass password‑based authentication, granting access without valid credentials.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Check Point Remote Access VPN, Check Point Mobile Access</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.3</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Patch availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Qilin ransomware affiliates</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Authentication‑bypass logic flaw in IKEv1 VPN handling that allows remote unauthenticated attackers to bypass user authentication and establish VPN connections without valid credentials.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Check Point Remote Access VPN, Check Point Mobile Access; Security Gateways R82.10 Jumbo Hotfix Take 19</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.3</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Qilin ransomware affiliate</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply Check Point hotfixes/patches per vendor advisory; if immediate patching not possible, disable/decommission deprecated IKEv1 VPN services where feasible and restrict access to management interfaces; follow vendor hardening guidance in SK185033.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol/</span></div></div>
 </article>
 
         <article class="card card-zeroday">
@@ -164,7 +244,7 @@
           <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a high-severity flaw impacting BerriAI LiteLLM to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
 
 The vulnerability, tracked as CVE-2026-42271 (CVSS score: 8.7), is a command injection vulnerability that could allow any authenticated user to run arbitrary commands on the</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Command‑injection vulnerability in LiteLLM (an AI gateway/proxy) that allows an authenticated user to execute arbitrary system commands via crafted input to the vulnerable component.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">8.7</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Patch availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Threat actors unknown.</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
+          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Command injection vulnerability in LiteLLM&#x27;s MCP/server test endpoints that permits execution of arbitrary commands by an authenticated user; chaining with CVE‑2026‑48710 enables unauthenticated remote code execution against vulnerable deployments.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">LiteLLM (BerriAI) proxy server versions &gt;= 1.74.2 and &lt; 1.83.7</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">8.7</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true — https://github.com/BerriAI/litellm/releases</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true — https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Upgrade to patched release (&gt;= 1.83.7). If patch cannot be applied immediately, restrict access to LiteLLM management/MCP endpoints (network ACLs, firewall rules), require/verify authentication, isolate deployments, and monitor for anomalous process execution and suspicious outbound connections.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://github.com/BerriAI/litellm/releases</span></div></div>
         </article>
 
         <article class="card card-zeroday">
@@ -182,40 +262,8 @@ The vulnerability, tracked as CVE-2026-42271 (CVSS score: 8.7), is a command inj
           <p class='summary'>## Summary
 
 CVE-2026-34084 was patched by the helper `File::prohibitWrappers`. The helper calls `parse_url($filename, PHP_URL_SCHEME)` and then checks `is_string($scheme) &amp;&amp; strlen($scheme) &gt; 1` to reject stream wrappers such as `phar://`, `php://`, `data://` or `expect://`. The check is not equivalent to &quot;does the path contain a wrapper&quot;. When the input has the form `phar:///path/file.phar/inner`…</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The patched helper File::prohibitWrappers calls parse_url($filename, PHP_URL_SCHEME) and checks is_string($scheme) &amp;&amp; strlen($scheme) &gt; 1 to reject stream wrappers (e.g., phar://, php://, data://, expect://). However, when an input uses three or more slashes after the scheme (e.g., phar:///path/file.phar/inner), parse_url returns boolean false for the scheme, causing the is_string check to be skipped and allowing the crafted path to bypass the wrapper‑prohibition check.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">PHPSpreadsheet</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Active exploitation status unknown</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Ensure the vendor patch is applied. As a workaround, validate paths for wrapper prefixes more robustly (e.g., explicitly detect known wrappers with a regex or normalize URLs before parse_url), and deny inputs containing known wrapper schemes or patterns such as phar://, php://, data:// regardless of slash count.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://github.com/advisories/GHSA-87m4-826x-3crx</span></div></div>
+          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">A fix for CVE-2026-34084 added File::prohibitWrappers which calls parse_url($filename, PHP_URL_SCHEME) and rejects a scheme only when is_string($scheme) &amp;&amp; strlen($scheme) &gt; 1. If a filename uses the form phar:///path/file.phar/inner (three or more slashes), parse_url returns boolean false for the scheme, causing the is_string check to be skipped and the helper to fail to detect the phar stream wrapper, allowing the earlier vulnerability to be bypassed.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">PHPOffice/PhpSpreadsheet versions 1.30.2 and earlier, 2.0.0 through 2.1.14</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true — http://github.com/advisories/GHSA-87m4-826x-3crx</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Active exploitation status unknown</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Sanitize and validate filenames by explicitly detecting wrappers (e.g., check for known wrapper prefixes like &quot;phar://&quot;, &quot;php://&quot;, &quot;data://&quot;, or use a more robust parse that treats multiple slashes), upgrade when an official patch is available, and avoid loading untrusted filenames. If immediate mitigation required, add a custom check for substrings matching &quot;://&quot; or use a stricter whitelist of allowed file path patterns.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://github.com/advisories/GHSA-87m4-826x-3crx</span></div></div>
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-critical-check-point-vpn-zero-day-exploited-in-the-wild-cve-2026-50751" target="_blank" rel="noopener">Critical Check Point VPN Zero-Day Exploited in the Wild (CVE-2026-50751)</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-50751</code> <code class="cve">CVE-2026-50752</code> <code class="cve">CVE-2024-24919</code>
-    <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-06-08</span>
-  </div>
-  <p class='summary'>Overview On June 8, 2026, Check Point published a security advisory for CVE-2026-50751 , a critical authentication bypass vulnerability affecting Check Point Remote Access VPN, Mobile Access, and Spark Firewall products. The vulnerability affects deployments configured to use the deprecated IKEv1 key exchange protocol where gateways accept legacy Remote Access clients and do not require a machine …</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">A logic flow weakness in IKEv1 handling allows remote unauthenticated attackers to bypass user authentication and establish a remote access VPN connection without a valid user password (improper authentication, CWE‑287).</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Check Point Remote Access VPN, Check Point Mobile Access, Check Point Spark Firewall</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.3</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Qilin ransomware affiliate</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the vendor hotfix immediately; disable IKEv1 where possible; require machine certificates for remote access; restrict management and remote access from untrusted networks; monitor VPN logs for anomalous connections.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol</span></div></div>
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/gogs-patches-critical-zero-day-enabling-remote-code-execution/" target="_blank" rel="noopener">Gogs patches critical zero-day enabling remote code execution</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-06-08</span>
-  </div>
-  <p class='summary'>Gogs has patched a critical security zero-day flaw that can allow attackers to compromise Internet-facing instances and access any repositories (including private ones). [...]</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">A path‑traversal and symlink handling flaw in Gogs&#x27; repository file editing functionality (CVE‑2025‑8110) lets an attacker overwrite files outside the repository (including web‑root or executable files), leading to remote code execution.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Gogs (self‑hosted Git service) – versions prior to patched release (specific versions not provided).</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the vendor patch immediately; if a patch is unavailable, restrict internet access to Gogs instances, disable file‑editing features, remove or disallow symbolic links in repositories, and isolate/backup systems for forensic analysis.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -230,7 +278,7 @@ CVE-2026-34084 was patched by the helper `File::prohibitWrappers`. The helper ca
     <span>2026-04-23</span>
   </div>
   <p class='summary'>Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise …</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect Prompt Injection (IPI) is an attack where adversarial content is placed in external web sources or retrieval corpora; AI agents or RAG systems retrieve this content and the injected instructions in the retrieved text influence the agent’s prompt or behavior, causing unintended actions or data exfiltration. Researchers demonstrated real‑world IPI and related zero‑click exploits (e.g., GeminiJack) using malicious content seeded in external corpora that is retrieved and executed by agentic systems.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Use multi‑layered defenses: avoid treating retrieved content as authoritative; sanitize and validate retrieval outputs; apply strict role and instruction separation (instruction/response parsing), input/output filtering, context window limits, source allowlists/blocklists, provenance checks, and RAG pipeline hardening. Follow Google’s vendor guidance: https://blog.google/security/prompt-injections-web/ and Workspace mitigation guidance: https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://blog.google/security/prompt-injections-web/</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect Prompt Injection (IPI) occurs when adversarial content seeded on web pages or external content sources influences AI agents that browse or ingest that content, causing them to follow malicious instructions or leak sensitive data. Attack vector: poisoned web content or third‑party sources referenced by AI agents’ browsing/RAG pipelines.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply defense‑in‑depth: validate and sanitize external content before use; apply source reputation and allowlists; use prompt‑layering and instruction‑sanitization techniques; limit agent permissions and data exfiltration capabilities; monitor telemetry for anomalous model outputs; keep models and retrieval pipelines updated. (Mitigations summarized from Google Security Blog guidance.)</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -246,7 +294,7 @@ CVE-2026-34084 was patched by the helper `File::prohibitWrappers`. The helper ca
     <span>2026-04-02</span>
   </div>
   <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user’s query. This m…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect Prompt Injection (IPI) embeds malicious instructions in data or tools used by LLMs (including retrieval sources and agentic tool outputs) to influence model behavior, possibly without user input; mitigations involve sanitizing retrievals, isolating tool outputs, and layered defenses.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false; advisory URL: http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Layered defense strategy: input filtering, retrieval sanitization, response filtering, hazard policies, monitoring, and continuous improvements; follow vendor guidance in advisory.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html</span></div></div>
+
 </article>
 
 <article class="card card-zeroday">
@@ -262,7 +310,7 @@ CVE-2026-34084 was patched by the helper `File::prohibitWrappers`. The helper ca
     <span>2025-12-08</span>
   </div>
   <p class='summary'>Posted by Nathan Parker, Chrome security team Chrome has been advancing the web’s security for well over 15 years, and we’re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to s…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The primary threat is indirect prompt injection, where malicious sites influence an agentic browser&#x27;s AI prompts or actions, potentially leading to unsafe behaviours. Chrome mitigates this by adding layered defenses that block prompt injections, restrict origin access, and prevent unsafe AI actions.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Google Chrome (agentic/Gemini agentic browsing feature)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Enable the latest Chrome updates (which include the layered defenses), restrict or disable agentic/Gemini agentic browsing features where possible, and follow the guidance in the advisory URL. If updates cannot be applied, disable the agentic features and limit site permissions.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2025/12/architecturing-security-for-agentic.html</span></div></div>
+
 </article>
 
 <article class="card card-zeroday">
@@ -278,7 +326,7 @@ CVE-2026-34084 was patched by the helper `File::prohibitWrappers`. The helper ca
     <span>2025-11-13</span>
   </div>
   <p class='summary'>Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn’t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vul…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Technical details unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known.</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html</span></div></div>
+
 </article>
 
 <article class="card card-zeroday">
@@ -398,6 +446,28 @@ The high-severity vulnerability, tracked as CVE-2026-11645 (CVSS score: 8.8), ha
 An uncontrolled-resource-consumption (memory exhaustion) denial-of-service vulnerability (CWE-400 / CWE-789).
 
 A client with push access could push a tiny crafted thin pack (~174 bytes)  whose delta header declares a huge   dest_size. When dulwich ingested it via  add_thin_pack / apply_delta, it would  allocate hundreds of MB of memory based on that attacker-controlled size, with no rel…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html" target="_blank" rel="noopener">Veeam Backup &amp; Replication RCE Flaw Lets Domain Users Run Remote Code</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-44963</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-09</span>
+          </div>
+          <p class='summary'>Veeam has released security patches to address a critical flaw in its Backup &amp; Replication software that could result in remote code execution.
+
+Tracked as CVE-2026-44963, the vulnerability carries a CVSS score of 9.4 out of a maximum of 10.0.
+
+&quot;A vulnerability allowing remote code execution (RCE) on the Backup Server by an authenticated domain user,&quot; Veeam said in a Tuesday advisory.
+
+It</p>
 
         </article>
 
@@ -559,60 +629,6 @@ An unauthenticated attacker (Alice) connects to FUXA&#x27;s Socket.IO endpoint a
   <p class='summary'>netty_unix_socket_recvFd sets msg_control to `char control[CMSG_SPACE(sizeof(int))]` (line 940) — 24 bytes on 64-bit Linux. A peer-sent SCM_RIGHTS cmsg carrying two ints has cmsg_len = CMSG_LEN(8) = 24, which fits exactly with no MSG_CTRUNC, so the kernel installs both fds in the receiving process. The subsequent check `cmsg-&gt;cmsg_len == CMSG_LEN(sizeof(int))` (line 972, expected 20) fails, the br…</p>
 
 </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cc37-9q2j-3hfv" target="_blank" rel="noopener">Netty: HAProxy SSL TLV parsing leaks retained slice on invalid TLV length</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-44893</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-06-08</span>
-  </div>
-  <p class='summary'>When decoding a PP2_TYPE_SSL TLV, HAProxyMessage.readNextTLV() first calls `header.retainedSlice(header.readerIndex(), length)` and only then reads the 1-byte client field and 4-byte verify field. If the attacker sets the TLV length below 5, the subsequent readByte/readInt throws IndexOutOfBoundsException. HAProxyMessageDecoder only catches HAProxyProtocolException around this call, so the IOOBE p…</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6ghj-frrj-jjj3" target="_blank" rel="noopener">Netty has Unbounded Direct Memory Consumption in its RedisDecoder</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-44890</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-08</span>
-          </div>
-          <p class='summary'>### Summary
-An attacker can cause DoS by sending crafted Redis payloads across multiple connections without `\r\n`. This exhausts the server&#x27;s direct memory pool (OutOfDirectMemoryError), preventing legitimate connections from being processed.
-
-### Details
-io.netty.handler.codec.redis.RedisDecoder decodes the length of bulk strings and array headers using the `decodeLength` method. This method rea…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html" target="_blank" rel="noopener">Critical Check Point VPN Flaw Exploited to Bypass Passwords in IKEv1 Setups</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-50751</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-08</span>
-          </div>
-          <p class='summary'>Check Point has warned of active exploitation of a critical vulnerability impacting Remote Access VPN and Mobile Access deployments that are configured to use the deprecated IKEv1 key exchange protocol.
-
-The vulnerability, tracked as CVE-2026-50751 (CVSS score: 9.3), is a case of a logic flow weakness in certificate validation that allows an unauthenticated remote attacker to bypass user</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">
