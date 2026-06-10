@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-10T14:49:46.839389+00:00",
-  "total": 32,
+  "generated": "2026-06-10T20:09:24.336315+00:00",
+  "total": 37,
   "kev": 0,
-  "zero_day": 19,
+  "zero_day": 20,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,75 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE\u20112024\u201157727 is a directory traversal vulnerability that permits unauthenticated remote attackers to read sensitive files by supplying crafted file path parameters to SimpleHelp RMM components.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) versions 5.5.7 and earlier",
+        "technical_details": "Path traversal vulnerabilities allow unauthenticated attackers to read sensitive files (logs, configuration files, credentials) via directory traversal in SimpleHelp RMM web endpoints.",
+        "affected_products": "SimpleHelp remote support / RMM versions 5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors (unspecified)",
-        "mitigation": "Upgrade SimpleHelp to a version newer than 5.5.7, apply vendor patches when released, and restrict network access to the RMM service.",
-        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "exploit_available": "Public proof\u2011of\u2011concept available (e.g., OffSec blog https://www.offsec.com/blog/cve-2024-57727/)",
+        "patch_available": "SimpleHelp 5.5.8 released \u2013 patch URL https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
+        "active_exploitation": "Confirmed \u2013 CISA advisory AA25-163A and SecurityWeek report document ransomware actors exploiting the vulnerability.",
+        "threat_actors": "DragonForce ransomware and other ransomware actors referenced in CISA advisory AA25-163A",
+        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later; if patching is not immediately possible, isolate/unexpose SimpleHelp from the internet, apply network\u2011level access controls, and rotate credentials discovered in affected instances.",
+        "vendor_advisory": "https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570"
+      }
+    },
+    {
+      "id": "CVE-2026-47751",
+      "title": "Claude Code Action: Malicious MCP Server Configuration in PRs Enables Remote Code Execution and Secret Exfiltration",
+      "summary": "Due to the combination of checking out PR head branches (attacker-controlled), reading `.mcp.json` from the working directory via default setting sources, and unconditionally enabling all project MCP servers via `enableAllProjectMcpServers`, it was possible for an attacker who opened a PR containing a malicious `.mcp.json` file to achieve arbitrary code execution on the GitHub Actions runner. This could lead to exfiltration of secrets available to the workflow (such as API keys and tokens) when a privileged user triggered the Claude action on the PR. Exploiting this required the ability to open a pull request against a repository using the claude-code-action and a privileged user or automatic trigger to invoke the action on that PR.\n\nUsers pinned to a vulnerable version of claude-code-action are advised to update to the latest version. Users referencing anthropics/claude-code-action@v1, anthropics/claude-code-action@beta, anthropics/claude-code-action@main, or other non-pinned tags will have received this fix already\n\nClaude Code thanks hackerone.com/reptou for reporting this issue.",
+      "link": "https://github.com/advisories/GHSA-8q5r-mmjf-575q",
+      "published": "2026-06-10T19:33:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47751"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Attackers could submit a PR containing a malicious .mcp.json. Because the action checked out PR head branches (attacker-controlled), read .mcp.json from the working directory via default setting sources, and unconditionally enabled all project MCP servers via enableAllProjectMcpServers, an attacker-controlled MCP server configuration could be executed, leading to remote code execution on the GitHub Actions runner and exfiltration of workflow secrets when a privileged user triggered the Claude action on the PR.",
+        "affected_products": "Claude Code Action (GitHub Action)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "No public PoC reported in advisory",
+        "patch_available": "Official patch/advisory available from GitHub Security Advisories at https://github.com/advisories/GHSA-8q5r-mmjf-575q",
+        "active_exploitation": "No confirmed active exploitation reported in advisory",
+        "threat_actors": "None known",
+        "mitigation": "Disable automatic enabling of project MCP servers (avoid enableAllProjectMcpServers), do not read .mcp.json from untrusted working directories, avoid running CLAUDE actions on untrusted PRs or from untrusted contributors; treat PR head branches as untrusted.",
+        "vendor_advisory": "https://github.com/advisories/GHSA-8q5r-mmjf-575q"
+      }
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/unpatched-langflow-flaw-cve-2026-5027.html",
+      "title": "Unpatched Langflow Flaw CVE-2026-5027 Exploited for Unauthenticated RCE",
+      "summary": "A high-severity unpatched security flaw in Langflow, an open-source low-code platform to build artificial intelligence (AI) applications, has come under active exploitation in the wild, according to findings from VulnCheck.\n\nThe vulnerability in question is CVE-2026-5027 (CVSS score: 8.8), a case of path traversal that could allow an attacker to write files to arbitrary locations.\n\n\"The 'POST /",
+      "link": "https://thehackernews.com/2026/06/unpatched-langflow-flaw-cve-2026-5027.html",
+      "published": "2026-06-10T15:00:59+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-5027"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "A path\u2011traversal vulnerability in the multipart upload 'filename' parameter of POST /api/v2/files allows an attacker to include '../' sequences to write files to arbitrary filesystem locations; combined with Langflow's default unauthenticated auto\u2011login, a single unauthenticated request can obtain a session and lead to remote code execution by writing malicious files.",
+        "affected_products": "Langflow (POST /api/v2/files endpoint)",
+        "cvss_score": "8.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "Public PoC reports exist (example PoC page: https://yh.do/cve-2026-5027-langflow-path-traversal-rce/). Activity observed weaponizing the bug to write test files; Censys data shows ~7,000 exposed instances.",
+        "patch_available": "Official vendor patch/advisory URL unavailable.",
+        "active_exploitation": "Confirmed active exploitation reported by VulnCheck and The Hacker News; observed activity writes test files and scans exposed instances (Censys).",
+        "threat_actors": "None known",
+        "mitigation": "Until a patch is available, restrict network exposure (block/limit access to Langflow instances), disable unauthenticated/auto\u2011login, run behind authentication/zero\u2011trust, remove public\u2011facing instances, monitor for unexpected files, and apply host\u2011level protections (WAF, file\u2011system write restrictions, containerization).",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -49,15 +108,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "RoguePlanet exploits a race condition in Microsoft Defender to achieve local privilege escalation to SYSTEM. The PoC tricks a victim into opening a .vhd(x) file on a remote SMB share, allowing redirection of a cleaned file and can bypass BitLocker via NTFS.sys.",
-        "affected_products": "Microsoft Defender on Windows 10, Microsoft Defender on Windows 11",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "A TOCTOU race condition in Microsoft Defender\u2019s signature/update workflow (interacting with VSS, Cloud Files API, opportunistic locks) allows a local unprivileged user to read shadow\u2011copy\u2011backed registry hives and dump credential material, leading to SYSTEM escalation.",
+        "affected_products": "Microsoft Defender on Windows 10, Windows 11",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "false",
-        "active_exploitation": "false",
+        "exploit_available": "Public proof\u2011of\u2011concept for RoguePlanet is available (see SecurityWeek and The Hacker News articles).",
+        "patch_available": "Microsoft released Patch Tuesday updates on 2026-06-10 addressing multiple Defender issues; specific RoguePlanet advisory/patch URL: https://learn.microsoft.com/en-us/security/community/ (Vendor patch reference: Microsoft June 2026 Patch Tuesday \u2014 see https://www.microsoft.com/security/blog and https://www.catalog.update.microsoft.com)",
+        "active_exploitation": "Public PoC and researcher\u2011released exploit have been reported; no confirmed widespread active campaigns.",
         "threat_actors": "None known",
-        "mitigation": "Apply the latest Windows and Microsoft Defender updates, restrict local file/SMB exposure, and treat the PoC as functional. Specific workaround steps are not detailed.",
+        "mitigation": "Apply the June 2026 Microsoft patches immediately; if a specific patch is unavailable, temporarily disable Microsoft Defender real\u2011time protection, enforce least\u2011privilege for local accounts, enable EDR, and block unprivileged users from installing updates.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -76,15 +135,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2026-45657 is a use\u2011after\u2011free vulnerability in the Windows Kernel that allows an attacker to achieve remote code execution by sending crafted network traffic. CVE-2026-45585 bypasses Windows BitLocker security, enabling unauthorized access to encrypted volumes.",
-        "affected_products": "Windows Kernel (all supported versions), Windows BitLocker",
+        "technical_details": "CVE-2026-45657: Windows Kernel use\u2011after\u2011free in TCP/IP processing, exploitable via specially crafted network traffic for system\u2011level code execution. CVE-2026-47291: Integer overflow in HTTP.sys enabling remote code execution via malicious HTTP requests. CVE-2026-44815: Stack buffer overflow in Windows DHCP Client allowing unauthenticated remote code execution. CVE-2026-45585: BitLocker feature bypass permitting access to encrypted data with physical access.",
+        "affected_products": "Microsoft Windows (Kernel/Win32k, HTTP.sys, DHCP Client, BitLocker, Collaborative Translation Framework/CTFMON), Microsoft Defender, Microsoft Edge/Chromium, UEFI Secure Boot and other Microsoft platform components",
         "cvss_score": "9.8",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (PoC YellowKey \u2013 https://thehackernews.com/2026/06/microsoft-patches-record-206-flaws.html)",
-        "patch_available": "true (https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun)",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "Public PoCs reported: YellowKey PoC for CVE-2026-45585 (by Chaotic Eclipse); suspected \"GreenPlasma\" PoC for CVE-2026-45586; PoC for a Microsoft Defender zero\u2011day named \"RoguePlanet\". URLs are referenced in the Hacker News coverage.",
+        "patch_available": "Patches released on June 10, 2026. Official advisory: https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun",
+        "active_exploitation": "Publicly disclosed zero\u2011days (CVE-2026-50507, CVE-2026-49160, CVE-2026-45586) with PoCs are mentioned, but no confirmed active exploitation by specific actors is reported.",
         "threat_actors": "None known",
-        "mitigation": "Apply the Microsoft security updates released in June 2026 to all affected systems.",
+        "mitigation": "Apply the June\u202f2026 security updates immediately. For the HTTP/2 and HTTP/3 header DoS issue, set the \"MaxHeadersCount\" registry key to limit header numbers. For BitLocker bypasses, restrict physical access and ensure firmware/OS updates are applied. General hardening: prioritize patching systems exposing network services (DHCP, HTTP/HTTPS/IIS) and limit external exposure.",
         "vendor_advisory": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun"
       }
     },
@@ -103,16 +162,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The exploit (named RoguePlanet) targets a race condition in Microsoft Defender that allows local privilege escalation to SYSTEM by exploiting a time\u2011of\u2011check/time\u2011of\u2011use or similar race during Defender operations, leading to a SYSTEM\u2011level shell when successful.",
-        "affected_products": "Microsoft Defender (Windows)",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "A race\u2011condition in Microsoft Defender allows a malicious archive/ISO to be mounted, causing the scanner to race and grant a SYSTEM\u2011level shell to the attacker.",
+        "affected_products": "Microsoft Defender, Microsoft Malware Protection Engine",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "false",
-        "active_exploitation": "false",
+        "exploit_available": "Public PoC \"RoguePlanet\" is available at https://github.com/MSNightmare/RoguePlanet",
+        "patch_available": "Microsoft published updates in June 2026 addressing CVE-2026-41091. See https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091",
+        "active_exploitation": "Active exploitation of CVE\u20112026\u201141091 has been reported by Microsoft and multiple security news outlets.",
         "threat_actors": "None known",
-        "mitigation": "Disable or limit Microsoft Defender real-time components where feasible, apply principle of least privilege, and isolate untrusted code execution until vendor advisory/patch is available. Monitor vendor advisories for updates.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Disable real\u2011time scanning or set Microsoft Defender exclusions for untrusted user\u2011controllable mounts, and apply the vendor updates as soon as they are available.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091"
       }
     },
     {
@@ -135,76 +194,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Race/logic flaw in Defender file remediation and insufficient access\u2011control granularity allow an authorized attacker to elevate privileges to SYSTEM.",
-        "affected_products": "Microsoft Defender (Windows)",
+        "technical_details": "Local elevation of privilege caused by an insufficient access\u2011control/TOCTOU race condition in Microsoft Defender's threat remediation engine, allowing an authorized user/process to gain elevated privileges.",
+        "affected_products": "Microsoft Defender (Windows Defender)",
         "cvss_score": "7.8",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+        "exploit_available": "Proof\u2011of\u2011concept analysis is available (see Picus Security blog). No widely published weaponized exploit was found.",
+        "patch_available": "Microsoft published a patch in April 2026 (see vendor advisory link).",
+        "active_exploitation": "No confirmed active exploitation in the wild has been reported.",
         "threat_actors": "None known",
-        "mitigation": "Apply the Microsoft patch; follow the mitigation guidance published in the Microsoft advisory. If a patch were unavailable, implement the workarounds recommended by Microsoft.",
+        "mitigation": "Disable or restrict Microsoft Defender components and apply the vendor\u2011provided mitigation steps outlined in the advisory.",
         "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
-      }
-    },
-    {
-      "id": "https://www.tenable.com/blog/microsofts-june-2026-patch-tuesday-addresses-198-cves-cve-2026-49160-cve-2026-50507",
-      "title": "Microsoft\u2019s June 2026 Patch Tuesday Addresses 198 CVEs ( CVE-2026-49160, CVE-2026-50507)",
-      "summary": "32 Critical 166 Important 0 Moderate 0 Low Microsoft addresses 198 CVEs in the largest Patch Tuesday release, including three zero-days. Microsoft patched 198 CVEs in its June 2026 Patch Tuesday release, with 32 rated critical and 166 rated as important. Our counts omitted 6 CVEs that were already addressed by Microsoft via servicing and do not require additional customer action to resolve as well as 2 CVEs that were disclosed by other CNAs (CVE-2025-10263 and CVE-2026-8863). This Patch Tuesday release is the largest release since the Patch Tuesday program began, smashing the previous record of 167 CVEs in the October 2025 Patch Tuesday release. This month\u2019s update includes patches for: .NET ASP.NET Core Active Directory Domain Services Azure HorizonDB Azure Stack Edge Copilot Chat (Microsoft Edge) Function Discovery Service (fdwsd.dll) GitHub Copilot and Visual Studio Code HTTP/2 Linux MANA Driver M365 Copilot Microsoft Azure Attestation service and Device Health Attestation Service Microsoft Azure Kubernetes Service Microsoft Bing Microsoft Copilot Microsoft Defender for Endpoint Microsoft Dynamics 365 (on-premises) Microsoft Exchange Online Microsoft Exchange Server Microsoft Graph Microsoft Graphics Component Microsoft Kinect Microsoft Live Share Canvas SDK Microsoft Office Microsoft Office Click-To-Run Microsoft Office Excel Microsoft Office Project Microsoft Office SharePoint Microsoft Office Word Microsoft PC Manager Microsoft PowerToys Microsoft Teams for Android Microsoft UxTheme Library (uxtheme.dll) Microsoft Windows DNS Nuance PowerScribe Office for Android Remote Desktop Client Role: Windows Hyper-V UI Automation Manager (uiamanager.dll) Universal Plug and Play (upnp.dll) Visual Studio Code Windows Administrator Protection Windows Ancillary Function Driver for WinSock Windows Application Identity (AppID) Subsystem Windows BitLocker Windows Bluetooth Port Driver Windows Bluetooth Service Windows Boot Manager Windows Collaborative Translation Framework Wi",
-      "link": "https://www.tenable.com/blog/microsofts-june-2026-patch-tuesday-addresses-198-cves-cve-2026-49160-cve-2026-50507",
-      "published": "2026-06-09T18:19:42+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-49160",
-        "CVE-2026-50507",
-        "CVE-2025-10263",
-        "CVE-2026-8863"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Uncontrolled resource consumption in HTTP/2 handling in HTTP.sys allows an unauthenticated remote attacker to cause denial of service by sending specially crafted HTTP/2 requests that exhaust server resources (dubbed \u201cHTTP/2 Bomb\u201d).",
-        "affected_products": "Windows HTTP.sys (HTTP/2)",
-        "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true",
-        "patch_available": "true - https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-49160",
-        "active_exploitation": "false",
-        "threat_actors": "None known",
-        "mitigation": "Configure the MaxHeadersCount registry setting to limit the number of headers in HTTP/2 and HTTP/3 requests and apply the June 2026 security updates promptly.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-49160"
-      }
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/",
-      "title": "Microsoft June 2026 Patch Tuesday fixes 3 zero-day, 200 flaws",
-      "summary": "Today is Microsoft's June 2026 Patch Tuesday, with security updates for 200 flaws and three publicly disclosed zero-day vulnerabilities. [...]",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/",
-      "published": "2026-06-09T17:57:59+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -223,15 +222,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when an adversary injects malicious instructions into external content (web pages, documents, or retrieval corpora) that an LLM\u2011based agent fetches during RAG or agentic workflows; the model then incorporates those instructions, leading to unauthorized behaviors (e.g., data exfiltration, bypassing safety). Notable end\u2011to\u2011end IPI exploits include \"GeminiJack\" (zero\u2011click via indirect prompt injection) and academic demonstrations using natural queries and poisoned external corpora.",
-        "affected_products": "LLM-based agents and retrieval-augmented systems (no specific product versions listed)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "technical_details": "IPI works by poisoning or embedding malicious instructions within external documents or corpora that an AI agent retrieves during normal operation; when the agent incorporates that retrieved content into its prompt, the injected instructions override or manipulate the agent's behavior (e.g., data exfiltration, command execution in agentic systems).",
+        "affected_products": "AI agents, retrieval\u2011augmented generation (RAG) systems, agentic LLM systems",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Public proof\u2011of\u2011concepts are available in research papers (e.g., arXiv) and Forcepoint disclosures; no formal weaponized exploit URL is published.",
+        "patch_available": "Patch unavailable",
+        "active_exploitation": "Confirmed in\u2011the\u2011wild IPI payloads reported by Google\u2019s advisory and Forcepoint research.",
         "threat_actors": "None known",
-        "mitigation": "Apply vendor hardening guidance: content filtering and sanitization of retrieved content, strict tool\u2011use and code execution policies, provenance tracking, RAG retrieval validation, prompt sanitization, model instruction boundaries, user confirmation for high\u2011risk actions, continuous monitoring and threat intelligence sharing.",
+        "mitigation": "Apply strict input sanitization for retrieved external content, implement retrieval\u2011source allowlisting, use provenance/trust checks, limit model exposures to untrusted web content, and apply instruction\u2011sanitization and context\u2011window controls.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -251,16 +250,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) abuses external data sources or agentic tools consumed by an LLM to inject malicious instructions which the model may execute when fulfilling a user query; it can be zero\u2011click when the LLM ingests attacker\u2011controlled content (e.g., email, web content, files) without direct user input, causing the model or downstream agents to perform unintended actions.",
-        "affected_products": "Google Workspace integrations using Gemini (e.g., Gemini Enterprise)",
-        "cvss_score": "CVSS score unavailable",
+        "technical_details": "Indirect prompt injection (IPI) injects malicious instructions into data sources or tools (emails, documents, third\u2011party connectors, web content, tool outputs) consumed by an LLM\u2011enabled application. When the LLM or agent chains incorporate those sources into prompt construction or tool calls, the injected instructions can influence model behavior (including \u201czero\u2011click\u201d cases where user input isn\u2019t required). Examples include crafted payloads embedded in documents or external tool responses that the model interprets as instructions.",
+        "affected_products": "Google Workspace (including Workspace apps integrated with Gemini / Gemini Enterprise); specific versions: not applicable (cloud service)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "exploit_available": "Public PoC reported by Noma Labs (GeminiJack zero\u2011click vulnerability) \u2013 http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability. Additional IPI payload examples documented by Forcepoint X\u2011Labs \u2013 http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads",
+        "patch_available": "No single patch; mitigation described in vendor advisory: http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
+        "active_exploitation": "Confirmed research disclosures and PoC demonstration (Noma Labs GeminiJack zero\u2011click vulnerability); no reported broad active exploitation by threat actors.",
         "threat_actors": "None known",
-        "mitigation": "Google's layered defenses (content filtering, provenance signals, context sanitization, tool access controls, telemetry/monitoring, human review) and vendor hardening for Workspace + Gemini; reduce attacker\u2011controlled inputs, enforce least\u2011privilege for agent tooling, validate/sanitize external data, monitor for IPI patterns, and apply vendor guidance from the Google Security Blog.",
-        "vendor_advisory": "http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
+        "mitigation": "Layered defenses and continuous mitigation as described by Google: input sanitation/validation of external sources, strict tool output handling, provenance and source\u2011trust signals, query\u2011time instruction filtering, least\u2011privilege for agent actions, monitoring/telemetry for anomalous model decisions, and rapid response/update cycles. Encourage hardening connectors and restricting auto\u2011execution of agentic workflows until provenance checks pass.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -279,16 +278,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) \u2013 attacker\u2011controlled web content injects instructions that an agentic browser or AI\u2011assisted feature may execute indirectly, e.g., via page content or comments, and can be chained with other vulnerabilities (such as CVE\u20112025\u201154131) to exfiltrate data or trigger actions.",
-        "affected_products": "Google Chrome (agentic/Gemini features)",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect prompt injection allows crafted web content (e.g., malicious iframes or user\u2011generated pages) to inject instructions that steer the agentic model to take unwanted actions such as navigation, transactions, or data exfiltration. Chrome mitigates this with a separate User Alignment Critic model, origin\u2011set gating that limits data exposure, deterministic URL checks, a real\u2011time prompt\u2011injection classifier, and user confirmations for sensitive actions.",
+        "affected_products": "Google Chrome (agentic browsing feature), Cursor < 1.3",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2014 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability",
-        "patch_available": "true \u2014 http://blog.google/security/architecting-security-for-agentic.html",
-        "active_exploitation": "true \u2014 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability, https://nvd.nist.gov/vuln/detail/CVE-2025-54131",
+        "exploit_available": "No public PoC is available for Chrome agentic capabilities; no weaponized exploit URL is provided.",
+        "patch_available": "Chrome mitigation measures are described in the vendor blog; Cursor is fixed in version 1.3 (see GitHub advisory https://github.com/cursor/cursor/security/advisories/GHSA-534m-3w6r-8pqr).",
+        "active_exploitation": "No confirmed public reports of active exploitation of Chrome\u2019s agentic browsing feature. A related research finding (GeminiJack) exists but is not reported as widespread active exploitation.",
         "threat_actors": "None known",
-        "mitigation": "Apply vendor updates; enable Chrome\u2019s latest stable release with Gemini/agentic security patches; follow Google guidance to restrict agentic features, limit origin access, and block untrusted content. Monitor for IPI payloads and sanitize/validate outputs from agentic features.",
-        "vendor_advisory": "http://blog.google/security/architecting-security-for-agentic.html"
+        "mitigation": "Update Cursor to version 1.3 or later. For Chrome, keep the browser up\u2011to\u2011date and enable the built\u2011in mitigations: origin gating, the User Alignment Critic, prompt\u2011injection classifier, and user confirmations for sensitive actions. Follow Google\u2019s security guidance and report issues via the Vulnerability Rewards Program.",
+        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
       }
     },
     {
@@ -370,6 +369,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/06/china-linked-jdy-botnet-expands-to-1500.html",
+      "title": "China-Linked JDY Botnet Expands to 1,500+ Devices for Cyber Reconnaissance",
+      "summary": "Cybersecurity researchers have warned of a \"resurgence and expansion\" of JDY, a covert network associated with China-nexus state-sponsored threat actors.\n\n\"The JDY botnet comprises over 1,500 SOHO [small office and home office] and IoT devices and operates as a centrally controlled, high-performance scanner used to discover, fingerprint, and continuously map exposed services at scale,\" Lumen's",
+      "link": "https://thehackernews.com/2026/06/china-linked-jdy-botnet-expands-to-1500.html",
+      "published": "2026-06-10T16:08:42+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-exchange-server-zero-day-exploited-in-attacks/",
       "title": "Microsoft patches Exchange Server zero-day exploited in attacks",
       "summary": "Microsoft has patched an actively exploited Exchange Server vulnerability that allows threat actors to execute arbitrary JavaScript code in cross-site scripting (XSS) attacks targeting Outlook Web Access users. [...]",
@@ -402,7 +416,7 @@
     {
       "id": "https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html",
       "title": "Microsoft Defender RoguePlanet Zero-Day Grants SYSTEM Access on Updated Windows",
-      "summary": "The anonymous security researcher going by the name Chaotic Eclipse (aka Nightmare-Eclipse) has released a proof-of-concept (PoC) exploit for yet another Microsoft Defender zero-day named RoguePlanet.\n\n\"The exploit is a race condition, so it's a hit or miss,\" the researcher, who published the exploit under a new GitHub account, \"MSNightmare\" said. \"I have managed to get a 100% success rate on",
+      "summary": "The anonymous security researcher going by the name Chaotic Eclipse (aka Nightmare-Eclipse) has released a proof-of-concept (PoC) exploit for yet another Microsoft Defender zero-day named RoguePlanet.\n\n\"The exploit is a race condition, so it's a hit or miss,\" the researcher, who published the exploit under a new GitHub account \"MSNightmare\" said. \"I have managed to get a 100% success rate on",
       "link": "https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html",
       "published": "2026-06-10T05:22:01+00:00",
       "source": "The Hacker News Security",
@@ -431,6 +445,94 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-48058",
+      "title": "nebula-mesh: Session and OIDC state cookies lack the Secure attribute",
+      "summary": "`internal/web/session.go` and `internal/web/oidc.go` set `HttpOnly` and `SameSite=Lax` on every cookie but never `Secure`. A single plaintext request to the origin (operator on a LAN, mistyped URL, HTTP\u2192HTTPS not strictly enforced, reverse proxy misconfiguration) discloses the session.\n\n## Affected\nAll released versions up to v0.3.1.\n\n## Impact\nAn attacker who can observe one HTTP request to the origin recovers the session cookie and impersonates the operator for the remainder of its 24h TTL. The OIDC state cookie has a narrower 10-minute window but enables CSRF on the OIDC callback during that window.\n\n## Cookie sites\n- `internal/web/session.go` \u2014 `Login`, `StartAuthenticatedSession`, `CompleteTwoFactor`, `Logout`\n- `internal/web/oidc.go` \u2014 `HandleLogin` (state set), `HandleCallback` (state clear)\n\n## Suggested fix\nDriven by an explicit `cookie_secure` config option, inferred true when `tls_cert`+`tls_key` are configured and false otherwise. `rate_limit.trust_proxy_header` is deliberately not used as a signal \u2014 that flag controls XFF parsing for rate-limit IPs and does not promise the proxy speaks TLS to clients. Operator behind a TLS-terminating proxy sets `cookie_secure: true` explicitly.\n\nLogout and OIDC state-clear cookies also pick up matching `HttpOnly` + `SameSite=Lax` so browsers reliably replace the original.\n\n## Reproducer\nStart `nebula-mgmt` without `tls_cert`/`tls_key` (the documented \"behind a reverse proxy\" deployment). Hit any login flow over the local listener:\n\n```\ncurl -i -X POST -d 'username=admin&password=\u2026' http://127.0.0.1:8080/ui/login\n```\n\nThe `Set-Cookie: nebula_session=\u2026` line will lack `Secure`. A subsequent unencrypted hop reveals the cookie verbatim.\n\n## Operational migration\nOperators flipping `cookie_secure` on a running deployment should expect a one-time logout: existing browser cookies have the old attribute set and the new delete-cookie won't match.",
+      "link": "https://github.com/advisories/GHSA-rqfj-vv8r-xhqc",
+      "published": "2026-06-10T18:49:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48058"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48025",
+      "title": "nebula-mesh: Decrypted CA private key persists in heap after signing",
+      "summary": "`internal/pki/resolver.go:36-64` constructs a `CAManager` with the plaintext `ed25519.PrivateKey` after unwrapping via the master key; `internal/pki/ca.go:13-16` stores it. Callers at `internal/api/enroll.go:116`, `internal/api/updates.go:297`, and `internal/api/mobile_bundle.go:40` use the manager for one `Sign()` and drop the reference on function return \u2014 but the underlying slice contents are not wiped before release.\n\nThe keystore package's contract (`internal/keystore/keystore.go` doc: *\"Callers MUST zeroise the returned plaintext DEK as soon as it is no longer needed\"*) is not met by the `CAManager` consumer. Decrypted CA private keys persist in process heap until Go's GC scavenges the underlying slice \u2014 minutes to hours under load, indefinitely on idle servers.\n\n## Affected\nAll released versions up to v0.3.6.\n\n## Threat model\nMemory-read access: core dump, ptrace, kernel swap to disk, container/VM snapshot, OOM-debug bundle, side-channel via shared cache lines. Not a remote-network vulnerability, but defeats the master-key + envelope-encryption design's promise of \"private key never lingers\".\n\n## Suggested fix\nAdd a `Wipe()` method on `CAManager`:\n\n```go\n// internal/pki/ca.go\nfunc (m *CAManager) Wipe() {\n    if m == nil {\n        return\n    }\n    keystore.Zeroize(m.caKey)\n}\n```\n\nAt each call site (`enroll.go:116`, `updates.go:297`, `mobile_bundle.go:40`, and any new caller), `defer caMgr.Wipe()` immediately after the `Resolve()` call. Pattern mirrors the existing `defer keystore.Zeroize(dek)` discipline in the keystore package.\n\nOptional follow-up: wrap `m.Sign()` to zeroize after each call, removing the contract on callers \u2014 but the `defer` pattern is sufficient as a minimum.",
+      "link": "https://github.com/advisories/GHSA-8h84-fhqq-q58v",
+      "published": "2026-06-10T18:34:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48025"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47701",
+      "title": "OpenTelemetry Operator for Kubernetes's ServiceMonitor bearerTokenFile reads arbitrary local file and sends contents as bearer auth",
+      "summary": "## Affected\n\nRepository: github.com/open-telemetry/opentelemetry-operator\nComponent: cmd/otel-allocator (TargetAllocator)\nCompanion: Prometheus Operator API types (CRDs)\n\n## Summary\n\nOpenTelemetry Operator's TargetAllocator watches `ServiceMonitor` resources via the Prometheus Operator CR watcher and converts each selected endpoint into a Prometheus scrape configuration entry. The endpoint field `bearerTokenFile` is preserved through the conversion as `HTTPClientConfig.Authorization.CredentialsFile`. The OpenTelemetry Collector, configured with the Prometheus receiver, then loads that scrape config and, at scrape time, reads the file from its own pod filesystem and sends the contents as `Authorization: Bearer ...` to the scrape endpoint.\n\nA tenant who can create or update a `ServiceMonitor` selected by TargetAllocator can set `bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token` and a scrape target the tenant controls. The Collector then ships its mounted service account JWT to that target on every scrape interval.\n\nThe Prometheus Operator project addressed the same primitive via the `ArbitraryFSAccessThroughSMs.Deny` admission/runtime guard.\n\n## Preconditions\n\nThe OpenTelemetry Collector needs to be deployed with `targetAllocator.prometheusCR.enabled: true` and `serviceMonitorSelector` / `serviceMonitorNamespaceSelector` matching at least one namespace where the attacker can create or update `ServiceMonitor` (or paired with a TargetAllocator resource with the same respective settings). The Collector pod needs to have its service account token mounted. The Collector needs to be able to reach the scrape target chosen by the attacker.\n\n## Impact\n\nTenant `ServiceMonitor` write becomes equivalent to the OpenTelemetry Collector pod's service account against the Kubernetes API. Real impact depends on what the Collector service account is granted in a given deployment. Typical cluster monitoring setups grant pod, node, endpoint, namespace, and service list",
+      "link": "https://github.com/advisories/GHSA-cxh2-4639-vmc5",
+      "published": "2026-06-10T17:24:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47701"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/ivanti-fortinet-and-sap-release-patches.html",
+      "title": "Ivanti, Fortinet, and SAP Release Patches for Multiple Critical Vulnerabilities",
+      "summary": "Fortinet, Ivanti, and SAP have released security updates to address multiple critical security vulnerabilities that could result in arbitrary code execution and information disclosure.\n\nThe security flaw patched by Fortinet relates to a command injection vulnerability in FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS WEB UI. It's tracked as CVE-2026-25089 (CVSS score: 9.1).\n\n\"An",
+      "link": "https://thehackernews.com/2026/06/ivanti-fortinet-and-sap-release-patches.html",
+      "published": "2026-06-10T15:10:59+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-25089"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/cisa-adds-cisco-chrome-and-arista-flaws.html",
+      "title": "CISA Adds Cisco, Chrome, and Arista Flaws to KEV Catalog Amid Active Exploitation",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added three new vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation.\n\nThe list of vulnerabilities is as follows -\n\n\n  CVE-2026-20245 (CVSS score: 7.8) - An improper encoding or escaping of output vulnerability in Cisco Catalyst SD-WAN Manager that could allow an",
+      "link": "https://thehackernews.com/2026/06/cisa-adds-cisco-chrome-and-arista-flaws.html",
+      "published": "2026-06-10T14:44:29+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-20245"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-49397",
@@ -628,23 +730,6 @@
       ],
       "cve_ids": [
         "CVE-2026-8467"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html",
-      "title": "Veeam Backup & Replication RCE Flaw Lets Domain Users Run Remote Code",
-      "summary": "Veeam has released security patches to address a critical flaw in its Backup & Replication software that could result in remote code execution.\n\nTracked as CVE-2026-44963, the vulnerability carries a CVSS score of 9.4 out of a maximum of 10.0.\n\n\"A vulnerability allowing remote code execution (RCE) on the Backup Server by an authenticated domain user,\" Veeam said in a Tuesday advisory.\n\nIt",
-      "link": "https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html",
-      "published": "2026-06-09T16:39:47+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-44963"
       ],
       "is_zero_day": false,
       "is_high_severity": true
