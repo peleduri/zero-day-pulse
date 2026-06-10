@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-10T02:08:08.453940+00:00",
-  "total": 23,
+  "generated": "2026-06-10T09:39:28.137437+00:00",
+  "total": 21,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 17,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,43 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability is a directory traversal flaw that enables unauthenticated remote attackers to read sensitive files on the affected system via crafted file paths.",
-        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
+        "technical_details": "CVE\u20112024\u201157727 is a directory\u2011traversal vulnerability in SimpleHelp RMM that allows unauthenticated remote attackers to read arbitrary files on the system, enabling retrieval of logs, configuration data, and credentials.",
+        "affected_products": "SimpleHelp remote support software version 5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
+        "patch_available": "true",
         "active_exploitation": "true",
-        "threat_actors": "Ransomware actors",
-        "mitigation": "Mitigation steps unavailable.",
+        "threat_actors": "Ransomware actors (generic)",
+        "mitigation": "Apply the vendor\u2011released patch (upgrade SimpleHelp to a version newer than 5.5.7). If immediate patching is not possible, limit network exposure of the SimpleHelp service and enforce strict access controls.",
         "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+      }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
+      "title": "Microsoft Defender 'RoguePlanet' zero-day grants SYSTEM privileges",
+      "summary": "A security researcher has released a new Microsoft Defender zero-day exploit named \"RoguePlanet\" just hours after Microsoft fixed two previously disclosed flaws during June 2026 Patch Tuesday. [...]",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
+      "published": "2026-06-09T23:11:18+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Public PoC exploits a race condition in Microsoft Defender leading to arbitrary code execution and escalation to SYSTEM privileges; exact vulnerable component and exploit steps unavailable in vendor advisory.",
+        "affected_products": "Microsoft Defender for Endpoint/Windows Defender components on supported Windows versions (specific versions unavailable)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true \u2014 https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html",
+        "patch_available": "false \u2014 no official vendor patch reported; Microsoft June 2026 Patch Tuesday fixed other issues but not RoguePlanet.",
+        "active_exploitation": "true \u2014 https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html, https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
+        "threat_actors": "None known",
+        "mitigation": "Disable or restrict Microsoft Defender real\u2011time components where feasible, enforce least\u2011privilege, apply network\u2011level protections, and monitor for suspicious high\u2011privilege process creation. (Specific vendor mitigations unavailable.)",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -54,16 +81,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Local elevation of privilege due to insufficient granularity of access control in Microsoft Defender. Exploit chains Defender update workflow, Volume Shadow Copy, Cloud Files API, opportunistic locks and symbolic links to access SAM and escalate to NT AUTHORITY\\SYSTEM.",
-        "affected_products": "Microsoft Defender (Defender Antimalware Platform \u2014 version 4.18.26050.3011)",
+        "technical_details": "Insufficient granularity of access control in Microsoft Defender allows an authorized attacker to elevate privileges locally via a race condition in the file remediation logic.",
+        "affected_products": "Microsoft Defender (Windows Defender) on supported Windows platforms",
         "cvss_score": "7.8",
-        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true",
-        "patch_available": "true",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-33825",
         "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Apply Microsoft security update for CVE-2026-33825; restrict local logon rights; use application control to block execution from writable directories; monitor Defender service activity for anomalies.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
+        "mitigation": "Apply the vendor patch; restrict local user privileges and enforce least\u2011privilege policies; if the patch is delayed, limit access to Defender components and monitor for suspicious local privilege escalation attempts.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-33825"
       }
     },
     {
@@ -87,15 +114,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Denial-of-service vulnerability in HTTP.sys allowing specially crafted requests to crash or hang the HTTP server/stack, leading to service disruption",
-        "affected_products": "Microsoft Windows HTTP.sys (Windows HTTP stack; affects systems using HTTP.sys)",
+        "technical_details": "Resource exhaustion in HTTP/2 allows an unauthenticated remote attacker to trigger uncontrolled resource consumption leading to denial-of-service by exhausting server resources (\"HTTP/2 Bomb\").",
+        "affected_products": "HTTP.sys (Windows HTTP/2 implementation)",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
         "exploit_available": "false",
         "patch_available": "true \u2014 https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-49160",
-        "active_exploitation": "true \u2014 https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/; https://www.tenable.com/blog/microsofts-june-2026-patch-tuesday-addresses-198-cves-cve-2026-49160-cve-2026-50507",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Apply vendor patch immediately; if patching delayed, mitigate by restricting inbound HTTP(S) traffic (block unwanted sources at network edge), deploy WAF rules to drop malicious requests, and monitor HTTP.sys/service restarts",
+        "mitigation": "Apply Microsoft updates; if patch unavailable, mitigate by disabling HTTP/2 or limiting HTTP/2 connections via IIS/HTTP.sys configuration.",
         "vendor_advisory": "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-49160"
       }
     },
@@ -114,72 +141,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2026-45586 \u2013 improper link resolution before file access in Windows CTFMON (\\\"link following\\\") lets a locally authenticated attacker elevate to SYSTEM. CVE-2026-49160 \u2013 uncontrolled resource consumption in HTTP/2 header compression/flow\u2011control enables a remote denial\u2011of\u2011service (the \\\"HTTP/2 Bomb\\\"). CVE-2026-50507 \u2013 BitLocker protection can be bypassed by placing specially crafted files on USB/EFI and booting into WinRE, triggering a shell (YellowKey) that grants access to encrypted drives on TPM\u2011only configurations.",
-        "affected_products": "Windows Collaborative Translation Framework (CTFMON) on supported Windows versions, Windows HTTP.sys (HTTP/2) on Windows clients and servers handling HTTP/2/HTTP/3, Windows BitLocker on affected Windows 11 and Windows Server 2022/2025 systems using TPM-only BitLocker",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "false",
-        "threat_actors": "None known",
-        "mitigation": "Apply Microsoft patches immediately. For HTTP/2 Bomb use Microsoft\u2019s MaxHeadersCount registry setting (see KB5102602). For BitLocker, enable TPM+PIN rather than TPM\u2011only until patched. No additional workaround for CTFMON beyond patching.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-45586, https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-49160, http://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-50507"
-      }
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-check-point-flaw-exploited-by-ransomware-gangs/",
-      "title": "CISA gives feds 3 days to patch Check Point VPN bug exploited as zero-day",
-      "summary": "CISA has ordered U.S. government agencies to secure their Check Point Remote Access VPN and Mobile Access deployments against a critical vulnerability exploited in zero-day attacks by Qilin ransomware affiliates. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-check-point-flaw-exploited-by-ransomware-gangs/",
-      "published": "2026-06-09T08:18:39+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Authentication-bypass logic-flow weakness in Remote Access and Mobile Access certificate validation when using deprecated IKEv1 key exchange; allows unauthenticated remote attackers to bypass user authentication and establish a remote access VPN connection without a valid user password.",
-        "affected_products": "Check Point Mobile Access / SSL VPN, Remote Access VPN, Spark Firewalls \u2013 versions: R82.10 Jumbo Hotfix Take 19 or below; R82 Jumbo Hotfix Take 103 or below; R81.20 Jumbo Hotfix Take 141 or below; R81.10 (EOS); R81 (EOS); R80.40 (EOS); Spark: R80.20.X (EOS), R81.10.X, R82.00.X",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "Qilin ransomware (Qilin RaaS affiliate) \u2013 one confirmed post-compromise case; broader actor infrastructure observed (Qilin affiliate)",
-        "mitigation": "If unable to patch, remove support for legacy remote access clients; configure Remote Access VPN Authentication to IKEv2 only; set Machine Certificate Authentication to mandatory; enable IPS and download signatures; follow SmartConsole log hunts and IOCs provided by Check Point.",
-        "vendor_advisory": "https://support.checkpoint.com/results/sk/sk185033"
-      }
-    },
-    {
-      "id": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
-      "title": "LiteLLM Flaw CVE-2026-42271 Exploited in the Wild, Chains to Unauthenticated RCE",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a high-severity flaw impacting BerriAI LiteLLM to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-42271 (CVSS score: 8.7), is a command injection vulnerability that could allow any authenticated user to run arbitrary commands on the",
-      "link": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
-      "published": "2026-06-09T06:26:14+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-42271"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Two MCP preview endpoints (POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list) accepted stdio configs (command, args, env) and spawned the supplied command as a subprocess on the proxy host; the endpoints required only a valid proxy API key and lacked role checks, allowing any authenticated user to execute arbitrary commands. When chained with CVE-2026-48710 (Starlette BadHost host\u2011header bypass), the attack can become unauthenticated remote code execution.",
-        "affected_products": "LiteLLM (BerriAI) versions >= 1.74.2 and < 1.83.7",
-        "cvss_score": "8.7",
-        "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:N/SA:N",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade to LiteLLM v1.83.7 and Starlette \u2265 1.0.1. If patching is not possible, block the two POST /mcp\u2011rest/test endpoints at the perimeter, restrict network access to the proxy, rotate stored credentials, and monitor logs for host\u2011header anomalies and unexpected subprocess execution.",
-        "vendor_advisory": "https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g"
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true (source: https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-3-zero-day-200-flaws/)",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "Threat actors unknown.",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -198,15 +169,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when untrusted external content retrieved by a system (e.g., web pages, scraped corpora, or retrieved documents in RAG) contains instructions crafted to influence a downstream LLM or agent. Attackers seed malicious prompts in external content; when the system retrieves that content and includes it in prompts or agent observations, the model follows the injected instructions, enabling data exfiltration, chain\u2011of\u2011command override, or other undesired behaviors. GeminiJack is a zero\u2011click instance where injected content caused Google Gemini Enterprise to act on malicious instructions without user interaction.",
-        "affected_products": "Google Gemini Enterprise",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when malicious instructions are embedded in external web content or retrieval corpora and then incorporated into an LLM\u2019s prompt (e.g., via RAG or browsing agents), causing the model to follow attacker\u2011supplied instructions. End\u2011to\u2011end IPI exploits have been demonstrated against RAG and agentic systems under realistic queries.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2013 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/",
-        "patch_available": "Patch availability unknown.",
+        "exploit_available": "true",
+        "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Blocklist or filter retrieval sources; validate and sanitize retrieved content before including in prompts; apply prompt compartmentalization and instruction\u2011hiding techniques; use strict provenance/trust scoring for retrieved documents; limit model capabilities for automatically\u2011executed actions; apply rate\u2011limiting and anomaly detection on agent actions. Follow vendor guidance in the Google Security Blog advisory.",
+        "mitigation": "Hardening guidance per vendor: sanitize or filter retrieved content, use strict source allowlists, prompt integrity checks, retrieval provenance, model output validation, and apply vendor updates. See Google advisory for specific mitigations.",
         "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
@@ -226,16 +197,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is an attack where adversarial instructions are injected into data sources or tools (emails, documents, web content, calendar invites, connectors) that an LLM\u2011powered system ingests while fulfilling a user\u2019s request; these injected instructions can influence the model\u2019s behavior (including exfiltration or action execution) without direct user input. GeminiJack was a zero\u2011click IPI chain targeting Gemini Enterprise via crafted email/invite/document content.",
-        "affected_products": "Google Workspace (Workspace apps using Gemini / Gemini Enterprise integrations)",
+        "technical_details": "Indirect prompt injection (IPI) tricks LLM\u2011powered Workspace/Gemini by inserting malicious instructions into secondary data sources (emails, documents, calendar invites, comments) or tool outputs that the model consumes while fulfilling a user\u2019s request. Attackers can chain IPI with other vulnerabilities (e.g., zero\u2011click GeminiJack) to exfiltrate data or alter agent behavior without user interaction. CVE\u20112025\u201154131 references an attack chain involving IPI; GeminiJack uses crafted content to trigger unintended model behavior and data leakage.",
+        "affected_products": "Google Workspace (Gemini in Workspace / Gemini Enterprise), Gemini CLI prior to version 1.3",
         "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
+        "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Apply Google Workspace mitigations and layered defenses: content sanitization and filtering, strict context/trust boundaries, provenance and source validation, least\u2011privilege agent permissions, rate limits and monitoring, disable or harden automation/agentic actions for untrusted inputs, apply vendor configuration guidance in blog advisory.",
-        "vendor_advisory": "http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
+        "mitigation": "Multi\u2011layered mitigations recommended by vendor: continuous monitoring for known IPI patterns, content provenance and integrity checks, sanitization and strict parsing of external content, policy\u2011based tool and data source access controls, least\u2011privilege for agentic actions, keep Gemini CLI and Workspace components updated (apply vendor patches), defensive detection of payload patterns, and privilege/network isolation for automated agents.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -254,15 +225,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when untrusted web content manipulates an agentic model's prompts via intermediary content or UI flows, enabling zero\u2011click command execution; Noma Labs demonstrated an IPI that caused Gemini Enterprise to execute injected instructions without user interaction.",
-        "affected_products": "Chrome (agentic browsing / Gemini integration), Google Gemini Enterprise",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
+        "technical_details": "The primary risk is indirect prompt injection: malicious webpage content can craft inputs that influence an AI agent embedded in the browser to perform unsafe actions or disclose sensitive data. Google describes layered defenses (prompt sanitization/restrictions, origin access restrictions, and an oversight agent) to limit these attacks.",
+        "affected_products": "Google Chrome (agentic browsing / Gemini integration)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
         "patch_available": "true",
         "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Google recommended architectural guardrails for agentic browsing (sandboxing agentic actions, strict input/output validation, provenance tracking, user transparency and control), and rolled out new Chrome security layers for agentic features. Users should keep Chrome updated and disable agentic/AI features until patched.",
+        "mitigation": "Apply vendor updates; enable Chrome\u2019s agentic\u2011browsing protections; follow vendor guidance (restrict origin access, sanitize or ignore untrusted page\u2011provided prompts, require user confirmation for sensitive actions, and use oversight/approval flows).",
         "vendor_advisory": "http://blog.google/security/architecting-security-for-agentic"
       }
     },
@@ -282,16 +253,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A linear buffer overflow (bounds\u2011checking error) was discovered in CrabbyAVIF (an AVIF parser/decoder implemented in unsafe Rust) that could have led to remote code execution; the flaw was caught before a public release and tracked as CVE\u20112025\u201148530.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "8.1",
+        "technical_details": "The blog provides a high\u2011level overview of Android\u2019s memory\u2011safety program and reports that after adopting Rust, memory\u2011safety vulnerabilities fell below 20% of total; it does not describe a specific vulnerability or attack vector.",
+        "affected_products": "Android platform (first\u2011party and third\u2011party/open\u2011source code changes across C, C++, Java, Kotlin, Rust)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true (https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050)",
-        "active_exploitation": "false",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "Patch availability unknown",
+        "active_exploitation": "Active exploitation status unknown",
         "threat_actors": "None known",
-        "mitigation": "Apply the vendor patch linked above; audit and minimize unsafe Rust usage, add bounds checks, improve fuzzing and code review for unsafe blocks; ensure up-to-date Android security patch level.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+        "mitigation": "Continue adopting Rust and memory\u2011safety practices in Android code; follow Android security bulletins and vendor guidance.",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
     {
@@ -308,7 +279,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection involves embedding hidden malicious instructions in external data sources such as emails, documents, or calendar invites. When the AI processes this data, the hidden instructions are executed, allowing the attacker to exfiltrate data or trigger rogue actions without direct user input.",
+        "affected_products": "Google Gemini app version <1.3",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Implement Google's layered defense strategy: validate and sanitize all external inputs, enforce strict context handling policies, apply runtime monitoring for anomalous AI behavior, and keep the Gemini app updated to the latest patched version.",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -341,15 +324,46 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
-      "title": "Microsoft Defender 'RoguePlanet' zero-day grants SYSTEM privileges",
-      "summary": "[...]",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
-      "published": "2026-06-09T23:11:18+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-june-2026/",
+      "title": "June 2026 Patch Tuesday: Microsoft Patches 206 Vulnerabilities Including Three Publicly Disclosed Zero-Days",
+      "summary": "",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-june-2026/",
+      "published": "Jun 09, 2026 00:00:00-0500",
+      "source": "CrowdStrike Blog",
+      "tags": [
+        "cloud",
+        "threat-intel",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/no-patch-planned-for-exploited-arista-eos-vulnerability/",
+      "title": "No Patch Planned for Exploited Arista EOS Vulnerability",
+      "summary": "Organizations are advised to apply vendor-supplied mitigations or discontinue the vulnerable devices. The post No Patch Planned for Exploited Arista EOS Vulnerability appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/no-patch-planned-for-exploited-arista-eos-vulnerability/",
+      "published": "2026-06-10T06:38:32+00:00",
+      "source": "SecurityWeek",
       "tags": [
         "news",
-        "malware"
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html",
+      "title": "Microsoft Defender RoguePlanet Zero-Day Grants SYSTEM Access on Updated Windows",
+      "summary": "The anonymous security researcher going by the name Chaotic Eclipse (aka Nightmare-Eclipse) has released a proof-of-concept (PoC) exploit for yet another Microsoft Defender zero-day named RoguePlanet.\n\n\"The exploit is a race condition, so it's a hit or miss,\" the researcher, who published the exploit under a new GitHub account, \"MSNightmare\" said. \"I have managed to get a 100% success rate on",
+      "link": "https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html",
+      "published": "2026-06-10T05:22:01+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -387,36 +401,6 @@
       "cve_ids": [
         "CVE-2026-11645"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/check-point-vpn-zero-day-exploited-in-qilin-ransomware-attacks/",
-      "title": "Check Point VPN Zero-Day Exploited in Qilin Ransomware Attacks",
-      "summary": "The authentication bypass vulnerability allows attackers to establish VPN connections without a valid password. The post Check Point VPN Zero-Day Exploited in Qilin Ransomware Attacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/check-point-vpn-zero-day-exploited-in-qilin-ransomware-attacks/",
-      "published": "2026-06-09T09:47:10+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/google-patches-fifth-chrome-zero-day-bug-exploited-in-attacks-this-year/",
-      "title": "Google patches new Chrome zero-day flaw exploited in the wild",
-      "summary": "Google has released emergency updates to patch another Chrome zero-day vulnerability that has been exploited in the wild, the fifth such flaw patched since the start of the year. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/google-patches-fifth-chrome-zero-day-bug-exploited-in-attacks-this-year/",
-      "published": "2026-06-09T06:56:27+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -469,23 +453,6 @@
       ],
       "cve_ids": [
         "CVE-2026-44963"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Jun/2",
-      "title": "SEC Consult SA-20260608-0 :: Privilege Escalation via Binary Planting in Genetec-provided RabbitMQ in multiple Genetec products",
-      "summary": "Posted by SEC Consult Vulnerability Lab via Fulldisclosure on Jun 08 SEC Consult Vulnerability Lab Security Advisory < 20260608-0 > ======================================================================= title: Privilege Escalation via Binary Planting product: Genetec-provided RabbitMQ in multiple Genetec products vulnerable version: Multiple products, see below. fixed version: Multiple products, see below. CVE number: CVE-2026-25112 ...",
-      "link": "https://seclists.org/fulldisclosure/2026/Jun/2",
-      "published": "2026-06-09T05:32:32+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-25112"
       ],
       "is_zero_day": false,
       "is_high_severity": true
