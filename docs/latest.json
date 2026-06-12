@@ -1,10 +1,41 @@
 {
-  "generated": "2026-06-12T14:31:11.144766+00:00",
-  "total": 24,
-  "kev": 0,
+  "generated": "2026-06-12T19:53:09.994564+00:00",
+  "total": 35,
+  "kev": 1,
   "zero_day": 14,
   "enriched": 10,
   "findings": [
+    {
+      "id": "CVE-2026-35273",
+      "title": "CVE-2026-35273 \u2014 Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
+      "summary": "Vendor: Oracle | Product:  PeopleSoft Enterprise PeopleTools. Oracle PeopleSoft Enterprise PeopleTools contains a missing authentication for critical function vulnerability which could allow an unauthenticated attacker to obtain takeover of PeopleSoft Enterprise PeopleTools. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-15)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-35273",
+      "published": "2026-06-12",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "The vulnerability is a server\u2011side request forgery (CWE\u2011918) in the Updates Environment Management component, allowing unauthenticated remote attackers to trigger arbitrary HTTP requests and potentially achieve remote code execution.",
+        "affected_products": "PeopleSoft Enterprise PeopleTools (versions 8.61, 8.62)",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "ShinyHunters",
+        "mitigation": "Apply Oracle\u2019s out\u2011of\u2011band patch immediately; if the patch cannot be applied, restrict network access to PeopleSoft HTTP interfaces, deploy WAF rules, and disable or limit access to the Updates Environment Management component.",
+        "vendor_advisory": "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
+      }
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -22,22 +53,22 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE\u20112024\u201157727 is a path\u2011traversal vulnerability enabling unauthenticated attackers to craft HTTP requests that read arbitrary files (e.g., server logs, configuration files) from SimpleHelp hosts running version 5.5.7 or earlier.",
-        "affected_products": "SimpleHelp remote support / RMM, versions 5.5.7 and earlier",
+        "technical_details": "Path traversal (directory traversal) vulnerability allowing attackers to read sensitive files by specifying crafted path sequences; impacts SimpleHelp RMM web interface leading to disclosure of files accessible to the service.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "Public PoC/scan template available (e.g., ProjectDiscovery nuclei template). Link: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/cves/2024/CVE-2024-57727.yaml",
-        "patch_available": "Vendor released SimpleHelp 5.5.8 containing security fixes. Advisory URL: https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
-        "active_exploitation": "Confirmed active exploitation reported by CISA (AA25\u2011163A) and multiple incident reports; ransomware actors leveraged the vulnerability to compromise downstream customers.",
-        "threat_actors": "Ransomware actors (reported in CISA advisory); DragonForce/other ransomware groups",
-        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later. If immediate patching is not possible, restrict network access to the SimpleHelp service (ingress filtering, firewall rules), disable public\u2011facing instances, apply network segmentation, rotate credentials, and follow CISA advisory recommendations.",
-        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true \u2014 https://offsec.com/blog/cve-2024-57727",
+        "patch_available": "true \u2014 http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability",
+        "active_exploitation": "true \u2014 https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
+        "threat_actors": "Ransomware actors (unspecified groups)",
+        "mitigation": "Update SimpleHelp to fixed version (apply vendor patch). If patch cannot be applied, isolate/unexpose SimpleHelp RMM from untrusted networks, restrict access via firewall/ACLs, rotate credentials and secrets stored on affected hosts, and monitor for suspicious access/logs. Follow CISA advisory recommendations.",
+        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
       "id": "https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273",
       "title": "Active Exploitation of Oracle PeopleSoft Zero-Day (CVE-2026-35273)",
-      "summary": "Overview On June 10, 2026, Oracle published a security alert for CVE-2026-35273 , a critical vulnerability in the Updates Environment Management component of PeopleSoft Enterprise PeopleTools. Oracle released an out-of-band patch the same day as the advisory, underscoring the urgency of remediation. The vulnerability has a CVSSv3.1 score of 9.8 and is remotely exploitable without authentication. Per the vendor advisory, successful exploitation may result in remote code execution (RCE). TrendAI has classified the underlying flaw as a server-side request forgery ( CWE-918 ). PeopleTools versions 8.61 and 8.62 are affected. CVE-2026-35273 was reported to Oracle through TrendAI's Zero Day Initiative. According to a report published by Mandiant on June 11, 2026, this vulnerability has been exploited in the wild as a zero-day prior to the vendor security alert , with active exploitation observed between May 27 and June 9, 2026, predating Oracle's advisory by two weeks. Mandiant has attributed the campaign to UNC6240 (ShinyHunters), a financially motivated cybercriminal collective known for data theft and extortion. ShinyHunters has been linked to breaches across cloud services, SaaS platforms, and telecommunications providers, frequently exploiting weak authentication controls, stolen credentials, and cloud misconfigurations rather than deploying sophisticated malware. Based on information published by Mandiant, the campaign heavily targeted the higher education sector; 68 percent of the more than 100 notified organizations were universities and colleges. The observed exploitation targeted PeopleSoft's Environment Management Hub (PSEMHUB) endpoints, and data stolen during the campaign was published on the ShinyHunters Data Leak Site (DLS) on June 9, 2026. The /PSIGW/HttpListeningConnector URI path appears in both the indicators of compromise for this campaign and in a PeopleSoft exploit chain for CVE-2013-3821 , detailed by Lexfo in 2017 . A related XML External Entity (X",
+      "summary": "Overview On June 10, 2026, Oracle published a security alert for CVE-2026-35273 , a critical vulnerability in the Updates Environment Management component of PeopleSoft Enterprise PeopleTools. Oracle released an out-of-band patch the same day as the advisory, underscoring the urgency of remediation. The vulnerability has a CVSSv3.1 score of 9.8 and is remotely exploitable without authentication. Per the vendor advisory, successful exploitation may result in remote code execution (RCE). TrendAI has classified the underlying flaw as a server-side request forgery ( CWE-918 ). PeopleTools versions 8.61 and 8.62 are affected. CVE-2026-35273 was reported to Oracle through TrendAI's Zero Day Initiative. According to a report published by Mandiant on June 11, 2026, this vulnerability has been exploited in the wild as a zero-day prior to the vendor security alert , with active exploitation observed between May 27 and June 9, 2026, predating Oracle's advisory by two weeks. The vulnerability was added to the CISA KEV on June 12, 2026. Mandiant has attributed the campaign to UNC6240 (ShinyHunters), a financially motivated cybercriminal collective known for data theft and extortion. ShinyHunters has been linked to breaches across cloud services, SaaS platforms, and telecommunications providers, frequently exploiting weak authentication controls, stolen credentials, and cloud misconfigurations rather than deploying sophisticated malware. Based on information published by Mandiant, the campaign heavily targeted the higher education sector; 68 percent of the more than 100 notified organizations were universities and colleges. The observed exploitation targeted PeopleSoft's Environment Management Hub (PSEMHUB) endpoints, and data stolen during the campaign was published on the ShinyHunters Data Leak Site (DLS) on June 9, 2026. The /PSIGW/HttpListeningConnector URI path appears in both the indicators of compromise for this campaign and in a PeopleSoft exploit chain for CVE-2013-3821 ",
       "link": "https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273",
       "published": "2026-06-12T13:43:04+00:00",
       "source": "Rapid7 Blog",
@@ -52,15 +83,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Server\u2011side request forgery (CWE\u2011918) in the Updates Environment Management component that can be triggered over HTTP by unauthenticated remote attackers, potentially leading to remote code execution.",
-        "affected_products": "Oracle PeopleSoft Enterprise PeopleTools Updates Environment Management component (PeopleTools versions 8.61, 8.62)",
+        "technical_details": "The vulnerability is a server\u2011side request forgery (CWE\u2011918) in the Updates Environment Management component, allowing unauthenticated remote attackers to trigger arbitrary HTTP requests and potentially achieve remote code execution.",
+        "affected_products": "PeopleSoft Enterprise PeopleTools (versions 8.61, 8.62)",
         "cvss_score": "9.8",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Public proof\u2011of\u2011concept and weaponized exploit reported; see Rapid7 blog.",
-        "patch_available": "Out\u2011of\u2011band patch released June\u00a010\u00a02026; see Oracle advisory.",
-        "active_exploitation": "Confirmed active exploitation reported; sources include Rapid7, BleepingComputer, and ShinyHunters.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "ShinyHunters",
-        "mitigation": "Apply the Oracle out\u2011of\u2011band patch immediately; if patching is delayed, block incoming access to PeopleSoft HTTP interfaces from untrusted networks, restrict access to the Updates Environment Management endpoints, and deploy web\u2011application\u2011firewall rules to block exploit patterns.",
+        "mitigation": "Apply Oracle\u2019s out\u2011of\u2011band patch immediately; if the patch cannot be applied, restrict network access to PeopleSoft HTTP interfaces, deploy WAF rules, and disable or limit access to the Updates Environment Management component.",
         "vendor_advisory": "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
       }
     },
@@ -80,16 +111,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "GeminiJack leverages indirect prompt injection: an attacker injects malicious instructions into a shared or publicly indexed document. When Gemini Enterprise or Vertex AI Search retrieves and processes that document, the hidden prompt is executed, enabling data exfiltration without any user action.",
-        "affected_products": "Google Gemini Enterprise, Vertex AI Search",
-        "cvss_score": "-1.0",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI systems process external content (webpages, emails, documents) that contains malicious instructions; when retrieved by models or RAG/agent systems, the model may follow those instructions. Google observed categories such as benign guidance, SEO manipulation, resource\u2011wasting, low\u2011sophistication exfiltration, and destructive instructions. Chaining IPI with other flaws (e.g., the Cursor code\u2011editor allowlist bypass, CVE\u20112025\u201154131) can enable command execution.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concept described in Noma Labs blog (see citation).",
-        "patch_available": "Updates released by Google (see advisory blog post).",
-        "active_exploitation": "Confirmed active exploitation reported via Google\u2019s threat\u2011intelligence analysis and Noma Labs\u2019 discovery of GeminiJack.",
-        "threat_actors": "None known",
-        "mitigation": "Apply the latest Google security updates for Gemini Enterprise and Vertex AI Search; enforce content sanitization for external documents.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "false",
+        "threat_actors": "None known.",
+        "mitigation": "Layered defenses \u2014 filter and coarse\u2011to\u2011fine detection for IPI, RAG tool hardening, retrieval hygiene, limit autonomous agent web access, model\u2011level instruction controls, continuous monitoring, and participation in vulnerability reward programs.",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -108,16 +139,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) allows an attacker to inject malicious instructions into the data sources or tools (e.g., emails, documents, web retrievals, plugins) that a multi\u2011source LLM agent such as Workspace with Gemini uses to fulfill user queries, potentially influencing model behavior without direct user input.",
-        "affected_products": "Google Workspace with Gemini (workspace-integrated Gemini/ Gemini Enterprise)",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect prompt injection (IPI) occurs when malicious instructions are embedded in data sources (emails, documents, calendar invites) that complex AI systems (like Gemini in Workspace) ingest during query processing or agentic actions; these instructions can steer model behavior or cause data exfiltration without user interaction (zero\u2011click). The GeminiJack case used crafted Workspace artifacts to inject instructions that influenced Gemini Enterprise and could leak corporate data.",
+        "affected_products": "Google Workspace with Gemini integration, Gemini Enterprise",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Proof\u2011of\u2011concepts and wild payloads have been reported (e.g., Noma Labs\u2019 GeminiJack disclosure and multiple IPI payload collections), but no single formal public exploit URL exists.",
-        "patch_available": "No single vendor software patch; Google describes layered mitigations and continuous defenses in the advisory above.",
-        "active_exploitation": "Confirmed research disclosures and wild payload detections (e.g., Noma Labs\u2019 GeminiJack and other reports) indicate real\u2011world abuse and proof\u2011of\u2011concept exploits.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses\u2014input provenance and validation, retrieval filtering, context sanitization, strict tool access controls, capability confinement, monitoring and alerting, and continuous model\u2011behavior testing\u2014as described by Google.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
+        "mitigation": "Implement continuous, layered defenses: input sanitization, content provenance filters, model instruction\u2011robustness training, strict isolation of tools/data sources, enforce permission and data\u2011access controls for agentic actions, and deploy telemetry with anomaly detection. Follow the vendor advisory for detailed configuration guidance.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
       }
     },
     {
@@ -136,16 +167,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection enables an attacker to embed malicious prompts that are executed by Gemini's AI, potentially leading to unauthorized actions without any user interaction.",
-        "affected_products": "Google Chrome (agentic capabilities enabled)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept disclosed.",
-        "patch_available": "Patch released via Chrome update; advisory URL: http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
-        "active_exploitation": "None known",
+        "technical_details": "Indirect prompt injection (content poisoning) in RAG pipelines: an attacker embeds hidden instructions in a shared Google Doc, Calendar event, or Gmail message. When the retrieval component of Gemini Enterprise or Vertex AI Search pulls the poisoned content, the instruction is treated as legitimate by the model, causing it to execute actions such as cross\u2011datasource searches and exfiltration via external image URLs. The vulnerability can be chained with CVE\u20112025\u201154131 (Cursor auto\u2011run allowlist bypass) to achieve command execution.",
+        "affected_products": "Google Gemini Enterprise (agentic browsing / RAG integrations), Vertex AI Search, Chrome agentic browsing features",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true - http://blog.google/security/architecting-security-for-agentic.html",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Enable Chrome's layered defenses that block prompt injections, restrict origin access for agentic browsing, and enforce safe AI action policies.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "mitigation": "Google deployed architectural mitigations (layered defenses, restricted origin access, separation of Vertex AI Search from Gemini Enterprise, second\u2011agent oversight in Chrome). Recommended hardening: restrict AI access scopes, treat user\u2011contributed content as untrusted (sanitize/rewrite retrieved content), disable automatic execution/auto\u2011run allowlists, monitor outbound requests from AI outputs, enforce strong RAG boundary checks and retrieval filtering.",
+        "vendor_advisory": "http://blog.google/security/architecting-security-for-agentic.html"
       }
     },
     {
@@ -164,16 +195,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "-1.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit available.",
-        "patch_available": "No official patch available.",
-        "active_exploitation": "No active exploitation reported.",
+        "technical_details": "A near\u2011miss linear buffer overflow in the CrabbyAVIF Rust library (unsafe Rust code path) was identified and fixed pre\u2011release; Scudo hardened allocator prevented exploitation by placing guard pages around secondary allocations and converting silent corruption into a crash.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050 and https://source.android.com/docs/security/bulletin/2025-08-01",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Use Scudo hardened allocator; apply the published patch; improve unsafe Rust review and training (encapsulate unsafe, safety comments, follow best practices).",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
     {
@@ -192,16 +223,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection embeds malicious instructions in external sources (e.g., emails, documents) that are later consumed by AI models. Google mitigates this via adversarial model training, purpose\u2011built ML detectors for malicious instructions, markdown sanitization with suspicious\u2011URL redaction based on Safe Browsing, system\u2011level safeguards, and end\u2011user security notifications.",
-        "affected_products": "Cursor <1.3 (CVE\u20112025\u201154131), Gemini CLI prior to 0.39.1 and 0.40.0\u2011preview.3",
-        "cvss_score": "0.0",
+        "technical_details": "An indirect prompt injection (zero\u2011click) where malicious instructions hidden in external data are processed by Google Gemini Enterprise, allowing an attacker to trigger arbitrary actions when the prompts are evaluated.",
+        "affected_products": "Google Gemini Enterprise (versions prior to 1.3)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC available.",
-        "patch_available": "No official patch for the blog\u2011post vulnerability; related product fixes are available (e.g., Gemini CLI versions 0.39.1 and 0.40.0\u2011preview.3).",
-        "active_exploitation": "No confirmed broad active exploitation of the vulnerability described in the blog post.",
+        "exploit_available": "true (source: http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)",
+        "patch_available": "true (source: http://nvd.nist.gov/vuln/detail/CVE-2025-54131)",
+        "active_exploitation": "true (source: http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
         "threat_actors": "None known",
-        "mitigation": "Apply layered defenses: adversarial model training, ML detectors for malicious instructions, markdown sanitization with suspicious\u2011URL redaction, system\u2011level safeguards (e.g., workspace\u2011trust changes in Gemini CLI), and enable end\u2011user security notifications. For affected products, upgrade to patched versions (Cursor\u202f\u2265\u202f1.3, Gemini CLI\u202f\u2265\u202f0.39.1).",
-        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks"
+        "mitigation": "Implement a layered security approach: validate and sanitize external data sources, enforce strict prompt\u2011execution controls, monitor for anomalous prompt behavior, and apply continuous threat analysis throughout the AI pipeline.",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
     {
@@ -219,16 +250,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state\u2011sponsored actors target large backbone routers, provider edge (PE) and customer edge (CE) routers, leveraging compromised devices and trusted connections to pivot; they modify routers to maintain persistent, long\u2011term access for espionage.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "technical_details": "Actors compromise routers by exploiting known software vulnerabilities or misconfigurations, then modify firmware or configuration to maintain long\u2011term persistence and use the compromised devices to pivot within target networks.",
+        "affected_products": "Backbone routers, Provider Edge (PE) routers, Customer Edge (CE) routers (e.g., Cisco telecom routers)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown; no public PoC reported in advisory.",
-        "patch_available": "Patch availability varies by vendor; no single vendor patch listed in advisory. Patch information unavailable; refer to vendor advisories.",
-        "active_exploitation": "Confirmed active exploitation reported by CISA and NSA (CISA AA25-239A; NSA guidance) indicating global targeting of telecommunications, government, transportation, lodging, and military infrastructure networks.",
-        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
-        "mitigation": "Recommended mitigations include monitoring and hardening of backbone/PE/CE routers, isolating management interfaces, rotating credentials, deploying network segmentation, implementing detection for router modifications and persistence, and following CISA/NSA guidance for countering Chinese state\u2011sponsored actors.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
+        "mitigation": "Apply all available firmware and software updates to routers, disable unnecessary services, enforce strong authentication, segment network zones, and monitor for anomalous routing changes.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
     {
@@ -248,14 +279,14 @@
       "enrichment": {
         "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept or weaponized exploit reported in the advisory; exploit status: none reported.",
-        "patch_available": "Vendor patch information unavailable.",
-        "active_exploitation": "Confirmed active exploitation reported: advisory and FBI/NSA indicate targeting and operations against Western logistics and technology entities since 2022.",
-        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), unit 26165 (aka APT28)",
-        "mitigation": "General mitigations in advisory include heightened monitoring, implement MFA, network segmentation, patching, restrict administrative privileges, review logs and indicators of compromise (IOCs) from the advisory.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165 (aka APT28).",
+        "mitigation": "Refer to the joint CISA/FBI advisory for recommended mitigations and hardening guidance (vendor-specific mitigations not provided).",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -272,19 +303,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Improper input neutralization (cross\u2011site scripting) in Exchange Server\u2019s web page generation allows an unauthenticated attacker to inject malicious scripts, leading to post\u2011authentication actions or code execution on the server.",
-        "affected_products": "Microsoft Exchange Server (cumulative updates/versions indicated in the MSRC advisory)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC confirmed in the cited sources.",
-        "patch_available": "Yes \u2014 Microsoft security update released (see MSRC advisory).",
-        "active_exploitation": "Confirmed active exploitation reported by Microsoft and security press.",
-        "threat_actors": "None known",
-        "mitigation": "Apply the Microsoft security update immediately; isolate affected Exchange servers; follow Microsoft Exchange emergency response guidance; monitor for indicators of compromise.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897"
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/",
@@ -348,6 +367,240 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-49741",
+      "title": "TYPO3 CMS has Privilege Escalation & SQL Injection in its Form Framework",
+      "summary": "### Problem\nBackend users with write access to the `form_definition` database table were able to directly create, update, or delete form definition records via `DataHandler`, bypassing the Form Framework's persistence validation and permission checks. This allowed injecting arbitrary form configurations, re-enabling attack vectors originally addressed in [TYPO3-CORE-SA-2018-003](https://typo3.org/security/advisory/typo3-core-sa-2018-003), including SQL injection and privilege escalation.\n\n### Solution\nUpdate to TYPO3 version 14.3.3 LTS that fixes the problem described.\n\n### Credits\nTYPO3 CMS thanks Sel\u00e7uk G\u00fcney for reporting this issue, and to TYPO3 core & security team member Oliver Hader for fixing it.\n\n### Resources\n* [TYPO3-CORE-SA-2026-017](https://typo3.org/security/advisory/typo3-core-sa-2026-017)",
+      "link": "https://github.com/advisories/GHSA-jh32-v29g-68pq",
+      "published": "2026-06-12T19:32:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-49741"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-49740",
+      "title": "TYPO3 CMS has Insecure Deserialization via Core API",
+      "summary": "### Problem\nTYPO3's cache frontend (`VariableFrontend`) and persistent key-value store (`Registry`) deserialized PHP payloads without integrity validation or class restrictions. An attacker with write access to the underlying storage backend (cache store or sys_registry database table) could inject a crafted serialized payload to trigger PHP Object Injection, potentially exploiting a gadget chain to achieve Remote Code Execution or other high-impact effects.\n\nExploiting this vulnerability requires direct local write access to the storage, such as the SQL database or file system.\n\n### Solution\nUpdate to TYPO3 versions 10.4.57 ELTS, 11.5.51 ELTS, 12.4.46 ELTS, 13.4.31 LTS, 14.3.3 LTS that fix the problem described.\n\n### Credits\nTYPO3 CMS thanks \u201cz3rco\u201d, Chowdhury Faizal Ahammed, Rick Larabee, Vitaly Simonovich, Nozomu Sasaki, Mert Akdag, \u201ctikket\u201d, Shafi Almutairi for reporting this issue, and to TYPO3 core & security team member Oliver Hader for fixing it.\n\n### Resources\n* [TYPO3-CORE-SA-2026-018](https://typo3.org/security/advisory/typo3-core-sa-2026-018)",
+      "link": "https://github.com/advisories/GHSA-c78m-c52x-jgwp",
+      "published": "2026-06-12T19:09:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-49740"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-49738",
+      "title": "TYPO3 CMS has Broken Access Control in its File Abstraction Layer",
+      "summary": "### Problem\nThe path allowance check in `GeneralUtility::isAllowedAbsPath()` performed a plain string prefix comparison without requiring a directory separator boundary, causing a path like `/var/www/html-other/secret.yaml` to be incorrectly accepted as valid when the project root was `/var/www/html`. Administrator users with access to the File Abstraction Layer were able to create new file storage definitions pointing to directories outside the project root, bypassing this path check.\n\n### Solution\nUpdate to TYPO3 versions 10.4.57 ELTS, 11.5.51 ELTS, 12.4.46 ELTS, 13.4.31 LTS, 14.3.3 LTS that fix the problem described.\n\n### Credits\nTYPO3 CMS thanks Wolfgang Klinger for reporting this issue, and to TYPO3 core & security team member Oliver Hader for fixing it.\n\n### Resources\n* [TYPO3-CORE-SA-2026-016](https://typo3.org/security/advisory/typo3-core-sa-2026-016)",
+      "link": "https://github.com/advisories/GHSA-jf56-v8jc-jcc5",
+      "published": "2026-06-12T19:09:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-49738"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48154",
+      "title": "gorest InMemorySecret2FA race condition allows process crash via concurrent map access (CWE-362)",
+      "summary": "## Vulnerability: CWE-362 \u2014 Concurrent Map Access Race Condition in InMemorySecret2FA\n\n**CWE:** CWE-362 (Concurrent Execution using Shared Resource with Improper Synchronization)\n\n### Affected Component\n- `github.com/pilinux/gorest` \u2014 Go REST API boilerplate\n- InMemorySecret2FA \u2014 in-memory 2FA secret store\n\n### Vulnerability Locations\n\n| File | Line | Role |\n|------|------|------|\n| `database/model/twoFA.go` | 43 | Global `map[uint64]Secret2FA` \u2014 bare map, no sync.RWMutex |\n| `handler/login.go` | 139 | Map write during user login |\n| `handler/twoFA.go` | 205 | Map write during 2FA setup |\n| `handler/twoFA.go` | 272 | Map write during 2FA activation |\n| `handler/twoFA.go` | 575 | Map write during 2FA verification |\n| `handler/twoFA.go` | 189 | Map read during 2FA operations |\n| `handler/twoFA.go` | 245 | Map read during 2FA operations |\n| `handler/twoFA.go` | 491 | Map read during 2FA operations |\n| `service/common.go` | 79 | Map delete |\n\n### Data Flow\n\n```\nMultiple HTTP goroutines (concurrent requests)\n    \u2502\n    \u251c\u2500\u2500 handler/login.go:139 \u2500\u25ba map write \u2500\u2500\u2510\n    \u251c\u2500\u2500 handler/twoFA.go:205 \u2500\u25ba map write \u2500\u2500\u253c\u2500\u2500 InMemorySecret2FA (bare map)\n    \u251c\u2500\u2500 handler/twoFA.go:189 \u2500\u25ba map read \u2500\u2500\u2500\u2524      \u25b2  NO sync.RWMutex\n    \u251c\u2500\u2500 handler/twoFA.go:245 \u2500\u25ba map read \u2500\u2500\u2500\u2524      \u2502\n    \u251c\u2500\u2500 handler/twoFA.go:491 \u2500\u25ba map read \u2500\u2500\u2500\u2524      \u2502\n    \u2514\u2500\u2500 service/common.go:79 \u2500\u25ba map delete \u2500\u2518      \u2502\n                                                   \u2502\n            Go runtime detects concurrent map      \u2502\n            read+write or write+write              \u2502\n                \u2502                                  \u2502\n                \u25bc                                  \u2502\n    fatal error: concurrent map read and map write \u2502\n    fatal error: concurrent map writes             \u2502\n                \u2502                                  \u2502\n                \u25bc                                  \u2502\n         Process crash (DoS) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n### Description\n\nThe `InMemorySecret2FA` in `database/model/twoFA.go` was defined as a p",
+      "link": "https://github.com/advisories/GHSA-cpwg-x64r-rgwg",
+      "published": "2026-06-12T18:29:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48154"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48152",
+      "title": "Budibase: Basic app users can exfiltrate stored REST datasource auth by rewriting datasource base URL",
+      "summary": "### Summary\nBudibase stores external REST datasource credentials server-side and documents that database credentials are applied server-side and are not exposed in the UI. The REST datasource implementation redacts stored Basic/Bearer/OAuth2 auth secrets before returning datasource data to clients. However, the single-datasource `GET` and `PUT` routes are guarded by generic `TABLE READ`, not by Builder/Admin permission or datasource-specific ownership/resource checks.\n\nThe built-in Basic app user role maps to the `WRITE` permission set, which includes table read/write and query write. A Basic user can therefore read an existing REST datasource, receive redacted `authConfigs` values, submit an update that changes only `config.url` while keeping the redacted placeholders, and trigger an existing saved relative-path REST query. During update, `mergeConfigs()` restores the old stored secret when it sees the redaction placeholder. During query execution, Budibase prefixes the attacker-controlled datasource `config.url` to the relative query path and applies the resolved stored auth headers. The result is server-side disclosure of the builder-configured REST Authorization secret to an attacker-controlled listener.\n\n### Source evidence\n- `packages/server/src/api/routes/datasource.ts`: datasource list/create/delete routes are on `builderRoutes`, but `GET /api/datasources/:datasourceId` and `PUT /api/datasources/:datasourceId` are in `authorizedRoutes` guarded only by `PermissionType.TABLE` and `PermissionLevel.READ`.\n- `packages/server/src/api/routes/datasource.ts`: the `:datasourceId` routes do not attach datasource-specific resource authorization.\n- `packages/backend-core/src/security/roles.ts`: built-in Basic user maps to `BuiltinPermissionID.WRITE`.\n- `packages/backend-core/src/security/permissions.ts`: `WRITE` grants `READ`/`EXECUTE` levels and includes `QUERY WRITE` and `TABLE WRITE`.\n- `packages/server/src/api/controllers/datasource.ts`: `datasourceController.update`",
+      "link": "https://github.com/advisories/GHSA-3gp5-q4jw-3v94",
+      "published": "2026-06-12T18:28:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48152"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48150",
+      "title": "Budibase: Workspace-scoped builder escalates to global admin via /api/public/v1/roles/assign",
+      "summary": "## Summary\n\n`/api/public/v1/roles/assign` is guarded by the `builderOrAdmin` middleware, which passes any user who is a builder for the app id in the `x-budibase-app-id` header. That check admits both global builders and workspace-scoped builders (`builder.apps` set but `builder.global` unset). The controller then spreads the request body into the SDK call, and the SDK grants `builder.global=true` or `admin.global=true` on whichever user ids the caller supplies. Bob, a workspace-scoped builder with an API key, promotes himself or any other user to global admin with one POST. The whole flow is tenant-wide privilege escalation from an app-level role, available to anyone with an Enterprise license that unlocks the `EXPANDED_PUBLIC_API` feature.\n\n## Details\n\nController (`packages/server/src/api/controllers/public/roles.ts:13-17`):\n\n```typescript\nexport async function assignAppBuilder(ctx: Ctx) {\n  const { userIds, ...assignmentProps } = ctx.request.body\n  await sdk.publicApi.roles.assign(userIds, assignmentProps)\n  ctx.body = { data: { userIds } }\n}\n```\n\nNothing filters `assignmentProps`. The request body's `builder` and `admin` keys flow directly into the SDK.\n\nSDK (`packages/pro/src/sdk/publicApi/roles.ts:17-47`):\n\n```typescript\nexport async function assign(userIds: string[], opts: AssignmentOpts) {\n  if (!(await isExpandedPublicApiEnabled())) {\n    throw new Error(\"Unable to assign roles - license required.\")\n  }\n  const users = await userDB.bulkGet(userIds)\n  for (let user of users) {\n    // ...\n    if (opts.builder) {\n      user.builder = { global: true }\n    }\n    if (opts.admin) {\n      user.admin = { global: true }\n    }\n  }\n  await userDB.bulkUpdate(users)\n}\n```\n\nNo check that the caller already holds the privilege they are granting. `user.builder` is overwritten unconditionally, which also strips any existing `builder.apps` scope from the target.\n\nRoute guard (`packages/backend-core/src/middleware/builderOrAdmin.ts:6-20`):\n\n```typescript\nexport async function ",
+      "link": "https://github.com/advisories/GHSA-6xp4-cf37-ppjh",
+      "published": "2026-06-12T18:28:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48150"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48148",
+      "title": "Budibase: Unvalidated VectorDB Host Parameter Enables SSRF",
+      "summary": "### Summary\n\nThe VectorDB configuration endpoint in Budibase accepts a host parameter that undergoes no validation against internal IP ranges, reserved hostnames, or URL schemes. Any authenticated user with builder-level access can supply an arbitrary host value such as `169.254.169.254` or localhost, causing the server to initiate outbound TCP connections to internal network addresses or cloud metadata endpoints on their behalf.\n\n### Details\n\nThe validator responsible for VectorDB creation and updates defines the host field as `Joi.string().required()`, which enforces only that the value is a non-empty string. No allowlist of external hostnames, no blocklist of RFC 1918 or link-local ranges, and no scheme validation are applied before the value is forwarded to the database SDK for connection establishment.\n\nWhen a VectorDB entry is created or updated, the SDK uses the supplied host directly to open a TCP connection. Because the connection attempt originates from the Budibase server process, it traverses internal network boundaries that would otherwise be inaccessible to the attacker. Differences in connection timing and error messages between reachable and unreachable hosts allow an attacker to enumerate internal services and determine whether specific addresses are live. In cloud environments, the AWS EC2 metadata service at `169.254.169.254`, the GCP metadata server at `metadata.google.internal`, and equivalent endpoints for other providers are all reachable this way.\n\nBuilder access is a realistic precondition in multi-tenant or team deployments, as the builder role is intended to allow application development without granting administrative privileges over the underlying infrastructure.\n\n### PoC\n\n```python\nimport requests\nimport time\n\nBASE_URL = \"https://TARGET_BUDIBASE_INSTANCE\"\nSESSION = requests.Session()\n\nlogin_resp = SESSION.post(f\"{BASE_URL}/api/global/auth/default/login\", json={\n    \"username\": \"builder@example.com\",\n    \"password\": \"builderpassword\"\n})\n",
+      "link": "https://github.com/advisories/GHSA-cv96-5348-p5p8",
+      "published": "2026-06-12T18:27:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48148"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2025-58175",
+      "title": "GeoServer has a Server-Side Request Forgery (SSRF) Vulnerability in its XML Entity Resolution",
+      "summary": "### Summary\nA GeoServer that uses `ENTITY_RESOLUTION_ALLOWLIST` may allow attacker to perform unauthenticated Server-Side Request Forgery (SSRF).\n\n### Details\nThis vulnerability requires that GeoServer is set up to use a proxy base URL and the `ENTITY_RESOLUTION_ALLOWLIST` (default since 2.25.0):\n\n### Impact\nThis vulnerability allows an attacker to cause GeoServer to make requests to an unintended location.\n\n### Workaround\nGeoServer installations are only affected by this vulnerability if they use a proxy base URL that does not contain a URL path or end with a slash (e.g., `https://somesite.org` instead of `https://somesite.org/` or `https://somesite.org/geoserver`). If the proxy base URL does not contain a path, adding a slash to the end of the URL will mitigate this vulnerability.\n\n### Resources\nhttps://osgeo-org.atlassian.net/browse/GEOS-11867\nhttps://github.com/geoserver/geoserver/pull/8622\n\n### Credits:\n-  Le Mau Anh Phong at Verichains Cyber Force",
+      "link": "https://github.com/advisories/GHSA-x4r9-gmw3-hxww",
+      "published": "2026-06-12T18:23:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-58175"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2025-52465",
+      "title": "GeoServer has an arbitrary file write vulnerability in its Master Password Dump Page",
+      "summary": "### Summary\nA vulnerability exists that allows an authenticated administrator with access to GeoServer's security system to pass arbitrary file names to the Master Password Dump web page and create files containing the master password in plaintext. The provided file name must be an absolute path to the target file, the target file can not already exist and all parent directories must already exist.\n\n### Details\nWhen dumping the master password, GeoServer will use the provided file name with minimal validation as long as it is a java.io.File path. The only limitation is that the fix for a previous, unrelated vulnerability prevents relative path traversal here but absolute paths can be used to access arbitrary files. GeoServer does not enforce a maximum password length by default which allows an administrator to place malicious code into their password which could then be dumped into a JSP file.\n\n### Impact\n#### Remote Code Execution (High severity)\nThis vulnerability can lead to executing arbitrary code if GeoServer is deployed in an environment where an attacker can dynamically deploy and execute a JSP file. This is possible if the geoserver.war file is simply placed into the webapps directory of a default Tomcat installation.\n\n#### NTLM Hash Disclosure (Moderate severity)\nIf GeoServer is deployed in a Windows operating system and the GeoServer administrator does not already have access to the Windows account running the GeoServer process, it may be possible for the administrator to make GeoServer trigger an outbound NTLM request to a remote, attacker-controlled server and gain access to the NTLM hash or user password for use in future attacks.\n\n#### Denial of Service (Low severity)\nThis vulnerability allows writing a file to any location where the GeoServer process has write permissions which could still potentially cause some kind of denial of service.\n\n### Mitigation\nGeoServer installations where the web interface is either disabled or completely removed are not ",
+      "link": "https://github.com/advisories/GHSA-7qmg-grcp-qf25",
+      "published": "2026-06-12T18:23:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-52465"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48146",
+      "title": "Budibase: SSRF via OAuth2 Config Validation \u2014 Missing fetchWithBlacklist Protection",
+      "summary": "### Summary\n\nThe OAuth2 token fetch function in `packages/server/src/sdk/workspace/oauth2/utils.ts` (line 59) uses raw `fetch(config.url)` with **no SSRF protection**. The safe wrapper `fetchWithBlacklist()` exists in the same codebase and is used in every other outbound HTTP call (automation steps, plugin downloads, object store), but was **not applied** to the OAuth2 token endpoint.\n\nA user with BUILDER role can point the OAuth2 token URL to internal services (CouchDB, cloud metadata) to exfiltrate sensitive data.\n\n### Details\n\n**Vulnerable code \u2014 `packages/server/src/sdk/workspace/oauth2/utils.ts:59`:**\n\n```typescript\nasync function fetchToken(config: OAuth2Config): Promise<TokenResponse> {\n  // ...\n  const response = await fetch(config.url, fetchConfig)  // NO blacklist check!\n  // ...\n}\n```\n\n**Safe wrapper used everywhere else \u2014 `packages/backend-core/src/utils/outboundFetch.ts`:**\n\n```typescript\nexport async function fetchWithBlacklist(url: string, opts?: RequestInit) {\n  await blacklist.isBlacklisted(url)  // Checks against internal IPs\n  const response = await fetch(url, { ...opts, redirect: \"manual\" })\n  // Re-checks every redirect target\n}\n```\n\n**Where `fetchWithBlacklist` IS used (consistency gap proof):**\n- `automations/steps/discord.ts` \u2014 Discord webhook\n- `automations/steps/slack.ts` \u2014 Slack webhook\n- `automations/steps/make.ts` \u2014 Make.com integration\n- `automations/steps/n8n.ts` \u2014 n8n integration\n- `automations/steps/zapier.ts` \u2014 Zapier integration\n- `automations/steps/outgoingWebhook.ts` \u2014 Custom webhooks\n- Plugin download (GitHub, NPM)\n- Object store tarball downloads\n\n**Where it is NOT used:**\n- `sdk/workspace/oauth2/utils.ts:59` \u2014 OAuth2 token fetch \u2190 **THIS VULNERABILITY**\n\n### PoC\n\n```bash\n# 1. Start SSRF listener\npython3 -c \"\nimport http.server\nclass H(http.server.BaseHTTPRequestHandler):\n    def do_POST(self):\n        length = int(self.headers.get('Content-Length', 0))\n        body = self.rfile.read(length)\n        print(f'SSRF: {self.path} | ",
+      "link": "https://github.com/advisories/GHSA-g6qx-g4pr-92v7",
+      "published": "2026-06-12T15:08:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48146"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48128",
+      "title": "Budibase: SSRF via User-Controlled queryId in Automation Execute Query Step",
+      "summary": "### Summary\n\nThe executeQuery automation step in Budibase accepts a queryId from automation step inputs and passes it directly to the query execution controller without additional validation. When combined with a REST datasource configured to target internal infrastructure, this creates a server-side request forgery path where automation execution causes the Budibase server to make outbound HTTP requests to attacker-influenced destinations. The automation output then returns the response, potentially exposing internal service data.\n\n### Details\n\nInside the execute query automation step, the queryId value and any additional query parameters from `inputs.query` are assembled into a request context and forwarded to `queryController.executeV2AsAutomation`. The constructed context looks like the following:\n\n```typescript\nconst ctx: any = buildCtx(appId, emitter, {\n  body: {\n    parameters: rest,\n  },\n  params: {\n    queryId,\n  },\n  user: context.user,\n})\n```\n\nNo validation is performed to confirm that the referenced query is appropriate for automation use, that the associated datasource targets an allowlisted destination, or that the supplied parameters do not override security-sensitive fields. The `context.user` value is also forwarded directly from automation context into the request, which may allow caller identity to be influenced by automation binding inputs.\n\nTo reach exploitation, an attacker needs builder-level access to the Budibase application. With that access, they can create a REST datasource with a base URL pointing to an internal network endpoint such as a cloud metadata service, create a query against that datasource, and then create an automation whose Execute Query step references that query. When the automation is triggered, the Budibase server issues the HTTP request originating from its own network context, and the response is captured in the automation output.\n\nThe key limitation, reflected in the revised severity, is that builder access already pe",
+      "link": "https://github.com/advisories/GHSA-6964-pp88-6wp9",
+      "published": "2026-06-12T15:08:23Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48128"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-28975",
+      "title": "NIOExtras: NIOHTTPRequestDecompressor ratio limit bypass via inflated Content-Length",
+      "summary": "### Impact\n\nWhen `NIOHTTPRequestDecompressor` is configured with `.ratio(N)`, the decompression limit is enforced using the `Content-Length` header value from the incoming request rather than the actual number of compressed bytes received. Since `Content-Length` is attacker-controlled, a malicious client can supply an inflated value that causes the ratio check to always pass, effectively disabling the configured decompression limit.\n\nThis allows an attacker to send a small, highly-compressed payload (a \"gzip bomb\") with a falsified `Content-Length` header to bypass the ratio-based protection entirely. The server will decompress the payload without limit, consuming unbounded memory and potentially causing denial of service.\n\nFor example, a gzip payload containing highly repetitive data can achieve amplification ratios of several hundred to one. Under `.ratio(10)` such a payload should be rejected, but if the attacker sets `Content-Length` to match the decompressed size, the check evaluates `decompressed > decompressed * 10` which is always false, and the payload is accepted without error.\n\nAcross repeated requests, this allows sustained memory amplification far exceeding the configured limits with no error raised.\n\n### Relationship to CVE-2020-9840\n\nGHSA-xhhr-p2r9-jmm7 (CVE-2020-9840) found that the `.size` limit checked compressed rather than decompressed bytes and recommended `.ratio` as a workaround. This advisory identifies a distinct flaw in the `.ratio` limit itself: it uses the attacker-supplied `Content-Length` header as the denominator rather than actual consumed compressed bytes. The two vulnerabilities are in the same decompression limit enforcement code but involve non-overlapping logic errors.\n\nUsers who followed the CVE-2020-9840 workaround by switching to `.ratio(N)` are affected by this vulnerability.\n\n### Patches\n\nFixed in swift-nio-extras 1.34.1. The fix unifies the request and response decompressor implementations so that both accumulate actual com",
+      "link": "https://github.com/advisories/GHSA-6ph5-fww6-vfwv",
+      "published": "2026-06-12T15:08:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-28975"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48121",
+      "title": "LangGraph has NoSQL parameter injection in MongoDBSaver, allowing cross-tenant state access",
+      "summary": "## Summary\n\nA NoSQL injection vulnerability existed in `MongoDBSaver` where checkpoint identifier fields from `config.configurable` were used in MongoDB queries without strict type enforcement. In vulnerable versions, attacker-controlled object payloads (for example MongoDB operators like `$gt` and `$ne`) could be interpreted as query operators instead of literal identifier values.\n\nThis could bypass intended thread scoping and return checkpoints from other tenants.\n\n## Attack surface\n\nThe vulnerable path was in `MongoDBSaver.getTuple()`, where `thread_id`, `checkpoint_ns`, and `checkpoint_id` were used in MongoDB `find()` queries. The same unvalidated values were then reused to fetch pending writes.\n\nApplications were exposed when untrusted input was forwarded into `config.configurable` (for example, directly from request bodies or query parameters) without string coercion or schema validation.\n\n## Who is affected?\n\nApplications are vulnerable if they:\n\n- Use `@langchain/langgraph-checkpoint-mongodb` with multi-tenant or user-isolated thread models.\n- Accept user-controlled values for `thread_id`, `checkpoint_ns`, or `checkpoint_id`.\n- Pass those values into `app.invoke()`, `app.stream()`, or direct saver methods without validation.\n\nApplications are generally not vulnerable if they:\n\n- Use server-issued identifiers only.\n- Source `thread_id` from trusted URL params that remain strings.\n- Enforce schema validation that rejects non-string identifier fields.\n\n## Impact\n\nAn attacker with control over configurable checkpoint identifiers could read checkpoint data outside their authorized thread boundary.\n\nPotentially exposed data includes:\n\n- Checkpoint state\n- Metadata\n- Pending writes\n\nThis is a confidentiality issue with cross-tenant data disclosure risk.\n\n## Exploit example\n\nAn attacker-controlled request can inject MongoDB operators:\n\n```ts\ngraph = new StateGraph(...)\n  .compile({\n    checkpointer: new MongoDBSaver()\n  });\n\ngraph.invoke(..., {\n  configurable: {  \n",
+      "link": "https://github.com/advisories/GHSA-98xf-r82g-9mhx",
+      "published": "2026-06-12T15:05:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48121"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2025-27511",
@@ -453,60 +706,6 @@
       ],
       "cve_ids": [
         "CVE-2026-48059"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48053",
-      "title": "Kolibri has Unauthenticated Server-Side Request Forgery (SSRF) in RemoteFacilityUserViewset",
-      "summary": "## Summary\n\nSeveral Kolibri API endpoints accept an unvalidated `baseurl` parameter and fetch attacker-controlled URLs from the Kolibri server, reflecting the response body back to the caller. The original report identified two endpoints on the `RemoteFacilityUser*` viewsets; remediation review found two further reflection points on the same pattern. The GET endpoint was unauthenticated.\n\n## Affected endpoints\n\nReported:\n\n- `GET /api/auth/remotefacilityuser` \u2192 `RemoteFacilityUserViewset` (`kolibri/core/auth/api.py:1570`). No authentication required.\n- `POST /api/auth/remotefacilityauthenticateduserinfo` \u2192 `RemoteFacilityUserAuthenticatedViewset` (`kolibri/core/auth/api.py:1594`). Authentication is checked against the *remote* server rather than the local Kolibri.\n\nFound during remediation:\n\n- `POST /api/public/setupwizard/loddata` \u2192 setup wizard's remote-signup proxy (`kolibri/plugins/setup_wizard/api.py`). Reachable on unprovisioned devices.\n- `GET /api/public/networklocation/<id>/facilities/` \u2192 `NetworkLocationFacilitiesView` (`kolibri/core/discovery/api.py`). Authenticated but with the same `Response(remote_payload)` pattern.\n\n## Root cause\n\nTwo compounding issues:\n\n1. **Response reflection** \u2014 these endpoints returned the remote server's JSON body more or less verbatim to the caller (`Response(response.json())`, `Response(facility_info[\"users\"])`, etc.).\n2. **No restriction on the remote target** \u2014 `baseurl` was validated only by `URLValidator(schemes=[\"http\", \"https\"])`. `NetworkClient.build_for_address()` would connect to any host with a valid Kolibri-shaped `/api/public/info/` response, and `requests` followed 30x redirects by default, so a hostile peer could pivot the fetch to an arbitrary host (cloud metadata, internal services) before reflection.\n\n## Two reflection vectors\n\n**GET vector (`RemoteFacilityUserViewset`):**\nThe viewset fetched `<baseurl>/api/public/facilitysearchuser/` and returned `Response(response.json())`. An attacker-controlled `baseurl` r",
-      "link": "https://github.com/advisories/GHSA-4mj9-pf4r-cqrc",
-      "published": "2026-06-11T17:10:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48053"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48050",
-      "title": "Arc: Unauthenticated access to Go debug pprof endpoints leaks runtime state and enables CPU-burn DoS",
-      "summary": "### Summary\n\nArc registers Go's `net/http/pprof` handlers at `/debug/pprof/*` via `app.Use(pprof.New())` in `internal/api/server.go`, and `/debug/pprof` is added to `PublicPrefixes` in `cmd/arc/main.go`. The auth middleware short-circuits before the token check on prefix match, so the endpoints are reachable without any authentication.\n\n### Impact\n\nAny network-reachable caller (no token required) can:\n\n- Fetch `/debug/pprof/heap` \u2014 leaks in-memory state: live SQL strings, decoded msgpack records, decompressed request bodies, cached `*TokenInfo` (the auth cache keys on SHA-256 of the plaintext token at `auth.go:543`).\n- Fetch `/debug/pprof/goroutine?debug=2` \u2014 leaks call stacks, identifying internal code paths.\n- Fetch `/debug/pprof/profile?seconds=N` \u2014 pins a CPU core for arbitrary duration. Trivial DoS amplification (one short HTTP request \u2192 minutes of server CPU).\n- Fetch `/debug/pprof/trace` \u2014 long-duration execution trace, similar DoS profile.\n\nNo authentication, no rate limiting, no resource bound on the `seconds` parameter.\n\n### Patches\n\nhttps://github.com/Basekick-Labs/arc/releases/tag/v26.06.1\n\nPlanned mitigation:\n\n1. Gate pprof registration behind an env var (`ARC_DEBUG_PPROF=1`) that defaults to off.\n2. When enabled, bind pprof to a separate localhost-only listener (`127.0.0.1:6060` via dedicated `net/http` server) so it's never reachable from the public API port.\n3. Remove `/debug/pprof` from `PublicPrefixes`.\n4. Fix the `HasPrefix` bug where `\"/debug/pprofX\"` matches `\"/debug/pprof\"`.\n\n### Workarounds\n\n- Block `/debug/pprof*` at a reverse proxy / load balancer in front of Arc.\n- Restrict Arc's API port to known-trusted networks via firewall rules.\n- Patch the running build: comment out `app.Use(pprof.New())` in `internal/api/server.go` and rebuild.\n\n### Credits\n\nReported by Alex Manson ([@NeuroWinter](https://github.com/NeuroWinter), https://neurowinter.com/) on 2026-05-19.",
-      "link": "https://github.com/advisories/GHSA-j93g-rp6m-j32m",
-      "published": "2026-06-11T17:10:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48050"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48049",
-      "title": "@hapi/inert has a static-file confinement bypass via sibling-prefix path",
-      "summary": "### Impact\n`@hapi/inert` serves static files from a directory configured with `path` (in the `directory` / `file` handlers) or `relativeTo` (for `h.file()`), with confinement enforced by the `confine` option (default `true`). Before the patch, the confinement check compared the resolved absolute path against the confine directory using a raw string-prefix test, so a sibling directory whose absolute path begins with the same characters as the confine directory (eg. `/app/static-secret` next to a served `/app/static`) was incorrectly accepted as confined. An unauthenticated remote attacker who knows or guesses such a sibling name can read any file inside it via a request like `/..%2fstatic-secret/secret.txt`, provided the file is readable by the server process. Only applications that happen to have a sibling directory sharing a string prefix with the served directory are exploitable; applications with no such sibling are unaffected.\n\n### Patches\nUpgrade to 7.1.1.\n\n### Workarounds\nFor users who cannot upgrade immediately: ensure the directory served via inert has no sibling whose name starts with the same characters (for example, rename `static-secret/` to `secret/`, or move it to a different parent directory).\n\n### Resources\nPull Request: https://github.com/hapijs/inert/pull/176",
-      "link": "https://github.com/advisories/GHSA-rcvq-m9j9-6f4g",
-      "published": "2026-06-11T17:10:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48049"
       ],
       "is_zero_day": false,
       "is_high_severity": true
