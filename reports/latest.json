@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-12T09:56:21.608387+00:00",
-  "total": 29,
+  "generated": "2026-06-12T14:31:11.144766+00:00",
+  "total": 24,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 14,
   "enriched": 10,
   "findings": [
     {
@@ -22,43 +22,46 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE\u20112024\u201157727 is a directory traversal flaw in SimpleHelp 5.5.7 and earlier that lets unauthenticated remote attackers read arbitrary files on the system, including logs, configuration files, and credentials.",
-        "affected_products": "SimpleHelp remote support software version 5.5.7 and earlier",
+        "technical_details": "CVE\u20112024\u201157727 is a path\u2011traversal vulnerability enabling unauthenticated attackers to craft HTTP requests that read arbitrary files (e.g., server logs, configuration files) from SimpleHelp hosts running version 5.5.7 or earlier.",
+        "affected_products": "SimpleHelp remote support / RMM, versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or exploit URL is known.",
-        "patch_available": "A fix is available in SimpleHelp version 5.5.8 or later; see the vendor advisory for details.",
-        "active_exploitation": "Yes \u2013 ransomware actors have been reported leveraging CVE\u20112024\u201157727 in real\u2011world attacks.",
-        "threat_actors": "Ransomware actors (unspecified groups)",
-        "mitigation": "Upgrade SimpleHelp to version 5.5.8 or later. Until then, limit file system permissions for the SimpleHelp service and isolate it on a separate network segment.",
-        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "Public PoC/scan template available (e.g., ProjectDiscovery nuclei template). Link: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/cves/2024/CVE-2024-57727.yaml",
+        "patch_available": "Vendor released SimpleHelp 5.5.8 containing security fixes. Advisory URL: https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
+        "active_exploitation": "Confirmed active exploitation reported by CISA (AA25\u2011163A) and multiple incident reports; ransomware actors leveraged the vulnerability to compromise downstream customers.",
+        "threat_actors": "Ransomware actors (reported in CISA advisory); DragonForce/other ransomware groups",
+        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later. If immediate patching is not possible, restrict network access to the SimpleHelp service (ingress filtering, firewall rules), disable public\u2011facing instances, apply network segmentation, rotate credentials, and follow CISA advisory recommendations.",
+        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
-      "id": "https://www.rapid7.com/blog/post/tr-criminal-ai-underground-market-operationalizing-cybercrime-2026",
-      "title": "Criminal AI-as-a-Service in 2026: How the Underground Market Is Operationalizing Cybercrime",
-      "summary": "Introduction The underground market for criminally oriented generative AI has moved beyond the early hype surrounding 'malicious chatbots.' The gradual integration of AI as a productivity layer within cybercrime operations has become the dominant story, indicating that while the potential for fully autonomous AI hacking systems is possible, attackers are not embracing them as expected. Instead, threat actors are increasingly using AI to accelerate routine, but operationally significant, tasks to scale their operations. Drafting phishing lures, profiling targets, debugging code, generating forged documents, modifying malware, translating victim communications, and processing stolen data at scale were once time-consuming activities that AI has made significantly easier. AI does not replace cybercriminals; it lowers friction, increases speed, and expands the range of actors able to perform tasks that previously required more time, skill, or external support. AI is being absorbed into criminal tradecraft, embedding itself in social engineering, fraud enablement, impersonation, identity abuse, and post-breach data exploitation. The market supporting this demand is not a single coherent product category, but a broader ecosystem of jailbreak wrappers, Telegram-based bots, prompt packs, open-weight model deployments, stolen AI accounts, and hijacked API keys. Their importance lies less in technical elegance than in usability. They provide criminals with accessible, repeatable, and commercially packaged ways to apply AI to operational problems. This ecosystem should not be mistaken for a stable or fully mature criminal market. Compared with more established sectors, criminal AI remains volatile, uneven, and heavily exposed to hype. Some services offer genuine operational utility while others are little more than repackaged public models marketed at inflated prices. Many are short-lived, deceptive, or opportunistic rebrands. Even so, the demand is real. The core shift is not ",
-      "link": "https://www.rapid7.com/blog/post/tr-criminal-ai-underground-market-operationalizing-cybercrime-2026",
-      "published": "2026-06-11T13:00:00+00:00",
+      "id": "https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273",
+      "title": "Active Exploitation of Oracle PeopleSoft Zero-Day (CVE-2026-35273)",
+      "summary": "Overview On June 10, 2026, Oracle published a security alert for CVE-2026-35273 , a critical vulnerability in the Updates Environment Management component of PeopleSoft Enterprise PeopleTools. Oracle released an out-of-band patch the same day as the advisory, underscoring the urgency of remediation. The vulnerability has a CVSSv3.1 score of 9.8 and is remotely exploitable without authentication. Per the vendor advisory, successful exploitation may result in remote code execution (RCE). TrendAI has classified the underlying flaw as a server-side request forgery ( CWE-918 ). PeopleTools versions 8.61 and 8.62 are affected. CVE-2026-35273 was reported to Oracle through TrendAI's Zero Day Initiative. According to a report published by Mandiant on June 11, 2026, this vulnerability has been exploited in the wild as a zero-day prior to the vendor security alert , with active exploitation observed between May 27 and June 9, 2026, predating Oracle's advisory by two weeks. Mandiant has attributed the campaign to UNC6240 (ShinyHunters), a financially motivated cybercriminal collective known for data theft and extortion. ShinyHunters has been linked to breaches across cloud services, SaaS platforms, and telecommunications providers, frequently exploiting weak authentication controls, stolen credentials, and cloud misconfigurations rather than deploying sophisticated malware. Based on information published by Mandiant, the campaign heavily targeted the higher education sector; 68 percent of the more than 100 notified organizations were universities and colleges. The observed exploitation targeted PeopleSoft's Environment Management Hub (PSEMHUB) endpoints, and data stolen during the campaign was published on the ShinyHunters Data Leak Site (DLS) on June 9, 2026. The /PSIGW/HttpListeningConnector URI path appears in both the indicators of compromise for this campaign and in a PeopleSoft exploit chain for CVE-2013-3821 , detailed by Lexfo in 2017 . A related XML External Entity (X",
+      "link": "https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273",
+      "published": "2026-06-12T13:43:04+00:00",
       "source": "Rapid7 Blog",
       "tags": [
         "research",
         "metasploit"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-35273",
+        "CVE-2013-3821"
+      ],
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated stack\u2011based buffer overflow in SDP parsing for ICE handling, allowing remote code execution as root when ICE is enabled.",
-        "affected_products": "HP Poly VVX 150, 250, 350, 450; HP Poly Trio 8300, 8500, 8800",
-        "cvss_score": "9.2",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Rapid7 published a Metasploit module for defender testing (https://www.rapid7.com/blog/post/ve-cve-2026-0826-critical-unauthenticated-stack-buffer-overflow-hp-poly-vvx-trio-voip-phones-fixed/)",
-        "patch_available": "HP firmware/UCS update via Poly Lens released June 1, 2026 (https://support.hp.com/us-en/document/ish_15052661-15052687-16/hpsbpy04083)",
-        "active_exploitation": "No public in\u2011the\u2011wild exploitation observed at time of disclosure.",
-        "threat_actors": "None known",
-        "mitigation": "Disable ICE if not required; segment voice VLAN; inventory devices and firmware versions; apply HP UCS firmware via Poly Lens; validate remediation with Rapid7 Metasploit module.",
-        "vendor_advisory": "https://support.hp.com/us-en/document/ish_15052661-15052687-16/hpsbpy04083"
+        "technical_details": "Server\u2011side request forgery (CWE\u2011918) in the Updates Environment Management component that can be triggered over HTTP by unauthenticated remote attackers, potentially leading to remote code execution.",
+        "affected_products": "Oracle PeopleSoft Enterprise PeopleTools Updates Environment Management component (PeopleTools versions 8.61, 8.62)",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Public proof\u2011of\u2011concept and weaponized exploit reported; see Rapid7 blog.",
+        "patch_available": "Out\u2011of\u2011band patch released June\u00a010\u00a02026; see Oracle advisory.",
+        "active_exploitation": "Confirmed active exploitation reported; sources include Rapid7, BleepingComputer, and ShinyHunters.",
+        "threat_actors": "ShinyHunters",
+        "mitigation": "Apply the Oracle out\u2011of\u2011band patch immediately; if patching is delayed, block incoming access to PeopleSoft HTTP interfaces from untrusted networks, restrict access to the Updates Environment Management endpoints, and deploy web\u2011application\u2011firewall rules to block exploit patterns.",
+        "vendor_advisory": "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
       }
     },
     {
@@ -77,15 +80,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when external web content or retrieved documents contain adversarial instructions that are incorporated into an AI agent's prompt or context (e.g., via RAG or agent retrieval), causing the model to follow malicious instructions. GeminiJack is a zero\u2011click IPI\u2011style exploit against Google Gemini Enterprise.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "technical_details": "GeminiJack leverages indirect prompt injection: an attacker injects malicious instructions into a shared or publicly indexed document. When Gemini Enterprise or Vertex AI Search retrieves and processes that document, the hidden prompt is executed, enabling data exfiltration without any user action.",
+        "affected_products": "Google Gemini Enterprise, Vertex AI Search",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Proof\u2011of\u2011concepts published by Noma Labs (GeminiJack) and Forcepoint (10 IPI payloads).",
-        "patch_available": "Patch unavailable. Google and other vendors recommend mitigations; no vendor patch URL available.",
-        "active_exploitation": "Confirmed active exploitation reported by Google Threat Intelligence and Noma Labs (GeminiJack zero\u2011click IPI).",
+        "exploit_available": "Public proof\u2011of\u2011concept described in Noma Labs blog (see citation).",
+        "patch_available": "Updates released by Google (see advisory blog post).",
+        "active_exploitation": "Confirmed active exploitation reported via Google\u2019s threat\u2011intelligence analysis and Noma Labs\u2019 discovery of GeminiJack.",
         "threat_actors": "None known",
-        "mitigation": "Mitigations include continuous monitoring for IPI, hardening retrieval and sanitization in RAG/agents, restricting autonomous agent actions, safe browsing and content filtering, robust canonicalization and provenance checks on retrieved content, and vendor\u2011provided hardening guidance.",
+        "mitigation": "Apply the latest Google security updates for Gemini Enterprise and Vertex AI Search; enforce content sanitization for external documents.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -105,15 +108,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) attacks embed malicious instructions in external data sources (web pages, documents, emails, links) that an LLM ingests during a user request; the injected instructions aim to manipulate model behavior or exfiltrate data. Google\u2019s mitigation pipeline includes detection classifiers, markdown sanitization, suspicious URL redaction, security thought reinforcement, user confirmation framework, deterministic policy controls, ML/LLM retraining, and model hardening.",
-        "affected_products": "Google Workspace with Gemini (Gmail, Docs editors, Drive, Chat, Gemini app)",
+        "technical_details": "Indirect Prompt Injection (IPI) allows an attacker to inject malicious instructions into the data sources or tools (e.g., emails, documents, web retrievals, plugins) that a multi\u2011source LLM agent such as Workspace with Gemini uses to fulfill user queries, potentially influencing model behavior without direct user input.",
+        "affected_products": "Google Workspace with Gemini (workspace-integrated Gemini/ Gemini Enterprise)",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is available.",
-        "patch_available": "No vendor patch is available; mitigations are continuous layered defenses described in the advisory.",
-        "active_exploitation": "Public reporting indicates IPI attempts have been observed and studied; however, no confirmed large\u2011scale active exploitation campaign attributed to specific threat actors has been reported.",
+        "exploit_available": "Proof\u2011of\u2011concepts and wild payloads have been reported (e.g., Noma Labs\u2019 GeminiJack disclosure and multiple IPI payload collections), but no single formal public exploit URL exists.",
+        "patch_available": "No single vendor software patch; Google describes layered mitigations and continuous defenses in the advisory above.",
+        "active_exploitation": "Confirmed research disclosures and wild payload detections (e.g., Noma Labs\u2019 GeminiJack and other reports) indicate real\u2011world abuse and proof\u2011of\u2011concept exploits.",
         "threat_actors": "None known",
-        "mitigation": "Use Google\u2019s layered defenses: prompt\u2011injection content classifiers, markdown sanitization and suspicious URL redaction (Safe Browsing), user\u2011confirmation framework for risky actions, end\u2011user security mitigation notifications, deterministic policy engine for rapid config fixes (regex takedowns, URL sanitization, tool\u2011chaining), synthetic\u2011data generation for ML/LLM retraining, and ongoing red\u2011team/VRP engagement.",
+        "mitigation": "Use layered defenses\u2014input provenance and validation, retrieval filtering, context sanitization, strict tool access controls, capability confinement, monitoring and alerting, and continuous model\u2011behavior testing\u2014as described by Google.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -133,15 +136,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The primary risk is indirect prompt injection where malicious web content influences agentic browser prompts; Google describes layered defenses to detect and mitigate such injections and to restrict origin access and unsafe AI actions.",
-        "affected_products": "Affected products unavailable",
+        "technical_details": "Indirect prompt injection enables an attacker to embed malicious prompts that are executed by Gemini's AI, potentially leading to unauthorized actions without any user interaction.",
+        "affected_products": "Google Chrome (agentic capabilities enabled)",
         "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit unavailable",
-        "patch_available": "Chrome security features/defenses described in the vendor blog; official vendor advisory URL above (no discrete patch link provided)",
-        "active_exploitation": "No confirmed active exploitation reported",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof\u2011of\u2011concept disclosed.",
+        "patch_available": "Patch released via Chrome update; advisory URL: http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
+        "active_exploitation": "None known",
         "threat_actors": "None known",
-        "mitigation": "Apply Chrome\u2019s updated agentic security features described by Google (layered defenses to block prompt injections, restrict origin access, and prevent unsafe AI actions); follow Chrome updates and enable the latest browser version.",
+        "mitigation": "Enable Chrome's layered defenses that block prompt injections, restrict origin access for agentic browsing, and enforce safe AI action policies.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -163,14 +166,14 @@
       "enrichment": {
         "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit/PoC information unavailable.",
-        "patch_available": "Patch information unavailable.",
-        "active_exploitation": "No confirmed active exploitation reported in the referenced post.",
+        "exploit_available": "No public exploit available.",
+        "patch_available": "No official patch available.",
+        "active_exploitation": "No active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Use memory-safety strategies (adopt Rust for new code, reduce C/C++ usage, apply secure-coding reviews); detailed mitigation steps unavailable.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -189,16 +192,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when untrusted external content retrieved by an AI system contains hidden instructions that manipulate the model\u2019s behavior (e.g., exfiltrate data, override higher-level constraints). Attack path typically requires the agent to fetch external content into its prompt context (emails, web pages, documents), and the malicious content leverages the model\u2019s instruction\u2011following tendency. Mitigations include provenance checks, sanitization, explicit instruction sealing, and limiting retrieval of untrusted sources.",
-        "affected_products": "Google Workspace integrations and systems that perform retrieval from external content into prompts (generic)",
+        "technical_details": "Indirect prompt injection embeds malicious instructions in external sources (e.g., emails, documents) that are later consumed by AI models. Google mitigates this via adversarial model training, purpose\u2011built ML detectors for malicious instructions, markdown sanitization with suspicious\u2011URL redaction based on Safe Browsing, system\u2011level safeguards, and end\u2011user security notifications.",
+        "affected_products": "Cursor <1.3 (CVE\u20112025\u201154131), Gemini CLI prior to 0.39.1 and 0.40.0\u2011preview.3",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No confirmed public weaponized exploit tied to this specific Google blog advisory; separate CVEs (e.g., CVE-2025-46059, CVE-2025-54131) have PoCs in some reports. \"Proof-of-concept availability varies by vulnerability; none provided in the Google advisory.\"",
-        "patch_available": "No single \"patch\" \u2013 Google describes a layered defense and mitigations for indirect prompt injection in the blog post; vendor advisory URL provided.",
-        "active_exploitation": "Reports indicate increasing IPI attempts in the wild (see SecurityWeek, Forcepoint, Infosecurity summaries). No confirmed attribution to specific actor groups for the Google advisory.",
+        "exploit_available": "No public PoC available.",
+        "patch_available": "No official patch for the blog\u2011post vulnerability; related product fixes are available (e.g., Gemini CLI versions 0.39.1 and 0.40.0\u2011preview.3).",
+        "active_exploitation": "No confirmed broad active exploitation of the vulnerability described in the blog post.",
         "threat_actors": "None known",
-        "mitigation": "Implement defense-in-depth including content provenance controls, retrieval sanitization, input/output filters, model behavior constraints, strict access controls, telemetry and monitoring, and continuous threat analysis as described in the Google Security Blog post.",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+        "mitigation": "Apply layered defenses: adversarial model training, ML detectors for malicious instructions, markdown sanitization with suspicious\u2011URL redaction, system\u2011level safeguards (e.g., workspace\u2011trust changes in Gemini CLI), and enable end\u2011user security notifications. For affected products, upgrade to patched versions (Cursor\u202f\u2265\u202f1.3, Gemini CLI\u202f\u2265\u202f0.39.1).",
+        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks"
       }
     },
     {
@@ -216,15 +219,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC\u2011linked APTs exploit known, publicly disclosed vulnerabilities and weak/default configurations on edge routers, firewalls, NAS, and IoT devices to gain initial access (no zero\u2011days observed). They create persistence by adding accounts, modifying router configs, enabling on\u2011box containers, using SPAN/ERSPAN or GRE/MPLS tunnels for covert exfiltration, and leveraging compromised devices to pivot. A large Mirai\u2011based botnet (Integrity Tech) was used to manage compromised devices and proxy actor operations.",
-        "affected_products": "Cisco IOS/IOS XE, Ivanti Connect Secure/Policy, Ivanti MobileIron, FortiOS/FortiProxy, Juniper Junos, F5 Big\u2011IP, MikroTik RouterOS, Zyxel (NAS/USG/ZyWALL), Netgate pfSense, QNAP QTS/QuTS, Apache Solr/ActiveMQ/Superset, Ubiquiti UniFi, NETGEAR routers, Telstra Smart Modem, Hikvision web servers, Tenda, DrayTek Vigor, Zyxel, Totolink, D\u2011Link, Contec SolarView, Cisco Small Business RV series, and many SOHO routers, firewalls, NAS, and IoT devices",
+        "technical_details": "PRC state\u2011sponsored actors target large backbone routers, provider edge (PE) and customer edge (CE) routers, leveraging compromised devices and trusted connections to pivot; they modify routers to maintain persistent, long\u2011term access for espionage.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoCs exist for some referenced CVEs and Mirai\u2011based botnet malware is public; investigators observed Mirai\u2011derived payloads and numerous CVE exploitation chains (see Joint CSA Appendix). Specific PoC URLs vary by CVE.",
-        "patch_available": "Official vendor patches are available for many of the exploited CVEs; organizations should apply vendor firmware/software updates per vendor advisories (see CISA and Joint CSA for CVE lists and vendor guidance).",
-        "active_exploitation": "Yes \u2014 confirmed large\u2011scale active exploitation since at least 2021, including thousands\u2013hundreds of thousands of compromised devices, operational botnet activity (Mirai\u2011derived) and targeted compromises of telecommunications and critical infrastructure devices (CISA AA25-239A; Joint CSA; Canadian advisory).",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor, Integrity Technology Group (Integrity Tech), Flax Typhoon, RedJuliett, Ethereal Panda",
-        "mitigation": "Prioritize patching known exploited CVEs; disable unused management services/protocols (HTTP, Telnet, SNMPv1/v2c); restrict management interfaces to secured networks; enforce strong non\u2011default credentials and phishing\u2011resistant MFA/public\u2011key auth for admins; validate firmware/image integrity (hash checks); monitor logs and configuration integrity; segment IoT and management networks; remove or replace EOL devices; follow vendor hardening guides (Cisco, Fortinet, etc.).",
+        "exploit_available": "Exploit availability unknown; no public PoC reported in advisory.",
+        "patch_available": "Patch availability varies by vendor; no single vendor patch listed in advisory. Patch information unavailable; refer to vendor advisories.",
+        "active_exploitation": "Confirmed active exploitation reported by CISA and NSA (CISA AA25-239A; NSA guidance) indicating global targeting of telecommunications, government, transportation, lodging, and military infrastructure networks.",
+        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
+        "mitigation": "Recommended mitigations include monitoring and hardening of backbone/PE/CE routers, isolating management interfaces, rotating credentials, deploying network segmentation, implementing detection for router modifications and persistence, and following CISA/NSA guidance for countering Chinese state\u2011sponsored actors.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -243,16 +246,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Technical details: long-running cyber espionage campaign using initial access via compromised credentials, spearphishing and living-off-the-land tooling to conduct reconnaissance, credential harvesting, and long-term access to logistics and technology networks.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit referenced in the advisory; exploit availability: None known.",
-        "patch_available": "No vendor-specific patch referenced in the advisory; mitigations and detection guidance provided by CISA/FBI/NNSA advisory links.",
-        "active_exploitation": "Confirmed active exploitation reported by CISA/FBI/NCSC/NSA in advisory \u2014 targeting Western logistics entities and technology companies since 2022.",
-        "threat_actors": "GRU 85th GTsSS (Unit 26165) \u2014 Russian state-sponsored actors (aka APT28)",
-        "mitigation": "Mitigations: implement multi-factor authentication, enforce least privilege, patch and harden internet-facing assets, monitor for anomalous access, use EDR/endpoint monitoring, follow CISA/FBI detection and response guidance in the advisory links.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "exploit_available": "No public proof-of-concept or weaponized exploit reported in the advisory; exploit status: none reported.",
+        "patch_available": "Vendor patch information unavailable.",
+        "active_exploitation": "Confirmed active exploitation reported: advisory and FBI/NSA indicate targeting and operations against Western logistics and technology entities since 2022.",
+        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), unit 26165 (aka APT28)",
+        "mitigation": "General mitigations in advisory include heightened monitoring, implement MFA, network segmentation, patching, restrict administrative privileges, review logs and indicators of compromise (IOCs) from the advisory.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
     {
@@ -271,17 +274,33 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Improper link resolution before file access ('link following') in Microsoft Defender allows an authorized attacker to elevate privileges locally.",
-        "affected_products": "Various Microsoft products across Windows components and Microsoft Defender",
+        "technical_details": "Improper input neutralization (cross\u2011site scripting) in Exchange Server\u2019s web page generation allows an unauthenticated attacker to inject malicious scripts, leading to post\u2011authentication actions or code execution on the server.",
+        "affected_products": "Microsoft Exchange Server (cumulative updates/versions indicated in the MSRC advisory)",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoCs were reported for at least some of the disclosed issues; references include CrowdStrike and BleepingComputer write\u2011ups.",
-        "patch_available": "Microsoft released security updates as part of the June 2026 Patch Tuesday; patches are available via the Security Update Guide, Windows Update, and associated KB articles.",
-        "active_exploitation": "Confirmed active exploitation for at least one zero\u2011day prior to patching; reported by CrowdStrike and BleepingComputer.",
+        "exploit_available": "No public PoC confirmed in the cited sources.",
+        "patch_available": "Yes \u2014 Microsoft security update released (see MSRC advisory).",
+        "active_exploitation": "Confirmed active exploitation reported by Microsoft and security press.",
         "threat_actors": "None known",
-        "mitigation": "Apply Microsoft\u2019s June 2026 security updates immediately; use vendor\u2011provided workarounds where described.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/"
+        "mitigation": "Apply the Microsoft security update immediately; isolate affected Exchange servers; follow Microsoft Exchange emergency response guidance; monitor for indicators of compromise.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897"
       }
+    },
+    {
+      "id": "https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/",
+      "title": "Factoring \"short-sleeve\" RSA keys with polynomials",
+      "summary": "What happens when the bits of an RSA private key are heavily biased toward 0 instead of being randomly generated? The public key\u2019s bits could be biased enough for us to detect these incorrectly generated keys in the wild. Together with Hanno B\u00f6ck of the badkeys project, we found hundreds of unique keys that not only have this property, but can be quickly factored. We also found the bug that led to many of these keys and analyzed historical data to track the issue over time. Surprisingly, the pattern of 0 bits is often highly structured, allowing us to develop a powerful polynomial-based cryptanalytic technique that exploits the pattern. Figure 1: Two patterns of RSA moduli with repeated blocks of 0 bits seen in real-world examples. These \u201cshort-sleeve\u201d keys, named for how the 0 bits don\u2019t fully cover the limbs of the big integers, largely fell into two patterns. Pattern 1 remains unexplained, but we traced pattern 2 to a type mismatch in big-integer code from old versions of the CompleteFTP file transfer software. The CompleteFTP bug also generated vulnerable short-sleeve DSA keys, and we recovered 603 unique RSA private keys and 74 DSA keys from internet scans. If you used CompleteFTP to generate host keys between December 2016 and December 2023, CompleteFTP has released a tool to check whether your keys need to be regenerated. How we found the weak keys The badkeys project is an open-source service that checks public keys for known vulnerabilities. While developing this tool, Hanno collected a massive number of real-world keys from public sources, including Certificate Transparency logs, internet-wide TLS and SSH scans, PGP keys, and many others. By searching this dataset for unexpectedly sparse RSA moduli, we uncovered a large number of keys in the wild with the patterns in Figure 1. Both patterns include several regularly spaced blocks of all zeros interleaved with seemingly random data. Pattern 1 appears in CT logs for certificates issued to several large organ",
+      "link": "https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/",
+      "published": "2026-06-12T11:00:00+00:00",
+      "source": "Trail of Bits Blog",
+      "tags": [
+        "ai",
+        "research",
+        "audit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "https://www.securityweek.com/anthropic-disputes-fable-5-ai-jailbreak/",
@@ -488,114 +507,6 @@
       ],
       "cve_ids": [
         "CVE-2026-48049"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48045",
-      "title": "python-zeroconf: Unbounded TC-deferred queue allows LAN-local memory exhaustion via spoofed-source flood",
-      "summary": "### Impact\n\n`AsyncListener.handle_query_or_defer` retained every truncated (TC-bit) incoming query in `self._deferred[addr]` and armed a per-addr timer in `self._timers[addr]` that flushed the reassembled query within ~500 ms (RFC 6762 \u00a718.5). Neither the per-addr list nor the number of distinct `addr` keys was capped, and the dedup check (`for incoming in reversed(deferred): if incoming.data == msg.data`) ran O(N) over the per-addr list on every arrival.\n\nAny unauthenticated host on the local link (UDP/5353, `224.0.0.251` / `ff02::fb`) can stream byte-distinct TC-flagged mDNS queries \u2014 each up to `_MAX_MSG_ABSOLUTE = 8966` bytes, with `DNSIncoming` retaining the raw `data` buffer plus parsed-record state. Trivially spoofed source IPs multiply the effect across `_deferred` / `_timers`, and the O(N) data compare burns CPU quadratically as each per-addr queue grows. On memory-constrained deployments (Home Assistant on Raspberry-Pi-class hardware is the canonical victim) sustained traffic OOM-kills the process; under lighter load, the per-arrival scan and event-loop scheduler starvation break unrelated zeroconf consumers (discovery, registration, ServiceBrowser callbacks).\n\n### Patches\n\nFixed in `zeroconf` 0.149.12 ([PR #1751](https://github.com/python-zeroconf/python-zeroconf/pull/1751)). Upgrade to `>= 0.149.12`.\n\n### Workarounds\n\nThere is no in-process workaround; upgrading is the fix. Otherwise, restrict mDNS (UDP/5353) to trusted Layer-2 segments via AP client isolation, guest-network separation, or host firewall rules.\n\n### Resources\n\n- [PR #1751](https://github.com/python-zeroconf/python-zeroconf/pull/1751), fix\n- [RFC 6762 \u00a718.5](https://www.rfc-editor.org/rfc/rfc6762#section-18.5), [CWE-400](https://cwe.mitre.org/data/definitions/400.html)",
-      "link": "https://github.com/advisories/GHSA-9663-mqmp-p9mm",
-      "published": "2026-06-11T13:28:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48045"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48039",
-      "title": "Meta Ads MCP: Unauthenticated HTTP MCP Tool Execution Leaks Operator Meta Access Token",
-      "summary": "# Unauthenticated HTTP MCP Tool Execution Leaks Operator Meta Access Token\n\n| Field            | Value |\n| ---------------- | ----- |\n| Repository       | pipeboard-co/meta-ads-mcp |\n| Affected version | \u2264 1.0.101 (commit 496c988 ~ 7d14226); Versions 1.0.102\u20131.0.105 lack git tags, so patch status is unconfirmed. |\n| Vulnerability    | CWE-287 \u2014 Improper Authentication |\n| Severity         | Critical |\n| CVSS 3.1         | 9.1 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N) |\n\n\n## Summary\n\n`AuthInjectionMiddleware.dispatch()` at `http_auth_integration.py:272` unconditionally forwards unauthenticated Streamable HTTP requests to downstream MCP tool handlers without issuing a `401` response, allowing any network-reachable caller to invoke MCP tools without authentication. When no per-request credential is present, tool handlers fall back to the `META_ACCESS_TOKEN` environment variable, and when the downstream Meta Graph API call fails, `api.py:263\u2013269` serialises the raw `httpx` request URL\u2014including the operator's `access_token` as a query parameter\u2014into the JSON-RPC response body, delivering the credential to the unauthenticated caller.\n\n## Affected Code\n\n`meta_ads_mcp/core/http_auth_integration.py:272` \u2014 middleware unconditionally calls `call_next(request)` even when no auth headers are present\n\n```python\n        if not auth_token and not pipeboard_token:\n            logger.warning(\"HTTP Auth Middleware: No authentication tokens found in headers\")\n\n        try:\n            response = await call_next(request)   # line 272: no 401 returned\n            return response\n        finally:\n            if auth_token:\n                FastMCPAuthIntegration.clear_auth_token()\n            if pipeboard_token:\n                FastMCPAuthIntegration.clear_pipeboard_token()\n```\n\n`meta_ads_mcp/core/api.py:136` \u2014 operator token appended to URL query parameters, exposed verbatim in Graph API error response `request_url`\n\n```python\n    request_params = params or {}\n    request_params[\"ac",
-      "link": "https://github.com/advisories/GHSA-9gw6-46qc-99vr",
-      "published": "2026-06-11T13:28:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48039"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48022",
-      "title": "@hapi/wreck: Sensitive credential headers leak across cross-port and cross-scheme redirects",
-      "summary": "### Impact\nWreck strips credential headers (Authorization, Cookie, Proxy-Authorization) before following a cross-origin redirect, but the origin check compares hostnames only and ignores scheme and port. As a result, credentials are forwarded intact across same-host port changes and HTTPS-to-HTTP downgrades, allowing a co-tenant on an adjacent port or a network-position attacker capable of forging a redirect to capture bearer tokens, session cookies, and proxy credentials and impersonate the victim against the upstream service. The fix replaces the hostname comparison with a full-origin comparison (scheme, host, and port), aligning the behavior with the WHATWG Fetch same-origin definition used by browsers.\n\n### Patches\nUpgrade to >= 18.1.2.\n\n### Workarounds\n- Set `redirects: 0` (default) and handle redirects manually with a strict origin check.\n- Use the `beforeRedirect` hook to inspect the redirect target and abort or strip sensitive headers before the follow-on request.",
-      "link": "https://github.com/advisories/GHSA-x426-x7cc-3fpc",
-      "published": "2026-06-11T13:27:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48022"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48006",
-      "title": "Netty's Lack of Lifecycle Cleanup Leads to Pooled ByteBuf Leak in RedisArrayAggregator",
-      "summary": "### Impact\nThe RedisArrayAggregator handler permanently leaks pooled direct-memory buffers when a Redis pipeline connection closes before a RESP array aggregate completes. The handler retains child messages in per-handler state (`depths` field) but defines no `channelInactive`, `handlerRemoved`, or `exceptionCaught` method to release them when the pipeline tears down. Because the leaked buffers are slices of `PooledByteBufAllocator` chunks, they prevent those chunks from being returned to the JVM-wide direct-memory pool. Repeated connection churn by any network peer monotonically drains this shared pool, eventually causing allocation failures on all Netty channels in the process.",
-      "link": "https://github.com/advisories/GHSA-6jv9-x5w9-2ccm",
-      "published": "2026-06-11T13:26:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48006"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47781",
-      "title": "PDM: Project-Controlled `.pdm-plugins` Content Executes Before CLI Parsing",
-      "summary": "## Summary\n\nPDM automatically loads project-local plugin paths from `.pdm-plugins` during `Core` initialization. Because this path is added via `site.addsitedir()`, attacker-controlled `.pth` files inside the project plugin directory are processed and can execute Python code before normal CLI handling begins.\n\nThis allows arbitrary code execution with the privileges of the user running `pdm` from an untrusted repository checkout.\n\n## Affected Behavior\n\n- Trigger does not require `pdm install --plugins`\n- A low-impact command such as `pdm --version` is sufficient\n- Impact is strongest in CI, privileged shells, and automation contexts\n\n## Affected Code\n\n- `src/pdm/core.py:74-82`\n- `src/pdm/core.py:310-333`\n- `src/pdm/core.py:335-352`\n\n## Technical Details\n\n`Core.__init__()` calls `load_plugins()` before ordinary command execution. `load_plugins()` calls `_add_project_plugins_library()`, which derives the project-local `.pdm-plugins` library path and adds it through `site.addsitedir()`.\n\nOn CPython, `site.addsitedir()` processes `.pth` files found in the added directory. `.pth` lines beginning with `import ` are executed immediately. This creates a trust-boundary break: project-controlled files execute before the user explicitly opts into plugin installation or plugin loading.\n\n## Impact\n\n- Arbitrary code execution as the invoking user\n- Potential credential theft, persistence, or workspace tampering\n- Potential privilege escalation when `pdm` is run via `sudo`, root-owned CI jobs, or privileged service accounts\n\n## Reproduction\n\nPoC:\n\n```bash\n# Replace this with a Python interpreter that can run `python -m pdm`.\nPDM_PY=/path/to/python-with-pdm\ntmpdir=$(mktemp -d)\n\ncat > \"$tmpdir/pyproject.toml\" <<'EOF'\n[project]\nname = \"plugin-autoload-demo\"\nversion = \"0.0.1\"\nEOF\n\npurelib=$(TMPDIR_ROOT=\"$tmpdir/.pdm-plugins\" \"$PDM_PY\" - <<'PY'\nimport os\nimport sys\nimport sysconfig\n\nbase = os.environ[\"TMPDIR_ROOT\"]\nscheme_names = sysconfig.get_scheme_names()\nif (sys.platform == \"darwin",
-      "link": "https://github.com/advisories/GHSA-qq6c-99pv-prvf",
-      "published": "2026-06-11T13:25:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47781"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47780",
-      "title": "free5GC UDR has improper `ueId` validation in EE subscription handlers that allows arbitrary identifier persistence",
-      "summary": "### Summary\nThe free5GC UDR accepts arbitrary non-3GPP ueId values in the EE subscription creation and query flows because the regular expression used for validation ends with the catch-all alternative |.+. This causes the validation logic to accept any non-empty string rather than restricting input to expected SUPI/GPSI-style formats. In a tested deployment, a crafted value such as ARBITRARY_STRING was successfully stored through the POST /nudr-dr/v2/subscription-data/{ueId}/context-data/ee-subscriptions endpoint and later retrieved through the corresponding GET endpoint, demonstrating persistent database pollution and broken trust boundaries in the UDR data model.\n\nAn improper input validation issue exists in the free5GC UDR EE subscription handlers responsible for creating and querying UE event exposure subscriptions. The affected code validates ueId with a regular expression that includes a final |.+ branch, which matches any non-empty string and defeats the intended 3GPP identifier checks. As a result, an attacker able to reach the UDR SBI can submit arbitrary identifiers and have them persisted and retrieved as valid subscription records, causing unauthorized data creation and corruption of the UDR data store. \n\n### Details\nThe vulnerable logic is present in two handlers in api_datarepository.go: HandleCreateEeSubscriptions and HandleQueryeesubscriptions. Both paths rely on the same regexp.MatchString() validation pattern for ueId: ^(imsi-[0-9]{5,15}|nai-.+|msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|gci-.+|gli-.+|.+)$. The final alternative .+ acts as a universal match for any non-empty string, so values that do not conform to IMSI, NAI, MSISDN, EXTID, GCI, or GLI formats are still accepted. \n\nOnce the validation succeeds, the handlers pass the attacker-controlled ueId into the normal processing flow. In the tested environment, POST /nudr-dr/v2/subscription-data/ARBITRARY_STRING/context-data/ee-subscriptions returned 201 Created, and the response Location header poi",
-      "link": "https://github.com/advisories/GHSA-6gxq-gpr8-xgjp",
-      "published": "2026-06-11T13:25:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47780"
       ],
       "is_zero_day": false,
       "is_high_severity": true
