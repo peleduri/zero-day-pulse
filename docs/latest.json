@@ -1,41 +1,10 @@
 {
-  "generated": "2026-06-11T20:09:43.810117+00:00",
-  "total": 23,
-  "kev": 1,
+  "generated": "2026-06-12T02:14:57.491155+00:00",
+  "total": 28,
+  "kev": 0,
   "zero_day": 12,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-10520",
-      "title": "CVE-2026-10520 \u2014 Ivanti Sentry OS Command Injection Vulnerability",
-      "summary": "Vendor: Ivanti | Product: Sentry. Ivanti Sentry (formerly known as MobileIron Sentry) contains an OS command injection vulnerability which could allow a remote unauthenticated user to achieve root-level remote code execution. This vulnerability can be successfully exploited in cases where the Sentry appliance is in an unmanaged state with its endpoints externally reachable. The use of mTLS with EPMM or restricted HTTPS access through Neurons for MDM makes interfaces inaccessible to external actors. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-14)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-10520",
-      "published": "2026-06-11",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-10520"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "An OS command injection flaw in Ivanti Sentry allows a remote unauthenticated user to inject and execute arbitrary operating\u2011system commands, potentially gaining root privileges on the appliance.",
-        "affected_products": "Ivanti Sentry before R10.5.2, R10.6.2, R10.7.1",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true (https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US)",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "None known",
-        "mitigation": "Apply the Ivanti Sentry updates released in the advisory and configure mTLS or restricted HTTPS access as recommended.",
-        "vendor_advisory": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -53,45 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a path traversal vulnerability in the SimpleHelp web interface that allows unauthenticated attackers to read sensitive files on affected installations, leading to credential exposure and downstream compromise.",
-        "affected_products": "SimpleHelp remote support/RMM software \u2014 versions 5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is a directory traversal vulnerability in SimpleHelp Remote Support Software that allows unauthenticated attackers to read arbitrary files on the server via crafted path inputs.",
+        "affected_products": "SimpleHelp Remote Support Software version 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "true",
-        "active_exploitation": "true",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public exploit is known.",
+        "patch_available": "http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
+        "active_exploitation": "Confirmed active exploitation reported by ransomware actors.",
         "threat_actors": "Ransomware actors (unspecified groups)",
-        "mitigation": "Upgrade to patched SimpleHelp version; restrict/limit access to SimpleHelp management interfaces (network segmentation, firewall rules, IP allowlisting), monitor logs for abnormal access, apply least privilege, and perform incident response if compromise suspected",
+        "mitigation": "Update SimpleHelp installations to version 5.5.8 or later, which contains the security fixes.",
         "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
-      }
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/oracle-mitigates-peoplesoft-zero-day-exploited-in-data-theft-attacks/",
-      "title": "Oracle mitigates PeopleSoft zero-day exploited in data theft attacks",
-      "summary": "Oracle is warning about a critical PeopleSoft Suite zero-day vulnerability tracked as\u00a0CVE-2026-35273 that allows unauthenticated remote code execution, with the flaw actively exploited in ShinyHunter data theft attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/oracle-mitigates-peoplesoft-zero-day-exploited-in-data-theft-attacks/",
-      "published": "2026-06-11T19:39:53+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-35273"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "An unauthenticated attacker with network access via HTTP can exploit a flaw in PeopleSoft Enterprise PeopleTools (Updates Environment Management) to achieve remote code execution and takeover of the PeopleSoft system.",
-        "affected_products": "PeopleSoft Enterprise PeopleTools 8.61, 8.62",
-        "cvss_score": "9.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "ShinyHunters",
-        "mitigation": "Follow the Oracle Security Alert guidance: isolate PeopleSoft administrative interfaces, restrict network access to PeopleSoft HTTP endpoints, apply Oracle's provided fixes/patches, and monitor for indicators of compromise.",
-        "vendor_advisory": "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
       }
     },
     {
@@ -109,15 +49,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The blog explains the mechanism as adversaries integrating generative AI to accelerate routine phases of attacks\u2014automating phishing lure drafting, reconnaissance and profiling of targets, triaging and debugging malware/tooling, and improving social\u2011engineering content\u2014thereby increasing scale and reducing required operator skill. This is an operational/abuse\u2011of\u2011capability issue rather than a software vulnerability.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "false",
+        "exploit_available": "No public PoC or weaponized exploit reported; exploit availability unavailable.",
+        "patch_available": "Patch available: none; Patch/advisory URL unavailable.",
+        "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Mitigations include: strengthen phishing defenses (multi\u2011factor authentication, email filtering, user training, phishing\u2011resistant MFA), implement robust identity and access management, monitor for scaled automation indicators (high\u2011volume, low\u2011effort content, rapid reconnaissance activity), apply least\u2011privilege and extensive logging, use anomaly detection on account and network behavior, and engage threat intelligence to track AI\u2011assisted tooling. Detection and monitoring controls are emphasized over a vendor patch.",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -137,16 +77,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial content is hosted in external corpora or web pages that LLM systems retrieve (via RAG or browsing) and that content contains malicious instructions which the model incorporates into its output or agent behavior. This includes natural-language prompts and payloads seeded on webpages or corpora that are later retrieved during model query processing.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect Prompt Injection (IPI) leverages external web content or retrieved documents to inject instructions that override model or system prompts, enabling exfiltration or unintended actions; GeminiJack is a zero\u2011click IPI that embeds malicious payloads inside Google Gemini Enterprise\u2019s retrieval pipeline.",
+        "affected_products": "Google Gemini Enterprise, RAG and agentic LLM systems",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
+        "exploit_available": "Proof\u2011of\u2011concept exploits are publicly available via Noma Labs blog (http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability) and an arXiv paper (https://arxiv.org/abs/2601.07072).",
+        "patch_available": "Official mitigation guidance is published by Google in the advisory; no specific patch is provided.",
+        "active_exploitation": "Reports indicate IPI payloads have been observed in the wild (Forcepoint and Google analyses), but no publicly disclosed active exploitation campaigns or known threat\u2011actor groups are identified.",
         "threat_actors": "None known",
-        "mitigation": "Harden retrieval and agent workflows: validate and sanitize retrieved content; apply provenance, allow\u2011listing/block\u2011listing, instruction\u2011scrubbing, response filters and model grounding; restrict autonomous actions for agents; monitor for anomalous outputs; apply vendor advisories when available. Specific mitigations include not executing untrusted retrieved instructions, implementing strict instruction parsing and canonicalization, and using safety classifiers.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Follow Google guidance: harden retrieval and agent pipelines, sanitize and filter retrieved content, implement retrieval provenance checks, restrict execution of instructions from untrusted sources, and apply principle of least privilege for agents.",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -165,15 +105,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) allows an attacker to embed malicious instructions in data or web content that a large language model (LLM) consumes, influencing its output without any direct user input. Noma Labs demonstrated a zero\u2011click IPI exploit (GeminiJack) against Google Gemini Enterprise, showing that the attacker can affect LLM behavior solely through crafted content.",
-        "affected_products": "Google Workspace with Gemini integrations",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial instructions are embedded in data sources (files, web content, plugins, tool outputs) that an LLM retrieves during query processing, enabling attacker\u2011supplied instructions to influence model behavior, including zero\u2011click scenarios where users need not interact.",
+        "affected_products": "Google Workspace (including Gemini), Gemini Enterprise",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2014 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability",
-        "patch_available": "true \u2014 http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html",
-        "active_exploitation": "true",
+        "exploit_available": "No public PoC/weaponized exploit reported in vendor advisory; public PoCs not identified in sources.",
+        "patch_available": "Vendor mitigation guidance published by Google (see advisory URL); no specific patch or versioned fix referenced.",
+        "active_exploitation": "Confirmed active exploitation: 10 indirect prompt injection payloads observed in the wild (Forcepoint) and the GeminiJack zero\u2011click vulnerability discovered by Noma Labs.",
         "threat_actors": "None known",
-        "mitigation": "Apply vendor guidance: layered defenses including content filtering, provenance and trust signals, sanitization of external data, restricting agentic automation, least\u2011privilege access to tools, telemetry and anomaly detection.",
+        "mitigation": "Multi\u2011layered defenses by Google for Workspace and Gemini \u2013 content filtering, retrieval/model hardening, platform controls, continuous detection/response. General mitigations: restrict external content access, enforce strict sharing policies, enable Workspace security controls, monitor for anomalous agent behavior.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -193,15 +133,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A zero\u2011click vulnerability (GeminiJack) that can be triggered via chained indirect prompt injection against Google Gemini Enterprise/agentic browsing in Chrome; indirect prompt injection allows malicious web content to influence agent prompts and actions, enabling unauthorized actions without user interaction.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect prompt injection is a threat where untrusted content (e.g., malicious sites, third\u2011party iframes, or user\u2011generated reviews) injects prompts that cause the AI agent in Chrome to perform unintended actions such as financial transactions or data exfiltration.",
+        "affected_products": "Google Chrome (with Gemini agentic capabilities)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
-        "active_exploitation": "false",
+        "exploit_available": "No public proof\u2011of\u2011concept exploit is known.",
+        "patch_available": "The layered defenses described in the advisory (user alignment critic, origin\u2011isolation, user confirmations, real\u2011time detection) are the official mitigation, available at the advisory URL.",
+        "active_exploitation": "No confirmed active exploitation in the wild has been reported.",
         "threat_actors": "None known",
-        "mitigation": "Chrome layered defenses including restricting origin access, blocking prompt injections, and adding an overseer AI agent (per Google's architecting security post); follow vendor advice and update Chrome to receive these defenses.",
+        "mitigation": "Deploy the user alignment critic, enforce origin\u2011isolation for the agent, require user confirmations for sensitive actions, and enable real\u2011time detection of prompt\u2011injection attempts.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -221,16 +161,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Linear buffer overflow in CrabbyAVIF (unsafe Rust near\u2011miss) that was fixed pre\u2011release; Scudo hardened allocator rendered it non\u2011exploitable and turned the overflow into a crash.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
-        "active_exploitation": "false",
+        "exploit_available": "No public exploit or PoC is mentioned.",
+        "patch_available": "No official patch is referenced in the blog post.",
+        "active_exploitation": "No reports of active exploitation are mentioned.",
         "threat_actors": "None known",
-        "mitigation": "Scudo hardened allocator provides protection via guard pages; improved crash reporting to detect overflows; training and unsafe\u2011Rust review practices to reduce recurrence.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+        "mitigation": "Adopt Rust for new Android components and follow memory\u2011safety coding practices.",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
     {
@@ -249,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection embeds hidden or crafted instructions in external content (emails, documents, calendar invites, web pages) that an AI agent ingests and treats as part of its prompt/context, leading to data exfiltration or unintended actions unless filtered or policy\u2011checked.",
-        "affected_products": "Google Gemini Enterprise, Gemini in Workspace apps (Gemini for Chrome/agentic browsers), Vertex AI Search",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "technical_details": "Indirect prompt injection (IPI) is an attack where hidden malicious instructions are embedded in external data sources (emails, documents, calendar invites, web content, retrieved knowledge) that a generative AI system ingests during retrieval or context assembly, causing the model to follow attacker\u2011provided instructions (e.g., exfiltrate data or perform unauthorized actions).",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public PoC/weaponized exploit reported; exploit availability unknown.",
+        "patch_available": "Patch unavailable; guidance/mitigations provided in vendor advisory above.",
+        "active_exploitation": "Yes\u2014security researchers reported in\u2011the\u2011wild indirect prompt injection payloads (Forcepoint disclosure of 10 IPI payloads and related industry reports).",
         "threat_actors": "None known",
-        "mitigation": "Deploy layered defenses: content provenance and origin restrictions, input sanitization and transformation, policy and instruction filtering, secondary supervisory agents/monitoring, restrict agent capabilities and origin access, robust evaluation and threat modeling, user confirmation for sensitive actions.",
+        "mitigation": "Layered defense\u2014input validation and sanitization, retrieval filtering and provenance checks, context isolation and least privilege, model/system\u2011level policy enforcement and instruction\u2011following constraints, monitoring and anomaly detection, human review for high\u2011risk actions. See vendor advisory for specific recommendations.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -276,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state\u2011sponsored actors target large backbone routers and provider/customer edge routers, leverage compromised devices and trusted connections to pivot, and modify routers to maintain persistent, long\u2011term access.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Exploitation leverages known remote code execution and authentication\u2011bypass vulnerabilities in Cisco IOS XE (CVE-2023-20198, CVE-2023-20273, CVE-2018-0171) and Ivanti Connect Secure (CVE-2024-21887), allowing attackers to gain unauthorized access to routers and network infrastructure.",
+        "affected_products": "Ivanti Connect Secure, Cisco IOS XE, Cisco IOS/IOS XE",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
+        "exploit_available": "Public exploits for the listed CVEs (CVE-2023-20198, CVE-2018-0171, CVE-2023-20273, CVE-2024-21887) are known to exist, but no direct PoC URLs are provided in the advisory.",
+        "patch_available": "Patches are available from the respective vendors for CVE-2024-21887 (Ivanti Connect Secure), CVE-2023-20273 (Cisco IOS XE), CVE-2023-20198 (Cisco IOS XE), and CVE-2018-0171 (Cisco IOS/IOS XE).",
+        "active_exploitation": "Confirmed active exploitation of CVE-2023-20198, CVE-2018-0171, CVE-2023-20273, and CVE-2024-21887 has been observed.",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Implement network segmentation, monitor for unauthorized configuration changes on routers, restrict management access, apply vendor\u2011recommended hardening, and follow CISA/NSA guidance to counter compromise of networks worldwide.",
+        "mitigation": "Prioritize patching; disable unused ports and protocols; require public\u2011key authentication for administrative roles; change default credentials; use vendor\u2011recommended OS versions and keep them updated; monitor firmware/software integrity and perform hash verification.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -301,7 +241,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public exploit available.",
+        "patch_available": "No official patch available.",
+        "active_exploitation": "Confirmed active exploitation reported in the wild.",
+        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS) (also known as APT28)",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+      }
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-june-2026/",
@@ -316,6 +268,35 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "CVE\u20112026\u201150507: missing authentication in a critical BitLocker function allows an unauthenticated attacker with physical access to bypass device encryption. CVE\u20112026\u201126142: deserialization of untrusted data in Nuance PowerScribe leads to remote code execution. CVE\u20112026\u201144815: stack\u2011based buffer overflow in the Windows DHCP Client Service can be triggered by a rogue DHCP server when the DhcpGetOriginalSubnetMask API is called. CVE\u20112026\u201145648: out\u2011of\u2011bounds write in the NSPI RPC interface of Active Directory enables remote code execution.",
+        "affected_products": "Windows (multiple components), Extended Security Updates (ESU), Microsoft Office, Nuance PowerScribe, Windows DHCP Client Service, Active Directory Domain Services, Device Health Attestation, Windows Media, Windows Graphics Component, Kerberos KDC",
+        "cvss_score": "6.8",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Proof\u2011of\u2011concept exploit exists for CVE\u20112026\u201150507 (BitLocker bypass); other CVEs have public details but no specific exploit links cited.",
+        "patch_available": "Microsoft has published security updates for the listed CVEs; each CVE entry in MSRC includes the advisory and update/patch details.",
+        "active_exploitation": "No evidence of active exploitation in the wild for CVE\u20112026\u201150507; no confirmed active exploitation reported for the other listed CVEs.",
+        "threat_actors": "None known",
+        "mitigation": "Pre\u2011patch mitigations include restricting/auditing applications that call DhcpGetOriginalSubnetMask for CVE\u20112026\u201144815 and noting the physical\u2011access requirement for the BitLocker bypass (CVE\u20112026\u201150507); other CVEs rely on Microsoft\u2019s published mitigation guidance.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/"
+      }
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/shinyhunters-exploits-oracle-peoplesoft.html",
+      "title": "ShinyHunters Exploits Oracle PeopleSoft Zero-Day (CVE-2026-35273) to Breach Universities",
+      "summary": "The ShinyHunters extortion crew exploited an unpatched flaw in Oracle PeopleSoft to break into enterprise systems, steal data, and demand payment to keep it private. The campaign hit universities hardest.\n\nGoogle's Mandiant attributes it to the group it tracks as UNC6240, and dates the activity between May 27 and June 9. Oracle did not publish its advisory until June 10, so the bug was a",
+      "link": "https://thehackernews.com/2026/06/shinyhunters-exploits-oracle-peoplesoft.html",
+      "published": "2026-06-11T20:29:23+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -333,6 +314,114 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2025-27511",
+      "title": "GeoServer DB2 DataStore Extension has a JNDI Vulnerability via Store Connection",
+      "summary": "## Summary\n\nAdministrator can perform JNDI attack through specially crafted DB2 jdbc url leading to Remote Code Execution (RCE).\n\n## Impact\n\nIf GeoServer has DB2 extension installed, this vulnerability can lead to executing arbitrary code.\n\n## Details\n\nAuthenticated users can access Vector Data Sources page to creating a new data store through db2 jdbc connection, performing JNDI attack due to unrestricted connection parameters, and then achieve RCE with deserialization of untrusted data.\n\n### Remediation\n\nThis issue has been fixed in this release: https://github.com/geoserver/geoserver/releases/tag/2.27.0.\n\n## References\n\n* https://osgeo-org.atlassian.net/browse/GEOT-7725\n* https://nvd.nist.gov/vuln/detail/cve-2023-27867",
+      "link": "https://github.com/advisories/GHSA-g628-r368-6vh7",
+      "published": "2026-06-11T20:34:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-27511"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48110",
+      "title": "Russh SSH message fields were decoded through allocation-first parsers before field-specific bounds",
+      "summary": "# SSH message fields were decoded through allocation-first parsers before field-specific bounds\n\n### Summary\n\nSeveral `russh` client and server message handlers decoded attacker-controlled SSH strings, name-lists, and byte fields into owned allocations before applying field-specific bounds. A remote SSH peer could send oversized, high-fanout, or malformed length-prefixed fields and make the library allocate, attempt to allocate, or split data before rejecting input that should have been rejected earlier.\n\n\n### Affected Versions\n\nOldest verified exploitable stable release: `russh 0.34.0`.\n\n- Historical stronger case: `russh >= 0.34.0, < 0.58.0`. These releases have the allocation-first KEXINIT field parsing issue and still use `CryptoVec` for inbound packet/decompression buffers. A peer can combine negotiated RFC `zlib`, rekey, compressed KEXINIT expansion, historical `CryptoVec` decompression growth, and KEXINIT name-list fanout.\n- Current maintained-line case: `russh >= 0.58.0`, including `0.60.2`. These releases moved non-secret packet/decompression buffers off `CryptoVec`, but the allocation-first SSH field parser issue remains reachable as a `Vec`/`String`/name-list resource exhaustion issue.\n\n Prerelease coverage was not claimed for the zlib/`CryptoVec`/KEXINIT combo because the combined historical exploit shape was verified against stable `v0.34.0`-era code and reproduced the stress behavior on `v0.57.1`.\n\n### Details\n\nThe affected parser pattern appeared across the SSH transport and encrypted-message parser code:\n\n- KEX negotiation parsing\n- client encrypted-message parsing\n- server encrypted-message parsing\n- shared SSH parsing helpers\n\nExamples of allocation-first field parsing covered by the fix include:\n\n- KEXINIT name-lists\n- client `USERAUTH_FAILURE` method lists\n- client `USERAUTH_BANNER` text fields\n- client `USERAUTH_PK_OK` fields\n- client `EXT_INFO` extension fields\n- server `SERVICE_REQUEST` names\n- server `USERAUTH_REQUEST` header fields\n- server ",
+      "link": "https://github.com/advisories/GHSA-4r3c-5hpg-58qr",
+      "published": "2026-06-11T20:33:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48110"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-11401",
+      "title": "AWS Advanced Go Wrapper has Privilege Escalation in Aurora PostgreSQL instance",
+      "summary": "Aurora PostgreSQL is a fully managed relational database engine that's compatible with PostgreSQL.\n\nAn issue in Aurora PostgreSQL using the AWS Go Wrapper waa identified, see CVE-2026-11401.\n\n\nImpact\nAn issue in AWS Wrappers for Amazon Aurora PostgreSQL may allow for privilege escalation to rds_superuser role. A low privilege authenticated user can create a crafted function that could be executed with permissions of other Amazon Relational Database Service (RDS) users.\n\nImpacted versions: AWS Go Wrapper 2026-04-06\n\nPatches\nThis issue has been addressed in  AWS Go Wrapper 2026-05-26. Maintainers recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. \n\nWorkarounds\nRemove the public schema from the search path.\n\nReferences\nIf there are any questions or comments about this advisory, contact [AWS/Amazon] Security via the [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.",
+      "link": "https://github.com/advisories/GHSA-r236-5pc3-3qcp",
+      "published": "2026-06-11T20:33:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-11401"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48108",
+      "title": "Russh: SSH identification parsing accepted non-canonical client banners and did not bound pre-banner input",
+      "summary": "### Summary\n\n`russh` did not enforce the SSH identification-string rules as deliberately as OpenSSH. In particular, the server-side identification reader used the same permissive path as the client, allowing pre-banner lines from clients, and the reader did not enforce a bounded number of pre-banner lines.\n\nFor a library server built on `russh`, this could allow a remote peer to hold connection setup resources in the cleartext pre-authentication phase with malformed identification input that should have been rejected early.\n\n### Details\n\nRFC 4253 section 4.2 defines the SSH protocol version exchange. The identification string is a single line terminated by CR LF, must fit within 255 characters including CR LF, and clients should not send pre-banner lines before their SSH identification string.\n\nBefore the fix, `russh`'s identification reader lived in:\n\n- `russh/src/ssh_read.rs`\n- `russh/src/server/mod.rs`\n\nThe same `read_ssh_id()` behavior was used for both client and server contexts. That allowed server-side parsing to accept preliminary banner lines from clients, even though RFC 4253 only describes server-side pre-identification text. The reader also discarded preliminary lines without a line-count cap, so a peer could repeatedly send short non-SSH lines and keep the connection in identification parsing until an application-level timeout or external resource limit intervened.\n\nThis also creates a remotely observable parser-state oracle inside a single connection. A client can send candidate identification lines one after another: lines not recognized as SSH identification are discarded as pre-banner text, while an accepted identification string terminates banner parsing and advances the connection into key exchange. A strict server would reject the first invalid client pre-banner line and force a reconnect for each probe. This can disclose server-side parser acceptance behavior and make fingerprinting cheaper, though it does not disclose application secrets, crede",
+      "link": "https://github.com/advisories/GHSA-76r6-x97p-67vr",
+      "published": "2026-06-11T20:29:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48108"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48099",
+      "title": "WsgiDAV encoded dot segments can escape filesystem share roots",
+      "summary": "### Impact\nWsgiDAV 4.3.3 can allow a WebDAV request path containing an encoded parent-directory segment to escape the configured filesystem share root in a specific path layout.\n\n### Patches\nThe issue is fixed with version 4.3.4.\n\n### Preconditions\n\nThe practical impact depends on the deployment.\n\nThe deployment uses a filesystem-backed WsgiDAV share.\n\nThe attacker can send WebDAV requests accepted by that share. This may be an anonymous share or an authenticated WebDAV user. This is not an authentication bypass.\n\n### Details\n\nThe issue is in `FilesystemProvider._loc_to_file_path()`. The method builds a candidate path with `os.path.abspath(os.path.join(root_path, *path_parts))`, then checks containment with `file_path.startswith(root_path)`. This is not path-boundary aware. For example, if the configured share root is `/tmp/share`, a resolved sibling path such as `/tmp/share_evil/secret.txt` still starts with the string `/tmp/share`.\n\nIn a local proof, this allowed GET, PUT, and DELETE requests to operate on files outside the configured share root.\n\nThe WSGI/server layer forwards the encoded dot segment to WsgiDAV's PATH_INFO. The local proof used `/%2e%2e/...`, which wsgiref passed through as `/../...`.\n\nA sibling or neighboring path exists whose absolute path starts with the configured root path string, such as `/tmp/share` and `/tmp/share_evil`.\n\nThe WsgiDAV process has OS permissions for the outside path.",
+      "link": "https://github.com/advisories/GHSA-wxq4-cc2q-338q",
+      "published": "2026-06-11T20:28:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48099"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48059",
+      "title": "Netty HAProxy: Unbalanced Reference Count in Nested PP2_TYPE_SSL TLV Parsing Leads to Memory Exhaustion",
+      "summary": "### Impact\nThe HAProxy PROXY protocol v2 codec in netty leaks native or heap memory on every connection when a client sends a syntactically valid header containing nested `PP2_TYPE_SSL` TLVs (type-length-value records) at depth two or greater. The leak occurs on the successful parse path \u2014 no exception is thrown, the message fires downstream, the decoder removes itself, and the application releases the `HAProxyMessage` normally. Yet the underlying cumulation buffer (a pooled, potentially direct `ByteBuf` allocated by the channel) remains permanently pinned.",
+      "link": "https://github.com/advisories/GHSA-h2qv-fj59-j46j",
+      "published": "2026-06-11T20:19:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48059"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-48053",
