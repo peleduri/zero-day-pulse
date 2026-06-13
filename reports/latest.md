@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-13 08:46 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-13 13:22 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,16 +13,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** An unauthenticated remote attacker can exploit a path traversal flaw in SimpleHelp 5.5.7 and earlier to read or write arbitrary files, leading to potential code execution.
-- **Affected Products:** SimpleHelp Remote Monitoring and Management version 5.5.7 and earlier
+- **Technical Details:** An unauthenticated attacker can craft a directory‑traversal request to download arbitrary files from the SimpleHelp server.
+- **Affected Products:** SimpleHelp Remote Monitoring and Management (RMM) versions 5.5.7 and earlier
 - **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (https://medium.com/@unKnOwn37/simplehelp-cve-2024-57727-tryhackme-3bea119c1c1e)
-- **Patch Available:** true (http://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570)
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true
 - **Active Exploitation:** true
-- **Threat Actors:** None known
-- **Mitigation:** Upgrade to SimpleHelp version 5.5.8 or later.
-- **Vendor Advisory:** https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **Threat Actors:** Ransomware actors
+- **Mitigation:** Upgrade to a patched SimpleHelp version (5.5.8 or later), isolate or uninstall exposed instances, restrict network access to management interfaces, and apply network‑level protections.
+- **Vendor Advisory:** http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
 
 ---
 
@@ -35,16 +35,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The vulnerability is a server‑side request forgery (CWE‑918) where a missing authentication check in the Updates Environment Management function allows unauthenticated HTTP requests to trigger arbitrary code execution on the server.
-- **Affected Products:** PeopleSoft Enterprise PeopleTools (Updates Environment Management component)
+- **Technical Details:** The vulnerability is a server‑side request forgery (CWE‑918) in the Updates Environment Management component that allows an unauthenticated attacker to send crafted HTTP requests, resulting in remote code execution.
+- **Affected Products:** Oracle PeopleSoft PeopleTools (Updates Environment Management component)
 - **CVSS Score:** 9.8
-- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-- **Exploit Available:** true
-- **Patch Available:** true
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true (http://oracle.com/security-alerts/alert-cve-2026-35273.html)
 - **Active Exploitation:** true
-- **Threat Actors:** ShinyHunters
-- **Mitigation:** Apply the Oracle out‑of‑band patch immediately. If the patch cannot be applied, restrict HTTP access to the PeopleSoft Updates Environment Management interface, block inbound traffic to the management ports, deploy Web Application Firewall rules to block SSRF patterns, and monitor server logs for suspicious requests.
-- **Vendor Advisory:** https://www.oracle.com/security-alerts/alert-cve-2026-35273.html
+- **Threat Actors:** ShinyHunters extortion gang
+- **Mitigation:** Apply the out‑of‑band patch released by Oracle; until the patch is applied, restrict network access to PeopleSoft servers, disable the vulnerable Updates Environment Management component, and monitor for suspicious activity.
+- **Vendor Advisory:** http://oracle.com/security-alerts/alert-cve-2026-35273.html
 
 ---
 
@@ -57,15 +57,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) occurs when AI systems consume external content (websites, documents, email) that contains malicious instructions; attackers seed poisoned text (e.g., "if you are an AI…") so agents silently follow attacker commands instead of user intent. Google’s study scanned Common Crawl, used Gemini for classification, and human validation to identify categories (pranks, SEO, deterrence, data exfiltration, destructive commands).
-- **Affected Products:** Google Workspace (with Gemini integrations), Gemini (agentic AI systems)
+- **Technical Details:** Indirect Prompt Injection (IPI) abuses externally retrieved content (web pages, documents, or retrieval‑augmented generation corpora) to inject malicious instructions that are then executed by LLMs or agentic systems; attacks exploit retrieval and agent tool‑use pipelines to overwrite or influence agent behavior (RAG and agentic systems).
+- **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false.
-- **Patch Available:** false.
-- **Active Exploitation:** true.
-- **Threat Actors:** None known.
-- **Mitigation:** Layered defenses and hardening: content filtering and pattern detection, LLM‑based intent classification, human review for high‑risk cases, model hardening/red teams, secure agent design (restricting external execution), monitoring telemetry at scale, and participation in AI Vulnerability Reward Program.
+- **Exploit Available:** true - http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://arxiv.org/abs/2601.07072
+- **Patch Available:** false - http://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections
+- **Active Exploitation:** true - http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html, http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://arxiv.org/abs/2601.07072
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Harden retrieval and agent pipelines: filter and sanitize retrieved content, apply provenance & trust scoring, sandbox agent tool execution, use instruction-level policies and RLHF‑based refusals, continuous monitoring of external corpora, and vendor mitigations per Google Workspace guidance.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
@@ -79,16 +79,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** An attacker injects malicious instructions into shared Google Docs, Calendar events, or Gmail messages. Gemini ingests the poisoned content and executes the injected prompt, creating a covert channel that can leak Gmail, Calendar, and Docs data without direct user interaction.
-- **Affected Products:** Google Workspace (Gmail, Google Docs, Google Calendar) – all versions
+- **Technical Details:** Indirect prompt injection (IPI) allows an attacker to embed malicious instructions into data or tool outputs used by a large language model (LLM). When the LLM processes this polluted input, it follows the injected instructions, potentially altering its behavior or disclosing data without any direct user interaction.
+- **Affected Products:** Google Workspace (Gemini), Google Gemini Enterprise
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (source: http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)
-- **Patch Available:** false
-- **Active Exploitation:** true
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
 - **Threat Actors:** None known
-- **Mitigation:** Deploy prompt‑injection content classifiers, enable markdown sanitization and suspicious URL redaction, enforce user‑confirmation frameworks for AI‑generated actions, and monitor for security mitigation notifications. Participate in the Google AI Vulnerability Rewards Program to report novel attacks.
-- **Vendor Advisory:** https://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
+- **Mitigation:** Implement Google's layered defense strategy: continuously monitor prompt inputs, apply strict input sanitization, restrict tool and data source access for LLMs, and keep AI services up to date with security best practices.
+- **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
 
@@ -101,15 +101,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection: malicious webpage content can inject instructions that an agentic browser (or its embedded AI agents) may execute when autonomously browsing or summarizing pages; Google’s mitigation layers restrict origin access, block prompt‑injection signals, and add a secondary ’watcher’ agent to validate actions.
-- **Affected Products:** Chrome (agentic/Gemini-enabled builds)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
+- **Technical Details:** The primary threat is indirect prompt injection — malicious or adversarial web content (including third‑party content, iframes, or user‑generated text) that influences an agentic model’s planning outputs to perform unwanted actions (e.g., financial transactions or data exfiltration). Chrome mitigates this by restricting origins, vetting actions with a separate Alignment Critic, running a prompt‑injection classifier, and requiring user confirmations for sensitive steps.
+- **Affected Products:** Google Chrome (agentic/Gemini integration — agentic browsing features introduced Dec 2025); specific versions unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** true — http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 - **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Use Chrome’s updated agentic security features (layered defenses described in advisory): restrict origin access, block prompt‑injection vectors, require user transparency and control, and employ the secondary monitoring agent; follow Google’s advisory for configuration and hardening.
+- **Mitigation:** Implemented layered defenses including a User Alignment Critic to vet actions, Agent Origin Sets (read-only and read‑writable origins) to limit model exposure, deterministic user confirmations for sensitive actions, a real‑time indirect prompt‑injection classifier, origin gating and navigation vetting, site‑isolation extensions, continuous red‑teaming and monitoring, and updated VRP guidance for reporting.
 - **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 
 ---
@@ -123,16 +123,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** A linear buffer overflow in CrabbyAVIF (an AVIF parser/decoder in unsafe Rust) could have led to remote code execution; Scudo mitigated exploitability and the flaw was fixed pre-release.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** 8.1
-- **CVSS Vector:** CVSS vector unavailable.
+- **Technical Details:** The post reports that adopting Rust for new Android code reduced memory‑safety vulnerability density dramatically (approximately 1000× reduction) and that, as of 2025, memory‑safety bugs fall below 20% of all vulnerabilities. The mitigation strategy focuses on preventing memory‑safety issues in new code by using a memory‑safe language (Rust) along with rigorous code review, testing, and fuzzing.
+- **Affected Products:** Android platform (first‑party and third‑party/open‑source components across C, C++, Java, Kotlin, and Rust)
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
 - **Exploit Available:** false
-- **Patch Available:** true — http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
+- **Patch Available:** Patch availability unknown
 - **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Use of Scudo allocator rendered the flaw non-exploitable in practice; defense-in-depth (memory-safe languages, hardened allocators) advised.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Mitigation:** Adopt memory‑safe languages (Rust) for new components, maintain rigorous code review and testing, use fuzzing and automated tooling, and prioritize fixes in high‑risk modules.
+- **Vendor Advisory:** http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
 
 ---
 
@@ -145,15 +145,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) embeds malicious instructions within external data sources (emails, documents, calendar invites, web content) that AI systems ingest; the model or agent may prioritize or execute those hidden instructions, causing data exfiltration or unintended actions via prompt‑parsing and instruction‑following behaviors.
-- **Affected Products:** AI systems that ingest external data (generative AI models, agents, plugins); OpenClaw (all versions prior to April 23, 2026 patches)
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** None known.
-- **Mitigation:** Apply layered defenses: validate and sanitize external inputs; enforce provenance/metadata checks; least‑privilege data access for agents/plugins; instruction‑scoping and guardrails in prompts; runtime filtering and detection of IPI payloads; continuous monitoring and threat intelligence updates.
+- **Technical Details:** Indirect prompt injection (IPI) embeds malicious instructions within external data sources (emails, documents, calendar invites) which downstream generative AI systems may interpret and execute, causing data exfiltration or unsafe actions.
+- **Affected Products:** Google Gemini (Gemini in Workspace apps), Chrome (AI features), Google Workspace integrations
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** true
+- **Patch Available:** false
+- **Active Exploitation:** true
+- **Threat Actors:** None known
+- **Mitigation:** Apply Google’s layered defenses: restrict AI access to sensitive data, validate and sanitize inputs, origin‑based restrictions for external content, robust model guardrails and intent detection, least‑privilege access for integrations; update Chrome/Workspace when vendors release updates; monitor vendor advisories.
 - **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
 
 ---
@@ -167,15 +167,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Actors exploit publicly known CVEs and weak configurations to gain initial access to edge routers, then maintain persistence by modifying ACLs, opening ports, creating privileged accounts, and executing scripts (e.g., Tcl) on Cisco IOS devices.
-- **Affected Products:** Cisco IOS, Cisco IOS XE, Cisco NX-OS, Ivanti Connect Secure, Ivanti Policy (specific CVEs: CVE-2024-21887, CVE-2023-20273, CVE-2023-20198, CVE-2018-0171)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** true
+- **Technical Details:** PRC state-sponsored actors compromise and modify large backbone, provider edge (PE), and customer edge (CE) routers and other devices to maintain persistent long-term access, leveraging compromised devices and trusted connections to pivot into networks and exfiltrate data.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
 - **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Prioritize patching edge devices; disable unused ports and protocols; disable Cisco Smart Install and Guest Shell where not required; enforce strong credentials and multi‑factor authentication; monitor device logs and configurations for unexpected changes; perform firmware integrity checks; follow vendor hardening guides.
+- **Mitigation:** Implement network segmentation; restrict and monitor management interfaces; enforce strong authentication (MFA) for administrative access; apply vendor‑recommended configurations and firmware updates; monitor for anomalous routing/traffic and unauthorized configuration changes; isolate compromised devices and perform forensic analysis.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
@@ -189,15 +189,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The advisory describes a long-running cyber espionage campaign by Russian GRU (Unit 26165) targeting Western logistics entities and technology companies, including those coordinating transport and delivery of assistance to Ukraine; it documents targeting since 2022 but does not list a specific single‑vulnerability technical exploit.
-- **Affected Products:** Affected products unavailable
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** Exploit availability unknown
-- **Patch Available:** Patch availability unknown
+- **Technical Details:** Joint cybersecurity advisory describes a long‑running cyber espionage campaign since 2022 targeting Western logistics entities and technology companies involved in coordination, transport, and delivery of foreign assistance to Ukraine; details TTPs, indicators, and recommended mitigations in advisory.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
-- **Threat Actors:** GRU 85th GTsSS (Unit 26165), tracked as APT28 (also referenced as Russian GRU)
-- **Mitigation:** Follow CISA/FBI recommended mitigations in the advisory (e.g., enhanced monitoring, network segmentation, multifactor authentication, prompt patching and credential hygiene) — specific steps: implement MFA, isolate critical logistics systems, increase logging and EDR coverage, apply vendor security updates, review remote access configurations, and conduct threat hunting and incident response readiness.
+- **Threat Actors:** Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165 (APT28/GRU Unit 26165)
+- **Mitigation:** See advisory for mitigations and recommended hardening; advisory includes indicators, TTPs, and mitigation guidance.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
 
 ---
@@ -209,25 +209,25 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** CVE‑2026‑45586 – link‑following flaw (CWE‑59) in CTFMON enabling local privilege escalation to SYSTEM; CVE‑2026‑50507 – missing authentication (CWE‑306) allowing physical‑access BitLocker bypass; CVE‑2026‑44815 – stack‑based buffer overflow (CWE‑121) in DHCP Client Service that can be triggered by a rogue DHCP server for remote code execution; CVE‑2026‑45648 – stack‑based buffer overflow in AD DS NSPI RPC interface causing out‑of‑bounds write and RCE; Outlook/Word vulnerabilities – type confusion, use‑after‑free, and heap‑based buffer overflow enabling RCE via malicious preview pane content.
-- **Affected Products:** Microsoft Windows (CTFMON/Collaborative Translation Framework), Windows BitLocker, Windows DHCP Client Service, Windows Active Directory Domain Services, Microsoft Outlook, Microsoft Word, Windows Media, Windows Graphics Component (Win32K‑GRFX), Windows Kerberos KDC, other Windows and Office product families
-- **CVSS Score:** CVE‑2026‑45586 — 7.8; CVE‑2026‑50507 — 6.8; CVE‑2026‑44815 — 9.8; CVE‑2026‑45648 — 8.8; CVE‑2026‑45456/45458/47635 — 8.4; CVE‑2026‑48574 — 7.8; CVE‑2026‑44803/44812 — 7.8; CVE‑2026‑47288 — 7.1
+- **Technical Details:** Technical details unavailable.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
-- **Patch Available:** true
-- **Active Exploitation:** false
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true — Microsoft security updates published (https://msrc.microsoft.com/update-guide)
+- **Active Exploitation:** Active exploitation status unknown.
 - **Threat Actors:** None known
-- **Mitigation:** Apply the Microsoft patches released in June 2026; for unpatched issues, restrict applications that call vulnerable APIs (e.g., DhcpGetOriginalSubnetMask), employ network segmentation, enforce strict configuration baselines, and use CrowdStrike Falcon Exposure Management for discovery and prioritization.
-- **Vendor Advisory:** https://msrc.microsoft.com/update-guide/
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** https://msrc.microsoft.com/update-guide
 
 ---
 
-## 11. 🟠 Zero-Day — Factoring "short-sleeve" RSA keys with polynomials
+## 11. 🟠 Zero-Day — US Gov asks Anthropic to ban 'foreign national' access to Fable, Mythos
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Trail of Bits Blog &nbsp;|&nbsp; **Published:** 2026-06-12
-**Reference:** <https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-06-13
+**Reference:** <https://www.bleepingcomputer.com/news/security/us-gov-asks-anthropic-to-ban-foreign-national-access-to-fable-mythos/>
 
-> What happens when the bits of an RSA private key are heavily biased toward 0 instead of being randomly generated? The public key’s bits could be biased enough for us to detect these incorrectly generated keys in the wild. Together with Hanno Böck of the badkeys project, we found hundreds of unique keys that not only have this property, but can be quickly factored. We also found the bug that led to…
+> The US government has ordered Anthropic to block all foreign nationals from accessing Fable 5 and Mythos 5, forcing the company to suspend both models worldwide. Anthropic is complying but disputes the basis, calling the cited jailbreak narrow and the capability widely available elsewhere. [...]
 
 ---
 
