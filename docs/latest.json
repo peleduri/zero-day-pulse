@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-13T19:06:52.644679+00:00",
-  "total": 21,
+  "generated": "2026-06-14T02:29:32.835268+00:00",
+  "total": 12,
   "kev": 0,
   "zero_day": 10,
   "enriched": 10,
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated path traversal enabling download of arbitrary files (e.g., serverconfig.xml) from the SimpleHelp server; can be chained with authenticated arbitrary file upload (CVE\u20112024\u201157728) to achieve remote code execution.",
-        "affected_products": "SimpleHelp remote support/RMM versions 5.5.7 and earlier (also 5.4.x prior to 5.4.10; 5.3.x prior to 5.3.9)",
+        "technical_details": "Directory/path traversal vulnerability allowing access to files outside intended directories (CVE\u20112024\u201157727 affects SimpleHelp 5.5.7 and earlier).",
+        "affected_products": "SimpleHelp Remote Monitoring and Management versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "Public PoC Nuclei template available at https://github.com/projectdiscovery/nuclei-templates/blob/main/http/cves/2024/CVE-2024-57727.yaml",
-        "patch_available": "SimpleHelp released patches (5.5.8, 5.4.10, 5.3.9). Patch download page: https://simple-help.com/downloads and advisory: https://simple-help.com/kb---security-vulnerabilities-01-2025",
-        "active_exploitation": "Confirmed \u2013 CISA added CVE\u20112024\u201157727 to its KEV catalog on Feb\u202f13\u202f2025 and reports indicate ransomware actors have exploited unpatched SimpleHelp instances in the wild.",
-        "threat_actors": "Ransomware actors (e.g., DragonForce) as reported by CISA and Sophos.",
-        "mitigation": "Upgrade immediately to patched SimpleHelp versions (5.5.8, 5.4.10, 5.3.9). If patching is not possible, isolate SimpleHelp servers from the internet, stop the server process, apply vendor\u2011provided mitigations, and conduct threat\u2011hunting per CISA guidance. Use detection queries (e.g., /allversions) and network monitoring.",
-        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "true - https://community.simple-help.com/t/simplehelp-5-5-8-critical-security-fixes/1570",
+        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
+        "threat_actors": "Ransomware actors (unspecified groups)",
+        "mitigation": "Upgrade to SimpleHelp 5.5.8 or later; if immediate patching is not possible, isolate/unexpose SimpleHelp servers from the internet, restrict access, apply network\u2011level controls, and monitor for suspicious activity.",
+        "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -50,15 +50,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI agent ingests poisoned content (web pages, docs, emails, form submissions) containing attacker\u2011supplied instructions that the model treats as legitimate commands; attacks exploit retrieval/RAG pipelines and trust boundaries between content and system instructions to cause exfiltration, destructive commands, or unauthorized actions.",
-        "affected_products": "Google Gemini Enterprise, Google Workspace",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect Prompt Injection (IPI) abuses the retrieval step in Retrieval\u2011Augmented Generation (RAG) pipelines: attacker\u2011controlled data is embedded, retrieved, and concatenated with the LLM prompt, allowing a crafted trigger fragment to steer the model into executing unintended commands or leaking data.",
+        "affected_products": "Google Gemini (AI model), Google Bard, other Google AI services using RAG pipelines",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public weaponized PoC disclosed by Google; research teams (Forcepoint, Noma Labs, others) published in\u2011the\u2011wild examples but no centralized public exploit repository.",
-        "patch_available": "Vendor advisory and mitigation guidance available at https://blog.google/security/prompt-injections-web/; additional mitigations referenced at https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/",
-        "active_exploitation": "Google observed a small number of malicious IPI instances on the public web and reported a ~32% increase in detections between Nov 2025 and Feb 2026; researchers (Forcepoint, Noma Labs) reported additional in\u2011the\u2011wild examples.",
+        "exploit_available": "true (http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)",
+        "patch_available": "true (https://blog.google/security/prompt-injections-web/)",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Layered defense \u2014 enforce strict instruction/data separation, coarse\u2011to\u2011fine filtering when scanning web content, deny or sanitize untrusted content before ingestion, minimize RAG data scope and permissions, continuous telemetry/monitoring and model hardening.",
+        "mitigation": "Apply vendor\u2011provided updates that isolate user\u2011generated content from prompt instructions, enforce strict validation of retrieved fragments, and monitor for anomalous retrieval patterns. Until patches are applied, restrict external data sources used by RAG pipelines and enable defensive monitoring.",
         "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
@@ -78,15 +78,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) in Retrieval\u2011Augmented Generation (RAG): an attacker embeds malicious instructions in shared Workspace artifacts (Docs, Calendar invites, Gmail). The Gemini model retrieves this content, treats the embedded instructions as genuine prompts, and may execute actions such as data exfiltration by embedding results in an external image request.",
-        "affected_products": "Google Workspace (Gemini Enterprise / Gemini-powered Workspace features: Gmail, Calendar, Docs)",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect prompt injection (IPI) exploits the model's use of external data sources/tools by embedding adversarial instructions inside those inputs (e.g., crafted email bodies, invites, or documents). In the GeminiJack case, hidden/malicious instructions in shared Workspace artifacts could influence Gemini Enterprise processing without user interaction (zero\u2011click) to exfiltrate data or change model behavior.",
+        "affected_products": "Google Gemini Enterprise integrated in Google Workspace (shared documents, emails, invites, and multi\u2011source data workflows)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Proof-of-concept described by Noma Labs (GeminiJack) in disclosure; no publicly weaponized exploit URL listed.",
-        "patch_available": "Patch/advisory implemented via continuous defenses; no discrete patch URL available.",
-        "active_exploitation": "Noma Labs disclosed an active zero\u2011click vulnerability (GeminiJack) and confirmed that Google applied mitigations. No widespread active exploitation groups have been reported.",
+        "exploit_available": "true - http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability",
+        "patch_available": "true - https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Defense\u2011in\u2011depth per Google: human and automated red\u2011team testing, synthetic attack data generation, deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies governed by a centralized Policy Engine), ML/LLM\u2011based retraining and prompt engineering, and Gemini model hardening. Additionally, apply least\u2011privilege datasource access and monitor for anomalous outbound requests.",
+        "mitigation": "Google described a layered defense strategy and continuous mitigations for indirect prompt injections in Workspace/Gemini (hardening data ingestion, provenance checks, filtering untrusted content, sandboxing agentic actions, telemetry and monitoring). Noma Labs and other reports recommend disabling or restricting automatic agentic features, applying vendor patches/updates, and restricting shared\u2011file processing until mitigations are applied.",
         "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
       }
     },
@@ -106,15 +106,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection in agentic browsing can cause an AI agent (Gemini) to be manipulated via malicious webpage content, enabling zero\u2011click exploit chains (e.g., GeminiJack) when combined with other flaws.",
-        "affected_products": "Chrome (Gemini for Chrome / agentic browsing feature)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Noma Labs disclosed GeminiJack zero\u2011click vulnerability; no public PoC URL provided.",
-        "patch_available": "Google announced layered defenses and architectural changes to mitigate indirect prompt injection; see vendor blog for details (no separate patch URL provided).",
-        "active_exploitation": "No confirmed in-the-wild exploitation reported.",
+        "technical_details": "The primary new threat is indirect prompt injection: malicious site content can influence an agentic browser's AI by providing instructions or content that are incorporated into agent prompts, leading the agent to take unsafe actions.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use Chrome\u2019s layered defenses for agentic browsing (restrict origin access, block prompt injections, monitor agent actions); follow vendor blog guidance.",
+        "mitigation": "Apply Google\u2019s described mitigations: use the vendor\u2011provided architecture and layered defenses (secondary oversight agent for Gemini, origin access restrictions, capability restriction policies), avoid allowing agentic browsing on untrusted sites, and follow least\u2011privilege principles for AI capabilities.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -134,16 +134,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Privilege\u2011escalation in Android Framework allowing apps to bypass permission checks and gain elevated privileges without user interaction.",
-        "affected_products": "Android 11, Android 12, Android 13, Android 14",
-        "cvss_score": "9.8",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Proof\u2011of\u2011concept/exploit details not published publicly; no public PoC URL available.",
-        "patch_available": "June 2026 security patches are available; AOSP source patches to be released (see bulletin).",
-        "active_exploitation": "Yes \u2014 Google bulletin notes \"indications\" of limited, targeted exploitation; secondary reporting confirms active targeted attacks.",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Disable unknown\u2011source installs, restrict app permissions, enable Google Play Protect, push updates via MDM, block sideloading/allowlisting until patched.",
-        "vendor_advisory": "http://source.android.com/docs/security/bulletin/2026/2026-06-01"
+        "mitigation": "Adopt memory\u2011safe languages and practices (Google reports adopting Rust and prioritizing memory\u2011safety fixes; continuing to convert/new\u2011code in Rust reduced memory\u2011safety vulnerabilities below 20% in 2025).",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
     {
@@ -162,15 +162,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection injects hidden malicious instructions into external data (emails, documents, calendar invites) that cause AI models to exfiltrate data or execute actions. Google mitigates this with layered defenses (content classifiers, markdown sanitization, URL redaction, user\u2011confirmation, security notifications). The Cursor vulnerability (CVE\u20112025\u201154131) allows bypass of the allowlist in auto\u2011run mode via backtick (`) or $(cmd), leading to arbitrary command execution when combined with indirect prompt injection; fixed in version 1.3.",
-        "affected_products": "Gemini (models and app), Gemini CLI, Cursor <1.3",
-        "cvss_score": "10.0",
+        "technical_details": "Indirect prompt injection (IPI) is an attack where hidden or embedded instructions in external data sources (emails, documents, calendar invites, web content) influence generative AI prompts or responses to cause data exfiltration or unauthorized actions. Attacks exploit the model\u2019s reliance on user\u2011provided context and external content ingestion, or downstream tool invocation, to inject malicious directives that the model may follow.",
+        "affected_products": "Gemini, Google Workspace apps integrating Gemini",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept linked in the vendor advisory; third\u2011party write\u2011ups exist (The Register) but no widely circulated exploit.",
-        "patch_available": "Gemini CLI versions 0.39.1 and 0.40.0-preview.3 are patched; Cursor is patched in version 1.3. References: the Google blog, the NVD entry and The Register article.",
-        "active_exploitation": "No confirmed active exploitation reported in the vendor blog; third\u2011party sources only warn of potential abuse.",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Apply Google\u2019s layered defenses (prompt\u2011injection content classifiers, markdown sanitization, suspicious URL redaction, user\u2011confirmation framework, security\u2011notification system) and update Gemini CLI to versions 0.39.1 or 0.40.0\u2011preview.3 and Cursor to \u22651.3. Avoid running the CLI in headless or untrusted environments, pin GitHub Action versions, require explicit workspace trust, enable user confirmations, and sanitize all inputs.",
+        "mitigation": "Layered defense strategy including model hardening/safety\u2011by\u2011design, purpose\u2011built ML detectors/classifiers for malicious input, content provenance and provenance\u2011aware handling, system\u2011level safeguards and sandboxing for tool execution, strict scoping of model capabilities, and UX\u2011level confirmations and rate limits. Follow vendor guidance in the Google security blog post.",
         "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
       }
     },
@@ -189,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state-sponsored actors target large backbone routers and PE/CE routers, leverage compromised devices and trusted connections to pivot, and modify routers to maintain persistent long\u2011term access; they exploit weak credentials, unpatched vulnerabilities, misconfigurations, and supply\u2011chain/access via managed service providers to establish persistence and global espionage capabilities.",
+        "technical_details": "PRC state-sponsored actors target backbone, provider edge (PE), and customer edge (CE) routers and other network devices, often modifying routers and leveraging compromised devices and trusted connections to maintain persistent, long-term access and pivot within networks.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "-1.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unavailable (no public PoC/weaponized exploit linked in CISA advisory).",
-        "patch_available": "Patch availability varies by vendor; no single vendor patch covers all affected routers/devices. Refer to vendor advisories for specific router vendors. No unified CISA\u2011hosted vendor patch URL available.",
-        "active_exploitation": "Confirmed active exploitation in the wild reported by CISA; actors maintain persistent access to telecommunications, government, transportation, lodging, and military networks (see CISA advisory AA25-239A).",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Key mitigations\u2014restrict administrative access (apply least privilege, multifactor authentication), inventory and segment router management networks, deploy strong patch management per vendor advisories, rotate credentials and keys, monitor for configuration changes and unauthorized tunnels, apply logging/alerting on anomalous routing/configuration activity, isolate compromised devices and rebuild from known\u2011good images, and follow vendor\u2011specific mitigation guidance. If vendor advisories are unavailable, apply compensating controls and hardening per CISA guidance.",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -216,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
+        "technical_details": "The advisory describes a long\u2011running cyber espionage campaign using credential harvesting, spearphishing, exploitation of internet\u2011facing services, and deployment of custom malware and legitimate tools for reconnaissance and lateral movement against Western logistics and technology companies; specific vulnerability mechanism details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC/weaponized exploit reported in cited advisories",
-        "patch_available": "Patch not applicable",
-        "active_exploitation": "Confirmed ongoing targeting since 2022 per joint CSA",
-        "threat_actors": "GRU 85th GTsSS (Unit 26165, APT28)",
-        "mitigation": "Follow joint CSA mitigation and detection recommendations (network monitoring, multifactor authentication, timely patching, principle of least privilege, segmentation, incident response planning).",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Russian GRU 85th GTsSS (Unit 26165) \u2014 tracked as APT28 and related GRU actors.",
+        "mitigation": "Apply multi-factor authentication, patch internet-facing services, monitor for provided IOCs, implement network segmentation, restrict administrative privileges, and follow CISA/NSA guidance in the advisory.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
@@ -244,16 +244,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Race-condition in Microsoft Defender/Malware Protection Engine enables a SYSTEM-level shell (RoguePlanet).",
-        "affected_products": "Windows 10, Windows 11, Microsoft Defender, Visual Studio",
-        "cvss_score": "0.0",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Windows 10 (KB5094126), Windows 11 (KB5094126), Microsoft Defender / Microsoft Malware Protection Engine, Exchange Server",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC exploit named RoguePlanet reported; source: The Hacker News article.",
-        "patch_available": "June 2026 Patch Tuesday update KB5094126 released by Microsoft.",
-        "active_exploitation": "Confirmed active exploitation of Microsoft Defender and Malware Protection Engine vulnerabilities reported by RedLegg.",
+        "exploit_available": "true",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Apply the June 2026 Patch Tuesday update (KB5094126). If the patch cannot be applied, disable or harden Microsoft Defender components and monitor with standard EDR/IDS tools.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Apply Microsoft June 2026 security updates (install KB5094126 and associated patches); follow guidance in the Microsoft Security Update Guide. Additionally, harden or limit exposure of Exchange Server and keep Microsoft Defender/Malware Protection Engine up to date.",
+        "vendor_advisory": "https://support.microsoft.com/en-us/topic/june-9-2026-kb5094126-os-builds-26200-8655-and-26100-8655-1a9bcba6-5f53-4075-8156-fe11ac631737"
       }
     },
     {
@@ -271,16 +271,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Anthropic disabled access to Fable 5 and Mythos 5 after receiving a U.S. government export\u2011control directive ordering a block on foreign\u2011national access; the company argues the cited jailbreak is narrow and the capability exists elsewhere.",
-        "affected_products": "Claude Fable 5; Claude Mythos 5 (discontinued/unavailable as of 2026-06-12/13)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "None known.",
-        "patch_available": "Not applicable \u2014 models were suspended by vendor in response to a government directive; Vendor advisory URL unavailable.",
-        "active_exploitation": "No confirmed active exploitation reported; action appears to be regulatory/export\u2011control driven rather than evidence of exploitation in the wild.",
+        "technical_details": "Reported issue is a model jailbreak/narrow capability enabling misuse of advanced model outputs; US export\u2011control directive cited national\u2011security concerns and ordered suspension of foreign\u2011national access, prompting Anthropic to disable the models.",
+        "affected_products": "Claude Fable 5, Claude Mythos 5",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "Active exploitation status unknown",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Anthropic disabled access to the models globally; restrict access to model outputs, monitor for jailbreak prompts, use vetted/trusted\u2011access programs when available.",
+        "vendor_advisory": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
       }
     },
     {
@@ -296,168 +296,6 @@
       ],
       "cve_ids": [
         "CVE-2026-20253"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54091",
-      "title": "File Browser has incorrect access control for public directory shares via rule path rebasing",
-      "summary": "### Summary\nFile Browser's public share handlers rebase the share owner's filesystem root to the shared directory and then evaluate descendant paths against the owner's global and per-user rules using the rebased relative path instead of the original path relative to the owner's scope.\n\nAs a result, an attacker who knows a public directory share URL can access files and subdirectories that the owner explicitly blocked with rules, as long as those blocked paths are located underneath the shared directory. In the simplest case this is an unauthenticated information disclosure through `GET /api/public/share/*` and `GET /api/public/dl/*`.\n\n### Details\nThe public share flow first resolves the original shared path under the owner's filesystem, but then switches `d.user.Fs` to a new `BasePathFs` rooted at the shared directory. The follow-up authorization check is still performed by `d.Check`, which compares the request path to rule strings using prefix matching.\n\nWhen the share target is a directory, the path passed to `d.Check` becomes relative to the shared directory, while the rules remain relative to the owner's original scope. A deny rule such as `/projects/private` therefore no longer matches a public share request for `/private/secret.txt`, even though the rebased filesystem resolves that request to the real path `/projects/private/secret.txt`.\n\nCore vulnerable code path:\n\n```go\n// http/public.go\nif file.IsDir {\n    basePath = filepath.Clean(link.Path)\n    filePath = ifPath\n}\n\nd.user.Fs = afero.NewBasePathFs(d.user.Fs, basePath)\n\nfile, err = files.NewFileInfo(&files.FileOptions{\n    Fs:      d.user.Fs,\n    Path:    filePath,\n    Expand:  true,\n    Checker: d,\n})\n```\n\n```go\n// http/data.go and rules/rules.go\nfunc (d *data) Check(path string) bool {\n    allow := true\n    for _, rule := range d.settings.Rules {\n        if rule.Matches(path) {\n            allow = rule.Allow\n        }\n    }\n    for _, rule := range d.user.Rules {\n        if rule.Matches(path) {\n         ",
-      "link": "https://github.com/advisories/GHSA-j9jx-hp4c-ghhh",
-      "published": "2026-06-12T21:53:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54091"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54092",
-      "title": "File Browser has a DoS Vulnerability via Public Login API",
-      "summary": "### Summary\nUnchecked passwords maximums allow for an arbitrarily large password to be passed into the login API. This spikes CPU and memory, and after testing, crashes, heavily lags any container created, and has even made my docker daemon start to send errors with status code 500 even after the container was destroyed.\n\n### Details\nWhen sending JSON in the body of the request to the route `api/login`, if a large password is sent, there is no checking on a maximum length password. This means that any length string can be sent to the server and it will be hashed. Specifically the function `CheckPwd` in `users/password.go` is called to hash and check to see if the user supplied password is valid, but there is no maximum length for the password checked in that function. Depending on how many concurrent requests are being made, there may be no logs about the failed login attempts.\n\n### PoC\nCreate a file with a large password using this command:\n```bash\nyes \"thisisalongphraseithinksoyeahitisactuallyimsureitiswhatisthisisamouthwoahimcoolwheredidthiscomefromwowza\" | head -n 10000000 > large-password.txt\n```\nThis makes a file that's about a gigabyte. The `n` parameter in the head function can be adjusted to increase or decrease the file size. Afterwards, run the following script to make a filebrowser container:\n```bash\ndocker run -v filebrowser_data:/srv -v filebrowser_database:/database -v filebrowser_config:/config -p 8080:80 filebrowser/filebrowser\n```\n\nAfter running the container, it is recommended to bring up some sort of performance dashboard on the container that is running to monitor CPU and memory usage. Afterwards, run the following Python script (make sure to install dependencies: `pip install aiohttp asyncio `). The `CONCURRENT_REQUESTS` parameter controls the number of requests to be making at one time. The `TOTAL_REQUESTS` parameter controls the grand total number of requests sent to the targeted container. If one wants more severe results, turn it up. If one",
-      "link": "https://github.com/advisories/GHSA-w5fm-68j4-fpc4",
-      "published": "2026-06-12T21:51:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54092"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-46371",
-      "title": "Fleet: Observer-level enrollment secret extraction via ORDER BY oracle on Apple MDM commands endpoint",
-      "summary": "### Summary\n\nA vulnerability in Fleet's Apple MDM commands listing endpoint allowed authenticated users with the lowest-privilege Observer role to extract sensitive values from joined database tables \u2014 including host enrollment secrets and Apple Push Notification Service (APNS) tokens \u2014 through a cursor-based binary search oracle. The endpoint accepted a user-supplied `order_key` parameter that was not validated against a column allowlist.\n\n### Impact\n\nThe `GET /api/v1/fleet/mdm/apple/commands` endpoint constructs its query using a deprecated helper that did not restrict which columns could appear in the `ORDER BY` clause. The underlying query joins the `hosts` and `nano_enrollments` tables, so any column on those tables could be supplied as `order_key`. An attacker with Observer credentials could then use the cursor-based pagination parameter (`after`) to binary-search the value of the chosen column one character at a time. The targeted values never appeared in the response body, but the presence or absence of results revealed each character.\n\nWith extracted `node_key` or `orbit_node_key` values, an attacker could impersonate enrolled hosts to Fleet's osquery and Orbit endpoints, submit fabricated host data, and retrieve pending scripts and commands. The APNS values are exploitable only by a party that also possesses the organization's APNS certificate.\n\nExploitation required authenticated Observer access and a Fleet deployment with Apple MDM enabled and at least one queued MDM command. Instances without Apple MDM configured were not affected.\n\n### Workarounds\n\nIf an immediate upgrade is not possible, administrators should:\n\n- Restrict the Observer role to fully trusted users until the patch is applied\n- Rotate `node_key` and `orbit_node_key` for any host suspected of exposure by re-enrolling the affected hosts\n\n### For more information\n\nIf there are any questions or comments about this advisory:\n\nEmail Fleet at [security@fleetdm.com](mailto:security@fleetdm.com)\nJ",
-      "link": "https://github.com/advisories/GHSA-x4qr-qw6h-wvxq",
-      "published": "2026-06-12T21:00:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-46371"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-46370",
-      "title": "Fleet has observer-level enrollment secret extraction via ORDER BY oracle on labels host-listing endpoint",
-      "summary": "### Summary\n\nA vulnerability in Fleet's labels host-listing endpoint allowed authenticated users with the lowest-privilege Observer role to extract host enrollment secrets (`node_key`, `orbit_node_key`) through a cursor-based binary search oracle. The endpoint accepted a user-supplied `order_key` parameter that was not validated against a column allowlist, permitting sort order to be driven by sensitive columns in a joined table.\n\n### Impact\n\nThe `GET /api/v1/fleet/labels/{id}/hosts` endpoint constructs its query using a deprecated helper that did not restrict which columns could appear in the `ORDER BY` clause. An attacker with Global Observer or Team Observer credentials could supply a sensitive column name (for example, `h.node_key`) as `order_key` and combine it with the cursor-based `after` parameter to binary-search the values of those columns one character at a time. The targeted values never appeared in the response body, but the presence or absence of results revealed each character.\n\nThe `node_key` and `orbit_node_key` values are the long-lived shared secrets used by osquery and Orbit agents to authenticate to the Fleet server. An attacker who extracted these keys could:\n\n- Impersonate enrolled hosts to Fleet's osquery and Orbit endpoints\n- Submit fabricated query results and host inventory data\n- Retrieve pending scripts and MDM commands queued for the host\n- Poison compliance and policy results across the Fleet deployment\n\nExploitation required authenticated Observer access. Fleet deployments that restrict Observer roles to fully trusted users were at lower practical risk, but the secrets exposed are high-value and long-lived.\n\n### Patches\n\n- v4.85.0\n\n### Workarounds\n\nIf an immediate upgrade is not possible, administrators should:\n\n- Restrict the Observer role to fully trusted users until the patch is applied\n- Rotate `node_key` and `orbit_node_key` for any host suspected of exposure by re-enrolling the affected hosts\n\n### For more information\n\nIf there ",
-      "link": "https://github.com/advisories/GHSA-vxm7-9x8v-8gm4",
-      "published": "2026-06-12T21:00:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-46370"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44311",
-      "title": "Fabric.js improper escaping in fabric.Gradient colorStops leads to XSS in SVG serialization",
-      "summary": "### Summary\n\nA potential Cross-Site Scripting (XSS) vulnerability exists in Fabric.js due to improper escaping of user-controlled input during SVG serialization via the `toSVG()` method.\n\nSpecifically, the `color` field within the `colorStops` array of a `fabric.Gradient` object is not properly escaped when converted into SVG `<stop>` elements. If an application renders the generated SVG string into the DOM (e.g., via `innerHTML`), this may allow an attacker to inject arbitrary HTML/SVG and execute JavaScript in the victim's browser.\n\n### Details\n\nDuring SVG export, Fabric.js serializes gradient color stops into `<stop>` elements like:\n\n```xml\n<stop offset=\"0\" stop-color=\"...\"></stop>\n```\n\nHowever, the `color` value is inserted into the `stop-color` attribute without proper escaping of special characters such as `\"`, `<`, and `>`. This allows crafted input to break out of the attribute context and inject arbitrary markup.\n\nFor example:\n```js\ncolor: 'red\"><img src=\"x\" onerror=\"alert(1)\">'\n```\n\nmay result in:\n```xml\n<stop offset=\"0\" stop-color=\"red\">\n<img src=\"x\" onerror=\"alert(1)\">\n```\nThis breaks the intended SVG structure and introduces executable HTML.\n\n### PoC (Proof of Concept)\n\nSuccessfully verified on **v7.2.0** (current latest version). The following HTML and JavaScript code reproduces the vulnerability. The code constructs a rectangle with a maliciously crafted gradient color stop and exports it to SVG:\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n   <title>Fabric.js SVG Export XSS Bypass Test</title>\n   <script src=\"[https://cdn.jsdelivr.net/npm/fabric@7.2.0/dist/index.js](https://cdn.jsdelivr.net/npm/fabric@7.2.0/dist/index.js)\"></script>\n</head>\n<body>\n   <h1>Fabric.js SVG Export XSS Bypass Test (Gradient Color)</h1>\n   <canvas id=\"c\" width=\"400\" height=\"300\"></canvas>\n   \n   <h3>SVG Output Rendering:</h3>\n   <div id=\"svg-output\" style=\"border: 1px solid #ccc; padding: 10px; margin-top: 10px;\"></div>\n\n   <script>\n       setTimeout(() => {\n           const canva",
-      "link": "https://github.com/advisories/GHSA-w22m-hvvm-xmwx",
-      "published": "2026-06-12T21:00:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44311"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53999",
-      "title": "Radius Controller May Delete a Container Resource via an Injected Deployment Annotation (Multi-Tenant Installs)",
-      "summary": "# Radius Controller May Delete a Container Resource via an Injected Deployment Annotation (Multi-Tenant Installs)\n\n## Summary\n\nA configuration-validation issue in the Radius Kubernetes controller can cause it to issue a `DELETE` for the container resource referenced by a tampered `radapp.io/status` annotation on a Deployment. It follows the \"Confused Deputy\" pattern. Real-world impact is bounded and depends heavily on install topology: in a multi-tenant install (one controller reconciling Deployments across resource groups owned by different teams) it can affect another team's container, while in a single-tenant install it is only self-DoS. There is no data disclosure, no privilege escalation, and no persistence, and deleted resources are recoverable through standard Radius deployment workflows.\n\n- **Vulnerability Type**: Configuration Injection / Cross-Tenant Resource Deletion\n- **CVSS 3.1 Score**: 7.7 (High in worst-case multi-tenant installs; Medium or lower in single-tenant or strict-RBAC installs)\n- **CWE Classification**: CWE-20 (Improper Input Validation), CWE-441 (Unintended Proxy or Intermediary)\n- **Affected Versions**: Radius v0.57.1 and earlier versions\n\n## Vulnerability Details\n\n### Root Cause\n\nThe Radius controller deserializes user-controllable JSON data from the `radapp.io/status` annotation on Kubernetes Deployments without validating whether the resource IDs belong to the current tenant. When the controller performs delete operations, it uses its own high-privilege credentials to send requests to the Radius API, enabling deletion of resources belonging to any tenant.\n\n### Vulnerable Code Locations\n\n**Vulnerability Source** - `pkg/controller/reconciler/annotations.go:110-119`:\n\n```go\ns := deploymentStatus{}\nstatus := deployment.Annotations[AnnotationRadiusStatus]\nif status != \"\" {\n    err := json.Unmarshal([]byte(status), &s)  // Deserializes user-controllable data without validation\n    if err != nil {\n        return result, fmt.Errorf(\"failed to u",
-      "link": "https://github.com/advisories/GHSA-fp5j-4fj2-4jvq",
-      "published": "2026-06-12T20:08:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53999"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-49741",
-      "title": "TYPO3 CMS has Privilege Escalation & SQL Injection in its Form Framework",
-      "summary": "### Problem\nBackend users with write access to the `form_definition` database table were able to directly create, update, or delete form definition records via `DataHandler`, bypassing the Form Framework's persistence validation and permission checks. This allowed injecting arbitrary form configurations, re-enabling attack vectors originally addressed in [TYPO3-CORE-SA-2018-003](https://typo3.org/security/advisory/typo3-core-sa-2018-003), including SQL injection and privilege escalation.\n\n### Solution\nUpdate to TYPO3 version 14.3.3 LTS that fixes the problem described.\n\n### Credits\nTYPO3 CMS thanks Sel\u00e7uk G\u00fcney for reporting this issue, and to TYPO3 core & security team member Oliver Hader for fixing it.\n\n### Resources\n* [TYPO3-CORE-SA-2026-017](https://typo3.org/security/advisory/typo3-core-sa-2026-017)",
-      "link": "https://github.com/advisories/GHSA-jh32-v29g-68pq",
-      "published": "2026-06-12T19:32:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-49741"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-49740",
-      "title": "TYPO3 CMS has Insecure Deserialization via Core API",
-      "summary": "### Problem\nTYPO3's cache frontend (`VariableFrontend`) and persistent key-value store (`Registry`) deserialized PHP payloads without integrity validation or class restrictions. An attacker with write access to the underlying storage backend (cache store or sys_registry database table) could inject a crafted serialized payload to trigger PHP Object Injection, potentially exploiting a gadget chain to achieve Remote Code Execution or other high-impact effects.\n\nExploiting this vulnerability requires direct local write access to the storage, such as the SQL database or file system.\n\n### Solution\nUpdate to TYPO3 versions 10.4.57 ELTS, 11.5.51 ELTS, 12.4.46 ELTS, 13.4.31 LTS, 14.3.3 LTS that fix the problem described.\n\n### Credits\nTYPO3 CMS thanks \u201cz3rco\u201d, Chowdhury Faizal Ahammed, Rick Larabee, Vitaly Simonovich, Nozomu Sasaki, Mert Akdag, \u201ctikket\u201d, Shafi Almutairi for reporting this issue, and to TYPO3 core & security team member Oliver Hader for fixing it.\n\n### Resources\n* [TYPO3-CORE-SA-2026-018](https://typo3.org/security/advisory/typo3-core-sa-2026-018)",
-      "link": "https://github.com/advisories/GHSA-c78m-c52x-jgwp",
-      "published": "2026-06-12T19:09:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-49740"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-49738",
-      "title": "TYPO3 CMS has Broken Access Control in its File Abstraction Layer",
-      "summary": "### Problem\nThe path allowance check in `GeneralUtility::isAllowedAbsPath()` performed a plain string prefix comparison without requiring a directory separator boundary, causing a path like `/var/www/html-other/secret.yaml` to be incorrectly accepted as valid when the project root was `/var/www/html`. Administrator users with access to the File Abstraction Layer were able to create new file storage definitions pointing to directories outside the project root, bypassing this path check.\n\n### Solution\nUpdate to TYPO3 versions 10.4.57 ELTS, 11.5.51 ELTS, 12.4.46 ELTS, 13.4.31 LTS, 14.3.3 LTS that fix the problem described.\n\n### Credits\nTYPO3 CMS thanks Wolfgang Klinger for reporting this issue, and to TYPO3 core & security team member Oliver Hader for fixing it.\n\n### Resources\n* [TYPO3-CORE-SA-2026-016](https://typo3.org/security/advisory/typo3-core-sa-2026-016)",
-      "link": "https://github.com/advisories/GHSA-jf56-v8jc-jcc5",
-      "published": "2026-06-12T19:09:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-49738"
       ],
       "is_zero_day": false,
       "is_high_severity": true
