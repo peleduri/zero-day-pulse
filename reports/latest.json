@@ -1,72 +1,10 @@
 {
-  "generated": "2026-06-15T20:44:24.662900+00:00",
-  "total": 28,
-  "kev": 2,
+  "generated": "2026-06-16T02:36:40.757787+00:00",
+  "total": 29,
+  "kev": 0,
   "zero_day": 11,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-54420",
-      "title": "CVE-2026-54420 \u2014 LiteSpeed cPanel Plugin UNIX Symbolic Link (Symlink) Following Vulnerability",
-      "summary": "Vendor: LiteSpeed | Product: cPanel Plugin. LiteSpeed cPanel plugin contains a UNIX symbolic link (Symlink) following vulnerability that could allow a user with FTP or web shell access on a shared hosting server running CloudLinux/CageFS. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-18)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-54420",
-      "published": "2026-06-15",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-54420"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "The plugin mishandles user\u2011provided symbolic links (symlink following) on shared hosting with CloudLinux/CageFS, allowing an FTP or web\u2011shell user to create symlinks that the plugin follows, leading to unauthorized access to other users\u2019 files (symlink traversal/privilege/resource access).",
-        "affected_products": "LiteSpeed cPanel plugin before 2.4.8 (as distributed in LiteSpeed WHM PlugIn before 5.3.2.0)",
-        "cvss_score": "8.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-        "exploit_available": "true \u2014 https://nvd.nist.gov/vuln/detail/CVE-2026-54420",
-        "patch_available": "true \u2014 https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:changelog",
-        "active_exploitation": "true \u2014 https://www.cve.org/CVERecord?id=CVE-2026-54420 and https://nvd.nist.gov/vuln/detail/CVE-2026-54420",
-        "threat_actors": "None known",
-        "mitigation": "Immediately upgrade to LiteSpeed cPanel plugin 2.4.8 (WHM Plugin 5.3.2.0) per vendor advisory; as interim mitigations, restrict FTP/web shell access, disable the LiteSpeed cPanel plugin where feasible, apply CloudLinux/CageFS hardening and isolation, and follow CISA BOD 26-04 prioritization and forensics triage guidance. If unable to patch or mitigate, discontinue use.",
-        "vendor_advisory": "https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:changelog"
-      }
-    },
-    {
-      "id": "CVE-2026-20262",
-      "title": "CVE-2026-20262 \u2014 Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability",
-      "summary": "Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager contains a directory or path traversal vulnerability that could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-29)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262",
-      "published": "2026-06-15",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-20262"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Cisco Catalyst SD-WAN Manager contains a directory/path traversal vulnerability that could allow an authenticated, remote attacker to create or overwrite files on the filesystem of an affected system by supplying crafted input to traverse directories.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Apply vendor\u2011recommended mitigations and follow CISA BOD 26-04 guidance; if vendor patch unavailable, restrict access to SD-WAN Manager, enforce least privilege, isolate management interfaces, and monitor logs for anomalous file write activity.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -84,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Multiple unauthenticated path traversal vulnerabilities in SimpleHelp\u2019s web interface allow remote attackers to traverse directories and read arbitrary sensitive files on the server, enabling further credential theft and system compromise.",
-        "affected_products": "SimpleHelp remote support / RMM software versions 5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is a directory traversal vulnerability in SimpleHelp RMM that enables unauthenticated remote attackers to read sensitive files by manipulating file path parameters.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) version 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "Ransomware actors (unspecified groups)",
-        "mitigation": "Immediately update SimpleHelp to the vendor\u2011published fixed version (upgrade above 5.5.7), or if unable to patch: disable public access to the SimpleHelp web interface, restrict access via firewall/VPN, apply network segmentation, and monitor for indicators of compromise per CISA guidance.",
-        "vendor_advisory": "https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "mitigation": "Upgrade SimpleHelp RMM to a version newer than 5.5.7 (or apply the vendor patch). If immediate upgrade is not possible, restrict remote access, enforce network segmentation, and monitor for suspicious file access.",
+        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -112,16 +50,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) exploits arise when an attacker injects malicious instructions into the prompt context, causing AI agents to execute unintended actions; the paper presents end\u2011to\u2011end IPI exploits using natural queries and real\u2011world corpora across RAG and agentic systems.",
-        "affected_products": "Google Gemini (AI service)",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when adversarial instructions are embedded in external content (websites, documents, or retrieval corpora) that AI agents or RAG systems retrieve and incorporate into their prompt or context, causing the model to follow attacker\u2011supplied instructions or leak data. Attacks include seeding malicious payloads on websites, crafting retrieval corpus entries, and exploiting browsing/agent behaviors; end\u2011to\u2011end IPI exploits have been demonstrated against RAG and agentic systems.",
+        "affected_products": "AI agents, retrieval\u2011augmented generation (RAG) systems, and agentic LLM systems that browse or ingest external web content; specific product versions unavailable",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (source: http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)",
+        "exploit_available": "true",
         "patch_available": "false",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+        "mitigation": "Hardening recommendations include sanitizing and filtering retrieved content, implementing strict instruction/role isolation, provenance\u2011aware retrieval, retrieval validation and ranking defenses, conservative execution of web\u2011browsing agents, and monitoring for anomalous outputs.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -140,16 +78,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "An attacker injects malicious prompts into data sources or web pages accessed by the LLM, causing the model to execute unintended instructions. In the GeminiJack case, the injection occurs without any user input (zero\u2011click).",
-        "affected_products": "Google Workspace (with Gemini), Google Gemini, Google Gemini Enterprise",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (source: http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)",
-        "patch_available": "false",
-        "active_exploitation": "true (source: http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
+        "technical_details": "Indirect prompt injection (IPI) involves embedding attacker\u2011controlled instructions into data sources (Docs, Calendar events, email HTML) that are retrieved by an LLM during a user query or RAG workflow. In the GeminiJack example, attacker\u2011created Docs/Calendar/Email content included embedded instructions that caused Gemini Enterprise\u2019s retrieval and synthesis pipeline to include sensitive content in responses and to exfiltrate it via an auto\u2011loading external image URL \u2014 enabling data exfiltration without malware or user phishing.",
+        "affected_products": "Google Gemini Enterprise, Google Workspace integrations (RAG/search over Docs, Gmail, Calendar)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true \u2013 https://noma.security/noma-labs/geminijack/",
+        "patch_available": "Patch availability unknown",
+        "active_exploitation": "true \u2013 https://oecd.ai/en/incidents/2025-12-09-ee43, https://www.darkreading.com/remote-workforce/gemini-enterprise-exposes-sensitive-data",
         "threat_actors": "None known",
-        "mitigation": "Implement continuous monitoring of prompt inputs, restrict or sandbox untrusted data sources, and enforce strict input validation and sanitization for all tools that feed data to Gemini. Apply any vendor\u2011issued hardening guidelines promptly.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
+        "mitigation": "Use layered defenses: deterministic controls (user confirmation, URL sanitization, tool\u2011chaining policies, centralized policy engine and regex takedowns), ML/LLM\u2011based defenses (synthetic\u2011data\u2011driven retraining, prompt engineering, model hardening), proactive red\u2011team testing, participation in AI VRP, restrict or monitor RAG/data\u2011source access, enforce least privilege on connected data sources, disable auto\u2011loading external resources, and apply URL/content sanitization for retrieved content.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
       }
     },
     {
@@ -168,16 +106,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection is the primary threat\u2014malicious web content can influence agentic AI browser agents by injecting prompts through page content or resources, leading agents to perform unsafe actions or exfiltrate data. Google describes layered defenses in Chrome to restrict origin access, sandbox agent actions, and filter unsafe instructions.",
-        "affected_products": "Chrome (agentic/Gemini integration)",
+        "technical_details": "The root issue is indirect prompt injection, where hidden or crafted page content supplies instructions that the agentic AI (Gemini in Chrome) may interpret as authoritative prompts, enabling data exfiltration or chained exploits such as CVE\u20112025\u201154131. Noma Labs demonstrated a zero\u2011click chain (GeminiJack) using this technique inside Gemini Enterprise and Vertex AI Search. Google\u2019s mitigation adds deterministic rules and a secondary monitoring agent to restrict origin access and unsafe AI actions.",
+        "affected_products": "Google Chrome (agentic browsing / Gemini integration), Google Gemini Enterprise, Vertex AI Search (versions unspecified)",
         "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
-        "active_exploitation": "false",
+        "exploit_available": "true - https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability",
+        "patch_available": "true - https://blog.google/security/architecting-security-for-agentic/",
+        "active_exploitation": "true - https://blog.google/security/architecting-security-for-agentic/, https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/, https://bleepingcomputer.com/news/security/google-chrome-adds-new-security-layer-for-gemini-ai-agentic-browsing/",
         "threat_actors": "None known",
-        "mitigation": "Use the latest Chrome with the new layered defenses; restrict agentic features in untrusted contexts, follow Google\u2019s guidance to limit origin access and enable safe\u2011by\u2011default agent restrictions.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "mitigation": "Apply the latest Chrome updates that implement the layered defenses described by Google. Disable or restrict agentic browsing features when not required, enforce content\u2011origin restrictions, and follow the hardening guidance outlined in the vendor advisory. Monitor for indicators from Noma Labs and NVD for related CVEs.",
+        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
       }
     },
     {
@@ -196,16 +134,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A near\u2011miss linear buffer overflow in unsafe Rust code inside the CrabbyAVIF crate (CVE\u20112025\u201148530). The overflow would have written past a buffer, but Android\u2019s Scudo hardened allocator placed guard pages around secondary allocations, causing a deterministic crash instead of exploitable behavior.",
-        "affected_products": "CrabbyAVIF (Android platform component: platform/external/rust/crabbyavif)",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true - https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
-        "active_exploitation": "false",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Use of Scudo hardened allocator (guard pages) to make the overflow non\u2011exploitable, improved crash reporting to surface overflows, assignment of CVE\u20112025\u201148530, and adoption of unsafe\u2011Rust training and review practices.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+        "mitigation": "Adopt Rust for new Android platform code; prioritize memory-safety-focused development and remediation (per Google guidance).",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -224,15 +162,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) hides malicious instructions inside external data sources (emails, documents, calendar invites, code comments, web pages). An AI agent that ingests such data (automated assistants, code interpreters, or tools that fetch external content) may treat attacker\u2011supplied text as instructions and perform data exfiltration, privileged actions, or other unintended behaviors. New variants include \u201cComment and Control\u201d via collaborative platforms (e.g., GitHub comments) that influence multi\u2011step agent workflows.",
-        "affected_products": "Google Gemini, Google Workspace (Workspace\u2011integrated Gemini), Microsoft Copilot Studio (ShareLeak/CVE-2026-21520), Anthropic Claude, GitHub Copilot (via GitHub comments)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true \u2014 http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://infosecurity-magazine.com/news/researchers-10-wild-indirect",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html, http://thehackernews.com/2026/04/google-patches-antigravity-ide-flaw.html",
-        "active_exploitation": "true \u2014 http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://infosecurity-magazine.com/news/researchers-10-wild-indirect",
-        "threat_actors": "None known",
-        "mitigation": "Apply layered defenses \u2014 sanitize and isolate untrusted inputs, limit model access to sensitive data, use instruction\u2011blocking filters and provenance/trust signals, attacker\u2011detection telemetry, prompt hardening, model ensembling and policy layers; apply vendor patches and configuration recommendations from vendor advisories.",
+        "technical_details": "Indirect prompt injection attacks embed hidden malicious instructions within external data sources (emails, documents, calendar invites) that LLM\u2011based agents ingest, causing exfiltration or rogue actions.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "None known.",
+        "mitigation": "Implement layered defenses: validate and sanitize external inputs, enforce strict access controls and least privilege for agents, use provenance and source\u2011trust signals, apply output filters and redaction, rate\u2011limit and monitor agent actions, and keep models and connectors updated.",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -251,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state-sponsored actors target backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, modify routers to maintain persistent, long\u2011term access, and leverage compromised devices or trusted connections to pivot into other networks.",
+        "technical_details": "Chinese state\u2011sponsored actors alter router firmware or configuration to embed persistent backdoors, then leverage compromised devices and trusted network links to pivot into other segments, enabling long\u2011term espionage across telecom, government, transportation, lodging, and military networks.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
+        "patch_available": "false",
         "active_exploitation": "true",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Apply CISA guidance: isolate and monitor network infrastructure, audit and harden router configurations, restrict management interfaces, implement strong authentication and logging, segment networks, and apply vendor\u2011recommended mitigations and detection signatures per advisory.",
+        "mitigation": "Implement strict segmentation of core router infrastructure, enforce multi\u2011factor authentication and role\u2011based access for router management, regularly verify firmware integrity and apply vendor\u2011recommended hardening guides, and monitor for unusual traffic or configuration changes.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -278,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "The GRU\u2011linked campaign employs spear\u2011phishing emails with malicious attachments or links to obtain credentials, followed by deployment of custom remote\u2011access tools to exfiltrate data from logistics and technology organizations.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "Exploit availability unknown.",
         "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Russian GRU 85th GTsSS (Unit 26165), also known as APT28",
-        "mitigation": "Implement multifactor authentication, enforce strong password policies, restrict privileged account access, segment networks separating logistics and technology environments, monitor for anomalous activity, and apply all relevant security updates.",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS)",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
@@ -304,7 +242,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "CVE\u20112026\u201145586: link\u2011following flaw (CWE\u201159) in Windows CTFMON enables local privilege escalation to SYSTEM. CVE\u20112026\u201150507: missing authentication (CWE\u2011306) in BitLocker permits bypass with physical access. CVE\u20112026\u201144815: stack\u2011based buffer overflow (CWE\u2011121) in DHCP Client allows remote code execution via malicious DHCP responses.",
+        "affected_products": "Microsoft Windows (CTFMON/Collaborative Translation Framework, BitLocker, DHCP Client Service, Active Directory Domain Services, Cryptographic Services, Deployment Services, Kerberos KDC), Microsoft Office, Extended Security Updates (ESU)",
+        "cvss_score": "Multiple scores (e.g., 7.8, 6.8, 9.8, 8.8, 8.4, 8.1, 7.1)",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true (proof\u2011of\u2011concept for CVE\u20112026\u201150507 via CrowdStrike blog)",
+        "patch_available": "true (https://support.microsoft.com/en-us/topic/june-9-2026-kb5094126-os-builds-26200-8655-and-26100-8655-1a9bcba6-5f53-4075-8156-fe11ac631737)",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Apply the Microsoft June 2026 updates (KB5094126) immediately. For the DHCP client vulnerability (CVE\u20112026\u201144815) restrict or monitor applications calling DhcpGetOriginalSubnetMask API and block rogue DHCP servers. For the BitLocker issue (CVE\u20112026\u201150507) ensure physical device security and follow vendor guidance. Use network segmentation, least\u2011privilege principles, and CrowdStrike Falcon Exposure Management to prioritize remediation.",
+        "vendor_advisory": "https://support.microsoft.com/en-us/topic/june-9-2026-kb5094126-os-builds-26200-8655-and-26100-8655-1a9bcba6-5f53-4075-8156-fe11ac631737"
+      }
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/cisco-fixes-sd-wan-vmanage-flaw-exploited-in-zero-day-attacks/",
@@ -321,7 +271,19 @@
         "CVE-2026-20262"
       ],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Insufficient validation of user\u2011supplied input during file uploads allows low\u2011privilege remote attackers to create or overwrite arbitrary files via crafted HTTP requests to an affected API endpoint, which can later be leveraged to gain root privileges.",
+        "affected_products": "Cisco Catalyst SD-WAN Manager (on\u2011prem, SD-WAN Cloud\u2011Pro, SD-WAN Cloud (Cisco Managed), SD-WAN for Government (FedRAMP)); Fixed releases: 20.9.9.2, 20.12.7.2, 20.15.4.5, 20.15.5.3, 20.18.3.1, 26.1.1.2",
+        "cvss_score": "6.5",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply Cisco\u2019s fixed software immediately; monitor vmanage\u2011server, vmanage\u2011appserver, and serviceproxy\u2011access logs for upload attempts (index.jsp, .war); no vendor workarounds are available.",
+        "vendor_advisory": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-arbfw-c2rZvQ"
+      }
     },
     {
       "id": "https://thehackernews.com/2026/06/weekly-recap-chrome-0-day-unifi.html",
@@ -337,6 +299,60 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-11417",
+      "title": "aws-cdk-lib: OS Command Injection in NodejsFunction Bundling",
+      "summary": "### Summary\nAWS CDK (`aws-cdk-lib`) is an open-source framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. OS command injection in the `NodejsFunction` local bundling pipeline in `aws-cdk-lib` before 2.245.0 (2.246.0 on Windows) might allow a threat actor who controls the value of one or more bundling properties (`externalModules`, `define`, `loader`, `inject`, or `esbuildArgs`) to execute arbitrary commands on the host running the CDK toolchain via injected shell metacharacters. This issue requires the threat actor to control the value of one or more of the affected bundling properties in the CDK application.\n\n### Impact\nDuring local Lambda bundling, `NodejsFunction` assembled an esbuild command string from the bundling properties `externalModules`, `define`, `loader`, `inject`, and `esbuildArgs` and executed it via a shell (`bash -c` on Linux/macOS, `cmd /c` on Windows) through `spawnSync`. The property values were interpolated without escaping or validation, so values containing shell metacharacters could execute arbitrary commands with the privileges of the user running `cdk synth`, `cdk deploy`, or `cdk diff`. Exploitation requires a threat actor to control one or more of the affected property values in the CDK application \u2014 for example via an untrusted npm dependency that vends a wrapper construct, or via a pull request that introduces untrusted values.\n\n### Impacted versions: \n< 2.245.0 (on Windows, < 2.246.0)\n\n### Patches\nThis issue has been addressed in `aws-cdk-lib` version 2.245.0 (PR #37292), with a Windows-specific regression fix in 2.246.0 (PR #37412). The fix replaces shell-based command execution with array-based `spawnSync` invocation that does not invoke a shell. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n### Workarounds\nEnsure the values supplied to `NodejsFunction` bundling properties (`externalModules`, `define`, ",
+      "link": "https://github.com/advisories/GHSA-999r-qq7v-r334",
+      "published": "2026-06-15T20:47:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-11417"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50009",
+      "title": "Netty: QUIC stateless reset token material exposed through header-visible connection IDs",
+      "summary": "### Summary\nNetty QUIC exposes the stateless reset token on the network path when using the default HMAC-based connection-ID and stateless-reset-token generators. The reset token for the server's current source connection ID can be derived from bytes that appear as the connection ID in QUIC headers after a source-CID rotation. An on-path attacker observing the headers can use the token to perform a Denial of Service by sending a spoofed Stateless Reset packet.\n\n### Details\nThe sign-based connection ID generator (HmacSignQuicConnectionIdGenerator) and reset token generator (HmacSignQuicResetTokenGenerator) both evaluate HMAC-SHA256 with the same JVM-wide static key (io.netty.handler.codec.quic.Hmac).\n\nDuring source CID rotation (QuicheQuicChannel.newSourceConnectionIds), the current server source CID C is used as input to produce the next CID N. The stateless reset token for C is defined over HMAC(K, C), specifically the first 16 bytes. The next CID N is the first L bytes of the same digest, where L = |C|.\n\nWhenever L \u2265 16, the first 16 bytes of N are exactly the stateless reset token for C. Because N is carried in QUIC headers as a connection ID, an observer can read the headers and learn the reset token without decrypting the payload.\n\nThis directly violates RFC 9000\nhttps://datatracker.ietf.org/doc/html/rfc9000#name-calculating-a-stateless-res: `The stateless reset token MUST be difficult to guess.`\nAdditionally https://datatracker.ietf.org/doc/html/rfc9000#name-stateless-reset-oracle\n\n### Impact\nInformation Disclosure and Denial of Service. An on-path attacker can obtain the stateless reset token from the connection ID header and attempt to abruptly close the client side of the connection by sending a spoofed Stateless Reset datagram.",
+      "link": "https://github.com/advisories/GHSA-cq4q-cv5g-r8q5",
+      "published": "2026-06-15T20:44:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50009"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48748",
+      "title": "Netty HTTP/3 QPACK Blocked Streams Memory Exhaustion",
+      "summary": "### Summary\nA memory exhaustion vulnerability in the Netty HTTP/3 codec allows the creation of an infinite number of blocked streams, which can cause OOM error.\n\n### Details\nThe vulnerability exists in `io.netty.handler.codec.http3.QpackDecoder#shouldWaitForDynamicTableUpdates`:\n\nIf a client sends a header referencing a table entry that the server hasn't received yet, the server must pause that stream and wait for the missing entry to arrive. To prevent attackers from exhausting resources by intentionally sending missing references, Netty limits the number of streams that can be blocked at the same time.\n\nHowever, the check is implemented as:\n\n```java\nif (blockedStreamsCount == maxBlockedStreams - 1) {\n```\n\nIf the server enables QPACK dynamic tables (by setting `HTTP3_SETTINGS_QPACK_MAX_TABLE_CAPACITY` > 0) but does not explicitly configure `HTTP3_SETTINGS_QPACK_BLOCKED_STREAMS`, it defaults to 0.\n\nWhen `maxBlockedStreams` is 0, the condition evaluates to `blockedStreamsCount == -1`. Since `blockedStreamsCount` starts at `0` and only increments, it never equals `-1`. This bypasses the limit, allowing an attacker to open an infinite number of streams that block indefinitely. Additionally, the `QpackDecoder` never removes unblocked streams from the `blockedStreams` map or decrements the counter, meaning the `ReadResumptionListener` for each blocked stream is kept in memory for the entire lifetime of the connection. This exhausts server memory and crashes the JVM.\n\n### Impact\nDenial of Service. Any server using `netty-codec-http3` with QPACK dynamic tables enabled and maxBlockedStreams defaulting to 0 is impacted.",
+      "link": "https://github.com/advisories/GHSA-4grm-h2qv-h6w6",
+      "published": "2026-06-15T20:43:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48748"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-54282",
