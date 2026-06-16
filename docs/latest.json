@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-16T10:52:44.262762+00:00",
-  "total": 35,
+  "generated": "2026-06-16T16:21:13.916109+00:00",
+  "total": 38,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 12,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated HTTP path traversal allows attackers to download arbitrary files from the SimpleHelp host, such as configuration files with secrets, enabling further compromise.",
-        "affected_products": "SimpleHelp remote support / RMM server versions 5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is a directory traversal vulnerability in SimpleHelp RMM that enables unauthenticated attackers to read arbitrary files by manipulating file paths.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) version 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "Public proof\u2011of\u2011concept and exploit details are available on the Offensive Security blog (https://offsec.com/blog/cve-2024-57727).",
-        "patch_available": "SimpleHelp 5.5.8 (and 5.4.10) patch released; see vendor advisory.",
-        "active_exploitation": "Yes \u2013 CISA reports ransomware actors have exploited unpatched SimpleHelp, and the CVE is listed in the KEV catalog.",
-        "threat_actors": "Ransomware actors (including groups reported as \u2018DragonForce\u2019)",
-        "mitigation": "Isolate or stop the vulnerable SimpleHelp server, upgrade immediately to version 5.5.8 or later, conduct threat hunting for malicious executables, block internet access to the RMM, enforce MFA, and apply network segmentation.",
-        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept or exploit publicly available.",
+        "patch_available": "Patch released; see SimpleHelp blog for details.",
+        "active_exploitation": "Confirmed active exploitation reported by ransomware actors leveraging unpatched SimpleHelp RMM.",
+        "threat_actors": "Ransomware actors (unspecified)",
+        "mitigation": "Apply the vendor-supplied patch (upgrade SimpleHelp to a version newer than 5.5.7) and restrict RMM access to trusted networks.",
+        "vendor_advisory": "https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -50,16 +50,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "IPI (Indirect Prompt Injection): attacker seeds malicious content in external corpora or web pages that AI agents (RAG/agentic systems) retrieve, causing the agent to execute attacker-controlled instructions\u2014can be zero\u2011click when the agent autonomously browses or retrieves context.",
+        "technical_details": "Indirect Prompt Injection (IPI) is an attack where adversarial content in external corpora retrieved by LLM systems (e.g., via retrieval\u2011augmented generation or agentic systems) contains malicious instructions that influence model behavior. Researchers demonstrated end\u2011to\u2011end IPI exploits under natural queries and realistic external corpora, including zero\u2011click payloads such as GeminiJack.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC and in\u2011the\u2011wild payloads disclosed by researchers (e.g., Forcepoint/Antigravity RAG disclosures, Noma Labs GeminiJack report); specific exploit URLs: http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability, http://lyrie.ai/research/research/indirect-prompt-injection-goes-operational-wild-forcepoint-antigravity-rag",
-        "patch_available": "Vendor guidance and mitigations published by Google (security blog) \u2014 advisory URL: http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
-        "active_exploitation": "Confirmed research disclosures and in\u2011the\u2011wild payloads reported by multiple security teams (Forcepoint, Noma Labs) and academic work demonstrating end\u2011to\u2011end IPI exploits; see citations.",
+        "exploit_available": "Public PoCs are available at http://arxiv.org/abs/2601.07072, http://arxiv.org/pdf/2601.07072, http://infosecurity-magazine.com/news/researchers-10-wild-indirect, and http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability.",
+        "patch_available": "Patch unavailable.",
+        "active_exploitation": "Confirmed active exploitation reported: GeminiJack zero\u2011click IPI against Google Gemini Enterprise (noma.security) and end\u2011to\u2011end IPI exploits demonstrated in the wild (arXiv). Additional web\u2011sweep findings are described in the Google Security Blog and Infosecurity Magazine articles.",
         "threat_actors": "None known",
-        "mitigation": "Follow vendor hardening guidance (sanitise retrieved content, retrieval filters, strict tool\u2011use policies for agents, RAG provenance checks, disable autonomous browsing for untrusted sources); see Google security blog for recommendations.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Vendor monitoring and web sweeps for IPI patterns, hardening retrieval pipelines, content filtering/validation of retrieved documents, privileged prompt separation, and applying vendor advisories where available.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -78,16 +78,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) embeds malicious instructions into data sources (emails, invites, documents) or tools used by LLMs; agentic automation and multi\u2011source contexts let injected instructions influence LLM behavior without explicit user input, enabling data exfiltration or task manipulation.",
-        "affected_products": "Google Workspace (including Gemini in Workspace, Gemini app, Gemini Enterprise)",
+        "technical_details": "Attackers plant malicious instructions in shared Workspace artifacts (Docs, Calendar, Gmail). RAG retrieves this poisoned content into Gemini\u2019s context, causing the model to execute the hidden instructions and exfiltrate data (e.g., via an external image request).",
+        "affected_products": "Google Gemini Enterprise, Vertex AI Search (VAIS)",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public PoC reports (GeminiJack) from Noma Labs demonstrated a zero\u2011click IPI; details published on Noma Labs blog and covered by SecurityAffairs.",
-        "patch_available": "Google describes layered defenses and mitigations in the advisory; no single \u201cpatch\u201d\u202f\u2014 mitigations deployed by Google in Workspace/Gemini per advisory.",
-        "active_exploitation": "Reports of GeminiJack (Noma Labs) demonstrating zero\u2011click IPI; public write\u2011ups indicate real exploitation and a responsible disclosure/fix process.",
+        "exploit_available": "Public PoC details published by Noma Labs; no widely weaponized exploit reported.",
+        "patch_available": "Google deployed updates and architectural changes separating Vertex AI Search from Gemini Enterprise. See advisory and Noma Labs report.",
+        "active_exploitation": "No confirmed wide\u2011scale active exploitation reported; only a demonstration PoC by Noma Labs.",
         "threat_actors": "None known",
-        "mitigation": "Google recommends layered defenses: content filtering/normalization of inputs, provenance\u2011based controls, model fine\u2011tuning and instruction\u2011safety layers, limiting agentic tool actions, telemetry/monitoring, and rapid patching/response in Workspace/Gemini.",
-        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+        "mitigation": "Deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies), ML\u2011 and LLM\u2011based defense retraining, synthetic\u2011data augmentation, separation of VAIS from Gemini Enterprise, and configuration of datasource access.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections"
       }
     },
     {
@@ -106,15 +106,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection: untrusted web content (pages, iframes, UGC, ads) manipulates the agent\u2019s planning model to perform unwanted actions such as goal hijacking or data exfiltration. Chrome mitigates this by isolating the planner from untrusted content, using origin gating, a separate alignment critic, deterministic checks, and a real\u2011time prompt\u2011injection classifier.",
-        "affected_products": "Agentic browsing features in Google Chrome (Gemini\u2011powered agentic capabilities)",
-        "cvss_score": "-1.0",
+        "technical_details": "Indirect prompt injection allows a malicious site to craft content that is fed as a prompt to the agentic AI, potentially causing unintended actions or data exfiltration.",
+        "affected_products": "Chrome (agentic/Gemini for Chrome features)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit reported in the advisory or cited coverage.",
-        "patch_available": "No separate \"patch\" described; Google implemented architectural defenses in Chrome (layered mitigations) and relies on Chrome auto\u2011update to deliver changes. Vendor advisory URL provided above.",
-        "active_exploitation": "No confirmed active exploitation reported in the advisory or referenced news coverage.",
+        "exploit_available": "No public exploit or PoC is known.",
+        "patch_available": "Patch is delivered via Chrome updates; see the vendor advisory for details.",
+        "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses: user alignment critic (veto high\u2011risk actions), agent origin sets (read\u2011only vs read\u2011write origins), deterministic user confirmations for sensitive actions, real\u2011time prompt\u2011injection classifier, continuous red\u2011team testing and VRP engagement; keep Chrome auto\u2011updated and follow VRP guidance.",
+        "mitigation": "Deploy Chrome\u2019s latest version which includes a second AI watchdog, origin access restrictions, and built\u2011in prompt\u2011injection blocking. Follow Google\u2019s guidance on configuring these defenses.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -134,16 +134,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Adopting Rust for parts of Android reduced memory\u2011safety vulnerability density substantially; memory safety vulnerabilities fell below 20% of total vulnerabilities in 2025, attributed to Rust's ownership/borrowing model that prevents classes of memory errors present in C/C++.",
-        "affected_products": "Android platform (C, C++, Java, Kotlin, Rust)",
-        "cvss_score": "-1.0",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "None known",
-        "patch_available": "No official vendor patch available.",
-        "active_exploitation": "No confirmed active exploitation reported",
+        "technical_details": "The post explains that moving new code to memory\u2011safe Rust reduces memory\u2011safety vulnerability density, achieving a >1000\u00d7 reduction and bringing memory\u2011safety vulnerabilities to under 20% of total vulnerabilities in 2025 across C, C++, Java, Kotlin, and Rust components.",
+        "affected_products": "AOSP/Android platform (first\u2011party and third\u2011party open\u2011source components across C, C++, Java, Kotlin, and Rust)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "None known; no public PoC or weaponized exploit referenced in the blog post or related advisories.",
+        "patch_available": "Not applicable to the blog's topic (engineering/process update). For Android security fixes refer to the Android security bulletins and AOSP patches: https://source.android.com/docs/security/bulletin/2026/2026-06-01",
+        "active_exploitation": "None reported in the blog post; prior advisories about Android zero\u2011days (e.g., CVE-2025-48595) are separate and reported as actively exploited in June 2026 (see Android security bulletin).",
         "threat_actors": "None known",
-        "mitigation": "Adopt memory\u2011safe languages (Rust) for new code, continue code audits, fuzzing, automated testing, and vulnerability prevention strategies; prioritize fixes in unsafe code paths.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Continue migrating new components to Rust, prioritize memory\u2011safe languages for new code, and apply vendor security patch levels (2026-06-05 or later) for platform vulnerabilities.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
       }
     },
     {
@@ -162,16 +162,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injections embed malicious instructions in external data sources (e.g., emails, documents, calendar invites) that are later incorporated into AI prompts, allowing attackers to steer model behavior, exfiltrate data, or trigger unauthorized actions.",
-        "affected_products": "Gemini (Google Workspace Gemini, Gemini mobile app)",
-        "cvss_score": "-0.0",
+        "technical_details": "Indirect prompt injection involves hidden malicious instructions embedded in external data sources (emails, documents, calendar invites) that may instruct AI to exfiltrate data or perform rogue actions. Google's mitigations include model adversarial training, content classifiers that detect and filter malicious instructions, a security\u2011reinforcing reasoning step, sanitization/redaction of external resources (images/URLs), and requiring explicit user confirmation for risky actions.",
+        "affected_products": "Gemini (Gemini app and Gemini in Google Workspace), Gemini 2.5",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "None known",
-        "patch_available": "No official patch available.",
-        "active_exploitation": "No confirmed active exploitation reported.",
+        "exploit_available": "Exploit unavailable.",
+        "patch_available": "Vendor describes defenses, mitigations, and model hardening rather than a discrete patch; official vendor advisory URL above.",
+        "active_exploitation": "No active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Implement layered defenses: model hardening/adversarial training; prompt\u2011injection content classifiers; security\u2011thought reinforcement; markdown sanitization and block external image rendering; suspicious URL detection/redaction (Safe Browsing); contextual user confirmation for risky actions; user\u2011facing security notifications and help\u2011center guidance.",
-        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
+        "mitigation": "Layered defenses \u2014 prompt injection content classifiers; security thought reinforcement; markdown sanitization and suspicious URL redaction; user confirmation framework; end\u2011user security mitigation notifications; adversarial training and model hardening (Gemini 2.5); use of Google Safe Browsing for suspicious URLs; manual and automated red\u2011teaming; AI VRP collaboration.",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
     {
@@ -189,16 +189,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Actors modify router configurations for lateral movement, deploy virtualized containers on network devices to evade detection, alter ACLs (e.g., \"access-list 20\"), open ports, enable HTTP/HTTPS servers, and execute commands via SNMP, SSH, web POSTs, or Tcl scripts (TCLproxy.tcl, map.tcl). Exploited CVEs (e.g., CVE\u20112024\u201121887, CVE\u20112023\u201120273, CVE\u20112023\u201120198, CVE\u20112018\u20110171) provide the initial foothold.",
-        "affected_products": "Cisco IOS XE (various versions), Cisco IOS (various versions), Ivanti (product unspecified)",
+        "technical_details": "APT actors exploit known CVEs in internet\u2011exposed edge/network devices (e.g., CVE\u20112023\u201120198 auth bypass, CVE\u20112023\u201120273 post\u2011auth command injection, CVE\u20112018\u20110171 Smart Install RCE, CVE\u20112024\u201121887 Ivanti) to create persistent access, modify router configs, enable tunnels (GRE/MPLS), run scripts/containers (Guest Shell), mirror traffic (SPAN/RSPAN/ERSPAN), create privileged accounts, and exfiltrate data.",
+        "affected_products": "Cisco IOS, Cisco IOS XE, Cisco NX\u2011OS, Ivanti Connect Secure/Policy, Fortinet firewalls, Juniper firewalls, Microsoft Exchange, Nokia routers/switches, Sierra Wireless devices, SonicWall",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept exploit information is provided in the cited sources.",
-        "patch_available": "Vendor patches for the impacted Cisco IOS XE vulnerabilities are available; see Cisco security advisories linked from the CISA advisory.",
-        "active_exploitation": "Confirmed active exploitation of the listed CVEs by PRC\u2011state\u2011sponsored actors has been reported in the advisory.",
+        "exploit_available": "Public exploit/tooling referenced (e.g., siet.py, map.tcl, tclproxy.tcl, wodSSHServer) and example Snort detection for CVE-2023-20198; PoC/weaponized exploits have been observed in industry reporting.",
+        "patch_available": "No single vendor patch; vendors listed with vendor\u2011specific advisories (e.g., Cisco mitigations/patches for CVE-2023-20198/CVE-2023-20273, Ivanti advisories for CVE-2024-21887). See vendor resources (Cisco Software Checker, vendor hardening guides) in CISA advisory.",
+        "active_exploitation": "Yes\u2014CISA reports these APT actors are actively exploiting known CVEs and have compromised telecommunications, government, transportation, lodging, and military infrastructure globally; multiple CVEs are listed as historically exploited.",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Prioritize patching the known exploited CVEs; disable unused ports and protocols; change default credentials; require public\u2011key authentication; adopt vendor\u2011recommended OS versions; follow Cisco IOS/XE hardening guides and forensic guidance.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Prioritize patching known exploited CVEs; disable unused ports/protocols; enforce strong credential and key\u2011based authentication; disable Guest Shell if not required; monitor firmware/software integrity (hash checks); monitor logs, network mirroring, and management interfaces; follow vendor hardening guides; isolate/segment management networks; disable outbound connections from management interfaces.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
     {
@@ -216,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "The campaign leverages CVE-2023-38831 in WinRAR to execute malicious code when a crafted archive is opened, CVE-2023-23397 in Outlook to exploit NTLM authentication via specially crafted emails, and CVE-2020-35730/CVE-2020-12641 in Roundcube to inject commands through webmail interfaces.",
-        "affected_products": "WinRAR (CVE-2023-38831), Microsoft Outlook (CVA-2023-23397), Roundcube (CVE-2020-35730, CVE-2020-12641).",
-        "cvss_score": "0.0",
+        "technical_details": "Technical details unavailable (advisory describes campaign targeting logistics and IT companies but does not define a single CVE\u2011level vulnerability mechanism).",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No publicly disclosed proof\u2011of\u2011concept exploit URLs are provided in the available sources.",
-        "patch_available": "Patches are available for WinRAR (CVE-2023-38831), Microsoft Outlook (CVE-2023-23397), and Roundcube (CVE-2020-35730, CVE-2020-12641). See CISA advisory for details.",
-        "active_exploitation": "Yes, active exploitation has been reported for WinRAR (CVE-2023-38831), Outlook (CVE-2023-23397), and Roundcube vulnerabilities as part of the Russian GRU campaign.",
-        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS).",
-        "mitigation": "Apply the latest security patches for WinRAR, Outlook, and Roundcube; enable attack surface reduction rules; activate authenticated RTSP on cameras; use endpoint detection and response (EDR) tools; monitor Windows event logs and authentication activity; harden IP cameras and review network traffic.",
+        "exploit_available": "No public PoC or weaponized exploit referenced in advisory; exploit availability unknown.",
+        "patch_available": "Patch unavailable (no vendor patch referenced in advisory).",
+        "active_exploitation": "Confirmed targeting and active campaign against Western logistics entities and technology companies since 2022; sources: CISA AA25-141A, FBI CSA, Australian advisory, DoD PDF.",
+        "threat_actors": "GRU 85th Main Special Service Center (85th GTsSS), military unit 26165 (tracked as APT28 and related GRU actors).",
+        "mitigation": "General mitigations and hardening recommended by the advisory (network segmentation, multifactor authentication, monitoring for indicators of compromise, patching systems).",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -244,43 +244,44 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Windows 10, Windows 11, Microsoft Defender, Microsoft Malware Protection Engine, Exchange Server",
+        "technical_details": "CVE-2026-45586: Elevation of privilege via link\u2011following (CWE\u201159) in Windows Collaborative Translation Framework, allowing a low\u2011privileged local attacker to gain higher rights without user interaction. CVE-2026-50507: Security feature bypass in Windows BitLocker with public proof\u2011of\u2011concept code. CVE-2026-44815: Remote code execution in the Windows DHCP Client Service; a rogue DHCP server can send crafted responses that trigger code execution when DhcpGetOriginalSubnetMask is called. CVE-2026-45648: Out\u2011of\u2011bounds write in Windows Active Directory Domain Services via crafted inputs to the NSPI RPC interface, leading to memory corruption and RCE. CVE-2026-45456, CVE-2026-45458, CVE-2026-47635: Critical RCE vulnerabilities in Microsoft Outlook and Word where malicious content rendered in the Preview Pane leads to code execution.",
+        "affected_products": "Windows Collaborative Translation Framework (CTFMON), Windows BitLocker, Windows DHCP Client Service, Windows Active Directory Domain Services, Microsoft Outlook, Microsoft Word",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concepts are available; see CrowdStrike blog (https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-june-2026/) and The Hacker News article (https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html).",
-        "patch_available": "Microsoft released June 2026 security updates (KB5094126) available at https://support.microsoft.com/en-us/topic/june-9-2026-kb5094126-os-builds-26200-8655-and-26100-8655-1a9bcba6-5f53-4075-8156-fe11ac631737",
-        "active_exploitation": "Active exploitation reported for Microsoft Defender/Malware Protection Engine and Exchange Server zero\u2011day (CVE\u20112026\u201142897).",
+        "exploit_available": "A proof\u2011of\u2011concept exploit is publicly available for the BitLocker vulnerability (CVE-2026-50507); no public exploits are reported for the other vulnerabilities.",
+        "patch_available": "Patches are available via Microsoft\u2019s June 2026 Patch Tuesday release; specific advisory URLs are not provided in the source.",
+        "active_exploitation": "No confirmed active exploitation in the wild has been reported for any of the listed vulnerabilities.",
         "threat_actors": "None known",
-        "mitigation": "Install the June 2026 security update KB5094126 and apply any vendor\u2011recommended mitigations described in the advisory. If the patch cannot be applied, follow the workarounds or component disablements outlined in the advisory.",
-        "vendor_advisory": "https://support.microsoft.com/en-us/topic/june-9-2026-kb5094126-os-builds-26200-8655-and-26100-8655-1a9bcba6-5f53-4075-8156-fe11ac631737"
+        "mitigation": "Apply the Microsoft patches released on June 2026. For the DHCP Client Service (CVE-2026-44815), audit and, where possible, restrict applications that call the DhcpGetOriginalSubnetMask API as a pre\u2011patch mitigation.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
-      "id": "https://www.securityweek.com/tech-coalition-athena-targets-oss-vulnerabilities-ahead-of-disclosure/",
-      "title": "Tech Coalition \u2018Athena\u2019 Targets OSS Vulnerabilities Ahead of Disclosure",
-      "summary": "Over two dozen organizations built a shared platform to triage vulnerabilities, fix them, and secure the software before patches arrive. The post Tech Coalition \u2018Athena\u2019 Targets OSS Vulnerabilities Ahead of Disclosure appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/tech-coalition-athena-targets-oss-vulnerabilities-ahead-of-disclosure/",
-      "published": "2026-06-16T09:39:47+00:00",
-      "source": "SecurityWeek",
+      "id": "GHSA-gr75-jv2w-4656",
+      "title": "LangChain: Path traversal and sandbox escape in LangChain file-search middleware and loaders",
+      "summary": "## Summary\n\nSeveral LangChain components that resolve filesystem paths or expand search patterns do not consistently confine the *resolved* path to the intended root directory. Affected behaviors include: a file-search agent middleware that validates a starting directory but not the search pattern or the resolved target of matched files, so glob patterns and symlinks can reach files outside the configured root; prompt- and chain/agent-configuration loaders that accept path fields and resolve them without confining the result to a trusted base or rejecting symlink targets; and path-prefix authorization checks that compare by string prefix without a path-segment boundary, so a sibling path sharing the prefix is accepted. When these components receive path values, search patterns, or workspace contents influenced by an untrusted source \u2014 including an LLM acting on untrusted input \u2014 the result can be disclosure of files outside the intended boundary. We have no evidence of this behavior being triggered in the wild.\n\n## Affected users / systems\n\nYou may be affected if you expose an agent with filesystem-search middleware over a directory and accept prompts or retrieved content influenced by untrusted sources; load prompt or chain/agent configuration from untrusted or shared sources; or rely on path-prefix restrictions to confine tool file access. Callers that confine these components to fully trusted inputs and first-party configuration are not affected.\n\n## Impact\n\n- Confidentiality: disclosure of file contents outside the intended root/sandbox.\n- Authorization: path-prefix bypass can grant access to sibling resources beyond the intended subtree.\n\n## Patches / mitigation\n\nThe affected components will canonicalize candidate paths (resolving symlinks) and verify the resolved real path remains within the configured root before reading or returning it; search patterns will be normalized so they cannot escape the root; configuration loaders will confine resolved path fields ",
+      "link": "https://github.com/advisories/GHSA-gr75-jv2w-4656",
+      "published": "2026-06-16T15:03:14Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "research"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit or PoC information available.",
-        "patch_available": "No official patch information available.",
-        "active_exploitation": "Active exploitation information unavailable.",
+        "technical_details": "Components that resolve filesystem paths or expand search patterns (file\u2011search middleware, configuration loaders, and path\u2011prefix checks) do not canonicalize symlinks or enforce path\u2011segment boundaries, permitting glob patterns or symlink traversal to reach files outside the configured root directory (path traversal / link\u2011following).",
+        "affected_products": "langchain <= 1.3.8, langchain-anthropic <= 1.4.5",
+        "cvss_score": "5.1",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "No public PoC; no evidence of in\u2011the\u2011wild exploitation.",
+        "patch_available": "Yes \u2014 patched in langchain v1.3.9 and langchain-anthropic v1.4.6.",
+        "active_exploitation": "No evidence of active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Upgrade to patched versions (langchain v1.3.9 / langchain-anthropic v1.4.6). If a patch cannot be applied, confine filesystem\u2011backed agents to dedicated directories, sandbox/containerize them, validate and canonicalize untrusted path inputs, avoid enabling dangerous loading for untrusted configuration, and enforce path\u2011segment boundaries when using prefix checks.",
+        "vendor_advisory": "https://github.com/langchain-ai/langchain/security/advisories/GHSA-gr75-jv2w-4656"
       }
     },
     {
@@ -316,19 +317,112 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/06/weekly-recap-chrome-0-day-unifi.html",
-      "title": "\u26a1 Weekly Recap: Chrome 0-Day, UniFi Exploits, macOS Stealers, VPN Flaw and More",
-      "summary": "Stuff broke again. Not in a movie way. An old tool was left exposed. An abandoned package was abused. A deprecated feature was still running in prod.\n\nThis week is the same lesson in a new form: phishing kits are easier to rent, AI names are useful bait, old login paths still fail, and forgotten software keeps becoming someone else's entry point.\n\nScroll through the full Monday Cybersecurity",
-      "link": "https://thehackernews.com/2026/06/weekly-recap-chrome-0-day-unifi.html",
-      "published": "2026-06-15T13:49:29+00:00",
-      "source": "The Hacker News Security",
+      "id": "CVE-2026-54298",
+      "title": "Astro: XSS via Unescaped Attribute Names in Spread Props",
+      "summary": "## Summary\n\nThe `spreadAttributes` function in Astro's server-side rendering pipeline iterates over object keys and passes them directly to `addAttribute`, which interpolates the key into the HTML output without escaping. When a developer uses the spread syntax `{...props}` on an HTML element and the object keys come from an untrusted source (API, CMS, URL parameters), an attacker can inject arbitrary HTML attributes including event handlers like `onmousemove`, `onclick`, or break out of the attribute context entirely to inject new elements.\n\n## Details\n\nThe vulnerable function is [`addAttribute`](https://github.com/withastro/astro/blob/main/packages/astro/src/runtime/server/render/util.ts#L81-L141) at `packages/astro/src/runtime/server/render/util.ts:81-141`:\n\n```javascript\nexport function addAttribute(value: any, key: string, shouldEscape = true, tagName = '') {\n    if (value == null) {\n        return '';\n    }\n    \n    return markHTMLString(` ${key}=\"${toAttributeString(value, shouldEscape)}\"`); //  key interpolated not escaped\n}\n```\n\nThis function is called from [`spreadAttributes`](https://github.com/withastro/astro/blob/main/packages/astro/src/runtime/server/index.ts#L91-L92) at `packages/astro/src/runtime/server/index.ts:91-92`:\n\n```javascript\nfor (const [key, value] of Object.entries(values)) {\n    output += addAttribute(value, key, true, _name);\n}\n```\n\nThe `toAttributeString` function escapes the attribute value, but the attribute name `key` is never validated or escaped. An attacker can craft a JSON object with a key containing \" characters to break out of the attribute context and inject event handlers.\n\nExecution flow: User controlled object keys (from API, CMS, URL params) are spread onto element via `{...props}`. The compiler generates `spreadAttributes(props)` which iterates with `Object.entries()` and calls `addAttribute(value, key)`. The key is interpolated as `` ` ${key}=\"${escapedValue}\"` ``. A malicious key breaks attribute context, resulting in ",
+      "link": "https://github.com/advisories/GHSA-jrpj-wcv7-9fh9",
+      "published": "2026-06-16T14:57:21Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "zeroday"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-54298"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54299",
+      "title": "Astro: Host header SSRF in prerendered error page fetch",
+      "summary": "## Summary\n\nAstro SSR apps with prerendered error pages (`/404` or `/500` using `export const prerender = true`) fetch those pages over HTTP at runtime when an error occurs. The URL for this fetch is derived from `request.url`, which in turn gets its origin from the incoming `Host` header. When the `Host` header is not validated against `allowedDomains`, an attacker can point the fetch at an arbitrary host and read the response.\n\n## Who is affected\n\nThis affects SSR deployments that:\n\n1. Have a prerendered 404 or 500 page\n2. Use `createRequestFromNodeRequest` from `astro/app/node` with `app.render()` **without** overriding `prerenderedErrorPageFetch` \u2014 this includes custom servers built on the public API and third-party adapters\n\n**Not affected:**\n- `@astrojs/node` >= 9.5.4 (reads error pages from disk)\n- `@astrojs/cloudflare` (uses the ASSETS binding)\n- The dev server (renders error pages in-process)\n\n## How it works\n\n`createRequestFromNodeRequest` builds `request.url` from the raw `Host` / `:authority` header. The `allowedDomains` option is accepted but only gates `X-Forwarded-For` \u2014 it does not constrain the URL origin. (The public `createRequest` does fall back to `localhost` for unvalidated hosts; this internal builder did not.)\n\nWhen `app.render()` encounters a 404 or 500 with a prerendered error route, `default-handler.ts` constructs the error page URL using the origin from `request.url` and fetches it via `prerenderedErrorPageFetch`, which defaults to global `fetch`. The response body is served to the client.\n\nAn attacker sends a request with `Host: attacker-host:port`, triggers an error (e.g., requesting a nonexistent path for a 404), and receives the response from the attacker-controlled host reflected back.\n\n## Remediation\n\nThe error page fetch origin is now validated against `allowedDomains` before use. When the host is validated, the original origin is preserved. Otherwise, it falls back to `localhost`. The fetch is also wrapped in a try/catch so that c",
+      "link": "https://github.com/advisories/GHSA-2pvr-wf23-7pc7",
+      "published": "2026-06-16T14:38:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54299"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54288",
+      "title": "hono: Body Limit Middleware can be bypassed on AWS Lambda by understating `Content-Length`",
+      "summary": "### Summary\n\nThe Body Limit Middleware trusts the request's `Content-Length` header to decide whether a body is within the limit. On AWS Lambda (API Gateway v1/v2, ALB, VPC Lattice, and Lambda@Edge) the body is delivered fully buffered and the adapter builds the request with the client-declared `Content-Length`, which need not match the actual payload. A client can declare a tiny `Content-Length` while sending a much larger body, slipping past the limit.\n\n### Details\n\nWhen `Content-Length` is present and `Transfer-Encoding` is absent, the middleware compares the declared value against the limit and passes the request through if it is small enough. On standards-based runtimes the transport enforces that `Content-Length` matches the body, so this is safe. The Lambda adapters instead reconstruct the request from a buffered payload and copy the client's `Content-Length` verbatim, so the declared length and the real body size are decoupled.\n\nThis issue affects applications deployed on AWS Lambda that rely on the Body Limit Middleware to cap request body size.\n\n### Impact\n\nThe declared body-size limit can be bypassed: a handler reads a payload larger than the configured maximum. Processing the oversized payload (large JSON, multipart, etc.) consumes additional CPU and memory per request. The payload remains bounded by the platform's request size limits, and Lambda isolates invocations, so the impact is increased per-request resource usage rather than full denial of service. This affects applications deployed on AWS Lambda that use the Body Limit Middleware.",
+      "link": "https://github.com/advisories/GHSA-rv63-4mwf-qqc2",
+      "published": "2026-06-16T14:32:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54288"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54289",
+      "title": "hono: Lambda@Edge adapter keeps only the last value of a repeated request header, dropping the rest",
+      "summary": "### Summary\n\nOn AWS Lambda@Edge, CloudFront delivers a request header that appears more than once as several separate entries. The adapter writes each value with `Headers.set` instead of `Headers.append`, so every value overwrites the previous one and only the last reaches the application. Repeated request headers such as `X-Forwarded-For`, `Forwarded`, and `Via` are silently truncated to a single value.\n\n### Details\n\nA repeated request header carries an ordered list of values. The adapter iterates the list but overwrites on each step, keeping only the final value. Middleware that depends on the full list \u2014 for example IP restriction that walks the `X-Forwarded-For` chain, or auditing based on `Forwarded`/`Via` hops \u2014 receives incomplete data. The API Gateway adapter already appends repeated values and is not affected.\n\nThis issue arises only on Lambda@Edge deployments, for requests that contain the same header more than once.\n\n### Impact\n\nRequest middleware sees only the last value of a repeated header instead of the full chain. For applications that base access control on the `X-Forwarded-For` chain, this can weaken or alter that decision; for auditing, hop history is lost. This affects applications deployed on AWS Lambda@Edge that rely on multi-value request headers.",
+      "link": "https://github.com/advisories/GHSA-wgpf-jwqj-8h8p",
+      "published": "2026-06-16T14:32:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54289"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54286",
+      "title": "hono: Path traversal in `serve-static` on Windows via encoded backslash (`%5C`)",
+      "summary": "### Summary\n\nOn Windows hosts, an encoded backslash (`%5C`) in the request path decodes to `\\`, which the Windows path resolver treats as a separator. `serve-static` then resolves a single URL segment such as `admin\\secret.txt` into a nested file under the root and serves it, letting an attacker read static files meant to be protected behind prefix-mounted middleware. Directory escape (`..`) remains blocked.\n\n### Details\n\nThe router splits paths only on `/`, so `/admin%5Csecret.txt` is one segment and middleware on `/admin/*` does not run. The `serve-static` guard rejects `.`/`..` and consecutive separators but lets a lone `\\` through; on Windows the file resolver re-splits it into the protected subtree.\n\nThis affects Windows hosts serving static files via the Node, Bun, or Deno adapters that guard a static subtree with prefix-mounted middleware.\n\n### Impact\n\nAn unauthenticated attacker can read static files under a middleware-guarded prefix on Windows hosts. The read stays within the configured root; escape outside the root is not possible.",
+      "link": "https://github.com/advisories/GHSA-wwfh-h76j-fc44",
+      "published": "2026-06-16T14:09:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54286"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54287",
+      "title": "hono: AWS Lambda adapter merges multiple `Set-Cookie` headers into one value, dropping cookies on ALB single-header and Lattice",
+      "summary": "### Summary\n\nOn AWS Lambda, the ALB single-header response and the VPC Lattice v2 response join multiple `Set-Cookie` headers into one comma-separated value. Because commas also appear inside cookie attributes (for example `Expires` dates), clients cannot split the value back into individual cookies and silently drop or misparse them.\n\n### Details\n\nPer RFC 6265, each cookie must be its own `Set-Cookie` header line, and commas may appear inside attribute values. Joining cookies with `\", \"` collides with those commas, producing a value that clients cannot reliably split. Only ALB single-header mode and VPC Lattice v2 are affected; API Gateway v1/v2 and ALB with multi-value headers enabled already use an array and are unaffected.\n\n### Impact\n\nA client may receive only one of the cookies, a malformed cookie, or none. Session, CSRF, or preference cookies can silently fail to apply, breaking sessions or forcing re-authentication. This affects applications that set multiple cookies per response and run on AWS Lambda behind an ALB in single-header mode (the default) or VPC Lattice v2.",
+      "link": "https://github.com/advisories/GHSA-j6c9-x7qj-28xf",
+      "published": "2026-06-16T14:08:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54287"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html",
@@ -668,42 +762,6 @@
       ],
       "cve_ids": [
         "CVE-2026-50184"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-50168",
-      "title": "@angular/platform-server: URL Parser Differential leading to SSRF Allowlist Bypass",
-      "summary": "An issue in the `@angular/platform-server` package allows remote attackers to bypass host allowlist constraints and direct server-side outgoing requests to arbitrary external endpoints. This occurs due to a parser differential between the strict WHATWG URL parser used for allowlist validation and the lenient Domino URL parser used to initialize the server emulated DOM.\n\nWhen a server-side request contains a malformed URL with a double port structure (e.g., `http://evil.com:80:80/path`), Node's strict `URL.canParse(url)` logic returns `false` and skips host check validation entirely. However, the same malformed URL is later accepted and parsed leniently by Domino's internal parser, which resolves the origin to `http://evil.com:80`. The Angular SSR HTTP request interceptor (`relativeUrlsTransformerInterceptorFn`) then resolves all relative backend HTTP requests against this adopted origin, executing the SSRF attack.\n\n### Impact\n\nAny Angular application utilizing server-side rendering (`@angular/platform-server`) that configures host routing allowlists (`allowedHosts`) is vulnerable to this allowlist bypass. \n\nBy sending an HTTP request with a malformed Host header (e.g. `Host: evil.com:80:80`) or an absolute-form request URI, an attacker can bypass the allowlist logic completely (even when configured with a strict default deny setup). The SSR application will then route all relative `HttpClient` outgoing API queries\u2014which commonly carry sensitive credentials, session cookies, and internal authorization tokens\u2014to the attacker-controlled server instead of the intended backend services. Additionally, the attacker can supply custom payloads back to the emulated DOM, leading to response injection and content poisoning within the rendered HTML served to users.\n\n### Attack Preconditions\n\nTo successfully exploit this vulnerability, the following environment parameters and application states must all concurrently exist:\n\n1. **Active Server-Side Rendering (SSR):** The applicati",
-      "link": "https://github.com/advisories/GHSA-xrxm-cp7j-8xf6",
-      "published": "2026-06-15T16:39:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-50168"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54267",
-      "title": "Angular Client Hydration DOM Clobbering & Response-Cache Poisoning",
-      "summary": "To optimize client-side bootstrap in Server-Side Rendered (SSR) environments, Angular supports **Hydration** via `provideClientHydration()`. During SSR, Angular serializes the application's runtime state (such as cached `HttpClient` responses) and outputs it into the HTML stream as a `<script>` tag with a predictable identifier:\n\n```html\n<script type=\"application/json\" id=\"ng-state\">\n    {\"some-api-url\": {\"body\": ...}}\n</script>\n````\n\nDuring client bootstrap, Angular recovers this state by looking up the element via `document.getElementById('ng-state')` and parsing its text content.\n\nBecause the DOM element lookup for the state container is predictable and relies solely on the ID selector (`ng-state`), it is susceptible to **DOM Clobbering**.\n\nIf the application binds untrusted user input or CMS content to element properties such as `id` (e.g., `<div [id]=\"userInput\">` or `<a id=\"ng-state\">`) *before* the genuine `<script>` tag is parsed by the browser, the attacker-controlled element takes precedence in the DOM lookup.\n\nDuring hydration, when Angular calls `document.getElementById('ng-state')`, the browser returns the attacker's clobbered element. Angular then attempts to parse the text content or attributes of this clobbered element as JSON.\n\n### Impact\n\nBy clobbering the state element, the attacker can inject a custom JSON payload into Angular's `TransferState` cache. The most critical exploitation vector is poisoning the **HTTP Transfer Cache**.\n\n1. The attacker injects a clobbered `ng-state` element containing custom JSON.  \n2. The JSON maps a key (representing a target API endpoint URL) to a malicious payload of the attacker's choice.  \n3. During client-side initialization, Angular's `HttpClient` checks `TransferState` before making requests. Finding the poisoned key, `HttpClient` returns the forged response instantly instead of requesting the genuine backend API.\n\nDepending on how the application processes and renders the affected API response, this can lead ",
-      "link": "https://github.com/advisories/GHSA-rgjc-h3x7-9mwg",
-      "published": "2026-06-15T15:16:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54267"
       ],
       "is_zero_day": false,
       "is_high_severity": true
