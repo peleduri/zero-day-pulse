@@ -1,41 +1,10 @@
 {
-  "generated": "2026-06-16T20:40:13.501597+00:00",
-  "total": 35,
-  "kev": 1,
-  "zero_day": 13,
+  "generated": "2026-06-17T02:33:31.155894+00:00",
+  "total": 41,
+  "kev": 0,
+  "zero_day": 15,
   "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-48907",
-      "title": "CVE-2026-48907 \u2014 Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
-      "summary": "Vendor: Widget Factory | Product: Joomla Content Editor . Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-19)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48907",
-      "published": "2026-06-16",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-48907"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "An unauthenticated AJAX endpoint in the JCE extension allows creation of new editor profiles; attackers can enable PHP uploads and upload malicious PHP to /tmp/, leading to remote code execution.",
-        "affected_products": "Joomla Content Editor (JCE) extension for Joomla versions 1.0.0\u20112.9.99.4",
-        "cvss_score": "10.0",
-        "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/AU:Y/U:Red",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Immediately update to 2.9.99.5; if patching not possible, disable or remove the JCE extension, block vulnerable AJAX endpoints, restrict file upload handling, and follow CISA BOD 26-04 and Forensics Triage guidance as noted.",
-        "vendor_advisory": "https://www.joomlacontenteditor.net/"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -53,15 +22,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated attackers can exploit a directory traversal flaw by sending crafted HTTP requests, enabling them to navigate the file system and read arbitrary files, including configuration files and hashed passwords.",
-        "affected_products": "SimpleHelp remote support software version 5.5.7 and earlier",
+        "technical_details": "Unauthenticated path traversal vulnerability in SimpleHelp RMM permits remote attackers to retrieve sensitive files (e.g., logs, configuration, credentials) by manipulating file\u2011path inputs to access directories outside the intended scope.",
+        "affected_products": "SimpleHelp remote support / RMM, versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
+        "cvss_vector": "CVSS vector unavailable",
         "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "true",
-        "threat_actors": "DragonForce ransomware",
-        "mitigation": "Isolate the SimpleHelp server from the internet or stop the server process, continuously monitor inbound/outbound traffic, and upgrade to the latest patched version as soon as possible.",
+        "threat_actors": "Ransomware actors (e.g., DragonForce and other unspecified ransomware operators)",
+        "mitigation": "Apply SimpleHelp 5.5.8 or later; if immediate patching is not possible, isolate internet\u2011facing SimpleHelp instances, restrict access with firewalls or VPNs, rotate any exposed credentials, and monitor for indicators of compromise.",
         "vendor_advisory": "https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
@@ -81,16 +50,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI system retrieves external content (web pages, knowledge bases, or RAG documents) that contains maliciously crafted instructions or prompts; the model then incorporates those instructions into its internal context or agentic plan, causing unintended behavior or data exfiltration.",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true \u2014 https://arxiv.org/abs/2601.07072",
-        "patch_available": "false",
-        "active_exploitation": "true \u2014 https://blog.google/security/prompt-injections-web/",
+        "technical_details": "GeminiJack leverages an indirect prompt injection inside Google Gemini Enterprise, exploiting the trust boundary between user\u2011controlled data sources and the AI model's instruction parsing, allowing attackers to inject malicious prompts without direct interaction.",
+        "affected_products": "Google Gemini Enterprise",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Harden retrieval and ingestion (filter/whitelist sources, sanitize and provenance\u2011tag retrieved content), apply RAG and agent request constraints, enforce output/safety checks, sandbox agent actions, and monitor for anomalous prompts and retrievals.",
-        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
+        "mitigation": "Apply the Google\u2011released patch for Gemini Enterprise immediately. In the meantime, restrict the ingestion of untrusted data sources, employ content sanitisation, and monitor for anomalous AI behaviour.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -109,15 +78,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when an attacker injects malicious instructions into data sources or tools (documents, search results, connectors, third\u2011party content) that an LLM ingests while completing a user\u2019s query, causing the model or agentic automation to follow attacker\u2011controlled instructions \u2014 potentially without direct user input.",
-        "affected_products": "Google Workspace with Gemini integrations (Gmail, Google Drive, Slides, Workspace Gemini/Gemini Enterprise); specific versions unavailable",
+        "technical_details": "Indirect prompt injection (IPI) occurs when attackers embed malicious instructions into data sources or tools consumed by an LLM (e.g., documents, web content, tool outputs). The LLM may then follow those instructions during query processing, potentially without any direct user input, leading to unintended behavior.",
+        "affected_products": "Google Workspace with Gemini",
         "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true \u2014 https://noma.security/noma-labs/geminijack/",
+        "exploit_available": "false",
         "patch_available": "false",
-        "active_exploitation": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses: restrict and sanitize external data sources, apply content filtering and normalization, enforce least\u2011privilege access for connectors and agents, use guardrails and model\u2011level instruction filtering, monitoring and anomaly detection, and vendor\u2011provided hardening for Workspace with Gemini as per Google guidance.",
+        "mitigation": "Apply deterministic defenses such as user confirmation prompts, URL sanitization, and tool\u2011chaining policies; employ ML\u2011based retraining with synthetic attack variants; use LLM\u2011based prompt engineering and model hardening; conduct red\u2011team testing and participate in the Google AI Vulnerability Rewards Program.",
         "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
       }
     },
@@ -137,16 +106,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection manipulates an AI agent via crafted web content to perform unintended actions. Chrome mitigates this with a user alignment critic, origin isolation, user confirmations, and real\u2011time threat detection. The Gemini CLI RCE flaw trusted workspace configuration in headless CI/CD runs, allowing malicious config to execute commands before sandboxing. Cursor\u2019s CVE\u20112025\u201154131 bypasses an allow\u2011list in auto\u2011run mode using backticks or $(cmd) when combined with indirect prompt injection.",
-        "affected_products": "Cursor versions below 1.3, @google/gemini-cli versions below 0.39.1 and 0.40.0-preview.3, google-github-actions/run-gemini-cli versions below 0.1.22",
-        "cvss_score": "10.0",
+        "technical_details": "Indirect prompt injection allows malicious or third\u2011party web content to influence an agentic AI by injecting prompts or instructions. Chrome mitigates this with layered defenses: restricting origin access, sandboxing agent contexts, runtime monitors, and a supervising agent that watches agent actions.",
+        "affected_products": "Chrome (agentic/Gemini browsing features)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
+        "exploit_available": "false",
         "patch_available": "true",
-        "active_exploitation": "Active exploitation status unknown.",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Update Chrome to the latest version with built\u2011in agentic defenses, upgrade Cursor to version 1.3 or later, and upgrade @google/gemini-cli to 0.39.1 (or 0.40.0-preview.3) and google-github-actions/run-gemini-cli to 0.1.22 or newer. Apply the layered defense measures (user alignment critic, origin isolation, user confirmations) for agentic browsing.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "mitigation": "Use the latest Chrome build with agentic protections enabled, block untrusted content, restrict origin access, and rely on Chrome\u2019s layered defenses (prompt\u2011injection filters, sandboxing, runtime monitors, supervising agent).",
+        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic"
       }
     },
     {
@@ -165,16 +134,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A linear buffer overflow in the CrabbyAVIF Rust component (near\u2011miss) was discovered and fixed before release; Scudo hardened allocator rendered it non\u2011exploitable by placing guard pages around secondary allocations and converting silent corruption into noisy crashes.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true \u2014 patch committed to CrabbyAVIF repository (https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050) and tracked in the Android security bulletin (https://source.android.com/docs/security/bulletin/2025-08-01).",
+        "patch_available": "true",
         "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use of Scudo hardened allocator (guard pages) and improved crash reporting to detect overflows; training for unsafe Rust and stricter review of unsafe{} blocks. General mitigation: prefer Rust for new code and make Scudo mandatory where possible.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+        "mitigation": "Follow Android Security Bulletin updates, apply vendor/OS updates when available; general hardening (least privilege, sandboxing).",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
       }
     },
     {
@@ -193,15 +162,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection embeds malicious instructions in external data sources (emails, files, calendar invites, URLs, images) which, when processed by agentic LLMs, can cause data exfiltration or unintended actions.",
-        "affected_products": "Gemini (Gemini 2.5), Google Workspace (Gmail, Docs, Calendar), Gemini app \u2014 specific versions unavailable.",
+        "technical_details": "Indirect prompt injection (IPI) \u2013 hidden malicious instructions embedded within external data sources (emails, documents, calendar invites) that cause AI agents (e.g., Gemini) to execute rogue actions such as data exfiltration; chaining IPI with other vulnerabilities can trigger exploits.",
+        "affected_products": "Google Gemini (Google Workspace), Google Gemini app (version 1.3 fixed)",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "false",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "false",
+        "patch_available": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses: adversarial model training and hardening; deploy prompt\u2011injection content classifiers; apply security thought\u2011reinforcement in prompt handling; sanitize markdown and redact/flag suspicious external URLs and image rendering; require contextual user confirmations for risky actions; provide end\u2011user notifications and help resources; continuous red\u2011team testing and AI VRP engagement.",
+        "mitigation": "Layered defense strategy: input sanitization/validation, retrieval filtering, strict access controls, model\u2011side defenses, minimization of sensitive context exposure, telemetry/monitoring, and rapid patching; upgrade to fixed vendor versions (>=1.3).",
         "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
@@ -220,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "APT actors exploit publicly known CVEs in edge/network devices (not zero\u2011days), create unauthorized admin accounts via CVE\u20112023\u201120198, execute commands via SNMP/SSH/web endpoints, modify ACLs, enable traffic mirroring/tunnels, run scripts in Guest Shell (TCL/Python) to persist and collect traffic, and pivot via trusted provider links.",
-        "affected_products": "Cisco IOS, Cisco IOS XE, Cisco NX\u2011OS, Ivanti Connect Secure, Ivanti Policy, Fortinet firewalls, Juniper firewalls, Microsoft Exchange, Nokia routers and switches, Sierra Wireless devices, SonicWall",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
         "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Prioritize patching known exploited CVEs; disable unused protocols (Telnet/FTP/HTTP); enforce strong credentials and public\u2011key authentication for admin; monitor device configs/logs for unexpected ACLs, GRE/tunnels, SPAN/RSPAN/ERSPAN, virtual containers; verify firmware integrity and compare hashes.",
+        "mitigation": "Update software/firmware to patched versions, apply vendor advisories, audit router configurations and firmware integrity, segment networks and limit trusted connections, rotate credentials and keys, monitor for indicators of compromise and unusual routing/telemetry, and follow CISA/NSA mitigation guidance.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -247,16 +216,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Unit 26165 employed malware to gain initial access, establish persistence, and exfiltrate data from targeted logistics and technology organizations.",
+        "technical_details": "This is a threat campaign advisory (TTP\u2011focused) describing Russian GRU 85th GTsSS (military unit 26165) espionage operations against Western logistics and technology organizations since 2022; it details tactics, techniques, and procedures (phishing, credential access, network intrusion, living\u2011off\u2011the\u2011land) rather than a single software vulnerability.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
+        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165 (also tracked as APT28).",
+        "mitigation": "Follow CSA hardening and operational security recommendations\u2014implement MFA, network segmentation, patching of known vulnerable services, endpoint detection and response, threat hunting using provided IOCs, and supply\u2011chain/logistics operational risk controls.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -275,17 +244,62 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "CVE\u20112026\u201145586 is an elevation\u2011of\u2011privilege flaw in the Windows Collaborative Translation Framework (CTFMON). CVE\u20112026\u201150507 is a security\u2011feature bypass in Windows BitLocker. CVE\u20112026\u201144815 is a remote code execution vulnerability in the Windows DHCP Client Service that can be triggered via the DhcpGetOriginalSubnetMask API.",
-        "affected_products": "Windows Collaborative Translation Framework (CTFMON), Windows BitLocker, Windows DHCP Client Service",
-        "cvss_score": "7.8, 6.8, 9.8",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Windows Collaborative Translation Framework, Windows BitLocker, DHCP Client Service, Windows Active Directory Domain Services",
+        "cvss_score": "7.8, 6.8, 9.8, 8.8",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true (https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-june-2026/)",
+        "patch_available": "true (https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun)",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Apply the Microsoft June 2026 security updates to all affected components. No additional vendor\u2011provided work\u2011around is mentioned.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Jun"
+      }
+    },
+    {
+      "id": "CVE-2026-54326",
+      "title": "Pi Agent: Potential XSS in HTML session exports via Markdown URL sanitization bypass",
+      "summary": "# Potential XSS in HTML session exports via Markdown URL handling\n\nPi HTML exports render session Markdown into a static HTML file. Affected versions did not consistently reject unsafe Markdown link and image URL schemes. In versions with scheme filtering, C0 control characters in the URL scheme could bypass the check because browsers normalize those characters before navigation.\n\n## Impact\n\nThe realistic attack path is indirect. An attacker would need to get suitable Markdown into a session, for example through prompt injection that causes the model to include an unsafe link, or through other untrusted session content. The user would then need to export the session as HTML, open or share that file, and click the link.\n\nIf triggered, script runs in the exported document, not in pi or the user's shell. The main risk is limited disclosure of data embedded in that exported session file.\n\n## Affected versions\n\n- Affected: `@mariozechner/pi-coding-agent >= 0.27.5, <= 0.73.1`\n- Affected: `@earendil-works/pi-coding-agent >= 0.74.0, < 0.78.1`\n- Patched: `@earendil-works/pi-coding-agent 0.78.1`\n\nThe old `@mariozechner/pi-coding-agent` package scope has no patched release. It was renamed to `@earendil-works/pi-coding-agent`; users of the old scope should migrate to the new package and upgrade to version 0.78.1 or later.\n\n## Resolution\n\nVersion 0.78.1 sanitizes Markdown link and image URLs with an allow-list after stripping C0 control characters.\n\n## Recommendations\n\nUpgrade `@earendil-works/pi-coding-agent` to version 0.78.1 or later. Regenerate shared HTML exports after upgrading if the underlying sessions contained untrusted content.\n\n## Timeline\n\n- 2026-05-29: Report received through GitHub Security Advisories\n- 2026-06-02: Fix committed\n- 2026-06-04: Fixed version 0.78.1 released\n- 2026-06-08: Advisory prepared for publication\n\n## Credits\n\nReported by Paul Urian and Cosmin Alexa of CrowdStrike.",
+      "link": "https://github.com/advisories/GHSA-7v5m-pr3q-6453",
+      "published": "2026-06-16T23:43:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54326"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "HTML session export renders markdown into static HTML using marked v15 without URL scheme sanitization; unsafe schemes (javascript:, vbscript:, data:) in link or image hrefs can execute JavaScript. In implementations that attempted scheme filtering, C0 control characters in the scheme bypass the check because browsers normalize them before navigation.",
+        "affected_products": "pi-mono (Pi Agent) version 0.68.1 and earlier versions",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "false",
-        "threat_actors": "None known",
-        "mitigation": "For the DHCP Client Service (CVE\u20112026\u201144815) administrators should audit and restrict applications that call the DhcpGetOriginalSubnetMask API. For the other two vulnerabilities, applying the Microsoft patches released on Patch Tuesday mitigates the issues.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45586, https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50507, https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-44815"
+        "threat_actors": "None known.",
+        "mitigation": "Upgrade to the patched release (apply the upstream PR/commit), or implement server\u2011side/client\u2011side sanitization: override marked link/image renderers to strip dangerous schemes, normalize and remove C0 control characters before scheme checks, or render links as plain text/no\u2011op. Disable automatic HTML export sharing until patched.",
+        "vendor_advisory": "https://github.com/advisories/GHSA-7v5m-pr3q-6453"
       }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/",
+      "title": "Malicious JetBrains Marketplace plugins steal AI API keys from developers",
+      "summary": "At least 15 malicious plugins found on the JetBrains Marketplace were designed to steal AI API keys from developers. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/",
+      "published": "2026-06-16T21:54:50+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "https://thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
@@ -349,6 +363,168 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-52797",
+      "title": "Gogs: Overwriting critical files results in a denial of service",
+      "summary": "**Vulnerability type:** Path Traversal\n**Impact:** DoS\n**Exploitation prerequisite:** authorized user\n**Description:** As an authorized user, an intruder can dictate the value which is passed to the `git diff` command which, together with bypassing the filtering of the passed value, allows the user to bypass the target directory and write the result of the comparison to any arbitrary path.\n**Researcher:** Artyom Kulakov (Positive Technologies)\n**Mitigation:**\n1. https://github.com/gogs/gogs/blob/b7372b1f32cd0bb40984debfb049e3fc04efaee4/internal/route/repo/editor.go#L307 \u2014 on this line, instead of the  `treePath` variable, which comes directly from the user unchanged, we should first filter and then pass the `entry` variable.\n2. To filter the `treePath` variable, it is better to use the preexisting `pathutil.Clean` function instead of `path.Clean` from the standard Go library.\n### Exploitation\nA Positive Technologies researcher discovered that the user has the ability to preview their changes when editing a file in the repository. The `POST /:user/:repo/_preview/:branch/:path_to_file` method is responsible for displaying the changes. The problem is how the `POST /:user/:repo/_preview/:branch/:path_to_file` method processes the value passed to the `:path_to_file` (see Listing 1).\n###### Listing 1. _preview method processor\n```Go\nfunc DiffPreviewPost(c *context.Context, f form.EditPreviewDiff) {\n\t// \u0412 treePath \u043f\u043e\u043f\u0430\u0434\u0430\u0435\u0442 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0438\u0437 :path_to_file\n\ttreePath := c.Repo.TreePath\n\n    // \u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430, \u0447\u0442\u043e \u0444\u0430\u0439\u043b \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442 \u0432 \u0440\u0435\u043f\u043e\u0437\u0438\u0442\u043e\u0440\u0438\u0438\n\tentry, err := c.Repo.Commit.TreeEntry(treePath)\n\n\t-cut-\n\n\t// \u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435, \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u043e\u0435 \u043e\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f, \u043f\u0435\u0440\u0435\u0434\u0430\u0435\u0442\u0441\u044f \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u044e \u0432 \u043e\u0431\u0445\u043e\u0434 \u0444\u0438\u043b\u044c\u0442\u0440\u0430\n\tdiff, err := c.Repo.Repository.GetDiffPreview(c.Repo.BranchName, treePath, f.Content)\n\n\t-cut-\n```\nThe first problem to solve is to make the `TreeEntry` function think that the value passed in is a file that actually exists in the repository. To do this, we must consider how the `TreeEntry` function actually makes ",
+      "link": "https://github.com/advisories/GHSA-pm6v-2h4w-4rp2",
+      "published": "2026-06-16T23:40:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52797"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54304",
+      "title": "n8n: SecurityScorecard Node Leaks API Token to User-Controlled Host",
+      "summary": "## Impact\nAn authenticated user with permission to create or modify workflows and access to a SecurityScorecard credential with limited allowed domains could configure the SecurityScorecard node's report download operation to target an attacker-controlled URL. The node attached the SecurityScorecard API token to the outbound request, causing the credential to be sent to the attacker-controlled host bypassing credential configured limitations and exfiltrating.\n\n## Patches\nThe issue has been fixed in n8n versions 1.123.55, 2.25.7, and 2.26.1. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Limit workflow creation and editing permissions to fully trusted users only.\n- Disable the SecurityScorecard node by adding `n8n-nodes-base.securityScorecard` to the `NODES_EXCLUDE` environment variable.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-rm2v-h48j-895m",
+      "published": "2026-06-16T23:34:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54304"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54305",
+      "title": "n8n: Cross-Tenant Credential Takeover via Dynamic Credentials EE Endpoints",
+      "summary": "## Impact\nThree EE endpoints used by the Dynamic Credentials feature accepted any authenticated n8n session without performing per-resource ownership or scope checks on the target workflow or credential. An authenticated user with no project membership or credential sharing relationship could enumerate credential identifiers, names, and types referenced by any private workflow in the instance, initiate an OAuth authorization flow against another user's credential to overwrite its stored tokens with tokens bound to an account they control, or revoke another user's stored credential tokens entirely.\n\nWorkflows relying on a hijacked credential would subsequently execute under the attacker's OAuth identity, enabling data exfiltration to attacker-controlled external services and persistent takeover of integrations. Token revocation would break affected workflows.\n\nThis issue only affects Enterprise instances where the Dynamic Credentials feature is enabled.\n\n## Patches\nThe issue has been fixed in n8n versions 1.123.55, 2.25.7, and 2.26.2. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Restrict n8n instance access to fully trusted users only.\n- If the Dynamic Credentials feature is not actively required, disable it by unsetting `N8N_ENV_FEAT_DYNAMIC_CREDENTIALS`.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-2j5h-858j-5mpf",
+      "published": "2026-06-16T23:32:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54305"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54322",
+      "title": "Daytona: Cross-org IDOR in organization role update/delete \u2014 any org owner can rewrite or destroy another org's roles",
+      "summary": "### Summary\nDaytona's organization role update and delete endpoints authorized the caller as an owner of the organization named in the request path, but resolved and mutated the target role by its identifier alone, without verifying the role belonged to that organization. An authenticated user who owns any organization (organizations are self-service) could therefore modify the permissions of, or delete, a role belonging to a different organization, given that role's identifier.\n\n### Impact\nThis is a cross-tenant broken access control (IDOR) issue affecting multi-tenant deployments, including the managed Daytona platform. Using a target role's identifier, an attacker with owner rights over their own organization could:\n\n- Overwrite the target role's name and permission set, escalating or stripping privileges for every member and API key in the victim organization that holds that role.\n- Delete the target role, removing the associated permissions from its holders.\n- Observe the victim role's current permission set returned in the update response (limited information disclosure).\n\nExploitation requires knowledge of the target role's identifier, which is not enumerable across organizations and is not exposed to non-members through the API.\n\n### Affected versions\nAll versions up to and including 0.184.0.\n\n### Patches\nFixed in 0.185.0. The role update, delete, and role-assignment lookups are now scoped to the caller's organization, so a role belonging to another organization resolves to \"not found\" before any read or mutation. The managed Daytona platform was updated on release of 0.185.0.\n\n### Workarounds\nNone. Upgrade to 0.185.0. Single-organization self-hosted deployments are not exploitable, as the issue requires a second organization to target.\n\n### Credit\nReported by @vnth4nhnt.",
+      "link": "https://github.com/advisories/GHSA-qxvm-pcfm-qc39",
+      "published": "2026-06-16T21:30:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54322"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52844",
+      "title": "Caddy: Windows `file_server` path authorization bypass via encoded backslash",
+      "summary": "### Summary\n\nOn Windows, Caddy `path` matchers treat `/private\\secret.txt` as outside `/private/*`, but `file_server` later resolves the same request path as `private\\secret.txt` on disk.\n\nAn unauthenticated remote client can request `/private%5csecret.txt` and bypass Caddy path-scoped auth/deny routes protecting `/private/*`.\n\n### Details\n\nThe mismatch is between two Caddy code paths:\n\n- `MatchPath.MatchWithError()` compares `r.URL.Path` using URL path semantics and does not normalize `\\` to `/`: `modules/caddyhttp/matchers.go:429`, `:436`, `:490`, `:532`.\n- If the route matcher misses, Caddy skips that route: `modules/caddyhttp/routes.go:271`.\n- `file_server` then maps the same request path to a filesystem path with `SanitizedPathJoin(root, r.URL.Path)`: `modules/caddyhttp/fileserver/staticfiles.go:294`, `modules/caddyhttp/caddyhttp.go:257`, `:263`.\n- On Windows, Go filesystem path handling treats `\\` as a separator, so the default filesystem opens the file under the protected directory: `internal/filesystems/os.go:18`.\n\nThis is related to, but distinct from, `GHSA-4xrr-hq4w-6vf4 / CVE-2026-27585`. That advisory fixed backslash handling in the `file` matcher / `try_files` glob path. This report does not use `try_files` or the `file` matcher; it affects ordinary `path` route matchers in front of direct `file_server` serving and reproduces on current HEAD.\n\n### PoC\n\nTested on current HEAD `6c675e29f87cbe7326983ddb6d739175119d394c` with a Windows `caddy.exe` built from this repository.\n\nOn Windows, create the test files and Caddyfile:\n\n```powershell\n$base = \"C:\\Users\\Public\\caddy-backslash-poc\"\nRemove-Item -Recurse -Force $base -ErrorAction SilentlyContinue\nNew-Item -ItemType Directory -Force \"$base\\www\\private\" | Out-Null\nSet-Content -Path \"$base\\www\\private\\secret.txt\" -Value \"SECRET_FROM_WINDOWS_LAB\" -NoNewline -Encoding ASCII\n\n@'\n{\n\tdebug\n\tadmin off\n\tauto_https off\n}\n\n:19080 {\n\tlog\n\troot * C:\\Users\\Public\\caddy-backslash-poc\\www\n\n\t@private path /private/*\n\trespon",
+      "link": "https://github.com/advisories/GHSA-qrp7-cvwr-j2c6",
+      "published": "2026-06-16T21:28:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52844"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54321",
+      "title": "Daytona: Public sandbox previews remain accessible for up to one hour after being made private",
+      "summary": "### Summary\nSandbox previews that were switched from public to private could remain reachable without authentication for a short period after the change, due to a cached visibility state that was not invalidated when the sandbox's visibility changed.\n\n### Impact\nWhen a sandbox owner changed a preview from public to private, the preview proxy could continue serving unauthenticated requests to that sandbox's ordinary preview ports for a bounded period before the change took effect. Only sandboxes that had been made public and were later set back to private were affected, and only until the proxy's cached visibility state was refreshed. Terminal, toolbox, and recording-dashboard ports were never affected, as those always require authentication. The issue did not involve cross-tenant access, privilege escalation, or remote code execution.\n\n### Patches\nFixed in v0.184.0. Sandbox visibility changes now invalidate the proxy's cached preview state immediately, so revoking a public preview takes effect on the next request.\n\n### Workarounds\nUpgrade to v0.184.0 or later. There is no configuration workaround for earlier versions.\n\n### Credit\nReported through Daytona's Vulnerability Disclosure Program by **mrknightnidu(nidalkhan)**.\n**Linkedin**: https://www.linkedin.com/in/mrknight-nidu-031340328/",
+      "link": "https://github.com/advisories/GHSA-ww63-pv5x-vfc8",
+      "published": "2026-06-16T21:05:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54321"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-53622",
+      "title": "Traefik: HTTP/3 mTLS bypass via exact SNI TLSOptions lookup for wildcard and mixed-case hosts",
+      "summary": "## Summary\n\nThere is a critical vulnerability in Traefik's HTTP/3 (QUIC) TLS configuration selection that allows unauthenticated clients to bypass router-specific mTLS enforcement. When HTTP/3 is enabled on an entrypoint, the TLS handshake selects the applicable TLS configuration through an exact, case-sensitive lookup on the SNI value, which fails to match wildcard host patterns (e.g., `*.example.com`) or case variants of the configured hostname. Because the handshake falls back to the default TLS configuration \u2014 which may not require client certificates \u2014 a client can complete the QUIC handshake without presenting a certificate, while the subsequent HTTP routing layer still dispatches the request to a backend protected by a router-specific mTLS policy. The issue affects deployments where HTTP/3 is enabled, a router uses a wildcard `Host` rule or case-insensitive hostname matching, a router-specific `TLSOptions` enforces client certificate authentication, and UDP access to the entrypoint is reachable by an attacker.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.3\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\n\nTraefik's HTTP/3 TLS configuration selection can ignore router-specific `TLSOptions` and allow unauthenticated clients to bypass mTLS. The QUIC/HTTP3 path resolves TLS configuration with `Router.GetTLSGetClientInfo()`, which performs a direct, case-sensitive map lookup on `hostHTTPTLSConfig[info.ServerName]`.\n\nThis is inconsistent with the later HTTP host routing semantics, where the same request host can still match wildcard or case-insensitive `Host` rules after the HTTP/3 TLS handshake has already fallen back to the default TLS configuration. Two exploit paths are confirmed:\n\n1. `Host(\"*.example.com\")` with `tls.options=mtls`: HTTP/2 requires a client certificate, but ",
+      "link": "https://github.com/advisories/GHSA-9cr8-q42q-g8m7",
+      "published": "2026-06-16T21:04:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-53622"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-53755",
+      "title": "Crawl4AI: SSRF via proxy settings in the Docker server bypasses the crawl-URL SSRF check",
+      "summary": "### Summary\n\nThe Docker API server applied its SSRF destination check to the crawl target URL only, not to the proxy address. An unauthenticated request could supply a proxy pointing at an internal IP and route the browser through it, reaching internal services and cloud-metadata endpoints, while using a perfectly valid crawl URL. The Docker API is unauthenticated by default.\n\n### Affected paths\n\n`/crawl`, `/crawl/stream`, and `/crawl/job` accept a `browser_config` (and `crawler_config`). The following all feed Chromium's egress and were unchecked:\n- `browser_config.proxy_config.server`\n- `browser_config.proxy` (deprecated field)\n- `crawler_config.proxy_config.server`\n- `--proxy-server` / `--proxy-pac-url` / `--proxy-bypass-list` / `--host-resolver-rules` flags in `browser_config.extra_args`\n\n### Attack\n\nAn attacker sends `/crawl` with a benign, validation-passing URL but a `proxy_config.server` pointing at an internal IP. Chromium routes all requests through that proxy. For plain-HTTP targets the proxy receives the full request and can return any content, which is then returned verbatim in the crawl result (`results[0].html` / `cleaned_html` / `markdown`). In a real deployment the proxy would be an attacker-controlled server pointing at cloud metadata (e.g. AWS IMDSv1 at 169.254.169.254) to retrieve IAM credential tokens.\n\n### Impact\n\nUnauthenticated server-side request forgery to internal services and cloud-metadata endpoints, with the response returned to the attacker.\n\n### Fix\n\nEvery proxy destination is validated with the same global-routability check used for crawl URLs (reject any resolved address that is not `is_global`, including IPv6 transition forms) before the browser is constructed; proxy/DNS-redirecting flags are stripped from `extra_args`. A legitimate public proxy still works. Honors `CRAWL4AI_ALLOW_INTERNAL_URLS`.\n\n### Workarounds\n\n- Upgrade to the patched version (0.8.9).\n- Enable authentication (`CRAWL4AI_API_TOKEN`).\n- Restrict the container's ou",
+      "link": "https://github.com/advisories/GHSA-6qhc-x826-342c",
+      "published": "2026-06-16T21:02:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-53755"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-53754",
+      "title": "Crawl4AI: SSRF filter bypass in Docker server via IPv6 transition forms (NAT64 / 6to4 / unspecified / v4-mapped)",
+      "summary": "### Summary\n\nThe Docker API server's SSRF protection (`validate_webhook_url` / `validate_url_destination` in `deploy/docker/utils.py`) used an explicit IPv4/IPv6 CIDR blocklist that missed several address families. An attacker could reach internal services and cloud metadata endpoints (e.g. `169.254.169.254`) despite the filter by encoding an internal IPv4 address inside an IPv6 transition form, or by using the IPv6 unspecified address.\n\nBecause the Docker API is unauthenticated by default (`jwt_enabled: false`), no credentials are required.\n\n### Affected paths\n\nThe blocklist was applied to crawl URLs (`POST /crawl`, `/md`, `/html`, `/screenshot`, `/pdf`, `/execute_js`) and webhook URLs (`/crawl/job`, `/llm/job`). All shared the same incomplete check.\n\n### Bypasses\n\nThe following all resolve to (or route to) blocked internal addresses but were NOT caught:\n- IPv6 unspecified `::`\n- NAT64 `64:ff9b::a9fe:a9fe` (embeds `169.254.169.254`)\n- 6to4 `2002:a9fe:a9fe::` (embeds `169.254.169.254`)\n- IPv4-mapped `::ffff:169.254.169.254`\n- IPv4-compatible `::a9fe:a9fe`\n\nThe error message also echoed the resolved internal IP, acting as a minor DNS/oracle leak.\n\n### Impact\n\nServer-Side Request Forgery: an unauthenticated attacker can make the server fetch internal-network URLs and cloud instance-metadata endpoints, potentially exposing internal services and cloud credentials.\n\n### Fix\n\nThe blocklist is replaced by a single rule: reject any resolved IP where `not ip.is_global`, evaluated on the address AND every embedded IPv4 transition form (v4-mapped, NAT64 `64:ff9b::/96`, 6to4 `2002::/16`, v4-compat `::/96`). Error messages are now opaque and no longer echo the resolved IP.\n\n### Workarounds\n\n- Upgrade to the patched version.\n- Enable authentication (`CRAWL4AI_API_TOKEN`).\n- Restrict the container's outbound network access (egress firewall / no metadata route).\n\n### Credits\n\nInternal security audit (Crawl4AI maintainers).",
+      "link": "https://github.com/advisories/GHSA-4qqr-vv2q-cmr5",
+      "published": "2026-06-16T21:00:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-53754"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-54157",
@@ -634,78 +810,6 @@
       ],
       "cve_ids": [
         "CVE-2026-54420"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-11417",
-      "title": "aws-cdk-lib: OS Command Injection in NodejsFunction Bundling",
-      "summary": "### Summary\nAWS CDK (`aws-cdk-lib`) is an open-source framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. OS command injection in the `NodejsFunction` local bundling pipeline in `aws-cdk-lib` before 2.245.0 (2.246.0 on Windows) might allow a threat actor who controls the value of one or more bundling properties (`externalModules`, `define`, `loader`, `inject`, or `esbuildArgs`) to execute arbitrary commands on the host running the CDK toolchain via injected shell metacharacters. This issue requires the threat actor to control the value of one or more of the affected bundling properties in the CDK application.\n\n### Impact\nDuring local Lambda bundling, `NodejsFunction` assembled an esbuild command string from the bundling properties `externalModules`, `define`, `loader`, `inject`, and `esbuildArgs` and executed it via a shell (`bash -c` on Linux/macOS, `cmd /c` on Windows) through `spawnSync`. The property values were interpolated without escaping or validation, so values containing shell metacharacters could execute arbitrary commands with the privileges of the user running `cdk synth`, `cdk deploy`, or `cdk diff`. Exploitation requires a threat actor to control one or more of the affected property values in the CDK application \u2014 for example via an untrusted npm dependency that vends a wrapper construct, or via a pull request that introduces untrusted values.\n\n### Impacted versions: \n< 2.245.0 (on Windows, < 2.246.0)\n\n### Patches\nThis issue has been addressed in `aws-cdk-lib` version 2.245.0 (PR #37292), with a Windows-specific regression fix in 2.246.0 (PR #37412). The fix replaces shell-based command execution with array-based `spawnSync` invocation that does not invoke a shell. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n### Workarounds\nEnsure the values supplied to `NodejsFunction` bundling properties (`externalModules`, `define`, ",
-      "link": "https://github.com/advisories/GHSA-999r-qq7v-r334",
-      "published": "2026-06-15T20:47:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-11417"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-50009",
-      "title": "Netty: QUIC stateless reset token material exposed through header-visible connection IDs",
-      "summary": "### Summary\nNetty QUIC exposes the stateless reset token on the network path when using the default HMAC-based connection-ID and stateless-reset-token generators. The reset token for the server's current source connection ID can be derived from bytes that appear as the connection ID in QUIC headers after a source-CID rotation. An on-path attacker observing the headers can use the token to perform a Denial of Service by sending a spoofed Stateless Reset packet.\n\n### Details\nThe sign-based connection ID generator (HmacSignQuicConnectionIdGenerator) and reset token generator (HmacSignQuicResetTokenGenerator) both evaluate HMAC-SHA256 with the same JVM-wide static key (io.netty.handler.codec.quic.Hmac).\n\nDuring source CID rotation (QuicheQuicChannel.newSourceConnectionIds), the current server source CID C is used as input to produce the next CID N. The stateless reset token for C is defined over HMAC(K, C), specifically the first 16 bytes. The next CID N is the first L bytes of the same digest, where L = |C|.\n\nWhenever L \u2265 16, the first 16 bytes of N are exactly the stateless reset token for C. Because N is carried in QUIC headers as a connection ID, an observer can read the headers and learn the reset token without decrypting the payload.\n\nThis directly violates RFC 9000\nhttps://datatracker.ietf.org/doc/html/rfc9000#name-calculating-a-stateless-res: `The stateless reset token MUST be difficult to guess.`\nAdditionally https://datatracker.ietf.org/doc/html/rfc9000#name-stateless-reset-oracle\n\n### Impact\nInformation Disclosure and Denial of Service. An on-path attacker can obtain the stateless reset token from the connection ID header and attempt to abruptly close the client side of the connection by sending a spoofed Stateless Reset datagram.",
-      "link": "https://github.com/advisories/GHSA-cq4q-cv5g-r8q5",
-      "published": "2026-06-15T20:44:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-50009"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48748",
-      "title": "Netty HTTP/3 QPACK Blocked Streams Memory Exhaustion",
-      "summary": "### Summary\nA memory exhaustion vulnerability in the Netty HTTP/3 codec allows the creation of an infinite number of blocked streams, which can cause OOM error.\n\n### Details\nThe vulnerability exists in `io.netty.handler.codec.http3.QpackDecoder#shouldWaitForDynamicTableUpdates`:\n\nIf a client sends a header referencing a table entry that the server hasn't received yet, the server must pause that stream and wait for the missing entry to arrive. To prevent attackers from exhausting resources by intentionally sending missing references, Netty limits the number of streams that can be blocked at the same time.\n\nHowever, the check is implemented as:\n\n```java\nif (blockedStreamsCount == maxBlockedStreams - 1) {\n```\n\nIf the server enables QPACK dynamic tables (by setting `HTTP3_SETTINGS_QPACK_MAX_TABLE_CAPACITY` > 0) but does not explicitly configure `HTTP3_SETTINGS_QPACK_BLOCKED_STREAMS`, it defaults to 0.\n\nWhen `maxBlockedStreams` is 0, the condition evaluates to `blockedStreamsCount == -1`. Since `blockedStreamsCount` starts at `0` and only increments, it never equals `-1`. This bypasses the limit, allowing an attacker to open an infinite number of streams that block indefinitely. Additionally, the `QpackDecoder` never removes unblocked streams from the `blockedStreams` map or decrements the counter, meaning the `ReadResumptionListener` for each blocked stream is kept in memory for the entire lifetime of the connection. This exhausts server memory and crashes the JVM.\n\n### Impact\nDenial of Service. Any server using `netty-codec-http3` with QPACK dynamic tables enabled and maxBlockedStreams defaulting to 0 is impacted.",
-      "link": "https://github.com/advisories/GHSA-4grm-h2qv-h6w6",
-      "published": "2026-06-15T20:43:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48748"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54282",
-      "title": "Starlette: Unvalidated request path concatenated into authority poisons request.url.hostname",
-      "summary": "### Summary\n\nIn affected versions, the HTTP request path is not validated before being used to reconstruct `request.url`. Because `request.url` is rebuilt by concatenating `{scheme}://{host}{path}` and re-parsing the result, a path that does not begin with `/` (for example `@google.com`) moves the authority boundary during re-parsing, so `request.url.hostname` and `request.url.netloc` become attacker-controlled. Code that reads `request.url.hostname` (rather than the `Host` header or `scope`) can therefore be misled into trusting an attacker-supplied host.\n\n### Details\n\nWhen a client requests a path that does not start with `/`:\n\n```http\nGET @google.com HTTP/1.1\nHost: localhost\n```\n\naffected versions reconstruct the URL as `http://localhost@google.com`. Per [RFC 3986 \u00a73.2.1](https://www.rfc-editor.org/rfc/rfc3986.html#section-3.2.1), the substring before `@` in the authority is `userinfo`, so re-parsing yields `username = \"localhost\"` and `hostname = \"google.com\"`, with an empty path:\n\n```text\nrequest.url          == \"http://localhost@google.com\"\nrequest.url.hostname == \"google.com\"\nrequest.url.path     == \"\"\n```\n\nThe root cause is that the path is concatenated directly after the host without a separating `/`, and without validating that it begins with one. Only the `Host` header was validated when constructing `request.url`; the path was not.\n\nThis requires an ASGI server that forwards a request-target lacking a leading `/` into `scope[\"path\"]`.\n\n### Impact\n\nAny application running an affected version that uses `request.url`, `request.url.netloc`, or `request.url.hostname` for a security-sensitive decision (host-based authorization, redirect/callback base, SSRF target, cache key, audit log) may be affected, when no fronting proxy or load balancer rejects the malformed request-target first.\n\nNote that this is less exploitable than [GHSA-86qp-5c8j-p5mr](https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr): there, the poison is carried in the `",
-      "link": "https://github.com/advisories/GHSA-jp82-jpqv-5vv3",
-      "published": "2026-06-15T20:38:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54282"
       ],
       "is_zero_day": false,
       "is_high_severity": true
