@@ -1,32 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-18 20:08 UTC &nbsp;|&nbsp; **Total:** 35 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-19 02:48 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-20253 — Splunk Enterprise Missing Authentication for Critical Function Vulnerability
-
-**CVE:** `CVE-2026-20253` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-06-18
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-20253>
-
-> Vendor: Splunk | Product: Enterprise. Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates …
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** The PostgreSQL sidecar service endpoint in vulnerable Splunk Enterprise versions lacks authentication controls, allowing any network‑reachable unauthenticated user to invoke file‑operation APIs and create or truncate arbitrary files on the host.
-- **Affected Products:** Splunk Enterprise 10.2.0‑10.2.3 (fixed in 10.2.4), 10.0.0‑10.0.6 (fixed in 10.0.7); Splunk Enterprise 10.4.0 not affected; versions 9.4 and earlier not affected.
-- **CVSS Score:** 9.8
-- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true
-- **Active Exploitation:** false
-- **Threat Actors:** None known
-- **Mitigation:** Upgrade to Splunk Enterprise 10.4.0, 10.2.4, or 10.0.7 (or later). If upgrading is not feasible, disable the PostgreSQL sidecar service by adding "[postgres]\ndisabled = true" to $SPLUNK_HOME/etc/system/local/server.conf and restart Splunk, noting that this may impact Edge Processor, OpAmp, or SPL2 data pipelines.
-- **Vendor Advisory:** https://advisory.splunk.com/advisories/SVD-2026-0603
-
----
-
-## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 1. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
@@ -35,20 +13,20 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Multiple unauthenticated path traversal vulnerabilities in SimpleHelp <=5.5.7 allow remote attackers to read arbitrary files on the server via crafted requests, exposing sensitive files (e.g., credentials/config) and enabling follow‑on attacks.
-- **Affected Products:** SimpleHelp remote support / RMM software versions 5.5.7 and earlier
+- **Technical Details:** Path traversal vulnerability enabling unauthenticated remote attackers to read arbitrary files (e.g., /etc/passwd, private SSH keys) on SimpleHelp servers.
+- **Affected Products:** SimpleHelp remote support software versions 5.5.7 and earlier
 - **CVSS Score:** 7.5
-- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-- **Exploit Available:** true - https://www.offsec.com/blog/cve-2024-57727
-- **Patch Available:** true - https://www.tenable.com/cve/CVE-2024-57727
-- **Active Exploitation:** true
-- **Threat Actors:** Ransomware actors (unspecified groups)
-- **Mitigation:** Apply the vendor patch/update; if immediate patching is not possible, isolate/unexpose SimpleHelp RMM from the public network, block external access, restrict usage to VPN or management network, rotate credentials and secrets, review logs for indicators of compromise, and follow CISA incident response recommendations.
-- **Vendor Advisory:** https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Public PoC available; see OffSec blog with Metasploit auxiliary scanner details.
+- **Patch Available:** Patch available: https://simple-help.com/kb---security-vulnerabilities-01-2025
+- **Active Exploitation:** Confirmed active exploitation: CISA lists the vulnerability in its KEV catalog and cites ransomware actors exploiting unpatched SimpleHelp deployments.
+- **Threat Actors:** Ransomware actors (unspecified groups) exploiting SimpleHelp
+- **Mitigation:** If a patch cannot be applied immediately, isolate the SimpleHelp server instance from the internet or stop the server process, and upgrade to the latest version as soon as possible.
+- **Vendor Advisory:** https://simple-help.com/kb---security-vulnerabilities-01-2025
 
 ---
 
-## 3. 🟠 Zero-Day — AgenticMail: Unauthenticated inbound mail triggers bypassPermissions resume of the operator's Claude Code session (bridge-wake)
+## 2. 🟠 Zero-Day — AgenticMail: Unauthenticated inbound mail triggers bypassPermissions resume of the operator's Claude Code session (bridge-wake)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-fq4x-789w-jg5h>
@@ -58,20 +36,20 @@ Two inbound-mail handlers act on a privileged effect without verifying that the 
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Two inbound‑mail handlers act on a privileged effect without verifying that the sender is the operator. The higher‑impact handler resumes the operator's Claude Code session with `permissionMode: 'bypassPermissions'` for any external email routed to the bridge inbox, embedding attacker‑controlled `from`, `subject`, and `preview` verbatim into the resumed agent's prompt, resulting in an indirect prompt injection into a fully‑privileged agent (Bash/Write/Edit/WebFetch + agenticmail MCP toolbelt) running as the operator's OAuth identity.
-- **Affected Products:** AgenticMail (bridge component)
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Two inbound‑mail handlers act on a privileged effect without verifying the sender is the operator. An external email routed to the bridge inbox causes the dispatcher to resume the operator's Claude Code session with permissionMode: 'bypassPermissions', embedding attacker‑controlled from/subject/preview into the resumed agent's prompt, resulting in an indirect prompt injection into a fully‑privileged agent (Bash/Write/Edit/WebFetch + the agenticmail MCP toolbelt).
+- **Affected Products:** @agenticmail/agenticmail (AgenticMail)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** false
+- **Exploit Available:** No public proof-of-concept or weaponized exploit reported.
+- **Patch Available:** Patch status not specified in the advisory.
+- **Active Exploitation:** No confirmed active exploitation reported.
 - **Threat Actors:** None known
-- **Mitigation:** Disable public/external bridging to operator inboxes; ensure inbound handlers verify sender/operator identity before performing privileged resume actions; upgrade to a fixed release when a vendor advisory/patch is published; restrict Claude Code sessions' auto‑resume and avoid permissionMode bypass; apply least‑privilege for the agent toolbelt.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Mitigation:** Harden inbound‑mail handlers to verify the sender/operator identity before resuming a session, avoid using bypassPermissions with untrusted input, restrict external email routing to trusted senders, and disable automatic bridge‑wake resume if a patch is unavailable.
+- **Vendor Advisory:** https://github.com/advisories/GHSA-fq4x-789w-jg5h
 
 ---
 
-## 4. 🟠 Zero-Day — Grav: Stored CSS injection via Markdown image ?style=… reaches MediaObjectTrait::style() — incomplete patch of GHSA-r7fx-8g49-7hhr
+## 3. 🟠 Zero-Day — Grav: Stored CSS injection via Markdown image ?style=… reaches MediaObjectTrait::style() — incomplete patch of GHSA-r7fx-8g49-7hhr
 
 **CVE:** `CVE-2026-55890` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-pmf8-g7c8-7v54>
@@ -82,20 +60,20 @@ The fix for **GHSA-r7fx-8g49-7hhr / CVE-2026-42841** (Stored XSS via Markdown me
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** A stored CSS injection vulnerability exists where Grav's Markdown image processing pipeline reaches MediaObjectTrait::style(), which writes editor‑controlled strings directly into an <img style="…"> attribute without sanitization. An authenticated user with admin.pages permission can save Markdown containing a ?style=… parameter in the image URL, leading to CSS injection or XSS depending on browser behavior.
+- **Affected Products:** getgrav/grav (Grav CMS) — affected Markdown image handling via MediaObjectTrait::style(); specific vulnerable versions unavailable.
+- **CVSS Score:** -1.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** No public proof-of-concept or weaponized exploit located.
+- **Patch Available:** No official vendor patch specifically for CVE-2026-55890 was located; recommend updating Grav to newer releases when available.
+- **Active Exploitation:** No reports of confirmed active exploitation located.
 - **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
+- **Mitigation:** Restrict who can edit/save Markdown (limit admin.pages permission to trusted users); avoid allowing user‑supplied ?style=… parameters in image URLs and strip inline style attributes via output filtering or WAF rules; upgrade to a vendor‑provided fix when released.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 5. 🟠 Zero-Day — PraisonAI: Server-Side Request Forgery (SSRF) in SearxNG / search_web tools via attacker-controlled searxng_url parameter
+## 4. 🟠 Zero-Day — PraisonAI: Server-Side Request Forgery (SSRF) in SearxNG / search_web tools via attacker-controlled searxng_url parameter
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-4pcv-mg8v-vrgf>
@@ -105,20 +83,20 @@ A Server-Side Request Forgery (SSRF) vulnerability in the SearxNG / `search_web`
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The `searxng_url` parameter is passed directly to `requests.get()` with no validation of scheme, host, or port, allowing an attacker who can supply `searxng_url` (e.g., via prompt injection into an LLM agent that exposes the search_web/searxng_search tool) to cause the server to perform arbitrary HTTP(S) requests to internal endpoints and return responses to the attacker.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Technical Details:** Server-Side Request Forgery (CWE-918) in PraisonAI's SearxNG/search_web tools. The `searxng_url` argument is passed unvalidated directly to `requests.get()`. Because the parameter is exposed to the LLM and search_web/searxng_search is part of the default agent toolset, prompt injection in ingested content (web pages, files, prior tool output) can coerce the agent to issue requests to attacker-chosen URLs. The server fetches those URLs and returns response bodies into the agent context, enabling internal-service access, host/port enumeration, and cloud instance metadata reach (169.254.169.254) with potential IAM credential exposure.
+- **Affected Products:** PraisonAI praisonaiagents Python package, versions < 1.6.61
+- **CVSS Score:** 8.8
+- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:L
+- **Exploit Available:** No public PoC or weaponized exploit identified for GHSA-4pcv-mg8v-vrgf at this time. The attack is reproducible from the advisory description (attacker-controlled `searxng_url` passed to `requests.get()`).
+- **Patch Available:** Yes. Fixed in PraisonAI `praisonaiagents` version 1.6.61. Advisory URL: https://github.com/advisories/GHSA-4pcv-mg8v-vrgf (also indexed at https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-4pcv-mg8v-vrgf).
+- **Active Exploitation:** No confirmed in-the-wild exploitation specific to GHSA-4pcv-mg8v-vrgf has been publicly reported as of 2026-06-19. PraisonAI vulnerabilities overall have shown rapid post-disclosure scanning per Sysdig/SecurityWeek/Kiteworks/The Hacker News.
 - **Threat Actors:** None known
-- **Mitigation:** Disable or remove the search_web/searxng_search tools from agent toolsets; validate and whitelist allowed searxng_url schemes/hosts/ports; implement strict URL validation and require operator‑controlled configuration (don’t accept user‑supplied searxng_url); restrict network egress from the agent/process to only needed destinations; run the tool in an isolated environment with no access to internal services.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Mitigation:** Upgrade `praisonaiagents` to version 1.6.61 or later. Defense-in-depth: allow-list valid `searxng_url` scheme/host/port (HTTPS only, block private RFC1918/link-local/loopback including 169.254.169.254); re-resolve and re-validate the host after DNS lookup to defeat DNS rebinding; disable `search_web` / `searxng_search` from the default agent toolset when not needed; apply egress network policy / firewall so the agent host cannot reach internal IP space; treat all ingested web/file/tool content as untrusted to defeat the prompt-injection trigger; avoid logging or surfacing raw arbitrary-URL response bodies into the model context.
+- **Vendor Advisory:** https://github.com/advisories/GHSA-4pcv-mg8v-vrgf
 
 ---
 
-## 6. 🟠 Zero-Day — PraisonAI: Webhook signature verification skipped (fail-open) when secret unset, allowing forged inbound webhooks (WhatsApp & Linear bots)
+## 5. 🟠 Zero-Day — PraisonAI: Webhook signature verification skipped (fail-open) when secret unset, allowing forged inbound webhooks (WhatsApp & Linear bots)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-x92v-rpx6-p6cw>
@@ -131,20 +109,20 @@ unauthenticated attacker who can reach the bot&#x27;s webhook …
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** When the secret environment variable is unset, the WhatsApp and Linear bot adapters skip HMAC verification of inbound webhooks, treating the request body as trusted and enabling an unauthenticated attacker to inject arbitrary events.
-- **Affected Products:** PraisalAI WhatsApp bot (src/praisonai/praisonai/bots/whatsapp.py), PraisonAI Linear bot (signature verification logic)
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true
-- **Active Exploitation:** Active exploitation status unknown.
+- **Technical Details:** The WhatsApp and Linear bot adapters verify inbound webhook HMAC signatures only when a secret is set. If the secret environment variable is unset (default on fresh installs and common in development), verification is skipped, the webhook body is parsed as trusted, and an unauthenticated attacker can inject arbitrary platform events.
+- **Affected Products:** PraisonAI bots — WhatsApp bot adapter, Linear bot adapter
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** No public PoC or weaponized exploit located
+- **Patch Available:** https://github.com/advisories/GHSA-x92v-rpx6-p6cw
+- **Active Exploitation:** No confirmed active exploitation reported
 - **Threat Actors:** None known
-- **Mitigation:** Configure the appropriate webhook secret environment variables (e.g., WHATSAPP_APP_SECRET and the equivalent for Linear) in all deployments; restrict network access to webhook endpoints via firewall or IP allowlist; enable authentication/ingress validation; and upgrade to the patched version provided in the advisory.
+- **Mitigation:** Ensure a webhook secret is configured in deployment (set the environment variable, e.g. WHATSAPP_APP_SECRET), restrict webhook endpoints via network controls (IP allowlists, firewall), require authentication at the reverse proxy, and validate incoming webhooks by enabling HMAC signature checking. Patch to verify signatures even when secret unset or fail‑closed.
 - **Vendor Advisory:** https://github.com/advisories/GHSA-x92v-rpx6-p6cw
 
 ---
 
-## 7. 🟠 Zero-Day — PraisonAI: Jobs webhook SSRF protection bypass via DNS rebinding
+## 6. 🟠 Zero-Day — PraisonAI: Jobs webhook SSRF protection bypass via DNS rebinding
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-rjvw-7vvw-549v>
@@ -161,51 +139,20 @@ request. When a job completes, `_send_webhook()` passes the original hostname to
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The Jobs API validates `webhook_url` at parse/Job construction time and blocks loopback/private targets, but validation is not enforced at send time: `_send_webhook()` calls `httpx.AsyncClient.post()` with the original hostname without send‑time validation, IP pinning, or guarded transport. An attacker‑controlled hostname can resolve to a public IP during validation and later resolve to loopback/private (DNS rebinding), enabling SSRF to internal services.
-- **Affected Products:** PraisonAI (versions prior to 4.6.34)
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** The Async Jobs API accepts an attacker-controlled webhook_url which is validated during request parsing (blocking direct loopback/private IPs), but the code later calls httpx.AsyncClient.post() using the original hostname with no send-time validation, IP pinning, or guarded transport. An attacker-controlled hostname can resolve to a public IP during validation and later resolve (via DNS rebinding) to loopback/private addresses at send time, enabling SSRF to internal services.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** No public PoC or weaponized exploit identified in public advisories or writeups.
+- **Patch Available:** No official vendor patch announced in the GitHub advisory; no vendor advisory URL provided.
+- **Active Exploitation:** No confirmed public reports of active exploitation in the wild found.
 - **Threat Actors:** None known
-- **Mitigation:** Upgrade to the vendor‑fixed release; as a workaround, enforce send‑time validation, IP pinning, resolve hostnames to IP and validate against allowed CIDRs, restrict AllowedHosts/Allowed CIDRs, or block DNS‑rebindable hostnames. Follow PraisonAI security guidance and apply network egress restrictions.
-- **Vendor Advisory:** https://github.com/advisories/GHSA-rjvw-7vvw-549v
+- **Mitigation:** As a workaround, perform send-time validation and IP pinning: resolve the hostname at request time and at send time, compare IP(s), and block loopback/private ranges; use a guarded transport that prevents requests to internal addresses; restrict webhook_url to allowlist domains or require outbound webhook delivery via a proxy that enforces egress rules.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 8. 🟠 Zero-Day — PraisonAI: SpiderTools redirect-target SSRF protection bypass
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
-**Reference:** <https://github.com/advisories/GHSA-6h9p-93hq-q7h6>
-
-> # SpiderTools redirect-target SSRF protection bypass
-
-## Summary
-
-`SpiderTools.scrape_page()` validates the initial URL and rejects direct
-loopback, private, link-local, metadata, and internal hostnames. It then calls
-`requests.Session.get()` without disabling automatic redirects or validating
-redirect `Location` targets.
-
-Requests follows redirects by default for GET requests. A safe-looking publ…
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** SpiderTools.scrape_page() first validates the supplied URL, rejecting obvious internal addresses. It then uses requests.Session.get() without disabling automatic redirects or checking the Location header of redirects. Consequently, an attacker can provide a benign external URL that redirects to a blocked internal endpoint (e.g., 127.0.0.1 or 169.254.169.254), causing the library to fetch and process the internal resource, resulting in a server‑side request forgery.
-- **Affected Products:** PraisonAI SpiderTools
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** https://github.com/advisories/GHSA-6h9p-93hq-q7h6
-
----
-
-## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -214,20 +161,20 @@ Requests follows redirects by default for GET requests. A safe-looking publ…
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) allows an attacker to inject malicious instructions into the prompt of an AI model via crafted user‑controlled data. The attack can be chained with other techniques (e.g., zero‑click exploits) to achieve execution or data leakage without direct user interaction.
-- **Affected Products:** Google Gemini Enterprise (version unspecified)
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Indirect Prompt Injection (IPI) occurs when AI systems ingest attacker‑controlled content on the web (hidden HTML comments, display:none elements, spoofed system tags, metadata namespaces, accessibility‑hidden text). Attack chain: poison web content → conceal payload from humans → AI ingests content → AI follows attacker instructions → potential actions include data exfiltration, navigation, payments, command execution.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (see https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/)
-- **Patch Available:** true (see http://nvd.nist.gov/vuln/detail/CVE-2025-54131)
-- **Active Exploitation:** true (see https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/ and http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)
+- **Exploit Available:** No public proof-of-concept or weaponized exploit URL reported.
+- **Patch Available:** Vendor advisory URL unavailable.
+- **Active Exploitation:** Confirmed active exploitation has been observed: Google reported a 32% increase in malicious IPI probes (Nov 2025–Feb 2026) and Forcepoint published ten real‑world IPI payload incidents on active sites.
 - **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
+- **Mitigation:** Layered defenses – input/output validation and sanitization, human oversight, content‑context checks, concealment detection (hidden DOM/CSS/comment detection), provenance/metadata validation; see Google blog mitigations and Google Workspace continuous approach link.
+- **Vendor Advisory:** https://blog.google/security/prompt-injections-web/
 
 ---
 
-## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -236,38 +183,64 @@ Requests follows redirects by default for GET requests. A safe-looking publ…
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) occurs when attacker‑controlled content in external data sources (e.g., shared Workspace files) contains hidden instructions that the LLM interprets as task directives. GeminiJack is a zero‑click IPI where malicious instructions embedded in Workspace content cause Gemini Enterprise to follow attacker commands and potentially exfiltrate data without any user input.
-- **Affected Products:** Google Gemini Enterprise (Workspace integrations)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** true - http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability
-- **Patch Available:** true - http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
-- **Active Exploitation:** true - http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability
+- **Technical Details:** Indirect prompt injection (IPI) occurs when malicious instructions are embedded in content retrieved by a RAG pipeline (e.g., Docs, Calendar, Email). The poisoned content is added to the model’s context, causing the LLM to treat the instruction as legitimate and execute it, such as exfiltrating data via crafted external URLs or images. This flow was demonstrated in the GeminiJack attack.
+- **Affected Products:** Google Workspace (Gemini Enterprise / Gemini in Workspace) – affected RAG‑enabled Workspace with Gemini integrations.
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Proof‑of‑concept and technical write‑up published by Noma Labs describing GeminiJack attack flow.
+- **Patch Available:** No separate downloadable patch has been released; mitigations are implemented by Google as described in the advisory.
+- **Active Exploitation:** Confirmed research disclosure and a reported zero‑click exploit ("GeminiJack") by Noma Labs demonstrating real‑world exfiltration.
 - **Threat Actors:** None known
-- **Mitigation:** Apply Google’s layered defenses and hardening for IPI as documented in the Google Security Blog: content filtering, provenance signals, tool/data access restrictions, iterative monitoring and updates; use Workspace admin controls to limit external/shared content, disable risky agentic automation, and employ content sanitization and allow‑listing.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
+- **Mitigation:** Google’s layered defenses: prompt‑injection content classifiers; security thought reinforcement; markdown sanitization and suspicious URL redaction; user confirmation framework; end‑user security mitigation notifications; deterministic policy engine for rapid config fixes; ML/LLM hardening and retraining.
+- **Vendor Advisory:** https://knowledge.workspace.google.com/admin/security/indirect-prompt-injections-and-googles-layered-defense-strategy-for-gemini
 
 ---
 
-## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
 
 > Posted by Nathan Parker, Chrome security team Chrome has been advancing the web’s security for well over 15 years, and we’re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to s…
 
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Indirect prompt injection in Gemini Enterprise enables an attacker to inject malicious instructions that the AI agent will execute, potentially leading to unauthorized actions or data exfiltration.
+- **Affected Products:** Google Chrome (latest version as of December 2025)
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** No public proof‑of‑concept or weaponized exploit has been released.
+- **Patch Available:** No official patch has been released yet.
+- **Active Exploitation:** No confirmed active exploitation has been reported.
+- **Threat Actors:** None known
+- **Mitigation:** Enable Chrome’s new security layers that block indirect prompt injection, restrict origin access for AI agents, and keep Chrome updated to the latest version.
+- **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
+
 ---
 
-## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
 
 > Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn’t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vul…
 
+**Parallel AI Enrichment:**
+
+- **Technical Details:** CWE-125 (Out-of-bounds Read) in CrabbyAVIF, Android's AVIF parser/decoder written in unsafe Rust. Incorrect bounds checking produced out-of-bounds accesses across multiple NV12 YUV processing paths—including the Y plane, UV planes, alpha plane, chroma-width calculation, plane-size calculation, and per-row byte calculations (linear buffer overflow). Exploitation requires no user interaction and no additional execution privileges, and could enable remote code execution when chained with other bugs.
+- **Affected Products:** Android System (AOSP) — Android 16, security patch level prior to 2025-08-01; specifically the CrabbyAVIF AV1 Image File Format (AVIF) parser/decoder component (platform/external/rust/crabbyavif). No publicly released Android build shipped the vulnerable code.
+- **CVSS Score:** 8.1
+- **CVSS Vector:** CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+- **Exploit Available:** No public proof-of-concept (PoC) or weaponized exploit exists for CVE-2025-48530. Although security researchers publicly analyzed the OOB access code paths (see https://x.com/xvonfers/status/1952499317702344798), no functional exploit PoC has been published. The vulnerable code never reached a public Android release, eliminating a production target.
+- **Patch Available:** Yes — patched in the Android Security Bulletin—August 2025 at security patch level 2025-08-01. Patch commits: https://android.googlesource.com/platform/external/rust/crabbyavif/+/9bcc1a311114ab844b417d3cdec50dcedfd0603f and https://android.googlesource.com/platform/external/rust/crabbyavif/+/42feb427a42afd9eebe6391a0d8a7b083fe82140. Advisory: https://source.android.com/docs/security/bulletin/2025-08-01
+- **Active Exploitation:** No active exploitation reported. The vulnerable code was discovered internally by Google and remediated before being included in any publicly released Android build, leaving no production attack surface. No bulletin (Android, NVD, INCIBE-CERT), cybersecurity news outlet (CyberScoop, Malwarebytes, The Hacker News), or threat-intelligence source links any exploitation or threat actor to CVE-2025-48530.
+- **Threat Actors:** None known
+- **Mitigation:** No end-user remediation required: the vulnerable code never shipped in a public Android build. Defense-in-depth: keep devices on Android security patch level 2025-08-05 or later. Codebase-level hardening recommended by Google: (1) Mandate the Scudo hardened allocator (guard pages turn silent corruption into crashes), (2) encapsulate `unsafe` Rust blocks inside safe abstractions with documented safety preconditions, and (3) require Comprehensive Rust training for engineers writing unsafe code.
+- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-08-01
+
 ---
 
-## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -276,7 +249,7 @@ Requests follows redirects by default for GET requests. A safe-looking publ…
 
 ---
 
-## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -285,7 +258,7 @@ Requests follows redirects by default for GET requests. A safe-looking publ…
 
 ---
 
-## 15. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 13. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -294,14 +267,48 @@ Requests follows redirects by default for GET requests. A safe-looking publ…
 
 ---
 
-## 16. 🟠 Zero-Day — June 2026 Patch Tuesday: Microsoft Patches 206 Vulnerabilities Including Three Publicly Disclosed Zero-Days
+## 14. 🟠 Zero-Day — June 2026 Patch Tuesday: Microsoft Patches 206 Vulnerabilities Including Three Publicly Disclosed Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 09, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-june-2026/>
 
 ---
 
-## 17. 🟡 High Severity — F5 Patches Two Critical NGINX Open Source Flaws Enabling Remote Code Execution
+## 15. 🟡 High Severity — Signal K Server: Server-Side Request Forgery via Remote Connection Endpoints
+
+**CVE:** `CVE-2026-55591` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
+**Reference:** <https://github.com/advisories/GHSA-q59x-jc9f-gfqf>
+
+> ### Summary
+signalk-server versions up to and including 2.27.0 contain a Server-Side Request Forgery (SSRF) vulnerability in three administrative endpoints used for remote Signal K server connection management. The `makeRemoteRequest()` function accepts attacker-controlled `host`, `port`, `useTLS`, and `selfsignedcert` parameters without any validation, allowing an attacker to force the server to …
+
+---
+
+## 16. 🟡 High Severity — gemini-mcp-tool vulnerable to OS command injection and @file exfiltration via prompt quoting (CVE-2026-0755)
+
+**CVE:** `CVE-2026-0755` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
+**Reference:** <https://github.com/advisories/GHSA-4h5r-5jm8-jxjm>
+
+> Untrusted prompt input could reach the Gemini CLI @file parser, allowing read/exfiltration of arbitrary local files (@/etc/passwd, @~/.ssh/id_rsa, @../../secret). On Windows, unquoted cmd.exe metacharacters could break out into OS command injection.
+
+Fix (1.1.6): removed the broken shell:false double-quote wrapping; added assertSafeFileReferences() to contain @file refs to the working directory; h…
+
+---
+
+## 17. 🟡 High Severity — OpenClaw: Internal/webchat command auth could inherit ownerAllowFrom wildcard state
+
+**CVE:** `CVE-2026-53854` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
+**Reference:** <https://github.com/advisories/GHSA-4hpg-mp64-x7xq>
+
+> ### Summary
+
+Internal/webchat command auth could inherit ownerAllowFrom wildcard state. In affected versions, a sender on an affected internal or webchat path could inherit wildcard ownerAllowFrom state across channel boundaries.
+
+This advisory is scoped to the named feature and configuration. It does not change OpenClaw&#x27;s trusted-operator model: authenticated Gateway operators, installed plu…
+
+---
+
+## 18. 🟡 High Severity — F5 Patches Two Critical NGINX Open Source Flaws Enabling Remote Code Execution
 
 **CVE:** `CVE-2026-42530` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://thehackernews.com/2026/06/f5-patches-two-critical-nginx-open.html>
@@ -315,7 +322,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 18. 🟡 High Severity — Armeria: External Control of File Name or Path in xDS SDS DataSource
+## 19. 🟡 High Severity — Armeria: External Control of File Name or Path in xDS SDS DataSource
 
 **CVE:** `CVE-2026-11752` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-hgw6-8c77-v4gq>
@@ -328,7 +335,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 19. 🟡 High Severity — Daytona: Path traversal in sandbox volume id mounts arbitrary host paths into the sandbox — cross-tenant data access and host escape
+## 20. 🟡 High Severity — Daytona: Path traversal in sandbox volume id mounts arbitrary host paths into the sandbox — cross-tenant data access and host escape
 
 **CVE:** `CVE-2026-54319` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-fjv8-j4p5-cr9m>
@@ -344,7 +351,7 @@ Had the traversal been reachable, an authenticated user could have…
 
 ---
 
-## 20. 🟡 High Severity — tract-nnef: integer overflow in NNEF `.dat` tensor parser yields an out-of-bounds read on model load
+## 21. 🟡 High Severity — tract-nnef: integer overflow in NNEF `.dat` tensor parser yields an out-of-bounds read on model load
 
 **CVE:** `CVE-2026-55093` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-x5mv-8wgw-29hg>
@@ -356,7 +363,7 @@ Had the traversal been reachable, an authenticated user could have…
 
 ---
 
-## 21. 🟡 High Severity — opentelemetry-collector-contrib: githubreceiver silently ignores configured required_headers authentication
+## 22. 🟡 High Severity — opentelemetry-collector-contrib: githubreceiver silently ignores configured required_headers authentication
 
 **CVE:** `CVE-2026-55701` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-w5cv-pw74-4rxc>
@@ -369,7 +376,7 @@ The githubreceiver webhook handler does not enforce the `required_headers` confi
 
 ---
 
-## 22. 🟡 High Severity — Kirby: External Initialization of the Panel on reverse proxy setups with the `Forwarded` header
+## 23. 🟡 High Severity — Kirby: External Initialization of the Panel on reverse proxy setups with the `Forwarded` header
 
 **CVE:** `CVE-2026-54003` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-whxw-24jc-cwmv>
@@ -384,7 +391,7 @@ It was possible to install the Panel (= create the first admin user) in these se
 
 ---
 
-## 23. 🟡 High Severity — Kirby: Cross-site scripting (XSS) from incomplete HTML/XML sanitization in `Dom::sanitize()`
+## 24. 🟡 High Severity — Kirby: Cross-site scripting (XSS) from incomplete HTML/XML sanitization in `Dom::sanitize()`
 
 **CVE:** `CVE-2026-54002` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-wr9h-4r83-f4v6>
@@ -397,7 +404,7 @@ It was possible to inject malicious markup as children of an unknown HTML/XML ta
 
 ---
 
-## 24. 🟡 High Severity — Kirby: Self cross-site scripting (self-XSS) in the writer field
+## 25. 🟡 High Severity — Kirby: Self cross-site scripting (self-XSS) in the writer field
 
 **CVE:** `CVE-2026-49276` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-rhj6-r49h-5932>
@@ -412,7 +419,7 @@ A successful attack commonly requires knowledge of the content structure by the 
 
 ---
 
-## 25. 🟡 High Severity — Jupyter Server: Stored XSS in `NbconvertFileHandler` / `NbconvertPostHandler` via missing `sandbox` CSP 
+## 26. 🟡 High Severity — Jupyter Server: Stored XSS in `NbconvertFileHandler` / `NbconvertPostHandler` via missing `sandbox` CSP 
 
 **CVE:** `CVE-2026-44727` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-fcw5-x6j4-ccmp>
@@ -425,7 +432,7 @@ Combined with `nbconvert.HTMLExporter`&#x27;s default non-sanitizing behavior, a
 
 ---
 
-## 26. 🟡 High Severity — BBOT: Server-Side Request Forgery (SSRF) in docker_pull module via WWW-Authenticate realm parsing
+## 27. 🟡 High Severity — BBOT: Server-Side Request Forgery (SSRF) in docker_pull module via WWW-Authenticate realm parsing
 
 **CVE:** `CVE-2026-12566` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-3mp7-vp6j-2mxx>
@@ -434,7 +441,7 @@ Combined with `nbconvert.HTMLExporter`&#x27;s default non-sanitizing behavior, a
 
 ---
 
-## 27. 🟡 High Severity — praisonai-platform: Authorization Bypass Through User-Controlled Key
+## 28. 🟡 High Severity — praisonai-platform: Authorization Bypass Through User-Controlled Key
 
 **CVE:** `CVE-2026-47415` | `CVE-2026-47418` | `CVE-2026-47419` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-2fjj-qqg8-fg7x>
@@ -445,7 +452,7 @@ The issue create and update endpoints in `praisonai-platform` accept a `project_
 
 ---
 
-## 28. 🟡 High Severity — Grav: Admin Backup Zip File Exposes Account Credentials and Configuration Secrets
+## 29. 🟡 High Severity — Grav: Admin Backup Zip File Exposes Account Credentials and Configuration Secrets
 
 **CVE:** `CVE-2026-55885` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://github.com/advisories/GHSA-2f86-9cp8-6hcf>
@@ -455,78 +462,7 @@ An authenticated administrator with backup permissions can download a ZIP archiv
 
 ---
 
-## 29. 🟡 High Severity — praisonaiagents: SSRF guard validates literal IPs only and never resolves DNS
-
-**CVE:** `CVE-2026-47390` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
-**Reference:** <https://github.com/advisories/GHSA-vxgj-xg5c-p4h7>
-
-> # praisonaiagents: SSRF guard validates literal IPs only and never resolves DNS
-
-**Researcher:** Kai Aizen — SnailSploit (@SnailSploit), Adversarial &amp; Offensive Security Research
-**Target:** https://github.com/MervinPraison/PraisonAI
-**Weakness:** CWE-918 Server-Side Request Forgery (SSRF).
-
----
-
-## Summary
-
-The SSRF guard shared by PraisonAI&#x27;s web tools (`SpiderTools._validate_url` → `_h…
-
----
-
-## 30. 🟡 High Severity —  ZITADEL: Missing client_id binding in OIDC authorization code exchange and refresh token flows (RFC 6749 Section 4.1.3 violation)
-
-**CVE:** `CVE-2026-55672` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
-**Reference:** <https://github.com/advisories/GHSA-xqxv-4jc2-x56x>
-
-> ### Summary
-
-Zitadel&#x27;s OAuth2 / OIDC `CodeExchange` and `RefreshToken` implementations omit a critical validation step to ensure that the requesting client matches the client that originally initiated the authorization flow. This violates RFC 6749 Section 4.1.3, which mandates that the authorization server must ensure the authorization code was issued to the authenticated confidential client.…
-
----
-
-## 31. 🟡 High Severity —  ZITADEL: Cross-Tenant User Leakage via Recycled Identifiers
-
-**CVE:** `CVE-2026-55670` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
-**Reference:** <https://github.com/advisories/GHSA-6x8v-2fq5-2229>
-
-> ### Summary
-
-A flaw in the user lifecycle enforcement allowed deleted users to retain their original organization/tenant association. Recreating a deleted user under a distinct organization can cause the new user instance to be incorrectly provisioned within the original organization if the previous ID would be used to recreate it.
-
-### Impact
-
-When a user is created, the system maps the generated…
-
----
-
-## 32. 🟡 High Severity — Hydro: Insufficient session expiration when recreating sessions
-
-**CVE:** `CVE-2026-55617` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
-**Reference:** <https://github.com/advisories/GHSA-94jp-7776-qj6q>
-
-> ### Impact
-
-Hydro contains an insufficient session expiration vulnerability in its session recreation logic. When a session is recreated, including during logout or other session renewal flows, Hydro creates a new session token but does not delete the previous server-side session token.
-
-As a result, an old sid cookie may remain valid even after the legitimate user logs out or the session is recre…
-
----
-
-## 33. 🟡 High Severity — http-proxy-middleware: multipart/form-data field injection via unescaped CRLF in `fixRequestBody`
-
-**CVE:** `CVE-2026-55603` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-18
-**Reference:** <https://github.com/advisories/GHSA-gcq2-9pq2-cxqm>
-
-> ## Summary
-`fixRequestBody()` is the library&#x27;s documented helper for re-emitting a request body that was already consumed by a body parser. When the **outgoing** `Content-Type` is `multipart/form-data`, it rebuilds the body with `handlerFormDataBodyData()`, which interpolates each `req.body` key and value directly into the multipart wire format **without neutralizing CR/LF**:
-
-```js
-// dist/h…
-
----
-
-## 34. 🟡 High Severity — Oracle June 2026 Critical Security Patch Update Addresses 243 CVEs (CVE-2026-35273)
+## 30. 🟡 High Severity — Oracle June 2026 Critical Security Patch Update Addresses 243 CVEs (CVE-2026-35273)
 
 **CVE:** `CVE-2026-35273` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-06-18
 **Reference:** <https://www.tenable.com/blog/oracle-june-2026-critical-security-patch-update-addresses-243-cves-cve-2026-35273>
@@ -535,7 +471,7 @@ As a result, an old sid cookie may remain valid even after the legitimate user l
 
 ---
 
-## 35. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
