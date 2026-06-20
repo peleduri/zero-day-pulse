@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-19T19:25:12.024631+00:00",
-  "total": 28,
+  "generated": "2026-06-20T02:07:49.082620+00:00",
+  "total": 34,
   "kev": 0,
   "zero_day": 11,
   "enriched": 10,
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is an unauthenticated path-traversal vulnerability (CWE-22) in the SimpleHelp web application (toolbox functionality). The vulnerable components fail to properly sanitize user-supplied input in HTTP requests, allowing a remote, unauthenticated attacker to inject path-traversal sequences (e.g. 'filepath=../../../../../../etc/passwd') and download arbitrary files from the SimpleHelp host. Exposed files include the server configuration (containing secrets and hashed user/technician passwords), operating-system files such as /etc/passwd, and sensitive keys including /root/.ssh/id_rsa. With the harvested credentials (and chained with CVE-2024-57728 and CVE-2024-57726) the attacker can log in with high privileges, upload and execute files, and fully compromise the SimpleHelp server and downstream customer systems.",
-        "affected_products": "SimpleHelp Remote Support / Remote Monitoring and Management (RMM) software \u2014 version 5.5.7 and all earlier releases. Vendor also shipped point-fix patches on the 5.4.x branch (5.4.10) and 5.3.x branch (5.3.9).",
+        "technical_details": "Path traversal / directory traversal vulnerability allowing unauthenticated attackers to read sensitive files on affected SimpleHelp servers via crafted requests that traverse directories.",
+        "affected_products": "SimpleHelp remote support / Remote Monitoring and Management (RMM) \u2014 versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "true \u2014 public proof-of-concept available. GitHub repository 'imjdl/CVE-2024-57727' (Python PoC / vulnerability checker): https://github.com/imjdl/CVE-2024-57727",
-        "patch_available": "true \u2014 SimpleHelp released version 5.5.8 (and back-ported fixes 5.4.10 and 5.3.9) within ~2 days of being notified, before public disclosure. Patches / advisory: https://guides.simple-help.com/kb---security-vulnerabilities-01-2025 ; https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know",
-        "active_exploitation": "true \u2014 confirmed. CISA added CVE-2024-57727 to the Known Exploited Vulnerabilities (KEV) Catalog on 2025-02-13 and published #StopRansomware advisory AA25-163A on 2025-06-12 documenting in-the-wild ransomware exploitation since January 2025, including the compromise of a utility billing software provider via a SimpleHelp-using MSP. Independent reporting of the DragonForce campaign: SecurityWeek (2025-05-27) and Arctic Wolf (campaign observed from 2025-01-22).",
-        "threat_actors": "DragonForce ransomware actors. CISA advisory AA25-163A (2025-06-12) attributes active exploitation of CVE-2024-57727 to DragonForce, who chained it with CVE-2024-57728 and CVE-2024-57726 against a managed service provider (MSP) running SimpleHelp RMM and used the access to reach downstream customers \u2014 including a utility billing software provider \u2014 for double-extortion ransomware compromises. Independent confirmation: SecurityWeek, 'DragonForce Ransomware Hackers Exploiting SimpleHelp Vulnerabilities' (2025-05-27).",
-        "mitigation": "(1) Upgrade immediately: SimpleHelp 5.5.8 or later (or 5.4.10 on the 5.4 branch, 5.3.9 on the 5.3 branch). (2) Rotate all credentials \u2014 SimpleHelp Administrator password, every Technician account password, and any API tokens in use. (3) Restrict network access \u2014 IP-allowlist Technician/Administrator logins, IP-allowlist API requests, and firewall the SimpleHelp server so only expected sources can reach it. (4) Hunt for compromise: look for newly created executables with three-letter filenames (e.g. aaa.exe, bbb.exe) dated after January 2025, unexpected SimpleHelp/Remote Access Service reconfiguration, and alerts on Administrator logins / failed logins / configuration changes. (5) For confirmed compromises \u2014 disconnect the host from the internet, reinstall from clean media, and restore only from clean offline backups.",
-        "vendor_advisory": "https://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "true - https://www.offsec.com/blog/cve-2024-57727/",
+        "patch_available": "true - https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability",
+        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
+        "threat_actors": "Ransomware actors (unspecified)",
+        "mitigation": "Apply vendor updates/patch to latest SimpleHelp; if unable, restrict network access to SimpleHelp services, implement firewall rules to block external access, and monitor logs for suspicious file access.",
+        "vendor_advisory": "https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -49,16 +49,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "ConfigConfusion is a confused-deputy vulnerability (CWE-441) in Google Cloud Config Connector. An attacker with access to any Kubernetes namespace managed by Config Connector submits a malicious IAMPolicyMember custom resource targeting organization-level identifiers. Config Connector invokes GCP's resourcemanager.organizations.setIamPolicy using its own privileged service account without verifying the Kubernetes user's equivalent GCP permissions. Because IAM trusts the Config Connector service identity, the attacker-controlled policy is accepted, allowing the attacker to grant themselves roles/owner on the GCP Organization and achieve full takeover of every project, folder, and resource beneath it.",
-        "affected_products": "Google Cloud Config Connector for Kubernetes (GoogleCloudPlatform/k8s-config-connector), all versions (including 1.149.x release line) \u2014 every GCP organization running Config Connector is exposed.",
-        "cvss_score": "10.0",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-        "exploit_available": "true. A public PoC ('org-takeover.yaml' applied via kubectl apply to create an IAMPolicyMember granting roles/owner at Organization scope) is published by Justin O'Leary at https://olearysec.com/research/config-connector-authorization-bypass/",
-        "patch_available": "false. Google has not released a patch and considers the behavior 'working as intended' rather than awarding a bounty.",
-        "active_exploitation": "false. No confirmed in-the-wild exploitation has been reported. The vulnerability was publicly disclosed on June 18, 2026, and as of June 19, 2026 no exploitation campaigns have been observed in cited sources.",
-        "threat_actors": "None known.",
-        "mitigation": "Google has not issued a patch or workaround and considers the behavior 'working as intended'. Recommended hardening: (1) Restrict who can create/update IAMPolicyMember and IAMPartialPolicy custom resources in Kubernetes clusters running Config Connector (principle of least privilege at the K8s RBAC layer); (2) Audit existing IAMPolicyMember / IAMPartialPolicy resources for unexpected organization- or folder-level targets; (3) Treat any Kubernetes namespace writable by untrusted users as a potential source of Org-level IAM changes; (4) Monitor GCP IAM audit logs (and Config Connector logs) for IAMPolicy/PolicyBindings applied at the Organization node by the Config Connector service account. Reference: https://cloud.google.com/config-connector/docs/how-to/configure-iam-permissions",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "technical_details": "Apple Beats Studio Buds: Unauthenticated Bluetooth/firmware flaw allows a nearby attacker to capture microphone audio from unpaired devices seeking pairing. Popa Android TV botnet: Malicious SDK embedded in apps turns devices into persistent residential proxies for traffic forwarding and scraping. Velvet Ant: Actor chains internet\u2011facing footholds with backdoored PAM/OpenSSH and Nginx/FastCGI proxies, deploying GS\u2011Netcat and SOCKS5 to steal credentials in air\u2011gapped networks. GCP Config Connector: Confused\u2011deputy authorization bypass lets any Kubernetes namespace user submit a malicious IAMPolicyMember, escalating to GCP Organization Owner.",
+        "affected_products": "Beats Studio Buds (firmware prior to 1B211); Android TV boxes/streaming devices with malicious SDK; Air\u2011gapped network authentication components (backdoored PAM/OpenSSH, Nginx/FastCGI); Google Cloud Config Connector (Kubernetes operator)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "true for Beats Studio Buds (Apple firmware 1B211); false for Google Cloud Config Connector; patch availability unknown for Popa Android TV botnet and Velvet Ant.",
+        "active_exploitation": "true for Popa Android TV botnet and Velvet Ant; unknown for Apple Beats and GCP Config Connector",
+        "threat_actors": "Threat actors unknown for Apple Beats and GCP Config Connector; NetNut/Alarum Technologies linked to Popa Android TV botnet; China\u2011nexus actor (named Velvet Ant) linked to Velvet Ant campaign.",
+        "mitigation": "Install the Apple Beats Studio Buds firmware update 1B211; remove or inspect untrusted apps/SDKs on Android TV devices and factory\u2011reset if needed; replace backdoored PAM/OpenSSH and Nginx/FastCGI components, rotate credentials, rebuild systems, and deploy integrity monitoring for Velvet Ant; avoid using Config Connector for organization\u2011level management, restrict creation of Config Connector resources, enforce strict Kubernetes RBAC, monitor IAM changes, and apply compensating controls for GCP Config Connector.",
+        "vendor_advisory": "https://support.apple.com/en-us/127557"
       }
     },
     {
@@ -76,15 +76,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Unauthenticated arbitrary file creation and truncation in a PostgreSQL sidecar service endpoint in Splunk Enterprise that can be chained to achieve remote code execution by writing/truncating files via the sidecar API.",
-        "affected_products": "Splunk Enterprise <10.2.4, <10.0.7",
+        "technical_details": "The PostgreSQL sidecar service endpoint lacks authentication, allowing unauthenticated users to invoke /v1/postgres/recovery/backup and /v1/postgres/recovery/restore to create or truncate arbitrary files. An attacker\u2011controlled database dump and passfile (.pgpass) are used to execute SQL during restore, writing malicious Python scripts that achieve remote code execution.",
+        "affected_products": "Splunk Enterprise 10.2.0\u201110.2.3, 10.0.0\u201110.0.6",
         "cvss_score": "9.8",
-        "cvss_vector": "CVSS vector unavailable",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
         "exploit_available": "true",
         "patch_available": "true",
         "active_exploitation": "true",
-        "threat_actors": "Threat actors unknown",
-        "mitigation": "If immediate patching isn't possible, restrict network access to the PostgreSQL sidecar port (bind/firewall to localhost 127.0.0.1) and ensure the sidecar is not exposed to non-loopback interfaces; apply vendor patch immediately.",
+        "threat_actors": "None known",
+        "mitigation": "Disable the PostgreSQL sidecar service to remove the attack surface (note: disabling breaks Edge Processor, OpAmp, SPL2 pipelines).",
         "vendor_advisory": "https://advisory.splunk.com/advisories/SVD-2026-0603"
       }
     },
@@ -104,16 +104,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when AI systems process external content (websites, documents, emails) containing malicious instructions which the AI may follow; attackers seed hidden or visible prompt payloads on the public web to manipulate agent behavior.",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "technical_details": "When combined with CVE\u20112026\u201150083, CVE\u20112026\u201150084, and CVE\u20112026\u201150085, an otherwise\u2011unauthenticated attacker could execute a full takeover of affected systems via indirect prompt injection.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses: input/output validation and sanitization, suspicious URL redaction, red\u2011team testing, human oversight, AI Vulnerability Reward Program participation, and Google Workspace continuous mitigations.",
-        "vendor_advisory": "https://blog.google/security/prompt-injections-web"
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "https://blog.google/security/prompt-injections-web/"
       }
     },
     {
@@ -132,16 +132,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is an attack technique that injects malicious instructions into data sources or tools that an LLM uses while completing a user query; it can occur without direct user input (e.g., crafted emails, documents, web pages, or other integrated data) and causes the model or agentic automation to follow attacker\u2011supplied instructions or disclose sensitive data.",
-        "affected_products": "Google Workspace (Gemini in Workspace), Gemini Enterprise",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "Indirect prompt injection (IPI) occurs when malicious instructions are embedded in third\u2011party data sources or tools that an LLM accesses (e.g., web pages, documents, plugins). The LLM, while retrieving or using that external content to answer a user query or drive agentic workflows, can be influenced to follow the injected instructions\u2014potentially without direct user input\u2014leading to unauthorized actions, data exfiltration, or corrupted outputs.",
+        "affected_products": "Google Workspace (products using Gemini / GenAI integrations), Gemini Enterprise (reported vulnerable in some research)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "Exploit availability unknown",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "patch_available": "Patch availability unknown",
+        "active_exploitation": "Active exploitation status unknown",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses including input/output validation and sanitization, provenance and source trust signals, model-level instruction filtering, capability and tool access restrictions, human review / human-in-the-loop gating for risky actions, continuous web sweeps for IPI patterns, and tight Workspace/Gemini tenant controls.",
-        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+        "mitigation": "Input and output validation and sanitization; restrict or sandbox web\u2011browsing/third\u2011party data sources; apply strict content filters and provenance checks; implement human\u2011in\u2011the\u2011loop approval for agentic actions; monitor and block known IPI payload patterns; apply vendor recommendations from Google Workspace security blog.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -160,15 +160,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection allows malicious web content to influence agentic browser prompts and chain with other flaws (e.g., GeminiJack/CVE-2025-54131) to trigger a zero\u2011click compromise; the attack uses malicious pages to inject prompts or data that agentic agents act upon without user intent.",
-        "affected_products": "Google Chrome (agentic/Gemini integration)",
+        "technical_details": "The primary issue is indirect prompt injection \u2014 untrusted web content can influence agentic/browser\u2011integrated LLM agents by injecting or manipulating prompts or context that the agent executes; when chained with other vulnerabilities (e.g., CVE\u20112025\u201154131), this can lead to privilege escalation, local file access, or data exfiltration.",
+        "affected_products": "Chrome (Gemini agentic browsing features)",
         "cvss_score": "CVSS score unavailable",
         "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true \u2014 https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability",
-        "patch_available": "true \u2014 http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
+        "exploit_available": "true",
+        "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses in Chrome: deterministic rule filters, model\u2011level protections, origin restrictions, restricting agent actions; avoid untrusted sites and disable agentic features until patched.",
+        "mitigation": "Harden agentic browsing by applying Google\u2019s architectural mitigations in the advisory, update Chrome to patched versions, disable/limit agentic browsing or Gemini CLI in headless/automated environments, validate and sanitize third\u2011party content to reduce indirect prompt injection exposure.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -188,16 +188,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
+        "technical_details": "Near\u2011miss linear buffer overflow in the Rust CrabbyAVIF component (unsafe Rust/FFI area) was discovered and fixed pre\u2011release; Scudo hardened allocator\u2019s guard pages rendered the overflow non\u2011exploitable and converted silent corruption to a crash.",
         "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050 and Android bulletin https://source.android.com/docs/security/bulletin/2025-08-01",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Use Scudo hardened allocator (guard pages), improved crash reporting for overflow detection, restrictive use and review of unsafe{} blocks, and developer training on unsafe Rust (Comprehensive Rust training module).",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
     {
@@ -216,16 +216,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection is an attack class in which adversaries embed hidden malicious instructions inside external content that an LLM/agent retrieves or is given as context (email bodies, Google Docs, Drive files, Chat messages, calendar invites, web pages). When the Gemini assistant processes that content, the hidden instructions hijack the model's behavior to exfiltrate user data, invoke tools/connectors, or perform other unauthorized actions on the user's behalf. Unlike direct prompt injection (where the attacker is the user), indirect injection plants instructions in retrieved content. The blog notes Gemini does not render external images, preventing the CVE-2025-32711 'EchoLeak' zero-click image-attribute exfiltration technique from working against Gemini.",
-        "affected_products": "Google Gemini (app), Gemini in Google Workspace (Gmail, Google Calendar, Google Docs, Google Drive, Google Chat), Gemini 2.5. No earlier Gemini model versions were explicitly identified as affected in the post.",
-        "cvss_score": "CVSS score unavailable. No CVSS score is assigned by Google for this class of attack against Gemini in the June 13, 2025 blog post.",
-        "cvss_vector": "CVSS vector unavailable. The Google Security Blog post does not assign a CVE or CVSS vector to its own indirect prompt injection defense strategy against Gemini; the only CVE cited (CVE-2025-32711) refers to a competitor product (Microsoft Copilot).",
-        "exploit_available": "true. Multiple public PoCs and exploits exist. Example sources: SafeBreach Labs (https://www.safebreach.com/blog/gemini-voice-assistant-prompt-injection-exploit/), Miggo (https://www.miggo.io/post/weaponizing-calendar-invites-a-semantic-attack-on-google-gemini), Noma Labs 'GeminiJack' (https://noma.security/noma-labs/geminijack/).",
-        "patch_available": "true. The layered defenses described in the blog post are already shipped to Gemini and Gemini in Workspace. Advisory URL: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html. Companion: https://knowledge.workspace.google.com/admin/security/indirect-prompt-injections-and-googles-layered-defense-strategy-for-gemini; https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/; https://deepmind.google/blog/advancing-geminis-security-safeguards/.",
-        "active_exploitation": "true. The blog post acknowledges indirect prompt injection is a real-world in-the-wild threat. Independent third-party reports confirm active exploitation targeting Gemini: SafeBreach Labs (https://www.safebreach.com/blog/gemini-voice-assistant-prompt-injection-exploit/), Miggo (https://www.miggo.io/post/weaponizing-calendar-invites-a-semantic-attack-on-google-gemini), Noma Labs 'GeminiJack' (https://noma.security/noma-labs/geminijack/), Forcepoint hidden-website-code research (http://hackread.com/hackers-hidden-site-instruction-attack-ai-assistants), and Gemini-in-Workspace prompt injection via GitHub Actions (https://www.reddit.com/r/programming/comments/1pe3cew/prompt_injection_within_github_actions_google/).",
-        "threat_actors": "None known. The blog post references threat actors only in generic terms without naming any specific APT groups, campaigns, or ransomware operators.",
-        "mitigation": "Google's layered mitigation strategy: (1) Model hardening via adversarial-data training (Gemini 2.5); (2) prompt-injection content classifiers scanning incoming emails/documents; (3) security 'thought reinforcement' system-prompt instructions; (4) markdown sanitization and suspicious-URL redaction (Google Safe Browsing, blocking external image rendering); (5) User Confirmation/Human-in-the-Loop (HITL) for sensitive or irreversible actions (e.g., deleting a calendar event); (6) end-user security notifications with contextual in-product warnings and 'Learn more' links when an attack is blocked.",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+        "technical_details": "OS command injection vulnerability in the MobileIron Configuration Service (MICS) web portal interface allowing remote command execution via crafted input.",
+        "affected_products": "MobileIron Configuration Service (MICS) web portal interface of Ivanti Sentry",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -243,15 +243,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC\u2011linked state\u2011sponsored actors target large backbone, provider edge (PE) and customer edge (CE) routers, leveraging compromised devices and trusted connections to pivot. They often modify router firmware or configuration to maintain persistent, long\u2011term access for espionage and botnet activity.",
-        "affected_products": "major backbone routers, provider edge (PE) routers, customer edge (CE) routers, compromised network devices",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "PRC state-sponsored actors target large backbone, provider edge (PE) and customer edge (CE) routers, leverage compromised devices and trusted network connections to pivot, and modify router firmware or configuration to maintain persistent, long\u2011term access.",
+        "affected_products": "Telecommunications backbone routers, provider edge (PE) routers, customer edge (CE) routers, and other network infrastructure devices",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
         "patch_available": "false",
         "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Follow CISA mitigations: inventory network devices, isolate management interfaces, enforce strong authentication (multifactor where possible), apply vendor firmware updates when available, restrict network management protocols, monitor for anomalous routing/configuration changes, and follow guidance in the advisory for simulation and mitigation.",
+        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor",
+        "mitigation": "Harden routers (restrict management interfaces, enforce multi\u2011factor authentication, segment networks, apply least\u2011privilege), monitor for unauthorized configuration changes and anomalous traffic, inventory and isolate compromised devices, apply vendor updates where available, and follow the detailed simulation and mitigation guidance in the CISA advisory.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -270,16 +270,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Unit 26165 employed spear\u2011phishing (malicious attachments and credential phishing), exploitation of internet\u2011facing services (including VPNs and CVE\u20112023\u201123397 in Outlook, CVE\u20112023\u201138831 in WinRAR, CVE\u20112020\u201112641/35730 in Roundcube), credential\u2011guessing, and abuse of IP\u2011camera/SOHO device interfaces. Exploitation of Outlook's NTLM exposure allowed remote code execution, while WinRAR archive parsing and Roundcube webmail flaws enabled RCE/XSS. After compromise, actors harvested credentials, exfiltrated AD data, created scheduled tasks, and deployed malware such as HEADLACE and MASEPIE.",
-        "affected_products": "Microsoft Outlook (CVE-2023-23397), WinRAR (CVE-2023-38831), Roundcube Webmail (CVE-2020-12641, CVE-2020-35730), VPN/remote\u2011access infrastructure, IP cameras and SOHO devices",
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
-        "threat_actors": "GRU unit 26165 (Russian General Staff Main Intelligence Directorate), tracked as APT28, Fancy Bear, Forest Blizzard, Blue Delta",
-        "mitigation": "Apply vendor patches for all referenced CVEs; harden email by disabling NTLM and SMBv1; enforce MFA and strong passwords; segment networks and apply least\u2011privilege controls; monitor for IOCs such as wevtutil, vssadmin, schtasks; audit and secure IP cameras (change default credentials, restrict RTSP, enable logging); deploy detection rules/YARA signatures provided in the advisory.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "threat_actors": "GRU 85th Main Special Service Center (85th GTsSS), military unit 26165 (Russian GRU)",
+        "mitigation": "Follow CISA advisory guidance and general hardening for targeted organizations (logistics, IT firms) \u2014 specific mitigation steps in vendor/CISA advisory.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
     {
@@ -299,11 +299,11 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-23879",
-      "title": "py7zr: Arbitrary File Write Vulnerability",
-      "summary": "### Summary\nThere exists an **arbitrary file write vulnerability** in `py7zr` (1.1.0, latest), which allows symbolic links to be recreated outside the destination directory via crafted malicious symbolic link chains. When using `extractall` to extract an archive, the library restores these symbolic links, linking them to arbitrary directories on the host file system. Subsequent extraction of regular files through these symbolic links can result in arbitrary file writes. This vulnerability may lead to remote code execution, privilege escalation, data corruption, or denial of service.\n\n### Details\nThe root cause of this vulnerability is that `py7zr` fails to properly restrict the targets of symbolic links within an archive. During extraction, the program only checks the link arcname within the destination directory, but ignores the combined symlink path resolution. Attackers can exploit this vulnerability by constructing malicious archives, thereby bypassing the directory boundary restrictions implemented by the extractor.\n\n<img width=\"1806\" height=\"834\" alt=\"image\" src=\"https://github.com/user-attachments/assets/cdd27ddb-ba79-4b20-b8b9-21f3e16a6e8b\" />\n\n\n### PoC\n#### **Construct PoC Archive File**\nThe following pseudo-code illustrates the vulnerable logic.\n\n```python\ndef create_sevenz_exp(output_dir: str):\n    filename = \"archive.7z\"\n    file_path = output_dir + filename\n    with py7zr.SevenZipFile(file_path, 'w') as archive:\n        archive.writestr(\"Some Text\", \"dir0/someFile.txt\")\n        add_symlink(archive, \"dir1\", \"dir0/..\")\n        add_symlink(archive, \"dir2\", \"dir1/..\")\n        add_symlink(archive, \"dir3\", \"dir2/..\")\n        add_symlink(archive, \"dir4\", \"dir3/..\")\n        add_symlink(archive, \"dir5\", \"dir4/..\")\n        add_symlink(archive, \"dir6\", \"dir5/..\")\n        add_symlink(archive, \"dir7\", \"dir6/..\")\n        add_symlink(archive, \"dir8\", \"dir7/..\")\n        add_symlink(archive, \"myTmp\", \"dir8/tmp\")\n        archive.writestr(\"Malicious Text\\n\", \"myTmp/poc.tx",
-      "link": "https://github.com/advisories/GHSA-q6rc-2cgv-63h7",
-      "published": "2026-06-19T19:21:57Z",
+      "id": "CVE-2026-55877",
+      "title": "symfony/ux-icons: XSS via unsanitized SVG content in local files and Iconify on-demand responses",
+      "summary": "### Description\n\nThe `ux_icon()` Twig function is marked `is_safe=['html']`, so Twig never escapes its output. `Icon::toHtml()` inlines the SVG source verbatim into the page. Browsers execute `<script>` elements and `on*` event-handler attributes found inside inline SVG, making any unsanitized icon a vector for cross-site scripting.\n\nTwo code paths were affected. In the local file path, `Icon::fromFile()` only stripped `<script>` elements that were direct children of `<svg>`, leaving nested scripts and all `on*` attributes untouched despite a code comment claiming broader protection. In the Iconify on-demand path (enabled by default), the remote JSON `body` field was wrapped into an `Icon` object with no sanitization at all. Concrete attack vectors include a malicious SVG icon pack from a third-party theme or downloaded icon set, or a controlled Iconify endpoint configured via `iconify.endpoint` (including a poisoned cache).\n\n### Resolution\n\nIntroducing an `IconFactory` that centralizes sanitization across every icon source before an `Icon` object is created. The sanitizer removes script-capable elements (`script`, `foreignObject`, `iframe`, `object`, `embed`), SMIL animations targeting `on*`, `href`, or `xlink:href` attributes, CDATA sections, processing instructions, all `on*` attributes, and `javascript:`, `vbscript:`, and `data:text/html` URL schemes. \n`<style>` elements are kept for theming but have any handlers stripped. Icons that contain none of these constructs are byte-for-byte identical after sanitization. \n\n### Credits\n\nSymfony would like to thank Pascal Cescon for reporting the issue and Hugo Alliaume for providing the fix.",
+      "link": "https://github.com/advisories/GHSA-6v8j-33hc-mv84",
+      "published": "2026-06-19T21:42:15Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -311,7 +311,349 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-23879"
+        "CVE-2026-55877"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55776",
+      "title": "OpenBao: Transit secrets engine crashes on key creation with `derived: true` for asymmetric key types",
+      "summary": "On OpenBao 2.5.4 and 2.5.2(and likely earlier versions also), an authenticated caller with write access to `transit/keys/*` can crash the OpenBao server by issuing a single key-creation request that combines an asymmetric `type` (`rsa-*`, `ecdsa-*`, `ed25519`)\nwith `derived: true`. The server returns no HTTP response and the process terminates (exit code 2). This is a remote, low-complexity denial-of-service against the OpenBao server.\n\n\nMount the transit engine:\n\n     `curl -sS -X POST -H \"X-Vault-Token: root\" \\\n       -d '{\"type\":\"transit\"}' \\\n       http://127.0.0.1:8200/v1/sys/mounts/transit`\n\nTrigger the crash:\n\n     `curl -sS -w '\\nHTTP %{http_code}\\n' -X POST \\\n       -H \"X-Vault-Token: root\" \\\n       -H \"Content-Type: application/json\" \\\n       -d '{\"type\":\"rsa-2048\",\"derived\":true,\"exportable\":true,\"deletion_allowed\":false}' \\\n       http://127.0.0.1:8200/v1/transit/keys/some-key-name`\n\nYou can try with both JSON or HCL It will crash the entire cluster.\n\n  Observed:\n     HTTP 000\n     curl: (52) Empty reply from server\n\n     $ docker ps -a --filter name=openbao\n     STATUS: Exited (2)\n\nRoot Cause (Hypothesis)\nKey-derivation paths in the transit engine appear to assume a symmetric key shape (a derivable key context). When `derived: true` is supplied alongside an asymmetric `type`, the creation path likely panics on a missing derived-key field or\n  invalid type assertion rather than returning a structured validation error. Maintainers should confirm against the transit `policy.go` / key-creation path.\n\nSuggested fix:\nValidate the (`type`, `derived`) combination at the top of the create-key handler. Reject with a 400 if `derived: true` is set on any non-symmetric type (i.e. anything other than aes128-gcm96, aes256-gcm96, chacha20-poly1305,\nxchacha20-poly1305). Do this before any code path that may panic on missing derived-key state.",
+      "link": "https://github.com/advisories/GHSA-8w8f-r2xv-4q4j",
+      "published": "2026-06-19T21:42:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55776"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55774",
+      "title": "OpenBao: Cross-namespace lease revocation/renewal via canonical sys/leases/{revoke,renew} \u2014 incomplete fix of CVE-2026-45808",
+      "summary": "### Summary\n\nOpenBao users with access to the `sys/leases/revoke/:lease_id` endpoint in any namespace can revoke leases in any other namespace as long as the lease identifier is known to them, bypassing ACLs that should apply for cross-namespace revocations.\n\n### Impact\n\nOpenBao's namespaces provide multi-tenant separation. A tenant who intentionally leaks lease identifiers can have their lease and underlying credential revoked by a user in another tenant.\n\n### Patch\n\nThis will be fixed in OpenBao v2.5.5.\n\n### References\n\nThis vulnerability is similar to but distinct from:\n\n- CVE-2026-45808 / GHSA-v8v8-cm84-m686\n- CVE-2026-40264 / GHSA-p49j-v9wc-wg57",
+      "link": "https://github.com/advisories/GHSA-c36x-h252-g9x2",
+      "published": "2026-06-19T21:42:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55774"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55770",
+      "title": "OpenBao: LDAPi ldaputil (wrong escape func)",
+      "summary": "## 1. Description\n\n### Component\n\n`sdk/helper/ldaputil/client.go` \u2014 the shared LDAP utility library used by both the LDAP authentication backend and OpenLDAP secrets engine to construct LDAP search filters and bind DNs.\n\n### Root Cause\n\nThe LDAP utility contains a **function selection error** that causes incorrect escaping of user-controlled input in LDAP filter construction. Two lines construct the `bindDN` using `EscapeLDAPValue()`:\n\n```go\n// Line 191 \u2014 UPN Domain path\nbindDN = fmt.Sprintf(\"%s@%s\", EscapeLDAPValue(username), cfg.UPNDomain)\n\n// Line 193 \u2014 User DN path\nbindDN = fmt.Sprintf(\"%s=%s,%s\", cfg.UserAttr, EscapeLDAPValue(username), cfg.UserDN)\n```\n\nThe problem: `EscapeLDAPValue()` implements **RFC 4514** escaping, which is designed for Distinguished Name (DN) components. It only escapes characters meaningful in DNs: `+`, `,`, `;`, `\"`, `\\`, `<`, `>`, and leading/trailing spaces.\n\nLDAP **search filters** (RFC 4515) have a different set of special characters: `*`, `(`, `)`, `\\`, and NUL (`\\x00`). None of these are escaped by `EscapeLDAPValue()`. The correct function is `ldap.EscapeFilter()` from the `github.com/go-ldap/ldap/v3` package.\n\nThe irony: the same file uses `ldap.EscapeFilter()` correctly at lines 225-226 in `RenderUserSearchFilter()` for the `UserFilter` template path, but the `GetUserDN()` function at lines 191-193 uses the wrong escape function.\n\n### Exploitation Mechanics\n\n```\nUsername: alice)(objectClass=*\n\u2193 EscapeLDAPValue (no-op \u2014 no DN special chars)\nalice)(objectClass=*\n\u2193 fmt.Sprintf(\"(&(objectClass=user)(sAMAccountName=%s))\", escapedUsername)\n(&(objectClass=user)(sAMAccountName=alice)(objectClass=*))\n                              ^^ injection point\n```\n\nThe filter `(&(objectClass=user)(sAMAccountName=alice)(objectClass=*))` is logically equivalent to:\n- `sAMAccountName=alice` AND `objectClass=user` AND `objectClass=*`\n\nSince all entries match `objectClass=*`, the filter matches **any user entry** where `sAMAccountName` is `alice`, effecti",
+      "link": "https://github.com/advisories/GHSA-6mwx-4547-5vc9",
+      "published": "2026-06-19T21:42:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55770"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55692",
+      "title": "StarCitizenWiki Extension Embed Video: Stored XSS via malformed src url with $wgEmbedVideoRequireConsent enabled",
+      "summary": "### Summary\nWith $wgEmbedVideoRequireConsent enabled (the default), the urls for videos are stored in a json-ified data attribute`data-mw-iframeconfig`. When given a malformed url or id, the data-mw-iframeconfig attribute can be escaped via single quotes, allowing for html/javascript injection.\n\n### Details\nThe sprintf [here](https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo/blob/a573a16d925ee0ea0d34b360856dc8ab0b88f822/includes/EmbedService/EmbedHtmlFormatter.php#L115-L120) adds the iframe config encoded as JSON [here](https://github.com/StarCitizenWiki/mediawiki-extensions-EmbedVideo/blob/a573a16d925ee0ea0d34b360856dc8ab0b88f822/includes/EmbedService/AbstractEmbedService.php#L518). When given a malicious url or id with a single quote, the `$this->getUrl()` call returns an unescaped payload that terminates the data-mw-iframeconfig attribute and allows for injecting attributes, including handlers, into the figure element. The id regex for the `archiveorg` service and the url regexes for the `wistia` and `sharepoint` services allow for single quotes to be introduced.\n\n### PoC\nA couple of examples across services\n```\nInput:\n<embedvideo service=\"archiveorg\" id=\"x' onmouseover='alert(document.domain)' data-x='\"></embedvideo>\n\nRenders:\n<figure class=\"embedvideo\" data-service=\"archiveorg\" data-mw-iframeconfig=\"{&quot;src&quot;:&quot;//archive.org/embed/x\" onmouseover=\"alert(document.domain)\" data-x=\"?autoplay=1&quot;}\" style=\"width:640px\">\n<div class=\"embedvideo-wrapper\" style=\"height:493px\"><div class=\"embedvideo-consent\" data-show-privacy-notice=\"1\">\n...\n</div>\n</figure>\n```\n\n```\nInput:\n{{#ev:wistia|https://wistia.com/medias/x'onmouseover='alert(document.domain)'}}\n\nRenders:\n<figure class=\"embedvideo\" data-service=\"wistia\" data-mw-iframeconfig=\"{&quot;src&quot;:&quot;//fast.wistia.net/embed/iframe/x\" onmouseover=\"alert(document.domain)\" ?autoplay=\"1&quot;}'\" style=\"width:640px\">\n<div class=\"embedvideo-wrapper\" style=\"height:360px\"><div class=\"embedvideo",
+      "link": "https://github.com/advisories/GHSA-5c7p-g73q-rpg5",
+      "published": "2026-06-19T21:41:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55692"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55447",
+      "title": "Langflow: BaseFileComponent-based nodes arbitrary file read with RCE exploit",
+      "summary": "### Summary\nAll components based on `BaseFileComponent` are vulnerable to the following vulnerability:\n1. Docling (`DoclingInlineComponent`)\n2. Docling Serve (`DoclingRemoteComponent`)\n3. Read File (`FileComponent`)\n4. NVIDIA Retriever Extraction (`NvidiaIngestComponent`)\n5. Video File (`VideoFileComponent`)\n6. Unstructured API (`UnstructuredComponent`)\n\nFor clarity, from now on I'll only refer to Read File component.\n\nThe Read File node processes user-controlled files.\nExample scenario is a RAG chatbot - a system that allows users of an organization to ask questions about documents saved in the organizations.\n\nBy controlling a files that are digested into the RAG, an attacker can direct the node to read *any* file on the file-system by absolute path.\n\nUsing this vulnerability an attacker can acheive RCE:\n1. Upload a file that directs the node to read Langflow's `secret_key` file containing the JWT token secret.\n2. This would allow the attacker then to simply task the Chatbot for the JWT secret.\n3. Using this secret, the attacker then crafts a JWT token for any user-id, bypassing authentication.\n4. Code execution is then trivial - simply create a new flow with \"Python Interpreter\" node, fill it with arbitrary Python code and execute it.\n\nTested on commit 2d67402b1dbaefcbce85a244d4a6cd5e4bda1cfe\n\n### Details\nThe vulnerability is in:\n`langflow/src/lfx/src/lfx/base/data/base_file.py`\nSpecifically in `_unpack_bundle`. This function extracts tar files, which can contain a symlink.\nThis symlink can point to any file in the filesystem. Then, in `self.process_files()`, the file pointed by the symlink will be parsed and saved into the RAG.\nThis can be done with unlimited number of symlinks in the same tar which can also be useful in some scenarios.\n\nSuggestd fix - iterate over the files and make sure all are regular files or directories.\n\n\n### PoC\nReproduction:\n1. Create a flow with Read File (or any other affected components), and connect its output to some storage such as ",
+      "link": "https://github.com/advisories/GHSA-ccv6-r384-xp75",
+      "published": "2026-06-19T21:18:24Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55447"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55446",
+      "title": "Langflow: Unauthenticated DoS through multipart form boundary file upload",
+      "summary": "### Summary\nAn attacker can send a `/api/v1/files/upload/` request without any authentication token/cookies and abuse a very long multipart form boundary to make the langflow app unusable for all users for an indefinite amount of time. \n\n### Details\nhttps://github.com/langflow-ai/langflow/blob/v1.0.18/src/backend/base/langflow/api/v1/files.py#L40\n\nThe file upload function will try to process the multipart form data even if it is malformed and contains a payload such as an extremely large amount of hyphens after the boundary. It also does not do the authentication check before trying to process this data so an unauthenticated attacker can perform this as well as authenticated users. \n\nAdditionally, an attacker doesn't even need to know a valid UUID of a flow to send this request because the server will still try to process the large boundary even with any random value in place of the flow ID. \n\n### PoC\n\nAn attacker makes this request to upload a file without valid authentication information or a valid flow ID: \n\n```\nPOST /api/v1/files/upload/test HTTP/1.1\nHost: 127.0.0.1:7860\nContent-Length: 3000192\nAccept-Language: en-US,en;q=0.9\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36\nContent-Type: multipart/form-data; boundary=----WebKitFormBoundaryorGBAKSkv5wR6WqJ\nAccept: application/json, text/plain, */*\nOrigin: http://127.0.0.1:7860\nAccept-Encoding: gzip, deflate, br\nConnection: keep-alive\n\n------WebKitFormBoundaryorGBAKSkv5wR6WqJ\nContent-Disposition: form-data; name=\"file\"; filename=\"dos.txt\"\nContent-Type: text/plain\n\nDoS in progress!\n\n------WebKitFormBoundaryorGBAKSkv5wR6WqJ------------<insert a large amount of hyphens such as 1,000,000>\n```\n\nHere is the request in python: \n\n```python\nimport requests\n\nurl = \"http://127.0.0.1:7860/api/v1/files/upload/test\"\n\nheaders = {\n    \"Content-Type\": \"multipart/form-data; boundary=---------------------------WebKitFormBoundaryorGBAKSkv5wR6WqJ\"\n}\n\ndata ",
+      "link": "https://github.com/advisories/GHSA-qwqc-p3q8-wcg9",
+      "published": "2026-06-19T21:17:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55446"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55423",
+      "title": "Langflow: Logout button does not clear session",
+      "summary": "### Summary\nThe logout button does not clear the session. The previous user stays logged in unless another user explicitly logs in.\n\n### Details\nNot in auto login mode. Hosted on localhost. `access_token_lf` remains present in both Local Storage and Cookies. `refresh_token_lf` remains present in Cookies.\n\n**Root cause:** the `/logout` endpoint deleted the authentication cookies without matching the original `httponly`/`samesite`/`secure`/`domain` parameters, so the browser kept them; additionally the frontend did not clear the auth cookies on logout.\n\n```\nLANGFLOW_AUTO_LOGIN: \"False\"\nLANGFLOW_SUPERUSER: <set>\nLANGFLOW_SUPERUSER_PASSWORD: <set>\nLANGFLOW_SECRET_KEY: <set>\nLANGFLOW_NEW_USER_IS_ACTIVE: \"False\"\nLANGFLOW_ENABLE_SUPERUSER_CLI: \"False\"\n```\n\n### PoC\nClick Logout. Hit refresh to return to previous screen.\n\n### Impact\nUsers on shared computers may falsely believe they have terminated their session.\n\n### Patches\nFixed in **1.7.0** (PRs #10527 and #10528). The logout endpoint now deletes the auth cookies using the same parameters they were created with, and the frontend clears the auth cookies on logout. Upgrade to **1.7.0 or later**.",
+      "link": "https://github.com/advisories/GHSA-7hw8-6q6r-4276",
+      "published": "2026-06-19T21:17:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55423"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55187",
+      "title": "Mailpit: Incomplete SSRF protection in Link Check API via IPv6 transition mechanisms",
+      "summary": "## Summary\n\nThe remediation shipped in mailpit v1.29.2 for [GHSA-mpf7-p9x7-96r3](https://github.com/axllent/mailpit/security/advisories/GHSA-mpf7-p9x7-96r3) (CVE-2026-27808) is incomplete. The `tools.IsInternalIP` deny-list relies on Go's stdlib classification helpers (`IsLoopback`, `IsPrivate`, `IsLinkLocalUnicast`, `IsLinkLocalMulticast`, `IsUnspecified`, `IsMulticast`) plus an inline CGNAT range, but those helpers do **not** match two classes of IPv6 address that should be blocked for SSRF purposes:\n\n1. **IPv6 forms that embed an IPv4 destination via documented translation mechanisms** \u2014 6to4, NAT64, IPv4-compatible IPv6, ISATAP, or (in older Go versions) IPv4-mapped IPv6. These let an attacker reach internal IPv4 destinations by supplying an IPv6 literal that encodes the desired IPv4.\n\n2. **IPv6 prefixes that fall outside the narrow private/loopback/link-local ranges Go's stdlib classifies** \u2014 specifically the deprecated site-local prefix `fec0::/10` (RFC 3879/4291) and the documentation prefix `2001:db8::/32` (RFC 3849). The first is still routable on dual-stack hosts and is cited as a bypass form in [CVE-2026-44430](https://advisories.gitlab.com/golang/github.com/modelcontextprotocol/registry/CVE-2026-44430/); the second should never appear in real network traffic and is safe to block as fail-safe behavior.\n\nTogether these gaps let the Link Check API be coerced into dialing internal destinations that the v1.29.2 fix was intended to block.\n\nThis is the same bug class as [GHSA-56c3-vfp2-5qqj / CVE-2026-44430 (MCP Registry)](https://advisories.gitlab.com/golang/github.com/modelcontextprotocol/registry/CVE-2026-44430/) and [GHSA-86m8-88fq-xfxp / CVE-2026-45741 (Gotenberg)](https://advisories.gitlab.com/golang/github.com/gotenberg/gotenberg/v8/CVE-2026-45741/) \u2014 projects that, like mailpit, built their SSRF deny-list around Go's stdlib `Is*` family and discovered the resulting bypass post-disclosure.\n\nThe underlying ecosystem-wide issue is tracked upstream at [**go",
+      "link": "https://github.com/advisories/GHSA-w4mc-hhc6-xp28",
+      "published": "2026-06-19T21:16:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55187"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54762",
+      "title": "Traefik Kubernetes Ingress NGINX provider fails open when auth-secret resolution fails",
+      "summary": "## Summary\n\nThere is a medium severity vulnerability in Traefik's Kubernetes Ingress NGINX provider that causes affected routes to fail open. When an Ingress explicitly enables BasicAuth or DigestAuth through the supported `nginx.ingress.kubernetes.io/auth-type` and `auth-secret` annotations, but the referenced auth Secret cannot be resolved or parsed, Traefik logs the resolution error, skips installing the authentication middleware, and still emits a router to the backend service. A route that operators intended to protect is therefore published to the data plane without its authentication control, allowing unauthenticated access to the backend. The trigger is an invalid or unresolved auth dependency \u2014 a missing, malformed, unreadable, or policy-denied Secret \u2014 rather than an intentionally unprotected route.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.5\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\n\nTraefik's Kubernetes Ingress NGINX provider can fail open for routes that explicitly configure BasicAuth or DigestAuth through supported ingress-nginx annotations.\n\nWhen an Ingress contains `nginx.ingress.kubernetes.io/auth-type: basic` or `digest`, but the referenced `nginx.ingress.kubernetes.io/auth-secret` cannot be resolved or parsed, Traefik logs the auth resolution error, skips installing the BasicAuth/DigestAuth middleware, and still emits a router to the backend service.\n\nThis can expose a route that operators intended to protect. The issue is not that an invalid Secret exists; the issue is that an explicitly auth-protected Ingress location is translated into a live backend route where the authentication control is removed from the generated data-plane configuration, with only a controller log entry, instead of failing closed.\n\nTested affected versions:\n\n- Current `master",
+      "link": "https://github.com/advisories/GHSA-4mr2-fg2p-w63c",
+      "published": "2026-06-19T21:15:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54762"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55837",
+      "title": "dbt MCP Server: Unauthenticated OAuth Context Endpoint Leaks dbt Platform Tokens",
+      "summary": "## Unauthenticated OAuth Context Endpoint Leaks dbt Platform Tokens\n\n### Summary\n\nThe local OAuth helper FastAPI server bundled with `dbt-mcp` exposes the `GET /dbt_platform_context` endpoint without any form of authentication or host-origin validation. After a user completes the OAuth login flow against dbt Cloud (cloud.getdbt.com), the endpoint returns the full `DbtPlatformContext` object \u2014 including the victim's `access_token` and `refresh_token` for the dbt Platform API \u2014 verbatim to any caller that can reach `127.0.0.1:6785`. An attacker who can direct the victim's browser to the helper origin via DNS rebinding, or who has co-located process access on the same host, can silently exfiltrate both tokens. The stolen bearer token grants full dbt Cloud API access as the victim; the refresh token enables persistent access beyond the original token's expiry. **CVSS Base Score: 8.0 (High).**\n\n### Details\n\nDuring the OAuth login flow, `dbt-mcp` launches an embedded FastAPI server (the \"OAuth helper\") bound to `127.0.0.1` starting on port `6785` (configured at `src/dbt_mcp/config/credentials.py:34`, `OAUTH_REDIRECT_STARTING_PORT = 6785`). After the OAuth callback is handled, the helper persists the full token context to disk and continues serving requests.\n\n**Data flow from source to sink:**\n\n1. **Source** \u2014 `src/dbt_mcp/oauth/fastapi_app.py:106`: The OAuth callback receives `token_response` from the dbt Platform authorization server.\n2. `src/dbt_mcp/oauth/dbt_platform.py:60`: `AccessTokenResponse(**token_response)` stores `access_token` and `refresh_token` as plaintext fields.\n3. `src/dbt_mcp/oauth/dbt_platform.py:64\u201369`: The `AccessTokenResponse` is embedded inside `DecodedAccessToken`, which is in turn embedded inside `DbtPlatformContext`.\n4. `src/dbt_mcp/oauth/fastapi_app.py:114`: The fully token-bearing `DbtPlatformContext` object is passed to `context_manager` for persistence.\n5. **Persistence sink** \u2014 `src/dbt_mcp/oauth/context_manager.py:63\u201364`: `yaml.dump(contex",
+      "link": "https://github.com/advisories/GHSA-jr33-mw75-7j8f",
+      "published": "2026-06-19T21:15:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55837"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55791",
+      "title": "Craft CMS: Blind SSRF and Arbitrary JavaScript Injection via Host Header Poisoning in actionResourceJs",
+      "summary": "**1. Overview**\n\nCraft CMS is vulnerable to Server-Side Request Forgery (SSRF) and Arbitrary JavaScript Injection through the `/actions/app/resource-js` endpoint. By exploiting the default permissive `trustedHosts` configuration, an attacker can poison the `Host` or `X-Forwarded-Host` header to manipulate the application\u2019s `$baseUrl`. This bypasses the endpoint\u2019s internal URL validation, forcing the backend Guzzle client to fetch a malicious payload from an attacker-controlled server and reflect it to the client with a `Content-Type: application/javascript` header.\n\n**2. Vulnerability Mechanism (Root Cause)**\nThe vulnerability manifests when `assetManager.cacheSourcePaths` is set to `false`. The attack chain relies on three structural flaws and insecure defaults:\n\n- **A. Default Proxy Trust (`trustedHosts`):** Craft\u2019s default `GeneralConfig::$trustedHosts` is set to `['any']`. This allows an attacker to bypass front-end web server (Nginx/Apache) strict `Host` header validations by simply injecting an `X-Forwarded-Host` header. Yii2 will parse this and globally set `$baseUrl` to the attacker's domain.\n- **B. Insecure HTTP Client (`actionResourceJs`):** In `AppController::actionResourceJs()`, the `str_starts_with($url, $baseUrl)` validation is bypassed because `$baseUrl` is already poisoned by the attacker. The core then uses `Craft::createGuzzleClient()->get($url)`. Unlike the GraphQL Asset fetcher, this Guzzle instance defaults to `ALLOW_REDIRECTS => true`.\n- **C. Forced JS Content-Type:** The response fetched from the attacker's server is blindly returned to the user via `$this->asRaw()` with the header `Content-Type: application/javascript`.\n\n**3. Attack Scenario & Impact (Proof of Exploitability)**\nThis endpoint acts as a proxy, taking remote, unverified content and serving it as valid JavaScript. While the direct SSRF allows for internal network probing, the most devastating impact occurs when caching layers are involved.\n\nIf the Craft CMS instance is behind a c",
+      "link": "https://github.com/advisories/GHSA-c55v-343g-5xff",
+      "published": "2026-06-19T21:15:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55791"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54074",
+      "title": "@tinacms/cli: Remote Code Execution in @tinacms/cli via Forestry migration \u2014 unsanitised __TINA_INTERNAL__ marker in user-controlled YAML labels",
+      "summary": "## Description\n\n### Summary\n\n`@tinacms/cli` contains a Remote Code Execution vulnerability in its\nForestry-to-Tina migration command. The internal helper `addVariablesToCode`\nunquotes any value matching the marker `\"__TINA_INTERNAL__:::(.*?):::\"`\ninside the stringified collection JSON. User-supplied `label` and `name`\nfields from `.forestry/**/*.yml` are placed into that JSON without any\nsanitisation. An attacker who controls a Forestry-style project can therefore\ninject arbitrary JavaScript into the generated `tina/templates.{ts,js}`\nfile. The injected code is written at module top level, so it executes\n**the moment the developer runs `tinacms dev` or `tinacms build`**, with the\ndeveloper's privileges.\n\n### Details\n\n**Vulnerable code path:**\n\n1. `packages/@tinacms/cli/src/cmds/forestry-migrate/util/index.ts`\n   \u2014 `transformForestryFieldsToTinaFields()` writes `forestryField.label`\n   (and `.name`) straight into TinaField objects (no sanitisation).\n2. `packages/@tinacms/cli/src/cmds/forestry-migrate/util/codeTransformer.ts`,\n   lines 16-22 \u2014 the regex-based unquoter:\n\n   ```ts\n   export const addVariablesToCode = (codeWithTinaPrefix: string) => {\n     const code = codeWithTinaPrefix.replace(\n       /\"__TINA_INTERNAL__:::(.*?):::\"/g,\n       '$1'\n     );\n     return { code };\n   };\n   ```\n\n3. `codeTransformer.ts` lines 80-88 \u2014 the field array is\n   `JSON.stringify`-ed and then handed to `addVariablesToCode`. Because\n   `JSON.stringify` does **not** escape single quotes or backticks, an\n   attacker who avoids `\"` in the payload survives the JSON pass intact.\n4. `packages/@tinacms/cli/src/cmds/init/apply.ts` lines 110-116 \u2014 the\n   resulting string is written to `tina/templates.{ts,js}` and imported by\n   the generated `tina/config.{ts,js}`, which `tinacms dev` evaluates.\n\n**Why it executes immediately:** the regex unquoting allows the attacker's\npayload to *close the surrounding object/array and the enclosing\n`xxxFields()` function*, drop a top-level IIFE, and then star",
+      "link": "https://github.com/advisories/GHSA-4936-9hrh-qqpw",
+      "published": "2026-06-19T21:15:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54074"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-11769",
+      "title": "Grafana Operator: Privilege escalation from namespace admin to cluster admin via GrafanaDashboard jsonnetLib fileName",
+      "summary": "We have released version 5.24.0 of the Grafana Operator. This patch includes a MODERATE severity security fix for a path traversal/privilege escalation vulnerability in the Grafana Operator.\n\n\n### Summary\n\nThe Grafana Operator supports loading dashboards & library panels using the jsonnet data templating language. The jsonnet expression is evaluated in the context of the operator manager pod.\n### Impact\n\nIt is possible for a malicious user who can create `Dashboard` or `LibraryPanel` resources for a `Grafana` instance to obtain the Kubernetes service account token of the Grafana Operator manager.\n\n### Affected versions\n\nAll Grafana Operator versions <= 5.23\n\n### Solutions and mitigations\n\nAll installations should be upgraded as soon as possible.\n\nAs a workaround, the following ValidatingAdmissionPolicy prevent the creation or modification of jsonnet based resources:\n```\napiVersion: admissionregistration.k8s.io/v1\nkind: ValidatingAdmissionPolicy\nmetadata:\n  name: \"prevent-jsonnet-dashboards\"\nspec:\n  failurePolicy: Fail\n  matchConstraints:\n    resourceRules:\n      - apiGroups: [\"grafana.integreatly.org\"]\n        apiVersions: [\"v1beta1\"]\n        operations: [\"CREATE\", \"UPDATE\"]\n        resources: [\"grafanadashboards\", \"grafanalibrarypanels\"]\n  validations:\n    - expression: \"!has(object.spec.jsonnetLib)\"\n---\napiVersion: admissionregistration.k8s.io/v1\nkind: ValidatingAdmissionPolicyBinding\nmetadata:\n  name: \"prevent-jsonnet-dashboards-clusterwide\"\nspec:\n  policyName: \"prevent-jsonnet-dashboards\"\n  validationActions: [Deny]\n```\n\n\n### Acknowledgement\n\nWe would like to thank [Artem Cherezov](https://github.com/cherez0ff) for responsibly disclosing the vulnerability.",
+      "link": "https://github.com/advisories/GHSA-fcw4-wwqm-m8cf",
+      "published": "2026-06-19T20:51:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-11769"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55849",
+      "title": "@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument",
+      "summary": "## Summary\nA command injection vulnerability exists in `@cyclonedx/cyclonedx-npm` when the CLI is invoked with the `--workspace <value>` option while the environment variable `npm_execpath` is unset or empty.  \nUser\u2011supplied `--workspace` values are passed to a subshell without proper sanitization, enabling attackers to inject arbitrary OS commands.  \nThis issue corresponds to **CWE\u201178**: Improper Neutralization of Special Elements used in an OS Command.\n\nThe vulnerability was fixed in version [5.0.0][v5.0.0].\n\n## Vulnerability Details\n\nWhen `cyclonedx-npm` is executed with the `--workspace` option, the provided argument is incorporated into an internal shell command.  \nIf the environment variable `npm_execpath` is set, the tool uses the npm executable directly and no injection occurs.  \nHowever, when `npm_execpath` is unset or empty, the tool falls back to spawning a subshell and interpolating the `--workspace` value directly into the command string without proper escaping or neutralization.\n\nAs a result, specially crafted workspace names can break out of the intended command context and execute arbitrary commands with the privileges of the invoking user.\n\n## Impact\n\nAn attacker who can influence the value passed to `--workspace` can execute arbitrary OS commands.  \nThis may lead to:\n\n* Arbitrary command execution\n* Data exfiltration\n* Local privilege escalation (depending on how the tool is used)\n* Modification or destruction of files accessible to the user running the CLI\n\nThe vulnerability affects only scenarios where:\n* The user invokes `cyclonedx-npm` with `--workspace <value>`, and\n* The environment variable `npm_execpath` is unset or empty\n\n## Exploitation Conditions (High\u2011Level)\n\nExploitation requires the attacker to supply or influence the `--workspace` value passed to the CLI.  \nIf the tool falls back to its subshell execution path, specially crafted workspace identifiers can cause unintended command execution.  \nNo exploit code is included here to avoid ",
+      "link": "https://github.com/advisories/GHSA-v75r-vx73-82pj",
+      "published": "2026-06-19T20:47:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55849"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54906",
+      "title": "Concurrent Ruby: ReadWriteLock allows wrong-thread write release and stray read-release counter corruption",
+      "summary": "### Summary\n`Concurrent::ReadWriteLock#release_write_lock` does not verify that the calling thread acquired the write lock. Any thread with access to the lock object can release an active write lock held by another thread. A second writer can then enter its critical section while the first writer is still running.\n\n`Concurrent::ReadWriteLock#release_read_lock` also decrements the shared counter even when no read lock is held. Calling it on a fresh lock changes the counter from `0` to `-1`, after which normal read acquisition raises `Concurrent::ResourceLimitError`.\n\nThis is a synchronization correctness issue in the public `Concurrent::ReadWriteLock` API. It should not be framed as an authorization bypass; the lock is an in-process concurrency primitive, not an access-control boundary.\n\n###  Version\nSoftware: concurrent-ruby\nVersion: 1.3.6\nCommit: 7a1b78941c081106c20a9ca0144ac73a48d254ab\n\n### Details\n\n`release_write_lock` checks only whether the global counter indicates that a writer is running. It does not track or verify ownership:\n\n```ruby\ndef release_write_lock\n  return true unless running_writer?\n  c = @Counter.update { |counter| counter - RUNNING_WRITER }\n  @ReadLock.broadcast\n  @WriteLock.signal if waiting_writers(c) > 0\n  true\nend\n```\n\nBecause ownership is not checked, a different thread can clear the `RUNNING_WRITER` bit while the original writer is still inside its critical section. Another writer can then acquire the write lock and run concurrently with the first writer.\n\n`release_read_lock` unconditionally decrements the shared counter:\n\n```ruby\ndef release_read_lock\n  while true\n    c = @Counter.value\n    if @Counter.compare_and_set(c, c-1)\n      if waiting_writer?(c) && running_readers(c) == 1\n        @WriteLock.signal\n      end\n      break\n    end\n  end\n  true\nend\n```\n\nOn a fresh lock, this changes the counter from `0` to `-1`. A later `acquire_read_lock` raises `Concurrent::ResourceLimitError` because the maximum-reader check masks the negative count",
+      "link": "https://github.com/advisories/GHSA-6wx8-w4f5-wwcr",
+      "published": "2026-06-19T20:47:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54906"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54905",
+      "title": "Concurrent Ruby: `ReentrantReadWriteLock` read-count overflow grants a write lock without exclusivity",
+      "summary": "### Summary\n`Concurrent::ReentrantReadWriteLock` can incorrectly grant a write lock after one thread acquires the read lock 32,768 times.\n\nThe lock stores a thread's local read and write hold counts in one integer. The low 15 bits are used for the read hold count, and bit 15 is used as `WRITE_LOCK_HELD`. After 32,768 reentrant read acquisitions, the local read count crosses into the write-lock bit. `try_write_lock` then treats the thread as already holding a write lock and returns `true` without setting the global `RUNNING_WRITER` bit.\n\nThis breaks the core mutual-exclusion guarantee: the caller is told it has a write lock, but other threads can still hold or acquire read locks at the same time.\n\n### Version\nSoftware: concurrent-ruby\nVersion: 1.3.6\nCommit: 7a1b78941c081106c20a9ca0144ac73a48d254ab\n\n### Details\n\nThe implementation uses a shared counter to track global readers/writers and a per-thread local counter to support reentrancy:\n\n```ruby\nREADER_BITS    = 15\nWRITER_BITS    = 14\n\nWAITING_WRITER = 1 << READER_BITS\nRUNNING_WRITER = 1 << (READER_BITS + WRITER_BITS)\nMAX_READERS    = WAITING_WRITER - 1\nMAX_WRITERS    = RUNNING_WRITER - MAX_READERS - 1\n\nWRITE_LOCK_HELD = 1 << READER_BITS\nREAD_LOCK_MASK  = WRITE_LOCK_HELD - 1\nWRITE_LOCK_MASK = MAX_WRITERS\n```\n\nWhen a thread already holds a lock, `acquire_read_lock` increments `@HeldCount`:\n\n```ruby\nif (held = @HeldCount.value) > 0\n  if held & READ_LOCK_MASK == 0\n    @Counter.update { |c| c + 1 }\n  end\n  @HeldCount.value = held + 1\n  return true\nend\n```\n\nAfter 32,768 read acquisitions, the per-thread held count becomes `32768`, which is equal to `WRITE_LOCK_HELD`. Then `try_write_lock` returns success through its \"already have a write lock\" branch:\n\n```ruby\ndef try_write_lock\n  if (held = @HeldCount.value) >= WRITE_LOCK_HELD\n    @HeldCount.value = held + WRITE_LOCK_HELD\n    return true\n  else\n    # normal global writer acquisition path\n  end\nend\n```\n\nThis branch does not set the global `RUNNING_WRITER` bit. Other thread",
+      "link": "https://github.com/advisories/GHSA-wv3x-4vxv-whpp",
+      "published": "2026-06-19T20:47:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54905"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54784",
+      "title": "CoreWCF: SPNEGO SecurityContextToken proof key wrapped without confidentiality",
+      "summary": "### Impact\nWhen the proof key recovered from the RSTR can be observed by a party that is not the legitimate client, that party can impersonate the authenticated Windows principal for the lifetime of the SCT (default ~10 hours) and decrypt or forge any subsequent WS\u2011SecureConversation traffic that uses keys derived from the SCT.\n\n#### Preconditions\nUsing security mode TransportWithMessageCredential with client credential type Windows, along with session establishment (which triggers use of WS-SecureConversation).\n\n### Patches\nFixed in CoreWCF v1.9.1\n\n### Workarounds\nEnsure communication is protected by SSL/TLS to prevent capturing of SCT negotiation handshake.",
+      "link": "https://github.com/advisories/GHSA-2288-8h3r-cqgg",
+      "published": "2026-06-19T20:47:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54784"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54774",
+      "title": "CoreWCF: SamlSerializer skips SignatureValue verification when SAML signing token is not an X.509 certificate",
+      "summary": "### Impact\nWhen a service is configured to validate SAML tokens using a method other than X.509 certificate signing, the final signature verification is skipped.\n\n#### Preconditions\nThe service is configured to authenticate using SAML tokens and an out of band token resolver (commonly the IssuerTokenResolver of IssuedTokenServiceCredential) holds a non-X.509 SecurityToken whose key identifier the attacker can reference in the assertion\u2019s `<KeyInfo>` - for example a `BinarySecretSecurityToken` representing the symmetric proof key issued by a WS-Trust symmetric-key holder-of-key STS.\n\n### Patches\nFixed in CoreWCF v1.8.1 and v1.9.1\n\n### Workarounds\nNone",
+      "link": "https://github.com/advisories/GHSA-rpj7-hr7h-w6p9",
+      "published": "2026-06-19T20:46:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54774"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54772",
+      "title": "CoreWCF: Pre-authentication infinite-loop CPU exhaustion in CoreWCF net.tcp / net.pipe / net.uds framing handshake",
+      "summary": "### Impact\nAn unauthenticated remote attacker can pin one server thread\u2011pool worker at 100 % CPU per connection. With a few connections, the CPU usage can be exhausted.\n\n#### Preconditions\nAn attacker being able to reach a service which is exposing an endpoint using one of NetTcpBinding, NetNamedPipeBinding, or UnixDomainSocketBinding.\n\n### Patches\nFixed in CoreWCF v1.8.1 and v1.9.1\n\n### Workarounds\nNone",
+      "link": "https://github.com/advisories/GHSA-p86g-xrr2-pf7c",
+      "published": "2026-06-19T20:46:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54772"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -338,186 +680,6 @@
       "is_high_severity": true
     },
     {
-      "id": "GHSA-8678-w3jw-xfc2",
-      "title": "Nokogiri: XML::Schema on JRuby allows network requests when NONET is set, bypassing CVE-2020-26247",
-      "summary": "### Summary\n\nThe `NONET` parse option, which Nokogiri turns on by default for `Nokogiri::XML::Schema` (see [CVE-2020-26247](https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-vr8q-g5c7-m54m)), was not correctly enforced on the JRuby implementation. As a result, a schema parsed with default options could still cause external resources to be fetched over the network, potentially enabling SSRF or XXE attacks.\n\nNokogiri 1.19.4 replaces the scheme denylist with an allowlist. When `NONET` is enabled, only local resources (a `file:` scheme, or a relative or absolute path with no scheme) are resolved, and every network scheme is blocked, case-insensitively. This brings the JRuby behavior in line with CRuby.\n\nOnly the JRuby implementation is affected. CRuby is not affected, because libxml2's `xmlNoNetExternalEntityLoader` blocks all network schemes at the I/O layer regardless of scheme or case.\n\n### Severity\n\nThe Nokogiri maintainers have evaluated this as low severity (CVSS 2.6, `CVSS:3.0/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:N`). It is a bypass of CVE-2020-26247, which was scored the same way.\n\n### Mitigation\n\nUpgrade to Nokogiri 1.19.4 or later.\n\nThere are no known workarounds for affected versions.\n\nThis change properly enforces `NONET` on JRuby, which is a breaking change for any code that (perhaps unknowingly) relied on the previous behavior to load network resources with default parse options. If you trust your input and want to allow external resources to be accessed over the network, you can explicitly disable `NONET`, exactly as documented for CVE-2020-26247:\n\n1. Ensure the input is trusted. Do not enable this option for untrusted input.\n2. Pass a `Nokogiri::XML::ParseOptions` with the `NONET` flag turned off:\n\n``` ruby\n# allows resources to be accessed over the network for trusted input\nschema = Nokogiri::XML::Schema.new(trusted_schema, Nokogiri::XML::ParseOptions.new.nononet)\n```\n\n### References\n\n- Bypass of: https://github.com/sparklemotion/nokogiri/",
-      "link": "https://github.com/advisories/GHSA-8678-w3jw-xfc2",
-      "published": "2026-06-19T16:36:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2020-26247"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-jv2h-4p9v-wf5w",
-      "title": "ouroboros-ai: Incomplete fix of CVE-2026-47211: untrusted project .env can still reach RCE via omitted execution-routing keys",
-      "summary": "### Impact\nThe CVE-2026-47211 fix (0.39.0) added `_UNTRUSTED_ENV_DENYLIST` to stop an untrusted project-directory `.env` from redirecting execution. The denylist was incomplete \u2014 several execution-routing keys of the same RCE class were omitted, so a malicious cloned repo can still reach arbitrary command execution by shipping a `.env` (auto-loaded at import, no review step):\n\n- **Backend config-home roots** `CODEX_HOME`, `OPENCODE_CONFIG`, `OPENCODE_CONFIG_DIR`, `XDG_CONFIG_HOME`: a spawned vendor CLI resolves its config from these. `CODEX_HOME=./.evil` + committed `./.evil/config.toml` redirects the nested Codex agent to attacker config \u2014 `mcp_servers.<name>.command/args` (RCE) and `approval_policy=\"never\"` / `sandbox_mode=\"danger-full-access\"` (silent removal of the human approval gate). (reported by matte1782)\n- **MCP bridge / plugin execution roster** `OUROBOROS_MCP_CONFIG` (the YAML's server `command`/`args` are spawned via stdio_client \u2014 RCE), `OUROBOROS_PLUGIN_LOCKFILE`, `OUROBOROS_PLUGIN_TRUST_ROOT` (redirect the installed-plugin roster / trust root so `ooo <name>` dispatches into attacker code). (reported by hackkim)\n- **SSRF guard toggle** `OUROBOROS_ALLOW_LOCAL_TRANSPORT` (re-enables loopback/private MCP transport targets).\n- **Instruction / capability roots** `OUROBOROS_AGENTS_DIR`, `COPILOT_CUSTOM_INSTRUCTIONS_DIRS` (replace spawned sub-agent role prompts), `OUROBOROS_RUNTIME_PROFILE` (backend selector), `OUROBOROS_TOOL_CAPABILITIES` (override YAML can lower a tool's `approval_class`, weakening the approval gate).\n\nAdditionally, the MCP bridge auto-loaded `./.ouroboros/mcp_servers.yaml` from the working directory (`create_bridge_from_env(cwd=Path.cwd())`), so running `ooo` inside a malicious repo spawned the committed roster's `command` \u2014 RCE with no `.env` at all. (cwd-branch noted by hackkim)\n\n### Patches\nFixed in 0.42.1. All listed keys were added to `_UNTRUSTED_ENV_DENYLIST`; the cwd auto-discovery branch was removed (only the explicit `OUROBOROS_M",
-      "link": "https://github.com/advisories/GHSA-jv2h-4p9v-wf5w",
-      "published": "2026-06-19T15:12:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47211"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-12530",
-      "title": "Improper neutralization of argument delimiters in AWS Bedrock AgentCore Python SDK install_packages()",
-      "summary": "### Summary\nThe AWS Bedrock AgentCore Python SDK (bedrock-agentcore) is an open-source SDK that enables developers to build, deploy, and manage agents on AWS Bedrock AgentCore. An issue exists in the install_packages() method of the Code Interpreter client where crafted package name arguments can bypass input validation and allow a remote authenticated user to execute arbitrary commands within the Code Interpreter sandbox.\n\n\n### Impact\nThe install_packages() method constructs a 'pip install' shell command executed within the Code Interpreter sandbox using package name arguments provided by the caller. The method applied an incomplete blocklist that allowed crafted package name arguments - specifically pip flags such as '--index-url' and '-r' - to pass validation unchecked. A remote authenticated user who can influence the arguments passed to install_packages() could redirect package resolution to a third-party-controlled PyPI server, or expose the contents of arbitrary sandbox files and environment variables.\n\n**Impacted versions:** AWS Bedrock AgentCore Python SDK (bedrock-agentcore) versions >= 1.1.3 and < 1.6.1\n\n### Patches\nThis issue has been addressed in bedrock-agentcore version 1.6.1. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. \n\n### Workarounds\nIf you are unable to upgrade immediately, avoid passing any user-supplied or externally-influenced strings directly to install_packages(). Restrict calls to a fixed, hardcoded list of approved package names within your application code.\n\n### References\nIf you have any questions or comments about this advisory, we ask that you contact AWS Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\n\nWe would like to thank Sergio Garcia for collaborating on this issu",
-      "link": "https://github.com/advisories/GHSA-6rfw-mq36-jm8h",
-      "published": "2026-06-19T14:46:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-12530"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55832",
-      "title": "tract: Arbitrary file read via unsanitized ONNX external_data `location` (path traversal) on model load in tract-onnx",
-      "summary": "### Summary\n\n`tract` (the `tract-onnx` crate) resolves an ONNX tensor's external-data `location` by joining it onto the model directory **without any sanitization**. Because `location` comes from the (untrusted) `.onnx` file, a malicious model can make `tract` open and read an **arbitrary local file** at load time, with the file's contents flowing into the model's tensors / inference output (read-only file disclosure). This is the ONNX external-data path-traversal class that the reference `onnx` library hardened over several CVEs; `tract` resolves `location` itself and was never hardened.\n\n### Details\n\nIn `onnx/src/tensor.rs`, `get_external_resources()` builds the path with no checks:\n\n```rust\nlet location = /* tensor.external_data \"location\" value \u2014 attacker-controlled */;\nlet p = PathBuf::from(path).join(location);          // no is_absolute / \"..\" / canonicalize / containment check\nprovider.read_bytes_from_path(&mut tensor_data, &p, offset, length)?;   // Mmap::map(File::open(p)) by default\n```\n\n- `Path::join` with an **absolute** `location` (e.g. `/etc/passwd`) discards the base directory \u2192 `p = /etc/passwd`.\n- A **relative** `../../../../etc/passwd` value is not normalized \u2192 directory traversal.\n- The default `MmapDataResolver` (`onnx/src/data_resolver.rs`) then `mmap`s the file and copies `mmap[offset..offset+length]` into the tensor. `offset`/`length` are also taken from the file; an out-of-range slice **panics** (DoS).\n\nNo `is_absolute`, `..`, `canonicalize`, or containment check exists anywhere on this path (`tensor.rs`, `model.rs`, `data_resolver.rs`).\n\nReachable from the standard public API: `model_for_path(p)` (`onnx/src/model.rs`) sets `model_dir = p.parent()` and calls `load_tensor(proto, model_dir)` \u2192 `get_external_resources(.., model_dir)`.\n\n### PoC\n\nTested on `tract-onnx 0.21.16` (crates.io), Rust 1.96.\n\n1. A canary file the model must not be able to read:\n   `/tmp/tract_canary_secret.txt` \u2192 `TRACT-EXTDATA-TRAVERSAL-CANARY-7f3a2b`\n2. Build a small `",
-      "link": "https://github.com/advisories/GHSA-h668-6x6g-f8r5",
-      "published": "2026-06-19T14:45:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55832"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55772",
-      "title": "CedarJava has type confusion vulnerability ",
-      "summary": "### Summary\n\nCedarJava is an open source Java implementation of the Cedar policy language, used for fine-grained authorization decisions. Under certain circumstances, improper input handling could allow type confusion across the Java-Rust FFI boundary.\n\n### Impact\n\n**Record-to-Entity type confusion across the Java-Rust FFI boundary**\n\nCedarJava sends authorization requests to the Rust cedar-policy evaluator as JSON. The JSON protocol reserves magic single-key object shapes (`__entity` and `__extn`) for entity references and extension values. When serializing a `CedarMap`, there is no validation preventing these reserved keys from being used. If an integrating service builds a `CedarMap` from caller-supplied key/value data (such as request headers, user-defined metadata, or resource tags), an actor who controls those keys could cause the Rust evaluator to interpret a record as an entity reference.\n\nThis issue requires the integrating service to build a `CedarMap` where the an actor controls the keys, and a policy must reference that value in a when/unless clause.\n\n### Impacted versions: \n< 4.9\n\n### Patches\nAddressed in CedarJava version 2.3.6, 3.4.1, and 4.9 and above. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n### Workarounds\nEnable schema-based request validation to catch type mismatches. Validate that user-controlled data does not contain reserved keys (`__entity` or `__extn`) before building `CedarMap` objects.\n\n### References\nIf you have any questions or comments about this advisory, we ask that you contact us directly via email to [cedar-policy-security@lists.cncf.io](mailto:cedar-policy-security@lists.cncf.io). Please do not create a public GitHub issue.",
-      "link": "https://github.com/advisories/GHSA-93g4-m6xv-cmvr",
-      "published": "2026-06-19T14:38:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55772"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55767",
-      "title": "guzzlehttp/guzzle: Dot-Only Cookie Domains Match All Hosts",
-      "summary": "### Impact\n\n`CookieJar` incorrectly accepts cookies with a dot-only `Domain` attribute, such as `Domain=.`, `Domain=..`, `Domain=...`, and whitespace-padded variants such as `Domain= . `. In affected versions, `SetCookie::matchesDomain()` removes leading dots from the cookie domain, normalizing dot-only values to the empty string; `SetCookie::validate()` only rejected a strictly empty domain, so these cookies could be stored and the empty normalized domain was treated as matching any request host.\n\nAn attacker-controlled origin that an application requests with a shared cookie jar can therefore set a cookie that Guzzle later sends to unrelated hosts using the same jar. This may allow cookie injection or session fixation against downstream services, depending on how those services interpret the injected cookie. Applications are affected when they use Guzzle's cookie support, for example `new Client(['cookies' => true])` or an explicit shared `CookieJar`, and reuse the same jar across attacker-controlled and trusted origins.\n\nApplications that do not use Guzzle's cookie support, or that use separate cookie jars per origin or trust boundary, are not affected. This issue is distinct from public suffix list validation: dot-only domains contain no domain label and should not match unrelated hosts.\n\n### Patches\n\nThe issue is patched in `7.12.1` and later. Starting in that release, Guzzle rejects dot-only cookie `Domain` attributes and prevents an empty normalized cookie domain from matching any request host.\n\n### Workarounds\n\nIf you cannot upgrade immediately, do not reuse the same `CookieJar` instance across untrusted and trusted origins. Use separate cookie jars per origin or trust boundary, or disable cookie handling for requests to untrusted hosts.\n\nAvoid using `new Client(['cookies' => true])` for clients that may contact unrelated hosts with different trust levels, because that option creates one shared jar for the client.",
-      "link": "https://github.com/advisories/GHSA-cwxw-98qj-8qjx",
-      "published": "2026-06-19T14:37:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55767"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-6734",
-      "title": "undici vulnerable to cross-origin request routing via SOCKS5 proxy pool reuse",
-      "summary": "## Impact\n\nWhen using `Socks5ProxyAgent`, undici reuses a single connection pool across different origins without verifying that the pool's origin matches the requested origin. All requests are dispatched through the pool connected to the first origin, regardless of the intended destination.\n\nThis causes cross-origin request routing: credentials and request data intended for origin B are sent to origin A, responses from the wrong origin are trusted, and HTTPS requests may be silently downgraded to HTTP.\n\nImpacted users are applications that use `Socks5ProxyAgent` (directly or via `setGlobalDispatcher`) and make requests to more than one origin.\n\nThis was introduced in undici 7.23.0 via [#4385](https://github.com/nodejs/undici/pull/4385) and affects all versions through 8.1.0.\n\n## Patches\n\nUpgrade to undici v7.28.0 or v8.2.0\n\n## Workarounds\n\nUse a separate `Socks5ProxyAgent` instance per origin, or avoid using `Socks5ProxyAgent` with multiple origins.",
-      "link": "https://github.com/advisories/GHSA-hm92-r4w5-c3mj",
-      "published": "2026-06-19T14:20:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-6734"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55414",
-      "title": "NL Portal Backend Libraries: Unauthenticated form resolver forwards the privileged Objecten-API token to a caller-supplied URL (SSRF)",
-      "summary": "## Summary\n\nThe public GraphQL resolvers `getFormDefinitionByObjectenApiUrl(url)` and the deprecated `getFormDefinitionById(id)` fetch a caller-supplied URL using the **privileged Objecten-API token**. Because the `/graphql` endpoint is `permitAll()` and these resolvers do not declare a `CommonGroundAuthentication` parameter, an **unauthenticated** caller can make the backend issue an outbound request carrying `Authorization: Token <objecten-api-token>` to a **caller-influenced URL on the configured Objecten-API host**. This is a constrained (same-host) server-side request forgery combined with missing authorization.\n\nReported responsibly and confirmed in a local lab build against the project's own WebFlux security stack. No production system was accessed.\n\n## Affected\n\n- `nl.nl-portal:form` (the public resolver / entry point) together with `nl.nl-portal:objectenapi` (where the host guard lives).\n- First shipped in **1.1.0.RELEASE** (2023-10-31); the vulnerable code was introduced on 2023-08-12 (commit `b2f87ca`) and is present in every release since (1.1.x, 1.2.5, 1.3.0, the 3.0.x line, and 3.1.0 / `next-minor`, HEAD `45abcd2`). Fixed in 3.0.4.RELEASE (see Fix below).\n\n## Data flow (confirmed in source)\n\n1. `form/.../graphql/FormDefinitionQuery.kt` \u2014 `@QueryMapping getFormDefinitionByObjectenApiUrl(@Argument url)`, **no** `CommonGroundAuthentication` parameter (same for `getFormDefinitionById`).\n2. \u2192 `form/.../service/ObjectsApiFormDefinitionService.kt` \u2014 passes the URL through unvalidated.\n3. \u2192 `zgw/objectenapi/.../service/ObjectenApiService.kt` `getObjectByUrl(url)` \u2014 the only guard is host equality (`URI.create(url).host == objectsApiClientConfig.url.host`); **no scheme/port/path check**.\n4. \u2192 `zgw/objectenapi/.../client/ObjectsApiClient.kt` `getObjectByUrl(url)` via `webClientWithoutBaseUrl()`, which attaches the default header `Authorization: Token <token>` to the fully caller-supplied URL.\n\n**Reachability:** `/graphql` is `permitAll()` (`core/.../security/Oau",
-      "link": "https://github.com/advisories/GHSA-xm3x-9cfw-jhx4",
-      "published": "2026-06-19T14:17:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55414"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55375",
-      "title": "canto-saas-api: OAuth credentials exposed in URL query string and exception messages",
-      "summary": "## Summary\n\n  In affected versions, the OAuth2 token request sends `app_id`, `app_secret`,\n  `refresh_token` and `code` as URL query parameters of the POST request to\n  `https://oauth.<domain>/oauth/api/oauth2/token`. Request URLs are commonly\n  recorded in access logs, proxy logs and APM traces, so the application secret\n  and refresh token can be persisted in plain text outside the application's\n  control.\n\n  In addition, when the token request fails, the Guzzle exception message \u2014\n  which contains the full request URI including the credentials \u2014 was passed\n  unmodified into the `AuthorizationFailedException` thrown by\n  `OAuth2::obtainAccessToken()`. Applications that log exceptions or forward\n  them to error trackers (e.g. Sentry) may therefore have recorded the app\n  secret in their logs.\n\n  ## Impact\n\n  An attacker with access to web server logs, proxy logs, APM tracing data or\n  application error logs of a consumer of this library can obtain the Canto\n  `app_secret`, `refresh_token` or authorization `code` and use them to obtain\n  access tokens for the Canto tenant.\n\n  ## Patches\n\n  Fixed in 3.0.0:\n\n  - OAuth credentials are sent in the form-encoded POST body instead of the URL\n    query string (RFC 6749 \u00a72.3.1). `OAuth2Request::getQueryParams()` now\n    returns `null`; the parameters are available via `getFormParams()`.\n  - Exception messages are sanitized before being rethrown: the values of\n    `app_secret`, `refresh_token` and `code` are masked (including url-encoded,\n    differently cased and JSON-embedded variants).\n\n  ## Workarounds\n\n  If you cannot upgrade:\n\n  - Treat web server, proxy and APM logs of systems performing Canto OAuth\n    requests as secret material and restrict access to them.\n  - Catch `AuthorizationFailedException` in your application and strip the query\n    string from the message before logging or forwarding it.\n\n  If your logs may have been exposed, rotate the affected Canto app secret.",
-      "link": "https://github.com/advisories/GHSA-37pm-83g7-r22v",
-      "published": "2026-06-19T14:16:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55375"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48814",
-      "title": "Network-AI: CVE-2026-46701 fix incomplete \u2014 empty default secret still authorizes all requests",
-      "summary": "## Advisory / Disclosure\n\n# Network-AI \u2014 CVE-2026-46701 fix is incomplete: the \"Empty Default Secret\" unauth path survives\n\n**Target:** Jovancoding/Network-AI (npm `network-ai`), **latest v5.7.1**\n**Status:** the advisory (\"Unauthenticated Cross-Origin MCP Tool Invocation via Empty\nDefault Secret\") named three flaws. The fix (5.4.5) closed the **CORS** flaw\n(`Access-Control-Allow-Origin` is now set only for localhost origins), but left the\n**empty-default-secret** flaw the title is about: the SSE MCP server still defaults to an\nempty secret, `_isAuthorized()` still returns `true` when the secret is empty, and a\nnon-loopback bind only **warns**. So the server still runs **fully unauthenticated by\ndefault** \u2014 any non-browser caller (curl, SSRF, or a `0.0.0.0` bind) can invoke all 22 MCP\ntools (`config_set`, `agent_spawn`, `blackboard_write`, `token_*`) with no credentials.\n**Class:** CWE-306/CWE-862 Missing Authentication \u2014 incomplete fix.\n**Methodology:** M1 incomplete-fix audit (anchor = the 5.4.5 fix; sibling-walk on latest v5.7.1, executed).\n**Severity:** High (matches parent; the browser amplifier is removed, so exploitation now\nneeds non-browser reach \u2014 SSRF or a non-loopback bind, which the fix only warns about).\n\n## What the fix did and didn't do (verified on latest v5.7.1)\n| advisory flaw | latest v5.7.1 |\n|---|---|\n| wildcard CORS (`ACAO: *`) | **FIXED** \u2014 `lib/mcp-transport-sse.ts` sets `ACAO` only when `origin` matches `^https?://(localhost\\|127\\.0\\.0\\.1)(:\\d+)?$` |\n| empty default secret | **NOT FIXED** \u2014 `bin/mcp-server.ts`: `secret: process.env['NETWORK_AI_MCP_SECRET'] ?? ''` |\n| `_isAuthorized` open on empty secret | **NOT FIXED** \u2014 `if (!this._opts.secret) return true;` |\n| require secret / refuse unauth bind | **NOT DONE** \u2014 `listen()` only `process.stderr.write('\u2026 WARNING \u2026')` on non-loopback bind, then listens anyway |\n\nThe advisory's remediation #1 (\"Require a non-empty secret at startup \u2026 `process.exit(1)`\")\nwas not implemented.\n\n## PoC (executed",
-      "link": "https://github.com/advisories/GHSA-r78r-rwrf-rjwp",
-      "published": "2026-06-19T13:34:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48814"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
       "id": "https://www.securityweek.com/splunk-enterprise-vulnerability-exploited-in-attacks-days-after-disclosure/",
       "title": "Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure",
       "summary": "CISA has given federal agencies only three days to patch CVE-2026-20253, which can be exploited for unauthenticated remote code execution. The post Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure appeared first on SecurityWeek .",
@@ -530,60 +692,6 @@
       ],
       "cve_ids": [
         "CVE-2026-20253"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55591",
-      "title": "Signal K Server: Server-Side Request Forgery via Remote Connection Endpoints",
-      "summary": "### Summary\nsignalk-server versions up to and including 2.27.0 contain a Server-Side Request Forgery (SSRF) vulnerability in three administrative endpoints used for remote Signal K server connection management. The `makeRemoteRequest()` function accepts attacker-controlled `host`, `port`, `useTLS`, and `selfsignedcert` parameters without any validation, allowing an attacker to force the server to make arbitrary HTTP/HTTPS requests to internal network resources, cloud metadata services, and other unintended destinations.\n\nWhen security is not configured (the default state), these endpoints require **no authentication**.\n\n### Details\n#### Vulnerable Function\n\nThe core vulnerability is in `makeRemoteRequest()` at `src/serverroutes.ts:2483-2524`:\n\n```typescript\nfunction makeRemoteRequest(\n  host: string,\n  port: number,\n  useTLS: boolean,\n  selfsignedcert: boolean,\n  path: string,\n  method?: string,\n  headers?: Record<string, string>,\n  body?: unknown\n): Promise<{ status: number | undefined; data: string }> {\n  const protocol = useTLS ? https : http\n  return new Promise((resolve, reject) => {\n    const options = {\n      hostname: host,         // NO VALIDATION - attacker controlled\n      port,                   // NO VALIDATION - attacker controlled\n      path,\n      method: method || 'GET',\n      headers: {\n        ...(headers || {}),\n        ...(body ? { 'Content-Type': 'application/json' } : {})\n      },\n      rejectUnauthorized: !selfsignedcert  // Attacker can disable TLS verification\n    }\n    const req = protocol.request(options, (response) => {\n      let data = ''\n      response.on('data', (chunk: string) => {\n        data += chunk\n      })\n      response.on('end', () => {\n        resolve({ status: response.statusCode, data })\n      })\n    })\n    req.on('error', reject)\n    req.setTimeout(10000, () => {\n      req.destroy(new Error('Connection timed out'))\n    })\n    if (body) {\n      req.write(JSON.stringify(body))\n    }\n    req.end()\n  })\n}\n```\n\n#### Missing Va",
-      "link": "https://github.com/advisories/GHSA-q59x-jc9f-gfqf",
-      "published": "2026-06-18T21:13:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55591"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-0755",
-      "title": "gemini-mcp-tool vulnerable to OS command injection and @file exfiltration via prompt quoting (CVE-2026-0755)",
-      "summary": "Untrusted prompt input could reach the Gemini CLI @file parser, allowing read/exfiltration of arbitrary local files (@/etc/passwd, @~/.ssh/id_rsa, @../../secret). On Windows, unquoted cmd.exe metacharacters could break out into OS command injection.\n\nFix (1.1.6): removed the broken shell:false double-quote wrapping; added assertSafeFileReferences() to contain @file refs to the working directory; hardened Windows cmd.exe argument quoting.",
-      "link": "https://github.com/advisories/GHSA-4h5r-5jm8-jxjm",
-      "published": "2026-06-18T20:44:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-0755"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53854",
-      "title": "OpenClaw: Internal/webchat command auth could inherit ownerAllowFrom wildcard state",
-      "summary": "### Summary\n\nInternal/webchat command auth could inherit ownerAllowFrom wildcard state. In affected versions, a sender on an affected internal or webchat path could inherit wildcard ownerAllowFrom state across channel boundaries.\n\nThis advisory is scoped to the named feature and configuration. It does not change OpenClaw's trusted-operator model: authenticated Gateway operators, installed plugins, and intentional local execution surfaces remain trusted unless a separate policy, approval, allowlist, sandbox, or auth boundary is crossed.\n\n### Impact\n\nWhen the affected feature is enabled and reachable, this could run owner-style command behavior that should have stayed channel-scoped. Practical impact depends on the operator's configuration and whether lower-trust input can reach that path.\n\n### Patched Versions\n\nThe first stable patched version is `2026.4.25`.\n\n### Mitigations\n\nkeep owner command allowlists explicit per channel until patched. As general hardening, keep channel and tool allowlists narrow, avoid sharing one Gateway between mutually untrusted users, and disable the affected feature when it is not needed.",
-      "link": "https://github.com/advisories/GHSA-4hpg-mp64-x7xq",
-      "published": "2026-06-18T20:44:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53854"
       ],
       "is_zero_day": false,
       "is_high_severity": true
