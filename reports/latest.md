@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-20 02:07 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 23 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-20 08:40 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,16 +13,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Path traversal / directory traversal vulnerability allowing unauthenticated attackers to read sensitive files on affected SimpleHelp servers via crafted requests that traverse directories.
-- **Affected Products:** SimpleHelp remote support / Remote Monitoring and Management (RMM) — versions 5.5.7 and earlier
+- **Technical Details:** CVE‑2024‑57727 is a path‑traversal vulnerability in SimpleHelp RMM that permits unauthenticated attackers to read sensitive files by supplying crafted file paths.
+- **Affected Products:** SimpleHelp Remote Monitoring and Management (RMM) 5.5.7 and earlier
 - **CVSS Score:** 7.5
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** true - https://www.offsec.com/blog/cve-2024-57727/
-- **Patch Available:** true - https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
-- **Active Exploitation:** true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a
-- **Threat Actors:** Ransomware actors (unspecified)
-- **Mitigation:** Apply vendor updates/patch to latest SimpleHelp; if unable, restrict network access to SimpleHelp services, implement firewall rules to block external access, and monitor logs for suspicious file access.
-- **Vendor Advisory:** https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** false
+- **Patch Available:** true - http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **Active Exploitation:** true
+- **Threat Actors:** Ransomware actors (generic)
+- **Mitigation:** Upgrade SimpleHelp to a version newer than 5.5.7 and apply the vendor patch; restrict external access to the RMM interface until patched.
+- **Vendor Advisory:** http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
 
 ---
 
@@ -35,16 +35,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Apple Beats Studio Buds: Unauthenticated Bluetooth/firmware flaw allows a nearby attacker to capture microphone audio from unpaired devices seeking pairing. Popa Android TV botnet: Malicious SDK embedded in apps turns devices into persistent residential proxies for traffic forwarding and scraping. Velvet Ant: Actor chains internet‑facing footholds with backdoored PAM/OpenSSH and Nginx/FastCGI proxies, deploying GS‑Netcat and SOCKS5 to steal credentials in air‑gapped networks. GCP Config Connector: Confused‑deputy authorization bypass lets any Kubernetes namespace user submit a malicious IAMPolicyMember, escalating to GCP Organization Owner.
-- **Affected Products:** Beats Studio Buds (firmware prior to 1B211); Android TV boxes/streaming devices with malicious SDK; Air‑gapped network authentication components (backdoored PAM/OpenSSH, Nginx/FastCGI); Google Cloud Config Connector (Kubernetes operator)
-- **CVSS Score:** CVSS score unavailable
+- **Technical Details:** Beats Studio Buds: improper authentication in Bluetooth firmware allows unauthenticated microphone access. Popa botnet: malicious SDK turns compromised Android TV devices into persistent residential proxies. Velvet Ant: long‑term intrusion uses backdoored PAM/OpenSSH components for credential theft. GCP Config Connector: confused‑deputy flaw lets the connector apply user‑supplied IAMPolicyMember resources with its own elevated credentials, enabling org‑owner takeover. AWS Continuum: AI‑driven service that automatically discovers, prioritizes, validates and remediates vulnerabilities.
+- **Affected Products:** Beats Studio Buds (Firmware Update 1B211); Android TV boxes/streaming devices; Google Cloud Config Connector (k8s-config-connector); AWS Continuum service
+- **CVSS Score:** Beats Studio Buds: 8.8; GCP Config Connector: 10.0; others unavailable
 - **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** Exploit availability unknown
-- **Patch Available:** true for Beats Studio Buds (Apple firmware 1B211); false for Google Cloud Config Connector; patch availability unknown for Popa Android TV botnet and Velvet Ant.
-- **Active Exploitation:** true for Popa Android TV botnet and Velvet Ant; unknown for Apple Beats and GCP Config Connector
-- **Threat Actors:** Threat actors unknown for Apple Beats and GCP Config Connector; NetNut/Alarum Technologies linked to Popa Android TV botnet; China‑nexus actor (named Velvet Ant) linked to Velvet Ant campaign.
-- **Mitigation:** Install the Apple Beats Studio Buds firmware update 1B211; remove or inspect untrusted apps/SDKs on Android TV devices and factory‑reset if needed; replace backdoored PAM/OpenSSH and Nginx/FastCGI components, rotate credentials, rebuild systems, and deploy integrity monitoring for Velvet Ant; avoid using Config Connector for organization‑level management, restrict creation of Config Connector resources, enforce strict Kubernetes RBAC, monitor IAM changes, and apply compensating controls for GCP Config Connector.
-- **Vendor Advisory:** https://support.apple.com/en-us/127557
+- **Exploit Available:** true (GCP Config Connector PoC at https://olearysec.com/research/config-connector-authorization-bypass/); false for Beats Studio Buds and AWS Continuum; unknown for Popa and Velvet Ant
+- **Patch Available:** Beats Studio Buds: true (https://support.apple.com/en-us/127557); GCP Config Connector: false; others unavailable
+- **Active Exploitation:** Beats Studio Buds: false; Popa Android TV botnet: true; Velvet Ant: true; GCP Config Connector: false; AWS Continuum: not applicable
+- **Threat Actors:** Velvet Ant (China‑linked); None known for other items
+- **Mitigation:** Beats: install Firmware Update 1B211 and disable Bluetooth when not in use. Popa: remove/uninstall untrusted apps/SDKs, segment IoT devices on guest networks, monitor outbound proxy traffic. Velvet Ant: conduct full incident response, rotate credentials, rebuild systems, remove backdoors, harden PAM/SSH, segment and audit network. GCP Config Connector: stop using org‑level permissions, remove Config Connector for org‑level management, restrict IAMPolicyMember CRD usage. AWS Continuum: not applicable (service preview).
+- **Vendor Advisory:** https://support.apple.com/en-us/127557; https://aws.amazon.com/about-aws/whats-new/2026/06/aws-continuum/
 
 ---
 
@@ -57,15 +57,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The PostgreSQL sidecar service endpoint lacks authentication, allowing unauthenticated users to invoke /v1/postgres/recovery/backup and /v1/postgres/recovery/restore to create or truncate arbitrary files. An attacker‑controlled database dump and passfile (.pgpass) are used to execute SQL during restore, writing malicious Python scripts that achieve remote code execution.
-- **Affected Products:** Splunk Enterprise 10.2.0‑10.2.3, 10.0.0‑10.0.6
+- **Technical Details:** The PostgreSQL sidecar service endpoint (e.g., /v1/postgres/recovery/backup and /v1/postgres/recovery/restore) lacks authentication, allowing unauthenticated, network‑reachable users to create or truncate arbitrary files; this can be chained to achieve pre‑auth remote code execution.
+- **Affected Products:** Splunk Enterprise 10.2.0-10.2.3, Splunk Enterprise 10.0.0-10.0.6
 - **CVSS Score:** 9.8
 - **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
 - **Exploit Available:** true
 - **Patch Available:** true
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Disable the PostgreSQL sidecar service to remove the attack surface (note: disabling breaks Edge Processor, OpAmp, SPL2 pipelines).
+- **Mitigation:** Upgrade to fixed Splunk Enterprise releases (10.0.7 or later for 10.0.x, 10.2.4 or later for 10.2.x). If immediate patching is impossible, disable the PostgreSQL sidecar service (note: disabling breaks Edge Processor, OpAmp, or SPL2 pipelines) following the Splunk advisory.
 - **Vendor Advisory:** https://advisory.splunk.com/advisories/SVD-2026-0603
 
 ---
@@ -79,16 +79,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** When combined with CVE‑2026‑50083, CVE‑2026‑50084, and CVE‑2026‑50085, an otherwise‑unauthenticated attacker could execute a full takeover of affected systems via indirect prompt injection.
-- **Affected Products:** Affected products unavailable.
+- **Technical Details:** Indirect Prompt Injection (IPI) occurs when an AI system processes content (e.g., a website, email, or document) that contains malicious instructions. The AI then silently follows the attacker’s commands instead of the user’s original intent, enabling actions such as data exfiltration, manipulation of outputs, SEO manipulation, or system destruction.
+- **Affected Products:** Google Gemini, Microsoft Copilot Studio, EmailGPT, Claude Code, Gemini CLI, GitHub Copilot, Google Gemini Enterprise
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
+- **Exploit Available:** true
 - **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** https://blog.google/security/prompt-injections-web/
+- **Mitigation:** Implement strict input and output validation and sanitization for all content processed by LLMs, enforce human oversight controls, and apply a layered defense strategy that includes model hardening, monitoring for malicious patterns, and restricting unauthenticated web content ingestion.
+- **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
 
@@ -101,16 +101,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) occurs when malicious instructions are embedded in third‑party data sources or tools that an LLM accesses (e.g., web pages, documents, plugins). The LLM, while retrieving or using that external content to answer a user query or drive agentic workflows, can be influenced to follow the injected instructions—potentially without direct user input—leading to unauthorized actions, data exfiltration, or corrupted outputs.
-- **Affected Products:** Google Workspace (products using Gemini / GenAI integrations), Gemini Enterprise (reported vulnerable in some research)
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown
-- **Patch Available:** Patch availability unknown
-- **Active Exploitation:** Active exploitation status unknown
+- **Technical Details:** Indirect prompt injection (IPI) allows attackers to inject malicious instructions into data sources or integrated tools consumed by LLMs (e.g., documents, webpages, or connectors). The LLM may then follow those instructions during query handling, potentially altering agent behavior or disclosing sensitive data—even without direct user input.
+- **Affected Products:** Google Workspace with Gemini (specific versions unspecified)
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** false
+- **Patch Available:** false
+- **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Input and output validation and sanitization; restrict or sandbox web‑browsing/third‑party data sources; apply strict content filters and provenance checks; implement human‑in‑the‑loop approval for agentic actions; monitor and block known IPI payload patterns; apply vendor recommendations from Google Workspace security blog.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
+- **Mitigation:** Implement input/output validation and sanitization, restrict and vet external data sources, add human-in-the-loop checks for agent actions, apply least‑privilege for connectors/tools, monitor for IPI patterns, and follow vendor recommendations from the Google Workspace security blog.
+- **Vendor Advisory:** https://security.googleblog.com/2026/04/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/
 
 ---
 
@@ -123,15 +123,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The primary issue is indirect prompt injection — untrusted web content can influence agentic/browser‑integrated LLM agents by injecting or manipulating prompts or context that the agent executes; when chained with other vulnerabilities (e.g., CVE‑2025‑54131), this can lead to privilege escalation, local file access, or data exfiltration.
+- **Technical Details:** Indirect prompt injection allows attacker‑controlled web content to influence agentic browser prompts. When chained with vulnerabilities such as CVE‑2025‑54131, this can lead to local file access or data exfiltration. Google added layered defenses to restrict origin access and block the injection vector.
 - **Affected Products:** Chrome (Gemini agentic browsing features)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** true
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** false
 - **Patch Available:** true
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Harden agentic browsing by applying Google’s architectural mitigations in the advisory, update Chrome to patched versions, disable/limit agentic browsing or Gemini CLI in headless/automated environments, validate and sanitize third‑party content to reduce indirect prompt injection exposure.
+- **Mitigation:** Update Chrome to the patched versions; disable agentic/AI browsing features where immediate patching is not possible; follow Google guidance on restricting origin access and layered defenses.
 - **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 
 ---
@@ -145,15 +145,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Near‑miss linear buffer overflow in the Rust CrabbyAVIF component (unsafe Rust/FFI area) was discovered and fixed pre‑release; Scudo hardened allocator’s guard pages rendered the overflow non‑exploitable and converted silent corruption to a crash.
+- **Technical Details:** A near‑miss linear buffer overflow was discovered in CrabbyAVIF (identified as CVE‑2025‑48530) in unsafe Rust code; the vulnerability was fixed pre‑release and Scudo's guard pages prevented exploitation.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** false
-- **Patch Available:** true — https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050 and Android bulletin https://source.android.com/docs/security/bulletin/2025-08-01
+- **Patch Available:** true — https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050
 - **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Use Scudo hardened allocator (guard pages), improved crash reporting for overflow detection, restrictive use and review of unsafe{} blocks, and developer training on unsafe Rust (Comprehensive Rust training module).
+- **Mitigation:** Use of Android's Scudo hardened allocator (guard pages) rendered the overflow non‑exploitable and turned silent corruption into a noisy crash; improved crash reporting and unsafe‑Rust training/review practices recommended.
 - **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-08-01
 
 ---
@@ -167,15 +167,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** OS command injection vulnerability in the MobileIron Configuration Service (MICS) web portal interface allowing remote command execution via crafted input.
-- **Affected Products:** MobileIron Configuration Service (MICS) web portal interface of Ivanti Sentry
+- **Technical Details:** Command injection in the MobileIron Configuration Service (MICS) web portal interface of Ivanti Sentry allows remote actors to inject OS commands via crafted requests, enabling full control of the appliance, configuration alteration, credential theft, data access, and lateral movement.
+- **Affected Products:** Ivanti Sentry (MobileIron Configuration Service - MICS) web portal interface; specific vulnerable versions unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true
-- **Patch Available:** Patch availability unknown.
+- **Exploit Available:** true - http://horizon3.ai/attack-research/vulnerabilities/cve-2026-10520, http://enigma-global.com/reports/cve-2026-10520-critical-ivanti-sentry-os-command-injection-actively-exploited-mqaltqap-twhb
+- **Patch Available:** false
 - **Active Exploitation:** true
-- **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
+- **Threat Actors:** None known.
+- **Mitigation:** Mitigations include immediate network isolation of exposed appliances, apply vendor mitigations/workarounds if published, restrict access to the MICS web portal, rotate credentials, monitor for indicators of compromise, and apply network‑level filtering; specific vendor steps unavailable.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
@@ -189,16 +189,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** PRC state-sponsored actors target large backbone, provider edge (PE) and customer edge (CE) routers, leverage compromised devices and trusted network connections to pivot, and modify router firmware or configuration to maintain persistent, long‑term access.
-- **Affected Products:** Telecommunications backbone routers, provider edge (PE) routers, customer edge (CE) routers, and other network infrastructure devices
+- **Technical Details:** PRC state-sponsored actors target large backbone routers and PE/CE routers, leverage compromised devices and trusted connections to pivot into other networks, and often modify routers to maintain persistent, long‑term access to networks.
+- **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** true
-- **Threat Actors:** Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor
-- **Mitigation:** Harden routers (restrict management interfaces, enforce multi‑factor authentication, segment networks, apply least‑privilege), monitor for unauthorized configuration changes and anomalous traffic, inventory and isolate compromised devices, apply vendor updates where available, and follow the detailed simulation and mitigation guidance in the CISA advisory.
-- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
+- **Threat Actors:** Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor; other PRC state-sponsored groups (Chinese APTs)
+- **Mitigation:** Restrict and monitor management-plane access to routers, use strong unique credentials and MFA where supported, segment and isolate provider edge (PE) and customer edge (CE) devices, monitor for unusual routing/BGP changes and persistent configuration modifications, apply vendor‑provided updates and hardening guidance when available, and remove or quarantine compromised devices.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
@@ -211,15 +211,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Technical details unavailable.
+- **Technical Details:** Unit 26165 has used spearphishing and other initial‑access techniques to gain access to Western logistics and technology company networks, deployed malware to establish persistence, performed credential theft and lateral movement, and exfiltrated sensitive data.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
+- **Exploit Available:** false
+- **Patch Available:** false
 - **Active Exploitation:** true
-- **Threat Actors:** GRU 85th Main Special Service Center (85th GTsSS), military unit 26165 (Russian GRU)
-- **Mitigation:** Follow CISA advisory guidance and general hardening for targeted organizations (logistics, IT firms) — specific mitigation steps in vendor/CISA advisory.
+- **Threat Actors:** Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165
+- **Mitigation:** Implement multi-factor authentication; enforce strong access controls and least privilege; apply timely patches for internet-facing and enterprise software; network segmentation; monitor/logging and hunt for indicators of compromise (including credentials theft, anomalous outbound exfiltration); disable unused remote access services; use EDR/antivirus and isolate impacted hosts; follow CISA/FBI guidance for reporting.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
 
 ---
@@ -514,16 +514,7 @@ Fixed in CoreWCF v1.8.1 and v1.9.1
 
 ---
 
-## 33. 🟡 High Severity — Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure
-
-**CVE:** `CVE-2026-20253` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-06-19
-**Reference:** <https://www.securityweek.com/splunk-enterprise-vulnerability-exploited-in-attacks-days-after-disclosure/>
-
-> CISA has given federal agencies only three days to patch CVE-2026-20253, which can be exploited for unauthenticated remote code execution. The post Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure appeared first on SecurityWeek .
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
