@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-20T08:40:03.399723+00:00",
+  "generated": "2026-06-20T13:24:39.093651+00:00",
   "total": 33,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 10,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE\u20112024\u201157727 is a path\u2011traversal vulnerability in SimpleHelp RMM that permits unauthenticated attackers to read sensitive files by supplying crafted file paths.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) 5.5.7 and earlier",
+        "technical_details": "The vulnerability is a path traversal flaw that lets unauthenticated remote attackers craft HTTP requests with manipulated file\u2011path parameters to read arbitrary files (e.g., /etc/passwd) from the SimpleHelp host.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) / SimpleHelp remote support software versions 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true - http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors (generic)",
-        "mitigation": "Upgrade SimpleHelp to a version newer than 5.5.7 and apply the vendor patch; restrict external access to the RMM interface until patched.",
-        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "Public PoC and a Metasploit auxiliary module (auxiliary/scanner/http/simplehelp_toolbox_path_traversal) are available.",
+        "patch_available": "Yes. SimpleHelp has released patches; see Broadcom security bulletin.",
+        "active_exploitation": "Confirmed. CISA reports ransomware actors have leveraged CVE\u20112024\u201157727 since January 2025, and the vulnerability is listed in the CISA Known Exploited Vulnerabilities catalog.",
+        "threat_actors": "Ransomware actors (e.g., DragonForce) have been reported exploiting this vulnerability.",
+        "mitigation": "Isolate or unplug vulnerable SimpleHelp servers, stop the server process, upgrade immediately to the latest version, restrict file\u2011browsing functionality, limit network access to the management interface, and conduct threat\u2011hunting and monitoring.",
+        "vendor_advisory": "https://simple-help.com/kb---security-vulnerabilities-01-2025"
       }
     },
     {
@@ -49,43 +49,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Beats Studio Buds: improper authentication in Bluetooth firmware allows unauthenticated microphone access. Popa botnet: malicious SDK turns compromised Android TV devices into persistent residential proxies. Velvet Ant: long\u2011term intrusion uses backdoored PAM/OpenSSH components for credential theft. GCP Config Connector: confused\u2011deputy flaw lets the connector apply user\u2011supplied IAMPolicyMember resources with its own elevated credentials, enabling org\u2011owner takeover. AWS Continuum: AI\u2011driven service that automatically discovers, prioritizes, validates and remediates vulnerabilities.",
-        "affected_products": "Beats Studio Buds (Firmware Update 1B211); Android TV boxes/streaming devices; Google Cloud Config Connector (k8s-config-connector); AWS Continuum service",
-        "cvss_score": "Beats Studio Buds: 8.8; GCP Config Connector: 10.0; others unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true (GCP Config Connector PoC at https://olearysec.com/research/config-connector-authorization-bypass/); false for Beats Studio Buds and AWS Continuum; unknown for Popa and Velvet Ant",
-        "patch_available": "Beats Studio Buds: true (https://support.apple.com/en-us/127557); GCP Config Connector: false; others unavailable",
-        "active_exploitation": "Beats Studio Buds: false; Popa Android TV botnet: true; Velvet Ant: true; GCP Config Connector: false; AWS Continuum: not applicable",
-        "threat_actors": "Velvet Ant (China\u2011linked); None known for other items",
-        "mitigation": "Beats: install Firmware Update 1B211 and disable Bluetooth when not in use. Popa: remove/uninstall untrusted apps/SDKs, segment IoT devices on guest networks, monitor outbound proxy traffic. Velvet Ant: conduct full incident response, rotate credentials, rebuild systems, remove backdoors, harden PAM/SSH, segment and audit network. GCP Config Connector: stop using org\u2011level permissions, remove Config Connector for org\u2011level management, restrict IAMPolicyMember CRD usage. AWS Continuum: not applicable (service preview).",
-        "vendor_advisory": "https://support.apple.com/en-us/127557; https://aws.amazon.com/about-aws/whats-new/2026/06/aws-continuum/"
-      }
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-splunk-enterprise-flaw-actively-exploited-patch-by-sunday/",
-      "title": "CISA: Splunk Enterprise flaw actively exploited, patch by Sunday",
-      "summary": "CISA has urged U.S. federal agencies to secure their systems by Sunday against a\u00a0critical Splunk Enterprise vulnerability that is being exploited in attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-splunk-enterprise-flaw-actively-exploited-patch-by-sunday/",
-      "published": "2026-06-19T10:39:58+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "The PostgreSQL sidecar service endpoint (e.g., /v1/postgres/recovery/backup and /v1/postgres/recovery/restore) lacks authentication, allowing unauthenticated, network\u2011reachable users to create or truncate arbitrary files; this can be chained to achieve pre\u2011auth remote code execution.",
-        "affected_products": "Splunk Enterprise 10.2.0-10.2.3, Splunk Enterprise 10.0.0-10.0.6",
-        "cvss_score": "9.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true",
-        "patch_available": "true",
-        "active_exploitation": "true",
+        "technical_details": "Vulnerability (CVE-2025-20701) is an incorrect authorization in the Airoha Bluetooth audio SDK that can allow pairing of a Bluetooth audio device without user consent, permitting nearby attackers to pair and potentially access microphone audio.",
+        "affected_products": "Beats Studio Buds (firmware 1B211), Airoha Bluetooth audio SDK",
+        "cvss_score": "7.8",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "None known",
+        "patch_available": "Beats Firmware Update 1B211 (released June 16, 2026) \u2013 available via Apple Support page.",
+        "active_exploitation": "No confirmed reports of active exploitation in the wild.",
         "threat_actors": "None known",
-        "mitigation": "Upgrade to fixed Splunk Enterprise releases (10.0.7 or later for 10.0.x, 10.2.4 or later for 10.2.x). If immediate patching is impossible, disable the PostgreSQL sidecar service (note: disabling breaks Edge Processor, OpAmp, or SPL2 pipelines) following the Splunk advisory.",
-        "vendor_advisory": "https://advisory.splunk.com/advisories/SVD-2026-0603"
+        "mitigation": "Install Beats Firmware Update 1B211 via a paired iPhone/Apple device; avoid pairing with unknown devices; disable Bluetooth when not in use.",
+        "vendor_advisory": "https://support.apple.com/en-us/127557"
       }
     },
     {
@@ -104,15 +77,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI system processes content (e.g., a website, email, or document) that contains malicious instructions. The AI then silently follows the attacker\u2019s commands instead of the user\u2019s original intent, enabling actions such as data exfiltration, manipulation of outputs, SEO manipulation, or system destruction.",
-        "affected_products": "Google Gemini, Microsoft Copilot Studio, EmailGPT, Claude Code, Gemini CLI, GitHub Copilot, Google Gemini Enterprise",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect Prompt Injection (IPI) is an attack vector in which an adversary plants adversarial instructions inside content an AI agent subsequently ingests (web pages, search results, documents, image metadata, GitHub comments, etc.), exploiting the inability of current LLMs to maintain a strict data-vs-instruction boundary. Google Threat Intelligence, scanning Common Crawl archives, classified observed web-borne IPI into six categories: (1) harmless pranks altering agent conversational tone, (2) author-controlled helpful guidance enriching AI summaries, (3) SEO/business promotion pushing commercial content, (4) deterring AI agents with 'If you are an AI, do not crawl this site' tokens and infinite-text streamers causing retrieval timeouts, (5) malicious exfiltration instructions attempting to extract user data, and (6) malicious destruction commands telling the agent to delete files or vandalize the host machine. Forcepoint observed real payloads using HTML comments, CSS invisibility (display:none, 1px-font, transparent colors, aria-hidden/visually-hidden classes), meta-tag 'ai:action' namespaces, role/authority impersonation, system-prompt tag spoofing, magic-string spoofing (e.g., ANTHROPIC_MAGIC_STRING_TRIGGER_REFUSAL_), and terminal command injection (e.g., sudo rm -rf).",
+        "affected_products": "Google Gemini and Gemini in Workspace (Gmail, Docs, Drive, Chat); secondarily, agentic AI products broadly including GitHub Copilot, Cursor, Claude Code, AI-powered CI/CD reviewers, and other LLM-driven browser/agent assistants that ingest untrusted web data. Specific patched versions are not enumerated because IPI is a class-level vulnerability of LLMs.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
+        "exploit_available": "Yes - multiple public exploit artifacts exist. (1) Forcepoint X-Labs disclosed 10 verified in-the-wild IPI payload indicators with affected target URLs on April 22, 2026 (https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads). (2) Google links to prior PoC repositories at https://greshake.github.io/ and https://swisskyrepo.github.io/PayloadsAllTheThings/Prompt%20Injection/. (3) Related weaponized IPI exploits have been published for Google Antigravity (Pillar Security, RCE/sandbox escape, patched Feb 28, 2026) and Microsoft Copilot Studio (ShareLeak/CVE-2026-21520).",
+        "patch_available": "There is no single vendor patch closing Indirect Prompt Injection as a vulnerability class; AI vendors address it through layered model and platform mitigations rather than a CVE-style patch. Google's hardening of Gemini is delivered via continuous model updates and the Workspace-side layered defenses. A related, separately patched flaw is the Google Antigravity IDE sandbox-escape/RCE disclosed Jan 7, 2026 by Pillar Security and patched Feb 28, 2026 (https://www.pillar.security/blog/prompt-injection-leads-to-rce-and-sandbox-escape-in-antigravity; https://thehackernews.com/2026/04/google-patches-antigravity-ide-flaw.html).",
+        "active_exploitation": "Yes - confirmed active exploitation observed in the wild. Google's Threat Intelligence team reported 'a relative increase of 32% in the malicious category between November 2025 and February 2026, repeating the scan on multiple versions of the archive.' Independently, Forcepoint X-Labs documented 10 real-world IPI payloads active on public websites on April 22, 2026 (https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads), corroborated by helpnetsecurity (Apr 24, 2026), infosecurity-magazine (Apr 23, 2026), Slashdot (Apr 26, 2026), and SecurityWeek. Sources: http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html ; https://www.helpnetsecurity.com/2026/04/24/indirect-prompt-injection-in-the-wild/ ; https://it.slashdot.org/story/26/04/26/2345211/google-studies-prompt-injection-attacks-against-ai-agents-browsing-the-web.",
         "threat_actors": "None known",
-        "mitigation": "Implement strict input and output validation and sanitization for all content processed by LLMs, enforce human oversight controls, and apply a layered defense strategy that includes model hardening, monitoring for malicious patterns, and restricting unauthenticated web content ingestion.",
+        "mitigation": "Because IPI is a class-level weakness, Google recommends a layered defense-in-depth strategy for Gemini (https://knowledge.workspace.google.com/admin/security/indirect-prompt-injections-and-googles-layered-defense-strategy-for-gemini): (1) prompt-injection content classifiers flagging suspicious inputs across modalities; (2) security thought reinforcement adding targeted system-level instructions that bias the model to follow user intent over adversarial content; (3) markdown sanitization and suspicious-URL redaction via Google Safe Browsing; (4) human-in-the-loop user confirmation framework for high-risk side-effects (e.g., deleting calendar events); (5) end-user security-mitigation notifications when a risk is detected and neutralized; (6) base-model adversarial-robustness hardening. General hardening advice includes dedicated red teams pressure-testing agents, participation in Google's AI Vulnerability Reward Program (https://bughunters.google.com/about/rules/google-friends/ai-vulnerability-reward-program-rules), strict data-instruction boundaries enforced at the application layer, treating all fetched web content as untrusted, and segregating agent privilege scopes so that browsing tools cannot reach destructive actions like sudo rm -rf without explicit user consent.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -132,16 +105,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) allows attackers to inject malicious instructions into data sources or integrated tools consumed by LLMs (e.g., documents, webpages, or connectors). The LLM may then follow those instructions during query handling, potentially altering agent behavior or disclosing sensitive data\u2014even without direct user input.",
-        "affected_products": "Google Workspace with Gemini (specific versions unspecified)",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "false",
+        "technical_details": "Indirect Prompt Injection (IPI) embeds malicious instructions inside data (emails, documents, calendar entries, web pages, tool-call responses) that an LLM ingests to fulfill a user query. Because the LLM treats retrieved content as legitimate context, the injected instructions can hijack model behavior \u2014 repurposing a chatbot, coercing a summarizer to perform unauthorized actions (e.g., sending emails), exfiltrating confidential data to attacker-controlled endpoints, or impersonating the user. Variant attacks can succeed without any direct user input (zero-click, e.g., GeminiJack). For Workspace-with-Gemini, Google describes three harmful patterns: chatbot hijack leaking sensitive internal info; summarizer compromise performing unauthorized actions (e.g., sending emails); and data exfiltration of confidential documents to attacker-controlled destinations.",
+        "affected_products": "Google Workspace with Gemini (Gmail, Docs editors, Drive, Chat), Gemini app, Gemini Enterprise, Vertex AI Search",
+        "cvss_score": "7.5",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Yes \u2014 multiple public PoCs and weaponized IPI payloads exist for Gemini-family products. Key sources: https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability ; https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads ; https://www.safebreach.com/blog/gemini-voice-assistant-prompt-injection-exploit/ ; http://oddguan.com/blog/comment-and-control-prompt-injection-credential-theft-claude-code-gemini-cli-github-copilot",
+        "patch_available": "No discrete patch \u2014 Google describes a continuously deployed, layered defense strategy rather than a single patchable vulnerability. The advisory blog post itself is the disclosure: https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/",
+        "active_exploitation": "Yes \u2014 IPI attacks are being observed in the wild against the broader class of LLM-integrated applications (Google reports a 32% relative increase in malicious IPI attempts between Nov 2025 and Feb 2026; Forcepoint X-Labs harvested 10 distinct in-the-wild payloads). However, no public report (as of June 2026) attributes Workspace-with-Gemini-specific IPI exploitation to a named threat actor. Sources: https://blog.google/security/prompt-injections-web/ and https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads",
         "threat_actors": "None known",
-        "mitigation": "Implement input/output validation and sanitization, restrict and vet external data sources, add human-in-the-loop checks for agent actions, apply least\u2011privilege for connectors/tools, monitor for IPI patterns, and follow vendor recommendations from the Google Workspace security blog.",
-        "vendor_advisory": "https://security.googleblog.com/2026/04/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+        "mitigation": "Google's multi-layer defense strategy (no single patch; continuously deployed): (1) Pre-deployment red-teaming + AI Vulnerability Rewards Program ingesting external vulnerability findings; (2) Open-source intelligence feeds and a vulnerability catalog feeding model/card updates; (3) Deterministic defenses: centralized Policy Engine enforcing user confirmation, URL sanitization/link rewriting, tool-chaining policies, and regex takedown of known-bad URLs; (4) ML-based defenses: classifiers trained on synthetic IPI data; (5) LLM-based defenses: refined system prompts and security thought reinforcement; (6) Output-layer markdown sanitization and suspicious-URL redaction; (7) End-user mitigation notifications when Gemini surfaces content that appears crafted to manipulate it; (8) Model resilience/hardening to intrinsically identify and ignore harmful instructions; (9) Admin guidance treating IPI as an evolving class \u2014 user training, input/output validation, and human-in-the-loop review are recommended. See https://knowledge.workspace.google.com/admin/security/indirect-prompt-injections-and-googles-layered-defense-strategy-for-gemini .",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
       }
     },
     {
@@ -160,16 +133,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection allows attacker\u2011controlled web content to influence agentic browser prompts. When chained with vulnerabilities such as CVE\u20112025\u201154131, this can lead to local file access or data exfiltration. Google added layered defenses to restrict origin access and block the injection vector.",
-        "affected_products": "Chrome (Gemini agentic browsing features)",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "The vulnerability is an indirect prompt injection attack: malicious web content can influence the prompts sent to the Gemini agent, causing the agentic browser to perform unintended actions or disclose sensitive data. The vendor mitigates this via layered defenses such as prompt sanitization, origin restrictions, and a User Alignment Critic that validates agent plans against policy.",
+        "affected_products": "Google Chrome (agentic/Gemini-enabled builds) \u2013 versions prior to 1.3 Metrics",
+        "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true",
-        "active_exploitation": "true",
+        "exploit_available": "Exploit availability unavailable.",
+        "patch_available": "Fixed in Chrome version 1.3 Metrics (see NVD).",
+        "active_exploitation": "No confirmed active exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Update Chrome to the patched versions; disable agentic/AI browsing features where immediate patching is not possible; follow Google guidance on restricting origin access and layered defenses.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "mitigation": "Implement layered defenses including prompt sanitization, origin restrictions, and the User Alignment Critic to validate agent actions.",
+        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
       }
     },
     {
@@ -188,16 +161,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A near\u2011miss linear buffer overflow was discovered in CrabbyAVIF (identified as CVE\u20112025\u201148530) in unsafe Rust code; the vulnerability was fixed pre\u2011release and Scudo's guard pages prevented exploitation.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "The post is a strategic/program-level update, not a per-CVE advisory. Key quantitative findings for 2025 data (covering first- and third-party AOSP changes in C, C++, Java, Kotlin, and Rust): memory-safety vulnerabilities fell below 20% of total vulnerabilities for the first time; ~0.2 memory-safety vulnerabilities per million lines of Rust code in Android versus roughly 1,000 memory-safety vulnerabilities per MLOC for legacy C/C++ (~1000x density reduction); Rust changes have ~4x lower rollback rate for medium/large changes than C++; Rust changes spend ~25% less time in code review; need ~20% fewer revisions; ~4% of Rust code lives inside unsafe{} blocks. Example vulnerability: CVE-2025-48530 (Android bug A-419563680) \u2014 incorrect bounds checks in multiple locations of CrabbyAVIF leading to out-of-bounds accesses that could enable remote code execution without additional privileges or user interaction.",
+        "affected_products": "Android platform (first-party and third-party/open-source code changes) across C, C++, Java, Kotlin, and Rust. Specifically mentioned components: CrabbyAVIF (Rust-based AVIF image decoder in AOSP), Scudo hardened allocator, and Google Pixel devices shipping the resulting image stack.",
+        "cvss_score": "9.8",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "true \u2014 https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050",
-        "active_exploitation": "false",
-        "threat_actors": "None known",
-        "mitigation": "Use of Android's Scudo hardened allocator (guard pages) rendered the overflow non\u2011exploitable and turned silent corruption into a noisy crash; improved crash reporting and unsafe\u2011Rust training/review practices recommended.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+        "exploit_available": "No public proof-of-concept. The single referenced vulnerability (CVE-2025-48530, an out-of-bounds access in CrabbyAVIF classed as RCE/Critical) was found and fixed before reaching any public Android release.",
+        "patch_available": "Patch is available for the single example CVE (CVE-2025-48530) but there is no new patch drop tied to this blog post. CVE-2025-48530 was fixed ahead of public release and is documented in Android Security Bulletin 2025-08-01 (patch level 2025-08-01, published 2025-08-04) via commits in external/rust/crabbyavif.",
+        "active_exploitation": "No confirmed exploitation in the wild. The blog explicitly states the CrabbyAVIF vulnerability (CVE-2025-48530) 'never made it into a public release,' and neither the Google Security Blog post nor the LWN coverage references any in-the-wild exploitation.",
+        "threat_actors": "None known. The only concrete vulnerability called out (CVE-2025-48530 in CrabbyAVIF) was fixed before reaching public release; no threat actor activity is associated with the broader Rust adoption trend or the example bug.",
+        "mitigation": "Vendor's recommended hardening (no traditional patch is being issued \u2014 this is a program-level update): (1) Write new platform code in Rust to prevent memory-safety bugs by construction; (2) Make the Scudo hardened allocator mandatory for additional allocation-level defenses; (3) Extend Google's Comprehensive Rust training with a new deep dive on unsafe Rust covering soundness, undefined behavior, safety comments, and encapsulating unsafe code in safe abstractions; (4) Treat existing unsafe-Rust and legacy C/C++ as residual risk and continue migrating to memory-safe language modules.",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
       }
     },
     {
@@ -216,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Command injection in the MobileIron Configuration Service (MICS) web portal interface of Ivanti Sentry allows remote actors to inject OS commands via crafted requests, enabling full control of the appliance, configuration alteration, credential theft, data access, and lateral movement.",
-        "affected_products": "Ivanti Sentry (MobileIron Configuration Service - MICS) web portal interface; specific vulnerable versions unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "The flaw is an OS command injection in the MobileIron Configuration Service (MICS) web portal of Ivanti Sentry, allowing crafted input to be executed as system commands on the server.",
+        "affected_products": "Ivanti Sentry (MobileIron Configuration Service)",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true - http://horizon3.ai/attack-research/vulnerabilities/cve-2026-10520, http://enigma-global.com/reports/cve-2026-10520-critical-ivanti-sentry-os-command-injection-actively-exploited-mqaltqap-twhb",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "None known.",
-        "mitigation": "Mitigations include immediate network isolation of exposed appliances, apply vendor mitigations/workarounds if published, restrict access to the MICS web portal, rotate credentials, monitor for indicators of compromise, and apply network\u2011level filtering; specific vendor steps unavailable.",
+        "exploit_available": "No public exploit or PoC is referenced in the provided sources.",
+        "patch_available": "No official vendor patch is referenced in the provided sources.",
+        "active_exploitation": "Confirmed active exploitation in the wild, reported by Shadowserver Foundation (June 10, 2026).",
+        "threat_actors": "None known",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -243,16 +216,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "PRC state-sponsored actors target large backbone routers and PE/CE routers, leverage compromised devices and trusted connections to pivot into other networks, and often modify routers to maintain persistent, long\u2011term access to networks.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "The actors gain initial access by exploiting publicly known CVEs in edge/network devices (CVE-2023-20198 and CVE-2023-20273 in Cisco IOS XE Web UI; CVE-2018-0171 in Cisco Smart Install; CVE-2024-21887 and CVE-2023-46805 in Ivanti Connect Secure; CVE-2024-3400 in Palo Alto Networks PAN-OS GlobalProtect) and abusing features like Smart Install and GuestShell. After gaining access, they pivot from compromised edge devices and trusted provider interconnections into backbone/PE/CE routers. Persistence is achieved by modifying device configurations: enabling GRE/IPsec tunnels and static routes to attacker-controlled infrastructure; activating SPAN/RSPAN/ERSPAN traffic mirroring; inserting/modifying ACLs (frequently named 'access-list 20/50/10') to allow attacker IP ranges; altering TACACS+/RADIUS/AAA to redirect authentication to attacker servers; deploying Linux containers (e.g., GuestShell) on network devices; and using non-standard SSH service ports (e.g., 22x22).",
+        "affected_products": "Cisco IOS XE Software versions 16.0.x through 17.9.x (web UI - CVE-2023-20198); Cisco IOS/IOS XE Smart Install client (CVE-2018-0171); Palo Alto Networks PAN-OS versions 10.2, 11.0, 11.1 GlobalProtect feature (CVE-2024-3400); Ivanti Connect Secure 9.x and 22.x (CVE-2024-21887, CVE-2023-46805); Ivanti Policy Secure (CVE-2024-21887); Large backbone/PE/CE routers of major telecommunications providers.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon; OPERATOR PANDA; RedMike; UNC5807; GhostEmperor; other PRC state-sponsored groups (Chinese APTs)",
-        "mitigation": "Restrict and monitor management-plane access to routers, use strong unique credentials and MFA where supported, segment and isolate provider edge (PE) and customer edge (CE) devices, monitor for unusual routing/BGP changes and persistent configuration modifications, apply vendor\u2011provided updates and hardening guidance when available, and remove or quarantine compromised devices.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "exploit_available": "Yes \u2014 public PoCs and weaponized exploits are available: CVE-2023-20198 PoC at https://github.com/smokeintheshell/CVE-2023-20198; Horizon3.ai deep-dive and PoC at https://horizon3.ai/attack-research/attack-blogs/cisco-ios-xe-cve-2023-20198-deep-dive-and-poc/; OPSWAT write-up at http://opswat.com/blog/cve-2023-20198-cve-2023-20273-from-unauthenticated-web-request-to-root-on-ios-xe; Open-source `siet.py` for Cisco Smart Install (CVE-2018-0171).",
+        "patch_available": "Yes \u2014 patches available for all referenced CVEs. Cisco IOS XE Web UI (CVE-2023-20198): upgrade to 17.9.4a, 17.6.6a, 17.3.8a, or 16.12.10a (see https://www.cisa.gov/guidance-addressing-cisco-ios-xe-web-ui-vulnerabilities). Cisco Smart Install (CVE-2018-0171): disable feature. Palo Alto PAN-OS GlobalProtect (CVE-2024-3400): upgrade to 10.2.9-h1, 11.0.4-h1, 11.1.2-h3 or later (https://security.paloaltonetworks.com/CVE-2024-3400). Ivanti Connect Secure / Policy Secure (CVE-2024-21887, CVE-2023-46805): apply latest 9.x and 22.x patches and run vendor integrity-check tooling.",
+        "active_exploitation": "Yes \u2014 confirmed active exploitation in the wild. CISA, NSA, FBI and international partners published the advisory because of observed long-running, ongoing intrusions. Corroborating reports: Trend Micro (November 2024) on Salt Typhoon; Cisco Talos (February 2025); ESET (March 2025) on activity affecting a U.S.-based trade group. CVE-2023-20198 was added to CISA's Known Exploited Vulnerabilities Catalog on October 16, 2023. Actors have maintained long-term persistent access to telecom backbone and edge routers globally.",
+        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor (PRC state-sponsored threat actors). Specific PRC entities: Sichuan Juxinhe Network Technology Co., Ltd.; Beijing Huanyu Tianqiong Information Technology Co., Ltd.; Sichuan Zhixin Ruijie Network Technology Co., Ltd. (linked to PLA and MSS).",
+        "mitigation": "Configuration audits: compare running router/network-device configurations against last-known-good/authorized baselines with change control. Hunt for IOCs: unexpected GRE/IPsec tunnels toward foreign infrastructure; unauthorized external IPs configured as TACACS+/RADIUS servers; unexpected external IPs in ACLs (especially in 'access-list 20/50/10'); unexpected SPAN/RSPAN/ERSPAN packet captures; virtual Linux containers running on network devices. Segregate management: place SSH, HTTPS, SNMP, TACACS+, and RADIUS into out-of-band networks or dedicated management VRFs; apply Control-Plane Policing (CoPP). Restrict/disable exposed services: disable Cisco IOS XE HTTP/HTTPS server if not required ('no ip http server' / 'no ip http secure-server'); disable Smart Install and block TCP/4786; disable GuestShell where not operationally required. Apply vendor patches (see patch_available) and prioritize updates per CISA's Known Exploited Vulnerabilities Catalog. Review remote-access configurations (ACLs, transport protocols) for accuracy and least privilege. Review supply-chain trust relationships. Apply vendor patches.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
     {
@@ -270,15 +243,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Unit 26165 has used spearphishing and other initial\u2011access techniques to gain access to Western logistics and technology company networks, deployed malware to establish persistence, performed credential theft and lateral movement, and exfiltrated sensitive data.",
+        "technical_details": "Technical details unavailable.",
         "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (85th GTsSS), military unit 26165",
-        "mitigation": "Implement multi-factor authentication; enforce strong access controls and least privilege; apply timely patches for internet-facing and enterprise software; network segmentation; monitor/logging and hunt for indicators of compromise (including credentials theft, anomalous outbound exfiltration); disable unused remote access services; use EDR/antivirus and isolate impacted hosts; follow CISA/FBI guidance for reporting.",
+        "exploit_available": "No public exploit is known.",
+        "patch_available": "No official patch is available.",
+        "active_exploitation": "Yes, active exploitation has been reported.",
+        "threat_actors": "Russian GRU 85th Main Special Service Center (Unit 26165), APT28, Fancy Bear, Forest Blizzard",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
@@ -296,7 +269,36 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Reflected XSS in Outlook Web Access caused by improper neutralization of user\u2011supplied input during web page generation; exploitation involves sending a specially crafted email that, when opened in OWA under certain interaction conditions, can execute arbitrary JavaScript in the victim's browser.",
+        "affected_products": "Exchange Server 2016 (any update level), Exchange Server 2019 (any update level), Exchange Server Subscription Edition (SE) (any update level)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof\u2011of\u2011concept is available.",
+        "patch_available": "https://techcommunity.microsoft.com/blog/exchange/released-june-2026-exchange-server-security-updates/4524491",
+        "active_exploitation": "Confirmed active exploitation \u2013 sources: Microsoft Exchange Team blog (May 14, 2026 update) and CISA Known Exploited Vulnerabilities Catalog (added 2026-05-15).",
+        "threat_actors": "None known",
+        "mitigation": "Use the Exchange Emergency Mitigation (EM) Service or run the scripted EOMT.ps1 command (e.g., .\\EOMT.ps1 -CVE \"CVE-2026-42897\").",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897"
+      }
+    },
+    {
+      "id": "https://thehackernews.com/2026/06/hackers-exploit-gravity-smtp-wordpress.html",
+      "title": "Hackers Exploit Gravity SMTP WordPress Plugin Bug to Expose API Keys",
+      "summary": "Threat actors are exploiting a recently patched security flaw impacting Gravity SMTP, a WordPress plugin that's installed on about 100,000 sites.\n\nThe vulnerability, tracked as CVE-2026-4020 (CVSS score: 5.3), is a medium-severity information disclosure flaw that can allow unauthenticated attackers to extract sensitive data, such as configuration data, API keys, secrets, and OAuth tokens",
+      "link": "https://thehackernews.com/2026/06/hackers-exploit-gravity-smtp-wordpress.html",
+      "published": "2026-06-20T09:56:04+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-4020"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-55877",
