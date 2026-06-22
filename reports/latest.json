@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-22T11:31:28.771607+00:00",
+  "generated": "2026-06-22T16:26:36.165917+00:00",
   "total": 11,
   "kev": 0,
   "zero_day": 10,
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a path traversal vulnerability in SimpleHelp v5.5.7 and earlier that permits unauthenticated attackers to read sensitive files on the server by supplying crafted path inputs to vulnerable endpoints.",
-        "affected_products": "SimpleHelp Remote Support / RMM \u2014 versions 5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is a path\u2011traversal vulnerability in SimpleHelp Remote Monitoring and Management that lets an unauthenticated remote attacker craft a file request containing '../' sequences to traverse directories and read sensitive files.",
+        "affected_products": "SimpleHelp Remote Monitoring and Management (versions 5.5.7 and earlier)",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "true",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "Exploit availability unknown.",
         "patch_available": "true",
         "active_exploitation": "true",
-        "threat_actors": "Ransomware actors (unspecified groups)",
-        "mitigation": "Apply the vendor\u2011supplied patches/upgrade SimpleHelp to a patched release; if immediate patching is unavailable, restrict access to the SimpleHelp management interface with firewall rules or VPN\u2011only access, disable any public\u2011facing instances, rotate credentials/keys, audit logs, and monitor for indicators of compromise per CISA guidance.",
-        "vendor_advisory": "https://guides.simple-help.com/kb---security-vulnerabilities-01-2025"
+        "threat_actors": "Ransomware actors (unspecified)",
+        "mitigation": "Apply the vendor\u2011released patches for SimpleHelp 5.5.7 or later; if patches cannot be applied immediately, disable remote RMM access, enforce strict network segmentation, and monitor for anomalous file accesses.",
+        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -50,15 +50,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) \u2013 adversary places malicious instructions in web content or retrieval sources which AI agents retrieve and incorporate into their prompt context, causing unintended behavior (e.g., data exfiltration, command execution). GeminiJack is a zero\u2011click IPI demonstrated against Google Gemini Enterprise using hidden/indirect instructions.",
-        "affected_products": "Google Gemini Enterprise (GeminiJack), Microsoft Copilot Studio (ShareLeak/CVE-2026-21520), AI agents that browse web content",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true \u2014 http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability",
-        "patch_available": "Patch availability unknown",
+        "technical_details": "Indirect Prompt Injection (IPI) is an attack vector where adversarial content on the public web or other retrieved context contains hidden or malicious instructions that are picked up by AI agents during retrieval and influence their behavior. Examples include hidden website code, crafted web content, and comment\u2011based payloads that cause agents to execute unintended actions or reveal sensitive data.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "false",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Block or sanitize untrusted retrieval sources, implement strict retrieval filters, canonicalization and content whitelisting, model\u2011level instruction hardening (ignore externally retrieved instructions), telemetry and detection for anomalous retrievals, apply vendor guidance.",
+        "mitigation": "Input/output validation and sanitization, human oversight and controls around LLM outputs, retrieval\u2011filtering and whitelisting of sources, monitoring for IPI patterns, and vendor hardening of retrieval pipelines.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -78,15 +78,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) allows an attacker to influence an LLM\u2019s output by inserting malicious instructions into the data sources or tools the model consumes, causing the model to act on the injected payload without direct user input.",
-        "affected_products": "Google Workspace (Gemini)",
+        "technical_details": "Indirect Prompt Injection (IPI) \u2014 attackers seed malicious instructions into data sources or third\u2011party content consumed by an LLM\u2011enabled service (e.g., web pages, documents, integrated tools). When the LLM ingests that tainted data during query processing or agentic automation, the injected instructions can influence the model\u2019s behavior, potentially without any direct user input.",
+        "affected_products": "Google Workspace (features that integrate Gemini/GenAI and automated agents)",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
+        "mitigation": "Harden input/output handling: validate and sanitize external data, restrict agentic automation privileges, implement human\u2011in\u2011the\u2011loop approval for sensitive actions, provenance/trust signals for content sources, content filtering, rate/behavior monitoring, and regular scanning of public web for known IPI patterns (per Google recommendations).",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -106,15 +106,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "GeminiJack is an indirect prompt injection vulnerability in Google Gemini Enterprise that can be combined with other steps to gain unauthorized local file access and invade user privacy. In Chrome's Gemini feature, the flaw (CVE\u20112026\u20110628) allows similar file\u2011access behavior.",
-        "affected_products": "Google Chrome (including Gemini agentic capabilities), Google Gemini Enterprise",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true (patched, see http://unit42.paloaltonetworks.com/gemini-live-in-chrome-hijacking)",
-        "active_exploitation": "false",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Mitigation steps unavailable.",
+        "technical_details": "Indirect prompt injection in agentic browsing allows a malicious web page to inject crafted content into the Gemini agent\u2019s prompts, potentially causing the agent to execute unintended actions or leak local resources. The issue can be amplified when chained with other vulnerabilities such as CVE-2025-54131, leading to local file access or privacy breaches.",
+        "affected_products": "Chrome (Gemini agentic browsing feature)",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "false",
+        "patch_available": "true - http://security.googleblog.com/2025/12/architecting-security-for-agentic.html",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply the latest Chrome updates that include the agentic\u2011browsing mitigations, follow Google\u2019s layered\u2011defense guidance (restrict origin access, enforce additional agent oversight), and disable agentic features when not required.",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -134,15 +134,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A linear buffer overflow in the unsafe\u2011Rust CrabbyAVIF AVIF parser/decoder (CVE\u20112025\u201148530) could have allowed remote code execution; Scudo hardened allocator rendered it non\u2011exploitable and the flaw was fixed pre\u2011release.",
-        "affected_products": "CrabbyAVIF (Android platform external/rust/crabbyavif) \u2014 affected Android platform AVIF parser; specific version range unavailable.",
-        "cvss_score": "8.1",
+        "technical_details": "Near-miss linear buffer overflow in CrabbyAVIF (Rust) in unsafe code; Scudo hardened allocator\u2019s guard pages rendered it non-exploitable and converted overflow into a crash; issue assigned CVE-2025-48530 and patched pre-release.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true \u2014 patch: https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050 ; advisory: https://source.android.com/docs/security/bulletin/2025-08-01",
+        "patch_available": "true",
         "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Ensure Scudo hardened allocator enabled (Android default), apply official patch/advisory, improve crash reporting to detect overflows into Scudo guard pages, and follow Google\u2019s unsafe\u2011Rust training and review practices.",
+        "mitigation": "Ensure Scudo hardened allocator deployment, prioritize patches (90-day window), improved crash reporting for Scudo overflows, unsafe-Rust training and stricter unsafe code review practices; follow Android Security Bulletin guidance.",
         "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
@@ -162,15 +162,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection vulnerabilities occur when hostile instructions are embedded in external data sources (emails, documents, calendar invites, plugins, or other content) that an AI system ingests, causing the model to execute attacker-controlled instructions or exfiltrate data. The layered defense strategy includes input filtering/validation, content provenance and sanitization, sandboxing/execution controls for agent/plugins, model fine\u2011tuning with adversarial data, presence and intent detection, and telemetry/monitoring to detect anomalous outputs.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
+        "technical_details": "Indirect prompt injection attacks embed hidden or malicious instructions within external data sources (emails, documents, calendar invites, web pages) that AI agents ingest; when an agent processes this content without adequate provenance, grounding, or filtering, the malicious instructions can cause data exfiltration or unauthorized actions.",
+        "affected_products": "Affected products unavailable",
+        "cvss_score": "CVSS score unavailable",
+        "cvss_vector": "CVSS vector unavailable",
         "exploit_available": "false",
-        "patch_available": "true \u2014 https://blog.google/security/mitigating-prompt-injection-attacks/",
-        "active_exploitation": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Apply layered defenses: validate and sanitize external inputs before feeding to models; enforce strict least\u2011privilege for agents and plugins; restrict model access to sensitive contexts; use content provenance checks and allowlists/deny\u2011lists; fine\u2011tune models on adversarial examples and instruction\u2011following safety training; implement monitoring, rate\u2011limiting, and human review for high\u2011risk actions. Use Google\u2019s guidance at https://blog.google/security/mitigating-prompt-injection-attacks/ for specifics.",
+        "mitigation": "Layered defenses \u2014 validate and sanitize external inputs, enforce strict access controls and least privilege for model data, use provenance/metadata and content filtering, model grounding and refusal policies, context window trimming, allowlisting, rate\u2011limiting and human\u2011in\u2011the\u2011loop review for sensitive outputs.",
         "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
       }
     },
@@ -189,15 +189,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "State\u2011sponsored actors target large backbone, PE and CE routers, compromising devices or trusted connections to gain persistent, long\u2011term access. They modify router configuration or firmware to maintain footholds and use the compromised infrastructure for lateral movement and data exfiltration.",
-        "affected_products": "Backbone routers, provider\u2011edge (PE) routers, customer\u2011edge (CE) routers and other network devices",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "CVE-2023-20198 exploits a privilege\u2011escalation flaw in Cisco IOS XE's web UI, allowing an unauthenticated attacker to obtain root privileges. CVE-2023-20273 is a similar privilege\u2011escalation issue. CVE-2018-0171 leverages Cisco Smart Install to execute arbitrary code on IOS/IOS XE devices. CVE-2024-21887 is a command\u2011injection vulnerability in Ivanti Connect Secure and Ivanti Policy Secure that permits remote command execution.",
+        "affected_products": "Cisco IOS XE (Web UI feature), Cisco IOS and IOS XE (Smart Install), Ivanti Connect Secure (9.x, 22.x), Ivanti Policy Secure (9.x, 22.x)",
+        "cvss_score": "10.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
+        "exploit_available": "true",
+        "patch_available": "true",
         "active_exploitation": "true",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Isolate affected devices if compromise suspected; perform integrity checks and reinstall firmware/software from trusted images; rotate and enforce strong administrative credentials and multi\u2011factor authentication; limit management\u2011plane access with VPN/ACLs or jump hosts; apply vendor security advisories/patches when available; monitor for anomalous configuration changes; collect and analyze device logs and network telemetry; implement segmentation and out\u2011of\u2011band management.",
+        "mitigation": "Disable Guest Shell if not required, enable image and configuration integrity verification, validate firmware/image hashes, prioritize patching of CVE-2023-20198, CVE-2023-20273, CVE-2024-21887, and CVE-2018-0171, and hunt for related IOCs.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -216,15 +216,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "GRU unit 26165 conducts espionage via spearphishing (malicious attachments and links), credential guessing/brute force, exploitation of public\u2011facing applications (Outlook NTLM calendar exploit CVE\u20112023\u201123397 to harvest NTLM hashes, Roundcube and WinRAR RCEs), manipulation of Exchange mailbox permissions for mailbox collection, Active Directory reconnaissance and credential dumping (Certipy, ADExplorer, ntdsutil), lateral movement (Impacket, PsExec, RDP), exfiltration via OpenSSH/PowerShell, and targeting IP cameras via RTSP brute force to monitor shipments.",
-        "affected_products": "Microsoft Outlook (NTLM/calendar) \u2013 CVE-2023-23397, Roundcube Webmail \u2013 CVE-2020-12641, CVE-2020-35730, CVE-2021-44026, WinRAR \u2013 CVE-2023-38831, other internet\u2011facing VPNs and SOHO devices",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
+        "technical_details": "The actors leveraged exploitation of internet\u2011facing infrastructure, including compromised corporate VPNs, via public vulnerabilities such as the WinRAR vulnerability (CVE\u20112023\u201138831) and Roundcube Webmail vulnerabilities (CVE\u20112020\u201135730, CVE\u20112020\u201112641). They also used SQL injection to gain initial access, then moved laterally within victim networks.",
+        "affected_products": "WinRAR (CVE-2023-38831), Roundcube Webmail (CVE-2020-35730, CVE-2020-12641)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "true",
-        "patch_available": "Patch availability unknown",
+        "patch_available": "Patch availability unknown.",
         "active_exploitation": "true",
-        "threat_actors": "GRU 85th GTsSS (Unit 26165) \u2014 tracked as APT28 / Fancy Bear / Forest Blizzard / Blue Delta",
-        "mitigation": "Apply vendor patches for cited CVEs; harden email infrastructure (disable/limit NTLM, monitor for malicious calendar invites using Microsoft\u2011provided detection script); patch Roundcube and WinRAR; harden and monitor VPNs and SOHO devices; audit and monitor IP camera accounts and RTSP access; increase logging/threat hunting for indicators and LOLBin abuse (ntdsutil, wevtutil, vssadmin, Certipy, ADExplorer); implement MFA and privileged access controls.",
+        "threat_actors": "APT28, Fancy Bear, Forest Blizzard, Blue Delta",
+        "mitigation": "Collect and monitor Windows logs; Enable attack surface reduction rules; Educate users to only use approved corporate systems; Apply network segmentation; Restrict VPN access; Patch or mitigate vulnerable services where possible.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
       }
     },
@@ -244,16 +244,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "CVE-2026-41091 is a local privilege escalation caused by improper link resolution ('link following') before file access in Microsoft Defender/Malware Protection Engine. CVE-2026-45498 is a denial\u2011of\u2011service vulnerability in the Microsoft Defender Antimalware Platform triggered by crafted input that disrupts the service.",
-        "affected_products": "Microsoft Defender (Microsoft Malware Protection Engine / Antimalware Platform)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
+        "technical_details": "CVE\u20112026\u201147281: Improper input validation in VS\u202fCode allows privilege elevation over a network when a user opens a malicious .code-workspace file. CVE\u20112026\u201147284: Improper handling leads to information disclosure of sensitive data when a malicious .code-workspace file is opened. CVE\u20112026\u201150507: A protection\u2011mechanism failure in BitLocker permits bypass of device\u2011encryption via a physical attack, granting full access to encrypted data.",
+        "affected_products": "Visual Studio Code, Windows BitLocker",
+        "cvss_score": "9.6, 6.5, 6.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C; CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C; CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
+        "exploit_available": "true",
         "patch_available": "true",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Apply vendor updates immediately (install Microsoft security updates/patches and engine/definition updates). If patching is delayed, follow Microsoft/enterprise hardening guidance: restrict local access to trusted users, disable unneeded components, and ensure up\u2011to\u2011date antimalware definitions and endpoint protections.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091; https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45498"
+        "active_exploitation": "false",
+        "threat_actors": "None known, Bitskrieg, YellowKey",
+        "mitigation": "Apply the official patches released on June\u202f9\u202f2026. For VS\u202fCode, do not open .code-workspace files from untrusted sources. For BitLocker, maintain strict physical security controls to prevent unauthorized physical access.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47281, https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47284, https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50507"
       }
     },
     {
@@ -271,16 +271,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Attack used cross\u2011site scripting (XSS) vulnerabilities in Canvas Free\u2011for\u2011Teacher accounts to escalate to administrative access and exfiltrate data; additionally, ShinyHunters employed credential theft, MFA fatigue/vishing, OAuth token abuse, misconfigured guest\u2011user permissions, and compromised SaaS integrations.",
-        "affected_products": "Instructure Canvas (Free-for-Teacher tier)",
+        "technical_details": "The attacks exploit valid credentials, MFA fatigue, vishing, OAuth token abuse, compromised SaaS integrations, excessive permissions, misconfigured identity settings, third\u2011party trust exploitation, and help\u2011desk impersonation to access and exfiltrate data without a specific software flaw.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
         "exploit_available": "false",
-        "patch_available": "true",
+        "patch_available": "false",
         "active_exploitation": "true",
         "threat_actors": "ShinyHunters",
-        "mitigation": "Disable/retire affected Free-for-Teacher accounts; enforce least\u2011privilege OAuth scopes; inventory and revoke unnecessary tokens; deploy phishing\u2011resistant MFA (FIDO2/WebAuthn); harden identity controls and monitoring; perform web\u2011app security testing (pen testing, SAST/DAST); monitor for anomalous bulk data exports and privileged activity.",
-        "vendor_advisory": "https://instructure.com/incident_update"
+        "mitigation": "Enforce strong MFA, monitor and detect identity anomalies (impossible travel, token misuse, MFA manipulation), restrict guest\u2011user and OAuth permissions, reduce excessive SaaS privileges, harden help\u2011desk workflows, apply least\u2011privilege for integrations, monitor third\u2011party trust, and implement identity threat detection and response.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
