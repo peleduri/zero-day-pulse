@@ -1,10 +1,134 @@
 {
-  "generated": "2026-06-23T14:20:36.627768+00:00",
-  "total": 36,
-  "kev": 0,
+  "generated": "2026-06-23T19:49:11.853184+00:00",
+  "total": 46,
+  "kev": 4,
   "zero_day": 10,
   "enriched": 10,
   "findings": [
+    {
+      "id": "CVE-2025-67038",
+      "title": "CVE-2025-67038 \u2014 Lantronix EDS5000 Code Injection Vulnerability",
+      "summary": "Vendor: Lantronix | Product: EDS5000. Lantronix EDS5000 contains a code injection vulnerability that could allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-26)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-67038",
+      "published": "2026-06-23",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2025-67038"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "The vulnerability is a code injection flaw in the HTTP RPC module of the Lantronix EDS5000. It occurs when the module executes a shell command to write logs during user authentication, which allows an attacker to inject arbitrary OS commands into the username parameter. These injected commands are executed with root privileges.",
+        "affected_products": "Lantronix EDS5000 2.1.0.0R3",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "Public proof-of-concept (PoC) exploits are reported to exist on GitHub, although a specific URL was not provided in the citations.",
+        "patch_available": "No official patch or remediation guidance is currently available from the vendor [6].",
+        "active_exploitation": "Confirmed active exploitation has been reported; the vulnerability is included in the CISA Known Exploited Vulnerabilities (KEV) catalog as of the provided input metadata.",
+        "threat_actors": "None known",
+        "mitigation": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
+    },
+    {
+      "id": "CVE-2026-34910",
+      "title": "CVE-2026-34910 \u2014 Ubiquiti UniFi OS Improper Input Validation Vulnerability",
+      "summary": "Vendor: Ubiquiti | Product: UniFi OS. Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-26)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-34910",
+      "published": "2026-06-23",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-34910"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Improper Input Validation allows a remote unauthenticated attacker with network access to perform command injection on UniFi OS devices, leading to arbitrary command execution and potential root-level compromise.",
+        "affected_products": "UniFi OS (all versions up to disclosure)",
+        "cvss_score": "10.0",
+        "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is known.",
+        "patch_available": "Ubiquiti released firmware updates addressing this issue (Security Advisory Bulletin 064). Apply the latest UniFi OS firmware.",
+        "active_exploitation": "No confirmed active exploitation in the wild has been reported.",
+        "threat_actors": "None known",
+        "mitigation": "Update UniFi OS to the latest version, restrict management interface exposure (firewall, VPN, trusted IP ranges), audit account activity, rotate credentials, segment management networks, and follow vendor guidance.",
+        "vendor_advisory": "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
+      }
+    },
+    {
+      "id": "CVE-2026-34909",
+      "title": "CVE-2026-34909 \u2014 Ubiquiti UniFi OS Path Traversal Vulnerability",
+      "summary": "Vendor: Ubiquiti | Product: UniFi OS. Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-26)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-34909",
+      "published": "2026-06-23",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-34909"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "CVE-2026-34909 is a Path Traversal (CWE\u201122) flaw in the UniFi OS web service. An attacker with network access can craft a request that traverses directories and reads arbitrary files on the underlying system, potentially exposing configuration data or credentials. When combined with other UniFi OS bugs (improper access control and command injection), this can be leveraged to achieve unauthenticated remote code execution with root privileges.",
+        "affected_products": "All UniFi OS devices (including UniFi Dream Machine, Dream Machine Pro, Cloud Gateway, NVR, Protect, Access, Talk, Connect, and any hardware running UniFi OS).",
+        "cvss_score": "10.0",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "exploit_available": "Public proof\u2011of\u2011concept and detection tool are available. Bishop Fox published a full unauthenticated RCE chain and a GitHub detection script (https://github.com/BishopFox/CVE-2026-34908-check).",
+        "patch_available": "Ubiquiti has released security updates that address CVE-2026-34909 and CVE-2026-34908. The fix is included in the UniFi OS firmware updates referenced in Security Advisory Bulletin 064.",
+        "active_exploitation": "Confirmed. The vulnerability was added to the CISA Known Exploited Vulnerabilities (KEV) catalog on 16 June 2026 based on evidence of active exploitation, and Bishop Fox\u2019s research confirms a working exploit chain.",
+        "threat_actors": "None known",
+        "mitigation": "Apply the latest UniFi OS firmware (or hardware\u2011specific version) that contains the fix (Bulletin\u202f064). If immediate patching is not possible, block external access to the UniFi OS management interface (default TCP\u202f11443) and restrict it to trusted networks or VPN. Rotate all admin credentials, API keys, and secrets after patching. Monitor for unexpected configuration changes, new admin accounts, or suspicious device adoption activity. Segment the management network and enforce least\u2011privilege access controls.",
+        "vendor_advisory": "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
+      }
+    },
+    {
+      "id": "CVE-2026-34908",
+      "title": "CVE-2026-34908 \u2014 Ubiquiti UniFi OS Improper Access Control Vulnerability",
+      "summary": "Vendor: Ubiquiti | Product: UniFi OS. Ubiquiti UniFi OS contains an improper access control vulnerability which could allow a malicious actor with access to the network to make unauthorized changes to the system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-26)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-34908",
+      "published": "2026-06-23",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-34908"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Improper Access Control (CWE\u20111284) flaw in the UniFi OS server management interface that lets any unauthenticated network\u2011adjacent attacker bypass access restrictions and make unauthorized system changes (configuration, policy, etc.) without credentials.",
+        "affected_products": "Ubiquiti UniFi OS devices: UDM, UDM\u2011Pro, UDM\u2011SE, UDM\u2011Pro\u2011Max",
+        "cvss_score": "10.0",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit is known. No exploit has been reported in the wild.",
+        "patch_available": "An official vendor patch is available (see vendor advisory).",
+        "active_exploitation": "No confirmed active exploitation has been reported.",
+        "threat_actors": "None known",
+        "mitigation": "Apply the official vendor patch immediately. Restrict management interface access to trusted networks only (IP\u2011whitelisting, firewall rules, network segmentation). Block external access to UniFi OS management ports (8080, 8443, 443) from untrusted segments. Enable strict ACLs and VPN\u2011only access for administrators. Monitor logs for unauthorized configuration changes and unauthenticated API calls. Deploy intrusion detection/monitoring for abnormal UniFi OS activity. Follow CISA BOD\u202f26\u201104 guidance for cloud services or discontinue use if mitigation cannot be applied.",
+        "vendor_advisory": "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
+      }
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -22,16 +146,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Path traversal (directory traversal) vulnerability in SimpleHelp web interface that allows unauthenticated remote attackers to read arbitrary files on the server by sending crafted requests that traverse filesystem paths.",
-        "affected_products": "SimpleHelp remote support / Remote Monitoring and Management (RMM) software, versions 5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is a directory/path traversal vulnerability in SimpleHelp that permits unauthenticated attackers to craft HTTP requests which traverse the server filesystem and read arbitrary files (for example, configuration files, /etc/passwd, SSH private keys). The weakness can be chained with other vulnerabilities to escalate access; exploitation is achievable remotely via the SimpleHelp web interface.",
+        "affected_products": "SimpleHelp remote support / SimpleHelp RMM: version 5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "Public proof\u2011of\u2011concept and weaponized exploitation reported; see https://www.offsec.com/blog/cve-2024-57727/",
-        "patch_available": "A patch is available; SimpleHelp released an updated version after 5.5.7. Details at https://guides.simple-help.com/kb---security-vulnerabilities-01-2025",
-        "active_exploitation": "Yes \u2014 confirmed active exploitation reported by CISA advisory AA25-163A.",
-        "threat_actors": "Ransomware actors",
-        "mitigation": "Upgrade to the latest SimpleHelp release; if unable to patch immediately, isolate/offline SimpleHelp, restrict access via firewall to trusted IPs, rotate credentials, and monitor logs for suspicious access.",
-        "vendor_advisory": "https://guides.simple-help.com/kb---security-vulnerabilities-01-2025"
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Yes \u2014 public proof\u2011of\u2011concept exists (Metasploit auxiliary module msf6 auxiliary/scanner/http/simplehelp_toolbox_path_traversal).",
+        "patch_available": "Yes \u2014 patches available in SimpleHelp versions 5.5.8 and later. Vendor advisory: http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know",
+        "active_exploitation": "Confirmed \u2014 active exploitation reported in the wild by ransomware actors; CISA added CVE-2024-57727 to its Known Exploited Vulnerabilities (KEV) Catalog and vendor reporting and third\u2011party writeups document observed ransomware use (including incidents impacting a utility\u2011billing software provider).",
+        "threat_actors": "Ransomware actors (observed groups include DragonForce and Medusa)",
+        "mitigation": "If immediate patching is not possible: isolate the SimpleHelp server from the internet or stop the server process; disable file\u2011browsing functionality; restrict access to the SimpleHelp web interface with network controls (firewalls, allow\u2011lists); apply host hardening. If ransomware encryption occurs: disconnect affected systems, reinstall from clean media, and restore from known\u2011good backups.",
+        "vendor_advisory": "http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
       }
     },
     {
@@ -50,15 +174,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) involves embedding malicious prompt fragments in web content so that AI models that retrieve and process the content incorporate the attacker\u2011controlled instructions into their reasoning, potentially leading to unauthorized actions or data leakage.",
-        "affected_products": "Microsoft Copilot Studio (CVE-2026-21520)",
-        "cvss_score": "7.5",
+        "technical_details": "Indirect Prompt Injection (IPI) occurs when an AI system processes external content (e.g., website, email, document) that contains hidden malicious instructions. The AI, while parsing this poisoned content, may silently follow the attacker\u0019s commands rather than the intended user request, potentially leading to data exfiltration, system disruption, or other malicious outcomes.",
+        "affected_products": "Google AI agents (Gemini), Google Workspace, Chrome Enterprise, Android",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit available.",
-        "patch_available": "No official patch available.",
-        "active_exploitation": "Yes, active exploitation in the wild has been reported.",
+        "exploit_available": "No exploit available.",
+        "patch_available": "No patch available.",
+        "active_exploitation": "Limited active exploitation observed; several malicious indirect prompt injection payloads have been found on public websites, with a 32% increase in detections between November 2025 and February 2026.",
         "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
+        "mitigation": "Apply input/output validation and sanitization, enforce human oversight, employ layered defense strategies, continuously monitor for IPI patterns, and participate in Google\u0019s AI Vulnerability Reward Program for reporting. Additional hardening measures are described in Google\u0019s continuous approach to mitigating indirect prompt injections.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -78,16 +202,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) enables attackers to influence LLM behavior by injecting malicious instructions into the data or tools the LLM uses while fulfilling a user\u2019s request; this may be possible without direct user input (e.g., via notifications, web content, or other integrated data).",
-        "affected_products": "Google Workspace with Gemini integrations",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect Prompt Injection (IPI) allows an attacker to influence the behavior of a large language model by injecting malicious instructions into the data, tools, or context the model consumes while processing a user query. This can happen without any direct user input, exploiting the multi-source nature of AI-enhanced applications such as Workspace with Gemini.",
+        "affected_products": "Google Workspace (including Gemini Enterprise)",
+        "cvss_score": "-1.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof\u2011of\u2011concept details reported by third parties exist; no single vendor\u2011supplied exploit repository.",
-        "patch_available": "No official \"patch\" published; see advisory URL for mitigation details.",
-        "active_exploitation": "Reports describe proof\u2011of\u2011concept zero\u2011click or notification\u2011based IPI; no confirmed widescale active exploitation attributed to specific actors.",
+        "exploit_available": "No public proof-of-concept (PoC) available",
+        "patch_available": "No official patch; mitigations are achieved through continuous monitoring, layered defenses, and model hardening.",
+        "active_exploitation": "Yes \u0019 active exploitation has been observed (e.g., 10 indirect prompt injection payloads caught in the wild).",
         "threat_actors": "None known",
-        "mitigation": "See Google advisory for mitigations (input sanitation, provenance tracking, source isolation, policy\u2011based controls, model\u2011level hardening).",
-        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+        "mitigation": "Google employs a layered, continuous defense strategy that includes human red\u0011team simulations, automated red\u0011teaming frameworks, an AI Vulnerability Rewards Program, monitoring of publicly disclosed attacks, deterministic defenses (user confirmation, URL sanitization, tool\u0011chaining policies) managed via a centralized policy engine, ML\u0011based defenses trained on synthetic data, LLM\u0011based defenses refined through prompt engineering, and model hardening of Gemini to ignore injected malicious instructions.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -106,16 +230,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability is an indirect prompt injection: attackers inject malicious instructions into data sources or web content that an agentic AI treats as authoritative, causing the agent to execute unintended actions or exfiltrate data. The GeminiJack example demonstrates exploitation of trust boundaries between user\u2011controlled content and model instructions.",
-        "affected_products": "Chrome agentic/Gemini integration, Gemini Enterprise components",
+        "technical_details": "Indirect prompt injection occurs when attacker\u2011controlled web content is ingested by an LLM\u2011driven agent, subtly modifying the prompt to cause unintended actions. In Chrome\u2019s Gemini agentic browsing, this can be chained with CVE\u20112025\u201154131 to achieve arbitrary command execution. Google mitigates by scanning pages with a separate User Alignment Critic model and requiring user confirmation for high\u2011risk actions.",
+        "affected_products": "Google Chrome (pre\u2011patch Gemini AI agentic browsing), Google Gemini Enterprise (GeminiJack), Cursor (<\u202f1.3)",
         "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit is known.",
-        "patch_available": "Google announced layered mitigations and architecture changes in the Chrome agentic/Gemini integration; no separate patch URL is provided (see blog post).",
-        "active_exploitation": "No confirmed active exploitation reported; industry reporting describes the issue but no mass exploitation evidence.",
+        "exploit_available": "Public PoCs are available; Forcepoint documented 10 real\u2011world payloads and Noma Labs released the GeminiJack PoC.",
+        "patch_available": "Yes \u2013 Chrome released patches for CVE\u20112025\u20111028 and CVE\u20112025\u201154131. Patch details are available at Unit42 and NVD.",
+        "active_exploitation": "Yes \u2013 real\u2011world payloads have been observed in the wild (Forcepoint\u2019s 10 IPI payloads and GeminiJack discovered by Noma Labs).",
         "threat_actors": "None known",
-        "mitigation": "Use Chrome\u2019s new layered defenses for agentic browsing: restrict agent access to untrusted sites, sandbox data sources, validate and canonicalize data, and require explicit user confirmation for agent actions.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "mitigation": "Enable the User Alignment Critic layer and keep Chrome up\u2011to\u2011date; the layered defense includes deterministic rules, model\u2011level protections, isolation boundaries, and user\u2011oversight prompts.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
     {
@@ -134,15 +258,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC found; exploit reported as in-the-wild (no public weaponized PoC URL found).",
-        "patch_available": "Google released patches in the Android June 2026 security patch level (2026-06-05 delivery to partners) via the Android Security Bulletin.",
-        "active_exploitation": "Confirmed indications of limited, targeted exploitation have been reported.",
+        "technical_details": "An integer overflow in the Android Framework can be triggered to achieve arbitrary code execution and local privilege escalation without user interaction.",
+        "affected_products": "Android Framework (core system layer) on Android OS versions 14, 15, 16, and 16\u2011qpr2",
+        "cvss_score": "8.4",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "No public proof\u2011of\u2011concept is available; however, the vulnerability is listed in the CISA Known Exploited Vulnerabilities Catalog, indicating exploits are being used in the wild.",
+        "patch_available": "A security patch is available as part of the Android 2026\u201106\u201105 security patch level, distributed via Google Play System Updates and OTA updates.",
+        "active_exploitation": "Confirmed \u2013 Google\u2019s June 2026 Android Security Bulletin and the CISA catalog both note limited, targeted exploitation.",
         "threat_actors": "None known",
-        "mitigation": "Apply June 2026 Android security updates; install vendor updates and avoid untrusted apps/sources.",
+        "mitigation": "Apply the Android 2026\u201106\u201105 security patch (or later) as soon as possible. Until then, enable Google Play Protect, enforce SELinux enforcing mode, restrict installation of untrusted apps, and consider disabling non\u2011essential services.",
         "vendor_advisory": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
       }
     },
@@ -162,16 +286,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "An unauthenticated OS command injection in the Ivanti Sentry (MobileIron Configuration Service) web portal allows remote attackers to inject and execute OS\u2011level commands via crafted requests to the web interface, enabling full system compromise and potential backdoor installation.",
-        "affected_products": "Ivanti Sentry (MobileIron Configuration Service) versions before R10.5.2, R10.6.2, and R10.7.1",
-        "cvss_score": "10.0",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "Public proof\u2011of\u2011concept exploit available (reported June 10, 2026)",
-        "patch_available": "Yes \u2014 Ivanti released updates addressing CVE-2026-10520 (see vendor advisory URL above).",
-        "active_exploitation": "Yes \u2014 active exploitation confirmed by Shadowserver/Foundation and multiple incident reports; public PoC released on June 10, 2026.",
-        "threat_actors": "None known",
-        "mitigation": "Apply Ivanti vendor updates immediately; if patching is delayed, isolate or block access to the MICS web portal from untrusted networks, remove or restrict administrative access, implement Web Application Firewall rules to block malicious payloads, and monitor for indicators of compromise.",
-        "vendor_advisory": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
+        "technical_details": "Indirect prompt injection involves embedding hidden malicious instructions in external data sources (e.g., emails, documents, calendar invites) that, when processed by a generative AI system such as Gemini, can cause the model to exfiltrate data or perform unauthorized actions. The attack bypasses direct user input by leveraging the AI\u0019s ability to ingest and act on external content.",
+        "affected_products": "Google Gemini (Gemini 2.5 and later), Gemini in Google Workspace, Gemini app",
+        "cvss_score": "-9999.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept or weaponized exploit is known.",
+        "patch_available": "No official patch has been released; mitigation is provided via layered defenses.",
+        "active_exploitation": "No confirmed active exploitation reported.",
+        "threat_actors": "None known.",
+        "mitigation": "Google employs a layered security approach that includes (1) prompt\u0011injection content classifiers, (2) security thought reinforcement to keep the model focused on the user\u0019s intent, (3) markdown sanitization and suspicious URL redaction using Safe Browsing, (4) a user\u0011confirmation framework for high\u0011risk actions, and (5) end\u0011user security mitigation notifications with help\u0011center guidance. Model hardening with adversarial training (Gemini\u0011 2.5) further reduces susceptibility.",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
     {
@@ -187,19 +311,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "State\u2011sponsored actors compromise backbone, provider edge and customer edge routers, modify firmware or configuration to maintain long\u2011term access, and leverage these compromised devices to pivot into other network segments.",
-        "affected_products": "Network routers (backbone routers, provider edge (PE) routers, customer edge (CE) routers)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit or PoC is known.",
-        "patch_available": "No official patch is available; guidance is limited to mitigation steps.",
-        "active_exploitation": "No confirmed active exploitation reported in the advisory.",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Follow the mitigation guidance in CISA Alert AA25-239A which includes router configuration hardening, network segmentation, monitoring for anomalous traffic, and applying recommended detection rules.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
@@ -214,19 +326,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Actors used exploitation of internet\u2011facing apps (including CVE-2023-38831 in WinRAR and Roundcube CVEs), spearphishing (malicious attachments/links), SQLi, living\u2011off\u2011the\u2011land tools (ntdsutil, vssadmin, wevtutil), Impacket/PsExec, RDP lateral movement, mailbox\u2011permission manipulation for sustained email collection, and exfiltration of O365 mailboxes.",
-        "affected_products": "RARLAB WinRAR (CVE-2023-38831); Roundcube Webmail (CVE-2020-35730, CVE-2020-12641)",
-        "cvss_score": "-1.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit URLs cited in the advisory.",
-        "patch_available": "Vendor patches available for referenced CVEs (see vendor/security advisories for WinRAR CVE-2023-38831 and Roundcube CVE-2020-35730/CVE-2020-12641). Specific vendor advisory URLs not provided in CSA.",
-        "active_exploitation": "Yes \u2014 advisory notes exploitation of CVE-2023-38831 and other vulnerabilities by GRU unit 26165 against targets; CISA reports active targeting of logistics and technology companies.",
-        "threat_actors": "Russian GRU (unit 26165) \u2014 tracked in industry as APT28 / Fancy Bear / Forest Blizzard / Blue Delta.",
-        "mitigation": "Enable Windows attack surface reduction rules; collect and monitor Windows logs; enable application hardening and executable allowlisting; monitor for LOTL usage and specific IOCs; follow CISA mitigation actions in advisory.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/",
@@ -242,19 +342,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch information unavailable.",
-        "active_exploitation": "No reports of active exploitation related to this blog post; the CrowdStrike blog summarizes survey findings about cloud breaches, not a specific software vulnerability.",
-        "threat_actors": "None known",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://www.securityweek.com/algerian-man-extradited-to-us-for-running-cybercrime-marketplaces/",
@@ -269,19 +357,169 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "OS command injection in Ivanti Sentry allows a remote unauthenticated user to execute OS commands (remote command injection).",
-        "affected_products": "Ivanti Sentry versions before R10.5.2, R10.6.2 and R10.7.1",
-        "cvss_score": "-1.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit found in searched sources.",
-        "patch_available": "Yes \u2014 Ivanti released updates addressing the issue (see vendor advisory URL).",
-        "active_exploitation": "Confirmed \u2014 added to CISA Known Exploited Vulnerabilities Catalog.",
-        "threat_actors": "None known",
-        "mitigation": "Apply Ivanti updates to R10.5.2, R10.6.2 or R10.7.1 or later; follow Ivanti advisory for workarounds/hardening.",
-        "vendor_advisory": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
-      }
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-54134",
+      "title": "OctoPrint has possible file exfiltration via query parameters on upload endpoints",
+      "summary": "### Impact\n\nOctoPrint versions up until and including 1.11.7 as well as 2.0.0rc1 and 2.0.0rc2 contain a vulnerability that allows an attacker with the `FILE_UPLOAD` permission to exfiltrate files from the host that OctoPrint has read access to, by moving them into the upload folder where they then can be downloaded from. This vulnerability was already reported as [GHSA-m9jh-jf9h-x3h2/CVE-2025-48067](https://github.com/OctoPrint/OctoPrint/security/advisories/GHSA-m9jh-jf9h-x3h2) but the fix provided in OctoPrint 1.11.2 turned out to be incomplete.\n\nThe primary risk lies in the potential exfiltration of secrets stored inside OctoPrint's config, or further system files. By removing important runtime files, this could also be used to impact the availability of the host after an attempted server restart. Given that the attacker requires a user account with file upload permissions, the actual impact of this should however hopefully be minimal in most cases.\n\n### Patches\n\nThe vulnerability has been patched in version 1.11.8 and 2.0.0rc3.\n\n### Details\n\nOctoPrint's web application is implemented in Flask, but uploads are first intercepted by a custom upload handler built on Tornado that sits in front of it. The handler streams the upload to a temporary file on disk - so files larger than the available memory can be uploaded - and rewrites the request, adding internal form fields that tell Flask where to find that temporary file.\n\nThese fields are reserved and meant to be set only by the upload handler, never by the client. The previous fix from [GHSA-m9jh-jf9h-x3h2/CVE-2025-48067](https://github.com/OctoPrint/OctoPrint/security/advisories/GHSA-m9jh-jf9h-x3h2) stripped them from the request received from the client when they were sent as multipart form fields, yet they could still reach Flask through other channels: as plain query parameters, or - since the Tornado handler and Flask did not parse requests identically - smuggled in via several \"parser differentials\" that looke",
+      "link": "https://github.com/advisories/GHSA-j4h9-pm27-4rfw",
+      "published": "2026-06-23T18:03:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54134"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55173",
+      "title": "AVideo has an incomplete fix of CVE-2026-33482: sanitizeFFmpegCommand still allows a single '&' (background operator), giving OS command execution at the same execAsync sh -c sink",
+      "summary": "### Summary\n\nThe fix for CVE-2026-33482 (GHSA-pmj8-r2j7-xg6c) is incomplete. That advisory reported that `sanitizeFFmpegCommand()` (`plugin/API/standAlone/functions.php`) failed to strip `$(...)` command substitution, allowing OS command injection at the `execAsync()` `sh -c` sink. The fix (commit `25c8ab90`) added `$`, `(`, `)`, `{`, `}`, `\\n`, `\\r` to the denylist character class and a `str_replace('&&', '', ...)`. It still does **not** neutralize a single `&` (the shell background operator), which remains a command separator at the unchanged sink. Same entry point, same sink, same impact as the original \u2014 only the surviving metacharacter differs.\n\nVerified at master HEAD.\n\n### The surviving gap\n\nHEAD `sanitizeFFmpegCommand` (`functions.php`):\n```php\n$command = str_replace('&&', '', $command);                    // only the doubled form\n$command = preg_replace('/\\s*&?>.*(?:2>&1)?/', '', $command);  // strips '&' only when followed by '>'\n$command = preg_replace('/[;|`<>$()\\n\\r{}]/', '', $command);   // char class has no '&'\n// then requires the result to start with 'ffmpeg'\n```\nA single `&` is therefore preserved. `ffmpeg ... & <cmd>` passes the sanitizer and the `strpos(trim($command),'ffmpeg')===0` prefix gate.\n\n### Sink (unchanged)\n\n`plugin/API/standAlone/ffmpeg.json.php:418` -> `execAsync($ffmpegCommand, $keyword)`. In `objects/functionsExec.php::execAsync`:\n```php\n$command = addcslashes($command, '\"');   // line 686 \u2014 escapes only the double-quote\n$commandWithKeyword = \"nohup sh -c \\\"$command & echo \\\\$! > /tmp/$keyword.pid\\\" > /dev/null 2>&1 &\";  // line 705\nexec($commandWithKeyword, ...);          // line 712 \u2014 PHP exec() runs via /bin/sh -c\n```\nThe sanitized command is embedded inside an inner `sh -c \"...\"`. A bare `&` in `$command` separates commands for that inner shell, so the injected command executes. `addcslashes` escaping only `\"` does not stop `&`.\n\n### Reachability\n\n`ffmpeg.json.php` builds the command from `_decryptString(getInput('codeToExecEncr",
+      "link": "https://github.com/advisories/GHSA-wc3f-xc32-435f",
+      "published": "2026-06-23T17:42:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55173"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52816",
+      "title": "Gogs's Unauthenticated Jupyter Notebook (ipynb) Sanitizer allows arbitrary data: URIs leading to XSS",
+      "summary": "## Summary\n\nThe Jupyter Notebook (ipynb) sanitizer endpoint at `POST /-/api/sanitize_ipynb` allows arbitrary `data:` URIs without proper restrictions, potentially leading to Cross-Site Scripting (XSS). The endpoint uses `bluemonday.UGCPolicy()` with `p.AllowURLSchemes(\"data\")` which permits all data URI schemes including `data:text/html`, enabling attackers to inject malicious HTML/JavaScript. Additionally, the endpoint has no authentication middleware, allowing any registered user to exploit this vulnerability.\n\n## Severity\n\n**High**\n\n## Affected Versions\n\nAll versions using the vulnerable endpoint\n\n## Vulnerability Details\n\n- **CVE ID**: (To be assigned)\n- **Entry Point**: `POST /-/api/sanitize_ipynb`\n- **Attack Vector**: Network\n- **Authentication Required**: No (only needs a registered user account)\n\n## Impact\n\nAn attacker with a registered user account can:\n\n- Send malicious HTML containing `data:text/html` URIs to the sanitization endpoint\n- Receive sanitized but attacker-controlled HTML in the response\n- Execute arbitrary JavaScript in the attacker's browser context through XSS\n- Potentially exploit other users if the sanitized output is rendered in their context\n\nThe vulnerability has higher severity because:\n\n1. No authentication required (only needs a registered user account)\n2. Unlike the safer pattern in `internal/markup/sanitizer.go:39` which uses `isSafeDataURI` to only allow safe image MIME types, this endpoint allows ALL data URIs including HTML\n3. The returned HTML can be used to craft XSS attacks\n\n## Proof of Concept\n\nAttacker sends a POST request to the sanitization endpoint:\n\n```http\nPOST /-/api/sanitize_ipynb HTTP/1.1\nHost: target.gogs.instance\nContent-Type: text/plain\n\n<a href=\"data:text/html,<script>alert(document.cookie)</script>\">click</a>\n```\n\nThe server returns the sanitized HTML with the data URI preserved:\n\n```html\n<a href=\"data:text/html,<script>alert(document.cookie)</script>\">click</a>\n```\n\nWhen this HTML is rendered in a browser, the",
+      "link": "https://github.com/advisories/GHSA-3w28-36p9-w929",
+      "published": "2026-06-23T17:33:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52816"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45048",
+      "title": "OpenAM Authenticated Privilege Escalation via Raw Token Disclosure Session RPC",
+      "summary": "## Summary\n\nDescription\n\nAn insufficient authorization (CWE-285) and information exposure (CWE-200) issue in OpenAM's session management endpoint allows a low-privileged authenticated user to retrieve active session credentials belonging to other users, including those with higher privileges. This affects OpenAM Community Edition through version 16.0.6 and was patched in version 16.1.1.\n\nThis may be related to CVE-2021-4201, a similar issue patched in ForgeRock Access Management, a separate product sharing a common codebase ancestry.\n\n## Impact\n\nOpenAM Community Edition deployments through version 16.0.6 using stateful session storage and exposing the session management endpoint are potentially affected. The endpoint does not enforce ownership or privilege checks when querying session information, meaning an authenticated user may retrieve active session credentials for arbitrary users. Successful exploitation requires a valid low-privilege session and knowledge of a target user's identity identifier, which may be obtainable through normal platform functionality.\n\nIf credentials belonging to a highly privileged account are obtained, this could enable further administrative actions within the platform\n\n## Patch\n\nThis has been patched in OpenAM Community Edition version 16.1.1. Users are encouraged to update to the latest release.",
+      "link": "https://github.com/advisories/GHSA-vvhj-w2jq-263q",
+      "published": "2026-06-23T17:33:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45048"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52813",
+      "title": "Gogs has Path Traversal in organization name that results in RCE through Git hooks",
+      "summary": "### Summary\n\nOrganization names containing path traversal sequences (`../`) are accepted by Gogs, and repositories under them are written to paths following these path traversals. This allows storing/retrieving data for repositories at arbitrary locations on the filesystem.\nBy creating nested structure of Git repositories, one can overwrite the other's `hooks` configuration to result in Remote Code Execution (RCE).\n\n### Details\n\nDuring organization creation, `internal/database/org.go` calls `os.MkdirAll(repox.UserPath(org.Name))` without sanitizing `org.Name`. \n\nhttps://github.com/gogs/gogs/blob/d7571322a04a29476d4241406ed50bf7eef0a5b7/internal/database/org.go#L165\n\nRepository creation uses this name to decide where to write the Git bare repository's (`org/name.git`). By setting the org name to `../../../../tmp/test`, and creating a repository under that organization, it gets written under `/tmp/test` on the server.\n\nhttps://github.com/gogs/gogs/blob/d7571322a04a29476d4241406ed50bf7eef0a5b7/internal/repox/repox.go#L57-L58\n\nAn attacker can abuse this in a clever way by writing to the `/data/gogs/data/tmp/local-r/1` directory, being a local worktree of the git repositories inside of Gogs. These directories are editable by Git. By creating a repository nested inside of there, files like `config` and `hooks/update` are now referenced through the path traversal, and are editable by Git. This allows the attacker to edit the `hooks/update` script with malicious Bash commands and then to trigger the hook.\n\nThe steps to exploit this inside of Gogs are roughly (ignoring some syncing dummy actions):\n\n1. Create regular outer repository and get its ID\n2. Create organization named `../../../../data/gogs/data/tmp/local-r/{ID}/nested`\n3. Create a repository inside this organization (eg. `rce`), which will be written into the local clone of the outer repository\n4. From the outer repository, edit `nested/rce.git/hooks/update` to contain malicious shell commands\n5. Interact with the `",
+      "link": "https://github.com/advisories/GHSA-c39w-43gm-34h5",
+      "published": "2026-06-23T17:10:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52813"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52812",
+      "title": "Gogs: LFS dedupe path leaks private repo content across tenants",
+      "summary": "Summary\n\nGit LFS storage is content-addressed by OID alone (`<LFS-root>/<oid[0]>/<oid[1]>/<oid>`) but per-repo authorization lives in the `lfs_object` table keyed `(repo_id, oid)`. `serveUpload` skips re-uploading when the OID file already exists on disk and inserts a new `(repo_id, oid)` row pointing at it **without verifying the request body hashes to the OID being claimed**. Any user with write access to one repo can bind their repo to an OID owned by a private repo and download the original bytes via their own download endpoint.\n\nDetails\n\nDedupe shortcut at `internal/lfsx/storage.go:79-82`:\n\n```go\nif fi, err := os.Stat(fpath); err == nil {\n    _, _ = io.Copy(io.Discard, rc)\n    return fi.Size(), nil          // \u2190 returns success with no hash check\n}\n```\n\nHash verification at `internal/lfsx/storage.go:106-108` only runs in the *new-file* branch \u2014 the dedupe path returns earlier.\n\n`serveUpload` (`internal/route/lfs/basic.go:78-114`) trusts that success and inserts the per-repo binding:\n\n```go\n_, err := h.store.GetLFSObjectByOID(c.Req.Context(), repo.ID, oid)   // per-repo\nif err == nil { /* already linked, drain & return 200 */ }\nwritten, err := s.Upload(oid, c.Req.Request.Body)\nerr = h.store.CreateLFSObject(c.Req.Context(), repo.ID, oid, written, s.Storage())\n```\n\n`CreateLFSObject` is an unconditional `INSERT` on `(repo_id, oid)` with no check that the OID is referenced by the requesting repo's git history.\n\n`serveDownload` at `internal/route/lfs/basic.go:42-72` only consults the per-repo row, then streams from the shared content-addressed file.\n\nSuggested fix\n\n1. In `LocalStorage.Upload`, when `os.Stat(fpath) == nil`, hash the request body via `io.TeeReader` and `ErrOIDMismatch` on disagreement \u2014 same code path as the new-file branch already uses. The \"client retries after partial failure\" use case still works; the retry just has to send the correct content.\n2. Optional second layer: in `serveUpload`, refuse `CreateLFSObject` unless the OID is referenced by an L",
+      "link": "https://github.com/advisories/GHSA-6p9m-q3jp-47h4",
+      "published": "2026-06-23T17:10:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52812"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52806",
+      "title": "Gogs vulnerable to RCE via git rebase --exec argument injection in pull request merge",
+      "summary": "# Gogs: RCE via `git rebase --exec` Argument Injection in PR Merge\n\n## Summary\n\nGogs allows authenticated users to achieve Remote Code Execution (RCE) on the server by creating a pull request with a specially crafted branch name that injects the `--exec` flag into the `git rebase` command during the \"Rebase before merging\" merge operation.\n\n## Severity\n\n**Critical** - CVSS 3.1 Base Score: 9.9 (AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H)\n\n## Affected Versions\n\n- **Gogs 0.14.2** (latest supported release)\n- Gogs 0.15.0+dev (commit `b53d3162`, main branch as of 2026-03-16)\n- All prior versions that support the \"Rebase before merging\" merge style\n\n## Impact\n\nThis is a **privilege escalation from authenticated user to server-level code execution**. The attacker uses their own repository as the delivery mechanism - the target is not the repository but the Gogs server itself. On any multi-tenant Gogs instance (company, university, open source hosting), this gives one authenticated user full control of the underlying server:\n\n- **Server compromise**: Arbitrary command execution as the Gogs process user\n- **Cross-tenant data breach**: Read ALL repositories on the instance, including other users' private repos\n- **Credential theft**: Access the database containing password hashes, API tokens, SSH keys, and 2FA secrets for every user\n- **Lateral movement**: Pivot to other systems accessible from the server's network\n- **Supply chain attacks**: Silently modify any hosted repository's code. The Gogs process user (typically `git`) has direct filesystem-level read/write access to every repository on the instance under a single `REPOSITORY_ROOT` directory (default: `~/gogs-repositories`). There is no OS-level isolation between repositories; all access control is application-layer only.\n\nThe vulnerability affects all supported platforms (Linux, macOS, Windows) and installation methods (pre-built binary, Docker, source). On Docker installations, the Gogs process runs as the `git` user (UID ",
+      "link": "https://github.com/advisories/GHSA-qf6p-p7ww-cwr9",
+      "published": "2026-06-23T17:02:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52806"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52805",
+      "title": "Gogs has a Migration Redirect Bypass that Leads to Internal Repository Theft",
+      "summary": "# Migration URL validation bypass via HTTP redirect to blocked internal endpoints\n\n## Summary\n\nA Server-Side Request Forgery (SSRF) vulnerability exists in the repository migration functionality. The application validates only the initially submitted URL hostname, but `git clone --mirror` follows HTTP redirects. An authenticated user can submit a public URL that redirects to a blocked internal endpoint (e.g., `127.0.0.1`), importing the internal repository's contents into an attacker-controlled repository.\n\n## Vulnerability Details\n\nThe vulnerability is located in `internal/form/repo.go`. `ParseRemoteAddr()` validates the clone address hostname against a blocklist of local and private-network addresses. However, the actual migration is performed by `git clone --mirror` in `internal/database/repo.go`, which follows HTTP redirects without revalidation:\n\n1. Attacker submits `http://attacker.example/redirect.git` \u2014 passes validation (public hostname).\n2. Attacker's server responds with `302` redirect to `http://127.0.0.1:18081/victim/private.git`.\n3. Git follows the redirect and clones the internal repository.\n4. Gogs imports the cloned contents into the attacker's new repository.\n\nThe root cause is that Gogs validates only the initial URL and does not revalidate the final redirect target.\n\n## Impact\n\nThis vulnerability bypasses the intended localhost/private-network migration restriction. Any authenticated user who can migrate repositories can import contents from internal Git endpoints reachable from the Gogs server. This allows attackers to:\n\n- Steal source code and secrets from internal repositories served over HTTP.\n- Scan internal network services via the migration endpoint.\n\n## Reproduction Steps\n\nPrerequisites: a Gogs instance, an attacker account that can create repositories.\n\n1. Start a local HTTP Git server with a test repository on `127.0.0.1:18081`.\n2. Start a redirect server that responds to any request with a `302` redirect to `http://127.0.0.1:18081/vict",
+      "link": "https://github.com/advisories/GHSA-g2f5-gjr4-qjvm",
+      "published": "2026-06-23T17:01:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52805"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52804",
+      "title": "Gogs Vulnerable to Privilege Escalation via Collaboration Access Mode Validation",
+      "summary": "## Summary\n\nA repository admin collaborator can escalate their privileges to owner-level access by exploiting an off-by-one error in the `ChangeCollaborationAccessMode` function.\n\n## Vulnerable Code\n\nIn `internal/database/repo_collaboration.go`, line 129:\n\n```go\nfunc (r *Repository) ChangeCollaborationAccessMode(userID int64, mode AccessMode) error {\n    // Discard invalid input\n    if mode <= AccessModeNone || mode > AccessModeOwner {\n        return nil\n    }\n```\n\n`AccessModeOwner` has value 4. The check `mode > AccessModeOwner` evaluates to `4 > 4 = false`, allowing `AccessModeOwner` to pass through. The correct check should be `mode >= AccessModeOwner`.\n\nThe web route at `internal/route/repo/setting.go:413-416` takes the mode as a raw integer from query parameters:\n\n```go\nfunc ChangeCollaborationAccessMode(c *context.Context) {\n    if err := c.Repo.Repository.ChangeCollaborationAccessMode(\n        c.QueryInt64(\"uid\"),\n        database.AccessMode(c.QueryInt(\"mode\"))); err != nil {\n```\n\nThis allows an admin collaborator to POST `mode=4` and escalate to owner.\n\n## Impact\n\nA repository admin collaborator (AccessModeAdmin = 3) can escalate to owner-level access (AccessModeOwner = 4), gaining the ability to:\n- **Delete the repository**\n- **Transfer repository ownership** to another user\n- **Erase wiki data**\n- Perform all other owner-only operations\n\nThe `access` table is also updated (line 181), so the escalated permissions persist across sessions.\n\n## Contrast\n\nThe API route at `internal/route/api/v1/repo_collaborators.go:46` uses `ParseAccessMode()` which only returns Read, Write, or Admin - never Owner. The API endpoint is not affected.\n\n## Steps to Reproduce\n\n1. User A creates a private repository\n2. User A adds User B as a collaborator with **Admin** access (mode=3)\n3. User B logs in and navigates to the repository settings collaboration page\n4. User B sends a POST request:\n   ```\n   POST /{owner}/{repo}/settings/collaboration/access_mode?uid={B_uid}&mode=4\n   ``",
+      "link": "https://github.com/advisories/GHSA-4565-r4x7-hg8j",
+      "published": "2026-06-23T16:52:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52804"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-52801",
@@ -675,60 +913,6 @@
       ],
       "cve_ids": [
         "CVE-2026-33692"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-33684",
-      "title": "AVideo's Privilege Escalation via Unguarded Permission Parameters in signUp API Allows Self-Granting Upload/Stream/Meet Permissions",
-      "summary": "## Summary\n\nThe `set_api_signUp` method in the API plugin accepts `emailVerified`, `canUpload`, `canStream`, and `canCreateMeet` parameters from user-supplied input and applies them to newly created accounts without verifying that the request was authenticated with a valid APISecret. Any anonymous user who can solve a CAPTCHA can self-grant elevated permissions during account registration.\n\n## Details\n\nThe authentication check in `set_api_signUp` (`plugin/API/API.php:4222`) allows either a valid APISecret (admin-level credential) or a solved CAPTCHA (anonymous access):\n\n```php\n// plugin/API/API.php:4222-4232\nif ($obj->APISecret !== @$_REQUEST['APISecret']) {\n    if(empty($_REQUEST['captcha'])){\n        return new ApiObject(\"Captcha is required\");\n    }\n    require_once $global['systemRootPath'] . 'objects/captcha.php';\n    $valid = Captcha::validation($_REQUEST['captcha']);\n    if(!$valid){\n        return new ApiObject(\"Captcha is wrong, reload it and try again\");\n    }\n}\n```\n\nAfter this check, both code paths (APISecret and CAPTCHA) reach the privilege parameter handling unconditionally:\n\n```php\n// plugin/API/API.php:4238-4249\nif (isset($_REQUEST['emailVerified'])) {\n    $global['emailVerified'] = intval($_REQUEST['emailVerified']);\n}\nif (isset($_REQUEST['canCreateMeet'])) {\n    $global['canCreateMeet'] = intval($_REQUEST['canCreateMeet']);\n}\nif (isset($_REQUEST['canStream'])) {\n    $global['canStream'] = intval($_REQUEST['canStream']);\n}\nif (isset($_REQUEST['canUpload'])) {\n    $global['canUpload'] = intval($_REQUEST['canUpload']);\n}\n```\n\nThese `$global` values are then consumed by `User::save()` (`objects/user.php:829-840`), which overrides the user object's permission fields:\n\n```php\n// objects/user.php:829-840\nif (isset($global['emailVerified'])) {\n    $this->emailVerified = $global['emailVerified'];\n}\nif (isset($global['canCreateMeet'])) {\n    $this->canCreateMeet = $global['canCreateMeet'];\n}\nif (isset($global['canStream'])) {\n    $this->canStream = $global['",
-      "link": "https://github.com/advisories/GHSA-8j8m-p79x-g4jm",
-      "published": "2026-06-22T17:25:03Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-33684"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-21887",
-      "title": "OpenCTI has Semi-Blind SSRF via Unvalidated External URL in Data Ingestion Feature",
-      "summary": "### Summary\nThe OpenCTI platform\u2019s data ingestion feature accepts user-supplied URLs without validation and uses the Axios HTTP client with its default configuration (allowAbsoluteUrls: true). This allows attackers to craft requests to arbitrary endpoints, including internal services, because Axios will accept and process absolute URLs.\n\nThis results in a semi-blind SSRF, as responses may not be fully visible but can still impact internal systems.\n\n### Impact\nOpenCTI\u2019s data ingestion feature can allow an attacker to make the application send HTTP requests to arbitrary internal or external endpoints. This means an attacker could reach internal services that are not exposed publicly, such as Elasticsearch, Redis, or RabbitMQ, and potentially extract sensitive data or manipulate internal components. In cloud environments, the attacker could target metadata services like AWS, Azure, or GCP to obtain credentials and configuration details, which could lead to full compromise of the infrastructure. Even though the SSRF is semi-blind and the attacker may not see the full response, the ability to interact with internal services can enable enumeration, data exfiltration, and in some cases remote code execution if internal APIs expose dangerous functionality.",
-      "link": "https://github.com/advisories/GHSA-ffm6-vvph-g5f5",
-      "published": "2026-06-22T17:01:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-21887"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2025-58048",
-      "title": "Paymenter vulnerable to Remote Code Execution via public file uploads",
-      "summary": "### Impact\n\nThe ticket attachments functionality in Paymenter allows a malicious authenticated user to upload arbitrary files.\n\nWith the ability to execute arbitrary code, this vulnerability can be exploited in numerous ways, including but not limited to:\n- Extracting sensitive data from the database (e.g. customer information).\n- Reading credentials from .env or other configuration files.\n- Running arbitrary system commands under the web server user context.\n\nThis issue is Critical as it allows a low-privilege authenticated user to fully compromise the application and underlying server.\n\n### Patches\nThis vulnerability was patched by https://github.com/Paymenter/Paymenter/commit/87c3db42282ada1e3cda54b9a01f846926c0669b and was released under the [v1.2.11](https://github.com/Paymenter/Paymenter/releases/tag/v1.2.11) tag without any other code modifications compared to v1.2.10.\n\n### Work arounds\nIf upgrading is not immediately possible, administrators can mitigate this vulnerability with one or more of the following measures:\n\n- Updating nginx config to download attachments instead of executing them:\n```\nlocation ^~ /storage/ {\n    types { }\n    default_type application/octet-stream;\n    add_header X-Content-Type-Options nosniff;\n    try_files $uri =404;\n}\n```\n- Disallow access to /storage/ fully using a WAF such as Cloudflare\n\nThese workarounds significantly reduce risk, but the only guaranteed resolution is upgrading to v1.2.11 or later.",
-      "link": "https://github.com/advisories/GHSA-5pm9-r2m8-rcmj",
-      "published": "2026-06-22T16:53:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2025-58048"
       ],
       "is_zero_day": false,
       "is_high_severity": true
