@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-23 08:56 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 26 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-23 14:20 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 26 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,15 +13,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Unauthorized attackers can exploit a directory traversal flaw to read arbitrary files on SimpleHelp servers without authentication.
-- **Affected Products:** SimpleHelp remote support / RMM versions 5.5.7 and earlier
+- **Technical Details:** Path traversal (directory traversal) vulnerability in SimpleHelp web interface that allows unauthenticated remote attackers to read arbitrary files on the server by sending crafted requests that traverse filesystem paths.
+- **Affected Products:** SimpleHelp remote support / Remote Monitoring and Management (RMM) software, versions 5.5.7 and earlier
 - **CVSS Score:** 7.5
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** true
-- **Patch Available:** true
-- **Active Exploitation:** true
-- **Threat Actors:** Ransomware actors (unspecified groups)
-- **Mitigation:** Upgrade SimpleHelp to a patched version immediately; if patching is delayed, block inbound access to SimpleHelp servers, require VPN or firewall restrictions, rotate credentials, review logs for indicators of compromise, and follow CISA incident response guidance.
+- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+- **Exploit Available:** Public proof‑of‑concept and weaponized exploitation reported; see https://www.offsec.com/blog/cve-2024-57727/
+- **Patch Available:** A patch is available; SimpleHelp released an updated version after 5.5.7. Details at https://guides.simple-help.com/kb---security-vulnerabilities-01-2025
+- **Active Exploitation:** Yes — confirmed active exploitation reported by CISA advisory AA25-163A.
+- **Threat Actors:** Ransomware actors
+- **Mitigation:** Upgrade to the latest SimpleHelp release; if unable to patch immediately, isolate/offline SimpleHelp, restrict access via firewall to trusted IPs, rotate credentials, and monitor logs for suspicious access.
 - **Vendor Advisory:** https://guides.simple-help.com/kb---security-vulnerabilities-01-2025
 
 ---
@@ -35,16 +35,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) in Google Gemini Enterprise allows an attacker to embed malicious prompts that alter the model's output. The GeminiJack zero‑click vulnerability shows this can be achieved without user interaction, directly injecting a crafted payload into the model's processing pipeline.
-- **Affected Products:** Google Gemini Enterprise
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Indirect Prompt Injection (IPI) involves embedding malicious prompt fragments in web content so that AI models that retrieve and process the content incorporate the attacker‑controlled instructions into their reasoning, potentially leading to unauthorized actions or data leakage.
+- **Affected Products:** Microsoft Copilot Studio (CVE-2026-21520)
+- **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true (https://blog.google/security/prompt-injections-web/)
+- **Exploit Available:** No public exploit available.
+- **Patch Available:** No official patch available.
+- **Active Exploitation:** Yes, active exploitation in the wild has been reported.
 - **Threat Actors:** None known
 - **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** https://blog.google/security/prompt-injections-web/
+- **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
 
@@ -57,16 +57,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) is an attacker technique that injects malicious instructions into data sources or tools consumed by a large language model (LLM) during completion, causing the LLM or agentic automations to follow attacker‑supplied commands (potentially without any direct user input). Vectors include poisoned web content, document content, email, or other integrated data/tools that LLMs query; impacts arise when LLMs run tool calls or use external data without strict input validation or provenance checks.
-- **Affected Products:** Google Workspace with Gemini (Gemini Enterprise integrations)
-- **CVSS Score:** CVSS score unavailable
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** Active exploitation status unknown
+- **Technical Details:** Indirect Prompt Injection (IPI) enables attackers to influence LLM behavior by injecting malicious instructions into the data or tools the LLM uses while fulfilling a user’s request; this may be possible without direct user input (e.g., via notifications, web content, or other integrated data).
+- **Affected Products:** Google Workspace with Gemini integrations
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Public proof‑of‑concept details reported by third parties exist; no single vendor‑supplied exploit repository.
+- **Patch Available:** No official "patch" published; see advisory URL for mitigation details.
+- **Active Exploitation:** Reports describe proof‑of‑concept zero‑click or notification‑based IPI; no confirmed widescale active exploitation attributed to specific actors.
 - **Threat Actors:** None known
-- **Mitigation:** Input and output validation and sanitization; restrict LLM access to untrusted external data and tools; enforce human‑in‑the‑loop review for sensitive actions; use allowlists and provenance/metadata checks; continuous monitoring and sweeps for known IPI patterns; adopt vendor guidance from the Google Security Blog advisory.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
+- **Mitigation:** See Google advisory for mitigations (input sanitation, provenance tracking, source isolation, policy‑based controls, model‑level hardening).
+- **Vendor Advisory:** https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/
 
 ---
 
@@ -79,16 +79,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The flaw allows an attacker to inject malicious prompts into the Gemini AI agent via a web page, which can then be chained with indirect prompt injection to achieve actions like local file read or privacy‑invasive behavior.
-- **Affected Products:** Google Chrome (versions prior to the patch for CVE-2026-0628), Google Gemini Enterprise (versions prior to 1.3)
-- **CVSS Score:** 6.4
+- **Technical Details:** The vulnerability is an indirect prompt injection: attackers inject malicious instructions into data sources or web content that an agentic AI treats as authoritative, causing the agent to execute unintended actions or exfiltrate data. The GeminiJack example demonstrates exploitation of trust boundaries between user‑controlled content and model instructions.
+- **Affected Products:** Chrome agentic/Gemini integration, Gemini Enterprise components
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** true
-- **Active Exploitation:** true
+- **Exploit Available:** No public PoC or weaponized exploit is known.
+- **Patch Available:** Google announced layered mitigations and architecture changes in the Chrome agentic/Gemini integration; no separate patch URL is provided (see blog post).
+- **Active Exploitation:** No confirmed active exploitation reported; industry reporting describes the issue but no mass exploitation evidence.
 - **Threat Actors:** None known
-- **Mitigation:** Update Chrome to the latest version which includes a new security layer that sanitizes prompts and isolates the Gemini AI agent, thereby mitigating indirect prompt injection.
-- **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
+- **Mitigation:** Use Chrome’s new layered defenses for agentic browsing: restrict agent access to untrusted sites, sandbox data sources, validate and canonicalize data, and require explicit user confirmation for agent actions.
+- **Vendor Advisory:** https://blog.google/security/architecting-security-for-agentic/
 
 ---
 
@@ -101,16 +101,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** A near-miss linear buffer overflow in CrabbyAVIF (unsafe Rust) (assigned CVE-2025-48530); Scudo guard pages turned overflow into a noisy crash and made it non-exploitable.
+- **Technical Details:** Technical details unavailable.
 - **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** true — patch: https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050 and advisory: https://source.android.com/docs/security/bulletin/2025-08-01
-- **Active Exploitation:** false
+- **Exploit Available:** No public PoC found; exploit reported as in-the-wild (no public weaponized PoC URL found).
+- **Patch Available:** Google released patches in the Android June 2026 security patch level (2026-06-05 delivery to partners) via the Android Security Bulletin.
+- **Active Exploitation:** Confirmed indications of limited, targeted exploitation have been reported.
 - **Threat Actors:** None known
-- **Mitigation:** Scudo hardened allocator (guard pages) rendered the overflow non-exploitable; increased crash reporting, unsafe-code review and training; make Scudo mandatory on partners.
-- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-08-01
+- **Mitigation:** Apply June 2026 Android security updates; install vendor updates and avoid untrusted apps/sources.
+- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2026/2026-06-01
 
 ---
 
@@ -123,16 +123,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection attacks are hidden malicious instructions embedded in external data sources (emails, documents, calendar invites) that aim to manipulate generative AI systems to exfiltrate data or perform unintended actions.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Technical Details:** An unauthenticated OS command injection in the Ivanti Sentry (MobileIron Configuration Service) web portal allows remote attackers to inject and execute OS‑level commands via crafted requests to the web interface, enabling full system compromise and potential backdoor installation.
+- **Affected Products:** Ivanti Sentry (MobileIron Configuration Service) versions before R10.5.2, R10.6.2, and R10.7.1
+- **CVSS Score:** 10.0
+- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+- **Exploit Available:** Public proof‑of‑concept exploit available (reported June 10, 2026)
+- **Patch Available:** Yes — Ivanti released updates addressing CVE-2026-10520 (see vendor advisory URL above).
+- **Active Exploitation:** Yes — active exploitation confirmed by Shadowserver/Foundation and multiple incident reports; public PoC released on June 10, 2026.
 - **Threat Actors:** None known
-- **Mitigation:** Use layered defenses—sanitize and validate external data sources, enforce provenance and access controls, apply output filters and rate limits, and deploy product‑level mitigations as described by Google (see vendor advisory).
-- **Vendor Advisory:** https://blog.google/security/mitigating-prompt-injection-attacks/
+- **Mitigation:** Apply Ivanti vendor updates immediately; if patching is delayed, isolate or block access to the MICS web portal from untrusted networks, remove or restrict administrative access, implement Web Application Firewall rules to block malicious payloads, and monitor for indicators of compromise.
+- **Vendor Advisory:** https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US
 
 ---
 
@@ -145,15 +145,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** PRC state‑sponsored actors modify large backbone, provider edge (PE) and customer edge (CE) routers, leveraging compromised devices and trusted connections to pivot within networks, thereby achieving persistent, long‑term access and enabling lateral movement.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** State‑sponsored actors compromise backbone, provider edge and customer edge routers, modify firmware or configuration to maintain long‑term access, and leverage these compromised devices to pivot into other network segments.
+- **Affected Products:** Network routers (backbone routers, provider edge (PE) routers, customer edge (CE) routers)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
+- **Exploit Available:** No public exploit or PoC is known.
+- **Patch Available:** No official patch is available; guidance is limited to mitigation steps.
+- **Active Exploitation:** No confirmed active exploitation reported in the advisory.
 - **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Network segmentation, monitoring for lateral movement, hardening router configurations, replacing or re‑imaging compromised devices, applying vendor fixes when available, restricting management interfaces, enforcing MFA for administrative access, and updating firmware per vendor advisories.
+- **Mitigation:** Follow the mitigation guidance in CISA Alert AA25-239A which includes router configuration hardening, network segmentation, monitoring for anomalous traffic, and applying recommended detection rules.
 - **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
 
 ---
@@ -167,15 +167,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** State-sponsored cyber espionage campaign targeting Western logistics and technology companies (including entities coordinating transport/delivery of assistance to Ukraine) using intrusions since 2022 for intelligence collection and operational disruption; tactics reported include targeting logistics and IT supply‑chain/access vectors (detailed technical IOC‑level data not provided here).
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Actors used exploitation of internet‑facing apps (including CVE-2023-38831 in WinRAR and Roundcube CVEs), spearphishing (malicious attachments/links), SQLi, living‑off‑the‑land tools (ntdsutil, vssadmin, wevtutil), Impacket/PsExec, RDP lateral movement, mailbox‑permission manipulation for sustained email collection, and exfiltration of O365 mailboxes.
+- **Affected Products:** RARLAB WinRAR (CVE-2023-38831); Roundcube Webmail (CVE-2020-35730, CVE-2020-12641)
+- **CVSS Score:** -1.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** true
-- **Threat Actors:** GRU (85th GTsSS / Unit 26165); tracked names include APT-28 (and related GRU designations).
-- **Mitigation:** Implement multifactor authentication, network segmentation, least privilege, rapid patching/updating of enterprise systems, enhanced monitoring and logging, phishing‑resistant controls, and follow CISA/FBI joint advisory guidance (AA25-141A) for indicators and response steps.
+- **Exploit Available:** No public PoC or weaponized exploit URLs cited in the advisory.
+- **Patch Available:** Vendor patches available for referenced CVEs (see vendor/security advisories for WinRAR CVE-2023-38831 and Roundcube CVE-2020-35730/CVE-2020-12641). Specific vendor advisory URLs not provided in CSA.
+- **Active Exploitation:** Yes — advisory notes exploitation of CVE-2023-38831 and other vulnerabilities by GRU unit 26165 against targets; CISA reports active targeting of logistics and technology companies.
+- **Threat Actors:** Russian GRU (unit 26165) — tracked in industry as APT28 / Fancy Bear / Forest Blizzard / Blue Delta.
+- **Mitigation:** Enable Windows attack surface reduction rules; collect and monitor Windows logs; enable application hardening and executable allowlisting; monitor for LOTL usage and specific IOCs; follow CISA mitigation actions in advisory.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
@@ -187,38 +187,38 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** An OS command injection (link‑following/improper input handling in the MobileIron Configuration Service web portal) allows an unauthenticated remote attacker to execute arbitrary OS commands as root, leading to full remote code execution and takeover of the appliance.
-- **Affected Products:** Ivanti Sentry (formerly MobileIron Sentry) — versions before R10.5.2, R10.6.2, and R10.7.1
-- **CVSS Score:** 10.0
+- **Technical Details:** Technical details unavailable.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true — https://horizon3.ai/attack-research/vulnerabilities/cve-2026-10520
-- **Patch Available:** true — https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US
-- **Active Exploitation:** true
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch information unavailable.
+- **Active Exploitation:** No reports of active exploitation related to this blog post; the CrowdStrike blog summarizes survey findings about cloud breaches, not a specific software vulnerability.
 - **Threat Actors:** None known
-- **Mitigation:** Apply the vendor patch immediately; isolate or block network access to vulnerable Sentry appliances, restrict management interfaces to trusted networks, monitor for suspicious activity, rotate credentials, and follow temporary mitigation steps outlined in the advisory.
-- **Vendor Advisory:** https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 10. 🟠 Zero-Day — What the Latest ShinyHunters Breaches Reveal About Modern Cyberattacks
+## 10. 🟠 Zero-Day — Algerian Man Extradited to US for Running Cybercrime Marketplaces
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-06-22
-**Reference:** <https://www.securityweek.com/what-the-latest-shinyhunters-breaches-reveal-about-modern-cyberattacks/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-06-23
+**Reference:** <https://www.securityweek.com/algerian-man-extradited-to-us-for-running-cybercrime-marketplaces/>
 
-> Groups like ShinyHunters are demonstrating that attackers do not necessarily need malware or zero-day exploits to cause massive damage. The post What the Latest ShinyHunters Breaches Reveal About Modern Cyberattacks appeared first on SecurityWeek .
+> 26-year-old Abdellah Belmili faces up to 30 years in prison for allegedly operating the marketplaces Market0Day and Spoxy. The post Algerian Man Extradited to US for Running Cybercrime Marketplaces appeared first on SecurityWeek .
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Attacks rely on credential‑stuffing, account takeover, data scraping/exfiltration and exploitation of misconfigurations or exposed datasets rather than malware or zero‑day exploits; attackers aggregate and sell leaked databases.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** OS command injection in Ivanti Sentry allows a remote unauthenticated user to execute OS commands (remote command injection).
+- **Affected Products:** Ivanti Sentry versions before R10.5.2, R10.6.2 and R10.7.1
+- **CVSS Score:** -1.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** true
-- **Threat Actors:** ShinyHunters
-- **Mitigation:** Enforce MFA, rotate compromised credentials, implement rate‑limiting and bot protections, monitor for credential‑stuffing, secure misconfigured endpoints, encrypt sensitive data at rest and in transit, perform regular audits and logging.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Exploit Available:** No public PoC or weaponized exploit found in searched sources.
+- **Patch Available:** Yes — Ivanti released updates addressing the issue (see vendor advisory URL).
+- **Active Exploitation:** Confirmed — added to CISA Known Exploited Vulnerabilities Catalog.
+- **Threat Actors:** None known
+- **Mitigation:** Apply Ivanti updates to R10.5.2, R10.6.2 or R10.7.1 or later; follow Ivanti advisory for workarounds/hardening.
+- **Vendor Advisory:** https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US
 
 ---
 
