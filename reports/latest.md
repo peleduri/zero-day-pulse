@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-24 08:52 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-24 14:05 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 7
 
 ---
 
@@ -13,42 +13,51 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** CVE-2024-57727 is a directory traversal vulnerability that allows unauthenticated remote attackers to read arbitrary files on the server by manipulating file path inputs.
-- **Affected Products:** SimpleHelp Remote Monitoring and Management (RMM) version 5.5.7 and earlier
+- **Technical Details:** Path traversal allowing unauthenticated attackers to read arbitrary files on the server via crafted HTTP requests.
+- **Affected Products:** SimpleHelp remote support software version 5.5.7 and earlier
 - **CVSS Score:** 7.5
-- **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** Exploit availability unknown
-- **Patch Available:** true (http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability)
-- **Active Exploitation:** true
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** No public proof‑of‑concept or weaponized exploit known.
+- **Patch Available:** Patch released and applied within two days of reporting, per SimpleHelp advisory.
+- **Active Exploitation:** Ransomware actors have exploited the vulnerability to compromise a utility billing software provider, as reported by CISA.
 - **Threat Actors:** Ransomware actors
-- **Mitigation:** Mitigation steps unavailable
+- **Mitigation:** Apply the vendor patch or upgrade SimpleHelp to a version newer than 5.5.7.
 - **Vendor Advisory:** http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
 
 ---
 
-## 2. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 2. 🟠 Zero-Day — How much cyber risk does AI create for organizations? 457 million security issues. Here’s what you can do about it.
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-06-24
+**Reference:** <https://www.tenable.com/blog/how-much-cyber-risk-does-ai-create-for-organizations-457-million-security-issues-heres-what>
+
+> Over a 30 day period, Tenable detected 457 million AI-related security issues among 7,000-plus organizations, an average of 62,000 exposures per organization. If we didn’t already know that shadow AI was a problem, data like this makes it clear every organization needs to visualize, map, assess, and protect with a comprehensive exposure management program. Key takeaways AI tools — approved and una…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** AI-related security issues arise from misconfigurations, unmanaged dependencies, shadow AI tools, and LLM misconfigurations rather than standard CVEs.
+- **Affected Products:** AI tools (approved and unapproved), OpenClaw (agentic AI personal assistant), LLMs, AI workloads, cloud workloads.
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** No public exploit available.
+- **Patch Available:** No official patch available.
+- **Active Exploitation:** No confirmed active exploitation reported.
+- **Threat Actors:** None known.
+- **Mitigation:** Implement a comprehensive exposure management program: visualize, map, assess, and protect AI tools; deploy automated, agentic workflows to contain and remediate exposures at machine speed.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
+
+---
+
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
 
 > Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise …
 
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Indirect prompt injection occurs when attacker-controlled content is incorporated into an LLM’s retrieval or prompt context, causing the model to follow malicious instructions. Attackers can place malicious instructions in web pages, comments, hidden site code or other retrievable data; examples include GeminiJack, a zero-click IPI demonstrated against Google Gemini Enterprise.
-- **Affected Products:** Google Gemini Enterprise
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
-- **Threat Actors:** None known
-- **Mitigation:** Implement input and output validation and sanitization, apply human oversight and controls, and follow best practices for LLM security.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
-
 ---
 
-## 3. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -57,20 +66,20 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) attacks inject malicious instructions into data or tools that an LLM uses to complete a user query (possibly without direct user input). Attackers can influence agentic/automated LLM behavior via poisoned external content, URLs, or tool outputs. Google’s defenses include layered controls: discovery (human and automated red‑teaming, vulnerability cataloging), synthetic attack-data generation for model retraining, deterministic defenses (user confirmation, URL sanitization, tool‑chaining policies), ML‑based retraining, and LLM prompt/system‑instruction hardening to make Gemini ignore embedded harmful commands.
-- **Affected Products:** Google Workspace with Gemini
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Indirect prompt injection (IPI) is a technique where an attacker injects malicious instructions into data or tools consumed by an LLM, allowing the attacker to influence model behavior — potentially without any direct user input — in complex multi‑source AI applications such as Google Workspace with Gemini.
+- **Affected Products:** Google Workspace (including Gemini integration)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false (continuous mitigations and defenses described; no discrete vendor 'patch' released)
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** None known
-- **Mitigation:** Apply defense‑in‑depth: run human and automated red‑teaming, use centralized vulnerability cataloging and synthetic-data generation to create training/validation sets, deploy deterministic protections (user confirmation, URL sanitization, tool‑chaining policies via a policy engine), retrain ML detectors, apply LLM prompt/system‑instruction hardening, and monitor/public web disclosures for new IPI patterns.
+- **Exploit Available:** No public proof‑of‑concept (PoC) or weaponized exploit reported in the provided sources.
+- **Patch Available:** No official patch available; mitigation steps are described in the advisory.
+- **Active Exploitation:** Confirmed active exploitation reported in the wild; sources: Forcepoint X‑Labs ("10 Indirect Prompt Injection Payloads Caught in the Wild") and SecurityWeek reporting on Google's analysis.
+- **Threat Actors:** None known.
+- **Mitigation:** Follow Googles continuous mitigation guidance: monitor the public web for IPI patterns, sanitize or restrict access to untrusted data sources, apply hardening and access controls for LLM tool integrations, and follow the advisory's recommended detection and response practices.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
 
-## 4. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -79,20 +88,20 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection in Chrome's agentic browsing allows malicious sites to inject crafted content that influences the LLM prompts, potentially causing unintended actions.
-- **Affected Products:** Google Chrome
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Indirect prompt injection is when malicious or untrusted web content influences prompts or context provided to an LLM-based agent, causing it to perform unintended actions (e.g., navigation, form submission, data exfiltration). Chrome’s defenses limit model exposure to untrusted origins, vet planned actions via a separate Alignment Critic, and require confirmations for sensitive operations.
+- **Affected Products:** Google Chrome (Agentic Browsing / Gemini AI feature)
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** Public indirect prompt-injection payloads/PoC examples have been observed in the wild (reported Apr 22–24, 2026); sources report payload collections but not necessarily a single packaged weaponized exploit.
+- **Patch Available:** Chrome implements mitigations as part of a new agentic security architecture (delivered through Chrome updates). See the Google Security Blog advisory for details.
+- **Active Exploitation:** No confirmed reports of active exploitation of Chrome agentic capabilities in the cited vendor advisory; however, independent reporting observed indirect prompt-injection payloads in the wild (Forcepoint/related reporting, Apr 2026).
 - **Threat Actors:** None known
-- **Mitigation:** Chrome's new architecture introduces input sanitization and isolation for LLM prompts, mitigating indirect prompt injection; users should keep Chrome updated and avoid untrusted sites.
+- **Mitigation:** Use the latest Chrome release (which includes the new agentic security architecture: User Alignment Critic, Agent Origin Sets / origin gating, user confirmations, and real-time threat detection). Restrict use of agentic browsing on untrusted sites and require user confirmation for sensitive actions.
 - **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 
 ---
 
-## 5. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -101,20 +110,20 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The vulnerability sits in the Rust-based Android Binder driver (rust_binder) and is a race condition that can corrupt memory, leading to crashes.
-- **Affected Products:** Linux kernel 6.18+ (rust_binder), Android OS (kernel)
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** CVE-2025-48595: a high-severity elevation-of-privilege vulnerability in the Android Framework that allows local attackers to gain code execution and escalate privileges on Android 14+ devices.
+- **Affected Products:** Android 14 (and later) devices
+- **CVSS Score:** 7.8
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true (https://www.rescana.com/post/cve-2025-68260-critical-race-condition-in-rust-based-android-binder-subsystem-affects-linux-kernel)
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** None known.
-- **Mitigation:** Apply the official kernel patches provided by the Linux kernel.
+- **Exploit Available:** No public proof-of-concept (PoC) or weaponized exploit is referenced in the provided sources.
+- **Patch Available:** A patch set is scheduled in the June 2026 Android Security Bulletin (security patch level 2026-06-05).
+- **Active Exploitation:** Confirmed active exploitation in the wild; reported by Google in the June 2026 Android Security Bulletin and corroborated by security reporting/CISA listings.
+- **Threat Actors:** None known
+- **Mitigation:** Install the June 2026 Android Security Bulletin updates (security patch level 2026-06-05) as they become available; keep devices updated to the latest Android security patch level.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 6. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -123,20 +132,20 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection: hidden malicious instructions embedded in external data sources (emails, documents, calendar invites, web content) cause an LLM-based assistant to follow attacker instructions or exfiltrate data. Google mitigates by model hardening (adversarial training), purpose-built ML detectors, system-level safeguards, and 'security thought reinforcement' which surrounds prompt content with targeted security instructions to keep the model focused on user-directed tasks and ignore adversarial instructions.
-- **Affected Products:** Gemini (including Gemini in Google Workspace), Gemini app
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** Indirect prompt injection involves hidden malicious instructions embedded in external data sources (e.g., emails, documents, calendar invites) that, when processed by an LLM, can cause exfiltration of data or execution of rogue actions.
+- **Affected Products:** Google Gemini (Gemini 2.5 models), Google Workspace (Gemini integration), Google Gemini app
+- **CVSS Score:** 0.0
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** true — mitigations and model hardening have been integrated into Gemini (see advisory URL).
-- **Active Exploitation:** true
+- **Exploit Available:** No public proof-of-concept exploit is available.
+- **Patch Available:** No official patch; mitigation provided via layered security controls and model hardening.
+- **Active Exploitation:** No confirmed active exploitation in the wild has been reported.
 - **Threat Actors:** None known
-- **Mitigation:** Layered defenses: adversarial training / model hardening (Gemini 2.5), purpose-built ML detectors to flag malicious instructions, system-level blocking/filtering/redaction flows, security-thought-reinforcement to steer model behavior, end-user security notifications with help links, and ongoing red-teaming and VRP collaboration. Follow the Google advisory Help Center links for configuration and user guidance.
-- **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
+- **Mitigation:** Layered security approach including prompt injection content classifiers, security thought reinforcement, markdown sanitization and suspicious URL redaction, user confirmation framework, and end‑user security mitigation notifications.
+- **Vendor Advisory:** https://blog.google/security/mitigating-prompt-injection-attacks/
 
 ---
 
-## 7. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 8. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -145,80 +154,32 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Chinese state-sponsored actors target network infrastructure globally, gaining persistent access to routers and other devices, and pivot through compromised connections to maintain long-term control.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
+- **Technical Details:** State-sponsored actors target large backbone, PE and CE routers and other network-edge devices, modify router software/configuration to maintain persistent, long-term access, and pivot through compromised devices and trusted connections into other networks.
+- **Affected Products:** Backbone routers, provider edge (PE) routers, customer edge (CE) routers, network edge devices
+- **CVSS Score:** 6.4
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true
+- **Exploit Available:** Exploitation of network-device CVEs has been observed in the wild; however, no public proof-of-concept (PoC) or vendor-supplied weaponized exploit URL is reported in the consulted sources.
+- **Patch Available:** No official vendor patch or remediation guidance was reported in the reviewed sources.
+- **Active Exploitation:** Yes — the advisory and multiple analyses report exploitation of network-device CVEs in the wild (see cited sources).
 - **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
+- **Mitigation:** CISA’s advisory and accompanying STIX/IOCs include mitigation recommendations and detection/response guidance; operators are advised to apply CISA’s detection guidance, review supplied IOCs, monitor for indicators on edge/backbone routers, isolate and remediate compromised devices, and restrict administrative access to network-edge devices.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 8. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 9. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
 
 > Executive Summary This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General…
 
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** Russian GRU (85th GTsSS, Unit 26165), APT-28
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
-
 ---
 
-## 9. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 10. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** Threat actors unknown.
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
-
----
-
-## 10. 🟠 Zero-Day — Algerian Man Extradited to US for Running Cybercrime Marketplaces
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-06-23
-**Reference:** <https://www.securityweek.com/algerian-man-extradited-to-us-for-running-cybercrime-marketplaces/>
-
-> 26-year-old Abdellah Belmili faces up to 30 years in prison for allegedly operating the marketplaces Market0Day and Spoxy. The post Algerian Man Extradited to US for Running Cybercrime Marketplaces appeared first on SecurityWeek .
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Technical details unavailable.
-- **Affected Products:** Affected products unavailable.
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** None known
-- **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
