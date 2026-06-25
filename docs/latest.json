@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-25T02:05:13.652295+00:00",
-  "total": 17,
+  "generated": "2026-06-25T08:47:08.228065+00:00",
+  "total": 16,
   "kev": 0,
   "zero_day": 12,
-  "enriched": 3,
+  "enriched": 5,
   "findings": [
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
@@ -22,15 +22,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a path\u2011traversal vulnerability that lets unauthenticated attackers send crafted HTTP requests to SimpleHelp remote support software (v5.5.7 and earlier) to read arbitrary files, including configuration files with hashed passwords.",
+        "technical_details": "Directory traversal vulnerability allowing attackers to read sensitive files via path traversal.",
         "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "Public proof\u2011of\u2011concept code is available on GitHub: https://github.com/imjdl/CVE-2024-57727",
-        "patch_available": "Patch released in SimpleHelp version 5.5.8 (and later). See SimpleHelp release notes https://simple-help.com/release-news for details.",
-        "active_exploitation": "Confirmed active exploitation reported by CISA and ransomware actors leveraging unpatched SimpleHelp RMM instances.",
-        "threat_actors": "Ransomware actors (unspecified groups) have exploited this vulnerability in the wild.",
-        "mitigation": "Apply the SimpleHelp 5.5.8 patch or later. If patch cannot be applied immediately, restrict external network access to the SimpleHelp server, enforce strong authentication, and disable unauthenticated remote file downloads.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept or weaponized exploit has been reported.",
+        "patch_available": "A patch has been released; see vendor advisory at http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability",
+        "active_exploitation": "CISA reported ransomware actors exploiting unpatched SimpleHelp Remote Monitoring and Management using CVE-2024-57727.",
+        "threat_actors": "Ransomware actors",
+        "mitigation": "Apply the vendor patch released for SimpleHelp 5.5.7 and earlier; if patch unavailable, restrict access and monitor.",
         "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
@@ -51,15 +51,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The HTTP RPC module concatenates the username with a shell command without sanitization, allowing attackers to inject arbitrary OS commands via the username parameter, which are executed with root privileges.",
-        "affected_products": "Lantronix EDS5000 (2.1.0.0R3)",
+        "technical_details": "The HTTP RPC module executes a shell command to write logs on authentication failure; the username is concatenated without sanitization, allowing OS command injection with root privileges.",
+        "affected_products": "Lantronix EDS5000 (2.1.0.0R3), Lantronix EDS3000PS",
         "cvss_score": "9.8",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept or weaponized exploit known.",
-        "patch_available": "No official patch available yet; apply mitigations per vendor instructions.",
-        "active_exploitation": "CISA has warned that CVE-2025-67038 is actively exploited in the wild.",
+        "exploit_available": "No public PoC or exploit known.",
+        "patch_available": "No official vendor patch available.",
+        "active_exploitation": "CISA has reported active exploitation in the wild.",
         "threat_actors": "None known",
-        "mitigation": "Apply vendor-recommended mitigations: minimize network exposure, restrict internet access, use firewalls/VPNs, and follow CISA defensive measures.",
+        "mitigation": "Apply mitigations per CISA BOD 26-04 guidance, restrict network exposure, monitor logs, and follow vendor instructions when available.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -78,7 +78,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Tenable attributes the AI-related security issues to misconfigurations, unmanaged model dependencies, exposed credentials, unapproved (shadow) AI tools, identity flaws, and excessive permissions across IT, cloud, OT, AI, IoT environments. These non-CVE findings create attack paths to critical assets and accounted for the majority of breach entry points in Tenable telemetry.",
+        "affected_products": "AI tools (approved and unapproved), OpenClaw AI assistant",
+        "cvss_score": "1e-11",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "No public proof-of-concept or weaponized exploit reported in the Tenable blog",
+        "patch_available": "No vendor patch\u2014issues are primarily misconfigurations/unmanaged dependencies (not a patchable CVE)",
+        "active_exploitation": "No confirmed active exploitation reported in the Tenable blog",
+        "threat_actors": "None known",
+        "mitigation": "Adopt AI-driven exposure management: continuous asset discovery (including shadow AI), map attack paths, prioritize exposures contextually, use automated/orchestrated remediation and agentic AI workflows with guardrails and human oversight, enforce approved AI tooling, and patch known CVEs for traditional software issues.",
+        "vendor_advisory": "https://www.tenable.com/blog/how-much-cyber-risk-does-ai-create-for-organizations-457-million-security-issues-heres-what"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
@@ -112,18 +123,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI): adversary injects malicious instructions into data or tools used by an LLM (including via external content or agentic tool workflows) so the model follows those injected instructions instead of the user's intent.",
-        "affected_products": "Google Workspace with Gemini",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept (PoC) or weaponized exploit is referenced in the advisory or extracted blog post.",
-        "patch_available": "No single 'patch' is described; Google describes continuous mitigations including configuration updates, deterministic defenses (regex takedowns, URL sanitization, user confirmation), ML/LLM model retraining and model hardening (see advisory).",
-        "active_exploitation": "The advisory states Google monitors publicly disclosed IPI attacks and uses open-source intelligence feeds, but it does not report confirmed active exploitation specifically affecting Workspace with Gemini in the blog post.",
-        "threat_actors": "None known",
-        "mitigation": "Defense-in-depth: deterministic defenses (user confirmation, URL sanitization, tool-chaining policies, regex takedowns via a centralized Policy Engine), ML-based defenses (synthetic-data-driven retraining and validation), LLM-based defenses and prompt-engineering, and model hardening of Gemini to better detect and ignore injected instructions. Google also uses human and automated red-teaming and an AI VRP to discover and remediate IPI vectors.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
-      }
+      "enrichment": null
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
@@ -140,7 +140,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect prompt injection: attacker-controlled content on a webpage inserts prompts or instructions that the agentic LLM reads and follows, causing the model to execute or disclose actions/information it shouldn\u2019t.",
+        "affected_products": "Google Chrome (agentic browsing feature), Gemini AI integrated in Chrome",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept (PoC) or weaponized exploit is reported in the examined sources.",
+        "patch_available": "Google/Chrome announced a new security architecture for agentic browsing that mitigates indirect prompt injection risks (see vendor advisory URL).",
+        "active_exploitation": "Indirect prompt injection payloads have been observed on the public web (multiple payloads detected), indicating active exploitation attempts or probes in the wild.",
+        "threat_actors": "None known",
+        "mitigation": "Implement input and output validation and sanitization, and apply human oversight and controls for LLM-driven features.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -190,7 +201,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "The vulnerability involves exploitation of CVEs in network devices such as backbone, provider edge, and customer edge routers, allowing attackers to gain persistent access and pivot to other networks.",
+        "affected_products": "Backbone routers, provider edge (PE) routers, customer edge (CE) routers",
+        "cvss_score": "6.4",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public exploit known.",
+        "patch_available": "No official patch has been released; no patch or remediation guidance is currently available from the vendor.",
+        "active_exploitation": "No confirmed active exploitation reported.",
+        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
@@ -225,15 +247,15 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/",
-      "title": "Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access",
-      "summary": "New details have been revealed on how hackers exploited a Cisco Catalyst SD-WAN vulnerability tracked as CVE-2026-20245 in zero-day attacks to create rogue root accounts on targeted devices. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/",
-      "published": "2026-06-24T21:29:10+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html",
+      "title": "Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access",
+      "summary": "An unknown threat actor exploited a recently disclosed high-severity security flaw impacting Cisco Catalyst SD-WAN as a zero-day at least two months before it was publicly disclosed, according to new findings from Google-owned Mandiant.\n\nThe vulnerability, tracked as CVE-2026-20245 (CVSS score: 7.8), allows an authenticated, local attacker to execute arbitrary commands with elevated privileges",
+      "link": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html",
+      "published": "2026-06-25T05:46:54+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "malware"
+        "zeroday"
       ],
       "cve_ids": [
         "CVE-2026-20245"
@@ -291,23 +313,6 @@
       ],
       "cve_ids": [
         "CVE-2026-45051"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html",
-      "title": "Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root",
-      "summary": "Threat actors have begun to exploit a recently disclosed critical security flaw impacting Cisco Unified Communications Manager (Unified CM) and Unified Communications Manager Session Management Edition (Unified CM SME).\n\nThe vulnerability, tracked as CVE-2026-20230 (CVSS score: 8.6), is a case of improper input validation for specific HTTP requests that could allow an unauthenticated, remote",
-      "link": "https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html",
-      "published": "2026-06-24T06:50:38+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-20230"
       ],
       "is_zero_day": false,
       "is_high_severity": true

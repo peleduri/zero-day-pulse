@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-25 02:05 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 3
+> **Generated:** 2026-06-25 08:47 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 5
 
 ---
 
@@ -13,15 +13,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** CVE-2024-57727 is a path‑traversal vulnerability that lets unauthenticated attackers send crafted HTTP requests to SimpleHelp remote support software (v5.5.7 and earlier) to read arbitrary files, including configuration files with hashed passwords.
+- **Technical Details:** Directory traversal vulnerability allowing attackers to read sensitive files via path traversal.
 - **Affected Products:** SimpleHelp remote support software v5.5.7 and earlier
 - **CVSS Score:** 7.5
-- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-- **Exploit Available:** Public proof‑of‑concept code is available on GitHub: https://github.com/imjdl/CVE-2024-57727
-- **Patch Available:** Patch released in SimpleHelp version 5.5.8 (and later). See SimpleHelp release notes https://simple-help.com/release-news for details.
-- **Active Exploitation:** Confirmed active exploitation reported by CISA and ransomware actors leveraging unpatched SimpleHelp RMM instances.
-- **Threat Actors:** Ransomware actors (unspecified groups) have exploited this vulnerability in the wild.
-- **Mitigation:** Apply the SimpleHelp 5.5.8 patch or later. If patch cannot be applied immediately, restrict external network access to the SimpleHelp server, enforce strong authentication, and disable unauthenticated remote file downloads.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** No public proof-of-concept or weaponized exploit has been reported.
+- **Patch Available:** A patch has been released; see vendor advisory at http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **Active Exploitation:** CISA reported ransomware actors exploiting unpatched SimpleHelp Remote Monitoring and Management using CVE-2024-57727.
+- **Threat Actors:** Ransomware actors
+- **Mitigation:** Apply the vendor patch released for SimpleHelp 5.5.7 and earlier; if patch unavailable, restrict access and monitor.
 - **Vendor Advisory:** http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
 
 ---
@@ -37,15 +37,15 @@ The vulnerability in question is CVE-2025-67038 (CVSS score: 9.8), a code inject
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** The HTTP RPC module concatenates the username with a shell command without sanitization, allowing attackers to inject arbitrary OS commands via the username parameter, which are executed with root privileges.
-- **Affected Products:** Lantronix EDS5000 (2.1.0.0R3)
+- **Technical Details:** The HTTP RPC module executes a shell command to write logs on authentication failure; the username is concatenated without sanitization, allowing OS command injection with root privileges.
+- **Affected Products:** Lantronix EDS5000 (2.1.0.0R3), Lantronix EDS3000PS
 - **CVSS Score:** 9.8
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** No public proof-of-concept or weaponized exploit known.
-- **Patch Available:** No official patch available yet; apply mitigations per vendor instructions.
-- **Active Exploitation:** CISA has warned that CVE-2025-67038 is actively exploited in the wild.
+- **Exploit Available:** No public PoC or exploit known.
+- **Patch Available:** No official vendor patch available.
+- **Active Exploitation:** CISA has reported active exploitation in the wild.
 - **Threat Actors:** None known
-- **Mitigation:** Apply vendor-recommended mitigations: minimize network exposure, restrict internet access, use firewalls/VPNs, and follow CISA defensive measures.
+- **Mitigation:** Apply mitigations per CISA BOD 26-04 guidance, restrict network exposure, monitor logs, and follow vendor instructions when available.
 - **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
@@ -56,6 +56,19 @@ The vulnerability in question is CVE-2025-67038 (CVSS score: 9.8), a code inject
 **Reference:** <https://www.tenable.com/blog/how-much-cyber-risk-does-ai-create-for-organizations-457-million-security-issues-heres-what>
 
 > Over a 30 day period, Tenable detected 457 million AI-related security issues among 7,000-plus organizations, an average of 62,000 exposures per organization. If we didn’t already know that shadow AI was a problem, data like this makes it clear every organization needs to visualize, map, assess, and protect with a comprehensive exposure management program. Key takeaways AI tools — approved and una…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Tenable attributes the AI-related security issues to misconfigurations, unmanaged model dependencies, exposed credentials, unapproved (shadow) AI tools, identity flaws, and excessive permissions across IT, cloud, OT, AI, IoT environments. These non-CVE findings create attack paths to critical assets and accounted for the majority of breach entry points in Tenable telemetry.
+- **Affected Products:** AI tools (approved and unapproved), OpenClaw AI assistant
+- **CVSS Score:** 1e-11
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** No public proof-of-concept or weaponized exploit reported in the Tenable blog
+- **Patch Available:** No vendor patch—issues are primarily misconfigurations/unmanaged dependencies (not a patchable CVE)
+- **Active Exploitation:** No confirmed active exploitation reported in the Tenable blog
+- **Threat Actors:** None known
+- **Mitigation:** Adopt AI-driven exposure management: continuous asset discovery (including shadow AI), map attack paths, prioritize exposures contextually, use automated/orchestrated remediation and agentic AI workflows with guardrails and human oversight, enforce approved AI tooling, and patch known CVEs for traditional software issues.
+- **Vendor Advisory:** https://www.tenable.com/blog/how-much-cyber-risk-does-ai-create-for-organizations-457-million-security-issues-heres-what
 
 ---
 
@@ -75,19 +88,6 @@ The vulnerability in question is CVE-2025-67038 (CVSS score: 9.8), a code inject
 
 > Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user’s query. This m…
 
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Indirect Prompt Injection (IPI): adversary injects malicious instructions into data or tools used by an LLM (including via external content or agentic tool workflows) so the model follows those injected instructions instead of the user's intent.
-- **Affected Products:** Google Workspace with Gemini
-- **CVSS Score:** 0.0
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** No public proof-of-concept (PoC) or weaponized exploit is referenced in the advisory or extracted blog post.
-- **Patch Available:** No single 'patch' is described; Google describes continuous mitigations including configuration updates, deterministic defenses (regex takedowns, URL sanitization, user confirmation), ML/LLM model retraining and model hardening (see advisory).
-- **Active Exploitation:** The advisory states Google monitors publicly disclosed IPI attacks and uses open-source intelligence feeds, but it does not report confirmed active exploitation specifically affecting Workspace with Gemini in the blog post.
-- **Threat Actors:** None known
-- **Mitigation:** Defense-in-depth: deterministic defenses (user confirmation, URL sanitization, tool-chaining policies, regex takedowns via a centralized Policy Engine), ML-based defenses (synthetic-data-driven retraining and validation), LLM-based defenses and prompt-engineering, and model hardening of Gemini to better detect and ignore injected instructions. Google also uses human and automated red-teaming and an AI VRP to discover and remediate IPI vectors.
-- **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
-
 ---
 
 ## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
@@ -96,6 +96,19 @@ The vulnerability in question is CVE-2025-67038 (CVSS score: 9.8), a code inject
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
 
 > Posted by Nathan Parker, Chrome security team Chrome has been advancing the web’s security for well over 15 years, and we’re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to s…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Indirect prompt injection: attacker-controlled content on a webpage inserts prompts or instructions that the agentic LLM reads and follows, causing the model to execute or disclose actions/information it shouldn’t.
+- **Affected Products:** Google Chrome (agentic browsing feature), Gemini AI integrated in Chrome
+- **CVSS Score:** 0.0
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** No public proof-of-concept (PoC) or weaponized exploit is reported in the examined sources.
+- **Patch Available:** Google/Chrome announced a new security architecture for agentic browsing that mitigates indirect prompt injection risks (see vendor advisory URL).
+- **Active Exploitation:** Indirect prompt injection payloads have been observed on the public web (multiple payloads detected), indicating active exploitation attempts or probes in the wild.
+- **Threat Actors:** None known
+- **Mitigation:** Implement input and output validation and sanitization, and apply human oversight and controls for LLM-driven features.
+- **Vendor Advisory:** http://security.googleblog.com/2025/12/architecting-security-for-agentic.html
 
 ---
 
@@ -124,6 +137,19 @@ The vulnerability in question is CVE-2025-67038 (CVSS score: 9.8), a code inject
 
 > Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…
 
+**Parallel AI Enrichment:**
+
+- **Technical Details:** The vulnerability involves exploitation of CVEs in network devices such as backbone, provider edge, and customer edge routers, allowing attackers to gain persistent access and pivot to other networks.
+- **Affected Products:** Backbone routers, provider edge (PE) routers, customer edge (CE) routers
+- **CVSS Score:** 6.4
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** No public exploit known.
+- **Patch Available:** No official patch has been released; no patch or remediation guidance is currently available from the vendor.
+- **Active Exploitation:** No confirmed active exploitation reported.
+- **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
+
 ---
 
 ## 10. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
@@ -142,12 +168,14 @@ The vulnerability in question is CVE-2025-67038 (CVSS score: 9.8), a code inject
 
 ---
 
-## 12. 🟠 Zero-Day — Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access
+## 12. 🟠 Zero-Day — Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access
 
-**CVE:** `CVE-2026-20245` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-06-24
-**Reference:** <https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/>
+**CVE:** `CVE-2026-20245` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-25
+**Reference:** <https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html>
 
-> New details have been revealed on how hackers exploited a Cisco Catalyst SD-WAN vulnerability tracked as CVE-2026-20245 in zero-day attacks to create rogue root accounts on targeted devices. [...]
+> An unknown threat actor exploited a recently disclosed high-severity security flaw impacting Cisco Catalyst SD-WAN as a zero-day at least two months before it was publicly disclosed, according to new findings from Google-owned Mandiant.
+
+The vulnerability, tracked as CVE-2026-20245 (CVSS score: 7.8), allows an authenticated, local attacker to execute arbitrary commands with elevated privileges
 
 ---
 
@@ -190,18 +218,7 @@ This is not the default con…
 
 ---
 
-## 16. 🟡 High Severity — Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root
-
-**CVE:** `CVE-2026-20230` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-24
-**Reference:** <https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html>
-
-> Threat actors have begun to exploit a recently disclosed critical security flaw impacting Cisco Unified Communications Manager (Unified CM) and Unified Communications Manager Session Management Edition (Unified CM SME).
-
-The vulnerability, tracked as CVE-2026-20230 (CVSS score: 8.6), is a case of improper input validation for specific HTTP requests that could allow an unauthenticated, remote
-
----
-
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
