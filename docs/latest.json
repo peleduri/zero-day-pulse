@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-24T19:26:35.545330+00:00",
-  "total": 25,
+  "generated": "2026-06-25T02:05:13.652295+00:00",
+  "total": 17,
   "kev": 0,
-  "zero_day": 11,
-  "enriched": 9,
+  "zero_day": 12,
+  "enriched": 3,
   "findings": [
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
@@ -22,15 +22,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a directory traversal vulnerability that allows unauthenticated remote attackers to read arbitrary files on affected SimpleHelp remote support software (v5.5.7 and earlier) by manipulating file path parameters.",
+        "technical_details": "CVE-2024-57727 is a path\u2011traversal vulnerability that lets unauthenticated attackers send crafted HTTP requests to SimpleHelp remote support software (v5.5.7 and earlier) to read arbitrary files, including configuration files with hashed passwords.",
         "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true (http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability)",
-        "active_exploitation": "true",
-        "threat_actors": "Ransomware actors",
-        "mitigation": "Apply the vendor patch (upgrade to a version newer than 5.5.7) and ensure systems are updated promptly.",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "Public proof\u2011of\u2011concept code is available on GitHub: https://github.com/imjdl/CVE-2024-57727",
+        "patch_available": "Patch released in SimpleHelp version 5.5.8 (and later). See SimpleHelp release notes https://simple-help.com/release-news for details.",
+        "active_exploitation": "Confirmed active exploitation reported by CISA and ransomware actors leveraging unpatched SimpleHelp RMM instances.",
+        "threat_actors": "Ransomware actors (unspecified groups) have exploited this vulnerability in the wild.",
+        "mitigation": "Apply the SimpleHelp 5.5.8 patch or later. If patch cannot be applied immediately, restrict external network access to the SimpleHelp server, enforce strong authentication, and disable unauthenticated remote file downloads.",
         "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
@@ -50,7 +50,18 @@
       ],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "The HTTP RPC module concatenates the username with a shell command without sanitization, allowing attackers to inject arbitrary OS commands via the username parameter, which are executed with root privileges.",
+        "affected_products": "Lantronix EDS5000 (2.1.0.0R3)",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept or weaponized exploit known.",
+        "patch_available": "No official patch available yet; apply mitigations per vendor instructions.",
+        "active_exploitation": "CISA has warned that CVE-2025-67038 is actively exploited in the wild.",
+        "threat_actors": "None known",
+        "mitigation": "Apply vendor-recommended mitigations: minimize network exposure, restrict internet access, use firewalls/VPNs, and follow CISA defensive measures.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
     },
     {
       "id": "https://www.tenable.com/blog/how-much-cyber-risk-does-ai-create-for-organizations-457-million-security-issues-heres-what",
@@ -67,18 +78,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "AI tools \u2014 approved and unapproved \u2014 are driving a massive wave of daily exposures, primarily tied to misconfigurations and unmanaged dependencies rather than standard CVEs.",
-        "affected_products": "Affected products unavailable",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
-        "patch_available": "Patch availability unknown",
-        "active_exploitation": "Active exploitation status unknown",
-        "threat_actors": "None known",
-        "mitigation": "Implement a comprehensive exposure management program that visualizes, maps, assesses, and protects against AI-related security exposures.",
-        "vendor_advisory": "https://www.tenable.com/blog/how-much-cyber-risk-does-ai-create-for-organizations-457-million-security-issues-heres-what"
-      }
+      "enrichment": null
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
@@ -95,18 +95,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) occurs when malicious payloads are placed on publicly accessible web pages; AI agents that retrieve and process external content incorporate the payload into their prompt, causing them to execute unintended instructions. This can happen without user interaction (zero\u2011click), as demonstrated by the GeminiJack vulnerability in Google Gemini Enterprise, and can be chained with hidden website code to affect assistants such as GitHub Copilot.",
-        "affected_products": "Google Gemini Enterprise, Microsoft Copilot Studio, MS-Agent, EmailGPT, Claude.ai, GitHub Copilot",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Monitor the public web for known IPI patterns, restrict LLMs from unrestricted web browsing, apply input sanitization and safe completion constraints, and keep AI systems updated with the latest security controls.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
-      }
+      "enrichment": null
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
@@ -124,15 +113,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) enables attackers to embed malicious instructions inside data or tools consumed by an LLM, influencing model behavior even without direct user input. Google describes defenses including continuous discovery (human and automated red\u2011teaming, AI Vulnerability Rewards Program), synthetic data generation to expand attack variants, deterministic defenses (user confirmation, URL sanitization, tool\u2011chaining policies governed by a policy engine), ML\u2011based defenses (retraining on generated variants), LLM\u2011based defenses (prompt engineering), and Gemini model hardening to better identify and ignore harmful embedded commands.",
-        "affected_products": "Google Workspace (Gemini)",
-        "cvss_score": "CVSS score unavailable.",
+        "technical_details": "Indirect Prompt Injection (IPI): adversary injects malicious instructions into data or tools used by an LLM (including via external content or agentic tool workflows) so the model follows those injected instructions instead of the user's intent.",
+        "affected_products": "Google Workspace with Gemini",
+        "cvss_score": "0.0",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "No public proof-of-concept (PoC) or weaponized exploit is referenced in the advisory or extracted blog post.",
+        "patch_available": "No single 'patch' is described; Google describes continuous mitigations including configuration updates, deterministic defenses (regex takedowns, URL sanitization, user confirmation), ML/LLM model retraining and model hardening (see advisory).",
+        "active_exploitation": "The advisory states Google monitors publicly disclosed IPI attacks and uses open-source intelligence feeds, but it does not report confirmed active exploitation specifically affecting Workspace with Gemini in the blog post.",
         "threat_actors": "None known",
-        "mitigation": "Use continuous detection (human red\u2011team, automated red\u2011team, VRP) and centralized vulnerability cataloging; generate synthetic attack variants for ML retraining and LLM prompt\u2011engineering; apply deterministic controls (user confirmation, URL sanitization, tool\u2011chaining policies) via a policy engine; and apply Gemini model hardening to reduce susceptibility to embedded malicious instructions.",
+        "mitigation": "Defense-in-depth: deterministic defenses (user confirmation, URL sanitization, tool-chaining policies, regex takedowns via a centralized Policy Engine), ML-based defenses (synthetic-data-driven retraining and validation), LLM-based defenses and prompt-engineering, and model hardening of Gemini to better detect and ignore injected instructions. Google also uses human and automated red-teaming and an AI VRP to discover and remediate IPI vectors.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -151,18 +140,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection is a threat where a malicious site injects prompts that manipulate the AI model's behavior, potentially causing unintended actions. An attacker can trigger this vulnerability when chained with indirect prompt injection, as described in the security advisory.",
-        "affected_products": "Google Chrome (with Gemini agentic browsing)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Deploy the new architecture announced by Google engineer Nathan Parker that mitigates indirect prompt injection risks in agentic browsing.",
-        "vendor_advisory": "http://blog.google/security/architecting-security-for-agentic"
-      }
+      "enrichment": null
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -179,18 +157,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "An elevation-of-privilege vulnerability in the Android Framework (CVE-2025-48595) that can allow local attackers to gain code execution or elevated system privileges on affected devices with no user interaction required.",
-        "affected_products": "Android Framework on devices running Android 14 and later",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (public reports of active exploitation exist; no public PoC URL provided in supplied corpus)",
-        "patch_available": "true (Google published a June 2026 Android Security Bulletin and scheduled patch set / AOSP source patches)",
-        "active_exploitation": "true",
-        "threat_actors": "None known",
-        "mitigation": "Install the June 2026 Android security update / apply the vendor patches released in the June 2026 Android Security Bulletin; apply the corresponding AOSP source patches when available.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2026/2026-06-01"
-      }
+      "enrichment": null
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -207,18 +174,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection involves embedding hidden malicious instructions in external data sources such as websites, emails, or documents that an AI system later processes, causing the model to follow the attacker\u2019s commands instead of the user\u2019s intended input.",
-        "affected_products": "Google Gemini, Google Workspace (Docs, Gmail, Calendar)",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Threat actors unknown.",
-        "mitigation": "Google recommends a layered defense strategy including input validation and sanitization, context\u2011aware filtering, restricting LLM access to untrusted data, continuous monitoring for suspicious patterns, and user confirmation prompts; additionally, hardening Gemini and applying security safeguards are advised.",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
-      }
+      "enrichment": null
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -234,18 +190,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "The vulnerability exploits CVEs in network-device firmware, allowing attackers to compromise backbone, provider edge, and customer edge routers, gain persistent access, and pivot to other networks.",
-        "affected_products": "backbone routers, provider edge (PE) routers, customer edge (CE) routers",
-        "cvss_score": "6.4",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "false",
-        "active_exploitation": "true",
-        "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
-      }
+      "enrichment": null
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a",
@@ -261,18 +206,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "Technical details unavailable.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": "CVSS score unavailable.",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
-        "threat_actors": "Russian General Staff Main Intelligence Directorate (GRU) 85th GTsSS (Unit 26165) \u2014 tracked as APT28",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
-      }
+      "enrichment": null
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/",
@@ -287,6 +221,23 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/",
+      "title": "Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access",
+      "summary": "New details have been revealed on how hackers exploited a Cisco Catalyst SD-WAN vulnerability tracked as CVE-2026-20245 in zero-day attacks to create rogue root accounts on targeted devices. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/",
+      "published": "2026-06-24T21:29:10+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-20245"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -357,168 +308,6 @@
       ],
       "cve_ids": [
         "CVE-2026-20230"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54329",
-      "title": "Snipe-IT API Vulnerable to Cross-Tenant Accessory Injection",
-      "summary": "### Impact\nA cross-tenant data injection vulnerability was identified in the Snipe-IT Accessories API when Full Multiple Companies Support (FMCS) is enabled. A low-privileged authenticated user belonging to one company can create an accessory record under another company by supplying a foreign company_id value in the API request body.\n\nThe issue occurs because the API create path mass-assigns request parameters directly to the Accessory model, and the Accessory model allows company_id to be mass assigned. Unlike the web controller, which uses Company::getIdForCurrentUser() to enforce the authenticated user\u2019s company context, the API controller does not apply equivalent tenant enforcement during accessory creation.\n\nAs a result, a Company A user can inject persistent accessory records into Company B. The injected records are then visible to Company B users as legitimate Company B inventory records. This breaks the integrity of company-scoped inventory data and represents a tenant isolation failure in the accessory creation flow.\n\n### Patches\nPatched in https://github.com/grokability/snipe-it/commit/dc8cbf4786bb38b260b4ae1723ec9e7f81d82fe5",
-      "link": "https://github.com/advisories/GHSA-pwpj-p52h-q484",
-      "published": "2026-06-23T23:12:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54329"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55483",
-      "title": "Snipe-IT Vulnerable to Privilege Escalation via Missing admin Permission Check in User Creation",
-      "summary": "### Impact\nThe `store()` method in both the web and API `UsersController` only strips the superuser permission when a non-superuser creates a user. It does not strip the admin permission. This allows any authenticated user with the `users.create` permission to create a new user with full admin privileges.\n\nThe `users.create permission`  may commonly be delegated to HR staff, department leads, or similar roles.\n\n### Patches\nPatched in [aea3877718](https://github.com/grokability/snipe-it/commit/aea3877718158cc2a10c2dde4597b1f439f5f6cb)",
-      "link": "https://github.com/advisories/GHSA-hf68-g98v-wp9g",
-      "published": "2026-06-23T23:06:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55483"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55482",
-      "title": "Snipe-IT has Multi-Tenancy Bypass via Bulk Asset Update",
-      "summary": "### Impact\nThe `BulkAssetsController::update()` method accepts `company_id` directly from user input without calling `Company::getIdForCurrentUser()`, the standard company-scoping function used by every other controller in the codebase. A non-superadmin user can move assets across company boundaries, breaking multi-tenancy isolation.\n\n### Patches\nPatched in https://github.com/grokability/snipe-it/commit/d58fda626e8febfeff4cabbc20ba03edfc411e18",
-      "link": "https://github.com/advisories/GHSA-33g4-646g-qwmm",
-      "published": "2026-06-23T23:03:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55482"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-w2j7-f3c6-g8cw",
-      "title": "Flask-Security has an Open Redirect issue",
-      "summary": "# Open Redirect in Flask-Security\n\n## Summary\n\n`flask_security.utils.validate_redirect_url()` can allow an attacker-controlled redirect URL when subdomain redirects are enabled.\n\nThe bypass uses a backslash inside the URL authority/host:\n\n```text\nhttp://evil.com\\.whitelist.com\nhttp://evil.com%5C.whitelist.com\n```\n\nPython's `urlsplit()` parses the full authority as `evil.com\\.whitelist.com` or `evil.com%5C.whitelist.com`. Because the value ends with `.whitelist.com`, `validate_redirect_url()` accepts it as an allowed subdomain of `whitelist.com`.\n\nThis is similar in class to the previous Flask-Security-Too open redirect advisory CVE-2023-49438 / GHSA-672h-6x89-76m5, where crafted redirect URLs bypassed validation through browser URL normalization behavior.\n\n## Affected Configuration\n\nThe issue requires subdomain redirects to be enabled:\n\n```python\nSERVER_NAME = \"whitelist.com\"\nSECURITY_REDIRECT_ALLOW_SUBDOMAINS = True\n```\n\nTested environment:\n\n```text\nFlask-Security: 5.8.0\nFlask: 3.1.3\nWerkzeug: 3.1.8\n```\n\n## Impact\n\nAn attacker can craft a URL that passes Flask-Security's redirect validation and produces a `302` response to an attacker-controlled URL-like authority.\n\nThis can be used for phishing or other attacks that rely on a trusted application redirecting users to an attacker-controlled destination.\n\n## Proof of Concept\n\n### PoC Flask App\n\n```python\nfrom __future__ import annotations\n\nfrom importlib.metadata import version\nfrom urllib.parse import urlsplit\n\nfrom flask import Flask, jsonify, redirect, request\n\nfrom flask_security.utils import validate_redirect_url\n\n\napp = Flask(__name__)\napp.config.update(\n    SECRET_KEY=\"poc-only\",\n    SERVER_NAME=\"whitelist.com\",\n    SECURITY_REDIRECT_ALLOW_SUBDOMAINS=True,\n    SECURITY_REDIRECT_BASE_DOMAIN=None,\n    SECURITY_REDIRECT_ALLOWED_SUBDOMAINS=[],\n)\n\n\n@app.get(\"/\")\ndef index():\n    return jsonify(\n        flask_version=version(\"Flask\"),\n        configured_server_name=app.config[\"SERVER_NAME\"],\n        examples=[\n     ",
-      "link": "https://github.com/advisories/GHSA-w2j7-f3c6-g8cw",
-      "published": "2026-06-23T22:46:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2023-49438"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-49870",
-      "title": "Snipe-IT's TOTP is Brute-Forceable Due to Missing Rate Limiting on `POST /two-factor`",
-      "summary": "### Impact\n`POST /two-factor` had no rate limiting, lockout, or attempt counter. An attacker with valid credentials can submit unlimited TOTP guesses. The TOTP implementation accepts the current code plus one step on either side (`config/google2fa.php window=1`), so at any instant 3 of 1,000,000 codes are accepted.\n\nAfter a correct guess the attacker holds a fully authenticated session. If the instance is configured with 2FA in optional mode (`two_factor_enabled='1'`), the attacker can additionally disable 2FA via `POST /account/profile` with `two_factor_optin=0`. No OTP re-verification is required. The account is then accessible with the password alone on future logins. If 2FA is in required-for-all mode (`='2'`), the per-user opt-out path is closed and the impact stops at session-level account takeover. For an admin target, `POST /api/v1/users/two_factor_reset` additionally clears another user's 2FA secret.\n\n### Patches\nPatched in v8.6.0",
-      "link": "https://github.com/advisories/GHSA-mr8g-2mj4-pcq2",
-      "published": "2026-06-23T22:32:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-49870"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48493",
-      "title": "Snipe-IT Vulnerable to Privilege Escalation for self via API Permissions Assignment",
-      "summary": "### Impact\nA user with only users.edit AND api permissions can send a PATCH to /api/v1/users/{their_own_id} and grant themselves any permission except admin and superuser \u2014 for example `assets.view`, `assets.create`, `reports.view`, import, etc.\n\n### Patches\nPatched in https://github.com/grokability/snipe-it/pull/19024",
-      "link": "https://github.com/advisories/GHSA-52fw-7fw2-fmv5",
-      "published": "2026-06-23T22:12:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48493"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48480",
-      "title": "OHttpVersionChunkDraft: Missing Final-Chunk Enforcement Leads to Undetected Stream Truncation",
-      "summary": "The codec-ohttp implementation of draft-ietf-ohai-chunked-ohttp does not verify that a cryptographically-signed final chunk was received before the outer HTTP body terminates. An on-path adversary (the OHTTP relay itself, or any MITM on the relay\u2194gateway or relay\u2194client transport) can forward a prefix of a legitimate chunked-OHTTP message\u2014cut at a non-final chunk boundary\u2014and close the outer body cleanly, producing no decryption error and no exception in the receiving application.",
-      "link": "https://github.com/advisories/GHSA-r6fj-869h-4f6q",
-      "published": "2026-06-23T21:59:03Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48480"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54514",
-      "title": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
-      "summary": "## Summary\n`JDKFromStringDeserializer` constructed `InetSocketAddress` with `new InetSocketAddress(host, port)`, which performs eager DNS name resolution for hostname inputs at deserialization time. An application that binds untrusted JSON into a type containing an `InetSocketAddress` field issues an attacker-chosen DNS query during `readValue`, before any application-level validation or connect logic. The fix uses `InetSocketAddress.createUnresolved(host, port)`, deferring DNS to an explicit connect.\n\n## Impact\nAn attacker controlling JSON deserialized into an `InetSocketAddress`-bearing type can force outbound DNS lookups for attacker-chosen hostnames at deserialization time (SSRF / DNS-based out-of-band interaction / internal-resolver probing), purely from binding.\n\n## Affected / Patched (verified via `git tag --contains` on `1f5a103`)\n- 2.18 line: `>= 2.18.0, < 2.18.8` -> fixed in **2.18.8**\n- 2.19-2.21 line: `>= 2.19.0, < 2.21.4` -> fixed in **2.21.4**\n- 3.x line: `>= 3.0.0, < 3.1.4` -> fixed in **3.1.4**\n\n## Severity / CWE\nMaintainer: minor. Reporter: LOW. CWE-918 (SSRF).\n\n## Upstream fix\nFasterXML/jackson-databind#5951 (\"Improve InetSocketAddress deserialization\"). Released 2026-06-04 in 2.18.8 / 2.21.4 / 3.1.4.\n\n## Credits\nOmkhar Arasaratnam (@omkhar) - finder.",
-      "link": "https://github.com/advisories/GHSA-hgj6-7826-r7m5",
-      "published": "2026-06-23T21:22:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54514"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54512",
-      "title": "jackson-databind has a PolymorphicTypeValidator bypass via generic type parameters that allows arbitrary class instantiation",
-      "summary": "`jackson-databind`'s `PolymorphicTypeValidator` (PTV) is the primary safety mechanism guarding polymorphic deserialization. When polymorphic typing is enabled and a type identifier contains generic parameters (i.e. the type ID string contains `<`), `DatabindContext._resolveAndValidateGeneric()` validates **only the raw container class name** (the substring before `<`) against the configured PTV.\n\nIf the container type is approved, the method parses the full canonical type string via `TypeFactory.constructFromCanonical()` and returns the fully parameterized type **without ever validating the nested type arguments** against the PTV. The nested type arguments are then resolved, instantiated, and populated as beans during deserialization.\n\nAn attacker who controls the type ID can therefore place a denied class as a generic type parameter of an allowed container \u2014 for example `java.util.ArrayList<com.evil.Gadget>` when only `java.util.ArrayList` is allow-listed. The container passes the PTV check; `com.evil.Gadget` is loaded via `Class.forName(name, true, loader)`, instantiated, and its properties are set from attacker-controlled JSON. This completely bypasses an explicitly configured PTV allow-list.\n\nThis is the same vulnerability class responsible for the historical sequence of jackson-databind deserialization CVEs; here it manifests as a validator bypass rather than a missing deny-list entry.\n\n\n## Impact\n\n- **Bypass of the PTV allow-list**, including the recommended `BasicPolymorphicTypeValidator` configured with name-prefix allow rules.\n- **Arbitrary class instantiation** of any type assignable to the container's element/parameter position, with attacker-controlled property values (setter/field injection).\n- **Potential unauthenticated remote code execution** when a class with exploitable side effects (JNDI lookup, JDBC/connection-pool gadgets,`TemplatesImpl`-style loaders, etc.) is present on the classpath.\n\nApplications that accept untrusted JSON and rely on a conf",
-      "link": "https://github.com/advisories/GHSA-j3rv-43j4-c7qm",
-      "published": "2026-06-23T21:21:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54512"
       ],
       "is_zero_day": false,
       "is_high_severity": true
