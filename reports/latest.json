@@ -1,61 +1,10 @@
 {
-  "generated": "2026-06-25T19:45:54.489783+00:00",
-  "total": 24,
-  "kev": 2,
+  "generated": "2026-06-26T02:06:55.846661+00:00",
+  "total": 28,
+  "kev": 0,
   "zero_day": 14,
-  "enriched": 6,
+  "enriched": 10,
   "findings": [
-    {
-      "id": "CVE-2026-20230",
-      "title": "CVE-2026-20230 \u2014 Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability",
-      "summary": "Vendor: Cisco | Product: Unified Communications Manager. Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) contain a server-side request forgery (SSRF) Vulnerability that could allow an unauthenticated, remote attacker to write files to the underlying operating system that could be used later to elevate to root. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-28)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20230",
-      "published": "2026-06-25",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-20230"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "A server-side request forgery (SSRF) vulnerability (WebDialer/SAML component) in Cisco Unified Communications Manager that allows an unauthenticated remote attacker to perform SSRF requests which can be used to write files to the underlying operating system and lead to privilege escalation to root.",
-        "affected_products": "Cisco Unified Communications Manager (Unified CM), Cisco Unified Communications Manager Session Management Edition (Unified CM SME)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public proof-of-concept (PoC) / exploit code has been published and discussed in multiple reports (public PoC referenced by security news outlets and researcher posts).",
-        "patch_available": "Yes \u2014 Cisco has released security updates to address the issue (see Cisco advisory: http://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW).",
-        "active_exploitation": "Confirmed \u2014 multiple public reports state the vulnerability is being exploited in the wild.",
-        "threat_actors": "None known",
-        "mitigation": "Apply Cisco security updates immediately; if WebDialer is not required, disable the WebDialer service as recommended by vendor/NVD guidance.",
-        "vendor_advisory": "http://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW"
-      }
-    },
-    {
-      "id": "CVE-2026-12569",
-      "title": "CVE-2026-12569 \u2014 PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
-      "summary": "Vendor: PTC | Product: Windchill and FlexPLM. PTC Windchill and FlexPLM contains an improper input validation vulnerability allowing an unauthenticated, remote attacker to execute arbitrary code by sending a malicious request to the network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-06-28)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-12569",
-      "published": "2026-06-25",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-12569"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": null
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -73,15 +22,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Directory\u2011traversal vulnerability allowing unauthenticated remote attackers to read arbitrary files via path manipulation.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) version 5.5.7 and earlier",
+        "technical_details": "CVE-2024-57727 is a directory traversal vulnerability that allows unauthenticated attackers to read arbitrary files on the server by exploiting insufficient input validation in SimpleHelp's file handling.",
+        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof\u2011of\u2011concept or weaponized exploit known.",
-        "patch_available": "Vendor released patches for the vulnerabilities within two days of reporting.",
-        "active_exploitation": "Confirmed active exploitation reported by CISA, with ransomware actors leveraging CVE\u20112024\u201157727.",
-        "threat_actors": "Ransomware actors (unspecified groups)",
-        "mitigation": "Apply the vendor patch, upgrade to a version newer than 5.5.7, and restrict network access to the RMM service.",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "true",
+        "active_exploitation": "true",
+        "threat_actors": "Ransomware actors",
+        "mitigation": "Apply the vendor patch (available for SimpleHelp <=5.5.7) and upgrade to a newer version; restrict network access to the RMM service and enforce least\u2011privilege permissions.",
         "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
@@ -103,15 +52,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "LangGraph SQLite Checkpoint uses JsonPlusSerializer to deserialize JSON checkpoint payloads; if an attacker can modify checkpoint files, they can trigger deserialization of untrusted data, leading to remote code execution at checkpoint load time.",
-        "affected_products": "LangGraph SQLite Checkpoint (LangGraph CheckpointSaver) versions <=4.1.0",
+        "technical_details": "JsonPlusSerializer can reconstruct arbitrary Python objects from JSON checkpoint payloads; if an attacker can modify checkpoint bytes at rest, deserialization can create unexpected objects leading to code execution at checkpoint load time.",
+        "affected_products": "LangGraph SQLite Checkpoint (versions <=4.1.0)",
         "cvss_score": "6.8",
         "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "No public proof-of-concept or weaponized exploit known",
-        "patch_available": "Patch released in LangGraph version 4.1.1; see vendor advisory for details.",
-        "active_exploitation": "No confirmed active exploitation reported.",
+        "exploit_available": "false",
+        "patch_available": "true (fixed in version 4.1.1)",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Upgrade to LangGraph version 4.1.1 or later, which removes the unsafe deserialization path.",
+        "mitigation": "Upgrade to LangGraph version 4.1.1 or later, which fixes the unsafe deserialization. Ensure checkpoint storage is immutable or write\u2011protected to prevent unauthorized modifications.",
         "vendor_advisory": "https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fjqc-hq36-qh5p"
       }
     },
@@ -130,7 +79,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect Prompt Injection (IPI): adversary embeds instructions inside web content (pages, documents, emails) that AI systems read; when an AI ingests the poisoned content it can follow the attacker's instructions instead of the user's intent. Observed categories include harmless pranks, SEO manipulation, deterring AI agents (resource exhaustion/timeouts), and low-sophistication data-exfiltration attempts on webpages.",
+        "affected_products": "AI systems/agents (general), Google Workspace with Gemini",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Layered defenses and hardening: pattern-matching + LLM-based classification + human validation for detection; ongoing hardening of Gemini and other models, Google Workspace-specific mitigations (see Google Workspace post), and participation in the AI Vulnerability Reward Program to surface issues.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
@@ -148,15 +108,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) occurs when an LLM processes external content (webpages, documents, emails, tools) that contains malicious instructions; the LLM may follow those instructions instead of the user's intent, enabling data exfiltration, behavior manipulation, or denial-of-service without direct user input.",
-        "affected_products": "Google Workspace (including Gemini Enterprise)",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect prompt injection (IPI) is an evolving threat vector where an attacker injects malicious instructions into data sources or tools used by an LLM (e.g., documents, web content) so that the model follows those instructions during query completion, potentially without any direct user input. This enables influence over the LLM\u2019s behavior and can be leveraged to cause unintended actions.",
+        "affected_products": "Google Workspace (including Gemini integration)",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public proof-of-concept (PoC) available; only observed payloads in the wild.",
-        "patch_available": "No official patch yet; mitigation steps are described in the advisory.",
-        "active_exploitation": "Yes \u2014 multiple reports describe IPI payloads observed on public websites (e.g., \"10 Indirect Prompt Injection Payloads Caught in the Wild\") and a Noma Labs report identified a zero-click GeminiJack IPI issue in Google Gemini Enterprise.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Continuous monitoring and detection (broad web sweeps), deterministic defenses (URL sanitization, user confirmation, tool chaining policies), ML-based defenses, LLM-based defenses, synthetic data generation for retraining, and configuration-based point fixes (e.g., regex takedowns).",
+        "mitigation": "Google employs a continuous, layered defense strategy: human red\u2011team testing, automated red\u2011team simulations, a Vulnerability Reward Program, monitoring of public AI threat feeds, deterministic defenses such as URL sanitization and tool\u2011chaining policies, ML\u2011based defenses trained on synthetic attack data, LLM\u2011based prompt hardening, and model hardening of Gemini to detect and ignore malicious instructions.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -175,7 +135,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect prompt injection allows a malicious site to embed crafted prompts that cause the AI agent to execute unintended actions, such as accessing local files or leaking data. GeminiJack is a critical example where the injection occurs inside Google Gemini Enterprise, enabling arbitrary code execution. Prompt injection is a broader attack vector where innocuous\u2011looking inputs cause unintended behavior.",
+        "affected_products": "Google Chrome (with Gemini AI agentic browsing), Google Gemini Enterprise",
+        "cvss_score": "8.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Deploy the new architecture announced by Google engineer Nathan Parker, which adds sandboxing and input validation to mitigate indirect prompt injection. Follow Google\u2019s security guidance, enable strict content\u2011security policies, and keep Chrome and Gemini up to date.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -192,7 +163,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Memory safety vulnerabilities in Android code are reduced by adopting Rust, achieving a 1000x reduction in vulnerability density compared to C/C++ code.",
+        "affected_products": "Android platform (first-party and third-party code) across C, C++, Java, Kotlin, and Rust",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "Threat actors unknown.",
+        "mitigation": "Adopt Rust for new code to improve memory safety and reduce vulnerability density.",
+        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -210,16 +192,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection hides malicious instructions inside external data (HTML comments, hidden divs, CSS-hidden text, metadata tags, magic strings) that AI agents ingest when crawling or summarizing content; injected instructions can exfiltrate data, perform unauthorized actions, suppress or corrupt output, or trigger fraud (examples include API-key exfiltration, sudo-like command text, URL-based exfiltration, persuasion triggers).",
-        "affected_products": "Google Gemini (Gemini in Google Workspace, Gemini app), Gemini 2.5",
-        "cvss_score": "0.0",
+        "technical_details": "Indirect prompt injection: attackers embed malicious instructions inside external data sources (emails, documents, calendar invites, images/URLs) that an LLM could read during the prompt lifecycle and then follow, causing data exfiltration or unauthorized actions. Google describes this as a lifecycle issue in multi-source AI applications and hardens Gemini models (Gemini 2.5) plus system-level classifiers and sanitizers to defend against it.",
+        "affected_products": "Gemini (Gemini app, Gemini in Google Workspace) \u2014 model hardening referenced for Gemini 2.5",
+        "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Public examples/PoC-level payloads have been documented in the wild (Forcepoint X\u2011Labs report) showing HTML comment, hidden div, CSS concealment, metadata, and magic-string payloads hosted on live sites; see Forcepoint report for live examples. No single weaponized exploit kit URL published by vendor.",
-        "patch_available": "No single downloadable patch; Google describes integrated service mitigations (Gemini 2.5 model hardening, content classifiers, markdown sanitization, suspicious URL redaction, user confirmation framework) being rolled out via product updates (see vendor advisory).",
-        "active_exploitation": "Yes \u2014 Forcepoint X\u2011Labs reports multiple indirect prompt injection (IPI) payloads found on active websites and deployed in live web infrastructure; Google also acknowledges indirect prompt injection as an emerging threat and describes mitigations.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses: model hardening/adversarial training (Gemini 2.5), purpose-built prompt-injection content classifiers to filter malicious instructions, security thought reinforcement to steer model behavior, markdown sanitization and external-image blocking, suspicious-URL detection/redaction (Safe Browsing), user confirmation flows for potentially destructive actions, and end-user security notifications.",
-        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
+        "mitigation": "Layered defenses deployed by Google: model hardening/adversarial training (Gemini 2.5); prompt-injection content classifiers; security thought reinforcement (additional reasoning steps to ignore adversarial instructions); markdown sanitization and external-image/URL redaction; suspicious-URL detection (Google Safe Browsing); user-confirmation framework for actions that modify user data; end-user security mitigation notifications; red-teaming, adversarial testing, and external researcher collaboration.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
     {
@@ -237,16 +219,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Exploits CVEs in network device firmware to gain persistent access via compromised backbone, provider edge (PE), and customer edge (CE) routers.",
-        "affected_products": "Affected products unavailable.",
+        "technical_details": "Chinese state-sponsored actors target network edge devices, especially backbone, provider edge (PE) and customer edge (CE) routers, exploiting network-device CVEs to gain persistent access and pivot into other networks.",
+        "affected_products": "Backbone routers, provider edge (PE) routers, customer edge (CE) routers",
         "cvss_score": "6.4",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit not available.",
-        "patch_available": "No official patch or remediation guidance is currently available from the vendor.",
-        "active_exploitation": "Confirmed active exploitation reported by CISA and multiple security analyses.",
+        "cvss_vector": "CVSS vector unavailable",
+        "exploit_available": "Exploit availability unknown",
+        "patch_available": "false",
+        "active_exploitation": "Active exploitation status unknown",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Since no official patch is available, apply detection tips and monitor for IOCs, segment network, monitor for unauthorized ACL modifications, new tunnels, or routing changes, and verify all configuration commands on network equipment.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
     {
@@ -262,7 +244,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "The campaign exploits internet\u2011facing infrastructure, corporate VPNs, public\u2011facing vulnerabilities (e.g., CVE\u20112023\u201138831 WinRAR), SQL injection, and spear\u2011phishing to gain initial access, targeting logistics providers and technology companies.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true",
+        "threat_actors": "Russian GRU Unit 26165 (APT28)",
+        "mitigation": "Implement network segmentation, adopt Zero\u2011Trust principles, restrict firewall and VPN access, enable MFA, disable unnecessary services (e.g., UPnP), apply attack\u2011surface\u2011reduction rules, monitor logs, and harden Windows endpoints.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+      }
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/",
@@ -278,7 +272,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "Command-injection vulnerability in the Ivanti Sentry management appliance that can be exploited to achieve remote code execution (RCE) and full control of the appliance, enabling configuration changes, credential theft, data access, and lateral movement.",
+        "affected_products": "Ivanti Sentry appliance (specific versions not provided)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true \u2014 public PoC available (sources: prior-knowledge reports)",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true \u2014 active exploitation in the wild has been reported (sources: Shadowserver Foundation, Rapid7, and independent reports)",
+        "threat_actors": "None known",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "Vendor advisory URL unavailable."
+      }
     },
     {
       "id": "CVE-2026-48776",
@@ -344,6 +350,114 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-55166",
+      "title": "Lemur: ACME SSRF + creator-equality IDOR lead to AWS IAM/PKI compromise",
+      "summary": "<!-- obsidian --><h1 data-heading=\"Lemur 1.9.0: any SSO-authenticated user achieves AWS IAM compromise and permanent PKI key access via ACME acme_url SSRF and creator-equality IDOR\">Lemur 1.9.0: any SSO-authenticated user achieves AWS IAM compromise and permanent PKI key access via ACME acme_url SSRF and creator-equality IDOR</h1>\n<h2 data-heading=\"Vulnerability Summary\">Vulnerability Summary</h2>\n\nField | Value\n-- | --\nTitle | Lemur 1.9.0: any SSO-authenticated user achieves AWS IAM compromise and permanent PKI key access via ACME acme_url SSRF and creator-equality IDOR\nComponent | lemur/lemur/plugins/lemur_acme/acme_handlers.py:161-201 (SSRF), lemur/lemur/certificates/views.py:734 (IDOR), lemur/lemur/auth/views.py:300-308 (SSO auto-provision)\nCWE | CWE-918 (SSRF) + CWE-639 (Authorization Bypass Through User-Controlled Key) + CWE-285 (Improper Authorization)\nAttack Prerequisite | A valid SSO session against the deployment's IdP. Lemur auto-provisions any new SSO identity at active=True, so an attacker with corporate SSO (or any federated IdP Lemur trusts) clears this bar.\nAffected Versions | github.com/Netflix/lemur __version__ = \"1.9.0\" (see lemur/lemur/__about__.py) and every prior release that carries the same three sinks.\n\n\n<h2 data-heading=\"Executive Summary\">Executive Summary</h2>\n<p>A low-privilege user with a freshly-provisioned SSO account turns Lemur into an AWS IAM credential-exfiltration tool and walks away with a permanent copy of any TLS private key Lemur issued. Three sinks combine: (1) Lemur auto-creates every new SSO identity as <code>active=True</code> with no admin approval; (2) the ACME authority-creation endpoint accepts an attacker-supplied <code>acme_url</code> and fetches it server-side with no allowlist, reaching EC2 IMDS at <code>169.254.169.254</code>; (3) the certificate key-fetch endpoint grants <code>cert.user</code> (the original creator) unconditional access even after ownership is transferred to a different team. The combined chain ",
+      "link": "https://github.com/advisories/GHSA-v2wp-frmc-5q3v",
+      "published": "2026-06-25T22:07:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55166"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55165",
+      "title": " Lemur: JWT verifier honors attacker-supplied alg, enabling ATO",
+      "summary": "<!-- obsidian --><h1 data-heading=\"Lemur 1.9.0: JWT verifier trusts attacker-supplied alg from token header \u2014 defense-in-depth gap; chain-dependent ATO with secret disclosure\">Lemur 1.9.0: JWT verifier trusts attacker-supplied alg from token header \u2014 defense-in-depth gap; chain-dependent ATO with secret disclosure</h1>\n<h2 data-heading=\"Vulnerability Summary\">Vulnerability Summary</h2>\n\nField | Value\n-- | --\nTitle | Lemur 1.9.0: JWT verifier trusts attacker-supplied alg from token header \u2014 defense-in-depth gap; chain-dependent ATO with secret disclosure\nComponent | lemur/lemur/auth/service.py:130-137\nCWE | CWE-347 (Improper Verification of Cryptographic Signature)\nAttack Prerequisite | Defense-in-depth gap on its own \u2014 no single-request exploit against PyJWT 2.x. Single-request ATO requires a separate disclosure issue that leaks LEMUR_TOKEN_SECRET, or a future migration to asymmetric signing without fixing this sink.\nAffected Versions | github.com/Netflix/lemur __version__ = \"1.9.0\". Same code present in every prior release that has the auth/service.py:130 block.\n\n\n<h2 data-heading=\"Executive Summary\">Executive Summary</h2>\n<p>The Lemur JWT verifier reads the <code>alg</code> header field from the <em>unverified</em> token and passes it straight into <code>pyjwt.decode(..., algorithms=[header['alg']])</code>. This is a classic JWT antipattern: the server is supposed to pin the algorithm, not the attacker. PyJWT 2.x's default config rejects <code>alg=none</code>, so this is not a single-request ATO today \u2014 I want to be precise about that. The bug is a hardening gap with two real consequences. First, if the deployment ever migrates to asymmetric signing (RS256/ES256), an attacker can pin <code>alg=HS256</code> and forge tokens using the public key as the HMAC secret \u2014 the legacy \"RS256\u2192HS256 confusion\" trick. Second, the audit-log surface that records <code>alg</code> to flag anomalous tokens is filled in from the attacker's header, so anomaly detection is blinded. I'",
+      "link": "https://github.com/advisories/GHSA-r9gp-7f88-9r54",
+      "published": "2026-06-25T22:05:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55165"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55163",
+      "title": "Lemur Privilege Escalation: Non-admin role members can rewrite role membership via PUT /api/1/roles/<id>",
+      "summary": "## Summary\n \nThe `PUT /api/1/roles/<id>` handler in `lemur/roles/views.py` gates only on `RoleMemberPermission(role_id).can()`, which is satisfied for any user who is already a member of the target role. The handler then passes `data[\"users\"]` and `data[\"name\"]` directly to `service.update()`, permitting any role member to rewrite that role's membership list and name. The companion `DELETE` handler on the same resource is correctly gated by `@admin_permission.require`; the asymmetry between PUT and DELETE on identical resources indicates an authorization oversight rather than a deliberate design choice.\n \n## Root Cause\n \n`lemur/roles/views.py:298`:\n \n```python\npermission = RoleMemberPermission(role_id)\nif permission.can():\n    return service.update(\n        role_id, data[\"name\"], data.get(\"description\"), data.get(\"users\")\n    )\nreturn dict(message=\"You are not authorized to modify this role.\"), 403\n \n@admin_permission.require(http_exception=403)\ndef delete(self, role_id):\n    ...\n```\n \n`lemur/auth/permissions.py:56`:\n \n```python\nclass RoleMemberPermission(Permission):\n    def __init__(self, role_id):\n        needs = [RoleNeed(\"admin\"), RoleMemberNeed(role_id)]\n        super().__init__(*needs)\n```\n \n`flask_principal.Permission.allows()` is OR-semantic across needs, so `RoleMemberPermission(role_id).can()` returns `True` if the caller is either an admin **or** a member of `role_id`. The PUT handler treats membership-of-self as sufficient to mutate the role; DELETE does not.\n \n## Affected Endpoints\n \n| Method | Path | Source |\n|---|---|---|\n| PUT | /api/1/roles/`<id>` | lemur/roles/views.py:298 |\n \n## Impact\n \nA user who is a member of role X can:\n \n- **Add other users to role X**, granting them whatever certificate/authority access role X confers. In installs that delegate certificate or authority ownership to non-admin roles, this promotes arbitrary users to peer of every other role member.\n- **Remove other users from role X**, denying their access (availability / go",
+      "link": "https://github.com/advisories/GHSA-x3vf-mgxj-7785",
+      "published": "2026-06-25T22:01:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55163"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55162",
+      "title": "Lemur: Crafted CRL/OCSP URLs in uploaded certificates lead to post-authentication SSRF",
+      "summary": "## Summary\n \nWhen verifying an uploaded certificate, `lemur/certificates/verify.py` extracts the CRL Distribution Point URL and the OCSP responder URL directly from the certificate's extensions and issues outbound requests to those URLs without scheme restriction or destination allow-listing. An authenticated user holding the operator role (required by `StrictRolePermission` on `POST /certificates/upload`) can craft a certificate whose extensions point at internal services - instance metadata endpoints, internal Kubernetes API servers, RFC1918 hosts, link-local addresses - and cause the Lemur host to issue requests against those destinations during verification.\n \n## Root Cause\n \n`lemur/certificates/verify.py`, `crl_verify`:\n \n```python\npoint = p.full_name[0].value                          # URL from CDP extension of uploaded cert\n...\nresponse = requests.get(point, timeout=(3.05, 6))     # no allow-list, no destination filter\n```\n \n`lemur/certificates/verify.py`, `ocsp_verify`:\n \n```python\ncommand = [\"openssl\", \"x509\", \"-noout\", \"-ocsp_uri\", \"-in\", cert_path]\np1 = subprocess.Popen(command, stdout=subprocess.PIPE, ...)\nurl, _ = p1.communicate()\np2 = subprocess.Popen(\n    [\"openssl\", \"ocsp\", \"-issuer\", issuer_chain_path, \"-cert\", cert_path,\n     \"-url\", url.strip()],                            # attacker-controlled URL\n    ...\n)\n```\n \nIn both code paths the URL flows from attacker-controlled certificate-extension content to a network sink with no validation against an allow-list of hostnames, no scheme restriction beyond rejecting LDAP via `InvalidSchema`, and no filtering of RFC1918 / link-local (169.254/16) / loopback / IPv6 ULA destinations.\n \n## Affected Endpoints\n \n| Method | Path | Source |\n|---|---|---|\n| POST | /api/1/certificates/upload | `verify_string` \u2192 `crl_verify` / `ocsp_verify` |\n \nThe bug additionally surfaces anywhere `verify_string` is invoked on attacker-influenced certificate content (sync paths, source plugin re-validation, etc.). The upload endp",
+      "link": "https://github.com/advisories/GHSA-54vg-pfh7-jq95",
+      "published": "2026-06-25T21:58:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55162"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48529",
+      "title": "GitHub MCP Server: Lockdown mode singleton in HTTP server causes cross-user GraphQL client confusion",
+      "summary": "### Summary\n\nWhen running in HTTP mode with --lockdown-mode enabled, the RepoAccessCache is implemented as a process-global singleton initialized with the first authenticated user's GraphQL client. All subsequent requests from different users share this singleton and their lockdown-related GraphQL queries are executed using the first user's credentials. The singleton is never updated to reflect later users' tokens.\n\n### Details\n\nThe singleton is defined in pkg/lockdown/lockdown.go:\n\n```go\nvar (\n    instance   *RepoAccessCache\n    instanceMu sync.Mutex\n)\n\nfunc GetInstance(client *githubv4.Client, opts ...RepoAccessOption) *RepoAccessCache {\n    instanceMu.Lock()\n    defer instanceMu.Unlock()\n    if instance == nil {\n        instance = &RepoAccessCache{\n            client: client,  // only stored on first call\n        }\n    }\n    return instance  // subsequent callers receive the same object regardless of their client\n}\n```\n\nIn HTTP mode, pkg/github/dependencies.go calls this per request:\n\n```go\nfunc (d *RequestDeps) GetRepoAccessCache(ctx context.Context) (*lockdown.RepoAccessCache, error) {\n    gqlClient, err := d.GetGQLClient(ctx)  // creates client with request's token\n    ...\n    instance := lockdown.GetInstance(gqlClient, d.RepoAccessOpts...)\n    // gqlClient is silently dropped if singleton already exists\n    return instance, nil\n}\n```\n\nThe singleton's internal client field is never updated after the first initialization. All lockdown GraphQL queries that check repository access and visibility (queryRepoAccessInfo, called by IsSafeContent) run under the first authenticated user's token for the lifetime of the process.\n\nIsSafeContent is called in at least six places across pkg/github/issues.go and pkg/github/pullrequests.go to decide whether to trust or sanitize content from external contributors.\n\n### PoC\n\nThe following program demonstrates that two distinct GraphQL clients produce the same singleton pointer, confirming that the second client is discarded:\n\n```",
+      "link": "https://github.com/advisories/GHSA-pjp5-fpmr-3349",
+      "published": "2026-06-25T21:32:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48529"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48513",
+      "title": "MessagePack-CSharp: DynamicUnionResolver-generated deserializers miss depth enforcement",
+      "summary": "## Summary\n\nRuntime-generated union deserializers emitted by `DynamicUnionResolver` do not call `MessagePackSecurity.DepthStep(ref reader)` and do not decrement `reader.Depth` around recursive deserialization and skip paths.\n\nThis means union deserialization does not consistently participate in the maximum object graph depth enforcement that protects other recursive formatter paths. For unknown union keys, the emitted deserializer calls `reader.Skip()` on attacker-controlled data without an enclosing depth step.\n\n## Impact\n\nApplications are affected when they deserialize untrusted payloads into object graphs containing `[Union]`-decorated interfaces or abstract classes handled by `DynamicUnionResolver`.\n\nAn attacker can provide a union payload with an unknown key and a deeply nested value. Because the generated union formatter does not enter the depth accounting scope before skipping or recursively processing the value, configured depth limits can be bypassed. In combination with recursive skip behavior, this can terminate the process with an uncatchable `StackOverflowException`.\n\nThis issue is narrower than the general `TrySkip()` recursion issue because it specifically concerns a formatter-generation path that fails to count union nesting. It remains independently fixable because the emitted IL should mirror the depth-step behavior used by source-generated union formatters and dynamic object formatters.\n\n## Affected components\n\n- Package: `MessagePack`\n- API: `DynamicUnionResolver.BuildDeserialize`\n- Data types: `[Union]`-decorated interface and abstract class hierarchies handled by the dynamic resolver\n- Finding ID: `MESSAGEPACKCSHARP-070`\n\n## Patches\n\nFixes are prepared and will be released in coordinated patch versions.\n\nUpgrade guidance:\n\n1. Upgrade `MessagePack` to the patched version for your release line.\n2. Upgrade companion MessagePack packages in the same dependency graph to the coordinated patched versions.\n\nThe fix should emit `DepthStep` and matching ",
+      "link": "https://github.com/advisories/GHSA-wfr3-xj75-pfwh",
+      "published": "2026-06-25T21:22:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48513"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-48508",
