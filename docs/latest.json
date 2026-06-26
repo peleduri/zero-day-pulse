@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-26T08:49:07.791245+00:00",
+  "generated": "2026-06-26T13:59:02.577104+00:00",
   "total": 29,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 14,
   "enriched": 10,
   "findings": [
     {
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2024-57727 is a directory/path traversal vulnerability that allows unauthenticated remote attackers to read arbitrary files on the server by traversing the file system.",
-        "affected_products": "SimpleHelp Remote Monitoring and Management (RMM) version 5.5.7 and earlier",
+        "technical_details": "Path traversal vulnerability allowing unauthenticated attackers to read arbitrary files on the SimpleHelp host via crafted HTTP requests.",
+        "affected_products": "SimpleHelp remote support software v5.5.7 and earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true (http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know)",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+        "exploit_available": "true (https://github.com/imjdl/CVE-2024-57727)",
+        "patch_available": "true (https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability)",
         "active_exploitation": "true",
         "threat_actors": "Ransomware actors",
-        "mitigation": "Apply the vendor patch and upgrade SimpleHelp to a version newer than 5.5.7; ensure systems are up to date and limit remote access.",
-        "vendor_advisory": "http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+        "mitigation": "Apply the vendor patch released for SimpleHelp v5.5.7 and earlier, or upgrade to a newer version; if patch unavailable, restrict network access to the RMM service and block external HTTP requests.",
+        "vendor_advisory": "https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -51,16 +51,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Critical remote code execution via deserialization of untrusted data, allowing an unauthenticated attacker to execute arbitrary code on PTC Windchill and FlexPLM.",
-        "affected_products": "PTC Windchill (PDMlink) and PTC FlexPLM, versions prior to 11.0 M030 (including 11.0 M030, 11.1 M020, 11.2.1, 12.0.2, 12.1.2, 13.0.2, 13.1.1, 13.1.2.8, 13.1.3.4)",
-        "cvss_score": "9.3",
-        "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/AU:Y/R:U/V:C/U:Red",
-        "exploit_available": "false",
-        "patch_available": "true (https://support.ptc.com/appserver/auth/it/esd/product.jsp?prodFamily=WPD)",
+        "technical_details": "Deserialization of untrusted data leads to remote code execution.",
+        "affected_products": "PTC Windchill PDMLink 11.0 M030, 11.1 M020, 11.2.1.0, 12.0.2.0, 12.1.2.0, 13.0.2.0, 13.1.0.0, 13.1.1.0, 13.1.2.0, 13.1.3.0; PTC FlexPLM 11.0 M030, 11.1 M020, 11.2.1.0, 12.0.0.0, 12.0.2.0, 12.0.3.0, 12.1.2.0, 12.1.3.0, 13.0.2.0, 13.0.3.0",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true: https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-critical-vulnerability",
         "active_exploitation": "true",
         "threat_actors": "None known",
-        "mitigation": "Apply the vendor\u2011provided patches for the affected versions (e.g., 13.1.2.8, 13.1.3.4, 13.0.2, 12.1.2, 12.0.2, 11.2.1, 11.1 M020, 11.0 M030) and follow the remediation guidance on the PTC advisory page.",
-        "vendor_advisory": "https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-rce-vulnerability?srsltid=AfmBOoqNdPLMuKneefANqjs5we48dM76E0OGt6aUODJllXcC0-R7dTZC"
+        "mitigation": "Apply vendor-provided mitigation steps: protect publicly accessible systems, apply Apache/IIS configuration updates, and follow the workaround steps outlined in the advisory.",
+        "vendor_advisory": "https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-critical-vulnerability"
       }
     },
     {
@@ -78,16 +78,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "STOCKSTAY is a multi-component .NET backdoor written in C# using Windows Forms. It communicates via a secure WebSocket connection (websocket-sharp) and uses WM_COPYDATA IPC between components: a downloader (STOCKSTAY.MARKETMAKER) and modules STOCKBROKER (proxy tunneler), STOCKTRADER (information gathering), and STOCKMARKET (controller). The backdoor mimics legitimate programs such as stock market viewers, PDF viewers, and calculators.",
-        "affected_products": "Microsoft Windows (with .NET Framework), WinRAR",
+        "technical_details": "STOCKSTAY is a multi-component .NET backdoor (Windows Forms) attributed to Turla. Components include STOCKSTAY.STOCKBROKER (proxy-aware tunneler), STOCKSTAY.STOCKTRADER (main backdoor), STOCKSTAY.STOCKMARKET (orchestrator/controller) and MARKETMAKER (downloader). It uses an encrypted on-disk configuration and communicates with C2 over a secure WebSocket channel (websocket-sharp library); supports commands for file download/exfiltration, screen capture, registry and process manipulation, and system info harvesting. Delivery vectors observed: spear-phishing with malicious RDP files, RAR archives exploiting CVE-2025-8088, MSI installers, and HTA-based downloaders. Defenders should hunt for WebSocket beacons and the named components, and remediate delivery-vector vulnerabilities.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (source: https://thehackernews.com/2026/06/google-details-turlas-new-stockstay.html)",
+        "exploit_available": "Exploit availability unknown.",
         "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true (source: https://thehackernews.com/2026/06/google-details-turlas-new-stockstay.html)",
-        "threat_actors": "Turla",
-        "mitigation": "Mitigation steps unavailable.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "active_exploitation": "true",
+        "threat_actors": "Turla (aka SUMMIT / Secret Blizzard / VENOMOUS BEAR / UAC-0194)",
+        "mitigation": "Patch WinRAR (remediate CVE-2025-8088) where applicable; hunt for WebSocket C2 (look for connections to *.onrender[.]com and presence of websocket-sharp.dll); deploy GTIG IOCs/YARA rules and the GTI collection; block/inspect MSI, RAR, HTA, and malicious RDP file attachments at email gateway; enforce DMARC/SPF; monitor for STOCKSTAY components (STOCKBROKER, STOCKTRADER, STOCKMARKET, MARKETMAKER) and unusual autorun entries.",
+        "vendor_advisory": "https://cloud.google.com/blog/topics/threat-intelligence/stockstay-turla-intelligence-gathering"
       }
     },
     {
@@ -108,15 +108,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "LangGraph's JsonPlusSerializer can reconstruct Python objects from JSON checkpoint payloads; if checkpoint bytes can be modified, deserialization can reconstruct arbitrary objects leading to code execution at checkpoint load time.",
-        "affected_products": "LangGraph SQLite Checkpoint (versions prior to 4.1.1)",
+        "technical_details": "LangGraph's JsonPlusSerializer can reconstruct Python objects from JSON checkpoint payloads. If an attacker can modify checkpoint bytes at rest in the backing store, deserialization may instantiate unexpected objects, potentially enabling code execution during checkpoint load (unsafe/insecure deserialization).",
+        "affected_products": "langgraph-checkpoint (LangGraph SQLite Checkpoint) versions < 4.1.1",
         "cvss_score": "6.8",
         "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "Exploit availability unknown.",
-        "patch_available": "true (https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fjqc-hq36-qh5p)",
-        "active_exploitation": "Active exploitation status unknown.",
+        "exploit_available": "false",
+        "patch_available": "true (fixed in langgraph-checkpoint v4.1.1) https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fjqc-hq36-qh5p",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Upgrade to LangGraph version 4.1.1 or later, which fixes the issue; restrict write access to checkpoint storage and ensure integrity of checkpoint files.",
+        "mitigation": "Upgrade to langgraph-checkpoint v4.1.1 or later; restrict and monitor write access to checkpoint storage (treat checkpoint-store compromise as a serious incident); implement integrity checks or encryption for checkpoint blobs and avoid deserializing untrusted data.",
         "vendor_advisory": "https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fjqc-hq36-qh5p"
       }
     },
@@ -136,15 +136,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is a technique where an attacker embeds malicious prompts in data processed by an LLM, causing the model to execute unintended instructions. In the GeminiJack case, a zero\u2011click vulnerability in Google Gemini Enterprise allowed an attacker to inject a hidden prompt via indirect means, hijacking the AI agent.",
-        "affected_products": "Google Gemini Enterprise",
+        "technical_details": "Indirect prompt injection occurs when an AI system processes external content (e.g., websites, emails, documents) that contains malicious instructions, causing the model to execute those instructions as part of its response.",
+        "affected_products": "Affected products unavailable.",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "true (http://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability)",
+        "exploit_available": "Exploit availability unknown.",
         "patch_available": "Patch availability unknown.",
-        "active_exploitation": "true",
+        "active_exploitation": "Active exploitation status unknown.",
         "threat_actors": "None known",
-        "mitigation": "Implement input and output validation and sanitization, enforce human oversight, monitor for suspicious prompt patterns, and continuously update security controls for AI agents.",
+        "mitigation": "Monitor for known indirect prompt injection patterns on the public web and block malicious content.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -164,15 +164,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection (IPI) is an attack where malicious instructions are embedded in secondary data sources (e.g., shared documents, emails, APIs) that the LLM processes, causing unintended behavior without direct user input.",
-        "affected_products": "Google Workspace, Google Gemini (including Gemini Enterprise)",
+        "technical_details": "Indirect prompt injection (IPI) is a technique where an attacker influences an LLM by injecting malicious instructions into the data, tools, or external corpora used by the model, potentially without direct user input.",
+        "affected_products": "Google Workspace (including Gemini)",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "true",
+        "exploit_available": "true (source: http://arxiv.org/pdf/2601.07072)",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "true (sources: http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://arxiv.org/pdf/2601.07072)",
         "threat_actors": "None known",
-        "mitigation": "Google employs a defense\u2011in\u2011depth, layered strategy including context segmentation, input attribution, prompt sanitisation, deterministic defenses (user confirmation, URL sanitisation), ML\u2011based classifiers, LLM\u2011based prompt engineering, model hardening, continuous monitoring, synthetic data generation, and human\u2011in\u2011the\u2011loop review.",
+        "mitigation": "Google employs a layered security approach including input/output validation, sanitization, human oversight, continuous monitoring, and builds Workspace with Gemini to be a secure and trustworthy platform.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -192,16 +192,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when malicious sites embed payloads that cause the AI agent to execute unintended instructions, leading to data leakage or arbitrary actions.",
-        "affected_products": "Google Chrome (Gemini AI agentic browsing), Google Gemini Enterprise",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
-        "patch_available": "Patch availability unknown",
-        "active_exploitation": "true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)",
-        "threat_actors": "Threat actors unknown",
-        "mitigation": "New architecture introduced by Google to mitigate indirect prompt injection risk",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+        "technical_details": "Class: indirect prompt injection affecting agentic browsing / Gemini. Public researchers (Noma Labs) reported a zero-click 'GeminiJack' indirect prompt injection in Gemini Enterprise; Unit42 reported a high-severity Chrome issue (CVE-2026-0628) that allowed local file access/privacy invasion and was patched. The attack vector is malicious content (or chained vulnerabilities) causing the agent to accept or execute attacker-controlled prompt inputs, enabling data access or unsafe actions unless blocked by layered defenses.",
+        "affected_products": "Google Chrome (agentic browsing / Gemini integration \u2014 Chrome builds that include Gemini agentic features)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true (Google released mitigations/patches; see vendor advisory and reporting)",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "None known",
+        "mitigation": "Google implemented layered defenses for agentic browsing (restricting origin access, limiting unsafe AI actions, and an additional watch/guard layer for Gemini); follow vendor guidance and apply Chrome updates.",
+        "vendor_advisory": "http://blog.google/security/architecting-security-for-agentic"
       }
     },
     {
@@ -227,8 +227,8 @@
         "exploit_available": "Exploit availability unknown.",
         "patch_available": "Patch availability unknown.",
         "active_exploitation": "Active exploitation status unknown.",
-        "threat_actors": "None known",
-        "mitigation": "Adopt Rust for new code to reduce memory safety vulnerabilities.",
+        "threat_actors": "Threat actors unknown.",
+        "mitigation": "Mitigation steps unavailable.",
         "vendor_advisory": "Vendor advisory URL unavailable."
       }
     },
@@ -248,16 +248,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection: hidden malicious instructions embedded in external data sources (emails, documents, web pages, calendar invites, metadata) that are ingested by AI/LLM-based systems and cause them to perform unintended or malicious actions (exfiltration, unauthorized transactions, data destruction, navigation). Attackers use concealment (CSS display:none, HTML comments, metadata, system-tag spoofing) and authoritative framing to evade human detection and weaponize agentic AI.",
-        "affected_products": "Google Gemini, Google Workspace (Gemini integration)",
+        "technical_details": "Indirect prompt injection attacks embed hidden malicious instructions in external data sources such as emails, documents, or calendar invites that cause AI systems to perform unintended actions. Google mitigates this by adversarial model training, content classifiers, security thought reinforcement, markdown sanitization, URL redaction, user confirmation, and end\u2011user security notifications.",
+        "affected_products": "Google Gemini (Gemini 2.5), Google Workspace (Gmail, Docs, Calendar), Gemini app",
         "cvss_score": "CVSS score unavailable.",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Exploit availability unknown.",
+        "exploit_available": "false",
         "patch_available": "false",
-        "active_exploitation": "true",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Layered defenses: model hardening with adversarial training (Gemini 2.5), purpose-built ML detectors for malicious instructions, security thought reinforcement (prompt-level guards), markdown/HTML sanitization and suspicious-URL redaction, system-level safeguards and confirmation dialogs, end-user mitigation notifications, continuous monitoring and telemetry, red-teaming and BugSWAT/VRP collaboration, and adoption of secure AI frameworks (SAIF).",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+        "mitigation": "Layered defense: model hardening with adversarial training, prompt injection content classifiers, security thought reinforcement, markdown sanitization, suspicious URL redaction, user\u2011confirmation framework for risky actions, and end\u2011user security notifications. These measures are built into Gemini and Google Workspace services.",
+        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
       }
     },
     {
@@ -275,15 +275,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Chinese state-sponsored actors exploit network-device CVEs to compromise backbone, provider edge, and customer edge routers, modify firmware for persistent access, and pivot through compromised devices to other networks.",
-        "affected_products": "backbone routers, provider edge (PE) routers, customer edge (CE) routers, network edge devices",
-        "cvss_score": "CVSS score unavailable",
-        "cvss_vector": "CVSS vector unavailable",
-        "exploit_available": "Exploit availability unknown",
+        "technical_details": "Exploitation of network edge devices such as backbone, provider, and customer routers using CVEs to gain persistent access, often leveraging compromised devices and trusted connections to pivot within networks.",
+        "affected_products": "Backbone routers, provider edge (PE) routers, customer edge (CE) routers, network edge devices",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
         "patch_available": "false",
         "active_exploitation": "true",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Apply detection tips and hardening guidance from CISA, monitor for IOCs, segment and isolate router infrastructure, and implement strict access controls until patches are released.",
+        "mitigation": "Apply patches when available, implement network segmentation, monitor router activity, enforce strong authentication, limit management access, and follow vendor detection guidance.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -352,19 +352,21 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/06/new-gaslight-macos-malware-uses-prompt.html",
-      "title": "New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis",
-      "summary": "A previously undocumented Rust-based macOS implant and information stealer has been found to embed a prompt injection payload designed to trick a malware analyst's artificial intelligence (AI) tools and trick it into aborting or refusing an analysis of the artifact.\n\nThe malware has been codenamed Gaslight owing to this deceptive behavior. It's been assessed with high confidence that the tool is",
-      "link": "https://thehackernews.com/2026/06/new-gaslight-macos-malware-uses-prompt.html",
-      "published": "2026-06-25T09:23:03+00:00",
+      "id": "https://thehackernews.com/2026/06/new-dirtyclone-linux-kernel-flaw-lets.html",
+      "title": "New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets",
+      "summary": "DirtyClone is a new Linux kernel privilege escalation in the DirtyFrag family.\u00a0JFrog Security Research published a working exploit walkthrough\u00a0for the flaw on June 25, the first public demonstration for this variant.\n\nTracked as\u00a0CVE-2026-43503\u00a0(CVSS 8.8), it lets a local user corrupt file-backed memory through a cloned network packet and gain root. The patch landed in",
+      "link": "https://thehackernews.com/2026/06/new-dirtyclone-linux-kernel-flaw-lets.html",
+      "published": "2026-06-26T11:51:35+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-43503"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-55166",
