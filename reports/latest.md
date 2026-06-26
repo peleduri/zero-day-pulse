@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-26 13:59 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 10
+> **Generated:** 2026-06-26 19:28 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,16 +13,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Path traversal vulnerability allowing unauthenticated attackers to read arbitrary files on the SimpleHelp host via crafted HTTP requests.
+- **Technical Details:** The vulnerability is a path traversal flaw that allows unauthenticated remote attackers to read or download arbitrary files from the SimpleHelp host via crafted HTTP requests.
 - **Affected Products:** SimpleHelp remote support software v5.5.7 and earlier
 - **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-- **Exploit Available:** true (https://github.com/imjdl/CVE-2024-57727)
-- **Patch Available:** true (https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability)
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true (https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability)
 - **Active Exploitation:** true
 - **Threat Actors:** Ransomware actors
-- **Mitigation:** Apply the vendor patch released for SimpleHelp v5.5.7 and earlier, or upgrade to a newer version; if patch unavailable, restrict network access to the RMM service and block external HTTP requests.
-- **Vendor Advisory:** https://www.broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
+- **Mitigation:** Apply the vendor patch or upgrade to a version newer than 5.5.7; if a patch is not available, disable remote access and restrict network access to the SimpleHelp service.
+- **Vendor Advisory:** https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
 
 ---
 
@@ -35,16 +35,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Deserialization of untrusted data leads to remote code execution.
-- **Affected Products:** PTC Windchill PDMLink 11.0 M030, 11.1 M020, 11.2.1.0, 12.0.2.0, 12.1.2.0, 13.0.2.0, 13.1.0.0, 13.1.1.0, 13.1.2.0, 13.1.3.0; PTC FlexPLM 11.0 M030, 11.1 M020, 11.2.1.0, 12.0.0.0, 12.0.2.0, 12.0.3.0, 12.1.2.0, 12.1.3.0, 13.0.2.0, 13.0.3.0
-- **CVSS Score:** 9.8
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true: https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-critical-vulnerability
+- **Technical Details:** Improper input validation/deserialization of untrusted data in Windchill PDMLink and FlexPLM allows an unauthenticated remote attacker to send crafted requests/serialized data that result in remote code execution.
+- **Affected Products:** PTC Windchill PDMLink (versions prior to 11.0 M030 and specified patched versions listed by vendor), PTC FlexPLM (versions prior to 11.0 M030 and specified patched versions listed by vendor), CPS (impacted; versions not specified)
+- **CVSS Score:** 9.3
+- **CVSS Vector:** CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/S:X/AU:Y/R:U/V:C/U:Red
+- **Exploit Available:** false
+- **Patch Available:** true (PTC published patches and guidance: vendor advisory URL above and support article CS473270)
 - **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Apply vendor-provided mitigation steps: protect publicly accessible systems, apply Apache/IIS configuration updates, and follow the workaround steps outlined in the advisory.
-- **Vendor Advisory:** https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-critical-vulnerability
+- **Mitigation:** Follow PTC remediation guidance and apply the vendor patches immediately; for releases prior to 11.0 M030, ensure the system is not connected to the internet to reduce exposure and follow the vendor workaround CS473493 as applicable.
+- **Vendor Advisory:** https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-rce-vulnerability
 
 ---
 
@@ -59,46 +59,20 @@ Describing the Windows backdoor as continually developed by the hacking group, G
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** STOCKSTAY is a multi-component .NET backdoor (Windows Forms) attributed to Turla. Components include STOCKSTAY.STOCKBROKER (proxy-aware tunneler), STOCKSTAY.STOCKTRADER (main backdoor), STOCKSTAY.STOCKMARKET (orchestrator/controller) and MARKETMAKER (downloader). It uses an encrypted on-disk configuration and communicates with C2 over a secure WebSocket channel (websocket-sharp library); supports commands for file download/exfiltration, screen capture, registry and process manipulation, and system info harvesting. Delivery vectors observed: spear-phishing with malicious RDP files, RAR archives exploiting CVE-2025-8088, MSI installers, and HTA-based downloaders. Defenders should hunt for WebSocket beacons and the named components, and remediate delivery-vector vulnerabilities.
-- **Affected Products:** Affected products unavailable.
+- **Technical Details:** STOCKSTAY is a modular .NET backdoor composed of a tunneler, orchestrator, and backdoor that communicate locally and beacon over WebSocket C2, using legitimate platforms like Render and GitHub for hosting. Initial access is achieved via spear‑phishing RDP files and RAR archives exploiting CVE‑2025‑8088 (WinRAR path traversal). Payloads employ environmental keying and are scheduled to run during business hours to blend with normal activity.
+- **Affected Products:** Windows OS, .NET Framework, WinRAR (CVE-2025-8088)
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
+- **Patch Available:** true
 - **Active Exploitation:** true
-- **Threat Actors:** Turla (aka SUMMIT / Secret Blizzard / VENOMOUS BEAR / UAC-0194)
-- **Mitigation:** Patch WinRAR (remediate CVE-2025-8088) where applicable; hunt for WebSocket C2 (look for connections to *.onrender[.]com and presence of websocket-sharp.dll); deploy GTIG IOCs/YARA rules and the GTI collection; block/inspect MSI, RAR, HTA, and malicious RDP file attachments at email gateway; enforce DMARC/SPF; monitor for STOCKSTAY components (STOCKBROKER, STOCKTRADER, STOCKMARKET, MARKETMAKER) and unusual autorun entries.
-- **Vendor Advisory:** https://cloud.google.com/blog/topics/threat-intelligence/stockstay-turla-intelligence-gathering
+- **Threat Actors:** Turla (aka SUMMIT, Secret Blizzard, VENOMOUS BEAR, UAC-0194)
+- **Mitigation:** Patch WinRAR to remediate CVE‑2025‑8088, block inbound RDP files at email gateways, enforce DMARC/SPF, hunt for WebSocket connections to *.onrender.com and the websocket‑sharp.dll component, and deploy YARA rules and GTI IOC collections.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
-## 4. 🟠 Zero-Day — LangGraph Checkpoint: Unsafe JSON deserialization in checkpoint loading
-
-**CVE:** `CVE-2026-48775` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-fjqc-hq36-qh5p>
-
-> ## Summary
-
-LangGraph&#x27;s `JsonPlusSerializer` can reconstruct Python objects from JSON checkpoint payloads. Under conditions where someone could modify checkpoint bytes at rest in the backing store, the deserialization path could reconstruct objects beyond what the application expects, which could in turn result in code execution at checkpoint load time.
-
-This is a defense-in-depth issue. The …
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** LangGraph's JsonPlusSerializer can reconstruct Python objects from JSON checkpoint payloads. If an attacker can modify checkpoint bytes at rest in the backing store, deserialization may instantiate unexpected objects, potentially enabling code execution during checkpoint load (unsafe/insecure deserialization).
-- **Affected Products:** langgraph-checkpoint (LangGraph SQLite Checkpoint) versions < 4.1.1
-- **CVSS Score:** 6.8
-- **CVSS Vector:** CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H
-- **Exploit Available:** false
-- **Patch Available:** true (fixed in langgraph-checkpoint v4.1.1) https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fjqc-hq36-qh5p
-- **Active Exploitation:** false
-- **Threat Actors:** None known
-- **Mitigation:** Upgrade to langgraph-checkpoint v4.1.1 or later; restrict and monitor write access to checkpoint storage (treat checkpoint-store compromise as a serious incident); implement integrity checks or encryption for checkpoint blobs and avoid deserializing untrusted data.
-- **Vendor Advisory:** https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fjqc-hq36-qh5p
-
----
-
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -107,20 +81,20 @@ This is a defense-in-depth issue. The …
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection occurs when an AI system processes external content (e.g., websites, emails, documents) that contains malicious instructions, causing the model to execute those instructions as part of its response.
+- **Technical Details:** Indirect Prompt Injection (IPI) embeds malicious prompts in web content that AI agents retrieve and process, causing the agents to follow unintended instructions.
 - **Affected Products:** Affected products unavailable.
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** Active exploitation status unknown.
+- **Exploit Available:** true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)
+- **Patch Available:** false
+- **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Monitor for known indirect prompt injection patterns on the public web and block malicious content.
+- **Mitigation:** Mitigation steps unavailable.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -129,20 +103,20 @@ This is a defense-in-depth issue. The …
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect prompt injection (IPI) is a technique where an attacker influences an LLM by injecting malicious instructions into the data, tools, or external corpora used by the model, potentially without direct user input.
-- **Affected Products:** Google Workspace (including Gemini)
+- **Technical Details:** Indirect prompt injection (IPI) is an attack where an adversary injects malicious instructions into the data, tools, or external knowledge sources used by an LLM, causing the model to follow unintended commands without direct user input.
+- **Affected Products:** Google Workspace (including Gemini integration)
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** true (source: http://arxiv.org/pdf/2601.07072)
+- **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
-- **Active Exploitation:** true (sources: http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads, http://arxiv.org/pdf/2601.07072)
+- **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** Google employs a layered security approach including input/output validation, sanitization, human oversight, continuous monitoring, and builds Workspace with Gemini to be a secure and trustworthy platform.
+- **Mitigation:** Implement input and output validation and sanitization, enforce human oversight, continuously monitor public web for IPI patterns, and apply Google Workspace's continuous mitigation framework.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -151,25 +125,91 @@ This is a defense-in-depth issue. The …
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Class: indirect prompt injection affecting agentic browsing / Gemini. Public researchers (Noma Labs) reported a zero-click 'GeminiJack' indirect prompt injection in Gemini Enterprise; Unit42 reported a high-severity Chrome issue (CVE-2026-0628) that allowed local file access/privacy invasion and was patched. The attack vector is malicious content (or chained vulnerabilities) causing the agent to accept or execute attacker-controlled prompt inputs, enabling data access or unsafe actions unless blocked by layered defenses.
-- **Affected Products:** Google Chrome (agentic browsing / Gemini integration — Chrome builds that include Gemini agentic features)
+- **Technical Details:** In Cursor versions below 1.3 an attacker can bypass an allowlist in auto-run mode by using special input (e.g., a backtick ` or $(cmd)) to trigger command execution outside the allowlist; an attacker can trigger this when chained with indirect prompt injection, resulting in arbitrary command execution. (Fixed in 1.3.)
+- **Affected Products:** Cursor (code editor) versions below 1.3
 - **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
 - **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** true (Google released mitigations/patches; see vendor advisory and reporting)
-- **Active Exploitation:** Active exploitation status unknown.
+- **Patch Available:** true — fixed in Cursor version 1.3 (see vendor advisory: https://github.com/cursor/cursor/security/advisories/GHSA-534m-3w6r-8pqr)
+- **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Google implemented layered defenses for agentic browsing (restricting origin access, limiting unsafe AI actions, and an additional watch/guard layer for Gemini); follow vendor guidance and apply Chrome updates.
-- **Vendor Advisory:** http://blog.google/security/architecting-security-for-agentic
+- **Mitigation:** Update Cursor to version 1.3 or later. If update is not immediately possible, avoid using allowlist/auto-run modes and keep the default setting that requires user approval for terminal/command execution.
+- **Vendor Advisory:** https://github.com/cursor/cursor/security/advisories/GHSA-534m-3w6r-8pqr
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
 
 > Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn’t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vul…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** A linear buffer overflow in the Rust‑based CrabbyAVIF library was discovered but prevented by Android's Scudo hardened allocator guard pages, making the bug non‑exploitable.
+- **Affected Products:** Android platform (CrabbyAVIF library)
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** false
+- **Patch Available:** true (https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050)
+- **Active Exploitation:** false
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Use Android's Scudo hardened allocator with guard pages; avoid unsafe Rust code; apply the provided patch.
+- **Vendor Advisory:** https://source.android.com/docs/security/bulletin/2025-08-01
+
+---
+
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
+**Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
+
+> Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Indirect prompt injection: hidden malicious instructions embedded in external data sources (emails, documents, calendar invites) that are incorporated into prompts and can cause the model to perform unauthorized actions such as data exfiltration or other rogue commands.
+- **Affected Products:** Google Gemini, Google Workspace (Gemini in Workspace), Gemini app, Gemini 2.5 models
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** None known
+- **Mitigation:** Layered defenses: prompt injection content classifiers, security thought reinforcement, markdown sanitization and suspicious URL redaction, user confirmation (HITL) framework, and end-user security mitigation notifications.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
+
+---
+
+## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
+**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
+
+> Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** PRC state-sponsored actors are targeting large backbone and edge routers (PE/CE) and leveraging compromised devices and trusted connections to pivot into networks; they modify routers to maintain persistent long-term access for espionage and use those footholds to reach downstream networks.
+- **Affected Products:** Backbone routers, provider edge (PE) routers, customer edge (CE) routers, and other network devices (no vendor/product versions specified)
+- **CVSS Score:** 6.4
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** false
+- **Active Exploitation:** true
+- **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
+- **Mitigation:** Harden and monitor network-edge devices (backbone/PE/CE routers), apply vendor updates when published, isolate and remediate compromised routers, monitor and hunt using published IOCs and STIX where available, and restrict trusted connections between network segments until devices are verified.
+- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
+
+---
+
+## 10. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
+**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
+
+> Executive Summary This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General…
 
 **Parallel AI Enrichment:**
 
@@ -180,93 +220,133 @@ This is a defense-in-depth issue. The …
 - **Exploit Available:** Exploit availability unknown.
 - **Patch Available:** Patch availability unknown.
 - **Active Exploitation:** Active exploitation status unknown.
-- **Threat Actors:** Threat actors unknown.
+- **Threat Actors:** Russian GRU's 85th GTsSS (Unit 26165), also known as APT28
 - **Mitigation:** Mitigation steps unavailable.
-- **Vendor Advisory:** Vendor advisory URL unavailable.
+- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
-**Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
-
-> Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve…
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Indirect prompt injection attacks embed hidden malicious instructions in external data sources such as emails, documents, or calendar invites that cause AI systems to perform unintended actions. Google mitigates this by adversarial model training, content classifiers, security thought reinforcement, markdown sanitization, URL redaction, user confirmation, and end‑user security notifications.
-- **Affected Products:** Google Gemini (Gemini 2.5), Google Workspace (Gmail, Docs, Calendar), Gemini app
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** false
-- **Patch Available:** false
-- **Active Exploitation:** false
-- **Threat Actors:** None known
-- **Mitigation:** Layered defense: model hardening with adversarial training, prompt injection content classifiers, security thought reinforcement, markdown sanitization, suspicious URL redaction, user‑confirmation framework for risky actions, and end‑user security notifications. These measures are built into Gemini and Google Workspace services.
-- **Vendor Advisory:** https://blog.google/security/mitigating-prompt-injection-attacks/
-
----
-
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
-**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
-
-> Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…
-
-**Parallel AI Enrichment:**
-
-- **Technical Details:** Exploitation of network edge devices such as backbone, provider, and customer routers using CVEs to gain persistent access, often leveraging compromised devices and trusted connections to pivot within networks.
-- **Affected Products:** Backbone routers, provider edge (PE) routers, customer edge (CE) routers, network edge devices
-- **CVSS Score:** CVSS score unavailable.
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Exploit availability unknown.
-- **Patch Available:** false
-- **Active Exploitation:** true
-- **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
-- **Mitigation:** Apply patches when available, implement network segmentation, monitor router activity, enforce strong authentication, limit management access, and follow vendor detection guidance.
-- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
-
----
-
-## 11. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
-**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
-
-> Executive Summary This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General…
-
----
-
-## 12. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 11. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 13. 🟠 Zero-Day — LangGraph SDK has unsafe URL path construction
+## 12. 🟡 High Severity — pydantic-ai: SSRF blocklist bypass via IPv4-compatible, SIIT/IVI, and local NAT64 IPv6 addresses (incomplete fix of CVE-2026-46678)
 
-**CVE:** `CVE-2026-48776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-w39p-vh2g-g8g5>
+**CVE:** `CVE-2026-48782` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-cg7w-rg45-pc59>
 
 > ## Summary
 
-`langgraph-sdk` constructs HTTP request paths for resource operations by interpolating caller-supplied identifier values into URL templates. Without sanitization of those values, identifiers that contain characters with special meaning in URL paths could cause the resulting request to address a different resource (and potentially a different resource type) than the SDK method&#x27;s ca…
+When an application using Pydantic AI opts a URL into `force_download=&#x27;allow-local&#x27;` (which disables the default block on private/internal IPs) **and runs on a network that routes the affected IPv6 transition forms (NAT64- or ISATAP-configured networks)**, the cloud-metadata blocklist could be bypassed by encoding the metadata IP in an IPv6 transition form that the previous f…
 
 ---
 
-## 14. 🟠 Zero-Day — New macOS malware embeds fake errors to confuse AI analysis tools
+## 13. 🟡 High Severity — @sigstore/core has DSSE payloadType type-binding failure
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://www.bleepingcomputer.com/news/security/new-macos-malware-embeds-fake-errors-to-confuse-ai-analysis-tools/>
+**CVE:** `CVE-2026-48758` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-jfc7-64v2-mr8c>
 
-> A newly discovered macOS malware dubbed &quot;Gaslight&quot; is designed to confuse AI-assisted malware analysis tools by hiding prompt injection strings and fake debugging data within the executable. [...]
+> ### Impact
+The `preAuthEncoding` function in `@sigstore/core` uses Node.js `&#x27;ascii&#x27;` encoding when converting the PAE (Pre-Authentication Encoding) string to bytes. This allows `payloadType` to be mutated after signing without invalidating the signature, breaking the type-binding guarantee that DSSE is designed to provide.
+
+In `packages/core/src/dsse.ts`, the PAE function builds a string…
 
 ---
 
-## 15. 🟡 High Severity — New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets
+## 14. 🟡 High Severity — Incus has an arbitrary file write via path traversal in S3 multipart upload
+
+**CVE:** `CVE-2026-48753` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-ccjc-4qc3-jxqc>
+
+> ## Summary
+
+The S3 protocol upload endpoint is vulnerable to path traversal and allows creation of arbitrary files on the host. This behavior could lead to arbitrary command execution.
+
+In `internal/server/storage/s3/local/multipart.go`, user-controlled upload ID is appended to the uploads directory unsanitized; https://github.com/lxc/incus/blob/40dd4f151d52c06b178482aa2518abfb9df3e6fb/internal/se…
+
+---
+
+## 15. 🟡 High Severity — OpenAM Authentication Bypass via MSISDN LDAP Injection
+
+**CVE:** `CVE-2026-46619` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-xq73-fvmr-jvmm>
+
+> ## Summary
+
+**Description**
+
+An LDAP Injection (CWE-90) vulnerability in the MSISDN authentication module allows an unauthenticated, remote attacker to obtain an arbitrary OpenAM session without a password in the default trusted gateway configuration. This impacts OpenAM Community Edition through version 16.0.6. This issue was patched in version 16.1.1.
+
+## Impact
+OpenAM deployments through versio…
+
+---
+
+## 16. 🟡 High Severity — fluent-plugin-opentelemetry Has Denial of Service (DoS) via Large Payloads and Decompression Bombs in `in_opentelemetry`
+
+**CVE:** `CVE-2026-44163` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-2jc5-xhx8-qj6h>
+
+> The `fluent-plugin-opentelemetry` plugin (specifically the `in_opentelemetry` HTTP input) lacked strict size limits on incoming requests.
+It was discovered that the plugin read the entire request body and decompressed payloads into memory without enforcing maximum size thresholds.
+
+If the OpenTelemetry ingestion endpoint is exposed to untrusted networks, an attacker can send an excessively large H…
+
+---
+
+## 17. 🟡 High Severity — Fluentd is Vulnerable to Server-Side Request Forgery (SSRF) via Placeholder Expansion in `out_http`
+
+**CVE:** `CVE-2026-44161` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-72f5-rr8c-r6gr>
+
+> The `out_http` output plugin allows the use of placeholders (such as `${tag}`) in the `endpoint` configuration parameter.
+It was discovered that if the placeholder value is derived from untrusted user input, an attacker can maliciously control the destination hostname of the outbound HTTP requests made by Fluentd.
+
+### Impact
+This vulnerability allows for a **Server-Side Request Forgery (SSRF)** a…
+
+---
+
+## 18. 🟡 High Severity — Fluentd is Vulnerable to Denial of Service (DoS) via Gzip Decompression Bomb in `in_http` and `in_forward`
+
+**CVE:** `CVE-2026-44160` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-j9cw-hwqf-85w7>
+
+> Fluentd&#x27;s `in_http` and `in_forward` plugins support receiving gzip-compressed data.
+While Fluentd correctly enforces size limits on the incoming compressed payloads (e.g., via `body_size_limit` or `chunk_size_limit`), it was discovered that there is no limit enforced on the size of the decompressed data.
+
+If a Fluentd instance is exposed to untrusted networks, an attacker can send a maliciou…
+
+---
+
+## 19. 🟡 High Severity — Fluentd is Vulnerable to Exposure of Sensitive Information via Monitor Agent API
+
+**CVE:** `CVE-2026-44025` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-pr7j-96cj-549h>
+
+> Fluentd&#x27;s Monitor Agent plugin (`in_monitor_agent`) exposes internal metrics and plugin information via a REST API.
+It was discovered that the API response (`/api/plugins.json` and related endpoints) unintentionally includes internal instance variables of loaded plugins.
+
+If any plugins store sensitive information—such as database passwords, API keys, or cloud credentials—in its instance vari…
+
+---
+
+## 20. 🟡 High Severity — Fluentd is Vulnerable to Remote Code Execution (RCE) via Arbitrary File Write in `${tag}` Placeholder
+
+**CVE:** `CVE-2026-44024` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-26
+**Reference:** <https://github.com/advisories/GHSA-44hj-4m45-frj3>
+
+> Fluentd allows dynamically constructing file paths using the `${tag}` placeholder.
+It was discovered that validation for this placeholder was insufficient.
+
+If a Fluentd instance is configured to receive logs from untrusted sources and uses the `${tag}` placeholder in file configurations (such as the `path` parameter in the `out_file` plugin), an attacker can inject path traversal characters (e.g.…
+
+---
+
+## 21. 🟡 High Severity — New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets
 
 **CVE:** `CVE-2026-43503` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-06-26
 **Reference:** <https://thehackernews.com/2026/06/new-dirtyclone-linux-kernel-flaw-lets.html>
@@ -277,7 +357,7 @@ Tracked as CVE-2026-43503 (CVSS 8.8), it lets a local user corrupt file-backed
 
 ---
 
-## 16. 🟡 High Severity — Lemur: ACME SSRF + creator-equality IDOR lead to AWS IAM/PKI compromise
+## 22. 🟡 High Severity — Lemur: ACME SSRF + creator-equality IDOR lead to AWS IAM/PKI compromise
 
 **CVE:** `CVE-2026-55166` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
 **Reference:** <https://github.com/advisories/GHSA-v2wp-frmc-5q3v>
@@ -287,7 +367,7 @@ Tracked as CVE-2026-43503 (CVSS 8.8), it lets a local user corrupt file-backed
 
 ---
 
-## 17. 🟡 High Severity —  Lemur: JWT verifier honors attacker-supplied alg, enabling ATO
+## 23. 🟡 High Severity —  Lemur: JWT verifier honors attacker-supplied alg, enabling ATO
 
 **CVE:** `CVE-2026-55165` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
 **Reference:** <https://github.com/advisories/GHSA-r9gp-7f88-9r54>
@@ -297,7 +377,7 @@ Tracked as CVE-2026-43503 (CVSS 8.8), it lets a local user corrupt file-backed
 
 ---
 
-## 18. 🟡 High Severity — Lemur Privilege Escalation: Non-admin role members can rewrite role membership via PUT /api/1/roles/<id>
+## 24. 🟡 High Severity — Lemur Privilege Escalation: Non-admin role members can rewrite role membership via PUT /api/1/roles/<id>
 
 **CVE:** `CVE-2026-55163` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
 **Reference:** <https://github.com/advisories/GHSA-x3vf-mgxj-7785>
@@ -308,7 +388,7 @@ The `PUT /api/1/roles/&lt;id&gt;` handler in `lemur/roles/views.py` gates only o
 
 ---
 
-## 19. 🟡 High Severity — Lemur: Crafted CRL/OCSP URLs in uploaded certificates lead to post-authentication SSRF
+## 25. 🟡 High Severity — Lemur: Crafted CRL/OCSP URLs in uploaded certificates lead to post-authentication SSRF
 
 **CVE:** `CVE-2026-55162` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
 **Reference:** <https://github.com/advisories/GHSA-54vg-pfh7-jq95>
@@ -319,7 +399,7 @@ When verifying an uploaded certificate, `lemur/certificates/verify.py` extracts 
 
 ---
 
-## 20. 🟡 High Severity — GitHub MCP Server: Lockdown mode singleton in HTTP server causes cross-user GraphQL client confusion
+## 26. 🟡 High Severity — GitHub MCP Server: Lockdown mode singleton in HTTP server causes cross-user GraphQL client confusion
 
 **CVE:** `CVE-2026-48529` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
 **Reference:** <https://github.com/advisories/GHSA-pjp5-fpmr-3349>
@@ -330,7 +410,7 @@ When running in HTTP mode with --lockdown-mode enabled, the RepoAccessCache is i
 
 ---
 
-## 21. 🟡 High Severity — MessagePack-CSharp: DynamicUnionResolver-generated deserializers miss depth enforcement
+## 27. 🟡 High Severity — MessagePack-CSharp: DynamicUnionResolver-generated deserializers miss depth enforcement
 
 **CVE:** `CVE-2026-48513` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
 **Reference:** <https://github.com/advisories/GHSA-wfr3-xj75-pfwh>
@@ -343,89 +423,7 @@ This means union deserialization does not consistently participate in the maximu
 
 ---
 
-## 22. 🟡 High Severity — Lemur has an authorization bypass in StrictRolePermission / AuthorityCreatorPermission
-
-**CVE:** `CVE-2026-48508` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-qcqw-jwxc-2hqg>
-
-> ## Summary
-
-`StrictRolePermission` and `AuthorityCreatorPermission` in `lemur/auth/permissions.py` call `flask_principal.Permission.__init__()` with zero `Need`s when their config flags are unset. Both flags defaulted to `False` in code prior to the fix, so this was the state of any Lemur install that hadn&#x27;t explicitly opted in.
-
-Flask-Principal&#x27;s `Permission.allows()` returns `True` whe…
-
----
-
-## 23. 🟡 High Severity — amazon-braket-sdk vulnerable to Insecure Deserialization via pickle.loads()
-
-**CVE:** `CVE-2026-9291` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-g697-2xrc-gc46>
-
-> **Summary**
-Amazon Braket SDK is an open-source Python library for interacting with the Amazon Braket quantum computing service, including managing hybrid quantum jobs and retrieving job results. An issue exists where, under certain circumstances, a remote authenticated user with S3 write access to a Braket job output bucket can achieve arbitrary code execution by exploiting insecure deserializati…
-
----
-
-## 24. 🟡 High Severity — i18next-fs-backend vulnerable to prototype pollution via crafted missing-key string
-
-**CVE:** `CVE-2026-48713` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-2933-q333-qg83>
-
-> ### Impact
-
-`i18next-fs-backend` ≤ 2.6.5, when used to persist missing translation keys (e.g. via `i18next-http-middleware`&#x27;s `missingKeyHandler` exposed to untrusted input), is vulnerable to prototype pollution via crafted missing-key strings.
-
-`Backend.writeFile()` splits each queued missing-key string on the configured `keySeparator` (default `.`) before calling the internal `setPath()` wa…
-
----
-
-## 25. 🟡 High Severity — i18next-http-middleware: MissingKeyHandler does not reject keys whose segments contain prototype-polluting names
-
-**CVE:** `CVE-2026-48714` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-f49m-vf83-692w>
-
-> ### Impact
-
-`i18next-http-middleware` ≤ 3.9.6&#x27;s `missingKeyHandler` blocked the literal request-body keys `__proto__`, `constructor`, and `prototype` (added in 3.9.3, see GHSA-5fgg-jcpf-8jjw), but did not reject dotted variants such as `&quot;__proto__.polluted&quot;`. Downstream backends that split the missing-key string on a configured `keySeparator` (notably `i18next-fs-backend` ≤ 2.6.5) h…
-
----
-
-## 26. 🟡 High Severity — OpenAM: Unauthenticated Authentication Bypass via RADIUS Spoofing
-
-**CVE:** `CVE-2026-46560` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-386j-6m86-78f9>
-
-> ## Summary
-
-**Description**
-
-An Improper Verification of Cryptographic Signature (CWE-347) issue in OpenAM&#x27;s RADIUS authentication module allows an unauthenticated network attacker to spoof an Access-Accept response and obtain an OpenAM session for any RADIUS username, without knowing the configured shared secret. This affects OpenAM Community Edition through version 16.0.6 and was patched in…
-
----
-
-## 27. 🟡 High Severity — @anthropic-ai/claude-code has an Insecure Temporary File in /copy Command that Enables Response Disclosure and Symlink-Based File Write
-
-**CVE:** `CVE-2026-46406` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-4vp2-6q8c-pvq2>
-
-> The Claude Code `/copy` command wrote responses to a hardcoded, predictable path (`/tmp/claude/response.md`) without UID isolation, randomness, or symlink protection. The file was created world-readable (0644) in a world-traversable directory (0755), allowing any local user to read a privileged user&#x27;s Claude response, which could contain secrets or credentials. Additionally, because the path …
-
----
-
-## 28. 🟡 High Severity — OpenAM has Unsafe Java Deserialization via SNS
-
-**CVE:** `CVE-2026-45794` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-06-25
-**Reference:** <https://github.com/advisories/GHSA-pp89-732f-3g8q>
-
-> ## Summary
-
-**Description**
-
-A Deserialization of Untrusted Data (CWE-502) issue exists in OpenAM&#x27;s Push Notification SNS callback resource. The REST route that handles SNS push messages is mounted with anonymous access and, when a supplied message identifier has expired from the in-memory dispatcher, falls back to a CTS-stored predicate blob whose top-level keys are treated as Java class nam…
-
----
-
-## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
