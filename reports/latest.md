@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-06-27 13:07 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 26 &nbsp;|&nbsp; ✨ Enriched: 5
+> **Generated:** 2026-06-27 19:02 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 26 &nbsp;|&nbsp; ✨ Enriched: 10
 
 ---
 
@@ -13,13 +13,13 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Path traversal vulnerability allowing unauthenticated attackers to read arbitrary files via directory traversal
-- **Affected Products:** SimpleHelp remote support software v5.5.7 and older
+- **Technical Details:** Path traversal vulnerability that allows unauthenticated remote attackers to read arbitrary files on the server.
+- **Affected Products:** SimpleHelp remote support software v5.5.7 and earlier
 - **CVSS Score:** 7.5
 - **CVSS Vector:** CVSS vector unavailable
-- **Exploit Available:** No public PoC known
-- **Patch Available:** No official patch available
-- **Active Exploitation:** Active exploitation reported by CISA (ransomware actors exploiting unpatched SimpleHelp RMM)
+- **Exploit Available:** Exploit availability unknown
+- **Patch Available:** Patch availability unknown
+- **Active Exploitation:** true
 - **Threat Actors:** Ransomware actors
 - **Mitigation:** Mitigation steps unavailable
 - **Vendor Advisory:** http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability
@@ -35,15 +35,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI) occurs when an attacker embeds adversarial instructions into external content (web pages, documents, images, metadata or vector store documents) that an AI system retrieves and processes; in RAG/agent flows this can poison retrieval results or tool outputs, leading models or agents to ignore system instructions, reveal secrets, or call tools with attacker-controlled parameters. Multimodal steganography and hidden markup are common techniques.
-- **Affected Products:** LLM-based agents and Retrieval-Augmented Generation (RAG) systems, multimodal LLMs and agent tool integrations (examples reported against Google Gemini Enterprise in public research disclosures)
-- **CVSS Score:** 0.0
+- **Technical Details:** Indirect prompt injection is a type of prompt injection where attacker‑controlled content influences an LLM, causing it to follow unintended instructions.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
 - **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** Public demonstrations and research proof-of-concepts exist (research disclosures and vendor reports / blog posts describing in-the-wild IPI payloads and zero-click demos).
-- **Patch Available:** No single vendor 'patch' for IPI as a class; vendors publish guidance/advisories (e.g., Google Security Blog) and recommended mitigations, but IPI is treated as an architectural/operational risk rather than a one-off software patchable bug.
-- **Active Exploitation:** Yes — multiple industry reports and research disclosures describe in-the-wild IPI payloads and demonstrations (including targeted payloads and a disclosed zero-click demo against a commercial system).
-- **Threat Actors:** None known
-- **Mitigation:** Defense-in-depth: sanitize and segregate external content before retrieval; use structured prompts with clear separation between system instructions and untrusted data; implement least-privilege for model/tool access; require human-in-the-loop for high-risk actions; apply input/output filtering and monitoring, RAG-content sanitization, adversarial testing and logging/alerts.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Implement input and output validation and sanitization, and apply human oversight and controls in LLMs.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html
 
 ---
@@ -57,15 +57,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** Indirect Prompt Injection (IPI): an attacker injects malicious instructions into the data or tools an LLM uses while completing a user's query (possibly without direct user input), influencing the model's behavior via adversarial content in sources or tools.
-- **Affected Products:** Google Workspace with Gemini, and more generally "complex AI applications with multiple data sources" (as described by Google).
-- **CVSS Score:** 0.0
-- **CVSS Vector:** CVSS vector unavailable.
-- **Exploit Available:** No public proof‑of‑concept or weaponized exploit is reported in the provided corpus (no PoC URL available).
-- **Patch Available:** No vendor 'patch' published; Google published an advisory describing mitigations and a continuous/layered defense approach (see vendor advisory URL).
-- **Active Exploitation:** Yes — indirect prompt injection payloads have been observed in the wild (reports and vendor statements indicate IPI payloads caught in the wild and that IPI is a top-priority, evolving threat).
+- **Technical Details:** Indirect prompt injection occurs when malicious instructions are embedded in external data (e.g., emails, documents, web content) that the LLM processes, causing the model to execute unintended actions without direct user input.
+- **Affected Products:** Google Workspace (Gemini integration)
+- **CVSS Score:** CVSS score unavailable
+- **CVSS Vector:** CVSS vector unavailable
+- **Exploit Available:** false
+- **Patch Available:** false
+- **Active Exploitation:** false
 - **Threat Actors:** None known
-- **Mitigation:** Google recommends a layered, continuous defense: improving LLM resistance, layering mitigation controls across data and tools, and rolling out application capabilities with built‑in defenses (see vendor advisory URL).
+- **Mitigation:** Implement a layered defense strategy, including input validation, output sanitization, monitoring of external data sources, and continuous updates to LLM security controls.
 - **Vendor Advisory:** http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html
 
 ---
@@ -76,6 +76,19 @@
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
 
 > Posted by Nathan Parker, Chrome security team Chrome has been advancing the web’s security for well over 15 years, and we’re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to s…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Indirect prompt injection: malicious web content injects prompts or structured content that the agentic AI (Gemini in Chrome) may interpret and execute, causing unintended actions or data access.
+- **Affected Products:** Google Chrome (agentic browsing / Gemini AI agent)
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** true: https://blog.google/security/architecting-security-for-agentic/
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** None known
+- **Mitigation:** Block prompt injections, restrict origin access, and prevent unsafe AI actions (layered defenses / second agent monitoring).
+- **Vendor Advisory:** https://blog.google/security/architecting-security-for-agentic/
 
 ---
 
@@ -88,15 +101,15 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** A linear buffer overflow in the CrabbyAVIF Rust library caused out‑of‑bounds access due to incorrect bounds checks, potentially leading to remote code execution.
-- **Affected Products:** Android platform (CrabbyAVIF library) on devices running Android 12+ (including Android 6.12 Linux kernel).
-- **CVSS Score:** 8.1
-- **CVSS Vector:** CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
-- **Exploit Available:** No public exploit or proof‑of‑concept is known.
-- **Patch Available:** A patch for CVE-2025-48530 was released and tracked through the Android security bulletin.
-- **Active Exploitation:** No active exploitation reported.
-- **Threat Actors:** None known
-- **Mitigation:** The vulnerability was fixed before release; adopting Rust for new code mitigates memory safety issues.
+- **Technical Details:** Adopting Rust reduces memory safety vulnerability density in Android's C and C++ code by eliminating many classes of memory errors, achieving a 1000x reduction.
+- **Affected Products:** Android platform (C, C++, Java, Kotlin, Rust)
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Adopt Rust for new code to improve memory safety.
 - **Vendor Advisory:** http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html
 
 ---
@@ -108,6 +121,19 @@
 
 > Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve…
 
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Indirect prompt injection involves hidden malicious instructions embedded in external data sources (e.g., emails, documents, calendar invites) that are later consumed by LLMs, causing the model to execute unintended actions. Unlike direct prompt injection, the attacker does not directly input commands but relies on the AI system processing untrusted external content.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Adopt a layered defense strategy that includes input sanitization, context verification, and continuous monitoring of external data sources such as emails, documents, and calendar invites to detect hidden malicious instructions.
+- **Vendor Advisory:** http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html
+
 ---
 
 ## 7. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
@@ -116,6 +142,19 @@
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
 
 > Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** The vulnerability involves exploitation of network edge devices such as backbone, provider edge (PE) and customer edge (CE) routers, allowing attackers to gain persistent access and pivot within networks.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** 6.4
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** false
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a
 
 ---
 
@@ -126,12 +165,38 @@
 
 > Executive Summary This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General…
 
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Technical details unavailable.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Russian GRU (85th GTsSS, Unit 26165), APT28
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a
+
 ---
 
 ## 9. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
+
+**Parallel AI Enrichment:**
+
+- **Technical Details:** Technical details unavailable.
+- **Affected Products:** Affected products unavailable.
+- **CVSS Score:** CVSS score unavailable.
+- **CVSS Vector:** CVSS vector unavailable.
+- **Exploit Available:** Exploit availability unknown.
+- **Patch Available:** Patch availability unknown.
+- **Active Exploitation:** Active exploitation status unknown.
+- **Threat Actors:** Threat actors unknown.
+- **Mitigation:** Mitigation steps unavailable.
+- **Vendor Advisory:** Vendor advisory URL unavailable.
 
 ---
 
@@ -144,16 +209,16 @@
 
 **Parallel AI Enrichment:**
 
-- **Technical Details:** A server-side request forgery (SSRF) in the WebDialer component (improper input validation of specific HTTP requests) allows an unauthenticated attacker to force requests, write arbitrary files to the underlying OS, and subsequently escalate to root.
-- **Affected Products:** Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) with WebDialer enabled; affected releases: Release 14 prior to 14SU6, Release 15 prior to 15SU5
+- **Technical Details:** The vulnerability is a server‑side request forgery (SSRF) caused by improper input validation of crafted HTTP requests to the WebDialer service in Cisco Unified Communications Manager and Unified CM Session Management Edition. An unauthenticated attacker can send a malicious request that forces the device to make arbitrary HTTP calls, allowing file writes on the OS and privilege escalation to root.
+- **Affected Products:** Cisco Unified Communications Manager (Unified CM) releases 14.x before 14SU6, 15.x before 15SU5; Cisco Unified Communications Manager Session Management Edition (Unified CM SME) aligned with those releases
 - **CVSS Score:** 8.6
-- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N/E:X/RL:X/RC:X
-- **Exploit Available:** Public proof-of-concept exploit code is available and has been reported in public reporting (see Cisco advisory and third-party reports).
-- **Patch Available:** Yes — Cisco published fixes. Cisco recommends upgrading to fixed releases (e.g., Unified CM 14SU6 or later; Unified CM 15SU5 or later) and provides interim COP patches where applicable (see vendor advisory).
-- **Active Exploitation:** Yes — the vulnerability was added to CISA's Known Exploited Vulnerabilities catalog and multiple sources report active exploitation in the wild and observed exploitation attempts.
+- **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N
+- **Exploit Available:** true (source: http://horizon3.ai/attack-research/vulnerabilities/cve-2026-20230)
+- **Patch Available:** true (source: http://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW)
+- **Active Exploitation:** true
 - **Threat Actors:** None known
-- **Mitigation:** If WebDialer is not required, disable the WebDialer service until fixed software can be applied (Cisco documents how to determine and disable WebDialer).
-- **Vendor Advisory:** https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW
+- **Mitigation:** Disable the WebDialer service if not needed; upgrade to Unified CM 14SU6 or later (or Unified CM 15SU5+); apply Cisco's interim COP patch for affected 15.x deployments until upgrade.
+- **Vendor Advisory:** http://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW
 
 ---
 
