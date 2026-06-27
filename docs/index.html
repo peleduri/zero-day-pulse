@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
-              <div class="stat"><span class="stat-value enriched">10</span><span class="stat-label">Enriched</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">39</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value enriched">7</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-06-26 19:28 UTC</div>
+            <div class="generated">Updated 2026-06-27 02:01 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -130,7 +130,7 @@
     <span>Thu, 12 Ju</span>
   </div>
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The vulnerability is a path traversal flaw that allows unauthenticated remote attackers to read or download arbitrary files from the SimpleHelp host via crafted HTTP requests.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">SimpleHelp remote support software v5.5.7 and earlier</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.5</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true (https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability)</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Ransomware actors</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the vendor patch or upgrade to a version newer than 5.5.7; if a patch is not available, disable remote access and restrict network access to the SimpleHelp service.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2024-57727 is a directory traversal vulnerability that allows attackers to read sensitive files via path traversal.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">SimpleHelp remote support software (RMM) version 5.5.7 and earlier</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.5</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof-of-concept or weaponized exploit reported.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Patch released by SimpleHelp; patch applied within two days of reporting (see vendor advisory).</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Ransomware actors exploited unpatched SimpleHelp Remote Monitoring and Management to compromise a utility billing software provider (CISA advisory).</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Ransomware actors</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the SimpleHelp patch released for versions 5.5.7 and earlier; upgrade to a newer version.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -146,7 +146,7 @@
     <span>2026-06-26</span>
   </div>
   <p class='summary'>CISA has added the remote code execution flaw CVE-2026-12569 to its Known Exploited Vulnerabilities catalog. The post First-Ever Exploitation of PTC Windchill Vulnerability Discovered in the Wild appeared first on SecurityWeek .</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Improper input validation/deserialization of untrusted data in Windchill PDMLink and FlexPLM allows an unauthenticated remote attacker to send crafted requests/serialized data that result in remote code execution.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">PTC Windchill PDMLink (versions prior to 11.0 M030 and specified patched versions listed by vendor), PTC FlexPLM (versions prior to 11.0 M030 and specified patched versions listed by vendor), CPS (impacted; versions not specified)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.3</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/S:X/AU:Y/R:U/V:C/U:Red</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true (PTC published patches and guidance: vendor advisory URL above and support article CS473270)</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Follow PTC remediation guidance and apply the vendor patches immediately; for releases prior to 11.0 M030, ensure the system is not connected to the internet to reduce exposure and follow the vendor workaround CS473493 as applicable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-rce-vulnerability</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Improper input validation (deserialization of untrusted data) allows a remote, unauthenticated attacker to execute arbitrary code via specially crafted requests.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">PTC Windchill PDMlink, PTC FlexPLM</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Public reports of exploitation exist, but no specific PoC or weaponized exploit URL is provided in the evidence.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">PTC released patches and mitigations on June 17, 2026; patches are available via PTC eSupport. See vendor advisory for download links.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed exploitation in the wild reported by SecurityWeek and added to CISA&#x27;s KEV catalog. Sources: SecurityWeek article (first-ever exploitation) and CISA KEV entry.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the patches released by PTC (June 17) and follow vendor guidance; if patch unavailable, restrict network access to Windchill/FlexPLM services and validate inputs.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-rce-vulnerability</span></div></div>
 </article>
 
         <article class="card card-zeroday">
@@ -164,7 +164,7 @@
           <p class='summary'>The Russian state-sponsored threat actor known as Turla has been attributed to a previously undocumented .NET backdoor called STOCKSTAY that has been deployed against government and military organizations in Ukraine, and entities that have an interest in Italian foreign policy.
 
 Describing the Windows backdoor as continually developed by the hacking group, Google Threat Intelligence Group (</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">STOCKSTAY is a modular .NET backdoor composed of a tunneler, orchestrator, and backdoor that communicate locally and beacon over WebSocket C2, using legitimate platforms like Render and GitHub for hosting. Initial access is achieved via spear‑phishing RDP files and RAR archives exploiting CVE‑2025‑8088 (WinRAR path traversal). Payloads employ environmental keying and are scheduled to run during business hours to blend with normal activity.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Windows OS, .NET Framework, WinRAR (CVE-2025-8088)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Turla (aka SUMMIT, Secret Blizzard, VENOMOUS BEAR, UAC-0194)</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Patch WinRAR to remediate CVE‑2025‑8088, block inbound RDP files at email gateways, enforce DMARC/SPF, hunt for WebSocket connections to *.onrender.com and the websocket‑sharp.dll component, and deploy YARA rules and GTI IOC collections.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
+
         </article>
 
 <article class="card card-zeroday">
@@ -180,7 +180,7 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>2026-04-23</span>
   </div>
   <p class='summary'>Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise …</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect Prompt Injection (IPI) embeds malicious prompts in web content that AI agents retrieve and process, causing the agents to follow unintended instructions.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true (http://forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads)</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html</span></div></div>
+
 </article>
 
 <article class="card card-zeroday">
@@ -196,7 +196,7 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>2026-04-02</span>
   </div>
   <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user’s query. This m…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect prompt injection (IPI) is an attack where an adversary injects malicious instructions into the data, tools, or external knowledge sources used by an LLM, causing the model to follow unintended commands without direct user input.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Google Workspace (including Gemini integration)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Patch availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Implement input and output validation and sanitization, enforce human oversight, continuously monitor public web for IPI patterns, and apply Google Workspace&#x27;s continuous mitigation framework.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect prompt injection (IPI) places covert or malicious instructions inside external data sources (web pages, documents, tools) that an LLM or an agentic AI system consumes, allowing the injected instructions to influence model behavior — including zero-click/indirect vectors where the user does not directly provide the malicious input.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Google Workspace, Gemini (Gemini in Workspace)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">0.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof-of-concept (PoC) or weaponized exploit URL identified in vendor advisory or public reporting; third-party reporting notes IPI payloads observed in the wild but does not provide a public PoC URL.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">No single discrete &#x27;patch&#x27; published; Google describes ongoing, deployed layered defenses and continuous improvements (see vendor advisory and Workspace knowledge base).</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Yes — multiple public reports and vendor analysis note indirect prompt injection attempts and payloads observed in the wild, though reporting does not attribute these to named APTs or provide a public exploit PoC.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Google describes a layered defense: continuous model hardening and LLM-resistance work, runtime defenses in Gemini and Workspace, content/tool filtering, and admin guidance via Workspace knowledge base. Operators are advised to apply Google’s Workspace security guidance and follow vendor recommendations in the linked advisory/knowledge-base.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -212,7 +212,7 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>2025-12-08</span>
   </div>
   <p class='summary'>Posted by Nathan Parker, Chrome security team Chrome has been advancing the web’s security for well over 15 years, and we’re committed to meeting new challenges and opportunities with AI. Billions of people trust Chrome to keep them safe by default, and this is a responsibility we take seriously. Following the recent launch of Gemini in Chrome and the preview of agentic capabilities , we want to s…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">In Cursor versions below 1.3 an attacker can bypass an allowlist in auto-run mode by using special input (e.g., a backtick ` or $(cmd)) to trigger command execution outside the allowlist; an attacker can trigger this when chained with indirect prompt injection, resulting in arbitrary command execution. (Fixed in 1.3.)</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Cursor (code editor) versions below 1.3</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true — fixed in Cursor version 1.3 (see vendor advisory: https://github.com/cursor/cursor/security/advisories/GHSA-534m-3w6r-8pqr)</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Update Cursor to version 1.3 or later. If update is not immediately possible, avoid using allowlist/auto-run modes and keep the default setting that requires user approval for terminal/command execution.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://github.com/cursor/cursor/security/advisories/GHSA-534m-3w6r-8pqr</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect prompt injection (IPI) is an attack where adversaries embed (often hidden) natural-language instructions inside webpage content (hidden text, HTML comments, user-generated content). When an agentic AI ingests page content as context without distinguishing it from the user’s trusted instructions, the agent can treat those embedded instructions as commands and perform actions (navigate, access authenticated sessions, extract data, or exfiltrate secrets).</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Chrome (Gemini / agentic browsing in Chrome), Perplexity Comet, Brave Leo, other agentic browser assistants — exact affected versions unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">0.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Public PoC(s) have been published for at least some agentic browser implementations (Brave’s disclosure / demonstration against Perplexity Comet). No public weaponized exploit against a discrete Chrome CVE was found in the cited corpus.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Google announced layered defenses for agentic browsing (User Alignment Critic, expanded origin isolation, user confirmations) rolled into Chrome/agentic feature updates rather than a single CVE-style patch; no discrete CVE patch URL was published in the cited corpus.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Yes — researchers and vendors have reported indirect prompt injection (IPI) activity in the wild against agentic browsers and assistants (Google, Forcepoint, Brave, Help Net Security). These reports describe live IPI payloads and demonstrations (e.g., Brave’s disclosure of a PoC against Perplexity Comet) but do not attribute a single Chrome CVE exploitation event.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigations include: separate untrusted page content from trusted user instructions; isolate agentic browsing and expand origin-isolation; require explicit user confirmations for security/privacy-sensitive actions; deploy an independent alignment/validation model (User Alignment Critic) to vet agent actions; and red-team testing and telemetry to detect IPI patterns.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2025/12/architecting-security-for-agentic.html</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -228,7 +228,7 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>2025-11-13</span>
   </div>
   <p class='summary'>Posted by Jeff Vander Stoep, Android Last year, we wrote about why a memory safety strategy that focuses on vulnerability prevention in new code quickly yields durable and compounding gains. This year we look at how this approach isn’t just fixing things, but helping us move faster . The 2025 data continues to validate the approach, with memory safety vulnerabilities falling below 20% of total vul…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">A linear buffer overflow in the Rust‑based CrabbyAVIF library was discovered but prevented by Android&#x27;s Scudo hardened allocator guard pages, making the bug non‑exploitable.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Android platform (CrabbyAVIF library)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true (https://android.googlesource.com/platform/external/rust/crabbyavif/+/5262cd9befecb4f8865925c23eb543f19967e050)</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Threat actors unknown.</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Use Android&#x27;s Scudo hardened allocator with guard pages; avoid unsafe Rust code; apply the provided patch.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://source.android.com/docs/security/bulletin/2025-08-01</span></div></div>
+
 </article>
 
 <article class="card card-zeroday">
@@ -244,7 +244,7 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>2025-06-13</span>
   </div>
   <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team With the rapid adoption of generative AI, a new wave of threats is emerging across the industry with the aim of manipulating the AI systems themselves. One such emerging attack vector is indirect prompt injections. Unlike direct prompt injections, where an attacker directly inputs malicious commands into a prompt, indirect prompt injections involve…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect prompt injection: hidden malicious instructions embedded in external data sources (emails, documents, calendar invites) that are incorporated into prompts and can cause the model to perform unauthorized actions such as data exfiltration or other rogue commands.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Google Gemini, Google Workspace (Gemini in Workspace), Gemini app, Gemini 2.5 models</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Patch availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Active exploitation status unknown.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Layered defenses: prompt injection content classifiers, security thought reinforcement, markdown sanitization and suspicious URL redaction, user confirmation (HITL) framework, and end-user security mitigation notifications.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect prompt injection (IPI): hidden or adversarial instructions embedded in external data sources (emails, documents, calendar invites, web content) that cause a generative AI agent to perform unintended actions such as exfiltrating data or executing commands. The Google advisory frames IPI as an attack vector distinct from direct prompt injection and emphasizes that these injections arrive via external content the agent processes rather than direct user prompts.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">0.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof-of-concept (PoC) or weaponized exploit is referenced in the advisory or the supplied prior corpus; no PoC URL is provided in the cited materials.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">No vendor &quot;patch&quot; is described in the advisory; the vendor advisory is an advisory/guidance post (see vendor_advisory URL) describing layered defenses rather than a software patch.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">The Google advisory does not report confirmed active exploitation of this advisory&#x27;s issue. Prior corpus mentions EchoLeak (a separate discovery in Microsoft 365 Copilot) as an example of a zero-click prompt-injection exfiltration case, but the advisory itself does not state confirmed in-the-wild exploitation tied to its guidance.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Use a layered defense: validate and filter external content before it reaches the agent, apply policy and access controls, instrument provenance and context checking, and limit model capabilities and sensitive-data access (the advisory recommends a continuous, multi-layered approach to mitigations).</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -260,7 +260,7 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>Mon, 25 Au</span>
   </div>
   <p class='summary'>Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">PRC state-sponsored actors are targeting large backbone and edge routers (PE/CE) and leveraging compromised devices and trusted connections to pivot into networks; they modify routers to maintain persistent long-term access for espionage and use those footholds to reach downstream networks.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Backbone routers, provider edge (PE) routers, customer edge (CE) routers, and other network devices (no vendor/product versions specified)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">6.4</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Harden and monitor network-edge devices (backbone/PE/CE routers), apply vendor updates when published, isolate and remediate compromised routers, monitor and hunt using published IOCs and STIX where available, and restrict trusted connections between network segments until devices are verified.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Chinese state‑sponsored actors abuse network edge devices—especially backbone, provider edge, and customer edge routers—to gain persistent access and pivot into other networks, often modifying router firmware and leveraging compromised devices.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">backbone routers, provider edge (PE) routers, customer edge (CE) routers, network switches</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">6.4</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof‑of‑concept or weaponized exploit is known.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">No official patch has been released; no vendor remediation guidance is currently available.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">No confirmed active exploitation in the wild has been reported for AA25‑239A.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor, Chinese state‑sponsored actors</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Regularly pull all running configurations from networking equipment and compare against the latest authorized baselines. If a device must remain enabled, apply strict hardening controls as a high‑priority mitigation step.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -276,7 +276,7 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>Mon, 12 Ma</span>
   </div>
   <p class='summary'>Executive Summary This joint cybersecurity advisory (CSA) highlights a Russian state-sponsored cyber campaign targeting Western logistics entities and technology companies. This includes those involved in the coordination, transport, and delivery of foreign assistance to Ukraine. Since 2022, Western logistics entities and IT companies have faced an elevated risk of targeting by the Russian General…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Technical details unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">CVSS score unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploit availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Patch availability unknown.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Active exploitation status unknown.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Russian GRU&#x27;s 85th GTsSS (Unit 26165), also known as APT28</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a</span></div></div>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Technical details unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Affected products unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">0.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No exploit available.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">No patch available.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Active exploitation unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Russian GRU (APT28/Fancy Bear)</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -292,6 +292,486 @@ Describing the Windows backdoor as continually developed by the hacking group, G
     <span>Jun 22, 20</span>
   </div>
 
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-attacks/" target="_blank" rel="noopener">CISA sets urgent deadline to fix Cisco flaw exploited in attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-06-26</span>
+  </div>
+  <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is giving federal agencies until Sunday to patch a vulnerability in Cisco Unified Communications Manager Server that is being actively exploited. [...]</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hmgp-w9jm-vp95" target="_blank" rel="noopener">Subsonic API: any authenticated user can delete or read any other user&#x27;s playlist (IDOR)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49338</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>## Summary
+
+In gonic, the Subsonic API endpoints `/rest/deletePlaylist.view` and `/rest/getPlaylist.view` perform no per-resource authorization. Once authenticated as *any* user (admin or not), an attacker can:
+
+1. **Delete any playlist owned by any other user** (including admin) by passing its `id`.
+2. **Read the full contents** (name, comment, song list) of any other user&#x27;s **private** (non-publ…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4gxv-p5g5-j7w7" target="_blank" rel="noopener">gonic has arbitrary file write in createPlaylist: any authenticated user can write playlist M3U content to attacker-controlled path on the host</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49340</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>## Summary
+
+A logic error in `ServeCreateOrUpdatePlaylist` allows **any authenticated Subsonic user** (including non-admin) to write playlist M3U content to an attacker-controlled absolute filesystem path on the gonic host, and to create intermediate directories with `0o777` permissions.
+
+The bug is independent of the playlist ownership IDOR fixed in [`6dd71e6`](https://github.com/sentriz/gonic/co…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3qhv-2rgh-x77r" target="_blank" rel="noopener">pnpm: Repository config can expand victim environment secrets into registry requests before scripts run</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55180</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>&lt;!-- maintainer-action:start --&gt;
+## Maintainer Action Plan
+
+This report is ready to review with the shared patch branch. Start with the PR and the expected fixed behavior, then use the detailed exploit narrative below only if you want to replay the original path.
+
+- Advisory: `CAND-PNPM-122` / `GHSA-3qhv-2rgh-x77r`
+- Advisory URL: https://github.com/pnpm/pnpm/security/advisories/GHSA-3qhv-2rgh-x77…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5c25-7vpj-9mqh" target="_blank" rel="noopener">Nezha Monitoring: Pre-auth path traversal via /dashboard.. prefix confusion leaks jwt_secret_key</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53519</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+`fallbackToFrontend` in the dashboard&#x27;s `NoRoute` handler treats any URL whose **raw string** starts with `/dashboard` as an admin-frontend asset request. The check uses `strings.HasPrefix`, not a path-segment match, so the input `/dashboard../data/config.yaml` is accepted; `strings.TrimPrefix` leaves `../data/config.yaml`; and `path.Join(&quot;admin-dist&quot;, &quot;../data/config.yaml&quot;)` normalize…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-39g2-8x68-pmx8" target="_blank" rel="noopener">Nezha Monitoring: Stored future DDNS profile ID allows unauthorized use of another user&#x27;s DDNS profile context</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53521</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>## Summary
+
+`PATCH /server/{id}` accepts and persists nonexistent `ddns_profiles` IDs for a member-owned server. If another user later creates a DDNS profile with one of those IDs, the DDNS worker resolves the stored ID and dispatches an update using the other user&#x27;s DDNS profile configuration in the context of the attacker&#x27;s server.
+
+This is a second-order authorization bypass: direct binding to …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q6j5-fjx5-2mc3" target="_blank" rel="noopener">pnpm Has an Integrity Check Bypass via Missing Lockfile Integrity Field</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-50021</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>## Summary
+
+pnpm&#x27;s tarball extraction worker skips integrity verification when the `integrity` field is absent from the lockfile resolution. If an attacker can both modify `pnpm-lock.yaml` to remove the `integrity:` field and cause the referenced registry URL to serve altered package content, `pnpm install --frozen-lockfile` can install the altered package without an integrity error. npm&#x27;s `npm ci…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-54hh-g5mx-jqcp" target="_blank" rel="noopener">pnpm: Unsafe default behavior breaks integrity check</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-50573</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>While it is unclear whether this should be classified as a vulnerability, it is being reported through this channel because the current behavior may represent an unsafe default.
+
+## Summary
+
+`pnpm install` in non-frozen mode can accept new remote package content after detecting that the downloaded tarball does not match the integrity recorded in `pnpm-lock.yaml`.
+
+When a package is already locked …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pxcc-8665-phx8" target="_blank" rel="noopener">YARD static cache reads raw traversal paths before router sanitization</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49342</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+YARD&#x27;s static cache lookup reads a request path before the router&#x27;s path cleanup runs. When a server is configured with a document root, a traversal path such as `/../yard-cache-secret.html` is joined against that root and can return a readable sibling `.html` file outside the intended static tree. 
+
+The potential security risk seems low, as only html-ending files can be read, but stil…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-396q-4vc8-28x9" target="_blank" rel="noopener">@microsoft/kiota-http-fetchlibrary: Bearer token and Cookie leak across origin on redirect due to case-mismatched scrub in fetchRequestAdapter</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49336</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+`@microsoft/kiota-http-fetchlibrary`&#x27;s `RedirectHandler` is documented as stripping `Authorization` and `Cookie` from cross-origin redirect targets, but the default `scrubSensitiveHeaders` callback in `RedirectHandlerOptions` uses case-sensitive property deletion (`delete headers.Authorization`, `delete headers.Cookie`) on a headers object that `FetchRequestAdapter.getRequestFromReque…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x8g9-h984-pc36" target="_blank" rel="noopener">PhpWeasyPrint vulnerable to SSRF and local file disclosure via the attachment option</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49359</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+`pontedilana/php-weasyprint` fetches the content of option values server-side via `file_get_contents()` when the value looks like a URL, without restricting the URL scheme. The `attachment` option of `Pdf` is the reachable sink: any value that passes `isOptionUrl()` (`filter_var(..., FILTER_VALIDATE_URL)`) is downloaded by the PHP process and embedded into the generated PDF. Because `…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2fmj-p74r-3wjm" target="_blank" rel="noopener">PhpWeasyPrint vulnerable to PHAR deserialization via output filename (CVE-2023-28115 case-insensitive bypass)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49286</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+`pontedilana/php-weasyprint` guarded the output filename against the `phar://` stream wrapper with a case-sensitive blacklist:
+
+```php
+if (0 === \strpos($filename, &#x27;phar://&#x27;)) {
+    throw new \InvalidArgumentException(&#x27;The output file cannot be a phar archive.&#x27;);
+}
+```
+
+PHP stream wrappers are **case-insensitive**, so `PHAR://`, `Phar://`, etc. bypass the check and reach `fileExists()…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q8jg-fgj4-fphf" target="_blank" rel="noopener">Hackney has unbounded buffer accumulation in WebSocket</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-47073</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+The WebSocket client in `src/hackney_ws.erl` imposes no upper bound on memory consumption across three distinct code paths. In each case, an attacker-controlled WebSocket server can exhaust the connecting process&#x27;s memory without any authentication or special client configuration.
+
+### Details
+
+**1. Handshake response buffer (`read_handshake_response/3`)**
+
+The function accumulates re…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h73q-4w9q-82h4" target="_blank" rel="noopener">Hackney: Cross-origin Redirect Leaks Authorization, Cookie, and Request Body</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-47070</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+The HTTP/3 redirect handler in `src/hackney_h3.erl` forwards the original request headers (`Authorization`, `Cookie`, `Proxy-Authorization`) and, for 307/308 responses, the original request body to the redirect target without checking whether the target host matches the origin. When `follow_redirect` is enabled and a server responds with a cross-origin `Location`, hackney delivers the…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pj7v-xfvx-wmjq" target="_blank" rel="noopener">Hackney has SSRF allowlist bypass in hackney_url:normalize/2 via percent-encoded host</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-47076</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+`hackney_url:normalize/2` URL-decodes the host component of a parsed URL, but the caller&#x27;s SSRF allowlist runs before normalization using OTP&#x27;s `uri_string:parse/1` and `inet:parse_address/1`, neither of which decodes percent-escapes in hostnames. A URL like `http://%31%32%37%2E%30%2E%30%2E%31/` presents an encoded, non-IP-looking host to the validator, which passes the allowlist chec…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4hf8-5mjm-rfgq" target="_blank" rel="noopener">Streamable HTTP mode exposes LINE Desktop read/send tools without MCP authentication</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49357</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'># Streamable HTTP mode exposes LINE Desktop read/send tools without MCP authentication
+
+## Summary
+
+`line-desktop-mcp` supports a `--http-mode` Streamable HTTP transport for use with clients such as n8n. In this mode the server binds to `0.0.0.0` and exposes the MCP `/mcp` endpoint without an MCP-layer authentication check. Any network client that can reach the port can initialize a session, list …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mmj8-wcvw-6789" target="_blank" rel="noopener">Aimeos Pagible CMS vulnerable to Server Side Request Forgery (SSRF) via DNS rebinding in admin proxy</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49262</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+The administrative proxy route (`cmsproxy`) in Aimeos Pagible CMS is vulnerable to a Server-Side Request Forgery (SSRF) attack via DNS Rebinding. A Time-of-Check to Time-of-Use (TOCTOU) race condition exists between the URL validation phase and the actual HTTP request phase, allowing attackers to access internal network resources and cloud metadata endpoints.
+
+### Details
+Before execut…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f5gc-qxf8-mh9g" target="_blank" rel="noopener">php-weasyprint: shell command injection via configurable WeasyPrint binary path due to inverted is_executable() guard (mirror of KnpLabs/snappy GHSA-vpr4-p6fq-85jc)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49260</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+`pontedilana/php-weasyprint` builds the shell command for WeasyPrint by passing the binary path through `escapeshellarg()` first and then checking the *quoted* result with `is_executable()`. On POSIX `escapeshellarg(&#x27;/usr/local/bin/weasyprint&#x27;)` returns `&#x27;/usr/local/bin/weasyprint&#x27;` with the single-quote characters as part of the string, so `is_executable()` looks for a file whose act…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c6v2-3ffm-vcmc" target="_blank" rel="noopener">Nebula Mesh: Web UI lacks ownership checks, enabling cross-operator access to hosts and networks (read, block, delete)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49258</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>## Summary
+
+The web UI (`/ui/*`) does not apply the per-operator CA scoping the JSON API received for GHSA-598g-h2vc-h5vg. Any authenticated non-admin operator (for example, one created via self-registration or OIDC) can access resources belonging to other operators.
+
+## Impact
+
+A non-admin operator can:
+
+- **Block or delete any other operator&#x27;s host.** `POST /ui/hosts/{id}/block` and `DELETE /ui/…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-73cv-556c-w3g6" target="_blank" rel="noopener">mcp-pinot: Unauthenticated tool invocation via default oauth_enabled=False + host 0.0.0.0 bind</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49257</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>## Resolution
+
+Fixed in [v3.1.0](https://github.com/startreedata/mcp-pinot/releases/tag/v3.1.0), released 2026-05-25. The fix was merged in [PR #95](https://github.com/startreedata/mcp-pinot/pull/95) at commit [`1c7d3f9`](https://github.com/startreedata/mcp-pinot/commit/1c7d3f9cd384854bf72c127d230bdb32299475ad).
+
+The fix changes the default HTTP bind host to `127.0.0.1`, refuses non-loopback HTTP/…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9v98-6g37-x9g6" target="_blank" rel="noopener">deepstream is vulnerable to prototype pollution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-49252</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Impact
+Prototype pollution in deepstream server v &lt;=10.0.4. Potential privilege escalation from any authenticated user with write permission to any record.
+
+### Patches
+Yes, upgrade to v10.0.5
+
+### Workarounds
+Filter out all messages containing the path `__proto__`, `constructor`, `prototype`, **before they reach the server&#x27;s message pipeline**</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4c3c-r6p8-c863" target="_blank" rel="noopener">Flawfinder output manipulation via untrusted filenames and source text</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-48813</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Impact
+
+This vulnerability is an improper input neutralization issue leading to output manipulation, specifically, Terminal/ANSI Escape Sequence Injection and XML Injection:
+
+* Terminal Output Spoofing: A malicious file whose name contains ANSI escape sequences can end up being included in flawfinder&#x27;s standard terminal output, with many effects. For example, this might allow an attacker to hi…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-57f6-pvx8-hwj6" target="_blank" rel="noopener">turso-cli persists Turso platform JWT with world-readable (0o644) file permissions</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-48790</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-06-26</span>
+          </div>
+          <p class='summary'>### Summary
+
+`turso-cli` persists the user&#x27;s Turso platform JWT to `settings.json` using Viper&#x27;s default `configPermissions` of `0o644`, leaving the credential file world-readable on standard Linux and macOS systems. Any other local UID on the host can read the file and recover the platform JWT, which grants full Turso platform access scoped to the user&#x27;s organizations.
+
+### Impact
+
+The token in `…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/pt-weekly-metasploit-update-modules-for-audiobookshelf-litellm-next-js-dalfox-and-more" target="_blank" rel="noopener">Weekly Metasploit Update: Modules for Audiobookshelf, LiteLLM, Next.js, Dalfox and more</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2025-25205</code> <code class="cve">CVE-2026-42208</code>
+    <span class="meta-sep">·</span>
+    <span>Rapid7 Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-06-26</span>
+  </div>
+  <p class='summary'>Help shape the future of Metasploit Framework We are planning future work in relation to the evasion capabilities present in Metasploit Framework, and how they function/are presented to users. We are currently accepting responses to our feedback form, which means that you can shape the future of how evasive capabilities are implemented in Metasploit Framework. The proposal for the changes can be f…</p>
 
 </article>
 
@@ -335,145 +815,6 @@ In `packages/core/src/dsse.ts`, the PAE function builds a string containin…</p
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-ccjc-4qc3-jxqc" target="_blank" rel="noopener">Incus has an arbitrary file write via path traversal in S3 multipart upload</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-48753</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-26</span>
-          </div>
-          <p class='summary'>## Summary
-
-The S3 protocol upload endpoint is vulnerable to path traversal and allows creation of arbitrary files on the host. This behavior could lead to arbitrary command execution.
-
-In `internal/server/storage/s3/local/multipart.go`, user-controlled upload ID is appended to the uploads directory unsanitized; https://github.com/lxc/incus/blob/40dd4f151d52c06b178482aa2518abfb9df3e6fb/internal/se…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xq73-fvmr-jvmm" target="_blank" rel="noopener">OpenAM Authentication Bypass via MSISDN LDAP Injection</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-46619</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-26</span>
-          </div>
-          <p class='summary'>## Summary
-
-**Description**
-
-An LDAP Injection (CWE-90) vulnerability in the MSISDN authentication module allows an unauthenticated, remote attacker to obtain an arbitrary OpenAM session without a password in the default trusted gateway configuration. This impacts OpenAM Community Edition through version 16.0.6. This issue was patched in version 16.1.1.
-
-## Impact
-OpenAM deployments through versio…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2jc5-xhx8-qj6h" target="_blank" rel="noopener">fluent-plugin-opentelemetry Has Denial of Service (DoS) via Large Payloads and Decompression Bombs in `in_opentelemetry`</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-44163</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-26</span>
-          </div>
-          <p class='summary'>The `fluent-plugin-opentelemetry` plugin (specifically the `in_opentelemetry` HTTP input) lacked strict size limits on incoming requests.
-It was discovered that the plugin read the entire request body and decompressed payloads into memory without enforcing maximum size thresholds.
-
-If the OpenTelemetry ingestion endpoint is exposed to untrusted networks, an attacker can send an excessively large H…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-72f5-rr8c-r6gr" target="_blank" rel="noopener">Fluentd is Vulnerable to Server-Side Request Forgery (SSRF) via Placeholder Expansion in `out_http`</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-44161</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-26</span>
-          </div>
-          <p class='summary'>The `out_http` output plugin allows the use of placeholders (such as `${tag}`) in the `endpoint` configuration parameter.
-It was discovered that if the placeholder value is derived from untrusted user input, an attacker can maliciously control the destination hostname of the outbound HTTP requests made by Fluentd.
-
-### Impact
-This vulnerability allows for a **Server-Side Request Forgery (SSRF)** a…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j9cw-hwqf-85w7" target="_blank" rel="noopener">Fluentd is Vulnerable to Denial of Service (DoS) via Gzip Decompression Bomb in `in_http` and `in_forward`</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-44160</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-26</span>
-          </div>
-          <p class='summary'>Fluentd&#x27;s `in_http` and `in_forward` plugins support receiving gzip-compressed data.
-While Fluentd correctly enforces size limits on the incoming compressed payloads (e.g., via `body_size_limit` or `chunk_size_limit`), it was discovered that there is no limit enforced on the size of the decompressed data.
-
-If a Fluentd instance is exposed to untrusted networks, an attacker can send a maliciously c…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pr7j-96cj-549h" target="_blank" rel="noopener">Fluentd is Vulnerable to Exposure of Sensitive Information via Monitor Agent API</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-44025</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-26</span>
-          </div>
-          <p class='summary'>Fluentd&#x27;s Monitor Agent plugin (`in_monitor_agent`) exposes internal metrics and plugin information via a REST API.
-It was discovered that the API response (`/api/plugins.json` and related endpoints) unintentionally includes internal instance variables of loaded plugins.
-
-If any plugins store sensitive information—such as database passwords, API keys, or cloud credentials—in its instance variables…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-44hj-4m45-frj3" target="_blank" rel="noopener">Fluentd is Vulnerable to Remote Code Execution (RCE) via Arbitrary File Write in `${tag}` Placeholder</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-44024</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-26</span>
-          </div>
-          <p class='summary'>Fluentd allows dynamically constructing file paths using the `${tag}` placeholder.
-It was discovered that validation for this placeholder was insufficient.
-
-If a Fluentd instance is configured to receive logs from untrusted sources and uses the `${tag}` placeholder in file configurations (such as the `path` parameter in the `out_file` plugin), an attacker can inject path traversal characters (e.g.…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://thehackernews.com/2026/06/new-dirtyclone-linux-kernel-flaw-lets.html" target="_blank" rel="noopener">New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets</a></h2>
           </div>
           <div class="card-meta">
@@ -486,116 +827,6 @@ If a Fluentd instance is configured to receive logs from untrusted sources and u
           <p class='summary'>DirtyClone is a new Linux kernel privilege escalation in the DirtyFrag family. JFrog Security Research published a working exploit walkthrough for the flaw on June 25, the first public demonstration for this variant.
 
 Tracked as CVE-2026-43503 (CVSS 8.8), it lets a local user corrupt file-backed memory through a cloned network packet and gain root. The patch landed in</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v2wp-frmc-5q3v" target="_blank" rel="noopener">Lemur: ACME SSRF + creator-equality IDOR lead to AWS IAM/PKI compromise</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55166</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-25</span>
-          </div>
-          <p class='summary'>&lt;!-- obsidian --&gt;&lt;h1 data-heading=&quot;Lemur 1.9.0: any SSO-authenticated user achieves AWS IAM compromise and permanent PKI key access via ACME acme_url SSRF and creator-equality IDOR&quot;&gt;Lemur 1.9.0: any SSO-authenticated user achieves AWS IAM compromise and permanent PKI key access via ACME acme_url SSRF and creator-equality IDOR&lt;/h1&gt;
-&lt;h2 data-heading=&quot;Vulnerability Summary&quot;&gt;Vulnerability Summary&lt;/h2&gt;…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r9gp-7f88-9r54" target="_blank" rel="noopener"> Lemur: JWT verifier honors attacker-supplied alg, enabling ATO</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55165</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-25</span>
-          </div>
-          <p class='summary'>&lt;!-- obsidian --&gt;&lt;h1 data-heading=&quot;Lemur 1.9.0: JWT verifier trusts attacker-supplied alg from token header — defense-in-depth gap; chain-dependent ATO with secret disclosure&quot;&gt;Lemur 1.9.0: JWT verifier trusts attacker-supplied alg from token header — defense-in-depth gap; chain-dependent ATO with secret disclosure&lt;/h1&gt;
-&lt;h2 data-heading=&quot;Vulnerability Summary&quot;&gt;Vulnerability Summary&lt;/h2&gt;
-
-Field | Va…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x3vf-mgxj-7785" target="_blank" rel="noopener">Lemur Privilege Escalation: Non-admin role members can rewrite role membership via PUT /api/1/roles/&lt;id&gt;</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55163</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-25</span>
-          </div>
-          <p class='summary'>## Summary
-
-The `PUT /api/1/roles/&lt;id&gt;` handler in `lemur/roles/views.py` gates only on `RoleMemberPermission(role_id).can()`, which is satisfied for any user who is already a member of the target role. The handler then passes `data[&quot;users&quot;]` and `data[&quot;name&quot;]` directly to `service.update()`, permitting any role member to rewrite that role&#x27;s membership list and name. The companion `DELETE` handle…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-54vg-pfh7-jq95" target="_blank" rel="noopener">Lemur: Crafted CRL/OCSP URLs in uploaded certificates lead to post-authentication SSRF</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55162</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-25</span>
-          </div>
-          <p class='summary'>## Summary
-
-When verifying an uploaded certificate, `lemur/certificates/verify.py` extracts the CRL Distribution Point URL and the OCSP responder URL directly from the certificate&#x27;s extensions and issues outbound requests to those URLs without scheme restriction or destination allow-listing. An authenticated user holding the operator role (required by `StrictRolePermission` on `POST /certificates…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pjp5-fpmr-3349" target="_blank" rel="noopener">GitHub MCP Server: Lockdown mode singleton in HTTP server causes cross-user GraphQL client confusion</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-48529</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-25</span>
-          </div>
-          <p class='summary'>### Summary
-
-When running in HTTP mode with --lockdown-mode enabled, the RepoAccessCache is implemented as a process-global singleton initialized with the first authenticated user&#x27;s GraphQL client. All subsequent requests from different users share this singleton and their lockdown-related GraphQL queries are executed using the first user&#x27;s credentials. The singleton is never updated to reflect la…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wfr3-xj75-pfwh" target="_blank" rel="noopener">MessagePack-CSharp: DynamicUnionResolver-generated deserializers miss depth enforcement</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-48513</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-06-25</span>
-          </div>
-          <p class='summary'>## Summary
-
-Runtime-generated union deserializers emitted by `DynamicUnionResolver` do not call `MessagePackSecurity.DepthStep(ref reader)` and do not decrement `reader.Depth` around recursive deserialization and skip paths.
-
-This means union deserialization does not consistently participate in the maximum object graph depth enforcement that protects other recursive formatter paths. For unknown un…</p>
 
         </article>
 
