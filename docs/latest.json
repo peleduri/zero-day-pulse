@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-29T10:20:42.385798+00:00",
-  "total": 12,
+  "generated": "2026-06-29T15:27:58.144040+00:00",
+  "total": 14,
   "kev": 0,
   "zero_day": 10,
-  "enriched": 3,
+  "enriched": 6,
   "findings": [
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE\u20112024\u201157727 is a directory\u2011traversal flaw that lets unauthenticated remote attackers read arbitrary files on the SimpleHelp server via crafted HTTP requests.",
-        "affected_products": "SimpleHelp remote support software (SimpleHelp Remote Monitoring and Management) version 5.5.7 and earlier",
+        "technical_details": "Directory traversal vulnerability allowing attackers to read sensitive files via path traversal",
+        "affected_products": "SimpleHelp remote support software version 5.5.7 or earlier",
         "cvss_score": "7.5",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-        "exploit_available": "A public proof\u2011of\u2011concept is hosted on GitHub at https://github.com/imjdl/CVE-2024-57727",
-        "patch_available": "The vendor released a patch for SimpleHelp 5.5.7 and earlier within two days of reporting; the patch is available from the vendor advisory URL.",
-        "active_exploitation": "CISA advisory and security reports confirm that ransomware actors have actively exploited CVE-2024-57727 in the wild.",
-        "threat_actors": "Ransomware actors (unspecified groups) have been reported exploiting this vulnerability.",
-        "mitigation": "Apply the vendor patch from the advisory, upgrade to a version newer than 5.5.7, and restrict remote access to the RMM service.",
-        "vendor_advisory": "http://simple-help.com/blogs/security-vulnerabilities-in-simplehelp-5-5-7-and-earlier-what-you-need-to-know"
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept or weaponized exploit is known",
+        "patch_available": "Patch released; see vendor advisory URL",
+        "active_exploitation": "Ransomware actors have exploited the vulnerability in the wild, leveraging CVE-2024-57727",
+        "threat_actors": "Ransomware actors",
+        "mitigation": "Apply the vendor patch; if patching cannot be done immediately, restrict network access to SimpleHelp RMM, use network segmentation, and monitor logs",
+        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
       }
     },
     {
@@ -66,18 +66,7 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect Prompt Injection (IPI) injects malicious instructions into the data or tools an LLM consumes while completing a user query (potentially without direct user input); agentic automation and multiple data sources increase the attack surface.",
-        "affected_products": "Google Workspace, Gemini (specific versions not provided)",
-        "cvss_score": "0.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public PoC or weaponized exploit reported in the advisory or cited Workspace guidance.",
-        "patch_available": "No single vendor 'patch' published; Google describes continuous engineering and layered defenses in the advisory (no discrete patch URL provided).",
-        "active_exploitation": "No confirmed reports of active exploitation provided in the advisory; the advisory describes IPI as an evolving threat vector and a top priority but does not report confirmed in-the-wild exploitation.",
-        "threat_actors": "None known",
-        "mitigation": "Google recommends a layered defense strategy and continuous improvements to LLM resistance (engineering mitigations, layered defenses and monitoring) rather than a single-step workaround.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
-      }
+      "enrichment": null
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
@@ -94,7 +83,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect prompt injection: malicious or crafted web content is incorporated into the agent\u2019s prompt (without being direct user input), allowing hidden instructions to influence the AI agent\u2019s behavior and potentially cause unsafe actions or unauthorized data access.",
+        "affected_products": "Google Chrome (agentic browsing / Gemini AI)",
+        "cvss_score": "-1.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public PoC or weaponized exploit reported in the reviewed sources",
+        "patch_available": "No specific vendor patch for this indirect prompt injection was announced in the reviewed sources; Google described defenses and protections being added to Chrome's agentic features.",
+        "active_exploitation": "No confirmed public reports of active exploitation in the wild in the reviewed sources",
+        "threat_actors": "None known",
+        "mitigation": "Google described layered defenses for agentic browsing: blocking prompt injections, restricting origin access, and adding protections to prevent unsafe AI actions (apply these Chrome security features and follow vendor guidance).",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -128,7 +128,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect prompt injection (IPI) occurs when malicious instructions are embedded in external data sources (web pages, emails, documents, calendar invites, PR descriptions, etc.) that are ingested into an AI agent's prompt/context; the agent can then follow those hidden instructions (e.g., exfiltrate data, execute actions) unless defenses (model hardening, prompt sanitation, context segmentation, runtime checks, confirmations) prevent it.",
+        "affected_products": "Google Workspace AI-powered services (Gmail, Docs, Calendar), Google Gemini (Gemini 2.5), Google Gemini CLI Action, GitHub Copilot Agent, Microsoft 365 Copilot",
+        "cvss_score": "-1.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Yes \u2014 public proof-of-concept exploits have been reported/demonstrated against Gemini CLI Action and GitHub Copilot Agent (SecurityWeek) and EchoLeak PoC for Microsoft 365 Copilot (Cycode).",
+        "patch_available": "No official patch indicated; vendor guidance recommends layered defenses and model/hardening updates (see advisory).",
+        "active_exploitation": "Yes \u2014 reports indicate real-world experiments and confirmed exploited vectors: Gemini CLI Action and GitHub Copilot Agent prompt-injection incidents (SecurityWeek) and EchoLeak in Microsoft 365 Copilot (reported by Cycode).",
+        "threat_actors": "None known",
+        "mitigation": "Adopt a layered defense strategy including input validation and sanitization, purpose-built ML detectors for malicious instructions, logical context segmentation (separating system vs. user inputs), runtime content filtering and monitoring, least-privilege for AI tools, human review/confirmation dialogs for destructive actions, and user security notifications and training.",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -145,15 +156,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Chinese state-sponsored actors exploit CVEs in network devices such as backbone routers, provider edge (PE) routers, and customer edge (CE) routers to gain persistent access, leveraging compromised devices and trusted connections to pivot across networks.",
-        "affected_products": "Backbone routers, Provider Edge (PE) routers, Customer Edge (CE) routers, Network edge devices",
+        "technical_details": "Chinese state-sponsored actors exploit network-device CVEs on routers and network edge devices, modify configurations for persistent access, and use traffic mirroring (SPAN/RSPAN/ERSPAN) for surveillance.",
+        "affected_products": "backbone routers, provider edge (PE) routers, customer edge (CE) routers, network edge devices",
         "cvss_score": "6.4",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "No public exploit known.",
-        "patch_available": "No official patch or remediation guidance is currently available from the vendor.",
-        "active_exploitation": "Yes, active exploitation has been reported in the wild, targeting government, telecom, transportation, lodging, and military infrastructure networks.",
+        "exploit_available": "No public PoC or weaponized exploit reported.",
+        "patch_available": "No official vendor patch currently available.",
+        "active_exploitation": "Confirmed active exploitation of backbone and edge routers by Chinese state-sponsored actors, as reported in multiple sources.",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Mitigation steps unavailable.",
+        "mitigation": "Apply vendor detection tips and hardening guidance when available, monitor router configurations, disable unused services, segment networks, and simulate attacks to validate defenses.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
       }
     },
@@ -171,7 +182,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Technical details unavailable.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit unavailable.",
+        "patch_available": "No official vendor patch referenced in the advisory.",
+        "active_exploitation": "No confirmed active exploitation reported in the advisory.",
+        "threat_actors": "Russian GRU (85th Main Special Service Center, Unit 26165)",
+        "mitigation": "Mitigation steps unavailable.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisory/aa25-141a"
+      }
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/",
@@ -204,7 +226,52 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "StegoAd used steganography to hide executable JavaScript payloads inside images (PNG, WebP) and WOFF2 font files; extensions provided legitimate functionality, waited (3\u20135 days) and performed checks (DevTools detection, server-side validation, probabilistic execution), fetched stego files from C2, decoded via layered transforms (case/digit swaps, Base64, XOR), verified signatures, then executed code delivering modules for credential theft, cookie/session exfiltration, affiliate hijacking, ad injection and an RCE backdoor.",
+        "affected_products": "Microsoft Edge (Edge Add\u2011ons store extensions / Chromium-based Edge extensions \u2014 extension IDs listed in Microsoft technical report)",
+        "cvss_score": "0.0",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "No public proof-of-concept code published; Microsoft published indicators of compromise and technical report/IOCs for detection rather than an exploit PoC.",
+        "patch_available": "No vendor 'patch' required or released for a software vulnerability: Microsoft removed all 119 malicious extensions from the Edge Add-ons store, suspended developer accounts, and deployed updated detection/protections (see advisory).",
+        "active_exploitation": "Yes \u2014 Microsoft observed an active, long-running campaign (StegoAd) that delivered delayed steganographic payloads which in analyzed samples performed ad fraud, credential/session theft and a remote-code-execution backdoor; Microsoft removed the extensions and published IOCs.",
+        "threat_actors": "Microsoft did not publicly name an actor; Microsoft ties 119 extensions to a single actor active since at least 2021. Independent reporting links overlap to previously observed operations (reporting mentions possible ties to DarkSpectre/GhostPoster).",
+        "mitigation": "Remove/compare installed extensions against Microsoft\u2019s published list; change passwords for sensitive accounts and enable strong 2FA (hardware/FIDO2 recommended); keep Edge and extensions updated; limit extension permissions and install only from verified publishers; follow Microsoft\u2019s published IOCs and platform protections.",
+        "vendor_advisory": "https://microsoftedge.github.io/edgevr/posts/Inside-StegoAd-How-We-Disrupted-a-Massive-Malicious-Extension-Campaign/"
+      }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-simplehelp-flaw-deploy-new-djinn-infostealer-taskweaver-malware/",
+      "title": "Critical SimpleHelp flaw exploited to deploy new stealer malware",
+      "summary": "Hackers are exploiting a recently disclosed critical vulnerability (CVE-2026-48558) in SimpleHelp to deploy Djinn Stealer, a previously undocumented cross-platform information stealer targeting Windows, macOS, and Linux. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-simplehelp-flaw-deploy-new-djinn-infostealer-taskweaver-malware/",
+      "published": "2026-06-29T14:00:00+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-48558"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/new-oracle-e-business-suite-flaw-now-exploited-in-attacks/",
+      "title": "Hackers now exploit critical Oracle E-Business flaw in attacks",
+      "summary": "Attackers have begun exploiting a critical vulnerability (CVE-2026-46817) in the Oracle E-Business Suite (EBS) financial application, according to threat intelligence company Defused. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-oracle-e-business-suite-flaw-now-exploited-in-attacks/",
+      "published": "2026-06-29T13:46:17+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-46817"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/06/public-poc-released-for-critical.html",
