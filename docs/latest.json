@@ -1,9 +1,9 @@
 {
-  "generated": "2026-07-07T09:22:43.771283+00:00",
-  "total": 42,
+  "generated": "2026-07-07T14:06:30.157313+00:00",
+  "total": 46,
   "kev": 0,
-  "zero_day": 13,
-  "enriched": 6,
+  "zero_day": 12,
+  "enriched": 10,
   "findings": [
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
@@ -22,16 +22,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability is a path traversal flaw that allows unauthenticated remote attackers to download arbitrary files from the SimpleHelp server via crafted HTTP requests. This includes sensitive server configuration files containing hashed passwords for the SimpleHelpAdmin account or other accounts.",
-        "affected_products": "SimpleHelp remote support software version 5.5.7 and earlier",
+        "technical_details": "Unauthenticated path-traversal (directory traversal) in SimpleHelp \u22645.5.7 allowing an attacker to retrieve arbitrary files from the host (including server configuration and hashed passwords) via crafted HTTP requests.",
+        "affected_products": "SimpleHelp remote support / RMM software v5.5.7 and earlier",
         "cvss_score": "7.5",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Publicly known. OffSec has published a blog post detailing how the vulnerability allows attackers to read sensitive files via path traversal (http://offsec.com/blog/cve-2024-57727).",
-        "patch_available": "An official patch is available. Users are urged to upgrade immediately to the latest version of SimpleHelp. Further instructions can be found in the vendor's security vulnerability advisory: https://simple-help.com/kb---security-vulnerabilities-01-2025",
-        "active_exploitation": "Confirmed active exploitation in the wild. CISA added CVE-2024-57727 to its Known Exploited Vulnerabilities (KEV) Catalog on February 13, 2025, and reported ransomware actors leveraging it to compromise customers of a utility billing software provider.",
-        "threat_actors": "Ransomware actors, specifically the DragonForce group.",
-        "mitigation": "Key mitigations include: 1. Upgrade immediately to the latest version of SimpleHelp. 2. Isolate the SimpleHelp server instance from the internet or stop the server process. 3. Search for suspicious or anomalous executables with three alphabetic letter filenames (e.g., aaa.exe) created after January 2025. 4. Implement hardening rules via a custom sandbox, such as the Symantec DCS Custom sandbox.",
-        "vendor_advisory": "http://broadcom.com/support/security-center/protection-bulletin/cve-2024-57727-simplehelp-directory-traversal-vulnerability"
+        "exploit_available": "true \u2014 https://github.com/imjdl/CVE-2024-57727",
+        "patch_available": "true \u2014 vendor KB / release notes: https://guides.simple-help.com/kb---security-vulnerabilities-01-2025",
+        "active_exploitation": "true",
+        "threat_actors": "None known",
+        "mitigation": "Apply vendor-released patches/updates (upgrade to the patched versions e.g., 5.5.8 / 5.4.10 / 5.3.9) or follow vendor/CISA mitigations; discontinue use if mitigations are unavailable.",
+        "vendor_advisory": "https://guides.simple-help.com/kb---security-vulnerabilities-01-2025"
       }
     },
     {
@@ -52,15 +52,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The Neo4jChatAgent in Langroid passes LLM-generated Cypher queries directly to the Neo4j driver without any validation, statement-type allowlists, or opt-out gates. This allows an attacker to influence the executed Cypher query via prompt injection (either through direct user input or indirect content read via RAG). This vulnerability enables unauthorized reading or destruction of all graph data. Furthermore, if APOC or dbms.security procedures are enabled on the server, the attacker can achieve OS-command and filesystem access (RCE).",
-        "affected_products": "langroid <= 0.65.4",
-        "cvss_score": "9.2",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "A public proof-of-concept (PoC) is available within the official advisory at https://github.com/advisories/GHSA-2pq5-3q89-j7cc",
-        "patch_available": "An official patch was released in version 0.65.5.",
-        "active_exploitation": "None known",
+        "technical_details": "Neo4jChatAgent accepts LLM-generated Cypher and passes it directly to the Neo4j driver with no validation, no statement-type allowlist, and no opt-out gate. The LLM-controlled string is passed as the first positional argument to session.run / tx.run without validation, enabling attackers who can influence prompts to read, modify, or delete graph data (e.g., MATCH (n) DETACH DELETE n). When privileged procedures (APOC / dbms.*) are available to the DB role, the same injection can lead to filesystem or OS-level actions (apoc.load.*, apoc.import.*, dbms.* admin procedures), producing a config-conditional RCE.",
+        "affected_products": "langroid (pip) <= 0.65.4 (patched in 0.65.5)",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "false",
+        "patch_available": "true; https://github.com/advisories/GHSA-2pq5-3q89-j7cc",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Upgrade to langroid version 0.65.5. As a hardening measure, disable APOC or dbms.security procedures on the Neo4j server if they are not required by the application to prevent the potential for RCE.",
+        "mitigation": "Upgrade to langroid 0.65.5 (contains the fix). Ensure agents run against least-privilege Neo4j roles; keep the new allow_dangerous_operations gate (default False) in place; restrict or disable Cypher tools if not required; avoid granting APOC/dbms admin procedures to the DB role unless strictly necessary; apply the vendor patch promptly.",
         "vendor_advisory": "https://github.com/advisories/GHSA-2pq5-3q89-j7cc"
       }
     },
@@ -82,33 +82,17 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Langroid's `TableChatAgent` and `VectorStore` components are vulnerable to a sandbox escape leading to Remote Code Execution (RCE). This occurs when these agents evaluate LLM-generated tool messages with `full_eval=True`. The vulnerability arises from an incomplete attempt to sandbox the execution by setting the `locals` parameter to an empty dictionary `{}` within Python's `eval()` function, which does not effectively prevent access to the underlying execution environment.",
-        "affected_products": "langroid <= 0.65.1",
+        "technical_details": "Langroid's TableChatAgent and VectorStore capabilities evaluate LLM-generated tool messages using Python's eval() with full_eval=True. The implementation attempts to sandbox execution by passing locals={} as an argument to eval(). However, this is an incomplete mitigation: because __builtins__ is not explicitly scrubbed from the globals dictionary mapping, Python implicitly injects all built-in functions during execution. This grants access to dangerous built-ins such as __import__('os').system(), allowing an attacker who can supply a prompt/payload to achieve unauthenticated Remote Code Execution (RCE) on the host. Secondary flaw location: langroid/vector_store/base.py uses the same flawed empty-dictionary scoping mitigation on dynamically built expressions.",
+        "affected_products": "langroid (Python package) <= 0.65.1",
         "cvss_score": "10.0",
-        "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Information on whether a public proof-of-concept (PoC) or weaponized exploit exists for the vulnerability is unavailable.",
-        "patch_available": "An official patch has been released in version 0.65.2.",
-        "active_exploitation": "No confirmed active exploitation in the wild has been reported.",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "exploit_available": "false",
+        "patch_available": "true (langroid 0.65.2 - https://github.com/advisories/GHSA-q9p7-wqxg-mrhc)",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Update the `langroid` package to version 0.65.2 or later.",
+        "mitigation": "Upgrade to langroid version 0.65.2 (the patched version that replaces the broken eval()-based sandboxing). Additionally, do not feed untrusted user input directly into TableChatAgent or VectorStore code paths that use full_eval=True; restrict or sanitize any LLM tool-message content before it reaches pandas_eval().",
         "vendor_advisory": "https://github.com/advisories/GHSA-q9p7-wqxg-mrhc"
       }
-    },
-    {
-      "id": "https://www.securityweek.com/prompt-injection-attacks-trick-ai-agents-into-making-crypto-payments/",
-      "title": "Prompt Injection Attacks Trick AI Agents Into Making Crypto Payments",
-      "summary": "Researchers uncovered two campaigns embedding indirect prompt injections in malicious websites to exploit autonomous AI agents browsing the web. The post Prompt Injection Attacks Trick AI Agents Into Making Crypto Payments appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/prompt-injection-attacks-trick-ai-agents-into-making-crypto-payments/",
-      "published": "2026-07-06T11:19:47+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": null
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
@@ -125,7 +109,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect prompt injection (IPI) occurs when an LLM or agent ingests external content (web pages, documents, emails) that contains hidden or obfuscated instructions which the model treats as authoritative. Observed techniques include CSS-hidden text, invisible/white-on-white text, selection-proof hiding, meta tag / OpenGraph / JSON-LD embedding, HTML comments, CSS comments, Unicode/zero-width obfuscation, authority-imitation (system-override delimiters), and structured-data abuse; impacts range from manipulated summaries to unauthorized navigation, command execution or data leakage when agentic privileges or authenticated sessions exist.",
+        "affected_products": "Google Gemini Enterprise, Cursor (versions <1.3), ChatGPT Atlas (AI-powered browser), Perplexity Comet (AI-powered browser)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true \u2014 PoC/examples: https://github.com/brennanbrown/atlas-prompt-injection-poc , https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/",
+        "patch_available": "true \u2014 Partial/targeted patches: Cursor fixed in version 1.3 (see NVD CVE-2025-54131). Vendor mitigation guidance published (see Google Security Blog post linked above).",
+        "active_exploitation": "true \u2014 see Google Security Blog, Unit42 (Palo Alto Networks), and Forcepoint analyses reporting in-the-wild IPI detections.",
+        "threat_actors": "None known",
+        "mitigation": "Layered defenses: segregate and mark untrusted external content, require human approval for high-risk actions, validate outputs via deterministic formats, implement guardrails and downstream validation, limit agent privileges (logged-out mode / restrict auto-actions), and deploy web-scale detection for obfuscated payloads. See vendor guidance and OWASP/industry recommendations.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
@@ -142,7 +137,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect prompt injection (IPI) is an adversarial attack class that embeds malicious instructions inside external content (documents, emails, web pages, tool outputs, or retrieval corpora) which an LLM ingests during normal processing (summarization, RAG, or agentic tool use), causing the model to follow the hidden instructions. Academic work has demonstrated end-to-end IPI exploits against RAG and agentic systems.",
+        "affected_products": "Gemini app, Gemini in Workspace apps (Gmail, Docs editors, Drive, Chat)",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "Active exploitation status unknown.",
+        "threat_actors": "None known",
+        "mitigation": "Layered mitigations: model hardening / adversarial robustness, prompt-injection content classifiers, security-thought reinforcement, markdown sanitization and suspicious-URL redaction, and a user-confirmation (human-in-the-loop) framework for sensitive actions; plus continuous monitoring and rapid-response improvements.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
@@ -160,15 +166,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The vulnerability involves indirect prompt injection, where malicious content on a website influences an AI agent's behavior. A specific manifestation, CVE-2026-0628, is an XSS vulnerability in Chrome's WebView tag that allowed for local file access and privacy invasion.",
-        "affected_products": "Google Chrome (specifically Gemini agentic capabilities and the WebView tag)",
+        "technical_details": "Indirect prompt injection against agentic browsing (hidden or crafted web content that influences LLM prompts) and related XSS/privilege-escalation vectors in Chrome WebView can be chained to allow local file access, data exposure, or unauthorized AI actions (zero-click variants like GeminiJack have been described).",
+        "affected_products": "Google Chrome (WebView tag), Google Chrome agentic Gemini integration (Gemini in Chrome), Google Gemini Enterprise",
         "cvss_score": "8.8",
         "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-        "exploit_available": "A public proof-of-concept (PoC) for the associated CVE-2026-0628 is available at https://github.com/fevar54/CVE-2026-0628-POC",
-        "patch_available": "Yes, Google released a patch for the associated vulnerability CVE-2026-0628.",
-        "active_exploitation": "No known exploits have been reported in the wild as of January 6, 2026.",
+        "exploit_available": "true \u2014 PoC/demo available: https://github.com/brennanbrown/atlas-prompt-injection-poc",
+        "patch_available": "Patch availability unknown.",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "Google implemented layered defenses including a 'user alignment critic' (an isolated model that vets agent actions), origin access restrictions, and prevention of unsafe AI actions.",
+        "mitigation": "Apply vendor-recommended layered defenses for agentic browsing: restrict origin access, sandbox and isolate model-driven components (agentic capabilities), block or sanitize prompt-like content from untrusted pages, require explicit user interaction for sensitive actions, and deploy Chrome\u2019s published mitigations/updates for agentic browsing (per vendor guidance).",
         "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
@@ -188,16 +194,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "A linear buffer overflow vulnerability in CrabbyAVIF caused by incorrect bounds checks in multiple locations, leading to out-of-bounds (OOB) memory accesses. This vulnerability could potentially allow for remote code execution (RCE).",
-        "affected_products": "CrabbyAVIF (Android ecosystem)",
+        "technical_details": "Out-of-bounds accesses (incorrect bounds checks) in the CrabbyAVIF AVIF parser/decoder (Y/UV/alpha plane and plane-size/row-bytes calculations) that can lead to memory corruption; when combined with other bugs this could enable remote code execution without user interaction.",
+        "affected_products": "Google Android 16.0 (devices with security patch level prior to 2025-08-01 / 2025-08-05)",
         "cvss_score": "8.1",
         "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "No public exploit code is currently available.",
-        "patch_available": "Yes, the vulnerability was patched before shipping. Information is available in the vendor advisory (http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html).",
-        "active_exploitation": "No confirmed active exploitation in the wild has been reported; the vulnerability was caught before shipping.",
+        "exploit_available": "false",
+        "patch_available": "true \u2014 https://source.android.com/docs/security/bulletin/2025-08-01",
+        "active_exploitation": "false",
         "threat_actors": "None known",
-        "mitigation": "The vulnerability was identified and patched before being shipped in a production release.",
-        "vendor_advisory": "http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html"
+        "mitigation": "Apply the Android security updates (security patch levels 2025-08-01 or 2025-08-05 as appropriate). Until patched, reduce network exposure of vulnerable devices, enforce strict firewall/MDM controls, monitor for system service crashes, and rely on Android platform protections (Google Play Protect).",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
     {
@@ -215,7 +221,18 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true,
-      "enrichment": null
+      "enrichment": {
+        "technical_details": "Indirect Prompt Injection (IPI): adversary embeds hidden instructions inside external content (emails, documents, calendar invites, markdown/HTML, image or URL content) that an LLM ingests (e.g., during summarization or agent tool-chaining). Those embedded instructions become part of the model\u2019s effective prompt and can cause data exfiltration or unauthorized actions (e.g., via malicious URLs, HTML payloads, or formatted markdown).",
+        "affected_products": "Gemini (Gemini app and Gemini in Google Workspace \u2014 Gmail, Drive, Docs, Chat), Gemini Advanced, NotebookLM PRO",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true; PoC / writeups: https://www.immersivelabs.com/resources/c7-blog/weaponizing-llms-bypassing-email-security-products-via-indirect-prompt-injection , https://kenhuangus.substack.com/p/indirect-prompt-injection-with-cross",
+        "patch_available": "true; vendor mitigations/updates described in advisory: http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html",
+        "active_exploitation": "true; sources: SafeBreach Labs reporting and industry writeups reporting IPI payloads observed in the wild (see field_basis pointers)",
+        "threat_actors": "None known",
+        "mitigation": "Layered defenses: model hardening (Gemini model updates), prompt-injection content classifiers, security thought reinforcement, markdown sanitization, suspicious-URL detection/redaction (Safe Browsing), user confirmation (HITL) for risky actions, end-user mitigation notifications, deterministic policy/config rules, red-teaming/VRP collaboration, and ML retraining using synthetic adversarial data (see vendor advisory for details).",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -232,16 +249,16 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "Chinese state-sponsored actors target network edge devices (backbone, provider edge, and customer edge routers) by exploiting publicly known CVEs, such as CVE-2024-21887 (Ivanti), CVE-2024-3400 (Palo Alto Networks), and CVE-2018-0171 (Cisco). Post-compromise, they maintain persistence and facilitate espionage by modifying routing tables, establishing GRE/IPsec tunnels, abusing SNMP for configuration changes, and executing Tcl scripts to siphon data.",
-        "affected_products": "Cisco IOS and IOS XE, Palo Alto Networks PAN-OS GlobalProtect, Ivanti Connect Secure, Ivanti Policy, Fortinet firewalls, Juniper firewalls, Microsoft Exchange, Nokia routers and switches, Sierra Wireless devices, Sonicwall firewalls",
+        "technical_details": "State-linked actors compromise edge/backbone routers and remote-access appliances by exploiting known CVEs and weak configurations, modify router/device ACLs and configuration (and sometimes abuse management shells) to maintain persistent access, capture authentication traffic (RADIUS/TACACS+), and use compromised devices as vantage points for lateral movement and data collection/exfiltration.",
+        "affected_products": "Cisco routers (backbone / provider-edge / customer-edge), Palo Alto PAN-OS GlobalProtect (affected PAN-OS versions per vendor advisory), Ivanti Connect Secure (9.x, 22.x), Fortinet devices (unspecified models/versions), Juniper routers (unspecified), Microsoft Exchange (unspecified)",
         "cvss_score": "6.4",
         "cvss_vector": "CVSS vector unavailable.",
-        "exploit_available": "Publicly known exploits and proof-of-concepts exist for the individual CVEs targeted in this campaign (e.g., CVE-2024-3400 and CVE-2024-21887).",
-        "patch_available": "Official patches have been released by individual vendors for the targeted CVEs; however, no single patch exists for the entire campaign.",
-        "active_exploitation": "Confirmed active exploitation by PRC state-sponsored actors targeting global telecommunications, government, transportation, and military infrastructure, as reported by CISA in Alert AA25-239A.",
+        "exploit_available": "Exploit availability unknown.",
+        "patch_available": "true \u2014 patch availability varies by vendor (examples: Ivanti KB for CVE-2024-21887: https://hub.ivanti.com/..., Palo Alto advisory for CVE-2024-3400: https://security.paloaltonetworks.com/CVE-2024-3400)",
+        "active_exploitation": "false",
         "threat_actors": "Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, GhostEmperor",
-        "mitigation": "Implement a multi-layered defense strategy including advanced EDR, strict network segmentation, zero-trust principles, phishing-resistant MFA, and regular threat hunting. Additionally, disable the web UI feature on Cisco IOS XE devices vulnerable to CVE-2023-20198.",
-        "vendor_advisory": "Vendor advisory URL unavailable."
+        "mitigation": "Harden and restrict management interfaces (disable or strictly harden GuestShell/management shells), apply vendor patches where available, rotate and protect device credentials, restrict and monitor RADIUS/TACACS+ exposure, monitor for modified ACLs and unexpected SSH/config changes, and increase logging/alerting on edge routers and remote-access appliances.",
+        "vendor_advisory": "https://hub.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways, https://security.paloaltonetworks.com/CVE-2024-3400"
       }
     },
     {
@@ -257,7 +274,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "GRU unit 26165 has weaponized multiple public vulnerabilities to gain initial access (exposed VPNs, WinRAR, Roundcube, etc.). Notably, CVE-2023-23397 is an Outlook elevation/NTLM-leak issue where a malicious reminder value (PidLidReminderFileParameter) causes Outlook on Windows to connect to a remote SMB server and leak the user's Net-NTLMv2 hash; the attacker can relay or offline-crack that hash to gain authentication and then perform post-exploit actions (mailbox permission manipulation, sustained email collection).",
+        "affected_products": "Microsoft Outlook (CVE-2023-23397), WinRAR (CVE-2023-38831), Roundcube Webmail (CVE-2020-35730, CVE-2020-12641), exposed VPN infrastructure",
+        "cvss_score": "CVSS score unavailable.",
+        "cvss_vector": "CVSS vector unavailable.",
+        "exploit_available": "true; Microsoft and CISA reporting show weaponization and malicious samples (see Microsoft guidance and the CISA AA25-141A advisory).",
+        "patch_available": "true; Microsoft released security updates for CVE-2023-23397 (see Microsoft update guidance / MSRC and CISA advisory).",
+        "active_exploitation": "true",
+        "threat_actors": "GRU unit 26165 (85th GTsSS), aka Fancy Bear / APT28",
+        "mitigation": "Apply vendor updates for Outlook/Exchange immediately; block or restrict outbound SMB (TCP/445) from endpoints and via perimeter controls; add high-value accounts to Protected Users group or otherwise restrict NTLM usage; implement network segmentation, monitoring/alerting for suspicious mailbox/Exchange activity, and prioritize patching of listed CVEs (Outlook, WinRAR, Roundcube); follow CISA AA25-141A and Microsoft guidance for hunting and remediation.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a"
+      }
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/",
@@ -290,6 +319,94 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-40187",
+      "title": "EGroupware has Authenticated RCE via Malicious eTemplate Upload",
+      "summary": "## Summary\n\nAn authenticated administrator can achieve OS-level Remote Code Execution (RCE) by uploading a malicious eTemplate XML file (`.xet`) to the VFS `/etemplates` mount.\n\nThe `Widget::expand_name()` method passes template widget attribute values directly into a PHP `eval()` call with only double-quote escaping applied - **backtick characters are not escaped**.\n\nIn PHP, backticks inside a double-quoted `eval()` string execute shell commands. This allows an admin-level user to escalate from web\napplication access to arbitrary OS command execution on the server.\n\n------------------------------------------------------------------------\n\n## Details\n\nThe vulnerability is located in `api/src/Etemplate/Widget.php`, `Widget::expand_name()`:  (lines 703\u2013728)\n\nThe method is designed to expand PHP variables (e.g., `$row`, `$col`,`$cont[id]`) in widget attribute values for auto-repeat grids. The `eval()` is triggered whenever `$name` contains a `$` character (line 706). The only sanitization applied before the eval is:\n\n``` php\nstr_replace('\"', '\\\\\"', $name)\n```\n\nThis escapes double quotes only. **Backtick characters are not escaped**. In PHP, backticks inside a double-quoted string in `eval()` are treated as shell execution operators \u2014 equivalent to  `shell_exec()`. A widget `id` of `$row\\`id`` produces:\n\n```\neval('$name = \"$row`id`\";');  // executes shell command: id\n```\n\n`expand_name()` is called from:\n\n-   `form_name()`\n-   `expand_widget()`\n-   `set_attrs()`\n-   `Template::run()`\n\nThe `/etemplates` VFS path is created exclusively for admin users \u2014 it is `chgrp`'d to `Admins` and `chmod`'d to `075` (Admins group has full rwx): class.filemanager_admin.inc.php:95-106\n\nCustom templates in `/etemplates` take precedence over built-in filesystem templates, meaning a malicious template can silently override any existing application template.\n\n\n**Mitigating factor**: The official Docker deployment sets `disable_functions = exec,passthru,shell_exec,system,proc_open,popen` in `",
+      "link": "https://github.com/advisories/GHSA-8737-2x9g-xjj7",
+      "published": "2026-07-07T13:01:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-40187"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-33655",
+      "title": "New API: SSRF Protection Bypass via Unresolved Hostname in Notification URLs",
+      "summary": "## Summary\n\nThe default SSRF protection configuration did not apply IP filtering to hostnames. With `ApplyIPFilterForDomain` disabled by default, URL validation checked domain allow/block rules but did not resolve a hostname and validate the resolved IP address. Authenticated users could configure notification URLs for Webhook, Bark, or Gotify notifications and point a hostname at an internal or metadata IP address.\n\n## Impact\n\nA regular authenticated user could cause the server to send notification requests to internal HTTP services reachable from the deployment network. Depending on the target environment, this could expose sensitive internal data through timing, errors, or response-dependent behavior. The issue is rated High.\n\n## Affected versions\n\nVersions before `v0.12.0-alpha.1` are affected. The previous affected range of `<= v0.11.4-alpha.4` was too narrow because the unsafe default remained present until the `v0.12.0-alpha.1` fix.\n\n## Patches\n\nThis issue is fixed in `v0.12.0-alpha.1`. The default fetch setting now sets `ApplyIPFilterForDomain: true`, causing hostname destinations to be resolved and checked against the configured IP filtering rules during URL validation.\n\nThis patch addresses the unresolved-hostname bypass for the affected notification URL paths. It does not mark the separate DNS rebinding advisory as fixed, because connection-time IP enforcement is tracked separately.\n\n## Workarounds\n\nIf upgrading immediately is not possible, explicitly enable `ApplyIPFilterForDomain`, restrict notification URL domains with an allowlist, disable user-configurable notification URLs where practical, and enforce outbound network filtering at the host or network layer.\n\n## Resources\n\n- Fixed by commit `20399d3c8fcb4e3649d53163eb11940fd6763743`.\n- Relevant code paths: `setting/system_setting/fetch_setting.go`, `common/ssrf_protection.go`, `service/webhook.go`, and `service/user_notify.go`.",
+      "link": "https://github.com/advisories/GHSA-6qcr-qxgr-m7fv",
+      "published": "2026-07-07T13:01:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-33655"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-27823",
+      "title": "EGroupware has a Remote Code Execution Vulnerability",
+      "summary": "## Summary\nA critical vulnerability has been identified in EGroupware that may lead to Remote Code Execution (RCE).\nThe issue allows an authenticated attacker to execute arbitrary commands on the server. If user self-registration is enabled, the vulnerability may be exploitable without prior authentication.\n\nThe vulnerability stems from improper authorization checks combined with a file write primitive and an arbitrary file read vulnerability, which together enable full system compromise.\n\n## Details\n### 1. Improper Authorization in SmallPartMediaRecorder::ajax_upload()\n\nThe vulnerability originates in:\n\n`EGroupware\\SmallParT\\Widgets\\SmallPartMediaRecorder::ajax_upload()`\n\nThe function attempts to verify whether the current user is a teacher of the specified course ID before allowing a file upload.\n\nThe critical authorization check ensures that the course access control list (ACL) contains:\n\n`$required_acl (self::ROLE_TEACHER, i.e., 3)`\n\nHowever, the `course_acl `value is derived from user-controlled request data.\n\n**_Bypass Technique_**\n\nA crafted request can manipulate the `participant_role `value inside the request body:\n\n```json\n{\n  \"video\": {\n    \"course_id\": {\n      \"participants\": [\n        {\n          \"account_id\": \"7\",\n          \"name\": \"Test\",\n          \"joined_at\": \"2026-01-10\",\n          \"participant_role\": 3\n        }\n      ],\n      \"account_id\": \"7\",\n      \"course_id\": \"1\"\n    },\n    \"video_hash\": \".\",\n    \"video_type\": \"file_here\"\n  }\n}\n```\n\nBecause the course ACL is taken from `participant_role`, setting it to 3 allows bypassing the `isTeacher `check.\n\n### 2. Arbitrary File Write\n\nAfter bypassing authorization, the function uploads the provided file into a controllable file path.\n\nThe file path is derived from the `video_type `(or video_path) value, enabling path traversal.\n\nDue to file permission restrictions (server running as www-data), writable targets are limited. One viable target is `./header.inc.php`\n\n### 3. Constraints\n\nWriting a simple PHP ",
+      "link": "https://github.com/advisories/GHSA-h9qx-v5xp-ph8p",
+      "published": "2026-07-07T13:01:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-27823"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/critical-adobe-coldfusion-vulnerability-exploited-in-attacks/",
+      "title": "Critical Adobe ColdFusion Vulnerability Exploited in Attacks",
+      "summary": "Hackers are exploiting a recently patched critical vulnerability (CVE-2026-48282) in Adobe ColdFusion that carries a CVSS score of 10/10. The post Critical Adobe ColdFusion Vulnerability Exploited in Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/critical-adobe-coldfusion-vulnerability-exploited-in-attacks/",
+      "published": "2026-07-07T12:38:34+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-48282"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/suspected-china-aligned-hackers-exploit.html",
+      "title": "Suspected China-Aligned Hackers Exploit Roundcube Flaws Against Universities",
+      "summary": "A suspected China-aligned threat activity cluster has been observed exploiting Roundcube webmail software belonging to physics and engineering departments of U.S. and Canadian universities as part of a new campaign.\n\nThe activity involves the exploitation of now-patched, critical security flaws in the open-source email solution, such as CVE-2024-42009 (CVSS score: 9.3), to siphon credentials,",
+      "link": "https://thehackernews.com/2026/07/suspected-china-aligned-hackers-exploit.html",
+      "published": "2026-07-07T09:10:51+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2024-42009"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/07/certcc-warns-of-hidden-admin-backdoor.html",
