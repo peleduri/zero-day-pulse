@@ -1,10 +1,44 @@
 {
-  "generated": "2026-07-13T14:07:59.805969+00:00",
-  "total": 13,
-  "kev": 0,
-  "zero_day": 12,
+  "generated": "2026-07-13T19:08:47.949139+00:00",
+  "total": 26,
+  "kev": 1,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2008-4128",
+      "title": "CVE-2008-4128 \u2014 Cisco IOS Cross-Site Request Forgery Vulnerability",
+      "summary": "Vendor: Cisco | Product: IOS. Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain \"show privilege\" command to the /level/15/exec/- URI, and (2) a certain \"alias exec\" command to the /level/15/exec/-/configure/http URI. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-16)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2008-4128",
+      "published": "2026-07-13",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2008-4128"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
+      "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
+      "summary": "Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) builds on FBI\u2019s Russian Government Cyber Actors Targeting Networking Devices, Critical Infrastructure Public Service Announcement of the decade-plus FSB Center 16 cyber activity by providing additional tactics, techniques, and procedures (TTPs) to enable defenders to more fully understand and counter the threat. [ 1 ] This CSA is being released by the following authoring and co-sealing agencies: United States National Security Agency (NSA) United States Cybersecurity and Infrastructure Security Agency (CISA) United States Federal Bureau of Investigation (FBI) United States Department of Defense Cyber Crime Center (DC3) Australian Signals Directorate\u2019s Australian Cyber Security Centre (ASD\u2019s ACSC) Communications Security Establishment Canada\u2019s (CSE\u2019s) Canadian Centre for Cyber Security (Cyber Centre) New Zealand National Cyber Security Centre (NCSC-NZ) United Kingdom National Cyber Security Centre (NCSC-UK) Czech Republic National Cyber and Information Security Agency (N\u00daKIB) 1 Danish Defence Intelligence Service (DDIS) 2 Estonian Foreign Intelligence Service (EFIS) 3 Estonian Information System Authority (RIA) 4 Finnish Defence Intelligence (FDI) 5 Finnish Security and Intelligence Service (SUPO) 6 French National Cybersecurity Agency (ANSSI) 7 Italian External Intelligence and Security Agency (AISE) 8 Italian Internal Intelligence and Security Agency (AISI) 9 The Military Counterintelligence Service of Poland (SKW) 10 Sweden National Cyber Security Centre (NCSC-SE) 11 The authoring and co-sealing agencies strongly urge device owners and network defenders to take mitigation and ",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
+      "published": "Wed, 08 Jul 2026 14:43:49 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
@@ -19,6 +53,21 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-rce-flaws-in-joomla-extensions/",
+      "title": "CISA warns of actively exploited RCE flaws in Joomla extensions",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning that attackers are exploiting vulnerabilities in the iCagenda and Balbooa Forms extensions for Joomla to achieve remote code execution through arbitrary file uploads. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-rce-flaws-in-joomla-extensions/",
+      "published": "2026-07-13T15:20:16+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -196,6 +245,186 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-61667",
+      "title": "DIRAC is vulnerable to RCE in FileCatalog DatasetManager via SQL injection + eval",
+      "summary": "### Summary\nThe FileCatalog DatasetManager runs a query on the database and passes the result to eval. The SQL query contains an injection vulnerability which allows an authenticated user to control the parameter returned to the eval resulting in remote code execution.\n\n### Details\n\nThe FileCatalog checkDataset function passes its datasets argument directly to the backend DB handler:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/Service/FileCatalogHandler.py#L591-L593\n\nWhich in turn passes it to the __checkDataset function:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/DB/FileCatalogComponents/DatasetManager/DatasetManager.py#L390\n\nThis uses an f-string to create a query without escaping, resulting in an SQL injection:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/DB/FileCatalogComponents/DatasetManager/DatasetManager.py#L400-L402\n\nThe result (which is user controllable due to the SQL injection) is passed into eval almost immediately on return, leading to code execution:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/DB/FileCatalogComponents/DatasetManager/DatasetManager.py#L409\n\nThere are other functions in the same file which use a similar pattern and would likely be exploitable in a similar way.\n\n### Impact\nThis allows any authenticated user to run commands on the server, which allows a full compromise of the DIRAC system (they can read the local dirac.cfg, get database passwords and export all stored proxies and tokens). If local logging is used, they can also remove evidence of the exploit from the log.\n\n### Patched versions:\nhttps://pypi.org/project/DIRAC/8.0.79/\nhttps://pypi.org/project/DIRAC/9.0.22/\nhttps://pypi.org/project/DIRAC/9.1.10/",
+      "link": "https://github.com/advisories/GHSA-m4m7-4cw8-62j6",
+      "published": "2026-07-13T18:37:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61667"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59955",
+      "title": "Apollo ConfigService access key authentication bypass via raw config file appId parsing",
+      "summary": "### Summary\nApollo ConfigService may allow unauthorized access to raw configuration data when AccessKey / management key authentication is enabled because authentication parsed the appId incorrectly for the raw config file endpoint.\n\n### Details\nRequests under /configfiles/raw/{appId}/{clusterName}/{namespace} were parsed for authentication as appId \"raw\" instead of the actual path appId. ConfigService used the parsed appId to look up available AccessKey secrets before verifying the request signature.\n\nIf no AccessKey is configured for an application literally named \"raw\", ConfigService may treat the request as having no available secrets and allow it to continue without signature verification, even when AccessKey / management key authentication is enabled for the actual target appId in the path.\n\n### Impact\nAn unauthenticated remote attacker may read raw configuration data from affected ConfigService endpoints when AccessKey / management key authentication is enabled for the target app and the attacker requests the raw config file endpoint.\n\n### Affected endpoints\nThe primary impact is on ConfigService raw config file reads under /configfiles/raw/{appId}/{clusterName}/{namespace}.\n\n### Status\nFixed in Apollo 2.5.2. Users should upgrade to Apollo 2.5.2 or later.\n\n### Related advisory\nThe non-canonical appId matching issue is tracked separately in GHSA-4w3q-qpfq-v992 so each independently fixable vulnerability can receive its own CVE.",
+      "link": "https://github.com/advisories/GHSA-h4pc-58cc-hc95",
+      "published": "2026-07-13T18:37:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59955"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59954",
+      "title": "Apollo ConfigService access key authentication bypass via appId parsing and non-canonical matching",
+      "summary": "### Summary\nApollo ConfigService may allow unauthorized access to configuration data when AccessKey / management key authentication is enabled and ConfigService accepts a non-canonical appId variant during authentication while downstream request handling resolves it to the protected app.\n\n### Details\nConfigService extracts appId from configuration and notification requests and uses the extracted value to look up available AccessKey secrets. If the extracted appId is a non-canonical variant that does not exactly match the AccessKey cache key, ConfigService may treat the request as having no available secrets and allow it to continue without signature verification.\n\nThis can happen when downstream release lookup still matches the real appId under database collations that treat the values as equivalent. Examples include accent variants under accent-insensitive collations, or trailing-space variants under PAD SPACE collations.\n\n### Impact\nAn unauthenticated remote attacker may read configuration data from affected ConfigService endpoints when AccessKey / management key authentication is enabled for the target app and the deployment database collation treats a non-canonical appId variant as equivalent to the real appId.\n\n### Affected endpoints\nThe primary impact is on ConfigService configuration read endpoints under /configs and /configfiles. Notification endpoints using appId parameters are also hardened as defense-in-depth.\n\n### Status\nFixed in Apollo 2.5.2. Users should upgrade to Apollo 2.5.2 or later.\n\n### Related advisory\nThe raw config file endpoint parsing issue originally described in this advisory has been split into GHSA-h4pc-58cc-hc95 so each independently fixable vulnerability can receive its own CVE.",
+      "link": "https://github.com/advisories/GHSA-4w3q-qpfq-v992",
+      "published": "2026-07-13T18:26:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59954"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55372",
+      "title": "NukeViet: Pre-authentication SSRF via X-Forwarded-Host",
+      "summary": "## Summary\n\nAn unauthenticated attacker can coerce the server into issuing HTTP requests to an attacker-chosen host by spoofing the `X Forwarded-Host` (and `X-Forwarded-Proto`) request headers. The forwarded host is used, without validation, to build the URL that `server_info_update()` fetches with cURL, resulting in a Server-Side Request Forgery (SSRF) that requires no authentication.\n\n## Affected component\n\n- File: `includes/ini.php` \u2014 function `server_info_update()` (cURL sink)\n- File: `vendor/vinades/nukeviet/Core/Server.php` \u2014 `standardizeHost()` and the forwarded-header handling in the constructor (source of the tainted host)\n- Trigger: `POST` request containing the field `__serverInfoUpdate=1`, handled early in `includes/ini.php` before any authentication.\n\n## Details\n\n`NukeViet\\Core\\Server` derives `original_host` / `original_protocol` from the `X-Forwarded-Host` / `X-Forwarded-Proto` headers and exposes them via `getOriginalHost()` / `getOriginalProtocol()`. These values are attacker-controlled and were not validated against the site's configured domains (`my_domains`).\n\nIn `server_info_update()` the tainted host and scheme are concatenated directly into a cURL URL:\n\n```php\n$proto = $nv_Server->getOriginalProtocol();   // from X-Forwarded-Proto\n$host  = $nv_Server->getOriginalHost();        // from X-Forwarded-Host\n$ch = curl_init($proto . '://' . $host . NV_BASE_SITEURL . 'index.php?response_headers_detect=1');\ncurl_exec($ch);\n```\n\nTwo factors made this reliably reachable:\n\n1. The `__serverInfoUpdate` handler runs very early in `includes/ini.php`, before authentication, so the sink is reachable pre-auth.\n2. The host sanitiser `standardizeHost()` stripped a trailing port only with the regex `(\\:[0-9]+)$`, which is bypassed by appending a slash (e.g. `127.0.0.1:8081/`): the string no longer ends in `:digits`, so the port survives and an arbitrary `host:port` reaches the cURL call.\n\n## Proof of Concept\n\n```http\nPOST /index.php HTTP/1.1\nHost: <victim>\nX-Forwar",
+      "link": "https://github.com/advisories/GHSA-4chg-4752-w88r",
+      "published": "2026-07-13T17:58:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55372"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54064",
+      "title": "NukeViet: Multiple Anti-XSS Filter Bypasses Leading to Stored XSS in News Module",
+      "summary": "## Summary\n\nTwo filter-bypass techniques in `NukeViet\\Core\\Request::filterAttr()` and `NukeViet\\Core\\Request::unhtmlentities()` allow a low-privileged user (any account with news post permission) to store and serve arbitrary JavaScript to any visitor of the affected page.\n\n## Affected Component\n\n`vendor/vinades/nukeviet/Core/Request.php` \u2014 class `NukeViet\\Core\\Request`\n\n## Vulnerability Details\n\n### Bypass 1 \u2014 Form Feed character prefix (`\\x0C`) before event handler name\n\nThe `filterAttr()` method blocks event-handler attributes using:\n```php\npreg_match('/^on/i', $attrSubSet[0])\n```\nPHP's `trim()` does **not** strip the ASCII Form Feed character (`\\x0C`, U+000C). An attacker can prefix the attribute name with `\\x0C` so that `\\x0Conerror` does not match `/^on/`. The HTML5 browser parser treats `\\x0C` as a valid whitespace separator and correctly activates the event handler.\n\n**Proof-of-concept payload (URL-encoded POST body field `bodyhtml`):**\n```\n<img src=\"x\" %0Conerror=\"alert('XSS')\">\n```\n\n### Bypass 2 \u2014 Decimal HTML entity tab (`&#9;`) inside `javascript:` URI\n\n`unhtmlentities()` strips the hex-encoded tab `&#x09;` via `str_ireplace`, but did **not** strip its decimal equivalent `&#9;`. The keyword-blocking regex `/j\\s*a\\s*v\\s*a\\s*s\\s*c\\s*r\\s*i\\s*p\\s*t/si` uses `\\s*` which does not match HTML entities. The value `jav&#9;ascript:alert()` passes the filter, is stored in the database, and is decoded by the browser into a working `javascript:` URI.\n\n**Proof-of-concept payload (inside a Markdown-style link):**\n```\n[Click me](jav&#9;ascript:alert('XSS'))\n```\n\n## Impact\n\nAn authenticated attacker with news-posting permission can inject persistent JavaScript that executes in the browser of **any user** (including administrators) who views the affected article. This enables session cookie theft, credential harvesting, defacement, and further privilege escalation.\n\n## Patches\n\nFixed in commit `<commit-sha>` by modifying `vendor/vinades/nukeviet/Core/Request.php`:\n\n1. **`fi",
+      "link": "https://github.com/advisories/GHSA-465g-4q99-5x86",
+      "published": "2026-07-13T17:54:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54064"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-49259",
+      "title": "NukeViet: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "summary": "## Summary\n\nA stored cross-site scripting (XSS) vulnerability exists in NukeViet CMS versions 4.x through 4.5.08. A low-privileged authenticated user can store a JavaScript payload in their profile's display name fields. The payload executes in the browser of any visitor \u2014 including administrators \u2014 who clicks the **Reply** (\"Answer\") link on a comment posted by that user.\n\n## Affected Component\n\nThe `{COMMENT.post_name}` template variable is interpolated without JavaScript-context escaping into an inline `onclick` handler in both comment block positions:\n\n- `themes/default/modules/comment/comment.tpl` line 27 (top-level comments)\n- `themes/default/modules/comment/comment.tpl` line 64 (nested/reply comments)\n\n```html\nonclick=\"nv_commment_feedback(event, {COMMENT.cid}, '{COMMENT.post_name}')\"\n```\n\n## Root Cause\n\nThe `first_name` and `last_name` profile fields are sanitized with HTML numeric character references (`'` \u2192 `&#039;`, `(` \u2192 `&#40;`, `)` \u2192 `&#41;`, `/` \u2192 `&#x002F;`) via `Request::_get_title()` with `$specialchars = true`. This encoding is correct for plain HTML attribute and element contexts, but **insufficient for a JavaScript string literal embedded inside an HTML attribute**.\n\nBrowsers decode HTML entities in attribute values **before** the JavaScript engine parses the string. As a result, `&#039;` is decoded back to `'`, which terminates the JS string early and allows the remainder of the value to be executed as JavaScript.\n\nThe combined display name (`nv_show_name_user(first_name, last_name)`) is what reaches the template, giving an attacker up to ~200 encoded characters across both fields \u2014 sufficient for any practical payload.\n\n## Proof of Concept\n\nSet `first_name` to the following value in profile settings (`/index.php?nv=users&op=editinfo`), then post any comment:\n\n```text\na');alert(document.domain);//\n```\n\nThe value is stored as `a&#039;&#41;;alert&#40;document.domain&#41;;&#x002F;&#x002F;`.\n\nWhen a visitor clicks the Reply link on the comment, the",
+      "link": "https://github.com/advisories/GHSA-w2w5-w2pw-r929",
+      "published": "2026-07-13T17:22:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-49259"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48118",
+      "title": "NukeViet: Unauthenticated Reflected XSS in Comment Module",
+      "summary": "## Summary\n\nReflected XSS in the Comment module via the `status_comment` URL parameter. The parameter accepts attacker-controlled base64-encoded HTML/JavaScript that is decoded server-side and rendered unescaped into the page. Compounded by a second flaw: the `checkss` anti-forgery token was derived from a site-wide static value (`NV_CACHE_PREFIX`) instead of a per-session value, making the token reusable across all users and allowing the attack to be delivered via a simple crafted URL.\n\n## Details\n\n### Vulnerability 1 \u2014 Reflected XSS via `status_comment`\n\n**Affected components:**\n- `modules/comment/funcs/main.php` \u2014 parameter ingestion\n- `modules/comment/comment.php` \u2014 decode and template assignment\n- `themes/*/modules/comment/comment.tpl` \u2014 raw render\n\nThe `status_comment` GET/POST parameter is sanitised with `get_title()`, which applies `strip_tags()`. Because the parameter is intended to carry a base64-encoded string, its character set (`[A-Za-z0-9-_,]`) passes through `strip_tags()` unchanged. The value is later decoded with `nv_base64_decode()` and assigned to the template variable `STATUS_COMMENT` **without any escaping**, which the template then renders raw inside a `<div>`.\n\nThe fundamental flaw is ordering: the filter is applied to the **encoded form** of the data, before decoding, so it is entirely ineffective against whatever the decoded content contains. Any HTML or JavaScript payload, once base64-encoded, survives the filter and executes in the victim's browser.\n\n### Vulnerability 2 \u2014 Session-independent `checkss` token\n\n**Affected components:**\n- `modules/comment/comment.php` \u2014 token validation in comment-load and comment-module functions\n- `modules/comment/funcs/post.php` \u2014 token validation when posting\n- All caller modules that generate a `checkss` before invoking the comment system (e.g. `modules/news`, `modules/page`)\n\nThe `checkss` token required to load the comment block was computed by hashing the resource parameters together with `NV_CACHE_PRE",
+      "link": "https://github.com/advisories/GHSA-mxpf-qgg6-v3ff",
+      "published": "2026-07-13T17:21:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48118"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45579",
+      "title": "DIRAC is vulnerable to RCE in RequestManager due to eval on untrusted input",
+      "summary": "### Summary\nAn remote code execution vulnerability exists in RequestManager due to the use of eval on untrusted input that allows any authenticated user to run code/commands on the DIRAC server as the system user running the DIRAC services.\n\n### Details\nThe export_getRequestCountersWeb function is callable by any authenticated user and just passes its parameters directly to the database instance:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/RequestManagementSystem/Service/ReqManagerHandler.py#L270\n\nIf the groupingAttribute string is unrecognised, `Request.` is prepended to it and the result is passed into an `eval()` call:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/RequestManagementSystem/DB/RequestDB.py#L766-L776\n\nBy passing in a dunder string that is applicable to the Request object, it's possible to work back up to functions in the os module and trigger them to be called in the server context.\n\nThere are other uses of eval in ReqManager/RequestDB which may be equally accessible.\n\n### Impact\nThis allows any authenticated user to run commands on the server, which allows a full compromise of the DIRAC system (they can read the local dirac.cfg, get database passwords and export all stored proxies and tokens). If local logging is used, they can also remove evidence of the exploit from the log (it leaves an exception printout in the RequestManager log when used).\n\n### Patched versions:\nhttps://pypi.org/project/DIRAC/8.0.79/\nhttps://pypi.org/project/DIRAC/9.0.22/\nhttps://pypi.org/project/DIRAC/9.1.10/",
+      "link": "https://github.com/advisories/GHSA-9jpv-c7p4-997x",
+      "published": "2026-07-13T17:20:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45579"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45573",
+      "title": "Decidim: Push subscriptions can be abused for server-side requests",
+      "summary": "## Description\n\nThe push-subscription endpoint stores an attacker-controlled delivery URL, and the notification send path becomes an outbound-request sink when VAPID delivery is enabled. The practical result is an authenticated, stored, mostly blind SSRF primitive to arbitrary HTTPS endpoints reachable from the app server.\n\n## Technical description\n \nWhen VAPID delivery is enabled, the notification subscription flow stores the client-supplied push endpoint without checking that it belongs to an approved push service. The send path later passes that stored URL to `WebPush.payload_send`, turning the subscription into an attacker-controlled outbound request destination.\nThis is the source-to-sink chain:\n\n1. Source: attacker-controlled `subscription.endpoint` in the JSON body posted to `POST /notifications_subscriptions`.\n2. Persistence: `params[:endpoint]` is stored under `user.notification_settings[\"subscriptions\"]`.\n3. Retrieval: `user.notifications_subscriptions.values` returns that stored endpoint later.\n4. Sink: `build_payload` sets `endpoint: subscription[\"endpoint\"]`.\n5. Outbound request: `WebPush.payload_send(**payload)` uses the attacker-supplied endpoint as the\ndestination.\n\nOne spec asserts that the endpoint is persisted exactly as supplied:\n\n```ruby\n# decidim-core/spec/services/decidim/notifications_subscriptions_persistor_spec.rb\nexpect(user.notifications_subscriptions[\"auth_code_121\"][\"endpoint\"]).to eq(params[:endpoint])\n```\n\nAnother spec asserts that `SendPushNotification` passes the stored endpoint into `WebPush.payload_send`:\n\n```ruby\n# decidim-core/spec/services/decidim/send_push_notification_spec.rb\nfirst_notification_payload = {\n  message:,\n  endpoint: subscriptions[\"auth_key_1\"][\"endpoint\"],\n  p256dh: subscriptions[\"auth_key_1\"][\"p256dh\"],\n  auth: subscriptions[\"auth_key_1\"][\"auth\"],\n  vapid: a_hash_including(...)\n}\nexpect(WebPush).to receive(:payload_send).with(first_notification_payload)\n```\n\n### Impact\n\n- In a configured deployment, an authenti",
+      "link": "https://github.com/advisories/GHSA-2g9c-vf8h-prxx",
+      "published": "2026-07-13T17:19:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45573"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45414",
+      "title": "Decidim: JWT-backed authentication can be replayed across organizations",
+      "summary": "## Description\n\nA JWT issued to an Org 1 account is accepted on the Org 2 API and can read the admin-only GraphQL `participantDetails` field for an Org 2 participant. The same trust-boundary problem also affects API-user authentication: an Org 1 API user can use a JWT on the Org 1 host and replay that JWT to the Org 2 API to read Org 2 participant personal data and reach Org 2's `proposal.answer` mutation path.\n\n##  Technical description\n\nThe current host selects the Decidim organization context, but JWT-backed API authentication is not sufficiently bound to\nthat host organization. As a result, the API can process a request in Org 2's context while still trusting an authenticated\nprincipal from Org 1.\n\nReproduction steps:\n\n1. Use an API key provided by the system administrator that is assigned to organization 1 to create the JWT token or\nget the JWT token shown in the response when logged in as the organization admin.\n\n<img width=\"1080\" height=\"1119\" alt=\"decidim-jwt-01\" src=\"https://github.com/user-attachments/assets/6195a250-faef-41d5-8f64-4d77d4077e96\" />\n\n\n2. When using this JWT token it is possible to retrieve details from other organisations. Notice the change of the host header in the request below to that of another tenant `org2.localhost:3001`\n \n<img width=\"1085\" height=\"1047\" alt=\"decidim-jwt-02\" src=\"https://github.com/user-attachments/assets/d40825e3-0d36-44f3-bede-86d247bbe6d0\" />\n\nNote that using a participant-generated JWT did not allow showing these results.\n\n### Impact\n\nA JWT issued for one organization can be replayed successfully against another organization's API and used to retrieve sensitive details from that organization.\n\n### Patches\n\nSee https://github.com/decidim/decidim/pull/16673 and https://github.com/decidim/decidim/pull/16756\n\n### Workarounds\n\nDisable JWT credentials on system panel (`/system`) \n\n### References\n\nOWASP A01:2021 Broken Access Control\n\n### Credits\n\nThis issue was discovered in a security audit organized by the [Decidim As",
+      "link": "https://github.com/advisories/GHSA-r3v7-5x4c-c69q",
+      "published": "2026-07-13T17:16:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45414"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
