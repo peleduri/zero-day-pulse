@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-14 07:43 UTC &nbsp;|&nbsp; **Total:** 27 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-14 13:02 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,25 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CISA warns of actively exploited RCE flaws in Joomla extensions
+## 3. 🟠 Zero-Day — Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/>
+
+> A ClaudeBleed-linked vulnerability reportedly persists across eight patches, exposing potentially sensitive data to other extensions. The post Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/>
+
+> Multiple state-sponsored APTs are compromising poorly secured devices across critical infrastructure sector networks. The post US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers appeared first on SecurityWeek .
+
+---
+
+## 5. 🟠 Zero-Day — CISA warns of actively exploited RCE flaws in Joomla extensions
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-rce-flaws-in-joomla-extensions/>
@@ -31,7 +49,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +58,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +67,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +76,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +85,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +94,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -85,7 +103,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 12. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -94,28 +112,28 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 12. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 14. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 14. 🟡 High Severity — Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access
+## 16. 🟡 High Severity — Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access
 
 **CVE:** `CVE-2026-52828` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-rw46-qg69-vg6h>
@@ -126,7 +144,7 @@ The `ExportController` web routes for creating and editing export templates are 
 
 ---
 
-## 15. 🟡 High Severity — Kimai: Default APP_SECRET in Docker Image Enables Cookie Forgery and Account Takeover
+## 17. 🟡 High Severity — Kimai: Default APP_SECRET in Docker Image Enables Cookie Forgery and Account Takeover
 
 **CVE:** `CVE-2026-52824` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-jr9p-4h4j-6c58>
@@ -137,7 +155,7 @@ The official Kimai Docker image ships with `APP_SECRET=change_this_to_something_
 
 ---
 
-## 16. 🟡 High Severity — FacturaScripts: Account takeover of any 2FA-enabled user
+## 18. 🟡 High Severity — FacturaScripts: Account takeover of any 2FA-enabled user
 
 **CVE:** `CVE-2026-47677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-c67f-gmxw-mj93>
@@ -153,7 +171,7 @@ cookie pair. The handl…
 
 ---
 
-## 17. 🟡 High Severity — DIRAC is vulnerable to RCE in FileCatalog DatasetManager via SQL injection + eval
+## 19. 🟡 High Severity — DIRAC is vulnerable to RCE in FileCatalog DatasetManager via SQL injection + eval
 
 **CVE:** `CVE-2026-61667` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-m4m7-4cw8-62j6>
@@ -168,7 +186,7 @@ https://githu…
 
 ---
 
-## 18. 🟡 High Severity — Apollo ConfigService access key authentication bypass via raw config file appId parsing
+## 20. 🟡 High Severity — Apollo ConfigService access key authentication bypass via raw config file appId parsing
 
 **CVE:** `CVE-2026-59955` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-h4pc-58cc-hc95>
@@ -181,7 +199,7 @@ Requests under /configfiles/raw/{appId}/{clusterName}/{namespace} were parsed fo
 
 ---
 
-## 19. 🟡 High Severity — Apollo ConfigService access key authentication bypass via appId parsing and non-canonical matching
+## 21. 🟡 High Severity — Apollo ConfigService access key authentication bypass via appId parsing and non-canonical matching
 
 **CVE:** `CVE-2026-59954` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-4w3q-qpfq-v992>
@@ -194,7 +212,7 @@ ConfigService extracts appId from configuration and notification requests and us
 
 ---
 
-## 20. 🟡 High Severity — NukeViet: Pre-authentication SSRF via X-Forwarded-Host
+## 22. 🟡 High Severity — NukeViet: Pre-authentication SSRF via X-Forwarded-Host
 
 **CVE:** `CVE-2026-55372` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-4chg-4752-w88r>
@@ -207,7 +225,7 @@ An unauthenticated attacker can coerce the server into issuing HTTP requests to 
 
 ---
 
-## 21. 🟡 High Severity — NukeViet: Multiple Anti-XSS Filter Bypasses Leading to Stored XSS in News Module
+## 23. 🟡 High Severity — NukeViet: Multiple Anti-XSS Filter Bypasses Leading to Stored XSS in News Module
 
 **CVE:** `CVE-2026-54064` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-465g-4q99-5x86>
@@ -226,7 +244,7 @@ Two filter-bypass techniques in `NukeViet\Core\Request::filterAttr()` and `NukeV
 
 ---
 
-## 22. 🟡 High Severity — NukeViet: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+## 24. 🟡 High Severity — NukeViet: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
 
 **CVE:** `CVE-2026-49259` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-w2w5-w2pw-r929>
@@ -239,7 +257,7 @@ A stored cross-site scripting (XSS) vulnerability exists in NukeViet CMS version
 
 ---
 
-## 23. 🟡 High Severity — NukeViet: Unauthenticated Reflected XSS in Comment Module
+## 25. 🟡 High Severity — NukeViet: Unauthenticated Reflected XSS in Comment Module
 
 **CVE:** `CVE-2026-48118` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-mxpf-qgg6-v3ff>
@@ -250,7 +268,7 @@ Reflected XSS in the Comment module via the `status_comment` URL parameter. The 
 
 ---
 
-## 24. 🟡 High Severity — DIRAC is vulnerable to RCE in RequestManager due to eval on untrusted input
+## 26. 🟡 High Severity — DIRAC is vulnerable to RCE in RequestManager due to eval on untrusted input
 
 **CVE:** `CVE-2026-45579` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-9jpv-c7p4-997x>
@@ -264,7 +282,7 @@ The export_getRequestCountersWeb function is callable by any authenticated user 
 
 ---
 
-## 25. 🟡 High Severity — Decidim: Push subscriptions can be abused for server-side requests
+## 27. 🟡 High Severity — Decidim: Push subscriptions can be abused for server-side requests
 
 **CVE:** `CVE-2026-45573` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-2g9c-vf8h-prxx>
@@ -279,7 +297,7 @@ When VAPID delivery is enabled, the notificatio…
 
 ---
 
-## 26. 🟡 High Severity — Decidim: JWT-backed authentication can be replayed across organizations
+## 28. 🟡 High Severity — Decidim: JWT-backed authentication can be replayed across organizations
 
 **CVE:** `CVE-2026-45414` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-r3v7-5x4c-c69q>
@@ -290,7 +308,7 @@ A JWT issued to an Org 1 account is accepted on the Org 2 API and can read the a
 
 ---
 
-## 27. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

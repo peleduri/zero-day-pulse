@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-14T07:43:52.666939+00:00",
-  "total": 27,
+  "generated": "2026-07-14T13:02:19.994908+00:00",
+  "total": 29,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,36 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/",
+      "title": "Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar",
+      "summary": "A ClaudeBleed-linked vulnerability reportedly persists across eight patches, exposing potentially sensitive data to other extensions. The post Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/",
+      "published": "2026-07-14T13:00:00+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/",
+      "title": "US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers",
+      "summary": "Multiple state-sponsored APTs are compromising poorly secured devices across critical infrastructure sector networks. The post US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/",
+      "published": "2026-07-14T10:51:01+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
