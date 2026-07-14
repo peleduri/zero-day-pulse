@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-14T01:15:41.147184+00:00",
-  "total": 28,
+  "generated": "2026-07-14T07:43:52.666939+00:00",
+  "total": 27,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -49,23 +49,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html",
-      "title": "iCagenda and Balbooa Forms Joomla Flaws Reportedly Exploited as Zero-Days",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added two maximum-severity security flaws impacting iCagenda and Balbooa extensions for Joomla to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation in the wild.\n\nThe vulnerabilities, both rated 10.0 on the CVSS scoring system, are below -\n\n\n  CVE-2026-48939 - A vulnerability in the",
-      "link": "https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html",
-      "published": "2026-07-13T05:36:02+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-48939"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
