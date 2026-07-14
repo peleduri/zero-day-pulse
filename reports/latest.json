@@ -1,29 +1,10 @@
 {
-  "generated": "2026-07-13T19:08:47.949139+00:00",
-  "total": 26,
-  "kev": 1,
+  "generated": "2026-07-14T01:15:41.147184+00:00",
+  "total": 28,
+  "kev": 0,
   "zero_day": 14,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2008-4128",
-      "title": "CVE-2008-4128 \u2014 Cisco IOS Cross-Site Request Forgery Vulnerability",
-      "summary": "Vendor: Cisco | Product: IOS. Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain \"show privilege\" command to the /level/15/exec/- URI, and (2) a certain \"alias exec\" command to the /level/15/exec/-/configure/http URI. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-16)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2008-4128",
-      "published": "2026-07-13",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2008-4128"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -245,6 +226,60 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-52828",
+      "title": "Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access",
+      "summary": "### Summary\n\nThe `ExportController` web routes for creating and editing export templates are gated only by the class-level `create_export` permission, which is granted to `ROLE_TEAMLEAD` by default. The corresponding API routes and UI button visibility correctly require the stricter `create_export_template` permission, which is granted only to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. A TEAMLEAD user can directly access the template create/edit routes to create or modify global export templates that are visible to all users including administrators.\n\n### Details\n\nThe `ExportController` applies the class-level annotation `#[IsGranted('create_export')]`.\n\nThe `createExportTemplate` (line 210) and `editExportTemplate` (line 220) methods have no method-level `#[IsGranted('create_export_template')]` annotation. The permission hierarchy in `config/packages/kimai.yaml:103,115,122-123` grants `create_export` to `ROLE_TEAMLEAD` via the `EXPORT` permission set, but `create_export_template` only to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`.\n\nThe API controller correctly requires `create_export_template`. The UI template (`templates/export/index.html.twig:124`) correctly hides the create button behind `create_export_template`. Only the web controller routes are missing the check.\n\n`ExportTemplate` entities are global \u2014 they have no per-user or per-team scoping (`src/Entity/ExportTemplate.php:19-56`). Any template created or modified by a TEAMLEAD which is marked as \"Available for all users\" is visible to and usable by every user in the instance.\n\n*A PoC was provided, but removed for security reasons.*\n\n### Impact\n\nAny user with `ROLE_TEAMLEAD` can create and modify global export templates intended to be managed only by administrators. The templates control the structure and content of exported data (columns, renderer, format). While the impact is limited to data integrity manipulation of a non-security-critical resource (no RCE, no credential exposure), it violates the intended permission",
+      "link": "https://github.com/advisories/GHSA-rw46-qg69-vg6h",
+      "published": "2026-07-14T00:34:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52828"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52824",
+      "title": "Kimai: Default APP_SECRET in Docker Image Enables Cookie Forgery and Account Takeover",
+      "summary": "### Summary\n\nThe official Kimai Docker image ships with `APP_SECRET=change_this_to_something_unique` as the default environment variable. The Docker entrypoint does not override or validate this value. Any Kimai instance deployed using the Docker image without explicitly setting `APP_SECRET` runs with a publicly-known Symfony `kernel.secret`, enabling an unauthenticated attacker to forge HMAC-signed cookies and login links to take over any account including super_admin.\n\n### Details\n\n`Dockerfile:263` sets `ENV APP_SECRET=change_this_to_something_unique`. This value is consumed by `config/packages/framework.yaml:7` as `kernel.secret`, which Symfony uses to HMAC-sign:\n\n- The `KIMAI_REMEMBER` remember-me cookie\n- LoginLink signatures\n- Password reset URLs\n- CSRF tokens\n\nThe `.docker/entrypoint.sh` does not check for or replace the default sentinel value. The bare-metal `.env.dist:38` ships the same default. No startup-time guard exists anywhere in the codebase that refuses to start when `APP_SECRET` equals the sentinel.\n\nUser IDs are sequential integers starting from 1. The first super_admin account is almost always `id=1`. User IDs are visible in some URLs and API responses.\n\n*A PoC was provided, but removed for security reasons.*\n\n### Impact\n\nAny Kimai instance deployed via the official Docker image without overriding `APP_SECRET` can be compromised from the internet. An unauthenticated attacker who can reach the Kimai URL can forge authentication tokens and log in as any user if:\n- a username is known AND\n- the correct account ID for this username is guessed AND\n- the account has no active 2FA (two factor) authentication\n\n## Solution\n\n- The entrypoint.sh file is updated and now contains a script that generates a random `APP_SECRET` via `bin2hex(random_bytes(32))` which will be stored in  `/opt/kimai/var/data/.appsecret`\n- The entrypoint.sh will create the file `/opt/kimai/.env.local` containing the `APP_SECRET`, either fetched from the Docker Environment or from the",
+      "link": "https://github.com/advisories/GHSA-jr9p-4h4j-6c58",
+      "published": "2026-07-14T00:07:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52824"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47677",
+      "title": "FacturaScripts: Account takeover of any 2FA-enabled user",
+      "summary": "# Authentication bypass in FacturaScripts: `/login?action=two-factor-validation` accepts brute-forceable TOTP without password or CSRF protection\n\n## Summary\n\n`Core/Controller/Login.php::twoFactorValidationAction()` accepts an\nunauthenticated POST containing only `fsNick` and `fsTwoFactorCode`. If the\nTOTP value matches, the server issues a full `fsNick` + `fsLogkey` session\ncookie pair. The handler:\n\n1. **Does not verify the password** \u2014 the user is not required to have just\n   completed `loginAction`.\n2. **Does not call `validateFormToken()`** \u2014 no CSRF token is required (every\n   other action handler in the same file does call it).\n3. **Does not call `userHasManyIncidents()` before processing** \u2014 `loginAction`\n   and `changePasswordAction` both check this guard *before* doing work; the\n   2FA handler only writes to the incident list *after* a failure, and the\n   incident list is consulted by `loginAction` / `changePasswordAction` but\n   not by the 2FA handler itself. The endpoint therefore has **no\n   rate-limiting at all**.\n\nCombined with `TwoFactorManager::VERIFICATION_WINDOW = 8` (google2fa default\nis 1), 17 distinct six-digit codes are valid simultaneously and each remains\nvalid for ~4 minutes. The expected number of guesses to land a valid code is\n\n> N \u2248 ln(0.5) / ln(1 \u2212 17 / 10\u2076) \u2248 **40 800** attempts (50% success)\n\nOn a default LAMP install a single-laptop attacker sustains ~400 RPS from\none source IP \u2014 a few minutes per account.\n\nThe vulnerability gives **complete account takeover** of any 2FA-enabled\nuser to any unauthenticated network attacker who knows the target's nick.\nAdmin nicks are typically public information (`admin`, the company name,\nthe person's initials).\n\n## Severity\n\n**CVSS 4.0 base score: 9.3 \u2014 Critical**\n\nVector: `CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N`\n\n| Metric | Value | Rationale |\n|---|---|---|\n| Attack Vector (AV) | Network (N) | One HTTP POST over the public internet. |\n| Attack Complexity (AC) | Low (L) | ",
+      "link": "https://github.com/advisories/GHSA-c67f-gmxw-mj93",
+      "published": "2026-07-13T23:35:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47677"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-61667",

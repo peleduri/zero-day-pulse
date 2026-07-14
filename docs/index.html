@@ -109,31 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">26</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-13 19:08 UTC</div>
+            <div class="generated">Updated 2026-07-14 01:15 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2008-4128" target="_blank" rel="noopener">CVE-2008-4128 — Cisco IOS Cross-Site Request Forgery Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2008-4128</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-13</span>
-  </div>
-  <p class='summary'>Vendor: Cisco | Product: IOS. Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain &quot;show privilege&quot; command to the /level/15/exec/- URI, and (2) a certain &quot;alias exec&quot; command to the /level/15/exec/-/configure/http URI. Required action: Apply mitigations in accordance with vendor instructions, ensuring comp…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -361,6 +345,65 @@ The vulnerabilities, both rated 10.0 on the CVSS scoring system, are below -
 
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rw46-qg69-vg6h" target="_blank" rel="noopener">Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-52828</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-14</span>
+          </div>
+          <p class='summary'>### Summary
+
+The `ExportController` web routes for creating and editing export templates are gated only by the class-level `create_export` permission, which is granted to `ROLE_TEAMLEAD` by default. The corresponding API routes and UI button visibility correctly require the stricter `create_export_template` permission, which is granted only to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. A TEAMLEAD user c…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jr9p-4h4j-6c58" target="_blank" rel="noopener">Kimai: Default APP_SECRET in Docker Image Enables Cookie Forgery and Account Takeover</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-52824</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-14</span>
+          </div>
+          <p class='summary'>### Summary
+
+The official Kimai Docker image ships with `APP_SECRET=change_this_to_something_unique` as the default environment variable. The Docker entrypoint does not override or validate this value. Any Kimai instance deployed using the Docker image without explicitly setting `APP_SECRET` runs with a publicly-known Symfony `kernel.secret`, enabling an unauthenticated attacker to forge HMAC-sign…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c67f-gmxw-mj93" target="_blank" rel="noopener">FacturaScripts: Account takeover of any 2FA-enabled user</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-47677</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-13</span>
+          </div>
+          <p class='summary'># Authentication bypass in FacturaScripts: `/login?action=two-factor-validation` accepts brute-forceable TOTP without password or CSRF protection
+
+## Summary
+
+`Core/Controller/Login.php::twoFactorValidationAction()` accepts an
+unauthenticated POST containing only `fsNick` and `fsTwoFactorCode`. If the
+TOTP value matches, the server issues a full `fsNick` + `fsLogkey` session
+cookie pair. The handl…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
