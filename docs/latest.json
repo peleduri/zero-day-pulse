@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-15T01:12:53.627683+00:00",
-  "total": 38,
+  "generated": "2026-07-15T07:47:46.490655+00:00",
+  "total": 40,
   "kev": 0,
-  "zero_day": 21,
+  "zero_day": 23,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,23 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html",
+      "title": "Two SonicWall SMA 1000 Zero-Days Exploited, One Could Enable Admin Commands",
+      "summary": "SonicWall has warned of active exploitation of two zero-day vulnerabilities impacting Secure Mobile Access (SMA) 1000 series appliances, one of which could be exploited to achieve arbitrary command execution.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-15409 (CVSS score: 10.0) - A Server-side request forgery (SSRF) vulnerability that a remote unauthenticated attacker could exploit to",
+      "link": "https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html",
+      "published": "2026-07-15T05:30:21+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-15409"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -298,6 +315,22 @@
       "summary": "",
       "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/",
       "published": "Jun 22, 2026 00:00:00-0500",
+      "source": "CrowdStrike Blog",
+      "tags": [
+        "cloud",
+        "threat-intel",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/",
+      "title": "July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days",
+      "summary": "",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/",
+      "published": "Jul 14, 2026 00:00:00-0500",
       "source": "CrowdStrike Blog",
       "tags": [
         "cloud",

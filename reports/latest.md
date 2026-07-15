@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-15 01:12 UTC &nbsp;|&nbsp; **Total:** 38 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 21 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-15 07:47 UTC &nbsp;|&nbsp; **Total:** 40 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 23 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,21 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Patch Tuesday - July 2026
+## 3. 🟠 Zero-Day — Two SonicWall SMA 1000 Zero-Days Exploited, One Could Enable Admin Commands
+
+**CVE:** `CVE-2026-15409` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html>
+
+> SonicWall has warned of active exploitation of two zero-day vulnerabilities impacting Secure Mobile Access (SMA) 1000 series appliances, one of which could be exploited to achieve arbitrary command execution.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2026-15409 (CVSS score: 10.0) - A Server-side request forgery (SSRF) vulnerability that a remote unauthenticated attacker could exploit to
+
+---
+
+## 4. 🟠 Zero-Day — Patch Tuesday - July 2026
 
 **CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.rapid7.com/blog/post/em-patch-tuesday-july-2026>
@@ -31,7 +45,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now
+## 5. 🟠 Zero-Day — SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now
 
 **CVE:** `CVE-2026-15409` | `CVE-2026-15410` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/>
@@ -40,7 +54,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack
+## 6. 🟠 Zero-Day — Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html>
@@ -51,7 +65,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 6. 🟠 Zero-Day — Microsoft Patches Record 622 Vulnerabilities, Including Two Exploited Zero-Days
+## 7. 🟠 Zero-Day — Microsoft Patches Record 622 Vulnerabilities, Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.securityweek.com/microsoft-patches-record-622-vulnerabilities-including-two-exploited-zero-days/>
@@ -60,7 +74,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 7. 🟠 Zero-Day — Microsoft’s July 2026 Patch Tuesday Addresses 569 CVEs (CVE-2026-56155, CVE-2026-56164)
+## 8. 🟠 Zero-Day — Microsoft’s July 2026 Patch Tuesday Addresses 569 CVEs (CVE-2026-56155, CVE-2026-56164)
 
 **CVE:** `CVE-2026-56155` | `CVE-2026-56164` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.tenable.com/blog/microsofts-july-2026-patch-tuesday-addresses-569-cves-cve-2026-56155-cve-2026-56164>
@@ -69,7 +83,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 8. 🟠 Zero-Day — Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days
+## 9. 🟠 Zero-Day — Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/>
@@ -78,7 +92,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 9. 🟠 Zero-Day — Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar
+## 10. 🟠 Zero-Day — Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/>
@@ -87,7 +101,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 10. 🟠 Zero-Day — US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers
+## 11. 🟠 Zero-Day — US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/>
@@ -96,7 +110,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 11. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 12. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -105,7 +119,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 12. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 13. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -114,7 +128,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 13. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 14. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -123,7 +137,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 14. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 15. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -132,7 +146,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 15. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 16. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -141,7 +155,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 16. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 17. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -150,7 +164,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 17. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 18. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -159,28 +173,35 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 18. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 19. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 19. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 20. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 20. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 21. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
+**Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
+
+---
+
+## 22. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 21. 🟠 Zero-Day — Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown
+## 23. 🟠 Zero-Day — Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/>
@@ -189,7 +210,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 22. 🟡 High Severity — Woodpecker: Privilege escalation via unrestricted serviceAccountName in the Kubernetes backend
+## 24. 🟡 High Severity — Woodpecker: Privilege escalation via unrestricted serviceAccountName in the Kubernetes backend
 
 **CVE:** `CVE-2026-61549` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-qf34-295c-26v8>
@@ -204,7 +225,7 @@ The pipeline option `backend_options.kubernetes.serviceAccountName` was passed d
 
 ---
 
-## 23. 🟡 High Severity — nebula-mesh: CA private key not zeroized on web mobile-bundle error paths
+## 25. 🟡 High Severity — nebula-mesh: CA private key not zeroized on web mobile-bundle error paths
 
 **CVE:** `CVE-2026-53604` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-2p2f-px33-4vv5>
@@ -215,7 +236,7 @@ The web handler `renderMobileBundle` (`internal/web/handlers.go:1325`) passes th
 
 ---
 
-## 24. 🟡 High Severity — Anyquery: Server-Side Request Forgery (SSRF) via Unrestricted SQLite Virtual Table Modules in Server Mode
+## 26. 🟡 High Severity — Anyquery: Server-Side Request Forgery (SSRF) via Unrestricted SQLite Virtual Table Modules in Server Mode
 
 **CVE:** `CVE-2026-54628` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-hwrq-8wxh-q4xv>
@@ -225,7 +246,7 @@ Anyquery&#x27;s `server` mode does not restrict outbound HTTP requests initiated
 
 ---
 
-## 25. 🟡 High Severity — Trivy: Helm chart tar bomb causes OOM via unbounded io.ReadAll in parser
+## 27. 🟡 High Severity — Trivy: Helm chart tar bomb causes OOM via unbounded io.ReadAll in parser
 
 **CVE:** `CVE-2026-54448` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-q3fv-x8vg-qqm4>
@@ -240,7 +261,7 @@ Exploitation requires the att…
 
 ---
 
-## 26. 🟡 High Severity — EasyAdmin: Stored Cross-Site Scripting (XSS) via uploaded files served inline in FileField and ImageField
+## 28. 🟡 High Severity — EasyAdmin: Stored Cross-Site Scripting (XSS) via uploaded files served inline in FileField and ImageField
 
 **CVE:** `CVE-2026-54087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-8559-gwj3-q37r>
@@ -249,7 +270,7 @@ Exploitation requires the att…
 
 ---
 
-## 27. 🟡 High Severity — yutu: Arbitrary File Write via MCP `caption-download` Tool
+## 29. 🟡 High Severity — yutu: Arbitrary File Write via MCP `caption-download` Tool
 
 **CVE:** `CVE-2026-50158` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-2c7f-fxww-6w6c>
@@ -262,7 +283,7 @@ The `caption-download` MCP tool in yutu passes the caller-supplied `file` parame
 
 ---
 
-## 28. 🟡 High Severity — n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments
+## 30. 🟡 High Severity — n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments
 
 **CVE:** `CVE-2026-54052` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-j6r7-6fhx-77wx>
@@ -275,7 +296,7 @@ A stored snapshot…
 
 ---
 
-## 29. 🟡 High Severity — Woodpecker gRPC agent_id metadata can be spoofed- cross-tenant agent impersonation
+## 31. 🟡 High Severity — Woodpecker gRPC agent_id metadata can be spoofed- cross-tenant agent impersonation
 
 **CVE:** `CVE-2026-50141` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-g7mm-9vx7-jm7h>
@@ -288,7 +309,7 @@ Direct patch: https://github.com/woodpecker-c…
 
 ---
 
-## 30. 🟡 High Severity — Anyquery: Arbitrary File Write (AFW) which could lead to Remote Code Execution (RCE) via Unrestricted ATTACH DATABASE in Server Mode
+## 32. 🟡 High Severity — Anyquery: Arbitrary File Write (AFW) which could lead to Remote Code Execution (RCE) via Unrestricted ATTACH DATABASE in Server Mode
 
 **CVE:** `CVE-2026-50006` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-xrcf-6jh3-ggvx>
@@ -298,7 +319,7 @@ Anyquery&#x27;s `server` mode does not disable or restrict native SQLite disk ma
 
 ---
 
-## 31. 🟡 High Severity — SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data
+## 33. 🟡 High Severity — SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data
 
 **CVE:** `CVE-2026-44747` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html>
@@ -309,7 +330,7 @@ The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bou
 
 ---
 
-## 32. 🟡 High Severity — Fedify has an incomplete SSRF mitigation after GHSA-p9cg-vqcc-grcx: validatePublicUrl allows special-use IPv4 ranges
+## 34. 🟡 High Severity — Fedify has an incomplete SSRF mitigation after GHSA-p9cg-vqcc-grcx: validatePublicUrl allows special-use IPv4 ranges
 
 **CVE:** `CVE-2026-50131` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-xw9q-2mv6-9fr8>
@@ -322,7 +343,7 @@ The `validatePublicUrl()` protection relies on `isValidPublicIPv4Address()` to r
 
 ---
 
-## 33. 🟡 High Severity — MKP: Unbounded Pod Log Read via Attacker-Controlled `limitBytes`/`tailLines` Causes Memory Exhaustion
+## 35. 🟡 High Severity — MKP: Unbounded Pod Log Read via Attacker-Controlled `limitBytes`/`tailLines` Causes Memory Exhaustion
 
 **CVE:** `CVE-2026-50125` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-qw5r-ppcg-f8rj>
@@ -335,7 +356,7 @@ The MKP (Model Context Protocol for Kubernetes) server exposes a `get_resource` 
 
 ---
 
-## 34. 🟡 High Severity — Wasmtime: Memory leak in C API with `externref` and `anyref` types
+## 36. 🟡 High Severity — Wasmtime: Memory leak in C API with `externref` and `anyref` types
 
 **CVE:** `CVE-2025-61670` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-vvp9-h8p2-xwfc>
@@ -346,7 +367,7 @@ Wasmtime 37.0.0 and 37.0.1 have memory leaks in the C/C++ API when using binding
 
 ---
 
-## 35. 🟡 High Severity — FacturaScripts: Unauthenticated Path Traversal in Static File Controllers Reads Private MyFiles Documents
+## 37. 🟡 High Severity — FacturaScripts: Unauthenticated Path Traversal in Static File Controllers Reads Private MyFiles Documents
 
 **CVE:** `CVE-2026-45693` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-cv65-7cg8-r623>
@@ -357,7 +378,7 @@ The static file controllers in FacturaScripts decide whether a request is author
 
 ---
 
-## 36. 🟡 High Severity — FacturaScripts: Authenticated SQL injection in the FacturaScripts REST API filter parameter via parenthesis bypass in `Where::sqlColumn`
+## 38. 🟡 High Severity — FacturaScripts: Authenticated SQL injection in the FacturaScripts REST API filter parameter via parenthesis bypass in `Where::sqlColumn`
 
 **CVE:** `CVE-2026-45262` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-5qmh-x653-g8qj>
@@ -368,7 +389,7 @@ The static file controllers in FacturaScripts decide whether a request is author
 
 ---
 
-## 37. 🟡 High Severity — OpenCost ServiceKey Endpoint Unauthorized Credential Overwrite/Injection
+## 39. 🟡 High Severity — OpenCost ServiceKey Endpoint Unauthorized Credential Overwrite/Injection
 
 **CVE:** `CVE-2026-44300` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
 **Reference:** <https://github.com/advisories/GHSA-wmj8-9953-vff5>
@@ -386,7 +407,7 @@ OpenCost contains an unauthenticated  file write vulnerability in the `/serviceK
 
 ---
 
-## 38. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 40. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
