@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">23</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">40</span><span class="stat-label">Total</span></div>
-              <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
+              <div class="stat"><span class="stat-value zeroday">24</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value enriched">10</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-15 07:47 UTC</div>
+            <div class="generated">Updated 2026-07-15 13:09 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -130,7 +130,7 @@
     <span>Wed, 08 Ju</span>
   </div>
   <p class='summary'>Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…</p>
-
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The vulnerability involves the exploitation of poorly configured and vulnerable networking devices, utilizing outdated protocols (specifically SNMPv1 and SNMPv2), default credentials, and features such as Cisco Smart Install.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Networking devices (e.g., Cisco routers with Smart Install enabled).</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">0.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof-of-concept (PoC) was explicitly mentioned, but active exploitation by state-sponsored actors is reported.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Organizations are urged to upgrade software and firmware images to patch vulnerabilities (as recommended in CISA AA26-194A).</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed active exploitation in the wild by Russian government-sponsored actors as reported by CISA, NSA, and the FBI in advisory AA26-194A.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Russian Federal Security Service (FSB) Center 16</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Key hardening measures include: implementing SNMPv3, disabling SNMPv1 and SNMPv2, using strong and unique passwords, disabling Cisco Smart Install, blocking TFTP, SMI, and SNMP protocols at the firewall, and upgrading software and firmware images.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -146,7 +146,23 @@
     <span>Thu, 12 Ju</span>
   </div>
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2024-57727 is a path traversal vulnerability allowing unauthenticated remote attackers to download arbitrary files from the SimpleHelp host via crafted HTTP requests. These files may include server configuration files (e.g., serverconfig.xml) containing hashed administrator passwords and secrets such as LDAP credentials, OIDC client tokens, and TOTP seeds.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">SimpleHelp remote support software v5.5.7 and before</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.5</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">A public proof-of-concept is available on GitHub at http://github.com/imjdl/CVE-2024-57727</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Official patches are available in SimpleHelp versions 5.5.8 through 5.5.10 (and up to 5.5.15), with specific patches also released for v5.4.10 and v5.3.9. Downloads are available at https://simple-help.com/downloads.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed active exploitation has been reported by CISA (advisory aa25-163a) and the CISA KEV catalog, with ransomware groups DragonForce and Medusa observed exploiting the vulnerability since January 2025.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Ransomware groups including DragonForce and Medusa</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Upgrade to SimpleHelp v5.5.8 or later; apply patches for v5.4.10 or v5.3.9. Additional hardening includes changing Administrator and Technician passwords, restricting technician/admin login IP addresses, disabling the SimpleHelpAdmin user in favor of Administrator Technician accounts, disabling local technician logins in favor of LDAP/AD, restricting API request IPs, and implementing firewall restrictions on the server.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://guides.simple-help.com/kb---security-vulnerabilities-01-2025</span></div></div>
+</article>
 
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-patch-actively-exploited-sharepoint-flaws/" target="_blank" rel="noopener">CISA warns admins to patch actively exploited SharePoint flaws</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-15</span>
+  </div>
+  <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned Tuesday that attackers are actively exploiting three vulnerabilities to hack Internet-exposed on-premises SharePoint Server instances. [...]</p>
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The vulnerabilities include CVE-2026-45659, a remote code execution (RCE) flaw caused by deserialization of untrusted data; CVE-2026-56164, an elevation of privilege (EoP) flaw caused by missing authentication for a critical function; and CVE-2026-32201, a spoofing flaw caused by improper input validation.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Microsoft SharePoint Server (Subscription Edition, 2019, 2016)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">8.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Confirmed active exploitation in the wild, but no specific public PoC URL is listed in the provided documentation.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Microsoft has released comprehensive security updates for all supported versions of SharePoint Server (Subscription Edition, 2019, and 2016).</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed active exploitation has been reported by CISA, who added CVE-2026-45659 to its Known Exploited Vulnerabilities (KEV) catalog.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Storm2603-Warlock</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">CISA urges the hardening of SharePoint instances and the immediate application of official Microsoft security updates.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
 </article>
 
         <article class="card card-zeroday">
@@ -167,7 +183,7 @@ The vulnerabilities are listed below -
 
 
   CVE-2026-15409 (CVSS score: 10.0) - A Server-side request forgery (SSRF) vulnerability that a remote unauthenticated attacker could exploit to</p>
-
+          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2026-15409 is a server-side request forgery (SSRF) in the SMA1000 Appliance Work Place interface that allows a remote, unauthenticated attacker to force the appliance to make requests to unintended locations.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">SonicWall Secure Mobile Access (SMA) 1000 Series (including SMA6210, SMA7210, SMA8200v and Central Management Server) — impacted firmware versions reported: 12.4.3-03245, 12.4.3-03387, 12.4.3-03434, 12.5.0-02283, 12.5.0-02624, 12.5.0-02800</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">10.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof-of-concept (PoC) or exploit code is reported in the SonicWall advisory or CISA entry; the sources confirm active exploitation in the wild but do not publish a public PoC.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Yes — SonicWall published hotfix releases. Vendor guidance: upgrade to the hotfix via MySonicWall (fixed versions reported: 12.4.3-03453 and 12.5.0-02835). See SonicWall advisory / MySonicWall for downloads.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Yes — SonicWall PSIRT confirmed multiple incidents and active exploitation; CISA added the CVE to its Known Exploited Vulnerabilities (KEV) catalog.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the vendor hotfix immediately (via MySonicWall) and perform a thorough forensic analysis to look for indicators of compromise (IoCs) as recommended by SonicWall. (Vendor also lists fixed firmware versions.)</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ</span></div></div>
         </article>
 
 <article class="card card-zeroday">
@@ -183,7 +199,7 @@ The vulnerabilities are listed below -
     <span>2026-07-14</span>
   </div>
   <p class='summary'>Microsoft is publishing 622 vulnerabilities on July 2026 Patch Tuesday , including a record-breaking 416 Windows vulnerabilities. Microsoft is aware of exploitation in the wild for two of the vulnerabilities published today, both of which are listed on CISA KEV, as well as public disclosure for one other. As usual, browser vulns are not included in the Patch Tuesday count above. Rapid7 noted last …</p>
-
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2026-55040 is a critical JWT token authentication bypass vulnerability in Microsoft SharePoint that allows an unauthorized attacker to bypass security features and perform operations against the target SharePoint site as the user they identify as.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Microsoft SharePoint Server Subscription Edition, Microsoft SharePoint Server 2019, Microsoft SharePoint Server 2016</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.1</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">A public technical analysis of the authentication bypass is available via Rapid7 at https://www.rapid7.com/blog/post/ve-cve-2026-55040-microsoft-sharepoint-jwt-token-authentication-bypass-fixed/</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Patches are available for SharePoint Server Subscription Edition, 2019, and 2016.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">No confirmed active exploitation has been reported. While Microsoft lists the exploitation status as &quot;Exploitation More Likely,&quot; it was not included in the July 2026 Patch Tuesday list of zero-day vulnerabilities with &quot;Exploitation Detected&quot; status.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-55040</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -199,7 +215,7 @@ The vulnerabilities are listed below -
     <span>2026-07-14</span>
   </div>
   <p class='summary'>SonicWall warns that threat actors have been exploiting two SMA1000 vulnerabilities, tracked as CVE-2026-15409 and CVE-2026-15410, in zero-day attacks and urges customers to install the newly released security updates. [...]</p>
-
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2026-15409 is a server-side request forgery (SSRF) in the SMA1000 Appliance Work Place interface that allows a remote, unauthenticated attacker to force the appliance to make requests to unintended locations.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">SonicWall Secure Mobile Access (SMA) 1000 Series (including SMA6210, SMA7210, SMA8200v and Central Management Server) — impacted firmware versions reported: 12.4.3-03245, 12.4.3-03387, 12.4.3-03434, 12.5.0-02283, 12.5.0-02624, 12.5.0-02800</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">10.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS vector unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof-of-concept (PoC) or exploit code is reported in the SonicWall advisory or CISA entry; the sources confirm active exploitation in the wild but do not publish a public PoC.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Yes — SonicWall published hotfix releases. Vendor guidance: upgrade to the hotfix via MySonicWall (fixed versions reported: 12.4.3-03453 and 12.5.0-02835). See SonicWall advisory / MySonicWall for downloads.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Yes — SonicWall PSIRT confirmed multiple incidents and active exploitation; CISA added the CVE to its Known Exploited Vulnerabilities (KEV) catalog.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the vendor hotfix immediately (via MySonicWall) and perform a thorough forensic analysis to look for indicators of compromise (IoCs) as recommended by SonicWall. (Vendor also lists fixed firmware versions.)</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ</span></div></div>
 </article>
 
         <article class="card card-zeroday">
@@ -217,7 +233,7 @@ The vulnerabilities are listed below -
           <p class='summary'>Microsoft shipped its largest Patch Tuesday on record today, and two of the fixes close holes that attackers are already exploiting. The release covers 622 of Microsoft&#x27;s own CVEs by its Security Update Guide count, more than triple June&#x27;s previous high of around 200.
 
 Those two live bugs are the ones to grab first. Microsoft credits incident responders for both. Both are</p>
-
+          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Two primary zero-days are highlighted: CVE-2026-56164 is a missing authentication for critical function vulnerability in SharePoint Server allowing remote unauthenticated privilege escalation; CVE-2026-56155 is an AD FS vulnerability allowing local privilege escalation through weak access controls.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Microsoft SharePoint Server, Active Directory Federation Services (AD FS)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVE-2026-56164: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H; CVE-2026-56155: CVSS:3.1/AV:L/AC:L (partial)</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Confirmed active exploitation in the wild; no public PoC URL is provided, though CVE-2026-56164 is reported as being detailed publicly.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Official patches were released as part of the July 2026 Patch Tuesday update.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed by Microsoft and reported by The Hacker News as being actively exploited in the wild.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known; however, discovery is credited to Mandiant, Google&#x27;s FLARE team, and Microsoft&#x27;s DART unit.</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">For CVE-2026-56164 (SharePoint), enabling AMSI in Full Mode on the server is recommended to blunt the attack.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://msrc.microsoft.com/update-guide/releaseNote/2026-Jul</span></div></div>
         </article>
 
 <article class="card card-zeroday">
@@ -233,7 +249,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
     <span>2026-07-14</span>
   </div>
   <p class='summary'>Two flaws in Active Directory and SharePoint Server have been exploited as zero-days, and a BitLocker bug was publicly disclosed. The post Microsoft Patches Record 622 Vulnerabilities, Including Two Exploited Zero-Days appeared first on SecurityWeek .</p>
-
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The vulnerabilities include: CVE-2026-56155 (AD FS): Insufficient granularity of access control allowing privilege escalation. CVE-2026-56164 (SharePoint): Missing authentication for a critical function allowing unauthorized network-based privilege escalation. CVE-2026-50661 (BitLocker): Security feature bypass allowing access to encrypted data.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Active Directory Federation Services (AD FS), Microsoft Office SharePoint Server, Windows BitLocker</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVE-2026-56155: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H; others unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Exploits are known to exist for CVE-2026-56155 and CVE-2026-56164, which were exploited as zero-days.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Yes, official patches were released by Microsoft as part of the July 2026 Patch Tuesday.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed active exploitation in the wild for CVE-2026-56155 and CVE-2026-56164, reported as zero-days by SecurityWeek and the Government of Canada (Cyber.gc.ca).</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Mitigation steps unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56155, https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56164, https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50661</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -249,7 +265,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
     <span>2026-07-14</span>
   </div>
   <p class='summary'>56 Critical 510 Important 3 Moderate 0 Low Microsoft addresses 569 CVEs in the largest Patch Tuesday release yet. This month’s release includes three zero-days, two of which were exploited in the wild. Microsoft patched 569 CVEs in its July 2026 Patch Tuesday release, with 56 rated critical, 510 rated as important, and 3 rated as moderate. This marks the largest Patch Tuesday release ever, crushin…</p>
-
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Insufficient granularity of access control in Active Directory Federation Services (AD FS) allows an authorized attacker to elevate their privileges locally to administrator.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Microsoft Active Directory Federation Services (AD FS)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">No public proof-of-concept (PoC) URL known, but the vulnerability has been exploited in the wild.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">An official patch was released by Microsoft as part of the July 2026 Patch Tuesday.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed active exploitation in the wild reported by CISA, which added the vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog on July 14, 2026.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the official security updates released in the Microsoft July 2026 Patch Tuesday.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Vendor advisory URL unavailable.</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -265,39 +281,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
     <span>2026-07-14</span>
   </div>
   <p class='summary'>Today is Microsoft&#x27;s July 2026 Patch Tuesday, and with it comes security updates for a record-breaking 570 flaws, including two zero-day vulnerabilities exploited in attacks and one publicly disclosed. [...]</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/" target="_blank" rel="noopener">Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-14</span>
-  </div>
-  <p class='summary'>A ClaudeBleed-linked vulnerability reportedly persists across eight patches, exposing potentially sensitive data to other extensions. The post Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar appeared first on SecurityWeek .</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/" target="_blank" rel="noopener">US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-14</span>
-  </div>
-  <p class='summary'>Multiple state-sponsored APTs are compromising poorly secured devices across critical infrastructure sector networks. The post US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers appeared first on SecurityWeek .</p>
-
+  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Insufficient granularity of access control in Active Directory Federation Services (AD FS) allows an authorized attacker to elevate privileges locally.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Active Directory Federation Services (AD FS)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Functional exploit code is available, according to Microsoft&#x27;s MSRC advisory.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Official fix issued by Microsoft on July 14, 2026.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">Confirmed active exploitation in the wild; the vulnerability has been added to CISA&#x27;s Known Exploited Vulnerabilities (KEV) catalog.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Apply the official security update released by Microsoft on July 14, 2026.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-56155</span></div></div>
 </article>
 
 <article class="card card-zeroday">
@@ -473,6 +457,42 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
     <span>Jul 07, 20</span>
   </div>
 
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html" target="_blank" rel="noopener">Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-15</span>
+          </div>
+          <p class='summary'>Security researcher Chaotic Eclipse (aka Nightmare-Eclipse) has released a new proof-of-concept (PoC) exploit called LegacyHive.
+
+It has been described as a Windows User Profile Service arbitrary hive load elevation of privileges vulnerability. The Windows User Profile Service, also referred to as ProfSvc, is a core system component that manages user accounts and environments.
+
+&quot;The PoC requires</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/progress-confirms-zero-day-vulnerability-behind-sharefile-disruption/" target="_blank" rel="noopener">Progress Confirms Zero-Day Vulnerability Behind ShareFile Disruption</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-15</span>
+  </div>
+  <p class='summary'>The company has rolled out a fix and is restoring access for Storage Zones Controller customers who apply it. The post Progress Confirms Zero-Day Vulnerability Behind ShareFile Disruption appeared first on SecurityWeek .</p>
 
 </article>
 
