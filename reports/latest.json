@@ -1,48 +1,10 @@
 {
-  "generated": "2026-07-15T18:52:11.745865+00:00",
-  "total": 44,
-  "kev": 2,
-  "zero_day": 23,
+  "generated": "2026-07-16T01:21:40.329840+00:00",
+  "total": 39,
+  "kev": 0,
+  "zero_day": 21,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-46817",
-      "title": "CVE-2026-46817 \u2014 Oracle E-Business Suite Improper Privilege Management Vulnerability",
-      "summary": "Vendor: Oracle | Product: E-Business Suite. Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle Payments. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-18)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-46817",
-      "published": "2026-07-15",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-46817"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2023-4346",
-      "title": "CVE-2023-4346 \u2014 KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability",
-      "summary": "Vendor: KNX Association | Product: KNX Protocol Connection Authorization Option 1. KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security options enabled and set a BCU key to lock the device.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-29)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-4346",
-      "published": "2026-07-15",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2023-4346"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -119,38 +81,6 @@
       "tags": [
         "news",
         "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/em-patch-tuesday-july-2026",
-      "title": "Patch Tuesday - July 2026",
-      "summary": "Microsoft is publishing 622 vulnerabilities on July 2026 Patch Tuesday , including a record-breaking 416 Windows vulnerabilities. Microsoft is aware of exploitation in the wild for two of the vulnerabilities published today, both of which are listed on CISA KEV, as well as public disclosure for one other. As usual, browser vulns are not included in the Patch Tuesday count above. Rapid7 noted last month that Microsoft no longer enumerates Chromium CVEs in the Security Update Guide. However, Microsoft has now taken the pursuit of minimalism much further, since today\u2019s Security Update Guide no longer lists out even Microsoft vulnerabilities! Instead, we now receive a summary table of vulnerability counts by product family, as well as a new slimline \u201cNotable CVEs\u201d section. All of this only serves to illustrate the recent industry-wide trend of exploding vulnerability report counts, with an associated uptick in the publication of remediations as a trailing indicator. SharePoint: critical auth bypass by Rapid7 Today sees the publication of CVE-2026-55040 , a critical authentication bypass in Microsoft SharePoint. Discovered by Rapid7 Senior Principal Security Researcher Stephen Fewer , and published today in coordination with Microsoft, this vulnerability is the first in a pair of exploits which, when chained together, can lead to unauthenticated remote code execution against a vulnerable SharePoint server. Patches are available for SharePoint Server Subscription Edition, 2019, and 2016. As the full Rapid7 blog post sets out, the second vulnerability in the full RCE chain remains embargoed for now, with Microsoft expected to publish patches for that second vulnerability as part of Patch Tuesday August 2026. Microsoft noted: \u201cWe would like to thank Rapid7 for responsibly reporting this issue through coordinated vulnerability disclosure.\u201d SharePoint: zero-day EoP It\u2019s a rare Patch Tuesday which doesn\u2019t include multiple SharePoint fixes, and today is no exception. Microsoft ",
-      "link": "https://www.rapid7.com/blog/post/em-patch-tuesday-july-2026",
-      "published": "2026-07-14T22:00:26+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-55040"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html",
-      "title": "Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack",
-      "summary": "Microsoft shipped its largest Patch Tuesday on record today, and two of the fixes close holes that attackers are already exploiting. The release covers 622 of Microsoft's own CVEs by its\u00a0Security Update Guide\u00a0count, more than triple\u00a0June's previous high of around 200.\n\nThose two live bugs are the ones to grab first. Microsoft credits incident responders for both. Both are",
-      "link": "https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html",
-      "published": "2026-07-14T20:25:47+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -407,6 +337,132 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-58196",
+      "title": "ToolHive: SSRF in remote MCP server authentication discovery (host-side, bypasses container isolation)",
+      "summary": "# Security Advisory: SSRF in remote MCP server authentication discovery\n\n**Severity:** High. **CWE:** CWE-918. **Affected:** ToolHive through the latest release v0.29.3 and current `main` (HEAD b672d82f, 2026-06-12; re-verified 2026-06-14). `FetchResourceMetadata` and the discovery clients remain unguarded; no commits to `pkg/auth/discovery` or `pkg/auth/remote` address this. Originally identified at commit 05f11b53; all line references below are against HEAD b672d82f.\n\n## Summary\nToolHive's remote MCP server authentication discovery issues outbound HTTP requests to URLs the remote MCP server controls, with no private-IP or loopback guard and no restriction on redirects. ToolHive's core security model treats every MCP server as untrusted: the README states it \"runs every MCP server in an isolated container\" with \"no local credentials,\" and it ships an egress proxy for network isolation. This discovery code runs host-side, in the ToolHive process, before and outside that per-server container sandbox. A malicious or compromised remote MCP server, added by a user through ToolHive's normal remote-server workflow, can therefore drive the ToolHive host itself to fetch arbitrary internal URLs, including cloud instance metadata, which bypasses the isolation ToolHive exists to provide. The user never selects a malicious target; they connect to a server they intend to use, and the attack is carried entirely in that server's discovery response.\n\nToolHive already establishes this boundary in code. `ValidateRemoteURL` (cmd/thv-operator/pkg/validation/url_validation.go:61) rejects internal IPs and known internal hostnames for the configured remote URL, and `IsPrivateIP` (pkg/networking/utilities.go:105) blocks RFC1918, link-local, `169.254.0.0/16`, and loopback for outbound requests. The discovery clients below never call either guard, and the attacker-supplied resource_metadata URL and its redirect target are validated by neither. This is a deviation from the project's intended ",
+      "link": "https://github.com/advisories/GHSA-pr64-jmmf-jp54",
+      "published": "2026-07-15T23:41:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58196"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54504",
+      "title": "@andrea9293/mcp-documentation-server: Web UI API binds to all interfaces without authentication by default",
+      "summary": "### Summary\n\n`@andrea9293/mcp-documentation-server` v1.13.0 documents that a Web UI starts automatically on port `3080`. However, the Web UI/API appears to bind to all network interfaces by default (`*:3080` / `0.0.0.0:3080`) instead of localhost-only, and its document-management API endpoints do not require authentication.\n\nAs a result, any network-reachable client on the same LAN, VM network, or container bridge can access the document-admin API without credentials. In my reproduction, I was able to enumerate documents, add a document, read its full content, search across the corpus, and delete the document through the host's LAN IP.\n\nThe issue is not that a Web UI exists. The issue is that a local document-management Web UI/API is exposed on all interfaces by default without authentication.\n\n### Details\n\nThe README documents that the Web UI starts automatically and tells users to open:\n\n```text\nhttp://localhost:3080\n```\n\nIt also documents `START_WEB_UI=true` and `WEB_PORT=3080` as the defaults.\n\nThe vulnerable behavior appears to come from starting the web server without binding it to localhost explicitly.\n\nIn `src/server.ts`, the Web UI is started unless `START_WEB_UI=false`:\n\n```ts\nif (process.env.START_WEB_UI !== 'false') {\n    initializeDocumentManager().then(manager => {\n        return startWebServer(undefined, manager);\n    }).then(() => {\n        console.error('[Server] Web UI started (port=' + (process.env.WEB_PORT || '3080') + ')');\n    })...\n}\n```\n\nIn `src/web-server.ts`, the Express app appears to listen with only the port:\n\n```ts\nconst server = app.listen(PORT, () => {\n    console.log(`\\n  \ud83c\udf10 MCP Documentation Server - Web UI`);\n    console.log(`  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500`);\n    console.log(`  Local:   http://localhost:${PORT}`);\n    console.log(`  Network: http://0.0.0.0:${PORT}\\n`);\n});\n```\n\nWith Express/Node, `app.listen(PORT)` without a host argument binds to all interfaces. In my reproduction, this resulted in:\n\n```text\nLISTEN 0 511 *:",
+      "link": "https://github.com/advisories/GHSA-6f5r-5672-72j7",
+      "published": "2026-07-15T23:26:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54504"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50285",
+      "title": "Pomerium Pre-Auth Memory Exhaustion via Unbounded zstd Decompression in HPKE Callback",
+      "summary": "## Summary\n\nThe HPKE V2 URL decode path in `pkg/hpke/url.go` decompresses attacker-controlled zstd data without any size limit. On Pomerium deployments using the stateless authentication flow (Pomerium Zero / hosted authenticate), the proxy's `/.pomerium/callback` endpoint is reachable without credentials and processes attacker-crafted HPKE-encrypted payloads before the sender's identity is validated. Because Pomerium's HPKE receiver public key is publicly served, an attacker can encrypt a decompression bomb, deliver it to the callback endpoint, and cause unbounded memory allocation \u2014 crashing or degrading the proxy process.\n\n## Severity\n\n**High** (CVSS 3.1: 7.5)\n\n`CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H`\n\n- **Attack Vector:** Network \u2014 the `/.pomerium/callback` route on the proxy service is externally reachable.\n- **Attack Complexity:** Low \u2014 the receiver public key is publicly available at `/.well-known/pomerium/hpke-public-key`; no special conditions apply.\n- **Privileges Required:** None \u2014 the callback endpoint is intentionally pre-authentication (it is the OAuth landing page).\n- **User Interaction:** None\n- **Scope:** Unchanged \u2014 the DoS is confined to the Pomerium proxy process itself.\n- **Confidentiality Impact:** None\n- **Integrity Impact:** None\n- **Availability Impact:** High \u2014 repeated attacks can exhaust process memory and crash the proxy.\n\n## Affected Component\n\n- `pkg/hpke/url.go` \u2014 `decodeQueryStringV2` (line 171)\n- `internal/authenticateflow/stateless.go` \u2014 `Callback` (line 385\u2013393)\n- `proxy/handlers.go` \u2014 `Callback` (line 105\u2013107), route registered at line 53\u201354\n\n## CWE\n\n- **CWE-400**: Uncontrolled Resource Consumption\n- **CWE-1284**: Improper Validation of Specified Quantity in Input\n\n## Description\n\n### Unbounded zstd Decompression in `decodeQueryStringV2`\n\n`pkg/hpke/url.go` defines two decoders. The V1 path is plaintext. The V2 path zstd-compresses the query string before encryption. Decoding reverses this with no output size cap (`url.go:16",
+      "link": "https://github.com/advisories/GHSA-ggw3-5987-rx77",
+      "published": "2026-07-15T23:08:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50285"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54497",
+      "title": "ViewComponent: Reused Component Instances Retain Stale Render Context",
+      "summary": "# Reused Component Instances Retain Stale Render Context\n\n## Summary\n\n`ViewComponent::Base` instances retain multiple render-scoped objects across calls to `render_in`. If the same component, collection, or spacer component instance is reused across requests, users, tenants, or threads, later renders can use stale `helpers`, `controller`, `request`, `view_flow`, format/variant details, and slot child context from an earlier render.\n\nThis can cause authorization-aware components to render privileged UI for a lower-privileged user, generate links using a stale Host header, leak slot/helper state, and mix request context under concurrent rendering.\n\n## Severity\n\nThe PoC demonstrates cross-user authorization impact in a realistic downstream application pattern.\nIf the receiving program accepts downstream cross-user authorization impact as a scope-changing impact for a framework vulnerability, an alternative High score can be assigned:\n\nAlternative CVSS: 8.2\nAlternative vector: `CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N`\n\n## Affected Code\n\nValidated against:\n\n- Repository commit: `eea79445`\n- Ruby: `3.4.9`\n\nRelevant locations:\n\n- `lib/view_component/base.rb`\n  - `render_in`\n  - `controller`\n  - `helpers`\n  - `__vc_request`\n- `lib/view_component/slot.rb`\n  - `Slot#to_s`\n- `lib/view_component/slotable.rb`\n  - slot storage in `@__vc_set_slots`\n- `lib/view_component/collection.rb`\n  - child component memoization and spacer rendering\n\nKey retained state:\n\n```ruby\n@view_context = view_context\nself.__vc_original_view_context ||= view_context\n@lookup_context ||= view_context.lookup_context\n@view_flow ||= view_context.view_flow\n@__vc_requested_details ||= @lookup_context.vc_requested_details\n```\n\n```ruby\n@__vc_controller ||= view_context.controller\n@__vc_helpers ||= __vc_original_view_context || controller.view_context\n@__vc_request ||= controller.request if controller.respond_to?(:request)\n```\n\nSlot children also inherit the parent original view context:\n\n```ruby\n@__vc_compon",
+      "link": "https://github.com/advisories/GHSA-9h85-g7w3-rh49",
+      "published": "2026-07-15T22:51:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54497"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54495",
+      "title": "open-feature-operator: Cross-namespace FeatureFlagSource and InProcessConfiguration resolution exposes spec contents on multi-tenant clusters",
+      "summary": "## Summary\n\nA namespaced `FeatureFlagSource` or `InProcessConfiguration` resource can be referenced cross-namespace via the `openfeature.dev/featureflagsource` annotation using the documented `{NAMESPACE}/{NAME}` syntax. The operator resolves the referenced resource cluster-wide and materializes its contents (env vars, flagd sidecar arguments including `httpSyncBearerToken`, sync URIs, supporting ConfigMaps) into the referencing workload.\n\nOn multi-tenant clusters that treat namespaces as trust boundaries, a tenant who can deploy a controller-owned workload in their own namespace can cause the operator to read another tenant's `FeatureFlagSource` / `InProcessConfiguration` spec contents.\n\n## Impact\n\n- **Single-tenant clusters**: not impacted.\n- **Multi-tenant clusters using namespaces as trust boundaries**: tenant-to-tenant disclosure of any data placed inline in `FeatureFlagSource` / `InProcessConfiguration` spec, including `spec.envVars` literal values, `spec.httpSyncBearerToken`, and sync URIs.\n\n## Behavior is documented\n\nThe cross-namespace `{NAMESPACE}/{NAME}` annotation syntax is intentional and documented in [`docs/annotations.md`](https://github.com/open-feature/open-feature-operator/blob/main/docs/annotations.md) and [`docs/feature_flag_source.md`](https://github.com/open-feature/open-feature-operator/blob/main/docs/feature_flag_source.md). The operator's cluster-wide RBAC scope is intentional. Namespace-as-trust-boundary is not part of the operator's current stated security model.\n\nThis advisory makes the tenancy assumption explicit and tracks the architectural change that will eliminate the implicit cross-namespace pattern.\n\n## Corrections to the original report\n\nTwo technical points in the original report require correction:\n\n1. **`secretKeyRef` / `configMapKeyRef` cross-namespace disclosure is not possible via this path.** Kubelet resolves these as `LocalObjectReference` against the pod's own namespace; the operator does not bypass that. The actual disc",
+      "link": "https://github.com/advisories/GHSA-398h-7f66-3h4p",
+      "published": "2026-07-15T22:44:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54495"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54457",
+      "title": "TensorZero Gateway: Arbitrary file read and SSRF in internal object storage endpoint",
+      "summary": "### Impact\n\nThe `/internal/object_storage` endpoint accepts a caller-supplied JSON `storage_path` parameter that dynamically overrides the TensorZero `[object_storage]` configuration.\n\nBy abusing the `filesystem` storage type, a caller can read arbitrary files from the gateway filesystem, including files that may contain sensitive credentials. Similarly, by abusing the `s3_compatible` storage type, the caller can coerce the gateway into making outbound object storage requests to attacker-chosen internal/cloud-metadata endpoints.\n\nThis vulnerability only applies when the gateway can be accessed by untrusted callers. If a developer's TensorZero deployment has authentication enabled, only authenticated callers can exploit this vulnerability. If a developer's deployment has authentication disabled, any caller can exploit this vulnerability.\n\n### Remediation\n\nThe vulnerability has been patched in version `2026.6.0`. See PR #7527.\n\n### Workarounds\n\nIf developers are unable to upgrade a gateway that is exposed to untrusted callers, please block external access to the `/internal/object_storage` endpoint.",
+      "link": "https://github.com/advisories/GHSA-824w-x939-6cmc",
+      "published": "2026-07-15T21:59:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54457"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54450",
+      "title": "ToolHive: SSRF guard misses IPv6 NAT64 ranges (64:ff9b::/96, 64:ff9b:1::/48), allowing metadata/internal access behind a NAT64 gateway",
+      "summary": "## Summary\n\nToolHive's hand-rolled private/reserved-IP SSRF guard (`networking.IsPrivateIP` in `pkg/networking/utilities.go`) does not recognize the IPv6 **NAT64** address ranges \u2014 the well-known prefix `64:ff9b::/96` (RFC 6052) and the RFC 8215 local-use prefix `64:ff9b:1::/48`. As a result, an address such as `64:ff9b:1::a9fe:a9fe` \u2014 the NAT64 encoding of the link-local cloud metadata address `169.254.169.254` \u2014 is classified as a public, global-unicast address and the connection is allowed. On any ToolHive deployment that sits behind a NAT64/DNS64 gateway (the default networking stack in IPv6-only Kubernetes clusters and several IPv6-only cloud environments), an attacker who controls a URL that reaches this guard can have ToolHive attempt connections to internal/link-local addresses that the guard is meant to block, bypassing the SSRF protection. In practice the effect is a blind internal-reachability probe rather than metadata-credential theft (the only fully attacker-controlled path is HTTPS-only with TLS verification and does not reflect responses) \u2014 see Impact.\n\nThe most direct attacker-controlled entry point is the embedded OAuth authorization server's Client ID Metadata Document (CIMD) fetcher: an external OAuth client presents `client_id=https://<attacker-domain>/path`, and `CIMDStorageDecorator.GetClient` fetches that URL through the same guard. The same `IsPrivateIP` table is also shared by the `protectedDialerControl` HTTP clients (registry, OIDC discovery, token introspection) and the skills git-clone host check (`pkg/skills/gitresolver`), though those destinations are operator-/user-configured rather than attacker-controlled. (Note: the webhook client is *not* affected \u2014 it enforces only the HTTPS scheme via `ValidatingTransport` and performs no IP-based check.)\n\n## Details\n\n`pkg/networking/utilities.go` builds a `privateIPBlocks` table and `IsPrivateIP`:\n\n```go\nfunc init() {\n\tfor _, cidr := range []string{\n\t\t\"127.0.0.0/8\", \"10.0.0.0/8\", \"172.16.0.0/1",
+      "link": "https://github.com/advisories/GHSA-pph6-vfjv-vpjw",
+      "published": "2026-07-15T21:51:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54450"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-54494",
       "title": "Koel: Full-read SSRF via podcast enclosure URL: isPublicHost() filter_var guard does not reject NAT64 (64:ff9b::/96) or 6to4 (2002::/16) IPv6-transition wrappers of internal IPv4",
       "summary": "## Summary\n\nKoel's outbound-URL guard `App\\Helpers\\Network::isPublicHost()` classifies an IP as \"public\" using PHP's `filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)`. That flag set does **not** recognise IPv6 transition-address forms that embed a private/loopback/link-local IPv4: NAT64 well-known prefix `64:ff9b::/96` (RFC 6052) and 6to4 `2002::/16` (RFC 3056). An address such as `64:ff9b::7f00:1` (= `127.0.0.1`), `64:ff9b::a9fe:a9fe` (= `169.254.169.254`, the cloud metadata endpoint), or `2002:a00:1::` (= `10.0.0.1`) is reported as a public address, so the guard returns `true` and Koel proceeds to fetch the URL.\n\nThe guard is the only SSRF defense in front of `App\\Values\\Podcast\\EpisodePlayable::createForEpisode()`, which downloads a podcast episode with `Http::sink($file)->get($url)` and streams the response body back to the requesting user. Because an attacker fully controls the `<enclosure url>` of any RSS feed they host (and any authenticated user can subscribe to a feed), they can publish an enclosure whose hostname has an `AAAA` record that is a NAT64/6to4 wrapper of an internal IP. On hosts with NAT64 or 6to4/dual-stack routing (the standard configuration on IPv6-only AWS/GCP subnets and 6to4-relayed networks), the kernel routes the wrapper to the embedded IPv4, and Koel performs a full-read SSRF against the internal endpoint \u2014 returning the response body to the attacker.\n\nThis is a server-side request forgery with full response disclosure (CWE-918) against internal services and cloud instance metadata.\n\n## Vulnerable code\n\n`app/Helpers/Network.php` \u2014 `isPublicHost()` (the literal-IP branch and the per-resolved-record branch use the identical predicate):\n\n```php\npublic function isPublicHost(string $host): bool\n{\n    if (filter_var($host, FILTER_VALIDATE_IP)) {\n        return (\n            filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false\n        );\n    }\n\n    try {",
@@ -582,150 +638,6 @@
       "cve_ids": [
         "CVE-2026-15718",
         "CVE-2026-15719"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61549",
-      "title": "Woodpecker: Privilege escalation via unrestricted serviceAccountName in the Kubernetes backend",
-      "summary": "### Impact\n\nA privilege escalation vulnerability affects Woodpecker instances using the **Kubernetes backend**.\n\nThe pipeline option `backend_options.kubernetes.serviceAccountName` was passed directly to the pod spec without any admin gating.\n\n**Who is impacted:** any operator running the Kubernetes backend. Any user with **Push** permission on a connected repository can run pipeline pods under an arbitrary ServiceAccount in the pipeline namespace, gaining that account's RBAC permissions. If a privileged ServiceAccount is reachable in that namespace, this can lead to secret exfiltration (database credentials, API keys, TLS certs) and full cluster takeover.\n\n### Patches\n\nhttps://github.com/woodpecker-ci/woodpecker/pull/6792\n\n### Workarounds\n\nOperators who cannot upgrade immediately can mitigate by any of:\n\n- **Restrict Push access** on repositories connected to the Kubernetes-backed instance to\n  trusted users only.\n- **Harden the pipeline namespace**: ensure no privileged ServiceAccount exists or is bound in\n  the namespace where pipeline pods run; keep the `default` ServiceAccount minimally privileged.\n- **Disable ServiceAccount token automounting** for ServiceAccounts that should not be used by\n  pipelines.\n- **Enforce an admission policy** (e.g. OPA/Gatekeeper, Kyverno, or a ValidatingAdmissionPolicy)\n  that rejects pipeline pods setting an unexpected `serviceAccountName`.\n- **Use a dedicated, isolated namespace** per org/instance with no sensitive RBAC bindings.\n\n### Resources\n\n- Vulnerable option introduced in commit `609ba481b5e912f59aaae8ca7bc22b44523c5e37`\n- Affected versions: `v1.0.0` through `v3.15.0`\n- Source: `pipeline/backend/kubernetes/backend_options.go` (field `ServiceAccountName`),\n  `pipeline/backend/kubernetes/pod.go` (assigned to pod spec with no gating)",
-      "link": "https://github.com/advisories/GHSA-qf34-295c-26v8",
-      "published": "2026-07-14T20:29:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61549"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53604",
-      "title": "nebula-mesh: CA private key not zeroized on web mobile-bundle error paths",
-      "summary": "## Impact\n\nThe web handler `renderMobileBundle` (`internal/web/handlers.go:1325`) passes the real `*pki.CAResolver` directly into `mobilebundle.Build`. Inside `Build` (`internal/mobilebundle/builder.go:54`), `resolver.LoadByID` decrypts the CA's ed25519 private key into a `*pki.CAManager`, but `Build` never calls `CAManager.Wipe()` on any return path (success or any of the error paths at lines 56, 62, 68, 80, 86, 92, 98, 102, 109, 118, 150).\n\nAs a result, when a mobile-bundle request goes through the **web** UI and `Build` returns \u2014 especially on error (missing network, invalid prefix, DB error, signing failure) \u2014 the plaintext CA private key remains on the Go heap, unwiped, until garbage collection. An attacker able to read process memory (core dump, swap, memory-scraping) can recover the CA signing key, which would allow minting arbitrary host certificates for the mesh.\n\nThe **API** handler (`internal/api/mobile_bundle.go:74`) already does this correctly: it loads the `CAManager`, `defer caMgr.Wipe()`, and wraps it in `caManagerResolver`. Only the web path is affected.\n\nThis is the same key-zeroization class previously addressed in GHSA-8h84-fhqq-q58v.\n\n## Patches\n\nAdd `defer caMgr.Wipe()` inside `mobilebundle.Build` immediately after the `LoadByID` call so every caller (web and API) is protected on all return paths. Ensure `CAManager.Wipe()` is idempotent, since the API handler also wipes the same manager.\n\n## Workarounds\n\nNone at the configuration level; requires a code fix.\n\n## Resources\n\n- `internal/web/handlers.go:1325`\n- `internal/mobilebundle/builder.go:54`\n- `internal/api/mobile_bundle.go:74` (correct reference implementation)\n- Prior related advisory: GHSA-8h84-fhqq-q58v",
-      "link": "https://github.com/advisories/GHSA-2p2f-px33-4vv5",
-      "published": "2026-07-14T20:05:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53604"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54628",
-      "title": "Anyquery: Server-Side Request Forgery (SSRF) via Unrestricted SQLite Virtual Table Modules in Server Mode",
-      "summary": "## Summary\nAnyquery's `server` mode does not restrict outbound HTTP requests initiated by its built-in SQLite virtual table modules (e.g., `json_reader`, `log_reader`). Unauthenticated attackers connecting to the MySQL-compatible server port can create virtual tables pointing to internal network endpoints or Cloud Metadata IPs (e.g., `http://169.254.169.254/latest/meta-data/`). This allows attackers to perform Server-Side Request Forgery (SSRF), bypassing external firewalls to scan internal ports and exfiltrate cloud credentials.\n\n## Details\nWhen Anyquery is launched in **Server Mode** (`anyquery server`), it binds to a TCP port and accepts MySQL protocol connections. The server handler allows the creation of dynamic virtual tables using modules like `json_reader` or `log_reader`, which internally use `go-getter` to fetch URLs. There is no protection mechanism to prevent fetches to local (127.0.0.0/8), private (10.0.0.0/8), or special (169.254.169.254) IP addresses. \n\nAn attacker can use this to map internal networks, interact with internal APIs, or steal IAM tokens from cloud metadata servers by fetching the data and reading it as a database table.\n\n## PoC (Proof of Concept)\n1. Start the server on the victim machine (e.g., an AWS EC2 instance):\n   ```bash\n   anyquery server --host 0.0.0.0 --port 8070\n   ```\n2. Connect from an attacker machine:\n   ```bash\n   mysql -u root -h <VICTIM_IP> -P 8070\n   ```\n3. Execute the payload to fetch AWS Metadata or hit a local API:\n   ```sql\n   -- Payload 1: Fetch AWS Cloud Metadata (IAM credentials)\n   CREATE VIRTUAL TABLE aws_meta USING log_reader('http://169.254.169.254/latest/meta-data/');\n   SELECT * FROM aws_meta;\n\n   -- Payload 2: Access an internal application bound only to localhost\n   CREATE VIRTUAL TABLE local_admin USING log_reader('http://localhost:8000/admin');\n   SELECT * FROM local_admin LIMIT 10;\n   ```\n\n## Impact\n- **Confidentiality:** High. Exfiltration of sensitive internal network data or cloud credentials.\n- **",
-      "link": "https://github.com/advisories/GHSA-hwrq-8wxh-q4xv",
-      "published": "2026-07-14T20:02:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54628"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54448",
-      "title": "Trivy: Helm chart tar bomb causes OOM via unbounded io.ReadAll in parser",
-      "summary": "## Summary\n\nWhen Trivy scans a Helm chart archive (`.tgz`), its custom tar unpacker reads each entry with `io.ReadAll(tr)` and no size limit. An attacker who can place a malicious `.tgz` file in the scanned path can craft a small compressed archive that decompresses to gigabytes, causing the Trivy process to be killed by the OS OOM killer.\n\n## Affected configurations\n\nExploitation requires the attacker to place a crafted `.tgz` file in a location that Trivy will scan as a Helm chart. This applies to the following scan targets:\n\n| Command | Condition |\n| --- | --- |\n| `trivy config <dir>` | Directory contains a crafted `.tgz` Helm chart (misconfiguration scanning is always enabled) |\n| `trivy filesystem --scanners misconf <dir>` | Directory contains a crafted `.tgz` Helm chart **and** `--scanners misconf` is explicitly enabled |\n| `trivy image --scanners misconf <image>` | Image contains a crafted `.tgz` Helm chart **and** `--scanners misconf` is explicitly enabled |\n\nRealistic scenarios include:\n- A CI pipeline that runs `trivy config .` on a repository where a contributor can submit a pull request containing a crafted chart archive.\n- A pipeline that scans a container image with `--scanners misconf`, whose build context includes untrusted `.tgz` files.\n\n## Impact\n\nAn attacker who satisfies the conditions above can exhaust all available memory on the host running Trivy. The OS OOM killer will terminate the Trivy process and may affect other processes sharing the same host or CI runner.\n\nThe practical impact in CI environments is denial of service: the scan fails, the pipeline is blocked, and repeated submissions re-trigger the same condition. Cloud CI runners may also incur additional costs for consumed resources.\n\nThere is no impact on confidentiality or integrity of the scanned system.\n\n## Patches\n\nFixed in Trivy `v0.71.0` (#10718). The custom tar unpacker was replaced with `archive.LoadArchiveFiles` from the official `helm.sh/helm/v4` SDK, which enforces per-entr",
-      "link": "https://github.com/advisories/GHSA-q3fv-x8vg-qqm4",
-      "published": "2026-07-14T19:52:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54448"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54087",
-      "title": "EasyAdmin: Stored Cross-Site Scripting (XSS) via uploaded files served inline in FileField and ImageField",
-      "summary": "EasyAdmin's `FileField` and `ImageField` accept browser-executable file types by default (`FileField` applies no MIME/extension restrictions; `ImageField`'s default `Image` constraint accepts SVG). When the upload directory is configured inside the public web root \u2014 as shown in the documentation \u2014 EasyAdmin links to the stored file inline (no download attribute or `Content-Disposition: attachment`).\n\nAn attacker with access to a form using these fields can upload an `.html` (`FileField`) or `.svg` (`ImageField`) file containing JavaScript. When another  user opens it from the backend, it is served from the same origin and the script executes in the context of their authenticated admin session, enabling session/CSRF-token theft or privilege escalation.\n\nExploitation requires the developer to store uploads in the public directory and a privilege gap between the uploading user and the viewing administrator. This is stored XSS only \u2014 it does not allow remote code execution, because uploaded filenames are derived from Symfony's `guessExtension()`, which never produces `.php`/`.phtml`.\n\nCredit\n\nWe would like to thank Emre Dogan for reporting the issue.",
-      "link": "https://github.com/advisories/GHSA-8559-gwj3-q37r",
-      "published": "2026-07-14T19:51:34Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54087"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-50158",
-      "title": "yutu: Arbitrary File Write via MCP `caption-download` Tool",
-      "summary": "## Arbitrary File Write via MCP `caption-download` Tool\n\n### Summary\n\nThe `caption-download` MCP tool in yutu passes the caller-supplied `file` parameter directly to `os.Create()` at `pkg/caption/caption.go:272` without any path validation, canonicalization, or confinement to the `pkg.Root` boundary (`YUTU_ROOT`). A local attacker \u2014 or any process able to reach the HTTP MCP server \u2014 can write arbitrary content to any path writable by the yutu process, entirely outside the intended working directory. This is a **High** severity vulnerability (CVSS 7.7) with high integrity and availability impact.\n\n### Details\n\nyutu uses `pkg.Root` (backed by Go 1.24's `os.OpenRoot`) to restrict all file I/O to the `YUTU_ROOT` directory. Every other caption file-write path honours this boundary:\n\n| Method | Sink | Confined? |\n|--------|------|-----------|\n| `Caption.Insert()` | `pkg.Root.Open(c.File)` (`caption.go:109`) | Yes |\n| `Caption.Update()` | `pkg.Root.Open(c.File)` (`caption.go:193`) | Yes |\n| `Caption.Download()` | `os.Create(c.File)` (`caption.go:272`) | **No** |\n\n`Caption.Download()` is the sole outlier. The attacker-controlled `file` field flows without restriction from the MCP tool input schema to a raw `os.Create()` call:\n\n1. **Source** \u2014 `cmd/caption/download.go:32\u201341`: `downloadInSchema` declares `file` as a required `string` field in the MCP JSON input schema.\n2. **Binding** \u2014 `cmd/caption/download.go:61\u201364`: `cobramcp.GenToolHandler` maps MCP input to `input.Download(writer)`.\n3. **Sink** \u2014 `pkg/caption/caption.go:272`: `os.Create(c.File)` creates or truncates the file at the attacker-supplied path.\n4. **Write** \u2014 `pkg/caption/caption.go:280`: `file.Write(body)` writes the downloaded caption bytes to that path.\n\n```go\n// cmd/caption/download.go\nvar downloadInSchema = &jsonschema.Schema{\n    Required: []string{\"ids\", \"file\"},          // line 34\n    // ...\n    \"file\": {Type: \"string\", Description: fileUsage},  // line 40\n}\n\n// cobramcp.GenToolHandler binds MCP \u2192 hand",
-      "link": "https://github.com/advisories/GHSA-2c7f-fxww-6w6c",
-      "published": "2026-07-14T19:34:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-50158"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54052",
-      "title": "n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments",
-      "summary": "## Impact\n\nIn multi-tenant HTTP deployments \u2014 where a single n8n-mcp server serves several tenants \u2014 the locally stored workflow version history (the automatic backups taken before workflow updates) was not isolated per tenant. An authenticated tenant could read workflow version snapshots belonging to other tenants, and could delete or destroy other tenants' stored backups.\n\nA stored snapshot includes full node definitions, so the exposed data can contain credential references and authorization headers configured on nodes. This is therefore a confidentiality issue in addition to an integrity/availability one.\n\n## Affected configurations\n\n- HTTP mode with multi-tenancy enabled (`ENABLE_MULTI_TENANT=true`), where multiple tenants are served by a single shared instance and database.\n\nNot affected:\n\n- stdio / single-user deployments (e.g. Claude Desktop).\n- Single-tenant HTTP deployments (one tenant per instance and database).\n\n## Affected versions\n\n`<= 2.56.0`\n\n## Patched version\n\n`2.56.1`. The stored version history is now isolated per instance, so a tenant can only access its own backups. Upgrading runs a one-time migration that isolates existing history and clears previously stored, un-scoped backups (these are auto-created, short-retention backups).\n\n## Workarounds\n\nIf users cannot upgrade immediately:\n\n- Disable the workflow version tool by setting `DISABLED_TOOLS=n8n_workflow_versions` in the server environment (for example, in your Docker `.env`). This removes the affected tool from the deployment for all tenants; automatic backups are unaffected, but the cross-tenant access path is closed.\n- Alternatively, do not run in multi-tenant mode \u2014 serve each tenant from a separate instance with its own database, so no local store is shared between tenants.\n- Restrict network access to the HTTP endpoint to trusted operators.\n\nstdio and single-tenant HTTP deployments are not affected.\n\n## Credit\n\nReported by Francisco Rosales (@0xmagic0) and coordinated by Ax Sharma (@ax",
-      "link": "https://github.com/advisories/GHSA-j6r7-6fhx-77wx",
-      "published": "2026-07-14T19:07:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54052"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-50141",
-      "title": "Woodpecker gRPC agent_id metadata can be spoofed- cross-tenant agent impersonation",
-      "summary": "### Impact\nA vulnerability in Woodpecker CI's gRPC layer allowed any authenticated agent to impersonate any other agent on the same server by injecting a forged `agent_id` value into outgoing gRPC metadata. The server correctly verified the JWT token but then discarded the verified agent identity in favor of the client-supplied value.\n\n### Patches\nDirect patch: https://github.com/woodpecker-ci/woodpecker/pull/6567\nLater proper fix: https://github.com/woodpecker-ci/woodpecker/pull/6569\n\n### Workarounds\nDisable org agents (`WOODPECKER_DISABLE_USER_AGENT_REGISTRATION=true`) and delete existing ones\n\n### Resources\nPublic ref: https://github.com/woodpecker-ci/woodpecker/issues/6541\nPrivate com: https://github.com/woodpecker-ci/woodpecker-security/issues/21",
-      "link": "https://github.com/advisories/GHSA-g7mm-9vx7-jm7h",
-      "published": "2026-07-14T19:00:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-50141"
       ],
       "is_zero_day": false,
       "is_high_severity": true

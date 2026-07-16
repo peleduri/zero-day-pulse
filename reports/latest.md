@@ -1,28 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-15 18:52 UTC &nbsp;|&nbsp; **Total:** 44 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 23 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-16 01:21 UTC &nbsp;|&nbsp; **Total:** 39 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 21 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-46817 — Oracle E-Business Suite Improper Privilege Management Vulnerability
-
-**CVE:** `CVE-2026-46817` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-07-15
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-46817>
-
-> Vendor: Oracle | Product: E-Business Suite. Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle Payments. Required action: Apply mitigations in accordance with vendor instructions, ensuring complian…
-
----
-
-## 2. 🔴 CISA KEV — CVE-2023-4346 — KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability
-
-**CVE:** `CVE-2023-4346` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-07-15
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2023-4346>
-
-> Vendor: KNX Association | Product: KNX Protocol Connection Authorization Option 1. KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security options enabled and set a BCU key to lock the device.  Required action: Apply mitigations in accordance w…
-
----
-
-## 3. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -31,7 +13,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
@@ -40,7 +22,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — CVE-2026-15409, CVE-2026-15410: SonicWall SMA 1000 zero-day vulnerabilities exploited in the wild
+## 3. 🟠 Zero-Day — CVE-2026-15409, CVE-2026-15410: SonicWall SMA 1000 zero-day vulnerabilities exploited in the wild
 
 **CVE:** `CVE-2026-15409` | `CVE-2026-15410` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.tenable.com/blog/cve-2026-15409-cve-2026-15410-sonicwall-sma-1000-zero-day-vulnerabilities-exploited-in-the>
@@ -49,7 +31,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Unpatched Cursor Vulnerability Exposes Users to Code Execution
+## 4. 🟠 Zero-Day — Unpatched Cursor Vulnerability Exposes Users to Code Execution
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.securityweek.com/unpatched-cursor-vulnerability-exposes-users-to-code-execution/>
@@ -58,7 +40,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — CISA warns admins to patch actively exploited SharePoint flaws
+## 5. 🟠 Zero-Day — CISA warns admins to patch actively exploited SharePoint flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-patch-actively-exploited-sharepoint-flaws/>
@@ -67,27 +49,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Patch Tuesday - July 2026
-
-**CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://www.rapid7.com/blog/post/em-patch-tuesday-july-2026>
-
-> Microsoft is publishing 622 vulnerabilities on July 2026 Patch Tuesday , including a record-breaking 416 Windows vulnerabilities. Microsoft is aware of exploitation in the wild for two of the vulnerabilities published today, both of which are listed on CISA KEV, as well as public disclosure for one other. As usual, browser vulns are not included in the Patch Tuesday count above. Rapid7 noted last …
-
----
-
-## 9. 🟠 Zero-Day — Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html>
-
-> Microsoft shipped its largest Patch Tuesday on record today, and two of the fixes close holes that attackers are already exploiting. The release covers 622 of Microsoft&#x27;s own CVEs by its Security Update Guide count, more than triple June&#x27;s previous high of around 200.
-
-Those two live bugs are the ones to grab first. Microsoft credits incident responders for both. Both are
-
----
-
-## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -96,7 +58,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -105,7 +67,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -114,7 +76,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -123,7 +85,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -132,7 +94,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 15. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -141,7 +103,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 16. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 12. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -150,35 +112,35 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 17. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 18. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 14. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 19. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 15. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 20. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 16. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 21. 🟠 Zero-Day — CISA Urges Immediate Patching of Exploited SharePoint Vulnerabilities
+## 17. 🟠 Zero-Day — CISA Urges Immediate Patching of Exploited SharePoint Vulnerabilities
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-sharepoint-vulnerabilities/>
@@ -187,7 +149,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 22. 🟠 Zero-Day — We built a vulnerability vending machine: AI tokens in, zero-days out
+## 18. 🟠 Zero-Day — We built a vulnerability vending machine: AI tokens in, zero-days out
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.bleepingcomputer.com/news/security/we-built-a-vulnerability-vending-machine-ai-tokens-in-zero-days-out/>
@@ -196,7 +158,7 @@ Those two live bugs are the ones to grab first. Microsoft credits incident respo
 
 ---
 
-## 23. 🟠 Zero-Day — Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday
+## 19. 🟠 Zero-Day — Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html>
@@ -209,7 +171,7 @@ It has been described as a Windows User Profile Service arbitrary hive load elev
 
 ---
 
-## 24. 🟠 Zero-Day — GPT-Red: Unlocking Self-Improvement for Robustness
+## 20. 🟠 Zero-Day — GPT-Red: Unlocking Self-Improvement for Robustness
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** OpenAI Blog &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://openai.com/index/unlocking-self-improvement-gpt-red>
@@ -218,7 +180,7 @@ It has been described as a Windows User Profile Service arbitrary hive load elev
 
 ---
 
-## 25. 🟠 Zero-Day — Progress Confirms Zero-Day Vulnerability Behind ShareFile Disruption
+## 21. 🟠 Zero-Day — Progress Confirms Zero-Day Vulnerability Behind ShareFile Disruption
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.securityweek.com/progress-confirms-zero-day-vulnerability-behind-sharefile-disruption/>
@@ -227,7 +189,90 @@ It has been described as a Windows User Profile Service arbitrary hive load elev
 
 ---
 
-## 26. 🟡 High Severity — Koel: Full-read SSRF via podcast enclosure URL: isPublicHost() filter_var guard does not reject NAT64 (64:ff9b::/96) or 6to4 (2002::/16) IPv6-transition wrappers of internal IPv4
+## 22. 🟡 High Severity — ToolHive: SSRF in remote MCP server authentication discovery (host-side, bypasses container isolation)
+
+**CVE:** `CVE-2026-58196` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://github.com/advisories/GHSA-pr64-jmmf-jp54>
+
+> # Security Advisory: SSRF in remote MCP server authentication discovery
+
+**Severity:** High. **CWE:** CWE-918. **Affected:** ToolHive through the latest release v0.29.3 and current `main` (HEAD b672d82f, 2026-06-12; re-verified 2026-06-14). `FetchResourceMetadata` and the discovery clients remain unguarded; no commits to `pkg/auth/discovery` or `pkg/auth/remote` address this. Originally identified…
+
+---
+
+## 23. 🟡 High Severity — @andrea9293/mcp-documentation-server: Web UI API binds to all interfaces without authentication by default
+
+**CVE:** `CVE-2026-54504` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://github.com/advisories/GHSA-6f5r-5672-72j7>
+
+> ### Summary
+
+`@andrea9293/mcp-documentation-server` v1.13.0 documents that a Web UI starts automatically on port `3080`. However, the Web UI/API appears to bind to all network interfaces by default (`*:3080` / `0.0.0.0:3080`) instead of localhost-only, and its document-management API endpoints do not require authentication.
+
+As a result, any network-reachable client on the same LAN, VM network, or…
+
+---
+
+## 24. 🟡 High Severity — Pomerium Pre-Auth Memory Exhaustion via Unbounded zstd Decompression in HPKE Callback
+
+**CVE:** `CVE-2026-50285` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://github.com/advisories/GHSA-ggw3-5987-rx77>
+
+> ## Summary
+
+The HPKE V2 URL decode path in `pkg/hpke/url.go` decompresses attacker-controlled zstd data without any size limit. On Pomerium deployments using the stateless authentication flow (Pomerium Zero / hosted authenticate), the proxy&#x27;s `/.pomerium/callback` endpoint is reachable without credentials and processes attacker-crafted HPKE-encrypted payloads before the sender&#x27;s identity…
+
+---
+
+## 25. 🟡 High Severity — ViewComponent: Reused Component Instances Retain Stale Render Context
+
+**CVE:** `CVE-2026-54497` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://github.com/advisories/GHSA-9h85-g7w3-rh49>
+
+> # Reused Component Instances Retain Stale Render Context
+
+## Summary
+
+`ViewComponent::Base` instances retain multiple render-scoped objects across calls to `render_in`. If the same component, collection, or spacer component instance is reused across requests, users, tenants, or threads, later renders can use stale `helpers`, `controller`, `request`, `view_flow`, format/variant details, and slot ch…
+
+---
+
+## 26. 🟡 High Severity — open-feature-operator: Cross-namespace FeatureFlagSource and InProcessConfiguration resolution exposes spec contents on multi-tenant clusters
+
+**CVE:** `CVE-2026-54495` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://github.com/advisories/GHSA-398h-7f66-3h4p>
+
+> ## Summary
+
+A namespaced `FeatureFlagSource` or `InProcessConfiguration` resource can be referenced cross-namespace via the `openfeature.dev/featureflagsource` annotation using the documented `{NAMESPACE}/{NAME}` syntax. The operator resolves the referenced resource cluster-wide and materializes its contents (env vars, flagd sidecar arguments including `httpSyncBearerToken`, sync URIs, supporting …
+
+---
+
+## 27. 🟡 High Severity — TensorZero Gateway: Arbitrary file read and SSRF in internal object storage endpoint
+
+**CVE:** `CVE-2026-54457` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://github.com/advisories/GHSA-824w-x939-6cmc>
+
+> ### Impact
+
+The `/internal/object_storage` endpoint accepts a caller-supplied JSON `storage_path` parameter that dynamically overrides the TensorZero `[object_storage]` configuration.
+
+By abusing the `filesystem` storage type, a caller can read arbitrary files from the gateway filesystem, including files that may contain sensitive credentials. Similarly, by abusing the `s3_compatible` storage type…
+
+---
+
+## 28. 🟡 High Severity — ToolHive: SSRF guard misses IPv6 NAT64 ranges (64:ff9b::/96, 64:ff9b:1::/48), allowing metadata/internal access behind a NAT64 gateway
+
+**CVE:** `CVE-2026-54450` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
+**Reference:** <https://github.com/advisories/GHSA-pph6-vfjv-vpjw>
+
+> ## Summary
+
+ToolHive&#x27;s hand-rolled private/reserved-IP SSRF guard (`networking.IsPrivateIP` in `pkg/networking/utilities.go`) does not recognize the IPv6 **NAT64** address ranges — the well-known prefix `64:ff9b::/96` (RFC 6052) and the RFC 8215 local-use prefix `64:ff9b:1::/48`. As a result, an address such as `64:ff9b:1::a9fe:a9fe` — the NAT64 encoding of the link-local cloud metadata addre…
+
+---
+
+## 29. 🟡 High Severity — Koel: Full-read SSRF via podcast enclosure URL: isPublicHost() filter_var guard does not reject NAT64 (64:ff9b::/96) or 6to4 (2002::/16) IPv6-transition wrappers of internal IPv4
 
 **CVE:** `CVE-2026-54494` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-rjg7-r26h-cfp2>
@@ -238,7 +283,7 @@ Koel&#x27;s outbound-URL guard `App\Helpers\Network::isPublicHost()` classifies 
 
 ---
 
-## 27. 🟡 High Severity — Koel: Server-Side Request Forgery (SSRF) in radio station creation due to missing validation bail
+## 30. 🟡 High Severity — Koel: Server-Side Request Forgery (SSRF) in radio station creation due to missing validation bail
 
 **CVE:** `CVE-2026-50552` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-jr4p-4xjh-fwvw>
@@ -249,7 +294,7 @@ Koel v9.5.0 contains a Server-Side Request Forgery (SSRF) vulnerability in the r
 
 ---
 
-## 28. 🟡 High Severity — Koel: Incomplete fix for CVE-2026-47260 — systemic SSRF in podcast & radio fetch paths
+## 31. 🟡 High Severity — Koel: Incomplete fix for CVE-2026-47260 — systemic SSRF in podcast & radio fetch paths
 
 **CVE:** `CVE-2026-54491` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-6qvr-wjmv-v8mm>
@@ -260,7 +305,7 @@ The fix for **CVE-2026-47260** (v9.3.5) added an **initial** `isSafeUrl()` check
 
 ---
 
-## 29. 🟡 High Severity — LangBot: Authenticated RCE Via MCP Configuration
+## 32. 🟡 High Severity — LangBot: Authenticated RCE Via MCP Configuration
 
 **CVE:** `CVE-2026-54449` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-3pvh-63gf-j9mw>
@@ -273,7 +318,7 @@ The repository uses StdioServerParameters which is based on Anthropic&#x27;s mod
 
 ---
 
-## 30. 🟡 High Severity — garminconnect Has Insecure Permission Assignment for Garmin OAuth Token Store
+## 33. 🟡 High Severity — garminconnect Has Insecure Permission Assignment for Garmin OAuth Token Store
 
 **CVE:** `CVE-2026-54447` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-wjhr-76vg-2hvc>
@@ -286,7 +331,7 @@ The repository uses StdioServerParameters which is based on Anthropic&#x27;s mod
 
 ---
 
-## 31. 🟡 High Severity — Koel: Authenticated Full-Read SSRF via Subsonic Internet Radio Stations
+## 34. 🟡 High Severity — Koel: Authenticated Full-Read SSRF via Subsonic Internet Radio Stations
 
 **CVE:** `CVE-2026-54493` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-6p96-cfg5-4vhp>
@@ -298,7 +343,7 @@ This was validated against v9.6.0 (352…
 
 ---
 
-## 32. 🟡 High Severity — Koel: Authenticated Blind SSRF via Subsonic Podcast Channel Creation
+## 35. 🟡 High Severity — Koel: Authenticated Blind SSRF via Subsonic Podcast Channel Creation
 
 **CVE:** `CVE-2026-54492` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-w79m-f3jx-779v>
@@ -310,7 +355,7 @@ This was validated against `v9.6.0` (`352ea5ec27fa22294da8fb6beacb3d5552f0d09c`)
 
 ---
 
-## 33. 🟡 High Severity — MantisBT: Remote Code Execution via eval() Class Hoisting in adm_config_set.php
+## 36. 🟡 High Severity — MantisBT: Remote Code Execution via eval() Class Hoisting in adm_config_set.php
 
 **CVE:** `CVE-2026-49273` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-v84x-qvhg-f36r>
@@ -321,7 +366,7 @@ However, PHP hoists func…
 
 ---
 
-## 34. 🟡 High Severity — MantisBT: SOAP API Authentication Bypass with Privilege Escalation to Administrator
+## 37. 🟡 High Severity — MantisBT: SOAP API Authentication Bypass with Privilege Escalation to Administrator
 
 **CVE:** `CVE-2026-47156` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-c2xg-qjqw-2v98>
@@ -332,7 +377,7 @@ The vulnerability is exploitable with zero prior access on default MantisBT inst
 
 ---
 
-## 35. 🟡 High Severity — Firefox, Chrome, Adobe, and VMware Updates Fix Multiple Critical Security Flaws
+## 38. 🟡 High Severity — Firefox, Chrome, Adobe, and VMware Updates Fix Multiple Critical Security Flaws
 
 **CVE:** `CVE-2026-15718` | `CVE-2026-15719` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://thehackernews.com/2026/07/firefox-chrome-adobe-and-vmware-updates.html>
@@ -349,106 +394,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 36. 🟡 High Severity — Woodpecker: Privilege escalation via unrestricted serviceAccountName in the Kubernetes backend
-
-**CVE:** `CVE-2026-61549` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-qf34-295c-26v8>
-
-> ### Impact
-
-A privilege escalation vulnerability affects Woodpecker instances using the **Kubernetes backend**.
-
-The pipeline option `backend_options.kubernetes.serviceAccountName` was passed directly to the pod spec without any admin gating.
-
-**Who is impacted:** any operator running the Kubernetes backend. Any user with **Push** permission on a connected repository can run pipeline pods under an…
-
----
-
-## 37. 🟡 High Severity — nebula-mesh: CA private key not zeroized on web mobile-bundle error paths
-
-**CVE:** `CVE-2026-53604` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-2p2f-px33-4vv5>
-
-> ## Impact
-
-The web handler `renderMobileBundle` (`internal/web/handlers.go:1325`) passes the real `*pki.CAResolver` directly into `mobilebundle.Build`. Inside `Build` (`internal/mobilebundle/builder.go:54`), `resolver.LoadByID` decrypts the CA&#x27;s ed25519 private key into a `*pki.CAManager`, but `Build` never calls `CAManager.Wipe()` on any return path (success or any of the error paths at line…
-
----
-
-## 38. 🟡 High Severity — Anyquery: Server-Side Request Forgery (SSRF) via Unrestricted SQLite Virtual Table Modules in Server Mode
-
-**CVE:** `CVE-2026-54628` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-hwrq-8wxh-q4xv>
-
-> ## Summary
-Anyquery&#x27;s `server` mode does not restrict outbound HTTP requests initiated by its built-in SQLite virtual table modules (e.g., `json_reader`, `log_reader`). Unauthenticated attackers connecting to the MySQL-compatible server port can create virtual tables pointing to internal network endpoints or Cloud Metadata IPs (e.g., `http://169.254.169.254/latest/meta-data/`). This allows at…
-
----
-
-## 39. 🟡 High Severity — Trivy: Helm chart tar bomb causes OOM via unbounded io.ReadAll in parser
-
-**CVE:** `CVE-2026-54448` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-q3fv-x8vg-qqm4>
-
-> ## Summary
-
-When Trivy scans a Helm chart archive (`.tgz`), its custom tar unpacker reads each entry with `io.ReadAll(tr)` and no size limit. An attacker who can place a malicious `.tgz` file in the scanned path can craft a small compressed archive that decompresses to gigabytes, causing the Trivy process to be killed by the OS OOM killer.
-
-## Affected configurations
-
-Exploitation requires the att…
-
----
-
-## 40. 🟡 High Severity — EasyAdmin: Stored Cross-Site Scripting (XSS) via uploaded files served inline in FileField and ImageField
-
-**CVE:** `CVE-2026-54087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-8559-gwj3-q37r>
-
-> EasyAdmin&#x27;s `FileField` and `ImageField` accept browser-executable file types by default (`FileField` applies no MIME/extension restrictions; `ImageField`&#x27;s default `Image` constraint accepts SVG). When the upload directory is configured inside the public web root — as shown in the documentation — EasyAdmin links to the stored file inline (no download attribute or `Content-Disposition: a…
-
----
-
-## 41. 🟡 High Severity — yutu: Arbitrary File Write via MCP `caption-download` Tool
-
-**CVE:** `CVE-2026-50158` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-2c7f-fxww-6w6c>
-
-> ## Arbitrary File Write via MCP `caption-download` Tool
-
-### Summary
-
-The `caption-download` MCP tool in yutu passes the caller-supplied `file` parameter directly to `os.Create()` at `pkg/caption/caption.go:272` without any path validation, canonicalization, or confinement to the `pkg.Root` boundary (`YUTU_ROOT`). A local attacker — or any process able to reach the HTTP MCP server — can write arbi…
-
----
-
-## 42. 🟡 High Severity — n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments
-
-**CVE:** `CVE-2026-54052` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-j6r7-6fhx-77wx>
-
-> ## Impact
-
-In multi-tenant HTTP deployments — where a single n8n-mcp server serves several tenants — the locally stored workflow version history (the automatic backups taken before workflow updates) was not isolated per tenant. An authenticated tenant could read workflow version snapshots belonging to other tenants, and could delete or destroy other tenants&#x27; stored backups.
-
-A stored snapshot…
-
----
-
-## 43. 🟡 High Severity — Woodpecker gRPC agent_id metadata can be spoofed- cross-tenant agent impersonation
-
-**CVE:** `CVE-2026-50141` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-14
-**Reference:** <https://github.com/advisories/GHSA-g7mm-9vx7-jm7h>
-
-> ### Impact
-A vulnerability in Woodpecker CI&#x27;s gRPC layer allowed any authenticated agent to impersonate any other agent on the same server by injecting a forged `agent_id` value into outgoing gRPC metadata. The server correctly verified the JWT token but then discarded the verified agent identity in favor of the client-supplied value.
-
-### Patches
-Direct patch: https://github.com/woodpecker-c…
-
----
-
-## 44. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 39. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
