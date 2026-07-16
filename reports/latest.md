@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-16 01:21 UTC &nbsp;|&nbsp; **Total:** 39 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 21 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-16 07:52 UTC &nbsp;|&nbsp; **Total:** 40 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 22 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -140,7 +140,16 @@
 
 ---
 
-## 17. 🟠 Zero-Day — CISA Urges Immediate Patching of Exploited SharePoint Vulnerabilities
+## 17. 🟠 Zero-Day — Nightmare Eclipse Drops ‘LegacyHive’ Windows Zero-Day
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-16
+**Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-legacyhive-windows-zero-day/>
+
+> The researcher stripped the proof-of-concept (PoC) exploit to prevent immediate exploitation of the vulnerability. The post Nightmare Eclipse Drops ‘LegacyHive’ Windows Zero-Day appeared first on SecurityWeek .
+
+---
+
+## 18. 🟠 Zero-Day — CISA Urges Immediate Patching of Exploited SharePoint Vulnerabilities
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-sharepoint-vulnerabilities/>
@@ -149,7 +158,7 @@
 
 ---
 
-## 18. 🟠 Zero-Day — We built a vulnerability vending machine: AI tokens in, zero-days out
+## 19. 🟠 Zero-Day — We built a vulnerability vending machine: AI tokens in, zero-days out
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.bleepingcomputer.com/news/security/we-built-a-vulnerability-vending-machine-ai-tokens-in-zero-days-out/>
@@ -158,7 +167,7 @@
 
 ---
 
-## 19. 🟠 Zero-Day — Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday
+## 20. 🟠 Zero-Day — Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html>
@@ -171,7 +180,7 @@ It has been described as a Windows User Profile Service arbitrary hive load elev
 
 ---
 
-## 20. 🟠 Zero-Day — GPT-Red: Unlocking Self-Improvement for Robustness
+## 21. 🟠 Zero-Day — GPT-Red: Unlocking Self-Improvement for Robustness
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** OpenAI Blog &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://openai.com/index/unlocking-self-improvement-gpt-red>
@@ -180,7 +189,7 @@ It has been described as a Windows User Profile Service arbitrary hive load elev
 
 ---
 
-## 21. 🟠 Zero-Day — Progress Confirms Zero-Day Vulnerability Behind ShareFile Disruption
+## 22. 🟠 Zero-Day — Progress Confirms Zero-Day Vulnerability Behind ShareFile Disruption
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://www.securityweek.com/progress-confirms-zero-day-vulnerability-behind-sharefile-disruption/>
@@ -189,7 +198,7 @@ It has been described as a Windows User Profile Service arbitrary hive load elev
 
 ---
 
-## 22. 🟡 High Severity — ToolHive: SSRF in remote MCP server authentication discovery (host-side, bypasses container isolation)
+## 23. 🟡 High Severity — ToolHive: SSRF in remote MCP server authentication discovery (host-side, bypasses container isolation)
 
 **CVE:** `CVE-2026-58196` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-pr64-jmmf-jp54>
@@ -200,7 +209,7 @@ It has been described as a Windows User Profile Service arbitrary hive load elev
 
 ---
 
-## 23. 🟡 High Severity — @andrea9293/mcp-documentation-server: Web UI API binds to all interfaces without authentication by default
+## 24. 🟡 High Severity — @andrea9293/mcp-documentation-server: Web UI API binds to all interfaces without authentication by default
 
 **CVE:** `CVE-2026-54504` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-6f5r-5672-72j7>
@@ -213,7 +222,7 @@ As a result, any network-reachable client on the same LAN, VM network, or…
 
 ---
 
-## 24. 🟡 High Severity — Pomerium Pre-Auth Memory Exhaustion via Unbounded zstd Decompression in HPKE Callback
+## 25. 🟡 High Severity — Pomerium Pre-Auth Memory Exhaustion via Unbounded zstd Decompression in HPKE Callback
 
 **CVE:** `CVE-2026-50285` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-ggw3-5987-rx77>
@@ -224,7 +233,7 @@ The HPKE V2 URL decode path in `pkg/hpke/url.go` decompresses attacker-controlle
 
 ---
 
-## 25. 🟡 High Severity — ViewComponent: Reused Component Instances Retain Stale Render Context
+## 26. 🟡 High Severity — ViewComponent: Reused Component Instances Retain Stale Render Context
 
 **CVE:** `CVE-2026-54497` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-9h85-g7w3-rh49>
@@ -237,7 +246,7 @@ The HPKE V2 URL decode path in `pkg/hpke/url.go` decompresses attacker-controlle
 
 ---
 
-## 26. 🟡 High Severity — open-feature-operator: Cross-namespace FeatureFlagSource and InProcessConfiguration resolution exposes spec contents on multi-tenant clusters
+## 27. 🟡 High Severity — open-feature-operator: Cross-namespace FeatureFlagSource and InProcessConfiguration resolution exposes spec contents on multi-tenant clusters
 
 **CVE:** `CVE-2026-54495` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-398h-7f66-3h4p>
@@ -248,7 +257,7 @@ A namespaced `FeatureFlagSource` or `InProcessConfiguration` resource can be ref
 
 ---
 
-## 27. 🟡 High Severity — TensorZero Gateway: Arbitrary file read and SSRF in internal object storage endpoint
+## 28. 🟡 High Severity — TensorZero Gateway: Arbitrary file read and SSRF in internal object storage endpoint
 
 **CVE:** `CVE-2026-54457` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-824w-x939-6cmc>
@@ -261,7 +270,7 @@ By abusing the `filesystem` storage type, a caller can read arbitrary files from
 
 ---
 
-## 28. 🟡 High Severity — ToolHive: SSRF guard misses IPv6 NAT64 ranges (64:ff9b::/96, 64:ff9b:1::/48), allowing metadata/internal access behind a NAT64 gateway
+## 29. 🟡 High Severity — ToolHive: SSRF guard misses IPv6 NAT64 ranges (64:ff9b::/96, 64:ff9b:1::/48), allowing metadata/internal access behind a NAT64 gateway
 
 **CVE:** `CVE-2026-54450` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-pph6-vfjv-vpjw>
@@ -272,7 +281,7 @@ ToolHive&#x27;s hand-rolled private/reserved-IP SSRF guard (`networking.IsPrivat
 
 ---
 
-## 29. 🟡 High Severity — Koel: Full-read SSRF via podcast enclosure URL: isPublicHost() filter_var guard does not reject NAT64 (64:ff9b::/96) or 6to4 (2002::/16) IPv6-transition wrappers of internal IPv4
+## 30. 🟡 High Severity — Koel: Full-read SSRF via podcast enclosure URL: isPublicHost() filter_var guard does not reject NAT64 (64:ff9b::/96) or 6to4 (2002::/16) IPv6-transition wrappers of internal IPv4
 
 **CVE:** `CVE-2026-54494` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-rjg7-r26h-cfp2>
@@ -283,7 +292,7 @@ Koel&#x27;s outbound-URL guard `App\Helpers\Network::isPublicHost()` classifies 
 
 ---
 
-## 30. 🟡 High Severity — Koel: Server-Side Request Forgery (SSRF) in radio station creation due to missing validation bail
+## 31. 🟡 High Severity — Koel: Server-Side Request Forgery (SSRF) in radio station creation due to missing validation bail
 
 **CVE:** `CVE-2026-50552` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-jr4p-4xjh-fwvw>
@@ -294,7 +303,7 @@ Koel v9.5.0 contains a Server-Side Request Forgery (SSRF) vulnerability in the r
 
 ---
 
-## 31. 🟡 High Severity — Koel: Incomplete fix for CVE-2026-47260 — systemic SSRF in podcast & radio fetch paths
+## 32. 🟡 High Severity — Koel: Incomplete fix for CVE-2026-47260 — systemic SSRF in podcast & radio fetch paths
 
 **CVE:** `CVE-2026-54491` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-6qvr-wjmv-v8mm>
@@ -305,7 +314,7 @@ The fix for **CVE-2026-47260** (v9.3.5) added an **initial** `isSafeUrl()` check
 
 ---
 
-## 32. 🟡 High Severity — LangBot: Authenticated RCE Via MCP Configuration
+## 33. 🟡 High Severity — LangBot: Authenticated RCE Via MCP Configuration
 
 **CVE:** `CVE-2026-54449` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-3pvh-63gf-j9mw>
@@ -318,7 +327,7 @@ The repository uses StdioServerParameters which is based on Anthropic&#x27;s mod
 
 ---
 
-## 33. 🟡 High Severity — garminconnect Has Insecure Permission Assignment for Garmin OAuth Token Store
+## 34. 🟡 High Severity — garminconnect Has Insecure Permission Assignment for Garmin OAuth Token Store
 
 **CVE:** `CVE-2026-54447` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-wjhr-76vg-2hvc>
@@ -331,7 +340,7 @@ The repository uses StdioServerParameters which is based on Anthropic&#x27;s mod
 
 ---
 
-## 34. 🟡 High Severity — Koel: Authenticated Full-Read SSRF via Subsonic Internet Radio Stations
+## 35. 🟡 High Severity — Koel: Authenticated Full-Read SSRF via Subsonic Internet Radio Stations
 
 **CVE:** `CVE-2026-54493` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-6p96-cfg5-4vhp>
@@ -343,7 +352,7 @@ This was validated against v9.6.0 (352…
 
 ---
 
-## 35. 🟡 High Severity — Koel: Authenticated Blind SSRF via Subsonic Podcast Channel Creation
+## 36. 🟡 High Severity — Koel: Authenticated Blind SSRF via Subsonic Podcast Channel Creation
 
 **CVE:** `CVE-2026-54492` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-w79m-f3jx-779v>
@@ -355,7 +364,7 @@ This was validated against `v9.6.0` (`352ea5ec27fa22294da8fb6beacb3d5552f0d09c`)
 
 ---
 
-## 36. 🟡 High Severity — MantisBT: Remote Code Execution via eval() Class Hoisting in adm_config_set.php
+## 37. 🟡 High Severity — MantisBT: Remote Code Execution via eval() Class Hoisting in adm_config_set.php
 
 **CVE:** `CVE-2026-49273` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-v84x-qvhg-f36r>
@@ -366,7 +375,7 @@ However, PHP hoists func…
 
 ---
 
-## 37. 🟡 High Severity — MantisBT: SOAP API Authentication Bypass with Privilege Escalation to Administrator
+## 38. 🟡 High Severity — MantisBT: SOAP API Authentication Bypass with Privilege Escalation to Administrator
 
 **CVE:** `CVE-2026-47156` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://github.com/advisories/GHSA-c2xg-qjqw-2v98>
@@ -377,7 +386,7 @@ The vulnerability is exploitable with zero prior access on default MantisBT inst
 
 ---
 
-## 38. 🟡 High Severity — Firefox, Chrome, Adobe, and VMware Updates Fix Multiple Critical Security Flaws
+## 39. 🟡 High Severity — Firefox, Chrome, Adobe, and VMware Updates Fix Multiple Critical Security Flaws
 
 **CVE:** `CVE-2026-15718` | `CVE-2026-15719` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-15
 **Reference:** <https://thehackernews.com/2026/07/firefox-chrome-adobe-and-vmware-updates.html>
@@ -394,7 +403,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 39. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 40. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

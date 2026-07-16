@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-16T01:21:40.329840+00:00",
-  "total": 39,
+  "generated": "2026-07-16T07:52:46.721313+00:00",
+  "total": 40,
   "kev": 0,
-  "zero_day": 21,
+  "zero_day": 22,
   "enriched": 0,
   "findings": [
     {
@@ -254,6 +254,21 @@
       "tags": [
         "cloud",
         "threat-intel",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/nightmare-eclipse-drops-legacyhive-windows-zero-day/",
+      "title": "Nightmare Eclipse Drops \u2018LegacyHive\u2019 Windows Zero-Day",
+      "summary": "The researcher stripped the proof-of-concept (PoC) exploit to prevent immediate exploitation of the vulnerability. The post Nightmare Eclipse Drops \u2018LegacyHive\u2019 Windows Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/nightmare-eclipse-drops-legacyhive-windows-zero-day/",
+      "published": "2026-07-16T06:48:40+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
         "research"
       ],
       "cve_ids": [],
