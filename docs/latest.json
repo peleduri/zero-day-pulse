@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-17T07:49:50.701136+00:00",
-  "total": 30,
+  "generated": "2026-07-17T12:58:56.575438+00:00",
+  "total": 28,
   "kev": 0,
-  "zero_day": 20,
+  "zero_day": 18,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,22 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://unit42.paloaltonetworks.com/siemens-rox-ii-zero-day-vulnerabilities/",
+      "title": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy",
+      "summary": "A technical analysis of three chained zero-day vulnerabilities in Siemens ROX II OT switches that allow privilege escalation and persistent root access. The post Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy appeared first on Unit 42 .",
+      "link": "https://unit42.paloaltonetworks.com/siemens-rox-ii-zero-day-vulnerabilities/",
+      "published": "2026-07-17T10:00:24+00:00",
+      "source": "Unit 42 (Palo Alto)",
+      "tags": [
+        "cloud",
+        "research",
+        "threat-intel"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -71,36 +87,6 @@
         "CVE-2026-55040",
         "CVE-2026-58644"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-flaw-by-saturday/",
-      "title": "CISA orders feds to patch actively exploited Oracle flaw by Saturday",
-      "summary": "CISA has ordered federal agencies to secure their systems by Saturday against ongoing attacks exploiting a critical vulnerability in the Oracle E-Business Suite financial application. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-flaw-by-saturday/",
-      "published": "2026-07-16T10:56:03+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/unpatched-shark-vacuum-flaw-could-let.html",
-      "title": "Unpatched Shark Vacuum Flaw Could Let Attackers Control Other Vacuums Region-Wide",
-      "summary": "Pull the certificate off the flash of a Shark RV2320EDUS robot vacuum, and you can run root commands on other people's Shark vacuums across the same AWS region: watch the camera, drive the robot, read the map of the house, and take the Wi-Fi password in plaintext.\n\nA researcher publishing under the handle tokay0\u00a0put the method online\u00a0on Monday, having tested it only against vacuums he",
-      "link": "https://thehackernews.com/2026/07/unpatched-shark-vacuum-flaw-could-let.html",
-      "published": "2026-07-16T09:23:19+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -279,11 +265,11 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/",
-      "title": "Claude Chrome extension flaw lets malicious extensions trigger AI actions",
-      "summary": "A flaw in Anthropic's Claude for Chrome browser extension could allow a malicious extension to trigger predefined AI actions by simulating user clicks, potentially allowing it to abuse Claude's access to connected services such as Gmail, Google Docs, Google Calendar, and Salesforce. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/",
-      "published": "2026-07-16T19:26:07+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/",
+      "title": "New Windows LegacyHive zero-day gives hackers admin privileges",
+      "summary": "A security researcher using the \"Nightmare Eclipse\" handle has released a Windows zero-day exploit dubbed LegacyHive that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/",
+      "published": "2026-07-17T11:05:30+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
@@ -294,32 +280,15 @@
       "is_high_severity": false
     },
     {
-      "id": "https://embracethered.com/blog/posts/2026/macos-terminal-dillma-dns-exfil-ansi-escape-code-fix/",
-      "title": "From Indirect Prompt Injection to DNS Exfiltration in macOS Terminal",
-      "summary": "This is a follow-up to my previous Terminal DiLLMa research , and there is a positive outcome: Apple fixed a macOS Terminal behavior that enabled a DNS-based data exfiltration technique. DNS Requests via ANSI Escape Codes David Leadbeater originally discovered an interesting behavior in the macOS Terminal app that allowed a special sequence of ANSI escape codes to issue DNS requests. In short, this triggered a DNS request from the macOS Terminal app:",
-      "link": "https://embracethered.com/blog/posts/2026/macos-terminal-dillma-dns-exfil-ansi-escape-code-fix/",
-      "published": "2026-07-16T09:13:18+00:00",
-      "source": "Embrace The Red (Prompt Injection Research)",
-      "tags": [
-        "ai",
-        "prompt-injection",
-        "agent",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/openais-gpt-red-automates-prompt.html",
-      "title": "OpenAI\u2019s GPT-Red Automates Prompt Injection Testing to Harden GPT-5.6 Sol",
-      "summary": "OpenAI has disclosed details of GPT-Red, an internal automated red-teaming model that scales prompt injection vulnerability discovery with an aim to fix issues before the tools are deployed widely.\n\n\"GPT\u2011Red is a strong red-teamer, and our previous models are highly vulnerable to its prompt injection attacks,\" the artificial intelligence (AI) company said. \"We use GPT\u2011Red to adversarially train",
-      "link": "https://thehackernews.com/2026/07/openais-gpt-red-automates-prompt.html",
-      "published": "2026-07-16T08:42:31+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/",
+      "title": "Claude Chrome extension flaw lets malicious extensions trigger AI actions",
+      "summary": "A flaw in Anthropic's Claude for Chrome browser extension could allow a malicious extension to trigger predefined AI actions by simulating user clicks, potentially allowing it to abuse Claude's access to connected services such as Gmail, Google Docs, Google Calendar, and Salesforce. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/",
+      "published": "2026-07-16T19:26:07+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "zeroday"
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,

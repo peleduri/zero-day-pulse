@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-17 07:49 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-17 12:58 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CISA urges immediate action on actively exploited Fortinet flaws
+## 3. 🟠 Zero-Day — Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://unit42.paloaltonetworks.com/siemens-rox-ii-zero-day-vulnerabilities/>
+
+> A technical analysis of three chained zero-day vulnerabilities in Siemens ROX II OT switches that allow privilege escalation and persistent root access. The post Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy appeared first on Unit 42 .
+
+---
+
+## 4. 🟠 Zero-Day — CISA urges immediate action on actively exploited Fortinet flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-feds-to-patch-exploited-fortinet-fortisandbox-flaws-by-sunday/>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — CVE-2026-32201, CVE-2026-45659, CVE-2026-56164: Frequently Asked Questions About Active Exploitation of Microsoft SharePoint Server Vulnerabilities
+## 5. 🟠 Zero-Day — CVE-2026-32201, CVE-2026-45659, CVE-2026-56164: Frequently Asked Questions About Active Exploitation of Microsoft SharePoint Server Vulnerabilities
 
 **CVE:** `CVE-2026-32201` | `CVE-2026-45659` | `CVE-2026-56164` | `CVE-2026-55040` | `CVE-2026-58644` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://www.tenable.com/blog/cve-2026-32201-cve-2026-45659-cve-2026-56164-faq-sharepoint-server-exploitation>
@@ -40,27 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — CISA orders feds to patch actively exploited Oracle flaw by Saturday
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-flaw-by-saturday/>
-
-> CISA has ordered federal agencies to secure their systems by Saturday against ongoing attacks exploiting a critical vulnerability in the Oracle E-Business Suite financial application. [...]
-
----
-
-## 6. 🟠 Zero-Day — Unpatched Shark Vacuum Flaw Could Let Attackers Control Other Vacuums Region-Wide
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://thehackernews.com/2026/07/unpatched-shark-vacuum-flaw-could-let.html>
-
-> Pull the certificate off the flash of a Shark RV2320EDUS robot vacuum, and you can run root commands on other people&#x27;s Shark vacuums across the same AWS region: watch the camera, drive the robot, read the map of the house, and take the Wi-Fi password in plaintext.
-
-A researcher publishing under the handle tokay0 put the method online on Monday, having tested it only against vacuums he
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -69,7 +58,7 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -78,7 +67,7 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -87,7 +76,7 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -96,7 +85,7 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -105,7 +94,7 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -114,7 +103,7 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 13. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 12. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -123,31 +112,40 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 14. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 15. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 14. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 16. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 15. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 17. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 16. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
+
+---
+
+## 17. 🟠 Zero-Day — New Windows LegacyHive zero-day gives hackers admin privileges
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/>
+
+> A security researcher using the &quot;Nightmare Eclipse&quot; handle has released a Windows zero-day exploit dubbed LegacyHive that allows attackers to escalate privileges on up-to-date Windows systems. [...]
 
 ---
 
@@ -160,27 +158,7 @@ A researcher publishing under the handle tokay0 put the method online on Monda
 
 ---
 
-## 19. 🟠 Zero-Day — From Indirect Prompt Injection to DNS Exfiltration in macOS Terminal
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Embrace The Red (Prompt Injection Research) &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://embracethered.com/blog/posts/2026/macos-terminal-dillma-dns-exfil-ansi-escape-code-fix/>
-
-> This is a follow-up to my previous Terminal DiLLMa research , and there is a positive outcome: Apple fixed a macOS Terminal behavior that enabled a DNS-based data exfiltration technique. DNS Requests via ANSI Escape Codes David Leadbeater originally discovered an interesting behavior in the macOS Terminal app that allowed a special sequence of ANSI escape codes to issue DNS requests. In short, thi…
-
----
-
-## 20. 🟠 Zero-Day — OpenAI’s GPT-Red Automates Prompt Injection Testing to Harden GPT-5.6 Sol
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://thehackernews.com/2026/07/openais-gpt-red-automates-prompt.html>
-
-> OpenAI has disclosed details of GPT-Red, an internal automated red-teaming model that scales prompt injection vulnerability discovery with an aim to fix issues before the tools are deployed widely.
-
-&quot;GPT‑Red is a strong red-teamer, and our previous models are highly vulnerable to its prompt injection attacks,&quot; the artificial intelligence (AI) company said. &quot;We use GPT‑Red to adversa…
-
----
-
-## 21. 🟡 High Severity — MCP Python SDK: WebSocket server transport does not support Host/Origin validation
+## 19. 🟡 High Severity — MCP Python SDK: WebSocket server transport does not support Host/Origin validation
 
 **CVE:** `CVE-2026-59950` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-vj7q-gjh5-988w>
@@ -190,7 +168,7 @@ In affected versions, the deprecated WebSocket server transport (`mcp.server.web
 
 ---
 
-## 22. 🟡 High Severity — ArcadeDB: Privilege escalation via reader role in /api/v1/command JS scripting language — arbitrary host file read
+## 20. 🟡 High Severity — ArcadeDB: Privilege escalation via reader role in /api/v1/command JS scripting language — arbitrary host file read
 
 **CVE:** `CVE-2026-44221` | `CVE-2026-54076` | `CVE-2026-54077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-48qw-824m-86pr>
@@ -203,7 +181,7 @@ Two cooperating defect…
 
 ---
 
-## 23. 🟡 High Severity — Pheditor: Hardcoded default password 'admin' with no forced change enables full application compromise
+## 21. 🟡 High Severity — Pheditor: Hardcoded default password 'admin' with no forced change enables full application compromise
 
 **CVE:** `CVE-2026-55579` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-p4h7-p9rj-2pq2>
@@ -218,7 +196,7 @@ Tested reposi…
 
 ---
 
-## 24. 🟡 High Severity — kuma-dp connects to control plane without verifying TLS certificate when no CA is configured
+## 22. 🟡 High Severity — kuma-dp connects to control plane without verifying TLS certificate when no CA is configured
 
 **CVE:** `CVE-2026-52724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-wvmp-6r4v-j6cv>
@@ -231,7 +209,7 @@ An on-path attacker can intercept the dataplane authentication token and imperso
 
 ---
 
-## 25. 🟡 High Severity — Envoy Gateway: xDS Control Plane Information Disclosure when operating in GatewayNamespaceMode 
+## 23. 🟡 High Severity — Envoy Gateway: xDS Control Plane Information Disclosure when operating in GatewayNamespaceMode 
 
 **CVE:** `CVE-2026-53714` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-22xc-xg2r-9j7v>
@@ -241,7 +219,7 @@ When Envoy Gateway runs in GatewayNamespaceMode (`provider.kubernetes.deploy.typ
 
 ---
 
-## 26. 🟡 High Severity — Envoy Gateway: Authentication Bypass via Improper Input Validation in EnvoyExtensionPolicy Lua Allows Secret Disclosure
+## 24. 🟡 High Severity — Envoy Gateway: Authentication Bypass via Improper Input Validation in EnvoyExtensionPolicy Lua Allows Secret Disclosure
 
 **CVE:** `CVE-2026-53713` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-wcrf-9vrr-854f>
@@ -254,7 +232,7 @@ This allows Lua code submitted as an `EnvoyExtensionPolicy` to read arbitr…
 
 ---
 
-## 27. 🟡 High Severity — Envoy Gateway: Wasm cache ServeHTTP reads mappingPath2Cache without lock
+## 25. 🟡 High Severity — Envoy Gateway: Wasm cache ServeHTTP reads mappingPath2Cache without lock
 
 **CVE:** `CVE-2026-53715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-8fv2-88gg-hm7q>
@@ -269,7 +247,7 @@ This allows Lua code submitted as an `EnvoyExtensionPolicy` to read arbitr…
 
 ---
 
-## 28. 🟡 High Severity — Envoy Gateway: Wasm HTTP fetch decompresses gzip without output-size limit
+## 26. 🟡 High Severity — Envoy Gateway: Wasm HTTP fetch decompresses gzip without output-size limit
 
 **CVE:** `CVE-2026-53716` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-cxpq-8v7q-cg56>
@@ -288,7 +266,7 @@ getFileFromGZ calls io.ReadAll on a r…
 
 ---
 
-## 29. 🟡 High Severity — Envoy Gateway custom backendRef cross-namespace ReferenceGrant bypass
+## 27. 🟡 High Severity — Envoy Gateway custom backendRef cross-namespace ReferenceGrant bypass
 
 **CVE:** `CVE-2026-53718` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-fcrp-7gc2-93g7>
@@ -298,7 +276,7 @@ Envoy Gateway accepts extension-managed custom backendRefs from an HTTPRoute to 
 
 ---
 
-## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
