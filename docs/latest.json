@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-17T12:58:56.575438+00:00",
-  "total": 28,
+  "generated": "2026-07-17T18:50:30.901342+00:00",
+  "total": 33,
   "kev": 0,
   "zero_day": 18,
   "enriched": 0,
@@ -69,22 +69,17 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.tenable.com/blog/cve-2026-32201-cve-2026-45659-cve-2026-56164-faq-sharepoint-server-exploitation",
-      "title": "CVE-2026-32201, CVE-2026-45659, CVE-2026-56164: Frequently Asked Questions About Active Exploitation of Microsoft SharePoint Server Vulnerabilities",
-      "summary": "Four Microsoft SharePoint Server vulnerabilities are under active exploitation, prompting CISA to issue a hardening alert. An additional high-severity flaw recently patched adds pressure for organizations running on-premises deployments. Key Takeaways CISA confirmed active exploitation of three on-premises SharePoint Server vulnerabilities (CVE-2026-32201, CVE-2026-45659, CVE-2026-56164), used to gain unauthorized access, establish remote code execution, steal IIS machine keys and deploy malware for persistence. Two additional SharePoint Server vulnerabilities disclosed on July 14, 2026, CVE-2026-55040 and CVE-2026-58644, were not yet observed exploited at the time of publication, but Microsoft has flagged CVE-2026-58644 as exploited on July 15. Microsoft released patches for all five vulnerabilities and Microsoft Defender Antivirus detection signatures are available to identify exploitation activity for three of the actively exploited flaws. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding active exploitation of Microsoft SharePoint Server vulnerabilities. FAQ When did CISA issue an alert about SharePoint Server exploitation? On July 14, 2026, the U.S. Cybersecurity and Infrastructure Security Agency (CISA) published an alert confirming active exploitation of three on-premises SharePoint Server vulnerabilities: CVE-2026-32201, CVE-2026-45659, and CVE-2026-56164. The alert noted that these flaws had been used to gain unauthorized access to SharePoint deployments across all supported on-premises versions and flagged two additional high-risk vulnerabilities, CVE-2026-55040 and CVE-2026-58644, as not yet exploited but warranting immediate patching. However in an update to the security advisory on July 15, Microsoft confirmed CVE-2026-58644 has been exploited in the wild. What vulnerabilities are covered in this alert? Five Microsoft SharePoint Server vulnerabilities are covered in CI",
-      "link": "https://www.tenable.com/blog/cve-2026-32201-cve-2026-45659-cve-2026-56164-faq-sharepoint-server-exploitation",
-      "published": "2026-07-16T16:00:26+00:00",
-      "source": "Tenable Security Research",
+      "id": "https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html",
+      "title": "CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a newly patched security flaw impacting Microsoft SharePoint Server to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the fixes by July 19, 2026.\n\nThe vulnerability in question is CVE-2026-58644 (CVSS score: 9.8), a critical deserialization",
+      "link": "https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html",
+      "published": "2026-07-17T06:42:23+00:00",
+      "source": "The Hacker News Security",
       "tags": [
-        "cloud",
-        "research",
-        "vuln"
+        "news",
+        "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-32201",
-        "CVE-2026-45659",
-        "CVE-2026-56164",
-        "CVE-2026-55040",
         "CVE-2026-58644"
       ],
       "is_zero_day": true,
@@ -293,6 +288,96 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "GHSA-rjwr-m7qx-3fjr",
+      "title": "oapi-codegen: OpenAPI Server Description Escapes Generated Go Comment and Injects Executable Code",
+      "summary": "## Summary\n\nThe vulnerability in oapi-codegen seems to be similar with CVE-2026-22785,  which is a generated-code injection issue where untrusted OpenAPI `summary` text is embedded into generated TypeScript MCP server source without proper escaping. `oapi-codegen` has a similar vulnerability in its server URL generator: untrusted OpenAPI `servers[].description` text is inserted into a generated Go line comment without normalizing embedded newlines. A crafted description can break out of the comment, add imports through `goimports`, and emit executable Go declarations into the generated package.\n\n> [!NOTE]\n> A vulnerability like this requires that it is missed in code review **and** that you then call the malicious method.\n> \n> Using an `init()` function could be enough to not require a direct call to the code, and instead rely on you importing the package, but either way, code review should be performed before any `oapi-codegen` generated code is executed.\n> \n> We **strongly recommend** all users to be reviewing changes to their generated code before they execute anything within it, to protect against supply chain attacks or malicious injected code.\n>\n> This is also why we recommend `oapi-codegen` generated code is committed to source control.\n\n## Details\nThe vulnerable sink is in `pkg/codegen/templates/server-urls.tmpl`.\n\n```gotemplate\n// {{ .GoName }} defines the Server URL for {{ if len .OAPISchema.Description }}{{ .OAPISchema.Description }}{{ else }}{{ .OAPISchema.URL }}{{ end }}\nconst {{ .GoName}} = \"{{ .OAPISchema.URL }}\"\n```\n\nThis template assumes the OpenAPI server description remains inside a single Go line comment. However, OpenAPI descriptions are attacker-controlled strings and may contain newlines. Once a newline is present, the next line is no longer part of the comment.\n\nThe same raw description is also used in the function form of server URL generation:\n\n```gotemplate\n// New{{ .GoName }} constructs the Server URL for {{ .OAPISchema.Description }}, wi",
+      "link": "https://github.com/advisories/GHSA-rjwr-m7qx-3fjr",
+      "published": "2026-07-17T18:50:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-22785"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54549",
+      "title": "meta-ads-mcp: Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch",
+      "summary": "## Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch\n\n### Summary\n\nThe `upload_ad_image` MCP tool in `meta-ads-mcp` v1.0.113 passes an attacker-controlled `image_url` parameter directly to an HTTP fetch helper (`httpx.AsyncClient(follow_redirects=True).get(url)`) without any scheme, host, or IP address validation. When the server is deployed with the `streamable-http` transport (a documented, officially supported mode), an unauthenticated remote attacker can supply an arbitrary URL\u2014including `http://127.0.0.1/`, RFC 1918 addresses, or cloud metadata endpoints such as `http://169.254.169.254/`\u2014and cause the server to issue an outbound HTTP request to that target. The `Authorization` middleware only verifies that a non-empty Bearer token is present; actual Meta API credential validation occurs *after* the image download, so any dummy Bearer token bypasses the pre-fetch check. This constitutes a full, unauthenticated Server-Side Request Forgery with a confirmed CVSS 3.1 Base Score of 8.3 (High).\n\n### Details\n\n**Source**\n\n`meta_ads_mcp/core/ads.py`, line 1316\u20131322: The MCP tool `upload_ad_image` is registered with `@mcp_server.tool()` and exposes `image_url: Optional[str]` as a direct tool argument that is fully attacker-controlled over the network.\n\n```python\n# meta_ads_mcp/core/ads.py\n1316: @mcp_server.tool()\n1318: async def upload_ad_image(\n1322:     image_url: Optional[str] = None,\n```\n\n**Propagation**\n\n`meta_ads_mcp/core/ads.py`, line 1389: The value is forwarded to `try_multiple_download_methods(image_url)` without any sanitization or validation.\n\n```python\n# meta_ads_mcp/core/ads.py\n1389:     image_bytes = await try_multiple_download_methods(image_url)\n```\n\n**Sinks**\n\n`meta_ads_mcp/core/utils.py` contains three independent HTTP fetch paths, all using `httpx.AsyncClient` with `follow_redirects=True` and no URL, host, or IP validation:\n\n```python\n# meta_ads_mcp/core/utils.py\n166:     async with httpx.AsyncClient(follow_redir",
+      "link": "https://github.com/advisories/GHSA-45gf-fjxp-cjpq",
+      "published": "2026-07-17T18:47:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54549"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-11400",
+      "title": "AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance",
+      "summary": "Aurora PostgreSQL is a fully managed relational database engine that's compatible with PostgreSQL.\n\nThe team has identified CVE-2026-11400, an issue in Aurora PostgreSQL using the AWS Advanced JDBC Wrapper\n\n\nImpact\nAn issue in AWS Wrappers for Amazon Aurora PostgreSQL will allow for privilege escalation to rds_superuser role. A low privilege authenticated user can create a crafted function that could be executed with permissions of other Amazon Relational Database Service (RDS) users.\n\nImpacted versions: AWS Advanced JDBC Wrapper >= 3.0.0 and  < 4.0.1\n\nPatches\nThis issue has been addressed in AWS JDBC Wrapper v4.0.1. It is recommended to upgrade to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. \n\nWorkarounds\nRemove the public schema from the search path.\n\nResources\nIf there are any questions or comments about this advisory, contact [AWS/Amazon] Security via [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\nAcknowledgement \n\nAWS-JDBC Wrapper would like to thank [x.com/ph0smet](http://x.com/ph0smet) for collaborating on this issue through the coordinated vulnerability disclosure process.",
+      "link": "https://github.com/advisories/GHSA-mhww-p97m-3368",
+      "published": "2026-07-17T18:40:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-11400"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54247",
+      "title": "Skipper: Unbounded Request Body Read in Admission Webhook Causes Memory Exhaustion DoS",
+      "summary": "## Summary\n\nThe Kubernetes admission webhook handler reads the entire request body using `io.ReadAll(r.Body)` without any size limit. Any client that can reach the webhook port within the cluster can send a multi-GB payload, causing the skipper process to exhaust memory and be OOM-killed. This disrupts all Kubernetes admission control, potentially blocking all pod creation and updates.\n\n## Vulnerable Code\n\n```go\n// dataclients/kubernetes/admission/admission.go:76\nbody, err := io.ReadAll(r.Body)  // <-- NO SIZE LIMIT\nif err != nil {\n    log.Errorf(\"Failed to read request: %v\", err)\n    w.WriteHeader(http.StatusInternalServerError)\n    invalidRequests.WithLabelValues(admitterName).Inc()\n    return\n}\n\nvar review admissionReview\nerr = json.Unmarshal(body, &review)\n```\n\nFor comparison, the OPA filter has a body size limit:\n\n```go\n// filters/openpolicyagent/openpolicyagent.go:68-70\nconst DefaultMaxRequestBodySize = 1 << 20 // 1MB\n\n// OPA uses a bufferedBodyReader with size limits\n```\n\n## Attack Path\n\n1. Attacker identifies the admission webhook endpoint (default: `:9443/admission` or configured path)\n2. Attacker sends: `POST /admission HTTP/1.1, Content-Type: application/json` with a multi-GB request body\n3. `io.ReadAll(r.Body)` allocates unbounded memory for the entire body\n4. Skipper process is OOM-killed by the Kubernetes kubelet\n\n## Permission Boundary Analysis\n\n- **Attacker**: Any client with network access to the admission webhook port within the Kubernetes cluster\n- **Boundary crossed**: Memory safety \u2014 unbounded allocation from attacker-controlled input\n- **Preconditions**: Admission webhook endpoint must be network-reachable (default Kubernetes deployment exposes it within cluster network)\n- **Comparison**: OPA filter has `DefaultMaxRequestBodySize` (1MB) and semaphore-based memory limit; admission handler has neither\n\n## Evidence\n\n| File | Lines | Description |\n|------|-------|-------------|\n| `dataclients/kubernetes/admission/admission.go` | 76 | `io.ReadAll(r.",
+      "link": "https://github.com/advisories/GHSA-cwxq-rc9x-2jvv",
+      "published": "2026-07-17T18:14:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54247"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-34760",
+      "title": "vLLM: Processing differential in multi-channel audio downmixing enables hidden-input/moderation bypass for audio models",
+      "summary": "## Issue Description\nLibrosa defaults to using `numpy.mean` for mono downmixing (`to_mono`), while the international standard ITU-R BS.775-4 specifies a weighted downmixing algorithm. This discrepancy results in:\n- Inconsistency between audio heard by humans (e.g., through headphones/regular speakers) and audio processed by AI models (Which infra via Librosa, such as vllm, transformer).\n\nhttps://github.com/librosa/librosa/blob/af8c839fb15317fa2712ea66e7a22da6a9267b32/librosa/core/audio.py#L478\n## Attack Scenario and Impact\n\n### LFE (Low-Frequency Effects) Channel Exploit\nAttackers can craft special multichannel audio files containing:\n1. Normal content in front channels (L/R)\n2. Either interference signals or hidden content in the LFE channel\n\n**Notice:** It is worth noting that not only the LFE channel is excluded, but in fact, channels beyond the 6th (such as rear surround channels, overhead channels, height speakers, etc.) are also not supported.\n\n**Attack Methodology:**\n\nAttackers can create specially engineered multichannel audio with LFE interference, where front channels (L/R) contain normal content while the LFE channel carries interference signals or hidden content. When played on consumer devices that ignore LFE channels, only the normal content is heard. However, when processed by AI systems using Librosa (which mixes all channels), the LFE interference affects speech recognition feature extraction or masks critical detection features. This enables malicious content to bypass AI detection while still reaching end users, potentially compromising voice authentication systems, evading content moderation, or disrupting speech recognition accuracy.\n\n**Potential Exploitation Scenarios:**\n- Voice authentication systems may be tricked into accepting anomalous audio\n- Content moderation systems may fail to detect prohibited content hidden in LFE channels \n- Speech recognition systems may produce incorrect transcriptions\n\n**Note:** `torch.audio` implements this cor",
+      "link": "https://github.com/advisories/GHSA-6c4r-fmh3-7rh8",
+      "published": "2026-07-17T16:52:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-34760"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-59950",

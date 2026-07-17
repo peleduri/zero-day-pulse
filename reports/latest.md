@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-17 12:58 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-17 18:50 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -40,12 +40,14 @@
 
 ---
 
-## 5. 🟠 Zero-Day — CVE-2026-32201, CVE-2026-45659, CVE-2026-56164: Frequently Asked Questions About Active Exploitation of Microsoft SharePoint Server Vulnerabilities
+## 5. 🟠 Zero-Day — CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV
 
-**CVE:** `CVE-2026-32201` | `CVE-2026-45659` | `CVE-2026-56164` | `CVE-2026-55040` | `CVE-2026-58644` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://www.tenable.com/blog/cve-2026-32201-cve-2026-45659-cve-2026-56164-faq-sharepoint-server-exploitation>
+**CVE:** `CVE-2026-58644` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html>
 
-> Four Microsoft SharePoint Server vulnerabilities are under active exploitation, prompting CISA to issue a hardening alert. An additional high-severity flaw recently patched adds pressure for organizations running on-premises deployments. Key Takeaways CISA confirmed active exploitation of three on-premises SharePoint Server vulnerabilities (CVE-2026-32201, CVE-2026-45659, CVE-2026-56164), used to …
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a newly patched security flaw impacting Microsoft SharePoint Server to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the fixes by July 19, 2026.
+
+The vulnerability in question is CVE-2026-58644 (CVSS score: 9.8), a critical deserialization
 
 ---
 
@@ -158,7 +160,72 @@
 
 ---
 
-## 19. 🟡 High Severity — MCP Python SDK: WebSocket server transport does not support Host/Origin validation
+## 19. 🟡 High Severity — oapi-codegen: OpenAPI Server Description Escapes Generated Go Comment and Injects Executable Code
+
+**CVE:** `CVE-2026-22785` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-rjwr-m7qx-3fjr>
+
+> ## Summary
+
+The vulnerability in oapi-codegen seems to be similar with CVE-2026-22785,  which is a generated-code injection issue where untrusted OpenAPI `summary` text is embedded into generated TypeScript MCP server source without proper escaping. `oapi-codegen` has a similar vulnerability in its server URL generator: untrusted OpenAPI `servers[].description` text is inserted into a generated Go…
+
+---
+
+## 20. 🟡 High Severity — meta-ads-mcp: Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch
+
+**CVE:** `CVE-2026-54549` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-45gf-fjxp-cjpq>
+
+> ## Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch
+
+### Summary
+
+The `upload_ad_image` MCP tool in `meta-ads-mcp` v1.0.113 passes an attacker-controlled `image_url` parameter directly to an HTTP fetch helper (`httpx.AsyncClient(follow_redirects=True).get(url)`) without any scheme, host, or IP address validation. When the server is deployed with the `strea…
+
+---
+
+## 21. 🟡 High Severity — AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance
+
+**CVE:** `CVE-2026-11400` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-mhww-p97m-3368>
+
+> Aurora PostgreSQL is a fully managed relational database engine that&#x27;s compatible with PostgreSQL.
+
+The team has identified CVE-2026-11400, an issue in Aurora PostgreSQL using the AWS Advanced JDBC Wrapper
+
+
+Impact
+An issue in AWS Wrappers for Amazon Aurora PostgreSQL will allow for privilege escalation to rds_superuser role. A low privilege authenticated user can create a crafted function th…
+
+---
+
+## 22. 🟡 High Severity — Skipper: Unbounded Request Body Read in Admission Webhook Causes Memory Exhaustion DoS
+
+**CVE:** `CVE-2026-54247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-cwxq-rc9x-2jvv>
+
+> ## Summary
+
+The Kubernetes admission webhook handler reads the entire request body using `io.ReadAll(r.Body)` without any size limit. Any client that can reach the webhook port within the cluster can send a multi-GB payload, causing the skipper process to exhaust memory and be OOM-killed. This disrupts all Kubernetes admission control, potentially blocking all pod creation and updates.
+
+## Vulnera…
+
+---
+
+## 23. 🟡 High Severity — vLLM: Processing differential in multi-channel audio downmixing enables hidden-input/moderation bypass for audio models
+
+**CVE:** `CVE-2026-34760` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-6c4r-fmh3-7rh8>
+
+> ## Issue Description
+Librosa defaults to using `numpy.mean` for mono downmixing (`to_mono`), while the international standard ITU-R BS.775-4 specifies a weighted downmixing algorithm. This discrepancy results in:
+- Inconsistency between audio heard by humans (e.g., through headphones/regular speakers) and audio processed by AI models (Which infra via Librosa, such as vllm, transformer).
+
+https://g…
+
+---
+
+## 24. 🟡 High Severity — MCP Python SDK: WebSocket server transport does not support Host/Origin validation
 
 **CVE:** `CVE-2026-59950` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-vj7q-gjh5-988w>
@@ -168,7 +235,7 @@ In affected versions, the deprecated WebSocket server transport (`mcp.server.web
 
 ---
 
-## 20. 🟡 High Severity — ArcadeDB: Privilege escalation via reader role in /api/v1/command JS scripting language — arbitrary host file read
+## 25. 🟡 High Severity — ArcadeDB: Privilege escalation via reader role in /api/v1/command JS scripting language — arbitrary host file read
 
 **CVE:** `CVE-2026-44221` | `CVE-2026-54076` | `CVE-2026-54077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-48qw-824m-86pr>
@@ -181,7 +248,7 @@ Two cooperating defect…
 
 ---
 
-## 21. 🟡 High Severity — Pheditor: Hardcoded default password 'admin' with no forced change enables full application compromise
+## 26. 🟡 High Severity — Pheditor: Hardcoded default password 'admin' with no forced change enables full application compromise
 
 **CVE:** `CVE-2026-55579` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-p4h7-p9rj-2pq2>
@@ -196,7 +263,7 @@ Tested reposi…
 
 ---
 
-## 22. 🟡 High Severity — kuma-dp connects to control plane without verifying TLS certificate when no CA is configured
+## 27. 🟡 High Severity — kuma-dp connects to control plane without verifying TLS certificate when no CA is configured
 
 **CVE:** `CVE-2026-52724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-wvmp-6r4v-j6cv>
@@ -209,7 +276,7 @@ An on-path attacker can intercept the dataplane authentication token and imperso
 
 ---
 
-## 23. 🟡 High Severity — Envoy Gateway: xDS Control Plane Information Disclosure when operating in GatewayNamespaceMode 
+## 28. 🟡 High Severity — Envoy Gateway: xDS Control Plane Information Disclosure when operating in GatewayNamespaceMode 
 
 **CVE:** `CVE-2026-53714` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-22xc-xg2r-9j7v>
@@ -219,7 +286,7 @@ When Envoy Gateway runs in GatewayNamespaceMode (`provider.kubernetes.deploy.typ
 
 ---
 
-## 24. 🟡 High Severity — Envoy Gateway: Authentication Bypass via Improper Input Validation in EnvoyExtensionPolicy Lua Allows Secret Disclosure
+## 29. 🟡 High Severity — Envoy Gateway: Authentication Bypass via Improper Input Validation in EnvoyExtensionPolicy Lua Allows Secret Disclosure
 
 **CVE:** `CVE-2026-53713` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-wcrf-9vrr-854f>
@@ -232,7 +299,7 @@ This allows Lua code submitted as an `EnvoyExtensionPolicy` to read arbitr…
 
 ---
 
-## 25. 🟡 High Severity — Envoy Gateway: Wasm cache ServeHTTP reads mappingPath2Cache without lock
+## 30. 🟡 High Severity — Envoy Gateway: Wasm cache ServeHTTP reads mappingPath2Cache without lock
 
 **CVE:** `CVE-2026-53715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-8fv2-88gg-hm7q>
@@ -247,7 +314,7 @@ This allows Lua code submitted as an `EnvoyExtensionPolicy` to read arbitr…
 
 ---
 
-## 26. 🟡 High Severity — Envoy Gateway: Wasm HTTP fetch decompresses gzip without output-size limit
+## 31. 🟡 High Severity — Envoy Gateway: Wasm HTTP fetch decompresses gzip without output-size limit
 
 **CVE:** `CVE-2026-53716` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-cxpq-8v7q-cg56>
@@ -266,7 +333,7 @@ getFileFromGZ calls io.ReadAll on a r…
 
 ---
 
-## 27. 🟡 High Severity — Envoy Gateway custom backendRef cross-namespace ReferenceGrant bypass
+## 32. 🟡 High Severity — Envoy Gateway custom backendRef cross-namespace ReferenceGrant bypass
 
 **CVE:** `CVE-2026-53718` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
 **Reference:** <https://github.com/advisories/GHSA-fcrp-7gc2-93g7>
@@ -276,7 +343,7 @@ Envoy Gateway accepts extension-managed custom backendRefs from an HTTPRoute to 
 
 ---
 
-## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

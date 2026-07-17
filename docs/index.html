@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">18</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-17 12:58 UTC</div>
+            <div class="generated">Updated 2026-07-17 18:50 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -181,21 +181,23 @@
 
 </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.tenable.com/blog/cve-2026-32201-cve-2026-45659-cve-2026-56164-faq-sharepoint-server-exploitation" target="_blank" rel="noopener">CVE-2026-32201, CVE-2026-45659, CVE-2026-56164: Frequently Asked Questions About Active Exploitation of Microsoft SharePoint Server Vulnerabilities</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-32201</code> <code class="cve">CVE-2026-45659</code> <code class="cve">CVE-2026-56164</code> <code class="cve">CVE-2026-55040</code> <code class="cve">CVE-2026-58644</code>
-    <span class="meta-sep">·</span>
-    <span>Tenable Security Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-16</span>
-  </div>
-  <p class='summary'>Four Microsoft SharePoint Server vulnerabilities are under active exploitation, prompting CISA to issue a hardening alert. An additional high-severity flaw recently patched adds pressure for organizations running on-premises deployments. Key Takeaways CISA confirmed active exploitation of three on-premises SharePoint Server vulnerabilities (CVE-2026-32201, CVE-2026-45659, CVE-2026-56164), used to …</p>
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html" target="_blank" rel="noopener">CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-58644</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a newly patched security flaw impacting Microsoft SharePoint Server to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the fixes by July 19, 2026.
 
-</article>
+The vulnerability in question is CVE-2026-58644 (CVSS score: 9.8), a critical deserialization</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -404,6 +406,106 @@
   <p class='summary'>A flaw in Anthropic&#x27;s Claude for Chrome browser extension could allow a malicious extension to trigger predefined AI actions by simulating user clicks, potentially allowing it to abuse Claude&#x27;s access to connected services such as Gmail, Google Docs, Google Calendar, and Salesforce. [...]</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rjwr-m7qx-3fjr" target="_blank" rel="noopener">oapi-codegen: OpenAPI Server Description Escapes Generated Go Comment and Injects Executable Code</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-22785</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+The vulnerability in oapi-codegen seems to be similar with CVE-2026-22785,  which is a generated-code injection issue where untrusted OpenAPI `summary` text is embedded into generated TypeScript MCP server source without proper escaping. `oapi-codegen` has a similar vulnerability in its server URL generator: untrusted OpenAPI `servers[].description` text is inserted into a generated Go…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-45gf-fjxp-cjpq" target="_blank" rel="noopener">meta-ads-mcp: Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54549</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>## Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch
+
+### Summary
+
+The `upload_ad_image` MCP tool in `meta-ads-mcp` v1.0.113 passes an attacker-controlled `image_url` parameter directly to an HTTP fetch helper (`httpx.AsyncClient(follow_redirects=True).get(url)`) without any scheme, host, or IP address validation. When the server is deployed with the `strea…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mhww-p97m-3368" target="_blank" rel="noopener">AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-11400</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>Aurora PostgreSQL is a fully managed relational database engine that&#x27;s compatible with PostgreSQL.
+
+The team has identified CVE-2026-11400, an issue in Aurora PostgreSQL using the AWS Advanced JDBC Wrapper
+
+
+Impact
+An issue in AWS Wrappers for Amazon Aurora PostgreSQL will allow for privilege escalation to rds_superuser role. A low privilege authenticated user can create a crafted function that co…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cwxq-rc9x-2jvv" target="_blank" rel="noopener">Skipper: Unbounded Request Body Read in Admission Webhook Causes Memory Exhaustion DoS</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54247</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+The Kubernetes admission webhook handler reads the entire request body using `io.ReadAll(r.Body)` without any size limit. Any client that can reach the webhook port within the cluster can send a multi-GB payload, causing the skipper process to exhaust memory and be OOM-killed. This disrupts all Kubernetes admission control, potentially blocking all pod creation and updates.
+
+## Vulnera…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6c4r-fmh3-7rh8" target="_blank" rel="noopener">vLLM: Processing differential in multi-channel audio downmixing enables hidden-input/moderation bypass for audio models</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-34760</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>## Issue Description
+Librosa defaults to using `numpy.mean` for mono downmixing (`to_mono`), while the international standard ITU-R BS.775-4 specifies a weighted downmixing algorithm. This discrepancy results in:
+- Inconsistency between audio heard by humans (e.g., through headphones/regular speakers) and audio processed by AI models (Which infra via Librosa, such as vllm, transformer).
+
+https://g…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
