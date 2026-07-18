@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-18T07:24:21.930308+00:00",
-  "total": 31,
+  "generated": "2026-07-18T12:45:10.941133+00:00",
+  "total": 29,
   "kev": 0,
-  "zero_day": 19,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -51,22 +51,6 @@
       "cve_ids": [
         "CVE-2026-58644"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://unit42.paloaltonetworks.com/siemens-rox-ii-zero-day-vulnerabilities/",
-      "title": "Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy",
-      "summary": "A technical analysis of three chained zero-day vulnerabilities in Siemens ROX II OT switches that allow privilege escalation and persistent root access. The post Three Steps to the Terminal: A Siemens ROX II Zero-Day Trilogy appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/siemens-rox-ii-zero-day-vulnerabilities/",
-      "published": "2026-07-17T10:00:24+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -292,21 +276,6 @@
       "cve_ids": [
         "CVE-2026-54561"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/",
-      "title": "New Windows LegacyHive zero-day gives hackers admin privileges",
-      "summary": "A security researcher using the \"Nightmare Eclipse\" handle has released a Windows zero-day exploit dubbed LegacyHive that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/",
-      "published": "2026-07-17T11:05:30+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
