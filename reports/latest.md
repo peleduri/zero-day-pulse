@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-18 12:45 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-18 18:43 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,16 +22,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CVE-2026-58644: Microsoft SharePoint Server Unauthenticated Remote Code Execution Vulnerability Exploited in the Wild
-
-**CVE:** `CVE-2026-58644` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-17
-**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-58644-microsoft-sharepoint-server-unauthenticated-remote-code-execution-vulnerability-exploited-in-the-wild>
-
-> Overview On July 14, 2026, Microsoft published a security advisory addressing CVE-2026-58644 , a critical remote code execution (RCE) vulnerability affecting on-premises Microsoft SharePoint Server deployments. The vulnerability, which carries a CVSS v3.1 score of 9.8 (Critical), results from the deserialization of untrusted data ( CWE-502 ) and allows an unauthenticated attacker to execute arbitr…
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +31,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +40,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +49,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +58,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +67,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 8. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -85,7 +76,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 9. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -94,35 +85,35 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 10. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 12. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 11. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 13. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 12. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 14. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 15. 🟠 Zero-Day — PocketSphinx: Buffer overflows in language and acoustic model loading code
+## 14. 🟠 Zero-Day — PocketSphinx: Buffer overflows in language and acoustic model loading code
 
 **CVE:** `CVE-2026-54559` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-56r5-2p2f-7cxp>
@@ -135,7 +126,7 @@ In addition, the acoustic model loading code (which is over 30 years old...) con
 
 ---
 
-## 16. 🟠 Zero-Day — OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests
+## 15. 🟠 Zero-Day — OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html>
@@ -146,7 +137,7 @@ OpenSSL shipped the HollowByte fix in June with no CVE, no advisory, and no chan
 
 ---
 
-## 17. 🟠 Zero-Day — mcp-memory-keeper: Arbitrary local file read in context_import via unvalidated filePath
+## 16. 🟠 Zero-Day — mcp-memory-keeper: Arbitrary local file read in context_import via unvalidated filePath
 
 **CVE:** `CVE-2026-54561` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-f7wf-v2vw-mpcx>
@@ -159,7 +150,7 @@ OpenSSL shipped the HollowByte fix in June with no CVE, no advisory, and no chan
 
 ---
 
-## 18. 🟡 High Severity — CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core
+## 17. 🟡 High Severity — CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core
 
 **CVE:** `CVE-2026-63030` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-63030-wp2shell-a-critical-remote-code-execution-vulnerability-in-wordpress-core>
@@ -168,7 +159,7 @@ OpenSSL shipped the HollowByte fix in June with no CVE, no advisory, and no chan
 
 ---
 
-## 19. 🟡 High Severity — Skipper's routesrv-no-auth component: All routesrv API Endpoints Lack Authentication
+## 18. 🟡 High Severity — Skipper's routesrv-no-auth component: All routesrv API Endpoints Lack Authentication
 
 **CVE:** `CVE-2026-54246` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-5587-2x54-jj6h>
@@ -179,7 +170,7 @@ The `routesrv` component exposes the full cluster route topology (Ingress/RouteG
 
 ---
 
-## 20. 🟡 High Severity — CloudTAK: Authenticated full-read SSRF in the /api/esri* routes — user-controlled URL fetched with no IP-classification guard
+## 19. 🟡 High Severity — CloudTAK: Authenticated full-read SSRF in the /api/esri* routes — user-controlled URL fetched with no IP-classification guard
 
 **CVE:** `CVE-2026-55177` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-r95q-fp26-h3hc>
@@ -192,7 +183,7 @@ Every route in the ESRI helper family (`api/routes/esri.ts`) takes a fully attac
 
 ---
 
-## 21. 🟡 High Severity — AngleSharp HTML5 Spec Compliance: mXSS via annotation-xml HTML Integration Point Bypass
+## 20. 🟡 High Severity — AngleSharp HTML5 Spec Compliance: mXSS via annotation-xml HTML Integration Point Bypass
 
 **CVE:** `CVE-2026-54570` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-pgww-w46g-26qg>
@@ -204,7 +195,7 @@ AngleSharp does not implement this correctly. As a result, the parser produces a
 
 ---
 
-## 22. 🟡 High Severity — Gitea has insufficient permission checks for Composer package source links
+## 21. 🟡 High Severity — Gitea has insufficient permission checks for Composer package source links
 
 **CVE:** `CVE-2026-27771` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-8qw8-rq86-9pc2>
@@ -217,7 +208,7 @@ A critical vulnerability has been discovered in Gitea. It was already reported v
 
 ---
 
-## 23. 🟡 High Severity — TAK-PS-Stats Web UI: Authenticated full-read SSRF in CloudTAK basemap import (PUT /api/basemap) — no IP-classification guard
+## 22. 🟡 High Severity — TAK-PS-Stats Web UI: Authenticated full-read SSRF in CloudTAK basemap import (PUT /api/basemap) — no IP-classification guard
 
 **CVE:** `CVE-2026-54546` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-vqrw-qphh-p34v>
@@ -228,7 +219,7 @@ A critical vulnerability has been discovered in Gitea. It was already reported v
 
 ---
 
-## 24. 🟡 High Severity — oapi-codegen: OpenAPI Server Description Escapes Generated Go Comment and Injects Executable Code
+## 23. 🟡 High Severity — oapi-codegen: OpenAPI Server Description Escapes Generated Go Comment and Injects Executable Code
 
 **CVE:** `CVE-2026-22785` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-rjwr-m7qx-3fjr>
@@ -239,7 +230,7 @@ The vulnerability in oapi-codegen seems to be similar with CVE-2026-22785,  whic
 
 ---
 
-## 25. 🟡 High Severity — meta-ads-mcp: Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch
+## 24. 🟡 High Severity — meta-ads-mcp: Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch
 
 **CVE:** `CVE-2026-54549` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-45gf-fjxp-cjpq>
@@ -252,48 +243,7 @@ The `upload_ad_image` MCP tool in `meta-ads-mcp` v1.0.113 passes an attacker-con
 
 ---
 
-## 26. 🟡 High Severity — AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance
-
-**CVE:** `CVE-2026-11400` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
-**Reference:** <https://github.com/advisories/GHSA-mhww-p97m-3368>
-
-> Aurora PostgreSQL is a fully managed relational database engine that&#x27;s compatible with PostgreSQL.
-
-The team has identified CVE-2026-11400, an issue in Aurora PostgreSQL using the AWS Advanced JDBC Wrapper
-
-
-Impact
-An issue in AWS Wrappers for Amazon Aurora PostgreSQL will allow for privilege escalation to rds_superuser role. A low privilege authenticated user can create a crafted function th…
-
----
-
-## 27. 🟡 High Severity — Skipper: Unbounded Request Body Read in Admission Webhook Causes Memory Exhaustion DoS
-
-**CVE:** `CVE-2026-54247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
-**Reference:** <https://github.com/advisories/GHSA-cwxq-rc9x-2jvv>
-
-> ## Summary
-
-The Kubernetes admission webhook handler reads the entire request body using `io.ReadAll(r.Body)` without any size limit. Any client that can reach the webhook port within the cluster can send a multi-GB payload, causing the skipper process to exhaust memory and be OOM-killed. This disrupts all Kubernetes admission control, potentially blocking all pod creation and updates.
-
-## Vulnera…
-
----
-
-## 28. 🟡 High Severity — vLLM: Processing differential in multi-channel audio downmixing enables hidden-input/moderation bypass for audio models
-
-**CVE:** `CVE-2026-34760` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
-**Reference:** <https://github.com/advisories/GHSA-6c4r-fmh3-7rh8>
-
-> ## Issue Description
-Librosa defaults to using `numpy.mean` for mono downmixing (`to_mono`), while the international standard ITU-R BS.775-4 specifies a weighted downmixing algorithm. This discrepancy results in:
-- Inconsistency between audio heard by humans (e.g., through headphones/regular speakers) and audio processed by AI models (Which infra via Librosa, such as vllm, transformer).
-
-https://g…
-
----
-
-## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 25. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

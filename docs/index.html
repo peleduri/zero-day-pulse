@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">17</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">29</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">25</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-18 12:45 UTC</div>
+            <div class="generated">Updated 2026-07-18 18:43 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -146,22 +146,6 @@
     <span>Thu, 12 Ju</span>
   </div>
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-cve-2026-58644-microsoft-sharepoint-server-unauthenticated-remote-code-execution-vulnerability-exploited-in-the-wild" target="_blank" rel="noopener">CVE-2026-58644: Microsoft SharePoint Server Unauthenticated Remote Code Execution Vulnerability Exploited in the Wild</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-58644</code>
-    <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-17</span>
-  </div>
-  <p class='summary'>Overview On July 14, 2026, Microsoft published a security advisory addressing CVE-2026-58644 , a critical remote code execution (RCE) vulnerability affecting on-premises Microsoft SharePoint Server deployments. The vulnerability, which carries a CVSS v3.1 score of 9.8 (Critical), results from the deserialization of untrusted data ( CWE-502 ) and allows an unauthenticated attacker to execute arbitr…</p>
 
 </article>
 
@@ -545,68 +529,6 @@ The vulnerability in oapi-codegen seems to be similar with CVE-2026-22785,  whic
 ### Summary
 
 The `upload_ad_image` MCP tool in `meta-ads-mcp` v1.0.113 passes an attacker-controlled `image_url` parameter directly to an HTTP fetch helper (`httpx.AsyncClient(follow_redirects=True).get(url)`) without any scheme, host, or IP address validation. When the server is deployed with the `strea…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mhww-p97m-3368" target="_blank" rel="noopener">AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-11400</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-17</span>
-          </div>
-          <p class='summary'>Aurora PostgreSQL is a fully managed relational database engine that&#x27;s compatible with PostgreSQL.
-
-The team has identified CVE-2026-11400, an issue in Aurora PostgreSQL using the AWS Advanced JDBC Wrapper
-
-
-Impact
-An issue in AWS Wrappers for Amazon Aurora PostgreSQL will allow for privilege escalation to rds_superuser role. A low privilege authenticated user can create a crafted function that co…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cwxq-rc9x-2jvv" target="_blank" rel="noopener">Skipper: Unbounded Request Body Read in Admission Webhook Causes Memory Exhaustion DoS</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54247</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-17</span>
-          </div>
-          <p class='summary'>## Summary
-
-The Kubernetes admission webhook handler reads the entire request body using `io.ReadAll(r.Body)` without any size limit. Any client that can reach the webhook port within the cluster can send a multi-GB payload, causing the skipper process to exhaust memory and be OOM-killed. This disrupts all Kubernetes admission control, potentially blocking all pod creation and updates.
-
-## Vulnera…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6c4r-fmh3-7rh8" target="_blank" rel="noopener">vLLM: Processing differential in multi-channel audio downmixing enables hidden-input/moderation bypass for audio models</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-34760</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-17</span>
-          </div>
-          <p class='summary'>## Issue Description
-Librosa defaults to using `numpy.mean` for mono downmixing (`to_mono`), while the international standard ITU-R BS.775-4 specifies a weighted downmixing algorithm. This discrepancy results in:
-- Inconsistency between audio heard by humans (e.g., through headphones/regular speakers) and audio processed by AI models (Which infra via Librosa, such as vllm, transformer).
-
-https://g…</p>
 
         </article>
 
