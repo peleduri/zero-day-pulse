@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-17T18:50:30.901342+00:00",
-  "total": 33,
+  "generated": "2026-07-18T01:17:09.046852+00:00",
+  "total": 32,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 20,
   "enriched": 0,
   "findings": [
     {
@@ -260,6 +260,57 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-54559",
+      "title": "PocketSphinx: Buffer overflows in language and acoustic model loading code",
+      "summary": "### Impact\n\nThe trie language model code introduced in PocketSphinx 5prealpha failed to check various boundary conditions when reading the headers of ARPA, DMP, and binary format language model files.  In the case of invalid, corrupted or malicious input files, this could lead to stack and heap buffer overflows.\n\nIn addition, the acoustic model loading code (which is over 30 years old...) contains numerous instances of `sscanf` with an unbounded string field which could also lead to stack overflows in the case of corrupt or malicious inputs.\n\nBecause PocketSphinx will search the directory given by the `POCKETSPHINX_PATH` environment variable for acoustic and language model files, if this directory is writable by untrusted users, an attacker could corrupt an existing file or write a malicious one to this directory in order to trigger the vulnerability.\n\n### Patches\n\nThe problem has been corrected in PocketSphinx 5.1.1.\n\nThere is no patch currently available for users of Pocketsphinx 5prealpha, who are encouraged to migrate as soon as possible to  PocketSphinx 5.1.1.\n\n### Workarounds\n\nEnsure that the `POCKETSPHINX_PATH` environment variable is either unset, or set to a directory whose contents are trusted and which cannot be written by untrusted users.",
+      "link": "https://github.com/advisories/GHSA-56r5-2p2f-7cxp",
+      "published": "2026-07-17T21:19:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54559"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html",
+      "title": "OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests",
+      "summary": "Eleven bytes will make an unpatched OpenSSL server set aside up to 131 KB of memory for a message that never arrives. On the glibc systems Okta tested, that memory is gone until the process restarts.\n\nOpenSSL shipped the HollowByte fix in June with no CVE, no advisory, and no changelog entry pointing at it. Okta's Red Team, which reported the denial-of-service bug and named it, published the",
+      "link": "https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html",
+      "published": "2026-07-17T20:20:53+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-54561",
+      "title": "mcp-memory-keeper: Arbitrary local file read in context_import via unvalidated filePath",
+      "summary": "### Impact\n\n`context_import` passed the caller-supplied `filePath` directly to `fs.readFileSync` with no path confinement. A malicious MCP client \u2014 or an LLM agent that is prompt-injected into calling the tool \u2014 could point `filePath` at **any file readable by the server process**, outside any session or export directory:\n\n- **Full disclosure (JSON files):** a valid-JSON target (e.g. another user's exported session, or a `*.json` credential / service-account file) is parsed and imported into the caller's session, then retrievable verbatim via `context_get` / `context_export`.\n- **Partial disclosure (any file):** for a non-JSON target (e.g. `/etc/passwd`, an SSH key, a `.env`), `JSON.parse` throws and V8 includes a snippet of the file's leading bytes in the `SyntaxError` message, which was returned verbatim to the caller.\n\nBoth `../` traversal and absolute paths worked \u2014 there was no path confinement of any kind.\n\nIn a typical MCP deployment the server runs on the developer's machine, so the reachable set includes other users' exported memory sessions, JSON credential/config files, and (in leading-bytes form) `.env` files, SSH keys, and `/etc/passwd`. The trigger is a tool argument, so the realistic threat model is an LLM agent prompt-injected into calling `context_import`, or any MCP client connected to the server.\n\n### Patches\n\nFixed in **0.13.0** (PR #36):\n\n- Imports are confined to a server-owned exports directory (`<DATA_DIR>/exports`, overridable via `MEMORY_KEEPER_EXPORT_DIR`), resolved with `realpathSync`. `../` traversal, absolute paths outside the directory, and symlink escapes are all rejected.\n- File read and `JSON.parse` are separate operations; read/parse failures return a generic message and never echo file bytes (the `SyntaxError`-message leak is gone). The database-write path is likewise generic.\n- An E2E security regression suite covers the reported arbitrary-read and traversal vectors, plus symlink escape, the directory-prefix boundary, and a no-ex",
+      "link": "https://github.com/advisories/GHSA-f7wf-v2vw-mpcx",
+      "published": "2026-07-17T19:23:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54561"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/",
       "title": "New Windows LegacyHive zero-day gives hackers admin privileges",
       "summary": "A security researcher using the \"Nightmare Eclipse\" handle has released a Windows zero-day exploit dubbed LegacyHive that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
@@ -275,19 +326,111 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/",
-      "title": "Claude Chrome extension flaw lets malicious extensions trigger AI actions",
-      "summary": "A flaw in Anthropic's Claude for Chrome browser extension could allow a malicious extension to trigger predefined AI actions by simulating user clicks, potentially allowing it to abuse Claude's access to connected services such as Gmail, Google Docs, Google Calendar, and Salesforce. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/",
-      "published": "2026-07-16T19:26:07+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-63030-wp2shell-a-critical-remote-code-execution-vulnerability-in-wordpress-core",
+      "title": "CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core",
+      "summary": "Overview On July 17, 2026, a GitHub Security Advisory was published for CVE-2026-63030 , a critical unauthenticated remote code execution vulnerability affecting WordPress Core . While the official GitHub security advisory classifies the severity as Critical, the vulnerability has currently been assigned a CVSS score of 7.5. WordPress is one of the most widely deployed content management systems, making vulnerabilities in its core software potentially significant for organizations operating public-facing websites. The vulnerability reportedly allows an unauthenticated attacker to execute code via the WordPress REST API batch endpoint, potentially resulting in complete compromise of the website and its underlying data. No valid account or user interaction is required. According to the advisory , the vulnerability affects WordPress versions 6.9.0 through 6.9.4 and versions 7.0.0 through 7.0.1. The issue is fixed in WordPress 6.9.5 and 7.0.2. A fix is also included in WordPress 7.1 Beta 2. Cloudflare reported that the vulnerable code path can be reached when a persistent object cache is not in use. Searchlight Cyber, whose researchers identified the vulnerability, stated that it can be exploited remotely against a default WordPress installation without requiring additional plugins. Technical exploit details have not yet been published by Searchlight Cyber , as of July 17 5:45 PM Eastern time. At the time of publication, Rapid7 is not aware of publicly confirmed in-the-wild exploitation. Organizations should not interpret the absence of public exploitation reports as an indication of low risk, particularly given the vulnerability\u2019s unauthenticated attack path and the widespread deployment of WordPress; affected WordPress sites should be urgently patched. Due to WordPress Core being an open-source project and given the current ability of AI models to analyze open-source code, Rapid7 Labs believes it is highly likely that a public PoC will be made available in a short per",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-63030-wp2shell-a-critical-remote-code-execution-vulnerability-in-wordpress-core",
+      "published": "2026-07-17T22:23:03+00:00",
+      "source": "Rapid7 Blog",
       "tags": [
-        "news",
-        "malware"
+        "research",
+        "metasploit"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-63030"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54246",
+      "title": "Skipper's routesrv-no-auth component: All routesrv API Endpoints Lack Authentication",
+      "summary": "## Description\n\nThe `routesrv` component exposes the full cluster route topology (Ingress/RouteGroup configurations, backend URLs, filter chains, OAuth/OIDC callback paths) and cache-cluster topology (Redis/Valkey shard addresses) over plain HTTP with **zero authentication**. Any pod in the Kubernetes cluster can reach routesrv via its predictable DNS name and retrieve sensitive cluster-wide routing and cache infrastructure data.\n\n## Vulnerable Code\n\n**routesrv/routesrv.go:87-99,114-137** \u2014 all handler registrations on the main mux:\n```go\nmux.Handle(\"/routes\", b)          // eskipBytes.ServeHTTP \u2014 all route data\nmux.Handle(\"/routes/{zone}\", b)   // zone-scoped route data\nmux.Handle(\"/swarm/redis/shards\", rh)   // Redis cluster addresses\nmux.Handle(\"/swarm/valkey/shards\", vh)  // Valkey cluster addresses\n```\n\n**routesrv/eskipbytes.go:134-196** \u2014 `eskipBytes.ServeHTTP`:\n```go\nfunc (e *eskipBytes) ServeHTTP(rw http.ResponseWriter, r *http.Request) {\n    // ... only checks GET/HEAD method, NO auth check\n    if r.Method != \"GET\" && r.Method != \"HEAD\" {\n        w.WriteHeader(http.StatusMethodNotAllowed)\n        return\n    }\n    // ... serves all route data immediately\n}\n```\n\n**routesrv/redishandler.go:28-41** \u2014 `RedisHandler.ServeHTTP`:\n```go\nfunc (rh *RedisHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {\n    if r.Method != \"GET\" {\n        w.WriteHeader(http.StatusMethodNotAllowed)\n        return\n    }\n    // ... serves Redis cluster addresses immediately, NO auth check\n}\n```\n\n**routesrv/valkeyhandler.go:28-41** \u2014 `ValkeyHandler.ServeHTTP`:\n```go\nfunc (vh *ValkeyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {\n    if r.Method != \"GET\" {\n        w.WriteHeader(http.StatusMethodNotAllowed)\n        return\n    }\n    // ... serves Valkey cluster addresses immediately, NO auth check\n}\n```\n\n## Attack Path\n\n1. **Initial Compromise**: Attacker compromises any pod in the Kubernetes cluster (via application CVE, supply-chain attack, malicious container image, ",
+      "link": "https://github.com/advisories/GHSA-5587-2x54-jj6h",
+      "published": "2026-07-17T21:46:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54246"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55177",
+      "title": "CloudTAK: Authenticated full-read SSRF in the /api/esri* routes \u2014 user-controlled URL fetched with no IP-classification guard",
+      "summary": "# Authenticated full-read SSRF in CloudTAK `/api/esri*` routes \u2014 user-controlled URL fetched with no IP-classification guard\n\n## Summary\n\nEvery route in the ESRI helper family (`api/routes/esri.ts`) takes a fully attacker-controlled URL from the request (`POST /api/esri` body `url`, and the `portal` / `server` / `layer` query parameters on the `GET /api/esri/*` routes) and passes it into `EsriBase` / `EsriProxyPortal` / `EsriProxyServer` / `EsriProxyLayer` in `api/lib/esri.ts`, which fetch it with the bare `fetch` from `@tak-ps/etl`. No IP / DNS / hostname classification is applied at any point, so the destination is never validated against private, loopback, or link-local ranges.\n\nAny authenticated user (the routes only require `Auth.is_auth(config, req, { anyResources: true })`, i.e. any token, not an admin) can therefore make the CloudTAK server issue arbitrary outbound GET/POST requests to internal addresses such as the cloud instance-metadata service (`169.254.169.254`), loopback admin ports (`127.0.0.1:<port>`), and other hosts reachable only from inside the deployment VPC.\n\nThis is a **full-read** SSRF, not blind: on success the upstream JSON body is returned to the caller via `res.json(...)`, and on failure the upstream error string is reflected verbatim as `ESRI Server Error: <message>`. An attacker can read cloud metadata (and the temporary IAM credentials the instance role exposes), enumerate internal services, and exfiltrate their response bodies.\n\nThe `sniff()` URL classifier provides no protection: it only pattern-matches the *pathname* (`/rest`, `/arcgis/rest`, `/sharing/rest`), so a URL like `http://169.254.169.254/arcgis/rest` or `http://127.0.0.1:8500/rest` passes `sniff()` and is fetched.\n\n## Affected versions\n\n* All versions up to and including **13.7.0** (latest at time of report).\n\nThe project already ships an SSRF guard helper \u2014 `isSafeUrl` from `@tak-ps/node-safeurl` \u2014 and wires it into the basemap, task, and video-service code paths, but the",
+      "link": "https://github.com/advisories/GHSA-r95q-fp26-h3hc",
+      "published": "2026-07-17T21:35:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55177"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54570",
+      "title": "AngleSharp HTML5 Spec Compliance: mXSS via annotation-xml HTML Integration Point Bypass",
+      "summary": "### Summary\nThe HTML specification requires that a MathML `<annotation-xml>` element with `encoding=\"text/html\"` or `encoding=\"application/xhtml+xml\"` is treated as an HTML integration point. Content inside it must be parsed as HTML, not MathML.\n\nAngleSharp does not implement this correctly. As a result, the parser produces a DOM tree that differs from what a browser will build (different namespaces if `encoding=\"text/html\"` is not treated) when given the same serialized output. Two bugs combine to make this exploitable:\n\n- Missing HtmlTip flag: MathAnnotationXmlElement is never assigned NodeFlags.HtmlTip based on its encoding attribute, so the Consume() dispatch always routes tokens to Foreign() instead of Home() (HTML mode).\n- Unescaped < > in attribute values: HtmlMarkupFormatter.WriteAttributeValue() does not escape < or > characters, only & and \". This allows injected markup to break out of attribute values on re-parse. _See [Escape \"<\" and \">\" in attributes when serializing HTML #6235\n](https://github.com/whatwg/html/issues/6235)_\n\n\n### Details\nIn `MathAnnotationXmlElement` (`AngleSharp/Mathml/Dom/Internal/MathAnnotationXmlElement.cs`):\n```cs\n// Current \u2014 HtmlTip is never set\n: base(owner, TagNames.AnnotationXml, prefix, NodeFlags.Special | NodeFlags.Scoped)\n```\n\nBecause `HtmlTip` is absent, the token dispatch in `Consume()` always sends tokens to `Foreign()` when inside `annotation-xml`, regardless of the encoding attribute. The compensating check in `ForeignNormalTag()` only covers tags in `AllForeignExceptions` and is entirely bypassed during fragment parsing (`innerHTML` setter) due to an `if (!IsFragmentCase)` guard.\n\nIn `HtmlMarkupFormatter.WriteAttributeValue()` (`AngleSharp/Html/HtmlMarkupFormatter.cs`):\n```cs\n// Escapes & \" and \\u00A0, but NOT < or >\ncase Symbols.Ampersand:    stringBuilder.Append(\"&amp;\");  break;\ncase Symbols.NoBreakSpace: stringBuilder.Append(\"&nbsp;\"); break;\ncase Symbols.DoubleQuote:  stringBuilder.Append(\"&quot;\"); break;\ndefaul",
+      "link": "https://github.com/advisories/GHSA-pgww-w46g-26qg",
+      "published": "2026-07-17T21:17:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54570"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-27771",
+      "title": "Gitea has insufficient permission checks for Composer package source links",
+      "summary": "### CVE Description\nGitea versions up to and including 1.26.1 have insufficient permission checks for Composer package source links, which can expose private or internal package source information.\n\n### Summary\nA critical vulnerability has been discovered in Gitea. It was already reported via (security@gitea.io) from (dev@noscope.com), and submitted an encrypted report.",
+      "link": "https://github.com/advisories/GHSA-8qw8-rq86-9pc2",
+      "published": "2026-07-17T19:04:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-27771"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54546",
+      "title": "TAK-PS-Stats Web UI: Authenticated full-read SSRF in CloudTAK basemap import (PUT /api/basemap) \u2014 no IP-classification guard",
+      "summary": "### Summary\n\n`PUT /api/basemap` (the basemap import endpoint) fetches an attacker-supplied URL server-side with **no SSRF protection whatsoever**. Any authenticated user can submit a JSON body `{ \"type\": \"...\", \"url\": \"<attacker url>\" }`; the server calls `fetch(url)` against that URL and then reflects the response body (`name`, `attribution`, `tiles[0]`, zoom levels) back to the caller in the `OptionalTileJSON` response.\n\nBecause there is no IP-address classification, internal-only services are reachable: cloud metadata (`http://169.254.169.254/...`), loopback (`http://127.0.0.1/...`), RFC1918 ranges, and CGNAT. The response body flows back to the attacker, making this a **full-read SSRF** (not blind): the attacker reads the internal HTTP response verbatim. This enables theft of cloud instance credentials, internal service enumeration, and reading of internal-only HTTP endpoints from the network position of the CloudTAK API server.\n\nThe only URL check in the basemap protocol layer (`BasemapProtocol.isValidURL`, `api/lib/interface-basemap.ts`) validates the scheme is `http`/`https` only and performs **no host/IP filtering** \u2014 and the import path does not even call it; it goes straight from `new URL(rawURL)` to `fetch(url)`.\n\nThree independent bypass classes were confirmed end-to-end against a real deployed build:\n1. Direct internal/loopback IP literals.\n2. Alternate IP encodings (e.g. decimal `http://2130706433/` = `127.0.0.1`).\n3. Redirect following \u2014 `fetch` uses the default `redirect: 'follow'`, so even a public initial host that 302-redirects to an internal address is followed with no re-validation.\n\n### Vulnerable code (file:line)\n\n`api/routes/basemap.ts` \u2014 `importBasemapURL()` and the `PUT /basemap` handler (line numbers at commit `90d43bdd2fb7d9bd57cbce28c709d9e5207a475a`):\n\nhttps://github.com/dfpc-coe/CloudTAK/blob/64bc1886ff56b62f53d765d69ac90ff9fc23b54b/api/routes/basemap.ts#L68-L136\n\n```ts\n// api/routes/basemap.ts\nasync function importBasemapURL(\n    conf",
+      "link": "https://github.com/advisories/GHSA-vqrw-qphh-p34v",
+      "published": "2026-07-17T19:02:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54546"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "GHSA-rjwr-m7qx-3fjr",
@@ -375,170 +518,6 @@
       ],
       "cve_ids": [
         "CVE-2026-34760"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59950",
-      "title": "MCP Python SDK: WebSocket server transport does not support Host/Origin validation",
-      "summary": "### Summary\nIn affected versions, the deprecated WebSocket server transport (`mcp.server.websocket.websocket_server`) accepted the WebSocket handshake without applying any `Host` or `Origin` header validation. The `TransportSecuritySettings` mechanism that the SSE and Streamable HTTP transports use for this purpose was not wired into the WebSocket transport, so there was no SDK-level way to restrict which origins could connect.\n\n### Am I affected?\nOnly if a developer's application server exposes `mcp.server.websocket.websocket_server`. This transport has never been part of the MCP specification, is marked deprecated, and is not reachable through `FastMCP` \u2014 a developer must have wired it into an ASGI application themselves. Servers using stdio, SSE, or Streamable HTTP are not affected by this advisory.\n\n### Details\n`websocket_server()` constructed a Starlette `WebSocket` and called `accept(subprotocol=\"mcp\")` immediately, with no inspection of the connection's headers. By contrast, `SseServerTransport` and `StreamableHTTPServerTransport` accept an optional `security_settings: TransportSecuritySettings` and run `TransportSecurityMiddleware.validate_request()` against the incoming `Host` and `Origin` headers before establishing a session. Because browsers attach an `Origin` header to cross-origin WebSocket upgrade requests but do not enforce a same-origin policy on the response, a web page served from any origin could open a WebSocket to a reachable MCP server on this transport, complete the `initialize` handshake, and issue JSON-RPC requests on the resulting session.\n\n### Impact\nA user who runs an MCP server on this transport bound to localhost or a LAN address, without a separate authentication or origin gate in front of it, and visits a malicious web page, can have that page enumerate and invoke the server's tools and read its resources. The consequences depend entirely on what the server exposes. The transport itself requires no token or prior session. Some browse",
-      "link": "https://github.com/advisories/GHSA-vj7q-gjh5-988w",
-      "published": "2026-07-16T20:14:34Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59950"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-48qw-824m-86pr",
-      "title": "ArcadeDB: Privilege escalation via reader role in /api/v1/command JS scripting language \u2014 arbitrary host file read",
-      "summary": "### Impact\n\nA user holding only `reader` (read-only) privileges on a single database could execute arbitrary JVM code by sending a `\"language\": \"js\"` command to the `POST /api/v1/command/{database}` HTTP endpoint, and use it to read arbitrary files on the host filesystem (e.g. `/etc/passwd`, configuration files), outside the scope of the database itself.\n\nTwo cooperating defects made this possible:\n\n1. **Missing authorization on the scripting path (CWE-863 / CWE-269).** Polyglot script execution (`js` and other GraalVM languages) never went through the database authorization checks applied to SQL/Cypher, so any authenticated principal - regardless of database role - could run scripts.\n2. **Sandbox whitelist bypass.** The GraalVM sandbox restricts direct class lookups to a configured `allowedPackages` list, but a script could reach arbitrary classes by reflecting off the bound `database` object: `database.getClass().getClassLoader().loadClass(\"java.io.File\")`.\n\nProcess creation was already blocked (`allowCreateProcess(false)`), so the confirmed impact is host **file read**, not OS command execution. Confidentiality: High. Integrity/Availability: None.\n\nThis is a distinct entry point and root cause from CVE-2026-44221, CVE-2026-54076 and CVE-2026-54077, and is reproducible on builds that already contain those fixes.\n\n### Patches\n\nThe fix is applied in the engine so it covers every entry point (HTTP command, HA-forwarded commands, MCP `analyze`), not only the HTTP handler:\n\n- Polyglot script execution now requires the `updateSecurity` database-administrator permission on `command`, `analyze` and `registerFunctions`. The check runs on the request thread that carries the authenticated user and is a no-op in embedded mode and internal/system contexts (schema load, HA replication apply).\n- The GraalVM host-access policy now denies access to `java.lang.Class`, `java.lang.ClassLoader` and `java.lang.reflect` members, closing the reflection escape that bypassed `allowedPackag",
-      "link": "https://github.com/advisories/GHSA-48qw-824m-86pr",
-      "published": "2026-07-16T20:13:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44221",
-        "CVE-2026-54076",
-        "CVE-2026-54077"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55579",
-      "title": "Pheditor: Hardcoded default password 'admin' with no forced change enables full application compromise",
-      "summary": "### Summary\n\nPheditor ships with a hardcoded default password `admin` (SHA-512 hash stored at `pheditor.php:11`). There is no mechanism to force a password change on first login. Any deployment using the default credentials grants an attacker full access to the file editor, file upload, and terminal features, enabling arbitrary file read/write and remote code execution.\n\n### Details\n\nTested repository: https://github.com/pheditor/pheditor\n\nTested commit: `e538f05b6faec99e5b23726bc9c17d6b57774297` (current HEAD on `main`)\n\nAffected version: All versions of Pheditor\n\nThe password is hardcoded at `pheditor.php:11`:\n\n```php\ndefine('PASSWORD', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec');\n```\n\nThis is the SHA-512 hash of the string `admin`:\n```bash\necho -n 'admin' | sha512sum\nc7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec\n```\n\nThe application displays a warning banner at `pheditor.php:1956-1958` when the default password is in use, but this is only visual \u2014 there is no forced password change, no expiry, no lockout, and no setup wizard. Many deployments run with the default indefinitely.\n\nThe password hash is stored as unsalted SHA-512 in the source code. The password change feature (lines 363-391) writes the new hash directly into the PHP source file, meaning anyone with read access to the source can extract it.\n\n**Combined impact:** With the default password, an unauthenticated attacker can authenticate and exploit the terminal RCE and file upload vulnerabilities for immediate server compromise.\n\n### PoC\n\n**Environment:** Any system running Pheditor with default configuration.\n\n**Setup:**\n```bash\ngit clone https://github.com/pheditor/pheditor /tmp/pheditor-test\ncd /tmp/pheditor-test\nphp -S localhost:8080 pheditor.php &\n```\n\n**Positive trigger \u2014 authenticate with default password:**\n```bash\ncurl -s -c /tm",
-      "link": "https://github.com/advisories/GHSA-p4h7-p9rj-2pq2",
-      "published": "2026-07-16T20:11:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55579"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-52724",
-      "title": "kuma-dp connects to control plane without verifying TLS certificate when no CA is configured",
-      "summary": "When kuma-dp is started against an HTTPS control plane and the operator did not pass a CA certificate, the data plane connects with TLS peer verification disabled. The dataplane authentication token is sent over this unverified connection\n\n## Impact\n\nAn on-path attacker can intercept the dataplane authentication token and impersonate the control plane to the data plane, allowing them to inject a forged bootstrap configuration and take over the proxy\n\n## Affected configurations\n\n- Universal mode `kuma-dp` started against an HTTPS control plane without `--ca-cert-file` (or `KUMA_CONTROL_PLANE_CA_CERT` unset)\n\n## Not affected\n\n- Kubernetes installs done through the standard installers (`kumactl install control-plane` or the official Helm chart). In both cases the control plane's mutating admission webhook injects `KUMA_CONTROL_PLANE_CA_CERT` into every sidecar at pod admission, so each `kuma-dp` starts with the CA already configured\n\n## Workarounds\n\nSet `--ca-cert-file` (or `KUMA_CONTROL_PLANE_CA_CERT`) on every Universal mode data plane and point it at the control plane's serving CA. Alternatively, terminate the control plane behind a publicly trusted certificate; the patched releases will verify successfully against the operating system trust store with no further configuration\n\n## Resources\n\n- Fix: https://github.com/kumahq/kuma/pull/16777",
-      "link": "https://github.com/advisories/GHSA-wvmp-6r4v-j6cv",
-      "published": "2026-07-16T20:09:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-52724"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53714",
-      "title": "Envoy Gateway: xDS Control Plane Information Disclosure when operating in GatewayNamespaceMode ",
-      "summary": "### Impact\nWhen Envoy Gateway runs in GatewayNamespaceMode (`provider.kubernetes.deploy.type=GatewayNamespace`), the xDS gRPC server is configured with a `StreamInterceptor` for JWT authentication but no UnaryInterceptor. The go-control-plane xDS server exposes both streaming and unary (Fetch) RPC methods for all registered discovery services. Since there is no unary interceptor, these Fetch endpoints are completely unauthenticated. \n\nAdditionally, the JWT authentication interceptor in GatewayNamespaceMode only validates tokens when the received gRPC message is of type `discoveryv3.DeltaDiscoveryRequest` . If the message is a `discoveryv3.DiscoveryRequest` \u2014 used by the State-of-the-World (SotW) xDS protocol \u2014 the type assertion fails, the validation block is skipped entirely, and RecvMsg returns nil (success) without any authentication.\n\nAny pod in the cluster that can reach the xDS server (port 18000) can use the SotW protocol to bypass JWT authentication and access:\n\n* TLS private keys via StreamSecrets (SDS)\n* All xDS resources via StreamAggregatedResources (ADS)\n* Backend endpoints via StreamClusters / StreamEndpoints (CDS/EDS)\n* Routing rules via StreamRoutes / StreamListeners (RDS/LDS)\n\n### Credits\n\nEnvoy Gateway thanks @dashingDragon and @Donjon-Cerberus for reporting this issue.",
-      "link": "https://github.com/advisories/GHSA-22xc-xg2r-9j7v",
-      "published": "2026-07-16T19:32:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53714"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53713",
-      "title": "Envoy Gateway: Authentication Bypass via Improper Input Validation in EnvoyExtensionPolicy Lua Allows Secret Disclosure",
-      "summary": "### Impact\n\nThe `to_absolute_normalized_path` function (security.lua:28-43) does not collapse redundant path separators (// \u2192 /). On Linux, `//etc/passwd` is equivalent to `/etc/passwd` (POSIX path semantics), but `is_critical_path` fails to match the double-slash variant because `//etc/passwd` does not start with `/etc/`.\n\nThis allows Lua code submitted as an `EnvoyExtensionPolicy` to read arbitrary files from the gateway controller pod's filesystem during Strict validation (the default), including:\n\n* `/etc/passwd`\n* Kubernetes SA tokens via `//var/run/secrets/kubernetes.io/serviceaccount/token`\n* TLS certificates via `//certs/...`\n* Process environment via `//proc/self/environ`\n\nThese credentials can be used to read sensitive information from the K8s API Server or from the Gateway XDS server.\n\n### Patches\n\nThis has been patched in versions >= v1.7.4 and v1.8.1\n\n  - Collapse redundant path separators (`//` to `/`) so double-slash variants like `//etc/passwd` and `//var/run/secrets/...` are matched by the critical-path check.\n  - Rewrite the traversal check to reject any `.` or `..` segment in any position and across both separator styles (catches `/etc/./passwd`, `./etc/passwd`, `/etc/.`).\n\n### Workarounds\nPlease refer to the `Warning` section in [Lua docs](https://gateway.envoyproxy.io/v1.8/tasks/extensibility/lua/) for measures to reduce risk.\n\n### Credits\n\nEnvoy Gateway thanks @dashingDragon and @Donjon-Cerberus for reporting this issue.",
-      "link": "https://github.com/advisories/GHSA-wcrf-9vrr-854f",
-      "published": "2026-07-16T19:23:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53713"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53715",
-      "title": "Envoy Gateway: Wasm cache ServeHTTP reads mappingPath2Cache without lock",
-      "summary": "Vulnerability report without repro case. Repro case may be added later after harness is complete.\n\n**Preconditions (4):**\n- Pod-network reachability to :18002 (no auth)\n- Tenant can create EnvoyExtensionPolicy (baseline)\n- Attacker pod floods GET while churning EnvoyExtensionPolicy with distinct Wasm URLs\n- Read at :153 must overlap a write at :201/:209 (probabilistic, attacker controls both rates)\n\n**Description:**\n\nhttpserver.go:153 reads s.mappingPath2Cache with no lock while httpserver.go:201/209 write it under s.Lock(); the struct uses a plain map. Writer is tenant-reachable via EnvoyExtensionPolicy translation, reader is pod-network-reachable on :18002 with per-request goroutines. Go's concurrent map read+write detection calls runtime.throw, which net/http's per-conn recover cannot catch, so the controller process exits \u2014 cross-tenant control-plane DoS. Capped at MEDIUM: DoS-only, k8s restarts pod, timing-dependent trigger.",
-      "link": "https://github.com/advisories/GHSA-8fv2-88gg-hm7q",
-      "published": "2026-07-16T19:21:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53715"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53716",
-      "title": "Envoy Gateway: Wasm HTTP fetch decompresses gzip without output-size limit",
-      "summary": "Vulnerability report without repro case. Repro case may be added later after harness is complete.\n\n**Preconditions (4):**\n- Tenant can create EnvoyExtensionPolicy (baseline)\n- Attacker hosts a gzip-bomb at a reachable URL\n- sha256 unset (optional field; check is post-decompression anyway)\n- No operator Wasm-URL allowlist (none exists in code)\n\n**Description**\n\ngetFileFromGZ calls io.ReadAll on a raw gzip.Reader (httpfetcher.go:216) with no output bound, while the compressed input is capped at 256 MiB (httpfetcher.go:139). The bytes originate from a tenant-controlled EnvoyExtensionPolicy.spec.wasm[].code.http.url (envoyextensionpolicy.go:1077 \u2192 cache.go:248 \u2192 httpfetcher.go:147 \u2192 :233), so an untrusted tenant can point at a ~10 MiB gzip-of-zeros and force ~10 GiB allocation in the shared controller process. All candidate guards execute either before the body is buffered or after decompression. OOM-kills, restarts, re-reconciles same CR, crash-loops \u2014 persistent cross-tenant control-plane outage with PR:L/AC:L and scope change \u2192 HIGH despite availability-only.",
-      "link": "https://github.com/advisories/GHSA-cxpq-8v7q-cg56",
-      "published": "2026-07-16T19:18:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53716"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53718",
-      "title": "Envoy Gateway custom backendRef cross-namespace ReferenceGrant bypass",
-      "summary": "### Impact\nEnvoy Gateway accepts extension-managed custom backendRefs from an HTTPRoute to a backend resource in another namespace without requiring a matching Gateway API ReferenceGrant in the target namespace. This breaks the Gateway API cross-namespace consent model: the namespace that owns the referenced backend resource does not need to opt in with a ReferenceGrant before another namespace\u2019s HTTPRoute can use that resource.\n\n### Patches\n[1.7.4](https://github.com/envoyproxy/gateway/releases/tag/v1.7.4)\n[1.8.1](https://github.com/envoyproxy/gateway/releases/tag/v1.8.1)",
-      "link": "https://github.com/advisories/GHSA-fcrp-7gc2-93g7",
-      "published": "2026-07-16T19:14:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53718"
       ],
       "is_zero_day": false,
       "is_high_severity": true

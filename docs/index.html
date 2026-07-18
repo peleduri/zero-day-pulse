@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">18</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">20</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-17 18:50 UTC</div>
+            <div class="generated">Updated 2026-07-18 01:17 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -375,6 +375,64 @@ The vulnerability in question is CVE-2026-58644 (CVSS score: 9.8), a critical de
 
 </article>
 
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-56r5-2p2f-7cxp" target="_blank" rel="noopener">PocketSphinx: Buffer overflows in language and acoustic model loading code</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54559</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>### Impact
+
+The trie language model code introduced in PocketSphinx 5prealpha failed to check various boundary conditions when reading the headers of ARPA, DMP, and binary format language model files.  In the case of invalid, corrupted or malicious input files, this could lead to stack and heap buffer overflows.
+
+In addition, the acoustic model loading code (which is over 30 years old...) contains…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html" target="_blank" rel="noopener">OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>Eleven bytes will make an unpatched OpenSSL server set aside up to 131 KB of memory for a message that never arrives. On the glibc systems Okta tested, that memory is gone until the process restarts.
+
+OpenSSL shipped the HollowByte fix in June with no CVE, no advisory, and no changelog entry pointing at it. Okta&#x27;s Red Team, which reported the denial-of-service bug and named it, published the</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f7wf-v2vw-mpcx" target="_blank" rel="noopener">mcp-memory-keeper: Arbitrary local file read in context_import via unvalidated filePath</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54561</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>### Impact
+
+`context_import` passed the caller-supplied `filePath` directly to `fs.readFileSync` with no path confinement. A malicious MCP client — or an LLM agent that is prompt-injected into calling the tool — could point `filePath` at **any file readable by the server process**, outside any session or export directory:
+
+- **Full disclosure (JSON files):** a valid-JSON target (e.g. another user&#x27;…</p>
+
+        </article>
+
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -391,21 +449,116 @@ The vulnerability in question is CVE-2026-58644 (CVSS score: 9.8), a critical de
 
 </article>
 
-<article class="card card-zeroday">
+<article class="card card-high">
   <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/" target="_blank" rel="noopener">Claude Chrome extension flaw lets malicious extensions trigger AI actions</a></h2>
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-cve-2026-63030-wp2shell-a-critical-remote-code-execution-vulnerability-in-wordpress-core" target="_blank" rel="noopener">CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core</a></h2>
   </div>
   <div class="card-meta">
-    <span class="no-cve">No CVE</span>
+    <code class="cve">CVE-2026-63030</code>
     <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
+    <span>Rapid7 Blog</span>
     <span class="meta-sep">·</span>
-    <span>2026-07-16</span>
+    <span>2026-07-17</span>
   </div>
-  <p class='summary'>A flaw in Anthropic&#x27;s Claude for Chrome browser extension could allow a malicious extension to trigger predefined AI actions by simulating user clicks, potentially allowing it to abuse Claude&#x27;s access to connected services such as Gmail, Google Docs, Google Calendar, and Salesforce. [...]</p>
+  <p class='summary'>Overview On July 17, 2026, a GitHub Security Advisory was published for CVE-2026-63030 , a critical unauthenticated remote code execution vulnerability affecting WordPress Core . While the official GitHub security advisory classifies the severity as Critical, the vulnerability has currently been assigned a CVSS score of 7.5. WordPress is one of the most widely deployed content management systems, …</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5587-2x54-jj6h" target="_blank" rel="noopener">Skipper&#x27;s routesrv-no-auth component: All routesrv API Endpoints Lack Authentication</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54246</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>## Description
+
+The `routesrv` component exposes the full cluster route topology (Ingress/RouteGroup configurations, backend URLs, filter chains, OAuth/OIDC callback paths) and cache-cluster topology (Redis/Valkey shard addresses) over plain HTTP with **zero authentication**. Any pod in the Kubernetes cluster can reach routesrv via its predictable DNS name and retrieve sensitive cluster-wide routi…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r95q-fp26-h3hc" target="_blank" rel="noopener">CloudTAK: Authenticated full-read SSRF in the /api/esri* routes — user-controlled URL fetched with no IP-classification guard</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55177</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'># Authenticated full-read SSRF in CloudTAK `/api/esri*` routes — user-controlled URL fetched with no IP-classification guard
+
+## Summary
+
+Every route in the ESRI helper family (`api/routes/esri.ts`) takes a fully attacker-controlled URL from the request (`POST /api/esri` body `url`, and the `portal` / `server` / `layer` query parameters on the `GET /api/esri/*` routes) and passes it into `EsriBase…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pgww-w46g-26qg" target="_blank" rel="noopener">AngleSharp HTML5 Spec Compliance: mXSS via annotation-xml HTML Integration Point Bypass</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54570</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>### Summary
+The HTML specification requires that a MathML `&lt;annotation-xml&gt;` element with `encoding=&quot;text/html&quot;` or `encoding=&quot;application/xhtml+xml&quot;` is treated as an HTML integration point. Content inside it must be parsed as HTML, not MathML.
+
+AngleSharp does not implement this correctly. As a result, the parser produces a DOM tree that differs from what a browser will build (different namespac…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8qw8-rq86-9pc2" target="_blank" rel="noopener">Gitea has insufficient permission checks for Composer package source links</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-27771</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>### CVE Description
+Gitea versions up to and including 1.26.1 have insufficient permission checks for Composer package source links, which can expose private or internal package source information.
+
+### Summary
+A critical vulnerability has been discovered in Gitea. It was already reported via (security@gitea.io) from (dev@noscope.com), and submitted an encrypted report.</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vqrw-qphh-p34v" target="_blank" rel="noopener">TAK-PS-Stats Web UI: Authenticated full-read SSRF in CloudTAK basemap import (PUT /api/basemap) — no IP-classification guard</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54546</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-17</span>
+          </div>
+          <p class='summary'>### Summary
+
+`PUT /api/basemap` (the basemap import endpoint) fetches an attacker-supplied URL server-side with **no SSRF protection whatsoever**. Any authenticated user can submit a JSON body `{ &quot;type&quot;: &quot;...&quot;, &quot;url&quot;: &quot;&lt;attacker url&gt;&quot; }`; the server calls `fetch(url)` against that URL and then reflects the response body (`name`, `attribution`, `tiles[0]`, zoom levels) back to the caller in the `Op…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -504,187 +657,6 @@ Librosa defaults to using `numpy.mean` for mono downmixing (`to_mono`), while th
 - Inconsistency between audio heard by humans (e.g., through headphones/regular speakers) and audio processed by AI models (Which infra via Librosa, such as vllm, transformer).
 
 https://g…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vj7q-gjh5-988w" target="_blank" rel="noopener">MCP Python SDK: WebSocket server transport does not support Host/Origin validation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59950</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>### Summary
-In affected versions, the deprecated WebSocket server transport (`mcp.server.websocket.websocket_server`) accepted the WebSocket handshake without applying any `Host` or `Origin` header validation. The `TransportSecuritySettings` mechanism that the SSE and Streamable HTTP transports use for this purpose was not wired into the WebSocket transport, so there was no SDK-level way to restri…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-48qw-824m-86pr" target="_blank" rel="noopener">ArcadeDB: Privilege escalation via reader role in /api/v1/command JS scripting language — arbitrary host file read</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-44221</code> <code class="cve">CVE-2026-54076</code> <code class="cve">CVE-2026-54077</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>### Impact
-
-A user holding only `reader` (read-only) privileges on a single database could execute arbitrary JVM code by sending a `&quot;language&quot;: &quot;js&quot;` command to the `POST /api/v1/command/{database}` HTTP endpoint, and use it to read arbitrary files on the host filesystem (e.g. `/etc/passwd`, configuration files), outside the scope of the database itself.
-
-Two cooperating defects made this possible…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p4h7-p9rj-2pq2" target="_blank" rel="noopener">Pheditor: Hardcoded default password &#x27;admin&#x27; with no forced change enables full application compromise</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55579</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>### Summary
-
-Pheditor ships with a hardcoded default password `admin` (SHA-512 hash stored at `pheditor.php:11`). There is no mechanism to force a password change on first login. Any deployment using the default credentials grants an attacker full access to the file editor, file upload, and terminal features, enabling arbitrary file read/write and remote code execution.
-
-### Details
-
-Tested reposi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wvmp-6r4v-j6cv" target="_blank" rel="noopener">kuma-dp connects to control plane without verifying TLS certificate when no CA is configured</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-52724</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>When kuma-dp is started against an HTTPS control plane and the operator did not pass a CA certificate, the data plane connects with TLS peer verification disabled. The dataplane authentication token is sent over this unverified connection
-
-## Impact
-
-An on-path attacker can intercept the dataplane authentication token and impersonate the control plane to the data plane, allowing them to inject a f…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-22xc-xg2r-9j7v" target="_blank" rel="noopener">Envoy Gateway: xDS Control Plane Information Disclosure when operating in GatewayNamespaceMode </a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53714</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>### Impact
-When Envoy Gateway runs in GatewayNamespaceMode (`provider.kubernetes.deploy.type=GatewayNamespace`), the xDS gRPC server is configured with a `StreamInterceptor` for JWT authentication but no UnaryInterceptor. The go-control-plane xDS server exposes both streaming and unary (Fetch) RPC methods for all registered discovery services. Since there is no unary interceptor, these Fetch endpo…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wcrf-9vrr-854f" target="_blank" rel="noopener">Envoy Gateway: Authentication Bypass via Improper Input Validation in EnvoyExtensionPolicy Lua Allows Secret Disclosure</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53713</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>### Impact
-
-The `to_absolute_normalized_path` function (security.lua:28-43) does not collapse redundant path separators (// → /). On Linux, `//etc/passwd` is equivalent to `/etc/passwd` (POSIX path semantics), but `is_critical_path` fails to match the double-slash variant because `//etc/passwd` does not start with `/etc/`.
-
-This allows Lua code submitted as an `EnvoyExtensionPolicy` to read arbitr…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8fv2-88gg-hm7q" target="_blank" rel="noopener">Envoy Gateway: Wasm cache ServeHTTP reads mappingPath2Cache without lock</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53715</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>Vulnerability report without repro case. Repro case may be added later after harness is complete.
-
-**Preconditions (4):**
-- Pod-network reachability to :18002 (no auth)
-- Tenant can create EnvoyExtensionPolicy (baseline)
-- Attacker pod floods GET while churning EnvoyExtensionPolicy with distinct Wasm URLs
-- Read at :153 must overlap a write at :201/:209 (probabilistic, attacker controls both rates…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cxpq-8v7q-cg56" target="_blank" rel="noopener">Envoy Gateway: Wasm HTTP fetch decompresses gzip without output-size limit</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53716</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>Vulnerability report without repro case. Repro case may be added later after harness is complete.
-
-**Preconditions (4):**
-- Tenant can create EnvoyExtensionPolicy (baseline)
-- Attacker hosts a gzip-bomb at a reachable URL
-- sha256 unset (optional field; check is post-decompression anyway)
-- No operator Wasm-URL allowlist (none exists in code)
-
-**Description**
-
-getFileFromGZ calls io.ReadAll on a r…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fcrp-7gc2-93g7" target="_blank" rel="noopener">Envoy Gateway custom backendRef cross-namespace ReferenceGrant bypass</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53718</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-16</span>
-          </div>
-          <p class='summary'>### Impact
-Envoy Gateway accepts extension-managed custom backendRefs from an HTTPRoute to a backend resource in another namespace without requiring a matching Gateway API ReferenceGrant in the target namespace. This breaks the Gateway API cross-namespace consent model: the namespace that owns the referenced backend resource does not need to opt in with a ReferenceGrant before another namespace’s …</p>
 
         </article>
 

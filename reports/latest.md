@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-17 18:50 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-18 01:17 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -142,7 +142,44 @@ The vulnerability in question is CVE-2026-58644 (CVSS score: 9.8), a critical de
 
 ---
 
-## 17. 🟠 Zero-Day — New Windows LegacyHive zero-day gives hackers admin privileges
+## 17. 🟠 Zero-Day — PocketSphinx: Buffer overflows in language and acoustic model loading code
+
+**CVE:** `CVE-2026-54559` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-56r5-2p2f-7cxp>
+
+> ### Impact
+
+The trie language model code introduced in PocketSphinx 5prealpha failed to check various boundary conditions when reading the headers of ARPA, DMP, and binary format language model files.  In the case of invalid, corrupted or malicious input files, this could lead to stack and heap buffer overflows.
+
+In addition, the acoustic model loading code (which is over 30 years old...) contains…
+
+---
+
+## 18. 🟠 Zero-Day — OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html>
+
+> Eleven bytes will make an unpatched OpenSSL server set aside up to 131 KB of memory for a message that never arrives. On the glibc systems Okta tested, that memory is gone until the process restarts.
+
+OpenSSL shipped the HollowByte fix in June with no CVE, no advisory, and no changelog entry pointing at it. Okta&#x27;s Red Team, which reported the denial-of-service bug and named it, published the
+
+---
+
+## 19. 🟠 Zero-Day — mcp-memory-keeper: Arbitrary local file read in context_import via unvalidated filePath
+
+**CVE:** `CVE-2026-54561` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-f7wf-v2vw-mpcx>
+
+> ### Impact
+
+`context_import` passed the caller-supplied `filePath` directly to `fs.readFileSync` with no path confinement. A malicious MCP client — or an LLM agent that is prompt-injected into calling the tool — could point `filePath` at **any file readable by the server process**, outside any session or export directory:
+
+- **Full disclosure (JSON files):** a valid-JSON target (e.g. another user&…
+
+---
+
+## 20. 🟠 Zero-Day — New Windows LegacyHive zero-day gives hackers admin privileges
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/>
@@ -151,16 +188,76 @@ The vulnerability in question is CVE-2026-58644 (CVSS score: 9.8), a critical de
 
 ---
 
-## 18. 🟠 Zero-Day — Claude Chrome extension flaw lets malicious extensions trigger AI actions
+## 21. 🟡 High Severity — CVE-2026-63030: wp2shell a Critical Remote Code Execution Vulnerability in WordPress Core
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://www.bleepingcomputer.com/news/security/claude-chrome-extension-flaw-lets-malicious-extensions-trigger-ai-actions/>
+**CVE:** `CVE-2026-63030` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-63030-wp2shell-a-critical-remote-code-execution-vulnerability-in-wordpress-core>
 
-> A flaw in Anthropic&#x27;s Claude for Chrome browser extension could allow a malicious extension to trigger predefined AI actions by simulating user clicks, potentially allowing it to abuse Claude&#x27;s access to connected services such as Gmail, Google Docs, Google Calendar, and Salesforce. [...]
+> Overview On July 17, 2026, a GitHub Security Advisory was published for CVE-2026-63030 , a critical unauthenticated remote code execution vulnerability affecting WordPress Core . While the official GitHub security advisory classifies the severity as Critical, the vulnerability has currently been assigned a CVSS score of 7.5. WordPress is one of the most widely deployed content management systems, …
 
 ---
 
-## 19. 🟡 High Severity — oapi-codegen: OpenAPI Server Description Escapes Generated Go Comment and Injects Executable Code
+## 22. 🟡 High Severity — Skipper's routesrv-no-auth component: All routesrv API Endpoints Lack Authentication
+
+**CVE:** `CVE-2026-54246` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-5587-2x54-jj6h>
+
+> ## Description
+
+The `routesrv` component exposes the full cluster route topology (Ingress/RouteGroup configurations, backend URLs, filter chains, OAuth/OIDC callback paths) and cache-cluster topology (Redis/Valkey shard addresses) over plain HTTP with **zero authentication**. Any pod in the Kubernetes cluster can reach routesrv via its predictable DNS name and retrieve sensitive cluster-wide routi…
+
+---
+
+## 23. 🟡 High Severity — CloudTAK: Authenticated full-read SSRF in the /api/esri* routes — user-controlled URL fetched with no IP-classification guard
+
+**CVE:** `CVE-2026-55177` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-r95q-fp26-h3hc>
+
+> # Authenticated full-read SSRF in CloudTAK `/api/esri*` routes — user-controlled URL fetched with no IP-classification guard
+
+## Summary
+
+Every route in the ESRI helper family (`api/routes/esri.ts`) takes a fully attacker-controlled URL from the request (`POST /api/esri` body `url`, and the `portal` / `server` / `layer` query parameters on the `GET /api/esri/*` routes) and passes it into `EsriBase…
+
+---
+
+## 24. 🟡 High Severity — AngleSharp HTML5 Spec Compliance: mXSS via annotation-xml HTML Integration Point Bypass
+
+**CVE:** `CVE-2026-54570` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-pgww-w46g-26qg>
+
+> ### Summary
+The HTML specification requires that a MathML `&lt;annotation-xml&gt;` element with `encoding=&quot;text/html&quot;` or `encoding=&quot;application/xhtml+xml&quot;` is treated as an HTML integration point. Content inside it must be parsed as HTML, not MathML.
+
+AngleSharp does not implement this correctly. As a result, the parser produces a DOM tree that differs from what a browser will…
+
+---
+
+## 25. 🟡 High Severity — Gitea has insufficient permission checks for Composer package source links
+
+**CVE:** `CVE-2026-27771` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-8qw8-rq86-9pc2>
+
+> ### CVE Description
+Gitea versions up to and including 1.26.1 have insufficient permission checks for Composer package source links, which can expose private or internal package source information.
+
+### Summary
+A critical vulnerability has been discovered in Gitea. It was already reported via (security@gitea.io) from (dev@noscope.com), and submitted an encrypted report.
+
+---
+
+## 26. 🟡 High Severity — TAK-PS-Stats Web UI: Authenticated full-read SSRF in CloudTAK basemap import (PUT /api/basemap) — no IP-classification guard
+
+**CVE:** `CVE-2026-54546` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
+**Reference:** <https://github.com/advisories/GHSA-vqrw-qphh-p34v>
+
+> ### Summary
+
+`PUT /api/basemap` (the basemap import endpoint) fetches an attacker-supplied URL server-side with **no SSRF protection whatsoever**. Any authenticated user can submit a JSON body `{ &quot;type&quot;: &quot;...&quot;, &quot;url&quot;: &quot;&lt;attacker url&gt;&quot; }`; the server calls `fetch(url)` against that URL and then reflects the response body (`name`, `attribution`, `tiles[0…
+
+---
+
+## 27. 🟡 High Severity — oapi-codegen: OpenAPI Server Description Escapes Generated Go Comment and Injects Executable Code
 
 **CVE:** `CVE-2026-22785` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-rjwr-m7qx-3fjr>
@@ -171,7 +268,7 @@ The vulnerability in oapi-codegen seems to be similar with CVE-2026-22785,  whic
 
 ---
 
-## 20. 🟡 High Severity — meta-ads-mcp: Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch
+## 28. 🟡 High Severity — meta-ads-mcp: Server-Side Request Forgery (SSRF) in `upload_ad_image` via Unrestricted `image_url` Fetch
 
 **CVE:** `CVE-2026-54549` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-45gf-fjxp-cjpq>
@@ -184,7 +281,7 @@ The `upload_ad_image` MCP tool in `meta-ads-mcp` v1.0.113 passes an attacker-con
 
 ---
 
-## 21. 🟡 High Severity — AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance
+## 29. 🟡 High Severity — AWS-JDBC Wrapper: Privilege Escalation in Aurora PostgreSQL instance
 
 **CVE:** `CVE-2026-11400` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-mhww-p97m-3368>
@@ -199,7 +296,7 @@ An issue in AWS Wrappers for Amazon Aurora PostgreSQL will allow for privilege e
 
 ---
 
-## 22. 🟡 High Severity — Skipper: Unbounded Request Body Read in Admission Webhook Causes Memory Exhaustion DoS
+## 30. 🟡 High Severity — Skipper: Unbounded Request Body Read in Admission Webhook Causes Memory Exhaustion DoS
 
 **CVE:** `CVE-2026-54247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-cwxq-rc9x-2jvv>
@@ -212,7 +309,7 @@ The Kubernetes admission webhook handler reads the entire request body using `io
 
 ---
 
-## 23. 🟡 High Severity — vLLM: Processing differential in multi-channel audio downmixing enables hidden-input/moderation bypass for audio models
+## 31. 🟡 High Severity — vLLM: Processing differential in multi-channel audio downmixing enables hidden-input/moderation bypass for audio models
 
 **CVE:** `CVE-2026-34760` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-17
 **Reference:** <https://github.com/advisories/GHSA-6c4r-fmh3-7rh8>
@@ -225,125 +322,7 @@ https://g…
 
 ---
 
-## 24. 🟡 High Severity — MCP Python SDK: WebSocket server transport does not support Host/Origin validation
-
-**CVE:** `CVE-2026-59950` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-vj7q-gjh5-988w>
-
-> ### Summary
-In affected versions, the deprecated WebSocket server transport (`mcp.server.websocket.websocket_server`) accepted the WebSocket handshake without applying any `Host` or `Origin` header validation. The `TransportSecuritySettings` mechanism that the SSE and Streamable HTTP transports use for this purpose was not wired into the WebSocket transport, so there was no SDK-level way to restri…
-
----
-
-## 25. 🟡 High Severity — ArcadeDB: Privilege escalation via reader role in /api/v1/command JS scripting language — arbitrary host file read
-
-**CVE:** `CVE-2026-44221` | `CVE-2026-54076` | `CVE-2026-54077` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-48qw-824m-86pr>
-
-> ### Impact
-
-A user holding only `reader` (read-only) privileges on a single database could execute arbitrary JVM code by sending a `&quot;language&quot;: &quot;js&quot;` command to the `POST /api/v1/command/{database}` HTTP endpoint, and use it to read arbitrary files on the host filesystem (e.g. `/etc/passwd`, configuration files), outside the scope of the database itself.
-
-Two cooperating defect…
-
----
-
-## 26. 🟡 High Severity — Pheditor: Hardcoded default password 'admin' with no forced change enables full application compromise
-
-**CVE:** `CVE-2026-55579` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-p4h7-p9rj-2pq2>
-
-> ### Summary
-
-Pheditor ships with a hardcoded default password `admin` (SHA-512 hash stored at `pheditor.php:11`). There is no mechanism to force a password change on first login. Any deployment using the default credentials grants an attacker full access to the file editor, file upload, and terminal features, enabling arbitrary file read/write and remote code execution.
-
-### Details
-
-Tested reposi…
-
----
-
-## 27. 🟡 High Severity — kuma-dp connects to control plane without verifying TLS certificate when no CA is configured
-
-**CVE:** `CVE-2026-52724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-wvmp-6r4v-j6cv>
-
-> When kuma-dp is started against an HTTPS control plane and the operator did not pass a CA certificate, the data plane connects with TLS peer verification disabled. The dataplane authentication token is sent over this unverified connection
-
-## Impact
-
-An on-path attacker can intercept the dataplane authentication token and impersonate the control plane to the data plane, allowing them to inject a f…
-
----
-
-## 28. 🟡 High Severity — Envoy Gateway: xDS Control Plane Information Disclosure when operating in GatewayNamespaceMode 
-
-**CVE:** `CVE-2026-53714` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-22xc-xg2r-9j7v>
-
-> ### Impact
-When Envoy Gateway runs in GatewayNamespaceMode (`provider.kubernetes.deploy.type=GatewayNamespace`), the xDS gRPC server is configured with a `StreamInterceptor` for JWT authentication but no UnaryInterceptor. The go-control-plane xDS server exposes both streaming and unary (Fetch) RPC methods for all registered discovery services. Since there is no unary interceptor, these Fetch endpo…
-
----
-
-## 29. 🟡 High Severity — Envoy Gateway: Authentication Bypass via Improper Input Validation in EnvoyExtensionPolicy Lua Allows Secret Disclosure
-
-**CVE:** `CVE-2026-53713` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-wcrf-9vrr-854f>
-
-> ### Impact
-
-The `to_absolute_normalized_path` function (security.lua:28-43) does not collapse redundant path separators (// → /). On Linux, `//etc/passwd` is equivalent to `/etc/passwd` (POSIX path semantics), but `is_critical_path` fails to match the double-slash variant because `//etc/passwd` does not start with `/etc/`.
-
-This allows Lua code submitted as an `EnvoyExtensionPolicy` to read arbitr…
-
----
-
-## 30. 🟡 High Severity — Envoy Gateway: Wasm cache ServeHTTP reads mappingPath2Cache without lock
-
-**CVE:** `CVE-2026-53715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-8fv2-88gg-hm7q>
-
-> Vulnerability report without repro case. Repro case may be added later after harness is complete.
-
-**Preconditions (4):**
-- Pod-network reachability to :18002 (no auth)
-- Tenant can create EnvoyExtensionPolicy (baseline)
-- Attacker pod floods GET while churning EnvoyExtensionPolicy with distinct Wasm URLs
-- Read at :153 must overlap a write at :201/:209 (probabilistic, attacker controls both rates…
-
----
-
-## 31. 🟡 High Severity — Envoy Gateway: Wasm HTTP fetch decompresses gzip without output-size limit
-
-**CVE:** `CVE-2026-53716` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-cxpq-8v7q-cg56>
-
-> Vulnerability report without repro case. Repro case may be added later after harness is complete.
-
-**Preconditions (4):**
-- Tenant can create EnvoyExtensionPolicy (baseline)
-- Attacker hosts a gzip-bomb at a reachable URL
-- sha256 unset (optional field; check is post-decompression anyway)
-- No operator Wasm-URL allowlist (none exists in code)
-
-**Description**
-
-getFileFromGZ calls io.ReadAll on a r…
-
----
-
-## 32. 🟡 High Severity — Envoy Gateway custom backendRef cross-namespace ReferenceGrant bypass
-
-**CVE:** `CVE-2026-53718` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-16
-**Reference:** <https://github.com/advisories/GHSA-fcrp-7gc2-93g7>
-
-> ### Impact
-Envoy Gateway accepts extension-managed custom backendRefs from an HTTPRoute to a backend resource in another namespace without requiring a matching Gateway API ReferenceGrant in the target namespace. This breaks the Gateway API cross-namespace consent model: the namespace that owns the referenced backend resource does not need to opt in with a ReferenceGrant before another namespace’s …
-
----
-
-## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
