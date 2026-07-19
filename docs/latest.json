@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-19T12:46:54.805574+00:00",
-  "total": 14,
+  "generated": "2026-07-19T18:46:04.156427+00:00",
+  "total": 16,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -206,6 +206,36 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/uac-0145-uses-clickfix-captchas-to.html",
+      "title": "UAC-0145 Uses ClickFix CAPTCHAs to Infect Ukrainian Devices wih Malware",
+      "summary": "Russian state-sponsored threat actors have been observed leveraging the infamous ClickFix strategy to trick Ukrainian targets into infecting their own machines with data-stealing malware.\n\nAccording to the Computer Emergency Response Team of Ukraine (CERT-UA), the activity has been attributed to UAC-0145, a sub-cluster within Sandworm, an advanced hacking unit affiliated with GRU, Russia's",
+      "link": "https://thehackernews.com/2026/07/uac-0145-uses-clickfix-captchas-to.html",
+      "published": "2026-07-19T13:30:55+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html",
+      "title": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
+      "summary": "A previously undocumented threat actor has been attributed to the exploitation of recently disclosed SonicWall Secure Mobile Access (SMA) 1000 series VPN appliances as zero-days prior their public disclosure since June 22, 2026.\n\nCybersecurity company Volexity is tracking the activity under the moniker UTA0533. The discovery was made following an incident response investigation earlier this",
+      "link": "https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html",
+      "published": "2026-07-19T13:18:56+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
