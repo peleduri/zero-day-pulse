@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-20T01:27:50.134586+00:00",
-  "total": 17,
+  "generated": "2026-07-20T08:35:03.519223+00:00",
+  "total": 18,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
     {
@@ -208,6 +208,24 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/wp2shell-wordpress-vulnerabilities-exploited-in-the-wild/",
+      "title": "WP2Shell WordPress Vulnerabilities Exploited in the Wild",
+      "summary": "Exploitation of the new WordPress vulnerabilities tracked as CVE-2026-60137 and CVE-2026-63030 started soon after disclosure. The post WP2Shell WordPress Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/wp2shell-wordpress-vulnerabilities-exploited-in-the-wild/",
+      "published": "2026-07-20T05:21:29+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-60137",
+        "CVE-2026-63030"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },

@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-20 01:27 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-20 08:35 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -113,7 +113,16 @@
 
 ---
 
-## 14. 🟠 Zero-Day — UAC-0145 Uses ClickFix CAPTCHAs to Infect Ukrainian Devices wih Malware
+## 14. 🟠 Zero-Day — WP2Shell WordPress Vulnerabilities Exploited in the Wild
+
+**CVE:** `CVE-2026-60137` | `CVE-2026-63030` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://www.securityweek.com/wp2shell-wordpress-vulnerabilities-exploited-in-the-wild/>
+
+> Exploitation of the new WordPress vulnerabilities tracked as CVE-2026-60137 and CVE-2026-63030 started soon after disclosure. The post WP2Shell WordPress Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .
+
+---
+
+## 15. 🟠 Zero-Day — UAC-0145 Uses ClickFix CAPTCHAs to Infect Ukrainian Devices wih Malware
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-19
 **Reference:** <https://thehackernews.com/2026/07/uac-0145-uses-clickfix-captchas-to.html>
@@ -124,7 +133,7 @@ According to the Computer Emergency Response Team of Ukraine (CERT-UA), the acti
 
 ---
 
-## 15. 🟠 Zero-Day — SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access
+## 16. 🟠 Zero-Day — SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-19
 **Reference:** <https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html>
@@ -135,7 +144,7 @@ Cybersecurity company Volexity is tracking the activity under the moniker UTA053
 
 ---
 
-## 16. 🟡 High Severity — Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution
+## 17. 🟡 High Severity — Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution
 
 **CVE:** `CVE-2026-42533` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-19
 **Reference:** <https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html>
@@ -146,7 +155,7 @@ Triggering it can crash or restart the worker, causing a denial of
 
 ---
 
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
