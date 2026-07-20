@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-20 08:35 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-20 13:44 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -113,7 +113,18 @@
 
 ---
 
-## 14. 🟠 Zero-Day — WP2Shell WordPress Vulnerabilities Exploited in the Wild
+## 14. 🟠 Zero-Day — New 7-Zip Vulnerability Could Let Crafted XZ Archives Run Code During Extraction
+
+**CVE:** `CVE-2026-14266` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://thehackernews.com/2026/07/new-7-zip-vulnerability-could-let.html>
+
+> Opening a crafted XZ archive in 7-Zip could let an attacker run code on the machine. The flaw, CVE-2026-14266, is a heap-based buffer overflow in how the archiver processes XZ chunked data, and Trend Micro&#x27;s Zero Day Initiative (ZDI) detailed it on July 15. A fix shipped on June 25 in 7-Zip 26.02.
+
+The overflow lets an attacker &quot;execute code in the context of the current process,&quot; p…
+
+---
+
+## 15. 🟠 Zero-Day — WP2Shell WordPress Vulnerabilities Exploited in the Wild
 
 **CVE:** `CVE-2026-60137` | `CVE-2026-63030` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-20
 **Reference:** <https://www.securityweek.com/wp2shell-wordpress-vulnerabilities-exploited-in-the-wild/>
@@ -122,25 +133,12 @@
 
 ---
 
-## 15. 🟠 Zero-Day — UAC-0145 Uses ClickFix CAPTCHAs to Infect Ukrainian Devices wih Malware
+## 16. 🟡 High Severity — Critical ServiceNow code execution flaw now exploited in attacks
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-19
-**Reference:** <https://thehackernews.com/2026/07/uac-0145-uses-clickfix-captchas-to.html>
+**CVE:** `CVE-2026-6875` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/>
 
-> Russian state-sponsored threat actors have been observed leveraging the infamous ClickFix strategy to trick Ukrainian targets into infecting their own machines with data-stealing malware.
-
-According to the Computer Emergency Response Team of Ukraine (CERT-UA), the activity has been attributed to UAC-0145, a sub-cluster within Sandworm, an advanced hacking unit affiliated with GRU, Russia&#x27;s
-
----
-
-## 16. 🟠 Zero-Day — SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-19
-**Reference:** <https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html>
-
-> A previously undocumented threat actor has been attributed to the exploitation of recently disclosed SonicWall Secure Mobile Access (SMA) 1000 series VPN appliances as zero-days prior their public disclosure since June 22, 2026.
-
-Cybersecurity company Volexity is tracking the activity under the moniker UTA0533. The discovery was made following an incident response investigation earlier this
+> Attackers have begun exploiting a critical vulnerability (CVE-2026-6875) in the ServiceNow AI Platform, according to threat intelligence company Defused. [...]
 
 ---
 
