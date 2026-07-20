@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-19 18:46 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-20 01:27 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -135,7 +135,18 @@ Cybersecurity company Volexity is tracking the activity under the moniker UTA053
 
 ---
 
-## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution
+
+**CVE:** `CVE-2026-42533` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-19
+**Reference:** <https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html>
+
+> F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37.0.3.1; anyone on an earlier build should upgrade.
+
+Triggering it can crash or restart the worker, causing a denial of
+
+---
+
+## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

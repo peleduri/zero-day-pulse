@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-19T18:46:04.156427+00:00",
-  "total": 16,
+  "generated": "2026-07-20T01:27:50.134586+00:00",
+  "total": 17,
   "kev": 0,
   "zero_day": 15,
   "enriched": 0,
@@ -240,6 +240,23 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
+      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
+      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37.0.3.1; anyone on an earlier build should upgrade.\n\nTriggering it can crash or restart the worker, causing a denial of",
+      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
+      "published": "2026-07-19T20:42:49+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-42533"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
