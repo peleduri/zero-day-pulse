@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-20T13:44:56.132800+00:00",
-  "total": 18,
+  "generated": "2026-07-20T19:22:10.009780+00:00",
+  "total": 21,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,43 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.wiz.io/blog/wp2shell-cve-2026-63030-cve-2026-60137",
+      "title": "Exploitation in the Wild of wp2shell",
+      "summary": "Wiz Research has identified exploitation of \"wp2shell\", a critical pre-auth RCE vulnerability chain impacting WordPress Core (CVE-2026-63030 & CVE-2026-60137). Attackers are deploying persistent webshells on vulnerable servers. Organizations should prioritize patching or applying WAF mitigations.",
+      "link": "https://www.wiz.io/blog/wp2shell-cve-2026-63030-cve-2026-60137",
+      "published": "2026-07-20T18:00:08+00:00",
+      "source": "Wiz Research",
+      "tags": [
+        "cloud",
+        "research",
+        "misconfig"
+      ],
+      "cve_ids": [
+        "CVE-2026-63030",
+        "CVE-2026-60137"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/sonicwall-zero-days-exploited-to-deliver-custom-malware-for-weeks-before-patch/",
+      "title": "SonicWall Zero-Days Exploited to Deliver Custom Malware for Weeks Before Patch",
+      "summary": "The zero-days CVE-2026-15409 and CVE-2026-15410 were exploited by a threat actor tracked by Volexity as UTA0533. The post SonicWall Zero-Days Exploited to Deliver Custom Malware for Weeks Before Patch appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/sonicwall-zero-days-exploited-to-deliver-custom-malware-for-weeks-before-patch/",
+      "published": "2026-07-20T14:11:05+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-15409",
+        "CVE-2026-15410"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -212,6 +249,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/07/weekly-recap-wordpress-rce-sonicwall-0.html",
+      "title": "\u26a1 Weekly Recap: WordPress RCE, SonicWall 0-Days, AI Service Attacks, SharePoint 0-Day and More",
+      "summary": "A single request should not be able to do this much. But this week, small inputs led to code execution, memory loss, stolen keys, and disabled security tools.\n\nThe paths were often simple: exposed systems, weak checks, old drivers, fake prompts, and public code used for malware delivery. Some bugs were new. Others were already being used before defenders had time to patch.\n\nHere is the full",
+      "link": "https://thehackernews.com/2026/07/weekly-recap-wordpress-rce-sonicwall-0.html",
+      "published": "2026-07-20T13:32:26+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://thehackernews.com/2026/07/new-7-zip-vulnerability-could-let.html",
       "title": "New 7-Zip Vulnerability Could Let Crafted XZ Archives Run Code During Extraction",
       "summary": "Opening a crafted XZ archive in 7-Zip could let an attacker run code on the machine. The flaw, CVE-2026-14266, is a heap-based buffer overflow in how the archiver processes XZ chunked data, and Trend Micro's Zero Day Initiative (ZDI) detailed it on July 15. A fix shipped on June 25 in 7-Zip 26.02.\n\nThe overflow lets an attacker \"execute code in the context of the current process,\" per the",
@@ -229,22 +281,22 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/wp2shell-wordpress-vulnerabilities-exploited-in-the-wild/",
-      "title": "WP2Shell WordPress Vulnerabilities Exploited in the Wild",
-      "summary": "Exploitation of the new WordPress vulnerabilities tracked as CVE-2026-60137 and CVE-2026-63030 started soon after disclosure. The post WP2Shell WordPress Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/wp2shell-wordpress-vulnerabilities-exploited-in-the-wild/",
-      "published": "2026-07-20T05:21:29+00:00",
-      "source": "SecurityWeek",
+      "id": "CVE-2026-55514",
+      "title": "vLLM denial of service via prompt embeds on M-RoPE models",
+      "summary": "### Summary\n_Short summary of the problem. Make the impact and severity as clear as possible. For example: An unsafe deserialization vulnerability allows any unauthenticated user to execute arbitrary code on the server._\n\nSending a pure prompt embeds payload in a `/v1/completions` request with a model using M-RoPE causes the EngineCore to fail an assertion and fatally crash, shutting down the entire server application.\n\nAny remote user who is authorized to make a `/v1/completions` endpoint can trivially make such a request and induce a crash.\n\n### Details\n_Give all details on the vulnerability. Pointing to the incriminated source code is very helpful for the maintainer._\n\nIn commit [56669c1](https://github.com/vllm-project/vllm/commit/56669c1f293d5c53b6a19ddf2f78802fa9fff2c2), a simple assert intended to be a type-narrowing assert was added to the `_init_mrope_positions` method in `GPUModelRunner` (the offending line on main at the time of writing: https://github.com/vllm-project/vllm/blob/2d481f8a946ee0521872af0f098674a8ee01ce4a/vllm/v1/worker/gpu_model_runner.py#L1588-L1607).\n\n```python\nassert req_state.prompt_token_ids is not None, (\n            \"M-RoPE requires prompt_token_ids to be available.\"\n        )\n```\n\nThis type narrowing assert is to prevent mypy errors later in the function because `None` is not a valid type for `mrope_model.get_mrope_input_positions`. Unfortunately, this assertion is not always true. `/v1/completions` requests that specify `prompt=None` and `prompt_embeds=<not none>` will indeed create a CachedRequestState where `prompt_token_ids` is `None`. This triggers the assertion, which in turn crashes the EngineCore and the Server application.\n\n```\n(EngineCore pid=351) ERROR 06-11 00:48:03 [core.py:1167]   File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_model_runner.py\", line 3997, in execute_model\n(EngineCore pid=351) ERROR 06-11 00:48:03 [core.py:1167]     deferred_state_corrections_fn = self._update_states(scheduler_output)\n",
+      "link": "https://github.com/advisories/GHSA-33cg-gxv8-3p8g",
+      "published": "2026-07-20T19:13:07Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "research"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-60137",
-        "CVE-2026-63030"
+        "CVE-2026-55514"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/",
