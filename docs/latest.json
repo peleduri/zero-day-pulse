@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-21T01:22:40.435887+00:00",
-  "total": 34,
+  "generated": "2026-07-21T08:04:40.507890+00:00",
+  "total": 33,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -216,22 +216,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/",
-      "title": "94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey",
-      "summary": "",
-      "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/",
-      "published": "Jun 22, 2026 00:00:00-0500",
-      "source": "CrowdStrike Blog",
-      "tags": [
-        "cloud",
-        "threat-intel",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/",
       "title": "July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days",
       "summary": "",
@@ -294,6 +278,23 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/critical-servicenow-ai-platform-flaw.html",
+      "title": "Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution",
+      "summary": "Threat actors are now exploiting a recently disclosed critical security flaw impacting ServiceNow AI Platform, according to Defused Cyber.\n\nIn a post shared on X, the threat intelligence firm said it's observing in-the-wild exploitation of CVE-2026-6875 (CVSS score: 9.5), a sandbox escape vulnerability that could allow an unauthenticated user to run arbitrary code.\n\nPatches for the flaw were",
+      "link": "https://thehackernews.com/2026/07/critical-servicenow-ai-platform-flaw.html",
+      "published": "2026-07-21T06:29:26+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-6875"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-59204",
@@ -543,23 +544,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55514"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/",
-      "title": "Critical ServiceNow code execution flaw now exploited in attacks",
-      "summary": "Attackers have begun exploiting a critical vulnerability (CVE-2026-6875) in the ServiceNow AI Platform, according to threat intelligence company Defused. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/",
-      "published": "2026-07-20T09:29:20+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-6875"
       ],
       "is_zero_day": false,
       "is_high_severity": true
