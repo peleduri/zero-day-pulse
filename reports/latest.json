@@ -1,10 +1,86 @@
 {
-  "generated": "2026-07-21T13:11:26.760832+00:00",
-  "total": 33,
-  "kev": 0,
-  "zero_day": 17,
+  "generated": "2026-07-21T19:01:35.466047+00:00",
+  "total": 40,
+  "kev": 4,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-60137",
+      "title": "CVE-2026-60137 \u2014 WordPress Core SQL Injection Vulnerability",
+      "summary": "Vendor: WordPress | Product: Core. WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-04)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137",
+      "published": "2026-07-21",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-60137"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63030",
+      "title": "CVE-2026-63030 \u2014 WordPress Core Interpretation Conflict Vulnerability",
+      "summary": "Vendor: WordPress | Product: Core. WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-24)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030",
+      "published": "2026-07-21",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-63030"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-0770",
+      "title": "CVE-2026-0770 \u2014 Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+      "summary": "Vendor: Langflow | Product: Langflow. Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-24)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+      "published": "2026-07-21",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-0770"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2021-27137",
+      "title": "CVE-2021-27137 \u2014 DD-WRT Stack-Based Buffer Overflow Vulnerability",
+      "summary": "Vendor: DD-WRT | Product: DD-WRT. DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-24)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-27137",
+      "published": "2026-07-21",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2021-27137"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -49,25 +125,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.wiz.io/blog/wp2shell-cve-2026-63030-cve-2026-60137",
-      "title": "Exploitation in the Wild of wp2shell",
-      "summary": "Wiz Research has identified exploitation of \"wp2shell\", a critical pre-auth RCE vulnerability chain impacting WordPress Core (CVE-2026-63030 & CVE-2026-60137). Attackers are deploying persistent webshells on vulnerable servers. Organizations should prioritize patching or applying WAF mitigations.",
-      "link": "https://www.wiz.io/blog/wp2shell-cve-2026-63030-cve-2026-60137",
-      "published": "2026-07-20T18:00:08+00:00",
-      "source": "Wiz Research",
-      "tags": [
-        "cloud",
-        "research",
-        "misconfig"
-      ],
-      "cve_ids": [
-        "CVE-2026-63030",
-        "CVE-2026-60137"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -260,19 +317,93 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/07/weekly-recap-wordpress-rce-sonicwall-0.html",
-      "title": "\u26a1 Weekly Recap: WordPress RCE, SonicWall 0-Days, AI Service Attacks, SharePoint 0-Day and More",
-      "summary": "A single request should not be able to do this much. But this week, small inputs led to code execution, memory loss, stolen keys, and disabled security tools.\n\nThe paths were often simple: exposed systems, weak checks, old drivers, fake prompts, and public code used for malware delivery. Some bugs were new. Others were already being used before defenders had time to patch.\n\nHere is the full",
-      "link": "https://thehackernews.com/2026/07/weekly-recap-wordpress-rce-sonicwall-0.html",
-      "published": "2026-07-20T13:32:26+00:00",
+      "id": "CVE-2026-59882",
+      "title": "guzzlehttp/psr7: Host Confusion via Weak URI Host Validation",
+      "summary": "### Impact\n\n`guzzlehttp/psr7` did not reject URI host components containing authority delimiters (`/`, `?`, `#`, `@`, or `\\`), an embedded port such as `host:8080`, or IPv6 brackets that do not frame the host (such as `[::1` or `::1]`). `Uri::assertValidHost()` rejected only control characters, so these malformed hosts were accepted both when parsing a URI string \u2014 including through `new Uri()`, an absolute-form request target passed to `Message::parseRequest()`, and the synthetic `SERVER_NAME` or `SERVER_ADDR` fallback used by `ServerRequest::fromGlobals()` \u2014 and when setting a host with `Uri::withHost()`. Because the stored host was not validated, `Uri::getHost()` could return a value that does not agree with the URI's authority or with the host that is actually used on the wire. For example, `Uri::withHost('good.com@evil.com')` is accepted, and `new Uri('http://[gggg::1]/')` produces a `getHost()` of `'[gggg:'` while `getAuthority()` returns `'[gggg::1'`.\n\nYou are affected if your application builds a `Uri` or calls `Uri::withHost()` with host data that is wholly or partly attacker-controlled and then relies on `Uri::getHost()` for a security or routing decision, such as host allowlisting or denylisting, an SSRF guard, cookie scoping, or proxy-bypass selection. You are also affected if you parse, forward, proxy, or re-serialize URIs that come from untrusted raw HTTP messages or from synthetic `$_SERVER` values. Because `getHost()` can then disagree with the real connection target, the concrete impact depends on how your application and any downstream HTTP/1.x component use the URI, and may include host-based access-control bypass, server-side request forgery, routing to an unintended host, or `Host` header confusion. You are not affected if every host you place into a `Uri` is already trusted and well formed.\n\nApplications using `guzzlehttp/guzzle` are affected in the same way through Guzzle's use of PSR-7. Guzzle derives the request `Host` header from the reques",
+      "link": "https://github.com/advisories/GHSA-c2w2-prh8-qm98",
+      "published": "2026-07-21T18:35:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59882"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59895",
+      "title": "Hono: Server-Side XSS via JSX Escaping Bypass in cx() Utility",
+      "summary": "### Summary\n\n`cx()` in `hono/css` composes class names from plain strings but marks the result as already-escaped without HTML-escaping the input. When the result is used as a JSX `class` attribute during server-side rendering, the value is written into the attribute unescaped, so untrusted input can break out of the `class` attribute and inject arbitrary markup, leading to Cross-Site Scripting (XSS).\n\n### Details\n\nBecause the composed value is treated as pre-escaped, the HTML attribute escaping normally applied to interpolated values is skipped, and characters such as `\"` pass through unescaped \u2014 allowing a value to terminate the attribute and add further attributes or elements. This arises when an application passes untrusted, user-controlled input as a class name to `cx()`, for example when merging a base class with an externally provided `className`.\n\n### Impact\n\nDuring server-side rendering, an attacker who controls a value passed to `cx()` can inject arbitrary HTML into the page, resulting in stored or reflected XSS in the victim's browser.\n\nThis may lead to:\n\n- Execution of attacker-controlled script in the victim's browser session.\n- Session hijacking, credential theft, or actions performed on behalf of the victim.\n\nApplications are affected only if they render JSX server-side and pass untrusted input as a class name to `cx()`.",
+      "link": "https://github.com/advisories/GHSA-w62v-xxxg-mg59",
+      "published": "2026-07-21T18:33:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59895"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59897",
+      "title": "Hono: API Gateway v1 adapter can drop a distinct repeated request header value during de-duplication",
+      "summary": "### Summary\n\nThe AWS API Gateway v1 adapter can drop a distinct repeated request header value. When a header appears multiple times, the adapter de-duplicates values using a substring comparison instead of an exact match, so a value that is a substring of another value of the same header is omitted (for example, `203.0.113.1` is dropped when another value is `203.0.113.10`).\n\n### Details\n\nA repeated request header carries an ordered list of values. Middleware or application logic that depends on the complete list \u2014 such as IP restriction that walks the `X-Forwarded-For` chain, rate limiting, audit logging, or proxy-chain validation \u2014 can therefore receive incomplete data that differs from what the client actually sent.\n\nThis issue arises on deployments using the AWS API Gateway v1 adapter (the same pattern also affects the VPC Lattice adapter), for requests that contain the same header more than once.\n\n### Impact\n\nAn attacker can craft repeated header values so that one value is omitted before the application sees the request. Where a security or routing decision relies on the full chain, this can alter that decision.\n\nThis affects applications deployed through Hono's AWS API Gateway v1 (or VPC Lattice) adapter that rely on the complete set of repeated request header values.",
+      "link": "https://github.com/advisories/GHSA-xgm2-5f3f-mvvc",
+      "published": "2026-07-21T18:18:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59897"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html",
+      "title": "Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC",
+      "summary": "A third SharePoint Server flaw patched by Microsoft as part of its Patch Tuesday update for July 2026 has come under active exploitation, per watchTowr.\n\nThe vulnerability in question is CVE-2026-50522 (CVSS score: 9.8), a critical deserialization of untrusted data in Microsoft Office SharePoint that could allow an unauthorized attacker to execute code over a network. Microsoft credited DEVCORE",
+      "link": "https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html",
+      "published": "2026-07-21T14:57:51+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-50522"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html",
+      "title": "WordPress wp2shell Exploitation Grows as Public Exploit Fuels Mass Scanning",
+      "summary": "Attackers have begun to exploit two critical vulnerabilities in WordPress that, when combined together, enable unauthenticated remote code execution (RCE) and complete compromise of vulnerable websites.\n\nThe two security flaws, tracked as CVE-2026-63030 and CVE-2026-60137, have been codenamed wp2shell.\n\n\"By the early hours of Saturday morning (UTC), successful exploitation was already well",
+      "link": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html",
+      "published": "2026-07-21T08:59:30+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-63030",
+        "CVE-2026-60137"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/07/critical-servicenow-ai-platform-flaw.html",

@@ -109,15 +109,79 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">17</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">4</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">40</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-21 13:11 UTC</div>
+            <div class="generated">Updated 2026-07-21 19:01 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-60137" target="_blank" rel="noopener">CVE-2026-60137 — WordPress Core SQL Injection Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-60137</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-21</span>
+  </div>
+  <p class='summary'>Vendor: WordPress | Product: Core. WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations. Required action: Apply mitigations in accordance with vendor instructions, ensuring compli…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-63030" target="_blank" rel="noopener">CVE-2026-63030 — WordPress Core Interpretation Conflict Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-63030</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-21</span>
+  </div>
+  <p class='summary'>Vendor: WordPress | Product: Core. WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on …</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-0770" target="_blank" rel="noopener">CVE-2026-0770 — Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-0770</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-21</span>
+  </div>
+  <p class='summary'>Vendor: Langflow | Product: Langflow. Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidanc…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-27137" target="_blank" rel="noopener">CVE-2021-27137 — DD-WRT Stack-Based Buffer Overflow Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2021-27137</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-21</span>
+  </div>
+  <p class='summary'>Vendor: DD-WRT | Product: DD-WRT. DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in …</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -162,22 +226,6 @@
     <span>2026-07-20</span>
   </div>
   <p class='summary'>Two recently disclosed SonicWall SMA1000 vulnerabilities were exploited in zero-day attacks for weeks, allowing threat actors to install custom malware on vulnerable VPN appliances. [...]</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.wiz.io/blog/wp2shell-cve-2026-63030-cve-2026-60137" target="_blank" rel="noopener">Exploitation in the Wild of wp2shell</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-63030</code> <code class="cve">CVE-2026-60137</code>
-    <span class="meta-sep">·</span>
-    <span>Wiz Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-20</span>
-  </div>
-  <p class='summary'>Wiz Research has identified exploitation of &quot;wp2shell&quot;, a critical pre-auth RCE vulnerability chain impacting WordPress Core (CVE-2026-63030 &amp; CVE-2026-60137). Attackers are deploying persistent webshells on vulnerable servers. Organizations should prioritize patching or applying WAF mitigations.</p>
 
 </article>
 
@@ -373,23 +421,99 @@
 
 </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/weekly-recap-wordpress-rce-sonicwall-0.html" target="_blank" rel="noopener">⚡ Weekly Recap: WordPress RCE, SonicWall 0-Days, AI Service Attacks, SharePoint 0-Day and More</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c2w2-prh8-qm98" target="_blank" rel="noopener">guzzlehttp/psr7: Host Confusion via Weak URI Host Validation</a></h2>
           </div>
           <div class="card-meta">
-            <span class="no-cve">No CVE</span>
+            <code class="cve">CVE-2026-59882</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-21</span>
+          </div>
+          <p class='summary'>### Impact
+
+`guzzlehttp/psr7` did not reject URI host components containing authority delimiters (`/`, `?`, `#`, `@`, or `\`), an embedded port such as `host:8080`, or IPv6 brackets that do not frame the host (such as `[::1` or `::1]`). `Uri::assertValidHost()` rejected only control characters, so these malformed hosts were accepted both when parsing a URI string — including through `new Uri()`, a…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w62v-xxxg-mg59" target="_blank" rel="noopener">Hono: Server-Side XSS via JSX Escaping Bypass in cx() Utility</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-59895</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-21</span>
+          </div>
+          <p class='summary'>### Summary
+
+`cx()` in `hono/css` composes class names from plain strings but marks the result as already-escaped without HTML-escaping the input. When the result is used as a JSX `class` attribute during server-side rendering, the value is written into the attribute unescaped, so untrusted input can break out of the `class` attribute and inject arbitrary markup, leading to Cross-Site Scripting (X…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xgm2-5f3f-mvvc" target="_blank" rel="noopener">Hono: API Gateway v1 adapter can drop a distinct repeated request header value during de-duplication</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-59897</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-21</span>
+          </div>
+          <p class='summary'>### Summary
+
+The AWS API Gateway v1 adapter can drop a distinct repeated request header value. When a header appears multiple times, the adapter de-duplicates values using a substring comparison instead of an exact match, so a value that is a substring of another value of the same header is omitted (for example, `203.0.113.1` is dropped when another value is `203.0.113.10`).
+
+### Details
+
+A repeat…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html" target="_blank" rel="noopener">Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-50522</code>
             <span class="meta-sep">·</span>
             <span>The Hacker News Security</span>
             <span class="meta-sep">·</span>
-            <span>2026-07-20</span>
+            <span>2026-07-21</span>
           </div>
-          <p class='summary'>A single request should not be able to do this much. But this week, small inputs led to code execution, memory loss, stolen keys, and disabled security tools.
+          <p class='summary'>A third SharePoint Server flaw patched by Microsoft as part of its Patch Tuesday update for July 2026 has come under active exploitation, per watchTowr.
 
-The paths were often simple: exposed systems, weak checks, old drivers, fake prompts, and public code used for malware delivery. Some bugs were new. Others were already being used before defenders had time to patch.
+The vulnerability in question is CVE-2026-50522 (CVSS score: 9.8), a critical deserialization of untrusted data in Microsoft Office SharePoint that could allow an unauthorized attacker to execute code over a network. Microsoft credited DEVCORE</p>
 
-Here is the full</p>
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html" target="_blank" rel="noopener">WordPress wp2shell Exploitation Grows as Public Exploit Fuels Mass Scanning</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63030</code> <code class="cve">CVE-2026-60137</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-21</span>
+          </div>
+          <p class='summary'>Attackers have begun to exploit two critical vulnerabilities in WordPress that, when combined together, enable unauthenticated remote code execution (RCE) and complete compromise of vulnerable websites.
+
+The two security flaws, tracked as CVE-2026-63030 and CVE-2026-60137, have been codenamed wp2shell.
+
+&quot;By the early hours of Saturday morning (UTC), successful exploitation was already well</p>
 
         </article>
 
