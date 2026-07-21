@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-20T19:22:10.009780+00:00",
-  "total": 21,
+  "generated": "2026-07-21T01:22:40.435887+00:00",
+  "total": 34,
   "kev": 0,
-  "zero_day": 17,
+  "zero_day": 18,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,21 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/sonicwall-sma1000-flaws-exploited-as-zero-days-to-push-custom-malware/",
+      "title": "SonicWall SMA1000 flaws exploited as zero-days to push custom malware",
+      "summary": "Two recently disclosed SonicWall SMA1000 vulnerabilities were exploited in zero-day attacks for weeks, allowing threat actors to install custom malware on vulnerable VPN appliances. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-sma1000-flaws-exploited-as-zero-days-to-push-custom-malware/",
+      "published": "2026-07-20T22:23:23+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -281,6 +296,240 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-59204",
+      "title": "Pillow JPEG2000 tiled decode retains a growing scratch buffer and can be used for denial of service",
+      "summary": "### Summary\n`src/libImaging/Jpeg2KDecode.c:853` accumulates `total_component_width` across every tile in a JPEG2000 image instead of recomputing it per tile. That accumulated value is then used in the `tile_bytes` calculation at `src/libImaging/Jpeg2KDecode.c:868`, which can make the decoder grow `state->buffer` via `realloc` at `src/libImaging/Jpeg2KDecode.c:876` up to roughly one full image's decompressed size even when each tile is small. A crafted tiled JPEG2000 file can therefore force substantially higher transient memory usage and trigger out-of-memory failures during decoding. Based on current evidence, the supported impact is denial of service, not memory corruption.\n\n### Details\n- Location: `src/libImaging/Jpeg2KDecode.c:853`\n- Root cause: `total_component_width` is initialized only once before the tile loop and keeps growing across tiles. It is then used to derive `tile_bytes`, so later tiles are treated as if they had the combined component width of all earlier tiles.\n- Dangerous operation: `tile_bytes` is promoted into `tile_info.data_size`, then `state->buffer` is grown with `realloc` at `src/libImaging/Jpeg2KDecode.c:876`.\n- Reachability: any attacker-controlled JPEG2000 image with many tiles reaches this path during normal `Image.open(...).load()` decoding.\n\n\n### PoC\nThe attached helper script and testcase were used:\n[exercise_j2k_tile_realloc.zip](https://github.com/user-attachments/files/28099912/exercise_j2k_tile_realloc.zip)\n\n\nGenerate the testcase:\n\n```bash\npythonexercise_j2k_tile_realloc.py make poc_3664_rgba_tile1832.jp2 \\\n  --size 3664 --tile 1832\n```\n\nExpected geometry from the helper:\n\n- image size: `3664 x 3664`\n- mode: `RGBA`\n- tile size: `1832 x 1832` (`2x2` tiles)\n- `image_bytes=53699584`\n- uncapped RSS observed:\n  - vulnerable build: `maxrss_kb=180264`\n  - fixed comparison build: `maxrss_kb=138404`\n\nLoad it with the current vulnerable build:\n\n```bash\npython exercise_j2k_tile_realloc.py load poc_3664_rgba_tile1832.jp2\n```\n\nLoad it again",
+      "link": "https://github.com/advisories/GHSA-vjc4-5qp5-m44j",
+      "published": "2026-07-20T23:18:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59204"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59198",
+      "title": "Pillow TGA RLE encoder can serialize up to ~57 KB of adjacent heap data into generated images",
+      "summary": "### Summary\n\nPillow's TGA RLE encoder reads past its row buffer when saving a mode `\"1\"`\nimage. Adjacent process heap bytes can be copied into the generated TGA file.\n\nThe bug is reachable through the public save API:\n\n```python\nim.save(out, format=\"TGA\", compression=\"tga_rle\")\n```\n\nOlder affected Pillow versions use the equivalent public option `rle=True`.\n\nFor mode `\"1\"`, Pillow allocates a packed row buffer of `ceil(width / 8)`\nbytes, but `ImagingTgaRleEncode()` treats the row as one full byte per pixel.\n\nThe maximum valid TGA width is `65535`. At that width:\n\n```text\nallocated packed row buffer: 8192 bytes\nencoder byte-offset walk:     65535 bytes\nmaximum OOB window per row:   57343 bytes\n```\n\nOn non-ASAN Pillow `12.2.0`, the public-only maximum-width PoC below serialized\n`57297` bytes from distinct out-of-bounds source offsets into one returned TGA,\ncovering `99.92%` of the maximum adjacent heap window. No heap grooming, ctypes,\nprivate API, or malformed input file was used. The disclosure is emitted across\nmany TGA packet payload copies of at most `128` bytes each, not one large\n`memcpy()`.\n\n### Details\n\n`src/PIL/TgaImagePlugin.py` allows mode `\"1\"` TGA output and selects the\n`tga_rle` encoder when RLE compression is requested.\n\n`src/encode.c:_setimage()` allocates the row buffer using the packed-bit\nformula:\n\n```c\nstate->bytes = (state->bits * state->xsize + 7) / 8;\nstate->buffer = (UINT8 *)calloc(1, state->bytes);\n```\n\nFor mode `\"1\"`, `state->bits == 1`.\n\n`src/libImaging/TgaRleEncode.c` then computes:\n\n```c\nbytesPerPixel = (state->bits + 7) / 8;\n```\n\nThis becomes `1`, and the encoder uses pixel indexes as byte offsets:\n\n```c\nstatic int\ncomparePixels(const UINT8 *buf, int x, int bytesPerPixel) {\n    buf += x * bytesPerPixel;\n    return memcmp(buf, buf + bytesPerPixel, bytesPerPixel) == 0;\n}\n```\n\nThe packet payload `memcpy()` later copies those out-of-bounds source bytes into\nthe output. Raw packets copy up to `128` contiguous bytes, while RLE packets copy\none",
+      "link": "https://github.com/advisories/GHSA-fj7v-r99m-22gq",
+      "published": "2026-07-20T23:09:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59198"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62685",
+      "title": "File Browser: Colliding username normalization gives two users the same home directory",
+      "summary": "## Summary\n\nFileBrowser confines each user to a *scope*: a home directory that acts as the boundary for everything they can read or write. When self-registration and automatic home-directory creation are both enabled (`Signup=true` and `CreateUserDir=true`), a new user's scope is built from their username after it passes through `cleanUsername()`. That function rewrites the name: it strips `..` and replaces every character outside `0-9A-Za-z@_\\-.` with `-`.\n\nThe problem is that this rewrite is **many-to-one**: different usernames can produce the same result, and FileBrowser never checks whether the resulting scope is already taken. So `team/one`, `team one`, and `team-one` all collapse to the same directory name, and whoever registers second is handed the **same home directory** as the first user instead of an isolated one.\n\nThis breaks per-user isolation. An attacker can pick a username that normalizes onto a victim's directory (for example registering `alice/` or `al..ice` to land in `alice`'s home) and gain full read **and** write access to that victim's files. Because username uniqueness is enforced on the raw name, both accounts coexist normally and neither user is warned that they share storage.\n\n## Details\n\n**1. The home directory is built straight from the cleaned username (`settings/dir.go:30`)**\n\n```go\n// MakeUserDir, when CreateUserDir is true:\nusername = cleanUsername(username)\n// ...\nuserScope = path.Join(s.UserHomeBasePath, username)   // line 30\nuserScope = path.Join(\"/\", userScope)                 // line 33\n```\n\nThe user's scope is `path.Join(UserHomeBasePath, cleanUsername(username))`.\n\n**2. `cleanUsername` collapses distinct inputs to the same output (`settings/dir.go:42-52`)**\n\n```go\nfunc cleanUsername(s string) string {\n    s = strings.Trim(s, \" \")\n    s = strings.ReplaceAll(s, \"..\", \"\")                       // line 45, deletes \"..\"\n    s = invalidFilenameChars.ReplaceAllString(s, \"-\")         // line 48, any non [0-9A-Za-z@_.-] -> \"-\"\n    s = ",
+      "link": "https://github.com/advisories/GHSA-7rc3-g7h6-22m7",
+      "published": "2026-07-20T22:19:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62685"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62684",
+      "title": "File Browser: Share API exposes the password hash and bypass token",
+      "summary": "## Summary\n\nWhen a user creates a password-protected share or lists existing shares, the JSON response includes the full bcrypt `password_hash` and the secret `token` of the share. The `Link` storage struct is serialized directly with `json.Marshal` and tags `password_hash` and `token` for output, with no field filtering. Any authenticated user receives these secrets for their own shares, and an administrator listing all shares via `GET /api/shares` receives the password hash and bypass token for **every** user's shares, enabling offline cracking of share passwords and direct password-bypass access to protected shares.\n\n## Details\n\n**1. The `Link` struct serializes both secrets to JSON (`share/share.go:10-19`)**\n\n```go\ntype Link struct {\n    Hash         string `json:\"hash\" storm:\"id,index\"`\n    Path         string `json:\"path\" storm:\"index\"`\n    UserID       uint   `json:\"userID\"`\n    Expire       int64  `json:\"expire\"`\n    PasswordHash string `json:\"password_hash,omitempty\"`   // line 15, bcrypt hash exposed\n    // Token is only set when PasswordHash is set; it bypasses the password.\n    Token        string `json:\"token,omitempty\"`            // line 19, bypass token exposed\n}\n```\n\n`omitempty` means the hash and token are emitted whenever a share is password-protected, i.e. in every response for such a share.\n\n**2. The share handlers return the full struct through unfiltered `json.Marshal`**\n\n`sharePostHandler` returns the created `Link` with `renderJSON(w, r, s)` (`http/share.go:179`); `shareListHandler` and `shareGetsHandler` return shares the same way (`http/share.go:55`, `http/share.go:76`). `renderJSON` performs an unfiltered `json.Marshal(data)` (`http/utils.go:16`), so every tagged field, including `password_hash` and `token`, reaches the client.\n\n**3. Administrators receive every user's secrets (`http/share.go:36`)**\n\n```go\ns, err = d.store.Share.All()   // admin path: returns ALL users' shares\n// ...\nreturn renderJSON(w, r, s)     // including each share'",
+      "link": "https://github.com/advisories/GHSA-833g-cqhp-h72j",
+      "published": "2026-07-20T22:17:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62684"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59883",
+      "title": "Guzzle: Cookie Disclosure and Injection via IP-Address Domains",
+      "summary": "### Impact\n\n`CookieJar` does not restrict a cookie scoped to an IP address to the exact host that set it. When a stored cookie's `Domain` attribute is an IPv4 literal (`Domain=192.168.0.1`), a bracketed IPv6 literal (`Domain=[::1]`), or a bare numeric value that denotes an IPv4 address (`Domain=1`, which is `0.0.0.1`), `SetCookie::matchesDomain()` applies ordinary subdomain (suffix) matching to it instead of requiring an exact host. The IP-address check inside `matchesDomain()` is applied only to the request host and never to the cookie's own domain, and response cookies that carry an explicit `Domain` attribute are stored as suffix-matchable. As a result Guzzle sends such a cookie to any host whose name ends in that value as a trailing label, for example sending a `Domain=192.168.0.1` cookie to `evil.192.168.0.1`, or a `Domain=1` cookie to `evil.1`. The same flaw lets a look-alike host store a cookie that Guzzle then sends to the bare IP address. Depending on how the receiving service interprets the cookie, the impact is cross-host cookie disclosure, cookie injection, or session fixation.\n\nYou are affected if your application uses Guzzle's cookie support, for example `new Client(['cookies' => true])` or an explicit `CookieJar`, reuses one cookie jar across more than one host or trust boundary, and that jar can hold a cookie scoped to an IP-address or bare-numeric host. To actually leak a cookie the application must also resolve and connect to a look-alike host whose name ends in the IP-address label, such as `evil.192.168.0.1`. Such names are not publicly registrable, so in practice an attacker needs some influence over name resolution, which is realistic on private, split-horizon, container, or development networks. You are not affected if you do not use Guzzle's cookie support, if you use a separate cookie jar per host or trust boundary, or if your jars never hold cookies scoped to IP-address or bare-numeric hosts. This issue is independent of public suffix list ",
+      "link": "https://github.com/advisories/GHSA-g446-98w2-8p5w",
+      "published": "2026-07-20T22:00:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59883"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59946",
+      "title": "Composer: Path traversal in package bin field lets dependencies chmod arbitrary host files",
+      "summary": "## Summary\n\nA Composer package declares its executables in the `bin` field of its `composer.json`. When Composer installs a package, it processes each `bin` entry and changes the file mode of the corresponding file so it is executable.\n\nIf a `bin` entry contains `..` path segments, it can resolve to a path outside the package's own install directory. A malicious package can use this to make Composer run `chmod` against a file that already exists elsewhere on the machine. The resulting mode is world-readable and world-executable (0755 under the common umask of 022). This happens when the package is installed, e.g. during `composer install`, `composer update`, and `composer require`. Any dependency can trigger it, including a transitive dependency several levels deep.\n\nThe vulnerability *changes file permissions only, and does not read, modify, or execute the contents of the target file, and it is not remote code execution*. The impact is to confidentiality: a file with deliberately restrictive permissions, such as a private key at mode 0600, can be made readable by other users on the same host.\n\n## Am I affected?\n\nWe reviewed packagist.org data and found no evidence that any published package exploited this vulnerability. If you install packages only from packagist.org, you are not affected by any known exploitation.\n\nYou are potentially affected if *all* of the following are true:\n\n- Your Composer project depends, directly or transitively, on a package you do not fully trust.\n- A file you rely on for its restrictive permissions already exists at a path the Composer process can write to. Examples include SSH private keys, `.env` files, `~/.aws/credentials`, and `.netrc`.\n\nThe most likely way to be affected is to add or update a dependency that is malicious or has been compromised, then run an install on a machine that holds sensitive, permission-restricted files.\n\nTwo points to note:\n\n- `--no-scripts`, `--no-plugins`, and an `allow-plugins` allow-list do not prevent ",
+      "link": "https://github.com/advisories/GHSA-gjfg-22fp-rrxx",
+      "published": "2026-07-20T21:57:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59946"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59947",
+      "title": "Composer: URL-embedded HTTP-Basic username leaks to verbose logs (GitHub PAT exposure)",
+      "summary": "## Summary\n\nWhen Composer is run with -vvv (debug verbosity), it could print a credential that was embedded directly in a repository or package URL, but not as a password, to its debug output. Composer already masked the password portion of such URLs, but the username portion was shown in clear text. Because GitHub and several other services support placing an access token in the username position of a URL (for example https://[token]@github.com/owner/repo), a token used that way could end up written to the verbose log in full.\n\nThis is an information disclosure issue. The credential is only ever exposed to whoever can already read Composer's debug output.\n\n## Am I affected?\n\nYou are potentially affected only if **all** of the following apply:\n\n- A credential is embedded inside a URL that Composer handles, e.g. in a `repositories` entry in composer.json, in a package dist/source URL - rather than being supplied through auth.json or the COMPOSER_AUTH environment variable.\n- The secret sits in the username slot of that URL (e.g. `https://TOKEN@host/\u2026`). A normal `username:password@host` pair where the username is an ordinary account name did not expose the password, that was already masked.\n- Composer is run with -vvv (debug verbosity), and that output is retained or shared somewhere others can read it: public CI build logs, output pasted into an issue or chat, archived terminal sessions, and so on.\n\nIf you keep credentials in auth.json or environment variables, or you never run Composer at debug verbosity, you were not exposed.\n\nThe most realistic exposure is the documented pattern of embedding a GitHub Personal Access Token in a URL's username position on a machine (often CI) that captures verbose output.\n\n## Patched versions\n\nThe username is now masked the same way the password already was, so an embedded token no longer appears in verbose output (a short, non-secret prefix may be shown to aid debugging, but never the full value).\n\nFixed in Composer 2.10.2 and the ",
+      "link": "https://github.com/advisories/GHSA-g6xq-892h-64w3",
+      "published": "2026-07-20T21:55:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59947"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61835",
+      "title": "Directus: SSRF Protection Bypass via 0.0.0.0 in File Import",
+      "summary": "### Summary\n\nThe SSRF protection on Directus's file-import-from-URL feature can be bypassed using the address `0.0.0.0`. While `127.0.0.1` and other internal addresses are denied, `0.0.0.0` is not added to the blocklist. On Linux and macOS, connecting to `0.0.0.0` reaches localhost, so an authenticated user with file-upload rights can make the server fetch internal services and retrieve the response as a downloadable file (full-read SSRF).\n\n### Affected Versions\n\n- **Affected:** Directus `<= 12.0.0` (confirmed on `directus/directus:latest`, v11.17.3, with default configuration)\n- **Patched:** Directus `>= 12.0.0`\n\n### Details\n\nDirectus uses a deny-list config, `IMPORT_IP_DENY_LIST`, whose default value is `['0.0.0.0', '169.254.169.254']`.\n\nThe issue is in how `api/src/request/is-denied-ip.ts` processes this list. When it encounters the entry `0.0.0.0`, it treats it as a special keyword meaning \"block all local network interfaces,\" but it never blocks the literal address `0.0.0.0` itself. The handler sets the network-interface flag and skips to the next entry without adding `0.0.0.0` to the blocklist.\n\nWhat actually gets blocked is the loopback subnet `127.0.0.0/8` (from the `lo` interface) plus whatever addresses are assigned to the machine's network interfaces. The address `0.0.0.0` is not inside `127.0.0.0/8`; it belongs to the separate `0.0.0.0/8` range. So a request to `http://0.0.0.0:8055/` passes the blocklist check as \"allowed.\"\n\nAt the OS level, however, connecting to `0.0.0.0` reaches localhost, functionally equivalent to `127.0.0.1`. The same gap applies to the IPv6 unspecified address `::`. As a result, the SSRF protection is bypassed.\n\n### Impact\n\nAn authenticated user with create permission on `directus_files` (file-upload rights) can make the server issue requests to its own localhost via the `/files/import` endpoint. The response body is stored as a downloadable file, making this a full-read SSRF. On bare-metal or single-host deployments, this can rea",
+      "link": "https://github.com/advisories/GHSA-j5h6-vqc3-phqh",
+      "published": "2026-07-20T21:47:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61835"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61740",
+      "title": "LightRAG is Vulnerable to Authentication Bypass: hardcoded DEFAULT_TOKEN_SECRET and public /auth-status defeat LIGHTRAG_API_KEY protection",
+      "summary": "## Summary\n\nWhen LightRAG is deployed with `LIGHTRAG_API_KEY` set but `AUTH_ACCOUNTS` unset (an officially documented \"API-Key authentication\" mode), the `X-API-Key` protection can be bypassed by any remote unauthenticated attacker. The bypass does not require network contact with the victim server \u2014 an attacker can mint a valid guest JWT offline using the hardcoded `DEFAULT_TOKEN_SECRET` committed in the repository and then call any endpoint guarded by `Depends(combined_auth)`, including destructive operations such as `DELETE /documents`, `POST /documents/upload`, `/documents/clear_cache`, and `POST /query`.\n\nThis is distinct from the previously-fixed GHSA-mcww-4hxq-hfr3 / CVE-2026-30762, which only covered the `AUTH_ACCOUNTS`-configured case. The API-Key-only deployment profile is still fully exploitable on current `main` (commit `157c331`, v1.4.15).\n\n## Root cause\n\nThree independent issues combine:\n\n1. `lightrag/api/config.py:54` ships a hardcoded default JWT secret:\n   ```python\n   DEFAULT_TOKEN_SECRET=\"lightr...key!\"\n   ```\n2. `lightrag/api/auth.py:28-38` falls back to `DEFAULT_TOKEN_SECRET` with only a warning log when `AUTH_ACCOUNTS` is not configured. The fix for CVE-2026-30762 only raises when `AUTH_ACCOUNTS` is set, so the API-key-only path is silently vulnerable.\n3. `lightrag/api/lightrag_server.py:1140-1186` exposes `GET /auth-status` and `POST /login` without any authentication dependency. In the API-key-only configuration, `auth_handler.accounts` is empty, and both endpoints unconditionally mint and return a signed guest JWT.\n4. `lightrag/api/utils_api.py:214-216` inside `combined_dependency` short-circuits authorization on any valid guest token when `auth_configured` is false, **before** reaching the `X-API-Key` check on line 237:\n   ```python\n   if not auth_configured and token_info.get(\"role\") == \"guest\":\n       return\n   ```\n\n## Proof of concept (offline-minted token, zero server contact)\n\nTested against a clean install of commit `157c331` running ",
+      "link": "https://github.com/advisories/GHSA-f4vv-55c2-5789",
+      "published": "2026-07-20T21:46:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61740"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59930",
+      "title": "Mistune toc / TableOfContents directive: heading IDs use predictable `toc_N` numbering with no slugification, allowing collision with attacker-controlled `id=\"toc_N\"` content",
+      "summary": "## Summary\n\n**Type:** Predictable identifier generation. The `toc` plugin and `TableOfContents` directive both default to generating heading IDs of the form `toc_1`, `toc_2`, `toc_3`, ... with no input-derived component. An attacker who can place a heading anywhere in the document can predict which `toc_N` ID it will receive, and can inject HTML elsewhere (in a non-heading context) that uses the same `id=\"toc_N\"` to either (a) shadow the legitimate heading anchor, breaking same-page navigation, or (b) collide with CSS or JavaScript that targets `#toc_N` selectors, redirecting click handlers and styling to attacker-chosen content.\n**File:** `src/mistune/toc.py` line 36-37 (`heading_id = lambda token, index: \"toc_\" + str(index + 1)`); `src/mistune/directives/toc.py` line 33 (same default).\n**Root cause:** the default `heading_id` callback ignores the heading's text content and uses only the headings's order in the document. Two documents rendered together (or one document with attacker-influenced headings spliced into trusted content) produce overlapping `toc_N` IDs. Because `id` attribute uniqueness is required by HTML, browsers behaviour on duplicate IDs is undefined; `document.getElementById('toc_1')` returns the first match, `getElementsByTagName + querySelector` semantics differ across paths, and CSS rules targeting `#toc_1` apply to whichever element matches first in tree order.\n\n## Affected Code\n\n**File:** `src/mistune/toc.py`, lines 33-39.\n\n```python\ndef add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n    if heading_id is None:\n        def heading_id(token, index):\n            return \"toc_\" + str(index + 1)               # <-- BUG: index-only ID, no slug derived from heading text\n```\n\n**File:** `src/mistune/directives/toc.py`, lines 32-33.\n\n```python\nclass TableOfContents(DirectivePlugin):\n    def __init__(self, min_level=1, max_level=3):\n        # ...\n\n    def generate_heading_id(self, token, index):\n        return \"toc_\" + str(index + 1)        ",
+      "link": "https://github.com/advisories/GHSA-2hm2-hc3v-44h9",
+      "published": "2026-07-20T21:35:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59930"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54562",
+      "title": "Cloudreve: Non-admin remote download users can SSRF loopback/internal services and read imported responses",
+      "summary": "## Summary\n\nCloudreve's remote download workflow accepts user-supplied URLs and passes them to the configured downloader without blocking loopback, localhost, IPv6 localhost, or redirect-to-loopback targets.\n\nWhen the remote download permission is granted to a non-admin user group, a normal authenticated user can make the server-side downloader fetch internal-only URLs and then read the fetched response after it is imported into the user's own Cloudreve files.\n\nThis does not affect default normal users unless the remote download permission is enabled for their group. However, the permission is a feature-level user-group capability and does not make the user an administrator.\n\n## Attacker requirements\n\nThe attacker must be:\n\n- authenticated\n- non-admin\n- in a user group where `GroupPermissionRemoteDownload` is enabled\n\nDefault normal users are blocked from the affected workflow. In the default install, only the admin group has the remote download permission, while the default `User` group does not.\n\n## Affected endpoint\n\n```http\nPOST /api/v4/workflow/download\n```\n\nFollow-up attacker readback was performed through normal workflow and file APIs:\n\n```http\nGET /api/v4/workflow?category=downloaded...\nGET /api/v4/file?uri=cloudreve://my...\nPOST /api/v4/file/url\n```\n\n## Root cause\n\nThe remote download workflow checks whether the user group has remote download permission, but it does not validate the submitted URL before passing it to the downloader.\n\nRelevant code paths:\n\n- `service/explorer/workflows.go:81`\n- `pkg/filemanager/workflows/remote_download.go:202`\n- `pkg/downloader/aria2/aria2.go:56`\n\nThe application does not block loopback, localhost, IPv6 localhost, or redirect targets resolving to internal addresses.\n\n## Impact\n\nA non-admin user with remote download permission can use Cloudreve as an SSRF primitive to access services reachable from the downloader environment.\n\nIn my test, the attacker could fetch internal loopback URLs and read the response body after Cloudr",
+      "link": "https://github.com/advisories/GHSA-x756-g4x3-c64m",
+      "published": "2026-07-20T21:16:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54562"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54560",
+      "title": "Cloudreve: OAuth access tokens bypass scope enforcement due to missing client_id claim",
+      "summary": "## Summary\n\n  Cloudreve's OAuth access tokens can bypass OAuth scope enforcement.\n\n  This does not appear to be the intended design. The documentation describes OAuth client permissions/scopes, the API\n  has an insufficient-scope error code, and the code comments say `RequiredScopes(...)` should verify scopes when a\n  token has scopes, while skipping checks only for non-scoped session-based authentication.\n\n  However, OAuth access tokens are issued without the OAuth `client_id` claim. Later, the JWT verifier only loads scopes\n  into the request context when `claims.ClientID != \"\"`. Because the OAuth access token has no `client_id`, its scopes\n  are not loaded, and `RequiredScopes(...)` treats the request like a non-scoped first-party/session token and skips\n  scope checks.\n\n  As a result, a low-scope OAuth access token, for example one granted only `openid`, can call APIs requiring higher\n  scopes such as file, share, workflow, user setting, WebDAV account, and potentially admin scopes when the authorizing\n  user is an administrator.\n\n  ## Why this seems unintended\n\n  Cloudreve appears to have an explicit OAuth scope model:\n\n  1. The official docs describe OAuth client permissions/scopes and require the authorization request to include\n  requested scopes.\n  2. The API error code list includes an OAuth insufficient-scope error.\n  3. `RequiredScopes(...)` is used across sensitive API groups such as files, shares, workflows, user settings, WebDAV\n  devices, and admin APIs.\n  4. The middleware comment says scope checks are skipped only when `hasScopes` is false, for example session-based\n  authentication.\n  5. Default OAuth clients created during migration explicitly list scopes such as `Files.Write`, `Workflow.Write`, and\n  `Shares.Write`.\n\n  This suggests the intended design is:\n  - First-party/session tokens may be non-scoped and skip OAuth scope checks.\n  - OAuth access tokens should carry scope metadata and be checked against `RequiredScopes(...)`.\n\n  The current i",
+      "link": "https://github.com/advisories/GHSA-vgj4-345g-jcf8",
+      "published": "2026-07-20T21:15:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54560"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55798",
+      "title": "Pillow: WindowsViewer.get_command() OS command injection via unescaped shell path",
+      "summary": "### 1. Summary\n\n`WindowsViewer.get_command()` constructs a `cmd.exe` shell command by directly embedding a\nfile path into an f-string without escaping. The result is passed to\n`subprocess.Popen(..., shell=True)`. Shell metacharacters in the file path \u2014 most\nimportantly a double-quote (`\"`) that breaks out of the wrapping, followed by `&` \u2014 allow\ninjection of arbitrary `cmd.exe` commands.\n\nThe macOS equivalent (`MacViewer`) correctly applies `shlex.quote()` to the same parameter.\nThe Linux equivalent (`UnixViewer`) does likewise. Windows is the only platform missing this\nprotection, despite `shlex.quote` being **already imported** on line 21 of `ImageShow.py`.\n\n---\n\n### 2. Vulnerable Code\n\n**File:** `src/PIL/ImageShow.py`, lines 133\u2013150\n\n```python\nclass WindowsViewer(Viewer):\n    format = \"PNG\"\n    options = {\"compress_level\": 1, \"save_all\": True}\n\n    def get_command(self, file: str, **options: Any) -> str:\n        return (\n            f'start \"Pillow\" /WAIT \"{file}\" '    # \u2190 f-string, no escaping\n            \"&& ping -n 4 127.0.0.1 >NUL \"\n            f'&& del /f \"{file}\"'                # \u2190 same path, unescaped again\n        )\n\n    def show_file(self, path: str, **options: Any) -> int:\n        if not os.path.exists(path):\n            raise FileNotFoundError\n        subprocess.Popen(\n            self.get_command(path, **options),\n            shell=True,                          # \u2190 shell=True\n            creationflags=getattr(subprocess, \"CREATE_NO_WINDOW\"),\n        )  # nosec                               # \u2190 Bandit warning suppressed manually\n        return 1\n```\n\n**Contrast with macOS \u2014 SAFE (line 164\u2013168):**\n```python\nclass MacViewer(Viewer):\n    def get_command(self, file: str, **options: Any) -> str:\n        command = \"open -a Preview.app\"\n        command = f\"({command} {quote(file)}; sleep 20; rm -f {quote(file)})&\"\n        return command                           # \u2190 shlex.quote() applied\n```\n\n**Cross-platform summary:**\n\n| Platform | Class          | `shlex",
+      "link": "https://github.com/advisories/GHSA-4x4j-2g7c-83w6",
+      "published": "2026-07-20T21:14:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55798"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-55514",
       "title": "vLLM denial of service via prompt embeds on M-RoPE models",
       "summary": "### Summary\n_Short summary of the problem. Make the impact and severity as clear as possible. For example: An unsafe deserialization vulnerability allows any unauthenticated user to execute arbitrary code on the server._\n\nSending a pure prompt embeds payload in a `/v1/completions` request with a model using M-RoPE causes the EngineCore to fail an assertion and fatally crash, shutting down the entire server application.\n\nAny remote user who is authorized to make a `/v1/completions` endpoint can trivially make such a request and induce a crash.\n\n### Details\n_Give all details on the vulnerability. Pointing to the incriminated source code is very helpful for the maintainer._\n\nIn commit [56669c1](https://github.com/vllm-project/vllm/commit/56669c1f293d5c53b6a19ddf2f78802fa9fff2c2), a simple assert intended to be a type-narrowing assert was added to the `_init_mrope_positions` method in `GPUModelRunner` (the offending line on main at the time of writing: https://github.com/vllm-project/vllm/blob/2d481f8a946ee0521872af0f098674a8ee01ce4a/vllm/v1/worker/gpu_model_runner.py#L1588-L1607).\n\n```python\nassert req_state.prompt_token_ids is not None, (\n            \"M-RoPE requires prompt_token_ids to be available.\"\n        )\n```\n\nThis type narrowing assert is to prevent mypy errors later in the function because `None` is not a valid type for `mrope_model.get_mrope_input_positions`. Unfortunately, this assertion is not always true. `/v1/completions` requests that specify `prompt=None` and `prompt_embeds=<not none>` will indeed create a CachedRequestState where `prompt_token_ids` is `None`. This triggers the assertion, which in turn crashes the EngineCore and the Server application.\n\n```\n(EngineCore pid=351) ERROR 06-11 00:48:03 [core.py:1167]   File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_model_runner.py\", line 3997, in execute_model\n(EngineCore pid=351) ERROR 06-11 00:48:03 [core.py:1167]     deferred_state_corrections_fn = self._update_states(scheduler_output)\n",
@@ -311,23 +560,6 @@
       ],
       "cve_ids": [
         "CVE-2026-6875"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
-      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
-      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37.0.3.1; anyone on an earlier build should upgrade.\n\nTriggering it can crash or restart the worker, causing a denial of",
-      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
-      "published": "2026-07-19T20:42:49+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-42533"
       ],
       "is_zero_day": false,
       "is_high_severity": true

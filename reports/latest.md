@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-20 19:22 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-21 01:22 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Exploitation in the Wild of wp2shell
+## 3. 🟠 Zero-Day — SonicWall SMA1000 flaws exploited as zero-days to push custom malware
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://www.bleepingcomputer.com/news/security/sonicwall-sma1000-flaws-exploited-as-zero-days-to-push-custom-malware/>
+
+> Two recently disclosed SonicWall SMA1000 vulnerabilities were exploited in zero-day attacks for weeks, allowing threat actors to install custom malware on vulnerable VPN appliances. [...]
+
+---
+
+## 4. 🟠 Zero-Day — Exploitation in the Wild of wp2shell
 
 **CVE:** `CVE-2026-63030` | `CVE-2026-60137` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-07-20
 **Reference:** <https://www.wiz.io/blog/wp2shell-cve-2026-63030-cve-2026-60137>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — SonicWall Zero-Days Exploited to Deliver Custom Malware for Weeks Before Patch
+## 5. 🟠 Zero-Day — SonicWall Zero-Days Exploited to Deliver Custom Malware for Weeks Before Patch
 
 **CVE:** `CVE-2026-15409` | `CVE-2026-15410` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-20
 **Reference:** <https://www.securityweek.com/sonicwall-zero-days-exploited-to-deliver-custom-malware-for-weeks-before-patch/>
@@ -40,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -49,7 +58,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -58,7 +67,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -67,7 +76,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -76,7 +85,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -85,7 +94,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -94,7 +103,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 12. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -103,35 +112,35 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 13. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
+## 14. 🟠 Zero-Day — 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 22, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-state-of-cdr-survey-key-takeaways/>
 
 ---
 
-## 14. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 15. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 16. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 16. 🟠 Zero-Day — ⚡ Weekly Recap: WordPress RCE, SonicWall 0-Days, AI Service Attacks, SharePoint 0-Day and More
+## 17. 🟠 Zero-Day — ⚡ Weekly Recap: WordPress RCE, SonicWall 0-Days, AI Service Attacks, SharePoint 0-Day and More
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-20
 **Reference:** <https://thehackernews.com/2026/07/weekly-recap-wordpress-rce-sonicwall-0.html>
@@ -144,7 +153,7 @@ Here is the full
 
 ---
 
-## 17. 🟠 Zero-Day — New 7-Zip Vulnerability Could Let Crafted XZ Archives Run Code During Extraction
+## 18. 🟠 Zero-Day — New 7-Zip Vulnerability Could Let Crafted XZ Archives Run Code During Extraction
 
 **CVE:** `CVE-2026-14266` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-20
 **Reference:** <https://thehackernews.com/2026/07/new-7-zip-vulnerability-could-let.html>
@@ -155,7 +164,173 @@ The overflow lets an attacker &quot;execute code in the context of the current p
 
 ---
 
-## 18. 🟡 High Severity — vLLM denial of service via prompt embeds on M-RoPE models
+## 19. 🟡 High Severity — Pillow JPEG2000 tiled decode retains a growing scratch buffer and can be used for denial of service
+
+**CVE:** `CVE-2026-59204` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-vjc4-5qp5-m44j>
+
+> ### Summary
+`src/libImaging/Jpeg2KDecode.c:853` accumulates `total_component_width` across every tile in a JPEG2000 image instead of recomputing it per tile. That accumulated value is then used in the `tile_bytes` calculation at `src/libImaging/Jpeg2KDecode.c:868`, which can make the decoder grow `state-&gt;buffer` via `realloc` at `src/libImaging/Jpeg2KDecode.c:876` up to roughly one full image&#…
+
+---
+
+## 20. 🟡 High Severity — Pillow TGA RLE encoder can serialize up to ~57 KB of adjacent heap data into generated images
+
+**CVE:** `CVE-2026-59198` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-fj7v-r99m-22gq>
+
+> ### Summary
+
+Pillow&#x27;s TGA RLE encoder reads past its row buffer when saving a mode `&quot;1&quot;`
+image. Adjacent process heap bytes can be copied into the generated TGA file.
+
+The bug is reachable through the public save API:
+
+```python
+im.save(out, format=&quot;TGA&quot;, compression=&quot;tga_rle&quot;)
+```
+
+Older affected Pillow versions use the equivalent public option `rle=True`.
+
+For …
+
+---
+
+## 21. 🟡 High Severity — File Browser: Colliding username normalization gives two users the same home directory
+
+**CVE:** `CVE-2026-62685` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-7rc3-g7h6-22m7>
+
+> ## Summary
+
+FileBrowser confines each user to a *scope*: a home directory that acts as the boundary for everything they can read or write. When self-registration and automatic home-directory creation are both enabled (`Signup=true` and `CreateUserDir=true`), a new user&#x27;s scope is built from their username after it passes through `cleanUsername()`. That function rewrites the name: it strips `.…
+
+---
+
+## 22. 🟡 High Severity — File Browser: Share API exposes the password hash and bypass token
+
+**CVE:** `CVE-2026-62684` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-833g-cqhp-h72j>
+
+> ## Summary
+
+When a user creates a password-protected share or lists existing shares, the JSON response includes the full bcrypt `password_hash` and the secret `token` of the share. The `Link` storage struct is serialized directly with `json.Marshal` and tags `password_hash` and `token` for output, with no field filtering. Any authenticated user receives these secrets for their own shares, and an a…
+
+---
+
+## 23. 🟡 High Severity — Guzzle: Cookie Disclosure and Injection via IP-Address Domains
+
+**CVE:** `CVE-2026-59883` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-g446-98w2-8p5w>
+
+> ### Impact
+
+`CookieJar` does not restrict a cookie scoped to an IP address to the exact host that set it. When a stored cookie&#x27;s `Domain` attribute is an IPv4 literal (`Domain=192.168.0.1`), a bracketed IPv6 literal (`Domain=[::1]`), or a bare numeric value that denotes an IPv4 address (`Domain=1`, which is `0.0.0.1`), `SetCookie::matchesDomain()` applies ordinary subdomain (suffix) matching …
+
+---
+
+## 24. 🟡 High Severity — Composer: Path traversal in package bin field lets dependencies chmod arbitrary host files
+
+**CVE:** `CVE-2026-59946` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-gjfg-22fp-rrxx>
+
+> ## Summary
+
+A Composer package declares its executables in the `bin` field of its `composer.json`. When Composer installs a package, it processes each `bin` entry and changes the file mode of the corresponding file so it is executable.
+
+If a `bin` entry contains `..` path segments, it can resolve to a path outside the package&#x27;s own install directory. A malicious package can use this to make C…
+
+---
+
+## 25. 🟡 High Severity — Composer: URL-embedded HTTP-Basic username leaks to verbose logs (GitHub PAT exposure)
+
+**CVE:** `CVE-2026-59947` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-g6xq-892h-64w3>
+
+> ## Summary
+
+When Composer is run with -vvv (debug verbosity), it could print a credential that was embedded directly in a repository or package URL, but not as a password, to its debug output. Composer already masked the password portion of such URLs, but the username portion was shown in clear text. Because GitHub and several other services support placing an access token in the username position…
+
+---
+
+## 26. 🟡 High Severity — Directus: SSRF Protection Bypass via 0.0.0.0 in File Import
+
+**CVE:** `CVE-2026-61835` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-j5h6-vqc3-phqh>
+
+> ### Summary
+
+The SSRF protection on Directus&#x27;s file-import-from-URL feature can be bypassed using the address `0.0.0.0`. While `127.0.0.1` and other internal addresses are denied, `0.0.0.0` is not added to the blocklist. On Linux and macOS, connecting to `0.0.0.0` reaches localhost, so an authenticated user with file-upload rights can make the server fetch internal services and retrieve the r…
+
+---
+
+## 27. 🟡 High Severity — LightRAG is Vulnerable to Authentication Bypass: hardcoded DEFAULT_TOKEN_SECRET and public /auth-status defeat LIGHTRAG_API_KEY protection
+
+**CVE:** `CVE-2026-61740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-f4vv-55c2-5789>
+
+> ## Summary
+
+When LightRAG is deployed with `LIGHTRAG_API_KEY` set but `AUTH_ACCOUNTS` unset (an officially documented &quot;API-Key authentication&quot; mode), the `X-API-Key` protection can be bypassed by any remote unauthenticated attacker. The bypass does not require network contact with the victim server — an attacker can mint a valid guest JWT offline using the hardcoded `DEFAULT_TOKEN_SECRET…
+
+---
+
+## 28. 🟡 High Severity — Mistune toc / TableOfContents directive: heading IDs use predictable `toc_N` numbering with no slugification, allowing collision with attacker-controlled `id="toc_N"` content
+
+**CVE:** `CVE-2026-59930` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-2hm2-hc3v-44h9>
+
+> ## Summary
+
+**Type:** Predictable identifier generation. The `toc` plugin and `TableOfContents` directive both default to generating heading IDs of the form `toc_1`, `toc_2`, `toc_3`, ... with no input-derived component. An attacker who can place a heading anywhere in the document can predict which `toc_N` ID it will receive, and can inject HTML elsewhere (in a non-heading context) that uses the s…
+
+---
+
+## 29. 🟡 High Severity — Cloudreve: Non-admin remote download users can SSRF loopback/internal services and read imported responses
+
+**CVE:** `CVE-2026-54562` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-x756-g4x3-c64m>
+
+> ## Summary
+
+Cloudreve&#x27;s remote download workflow accepts user-supplied URLs and passes them to the configured downloader without blocking loopback, localhost, IPv6 localhost, or redirect-to-loopback targets.
+
+When the remote download permission is granted to a non-admin user group, a normal authenticated user can make the server-side downloader fetch internal-only URLs and then read the fetch…
+
+---
+
+## 30. 🟡 High Severity — Cloudreve: OAuth access tokens bypass scope enforcement due to missing client_id claim
+
+**CVE:** `CVE-2026-54560` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-vgj4-345g-jcf8>
+
+> ## Summary
+
+  Cloudreve&#x27;s OAuth access tokens can bypass OAuth scope enforcement.
+
+  This does not appear to be the intended design. The documentation describes OAuth client permissions/scopes, the API
+  has an insufficient-scope error code, and the code comments say `RequiredScopes(...)` should verify scopes when a
+  token has scopes, while skipping checks only for non-scoped session-based a…
+
+---
+
+## 31. 🟡 High Severity — Pillow: WindowsViewer.get_command() OS command injection via unescaped shell path
+
+**CVE:** `CVE-2026-55798` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
+**Reference:** <https://github.com/advisories/GHSA-4x4j-2g7c-83w6>
+
+> ### 1. Summary
+
+`WindowsViewer.get_command()` constructs a `cmd.exe` shell command by directly embedding a
+file path into an f-string without escaping. The result is passed to
+`subprocess.Popen(..., shell=True)`. Shell metacharacters in the file path — most
+importantly a double-quote (`&quot;`) that breaks out of the wrapping, followed by `&amp;` — allow
+injection of arbitrary `cmd.exe` commands.
+…
+
+---
+
+## 32. 🟡 High Severity — vLLM denial of service via prompt embeds on M-RoPE models
 
 **CVE:** `CVE-2026-55514` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-20
 **Reference:** <https://github.com/advisories/GHSA-33cg-gxv8-3p8g>
@@ -167,7 +342,7 @@ Sending a pure prompt embeds payload in a `/v1/completions` request with a model
 
 ---
 
-## 19. 🟡 High Severity — Critical ServiceNow code execution flaw now exploited in attacks
+## 33. 🟡 High Severity — Critical ServiceNow code execution flaw now exploited in attacks
 
 **CVE:** `CVE-2026-6875` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-20
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/>
@@ -176,18 +351,7 @@ Sending a pure prompt embeds payload in a `/v1/completions` request with a model
 
 ---
 
-## 20. 🟡 High Severity — Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution
-
-**CVE:** `CVE-2026-42533` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-19
-**Reference:** <https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html>
-
-> F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37.0.3.1; anyone on an earlier build should upgrade.
-
-Triggering it can crash or restart the worker, causing a denial of
-
----
-
-## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
