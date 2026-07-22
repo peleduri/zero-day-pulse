@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-22T13:17:25.380918+00:00",
-  "total": 50,
+  "generated": "2026-07-22T18:54:16.483091+00:00",
+  "total": 51,
   "kev": 0,
   "zero_day": 15,
   "enriched": 0,
@@ -49,24 +49,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/",
-      "title": "Critical wp2shell WordPress flaws exploited to install webshells",
-      "summary": "Hackers are exploiting the \"wp2shell\" critical vulnerability suite (CVE-2026-63030 and CVE-2026-60137) affecting WordPress Core to deploy persistent webshells and install malicious plugins on affected servers. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/",
-      "published": "2026-07-21T16:41:50+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-63030",
-        "CVE-2026-60137"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -229,6 +211,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html",
+      "title": "Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication",
+      "summary": "A high-severity security flaw impacting open-source developer platform Windmill has come under active exploitation in the wild, per VulnCheck.\n\nThe vulnerability in question is CVE-2026-29059 (CVSS score: 7.5), a case of unauthenticated path traversal impacting Windmill's \"get_log_file\" endpoint (\"/api/w/{workspace}/jobs_u/get_log_file/{filename}\").\n\n\"The filename parameter is concatenated into",
+      "link": "https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html",
+      "published": "2026-07-22T12:36:36+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-29059"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-58427",
       "title": "Gitea: Private org member list leaked via /members API endpoint \u2014 incomplete fix for PR #38145",
       "summary": "## Summary\nPR #38145 fixed ListPublicMembers and IsPublicMember but missed \nListMembers. Any authenticated user can enumerate ALL members \n(not just public ones) of a private organization.\n\n## Affected Versions\n<= v1.26.4 (latest) and main branch\n\n## Root Cause\nrouters/api/v1/org/member.go \u2014 ListMembers():\n\n// Missing check:\nif !organization.HasOrgOrUserVisible(ctx, \n    ctx.Org.Organization.AsUser(), ctx.Doer) {\n    ctx.APIErrorNotFound()\n    return\n}\n\n## Proof of Concept\n\n# Setup: privateorg (private), alice = member, bob = outsider\n\n# Bob lists ALL members of private org\ncurl -s \"http://gitea/api/v1/orgs/privateorg/members\" \\\n  -H \"Authorization: token BOB_TOKEN\"\n\n# Result: HTTP 200\n[{\"login\":\"alice\",\"email\":\"alice@test.com\",...}]\n# Expected: HTTP 404\n\n## Note\nThis is an incomplete fix variant of PR #38145.\nThat PR fixed public_members endpoints only.\nListMembers (/orgs/{org}/members) remains unpatched.\n\n## Fix\nAdd to ListMembers():\nif !organization.HasOrgOrUserVisible(ctx, \n    ctx.Org.Organization.AsUser(), ctx.Doer) {\n    ctx.APIErrorNotFound()\n    return\n}",
@@ -245,6 +244,76 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/ubuntu-snap-confine-flaw-could-give.html",
+      "title": "Ubuntu snap-confine Flaw Could Give Local Users Root on Default Desktop Installs",
+      "summary": "Cybersecurity researchers have disclosed details of a new local privilege escalation (LPE) vulnerability in snap-confine that an unprivileged user can trigger to obtain root access and gain complete control of a target environment.\n\nThe high-severity flaw, tracked as CVE-2026-8933 (CVSS score: 7.8), impacts default installations of Ubuntu Desktop 24.04, 25.10, and 26.04. The disclosure comes as",
+      "link": "https://thehackernews.com/2026/07/ubuntu-snap-confine-flaw-could-give.html",
+      "published": "2026-07-22T18:07:16+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-8933"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-65598",
+      "title": "n8n: Race Condition in Git Clone Node Allows Authenticated Users to Achieve Remote Code Execution",
+      "summary": "## Impact\nA TOCTOU race condition in the Git node's `clone` operation lets an authenticated user bypass its path restrictions by swapping a directory for a symlink after the path is validated but before the clone runs. This plants a crafted repository in the community node directory, which n8n loads as a custom node on the next restart, and since nodes execute JavaScript, this yields arbitrary code execution on the server.\n\nBoth self-hosted and cloud instances are affected, where authenticated users can create and run workflows using the Git node.\n\n## Patches\nUsers should upgrade to the patched version once available to remediate the vulnerability.\n\n## Workarounds\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Restrict n8n instance access to fully trusted users only.\n- Disable the Git node by adding `n8n-nodes-base.git` to the `NODES_EXCLUDE` environment variable.\n- Restrict network egress from the n8n instance to prevent connections to attacker-controlled git repositories.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-g3r5-9h93-4j2c",
+      "published": "2026-07-22T17:56:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65598"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-65015",
+      "title": "n8n: AI Agents Project Viewer Privilege Escalation via run_node_tool",
+      "summary": "## Impact\nIn n8n's AI Agents feature, a user with the read-only Project Viewer role could escalate their privileges by chatting with an agent that has node tools enabled. The agent's node-execution tool was authorized only by the `agent:execute` scope and ran nodes using the project's credentials, without verifying that the requesting user was permitted to execute nodes or to access those credentials.\n\nAs a result, a Project Viewer could execute arbitrary tool nodes on the server and use credential secrets they were not authorized to read, gaining execution capabilities their role is intended to deny. On instances where a command- or file-capable tool node (such as Execute Command or SSH) is enabled, this could be extended to arbitrary command execution on the n8n host.\n\nUsers of the AI Agents feature who share team projects with lower-privileged members are affected.\n\n## Patches\nThe issue has been fixed in n8n versions 2.29.8 and 2.30.1. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Disable the AI Agents module by removing `agents` from the `N8N_ENABLED_MODULES` environment variable.\n- Restrict project membership to fully trusted users only, and avoid granting Project Viewer access to untrusted users on projects containing agents with node tools enabled.\n- Disable command-execution nodes (e.g. Execute Command, SSH) if they have been re-enabled, to limit the potential impact.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-x5vx-c2c8-m3w9",
+      "published": "2026-07-22T17:55:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65015"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/adobe-acrobat-extension-flaw-let.html",
+      "title": "Adobe Acrobat Extension Flaw Let Malicious Sites Read WhatsApp Web Data",
+      "summary": "Cybersecurity researchers have disclosed details of a now-patched vulnerability chain in the Adobe Acrobat Chrome extension that has over 314 million users, which, if exploited, could facilitate a silent hijack of a user's WhatsApp data.\n\nThe shortcoming has been codenamed HermeticReader by Guardio Labs. It's officially tracked as CVE-2026-48294 (CVSS score: 7.4), with the vulnerability",
+      "link": "https://thehackernews.com/2026/07/adobe-acrobat-extension-flaw-let.html",
+      "published": "2026-07-22T15:01:21+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-48294"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-16221",
@@ -733,6 +802,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/critical-sharepoint-rce-flaw-exploited-to-steal-machine-keys/",
+      "title": "Critical SharePoint RCE flaw exploited to steal machine keys",
+      "summary": "Hackers are actively exploiting the critical CVE-2026-50522 vulnerability in Microsoft SharePoint to steal machine keys and maintain access even after affected servers are patched. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-sharepoint-rce-flaw-exploited-to-steal-machine-keys/",
+      "published": "2026-07-21T20:06:55+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-50522"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-59891",
       "title": "Credential confusion in @sigstore/oci can leak registry credentials to an attacker-controlled registry",
       "summary": "### Impact\n\nThis is a credential-exposure / credential-confusion issue.\n\n`getRegistryCredentials()` reads credentials from the Docker config file (`~/.docker/config.json`) and selects an entry by checking whether any configured auth key **contains** the target registry string:\n\n```js\nObject.keys(dockerConfig.auths || {}).find((key) => key.includes(registry))\n```\n\nBecause this is a **substring match rather than an exact host match**, credentials configured for one registry can be selected for \u2014 and transmitted to \u2014 a *different* registry whose hostname has a substring relationship with a configured auth key (for example, an attacker-controlled `cr.io` matches a configured `ghcr.io`).\n\n**Who is impacted:** Any consumer of `@sigstore/oci` that uploads artifacts to an OCI registry using credentials from a Docker config, where the destination registry/image reference can be influenced by an untrusted party. This includes `@actions/attest` and the `actions/attest`, `actions/attest-build-provenance`, and `actions/attest-sbom` GitHub Actions when run with `push-to-registry: true`, where the `subject-name` input determines the destination registry.\n\nThis is classified as a **critical** vulnerability given the potential, in a theoretical worst-case scenario, to expose long-lived registry credentials. However, in practice, exploitation requires all of the following:\n\n- The Docker config on the host contains credentials for a registry.\n- The destination registry/image reference is influenced by an untrusted source.\n- The attacker controls a registry whose hostname is a substring of (or is otherwise contained within) a configured Docker auth key.\n\nUnder those conditions, registry credentials present on the host (e.g. a GHCR, Docker Hub, or cloud-registry token) can be sent to an attacker-controlled registry during the authentication exchange.\n\n### Patches\n\nFixed in **`@sigstore/oci@0.7.1`**. Credential selection now requires an **exact host match**: both the target registry and ",
@@ -782,77 +868,6 @@
       ],
       "cve_ids": [
         "CVE-2026-13760"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59882",
-      "title": "guzzlehttp/psr7: Host Confusion via Weak URI Host Validation",
-      "summary": "### Impact\n\n`guzzlehttp/psr7` did not reject URI host components containing authority delimiters (`/`, `?`, `#`, `@`, or `\\`), an embedded port such as `host:8080`, or IPv6 brackets that do not frame the host (such as `[::1` or `::1]`). `Uri::assertValidHost()` rejected only control characters, so these malformed hosts were accepted both when parsing a URI string \u2014 including through `new Uri()`, an absolute-form request target passed to `Message::parseRequest()`, and the synthetic `SERVER_NAME` or `SERVER_ADDR` fallback used by `ServerRequest::fromGlobals()` \u2014 and when setting a host with `Uri::withHost()`. Because the stored host was not validated, `Uri::getHost()` could return a value that does not agree with the URI's authority or with the host that is actually used on the wire. For example, `Uri::withHost('good.com@evil.com')` is accepted, and `new Uri('http://[gggg::1]/')` produces a `getHost()` of `'[gggg:'` while `getAuthority()` returns `'[gggg::1'`.\n\nYou are affected if your application builds a `Uri` or calls `Uri::withHost()` with host data that is wholly or partly attacker-controlled and then relies on `Uri::getHost()` for a security or routing decision, such as host allowlisting or denylisting, an SSRF guard, cookie scoping, or proxy-bypass selection. You are also affected if you parse, forward, proxy, or re-serialize URIs that come from untrusted raw HTTP messages or from synthetic `$_SERVER` values. Because `getHost()` can then disagree with the real connection target, the concrete impact depends on how your application and any downstream HTTP/1.x component use the URI, and may include host-based access-control bypass, server-side request forgery, routing to an unintended host, or `Host` header confusion. You are not affected if every host you place into a `Uri` is already trusted and well formed.\n\nApplications using `guzzlehttp/guzzle` are affected in the same way through Guzzle's use of PSR-7. Guzzle derives the request `Host` header from the reques",
-      "link": "https://github.com/advisories/GHSA-c2w2-prh8-qm98",
-      "published": "2026-07-21T18:35:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59882"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59895",
-      "title": "Hono: Server-Side XSS via JSX Escaping Bypass in cx() Utility",
-      "summary": "### Summary\n\n`cx()` in `hono/css` composes class names from plain strings but marks the result as already-escaped without HTML-escaping the input. When the result is used as a JSX `class` attribute during server-side rendering, the value is written into the attribute unescaped, so untrusted input can break out of the `class` attribute and inject arbitrary markup, leading to Cross-Site Scripting (XSS).\n\n### Details\n\nBecause the composed value is treated as pre-escaped, the HTML attribute escaping normally applied to interpolated values is skipped, and characters such as `\"` pass through unescaped \u2014 allowing a value to terminate the attribute and add further attributes or elements. This arises when an application passes untrusted, user-controlled input as a class name to `cx()`, for example when merging a base class with an externally provided `className`.\n\n### Impact\n\nDuring server-side rendering, an attacker who controls a value passed to `cx()` can inject arbitrary HTML into the page, resulting in stored or reflected XSS in the victim's browser.\n\nThis may lead to:\n\n- Execution of attacker-controlled script in the victim's browser session.\n- Session hijacking, credential theft, or actions performed on behalf of the victim.\n\nApplications are affected only if they render JSX server-side and pass untrusted input as a class name to `cx()`.",
-      "link": "https://github.com/advisories/GHSA-w62v-xxxg-mg59",
-      "published": "2026-07-21T18:33:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59895"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59897",
-      "title": "Hono: API Gateway v1 adapter can drop a distinct repeated request header value during de-duplication",
-      "summary": "### Summary\n\nThe AWS API Gateway v1 adapter can drop a distinct repeated request header value. When a header appears multiple times, the adapter de-duplicates values using a substring comparison instead of an exact match, so a value that is a substring of another value of the same header is omitted (for example, `203.0.113.1` is dropped when another value is `203.0.113.10`).\n\n### Details\n\nA repeated request header carries an ordered list of values. Middleware or application logic that depends on the complete list \u2014 such as IP restriction that walks the `X-Forwarded-For` chain, rate limiting, audit logging, or proxy-chain validation \u2014 can therefore receive incomplete data that differs from what the client actually sent.\n\nThis issue arises on deployments using the AWS API Gateway v1 adapter (the same pattern also affects the VPC Lattice adapter), for requests that contain the same header more than once.\n\n### Impact\n\nAn attacker can craft repeated header values so that one value is omitted before the application sees the request. Where a security or routing decision relies on the full chain, this can alter that decision.\n\nThis affects applications deployed through Hono's AWS API Gateway v1 (or VPC Lattice) adapter that rely on the complete set of repeated request header values.",
-      "link": "https://github.com/advisories/GHSA-xgm2-5f3f-mvvc",
-      "published": "2026-07-21T18:18:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59897"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html",
-      "title": "Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC",
-      "summary": "A third SharePoint Server flaw patched by Microsoft as part of its Patch Tuesday update for July 2026 has come under active exploitation, per watchTowr.\n\nThe vulnerability in question is CVE-2026-50522 (CVSS score: 9.8), a critical deserialization of untrusted data in Microsoft Office SharePoint that could allow an unauthorized attacker to execute code over a network. Microsoft credited DEVCORE",
-      "link": "https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html",
-      "published": "2026-07-21T14:57:51+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-50522"
       ],
       "is_zero_day": false,
       "is_high_severity": true

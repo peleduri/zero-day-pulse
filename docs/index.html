@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">50</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">51</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-22 13:17 UTC</div>
+            <div class="generated">Updated 2026-07-22 18:54 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -162,22 +162,6 @@
     <span>2026-07-22</span>
   </div>
   <p class='summary'>The Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday ordered U.S. government agencies to prioritize patching an actively exploited vulnerability in the Langflow visual framework for building AI agents. [...]</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/" target="_blank" rel="noopener">Critical wp2shell WordPress flaws exploited to install webshells</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-63030</code> <code class="cve">CVE-2026-60137</code>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-21</span>
-  </div>
-  <p class='summary'>Hackers are exploiting the &quot;wp2shell&quot; critical vulnerability suite (CVE-2026-63030 and CVE-2026-60137) affecting WordPress Core to deploy persistent webshells and install malicious plugins on affected servers. [...]</p>
 
 </article>
 
@@ -344,6 +328,26 @@
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html" target="_blank" rel="noopener">Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-29059</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-22</span>
+          </div>
+          <p class='summary'>A high-severity security flaw impacting open-source developer platform Windmill has come under active exploitation in the wild, per VulnCheck.
+
+The vulnerability in question is CVE-2026-29059 (CVSS score: 7.5), a case of unauthenticated path traversal impacting Windmill&#x27;s &quot;get_log_file&quot; endpoint (&quot;/api/w/{workspace}/jobs_u/get_log_file/{filename}&quot;).
+
+&quot;The filename parameter is concatenated into</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-prr9-9mp4-5gp2" target="_blank" rel="noopener">Gitea: Private org member list leaked via /members API endpoint — incomplete fix for PR #38145</a></h2>
           </div>
           <div class="card-meta">
@@ -367,6 +371,76 @@ routers/api/v1/org/member.go — ListMembers():
 // Missing check:
 if !organization.HasOrgOrUserVisible(ctx, 
     ctx.Org.Organization.AsUse…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/ubuntu-snap-confine-flaw-could-give.html" target="_blank" rel="noopener">Ubuntu snap-confine Flaw Could Give Local Users Root on Default Desktop Installs</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-8933</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-22</span>
+          </div>
+          <p class='summary'>Cybersecurity researchers have disclosed details of a new local privilege escalation (LPE) vulnerability in snap-confine that an unprivileged user can trigger to obtain root access and gain complete control of a target environment.
+
+The high-severity flaw, tracked as CVE-2026-8933 (CVSS score: 7.8), impacts default installations of Ubuntu Desktop 24.04, 25.10, and 26.04. The disclosure comes as</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g3r5-9h93-4j2c" target="_blank" rel="noopener">n8n: Race Condition in Git Clone Node Allows Authenticated Users to Achieve Remote Code Execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-65598</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-22</span>
+          </div>
+          <p class='summary'>## Impact
+A TOCTOU race condition in the Git node&#x27;s `clone` operation lets an authenticated user bypass its path restrictions by swapping a directory for a symlink after the path is validated but before the clone runs. This plants a crafted repository in the community node directory, which n8n loads as a custom node on the next restart, and since nodes execute JavaScript, this yields arbitrary cod…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x5vx-c2c8-m3w9" target="_blank" rel="noopener">n8n: AI Agents Project Viewer Privilege Escalation via run_node_tool</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-65015</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-22</span>
+          </div>
+          <p class='summary'>## Impact
+In n8n&#x27;s AI Agents feature, a user with the read-only Project Viewer role could escalate their privileges by chatting with an agent that has node tools enabled. The agent&#x27;s node-execution tool was authorized only by the `agent:execute` scope and ran nodes using the project&#x27;s credentials, without verifying that the requesting user was permitted to execute nodes or to access those credenti…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/adobe-acrobat-extension-flaw-let.html" target="_blank" rel="noopener">Adobe Acrobat Extension Flaw Let Malicious Sites Read WhatsApp Web Data</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-48294</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-22</span>
+          </div>
+          <p class='summary'>Cybersecurity researchers have disclosed details of a now-patched vulnerability chain in the Adobe Acrobat Chrome extension that has over 314 million users, which, if exploited, could facilitate a silent hijack of a user&#x27;s WhatsApp data.
+
+The shortcoming has been codenamed HermeticReader by Guardio Labs. It&#x27;s officially tracked as CVE-2026-48294 (CVSS score: 7.4), with the vulnerability</p>
 
         </article>
 
@@ -947,6 +1021,22 @@ collaboration record, recalculates accesses, drops watches, and unas…</p>
 
         </article>
 
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/critical-sharepoint-rce-flaw-exploited-to-steal-machine-keys/" target="_blank" rel="noopener">Critical SharePoint RCE flaw exploited to steal machine keys</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-50522</code>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-21</span>
+  </div>
+  <p class='summary'>Hackers are actively exploiting the critical CVE-2026-50522 vulnerability in Microsoft SharePoint to steal machine keys and maintain access even after affected servers are patched. [...]</p>
+
+</article>
+
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
@@ -1007,82 +1097,6 @@ Gitea validates the user-supplied repository migration URL, but the actual clone
           </div>
           <p class='summary'>### Summary
 AWS CDK (aws-cdk-lib) is an open-source framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. OS command injection issue in the NodejsFunction Docker bundling pipeline in aws-cdk-lib before 2.260.0 that might allow an actor who controls dependency version strings in a project&#x27;s package.json file to execute arbitrary commands on the host run…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c2w2-prh8-qm98" target="_blank" rel="noopener">guzzlehttp/psr7: Host Confusion via Weak URI Host Validation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59882</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-21</span>
-          </div>
-          <p class='summary'>### Impact
-
-`guzzlehttp/psr7` did not reject URI host components containing authority delimiters (`/`, `?`, `#`, `@`, or `\`), an embedded port such as `host:8080`, or IPv6 brackets that do not frame the host (such as `[::1` or `::1]`). `Uri::assertValidHost()` rejected only control characters, so these malformed hosts were accepted both when parsing a URI string — including through `new Uri()`, a…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w62v-xxxg-mg59" target="_blank" rel="noopener">Hono: Server-Side XSS via JSX Escaping Bypass in cx() Utility</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59895</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-21</span>
-          </div>
-          <p class='summary'>### Summary
-
-`cx()` in `hono/css` composes class names from plain strings but marks the result as already-escaped without HTML-escaping the input. When the result is used as a JSX `class` attribute during server-side rendering, the value is written into the attribute unescaped, so untrusted input can break out of the `class` attribute and inject arbitrary markup, leading to Cross-Site Scripting (X…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xgm2-5f3f-mvvc" target="_blank" rel="noopener">Hono: API Gateway v1 adapter can drop a distinct repeated request header value during de-duplication</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59897</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-21</span>
-          </div>
-          <p class='summary'>### Summary
-
-The AWS API Gateway v1 adapter can drop a distinct repeated request header value. When a header appears multiple times, the adapter de-duplicates values using a substring comparison instead of an exact match, so a value that is a substring of another value of the same header is omitted (for example, `203.0.113.1` is dropped when another value is `203.0.113.10`).
-
-### Details
-
-A repeat…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html" target="_blank" rel="noopener">Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-50522</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-21</span>
-          </div>
-          <p class='summary'>A third SharePoint Server flaw patched by Microsoft as part of its Patch Tuesday update for July 2026 has come under active exploitation, per watchTowr.
-
-The vulnerability in question is CVE-2026-50522 (CVSS score: 9.8), a critical deserialization of untrusted data in Microsoft Office SharePoint that could allow an unauthorized attacker to execute code over a network. Microsoft credited DEVCORE</p>
 
         </article>
 

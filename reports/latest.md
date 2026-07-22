@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-22 13:17 UTC &nbsp;|&nbsp; **Total:** 50 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 35 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-22 18:54 UTC &nbsp;|&nbsp; **Total:** 51 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 36 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -31,16 +31,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Critical wp2shell WordPress flaws exploited to install webshells
-
-**CVE:** `CVE-2026-63030` | `CVE-2026-60137` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/>
-
-> Hackers are exploiting the &quot;wp2shell&quot; critical vulnerability suite (CVE-2026-63030 and CVE-2026-60137) affecting WordPress Core to deploy persistent webshells and install malicious plugins on affected servers. [...]
-
----
-
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -49,7 +40,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -58,7 +49,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -67,7 +58,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -76,7 +67,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -85,7 +76,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -94,7 +85,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 10. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -103,24 +94,37 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 11. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 13. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 12. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 14. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
+
+---
+
+## 14. 🟠 Zero-Day — Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication
+
+**CVE:** `CVE-2026-29059` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-22
+**Reference:** <https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html>
+
+> A high-severity security flaw impacting open-source developer platform Windmill has come under active exploitation in the wild, per VulnCheck.
+
+The vulnerability in question is CVE-2026-29059 (CVSS score: 7.5), a case of unauthenticated path traversal impacting Windmill&#x27;s &quot;get_log_file&quot; endpoint (&quot;/api/w/{workspace}/jobs_u/get_log_file/{filename}&quot;).
+
+&quot;The filename par…
 
 ---
 
@@ -146,7 +150,49 @@ if !organization.HasOrgOrUserVisible(ctx,
 
 ---
 
-## 16. 🟡 High Severity — fast-uri vulnerable to host confusion via literal backslash authority delimiter
+## 16. 🟡 High Severity — Ubuntu snap-confine Flaw Could Give Local Users Root on Default Desktop Installs
+
+**CVE:** `CVE-2026-8933` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-22
+**Reference:** <https://thehackernews.com/2026/07/ubuntu-snap-confine-flaw-could-give.html>
+
+> Cybersecurity researchers have disclosed details of a new local privilege escalation (LPE) vulnerability in snap-confine that an unprivileged user can trigger to obtain root access and gain complete control of a target environment.
+
+The high-severity flaw, tracked as CVE-2026-8933 (CVSS score: 7.8), impacts default installations of Ubuntu Desktop 24.04, 25.10, and 26.04. The disclosure comes as
+
+---
+
+## 17. 🟡 High Severity — n8n: Race Condition in Git Clone Node Allows Authenticated Users to Achieve Remote Code Execution
+
+**CVE:** `CVE-2026-65598` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
+**Reference:** <https://github.com/advisories/GHSA-g3r5-9h93-4j2c>
+
+> ## Impact
+A TOCTOU race condition in the Git node&#x27;s `clone` operation lets an authenticated user bypass its path restrictions by swapping a directory for a symlink after the path is validated but before the clone runs. This plants a crafted repository in the community node directory, which n8n loads as a custom node on the next restart, and since nodes execute JavaScript, this yields arbitrar…
+
+---
+
+## 18. 🟡 High Severity — n8n: AI Agents Project Viewer Privilege Escalation via run_node_tool
+
+**CVE:** `CVE-2026-65015` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
+**Reference:** <https://github.com/advisories/GHSA-x5vx-c2c8-m3w9>
+
+> ## Impact
+In n8n&#x27;s AI Agents feature, a user with the read-only Project Viewer role could escalate their privileges by chatting with an agent that has node tools enabled. The agent&#x27;s node-execution tool was authorized only by the `agent:execute` scope and ran nodes using the project&#x27;s credentials, without verifying that the requesting user was permitted to execute nodes or to access…
+
+---
+
+## 19. 🟡 High Severity — Adobe Acrobat Extension Flaw Let Malicious Sites Read WhatsApp Web Data
+
+**CVE:** `CVE-2026-48294` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-22
+**Reference:** <https://thehackernews.com/2026/07/adobe-acrobat-extension-flaw-let.html>
+
+> Cybersecurity researchers have disclosed details of a now-patched vulnerability chain in the Adobe Acrobat Chrome extension that has over 314 million users, which, if exploited, could facilitate a silent hijack of a user&#x27;s WhatsApp data.
+
+The shortcoming has been codenamed HermeticReader by Guardio Labs. It&#x27;s officially tracked as CVE-2026-48294 (CVSS score: 7.4), with the vulnerability
+
+---
+
+## 20. 🟡 High Severity — fast-uri vulnerable to host confusion via literal backslash authority delimiter
 
 **CVE:** `CVE-2026-16221` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-v2hh-gcrm-f6hx>
@@ -159,7 +205,7 @@ For example, `http://evil.…
 
 ---
 
-## 17. 🟡 High Severity — jackson-databind: @JsonView ypassed for @JsonUnwrapped container properties on deserialization
+## 21. 🟡 High Severity — jackson-databind: @JsonView ypassed for @JsonUnwrapped container properties on deserialization
 
 **CVE:** `CVE-2026-59889` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-5gvw-p9qm-jgwh>
@@ -169,7 +215,7 @@ For example, `http://evil.…
 
 ---
 
-## 18. 🟡 High Severity — Gitea: Public-Only Personal access tokens scope bypass in Organization and Permission Endpoints
+## 22. 🟡 High Severity — Gitea: Public-Only Personal access tokens scope bypass in Organization and Permission Endpoints
 
 **CVE:** `CVE-2026-58429` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-fq2p-5p22-8g6j>
@@ -184,7 +230,7 @@ GET …
 
 ---
 
-## 19. 🟡 High Severity — Gitea: SSRF via Migration Asset Downloads Bypasses hostmatcher — Reads Internal Files and Cloud Metadata
+## 23. 🟡 High Severity — Gitea: SSRF via Migration Asset Downloads Bypasses hostmatcher — Reads Internal Files and Cloud Metadata
 
 **CVE:** `CVE-2026-59765` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-2wm4-vwp6-v7xc>
@@ -199,7 +245,7 @@ Gitea has robust SSRF protection via `hostmatcher.NewDialContext()` for webhook 
 
 ---
 
-## 20. 🟡 High Severity — Gitea: Webhook Authorization Header Returned in Plaintext via API
+## 24. 🟡 High Severity — Gitea: Webhook Authorization Header Returned in Plaintext via API
 
 **CVE:** `CVE-2026-58511` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-3r5c-2xxx-h872>
@@ -212,7 +258,7 @@ The authorization header is stored enc…
 
 ---
 
-## 21. 🟡 High Severity — Gitea: Cross-Repo Information Disclosure via Org-Level Actions Run/Job APIs
+## 25. 🟡 High Severity — Gitea: Cross-Repo Information Disclosure via Org-Level Actions Run/Job APIs
 
 **CVE:** `CVE-2026-57897` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-frpw-3h2q-4jj6>
@@ -236,7 +282,7 @@ GET …
 
 ---
 
-## 22. 🟡 High Severity — Gitea: Notification API leaks private issue metadata after access revocation
+## 26. 🟡 High Severity — Gitea: Notification API leaks private issue metadata after access revocation
 
 **CVE:** `CVE-2026-58419` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-44qc-pgvp-wx7v>
@@ -251,7 +297,7 @@ CVE-20…
 
 ---
 
-## 23. 🟡 High Severity — Gitea: Unauthorized Access to Labels of Private Organizations
+## 27. 🟡 High Severity — Gitea: Unauthorized Access to Labels of Private Organizations
 
 **CVE:** `CVE-2026-25038` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-v73x-hx65-6pf4>
@@ -266,7 +312,7 @@ The issue is limited to unauthorized rea…
 
 ---
 
-## 24. 🟡 High Severity — Gitea: Fork Synchronization Continues After Parent Repository Changes from Public to Private
+## 28. 🟡 High Severity — Gitea: Fork Synchronization Continues After Parent Repository Changes from Public to Private
 
 **CVE:** `CVE-2026-24451` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-wrf9-r3h7-7x5v>
@@ -279,7 +325,7 @@ A fork created while the parent repository was public can still receive commits 
 
 ---
 
-## 25. 🟡 High Severity — Gitea: Two SSRF findings
+## 29. 🟡 High Severity — Gitea: Two SSRF findings
 
 **CVE:** `CVE-2026-58314` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-2fcr-jfvc-vgg2>
@@ -291,7 +337,7 @@ A fork created while the parent repository was public can still receive commits 
 
 ---
 
-## 26. 🟡 High Severity — Gitea: Repository Visibility Manipulation via Git Push Options
+## 30. 🟡 High Severity — Gitea: Repository Visibility Manipulation via Git Push Options
 
 **CVE:** `CVE-2026-58437` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-8p9h-49rc-qgxj>
@@ -313,7 +359,7 @@ Gitea&#x27;s post-receive g…
 
 ---
 
-## 27. 🟡 High Severity — Gitea LFS Deploy-Key Privilege Escalation
+## 31. 🟡 High Severity — Gitea LFS Deploy-Key Privilege Escalation
 
 **CVE:** `CVE-2026-58435` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-rh79-75qm-gwjr>
@@ -328,7 +374,7 @@ Gitea&#x27;s post-receive g…
 
 ---
 
-## 28. 🟡 High Severity — Gitea: Local File Inclusion via file:// URI in Migration Restore
+## 32. 🟡 High Severity — Gitea: Local File Inclusion via file:// URI in Migration Restore
 
 **CVE:** `CVE-2026-58420` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-5ggr-2f2h-jmvm>
@@ -351,7 +397,7 @@ Git…
 
 ---
 
-## 29. 🟡 High Severity — Gitea: REST API exposes organization membership of private organizations to public
+## 33. 🟡 High Severity — Gitea: REST API exposes organization membership of private organizations to public
 
 **CVE:** `CVE-2026-58417` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-jr5x-6h83-wrxf>
@@ -369,7 +415,7 @@ The endpoint  &quot;/orgs/{org}/public_members/{username}&quot; + GET exposes or
 
 ---
 
-## 30. 🟡 High Severity — Gitea: RSS/Atom feed handlers bypass API-token scope & public-only confinement (incomplete fix of #37698)
+## 34. 🟡 High Severity — Gitea: RSS/Atom feed handlers bypass API-token scope & public-only confinement (incomplete fix of #37698)
 
 **CVE:** `CVE-2026-50105` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-6cqf-375w-639g>
@@ -383,7 +429,7 @@ marked *public-only* or lacks the `repository` scope category — still returns 
 
 ---
 
-## 31. 🟡 High Severity — Gitea: Repository migration SSRF via multi-answer DNS allow-list bypass
+## 35. 🟡 High Severity — Gitea: Repository migration SSRF via multi-answer DNS allow-list bypass
 
 **CVE:** `CVE-2026-58442` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-h2x6-g7q6-344v>
@@ -394,7 +440,7 @@ Gitea&#x27;s repository migration URL validation can be bypassed when a migratio
 
 ---
 
-## 32. 🟡 High Severity — Gitea: SSRF in restore-repo via unsanitized pull_request.yml Head.CloneURL
+## 36. 🟡 High Severity — Gitea: SSRF in restore-repo via unsanitized pull_request.yml Head.CloneURL
 
 **CVE:** `CVE-2026-58441` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-xmj7-xj85-hfc3>
@@ -409,7 +455,7 @@ which silently disables it…
 
 ---
 
-## 33. 🟡 High Severity — Gitea Actions Artifacts V4 signed URL HMAC ambiguity allows cross-repository artifact read and cross-task upload-state write
+## 37. 🟡 High Severity — Gitea Actions Artifacts V4 signed URL HMAC ambiguity allows cross-repository artifact read and cross-task upload-state write
 
 **CVE:** `CVE-2026-58426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-hg5r-vq93-9fv6>
@@ -420,7 +466,7 @@ Gitea Actions Artifacts V4 signed upload/download URLs can be rewritten to acces
 
 ---
 
-## 34. 🟡 High Severity — Gitea: SSRF via HTTP Redirect in Repository Migration
+## 38. 🟡 High Severity — Gitea: SSRF via HTTP Redirect in Repository Migration
 
 **CVE:** `CVE-2026-58418` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-rqhx-647v-wx32>
@@ -431,7 +477,7 @@ Gitea 1.25.4 validates the initial URL provided to the repository migration endp
 
 ---
 
-## 35. 🟡 High Severity — Gitea: API access token scope enforcement bypass on repository RSS/Atom feed endpoints leaks private repository commit data
+## 39. 🟡 High Severity — Gitea: API access token scope enforcement bypass on repository RSS/Atom feed endpoints leaks private repository commit data
 
 **CVE:** `CVE-2026-27761` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-3pww-vcvm-3gmj>
@@ -441,7 +487,7 @@ A Gitea personal access token (PAT) restricted to a non-repository scope (e.g. `
 
 ---
 
-## 36. 🟡 High Severity — Gitea: Git LFS object reuse allows non-Code access to authorize private source objects
+## 40. 🟡 High Severity — Gitea: Git LFS object reuse allows non-Code access to authorize private source objects
 
 **CVE:** `CVE-2026-28740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-2m9v-5q2g-58vq>
@@ -454,7 +500,7 @@ The issue appears to be caused by the source-object authorization check using br
 
 ---
 
-## 37. 🟡 High Severity — Gitea: Incomplete SSRF Protection in Webhook and Migration Allow-list Default Filter
+## 41. 🟡 High Severity — Gitea: Incomplete SSRF Protection in Webhook and Migration Allow-list Default Filter
 
 **CVE:** `CVE-2026-22874` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-2r5c-gw76-rh3w>
@@ -465,7 +511,7 @@ Gitea&#x27;s default SSRF allow-list ([`MatchBuiltinExternal`](https://github.co
 
 ---
 
-## 38. 🟡 High Severity — Gitea: Privilege Escalation via Access Token Scope Escalation in API
+## 42. 🟡 High Severity — Gitea: Privilege Escalation via Access Token Scope Escalation in API
 
 **CVE:** `CVE-2026-56654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-683j-3ff6-hh2x>
@@ -474,7 +520,7 @@ Gitea&#x27;s default SSRF allow-list ([`MatchBuiltinExternal`](https://github.co
 
 ---
 
-## 39. 🟡 High Severity — Gitea: Blind SSRF in OAuth2 avatar synchronization via unvalidated OIDC picture claim
+## 43. 🟡 High Severity — Gitea: Blind SSRF in OAuth2 avatar synchronization via unvalidated OIDC picture claim
 
 **CVE:** `CVE-2026-23603` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-x77v-q46j-393g>
@@ -486,7 +532,7 @@ The affected code path calls `http.Get(url)` without applying outbound host or I
 
 ---
 
-## 40. 🟡 High Severity — Gitea: OAuth token introspection returns metadata of tokens issued to other clients (RFC 7662 section 4 violation)
+## 44. 🟡 High Severity — Gitea: OAuth token introspection returns metadata of tokens issued to other clients (RFC 7662 section 4 violation)
 
 **CVE:** `CVE-2026-58425` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-vxv2-8j6r-pcpg>
@@ -504,7 +550,7 @@ Client B: id=588f778f-4a41-4914-ae01-85d776c369db   owner=victim
 
 ---
 
-## 41. 🟡 High Severity — Gitea CVE-2026-20800 sibling endpoints not covered: revoked user still reads private repo objects via `/api/v1/user/starred` and private issue titles via `/api/v1/user/times`
+## 45. 🟡 High Severity — Gitea CVE-2026-20800 sibling endpoints not covered: revoked user still reads private repo objects via `/api/v1/user/starred` and private issue titles via `/api/v1/user/times`
 
 **CVE:** `CVE-2026-59766` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-qf2f-qh6p-7v89>
@@ -518,7 +564,7 @@ access at output time:
 
 ---
 
-## 42. 🟡 High Severity — Gitea: Webhooks created by a collaborator keep firing after their repo access is revoked → ongoing real-time exfiltration of private repo content
+## 46. 🟡 High Severity — Gitea: Webhooks created by a collaborator keep firing after their repo access is revoked → ongoing real-time exfiltration of private repo content
 
 **CVE:** `CVE-2026-58440` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-66m4-5jjr-2rg5>
@@ -533,7 +579,16 @@ collaboration record, recalculates accesses, drops watches…
 
 ---
 
-## 43. 🟡 High Severity — Credential confusion in @sigstore/oci can leak registry credentials to an attacker-controlled registry
+## 47. 🟡 High Severity — Critical SharePoint RCE flaw exploited to steal machine keys
+
+**CVE:** `CVE-2026-50522` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-21
+**Reference:** <https://www.bleepingcomputer.com/news/security/critical-sharepoint-rce-flaw-exploited-to-steal-machine-keys/>
+
+> Hackers are actively exploiting the critical CVE-2026-50522 vulnerability in Microsoft SharePoint to steal machine keys and maintain access even after affected servers are patched. [...]
+
+---
+
+## 48. 🟡 High Severity — Credential confusion in @sigstore/oci can leak registry credentials to an attacker-controlled registry
 
 **CVE:** `CVE-2026-59891` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-pf56-329r-95rw>
@@ -552,7 +607,7 @@ Because this is a **substring m…
 
 ---
 
-## 44. 🟡 High Severity — Gitea: Repository Migration Follows Git HTTP Redirects After URL Allow/Block Validation, Enabling Internal Git Repository Exfiltration
+## 49. 🟡 High Severity — Gitea: Repository Migration Follows Git HTTP Redirects After URL Allow/Block Validation, Enabling Internal Git Repository Exfiltration
 
 **CVE:** `CVE-2026-57894` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-82f7-87hm-852x>
@@ -565,7 +620,7 @@ Gitea validates the user-supplied repository migration URL, but the actual clone
 
 ---
 
-## 45. 🟡 High Severity — aws-cdk-lib: OS Command Injection in NodejsFunction Docker Bundling
+## 50. 🟡 High Severity — aws-cdk-lib: OS Command Injection in NodejsFunction Docker Bundling
 
 **CVE:** `CVE-2026-13760` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-vcrf-j523-4mrf>
@@ -575,55 +630,7 @@ AWS CDK (aws-cdk-lib) is an open-source framework for defining cloud infrastruct
 
 ---
 
-## 46. 🟡 High Severity — guzzlehttp/psr7: Host Confusion via Weak URI Host Validation
-
-**CVE:** `CVE-2026-59882` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://github.com/advisories/GHSA-c2w2-prh8-qm98>
-
-> ### Impact
-
-`guzzlehttp/psr7` did not reject URI host components containing authority delimiters (`/`, `?`, `#`, `@`, or `\`), an embedded port such as `host:8080`, or IPv6 brackets that do not frame the host (such as `[::1` or `::1]`). `Uri::assertValidHost()` rejected only control characters, so these malformed hosts were accepted both when parsing a URI string — including through `new Uri()`, a…
-
----
-
-## 47. 🟡 High Severity — Hono: Server-Side XSS via JSX Escaping Bypass in cx() Utility
-
-**CVE:** `CVE-2026-59895` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://github.com/advisories/GHSA-w62v-xxxg-mg59>
-
-> ### Summary
-
-`cx()` in `hono/css` composes class names from plain strings but marks the result as already-escaped without HTML-escaping the input. When the result is used as a JSX `class` attribute during server-side rendering, the value is written into the attribute unescaped, so untrusted input can break out of the `class` attribute and inject arbitrary markup, leading to Cross-Site Scripting (X…
-
----
-
-## 48. 🟡 High Severity — Hono: API Gateway v1 adapter can drop a distinct repeated request header value during de-duplication
-
-**CVE:** `CVE-2026-59897` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://github.com/advisories/GHSA-xgm2-5f3f-mvvc>
-
-> ### Summary
-
-The AWS API Gateway v1 adapter can drop a distinct repeated request header value. When a header appears multiple times, the adapter de-duplicates values using a substring comparison instead of an exact match, so a value that is a substring of another value of the same header is omitted (for example, `203.0.113.1` is dropped when another value is `203.0.113.10`).
-
-### Details
-
-A repeat…
-
----
-
-## 49. 🟡 High Severity — Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC
-
-**CVE:** `CVE-2026-50522` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html>
-
-> A third SharePoint Server flaw patched by Microsoft as part of its Patch Tuesday update for July 2026 has come under active exploitation, per watchTowr.
-
-The vulnerability in question is CVE-2026-50522 (CVSS score: 9.8), a critical deserialization of untrusted data in Microsoft Office SharePoint that could allow an unauthorized attacker to execute code over a network. Microsoft credited DEVCORE
-
----
-
-## 50. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 51. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
