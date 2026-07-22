@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-22T01:21:56.428201+00:00",
-  "total": 52,
+  "generated": "2026-07-22T08:05:24.710909+00:00",
+  "total": 51,
   "kev": 0,
   "zero_day": 15,
   "enriched": 0,
@@ -868,23 +868,6 @@
       "cve_ids": [
         "CVE-2026-63030",
         "CVE-2026-60137"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/critical-servicenow-ai-platform-flaw.html",
-      "title": "Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution",
-      "summary": "Threat actors are now exploiting a recently disclosed critical security flaw impacting ServiceNow AI Platform, according to Defused Cyber.\n\nIn a post shared on X, the threat intelligence firm said it's observing in-the-wild exploitation of CVE-2026-6875 (CVSS score: 9.5), a sandbox escape vulnerability that could allow an unauthenticated user to run arbitrary code.\n\nPatches for the flaw were",
-      "link": "https://thehackernews.com/2026/07/critical-servicenow-ai-platform-flaw.html",
-      "published": "2026-07-21T06:29:26+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-6875"
       ],
       "is_zero_day": false,
       "is_high_severity": true

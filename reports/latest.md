@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-22 01:21 UTC &nbsp;|&nbsp; **Total:** 52 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 37 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-22 08:05 UTC &nbsp;|&nbsp; **Total:** 51 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 36 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -636,20 +636,7 @@ The two security flaws, tracked as CVE-2026-63030 and CVE-2026-60137, have been 
 
 ---
 
-## 51. 🟡 High Severity — Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution
-
-**CVE:** `CVE-2026-6875` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://thehackernews.com/2026/07/critical-servicenow-ai-platform-flaw.html>
-
-> Threat actors are now exploiting a recently disclosed critical security flaw impacting ServiceNow AI Platform, according to Defused Cyber.
-
-In a post shared on X, the threat intelligence firm said it&#x27;s observing in-the-wild exploitation of CVE-2026-6875 (CVSS score: 9.5), a sandbox escape vulnerability that could allow an unauthenticated user to run arbitrary code.
-
-Patches for the flaw were
-
----
-
-## 52. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 51. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
