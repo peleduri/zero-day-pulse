@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-22 08:05 UTC &nbsp;|&nbsp; **Total:** 51 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 36 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-22 13:17 UTC &nbsp;|&nbsp; **Total:** 50 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 35 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,25 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — CISA orders urgent action on actively exploited Langflow RCE flaw
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-22
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-langflow-rce-flaw/>
+
+> The Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday ordered U.S. government agencies to prioritize patching an actively exploited vulnerability in the Langflow visual framework for building AI agents. [...]
+
+---
+
+## 4. 🟠 Zero-Day — Critical wp2shell WordPress flaws exploited to install webshells
+
+**CVE:** `CVE-2026-63030` | `CVE-2026-60137` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-21
+**Reference:** <https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/>
+
+> Hackers are exploiting the &quot;wp2shell&quot; critical vulnerability suite (CVE-2026-63030 and CVE-2026-60137) affecting WordPress Core to deploy persistent webshells and install malicious plugins on affected servers. [...]
+
+---
+
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -31,7 +49,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -40,7 +58,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -49,7 +67,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -58,7 +76,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -67,7 +85,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -76,7 +94,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 11. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -85,28 +103,28 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 12. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 11. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 13. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 12. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 14. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 13. 🟠 Zero-Day — Gitea: Private org member list leaked via /members API endpoint — incomplete fix for PR #38145
+## 15. 🟠 Zero-Day — Gitea: Private org member list leaked via /members API endpoint — incomplete fix for PR #38145
 
 **CVE:** `CVE-2026-58427` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-21
 **Reference:** <https://github.com/advisories/GHSA-prr9-9mp4-5gp2>
@@ -125,24 +143,6 @@ routers/api/v1/org/member.go — ListMembers():
 // Missing check:
 if !organization.HasOrgOrUserVisible(ctx, 
     ctx.Org.Organization.As…
-
----
-
-## 14. 🟠 Zero-Day — Estée Lauder Discloses Impact From Oracle EBS Zero-Day Hack
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://www.securityweek.com/estee-lauder-discloses-impact-from-oracle-ebs-zero-day-hack/>
-
-> Hackers exfiltrated personal, financial, and health information from the company’s Oracle EBS instance in August 2025. The post Estée Lauder Discloses Impact From Oracle EBS Zero-Day Hack appeared first on SecurityWeek .
-
----
-
-## 15. 🟠 Zero-Day — Windows LegacyHive zero-day flaw gets free, unofficial patches
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://www.bleepingcomputer.com/news/security/windows-legacyhive-zero-day-flaw-gets-free-unofficial-patches/>
-
-> Free unofficial patches are available for a recently disclosed Windows zero-day flaw that allows attackers to escalate privileges on up-to-date Windows systems. [...]
 
 ---
 
@@ -623,20 +623,7 @@ The vulnerability in question is CVE-2026-50522 (CVSS score: 9.8), a critical de
 
 ---
 
-## 50. 🟡 High Severity — WordPress wp2shell Exploitation Grows as Public Exploit Fuels Mass Scanning
-
-**CVE:** `CVE-2026-63030` | `CVE-2026-60137` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-21
-**Reference:** <https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html>
-
-> Attackers have begun to exploit two critical vulnerabilities in WordPress that, when combined together, enable unauthenticated remote code execution (RCE) and complete compromise of vulnerable websites.
-
-The two security flaws, tracked as CVE-2026-63030 and CVE-2026-60137, have been codenamed wp2shell.
-
-&quot;By the early hours of Saturday morning (UTC), successful exploitation was already well
-
----
-
-## 51. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 50. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

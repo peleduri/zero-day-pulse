@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-22T08:05:24.710909+00:00",
-  "total": 51,
+  "generated": "2026-07-22T13:17:25.380918+00:00",
+  "total": 50,
   "kev": 0,
   "zero_day": 15,
   "enriched": 0,
@@ -33,6 +33,39 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-langflow-rce-flaw/",
+      "title": "CISA orders urgent action on actively exploited Langflow RCE flaw",
+      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday ordered U.S. government agencies to prioritize patching an actively exploited vulnerability in the Langflow visual framework for building AI agents. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-langflow-rce-flaw/",
+      "published": "2026-07-22T11:43:28+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/",
+      "title": "Critical wp2shell WordPress flaws exploited to install webshells",
+      "summary": "Hackers are exploiting the \"wp2shell\" critical vulnerability suite (CVE-2026-63030 and CVE-2026-60137) affecting WordPress Core to deploy persistent webshells and install malicious plugins on affected servers. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/",
+      "published": "2026-07-21T16:41:50+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-63030",
+        "CVE-2026-60137"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -210,36 +243,6 @@
       "cve_ids": [
         "CVE-2026-58427"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/estee-lauder-discloses-impact-from-oracle-ebs-zero-day-hack/",
-      "title": "Est\u00e9e Lauder Discloses Impact From Oracle EBS Zero-Day Hack",
-      "summary": "Hackers exfiltrated personal, financial, and health information from the company\u2019s Oracle EBS instance in August 2025. The post Est\u00e9e Lauder Discloses Impact From Oracle EBS Zero-Day Hack appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/estee-lauder-discloses-impact-from-oracle-ebs-zero-day-hack/",
-      "published": "2026-07-21T11:12:33+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/windows-legacyhive-zero-day-flaw-gets-free-unofficial-patches/",
-      "title": "Windows LegacyHive zero-day flaw gets free, unofficial patches",
-      "summary": "Free unofficial patches are available for a recently disclosed Windows zero-day flaw that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/windows-legacyhive-zero-day-flaw-gets-free-unofficial-patches/",
-      "published": "2026-07-21T08:06:26+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -850,24 +853,6 @@
       ],
       "cve_ids": [
         "CVE-2026-50522"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html",
-      "title": "WordPress wp2shell Exploitation Grows as Public Exploit Fuels Mass Scanning",
-      "summary": "Attackers have begun to exploit two critical vulnerabilities in WordPress that, when combined together, enable unauthenticated remote code execution (RCE) and complete compromise of vulnerable websites.\n\nThe two security flaws, tracked as CVE-2026-63030 and CVE-2026-60137, have been codenamed wp2shell.\n\n\"By the early hours of Saturday morning (UTC), successful exploitation was already well",
-      "link": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html",
-      "published": "2026-07-21T08:59:30+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-63030",
-        "CVE-2026-60137"
       ],
       "is_zero_day": false,
       "is_high_severity": true
