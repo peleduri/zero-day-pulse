@@ -1,86 +1,10 @@
 {
-  "generated": "2026-07-21T19:01:35.466047+00:00",
-  "total": 40,
-  "kev": 4,
+  "generated": "2026-07-22T01:21:56.428201+00:00",
+  "total": 52,
+  "kev": 0,
   "zero_day": 15,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-60137",
-      "title": "CVE-2026-60137 \u2014 WordPress Core SQL Injection Vulnerability",
-      "summary": "Vendor: WordPress | Product: Core. WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-04)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137",
-      "published": "2026-07-21",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-60137"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63030",
-      "title": "CVE-2026-63030 \u2014 WordPress Core Interpretation Conflict Vulnerability",
-      "summary": "Vendor: WordPress | Product: Core. WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-24)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030",
-      "published": "2026-07-21",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-63030"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-0770",
-      "title": "CVE-2026-0770 \u2014 Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
-      "summary": "Vendor: Langflow | Product: Langflow. Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-24)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
-      "published": "2026-07-21",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-0770"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2021-27137",
-      "title": "CVE-2021-27137 \u2014 DD-WRT Stack-Based Buffer Overflow Vulnerability",
-      "summary": "Vendor: DD-WRT | Product: DD-WRT. DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-07-24)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-27137",
-      "published": "2026-07-21",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2021-27137"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -110,21 +34,6 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/sonicwall-sma1000-flaws-exploited-as-zero-days-to-push-custom-malware/",
-      "title": "SonicWall SMA1000 flaws exploited as zero-days to push custom malware",
-      "summary": "Two recently disclosed SonicWall SMA1000 vulnerabilities were exploited in zero-day attacks for weeks, allowing threat actors to install custom malware on vulnerable VPN appliances. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-sma1000-flaws-exploited-as-zero-days-to-push-custom-malware/",
-      "published": "2026-07-20T22:23:23+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -287,6 +196,24 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-58427",
+      "title": "Gitea: Private org member list leaked via /members API endpoint \u2014 incomplete fix for PR #38145",
+      "summary": "## Summary\nPR #38145 fixed ListPublicMembers and IsPublicMember but missed \nListMembers. Any authenticated user can enumerate ALL members \n(not just public ones) of a private organization.\n\n## Affected Versions\n<= v1.26.4 (latest) and main branch\n\n## Root Cause\nrouters/api/v1/org/member.go \u2014 ListMembers():\n\n// Missing check:\nif !organization.HasOrgOrUserVisible(ctx, \n    ctx.Org.Organization.AsUser(), ctx.Doer) {\n    ctx.APIErrorNotFound()\n    return\n}\n\n## Proof of Concept\n\n# Setup: privateorg (private), alice = member, bob = outsider\n\n# Bob lists ALL members of private org\ncurl -s \"http://gitea/api/v1/orgs/privateorg/members\" \\\n  -H \"Authorization: token BOB_TOKEN\"\n\n# Result: HTTP 200\n[{\"login\":\"alice\",\"email\":\"alice@test.com\",...}]\n# Expected: HTTP 404\n\n## Note\nThis is an incomplete fix variant of PR #38145.\nThat PR fixed public_members endpoints only.\nListMembers (/orgs/{org}/members) remains unpatched.\n\n## Fix\nAdd to ListMembers():\nif !organization.HasOrgOrUserVisible(ctx, \n    ctx.Org.Organization.AsUser(), ctx.Doer) {\n    ctx.APIErrorNotFound()\n    return\n}",
+      "link": "https://github.com/advisories/GHSA-prr9-9mp4-5gp2",
+      "published": "2026-07-21T21:49:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58427"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.securityweek.com/estee-lauder-discloses-impact-from-oracle-ebs-zero-day-hack/",
       "title": "Est\u00e9e Lauder Discloses Impact From Oracle EBS Zero-Day Hack",
       "summary": "Hackers exfiltrated personal, financial, and health information from the company\u2019s Oracle EBS instance in August 2025. The post Est\u00e9e Lauder Discloses Impact From Oracle EBS Zero-Day Hack appeared first on SecurityWeek .",
@@ -315,6 +242,546 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-16221",
+      "title": "fast-uri vulnerable to host confusion via literal backslash authority delimiter",
+      "summary": "### Impact\n\n`fast-uri` v4.1.0 and earlier do not treat a literal backslash (U+005C) as an authority delimiter. Node's native WHATWG `URL` (used by `fetch()`, `undici`, and Node's `http`/`https` clients) normalizes `\\` to `/` for special schemes (`http`, `https`, `ws`, `wss`, `ftp`, `file`), so the two parsers extract different hosts from the same input string.\n\nFor example, `http://evil.com\\@allowed.com` is treated by `fast-uri` as host `allowed.com` with userinfo `evil.com\\`, while Node's WHATWG URL parser and `fetch()` see host `evil.com` with path `/@allowed.com`.\n\nApplications that use `fast-uri` to enforce host-based policy (allowlists, denylists, loopback/SSRF filtering, redirect validation, outbound proxy routing) before passing the same URL into Node's URL or `fetch()` consumers see a policy/use desync and can be steered to an unintended destination, including cloud metadata endpoints, loopback, or internal hosts.\n\n### Patches\n\nUpgrade to `fast-uri` v4.1.1, v3.1.4, or v2.4.3.\n\n### Workarounds\n\nNone. Upgrade to the patched version.",
+      "link": "https://github.com/advisories/GHSA-v2hh-gcrm-f6hx",
+      "published": "2026-07-21T22:08:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-16221"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59889",
+      "title": "jackson-databind: @JsonView ypassed for @JsonUnwrapped container properties on deserialization",
+      "summary": "## Summary\n`UnwrappedPropertyHandler.processUnwrapped()` replays the buffered JSON for a `@JsonUnwrapped` property by iterating its properties and calling `prop.deserializeAndSet()` with **no `prop.visibleInView(ctxt.getActiveView())` guard** \u2014 the exact guard `processUnwrappedCreatorProperties()` received in the #5971 / GHSA-rcqc-6cw3-h962 fix, and the guard `BeanDeserializer.deserializeWithUnwrapped` applies to directly-matched properties. As a result, a property annotated with both `@JsonView(PrivilegedView.class)` and `@JsonUnwrapped` is written from attacker JSON even when deserializing under a more-restrictive active view.\n\n**Correction to the original framing (runtime-verified):** the gap is NOT a per-field inner `@JsonView` (the unwrapped sub-object's own `BeanDeserializer` gates inner fields correctly). The unchecked gate is the **view of the unwrapped CONTAINER property**.\n\n## Intent proof (runtime, 2.x HEAD 21dd70dd and 3.x HEAD 7a5939d6)\nAn `@JsonView(AdminView)` property that is NOT `@JsonUnwrapped` \u2192 `null` under `PublicView` (correctly gated). The identical property WITH `@JsonUnwrapped` \u2192 fully populated (bypass). The fix the creator path already received, not applied to the regular-property method.\n\n## Impact \u2014 write-side mass-assignment / privilege escalation\n`@JsonView` is commonly used as a write-side authorization guard: a public endpoint binds the body under `readerWithView(PublicView.class)` and groups privileged state in a nested object whose container property is `@JsonView(AdminView)`. When that property is `@JsonUnwrapped`, an untrusted caller mass-assigns it. PoC: a self-service registration where `AccountFlags{role,approved,creditBalance}` is `@JsonView(AdminView) @JsonUnwrapped`; attacker JSON `{role:ADMIN,approved:true,creditBalance:1000000}` under `PublicView` binds all three \u2192 approved admin with arbitrary balance. The failing gate is a WRITE gate, hence integrity-high (`C:N/I:H/A:N`); no worse than the C:L/I:L parent and arguably hi",
+      "link": "https://github.com/advisories/GHSA-5gvw-p9qm-jgwh",
+      "published": "2026-07-21T22:00:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59889"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58429",
+      "title": "Gitea: Public-Only Personal access tokens scope bypass in Organization and Permission Endpoints",
+      "summary": "### Summary\nA personal access token restricted with the public-only scope can still retrieve private organization membership and organization permission details for its own account through organization-listing endpoints. This bypass breaks the intended guarantee that such tokens are limited to public resources only.\n\n### Details\nThe issue affects the following endpoints:\nGET /api/v1/user/orgs\nGET /api/v1/users/{username}/orgs/{org}/permissions\n\nThe application correctly prevents a public-only token from directly accessing a private organization through:\nGET /api/v1/orgs/{org}\n\nHowever, that same token can still obtain private organization data through alternate code paths.\n\nThe root cause is inconsistent enforcement of the public-only restriction. The middleware responsible for blocking non-public organization access depends on route context being populated with the target organization. That assumption does not hold for all affected routes.\n\nFor GET /api/v1/user/orgs, the route does not apply checkTokenPublicOnly() at all.\n\nFor GET /api/v1/users/{username}/orgs, the middleware is present, but it evaluates ctx.ContextUser, which represents the user named in the path, not the organization objects returned by the handler. Since ctx.Org.Organization is not populated for these responses, private organization results are not filtered.\n\nThe organization listing logic then uses the effective relationship between the authenticated user and the target user to determine visibility. When the token belongs to the same user, the handler allows private organization visibility and returns private memberships.\n\nThe permissions endpoint is similarly affected. It relies on general visibility logic relative to the real user account rather than explicitly enforcing the public-only token restriction before returning organization authorization details. As a result, a restricted token can still obtain organization role information such as ownership, admin status, and repository creation ca",
+      "link": "https://github.com/advisories/GHSA-fq2p-5p22-8g6j",
+      "published": "2026-07-21T21:56:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58429"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59765",
+      "title": "Gitea: SSRF via Migration Asset Downloads Bypasses hostmatcher \u2014 Reads Internal Files and Cloud Metadata",
+      "summary": "### Summary\n\nGitea has robust SSRF protection via `hostmatcher.NewDialContext()` for webhook and migration clone URLs, which validates resolved IPs at the TCP dial level. However, three code paths use raw `http.Get()` (Go's `DefaultClient`) which completely bypasses this protection, enabling SSRF to internal services and local file read via the `file://` scheme.\n\n### Vulnerable Code\n\n**File: `modules/uri/uri.go` (line 32) -- Core vulnerability**\n\n```go\nfunc Open(uriStr string) (io.ReadCloser, error) {\n    u, err := url.Parse(uriStr)\n    switch strings.ToLower(u.Scheme) {\n    case \"http\", \"https\":\n        f, err := http.Get(uriStr)   // RAW http.Get -- no hostmatcher filtering\n        return f.Body, nil\n    case \"file\":\n        return os.Open(u.Path)        // LOCAL FILE READ via file:// scheme\n    }\n}\n```\n\n**Callers in migration path:**\n- `services/migrations/gitea_uploader.go:340` -- `uri.Open(*asset.DownloadURL)` for release assets\n- `services/migrations/gitea_uploader.go:586` -- `uri.Open(pr.PatchURL)` for PR patches\n\n**File: `services/migrations/dump.go` (lines 312, 453)**\n\n```go\n// Line 312 -- release asset download\nresp, err := http.Get(*asset.DownloadURL)\n\n// Line 453 -- PR patch download (with self-documenting TODO)\nresp, err := http.Get(u) // TODO: This probably needs to use the downloader\n```\n\n**File: `routers/web/auth/oauth.go` (line 306)**\n\n```go\nfunc oauth2UpdateAvatarIfNeed(ctx *context.Context, url string, u *user_model.User) {\n    resp, err := http.Get(url)    // RAW http.Get -- no hostmatcher\n```\n\n**Contrast with protected migration clone (same codebase):**\n\n```go\n// services/migrations/migrate.go:526 -- PROTECTED with hostmatcher\ntransport.DialContext = hostmatcher.NewDialContext(\"migration\", allowList, blockList, ...)\n```\n\n### PoC\n\n```bash\n# Step 1: Set up attacker Gitea instance with malicious release asset URLs\n# Create a repo on evil.gitea.attacker.com with a release asset whose\n# download_url points to internal services:\n\n# Asset DownloadURL s",
+      "link": "https://github.com/advisories/GHSA-2wm4-vwp6-v7xc",
+      "published": "2026-07-21T21:55:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59765"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58511",
+      "title": "Gitea: Webhook Authorization Header Returned in Plaintext via API",
+      "summary": "## Summary\n\nThe `ToHook()` function in `services/webhook/general.go` decrypts the webhook's `HeaderAuthorizationEncrypted` field and returns the plaintext authorization header in the API response. Any repository admin can read the full plaintext value of webhook authorization headers (Bearer tokens, Basic auth credentials, API keys) set by other admins.\n\nThe authorization header is stored encrypted in the database using the server's `SecretKey`, but `ToHook()` decrypts it before serializing it into the API response \u2014 converting a write-only secret into a readable credential.\n\n## Vulnerable Code\n\n**File:** `services/webhook/general.go:407-420`\n\n```go\nfunc ToHook(repoLink string, w *webhook_model.Webhook) (*api.Hook, error) {\n    // ...\n    authorizationHeader, err := w.HeaderAuthorization()  // DECRYPTS from DB\n    if err != nil {\n        return nil, err\n    }\n    return &api.Hook{\n        // ...\n        AuthorizationHeader: authorizationHeader,  // PLAINTEXT in response\n        // ...\n    }, nil\n}\n```\n\n**Decryption function:** `models/webhook/webhook.go:209-216`\n\n```go\nfunc (w Webhook) HeaderAuthorization() (string, error) {\n    if w.HeaderAuthorizationEncrypted == \"\" {\n        return \"\", nil\n    }\n    return secret.DecryptSecret(setting.SecretKey, w.HeaderAuthorizationEncrypted)\n}\n```\n\n## Affected Endpoints\n\nAll call `ToHook()`:\n- `GET /api/v1/repos/{owner}/{repo}/hooks` (requires repo admin)\n- `GET /api/v1/repos/{owner}/{repo}/hooks/{id}` (requires repo admin)\n- `GET /api/v1/admin/hooks` (requires site admin)\n- `GET /api/v1/orgs/{org}/hooks` (requires org admin)\n- `GET /api/v1/user/hooks` (requires authenticated user)\n\n## Steps to Reproduce\n\n1. Admin A creates a webhook with a sensitive authorization header.\n2. Admin B (different repo admin) lists webhooks via `GET /api/v1/repos/{owner}/{repo}/hooks`.\n3. The API response includes the full plaintext authorization header set by Admin A.\n\n## Impact\n\n- Cross-admin secret exposure on shared repositories\n- Credential ha",
+      "link": "https://github.com/advisories/GHSA-3r5c-2xxx-h872",
+      "published": "2026-07-21T21:52:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58511"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-57897",
+      "title": "Gitea: Cross-Repo Information Disclosure via Org-Level Actions Run/Job APIs",
+      "summary": "**Author:** Prakhar Porwal\n**Date:** 2026-05-24\n**Target:** Gitea (self-hosted Git service)\n**Branch tested:** `main` @ `b7e95cc48c` (development build, go1.26.3)\n**Component:** `routers/api/v1/org/action.go` (org-level Actions API)\n**OWASP:** API3:2023 Broken Object Property Level Authorization\n\n---\n\n## 1. Summary\n\nThe org-level Actions REST endpoints\n\n```\nGET /api/v1/orgs/{org}/actions/runs\nGET /api/v1/orgs/{org}/actions/jobs\n```\n\nare gated only by **`reqOrgMembership()`** + `reqToken()`. They then call\n`shared.ListRuns(ctx, ctx.Org.Organization.ID, 0)` /\n`shared.ListJobs(ctx, ctx.Org.Organization.ID, 0, 0, nil)`, which selects\n**every** `action_run` / `action_run_job` row whose repository belongs to the\norg \u2014 with **no per-repository ACL check**.\n\nResult: any user who is a member of an organization can enumerate workflow\nruns and jobs from **every repository in that org**, including:\n\n* private repositories the caller has no team membership for,\n* repositories where the caller has been explicitly denied the `repo.actions`\n  unit,\n* repositories created by other teams the caller is not part of.\n\nDirect per-repo equivalents (`GET /api/v1/repos/{owner}/{repo}/actions/runs`,\n`\u2026/jobs/{job_id}/logs`, `\u2026/runs/{run_id}/jobs`) correctly return `404` for the\nsame caller \u2014 proving the org-level surface is the only path that leaks.\n\n---\n\n## 2. Affected Code\n\n### 2.1 Route registration\n\n`routers/api/v1/api.go:1647-1652`\n\n```go\naddActionsRoutes(\n    m,\n    reqOrgMembership(),   // reqReaderCheck\n    reqOrgOwnership(),    // reqOwnerCheck\n    org.NewAction(),\n)\n```\n\n### 2.2 Helper that registers run/job listing\n\n`routers/api/v1/api.go:908-941`\n\n```go\nm.Group(\"/runs\", reqToken(), reqReaderCheck, act.ListWorkflowRuns)\nm.Get(\"/runs\", reqToken(), reqReaderCheck, act.ListWorkflowRuns)\nm.Get(\"/jobs\", reqToken(), reqReaderCheck, act.ListWorkflowJobs)\n```\n\n`reqReaderCheck` for org-scope = `reqOrgMembership()` \u2014 bare org membership is\nenough; no per-repo permission is consulted.\n\n### 2.",
+      "link": "https://github.com/advisories/GHSA-frpw-3h2q-4jj6",
+      "published": "2026-07-21T21:52:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-57897"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58419",
+      "title": "Gitea: Notification API leaks private issue metadata after access revocation",
+      "summary": "# Summary\n\nAn information disclosure issue in the Gitea Notification API allows users who have lost access to a private repository to continue accessing private issue or pull request information through existing notification threads. Although repository information is hidden after access revocation, the `subject` field remains accessible and continues to expose private metadata.\n\n# Details\n\nCVE-2026-20800 was fixed in v1.25.4 to prevent users from accessing private repository information through notification APIs after their repository access had been revoked.\n\nDuring testing on Gitea v1.26.2, the `repository` field in `NotificationThread` responses is correctly set to `null` after access revocation. However, the associated `subject` field remains available.\n\nThe exposed `subject` object may contain:\n\n* Private issue or pull request titles\n* Repository-related API and HTML URLs\n* Issue or pull request state\n* Latest comment URLs and comment identifiers\n\nAdditionally, the exposed notification data is not limited to historical information. If new comments are added to the issue or pull request while the notification remains unread, fields such as `latest_comment_url` and `updated_at` continue to change. As a result, a user whose repository access has been revoked can still observe ongoing issue or pull request activity through notification APIs.\n\nThe observed behavior suggests that access control is applied to the `repository` field but not consistently applied to the associated `subject` information.\n\n# PoC\n\n## Environment\n\n* Gitea v1.26.2\n* Private repository\n\n## Steps to Reproduce\n\n1. User `sun` creates a private repository and grants read access to user `li`.\n\n2. User `li` subscribes to repository notifications.\n\n3. User `sun` creates a private issue and adds a comment.\n\n4. User `li` receives a notification (`thread_id = 14`).\n\n5. User `sun` revokes `li`'s repository access.\n\n6. User `li` requests:\n\n   ```http\n   GET /api/v1/repos/sun/{repo}/issues/1\n   ```\n\n   Re",
+      "link": "https://github.com/advisories/GHSA-44qc-pgvp-wx7v",
+      "published": "2026-07-21T21:48:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58419"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-25038",
+      "title": "Gitea: Unauthorized Access to Labels of Private Organizations",
+      "summary": "## Summary\n\nGitea 1.26.2 does not properly enforce organization visibility restrictions on organization label read endpoints.\n\nA user without access to a private organization can retrieve labels belonging to that organization through the Organization Labels API. As a result, label metadata intended to be restricted to organization members may be disclosed.\n\nThe issue is limited to unauthorized read access. No unauthorized modification of labels was observed.\n\n## Details\n\nThe following endpoints are affected:\n\n* `GET /api/v1/orgs/{org}/labels`\n* `GET /api/v1/orgs/{org}/labels/{id}`\n\nDuring testing, a private organization was created and a label was added to that organization.\n\nAccess to the organization itself was correctly restricted. A user without membership in the organization received a `404 Not Found` response when requesting organization information.\n\nHowever, the same user was still able to retrieve organization labels through the endpoints listed above.\n\nFor comparison, other organization-scoped endpoints such as:\n\n* `GET /api/v1/orgs/{org}/teams`\n* `GET /api/v1/orgs/{org}/hooks`\n* `GET /api/v1/orgs/{org}/actions/secrets`\n\ncorrectly denied access to unauthorized users.\n\nThe label endpoints returned the full Label object, including fields such as:\n\n* `id`\n* `name`\n* `description`\n* `color`\n* `url`\n\nWrite operations were tested separately and remained protected by authorization checks.\n\n## PoC\n\n### Setup\n\nCreate a private organization:\n\n```http\nPOST /api/v1/orgs\nAuthorization: token <owner_token>\n\n{\n  \"username\": \"target-org\",\n  \"visibility\": \"private\"\n}\n```\n\nCreate a label:\n\n```http\nPOST /api/v1/orgs/target-org/labels\nAuthorization: token <owner_token>\n\n{\n  \"name\": \"internal-label\",\n  \"color\": \"#aabbcc\",\n  \"description\": \"private organization label\"\n}\n```\n\nVerify that the organization is not accessible to a non-member:\n\n```http\nGET /api/v1/orgs/target-org\nAuthorization: token <non_member_token>\n```\n\nResponse:\n\n```http\nHTTP/1.1 404 Not Found\n```\n\n### Retrieve ",
+      "link": "https://github.com/advisories/GHSA-v73x-hx65-6pf4",
+      "published": "2026-07-21T21:46:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-25038"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-24451",
+      "title": "Gitea: Fork Synchronization Continues After Parent Repository Changes from Public to Private",
+      "summary": "### Summary\n\nThe `POST /api/v1/repos/{owner}/{repo}/merge-upstream` endpoint continues to synchronize commits from a parent repository after the parent repository has been changed from public to private.\n\nA fork created while the parent repository was public can still receive commits made after the parent repository becomes private. As a result, content added during the private period becomes available through the fork repository after synchronization.\n\n### Details\n\nGitea provides the `merge-upstream` API to synchronize a fork with its parent repository.\n\nA typical workflow is:\n\n1. A repository is public.\n2. Another user creates a fork.\n3. The fork owner uses `merge-upstream` to receive updates from the parent repository.\n\nHowever, if the parent repository is later changed from public to private, the synchronization endpoint continues to import new commits from the parent repository into the fork.\n\nIn testing on Gitea 1.26.2, a fork owner who can no longer directly access the parent repository is still able to synchronize newly created commits from the parent repository into the fork by calling `merge-upstream`.\n\nAs a result, commits created after the visibility change can be propagated into the fork through the normal fork synchronization workflow.\n\n### PoC\n\n#### Proof-of-Concept Code\n\nhttps://anonymous.4open.science/r/Gitea_PoC-EC93/4_poc_merge_upstream\n\n#### PoC Details\n\n1. User `alice` creates a public repository `alice/P`.\n2. User `bob` forks the repository, creating `bob/P`.\n3. `alice` changes `alice/P` from public to private.\n4. Verify that `bob` can no longer directly access the parent repository:\n\n```http\nGET /api/v1/repos/alice/P\n```\n\nResponse:\n\n```http\n404 Not Found\n```\n\n```http\nGET /api/v1/repos/alice/P/contents/README.md\n```\n\nResponse:\n\n```http\n404 Not Found\n```\n\n5. While the repository is private, `alice` commits a new file:\n\n```text\nsecret.txt\n```\n\n6. Verify that `bob` cannot directly access the new file from the parent repository:\n\n```http\nGET /api/v",
+      "link": "https://github.com/advisories/GHSA-wrf9-r3h7-7x5v",
+      "published": "2026-07-21T21:42:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-24451"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58314",
+      "title": "Gitea: Two SSRF findings",
+      "summary": "| --- | --- |\n| Versions tested | `gitea/gitea:1.26.2` (digest `sha256:7d13848af12645600a5f9d93ee2560daa9c6fa6b5b859b7bff3a5e1c0b661031`); `gitea/gitea:latest` resolves to the same digest at time of writing |\n| Source review | `git checkout v1.26.2` (commit `2c749ce`) |\n| Reproduction | `bash run_poc.sh` (single shot: brings up containers, runs three PoCs, prints captured evidence, tears down on exit) |\n| Files touched by the fixes | `modules/hostmatcher/hostmatcher.go`, `modules/auth/openid/openid.go` |\n\n## Summary\n\nGitea guards outbound HTTP from webhooks and repo migration with `net.Dialer.Control`, the correct hook point. The IP classifier behind it misses ten address families, of which CGNAT (100.64.0.0/10) is the practically important one because it is plain IPv4 and is used today by Tailscale, AWS VPC secondary CIDRs, and several Kubernetes pod-CIDR conventions. Any logged-in user can create a webhook pointing at an internal CGNAT host. The full HTTP response from that host (status, headers, body up to 1 MB) is stored in the webhook delivery log and rendered to the webhook owner on the hook detail page. The same gap applies to repo migration.\n\nSeparately, the OpenID sign-in form at `/user/login/openid` fetches the user-supplied provider URL server-side via `openid-go`, which uses `http.DefaultClient`. No `hostmatcher`, no IP filter, no CSRF, no authentication. When OpenID sign-in is enabled, anyone on the internet can drive Gitea into making arbitrary GET requests against internal IPs.\n\nBoth reproduce on `gitea/gitea:1.26.2` (current stable) in default configuration. The bundled `run_poc.sh` reproduces all three primitives end-to-end in about one minute and tears the lab down at exit.\n\n---\n\n## Finding 1: hostmatcher classifier passes CGNAT and IPv6 transition prefixes\n\n### The bug\n\n`modules/hostmatcher/hostmatcher.go:107-119`, the `external` builtin:\n\n```go\ncase MatchBuiltinExternal:\n    if ip.IsGlobalUnicast() && !ip.IsPrivate() {\n        return true\n    }\n`",
+      "link": "https://github.com/advisories/GHSA-2fcr-jfvc-vgg2",
+      "published": "2026-07-21T21:16:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58314"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58437",
+      "title": "Gitea: Repository Visibility Manipulation via Git Push Options",
+      "summary": "### Repository Visibility Manipulation via Git Push Options\n\n| Field | Value |\n|-------|-------|\n| **Affected File** | `routers/private/hook_post_receive.go` |\n| **Affected Function** | `HookPostReceive()` |\n| **Affected Lines** | 173\u2013225 |\n| **Prerequisite** | Attacker must have owner-level or admin collaborator access to the target repository |\n\n---\n\n#### Description\n\nGitea's post-receive git hook handler processes git push options \u2014 key-value pairs transmitted by a client during `git push` using the `-o` flag. Two undocumented push options, `repo.private` and `repo.template`, allow any user with repository owner or admin-collaborator access to toggle the visibility (`private/public`) and template status of a repository as a side effect of a normal git push.\n\nThis capability was originally intended solely for the \"push-to-create\" feature (automatically creating a repo on first push). However, the options are processed without restriction on already-existing repositories, and \u2014 critically \u2014 the visibility change bypasses every control that a proper settings change would trigger:\n\n- No entry written to the repository's audit/activity log\n- No webhook event fired (`repository` event with `visibility_changed` action)\n- No org-level notification to owners\n- No team permission re-calculation\n- No email alert to watchers\n- The database update uses `UpdateRepositoryColsNoAutoTime`, which also suppresses the `updated_at` timestamp change\n\n\n---\n\n#### Vulnerable Code\n\n**`routers/private/hook_post_receive.go:173\u2013225`**\n\n```go\nisPrivate  := opts.GitPushOptions.Bool(private.GitPushOptionRepoPrivate)  // \"repo.private\"\nisTemplate := opts.GitPushOptions.Bool(private.GitPushOptionRepoTemplate) // \"repo.template\"\n\nif isPrivate.Has() || isTemplate.Has() {\n    // ... loads repo and verifies pusher is owner or admin ...\n    if !perm.IsOwner() && !perm.IsAdmin() {\n        ctx.JSON(http.StatusNotFound, ...)\n        return\n    }\n\n    // FIXME: these options are not quite right, for examp",
+      "link": "https://github.com/advisories/GHSA-8p9h-49rc-qgxj",
+      "published": "2026-07-21T21:02:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58437"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58435",
+      "title": "Gitea LFS Deploy-Key Privilege Escalation",
+      "summary": "## Vulnerability Header\n\n| Field               | Value                                                       |\n| ------------------- | ----------------------------------------------------------- |\n| Vulnerability Title | Gitea LFS Deploy-Key Privilege Escalation                   |\n| Severity Rating     | High                                                        |\n| Bug Category        | Insufficient Authorization                                  |\n| Location            | `services/lfs/server.go:268`, `routers/private/serv.go:275` |\n| Affected Versions   | 1.25.5                                                      |\n\n## Executive Summary\n\nGitea's LFS server (`services/lfs/server.go:268`) uses the `UserID` embedded in an LFS JWT to make cross-repository authorization decisions via `LFSObjectAccessible()`. This would be safe if the JWT `UserID` always matched the actual requesting principal \u2014 but for deploy keys, `routers/private/serv.go:275` sets `UserID = repo.OwnerID` instead of any identity representing the deploy key itself. As a result, an attacker who holds a write deploy key for any single repo owned by a victim can obtain a legitimate JWT (via the standard SSH `git-lfs-authenticate` flow) that Gitea will honor as if the victim themselves were making the request. The attacker can then exfiltrate LFS objects from any private repo the victim owns \u2014 no admin credentials, no server secrets, no brute force required. If the victim is a site administrator, every LFS object on the entire Gitea instance is reachable. Deploy keys exist precisely to grant narrow, single-repo access to CI/CD systems; this vulnerability defeats that isolation entirely for LFS data.\n\n## Root Cause Analysis\n\n### Technical Description\n\nThe vulnerability is a **trust-boundary confusion** across two independent subsystems. When a deploy key authenticates over SSH, `serv.go` sets `UserID = repo.OwnerID` because the code has no better representation for a deploy key identity (a `FIXME` comment",
+      "link": "https://github.com/advisories/GHSA-rh79-75qm-gwjr",
+      "published": "2026-07-21T21:00:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58435"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58420",
+      "title": "Gitea: Local File Inclusion via file:// URI in Migration Restore",
+      "summary": "# Local File Inclusion via file:// URI in Migration Restore\n\nTarget: go-gitea/gitea\nComponent: services/migrations/gitea_uploader.go, modules/uri/uri.go\nSeverity: High\nAffected Versions: <= v1.22.x (all releases), master as of latest commit\nResearchers:\n- Isa Can \u2014 Eresus Security (https://github.com/isa0-gh)\n- Yigit Ibrahim \u2014 Eresus Security (https://github.com/ibrahmsql)\n\n---\n\n## Summary\n\nGitea's restore-repo command processes release.yml files from a user-supplied archive. The DownloadURL field in each release attachment is passed to uri.Open() without scheme validation. Because uri.Open() supports the file:// scheme via os.Open(), an operator-level attacker can plant a crafted release.yml to exfiltrate arbitrary files from the server filesystem as release attachments.\n\n---\n\n## Impact\n\nAn attacker who can supply a crafted archive to the restore-repo command can read any file accessible to the Gitea process user on the host filesystem. Sensitive targets include:\n\n- app.ini \u2014 containing database passwords and secret keys\n- SSH private keys (~/.ssh/id_rsa, /etc/ssh/ssh_host_*)\n- TLS certificates and private keys\n- Cloud provider credential files (e.g. ~/.aws/credentials)\n- Any other file readable by the Gitea process user\n\nThe exfiltrated content is silently stored as a release attachment and retrievable via the Gitea API.\n\n---\n\n## Affected Code\n\n### modules/uri/uri.go\n```\nfunc Open(rawURL string) (io.ReadCloser, error) {\n    u, err := url.Parse(rawURL)\n    if err != nil {\n        return nil, err\n    }\n    switch u.Scheme {\n    case \"http\", \"https\":\n        resp, err := http.Get(rawURL)\n        ...\n    case \"file\":\n        return os.Open(u.Path) // no scheme validation, no path restriction\n    }\n}\n```\n### services/migrations/gitea_uploader.go (~line 370)\n```\nfunc (g *GiteaLocalUploader) CreateReleases(releases ...*base.Release) error {\n    for _, rel := range releases {\n        for _, asset := range rel.Assets {\n            rc, err := uri.Open(asset.DownloadURL) // ",
+      "link": "https://github.com/advisories/GHSA-5ggr-2f2h-jmvm",
+      "published": "2026-07-21T20:59:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58420"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58417",
+      "title": "Gitea: REST API exposes organization membership of private organizations to public",
+      "summary": "### Summary\n\nThe endpoint  \"/orgs/{org}/public_members/{username}\" + GET exposes organization membership of public members in a private organization.\n\n### PoC\n\n1. Spin up the nightly container of Gitea.\n2. Perform the default installation.\n3. Register a new user (let's call this user \"user1\").\n4. Create a new organization with \"private\" visibility. We will refer to this organization as \"user1org\".\n5. Make the user \"user1\" inside the organization visible.\n6. Log out and register a new user (\"user2\").\n7. Create an access token for \"user2\" with full access to the API.\n8. Use the endpoint \"/orgs/{org}/public_members/{username}\" + GET with the correct username of \"user1\", organization name, and access token of \"user2\" to query whether \"user1\" is a member of the organization. The following curl command demonstrates the usage:\n\ncurl -X 'GET' \\\n  'http://localhost:4700/api/v1/orgs/user1org/public_members/user1' \\\n  -H 'accept: application/json' \\\n  -H 'authorization: token <user2-token>'\n\n9. You will receive status code 204, which leaks the organization membership.\n\n### Impact\n\nThe vulnerability discloses organization membership. An information that is not accessible via the web app (the organization is hidden, and therefore, the organization membership on the user's profile page is also hidden).",
+      "link": "https://github.com/advisories/GHSA-jr5x-6h83-wrxf",
+      "published": "2026-07-21T20:40:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58417"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50105",
+      "title": "Gitea: RSS/Atom feed handlers bypass API-token scope & public-only confinement (incomplete fix of #37698)",
+      "summary": "### Summary\n\nGitea's RSS/Atom feed handlers accept API-token Basic auth but perform **no token-scope or\npublic-only enforcement**. A personal access token that is correctly blocked (HTTP 403) from a\nprivate repository on `/raw`, `/media`, `/archive`, and `/releases/download/...` \u2014 because it is\nmarked *public-only* or lacks the `repository` scope category \u2014 still returns that repository's\nprivate content through the feed routes. This is a token-confinement bypass and appears to be an\nincomplete fix of #37698, which added that scope enforcement to the download handlers but not to the\nsibling feed handlers.\n\nThis is **not** a cross-user access bug: the requesting account must still legitimately have repo\nread access (`RepoAssignment` + `reqUnitCodeReader` are enforced). What is bypassed is the guarantee\nthat a *confined* token cannot reach private content \u2014 which is exactly the property #37698 was\nshipped to provide for downloads, and which matters when such a token is handed to a third-party\nservice/CI, leaked, or used in a lower-trust integration.\n\n### Details\n\n#37698 added `context.CheckTokenScopes` / `CheckRepoScopedToken`\n(`services/context/permission.go`) to the raw / media / archive / attachment download handlers, so a\npublic-only or wrong-scope-category token cannot read private-repo content even when the owning user\notherwise has access.\n\nThe feed handlers are registered with `webAuth.AllowBasic` (so they accept token Basic auth) but call\nno scope / public-only check. A grep for `CheckTokenScopes` / `CheckRepoScopedToken` / `IsApiToken`\nacross `routers/web/feed/` and the release feed handlers returns nothing.\n\nAffected routes (all token-reachable via `webAuth.AllowBasic`, none call the scope check):\n\n| Route | Handler | Private data exposed |\n|---|---|---|\n| `GET /{owner}/{repo}.rss` / `.atom` | `repo.Home` \u2192 `handleRepoHomeFeed` (`view_home.go`) | last-10 commits: SHA, full message, author name + email |\n| `GET /{owner}/{repo}/rss/branch/*`, `/atom/branch/*`",
+      "link": "https://github.com/advisories/GHSA-6cqf-375w-639g",
+      "published": "2026-07-21T20:40:24Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50105"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58442",
+      "title": "Gitea: Repository migration SSRF via multi-answer DNS allow-list bypass",
+      "summary": "### Summary\n\nGitea's repository migration URL validation can be bypassed when a migration hostname resolves to multiple IP addresses. The validation logic accepts the destination if **any** resolved IP is allowed, even if another resolved IP is loopback, private, or otherwise blocked. The later `git clone` operation resolves the hostname again outside of that validation decision, so it can connect to the internal address.\n\nAn authenticated low-privilege user who can create repository migrations can use an attacker-controlled DNS name to make Gitea connect to internal-only Git services and import their contents into a repository controlled by the attacker.\n\n### Details\n\nThe issue is in `services/migrations/migrate.go`, in the migration allow/block-list check.\n\nCurrent logic computes whether any resolved IP is allowed:\n\n```go\nvar ipAllowed bool\nvar ipBlocked bool\nfor _, addr := range addrList {\n    ipAllowed = ipAllowed || allowList.MatchIPAddr(addr)\n    ipBlocked = ipBlocked || blockList.MatchIPAddr(addr)\n}\n```\n\nThen, when an allow-list is active, the host is accepted if the hostname matches or `ipAllowed` is true:\n\n```go\nif !allowList.IsEmpty() {\n    if !allowList.MatchHostName(hostName) && !ipAllowed {\n        return &git.ErrInvalidCloneAddr{Host: hostName, IsPermissionDenied: true}\n    }\n}\n```\n\nThis means a hostname resolving to both:\n\n- an allowed public IP, e.g. `1.2.3.4`\n- a blocked internal IP, e.g. `127.0.0.1`\n\npasses validation because the public IP sets `ipAllowed = true`.\n\nThe actual repository import is later performed by `git clone --mirror` via `MigrateRepositoryGitData` / `gitrepo.CloneExternalRepo`. That git subprocess performs its own DNS resolution and is not tied to the specific IP set that was validated earlier. If the hostname resolves, rotates, or is re-bound to the internal address at clone time, Gitea can connect to a destination the migration filter would reject if supplied directly.\n\nThe direct internal URL is correctly blocked, but the mult",
+      "link": "https://github.com/advisories/GHSA-h2x6-g7q6-344v",
+      "published": "2026-07-21T20:37:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58442"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58441",
+      "title": "Gitea: SSRF in restore-repo via unsanitized pull_request.yml Head.CloneURL",
+      "summary": "### Summary\nGitea's `restore-repo` CLI command restores a repository from a dump\ndirectory/archive. When parsing `pull_request.yml` from that dump, the\n`Head.CloneURL` field is used to add a git remote and fetch from it with\nno validation, because the safety check that's supposed to guard it\n(`CheckAndEnsureSafePR`) is called with an empty `commonCloneBaseURL`,\nwhich silently disables it. This lets a malicious dump make the Gitea\nserver execute `git fetch` against an attacker-chosen URL (SSRF), or\ndisclose a local git repository via `file://`. This is a different root\ncause from the recently fixed path-traversal issue in the same command\n(#38215), which patched `DownloadURL`/`PatchURL` but not `Head.CloneURL`.\n\n### Details\n`services/migrations/restore.go`'s `GetPullRequests()` unmarshals\n`pull_request.yml` directly into `base.PullRequest` structs with no\nvalidation of `Head.CloneURL`:\n\n```go\nerr = yaml.Unmarshal(bs, &pulls)\n...\nfor _, pr := range pulls {\n    if pr.PatchURL != \"\" {\n        pr.PatchURL = \"file://\" + util.FilePathJoinAbs(r.baseDir, pr.PatchURL)\n    }\n    CheckAndEnsureSafePR(pr, \"\", r)   // <-- empty baseURL\n}\n```\n\n`CheckAndEnsureSafePR` (`services/migrations/common.go`) is supposed to\nreject `Head.CloneURL`/`PatchURL` values that don't share a common base\nURL:\n\n```go\nfunc hasBaseURL(toCheck, baseURL string) bool {\n    if len(baseURL) > 0 && baseURL[len(baseURL)-1] != '/' {\n        baseURL += \"/\"\n    }\n    return strings.HasPrefix(toCheck, baseURL)\n}\n\nfunc CheckAndEnsureSafePR(pr *base.PullRequest, commonCloneBaseURL string, g base.Downloader) bool {\n    valid := true\n    if pr.PatchURL != \"\" && !hasBaseURL(pr.PatchURL, commonCloneBaseURL) {\n        pr.PatchURL = \"\"\n        valid = false\n    }\n    if pr.Head.CloneURL != \"\" && !hasBaseURL(pr.Head.CloneURL, commonCloneBaseURL) {\n        pr.Head.CloneURL = \"\"\n        valid = false\n    }\n    return valid\n}\n```\n\n`strings.HasPrefix(anything, \"\")` is always `true` in Go. Because\n`restore.go` is the only calle",
+      "link": "https://github.com/advisories/GHSA-xmj7-xj85-hfc3",
+      "published": "2026-07-21T20:37:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58441"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58426",
+      "title": "Gitea Actions Artifacts V4 signed URL HMAC ambiguity allows cross-repository artifact read and cross-task upload-state write",
+      "summary": "### Summary\n\nGitea Actions Artifacts V4 signed upload/download URLs can be rewritten to access a different running task and repository context while preserving the original HMAC signature. An attacker with permission to run a Gitea Actions job can turn a signed URL for an attacker-controlled artifact into a URL that reads artifacts from another task context, or writes attacker-controlled data into another task's artifact upload staging context, including in a private repository.\n\nThis is one vulnerability with two exploit paths:\n\n- `DownloadArtifact`: cross-task/cross-repository artifact read, giving `C:H`.\n- `UploadArtifact`: cross-task artifact staging write and metadata mutation, giving `I:H`.\n\n### Details\n\nThe root cause is that the V4 artifact signed URL signature is built from raw concatenated fields without delimiters or length-prefixing:\n\n```go\nfunc (r *artifactV4Routes) buildSignature(endpoint, expires, artifactName string, taskID, artifactID int64) []byte {\n        mac := hmac.New(sha256.New, setting.GetGeneralTokenSigningSecret())\n        mac.Write([]byte(endpoint))\n        mac.Write([]byte(expires))\n        mac.Write([]byte(artifactName))\n        _, _ = fmt.Fprint(mac, taskID)\n        _, _ = fmt.Fprint(mac, artifactID)\n        return mac.Sum(nil)\n}\n```\n\nAffected code: `routers/api/actions/artifactsv4.go:164-171`.\n\nBecause `artifactName`, `taskID`, and `artifactID` are concatenated without boundaries, two different URL tuples can produce the same HMAC input. For example:\n\n```text\nsigned tuple:\nartifactName = \"artifact-795-153\"\ntaskID       = 48\nartifactID   = <attacker artifact id>\n\nforged tuple:\nartifactName = \"artifact-795-1\"\ntaskID       = 53\nartifactID   = 48<attacker artifact id>\n```\n\nThe final HMAC input suffix is identical:\n\n```text\nartifact-795-15348<attacker artifact id>\n```\n\nThe attacker does not need to know the target artifact's database `artifactID`. The forged URL's `artifactID` only needs to carry digits that preserve the original HMAC inpu",
+      "link": "https://github.com/advisories/GHSA-hg5r-vq93-9fv6",
+      "published": "2026-07-21T20:36:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58426"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58418",
+      "title": "Gitea: SSRF via HTTP Redirect in Repository Migration",
+      "summary": "## Summary\n\nGitea 1.25.4 validates the initial URL provided to the repository migration endpoint (`POST /api/v1/repos/migrate`) and correctly blocks requests to internal addresses like `127.0.0.1` or RFC1918 ranges. However, if the initial URL points to an attacker-controlled server that responds with an HTTP 302 redirect to an internal address, Gitea follows the redirect without performing a second validation. This allows a low-privilege user to reach internal services through Gitea as a proxy.\n\n## Affected Version\n\nGitea 1.25.4 (latest stable at time of writing), default configuration.\n\n## Prerequisites\n\n1. A regular Gitea user account (no admin privileges required)\n2. An attacker-controlled server reachable from the internet that serves HTTP 302 redirects\n\n## Reproduction\n\n### Environment\n\n| Role             | Location                                                       | Network                                  |\n|------------------|----------------------------------------------------------------|------------------------------------------|\n| Attacker         | Any machine with internet access                               | External network (VLAN A)                |\n| Gitea Server     | Windows 11 VM, Gitea 1.25.4, default config, SQLite           | Internal network (VLAN B)                |\n| Internal service | Same VM, bound to `127.0.0.1:18082`                           | Localhost only                           |\n| Redirect server  | Attacker-controlled public server, port 18080                 | Internet                                 |\n\nThe attacker can reach Gitea on port 3000 but cannot reach port 18082 on the VM. This was verified by attempting a direct connection, which was refused.\n\n### Step 1: Create an attacker account on Gitea\n\nRegister a normal user account on the Gitea instance (or use any existing non-admin account). Then generate an API token under **Settings > Applications** with the `repo: write` scope. The migration endpoint requires this",
+      "link": "https://github.com/advisories/GHSA-rqhx-647v-wx32",
+      "published": "2026-07-21T20:33:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58418"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-27761",
+      "title": "Gitea: API access token scope enforcement bypass on repository RSS/Atom feed endpoints leaks private repository commit data",
+      "summary": "### Summary\nA Gitea personal access token (PAT) restricted to a non-repository scope (e.g. `read:issue`) can read the commit history of any private repository the token owner can access, via the repository RSS/Atom feed endpoints. The same token is correctly denied (403) on `/raw`, `/media`, `/archive`, and the contents API. It leaks commit SHAs, full commit messages (which frequently contain secrets and internal context), and committer name + email.\n\n### Details\nGitea enforces PAT scope on repository-content endpoints via `checkDownloadTokenScope()` (added in PR #37698, extended to the archive endpoint by the CVE-2026-20706 fix in 1.26.2). The RSS/Atom feed handlers were never included: they (a) opt into PAT auth via `webAuth.AllowBasic`, (b) serve private-repo content, but (c) never call `checkDownloadTokenScope()`.\n\nAffected handlers (all carry `AllowBasic`, none call the scope check):\n- `RenderBranchFeedRSS/Atom` - `routers/web/feed/render.go` (last 10 commits: SHA, title, full message, committer name + email)\n- `ShowFileFeed` - `routers/web/feed/file.go` (per-file commit history)\n- repo activity feed `/{owner}/{repo}.rss` / `.atom`\n- `TagsListFeedRSS/Atom`, `ReleasesFeedRSS/Atom` - `routers/web/repo/release.go`\n\nRoot cause: `routers/web/web.go` registers the feed routes with `webAuth.AllowBasic` so a PAT authenticates, but the unit-permission middleware only checks the user's access, not the token's scope. `checkDownloadTokenScope` (`routers/web/repo/download.go` and the archive `Download` in `repo.go`) exists to close exactly that gap and is absent from the feed handlers. Same class as the recently fixed download/archive bypasses (GHSA-cr4g-f395-h25h / CVE-2026-20706); the feeds are the surface those fixes missed.\n\n### PoC\nTested on `gitea/gitea:1.26.2-rootless`, confirmed present at `main` HEAD (9608cc2, 2026-06-13).\n1. User `carol` owns private repo `carol/priv` with a commit (message: \"add confidential secret\").\n2. Create a PAT scoped to issues only, no rep",
+      "link": "https://github.com/advisories/GHSA-3pww-vcvm-3gmj",
+      "published": "2026-07-21T20:30:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-27761"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-28740",
+      "title": "Gitea: Git LFS object reuse allows non-Code access to authorize private source objects",
+      "summary": "## Summary\n\nA user with Code write access to one repository may be able to associate an existing Git LFS object from a private source repository with their target repository, even when they do not have Code access to the source repository that currently owns the LFS object.\n\nThe issue appears to be caused by the source-object authorization check using broad repository accessibility instead of requiring Code-unit access to at least one repository that owns the requested LFS object.\n\n## Impact\n\nThis issue breaks the expected authorization boundary between repository units.\n\nA user who does not have Code access to a private source repository should not be able to reuse or associate Git LFS objects owned by that repository. However, because the source-object accessibility check accepts broad repository access, non-Code access such as Issues access may be sufficient for the LFS object to be treated as accessible.\n\nIf the reused object becomes downloadable through the attacker-controlled target repository after metadata association, this can result in cross-repository Git LFS content disclosure.\n\nThe target repository write authorization is still enforced. The problem is specifically in the authorization decision for whether the source LFS object is accessible and may be reused.\n\n## Preconditions\n\nThe attacker needs:\n\n* an authenticated Gitea account;\n* Code write access to a target repository;\n* non-Code access, such as Issues access, to a private source repository;\n* knowledge of an existing Git LFS object OID and size from the private source repository.\n\n## Affected Area\n\nThe issue affects the Git LFS upload/object reuse path.\n\nRelevant paths:\n\n```text\nservices/lfs/server.go\n```\n\nRelevant handlers:\n\n```text\nBatchHandler\nUploadHandler\n```\n\nBoth paths can call:\n\n```go\ngit_model.LFSObjectAccessible(ctx, ctx.Doer, p.Oid)\n```\n\nThe helper is located in:\n\n```text\nmodels/git/lfs.go\n```\n\nThe authorization check uses:\n\n```go\nrepo_model.AccessibleRepositoryCondition(user, unit.Ty",
+      "link": "https://github.com/advisories/GHSA-2m9v-5q2g-58vq",
+      "published": "2026-07-21T20:29:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-28740"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-22874",
+      "title": "Gitea: Incomplete SSRF Protection in Webhook and Migration Allow-list Default Filter",
+      "summary": "## Summary\n\nGitea's default SSRF allow-list ([`MatchBuiltinExternal`](https://github.com/go-gitea/gitea/blob/4c37f4dacbac022f7beca75272439331f0368830/modules/hostmatcher/hostmatcher.go#L26-L27), used by both webhook delivery and repository migrations) relies on Go's standard library [`net.IP.IsPrivate()`](https://pkg.go.dev/net#IP.IsPrivate), which only covers RFC 1918 and RFC 4193. As a result, several IP ranges commonly used for cloud metadata services, internal networks, and IPv6 transition mechanisms are not blocked, allowing authenticated users to send HTTP requests to those destinations and read the responses via the webhook history UI.\n\n## Details\n\nThe vulnerability lives in [`HostMatchList.checkIP`](https://github.com/go-gitea/gitea/blob/4c37f4dacbac022f7beca75272439331f0368830/modules/hostmatcher/hostmatcher.go#L96-L114), specifically [line 103](https://github.com/go-gitea/gitea/blob/4c37f4dacbac022f7beca75272439331f0368830/modules/hostmatcher/hostmatcher.go#L103):\n\n```go\ncase MatchBuiltinExternal:\n    if ip.IsGlobalUnicast() && !ip.IsPrivate() {\n        return true\n    }\n```\n\n`net.IP.IsPrivate()` recognises only:\n- `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16` (RFC 1918)\n- `fc00::/7` (RFC 4193 IPv6 ULA)\n\nIt does **not** recognise:\n\n| Range | Description |\n|---|---|\n| `100.64.0.0/10` | RFC 6598 Carrier-Grade NAT |\n| `168.63.129.16/32` | Azure WireServer metadata endpoint |\n| `172.32.0.0/11` | Non-RFC1918 portion of `172.0.0.0/8` (real-world internal use) |\n| `64:ff9b::/96` | RFC 6052 IPv6 NAT64 (can embed `169.254.169.254`) |\n| `2001::/32` | RFC 4380 Teredo tunneling |\n| `2002::/16` | RFC 3056 6to4 |\n| `2001:db8::/32` | RFC 3849 documentation |\n\nThe default is reached by webhook delivery at [`services/webhook/deliver.go#L312-L316`](https://github.com/go-gitea/gitea/blob/4c37f4dacbac022f7beca75272439331f0368830/services/webhook/deliver.go#L312-L316) and by repository migrations at [`services/migrations/migrate.go#L522`](https://github.com/go-gitea/gitea/bl",
+      "link": "https://github.com/advisories/GHSA-2r5c-gw76-rh3w",
+      "published": "2026-07-21T20:27:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-22874"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-56654",
+      "title": "Gitea: Privilege Escalation via Access Token Scope Escalation in API",
+      "summary": "Gitea's API endpoint for creating Personal Access Tokens (`POST /users/{username}/tokens`) is protected by a middleware (`reqBasicOrRevProxyAuth`) that is intended to require password-based authentication, preventing a compromised token from being used to mint new ones. However, when a token is passed in the `Authorization: Basic <token>:x-oauth-basic` format, the Basic auth handler validates it and sets `AuthedMethod=\"basic\"`, causing `IsBasicAuth=true` and fooling the middleware into passing the request. Once past the guard, the token creation handler applies no scope ceiling \u2014 it will create a new token with any requested scope regardless of the caller's scope. An attacker with a restricted token (e.g. `write:user` from a leaked CI secret) can therefore create a fully-privileged `all`-scoped token without knowing the account password.\n\n### Data flow\n\n#### Step 1 - Token extracted from Basic auth header\n  \nWhen the attacker sends Authorization: Basic base64(<token>:x-oauth-basic), parseAuthBasic detects that the password is \"x-oauth-basic\" and treats the username field as the token:\n\nhttps://github.com/go-gitea/gitea/blob/9155a81b9daf1d46b2380aa91271e623ac947c1e/services/auth/basic.go#L55-L64\n\n`VerifyAuthToken` then validates the token against the database and sets `LoginMethod = \"access_token\"` and `ApiTokenScope` to the token's actual scope (`write:user`):\n\nhttps://github.com/go-gitea/gitea/blob/9155a81b9daf1d46b2380aa91271e623ac947c1e/services/auth/basic.go#L100-L106\n\n#### Step 2 - `AuthedMethod` is set to `\"basic\"`, not `\"access_token\"`\n\n`Basic.Verify()` returns the user successfully, so `group.Verify()` sets `AuthedMethod` to the method's name \u2014 `\"basic\"` \u2014 regardless of whether a password or token was used:\n\nhttps://github.com/go-gitea/gitea/blob/9155a81b9daf1d46b2380aa91271e623ac947c1e/services/auth/group.go#L63-L65\n\n#### Step 3 - `IsBasicAuth` is incorrectly set to true\n\n`AuthShared` computes `IsBasicAuth` by comparing `AuthedMethod` against the constant `",
+      "link": "https://github.com/advisories/GHSA-683j-3ff6-hh2x",
+      "published": "2026-07-21T20:24:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-56654"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-23603",
+      "title": "Gitea: Blind SSRF in OAuth2 avatar synchronization via unvalidated OIDC picture claim",
+      "summary": "### Summary\nWhen `[oauth2_client] UPDATE_AVATAR = true` is enabled, Gitea fetches the avatar URL received from an OAuth2/OIDC provider using Go's default HTTP client. The URL comes from the user's OAuth/OIDC avatar value, commonly the OIDC `picture` claim.\n\nThe affected code path calls `http.Get(url)` without applying outbound host or IP restrictions. A low-privileged user who can influence their own `picture` claim under an already-configured OAuth2/OIDC source can cause the Gitea server to make arbitrary outbound HTTP GET requests. This includes requests to loopback addresses, RFC 1918 private network addresses, and IPv4 link-local addresses such as `169.254.169.254`.\n\nThis is a blind SSRF by default. Impact can increase in deployments where the Gitea host can reach cloud metadata services, localhost-only services, or internal services that return valid image data.\n\n### Details\nThe vulnerable sink is in `routers/web/auth/oauth.go`:\n\n```go\nfunc oauth2UpdateAvatarIfNeed(ctx *context.Context, url string, u *user_model.User) {\n    if setting.OAuth2Client.UpdateAvatar && len(url) > 0 {\n        resp, err := http.Get(url)\n        if err == nil {\n            defer func() { _ = resp.Body.Close() }()\n        }\n        if err == nil && resp.StatusCode == http.StatusOK {\n            data, err := io.ReadAll(io.LimitReader(resp.Body, setting.Avatar.MaxFileSize+1))\n            if err == nil && int64(len(data)) <= setting.Avatar.MaxFileSize {\n                _ = user_service.UploadAvatar(ctx, u, data)\n            }\n        }\n    }\n}\n```\n\nThe caller is in `routers/web/auth/oauth_signin_sync.go`:\n\n```go\nfunc oauth2SignInSync(ctx *context.Context, authSourceID int64, u *user_model.User, gothUser goth.User) {\n    oauth2UpdateAvatarIfNeed(ctx, gothUser.AvatarURL, u)\n    ...\n}\n```\n\n`gothUser.AvatarURL` is derived from the OAuth2/OIDC provider's avatar value. For OIDC providers, this is commonly populated from the `picture` claim returned by the provider's userinfo endpoint or ID token.",
+      "link": "https://github.com/advisories/GHSA-x77v-q46j-393g",
+      "published": "2026-07-21T20:22:23Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-23603"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58425",
+      "title": "Gitea: OAuth token introspection returns metadata of tokens issued to other clients (RFC 7662 section 4 violation)",
+      "summary": "## Live reproduction against Gitea 1.26.1\n\nSetup: Gitea 1.26.1 docker stack with two users (`admin` and `victim`) and two OAuth applications owned by different users:\n\n```\nClient A: id=5dda747d-7fdd-4694-85ff-ce4f893ce51e   owner=admin\nClient B: id=588f778f-4a41-4914-ae01-85d776c369db   owner=victim\n```\n\n`admin` runs an OAuth flow against Client A and obtains an access token. `victim` (acting through Client B's credentials) calls the introspection endpoint with Client A's access token in the body:\n\n```\n$ curl -s -u \"$B_ID:$B_SEC\" -X POST http://localhost:3001/login/oauth/introspect \\\n       --data-urlencode \"token=$CLIENT_A_ACCESS_TOKEN\"\n{\n    \"active\": true,\n    \"username\": \"admin\",\n    \"iss\": \"http://localhost:3001\",\n    \"sub\": \"1\",\n    \"aud\": [\n        \"5dda747d-7fdd-4694-85ff-ce4f893ce51e\"\n    ]\n}\n```\n\nNote the `aud` claim: the server explicitly states the token's audience is Client A, yet returns the full metadata to Client B. Per RFC 7662 section 4 (\"The authorization server SHOULD also limit the information it discloses about each token to the resources that are authorized to receive it\") the introspection result must not be disclosed to clients other than the token's audience.\n\nFull reproduction script attached as `poc.sh`. Full session log attached as `live_run.log`.\n\n## Root cause\n\n`routers/web/auth/oauth2_provider.go:130-175` `IntrospectOAuth`:\n\n```go\nfunc IntrospectOAuth(ctx *context.Context) {\n    clientIDValid := false\n    authHeader := ctx.Req.Header.Get(\"Authorization\")\n    if parsed, ok := httpauth.ParseAuthorizationHeader(authHeader); ok && parsed.BasicAuth != nil {\n        clientID, clientSecret := parsed.BasicAuth.Username, parsed.BasicAuth.Password\n        app, err := auth.GetOAuth2ApplicationByClientID(ctx, clientID)\n        if err != nil && !auth.IsErrOauthClientIDInvalid(err) {\n            log.Error(\"Error retrieving client_id: %v\", err)\n            ctx.HTTPError(http.StatusInternalServerError)\n            return\n        }\n        clientIDVal",
+      "link": "https://github.com/advisories/GHSA-vxv2-8j6r-pcpg",
+      "published": "2026-07-21T20:21:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58425"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59766",
+      "title": "Gitea CVE-2026-20800 sibling endpoints not covered: revoked user still reads private repo objects via `/api/v1/user/starred` and private issue titles via `/api/v1/user/times`",
+      "summary": "## Summary\nCVE-2026-20800 fixed private-info leakage to revoked users only for the notification endpoint. Two\nsibling endpoints that return data keyed on the caller's own relationship still do not re-check repo\naccess at output time:\n- `GET /api/v1/user/starred` \u2014 `getStarredRepos()` computes a per-repo permission but still lists every\n  starred repo (no filtering), so the full repo object (`full_name`, `private`, `clone_url`, `ssh_url`)\n  of a now-inaccessible private repo is returned.\n- `GET /api/v1/user/times` \u2014 `ListMyTrackedTimes()` queries by `UserID` only and `LoadAttributes` brings\n  in the issue (`title`, `state`), leaking private issue titles after revocation.\n\n## Steps to reproduce\nUsing the provided reproduction materials, as a revoked user:\n1. Control: `GET /api/v1/repos/admin/starred-test` \u2192 **404**.\n2. `GET /api/v1/user/starred` \u2192 leaks `admin/starred-test`, `private:true`, `clone_url`.\n3. `GET /api/v1/user/times` \u2192 leaks `issue.title = \"SECRET: \u2026\"`, `state`.\n\n(Runtime-confirmed on `gitea/gitea:1.25.4`. Oracle = planted sentinel title; no real secret exfiltrated.)\n\n## Impact\nA former collaborator can enumerate private repos they starred and read private issue titles they logged\ntime on, indefinitely after access revocation. Metadata only (no repo content / comment bodies). Low.\n\n## Suggested remediation\n1. `getStarredRepos`: drop (or minimally redact) repos where `permission.HasAnyUnitAccessOrPublicAccess()`\n   is false for the caller.\n2. `ListMyTrackedTimes`: filter tracked-time entries by current repo access.\n3. Optionally clear a user's stars / time entries for a private repo on revocation.\n\n## Credit\nReported as part of an incomplete-patch measurement study (responsible disclosure).",
+      "link": "https://github.com/advisories/GHSA-qf2f-qh6p-7v89",
+      "published": "2026-07-21T20:13:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-58440",
+      "title": "Gitea: Webhooks created by a collaborator keep firing after their repo access is revoked \u2192 ongoing real-time exfiltration of private repo content",
+      "summary": "## Affected product\nGitea \u2014 `services/repository/collaboration.go` (`DeleteCollaboration`) + webhook delivery\n\n## Summary\nWhen a collaborator with admin permission on a private repo creates a webhook, that webhook keeps firing\nafter the collaborator's access is revoked. Gitea's revocation cleanup `DeleteCollaboration` removes the\ncollaboration record, recalculates accesses, drops watches, and unassigns issues \u2014 but it does **not**\nremove or disable webhooks the user created, and webhook delivery never re-checks whether the creator still\nhas repo access. The former collaborator therefore receives the full payload (issue/comment bodies, commit\ndata) of all future repository events at their controlled endpoint, indefinitely and invisibly.\n\n## Affected code\n- `services/repository/collaboration.go` \u2192 `DeleteCollaboration()` \u2014 cleans watches/assignees only; no\n  webhook cleanup.\n- Webhook delivery path \u2014 fires on repo events without re-validating the creator's current access.\n\n## Steps to reproduce\nUsing the provided reproduction materials:\n1. Attacker (admin collaborator) creates a webhook \u2192 revoke access.\n2. Control: `GET /api/v1/repos/admin/wh-repo` (attacker) \u2192 **404**.\n3. `GET .../hooks` \u2192 webhook still `active=true`.\n4. Admin creates a new issue **after** revocation \u2192 the catcher receives `action:\"opened\"`,\n   `issue.title:\"CRITICAL SECRET: \u2026\"`, `issue.body` (sentinel private key), `repository.private:true`.\n(Runtime-confirmed on `gitea/gitea:1.25.4`. Catcher is an internal sentinel listener; the payload is a\nplanted sentinel, not real data; nothing is sent to any external/metadata endpoint.)\n\n## Impact\nAuthenticated former admin-collaborator \u2192 ongoing real-time exfiltration of private content created after\nrevocation; invisible to the owner; scope crosses from the application boundary to data the user should no\nlonger access.\n\n## Suggested remediation\n1. On revocation, delete/disable webhooks created by the removed collaborator (or hand them to the owner).\n2. Re-va",
+      "link": "https://github.com/advisories/GHSA-66m4-5jjr-2rg5",
+      "published": "2026-07-21T20:11:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58440"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59891",
+      "title": "Credential confusion in @sigstore/oci can leak registry credentials to an attacker-controlled registry",
+      "summary": "### Impact\n\nThis is a credential-exposure / credential-confusion issue.\n\n`getRegistryCredentials()` reads credentials from the Docker config file (`~/.docker/config.json`) and selects an entry by checking whether any configured auth key **contains** the target registry string:\n\n```js\nObject.keys(dockerConfig.auths || {}).find((key) => key.includes(registry))\n```\n\nBecause this is a **substring match rather than an exact host match**, credentials configured for one registry can be selected for \u2014 and transmitted to \u2014 a *different* registry whose hostname has a substring relationship with a configured auth key (for example, an attacker-controlled `cr.io` matches a configured `ghcr.io`).\n\n**Who is impacted:** Any consumer of `@sigstore/oci` that uploads artifacts to an OCI registry using credentials from a Docker config, where the destination registry/image reference can be influenced by an untrusted party. This includes `@actions/attest` and the `actions/attest`, `actions/attest-build-provenance`, and `actions/attest-sbom` GitHub Actions when run with `push-to-registry: true`, where the `subject-name` input determines the destination registry.\n\nThis is classified as a **critical** vulnerability given the potential, in a theoretical worst-case scenario, to expose long-lived registry credentials. However, in practice, exploitation requires all of the following:\n\n- The Docker config on the host contains credentials for a registry.\n- The destination registry/image reference is influenced by an untrusted source.\n- The attacker controls a registry whose hostname is a substring of (or is otherwise contained within) a configured Docker auth key.\n\nUnder those conditions, registry credentials present on the host (e.g. a GHCR, Docker Hub, or cloud-registry token) can be sent to an attacker-controlled registry during the authentication exchange.\n\n### Patches\n\nFixed in **`@sigstore/oci@0.7.1`**. Credential selection now requires an **exact host match**: both the target registry and ",
+      "link": "https://github.com/advisories/GHSA-pf56-329r-95rw",
+      "published": "2026-07-21T19:34:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59891"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-57894",
+      "title": "Gitea: Repository Migration Follows Git HTTP Redirects After URL Allow/Block Validation, Enabling Internal Git Repository Exfiltration",
+      "summary": "# Repository Migration Follows Git HTTP Redirects After URL Allow/Block Validation, Enabling Internal Git Repository Exfiltration\n\n## Summary\n\nGitea validates the user-supplied repository migration URL, but the actual clone and later mirror fetch operations are performed by the Git command-line client without disabling HTTP redirects. Git's default `http.followRedirects=initial` follows the first redirect and then uses the redirected URL as the base for later repository object requests.\n\nThis creates a URL-policy bypass, SSRF, and repository exfiltration primitive. A low-privileged authenticated user can submit an allowed public Git URL that redirects the Gitea server to an otherwise blocked or internal Git HTTP(S) endpoint. Local validation confirmed that Git followed a first-hop redirect to `127.0.0.1`, fetched Git objects, and completed the clone; `git -c http.followRedirects=false clone` blocked the same path.\n\nThe main impact is internal Git repository exfiltration into an attacker-controlled Gitea repository. Pull mirrors increase risk because scheduled `git fetch --tags` operations can keep following the redirect and collect future internal commits.\n\nThis is High severity by default for internet-accessible instances with migrations enabled, and can become Critical where internal repositories contain deploy keys, CI/CD secrets, cloud credentials, Terraform state, kubeconfigs, signing material, or production configuration. Direct unauthenticated exploitation, direct Gitea server RCE, arbitrary `file://` import, and default Actions runner execution are not confirmed.\n\n## Technical Root Cause Analysis\n\nThe root cause is a validation/enforcement mismatch across a trust boundary. This should be treated as a product security issue rather than a pure deployment misconfiguration: deployment choices influence reachability and impact, but Gitea applies policy to the originally submitted URL while the Git subprocess is allowed to reach a different effective URL after red",
+      "link": "https://github.com/advisories/GHSA-82f7-87hm-852x",
+      "published": "2026-07-21T19:17:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-57894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-13760",
+      "title": "aws-cdk-lib: OS Command Injection in NodejsFunction Docker Bundling",
+      "summary": "### Summary\nAWS CDK (aws-cdk-lib) is an open-source framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. OS command injection issue in the NodejsFunction Docker bundling pipeline in aws-cdk-lib before 2.260.0 that might allow an actor who controls dependency version strings in a project's package.json file to execute arbitrary commands on the host running the CDK toolchain via injected shell metacharacters in the OsCommand helper. This issue requires the actor to control the content of a package.json dependency version string that is processed during Docker-based bundling with nodeModules specified.\n\n### Impact\nDuring Docker-based Lambda bundling, when the nodeModules option is specified, NodejsFunction assembled a shell command string, including file-operation commands generated by an internal OsCommand helper, from the version strings of the modules listed in nodeModules, and executed it via a shell (bash -c) inside the bundling container. These version strings were interpolated without shell escaping, so values containing shell metacharacters could execute arbitrary commands inside the bundling container - which has read/write bind mounts to the host filesystem - with the privileges of the user running cdk synth, cdk deploy, or cdk diff. Leveraging this issue requires an actor to control a dependency version string for one of the listed modules - for example via an untrusted npm package referenced through nodeModules.\n\n### Impacted versions: \n< 2.260.0\n\n### Patches\nThis issue has been addressed in\u00a0aws-cdk-lib\u00a0version 2.260.0 (PR\u00a0[#38133](https://github.com/aws/aws-cdk/pull/38133)). We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. \n\n### Workarounds\nEnsure that the modules listed in the nodeModules bundling option - and the version strings declared for them in your project's package.json, as well as the versions of the corresponding install",
+      "link": "https://github.com/advisories/GHSA-vcrf-j523-4mrf",
+      "published": "2026-07-21T19:04:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-13760"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-59882",
@@ -418,258 +885,6 @@
       ],
       "cve_ids": [
         "CVE-2026-6875"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59204",
-      "title": "Pillow JPEG2000 tiled decode retains a growing scratch buffer and can be used for denial of service",
-      "summary": "### Summary\n`src/libImaging/Jpeg2KDecode.c:853` accumulates `total_component_width` across every tile in a JPEG2000 image instead of recomputing it per tile. That accumulated value is then used in the `tile_bytes` calculation at `src/libImaging/Jpeg2KDecode.c:868`, which can make the decoder grow `state->buffer` via `realloc` at `src/libImaging/Jpeg2KDecode.c:876` up to roughly one full image's decompressed size even when each tile is small. A crafted tiled JPEG2000 file can therefore force substantially higher transient memory usage and trigger out-of-memory failures during decoding. Based on current evidence, the supported impact is denial of service, not memory corruption.\n\n### Details\n- Location: `src/libImaging/Jpeg2KDecode.c:853`\n- Root cause: `total_component_width` is initialized only once before the tile loop and keeps growing across tiles. It is then used to derive `tile_bytes`, so later tiles are treated as if they had the combined component width of all earlier tiles.\n- Dangerous operation: `tile_bytes` is promoted into `tile_info.data_size`, then `state->buffer` is grown with `realloc` at `src/libImaging/Jpeg2KDecode.c:876`.\n- Reachability: any attacker-controlled JPEG2000 image with many tiles reaches this path during normal `Image.open(...).load()` decoding.\n\n\n### PoC\nThe attached helper script and testcase were used:\n[exercise_j2k_tile_realloc.zip](https://github.com/user-attachments/files/28099912/exercise_j2k_tile_realloc.zip)\n\n\nGenerate the testcase:\n\n```bash\npythonexercise_j2k_tile_realloc.py make poc_3664_rgba_tile1832.jp2 \\\n  --size 3664 --tile 1832\n```\n\nExpected geometry from the helper:\n\n- image size: `3664 x 3664`\n- mode: `RGBA`\n- tile size: `1832 x 1832` (`2x2` tiles)\n- `image_bytes=53699584`\n- uncapped RSS observed:\n  - vulnerable build: `maxrss_kb=180264`\n  - fixed comparison build: `maxrss_kb=138404`\n\nLoad it with the current vulnerable build:\n\n```bash\npython exercise_j2k_tile_realloc.py load poc_3664_rgba_tile1832.jp2\n```\n\nLoad it again",
-      "link": "https://github.com/advisories/GHSA-vjc4-5qp5-m44j",
-      "published": "2026-07-20T23:18:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59204"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59198",
-      "title": "Pillow TGA RLE encoder can serialize up to ~57 KB of adjacent heap data into generated images",
-      "summary": "### Summary\n\nPillow's TGA RLE encoder reads past its row buffer when saving a mode `\"1\"`\nimage. Adjacent process heap bytes can be copied into the generated TGA file.\n\nThe bug is reachable through the public save API:\n\n```python\nim.save(out, format=\"TGA\", compression=\"tga_rle\")\n```\n\nOlder affected Pillow versions use the equivalent public option `rle=True`.\n\nFor mode `\"1\"`, Pillow allocates a packed row buffer of `ceil(width / 8)`\nbytes, but `ImagingTgaRleEncode()` treats the row as one full byte per pixel.\n\nThe maximum valid TGA width is `65535`. At that width:\n\n```text\nallocated packed row buffer: 8192 bytes\nencoder byte-offset walk:     65535 bytes\nmaximum OOB window per row:   57343 bytes\n```\n\nOn non-ASAN Pillow `12.2.0`, the public-only maximum-width PoC below serialized\n`57297` bytes from distinct out-of-bounds source offsets into one returned TGA,\ncovering `99.92%` of the maximum adjacent heap window. No heap grooming, ctypes,\nprivate API, or malformed input file was used. The disclosure is emitted across\nmany TGA packet payload copies of at most `128` bytes each, not one large\n`memcpy()`.\n\n### Details\n\n`src/PIL/TgaImagePlugin.py` allows mode `\"1\"` TGA output and selects the\n`tga_rle` encoder when RLE compression is requested.\n\n`src/encode.c:_setimage()` allocates the row buffer using the packed-bit\nformula:\n\n```c\nstate->bytes = (state->bits * state->xsize + 7) / 8;\nstate->buffer = (UINT8 *)calloc(1, state->bytes);\n```\n\nFor mode `\"1\"`, `state->bits == 1`.\n\n`src/libImaging/TgaRleEncode.c` then computes:\n\n```c\nbytesPerPixel = (state->bits + 7) / 8;\n```\n\nThis becomes `1`, and the encoder uses pixel indexes as byte offsets:\n\n```c\nstatic int\ncomparePixels(const UINT8 *buf, int x, int bytesPerPixel) {\n    buf += x * bytesPerPixel;\n    return memcmp(buf, buf + bytesPerPixel, bytesPerPixel) == 0;\n}\n```\n\nThe packet payload `memcpy()` later copies those out-of-bounds source bytes into\nthe output. Raw packets copy up to `128` contiguous bytes, while RLE packets copy\none",
-      "link": "https://github.com/advisories/GHSA-fj7v-r99m-22gq",
-      "published": "2026-07-20T23:09:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59198"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62685",
-      "title": "File Browser: Colliding username normalization gives two users the same home directory",
-      "summary": "## Summary\n\nFileBrowser confines each user to a *scope*: a home directory that acts as the boundary for everything they can read or write. When self-registration and automatic home-directory creation are both enabled (`Signup=true` and `CreateUserDir=true`), a new user's scope is built from their username after it passes through `cleanUsername()`. That function rewrites the name: it strips `..` and replaces every character outside `0-9A-Za-z@_\\-.` with `-`.\n\nThe problem is that this rewrite is **many-to-one**: different usernames can produce the same result, and FileBrowser never checks whether the resulting scope is already taken. So `team/one`, `team one`, and `team-one` all collapse to the same directory name, and whoever registers second is handed the **same home directory** as the first user instead of an isolated one.\n\nThis breaks per-user isolation. An attacker can pick a username that normalizes onto a victim's directory (for example registering `alice/` or `al..ice` to land in `alice`'s home) and gain full read **and** write access to that victim's files. Because username uniqueness is enforced on the raw name, both accounts coexist normally and neither user is warned that they share storage.\n\n## Details\n\n**1. The home directory is built straight from the cleaned username (`settings/dir.go:30`)**\n\n```go\n// MakeUserDir, when CreateUserDir is true:\nusername = cleanUsername(username)\n// ...\nuserScope = path.Join(s.UserHomeBasePath, username)   // line 30\nuserScope = path.Join(\"/\", userScope)                 // line 33\n```\n\nThe user's scope is `path.Join(UserHomeBasePath, cleanUsername(username))`.\n\n**2. `cleanUsername` collapses distinct inputs to the same output (`settings/dir.go:42-52`)**\n\n```go\nfunc cleanUsername(s string) string {\n    s = strings.Trim(s, \" \")\n    s = strings.ReplaceAll(s, \"..\", \"\")                       // line 45, deletes \"..\"\n    s = invalidFilenameChars.ReplaceAllString(s, \"-\")         // line 48, any non [0-9A-Za-z@_.-] -> \"-\"\n    s = ",
-      "link": "https://github.com/advisories/GHSA-7rc3-g7h6-22m7",
-      "published": "2026-07-20T22:19:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62685"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62684",
-      "title": "File Browser: Share API exposes the password hash and bypass token",
-      "summary": "## Summary\n\nWhen a user creates a password-protected share or lists existing shares, the JSON response includes the full bcrypt `password_hash` and the secret `token` of the share. The `Link` storage struct is serialized directly with `json.Marshal` and tags `password_hash` and `token` for output, with no field filtering. Any authenticated user receives these secrets for their own shares, and an administrator listing all shares via `GET /api/shares` receives the password hash and bypass token for **every** user's shares, enabling offline cracking of share passwords and direct password-bypass access to protected shares.\n\n## Details\n\n**1. The `Link` struct serializes both secrets to JSON (`share/share.go:10-19`)**\n\n```go\ntype Link struct {\n    Hash         string `json:\"hash\" storm:\"id,index\"`\n    Path         string `json:\"path\" storm:\"index\"`\n    UserID       uint   `json:\"userID\"`\n    Expire       int64  `json:\"expire\"`\n    PasswordHash string `json:\"password_hash,omitempty\"`   // line 15, bcrypt hash exposed\n    // Token is only set when PasswordHash is set; it bypasses the password.\n    Token        string `json:\"token,omitempty\"`            // line 19, bypass token exposed\n}\n```\n\n`omitempty` means the hash and token are emitted whenever a share is password-protected, i.e. in every response for such a share.\n\n**2. The share handlers return the full struct through unfiltered `json.Marshal`**\n\n`sharePostHandler` returns the created `Link` with `renderJSON(w, r, s)` (`http/share.go:179`); `shareListHandler` and `shareGetsHandler` return shares the same way (`http/share.go:55`, `http/share.go:76`). `renderJSON` performs an unfiltered `json.Marshal(data)` (`http/utils.go:16`), so every tagged field, including `password_hash` and `token`, reaches the client.\n\n**3. Administrators receive every user's secrets (`http/share.go:36`)**\n\n```go\ns, err = d.store.Share.All()   // admin path: returns ALL users' shares\n// ...\nreturn renderJSON(w, r, s)     // including each share'",
-      "link": "https://github.com/advisories/GHSA-833g-cqhp-h72j",
-      "published": "2026-07-20T22:17:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62684"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59883",
-      "title": "Guzzle: Cookie Disclosure and Injection via IP-Address Domains",
-      "summary": "### Impact\n\n`CookieJar` does not restrict a cookie scoped to an IP address to the exact host that set it. When a stored cookie's `Domain` attribute is an IPv4 literal (`Domain=192.168.0.1`), a bracketed IPv6 literal (`Domain=[::1]`), or a bare numeric value that denotes an IPv4 address (`Domain=1`, which is `0.0.0.1`), `SetCookie::matchesDomain()` applies ordinary subdomain (suffix) matching to it instead of requiring an exact host. The IP-address check inside `matchesDomain()` is applied only to the request host and never to the cookie's own domain, and response cookies that carry an explicit `Domain` attribute are stored as suffix-matchable. As a result Guzzle sends such a cookie to any host whose name ends in that value as a trailing label, for example sending a `Domain=192.168.0.1` cookie to `evil.192.168.0.1`, or a `Domain=1` cookie to `evil.1`. The same flaw lets a look-alike host store a cookie that Guzzle then sends to the bare IP address. Depending on how the receiving service interprets the cookie, the impact is cross-host cookie disclosure, cookie injection, or session fixation.\n\nYou are affected if your application uses Guzzle's cookie support, for example `new Client(['cookies' => true])` or an explicit `CookieJar`, reuses one cookie jar across more than one host or trust boundary, and that jar can hold a cookie scoped to an IP-address or bare-numeric host. To actually leak a cookie the application must also resolve and connect to a look-alike host whose name ends in the IP-address label, such as `evil.192.168.0.1`. Such names are not publicly registrable, so in practice an attacker needs some influence over name resolution, which is realistic on private, split-horizon, container, or development networks. You are not affected if you do not use Guzzle's cookie support, if you use a separate cookie jar per host or trust boundary, or if your jars never hold cookies scoped to IP-address or bare-numeric hosts. This issue is independent of public suffix list ",
-      "link": "https://github.com/advisories/GHSA-g446-98w2-8p5w",
-      "published": "2026-07-20T22:00:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59883"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59946",
-      "title": "Composer: Path traversal in package bin field lets dependencies chmod arbitrary host files",
-      "summary": "## Summary\n\nA Composer package declares its executables in the `bin` field of its `composer.json`. When Composer installs a package, it processes each `bin` entry and changes the file mode of the corresponding file so it is executable.\n\nIf a `bin` entry contains `..` path segments, it can resolve to a path outside the package's own install directory. A malicious package can use this to make Composer run `chmod` against a file that already exists elsewhere on the machine. The resulting mode is world-readable and world-executable (0755 under the common umask of 022). This happens when the package is installed, e.g. during `composer install`, `composer update`, and `composer require`. Any dependency can trigger it, including a transitive dependency several levels deep.\n\nThe vulnerability *changes file permissions only, and does not read, modify, or execute the contents of the target file, and it is not remote code execution*. The impact is to confidentiality: a file with deliberately restrictive permissions, such as a private key at mode 0600, can be made readable by other users on the same host.\n\n## Am I affected?\n\nWe reviewed packagist.org data and found no evidence that any published package exploited this vulnerability. If you install packages only from packagist.org, you are not affected by any known exploitation.\n\nYou are potentially affected if *all* of the following are true:\n\n- Your Composer project depends, directly or transitively, on a package you do not fully trust.\n- A file you rely on for its restrictive permissions already exists at a path the Composer process can write to. Examples include SSH private keys, `.env` files, `~/.aws/credentials`, and `.netrc`.\n\nThe most likely way to be affected is to add or update a dependency that is malicious or has been compromised, then run an install on a machine that holds sensitive, permission-restricted files.\n\nTwo points to note:\n\n- `--no-scripts`, `--no-plugins`, and an `allow-plugins` allow-list do not prevent ",
-      "link": "https://github.com/advisories/GHSA-gjfg-22fp-rrxx",
-      "published": "2026-07-20T21:57:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59946"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59947",
-      "title": "Composer: URL-embedded HTTP-Basic username leaks to verbose logs (GitHub PAT exposure)",
-      "summary": "## Summary\n\nWhen Composer is run with -vvv (debug verbosity), it could print a credential that was embedded directly in a repository or package URL, but not as a password, to its debug output. Composer already masked the password portion of such URLs, but the username portion was shown in clear text. Because GitHub and several other services support placing an access token in the username position of a URL (for example https://[token]@github.com/owner/repo), a token used that way could end up written to the verbose log in full.\n\nThis is an information disclosure issue. The credential is only ever exposed to whoever can already read Composer's debug output.\n\n## Am I affected?\n\nYou are potentially affected only if **all** of the following apply:\n\n- A credential is embedded inside a URL that Composer handles, e.g. in a `repositories` entry in composer.json, in a package dist/source URL - rather than being supplied through auth.json or the COMPOSER_AUTH environment variable.\n- The secret sits in the username slot of that URL (e.g. `https://TOKEN@host/\u2026`). A normal `username:password@host` pair where the username is an ordinary account name did not expose the password, that was already masked.\n- Composer is run with -vvv (debug verbosity), and that output is retained or shared somewhere others can read it: public CI build logs, output pasted into an issue or chat, archived terminal sessions, and so on.\n\nIf you keep credentials in auth.json or environment variables, or you never run Composer at debug verbosity, you were not exposed.\n\nThe most realistic exposure is the documented pattern of embedding a GitHub Personal Access Token in a URL's username position on a machine (often CI) that captures verbose output.\n\n## Patched versions\n\nThe username is now masked the same way the password already was, so an embedded token no longer appears in verbose output (a short, non-secret prefix may be shown to aid debugging, but never the full value).\n\nFixed in Composer 2.10.2 and the ",
-      "link": "https://github.com/advisories/GHSA-g6xq-892h-64w3",
-      "published": "2026-07-20T21:55:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59947"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61835",
-      "title": "Directus: SSRF Protection Bypass via 0.0.0.0 in File Import",
-      "summary": "### Summary\n\nThe SSRF protection on Directus's file-import-from-URL feature can be bypassed using the address `0.0.0.0`. While `127.0.0.1` and other internal addresses are denied, `0.0.0.0` is not added to the blocklist. On Linux and macOS, connecting to `0.0.0.0` reaches localhost, so an authenticated user with file-upload rights can make the server fetch internal services and retrieve the response as a downloadable file (full-read SSRF).\n\n### Affected Versions\n\n- **Affected:** Directus `<= 12.0.0` (confirmed on `directus/directus:latest`, v11.17.3, with default configuration)\n- **Patched:** Directus `>= 12.0.0`\n\n### Details\n\nDirectus uses a deny-list config, `IMPORT_IP_DENY_LIST`, whose default value is `['0.0.0.0', '169.254.169.254']`.\n\nThe issue is in how `api/src/request/is-denied-ip.ts` processes this list. When it encounters the entry `0.0.0.0`, it treats it as a special keyword meaning \"block all local network interfaces,\" but it never blocks the literal address `0.0.0.0` itself. The handler sets the network-interface flag and skips to the next entry without adding `0.0.0.0` to the blocklist.\n\nWhat actually gets blocked is the loopback subnet `127.0.0.0/8` (from the `lo` interface) plus whatever addresses are assigned to the machine's network interfaces. The address `0.0.0.0` is not inside `127.0.0.0/8`; it belongs to the separate `0.0.0.0/8` range. So a request to `http://0.0.0.0:8055/` passes the blocklist check as \"allowed.\"\n\nAt the OS level, however, connecting to `0.0.0.0` reaches localhost, functionally equivalent to `127.0.0.1`. The same gap applies to the IPv6 unspecified address `::`. As a result, the SSRF protection is bypassed.\n\n### Impact\n\nAn authenticated user with create permission on `directus_files` (file-upload rights) can make the server issue requests to its own localhost via the `/files/import` endpoint. The response body is stored as a downloadable file, making this a full-read SSRF. On bare-metal or single-host deployments, this can rea",
-      "link": "https://github.com/advisories/GHSA-j5h6-vqc3-phqh",
-      "published": "2026-07-20T21:47:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61835"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61740",
-      "title": "LightRAG is Vulnerable to Authentication Bypass: hardcoded DEFAULT_TOKEN_SECRET and public /auth-status defeat LIGHTRAG_API_KEY protection",
-      "summary": "## Summary\n\nWhen LightRAG is deployed with `LIGHTRAG_API_KEY` set but `AUTH_ACCOUNTS` unset (an officially documented \"API-Key authentication\" mode), the `X-API-Key` protection can be bypassed by any remote unauthenticated attacker. The bypass does not require network contact with the victim server \u2014 an attacker can mint a valid guest JWT offline using the hardcoded `DEFAULT_TOKEN_SECRET` committed in the repository and then call any endpoint guarded by `Depends(combined_auth)`, including destructive operations such as `DELETE /documents`, `POST /documents/upload`, `/documents/clear_cache`, and `POST /query`.\n\nThis is distinct from the previously-fixed GHSA-mcww-4hxq-hfr3 / CVE-2026-30762, which only covered the `AUTH_ACCOUNTS`-configured case. The API-Key-only deployment profile is still fully exploitable on current `main` (commit `157c331`, v1.4.15).\n\n## Root cause\n\nThree independent issues combine:\n\n1. `lightrag/api/config.py:54` ships a hardcoded default JWT secret:\n   ```python\n   DEFAULT_TOKEN_SECRET=\"lightr...key!\"\n   ```\n2. `lightrag/api/auth.py:28-38` falls back to `DEFAULT_TOKEN_SECRET` with only a warning log when `AUTH_ACCOUNTS` is not configured. The fix for CVE-2026-30762 only raises when `AUTH_ACCOUNTS` is set, so the API-key-only path is silently vulnerable.\n3. `lightrag/api/lightrag_server.py:1140-1186` exposes `GET /auth-status` and `POST /login` without any authentication dependency. In the API-key-only configuration, `auth_handler.accounts` is empty, and both endpoints unconditionally mint and return a signed guest JWT.\n4. `lightrag/api/utils_api.py:214-216` inside `combined_dependency` short-circuits authorization on any valid guest token when `auth_configured` is false, **before** reaching the `X-API-Key` check on line 237:\n   ```python\n   if not auth_configured and token_info.get(\"role\") == \"guest\":\n       return\n   ```\n\n## Proof of concept (offline-minted token, zero server contact)\n\nTested against a clean install of commit `157c331` running ",
-      "link": "https://github.com/advisories/GHSA-f4vv-55c2-5789",
-      "published": "2026-07-20T21:46:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61740"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59930",
-      "title": "Mistune toc / TableOfContents directive: heading IDs use predictable `toc_N` numbering with no slugification, allowing collision with attacker-controlled `id=\"toc_N\"` content",
-      "summary": "## Summary\n\n**Type:** Predictable identifier generation. The `toc` plugin and `TableOfContents` directive both default to generating heading IDs of the form `toc_1`, `toc_2`, `toc_3`, ... with no input-derived component. An attacker who can place a heading anywhere in the document can predict which `toc_N` ID it will receive, and can inject HTML elsewhere (in a non-heading context) that uses the same `id=\"toc_N\"` to either (a) shadow the legitimate heading anchor, breaking same-page navigation, or (b) collide with CSS or JavaScript that targets `#toc_N` selectors, redirecting click handlers and styling to attacker-chosen content.\n**File:** `src/mistune/toc.py` line 36-37 (`heading_id = lambda token, index: \"toc_\" + str(index + 1)`); `src/mistune/directives/toc.py` line 33 (same default).\n**Root cause:** the default `heading_id` callback ignores the heading's text content and uses only the headings's order in the document. Two documents rendered together (or one document with attacker-influenced headings spliced into trusted content) produce overlapping `toc_N` IDs. Because `id` attribute uniqueness is required by HTML, browsers behaviour on duplicate IDs is undefined; `document.getElementById('toc_1')` returns the first match, `getElementsByTagName + querySelector` semantics differ across paths, and CSS rules targeting `#toc_1` apply to whichever element matches first in tree order.\n\n## Affected Code\n\n**File:** `src/mistune/toc.py`, lines 33-39.\n\n```python\ndef add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n    if heading_id is None:\n        def heading_id(token, index):\n            return \"toc_\" + str(index + 1)               # <-- BUG: index-only ID, no slug derived from heading text\n```\n\n**File:** `src/mistune/directives/toc.py`, lines 32-33.\n\n```python\nclass TableOfContents(DirectivePlugin):\n    def __init__(self, min_level=1, max_level=3):\n        # ...\n\n    def generate_heading_id(self, token, index):\n        return \"toc_\" + str(index + 1)        ",
-      "link": "https://github.com/advisories/GHSA-2hm2-hc3v-44h9",
-      "published": "2026-07-20T21:35:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59930"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54562",
-      "title": "Cloudreve: Non-admin remote download users can SSRF loopback/internal services and read imported responses",
-      "summary": "## Summary\n\nCloudreve's remote download workflow accepts user-supplied URLs and passes them to the configured downloader without blocking loopback, localhost, IPv6 localhost, or redirect-to-loopback targets.\n\nWhen the remote download permission is granted to a non-admin user group, a normal authenticated user can make the server-side downloader fetch internal-only URLs and then read the fetched response after it is imported into the user's own Cloudreve files.\n\nThis does not affect default normal users unless the remote download permission is enabled for their group. However, the permission is a feature-level user-group capability and does not make the user an administrator.\n\n## Attacker requirements\n\nThe attacker must be:\n\n- authenticated\n- non-admin\n- in a user group where `GroupPermissionRemoteDownload` is enabled\n\nDefault normal users are blocked from the affected workflow. In the default install, only the admin group has the remote download permission, while the default `User` group does not.\n\n## Affected endpoint\n\n```http\nPOST /api/v4/workflow/download\n```\n\nFollow-up attacker readback was performed through normal workflow and file APIs:\n\n```http\nGET /api/v4/workflow?category=downloaded...\nGET /api/v4/file?uri=cloudreve://my...\nPOST /api/v4/file/url\n```\n\n## Root cause\n\nThe remote download workflow checks whether the user group has remote download permission, but it does not validate the submitted URL before passing it to the downloader.\n\nRelevant code paths:\n\n- `service/explorer/workflows.go:81`\n- `pkg/filemanager/workflows/remote_download.go:202`\n- `pkg/downloader/aria2/aria2.go:56`\n\nThe application does not block loopback, localhost, IPv6 localhost, or redirect targets resolving to internal addresses.\n\n## Impact\n\nA non-admin user with remote download permission can use Cloudreve as an SSRF primitive to access services reachable from the downloader environment.\n\nIn my test, the attacker could fetch internal loopback URLs and read the response body after Cloudr",
-      "link": "https://github.com/advisories/GHSA-x756-g4x3-c64m",
-      "published": "2026-07-20T21:16:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54562"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54560",
-      "title": "Cloudreve: OAuth access tokens bypass scope enforcement due to missing client_id claim",
-      "summary": "## Summary\n\n  Cloudreve's OAuth access tokens can bypass OAuth scope enforcement.\n\n  This does not appear to be the intended design. The documentation describes OAuth client permissions/scopes, the API\n  has an insufficient-scope error code, and the code comments say `RequiredScopes(...)` should verify scopes when a\n  token has scopes, while skipping checks only for non-scoped session-based authentication.\n\n  However, OAuth access tokens are issued without the OAuth `client_id` claim. Later, the JWT verifier only loads scopes\n  into the request context when `claims.ClientID != \"\"`. Because the OAuth access token has no `client_id`, its scopes\n  are not loaded, and `RequiredScopes(...)` treats the request like a non-scoped first-party/session token and skips\n  scope checks.\n\n  As a result, a low-scope OAuth access token, for example one granted only `openid`, can call APIs requiring higher\n  scopes such as file, share, workflow, user setting, WebDAV account, and potentially admin scopes when the authorizing\n  user is an administrator.\n\n  ## Why this seems unintended\n\n  Cloudreve appears to have an explicit OAuth scope model:\n\n  1. The official docs describe OAuth client permissions/scopes and require the authorization request to include\n  requested scopes.\n  2. The API error code list includes an OAuth insufficient-scope error.\n  3. `RequiredScopes(...)` is used across sensitive API groups such as files, shares, workflows, user settings, WebDAV\n  devices, and admin APIs.\n  4. The middleware comment says scope checks are skipped only when `hasScopes` is false, for example session-based\n  authentication.\n  5. Default OAuth clients created during migration explicitly list scopes such as `Files.Write`, `Workflow.Write`, and\n  `Shares.Write`.\n\n  This suggests the intended design is:\n  - First-party/session tokens may be non-scoped and skip OAuth scope checks.\n  - OAuth access tokens should carry scope metadata and be checked against `RequiredScopes(...)`.\n\n  The current i",
-      "link": "https://github.com/advisories/GHSA-vgj4-345g-jcf8",
-      "published": "2026-07-20T21:15:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54560"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55798",
-      "title": "Pillow: WindowsViewer.get_command() OS command injection via unescaped shell path",
-      "summary": "### 1. Summary\n\n`WindowsViewer.get_command()` constructs a `cmd.exe` shell command by directly embedding a\nfile path into an f-string without escaping. The result is passed to\n`subprocess.Popen(..., shell=True)`. Shell metacharacters in the file path \u2014 most\nimportantly a double-quote (`\"`) that breaks out of the wrapping, followed by `&` \u2014 allow\ninjection of arbitrary `cmd.exe` commands.\n\nThe macOS equivalent (`MacViewer`) correctly applies `shlex.quote()` to the same parameter.\nThe Linux equivalent (`UnixViewer`) does likewise. Windows is the only platform missing this\nprotection, despite `shlex.quote` being **already imported** on line 21 of `ImageShow.py`.\n\n---\n\n### 2. Vulnerable Code\n\n**File:** `src/PIL/ImageShow.py`, lines 133\u2013150\n\n```python\nclass WindowsViewer(Viewer):\n    format = \"PNG\"\n    options = {\"compress_level\": 1, \"save_all\": True}\n\n    def get_command(self, file: str, **options: Any) -> str:\n        return (\n            f'start \"Pillow\" /WAIT \"{file}\" '    # \u2190 f-string, no escaping\n            \"&& ping -n 4 127.0.0.1 >NUL \"\n            f'&& del /f \"{file}\"'                # \u2190 same path, unescaped again\n        )\n\n    def show_file(self, path: str, **options: Any) -> int:\n        if not os.path.exists(path):\n            raise FileNotFoundError\n        subprocess.Popen(\n            self.get_command(path, **options),\n            shell=True,                          # \u2190 shell=True\n            creationflags=getattr(subprocess, \"CREATE_NO_WINDOW\"),\n        )  # nosec                               # \u2190 Bandit warning suppressed manually\n        return 1\n```\n\n**Contrast with macOS \u2014 SAFE (line 164\u2013168):**\n```python\nclass MacViewer(Viewer):\n    def get_command(self, file: str, **options: Any) -> str:\n        command = \"open -a Preview.app\"\n        command = f\"({command} {quote(file)}; sleep 20; rm -f {quote(file)})&\"\n        return command                           # \u2190 shlex.quote() applied\n```\n\n**Cross-platform summary:**\n\n| Platform | Class          | `shlex",
-      "link": "https://github.com/advisories/GHSA-4x4j-2g7c-83w6",
-      "published": "2026-07-20T21:14:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55798"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55514",
-      "title": "vLLM denial of service via prompt embeds on M-RoPE models",
-      "summary": "### Summary\n_Short summary of the problem. Make the impact and severity as clear as possible. For example: An unsafe deserialization vulnerability allows any unauthenticated user to execute arbitrary code on the server._\n\nSending a pure prompt embeds payload in a `/v1/completions` request with a model using M-RoPE causes the EngineCore to fail an assertion and fatally crash, shutting down the entire server application.\n\nAny remote user who is authorized to make a `/v1/completions` endpoint can trivially make such a request and induce a crash.\n\n### Details\n_Give all details on the vulnerability. Pointing to the incriminated source code is very helpful for the maintainer._\n\nIn commit [56669c1](https://github.com/vllm-project/vllm/commit/56669c1f293d5c53b6a19ddf2f78802fa9fff2c2), a simple assert intended to be a type-narrowing assert was added to the `_init_mrope_positions` method in `GPUModelRunner` (the offending line on main at the time of writing: https://github.com/vllm-project/vllm/blob/2d481f8a946ee0521872af0f098674a8ee01ce4a/vllm/v1/worker/gpu_model_runner.py#L1588-L1607).\n\n```python\nassert req_state.prompt_token_ids is not None, (\n            \"M-RoPE requires prompt_token_ids to be available.\"\n        )\n```\n\nThis type narrowing assert is to prevent mypy errors later in the function because `None` is not a valid type for `mrope_model.get_mrope_input_positions`. Unfortunately, this assertion is not always true. `/v1/completions` requests that specify `prompt=None` and `prompt_embeds=<not none>` will indeed create a CachedRequestState where `prompt_token_ids` is `None`. This triggers the assertion, which in turn crashes the EngineCore and the Server application.\n\n```\n(EngineCore pid=351) ERROR 06-11 00:48:03 [core.py:1167]   File \"/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_model_runner.py\", line 3997, in execute_model\n(EngineCore pid=351) ERROR 06-11 00:48:03 [core.py:1167]     deferred_state_corrections_fn = self._update_states(scheduler_output)\n",
-      "link": "https://github.com/advisories/GHSA-33cg-gxv8-3p8g",
-      "published": "2026-07-20T19:13:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55514"
       ],
       "is_zero_day": false,
       "is_high_severity": true
