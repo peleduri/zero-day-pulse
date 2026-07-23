@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-23 01:28 UTC &nbsp;|&nbsp; **Total:** 38 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-23 08:08 UTC &nbsp;|&nbsp; **Total:** 40 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,27 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CISA orders urgent action on actively exploited Langflow RCE flaw
+## 3. 🟠 Zero-Day — Check Point Patches Exploited SmartConsole Flaw Allowing Full Admin Access
+
+**CVE:** `CVE-2026-16232` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-23
+**Reference:** <https://thehackernews.com/2026/07/check-point-patches-exploited.html>
+
+> Check Point has released security updates to address multiple vulnerabilities impacting Security Management and Multi-Domain Management (MDSM) products, including a critical flaw that has come under active exploitation in the wild.
+
+The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentication bypass affecting the Check Point SmartConsole login process that allows an
+
+---
+
+## 4. 🟠 Zero-Day — A project is publishing full analyses of AI-discovered 0-days - first batch of 10 with reproducible exploits
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-07-23
+**Reference:** <https://seclists.org/fulldisclosure/2026/Jul/29>
+
+> Posted by zz lin on Jul 22 I came across a project, &quot;0day Rubbish&quot;, that states it will continuously disclose 0-day vulnerabilities discovered by an AI-driven research process (a multi-LLM ensemble of Claude, OpenAI, DeepSeek and GLM). For each vulnerability the project publishes a full technical analysis together with a working exploit script and step-by-step reproduction instructions. …
+
+---
+
+## 5. 🟠 Zero-Day — CISA orders urgent action on actively exploited Langflow RCE flaw
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-langflow-rce-flaw/>
@@ -31,7 +51,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +60,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +69,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +78,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +87,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +96,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -85,7 +105,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
+## 12. 🟠 Zero-Day — Russian GRU Targeting Western Logistics Entities and Technology Companies
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 12 Ma
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-141a>
@@ -94,28 +114,28 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 12. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 14. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 14. 🟠 Zero-Day — Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication
+## 16. 🟠 Zero-Day — Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication
 
 **CVE:** `CVE-2026-29059` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html>
@@ -128,7 +148,7 @@ The vulnerability in question is CVE-2026-29059 (CVSS score: 7.5), a case of una
 
 ---
 
-## 15. 🟡 High Severity — Eclipse Jetty: DoS attack triggering OutOfMemory with 100-Continue requests
+## 17. 🟡 High Severity — Eclipse Jetty: DoS attack triggering OutOfMemory with 100-Continue requests
 
 **CVE:** `CVE-2024-7708` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-9299-c6m4-mjhc>
@@ -145,7 +165,7 @@ This is particularly the case for 100-Continue, but any request where the networ
 
 ---
 
-## 16. 🟡 High Severity — Eclipse Jetty: Path parameter traversal
+## 18. 🟡 High Severity — Eclipse Jetty: Path parameter traversal
 
 **CVE:** `CVE-2026-8384` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-w7x5-g22v-xqhr>
@@ -169,7 +189,7 @@ instead of the expected …
 
 ---
 
-## 17. 🟡 High Severity — Eclipse Jetty: HTTP Authority/Host mismatch
+## 19. 🟡 High Severity — Eclipse Jetty: HTTP Authority/Host mismatch
 
 **CVE:** `CVE-2026-6790` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-7p3p-8qv8-m2vh>
@@ -188,7 +208,7 @@ This creates a host/authority …
 
 ---
 
-## 18. 🟡 High Severity — n8n: Custom Header Credential Values Leaked in Plaintext into LLM Node Execution Data
+## 20. 🟡 High Severity — n8n: Custom Header Credential Values Leaked in Plaintext into LLM Node Execution Data
 
 **CVE:** `CVE-2026-65589` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-89gh-3pgc-v5h2>
@@ -200,7 +220,7 @@ Becaus…
 
 ---
 
-## 19. 🟡 High Severity — Dompdf: Uncontrolled resource consumption based on declared BMP dimensions
+## 21. 🟡 High Severity — Dompdf: Uncontrolled resource consumption based on declared BMP dimensions
 
 **CVE:** `CVE-2026-59941` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-8hg6-c449-896m>
@@ -213,7 +233,7 @@ A payload…
 
 ---
 
-## 20. 🟡 High Severity — LiteLLM: Custom Code Guardrails production endpoints bypass code safety checks
+## 22. 🟡 High Severity — LiteLLM: Custom Code Guardrails production endpoints bypass code safety checks
 
 **CVE:** `CVE-2026-59821` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-72m8-9m7m-h278>
@@ -226,7 +246,7 @@ A privileged user with access to create or update guardrails could submit custom
 
 ---
 
-## 21. 🟡 High Severity — LiteLLM: MCP Authentication Bypass via OAuth2 Passthrough Fallback
+## 23. 🟡 High Severity — LiteLLM: MCP Authentication Bypass via OAuth2 Passthrough Fallback
 
 **CVE:** `CVE-2026-59822` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-7488-6r32-c95q>
@@ -239,7 +259,7 @@ The MCP auth handler supported OAuth2 passthrough for upstream MCP servers, but 
 
 ---
 
-## 22. 🟡 High Severity — LiteLLM: Local file read via request-supplied OIDC file references
+## 24. 🟡 High Severity — LiteLLM: Local file read via request-supplied OIDC file references
 
 **CVE:** `CVE-2026-59819` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-4g5m-c9r5-49xf>
@@ -252,7 +272,7 @@ Because exploitation requires privileged proxy access, this is trea…
 
 ---
 
-## 23. 🟡 High Severity — n8n: Member-Level Users Can Execute Other Users' MCP Server Trigger Workflows via Missing OAuth Authorization Check
+## 25. 🟡 High Severity — n8n: Member-Level Users Can Execute Other Users' MCP Server Trigger Workflows via Missing OAuth Authorization Check
 
 **CVE:** `CVE-2026-65594` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-q5xf-xhwf-cwqf>
@@ -264,7 +284,7 @@ The workflow runs in the owner&#x…
 
 ---
 
-## 24. 🟡 High Severity — n8n: External Secrets Accessible via Workflow Expressions Outside Credentials
+## 26. 🟡 High Severity — n8n: External Secrets Accessible via Workflow Expressions Outside Credentials
 
 **CVE:** `CVE-2026-59254` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-2434-3x6q-8r99>
@@ -276,7 +296,7 @@ This issue only affects instances with the external secrets feature configur…
 
 ---
 
-## 25. 🟡 High Severity — n8n: External Secrets Permission Bypass via Expression Parser Mismatch
+## 27. 🟡 High Severity — n8n: External Secrets Permission Bypass via Expression Parser Mismatch
 
 **CVE:** `CVE-2026-59259` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-jp7m-xcgx-57qm>
@@ -286,7 +306,7 @@ Due to a mismatch between the static validation check and the runtime expression
 
 ---
 
-## 26. 🟡 High Severity — n8n: SSO Instance-Role Provisioning Allows Privilege Escalation to Instance Owner
+## 28. 🟡 High Severity — n8n: SSO Instance-Role Provisioning Allows Privilege Escalation to Instance Owner
 
 **CVE:** `CVE-2026-65016` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-35q8-9mj6-wjmf>
@@ -296,7 +316,7 @@ n8n&#x27;s Enterprise SSO instance-role provisioning maps a role claim asserted 
 
 ---
 
-## 27. 🟡 High Severity — n8n: Authenticated SSRF via Dynamic Node Parameters Endpoints Allows Internal Network Access
+## 29. 🟡 High Severity — n8n: Authenticated SSRF via Dynamic Node Parameters Endpoints Allows Internal Network Access
 
 **CVE:** `CVE-2026-65593` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-9w78-79q7-r4fp>
@@ -309,7 +329,7 @@ By supplying an absolute URL in the routing configuration, a caller could overri
 
 ---
 
-## 28. 🟡 High Severity — n8n: Privilege Escalation and Code Execution via Full Public API Key Scope Assignment to Token Exchange JWTs
+## 30. 🟡 High Severity — n8n: Privilege Escalation and Code Execution via Full Public API Key Scope Assignment to Token Exchange JWTs
 
 **CVE:** `CVE-2026-65595` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-777w-rpr6-c52h>
@@ -322,7 +342,7 @@ Th…
 
 ---
 
-## 29. 🟡 High Severity — n8n: "Allowed HTTP Request Domains" Restriction Bypass via AI Agents MCP Connector
+## 31. 🟡 High Severity — n8n: "Allowed HTTP Request Domains" Restriction Bypass via AI Agents MCP Connector
 
 **CVE:** `CVE-2026-59207` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-h44j-f5r5-ph73>
@@ -334,7 +354,7 @@ This issue only affects instances whe…
 
 ---
 
-## 30. 🟡 High Severity — n8n: Shared Credential Header Leak via HTTP Request Pagination Expression
+## 32. 🟡 High Severity — n8n: Shared Credential Header Leak via HTTP Request Pagination Expression
 
 **CVE:** `CVE-2026-59209` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-q3j5-8vrg-4p9q>
@@ -344,7 +364,7 @@ An authenticated member with use-only editor access to a shared workflow could r
 
 ---
 
-## 31. 🟡 High Severity — Dompdf: Local file read due to improper file path validation in SVG images encoded as data-URI
+## 33. 🟡 High Severity — Dompdf: Local file read due to improper file path validation in SVG images encoded as data-URI
 
 **CVE:** `CVE-2026-56722` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-cx96-42px-69fm>
@@ -358,7 +378,7 @@ dompdf restricts access to local files using the …
 
 ---
 
-## 32. 🟡 High Severity — Dompdf: File existence oracle via font-face stylesheet declaration
+## 34. 🟡 High Severity — Dompdf: File existence oracle via font-face stylesheet declaration
 
 **CVE:** `CVE-2026-55555` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-7x2p-4jvh-6384>
@@ -373,7 +393,7 @@ The critical point of this flaw is the discrepancy in system behavior:
 
 ---
 
-## 33. 🟡 High Severity — Dompdf: Chroot Validation Bypass
+## 35. 🟡 High Severity — Dompdf: Chroot Validation Bypass
 
 **CVE:** `CVE-2026-55554` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-wvh6-f5jh-8gw4>
@@ -388,7 +408,7 @@ The `validateLocalUri()` method is used to check if a local fil…
 
 ---
 
-## 34. 🟡 High Severity — Ubuntu snap-confine Flaw Could Give Local Users Root on Default Desktop Installs
+## 36. 🟡 High Severity — Ubuntu snap-confine Flaw Could Give Local Users Root on Default Desktop Installs
 
 **CVE:** `CVE-2026-8933` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://thehackernews.com/2026/07/ubuntu-snap-confine-flaw-could-give.html>
@@ -399,7 +419,7 @@ The high-severity flaw, tracked as CVE-2026-8933 (CVSS score: 7.8), impacts defa
 
 ---
 
-## 35. 🟡 High Severity — n8n: Race Condition in Git Clone Node Allows Authenticated Users to Achieve Remote Code Execution
+## 37. 🟡 High Severity — n8n: Race Condition in Git Clone Node Allows Authenticated Users to Achieve Remote Code Execution
 
 **CVE:** `CVE-2026-65598` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-g3r5-9h93-4j2c>
@@ -409,7 +429,7 @@ A TOCTOU race condition in the Git node&#x27;s `clone` operation lets an authent
 
 ---
 
-## 36. 🟡 High Severity — n8n: AI Agents Project Viewer Privilege Escalation via run_node_tool
+## 38. 🟡 High Severity — n8n: AI Agents Project Viewer Privilege Escalation via run_node_tool
 
 **CVE:** `CVE-2026-65015` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://github.com/advisories/GHSA-x5vx-c2c8-m3w9>
@@ -419,7 +439,7 @@ In n8n&#x27;s AI Agents feature, a user with the read-only Project Viewer role c
 
 ---
 
-## 37. 🟡 High Severity — Adobe Acrobat Extension Flaw Let Malicious Sites Read WhatsApp Web Data
+## 39. 🟡 High Severity — Adobe Acrobat Extension Flaw Let Malicious Sites Read WhatsApp Web Data
 
 **CVE:** `CVE-2026-48294` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-22
 **Reference:** <https://thehackernews.com/2026/07/adobe-acrobat-extension-flaw-let.html>
@@ -430,7 +450,7 @@ The shortcoming has been codenamed HermeticReader by Guardio Labs. It&#x27;s off
 
 ---
 
-## 38. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 40. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

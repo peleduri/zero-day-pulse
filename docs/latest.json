@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-23T01:28:34.947329+00:00",
-  "total": 38,
+  "generated": "2026-07-23T08:08:08.545357+00:00",
+  "total": 40,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,38 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/check-point-patches-exploited.html",
+      "title": "Check Point Patches Exploited SmartConsole Flaw Allowing Full Admin Access",
+      "summary": "Check Point has released security updates to address multiple vulnerabilities impacting Security Management and Multi-Domain Management (MDSM) products, including a critical flaw that has come under active exploitation in the wild.\n\nThe security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentication bypass affecting the Check Point SmartConsole login process that allows an",
+      "link": "https://thehackernews.com/2026/07/check-point-patches-exploited.html",
+      "published": "2026-07-23T06:34:36+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-16232"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Jul/29",
+      "title": "A project is publishing full analyses of AI-discovered 0-days - first batch of 10 with reproducible exploits",
+      "summary": "Posted by zz lin on Jul 22 I came across a project, \"0day Rubbish\", that states it will continuously disclose 0-day vulnerabilities discovered by an AI-driven research process (a multi-LLM ensemble of Claude, OpenAI, DeepSeek and GLM). For each vulnerability the project publishes a full technical analysis together with a working exploit script and step-by-step reproduction instructions. The project's content is hosted at: https://0day-rubbish.com/blog ...",
+      "link": "https://seclists.org/fulldisclosure/2026/Jul/29",
+      "published": "2026-07-23T02:03:35+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
