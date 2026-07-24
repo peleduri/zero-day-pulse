@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-24 01:25 UTC &nbsp;|&nbsp; **Total:** 22 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-24 08:04 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -57,27 +57,7 @@ The danger was
 
 ---
 
-## 6. 🟠 Zero-Day — Check Point Patches Exploited SmartConsole Flaw Allowing Full Admin Access
-
-**CVE:** `CVE-2026-16232` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-23
-**Reference:** <https://thehackernews.com/2026/07/check-point-patches-exploited.html>
-
-> Check Point has released security updates to address multiple vulnerabilities impacting Security Management and Multi-Domain Management (MDSM) products, including a critical flaw that has come under active exploitation in the wild.
-
-The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentication bypass affecting the Check Point SmartConsole login process that allows an
-
----
-
-## 7. 🟠 Zero-Day — A project is publishing full analyses of AI-discovered 0-days - first batch of 10 with reproducible exploits
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-07-23
-**Reference:** <https://seclists.org/fulldisclosure/2026/Jul/29>
-
-> Posted by zz lin on Jul 22 I came across a project, &quot;0day Rubbish&quot;, that states it will continuously disclose 0-day vulnerabilities discovered by an AI-driven research process (a multi-LLM ensemble of Claude, OpenAI, DeepSeek and GLM). For each vulnerability the project publishes a full technical analysis together with a working exploit script and step-by-step reproduction instructions. …
-
----
-
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -86,7 +66,7 @@ The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -95,7 +75,7 @@ The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -104,7 +84,7 @@ The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -113,7 +93,7 @@ The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -122,7 +102,7 @@ The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -131,7 +111,7 @@ The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -140,28 +120,28 @@ The security flaw, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 15. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 16. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 14. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 17. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 18. 🟠 Zero-Day — Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes
+## 16. 🟠 Zero-Day — Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-23
 **Reference:** <https://thehackernews.com/2026/07/russian-espionage-group-exploited.html>
@@ -174,7 +154,7 @@ The NSA, CISA and partner agencies p…
 
 ---
 
-## 19. 🟠 Zero-Day — Russian hackers exploit Zimbra zero-click flaw for email theft
+## 17. 🟠 Zero-Day — Russian hackers exploit Zimbra zero-click flaw for email theft
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-zimbra-zero-click-flaw-for-email-theft/>
@@ -183,7 +163,16 @@ The NSA, CISA and partner agencies p…
 
 ---
 
-## 20. 🟠 Zero-Day — Check Point warns of SmartConsole zero-day exploited in attacks
+## 18. 🟠 Zero-Day — New Check Point Zero-Day Vulnerability Exploited in the Wild
+
+**CVE:** `CVE-2026-16232` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-23
+**Reference:** <https://www.securityweek.com/new-check-point-zero-day-vulnerability-exploited-in-the-wild/>
+
+> The vulnerability tracked as CVE-2026-16232 has been exploited against customers with certain configurations. The post New Check Point Zero-Day Vulnerability Exploited in the Wild appeared first on SecurityWeek .
+
+---
+
+## 19. 🟠 Zero-Day — Check Point warns of SmartConsole zero-day exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/check-point-patches-smartconsole-zero-day-exploited-in-attacks/>
@@ -192,7 +181,7 @@ The NSA, CISA and partner agencies p…
 
 ---
 
-## 21. 🟡 High Severity — PHPSpreadsheet: SSRF bypass via HTTP redirect in WEBSERVICE() domain whitelist
+## 20. 🟡 High Severity — PHPSpreadsheet: SSRF bypass via HTTP redirect in WEBSERVICE() domain whitelist
 
 **CVE:** `CVE-2026-59931` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-23
 **Reference:** <https://github.com/advisories/GHSA-6hq5-7373-42rg>
@@ -203,7 +192,7 @@ The domain whitelist introduced in PhpSpreadsheet 5.4.0 for the `WEBSERVICE()` f
 
 ---
 
-## 22. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
