@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-24 08:04 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-24 13:13 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,20 @@
 
 ---
 
-## 3. 🟠 Zero-Day — ThreatsDay: Android Spyware, PLC Attacks, AI Image Prompt Injection + 12 More Stories
+## 3. 🟠 Zero-Day — Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-24
+**Reference:** <https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html>
+
+> Redis shipped seven security releases on July 23 after researchers published authenticated RCE PoCs for stock Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0.
+
+All four chains require RESTORE. The Streams chains also need EVAL and XGROUP; the 8.8.0 chain needs EVAL and the bundled RedisBloom module. Redis says the underlying memory flaws may lead to remote code execution.
+
+Redis 6.2.23, 7.2.15, and 7.4.10
+
+---
+
+## 4. 🟠 Zero-Day — ThreatsDay: Android Spyware, PLC Attacks, AI Image Prompt Injection + 12 More Stories
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-23
 **Reference:** <https://thehackernews.com/2026/07/threatsday-android-spyware-plc-attacks.html>
@@ -39,25 +52,7 @@ The danger was
 
 ---
 
-## 4. 🟠 Zero-Day — What Happened Between OpenAI and Hugging Face?
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-23
-**Reference:** <https://www.rapid7.com/blog/post/ai-openai-hugging-face-what-happened>
-
-> The OpenAI and Hugging Face incident lands like a warning shot for anyone thinking seriously about frontier AI and cybersecurity research. A model evaluation crossed the neat boundary of a research environment, reached a live third-party production system, and forced the industry to confront a question that is moving quickly from theory to operations: what happens when AI agents can pursue an obje…
-
----
-
-## 5. 🟠 Zero-Day — CVE-2026-16232: Critical Check Point SmartConsole Authentication Bypass Exploited in the Wild
-
-**CVE:** `CVE-2026-16232` | `CVE-2026-62144` | `CVE-2026-62145` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-23
-**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-16232-critical-check-point-smartconsole-authentication-bypass-exploited-in-the-wild>
-
-> Overview On July 22, 2026, Check Point published a security advisory for multiple vulnerabilities affecting Security Management, Multi-Domain Management, and firewall products. The most urgent of these is CVE-2026-16232 , an authentication bypass in the SmartConsole login process classified as improper authentication ( CWE-287 ). CVE-2026-16232 has been assigned a critical CVSS score of 9.1. The v…
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -66,7 +61,7 @@ The danger was
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -75,7 +70,7 @@ The danger was
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -84,7 +79,7 @@ The danger was
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -93,7 +88,7 @@ The danger was
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -102,7 +97,7 @@ The danger was
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -111,7 +106,7 @@ The danger was
 
 ---
 
-## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -120,28 +115,28 @@ The danger was
 
 ---
 
-## 13. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 12. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 14. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 13. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 14. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 16. 🟠 Zero-Day — Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes
+## 15. 🟠 Zero-Day — Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-23
 **Reference:** <https://thehackernews.com/2026/07/russian-espionage-group-exploited.html>
@@ -154,7 +149,7 @@ The NSA, CISA and partner agencies p…
 
 ---
 
-## 17. 🟠 Zero-Day — Russian hackers exploit Zimbra zero-click flaw for email theft
+## 16. 🟠 Zero-Day — Russian hackers exploit Zimbra zero-click flaw for email theft
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-zimbra-zero-click-flaw-for-email-theft/>
@@ -163,36 +158,18 @@ The NSA, CISA and partner agencies p…
 
 ---
 
-## 18. 🟠 Zero-Day — New Check Point Zero-Day Vulnerability Exploited in the Wild
+## 17. 🟡 High Severity — Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft's Servers
 
-**CVE:** `CVE-2026-16232` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-23
-**Reference:** <https://www.securityweek.com/new-check-point-zero-day-vulnerability-exploited-in-the-wild/>
+**CVE:** `CVE-2026-32194` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-24
+**Reference:** <https://thehackernews.com/2026/07/bing-images-flaws-let-crafted-svgs-run.html>
 
-> The vulnerability tracked as CVE-2026-16232 has been exploited against customers with certain configurations. The post New Check Point Zero-Day Vulnerability Exploited in the Wild appeared first on SecurityWeek .
+> A crafted SVG submitted to Bing&#x27;s image search ran commands as NT AUTHORITY\SYSTEM on Microsoft&#x27;s production image-processing workers, and as root on the Linux machines in the same fleet.
 
----
-
-## 19. 🟠 Zero-Day — Check Point warns of SmartConsole zero-day exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-23
-**Reference:** <https://www.bleepingcomputer.com/news/security/check-point-patches-smartconsole-zero-day-exploited-in-attacks/>
-
-> Israeli cybersecurity firm Check Point Software has addressed an actively exploited zero-day flaw in the company&#x27;s SmartConsole graphical user interface (GUI) admin panel. [...]
+XBOW&#x27;s testing got the same result on workers across different hosts and network ranges, so the problem sat in Bing&#x27;s image tier, not on one bad machine. Microsoft issued two critical CVEs, C…
 
 ---
 
-## 20. 🟡 High Severity — PHPSpreadsheet: SSRF bypass via HTTP redirect in WEBSERVICE() domain whitelist
-
-**CVE:** `CVE-2026-59931` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-23
-**Reference:** <https://github.com/advisories/GHSA-6hq5-7373-42rg>
-
-> ### Summary
-
-The domain whitelist introduced in PhpSpreadsheet 5.4.0 for the `WEBSERVICE()` formula function can be bypassed via HTTP redirect. The whitelist validates only the initial URL&#x27;s hostname, but `file_get_contents()` follows 302/301 redirects by default without re-validating the redirect target against the whitelist. This allows an attacker to reach internal services through a white…
-
----
-
-## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
