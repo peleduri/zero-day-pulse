@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-25 12:55 UTC &nbsp;|&nbsp; **Total:** 35 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-25 18:46 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — OmniFaces: Forged combined-resource IDs and related output/push boundaries
+## 3. 🟠 Zero-Day — Fastjson 1.x RCE Vulnerability Targeted in Attacks With No Patched Available
+
+**CVE:** `CVE-2026-16723` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-25
+**Reference:** <https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html>
+
+> Security firms ThreatBook and Imperva say attackers are targeting a critical flaw in Fastjson, Alibaba&#x27;s JSON library for Java. In affected Spring Boot applications, a malicious JSON request can execute code without authentication, with the privileges of the Java process.
+
+Tracked as CVE-2026-16723, the vulnerability carries an Alibaba-assigned CVSS score of 9.0. The confirmed chain requires
+
+---
+
+## 4. 🟠 Zero-Day — OmniFaces: Forged combined-resource IDs and related output/push boundaries
 
 **CVE:** `CVE-2026-41883` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-fp43-vj7g-pg92>
@@ -36,7 +47,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -45,7 +56,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -54,7 +65,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -63,7 +74,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -72,7 +83,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -81,7 +92,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -90,7 +101,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -99,28 +110,28 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 11. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 12. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 12. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 13. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 14. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 14. 🟠 Zero-Day — Shescape: Quadratic-time denial of service in the flag-protection
+## 15. 🟠 Zero-Day — Shescape: Quadratic-time denial of service in the flag-protection
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-gm3r-q2wp-hw87>
@@ -142,7 +153,7 @@ const options = {
 
 ---
 
-## 15. 🟠 Zero-Day — Shescape: Home-directory disclosure in assignment context on Unix with Dash
+## 16. 🟠 Zero-Day — Shescape: Home-directory disclosure in assignment context on Unix with Dash
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-q53c-4prm-w95q>
@@ -157,7 +168,7 @@ An attacker may be able to obtain the location of the home directory and, depend
 
 ---
 
-## 16. 🟠 Zero-Day — Shescape: Shell injection via unescaped parentheses on Windows with CMD
+## 17. 🟠 Zero-Day — Shescape: Shell injection via unescaped parentheses on Windows with CMD
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-w4hw-qcx7-56pr>
@@ -173,15 +184,6 @@ import * as cp from &quot;node:child_process&quot;;
 import { Shescape } from &quot;shescape&quot;;
 
 // 1. Prerequisit…
-
----
-
-## 17. 🟠 Zero-Day — Claude Code: Sandbox Escape via Git Worktree Path Confusion Allows Unsandboxed Code Execution
-
-**CVE:** `CVE-2026-55607` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://github.com/advisories/GHSA-7835-87q9-rgvv>
-
-> Claude Code&#x27;s worktree handling allowed creation of worktrees named &quot;.git&quot; and navigation to worktrees outside the sandbox context, enabling git directory confusion attacks. By exploiting symlink manipulation and git fsmonitor execution during worktree operations, an attacker could overwrite files in the user&#x27;s home directory (such as .zshenv), leading to code execution outside…
 
 ---
 
@@ -317,86 +319,7 @@ If the `--write-link`, `--write-url-link` or `--write-desktop-link` options are 
 
 ---
 
-## 29. 🟡 High Severity — Open WebUI: /api/v1/channels/{id}/members exposes full user model including sensitive credentials
-
-**CVE:** `CVE-2026-59222` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://github.com/advisories/GHSA-gh7p-78x6-jw6m>
-
-> ### Summary
-
-The channel members endpoint serializes and returns **full user models** for channel participants, including settings objects. A normal user in a DM can retrieve admin-only sensitive configuration such as webhook URLs and tool server key material (`settings.ui.toolServers[].key`), which is not available via standard user info APIs.
-
-### Details
-
-The endpoint GET `/api/v1/channels/{id}…
-
----
-
-## 30. 🟡 High Severity — Open WebUI: Cross-user model-list exposure via static cache key in get_all_models (aiocache key= vs key_builder= misuse)
-
-**CVE:** `CVE-2026-59213` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://github.com/advisories/GHSA-3wp3-xxj9-5jqq>
-
-> ## Summary
-
-The `get_all_models` handlers in `routers/openai.py` and `routers/ollama.py` intended to cache their **permission-filtered** model lists per user, but the `@cached` decorator was misconfigured: it passed a `key=` lambda instead of `key_builder=`. In aiocache 0.12.3 (the pinned version), `key=` is a **static** cache key — a callable passed there is used as a constant object, not invoked…
-
----
-
-## 31. 🟡 High Severity — Open WebUI: Cross-user code-interpreter and tool execution via unvalidated Socket.IO event-caller session_id
-
-**CVE:** `CVE-2026-59216` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://github.com/advisories/GHSA-74h3-cxq7-vc5q>
-
-> ## Summary
-
-An authenticated low-privilege user can execute arbitrary code-interpreter Python and tools inside **another** user&#x27;s authenticated session. The Socket.IO event-caller (`get_event_call`) delivers `execute:python` / `execute:tool` events to a **client-supplied** `session_id` after only checking that the session is connected, never that it belongs to the requester. Combined with `yd…
-
----
-
-## 32. 🟡 High Severity — Open WebUI: Unauthenticated WebSocket Access to Collaborative Document Handlers (ydoc:awareness:update, ydoc:document:leave)
-
-**CVE:** `CVE-2026-59715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://github.com/advisories/GHSA-gmfw-g93r-vg53>
-
-> ## Summary
-
-The Socket.IO server is configured with `always_connect=True` (lines 78, 91 in `backend/open_webui/socket/main.py`) and the `connect` handler (line 329) never rejects unauthenticated connections. Two Ydoc event handlers have zero authentication checks, allowing unauthenticated clients to interact with collaborative document sessions.
-
-## Vulnerable Code
-
-### `ydoc:awareness:update` (li…
-
----
-
-## 33. 🟡 High Severity — Open WebUI: Stored web worker XSS via Pyodide
-
-**CVE:** `CVE-2026-59214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://github.com/advisories/GHSA-4r2p-27mh-5m22>
-
-> **Title:** Same-origin Pyodide code execution allows server-side RCE via a shared chat
-
-### Summary
-
-Open WebUI runs client-side Python (Pyodide) in a same-origin web worker. Through Pyodide&#x27;s JavaScript API (`pyodide.http.pyfetch`, or the `js` module which exposes the page&#x27;s `fetch` / `XMLHttpRequest`) executed Python can issue requests on the application origin, and those requests carr…
-
----
-
-## 34. 🟡 High Severity — Russh: Pre-auth remote panic via all-zero Curve25519 peer public value (encode_mpint OOB)
-
-**CVE:** `CVE-2023-28113` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://github.com/advisories/GHSA-5xvq-cp9x-6p6r>
-
-> A pre-authentication denial-of-service panic in `russh` 0.62.2 (commit
-`c4be19f1915c8682f4615c3fd50008512b474491`, current default branch `main` as
-of 2026-07-22). An unauthenticated client sends a single `SSH_MSG_KEX_ECDH_INIT`
-whose `Q_C` is 32 zero bytes. russh&#x27;s Curve25519 KEX does not reject the
-all-zero peer public value, so `server_dh()` computes the all-zero shared
-secret and `compute…
-
----
-
-## 35. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

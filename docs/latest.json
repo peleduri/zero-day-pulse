@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-25T12:55:55.576331+00:00",
-  "total": 35,
+  "generated": "2026-07-25T18:46:47.422043+00:00",
+  "total": 29,
   "kev": 0,
   "zero_day": 17,
   "enriched": 0,
@@ -33,6 +33,23 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html",
+      "title": "Fastjson 1.x RCE Vulnerability Targeted in Attacks With No Patched Available",
+      "summary": "Security firms ThreatBook and Imperva say attackers are targeting a critical flaw in Fastjson, Alibaba's JSON library for Java. In affected Spring Boot applications, a malicious JSON request can execute code without authentication, with the privileges of the Java process.\n\nTracked as CVE-2026-16723, the vulnerability carries an Alibaba-assigned CVSS score of 9.0. The confirmed chain requires",
+      "link": "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html",
+      "published": "2026-07-25T12:52:43+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-16723"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -264,24 +281,6 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-55607",
-      "title": "Claude Code: Sandbox Escape via Git Worktree Path Confusion Allows Unsandboxed Code Execution",
-      "summary": "Claude Code's worktree handling allowed creation of worktrees named \".git\" and navigation to worktrees outside the sandbox context, enabling git directory confusion attacks. By exploiting symlink manipulation and git fsmonitor execution during worktree operations, an attacker could overwrite files in the user's home directory (such as .zshenv), leading to code execution outside of seatbelt sandbox restrictions. Reliably exploiting this required the user to clone a malicious repository containing prompt injection content and run Claude Code against it.\n\nUsers on standard Claude Code auto-update have received this fix automatically. Users performing manual updates are advised to update to the latest version.\n\nThank you to hackerone.com/metnew for reporting this issue.",
-      "link": "https://github.com/advisories/GHSA-7835-87q9-rgvv",
-      "published": "2026-07-24T16:54:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55607"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "CVE-2026-16796",
       "title": "AWS Bedrock AgentCore: Improper neutralization of argument delimiters in the Python SDK install_packages()",
       "summary": "### Summary\n\nThe AWS Bedrock AgentCore Python SDK (bedrock-agentcore) provides tools for building AI agents, including a Code Interpreter client that installs Python packages into a managed sandbox. An issue exists where, under certain circumstances, improper neutralization of argument delimiters in the install_packages() method allows a remote authenticated user to execute arbitrary commands within the Code Interpreter sandbox via crafted package name arguments.\n\n### Impact\nInsufficient input validation in install_packages() allows specially crafted package specifiers to bypass validation and achieve arbitrary command execution within the sandbox. A remote authenticated user who can influence the arguments to install_packages() can execute arbitrary commands within the Code Interpreter sandbox environment.\n\n### Impacted Versions\n< 1.18.1\n\n### Patches\nThis issue has been addressed in bedrock-agentcore version 1.18.1. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n### Workarounds\nIf you are not able to upgrade, do not pass untrusted or model-generated input to install_packages(). Applications that must accept dynamic package names should validate them against strict PyPI naming rules -- including constraining any extras group to comma-separated identifiers -- before calling the SDK.\n\n### References\nIf you have any questions or comments about this advisory, AWS asks that you contact AWS Security via the [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\n### Acknowledgement\n\nAWS would like to thank Sergio Garcia (@MrCloudSec) for collaborating on this issue through the coordinated issue disclosure process.",
@@ -475,114 +474,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55404"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59222",
-      "title": "Open WebUI: /api/v1/channels/{id}/members exposes full user model including sensitive credentials",
-      "summary": "### Summary\n\nThe channel members endpoint serializes and returns **full user models** for channel participants, including settings objects. A normal user in a DM can retrieve admin-only sensitive configuration such as webhook URLs and tool server key material (`settings.ui.toolServers[].key`), which is not available via standard user info APIs.\n\n### Details\n\nThe endpoint GET `/api/v1/channels/{id}/members` returns the full serialized user model for every member in the channel. In both the DM and non-DM code paths, the handler constructs the response with `[UserModelResponse(**user.model_dump(), is_active=...)]` and returns it as the users list. Because `UserModel` (`models/users.py`) includes a settings object (`UserSettings`) and arbitrary UI configuration (`settings.ui`), the endpoint exposes other users' sensitive configuration to any channel participant.\n\nPractically, a regular user who participates in a DM or group can call `/api/v1/channels/{id}/members` and receive other members' settings, including admin-only details such as webhook notification URLs and tool server configuration, including credential fields like `settings.ui.toolServers[].key`. These values are not returned by the normal user profile endpoints (e.g., `/api/v1/users/{user_id}/info`).\n\n### PoC\n\n1. Start a local Open WebUI instance\n2. Log in as admin and in the Admin Panel, go to Settings -> General and check *Channels (Beta)*, then press Save.\n3. Create a low-privilege user in the Users tab\n4. Click on the admin's profile bottom left, Settings and Integrations. Then click the `+` after *Manage Tool Servers* to add some tool server with a secret Bearer token (eg. `KEY`)\n5. Log in as the attacker with the low-privilege account and create a new Direct Message channel with the admin user:\n\n<img width=\"690\" height=\"383\" alt=\"image\" src=\"https://github.com/user-attachments/assets/70208661-a0db-4457-9984-119056ca3daf\" />\n\n7. After creating, open DevTools with F12 and go to the Network tab. Then in t",
-      "link": "https://github.com/advisories/GHSA-gh7p-78x6-jw6m",
-      "published": "2026-07-24T17:04:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59222"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59213",
-      "title": "Open WebUI: Cross-user model-list exposure via static cache key in get_all_models (aiocache key= vs key_builder= misuse)",
-      "summary": "## Summary\n\nThe `get_all_models` handlers in `routers/openai.py` and `routers/ollama.py` intended to cache their **permission-filtered** model lists per user, but the `@cached` decorator was misconfigured: it passed a `key=` lambda instead of `key_builder=`. In aiocache 0.12.3 (the pinned version), `key=` is a **static** cache key \u2014 a callable passed there is used as a constant object, not invoked per call. As a result the per-user key was never computed, and all callers collided onto a single shared cache entry within the TTL window. During that window, one user's permission-filtered model list could be served to a different authenticated user, crossing the per-user authorization boundary.\n\n## Impact\n\n- **Boundary crossed:** Confidentiality (cross-user). A caller can receive the model list scoped to a *different* security principal than themselves.\n- A user (or admin, or \u2014 depending on endpoint reachability \u2014 anonymous caller) who populates the cache causes the next caller within the TTL to receive *that* list rather than their own permission-filtered one.\n- What's disclosed is the set of models another principal can access, including potentially the existence and naming of models restricted from the receiving user.\n- Exposure is **incidental and timing-dependent**, not attacker-controlled: the leaked entry is whatever the most recent caller populated within `MODELS_CACHE_TTL` (default 1 second), and the attacker cannot select the victim or force a target's list into the cache.\n\n## Affected component\n\n- `backend/open_webui/routers/openai.py` \u2014 `get_all_models` (~line 488)\n- `backend/open_webui/routers/ollama.py` \u2014 `get_all_models` (~line 302)\n\nBoth decorated with `@cached(ttl=MODELS_CACHE_TTL, key=lambda ...)`. No other `@cached(... key=lambda ...)` misuse was found elsewhere in the backend.\n\n## Root cause\n\naiocache 0.12's `@cached` treats `key=` as a static key; the per-call hook is `key_builder=` with signature `key_builder(func, *args, **kwargs)`. Passing a call",
-      "link": "https://github.com/advisories/GHSA-3wp3-xxj9-5jqq",
-      "published": "2026-07-24T17:03:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59213"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59216",
-      "title": "Open WebUI: Cross-user code-interpreter and tool execution via unvalidated Socket.IO event-caller session_id",
-      "summary": "## Summary\n\nAn authenticated low-privilege user can execute arbitrary code-interpreter Python and tools inside **another** user's authenticated session. The Socket.IO event-caller (`get_event_call`) delivers `execute:python` / `execute:tool` events to a **client-supplied** `session_id` after only checking that the session is connected, never that it belongs to the requester. Combined with `ydoc:document:join`, which exposes the live socket ids of everyone in a shared note's collaboration room to any read-access participant, an attacker can target a victim's session and run attacker-chosen code/tools in the victim's browser context. When the victim is an administrator, that hijacked context reaches the admin-only Functions API, whose source is executed server-side, yielding remote code execution as the server process (root in the default container).\n\n## Affected component\n\n- `backend/open_webui/socket/main.py` \u2014 `get_event_call()` / `__event_caller__`\n- `backend/open_webui/main.py` \u2014 chat-completion metadata (`session_id` taken from the request body)\n\n## Root cause\n\nThe event-caller routes to a caller-controlled session id with no ownership check:\n\n```python\n# backend/open_webui/socket/main.py \u2014 get_event_call()\nasync def __event_caller__(event_data):\n    session_id = request_info['session_id']\n    if session_id not in SESSION_POOL:                 # only checks the session is connected\n        return {'error': 'Client session disconnected.'}\n    return await sio.call('events', {...}, to=session_id, ...)   # delivered to that sid\n```\n\n`session_id` originates from the request body and is never validated against the authenticated user:\n\n```python\n# backend/open_webui/main.py\nmetadata = {\n    'user_id': user.id,                               # server-derived (trustworthy)\n    'session_id': form_data.pop('session_id', None),  # client-controlled\n    ...\n}\n```\n\n`SESSION_POOL[session_id]` is the user record of whoever owns that socket. Because the caller checks only member",
-      "link": "https://github.com/advisories/GHSA-74h3-cxq7-vc5q",
-      "published": "2026-07-24T17:01:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59216"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59715",
-      "title": "Open WebUI: Unauthenticated WebSocket Access to Collaborative Document Handlers (ydoc:awareness:update, ydoc:document:leave)",
-      "summary": "## Summary\n\nThe Socket.IO server is configured with `always_connect=True` (lines 78, 91 in `backend/open_webui/socket/main.py`) and the `connect` handler (line 329) never rejects unauthenticated connections. Two Ydoc event handlers have zero authentication checks, allowing unauthenticated clients to interact with collaborative document sessions.\n\n## Vulnerable Code\n\n### `ydoc:awareness:update` (line 741) \u2014 No auth check at all\n```python\n@sio.on('ydoc:awareness:update')\nasync def yjs_awareness_update(sid, data):\n    document_id = data['document_id']\n    user_id = data.get('user_id', sid)\n    update = data['update']\n    # No SESSION_POOL check, no room membership check\n    await sio.emit(\n        'ydoc:awareness:update',\n        {'document_id': document_id, 'user_id': user_id, 'update': update},\n        room=f'doc_{document_id}',\n        skip_sid=sid,\n    )\n```\n\n### `ydoc:document:leave` (line 711) \u2014 No auth check at all\n```python\n@sio.on('ydoc:document:leave')\nasync def yjs_document_leave(sid, data):\n    document_id = data['document_id']\n    user_id = data.get('user_id', sid)\n    # No auth check\n    await YDOC_MANAGER.remove_user(document_id=document_id, user_id=sid)\n    await sio.emit('ydoc:user:left',\n        {'document_id': document_id, 'user_id': user_id},\n        room=f'doc_{document_id}')\n```\n\n### Root Cause: `always_connect=True` (line 78)\n```python\nsio = socketio.AsyncServer(\n    always_connect=True,   # Never rejects connections\n    ...\n)\n```\n\nThe `connect` handler (line 329) adds authenticated users to `SESSION_POOL` but never returns `False` or raises an exception for unauthenticated connections.\n\n## Exploitation\n\n1. An unauthenticated attacker connects via Socket.IO (no token needed)\n2. The attacker emits `ydoc:awareness:update` with:\n   - `document_id`: a known/guessed note UUID (format: `note:{uuid}`)\n   - `user_id`: spoofed to impersonate any user\n   - `update`: arbitrary awareness data (fake cursor positions, selections)\n3. The fake awareness data is ",
-      "link": "https://github.com/advisories/GHSA-gmfw-g93r-vg53",
-      "published": "2026-07-24T16:59:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59715"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59214",
-      "title": "Open WebUI: Stored web worker XSS via Pyodide",
-      "summary": "**Title:** Same-origin Pyodide code execution allows server-side RCE via a shared chat\n\n### Summary\n\nOpen WebUI runs client-side Python (Pyodide) in a same-origin web worker. Through Pyodide's JavaScript API (`pyodide.http.pyfetch`, or the `js` module which exposes the page's `fetch` / `XMLHttpRequest`) executed Python can issue requests on the application origin, and those requests carry the victim's session cookie. A low-privileged user can store such a payload in a chat message, share the chat, and when a victim opens it and clicks **Run** the payload executes authenticated same-origin requests as the victim. When the victim is an admin (or a user holding `workspace.functions` / `workspace.tools` permissions) the payload creates a Function/Tool whose body runs server-side, yielding **remote code execution**.\n\n### Details\n\nPyodide's `js` bridge gives Python in the worker the same reach as inline JavaScript on the origin, and the worker is same-origin, so a credentialed request to the app's own API is authenticated as the victim. No separate XSS sink is required: storing the payload in a shared chat and having the victim run it is enough.\n\n```python\nfrom pyodide.http import pyfetch\nimport json\nawait pyfetch('/api/v1/functions/create', method='POST', credentials='include',\n              headers={'Content-Type': 'application/json'},\n              body=json.dumps({'id': 'x', 'name': 'x', 'meta': {'description': 'x'},\n                               'content': \"import os; os.system('<attacker command>')\"}))\n```\n\n### Impact\n\nWhen the victim runs the shared code, an authenticated low-privileged user achieves remote code execution on the server (the created Function/Tool runs server-side Python) if the victim is an admin or holds `workspace.functions` / `workspace.tools` permissions. More generally the executed code can issue any authenticated request as the victim. Requires the victim to click Run, and Open WebUI configured to use Pyodide.\n\n### Patched\n\nPyodide now runs i",
-      "link": "https://github.com/advisories/GHSA-4r2p-27mh-5m22",
-      "published": "2026-07-24T16:54:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59214"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-5xvq-cp9x-6p6r",
-      "title": "Russh: Pre-auth remote panic via all-zero Curve25519 peer public value (encode_mpint OOB)",
-      "summary": "A pre-authentication denial-of-service panic in `russh` 0.62.2 (commit\n`c4be19f1915c8682f4615c3fd50008512b474491`, current default branch `main` as\nof 2026-07-22). An unauthenticated client sends a single `SSH_MSG_KEX_ECDH_INIT`\nwhose `Q_C` is 32 zero bytes. russh's Curve25519 KEX does not reject the\nall-zero peer public value, so `server_dh()` computes the all-zero shared\nsecret and `compute_exchange_hash()` then calls `encode_mpint(&shared.0, ...)`,\nwhich indexes `s[i]` at `i == s.len()` and **panics** (`index out of bounds:\nthe len is 32 but the index is 32`) **before host-key signature verification**.\nThe server KEX task dies on the first KEX message, before authentication.\n\nThis is reachable with the **default** server configuration\n(`Config::default()` \u2192 `Preferred::DEFAULT`, whose kex list includes\n`curve25519-sha256`) and requires **no caller-supplied parameter**. It is\nreproduced end-to-end against the unmodified real russh 0.62.2 library (a real\nserver + raw TCP client over TCP); the PoC below links the real crate, not a\ncopied snippet. The defect is still present on `main` HEAD (`v0.62.3`,\n2026-07-22) and is not covered by any of the 11 published russh GHSA advisories\n(GHSA-cqvm-j2r2-hwpg / CVE-2023-28113 is modp DH group validation, not\nCurve25519).\n\nRust bounds-checked panics abort the task safely (no memory corruption / RCE);\nthe impact is remote **denial of service**.\n\n## Details\n\n`russh/src/kex/curve25519.rs`, `server_dh()` (server path; attacker = client):\n\n```rust\nfn server_dh(&mut self, exchange: &mut Exchange, payload: &[u8]) -> Result<(), crate::Error> {\n    // only the 32-byte length is checked, NOT zero / low-order:\n    let mut pubkey = MontgomeryPoint([0; 32]);\n    pubkey.0.clone_from_slice(&payload[5..5 + 32]);      // line 73\n    ...\n    let shared = server_secret * client_pubkey;           // all-zero when client_pubkey == [0;32]\n    self.shared_secret = Some(shared);                    // line 86\n    Ok(())\n}\n```\n\nThe server then computes",
-      "link": "https://github.com/advisories/GHSA-5xvq-cp9x-6p6r",
-      "published": "2026-07-24T16:45:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2023-28113"
       ],
       "is_zero_day": false,
       "is_high_severity": true
