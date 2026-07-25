@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-25 07:47 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-25 12:55 UTC &nbsp;|&nbsp; **Total:** 35 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -396,18 +396,7 @@ secret and `compute…
 
 ---
 
-## 35. 🟡 High Severity — Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft's Servers
-
-**CVE:** `CVE-2026-32194` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://thehackernews.com/2026/07/bing-images-flaws-let-crafted-svgs-run.html>
-
-> A crafted SVG submitted to Bing&#x27;s image search ran commands as NT AUTHORITY\SYSTEM on Microsoft&#x27;s production image-processing workers, and as root on the Linux machines in the same fleet.
-
-XBOW&#x27;s testing got the same result on workers across different hosts and network ranges, so the problem sat in Bing&#x27;s image tier, not on one bad machine. Microsoft issued two critical CVEs, C…
-
----
-
-## 36. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 35. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

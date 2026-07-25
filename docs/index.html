@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">17</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">36</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">35</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-25 07:47 UTC</div>
+            <div class="generated">Updated 2026-07-25 12:55 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -751,24 +751,6 @@ of 2026-07-22). An unauthenticated client sends a single `SSH_MSG_KEX_ECDH_INIT`
 whose `Q_C` is 32 zero bytes. russh&#x27;s Curve25519 KEX does not reject the
 all-zero peer public value, so `server_dh()` computes the all-zero shared
 secret and `compute_exch…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/bing-images-flaws-let-crafted-svgs-run.html" target="_blank" rel="noopener">Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft&#x27;s Servers</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-32194</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-24</span>
-          </div>
-          <p class='summary'>A crafted SVG submitted to Bing&#x27;s image search ran commands as NT AUTHORITY\SYSTEM on Microsoft&#x27;s production image-processing workers, and as root on the Linux machines in the same fleet.
-
-XBOW&#x27;s testing got the same result on workers across different hosts and network ranges, so the problem sat in Bing&#x27;s image tier, not on one bad machine. Microsoft issued two critical CVEs, CVE-2026-32194 and</p>
 
         </article>
 
