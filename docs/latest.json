@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-25T01:25:36.316743+00:00",
-  "total": 37,
+  "generated": "2026-07-25T07:47:53.671375+00:00",
+  "total": 36,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -52,21 +52,6 @@
       "cve_ids": [
         "CVE-2026-41883"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
-      "title": "Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say",
-      "summary": "Redis shipped seven security releases on July 23 after researchers published authenticated RCE PoCs for stock Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0.\n\nAll four chains require RESTORE. The Streams chains also need EVAL and XGROUP; the 8.8.0 chain needs EVAL and the bundled RedisBloom module. Redis says the underlying memory flaws may lead to remote code execution.\n\nRedis 6.2.23, 7.2.15, and 7.4.10",
-      "link": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
-      "published": "2026-07-24T06:58:27+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },

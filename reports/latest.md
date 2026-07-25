@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-25 01:25 UTC &nbsp;|&nbsp; **Total:** 37 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-25 07:47 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -36,20 +36,7 @@ about 49 MB observed heap delta), and 200 unique IDs …
 
 ---
 
-## 4. 🟠 Zero-Day — Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-24
-**Reference:** <https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html>
-
-> Redis shipped seven security releases on July 23 after researchers published authenticated RCE PoCs for stock Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0.
-
-All four chains require RESTORE. The Streams chains also need EVAL and XGROUP; the 8.8.0 chain needs EVAL and the bundled RedisBloom module. Redis says the underlying memory flaws may lead to remote code execution.
-
-Redis 6.2.23, 7.2.15, and 7.4.10
-
----
-
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +45,7 @@ Redis 6.2.23, 7.2.15, and 7.4.10
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +54,7 @@ Redis 6.2.23, 7.2.15, and 7.4.10
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +63,7 @@ Redis 6.2.23, 7.2.15, and 7.4.10
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +72,7 @@ Redis 6.2.23, 7.2.15, and 7.4.10
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,7 +81,7 @@ Redis 6.2.23, 7.2.15, and 7.4.10
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -103,7 +90,7 @@ Redis 6.2.23, 7.2.15, and 7.4.10
 
 ---
 
-## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -112,28 +99,28 @@ Redis 6.2.23, 7.2.15, and 7.4.10
 
 ---
 
-## 12. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
+## 11. 🟠 Zero-Day — Browser Security: Zero-Days Are Only Part of the Problem
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jun 30, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/>
 
 ---
 
-## 13. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 12. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 14. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 15. 🟠 Zero-Day — Shescape: Quadratic-time denial of service in the flag-protection
+## 14. 🟠 Zero-Day — Shescape: Quadratic-time denial of service in the flag-protection
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-gm3r-q2wp-hw87>
@@ -155,7 +142,7 @@ const options = {
 
 ---
 
-## 16. 🟠 Zero-Day — Shescape: Home-directory disclosure in assignment context on Unix with Dash
+## 15. 🟠 Zero-Day — Shescape: Home-directory disclosure in assignment context on Unix with Dash
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-q53c-4prm-w95q>
@@ -170,7 +157,7 @@ An attacker may be able to obtain the location of the home directory and, depend
 
 ---
 
-## 17. 🟠 Zero-Day — Shescape: Shell injection via unescaped parentheses on Windows with CMD
+## 16. 🟠 Zero-Day — Shescape: Shell injection via unescaped parentheses on Windows with CMD
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-w4hw-qcx7-56pr>
@@ -189,7 +176,7 @@ import { Shescape } from &quot;shescape&quot;;
 
 ---
 
-## 18. 🟠 Zero-Day — Claude Code: Sandbox Escape via Git Worktree Path Confusion Allows Unsandboxed Code Execution
+## 17. 🟠 Zero-Day — Claude Code: Sandbox Escape via Git Worktree Path Confusion Allows Unsandboxed Code Execution
 
 **CVE:** `CVE-2026-55607` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-7835-87q9-rgvv>
@@ -198,7 +185,7 @@ import { Shescape } from &quot;shescape&quot;;
 
 ---
 
-## 19. 🟡 High Severity — AWS Bedrock AgentCore: Improper neutralization of argument delimiters in the Python SDK install_packages()
+## 18. 🟡 High Severity — AWS Bedrock AgentCore: Improper neutralization of argument delimiters in the Python SDK install_packages()
 
 **CVE:** `CVE-2026-16796` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-j6g5-3hh3-pgw8>
@@ -209,7 +196,7 @@ The AWS Bedrock AgentCore Python SDK (bedrock-agentcore) provides tools for buil
 
 ---
 
-## 20. 🟡 High Severity — Smithy-RS: Allocation of resources without limits in the default aws-smithy-http-server serve() path allows unauthenticated Slowloris denial of service
+## 19. 🟡 High Severity — Smithy-RS: Allocation of resources without limits in the default aws-smithy-http-server serve() path allows unauthenticated Slowloris denial of service
 
 **CVE:** `CVE-2026-16756` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-jvxp-qmx7-gjpx>
@@ -219,7 +206,7 @@ Smithy-RS is a Rust code generation and runtime framework that generates HTTP cl
 
 ---
 
-## 21. 🟡 High Severity — AWS API MCP Server Security Policy Bypass via Startup Initialization Failure
+## 20. 🟡 High Severity — AWS API MCP Server Security Policy Bypass via Startup Initialization Failure
 
 **CVE:** `CVE-2026-16584` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-29w2-fq35-v728>
@@ -229,7 +216,7 @@ The AWS API MCP Server is an open source Model Context Protocol (MCP) server tha
 
 ---
 
-## 22. 🟡 High Severity — Budibase: SSRF via DNS rebinding in the REST datasource integration
+## 21. 🟡 High Severity — Budibase: SSRF via DNS rebinding in the REST datasource integration
 
 **CVE:** `CVE-2026-54353` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-v42f-v8xc-j435>
@@ -241,7 +228,7 @@ The REST datasou…
 
 ---
 
-## 23. 🟡 High Severity — Cloudreve WOPI view sessions can write files and WOPI access token secret is ignored
+## 22. 🟡 High Severity — Cloudreve WOPI view sessions can write files and WOPI access token secret is ignored
 
 **CVE:** `CVE-2026-62323` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-c3jm-gv5r-9wcp>
@@ -252,7 +239,7 @@ Cloudreve WOPI access tokens are generated as `&lt;session-id&gt;.&lt;random-sec
 
 ---
 
-## 24. 🟡 High Severity — OpenAM: Unauthenticated Remote Code Execution via Class.forName in AuthXMLUtils.createCustomCallback
+## 23. 🟡 High Severity — OpenAM: Unauthenticated Remote Code Execution via Class.forName in AuthXMLUtils.createCustomCallback
 
 **CVE:** `CVE-2026-62379` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-wg5r-wc3x-39vc>
@@ -269,7 +256,7 @@ Un…
 
 ---
 
-## 25. 🟡 High Severity — OpenAM: WebAuthn Java deserialization RCE via ObjectInputFilter depth>1 bypass
+## 24. 🟡 High Severity — OpenAM: WebAuthn Java deserialization RCE via ObjectInputFilter depth>1 bypass
 
 **CVE:** `CVE-2026-62263` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-gf8h-gq53-288j>
@@ -279,7 +266,7 @@ The GHSA-6c99-87fr-6q7r fix wrapped WebAuthn authenticator deserialization in an
 
 ---
 
-## 26. 🟡 High Severity — Open WebUI: Terminal proxy forwards a spoofable, integrity-unbound user identity to the upstream (X-User-Id header and ws_terminal session_id query injection)
+## 25. 🟡 High Severity — Open WebUI: Terminal proxy forwards a spoofable, integrity-unbound user identity to the upstream (X-User-Id header and ws_terminal session_id query injection)
 
 **CVE:** `CVE-2026-59224` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-j657-m4c4-24jq>
@@ -292,7 +279,7 @@ The terminal proxy in `backend/open_webui/routers/terminals.py` forwards the Ope
 
 ---
 
-## 27. 🟡 High Severity — Open WebUI: `WEB_FETCH_FILTER_LIST` host allow/block filter bypassable via URL path and non-label-boundary matching
+## 26. 🟡 High Severity — Open WebUI: `WEB_FETCH_FILTER_LIST` host allow/block filter bypassable via URL path and non-label-boundary matching
 
 **CVE:** `CVE-2026-59223` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-qg3f-8x3j-ggf2>
@@ -307,7 +294,7 @@ The administrator-configured `WEB_FETCH_FILTER_LIST` (the allow/block list appli
 
 ---
 
-## 28. 🟡 High Severity — Cloudreve OAuth Admin.Read scope can update OneDrive storage policy credentials
+## 27. 🟡 High Severity — Cloudreve OAuth Admin.Read scope can update OneDrive storage policy credentials
 
 **CVE:** `CVE-2026-55502` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-hq88-5x99-x3gf>
@@ -320,7 +307,7 @@ The route is inside the admin group that requires `Admin.Read`, but it does not 
 
 ---
 
-## 29. 🟡 High Severity — yt-dlp: Downstream command injection via improper sanitization of yt-dlp --write-link output
+## 28. 🟡 High Severity — yt-dlp: Downstream command injection via improper sanitization of yt-dlp --write-link output
 
 **CVE:** `CVE-2026-55404` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-6v4j-43gg-vj32>
@@ -330,7 +317,7 @@ If the `--write-link`, `--write-url-link` or `--write-desktop-link` options are 
 
 ---
 
-## 30. 🟡 High Severity — Open WebUI: /api/v1/channels/{id}/members exposes full user model including sensitive credentials
+## 29. 🟡 High Severity — Open WebUI: /api/v1/channels/{id}/members exposes full user model including sensitive credentials
 
 **CVE:** `CVE-2026-59222` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-gh7p-78x6-jw6m>
@@ -345,7 +332,7 @@ The endpoint GET `/api/v1/channels/{id}…
 
 ---
 
-## 31. 🟡 High Severity — Open WebUI: Cross-user model-list exposure via static cache key in get_all_models (aiocache key= vs key_builder= misuse)
+## 30. 🟡 High Severity — Open WebUI: Cross-user model-list exposure via static cache key in get_all_models (aiocache key= vs key_builder= misuse)
 
 **CVE:** `CVE-2026-59213` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-3wp3-xxj9-5jqq>
@@ -356,7 +343,7 @@ The `get_all_models` handlers in `routers/openai.py` and `routers/ollama.py` int
 
 ---
 
-## 32. 🟡 High Severity — Open WebUI: Cross-user code-interpreter and tool execution via unvalidated Socket.IO event-caller session_id
+## 31. 🟡 High Severity — Open WebUI: Cross-user code-interpreter and tool execution via unvalidated Socket.IO event-caller session_id
 
 **CVE:** `CVE-2026-59216` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-74h3-cxq7-vc5q>
@@ -367,7 +354,7 @@ An authenticated low-privilege user can execute arbitrary code-interpreter Pytho
 
 ---
 
-## 33. 🟡 High Severity — Open WebUI: Unauthenticated WebSocket Access to Collaborative Document Handlers (ydoc:awareness:update, ydoc:document:leave)
+## 32. 🟡 High Severity — Open WebUI: Unauthenticated WebSocket Access to Collaborative Document Handlers (ydoc:awareness:update, ydoc:document:leave)
 
 **CVE:** `CVE-2026-59715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-gmfw-g93r-vg53>
@@ -382,7 +369,7 @@ The Socket.IO server is configured with `always_connect=True` (lines 78, 91 in `
 
 ---
 
-## 34. 🟡 High Severity — Open WebUI: Stored web worker XSS via Pyodide
+## 33. 🟡 High Severity — Open WebUI: Stored web worker XSS via Pyodide
 
 **CVE:** `CVE-2026-59214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-4r2p-27mh-5m22>
@@ -395,7 +382,7 @@ Open WebUI runs client-side Python (Pyodide) in a same-origin web worker. Throug
 
 ---
 
-## 35. 🟡 High Severity — Russh: Pre-auth remote panic via all-zero Curve25519 peer public value (encode_mpint OOB)
+## 34. 🟡 High Severity — Russh: Pre-auth remote panic via all-zero Curve25519 peer public value (encode_mpint OOB)
 
 **CVE:** `CVE-2023-28113` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://github.com/advisories/GHSA-5xvq-cp9x-6p6r>
@@ -409,7 +396,7 @@ secret and `compute…
 
 ---
 
-## 36. 🟡 High Severity — Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft's Servers
+## 35. 🟡 High Severity — Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft's Servers
 
 **CVE:** `CVE-2026-32194` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-24
 **Reference:** <https://thehackernews.com/2026/07/bing-images-flaws-let-crafted-svgs-run.html>
@@ -420,7 +407,7 @@ XBOW&#x27;s testing got the same result on workers across different hosts and ne
 
 ---
 
-## 37. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 36. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
