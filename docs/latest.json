@@ -1,10 +1,29 @@
 {
-  "generated": "2026-07-27T14:07:11.605200+00:00",
-  "total": 13,
-  "kev": 0,
+  "generated": "2026-07-27T19:08:44.193365+00:00",
+  "total": 15,
+  "kev": 1,
   "zero_day": 12,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2025-68686",
+      "title": "CVE-2025-68686 \u2014 Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+      "summary": "Vendor: Fortinet | Product: FortiOS. Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-10)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-68686",
+      "published": "2026-07-27",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2025-68686"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -34,6 +53,21 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/public-exploit-released-for-patched.html",
+      "title": "Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw",
+      "summary": "Public exploit details released on July 27 show how an unauthenticated request can reach PHP's eval() function inside vBulletin and execute code on an unpatched forum server. The attack requires no account, administrative access, or interaction from another user.\n\nSSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, as affected, but does not give a lower version",
+      "link": "https://thehackernews.com/2026/07/public-exploit-released-for-patched.html",
+      "published": "2026-07-27T14:40:00+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -150,22 +184,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/",
-      "title": "Browser Security: Zero-Days Are Only Part of the Problem",
-      "summary": "",
-      "link": "https://www.crowdstrike.com/en-us/blog/browser-security-zero-days-are-only-part-of-the-problem/",
-      "published": "Jun 30, 2026 00:00:00-0500",
-      "source": "CrowdStrike Blog",
-      "tags": [
-        "cloud",
-        "threat-intel",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/",
       "title": "July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days",
       "summary": "",
@@ -196,6 +214,24 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://blog.jetbrains.com/teamcity/2026/07/teamcity-2026-1-3-2025-11-7-bugfix/",
+      "title": "TeamCity 2026.1.3 and 2025.11.7 Are Now Available",
+      "summary": "We\u2019re rolling out new maintenance updates for\u00a0TeamCity On-Premises 2026.1\u00a0and\u00a02025.11. Both releases are primarily focused on security, addressing\u00a0more than 20 security vulnerabilities\u00a0each (including a critical CVE-2026-63077 vulnerability that allows attackers to bypass authentication checks and execute arbitrary operating system commands with the privileges of the TeamCity server process). In addition,\u00a02026.1.3\u00a0resolves several functional issues, including: Because these [\u2026]",
+      "link": "https://blog.jetbrains.com/teamcity/2026/07/teamcity-2026-1-3-2025-11-7-bugfix/",
+      "published": "2026-07-27T14:17:02+00:00",
+      "source": "JetBrains Security Blog",
+      "tags": [
+        "ide",
+        "jetbrains",
+        "plugin"
+      ],
+      "cve_ids": [
+        "CVE-2026-63077"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
