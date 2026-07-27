@@ -92,6 +92,27 @@ feeds:
     url: https://checkmarx.com/blog/feed/
     tags: [ai, supply-chain, oss, sast]
 
+  # ── Network edge & security appliance vendors ────────────────────────────
+  - name: Palo Alto Security Advisories
+    url: https://security.paloaltonetworks.com/rss.xml
+    tags: [network, paloalto, psirt, advisory]
+
+  - name: Cisco Security Advisories (PSIRT)
+    url: https://sec.cloudapps.cisco.com/security/center/psirtrss20/CiscoSecurityAdvisory.xml
+    tags: [network, cisco, psirt, advisory]
+
+  - name: Fortinet PSIRT Advisories
+    url: https://filestore.fortinet.com/fortiguard/rss/ir.xml
+    tags: [network, fortinet, psirt, advisory]
+
+  - name: Ivanti Security Advisories
+    url: https://www.ivanti.com/blog/topics/security-advisory/rss
+    tags: [network, ivanti, psirt, advisory]
+
+  - name: Check Point Research
+    url: https://research.checkpoint.com/feed/
+    tags: [network, checkpoint, research, threat-intel]
+
   # ── Security news ─────────────────────────────────────────────────────────
   - name: SANS Internet Storm Center
     url: https://isc.sans.edu/rssfeed_full.xml
@@ -224,5 +245,68 @@ high_severity_keywords:
   - ai supply chain
   - llm vulnerability
   - embedding attack
+  # Network/appliance exploitation signals
+  - authentication bypass
+  - auth bypass
+  - command injection        # also covers "os command injection" (substring match)
+  - arbitrary code execution
+  - path traversal
+  - directory traversal
+  - memory corruption
+  - buffer overflow
+  - credential disclosure
+  - session hijacking
+
+# Product/vendor watchlist: an entry mentioning one of these AND carrying a CVE id
+# survives the filter, but is NOT marked high-severity — these are priority terms,
+# not severity claims. Broad substrings (vpn, firewall, bare "cisco"/"f5") are
+# deliberately excluded to avoid flooding the report.
+priority_product_keywords:
+  # Palo Alto ("pan-os" only — bare "panos" substring-matches the Greek given name)
+  - pan-os
+  - globalprotect
+  - panorama
+  # Cisco (product names, never bare "cisco")
+  - cisco asa
+  - adaptive security appliance
+  - firepower
+  - ios xe
+  - ios-xe
+  - nx-os
+  - anyconnect
+  # Fortinet
+  - fortios
+  - fortigate
+  - fortiproxy
+  - fortimanager
+  - fortianalyzer
+  - fortiweb
+  # Ivanti / Pulse
+  - ivanti connect secure
+  - ivanti policy secure
+  - pulse secure
+  - ivanti epmm
+  - cloud services appliance
+  # Check Point
+  - check point gateway
+  - gaia os
+  - quantum security gateway
+  # Juniper (no public advisory feed — these catch news/KEV coverage)
+  - junos
+  - juniper srx
+  - session smart router
+  # Citrix / NetScaler (no public advisory feed)
+  - netscaler
+  - citrix adc
+  - citrix gateway
+  # F5 (no public advisory feed)
+  - big-ip
+  - big-iq
+  - f5os
+  - tmui
+  # SonicWall (no public advisory feed; "sma 100" also substring-matches "sma 1000")
+  - sonicwall
+  - sonicos
+  - sma 100
 
 cisa_kev_url: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
