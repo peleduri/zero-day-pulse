@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-28T08:11:50.992661+00:00",
-  "total": 19,
+  "generated": "2026-07-28T13:26:28.325886+00:00",
+  "total": 20,
   "kev": 0,
-  "zero_day": 17,
+  "zero_day": 18,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,21 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/ai-rewriting-zero-day-playbook-for-preemptive-security",
+      "title": "How AI is Rewriting the Zero-Day Playbook for Preemptive Security",
+      "summary": "The scenario is all too familiar for any cybersecurity professional: It\u2019s late in the day, and a critical zero-day vulnerability is disclosed. When this happens, CISOs from every industry immediately turn to their Security Operations Centers (SOC) with the single most important, and often most difficult, question: \"Are we exposed?\u201d Answering questions like these when zero-days drop tends to trigger a frantic, high-stress fire drill. Analysts scramble to cross-reference outdated Configuration Management Databases (CMDBs), query disparate endpoint detection tools, and ping IT administrators. The data is siloed, context is missing, and time rapidly slips away. Today, the window between a vulnerability\u2019s disclosure and its active exploitation in the wild has essentially collapsed, making predictive lead time a thing of the past. As adversaries integrate AI into their playbooks to automate attacks, defending against them requires us to operate at machine speed. We believe preemptive security is the most effective way to close this window. You cannot wait for every alert to fire to understand your environment. You need an architecture that constantly tracks emerging risks and threats, coupled with AI-accelerated discovery that brings your attack surface into sharp focus before the adversary does. Rapid7 is previewing a series of new features at Black Hat USA 2026 designed to transform the way security teams navigate the chaos of a zero-day threat to identify and close attack paths before they are exploited. The foundation: Continuous Software Visibility You cannot secure what you cannot see, and in highly distributed, AI-enabled environments, absolute visibility has traditionally been a gap. To achieve true preemptive security, you need a complete, continuous view of emerging risks. When a zero-day drops, your platform should already be tracking it via an Emerging Threat Response (ETR) process. But knowing the threat exists is only step one; you must correlate that threat",
+      "link": "https://www.rapid7.com/blog/post/ai-rewriting-zero-day-playbook-for-preemptive-security",
+      "published": "2026-07-29T13:00:00+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
