@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-27 19:08 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-28 01:20 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2025-68686 — Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability
-
-**CVE:** `CVE-2025-68686` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-07-27
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2025-68686>
-
-> Vendor: Fortinet | Product: FortiOS. Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another …
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,12 +13,21 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
 
 > Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…
+
+---
+
+## 3. 🟠 Zero-Day — Hackers target US firms in FastJson RCE zero-day attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-27
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-target-us-firms-in-fastjson-rce-zero-day-attacks/>
+
+> Hackers are actively exploiting a vulnerability in the FastJson open-source Java library, allowing remote code execution without user interaction or elevated privileges. [...]
 
 ---
 
@@ -119,7 +119,16 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 14. 🟡 High Severity — TeamCity 2026.1.3 and 2025.11.7 Are Now Available
+## 14. 🟠 Zero-Day — Arista patches VeloCloud Orchestrator zero-day exploited in attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-27
+**Reference:** <https://www.bleepingcomputer.com/news/security/arista-patches-velocloud-orchestrator-zero-day-exploited-in-attacks/>
+
+> Arista has patched a maximum-severity command injection vulnerability in on-premises VeloCloud Orchestrator deployments that is being actively exploited in attacks. [...]
+
+---
+
+## 15. 🟡 High Severity — TeamCity 2026.1.3 and 2025.11.7 Are Now Available
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** JetBrains Security Blog &nbsp;|&nbsp; **Published:** 2026-07-27
 **Reference:** <https://blog.jetbrains.com/teamcity/2026/07/teamcity-2026-1-3-2025-11-7-bugfix/>
@@ -128,7 +137,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

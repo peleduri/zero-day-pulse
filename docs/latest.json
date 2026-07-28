@@ -1,29 +1,10 @@
 {
-  "generated": "2026-07-27T19:08:44.193365+00:00",
-  "total": 15,
-  "kev": 1,
-  "zero_day": 12,
+  "generated": "2026-07-28T01:20:46.485263+00:00",
+  "total": 16,
+  "kev": 0,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2025-68686",
-      "title": "CVE-2025-68686 \u2014 Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
-      "summary": "Vendor: Fortinet | Product: FortiOS. Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-10)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-68686",
-      "published": "2026-07-27",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2025-68686"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -53,6 +34,21 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-target-us-firms-in-fastjson-rce-zero-day-attacks/",
+      "title": "Hackers target US firms in FastJson RCE zero-day attacks",
+      "summary": "Hackers are actively exploiting a vulnerability in the FastJson open-source Java library, allowing remote code execution without user interaction or elevated privileges. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-us-firms-in-fastjson-rce-zero-day-attacks/",
+      "published": "2026-07-27T23:49:44+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -210,6 +206,21 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/arista-patches-velocloud-orchestrator-zero-day-exploited-in-attacks/",
+      "title": "Arista patches VeloCloud Orchestrator zero-day exploited in attacks",
+      "summary": "Arista has patched a maximum-severity command injection vulnerability in on-premises VeloCloud Orchestrator deployments that is being actively exploited in attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-velocloud-orchestrator-zero-day-exploited-in-attacks/",
+      "published": "2026-07-27T22:49:44+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
