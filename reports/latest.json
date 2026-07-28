@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-28T13:26:28.325886+00:00",
-  "total": 20,
+  "generated": "2026-07-28T19:03:12.332229+00:00",
+  "total": 29,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 21,
   "enriched": 0,
   "findings": [
     {
@@ -53,6 +53,22 @@
       "is_high_severity": true
     },
     {
+      "id": "GHSA-hp74-gm6m-2qm5",
+      "title": "Pocket ID has a reauthentication bypass via one-time access token login \u2014 passkey step-up requirement defeated by JWT freshness check that accepts any login method",
+      "summary": "# Reauthentication Bypass via One-Time Access Token Login\n\n## Summary\n\nA weaker authentication method (OTA token or signup token) is accepted as passkey step-up proof, yielding unauthorized renewable 30-day OIDC refresh tokens for clients explicitly configured with `RequiresReauthentication: true`. The `POST /api/webauthn/reauthenticate` endpoint's access-token fallback checks only JWT freshness (`IssuedAt` within 60 seconds), not the authentication method used. The session cookie gate is also non-validating -- any arbitrary cookie value (e.g. `session=deadbeef`) is accepted, collapsing the reauth boundary to token recency alone.\n\nThe bypass needs to succeed only once. The resulting OIDC grant includes a 30-day refresh token that can be rotated indefinitely, providing persistent victim-impersonation access to the protected downstream service. The attacker obtains `access_token` (1-hour TTL), `id_token` (victim's name, email, profile), and `refresh_token` (30-day TTL, renewable) for a client that was explicitly configured to require passkey step-up authentication. The attacker can perform victim-scoped actions at the downstream relying party indefinitely.\n\n## Root Cause\n\n`CreateReauthenticationTokenWithAccessToken` (webauthn_service.go:362-403) only checks that the access token's `IssuedAt` claim is less than 60 seconds old:\n\n```go\n// webauthn_service.go:378-381\ntokenExpiration, ok := token.IssuedAt()\nif !ok || time.Since(tokenExpiration) > time.Minute {\n    return \"\", &common.ReauthenticationRequiredError{}\n}\n```\n\nIt does not check HOW the user originally authenticated. The `reauthenticateHandler` (webauthn_controller.go:179-207) falls into this path whenever the request body cannot be parsed as a WebAuthn credential assertion:\n\n```go\n// webauthn_controller.go:189-199\ncredentialAssertionData, err := protocol.ParseCredentialRequestResponseBody(c.Request.Body)\nif err == nil {\n    token, err = wc.webAuthnService.CreateReauthenticationTokenWithWebauthn(...)\n} else {\n   ",
+      "link": "https://github.com/advisories/GHSA-hp74-gm6m-2qm5",
+      "published": "2026-07-28T14:25:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.securityweek.com/unpatched-fastjson-vulnerability-exploited-in-attacks/",
       "title": "Unpatched Fastjson Vulnerability Exploited in Attacks",
       "summary": "The critical remote code execution bug can be exploited without authentication, under the library\u2019s stock default configurations. The post Unpatched Fastjson Vulnerability Exploited in Attacks appeared first on SecurityWeek .",
@@ -92,21 +108,6 @@
       "tags": [
         "news",
         "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/public-exploit-released-for-patched.html",
-      "title": "Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw",
-      "summary": "Public exploit details released on July 27 show how an unauthenticated request can reach PHP's eval() function inside vBulletin and execute code on an unpatched forum server. The attack requires no account, administrative access, or interaction from another user.\n\nSSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, as affected, but does not give a lower version",
-      "link": "https://thehackernews.com/2026/07/public-exploit-released-for-patched.html",
-      "published": "2026-07-27T14:40:00+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -257,6 +258,56 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.rapid7.com/blog/post/ra-check-point-smartconsole-authentication-bypass-technical-analysis-cve-2026-16232",
+      "title": "Check Point SmartConsole Authentication Bypass Technical Analysis (CVE-2026-16232)",
+      "summary": "Overview On July 22, 2026, Check Point published a security advisory for CVE-2026-16232 , an authentication bypass in the SmartConsole login process affecting Security Management Server and Multi-Domain Security Management Server (MDS). By leveraging CVE-2026-16232, an unauthenticated attacker can obtain an application login token, use this token to log in through SmartConsole with full administrator privileges, and modify the security policy or security configuration. Exploitation requires network access to the Management Server and for a Trusted Clients configuration that does not restrict GUI clients, which in our testing was a default setting. This vulnerability was reported as being exploited in the wild as a zero-day vulnerability at the time of disclosure. Our analysis finds that the root cause of CVE-2026-16232 is a broken trust boundary in the application authentication path. A vulnerable server accepts an attacker-supplied Secure Internal Communication (SIC) distinguished name (DN) as the identity of a remote application instead of binding that identity to the authenticated remote peer certificate DN returned by getCertificateDnName() . An attacker can read the management server's own SIC DN during the unauthenticated bootstrap communication, replay that DN in a forged application certificate bind, obtain an application token, and then ask the legacy management service to mint a new SmartConsole single sign-on (SSO) ticket. Rapid7 Labs has reproduced CVE-2026-16232 against affected R81.20 and R82.10 versions of the target software. Our proof-of-concept (PoC) exploit script can be used to successfully validate if a target is either vulnerable or patched. The vendor supplied patches have been confirmed to successfully remediate the vulnerability and prevent our PoC script from succeeding. Analysis SmartConsole is the desktop client administrators use to manage Check Point policy and configuration. A SmartConsole login crosses two generations of management pl",
+      "link": "https://www.rapid7.com/blog/post/ra-check-point-smartconsole-authentication-bypass-technical-analysis-cve-2026-16232",
+      "published": "2026-07-28T18:32:03+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-16232"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-43983",
+      "title": "Pocket ID: OIDC refresh token flow bypasses authorization revocation, account disabling, and group restrictions",
+      "summary": "# OIDC Refresh Token Flow Bypasses Authorization Revocation, Account Disabling, and Group Restrictions\n\n## Summary\n\nThe `createTokenFromRefreshToken` function (oidc_service.go:451) validates the refresh token's cryptographic integrity but does not re-validate the user's current authorization state before issuing new tokens. This allows three bypasses:\n\n1. **Authorization revocation bypass**: After a user revokes an OIDC client's authorization, the client can continue refreshing tokens indefinitely because `RevokeAuthorizedClient` does not delete associated refresh tokens, and the refresh flow does not check if the authorization record still exists.\n\n2. **Disabled user bypass**: After an admin disables a user account, pre-existing refresh tokens continue to work because the OIDC token endpoint does not check `user.Disabled`. Session-based access is properly blocked by auth middleware, but the OIDC refresh path bypasses it entirely.\n\n3. **Group restriction bypass**: After removing a user from an OIDC client's allowed user groups, the refresh token continues to work because `createTokenFromRefreshToken` does not call `IsUserGroupAllowedToAuthorize`.\n\nEach refresh rotates the token with a fresh 30-day expiry, enabling perpetual access.\n\n## Target\n\n- **Repository**: pocket-id/pocket-id\n- **Version**: HEAD (626adbf), also affects v2.5.0 and all versions with refresh token support\n\n## Root Cause\n\n`createTokenFromRefreshToken` (oidc_service.go:451-547) performs the following checks on a refresh request:\n\n1. Verify the signed refresh token JWT (line 457) -- **checked**\n2. Verify client credentials (line 467) -- **checked**\n3. Look up stored refresh token by hash, expiry, user_id, client_id (line 478-495) -- **checked**\n4. Verify refresh token belongs to the requesting client (line 498) -- **checked**\n\nIt does NOT check:\n- Whether a `UserAuthorizedOidcClient` record still exists for the user-client pair -- **MISSING**\n- Whether `user.Disabled` is false -- **MISSING**\n- Whethe",
+      "link": "https://github.com/advisories/GHSA-w6p7-2fxx-4f44",
+      "published": "2026-07-28T14:12:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-43983"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
+      "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
+      "summary": "JFrog has confirmed that OpenAI models exploited a zero-day in self-hosted Artifactory while trying to reach the open internet from a sealed evaluation environment.\n\nArtifactory is JFrog's software repository manager. OpenAI says the models then escalated privileges and moved laterally until they reached an internet-connected node. JFrog says it has since developed and released fixes for cloud",
+      "link": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
+      "published": "2026-07-28T13:33:47+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html",
       "title": "Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw",
       "summary": "A maximum-severity security flaw impacting on-premises versions of Arista VeloCloud Orchestrator (VCO) has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-16812 (CVSS score: 10.0), is a case of operating system command injection that could pave the way for arbitrary code execution.\n\n\"VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue",
@@ -289,16 +340,122 @@
       "is_high_severity": false
     },
     {
-      "id": "https://blog.jetbrains.com/teamcity/2026/07/teamcity-2026-1-3-2025-11-7-bugfix/",
-      "title": "TeamCity 2026.1.3 and 2025.11.7 Are Now Available",
-      "summary": "We\u2019re rolling out new maintenance updates for\u00a0TeamCity On-Premises 2026.1\u00a0and\u00a02025.11. Both releases are primarily focused on security, addressing\u00a0more than 20 security vulnerabilities\u00a0each (including a critical CVE-2026-63077 vulnerability that allows attackers to bypass authentication checks and execute arbitrary operating system commands with the privileges of the TeamCity server process). In addition,\u00a02026.1.3\u00a0resolves several functional issues, including: Because these [\u2026]",
-      "link": "https://blog.jetbrains.com/teamcity/2026/07/teamcity-2026-1-3-2025-11-7-bugfix/",
-      "published": "2026-07-27T14:17:02+00:00",
-      "source": "JetBrains Security Blog",
+      "id": "CVE-2026-54588",
+      "title": "Poweradmin has Host Header Injection in OIDC redirect_uri, SAML ACS/SLO URL, and Logout Redirect Construction.",
+      "summary": "### Summary\nPoweradmin v4.3.2 uses the attacker-controlled `HTTP_HOST` request header as the\n  authoritative source for building callback URLs in its OIDC, SAML, and logout\n  authentication flows without any validation. An unauthenticated attacker can poison\n  the `redirect_uri` sent to the Identity Provider, causing the IdP to redirect the\n  victim's authorization code to an attacker-controlled server - resulting in full\n  account takeover with no credentials required.\n\n  Three independent code paths are affected:\n\n  - **Primary (Critical):** `OidcService::getCallbackUrl()` - `redirect_uri` poisoning\n  - **Secondary (High):** `SamlConfigurationService::getBaseUrl()` - SAML ACS/SLO URL poisoning\n  - **Tertiary (Medium):** `LogoutController::getBaseUrl()` - post-logout redirect poisoning\n\n### Details\n\n***Root Cause***\n\n  The application constructs absolute URLs dynamically from `HTTP_HOST` rather than\n  from a trusted configured base URL. The header is fully client-controlled and is not\n  validated before use in any authentication flow.\n\n  Poweradmin's own codebase contains the correct pattern -\n  `DocsController::getValidatedHost()` (line 244) calls `isValidHostname()` before\n  using the value - but this was never applied to authentication flows.\n\n  ### Primary: `lib/Application/Service/OidcService.php` (~line 460)\n\n  ```php\n  private function getCallbackUrl(): string\n  {\n      $scheme = $this->detectScheme();\n      // HTTP_HOST taken directly with zero validation\n      $host = $this->request->getServerParam('HTTP_HOST', 'localhost');\n      $basePrefix = $this->configManager->get('interface', 'base_url_prefix', '');\n      return $scheme . '://' . $host . $basePrefix . '/oidc/callback';\n  }\n\n  HTTP_HOST is embedded verbatim as redirect_uri in the OAuth 2.0 authorization\n  request sent to the IdP. HTTP_X_FORWARDED_PROTO is similarly used unvalidated\n  for scheme detection.\n\n  Secondary: lib/Application/Service/SamlConfigurationService.php (~line 134)\n\n  private functi",
+      "link": "https://github.com/advisories/GHSA-3735-5339-xfwx",
+      "published": "2026-07-28T16:40:05Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "ide",
-        "jetbrains",
-        "plugin"
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54588"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54605",
+      "title": "OAuth: Cross-origin token-request redirects can expose signed request metadata",
+      "summary": "# Cross-origin OAuth token-request redirects can expose signed request metadata\n\n## Summary\n\nWhen an application uses `OAuth::Consumer` to request OAuth 1.0 request tokens or\naccess tokens, the token request helper follows `300..399` redirects returned by\nthe OAuth server. In affected versions, `OAuth::Consumer#token_request` parses the\nraw `Location` header, follows the redirect recursively, and can mutate the\nconsumer's configured `site` when the redirect points to a different host with\nthe same path.\n\nThe result is a cross-origin signed-request disclosure primitive: if an OAuth\nserver token endpoint returns a redirect whose target an attacker controls, the\nclient can re-sign the token request and send OAuth 1.0 request metadata,\nincluding the OAuth signature, nonce, timestamp, consumer key, and any request\nparameters included in the signature base string, to the attacker-controlled\nhost. The same behavior can also be used as an SSRF or confused-deputy primitive\nbecause the application server follows the redirect and sends the next request\nfrom its own network position.\n\n## Affected\n\n- `oauth` v1.1.5 and prior versions back to and including v0.5.5.\n  - The cross-host token redirect behavior was introduced by\n    https://github.com/ruby-oauth/oauth/commit/d74b767f\n  - The behavior is documented in the v0.5.5 changelog as \"Allow redirect to\n    different host but same path\".\n- The vulnerable behavior is in `OAuth::Consumer#token_request`, which is used by\n  the documented request-token and access-token flows.\n- The issue is not specific to a Ruby engine or platform. It is caused by the\n  gem's redirect handling and recursive token request behavior.\n\nPatched version: `oauth` v1.1.6.\n\n## Impact\n\nA consumer that calls `OAuth::Consumer#get_request_token`,\n`OAuth::Consumer#get_access_token`, or lower-level token request helpers against\nan OAuth server whose token endpoint redirect target can be influenced may lose\nthree security properties:\n\n1. **Cross-origin signed-requ",
+      "link": "https://github.com/advisories/GHSA-prq8-7wvh-44qh",
+      "published": "2026-07-28T16:27:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54605"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54593",
+      "title": "Pterodactyl's improper JWT scoping allows subuser to upload files when not explicitly granted `file.create` permissions",
+      "summary": "### Summary\nA privilege escalation vulnerability exists in the Wings /upload/file endpoint due to insufficient validation of panel-signed JWTs. Wings accepts any valid panel-signed JWT containing `server_uuid`, `user_uuid`, and `unique_id`, regardless of the token\u2019s intended purpose. Because the Panel issues JWTs with these same claims for other lower-privilege operations (such as WebSocket authentication and file download links), an authenticated subuser can reuse one of those tokens to upload arbitrary files without possessing the required `file.create` permission.\n\n### Impact\nAny subuser with permission to connect to a server's console, download files, or download backups could reuse those tokens to upload arbitrary files to the _same server_. A user that does not have access to a server as a subuser is not able to arbitrarily upload files.\n\n### Details\nThe panel generated JWT tokens for various purposes:\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Services/Backups/DownloadLinkService.php#L33-L36\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Http/Controllers/Api/Client/Servers/FileUploadController.php#L45\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Http/Controllers/Api/Client/Servers/WebsocketController.php#L58-L61\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Http/Controllers/Api/Client/Servers/FileController.php#L82-L85\nThough as the actual purpose is not conveyed part of the JWT tokens, this introduces this vulnerability of being able to do non-intended actions due to the expected fields (i.e. `server_uuid`) on most endpoints being the same when parsing it on wings' side.  \n\n### PoC\nCreate a new subuser that has the minimal amount of permissions on a server (`websocket.connect`). As that subuser, retrieve a websocket JWT token from the `GET /api/client/servers/[...]/websocket` endpoint (",
+      "link": "https://github.com/advisories/GHSA-8r6w-3qq5-4p4r",
+      "published": "2026-07-28T15:43:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54593"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-47427",
+      "title": "GitHub MCP Server has Nil Pointer Dereference DoS in completion/complete Handler",
+      "summary": "### Summary\n\nA nil pointer dereference vulnerability in the GitHub MCP Server causes it to crash when receiving a malformed `completion/complete` request with missing or empty parameters. This allows any unauthenticated client to cause a complete denial of service.\n\n### Details\n\nThe `CompletionsHandler` function in `pkg/github/server.go:198` accesses `params.Ref` without checking if it's nil first. When a client sends a `completion/complete` request with a missing `ref` field, the handler dereferences nil and the Go runtime panics.\n\nThe crash occurs before any authentication or token validation, so even requests with fake tokens can trigger it.\n\n### PoC\n\nAfter completing the MCP initialization handshake, send either:\n\n**Empty params:**\n\n    {\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"completion/complete\",\"params\":{}}\n\n**Missing ref field:**\n\n    {\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"completion/complete\",\"params\":{\"argument\":{\"name\":\"x\",\"value\":\"y\"}}}\n\n**Result:**\n\n    panic: runtime error: invalid memory address or nil pointer dereference\n    goroutine 42 [running]:\n    github.com/github/github-mcp-server/pkg/github.NewMCPServer.CompletionsHandler.func1(...)\n        pkg/github/server.go:198 +0x24\n\n### Impact\n\nAny unauthenticated client that can send JSON-RPC messages to the server can crash it immediately. This is a complete denial of service - the panic is unrecoverable and kills the process.\n\nAutomated fuzzing with mcpsec found 108 crashes out of 925 test cases (11.7% crash rate).\n\n### Timeline\n\n- **Feb 21, 2026** - Initial report sent to opensource-security@github.com\n- **Mar 03, 2026** - Follow-up email sent, no response\n- **Mar 21, 2026** - Re-verified on v0.33.0, sent detailed report with PoC, no response\n- **Apr 06, 2026** - GHSA filed after 44 days without acknowledgment\n\n### Suggested Fix\n\n    func (s *Server) CompletionsHandler(ctx context.Context, params *mcp.CompleteParams) (*mcp.CompleteResult, error) {\n        if params == nil || params.Ref == nil {\n            retu",
+      "link": "https://github.com/advisories/GHSA-w4q6-qw23-4rg7",
+      "published": "2026-07-28T14:35:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-47427"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-43910",
+      "title": "java-client Allows Network Pivot via Unvalidated directConnect Redirect in AppiumCommandExecutor",
+      "summary": "## Summary\n\nWhen `directConnect(true)` is enabled, appium/java-client unconditionally\naccepts `directConnectHost`, `directConnectPort`, and `directConnectPath`\nfrom the server's NEW_SESSION response and silently redirects all subsequent\nsession traffic to the attacker-specified endpoint \u2014 with no allowlist,\nno host validation, and no user notification.\n\n## Affected Code\n\n- `AppiumCommandExecutor.java` (line 196\u2013219): `setDirectConnect()` builds\n  a new URL from server-supplied fields and calls `overrideServerUrl(newUrl)`\n  without validating host/IP.\n- `DirectConnect.java`: `getUrl()` constructs `protocol://host:port/path`\n  with no allowlist.\n\n## Root Cause\n\nOnly the protocol is validated (must equal \"https\"). The destination host\nand port are never checked against any allowlist or denylist.\n\n## PoC (confirmed)\n\nA rogue server injecting `directConnectHost=127.0.0.1:4443` causes the\nclient to silently redirect all post-session commands:\n\n[bootstrap]       POST /wd/hub/session\n[bootstrap]       Injecting directConnect -> https://127.0.0.1:4443/wd/hub\n[redirect-target] HIT #1: GET /wd/hub/session/poc-session-001/source\n[redirect-target] HIT #2: DELETE /wd/hub/session/poc-session-001\n\nOriginal source code unmodified \u2014 confirmed via `git diff HEAD` (empty).\n\n## Evidence Screenshots\n\n**Screenshot 1 \u2014 Rogue server capturing redirected traffic:**\n\n<img width=\"887\" height=\"146\" alt=\"1\" src=\"https://github.com/user-attachments/assets/cc28002c-ea20-4ac8-8336-cec632e3c842\" />\n\n**Screenshot 2 \u2014 Java client processing response from attacker host:**\n\n<img width=\"788\" height=\"130\" alt=\"2\" src=\"https://github.com/user-attachments/assets/222cbab0-0d53-45b2-847d-6aa4e3b79370\" />\n\n## Impact\n\n- Full interception of session traffic\n- Network pivot to internal hosts (RFC-1918, 169.254.169.254)\n- Cloud credential theft via IMDS endpoint\n- Escalates to ~8.1 High in CI/CD environments where directConnect(true)\n  is set in shared base configuration\n\n## Suggested Fix\n\nAdd allowlist validation",
+      "link": "https://github.com/advisories/GHSA-28f5-38xr-jh2w",
+      "published": "2026-07-28T14:26:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-43910"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html",
+      "title": "Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root",
+      "summary": "OpenWrt has shipped version 24.10.8 to close a critical DHCPv6 stack overflow and a wider set of remotely triggerable flaws in network services enabled by default.\n\nThe critical issue, tracked as CVE-2026-53921 and rated 9.8 on CVSS 3.1 in OpenWrt's GitHub advisory, lets an unauthenticated attacker able to reach the DHCPv6 server overwrite a stack buffer in odhcpd through a crafted DHCPv6",
+      "link": "https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html",
+      "published": "2026-07-28T12:56:14+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-53921"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/critical-teamcity-flaw-could-let.html",
+      "title": "Critical TeamCity Flaw Could Let Attackers Run OS Commands Without Logging In",
+      "summary": "JetBrains is urging customers of on-premise versions of TeamCity to update to the latest version following the discovery of a critical security issue that could result in arbitrary code execution.\n\nThe vulnerability, assigned CVE-2026-63077 (CVSS score: 9.8), affects all TeamCity On-Premises versions. It has been addressed in versions 2025.11.7 and 2026.1.3. TeamCity Cloud instances have already",
+      "link": "https://thehackernews.com/2026/07/critical-teamcity-flaw-could-let.html",
+      "published": "2026-07-28T08:11:22+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [
         "CVE-2026-63077"
