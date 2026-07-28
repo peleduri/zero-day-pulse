@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-28 01:20 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-28 08:11 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,25 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Hackers target US firms in FastJson RCE zero-day attacks
+## 3. 🟠 Zero-Day — Unpatched Fastjson Vulnerability Exploited in Attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-28
+**Reference:** <https://www.securityweek.com/unpatched-fastjson-vulnerability-exploited-in-attacks/>
+
+> The critical remote code execution bug can be exploited without authentication, under the library’s stock default configurations. The post Unpatched Fastjson Vulnerability Exploited in Attacks appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — Critical Arista VeloCloud Orchestrator Vulnerability Exploited as Zero-Day
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-28
+**Reference:** <https://www.securityweek.com/critical-arista-velocloud-orchestrator-vulnerability-exploited-as-zero-day/>
+
+> Impacting on-premises deployments, the OS command injection allows attackers to access privileged internal functionality. The post Critical Arista VeloCloud Orchestrator Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .
+
+---
+
+## 5. 🟠 Zero-Day — Hackers target US firms in FastJson RCE zero-day attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-27
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-target-us-firms-in-fastjson-rce-zero-day-attacks/>
@@ -31,7 +49,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw
+## 6. 🟠 Zero-Day — Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-27
 **Reference:** <https://thehackernews.com/2026/07/public-exploit-released-for-patched.html>
@@ -42,7 +60,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -51,7 +69,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -60,7 +78,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -69,7 +87,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -78,7 +96,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -87,7 +105,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -96,7 +114,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 13. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -105,21 +123,34 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 12. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 14. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 14. 🟠 Zero-Day — Arista patches VeloCloud Orchestrator zero-day exploited in attacks
+## 16. 🟠 Zero-Day — Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw
+
+**CVE:** `CVE-2026-16812` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-28
+**Reference:** <https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html>
+
+> A maximum-severity security flaw impacting on-premises versions of Arista VeloCloud Orchestrator (VCO) has come under active exploitation in the wild.
+
+The vulnerability, tracked as CVE-2026-16812 (CVSS score: 10.0), is a case of operating system command injection that could pave the way for arbitrary code execution.
+
+&quot;VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue
+
+---
+
+## 17. 🟠 Zero-Day — Arista patches VeloCloud Orchestrator zero-day exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-27
 **Reference:** <https://www.bleepingcomputer.com/news/security/arista-patches-velocloud-orchestrator-zero-day-exploited-in-attacks/>
@@ -128,7 +159,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 15. 🟡 High Severity — TeamCity 2026.1.3 and 2025.11.7 Are Now Available
+## 18. 🟡 High Severity — TeamCity 2026.1.3 and 2025.11.7 Are Now Available
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** JetBrains Security Blog &nbsp;|&nbsp; **Published:** 2026-07-27
 **Reference:** <https://blog.jetbrains.com/teamcity/2026/07/teamcity-2026-1-3-2025-11-7-bugfix/>
@@ -137,7 +168,7 @@ SSD Secure Disclosure lists vBulletin 6.2.1 and earlier, and 6.1.6 and earlier, 
 
 ---
 
-## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

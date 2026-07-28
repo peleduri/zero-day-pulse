@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-28T01:20:46.485263+00:00",
-  "total": 16,
+  "generated": "2026-07-28T08:11:50.992661+00:00",
+  "total": 19,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,36 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/unpatched-fastjson-vulnerability-exploited-in-attacks/",
+      "title": "Unpatched Fastjson Vulnerability Exploited in Attacks",
+      "summary": "The critical remote code execution bug can be exploited without authentication, under the library\u2019s stock default configurations. The post Unpatched Fastjson Vulnerability Exploited in Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/unpatched-fastjson-vulnerability-exploited-in-attacks/",
+      "published": "2026-07-28T07:27:55+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/critical-arista-velocloud-orchestrator-vulnerability-exploited-as-zero-day/",
+      "title": "Critical Arista VeloCloud Orchestrator Vulnerability Exploited as Zero-Day",
+      "summary": "Impacting on-premises deployments, the OS command injection allows attackers to access privileged internal functionality. The post Critical Arista VeloCloud Orchestrator Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/critical-arista-velocloud-orchestrator-vulnerability-exploited-as-zero-day/",
+      "published": "2026-07-28T06:40:36+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -208,6 +238,23 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html",
+      "title": "Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw",
+      "summary": "A maximum-severity security flaw impacting on-premises versions of Arista VeloCloud Orchestrator (VCO) has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-16812 (CVSS score: 10.0), is a case of operating system command injection that could pave the way for arbitrary code execution.\n\n\"VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue",
+      "link": "https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html",
+      "published": "2026-07-28T04:43:53+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-16812"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
