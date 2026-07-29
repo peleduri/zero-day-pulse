@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-28T19:03:12.332229+00:00",
-  "total": 29,
+  "generated": "2026-07-29T01:22:08.742021+00:00",
+  "total": 44,
   "kev": 0,
-  "zero_day": 21,
+  "zero_day": 20,
   "enriched": 0,
   "findings": [
     {
@@ -93,21 +93,6 @@
       "tags": [
         "news",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-target-us-firms-in-fastjson-rce-zero-day-attacks/",
-      "title": "Hackers target US firms in FastJson RCE zero-day attacks",
-      "summary": "Hackers are actively exploiting a vulnerability in the FastJson open-source Java library, allowing remote code execution without user interaction or elevated privileges. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-us-firms-in-fastjson-rce-zero-day-attacks/",
-      "published": "2026-07-27T23:49:44+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -258,6 +243,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/openai-models-used-artifactory-zero-days-to-escape-to-the-internet/",
+      "title": "OpenAI models used Artifactory zero-days to escape to the internet",
+      "summary": "JFrog has confirmed that OpenAI models exploited zero-day vulnerabilities in self-hosted Artifactory servers to help escape an isolated testing environment and gain access to the internet before attacking Hugging Face. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/openai-models-used-artifactory-zero-days-to-escape-to-the-internet/",
+      "published": "2026-07-28T20:37:06+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.rapid7.com/blog/post/ra-check-point-smartconsole-authentication-bypass-technical-analysis-cve-2026-16232",
       "title": "Check Point SmartConsole Authentication Bypass Technical Analysis (CVE-2026-16232)",
       "summary": "Overview On July 22, 2026, Check Point published a security advisory for CVE-2026-16232 , an authentication bypass in the SmartConsole login process affecting Security Management Server and Multi-Domain Security Management Server (MDS). By leveraging CVE-2026-16232, an unauthenticated attacker can obtain an application login token, use this token to log in through SmartConsole with full administrator privileges, and modify the security policy or security configuration. Exploitation requires network access to the Management Server and for a Trusted Clients configuration that does not restrict GUI clients, which in our testing was a default setting. This vulnerability was reported as being exploited in the wild as a zero-day vulnerability at the time of disclosure. Our analysis finds that the root cause of CVE-2026-16232 is a broken trust boundary in the application authentication path. A vulnerable server accepts an attacker-supplied Secure Internal Communication (SIC) distinguished name (DN) as the identity of a remote application instead of binding that identity to the authenticated remote peer certificate DN returned by getCertificateDnName() . An attacker can read the management server's own SIC DN during the unauthenticated bootstrap communication, replay that DN in a forged application certificate bind, obtain an application token, and then ask the legacy management service to mint a new SmartConsole single sign-on (SSO) ticket. Rapid7 Labs has reproduced CVE-2026-16232 against affected R81.20 and R82.10 versions of the target software. Our proof-of-concept (PoC) exploit script can be used to successfully validate if a target is either vulnerable or patched. The vendor supplied patches have been confirmed to successfully remediate the vulnerability and prevent our PoC script from succeeding. Analysis SmartConsole is the desktop client administrators use to manage Check Point policy and configuration. A SmartConsole login crosses two generations of management pl",
@@ -325,19 +325,292 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/arista-patches-velocloud-orchestrator-zero-day-exploited-in-attacks/",
-      "title": "Arista patches VeloCloud Orchestrator zero-day exploited in attacks",
-      "summary": "Arista has patched a maximum-severity command injection vulnerability in on-premises VeloCloud Orchestrator deployments that is being actively exploited in attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-velocloud-orchestrator-zero-day-exploited-in-attacks/",
-      "published": "2026-07-27T22:49:44+00:00",
-      "source": "Bleeping Computer",
+      "id": "CVE-2026-66064",
+      "title": "goshs has ACL Bypass & Path Traversal",
+      "summary": "## Summary\n\n`sendFile` derives the served filename from the raw request path while opening the file from the cleaned path, so appending a trailing slash empties the derived name and defeats both the never-serve rule for the ACL file and the block list. \n\n## Finding (Medium): trailing-slash ACL and hidden-file bypass\n\nhttpserver/handler.go, sendFile (lines 789-801) takes the filename from the RAW req.URL.Path while the file itself is opened from the filepath.Clean-ed path. The two disagree, and a trailing slash makes the derived name the empty string. Both protections key on that derived name, so both are defeated: the rule that never serves the .goshs ACL file, and the acl.Block list.\n\nMeasured, with negative controls:\n\n```\nGET /blocked/secret.txt    -> 404          (control, correctly blocked)\nGET /blocked/secret.txt/   -> 200 + contents\nGET /blocked/.goshs/       -> 200, returns the ACL file itself,\n                              including the admin:$2a$... bcrypt hash\n```\n\nUnauthenticated when the ACL is configured block-only (common usage). Stated precisely: AUTHENTICATION IS NOT BYPASSED. An unauthenticated request against a directory protected by authentication still returns 401 under the same trick; I tested that. The claim is specifically that the block list and the ACL-file protection are bypassed. In-tree evidence that sendFile is the defect: the sibling handlers doDir and bulkDownload both derive the name correctly; sendFile is the lone outlier.\n\n## Suggested fixes\n\n1. Derive the served filename from the same cleaned path used to open the file, so the authorization decision and the file access cannot disagree.\n\n## Tooling\n\nAI assistance was used while investigating. The finding was reproduced against a running server on loopback with negative controls, including the 404-versus-200 pair and the authenticated-directory control that shows authentication is not affected.",
+      "link": "https://github.com/advisories/GHSA-964w-f6gj-5236",
+      "published": "2026-07-28T22:26:28Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "malware"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-66064"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54650",
+      "title": "openhole-server vulnerable to path traversal via URL-decoded request path",
+      "summary": "## Summary\n\nopenhole-server forwarded the URL-decoded request path (`r.URL.Path`) to tunnel clients instead of the original request-target. Percent-encoded dot-segments (`%2e`) and separators (`%2f`) were decoded to `../` and `/` before reaching the local service.\n\nGo's ServeMux rejects literal `../` paths, but percent-encoded traversal sequences bypassed this and were delivered to backends as working path traversal.\n\n## Impact\n\nAn unauthenticated remote attacker could read files outside the published web root on tunneled local services that resolve paths without canonicalization.\n\nExample:\n- `/%2e%2e/secret.txt` \u2192 file outside web root\n- `/%2e%2e/%2e%2e/etc/passwd` \u2192 sensitive files\n\nEncoded slashes (`/a%2fb`) could also bypass path-based access controls.\n\n## Fix\n\nv0.1.2 forwards `r.URL.EscapedPath()` on the server and preserves the request-target on the CLI client.\n\nUsers should upgrade both openhole-server and the openhole CLI to v0.1.2 or later.",
+      "link": "https://github.com/advisories/GHSA-fh2f-xfxc-q9cc",
+      "published": "2026-07-28T22:20:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54650"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54638",
+      "title": "td has pre-auth denial of service via unbounded memory allocation in proto.UnencryptedMessage.Decode",
+      "summary": "### Impact\n\nA remote, unauthenticated attacker can cause excessive memory allocation (and resulting CPU / GC pressure, potentially OOM termination) by sending a crafted unencrypted MTProto packet.\n\n`(*proto.UnencryptedMessage).Decode` read an attacker-controlled 32-bit `dataLen` field and immediately allocated a buffer of that size via `make([]byte, dataLen)` **before** validating that the underlying buffer actually contained that many bytes. A 20-byte packet declaring a ~1.75 GB payload (e.g. `dataLen = 0x70000000`) forces the runtime to provision and zero-initialize a multi-gigabyte heap allocation before the length is rejected.\n\nUnencrypted messages are part of the unauthenticated MTProto handshake path, so no credentials or established session are required to reach the vulnerable code.\n\nImpact is limited to availability; there is no evidence of memory corruption, out-of-bounds access, or code execution.\n\n### Patches\n\nFixed in **v0.145.1** by validating `dataLen` against the remaining buffer length before allocation (commit `9d5d1f31e`).\n\n### Workarounds\n\nUpgrade to v0.145.1 or later. There is no in-process workaround for affected versions short of avoiding exposure of the unauthenticated MTProto parsing path to untrusted peers.",
+      "link": "https://github.com/advisories/GHSA-whmm-qj9r-wvr2",
+      "published": "2026-07-28T22:15:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54638"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54719",
+      "title": "goshs: File-based .goshs ACL authorization bypass via the ?bulk zip-download route (unauthenticated read; residual of GHSA-wvhv-qcqf-f3cx)",
+      "summary": "GHSA-wvhv-qcqf-f3cx fixed the per-folder .goshs ACL bypass on the state-changing routes (PUT/POST upload/?mkdir/?delete) and added recursive ACL resolution, and its description states the read/list path correctly enforces .goshs. That premise does not hold for the ?bulk zip-download route. bulkDownload (httpserver/updown.go) takes one or more ?file= parameters, runs each through sanitizePath(fs.Webroot, file), and streams the contents back as a ZIP without ever calling findEffectiveACL/applyCustomAuth. It is dispatched from earlyBreakParameters (?bulk) before the normal doDir/doFile/sendFile flow that performs the ACL check. An unauthenticated attacker can therefore read any file under the webroot protected solely by a .goshs ACL, bypassing both the folder auth (401 on the normal path) and the per-file block list (404 on the normal path). Same authorization-inconsistency root cause as the original advisory, surviving on a read route the fix did not cover.\n\nProof of concept (live, against the fixed v2.1.0 build which includes fix commit f212c4f4, served with no global -b auth, only a per-folder .goshs):\n  GET /protected/secret.txt              -> 401 (ACL enforced on normal path)\n  GET /protected/secret.txt -u admin:admin -> 200\n  GET /?bulk&file=/protected/secret.txt  -> 200, zip contains the protected file contents  (BYPASS)\n  GET /?bulk&file=/protected/blocked.txt -> 200, zip contains the block-listed file        (block bypass)\n  GET /protected/secret.txt?share        -> 403 'Sharing disabled when auth is disabled'    (correctly gated, NOT a bypass)\n\nImpact: any unauthenticated network attacker can read files an operator protected with the documented per-folder .goshs ACL/basic-auth feature, by requesting them through ?bulk. Confidentiality only (the write/delete equivalents were closed by GHSA-wvhv-qcqf-f3cx). Applies to deployments relying on .goshs as the access boundary (a server-wide -b basic auth, if configured, also gates ?bulk via its middleware).\n\nRemedia",
+      "link": "https://github.com/advisories/GHSA-rmxw-pq4x-3fvh",
+      "published": "2026-07-28T21:59:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54719"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54654",
+      "title": "`datamodel-code-generator` vulnerable to code injection via unescaped carriage return in `--extra-template-data` `comment` field",
+      "summary": "### Summary\n\n`datamodel-code-generator` is vulnerable to code injection when a developer passes an `--extra-template-data` file whose `comment` value contains a literal `\\r` (carriage return). The `comment` variable is rendered into a Python `#` comment in six built-in templates with **no** line-terminator escaping. Python's tokenizer treats a bare CR as a physical-line terminator (see [Python language reference \u2014 Physical lines](https://docs.python.org/3/reference/lexical_analysis.html#physical-lines)), so the comment ends at the `\\r` and the text after it is parsed as Python, including, when the CR is followed by suitable indentation, as a statement within the class body that follows on the next template line.\n\n### Details\n\nThe vulnerable templates each contain `# {{ comment }}` with no escaping:\n\n- `src/datamodel_code_generator/model/template/TypeAliasAnnotation.jinja2:12` and `:19`\n- `src/datamodel_code_generator/model/template/TypeAliasType.jinja2:12` and `:19`\n- `src/datamodel_code_generator/model/template/TypeStatement.jinja2:12` and `:19`\n- `src/datamodel_code_generator/model/template/pydantic_v2/BaseModel.jinja2:4`\n- `src/datamodel_code_generator/model/template/pydantic_v2/RootModel.jinja2:19`\n- `src/datamodel_code_generator/model/template/pydantic_v2/RootModelTypeAlias.jinja2:13`\n\nThe `pydantic_v2/BaseModel.jinja2:4` site is representative:\n\n```jinja2\nclass {{ class_name }}({{ base_class }}):{% if comment is defined %}  # {{ comment }}{% endif %}\n```\n\nWhen the developer-supplied extras file populates `comment` for a model, the value reaches the template via `DataModel.extra_template_data` (set in `src/datamodel_code_generator/model/base.py:736-742`) and Jinja2 interpolates it raw. None of the templates use `comment_safe`, `escape_docstring`, or any other line-terminator filter.\n\n### PoC\nComplete self contained POC is available at my secret gist: https://gist.github.com/thegr1ffyn/8ad6b8cb3cc2be9d3a0144aeb6896a3f\n\n### Impact\n\n- **Who's affected**: any devel",
+      "link": "https://github.com/advisories/GHSA-wjv6-jcfj-mf9r",
+      "published": "2026-07-28T21:50:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54654"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55389",
+      "title": "datamodel-code-generator vulnerable to arbitrary local file read via JSON-Schema `$ref` (`file://` and `../` traversal), bypassing `--no-allow-remote-refs`",
+      "summary": "### Summary\n\n`datamodel-code-generator` resolves JSON-Schema `$ref` targets that point at the local filesystem without restricting them to the input/base directory and without honoring the remote-reference security control. In the default configuration, an attacker who controls an input schema (a \"paste your OpenAPI/JSON-Schema\" service, a CI job that generates models from a submitted spec, or any multi-tenant codegen platform) can read any file the process user can read and map the host filesystem. This works via either a `file://` absolute URI or a `../`-escaped relative reference, and it succeeds even when `--no-allow-remote-refs` is set.\n\nThis is an unauthenticated path-traversal / information-disclosure issue (CWE-22 / CWE-200) plus a bypass of a documented security control.\n\n### Details\n\n`is_url()` classifies `file://` as a URL (`reference.py:1249`):\n\n```python\ndef is_url(ref: str) -> bool:\n    return ref.startswith((\"https://\", \"http://\", \"file://\"))\n```\n\nThe remote-ref gate then explicitly exempts `file://`, so `--no-allow-remote-refs` never applies to it (`parser/jsonschema.py`, `_get_ref_body`):\n\n```python\nif is_url(resolved_ref):\n    if not resolved_ref.startswith(\"file://\") and self.http_local_ref_path is None:\n        if self.allow_remote_refs is False:\n            raise Error(...)        # <-- skipped for file://\n        ...\n    return self._get_ref_body_from_url(resolved_ref)\nreturn self._get_ref_body_from_remote(resolved_ref)\n```\n\nBoth local-file branches read the target with **no containment check**. The `file://` branch reads any absolute path:\n\n```python\n# _get_ref_body_from_url\nif ref.startswith(\"file://\"):\n    path = url2pathname(urlparse(ref).path)     # absolute path, anywhere on disk\n    return self.remote_object_cache.get_or_put(\n        ref, default_factory=lambda _: load_data_from_path(Path(path), self.encoding))\n```\n\nand the plain relative branch lets `../` escape the base directory:\n\n```python\n# _get_ref_body_from_remote\nfull_path = self",
+      "link": "https://github.com/advisories/GHSA-8359-h9fx-j6v9",
+      "published": "2026-07-28T21:49:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55389"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55391",
+      "title": "datamodel-code-generator vulnerable to SSRF protection bypass via DNS rebinding",
+      "summary": "### Summary\n\n`datamodel-code-generator`'s anti-SSRF guard validates the resolved IP of a fetch target once and then lets `httpx` perform its own independent DNS resolution to connect, so the validated address is never pinned. A hostname that resolves to a public IP at validation time and a private IP at connection time (DNS rebinding) bypasses the guard and reaches loopback, link-local cloud-metadata endpoints (`169.254.169.254`), and other internal services \u2014 even with the default `allow_private_network=False`. This is a server-side request forgery reachable when the tool fetches an attacker-influenced URL (remote `$ref`, or `--url`).\n\n### Details\n\nIn `src/datamodel_code_generator/http.py`, `get_body()` calls `_validate_url_for_fetch()`, which resolves the host via `_get_ips_from_host()` (`socket.getaddrinfo`) and rejects non-global addresses:\n\n```python\nips = _get_ips_from_host(host)            # resolution #1 (validation)\nif not ips: return\nif all(_is_safe_ip(ip) for ip in ips): return\nraise SchemaFetchError(...)               # blocks private/link-local/reserved\n```\n\nIt then connects with a separate, independent resolution:\n\n```python\nresponse = httpx.get(current_url, ...)    # resolution #2 (connection) -- NOT pinned to #1\n```\n\nNothing ties the connection to the IP that passed validation. Between the two resolutions a low-TTL attacker-controlled record can flip from a public address (passes the guard) to a private one (used by the connection). The redirect-handling loop in the same function does correctly re-validate each redirect URL, so this is specifically a TOCTOU/rebinding gap in the host-to-IP check, not a redirect issue.\n\n### PoC\n\nSelf-contained reproducer: https://gist.github.com/thegr1ffyn/c1d54dd6ff2a4c0d7d0dabe00c4985f4 \nIt starts a loopback HTTP server standing in for an internal target and patches `socket.getaddrinfo` to return a public IP on the guard's lookup and `127.0.0.1` on httpx's  the standard deterministic way to demonstrate this TOCTOU cl",
+      "link": "https://github.com/advisories/GHSA-vx7x-vcc2-c44g",
+      "published": "2026-07-28T21:45:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55391"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54656",
+      "title": "`datamodel-code-generator` vulnerable to code execution on import via unescaped `validators` entries in --extra-template-data",
+      "summary": "### Summary\n\nWhen the Pydantic v2 output mode is in use, `datamodel-code-generator` reads a `validators` array from each model entry in the `--extra-template-data` file and synthesises a Pydantic `@field_validator(...)` decorator from each entry. The field names and the validator mode are interpolated into the decorator call wrapped in *unescaped* single quotes. A value containing `'` breaks out of the string literal, letting an attacker emit an arbitrary positional Python expression into the decorator. The expression is evaluated at class-definition time, i.e. the moment the developer imports the generated module. This is the same trust model as the recently-published GHSA-wjv6-jcfj-mf9r (extras-file comment injection) but the impact is full RCE rather than a docstring leak.\n\n### Details\n\nSink: `src/datamodel_code_generator/model/pydantic_v2/base_model.py`, `_process_validators` (lines 405\u2013449, at tag `0.60.1` / commit `a321547e`):\n\n```python\ndef _process_validators(self) -> None:\n    validators = self.extra_template_data.get(\"validators\")\n    if not validators:\n        return\n    ...\n    for validator in validators:\n        fields = validator.get(\"fields\") or [validator.get(\"field\")]\n        fields = [f for f in fields if f]\n        if not fields:\n            continue\n        function_path: str = validator[\"function\"]\n        function_name = function_path.rsplit(\".\", 1)[-1]\n        mode = validator.get(\"mode\", \"after\")\n        fields_str = \", \".join(f\"'{f}'\" for f in fields)     # (A) UNESCAPED\n        ...\n        mode_str = f\"mode='{mode}'\"                          # (B) UNESCAPED\n        prepared_validators.append({\n            \"fields_str\": fields_str,\n            \"mode_str\":   mode_str,\n            \"method_name\": method_name,\n            \"function_name\": function_name,\n            \"mode\": mode,\n        })\n        self._additional_imports.append(Import.from_full_path(function_path))  # (C)\n```\n\nThe strings from (A) and (B) flow verbatim into `src/datamodel_code",
+      "link": "https://github.com/advisories/GHSA-8m8r-38jm-f355",
+      "published": "2026-07-28T21:44:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54656"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54690",
+      "title": "datamodel-code-generator vulnerable to SSRF via JSON-Schema `$ref` to HTTP URL (silent by default)",
+      "summary": "### Summary\n\nJSON-Schema `$ref` values pointing at HTTP or HTTPS URLs are silently dereferenced by `datamodel-code-generator` with no IP/host validation, no scheme allow-list, and redirects followed unconditionally. The `--allow-remote-refs` gate added in 0.56.0 defaults to `None`, which only emits a deprecation warning and then fetches the URL anyway; only explicit `--allow-remote-refs=false` blocks the request. The fetched body is parsed as a sub-schema and reflected verbatim into the generated `.py` source. As a result, any JSON-Schema document the developer feeds to `datamodel-codegen` \u2014 including documents authored by an attacker \u2014 can pivot to arbitrary internal addresses and leak the response into the generated code, with no developer cooperation beyond running the tool.\n\n### Details\n\nSink: `src/datamodel_code_generator/parser/jsonschema.py`, `_get_ref_body` (lines 4776\u20134793, at tag `0.60.1` / commit `a321547e`):\n\n```python\ndef _get_ref_body(self, resolved_ref: str) -> dict[str, YamlValue]:\n    if is_url(resolved_ref):\n        if not resolved_ref.startswith(\"file://\") and self.http_local_ref_path is None:\n            if self.allow_remote_refs is False:\n                raise Error(f\"Fetching remote $ref is disabled: {resolved_ref}...\")\n            if self.allow_remote_refs is None:\n                warn_deprecated(                            # (A) warn only\n                    \"behavior.remote-ref-default\",\n                    details=f\"Reference: {resolved_ref}\",\n                    stacklevel=2,\n                )\n        return self._get_ref_body_from_url(resolved_ref)    # (B) fetch fires\n    return self._get_ref_body_from_remote(resolved_ref)\n```\n\n- (A) emits a deprecation warning when `allow_remote_refs` is its default (`None`); execution falls through to (B).\n- (B) routes the URL through `_get_text_from_url` \u2192 `get_body`, the same fetcher described in other report \u2014 no IP validation, redirects followed.\n\nThe fetched body is then parsed as a sub-schema and",
+      "link": "https://github.com/advisories/GHSA-954p-556p-r752",
+      "published": "2026-07-28T21:42:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54690"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55415",
+      "title": "datamodel-code-generator vulnerable to code injection via `x-python-import` / `customTypePath` in generated import statements",
+      "summary": "#### Summary\n\nA malicious input schema (OpenAPI / JSON Schema) can execute arbitrary Python code on the machine that **imports** the generated model. The `x-python-import` and `customTypePath` schema extensions flow, unsanitized, into the `import` statements datamodel-code-generator emits. A newline embedded in the extension value breaks out of the `from \u2026 import \u2026` line and injects an attacker-controlled statement at module scope, which runs at import time. This is an unauthenticated, schema-content\u2013driven remote code execution against any consumer of the generated code (e.g. arbitrary file read,the PoC exfiltrates `/etc/passwd`). It survives the v0.61.0 security release that fixed the related `x-python-type`, `default_factory`, GraphQL-union-description, and `validators` sinks  those fixes did not cover this sibling path.\n\n#### Details\n\nThe sink is `Import.from_full_path` and `Imports.create_line`:\n\n- `src/datamodel_code_generator/imports.py:35` \u2014 `from_full_path()` only does `class_path.split(\".\")` and preserves every other character, **including newlines**:\n  ```python\n  @classmethod\n  @lru_cache\n  def from_full_path(cls, class_path: str) -> Import:\n      split_class_path: list[str] = class_path.split(\".\")\n      return cls(import_=split_class_path[-1], from_=\".\".join(split_class_path[:-1]) or None)\n  ```\n- `src/datamodel_code_generator/imports.py:64` \u2014 `create_line()` renders the result verbatim:\n  ```python\n  def create_line(self, from_: str | None, imports: set[str]) -> str:\n      if from_:\n          return f\"from {from_} import {', '.join(self._set_alias(from_, imports))}\"\n      return \"\\n\".join(f\"import {i}\" for i in self._set_alias(from_, imports))\n  ```\n\nThere is no check that the path segments are Python identifiers, contrast `validators._validate_dotted_python_identifier_path`, which the same v0.61.0 release added for the `validators` config, and `types.is_python_type_annotation`, added for `x-python-type`. The two extensions below were left unguarded.\n\n",
+      "link": "https://github.com/advisories/GHSA-5578-w22f-pfx9",
+      "published": "2026-07-28T21:40:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55415"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55403",
+      "title": "datamodel-code-generator: Authorization / request headers leaked to cross-origin redirect target when fetching remote schemas",
+      "summary": "### Summary\n\nWhen `datamodel-code-generator` fetches a remote schema and follows an HTTP redirect, it re-sends the original request headers, including any `Authorization` header, to the redirect target even when the redirect changes origin (host/port/scheme). Credentials that an operator scoped to a trusted schema host are therefore forwarded to an attacker-controlled or otherwise different host, leaking them.\n\n### Details\n\nIn `src/datamodel_code_generator/http.py`, `get_body()` follows redirects manually and re-issues each hop with the same `headers` argument, with no check that the origin is unchanged:\n\n```python\nfor redirect_count in range(MAX_HTTP_REDIRECTS + 1):\n    _validate_url_for_fetch(current_url, allow_private_network=allow_private_network)\n    response = httpx.get(current_url, headers=headers, follow_redirects=False, ...)  # same headers every hop\n    if (redirect_url := _get_redirect_url(httpx, current_url, response)) is None:\n        break\n    current_url = redirect_url\n```\n\nBrowsers and HTTP clients such as `requests`/`httpx` strip `Authorization` when a redirect crosses origin; here it is preserved unconditionally. Headers are operator-supplied via `--http-headers` (and credentials can also arrive through `--url` userinfo), so a redirect from the trusted host to any other host discloses them.\n\n### PoC\n\nSelf-contained reproducer: https://gist.github.com/thegr1ffyn/ade3035d7f2be95e16f11698259cdbc2  \nHost A (the trusted schema host) 302-redirects to host B (a different origin) which records received headers; the request carries an auth token scoped to A. \n\n(The PoC uses loopback servers; `allow_private_network=True` is only to avoid the separate SSRF guard blocking loopback and has no bearing on the leak.)\n\n### Impact\n\nExposure of sensitive information to an unauthorized actor (CWE-200). Affects operators who pass authentication headers/credentials to fetch a remote schema (`--http-headers`, `--url` with userinfo) when the configured host issues a redir",
+      "link": "https://github.com/advisories/GHSA-r5vv-ff45-prp2",
+      "published": "2026-07-28T21:32:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55403"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54691",
+      "title": "datamodel-code-generator vulnerable to SSRF via --url: no host/IP validation, follows redirects",
+      "summary": "### Summary\n\n`datamodel-code-generator`'s built-in HTTP fetcher (`http.get_body`) issues an `httpx.GET` against any URL passed to `--url` (or reached via a redirect chain) with **no allow-list, no deny-list, no IP/host validation, and `follow_redirects=True`**. Loopback addresses, RFC1918 ranges, link-local (`169.254.169.254` cloud metadata), unique-local IPv6 and any other network-accessible target are all reachable. The JSON/YAML response body is parsed as a schema and reflected into the generated `.py` source, exfiltrating the response to anyone with access to that file (commonly committed to a repository).\n\n### Details\n\nSink: `src/datamodel_code_generator/http.py`, `get_body` (lines 31\u201361, at tag `0.60.1` / commit `a321547e`):\n\n```python\ndef get_body(url, headers=None, ignore_tls=False,\n             query_parameters=None, timeout=DEFAULT_HTTP_TIMEOUT) -> str:\n    httpx = _get_httpx()\n    try:\n        response = httpx.get(\n            url,\n            headers=headers,\n            verify=not ignore_tls,\n            follow_redirects=True,          # (A)\n            params=query_parameters,\n            timeout=timeout,\n        )\n    except Exception as e:\n        ...\n    if response.status_code >= 400:\n        ...\n    content_type = response.headers.get(\"content-type\", \"\").lower()\n    if \"text/html\" in content_type:\n        raise SchemaFetchError(...)         # (B) \u2014 only filter\n    return response.text                    # (C) \u2192 embedded in generated.py\n```\n\n- (A) follows redirects unconditionally \u2014 a public URL \u2192 302 \u2192 internal address chain works.\n- (B) the only filter is rejecting `text/html`. Non-HTML internal endpoints (JSON APIs, cloud metadata, admin services) pass through.\n- (C) the response body becomes the schema; its `title`, `description`, `properties`, etc. land in the generated `.py` as class attributes and `Field(description=...)` strings.\n\n`get_body` is called by `parser/base.py:1326` (`_get_text_from_url`), which is reached from CLI argument `--url",
+      "link": "https://github.com/advisories/GHSA-rfr2-mq9m-x2qx",
+      "published": "2026-07-28T21:30:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54691"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50568",
+      "title": "Fission: SanitizeFilePath lexical HasPrefix bypass permits sibling-directory escape",
+      "summary": "`SanitizeFilePath` in `pkg/utils/utils.go` validated that a path stayed under a safe directory by calling `strings.HasPrefix(path, safedir)`. This is a lexical check, not a directory boundary check: `/packages-extra/evil` starts with\n`/packages`, so it passed. The function did not enforce a path-separator boundary, so any sibling directory whose name began with the safe-directory string was accepted.\n\nCallers included the builder's `Clean` handler (`pkg/builder/builder.go:208`) and the fetcher's `Fetch` / `Upload` handlers (`pkg/fetcher/fetcher.go`). A tenant who could pre-create or control a sibling directory under the fetcher /\nbuilder's shared volume could induce a write or read outside the intended safe directory.\n\n### Affected\n\n- Project: `github.com/fission/fission`\n- Versions: all versions through v1.24.0 with `SanitizeFilePath` in the tree\n- Audited commit: `647c141`\n- Component: `pkg/utils/utils.go:SanitizeFilePath`\n- Callers: `pkg/builder/builder.go:157,164,208`, `pkg/fetcher/fetcher.go:296,311,450,496,565,571`\n- Configuration: default; requires a sibling directory to the safe dir to exist on the filesystem\n\n\nFix section (paste into the Fix / Patches field)\n\nFixed in [v1.25.0](https://github.com/fission/fission/releases/tag/v1.25.0) by:\n\n- [PR #3445](https://github.com/fission/fission/pull/3445) (commit [`8298e33e`](https://github.com/fission/fission/commit/8298e33ea7457702f893eae11077987cf905edb4)) \u2014 migrate every `SanitizeFilePath` call site (fetcher: `storePath` /\n`tmpPath` / `secretDir` / `configDir` / rename + `writeSecretOrConfigMap`; builder: `srcPkg` / `deployPkg` path validation and `srcPkg` stat) to new `pkg/utils/root.go` helpers (`RootJoin`, `RootStat`, `RootWriteFile`, `RootMkdirAll`,\n`RootRename`) that operate through `os.Root`. `os.Root` enforces directory confinement in the kernel and is recognized by CodeQL `go/path-injection` as a traversal barrier.\n- [PR #3446](https://github.com/fission/fission/pull/3446) (commit [`5aac6f0b`](https://gi",
+      "link": "https://github.com/advisories/GHSA-r5jh-q2mw-gcx4",
+      "published": "2026-07-28T20:18:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50568"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50567",
+      "title": " Fission: Zip Slip in pkg/utils/zip.go:Unarchive allows fetcher to write outside the destination directory",
+      "summary": "`Unarchive` in `pkg/utils/zip.go` joined each archive entry name with the destination directory via `filepath.Join` and wrote the result without checking whether the resolved path stayed under the destination. A zip entry named\n  `../../tmp/evil` therefore landed at `/tmp/evil`. An attacker who could control a `Package.Spec.Source.URL` or `Deployment.URL` archive could induce the fetcher (running as the per-environment pod's `fission-fetcher` sidecar) to write\n  files anywhere that process could reach: into other tenants' `/packages/<ns>/` directories, into mounted secret/config volumes, or into the fetcher's own binary.\n\n  ### Affected\n\n  - Project: `github.com/fission/fission`\n  - Versions: all up to and including v1.24.0\n  - Audited commit: `647c141`\n  - Component: `pkg/utils/zip.go` (`Unarchive`)\n  - Configuration: default; triggered when the fetcher downloads and extracts a zip archive\n\n  Fix section (paste into the Fix / Patches field)\n\n  Fixed in [v1.25.0](https://github.com/fission/fission/releases/tag/v1.25.0) by:\n\n  - [PR #3444](https://github.com/fission/fission/pull/3444) (commit [`55704aca`](https://github.com/fission/fission/commit/55704aca1b8d6f45bc7c7c2e4805c7e14875ec0f)) \u2014 `Unarchive` now opens an `os.Root` on the destination, validates each\n  archive entry name (rejects absolute paths and `..` traversal), and refuses symlink entries up front. The `os.Root` confines every `mkdir` / `create` to the destination in the kernel.\n\n  Regression coverage: `TestUnarchiveZipSlip` in `pkg/utils/zip_test.go` exercises parent-traversal, absolute-path, and symlink entries.",
+      "link": "https://github.com/advisories/GHSA-q6vm-xqc9-v3ff",
+      "published": "2026-07-28T20:16:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50567"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50569",
+      "title": "Fission: HTTPTrigger admission omits RelativeURL / Prefix validation; kubectl apply bypasses CLI checks",
+      "summary": "`HTTPTriggerSpec.Validate()` validated `Methods`, `FunctionReference`, `Host`, `IngressConfig`, and `CorsConfig`, but silently skipped `RelativeURL` and `Prefix`. Those two fields were validated at the CLI level only\n(`pkg/fission-cli/cmd/httptrigger/create.go:83`). The post-CRD-modernization webhook for HTTPTrigger was retired in favor of API-server CEL \u2014 and CEL had no rules on those fields either \u2014 so an HTTPTrigger created via `kubectl apply` or\na direct Kubernetes REST API call bypassed every URL-level check.\n\nA tenant with HTTPTrigger create permission could therefore create triggers whose `RelativeURL` or `Prefix`:\n\n- was empty (with both fields unset, the trigger has no URL),\n- did not start with `/`,\n- was exactly `/` (claiming the entire router root),\n- contained `..` traversal segments (e.g. `/api/../admin`),\n- collided with router-owned routes: `/router-healthz`, `/readyz`, `/_version`, `/auth/login`,\n- collided with the router-internal function prefix `/fission-function/<ns>/<name>`.\n\n### Affected\n\n- Project: `github.com/fission/fission`\n- Versions: all versions through v1.24.0\n- Audited commit: `647c141`\n- Component: `pkg/apis/core/v1/validation.go:HTTPTriggerSpec.Validate` (and the missing CEL on `HTTPTriggerSpec`)\n- Configuration: default\n\nFix section (paste into the Fix / Patches field)\n\nFixed in [v1.25.0](https://github.com/fission/fission/releases/tag/v1.25.0) by:\n\n- [PR #3464](https://github.com/fission/fission/pull/3464) (commit [`0deed6bf`](https://github.com/fission/fission/commit/0deed6bf2af2a0c0c6094b25e1a0afad36773e3b)) \u2014 enforce the path-safety invariants at both admission layers so the API\nserver's CEL evaluation and the Go-side `HTTPTriggerSpec.Validate()` agree:\n  - Three `+kubebuilder:validation:XValidation` rules on `HTTPTriggerSpec` (the API server's CEL admission gate, regenerated into `crds/v1/fission.io_httptriggers.yaml`):\n    - at least one of `relativeurl` or `prefix` must be non-empty;\n    - `relativeurl`, when set, must start",
+      "link": "https://github.com/advisories/GHSA-vchh-r53j-8mpw",
+      "published": "2026-07-28T20:16:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50569"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50570",
+      "title": "Fission: Incomplete capability denylist in Environment/Function PodSpec validation allows tenant-added CAP_SYS_TIME and cross-tenant node wall-clock corruption",
+      "summary": "Fission v1.24.0 added PodSpec safety validation for tenant-facing Environment and Function CRDs (`ValidatePodSpecSafety` / `ValidateContainerSafety` admission webhook + `sanitizeContainerSecurityContext` executor merge layer), but the\ncapability check was implemented as a fixed **denylist of six Linux capabilities** (SYS_ADMIN, NET_ADMIN, SYS_PTRACE, SYS_MODULE, DAC_READ_SEARCH, DAC_OVERRIDE). The denylist omitted **CAP_SYS_TIME**, among others. As a result, a tenant\nwho could create a Function or Environment CRD could request `securityContext.capabilities.add: [\"SYS_TIME\"]`, pass Fission's admission validation and merge-layer sanitization, and run attacker-controlled code with `CAP_SYS_TIME` in the\nresulting function or runtime container.\n\nDemonstrated consequence: cross-tenant node integrity damage via `CAP_SYS_TIME`. The Linux real-time clock is not namespaced \u2014 time namespaces virtualize only `MONOTONIC` and `BOOTTIME`, never `REALTIME` \u2014 so a tenant container holding\n`CAP_SYS_TIME` could call `clock_settime(CLOCK_REALTIME)` and rewrite the shared node wall clock. That corrupts TLS / certificate validity windows, Kubernetes lease renewal, token expiry, scheduling, and time-series for every workload on\nthe node.\n\nThe denylist also omitted `SYS_RAWIO`, `BPF`, `SYS_RESOURCE`, and `MAC_ADMIN`. Those are documented as evidence that the denylist is structurally incomplete (their practical impact is kernel-, LSM-, or device-cgroup-dependent and is not\nexercised in this report).\n\nThe deeper structural problem: a denylist on `capabilities.add` cannot constrain capabilities the OCI runtime grants by default \u2014 `DAC_OVERRIDE` is in the OCI default cap set and reaches the container regardless of any `add` check,\npartially mooting the denylist for its own entries. A capability allowlist (with `drop:[\"ALL\"]` to remove the default set) is the only model that addresses both problems.\n\n### Affected\n\n- Project: `github.com/fission/fission`\n- Versions: `<= 1.24.0`\n- Audited commits",
+      "link": "https://github.com/advisories/GHSA-qf5v-m7p4-95rp",
+      "published": "2026-07-28T20:12:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50570"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-54588",
