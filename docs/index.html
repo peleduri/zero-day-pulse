@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">17</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">49</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-29 13:41 UTC</div>
+            <div class="generated">Updated 2026-07-29 18:51 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-20316" target="_blank" rel="noopener">CVE-2026-20316 — Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-20316</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-29</span>
+  </div>
+  <p class='summary'>Vendor: Cisco | Product: Secure Firewall Management Center (FMC). Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems. Required action: App…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -148,6 +164,24 @@
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wchh-9x6h-7f6p" target="_blank" rel="noopener">olm dependency deprecation: CVE-2022-39255 and CVE-2024-45193</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2022-39255</code> <code class="cve">CVE-2024-45193</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>### Problem
+
+Multiple vulnerabilities were disclosed in 2024 affecting libolm (Olm): AES timing / side‑channel, Ed25519 signature malleability, and timing leaks in base64 decoding; several CVEs were assigned. Patches and mitigations were published; maintainers recommend upgrading to fixed versions. In addition, a 2022 “Olm/Megolm protocol confusion” advisory affecting some SDKs was critical and re…</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -180,26 +214,6 @@
           <p class='summary'>Cybersecurity researchers have shared additional technical details about a recently patched critical security flaw impacting Check Point Security Management Server and Multi-Domain Security Management Server (MDS) that has come under active exploitation in the wild.
 
 The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentication bypass in the SmartConsole login process that</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hp74-gm6m-2qm5" target="_blank" rel="noopener">Pocket ID has a reauthentication bypass via one-time access token login — passkey step-up requirement defeated by JWT freshness check that accepts any login method</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-28</span>
-          </div>
-          <p class='summary'># Reauthentication Bypass via One-Time Access Token Login
-
-## Summary
-
-A weaker authentication method (OTA token or signup token) is accepted as passkey step-up proof, yielding unauthorized renewable 30-day OIDC refresh tokens for clients explicitly configured with `RequiresReauthentication: true`. The `POST /api/webauthn/reauthenticate` endpoint&#x27;s access-token fallback checks only JWT freshness (…</p>
 
         </article>
 
@@ -379,25 +393,246 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w6p7-2fxx-4f44" target="_blank" rel="noopener">Pocket ID: OIDC refresh token flow bypasses authorization revocation, account disabling, and group restrictions</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/critical-rails-flaw-could-let.html" target="_blank" rel="noopener">Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-43983</code>
+            <code class="cve">CVE-2026-66066</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>Ruby on Rails has released fixes for a critical Active Storage vulnerability that could let unauthenticated attackers read arbitrary files from application servers through crafted image uploads.
+
+Tracked as CVE-2026-66066 (CVSS score: 9.5), the flaw can expose the Rails process environment and secrets such as secret_key_base, the Rails master key, database passwords, cloud storage credentials,</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mjqf-28ph-426h" target="_blank" rel="noopener">Logging operator has Fluentd configuration injection that allows remote code execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54680</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-07-28</span>
+            <span>2026-07-29</span>
           </div>
-          <p class='summary'># OIDC Refresh Token Flow Bypasses Authorization Revocation, Account Disabling, and Group Restrictions
+          <p class='summary'>### Summary
 
-## Summary
+The Fluentd configuration renderer in Logging operator writes strings from CRDs such as `Flow` directly into `fluent.conf` without escaping them. As a result, a user who can create `Flow` resources can inject Fluentd configuration by providing values that contain newlines.
 
-The `createTokenFromRefreshToken` function (oidc_service.go:451) validates the refresh token&#x27;s cryptographic integrity but does not re-validate the user&#x27;s current authorization state before issuing new tokens. This allows three bypasses:
+In the confirmed path, a value in `record_transformer.records` can close the current `&lt;record&gt;` / `&lt;filter&gt;` blo…</p>
 
-1. **Authorization revocation bypass**: After…</p>
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8hm4-r66f-29wr" target="_blank" rel="noopener">Easy!Appointments: Authorization bypass in Google OAuth provider binding lets any backend user rebind a peer provider&#x27;s Google sync</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-52841</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>### Summary
+
+`Google::oauth` at `application/controllers/Google.php:278` stores its URL-supplied `provider_id` in the session, and `oauth_callback` saves the issued Google OAuth token against that row without checking the caller owns the provider. Any logged-in backend user (admin, provider, or secretary) rebinds a peer provider&#x27;s Google sync to a Google account they control. The peer&#x27;s appointmen…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pm5p-7w5h-jm5q" target="_blank" rel="noopener">Easy!Appointments has server-side request forgery in CalDAV connection test that exposes the deployment&#x27;s internal network</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-52840</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>### Summary
+
+`Caldav::connect_to_server` at `application/controllers/Caldav.php:60` hands the request&#x27;s `caldav_url` to a Guzzle `REPORT` call without scheme or host validation. A logged-in backend user (admin, provider, or secretary) reaches loopback, RFC1918, and link-local hosts on the deployment&#x27;s network. The Guzzle exception path returns the upstream status code plus ~120 bytes of response b…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-cve-2026-63077-critical-unauthenticated-remote-code-execution-in-jetbrains-teamcity" target="_blank" rel="noopener">CVE-2026-63077: Critical unauthenticated remote code execution in JetBrains TeamCity</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-63077</code>
+    <span class="meta-sep">·</span>
+    <span>Rapid7 Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-07-29</span>
+  </div>
+  <p class='summary'>Overview On July 27, 2026, JetBrains published a security advisory for CVE-2026-63077 , a critical unauthenticated vulnerability affecting all versions of TeamCity On-Premises. The issue is classified as deserialization of untrusted data and has a CVSS score of 9.8 . An unauthenticated remote attacker with HTTP(S) access to a TeamCity server can exploit the agent polling protocol to bypass authent…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m4x6-gwgp-4pm7" target="_blank" rel="noopener">AgentCore CLI Bedrock Agent Import Vulnerable to Code Injection via Improper Triple-Quote Escaping</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-11393</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>### Summary
+The AgentCore CLI (@aws/agentcore) is a developer tool for managing agent infrastructure lifecycle on Amazon Bedrock AgentCore. An issue exists where, under certain circumstances, a crafted collaborationInstruction value stored in Bedrock Agent collaborator metadata can break out of a Python triple-quoted string in code generated by the `agentcore add agent --type import` command, resu…</p>
+
+        </article>
+
+      <article class="card card-high">
+        <div class="card-top">
+          <span class="badge badge-high">🟡 High</span>
+          <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qcxp-gm7m-4j5v" target="_blank" rel="noopener">Quarkus: Authentication/Authorization Bypass via Advanced Path Normalization Vulnerabilities</a></h2>
+        </div>
+        <div class="card-meta">
+          <code class="cve">CVE-2026-50559</code>
+          <span class="meta-sep">·</span>
+          <span>GitHub Security Advisories</span>
+          <span class="meta-sep">·</span>
+          <span>2026-07-29</span>
+        </div>
+        <p class='summary'>Quarkus HTTP path-based authorization policies can be bypassed using encoded semicolons (%3B) to smuggle matrix
+parameters past the security layer, and using encoded slashes (%2F) or backslashes (%5C) to access protected static
+resources. This is a distinct issue from CVE-2026-39852, which addressed only literal semicolon stripping.
+
+### Technical Details
+
+The security layer (AbstractPathM…</p>
+
+      </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html" target="_blank" rel="noopener">Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-59726</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>Cybersecurity researchers have flagged a maximum-severity security flaw in Ruflo, an open-source agent meta-harness for Anthropic Claude Code and OpenAI Codex, that could result in unauthenticated remote code execution.
+
+The vulnerability, tracked as CVE-2026-59726 (CVSS score: 10.0), impacts all versions of the project before version 3.16.3. It has been codenamed RufRoot by Noma Security&#x27;s</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html" target="_blank" rel="noopener">Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-59309</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>Broadcom has released security updates to address multiple security flaws impacting VMware ESX, vCenter, Workstation, and Fusion, three of which have been designated as critical in severity.
+
+The first of the three critical-rated flaws is CVE-2026-59309 (CVSS score: 9.8), which has been described as an authentication bypass in VMware vCenter.
+
+&quot;A malicious actor with network access to vCenter</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cg9x-g3gm-h5h6" target="_blank" rel="noopener">veraPDF-validatio: Use of Default `DocumentBuilderFactory` leads to XXE When Processing Untrusted PDFs</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54082</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>### Summary
+
+veraPDF-validation has an XML External Entity (XXE) vulnerability in two PDF parsing paths (validate and `GFPDAcroForm.getdynamicRender()`). A malicious/crafted PDF supplied to a veraPDF consumer can lead to the expansion of external entities while parsing rich-text annotation/form-field values or XFA configurations, allowing local file disclosure and potentially outbound network requ…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-36mm-w85j-3q2j" target="_blank" rel="noopener">veraPDF Validation XXE via XFA</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54079</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>## Summary  
+
+**Description**
+An XML External Entity Injection (CWE-611) vulnerability in veraPDF allows a remote attacker to read arbitrary files on the server file system and perform Server-Side Request Forgery by submitting a crafted PDF containing a malicious XFA stream. This affects all current versions of veraPDF-validation.  
+
+## Details  
+The vulnerability resides in veraPDF-validation…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5f94-x226-ccpm" target="_blank" rel="noopener">swagger-typescript-api vulnerable to code injection via unescaped enum string values</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54664</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>### Summary
+
+`swagger-typescript-api` interpolates `components.schemas.*.enum[i]` string values into the body of generated TypeScript `enum` declarations without escaping. A malicious enum value can close the enclosing string literal, terminate the enum body, and inject a bare-block IIFE that executes at **module load** the first time the generated client is imported. The trigger requires no insta…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h754-fxp7-88wx" target="_blank" rel="noopener">swagger-typescript-api vulnerable to authorization-token exfiltration via spec `$ref`</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54660</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-29</span>
+          </div>
+          <p class='summary'>### Summary
+
+When the developer supplies an `--authorizationToken` (commonly required to fetch a private spec behind authentication), `swagger-typescript-api` attaches that token to the `Authorization` header of **every** subsequent HTTP request it makes while resolving external `$ref` URLs in the spec — with **no same-origin check, no host allowlist, and no scope-down** for cross-origin requests.…</p>
 
         </article>
 
@@ -722,115 +957,6 @@ When `datamodel-code-generator` fetches a remote schema and follows an HTTP redi
           </div>
           <p class='summary'>Fission v1.24.0 added PodSpec safety validation for tenant-facing Environment and Function CRDs (`ValidatePodSpecSafety` / `ValidateContainerSafety` admission webhook + `sanitizeContainerSecurityContext` executor merge layer), but the
 capability check was implemented as a fixed **denylist of six Linux capabilities** (SYS_ADMIN, NET_ADMIN, SYS_PTRACE, SYS_MODULE, DAC_READ_SEARCH, DAC_OVERRIDE). The…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3735-5339-xfwx" target="_blank" rel="noopener">Poweradmin has Host Header Injection in OIDC redirect_uri, SAML ACS/SLO URL, and Logout Redirect Construction.</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54588</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-28</span>
-          </div>
-          <p class='summary'>### Summary
-Poweradmin v4.3.2 uses the attacker-controlled `HTTP_HOST` request header as the
-  authoritative source for building callback URLs in its OIDC, SAML, and logout
-  authentication flows without any validation. An unauthenticated attacker can poison
-  the `redirect_uri` sent to the Identity Provider, causing the IdP to redirect the
-  victim&#x27;s authorization code to an attacker-controlled s…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-prq8-7wvh-44qh" target="_blank" rel="noopener">OAuth: Cross-origin token-request redirects can expose signed request metadata</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54605</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-28</span>
-          </div>
-          <p class='summary'># Cross-origin OAuth token-request redirects can expose signed request metadata
-
-## Summary
-
-When an application uses `OAuth::Consumer` to request OAuth 1.0 request tokens or
-access tokens, the token request helper follows `300..399` redirects returned by
-the OAuth server. In affected versions, `OAuth::Consumer#token_request` parses the
-raw `Location` header, follows the redirect recursively, and …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8r6w-3qq5-4p4r" target="_blank" rel="noopener">Pterodactyl&#x27;s improper JWT scoping allows subuser to upload files when not explicitly granted `file.create` permissions</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54593</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-28</span>
-          </div>
-          <p class='summary'>### Summary
-A privilege escalation vulnerability exists in the Wings /upload/file endpoint due to insufficient validation of panel-signed JWTs. Wings accepts any valid panel-signed JWT containing `server_uuid`, `user_uuid`, and `unique_id`, regardless of the token’s intended purpose. Because the Panel issues JWTs with these same claims for other lower-privilege operations (such as WebSocket authen…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w4q6-qw23-4rg7" target="_blank" rel="noopener">GitHub MCP Server has Nil Pointer Dereference DoS in completion/complete Handler</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-47427</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-28</span>
-          </div>
-          <p class='summary'>### Summary
-
-A nil pointer dereference vulnerability in the GitHub MCP Server causes it to crash when receiving a malformed `completion/complete` request with missing or empty parameters. This allows any unauthenticated client to cause a complete denial of service.
-
-### Details
-
-The `CompletionsHandler` function in `pkg/github/server.go:198` accesses `params.Ref` without checking if it&#x27;s nil first…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-28f5-38xr-jh2w" target="_blank" rel="noopener">java-client Allows Network Pivot via Unvalidated directConnect Redirect in AppiumCommandExecutor</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-43910</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-28</span>
-          </div>
-          <p class='summary'>## Summary
-
-When `directConnect(true)` is enabled, appium/java-client unconditionally
-accepts `directConnectHost`, `directConnectPort`, and `directConnectPath`
-from the server&#x27;s NEW_SESSION response and silently redirects all subsequent
-session traffic to the attacker-specified endpoint — with no allowlist,
-no host validation, and no user notification.
-
-## Affected Code
-
-- `AppiumCommandExecutor.j…</p>
 
         </article>
 

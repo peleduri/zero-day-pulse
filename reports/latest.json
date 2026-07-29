@@ -1,10 +1,29 @@
 {
-  "generated": "2026-07-29T13:41:33.435115+00:00",
-  "total": 41,
-  "kev": 0,
-  "zero_day": 17,
+  "generated": "2026-07-29T18:51:52.231496+00:00",
+  "total": 49,
+  "kev": 1,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-20316",
+      "title": "CVE-2026-20316 \u2014 Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
+      "summary": "Vendor: Cisco | Product: Secure Firewall Management Center (FMC). Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-01)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20316",
+      "published": "2026-07-29",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-20316"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -38,6 +57,25 @@
       "is_high_severity": true
     },
     {
+      "id": "GHSA-wchh-9x6h-7f6p",
+      "title": "olm dependency deprecation: CVE-2022-39255 and CVE-2024-45193",
+      "summary": "### Problem\n\nMultiple vulnerabilities were disclosed in 2024 affecting libolm (Olm): AES timing / side\u2011channel, Ed25519 signature malleability, and timing leaks in base64 decoding; several CVEs were assigned. Patches and mitigations were published; maintainers recommend upgrading to fixed versions. In addition, a 2022 \u201cOlm/Megolm protocol confusion\u201d advisory affecting some SDKs was critical and required client-side fixes. Use patched versions of libolm and up-to-date Matrix SDKs; avoid unpatched clients/servers.\n\nOlm is a dependency of `matrix-commander` (Python version, not Rust version).\n\nWARNING:\n\nDue to cryptographic [olm dependency deprecation](https://github.com/8go/matrix-commander/issues/204#issuecomment-3523986979), this program is cryptographically unsafe to use until https://github.com/matrix-nio/matrix-nio/pull/555 is merged. Good news: https://github.com/8go/matrix-commander-rs is a Rust alternative not having this issue.\n\n\n### References\n- CVE-2022-39255\n- CVE-2024-45193\n- https://soatok.blog/2024/08/14/security-issues-in-matrixs-olm-library/\n- https://nvd.nist.gov/nvd.cfm?cvename=CVE-2024-45193\n- https://github.com/matrix-org/matrix-ios-sdk/security/advisories/GHSA-hw6g-j8v6-9hcm\n\n### Workarounds\n- use the Rust version: https://github.com/8go/matrix-commander-rs \n\n### Severity:\n\nMedium\n\nCVE-2022-39255 \u2014 MEDIUM (NVD/MITRE lists CVSS base score 5.x \u2014 treated as Medium).\n\nCVE-2024-45193 \u2014 MEDIUM (NVD shows CVSS 3.1 base score ~4.3 \u2014 Medium)",
+      "link": "https://github.com/advisories/GHSA-wchh-9x6h-7f6p",
+      "published": "2026-07-29T16:11:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2022-39255",
+        "CVE-2024-45193"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.rapid7.com/blog/post/ai-rewriting-zero-day-playbook-for-preemptive-security",
       "title": "How AI is Rewriting the Zero-Day Playbook for Preemptive Security",
       "summary": "The scenario is all too familiar for any cybersecurity professional: It\u2019s late in the day, and a critical zero-day vulnerability is disclosed. When this happens, CISOs from every industry immediately turn to their Security Operations Centers (SOC) with the single most important, and often most difficult, question: \"Are we exposed?\u201d Answering questions like these when zero-days drop tends to trigger a frantic, high-stress fire drill. Analysts scramble to cross-reference outdated Configuration Management Databases (CMDBs), query disparate endpoint detection tools, and ping IT administrators. The data is siloed, context is missing, and time rapidly slips away. Today, the window between a vulnerability\u2019s disclosure and its active exploitation in the wild has essentially collapsed, making predictive lead time a thing of the past. As adversaries integrate AI into their playbooks to automate attacks, defending against them requires us to operate at machine speed. We believe preemptive security is the most effective way to close this window. You cannot wait for every alert to fire to understand your environment. You need an architecture that constantly tracks emerging risks and threats, coupled with AI-accelerated discovery that brings your attack surface into sharp focus before the adversary does. Rapid7 is previewing a series of new features at Black Hat USA 2026 designed to transform the way security teams navigate the chaos of a zero-day threat to identify and close attack paths before they are exploited. The foundation: Continuous Software Visibility You cannot secure what you cannot see, and in highly distributed, AI-enabled environments, absolute visibility has traditionally been a gap. To achieve true preemptive security, you need a complete, continuous view of emerging risks. When a zero-day drops, your platform should already be tracking it via an Emerging Threat Response (ETR) process. But knowing the threat exists is only step one; you must correlate that threat",
@@ -66,22 +104,6 @@
       "cve_ids": [
         "CVE-2026-16232"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-hp74-gm6m-2qm5",
-      "title": "Pocket ID has a reauthentication bypass via one-time access token login \u2014 passkey step-up requirement defeated by JWT freshness check that accepts any login method",
-      "summary": "# Reauthentication Bypass via One-Time Access Token Login\n\n## Summary\n\nA weaker authentication method (OTA token or signup token) is accepted as passkey step-up proof, yielding unauthorized renewable 30-day OIDC refresh tokens for clients explicitly configured with `RequiresReauthentication: true`. The `POST /api/webauthn/reauthenticate` endpoint's access-token fallback checks only JWT freshness (`IssuedAt` within 60 seconds), not the authentication method used. The session cookie gate is also non-validating -- any arbitrary cookie value (e.g. `session=deadbeef`) is accepted, collapsing the reauth boundary to token recency alone.\n\nThe bypass needs to succeed only once. The resulting OIDC grant includes a 30-day refresh token that can be rotated indefinitely, providing persistent victim-impersonation access to the protected downstream service. The attacker obtains `access_token` (1-hour TTL), `id_token` (victim's name, email, profile), and `refresh_token` (30-day TTL, renewable) for a client that was explicitly configured to require passkey step-up authentication. The attacker can perform victim-scoped actions at the downstream relying party indefinitely.\n\n## Root Cause\n\n`CreateReauthenticationTokenWithAccessToken` (webauthn_service.go:362-403) only checks that the access token's `IssuedAt` claim is less than 60 seconds old:\n\n```go\n// webauthn_service.go:378-381\ntokenExpiration, ok := token.IssuedAt()\nif !ok || time.Since(tokenExpiration) > time.Minute {\n    return \"\", &common.ReauthenticationRequiredError{}\n}\n```\n\nIt does not check HOW the user originally authenticated. The `reauthenticateHandler` (webauthn_controller.go:179-207) falls into this path whenever the request body cannot be parsed as a WebAuthn credential assertion:\n\n```go\n// webauthn_controller.go:189-199\ncredentialAssertionData, err := protocol.ParseCredentialRequestResponseBody(c.Request.Body)\nif err == nil {\n    token, err = wc.webAuthnService.CreateReauthenticationTokenWithWebauthn(...)\n} else {\n   ",
-      "link": "https://github.com/advisories/GHSA-hp74-gm6m-2qm5",
-      "published": "2026-07-28T14:25:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -260,11 +282,28 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-43983",
-      "title": "Pocket ID: OIDC refresh token flow bypasses authorization revocation, account disabling, and group restrictions",
-      "summary": "# OIDC Refresh Token Flow Bypasses Authorization Revocation, Account Disabling, and Group Restrictions\n\n## Summary\n\nThe `createTokenFromRefreshToken` function (oidc_service.go:451) validates the refresh token's cryptographic integrity but does not re-validate the user's current authorization state before issuing new tokens. This allows three bypasses:\n\n1. **Authorization revocation bypass**: After a user revokes an OIDC client's authorization, the client can continue refreshing tokens indefinitely because `RevokeAuthorizedClient` does not delete associated refresh tokens, and the refresh flow does not check if the authorization record still exists.\n\n2. **Disabled user bypass**: After an admin disables a user account, pre-existing refresh tokens continue to work because the OIDC token endpoint does not check `user.Disabled`. Session-based access is properly blocked by auth middleware, but the OIDC refresh path bypasses it entirely.\n\n3. **Group restriction bypass**: After removing a user from an OIDC client's allowed user groups, the refresh token continues to work because `createTokenFromRefreshToken` does not call `IsUserGroupAllowedToAuthorize`.\n\nEach refresh rotates the token with a fresh 30-day expiry, enabling perpetual access.\n\n## Target\n\n- **Repository**: pocket-id/pocket-id\n- **Version**: HEAD (626adbf), also affects v2.5.0 and all versions with refresh token support\n\n## Root Cause\n\n`createTokenFromRefreshToken` (oidc_service.go:451-547) performs the following checks on a refresh request:\n\n1. Verify the signed refresh token JWT (line 457) -- **checked**\n2. Verify client credentials (line 467) -- **checked**\n3. Look up stored refresh token by hash, expiry, user_id, client_id (line 478-495) -- **checked**\n4. Verify refresh token belongs to the requesting client (line 498) -- **checked**\n\nIt does NOT check:\n- Whether a `UserAuthorizedOidcClient` record still exists for the user-client pair -- **MISSING**\n- Whether `user.Disabled` is false -- **MISSING**\n- Whethe",
-      "link": "https://github.com/advisories/GHSA-w6p7-2fxx-4f44",
-      "published": "2026-07-28T14:12:44Z",
+      "id": "https://thehackernews.com/2026/07/critical-rails-flaw-could-let.html",
+      "title": "Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads",
+      "summary": "Ruby on Rails has released fixes for a critical Active Storage vulnerability that could let unauthenticated attackers read arbitrary files from application servers through crafted image uploads.\n\nTracked as CVE-2026-66066 (CVSS score: 9.5), the flaw can expose the Rails process environment and secrets such as secret_key_base, the Rails master key, database passwords, cloud storage credentials,",
+      "link": "https://thehackernews.com/2026/07/critical-rails-flaw-could-let.html",
+      "published": "2026-07-29T18:10:00+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-66066"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54680",
+      "title": "Logging operator has Fluentd configuration injection that allows remote code execution",
+      "summary": "### Summary\n\nThe Fluentd configuration renderer in Logging operator writes strings from CRDs such as `Flow` directly into `fluent.conf` without escaping them. As a result, a user who can create `Flow` resources can inject Fluentd configuration by providing values that contain newlines.\n\nIn the confirmed path, a value in `record_transformer.records` can close the current `<record>` / `<filter>` block and add a new `<match **>` block. By specifying Fluentd's core `@type exec` plugin in that injected block, an attacker can execute arbitrary commands inside the Fluentd aggregator.\n\n### Details\n\nThe issue is in `FluentRender` in `pkg/sdk/logging/model/render/fluent.go`.\n\nhttps://github.com/kube-logging/logging-operator/blob/98275d2984aa8d731c4c975b8006aa433fc7bafa/pkg/sdk/logging/model/render/fluent.go#L60-L87\n\nEach parameter is rendered as `key value`, but values are not quoted, and newlines or characters such as `<` and `>` are not rejected. In addition, `indentedf` builds the string with `fmt.Sprintf` and then splits it on `\\n`, so newlines inside CRD values become new lines in the generated Fluentd configuration.\n\nOne input source is `record_transformer.records`. `ToDirective` passes `Record` (`map[string]string`) into `Params` without validation or escaping.\n\nhttps://github.com/kube-logging/logging-operator/blob/98275d2984aa8d731c4c975b8006aa433fc7bafa/pkg/sdk/logging/model/filter/record_transformer.go#L92-L103\n\nThe config check in `pkg/resources/fluentd/appconfigmap.go` runs `fluentd -c ... --dry-run`, but it passes as long as the injected configuration is syntactically valid Fluentd configuration. `@type exec` is a core Fluentd plugin and is available in the official Fluentd image.\n\n### PoC\n\nThe prerequisite is that Logging operator is running with a Fluentd aggregator configuration and that the attacker can create `Flow` and `Output` resources in a watched namespace, for example `tenant-a`.\n\nFirst, create a minimal `Output` as the log destination.\n\n```yaml\napiVer",
+      "link": "https://github.com/advisories/GHSA-mjqf-28ph-426h",
+      "published": "2026-07-29T17:01:29Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -272,10 +311,205 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-43983"
+        "CVE-2026-54680"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52841",
+      "title": "Easy!Appointments: Authorization bypass in Google OAuth provider binding lets any backend user rebind a peer provider's Google sync",
+      "summary": "### Summary\n\n`Google::oauth` at `application/controllers/Google.php:278` stores its URL-supplied `provider_id` in the session, and `oauth_callback` saves the issued Google OAuth token against that row without checking the caller owns the provider. Any logged-in backend user (admin, provider, or secretary) rebinds a peer provider's Google sync to a Google account they control. The peer's appointments then sync into the attacker's calendar with each customer's name and email attached as attendee data.\n\n### Preconditions\n\n- Attacker holds a backend login on the target instance (admin, provider, or secretary). The customer role cannot log in.\n- The instance has Google Calendar OAuth configured at `application/config/google.php` - i.e. any deployment that uses the Google sync feature at all.\n- Default deployment per the project's own `docker-compose.yml`; no non-default flags required.\n\n### Details\n\n```php\n// application/controllers/Google.php:278-289\npublic function oauth(string $provider_id): void\n{\n    if (!$this->session->userdata('user_id')) {\n        show_error('Forbidden', 403);\n    }\n\n    // Store the provider id for use on the callback function.\n    session(['oauth_provider_id' => $provider_id]);                       // (*) attacker-chosen id stored unchecked\n\n    // Redirect browser to google user content page.\n    header('Location: ' . $this->google_sync->get_auth_url());\n}\n```\n\n```php\n// application/controllers/Google.php:305-337\npublic function oauth_callback(): void\n{\n    if (!session('user_id')) {\n        abort(403, 'Forbidden');\n    }\n\n    $code = request('code');\n    if (empty($code)) { response('Code authorization failed.'); return; }\n\n    $token = $this->google_sync->authenticate($code);\n    if (empty($token)) { response('Token authorization failed.'); return; }\n\n    $oauth_provider_id = session('oauth_provider_id');\n    if ($oauth_provider_id) {\n        $this->providers_model->set_setting($oauth_provider_id, 'google_sync', true);                  // ",
+      "link": "https://github.com/advisories/GHSA-8hm4-r66f-29wr",
+      "published": "2026-07-29T16:29:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52841"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52840",
+      "title": "Easy!Appointments has server-side request forgery in CalDAV connection test that exposes the deployment's internal network",
+      "summary": "### Summary\n\n`Caldav::connect_to_server` at `application/controllers/Caldav.php:60` hands the request's `caldav_url` to a Guzzle `REPORT` call without scheme or host validation. A logged-in backend user (admin, provider, or secretary) reaches loopback, RFC1918, and link-local hosts on the deployment's network. The Guzzle exception path returns the upstream status code plus ~120 bytes of response body in the JSON `message` field (`Caldav.php:74-78`), so the SSRF is semi-blind.\n\n### Preconditions\n\n- Backend login on the target instance. Non-admin attackers supply their own `provider_id` and pass the per-row check at `Caldav.php:52`; admins can target any row.\n- Default deployment per the project's own `docker-compose.yml`, which puts `mysql`, `mailpit`, `phpmyadmin`, `baikal`, `openldap`, `phpldapadmin`, and `swagger-ui` on the same docker network as `php-fpm`.\n\n### Details\n\n```php\n// application/controllers/Caldav.php:45-82\npublic function connect_to_server(): void\n{\n    try {\n        $provider_id = request('provider_id');\n        $user_id = session('user_id');\n\n        if (cannot('edit', PRIV_USERS) && (int) $user_id !== (int) $provider_id) {\n            throw new RuntimeException('You do not have the required permissions for this task.');\n        }\n\n        $caldav_url = request('caldav_url');                                  // (*) attacker-controlled\n        $caldav_username = request('caldav_username');\n        $caldav_password = request('caldav_password');\n\n        $this->caldav_sync->test_connection($caldav_url, $caldav_username, $caldav_password);  // (*) sink\n        ...\n    } catch (GuzzleException | InvalidArgumentException $e) {\n        json_response([\n            'success' => false,\n            'message' => $e->getMessage(),                                    // (*) upstream body reflected\n        ]);\n    }\n}\n```\n\nThe per-row check at line 52 only constrains *which provider record* the caller may write to; it does not constrain *where the outbound reques",
+      "link": "https://github.com/advisories/GHSA-pm5p-7w5h-jm5q",
+      "published": "2026-07-29T16:24:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52840"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-63077-critical-unauthenticated-remote-code-execution-in-jetbrains-teamcity",
+      "title": "CVE-2026-63077: Critical unauthenticated remote code execution in JetBrains TeamCity",
+      "summary": "Overview On July 27, 2026, JetBrains published a security advisory for CVE-2026-63077 , a critical unauthenticated vulnerability affecting all versions of TeamCity On-Premises. The issue is classified as deserialization of untrusted data and has a CVSS score of 9.8 . An unauthenticated remote attacker with HTTP(S) access to a TeamCity server can exploit the agent polling protocol to bypass authentication checks and execute arbitrary operating system commands with the privileges of the TeamCity server process. In the blog post that JetBrains shared in tandem with CVE publication, they stated that attackers who exploit the vulnerability can read stored credentials and compromise CI/CD pipeline integrity. The impact of successful exploitation depends on the operating system privileges granted to the TeamCity server process. At the time of disclosure, JetBrains stated that they were not aware of active exploitation. Mitigation guidance Organizations running TeamCity On-Premises should urgently prioritize updating to a fixed version, either via the TeamCity UI update workflow or by downloading and installing one of the following fixed versions: TeamCity 2025.11.7 TeamCity 2026.1.3 All versions of TeamCity On-Premises are affected. Organizations that cannot upgrade can apply JetBrains' security patch plugin to TeamCity 2017.1 and later. The plugin addresses only CVE-2026-63077; JetBrains recommends upgrading to a fixed version to receive other security updates. TeamCity Cloud customers do not need to take action. In addition to patching, as a defense-in-depth measure, Rapid7 recommends restricting network access to TeamCity servers to only users and systems that must have it. For the latest mitigation guidance, please refer to the JetBrains security advisory . Rapid7 customers Exposure Command, InsightVM, and Nexpose customers can assess exposure to CVE-2026-63077 with a vulnerability check available in the July 28 content release. Updates July 29, 2026: Initial publicati",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-63077-critical-unauthenticated-remote-code-execution-in-jetbrains-teamcity",
+      "published": "2026-07-29T16:16:48+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-63077"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-11393",
+      "title": "AgentCore CLI Bedrock Agent Import Vulnerable to Code Injection via Improper Triple-Quote Escaping",
+      "summary": "### Summary\nThe AgentCore CLI (@aws/agentcore) is a developer tool for managing agent infrastructure lifecycle on Amazon Bedrock AgentCore. An issue exists where, under certain circumstances, a crafted collaborationInstruction value stored in Bedrock Agent collaborator metadata can break out of a Python triple-quoted string in code generated by the `agentcore add agent --type import` command, resulting in arbitrary code execution when the generated file is loaded or deployed.\n\n### Impact\nWhen a user runs `agentcore add agent --type import` to import a Bedrock supervisor agent that has multi-agent collaboration enabled, the CLI fetches collaborator metadata from the Bedrock API and interpolates the collaborationInstruction field directly into a triple-quoted Python string in the generated main.py file of the imported agent. Due to insufficient escaping, a collaborationInstruction value containing triple double-quote characters can terminate the string boundary and inject arbitrary Python statements into the generated source file.\n\nAn authenticated AWS user in the same account with the bedrock:AssociateAgentCollaborator IAM permission can associate a collaborator agent carrying a crafted collaborationInstruction with a supervisor agent. A developer who subsequently imports that supervisor agent using an affected CLI version will have the injected code written to their local main.py of the imported agent. The injected code executes in\u00a0 two contexts: on the developer's local machine when running `agentcore dev`, under the developer's local AWS credentials; and in the AWS AgentCore Runtime environment when the developer runs `agentcore deploy` followed by agentcore invoke, under the agent's IAM execution role.\n\nCustomers who have already imported a supervisor agent using an affected version and deployed it to AWS remain exposed on every agent invocation until they regenerate and redeploy the agent using a patched CLI version.\n\n**Impacted versions:** @aws/agentcore >= 0.4",
+      "link": "https://github.com/advisories/GHSA-m4x6-gwgp-4pm7",
+      "published": "2026-07-29T16:10:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-11393"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-50559",
+      "title": "Quarkus: Authentication/Authorization Bypass via Advanced Path Normalization Vulnerabilities",
+      "summary": "Quarkus HTTP path-based authorization policies can be bypassed using encoded semicolons (%3B) to smuggle matrix\n  parameters past the security layer, and using encoded slashes (%2F) or backslashes (%5C) to access protected static\n  resources. This is a distinct issue from CVE-2026-39852, which addressed only literal semicolon stripping.\n\n  ### Technical Details\n\n  The security layer (AbstractPathMatchingHttpSecurityPolicy) normalizes request paths using Vert.x's normalizedPath(),\n  which only decodes unreserved RFC 3986 characters (letters, digits, -, ., _, ~). It then strips matrix parameters by\n  looking for literal ; characters. This creates two mismatches:\n\n  1. Encoded semicolons (`%3B`): Since `%3B` is not decoded by normalizedPath(), the matrix parameter stripping in\n  pathWithoutMatrixParams() never sees it. The encoded semicolon and everything after it become part of the path\n  segment, causing policy matching to fail. This affects all path-policy-protected endpoints.\n  2. Static resource path mismatch: Static resource handlers (StaticHandlerImpl, FileSystemStaticHandler) perform full\n  percent-decoding via URIDecoder.decodeURIComponent() and backslash-to-slash conversion before filesystem resolution.\n  Reserved characters like `%2F` (slash) and `%5C` (backslash) that survive the security layer's partial decoding are fully\n  decoded before file serving.\n\n  REST endpoints using Quarkus REST (RESTEasy Reactive) are not affected by the `%2F/%5C` vectors because the routing layer also uses `normalizedPath()` \u2014 both security and routing agree on the path, so no mismatch exists.\n\n###  Attack Vectors\n\n  Encoded semicolon (matrix parameter smuggling), affects all path-policy-protected endpoints:\n  \n  - `/api/admin%3Bbypass=true/data`: security sees this as a single segment `admin%3Bbypass=true`, which does not match the\n   `/api/admin/* policy`. The request passes through unauthenticated.\n  - `/api/secret%3b/data`: same mechanism with lowercase hex digit.\n\n  Encode",
+      "link": "https://github.com/advisories/GHSA-qcxp-gm7m-4j5v",
+      "published": "2026-07-29T15:40:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-50559"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html",
+      "title": "Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory",
+      "summary": "Cybersecurity researchers have flagged a maximum-severity security flaw in Ruflo, an open-source agent meta-harness for Anthropic Claude Code and OpenAI Codex, that could result in unauthenticated remote code execution.\n\nThe vulnerability, tracked as CVE-2026-59726 (CVSS score: 10.0), impacts all versions of the project before version 3.16.3. It has been codenamed RufRoot by Noma Security's",
+      "link": "https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html",
+      "published": "2026-07-29T15:39:30+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-59726"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html",
+      "title": "Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape",
+      "summary": "Broadcom has released security updates to address multiple security flaws impacting VMware ESX, vCenter, Workstation, and Fusion, three of which have been designated as critical in severity.\n\nThe first of the three critical-rated flaws is CVE-2026-59309 (CVSS score: 9.8), which has been described as an authentication bypass in VMware vCenter.\n\n\"A malicious actor with network access to vCenter",
+      "link": "https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html",
+      "published": "2026-07-29T15:31:15+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-59309"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54082",
+      "title": "veraPDF-validatio: Use of Default `DocumentBuilderFactory` leads to XXE When Processing Untrusted PDFs",
+      "summary": "### Summary\n\nveraPDF-validation has an XML External Entity (XXE) vulnerability in two PDF parsing paths (validate and `GFPDAcroForm.getdynamicRender()`). A malicious/crafted PDF supplied to a veraPDF consumer can lead to the expansion of external entities while parsing rich-text annotation/form-field values or XFA configurations, allowing local file disclosure and potentially outbound network requests depending on the runtime (host) environment.\n\n### Details\n\nConsumers that utilise either the `PDFAValidator.validate(...)` or `GFPDAcroForm(acroForm).getdynamicRender()` APIs to process untrusted PDFs are vulnerable to XXE exploits. \n\nBoth vulnerable paths share the same root cause: the underlying source binds a default `DocumentBuilderFactory` and immediately calls `newDocumentBuilder()` which does not disable parsing of DTDs, external entities, XInclude, or external resource access directives in XML schemas.\n\nThis is an XXE vulnerability affecting applications that use veraPDF's affected APIs to parse or validate untrusted PDFs.\n\nAn attacker could craft a PDF that includes crafted XML external entities that when processed by vulnerable consumers could lead to local file disclosure and server-side outbound requests to attacker-controlled endpoints, depending on JVM XML parser behavior and network controls on the host.",
+      "link": "https://github.com/advisories/GHSA-cg9x-g3gm-h5h6",
+      "published": "2026-07-29T15:14:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54082"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54079",
+      "title": "veraPDF Validation XXE via XFA",
+      "summary": "## Summary  \n  \n**Description**\nAn XML External Entity Injection (CWE-611) vulnerability in veraPDF allows a remote attacker to read arbitrary files on the server file system and perform Server-Side Request Forgery by submitting a crafted PDF containing a malicious XFA stream. This affects all current versions of veraPDF-validation.  \n  \n## Details  \nThe vulnerability resides in veraPDF-validation `validation-model/src/main/java/org/verapdf/gf/model/impl/pd/GFPDAcroForm.java` within the `getdynamicRender()` method. This method retrieves the /XFA entry from the PDF's /AcroForm dictionary, decodes the embedded XML stream, and parses it to extract the `<dynamicRender>` element value.  \n  \nThe vulnerability stems from the use of a default-configured `DocumentBuilderFactory` to parse fully attacker-controlled XML:  \n- The factory is created via `DocumentBuilderFactory.newInstance()` with no security features enabled. disallow-doctype-decl, external-general-entities, external-parameter-entities, and FEATURE_SECURE_PROCESSING are all left at their insecure defaults.  \n- The input passed to `builder.parse()` is the decoded /XFA stream taken directly from the untrusted PDF.  \n- The text content of the `<dynamicRender>` node is returned to the validation model. Note that the shipped PDF/UA-1 rule (`dynamicRender != 'required'`) consumes this value but does not echo it into the report output, so reliable exfiltration requires the out-of-band parameter-entity technique described under Impact rather than in-band reflection.  \n  \n## Impact  \n  \nThis impacts all current releases of the veraPDF validation-model module.  \n  \nSuccessful exploitation requires only that the target validate an attacker-supplied PDF against the PDF/UA-1 profile (or via flavour auto-detection on a PDF that declares PDF/UA-1 conformance), since `getdynamicRender()` is invoked by the `dynamicRender != 'required'` rule in the bundled PDF/UA-1 profile. No additional configuration or operator action is require",
+      "link": "https://github.com/advisories/GHSA-36mm-w85j-3q2j",
+      "published": "2026-07-29T15:08:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54079"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54664",
+      "title": "swagger-typescript-api vulnerable to code injection via unescaped enum string values",
+      "summary": "### Summary\n\n`swagger-typescript-api` interpolates `components.schemas.*.enum[i]` string values into the body of generated TypeScript `enum` declarations without escaping. A malicious enum value can close the enclosing string literal, terminate the enum body, and inject a bare-block IIFE that executes at **module load** the first time the generated client is imported. The trigger requires no instantiation and no method call \u2014 only an `import` of the generated module. The attacker controls the OpenAPI spec (remote `--url`, third-party / public spec, multi-tenant platform); the victim is whoever runs the generator and imports the result (the developer, their CI runner, or any downstream consumer of the generated package). Impact is arbitrary code execution with the importing process's privileges \u2014 read any file the importer can read, write any file, exfiltrate secrets, etc.\n\n### Details\n\nThe root cause is `Ts.StringValue` in `src/configuration.ts:250`:\n\n```ts\nStringValue: (content: unknown) => `\"${content}\"`,\n```\n\nIt wraps a value in double quotes with **zero escaping** \u2014 no handling of `\"`, `\\`, newlines, or anything else. The codebase's only escape function (`escapeJSDocContent` in `src/schema-parser/schema-formatters.ts:127`) only replaces `*/` and is never applied to this path.\n\nEnum string values reach `Ts.StringValue` at `src/schema-parser/base-schema-parsers/enum.ts:100` and `:116`:\n\n```ts\nreturn this.config.Ts.StringValue(value);\n// ...\nvalue: this.config.Ts.StringValue(enumName),\n```\n\nThe result is interpolated raw into the enum body in `templates/base/enum-data-contract.ejs` (default `enumStyle: \"enum\"` branch, lines 24-31):\n\n```ejs\nexport enum <%~ name %> {\n  <%~ _.map($content, ({ key, value, description }) => {\n    ...\n    return [\n      formattedDescription && `/** ${formattedDescription} */`,\n      `${key} = ${value}`\n    ].filter(Boolean).join(\"\\n\");\n  }).join(\",\\n\") %>\n}\n```\n\nWhere `${value}` is the result of `Ts.StringValue` \u2014 raw `\"${content}\"`. An ",
+      "link": "https://github.com/advisories/GHSA-5f94-x226-ccpm",
+      "published": "2026-07-29T14:33:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54664"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54660",
+      "title": "swagger-typescript-api vulnerable to authorization-token exfiltration via spec `$ref`",
+      "summary": "### Summary\n\nWhen the developer supplies an `--authorizationToken` (commonly required to fetch a private spec behind authentication), `swagger-typescript-api` attaches that token to the `Authorization` header of **every** subsequent HTTP request it makes while resolving external `$ref` URLs in the spec \u2014 with **no same-origin check, no host allowlist, and no scope-down** for cross-origin requests. A malicious OpenAPI spec containing a `$ref` to an attacker-controlled URL therefore causes the developer's bearer token to be sent verbatim to that URL during code generation.\n\nThe threat model is identical to the SSRF advisory filed alongside this one (companion finding), but with credential disclosure as the primary impact. The token is typically a high-value secret: a GitHub PAT, an OAuth bearer for the API the spec describes, an enterprise SSO token, an AWS-style API key, or similar. Disclosure to an attacker-controlled URL is one curl-equivalent away from full takeover of whatever scope the token grants.\n\n### Details\n\nThe header-builder lives in `src/resolved-swagger-schema.ts:81-92`:\n\n```ts\nprivate getRemoteRequestHeaders(): Record<string, string> {\n  return Object.assign(\n    {},\n    this.config.authorizationToken\n      ? {\n          Authorization: this.config.authorizationToken,\n        }\n      : {},\n    (this.config.requestOptions?.headers as\n      | Record<string, string>\n      | undefined) || {},\n  );\n}\n```\n\nThere is no check that the request's destination URL shares an origin (or scheme, or host, or even top-level domain) with `this.config.url` \u2014 the URL the user originally specified. The headers object is unconditional.\n\n`getRemoteRequestHeaders` is called by `fetchRemoteSchemaDocument` (`src/resolved-swagger-schema.ts:374`):\n\n```ts\nconst response = await fetch(url, {\n  headers: this.getRemoteRequestHeaders(),\n});\n```\n\n\u2026which is in turn called by `warmUpRemoteSchemasCache` (`src/resolved-swagger-schema.ts:399-445`) for every external `$ref` URL discovered whi",
+      "link": "https://github.com/advisories/GHSA-h754-fxp7-88wx",
+      "published": "2026-07-29T14:22:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54660"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
@@ -596,96 +830,6 @@
       ],
       "cve_ids": [
         "CVE-2026-50570"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54588",
-      "title": "Poweradmin has Host Header Injection in OIDC redirect_uri, SAML ACS/SLO URL, and Logout Redirect Construction.",
-      "summary": "### Summary\nPoweradmin v4.3.2 uses the attacker-controlled `HTTP_HOST` request header as the\n  authoritative source for building callback URLs in its OIDC, SAML, and logout\n  authentication flows without any validation. An unauthenticated attacker can poison\n  the `redirect_uri` sent to the Identity Provider, causing the IdP to redirect the\n  victim's authorization code to an attacker-controlled server - resulting in full\n  account takeover with no credentials required.\n\n  Three independent code paths are affected:\n\n  - **Primary (Critical):** `OidcService::getCallbackUrl()` - `redirect_uri` poisoning\n  - **Secondary (High):** `SamlConfigurationService::getBaseUrl()` - SAML ACS/SLO URL poisoning\n  - **Tertiary (Medium):** `LogoutController::getBaseUrl()` - post-logout redirect poisoning\n\n### Details\n\n***Root Cause***\n\n  The application constructs absolute URLs dynamically from `HTTP_HOST` rather than\n  from a trusted configured base URL. The header is fully client-controlled and is not\n  validated before use in any authentication flow.\n\n  Poweradmin's own codebase contains the correct pattern -\n  `DocsController::getValidatedHost()` (line 244) calls `isValidHostname()` before\n  using the value - but this was never applied to authentication flows.\n\n  ### Primary: `lib/Application/Service/OidcService.php` (~line 460)\n\n  ```php\n  private function getCallbackUrl(): string\n  {\n      $scheme = $this->detectScheme();\n      // HTTP_HOST taken directly with zero validation\n      $host = $this->request->getServerParam('HTTP_HOST', 'localhost');\n      $basePrefix = $this->configManager->get('interface', 'base_url_prefix', '');\n      return $scheme . '://' . $host . $basePrefix . '/oidc/callback';\n  }\n\n  HTTP_HOST is embedded verbatim as redirect_uri in the OAuth 2.0 authorization\n  request sent to the IdP. HTTP_X_FORWARDED_PROTO is similarly used unvalidated\n  for scheme detection.\n\n  Secondary: lib/Application/Service/SamlConfigurationService.php (~line 134)\n\n  private functi",
-      "link": "https://github.com/advisories/GHSA-3735-5339-xfwx",
-      "published": "2026-07-28T16:40:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54588"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54605",
-      "title": "OAuth: Cross-origin token-request redirects can expose signed request metadata",
-      "summary": "# Cross-origin OAuth token-request redirects can expose signed request metadata\n\n## Summary\n\nWhen an application uses `OAuth::Consumer` to request OAuth 1.0 request tokens or\naccess tokens, the token request helper follows `300..399` redirects returned by\nthe OAuth server. In affected versions, `OAuth::Consumer#token_request` parses the\nraw `Location` header, follows the redirect recursively, and can mutate the\nconsumer's configured `site` when the redirect points to a different host with\nthe same path.\n\nThe result is a cross-origin signed-request disclosure primitive: if an OAuth\nserver token endpoint returns a redirect whose target an attacker controls, the\nclient can re-sign the token request and send OAuth 1.0 request metadata,\nincluding the OAuth signature, nonce, timestamp, consumer key, and any request\nparameters included in the signature base string, to the attacker-controlled\nhost. The same behavior can also be used as an SSRF or confused-deputy primitive\nbecause the application server follows the redirect and sends the next request\nfrom its own network position.\n\n## Affected\n\n- `oauth` v1.1.5 and prior versions back to and including v0.5.5.\n  - The cross-host token redirect behavior was introduced by\n    https://github.com/ruby-oauth/oauth/commit/d74b767f\n  - The behavior is documented in the v0.5.5 changelog as \"Allow redirect to\n    different host but same path\".\n- The vulnerable behavior is in `OAuth::Consumer#token_request`, which is used by\n  the documented request-token and access-token flows.\n- The issue is not specific to a Ruby engine or platform. It is caused by the\n  gem's redirect handling and recursive token request behavior.\n\nPatched version: `oauth` v1.1.6.\n\n## Impact\n\nA consumer that calls `OAuth::Consumer#get_request_token`,\n`OAuth::Consumer#get_access_token`, or lower-level token request helpers against\nan OAuth server whose token endpoint redirect target can be influenced may lose\nthree security properties:\n\n1. **Cross-origin signed-requ",
-      "link": "https://github.com/advisories/GHSA-prq8-7wvh-44qh",
-      "published": "2026-07-28T16:27:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54605"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54593",
-      "title": "Pterodactyl's improper JWT scoping allows subuser to upload files when not explicitly granted `file.create` permissions",
-      "summary": "### Summary\nA privilege escalation vulnerability exists in the Wings /upload/file endpoint due to insufficient validation of panel-signed JWTs. Wings accepts any valid panel-signed JWT containing `server_uuid`, `user_uuid`, and `unique_id`, regardless of the token\u2019s intended purpose. Because the Panel issues JWTs with these same claims for other lower-privilege operations (such as WebSocket authentication and file download links), an authenticated subuser can reuse one of those tokens to upload arbitrary files without possessing the required `file.create` permission.\n\n### Impact\nAny subuser with permission to connect to a server's console, download files, or download backups could reuse those tokens to upload arbitrary files to the _same server_. A user that does not have access to a server as a subuser is not able to arbitrarily upload files.\n\n### Details\nThe panel generated JWT tokens for various purposes:\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Services/Backups/DownloadLinkService.php#L33-L36\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Http/Controllers/Api/Client/Servers/FileUploadController.php#L45\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Http/Controllers/Api/Client/Servers/WebsocketController.php#L58-L61\n- https://github.com/pterodactyl/panel/blob/0f82c105201b192d229f6abd5827e2ee7e672a05/app/Http/Controllers/Api/Client/Servers/FileController.php#L82-L85\nThough as the actual purpose is not conveyed part of the JWT tokens, this introduces this vulnerability of being able to do non-intended actions due to the expected fields (i.e. `server_uuid`) on most endpoints being the same when parsing it on wings' side.  \n\n### PoC\nCreate a new subuser that has the minimal amount of permissions on a server (`websocket.connect`). As that subuser, retrieve a websocket JWT token from the `GET /api/client/servers/[...]/websocket` endpoint (",
-      "link": "https://github.com/advisories/GHSA-8r6w-3qq5-4p4r",
-      "published": "2026-07-28T15:43:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54593"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-47427",
-      "title": "GitHub MCP Server has Nil Pointer Dereference DoS in completion/complete Handler",
-      "summary": "### Summary\n\nA nil pointer dereference vulnerability in the GitHub MCP Server causes it to crash when receiving a malformed `completion/complete` request with missing or empty parameters. This allows any unauthenticated client to cause a complete denial of service.\n\n### Details\n\nThe `CompletionsHandler` function in `pkg/github/server.go:198` accesses `params.Ref` without checking if it's nil first. When a client sends a `completion/complete` request with a missing `ref` field, the handler dereferences nil and the Go runtime panics.\n\nThe crash occurs before any authentication or token validation, so even requests with fake tokens can trigger it.\n\n### PoC\n\nAfter completing the MCP initialization handshake, send either:\n\n**Empty params:**\n\n    {\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"completion/complete\",\"params\":{}}\n\n**Missing ref field:**\n\n    {\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"completion/complete\",\"params\":{\"argument\":{\"name\":\"x\",\"value\":\"y\"}}}\n\n**Result:**\n\n    panic: runtime error: invalid memory address or nil pointer dereference\n    goroutine 42 [running]:\n    github.com/github/github-mcp-server/pkg/github.NewMCPServer.CompletionsHandler.func1(...)\n        pkg/github/server.go:198 +0x24\n\n### Impact\n\nAny unauthenticated client that can send JSON-RPC messages to the server can crash it immediately. This is a complete denial of service - the panic is unrecoverable and kills the process.\n\nAutomated fuzzing with mcpsec found 108 crashes out of 925 test cases (11.7% crash rate).\n\n### Timeline\n\n- **Feb 21, 2026** - Initial report sent to opensource-security@github.com\n- **Mar 03, 2026** - Follow-up email sent, no response\n- **Mar 21, 2026** - Re-verified on v0.33.0, sent detailed report with PoC, no response\n- **Apr 06, 2026** - GHSA filed after 44 days without acknowledgment\n\n### Suggested Fix\n\n    func (s *Server) CompletionsHandler(ctx context.Context, params *mcp.CompleteParams) (*mcp.CompleteResult, error) {\n        if params == nil || params.Ref == nil {\n            retu",
-      "link": "https://github.com/advisories/GHSA-w4q6-qw23-4rg7",
-      "published": "2026-07-28T14:35:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-47427"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-43910",
-      "title": "java-client Allows Network Pivot via Unvalidated directConnect Redirect in AppiumCommandExecutor",
-      "summary": "## Summary\n\nWhen `directConnect(true)` is enabled, appium/java-client unconditionally\naccepts `directConnectHost`, `directConnectPort`, and `directConnectPath`\nfrom the server's NEW_SESSION response and silently redirects all subsequent\nsession traffic to the attacker-specified endpoint \u2014 with no allowlist,\nno host validation, and no user notification.\n\n## Affected Code\n\n- `AppiumCommandExecutor.java` (line 196\u2013219): `setDirectConnect()` builds\n  a new URL from server-supplied fields and calls `overrideServerUrl(newUrl)`\n  without validating host/IP.\n- `DirectConnect.java`: `getUrl()` constructs `protocol://host:port/path`\n  with no allowlist.\n\n## Root Cause\n\nOnly the protocol is validated (must equal \"https\"). The destination host\nand port are never checked against any allowlist or denylist.\n\n## PoC (confirmed)\n\nA rogue server injecting `directConnectHost=127.0.0.1:4443` causes the\nclient to silently redirect all post-session commands:\n\n[bootstrap]       POST /wd/hub/session\n[bootstrap]       Injecting directConnect -> https://127.0.0.1:4443/wd/hub\n[redirect-target] HIT #1: GET /wd/hub/session/poc-session-001/source\n[redirect-target] HIT #2: DELETE /wd/hub/session/poc-session-001\n\nOriginal source code unmodified \u2014 confirmed via `git diff HEAD` (empty).\n\n## Evidence Screenshots\n\n**Screenshot 1 \u2014 Rogue server capturing redirected traffic:**\n\n<img width=\"887\" height=\"146\" alt=\"1\" src=\"https://github.com/user-attachments/assets/cc28002c-ea20-4ac8-8336-cec632e3c842\" />\n\n**Screenshot 2 \u2014 Java client processing response from attacker host:**\n\n<img width=\"788\" height=\"130\" alt=\"2\" src=\"https://github.com/user-attachments/assets/222cbab0-0d53-45b2-847d-6aa4e3b79370\" />\n\n## Impact\n\n- Full interception of session traffic\n- Network pivot to internal hosts (RFC-1918, 169.254.169.254)\n- Cloud credential theft via IMDS endpoint\n- Escalates to ~8.1 High in CI/CD environments where directConnect(true)\n  is set in shared base configuration\n\n## Suggested Fix\n\nAdd allowlist validation",
-      "link": "https://github.com/advisories/GHSA-28f5-38xr-jh2w",
-      "published": "2026-07-28T14:26:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-43910"
       ],
       "is_zero_day": false,
       "is_high_severity": true
