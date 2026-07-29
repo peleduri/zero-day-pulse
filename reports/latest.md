@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-29 01:22 UTC &nbsp;|&nbsp; **Total:** 44 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-29 08:16 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -44,25 +44,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 5. 🟠 Zero-Day — Unpatched Fastjson Vulnerability Exploited in Attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://www.securityweek.com/unpatched-fastjson-vulnerability-exploited-in-attacks/>
-
-> The critical remote code execution bug can be exploited without authentication, under the library’s stock default configurations. The post Unpatched Fastjson Vulnerability Exploited in Attacks appeared first on SecurityWeek .
-
----
-
-## 6. 🟠 Zero-Day — Critical Arista VeloCloud Orchestrator Vulnerability Exploited as Zero-Day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://www.securityweek.com/critical-arista-velocloud-orchestrator-vulnerability-exploited-as-zero-day/>
-
-> Impacting on-premises deployments, the OS command injection allows attackers to access privileged internal functionality. The post Critical Arista VeloCloud Orchestrator Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -71,7 +53,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -80,7 +62,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -89,7 +71,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -98,7 +80,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -107,7 +89,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -116,7 +98,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 13. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -125,21 +107,21 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 14. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 12. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 13. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
 
 ---
 
-## 16. 🟠 Zero-Day — OpenAI models used Artifactory zero-days to escape to the internet
+## 14. 🟠 Zero-Day — OpenAI models used Artifactory zero-days to escape to the internet
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://www.bleepingcomputer.com/news/security/openai-models-used-artifactory-zero-days-to-escape-to-the-internet/>
@@ -148,7 +130,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 17. 🟠 Zero-Day — Check Point SmartConsole Authentication Bypass Technical Analysis (CVE-2026-16232)
+## 15. 🟠 Zero-Day — Check Point SmartConsole Authentication Bypass Technical Analysis (CVE-2026-16232)
 
 **CVE:** `CVE-2026-16232` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://www.rapid7.com/blog/post/ra-check-point-smartconsole-authentication-bypass-technical-analysis-cve-2026-16232>
@@ -157,7 +139,7 @@ A weaker authentication method (OTA token or signup token) is accepted as passke
 
 ---
 
-## 18. 🟠 Zero-Day — Pocket ID: OIDC refresh token flow bypasses authorization revocation, account disabling, and group restrictions
+## 16. 🟠 Zero-Day — Pocket ID: OIDC refresh token flow bypasses authorization revocation, account disabling, and group restrictions
 
 **CVE:** `CVE-2026-43983` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-w6p7-2fxx-4f44>
@@ -172,7 +154,7 @@ The `createTokenFromRefreshToken` function (oidc_service.go:451) validates the r
 
 ---
 
-## 19. 🟠 Zero-Day — JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach
+## 17. 🟠 Zero-Day — JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html>
@@ -183,20 +165,16 @@ Artifactory is JFrog&#x27;s software repository manager. OpenAI says the models 
 
 ---
 
-## 20. 🟠 Zero-Day — Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw
+## 18. 🟡 High Severity — Coordinated “cyberattack” on Minnesota water utilities: What you need to know
 
-**CVE:** `CVE-2026-16812` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html>
+**CVE:** `CVE-2021-22681` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-29
+**Reference:** <https://www.tenable.com/blog/coordinated-cyberattack-on-minnesota-water-utilities-what-you-need-to-know>
 
-> A maximum-severity security flaw impacting on-premises versions of Arista VeloCloud Orchestrator (VCO) has come under active exploitation in the wild.
-
-The vulnerability, tracked as CVE-2026-16812 (CVSS score: 10.0), is a case of operating system command injection that could pave the way for arbitrary code execution.
-
-&quot;VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue
+> A coordinated cyber attack disrupted water systems across more than 30 Minnesota communities. Here is what defenders need to know about the attack so far. This FAQ also details recent cyberactivity targeting internet-exposed PLCs, and how to protect exposed infrastructure. Key Takeaways A coordinated &quot;cyberattack&quot; targeted water and wastewater systems across more than 30 Minnesota commun…
 
 ---
 
-## 21. 🟡 High Severity — goshs has ACL Bypass & Path Traversal
+## 19. 🟡 High Severity — goshs has ACL Bypass & Path Traversal
 
 **CVE:** `CVE-2026-66064` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-964w-f6gj-5236>
@@ -211,7 +189,7 @@ httpserver/handler.go, sendFile (lines 789-801) takes the filename from the RAW 
 
 ---
 
-## 22. 🟡 High Severity — openhole-server vulnerable to path traversal via URL-decoded request path
+## 20. 🟡 High Severity — openhole-server vulnerable to path traversal via URL-decoded request path
 
 **CVE:** `CVE-2026-54650` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-fh2f-xfxc-q9cc>
@@ -224,7 +202,7 @@ Go&#x27;s ServeMux rejects literal `../` paths, but percent-encoded traversal se
 
 ---
 
-## 23. 🟡 High Severity — td has pre-auth denial of service via unbounded memory allocation in proto.UnencryptedMessage.Decode
+## 21. 🟡 High Severity — td has pre-auth denial of service via unbounded memory allocation in proto.UnencryptedMessage.Decode
 
 **CVE:** `CVE-2026-54638` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-whmm-qj9r-wvr2>
@@ -237,7 +215,7 @@ A remote, unauthenticated attacker can cause excessive memory allocation (and re
 
 ---
 
-## 24. 🟡 High Severity — goshs: File-based .goshs ACL authorization bypass via the ?bulk zip-download route (unauthenticated read; residual of GHSA-wvhv-qcqf-f3cx)
+## 22. 🟡 High Severity — goshs: File-based .goshs ACL authorization bypass via the ?bulk zip-download route (unauthenticated read; residual of GHSA-wvhv-qcqf-f3cx)
 
 **CVE:** `CVE-2026-54719` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-rmxw-pq4x-3fvh>
@@ -246,7 +224,7 @@ A remote, unauthenticated attacker can cause excessive memory allocation (and re
 
 ---
 
-## 25. 🟡 High Severity — `datamodel-code-generator` vulnerable to code injection via unescaped carriage return in `--extra-template-data` `comment` field
+## 23. 🟡 High Severity — `datamodel-code-generator` vulnerable to code injection via unescaped carriage return in `--extra-template-data` `comment` field
 
 **CVE:** `CVE-2026-54654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-wjv6-jcfj-mf9r>
@@ -257,7 +235,7 @@ A remote, unauthenticated attacker can cause excessive memory allocation (and re
 
 ---
 
-## 26. 🟡 High Severity — datamodel-code-generator vulnerable to arbitrary local file read via JSON-Schema `$ref` (`file://` and `../` traversal), bypassing `--no-allow-remote-refs`
+## 24. 🟡 High Severity — datamodel-code-generator vulnerable to arbitrary local file read via JSON-Schema `$ref` (`file://` and `../` traversal), bypassing `--no-allow-remote-refs`
 
 **CVE:** `CVE-2026-55389` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-8359-h9fx-j6v9>
@@ -268,7 +246,7 @@ A remote, unauthenticated attacker can cause excessive memory allocation (and re
 
 ---
 
-## 27. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF protection bypass via DNS rebinding
+## 25. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF protection bypass via DNS rebinding
 
 **CVE:** `CVE-2026-55391` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-vx7x-vcc2-c44g>
@@ -279,7 +257,7 @@ A remote, unauthenticated attacker can cause excessive memory allocation (and re
 
 ---
 
-## 28. 🟡 High Severity — `datamodel-code-generator` vulnerable to code execution on import via unescaped `validators` entries in --extra-template-data
+## 26. 🟡 High Severity — `datamodel-code-generator` vulnerable to code execution on import via unescaped `validators` entries in --extra-template-data
 
 **CVE:** `CVE-2026-54656` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-8m8r-38jm-f355>
@@ -290,7 +268,7 @@ When the Pydantic v2 output mode is in use, `datamodel-code-generator` reads a `
 
 ---
 
-## 29. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF via JSON-Schema `$ref` to HTTP URL (silent by default)
+## 27. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF via JSON-Schema `$ref` to HTTP URL (silent by default)
 
 **CVE:** `CVE-2026-54690` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-954p-556p-r752>
@@ -301,7 +279,7 @@ JSON-Schema `$ref` values pointing at HTTP or HTTPS URLs are silently dereferenc
 
 ---
 
-## 30. 🟡 High Severity — datamodel-code-generator vulnerable to code injection via `x-python-import` / `customTypePath` in generated import statements
+## 28. 🟡 High Severity — datamodel-code-generator vulnerable to code injection via `x-python-import` / `customTypePath` in generated import statements
 
 **CVE:** `CVE-2026-55415` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-5578-w22f-pfx9>
@@ -312,7 +290,7 @@ A malicious input schema (OpenAPI / JSON Schema) can execute arbitrary Python co
 
 ---
 
-## 31. 🟡 High Severity — datamodel-code-generator: Authorization / request headers leaked to cross-origin redirect target when fetching remote schemas
+## 29. 🟡 High Severity — datamodel-code-generator: Authorization / request headers leaked to cross-origin redirect target when fetching remote schemas
 
 **CVE:** `CVE-2026-55403` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-r5vv-ff45-prp2>
@@ -323,7 +301,7 @@ When `datamodel-code-generator` fetches a remote schema and follows an HTTP redi
 
 ---
 
-## 32. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF via --url: no host/IP validation, follows redirects
+## 30. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF via --url: no host/IP validation, follows redirects
 
 **CVE:** `CVE-2026-54691` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-rfr2-mq9m-x2qx>
@@ -334,7 +312,7 @@ When `datamodel-code-generator` fetches a remote schema and follows an HTTP redi
 
 ---
 
-## 33. 🟡 High Severity — Fission: SanitizeFilePath lexical HasPrefix bypass permits sibling-directory escape
+## 31. 🟡 High Severity — Fission: SanitizeFilePath lexical HasPrefix bypass permits sibling-directory escape
 
 **CVE:** `CVE-2026-50568` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-r5jh-q2mw-gcx4>
@@ -344,7 +322,7 @@ When `datamodel-code-generator` fetches a remote schema and follows an HTTP redi
 
 ---
 
-## 34. 🟡 High Severity —  Fission: Zip Slip in pkg/utils/zip.go:Unarchive allows fetcher to write outside the destination directory
+## 32. 🟡 High Severity —  Fission: Zip Slip in pkg/utils/zip.go:Unarchive allows fetcher to write outside the destination directory
 
 **CVE:** `CVE-2026-50567` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-q6vm-xqc9-v3ff>
@@ -354,7 +332,7 @@ When `datamodel-code-generator` fetches a remote schema and follows an HTTP redi
 
 ---
 
-## 35. 🟡 High Severity — Fission: HTTPTrigger admission omits RelativeURL / Prefix validation; kubectl apply bypasses CLI checks
+## 33. 🟡 High Severity — Fission: HTTPTrigger admission omits RelativeURL / Prefix validation; kubectl apply bypasses CLI checks
 
 **CVE:** `CVE-2026-50569` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-vchh-r53j-8mpw>
@@ -364,7 +342,7 @@ When `datamodel-code-generator` fetches a remote schema and follows an HTTP redi
 
 ---
 
-## 36. 🟡 High Severity — Fission: Incomplete capability denylist in Environment/Function PodSpec validation allows tenant-added CAP_SYS_TIME and cross-tenant node wall-clock corruption
+## 34. 🟡 High Severity — Fission: Incomplete capability denylist in Environment/Function PodSpec validation allows tenant-added CAP_SYS_TIME and cross-tenant node wall-clock corruption
 
 **CVE:** `CVE-2026-50570` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-qf5v-m7p4-95rp>
@@ -374,7 +352,7 @@ capability check was implemented as a fixed **denylist of six Linux capabilities
 
 ---
 
-## 37. 🟡 High Severity — Poweradmin has Host Header Injection in OIDC redirect_uri, SAML ACS/SLO URL, and Logout Redirect Construction.
+## 35. 🟡 High Severity — Poweradmin has Host Header Injection in OIDC redirect_uri, SAML ACS/SLO URL, and Logout Redirect Construction.
 
 **CVE:** `CVE-2026-54588` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-3735-5339-xfwx>
@@ -388,7 +366,7 @@ Poweradmin v4.3.2 uses the attacker-controlled `HTTP_HOST` request header as the
 
 ---
 
-## 38. 🟡 High Severity — OAuth: Cross-origin token-request redirects can expose signed request metadata
+## 36. 🟡 High Severity — OAuth: Cross-origin token-request redirects can expose signed request metadata
 
 **CVE:** `CVE-2026-54605` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-prq8-7wvh-44qh>
@@ -404,7 +382,7 @@ raw `Location` header, follows the redirect recursively, and …
 
 ---
 
-## 39. 🟡 High Severity — Pterodactyl's improper JWT scoping allows subuser to upload files when not explicitly granted `file.create` permissions
+## 37. 🟡 High Severity — Pterodactyl's improper JWT scoping allows subuser to upload files when not explicitly granted `file.create` permissions
 
 **CVE:** `CVE-2026-54593` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-8r6w-3qq5-4p4r>
@@ -414,7 +392,7 @@ A privilege escalation vulnerability exists in the Wings /upload/file endpoint d
 
 ---
 
-## 40. 🟡 High Severity — GitHub MCP Server has Nil Pointer Dereference DoS in completion/complete Handler
+## 38. 🟡 High Severity — GitHub MCP Server has Nil Pointer Dereference DoS in completion/complete Handler
 
 **CVE:** `CVE-2026-47427` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-w4q6-qw23-4rg7>
@@ -429,7 +407,7 @@ The `CompletionsHandler` function in `pkg/github/server.go:198` accesses `params
 
 ---
 
-## 41. 🟡 High Severity — java-client Allows Network Pivot via Unvalidated directConnect Redirect in AppiumCommandExecutor
+## 39. 🟡 High Severity — java-client Allows Network Pivot via Unvalidated directConnect Redirect in AppiumCommandExecutor
 
 **CVE:** `CVE-2026-43910` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://github.com/advisories/GHSA-28f5-38xr-jh2w>
@@ -448,7 +426,7 @@ no host validation, and no user notification.
 
 ---
 
-## 42. 🟡 High Severity — Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root
+## 40. 🟡 High Severity — Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root
 
 **CVE:** `CVE-2026-53921` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-28
 **Reference:** <https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html>
@@ -459,18 +437,7 @@ The critical issue, tracked as CVE-2026-53921 and rated 9.8 on CVSS 3.1 in OpenW
 
 ---
 
-## 43. 🟡 High Severity — Critical TeamCity Flaw Could Let Attackers Run OS Commands Without Logging In
-
-**CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://thehackernews.com/2026/07/critical-teamcity-flaw-could-let.html>
-
-> JetBrains is urging customers of on-premise versions of TeamCity to update to the latest version following the discovery of a critical security issue that could result in arbitrary code execution.
-
-The vulnerability, assigned CVE-2026-63077 (CVSS score: 9.8), affects all TeamCity On-Premises versions. It has been addressed in versions 2025.11.7 and 2026.1.3. TeamCity Cloud instances have already
-
----
-
-## 44. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 41. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
