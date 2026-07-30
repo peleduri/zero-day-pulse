@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-30 08:04 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-30 13:23 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,36 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Russian hackers exploit Exchange OWA zero-day for long-term mailbox access
+## 3. 🟠 Zero-Day — ‘DangleGeddon’: AI Could Weaponize Forgotten DNS Records at Global Scale
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://www.securityweek.com/danglegeddon-ai-could-weaponize-forgotten-dns-records-at-global-scale/>
+
+> Researchers warn that AI could turn dangling DNS takeovers into a nation-state weapon capable of disrupting governments, banks and global supply chains. The post ‘DangleGeddon’: AI Could Weaponize Forgotten DNS Records at Global Scale appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — Critical VMware vCenter Vulnerabilities Allow Authentication Bypass and Remote Code Execution (CVE-2026-59309, CVE-2026-59310)
+
+**CVE:** `CVE-2026-59309` | `CVE-2026-59310` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://www.rapid7.com/blog/post/etr-critical-vmware-vcenter-vulnerabilities-allow-authentication-bypass-and-remote-code-execution-cve-2026-59309-cve-2026-59310>
+
+> Overview On July 29, 2026, Broadcom published security advisory VMSA-2026-0006 addressing multiple vulnerabilities in several VMWare products. Included in the advisory are two critical remotely exploitable vulnerabilities affecting VMware vCenter Server: CVE-2026-59309 and CVE-2026-59310. Both vulnerabilities carry CVSSv3.1 base scores of 9.8 and can be exploited by unauthenticated attackers with …
+
+---
+
+## 5. 🟠 Zero-Day — Hackers Exploit AnySign4PC via Hacked Korean Sites to Install Backdoors Without Prompts
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://thehackernews.com/2026/07/hackers-exploit-anysign4pc-via-hacked.html>
+
+> South Korean authorities and four security firms have disclosed a state-sponsored campaign that compromised trusted domestic websites. The attackers used those sites to exploit locally installed financial-security software and infect targeted visitors with SIGNBT or COPPERHEDGE backdoors.
+
+A compromised page could infect a system running a vulnerable AnySign4PC version without a prompt or
+
+---
+
+## 6. 🟠 Zero-Day — Russian hackers exploit Exchange OWA zero-day for long-term mailbox access
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-exchange-owa-zero-day-for-long-term-mailbox-access/>
@@ -31,7 +60,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — olm dependency deprecation: CVE-2022-39255 and CVE-2024-45193
+## 7. 🟠 Zero-Day — olm dependency deprecation: CVE-2022-39255 and CVE-2024-45193
 
 **CVE:** `CVE-2022-39255` | `CVE-2024-45193` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-wchh-9x6h-7f6p>
@@ -42,27 +71,7 @@ Multiple vulnerabilities were disclosed in 2024 affecting libolm (Olm): AES timi
 
 ---
 
-## 5. 🟠 Zero-Day — How AI is Rewriting the Zero-Day Playbook for Preemptive Security
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://www.rapid7.com/blog/post/ai-rewriting-zero-day-playbook-for-preemptive-security>
-
-> The scenario is all too familiar for any cybersecurity professional: It’s late in the day, and a critical zero-day vulnerability is disclosed. When this happens, CISOs from every industry immediately turn to their Security Operations Centers (SOC) with the single most important, and often most difficult, question: &quot;Are we exposed?” Answering questions like these when zero-days drop tends to t…
-
----
-
-## 6. 🟠 Zero-Day — Public PoC Released for Exploited Check Point SmartConsole Authentication Bypass
-
-**CVE:** `CVE-2026-16232` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://thehackernews.com/2026/07/rapid7-releases-poc-for-exploited-check.html>
-
-> Cybersecurity researchers have shared additional technical details about a recently patched critical security flaw impacting Check Point Security Management Server and Multi-Domain Security Management Server (MDS) that has come under active exploitation in the wild.
-
-The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentication bypass in the SmartConsole login process that
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -71,7 +80,7 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -80,7 +89,7 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -89,7 +98,7 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -98,7 +107,7 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -107,7 +116,7 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -116,7 +125,7 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 13. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -125,14 +134,14 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 14. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
+## 15. 🟠 Zero-Day — July 2026 Patch Tuesday: Microsoft Patches 622 Vulnerabilities Including Two Exploited Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 14, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-july-2026/>
 
 ---
 
-## 15. 🟠 Zero-Day — Cisco FMC Zero-Day Actively Exploited, Static Credentials Could Expose Sensitive Data
+## 16. 🟠 Zero-Day — Cisco FMC Zero-Day Actively Exploited, Static Credentials Could Expose Sensitive Data
 
 **CVE:** `CVE-2026-20316` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html>
@@ -140,15 +149,6 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 > The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a newly disclosed security flaw impacting Cisco Secure Firewall Management Center (FMC) Software to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation.
 
 The vulnerability, assigned CVE-2026-20316 (CVSS score: 5.3), could permit an unauthenticated, remote attacker to log
-
----
-
-## 16. 🟠 Zero-Day — JFrog Zero-Days Exploited in OpenAI-Hugging Face Hack
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://www.securityweek.com/jfrog-zero-days-exploited-in-openai-hugging-face-hack/>
-
-> The OpenAI models targeted services beyond Hugging Face as they attempted to solve the tasks they were given. The post JFrog Zero-Days Exploited in OpenAI-Hugging Face Hack appeared first on SecurityWeek .
 
 ---
 
