@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-30 13:23 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-30 19:06 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — ‘DangleGeddon’: AI Could Weaponize Forgotten DNS Records at Global Scale
+## 3. 🟠 Zero-Day — KindaRails2Shell: CVE-2026-66066, Critical Arbitrary File Read and Possible Remote Code Execution in Ruby on Rails
+
+**CVE:** `CVE-2026-66066` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://www.rapid7.com/blog/post/etr-kindarails2shell-cve-2026-66066-critical-arbitrary-file-read-and-possible-remote-code-execution-in-ruby-on-rails>
+
+> Overview On July 29, 2026, the Ruby on Rails project published a security advisory for CVE-2026-66066 , a critical vulnerability affecting Active Storage image processing when used in conjunction with the libvips image processing library. The vulnerability has a CVSSv4 score of 9.5 and is classified as Initialization of a Resource with an Insecure Default ( CWE-1188 ). An unauthenticated attacker …
+
+---
+
+## 4. 🟠 Zero-Day — ‘DangleGeddon’: AI Could Weaponize Forgotten DNS Records at Global Scale
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://www.securityweek.com/danglegeddon-ai-could-weaponize-forgotten-dns-records-at-global-scale/>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Critical VMware vCenter Vulnerabilities Allow Authentication Bypass and Remote Code Execution (CVE-2026-59309, CVE-2026-59310)
+## 5. 🟠 Zero-Day — Critical VMware vCenter Vulnerabilities Allow Authentication Bypass and Remote Code Execution (CVE-2026-59309, CVE-2026-59310)
 
 **CVE:** `CVE-2026-59309` | `CVE-2026-59310` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://www.rapid7.com/blog/post/etr-critical-vmware-vcenter-vulnerabilities-allow-authentication-bypass-and-remote-code-execution-cve-2026-59309-cve-2026-59310>
@@ -40,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Hackers Exploit AnySign4PC via Hacked Korean Sites to Install Backdoors Without Prompts
+## 6. 🟠 Zero-Day — Hackers Exploit AnySign4PC via Hacked Korean Sites to Install Backdoors Without Prompts
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://thehackernews.com/2026/07/hackers-exploit-anysign4pc-via-hacked.html>
@@ -51,23 +60,12 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 6. 🟠 Zero-Day — Russian hackers exploit Exchange OWA zero-day for long-term mailbox access
+## 7. 🟠 Zero-Day — Russian hackers exploit Exchange OWA zero-day for long-term mailbox access
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-exchange-owa-zero-day-for-long-term-mailbox-access/>
 
 > The Russian state-sponsored hacking group Laundry Bear, also known as Void Blizzard, is exploiting an Exchange Outlook Web Access vulnerability in email campaigns to deliver a sophisticated backdoor called OWAReaper. [...]
-
----
-
-## 7. 🟠 Zero-Day — olm dependency deprecation: CVE-2022-39255 and CVE-2024-45193
-
-**CVE:** `CVE-2022-39255` | `CVE-2024-45193` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-wchh-9x6h-7f6p>
-
-> ### Problem
-
-Multiple vulnerabilities were disclosed in 2024 affecting libolm (Olm): AES timing / side‑channel, Ed25519 signature malleability, and timing leaks in base64 decoding; several CVEs were assigned. Patches and mitigations were published; maintainers recommend upgrading to fixed versions. In addition, a 2022 “Olm/Megolm protocol confusion” advisory affecting some SDKs was critical and re…
 
 ---
 
@@ -152,159 +150,131 @@ The vulnerability, assigned CVE-2026-20316 (CVSS score: 5.3), could permit an un
 
 ---
 
-## 17. 🟡 High Severity — Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads
+## 17. 🟡 High Severity — MessagePack::Buffer#clear Use-After-Free that Enables Cross-Buffer Disclosure
 
-**CVE:** `CVE-2026-66066` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://thehackernews.com/2026/07/critical-rails-flaw-could-let.html>
-
-> Ruby on Rails has released fixes for a critical Active Storage vulnerability that could let unauthenticated attackers read arbitrary files from application servers through crafted image uploads.
-
-Tracked as CVE-2026-66066 (CVSS score: 9.5), the flaw can expose the Rails process environment and secrets such as secret_key_base, the Rails master key, database passwords, cloud storage credentials,
-
----
-
-## 18. 🟡 High Severity — Logging operator has Fluentd configuration injection that allows remote code execution
-
-**CVE:** `CVE-2026-54680` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-mjqf-28ph-426h>
+**CVE:** `CVE-2026-54522` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-4mrv-5p47-p938>
 
 > ### Summary
-
-The Fluentd configuration renderer in Logging operator writes strings from CRDs such as `Flow` directly into `fluent.conf` without escaping them. As a result, a user who can create `Flow` resources can inject Fluentd configuration by providing values that contain newlines.
-
-In the confirmed path, a value in `record_transformer.records` can close the current `&lt;record&gt;` / `&lt;fil…
+`MessagePack::Buffer#clear` shifts out every chunk and returns its 4 KiB rmem page to the shared pool, but does not reset the buffer&#x27;s rmem cursor (`rmem_last`, `rmem_end`, `rmem_owner`). The next write sees &quot;unused rmem space&quot; left over from the freed page and hands back a slice of memory that has already been returned to the pool. A second `MessagePack::Buffer` then re…
 
 ---
 
-## 19. 🟡 High Severity — Easy!Appointments: Authorization bypass in Google OAuth provider binding lets any backend user rebind a peer provider's Google sync
+## 18. 🟡 High Severity — dssrf has an SSRF bypass with remove_at_symbol_in_string
 
-**CVE:** `CVE-2026-52841` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-8hm4-r66f-29wr>
+**CVE:** `CVE-2026-54722` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-cg4g-m8jx-vjv2>
+
+> ## Summary
+
+`is_url_safe` in v1.0.3 contains an SSRF bypass. `remove_at_symbol_in_string` is applied to the raw URL string **before** `new URL()` parses it. This strips the `@` that separates userinfo from host, corrupting the hostname so internal IPs are never checked.
+
+## Vulnerability
+
+In `helpers.ts`, `is_url_safe` does:
+
+```ts
+u = remove_at_symbol_in_string(u);   // strips ALL &#x27;@&#x27; f…
+
+---
+
+## 19. 🟡 High Severity — Flyto2 Core: Guarded HTTP modules follow redirects into internal space without per-hop SSRF revalidation
+
+**CVE:** `CVE-2026-67424` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-c9hr-64h3-gxpc>
+
+> ## Summary
+The HTTP modules that DO call the SSRF guard (`http.get`, `http.request`, `http.batch`) validate only the initial URL, then issue the request with aiohttp&#x27;s default `allow_redirects=True` and perform no per-hop revalidation. An attacker hosts a public URL that 302-redirects to an internal address; the guard passes on the public host and aiohttp transparently follows the redirect in…
+
+---
+
+## 20. 🟡 High Severity — Flyto2 Core: Multiple HTTP-family modules fetch client-controlled URLs without the SSRF guard their siblings apply (SSRF to internal/metadata)
+
+**CVE:** `CVE-2026-67428` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-pgwh-4jj4-qm8v>
+
+> ## Summary
+Numerous HTTP-emitting modules (`core.api.http_get`, `core.api.http_post`, `graphql.query`/`graphql.mutation`, `monitor.http_check`, `communication.slack_send`, `notification.{discord,slack,teams}.send_message`, `ai.vision_analyze` [anthropic path], `verify.visual_diff`, `browser.proxy_rotate`, and the `agent`/`llm` inline base_url branch) perform outbound requests to a fully client-con…
+
+---
+
+## 21. 🟡 High Severity — Flyto2 Core: Unauthenticated flyto-verification /run: callback_url SSRF and internal runner-secret exfiltration
+
+**CVE:** `CVE-2026-67426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-jx74-cqjv-2c67>
+
+> ## Summary
+The standalone `flyto-verification` service exposes `POST /run` with **no authentication**, on all interfaces (0.0.0.0:8344 per the shipped Dockerfile). The request body&#x27;s `callback_url` is used verbatim for an outbound POST that **unconditionally attaches `X-Internal-Key: $FLYTO_RUNNER_SECRET`**. The `callback_url` bypasses the service&#x27;s `target_allowed` allowlist (which only…
+
+---
+
+## 22. 🟡 High Severity — Flyto2 Core: LLM/API keys leak to an attacker-controlled base_url
+
+**CVE:** `CVE-2026-67425` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-qq9q-xgm3-xv9g>
+
+> ## Summary
+
+`llm.chat` reads the operator&#x27;s provider key from the environment (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, ...) and sends it in the `Authorization: Bearer` header to `base_url`, a parameter the caller controls. `base_url` is only checked against the SSRF guard, and the guard allows any public host, so pointing `base_url` at an attacker&#x27;s server hands them the operator&#x27;s k…
+
+---
+
+## 23. 🟡 High Severity — Flyto2 Core: ${env.VAR} interpolation reads any env secret despite env.get being denylisted
+
+**CVE:** `CVE-2026-67427` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-hr7p-wg7r-hg9m>
+
+> ## Summary
+
+The capability policy denies the `env.get` and `env.load_dotenv` modules by default, with the stated reason that they read arbitrary host environment variables (API keys, DSNs) and are a secret-exfil risk. But the workflow engine&#x27;s variable resolver expands `${env.VAR}` for any environment variable with no allowlist and no policy check, so the exact capability the denylist blocks …
+
+---
+
+## 24. 🟡 High Severity — linuxfabrik-lib: fetch() forwards credential headers across a cross-origin redirect
+
+**CVE:** `CVE-2026-67435` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-4jc5-g844-4x33>
 
 > ### Summary
-
-`Google::oauth` at `application/controllers/Google.php:278` stores its URL-supplied `provider_id` in the session, and `oauth_callback` saves the issued Google OAuth token against that row without checking the caller owns the provider. Any logged-in backend user (admin, provider, or secretary) rebinds a peer provider&#x27;s Google sync to a Google account they control. The peer&#x27;s …
+`lib.url.fetch()` follows HTTP redirects (`follow_redirects=True`). httpx strips only `Authorization` and `Cookie` when a redirect crosses the origin, so any other caller-supplied credential header (a session token such as Redfish&#x27;s `X-Auth-Token`, an API key, ...) was still sent to the redirect target. A malicious or redirect-capable server can therefore answer an authenticated r…
 
 ---
 
-## 20. 🟡 High Severity — Easy!Appointments has server-side request forgery in CalDAV connection test that exposes the deployment's internal network
+## 25. 🟡 High Severity — MCP Ruby SDK: Ruby SSE Session Poisoning
 
-**CVE:** `CVE-2026-52840` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-pm5p-7w5h-jm5q>
+**CVE:** `CVE-2026-67431` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-5p9g-j988-pcwv>
 
 > ### Summary
+**Vulnerability**: Missing Session Ownership Validation in the Ruby MCP SDK&#x27;s Streamable and SSE HTTP transport implementation. Any attacker with a stolen session ID can execute tools with the victim&#x27;s session. This is a silent attack - the victim&#x27;s session is compromised and being used for unauthorized actions, but it is hard to know for the victim
 
-`Caldav::connect_to_server` at `application/controllers/Caldav.php:60` hands the request&#x27;s `caldav_url` to a Guzzle `REPORT` call without scheme or host validation. A logged-in backend user (admin, provider, or secretary) reaches loopback, RFC1918, and link-local hosts on the deployment&#x27;s network. The Guzzle exception path returns the upstream status code plus ~120 bytes of …
-
----
-
-## 21. 🟡 High Severity — CVE-2026-63077: Critical unauthenticated remote code execution in JetBrains TeamCity
-
-**CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-63077-critical-unauthenticated-remote-code-execution-in-jetbrains-teamcity>
-
-> Overview On July 27, 2026, JetBrains published a security advisory for CVE-2026-63077 , a critical unauthenticated vulnerability affecting all versions of TeamCity On-Premises. The issue is classified as deserialization of untrusted data and has a CVSS score of 9.8 . An unauthenticated remote attacker with HTTP(S) access to a TeamCity server can exploit the agent polling protocol to bypass authent…
+### Details
+https://…
 
 ---
 
-## 22. 🟡 High Severity — AgentCore CLI Bedrock Agent Import Vulnerable to Code Injection via Improper Triple-Quote Escaping
+## 26. 🟡 High Severity — MCP Ruby SDK: Streamable HTTP transport lacks DNS-rebinding (Host/Origin) protection
 
-**CVE:** `CVE-2026-11393` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-m4x6-gwgp-4pm7>
+**CVE:** `CVE-2026-63118` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-rjr6-rcgv-9m7m>
+
+> ## Summary
+
+`MCP::Server::Transports::StreamableHTTPTransport` (the Rack-mountable Streamable HTTP transport in the `mcp` gem) processes every incoming JSON-RPC request without ever inspecting the HTTP `Host` or `Origin` request headers. There is no `AllowedHosts`/`AllowedOrigins` allowlist and no DNS-rebinding guard anywhere in the transport. A local MCP server that binds a loopback or LAN HTTP p…
+
+---
+
+## 27. 🟡 High Severity — OliveTin OS Command Injection via Custom regex: Argument Type Bypassing Shell Safety Check
+
+**CVE:** `CVE-2026-67438` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://github.com/advisories/GHSA-xc5w-4v5w-7x65>
 
 > ### Summary
-The AgentCore CLI (@aws/agentcore) is a developer tool for managing agent infrastructure lifecycle on Amazon Bedrock AgentCore. An issue exists where, under certain circumstances, a crafted collaborationInstruction value stored in Bedrock Agent collaborator metadata can break out of a Python triple-quoted string in code generated by the `agentcore add agent --type import` command, resu…
+OliveTin&#x27;s checkShellArgumentSafety() function maintains a blocklist of argument types unsafe for Shell mode actions, but does not include regex:-prefixed types. Because regex: support was added independently via typeSafetyCheckRegex(), any Shell mode action using a regex:-typed argument bypasses the safety check unconditionally. The unvalidated value is then interpolated directly…
 
 ---
 
-## 23. 🟡 High Severity — Quarkus: Authentication/Authorization Bypass via Advanced Path Normalization Vulnerabilities
-
-**CVE:** `CVE-2026-50559` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-qcxp-gm7m-4j5v>
-
-> Quarkus HTTP path-based authorization policies can be bypassed using encoded semicolons (%3B) to smuggle matrix
-  parameters past the security layer, and using encoded slashes (%2F) or backslashes (%5C) to access protected static
-  resources. This is a distinct issue from CVE-2026-39852, which addressed only literal semicolon stripping.
-
-  ### Technical Details
-
-  The security layer (AbstractPathM…
-
----
-
-## 24. 🟡 High Severity — Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory
-
-**CVE:** `CVE-2026-59726` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html>
-
-> Cybersecurity researchers have flagged a maximum-severity security flaw in Ruflo, an open-source agent meta-harness for Anthropic Claude Code and OpenAI Codex, that could result in unauthenticated remote code execution.
-
-The vulnerability, tracked as CVE-2026-59726 (CVSS score: 10.0), impacts all versions of the project before version 3.16.3. It has been codenamed RufRoot by Noma Security&#x27;s
-
----
-
-## 25. 🟡 High Severity — Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape
-
-**CVE:** `CVE-2026-59309` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html>
-
-> Broadcom has released security updates to address multiple security flaws impacting VMware ESX, vCenter, Workstation, and Fusion, three of which have been designated as critical in severity.
-
-The first of the three critical-rated flaws is CVE-2026-59309 (CVSS score: 9.8), which has been described as an authentication bypass in VMware vCenter.
-
-&quot;A malicious actor with network access to vCenter
-
----
-
-## 26. 🟡 High Severity — veraPDF-validatio: Use of Default `DocumentBuilderFactory` leads to XXE When Processing Untrusted PDFs
-
-**CVE:** `CVE-2026-54082` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-cg9x-g3gm-h5h6>
-
-> ### Summary
-
-veraPDF-validation has an XML External Entity (XXE) vulnerability in two PDF parsing paths (validate and `GFPDAcroForm.getdynamicRender()`). A malicious/crafted PDF supplied to a veraPDF consumer can lead to the expansion of external entities while parsing rich-text annotation/form-field values or XFA configurations, allowing local file disclosure and potentially outbound network requ…
-
----
-
-## 27. 🟡 High Severity — veraPDF Validation XXE via XFA
-
-**CVE:** `CVE-2026-54079` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-36mm-w85j-3q2j>
-
-> ## Summary  
-  
-**Description**
-An XML External Entity Injection (CWE-611) vulnerability in veraPDF allows a remote attacker to read arbitrary files on the server file system and perform Server-Side Request Forgery by submitting a crafted PDF containing a malicious XFA stream. This affects all current versions of veraPDF-validation.  
-  
-## Details  
-The vulnerability resides in veraPDF-validation…
-
----
-
-## 28. 🟡 High Severity — swagger-typescript-api vulnerable to code injection via unescaped enum string values
-
-**CVE:** `CVE-2026-54664` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-5f94-x226-ccpm>
-
-> ### Summary
-
-`swagger-typescript-api` interpolates `components.schemas.*.enum[i]` string values into the body of generated TypeScript `enum` declarations without escaping. A malicious enum value can close the enclosing string literal, terminate the enum body, and inject a bare-block IIFE that executes at **module load** the first time the generated client is imported. The trigger requires no insta…
-
----
-
-## 29. 🟡 High Severity — swagger-typescript-api vulnerable to authorization-token exfiltration via spec `$ref`
-
-**CVE:** `CVE-2026-54660` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://github.com/advisories/GHSA-h754-fxp7-88wx>
-
-> ### Summary
-
-When the developer supplies an `--authorizationToken` (commonly required to fetch a private spec behind authentication), `swagger-typescript-api` attaches that token to the `Authorization` header of **every** subsequent HTTP request it makes while resolving external `$ref` URLs in the spec — with **no same-origin check, no host allowlist, and no scope-down** for cross-origin requests.…
-
----
-
-## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
