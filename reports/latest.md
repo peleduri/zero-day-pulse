@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-29 18:51 UTC &nbsp;|&nbsp; **Total:** 49 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 32 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-30 01:15 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-20316 — Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability
-
-**CVE:** `CVE-2026-20316` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-20316>
-
-> Vendor: Cisco | Product: Secure Firewall Management Center (FMC). Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems. Required action: App…
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,12 +13,21 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
 
 > Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…
+
+---
+
+## 3. 🟠 Zero-Day — Russian hackers exploit Exchange OWA zero-day for long-term mailbox access
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-29
+**Reference:** <https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-exchange-owa-zero-day-for-long-term-mailbox-access/>
+
+> The Russian state-sponsored hacking group Laundry Bear, also known as Void Blizzard, is exploiting an Exchange Outlook Web Access vulnerability in email campaigns to deliver a sophisticated backdoor called OWAReaper. [...]
 
 ---
 
@@ -132,10 +132,12 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 15. 🟠 Zero-Day — CrowdStrike Uncovers New Prompt Injection Techniques
+## 15. 🟠 Zero-Day — Cisco warns of FMC static credential flaw exploited in zero-day attacks
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Jul 07, 20
-**Reference:** <https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-prompt-injection-techniques/>
+**CVE:** `CVE-2026-20316` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-29
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-fmc-static-credential-flaw-exploited-in-zero-day-attacks/>
+
+> Cisco is warning that a high-severity Secure Firewall Management Center (FMC) static credential vulnerability, tracked as CVE-2026-20316, was actively exploited in zero-day attacks to gain unauthorized access to vulnerable devices. [...]
 
 ---
 
@@ -148,16 +150,7 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 17. 🟠 Zero-Day — OpenAI models used Artifactory zero-days to escape to the internet
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://www.bleepingcomputer.com/news/security/openai-models-used-artifactory-zero-days-to-escape-to-the-internet/>
-
-> JFrog has confirmed that OpenAI models exploited zero-day vulnerabilities in self-hosted Artifactory servers to help escape an isolated testing environment and gain access to the internet before attacking Hugging Face. [...]
-
----
-
-## 18. 🟡 High Severity — Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads
+## 17. 🟡 High Severity — Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads
 
 **CVE:** `CVE-2026-66066` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://thehackernews.com/2026/07/critical-rails-flaw-could-let.html>
@@ -168,7 +161,7 @@ Tracked as CVE-2026-66066 (CVSS score: 9.5), the flaw can expose the Rails proce
 
 ---
 
-## 19. 🟡 High Severity — Logging operator has Fluentd configuration injection that allows remote code execution
+## 18. 🟡 High Severity — Logging operator has Fluentd configuration injection that allows remote code execution
 
 **CVE:** `CVE-2026-54680` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-mjqf-28ph-426h>
@@ -181,7 +174,7 @@ In the confirmed path, a value in `record_transformer.records` can close the cur
 
 ---
 
-## 20. 🟡 High Severity — Easy!Appointments: Authorization bypass in Google OAuth provider binding lets any backend user rebind a peer provider's Google sync
+## 19. 🟡 High Severity — Easy!Appointments: Authorization bypass in Google OAuth provider binding lets any backend user rebind a peer provider's Google sync
 
 **CVE:** `CVE-2026-52841` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-8hm4-r66f-29wr>
@@ -192,7 +185,7 @@ In the confirmed path, a value in `record_transformer.records` can close the cur
 
 ---
 
-## 21. 🟡 High Severity — Easy!Appointments has server-side request forgery in CalDAV connection test that exposes the deployment's internal network
+## 20. 🟡 High Severity — Easy!Appointments has server-side request forgery in CalDAV connection test that exposes the deployment's internal network
 
 **CVE:** `CVE-2026-52840` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-pm5p-7w5h-jm5q>
@@ -203,7 +196,7 @@ In the confirmed path, a value in `record_transformer.records` can close the cur
 
 ---
 
-## 22. 🟡 High Severity — CVE-2026-63077: Critical unauthenticated remote code execution in JetBrains TeamCity
+## 21. 🟡 High Severity — CVE-2026-63077: Critical unauthenticated remote code execution in JetBrains TeamCity
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-63077-critical-unauthenticated-remote-code-execution-in-jetbrains-teamcity>
@@ -212,7 +205,7 @@ In the confirmed path, a value in `record_transformer.records` can close the cur
 
 ---
 
-## 23. 🟡 High Severity — AgentCore CLI Bedrock Agent Import Vulnerable to Code Injection via Improper Triple-Quote Escaping
+## 22. 🟡 High Severity — AgentCore CLI Bedrock Agent Import Vulnerable to Code Injection via Improper Triple-Quote Escaping
 
 **CVE:** `CVE-2026-11393` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-m4x6-gwgp-4pm7>
@@ -222,7 +215,7 @@ The AgentCore CLI (@aws/agentcore) is a developer tool for managing agent infras
 
 ---
 
-## 24. 🟡 High Severity — Quarkus: Authentication/Authorization Bypass via Advanced Path Normalization Vulnerabilities
+## 23. 🟡 High Severity — Quarkus: Authentication/Authorization Bypass via Advanced Path Normalization Vulnerabilities
 
 **CVE:** `CVE-2026-50559` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-qcxp-gm7m-4j5v>
@@ -237,7 +230,7 @@ The AgentCore CLI (@aws/agentcore) is a developer tool for managing agent infras
 
 ---
 
-## 25. 🟡 High Severity — Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory
+## 24. 🟡 High Severity — Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory
 
 **CVE:** `CVE-2026-59726` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html>
@@ -248,7 +241,7 @@ The vulnerability, tracked as CVE-2026-59726 (CVSS score: 10.0), impacts all ver
 
 ---
 
-## 26. 🟡 High Severity — Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape
+## 25. 🟡 High Severity — Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape
 
 **CVE:** `CVE-2026-59309` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html>
@@ -261,7 +254,7 @@ The first of the three critical-rated flaws is CVE-2026-59309 (CVSS score: 9.8),
 
 ---
 
-## 27. 🟡 High Severity — veraPDF-validatio: Use of Default `DocumentBuilderFactory` leads to XXE When Processing Untrusted PDFs
+## 26. 🟡 High Severity — veraPDF-validatio: Use of Default `DocumentBuilderFactory` leads to XXE When Processing Untrusted PDFs
 
 **CVE:** `CVE-2026-54082` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-cg9x-g3gm-h5h6>
@@ -272,7 +265,7 @@ veraPDF-validation has an XML External Entity (XXE) vulnerability in two PDF par
 
 ---
 
-## 28. 🟡 High Severity — veraPDF Validation XXE via XFA
+## 27. 🟡 High Severity — veraPDF Validation XXE via XFA
 
 **CVE:** `CVE-2026-54079` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-36mm-w85j-3q2j>
@@ -287,7 +280,7 @@ The vulnerability resides in veraPDF-validation…
 
 ---
 
-## 29. 🟡 High Severity — swagger-typescript-api vulnerable to code injection via unescaped enum string values
+## 28. 🟡 High Severity — swagger-typescript-api vulnerable to code injection via unescaped enum string values
 
 **CVE:** `CVE-2026-54664` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-5f94-x226-ccpm>
@@ -298,7 +291,7 @@ The vulnerability resides in veraPDF-validation…
 
 ---
 
-## 30. 🟡 High Severity — swagger-typescript-api vulnerable to authorization-token exfiltration via spec `$ref`
+## 29. 🟡 High Severity — swagger-typescript-api vulnerable to authorization-token exfiltration via spec `$ref`
 
 **CVE:** `CVE-2026-54660` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://github.com/advisories/GHSA-h754-fxp7-88wx>
@@ -309,7 +302,7 @@ When the developer supplies an `--authorizationToken` (commonly required to fetc
 
 ---
 
-## 31. 🟡 High Severity — New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands
+## 30. 🟡 High Severity — New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands
 
 **CVE:** `CVE-2026-60004` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html>
@@ -320,7 +313,7 @@ Tracked as CVE-2026-60004 (CVSS score: 9.8), the flaw affects Gitea versions 1.1
 
 ---
 
-## 32. 🟡 High Severity — Coordinated “cyberattack” on Minnesota water utilities: What you need to know
+## 31. 🟡 High Severity — Coordinated “cyberattack” on Minnesota water utilities: What you need to know
 
 **CVE:** `CVE-2021-22681` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-29
 **Reference:** <https://www.tenable.com/blog/coordinated-cyberattack-on-minnesota-water-utilities-what-you-need-to-know>
@@ -329,185 +322,7 @@ Tracked as CVE-2026-60004 (CVSS score: 9.8), the flaw affects Gitea versions 1.1
 
 ---
 
-## 33. 🟡 High Severity — goshs has ACL Bypass & Path Traversal
-
-**CVE:** `CVE-2026-66064` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-964w-f6gj-5236>
-
-> ## Summary
-
-`sendFile` derives the served filename from the raw request path while opening the file from the cleaned path, so appending a trailing slash empties the derived name and defeats both the never-serve rule for the ACL file and the block list. 
-
-## Finding (Medium): trailing-slash ACL and hidden-file bypass
-
-httpserver/handler.go, sendFile (lines 789-801) takes the filename from the RAW r…
-
----
-
-## 34. 🟡 High Severity — openhole-server vulnerable to path traversal via URL-decoded request path
-
-**CVE:** `CVE-2026-54650` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-fh2f-xfxc-q9cc>
-
-> ## Summary
-
-openhole-server forwarded the URL-decoded request path (`r.URL.Path`) to tunnel clients instead of the original request-target. Percent-encoded dot-segments (`%2e`) and separators (`%2f`) were decoded to `../` and `/` before reaching the local service.
-
-Go&#x27;s ServeMux rejects literal `../` paths, but percent-encoded traversal sequences bypassed this and were delivered to backends a…
-
----
-
-## 35. 🟡 High Severity — td has pre-auth denial of service via unbounded memory allocation in proto.UnencryptedMessage.Decode
-
-**CVE:** `CVE-2026-54638` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-whmm-qj9r-wvr2>
-
-> ### Impact
-
-A remote, unauthenticated attacker can cause excessive memory allocation (and resulting CPU / GC pressure, potentially OOM termination) by sending a crafted unencrypted MTProto packet.
-
-`(*proto.UnencryptedMessage).Decode` read an attacker-controlled 32-bit `dataLen` field and immediately allocated a buffer of that size via `make([]byte, dataLen)` **before** validating that the underly…
-
----
-
-## 36. 🟡 High Severity — goshs: File-based .goshs ACL authorization bypass via the ?bulk zip-download route (unauthenticated read; residual of GHSA-wvhv-qcqf-f3cx)
-
-**CVE:** `CVE-2026-54719` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-rmxw-pq4x-3fvh>
-
-> GHSA-wvhv-qcqf-f3cx fixed the per-folder .goshs ACL bypass on the state-changing routes (PUT/POST upload/?mkdir/?delete) and added recursive ACL resolution, and its description states the read/list path correctly enforces .goshs. That premise does not hold for the ?bulk zip-download route. bulkDownload (httpserver/updown.go) takes one or more ?file= parameters, runs each through sanitizePath(fs.We…
-
----
-
-## 37. 🟡 High Severity — `datamodel-code-generator` vulnerable to code injection via unescaped carriage return in `--extra-template-data` `comment` field
-
-**CVE:** `CVE-2026-54654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-wjv6-jcfj-mf9r>
-
-> ### Summary
-
-`datamodel-code-generator` is vulnerable to code injection when a developer passes an `--extra-template-data` file whose `comment` value contains a literal `\r` (carriage return). The `comment` variable is rendered into a Python `#` comment in six built-in templates with **no** line-terminator escaping. Python&#x27;s tokenizer treats a bare CR as a physical-line terminator (see [Pytho…
-
----
-
-## 38. 🟡 High Severity — datamodel-code-generator vulnerable to arbitrary local file read via JSON-Schema `$ref` (`file://` and `../` traversal), bypassing `--no-allow-remote-refs`
-
-**CVE:** `CVE-2026-55389` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-8359-h9fx-j6v9>
-
-> ### Summary
-
-`datamodel-code-generator` resolves JSON-Schema `$ref` targets that point at the local filesystem without restricting them to the input/base directory and without honoring the remote-reference security control. In the default configuration, an attacker who controls an input schema (a &quot;paste your OpenAPI/JSON-Schema&quot; service, a CI job that generates models from a submitted sp…
-
----
-
-## 39. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF protection bypass via DNS rebinding
-
-**CVE:** `CVE-2026-55391` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-vx7x-vcc2-c44g>
-
-> ### Summary
-
-`datamodel-code-generator`&#x27;s anti-SSRF guard validates the resolved IP of a fetch target once and then lets `httpx` perform its own independent DNS resolution to connect, so the validated address is never pinned. A hostname that resolves to a public IP at validation time and a private IP at connection time (DNS rebinding) bypasses the guard and reaches loopback, link-local cloud-…
-
----
-
-## 40. 🟡 High Severity — `datamodel-code-generator` vulnerable to code execution on import via unescaped `validators` entries in --extra-template-data
-
-**CVE:** `CVE-2026-54656` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-8m8r-38jm-f355>
-
-> ### Summary
-
-When the Pydantic v2 output mode is in use, `datamodel-code-generator` reads a `validators` array from each model entry in the `--extra-template-data` file and synthesises a Pydantic `@field_validator(...)` decorator from each entry. The field names and the validator mode are interpolated into the decorator call wrapped in *unescaped* single quotes. A value containing `&#x27;` breaks …
-
----
-
-## 41. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF via JSON-Schema `$ref` to HTTP URL (silent by default)
-
-**CVE:** `CVE-2026-54690` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-954p-556p-r752>
-
-> ### Summary
-
-JSON-Schema `$ref` values pointing at HTTP or HTTPS URLs are silently dereferenced by `datamodel-code-generator` with no IP/host validation, no scheme allow-list, and redirects followed unconditionally. The `--allow-remote-refs` gate added in 0.56.0 defaults to `None`, which only emits a deprecation warning and then fetches the URL anyway; only explicit `--allow-remote-refs=false` blo…
-
----
-
-## 42. 🟡 High Severity — datamodel-code-generator vulnerable to code injection via `x-python-import` / `customTypePath` in generated import statements
-
-**CVE:** `CVE-2026-55415` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-5578-w22f-pfx9>
-
-> #### Summary
-
-A malicious input schema (OpenAPI / JSON Schema) can execute arbitrary Python code on the machine that **imports** the generated model. The `x-python-import` and `customTypePath` schema extensions flow, unsanitized, into the `import` statements datamodel-code-generator emits. A newline embedded in the extension value breaks out of the `from … import …` line and injects an attacker-co…
-
----
-
-## 43. 🟡 High Severity — datamodel-code-generator: Authorization / request headers leaked to cross-origin redirect target when fetching remote schemas
-
-**CVE:** `CVE-2026-55403` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-r5vv-ff45-prp2>
-
-> ### Summary
-
-When `datamodel-code-generator` fetches a remote schema and follows an HTTP redirect, it re-sends the original request headers, including any `Authorization` header, to the redirect target even when the redirect changes origin (host/port/scheme). Credentials that an operator scoped to a trusted schema host are therefore forwarded to an attacker-controlled or otherwise different host, …
-
----
-
-## 44. 🟡 High Severity — datamodel-code-generator vulnerable to SSRF via --url: no host/IP validation, follows redirects
-
-**CVE:** `CVE-2026-54691` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-rfr2-mq9m-x2qx>
-
-> ### Summary
-
-`datamodel-code-generator`&#x27;s built-in HTTP fetcher (`http.get_body`) issues an `httpx.GET` against any URL passed to `--url` (or reached via a redirect chain) with **no allow-list, no deny-list, no IP/host validation, and `follow_redirects=True`**. Loopback addresses, RFC1918 ranges, link-local (`169.254.169.254` cloud metadata), unique-local IPv6 and any other network-accessible…
-
----
-
-## 45. 🟡 High Severity — Fission: SanitizeFilePath lexical HasPrefix bypass permits sibling-directory escape
-
-**CVE:** `CVE-2026-50568` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-r5jh-q2mw-gcx4>
-
-> `SanitizeFilePath` in `pkg/utils/utils.go` validated that a path stayed under a safe directory by calling `strings.HasPrefix(path, safedir)`. This is a lexical check, not a directory boundary check: `/packages-extra/evil` starts with
-`/packages`, so it passed. The function did not enforce a path-separator boundary, so any sibling directory whose name began with the safe-directory string was accept…
-
----
-
-## 46. 🟡 High Severity —  Fission: Zip Slip in pkg/utils/zip.go:Unarchive allows fetcher to write outside the destination directory
-
-**CVE:** `CVE-2026-50567` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-q6vm-xqc9-v3ff>
-
-> `Unarchive` in `pkg/utils/zip.go` joined each archive entry name with the destination directory via `filepath.Join` and wrote the result without checking whether the resolved path stayed under the destination. A zip entry named
-  `../../tmp/evil` therefore landed at `/tmp/evil`. An attacker who could control a `Package.Spec.Source.URL` or `Deployment.URL` archive could induce the fetcher (running …
-
----
-
-## 47. 🟡 High Severity — Fission: HTTPTrigger admission omits RelativeURL / Prefix validation; kubectl apply bypasses CLI checks
-
-**CVE:** `CVE-2026-50569` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-vchh-r53j-8mpw>
-
-> `HTTPTriggerSpec.Validate()` validated `Methods`, `FunctionReference`, `Host`, `IngressConfig`, and `CorsConfig`, but silently skipped `RelativeURL` and `Prefix`. Those two fields were validated at the CLI level only
-(`pkg/fission-cli/cmd/httptrigger/create.go:83`). The post-CRD-modernization webhook for HTTPTrigger was retired in favor of API-server CEL — and CEL had no rules on those fields eith…
-
----
-
-## 48. 🟡 High Severity — Fission: Incomplete capability denylist in Environment/Function PodSpec validation allows tenant-added CAP_SYS_TIME and cross-tenant node wall-clock corruption
-
-**CVE:** `CVE-2026-50570` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-28
-**Reference:** <https://github.com/advisories/GHSA-qf5v-m7p4-95rp>
-
-> Fission v1.24.0 added PodSpec safety validation for tenant-facing Environment and Function CRDs (`ValidatePodSpecSafety` / `ValidateContainerSafety` admission webhook + `sanitizeContainerSecurityContext` executor merge layer), but the
-capability check was implemented as a fixed **denylist of six Linux capabilities** (SYS_ADMIN, NET_ADMIN, SYS_PTRACE, SYS_MODULE, DAC_READ_SEARCH, DAC_OVERRIDE). The…
-
----
-
-## 49. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
