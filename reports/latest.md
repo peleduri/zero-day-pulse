@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-30 01:15 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-30 08:04 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -132,12 +132,14 @@ The vulnerability, tracked as CVE-2026-16232 (CVSS score: 9.3), is an authentica
 
 ---
 
-## 15. 🟠 Zero-Day — Cisco warns of FMC static credential flaw exploited in zero-day attacks
+## 15. 🟠 Zero-Day — Cisco FMC Zero-Day Actively Exploited, Static Credentials Could Expose Sensitive Data
 
-**CVE:** `CVE-2026-20316` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-fmc-static-credential-flaw-exploited-in-zero-day-attacks/>
+**CVE:** `CVE-2026-20316` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-30
+**Reference:** <https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html>
 
-> Cisco is warning that a high-severity Secure Firewall Management Center (FMC) static credential vulnerability, tracked as CVE-2026-20316, was actively exploited in zero-day attacks to gain unauthorized access to vulnerable devices. [...]
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a newly disclosed security flaw impacting Cisco Secure Firewall Management Center (FMC) Software to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation.
+
+The vulnerability, assigned CVE-2026-20316 (CVSS score: 5.3), could permit an unauthenticated, remote attacker to log
 
 ---
 
@@ -302,27 +304,7 @@ When the developer supplies an `--authorizationToken` (commonly required to fetc
 
 ---
 
-## 30. 🟡 High Severity — New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands
-
-**CVE:** `CVE-2026-60004` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html>
-
-> Gitea, the self-hosted Git platform, has patched a critical remote code execution vulnerability. A user with ordinary repository write access can turn attacker-controlled patch content into a live Git hook and run shell commands as the Gitea service account.
-
-Tracked as CVE-2026-60004 (CVSS score: 9.8), the flaw affects Gitea versions 1.17 and later before 1.27.1 and is fixed in 1.27.1. The
-
----
-
-## 31. 🟡 High Severity — Coordinated “cyberattack” on Minnesota water utilities: What you need to know
-
-**CVE:** `CVE-2021-22681` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-07-29
-**Reference:** <https://www.tenable.com/blog/coordinated-cyberattack-on-minnesota-water-utilities-what-you-need-to-know>
-
-> A coordinated cyber attack disrupted water systems across more than 30 Minnesota communities. Here is what defenders need to know about the attack so far. This FAQ also details recent cyberactivity targeting internet-exposed PLCs, and how to protect exposed infrastructure. Key Takeaways A coordinated &quot;cyberattack&quot; targeted water and wastewater systems across more than 30 Minnesota commun…
-
----
-
-## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

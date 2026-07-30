@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-30T01:15:33.478314+00:00",
-  "total": 32,
+  "generated": "2026-07-30T08:04:15.706912+00:00",
+  "total": 30,
   "kev": 0,
   "zero_day": 16,
   "enriched": 0,
@@ -232,15 +232,15 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-fmc-static-credential-flaw-exploited-in-zero-day-attacks/",
-      "title": "Cisco warns of FMC static credential flaw exploited in zero-day attacks",
-      "summary": "Cisco is warning that a high-severity Secure Firewall Management Center (FMC) static credential vulnerability, tracked as CVE-2026-20316, was actively exploited in zero-day attacks to gain unauthorized access to vulnerable devices. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-fmc-static-credential-flaw-exploited-in-zero-day-attacks/",
-      "published": "2026-07-29T21:35:40+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html",
+      "title": "Cisco FMC Zero-Day Actively Exploited, Static Credentials Could Expose Sensitive Data",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a newly disclosed security flaw impacting Cisco Secure Firewall Management Center (FMC) Software to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation.\n\nThe vulnerability, assigned CVE-2026-20316 (CVSS score: 5.3), could permit an unauthenticated, remote attacker to log",
+      "link": "https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html",
+      "published": "2026-07-30T05:08:39+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "malware"
+        "zeroday"
       ],
       "cve_ids": [
         "CVE-2026-20316"
@@ -489,41 +489,6 @@
       ],
       "cve_ids": [
         "CVE-2026-54660"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
-      "title": "New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands",
-      "summary": "Gitea, the self-hosted Git platform, has patched a critical remote code execution vulnerability. A user with ordinary repository write access can turn attacker-controlled patch content into a live Git hook and run shell commands as the Gitea service account.\n\nTracked as CVE-2026-60004 (CVSS score: 9.8), the flaw affects Gitea versions 1.17 and later before 1.27.1 and is fixed in 1.27.1. The",
-      "link": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
-      "published": "2026-07-29T07:47:19+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-60004"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/coordinated-cyberattack-on-minnesota-water-utilities-what-you-need-to-know",
-      "title": "Coordinated \u201ccyberattack\u201d on Minnesota water utilities: What you need to know",
-      "summary": "A coordinated cyber attack disrupted water systems across more than 30 Minnesota communities. Here is what defenders need to know about the attack so far. This FAQ also details recent cyberactivity targeting internet-exposed PLCs, and how to protect exposed infrastructure. Key Takeaways A coordinated \"cyberattack\" targeted water and wastewater systems across more than 30 Minnesota communities on July 26-27, 2026; attribution remains pending a federal investigation, though the timing aligns closely with escalating Iranian-affiliated PLC exploitation activity documented in CISA Advisory AA26-097A. The July 22, 2026 update to CISA Advisory AA26-097A expanded the scope of observed PLC exploitation to include Schneider Electric and Siemens devices alongside Rockwell Automation, documented project file exfiltration for the first time, and added detection guidance for manipulation of reusable code modules embedded in PLC programs. CVE-2021-22681 (CVSS 9.8), a critical authentication bypass in Rockwell Automation Logix controllers with no available vendor patch, was added to CISA's Known Exploited Vulnerabilities catalog in March 2026 following confirmed exploitation by Iranian-affiliated actors. Background Tenable's Research Special Operations (RSO) team has compiled this FAQ in response to the coordinated cyber attack against Minnesota water utilities and the July 22, 2026 update to CISA Advisory AA26-097A. On April 9, 2026, we published a comprehensive FAQ about CyberAv3ngers , the IRGC-linked group at the center of the PLC exploitation activity documented in CISA Advisory AA26-097A. That post covers the group's history, four-phase capability escalation, IOCONTROL malware, and a full technical breakdown of CVE-2021-22681. This post addresses what has changed since then. FAQ What happened to water utilities in Minnesota? Between Sunday, July 26, and Monday, July 27, 2026, a coordinated cyber attack disrupted water and wastewater utility operations across more than 30 comm",
-      "link": "https://www.tenable.com/blog/coordinated-cyberattack-on-minnesota-water-utilities-what-you-need-to-know",
-      "published": "2026-07-29T03:19:08+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2021-22681"
       ],
       "is_zero_day": false,
       "is_high_severity": true
