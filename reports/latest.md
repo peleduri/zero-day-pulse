@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-31 08:30 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-31 13:26 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -31,27 +31,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Critical VMware vCenter Vulnerabilities Allow Authentication Bypass and Remote Code Execution (CVE-2026-59309, CVE-2026-59310)
-
-**CVE:** `CVE-2026-59309` | `CVE-2026-59310` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://www.rapid7.com/blog/post/etr-critical-vmware-vcenter-vulnerabilities-allow-authentication-bypass-and-remote-code-execution-cve-2026-59309-cve-2026-59310>
-
-> Overview On July 29, 2026, Broadcom published security advisory VMSA-2026-0006 addressing multiple vulnerabilities in several VMWare products. Included in the advisory are two critical remotely exploitable vulnerabilities affecting VMware vCenter Server: CVE-2026-59309 and CVE-2026-59310. Both vulnerabilities carry CVSSv3.1 base scores of 9.8 and can be exploited by unauthenticated attackers with …
-
----
-
-## 5. 🟠 Zero-Day — Hackers Exploit AnySign4PC via Hacked Korean Sites to Install Backdoors Without Prompts
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://thehackernews.com/2026/07/hackers-exploit-anysign4pc-via-hacked.html>
-
-> South Korean authorities and four security firms have disclosed a state-sponsored campaign that compromised trusted domestic websites. The attackers used those sites to exploit locally installed financial-security software and infect targeted visitors with SIGNBT or COPPERHEDGE backdoors.
-
-A compromised page could infect a system running a vulnerable AnySign4PC version without a prompt or
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -60,7 +40,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -69,7 +49,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -78,7 +58,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -87,7 +67,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -96,7 +76,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -105,7 +85,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -114,7 +94,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 13. 🟡 High Severity — Critical Code Execution Vulnerability Patched in TeamCity
+## 11. 🟡 High Severity — Critical Code Execution Vulnerability Patched in TeamCity
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://www.securityweek.com/critical-code-execution-vulnerability-patched-in-teamcity/>
@@ -123,7 +103,7 @@ A compromised page could infect a system running a vulnerable AnySign4PC version
 
 ---
 
-## 14. 🟡 High Severity — AWS Amplify Studio UI Component Properties Has an Input Validation Issue
+## 12. 🟡 High Severity — AWS Amplify Studio UI Component Properties Has an Input Validation Issue
 
 **CVE:** `CVE-2025-4318` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-hf3j-86p7-mfw8>
@@ -135,7 +115,7 @@ An issue ex…
 
 ---
 
-## 15. 🟡 High Severity — MessagePack::Buffer#clear Use-After-Free that Enables Cross-Buffer Disclosure
+## 13. 🟡 High Severity — MessagePack::Buffer#clear Use-After-Free that Enables Cross-Buffer Disclosure
 
 **CVE:** `CVE-2026-54522` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-4mrv-5p47-p938>
@@ -145,7 +125,7 @@ An issue ex…
 
 ---
 
-## 16. 🟡 High Severity — dssrf has an SSRF bypass with remove_at_symbol_in_string
+## 14. 🟡 High Severity — dssrf has an SSRF bypass with remove_at_symbol_in_string
 
 **CVE:** `CVE-2026-54722` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-cg4g-m8jx-vjv2>
@@ -163,7 +143,7 @@ u = remove_at_symbol_in_string(u);   // strips ALL &#x27;@&#x27; f…
 
 ---
 
-## 17. 🟡 High Severity — Flyto2 Core: Guarded HTTP modules follow redirects into internal space without per-hop SSRF revalidation
+## 15. 🟡 High Severity — Flyto2 Core: Guarded HTTP modules follow redirects into internal space without per-hop SSRF revalidation
 
 **CVE:** `CVE-2026-67424` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-c9hr-64h3-gxpc>
@@ -173,7 +153,7 @@ The HTTP modules that DO call the SSRF guard (`http.get`, `http.request`, `http.
 
 ---
 
-## 18. 🟡 High Severity — Flyto2 Core: Multiple HTTP-family modules fetch client-controlled URLs without the SSRF guard their siblings apply (SSRF to internal/metadata)
+## 16. 🟡 High Severity — Flyto2 Core: Multiple HTTP-family modules fetch client-controlled URLs without the SSRF guard their siblings apply (SSRF to internal/metadata)
 
 **CVE:** `CVE-2026-67428` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-pgwh-4jj4-qm8v>
@@ -183,7 +163,7 @@ Numerous HTTP-emitting modules (`core.api.http_get`, `core.api.http_post`, `grap
 
 ---
 
-## 19. 🟡 High Severity — Flyto2 Core: Unauthenticated flyto-verification /run: callback_url SSRF and internal runner-secret exfiltration
+## 17. 🟡 High Severity — Flyto2 Core: Unauthenticated flyto-verification /run: callback_url SSRF and internal runner-secret exfiltration
 
 **CVE:** `CVE-2026-67426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-jx74-cqjv-2c67>
@@ -193,7 +173,7 @@ The standalone `flyto-verification` service exposes `POST /run` with **no authen
 
 ---
 
-## 20. 🟡 High Severity — Flyto2 Core: LLM/API keys leak to an attacker-controlled base_url
+## 18. 🟡 High Severity — Flyto2 Core: LLM/API keys leak to an attacker-controlled base_url
 
 **CVE:** `CVE-2026-67425` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-qq9q-xgm3-xv9g>
@@ -204,7 +184,7 @@ The standalone `flyto-verification` service exposes `POST /run` with **no authen
 
 ---
 
-## 21. 🟡 High Severity — Flyto2 Core: ${env.VAR} interpolation reads any env secret despite env.get being denylisted
+## 19. 🟡 High Severity — Flyto2 Core: ${env.VAR} interpolation reads any env secret despite env.get being denylisted
 
 **CVE:** `CVE-2026-67427` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-hr7p-wg7r-hg9m>
@@ -215,7 +195,7 @@ The capability policy denies the `env.get` and `env.load_dotenv` modules by defa
 
 ---
 
-## 22. 🟡 High Severity — linuxfabrik-lib: fetch() forwards credential headers across a cross-origin redirect
+## 20. 🟡 High Severity — linuxfabrik-lib: fetch() forwards credential headers across a cross-origin redirect
 
 **CVE:** `CVE-2026-67435` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-4jc5-g844-4x33>
@@ -225,7 +205,7 @@ The capability policy denies the `env.get` and `env.load_dotenv` modules by defa
 
 ---
 
-## 23. 🟡 High Severity — MCP Ruby SDK: Ruby SSE Session Poisoning
+## 21. 🟡 High Severity — MCP Ruby SDK: Ruby SSE Session Poisoning
 
 **CVE:** `CVE-2026-67431` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-5p9g-j988-pcwv>
@@ -238,7 +218,7 @@ https://…
 
 ---
 
-## 24. 🟡 High Severity — MCP Ruby SDK: Streamable HTTP transport lacks DNS-rebinding (Host/Origin) protection
+## 22. 🟡 High Severity — MCP Ruby SDK: Streamable HTTP transport lacks DNS-rebinding (Host/Origin) protection
 
 **CVE:** `CVE-2026-63118` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-rjr6-rcgv-9m7m>
@@ -249,7 +229,7 @@ https://…
 
 ---
 
-## 25. 🟡 High Severity — OliveTin OS Command Injection via Custom regex: Argument Type Bypassing Shell Safety Check
+## 23. 🟡 High Severity — OliveTin OS Command Injection via Custom regex: Argument Type Bypassing Shell Safety Check
 
 **CVE:** `CVE-2026-67438` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-xc5w-4v5w-7x65>
@@ -259,7 +239,7 @@ OliveTin&#x27;s checkShellArgumentSafety() function maintains a blocklist of arg
 
 ---
 
-## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
