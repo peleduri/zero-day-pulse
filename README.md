@@ -14,7 +14,7 @@
 
 Every 6 hours a GitHub Action:
 
-1. **Collects** vulnerability signals from 20+ public RSS/Atom feeds and the [CISA Known Exploited Vulnerabilities (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog, including [GitHub Security Advisories](https://github.com/advisories) via the REST API
+1. **Collects** vulnerability signals from 20+ public RSS/Atom feeds and the [CISA Known Exploited Vulnerabilities (KEV)](http://web.archive.org/web/20260721191505/http://web.archive.org/web/20260721191505/https://www.cisa.gov/known-exploited-vulnerabilities-catalog) catalog, including [GitHub Security Advisories](https://github.com/advisories) via the REST API
 2. **Filters** for zero-day keywords, actively-exploited indicators, and CVE references — deduplicating across sources
 3. **Enriches** the top findings using `parallel-cli enrich`: CVSS score, PoC availability, patch status, threat actors, and mitigations — all researched automatically
 4. **Publishes** a Markdown + JSON report committed to this repo, an HTML dashboard deployed to GitHub Pages, and a comment on a pinned tracking issue
@@ -65,7 +65,7 @@ RSS feeds + CISA KEV
 |---|---|---|
 | [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | JSON | ⭐ Confirmed active exploitation |
 | [GitHub Security Advisories](https://github.com/advisories) | JSON API | OSS ecosystem CVEs |
-| [CISA US-CERT Alerts](https://www.cisa.gov/uscert/ncas/alerts) | RSS | ICS / critical infrastructure |
+| [CISA US-CERT Alerts](http://web.archive.org/web/20230213162436/https://www.cisa.gov/uscert/ncas/alerts) | RSS | ICS / critical infrastructure |
 | [Exploit-DB](https://www.exploit-db.com) | RSS | Public exploits & PoCs |
 | [Full Disclosure](https://seclists.org/fulldisclosure/) | RSS | Researcher disclosures |
 
