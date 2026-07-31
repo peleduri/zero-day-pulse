@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">24</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-07-31 13:26 UTC</div>
+            <div class="generated">Updated 2026-07-31 19:04 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -146,22 +146,6 @@
     <span>Thu, 12 Ju</span>
   </div>
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-kindarails2shell-cve-2026-66066-critical-arbitrary-file-read-and-possible-remote-code-execution-in-ruby-on-rails" target="_blank" rel="noopener">KindaRails2Shell: CVE-2026-66066, Critical Arbitrary File Read and Possible Remote Code Execution in Ruby on Rails</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-66066</code>
-    <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-07-30</span>
-  </div>
-  <p class='summary'>Overview On July 29, 2026, the Ruby on Rails project published a security advisory for CVE-2026-66066 , a critical vulnerability affecting Active Storage image processing when used in conjunction with the libvips image processing library. The vulnerability has a CVSSv4 score of 9.5 and is classified as Initialization of a Resource with an Insecure Default ( CWE-1188 ). An unauthenticated attacker …</p>
 
 </article>
 
@@ -277,6 +261,261 @@
 
 </article>
 
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6x26-6r6f-m537" target="_blank" rel="noopener">Thumbor treats ALLOWED_SOURCES string patterns as unescaped regex, allowing hostname bypass via wildcard dot</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53500</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>## Summary
+
+The `ALLOWED_SOURCES` configuration is meant to restrict which hosts Thumbor&#x27;s HTTP loader may fetch images from. Plain-string entries in that list (the overwhelming majority of real-world and documented configurations) are passed directly to `re.match()` without escaping. Because `.` is a regex wildcard, every dot in a domain name becomes a bypass vector: `s.glbimg.com` silently match…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r2v3-8gwf-7ghm" target="_blank" rel="noopener">vault-addr annotation SSRF -- webhook makes outbound HTTP call to attacker URL during admission; vault-serviceaccount enables cluster-wide SA token theft via TokenRequest API</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54725</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>## Summary
+
+The vault-secrets-webhook reads the `vault.security.banzaicloud.io/vault-addr` annotation from any ConfigMap or Secret being admitted and uses it as the Vault server address without any validation or allowlist. When a ConfigMap or Secret contains a value prefixed with `vault:`, the webhook&#x27;s admission handler synchronously calls the Vault API at the attacker-supplied address from insid…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g956-2f74-rmv7" target="_blank" rel="noopener">hashi-vault-js has a path traversal and query parameter injection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55100</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>## Summary
+
+The `hashi-vault-js` library is vulnerable to path traversal and query string injection due to the lack of proper encoding of identifiers in path segments and query strings. This allows attackers to manipulate the request URL and potentially access unintended downstream endpoints or inject malicious parameters if untrusted input is passed to the library.
+
+## Details
+
+There are zero cal…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5846-7qm3-r52j" target="_blank" rel="noopener">dssrf: any users using 1.1.1.1 DNS is impacted by SSRF</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54729</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>## Summary
+
+is_url_safe can treat localhost as safe when DNS resolver 1.1.1.1 returns NXDOMAIN because dns.resolve4 yields no address and no dns.lookup fallback occurs, allowing server-side request forgery.
+
+## POC
+
+Example to simulate 1.1.1.1 in version before 1.5.0 of dssrf:
+
+```js
+import { is_url_safe } from &#x27;../dist/helpers.js&#x27;;
+import dns from &#x27;dns&#x27;;
+
+
+dns.setServers([&#x27;1.1.1.1&#x27;]);
+
+const TARG…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jr6p-8pjj-mfx6" target="_blank" rel="noopener">Capsule has an incomplete fix of CVE-2026-22872: TenantResource RawItems and Generators still allow cluster-scoped resource creation (cross-tenant privilege escalation)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-65835</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>### Summary
+CVE-2026-22872 (GHSA-qjjm-7j9w-pw72) reported that a Tenant Owner could create cluster-scoped resources
+(e.g. `ClusterRole`, `ValidatingWebhookConfiguration`) through a `TenantResource`, because the controller
+applies them with its cluster-admin ServiceAccount and `SetNamespace` is ineffective for cluster-scoped
+kinds. The v0.13.0 fix added a cluster-scope rejection guard, but **only o…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6hxr-mr5r-9836" target="_blank" rel="noopener">re2: Global `String.prototype.match` with an empty-matchable pattern never advances → infinite loop with unbounded native memory growth (DoS)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-68499</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>## Summary
+
+`String.prototype.match` with a **global** `RE2` collects all matches in a native loop that advances the cursor by the match length. A **zero-width (empty) match** has length 0, so the cursor never advances: the same empty match is found forever and appended to an ever-growing native vector. Any pattern that can match the empty string (`a*`, `b?`, `x{0,3}`, `(a)|`, `(?:)`, …) therefore…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x83g-979r-f5fh" target="_blank" rel="noopener">Sylius Mollie Plugin has unauthenticated IDOR that leaks order token and customer PII</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-68501</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>### Impact
+Two unauthenticated Mollie shop endpoints look up orders by a sequential integer `orderId`
+with no ownership or session check. Chained, they expose customer PII.
+
+`GET /{_locale}/thank-you` (`PageRedirectController::thankYouAction`, route
+`sylius_mollie_shop_thank_you_page_redirect`) loads the order with `findOneBy([&#x27;id&#x27; =&gt; $orderId])`
+and returns a `302` whose `Location` header carries…</p>
+
+        </article>
+
+      <article class="card card-high">
+        <div class="card-top">
+          <span class="badge badge-high">🟡 High</span>
+          <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rc52-c4hv-w89p" target="_blank" rel="noopener">Sylius Mollie Plugin vulnerable to payment status forgery via the payment webhook</a></h2>
+        </div>
+        <div class="card-meta">
+          <code class="cve">CVE-2026-68500</code>
+          <span class="meta-sep">·</span>
+          <span>GitHub Security Advisories</span>
+          <span class="meta-sep">·</span>
+          <span>2026-07-31</span>
+        </div>
+        <p class='summary'>### Impact
+The shop payment webhook `POST /{_locale}/update-payment` (route
+`sylius_mollie_shop_payment_webhook`) accepts two independent, attacker-controlled
+parameters: `id` (the Mollie payment ID, verified against Mollie&#x27;s API) and `orderId` (the
+Sylius order ID, read directly from the database). The handler never verifies that the
+Mollie payment belongs to the referenced order.
+
+An…</p>
+
+      </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-93wv-jw9v-4972" target="_blank" rel="noopener">Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-56819</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>### Summary
+
+A remote, unauthenticated peer can leak one direct `ByteBuf` per HTTP/2 `DATA` frame in
+applications that enable HTTP/2 content decompression via `DelegatingDecompressorFrameListener`.
+When a `DATA` frame is processed for a stream whose decompressor has already been closed,
+`Http2Decompressor.decompress(...)` retains the frame buffer but never releases it on the error
+path, so its ref…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qvv7-cg9c-w4x3" target="_blank" rel="noopener">Natural Language Toolkit (NLTK): DNS-rebinding SSRF filter bypass in nltk.pathsec.urlopen (nltk.download / nltk.data.load) defeats ENFORCE mode</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-12075</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>### Summary
+`nltk.pathsec` provides an SSRF filter that NLTK documents as a security control, blocking loopback, private, link-local, and multicast ranges (including obfuscated forms) and recommending strict `ENFORCE` mode for security-sensitive environments. The filter is bypassable by DNS rebinding: `validate_network_url()` resolves the hostname and checks the resulting IP, but the actual HTTP c…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xh95-f55m-82fw" target="_blank" rel="noopener">Natural Language Toolkit (NLTK) has path traversal in FramenetCorpusReader.frame() that allows arbitrary XML file read, bypassing the nltk.pathsec sandbox (ENFORCE=True)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-12074</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>### Summary
+`FramenetCorpusReader.frame(name)` interpolates a caller-supplied frame name into an XML file path that is read with the builtin `open()`, bypassing `CorpusReader.open()` and the `nltk.pathsec` sandbox — including strict `ENFORCE=True` mode. A `../` sequence in the name escapes the corpus root, yielding an arbitrary XML file read whose parsed content is returned to the caller.
+
+
+### De…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pfvc-3p5h-x7h6" target="_blank" rel="noopener">Wings exposes node configuration secrets through egg configuration-file templating</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-52855</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-07-31</span>
+          </div>
+          <p class='summary'>### Impact
+
+**Type:** Exposure of sensitive information / insufficiently protected credentials
+leading to privilege escalation and full node compromise.
+
+Wings exposes its **entire** daemon configuration to the egg configuration-file
+templating engine. When Wings renders a server&#x27;s configuration files, any
+`{{config.&lt;path&gt;}}` placeholder in a replacement value is resolved against the
+full marshall…</p>
+
+        </article>
+
 <article class="card card-high">
   <div class="card-top">
     <span class="badge badge-high">🟡 High</span>
@@ -309,207 +548,6 @@
 The AWS Amplify Studio [amplify-codegen-ui](https://github.com/aws-amplify/amplify-codegen-ui) is a package that generates front-end code from UI Builder entities (components, forms, views, and themes) primarily used in AWS Amplify Studio for component previews and in AWS Command Line Interface (AWS CLI) for generating component files in customers&#x27; local applications.
 
 An issue exists …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4mrv-5p47-p938" target="_blank" rel="noopener">MessagePack::Buffer#clear Use-After-Free that Enables Cross-Buffer Disclosure</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54522</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>### Summary
-`MessagePack::Buffer#clear` shifts out every chunk and returns its 4 KiB rmem page to the shared pool, but does not reset the buffer&#x27;s rmem cursor (`rmem_last`, `rmem_end`, `rmem_owner`). The next write sees &quot;unused rmem space&quot; left over from the freed page and hands back a slice of memory that has already been returned to the pool. A second `MessagePack::Buffer` then re-acquires that …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cg4g-m8jx-vjv2" target="_blank" rel="noopener">dssrf has an SSRF bypass with remove_at_symbol_in_string</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54722</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>## Summary
-
-`is_url_safe` in v1.0.3 contains an SSRF bypass. `remove_at_symbol_in_string` is applied to the raw URL string **before** `new URL()` parses it. This strips the `@` that separates userinfo from host, corrupting the hostname so internal IPs are never checked.
-
-## Vulnerability
-
-In `helpers.ts`, `is_url_safe` does:
-
-```ts
-u = remove_at_symbol_in_string(u);   // strips ALL &#x27;@&#x27; from the ra…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c9hr-64h3-gxpc" target="_blank" rel="noopener">Flyto2 Core: Guarded HTTP modules follow redirects into internal space without per-hop SSRF revalidation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67424</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>## Summary
-The HTTP modules that DO call the SSRF guard (`http.get`, `http.request`, `http.batch`) validate only the initial URL, then issue the request with aiohttp&#x27;s default `allow_redirects=True` and perform no per-hop revalidation. An attacker hosts a public URL that 302-redirects to an internal address; the guard passes on the public host and aiohttp transparently follows the redirect into in…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pgwh-4jj4-qm8v" target="_blank" rel="noopener">Flyto2 Core: Multiple HTTP-family modules fetch client-controlled URLs without the SSRF guard their siblings apply (SSRF to internal/metadata)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67428</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>## Summary
-Numerous HTTP-emitting modules (`core.api.http_get`, `core.api.http_post`, `graphql.query`/`graphql.mutation`, `monitor.http_check`, `communication.slack_send`, `notification.{discord,slack,teams}.send_message`, `ai.vision_analyze` [anthropic path], `verify.visual_diff`, `browser.proxy_rotate`, and the `agent`/`llm` inline base_url branch) perform outbound requests to a fully client-con…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jx74-cqjv-2c67" target="_blank" rel="noopener">Flyto2 Core: Unauthenticated flyto-verification /run: callback_url SSRF and internal runner-secret exfiltration</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67426</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>## Summary
-The standalone `flyto-verification` service exposes `POST /run` with **no authentication**, on all interfaces (0.0.0.0:8344 per the shipped Dockerfile). The request body&#x27;s `callback_url` is used verbatim for an outbound POST that **unconditionally attaches `X-Internal-Key: $FLYTO_RUNNER_SECRET`**. The `callback_url` bypasses the service&#x27;s `target_allowed` allowlist (which only inspects …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qq9q-xgm3-xv9g" target="_blank" rel="noopener">Flyto2 Core: LLM/API keys leak to an attacker-controlled base_url</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67425</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>## Summary
-
-`llm.chat` reads the operator&#x27;s provider key from the environment (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, ...) and sends it in the `Authorization: Bearer` header to `base_url`, a parameter the caller controls. `base_url` is only checked against the SSRF guard, and the guard allows any public host, so pointing `base_url` at an attacker&#x27;s server hands them the operator&#x27;s key. flyto-core&#x27;…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hr7p-wg7r-hg9m" target="_blank" rel="noopener">Flyto2 Core: ${env.VAR} interpolation reads any env secret despite env.get being denylisted</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67427</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>## Summary
-
-The capability policy denies the `env.get` and `env.load_dotenv` modules by default, with the stated reason that they read arbitrary host environment variables (API keys, DSNs) and are a secret-exfil risk. But the workflow engine&#x27;s variable resolver expands `${env.VAR}` for any environment variable with no allowlist and no policy check, so the exact capability the denylist blocks is av…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4jc5-g844-4x33" target="_blank" rel="noopener">linuxfabrik-lib: fetch() forwards credential headers across a cross-origin redirect</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67435</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>### Summary
-`lib.url.fetch()` follows HTTP redirects (`follow_redirects=True`). httpx strips only `Authorization` and `Cookie` when a redirect crosses the origin, so any other caller-supplied credential header (a session token such as Redfish&#x27;s `X-Auth-Token`, an API key, ...) was still sent to the redirect target. A malicious or redirect-capable server can therefore answer an authenticated reques…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5p9g-j988-pcwv" target="_blank" rel="noopener">MCP Ruby SDK: Ruby SSE Session Poisoning</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67431</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>### Summary
-**Vulnerability**: Missing Session Ownership Validation in the Ruby MCP SDK&#x27;s Streamable and SSE HTTP transport implementation. Any attacker with a stolen session ID can execute tools with the victim&#x27;s session. This is a silent attack - the victim&#x27;s session is compromised and being used for unauthorized actions, but it is hard to know for the victim
-
-### Details
-https://github.com/mode…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rjr6-rcgv-9m7m" target="_blank" rel="noopener">MCP Ruby SDK: Streamable HTTP transport lacks DNS-rebinding (Host/Origin) protection</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63118</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>## Summary
-
-`MCP::Server::Transports::StreamableHTTPTransport` (the Rack-mountable Streamable HTTP transport in the `mcp` gem) processes every incoming JSON-RPC request without ever inspecting the HTTP `Host` or `Origin` request headers. There is no `AllowedHosts`/`AllowedOrigins` allowlist and no DNS-rebinding guard anywhere in the transport. A local MCP server that binds a loopback or LAN HTTP p…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xc5w-4v5w-7x65" target="_blank" rel="noopener">OliveTin OS Command Injection via Custom regex: Argument Type Bypassing Shell Safety Check</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67438</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-30</span>
-          </div>
-          <p class='summary'>### Summary
-OliveTin&#x27;s checkShellArgumentSafety() function maintains a blocklist of argument types unsafe for Shell mode actions, but does not include regex:-prefixed types. Because regex: support was added independently via typeSafetyCheckRegex(), any Shell mode action using a regex:-typed argument bypasses the safety check unconditionally. The unvalidated value is then interpolated directly into…</p>
 
         </article>
 
