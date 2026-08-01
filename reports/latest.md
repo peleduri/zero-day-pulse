@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-07-31 19:04 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-01 01:30 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -85,7 +85,59 @@
 
 ---
 
-## 10. 🟡 High Severity — Thumbor treats ALLOWED_SOURCES string patterns as unescaped regex, allowing hostname bypass via wildcard dot
+## 10. 🟡 High Severity — WPGraphQL has deprecated `user` field on SendPasswordResetEmailPayload that leaks user existence + profile (defeats explicit anti-enumeration design)
+
+**CVE:** `CVE-2026-54768` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-jhh7-832h-f8hv>
+
+> ## Summary
+
+The `sendPasswordResetEmail` mutation in WPGraphQL is explicitly designed to prevent user enumeration. The resolver in `src/Mutation/SendPasswordResetEmail.php` states in a code comment:
+
+`// We obsfucate the actual success of this mutation to prevent user enumeration.`
+
+The mutation always returns `success: true` regardless of whether the supplied username/email belongs to an existing…
+
+---
+
+## 11. 🟡 High Severity — sigstore-go fails to check signature timestamps against a signing key's validity period
+
+**CVE:** `CVE-2026-54787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-wqqc-jjcq-vfxm>
+
+> sigstore-go fails to check signature timestamps against a signing key&#x27;s validity period for self-managed long-lived keys without certificates.
+
+## Impact
+
+To verify a bundle with a self-managed long-lived key, the key needs to be wrapped in an `ExpiringKey` type that implies expiration semantics:
+
+```go
+signatureVerifier, _ := signature.LoadDefaultVerifier(publicKey)
+expiredKey := root.NewExp…
+
+---
+
+## 12. 🟡 High Severity — @apostrophecms/file pretty-URL Vulnerable to Unauthenticated SSRF via Host header
+
+**CVE:** `CVE-2026-53607` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
+**Reference:** <https://github.com/advisories/GHSA-34pj-2622-jvxq>
+
+> ### Summary
+
+When `prettyUrls: true` is enabled on `@apostrophecms/file` (a documented SEO
+feature for serving uploaded files at clean URLs), the public pretty-URL
+handler builds the upstream URL using the raw `Host` HTTP request header:
+
+```js
+proxyUrl = `${req.protocol}://${req.get(&#x27;host&#x27;)}${uglyUrl}`
+```
+
+That URL is then `fetch`&#x27;ed and the response body + headers are streamed
+st…
+
+---
+
+## 13. 🟡 High Severity — Thumbor treats ALLOWED_SOURCES string patterns as unescaped regex, allowing hostname bypass via wildcard dot
 
 **CVE:** `CVE-2026-53500` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-6x26-6r6f-m537>
@@ -96,7 +148,7 @@ The `ALLOWED_SOURCES` configuration is meant to restrict which hosts Thumbor&#x2
 
 ---
 
-## 11. 🟡 High Severity — vault-addr annotation SSRF -- webhook makes outbound HTTP call to attacker URL during admission; vault-serviceaccount enables cluster-wide SA token theft via TokenRequest API
+## 14. 🟡 High Severity — vault-addr annotation SSRF -- webhook makes outbound HTTP call to attacker URL during admission; vault-serviceaccount enables cluster-wide SA token theft via TokenRequest API
 
 **CVE:** `CVE-2026-54725` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-r2v3-8gwf-7ghm>
@@ -107,7 +159,7 @@ The vault-secrets-webhook reads the `vault.security.banzaicloud.io/vault-addr` a
 
 ---
 
-## 12. 🟡 High Severity — hashi-vault-js has a path traversal and query parameter injection
+## 15. 🟡 High Severity — hashi-vault-js has a path traversal and query parameter injection
 
 **CVE:** `CVE-2026-55100` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-g956-2f74-rmv7>
@@ -122,7 +174,7 @@ There are zero cal…
 
 ---
 
-## 13. 🟡 High Severity — dssrf: any users using 1.1.1.1 DNS is impacted by SSRF
+## 16. 🟡 High Severity — dssrf: any users using 1.1.1.1 DNS is impacted by SSRF
 
 **CVE:** `CVE-2026-54729` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-5846-7qm3-r52j>
@@ -144,7 +196,7 @@ dns.setServers([&#x2…
 
 ---
 
-## 14. 🟡 High Severity — Capsule has an incomplete fix of CVE-2026-22872: TenantResource RawItems and Generators still allow cluster-scoped resource creation (cross-tenant privilege escalation)
+## 17. 🟡 High Severity — Capsule has an incomplete fix of CVE-2026-22872: TenantResource RawItems and Generators still allow cluster-scoped resource creation (cross-tenant privilege escalation)
 
 **CVE:** `CVE-2026-65835` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-jr6p-8pjj-mfx6>
@@ -157,7 +209,7 @@ kinds. The v0.13.0 fix added a cluster-scope rejection guard, but **only o…
 
 ---
 
-## 15. 🟡 High Severity — re2: Global `String.prototype.match` with an empty-matchable pattern never advances → infinite loop with unbounded native memory growth (DoS)
+## 18. 🟡 High Severity — re2: Global `String.prototype.match` with an empty-matchable pattern never advances → infinite loop with unbounded native memory growth (DoS)
 
 **CVE:** `CVE-2026-68499` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-6hxr-mr5r-9836>
@@ -168,7 +220,7 @@ kinds. The v0.13.0 fix added a cluster-scope rejection guard, but **only o…
 
 ---
 
-## 16. 🟡 High Severity — Sylius Mollie Plugin has unauthenticated IDOR that leaks order token and customer PII
+## 19. 🟡 High Severity — Sylius Mollie Plugin has unauthenticated IDOR that leaks order token and customer PII
 
 **CVE:** `CVE-2026-68501` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-x83g-979r-f5fh>
@@ -183,7 +235,7 @@ and returns a `302` whose `Location` h…
 
 ---
 
-## 17. 🟡 High Severity — Sylius Mollie Plugin vulnerable to payment status forgery via the payment webhook
+## 20. 🟡 High Severity — Sylius Mollie Plugin vulnerable to payment status forgery via the payment webhook
 
 **CVE:** `CVE-2026-68500` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-rc52-c4hv-w89p>
@@ -198,7 +250,7 @@ and returns a `302` whose `Location` h…
 
 ---
 
-## 18. 🟡 High Severity — Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)
+## 21. 🟡 High Severity — Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)
 
 **CVE:** `CVE-2026-56819` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-93wv-jw9v-4972>
@@ -213,7 +265,7 @@ path, so its ref…
 
 ---
 
-## 19. 🟡 High Severity — Natural Language Toolkit (NLTK): DNS-rebinding SSRF filter bypass in nltk.pathsec.urlopen (nltk.download / nltk.data.load) defeats ENFORCE mode
+## 22. 🟡 High Severity — Natural Language Toolkit (NLTK): DNS-rebinding SSRF filter bypass in nltk.pathsec.urlopen (nltk.download / nltk.data.load) defeats ENFORCE mode
 
 **CVE:** `CVE-2026-12075` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-qvv7-cg9c-w4x3>
@@ -223,7 +275,7 @@ path, so its ref…
 
 ---
 
-## 20. 🟡 High Severity — Natural Language Toolkit (NLTK) has path traversal in FramenetCorpusReader.frame() that allows arbitrary XML file read, bypassing the nltk.pathsec sandbox (ENFORCE=True)
+## 23. 🟡 High Severity — Natural Language Toolkit (NLTK) has path traversal in FramenetCorpusReader.frame() that allows arbitrary XML file read, bypassing the nltk.pathsec sandbox (ENFORCE=True)
 
 **CVE:** `CVE-2026-12074` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-xh95-f55m-82fw>
@@ -236,7 +288,7 @@ path, so its ref…
 
 ---
 
-## 21. 🟡 High Severity — Wings exposes node configuration secrets through egg configuration-file templating
+## 24. 🟡 High Severity — Wings exposes node configuration secrets through egg configuration-file templating
 
 **CVE:** `CVE-2026-52855` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://github.com/advisories/GHSA-pfvc-3p5h-x7h6>
@@ -253,7 +305,7 @@ fu…
 
 ---
 
-## 22. 🟡 High Severity — Critical Code Execution Vulnerability Patched in TeamCity
+## 25. 🟡 High Severity — Critical Code Execution Vulnerability Patched in TeamCity
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-07-31
 **Reference:** <https://www.securityweek.com/critical-code-execution-vulnerability-patched-in-teamcity/>
@@ -262,19 +314,7 @@ fu…
 
 ---
 
-## 23. 🟡 High Severity — AWS Amplify Studio UI Component Properties Has an Input Validation Issue
-
-**CVE:** `CVE-2025-4318` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-30
-**Reference:** <https://github.com/advisories/GHSA-hf3j-86p7-mfw8>
-
-> ### Summary
-The AWS Amplify Studio [amplify-codegen-ui](https://github.com/aws-amplify/amplify-codegen-ui) is a package that generates front-end code from UI Builder entities (components, forms, views, and themes) primarily used in AWS Amplify Studio for component previews and in AWS Command Line Interface (AWS CLI) for generating component files in customers&#x27; local applications.
-
-An issue ex…
-
----
-
-## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
