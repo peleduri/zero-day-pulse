@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-01T01:30:24.478031+00:00",
-  "total": 26,
+  "generated": "2026-08-01T07:59:31.794364+00:00",
+  "total": 25,
   "kev": 0,
   "zero_day": 9,
   "enriched": 0,
@@ -415,23 +415,6 @@
       ],
       "cve_ids": [
         "CVE-2026-52855"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/critical-code-execution-vulnerability-patched-in-teamcity/",
-      "title": "Critical Code Execution Vulnerability Patched in TeamCity",
-      "summary": "Tracked as CVE-2026-63077, the security defect can be exploited without authentication via the agent polling protocol. The post Critical Code Execution Vulnerability Patched in TeamCity appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/critical-code-execution-vulnerability-patched-in-teamcity/",
-      "published": "2026-07-31T06:50:30+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-63077"
       ],
       "is_zero_day": false,
       "is_high_severity": true
