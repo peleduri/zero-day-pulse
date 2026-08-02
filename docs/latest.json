@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-01T18:50:32.459110+00:00",
-  "total": 13,
+  "generated": "2026-08-02T01:27:58.239802+00:00",
+  "total": 10,
   "kev": 0,
   "zero_day": 9,
   "enriched": 0,
@@ -148,60 +148,6 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-54768",
-      "title": "WPGraphQL has deprecated `user` field on SendPasswordResetEmailPayload that leaks user existence + profile (defeats explicit anti-enumeration design)",
-      "summary": "## Summary\n\nThe `sendPasswordResetEmail` mutation in WPGraphQL is explicitly designed to prevent user enumeration. The resolver in `src/Mutation/SendPasswordResetEmail.php` states in a code comment:\n\n`// We obsfucate the actual success of this mutation to prevent user enumeration.`\n\nThe mutation always returns `success: true` regardless of whether the supplied username/email belongs to an existing user. The intended public output field is only `success: Boolean`.\n\nHowever, a deprecated `user` field is still registered on the `SendPasswordResetEmailPayload` output type in `src/Deprecated.php` (lines 433-450). This deprecated field resolves to a full `User` object when the supplied username/email corresponds to an existing author-class user, and `null` otherwise \u2014 completely undermining the anti-enumeration design.\n\nThe `@todo remove in 3.0.0` comment acknowledges the field is scheduled for removal, but it remains active in all 2.x releases, including current 2.14.1.\n\nDiscovered via source code review on May 29, 2026.\n\n## Details\n\nThe mutation resolver in `src/Mutation/SendPasswordResetEmail.php`:\n\n```php\n$payload = ['success' => true, 'id' => null];\n$user_data = self::get_user_data($input['username']);\nif (!$user_data) {\n    graphql_debug(...);\n    return $payload;  // id stays null\n}\n// ...send email, then...\nreturn ['id' => $user_data->ID, 'success' => true];\n```\n\nThe intended public output field is only `success`. The `id` is internal-only state for downstream resolvers.\n\n`src/Deprecated.php` registers an additional `user` field on the same payload type:\n\n```php\nregister_graphql_field(\n    'SendPasswordResetEmailPayload',\n    'user',\n    [\n        'type' => 'User',\n        'deprecationReason' => static function () { return __('This field will be removed...'); },\n        'resolve' => static function ($payload, $args, AppContext $context) {\n            return !empty($payload['id'])\n                ? $context->get_loader('user')->load_deferred($payload['id'])\n       ",
-      "link": "https://github.com/advisories/GHSA-jhh7-832h-f8hv",
-      "published": "2026-07-31T22:24:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54768"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54787",
-      "title": "sigstore-go fails to check signature timestamps against a signing key's validity period",
-      "summary": "sigstore-go fails to check signature timestamps against a signing key's validity period for self-managed long-lived keys without certificates.\n\n## Impact\n\nTo verify a bundle with a self-managed long-lived key, the key needs to be wrapped in an `ExpiringKey` type that implies expiration semantics:\n\n```go\nsignatureVerifier, _ := signature.LoadDefaultVerifier(publicKey)\nexpiredKey := root.NewExpiringKey(signatureVerifier, time.Unix(0, 0), time.Unix(1, 0))\n```\n\nDespite the API contract, the validator does not check the bundle signing time against the validity window. Attackers that obtain expired key materials may be able to sign bundles with those materials that are accepted despite a configured expiry date. This issue only impacts the long-lived signing key workflow, and not standard deployments involving a certificate authority.\n\n## Reproduction steps\n\nStart from a sigstore-go checkout:\n\n```bash\ngit clone https://github.com/sigstore/sigstore-go.git\ncd sigstore-go\ngit checkout 8ca80c47ef03d26ebf174db7c296700b075b2c16\n```\n\nApply the [patch] containing the test case and associated materials:\n\n```bash\ngit apply sigstore-go-public-key-validity-test.patch\n```\n\nRun the test:\n\n```bash\ngo test ./pkg/verify -run TestPublicKeyValidityCheckedAgainstSignedTimestamp\n```\n\nOn vulnerable code, the test fails because verification succeeds even though the trusted `ExpiringKey` is not valid at the signed timestamp:\n\n```text\n--- FAIL: TestPublicKeyValidityCheckedAgainstSignedTimestamp\n    signed_entity_test.go:602:\n        \tError:      \tAn error is expected but got nil.\n```\n\n[patch]: https://github.com/user-attachments/files/28614520/sigstore-go-public-key-validity-test.patch",
-      "link": "https://github.com/advisories/GHSA-wqqc-jjcq-vfxm",
-      "published": "2026-07-31T21:58:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54787"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53607",
-      "title": "@apostrophecms/file pretty-URL Vulnerable to Unauthenticated SSRF via Host header",
-      "summary": "### Summary\n\nWhen `prettyUrls: true` is enabled on `@apostrophecms/file` (a documented SEO\nfeature for serving uploaded files at clean URLs), the public pretty-URL\nhandler builds the upstream URL using the raw `Host` HTTP request header:\n\n```js\nproxyUrl = `${req.protocol}://${req.get('host')}${uglyUrl}`\n```\n\nThat URL is then `fetch`'ed and the response body + headers are streamed\nstraight back to the requester. Because `Host` is fully attacker-controlled,\nan **unauthenticated remote** attacker can pivot the apostrophe process to\nissue outbound HTTP requests against any host it can reach on the private\nnetwork. The path component is constrained to\n`/uploads/attachments/<cuid>-<slug>.<ext>` (built from a local-DB lookup),\nwhich keeps the impact narrow: cross-instance data exfiltration is\nneutralised by cuid uniqueness, but blind-SSRF residuals remain\n(network-topology mapping via response-code / timing differences and\nverbose proxy/WAF 404 body disclosure). Verified on `apostrophe@4.30.0`\n(latest); no fixed release exists.\n\n- **Affected:** `apostrophe <= 4.30.0` when `@apostrophecms/file` is\n  configured with `prettyUrls: true` and uploadfs is **local** (the default;\n  S3/CDN deployments produce an absolute `uglyUrl` and are not affected).\n\n### Details\n\n`modules/@apostrophecms/file/index.js` (excerpt; the public GET route\nregistered when `prettyUrls: true`):\n\n```js\nif (!self.options.prettyUrls) return;\nreturn {\n  get: {\n    async [`${self.options.prettyUrlDir}/*`](req, res) {\n      const matches = (req.params[0] || '').match(/^([^.]+)\\.\\w+$/);\n      if (!matches) return res.status(400).send('invalid');\n      const [ , slug ] = matches;\n      if (slug.includes('..') || slug.includes('/')) {\n        return res.status(403).send('forbidden');\n      }\n      const file = await self.find(req, {\n        slug: `${self.options.slugPrefix}${slug}`\n      }).toObject();\n      if (!file) return res.status(404).send('not found');\n\n      const uglyUrl = self.apos.attachment.url(file.",
-      "link": "https://github.com/advisories/GHSA-34pj-2622-jvxq",
-      "published": "2026-07-31T21:51:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53607"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",

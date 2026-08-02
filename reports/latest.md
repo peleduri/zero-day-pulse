@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-01 18:50 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-02 01:27 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -85,59 +85,7 @@
 
 ---
 
-## 10. 🟡 High Severity — WPGraphQL has deprecated `user` field on SendPasswordResetEmailPayload that leaks user existence + profile (defeats explicit anti-enumeration design)
-
-**CVE:** `CVE-2026-54768` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
-**Reference:** <https://github.com/advisories/GHSA-jhh7-832h-f8hv>
-
-> ## Summary
-
-The `sendPasswordResetEmail` mutation in WPGraphQL is explicitly designed to prevent user enumeration. The resolver in `src/Mutation/SendPasswordResetEmail.php` states in a code comment:
-
-`// We obsfucate the actual success of this mutation to prevent user enumeration.`
-
-The mutation always returns `success: true` regardless of whether the supplied username/email belongs to an existing…
-
----
-
-## 11. 🟡 High Severity — sigstore-go fails to check signature timestamps against a signing key's validity period
-
-**CVE:** `CVE-2026-54787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
-**Reference:** <https://github.com/advisories/GHSA-wqqc-jjcq-vfxm>
-
-> sigstore-go fails to check signature timestamps against a signing key&#x27;s validity period for self-managed long-lived keys without certificates.
-
-## Impact
-
-To verify a bundle with a self-managed long-lived key, the key needs to be wrapped in an `ExpiringKey` type that implies expiration semantics:
-
-```go
-signatureVerifier, _ := signature.LoadDefaultVerifier(publicKey)
-expiredKey := root.NewExp…
-
----
-
-## 12. 🟡 High Severity — @apostrophecms/file pretty-URL Vulnerable to Unauthenticated SSRF via Host header
-
-**CVE:** `CVE-2026-53607` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-07-31
-**Reference:** <https://github.com/advisories/GHSA-34pj-2622-jvxq>
-
-> ### Summary
-
-When `prettyUrls: true` is enabled on `@apostrophecms/file` (a documented SEO
-feature for serving uploaded files at clean URLs), the public pretty-URL
-handler builds the upstream URL using the raw `Host` HTTP request header:
-
-```js
-proxyUrl = `${req.protocol}://${req.get(&#x27;host&#x27;)}${uglyUrl}`
-```
-
-That URL is then `fetch`&#x27;ed and the response body + headers are streamed
-st…
-
----
-
-## 13. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 10. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">13</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">10</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-01 18:50 UTC</div>
+            <div class="generated">Updated 2026-08-02 01:27 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -260,79 +260,6 @@
   <p class='summary'>Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jhh7-832h-f8hv" target="_blank" rel="noopener">WPGraphQL has deprecated `user` field on SendPasswordResetEmailPayload that leaks user existence + profile (defeats explicit anti-enumeration design)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54768</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-31</span>
-          </div>
-          <p class='summary'>## Summary
-
-The `sendPasswordResetEmail` mutation in WPGraphQL is explicitly designed to prevent user enumeration. The resolver in `src/Mutation/SendPasswordResetEmail.php` states in a code comment:
-
-`// We obsfucate the actual success of this mutation to prevent user enumeration.`
-
-The mutation always returns `success: true` regardless of whether the supplied username/email belongs to an existing…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wqqc-jjcq-vfxm" target="_blank" rel="noopener">sigstore-go fails to check signature timestamps against a signing key&#x27;s validity period</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54787</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-31</span>
-          </div>
-          <p class='summary'>sigstore-go fails to check signature timestamps against a signing key&#x27;s validity period for self-managed long-lived keys without certificates.
-
-## Impact
-
-To verify a bundle with a self-managed long-lived key, the key needs to be wrapped in an `ExpiringKey` type that implies expiration semantics:
-
-```go
-signatureVerifier, _ := signature.LoadDefaultVerifier(publicKey)
-expiredKey := root.NewExpiring…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-34pj-2622-jvxq" target="_blank" rel="noopener">@apostrophecms/file pretty-URL Vulnerable to Unauthenticated SSRF via Host header</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53607</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-07-31</span>
-          </div>
-          <p class='summary'>### Summary
-
-When `prettyUrls: true` is enabled on `@apostrophecms/file` (a documented SEO
-feature for serving uploaded files at clean URLs), the public pretty-URL
-handler builds the upstream URL using the raw `Host` HTTP request header:
-
-```js
-proxyUrl = `${req.protocol}://${req.get(&#x27;host&#x27;)}${uglyUrl}`
-```
-
-That URL is then `fetch`&#x27;ed and the response body + headers are streamed
-straight back to …</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">
