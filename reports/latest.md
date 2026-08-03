@@ -1,10 +1,19 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-03 14:11 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-03 19:15 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-18577 — N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability
+
+**CVE:** `CVE-2026-18577` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-18577>
+
+> Vendor: N-able | Product: N-central. N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Sec…
+
+---
+
+## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,7 +22,7 @@
 
 ---
 
-## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 3. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
@@ -22,7 +31,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -40,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -49,7 +58,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -58,7 +67,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -67,7 +76,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -76,7 +85,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -85,7 +94,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — N‑able Patches Vulnerability Exploited to Hack N-central Servers
+## 11. 🟠 Zero-Day — N‑able Patches Vulnerability Exploited to Hack N-central Servers
 
 **CVE:** `CVE-2026-18577` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/>
@@ -94,7 +103,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says
+## 12. 🟠 Zero-Day — Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://therecord.media/russian-wifi-hackers-hotels>
@@ -103,7 +112,41 @@
 
 ---
 
-## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 13. 🟡 High Severity — Rapid7 Analysis: KindaRails2Shell (CVE-2026-66066)
+
+**CVE:** `CVE-2026-66066` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066>
+
+> Overview On July 29, 2026, the Ruby on Rails project published a security advisory for CVE-2026-66066 , an arbitrary file read in Active Storage applications that use the Vips image processor with untrusted uploads. The affected Active Storage ranges are &lt; 7.2.3.2 , &gt;= 8.0, &lt; 8.0.5.1 , and &gt;= 8.1, &lt; 8.1.3.1 . Vips is the default Active Storage variant processor for applications that…
+
+---
+
+## 14. 🟡 High Severity — Angular SSR: Missing Fallback Raw-Content Serialization Escaping leads to Cross-Site Scripting (XSS)
+
+**CVE:** `CVE-2026-69149` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-vpx6-8pjr-4g3v>
+
+> A Cross-Site Scripting (XSS) vulnerability exists in `@angular/platform-server`&#x27;s DOM emulation dependency (`domino`) when serializing the content of fallback raw-content elements (`&lt;iframe&gt;`, `&lt;noembed&gt;`, `&lt;noframes&gt;`, and `&lt;noscript&gt;`).
+
+When rendering dynamic text content inside fallback raw-content elements via template bindings, the template engine expects the bro…
+
+---
+
+## 15. 🟡 High Severity — Angular: Cache-Key Ambiguity in HttpTransferCache Leading to Cross-Request Response Reuse and State Poisoning
+
+**CVE:** `CVE-2026-68945` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-jhpw-976m-542j>
+
+> Angular&#x27;s `HttpTransferCache` caches HTTP requests made during Server-Side Rendering (SSR) so that they can be reused during client-side hydration.
+
+During SSR, `HttpTransferCache` previously generated identical key material for distinct request parameters when repeated values were present because repeated values were joined with commas:
+
+```ts
+new HttpParams().set(&#x27;role&#x27;, &#x27;use…
+
+---
+
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

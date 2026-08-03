@@ -1,10 +1,29 @@
 {
-  "generated": "2026-08-03T14:11:47.032579+00:00",
-  "total": 12,
-  "kev": 0,
+  "generated": "2026-08-03T19:15:34.308591+00:00",
+  "total": 16,
+  "kev": 1,
   "zero_day": 11,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-18577",
+      "title": "CVE-2026-18577 \u2014 N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "summary": "Vendor: N-able | Product: N-central. N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-06)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-18577",
+      "published": "2026-08-03",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-18577"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -180,6 +199,59 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066",
+      "title": "Rapid7 Analysis: KindaRails2Shell (CVE-2026-66066)",
+      "summary": "Overview On July 29, 2026, the Ruby on Rails project published a security advisory for CVE-2026-66066 , an arbitrary file read in Active Storage applications that use the Vips image processor with untrusted uploads. The affected Active Storage ranges are < 7.2.3.2 , >= 8.0, < 8.0.5.1 , and >= 8.1, < 8.1.3.1 . Vips is the default Active Storage variant processor for applications that load Rails 7.0 or later defaults. Rails 6 applications are affected only when they explicitly configure Vips. Our Emergent Threat Response blog covers the affected versions, mitigation guidance, and current exploitation status. This post traces the request from the direct-upload endpoint to the HDF5 read, then shows how the arbitrary file read can expose Rails signing material and become code execution. A vulnerable application can disclose arbitrary files before the attacker has recovered a Rails secret or forged a token. A genuine Active Storage variation_key from the same application, paired with a direct-upload blob whose stored content_type claims to be an image, is enough to reach a libvips loader that turns a crafted MAT/HDF5 file into an arbitrary file-read oracle. We reproduced the published chain against Rails 6.0.6.1 , 6.1.7.10 , 7.2.3.1 , 8.0.5 , and 8.1.3 , and confirmed that patched 7.2.3.2 , 8.0.5.1 , and 8.1.3.1 targets block the crafted representation. We also validated a remote code execution (RCE) path that uses only JSON-compatible Hash , Array , and String values in a signed variation. That path reaches Kernel#spawn or Kernel#eval through ImageProcessing's chain builder, and it worked when Rails was configured with config.active_support.message_serializer = :json . The advisory covers the vulnerable Active Storage configuration. The MAT/HDF5 representation chain shown here has narrower requirements. The deployed libvips build must expose matload with MAT 7.3/HDF5 support, the application must preserve an attacker-supplied content_type , and the attacker must be able ",
+      "link": "https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066",
+      "published": "2026-08-03T17:11:25+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-66066"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69149",
+      "title": "Angular SSR: Missing Fallback Raw-Content Serialization Escaping leads to Cross-Site Scripting (XSS)",
+      "summary": "A Cross-Site Scripting (XSS) vulnerability exists in `@angular/platform-server`'s DOM emulation dependency (`domino`) when serializing the content of fallback raw-content elements (`<iframe>`, `<noembed>`, `<noframes>`, and `<noscript>`).\n\nWhen rendering dynamic text content inside fallback raw-content elements via template bindings, the template engine expects the browser to render the content safely. Under Server-Side Rendering (SSR), `domino` is configured with scripting enabled, meaning these elements are treated as raw-text elements.\n\nHowever, `domino`'s serializer previously did not escape text nodes within fallback raw-content elements (`<iframe>`, `<noembed>`, `<noframes>`, `<noscript>`) during DOM serialization. As a result, any occurrence of closing tags in the bound dynamic text was not escaped.\n\nThe unescaped closing tag could be serialized directly into the output HTML. When parsed by a browser or re-parsed during SSR post-processing without preserving raw-content parser state, an injected closing tag closes the element early, allowing an injected script block to execute in the user's browser context, causing same-origin Cross-Site Scripting (XSS).\n\n### Impact\n\nThis vulnerability allows an attacker to perform same-origin Cross-Site Scripting (XSS) attacks against any user visiting an SSR-rendered page that binds user-controlled data inside fallback raw-content elements (`<iframe>`, `<noembed>`, `<noframes>`, `<noscript>`). This can lead to session hijacking, credentials theft, unauthorized actions on behalf of users, and defacement.\n\n### Patched Versions\n\n- 22.0.7\n- 21.2.19\n- 20.3.27\n\n### Workarounds\nIf you cannot immediately update your dependencies, you can mitigate this issue using any of the following approaches:\n- **Disable critical CSS inlining**: Critical CSS inlining in Angular SSR post-processes the rendered HTML using `domino`. Disabling this step prevents `domino` from re-parsing and re-serializing the HTML during server-side rendering.\n  - I",
+      "link": "https://github.com/advisories/GHSA-vpx6-8pjr-4g3v",
+      "published": "2026-08-03T16:14:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69149"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-68945",
+      "title": "Angular: Cache-Key Ambiguity in HttpTransferCache Leading to Cross-Request Response Reuse and State Poisoning",
+      "summary": "Angular's `HttpTransferCache` caches HTTP requests made during Server-Side Rendering (SSR) so that they can be reused during client-side hydration.\n\nDuring SSR, `HttpTransferCache` previously generated identical key material for distinct request parameters when repeated values were present because repeated values were joined with commas:\n\n```ts\nnew HttpParams().set('role', 'user,admin')\nnew HttpParams().append('role', 'user').append('role', 'admin')\n```\n\nBoth requests previously serialized as `role=user,admin`, allowing distinct `HttpClient` requests to produce the same transfer-cache key material.\n\n### Impact\n\nIn an SSR application, this cache-key ambiguity can make a later security-sensitive `HttpClient` request receive the response from an earlier semantically different request in the same render. For example, an attacker-influenced scalar-comma request can be cached and then replayed as the response for a trusted repeated-param authorization or data request to the same URL. As a result, Angular's server-rendered output can be based on the wrong backend response because the trusted request is not dispatched. This can lead to:\n\n- **State Poisoning**: Using incorrect or attacker-influenced cached responses for subsequent application logic.\n- **Cross-Request Response Reuse**: Reusing cached responses across requests with semantically different parameters.\n\n### Patched Versions\n\n- 22.0.2\n- 21.2.19\n- 20.3.27\n\n### Workarounds\n\nIf you cannot upgrade immediately, configure your `HttpClient` requests to skip transfer caching for sensitive endpoints where repeated parameter keys are used:\n\n```ts\nthis.http.get('/api/resource', {\n  transferCache: false\n});\n```\n\nAlternatively, disable the HTTP transfer cache globally in your application bootstrap config:\n\n```ts\nimport { provideClientHydration, withNoHttpTransferCache } from '@angular/platform-browser';\n\nexport const appConfig = {\n  providers: [\n    provideClientHydration(\n      withNoHttpTransferCache()\n    )\n  ]\n};\n```",
+      "link": "https://github.com/advisories/GHSA-jhpw-976m-542j",
+      "published": "2026-08-03T15:59:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-68945"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
