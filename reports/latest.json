@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-03T08:57:26.477797+00:00",
-  "total": 10,
+  "generated": "2026-08-03T14:11:47.032579+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -144,6 +144,38 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/",
+      "title": "N\u2011able Patches Vulnerability Exploited to Hack N-central Servers",
+      "summary": "The N\u2011central vulnerability CVE-2026-18577 has been exploited in the wild after threat actors found a patch bypass. The post N\u2011able Patches Vulnerability Exploited to Hack N-central Servers appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/",
+      "published": "2026-08-03T12:34:06+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-18577"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://therecord.media/russian-wifi-hackers-hotels",
+      "title": "Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says",
+      "summary": "Russian state-sponsored hackers have been compromising hotel Wi-Fi networks around the world to steal travelers' login credentials and infect devices with espionage malware, Microsoft said.",
+      "link": "https://therecord.media/russian-wifi-hackers-hotels",
+      "published": "2026-08-03T12:00:00+00:00",
+      "source": "The Record by Recorded Future",
+      "tags": [
+        "news",
+        "threat-intel"
       ],
       "cve_ids": [],
       "is_zero_day": true,

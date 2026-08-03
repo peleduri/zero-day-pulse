@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-03 08:57 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-03 14:11 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -85,7 +85,25 @@
 
 ---
 
-## 10. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 10. 🟠 Zero-Day — N‑able Patches Vulnerability Exploited to Hack N-central Servers
+
+**CVE:** `CVE-2026-18577` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/>
+
+> The N‑central vulnerability CVE-2026-18577 has been exploited in the wild after threat actors found a patch bypass. The post N‑able Patches Vulnerability Exploited to Hack N-central Servers appeared first on SecurityWeek .
+
+---
+
+## 11. 🟠 Zero-Day — Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://therecord.media/russian-wifi-hackers-hotels>
+
+> Russian state-sponsored hackers have been compromising hotel Wi-Fi networks around the world to steal travelers&#x27; login credentials and infect devices with espionage malware, Microsoft said.
+
+---
+
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
