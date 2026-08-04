@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-04T01:18:25.831976+00:00",
+  "generated": "2026-08-04T08:14:51.269027+00:00",
   "total": 22,
   "kev": 0,
   "zero_day": 11,
@@ -150,18 +150,19 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/",
-      "title": "N\u2011able Patches Vulnerability Exploited to Hack N-central Servers",
-      "summary": "The N\u2011central vulnerability CVE-2026-18577 has been exploited in the wild after threat actors found a patch bypass. The post N\u2011able Patches Vulnerability Exploited to Hack N-central Servers appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/",
-      "published": "2026-08-03T12:34:06+00:00",
-      "source": "SecurityWeek",
+      "id": "https://thehackernews.com/2026/08/cisa-adds-exploited-n-able-n-central.html",
+      "title": "CISA Adds Exploited N-able N-central Flaw to KEV After Customer Compromises",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a high-severity security flaw impacting N-able N-central to its Known Exploited Vulnerabilities (KEV) catalog following reports of active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-18577 (CVSS score: 8.2), is a case of incomplete patching for CVE-2026-18556 (CVSS score: 8.2) that allows",
+      "link": "https://thehackernews.com/2026/08/cisa-adds-exploited-n-able-n-central.html",
+      "published": "2026-08-04T07:00:13+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "research"
+        "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-18577"
+        "CVE-2026-18577",
+        "CVE-2026-18556"
       ],
       "is_zero_day": true,
       "is_high_severity": false
