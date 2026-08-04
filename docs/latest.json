@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-04T08:14:51.269027+00:00",
-  "total": 22,
+  "generated": "2026-08-04T13:41:18.310781+00:00",
+  "total": 24,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,22 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/",
+      "title": "The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software",
+      "summary": "Frontier AI is reshaping vulnerability discovery. Learn how our NOVA system found 14,000+ unknown vulnerabilities across the open-source software supply chain. The post The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software appeared first on Unit 42 .",
+      "link": "https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/",
+      "published": "2026-08-04T13:00:11+00:00",
+      "source": "Unit 42 (Palo Alto)",
+      "tags": [
+        "cloud",
+        "research",
+        "threat-intel"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -150,6 +166,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html",
+      "title": "When Vibe Hacking Turns AI into the Junior Hacker Every Adversary Always Wanted",
+      "summary": "The cybersecurity industry has spent decades assuming that offensive capability scales with technical expertise.\n\nThat assumption is starting to break.\n\nSecurity teams have long estimated risk by ranking attacker sophistication. Nation-state actors sat at one end. Organized criminal groups followed. Inexperienced attackers, dismissed as \"script kiddies,\" sat at the other end, running public",
+      "link": "https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html",
+      "published": "2026-08-04T11:30:00+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://thehackernews.com/2026/08/cisa-adds-exploited-n-able-n-central.html",
       "title": "CISA Adds Exploited N-able N-central Flaw to KEV After Customer Compromises",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a high-severity security flaw impacting N-able N-central to its Known Exploited Vulnerabilities (KEV) catalog following reports of active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-18577 (CVSS score: 8.2), is a case of incomplete patching for CVE-2026-18556 (CVSS score: 8.2) that allows",
@@ -168,19 +199,21 @@
       "is_high_severity": false
     },
     {
-      "id": "https://therecord.media/russian-wifi-hackers-hotels",
-      "title": "Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says",
-      "summary": "Russian state-sponsored hackers have been compromising hotel Wi-Fi networks around the world to steal travelers' login credentials and infect devices with espionage malware, Microsoft said.",
-      "link": "https://therecord.media/russian-wifi-hackers-hotels",
-      "published": "2026-08-03T12:00:00+00:00",
-      "source": "The Record by Recorded Future",
+      "id": "https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html",
+      "title": "New cPanel Critical Flaw Could Let Hosting Customers Run SQL as Database Root",
+      "summary": "cPanel has patched a flaw that let an authenticated hosting customer execute SQL in the database's root context, crossing the privilege boundary between a cPanel account and the server's administrative database identity. It shipped in a targeted security release that closes two other routes past account boundaries.\n\nThe database bug is tracked as CVE-2026-58048 (CVSS 4.0 score: 9.4) and affects",
+      "link": "https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html",
+      "published": "2026-08-04T10:36:27+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "threat-intel"
+        "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-58048"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-69248",

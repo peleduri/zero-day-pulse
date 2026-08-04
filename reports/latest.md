@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-04 08:14 UTC &nbsp;|&nbsp; **Total:** 22 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-04 13:41 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/>
+
+> Frontier AI is reshaping vulnerability discovery. Learn how our NOVA system found 14,000+ unknown vulnerabilities across the open-source software supply chain. The post The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software appeared first on Unit 42 .
+
+---
+
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -40,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -49,7 +58,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -58,7 +67,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -67,7 +76,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -76,7 +85,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -85,7 +94,20 @@
 
 ---
 
-## 10. 🟠 Zero-Day — CISA Adds Exploited N-able N-central Flaw to KEV After Customer Compromises
+## 11. 🟠 Zero-Day — When Vibe Hacking Turns AI into the Junior Hacker Every Adversary Always Wanted
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html>
+
+> The cybersecurity industry has spent decades assuming that offensive capability scales with technical expertise.
+
+That assumption is starting to break.
+
+Security teams have long estimated risk by ranking attacker sophistication. Nation-state actors sat at one end. Organized criminal groups followed. Inexperienced attackers, dismissed as &quot;script kiddies,&quot; sat at the other end, running pub…
+
+---
+
+## 12. 🟠 Zero-Day — CISA Adds Exploited N-able N-central Flaw to KEV After Customer Compromises
 
 **CVE:** `CVE-2026-18577` | `CVE-2026-18556` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://thehackernews.com/2026/08/cisa-adds-exploited-n-able-n-central.html>
@@ -96,16 +118,18 @@ The vulnerability, tracked as CVE-2026-18577 (CVSS score: 8.2), is a case of inc
 
 ---
 
-## 11. 🟠 Zero-Day — Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says
+## 13. 🟡 High Severity — New cPanel Critical Flaw Could Let Hosting Customers Run SQL as Database Root
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://therecord.media/russian-wifi-hackers-hotels>
+**CVE:** `CVE-2026-58048` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html>
 
-> Russian state-sponsored hackers have been compromising hotel Wi-Fi networks around the world to steal travelers&#x27; login credentials and infect devices with espionage malware, Microsoft said.
+> cPanel has patched a flaw that let an authenticated hosting customer execute SQL in the database&#x27;s root context, crossing the privilege boundary between a cPanel account and the server&#x27;s administrative database identity. It shipped in a targeted security release that closes two other routes past account boundaries.
+
+The database bug is tracked as CVE-2026-58048 (CVSS 4.0 score: 9.4) and …
 
 ---
 
-## 12. 🟡 High Severity — python-cryptography verifier accepts wildcard DNS names allowing escape from permittedSubtrees
+## 14. 🟡 High Severity — python-cryptography verifier accepts wildcard DNS names allowing escape from permittedSubtrees
 
 **CVE:** `CVE-2026-69248` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-m2h6-j472-rp4c>
@@ -123,7 +147,7 @@ S…
 
 ---
 
-## 13. 🟡 High Severity — cryptography: PKCS#7 EnvelopedData decryption exposes a Bleichenbacher oracle through distinguishable errors and timing
+## 15. 🟡 High Severity — cryptography: PKCS#7 EnvelopedData decryption exposes a Bleichenbacher oracle through distinguishable errors and timing
 
 **CVE:** `CVE-2026-69247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-g6cj-pr64-35w5>
@@ -139,7 +163,7 @@ outco…
 
 ---
 
-## 14. 🟡 High Severity — Hono: ReDoS in CORS middleware via Access-Control-Request-Headers
+## 16. 🟡 High Severity — Hono: ReDoS in CORS middleware via Access-Control-Request-Headers
 
 **CVE:** `CVE-2026-69207` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-8j4g-w8fx-2239>
@@ -150,7 +174,7 @@ The built-in CORS middleware (`hono/cors`) parses the attacker-controlled `Acces
 
 ---
 
-## 15. 🟡 High Severity — ip-address: Address4 decodes leading-zero octets as decimal while resolvers decode them as octal, allowing SSRF and trust-boundary bypass
+## 17. 🟡 High Severity — ip-address: Address4 decodes leading-zero octets as decimal while resolvers decode them as octal, allowing SSRF and trust-boundary bypass
 
 **CVE:** `CVE-2026-69192` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-mwp4-54f8-5fhr>
@@ -161,7 +185,7 @@ The built-in CORS middleware (`hono/cors`) parses the attacker-controlled `Acces
 
 ---
 
-## 16. 🟡 High Severity — ip-address: a CIDR suffix on the parsed address suppresses special-use classification and can bypass SSRF and trust-boundary checks
+## 18. 🟡 High Severity — ip-address: a CIDR suffix on the parsed address suppresses special-use classification and can bypass SSRF and trust-boundary checks
 
 **CVE:** `CVE-2026-69198` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-4xrf-jv44-h6hh>
@@ -172,7 +196,7 @@ Every special-use classification method is built on `isInSubnet`, which short-ci
 
 ---
 
-## 17. 🟡 High Severity — ip-address: misclassification of IPv4-mapped/NAT64 IPv6 addresses can bypass SSRF and trust-boundary checks
+## 19. 🟡 High Severity — ip-address: misclassification of IPv4-mapped/NAT64 IPv6 addresses can bypass SSRF and trust-boundary checks
 
 **CVE:** `CVE-2026-54272` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-22jq-vg5j-6vgg>
@@ -183,7 +207,7 @@ Every special-use classification method is built on `isInSubnet`, which short-ci
 
 ---
 
-## 18. 🟡 High Severity — fast-uri vulnerable to host confusion via backslash authority introducer
+## 20. 🟡 High Severity — fast-uri vulnerable to host confusion via backslash authority introducer
 
 **CVE:** `CVE-2026-18446` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-7p8r-x3mc-p8w7>
@@ -194,7 +218,7 @@ Every special-use classification method is built on `isInSubnet`, which short-ci
 
 ---
 
-## 19. 🟡 High Severity — Rapid7 Analysis: KindaRails2Shell (CVE-2026-66066)
+## 21. 🟡 High Severity — Rapid7 Analysis: KindaRails2Shell (CVE-2026-66066)
 
 **CVE:** `CVE-2026-66066` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066>
@@ -203,7 +227,7 @@ Every special-use classification method is built on `isInSubnet`, which short-ci
 
 ---
 
-## 20. 🟡 High Severity — Angular SSR: Missing Fallback Raw-Content Serialization Escaping leads to Cross-Site Scripting (XSS)
+## 22. 🟡 High Severity — Angular SSR: Missing Fallback Raw-Content Serialization Escaping leads to Cross-Site Scripting (XSS)
 
 **CVE:** `CVE-2026-69149` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-vpx6-8pjr-4g3v>
@@ -214,7 +238,7 @@ When rendering dynamic text content inside fallback raw-content elements via tem
 
 ---
 
-## 21. 🟡 High Severity — Angular: Cache-Key Ambiguity in HttpTransferCache Leading to Cross-Request Response Reuse and State Poisoning
+## 23. 🟡 High Severity — Angular: Cache-Key Ambiguity in HttpTransferCache Leading to Cross-Request Response Reuse and State Poisoning
 
 **CVE:** `CVE-2026-68945` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-jhpw-976m-542j>
@@ -228,7 +252,7 @@ new HttpParams().set(&#x27;role&#x27;, &#x27;use…
 
 ---
 
-## 22. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
