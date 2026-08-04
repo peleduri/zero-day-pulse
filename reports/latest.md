@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-03 19:15 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-04 01:18 UTC &nbsp;|&nbsp; **Total:** 22 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-18577 — N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability
-
-**CVE:** `CVE-2026-18577` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-18577>
-
-> Vendor: N-able | Product: N-central. N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Sec…
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,7 +13,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
@@ -31,7 +22,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +31,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +40,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +49,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +58,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +67,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,7 +76,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -94,7 +85,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — N‑able Patches Vulnerability Exploited to Hack N-central Servers
+## 10. 🟠 Zero-Day — N‑able Patches Vulnerability Exploited to Hack N-central Servers
 
 **CVE:** `CVE-2026-18577` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/>
@@ -103,7 +94,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says
+## 11. 🟠 Zero-Day — Russian hackers hijack hotel Wi-Fi networks to spy on travelers, Microsoft says
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://therecord.media/russian-wifi-hackers-hotels>
@@ -112,7 +103,96 @@
 
 ---
 
-## 13. 🟡 High Severity — Rapid7 Analysis: KindaRails2Shell (CVE-2026-66066)
+## 12. 🟡 High Severity — python-cryptography verifier accepts wildcard DNS names allowing escape from permittedSubtrees
+
+**CVE:** `CVE-2026-69248` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-m2h6-j472-rp4c>
+
+> ### Summary
+If an intermediate constrained CA permits the DNS name `foo.example.com`, and the leaf certificate has a wildcard in its DNS SAN of `*.example.com`, python-cryptography&#x27;s verifier accepts which allows escaping outside of the permitted names.
+
+### PoC
+
+```
+#!/usr/bin/env python3
+&quot;&quot;&quot;Standalone PoC: pyca&#x27;s DNSConstraint::matches admits a too-broad wildcard SAN.
+
+S…
+
+---
+
+## 13. 🟡 High Severity — cryptography: PKCS#7 EnvelopedData decryption exposes a Bleichenbacher oracle through distinguishable errors and timing
+
+**CVE:** `CVE-2026-69247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-g6cj-pr64-35w5>
+
+> ### Summary
+
+`pkcs7_decrypt_der`, `pkcs7_decrypt_pem`, and `pkcs7_decrypt_smime` reported the
+outcome of decrypting a `RecipientInfo`&#x27;s `encryptedKey` in several
+distinguishable ways, one of which disclosed the exact length recovered from the
+RSA operation. The same distinction was also observable by timing. An
+application that decrypts attacker-supplied `EnvelopedData` and reflects the
+outco…
+
+---
+
+## 14. 🟡 High Severity — Hono: ReDoS in CORS middleware via Access-Control-Request-Headers
+
+**CVE:** `CVE-2026-69207` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-8j4g-w8fx-2239>
+
+> ### Summary
+
+The built-in CORS middleware (`hono/cors`) parses the attacker-controlled `Access-Control-Request-Headers` request header during a preflight (`OPTIONS`) request using a regular expression whose running time is quadratic in the input length. A single request carrying a long run of whitespace can consume seconds of CPU, and repeated requests can render the service unresponsive. This par…
+
+---
+
+## 15. 🟡 High Severity — ip-address: Address4 decodes leading-zero octets as decimal while resolvers decode them as octal, allowing SSRF and trust-boundary bypass
+
+**CVE:** `CVE-2026-69192` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-mwp4-54f8-5fhr>
+
+> ### Summary
+
+`Address4` accepts an octet written with a leading zero and decodes it as decimal, while the WHATWG URL host parser, `inet_aton`, and `getaddrinfo` all decode a leading zero as octal. The library and the network stack therefore disagree about which host a string names. `new Address4(&#x27;012.0.0.1&#x27;)` reports `correctForm()` of `12.0.0.1` and `isPrivate()` of `false`, but `fetch(…
+
+---
+
+## 16. 🟡 High Severity — ip-address: a CIDR suffix on the parsed address suppresses special-use classification and can bypass SSRF and trust-boundary checks
+
+**CVE:** `CVE-2026-69198` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-4xrf-jv44-h6hh>
+
+> ### Summary
+
+Every special-use classification method is built on `isInSubnet`, which short-circuits to `false` whenever the address&#x27;s own subnet mask is *shorter* than the reference range&#x27;s mask. That mask comes verbatim from the CIDR suffix on the parsed input, so appending a suffix such as `/0` suppresses classification entirely: `isLoopback()`, `isPrivate()`, `isLinkLocal()`, `isCGNAT…
+
+---
+
+## 17. 🟡 High Severity — ip-address: misclassification of IPv4-mapped/NAT64 IPv6 addresses can bypass SSRF and trust-boundary checks
+
+**CVE:** `CVE-2026-54272` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-22jq-vg5j-6vgg>
+
+> ### Summary
+
+`Address6`&#x27;s special-property checks misclassify IPv4-mapped (`::ffff:0:0/96`) and NAT64 well-known (`64:ff9b::/96`) IPv6 addresses. These checks classify an address by its IPv6 wrapper rather than by the IPv4 address it embeds, so `isLoopback()`, `isLinkLocal()`, `isMulticast()`, and `isUnspecified()` all return `false` for literals such as `::ffff:127.0.0.1` or `::ffff:169.254.…
+
+---
+
+## 18. 🟡 High Severity — fast-uri vulnerable to host confusion via backslash authority introducer
+
+**CVE:** `CVE-2026-18446` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
+**Reference:** <https://github.com/advisories/GHSA-7p8r-x3mc-p8w7>
+
+> ### Impact
+
+`fast-uri` v4.1.1 and earlier require a literal `//` to recognize a URI authority, so a reference that uses `\\`, `/\`, or `\/` as the authority introducer (in place of `//`, after an optional scheme) is parsed with no authority: the sequence and everything after it fold into the path. Node&#x27;s native WHATWG `URL` (used by `fetch()`, `undici`, and Node&#x27;s `http`/`https` clients)…
+
+---
+
+## 19. 🟡 High Severity — Rapid7 Analysis: KindaRails2Shell (CVE-2026-66066)
 
 **CVE:** `CVE-2026-66066` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066>
@@ -121,7 +201,7 @@
 
 ---
 
-## 14. 🟡 High Severity — Angular SSR: Missing Fallback Raw-Content Serialization Escaping leads to Cross-Site Scripting (XSS)
+## 20. 🟡 High Severity — Angular SSR: Missing Fallback Raw-Content Serialization Escaping leads to Cross-Site Scripting (XSS)
 
 **CVE:** `CVE-2026-69149` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-vpx6-8pjr-4g3v>
@@ -132,7 +212,7 @@ When rendering dynamic text content inside fallback raw-content elements via tem
 
 ---
 
-## 15. 🟡 High Severity — Angular: Cache-Key Ambiguity in HttpTransferCache Leading to Cross-Request Response Reuse and State Poisoning
+## 21. 🟡 High Severity — Angular: Cache-Key Ambiguity in HttpTransferCache Leading to Cross-Request Response Reuse and State Poisoning
 
 **CVE:** `CVE-2026-68945` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
 **Reference:** <https://github.com/advisories/GHSA-jhpw-976m-542j>
@@ -146,7 +226,7 @@ new HttpParams().set(&#x27;role&#x27;, &#x27;use…
 
 ---
 
-## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 22. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

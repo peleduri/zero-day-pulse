@@ -1,29 +1,10 @@
 {
-  "generated": "2026-08-03T19:15:34.308591+00:00",
-  "total": 16,
-  "kev": 1,
+  "generated": "2026-08-04T01:18:25.831976+00:00",
+  "total": 22,
+  "kev": 0,
   "zero_day": 11,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-18577",
-      "title": "CVE-2026-18577 \u2014 N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "summary": "Vendor: N-able | Product: N-central. N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-06)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-18577",
-      "published": "2026-08-03",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-18577"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -199,6 +180,132 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-69248",
+      "title": "python-cryptography verifier accepts wildcard DNS names allowing escape from permittedSubtrees",
+      "summary": "### Summary\nIf an intermediate constrained CA permits the DNS name `foo.example.com`, and the leaf certificate has a wildcard in its DNS SAN of `*.example.com`, python-cryptography's verifier accepts which allows escaping outside of the permitted names.\n\n### PoC\n\n```\n#!/usr/bin/env python3\n\"\"\"Standalone PoC: pyca's DNSConstraint::matches admits a too-broad wildcard SAN.\n\nSetup:\n  Sub-CA permitted constraint: dNSName = foo.example.com\n  Leaf SAN:                    dNSName = *.example.com\nExpected: rejection (RFC 5280 \u00a74.2.1.10 + standard wildcard semantics).\nObserved: pyca accepts; further, asks server-verifier whether the leaf is\nauthoritative for `bar.example.com` and pyca answers yes \u2014 a sub-CA scope\nescape.\n\"\"\"\nimport datetime\nfrom cryptography import x509\nfrom cryptography.x509.oid import NameOID\nfrom cryptography.hazmat.primitives import hashes\nfrom cryptography.hazmat.primitives.asymmetric import ec\nfrom cryptography.x509.verification import (\n    PolicyBuilder, Store, ExtensionPolicy, Criticality, VerificationError,\n)\n\nnow = datetime.datetime(2027, 1, 1, tzinfo=datetime.timezone.utc)\nday = datetime.timedelta(days=1)\n\ndef build(subject, issuer, key, issuer_key, ca, exts=()):\n    b = (x509.CertificateBuilder()\n         .subject_name(subject).issuer_name(issuer)\n         .public_key(key.public_key())\n         .serial_number(x509.random_serial_number())\n         .not_valid_before(now - 30 * day)\n         .not_valid_after(now + 3650 * day)\n         .add_extension(x509.BasicConstraints(ca=ca, path_length=None), critical=True))\n    for e, c in exts:\n        b = b.add_extension(e, c)\n    return b.sign(issuer_key, hashes.SHA256())\n\n# Root\nrk = ec.generate_private_key(ec.SECP256R1())\nrn = x509.Name([x509.NameAttribute(NameOID.COMMON_NAME, \"Test Root\")])\nroot = build(rn, rn, rk, rk, True)\n\n# Sub-CA constrained to foo.example.com\nsk = ec.generate_private_key(ec.SECP256R1())\nsn = x509.Name([x509.NameAttribute(NameOID.COMMON_NAME, \"Sub-CA\")])\nnc = x509.NameConstraints(\n  ",
+      "link": "https://github.com/advisories/GHSA-m2h6-j472-rp4c",
+      "published": "2026-08-03T21:26:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69248"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69247",
+      "title": "cryptography: PKCS#7 EnvelopedData decryption exposes a Bleichenbacher oracle through distinguishable errors and timing",
+      "summary": "### Summary\n\n`pkcs7_decrypt_der`, `pkcs7_decrypt_pem`, and `pkcs7_decrypt_smime` reported the\noutcome of decrypting a `RecipientInfo`'s `encryptedKey` in several\ndistinguishable ways, one of which disclosed the exact length recovered from the\nRSA operation. The same distinction was also observable by timing. An\napplication that decrypts attacker-supplied `EnvelopedData` and reflects the\noutcome gives the attacker a Bleichenbacher oracle against the\ncontent-encryption key.\n\nIntroduced in 44.0.0. Fixed in 50.0.0.\n\n### Details\n\nDecryption ran as: RSA PKCS#1 v1.5 decrypt of `encryptedKey` \u2192 build an AES\ncipher from the result \u2192 AES-CBC decrypt and PKCS#7 unpad. Each stage failed\ndifferently, with no RFC 3218 mitigation:\n\n1. invalid RSA padding \u2192 `Decryption failed`\n2. valid padding, bad key length \u2192 `Invalid key size (N) for AES.`, disclosing `N`\n3. correct length, wrong key \u2192 `Invalid padding bytes.`\n4. the real key \u2192 plaintext\n\nCase 1 is reachable only where the linked library lacks implicit rejection:\nOpenSSL 3.0 and 3.1, LibreSSL, and BoringSSL. On OpenSSL 3.2+, used in our wheels,\ninvalid padding instead returns a synthetic plaintext of\npseudorandom length, so the error channel does not distinguish conforming\nciphertexts.\n\nExploitation requires a service that auto-decrypts untrusted `EnvelopedData`\nmatching the victim certificate and answers adaptively at high volume, such as\nan S/MIME gateway or mail filter.\n\n### Fix\n\nPer RFC 3218, the content-encryption algorithm is now resolved before the\nprivate key is used, so the expected key length is known in advance. If the RSA\ndecryption fails or recovers a key of the wrong length, a random key of the\nexpected length is substituted and decryption continues down an identical path.\nAll failures now report identically and perform the same work.\n\n### Not addressed by this fix\n\n`EnvelopedData` does not authenticate its content. Tampering with\n`encryptedContent` alone yields a CBC padding oracle that recovers plaintext at\nrough",
+      "link": "https://github.com/advisories/GHSA-g6cj-pr64-35w5",
+      "published": "2026-08-03T21:17:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69247"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69207",
+      "title": "Hono: ReDoS in CORS middleware via Access-Control-Request-Headers",
+      "summary": "### Summary\n\nThe built-in CORS middleware (`hono/cors`) parses the attacker-controlled `Access-Control-Request-Headers` request header during a preflight (`OPTIONS`) request using a regular expression whose running time is quadratic in the input length. A single request carrying a long run of whitespace can consume seconds of CPU, and repeated requests can render the service unresponsive. This parsing runs under the default configuration.\n\n### Details\n\nOn a CORS preflight, when `allowHeaders` is not configured - the default - the middleware reflects and parses the `Access-Control-Request-Headers` value. The parser used a whitespace-tolerant regular expression whose backtracking makes the work grow quadratically (O(n\u00b2)) with the length of the value when it contains a long whitespace sequence without a delimiter.\n\nBecause the header value is bounded only by the deployment's maximum HTTP header size, a single preflight can block request processing for a noticeable amount of time; on runtimes that share one execution thread across requests, this stalls concurrent requests as well. No authentication, special origin, or user interaction is required.\n\nThis issue arises for any application using `cors()` with the default (or an empty) `allowHeaders`. Applications that set a non-empty `allowHeaders` do not reach the affected path.\n\n### Impact\n\nAn unauthenticated attacker can send preflight requests that each consume disproportionate CPU relative to their size, degrading or denying service. This is a denial-of-service issue only; it does not expose or modify data.",
+      "link": "https://github.com/advisories/GHSA-8j4g-w8fx-2239",
+      "published": "2026-08-03T20:23:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69207"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69192",
+      "title": "ip-address: Address4 decodes leading-zero octets as decimal while resolvers decode them as octal, allowing SSRF and trust-boundary bypass",
+      "summary": "### Summary\n\n`Address4` accepts an octet written with a leading zero and decodes it as decimal, while the WHATWG URL host parser, `inet_aton`, and `getaddrinfo` all decode a leading zero as octal. The library and the network stack therefore disagree about which host a string names. `new Address4('012.0.0.1')` reports `correctForm()` of `12.0.0.1` and `isPrivate()` of `false`, but `fetch('http://012.0.0.1/')` connects to `10.0.0.1`.\n\nAn application that builds a network trust-boundary decision on these checks (for example a filter intended to block Server-Side Request Forgery, or SSRF) will classify an internal target as external and allow the request. SSRF is an attack in which a user-supplied address coaxes the server into making a request to an internal destination the user could not otherwise reach, such as a loopback service or a cloud metadata endpoint.\n\n### Details\n\n`Address4.parse` gates untrusted input on `RE_ADDRESS` (`src/v4/constants.ts:5`), whose per-octet alternative is:\n\n```\n(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\n```\n\nThe `[01]?[0-9][0-9]?` branch matches a leading zero, so `012` passes validation. Every downstream decode then reads the octet with `parseInt(part, 10)` (`src/common.ts:87`), yielding 12. A resolver reading the same string treats the leading `0` as base 8 and yields 10.\n\nThe defect is in the parse gate rather than in any one classifier, so every consumer of `Address4` inherits it: `isPrivate()`, `isLoopback()`, `isLinkLocal()`, `isCGNAT()`, `isInSubnet()`, `isHostInSubnet()`, and `correctForm()` are all computed from the mis-decoded octets.\n\n`Address6` already rejects this notation on its IPv4-in-IPv6 path, throwing \"IPv4 addresses can't have leading zeroes.\" (`src/ipv6.ts:751-762`), so `Address4` is the outlier within the library.\n\n### Affected versions\n\n`<= 10.3.0`. Unlike GHSA-22jq-vg5j-6vgg and GHSA-4xrf-jv44-h6hh, which were bounded below by the `is*` classification API introduced in 10.1.1, this defect is in `parse` and reaches ever",
+      "link": "https://github.com/advisories/GHSA-mwp4-54f8-5fhr",
+      "published": "2026-08-03T19:59:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69192"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69198",
+      "title": "ip-address: a CIDR suffix on the parsed address suppresses special-use classification and can bypass SSRF and trust-boundary checks",
+      "summary": "### Summary\n\nEvery special-use classification method is built on `isInSubnet`, which short-circuits to `false` whenever the address's own subnet mask is *shorter* than the reference range's mask. That mask comes verbatim from the CIDR suffix on the parsed input, so appending a suffix such as `/0` suppresses classification entirely: `isLoopback()`, `isPrivate()`, `isLinkLocal()`, `isCGNAT()`, `isMulticast()`, `isUnspecified()`, `isBroadcast()`, `isULA()`, and `getType()` all report an internal address as unremarkable, while `correctForm()` and `address` still return the real internal target.\n\nAn application that builds a network trust-boundary decision on these checks (for example a filter intended to block Server-Side Request Forgery, or SSRF) may therefore treat an internal target as external and allow the request. SSRF is an attack in which a user-supplied address coaxes the server into making a request to an internal destination the user could not otherwise reach, such as a loopback service or a cloud metadata endpoint.\n\n### Details\n\n`isInSubnet` in `src/common.ts` opens with a guard that compares the two prefix lengths:\n\n```js\nexport function isInSubnet(this, address) {\n  if (this.subnetMask < address.subnetMask) {\n    return false;                                  // <-- reached before any bit comparison\n  }\n\n  if (this.mask(address.subnetMask) === address.mask()) {\n    return true;\n  }\n\n  return false;\n}\n```\n\nThat guard is correct for the question `isInSubnet` is named for \u2014 whether one *network* is contained in another, where a `/0` network genuinely is not inside a `/8`. It is wrong for classification, which asks a question about the address itself and must not depend on the prefix the caller happened to write. `/0` is shorter than every reference prefix in the special-use tables (loopback `/8`, link-local `/16`, CGNAT `/10`, ULA `/7`, multicast `/4`), so for a classification call the bit comparison is never reached and the method returns `false`.\n\nThe under",
+      "link": "https://github.com/advisories/GHSA-4xrf-jv44-h6hh",
+      "published": "2026-08-03T19:59:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69198"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54272",
+      "title": "ip-address: misclassification of IPv4-mapped/NAT64 IPv6 addresses can bypass SSRF and trust-boundary checks",
+      "summary": "### Summary\n\n`Address6`'s special-property checks misclassify IPv4-mapped (`::ffff:0:0/96`) and NAT64 well-known (`64:ff9b::/96`) IPv6 addresses. These checks classify an address by its IPv6 wrapper rather than by the IPv4 address it embeds, so `isLoopback()`, `isLinkLocal()`, `isMulticast()`, and `isUnspecified()` all return `false` for literals such as `::ffff:127.0.0.1` or `::ffff:169.254.169.254` that actually route to loopback, RFC 1918, or link-local (cloud-metadata) destinations. `Address6` also had no `isPrivate()` method, so a mapped RFC 1918 address could not be detected at all.\n\nAn application that builds a network trust-boundary decision on these checks (for example, a filter intended to block Server-Side Request Forgery, or SSRF) may therefore treat an internal target as external and allow the request. SSRF is an attack in which a user-supplied address coaxes the server into making a request to an internal destination the user could not otherwise reach, such as a loopback service or a cloud metadata endpoint.\n\n### Details\n\n`Address6.getType()` classifies an address by matching it against a table of known IPv6 special-use prefixes, returning `Global unicast` when nothing matches. That table had no entry for the IPv4-mapped range (`::ffff:0:0/96`), so every mapped address fell through to `Global unicast`; NAT64 addresses matched their own `NAT64 \u2026` labels. The boolean checks `isLoopback`, `isUnspecified`, and `isMulticast` compared `getType()` against a fixed label and so returned `false`, while `isLinkLocal` and `isULA` checked only the native IPv6 ranges.\n\nThe library already exposed `isMapped4()` and `to4()`, but did not apply them inside these checks, so a mapped or NAT64 address was never normalized to its embedded IPv4 address before classification. The underlying CIDR matching is correct; the defect is that the special-use table omitted the IPv4-mapped range and the checks performed no embedded-IPv4 normalization.\n\n### Affected versions\n\n`>= 10.1.1",
+      "link": "https://github.com/advisories/GHSA-22jq-vg5j-6vgg",
+      "published": "2026-08-03T19:52:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54272"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-18446",
+      "title": "fast-uri vulnerable to host confusion via backslash authority introducer",
+      "summary": "### Impact\n\n`fast-uri` v4.1.1 and earlier require a literal `//` to recognize a URI authority, so a reference that uses `\\\\`, `/\\`, or `\\/` as the authority introducer (in place of `//`, after an optional scheme) is parsed with no authority: the sequence and everything after it fold into the path. Node's native WHATWG `URL` (used by `fetch()`, `undici`, and Node's `http`/`https` clients) instead treats `\\` as interchangeable with `/` for special schemes (`http`, `https`, `ws`, `wss`, `ftp`, `file`), so the two parsers extract different hosts from the same input.\n\nFor example, `fast-uri` resolves `\\\\evil.com/path` against base `https://allowed.com/` to `https://allowed.com/%5C%5Cevil.com/path` (confined to the trusted host), while Node's WHATWG URL resolves the same reference to `https://evil.com/path`.\n\nApplications that use `fast-uri` to enforce host-based policy (allowlists, denylists, loopback/SSRF filtering, redirect validation, outbound proxy routing) before passing the same URL into Node's URL or `fetch()` consumers see a policy/use desync and can be steered to an unintended destination.\n\n### Patches\n\nUpgrade to `fast-uri` v4.1.2, v3.1.5, v2.4.4.\n\n### Workarounds\n\nNone. Upgrade to the patched version.",
+      "link": "https://github.com/advisories/GHSA-7p8r-x3mc-p8w7",
+      "published": "2026-08-03T19:16:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-18446"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.rapid7.com/blog/post/ra-kindarails2shell-technical-analysis-cve-2026-66066",
