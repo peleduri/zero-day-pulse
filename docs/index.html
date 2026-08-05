@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">38</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-05 13:31 UTC</div>
+            <div class="generated">Updated 2026-08-05 19:10 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-63077" target="_blank" rel="noopener">CVE-2026-63077 — JetBrains TeamCity Deserialization of Untrusted Data Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-63077</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-05</span>
+  </div>
+  <p class='summary'>Vendor: JetBrains | Product: TeamCity. JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CIS…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -146,6 +162,22 @@
     <span>Thu, 12 Ju</span>
   </div>
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/" target="_blank" rel="noopener">CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-05</span>
+  </div>
+  <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency is giving federal agencies three days to mitigate vulnerabilities in IBM Langflow, N-central, and Apache Tomcat, all actively exploited. [...]</p>
 
 </article>
 
@@ -211,24 +243,6 @@ Flowise - Flowise
 ---
 
 A prompt injection sent to a chatflo…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xc48-889x-5qmw" target="_blank" rel="noopener">Flowise: CVE-2025-8943 Patch Bypass: npm_config_yes bypasses MCP environment variable blocklist (Unauthenticated RCE)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69263</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>## Summary
-
-The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `npx` to stop auto-installation of arbitrary packages. That flag filter works. The environment-variable check in the same patch denies only four variable names by exact string match, and `npm` reads its configuration directly from `npm_config_*` environment variables. Setting `npm_config_yes=true` reproduces …</p>
 
         </article>
 
@@ -343,6 +357,93 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
   <p class='summary'>Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-ff2p-hmqr-hxm4" target="_blank" rel="noopener">Electron: contextBridge object copy honors prototype setters</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-70610</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-05</span>
+          </div>
+          <p class='summary'>### Impact
+Objects copied across the `contextBridge` boundary from untrusted content could carry an attacker-influenced prototype, enabling prototype-pollution-style attacks against preload code despite context isolation being enabled.
+
+Apps are only affected if their preload code accepts object arguments from untrusted content and reads properties from them without own-property checks. Apps that …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r4w5-6pfg-jxp5" target="_blank" rel="noopener">Electron: ProtocolResponse.url reuses the default session cache instead of the registering session</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-70606</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-05</span>
+          </div>
+          <p class='summary'>### Impact
+When a custom protocol handler returned a `ProtocolResponse` with a `url` and no `session`, Electron made the upstream request through `defaultSession` instead of the session that handled the protocol. A cached response could then be reused across otherwise isolated session partitions.
+
+Apps that use `ProtocolResponse.url`, omit `ProtocolResponse.session`, and rely on separate sessions …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m55f-7gqj-fr98" target="_blank" rel="noopener">Electron: Extension tab APIs operate across session boundaries</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-70602</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-05</span>
+          </div>
+          <p class='summary'>### Impact
+Extension tab and scripting APIs were not scoped to the extension&#x27;s own `session`. A malicious or compromised extension loaded into one session could navigate, script, and read from windows belonging to a different session.
+
+Apps are only affected if they load Chrome extensions via `session.loadExtension` and rely on separate sessions to isolate that extension from other content. Apps t…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pr22-p9rp-2cqv" target="_blank" rel="noopener">Ghost: Cross-Site Scripting in Feature Image Captions</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-70596</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-05</span>
+          </div>
+          <p class='summary'>### Impact
+
+An input validation issue allowed any staff user to create a post with content that could be used to hijack another staff user&#x27;s Ghost Admin session resulting in privilege escalation.
+
+### Vulnerable versions
+
+This vulnerability is present in Ghost from v4.9.0 up to v6.54.0.
+
+### Patches
+
+v6.54.1 contains a fix for this issue.
+
+### How to update
+
+For self-hosters using Docker, find [Do…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -600,223 +701,6 @@ Several organization billing endpoints accept attacker-controlled Stripe identif
 **Severity**: HIGH (CVSS ~7.5)
 **Type**: CWE-862 (Missing Authorization)
 **File**: `packages/se…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fr6g-7cq8-fg82" target="_blank" rel="noopener">Flowise: Information Disclosure in GET /api/v1/upsert-history returns the entire server-wide upsert history</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-70473</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>### Summary
-The **GET `/api/v1/upsert-history`** endpoint returns the **entire server-wide upsert history** (response size **&gt;100MB**) instead of being scoped to the requesting user/tenant/workspace. The response includes **sensitive configuration data** (e.g., Vector Store settings such as **Qdrant Server URL** and **collection name**), resulting in a **High severity information disclosure** that…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-chm3-vqcf-52rx" target="_blank" rel="noopener">Flowise: Cross-workspace credential IDOR in openai-assistants-vector-store</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-70472</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'># Summary 
-
-These endpoints accept a client-controlled `credential` parameter. The server loads credentials by `id` and uses them directly, without checking whether that credential belongs to the caller’s workspace. If an attacker knows another workspace’s `credentialId`, they can use that workspace’s OpenAI key.
-
-# Details
-
-Route permissions (`assistants:*`) only check feature access. They do not…</p>
-
-        </article>
-
-      <article class="card card-high">
-        <div class="card-top">
-          <span class="badge badge-high">🟡 High</span>
-          <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8r8h-6vcc-xhrv" target="_blank" rel="noopener">Flowise: RBAC Bypass Leading to Unauthorized Workspace Variables Disclosure</a></h2>
-        </div>
-        <div class="card-meta">
-          <code class="cve">CVE-2026-70471</code>
-          <span class="meta-sep">·</span>
-          <span>GitHub Security Advisories</span>
-          <span class="meta-sep">·</span>
-          <span>2026-08-04</span>
-        </div>
-        <p class='summary'>## Finding — Unauthorized Workspace Variables disclosure via $vars injection (bypasses variables:view)
-
-### What’s wrong (code locations)
-
-- Variables for the active workspace are fetched without checking “variables:view” at this call site: flowise-src/
-  packages/components/src/utils.ts:932
-- Runtime variables are resolved from server environment variables: flowise-src/packages/components…</p>
-
-      </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-52fh-8v99-63c2" target="_blank" rel="noopener">Flowise: Pyodide validator Unicode homoglyph bypass leads to RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-70470</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>### Summary
-The validatePythonCodeForDataFrame blacklist in packages/components/src/pythonCodeValidator.ts can be bypassed with Unicode homoglyph identifiers, allowing arbitrary Python execution inside Pyodide and full OS command execution on the Flowise host via Pyodide&#x27;s js module interop. This reopens the RCE paths patched as GHSA-3hjv-c53m-58jj (CSV Agent) and GHSA-v38x-c887-992f (Airtable Age…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p5w8-m249-4r4v" target="_blank" rel="noopener">Flowise: `DELETE /api/v1/chatflows/:id` does not validate resource type, allowing `agentflows:delete` and `chatflows:delete` to delete each other’s flow type</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69262</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'># summary:
-In Flowise, `DELETE /api/v1/chatflows/:id` authorizes requests with `checkAnyPermission(&#x27;chatflows:delete,agentflows:delete&#x27;)`. Possession of either permission is sufficient to reach the delete path. The delete logic does not validate the target resource `type`, allowing a caller with only `agentflows:delete` to delete a `CHATFLOW`, and a caller with only `chatflows:delete` to delete an…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c6xh-wv4j-ppv5" target="_blank" rel="noopener">Flowise: SSRF Protection Bypass via IPv4-Mapped IPv6 Addresses</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69257</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>## Summary
-
-Flowise&#x27;s HTTP security module (`httpSecurity.ts`) fails to normalize IPv4-mapped IPv6 addresses (e.g., `::ffff:127.0.0.1`, `::ffff:169.254.169.254`) before checking them against the deny list. Due to an `ipaddr.js` kind mismatch (`ipv6` vs `ipv4`), all IPv4 CIDR deny rules are silently skipped for IPv4-mapped IPv6 addresses. An attacker who controls DNS resolution for a hostname can s…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x6vm-w76m-8j7g" target="_blank" rel="noopener">Flowise: Remote Code Execution Vulnerability in CSVAgent</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69256</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>### Summary
-
-The CSVAgent node was observed to allow users to write Python code which gets executed via `pyodide`. The original intent was to allow users to utilise the `pandas` library for CSV processing. Although there is a denylist that checks for dangerous Python constructs from being passed in, `pandas` has a `read_pickle()` [function](https://pandas.pydata.org/docs/reference/api/pandas.read_…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vmv7-4m6c-3cg5" target="_blank" rel="noopener">Flowise: CSV Agent Remote Code Execution via Pyodide Code Injection — Root Shell Verified</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69255</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>## UPDATE 2026-05-20: Full RCE as root VERIFIED
-
-**This is not theoretical — a Meterpreter reverse shell session as root has been established on Flowise 3.1.2.**
-
-### Verified Exploit Chain
-
-1. Python code injection via `base64_string = &quot;${base64String}&quot;` (CSVAgent.ts line 161)
-2. Pyodide `js` bridge provides access to the host Node.js process
-3. `process.mainModule.constructor._load(&#x27;child_proces…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wg86-r78f-74mp" target="_blank" rel="noopener">Flowise Sandbox Escape to RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69253</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>=============================================================================
-                                                            Security Advisory
-                                                                       elttam
-
-Topic:          Flowise JavaScript Sandbox Escape
-
-Module:         FlowiseAI/Flowise, FlowiseAI/nodevm
-Disclosed:      11-Apr-2026
-Credits:        Luke Jahnke and Al…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wp74-f5hh-5f3r" target="_blank" rel="noopener">Flowise: Missing authorization on `/api/v1/files` allows low-privileged API keys to list and delete files across workspaces within the same organization</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69252</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'># summary:
-In Flowise, the `/api/v1/files` route is protected only by the `feat:files` feature gate and does not enforce `checkPermission(...)` on either `GET` or `DELETE`. As a result, any authenticated API key within the organization, even one with unrelated permissions, can list and delete files belonging to other workspaces in the same organization.
-
-# details:
-The `/files` route is mounted wi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r745-8hwv-h473" target="_blank" rel="noopener">Flowise: Unauthenticated OAuth2 Refresh Enables Non-Blind SSRF and Secret Exfiltration</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69250</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-04</span>
-          </div>
-          <p class='summary'>### Summary
-
-The OAuth2 token refresh endpoint (`POST /api/v1/oauth2-credential/refresh/:credentialId`) is unauthenticated by design (it is in the public whitelist) and performs a server-side HTTP request to a credential-controlled URL (`accessTokenUrl`) without SSRF protections. In runtime validation, this endpoint was reachable without auth, triggered outbound POST requests to an attacker-contro…</p>
 
         </article>
 
