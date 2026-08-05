@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-05 08:13 UTC &nbsp;|&nbsp; **Total:** 39 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-05 13:31 UTC &nbsp;|&nbsp; **Total:** 38 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,30 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Flowise: CSV Agent Prompt Injection Remote Code Execution Vulnerability
+## 3. 🟠 Zero-Day — Tenable Hexa AI: Automating exposure remediation with agentic routines
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-08-05
+**Reference:** <https://www.tenable.com/blog/tenable-hexa-ai-automating-exposure-remediation-with-agentic-routines>
+
+> Discover how Tenable Hexa AI closes the gap between exposure management and endpoint patching using intent-driven routines, smart guardrails, and human approval. Key takeaways The problem: A slow handoff between security workflows creates a days-long remediation gap. The solution: Tenable Hexa AI bridges this gap using intent-driven Routines that automate scoping, deployment, and verification acro…
+
+---
+
+## 4. 🟠 Zero-Day — CISA Flags Langflow RCE, Tomcat, and N-central Flaws as Actively Exploited
+
+**CVE:** `CVE-2026-9198` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-05
+**Reference:** <https://thehackernews.com/2026/08/cisa-flags-langflow-rce-tomcat-and-n.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on August 5, 2026, added three flaws to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation in the wild.
+
+The list of vulnerabilities is as follows -
+
+
+  CVE-2026-9198 (CVSS score: 9.8) - A code injection vulnerability in Langflow that allows unauthenticated attackers to achieve full remote
+
+---
+
+## 5. 🟠 Zero-Day — Flowise: CSV Agent Prompt Injection Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-70477` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-5xvg-pmgg-3mxr>
@@ -43,7 +66,7 @@ A prompt injection sent to a ch…
 
 ---
 
-## 4. 🟠 Zero-Day — Flowise: CVE-2025-8943 Patch Bypass: npm_config_yes bypasses MCP environment variable blocklist (Unauthenticated RCE)
+## 6. 🟠 Zero-Day — Flowise: CVE-2025-8943 Patch Bypass: npm_config_yes bypasses MCP environment variable blocklist (Unauthenticated RCE)
 
 **CVE:** `CVE-2026-69263` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-xc48-889x-5qmw>
@@ -51,24 +74,6 @@ A prompt injection sent to a ch…
 > ## Summary
 
 The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `npx` to stop auto-installation of arbitrary packages. That flag filter works. The environment-variable check in the same patch denies only four variable names by exact string match, and `npm` reads its configuration directly from `npm_config_*` environment variables. Setting `npm_config_yes=true` reproduces …
-
----
-
-## 5. 🟠 Zero-Day — The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-08-04
-**Reference:** <https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/>
-
-> Frontier AI is reshaping vulnerability discovery. Learn how our NOVA system found 14,000+ unknown vulnerabilities across the open-source software supply chain. The post The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software appeared first on Unit 42 .
-
----
-
-## 6. 🟠 Zero-Day — CVE-2026-18577: N-able N-central Authentication Bypass Exploited in the Wild
-
-**CVE:** `CVE-2026-18577` | `CVE-2026-18556` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-04
-**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-18577-n-able-n-central-authentication-bypass-exploited-in-the-wild>
-
-> Overview On August 2, 2026, N-able published a security advisory for CVE-2026-18577 , an authentication bypass vulnerability affecting N-central that was discovered being exploited in-the-wild after an incomplete fix for an earlier authentication bypass issue, CVE-2026-18556 was disclosed. CVE-2026-18577 allows a remote unauthenticated attacker to bypass authentication and obtain administrative co…
 
 ---
 
@@ -135,16 +140,14 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 14. 🟠 Zero-Day — When Vibe Hacking Turns AI into the Junior Hacker Every Adversary Always Wanted
+## 14. 🟡 High Severity — Critical Gitea Flaw Let Unauthenticated Attackers Read Server Files via Org-Mode Markup
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
-**Reference:** <https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html>
+**CVE:** `CVE-2026-59774` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-05
+**Reference:** <https://thehackernews.com/2026/08/critical-gitea-flaw-let-unauthenticated.html>
 
-> The cybersecurity industry has spent decades assuming that offensive capability scales with technical expertise.
+> An unauthenticated attacker can read any file the service account can access on Gitea, the self-hosted Git platform, in versions 1.22.1 through 1.27.0. No login, no repository write access. A public repository and crafted Org-mode markup are enough. The flaw is fixed in Gitea 1.27.1.
 
-That assumption is starting to break.
-
-Security teams have long estimated risk by ranking attacker sophistication. Nation-state actors sat at one end. Organized criminal groups followed. Inexperienced attackers, dismissed as &quot;script kiddies,&quot; sat at the other end, running pub…
+The file-read flaw is tracked as CVE-2026-59774, rated Critical with a CVSS score of 9.8, and received its
 
 ---
 
@@ -445,18 +448,7 @@ The OAuth2 token refresh endpoint (`POST /api/v1/oauth2-credential/refresh/:cred
 
 ---
 
-## 38. 🟡 High Severity — New cPanel Critical Flaw Could Let Hosting Customers Run SQL as Database Root
-
-**CVE:** `CVE-2026-58048` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
-**Reference:** <https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html>
-
-> cPanel has patched a flaw that let an authenticated hosting customer execute SQL in the database&#x27;s root context, crossing the privilege boundary between a cPanel account and the server&#x27;s administrative database identity. It shipped in a targeted security release that closes two other routes past account boundaries.
-
-The database bug is tracked as CVE-2026-58048 (CVSS 4.0 score: 9.4) and …
-
----
-
-## 39. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 38. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-05T08:13:12.102674+00:00",
-  "total": 39,
+  "generated": "2026-08-05T13:31:07.619807+00:00",
+  "total": 38,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,39 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/tenable-hexa-ai-automating-exposure-remediation-with-agentic-routines",
+      "title": "Tenable Hexa AI: Automating exposure remediation with agentic routines",
+      "summary": "Discover how Tenable Hexa AI closes the gap between exposure management and endpoint patching using intent-driven routines, smart guardrails, and human approval. Key takeaways The problem: A slow handoff between security workflows creates a days-long remediation gap. The solution: Tenable Hexa AI bridges this gap using intent-driven Routines that automate scoping, deployment, and verification across integrated platforms like Jamf. Safety and control: Autonomy is governed by the harness built into Tenable One, ensuring the AI operates strictly within defined user permissions and guardrails. Find the exposure. Fix it. Confirm it is gone. Those three steps are rarely executed in a single place, by a single team. Exposure management knows which assets are at risk, while endpoint management actually changes the machine and applies the fix. Between those two domains of exposure identification and remediation lies a slow, manual handoff and multi-step routine that costs security teams days or weeks while vulnerabilities remain exposed: Scope the asset group Aim the remediation policy Execute patch deployment Check status Re-scan the environment to confirm the finding was closed. Tenable Hexa AI , the agentic engine of the Tenable One Exposure Management Platform , now spans that handoff, so you don\u2019t have to manually toggle among tools or continually restart the conversation. How does Tenable Hexa AI autonomously close the remediation loop Say there\u2019s an actively exploited Chrome vulnerability, and a fleet of your Macs is still running the vulnerable version. Rather than navigating multiple tools, you simply tell Tenable Hexa AI to patch it. Tenable Hexa AI executes the workflow in three unified stages: Enumeration and mapping - Tenable Hexa AI enumerates the affected assets across your exposure sources and resolves them to the devices your endpoint team already manages in Jamf. Policy identification - Tenable Hexa AI maps the CVE to the version that fixes it, then finds t",
+      "link": "https://www.tenable.com/blog/tenable-hexa-ai-automating-exposure-remediation-with-agentic-routines",
+      "published": "2026-08-05T12:45:00+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/cisa-flags-langflow-rce-tomcat-and-n.html",
+      "title": "CISA Flags Langflow RCE, Tomcat, and N-central Flaws as Actively Exploited",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on August 5, 2026, added three flaws to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation in the wild.\n\nThe list of vulnerabilities is as follows -\n\n\n  CVE-2026-9198 (CVSS score: 9.8) - A code injection vulnerability in Langflow that allows unauthenticated attackers to achieve full remote",
+      "link": "https://thehackernews.com/2026/08/cisa-flags-langflow-rce-tomcat-and-n.html",
+      "published": "2026-08-05T07:40:39+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-9198"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -69,40 +102,6 @@
       ],
       "cve_ids": [
         "CVE-2026-69263"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/",
-      "title": "The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software",
-      "summary": "Frontier AI is reshaping vulnerability discovery. Learn how our NOVA system found 14,000+ unknown vulnerabilities across the open-source software supply chain. The post The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/",
-      "published": "2026-08-04T13:00:11+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-18577-n-able-n-central-authentication-bypass-exploited-in-the-wild",
-      "title": "CVE-2026-18577: N-able N-central Authentication Bypass Exploited in the Wild",
-      "summary": "Overview On August 2, 2026, N-able published a security advisory for CVE-2026-18577 , an authentication bypass vulnerability affecting N-central that was discovered being exploited in-the-wild after an incomplete fix for an earlier authentication bypass issue, CVE-2026-18556 was disclosed. CVE-2026-18577 allows a remote unauthenticated attacker to bypass authentication and obtain administrative control of vulnerable N-central servers in affected deployments. N-able N-central is a widely deployed Remote Monitoring and Management (RMM) platform used by managed service providers (MSPs) and enterprise IT teams to centrally administer servers, workstations, network devices, and other managed assets. Because the platform operates with extensive administrative privileges across customer environments, successful compromise of an N-central server can provide attackers with an efficient path to compromise downstream managed systems. According to N-able, exploitation of CVE-2026-18577 has been observed in the wild since August 1, 2026 . Following successful exploitation, attackers leveraged the platform's Take Control functionality to remotely access managed endpoints, and deployed Cloudflare Tunnel (cloudflared) to establish persistent remote access. On August 3, 2026, CVE-2026-18577 was added to CISA\u2019s Known Exploited Vulnerability (KEV) catalog. Mitigation guidance Organizations operating vulnerable N-central deployments should prioritize remediation on an urgent basis, outside of normal patching schedules. Hosted N-central environments are upgraded automatically by the vendor, while on-premise deployments require manual remediation. Affected versions: All versions of N-able N-central up to and including version 2026.3.1, prior to Hotfix 1. Fixed version: N-able N-central 2026.3.1 Hotfix 1 (2026.3.1.7). The vendor also recommends: Upgrading N-central agents after applying the server hotfix. Reviewing systems for indicators of compromise. Contacting N-able Support immediatel",
-      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-18577-n-able-n-central-authentication-bypass-exploited-in-the-wild",
-      "published": "2026-08-04T11:11:54+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-18577",
-        "CVE-2026-18556"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -220,19 +219,21 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html",
-      "title": "When Vibe Hacking Turns AI into the Junior Hacker Every Adversary Always Wanted",
-      "summary": "The cybersecurity industry has spent decades assuming that offensive capability scales with technical expertise.\n\nThat assumption is starting to break.\n\nSecurity teams have long estimated risk by ranking attacker sophistication. Nation-state actors sat at one end. Organized criminal groups followed. Inexperienced attackers, dismissed as \"script kiddies,\" sat at the other end, running public",
-      "link": "https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html",
-      "published": "2026-08-04T11:30:00+00:00",
+      "id": "https://thehackernews.com/2026/08/critical-gitea-flaw-let-unauthenticated.html",
+      "title": "Critical Gitea Flaw Let Unauthenticated Attackers Read Server Files via Org-Mode Markup",
+      "summary": "An unauthenticated attacker can read any file the service account can access on Gitea, the self-hosted Git platform, in versions 1.22.1 through 1.27.0. No login, no repository write access. A public repository and crafted Org-mode markup are enough. The flaw is fixed in Gitea 1.27.1.\n\nThe file-read flaw is tracked as CVE-2026-59774, rated Critical with a CVSS score of 9.8, and received its",
+      "link": "https://thehackernews.com/2026/08/critical-gitea-flaw-let-unauthenticated.html",
+      "published": "2026-08-05T11:04:23+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-59774"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-70591",
@@ -644,23 +645,6 @@
       ],
       "cve_ids": [
         "CVE-2026-69250"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html",
-      "title": "New cPanel Critical Flaw Could Let Hosting Customers Run SQL as Database Root",
-      "summary": "cPanel has patched a flaw that let an authenticated hosting customer execute SQL in the database's root context, crossing the privilege boundary between a cPanel account and the server's administrative database identity. It shipped in a targeted security release that closes two other routes past account boundaries.\n\nThe database bug is tracked as CVE-2026-58048 (CVSS 4.0 score: 9.4) and affects",
-      "link": "https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html",
-      "published": "2026-08-04T10:36:27+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-58048"
       ],
       "is_zero_day": false,
       "is_high_severity": true
