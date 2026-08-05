@@ -1,37 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-04 19:16 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-05 01:22 UTC &nbsp;|&nbsp; **Total:** 39 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-9198 — IBM Langflow Code Injection Vulnerability
-
-**CVE:** `CVE-2026-9198` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-04
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-9198>
-
-> Vendor: IBM | Product: Langflow. Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensic…
-
----
-
-## 2. 🔴 CISA KEV — CVE-2026-18556 — N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability
-
-**CVE:** `CVE-2026-18556` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-04
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-18556>
-
-> Vendor: N-able | Product: N-central. N-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see U…
-
----
-
-## 3. 🔴 CISA KEV — CVE-2026-34486 — Apache Tomcat Missing Encryption of Sensitive Data Vulnerability
-
-**CVE:** `CVE-2026-34486` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-04
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-34486>
-
-> Vendor: Apache | Product: Tomcat. Apache Tomcat contains a missing encryption of sensitive data vulnerability that allows the bypass of the EncryptInterceptor. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL…
-
----
-
-## 4. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -40,7 +13,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
@@ -49,7 +22,28 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Flowise: CVE-2025-8943 Patch Bypass: npm_config_yes bypasses MCP environment variable blocklist (Unauthenticated RCE)
+## 3. 🟠 Zero-Day — Flowise: CSV Agent Prompt Injection Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-70477` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-5xvg-pmgg-3mxr>
+
+> -- ABSTRACT -------------------------------------
+
+Trend Micro&#x27;s Zero Day Initiative has identified a vulnerability affecting the following products:
+Flowise - Flowise
+
+-- VULNERABILITY DETAILS ------------------------
+* Version tested: 3.1.1
+* Installer file: https://github.com/FlowiseAI/Flowise (npm install flowise@3.1.1)
+* Platform tested: Ubuntu 25.10
+
+---
+
+A prompt injection sent to a ch…
+
+---
+
+## 4. 🟠 Zero-Day — Flowise: CVE-2025-8943 Patch Bypass: npm_config_yes bypasses MCP environment variable blocklist (Unauthenticated RCE)
 
 **CVE:** `CVE-2026-69263` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-xc48-889x-5qmw>
@@ -60,7 +54,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 7. 🟠 Zero-Day — The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software
+## 5. 🟠 Zero-Day — The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery in Open-Source Software
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/>
@@ -69,7 +63,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -78,7 +72,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -87,7 +81,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -96,7 +90,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -105,7 +99,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -114,7 +108,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -123,7 +117,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -132,7 +126,7 @@ The mitigation shipped for CVE-2025-8943 blocks the `-y` and `--yes` flags on `n
 
 ---
 
-## 15. 🟠 Zero-Day — When Vibe Hacking Turns AI into the Junior Hacker Every Adversary Always Wanted
+## 13. 🟠 Zero-Day — When Vibe Hacking Turns AI into the Junior Hacker Every Adversary Always Wanted
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://thehackernews.com/2026/08/when-vibe-hacking-turns-ai-into-junior.html>
@@ -145,7 +139,7 @@ Security teams have long estimated risk by ranking attacker sophistication. Nati
 
 ---
 
-## 16. 🟠 Zero-Day — CISA Adds Exploited N-able N-central Flaw to KEV After Customer Compromises
+## 14. 🟠 Zero-Day — CISA Adds Exploited N-able N-central Flaw to KEV After Customer Compromises
 
 **CVE:** `CVE-2026-18577` | `CVE-2026-18556` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://thehackernews.com/2026/08/cisa-adds-exploited-n-able-n-central.html>
@@ -156,7 +150,164 @@ The vulnerability, tracked as CVE-2026-18577 (CVSS score: 8.2), is a case of inc
 
 ---
 
-## 17. 🟡 High Severity — Flowise: Information Disclosure in GET /api/v1/upsert-history returns the entire server-wide upsert history
+## 15. 🟡 High Severity — Ghost: Server-Side Request Forgery in Image Fetching
+
+**CVE:** `CVE-2026-70591` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-gcvv-72q8-9v76>
+
+> ### Impact
+
+A Server-Side Request Forgery (SSRF) in Ghost Admin allowed any staff-level user to perform a blind HTTP GET request against internal hosts. No output was returned, but this could have been used to probe open ports on internal hosts.
+
+### Vulnerable versions
+
+This vulnerability is present in Ghost from v0.10.0 up to v6.54.0.
+
+### Patches
+
+v6.54.1 contains a fix for this issue.
+
+### How…
+
+---
+
+## 16. 🟡 High Severity — Ghost: Mobiledoc image-size fetch SSRF
+
+**CVE:** `CVE-2026-53946` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-g366-23fw-ggp6>
+
+> ### Impact
+
+When re-rendering posts, Ghost would refetch missing image dimensions by issuing an outbound HTTP request to the URL stored on an image card — without restricting that URL to trusted image hosts. An authenticated staff user able to create or edit posts could therefore point an image card at an attacker-chosen host and cause the Ghost server to request it on their behalf, including host…
+
+---
+
+## 17. 🟡 High Severity — Ghost: Server-side request forgery via DNS rebinding in external request handling
+
+**CVE:** `CVE-2026-53945` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-ch52-px8q-f22j>
+
+> ### Impact
+
+Ghost’s private-IP check for outbound HTTP requests could be bypassed via DNS rebinding, allowing an attacker to coerce the Ghost server into reaching hosts on internal networks through features that issue external fetches.
+
+### Vulnerable versions
+
+This vulnerability is present in Ghost from v6.0.9 up to v6.21.0.
+
+### Patches
+
+v6.21.1 contains a fix for this issue. 
+
+### How to update…
+
+---
+
+## 18. 🟡 High Severity — Open WebUI: Unapproved accounts can open terminal sessions via a WebSocket auth path missing the role check
+
+**CVE:** `CVE-2026-70490` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-5gpj-vj23-vhhv>
+
+> ## Summary
+The terminal WebSocket route authenticates its own first-message JWT instead of going through the HTTP dependency chain, and never applies the role check that `get_verified_user` enforces on every HTTP terminal route. An account whose role is `pending`, meaning registered but not approved, or approved and later deactivated back to `pending`, can therefore open an interactive terminal se…
+
+---
+
+## 19. 🟡 High Severity — Open WebUI: DNS Rebinding SSRF Bypass
+
+**CVE:** `CVE-2026-54020` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-h6x2-583h-x99r>
+
+> ## Summary
+Open WebUI vetted user-supplied URLs by resolving the hostname once and rejecting private, loopback and link-local addresses, then let the HTTP client resolve that hostname again at connect time. An attacker who controls the authoritative DNS for a hostname they submit can answer with a public address during the check and an internal one at connect, so the fetch reaches an address the c…
+
+---
+
+## 20. 🟡 High Severity — Open WebUI: Any authenticated user can reach internal services and cloud metadata via NAT64-encoded URLs
+
+**CVE:** `CVE-2026-70485` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-8x5v-cpv7-8jjp>
+
+> ## Summary
+
+Open WebUI fetches user-supplied URLs on the server for RAG URL ingestion, URL-to-markdown conversion and web-search content retrieval, and decides whether a destination is allowed by asking whether its IP address is globally routable. That test operates on the literal IPv6 address and does not look at the IPv4 address embedded inside it. On a deployment whose network has a NAT64 gatew…
+
+---
+
+## 21. 🟡 High Severity — Open WebUI: Client-side SSRF via unrestricted external resource loading in Vega/Vega-Lite chart rendering
+
+**CVE:** `CVE-2026-70480` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-rffm-9q57-q649>
+
+> ## Summary
+Open WebUI renders `vega` and `vega-lite` fenced code blocks in chat content by building a Vega view in the viewer&#x27;s browser without a restricted resource loader. Any user who can place such a block where another user will see it can make that user&#x27;s browser issue attacker-chosen outbound GET requests, and read back responses from same-origin or CORS-permissive targets into th…
+
+---
+
+## 22. 🟡 High Severity — Open WebUI: Account takeover via OAuth token exchange accepting tokens issued to any client
+
+**CVE:** `CVE-2026-70482` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-rq84-p6rr-vf89>
+
+> ## Summary
+
+The OAuth token exchange endpoint accepts a raw provider access token and validates it by calling the provider&#x27;s userinfo endpoint. A userinfo endpoint reports only that a token is valid, never which OAuth client it was issued to, and the endpoint performed no audience or client check of its own. Anyone holding an access token minted for any client registered with the same provide…
+
+---
+
+## 23. 🟡 High Severity — Open WebUI: SSRF into internal services via unvalidated sub-resource requests in the Playwright web loader
+
+**CVE:** `CVE-2026-70479` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-w2rx-84hp-gg95>
+
+> ## Summary
+With the Playwright web loader enabled, Open WebUI opens user-submitted URLs in a real browser and validates the destination address before allowing the request. That check only ran for the top-level page request. Every other request the page issued was passed through unvalidated, so a page could use its own JavaScript to reach addresses the validation exists to block. Because the loade…
+
+---
+
+## 24. 🟡 High Severity — Flowise: Unauthenticated OAuth2 token refresh endpoint returns access tokens — enables token theft for any connected service
+
+**CVE:** `CVE-2026-70478` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-qgvm-j2hm-6m38>
+
+> ### Summary
+
+The OAuth2 token refresh endpoint (`POST /api/v1/oauth2-credential/refresh/:credentialId`) is in `WHITELIST_URLS`, meaning it requires **no authentication**. It decrypts the stored credential (containing `clientId`, `clientSecret`, `refresh_token`), sends a refresh request to the configured OAuth provider, and returns the new `access_token` directly in the response body.
+
+### Root Cau…
+
+---
+
+## 25. 🟡 High Severity — Flowise: Broken Access Control in Stripe Subscription Endpoints Allows Cross-Tenant Billing Manipulation
+
+**CVE:** `CVE-2026-70476` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-gmmw-qg98-6j6p>
+
+> ### Summary
+Several organization billing endpoints accept attacker-controlled Stripe identifiers (subscriptionId) without verifying that the identifier belongs to the authenticated user&#x27;s organization. This allows an authenticated attacker to perform unauthorized Stripe subscription operations on other tenants. As a result, an authenticated user can manipulate the Stripe subscription of anoth…
+
+---
+
+## 26. 🟡 High Severity — Flowise: Missing Authorization on Execution Update Endpoint
+
+**CVE:** `CVE-2026-70475` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
+**Reference:** <https://github.com/advisories/GHSA-fm2f-4339-4p2f>
+
+> # Flowise Security Audit Report
+**Date**: 2026-03-17
+**Researcher**: Dimpal Jadhav (jadhavdimpy@gmail.com)
+**GitHub**: https://github.com/Dimpyj1604
+**Target**: FlowiseAI/Flowise (latest main branch)
+**Version**: flowise-components@3.1.0
+
+### FINDING 1: Missing Authorization on Execution Update Endpoint
+**Severity**: HIGH (CVSS ~7.5)
+**Type**: CWE-862 (Missing Authorization)
+**File**: `packages/se…
+
+---
+
+## 27. 🟡 High Severity — Flowise: Information Disclosure in GET /api/v1/upsert-history returns the entire server-wide upsert history
 
 **CVE:** `CVE-2026-70473` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-fr6g-7cq8-fg82>
@@ -166,7 +317,7 @@ The **GET `/api/v1/upsert-history`** endpoint returns the **entire server-wide u
 
 ---
 
-## 18. 🟡 High Severity — Flowise: Cross-workspace credential IDOR in openai-assistants-vector-store
+## 28. 🟡 High Severity — Flowise: Cross-workspace credential IDOR in openai-assistants-vector-store
 
 **CVE:** `CVE-2026-70472` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-chm3-vqcf-52rx>
@@ -181,7 +332,7 @@ Route permissions (`assistants:*`) only check feature access. They do not…
 
 ---
 
-## 19. 🟡 High Severity — Flowise: RBAC Bypass Leading to Unauthorized Workspace Variables Disclosure
+## 29. 🟡 High Severity — Flowise: RBAC Bypass Leading to Unauthorized Workspace Variables Disclosure
 
 **CVE:** `CVE-2026-70471` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-8r8h-6vcc-xhrv>
@@ -196,7 +347,7 @@ Route permissions (`assistants:*`) only check feature access. They do not…
 
 ---
 
-## 20. 🟡 High Severity — Flowise: Pyodide validator Unicode homoglyph bypass leads to RCE
+## 30. 🟡 High Severity — Flowise: Pyodide validator Unicode homoglyph bypass leads to RCE
 
 **CVE:** `CVE-2026-70470` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-52fh-8v99-63c2>
@@ -206,7 +357,7 @@ The validatePythonCodeForDataFrame blacklist in packages/components/src/pythonCo
 
 ---
 
-## 21. 🟡 High Severity — Flowise: `DELETE /api/v1/chatflows/:id` does not validate resource type, allowing `agentflows:delete` and `chatflows:delete` to delete each other’s flow type
+## 31. 🟡 High Severity — Flowise: `DELETE /api/v1/chatflows/:id` does not validate resource type, allowing `agentflows:delete` and `chatflows:delete` to delete each other’s flow type
 
 **CVE:** `CVE-2026-69262` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-p5w8-m249-4r4v>
@@ -216,7 +367,7 @@ In Flowise, `DELETE /api/v1/chatflows/:id` authorizes requests with `checkAnyPer
 
 ---
 
-## 22. 🟡 High Severity — Flowise: SSRF Protection Bypass via IPv4-Mapped IPv6 Addresses
+## 32. 🟡 High Severity — Flowise: SSRF Protection Bypass via IPv4-Mapped IPv6 Addresses
 
 **CVE:** `CVE-2026-69257` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-c6xh-wv4j-ppv5>
@@ -227,7 +378,7 @@ Flowise&#x27;s HTTP security module (`httpSecurity.ts`) fails to normalize IPv4-
 
 ---
 
-## 23. 🟡 High Severity — Flowise: Remote Code Execution Vulnerability in CSVAgent
+## 33. 🟡 High Severity — Flowise: Remote Code Execution Vulnerability in CSVAgent
 
 **CVE:** `CVE-2026-69256` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-x6vm-w76m-8j7g>
@@ -238,7 +389,7 @@ The CSVAgent node was observed to allow users to write Python code which gets ex
 
 ---
 
-## 24. 🟡 High Severity — Flowise: CSV Agent Remote Code Execution via Pyodide Code Injection — Root Shell Verified
+## 34. 🟡 High Severity — Flowise: CSV Agent Remote Code Execution via Pyodide Code Injection — Root Shell Verified
 
 **CVE:** `CVE-2026-69255` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-vmv7-4m6c-3cg5>
@@ -255,7 +406,7 @@ The CSVAgent node was observed to allow users to write Python code which gets ex
 
 ---
 
-## 25. 🟡 High Severity — Flowise Sandbox Escape to RCE
+## 35. 🟡 High Severity — Flowise Sandbox Escape to RCE
 
 **CVE:** `CVE-2026-69253` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-wg86-r78f-74mp>
@@ -272,7 +423,7 @@ Credits:        Luke Jahnke and Al…
 
 ---
 
-## 26. 🟡 High Severity — Flowise: Missing authorization on `/api/v1/files` allows low-privileged API keys to list and delete files across workspaces within the same organization
+## 36. 🟡 High Severity — Flowise: Missing authorization on `/api/v1/files` allows low-privileged API keys to list and delete files across workspaces within the same organization
 
 **CVE:** `CVE-2026-69252` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-wp74-f5hh-5f3r>
@@ -285,7 +436,7 @@ The `/files` route is mounted wi…
 
 ---
 
-## 27. 🟡 High Severity — Flowise: Unauthenticated OAuth2 Refresh Enables Non-Blind SSRF and Secret Exfiltration
+## 37. 🟡 High Severity — Flowise: Unauthenticated OAuth2 Refresh Enables Non-Blind SSRF and Secret Exfiltration
 
 **CVE:** `CVE-2026-69250` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://github.com/advisories/GHSA-r745-8hwv-h473>
@@ -296,7 +447,7 @@ The OAuth2 token refresh endpoint (`POST /api/v1/oauth2-credential/refresh/:cred
 
 ---
 
-## 28. 🟡 High Severity — New cPanel Critical Flaw Could Let Hosting Customers Run SQL as Database Root
+## 38. 🟡 High Severity — New cPanel Critical Flaw Could Let Hosting Customers Run SQL as Database Root
 
 **CVE:** `CVE-2026-58048` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-04
 **Reference:** <https://thehackernews.com/2026/08/new-cpanel-critical-flaw-could-let.html>
@@ -307,96 +458,7 @@ The database bug is tracked as CVE-2026-58048 (CVSS 4.0 score: 9.4) and …
 
 ---
 
-## 29. 🟡 High Severity — python-cryptography verifier accepts wildcard DNS names allowing escape from permittedSubtrees
-
-**CVE:** `CVE-2026-69248` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://github.com/advisories/GHSA-m2h6-j472-rp4c>
-
-> ### Summary
-If an intermediate constrained CA permits the DNS name `foo.example.com`, and the leaf certificate has a wildcard in its DNS SAN of `*.example.com`, python-cryptography&#x27;s verifier accepts which allows escaping outside of the permitted names.
-
-### PoC
-
-```
-#!/usr/bin/env python3
-&quot;&quot;&quot;Standalone PoC: pyca&#x27;s DNSConstraint::matches admits a too-broad wildcard SAN.
-
-S…
-
----
-
-## 30. 🟡 High Severity — cryptography: PKCS#7 EnvelopedData decryption exposes a Bleichenbacher oracle through distinguishable errors and timing
-
-**CVE:** `CVE-2026-69247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://github.com/advisories/GHSA-g6cj-pr64-35w5>
-
-> ### Summary
-
-`pkcs7_decrypt_der`, `pkcs7_decrypt_pem`, and `pkcs7_decrypt_smime` reported the
-outcome of decrypting a `RecipientInfo`&#x27;s `encryptedKey` in several
-distinguishable ways, one of which disclosed the exact length recovered from the
-RSA operation. The same distinction was also observable by timing. An
-application that decrypts attacker-supplied `EnvelopedData` and reflects the
-outco…
-
----
-
-## 31. 🟡 High Severity — Hono: ReDoS in CORS middleware via Access-Control-Request-Headers
-
-**CVE:** `CVE-2026-69207` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://github.com/advisories/GHSA-8j4g-w8fx-2239>
-
-> ### Summary
-
-The built-in CORS middleware (`hono/cors`) parses the attacker-controlled `Access-Control-Request-Headers` request header during a preflight (`OPTIONS`) request using a regular expression whose running time is quadratic in the input length. A single request carrying a long run of whitespace can consume seconds of CPU, and repeated requests can render the service unresponsive. This par…
-
----
-
-## 32. 🟡 High Severity — ip-address: Address4 decodes leading-zero octets as decimal while resolvers decode them as octal, allowing SSRF and trust-boundary bypass
-
-**CVE:** `CVE-2026-69192` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://github.com/advisories/GHSA-mwp4-54f8-5fhr>
-
-> ### Summary
-
-`Address4` accepts an octet written with a leading zero and decodes it as decimal, while the WHATWG URL host parser, `inet_aton`, and `getaddrinfo` all decode a leading zero as octal. The library and the network stack therefore disagree about which host a string names. `new Address4(&#x27;012.0.0.1&#x27;)` reports `correctForm()` of `12.0.0.1` and `isPrivate()` of `false`, but `fetch(…
-
----
-
-## 33. 🟡 High Severity — ip-address: a CIDR suffix on the parsed address suppresses special-use classification and can bypass SSRF and trust-boundary checks
-
-**CVE:** `CVE-2026-69198` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://github.com/advisories/GHSA-4xrf-jv44-h6hh>
-
-> ### Summary
-
-Every special-use classification method is built on `isInSubnet`, which short-circuits to `false` whenever the address&#x27;s own subnet mask is *shorter* than the reference range&#x27;s mask. That mask comes verbatim from the CIDR suffix on the parsed input, so appending a suffix such as `/0` suppresses classification entirely: `isLoopback()`, `isPrivate()`, `isLinkLocal()`, `isCGNAT…
-
----
-
-## 34. 🟡 High Severity — ip-address: misclassification of IPv4-mapped/NAT64 IPv6 addresses can bypass SSRF and trust-boundary checks
-
-**CVE:** `CVE-2026-54272` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://github.com/advisories/GHSA-22jq-vg5j-6vgg>
-
-> ### Summary
-
-`Address6`&#x27;s special-property checks misclassify IPv4-mapped (`::ffff:0:0/96`) and NAT64 well-known (`64:ff9b::/96`) IPv6 addresses. These checks classify an address by its IPv6 wrapper rather than by the IPv4 address it embeds, so `isLoopback()`, `isLinkLocal()`, `isMulticast()`, and `isUnspecified()` all return `false` for literals such as `::ffff:127.0.0.1` or `::ffff:169.254.…
-
----
-
-## 35. 🟡 High Severity — fast-uri vulnerable to host confusion via backslash authority introducer
-
-**CVE:** `CVE-2026-18446` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-03
-**Reference:** <https://github.com/advisories/GHSA-7p8r-x3mc-p8w7>
-
-> ### Impact
-
-`fast-uri` v4.1.1 and earlier require a literal `//` to recognize a URI authority, so a reference that uses `\\`, `/\`, or `\/` as the authority introducer (in place of `//`, after an optional scheme) is parsed with no authority: the sequence and everything after it fold into the path. Node&#x27;s native WHATWG `URL` (used by `fetch()`, `undici`, and Node&#x27;s `http`/`https` clients)…
-
----
-
-## 36. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 39. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
