@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-06T13:30:01.038128+00:00",
-  "total": 25,
+  "generated": "2026-08-06T23:47:08.893407+00:00",
+  "total": 29,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -38,6 +38,24 @@
       "is_high_severity": true
     },
     {
+      "id": "CVE-2026-67309",
+      "title": "Traefik: Kubernetes Ingress NGINX RewriteTarget Path Traversal Allows Route-Level Authentication Bypass",
+      "summary": "## Summary\n\nThere is a high severity vulnerability in Traefik's Kubernetes Ingress NGINX provider. When an Ingress uses the `nginx.ingress.kubernetes.io/rewrite-target` annotation with a regular expression that captures attacker-controlled text without requiring a path separator (for example path `/api(.*)` with rewrite target `/$1`), the generated `RewriteTarget` middleware can turn an initially safe request path into a dot-segment traversal path after the router has already been selected.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.8\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes Ingress NGINX provider creates an internal `RewriteTarget` middleware for the `nginx.ingress.kubernetes.io/rewrite-target` annotation. When an Ingress path captures attacker-controlled text without requiring a path separator, the middleware can turn an initially safe path into a dot-segment traversal path after Traefik has already selected the router.\n\nFor example, with Ingress path `/api(.*)` and rewrite target `/$1`, an unauthenticated request to `/api../admin` follows this flow:\n\n1. The default entry-point path sanitizer leaves `/api../admin` unchanged because `api..` is one ordinary segment.\n2. The public router's `PathRegexp(\"(?i)^/api(.*)\")` rule matches.\n3. `RewriteTarget` captures `../admin` and creates `/../admin`.\n4. The middleware forwards `/../admin` without checking whether path normalization changes it.\n5. A backend that normalizes paths resolves `/../admin` to `/admin`.\n6. The request reaches content intended to be reachable only through a separate `/admin` router with BasicAuth, DigestAuth, or ForwardAuth.\n\nThis is an unpatched sibling of [GHSA-cxjq-mrr5-89rv](https://github.com/traefik/traefik/security/advisories/GHSA-cxjq-mrr5-89rv), which added post-replacemen",
+      "link": "https://github.com/advisories/GHSA-8rxv-jg7p-wvg3",
+      "published": "2026-08-06T16:45:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-67309"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
       "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
       "summary": "A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links.\n\nWe observed production websites embedding hidden prompt injection payloads inside \"Ask AI\" buttons on marketing and competitor comparison pages. When a user",
@@ -47,21 +65,6 @@
       "tags": [
         "news",
         "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/",
-      "title": "CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency is giving federal agencies three days to mitigate vulnerabilities in IBM Langflow, N-central, and Apache Tomcat, all actively exploited. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/",
-      "published": "2026-08-05T15:51:33+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -180,6 +183,40 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-71433",
+      "title": "LangGraph: Namespace prefix matching crosses segment boundaries in Postgres and SQLite stores",
+      "summary": "## Summary\n\nThe Postgres and SQLite stores persist hierarchical namespaces as a dot-joined string (`(\"memories\", \"alice\")` becomes `memories.alice`) and scoped reads by matching that string with `LIKE '<path>%'`. Because `LIKE` has no notion of the `.` separator, a scoped `search` or `list_namespaces` also matched sibling namespaces whose flattened form shares leading characters.\n\nApplications commonly use the namespace as a tenant boundary. Where they do, a read scoped to one namespace could return items belonging to another, without any crafted input \u2014 an ordinary scoped request was sufficient.\n\nWe have no evidence of this behavior being exploited in the wild.\n\n## Affected users / systems\n\nYou may be affected if you:\n\n- use `PostgresStore`/`AsyncPostgresStore` or `SqliteStore`/`AsyncSqliteStore`, and\n- rely on the namespace to separate data between users or tenants, and\n- have namespace labels where one is a prefix of another (`1` and `12`, `alice` and `alice2`), or labels containing `_` or `%`\n\nApplications whose namespace labels are fixed-length identifiers such as UUIDs, containing no `_` or `%`, are not affected \u2014 no such label can be a prefix of another. `InMemoryStore` compares namespaces element-wise and is not affected.\n\nThree distinct cases were possible:\n\n- **Sibling namespaces.** A read scoped to `(\"foo\",)` also returned items under `(\"foobar\",)` and `(\"foo2\",)`.\n- **Unescaped pattern metacharacters.** `_` and `%` are legal namespace labels \u2014 only `.` is rejected \u2014 but were interpolated into the match pattern unescaped, so `(\"user_1\",)` also matched `(\"userX1\",)`.\n- **Suffix conditions.** `list_namespaces(suffix=(\"alice\",))` also matched the sibling leaf `users.malice`.\n\nThis is not SQL injection. Values were passed as bound parameters and never interpolated into statement text; the bound value *was itself* a `LIKE` pattern whose metacharacters were not neutralized.\n\n## Impact\n\n- Confidentiality: disclosure of stored items belonging to namespaces outsid",
+      "link": "https://github.com/advisories/GHSA-47pj-3jcm-6whg",
+      "published": "2026-08-06T19:03:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71433"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://aws.amazon.com/blogs/security/route-amazon-bedrock-guardrails-interventions-to-amazon-security-lake/",
+      "title": "Route Amazon Bedrock Guardrails interventions to Amazon Security Lake",
+      "summary": "Security teams investigating AI-related incidents need guardrail intervention data alongside their existing security telemetry. Routing Amazon Bedrock Guardrails violations to Amazon Security Lake makes this possible. With this integration, you can query guardrail events alongside identity, network, and application security data in a single layer. When a guardrail blocks a prompt injection attempt or redacts [\u2026]",
+      "link": "https://aws.amazon.com/blogs/security/route-amazon-bedrock-guardrails-interventions-to-amazon-security-lake/",
+      "published": "2026-08-06T19:00:15+00:00",
+      "source": "AWS Security Blog",
+      "tags": [
+        "cloud",
+        "aws",
+        "blog"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/",
       "title": "Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts",
       "summary": "Zenity researchers reported the findings to Anthropic and OpenAI in late 2025 and early 2026, but they remain unpatched. The post Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts appeared first on SecurityWeek .",
@@ -212,11 +249,11 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-65602",
-      "title": "Traefik CRD IngressRouteTCP ServersTransport Cross-Provider Namespace Bypass",
-      "summary": "## Summary\n\nThere is a medium-severity cross-provider reference vulnerability in Traefik's Kubernetes CRD provider. The `crossProviderNamespaces` allowlist is enforced for HTTP `serversTransport` references but was not enforced for `IngressRouteTCP` service `serversTransport` references. A low-privileged Kubernetes user in a namespace that is not listed in `crossProviderNamespaces` could set `serversTransport: foo@file` on an `IngressRouteTCP` service, causing Traefik to accept the forbidden cross-provider reference and use the file-provider `TCPServersTransport` \u2014 including privileged backend mTLS client certificates, SPIFFE identity, or PROXY-protocol settings. The fix applies the `crossProviderNamespaces` allowlist to TCP `serversTransport` references.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.6.23\n- https://github.com/traefik/traefik/releases/tag/v3.7.7\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes CRD provider enforces `crossProviderNamespaces` for several\ncross-provider references, but `IngressRouteTCP` service\n`serversTransport` references skip that allowlist. A low-privileged Kubernetes\nuser in a namespace that is not listed in `crossProviderNamespaces` can still\nset `serversTransport: foo@file` on an `IngressRouteTCP` service. Traefik\naccepts the forbidden cross-provider reference and later uses the referenced\n`TCPServersTransport`, including privileged backend mTLS client certificates,\nSPIFFE identity, or PROXY protocol settings.\n\n## Description\n\n`crossProviderNamespaces` is documented and implemented as an allowlist for\nnamespaces that may declare cross-provider references from Kubernetes CRD\nobjects. HTTP `serversTransport` references enforce that allowlist. TCP\n`serversTransport` references do not.\n\nAn attacker with low Kubernetes privileges ",
-      "link": "https://github.com/advisories/GHSA-42cj-m3vj-89wv",
-      "published": "2026-08-05T21:53:35Z",
+      "id": "GHSA-596p-6jv8-775v",
+      "title": "Craft CMS: Authenticated leak of secret environment variables",
+      "summary": "Environment variables and secrets are interpolated into a Twig template even when the Twig sandbox is enabled, allowing them to be leaked by an authenticated attacker.\n\nThe Craft vulnerability [CVE-2026-31857](https://github.com/craftcms/cms/security/advisories/GHSA-fp5j-j7j4-mcxc) was only patched by applying sandboxed Twig templating. This theoretically protects Craft CMS against RCE attacks, provided the sandbox is enabled and secure, with no known bypasses.\n\nHowever, the same request parameter `elementId,` which allows for sandboxed Twig templates to be rendered, also includes functionality that interpolates referenced environment variables. If the parameter includes a string of the form `${ENV_VAR}` then the string is replaced with the environment variable or secret from a secrets file with that name.\n\nAfterward, the string is rendered as a Twig template. If the sandbox is disabled, Twig templates can already gain RCE or access environment variables using the getenv function. Sandboxed Twig templates should not have this access, but now do thanks to this additional environment-variable replacement behavior.\n\nThe template\u2019s resulting value is not directly reflected in the response. To exfiltrate the value, the sandboxed Twig template cannot use network functions. But it can use a blind error-based approach similar to blind SQL injection. With enough requests, any environment variable or secret can be incrementally leaked. This can be abused to forge a session, escalate privileges with the `CRAFT_SECURITY_KEY`, and steal credentials for the database, SMTP server, or other connected APIs or blob storage.\n\n## Impact\n\nAn authenticated attacker, with permission to access the control panel, can render a malicious Twig template and steal arbitrary environment variables and secrets with a large number of requests, even if the Twig sandbox is enabled through `enableTwigSandbox()`.",
+      "link": "https://github.com/advisories/GHSA-596p-6jv8-775v",
+      "published": "2026-08-06T21:53:31Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -224,17 +261,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-65602"
+        "CVE-2026-31857"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-65601",
-      "title": "Traefik Gateway API HTTPRoute BackendRef ExtensionRef Namespace Confusion",
-      "summary": "## Summary\n\nThere is a medium-severity namespace-confusion vulnerability in Traefik's Kubernetes Gateway API provider. When resolving `HTTPRoute.spec.rules[].backendRefs[].filters[].extensionRef`, Traefik used the backend Service namespace instead of the `HTTPRoute` namespace. A low-privileged route author holding a `ReferenceGrant` for a cross-namespace Service could therefore bind a Traefik `Middleware` from the backend namespace without a separate grant for that middleware. If the reused middleware sets trusted reverse-proxy identity headers, downstream applications may receive attacker-selected authenticated-identity state. The fix resolves `extensionRef` against the `HTTPRoute` namespace.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.7\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes Gateway API provider resolves\n`HTTPRoute.spec.rules[].backendRefs[].filters[].extensionRef` in the backend\nService namespace instead of the `HTTPRoute` namespace. A low-privileged route\nauthor with a permitted cross-namespace Service reference can therefore bind a\nTraefik `Middleware` from the backend namespace without a separate grant for\nthat middleware. If the reused middleware sets trusted reverse-proxy identity\nheaders, downstream applications can receive attacker-selected authenticated\nidentity state.\n\n## Description\n\nGateway API `ReferenceGrant` allows a namespace owner to grant a route in\nanother namespace permission to reference a specific backend object, such as a\n`Service`. That grant should not implicitly authorize the route author to bind\nother policy objects in the backend namespace.\n\nIn the affected code path, Traefik copies `backendRef.namespace` into a local\n`namespace` variable. It correctly uses that namespace to validate and load the\nbackend `Service`, but",
-      "link": "https://github.com/advisories/GHSA-qq9q-x9w4-chhj",
-      "published": "2026-08-05T21:49:19Z",
+      "id": "CVE-2026-14793",
+      "title": "Craft CMS: Missing authorization check allows non-admin control panel users to reorder Global Sets",
+      "summary": "The `reorder-sets` action in Craft CMS\u2019s `GlobalsController` is missing the `requireAdmin()` check that the adjacent `save-set` and `delete-set` actions both enforce. Any authenticated control panel user can POST to `/actions/globals/reorder-sets` and permanently reorder all global sets in the project config, regardless of whether they have admin access. The reordering is written through to the project config and persists across requests.\n\n## Description\n\n`GlobalsController` exposes three administrative actions for managing global set structure. Two of them gate on admin status; the third does not.\n\n## Prerequisites\n\n- A Craft CMS instance with at least two global sets and a non-admin control panel user account.\n\n## Impact\n\nA non-admin control panel user can reorder all global sets. While this does not expose or modify content, reordering global sets modifies the project config -- a versioned artifact that is typically committed to source control and deployed across environments. An attacker can create noise in the project config history, trigger config-sync conflicts, or manipulate the display order seen by all editors in the admin panel. The same non-admin user cannot create or delete global sets because those actions correctly enforce `requireAdmin()`.",
+      "link": "https://github.com/advisories/GHSA-9p7c-v5x3-rfx8",
+      "published": "2026-08-06T20:55:48Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -242,17 +279,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-65601"
+        "CVE-2026-14793"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-71320",
-      "title": "Nuxt: Server-Side Remote Code Execution via Runtime Template Injection in Nuxt Server Island Props",
-      "summary": "## Impact\n\nNuxt server islands accept props via the `/__nuxt_island/` endpoint. When `vue.runtimeCompiler: true` is enabled (off by default) and the application has a server island component that forwards props into Vue's dynamic component resolution (`<component :is>`, `resolveDynamicComponent`, or `h()`), an attacker can inject a `template` key into the island props to achieve server-side remote code execution in the Nitro process.\n\n```json\n{ \"as\": { \"template\": \"<attacker-controlled>\" } }\n```\n\nVue's runtime template compiler compiles and executes the attacker-controlled `template` in the server process. The same primitive also works on the client side when the runtime compiler is active there, though the server-side path is the primary concern.\n\nSome component libraries expose a polymorphic `as` / `asChild` prop that forwards its value into `<component :is>`; `@nuxt/ui` (via `reka-ui`) is a widely used example. An application is affected if such a component receives the attacker-controlled value, provided `vue.runtimeCompiler` is also enabled. Note this does not require the island author to explicitly forward a prop: island props that the island component does not declare fall through as attributes onto its single root element (standard Vue attribute inheritance), so an island whose root is a polymorphic component receives the attacker's `as` value implicitly. These libraries are not themselves vulnerable; they are noted only because they commonly provide the dynamic-component sink.\n\n## Common configurations that satisfy the preconditions\n\nThe flaw is in Nuxt core. The library below is not itself vulnerable; it is noted because it commonly provides the dynamic-component sink an application might inadvertently expose.\n\n- **`@nuxt/ui`** (via its underlying **`reka-ui`** primitives) exposes a polymorphic `as` / `asChild` prop that is forwarded into Vue's dynamic-component resolution. Installing `@nuxt/ui` does not by itself register any component as a server island.",
-      "link": "https://github.com/advisories/GHSA-9473-5f9j-94wq",
-      "published": "2026-08-05T21:29:55Z",
+      "id": "CVE-2026-18654",
+      "title": "AWS CLI: Disabled SSH host key verification in Amazon AWS CLI EMR helper commands",
+      "summary": "### Summary\nThe AWS Command Line Interface (AWS CLI) is a unified tool to manage AWS services from the command line. An issue exists where the EMR SSH helper commands (`aws emr ssh`, `aws emr socks`, `aws emr put`, `aws emr get`) passed `StrictHostKeyChecking=no` to the underlying SSH client, disabling host key verification.\n\n### Impact\nA network-positioned actor could perform a man-in-the-middle action to intercept SSH sessions and file transfers between the client and EMR cluster instances. Successful exploitation requires the actor to have network access on the path between the client machine and the EMR cluster endpoint. This could result in full visibility of commands executed, files transferred, and credentials passed over the SSH session.\n\nImpacted versions: AWS CLI v1 <= 1.45.27, AWS CLI v2 <= 2.35.2\n\n### Patches\nThis issue has been addressed in AWS CLI v1 version 1.45.28 and AWS CLI v2 version 2.35.3. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n### Workarounds\nThere is no workaround. The insecure SSH option was hardcoded and could not be overridden by the user.\n\n### References\nIf you have any questions or comments about this advisory, we ask that you contact AWS Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\n### Acknowledgement\nWe would like to thank Ali Sunbul for collaborating on this issue through the coordinated vulnerability disclosure process.",
+      "link": "https://github.com/advisories/GHSA-hqvf-45jj-mccq",
+      "published": "2026-08-06T20:15:30Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -260,17 +297,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-71320"
+        "CVE-2026-18654"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-71316",
-      "title": "Nuxt runtime payload cache discloses another user's SSR data across users and to unauthenticated clients",
-      "summary": "### Impact\n\nWhen a page is covered by `routeRules` `cache` / `swr` / `isr`, Nuxt enables runtime payload extraction and serves `/<page>/_payload.json`. On affected versions the renderer stored the SSR payload in the shared `cache:nuxt:payload` storage under a path-only key (no cookie, `authorization`, or `cache.varies` dimension) and, on a later payload request, returned the cached entry before route middleware / page guards ran again.\n\nAs a result, once any authenticated user warms a protected, cached page, a subsequent `GET /<page>/_payload.json` from an unauthenticated client or a different authenticated user receives the first user's payload: the full SSR data for that route, including anything loaded via `useFetch` / `useAsyncData` (for example `/api/me`: profile, tenant, billing, token-like values). The HTML response stays correctly varied and protected; only the extracted payload leaks. Both cross-user (A warms, B receives A) and unauthenticated disclosure are exploitable. `cache.varies` does not mitigate it, because the payload cache ignores `varies`.\n\nIntroduced when runtime payload extraction landed for cached routes (#34410); the regression is specific to the 4.x line, where the runtime `cache:nuxt:payload` storage was added and the `import.meta.prerender` gate on the payload-cache read/writes was dropped. The 3.x line shipped the same feature with the gate intact and is not affected.\n\n### Patches\n\nFixed in `nuxt@4.5.1`. Runtime payload-cache reads and writes are again confined to prerendering (`import.meta.prerender`); at runtime, `/<page>/_payload.json` follows the normal render path so route middleware, `routeRules.appMiddleware`, and page guards run for the current request. `main` / v5 and the `3.x` line already had this property, so 3.x is not affected.\n\n### Workarounds\n\n- Set `experimental.payloadExtraction: false` (reporter-validated): the standalone `/_payload.json` endpoint returns 404 and the page still serves a 200 with an inline payload.\n- Do ",
-      "link": "https://github.com/advisories/GHSA-wm8w-6qjm-cv43",
-      "published": "2026-08-05T21:14:33Z",
+      "id": "CVE-2026-71476",
+      "title": "Nx: Zip-Slip in the self-hosted remote cache",
+      "summary": "## Summary\n\nThe Nx **self-hosted HTTP remote cache** extracts downloaded cache artifacts without constraining where files are written. A malicious \u2014 or on-path (MITM) \u2014 remote cache server can return a crafted tar archive whose entries escape the cache directory and write to arbitrary locations on the machine running Nx. This arbitrary file write can be escalated to remote code execution. The directly exploitable issue is the self-hosted HTTP remote cache.\n\n## Affected Packages\n\n> [!IMPORTANT]\n> **Nx's default local cache and Nx Cloud are NOT affected.** The default local cache and Nx Cloud use separate cache retrieval and extraction mechanisms that does not have this vulnerability. Only workspaces that use a self-hosted remote cache (`NX_SELF_HOSTED_REMOTE_CACHE_SERVER`, `@nx/s3-cache`, etc.) are affected.\n\nTwo self-hosted cache surfaces are affected:\n\n1. **The built-in HTTP remote cache** (`NX_SELF_HOSTED_REMOTE_CACHE_SERVER`, in `nx`) \u2014 **fixed** in the patched release.\n2. **The self-hosted cache packages** \u2014 `@nx/s3-cache`, `@nx/gcs-cache`, `@nx/azure-cache`, `@nx/shared-fs-cache` (and their `@nx/powerpack-*` predecessors) \u2014 the same flaw in their own extractor. **Deprecated** (CVE-2025-36852) and not patched; migrate off (see Remediation).\n\nThe shared step that copies cached outputs into the workspace was also part of the exposure and is hardened in the patched `nx` release.\n\n## Remediation\n\n**Upgrade to Nx `22.7.7` or `23.0.2` (or later).** The patched extractor is a drop-in \u2014 no configuration change is required.\n\n### If you use the S3, GCS, Azure, or shared-filesystem cache packages\n\n`@nx/s3-cache`, `@nx/gcs-cache`, `@nx/azure-cache`, and `@nx/shared-fs-cache` (and their `@nx/powerpack-*` predecessors) are separately versioned packages and are **already deprecated** (see CVE-2025-36852). Upgrading `nx` hardens the shared restore step, but it does not fully secure these packages. The remediation for them is to **migrate off** \u2014 to Nx Cloud or the self-hosted O",
+      "link": "https://github.com/advisories/GHSA-vp3h-ghgh-jr7g",
+      "published": "2026-08-06T20:10:03Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -278,17 +315,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-71316"
+        "CVE-2026-71476"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-71314",
-      "title": "Nuxt: Unauthenticated out-of-memory crash via unbounded v-for expansion in island rendering",
-      "summary": "### Impact\n\nAn unauthenticated attacker can crash a Nuxt server that renders any island / server component containing a `v-for` over a prop (for example `v-for=\"n in count\"` or a `<slot v-for>`). Because the island URL hash is a non-secret digest of the request, the attacker can compute a valid hash for arbitrary props and send the iterated prop as a large integer. The server then expands the `v-for` to that many nodes during SSR, allocating memory proportional to the attacker's number. Reporter figures: `count=8000000` produced a 142.9 MB response; `count=40000000` (and `items=4000000` on a slot list) produced an out-of-memory crash of the worker from a single ~130-byte request. Both the plain `v-for` path (Vue's `ssrRenderList`) and the slot path (`vforToArray`) are affected.\n\n### Patches\n\nFixed in `nuxt@4.5.1` and `nuxt@3.21.10`. Island/server-component `v-for` sources are now clamped to a maximum iteration count (`MAX_VFOR_LENGTH = 100000`) at the render boundary, covering the plain path, the `<slot v-for>` element, and the `vforToArray` slot-props helper. Combined with the body-size cap (GHSA-9pgf-384g-p7mv), a single island render can no longer allocate without bound regardless of which `v-for` path is used or whether the prop arrives as an integer or an array.\n\n### Workarounds\n\nAvoid `v-for` directly over an unclamped prop in server components, or clamp the count in the component (`v-for=\"n in Math.min(count, 1000)\"`). A body-size limit in front of `/__nuxt_island/` only mitigates array-shaped inputs, not the integer-amplification case.\n\n### References\n\n- Bound helper: `packages/nuxt/src/app/components/vfor.ts`\n- Transform: `packages/nuxt/src/components/plugins/islands-transform.ts`\n- Slot helper: `packages/nuxt/src/app/components/utils.ts` (`vforToArray`)",
-      "link": "https://github.com/advisories/GHSA-hxcr-hm88-mpq6",
-      "published": "2026-08-05T20:59:04Z",
+      "id": "CVE-2026-71437",
+      "title": "Mermaid Architecture diagrams are vulnerable to prototype pollution",
+      "summary": "Rendering an untrusted `architecture-beta` diagram lets the diagram author write an arbitrary property with the value `horizontal` or `vertical` onto `Object.prototype`. A group id of `__proto__` is accepted as a valid parent.\n\n### Impact\n\nAny code in the same realm that reads a property of that name from an arbitrary object, or enumerates an object with bare `for...in`, observes the injected value (which can only be the string `horizontal` or `vertical`.\n\nThis may mean corrupted option/config defaults, bypassed truthiness checks, causing denial of service or logic corruption in the embedding application.\n\nBecause the injected value cannot be an object or function, this is not directly exploitable for remote code execution.\n\n### PoC\n\n```\narchitecture-beta\n      group mermaidPrototypePollutionMarker(cloud)[Marker]\n      service a(server)[A] in __proto__\n      service b(server)[B] in mermaidPrototypePollutionMarker\n      a:R -- L:b\n```\n\nThe vulnerable write was introduced in commit [cb0a4703bdf01d47508bde1c08aa9a980d70bc20](https://github.com/mermaid-js/mermaid/commit/cb0a4703bdf01d47508bde1c08aa9a980d70bc20) and first shipped in `mermaid@11.5.0`. The lines are unchanged in every release since.\n\n### Patches\n\nThis has been patched by https://github.com/mermaid-js/mermaid/commit/99af3fc35ef0a9a9c8c6314521344d67523ddccf, released in [Mermaid v11.16.1](https://github.com/mermaid-js/mermaid/releases/tag/mermaid%4011.16.1)\n\n### Workarounds\n\nThere are no known workarounds. Please update to a patched version.\n\n### References\n\n_Are there any links users can visit to find out more?_\n\n- https://github.com/mermaid-js/mermaid/commit/99af3fc35ef0a9a9c8c6314521344d67523ddccf\n- https://github.com/mermaid-js/mermaid/releases/tag/mermaid%4011.16.1",
+      "link": "https://github.com/advisories/GHSA-3rrr-jr9j-h3q3",
+      "published": "2026-08-06T19:51:59Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -296,17 +333,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-71314"
+        "CVE-2026-71437"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-59733",
-      "title": "rclone `serve restic --private-repos` authorization bypass: `..` in the URL path lets an authenticated user read, overwrite and delete other users' repositories",
-      "summary": "## Summary\n\n`rclone serve restic --private-repos` exists to let one rclone instance host many users' restic backup repositories behind HTTP Basic auth while keeping each user confined to a path prefix of `/<username>/`. The documentation states the flag \"can be used to limit users to repositories starting with a path of `/<username>/`\", and the shipped test `TestResticPrivateRepositories` asserts that user `test` may reach `/test/config` but is `403`-blocked from `/other_user/config`. This isolation is the entire security purpose of the flag.\n\nThe isolation is enforced by two independent chi middlewares that derive the username and the backend object path from two *different* sources, and the path source is never canonicalized. `checkPrivate` authorizes the request by comparing the routed `{userID}` path segment against the authenticated user, while `WithRemote` builds the backend object key from the raw, un-cleaned URL path. A request such as `GET /<me>/../<victim>/config` keeps the first path segment equal to the attacker's own username (so `checkPrivate` returns the request as authorized) yet hands the backend the literal remote `me/../victim/config`. On any backend that resolves object paths with POSIX `path.Join`/`path.Clean` semantics \u2014 which includes the bundled `memory` backend used in the PoC below, and the widely deployed `sftp` and `ftp` backends \u2014 that `..` segment collapses, and the operation is performed against the victim's object.\n\nBecause the same un-cleaned remote feeds the `GET` (download), `POST` (upload/overwrite) and `DELETE` handlers, any authenticated user can read, overwrite, and delete the files of any other user's private repository hosted on the same server. For restic that means reading another tenant's `config`/`keys` metadata and pack files, corrupting their repository, or deleting their backups outright (subject to `--append-only`, which still permits cross-tenant reads).\n\n## Affected code (v1.74.3, commit `37e4117\u2026`)\n\n`cmd/serve/rest",
-      "link": "https://github.com/advisories/GHSA-fqj9-69pf-6pjg",
-      "published": "2026-08-05T20:41:22Z",
+      "id": "CVE-2026-55824",
+      "title": "Contao crawler leaks auth credentials to external hosts",
+      "summary": "### Summary\nContao's crawler tries to prevent confidential HTTP client options from being sent to external domains by creating a scoped client: full options for root page origins, cleaned options for everything else. The cleaner removes `Cookie` and `Authorization` headers, but it removes the non-Symfony option names `basic_auth` and `bearer_auth` instead of Symfony HttpClient's real `auth_basic` and `auth_bearer` options.\n\nWhen `contao.crawl.default_http_client_options` contains Basic or Bearer authentication for a protected staging/production site, those credentials remain in the \"clean\" client used for external links or configured additional URIs. An attacker who can get an external URL crawled, for example through a link on a crawled page while the broken-link checker is enabled, can receive the crawler credentials.\n\n## Technical Detail\n\n### Root Cause\n\n```php\n// core-bundle/src/Crawl/Escargot/Factory.php:175-209 @ e550b92a01ef625bd546e6c3956dd200af05ebf0\nprivate function createHttpClient(array $options = []): HttpClientInterface\n{\n    $options = array_merge_recursive(\n        [\n            'headers' => [\n                'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',\n                'user-agent' => self::USER_AGENT,\n            ],\n            'max_duration' => 10,\n        ],\n        array_merge_recursive($this->getDefaultHttpClientOptions(), $options),\n    );\n\n    $cleanOptions = $this->cleanOptionsFromConfidentialData($options);\n\n    if ($options === $cleanOptions) {\n        return ($this->httpClientFactory)($options);\n    }\n\n    $scopedOptionsByRegex = [];\n\n    foreach ($this->getRootPageUriCollection()->all() as $rootPageUri) {\n        $scopedOptionsByRegex[preg_quote($this->getOriginFromUri($rootPageUri))] = $options;\n    }\n\n    return new ScopingHttpClient(($this->httpClientFactory)($cleanOptions), $scopedOptionsByRegex);\n}\n```\n\n```php\n// core-bundle/src/Crawl/Escargot/Factory.php:226-247 @ e550b92a01ef625bd546e6c3956dd200af0",
+      "link": "https://github.com/advisories/GHSA-3mr9-p497-58f6",
+      "published": "2026-08-06T19:43:02Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -314,17 +351,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-59733"
+        "CVE-2026-55824"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-54572",
-      "title": "rclone: Unvalidated symlink target in local `--links` \u2014 arbitrary file write from an untrusted remote",
-      "summary": "### Summary\nWith `-l/--links`, rclone serializes symlinks as `<name>.rclonelink` text objects whose body is the link target. When rclone writes such an object to a local destination, it recreates the symlink with `os.Symlink(<object body>, <dest path>)` and performs NO validation of the target. If the source is attacker-controlled, the attacker sets the body to any absolute or `../` path, so rclone plants a symlink inside the destination that points anywhere on the victim's filesystem. Because a sibling object named `<name>.rclonelink` sorts before `<name>/...`, rclone creates the escaping symlink first and then writes a following object \"inside\" it; `mkdirAll`/`OpenFile` follow the planted symlink, so the file lands OUTSIDE the destination with attacker-chosen contents. This yields arbitrary file write as the victim user, e.g. overwriting `~/.ssh/authorized_keys`, `~/.bashrc`, or a crontab \u2014 i.e. code execution.\n\n### Details\n`backend/local/local.go`, `Object.Update()`:\n```go\n} else {\n    out = nopWriterCloser{&symlinkData}          // body of <name>.rclonelink = attacker data\n}\n...\nif o.translatedLink {\n    if err == nil {\n        if _, err := os.Lstat(o.path); err == nil {\n            os.Remove(o.path)\n        }\n        // Use the contents for the copied object to create a symlink\n        err = os.Symlink(symlinkData.String(), o.path)   // <-- target NEVER validated (abs / .. allowed)\n    }\n}\n```\n`symlinkData` is the raw body of the source object, fully attacker-controlled when copying from an untrusted remote. There is no check that the target is relative or stays within the destination. The subsequent write path (`mkdirAll()` \u2192 `file.MkdirAll`, then `file.OpenFile(..., O_CREATE)`) follows existing symlink components with no `O_NOFOLLOW`, so a file written under the planted symlinked directory escapes the destination.\n\n### PoC\n1) Get the official stable binary:\n```\ncurl -fsSLO https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-amd64.zip\nunzip -j rclone-v1.",
-      "link": "https://github.com/advisories/GHSA-cf44-9pgv-m4xc",
-      "published": "2026-08-05T20:15:01Z",
+      "id": "CVE-2026-65600",
+      "title": "Traefik: Authentication Bypass via Path Traversal in ReplacePathRegex Middleware",
+      "summary": "## Summary\n\nThere is a critical authentication-bypass vulnerability in Traefik's `ReplacePathRegex` middleware. When it is configured with a regular expression that captures user-controlled path segments without a mandatory separator (for example `regex: \"^/api(.*)\"`, `replacement: \"/$1\"`), a crafted request can produce an un-normalized replacement path such as `/../admin`, which Traefik forwarded to the backend without validation. A backend that normalizes the path may resolve it to a protected route, letting an unauthenticated attacker reach resources located behind authentication middleware. This is the same class of issue that was fixed for `StripPrefix` in CVE-2026-48020; that post-replacement normalization check had not been applied to `ReplacePathRegex`. The fix rejects any request whose replaced path does not match its normalized form.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.52\n- https://github.com/traefik/traefik/releases/tag/v3.6.23\n- https://github.com/traefik/traefik/releases/tag/v3.7.7\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\nA path traversal vulnerability in the ReplacePathRegex middleware allows an unauthenticated remote attacker to bypass authentication middleware and access protected routes by sending a single crafted HTTP request. The vulnerability exists because ReplacePathRegex does not perform post-replacement path normalization validation - the same check added to StripPrefix in the fix for CVE-2026-48020 was not applied to ReplacePathRegex.\n\n\n### Details\nWhen ReplacePathRegex is configured with a regex that captures user-controlled path segments without a mandatory path separator (e.g., `regex: \"^/api(.*)\"`, `replacement: \"/$1\"`), an attacker can inject implicit traversal sequences into the capture group.\n\n**Root cause:** `pkg/middlewares/repl",
+      "link": "https://github.com/advisories/GHSA-cxjq-mrr5-89rv",
+      "published": "2026-08-06T16:51:10Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -332,17 +369,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-54572"
+        "CVE-2026-65600"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-70610",
-      "title": "Electron: contextBridge object copy honors prototype setters",
-      "summary": "### Impact\nObjects copied across the `contextBridge` boundary from untrusted content could carry an attacker-influenced prototype, enabling prototype-pollution-style attacks against preload code despite context isolation being enabled.\n\nApps are only affected if their preload code accepts object arguments from untrusted content and reads properties from them without own-property checks. Apps that only accept primitive arguments, or that validate object arguments, are not affected.\n\n### Workarounds\nValidate objects received from untrusted content with own-property checks (`Object.hasOwn`), or copy them onto a null-prototype object before use.\n\n### Fixed Versions\n* `42.0.0-beta.4`\n* `41.2.2`\n* `40.9.2`\n* `39.8.9`\n\n### For more information\nIf you have any questions or comments about this advisory, email Electron at [security@electronjs.org](mailto:security@electronjs.org)",
-      "link": "https://github.com/advisories/GHSA-ff2p-hmqr-hxm4",
-      "published": "2026-08-05T17:41:20Z",
+      "id": "CVE-2026-54765",
+      "title": "Traefik: Gateway HTTPRoute backendRef filters can leak backend context across routes sharing a Service:port",
+      "summary": "## Summary\n\nThere is a medium severity vulnerability in Traefik's Kubernetes Gateway API provider.\nWhen two accepted HTTPRoutes target the same backend Service:port but configure different\n`backendRef` filters, Traefik may resolve both routes to the same child service and apply\nonly one route's filter set to all requests reaching that backend. In Gateway deployments\nwhere `backendRef` filters set security-sensitive headers \u2014 such as tenant identity,\nauthorization context, or values the backend trusts \u2014 an attacker who can create an\naccepted HTTPRoute sharing the same backend Service:port may cause their route's filter\ncontext to be applied to another route's requests, potentially crossing namespace\nboundaries when a `ReferenceGrant` permits cross-namespace targeting.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.6\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n# Traefik Gateway HTTPRoute backendRef filter context collision across routes sharing Service:port\n\n## Summary\n\nTraefik's Kubernetes Gateway API provider builds the dynamic HTTP backend service key for a Gateway `HTTPRoute` backendRef from only the backend namespace, Service name, protocol, and port. It does not include the HTTPRoute, listener, rule, or backendRef filter identity in that key.\n\nWhen two accepted HTTPRoutes point to the same backend `Service:port` but define different backendRef filters, Traefik can make both route WRR services reference the same child service. The child service then carries only one backendRef filter set, so one route can send requests to the backend with another route's backend context.\n\nThis is security-relevant when backendRef filters set, remove, or rewrite security-sensitive context, such as tenant, identity, auth, sanitization, Host, or path headers trusted by the backend.\n\nCredit: Qican Ma, Ding",
+      "link": "https://github.com/advisories/GHSA-6p8f-p8j2-rqmv",
+      "published": "2026-08-06T16:40:31Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -350,17 +387,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-70610"
+        "CVE-2026-54765"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-70606",
-      "title": "Electron: ProtocolResponse.url reuses the default session cache instead of the registering session",
-      "summary": "### Impact\nWhen a custom protocol handler returned a `ProtocolResponse` with a `url` and no `session`, Electron made the upstream request through `defaultSession` instead of the session that handled the protocol. A cached response could then be reused across otherwise isolated session partitions.\n\nApps that use `ProtocolResponse.url`, omit `ProtocolResponse.session`, and rely on separate sessions to isolate content are affected. Apps that set an explicit `session`, or that do not isolate content across sessions, are not affected.\n\n### Workarounds\nSet `ProtocolResponse.session` explicitly so the request uses the intended session's cache.\n\n### Fixed Versions\n* `43.0.0`\n* `42.5.1`\n* `41.9.1`\n* `40.10.6`\n\n### For more information\nIf you have any questions or comments about this advisory, email Electron at [security@electronjs.org](mailto:security@electronjs.org)",
-      "link": "https://github.com/advisories/GHSA-r4w5-6pfg-jxp5",
-      "published": "2026-08-05T16:07:59Z",
+      "id": "CVE-2026-71325",
+      "title": "Traefik: `allowCrossNamespace=false` bypass via `@kubernetescrd` TraefikService backendRef",
+      "summary": "## Summary\n\nThere is a medium severity vulnerability in Traefik's Kubernetes CRD provider. When `providers.kubernetesCRD.allowCrossNamespace` is disabled \u2014 the default \u2014 cross-namespace `@kubernetescrd` references are rejected for middlewares, TLS options and HTTP/TCP ServersTransports, but the same restriction was not applied to `TraefikService` backend references resolved by the service resolver. A tenant confined by RBAC to a single namespace can therefore bind its own router to a `TraefikService` owned by another namespace and expose or reroute that namespace's backend, defeating the namespace isolation `allowCrossNamespace=false` is meant to enforce. Traefik v2 releases and the unmaintained v3 minor lines below v3.6 are affected and will not receive a patch on their own line; the remedy for those users is upgrading to a maintained, patched release.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.54\n- https://github.com/traefik/traefik/releases/tag/v3.6.25\n- https://github.com/traefik/traefik/releases/tag/v3.7.10\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\nWhen `providers.kubernetesCRD.allowCrossNamespace=false` (the default), Traefik correctly rejects cross-namespace `@kubernetescrd` references for middlewares, TLS options, and HTTP/TCP `ServersTransport`, but it does not apply the same restriction to service (`TraefikService`) backendRefs. As a result, a Kubernetes tenant who is confined by RBAC to their own namespace can bind their own router to a `TraefikService` owned by another namespace simply by referencing it as `<victim-namespace>-<name>@kubernetescrd`, defeating the namespace-isolation boundary that `allowCrossNamespace=false` is meant to enforce.\n\nThis is the service-resolver sibling of the cross-namespace isolation family that Traefik has been fixing one resol",
+      "link": "https://github.com/advisories/GHSA-62fc-8686-hfmq",
+      "published": "2026-08-06T16:38:37Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -368,17 +405,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-70606"
+        "CVE-2026-71325"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-70602",
-      "title": "Electron: Extension tab APIs operate across session boundaries",
-      "summary": "### Impact\nExtension tab and scripting APIs were not scoped to the extension's own `session`. A malicious or compromised extension loaded into one session could navigate, script, and read from windows belonging to a different session.\n\nApps are only affected if they load Chrome extensions via `session.loadExtension` and rely on separate sessions to isolate that extension from other content. Apps that do not load extensions, or that use a single session, are not affected.\n\n### Workarounds\nOnly load extensions from sources you trust; do not rely on session separation alone to contain an extension.\n\n### Fixed Versions\n* `42.0.0-beta.3`\n* `41.2.1`\n* `40.9.0`\n* `39.8.8`\n\n### For more information\nIf you have any questions or comments about this advisory, email Electron at [security@electronjs.org](mailto:security@electronjs.org)",
-      "link": "https://github.com/advisories/GHSA-m55f-7gqj-fr98",
-      "published": "2026-08-05T15:57:11Z",
+      "id": "CVE-2026-54764",
+      "title": "Traefik: ForwardAuth middleware leaks X-Forwarded-Port spoofing via untrusted X-Forwarded-Proto when trustForwardHeader=false",
+      "summary": "## Summary\n\nThere is a medium severity vulnerability in Traefik's ForwardAuth middleware. Even when configured with `trustForwardHeader: false`, Traefik derives the `X-Forwarded-Port` header sent to the authentication service from the original incoming request instead of the sanitized forwarded request. As a result, an unauthenticated remote attacker can inject an `X-Forwarded-Proto: https` header over a plain HTTP connection and cause Traefik to forward `X-Forwarded-Port: 443` to the auth service, bypassing port-based authorization checks. This is a regression of the incomplete fix for GHSA-6384-m2mw-rf54, which addressed the `X-Forwarded-Proto` and `X-Forwarded-Prefix` spoofing vectors but missed the `X-Forwarded-Port` vector.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.51\n- https://github.com/traefik/traefik/releases/tag/v3.6.22\n- https://github.com/traefik/traefik/releases/tag/v3.7.6\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\n\n  The ForwardAuth middleware, even when configured with `trustForwardHeader: false`,\n  still derives the `X-Forwarded-Port` header sent to the authentication service by\n  reading the **attacker-controlled** `X-Forwarded-Proto` header from the original\n  incoming request. This allows an unauthenticated remote attacker to cause Traefik\n  to forward `X-Forwarded-Port: 443` to the auth service on a plain HTTP connection,\n  creating an inconsistency that can bypass port-based authorization checks.\n\n  ### Details\n\n  The fix introduced in commit `5e1de2258` (released as part of the April 2026 security\n  advisory GHSA-6384-m2mw-rf54) correctly strips all X-Forwarded-* headers from the\n  forwarded auth request when `trustForwardHeader=false`, and reconstructs\n  `X-Forwarded-Proto` from the actual TLS state of the connection (`req.TLS`).\n\n  However, the r",
+      "link": "https://github.com/advisories/GHSA-3q9r-p662-5j8m",
+      "published": "2026-08-06T16:38:29Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -386,17 +423,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-70602"
+        "CVE-2026-54764"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-70596",
-      "title": "Ghost: Cross-Site Scripting in Feature Image Captions",
-      "summary": "### Impact\n\nAn input validation issue allowed any staff user to create a post with content that could be used to hijack another staff user's Ghost Admin session resulting in privilege escalation.\n\n### Vulnerable versions\n\nThis vulnerability is present in Ghost from v4.9.0 up to v6.54.0.\n\n### Patches\n\nv6.54.1 contains a fix for this issue.\n\n### How to update\n\nFor self-hosters using Docker, find [Docker's official Ghost image here](https://hub.docker.com/_/ghost). Updating a Docker-based Ghost instance [is documented here](https://docs.ghost.org/install/docker#updating-ghost). \n\nIf your Ghost is a Ghost-CLI install see our documentation on [updating it to the latest version here](https://docs.ghost.org/update). \n\n### References\n\nGhost thanks Versa for disclosing this vulnerability responsibly.\n\n### For more information\n\nIf you have any questions or comments about this advisory, email Ghost at [security@ghost.org](mailto:security@ghost.org).",
-      "link": "https://github.com/advisories/GHSA-pr22-p9rp-2cqv",
-      "published": "2026-08-05T14:40:15Z",
+      "id": "CVE-2026-71327",
+      "title": "Traefik: Gateway API route identity collision allows cross-namespace backend hijacking",
+      "summary": "## Summary\n\nThere is a high severity vulnerability in Traefik's Kubernetes Gateway API provider. Router and service identities for `HTTPRoute`, `GRPCRoute`, `TCPRoute` and `TLSRoute` objects were built by hyphen-concatenating the route namespace, the route name, the Gateway identity, the entry point and the rule index, a construction that is not injective because Kubernetes names may themselves contain hyphens. Two distinct Routes attached to the same Gateway with equivalent match rules can therefore produce the same identity, and the Route loaded later silently overwrites the earlier one, so a tenant able to create an accepted Route in a colliding namespace/name combination can redirect another namespace's traffic to a backend it controls. All Traefik v3 minor lines are affected; the lines older than v3.6 are no longer maintained and will not receive a patch of their own, so users running them should upgrade to a maintained, patched release.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.6.25\n- https://github.com/traefik/traefik/releases/tag/v3.7.10\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes Gateway provider constructs internal HTTPRoute and\nGRPCRoute identities by concatenating namespace, route name, Gateway identity,\nentrypoint, and rule index with hyphens. Kubernetes names may themselves\ncontain hyphens, so the construction is not injective.\n\nFor example, HTTPRoutes `team/a-app` and `team-a/app`, attached to the same\nGateway with the same match rule, produce identical router and service keys.\nDuring configuration merging, the route loaded later overwrites the earlier\nroute's maps. A tenant that can create an accepted Route in a colliding\nnamespace/name combination can therefore redirect another namespace's\ntraffic to an attacker-controlled backend.\n\nThe",
+      "link": "https://github.com/advisories/GHSA-fgjj-px3w-67xx",
+      "published": "2026-08-06T16:38:18Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -404,7 +441,43 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-70596"
+        "CVE-2026-71327"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71326",
+      "title": "Traefik: BasicAuth singleflight key collision allows authenticated identity spoofing",
+      "summary": "## Summary\n\nThere is a low severity vulnerability in Traefik's BasicAuth middleware. Concurrent password verifications are deduplicated through a singleflight group whose key was the delimiter-free concatenation of the submitted password and the stored secret, so a request carrying an unconfigured username \u2014 whose secret is empty \u2014 can produce the same key as a configured user's valid request and receive that request's successful result. Exploitation requires the attacker to already hold a valid credential **and** to read the stored password hash, which is only reachable through paths that are themselves privileged: the API is documented as admin-only, the Kubernetes path requires read access to the Secret, and the Docker path requires access to the socket. The key now encodes the password length as a prefix, so distinct (password, secret) pairs can no longer collide. Only the v3.6 line from v3.6.11 onwards and the v3.7 line are affected; earlier v3 releases and the v2 line do not carry the vulnerable deduplication path.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.6.25\n- https://github.com/traefik/traefik/releases/tag/v3.7.10\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's BasicAuth middleware deduplicates concurrent password checks with a\n`singleflight.Group`. Its key is the delimiter-free concatenation\n`password + secret`. For an existing user with password `P` and stored hash\n`H`, the key is `P || H`. An unknown user can select the password `P || H`;\nbecause its secret is the empty string, its key is also `P || H`.\n\nIf the existing user's request starts the shared calculation, the unknown\nuser receives the existing user's successful Boolean result. Traefik then\ncontinues processing the unknown user's original request and propagates the\nattacker-selected username thro",
+      "link": "https://github.com/advisories/GHSA-6765-c87h-8mrf",
+      "published": "2026-08-06T16:34:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71326"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71324",
+      "title": "Traefik: Cross-user response poisoning via proxied CONNECT on Traefik's shared backend keep-alive pool",
+      "summary": "## Summary\n\nThere is a critical vulnerability in Traefik's default HTTP reverse proxy that leads to unauthenticated cross-user response poisoning. When a client opens an HTTP/2 or HTTP/3 `CONNECT` request, Traefik forwards it \u2014 body included \u2014 to an HTTP/1.1 upstream over a shared `net/http.Transport`. If the upstream answers the CONNECT with a keep-alive non-2xx response without draining the body, the now-desynchronized backend socket is returned to Traefik's shared connection pool and reused for other clients, letting an attacker make a different client read a response the attacker smuggled \u2014 which may be another user's authenticated or private content. The entrypoint's `sanitizePath` option (default `true`) is not a reliable defense: backends that answer `CONNECT /` with a keep-alive non-2xx remain exploitable. The experimental FastProxy implementation was not affected. The issue is fixed by deferring the forwarded CONNECT payload until the backend accepts the tunnel, by not returning CONNECT connections to the shared idle pool, and by discarding the CONNECT body in the ForwardAuth path.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.53\n- https://github.com/traefik/traefik/releases/tag/v3.6.24\n- https://github.com/traefik/traefik/releases/tag/v3.7.9\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's default reverse proxy forwards a plain HTTP/2 or HTTP/3 `CONNECT` request and its body to\nan HTTP/1.1 upstream through a shared `net/http.Transport`. When the upstream answers the CONNECT\nwith a keep-alive non-2xx response and does not drain the body, Traefik returns the now\ndesynchronized backend socket to its shared pool and reuses it for other clients. An\nunauthenticated attacker uses this to make a different client read the attacker's smuggled response.\n\nTraefik's defaul",
+      "link": "https://github.com/advisories/GHSA-3ccp-42pg-hgv6",
+      "published": "2026-08-06T15:56:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71324"
       ],
       "is_zero_day": false,
       "is_high_severity": true

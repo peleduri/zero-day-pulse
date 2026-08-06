@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-06 13:30 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-06 23:47 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI Recommendation Poisoning: How "Ask AI" Buttons Silently Alter LLM Memory
+## 3. 🟠 Zero-Day — Traefik: Kubernetes Ingress NGINX RewriteTarget Path Traversal Allows Route-Level Authentication Bypass
+
+**CVE:** `CVE-2026-67309` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-8rxv-jg7p-wvg3>
+
+> ## Summary
+
+There is a high severity vulnerability in Traefik&#x27;s Kubernetes Ingress NGINX provider. When an Ingress uses the `nginx.ingress.kubernetes.io/rewrite-target` annotation with a regular expression that captures attacker-controlled text without requiring a path separator (for example path `/api(.*)` with rewrite target `/$1`), the generated `RewriteTarget` middleware can turn an initi…
+
+---
+
+## 4. 🟠 Zero-Day — AI Recommendation Poisoning: How "Ask AI" Buttons Silently Alter LLM Memory
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html>
@@ -30,15 +41,6 @@
 > A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links.
 
 We observed production websites embedding hidden prompt injection payloads inside &quot;Ask AI&quot; buttons on marketing and competitor comparison pages. Whe…
-
----
-
-## 4. 🟠 Zero-Day — CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency is giving federal agencies three days to mitigate vulnerabilities in IBM Langflow, N-central, and Apache Tomcat, all actively exploited. [...]
 
 ---
 
@@ -105,7 +107,27 @@ We observed production websites embedding hidden prompt injection payloads insid
 
 ---
 
-## 12. 🟠 Zero-Day — Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts
+## 12. 🟠 Zero-Day — LangGraph: Namespace prefix matching crosses segment boundaries in Postgres and SQLite stores
+
+**CVE:** `CVE-2026-71433` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-47pj-3jcm-6whg>
+
+> ## Summary
+
+The Postgres and SQLite stores persist hierarchical namespaces as a dot-joined string (`(&quot;memories&quot;, &quot;alice&quot;)` becomes `memories.alice`) and scoped reads by matching that string with `LIKE &#x27;&lt;path&gt;%&#x27;`. Because `LIKE` has no notion of the `.` separator, a scoped `search` or `list_namespaces` also matched sibling namespaces whose flattened form shares l…
+
+---
+
+## 13. 🟠 Zero-Day — Route Amazon Bedrock Guardrails interventions to Amazon Security Lake
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://aws.amazon.com/blogs/security/route-amazon-bedrock-guardrails-interventions-to-amazon-security-lake/>
+
+> Security teams investigating AI-related incidents need guardrail intervention data alongside their existing security telemetry. Routing Amazon Bedrock Guardrails violations to Amazon Security Lake makes this possible. With this integration, you can query guardrail events alongside identity, network, and application security data in a single layer. When a guardrail blocks a prompt injection attempt…
+
+---
+
+## 14. 🟠 Zero-Day — Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/>
@@ -114,7 +136,7 @@ We observed production websites embedding hidden prompt injection payloads insid
 
 ---
 
-## 13. 🟠 Zero-Day — CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild
+## 15. 🟠 Zero-Day — CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html>
@@ -125,142 +147,155 @@ The vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a case of des
 
 ---
 
-## 14. 🟡 High Severity — Traefik CRD IngressRouteTCP ServersTransport Cross-Provider Namespace Bypass
+## 16. 🟡 High Severity — Craft CMS: Authenticated leak of secret environment variables
 
-**CVE:** `CVE-2026-65602` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-42cj-m3vj-89wv>
+**CVE:** `CVE-2026-31857` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-596p-6jv8-775v>
 
-> ## Summary
+> Environment variables and secrets are interpolated into a Twig template even when the Twig sandbox is enabled, allowing them to be leaked by an authenticated attacker.
 
-There is a medium-severity cross-provider reference vulnerability in Traefik&#x27;s Kubernetes CRD provider. The `crossProviderNamespaces` allowlist is enforced for HTTP `serversTransport` references but was not enforced for `IngressRouteTCP` service `serversTransport` references. A low-privileged Kubernetes user in a namespace that is not listed in `crossProviderNamespaces` could set …
-
----
-
-## 15. 🟡 High Severity — Traefik Gateway API HTTPRoute BackendRef ExtensionRef Namespace Confusion
-
-**CVE:** `CVE-2026-65601` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-qq9q-x9w4-chhj>
-
-> ## Summary
-
-There is a medium-severity namespace-confusion vulnerability in Traefik&#x27;s Kubernetes Gateway API provider. When resolving `HTTPRoute.spec.rules[].backendRefs[].filters[].extensionRef`, Traefik used the backend Service namespace instead of the `HTTPRoute` namespace. A low-privileged route author holding a `ReferenceGrant` for a cross-namespace Service could therefore bind a Traefik…
+The Craft vulnerability [CVE-2026-31857](https://github.com/craftcms/cms/security/advisories/GHSA-fp5j-j7j4-mcxc) was only patched by applying sandboxed Twig templating. This theoretically protects Craft CMS against RCE attacks, pr…
 
 ---
 
-## 16. 🟡 High Severity — Nuxt: Server-Side Remote Code Execution via Runtime Template Injection in Nuxt Server Island Props
+## 17. 🟡 High Severity — Craft CMS: Missing authorization check allows non-admin control panel users to reorder Global Sets
 
-**CVE:** `CVE-2026-71320` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-9473-5f9j-94wq>
+**CVE:** `CVE-2026-14793` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-9p7c-v5x3-rfx8>
 
-> ## Impact
-
-Nuxt server islands accept props via the `/__nuxt_island/` endpoint. When `vue.runtimeCompiler: true` is enabled (off by default) and the application has a server island component that forwards props into Vue&#x27;s dynamic component resolution (`&lt;component :is&gt;`, `resolveDynamicComponent`, or `h()`), an attacker can inject a `template` key into the island props to achieve server-…
+> The `reorder-sets` action in Craft CMS’s `GlobalsController` is missing the `requireAdmin()` check that the adjacent `save-set` and `delete-set` actions both enforce. Any authenticated control panel user can POST to `/actions/globals/reorder-sets` and permanently reorder all global sets in the project config, regardless of whether they have admin access. The reordering is written through to the pr…
 
 ---
 
-## 17. 🟡 High Severity — Nuxt runtime payload cache discloses another user's SSR data across users and to unauthenticated clients
+## 18. 🟡 High Severity — AWS CLI: Disabled SSH host key verification in Amazon AWS CLI EMR helper commands
 
-**CVE:** `CVE-2026-71316` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-wm8w-6qjm-cv43>
-
-> ### Impact
-
-When a page is covered by `routeRules` `cache` / `swr` / `isr`, Nuxt enables runtime payload extraction and serves `/&lt;page&gt;/_payload.json`. On affected versions the renderer stored the SSR payload in the shared `cache:nuxt:payload` storage under a path-only key (no cookie, `authorization`, or `cache.varies` dimension) and, on a later payload request, returned the cached entry bef…
-
----
-
-## 18. 🟡 High Severity — Nuxt: Unauthenticated out-of-memory crash via unbounded v-for expansion in island rendering
-
-**CVE:** `CVE-2026-71314` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-hxcr-hm88-mpq6>
-
-> ### Impact
-
-An unauthenticated attacker can crash a Nuxt server that renders any island / server component containing a `v-for` over a prop (for example `v-for=&quot;n in count&quot;` or a `&lt;slot v-for&gt;`). Because the island URL hash is a non-secret digest of the request, the attacker can compute a valid hash for arbitrary props and send the iterated prop as a large integer. The server then …
-
----
-
-## 19. 🟡 High Severity — rclone `serve restic --private-repos` authorization bypass: `..` in the URL path lets an authenticated user read, overwrite and delete other users' repositories
-
-**CVE:** `CVE-2026-59733` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-fqj9-69pf-6pjg>
-
-> ## Summary
-
-`rclone serve restic --private-repos` exists to let one rclone instance host many users&#x27; restic backup repositories behind HTTP Basic auth while keeping each user confined to a path prefix of `/&lt;username&gt;/`. The documentation states the flag &quot;can be used to limit users to repositories starting with a path of `/&lt;username&gt;/`&quot;, and the shipped test `TestResticPr…
-
----
-
-## 20. 🟡 High Severity — rclone: Unvalidated symlink target in local `--links` — arbitrary file write from an untrusted remote
-
-**CVE:** `CVE-2026-54572` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-cf44-9pgv-m4xc>
+**CVE:** `CVE-2026-18654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-hqvf-45jj-mccq>
 
 > ### Summary
-With `-l/--links`, rclone serializes symlinks as `&lt;name&gt;.rclonelink` text objects whose body is the link target. When rclone writes such an object to a local destination, it recreates the symlink with `os.Symlink(&lt;object body&gt;, &lt;dest path&gt;)` and performs NO validation of the target. If the source is attacker-controlled, the attacker sets the body to any absolute or `.…
+The AWS Command Line Interface (AWS CLI) is a unified tool to manage AWS services from the command line. An issue exists where the EMR SSH helper commands (`aws emr ssh`, `aws emr socks`, `aws emr put`, `aws emr get`) passed `StrictHostKeyChecking=no` to the underlying SSH client, disabling host key verification.
+
+### Impact
+A network-positioned actor could perform a man-in-the-middle …
 
 ---
 
-## 21. 🟡 High Severity — Electron: contextBridge object copy honors prototype setters
+## 19. 🟡 High Severity — Nx: Zip-Slip in the self-hosted remote cache
 
-**CVE:** `CVE-2026-70610` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-ff2p-hmqr-hxm4>
+**CVE:** `CVE-2026-71476` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-vp3h-ghgh-jr7g>
 
-> ### Impact
-Objects copied across the `contextBridge` boundary from untrusted content could carry an attacker-influenced prototype, enabling prototype-pollution-style attacks against preload code despite context isolation being enabled.
+> ## Summary
 
-Apps are only affected if their preload code accepts object arguments from untrusted content and reads properties from them without own-property checks. Apps that …
-
----
-
-## 22. 🟡 High Severity — Electron: ProtocolResponse.url reuses the default session cache instead of the registering session
-
-**CVE:** `CVE-2026-70606` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-r4w5-6pfg-jxp5>
-
-> ### Impact
-When a custom protocol handler returned a `ProtocolResponse` with a `url` and no `session`, Electron made the upstream request through `defaultSession` instead of the session that handled the protocol. A cached response could then be reused across otherwise isolated session partitions.
-
-Apps that use `ProtocolResponse.url`, omit `ProtocolResponse.session`, and rely on separate sessions …
+The Nx **self-hosted HTTP remote cache** extracts downloaded cache artifacts without constraining where files are written. A malicious — or on-path (MITM) — remote cache server can return a crafted tar archive whose entries escape the cache directory and write to arbitrary locations on the machine running Nx. This arbitrary file write can be escalated to remote code execution. The dire…
 
 ---
 
-## 23. 🟡 High Severity — Electron: Extension tab APIs operate across session boundaries
+## 20. 🟡 High Severity — Mermaid Architecture diagrams are vulnerable to prototype pollution
 
-**CVE:** `CVE-2026-70602` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-m55f-7gqj-fr98>
+**CVE:** `CVE-2026-71437` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-3rrr-jr9j-h3q3>
 
-> ### Impact
-Extension tab and scripting APIs were not scoped to the extension&#x27;s own `session`. A malicious or compromised extension loaded into one session could navigate, script, and read from windows belonging to a different session.
+> Rendering an untrusted `architecture-beta` diagram lets the diagram author write an arbitrary property with the value `horizontal` or `vertical` onto `Object.prototype`. A group id of `__proto__` is accepted as a valid parent.
 
-Apps are only affected if they load Chrome extensions via `session.loadExtension` and rely on separate sessions to isolate that extension from other content. A…
+### Impact
 
----
-
-## 24. 🟡 High Severity — Ghost: Cross-Site Scripting in Feature Image Captions
-
-**CVE:** `CVE-2026-70596` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://github.com/advisories/GHSA-pr22-p9rp-2cqv>
-
-> ### Impact
-
-An input validation issue allowed any staff user to create a post with content that could be used to hijack another staff user&#x27;s Ghost Admin session resulting in privilege escalation.
-
-### Vulnerable versions
-
-This vulnerability is present in Ghost from v4.9.0 up to v6.54.0.
-
-### Patches
-
-v6.54.1 contains a fix for this issue.
-
-### How to update
-
-For self-hosters using Docker, fin…
+Any code in the same realm that reads a property of that name from an arbitrary object, or enumerates an object with bare `for...in`, observes the injected valu…
 
 ---
 
-## 25. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 21. 🟡 High Severity — Contao crawler leaks auth credentials to external hosts
+
+**CVE:** `CVE-2026-55824` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-3mr9-p497-58f6>
+
+> ### Summary
+Contao&#x27;s crawler tries to prevent confidential HTTP client options from being sent to external domains by creating a scoped client: full options for root page origins, cleaned options for everything else. The cleaner removes `Cookie` and `Authorization` headers, but it removes the non-Symfony option names `basic_auth` and `bearer_auth` instead of Symfony HttpClient&#x27;s real `au…
+
+---
+
+## 22. 🟡 High Severity — Traefik: Authentication Bypass via Path Traversal in ReplacePathRegex Middleware
+
+**CVE:** `CVE-2026-65600` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-cxjq-mrr5-89rv>
+
+> ## Summary
+
+There is a critical authentication-bypass vulnerability in Traefik&#x27;s `ReplacePathRegex` middleware. When it is configured with a regular expression that captures user-controlled path segments without a mandatory separator (for example `regex: &quot;^/api(.*)&quot;`, `replacement: &quot;/$1&quot;`), a crafted request can produce an un-normalized replacement path such as `/../admin`…
+
+---
+
+## 23. 🟡 High Severity — Traefik: Gateway HTTPRoute backendRef filters can leak backend context across routes sharing a Service:port
+
+**CVE:** `CVE-2026-54765` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-6p8f-p8j2-rqmv>
+
+> ## Summary
+
+There is a medium severity vulnerability in Traefik&#x27;s Kubernetes Gateway API provider.
+When two accepted HTTPRoutes target the same backend Service:port but configure different
+`backendRef` filters, Traefik may resolve both routes to the same child service and apply
+only one route&#x27;s filter set to all requests reaching that backend. In Gateway deployments
+where `backendRef` fi…
+
+---
+
+## 24. 🟡 High Severity — Traefik: `allowCrossNamespace=false` bypass via `@kubernetescrd` TraefikService backendRef
+
+**CVE:** `CVE-2026-71325` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-62fc-8686-hfmq>
+
+> ## Summary
+
+There is a medium severity vulnerability in Traefik&#x27;s Kubernetes CRD provider. When `providers.kubernetesCRD.allowCrossNamespace` is disabled — the default — cross-namespace `@kubernetescrd` references are rejected for middlewares, TLS options and HTTP/TCP ServersTransports, but the same restriction was not applied to `TraefikService` backend references resolved by the service res…
+
+---
+
+## 25. 🟡 High Severity — Traefik: ForwardAuth middleware leaks X-Forwarded-Port spoofing via untrusted X-Forwarded-Proto when trustForwardHeader=false
+
+**CVE:** `CVE-2026-54764` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-3q9r-p662-5j8m>
+
+> ## Summary
+
+There is a medium severity vulnerability in Traefik&#x27;s ForwardAuth middleware. Even when configured with `trustForwardHeader: false`, Traefik derives the `X-Forwarded-Port` header sent to the authentication service from the original incoming request instead of the sanitized forwarded request. As a result, an unauthenticated remote attacker can inject an `X-Forwarded-Proto: https` h…
+
+---
+
+## 26. 🟡 High Severity — Traefik: Gateway API route identity collision allows cross-namespace backend hijacking
+
+**CVE:** `CVE-2026-71327` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-fgjj-px3w-67xx>
+
+> ## Summary
+
+There is a high severity vulnerability in Traefik&#x27;s Kubernetes Gateway API provider. Router and service identities for `HTTPRoute`, `GRPCRoute`, `TCPRoute` and `TLSRoute` objects were built by hyphen-concatenating the route namespace, the route name, the Gateway identity, the entry point and the rule index, a construction that is not injective because Kubernetes names may themselv…
+
+---
+
+## 27. 🟡 High Severity — Traefik: BasicAuth singleflight key collision allows authenticated identity spoofing
+
+**CVE:** `CVE-2026-71326` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-6765-c87h-8mrf>
+
+> ## Summary
+
+There is a low severity vulnerability in Traefik&#x27;s BasicAuth middleware. Concurrent password verifications are deduplicated through a singleflight group whose key was the delimiter-free concatenation of the submitted password and the stored secret, so a request carrying an unconfigured username — whose secret is empty — can produce the same key as a configured user&#x27;s valid re…
+
+---
+
+## 28. 🟡 High Severity — Traefik: Cross-user response poisoning via proxied CONNECT on Traefik's shared backend keep-alive pool
+
+**CVE:** `CVE-2026-71324` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://github.com/advisories/GHSA-3ccp-42pg-hgv6>
+
+> ## Summary
+
+There is a critical vulnerability in Traefik&#x27;s default HTTP reverse proxy that leads to unauthenticated cross-user response poisoning. When a client opens an HTTP/2 or HTTP/3 `CONNECT` request, Traefik forwards it — body included — to an HTTP/1.1 upstream over a shared `net/http.Transport`. If the upstream answers the CONNECT with a keep-alive non-2xx response without draining the…
+
+---
+
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
