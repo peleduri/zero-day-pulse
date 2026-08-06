@@ -1,29 +1,10 @@
 {
-  "generated": "2026-08-05T19:10:25.552170+00:00",
-  "total": 32,
-  "kev": 1,
-  "zero_day": 13,
+  "generated": "2026-08-06T01:19:09.438763+00:00",
+  "total": 25,
+  "kev": 0,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-63077",
-      "title": "CVE-2026-63077 \u2014 JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
-      "summary": "Vendor: JetBrains | Product: TeamCity. JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-08)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-63077",
-      "published": "2026-08-05",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-63077"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -100,24 +81,6 @@
       ],
       "cve_ids": [
         "CVE-2026-9198"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70477",
-      "title": "Flowise: CSV Agent Prompt Injection Remote Code Execution Vulnerability",
-      "summary": "-- ABSTRACT -------------------------------------\n\nTrend Micro's Zero Day Initiative has identified a vulnerability affecting the following products:\nFlowise - Flowise\n\n-- VULNERABILITY DETAILS ------------------------\n* Version tested: 3.1.1\n* Installer file: https://github.com/FlowiseAI/Flowise (npm install flowise@3.1.1)\n* Platform tested: Ubuntu 25.10\n\n---\n\nA prompt injection sent to a chatflow using a CSV Agent node can cause the LLM to respond with a malicious Python script that bypasses the blocklist validator and executes in an unsandboxed pyodide environment. An attacker can leverage this to execute arbitrary code in the context of the user running the server.\n\n```\nThis vulnerability allows remote attackers to execute arbitrary code on affected installations of Flowise. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the run method of the CSV_Agents class. The issue results from insufficient input sanitization when using untrusted data to construct an LLM prompt. An attacker can leverage this vulnerability to execute code in the context of the service account.\n```\n\n### Analysis\n\nWhen a user makes a query against a chatflow using the CSV Agent node, the `run` method of the `CSV_Agents` class is called. This method reads the CSV file, loads a pyodide environment, and uses pandas to extract column names and data types into a dictionary. It then constructs a system prompt using that dictionary and the user's input, and sends this prompt to a configured LLM. The LLM response is stored in a variable named `pythonCode`. The method then attempts to validate this value using `validatePythonCodeForDataFrame` from `packages/components/src/pythonCodeValidator.ts` before evaluating it in pyodide.\n\nThe validator relies on a static regex blocklist. It can be bypassed using obfuscation techniques including string concatenation to reconstruct forbidden identifiers, `chr()` encoding, aliasing of dangerous builtins, `__getattribu",
-      "link": "https://github.com/advisories/GHSA-5xvg-pmgg-3mxr",
-      "published": "2026-08-04T19:29:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70477"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -235,6 +198,132 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-65602",
+      "title": "Traefik CRD IngressRouteTCP ServersTransport Cross-Provider Namespace Bypass",
+      "summary": "## Summary\n\nThere is a medium-severity cross-provider reference vulnerability in Traefik's Kubernetes CRD provider. The `crossProviderNamespaces` allowlist is enforced for HTTP `serversTransport` references but was not enforced for `IngressRouteTCP` service `serversTransport` references. A low-privileged Kubernetes user in a namespace that is not listed in `crossProviderNamespaces` could set `serversTransport: foo@file` on an `IngressRouteTCP` service, causing Traefik to accept the forbidden cross-provider reference and use the file-provider `TCPServersTransport` \u2014 including privileged backend mTLS client certificates, SPIFFE identity, or PROXY-protocol settings. The fix applies the `crossProviderNamespaces` allowlist to TCP `serversTransport` references.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.6.23\n- https://github.com/traefik/traefik/releases/tag/v3.7.7\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes CRD provider enforces `crossProviderNamespaces` for several\ncross-provider references, but `IngressRouteTCP` service\n`serversTransport` references skip that allowlist. A low-privileged Kubernetes\nuser in a namespace that is not listed in `crossProviderNamespaces` can still\nset `serversTransport: foo@file` on an `IngressRouteTCP` service. Traefik\naccepts the forbidden cross-provider reference and later uses the referenced\n`TCPServersTransport`, including privileged backend mTLS client certificates,\nSPIFFE identity, or PROXY protocol settings.\n\n## Description\n\n`crossProviderNamespaces` is documented and implemented as an allowlist for\nnamespaces that may declare cross-provider references from Kubernetes CRD\nobjects. HTTP `serversTransport` references enforce that allowlist. TCP\n`serversTransport` references do not.\n\nAn attacker with low Kubernetes privileges ",
+      "link": "https://github.com/advisories/GHSA-42cj-m3vj-89wv",
+      "published": "2026-08-05T21:53:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65602"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-65601",
+      "title": "Traefik Gateway API HTTPRoute BackendRef ExtensionRef Namespace Confusion",
+      "summary": "## Summary\n\nThere is a medium-severity namespace-confusion vulnerability in Traefik's Kubernetes Gateway API provider. When resolving `HTTPRoute.spec.rules[].backendRefs[].filters[].extensionRef`, Traefik used the backend Service namespace instead of the `HTTPRoute` namespace. A low-privileged route author holding a `ReferenceGrant` for a cross-namespace Service could therefore bind a Traefik `Middleware` from the backend namespace without a separate grant for that middleware. If the reused middleware sets trusted reverse-proxy identity headers, downstream applications may receive attacker-selected authenticated-identity state. The fix resolves `extensionRef` against the `HTTPRoute` namespace.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.7\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes Gateway API provider resolves\n`HTTPRoute.spec.rules[].backendRefs[].filters[].extensionRef` in the backend\nService namespace instead of the `HTTPRoute` namespace. A low-privileged route\nauthor with a permitted cross-namespace Service reference can therefore bind a\nTraefik `Middleware` from the backend namespace without a separate grant for\nthat middleware. If the reused middleware sets trusted reverse-proxy identity\nheaders, downstream applications can receive attacker-selected authenticated\nidentity state.\n\n## Description\n\nGateway API `ReferenceGrant` allows a namespace owner to grant a route in\nanother namespace permission to reference a specific backend object, such as a\n`Service`. That grant should not implicitly authorize the route author to bind\nother policy objects in the backend namespace.\n\nIn the affected code path, Traefik copies `backendRef.namespace` into a local\n`namespace` variable. It correctly uses that namespace to validate and load the\nbackend `Service`, but",
+      "link": "https://github.com/advisories/GHSA-qq9q-x9w4-chhj",
+      "published": "2026-08-05T21:49:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65601"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71320",
+      "title": "Nuxt: Server-Side Remote Code Execution via Runtime Template Injection in Nuxt Server Island Props",
+      "summary": "## Impact\n\nNuxt server islands accept props via the `/__nuxt_island/` endpoint. When `vue.runtimeCompiler: true` is enabled (off by default) and the application has a server island component that forwards props into Vue's dynamic component resolution (`<component :is>`, `resolveDynamicComponent`, or `h()`), an attacker can inject a `template` key into the island props to achieve server-side remote code execution in the Nitro process.\n\n```json\n{ \"as\": { \"template\": \"<attacker-controlled>\" } }\n```\n\nVue's runtime template compiler compiles and executes the attacker-controlled `template` in the server process. The same primitive also works on the client side when the runtime compiler is active there, though the server-side path is the primary concern.\n\nSome component libraries expose a polymorphic `as` / `asChild` prop that forwards its value into `<component :is>`; `@nuxt/ui` (via `reka-ui`) is a widely used example. An application is affected if such a component receives the attacker-controlled value, provided `vue.runtimeCompiler` is also enabled. Note this does not require the island author to explicitly forward a prop: island props that the island component does not declare fall through as attributes onto its single root element (standard Vue attribute inheritance), so an island whose root is a polymorphic component receives the attacker's `as` value implicitly. These libraries are not themselves vulnerable; they are noted only because they commonly provide the dynamic-component sink.\n\n## Common configurations that satisfy the preconditions\n\nThe flaw is in Nuxt core. The library below is not itself vulnerable; it is noted because it commonly provides the dynamic-component sink an application might inadvertently expose.\n\n- **`@nuxt/ui`** (via its underlying **`reka-ui`** primitives) exposes a polymorphic `as` / `asChild` prop that is forwarded into Vue's dynamic-component resolution. Installing `@nuxt/ui` does not by itself register any component as a server island.",
+      "link": "https://github.com/advisories/GHSA-9473-5f9j-94wq",
+      "published": "2026-08-05T21:29:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71320"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71316",
+      "title": "Nuxt runtime payload cache discloses another user's SSR data across users and to unauthenticated clients",
+      "summary": "### Impact\n\nWhen a page is covered by `routeRules` `cache` / `swr` / `isr`, Nuxt enables runtime payload extraction and serves `/<page>/_payload.json`. On affected versions the renderer stored the SSR payload in the shared `cache:nuxt:payload` storage under a path-only key (no cookie, `authorization`, or `cache.varies` dimension) and, on a later payload request, returned the cached entry before route middleware / page guards ran again.\n\nAs a result, once any authenticated user warms a protected, cached page, a subsequent `GET /<page>/_payload.json` from an unauthenticated client or a different authenticated user receives the first user's payload: the full SSR data for that route, including anything loaded via `useFetch` / `useAsyncData` (for example `/api/me`: profile, tenant, billing, token-like values). The HTML response stays correctly varied and protected; only the extracted payload leaks. Both cross-user (A warms, B receives A) and unauthenticated disclosure are exploitable. `cache.varies` does not mitigate it, because the payload cache ignores `varies`.\n\nIntroduced when runtime payload extraction landed for cached routes (#34410); the regression is specific to the 4.x line, where the runtime `cache:nuxt:payload` storage was added and the `import.meta.prerender` gate on the payload-cache read/writes was dropped. The 3.x line shipped the same feature with the gate intact and is not affected.\n\n### Patches\n\nFixed in `nuxt@4.5.1`. Runtime payload-cache reads and writes are again confined to prerendering (`import.meta.prerender`); at runtime, `/<page>/_payload.json` follows the normal render path so route middleware, `routeRules.appMiddleware`, and page guards run for the current request. `main` / v5 and the `3.x` line already had this property, so 3.x is not affected.\n\n### Workarounds\n\n- Set `experimental.payloadExtraction: false` (reporter-validated): the standalone `/_payload.json` endpoint returns 404 and the page still serves a 200 with an inline payload.\n- Do ",
+      "link": "https://github.com/advisories/GHSA-wm8w-6qjm-cv43",
+      "published": "2026-08-05T21:14:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71316"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71314",
+      "title": "Nuxt: Unauthenticated out-of-memory crash via unbounded v-for expansion in island rendering",
+      "summary": "### Impact\n\nAn unauthenticated attacker can crash a Nuxt server that renders any island / server component containing a `v-for` over a prop (for example `v-for=\"n in count\"` or a `<slot v-for>`). Because the island URL hash is a non-secret digest of the request, the attacker can compute a valid hash for arbitrary props and send the iterated prop as a large integer. The server then expands the `v-for` to that many nodes during SSR, allocating memory proportional to the attacker's number. Reporter figures: `count=8000000` produced a 142.9 MB response; `count=40000000` (and `items=4000000` on a slot list) produced an out-of-memory crash of the worker from a single ~130-byte request. Both the plain `v-for` path (Vue's `ssrRenderList`) and the slot path (`vforToArray`) are affected.\n\n### Patches\n\nFixed in `nuxt@4.5.1` and `nuxt@3.21.10`. Island/server-component `v-for` sources are now clamped to a maximum iteration count (`MAX_VFOR_LENGTH = 100000`) at the render boundary, covering the plain path, the `<slot v-for>` element, and the `vforToArray` slot-props helper. Combined with the body-size cap (GHSA-9pgf-384g-p7mv), a single island render can no longer allocate without bound regardless of which `v-for` path is used or whether the prop arrives as an integer or an array.\n\n### Workarounds\n\nAvoid `v-for` directly over an unclamped prop in server components, or clamp the count in the component (`v-for=\"n in Math.min(count, 1000)\"`). A body-size limit in front of `/__nuxt_island/` only mitigates array-shaped inputs, not the integer-amplification case.\n\n### References\n\n- Bound helper: `packages/nuxt/src/app/components/vfor.ts`\n- Transform: `packages/nuxt/src/components/plugins/islands-transform.ts`\n- Slot helper: `packages/nuxt/src/app/components/utils.ts` (`vforToArray`)",
+      "link": "https://github.com/advisories/GHSA-hxcr-hm88-mpq6",
+      "published": "2026-08-05T20:59:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71314"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59733",
+      "title": "rclone `serve restic --private-repos` authorization bypass: `..` in the URL path lets an authenticated user read, overwrite and delete other users' repositories",
+      "summary": "## Summary\n\n`rclone serve restic --private-repos` exists to let one rclone instance host many users' restic backup repositories behind HTTP Basic auth while keeping each user confined to a path prefix of `/<username>/`. The documentation states the flag \"can be used to limit users to repositories starting with a path of `/<username>/`\", and the shipped test `TestResticPrivateRepositories` asserts that user `test` may reach `/test/config` but is `403`-blocked from `/other_user/config`. This isolation is the entire security purpose of the flag.\n\nThe isolation is enforced by two independent chi middlewares that derive the username and the backend object path from two *different* sources, and the path source is never canonicalized. `checkPrivate` authorizes the request by comparing the routed `{userID}` path segment against the authenticated user, while `WithRemote` builds the backend object key from the raw, un-cleaned URL path. A request such as `GET /<me>/../<victim>/config` keeps the first path segment equal to the attacker's own username (so `checkPrivate` returns the request as authorized) yet hands the backend the literal remote `me/../victim/config`. On any backend that resolves object paths with POSIX `path.Join`/`path.Clean` semantics \u2014 which includes the bundled `memory` backend used in the PoC below, and the widely deployed `sftp` and `ftp` backends \u2014 that `..` segment collapses, and the operation is performed against the victim's object.\n\nBecause the same un-cleaned remote feeds the `GET` (download), `POST` (upload/overwrite) and `DELETE` handlers, any authenticated user can read, overwrite, and delete the files of any other user's private repository hosted on the same server. For restic that means reading another tenant's `config`/`keys` metadata and pack files, corrupting their repository, or deleting their backups outright (subject to `--append-only`, which still permits cross-tenant reads).\n\n## Affected code (v1.74.3, commit `37e4117\u2026`)\n\n`cmd/serve/rest",
+      "link": "https://github.com/advisories/GHSA-fqj9-69pf-6pjg",
+      "published": "2026-08-05T20:41:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59733"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54572",
+      "title": "rclone: Unvalidated symlink target in local `--links` \u2014 arbitrary file write from an untrusted remote",
+      "summary": "### Summary\nWith `-l/--links`, rclone serializes symlinks as `<name>.rclonelink` text objects whose body is the link target. When rclone writes such an object to a local destination, it recreates the symlink with `os.Symlink(<object body>, <dest path>)` and performs NO validation of the target. If the source is attacker-controlled, the attacker sets the body to any absolute or `../` path, so rclone plants a symlink inside the destination that points anywhere on the victim's filesystem. Because a sibling object named `<name>.rclonelink` sorts before `<name>/...`, rclone creates the escaping symlink first and then writes a following object \"inside\" it; `mkdirAll`/`OpenFile` follow the planted symlink, so the file lands OUTSIDE the destination with attacker-chosen contents. This yields arbitrary file write as the victim user, e.g. overwriting `~/.ssh/authorized_keys`, `~/.bashrc`, or a crontab \u2014 i.e. code execution.\n\n### Details\n`backend/local/local.go`, `Object.Update()`:\n```go\n} else {\n    out = nopWriterCloser{&symlinkData}          // body of <name>.rclonelink = attacker data\n}\n...\nif o.translatedLink {\n    if err == nil {\n        if _, err := os.Lstat(o.path); err == nil {\n            os.Remove(o.path)\n        }\n        // Use the contents for the copied object to create a symlink\n        err = os.Symlink(symlinkData.String(), o.path)   // <-- target NEVER validated (abs / .. allowed)\n    }\n}\n```\n`symlinkData` is the raw body of the source object, fully attacker-controlled when copying from an untrusted remote. There is no check that the target is relative or stays within the destination. The subsequent write path (`mkdirAll()` \u2192 `file.MkdirAll`, then `file.OpenFile(..., O_CREATE)`) follows existing symlink components with no `O_NOFOLLOW`, so a file written under the planted symlinked directory escapes the destination.\n\n### PoC\n1) Get the official stable binary:\n```\ncurl -fsSLO https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-amd64.zip\nunzip -j rclone-v1.",
+      "link": "https://github.com/advisories/GHSA-cf44-9pgv-m4xc",
+      "published": "2026-08-05T20:15:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54572"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-70610",
       "title": "Electron: contextBridge object copy honors prototype setters",
       "summary": "### Impact\nObjects copied across the `contextBridge` boundary from untrusted content could carry an attacker-influenced prototype, enabling prototype-pollution-style attacks against preload code despite context isolation being enabled.\n\nApps are only affected if their preload code accepts object arguments from untrusted content and reads properties from them without own-property checks. Apps that only accept primitive arguments, or that validate object arguments, are not affected.\n\n### Workarounds\nValidate objects received from untrusted content with own-property checks (`Object.hasOwn`), or copy them onto a null-prototype object before use.\n\n### Fixed Versions\n* `42.0.0-beta.4`\n* `41.2.2`\n* `40.9.2`\n* `39.8.9`\n\n### For more information\nIf you have any questions or comments about this advisory, email Electron at [security@electronjs.org](mailto:security@electronjs.org)",
@@ -319,222 +408,6 @@
       ],
       "cve_ids": [
         "CVE-2026-59774"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70591",
-      "title": "Ghost: Server-Side Request Forgery in Image Fetching",
-      "summary": "### Impact\n\nA Server-Side Request Forgery (SSRF) in Ghost Admin allowed any staff-level user to perform a blind HTTP GET request against internal hosts. No output was returned, but this could have been used to probe open ports on internal hosts.\n\n### Vulnerable versions\n\nThis vulnerability is present in Ghost from v0.10.0 up to v6.54.0.\n\n### Patches\n\nv6.54.1 contains a fix for this issue.\n\n### How to update\n\nFor self-hosters using Docker, find [Docker's official Ghost image here](https://hub.docker.com/_/ghost). Updating a Docker-based Ghost instance [is documented here](https://docs.ghost.org/install/docker#updating-ghost). \n\nIf your Ghost is a Ghost-CLI install see our documentation on [updating it to the latest version here](https://docs.ghost.org/update). \n\n### References\n\nGhost thanks Younghun Ko, vx77, and Miguel Segovia Gil for disclosing this vulnerability responsibly.\n\n### For more information\n\nIf you have any questions or comments about this advisory, email Ghost at [security@ghost.org](mailto:security@ghost.org).",
-      "link": "https://github.com/advisories/GHSA-gcvv-72q8-9v76",
-      "published": "2026-08-04T21:38:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70591"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53946",
-      "title": "Ghost: Mobiledoc image-size fetch SSRF",
-      "summary": "### Impact\n\nWhen re-rendering posts, Ghost would refetch missing image dimensions by issuing an outbound HTTP request to the URL stored on an image card \u2014 without restricting that URL to trusted image hosts. An authenticated staff user able to create or edit posts could therefore point an image card at an attacker-chosen host and cause the Ghost server to request it on their behalf, including hosts on internal networks or cloud instance metadata endpoints that would not normally be reachable from the public internet.\n\n### Vulnerable versions\n\nThis vulnerability is present in Ghost from v6.19.3 up to v6.21.0.\n\n### Patches\n\nv6.21.1 contains a fix for this issue.\n\n### How to update\n\nFor self-hosters using Docker, find [Docker's official Ghost image here](https://hub.docker.com/_/ghost). Updating a Docker-based Ghost instance [is documented here](https://docs.ghost.org/install/docker#updating-ghost). \n\nIf your Ghost is a Ghost-CLI install see our documentation on [updating it to the latest version here](https://docs.ghost.org/update). \n\n### For more information\n\nIf you have any questions or comments about this advisory, email us at [security@ghost.org](mailto:security@ghost.org).",
-      "link": "https://github.com/advisories/GHSA-g366-23fw-ggp6",
-      "published": "2026-08-04T21:25:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53946"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-53945",
-      "title": "Ghost: Server-side request forgery via DNS rebinding in external request handling",
-      "summary": "### Impact\n\nGhost\u2019s private-IP check for outbound HTTP requests could be bypassed via DNS rebinding, allowing an attacker to coerce the Ghost server into reaching hosts on internal networks through features that issue external fetches.\n\n### Vulnerable versions\n\nThis vulnerability is present in Ghost from v6.0.9 up to v6.21.0.\n\n### Patches\n\nv6.21.1 contains a fix for this issue. \n\n### How to update\n\nFor self-hosters using Docker, find [Docker's official Ghost image here](https://hub.docker.com/_/ghost). Updating a Docker-based Ghost instance [is documented here](https://docs.ghost.org/install/docker#updating-ghost). \n\nIf your Ghost is a Ghost-CLI install see our documentation on [updating it to the latest version here](https://docs.ghost.org/update). \n\n### Workarounds\n\nIf upgrading immediately is not possible, operators can reduce exposure by preventing the Ghost server from reaching sensitive internal ranges at the network layer \u2014 for example, egress firewall rules that block the Ghost process from initiating connections to RFC1918 networks, loopback, link-local (including `169.254.169.254`) and any other internal service ranges. Disabling features that trigger outbound fetches (oEmbed, webmentions, recommendations) will further limit the attack surface but does not remove the underlying issue.\n\n### References\n\nGhost thanks Oluwaseun Esther Folorunsho, Lakshmikanthan K ([@l3tchupkt](https://github.com/l3tchupkt)), [Offgrid Security](https://www.offgridsec.com/), and Baki for disclosing this vulnerability responsibly.\n\n### For more information\n\nIf you have any questions or comments about this advisory, email us at [security@ghost.org](mailto:security@ghost.org).",
-      "link": "https://github.com/advisories/GHSA-ch52-px8q-f22j",
-      "published": "2026-08-04T21:24:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-53945"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70490",
-      "title": "Open WebUI: Unapproved accounts can open terminal sessions via a WebSocket auth path missing the role check",
-      "summary": "## Summary\nThe terminal WebSocket route authenticates its own first-message JWT instead of going through the HTTP dependency chain, and never applies the role check that `get_verified_user` enforces on every HTTP terminal route. An account whose role is `pending`, meaning registered but not approved, or approved and later deactivated back to `pending`, can therefore open an interactive terminal session that the HTTP terminal endpoints would refuse. The missing control is the verified-user role gate, not the terminal access grants, which are evaluated correctly.\n\n## Preconditions\nAt least one terminal server must be configured, which is off by default, and its access grants must cover the account: either public read (`principal_id: \"*\"`) or a group the account still belongs to. The attacker needs a valid, unexpired JWT for a `pending` account and the terminal server id. Both are obtainable by an account that registered while approvals are pending, or by one that held access and was deactivated, since deactivation sets the role to `pending` without revoking the token, which lasts four weeks by default. Deployments with no terminal server configured, or whose terminal grants are admin-only, are not affected.\n\n## Impact\nA deployment loses the account-approval boundary for terminal access. An unapproved or deactivated account gets interactive shell access, file browsing and terminal-backed tooling in the terminal environment, for as long as its token remains valid. Because the HTTP terminal routes correctly reject the same account, the two planes disagree, so an administrator who deactivates a user sees access revoked over HTTP while the WebSocket keeps working. The terminal access grants themselves are not bypassed: an account with no grant is still refused, so this only widens access to terminals already shared broadly or with a group the account remains in.\n\n## Fix\nFixed in v0.11.0 by https://github.com/open-webui/open-webui/pull/27537. Token decoding, revocation chec",
-      "link": "https://github.com/advisories/GHSA-5gpj-vj23-vhhv",
-      "published": "2026-08-04T20:45:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70490"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54020",
-      "title": "Open WebUI: DNS Rebinding SSRF Bypass",
-      "summary": "## Summary\nOpen WebUI vetted user-supplied URLs by resolving the hostname once and rejecting private, loopback and link-local addresses, then let the HTTP client resolve that hostname again at connect time. An attacker who controls the authoritative DNS for a hostname they submit can answer with a public address during the check and an internal one at connect, so the fetch reaches an address the check was meant to block. Every user-reachable fetch gated by that check was affected, and most of them hand the internal response back to the attacker.\n\n## Preconditions\n- An account on the instance. No admin rights and no non-default configuration.\n- Control of the authoritative DNS for a hostname the attacker submits, serving a TTL of 0 and alternating answers.\n- One of the affected entry points: URL ingest for retrieval, an `image_url` in a chat completion, image editing, or the OAuth profile-picture fetch.\n- The OAuth path additionally needs OAuth login configured and a picture claim (`OAUTH_PICTURE_CLAIM`, default `picture`) the user can influence, which is the case on self-service OIDC providers and providers with a user-editable avatar URL. On an existing account it also needs `OAUTH_UPDATE_PICTURE_ON_LOGIN`, which is off by default. Deployments without OAuth are not affected on that path; the other paths need no configuration at all.\n\n## Impact\nThe server can be made to issue requests to addresses only it can reach: cloud instance metadata such as 169.254.169.254, loopback-bound admin APIs, and internal network services. The response comes back to the attacker on most paths, as document content on the retrieval path, described by the vision model on the chat image path, and base64-encoded into the profile picture on the OAuth path; the image-edit path is blind. On the OAuth path the server also forwards the OAuth access token as a Bearer header to the fetched URL, so a rebind hands that token to the internal target. On a cloud host with IMDSv1 reachable this is enou",
-      "link": "https://github.com/advisories/GHSA-h6x2-583h-x99r",
-      "published": "2026-08-04T20:38:34Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54020"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70485",
-      "title": "Open WebUI: Any authenticated user can reach internal services and cloud metadata via NAT64-encoded URLs",
-      "summary": "## Summary\n\nOpen WebUI fetches user-supplied URLs on the server for RAG URL ingestion, URL-to-markdown conversion and web-search content retrieval, and decides whether a destination is allowed by asking whether its IP address is globally routable. That test operates on the literal IPv6 address and does not look at the IPv4 address embedded inside it. On a deployment whose network has a NAT64 gateway, any verified user can wrap an internal or cloud-metadata IPv4 address in the NAT64 well-known prefix, pass the filter, and receive the internal response body back through the API.\n\n## Preconditions\n\n- Any verified (authenticated) user account. No admin role, no elevated permission.\n- Default configuration: `ENABLE_LOCAL_WEB_FETCH` off, the default `WEB_FETCH_FILTER_LIST` metadata blocklist in place. Neither prevents this, because the blocklist matches hostname strings and the NAT64 literal is not one of them.\n- The deployment's network must provide NAT64 translation for the well-known `64:ff9b::/96` prefix, which is the common default on IPv6-only and dual-stack cloud and Kubernetes networks.\n- Deployments on IPv4-only networks, or on any network without a NAT64 gateway, are not affected: the address has nowhere to route.\n\n## Impact\n\nOn an affected network a low-privilege user can read GET responses from services the server can reach but the internet cannot: cloud instance metadata including IAM role credentials, loopback-bound admin surfaces, and internal APIs in the same VPC or cluster. The response body is returned to the caller, so this is full-read, not blind. Exploitation is not universal, it depends entirely on the deployment's network providing NAT64 translation, which is why the score carries high attack complexity. Deployments without NAT64 lose nothing here.\n\n## Fix\n\nFixed in v0.11.0 by commit `1717b493d`. Address classification now unwraps the IPv4 embedded in IPv6 transition encodings before deciding whether a destination is global, and applies that at all ",
-      "link": "https://github.com/advisories/GHSA-8x5v-cpv7-8jjp",
-      "published": "2026-08-04T19:59:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70485"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70480",
-      "title": "Open WebUI: Client-side SSRF via unrestricted external resource loading in Vega/Vega-Lite chart rendering",
-      "summary": "## Summary\nOpen WebUI renders `vega` and `vega-lite` fenced code blocks in chat content by building a Vega view in the viewer's browser without a restricted resource loader. Any user who can place such a block where another user will see it can make that user's browser issue attacker-chosen outbound GET requests, and read back responses from same-origin or CORS-permissive targets into the rendered page. Because the request comes from the browser, server-side SSRF protections never see it.\n\n## Preconditions\nDefault configuration, no flags or environment variables involved: Vega blocks render unconditionally wherever chat content is displayed. The attacker needs an account that can put content in front of the victim, which covers a shared chat, a channel message, and model, RAG or tool output the attacker can influence. The victim must open the message, so this is not zero-click. Deployments where the victim's browser has no network position of interest lose little.\n\n## Impact\nThe victim's browser becomes a request proxy into whatever it can reach: internal hosts and ports behind the perimeter, same-site endpoints, and out-of-band beacons that confirm a chart was viewed and by whom. Where the target is same-origin or returns permissive CORS headers, the response body is pulled back into the chart in the victim's page, which turns the request into a read. Requests are GET only, and no server-side data is exposed to the attacker directly.\n\n## Fix\nFixed in 5278eb906 (#26806), released in 0.11.0. The view is now constructed with a loader whose `load` always throws and whose `sanitize` resolves the URI with the browser's own URL parser and permits only `data:` and same-origin results, so charts can only use inline `data.values`. Upgrading is sufficient; no configuration change is needed.\n\n## Root cause\n- `src/lib/utils/index.ts` \u2014 `renderVegaVisualization`\n- `src/lib/components/chat/Messages/CodeBlock.svelte` \u2014 renders `vega`/`vega-lite` blocks\n\nThe renderer treated a char",
-      "link": "https://github.com/advisories/GHSA-rffm-9q57-q649",
-      "published": "2026-08-04T19:54:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70480"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70482",
-      "title": "Open WebUI: Account takeover via OAuth token exchange accepting tokens issued to any client",
-      "summary": "## Summary\n\nThe OAuth token exchange endpoint accepts a raw provider access token and validates it by calling the provider's userinfo endpoint. A userinfo endpoint reports only that a token is valid, never which OAuth client it was issued to, and the endpoint performed no audience or client check of its own. Anyone holding an access token minted for any client registered with the same provider could exchange it for an Open WebUI session as that token's user, including applications the operator does not control and has never authorised.\n\n## Preconditions\n\n- `ENABLE_OAUTH_TOKEN_EXCHANGE=True`. Disabled by default, so a stock deployment is not affected.\n- The victim already has an Open WebUI account. The endpoint does not create users.\n- The attacker can obtain a provider access token for the victim, typically by having them sign in to an unrelated OAuth application on the same provider. On public providers, registering that application is self-service.\n- The subject identifier the attacker's client observes matches the one stored on the victim's account. Google, GitHub, Okta and self-hosted OIDC servers in default configuration issue a subject that is stable across all clients and are directly affected. Microsoft Entra ID issues per-application subjects, so the match fails there unless `OAUTH_MERGE_ACCOUNTS_BY_EMAIL` is enabled or `OAUTH_SUB_CLAIM` points at a globally stable claim such as `oid`.\n- `OAUTH_ALLOWED_DOMAINS` is enforced on this endpoint but does not constrain the attack, because the impersonated user is a legitimate member of an allowed domain.\n\n## Impact\n\nFull account takeover of any user whose provider access token the attacker can obtain. The endpoint applies no role gating, so the issued session carries the target account's role, and a targeted administrator yields an administrator session. The victim never interacts with Open WebUI and has no opportunity to notice.\n\nThe standard OAuth callback is not affected. It obtains its token through an authori",
-      "link": "https://github.com/advisories/GHSA-rq84-p6rr-vf89",
-      "published": "2026-08-04T19:52:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70482"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70479",
-      "title": "Open WebUI: SSRF into internal services via unvalidated sub-resource requests in the Playwright web loader",
-      "summary": "## Summary\nWith the Playwright web loader enabled, Open WebUI opens user-submitted URLs in a real browser and validates the destination address before allowing the request. That check only ran for the top-level page request. Every other request the page issued was passed through unvalidated, so a page could use its own JavaScript to reach addresses the validation exists to block. Because the loader returns the page's final DOM to the requesting user, anything the page read back from those addresses ends up in the web-search or RAG output.\n\n## Preconditions\n- `WEB_LOADER_ENGINE=playwright`. This is not the default; deployments on the default web loader are unaffected.\n- A reachable Playwright browser, either local or via `PLAYWRIGHT_WS_URL`.\n- Any authenticated user who can submit a URL for ingestion or trigger a web search. No administrator role is required.\n- Something worth reading on a network the browser can reach. A deployment whose browser container has no route to internal services loses nothing here.\n\n## Impact\nAn authenticated user can read HTTP responses from services reachable by the browser process: cloud instance metadata, other containers on the same network, and internal APIs bound to private addresses. The content is returned to the user through the normal web-search or document-ingestion result, so this is a read primitive, not a blind one. It confers no write access and no availability impact, and it does not extend beyond what the browser's network position already allows.\n\n## Fix\nFixed in 0.11.0 by commit `bef63a2ae`. Every intercepted request is now validated, fetched with redirects disabled, re-validated on each redirect hop and then fulfilled, so neither a sub-resource nor a redirect can land on a non-global address. The same change blocks the two paths that never reached the interceptor at all: service-worker requests, via `service_workers=\"block\"`, and WebSocket connections, via a route handler that never connects upstream. Upgrading to 0.11",
-      "link": "https://github.com/advisories/GHSA-w2rx-84hp-gg95",
-      "published": "2026-08-04T19:40:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70479"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70478",
-      "title": "Flowise: Unauthenticated OAuth2 token refresh endpoint returns access tokens \u2014 enables token theft for any connected service",
-      "summary": "### Summary\n\nThe OAuth2 token refresh endpoint (`POST /api/v1/oauth2-credential/refresh/:credentialId`) is in `WHITELIST_URLS`, meaning it requires **no authentication**. It decrypts the stored credential (containing `clientId`, `clientSecret`, `refresh_token`), sends a refresh request to the configured OAuth provider, and returns the new `access_token` directly in the response body.\n\n### Root Cause\n\n```typescript\n// packages/server/src/routes/oauth2/index.ts:393-402\nres.json({\n    success: true,\n    message: 'OAuth2 token refreshed successfully',\n    credentialId: credential.id,\n    tokenInfo: {\n        ...tokenData,  // \u2190 includes access_token!\n        has_new_refresh_token: !!tokenData.refresh_token,\n        expires_at: updatedCredentialData.expires_at\n    }\n})\n```\n\nWhitelist entry at `packages/server/src/utils/constants.ts:40`.\n\n### Attack Chain\n\n1. Attacker obtains a credential ID (via Finding 2 / public chatflow leak, or enumeration)\n2. Attacker calls `POST /api/v1/oauth2-credential/refresh/:credentialId` (no auth required)\n3. Server decrypts credential, sends refresh request to OAuth provider with user's `client_secret`\n4. Server returns the new `access_token` in the response to the attacker\n5. Attacker uses the token to access the victim's connected service (Google, Microsoft, etc.)\n\n### Docker Validation\n\n`POST /api/v1/oauth2-credential/refresh/fake-uuid` returns `{\"message\":\"Credential not found\"}` (not 401 Unauthorized), proving the endpoint processes the request without authentication.\n\n### Impact\n\n- OAuth2 access token theft for any connected service\n- Full access to the victim's third-party accounts (Google, Microsoft, GitHub, etc.)\n- Client secret transmitted to OAuth provider during refresh\n- Can also be used for DoS by exhausting refresh token quota\n\n### Suggested Fix\n\nRemove the refresh endpoint from `WHITELIST_URLS` and require authentication:\n\n```typescript\n// Remove from WHITELIST_URLS in constants.ts\n// Add authentication check in the route han",
-      "link": "https://github.com/advisories/GHSA-qgvm-j2hm-6m38",
-      "published": "2026-08-04T19:37:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70478"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70476",
-      "title": "Flowise: Broken Access Control in Stripe Subscription Endpoints Allows Cross-Tenant Billing Manipulation",
-      "summary": "### Summary\nSeveral organization billing endpoints accept attacker-controlled Stripe identifiers (subscriptionId) without verifying that the identifier belongs to the authenticated user's organization. This allows an authenticated attacker to perform unauthorized Stripe subscription operations on other tenants. As a result, an authenticated user can manipulate the Stripe subscription of another organization by supplying a victim organization's subscriptionId.\n\nThis allows attackers to perform unauthorized billing operations such as changing subscription plans or modifying seat quantities, resulting in potential financial impact and service disruption.\n\n\n### Details\nMultiple organization billing endpoints accept subscriptionId directly from user input without validating ownership. The server relies on a client-supplied Stripe subscription identifier rather than resolving the subscription from the authenticated user's organization context.\n\n**File**\n\npackages/server/src/enterprise/routes/organization.route.ts\n\nAffected routes:\n\n```typescript\nrouter.post('/update-additional-seats', organizationController.updateAdditionalSeats)\nrouter.post('/update-subscription-plan', organizationController.updateSubscriptionPlan)\nupdateSubscriptionPlan\n```\n\n**File**\n\npackages/server/src/enterprise/controllers/organization.controller.ts\n\n```typescript\npublic async updateSubscriptionPlan(req: Request, res: Response, next: NextFunction) {\n    const { subscriptionId, newPlanId, prorationDate } = req.body\n\n    const identityManager = getRunningExpressApp().identityManager\n\n    const result = await identityManager.updateSubscriptionPlan(\n        req,\n        subscriptionId,\n        newPlanId,\n        prorationDate\n    )\n\n    return res.status(StatusCodes.OK).json(result)\n}\n```\n\nThe server trusts the user-supplied subscriptionId and forwards it to the Stripe integration layer.\n\nMissing validation:\nsubscriptionId belongs to req.user.activeOrganization\n\nupdateAdditionalSeats\n\n```typescript\npubl",
-      "link": "https://github.com/advisories/GHSA-gmmw-qg98-6j6p",
-      "published": "2026-08-04T19:24:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70476"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70475",
-      "title": "Flowise: Missing Authorization on Execution Update Endpoint",
-      "summary": "# Flowise Security Audit Report\n**Date**: 2026-03-17\n**Researcher**: Dimpal Jadhav (jadhavdimpy@gmail.com)\n**GitHub**: https://github.com/Dimpyj1604\n**Target**: FlowiseAI/Flowise (latest main branch)\n**Version**: flowise-components@3.1.0\n\n### FINDING 1: Missing Authorization on Execution Update Endpoint\n**Severity**: HIGH (CVSS ~7.5)\n**Type**: CWE-862 (Missing Authorization)\n**File**: `packages/server/src/routes/executions/index.ts:11`\n\n**Description**: The `PUT /api/v1/executions/:id` endpoint lacks the `checkAnyPermission()` middleware that protects all other execution endpoints (GET, DELETE). Any authenticated user \u2014 regardless of their assigned permissions \u2014 can modify any execution record.\n\n**Evidence**:\n```typescript\n// Line 7 - GET has permission check\nrouter.get('/', checkAnyPermission('executions:view'), executionController.getAllExecutions)\n\n// Line 11 - PUT has NO permission check\nrouter.put(['/', '/:id'], executionController.updateExecution)  // <-- MISSING checkAnyPermission\n\n// Line 14 - DELETE has permission checkadvisory_1_execution_auth_bypass\nrouter.delete('/:id', checkAnyPermission('executions:delete'), executionController.deleteExecutions)\n```\n\n**Impact**: Privilege escalation. A low-privileged user with any valid API key can modify execution state, data, and metadata of any execution in their workspace. Could be used to manipulate workflow execution results or inject data.\n\n**Reproduction**:\n```bash\ncurl -X PUT https://TARGET/api/v1/executions/EXECUTION_ID \\\n  -H \"Authorization: Bearer LOW_PRIV_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"state\": \"FINISHED\", \"data\": \"MANIPULATED\"}'\n```",
-      "link": "https://github.com/advisories/GHSA-fm2f-4339-4p2f",
-      "published": "2026-08-04T19:18:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70475"
       ],
       "is_zero_day": false,
       "is_high_severity": true
