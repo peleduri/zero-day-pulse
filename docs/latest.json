@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-06T08:12:17.107278+00:00",
+  "generated": "2026-08-06T13:30:01.038128+00:00",
   "total": 25,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -38,6 +38,21 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
+      "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
+      "summary": "A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links.\n\nWe observed production websites embedding hidden prompt injection payloads inside \"Ask AI\" buttons on marketing and competitor comparison pages. When a user",
+      "link": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
+      "published": "2026-08-06T11:30:00+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/",
       "title": "CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency is giving federal agencies three days to mitigate vulnerabilities in IBM Langflow, N-central, and Apache Tomcat, all actively exploited. [...]",
@@ -47,22 +62,6 @@
       "tags": [
         "news",
         "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/tenable-hexa-ai-automating-exposure-remediation-with-agentic-routines",
-      "title": "Tenable Hexa AI: Automating exposure remediation with agentic routines",
-      "summary": "Discover how Tenable Hexa AI closes the gap between exposure management and endpoint patching using intent-driven routines, smart guardrails, and human approval. Key takeaways The problem: A slow handoff between security workflows creates a days-long remediation gap. The solution: Tenable Hexa AI bridges this gap using intent-driven Routines that automate scoping, deployment, and verification across integrated platforms like Jamf. Safety and control: Autonomy is governed by the harness built into Tenable One, ensuring the AI operates strictly within defined user permissions and guardrails. Find the exposure. Fix it. Confirm it is gone. Those three steps are rarely executed in a single place, by a single team. Exposure management knows which assets are at risk, while endpoint management actually changes the machine and applies the fix. Between those two domains of exposure identification and remediation lies a slow, manual handoff and multi-step routine that costs security teams days or weeks while vulnerabilities remain exposed: Scope the asset group Aim the remediation policy Execute patch deployment Check status Re-scan the environment to confirm the finding was closed. Tenable Hexa AI , the agentic engine of the Tenable One Exposure Management Platform , now spans that handoff, so you don\u2019t have to manually toggle among tools or continually restart the conversation. How does Tenable Hexa AI autonomously close the remediation loop Say there\u2019s an actively exploited Chrome vulnerability, and a fleet of your Macs is still running the vulnerable version. Rather than navigating multiple tools, you simply tell Tenable Hexa AI to patch it. Tenable Hexa AI executes the workflow in three unified stages: Enumeration and mapping - Tenable Hexa AI enumerates the affected assets across your exposure sources and resolves them to the devices your endpoint team already manages in Jamf. Policy identification - Tenable Hexa AI maps the CVE to the version that fixes it, then finds t",
-      "link": "https://www.tenable.com/blog/tenable-hexa-ai-automating-exposure-remediation-with-agentic-routines",
-      "published": "2026-08-05T12:45:00+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -181,21 +180,36 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/",
-      "title": "Hackers Start Exploiting Recent JetBrains TeamCity Vulnerability",
-      "summary": "Tracked as CVE-2026-63077, the critical bug can be exploited without authentication for remote code execution. The post Hackers Start Exploiting Recent JetBrains TeamCity Vulnerability appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/",
-      "published": "2026-08-06T06:37:44+00:00",
+      "id": "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/",
+      "title": "Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts",
+      "summary": "Zenity researchers reported the findings to Anthropic and OpenAI in late 2025 and early 2026, but they remain unpatched. The post Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/",
+      "published": "2026-08-06T12:54:09+00:00",
       "source": "SecurityWeek",
       "tags": [
         "news",
         "research"
       ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
+      "title": "CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild",
+      "summary": "A newly patched security flaw impacting on-premise versions of JetBrains TeamCity has come under active exploitation in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA).\n\nThe vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a case of deserialization of untrusted data that could allow an unauthenticated attacker with access to a TeamCity server",
+      "link": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
+      "published": "2026-08-06T06:51:43+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
       "cve_ids": [
         "CVE-2026-63077"
       ],
-      "is_zero_day": false,
-      "is_high_severity": true
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "CVE-2026-65602",
@@ -391,23 +405,6 @@
       ],
       "cve_ids": [
         "CVE-2026-70596"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/critical-gitea-flaw-let-unauthenticated.html",
-      "title": "Critical Gitea Flaw Let Unauthenticated Attackers Read Server Files via Org-Mode Markup",
-      "summary": "An unauthenticated attacker can read any file the service account can access on Gitea, the self-hosted Git platform, in versions 1.22.1 through 1.27.0. No login, no repository write access. A public repository and crafted Org-mode markup are enough. The flaw is fixed in Gitea 1.27.1.\n\nThe file-read flaw is tracked as CVE-2026-59774, rated Critical with a CVSS score of 9.8, and received its",
-      "link": "https://thehackernews.com/2026/08/critical-gitea-flaw-let-unauthenticated.html",
-      "published": "2026-08-05T11:04:23+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-59774"
       ],
       "is_zero_day": false,
       "is_high_severity": true

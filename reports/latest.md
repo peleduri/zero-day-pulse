@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-06 08:12 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-06 13:30 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,21 +22,23 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws
+## 3. 🟠 Zero-Day — AI Recommendation Poisoning: How "Ask AI" Buttons Silently Alter LLM Memory
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html>
+
+> A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links.
+
+We observed production websites embedding hidden prompt injection payloads inside &quot;Ask AI&quot; buttons on marketing and competitor comparison pages. Whe…
+
+---
+
+## 4. 🟠 Zero-Day — CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/>
 
 > The U.S. Cybersecurity and Infrastructure Security Agency is giving federal agencies three days to mitigate vulnerabilities in IBM Langflow, N-central, and Apache Tomcat, all actively exploited. [...]
-
----
-
-## 4. 🟠 Zero-Day — Tenable Hexa AI: Automating exposure remediation with agentic routines
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://www.tenable.com/blog/tenable-hexa-ai-automating-exposure-remediation-with-agentic-routines>
-
-> Discover how Tenable Hexa AI closes the gap between exposure management and endpoint patching using intent-driven routines, smart guardrails, and human approval. Key takeaways The problem: A slow handoff between security workflows creates a days-long remediation gap. The solution: Tenable Hexa AI bridges this gap using intent-driven Routines that automate scoping, deployment, and verification acro…
 
 ---
 
@@ -103,16 +105,27 @@
 
 ---
 
-## 12. 🟡 High Severity — Hackers Start Exploiting Recent JetBrains TeamCity Vulnerability
+## 12. 🟠 Zero-Day — Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts
 
-**CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/>
 
-> Tracked as CVE-2026-63077, the critical bug can be exploited without authentication for remote code execution. The post Hackers Start Exploiting Recent JetBrains TeamCity Vulnerability appeared first on SecurityWeek .
+> Zenity researchers reported the findings to Anthropic and OpenAI in late 2025 and early 2026, but they remain unpatched. The post Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts appeared first on SecurityWeek .
 
 ---
 
-## 13. 🟡 High Severity — Traefik CRD IngressRouteTCP ServersTransport Cross-Provider Namespace Bypass
+## 13. 🟠 Zero-Day — CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild
+
+**CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-06
+**Reference:** <https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html>
+
+> A newly patched security flaw impacting on-premise versions of JetBrains TeamCity has come under active exploitation in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA).
+
+The vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a case of deserialization of untrusted data that could allow an unauthenticated attacker with access to a TeamCity server
+
+---
+
+## 14. 🟡 High Severity — Traefik CRD IngressRouteTCP ServersTransport Cross-Provider Namespace Bypass
 
 **CVE:** `CVE-2026-65602` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-42cj-m3vj-89wv>
@@ -123,7 +136,7 @@ There is a medium-severity cross-provider reference vulnerability in Traefik&#x2
 
 ---
 
-## 14. 🟡 High Severity — Traefik Gateway API HTTPRoute BackendRef ExtensionRef Namespace Confusion
+## 15. 🟡 High Severity — Traefik Gateway API HTTPRoute BackendRef ExtensionRef Namespace Confusion
 
 **CVE:** `CVE-2026-65601` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-qq9q-x9w4-chhj>
@@ -134,7 +147,7 @@ There is a medium-severity namespace-confusion vulnerability in Traefik&#x27;s K
 
 ---
 
-## 15. 🟡 High Severity — Nuxt: Server-Side Remote Code Execution via Runtime Template Injection in Nuxt Server Island Props
+## 16. 🟡 High Severity — Nuxt: Server-Side Remote Code Execution via Runtime Template Injection in Nuxt Server Island Props
 
 **CVE:** `CVE-2026-71320` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-9473-5f9j-94wq>
@@ -145,7 +158,7 @@ Nuxt server islands accept props via the `/__nuxt_island/` endpoint. When `vue.r
 
 ---
 
-## 16. 🟡 High Severity — Nuxt runtime payload cache discloses another user's SSR data across users and to unauthenticated clients
+## 17. 🟡 High Severity — Nuxt runtime payload cache discloses another user's SSR data across users and to unauthenticated clients
 
 **CVE:** `CVE-2026-71316` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-wm8w-6qjm-cv43>
@@ -156,7 +169,7 @@ When a page is covered by `routeRules` `cache` / `swr` / `isr`, Nuxt enables run
 
 ---
 
-## 17. 🟡 High Severity — Nuxt: Unauthenticated out-of-memory crash via unbounded v-for expansion in island rendering
+## 18. 🟡 High Severity — Nuxt: Unauthenticated out-of-memory crash via unbounded v-for expansion in island rendering
 
 **CVE:** `CVE-2026-71314` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-hxcr-hm88-mpq6>
@@ -167,7 +180,7 @@ An unauthenticated attacker can crash a Nuxt server that renders any island / se
 
 ---
 
-## 18. 🟡 High Severity — rclone `serve restic --private-repos` authorization bypass: `..` in the URL path lets an authenticated user read, overwrite and delete other users' repositories
+## 19. 🟡 High Severity — rclone `serve restic --private-repos` authorization bypass: `..` in the URL path lets an authenticated user read, overwrite and delete other users' repositories
 
 **CVE:** `CVE-2026-59733` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-fqj9-69pf-6pjg>
@@ -178,7 +191,7 @@ An unauthenticated attacker can crash a Nuxt server that renders any island / se
 
 ---
 
-## 19. 🟡 High Severity — rclone: Unvalidated symlink target in local `--links` — arbitrary file write from an untrusted remote
+## 20. 🟡 High Severity — rclone: Unvalidated symlink target in local `--links` — arbitrary file write from an untrusted remote
 
 **CVE:** `CVE-2026-54572` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-cf44-9pgv-m4xc>
@@ -188,7 +201,7 @@ With `-l/--links`, rclone serializes symlinks as `&lt;name&gt;.rclonelink` text 
 
 ---
 
-## 20. 🟡 High Severity — Electron: contextBridge object copy honors prototype setters
+## 21. 🟡 High Severity — Electron: contextBridge object copy honors prototype setters
 
 **CVE:** `CVE-2026-70610` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-ff2p-hmqr-hxm4>
@@ -200,7 +213,7 @@ Apps are only affected if their preload code accepts object arguments from untru
 
 ---
 
-## 21. 🟡 High Severity — Electron: ProtocolResponse.url reuses the default session cache instead of the registering session
+## 22. 🟡 High Severity — Electron: ProtocolResponse.url reuses the default session cache instead of the registering session
 
 **CVE:** `CVE-2026-70606` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-r4w5-6pfg-jxp5>
@@ -212,7 +225,7 @@ Apps that use `ProtocolResponse.url`, omit `ProtocolResponse.session`, and rely 
 
 ---
 
-## 22. 🟡 High Severity — Electron: Extension tab APIs operate across session boundaries
+## 23. 🟡 High Severity — Electron: Extension tab APIs operate across session boundaries
 
 **CVE:** `CVE-2026-70602` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-m55f-7gqj-fr98>
@@ -224,7 +237,7 @@ Apps are only affected if they load Chrome extensions via `session.loadExtension
 
 ---
 
-## 23. 🟡 High Severity — Ghost: Cross-Site Scripting in Feature Image Captions
+## 24. 🟡 High Severity — Ghost: Cross-Site Scripting in Feature Image Captions
 
 **CVE:** `CVE-2026-70596` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-05
 **Reference:** <https://github.com/advisories/GHSA-pr22-p9rp-2cqv>
@@ -244,17 +257,6 @@ v6.54.1 contains a fix for this issue.
 ### How to update
 
 For self-hosters using Docker, fin…
-
----
-
-## 24. 🟡 High Severity — Critical Gitea Flaw Let Unauthenticated Attackers Read Server Files via Org-Mode Markup
-
-**CVE:** `CVE-2026-59774` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-05
-**Reference:** <https://thehackernews.com/2026/08/critical-gitea-flaw-let-unauthenticated.html>
-
-> An unauthenticated attacker can read any file the service account can access on Gitea, the self-hosted Git platform, in versions 1.22.1 through 1.27.0. No login, no repository write access. A public repository and crafted Org-mode markup are enough. The flaw is fixed in Gitea 1.27.1.
-
-The file-read flaw is tracked as CVE-2026-59774, rated Critical with a CVSS score of 9.8, and received its
 
 ---
 
