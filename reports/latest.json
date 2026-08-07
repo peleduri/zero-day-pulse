@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-07T02:00:33.236547+00:00",
-  "total": 29,
+  "generated": "2026-08-07T06:57:42.858702+00:00",
+  "total": 28,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -228,23 +228,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
-      "title": "CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild",
-      "summary": "A newly patched security flaw impacting on-premise versions of JetBrains TeamCity has come under active exploitation in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA).\n\nThe vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a case of deserialization of untrusted data that could allow an unauthenticated attacker with access to a TeamCity server",
-      "link": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
-      "published": "2026-08-06T06:51:43+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-63077"
-      ],
       "is_zero_day": true,
       "is_high_severity": false
     },

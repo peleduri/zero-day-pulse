@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-07 02:00 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-07 06:57 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -136,18 +136,7 @@ The Postgres and SQLite stores persist hierarchical namespaces as a dot-joined s
 
 ---
 
-## 15. 🟠 Zero-Day — CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild
-
-**CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html>
-
-> A newly patched security flaw impacting on-premise versions of JetBrains TeamCity has come under active exploitation in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA).
-
-The vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a case of deserialization of untrusted data that could allow an unauthenticated attacker with access to a TeamCity server
-
----
-
-## 16. 🟡 High Severity — Craft CMS: Authenticated leak of secret environment variables
+## 15. 🟡 High Severity — Craft CMS: Authenticated leak of secret environment variables
 
 **CVE:** `CVE-2026-31857` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-596p-6jv8-775v>
@@ -158,7 +147,7 @@ The Craft vulnerability [CVE-2026-31857](https://github.com/craftcms/cms/securit
 
 ---
 
-## 17. 🟡 High Severity — Craft CMS: Missing authorization check allows non-admin control panel users to reorder Global Sets
+## 16. 🟡 High Severity — Craft CMS: Missing authorization check allows non-admin control panel users to reorder Global Sets
 
 **CVE:** `CVE-2026-14793` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-9p7c-v5x3-rfx8>
@@ -167,7 +156,7 @@ The Craft vulnerability [CVE-2026-31857](https://github.com/craftcms/cms/securit
 
 ---
 
-## 18. 🟡 High Severity — AWS CLI: Disabled SSH host key verification in Amazon AWS CLI EMR helper commands
+## 17. 🟡 High Severity — AWS CLI: Disabled SSH host key verification in Amazon AWS CLI EMR helper commands
 
 **CVE:** `CVE-2026-18654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-hqvf-45jj-mccq>
@@ -180,7 +169,7 @@ A network-positioned actor could perform a man-in-the-middle …
 
 ---
 
-## 19. 🟡 High Severity — Nx: Zip-Slip in the self-hosted remote cache
+## 18. 🟡 High Severity — Nx: Zip-Slip in the self-hosted remote cache
 
 **CVE:** `CVE-2026-71476` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-vp3h-ghgh-jr7g>
@@ -191,7 +180,7 @@ The Nx **self-hosted HTTP remote cache** extracts downloaded cache artifacts wit
 
 ---
 
-## 20. 🟡 High Severity — Mermaid Architecture diagrams are vulnerable to prototype pollution
+## 19. 🟡 High Severity — Mermaid Architecture diagrams are vulnerable to prototype pollution
 
 **CVE:** `CVE-2026-71437` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-3rrr-jr9j-h3q3>
@@ -204,7 +193,7 @@ Any code in the same realm that reads a property of that name from an arbitrary 
 
 ---
 
-## 21. 🟡 High Severity — Contao crawler leaks auth credentials to external hosts
+## 20. 🟡 High Severity — Contao crawler leaks auth credentials to external hosts
 
 **CVE:** `CVE-2026-55824` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-3mr9-p497-58f6>
@@ -214,7 +203,7 @@ Contao&#x27;s crawler tries to prevent confidential HTTP client options from bei
 
 ---
 
-## 22. 🟡 High Severity — Traefik: Authentication Bypass via Path Traversal in ReplacePathRegex Middleware
+## 21. 🟡 High Severity — Traefik: Authentication Bypass via Path Traversal in ReplacePathRegex Middleware
 
 **CVE:** `CVE-2026-65600` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-cxjq-mrr5-89rv>
@@ -225,7 +214,7 @@ There is a critical authentication-bypass vulnerability in Traefik&#x27;s `Repla
 
 ---
 
-## 23. 🟡 High Severity — Traefik: Gateway HTTPRoute backendRef filters can leak backend context across routes sharing a Service:port
+## 22. 🟡 High Severity — Traefik: Gateway HTTPRoute backendRef filters can leak backend context across routes sharing a Service:port
 
 **CVE:** `CVE-2026-54765` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-6p8f-p8j2-rqmv>
@@ -240,7 +229,7 @@ where `backendRef` fi…
 
 ---
 
-## 24. 🟡 High Severity — Traefik: `allowCrossNamespace=false` bypass via `@kubernetescrd` TraefikService backendRef
+## 23. 🟡 High Severity — Traefik: `allowCrossNamespace=false` bypass via `@kubernetescrd` TraefikService backendRef
 
 **CVE:** `CVE-2026-71325` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-62fc-8686-hfmq>
@@ -251,7 +240,7 @@ There is a medium severity vulnerability in Traefik&#x27;s Kubernetes CRD provid
 
 ---
 
-## 25. 🟡 High Severity — Traefik: ForwardAuth middleware leaks X-Forwarded-Port spoofing via untrusted X-Forwarded-Proto when trustForwardHeader=false
+## 24. 🟡 High Severity — Traefik: ForwardAuth middleware leaks X-Forwarded-Port spoofing via untrusted X-Forwarded-Proto when trustForwardHeader=false
 
 **CVE:** `CVE-2026-54764` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-3q9r-p662-5j8m>
@@ -262,7 +251,7 @@ There is a medium severity vulnerability in Traefik&#x27;s ForwardAuth middlewar
 
 ---
 
-## 26. 🟡 High Severity — Traefik: Gateway API route identity collision allows cross-namespace backend hijacking
+## 25. 🟡 High Severity — Traefik: Gateway API route identity collision allows cross-namespace backend hijacking
 
 **CVE:** `CVE-2026-71327` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-fgjj-px3w-67xx>
@@ -273,7 +262,7 @@ There is a high severity vulnerability in Traefik&#x27;s Kubernetes Gateway API 
 
 ---
 
-## 27. 🟡 High Severity — Traefik: BasicAuth singleflight key collision allows authenticated identity spoofing
+## 26. 🟡 High Severity — Traefik: BasicAuth singleflight key collision allows authenticated identity spoofing
 
 **CVE:** `CVE-2026-71326` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-6765-c87h-8mrf>
@@ -284,7 +273,7 @@ There is a low severity vulnerability in Traefik&#x27;s BasicAuth middleware. Co
 
 ---
 
-## 28. 🟡 High Severity — Traefik: Cross-user response poisoning via proxied CONNECT on Traefik's shared backend keep-alive pool
+## 27. 🟡 High Severity — Traefik: Cross-user response poisoning via proxied CONNECT on Traefik's shared backend keep-alive pool
 
 **CVE:** `CVE-2026-71324` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
 **Reference:** <https://github.com/advisories/GHSA-3ccp-42pg-hgv6>
@@ -295,7 +284,7 @@ There is a critical vulnerability in Traefik&#x27;s default HTTP reverse proxy t
 
 ---
 
-## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
