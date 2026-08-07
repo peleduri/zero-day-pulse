@@ -1,10 +1,29 @@
 {
-  "generated": "2026-08-07T12:36:13.042901+00:00",
-  "total": 28,
-  "kev": 0,
+  "generated": "2026-08-07T18:37:11.563662+00:00",
+  "total": 27,
+  "kev": 1,
   "zero_day": 14,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-8037",
+      "title": "CVE-2026-8037 \u2014 Progress LoadMaster Command Injection Vulnerability",
+      "summary": "Vendor: Progress | Product: LoadMaster. Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-10)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-8037",
+      "published": "2026-08-07",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-8037"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -33,24 +52,6 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67309",
-      "title": "Traefik: Kubernetes Ingress NGINX RewriteTarget Path Traversal Allows Route-Level Authentication Bypass",
-      "summary": "## Summary\n\nThere is a high severity vulnerability in Traefik's Kubernetes Ingress NGINX provider. When an Ingress uses the `nginx.ingress.kubernetes.io/rewrite-target` annotation with a regular expression that captures attacker-controlled text without requiring a path separator (for example path `/api(.*)` with rewrite target `/$1`), the generated `RewriteTarget` middleware can turn an initially safe request path into a dot-segment traversal path after the router has already been selected.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.8\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes Ingress NGINX provider creates an internal `RewriteTarget` middleware for the `nginx.ingress.kubernetes.io/rewrite-target` annotation. When an Ingress path captures attacker-controlled text without requiring a path separator, the middleware can turn an initially safe path into a dot-segment traversal path after Traefik has already selected the router.\n\nFor example, with Ingress path `/api(.*)` and rewrite target `/$1`, an unauthenticated request to `/api../admin` follows this flow:\n\n1. The default entry-point path sanitizer leaves `/api../admin` unchanged because `api..` is one ordinary segment.\n2. The public router's `PathRegexp(\"(?i)^/api(.*)\")` rule matches.\n3. `RewriteTarget` captures `../admin` and creates `/../admin`.\n4. The middleware forwards `/../admin` without checking whether path normalization changes it.\n5. A backend that normalizes paths resolves `/../admin` to `/admin`.\n6. The request reaches content intended to be reachable only through a separate `/admin` router with BasicAuth, DigestAuth, or ForwardAuth.\n\nThis is an unpatched sibling of [GHSA-cxjq-mrr5-89rv](https://github.com/traefik/traefik/security/advisories/GHSA-cxjq-mrr5-89rv), which added post-replacemen",
-      "link": "https://github.com/advisories/GHSA-8rxv-jg7p-wvg3",
-      "published": "2026-08-06T16:45:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-67309"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -168,6 +169,24 @@
       "is_high_severity": false
     },
     {
+      "id": "https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/",
+      "title": "CVE-2026-63077: Additional Guidance Following Reports of Active Exploitation",
+      "summary": "This post is a follow-up to our July 27, 2026, announcement about CVE-2026-63077. Summary What has changed since our initial announcement Since our initial announcement on July 27, 2026, we have received reports of active exploitation, as well as attempted exploitation, targeting unpatched TeamCity servers. Before these reports were received, we had already investigated the [\u2026]",
+      "link": "https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/",
+      "published": "2026-08-07T13:22:49+00:00",
+      "source": "JetBrains Security Blog",
+      "tags": [
+        "ide",
+        "jetbrains",
+        "plugin"
+      ],
+      "cve_ids": [
+        "CVE-2026-63077"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://thehackernews.com/2026/08/ai-assisted-http-terminator-finds-novel.html",
       "title": "AI-Assisted HTTP Terminator Finds Novel HTTP Desync Techniques and Apache Zero-Day",
       "summary": "PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate desync vectors.\n\nPortSwigger said a separate human-guided discovery cascade also exposed a zero-day in Apache Traffic Server. Kettle said HTTP Terminator tested 30,000 websites where",
@@ -177,6 +196,22 @@
       "tags": [
         "news",
         "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "GHSA-xxpx-f366-4xpq",
+      "title": "Craft CMS:Authorization bypass: view-only Categories user can modify category structure via structures/move-element",
+      "summary": "A control-panel user who holds only the viewCategories permission for a category group (and not saveCategories) can permanently modify that group's category structure \u2014 reordering and re-parenting categories via the structures/move-element action.\n\nA read-time authorization grant that a write endpoint later trusts. For categories, the structureEditable flag is computed from the view permission (`src/elements/Category.php:205`) instead of the save permission (entries correctly use saveEntries \u2014 `src/elements/Entry.php:341`). When the read-only category index renders, `craft\\base\\Element::indexHtml()` calls `Craft::$app->getSession()->authorize('editStructure:<structureId>');` StructuresController then authorizes the structure-mutating action solely on that session grant, with no canSave re-check.\n\nVerified on Craft CMS 5.10.5. Same class as the moderate-severity authorization bypasses fixed in 5.10.3 and 5.10.5; this is a distinct, unpatched instance.\n\n## Impact\n\nA low-privileged, authenticated user (view-only on a category group) can persistently alter the sibling ordering and parent/child nesting of the category taxonomy. Because a category\u2019s URI is derived from its position in the structure (ancestor slugs), moving a category changes its URL and the URLs of its descendants, and can corrupt any navigation/menus built from the category tree. This is an integrity/broken access-control issue: content that the user has no permission to modify is being modified. No confidentiality impact and no RCE; scope is content/taxonomy integrity.",
+      "link": "https://github.com/advisories/GHSA-xxpx-f366-4xpq",
+      "published": "2026-08-06T21:43:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -217,19 +252,93 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/",
-      "title": "Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts",
-      "summary": "Zenity researchers reported the findings to Anthropic and OpenAI in late 2025 and early 2026, but they remain unpatched. The post Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/",
-      "published": "2026-08-06T12:54:09+00:00",
-      "source": "SecurityWeek",
+      "id": "CVE-2026-71847",
+      "title": "Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams",
+      "summary": "### Summary\n\nRuby's JSON native C extension clears the consumed `JSON::ResumableParser` input buffer but leaves `state.start`, `state.cursor`, and `state.end` pointing into released storage.\n\nWhen `partial_value` reconstructs an incomplete object containing duplicate keys, the duplicate-key warning path calls `cursor_position`, which dereferences those stale pointers. This results in a heap-use-after-free and can terminate the Ruby process.\n\nAn attacker who can supply JSON stream data to an application using `JSON::ResumableParser` may cause process termination when the application calls `partial_value` on incomplete attacker-controlled input containing duplicate object keys.\n\nThe issue was reproduced in the native C extension from the official RubyGems releases:\n\n* JSON 2.20.0\n* JSON 2.21.0\n* JSON 2.21.1\n\nThe attached evidence demonstrates:\n\n* an AddressSanitizer-confirmed heap-use-after-free;\n* a native `SIGSEGV` using the official JSON 2.21.1 RubyGem;\n* an end-to-end loopback TCP attacker/victim reproduction;\n* four differential controls;\n* successful execution after applying a tested patch control.\n\nThis was originally reported privately through Ruby's HackerOne program as report `#3867755`. A Ruby maintainer independently confirmed reproduction of the ASan failure and requested that further coordination continue through this private advisory.\n\nNo code execution or information disclosure is claimed.\n\n### Details\n\nThe affected source is:\n\n```text\next/json/ext/parser/parser.c\n```\n\nThe vulnerable sequence in JSON 2.21.1 is:\n\n1. `cResumableParser_parse` reaches the end of the current input buffer.\n2. It calls `json_str_clear(parser->buffer)`.\n3. It sets `parser->buffer = Qfalse`.\n4. The parser-state pointers into the released buffer are not reset.\n5. `partial_value` makes a shallow copy of the parser state.\n6. Reconstructing an incomplete object containing duplicate keys reaches the duplicate-key warning path.\n7. `cursor_position` walks through the stale input point",
+      "link": "https://github.com/advisories/GHSA-9hj4-r449-hfvc",
+      "published": "2026-08-07T18:33:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71847"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63223",
+      "title": "CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules",
+      "summary": "### Impact\nThis is an unsafe file upload validation vulnerability that can lead to remote code execution in vulnerable application configurations.\n\nApplications are impacted when they:\n- validate uploads using `is_image` or `mime_in` without an independent safe extension check, such as `ext_in` on patched versions\n- save uploaded files using the client-supplied filename\n- place uploads in a web-accessible directory where PHP files can execute\n\n### Patches\nUpgrade to v4.7.4 or later.\n\n### Workarounds\n- Save uploads outside the public web root, preferably under `writable/uploads`.\n- Use `$file->store()` or `$file->move($path, $file->getRandomName())` instead of preserving the original client filename.\n- Disable script execution in any public upload directory.\n- Manually verify the client filename extension before moving the file.\n- For image uploads, reject files when `$file->getClientExtension()` is not an allowed image extension.\n- For exact MIME-type validation, reject files when `$file->getClientExtension()` does not match `$file->guessExtension()`.",
+      "link": "https://github.com/advisories/GHSA-mmj4-63m4-r6h5",
+      "published": "2026-08-07T18:24:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63223"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-15895",
+      "title": "jsii-diff: Command Injection via npm: package argument",
+      "summary": "## Summary\n\njsii-diff is a command line tool to compare the API differences between two jsii assemblies, and report errors if there are backwards-incompatible changes to the API. An issue exists where specially formatted command line arguments can be used to execute shell commands via this tool.\n\n## Impact\njsii-diff supports downloading packages to compare directly from NPM, so that you can compare a proposed candidate version of your jsii package with an already-published version, by passing an argument that looks like `npm:<package-specifier>`. For example:\n\n```\njsii-diff npm:my-package@latest .\n```\n\nBy injecting a `;` into the `package-specifier` part of that command, jsii-diff can be tricked into running shell commands. For example:\n\n```\njsii-diff \"npm:lodash; touch /tmp/123\" .\n```\n\nThis allows anyone that can control the command-line arguments to jsii-diff to run arbitrary commands with the same permissions as the jsii-diff command itself.\n\n## Patches\nThis issue has been addressed in jsii-diff version 1.131.0. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n## Workarounds\nIf you are unable to update, make sure only trusted actors can control the arguments passed to jsii-diff.\n\n## References\nIf you have any questions or comments about this advisory, AWS asks that you contact AWS Security via the [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.",
+      "link": "https://github.com/advisories/GHSA-wcx4-wpfv-mc5c",
+      "published": "2026-08-07T18:15:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-15895"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62996",
+      "title": "Smarty Security stream restriction bypass through stream: resource",
+      "summary": "`smarty/smarty` version `5.8.0` can read local files through PHP stream wrappers even when Smarty Security is enabled and all streams are disabled with `Security::$streams = null`.\n\nThe bypass uses Smarty's built-in `stream:` resource type. A template such as:\n\n```smarty\n{include file=\"stream:php://filter/read=convert.base64-encode/resource=/tmp/secret.tpl\"}\n```\n\nis handled as Smarty resource type `stream`, so the security check that would normally reject the underlying `php` wrapper is not applied. `StreamPlugin` then opens the nested `php://filter/...` URI directly.\n\nFor comparison, the direct resource:\n\n```smarty\n{include file=\"php://filter/read=convert.base64-encode/resource=/tmp/secret.tpl\"}\n```\n\nis blocked with `stream 'php' not allowed by security setting`.\n\nAffected package:\n\n- Ecosystem: Packagist / Composer\n- Package: `smarty/smarty`\n- Confirmed affected version: `5.8.0`\n- Confirmed source reference from Composer lock: `78d259d3b971c59a0cd719c270cc5cbb740c36a7`\n- Current stable version on Packagist at review time: `v5.8.0`\n- Packagist usage at review time: 41,113,855 total downloads and 840,604 monthly downloads\n\nRelevant code paths:\n\n- `Smarty\\Resource\\BasePlugin::load(...)`\n- `Smarty\\Resource\\StreamPlugin::getContent(...)`\n- `Smarty\\Security::isTrustedStream(...)`\n\n`BasePlugin::load()` maps the built-in resource name `stream` directly to `StreamPlugin` before the code path that checks PHP stream wrappers with `stream_get_wrappers()` and `Security::isTrustedStream($type)`. `StreamPlugin::getContent()` later calls `fopen($filepath, 'r+')` on the nested URI when the resource name contains `://`.\n\nPreconditions:\n\nAn application must render templates that are not fully trusted while relying on Smarty Security to restrict local files and PHP stream wrappers. The PoC sets:\n\n```php\n$smarty->enableSecurity();\n$smarty->security_policy->streams = null;\n```\n\nLocal reproduction:\n\nThe PoC creates a disposable template directory and a separate outside directory. It ena",
+      "link": "https://github.com/advisories/GHSA-rjhh-76wf-8xmw",
+      "published": "2026-08-07T15:10:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62996"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
+      "title": "New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP",
+      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.\n\nTracked as\u00a0CVE-2026-64638\u00a0(CVSS score: 8.9), the",
+      "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
+      "published": "2026-08-07T12:56:23+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "research"
+        "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-64638"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "GHSA-596p-6jv8-775v",
@@ -335,132 +444,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55824"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-65600",
-      "title": "Traefik: Authentication Bypass via Path Traversal in ReplacePathRegex Middleware",
-      "summary": "## Summary\n\nThere is a critical authentication-bypass vulnerability in Traefik's `ReplacePathRegex` middleware. When it is configured with a regular expression that captures user-controlled path segments without a mandatory separator (for example `regex: \"^/api(.*)\"`, `replacement: \"/$1\"`), a crafted request can produce an un-normalized replacement path such as `/../admin`, which Traefik forwarded to the backend without validation. A backend that normalizes the path may resolve it to a protected route, letting an unauthenticated attacker reach resources located behind authentication middleware. This is the same class of issue that was fixed for `StripPrefix` in CVE-2026-48020; that post-replacement normalization check had not been applied to `ReplacePathRegex`. The fix rejects any request whose replaced path does not match its normalized form.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.52\n- https://github.com/traefik/traefik/releases/tag/v3.6.23\n- https://github.com/traefik/traefik/releases/tag/v3.7.7\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\nA path traversal vulnerability in the ReplacePathRegex middleware allows an unauthenticated remote attacker to bypass authentication middleware and access protected routes by sending a single crafted HTTP request. The vulnerability exists because ReplacePathRegex does not perform post-replacement path normalization validation - the same check added to StripPrefix in the fix for CVE-2026-48020 was not applied to ReplacePathRegex.\n\n\n### Details\nWhen ReplacePathRegex is configured with a regex that captures user-controlled path segments without a mandatory path separator (e.g., `regex: \"^/api(.*)\"`, `replacement: \"/$1\"`), an attacker can inject implicit traversal sequences into the capture group.\n\n**Root cause:** `pkg/middlewares/repl",
-      "link": "https://github.com/advisories/GHSA-cxjq-mrr5-89rv",
-      "published": "2026-08-06T16:51:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-65600"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54765",
-      "title": "Traefik: Gateway HTTPRoute backendRef filters can leak backend context across routes sharing a Service:port",
-      "summary": "## Summary\n\nThere is a medium severity vulnerability in Traefik's Kubernetes Gateway API provider.\nWhen two accepted HTTPRoutes target the same backend Service:port but configure different\n`backendRef` filters, Traefik may resolve both routes to the same child service and apply\nonly one route's filter set to all requests reaching that backend. In Gateway deployments\nwhere `backendRef` filters set security-sensitive headers \u2014 such as tenant identity,\nauthorization context, or values the backend trusts \u2014 an attacker who can create an\naccepted HTTPRoute sharing the same backend Service:port may cause their route's filter\ncontext to be applied to another route's requests, potentially crossing namespace\nboundaries when a `ReferenceGrant` permits cross-namespace targeting.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.6\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n# Traefik Gateway HTTPRoute backendRef filter context collision across routes sharing Service:port\n\n## Summary\n\nTraefik's Kubernetes Gateway API provider builds the dynamic HTTP backend service key for a Gateway `HTTPRoute` backendRef from only the backend namespace, Service name, protocol, and port. It does not include the HTTPRoute, listener, rule, or backendRef filter identity in that key.\n\nWhen two accepted HTTPRoutes point to the same backend `Service:port` but define different backendRef filters, Traefik can make both route WRR services reference the same child service. The child service then carries only one backendRef filter set, so one route can send requests to the backend with another route's backend context.\n\nThis is security-relevant when backendRef filters set, remove, or rewrite security-sensitive context, such as tenant, identity, auth, sanitization, Host, or path headers trusted by the backend.\n\nCredit: Qican Ma, Ding",
-      "link": "https://github.com/advisories/GHSA-6p8f-p8j2-rqmv",
-      "published": "2026-08-06T16:40:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54765"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71325",
-      "title": "Traefik: `allowCrossNamespace=false` bypass via `@kubernetescrd` TraefikService backendRef",
-      "summary": "## Summary\n\nThere is a medium severity vulnerability in Traefik's Kubernetes CRD provider. When `providers.kubernetesCRD.allowCrossNamespace` is disabled \u2014 the default \u2014 cross-namespace `@kubernetescrd` references are rejected for middlewares, TLS options and HTTP/TCP ServersTransports, but the same restriction was not applied to `TraefikService` backend references resolved by the service resolver. A tenant confined by RBAC to a single namespace can therefore bind its own router to a `TraefikService` owned by another namespace and expose or reroute that namespace's backend, defeating the namespace isolation `allowCrossNamespace=false` is meant to enforce. Traefik v2 releases and the unmaintained v3 minor lines below v3.6 are affected and will not receive a patch on their own line; the remedy for those users is upgrading to a maintained, patched release.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.54\n- https://github.com/traefik/traefik/releases/tag/v3.6.25\n- https://github.com/traefik/traefik/releases/tag/v3.7.10\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\nWhen `providers.kubernetesCRD.allowCrossNamespace=false` (the default), Traefik correctly rejects cross-namespace `@kubernetescrd` references for middlewares, TLS options, and HTTP/TCP `ServersTransport`, but it does not apply the same restriction to service (`TraefikService`) backendRefs. As a result, a Kubernetes tenant who is confined by RBAC to their own namespace can bind their own router to a `TraefikService` owned by another namespace simply by referencing it as `<victim-namespace>-<name>@kubernetescrd`, defeating the namespace-isolation boundary that `allowCrossNamespace=false` is meant to enforce.\n\nThis is the service-resolver sibling of the cross-namespace isolation family that Traefik has been fixing one resol",
-      "link": "https://github.com/advisories/GHSA-62fc-8686-hfmq",
-      "published": "2026-08-06T16:38:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71325"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54764",
-      "title": "Traefik: ForwardAuth middleware leaks X-Forwarded-Port spoofing via untrusted X-Forwarded-Proto when trustForwardHeader=false",
-      "summary": "## Summary\n\nThere is a medium severity vulnerability in Traefik's ForwardAuth middleware. Even when configured with `trustForwardHeader: false`, Traefik derives the `X-Forwarded-Port` header sent to the authentication service from the original incoming request instead of the sanitized forwarded request. As a result, an unauthenticated remote attacker can inject an `X-Forwarded-Proto: https` header over a plain HTTP connection and cause Traefik to forward `X-Forwarded-Port: 443` to the auth service, bypassing port-based authorization checks. This is a regression of the incomplete fix for GHSA-6384-m2mw-rf54, which addressed the `X-Forwarded-Proto` and `X-Forwarded-Prefix` spoofing vectors but missed the `X-Forwarded-Port` vector.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.51\n- https://github.com/traefik/traefik/releases/tag/v3.6.22\n- https://github.com/traefik/traefik/releases/tag/v3.7.6\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n### Summary\n\n  The ForwardAuth middleware, even when configured with `trustForwardHeader: false`,\n  still derives the `X-Forwarded-Port` header sent to the authentication service by\n  reading the **attacker-controlled** `X-Forwarded-Proto` header from the original\n  incoming request. This allows an unauthenticated remote attacker to cause Traefik\n  to forward `X-Forwarded-Port: 443` to the auth service on a plain HTTP connection,\n  creating an inconsistency that can bypass port-based authorization checks.\n\n  ### Details\n\n  The fix introduced in commit `5e1de2258` (released as part of the April 2026 security\n  advisory GHSA-6384-m2mw-rf54) correctly strips all X-Forwarded-* headers from the\n  forwarded auth request when `trustForwardHeader=false`, and reconstructs\n  `X-Forwarded-Proto` from the actual TLS state of the connection (`req.TLS`).\n\n  However, the r",
-      "link": "https://github.com/advisories/GHSA-3q9r-p662-5j8m",
-      "published": "2026-08-06T16:38:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54764"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71327",
-      "title": "Traefik: Gateway API route identity collision allows cross-namespace backend hijacking",
-      "summary": "## Summary\n\nThere is a high severity vulnerability in Traefik's Kubernetes Gateway API provider. Router and service identities for `HTTPRoute`, `GRPCRoute`, `TCPRoute` and `TLSRoute` objects were built by hyphen-concatenating the route namespace, the route name, the Gateway identity, the entry point and the rule index, a construction that is not injective because Kubernetes names may themselves contain hyphens. Two distinct Routes attached to the same Gateway with equivalent match rules can therefore produce the same identity, and the Route loaded later silently overwrites the earlier one, so a tenant able to create an accepted Route in a colliding namespace/name combination can redirect another namespace's traffic to a backend it controls. All Traefik v3 minor lines are affected; the lines older than v3.6 are no longer maintained and will not receive a patch of their own, so users running them should upgrade to a maintained, patched release.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.6.25\n- https://github.com/traefik/traefik/releases/tag/v3.7.10\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's Kubernetes Gateway provider constructs internal HTTPRoute and\nGRPCRoute identities by concatenating namespace, route name, Gateway identity,\nentrypoint, and rule index with hyphens. Kubernetes names may themselves\ncontain hyphens, so the construction is not injective.\n\nFor example, HTTPRoutes `team/a-app` and `team-a/app`, attached to the same\nGateway with the same match rule, produce identical router and service keys.\nDuring configuration merging, the route loaded later overwrites the earlier\nroute's maps. A tenant that can create an accepted Route in a colliding\nnamespace/name combination can therefore redirect another namespace's\ntraffic to an attacker-controlled backend.\n\nThe",
-      "link": "https://github.com/advisories/GHSA-fgjj-px3w-67xx",
-      "published": "2026-08-06T16:38:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71327"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71326",
-      "title": "Traefik: BasicAuth singleflight key collision allows authenticated identity spoofing",
-      "summary": "## Summary\n\nThere is a low severity vulnerability in Traefik's BasicAuth middleware. Concurrent password verifications are deduplicated through a singleflight group whose key was the delimiter-free concatenation of the submitted password and the stored secret, so a request carrying an unconfigured username \u2014 whose secret is empty \u2014 can produce the same key as a configured user's valid request and receive that request's successful result. Exploitation requires the attacker to already hold a valid credential **and** to read the stored password hash, which is only reachable through paths that are themselves privileged: the API is documented as admin-only, the Kubernetes path requires read access to the Secret, and the Docker path requires access to the socket. The key now encodes the password length as a prefix, so distinct (password, secret) pairs can no longer collide. Only the v3.6 line from v3.6.11 onwards and the v3.7 line are affected; earlier v3 releases and the v2 line do not carry the vulnerable deduplication path.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.6.25\n- https://github.com/traefik/traefik/releases/tag/v3.7.10\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's BasicAuth middleware deduplicates concurrent password checks with a\n`singleflight.Group`. Its key is the delimiter-free concatenation\n`password + secret`. For an existing user with password `P` and stored hash\n`H`, the key is `P || H`. An unknown user can select the password `P || H`;\nbecause its secret is the empty string, its key is also `P || H`.\n\nIf the existing user's request starts the shared calculation, the unknown\nuser receives the existing user's successful Boolean result. Traefik then\ncontinues processing the unknown user's original request and propagates the\nattacker-selected username thro",
-      "link": "https://github.com/advisories/GHSA-6765-c87h-8mrf",
-      "published": "2026-08-06T16:34:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71326"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71324",
-      "title": "Traefik: Cross-user response poisoning via proxied CONNECT on Traefik's shared backend keep-alive pool",
-      "summary": "## Summary\n\nThere is a critical vulnerability in Traefik's default HTTP reverse proxy that leads to unauthenticated cross-user response poisoning. When a client opens an HTTP/2 or HTTP/3 `CONNECT` request, Traefik forwards it \u2014 body included \u2014 to an HTTP/1.1 upstream over a shared `net/http.Transport`. If the upstream answers the CONNECT with a keep-alive non-2xx response without draining the body, the now-desynchronized backend socket is returned to Traefik's shared connection pool and reused for other clients, letting an attacker make a different client read a response the attacker smuggled \u2014 which may be another user's authenticated or private content. The entrypoint's `sanitizePath` option (default `true`) is not a reliable defense: backends that answer `CONNECT /` with a keep-alive non-2xx remain exploitable. The experimental FastProxy implementation was not affected. The issue is fixed by deferring the forwarded CONNECT payload until the backend accepts the tunnel, by not returning CONNECT connections to the shared idle pool, and by discarding the CONNECT body in the ForwardAuth path.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v2.11.53\n- https://github.com/traefik/traefik/releases/tag/v3.6.24\n- https://github.com/traefik/traefik/releases/tag/v3.7.9\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nTraefik's default reverse proxy forwards a plain HTTP/2 or HTTP/3 `CONNECT` request and its body to\nan HTTP/1.1 upstream through a shared `net/http.Transport`. When the upstream answers the CONNECT\nwith a keep-alive non-2xx response and does not drain the body, Traefik returns the now\ndesynchronized backend socket to its shared pool and reuses it for other clients. An\nunauthenticated attacker uses this to make a different client read the attacker's smuggled response.\n\nTraefik's defaul",
-      "link": "https://github.com/advisories/GHSA-3ccp-42pg-hgv6",
-      "published": "2026-08-06T15:56:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71324"
       ],
       "is_zero_day": false,
       "is_high_severity": true

@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">27</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-07 12:36 UTC</div>
+            <div class="generated">Updated 2026-08-07 18:37 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-8037" target="_blank" rel="noopener">CVE-2026-8037 — Progress LoadMaster Command Injection Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-8037</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-07</span>
+  </div>
+  <p class='summary'>Vendor: Progress | Product: LoadMaster. Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Secur…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -148,24 +164,6 @@
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8rxv-jg7p-wvg3" target="_blank" rel="noopener">Traefik: Kubernetes Ingress NGINX RewriteTarget Path Traversal Allows Route-Level Authentication Bypass</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-67309</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a high severity vulnerability in Traefik&#x27;s Kubernetes Ingress NGINX provider. When an Ingress uses the `nginx.ingress.kubernetes.io/rewrite-target` annotation with a regular expression that captures attacker-controlled text without requiring a path separator (for example path `/api(.*)` with rewrite target `/$1`), the generated `RewriteTarget` middleware can turn an initially …</p>
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -279,6 +277,22 @@ There is a high severity vulnerability in Traefik&#x27;s Kubernetes Ingress NGIN
 
 </article>
 
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/" target="_blank" rel="noopener">CVE-2026-63077: Additional Guidance Following Reports of Active Exploitation</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-63077</code>
+    <span class="meta-sep">·</span>
+    <span>JetBrains Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-07</span>
+  </div>
+  <p class='summary'>This post is a follow-up to our July 27, 2026, announcement about CVE-2026-63077. Summary What has changed since our initial announcement Since our initial announcement on July 27, 2026, we have received reports of active exploitation, as well as attempted exploitation, targeting unpatched TeamCity servers. Before these reports were received, we had already investigated the […]</p>
+
+</article>
+
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -294,6 +308,24 @@ There is a high severity vulnerability in Traefik&#x27;s Kubernetes Ingress NGIN
           <p class='summary'>PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate desync vectors.
 
 PortSwigger said a separate human-guided discovery cascade also exposed a zero-day in Apache Traffic Server. Kettle said HTTP Terminator tested 30,000 websites where</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xxpx-f366-4xpq" target="_blank" rel="noopener">Craft CMS:Authorization bypass: view-only Categories user can modify category structure via structures/move-element</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-06</span>
+          </div>
+          <p class='summary'>A control-panel user who holds only the viewCategories permission for a category group (and not saveCategories) can permanently modify that group&#x27;s category structure — reordering and re-parenting categories via the structures/move-element action.
+
+A read-time authorization grant that a write endpoint later trusts. For categories, the structureEditable flag is computed from the view permission (`s…</p>
 
         </article>
 
@@ -333,21 +365,110 @@ Applications com…</p>
 
 </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/" target="_blank" rel="noopener">Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-06</span>
-  </div>
-  <p class='summary'>Zenity researchers reported the findings to Anthropic and OpenAI in late 2025 and early 2026, but they remain unpatched. The post Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts appeared first on SecurityWeek .</p>
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9hj4-r449-hfvc" target="_blank" rel="noopener">Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-71847</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-07</span>
+          </div>
+          <p class='summary'>### Summary
 
-</article>
+Ruby&#x27;s JSON native C extension clears the consumed `JSON::ResumableParser` input buffer but leaves `state.start`, `state.cursor`, and `state.end` pointing into released storage.
+
+When `partial_value` reconstructs an incomplete object containing duplicate keys, the duplicate-key warning path calls `cursor_position`, which dereferences those stale pointers. This results in a heap-use-af…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mmj4-63m4-r6h5" target="_blank" rel="noopener">CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63223</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-07</span>
+          </div>
+          <p class='summary'>### Impact
+This is an unsafe file upload validation vulnerability that can lead to remote code execution in vulnerable application configurations.
+
+Applications are impacted when they:
+- validate uploads using `is_image` or `mime_in` without an independent safe extension check, such as `ext_in` on patched versions
+- save uploaded files using the client-supplied filename
+- place uploads in a web-ac…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wcx4-wpfv-mc5c" target="_blank" rel="noopener">jsii-diff: Command Injection via npm: package argument</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-15895</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-07</span>
+          </div>
+          <p class='summary'>## Summary
+
+jsii-diff is a command line tool to compare the API differences between two jsii assemblies, and report errors if there are backwards-incompatible changes to the API. An issue exists where specially formatted command line arguments can be used to execute shell commands via this tool.
+
+## Impact
+jsii-diff supports downloading packages to compare directly from NPM, so that you can compar…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rjhh-76wf-8xmw" target="_blank" rel="noopener">Smarty Security stream restriction bypass through stream: resource</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62996</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-07</span>
+          </div>
+          <p class='summary'>`smarty/smarty` version `5.8.0` can read local files through PHP stream wrappers even when Smarty Security is enabled and all streams are disabled with `Security::$streams = null`.
+
+The bypass uses Smarty&#x27;s built-in `stream:` resource type. A template such as:
+
+```smarty
+{include file=&quot;stream:php://filter/read=convert.base64-encode/resource=/tmp/secret.tpl&quot;}
+```
+
+is handled as Smarty resource type…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html" target="_blank" rel="noopener">New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-64638</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-07</span>
+          </div>
+          <p class='summary'>WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.
+
+Tracked as CVE-2026-64638 (CVSS score: 8.9), the</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -455,136 +576,6 @@ Any code in the same realm that reads a property of that name from an arbitrary 
           </div>
           <p class='summary'>### Summary
 Contao&#x27;s crawler tries to prevent confidential HTTP client options from being sent to external domains by creating a scoped client: full options for root page origins, cleaned options for everything else. The cleaner removes `Cookie` and `Authorization` headers, but it removes the non-Symfony option names `basic_auth` and `bearer_auth` instead of Symfony HttpClient&#x27;s real `auth_basic` …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cxjq-mrr5-89rv" target="_blank" rel="noopener">Traefik: Authentication Bypass via Path Traversal in ReplacePathRegex Middleware</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-65600</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a critical authentication-bypass vulnerability in Traefik&#x27;s `ReplacePathRegex` middleware. When it is configured with a regular expression that captures user-controlled path segments without a mandatory separator (for example `regex: &quot;^/api(.*)&quot;`, `replacement: &quot;/$1&quot;`), a crafted request can produce an un-normalized replacement path such as `/../admin`, which Traefik forwarded…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6p8f-p8j2-rqmv" target="_blank" rel="noopener">Traefik: Gateway HTTPRoute backendRef filters can leak backend context across routes sharing a Service:port</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54765</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a medium severity vulnerability in Traefik&#x27;s Kubernetes Gateway API provider.
-When two accepted HTTPRoutes target the same backend Service:port but configure different
-`backendRef` filters, Traefik may resolve both routes to the same child service and apply
-only one route&#x27;s filter set to all requests reaching that backend. In Gateway deployments
-where `backendRef` filters set …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-62fc-8686-hfmq" target="_blank" rel="noopener">Traefik: `allowCrossNamespace=false` bypass via `@kubernetescrd` TraefikService backendRef</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71325</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a medium severity vulnerability in Traefik&#x27;s Kubernetes CRD provider. When `providers.kubernetesCRD.allowCrossNamespace` is disabled — the default — cross-namespace `@kubernetescrd` references are rejected for middlewares, TLS options and HTTP/TCP ServersTransports, but the same restriction was not applied to `TraefikService` backend references resolved by the service resolver…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3q9r-p662-5j8m" target="_blank" rel="noopener">Traefik: ForwardAuth middleware leaks X-Forwarded-Port spoofing via untrusted X-Forwarded-Proto when trustForwardHeader=false</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54764</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a medium severity vulnerability in Traefik&#x27;s ForwardAuth middleware. Even when configured with `trustForwardHeader: false`, Traefik derives the `X-Forwarded-Port` header sent to the authentication service from the original incoming request instead of the sanitized forwarded request. As a result, an unauthenticated remote attacker can inject an `X-Forwarded-Proto: https` header…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fgjj-px3w-67xx" target="_blank" rel="noopener">Traefik: Gateway API route identity collision allows cross-namespace backend hijacking</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71327</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a high severity vulnerability in Traefik&#x27;s Kubernetes Gateway API provider. Router and service identities for `HTTPRoute`, `GRPCRoute`, `TCPRoute` and `TLSRoute` objects were built by hyphen-concatenating the route namespace, the route name, the Gateway identity, the entry point and the rule index, a construction that is not injective because Kubernetes names may themselves co…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6765-c87h-8mrf" target="_blank" rel="noopener">Traefik: BasicAuth singleflight key collision allows authenticated identity spoofing</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71326</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a low severity vulnerability in Traefik&#x27;s BasicAuth middleware. Concurrent password verifications are deduplicated through a singleflight group whose key was the delimiter-free concatenation of the submitted password and the stored secret, so a request carrying an unconfigured username — whose secret is empty — can produce the same key as a configured user&#x27;s valid request and …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3ccp-42pg-hgv6" target="_blank" rel="noopener">Traefik: Cross-user response poisoning via proxied CONNECT on Traefik&#x27;s shared backend keep-alive pool</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71324</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-There is a critical vulnerability in Traefik&#x27;s default HTTP reverse proxy that leads to unauthenticated cross-user response poisoning. When a client opens an HTTP/2 or HTTP/3 `CONNECT` request, Traefik forwards it — body included — to an HTTP/1.1 upstream over a shared `net/http.Transport`. If the upstream answers the CONNECT with a keep-alive non-2xx response without draining the body…</p>
 
         </article>
 
