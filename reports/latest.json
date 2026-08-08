@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-08T12:22:07.296310+00:00",
-  "total": 21,
+  "generated": "2026-08-08T18:20:00.250413+00:00",
+  "total": 18,
   "kev": 0,
   "zero_day": 13,
   "enriched": 0,
@@ -34,6 +34,21 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-breach-trueconf-to-trojanize-client-installers-with-backdoors/",
+      "title": "Hackers breach TrueConf to trojanize client installers with backdoors",
+      "summary": "The Head Mare hacktivist group has been exploiting vulnerabilities in unpatched\u00a0TrueConf video conferencing servers to replace client installers with malicious versions that deliver backdoors. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-breach-trueconf-to-trojanize-client-installers-with-backdoors/",
+      "published": "2026-08-08T14:16:23+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -197,24 +212,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/",
-      "title": "CVE-2026-63077: Additional Guidance Following Reports of Active Exploitation",
-      "summary": "This post is a follow-up to our July 27, 2026, announcement about CVE-2026-63077. Summary What has changed since our initial announcement Since our initial announcement on July 27, 2026, we have received reports of active exploitation, as well as attempted exploitation, targeting unpatched TeamCity servers. Before these reports were received, we had already investigated the [\u2026]",
-      "link": "https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/",
-      "published": "2026-08-07T13:22:49+00:00",
-      "source": "JetBrains Security Blog",
-      "tags": [
-        "ide",
-        "jetbrains",
-        "plugin"
-      ],
-      "cve_ids": [
-        "CVE-2026-63077"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "CVE-2026-71851",
       "title": "crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain",
       "summary": "### Summary\n\n`CryptoJS.lib.WordArray.random()` in affected versions is not a cryptographically secure random number generator. Nominal requests for 128 or 256 bits of entropy produce effective search spaces of approximately 2^39 and 2^47 possibilities \u2014 small enough to enumerate on commodity hardware.\n\nCoinspect's [Ill Bloom](https://www.coinspect.com/blog/ill-bloom-investigation/) investigation confirmed that downstream wallet applications used this function as the entropy source for BIP39 recovery phrases.\n\n**An application is affected only if it uses the vulnerable function to generate security-sensitive values.** \n\nMerely depending on `crypto-js < 4.0.0` is not sufficient to be exploitable.\n\n### Details\n\nThe affected implementation used a custom variation of George Marsaglia's Multiply-With-Carry PRNG, seeded from `Math.random()`. It was introduced in 3.1.2-4 (June 2014, commit brix/crypto-js@ff1f003) in response to issue \\#7, and was present in every 3.x release except 3.2.0 and 3.2.1. That **change was reverted in 3.3.0** because it was considered a breaking change, so projects tracking the 3.x line could resolve to newer versions that still contained the weak generator. \n\n4.0.0 replaced the generator with the platform's native cryptographic API.\n\nApplying PBKDF2, another KDF, or a cryptographic hash after the vulnerable generator does not restore missing entropy.\n\n### Proof of concept\n\nCoinspect reproduced the attack end to end:\n\n1. Reimplemented the affected `WordArray.random()` behavior.  \n2. Enumerated the feasible outputs of the underlying PRNG.  \n3. Converted candidate entropy values into valid BIP39 recovery phrases.  \n4. Derived private keys and addresses across the relevant derivation paths and networks.  \n5. Compared derived addresses against public blockchain data.  \n6. Recovered the private keys controlling funded addresses.\n\n### Impact\n\nAn attacker can enumerate the reduced output space and recover security-sensitive values generated through the a",
@@ -282,59 +279,6 @@
       ],
       "cve_ids": [
         "CVE-2026-63223"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-15895",
-      "title": "jsii-diff: Command Injection via npm: package argument",
-      "summary": "## Summary\n\njsii-diff is a command line tool to compare the API differences between two jsii assemblies, and report errors if there are backwards-incompatible changes to the API. An issue exists where specially formatted command line arguments can be used to execute shell commands via this tool.\n\n## Impact\njsii-diff supports downloading packages to compare directly from NPM, so that you can compare a proposed candidate version of your jsii package with an already-published version, by passing an argument that looks like `npm:<package-specifier>`. For example:\n\n```\njsii-diff npm:my-package@latest .\n```\n\nBy injecting a `;` into the `package-specifier` part of that command, jsii-diff can be tricked into running shell commands. For example:\n\n```\njsii-diff \"npm:lodash; touch /tmp/123\" .\n```\n\nThis allows anyone that can control the command-line arguments to jsii-diff to run arbitrary commands with the same permissions as the jsii-diff command itself.\n\n## Patches\nThis issue has been addressed in jsii-diff version 1.131.0. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n## Workarounds\nIf you are unable to update, make sure only trusted actors can control the arguments passed to jsii-diff.\n\n## References\nIf you have any questions or comments about this advisory, AWS asks that you contact AWS Security via the [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.",
-      "link": "https://github.com/advisories/GHSA-wcx4-wpfv-mc5c",
-      "published": "2026-08-07T18:15:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-15895"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62996",
-      "title": "Smarty Security stream restriction bypass through stream: resource",
-      "summary": "`smarty/smarty` version `5.8.0` can read local files through PHP stream wrappers even when Smarty Security is enabled and all streams are disabled with `Security::$streams = null`.\n\nThe bypass uses Smarty's built-in `stream:` resource type. A template such as:\n\n```smarty\n{include file=\"stream:php://filter/read=convert.base64-encode/resource=/tmp/secret.tpl\"}\n```\n\nis handled as Smarty resource type `stream`, so the security check that would normally reject the underlying `php` wrapper is not applied. `StreamPlugin` then opens the nested `php://filter/...` URI directly.\n\nFor comparison, the direct resource:\n\n```smarty\n{include file=\"php://filter/read=convert.base64-encode/resource=/tmp/secret.tpl\"}\n```\n\nis blocked with `stream 'php' not allowed by security setting`.\n\nAffected package:\n\n- Ecosystem: Packagist / Composer\n- Package: `smarty/smarty`\n- Confirmed affected version: `5.8.0`\n- Confirmed source reference from Composer lock: `78d259d3b971c59a0cd719c270cc5cbb740c36a7`\n- Current stable version on Packagist at review time: `v5.8.0`\n- Packagist usage at review time: 41,113,855 total downloads and 840,604 monthly downloads\n\nRelevant code paths:\n\n- `Smarty\\Resource\\BasePlugin::load(...)`\n- `Smarty\\Resource\\StreamPlugin::getContent(...)`\n- `Smarty\\Security::isTrustedStream(...)`\n\n`BasePlugin::load()` maps the built-in resource name `stream` directly to `StreamPlugin` before the code path that checks PHP stream wrappers with `stream_get_wrappers()` and `Security::isTrustedStream($type)`. `StreamPlugin::getContent()` later calls `fopen($filepath, 'r+')` on the nested URI when the resource name contains `://`.\n\nPreconditions:\n\nAn application must render templates that are not fully trusted while relying on Smarty Security to restrict local files and PHP stream wrappers. The PoC sets:\n\n```php\n$smarty->enableSecurity();\n$smarty->security_policy->streams = null;\n```\n\nLocal reproduction:\n\nThe PoC creates a disposable template directory and a separate outside directory. It ena",
-      "link": "https://github.com/advisories/GHSA-rjhh-76wf-8xmw",
-      "published": "2026-08-07T15:10:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62996"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
-      "title": "New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP",
-      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.\n\nTracked as\u00a0CVE-2026-64638\u00a0(CVSS score: 8.9), the high-severity",
-      "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
-      "published": "2026-08-07T12:56:23+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-64638"
       ],
       "is_zero_day": false,
       "is_high_severity": true

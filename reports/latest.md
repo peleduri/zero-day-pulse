@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-08 12:22 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-08 18:20 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts
+## 3. 🟠 Zero-Day — Hackers breach TrueConf to trojanize client installers with backdoors
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-08
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-breach-trueconf-to-trojanize-client-installers-with-backdoors/>
+
+> The Head Mare hacktivist group has been exploiting vulnerabilities in unpatched TrueConf video conferencing servers to replace client installers with malicious versions that deliver backdoors. [...]
+
+---
+
+## 4. 🟠 Zero-Day — Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts
 
 **CVE:** `CVE-2026-8037` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-08
 **Reference:** <https://thehackernews.com/2026/08/progress-kemp-loadmaster-flaw-hits-cisa.html>
@@ -33,7 +42,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 4. 🟠 Zero-Day — Metabase SQLi zero-day exploited in customer data-theft attacks
+## 5. 🟠 Zero-Day — Metabase SQLi zero-day exploited in customer data-theft attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/>
@@ -42,7 +51,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -51,7 +60,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -60,7 +69,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -69,7 +78,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -78,7 +87,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -87,7 +96,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -96,7 +105,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -105,7 +114,7 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 
 ---
 
-## 12. 🟠 Zero-Day — Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication
+## 13. 🟠 Zero-Day — Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-08
 **Reference:** <https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html>
@@ -113,15 +122,6 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
 > Metabase has warned that a maximum-severity security flaw impacting its business intelligence and data visualization software package has been exploited in the wild as a zero-day.
 
 The vulnerability (CVSS score: 10.0), which does not carry a CVE identifier, allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, enabling them to gain
-
----
-
-## 13. 🟠 Zero-Day — CVE-2026-63077: Additional Guidance Following Reports of Active Exploitation
-
-**CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** JetBrains Security Blog &nbsp;|&nbsp; **Published:** 2026-08-07
-**Reference:** <https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/>
-
-> This post is a follow-up to our July 27, 2026, announcement about CVE-2026-63077. Summary What has changed since our initial announcement Since our initial announcement on July 27, 2026, we have received reports of active exploitation, as well as attempted exploitation, targeting unpatched TeamCity servers. Before these reports were received, we had already investigated the […]
 
 ---
 
@@ -181,49 +181,7 @@ Applications are impacted when they:
 
 ---
 
-## 18. 🟡 High Severity — jsii-diff: Command Injection via npm: package argument
-
-**CVE:** `CVE-2026-15895` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
-**Reference:** <https://github.com/advisories/GHSA-wcx4-wpfv-mc5c>
-
-> ## Summary
-
-jsii-diff is a command line tool to compare the API differences between two jsii assemblies, and report errors if there are backwards-incompatible changes to the API. An issue exists where specially formatted command line arguments can be used to execute shell commands via this tool.
-
-## Impact
-jsii-diff supports downloading packages to compare directly from NPM, so that you can compar…
-
----
-
-## 19. 🟡 High Severity — Smarty Security stream restriction bypass through stream: resource
-
-**CVE:** `CVE-2026-62996` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
-**Reference:** <https://github.com/advisories/GHSA-rjhh-76wf-8xmw>
-
-> `smarty/smarty` version `5.8.0` can read local files through PHP stream wrappers even when Smarty Security is enabled and all streams are disabled with `Security::$streams = null`.
-
-The bypass uses Smarty&#x27;s built-in `stream:` resource type. A template such as:
-
-```smarty
-{include file=&quot;stream:php://filter/read=convert.base64-encode/resource=/tmp/secret.tpl&quot;}
-```
-
-is handled as Smart…
-
----
-
-## 20. 🟡 High Severity — New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP
-
-**CVE:** `CVE-2026-64638` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-07
-**Reference:** <https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html>
-
-> WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.
-
-Tracked as CVE-2026-64638 (CVSS score: 8.9), the high-severity
-
----
-
-## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
