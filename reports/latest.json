@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-08T06:31:26.433848+00:00",
-  "total": 20,
+  "generated": "2026-08-08T12:22:07.296310+00:00",
+  "total": 21,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,23 @@
       ],
       "cve_ids": [
         "CVE-2024-57727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/progress-kemp-loadmaster-flaw-hits-cisa.html",
+      "title": "Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a critical-severity security flaw impacting Progress\u202fKemp LoadMaster to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command injection flaw that could be weaponized to achieve arbitrary",
+      "link": "https://thehackernews.com/2026/08/progress-kemp-loadmaster-flaw-hits-cisa.html",
+      "published": "2026-08-08T06:52:16+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-8037"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -165,6 +182,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html",
+      "title": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication",
+      "summary": "Metabase has warned that a maximum-severity security flaw impacting its business intelligence and data visualization software package has been exploited in the wild as a zero-day.\n\nThe vulnerability (CVSS score: 10.0), which does not carry a CVE identifier, allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, enabling them to gain",
+      "link": "https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html",
+      "published": "2026-08-08T06:58:31+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/",
       "title": "CVE-2026-63077: Additional Guidance Following Reports of Active Exploitation",
       "summary": "This post is a follow-up to our July 27, 2026, announcement about CVE-2026-63077. Summary What has changed since our initial announcement Since our initial announcement on July 27, 2026, we have received reports of active exploitation, as well as attempted exploitation, targeting unpatched TeamCity servers. Before these reports were received, we had already investigated the [\u2026]",
@@ -179,21 +211,6 @@
       "cve_ids": [
         "CVE-2026-63077"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/ai-assisted-http-terminator-finds-novel.html",
-      "title": "AI-Assisted HTTP Terminator Finds Novel HTTP Desync Techniques and Apache Zero-Day",
-      "summary": "PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate desync vectors.\n\nPortSwigger said a separate human-guided discovery cascade also exposed a zero-day in Apache Traffic Server. Kettle said HTTP Terminator tested 30,000 websites where",
-      "link": "https://thehackernews.com/2026/08/ai-assisted-http-terminator-finds-novel.html",
-      "published": "2026-08-07T10:09:54+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -308,7 +325,7 @@
     {
       "id": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
       "title": "New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP",
-      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.\n\nTracked as\u00a0CVE-2026-64638\u00a0(CVSS score: 8.9), the",
+      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.\n\nTracked as\u00a0CVE-2026-64638\u00a0(CVSS score: 8.9), the high-severity",
       "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
       "published": "2026-08-07T12:56:23+00:00",
       "source": "The Hacker News Security",

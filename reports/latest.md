@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-08 06:31 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-08 12:22 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,7 +22,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Metabase SQLi zero-day exploited in customer data-theft attacks
+## 3. 🟠 Zero-Day — Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts
+
+**CVE:** `CVE-2026-8037` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-08
+**Reference:** <https://thehackernews.com/2026/08/progress-kemp-loadmaster-flaw-hits-cisa.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a critical-severity security flaw impacting Progress Kemp LoadMaster to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild.
+
+The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command injection flaw that could be weaponized to achieve arbitrary
+
+---
+
+## 4. 🟠 Zero-Day — Metabase SQLi zero-day exploited in customer data-theft attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/>
@@ -31,7 +42,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +51,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +60,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +69,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +78,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +87,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,7 +96,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -94,7 +105,18 @@
 
 ---
 
-## 11. 🟠 Zero-Day — CVE-2026-63077: Additional Guidance Following Reports of Active Exploitation
+## 12. 🟠 Zero-Day — Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-08
+**Reference:** <https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html>
+
+> Metabase has warned that a maximum-severity security flaw impacting its business intelligence and data visualization software package has been exploited in the wild as a zero-day.
+
+The vulnerability (CVSS score: 10.0), which does not carry a CVE identifier, allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, enabling them to gain
+
+---
+
+## 13. 🟠 Zero-Day — CVE-2026-63077: Additional Guidance Following Reports of Active Exploitation
 
 **CVE:** `CVE-2026-63077` &nbsp;|&nbsp; **Source:** JetBrains Security Blog &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://blog.jetbrains.com/teamcity/2026/08/cve-2026-63077-update/>
@@ -103,18 +125,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — AI-Assisted HTTP Terminator Finds Novel HTTP Desync Techniques and Apache Zero-Day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-07
-**Reference:** <https://thehackernews.com/2026/08/ai-assisted-http-terminator-finds-novel.html>
-
-> PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate desync vectors.
-
-PortSwigger said a separate human-guided discovery cascade also exposed a zero-day in Apache Traffic Server. Kettle said HTTP Terminator tested 30,000 websites where
-
----
-
-## 13. 🟡 High Severity — crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain
+## 14. 🟡 High Severity — crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain
 
 **CVE:** `CVE-2026-71851` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-rg76-677x-56q9>
@@ -127,7 +138,7 @@ Coinspect&#x27;s [Ill Bloom](https://www.coinspect.com/blog/ill-bloom-investigat
 
 ---
 
-## 14. 🟡 High Severity — Hono: `memo()` retains SSR output across requests, leading to cross-user data disclosure
+## 15. 🟡 High Severity — Hono: `memo()` retains SSR output across requests, leading to cross-user data disclosure
 
 **CVE:** `CVE-2026-71850` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-f23p-vx2j-j53r>
@@ -142,7 +153,7 @@ Components wrapped with `memo()` are compared by props alone. Values read implic
 
 ---
 
-## 15. 🟡 High Severity — Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams
+## 16. 🟡 High Severity — Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams
 
 **CVE:** `CVE-2026-71847` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-9hj4-r449-hfvc>
@@ -155,7 +166,7 @@ When `partial_value` reconstructs an incomplete object containing duplicate keys
 
 ---
 
-## 16. 🟡 High Severity — CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules
+## 17. 🟡 High Severity — CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules
 
 **CVE:** `CVE-2026-63223` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-mmj4-63m4-r6h5>
@@ -170,7 +181,7 @@ Applications are impacted when they:
 
 ---
 
-## 17. 🟡 High Severity — jsii-diff: Command Injection via npm: package argument
+## 18. 🟡 High Severity — jsii-diff: Command Injection via npm: package argument
 
 **CVE:** `CVE-2026-15895` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-wcx4-wpfv-mc5c>
@@ -184,7 +195,7 @@ jsii-diff supports downloading packages to compare directly from NPM, so that yo
 
 ---
 
-## 18. 🟡 High Severity — Smarty Security stream restriction bypass through stream: resource
+## 19. 🟡 High Severity — Smarty Security stream restriction bypass through stream: resource
 
 **CVE:** `CVE-2026-62996` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-rjhh-76wf-8xmw>
@@ -201,18 +212,18 @@ is handled as Smart…
 
 ---
 
-## 19. 🟡 High Severity — New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP
+## 20. 🟡 High Severity — New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP
 
 **CVE:** `CVE-2026-64638` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html>
 
 > WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.
 
-Tracked as CVE-2026-64638 (CVSS score: 8.9), the
+Tracked as CVE-2026-64638 (CVSS score: 8.9), the high-severity
 
 ---
 
-## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
