@@ -109,31 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">27</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">20</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-07 18:37 UTC</div>
+            <div class="generated">Updated 2026-08-08 00:43 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-8037" target="_blank" rel="noopener">CVE-2026-8037 — Progress LoadMaster Command Injection Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-8037</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-07</span>
-  </div>
-  <p class='summary'>Vendor: Progress | Product: LoadMaster. Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Secur…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -162,6 +146,22 @@
     <span>Thu, 12 Ju</span>
   </div>
   <p class='summary'>Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/" target="_blank" rel="noopener">Metabase SQLi zero-day exploited in customer data-theft attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-07</span>
+  </div>
+  <p class='summary'>A critical Metabase SQL injection vulnerability was exploited in zero-day attacks to breach customer instances in data theft attacks, known to impact Framework and Tally. [...]</p>
 
 </article>
 
@@ -311,59 +311,47 @@ PortSwigger said a separate human-guided discovery cascade also exposed a zero-d
 
         </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xxpx-f366-4xpq" target="_blank" rel="noopener">Craft CMS:Authorization bypass: view-only Categories user can modify category structure via structures/move-element</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rg76-677x-56q9" target="_blank" rel="noopener">crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain</a></h2>
           </div>
           <div class="card-meta">
-            <span class="no-cve">No CVE</span>
+            <code class="cve">CVE-2026-71851</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
+            <span>2026-08-07</span>
           </div>
-          <p class='summary'>A control-panel user who holds only the viewCategories permission for a category group (and not saveCategories) can permanently modify that group&#x27;s category structure — reordering and re-parenting categories via the structures/move-element action.
+          <p class='summary'>### Summary
 
-A read-time authorization grant that a write endpoint later trusts. For categories, the structureEditable flag is computed from the view permission (`s…</p>
+`CryptoJS.lib.WordArray.random()` in affected versions is not a cryptographically secure random number generator. Nominal requests for 128 or 256 bits of entropy produce effective search spaces of approximately 2^39 and 2^47 possibilities — small enough to enumerate on commodity hardware.
+
+Coinspect&#x27;s [Ill Bloom](https://www.coinspect.com/blog/ill-bloom-investigation/) investigation c…</p>
 
         </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-47pj-3jcm-6whg" target="_blank" rel="noopener">LangGraph: Namespace prefix matching crosses segment boundaries in Postgres and SQLite stores</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f23p-vx2j-j53r" target="_blank" rel="noopener">Hono: `memo()` retains SSR output across requests, leading to cross-user data disclosure</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-71433</code>
+            <code class="cve">CVE-2026-71850</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
+            <span>2026-08-07</span>
           </div>
-          <p class='summary'>## Summary
+          <p class='summary'>### Summary
 
-The Postgres and SQLite stores persist hierarchical namespaces as a dot-joined string (`(&quot;memories&quot;, &quot;alice&quot;)` becomes `memories.alice`) and scoped reads by matching that string with `LIKE &#x27;&lt;path&gt;%&#x27;`. Because `LIKE` has no notion of the `.` separator, a scoped `search` or `list_namespaces` also matched sibling namespaces whose flattened form shares leading characters.
+`memo()` from `hono/jsx` retains the result of a server-side render and reuses it for later renders with comparator-equal props. Request-scoped values read inside the component take no part in that comparison, so a response can contain HTML rendered for another user&#x27;s request.
 
-Applications com…</p>
+### Details
+
+Components wrapped with `memo()` are compared by props alone. Values read implicitly during ren…</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://aws.amazon.com/blogs/security/route-amazon-bedrock-guardrails-interventions-to-amazon-security-lake/" target="_blank" rel="noopener">Route Amazon Bedrock Guardrails interventions to Amazon Security Lake</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>AWS Security Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-06</span>
-  </div>
-  <p class='summary'>Security teams investigating AI-related incidents need guardrail intervention data alongside their existing security telemetry. Routing Amazon Bedrock Guardrails violations to Amazon Security Lake makes this possible. With this integration, you can query guardrail events alongside identity, network, and application security data in a single layer. When a guardrail blocks a prompt injection attempt…</p>
-
-</article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -467,115 +455,6 @@ is handled as Smarty resource type…</p>
           <p class='summary'>WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrator interacts with an attacker-controlled page.
 
 Tracked as CVE-2026-64638 (CVSS score: 8.9), the</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-596p-6jv8-775v" target="_blank" rel="noopener">Craft CMS: Authenticated leak of secret environment variables</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-31857</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>Environment variables and secrets are interpolated into a Twig template even when the Twig sandbox is enabled, allowing them to be leaked by an authenticated attacker.
-
-The Craft vulnerability [CVE-2026-31857](https://github.com/craftcms/cms/security/advisories/GHSA-fp5j-j7j4-mcxc) was only patched by applying sandboxed Twig templating. This theoretically protects Craft CMS against RCE attacks, pr…</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9p7c-v5x3-rfx8" target="_blank" rel="noopener">Craft CMS: Missing authorization check allows non-admin control panel users to reorder Global Sets</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-14793</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-06</span>
-  </div>
-  <p class='summary'>The `reorder-sets` action in Craft CMS’s `GlobalsController` is missing the `requireAdmin()` check that the adjacent `save-set` and `delete-set` actions both enforce. Any authenticated control panel user can POST to `/actions/globals/reorder-sets` and permanently reorder all global sets in the project config, regardless of whether they have admin access. The reordering is written through to the pr…</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hqvf-45jj-mccq" target="_blank" rel="noopener">AWS CLI: Disabled SSH host key verification in Amazon AWS CLI EMR helper commands</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-18654</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>### Summary
-The AWS Command Line Interface (AWS CLI) is a unified tool to manage AWS services from the command line. An issue exists where the EMR SSH helper commands (`aws emr ssh`, `aws emr socks`, `aws emr put`, `aws emr get`) passed `StrictHostKeyChecking=no` to the underlying SSH client, disabling host key verification.
-
-### Impact
-A network-positioned actor could perform a man-in-the-middle …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vp3h-ghgh-jr7g" target="_blank" rel="noopener">Nx: Zip-Slip in the self-hosted remote cache</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71476</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>## Summary
-
-The Nx **self-hosted HTTP remote cache** extracts downloaded cache artifacts without constraining where files are written. A malicious — or on-path (MITM) — remote cache server can return a crafted tar archive whose entries escape the cache directory and write to arbitrary locations on the machine running Nx. This arbitrary file write can be escalated to remote code execution. The dire…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3rrr-jr9j-h3q3" target="_blank" rel="noopener">Mermaid Architecture diagrams are vulnerable to prototype pollution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71437</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>Rendering an untrusted `architecture-beta` diagram lets the diagram author write an arbitrary property with the value `horizontal` or `vertical` onto `Object.prototype`. A group id of `__proto__` is accepted as a valid parent.
-
-### Impact
-
-Any code in the same realm that reads a property of that name from an arbitrary object, or enumerates an object with bare `for...in`, observes the injected valu…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3mr9-p497-58f6" target="_blank" rel="noopener">Contao crawler leaks auth credentials to external hosts</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55824</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-06</span>
-          </div>
-          <p class='summary'>### Summary
-Contao&#x27;s crawler tries to prevent confidential HTTP client options from being sent to external domains by creating a scoped client: full options for root page origins, cleaned options for everything else. The cleaner removes `Cookie` and `Authorization` headers, but it removes the non-Symfony option names `basic_auth` and `bearer_auth` instead of Symfony HttpClient&#x27;s real `auth_basic` …</p>
 
         </article>
 

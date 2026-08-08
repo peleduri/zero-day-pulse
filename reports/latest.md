@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-07 18:37 UTC &nbsp;|&nbsp; **Total:** 27 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-08 00:43 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-8037 — Progress LoadMaster Command Injection Vulnerability
-
-**CVE:** `CVE-2026-8037` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-07
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-8037>
-
-> Vendor: Progress | Product: LoadMaster. Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Secur…
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,12 +13,21 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
+## 2. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched SimpleHelp Remote Monitoring and Management to Compromise Utility Billing Software Provider
 
 **CVE:** `CVE-2024-57727` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Thu, 12 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-163a>
 
 > Summary The Cybersecurity and Infrastructure Security Agency (CISA) is releasing this advisory in response to ransomware actors leveraging unpatched instances of a vulnerability in SimpleHelp Remote Monitoring and Management (RMM) to compromise customers of a utility billing software provider. This incident reflects a broader pattern of ransomware actors targeting organizations through unpatched v…
+
+---
+
+## 3. 🟠 Zero-Day — Metabase SQLi zero-day exploited in customer data-theft attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-07
+**Reference:** <https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/>
+
+> A critical Metabase SQL injection vulnerability was exploited in zero-day attacks to breach customer instances in data theft attacks, known to impact Framework and Tally. [...]
 
 ---
 
@@ -114,38 +114,35 @@ PortSwigger said a separate human-guided discovery cascade also exposed a zero-d
 
 ---
 
-## 13. 🟠 Zero-Day — Craft CMS:Authorization bypass: view-only Categories user can modify category structure via structures/move-element
+## 13. 🟡 High Severity — crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-xxpx-f366-4xpq>
+**CVE:** `CVE-2026-71851` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
+**Reference:** <https://github.com/advisories/GHSA-rg76-677x-56q9>
 
-> A control-panel user who holds only the viewCategories permission for a category group (and not saveCategories) can permanently modify that group&#x27;s category structure — reordering and re-parenting categories via the structures/move-element action.
+> ### Summary
 
-A read-time authorization grant that a write endpoint later trusts. For categories, the structureEditable flag is computed from the view permissio…
+`CryptoJS.lib.WordArray.random()` in affected versions is not a cryptographically secure random number generator. Nominal requests for 128 or 256 bits of entropy produce effective search spaces of approximately 2^39 and 2^47 possibilities — small enough to enumerate on commodity hardware.
 
----
-
-## 14. 🟠 Zero-Day — LangGraph: Namespace prefix matching crosses segment boundaries in Postgres and SQLite stores
-
-**CVE:** `CVE-2026-71433` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-47pj-3jcm-6whg>
-
-> ## Summary
-
-The Postgres and SQLite stores persist hierarchical namespaces as a dot-joined string (`(&quot;memories&quot;, &quot;alice&quot;)` becomes `memories.alice`) and scoped reads by matching that string with `LIKE &#x27;&lt;path&gt;%&#x27;`. Because `LIKE` has no notion of the `.` separator, a scoped `search` or `list_namespaces` also matched sibling namespaces whose flattened form shares l…
+Coinspect&#x27;s [Ill Bloom](https://www.coinspect.com/blog/ill-bloom-investigation/) investigat…
 
 ---
 
-## 15. 🟠 Zero-Day — Route Amazon Bedrock Guardrails interventions to Amazon Security Lake
+## 14. 🟡 High Severity — Hono: `memo()` retains SSR output across requests, leading to cross-user data disclosure
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://aws.amazon.com/blogs/security/route-amazon-bedrock-guardrails-interventions-to-amazon-security-lake/>
+**CVE:** `CVE-2026-71850` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
+**Reference:** <https://github.com/advisories/GHSA-f23p-vx2j-j53r>
 
-> Security teams investigating AI-related incidents need guardrail intervention data alongside their existing security telemetry. Routing Amazon Bedrock Guardrails violations to Amazon Security Lake makes this possible. With this integration, you can query guardrail events alongside identity, network, and application security data in a single layer. When a guardrail blocks a prompt injection attempt…
+> ### Summary
+
+`memo()` from `hono/jsx` retains the result of a server-side render and reuses it for later renders with comparator-equal props. Request-scoped values read inside the component take no part in that comparison, so a response can contain HTML rendered for another user&#x27;s request.
+
+### Details
+
+Components wrapped with `memo()` are compared by props alone. Values read implicitly durin…
 
 ---
 
-## 16. 🟡 High Severity — Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams
+## 15. 🟡 High Severity — Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams
 
 **CVE:** `CVE-2026-71847` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-9hj4-r449-hfvc>
@@ -158,7 +155,7 @@ When `partial_value` reconstructs an incomplete object containing duplicate keys
 
 ---
 
-## 17. 🟡 High Severity — CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules
+## 16. 🟡 High Severity — CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules
 
 **CVE:** `CVE-2026-63223` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-mmj4-63m4-r6h5>
@@ -173,7 +170,7 @@ Applications are impacted when they:
 
 ---
 
-## 18. 🟡 High Severity — jsii-diff: Command Injection via npm: package argument
+## 17. 🟡 High Severity — jsii-diff: Command Injection via npm: package argument
 
 **CVE:** `CVE-2026-15895` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-wcx4-wpfv-mc5c>
@@ -187,7 +184,7 @@ jsii-diff supports downloading packages to compare directly from NPM, so that yo
 
 ---
 
-## 19. 🟡 High Severity — Smarty Security stream restriction bypass through stream: resource
+## 18. 🟡 High Severity — Smarty Security stream restriction bypass through stream: resource
 
 **CVE:** `CVE-2026-62996` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://github.com/advisories/GHSA-rjhh-76wf-8xmw>
@@ -204,7 +201,7 @@ is handled as Smart…
 
 ---
 
-## 20. 🟡 High Severity — New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP
+## 19. 🟡 High Severity — New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP
 
 **CVE:** `CVE-2026-64638` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-07
 **Reference:** <https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html>
@@ -215,74 +212,7 @@ Tracked as CVE-2026-64638 (CVSS score: 8.9), the
 
 ---
 
-## 21. 🟡 High Severity — Craft CMS: Authenticated leak of secret environment variables
-
-**CVE:** `CVE-2026-31857` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-596p-6jv8-775v>
-
-> Environment variables and secrets are interpolated into a Twig template even when the Twig sandbox is enabled, allowing them to be leaked by an authenticated attacker.
-
-The Craft vulnerability [CVE-2026-31857](https://github.com/craftcms/cms/security/advisories/GHSA-fp5j-j7j4-mcxc) was only patched by applying sandboxed Twig templating. This theoretically protects Craft CMS against RCE attacks, pr…
-
----
-
-## 22. 🟡 High Severity — Craft CMS: Missing authorization check allows non-admin control panel users to reorder Global Sets
-
-**CVE:** `CVE-2026-14793` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-9p7c-v5x3-rfx8>
-
-> The `reorder-sets` action in Craft CMS’s `GlobalsController` is missing the `requireAdmin()` check that the adjacent `save-set` and `delete-set` actions both enforce. Any authenticated control panel user can POST to `/actions/globals/reorder-sets` and permanently reorder all global sets in the project config, regardless of whether they have admin access. The reordering is written through to the pr…
-
----
-
-## 23. 🟡 High Severity — AWS CLI: Disabled SSH host key verification in Amazon AWS CLI EMR helper commands
-
-**CVE:** `CVE-2026-18654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-hqvf-45jj-mccq>
-
-> ### Summary
-The AWS Command Line Interface (AWS CLI) is a unified tool to manage AWS services from the command line. An issue exists where the EMR SSH helper commands (`aws emr ssh`, `aws emr socks`, `aws emr put`, `aws emr get`) passed `StrictHostKeyChecking=no` to the underlying SSH client, disabling host key verification.
-
-### Impact
-A network-positioned actor could perform a man-in-the-middle …
-
----
-
-## 24. 🟡 High Severity — Nx: Zip-Slip in the self-hosted remote cache
-
-**CVE:** `CVE-2026-71476` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-vp3h-ghgh-jr7g>
-
-> ## Summary
-
-The Nx **self-hosted HTTP remote cache** extracts downloaded cache artifacts without constraining where files are written. A malicious — or on-path (MITM) — remote cache server can return a crafted tar archive whose entries escape the cache directory and write to arbitrary locations on the machine running Nx. This arbitrary file write can be escalated to remote code execution. The dire…
-
----
-
-## 25. 🟡 High Severity — Mermaid Architecture diagrams are vulnerable to prototype pollution
-
-**CVE:** `CVE-2026-71437` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-3rrr-jr9j-h3q3>
-
-> Rendering an untrusted `architecture-beta` diagram lets the diagram author write an arbitrary property with the value `horizontal` or `vertical` onto `Object.prototype`. A group id of `__proto__` is accepted as a valid parent.
-
-### Impact
-
-Any code in the same realm that reads a property of that name from an arbitrary object, or enumerates an object with bare `for...in`, observes the injected valu…
-
----
-
-## 26. 🟡 High Severity — Contao crawler leaks auth credentials to external hosts
-
-**CVE:** `CVE-2026-55824` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-06
-**Reference:** <https://github.com/advisories/GHSA-3mr9-p497-58f6>
-
-> ### Summary
-Contao&#x27;s crawler tries to prevent confidential HTTP client options from being sent to external domains by creating a scoped client: full options for root page origins, cleaned options for everything else. The cleaner removes `Cookie` and `Authorization` headers, but it removes the non-Symfony option names `basic_auth` and `bearer_auth` instead of Symfony HttpClient&#x27;s real `au…
-
----
-
-## 27. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
