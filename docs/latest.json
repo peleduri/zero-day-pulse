@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-09T12:23:52.983702+00:00",
-  "total": 11,
+  "generated": "2026-08-09T18:21:54.221153+00:00",
+  "total": 10,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -34,21 +34,6 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-breach-trueconf-to-trojanize-client-installers-with-backdoors/",
-      "title": "Hackers breach TrueConf to trojanize client installers with backdoors",
-      "summary": "The Head Mare hacktivist group has been exploiting vulnerabilities in unpatched\u00a0TrueConf video conferencing servers to replace client installers with malicious versions that deliver backdoors. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-breach-trueconf-to-trojanize-client-installers-with-backdoors/",
-      "published": "2026-08-08T14:16:23+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
