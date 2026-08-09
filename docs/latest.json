@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-08T18:20:00.250413+00:00",
-  "total": 18,
+  "generated": "2026-08-09T00:46:11.273238+00:00",
+  "total": 13,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -66,21 +66,6 @@
       "cve_ids": [
         "CVE-2026-8037"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
-      "title": "Metabase SQLi zero-day exploited in customer data-theft attacks",
-      "summary": "A critical Metabase SQL injection vulnerability was exploited in zero-day attacks to breach customer instances in data theft attacks, known to impact Framework and Tally. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
-      "published": "2026-08-07T20:14:46+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -210,78 +195,6 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-71851",
-      "title": "crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain",
-      "summary": "### Summary\n\n`CryptoJS.lib.WordArray.random()` in affected versions is not a cryptographically secure random number generator. Nominal requests for 128 or 256 bits of entropy produce effective search spaces of approximately 2^39 and 2^47 possibilities \u2014 small enough to enumerate on commodity hardware.\n\nCoinspect's [Ill Bloom](https://www.coinspect.com/blog/ill-bloom-investigation/) investigation confirmed that downstream wallet applications used this function as the entropy source for BIP39 recovery phrases.\n\n**An application is affected only if it uses the vulnerable function to generate security-sensitive values.** \n\nMerely depending on `crypto-js < 4.0.0` is not sufficient to be exploitable.\n\n### Details\n\nThe affected implementation used a custom variation of George Marsaglia's Multiply-With-Carry PRNG, seeded from `Math.random()`. It was introduced in 3.1.2-4 (June 2014, commit brix/crypto-js@ff1f003) in response to issue \\#7, and was present in every 3.x release except 3.2.0 and 3.2.1. That **change was reverted in 3.3.0** because it was considered a breaking change, so projects tracking the 3.x line could resolve to newer versions that still contained the weak generator. \n\n4.0.0 replaced the generator with the platform's native cryptographic API.\n\nApplying PBKDF2, another KDF, or a cryptographic hash after the vulnerable generator does not restore missing entropy.\n\n### Proof of concept\n\nCoinspect reproduced the attack end to end:\n\n1. Reimplemented the affected `WordArray.random()` behavior.  \n2. Enumerated the feasible outputs of the underlying PRNG.  \n3. Converted candidate entropy values into valid BIP39 recovery phrases.  \n4. Derived private keys and addresses across the relevant derivation paths and networks.  \n5. Compared derived addresses against public blockchain data.  \n6. Recovered the private keys controlling funded addresses.\n\n### Impact\n\nAn attacker can enumerate the reduced output space and recover security-sensitive values generated through the a",
-      "link": "https://github.com/advisories/GHSA-rg76-677x-56q9",
-      "published": "2026-08-07T18:48:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71851"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71850",
-      "title": "Hono: `memo()` retains SSR output across requests, leading to cross-user data disclosure",
-      "summary": "### Summary\n\n`memo()` from `hono/jsx` retains the result of a server-side render and reuses it for later renders with comparator-equal props. Request-scoped values read inside the component take no part in that comparison, so a response can contain HTML rendered for another user's request.\n\n### Details\n\nComponents wrapped with `memo()` are compared by props alone. Values read implicitly during rendering do not participate: JSX Context through `createContext()` and `useContext()`, `useRequestContext()` from `hono/jsx-renderer`, and `getContext()` from `hono/context-storage`. The retained result lives as long as the wrapped component, so it outlives the request that produced it.\n\nPer-request context isolation is not what fails: the current request's values are established correctly, but the memoized component is skipped before anything reads them.\n\nThis issue arises when a component wrapped in `memo()` obtains user- or request-specific data from an ambient context instead of through props.\n\n### Impact\n\nA user may receive a response containing HTML rendered for another user, when both render the same memoized component with comparator-equal props on the same warm instance.\n\nThis may lead to:\n\n- Disclosure of another user's account or profile data\n- Disclosure of request-scoped secrets embedded in HTML, such as CSRF tokens\n- Exposure of role-specific content to users who should not receive it\n\nExploitation depends on the order in which renders populate the retained value and on both requests reaching the same warm instance.\n\nThis issue affects applications that render with `hono/jsx` on the server and wrap a component reading ambient request state in `memo()`. Applications that pass all request-specific values through props, or that do not use `memo()`, are unaffected. Client-side rendering is unaffected.",
-      "link": "https://github.com/advisories/GHSA-f23p-vx2j-j53r",
-      "published": "2026-08-07T18:42:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71850"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71847",
-      "title": "Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams",
-      "summary": "### Summary\n\nRuby's JSON native C extension clears the consumed `JSON::ResumableParser` input buffer but leaves `state.start`, `state.cursor`, and `state.end` pointing into released storage.\n\nWhen `partial_value` reconstructs an incomplete object containing duplicate keys, the duplicate-key warning path calls `cursor_position`, which dereferences those stale pointers. This results in a heap-use-after-free and can terminate the Ruby process.\n\nAn attacker who can supply JSON stream data to an application using `JSON::ResumableParser` may cause process termination when the application calls `partial_value` on incomplete attacker-controlled input containing duplicate object keys.\n\nThe issue was reproduced in the native C extension from the official RubyGems releases:\n\n* JSON 2.20.0\n* JSON 2.21.0\n* JSON 2.21.1\n\nThe attached evidence demonstrates:\n\n* an AddressSanitizer-confirmed heap-use-after-free;\n* a native `SIGSEGV` using the official JSON 2.21.1 RubyGem;\n* an end-to-end loopback TCP attacker/victim reproduction;\n* four differential controls;\n* successful execution after applying a tested patch control.\n\nThis was originally reported privately through Ruby's HackerOne program as report `#3867755`. A Ruby maintainer independently confirmed reproduction of the ASan failure and requested that further coordination continue through this private advisory.\n\nNo code execution or information disclosure is claimed.\n\n### Details\n\nThe affected source is:\n\n```text\next/json/ext/parser/parser.c\n```\n\nThe vulnerable sequence in JSON 2.21.1 is:\n\n1. `cResumableParser_parse` reaches the end of the current input buffer.\n2. It calls `json_str_clear(parser->buffer)`.\n3. It sets `parser->buffer = Qfalse`.\n4. The parser-state pointers into the released buffer are not reset.\n5. `partial_value` makes a shallow copy of the parser state.\n6. Reconstructing an incomplete object containing duplicate keys reaches the duplicate-key warning path.\n7. `cursor_position` walks through the stale input point",
-      "link": "https://github.com/advisories/GHSA-9hj4-r449-hfvc",
-      "published": "2026-08-07T18:33:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71847"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63223",
-      "title": "CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules",
-      "summary": "### Impact\nThis is an unsafe file upload validation vulnerability that can lead to remote code execution in vulnerable application configurations.\n\nApplications are impacted when they:\n- validate uploads using `is_image` or `mime_in` without an independent safe extension check, such as `ext_in` on patched versions\n- save uploaded files using the client-supplied filename\n- place uploads in a web-accessible directory where PHP files can execute\n\n### Patches\nUpgrade to v4.7.4 or later.\n\n### Workarounds\n- Save uploads outside the public web root, preferably under `writable/uploads`.\n- Use `$file->store()` or `$file->move($path, $file->getRandomName())` instead of preserving the original client filename.\n- Disable script execution in any public upload directory.\n- Manually verify the client filename extension before moving the file.\n- For image uploads, reject files when `$file->getClientExtension()` is not an allowed image extension.\n- For exact MIME-type validation, reject files when `$file->getClientExtension()` does not match `$file->guessExtension()`.",
-      "link": "https://github.com/advisories/GHSA-mmj4-63m4-r6h5",
-      "published": "2026-08-07T18:24:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63223"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",

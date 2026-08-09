@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">18</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">13</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-08 18:20 UTC</div>
+            <div class="generated">Updated 2026-08-09 00:46 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -182,22 +182,6 @@
 The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command injection flaw that could be weaponized to achieve arbitrary</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/" target="_blank" rel="noopener">Metabase SQLi zero-day exploited in customer data-theft attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-07</span>
-  </div>
-  <p class='summary'>A critical Metabase SQL injection vulnerability was exploited in zero-day attacks to breach customer instances in data theft attacks, known to impact Framework and Tally. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -326,90 +310,6 @@ The vulnerability, tracked as CVE-2026-8037 (CVSS score: 9.6), is a command inje
           <p class='summary'>Metabase has warned that a maximum-severity security flaw impacting its business intelligence and data visualization software package has been exploited in the wild as a zero-day.
 
 The vulnerability (CVSS score: 10.0), which does not carry a CVE identifier, allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, enabling them to gain</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rg76-677x-56q9" target="_blank" rel="noopener">crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71851</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-07</span>
-          </div>
-          <p class='summary'>### Summary
-
-`CryptoJS.lib.WordArray.random()` in affected versions is not a cryptographically secure random number generator. Nominal requests for 128 or 256 bits of entropy produce effective search spaces of approximately 2^39 and 2^47 possibilities — small enough to enumerate on commodity hardware.
-
-Coinspect&#x27;s [Ill Bloom](https://www.coinspect.com/blog/ill-bloom-investigation/) investigation c…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f23p-vx2j-j53r" target="_blank" rel="noopener">Hono: `memo()` retains SSR output across requests, leading to cross-user data disclosure</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71850</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-07</span>
-          </div>
-          <p class='summary'>### Summary
-
-`memo()` from `hono/jsx` retains the result of a server-side render and reuses it for later renders with comparator-equal props. Request-scoped values read inside the component take no part in that comparison, so a response can contain HTML rendered for another user&#x27;s request.
-
-### Details
-
-Components wrapped with `memo()` are compared by props alone. Values read implicitly during ren…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9hj4-r449-hfvc" target="_blank" rel="noopener">Ruby JSON: JSON::ResumableParser#partial_value dereferences a freed input buffer and crashes on truncated duplicate-key streams</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71847</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-07</span>
-          </div>
-          <p class='summary'>### Summary
-
-Ruby&#x27;s JSON native C extension clears the consumed `JSON::ResumableParser` input buffer but leaves `state.start`, `state.cursor`, and `state.end` pointing into released storage.
-
-When `partial_value` reconstructs an incomplete object containing duplicate keys, the duplicate-key warning path calls `cursor_position`, which dereferences those stale pointers. This results in a heap-use-af…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mmj4-63m4-r6h5" target="_blank" rel="noopener">CodeIgniter: Uploaded file extension validation bypass in `is_image` and `mime_in` rules</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63223</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-07</span>
-          </div>
-          <p class='summary'>### Impact
-This is an unsafe file upload validation vulnerability that can lead to remote code execution in vulnerable application configurations.
-
-Applications are impacted when they:
-- validate uploads using `is_image` or `mime_in` without an independent safe extension check, such as `ext_in` on patched versions
-- save uploaded files using the client-supplied filename
-- place uploads in a web-ac…</p>
 
         </article>
 
