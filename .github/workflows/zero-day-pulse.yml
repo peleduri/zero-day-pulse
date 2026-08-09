@@ -38,7 +38,10 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Run tests
+        run: pytest tests/
 
       - name: Run Zero Day Pulse
         # C1: inputs passed via env vars, never interpolated into the shell command
