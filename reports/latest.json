@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-10T07:04:59.029652+00:00",
-  "total": 10,
+  "generated": "2026-08-10T12:40:08.194049+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -34,6 +34,21 @@
       "cve_ids": [
         "CVE-2024-57727"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-progress-loadmaster-flaw-exploited-in-attacks/",
+      "title": "Critical Progress LoadMaster flaw now actively exploited in attacks",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned that hackers are exploiting a critical-severity Progress Kemp LoadMaster command injection vulnerability. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-progress-loadmaster-flaw-exploited-in-attacks/",
+      "published": "2026-08-10T09:49:37+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -144,6 +159,21 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/metabase-patches-vulnerability-exploited-as-zero-day/",
+      "title": "Metabase Patches Vulnerability Exploited as Zero-Day",
+      "summary": "The security defect allows unauthenticated, remote attackers to gain administrative access to Metabase instances. The post Metabase Patches Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/metabase-patches-vulnerability-exploited-as-zero-day/",
+      "published": "2026-08-10T11:03:55+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
