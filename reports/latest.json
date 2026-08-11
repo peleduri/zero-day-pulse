@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-11T12:36:58.769548+00:00",
-  "total": 12,
+  "generated": "2026-08-11T18:43:57.507434+00:00",
+  "total": 18,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -17,6 +17,74 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/",
+      "title": "Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days",
+      "summary": "Today is Microsoft's August 2026 Patch Tuesday, and with it comes security updates for a massive 400 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/",
+      "published": "2026-08-11T18:08:50+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/microsofts-august-2026-patch-tuesday-addresses-398-cves-cve-2026-68820",
+      "title": "Microsoft's August 2026 Patch Tuesday Addresses 398 CVEs (CVE-2026-68820)",
+      "summary": "42 Critical 355 Important 1 Moderate 0 Low Microsoft addresses 398 CVEs in the eighth Patch Tuesday of 2026, with three zero-days, including one that was exploited in the wild. Microsoft patched 398 CVEs in its August 2026 Patch Tuesday release, with 42 rated critical, 355 rated as important and one rated as moderate. Our counts omitted two CVEs assigned by MITRE; CVE-2026-6726 and CVE-2026-6727. This month\u2019s update includes patches for: .NET .NET Core .NET Framework AMD Zen Active Directory Certificate Services (AD CS) Application Information Services Azure Active Directory Azure CycleCloud Azure Monitor Agent Azure Storage Explorer Capability Access Management Service (camsvc) Desktop Window Manager Dynamics Business Central GitHub Copilot and Visual Studio Code Microsoft Azure Attestation service and Device Health Attestation Service Microsoft COM for Windows Microsoft Defender for Endpoint Microsoft Digest Authentication Microsoft Dynamics 365 (on-premises) Microsoft Entra Connect Sync Microsoft Exchange Server Microsoft High Performance Computing (HPC) Pack Microsoft Identity Services Microsoft Local Security Authority Server (lsasrv) Microsoft Office Microsoft Office Access Microsoft Office Excel Microsoft Office Graphics Component Microsoft Office Outlook Microsoft Office PowerPoint Microsoft Office SharePoint Microsoft Office Word Microsoft OneDrive Microsoft PowerShell Microsoft PowerShell Core Microsoft QUIC Microsoft Remote Registry Service Microsoft Teams Mobile Microsoft Teams for Android Microsoft Windows Codecs Library Microsoft Windows Media Foundation Microsoft Windows Search Component Power BI RPC Runtime Reliable Multicast Transport Driver (RMCAST) Remote Desktop Client User-Mode Power Service (UMPS) Virtual Hard Disk (VHD) Miniport Driver Visual Studio Code Visual Studio Code - Python extension Visual Studio Code CoPilot Chat Extension Windows Accessibility Infrastructure (ATBroker.exe) Windows Active Directory Windows Ancillary Function Driver f",
+      "link": "https://www.tenable.com/blog/microsofts-august-2026-patch-tuesday-addresses-398-cves-cve-2026-68820",
+      "published": "2026-08-11T18:04:04+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-68820",
+        "CVE-2026-6726",
+        "CVE-2026-6727"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://isc.sans.edu/diary/rss/33236",
+      "title": "Microsoft Patch Tuesday August 2026, (Tue, Aug 11th)",
+      "summary": "This month we got patches for 418 vulnerabilities. Of these, 62 are critical, 1 is being exploited in the wild, and 2 were publicly disclosed as zero-days. Notable fixes include Windows privilege escalation, container tampering, and critical QUIC and DNS Server remote code execution bugs.",
+      "link": "https://isc.sans.edu/diary/rss/33236",
+      "published": "2026-08-11T17:54:49+00:00",
+      "source": "SANS Internet Storm Center",
+      "tags": [
+        "sans",
+        "isc"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-63520-microsoft-sharepoint-remote-code-execution-fixed",
+      "title": "CVE-2026-63520: Microsoft SharePoint Remote Code Execution (FIXED)",
+      "summary": "Overview Rapid7 Labs conducted a zero-day research project against Microsoft SharePoint, resulting in the discovery of two new vulnerabilities that, when chained together, achieve unauthenticated remote code execution (RCE) against a vulnerable SharePoint server. Today, both Rapid7 and Microsoft are disclosing the second vulnerability in this chain, the RCE vulnerability CVE-2026-63520. The first vulnerability in the chain, CVE-2026-55040, was disclosed by Rapid7 and Microsoft last month. Our full disclosure timeline for the exploit chain can be seen below in Figure 1. Figure 1: The road to disclosure. \u2800 CVE-2026-63520 affects all supported versions of Microsoft SharePoint, and certain versions of Microsoft Project Server and Microsoft Office Web Apps Server. For the purpose of our research, we focused solely on SharePoint. An attacker can leverage CVE-2026-63520 to execute arbitrary code on a vulnerable SharePoint server with the privileges of the SharePoint Site\u2019s service account. The vulnerability is due to an unsafe .NET type instantiation issue within the Business Connectivity Services . CVE-2026-63520 has a CVSSv3.1 score of 8.1 (High) , and a Common Weakness Enumeration (CWE) of CWE-20: Improper Input Validation . While the severity of the RCE is described as high, chained together with CVE-2026-55040 it becomes part of a critical unauthenticated RCE exploit chain against SharePoint. The exploit chain was developed as an entry for this year's Pwn2Own Berlin hacking competition; while our entry was unsuccessful on the day of the competition, this research highlights Rapid7 Labs' continued effort to raise the bar in Vulnerability Intelligence and our commitment to the preemptive protection of our customers through original vulnerability research. Our research methodology focused on understanding how publicly available AI models can assist in the discovery of significant vulnerabilities against proprietary enterprise targets. Our results established that the rat",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-63520-microsoft-sharepoint-remote-code-execution-fixed",
+      "published": "2026-08-11T13:00:00+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-63520",
+        "CVE-2026-55040"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -41,21 +109,6 @@
       "summary": "A malicious tool server connected to an AI coding assistant can quietly walk off with SSH keys, environment secrets, source code, and customer data without ever sending one obviously harmful instruction.\n\nThe trick can work even after a blunt version of the same theft is refused: split the request into fragments that each look routine, place them in channels the assistant already uses, and let",
       "link": "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
       "published": "2026-08-11T10:24:00+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/weekly-recap-ai-goes-rogue-metabase-0.html",
-      "title": "\u26a1 Weekly Recap: AI Goes Rogue, Metabase 0-Day, MCP Supply-Chain Attacks, and Router Backdoors",
-      "summary": "A lot of security problems still begin with someone doing a completely normal thing. Cloning a repo. Answering a call. Leaving a box exposed. Trusting the default.\n\nThat pretty much covers the mood this week. Old bugs are back, supply chains are getting stranger, and some exploit paths are so short you wonder what was supposed to stop them in the first place.\n\nThat\u2019s only part of it. Here\u2019s",
-      "link": "https://thehackernews.com/2026/08/weekly-recap-ai-goes-rogue-metabase-0.html",
-      "published": "2026-08-10T15:00:29+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
@@ -176,6 +229,56 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html",
+      "title": "OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development",
+      "summary": "OpenAI on Monday unveiled a new cybersecurity-focused model called GPT\u20115.6\u2011Cyber that it said is focused on vulnerability research, penetration testing, and incident response.\n\n\"Built on GPT\u20115.6 Sol, it is trained to improve capabilities on several specialized cybersecurity tasks (e.g., finding zero-day vulnerabilities and developing exploit chains) and to reduce refusals for certain higher-risk",
+      "link": "https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html",
+      "published": "2026-08-11T13:11:23+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+      "title": "Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE",
+      "summary": "Security researchers found a way to enter Microsoft SharePoint servers as any user, including an administrator, with no valid account. A significant part of the work that found it was done through an AI agent.\n\nThe flaw, tracked as\u00a0CVE-2026-55040\u00a0(CVSS 9.1), affects SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Server 2016. Microsoft's",
+      "link": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+      "published": "2026-08-11T16:47:44+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-55040"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73080",
+      "title": "SeaweedFS: Unauthenticated SSRF with response read-back via VolumeServer.FetchAndWriteNeedle",
+      "summary": "### Impact\n`VolumeServer.FetchAndWriteNeedle` fetches a caller-supplied remote endpoint and writes the response into a needle. Before 4.24 this RPC performed no authentication and no validation of the target, so anyone able to reach a volume server's gRPC port could coerce the server into issuing requests to arbitrary hosts \u2014 including loopback, link-local, RFC 1918, and cloud metadata endpoints such as `169.254.169.254` \u2014 and read the response back. On cloud deployments this discloses instance metadata and IAM credentials, and can be used to reach otherwise-unexposed internal services (SSRF with response read-back).\n\nThe volume server gRPC plane is unauthenticated on a default deployment, so no credentials are required. Configuring the documented JWT signing keys does not close it, because that hardening does not apply to this RPC.\n\n### Affected component\n- `weed/server/volume_grpc_remote.go` (`FetchAndWriteNeedle`)\n- `weed/remote_storage/s3/s3_storage_client.go`\n\n### Patches\nFixed in **4.24**. `FetchAndWriteNeedle` now requires admin authorization and refuses loopback / link-local / RFC 1918 / IMDS destinations through a guarded dialer that resolves the host itself and pins the resolved address for the duration of the request, defeating DNS-rebinding. The Rust volume server carries the equivalent endpoint validation.\n\n### Workarounds\nRestrict volume server gRPC ports to trusted hosts via firewall / network policy, and enable mTLS via `security.toml`.",
+      "link": "https://github.com/advisories/GHSA-87fv-vqqr-m4jr",
+      "published": "2026-08-11T15:58:23Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73080"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
