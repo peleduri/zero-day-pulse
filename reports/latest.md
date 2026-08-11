@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-11 06:43 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-11 12:36 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -13,7 +13,27 @@
 
 ---
 
-## 2. 🟠 Zero-Day — ⚡ Weekly Recap: AI Goes Rogue, Metabase 0-Day, MCP Supply-Chain Attacks, and Router Backdoors
+## 2. 🟠 Zero-Day — CISA: Microsoft SharePoint flaw now exploited in ransomware attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-11
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-microsoft-sharepoint-flaw-now-exploited-in-ransomware-attacks/>
+
+> CISA confirmed today that ransomware gangs have begun abusing a high-severity Microsoft SharePoint remote code execution vulnerability, which has been flagged as actively exploited since early July. [...]
+
+---
+
+## 3. 🟠 Zero-Day — Malicious MCP Servers Can Split Instructions to Make AI Coding Agents Exfiltrate Secrets
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
+**Reference:** <https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html>
+
+> A malicious tool server connected to an AI coding assistant can quietly walk off with SSH keys, environment secrets, source code, and customer data without ever sending one obviously harmful instruction.
+
+The trick can work even after a blunt version of the same theft is refused: split the request into fragments that each look routine, place them in channels the assistant already uses, and let
+
+---
+
+## 4. 🟠 Zero-Day — ⚡ Weekly Recap: AI Goes Rogue, Metabase 0-Day, MCP Supply-Chain Attacks, and Router Backdoors
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-10
 **Reference:** <https://thehackernews.com/2026/08/weekly-recap-ai-goes-rogue-metabase-0.html>
@@ -23,28 +43,6 @@
 That pretty much covers the mood this week. Old bugs are back, supply chains are getting stranger, and some exploit paths are so short you wonder what was supposed to stop them in the first place.
 
 That’s only part of it. Here’s
-
----
-
-## 3. 🟠 Zero-Day — TrueConf Server Flaws Exploited to Replace Client Installers with PhantomCore
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-10
-**Reference:** <https://thehackernews.com/2026/08/head-mare-exploits-trueconf-flaws-to.html>
-
-> The threat actor known as Head Mare has been observed weaponizing security flaws in unpatched TrueConf servers once again in attacks targeting Russian companies spanning instrumentation, electronics, transport, energy, IT, and software development sectors.
-
-Russian cybersecurity vendor Kaspersky said it detected the attacks in July 2026.
-
-The activity involves exploiting a vulnerability chain
-
----
-
-## 4. 🟠 Zero-Day — Critical Progress LoadMaster flaw now actively exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-10
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-progress-loadmaster-flaw-exploited-in-attacks/>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned that hackers are exploiting a critical-severity Progress Kemp LoadMaster command injection vulnerability. [...]
 
 ---
 
@@ -111,25 +109,7 @@ The activity involves exploiting a vulnerability chain
 
 ---
 
-## 12. 🟠 Zero-Day — Inside the Metabase SQLi: Exploited in the Wild
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-08-10
-**Reference:** <https://www.wiz.io/blog/inside-the-metabase-sqli-exploited-in-the-wild>
-
-> Reverse engineering GHSA-vwf4-m7j8-wcjf with AI to accelerate defense.
-
----
-
-## 13. 🟠 Zero-Day — Metabase Patches Vulnerability Exploited as Zero-Day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-10
-**Reference:** <https://www.securityweek.com/metabase-patches-vulnerability-exploited-as-zero-day/>
-
-> The security defect allows unauthenticated, remote attackers to gain administrative access to Metabase instances. The post Metabase Patches Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .
-
----
-
-## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
