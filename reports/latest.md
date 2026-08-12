@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-12 00:55 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-12 07:04 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -13,7 +13,14 @@
 
 ---
 
-## 2. 🟠 Zero-Day — Patch Tuesday - August 2026
+## 2. 🟠 Zero-Day — August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Aug 11, 20
+**Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/>
+
+---
+
+## 3. 🟠 Zero-Day — Patch Tuesday - August 2026
 
 **CVE:** `CVE-2026-63520` | `CVE-2026-55040` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://www.rapid7.com/blog/post/em-patch-tuesday-august-2026>
@@ -22,7 +29,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Sandworm-Linked UAC-0145 Uses Fake Job Interviews to Push VPN That Can Run Commands
+## 4. 🟠 Zero-Day — Sandworm-Linked UAC-0145 Uses Fake Job Interviews to Push VPN That Can Run Commands
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://thehackernews.com/2026/08/sandworm-linked-uac-0145-uses-fake-job.html>
@@ -33,7 +40,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 4. 🟠 Zero-Day — Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days
+## 5. 🟠 Zero-Day — Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/>
@@ -42,7 +49,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 5. 🟠 Zero-Day — Microsoft's August 2026 Patch Tuesday Addresses 398 CVEs (CVE-2026-68820)
+## 6. 🟠 Zero-Day — Microsoft's August 2026 Patch Tuesday Addresses 398 CVEs (CVE-2026-68820)
 
 **CVE:** `CVE-2026-68820` | `CVE-2026-6726` | `CVE-2026-6727` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://www.tenable.com/blog/microsofts-august-2026-patch-tuesday-addresses-398-cves-cve-2026-68820>
@@ -51,7 +58,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 6. 🟠 Zero-Day — Microsoft Patch Tuesday August 2026, (Tue, Aug 11th)
+## 7. 🟠 Zero-Day — Microsoft Patch Tuesday August 2026, (Tue, Aug 11th)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://isc.sans.edu/diary/rss/33236>
@@ -60,7 +67,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 7. 🟠 Zero-Day — CISA: Microsoft SharePoint flaw now exploited in ransomware attacks
+## 8. 🟠 Zero-Day — CISA: Microsoft SharePoint flaw now exploited in ransomware attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-microsoft-sharepoint-flaw-now-exploited-in-ransomware-attacks/>
@@ -69,7 +76,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 8. 🟠 Zero-Day — Malicious MCP Servers Can Split Instructions to Make AI Coding Agents Exfiltrate Secrets
+## 9. 🟠 Zero-Day — Malicious MCP Servers Can Split Instructions to Make AI Coding Agents Exfiltrate Secrets
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html>
@@ -80,7 +87,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -89,7 +96,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -98,7 +105,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -107,7 +114,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -116,7 +123,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -125,7 +132,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 15. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -134,7 +141,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 15. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 16. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -143,7 +150,16 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 16. 🟠 Zero-Day — Cisco warns of ASA and FTD VPN flaw exploited to crash devices
+## 17. 🟠 Zero-Day — Cisco Patches Firewall Zero-Day Exploited for DoS Attacks
+
+**CVE:** `CVE-2026-20349` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://www.securityweek.com/cisco-patches-firewall-zero-day-exploited-for-dos-attacks/>
+
+> CVE-2026-20349 can be exploited remotely without authentication against Secure Firewall ASA and FTD devices. The post Cisco Patches Firewall Zero-Day Exploited for DoS Attacks appeared first on SecurityWeek .
+
+---
+
+## 18. 🟠 Zero-Day — Cisco warns of ASA and FTD VPN flaw exploited to crash devices
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-asa-and-ftd-vpn-flaw-exploited-to-crash-devices/>
@@ -152,7 +168,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 17. 🟠 Zero-Day — August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day
+## 19. 🟠 Zero-Day — August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://www.securityweek.com/august-2026-patch-tuesday-microsoft-fixes-421-cves-one-exploited-zero-day/>
@@ -161,7 +177,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 18. 🟠 Zero-Day — OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development
+## 20. 🟠 Zero-Day — OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html>
@@ -172,7 +188,7 @@ The trick can work even after a blunt version of the same theft is refused: spli
 
 ---
 
-## 19. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62902 – .NET Information Disclosure Vulnerability
+## 21. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62902 – .NET Information Disclosure Vulnerability
 
 **CVE:** `CVE-2026-62902` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://github.com/advisories/GHSA-9mrh-pw7c-9mqm>
@@ -185,7 +201,7 @@ A specially crafted document parsed in .NET can trigger the inclusion of functio
 
 ---
 
-## 20. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62897 – .NET Remote Code Execution Vulnerability
+## 22. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62897 – .NET Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-62897` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://github.com/advisories/GHSA-fx4q-gjrx-2jw6>
@@ -202,7 +218,7 @@ Announcemen…
 
 ---
 
-## 21. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70354 – .NET Core Remote Code Execution Vulnerability
+## 23. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70354 – .NET Core Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-70354` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://github.com/advisories/GHSA-gg8c-3338-xw2f>
@@ -219,7 +235,7 @@ Announcement for this …
 
 ---
 
-## 22. 🟡 High Severity — Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE
+## 24. 🟡 High Severity — Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE
 
 **CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html>
@@ -230,7 +246,7 @@ The flaw, tracked as CVE-2026-55040 (CVSS 9.1), affects SharePoint Server Subs
 
 ---
 
-## 23. 🟡 High Severity — SeaweedFS: Unauthenticated SSRF with response read-back via VolumeServer.FetchAndWriteNeedle
+## 25. 🟡 High Severity — SeaweedFS: Unauthenticated SSRF with response read-back via VolumeServer.FetchAndWriteNeedle
 
 **CVE:** `CVE-2026-73080` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://github.com/advisories/GHSA-87fv-vqqr-m4jr>
@@ -240,7 +256,7 @@ The flaw, tracked as CVE-2026-55040 (CVSS 9.1), affects SharePoint Server Subs
 
 ---
 
-## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

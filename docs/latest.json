@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-12T00:55:12.410006+00:00",
-  "total": 24,
+  "generated": "2026-08-12T07:04:09.838703+00:00",
+  "total": 26,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 20,
   "enriched": 0,
   "findings": [
     {
@@ -15,6 +15,22 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/",
+      "title": "August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs",
+      "summary": "",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/",
+      "published": "Aug 11, 2026 00:00:00-0500",
+      "source": "CrowdStrike Blog",
+      "tags": [
+        "cloud",
+        "threat-intel",
+        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -242,6 +258,23 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/cisco-patches-firewall-zero-day-exploited-for-dos-attacks/",
+      "title": "Cisco Patches Firewall Zero-Day Exploited for DoS Attacks",
+      "summary": "CVE-2026-20349 can be exploited remotely without authentication against Secure Firewall ASA and FTD devices. The post Cisco Patches Firewall Zero-Day Exploited for DoS Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/cisco-patches-firewall-zero-day-exploited-for-dos-attacks/",
+      "published": "2026-08-12T05:10:47+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-20349"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
