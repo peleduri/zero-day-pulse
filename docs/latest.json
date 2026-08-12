@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-12T12:39:53.305918+00:00",
+  "generated": "2026-08-12T18:44:51.953389+00:00",
   "total": 29,
   "kev": 0,
-  "zero_day": 21,
+  "zero_day": 19,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,36 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html",
+      "title": "Lazarus Exploits Windows Zero-Day to Gain SYSTEM Access and Deploy Backdoor",
+      "summary": "The North Korean threat actor known as Lazarus Group has been attributed to the zero-day exploitation of a newly patched security flaw impacting Microsoft Windows to deliver a never-before-seen backdoor targeting defense and aerospace companies across France, Germany, Brazil, and India.\n\nThe activity, per Check Point Research, is part of Operation Dream Job, a long-running cyber espionage and",
+      "link": "https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html",
+      "published": "2026-08-12T17:39:27+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://therecord.media/uk-criminal-records-office-acro-data-breaches",
+      "title": "Three intrusions at UK criminal records office went undetected for two years",
+      "summary": "Unread antivirus alerts and an unpatched content management system exposed Britain's ACRO to three separate data breaches, according to a reprimand notice.",
+      "link": "https://therecord.media/uk-criminal-records-office-acro-data-breaches",
+      "published": "2026-08-12T13:00:00+00:00",
+      "source": "The Record by Recorded Future",
+      "tags": [
+        "news",
+        "threat-intel"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -70,67 +100,19 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/08/sandworm-linked-uac-0145-uses-fake-job.html",
-      "title": "Sandworm-Linked UAC-0145 Uses Fake Job Interviews to Push VPN That Can Run Commands",
-      "summary": "The Computer Emergency Response Team of Ukraine (CERT-UA) has disclosed details of a new social engineering campaign orchestrated by Russian nation-state threat actors targeting IT workers in the country by masquerading as recruiters to trick them into installing malware.\n\nCERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is a subgroup within Sandworm (aka APT44,",
-      "link": "https://thehackernews.com/2026/08/sandworm-linked-uac-0145-uses-fake-job.html",
-      "published": "2026-08-11T18:36:47+00:00",
+      "id": "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
+      "title": "Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack",
+      "summary": "Microsoft released its monthly security updates on Tuesday, and one of the flaws it closed is already being used in attacks.\n\nThe bug sits in a core Windows kernel driver that handles network socket operations. An attacker with code already running on a machine can use it to escalate to SYSTEM. That patch goes out first.\n\nThe flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only",
+      "link": "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
+      "published": "2026-08-11T20:10:55+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/",
-      "title": "Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days",
-      "summary": "Today is Microsoft's August 2026 Patch Tuesday, and with it comes security updates for a massive 400 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/",
-      "published": "2026-08-11T18:08:50+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/microsofts-august-2026-patch-tuesday-addresses-398-cves-cve-2026-68820",
-      "title": "Microsoft's August 2026 Patch Tuesday Addresses 398 CVEs (CVE-2026-68820)",
-      "summary": "42 Critical 355 Important 1 Moderate 0 Low Microsoft addresses 398 CVEs in the eighth Patch Tuesday of 2026, with three zero-days, including one that was exploited in the wild. Microsoft patched 398 CVEs in its August 2026 Patch Tuesday release, with 42 rated critical, 355 rated as important and one rated as moderate. Our counts omitted two CVEs assigned by MITRE; CVE-2026-6726 and CVE-2026-6727. This month\u2019s update includes patches for: .NET .NET Core .NET Framework AMD Zen Active Directory Certificate Services (AD CS) Application Information Services Azure Active Directory Azure CycleCloud Azure Monitor Agent Azure Storage Explorer Capability Access Management Service (camsvc) Desktop Window Manager Dynamics Business Central GitHub Copilot and Visual Studio Code Microsoft Azure Attestation service and Device Health Attestation Service Microsoft COM for Windows Microsoft Defender for Endpoint Microsoft Digest Authentication Microsoft Dynamics 365 (on-premises) Microsoft Entra Connect Sync Microsoft Exchange Server Microsoft High Performance Computing (HPC) Pack Microsoft Identity Services Microsoft Local Security Authority Server (lsasrv) Microsoft Office Microsoft Office Access Microsoft Office Excel Microsoft Office Graphics Component Microsoft Office Outlook Microsoft Office PowerPoint Microsoft Office SharePoint Microsoft Office Word Microsoft OneDrive Microsoft PowerShell Microsoft PowerShell Core Microsoft QUIC Microsoft Remote Registry Service Microsoft Teams Mobile Microsoft Teams for Android Microsoft Windows Codecs Library Microsoft Windows Media Foundation Microsoft Windows Search Component Power BI RPC Runtime Reliable Multicast Transport Driver (RMCAST) Remote Desktop Client User-Mode Power Service (UMPS) Virtual Hard Disk (VHD) Miniport Driver Visual Studio Code Visual Studio Code - Python extension Visual Studio Code CoPilot Chat Extension Windows Accessibility Infrastructure (ATBroker.exe) Windows Active Directory Windows Ancillary Function Driver f",
-      "link": "https://www.tenable.com/blog/microsofts-august-2026-patch-tuesday-addresses-398-cves-cve-2026-68820",
-      "published": "2026-08-11T18:04:04+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
       "cve_ids": [
-        "CVE-2026-68820",
-        "CVE-2026-6726",
-        "CVE-2026-6727"
+        "CVE-2026-68820"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://isc.sans.edu/diary/rss/33236",
-      "title": "Microsoft Patch Tuesday August 2026, (Tue, Aug 11th)",
-      "summary": "This month we got patches for 418 vulnerabilities. Of these, 62 are critical, 1 is being exploited in the wild, and 2 were publicly disclosed as zero-days. Notable fixes include Windows privilege escalation, container tampering, and critical QUIC and DNS Server remote code execution bugs.",
-      "link": "https://isc.sans.edu/diary/rss/33236",
-      "published": "2026-08-11T17:54:49+00:00",
-      "source": "SANS Internet Storm Center",
-      "tags": [
-        "sans",
-        "isc"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -247,6 +229,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/",
+      "title": "SharePoint Vulnerability Exploited Shortly After PoC Release",
+      "summary": "The vulnerability was patched by Microsoft in July and CISA warned that it could end up being exploited in the wild. The post SharePoint Vulnerability Exploited Shortly After PoC Release appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/",
+      "published": "2026-08-12T14:47:01+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldbreak-zero-day-grants-system-privileges/",
       "title": "New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges",
       "summary": "Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named \"ShieldBreak\" after Microsoft released the August 2026 Patch Tuesday security updates. [...]",
@@ -311,34 +308,76 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/august-2026-patch-tuesday-microsoft-fixes-421-cves-one-exploited-zero-day/",
-      "title": "August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day",
-      "summary": "A use-after-free in the afd.sys Windows kernel-mode driver has been exploited to gain SYSTEM privileges. The post August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/august-2026-patch-tuesday-microsoft-fixes-421-cves-one-exploited-zero-day/",
-      "published": "2026-08-11T18:46:07+00:00",
-      "source": "SecurityWeek",
+      "id": "CVE-2026-52776",
+      "title": "compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0",
+      "summary": "### Summary\n\n`compliance-trestle` 4.0.3 (latest) ships an `URLSecurityValidator` in `trestle/core/remote/security.py` to block SSRF to loopback / link-local / cloud-metadata endpoints from the HTTPSFetcher and SFTPFetcher remote-fetch paths. The allowlist is incomplete and can be bypassed by four equivalent address representations that resolve to the same blocked host but evade the validator's checks:\n\n- IPv4-mapped IPv6 literals (`[::ffff:169.254.169.254]`, `[::ffff:127.0.0.1]`, `[::ffff:10.0.0.1]`) are returned by `socket.getaddrinfo` as `IPv6Address` objects; `IPv6Address in IPv4Network('169.254.0.0/16')` returns `False`, so the `_check_blocked_networks` and `_check_private_networks` predicates do not match.\n- IPv4 unspecified address `0.0.0.0` is not in `ALWAYS_BLOCKED_NETWORKS` (which covers `127.0.0.0/8` but not `0.0.0.0/8`); on Linux + Docker, `0.0.0.0` routes to local services on any interface, and on dual-stack-mapped sockets it also reaches loopback listeners.\n\nA malicious OSCAL profile referencing one of these URLs in `imports[*].href` or `back-matter.resources[*].rlinks[*].href` causes `HTTPSFetcher.__init__` and `_do_fetch` (which both invoke `validator.validate_url`) to pass the URL through to `requests.get`, contacting cloud-metadata services, loopback admin interfaces, or RFC 1918 internal networks (with `TRESTLE_BLOCK_PRIVATE_IPS=true` set) that the validator was specifically designed to block.\n\n### Affected versions\n\n`compliance-trestle` (PyPI) versions `<= 4.0.3` are affected. 4.0.3 (released 2026-05-20) is the latest release and the one that introduced `URLSecurityValidator`; prior releases had no SSRF guard at all.\n\n### Privilege required\n\nNetwork-position attacker who can supply or influence an OSCAL artifact (profile / catalog / SSP / component-definition) that compliance-trestle subsequently fetches via `HTTPSFetcher` or `SFTPFetcher`. The most realistic vector is a malicious OSCAL profile whose `imports[*].href` references one of the bypass ",
+      "link": "https://github.com/advisories/GHSA-h47f-gmjp-m7rr",
+      "published": "2026-08-12T15:21:17Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "research"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-52776"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html",
-      "title": "OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development",
-      "summary": "OpenAI on Monday unveiled a new cybersecurity-focused model called GPT\u20115.6\u2011Cyber that it said is focused on vulnerability research, penetration testing, and incident response.\n\n\"Built on GPT\u20115.6 Sol, it is trained to improve capabilities on several specialized cybersecurity tasks (e.g., finding zero-day vulnerabilities and developing exploit chains) and to reduce refusals for certain higher-risk",
-      "link": "https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html",
-      "published": "2026-08-11T13:11:23+00:00",
-      "source": "The Hacker News Security",
+      "id": "CVE-2026-48798",
+      "title": "SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames",
+      "summary": "## Summary\n\n`ScpClient.Download(string directoryName, DirectoryInfo directoryInfo)` writes files and directories using names returned by the remote SCP server during recursive downloads, with no validation that the resulting path stays inside the requested local directory. A malicious, compromised, or man-in-the-middle SCP server can return names containing `../` sequences (or absolute paths), causing the client to create directories and write/overwrite files anywhere the client process has access. This is similar to OpenSSH [CVE-2019-6111](https://github.com/advisories/GHSA-jr78-hfw4-xp7g), but with directory traversal capability.\n\n## Impact\n\nA malicious/compromised/MITM SCP server can create or write files outside the intended download directory, anywhere the client process can write. Overwriting files such as ~/.ssh/authorized_keys, shell rc files, cron entries, or application binaries/config can lead to persistence, privilege escalation, or remote code execution on the client host. Requires the victim to perform a directory download from the attacker-controlled server.\n\n## Remediation\n\nThe fixed release ensures that remotely-supplied file and directory names are valid local names such that the constructed local path is contained within the given local directory, and throws `ScpException` when an invalid name is detected.\n\n[600be0de543765995a189b5d7cd4efac5007f3ce](https://github.com/sshnet/SSH.NET/commit/600be0de543765995a189b5d7cd4efac5007f3ce)",
+      "link": "https://github.com/advisories/GHSA-q939-rpr3-3284",
+      "published": "2026-08-12T15:19:10Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "zeroday"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-48798"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-48786",
+      "title": "Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint",
+      "summary": "### Summary\n\nThe target search endpoint (`POST /api/latest/fleet/targets`) returned team enroll secrets and full team configuration, including credential-bearing agent options, to observer-class users. Other team-facing endpoints mask these fields for observers; the target search endpoint did not apply the same sanitization.\n\n### Impact\n\nAn authenticated user with Observer, Observer+, or Technician role (global or team-scoped) could retrieve unmasked team enroll secrets and team agent options by performing a target search against an observer-runnable query.\n\nWith a leaked team enroll secret, an attacker could enroll unauthorized hosts into the affected team. If the team's agent options contained credentials such as AWS secret access keys or proxy passwords, those values were also exposed.\n\n### Patches\n\n- v4.87.0\n\n### Workarounds\n\nIf an immediate upgrade is not possible, administrators should:\n\n- Rotate team enroll secrets for any team that may have been exposed\n- Rotate any credentials stored in team agent options (AWS keys, proxy passwords, session tokens)\n- Restrict Observer and Technician roles to fully trusted users until the patch is applied\n\n### Credits\n\nFleet thanks @fuzzztf for responsibly reporting this issue.\n\n### For more information\n\nIf there are any questions or comments about this advisory:\n\nSend an email to [security@fleetdm.com](mailto:security@fleetdm.com)\nJoin #fleet in [osquery Slack](https://join.slack.com/t/osquery/shared_invite/zt-h29zm0gk-s2DBtGUTW4CFel0f0IjTEw)",
+      "link": "https://github.com/advisories/GHSA-88p2-jj8w-j8qg",
+      "published": "2026-08-12T15:18:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-48786"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-32639",
+      "title": "Winter: Broken access control in `Cms\\Controllers\\Index` allows cross-template actions and unauthorized asset uploads",
+      "summary": "### Impact\n\nAffected versions of Winter CMS did not enforce per-template-type permission checks in the CMS section's AJAX handlers. The CMS controller (`Cms\\Controllers\\Index`) used OR-logic across its five permissions (`cms.manage_pages`, `cms.manage_partials`, `cms.manage_layouts`, `cms.manage_content`, `cms.manage_assets`) to control access to the section as a whole, but individual handlers such as `onSave()`, `onDelete()`, and `onDeleteTemplates()` did not verify that the authenticated user holds the specific permission corresponding to the requested template type.\n\nThis allowed a backend user with any single Theme Editor permission (e.g. `cms.manage_pages`) to craft AJAX requests targeting template types outside their authorized scope \u2014 for example, deleting layouts, modifying partials, or reading content files.\n\nIn addition, the `AssetList` widget was registered for all users who passed the controller gate regardless of whether they held the `cms.manage_assets` permission, and its `onUpload()` handler was missing the `validateRequestTheme()` call that is present on all other mutating handlers in the same widget. This allowed unauthorized file uploads into the active theme's asset directory.\n\nTo actively exploit this security issue, an attacker would need access to the Backend with a user account with any of the following permissions:\n\n- `cms.manage_pages`\n- `cms.manage_partials`\n- `cms.manage_layouts`\n- `cms.manage_content`\n- `cms.manage_assets`\n\nThe Winter CMS maintainers strongly recommend that all Winter CMS sites that rely on granular CMS permission assignments (specifically users with only access to `cms.manage_content` to only be able to edit content files through the Theme Editor) to update immediately.\n\n### Patches\n\nPer-template-type permission checks are now enforced on all Theme Editor AJAX handlers, the `AssetList` widget is only registered for users with the `cms.manage_assets` permission, and `onUpload()` now includes theme validation consistent w",
+      "link": "https://github.com/advisories/GHSA-5c4f-9pq9-6c77",
+      "published": "2026-08-12T15:14:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-32639"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html",
@@ -424,41 +463,6 @@
       ],
       "cve_ids": [
         "CVE-2026-70354"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
-      "title": "Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE",
-      "summary": "Security researchers found a way to enter Microsoft SharePoint servers as any user, including an administrator, with no valid account. A significant part of the work that found it was done through an AI agent.\n\nThe flaw, tracked as\u00a0CVE-2026-55040\u00a0(CVSS 9.1), affects SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Server 2016. Microsoft's",
-      "link": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
-      "published": "2026-08-11T16:47:44+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-55040"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73080",
-      "title": "SeaweedFS: Unauthenticated SSRF with response read-back via VolumeServer.FetchAndWriteNeedle",
-      "summary": "### Impact\n`VolumeServer.FetchAndWriteNeedle` fetches a caller-supplied remote endpoint and writes the response into a needle. Before 4.24 this RPC performed no authentication and no validation of the target, so anyone able to reach a volume server's gRPC port could coerce the server into issuing requests to arbitrary hosts \u2014 including loopback, link-local, RFC 1918, and cloud metadata endpoints such as `169.254.169.254` \u2014 and read the response back. On cloud deployments this discloses instance metadata and IAM credentials, and can be used to reach otherwise-unexposed internal services (SSRF with response read-back).\n\nThe volume server gRPC plane is unauthenticated on a default deployment, so no credentials are required. Configuring the documented JWT signing keys does not close it, because that hardening does not apply to this RPC.\n\n### Affected component\n- `weed/server/volume_grpc_remote.go` (`FetchAndWriteNeedle`)\n- `weed/remote_storage/s3/s3_storage_client.go`\n\n### Patches\nFixed in **4.24**. `FetchAndWriteNeedle` now requires admin authorization and refuses loopback / link-local / RFC 1918 / IMDS destinations through a guarded dialer that resolves the host itself and pins the resolved address for the duration of the request, defeating DNS-rebinding. The Rust volume server carries the equivalent endpoint validation.\n\n### Workarounds\nRestrict volume server gRPC ports to trusted hosts via firewall / network policy, and enable mTLS via `security.toml`.",
-      "link": "https://github.com/advisories/GHSA-87fv-vqqr-m4jr",
-      "published": "2026-08-11T15:58:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73080"
       ],
       "is_zero_day": false,
       "is_high_severity": true

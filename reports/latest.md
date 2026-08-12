@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-12 12:39 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 21 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-12 18:44 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,27 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Fresh Windows Zero-Day Exploited in North Korean Cyberattacks
+## 3. 🟠 Zero-Day — Lazarus Exploits Windows Zero-Day to Gain SYSTEM Access and Deploy Backdoor
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html>
+
+> The North Korean threat actor known as Lazarus Group has been attributed to the zero-day exploitation of a newly patched security flaw impacting Microsoft Windows to deliver a never-before-seen backdoor targeting defense and aerospace companies across France, Germany, Brazil, and India.
+
+The activity, per Check Point Research, is part of Operation Dream Job, a long-running cyber espionage and
+
+---
+
+## 4. 🟠 Zero-Day — Three intrusions at UK criminal records office went undetected for two years
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://therecord.media/uk-criminal-records-office-acro-data-breaches>
+
+> Unread antivirus alerts and an unpatched content management system exposed Britain&#x27;s ACRO to three separate data breaches, according to a reprimand notice.
+
+---
+
+## 5. 🟠 Zero-Day — Fresh Windows Zero-Day Exploited in North Korean Cyberattacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://www.securityweek.com/fresh-windows-zero-day-exploited-in-north-korean-cyberattacks/>
@@ -29,7 +49,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Patch Tuesday - August 2026
+## 6. 🟠 Zero-Day — Patch Tuesday - August 2026
 
 **CVE:** `CVE-2026-63520` | `CVE-2026-55040` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://www.rapid7.com/blog/post/em-patch-tuesday-august-2026>
@@ -38,45 +58,20 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Sandworm-Linked UAC-0145 Uses Fake Job Interviews to Push VPN That Can Run Commands
+## 7. 🟠 Zero-Day — Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://thehackernews.com/2026/08/sandworm-linked-uac-0145-uses-fake-job.html>
+**CVE:** `CVE-2026-68820` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
+**Reference:** <https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html>
 
-> The Computer Emergency Response Team of Ukraine (CERT-UA) has disclosed details of a new social engineering campaign orchestrated by Russian nation-state threat actors targeting IT workers in the country by masquerading as recruiters to trick them into installing malware.
+> Microsoft released its monthly security updates on Tuesday, and one of the flaws it closed is already being used in attacks.
 
-CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is a subgroup within Sandworm (aka APT44,
+The bug sits in a core Windows kernel driver that handles network socket operations. An attacker with code already running on a machine can use it to escalate to SYSTEM. That patch goes out first.
 
----
-
-## 6. 🟠 Zero-Day — Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/>
-
-> Today is Microsoft&#x27;s August 2026 Patch Tuesday, and with it comes security updates for a massive 400 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]
+The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 7. 🟠 Zero-Day — Microsoft's August 2026 Patch Tuesday Addresses 398 CVEs (CVE-2026-68820)
-
-**CVE:** `CVE-2026-68820` | `CVE-2026-6726` | `CVE-2026-6727` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://www.tenable.com/blog/microsofts-august-2026-patch-tuesday-addresses-398-cves-cve-2026-68820>
-
-> 42 Critical 355 Important 1 Moderate 0 Low Microsoft addresses 398 CVEs in the eighth Patch Tuesday of 2026, with three zero-days, including one that was exploited in the wild. Microsoft patched 398 CVEs in its August 2026 Patch Tuesday release, with 42 rated critical, 355 rated as important and one rated as moderate. Our counts omitted two CVEs assigned by MITRE; CVE-2026-6726 and CVE-2026-6727. …
-
----
-
-## 8. 🟠 Zero-Day — Microsoft Patch Tuesday August 2026, (Tue, Aug 11th)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://isc.sans.edu/diary/rss/33236>
-
-> This month we got patches for 418 vulnerabilities. Of these, 62 are critical, 1 is being exploited in the wild, and 2 were publicly disclosed as zero-days. Notable fixes include Windows privilege escalation, container tampering, and critical QUIC and DNS Server remote code execution bugs.
-
----
-
-## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -85,7 +80,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -94,7 +89,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -103,7 +98,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -112,7 +107,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -121,7 +116,7 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -130,12 +125,21 @@ CERT-UA pinned the activity on a threat cluster it tracks as UAC-0145, which is 
 
 ---
 
-## 15. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
 
 > Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…
+
+---
+
+## 15. 🟠 Zero-Day — SharePoint Vulnerability Exploited Shortly After PoC Release
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/>
+
+> The vulnerability was patched by Microsoft in July and CISA warned that it could end up being exploited in the wild. The post SharePoint Vulnerability Exploited Shortly After PoC Release appeared first on SecurityWeek .
 
 ---
 
@@ -181,27 +185,55 @@ The high-severity flaw, tracked as CVE-2026-20349 (CVSS score: 8.6), is a case o
 
 ---
 
-## 20. 🟠 Zero-Day — August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day
+## 20. 🟡 High Severity — compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://www.securityweek.com/august-2026-patch-tuesday-microsoft-fixes-421-cves-one-exploited-zero-day/>
+**CVE:** `CVE-2026-52776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://github.com/advisories/GHSA-h47f-gmjp-m7rr>
 
-> A use-after-free in the afd.sys Windows kernel-mode driver has been exploited to gain SYSTEM privileges. The post August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day appeared first on SecurityWeek .
+> ### Summary
 
----
-
-## 21. 🟠 Zero-Day — OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://thehackernews.com/2026/08/openai-launches-gpt-56-cyber-with.html>
-
-> OpenAI on Monday unveiled a new cybersecurity-focused model called GPT‑5.6‑Cyber that it said is focused on vulnerability research, penetration testing, and incident response.
-
-&quot;Built on GPT‑5.6 Sol, it is trained to improve capabilities on several specialized cybersecurity tasks (e.g., finding zero-day vulnerabilities and developing exploit chains) and to reduce refusals for certain higher-r…
+`compliance-trestle` 4.0.3 (latest) ships an `URLSecurityValidator` in `trestle/core/remote/security.py` to block SSRF to loopback / link-local / cloud-metadata endpoints from the HTTPSFetcher and SFTPFetcher remote-fetch paths. The allowlist is incomplete and can be bypassed by four equivalent address representations that resolve to the same blocked host but evade the validator&#x27;…
 
 ---
 
-## 22. 🟡 High Severity — Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws
+## 21. 🟡 High Severity — SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames
+
+**CVE:** `CVE-2026-48798` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://github.com/advisories/GHSA-q939-rpr3-3284>
+
+> ## Summary
+
+`ScpClient.Download(string directoryName, DirectoryInfo directoryInfo)` writes files and directories using names returned by the remote SCP server during recursive downloads, with no validation that the resulting path stays inside the requested local directory. A malicious, compromised, or man-in-the-middle SCP server can return names containing `../` sequences (or absolute paths), cau…
+
+---
+
+## 22. 🟡 High Severity — Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint
+
+**CVE:** `CVE-2026-48786` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://github.com/advisories/GHSA-88p2-jj8w-j8qg>
+
+> ### Summary
+
+The target search endpoint (`POST /api/latest/fleet/targets`) returned team enroll secrets and full team configuration, including credential-bearing agent options, to observer-class users. Other team-facing endpoints mask these fields for observers; the target search endpoint did not apply the same sanitization.
+
+### Impact
+
+An authenticated user with Observer, Observer+, or Technicia…
+
+---
+
+## 23. 🟡 High Severity — Winter: Broken access control in `Cms\Controllers\Index` allows cross-template actions and unauthorized asset uploads
+
+**CVE:** `CVE-2026-32639` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://github.com/advisories/GHSA-5c4f-9pq9-6c77>
+
+> ### Impact
+
+Affected versions of Winter CMS did not enforce per-template-type permission checks in the CMS section&#x27;s AJAX handlers. The CMS controller (`Cms\Controllers\Index`) used OR-logic across its five permissions (`cms.manage_pages`, `cms.manage_partials`, `cms.manage_layouts`, `cms.manage_content`, `cms.manage_assets`) to control access to the section as a whole, but individual handler…
+
+---
+
+## 24. 🟡 High Severity — Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws
 
 **CVE:** `CVE-2026-48362` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html>
@@ -215,7 +247,7 @@ The most severe of the flaws are listed below -
 
 ---
 
-## 23. 🟡 High Severity — Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access
+## 25. 🟡 High Severity — Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access
 
 **CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html>
@@ -226,7 +258,7 @@ The vulnerability in question is CVE-2026-59310 (CVSS score: 9.8), a directory-t
 
 ---
 
-## 24. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62902 – .NET Information Disclosure Vulnerability
+## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62902 – .NET Information Disclosure Vulnerability
 
 **CVE:** `CVE-2026-62902` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://github.com/advisories/GHSA-9mrh-pw7c-9mqm>
@@ -239,7 +271,7 @@ A specially crafted document parsed in .NET can trigger the inclusion of functio
 
 ---
 
-## 25. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62897 – .NET Remote Code Execution Vulnerability
+## 27. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62897 – .NET Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-62897` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://github.com/advisories/GHSA-fx4q-gjrx-2jw6>
@@ -256,7 +288,7 @@ Announcemen…
 
 ---
 
-## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70354 – .NET Core Remote Code Execution Vulnerability
+## 28. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70354 – .NET Core Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-70354` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
 **Reference:** <https://github.com/advisories/GHSA-gg8c-3338-xw2f>
@@ -270,27 +302,6 @@ An out-of-bounds write in .NET allows an unauthorized attacker to execute code l
 ## Announcement
 
 Announcement for this …
-
----
-
-## 27. 🟡 High Severity — Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE
-
-**CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html>
-
-> Security researchers found a way to enter Microsoft SharePoint servers as any user, including an administrator, with no valid account. A significant part of the work that found it was done through an AI agent.
-
-The flaw, tracked as CVE-2026-55040 (CVSS 9.1), affects SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Server 2016. Microsoft&#x27;s
-
----
-
-## 28. 🟡 High Severity — SeaweedFS: Unauthenticated SSRF with response read-back via VolumeServer.FetchAndWriteNeedle
-
-**CVE:** `CVE-2026-73080` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://github.com/advisories/GHSA-87fv-vqqr-m4jr>
-
-> ### Impact
-`VolumeServer.FetchAndWriteNeedle` fetches a caller-supplied remote endpoint and writes the response into a needle. Before 4.24 this RPC performed no authentication and no validation of the target, so anyone able to reach a volume server&#x27;s gRPC port could coerce the server into issuing requests to arbitrary hosts — including loopback, link-local, RFC 1918, and cloud metadata endpoi…
 
 ---
 
