@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-13 07:08 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-13 12:40 UTC &nbsp;|&nbsp; **Total:** 23 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -40,16 +40,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 5. 🟠 Zero-Day — Fresh Windows Zero-Day Exploited in North Korean Cyberattacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://www.securityweek.com/fresh-windows-zero-day-exploited-in-north-korean-cyberattacks/>
-
-> The bug allowed attackers to gain full control of the victims’ systems and deploy the ForestTiger backdoor. The post Fresh Windows Zero-Day Exploited in North Korean Cyberattacks appeared first on SecurityWeek .
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +49,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +58,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +67,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +76,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,7 +85,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -103,12 +94,21 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
 
 > Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…
+
+---
+
+## 12. 🟠 Zero-Day — Nightmare Eclipse Drops Windows Zero-Day Exploit ‘ShieldBreak’
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-13
+**Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/>
+
+> Dropped on Patch Tuesday, the exploit allows any user to spawn a shell with System privileges. The post Nightmare Eclipse Drops Windows Zero-Day Exploit ‘ShieldBreak’ appeared first on SecurityWeek .
 
 ---
 
@@ -130,16 +130,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 15. 🟠 Zero-Day — New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldbreak-zero-day-grants-system-privileges/>
-
-> Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named &quot;ShieldBreak&quot; after Microsoft released the August 2026 Patch Tuesday security updates. [...]
-
----
-
-## 16. 🟡 High Severity — Attackers Exploit SharePoint Authentication Bypass After Public PoC Release
+## 15. 🟡 High Severity — Attackers Exploit SharePoint Authentication Bypass After Public PoC Release
 
 **CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html>
@@ -152,7 +143,7 @@ The vulnerability in question is CVE-2026-55040 (CVSS score: 9.1), which refers 
 
 ---
 
-## 17. 🟡 High Severity — Hackers exploit critical Adobe Commerce flaw to hijack customer accounts
+## 16. 🟡 High Severity — Hackers exploit critical Adobe Commerce flaw to hijack customer accounts
 
 **CVE:** `CVE-2026-71362` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/>
@@ -161,7 +152,7 @@ The vulnerability in question is CVE-2026-55040 (CVSS score: 9.1), which refers 
 
 ---
 
-## 18. 🟡 High Severity — MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`
+## 17. 🟡 High Severity — MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`
 
 **CVE:** `CVE-2026-55071` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-49m4-vp58-wgc9>
@@ -174,7 +165,7 @@ The `ado_package_install` MCP tool in `stata-mcp` concatenates user-controlled i
 
 ---
 
-## 19. 🟡 High Severity — SeaweedFS: Path traversal in the S3 and Iceberg REST gateways allows cross-bucket access
+## 18. 🟡 High Severity — SeaweedFS: Path traversal in the S3 and Iceberg REST gateways allows cross-bucket access
 
 **CVE:** `CVE-2026-54917` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-w62w-66v9-vvgv>
@@ -191,7 +182,7 @@ is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured objec
 
 ---
 
-## 20. 🟡 High Severity — compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0
+## 19. 🟡 High Severity — compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0
 
 **CVE:** `CVE-2026-52776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-h47f-gmjp-m7rr>
@@ -202,7 +193,7 @@ is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured objec
 
 ---
 
-## 21. 🟡 High Severity — SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames
+## 20. 🟡 High Severity — SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames
 
 **CVE:** `CVE-2026-48798` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-q939-rpr3-3284>
@@ -213,7 +204,7 @@ is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured objec
 
 ---
 
-## 22. 🟡 High Severity — Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint
+## 21. 🟡 High Severity — Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint
 
 **CVE:** `CVE-2026-48786` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-88p2-jj8w-j8qg>
@@ -228,7 +219,7 @@ An authenticated user with Observer, Observer+, or Technicia…
 
 ---
 
-## 23. 🟡 High Severity — Winter: Broken access control in `Cms\Controllers\Index` allows cross-template actions and unauthorized asset uploads
+## 22. 🟡 High Severity — Winter: Broken access control in `Cms\Controllers\Index` allows cross-template actions and unauthorized asset uploads
 
 **CVE:** `CVE-2026-32639` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-5c4f-9pq9-6c77>
@@ -239,32 +230,7 @@ Affected versions of Winter CMS did not enforce per-template-type permission che
 
 ---
 
-## 24. 🟡 High Severity — Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws
-
-**CVE:** `CVE-2026-48362` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html>
-
-> Adobe has shipped updates to address multiple critical security vulnerabilities impacting ColdFusion, Commerce, and Campaign Classic that, if successfully exploited, could result in arbitrary code execution and privilege escalation.
-
-The most severe of the flaws are listed below -
-
-
-  CVE-2026-48362 (CVSS score: 10.0) - An operating system command injection vulnerability in ColdFusion that could
-
----
-
-## 25. 🟡 High Severity — Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access
-
-**CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html>
-
-> Threat actors have begun to actively exploit a recently patched critical security flaw in Broadcom VMware vCenter, according to new findings from QUIRSO.
-
-The vulnerability in question is CVE-2026-59310 (CVSS score: 9.8), a directory-traversal vulnerability in the VMware vCenter server that a malicious actor with network access can exploit to execute arbitrary code. Patches for the flaw were
-
----
-
-## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 23. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

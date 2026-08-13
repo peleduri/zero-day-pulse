@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-13T07:08:18.178995+00:00",
-  "total": 26,
+  "generated": "2026-08-13T12:40:43.248267+00:00",
+  "total": 23,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -61,21 +61,6 @@
       "tags": [
         "news",
         "threat-intel"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/fresh-windows-zero-day-exploited-in-north-korean-cyberattacks/",
-      "title": "Fresh Windows Zero-Day Exploited in North Korean Cyberattacks",
-      "summary": "The bug allowed attackers to gain full control of the victims\u2019 systems and deploy the ForestTiger backdoor. The post Fresh Windows Zero-Day Exploited in North Korean Cyberattacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/fresh-windows-zero-day-exploited-in-north-korean-cyberattacks/",
-      "published": "2026-08-12T08:45:53+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -194,6 +179,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/",
+      "title": "Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018ShieldBreak\u2019",
+      "summary": "Dropped on Patch Tuesday, the exploit allows any user to spawn a shell with System privileges. The post Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018ShieldBreak\u2019 appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/",
+      "published": "2026-08-13T08:38:03+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/",
       "title": "Lazarus hackers exploited Windows zero-day to target defense firms",
       "summary": "North Korean hackers have been exploiting a Windows zero-day vulnerability (CVE-2026-68820) to target defense-sector companies as part of the Operation Dream Job campaign. [...]",
@@ -220,21 +220,6 @@
       "tags": [
         "news",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldbreak-zero-day-grants-system-privileges/",
-      "title": "New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges",
-      "summary": "Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named \"ShieldBreak\" after Microsoft released the August 2026 Patch Tuesday security updates. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldbreak-zero-day-grants-system-privileges/",
-      "published": "2026-08-12T10:15:22+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -378,40 +363,6 @@
       ],
       "cve_ids": [
         "CVE-2026-32639"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html",
-      "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
-      "summary": "Adobe has shipped updates to address multiple critical security vulnerabilities impacting ColdFusion, Commerce, and Campaign Classic that, if successfully exploited, could result in arbitrary code execution and privilege escalation.\n\nThe most severe of the flaws are listed below -\n\n\n  CVE-2026-48362 (CVSS score: 10.0) - An operating system command injection vulnerability in ColdFusion that could",
-      "link": "https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html",
-      "published": "2026-08-12T11:13:03+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-48362"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html",
-      "title": "Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access",
-      "summary": "Threat actors have begun to actively exploit a recently patched critical security flaw in Broadcom VMware vCenter, according to new findings from QUIRSO.\n\nThe vulnerability in question is CVE-2026-59310 (CVSS score: 9.8), a directory-traversal vulnerability in the VMware vCenter server that a malicious actor with network access can exploit to execute arbitrary code. Patches for the flaw were",
-      "link": "https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html",
-      "published": "2026-08-12T09:01:54+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-59310"
       ],
       "is_zero_day": false,
       "is_high_severity": true
