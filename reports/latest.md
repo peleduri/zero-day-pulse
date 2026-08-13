@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-13 00:56 UTC &nbsp;|&nbsp; **Total:** 27 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-13 07:08 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -139,31 +139,20 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 16. 🟠 Zero-Day — ShieldBreak Zero-Day PoC Claims Microsoft Defender Patch Bypass With SYSTEM Access
+## 16. 🟡 High Severity — Attackers Exploit SharePoint Authentication Bypass After Public PoC Release
 
-**CVE:** `CVE-2026-50656` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://thehackernews.com/2026/08/shieldbreak-zero-day-poc-claims.html>
+**CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-13
+**Reference:** <https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html>
 
-> The security researcher going by the name Chaotic Eclipse (aka INFINITE NIGHTMARE, MSNightmare, and Nightmare-Eclipse) has released a proof-of-concept (PoC) for a new Microsoft zero-day called ShieldBreak.
+> Threat actors have begun to exploit a newly disclosed Microsoft SharePoint vulnerability following the release of a proof-of-concept (PoC) code.
 
-The vulnerability, rooted in Microsoft Defender for Windows, demonstrates a patch bypass for CVE-2026-50656 (CVSS score: 7.8), otherwise known as RoguePlanet.
+The vulnerability in question is CVE-2026-55040 (CVSS score: 9.1), which refers to a critical security feature bypass that stems from weak authentication. It was patched by Microsoft as part of its July 2026 Patch Tuesday updates.
 
-RoguePlanet has been described
-
----
-
-## 17. 🟠 Zero-Day — Cisco ASA and FTD Flaw Exploited in the Wild Can Trigger Remote DoS
-
-**CVE:** `CVE-2026-20349` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://thehackernews.com/2026/08/cisco-asa-and-ftd-flaw-exploited-in.html>
-
-> Cisco has warned that a new vulnerability impacting Secure Firewall Adaptive Security Appliance (ASA) Software and Secure Firewall Threat Defense (FTD) Software has been exploited in the wild.
-
-The high-severity flaw, tracked as CVE-2026-20349 (CVSS score: 8.6), is a case of insufficient error checking when processing HTTP requests that could allow an unauthenticated, remote attacker to trigger
+&quot;The authenticati…
 
 ---
 
-## 18. 🟡 High Severity — Hackers exploit critical Adobe Commerce flaw to hijack customer accounts
+## 17. 🟡 High Severity — Hackers exploit critical Adobe Commerce flaw to hijack customer accounts
 
 **CVE:** `CVE-2026-71362` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/>
@@ -172,7 +161,7 @@ The high-severity flaw, tracked as CVE-2026-20349 (CVSS score: 8.6), is a case o
 
 ---
 
-## 19. 🟡 High Severity — MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`
+## 18. 🟡 High Severity — MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`
 
 **CVE:** `CVE-2026-55071` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-49m4-vp58-wgc9>
@@ -185,7 +174,7 @@ The `ado_package_install` MCP tool in `stata-mcp` concatenates user-controlled i
 
 ---
 
-## 20. 🟡 High Severity — SeaweedFS: Path traversal in the S3 and Iceberg REST gateways allows cross-bucket access
+## 19. 🟡 High Severity — SeaweedFS: Path traversal in the S3 and Iceberg REST gateways allows cross-bucket access
 
 **CVE:** `CVE-2026-54917` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-w62w-66v9-vvgv>
@@ -202,7 +191,7 @@ is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured objec
 
 ---
 
-## 21. 🟡 High Severity — compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0
+## 20. 🟡 High Severity — compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0
 
 **CVE:** `CVE-2026-52776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-h47f-gmjp-m7rr>
@@ -213,7 +202,7 @@ is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured objec
 
 ---
 
-## 22. 🟡 High Severity — SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames
+## 21. 🟡 High Severity — SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames
 
 **CVE:** `CVE-2026-48798` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-q939-rpr3-3284>
@@ -224,7 +213,7 @@ is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured objec
 
 ---
 
-## 23. 🟡 High Severity — Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint
+## 22. 🟡 High Severity — Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint
 
 **CVE:** `CVE-2026-48786` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-88p2-jj8w-j8qg>
@@ -239,7 +228,7 @@ An authenticated user with Observer, Observer+, or Technicia…
 
 ---
 
-## 24. 🟡 High Severity — Winter: Broken access control in `Cms\Controllers\Index` allows cross-template actions and unauthorized asset uploads
+## 23. 🟡 High Severity — Winter: Broken access control in `Cms\Controllers\Index` allows cross-template actions and unauthorized asset uploads
 
 **CVE:** `CVE-2026-32639` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-5c4f-9pq9-6c77>
@@ -250,7 +239,7 @@ Affected versions of Winter CMS did not enforce per-template-type permission che
 
 ---
 
-## 25. 🟡 High Severity — Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws
+## 24. 🟡 High Severity — Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws
 
 **CVE:** `CVE-2026-48362` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html>
@@ -264,7 +253,7 @@ The most severe of the flaws are listed below -
 
 ---
 
-## 26. 🟡 High Severity — Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access
+## 25. 🟡 High Severity — Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access
 
 **CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html>
@@ -275,7 +264,7 @@ The vulnerability in question is CVE-2026-59310 (CVSS score: 9.8), a directory-t
 
 ---
 
-## 27. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
