@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-13T12:40:43.248267+00:00",
-  "total": 23,
+  "generated": "2026-08-13T18:45:28.294672+00:00",
+  "total": 21,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -31,36 +31,6 @@
         "cloud",
         "threat-intel",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html",
-      "title": "Lazarus Exploits Windows Zero-Day to Gain SYSTEM Access and Deploy Backdoor",
-      "summary": "The North Korean threat actor known as Lazarus Group has been attributed to the zero-day exploitation of a newly patched security flaw impacting Microsoft Windows to deliver a never-before-seen backdoor targeting defense and aerospace companies across France, Germany, Brazil, and India.\n\nThe activity, per Check Point Research, is part of Operation Dream Job, a long-running cyber espionage and",
-      "link": "https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html",
-      "published": "2026-08-12T17:39:27+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://therecord.media/uk-criminal-records-office-acro-data-breaches",
-      "title": "Three intrusions at UK criminal records office went undetected for two years",
-      "summary": "Unread antivirus alerts and an unpatched content management system exposed Britain's ACRO to three separate data breaches, according to a reprimand notice.",
-      "link": "https://therecord.media/uk-criminal-records-office-acro-data-breaches",
-      "published": "2026-08-12T13:00:00+00:00",
-      "source": "The Record by Recorded Future",
-      "tags": [
-        "news",
-        "threat-intel"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -179,6 +149,39 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/",
+      "title": "Microsoft patches LegacyHive Windows zero-day vulnerability",
+      "summary": "Microsoft has released security patches to address a Windows zero-day vulnerability known as \"LegacyHive,\" disclosed after the July 2026 Patch Tuesday. [...]",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/",
+      "published": "2026-08-13T17:46:20+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-54526",
+      "title": "Argo Workflows: ArtifactGC.PodSpecPatch bypasses Strict/Secure template reference allow-list (Incomplete fix for CVE-2026-31892)",
+      "summary": "### Summary\n\nThe allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up coverage of `hostNetwork`/`securityContext`/`serviceAccountName` in GHSA-3775-99mw-8rp4, is incomplete. `workflow/util/merge.go` `ValidateUserOverrides` / `SanitizeUserWorkflowSpec` walk only the top-level fields of `WorkflowSpec` via reflection. `WorkflowSpec.ArtifactGC` is allow-listed because admins want users to configure artifact garbage collection. The struct behind that field, `WorkflowLevelArtifactGC`, has a `PodSpecPatch` sub-field whose contents flow unmodified into `util.ApplyPodSpecPatch` on the artifact-GC pod - the same sink the original fix closed for `WorkflowSpec.PodSpecPatch`. A user submitting a Workflow under `templateReferencing: Strict` or `Secure` can therefore still inject an arbitrary strategic merge patch into the artifact-GC pod (hostPath volumes, `privileged: true`, arbitrary image and command, `hostNetwork: true`), defeating the stated purpose of Strict/Secure reference mode.\n\n### Details\n\nLocations in `main` at `4d9f021` (HEAD 2026-04-23):\n\nAllow-list and reflection scope - `workflow/util/merge.go:19-60`:\n\n```go\nvar allowedUserOverrideFields = map[string]bool{\n    \"Arguments\":             true,\n    \"Entrypoint\":            true,\n    ...\n    \"ArtifactGC\":            true,   // <-- allow-listed wholesale\n}\n\nfunc ValidateUserOverrides(userSpec *wfv1.WorkflowSpec) error {\n    v := reflect.ValueOf(userSpec).Elem()\n    t := v.Type()\n    zero := reflect.New(t).Elem()\n    for i := 0; i < t.NumField(); i++ {\n        fieldName := t.Field(i).Name\n        if allowedUserOverrideFields[fieldName] {\n            continue                  // <-- sub-fields are not walked\n        }\n        if !reflect.DeepEqual(v.Field(i).Interface(), zero.Field(i).Interface()) {\n            violations = append(violations, fieldName)\n        }\n    }\n    ...\n}\n```\n\nThe allow-listed type - `pkg/apis/workflow/v1alpha1/workflow_types.go:1207-1217`:\n\n```go\ntype WorkflowLevelArtifactGC ",
+      "link": "https://github.com/advisories/GHSA-48p8-g2fx-3wwm",
+      "published": "2026-08-13T14:16:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54526"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/",
       "title": "Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018ShieldBreak\u2019",
       "summary": "Dropped on Patch Tuesday, the exploit allows any user to spawn a shell with System privileges. The post Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018ShieldBreak\u2019 appeared first on SecurityWeek .",
@@ -194,36 +197,75 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/",
-      "title": "Lazarus hackers exploited Windows zero-day to target defense firms",
-      "summary": "North Korean hackers have been exploiting a Windows zero-day vulnerability (CVE-2026-68820) to target defense-sector companies as part of the Operation Dream Job campaign. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/",
-      "published": "2026-08-12T15:38:08+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/",
+      "title": "Critical VMware vCenter RCE flaw exploited for reverse SSH access",
+      "summary": "A recently patched critical vulnerability (CVE-2026-59310) in VMware vCenter Syslog Server is being exploited in an active campaign to deploy a reverse SSH tool for persistence and remote access. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/",
+      "published": "2026-08-13T16:40:23+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
         "malware"
       ],
       "cve_ids": [
-        "CVE-2026-68820"
+        "CVE-2026-59310"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/",
-      "title": "SharePoint Vulnerability Exploited Shortly After PoC Release",
-      "summary": "The vulnerability was patched by Microsoft in July and CISA warned that it could end up being exploited in the wild. The post SharePoint Vulnerability Exploited Shortly After PoC Release appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/",
-      "published": "2026-08-12T14:47:01+00:00",
-      "source": "SecurityWeek",
+      "id": "CVE-2026-55102",
+      "title": "hashi-vault-js: Vault token and secret values exposed in thrown errors",
+      "summary": "## Summary\n\nVault token and secret values are exposed in thrown errors when using `hashi-vault-js`.\n\n## Details\n\nEvery API method in `Vault.js` executes `throw parseAxiosError(err)`, which returns the raw `AxiosError` untouched. That error carries the full Axios configuration, including the `X-Vault-Token` header and the request body. Consuming applications that log caught errors (e.g., using `console.error`, `pino`, `winston`, Sentry, or APMs) inadvertently log the live Vault token in plaintext. Furthermore, write-path methods expose submitted passwords and secret values via `err.config.data`.\n\n## Impact\n\nWhen consuming applications log intercepted exceptions, sensitive credentials such as tokens, passwords, and secrets are unknowingly exposed to application logs, monitoring services, and APM systems via the raw `AxiosError`. This may lead to authorization bypass or unauthorized access to the underlying Vault instance.\n\n## Patches\n\nThis vulnerability should be addressed by redacting `err.config.headers['X-Vault-Token']` and `err.config.data` before re-throwing, or by throwing a purpose-built error containing only safe properties like status and message. Users should upgrade to a version that includes this fix.\n\n## Workarounds\n\nIf users cannot immediately update the library, they can mitigate this issue by capturing all exceptions thrown by `hashi-vault-js` and sanitizing or omitting the `err.config` object before passing the errors to logging utilities or crash reporters.\n\n## Acknowledgements\nhashi-vault-js would like to thank Sebasti\u00e1n Alba Vives for reporting this vulnerability.\n\n## Resources\n\n- [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)\n- [CWE-209: Generation of Error Message Containing Sensitive Information](https://cwe.mitre.org/data/definitions/209.html)",
+      "link": "https://github.com/advisories/GHSA-5pq8-3ffp-7w5m",
+      "published": "2026-08-13T14:14:32Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "research"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-55102"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55088",
+      "title": "ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token",
+      "summary": "Etherpad's device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token in the GET response body\n\n## Description\n\nEtherpad ships an endpoint pair under `/tokenTransfer` (`src/node/hooks/express/tokenTransfer.ts`) that lets a logged-in user move their HttpOnly author token to a different browser (typically by scanning a QR code containing the transfer URL). The flow is:\n\n1. **POST `/tokenTransfer`** \u2014 the source device sends a request whose own author cookie is read off the server-side cookie jar. The server mints a random UUID and stores the author token (and arbitrary `prefsHttp` field) under a DB key keyed by that UUID. The UUID is returned.\n2. **GET `/tokenTransfer/{uuid}`** \u2014 the destination device GETs the URL containing the UUID. The server reads the stored record and sets the HttpOnly author cookie on the response.\n\nThe original implementation has three serious flaws:\n\n1. **No expiration check.** `createdAt` is written to the record on POST but never inspected on GET. A leaked transfer URL is redeemable indefinitely.\n2. **No single-use enforcement.** The DB record is not deleted after a successful GET, so the same URL can be redeemed repeatedly \u2014 each redemption yielding a fresh cookie set on whoever issued the GET.\n3. **Author token echoed in the response body.** The GET handler ends with `res.send(tokenData)`, which serializes the full record \u2014 including the raw author token \u2014 into the JSON response. Any JavaScript on the page that issued the GET can read the token, defeating the HttpOnly cookie design that exists specifically to keep the token out of JS reach.\n\nCombined, these mean that any disclosure of a transfer UUID (browser history, mis-shared QR code, screenshot, server log, third-party plugin that proxies the request, an unencrypted intermediate hop) results in **persistent authorship impersonation of the originating account** \u2014 the attacker doesn't just get one cookie, they can re-redeem and t",
+      "link": "https://github.com/advisories/GHSA-vqfp-p66c-xrp9",
+      "published": "2026-08-13T14:12:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55088"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55086",
+      "title": "ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite",
+      "summary": "## Description\n\n`src/node/handler/ImportHandler.ts` and `src/node/handler/ExportHandler.ts` both compute their temporary working-file paths as:\n\n```ts\nconst randNum = Math.floor(Math.random() * 0xFFFFFFFF);\nconst srcFile = `${os.tmpdir()}/etherpad_export_${randNum}.html`;\nconst destFile = `${os.tmpdir()}/etherpad_export_${randNum}.${type}`;\n```\n\nTwo flaws compound:\n\n1. **`Math.random()` is not crypto-secure.** It yields at most ~32 bits of entropy and is **predictable across calls within the same Node process** (V8 shares PRNG state between consecutive `Math.random()` invocations). An attacker on the same host who observes any earlier temp-file name from logs or other side channels can predict subsequent names.\n\n2. **The paths land in `os.tmpdir()`.** On a typical Linux system this is `/tmp` \u2014 a shared world-writable directory. An unprivileged local attacker can pre-create a symbolic link at a predicted path pointing at any file the Etherpad process can write:\n\n   ```\n   ln -s /etc/etherpad/SESSIONKEY.txt /tmp/etherpad_export_<predicted>.html\n   ```\n\n   When `ExportHandler` calls `fs.writeFile(srcFile, html)` (or `ImportHandler` calls `fs.rename(srcFile, destFile)` / `soffice` writes its converted output to the path), the open syscall follows the symlink and either reads from or overwrites the linked target. For deployments where the Etherpad process runs as a privileged user (notably some Docker base images that run as root, snap confinement edge cases, or hand-rolled systemd units), this becomes arbitrary file overwrite.\n\nThe Import path is more impactful in practice: the file content the attacker can land in the symlink target is partially attacker-controlled (the post-soffice/post-mammoth conversion output of the uploaded document).\n\n## Severity rationale\n\n- **AV:L** \u2014 requires local access to the host that runs Etherpad. Multi-tenant hosts (shared dev boxes, k8s shared-node setups, single-server CI workers) are the realistic threat surface.\n- **AC:H** \u2014 attacke",
+      "link": "https://github.com/advisories/GHSA-2jwf-f4xq-f24h",
+      "published": "2026-08-13T14:11:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55086"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html",
@@ -291,78 +333,6 @@
       ],
       "cve_ids": [
         "CVE-2026-54917"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-52776",
-      "title": "compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0",
-      "summary": "### Summary\n\n`compliance-trestle` 4.0.3 (latest) ships an `URLSecurityValidator` in `trestle/core/remote/security.py` to block SSRF to loopback / link-local / cloud-metadata endpoints from the HTTPSFetcher and SFTPFetcher remote-fetch paths. The allowlist is incomplete and can be bypassed by four equivalent address representations that resolve to the same blocked host but evade the validator's checks:\n\n- IPv4-mapped IPv6 literals (`[::ffff:169.254.169.254]`, `[::ffff:127.0.0.1]`, `[::ffff:10.0.0.1]`) are returned by `socket.getaddrinfo` as `IPv6Address` objects; `IPv6Address in IPv4Network('169.254.0.0/16')` returns `False`, so the `_check_blocked_networks` and `_check_private_networks` predicates do not match.\n- IPv4 unspecified address `0.0.0.0` is not in `ALWAYS_BLOCKED_NETWORKS` (which covers `127.0.0.0/8` but not `0.0.0.0/8`); on Linux + Docker, `0.0.0.0` routes to local services on any interface, and on dual-stack-mapped sockets it also reaches loopback listeners.\n\nA malicious OSCAL profile referencing one of these URLs in `imports[*].href` or `back-matter.resources[*].rlinks[*].href` causes `HTTPSFetcher.__init__` and `_do_fetch` (which both invoke `validator.validate_url`) to pass the URL through to `requests.get`, contacting cloud-metadata services, loopback admin interfaces, or RFC 1918 internal networks (with `TRESTLE_BLOCK_PRIVATE_IPS=true` set) that the validator was specifically designed to block.\n\n### Affected versions\n\n`compliance-trestle` (PyPI) versions `<= 4.0.3` are affected. 4.0.3 (released 2026-05-20) is the latest release and the one that introduced `URLSecurityValidator`; prior releases had no SSRF guard at all.\n\n### Privilege required\n\nNetwork-position attacker who can supply or influence an OSCAL artifact (profile / catalog / SSP / component-definition) that compliance-trestle subsequently fetches via `HTTPSFetcher` or `SFTPFetcher`. The most realistic vector is a malicious OSCAL profile whose `imports[*].href` references one of the bypass ",
-      "link": "https://github.com/advisories/GHSA-h47f-gmjp-m7rr",
-      "published": "2026-08-12T15:21:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-52776"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48798",
-      "title": "SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames",
-      "summary": "## Summary\n\n`ScpClient.Download(string directoryName, DirectoryInfo directoryInfo)` writes files and directories using names returned by the remote SCP server during recursive downloads, with no validation that the resulting path stays inside the requested local directory. A malicious, compromised, or man-in-the-middle SCP server can return names containing `../` sequences (or absolute paths), causing the client to create directories and write/overwrite files anywhere the client process has access. This is similar to OpenSSH [CVE-2019-6111](https://github.com/advisories/GHSA-jr78-hfw4-xp7g), but with directory traversal capability.\n\n## Impact\n\nA malicious/compromised/MITM SCP server can create or write files outside the intended download directory, anywhere the client process can write. Overwriting files such as ~/.ssh/authorized_keys, shell rc files, cron entries, or application binaries/config can lead to persistence, privilege escalation, or remote code execution on the client host. Requires the victim to perform a directory download from the attacker-controlled server.\n\n## Remediation\n\nThe fixed release ensures that remotely-supplied file and directory names are valid local names such that the constructed local path is contained within the given local directory, and throws `ScpException` when an invalid name is detected.\n\n[600be0de543765995a189b5d7cd4efac5007f3ce](https://github.com/sshnet/SSH.NET/commit/600be0de543765995a189b5d7cd4efac5007f3ce)",
-      "link": "https://github.com/advisories/GHSA-q939-rpr3-3284",
-      "published": "2026-08-12T15:19:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48798"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-48786",
-      "title": "Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint",
-      "summary": "### Summary\n\nThe target search endpoint (`POST /api/latest/fleet/targets`) returned team enroll secrets and full team configuration, including credential-bearing agent options, to observer-class users. Other team-facing endpoints mask these fields for observers; the target search endpoint did not apply the same sanitization.\n\n### Impact\n\nAn authenticated user with Observer, Observer+, or Technician role (global or team-scoped) could retrieve unmasked team enroll secrets and team agent options by performing a target search against an observer-runnable query.\n\nWith a leaked team enroll secret, an attacker could enroll unauthorized hosts into the affected team. If the team's agent options contained credentials such as AWS secret access keys or proxy passwords, those values were also exposed.\n\n### Patches\n\n- v4.87.0\n\n### Workarounds\n\nIf an immediate upgrade is not possible, administrators should:\n\n- Rotate team enroll secrets for any team that may have been exposed\n- Rotate any credentials stored in team agent options (AWS keys, proxy passwords, session tokens)\n- Restrict Observer and Technician roles to fully trusted users until the patch is applied\n\n### Credits\n\nFleet thanks @fuzzztf for responsibly reporting this issue.\n\n### For more information\n\nIf there are any questions or comments about this advisory:\n\nSend an email to [security@fleetdm.com](mailto:security@fleetdm.com)\nJoin #fleet in [osquery Slack](https://join.slack.com/t/osquery/shared_invite/zt-h29zm0gk-s2DBtGUTW4CFel0f0IjTEw)",
-      "link": "https://github.com/advisories/GHSA-88p2-jj8w-j8qg",
-      "published": "2026-08-12T15:18:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-48786"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-32639",
-      "title": "Winter: Broken access control in `Cms\\Controllers\\Index` allows cross-template actions and unauthorized asset uploads",
-      "summary": "### Impact\n\nAffected versions of Winter CMS did not enforce per-template-type permission checks in the CMS section's AJAX handlers. The CMS controller (`Cms\\Controllers\\Index`) used OR-logic across its five permissions (`cms.manage_pages`, `cms.manage_partials`, `cms.manage_layouts`, `cms.manage_content`, `cms.manage_assets`) to control access to the section as a whole, but individual handlers such as `onSave()`, `onDelete()`, and `onDeleteTemplates()` did not verify that the authenticated user holds the specific permission corresponding to the requested template type.\n\nThis allowed a backend user with any single Theme Editor permission (e.g. `cms.manage_pages`) to craft AJAX requests targeting template types outside their authorized scope \u2014 for example, deleting layouts, modifying partials, or reading content files.\n\nIn addition, the `AssetList` widget was registered for all users who passed the controller gate regardless of whether they held the `cms.manage_assets` permission, and its `onUpload()` handler was missing the `validateRequestTheme()` call that is present on all other mutating handlers in the same widget. This allowed unauthorized file uploads into the active theme's asset directory.\n\nTo actively exploit this security issue, an attacker would need access to the Backend with a user account with any of the following permissions:\n\n- `cms.manage_pages`\n- `cms.manage_partials`\n- `cms.manage_layouts`\n- `cms.manage_content`\n- `cms.manage_assets`\n\nThe Winter CMS maintainers strongly recommend that all Winter CMS sites that rely on granular CMS permission assignments (specifically users with only access to `cms.manage_content` to only be able to edit content files through the Theme Editor) to update immediately.\n\n### Patches\n\nPer-template-type permission checks are now enforced on all Theme Editor AJAX handlers, the `AssetList` widget is only registered for users with the `cms.manage_assets` permission, and `onUpload()` now includes theme validation consistent w",
-      "link": "https://github.com/advisories/GHSA-5c4f-9pq9-6c77",
-      "published": "2026-08-12T15:14:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-32639"
       ],
       "is_zero_day": false,
       "is_high_severity": true
