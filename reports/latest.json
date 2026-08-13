@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-12T18:44:51.953389+00:00",
-  "total": 29,
+  "generated": "2026-08-13T00:56:44.970853+00:00",
+  "total": 27,
   "kev": 0,
-  "zero_day": 19,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -78,41 +78,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/em-patch-tuesday-august-2026",
-      "title": "Patch Tuesday - August 2026",
-      "summary": "Microsoft is publishing 421 vulnerabilities on August 2026 Patch Tuesday , including 236 vulnerabilities in Windows. This is lower volume than last month\u2019s record-breaking behemoth, but still one of the largest Patch Tuesday totals ever. There is no reason to suppose that Patch Tuesday will ever return to the lower volumes we saw prior to 2026. Microsoft is aware of exploitation in the wild for one of the vulnerabilities published today, as well as public disclosure for two others, although the Notable CVEs section of the Security Update Guide omits one of these. As usual, browser vulns are not included in the Patch Tuesday count above, but unusually, Microsoft does not appear to have published any desktop browser security patches so far this month. SharePoint: critical RCE chain by Rapid7 Today sees the publication of CVE-2026-63520 , a high-severity remote code execution in Microsoft SharePoint. Discovered by Rapid7 Senior Principal Security Researcher Stephen Fewer , and published today in coordination with Microsoft; this vulnerability is the second in a pair of exploits which, when chained together, comprise a critical unauthenticated remote code execution vulnerability in a vulnerable SharePoint server. Patches are available for SharePoint Server Subscription Edition, 2019, and 2016. Alongside today\u2019s coordinated disclosure of CVE-2026-63520 , Rapid7 has now published a detailed technical analysis and proof-of-concept for CVE-2026-55040 , the first vulnerability in the chain. AFD for Winsock: zero-day EoP Rapid7 has previously discussed the Windows Ancillary Function Driver for WinSock, and today it returns to center stage with another exploited-in-the-wild elevation-of-privilege vulnerability. Successful exploitation requires winning a race condition, which increases the difficulty of producing a stable exploit. This also helps keep the CVSS v3 base score down to 7.0, along with a Microsoft proprietary severity ranking of merely important, rather than critica",
-      "link": "https://www.rapid7.com/blog/post/em-patch-tuesday-august-2026",
-      "published": "2026-08-11T21:10:55+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-63520",
-        "CVE-2026-55040"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
-      "title": "Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack",
-      "summary": "Microsoft released its monthly security updates on Tuesday, and one of the flaws it closed is already being used in attacks.\n\nThe bug sits in a core Windows kernel driver that handles network socket operations. An attacker with code already running on a machine can use it to escalate to SYSTEM. That patch goes out first.\n\nThe flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only",
-      "link": "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
-      "published": "2026-08-11T20:10:55+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-68820"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -229,6 +194,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/",
+      "title": "Lazarus hackers exploited Windows zero-day to target defense firms",
+      "summary": "North Korean hackers have been exploiting a Windows zero-day vulnerability (CVE-2026-68820) to target defense-sector companies as part of the Operation Dream Job campaign. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/",
+      "published": "2026-08-12T15:38:08+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-68820"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/",
       "title": "SharePoint Vulnerability Exploited Shortly After PoC Release",
       "summary": "The vulnerability was patched by Microsoft in July and CISA warned that it could end up being exploited in the wild. The post SharePoint Vulnerability Exploited Shortly After PoC Release appeared first on SecurityWeek .",
@@ -293,19 +275,57 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-asa-and-ftd-vpn-flaw-exploited-to-crash-devices/",
-      "title": "Cisco warns of ASA and FTD VPN flaw exploited to crash devices",
-      "summary": "Cisco is warning that a high-severity denial-of-service vulnerability in Secure Firewall ASA and Threat Defense (FTD) software is being actively exploited in attacks to remotely crash affected devices. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-asa-and-ftd-vpn-flaw-exploited-to-crash-devices/",
-      "published": "2026-08-11T19:45:31+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/",
+      "title": "Hackers exploit critical Adobe Commerce flaw to hijack customer accounts",
+      "summary": "Attempts to exploit a critical vulnerability (CVE-2026-71362) in Adobe's Commerce and Magento e-commerce platforms have been detected, potentially allowing attackers to hijack customer accounts. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/",
+      "published": "2026-08-12T20:54:59+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
         "malware"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-71362"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55071",
+      "title": "MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`",
+      "summary": "## Stata Command Injection via Unsanitized `package` in `ado_package_install`\n\n### Summary\n\nThe `ado_package_install` MCP tool in `stata-mcp` concatenates user-controlled input directly into a Stata command string without any validation or sanitization. An attacker who can invoke the MCP tool or the equivalent Python API can embed newline characters in the `package` argument to inject arbitrary Stata commands. Because Stata supports a `shell` escape command, this leads to full OS-level arbitrary command execution (RCE) under the account running the Stata-MCP server. The tool is registered in the default `all` profile, so no non-default configuration is required. Base CVSS score is **8.4 (High)**.\n\n### Details\n\nThe vulnerability originates in `SSC_Install.install()`:\n\n```python\n# src/stata_mcp/stata/builtin_tools/ado_install/ssc_install.py:14-16\ndef install(self, package: str) -> str:\n    install_command = f\"ssc install {package}{self.REPLACE_MESSAGE}\"\n    runner_result = self.controller.run(install_command)\n```\n\nThe `package` parameter is interpolated into an f-string with no allowlist check, newline rejection, or quoting. The resulting command string is forwarded to the Stata interpreter verbatim:\n\n```python\n# src/stata_mcp/stata/stata_controller/controller.py:98-99\n# Send the command\nself.child.sendline(command)\n```\n\n`pexpect.sendline()` writes the full multi-line string to the Stata REPL, which executes each line as a separate Stata command. Because Stata's `shell` (and `!`) commands execute an OS shell command, a newline-delimited payload results in OS command execution.\n\nThe full source-to-sink data flow is:\n\n1. **Exposure** \u2014 `src/stata_mcp/mcp_servers.py:626-632`: `_TOOL_REGISTRY` registers `ado_package_install` in the `all` profile.\n2. **Default activation** \u2014 `src/stata_mcp/cli/_handlers.py:295-300`: when no `--core`/`--all` flag is given the profile defaults to `all`, so the tool is always enabled.\n3. **Propagation** \u2014 `src/stata_mcp/mcp_servers.py:308-349",
+      "link": "https://github.com/advisories/GHSA-49m4-vp58-wgc9",
+      "published": "2026-08-12T19:23:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55071"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54917",
+      "title": "SeaweedFS: Path traversal in the S3 and Iceberg REST gateways allows cross-bucket access",
+      "summary": "## Summary\n\nThe S3 API gateway and the Iceberg REST catalog gateway construct their routers with `mux.NewRouter().SkipClean(true)`. With path cleaning disabled, a `..` segment inside the URL survives routing, so a request such as:\n\n```\nGET /bucket-A/../evil-bucket/key\n```\n\nis matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured object key is then joined into a filer path with `util.JoinPath` (S3) / `path.Join` (Iceberg), which collapse the `..` server-side, so the actual read or write lands in `evil-bucket`.\n\nThe captured path variables were never validated for traversal segments before reaching the handlers, so bucket isolation depended on downstream checks rather than on the path itself.\n\n## Impact\n\n- **With authentication disabled** (`enableAuth=false`): direct cross-bucket read and write. An object key containing `..` resolves to and operates on a different bucket than the one named in the request path.\n- **With authentication enabled** (`enableAuth=true`): an authorization confused-deputy. IAM evaluates the policy against the mux `{bucket}` variable (`bucket-A`) in `iam.authRequestWithAuthType`, while the I/O is performed against the traversed target (`evil-bucket`). A principal authorized for one bucket can therefore reach objects in another bucket it has no grant for. This breaks tenant isolation.\n\nThe same class of traversal applies to the Iceberg REST catalog's `{prefix}`, `{namespace}`, and `{table}` path variables.\n\n`%2e%2e`-encoded and `..\\` (backslash) variants are equivalent, because gorilla/mux URL-decodes captured variables and `NormalizeObjectKey` folds `\\` to `/` before the path is used.\n\n## Affected components\n\n- S3 API gateway (`weed s3`, and the S3 endpoint embedded in `weed server`)\n- Iceberg REST catalog gateway\n\n## Affected versions\n\nAll releases prior to **4.30**.\n\n## Patched version\n\n**4.30** and later.\n\n## Proof of concept\n\nWith a bucket `evil-bucket` containing `secret.txt`, and a caller that only has (or needs no) acce",
+      "link": "https://github.com/advisories/GHSA-w62w-66v9-vvgv",
+      "published": "2026-08-12T19:19:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54917"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-52776",
@@ -409,60 +429,6 @@
       ],
       "cve_ids": [
         "CVE-2026-59310"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62902",
-      "title": "Microsoft Security Advisory CVE-2026-62902 \u2013 .NET Information Disclosure Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Windows Presentation Foundation. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nA specially crafted document parsed in .NET can trigger the inclusion of functionality from an untrusted control sphere, allowing an unauthorized attacker to disclose information over a network.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/433\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Medium\n- **Score:** 6.5\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C`\n- **Weakness:** CWE-829: Inclusion of Functionality from Untrusted Control Sphere; CWE-693: Protection Mechanism Failure; CWE-918: Server-Side Request Forgery (SSRF)\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\nThe vulnerability affects any Microsoft .NET project if it uses any of affected package versions listed below\n\n### <a name=\".NET 10\"></a>.NET 10\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.10 | 10.0.11\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 10.0.0, <= 10.0.10 | 10.0.11\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 10.0.0, <= 10.0.10 | 10.0.11\n\n### <a name=\".NET 9\"></a>.NET 9\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsD",
-      "link": "https://github.com/advisories/GHSA-9mrh-pw7c-9mqm",
-      "published": "2026-08-11T19:55:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62902"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62897",
-      "title": "Microsoft Security Advisory CVE-2026-62897 \u2013 .NET Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Windows Presentation Foundation. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nAn integer overflow or wraparound in .NET allows an unauthorized attacker to execute code locally.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/434\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 7.0\n- **Vector:** `CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-190: Integer Overflow or Wraparound\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\nThe vulnerability affects any Microsoft .NET project if it uses any of affected package versions listed below\n\n### <a name=\".NET 10\"></a>.NET 10\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.10 | 10.0.11\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 10.0.0, <= 10.0.10 | 10.0.11\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 10.0.0, <= 10.0.10 | 10.0.11\n\n### <a name=\".NET 9\"></a>.NET 9\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 9.0.0, <= 9.0.18 | 9.0.19\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 9.0.0, <= 9.0.18 |",
-      "link": "https://github.com/advisories/GHSA-fx4q-gjrx-2jw6",
-      "published": "2026-08-11T19:36:34Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62897"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70354",
-      "title": "Microsoft Security Advisory CVE-2026-70354 \u2013 .NET Core Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Windows Presentation Foundation. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nAn out-of-bounds write in .NET allows an unauthorized attacker to execute code locally.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/432\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 7.8\n- **Vector:** `CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C`\n- **Weakness:** CWE-787: Out-of-bounds Write\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\nThe vulnerability affects any Microsoft .NET project if it uses any of affected package versions listed below\n\n### <a name=\".NET 10\"></a>.NET 10\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.10 | 10.0.11\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 10.0.0, <= 10.0.10 | 10.0.11\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 10.0.0, <= 10.0.10 | 10.0.11\n\n### <a name=\".NET 9\"></a>.NET 9\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 9.0.0, <= 9.0.18 | 9.0.19\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 9.0.0, <= 9.0.18 | 9.0.19\n[Microsoft.Win",
-      "link": "https://github.com/advisories/GHSA-gg8c-3338-xw2f",
-      "published": "2026-08-11T19:24:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70354"
       ],
       "is_zero_day": false,
       "is_high_severity": true

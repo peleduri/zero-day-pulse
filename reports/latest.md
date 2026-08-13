@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-12 18:44 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-13 00:56 UTC &nbsp;|&nbsp; **Total:** 27 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -49,29 +49,7 @@ The activity, per Check Point Research, is part of Operation Dream Job, a long-r
 
 ---
 
-## 6. 🟠 Zero-Day — Patch Tuesday - August 2026
-
-**CVE:** `CVE-2026-63520` | `CVE-2026-55040` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://www.rapid7.com/blog/post/em-patch-tuesday-august-2026>
-
-> Microsoft is publishing 421 vulnerabilities on August 2026 Patch Tuesday , including 236 vulnerabilities in Windows. This is lower volume than last month’s record-breaking behemoth, but still one of the largest Patch Tuesday totals ever. There is no reason to suppose that Patch Tuesday will ever return to the lower volumes we saw prior to 2026. Microsoft is aware of exploitation in the wild for on…
-
----
-
-## 7. 🟠 Zero-Day — Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack
-
-**CVE:** `CVE-2026-68820` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html>
-
-> Microsoft released its monthly security updates on Tuesday, and one of the flaws it closed is already being used in attacks.
-
-The bug sits in a core Windows kernel driver that handles network socket operations. An attacker with code already running on a machine can use it to escalate to SYSTEM. That patch goes out first.
-
-The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
-
----
-
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -80,7 +58,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -89,7 +67,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -98,7 +76,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -107,7 +85,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -116,7 +94,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -125,7 +103,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -134,7 +112,16 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 15. 🟠 Zero-Day — SharePoint Vulnerability Exploited Shortly After PoC Release
+## 13. 🟠 Zero-Day — Lazarus hackers exploited Windows zero-day to target defense firms
+
+**CVE:** `CVE-2026-68820` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/>
+
+> North Korean hackers have been exploiting a Windows zero-day vulnerability (CVE-2026-68820) to target defense-sector companies as part of the Operation Dream Job campaign. [...]
+
+---
+
+## 14. 🟠 Zero-Day — SharePoint Vulnerability Exploited Shortly After PoC Release
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://www.securityweek.com/sharepoint-vulnerability-exploited-shortly-after-poc-release/>
@@ -143,7 +130,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 16. 🟠 Zero-Day — New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges
+## 15. 🟠 Zero-Day — New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldbreak-zero-day-grants-system-privileges/>
@@ -152,7 +139,7 @@ The flaw is tracked as CVE-2026-68820 (CVSS score: 7.0) and is the only
 
 ---
 
-## 17. 🟠 Zero-Day — ShieldBreak Zero-Day PoC Claims Microsoft Defender Patch Bypass With SYSTEM Access
+## 16. 🟠 Zero-Day — ShieldBreak Zero-Day PoC Claims Microsoft Defender Patch Bypass With SYSTEM Access
 
 **CVE:** `CVE-2026-50656` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/shieldbreak-zero-day-poc-claims.html>
@@ -165,7 +152,7 @@ RoguePlanet has been described
 
 ---
 
-## 18. 🟠 Zero-Day — Cisco ASA and FTD Flaw Exploited in the Wild Can Trigger Remote DoS
+## 17. 🟠 Zero-Day — Cisco ASA and FTD Flaw Exploited in the Wild Can Trigger Remote DoS
 
 **CVE:** `CVE-2026-20349` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/cisco-asa-and-ftd-flaw-exploited-in.html>
@@ -176,16 +163,46 @@ The high-severity flaw, tracked as CVE-2026-20349 (CVSS score: 8.6), is a case o
 
 ---
 
-## 19. 🟠 Zero-Day — Cisco warns of ASA and FTD VPN flaw exploited to crash devices
+## 18. 🟡 High Severity — Hackers exploit critical Adobe Commerce flaw to hijack customer accounts
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-asa-and-ftd-vpn-flaw-exploited-to-crash-devices/>
+**CVE:** `CVE-2026-71362` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/>
 
-> Cisco is warning that a high-severity denial-of-service vulnerability in Secure Firewall ASA and Threat Defense (FTD) software is being actively exploited in attacks to remotely crash affected devices. [...]
+> Attempts to exploit a critical vulnerability (CVE-2026-71362) in Adobe&#x27;s Commerce and Magento e-commerce platforms have been detected, potentially allowing attackers to hijack customer accounts. [...]
 
 ---
 
-## 20. 🟡 High Severity — compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0
+## 19. 🟡 High Severity — MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`
+
+**CVE:** `CVE-2026-55071` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://github.com/advisories/GHSA-49m4-vp58-wgc9>
+
+> ## Stata Command Injection via Unsanitized `package` in `ado_package_install`
+
+### Summary
+
+The `ado_package_install` MCP tool in `stata-mcp` concatenates user-controlled input directly into a Stata command string without any validation or sanitization. An attacker who can invoke the MCP tool or the equivalent Python API can embed newline characters in the `package` argument to inject arbitrary St…
+
+---
+
+## 20. 🟡 High Severity — SeaweedFS: Path traversal in the S3 and Iceberg REST gateways allows cross-bucket access
+
+**CVE:** `CVE-2026-54917` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
+**Reference:** <https://github.com/advisories/GHSA-w62w-66v9-vvgv>
+
+> ## Summary
+
+The S3 API gateway and the Iceberg REST catalog gateway construct their routers with `mux.NewRouter().SkipClean(true)`. With path cleaning disabled, a `..` segment inside the URL survives routing, so a request such as:
+
+```
+GET /bucket-A/../evil-bucket/key
+```
+
+is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured object key is then joined into a filer path with `u…
+
+---
+
+## 21. 🟡 High Severity — compliance-trestle has an URLSecurityValidator SSRF allowlist bypass via IPv4-mapped IPv6 and 0.0.0.0
 
 **CVE:** `CVE-2026-52776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-h47f-gmjp-m7rr>
@@ -196,7 +213,7 @@ The high-severity flaw, tracked as CVE-2026-20349 (CVSS score: 8.6), is a case o
 
 ---
 
-## 21. 🟡 High Severity — SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames
+## 22. 🟡 High Severity — SSH.NET: ScpClient Recursive Download Allows Arbitrary File Write via Server-Controlled SCP Filenames
 
 **CVE:** `CVE-2026-48798` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-q939-rpr3-3284>
@@ -207,7 +224,7 @@ The high-severity flaw, tracked as CVE-2026-20349 (CVSS score: 8.6), is a case o
 
 ---
 
-## 22. 🟡 High Severity — Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint
+## 23. 🟡 High Severity — Fleet: Observer-class users can view team enroll secrets and credential-bearing configuration via target search endpoint
 
 **CVE:** `CVE-2026-48786` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-88p2-jj8w-j8qg>
@@ -222,7 +239,7 @@ An authenticated user with Observer, Observer+, or Technicia…
 
 ---
 
-## 23. 🟡 High Severity — Winter: Broken access control in `Cms\Controllers\Index` allows cross-template actions and unauthorized asset uploads
+## 24. 🟡 High Severity — Winter: Broken access control in `Cms\Controllers\Index` allows cross-template actions and unauthorized asset uploads
 
 **CVE:** `CVE-2026-32639` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://github.com/advisories/GHSA-5c4f-9pq9-6c77>
@@ -233,7 +250,7 @@ Affected versions of Winter CMS did not enforce per-template-type permission che
 
 ---
 
-## 24. 🟡 High Severity — Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws
+## 25. 🟡 High Severity — Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws
 
 **CVE:** `CVE-2026-48362` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html>
@@ -247,7 +264,7 @@ The most severe of the flaws are listed below -
 
 ---
 
-## 25. 🟡 High Severity — Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access
+## 26. 🟡 High Severity — Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access
 
 **CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-12
 **Reference:** <https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html>
@@ -258,54 +275,7 @@ The vulnerability in question is CVE-2026-59310 (CVSS score: 9.8), a directory-t
 
 ---
 
-## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62902 – .NET Information Disclosure Vulnerability
-
-**CVE:** `CVE-2026-62902` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://github.com/advisories/GHSA-9mrh-pw7c-9mqm>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Windows Presentation Foundation. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-A specially crafted document parsed in .NET can trigger the inclusion of functionality from an untrusted control sphere, allowin…
-
----
-
-## 27. 🟡 High Severity — Microsoft Security Advisory CVE-2026-62897 – .NET Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-62897` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://github.com/advisories/GHSA-fx4q-gjrx-2jw6>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Windows Presentation Foundation. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-An integer overflow or wraparound in .NET allows an unauthorized attacker to execute code locally.
-
-## Announcement
-
-Announcemen…
-
----
-
-## 28. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70354 – .NET Core Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-70354` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-11
-**Reference:** <https://github.com/advisories/GHSA-gg8c-3338-xw2f>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Windows Presentation Foundation. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-An out-of-bounds write in .NET allows an unauthorized attacker to execute code locally.
-
-## Announcement
-
-Announcement for this …
-
----
-
-## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 27. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
