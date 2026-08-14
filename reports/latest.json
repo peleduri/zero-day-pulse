@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-14T12:36:37.641931+00:00",
-  "total": 19,
+  "generated": "2026-08-14T18:38:20.726728+00:00",
+  "total": 13,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -164,39 +164,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/",
-      "title": "Microsoft patches LegacyHive Windows zero-day vulnerability",
-      "summary": "Microsoft has released security patches to address a Windows zero-day vulnerability known as \"LegacyHive,\" disclosed after the July 2026 Patch Tuesday. [...]",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/",
-      "published": "2026-08-13T17:46:20+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-54526",
-      "title": "Argo Workflows: ArtifactGC.PodSpecPatch bypasses Strict/Secure template reference allow-list (Incomplete fix for CVE-2026-31892)",
-      "summary": "### Summary\n\nThe allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up coverage of `hostNetwork`/`securityContext`/`serviceAccountName` in GHSA-3775-99mw-8rp4, is incomplete. `workflow/util/merge.go` `ValidateUserOverrides` / `SanitizeUserWorkflowSpec` walk only the top-level fields of `WorkflowSpec` via reflection. `WorkflowSpec.ArtifactGC` is allow-listed because admins want users to configure artifact garbage collection. The struct behind that field, `WorkflowLevelArtifactGC`, has a `PodSpecPatch` sub-field whose contents flow unmodified into `util.ApplyPodSpecPatch` on the artifact-GC pod - the same sink the original fix closed for `WorkflowSpec.PodSpecPatch`. A user submitting a Workflow under `templateReferencing: Strict` or `Secure` can therefore still inject an arbitrary strategic merge patch into the artifact-GC pod (hostPath volumes, `privileged: true`, arbitrary image and command, `hostNetwork: true`), defeating the stated purpose of Strict/Secure reference mode.\n\n### Details\n\nLocations in `main` at `4d9f021` (HEAD 2026-04-23):\n\nAllow-list and reflection scope - `workflow/util/merge.go:19-60`:\n\n```go\nvar allowedUserOverrideFields = map[string]bool{\n    \"Arguments\":             true,\n    \"Entrypoint\":            true,\n    ...\n    \"ArtifactGC\":            true,   // <-- allow-listed wholesale\n}\n\nfunc ValidateUserOverrides(userSpec *wfv1.WorkflowSpec) error {\n    v := reflect.ValueOf(userSpec).Elem()\n    t := v.Type()\n    zero := reflect.New(t).Elem()\n    for i := 0; i < t.NumField(); i++ {\n        fieldName := t.Field(i).Name\n        if allowedUserOverrideFields[fieldName] {\n            continue                  // <-- sub-fields are not walked\n        }\n        if !reflect.DeepEqual(v.Field(i).Interface(), zero.Field(i).Interface()) {\n            violations = append(violations, fieldName)\n        }\n    }\n    ...\n}\n```\n\nThe allow-listed type - `pkg/apis/workflow/v1alpha1/workflow_types.go:1207-1217`:\n\n```go\ntype WorkflowLevelArtifactGC ",
-      "link": "https://github.com/advisories/GHSA-48p8-g2fx-3wwm",
-      "published": "2026-08-13T14:16:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54526"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "CVE-2026-73654",
       "title": "Trigger.dev: Prototype pollution via run metadata operations \u2192 process-wide cross-tenant DoS",
       "summary": "## Summary\n\nThe run-metadata update endpoint `PUT /api/v1/runs/:runId/metadata` applies client-supplied\n\"operations\" by passing the **attacker-controlled `operation.key`** straight into\n`new JSONHeroPath(operation.key).set(newMetadata, value)`\n(`packages/core/src/v3/runMetadata/operations.ts:22-23`), with **no prototype-pollution guard**\n(`@jsonhero/path@^1.0.21` does not reject `__proto__`/`constructor`/`prototype`).\n\nA request with `key: \"$.__proto__.polluted\"` sets **`Object.prototype.polluted`** in the webapp\nprocess. Because every plain object then inherits that property, it corrupts unrelated code\n**process-wide and across tenants** \u2014 including Prisma query building and the Prometheus metrics\nclient \u2014 causing query failures, **broken authentication for other tenants' workers**, and an\n`uncaughtException` (denial of service). Only a normal, low-privilege environment API key is\nrequired (one request).\n\n## Severity\n\nA single request from any holder of a normal environment API key contaminates `Object.prototype`\nin the shared webapp process, breaking other tenants' workers (scope change) and degrading/\ncrashing the process (high availability impact). Prototype pollution is also a primitive for\nfurther gadget chains (integrity/confidentiality).\n\n## Affected versions\n\n- **Introduced** in commit `34f8bd588` (\"Add ability to update parent and root run metadata from\n  children\", PR #1563, 2025-01-08) \u2014 the `JSONHeroPath(operation.key).set()` sink is present from\n  the first commit of `operations.ts`. SDK was at `3.3.8` at that time.\n- **Still present at HEAD** (SDK `4.5.0-rc.7`); `operations.ts` unchanged since 2025-05, and\n  `@jsonhero/path` is pinned at `^1.0.21` (no proto-guard) throughout.\n- **Affected range:** `>= v3.3.8` (metadata operations API) through `v4-beta` / current v4.x \u2014\n  **fixed: 4.5.6**.\n\n## Root cause\n\n`packages/core/src/v3/runMetadata/operations.ts` \u2014 `applyMetadataOperations()` builds a path from\nthe **untrusted** `operation.key` and writes to it,",
@@ -228,77 +195,6 @@
       ],
       "cve_ids": [
         "CVE-2026-12243"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/",
-      "title": "Critical VMware vCenter RCE flaw exploited for reverse SSH access",
-      "summary": "A recently patched critical vulnerability (CVE-2026-59310) in VMware vCenter Syslog Server is being exploited in an active campaign to deploy a reverse SSH tool for persistence and remote access. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/",
-      "published": "2026-08-13T16:40:23+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-59310"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55102",
-      "title": "hashi-vault-js: Vault token and secret values exposed in thrown errors",
-      "summary": "## Summary\n\nVault token and secret values are exposed in thrown errors when using `hashi-vault-js`.\n\n## Details\n\nEvery API method in `Vault.js` executes `throw parseAxiosError(err)`, which returns the raw `AxiosError` untouched. That error carries the full Axios configuration, including the `X-Vault-Token` header and the request body. Consuming applications that log caught errors (e.g., using `console.error`, `pino`, `winston`, Sentry, or APMs) inadvertently log the live Vault token in plaintext. Furthermore, write-path methods expose submitted passwords and secret values via `err.config.data`.\n\n## Impact\n\nWhen consuming applications log intercepted exceptions, sensitive credentials such as tokens, passwords, and secrets are unknowingly exposed to application logs, monitoring services, and APM systems via the raw `AxiosError`. This may lead to authorization bypass or unauthorized access to the underlying Vault instance.\n\n## Patches\n\nThis vulnerability should be addressed by redacting `err.config.headers['X-Vault-Token']` and `err.config.data` before re-throwing, or by throwing a purpose-built error containing only safe properties like status and message. Users should upgrade to a version that includes this fix.\n\n## Workarounds\n\nIf users cannot immediately update the library, they can mitigate this issue by capturing all exceptions thrown by `hashi-vault-js` and sanitizing or omitting the `err.config` object before passing the errors to logging utilities or crash reporters.\n\n## Acknowledgements\nhashi-vault-js would like to thank Sebasti\u00e1n Alba Vives for reporting this vulnerability.\n\n## Resources\n\n- [CWE-532: Insertion of Sensitive Information into Log File](https://cwe.mitre.org/data/definitions/532.html)\n- [CWE-209: Generation of Error Message Containing Sensitive Information](https://cwe.mitre.org/data/definitions/209.html)",
-      "link": "https://github.com/advisories/GHSA-5pq8-3ffp-7w5m",
-      "published": "2026-08-13T14:14:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55102"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55088",
-      "title": "ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token",
-      "summary": "Etherpad's device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token in the GET response body\n\n## Description\n\nEtherpad ships an endpoint pair under `/tokenTransfer` (`src/node/hooks/express/tokenTransfer.ts`) that lets a logged-in user move their HttpOnly author token to a different browser (typically by scanning a QR code containing the transfer URL). The flow is:\n\n1. **POST `/tokenTransfer`** \u2014 the source device sends a request whose own author cookie is read off the server-side cookie jar. The server mints a random UUID and stores the author token (and arbitrary `prefsHttp` field) under a DB key keyed by that UUID. The UUID is returned.\n2. **GET `/tokenTransfer/{uuid}`** \u2014 the destination device GETs the URL containing the UUID. The server reads the stored record and sets the HttpOnly author cookie on the response.\n\nThe original implementation has three serious flaws:\n\n1. **No expiration check.** `createdAt` is written to the record on POST but never inspected on GET. A leaked transfer URL is redeemable indefinitely.\n2. **No single-use enforcement.** The DB record is not deleted after a successful GET, so the same URL can be redeemed repeatedly \u2014 each redemption yielding a fresh cookie set on whoever issued the GET.\n3. **Author token echoed in the response body.** The GET handler ends with `res.send(tokenData)`, which serializes the full record \u2014 including the raw author token \u2014 into the JSON response. Any JavaScript on the page that issued the GET can read the token, defeating the HttpOnly cookie design that exists specifically to keep the token out of JS reach.\n\nCombined, these mean that any disclosure of a transfer UUID (browser history, mis-shared QR code, screenshot, server log, third-party plugin that proxies the request, an unencrypted intermediate hop) results in **persistent authorship impersonation of the originating account** \u2014 the attacker doesn't just get one cookie, they can re-redeem and t",
-      "link": "https://github.com/advisories/GHSA-vqfp-p66c-xrp9",
-      "published": "2026-08-13T14:12:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55088"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55086",
-      "title": "ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite",
-      "summary": "## Description\n\n`src/node/handler/ImportHandler.ts` and `src/node/handler/ExportHandler.ts` both compute their temporary working-file paths as:\n\n```ts\nconst randNum = Math.floor(Math.random() * 0xFFFFFFFF);\nconst srcFile = `${os.tmpdir()}/etherpad_export_${randNum}.html`;\nconst destFile = `${os.tmpdir()}/etherpad_export_${randNum}.${type}`;\n```\n\nTwo flaws compound:\n\n1. **`Math.random()` is not crypto-secure.** It yields at most ~32 bits of entropy and is **predictable across calls within the same Node process** (V8 shares PRNG state between consecutive `Math.random()` invocations). An attacker on the same host who observes any earlier temp-file name from logs or other side channels can predict subsequent names.\n\n2. **The paths land in `os.tmpdir()`.** On a typical Linux system this is `/tmp` \u2014 a shared world-writable directory. An unprivileged local attacker can pre-create a symbolic link at a predicted path pointing at any file the Etherpad process can write:\n\n   ```\n   ln -s /etc/etherpad/SESSIONKEY.txt /tmp/etherpad_export_<predicted>.html\n   ```\n\n   When `ExportHandler` calls `fs.writeFile(srcFile, html)` (or `ImportHandler` calls `fs.rename(srcFile, destFile)` / `soffice` writes its converted output to the path), the open syscall follows the symlink and either reads from or overwrites the linked target. For deployments where the Etherpad process runs as a privileged user (notably some Docker base images that run as root, snap confinement edge cases, or hand-rolled systemd units), this becomes arbitrary file overwrite.\n\nThe Import path is more impactful in practice: the file content the attacker can land in the symlink target is partially attacker-controlled (the post-soffice/post-mammoth conversion output of the uploaded document).\n\n## Severity rationale\n\n- **AV:L** \u2014 requires local access to the host that runs Etherpad. Multi-tenant hosts (shared dev boxes, k8s shared-node setups, single-server CI workers) are the realistic threat surface.\n- **AC:H** \u2014 attacke",
-      "link": "https://github.com/advisories/GHSA-2jwf-f4xq-f24h",
-      "published": "2026-08-13T14:11:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55086"
       ],
       "is_zero_day": false,
       "is_high_severity": true

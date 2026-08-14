@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-14 12:36 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-14 18:38 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -92,27 +92,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Microsoft patches LegacyHive Windows zero-day vulnerability
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/>
-
-> Microsoft has released security patches to address a Windows zero-day vulnerability known as &quot;LegacyHive,&quot; disclosed after the July 2026 Patch Tuesday. [...]
-
----
-
-## 12. 🟠 Zero-Day — Argo Workflows: ArtifactGC.PodSpecPatch bypasses Strict/Secure template reference allow-list (Incomplete fix for CVE-2026-31892)
-
-**CVE:** `CVE-2026-54526` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://github.com/advisories/GHSA-48p8-g2fx-3wwm>
-
-> ### Summary
-
-The allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up coverage of `hostNetwork`/`securityContext`/`serviceAccountName` in GHSA-3775-99mw-8rp4, is incomplete. `workflow/util/merge.go` `ValidateUserOverrides` / `SanitizeUserWorkflowSpec` walk only the top-level fields of `WorkflowSpec` via reflection. `WorkflowSpec.ArtifactGC` is allow-listed because admins want…
-
----
-
-## 13. 🟡 High Severity — Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS
+## 11. 🟡 High Severity — Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS
 
 **CVE:** `CVE-2026-73654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-p28v-f755-9qrg>
@@ -127,7 +107,7 @@ The run-metadata update endpoint `PUT /api/v1/runs/:runId/metadata` applies clie
 
 ---
 
-## 14. 🟡 High Severity — nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences
+## 12. 🟡 High Severity — nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences
 
 **CVE:** `CVE-2026-12243` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-m42h-3232-vpv3>
@@ -137,65 +117,7 @@ nltk.data.load() and nltk.data.find() resolve user-supplied resource names to fi
 
 ---
 
-## 15. 🟡 High Severity — Critical VMware vCenter RCE flaw exploited for reverse SSH access
-
-**CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/>
-
-> A recently patched critical vulnerability (CVE-2026-59310) in VMware vCenter Syslog Server is being exploited in an active campaign to deploy a reverse SSH tool for persistence and remote access. [...]
-
----
-
-## 16. 🟡 High Severity — hashi-vault-js: Vault token and secret values exposed in thrown errors
-
-**CVE:** `CVE-2026-55102` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://github.com/advisories/GHSA-5pq8-3ffp-7w5m>
-
-> ## Summary
-
-Vault token and secret values are exposed in thrown errors when using `hashi-vault-js`.
-
-## Details
-
-Every API method in `Vault.js` executes `throw parseAxiosError(err)`, which returns the raw `AxiosError` untouched. That error carries the full Axios configuration, including the `X-Vault-Token` header and the request body. Consuming applications that log caught errors (e.g., using `con…
-
----
-
-## 17. 🟡 High Severity — ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token
-
-**CVE:** `CVE-2026-55088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://github.com/advisories/GHSA-vqfp-p66c-xrp9>
-
-> Etherpad&#x27;s device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token in the GET response body
-
-## Description
-
-Etherpad ships an endpoint pair under `/tokenTransfer` (`src/node/hooks/express/tokenTransfer.ts`) that lets a logged-in user move their HttpOnly author token to a different browser (typically by scanning a QR code containing…
-
----
-
-## 18. 🟡 High Severity — ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite
-
-**CVE:** `CVE-2026-55086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://github.com/advisories/GHSA-2jwf-f4xq-f24h>
-
-> ## Description
-
-`src/node/handler/ImportHandler.ts` and `src/node/handler/ExportHandler.ts` both compute their temporary working-file paths as:
-
-```ts
-const randNum = Math.floor(Math.random() * 0xFFFFFFFF);
-const srcFile = `${os.tmpdir()}/etherpad_export_${randNum}.html`;
-const destFile = `${os.tmpdir()}/etherpad_export_${randNum}.${type}`;
-```
-
-Two flaws compound:
-
-1. **`Math.random()` is not cry…
-
----
-
-## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 13. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
