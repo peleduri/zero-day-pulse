@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-14 00:56 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-14 07:04 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — Hackers Exploiting Unpatched GeoServer Zero-Day
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-14
+**Reference:** <https://www.securityweek.com/hackers-exploiting-unpatched-geoserver-zero-day/>
+
+> The security defect is described as an SQL injection that could allow attackers to achieve remote code execution. The post Hackers Exploiting Unpatched GeoServer Zero-Day appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -29,7 +38,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -38,7 +47,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -47,7 +56,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -56,7 +65,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -65,7 +74,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -74,7 +83,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -83,7 +92,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Microsoft patches LegacyHive Windows zero-day vulnerability
+## 11. 🟠 Zero-Day — Microsoft patches LegacyHive Windows zero-day vulnerability
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/>
@@ -92,7 +101,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Argo Workflows: ArtifactGC.PodSpecPatch bypasses Strict/Secure template reference allow-list (Incomplete fix for CVE-2026-31892)
+## 12. 🟠 Zero-Day — Argo Workflows: ArtifactGC.PodSpecPatch bypasses Strict/Secure template reference allow-list (Incomplete fix for CVE-2026-31892)
 
 **CVE:** `CVE-2026-54526` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-48p8-g2fx-3wwm>
@@ -103,7 +112,7 @@ The allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up c
 
 ---
 
-## 12. 🟠 Zero-Day — Nightmare Eclipse Drops Windows Zero-Day Exploit ‘ShieldBreak’
+## 13. 🟠 Zero-Day — Nightmare Eclipse Drops Windows Zero-Day Exploit ‘ShieldBreak’
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/>
@@ -112,7 +121,7 @@ The allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up c
 
 ---
 
-## 13. 🟡 High Severity — Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS
+## 14. 🟡 High Severity — Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS
 
 **CVE:** `CVE-2026-73654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-p28v-f755-9qrg>
@@ -127,7 +136,7 @@ The run-metadata update endpoint `PUT /api/v1/runs/:runId/metadata` applies clie
 
 ---
 
-## 14. 🟡 High Severity — nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences
+## 15. 🟡 High Severity — nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences
 
 **CVE:** `CVE-2026-12243` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-m42h-3232-vpv3>
@@ -137,7 +146,7 @@ nltk.data.load() and nltk.data.find() resolve user-supplied resource names to fi
 
 ---
 
-## 15. 🟡 High Severity — Critical VMware vCenter RCE flaw exploited for reverse SSH access
+## 16. 🟡 High Severity — Critical VMware vCenter RCE flaw exploited for reverse SSH access
 
 **CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/>
@@ -146,7 +155,7 @@ nltk.data.load() and nltk.data.find() resolve user-supplied resource names to fi
 
 ---
 
-## 16. 🟡 High Severity — hashi-vault-js: Vault token and secret values exposed in thrown errors
+## 17. 🟡 High Severity — hashi-vault-js: Vault token and secret values exposed in thrown errors
 
 **CVE:** `CVE-2026-55102` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-5pq8-3ffp-7w5m>
@@ -161,7 +170,7 @@ Every API method in `Vault.js` executes `throw parseAxiosError(err)`, which retu
 
 ---
 
-## 17. 🟡 High Severity — ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token
+## 18. 🟡 High Severity — ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token
 
 **CVE:** `CVE-2026-55088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-vqfp-p66c-xrp9>
@@ -174,7 +183,7 @@ Etherpad ships an endpoint pair under `/tokenTransfer` (`src/node/hooks/express/
 
 ---
 
-## 18. 🟡 High Severity — ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite
+## 19. 🟡 High Severity — ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite
 
 **CVE:** `CVE-2026-55086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-2jwf-f4xq-f24h>
@@ -192,19 +201,6 @@ const destFile = `${os.tmpdir()}/etherpad_export_${randNum}.${type}`;
 Two flaws compound:
 
 1. **`Math.random()` is not cry…
-
----
-
-## 19. 🟡 High Severity — Attackers Exploit SharePoint Authentication Bypass After Public PoC Release
-
-**CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html>
-
-> Threat actors have begun to exploit a newly disclosed Microsoft SharePoint vulnerability following the release of a proof-of-concept (PoC) code.
-
-The vulnerability in question is CVE-2026-55040 (CVSS score: 9.1), which refers to a critical security feature bypass that stems from weak authentication. It was patched by Microsoft as part of its July 2026 Patch Tuesday updates.
-
-&quot;The authenticati…
 
 ---
 
