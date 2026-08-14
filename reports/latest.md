@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-13 18:45 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-14 00:56 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -112,7 +112,32 @@ The allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up c
 
 ---
 
-## 13. 🟡 High Severity — Critical VMware vCenter RCE flaw exploited for reverse SSH access
+## 13. 🟡 High Severity — Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS
+
+**CVE:** `CVE-2026-73654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
+**Reference:** <https://github.com/advisories/GHSA-p28v-f755-9qrg>
+
+> ## Summary
+
+The run-metadata update endpoint `PUT /api/v1/runs/:runId/metadata` applies client-supplied
+&quot;operations&quot; by passing the **attacker-controlled `operation.key`** straight into
+`new JSONHeroPath(operation.key).set(newMetadata, value)`
+(`packages/core/src/v3/runMetadata/operations.ts:22-23`), with **no prototype-pollution guard**
+(`@jsonhero/path@^1.0.21` does not reject `__proto…
+
+---
+
+## 14. 🟡 High Severity — nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences
+
+**CVE:** `CVE-2026-12243` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
+**Reference:** <https://github.com/advisories/GHSA-m42h-3232-vpv3>
+
+> # Summary
+nltk.data.load() and nltk.data.find() resolve user-supplied resource names to filesystem paths using url2pathname(), which decodes percent-encoded sequences (e.g. %2e%2e to ..). Path safety checks are performed on the raw, still-encoded string before decoding occurs. An attacker supplying %2e%2e instead of .. bypasses all path validation and reads arbitrary files outside the NLTK data di…
+
+---
+
+## 15. 🟡 High Severity — Critical VMware vCenter RCE flaw exploited for reverse SSH access
 
 **CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/>
@@ -121,7 +146,7 @@ The allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up c
 
 ---
 
-## 14. 🟡 High Severity — hashi-vault-js: Vault token and secret values exposed in thrown errors
+## 16. 🟡 High Severity — hashi-vault-js: Vault token and secret values exposed in thrown errors
 
 **CVE:** `CVE-2026-55102` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-5pq8-3ffp-7w5m>
@@ -136,7 +161,7 @@ Every API method in `Vault.js` executes `throw parseAxiosError(err)`, which retu
 
 ---
 
-## 15. 🟡 High Severity — ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token
+## 17. 🟡 High Severity — ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token
 
 **CVE:** `CVE-2026-55088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-vqfp-p66c-xrp9>
@@ -149,7 +174,7 @@ Etherpad ships an endpoint pair under `/tokenTransfer` (`src/node/hooks/express/
 
 ---
 
-## 16. 🟡 High Severity — ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite
+## 18. 🟡 High Severity — ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite
 
 **CVE:** `CVE-2026-55086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-2jwf-f4xq-f24h>
@@ -170,7 +195,7 @@ Two flaws compound:
 
 ---
 
-## 17. 🟡 High Severity — Attackers Exploit SharePoint Authentication Bypass After Public PoC Release
+## 19. 🟡 High Severity — Attackers Exploit SharePoint Authentication Bypass After Public PoC Release
 
 **CVE:** `CVE-2026-55040` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html>
@@ -183,46 +208,7 @@ The vulnerability in question is CVE-2026-55040 (CVSS score: 9.1), which refers 
 
 ---
 
-## 18. 🟡 High Severity — Hackers exploit critical Adobe Commerce flaw to hijack customer accounts
-
-**CVE:** `CVE-2026-71362` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/>
-
-> Attempts to exploit a critical vulnerability (CVE-2026-71362) in Adobe&#x27;s Commerce and Magento e-commerce platforms have been detected, potentially allowing attackers to hijack customer accounts. [...]
-
----
-
-## 19. 🟡 High Severity — MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`
-
-**CVE:** `CVE-2026-55071` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://github.com/advisories/GHSA-49m4-vp58-wgc9>
-
-> ## Stata Command Injection via Unsanitized `package` in `ado_package_install`
-
-### Summary
-
-The `ado_package_install` MCP tool in `stata-mcp` concatenates user-controlled input directly into a Stata command string without any validation or sanitization. An attacker who can invoke the MCP tool or the equivalent Python API can embed newline characters in the `package` argument to inject arbitrary St…
-
----
-
-## 20. 🟡 High Severity — SeaweedFS: Path traversal in the S3 and Iceberg REST gateways allows cross-bucket access
-
-**CVE:** `CVE-2026-54917` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-12
-**Reference:** <https://github.com/advisories/GHSA-w62w-66v9-vvgv>
-
-> ## Summary
-
-The S3 API gateway and the Iceberg REST catalog gateway construct their routers with `mux.NewRouter().SkipClean(true)`. With path cleaning disabled, a `..` segment inside the URL survives routing, so a request such as:
-
-```
-GET /bucket-A/../evil-bucket/key
-```
-
-is matched as `bucket=bucket-A`, `object=../evil-bucket/key`. The captured object key is then joined into a filer path with `u…
-
----
-
-## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
