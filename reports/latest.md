@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-14 07:04 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-14 12:36 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -112,16 +112,7 @@ The allow-list fix for CVE-2026-31892 (GHSA-3wf5-g532-rcrr), and its follow-up c
 
 ---
 
-## 13. 🟠 Zero-Day — Nightmare Eclipse Drops Windows Zero-Day Exploit ‘ShieldBreak’
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-13
-**Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/>
-
-> Dropped on Patch Tuesday, the exploit allows any user to spawn a shell with System privileges. The post Nightmare Eclipse Drops Windows Zero-Day Exploit ‘ShieldBreak’ appeared first on SecurityWeek .
-
----
-
-## 14. 🟡 High Severity — Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS
+## 13. 🟡 High Severity — Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS
 
 **CVE:** `CVE-2026-73654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-p28v-f755-9qrg>
@@ -136,7 +127,7 @@ The run-metadata update endpoint `PUT /api/v1/runs/:runId/metadata` applies clie
 
 ---
 
-## 15. 🟡 High Severity — nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences
+## 14. 🟡 High Severity — nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences
 
 **CVE:** `CVE-2026-12243` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-m42h-3232-vpv3>
@@ -146,7 +137,7 @@ nltk.data.load() and nltk.data.find() resolve user-supplied resource names to fi
 
 ---
 
-## 16. 🟡 High Severity — Critical VMware vCenter RCE flaw exploited for reverse SSH access
+## 15. 🟡 High Severity — Critical VMware vCenter RCE flaw exploited for reverse SSH access
 
 **CVE:** `CVE-2026-59310` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/>
@@ -155,7 +146,7 @@ nltk.data.load() and nltk.data.find() resolve user-supplied resource names to fi
 
 ---
 
-## 17. 🟡 High Severity — hashi-vault-js: Vault token and secret values exposed in thrown errors
+## 16. 🟡 High Severity — hashi-vault-js: Vault token and secret values exposed in thrown errors
 
 **CVE:** `CVE-2026-55102` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-5pq8-3ffp-7w5m>
@@ -170,7 +161,7 @@ Every API method in `Vault.js` executes `throw parseAxiosError(err)`, which retu
 
 ---
 
-## 18. 🟡 High Severity — ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token
+## 17. 🟡 High Severity — ep_etherpad-lite: Device-to-device author-token transfer endpoint is replayable, never expires, and exposes the cleartext author token
 
 **CVE:** `CVE-2026-55088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-vqfp-p66c-xrp9>
@@ -183,7 +174,7 @@ Etherpad ships an endpoint pair under `/tokenTransfer` (`src/node/hooks/express/
 
 ---
 
-## 19. 🟡 High Severity — ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite
+## 18. 🟡 High Severity — ep_etherpad-lite: Import/export uses Math.random() for temp file paths; predictable paths on shared /tmp enable symlink-based file overwrite
 
 **CVE:** `CVE-2026-55086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-13
 **Reference:** <https://github.com/advisories/GHSA-2jwf-f4xq-f24h>
@@ -204,7 +195,7 @@ Two flaws compound:
 
 ---
 
-## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

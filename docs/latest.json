@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-14T07:04:51.034878+00:00",
-  "total": 20,
+  "generated": "2026-08-14T12:36:37.641931+00:00",
+  "total": 19,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -193,21 +193,6 @@
       "cve_ids": [
         "CVE-2026-54526"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/",
-      "title": "Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018ShieldBreak\u2019",
-      "summary": "Dropped on Patch Tuesday, the exploit allows any user to spawn a shell with System privileges. The post Nightmare Eclipse Drops Windows Zero-Day Exploit \u2018ShieldBreak\u2019 appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/nightmare-eclipse-drops-windows-zero-day-exploit-shieldbreak/",
-      "published": "2026-08-13T08:38:03+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
