@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-15 06:18 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-15 12:13 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,16 +20,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Hackers Exploiting Unpatched GeoServer Zero-Day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-14
-**Reference:** <https://www.securityweek.com/hackers-exploiting-unpatched-geoserver-zero-day/>
-
-> The security defect is described as an SQL injection that could allow attackers to achieve remote code execution. The post Hackers Exploiting Unpatched GeoServer Zero-Day appeared first on SecurityWeek .
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -38,7 +29,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -47,7 +38,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -56,7 +47,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -65,7 +56,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -74,7 +65,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -83,7 +74,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -92,7 +83,7 @@
 
 ---
 
-## 11. 🟡 High Severity — The Agentic AI threat cluster: Seven incidents, three actors, and what they mean for your exposure
+## 10. 🟡 High Severity — The Agentic AI threat cluster: Seven incidents, three actors, and what they mean for your exposure
 
 **CVE:** `CVE-2025-3248` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-08-15
 **Reference:** <https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean>
@@ -101,7 +92,7 @@
 
 ---
 
-## 12. 🟡 High Severity — s2n-quic has excessive memory allocation
+## 11. 🟡 High Severity — s2n-quic has excessive memory allocation
 
 **CVE:** `CVE-2026-10740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-9q54-f358-3fqf>
@@ -110,7 +101,7 @@
 
 ---
 
-## 13. 🟡 High Severity — Token Optimizer MCP: OS command injection in smart_user via username in get-user-info
+## 12. 🟡 High Severity — Token Optimizer MCP: OS command injection in smart_user via username in get-user-info
 
 **CVE:** `CVE-2026-55157` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-49mq-fc6q-3h46>
@@ -129,7 +120,7 @@ Although the value is wrapped in double quotes, P…
 
 ---
 
-## 14. 🟡 High Severity — Metasploit Wrap Up: Lot of summer shells and fit http profiles
+## 13. 🟡 High Severity — Metasploit Wrap Up: Lot of summer shells and fit http profiles
 
 **CVE:** `CVE-2026-46300` | `CVE-2025-49132` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-lot-of-summer-shells-and-fit-http-profiles>
@@ -138,7 +129,7 @@ Although the value is wrapped in double quotes, P…
 
 ---
 
-## 15. 🟡 High Severity — ContextForge: DNS TOCTOU race condition causes SSRF protection bypass (`/admin/gateways/test`)
+## 14. 🟡 High Severity — ContextForge: DNS TOCTOU race condition causes SSRF protection bypass (`/admin/gateways/test`)
 
 **CVE:** `CVE-2026-53708` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-9hgc-g3w5-67cm>
@@ -149,7 +140,7 @@ The `/admin/gateways/test` endpoint validates submitted URLs by resolving the ho
 
 ---
 
-## 16. 🟡 High Severity — Grav: Unauthenticated denial of service via unbounded image derivative dimensions
+## 15. 🟡 High Severity — Grav: Unauthenticated denial of service via unbounded image derivative dimensions
 
 **CVE:** `CVE-2026-53653` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-4x9g-vw65-vvf9>
@@ -162,7 +153,7 @@ An unauthenticated visitor exhausts server memory and CPU by requesting an image
 
 ---
 
-## 17. 🟡 High Severity — Budibase: SSRF in Automation Steps - Webhook, Zapier, N8N, Slack, Discord Bypass IP Blacklist
+## 16. 🟡 High Severity — Budibase: SSRF in Automation Steps - Webhook, Zapier, N8N, Slack, Discord Bypass IP Blacklist
 
 **CVE:** `CVE-2026-35219` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-5fpj-28rv-84r7>
@@ -177,7 +168,7 @@ Budibase automation steps (outgoing webhook, Zapier, n8n, Slack, Discord, Make.c
 
 ---
 
-## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

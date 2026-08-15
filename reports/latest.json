@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-15T06:18:00.724461+00:00",
-  "total": 18,
+  "generated": "2026-08-15T12:13:54.980698+00:00",
+  "total": 17,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -30,21 +30,6 @@
       "tags": [
         "cloud",
         "threat-intel",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/hackers-exploiting-unpatched-geoserver-zero-day/",
-      "title": "Hackers Exploiting Unpatched GeoServer Zero-Day",
-      "summary": "The security defect is described as an SQL injection that could allow attackers to achieve remote code execution. The post Hackers Exploiting Unpatched GeoServer Zero-Day appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/hackers-exploiting-unpatched-geoserver-zero-day/",
-      "published": "2026-08-14T07:01:56+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
         "research"
       ],
       "cve_ids": [],
