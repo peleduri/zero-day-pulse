@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-15 12:13 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-15 18:11 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -92,35 +92,7 @@
 
 ---
 
-## 11. 🟡 High Severity — s2n-quic has excessive memory allocation
-
-**CVE:** `CVE-2026-10740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
-**Reference:** <https://github.com/advisories/GHSA-9q54-f358-3fqf>
-
-> s2n-quic is a Rust implementation of the QUIC protocol. An unauthenticated user can attempt to exhaust server memory on an s2n-quic endpoint by sending crafted CRYPTO frames with high offsets. The buffer used for processing CRYPTO frames does not enforce a maximum size. In the worst case, a single 1200-byte packet can cause approximately 9.4 MB of allocation. By repeatedly sending such packets, th…
-
----
-
-## 12. 🟡 High Severity — Token Optimizer MCP: OS command injection in smart_user via username in get-user-info
-
-**CVE:** `CVE-2026-55157` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
-**Reference:** <https://github.com/advisories/GHSA-49mq-fc6q-3h46>
-
-> ### Summary
-
-`token-optimizer-mcp` is vulnerable to OS command injection in the `smart_user` tool.
-
-The `get-user-info` operation accepts a user-controlled `username` argument and later interpolates it into a shell command executed through `execAsync()`:
-
-```ts
-getent passwd &quot;${username}&quot; || grep &quot;^${username}:&quot; /etc/passwd
-```
-
-Although the value is wrapped in double quotes, P…
-
----
-
-## 13. 🟡 High Severity — Metasploit Wrap Up: Lot of summer shells and fit http profiles
+## 11. 🟡 High Severity — Metasploit Wrap Up: Lot of summer shells and fit http profiles
 
 **CVE:** `CVE-2026-46300` | `CVE-2025-49132` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-lot-of-summer-shells-and-fit-http-profiles>
@@ -129,46 +101,7 @@ Although the value is wrapped in double quotes, P…
 
 ---
 
-## 14. 🟡 High Severity — ContextForge: DNS TOCTOU race condition causes SSRF protection bypass (`/admin/gateways/test`)
-
-**CVE:** `CVE-2026-53708` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
-**Reference:** <https://github.com/advisories/GHSA-9hgc-g3w5-67cm>
-
-> ## Summary
-
-The `/admin/gateways/test` endpoint validates submitted URLs by resolving the hostname at validation time and blocking private address ranges. The HTTP client independently re-resolves DNS at connection time with no IP binding between the two operations, creating a TOCTOU window exploitable via DNS rebinding. The source code explicitly acknowledges this limitation in two separate locat…
-
----
-
-## 15. 🟡 High Severity — Grav: Unauthenticated denial of service via unbounded image derivative dimensions
-
-**CVE:** `CVE-2026-53653` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
-**Reference:** <https://github.com/advisories/GHSA-4x9g-vw65-vvf9>
-
-> ### Summary
-An unauthenticated visitor exhausts server memory and CPU by requesting an image with oversized resize dimensions. One request drives a worker to several gigabytes of RAM and tens of seconds of CPU. A few concurrent requests take the host down.
-
-### Details
-`Grav::fallbackUrl()` (system/src/Grav/Common/Grav.php:800-804) loops over every query parameter and, when the name matches `Image…
-
----
-
-## 16. 🟡 High Severity — Budibase: SSRF in Automation Steps - Webhook, Zapier, N8N, Slack, Discord Bypass IP Blacklist
-
-**CVE:** `CVE-2026-35219` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
-**Reference:** <https://github.com/advisories/GHSA-5fpj-28rv-84r7>
-
-> ## Summary
-
-Budibase automation steps (outgoing webhook, Zapier, n8n, Slack, Discord, Make.com) make server-side HTTP requests to user-provided URLs using `node-fetch` directly, completely bypassing the IP blacklist protection that exists in the REST API integration. Additionally, the REST API blacklist itself defaults to empty when `BLACKLIST_IPS` is not configured.
-
-## Vulnerable Code
-
-### Autom…
-
----
-
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
