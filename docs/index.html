@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">13</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">17</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-14 18:38 UTC</div>
+            <div class="generated">Updated 2026-08-15 00:32 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -277,42 +277,121 @@
 
 </article>
 
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9q54-f358-3fqf" target="_blank" rel="noopener">s2n-quic has excessive memory allocation</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-10740</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-14</span>
+  </div>
+  <p class='summary'>s2n-quic is a Rust implementation of the QUIC protocol. An unauthenticated user can attempt to exhaust server memory on an s2n-quic endpoint by sending crafted CRYPTO frames with high offsets. The buffer used for processing CRYPTO frames does not enforce a maximum size. In the worst case, a single 1200-byte packet can cause approximately 9.4 MB of allocation. By repeatedly sending such packets, th…</p>
+
+</article>
+
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p28v-f755-9qrg" target="_blank" rel="noopener">Trigger.dev: Prototype pollution via run metadata operations → process-wide cross-tenant DoS</a></h2>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-49mq-fc6q-3h46" target="_blank" rel="noopener">Token Optimizer MCP: OS command injection in smart_user via username in get-user-info</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-73654</code>
+            <code class="cve">CVE-2026-55157</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-08-13</span>
+            <span>2026-08-14</span>
+          </div>
+          <p class='summary'>### Summary
+
+`token-optimizer-mcp` is vulnerable to OS command injection in the `smart_user` tool.
+
+The `get-user-info` operation accepts a user-controlled `username` argument and later interpolates it into a shell command executed through `execAsync()`:
+
+```ts
+getent passwd &quot;${username}&quot; || grep &quot;^${username}:&quot; /etc/passwd
+```
+
+Although the value is wrapped in double quotes, POSIX shells still ev…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-lot-of-summer-shells-and-fit-http-profiles" target="_blank" rel="noopener">Metasploit Wrap Up: Lot of summer shells and fit http profiles</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-46300</code> <code class="cve">CVE-2025-49132</code>
+    <span class="meta-sep">·</span>
+    <span>Rapid7 Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-14</span>
+  </div>
+  <p class='summary'>This wrap-up brings a full-on shell parade. Thirteen shiny new modules landed, starting with a buffet of RCEs. WordPress WP2Shell, Ghost CMS, Joomla JCE, Langflow, OpenCATS, Pterodactyl Panel, SonicWall SMA1000, Ray Dashboard, a Pix-for-WooCommerce, and for those who like their exploits closer to the bare-metal, the Fragnesia Linux kernel LPE (CVE-2026-46300). Metasploit also got the glow-up of th…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9hgc-g3w5-67cm" target="_blank" rel="noopener">ContextForge: DNS TOCTOU race condition causes SSRF protection bypass (`/admin/gateways/test`)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53708</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-14</span>
           </div>
           <p class='summary'>## Summary
 
-The run-metadata update endpoint `PUT /api/v1/runs/:runId/metadata` applies client-supplied
-&quot;operations&quot; by passing the **attacker-controlled `operation.key`** straight into
-`new JSONHeroPath(operation.key).set(newMetadata, value)`
-(`packages/core/src/v3/runMetadata/operations.ts:22-23`), with **no prototype-pollution guard**
-(`@jsonhero/path@^1.0.21` does not reject `__proto__`/`const…</p>
+The `/admin/gateways/test` endpoint validates submitted URLs by resolving the hostname at validation time and blocking private address ranges. The HTTP client independently re-resolves DNS at connection time with no IP binding between the two operations, creating a TOCTOU window exploitable via DNS rebinding. The source code explicitly acknowledges this limitation in two separate locat…</p>
 
         </article>
 
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m42h-3232-vpv3" target="_blank" rel="noopener">nltk: Arbitrary File Read via Path Traversal in nltk.data.load() through Percent-Encoded Sequences</a></h2>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4x9g-vw65-vvf9" target="_blank" rel="noopener">Grav: Unauthenticated denial of service via unbounded image derivative dimensions</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-12243</code>
+            <code class="cve">CVE-2026-53653</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-08-13</span>
+            <span>2026-08-14</span>
           </div>
-          <p class='summary'># Summary
-nltk.data.load() and nltk.data.find() resolve user-supplied resource names to filesystem paths using url2pathname(), which decodes percent-encoded sequences (e.g. %2e%2e to ..). Path safety checks are performed on the raw, still-encoded string before decoding occurs. An attacker supplying %2e%2e instead of .. bypasses all path validation and reads arbitrary files outside the NLTK data di…</p>
+          <p class='summary'>### Summary
+An unauthenticated visitor exhausts server memory and CPU by requesting an image with oversized resize dimensions. One request drives a worker to several gigabytes of RAM and tens of seconds of CPU. A few concurrent requests take the host down.
+
+### Details
+`Grav::fallbackUrl()` (system/src/Grav/Common/Grav.php:800-804) loops over every query parameter and, when the name matches `Image…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5fpj-28rv-84r7" target="_blank" rel="noopener">Budibase: SSRF in Automation Steps - Webhook, Zapier, N8N, Slack, Discord Bypass IP Blacklist</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-35219</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-14</span>
+          </div>
+          <p class='summary'>## Summary
+
+Budibase automation steps (outgoing webhook, Zapier, n8n, Slack, Discord, Make.com) make server-side HTTP requests to user-provided URLs using `node-fetch` directly, completely bypassing the IP blacklist protection that exists in the REST API integration. Additionally, the REST API blacklist itself defaults to empty when `BLACKLIST_IPS` is not configured.
+
+## Vulnerable Code
+
+### Autom…</p>
 
         </article>
 
