@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-15 00:32 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-15 06:18 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -92,7 +92,16 @@
 
 ---
 
-## 11. 🟡 High Severity — s2n-quic has excessive memory allocation
+## 11. 🟡 High Severity — The Agentic AI threat cluster: Seven incidents, three actors, and what they mean for your exposure
+
+**CVE:** `CVE-2025-3248` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-08-15
+**Reference:** <https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean>
+
+> Tenable’s Research Special Operations (RSO) team has been tracking a cluster of agentic AI threat activity since late July 2026. The Taiwan autonomous AI cyber attack confirmed what the cluster data already showed: near-autonomous offensive AI has crossed from theoretical risk to operational reality. Key Takeaways Taiwan&#x27;s Ministry of Digital Affairs confirmed a near-autonomous AI cyber attac…
+
+---
+
+## 12. 🟡 High Severity — s2n-quic has excessive memory allocation
 
 **CVE:** `CVE-2026-10740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-9q54-f358-3fqf>
@@ -101,7 +110,7 @@
 
 ---
 
-## 12. 🟡 High Severity — Token Optimizer MCP: OS command injection in smart_user via username in get-user-info
+## 13. 🟡 High Severity — Token Optimizer MCP: OS command injection in smart_user via username in get-user-info
 
 **CVE:** `CVE-2026-55157` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-49mq-fc6q-3h46>
@@ -120,7 +129,7 @@ Although the value is wrapped in double quotes, P…
 
 ---
 
-## 13. 🟡 High Severity — Metasploit Wrap Up: Lot of summer shells and fit http profiles
+## 14. 🟡 High Severity — Metasploit Wrap Up: Lot of summer shells and fit http profiles
 
 **CVE:** `CVE-2026-46300` | `CVE-2025-49132` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-lot-of-summer-shells-and-fit-http-profiles>
@@ -129,7 +138,7 @@ Although the value is wrapped in double quotes, P…
 
 ---
 
-## 14. 🟡 High Severity — ContextForge: DNS TOCTOU race condition causes SSRF protection bypass (`/admin/gateways/test`)
+## 15. 🟡 High Severity — ContextForge: DNS TOCTOU race condition causes SSRF protection bypass (`/admin/gateways/test`)
 
 **CVE:** `CVE-2026-53708` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-9hgc-g3w5-67cm>
@@ -140,7 +149,7 @@ The `/admin/gateways/test` endpoint validates submitted URLs by resolving the ho
 
 ---
 
-## 15. 🟡 High Severity — Grav: Unauthenticated denial of service via unbounded image derivative dimensions
+## 16. 🟡 High Severity — Grav: Unauthenticated denial of service via unbounded image derivative dimensions
 
 **CVE:** `CVE-2026-53653` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-4x9g-vw65-vvf9>
@@ -153,7 +162,7 @@ An unauthenticated visitor exhausts server memory and CPU by requesting an image
 
 ---
 
-## 16. 🟡 High Severity — Budibase: SSRF in Automation Steps - Webhook, Zapier, N8N, Slack, Discord Bypass IP Blacklist
+## 17. 🟡 High Severity — Budibase: SSRF in Automation Steps - Webhook, Zapier, N8N, Slack, Discord Bypass IP Blacklist
 
 **CVE:** `CVE-2026-35219` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-14
 **Reference:** <https://github.com/advisories/GHSA-5fpj-28rv-84r7>
@@ -168,7 +177,7 @@ Budibase automation steps (outgoing webhook, Zapier, n8n, Slack, Discord, Make.c
 
 ---
 
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
