@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-15T18:11:27.668506+00:00",
-  "total": 12,
+  "generated": "2026-08-16T00:33:27.390585+00:00",
+  "total": 11,
   "kev": 0,
   "zero_day": 9,
   "enriched": 0,
@@ -162,24 +162,6 @@
       ],
       "cve_ids": [
         "CVE-2025-3248"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-lot-of-summer-shells-and-fit-http-profiles",
-      "title": "Metasploit Wrap Up: Lot of summer shells and fit http profiles",
-      "summary": "This wrap-up brings a full-on shell parade. Thirteen shiny new modules landed, starting with a buffet of RCEs. WordPress WP2Shell, Ghost CMS, Joomla JCE, Langflow, OpenCATS, Pterodactyl Panel, SonicWall SMA1000, Ray Dashboard, a Pix-for-WooCommerce, and for those who like their exploits closer to the bare-metal, the Fragnesia Linux kernel LPE (CVE-2026-46300). Metasploit also got the glow-up of the summer with the new http malleable profiles, MCP functionality and linux multi fetch payloads (more details on the [official 6.5 release blog post](https://www.rapid7.com/blog/post/pt-metasploit-framework-6-5-released/)!). Windows on ARM confirm to be the new first-class citizenship thanks to brand-new AArch64 reverse-TCP shells (both inline and staged), so your Snapdragon boxes can join the party too. Last but not least, an important message: *Nyan Nyan Nyan Nyan Nyan Nyan.* New module content (13) Ray Dashboard Logs API Path Traversal Author: Richard Howe Type: Auxiliary Pull request: #21681 contributed by rmhowe425 Path: `gather/ray_dashboard_logs_api_path_traversal` Description: This adds an auxiliary module that leverages a path traversal vulnerability in Ray to list the contents of local directories. There is currently no CVE assigned to this vulnerability. Issuance is pending with MITRE. Pterodactyl Panel CVE-2025-49132 Remote Code Execution Authors: 0xtensho and jheysel-r7 Type: Exploit Pull request: #21452 contributed by jheysel-r7 Path: `linux/http/pterodactyl_locales_locale_json` AttackerKB reference: CVE-2025-49132 Description: This adds a module which exploits a vulnerability in Pterodactyl Panel before version 1.11.11 that allows unauthenticated remote code execution through improper handling of locale file operations. The vulnerability, CVE-2025-49132, exists in the locale.json endpoint which allows path traversal and arbitrary file creation. This combination of capabilities results in remote code execution in the context of the user running the web server.",
-      "link": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-lot-of-summer-shells-and-fit-http-profiles",
-      "published": "2026-08-14T21:27:45+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-46300",
-        "CVE-2025-49132"
       ],
       "is_zero_day": false,
       "is_high_severity": true
