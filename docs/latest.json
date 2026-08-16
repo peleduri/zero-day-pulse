@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-16T00:33:27.390585+00:00",
-  "total": 11,
+  "generated": "2026-08-16T06:19:51.751331+00:00",
+  "total": 10,
   "kev": 0,
   "zero_day": 9,
   "enriched": 0,
@@ -147,24 +147,6 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean",
-      "title": "The Agentic AI threat cluster: Seven incidents, three actors, and what they mean for your exposure",
-      "summary": "Tenable\u2019s Research Special Operations (RSO) team has been tracking a cluster of agentic AI threat activity since late July 2026. The Taiwan autonomous AI cyber attack confirmed what the cluster data already showed: near-autonomous offensive AI has crossed from theoretical risk to operational reality. Key Takeaways Taiwan's Ministry of Digital Affairs confirmed a near-autonomous AI cyber attack in July 2026 in which autonomous agents mapped 21 connected government systems, compromised 85 accounts, and exfiltrated more than 2,564 personnel records in approximately four days. The Taiwan campaign is part of a broader seven-incident agentic AI threat cluster that also includes JADEPUFFER, which exploited CVE-2025-3248 in the Langflow AI workflow platform for automated database extortion, and knaithe/KnYuan, a Chinese-speaking operator assessed by Unit 42 with moderate confidence, using the same AI agent framework for autonomous vulnerability scanning. The common entry point across all cluster activity is identity and authentication exposure: discoverable federation endpoints, weak credentials, and misconfigured SSO are the conditions autonomous agents exploit at machine speed, and Tenable One can identify this class of risk in customer environments. Background The Taiwan autonomous AI cyber attack, confirmed by Taiwan\u2019s Ministry of Digital Affairs on Aug. 13, 2026, is the highest-profile event in a broader pattern Tenable\u2019s RSO team has been tracking as an intelligence cluster since July 21, 2026. That cluster now encompasses seven confirmed incidents of autonomous or semi-autonomous AI systems deployed for offensive cyber operations or escaping containment boundaries, spanning November 2025 through August 2026. The Taiwan campaign is the anchor finding, but it is not the whole story. In late July, Palo Alto Networks\u2019 Unit 42 independently documented a separate Chinese-speaking individual operator using the same underlying AI agent framework for autonomous vulnerability ",
-      "link": "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean",
-      "published": "2026-08-15T01:36:57+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2025-3248"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
