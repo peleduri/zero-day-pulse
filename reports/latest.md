@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-17 06:29 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-17 12:18 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -83,7 +83,25 @@
 
 ---
 
-## 10. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 10. 🟠 Zero-Day — Microsoft working on Defender patch for ShieldBreak zero-day
+
+**CVE:** `CVE-2026-69414` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-17
+**Reference:** <https://www.bleepingcomputer.com/news/security/microsoft-working-on-defender-patch-for-shieldbreak-zero-day/>
+
+> Microsoft is working on a security patch for the &quot;ShieldBreak&quot; zero-day vulnerability disclosed last week by security researcher &quot;Nightmare Eclipse&quot; and now tracked as CVE-2026-69414. [...]
+
+---
+
+## 11. 🟡 High Severity — Critical SAP Commerce Cloud Vulnerability Exploited 3 Days After Disclosure
+
+**CVE:** `CVE-2026-58231` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-17
+**Reference:** <https://www.securityweek.com/critical-sap-commerce-cloud-vulnerability-exploited-3-days-after-disclosure/>
+
+> The vulnerability tracked as CVE-2026-58231 can be exploited to execute arbitrary code and compromise internal components. The post Critical SAP Commerce Cloud Vulnerability Exploited 3 Days After Disclosure appeared first on SecurityWeek .
+
+---
+
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
