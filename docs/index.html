@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">25</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-17 12:18 UTC</div>
+            <div class="generated">Updated 2026-08-17 18:20 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-62593" target="_blank" rel="noopener">CVE-2025-62593 — Ray-Project Ray Code Injection Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2025-62593</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-17</span>
+  </div>
+  <p class='summary'>Vendor: Ray-Project | Product: Ray. Ray-Project Ray contains a code injection vulnerability that could allow remote code execution. Developers using Ray as a development tool may be exposed to this vulnerability exploitable through Firefox and Safari. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates B…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -146,6 +162,22 @@
     <span>Aug 11, 20</span>
   </div>
 
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://thehackernews.com/2026/08/how-mcp-servers-can-expose-enterprise.html" target="_blank" rel="noopener">How MCP Servers Can Expose Enterprise Secrets</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>The Hacker News Security</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-17</span>
+  </div>
+  <p class='summary'>MCP servers can expose enterprise secrets through plaintext configuration files, over-permissioned access and prompt injection, often before security teams even know the server is running. As more organizations adopt AI agents into their systems, that exposure can silently become a major gap in MCP server security. The Model Context Protocol (MCP) allows AI agents to reach the tools and data,</p>
 
 </article>
 
@@ -261,6 +293,44 @@
 
 </article>
 
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8r8v-xf7q-rcpr" target="_blank" rel="noopener">New API: Integer overflow in quota billing yields negative charges (self-crediting)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-71479</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+Multiple billing paths multiplied **user-controlled quantity parameters** into the quota calculation without an upper bound or overflow-safe integer conversion. A crafted extreme value (e.g. image `n = 18446744073686646784`, a wrapped-negative accepted by a `*uint` field) makes conversions like `int(float64(quota) * n)` wrap past the int64/int32 range into a large **negative** quota. T…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/weekly-recap-vmware-exploits-windows-0.html" target="_blank" rel="noopener">⚡ Weekly Recap: VMware Exploits, Windows 0-Day, MCP Attacks, Browser Hijacks and More</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>The expensive attacks are not always the clever ones.
+
+This week had plenty of proof. Exposed services got hit, old bugs found fresh use, browser sessions became attack paths, and supply-chain problems kept spreading farther than the original compromise. A lot of it came down to access that was already there and defenses that assumed nobody would look too closely.
+
+So, nothing magical. Just a</p>
+
+        </article>
+
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -276,6 +346,193 @@
   <p class='summary'>Microsoft is working on a security patch for the &quot;ShieldBreak&quot; zero-day vulnerability disclosed last week by security researcher &quot;Nightmare Eclipse&quot; and now tracked as CVE-2026-69414. [...]</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qmcq-xw74-w667" target="_blank" rel="noopener">uniget CLI has an EDITOR Command Injection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55061</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>### Summary
+The uniget CLI has a command injection vulnerability in [hooks.go](vscode-file://vscode-app/app/extra/vscode/resources/app/out/vs/code/electron-browser/workbench/workbench.html) line 199 where [strings.Split(editor, &quot; &quot;)](vscode-file://vscode-app/app/extra/vscode/resources/app/out/vs/code/electron-browser/workbench/workbench.html) naively parses the EDITOR environment variable without …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cfcw-xp6x-25gj" target="_blank" rel="noopener">vm2: Sandbox Breakout Using Dangerous Host Proto Mutators</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-47698</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>### Summary
+
+VM2 suffers from a sandbox breakout vulnerability. This allows attackers to write code which can escape from the VM2 sandbox and execute arbitrary commands on the host system.
+
+### Details
+
+The fix for https://github.com/patriksimek/vm2/security/advisories/GHSA-v6mx-mf47-r5wg is insufficient and can be bypassed by replacing `indirectcall.call(dangerousmutator, ...)` with `indirectcall…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f2ff-p2ww-7p4p" target="_blank" rel="noopener">sqlparse: Quadratic O(n²) DoS in group_comments</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-71491</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>### Summary
+A comment-only statement (`-- c\n`*n) may cause a Denial of Service (DoS).
+
+### Details
+Location: [sqlparse/engine/grouping.py:331-341](https://github.com/andialbrecht/sqlparse/blob/f80af6a4007f11ada847218df8c29dc859238290/sqlparse/engine/grouping.py#L332) (`group_comments`), invoked first in `group()` at `grouping.py:439`. Reachable via `sqlparse.parse()` and `sqlparse.format(sql, str…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4h34-v6r8-mmjc" target="_blank" rel="noopener">Glances: as_dict_secure() Value-Level Bypass Leaks Credentials in URL Values via /api/4/config</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-68520</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+Glances provides `as_dict_secure()` explicitly designed for unauthenticated API access, with a docstring stating it returns &quot;a sanitised copy of the configuration dict&quot; where &quot;Sensitive keys in remaining sections are replaced by &#x27;********&#x27;&quot;. However, the implementation only checks KEY names against a regex pattern and never inspects VALUE content. The documented `[ip]` config section s…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-59fj-m2j6-hcxh" target="_blank" rel="noopener">Glances: `--disable-config-exec` does not cover on-alert action commands (incomplete fix of CVE-2026-53925)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-68519</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>## Summary
+In Glances 4.5.5 the `--disable-config-exec` flag was extended (GHSA-3vwc-qwhc-3mj7) to stop `secure_popen()` from
+interpreting the shell operators `&amp;&amp;`, `|` and `&gt;` in **AMP** command values taken from the configuration file. The
+hardening was not applied to the **on-alert action** command path, which reads its command lines from the same
+configuration file. As a result, with `--disabl…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8394-6f8r-whxg" target="_blank" rel="noopener">Terragrunt: Arbitrary File Deletion via Malicious Module Manifest</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-45099</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>### Summary
+
+Terragrunt is vulnerable to an arbitrary file deletion flaw when downloading external modules. If a remote module contains a maliciously crafted `.terragrunt-module-manifest` file, Terragrunt can be tricked into deleting files anywhere on the local filesystem that the Terragrunt process has access to.
+
+### Impact
+
+This vulnerability impacts users who download and run untrusted or comp…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qcpp-8x79-hhp3" target="_blank" rel="noopener">Glances has a command injection bypass of action-template sanitizer via cross-field shell-operator reconstruction</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-68518</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>### Summary
+
+The Glances action system lets an administrator configure shell commands that run
+when a monitoring threshold is crossed. The command is a Mustache template whose
+variables are filled with runtime stat fields such as a process name, a container
+name or a filesystem mount point. Those fields are attacker-influenceable: a
+local, unprivileged user who starts a process (or a container) co…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6x2c-phff-wx57" target="_blank" rel="noopener">New API: User List API Leaks Root User Access Token Leading to Privilege Escalation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-64859</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>## Vulnerability Information
+
+- **Product**: new-api
+- **Affected versions**: versions before `v1.0.0-rc.7` that serialize `User.AccessToken` as `access_token`; the issue was confirmed in `v0.12.14`
+- **Patched version**: `v1.0.0-rc.7`
+- **Fixed commit**: `0936e2504655a5cbf7bc3c388f6d3e2bb24916d3`
+- **Type**: Information Disclosure / Privilege Escalation
+
+## Description
+
+In affected versions of ne…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2qvg-qr73-mqxp" target="_blank" rel="noopener">conflibot vulnerable to command injection via crafted pull request branch names under pull_request_target</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55158</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-17</span>
+          </div>
+          <p class='summary'>### Impact
+
+Versions of conflibot before `1.2.1` build `git` commands by string interpolation and run them through a shell. Several of the interpolated values are pull request branch names (`head.ref`), which are attacker-controlled: anyone can open a pull request (including from a fork) whose head branch name contains shell metacharacters such as `` ` ``, `$( )`, `;`, `|`, or `&amp;`.
+
+The recommende…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
