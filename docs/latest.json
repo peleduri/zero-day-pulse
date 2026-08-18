@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-18T06:21:38.455325+00:00",
-  "total": 29,
+  "generated": "2026-08-18T12:20:15.248537+00:00",
+  "total": 43,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 29,
   "enriched": 0,
   "findings": [
     {
@@ -37,15 +37,195 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/08/how-mcp-servers-can-expose-enterprise.html",
-      "title": "How MCP Servers Can Expose Enterprise Secrets",
-      "summary": "MCP servers can expose enterprise secrets through plaintext configuration files, over-permissioned access and prompt injection, often before security teams even know the server is running. As more organizations adopt AI agents into their systems, that exposure can silently become a major gap in MCP server security. The Model Context Protocol (MCP) allows AI agents to reach the tools and data,",
-      "link": "https://thehackernews.com/2026/08/how-mcp-servers-can-expose-enterprise.html",
-      "published": "2026-08-17T11:58:00+00:00",
+      "id": "https://thehackernews.com/2026/08/cisa-flags-actively-exploited-ray-flaw.html",
+      "title": "CISA Flags Actively Exploited Ray Flaw That Can Trigger Browser-Based RCE",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a critical flaw impacting Ray to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nRay is an open-source, Python-native distributed computing framework designed to scale artificial intelligence and machine learning workloads. As of writing, the GitHub project has more than",
+      "link": "https://thehackernews.com/2026/08/cisa-flags-actively-exploited-ray-flaw.html",
+      "published": "2026-08-18T06:34:20+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/67",
+      "title": "Security advisory: Pre-authentication RCE (SQL injection) in XPressEntry 3.7.7454 (Telaeris Inc)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in XPressEntry 3.7.7454 (Telaeris Inc). The research is published and a proof-of-concept is available. Pre-authentication RCE (SQL injection) (CVSS 9.8, pre-authentication) Telaeris XPressEntry 3.7.7454 runs its main HTTP API without authentication when RequireReaderCredentials is False, which is the default. The SaveVerifyActivity handler concatenates the sNotes parameter into...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/67",
+      "published": "2026-08-18T06:17:52+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/65",
+      "title": "Security advisory: Pre-authentication SYSTEM RCE (Zip-Slip plugin planting) in Output Messenger Server 2.0.x (>= 2.0.63) (Srimax Software (Output Technology))",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Output Messenger Server 2.0.x (>= 2.0.63) (Srimax Software (Output Technology)). The research is published and a proof-of-concept is available. Pre-authentication SYSTEM RCE (Zip-Slip plugin planting) (CVSS 9.8, pre-authentication) Output Messenger Server 2.0.x accepts XMPP connections on TCP 14121 with no SASL and no credentials; every connection is treated as...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/65",
+      "published": "2026-08-18T06:17:49+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/64",
+      "title": "Security advisory: Pre-authentication RCE (arbitrary file write) in RapidDeploy 5.2.2 (MidVision)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in RapidDeploy 5.2.2 (MidVision). The research is published and a proof-of-concept is available. Pre-authentication RCE (arbitrary file write) (CVSS 9.8, pre-authentication) MidVision RapidDeploy 5.2.2 ships a remote-agent template (midvision-remoting-server.xml) with host=0.0.0.0 and auth.servers commented out, making the JBoss Remoting layer network-reachable with no...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/64",
+      "published": "2026-08-18T06:17:47+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/61",
+      "title": "Security advisory: Pre-authentication RCE (default credentials + path traversal) in PulseNET Enterprise 6.0.3 (build 6975) (GE Vernova)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in PulseNET Enterprise 6.0.3 (build 6975) (GE Vernova). The research is published and a proof-of-concept is available. Pre-authentication RCE (default credentials + path traversal) (CVSS 9.8, pre-authentication) GE Vernova PulseNET Enterprise 6.0.3 is the network-management software electric utilities use to monitor and manage the industrial wireless networks connecting...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/61",
+      "published": "2026-08-18T06:17:42+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/60",
+      "title": "Security advisory: Pre-authentication RCE (BinaryFormatter deserialization) in Cinegy Cinegize 2026-02-05 installer (Cinegy GmbH)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Cinegy Cinegize 2026-02-05 installer (Cinegy GmbH). The research is published and a proof-of-concept is available. Pre-authentication RCE (BinaryFormatter deserialization) (CVSS 9.8, pre-authentication) Cinegy Cinegize (2026-02-05 installer) registers a Windows service listening on TCP 51140 with a DotNetty pipeline that deserializes .NET BinaryFormatter objects before the...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/60",
+      "published": "2026-08-18T06:17:41+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/59",
+      "title": "Security advisory: Pre-authentication RCE in Wyn Enterprise 9.1.00145.0 (Mescius (GrapeCity))",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Wyn Enterprise 9.1.00145.0 (Mescius (GrapeCity)). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) Wyn Enterprise 9.1.00145.0 exposes an unauthenticated root RCE chain of three vulnerabilities: JWT signature validation is skipped (parse-only ReadToken) with a hardcoded integration client secret, producing an...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/59",
+      "published": "2026-08-18T06:17:40+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/58",
+      "title": "Security advisory: Pre-authentication RCE (default credentials) in ObjectDB 2.9.5 server mode (ObjectDB Software)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in ObjectDB 2.9.5 server mode (ObjectDB Software). The research is published and a proof-of-concept is available. Pre-authentication RCE (default credentials) (CVSS 9.8, pre-authentication) ObjectDB 2.9.5 server mode (port 6136, proprietary binary protocol) has a critical remote code execution vulnerability: JDOQL query filter evaluation allows arbitrary static-method...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/58",
+      "published": "2026-08-18T06:17:38+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/57",
+      "title": "Security advisory: Pre-authentication RCE in nanoDLP stable build #10729 (Nano3Dtech)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in nanoDLP stable build #10729 (Nano3Dtech). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) nanoDLP exposes an unauthenticated remote code execution vulnerability. The Guest (unauthenticated) endpoint POST /formula evaluates user-supplied JavaScript in an embedded Otto JS sandbox, which exposes a live nanoDLP...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/57",
+      "published": "2026-08-18T06:17:37+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/56",
+      "title": "Security advisory: Pre-authentication SYSTEM RCE in MAPS SCADA 4.0.5.5 (Adroit Technologies)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in MAPS SCADA 4.0.5.5 (Adroit Technologies). The research is published and a proof-of-concept is available. Pre-authentication SYSTEM RCE (CVSS 9.8, pre-authentication) MAPS SCADA 4.0.5.5 exposes an IIS WebService (default port 8878) whose WSDataProvider.asmx endpoints deserialize the caller-supplied byte array before any authentication. Serializer.BinaryDeserialization...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/56",
+      "published": "2026-08-18T06:17:35+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/55",
+      "title": "Security advisory: Pre-authentication RCE in Confluent Platform (ksqlDB) 7.9.1-ce (Confluent, Inc.)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Confluent Platform (ksqlDB) 7.9.1-ce (Confluent, Inc.). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) Confluent Platform 7.9.1-ce exposes an unauthenticated remote code execution chain in its default configuration. ksqlDB (HTTP 8089), the Kafka broker (9092 PLAINTEXT, no SASL) and Kafka Connect (8083) all...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/55",
+      "published": "2026-08-18T06:17:34+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/54",
+      "title": "Security advisory: Pre-authentication SYSTEM RCE in iMonnit Express 4.0.5.5 (Monnit / iMonnit)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in iMonnit Express 4.0.5.5 (Monnit / iMonnit). The research is published and a proof-of-concept is available. Pre-authentication SYSTEM RCE (CVSS 9.8, pre-authentication) iMonnit Express 4.0.5.5 is an ASP.NET Core application running as a Windows service with LocalSystem privileges, with no global [Authorize] filter. Three flaws combine into a fully unauthenticated root RCE...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/54",
+      "published": "2026-08-18T06:17:32+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/53",
+      "title": "Security advisory: Pre-authentication RCE in Ontotext GraphDB 11.4.3 Free edition (Ontotext / Graphwise)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Ontotext GraphDB 11.4.3 Free edition (Ontotext / Graphwise). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) Ontotext GraphDB 11.4.3 Free edition defaults to security=false, which bypasses the entire Spring Security filter chain. As a result, /rest/repositories/ruleset/upload and /repositories/* are...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/53",
+      "published": "2026-08-18T06:17:31+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -164,6 +344,66 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-windows-task-host-flaw-now-exploited-by-ransomware-gangs/",
+      "title": "CISA: Windows Task Host flaw now exploited by ransomware gangs",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has confirmed that ransomware gangs are also exploiting a high-severity Windows Task Host vulnerability that was flagged as actively exploited in April. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-windows-task-host-flaw-now-exploited-by-ransomware-gangs/",
+      "published": "2026-08-18T10:32:16+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/66",
+      "title": "Security advisory: Authenticated RCE (SQL injection) in Scrutinizer 19.7.0 (Plixer)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Scrutinizer 19.7.0 (Plixer). The research is published and a proof-of-concept is available. Authenticated RCE (SQL injection) (CVSS 8.8, authenticated) Plixer Scrutinizer 19.7.0 concatenates the HTTP orderBy parameter directly into a SQL ORDER BY clause with no escaping in the adminEditLang handler. The default configuration includes the pg_cron extension and a PostgreSQL...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/66",
+      "published": "2026-08-18T06:17:51+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/63",
+      "title": "Security advisory: Authenticated RCE (second-order SQL injection) in Lansweeper 12.2.1.0 (web reports 12.2.1.6) (Lansweeper)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Lansweeper 12.2.1.0 (web reports 12.2.1.6) (Lansweeper). The research is published and a proof-of-concept is available. Authenticated RCE (second-order SQL injection) (CVSS 8.8, authenticated) Lansweeper 12.2.1.0 contains a second-order SQL injection in the LicenseActions console. A SQL Server sub-server name containing a single quote is stored and later concatenated...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/63",
+      "published": "2026-08-18T06:17:46+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/62",
+      "title": "Security advisory: Authenticated RCE (command injection) in Kerio Connect 10.0.9 Patch 2 (build 10320) (GFI Software)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Kerio Connect 10.0.9 Patch 2 (build 10320) (GFI Software). The research is published and a proof-of-concept is available. Authenticated RCE (command injection) (CVSS 8.8, authenticated) Kerio Connect 10.0.9 Patch 2 contains a command-injection vulnerability in the WebAdmin JSON-RPC method Server.startEncryption. The password parameter is double-quoted and concatenated...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/62",
+      "published": "2026-08-18T06:17:44+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://thehackernews.com/2026/08/cavern-c2-uses-dns-and-google-apps.html",
       "title": "Cavern C2 Uses DNS and Google Apps Script to Blend Into Legitimate Traffic",
       "summary": "Cybersecurity researchers have traced the continued evolution of the Cavern (aka Cav3rn) command-and-control (C2) framework used by Iranian nation-state hackers in attacks targeting entities in Israel.\n\nRussian cybersecurity company Kaspersky said its ongoing monitoring of the threat activity cluster since December 2025 has led to the discovery of previously unreported components that expand the",
@@ -208,23 +448,6 @@
         "zeroday"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/microsoft-working-on-defender-patch-for-shieldbreak-zero-day/",
-      "title": "Microsoft working on Defender patch for ShieldBreak zero-day",
-      "summary": "Microsoft is working on a security patch for the \"ShieldBreak\" zero-day vulnerability disclosed last week by security researcher \"Nightmare Eclipse\" and now tracked as CVE-2026-69414. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/microsoft-working-on-defender-patch-for-shieldbreak-zero-day/",
-      "published": "2026-08-17T09:05:33+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-69414"
-      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -456,23 +679,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55158"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/critical-sap-commerce-cloud-vulnerability-exploited-3-days-after-disclosure/",
-      "title": "Critical SAP Commerce Cloud Vulnerability Exploited 3 Days After Disclosure",
-      "summary": "The vulnerability tracked as CVE-2026-58231 can be exploited to execute arbitrary code and compromise internal components. The post Critical SAP Commerce Cloud Vulnerability Exploited 3 Days After Disclosure appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/critical-sap-commerce-cloud-vulnerability-exploited-3-days-after-disclosure/",
-      "published": "2026-08-17T08:13:07+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-58231"
       ],
       "is_zero_day": false,
       "is_high_severity": true
