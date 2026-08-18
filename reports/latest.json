@@ -1,29 +1,10 @@
 {
-  "generated": "2026-08-17T18:20:43.653436+00:00",
-  "total": 25,
-  "kev": 1,
-  "zero_day": 13,
+  "generated": "2026-08-18T00:31:51.820603+00:00",
+  "total": 29,
+  "kev": 0,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2025-62593",
-      "title": "CVE-2025-62593 \u2014 Ray-Project Ray Code Injection Vulnerability",
-      "summary": "Vendor: Ray-Project | Product: Ray. Ray-Project Ray contains a code injection vulnerability that could allow remote code execution. Developers using Ray as a development tool may be exposed to this vulnerability exploitable through Firefox and Safari. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-20)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593",
-      "published": "2026-08-17",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2025-62593"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -183,6 +164,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/08/cavern-c2-uses-dns-and-google-apps.html",
+      "title": "Cavern C2 Uses DNS and Google Apps Script to Blend Into Legitimate Traffic",
+      "summary": "Cybersecurity researchers have traced the continued evolution of the Cavern (aka Cav3rn) command-and-control (C2) framework used by Iranian nation-state hackers in attacks targeting entities in Israel.\n\nRussian cybersecurity company Kaspersky said its ongoing monitoring of the threat activity cluster since December 2025 has led to the discovery of previously unreported components that expand the",
+      "link": "https://thehackernews.com/2026/08/cavern-c2-uses-dns-and-google-apps.html",
+      "published": "2026-08-17T17:41:06+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-71479",
       "title": "New API: Integer overflow in quota billing yields negative charges (self-crediting)",
       "summary": "## Summary\n\nMultiple billing paths multiplied **user-controlled quantity parameters** into the quota calculation without an upper bound or overflow-safe integer conversion. A crafted extreme value (e.g. image `n = 18446744073686646784`, a wrapped-negative accepted by a `*uint` field) makes conversions like `int(float64(quota) * n)` wrap past the int64/int32 range into a large **negative** quota. The negative quota takes effect at **settlement** (not at pre-consume), where it is equivalent to crediting the user's balance \u2014 turning a small positive balance into an enormous one.\n\n## Timeline\uff08UTC+8\uff09\n\nThis vulnerability was confirmed **exploited in the wild**. Response timeline (UTC+8):\n\n- **2026-07-06 23:00** \u2014 Community user @lihui12388 reported that their deployment had been exploited via this vulnerability (large negative consumption entries in logs and abnormally inflated balances). We confirmed in-the-wild exploitation and started an emergency response immediately.\n- **2026-07-07 01:17** \u2014 Emergency fix released as [`v1.0.0-rc.18`](https://github.com/QuantumNous/new-api/releases/tag/v1.0.0-rc.18), roughly 2 hours after the report.\n- **2026-07-07 (next day)** \u2014 Given the confirmed active exploitation, we publicly disclosed the vulnerability and the fixed version to the community the following day so that all operators could upgrade and audit promptly.\n- **2026-07-07 13:19** \u2014 [`v1.0.0-rc.19`](https://github.com/QuantumNous/new-api/releases/tag/v1.0.0-rc.19) released with additional observability (quota-saturation warning logs) to help operators audit and monitor abuse.\n\n## Preconditions\n\nThis is **not** a zero-balance freebie. The attacker must hold an account whose wallet balance is `> 0` and at least covers the request's normal (un-inflated) pre-consume amount \u2014 the pre-consume gate rejects `userQuota <= 0` and insufficient balance with HTTP 403. Quantity multipliers (`n`, duration, ...) are not applied at pre-consume; the overflow only manifests at settlement, fl",
@@ -231,6 +227,76 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-64849",
+      "title": "MLflow: Unauthenticated full-read SSRF in webhook delivery: _validate_webhook_url bypassed via unvalidated HTTP redirects (and DNS rebinding)",
+      "summary": "### Summary\nThe default MLflow Tracking Server (`mlflow server`, no authentication, default SQLite backend) exposes the model-registry webhooks API unauthenticated, including a synchronous `POST /api/2.0/mlflow/webhooks/{id}/test` endpoint that returns the upstream response status and body to the caller. The SSRF guard added in PR #20747 (`_validate_webhook_url`, shipped in 3.10.0) resolves the webhook hostname and rejects non-public IPs, but it is bypassable: delivery follows HTTP redirects (no `allow_redirects=False`) and never pins the validated IP. An attacker hosts a public HTTPS endpoint that passes the guard and returns `302 Location: http://169.254.169.254/...` (or `http://127.0.0.1:...`); MLflow follows it and never re-validates the redirect target. Because `/test` reflects the response body, this is an unauthenticated full-read SSRF on a default server.\n\n### Details\nThree facts combine:\n\n1. Webhook endpoints are unauthenticated on a default server. The only webhook authorization lives in the optional auth plugin (`mlflow/server/auth/__init__.py`, `WEBHOOK_BEFORE_REQUEST_HANDLERS`), which is not loaded by default.\n\n2. The guard validates but pins nothing \u2014 `mlflow/utils/validation.py` `_validate_webhook_url`:\n```python\nschemes = _MLFLOW_WEBHOOK_ALLOWED_SCHEMES.get()        # default [\"https\"]\nif parsed_url.scheme not in schemes: raise ...\nif not _MLFLOW_WEBHOOK_ALLOW_PRIVATE_IPS.get():        # default False\n    for addr_info in socket.getaddrinfo(hostname, None):\n        ip = ipaddress.ip_address(addr_info[4][0])\n        if not ip.is_global: raise ...                 # blocks RFC1918/loopback/link-local/metadata\n```\nThe resolved IP is never carried into the connection.\n\n3. Delivery follows redirects and re-resolves with no pinning \u2014 mlflow/webhooks/delivery.py:\n```python\ndef _create_webhook_session():\n    adapter = HTTPAdapter(max_retries=retry_strategy)  # retry only; no IP pinning\n    ...\ndef _send_webhook_request(webhook, payload, event, session):\n    _",
+      "link": "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+      "published": "2026-08-17T21:58:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-64849"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-56677",
+      "title": "9Router: Authenticated Server-Side Request Forgery (SSRF) via OIDC Provider Test Endpoint",
+      "summary": "### Summary\n\nA Server-Side Request Forgery (SSRF) vulnerability exists in the 9Router dashboard via the `/api/auth/oidc/test` endpoint. The application accepts a user-controlled URL string through the `issuerUrl` parameter and performs an outbound HTTP request without validating if the destination IP belongs to a restricted internal network range.\n\nNotably, this endpoint can be accessed without active session authentication (Unauthenticated), allowing any remote actor with network visibility to the dashboard API endpoints to trigger outbound infrastructure connections.\n\nDepending on the state and response of the internal port targeted, this flaw exhibits two distinct behaviors:\n\n1. **Port Scanning / Blind SSRF (Non-OIDC structures):** Probing internal ports that are closed or running non-HTTP/non-OIDC services (e.g., SSH, Databases) forces predictable application behavior changes (e.g., structural timeout or clear JSON parsing error messages like \"Unexpected token...\"), allowing internal network reconnaissance.\n2. **Full Data Feed Manipulation (OIDC matching structures):** If the targeted internal service responds with a valid OpenID configuration document structure, the backend successfully processes, parses, and reflects the internal properties back to the client, confirming partial data control.\n\n---\n\n### Vulnerable Code Details\n\n- **Classification:** VE-Class 4 \u2014 OIDC SSRF via issuerUrl (Unauthenticated)\n- **File Path:** `src/app/api/auth/oidc/test/route.js`\n- **Vulnerable Logic:** The endpoint accepts the parameter directly from the client request and passes it directly into the network client routine without prior sanitization or middleware authentication wrapper checks.\n\n```javascript\n// Vulnerable implementation wrapper inside the route handler\nconst discovery = await fetchOidcDiscovery(issuerUrl);\n// Behind the scenes, this executes a direct dynamic outbound request:\n// -> fetch(`${issuerUrl}/.well-known/openid-configuration`)\n```\n\nAn unauthenticated user c",
+      "link": "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
+      "published": "2026-08-17T21:58:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-56677"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
+      "title": "Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects",
+      "summary": "GitLab has released security updates to address a critical vulnerability impacting its Community Edition (CE) and Enterprise Edition (EE) software that, under certain conditions, could allow an unauthenticated attacker to remotely modify or delete public projects and user data.\n\nThe flaw, tracked as CVE-2026-19478, has been rated Critical by GitLab and assigned a CVSS score of 9.4.\n\nReleased on",
+      "link": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
+      "published": "2026-08-17T21:03:04+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-19478"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
+      "title": "Forminator WordPress Flaw Can Enable Unauthenticated RCE via Malicious PHP Uploads",
+      "summary": "A critical security flaw has been disclosed in Forminator Forms, a WordPress plugin with more than 600,000 active installations, that could be exploited to achieve arbitrary code execution on susceptible sites.\n\nThe vulnerability, tracked as CVE-2026-15748, is rated 9.8 out of 10.0 on the CVSS scoring system. It was discovered and reported by a security researcher who goes by the online alias \"",
+      "link": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
+      "published": "2026-08-17T18:22:09+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-15748"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-55061",

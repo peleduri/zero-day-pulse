@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-17 18:20 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-18 00:31 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2025-62593 — Ray-Project Ray Code Injection Vulnerability
-
-**CVE:** `CVE-2025-62593` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-17
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2025-62593>
-
-> Vendor: Ray-Project | Product: Ray. Ray-Project Ray contains a code injection vulnerability that could allow remote code execution. Developers using Ray as a development tool may be exposed to this vulnerability exploitable through Firefox and Safari. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates B…
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,14 +13,14 @@
 
 ---
 
-## 3. 🟠 Zero-Day — August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs
+## 2. 🟠 Zero-Day — August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Aug 11, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/>
 
 ---
 
-## 4. 🟠 Zero-Day — How MCP Servers Can Expose Enterprise Secrets
+## 3. 🟠 Zero-Day — How MCP Servers Can Expose Enterprise Secrets
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://thehackernews.com/2026/08/how-mcp-servers-can-expose-enterprise.html>
@@ -38,7 +29,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -47,7 +38,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -56,7 +47,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -65,7 +56,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -74,7 +65,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -83,7 +74,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -92,12 +83,23 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
 
 > Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…
+
+---
+
+## 11. 🟠 Zero-Day — Cavern C2 Uses DNS and Google Apps Script to Blend Into Legitimate Traffic
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-17
+**Reference:** <https://thehackernews.com/2026/08/cavern-c2-uses-dns-and-google-apps.html>
+
+> Cybersecurity researchers have traced the continued evolution of the Cavern (aka Cav3rn) command-and-control (C2) framework used by Iranian nation-state hackers in attacks targeting entities in Israel.
+
+Russian cybersecurity company Kaspersky said its ongoing monitoring of the threat activity cluster since December 2025 has led to the discovery of previously unreported components that expand the
 
 ---
 
@@ -134,7 +136,54 @@ So, nothing magical. Just a
 
 ---
 
-## 15. 🟡 High Severity — uniget CLI has an EDITOR Command Injection
+## 15. 🟡 High Severity — MLflow: Unauthenticated full-read SSRF in webhook delivery: _validate_webhook_url bypassed via unvalidated HTTP redirects (and DNS rebinding)
+
+**CVE:** `CVE-2026-64849` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
+**Reference:** <https://github.com/advisories/GHSA-7gwp-5pfp-969j>
+
+> ### Summary
+The default MLflow Tracking Server (`mlflow server`, no authentication, default SQLite backend) exposes the model-registry webhooks API unauthenticated, including a synchronous `POST /api/2.0/mlflow/webhooks/{id}/test` endpoint that returns the upstream response status and body to the caller. The SSRF guard added in PR #20747 (`_validate_webhook_url`, shipped in 3.10.0) resolves the we…
+
+---
+
+## 16. 🟡 High Severity — 9Router: Authenticated Server-Side Request Forgery (SSRF) via OIDC Provider Test Endpoint
+
+**CVE:** `CVE-2026-56677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
+**Reference:** <https://github.com/advisories/GHSA-8g4w-4ffg-8vgx>
+
+> ### Summary
+
+A Server-Side Request Forgery (SSRF) vulnerability exists in the 9Router dashboard via the `/api/auth/oidc/test` endpoint. The application accepts a user-controlled URL string through the `issuerUrl` parameter and performs an outbound HTTP request without validating if the destination IP belongs to a restricted internal network range.
+
+Notably, this endpoint can be accessed without ac…
+
+---
+
+## 17. 🟡 High Severity — Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects
+
+**CVE:** `CVE-2026-19478` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-17
+**Reference:** <https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html>
+
+> GitLab has released security updates to address a critical vulnerability impacting its Community Edition (CE) and Enterprise Edition (EE) software that, under certain conditions, could allow an unauthenticated attacker to remotely modify or delete public projects and user data.
+
+The flaw, tracked as CVE-2026-19478, has been rated Critical by GitLab and assigned a CVSS score of 9.4.
+
+Released on
+
+---
+
+## 18. 🟡 High Severity — Forminator WordPress Flaw Can Enable Unauthenticated RCE via Malicious PHP Uploads
+
+**CVE:** `CVE-2026-15748` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-17
+**Reference:** <https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html>
+
+> A critical security flaw has been disclosed in Forminator Forms, a WordPress plugin with more than 600,000 active installations, that could be exploited to achieve arbitrary code execution on susceptible sites.
+
+The vulnerability, tracked as CVE-2026-15748, is rated 9.8 out of 10.0 on the CVSS scoring system. It was discovered and reported by a security researcher who goes by the online alias &quo…
+
+---
+
+## 19. 🟡 High Severity — uniget CLI has an EDITOR Command Injection
 
 **CVE:** `CVE-2026-55061` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-qmcq-xw74-w667>
@@ -144,7 +193,7 @@ The uniget CLI has a command injection vulnerability in [hooks.go](vscode-file:/
 
 ---
 
-## 16. 🟡 High Severity — vm2: Sandbox Breakout Using Dangerous Host Proto Mutators
+## 20. 🟡 High Severity — vm2: Sandbox Breakout Using Dangerous Host Proto Mutators
 
 **CVE:** `CVE-2026-47698` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-cfcw-xp6x-25gj>
@@ -159,7 +208,7 @@ The fix for https://github.com/patriksimek/vm2/security/advisories/GHSA-v6mx-mf4
 
 ---
 
-## 17. 🟡 High Severity — sqlparse: Quadratic O(n²) DoS in group_comments
+## 21. 🟡 High Severity — sqlparse: Quadratic O(n²) DoS in group_comments
 
 **CVE:** `CVE-2026-71491` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-f2ff-p2ww-7p4p>
@@ -172,7 +221,7 @@ Location: [sqlparse/engine/grouping.py:331-341](https://github.com/andialbrecht/
 
 ---
 
-## 18. 🟡 High Severity — Glances: as_dict_secure() Value-Level Bypass Leaks Credentials in URL Values via /api/4/config
+## 22. 🟡 High Severity — Glances: as_dict_secure() Value-Level Bypass Leaks Credentials in URL Values via /api/4/config
 
 **CVE:** `CVE-2026-68520` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-4h34-v6r8-mmjc>
@@ -183,7 +232,7 @@ Glances provides `as_dict_secure()` explicitly designed for unauthenticated API 
 
 ---
 
-## 19. 🟡 High Severity — Glances: `--disable-config-exec` does not cover on-alert action commands (incomplete fix of CVE-2026-53925)
+## 23. 🟡 High Severity — Glances: `--disable-config-exec` does not cover on-alert action commands (incomplete fix of CVE-2026-53925)
 
 **CVE:** `CVE-2026-68519` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-59fj-m2j6-hcxh>
@@ -196,7 +245,7 @@ configuration file. As a result, wit…
 
 ---
 
-## 20. 🟡 High Severity — Terragrunt: Arbitrary File Deletion via Malicious Module Manifest
+## 24. 🟡 High Severity — Terragrunt: Arbitrary File Deletion via Malicious Module Manifest
 
 **CVE:** `CVE-2026-45099` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-8394-6f8r-whxg>
@@ -211,7 +260,7 @@ This vulnerability impacts users who download and run untrusted or comp…
 
 ---
 
-## 21. 🟡 High Severity — Glances has a command injection bypass of action-template sanitizer via cross-field shell-operator reconstruction
+## 25. 🟡 High Severity — Glances has a command injection bypass of action-template sanitizer via cross-field shell-operator reconstruction
 
 **CVE:** `CVE-2026-68518` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-qcpp-8x79-hhp3>
@@ -226,7 +275,7 @@ local, unprivileged user who starts a process (or a container) co…
 
 ---
 
-## 22. 🟡 High Severity — New API: User List API Leaks Root User Access Token Leading to Privilege Escalation
+## 26. 🟡 High Severity — New API: User List API Leaks Root User Access Token Leading to Privilege Escalation
 
 **CVE:** `CVE-2026-64859` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-6x2c-phff-wx57>
@@ -245,7 +294,7 @@ In affected versions of ne…
 
 ---
 
-## 23. 🟡 High Severity — conflibot vulnerable to command injection via crafted pull request branch names under pull_request_target
+## 27. 🟡 High Severity — conflibot vulnerable to command injection via crafted pull request branch names under pull_request_target
 
 **CVE:** `CVE-2026-55158` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://github.com/advisories/GHSA-2qvg-qr73-mqxp>
@@ -258,7 +307,7 @@ The recomm…
 
 ---
 
-## 24. 🟡 High Severity — Critical SAP Commerce Cloud Vulnerability Exploited 3 Days After Disclosure
+## 28. 🟡 High Severity — Critical SAP Commerce Cloud Vulnerability Exploited 3 Days After Disclosure
 
 **CVE:** `CVE-2026-58231` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-17
 **Reference:** <https://www.securityweek.com/critical-sap-commerce-cloud-vulnerability-exploited-3-days-after-disclosure/>
@@ -267,7 +316,7 @@ The recomm…
 
 ---
 
-## 25. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
