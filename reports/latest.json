@@ -1,10 +1,29 @@
 {
-  "generated": "2026-08-19T12:21:12.061139+00:00",
-  "total": 32,
-  "kev": 0,
+  "generated": "2026-08-19T18:16:26.224854+00:00",
+  "total": 25,
+  "kev": 1,
   "zero_day": 12,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-64849",
+      "title": "CVE-2026-64849 \u2014 MLflow Server-Side Request Forgery Vulnerability",
+      "summary": "Vendor: MLflow | Product: MLflow. MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-02)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-64849",
+      "published": "2026-08-19",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-64849"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -33,6 +52,23 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway",
+      "title": "CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway",
+      "summary": "Overview On August 19, 2026, a security advisory was published for CVE-2026-19490 , a critical authentication bypass vulnerability affecting Citrix NetScaler ADC and NetScaler Gateway. The vulnerability carries a CVSS v4.0 base score of 9.3 and can be exploited remotely by an unauthenticated attacker over the network without user interaction or elevated privileges. NetScaler ADC and NetScaler Gateway are widely deployed enterprise networking products commonly positioned at or near the network perimeter. NetScaler ADC provides application delivery, traffic management, load balancing, SSL/TLS offloading, and application security capabilities, while NetScaler Gateway provides secure remote access and VPN functionality. Because these systems are frequently deployed in enterprise DMZs and exposed to the public internet, authentication bypass vulnerabilities affecting Citrix products are nearly always exploited by threat actors. CVE-2026-19490 affects the following systems: NetScaler ADC and NetScaler Gateway 14.1: Versions prior to 14.1-73.32 NetScaler ADC and NetScaler Gateway 13.1: Versions prior to 13.1-63.21 NetScaler ADC FIPS: Versions prior to 14.1-73.32 FIPS NetScaler ADC FIPS and NDcPP: Versions prior to 13.1-37.277 As of August 19, 2026, Rapid7 has not observed evidence that CVE-2026-19490 is being exploited in the wild. However, organizations should prioritize patching affected systems on an emergency basis, since Citrix products are high-value targets that tend to quickly see exploitation in the wild. Mitigation guidance Organizations running affected NetScaler ADC or NetScaler Gateway appliances should review the official NetScaler advisory and apply the required updates to affected systems on an emergency basis. Fixed versions for affected products are listed below: NetScaler ADC and NetScaler Gateway 14.1-73.32 and later releases NetScaler ADC and NetScaler Gateway 13.1-63.21 and later releases of 13.1 NetScaler ADC 14.1-FIPS 14.1-73.32 FIPS and later relea",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway",
+      "published": "2026-08-19T16:46:06+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-19490"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -177,24 +213,6 @@
         "ics"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-63328",
-      "title": "Trivy Plugin Manager has Path Traversal that Allows Arbitrary File Write",
-      "summary": "## Summary\n\nTrivy's plugin manager does not fully validate metadata from a plugin's manifest before using it to construct filesystem paths under the plugin root (`~/.trivy/plugins`). A crafted plugin can cause Trivy to write its files (the manifest and the downloaded plugin binary) outside the plugin root, to an arbitrary location writable by the user running Trivy.\n\nPlugins are third-party binaries that Trivy downloads and executes, so Trivy's [documentation](https://trivy.dev/docs/latest/guide/plugin/) already advises installing only plugins you trust. This issue does not change that trust boundary: exploitation requires the user to install a malicious plugin in the first place.\n\n## Affected configurations\n\nThe vulnerability is triggered only when a user installs an attacker-controlled plugin, for example via `trivy plugin install <SOURCE>` or `trivy plugin run <SOURCE>`. An attacker has to trick a user into installing a plugin they crafted, for instance by publishing it or by getting a malicious source pasted into a command or documentation snippet.\n\nPlugins distributed through the official Trivy plugin index are not affected.\n\n## Impact\n\nA user who installs a malicious plugin can have files written outside the plugin root, to any location writable by the user running Trivy. The vulnerability does not grant any privileges beyond what that user already has.\n\n## Patches\n\nFixed in Trivy `0.72.0`. Users should upgrade to that release or later.\n\n## Workarounds\n\nOnly install Trivy plugins from sources you trust. Plugins from the official Trivy plugin index are safe. See the [plugin documentation](https://trivy.dev/docs/latest/guide/plugin/) for details.\n\n## Credits\n\nReported by @fatihhcelik.",
-      "link": "https://github.com/advisories/GHSA-8rc5-4fr6-64pw",
-      "published": "2026-08-18T16:32:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63328"
-      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -392,150 +410,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55107"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-68927",
-      "title": "MobSF has SSRF port restriction bypass in assetlinks_check",
-      "summary": "## Summary\n\nMobSF's Android App Link assetlinks checker validates only the manifest `android:host` value with `valid_host()`, but then appends the separate `android:port` value into the URL used for the server-side request. This bypasses the current port restriction in `valid_host()` and lets a crafted APK cause MobSF to fetch `http://host:<attacker-port>/.well-known/assetlinks.json` or `https://host:<attacker-port>/.well-known/assetlinks.json`.\n\n## Impact\n\nAn authenticated user who can upload or trigger analysis of a crafted APK can cause the MobSF server to make an outbound request to an attacker-selected port during Android manifest analysis. When the host is controlled by the attacker and uses DNS rebinding, the validation lookup can resolve to a public IP while the later HTTP client lookup resolves to an internal address, allowing SSRF to internal services on non-80/443 ports.\n\nThis is not arbitrary URL SSRF. The path remains fixed to `/.well-known/assetlinks.json`, and redirects are disabled. The bypass is that the final fetched URL is assembled after the host-only validation, so the current port guard is not applied to the actual URL.\n\n## Root cause\n\n`valid_host()` rejects ports other than 80 and 443 when a port is included in the string being validated:\n\n```python\nport = parsed.port\n...\nif port and port not in (80, 443):\n    return False\n```\n\nIn `get_browsable_activities()`, only the host attribute is passed to `valid_host()`:\n\n```python\nhost = data.getAttribute(f'{ns}:host')\nport = data.getAttribute(f'{ns}:port')\n...\nif not valid_host(host):\n    logger.warning('Invalid Host: %s', host)\n    continue\nshost = f'{scheme}://{host}'\nif port and is_number(port):\n    c_url = f'{shost}:{port}{WELL_KNOWN_PATH}'\nelse:\n    c_url = f'{shost}{WELL_KNOWN_PATH}'\nwell_known[c_url] = shost\n```\n\n`_check_url()` then fetches the assembled URL after checking only path, query, and params:\n\n```python\npurl = urlparse(url)\nif (purl.path != WELL_KNOWN_PATH\n    or len(purl.query) > 0\n",
-      "link": "https://github.com/advisories/GHSA-95px-34x5-p37h",
-      "published": "2026-08-18T18:01:03Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-68927"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63640",
-      "title": "MagicMirror socket payload secret placeholder expansion can disclose SECRET_* environment variables",
-      "summary": "### Summary\nWhen `hideConfigSecrets: true` is enabled, MagicMirror redacts `SECRET_*` environment placeholders in the HTTP `/config` response, but the shared node-helper socket dispatcher expands `**SECRET_NAME**` placeholders in every inbound socket payload before passing it to module helpers. Any client that can connect to a loaded module namespace can send a placeholder such as `**SECRET_API_KEY**` and cause the server to substitute the real environment variable into the helper payload. Helpers that echo attacker-controlled payload fields, such as the default weather helper error path, can return the secret value to the socket client.\n\n### Details\nThe affected product is the npm package/application `magicmirror` at version `2.36.0`, tested at commit `fb41d24ef522e91e802e2a623ff6afbddeb3c9d8` from `https://github.com/MagicMirrorOrg/MagicMirror.git`.\n\nThe secret-redaction feature is implemented during config loading:\n\n- `js/utils.js:117-123` loads a `config.env` file next to the config file into `process.env` when present.\n- `js/utils.js:130-151` creates both a full config and a redacted config.\n- `js/utils.js:137-140` redacts environment variables whose names start with `SECRET_` to `**SECRET_NAME**` in the redacted config when `hideConfigSecrets: true` is present.\n- `js/server.js:112-125` returns either `configObj.redactedConf` or `configObj.fullConf` from `/config` depending on `config.hideConfigSecrets`.\n\nThe disclosure root cause is the inbound socket dispatcher:\n\n- `js/node_helper.js:88-103` registers a catch-all handler for each module namespace.\n- `js/node_helper.js:91-99` checks `config?.hideConfigSecrets` and, for every inbound object payload, runs `replaceSecretPlaceholder(JSON.stringify(payload))` before invoking `socketNotificationReceived(...)`.\n- `js/server_functions.js:23-34` implements `replaceSecretPlaceholder(...)` by replacing `**SECRET_* **`-style placeholders with `process.env[...]`, unless `global.config.cors === \"allowAll\"`.\n\nThis reverses t",
-      "link": "https://github.com/advisories/GHSA-q4gh-4ffp-5cg8",
-      "published": "2026-08-18T18:00:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63640"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55182",
-      "title": "LibreNMS Vulnerable to Remote Code Execution by Signal Alert Transportation module",
-      "summary": "### Summary\nA vulnerability has been identified that allows an authenticated administrator to execute arbitrary code on the host server. By adding an alert transport entry, an attacker with administrative privileges can execute malicious commands.\n\n### Details\nThe vulnerability is caused by an unsafe `exec` call in `deliverAlert` function of `LibreNMS/Alert/Transport/Signal.php`. Escapes for the path of `signal-cli` and the `Recipient` field are insufficient to prevent command-line injection. \n\nThe `composer_wrapper.php` under `scripts` is also vulnerable to command injection (unsafe `exec` calls) by passing the injected command as an argument, and it is accepting arguments passed by `deliverAlert`.\n\nBy chaining these unsafe `exec` calls, malicious admin user can execute any executables in the server's filesystem.\n\n### PoC\n\n1. Under Dashboard -> Alert -> Alert Transports\n\n<img width=\"282\" height=\"273\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b72f55b0-b782-47d0-b4f7-75f498019345\" />\n\n2. Create a new Alert Transport entry.\n    a. Select `Signal` as `Transport type`.\n    b. Put `../scripts/composer_wrapper.php` into `Path`.\n    c. Put the command to execute under `Recipient` with `;` at the start and the end of string.\n\n<img width=\"767\" height=\"391\" alt=\"image\" src=\"https://github.com/user-attachments/assets/5e34bfa8-4bd5-40cb-9624-0d40e40ccdc5\" />\n\n3. . Click `Save Transport`, and after the popup closed, click `Test Transport` button under `Action` of the created Alert Transport entry.\n\n<img width=\"172\" height=\"90\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7f83db07-fbf9-4be6-b247-533a6d7b9828\" />\n\n4. The command is executed.\n<img width=\"532\" height=\"216\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d595b0fe-10cc-4050-b4b9-d290b658689d\" />\n\n### Impact\nThis vulnerability allows a malicious actor to achieve Remote Code Execution (RCE), potentially leading to complete system compromise, data exfiltration, or lateral move",
-      "link": "https://github.com/advisories/GHSA-c9fv-cgmm-2wg7",
-      "published": "2026-08-18T17:59:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55182"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63643",
-      "title": "MagicMirror: ssrf calendar .js",
-      "summary": "# Vulnerability \u2014 SSRF via `ADD_CALENDAR` (MagicMirror\u00b2 calendar)\n\n> Analysis of the PoC `exploit-ssrf-calendar.js`.\n> Target: `calendar/node_helper.js` of MagicMirror\u00b2, socket.io namespace `/calendar`.\n\n---\n\n## Identification\n\n| Field | Value |\n|-------|-------|\n| **PoC file** | `exploit-ssrf-calendar.js` |\n| **Endpoint** | socket.io namespace `/calendar`, notification `ADD_CALENDAR` |\n| **Precondition** | reach the mirror's HTTP port (no authentication required) |\n\n---\n\n## Description\n\nThe `ADD_CALENDAR` handler in `calendar/node_helper.js` performs a **server-side** HTTP request to a URL that is **fully attacker-controlled**, with no SSRF protection whatsoever \u2014 unlike the project's hardened `/cors` endpoint.\n\nWorse, the attacker also controls:\n- the **authentication headers** the server attaches to the request (`auth: { method: \"bearer\", pass: \"...\" }`);\n- the `selfSignedCert` flag, which **disables TLS verification** of the server-side request.\n\nWhen the target's response is **valid iCal**, the server parses the events and sends them back to the attacker via `CALENDAR_EVENTS` \u2014 turning the SSRF into **full data exfiltration** (response body read). Against non-iCal responses it remains a blind SSRF (the attacker still forces the server-side request, they just don't see the body).\n\n---\n\n## Root cause: unauthenticated socket.io channel + permissive CORS\n\nThe socket.io server accepts connections from **any origin** and with **no authentication**:\n\n```js\nconst io = new Server(server, {\n  cors: { origin: /.*$/, credentials: true }\n});\n```\n\nThe `/calendar` namespace registers the handler without checking who is connected (**CWE-306**). Any process or browser tab that can reach the mirror's port can emit the notification.\n\n---\n\n## Exploit (`exploit-ssrf-calendar.js`)\n\n```js\nconst { io } = require(\"socket.io-client\");\n\nconst TARGET = process.env.MM || \"http://TARGET:8888\";\nconst INTERNAL_URL = process.argv[2] || process.env.SSRF_URL || \"https://webhook.site/\";\n\nconst so",
-      "link": "https://github.com/advisories/GHSA-w6x9-28jw-hq7j",
-      "published": "2026-08-18T17:26:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63643"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63642",
-      "title": "MagicMirror newsfeed Socket.IO notification allows blind server-side request forgery",
-      "summary": "# Vulnerability \u2014 Blind SSRF via `CHECK_ARTICLE_URL` (MagicMirror\u00b2 newsfeed)\n\n> Analysis of the PoC `exploit-ssrf-newsfeed.js`.\n> Target: `newsfeed/node_helper.js` of MagicMirror\u00b2, socket.io namespace `/newsfeed`.\n\n---\n\n## Identification\n\n| Field | Value |\n|-------|-------|\n| **PoC file** | `exploit-ssrf-newsfeed.js` |\n| **Endpoint** | socket.io namespace `/newsfeed`, notification `CHECK_ARTICLE_URL` |\n| **Precondition** | reach the mirror's HTTP port (no authentication required) |\n\n---\n\n## Description\n\nThe `checkArticleUrl()` function in `newsfeed/node_helper.js` runs `fetch(url, { method: \"HEAD\" })` with **zero validation** of the URL and returns `ARTICLE_URL_STATUS { url, canFrame }`.\n\nThis gives the attacker a **boolean + timing oracle** to map internal hosts and ports: presence, absence, and response time reveal which internal services are alive. It is a \"blind-ish\" SSRF \u2014 the attacker doesn't see the body, but forces the server-side request and observes the effect on the target.\n\nThe actual proof is observed **on the target side** (the server-side HEAD shows up in the internal service's log), since the `canFrame` field alone leaks little.\n\n---\n\n## Root cause: unauthenticated socket.io channel + permissive CORS\n\nThe socket.io server accepts connections from **any origin** and with **no authentication**:\n\n```js\nconst io = new Server(server, {\n  cors: { origin: /.*$/, credentials: true }\n});\n```\n\nThe `/newsfeed` namespace registers the handler without checking who is connected (**CWE-306**). Any process or browser tab that can reach the mirror's port can emit the notification.\n\n---\n\n## Exploit (`exploit-ssrf-newsfeed.js`)\n\n```js\nconst { io } = require(\"socket.io-client\");\nconst TARGET = process.env.MM || \"https://target/\";\nconst URL_TO_HIT = process.env.SSRF_URL || \"https://webhook.site\";\nconst socket = io(`${TARGET}/newsfeed`, { path: \"/socket.io\", transports: [\"websocket\", \"polling\"] });\n\nsocket.onAny((event, payload) => {\n\tif (event === \"ARTICLE_URL_STATUS\") {",
-      "link": "https://github.com/advisories/GHSA-998g-7v5w-cr7g",
-      "published": "2026-08-18T17:26:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63642"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63336",
-      "title": "RabbitMQ Java client: TrustEverythingTrustManager used by default in useSslProtocol() enables MITM",
-      "summary": "## Vulnerability Summary\n\n`com.rabbitmq.client.TrustEverythingTrustManager` accepts ANY TLS certificate (including null chains) and is used as the default trust manager when calling `ConnectionFactory.useSslProtocol()` without arguments. Combined with hostname verification being disabled by default, this enables trivial man-in-the-middle attacks.\n\n## Affected Components\n\n- `com.rabbitmq.client.TrustEverythingTrustManager` \u2014 accepts any certificate\n- `com.rabbitmq.client.ConnectionFactory.useSslProtocol()` \u2014 uses TrustEverythingTrustManager\n- Hostname verification disabled by default (`enableHostnameVerification()` must be called explicitly)\n- `com.rabbitmq.client.ConnectionFactory.getPassword()` \u2014 returns plaintext with no redaction\n- Default port 5672 (plaintext) with PLAIN SASL \u2014 credentials sent unencrypted\n\n## POC (Verified on Java 21, amqp-client 5.25.0)\n\n```java\n// TrustEverythingTrustManager accepts ANY certificate including null\nTrustEverythingTrustManager tm = new TrustEverythingTrustManager();\ntm.checkServerTrusted(null, \"RSA\");  // No exception \u2014 accepts null cert chain\ntm.getAcceptedIssuers();  // Returns empty array \u2014 trusts all CAs\n\n// ConnectionFactory defaults\nConnectionFactory factory = new ConnectionFactory();\nfactory.useSslProtocol();  // Uses TrustEverythingTrustManager internally\n// enableHostnameVerification() NOT called by default\n\n// Credential exposure\nfactory.setPassword(\"secret_password_123\");\nfactory.getPassword();  // Returns \"secret_password_123\" \u2014 no redaction\n\n// Default plaintext port\nfactory.getPort();  // 5672 (plaintext, not 5671/TLS)\n\n// PLAIN SASL sends cleartext credentials\nPlainMechanism pm = new PlainMechanism();\n// handleChallenge() sends username+password in cleartext\n```\n\n## Attack Scenarios\n\n1. **MITM**: Attacker presents self-signed cert \u2192 `TrustEverythingTrustManager` accepts it \u2192 all RabbitMQ traffic intercepted\n2. **Credential theft**: Default plaintext port (5672) + PLAIN SASL = credentials readable on network\n3. **D",
-      "link": "https://github.com/advisories/GHSA-5m9f-rphj-c435",
-      "published": "2026-08-18T16:32:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63336"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69219",
-      "title": "RabbitMQ Java client ValueReader: Oversized LongString/bytes length triggers OOM via unchecked allocation",
-      "summary": "## Summary\n\n`ValueReader.readBytes()` allocates a byte array sized by a wire-declared content length without validating it against actual frame data. A malicious AMQP peer triggers OOM by declaring a ~2GB string/bytes field.\n\n## Vulnerable Code\n\n`src/main/java/com/rabbitmq/client/impl/ValueReader.java` lines 83-95:\n\n```java\nprivate static byte[] readBytes(final DataInputStream in) throws IOException {\n    final long contentLength = unsignedExtend(in.readInt());\n    if(contentLength < Integer.MAX_VALUE) {\n        final byte[] buffer = new byte[(int)contentLength];  // allocates before reading\n        in.readFully(buffer);\n        return buffer;\n    }\n}\n```\n\n## Attack Scenario\n\nA malicious AMQP server sends a LongString field (type tag 'S') with declared length `0x7FFFFFFE` (2,147,483,646). The check `contentLength < Integer.MAX_VALUE` passes. `new byte[2147483646]` attempts ~2GB allocation, causing `OutOfMemoryError` before `readFully()` attempts to read data.\n\nThe allocation size is attacker-controlled and is NOT validated against the frame size or `TruncatedInputStream` bounds. Exploitable pre-authentication via `connection.start` server-properties table.\n\n## Impact\n\nDenial of service via JVM `OutOfMemoryError`. Crashes the entire JVM.\n\n## CWE\n\nCWE-789: Memory Allocation with Excessive Size Value\n\n## Remediation\n\nValidate `contentLength` against the frame's remaining bytes or the negotiated max frame size (default 131,072) before allocating.",
-      "link": "https://github.com/advisories/GHSA-68mj-5wr7-6fgg",
-      "published": "2026-08-18T16:32:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69219"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69220",
-      "title": "RabbitMQ Java client ValueReader: Unbounded recursive table/array nesting causes StackOverflowError DoS",
-      "summary": "## Summary\n\n`ValueReader.readTable()` and `readArray()` recursively call `readFieldValue()` with no depth limit. A malicious AMQP peer can crash the client JVM by sending a deeply nested table structure.\n\n## Vulnerable Code\n\n`src/main/java/com/rabbitmq/client/impl/ValueReader.java` lines 139-155 and 237-249:\n\n```java\nprivate static Map<String, Object> readTable(DataInputStream in) throws IOException {\n    long tableLength = unsignedExtend(in.readInt());\n    // ...\n    while(tableIn.available() > 0) {\n        String name = readShortstr(tableIn);\n        Object value = readFieldValue(tableIn);  // recursive call\n    }\n}\n\nstatic Object readFieldValue(DataInputStream in) throws IOException {\n    switch(in.readUnsignedByte()) {\n      case 'F': value = readTable(in);  // mutual recursion\n      case 'A': value = readArray(in);  // mutual recursion\n    }\n}\n```\n\n## Attack Scenario\n\nA malicious AMQP server (or MitM) sends a `connection.start` frame with ~580 levels of nested tables. Each level costs ~7 bytes (4-byte length + 1-byte key length + 1-byte key + 1-byte type tag), totaling ~4060 bytes within the 131,072 byte max frame size. With the default JVM stack (~512KB, ~864 bytes/frame), this triggers `StackOverflowError`, killing the I/O thread.\n\nExploitable pre-authentication since `connection.start` is the very first server frame.\n\n## Impact\n\nDenial of service. `StackOverflowError` kills the client I/O thread.\n\n## CWE\n\nCWE-674: Uncontrolled Recursion\n\n## Remediation\n\nAdd a depth counter to `readTable`/`readArray`/`readFieldValue` and throw `MalformedFrameException` when exceeding a threshold (e.g., 32).",
-      "link": "https://github.com/advisories/GHSA-93j5-89vc-pph4",
-      "published": "2026-08-18T16:32:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69220"
       ],
       "is_zero_day": false,
       "is_high_severity": true

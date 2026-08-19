@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">25</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-19 12:21 UTC</div>
+            <div class="generated">Updated 2026-08-19 18:16 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-64849" target="_blank" rel="noopener">CVE-2026-64849 — MLflow Server-Side Request Forgery Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-64849</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-19</span>
+  </div>
+  <p class='summary'>Vendor: MLflow | Product: MLflow. MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance …</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -146,6 +162,22 @@
     <span>Aug 11, 20</span>
   </div>
 
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway" target="_blank" rel="noopener">CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-19490</code>
+    <span class="meta-sep">·</span>
+    <span>Rapid7 Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-19</span>
+  </div>
+  <p class='summary'>Overview On August 19, 2026, a security advisory was published for CVE-2026-19490 , a critical authentication bypass vulnerability affecting Citrix NetScaler ADC and NetScaler Gateway. The vulnerability carries a CVSS v4.0 base score of 9.3 and can be exploited remotely by an unauthenticated attacker over the network without user interaction or elevated privileges. NetScaler ADC and NetScaler Gate…</p>
 
 </article>
 
@@ -297,26 +329,6 @@ The shortcomings added to the KEV catalog are listed below -
   <p class='summary'>Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…</p>
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8rc5-4fr6-64pw" target="_blank" rel="noopener">Trivy Plugin Manager has Path Traversal that Allows Arbitrary File Write</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63328</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-
-Trivy&#x27;s plugin manager does not fully validate metadata from a plugin&#x27;s manifest before using it to construct filesystem paths under the plugin root (`~/.trivy/plugins`). A crafted plugin can cause Trivy to write its files (the manifest and the downloaded plugin binary) outside the plugin root, to an arbitrary location writable by the user running Trivy.
-
-Plugins are third-party binari…</p>
-
-        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -525,190 +537,6 @@ A host embeds bound &quot;Service&quot; objects that guest scripts call across t
 boundary through the transport dispatcher. The dispatcher passed the
 guest-supplied method name straight to `Object#public_send` on the bound
 object, with no restrict…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-95px-34x5-p37h" target="_blank" rel="noopener">MobSF has SSRF port restriction bypass in assetlinks_check</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-68927</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-
-MobSF&#x27;s Android App Link assetlinks checker validates only the manifest `android:host` value with `valid_host()`, but then appends the separate `android:port` value into the URL used for the server-side request. This bypasses the current port restriction in `valid_host()` and lets a crafted APK cause MobSF to fetch `http://host:&lt;attacker-port&gt;/.well-known/assetlinks.json` or `https://h…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q4gh-4ffp-5cg8" target="_blank" rel="noopener">MagicMirror socket payload secret placeholder expansion can disclose SECRET_* environment variables</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63640</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>### Summary
-When `hideConfigSecrets: true` is enabled, MagicMirror redacts `SECRET_*` environment placeholders in the HTTP `/config` response, but the shared node-helper socket dispatcher expands `**SECRET_NAME**` placeholders in every inbound socket payload before passing it to module helpers. Any client that can connect to a loaded module namespace can send a placeholder such as `**SECRET_API_KE…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c9fv-cgmm-2wg7" target="_blank" rel="noopener">LibreNMS Vulnerable to Remote Code Execution by Signal Alert Transportation module</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55182</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>### Summary
-A vulnerability has been identified that allows an authenticated administrator to execute arbitrary code on the host server. By adding an alert transport entry, an attacker with administrative privileges can execute malicious commands.
-
-### Details
-The vulnerability is caused by an unsafe `exec` call in `deliverAlert` function of `LibreNMS/Alert/Transport/Signal.php`. Escapes for the p…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w6x9-28jw-hq7j" target="_blank" rel="noopener">MagicMirror: ssrf calendar .js</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63643</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'># Vulnerability — SSRF via `ADD_CALENDAR` (MagicMirror² calendar)
-
-&gt; Analysis of the PoC `exploit-ssrf-calendar.js`.
-&gt; Target: `calendar/node_helper.js` of MagicMirror², socket.io namespace `/calendar`.
-
----
-
-## Identification
-
-| Field | Value |
-|-------|-------|
-| **PoC file** | `exploit-ssrf-calendar.js` |
-| **Endpoint** | socket.io namespace `/calendar`, notification `ADD_CALENDAR` |
-| **Precon…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-998g-7v5w-cr7g" target="_blank" rel="noopener">MagicMirror newsfeed Socket.IO notification allows blind server-side request forgery</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63642</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'># Vulnerability — Blind SSRF via `CHECK_ARTICLE_URL` (MagicMirror² newsfeed)
-
-&gt; Analysis of the PoC `exploit-ssrf-newsfeed.js`.
-&gt; Target: `newsfeed/node_helper.js` of MagicMirror², socket.io namespace `/newsfeed`.
-
----
-
-## Identification
-
-| Field | Value |
-|-------|-------|
-| **PoC file** | `exploit-ssrf-newsfeed.js` |
-| **Endpoint** | socket.io namespace `/newsfeed`, notification `CHECK_ARTICLE_U…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5m9f-rphj-c435" target="_blank" rel="noopener">RabbitMQ Java client: TrustEverythingTrustManager used by default in useSslProtocol() enables MITM</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63336</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Vulnerability Summary
-
-`com.rabbitmq.client.TrustEverythingTrustManager` accepts ANY TLS certificate (including null chains) and is used as the default trust manager when calling `ConnectionFactory.useSslProtocol()` without arguments. Combined with hostname verification being disabled by default, this enables trivial man-in-the-middle attacks.
-
-## Affected Components
-
-- `com.rabbitmq.client.Tru…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-68mj-5wr7-6fgg" target="_blank" rel="noopener">RabbitMQ Java client ValueReader: Oversized LongString/bytes length triggers OOM via unchecked allocation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69219</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-
-`ValueReader.readBytes()` allocates a byte array sized by a wire-declared content length without validating it against actual frame data. A malicious AMQP peer triggers OOM by declaring a ~2GB string/bytes field.
-
-## Vulnerable Code
-
-`src/main/java/com/rabbitmq/client/impl/ValueReader.java` lines 83-95:
-
-```java
-private static byte[] readBytes(final DataInputStream in) throws IOExcepti…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-93j5-89vc-pph4" target="_blank" rel="noopener">RabbitMQ Java client ValueReader: Unbounded recursive table/array nesting causes StackOverflowError DoS</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69220</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-
-`ValueReader.readTable()` and `readArray()` recursively call `readFieldValue()` with no depth limit. A malicious AMQP peer can crash the client JVM by sending a deeply nested table structure.
-
-## Vulnerable Code
-
-`src/main/java/com/rabbitmq/client/impl/ValueReader.java` lines 139-155 and 237-249:
-
-```java
-private static Map&lt;String, Object&gt; readTable(DataInputStream in) throws IOExcepti…</p>
 
         </article>
 
