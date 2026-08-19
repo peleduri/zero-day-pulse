@@ -1,86 +1,10 @@
 {
-  "generated": "2026-08-18T18:19:51.125241+00:00",
-  "total": 29,
-  "kev": 4,
-  "zero_day": 12,
+  "generated": "2026-08-19T00:32:41.653512+00:00",
+  "total": 47,
+  "kev": 0,
+  "zero_day": 27,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-33824",
-      "title": "CVE-2026-33824 \u2014 Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
-      "summary": "Vendor: Microsoft | Product: Internet Key Exchange (IKE) Service Extensions. Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-33824",
-      "published": "2026-08-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-33824"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59310",
-      "title": "CVE-2026-59310 \u2014 Broadcom VMware vCenter Path Traversal Vulnerability",
-      "summary": "Vendor: Broadcom | Product: VMware vCenter. Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-59310",
-      "published": "2026-08-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-59310"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-55040",
-      "title": "CVE-2026-55040 \u2014 Microsoft SharePoint Weak Authentication Vulnerability",
-      "summary": "Vendor: Microsoft | Product: SharePoint. Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-55040",
-      "published": "2026-08-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-55040"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-65400",
-      "title": "CVE-2026-65400 \u2014 Apple macOS Improper Authentication Vulnerability",
-      "summary": "Vendor: Apple | Product: macOS. Apple macOS contains an improper authentication vulnerability that could allow an attacker on the network to authenticate to Screen Sharing without valid credentials. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-65400",
-      "published": "2026-08-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-65400"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -122,6 +46,186 @@
       "tags": [
         "news",
         "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/67",
+      "title": "Security advisory: Pre-authentication RCE (SQL injection) in XPressEntry 3.7.7454 (Telaeris Inc)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in XPressEntry 3.7.7454 (Telaeris Inc). The research is published and a proof-of-concept is available. Pre-authentication RCE (SQL injection) (CVSS 9.8, pre-authentication) Telaeris XPressEntry 3.7.7454 runs its main HTTP API without authentication when RequireReaderCredentials is False, which is the default. The SaveVerifyActivity handler concatenates the sNotes parameter into...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/67",
+      "published": "2026-08-18T06:17:52+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/65",
+      "title": "Security advisory: Pre-authentication SYSTEM RCE (Zip-Slip plugin planting) in Output Messenger Server 2.0.x (>= 2.0.63) (Srimax Software (Output Technology))",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Output Messenger Server 2.0.x (>= 2.0.63) (Srimax Software (Output Technology)). The research is published and a proof-of-concept is available. Pre-authentication SYSTEM RCE (Zip-Slip plugin planting) (CVSS 9.8, pre-authentication) Output Messenger Server 2.0.x accepts XMPP connections on TCP 14121 with no SASL and no credentials; every connection is treated as...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/65",
+      "published": "2026-08-18T06:17:49+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/64",
+      "title": "Security advisory: Pre-authentication RCE (arbitrary file write) in RapidDeploy 5.2.2 (MidVision)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in RapidDeploy 5.2.2 (MidVision). The research is published and a proof-of-concept is available. Pre-authentication RCE (arbitrary file write) (CVSS 9.8, pre-authentication) MidVision RapidDeploy 5.2.2 ships a remote-agent template (midvision-remoting-server.xml) with host=0.0.0.0 and auth.servers commented out, making the JBoss Remoting layer network-reachable with no...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/64",
+      "published": "2026-08-18T06:17:47+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/61",
+      "title": "Security advisory: Pre-authentication RCE (default credentials + path traversal) in PulseNET Enterprise 6.0.3 (build 6975) (GE Vernova)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in PulseNET Enterprise 6.0.3 (build 6975) (GE Vernova). The research is published and a proof-of-concept is available. Pre-authentication RCE (default credentials + path traversal) (CVSS 9.8, pre-authentication) GE Vernova PulseNET Enterprise 6.0.3 is the network-management software electric utilities use to monitor and manage the industrial wireless networks connecting...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/61",
+      "published": "2026-08-18T06:17:42+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/60",
+      "title": "Security advisory: Pre-authentication RCE (BinaryFormatter deserialization) in Cinegy Cinegize 2026-02-05 installer (Cinegy GmbH)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Cinegy Cinegize 2026-02-05 installer (Cinegy GmbH). The research is published and a proof-of-concept is available. Pre-authentication RCE (BinaryFormatter deserialization) (CVSS 9.8, pre-authentication) Cinegy Cinegize (2026-02-05 installer) registers a Windows service listening on TCP 51140 with a DotNetty pipeline that deserializes .NET BinaryFormatter objects before the...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/60",
+      "published": "2026-08-18T06:17:41+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/59",
+      "title": "Security advisory: Pre-authentication RCE in Wyn Enterprise 9.1.00145.0 (Mescius (GrapeCity))",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Wyn Enterprise 9.1.00145.0 (Mescius (GrapeCity)). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) Wyn Enterprise 9.1.00145.0 exposes an unauthenticated root RCE chain of three vulnerabilities: JWT signature validation is skipped (parse-only ReadToken) with a hardcoded integration client secret, producing an...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/59",
+      "published": "2026-08-18T06:17:40+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/58",
+      "title": "Security advisory: Pre-authentication RCE (default credentials) in ObjectDB 2.9.5 server mode (ObjectDB Software)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in ObjectDB 2.9.5 server mode (ObjectDB Software). The research is published and a proof-of-concept is available. Pre-authentication RCE (default credentials) (CVSS 9.8, pre-authentication) ObjectDB 2.9.5 server mode (port 6136, proprietary binary protocol) has a critical remote code execution vulnerability: JDOQL query filter evaluation allows arbitrary static-method...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/58",
+      "published": "2026-08-18T06:17:38+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/57",
+      "title": "Security advisory: Pre-authentication RCE in nanoDLP stable build #10729 (Nano3Dtech)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in nanoDLP stable build #10729 (Nano3Dtech). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) nanoDLP exposes an unauthenticated remote code execution vulnerability. The Guest (unauthenticated) endpoint POST /formula evaluates user-supplied JavaScript in an embedded Otto JS sandbox, which exposes a live nanoDLP...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/57",
+      "published": "2026-08-18T06:17:37+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/56",
+      "title": "Security advisory: Pre-authentication SYSTEM RCE in MAPS SCADA 4.0.5.5 (Adroit Technologies)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in MAPS SCADA 4.0.5.5 (Adroit Technologies). The research is published and a proof-of-concept is available. Pre-authentication SYSTEM RCE (CVSS 9.8, pre-authentication) MAPS SCADA 4.0.5.5 exposes an IIS WebService (default port 8878) whose WSDataProvider.asmx endpoints deserialize the caller-supplied byte array before any authentication. Serializer.BinaryDeserialization...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/56",
+      "published": "2026-08-18T06:17:35+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/55",
+      "title": "Security advisory: Pre-authentication RCE in Confluent Platform (ksqlDB) 7.9.1-ce (Confluent, Inc.)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Confluent Platform (ksqlDB) 7.9.1-ce (Confluent, Inc.). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) Confluent Platform 7.9.1-ce exposes an unauthenticated remote code execution chain in its default configuration. ksqlDB (HTTP 8089), the Kafka broker (9092 PLAINTEXT, no SASL) and Kafka Connect (8083) all...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/55",
+      "published": "2026-08-18T06:17:34+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/54",
+      "title": "Security advisory: Pre-authentication SYSTEM RCE in iMonnit Express 4.0.5.5 (Monnit / iMonnit)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in iMonnit Express 4.0.5.5 (Monnit / iMonnit). The research is published and a proof-of-concept is available. Pre-authentication SYSTEM RCE (CVSS 9.8, pre-authentication) iMonnit Express 4.0.5.5 is an ASP.NET Core application running as a Windows service with LocalSystem privileges, with no global [Authorize] filter. Three flaws combine into a fully unauthenticated root RCE...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/54",
+      "published": "2026-08-18T06:17:32+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/53",
+      "title": "Security advisory: Pre-authentication RCE in Ontotext GraphDB 11.4.3 Free edition (Ontotext / Graphwise)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Ontotext GraphDB 11.4.3 Free edition (Ontotext / Graphwise). The research is published and a proof-of-concept is available. Pre-authentication RCE (CVSS 9.8, pre-authentication) Ontotext GraphDB 11.4.3 Free edition defaults to security=false, which bypasses the entire Spring Security filter chain. As a result, /rest/repositories/ruleset/upload and /repositories/* are...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/53",
+      "published": "2026-08-18T06:17:31+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -273,6 +377,249 @@
       "is_high_severity": false
     },
     {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/66",
+      "title": "Security advisory: Authenticated RCE (SQL injection) in Scrutinizer 19.7.0 (Plixer)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Scrutinizer 19.7.0 (Plixer). The research is published and a proof-of-concept is available. Authenticated RCE (SQL injection) (CVSS 8.8, authenticated) Plixer Scrutinizer 19.7.0 concatenates the HTTP orderBy parameter directly into a SQL ORDER BY clause with no escaping in the adminEditLang handler. The default configuration includes the pg_cron extension and a PostgreSQL...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/66",
+      "published": "2026-08-18T06:17:51+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/63",
+      "title": "Security advisory: Authenticated RCE (second-order SQL injection) in Lansweeper 12.2.1.0 (web reports 12.2.1.6) (Lansweeper)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Lansweeper 12.2.1.0 (web reports 12.2.1.6) (Lansweeper). The research is published and a proof-of-concept is available. Authenticated RCE (second-order SQL injection) (CVSS 8.8, authenticated) Lansweeper 12.2.1.0 contains a second-order SQL injection in the LicenseActions console. A SQL Server sub-server name containing a single quote is stored and later concatenated...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/63",
+      "published": "2026-08-18T06:17:46+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/62",
+      "title": "Security advisory: Authenticated RCE (command injection) in Kerio Connect 10.0.9 Patch 2 (build 10320) (GFI Software)",
+      "summary": "Posted by disclosure via Fulldisclosure on Aug 17 0day Rubbish Research Team is publicly disclosing a vulnerability in Kerio Connect 10.0.9 Patch 2 (build 10320) (GFI Software). The research is published and a proof-of-concept is available. Authenticated RCE (command injection) (CVSS 8.8, authenticated) Kerio Connect 10.0.9 Patch 2 contains a command-injection vulnerability in the WebAdmin JSON-RPC method Server.startEncryption. The password parameter is double-quoted and concatenated...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/62",
+      "published": "2026-08-18T06:17:44+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-73974",
+      "title": "linuxfabrik-lib: Arbitrary root file read via live --test argument (lib.lftest) across sudoers-whitelisted plugins (LPE)",
+      "summary": "## Summary\nEvery Linuxfabrik check plugin that supports the shared `--test` argument (routed through `lib.lftest.test()`) will, when `--test` is supplied, treat the first CSV element as a filesystem path and read its full contents as the plugin's simulated STDOUT \u2014 running as root when the plugin is invoked through the shipped `nagios`/`icinga` sudoers allowlist. `--test` is a **live production argument** (centrally mapped to `argparse.SUPPRESS`, so it is hidden from `--help` but still accepted on the command line), not a build-time-only gate. This yields an arbitrary root file-read primitive (full disclosure on `deb-updates`; filtered disclosure / existence-and-readability oracle on ~22 other whitelisted plugins), i.e. local privilege escalation from the `nagios` account to root.\n\n## Root Cause\n- `lib.lftest.test(args)` (`lftest.py` lines 659-664): `stdout = args[0]`; `if stdout and os.path.isfile(stdout): _, stdout = disk.read_file(stdout)`. Element[1] (stderr channel) is read the same way. There is **no path confinement** on the supplied path.\n- `check-plugins/deb-updates/deb-updates`: `--test` is registered with `type=lib.args.csv` (lines 78-82). When supplied, control flows to `stdout, _, retc = lib.lftest.test(args.TEST)` (line 143), bypassing the apt path (`if args.TEST is None:` at 121). Each returned line is stored as a `package` row and, under the default `--query='1'` (`WHERE 1`, matches all rows), every row is printed via `'\\n* '.join([row['package'] ...])` \u2192 `lib.base.oao(...)`.\n- The same `--test`/`lib.lftest.test()` mechanism exists identically on ~22 whitelisted plugins (e.g. `docker-info`), each performing a root `open()`/read of the attacker-named path. Disclosure degree varies by each plugin's downstream parser: full (`deb-updates`), filtered (`docker-info` echoes lines containing `warning:`/`error:`; `openvpn-client-list` echoes `CLIENT_LIST` lines), or existence/readability oracle (JSON parsers).\n\n## Impact\nAn attacker controlling the low-privil",
+      "link": "https://github.com/advisories/GHSA-rh9c-rqvg-f7pr",
+      "published": "2026-08-18T21:18:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73974"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71308",
+      "title": "Lemur: Unchecked `replaces[]` lets any user silence notifications and hijack auto-rotation for arbitrary certificates",
+      "summary": "## Summary\n\nRepo under test: https://github.com/Netflix/lemur\n\nThe certificate create and upload endpoints accept a `replaces[]` (alias `replacements`) array that is resolved to live `Certificate` ORM objects with no ownership or `CertificatePermission` check on the referenced certificates. The SQLAlchemy `Certificate.replaces` append listener then immediately sets `victim.notify = False` and populates `victim.replaced`. From that point the victim certificate is excluded from auto-reissue, its expiration notifications are silenced, and the periodic `certificate_rotate` Celery task deploys the attacker's certificate (`endpoint.certificate.replaced[0]`) onto every endpoint serving the victim certificate.\n\nAny authenticated non-read-only user can therefore silently substitute their own certificate onto production load balancers and Kubernetes secrets they hold no role on, while suppressing the legitimate certificate's lifecycle automation.\n\n## Affected route\n\n`POST /api/1/certificates`\n`POST /api/1/certificates/upload`\n`PUT /api/1/certificates/<id>`\n\n## Affected code\n\n- [`lemur/certificates/schemas.py:402`](https://github.com/Netflix/lemur/blob/main/lemur/certificates/schemas.py#L402) \u2014 `replaces = fields.Nested(AssociatedCertificateSchema, missing=[], many=True)` accepted on create/upload/edit\n- [`lemur/schemas.py:152`](https://github.com/Netflix/lemur/blob/main/lemur/schemas.py#L152) \u2014 `AssociatedCertificateSchema` resolves any certificate by id/name via `fetch_objects(Certificate, data)` with no permission check\n- [`lemur/certificates/views.py:651`](https://github.com/Netflix/lemur/blob/main/lemur/certificates/views.py#L651) \u2014 only `StrictRolePermission().can()` gates `/certificates/upload`; no check on `data['replaces']`\n- [`lemur/certificates/models.py:506`](https://github.com/Netflix/lemur/blob/main/lemur/certificates/models.py#L506) \u2014 `@event.listens_for(Certificate.replaces, 'append')` sets `value.notify = False` on the victim\n- [`lemur/certificates/service.py:",
+      "link": "https://github.com/advisories/GHSA-cfh6-pv5c-38jv",
+      "published": "2026-08-18T20:51:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71308"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71307",
+      "title": "Lemur: Authenticated low-privilege users can read plaintext destination credentials (SFTP password / private-key passphrase) via the destinations API",
+      "summary": "### Summary\nLemur's destination read endpoints -- `GET /api/1/destinations` and `GET /api/1/destinations/<id>` -- return the full set of stored plugin option values to any authenticated user, with no authorization check and no redaction of secret-bearing options. The sibling write endpoints (`POST`/`PUT`/`DELETE`) are gated with `@admin_permission.require(http_exception=403)`, but the two read handlers are protected only by `login_required` (inherited from `AuthenticatedResource`). They do not even exclude `read-only` users.\n\nThe built-in SFTP destination plugin (`sftp-destination`) stores its `password` and `privateKeyPass` options in cleartext in the `destinations.options` column (the plugin's own docstring states \"Passwords are not encrypted and stored as a plain text.\"). Because `DestinationOutputSchema` serializes every option value verbatim, any authenticated principal -- including a `read-only` user -- can retrieve these credentials and use them to authenticate to the remote SFTP server to which Lemur deploys certificates.\n\n\n### Details\nRead endpoints lack the authorization that their write siblings enforce:\n\n`lemur/destinations/views.py`\n```python\nclass DestinationsList(AuthenticatedResource):\n    @validate_schema(None, destinations_output_schema)\n    def get(self):                       # <-- only login_required; no admin/read-only gate\n        ...\n        return service.render(args)\n\n    @validate_schema(destination_input_schema, destination_output_schema)\n    @admin_permission.require(http_exception=403)   # write path IS gated\n    def post(self, data=None): ...\n\nclass Destinations(AuthenticatedResource):\n    @validate_schema(None, destination_output_schema)\n    def get(self, destination_id):       # <-- only login_required; no admin/read-only gate\n        return service.get(destination_id)\n\n    @validate_schema(destination_input_schema, destination_output_schema)\n    @admin_permission.require(http_exception=403)   # write path IS gated\n    def put(self, ",
+      "link": "https://github.com/advisories/GHSA-6c8m-q6g9-vrw3",
+      "published": "2026-08-18T20:51:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71307"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71303",
+      "title": "Lemur: Incomplete fix for GHSA-v2wp-frmc-5q3v -- ACME authority update endpoint allows non-admin to replace `acme_url` with internal IP, bypassing allowlist",
+      "summary": "### Summary\n\nThe fix for GHSA-v2wp-frmc-5q3v added `_validate_acme_url()` to reject `acme_url` values not in `ACME_DIRECTORY_HOST_ALLOWLIST`, but the validation is only called at **authority creation time** (POST). The authority **update** endpoint (`PUT /api/1/authorities/<id>`) accepts and stores arbitrary `options` -- including a modified `acme_url` -- without invoking the allowlist check. Any user with an authority role (granted by an admin to allow issuing certificates via that authority) can therefore overwrite the stored `acme_url` with an internal IP or IMDS endpoint. The next certificate issuance via that authority causes Lemur's backend to fetch the attacker-controlled URL, achieving SSRF.\n\n### Details\n\n**Where the fix lives (POST path -- protected):**\n\n`lemur/plugins/lemur_acme/plugin.py` lines 333-337 (ACMEIssuerPlugin.create_authority):\n```python\nfor option in plugin_options:\n    if option.get(\"name\") == \"certificate\":\n        acme_root = option.get(\"value\")\n    if option.get(\"name\") == \"acme_url\":\n        _validate_acme_url(option.get(\"value\", \"\"))   # allowlist enforced\n```\n\n`_validate_acme_url` at line 35:\n```python\ndef _validate_acme_url(url):\n    \"\"\"Reject acme_url values that are not in the configured allowlist.\n\n    Called at authority creation time only -- existing authorities in the DB\n    were already trusted when they were created and are not re-validated.\n    \"\"\"\n    allowed_hosts = current_app.config.get(\n        \"ACME_DIRECTORY_HOST_ALLOWLIST\",\n        {\"acme-v02.api.letsencrypt.org\", ...},\n    )\n    parsed = urlparse(url)\n    if parsed.scheme != \"https\" or parsed.hostname not in allowed_hosts:\n        raise InvalidConfiguration(...)\n```\n\n**Where the gap is (PUT path -- unprotected):**\n\n`lemur/authorities/views.py` lines 405-424 (`Authorities.put`):\n```python\nauthority = service.get(authority_id)\nroles = [x.name for x in authority.roles]\npermission = AuthorityPermission(authority_id, roles)\n\nif not permission.can() or not StrictRolePermiss",
+      "link": "https://github.com/advisories/GHSA-v5rc-cpwc-cfpr",
+      "published": "2026-08-18T20:51:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71303"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70667",
+      "title": "Lemur: SSRF protection in certificate revocation checking bypassable via HTTP redirects and DNS rebinding (incomplete fix for GHSA-54vg-pfh7-jq95)",
+      "summary": "## Summary\nThe SSRF mitigation added for GHSA-54vg-pfh7-jq95 (`_validate_revocation_url()` in `lemur\n/certificates/verify.py`) can be bypassed. An operator-role user who uploads a certificate with attacker-controlled CRL/OCSP extensions can still make Lemur reach internal destinations (RFC1918, loopback, link-local 169.254.169.254) during verification.\n\n## Affected version\nTested against `main` (the commit that introduced `_validate_revocation_url`). The 1.9.2 release predates that guard and is vulnerable to the original SSRF (GHSA-54vg-pfh7-jq95) directly; this bypass applies to the unreleased mitigation in `main`. Please map the affected range to whichever release will first contain `_validate_revocation_url`.\n\n## Bypass 1 \u2014 HTTP redirect (deterministic)\nThe guard validates only the URL in the certificate; the CRL fetch then follows redirects without re-validating the target:\n```python\n# lemur/certificates/verify.py:174\nresponse = requests.get(point, timeout=(3.05, 6))   \n```\nThe attacker hosts the CRL URL on a public host they control (passes the guard); that host returns `302 Location: http://169.254.169.254/...`. `requests` follows it to the internal target the guard never inspected.\n\n## Bypass 2 \u2014 DNS rebinding / TOCTOU (probabilistic)\nThe guard resolves once during validation; the fetch re-resolves independently:\n```python\n# lemur/certificates/verify.py:51\naddr = ipaddress.ip_address(socket.gethostbyname(hostname))\n```\n\nA low-TTL attacker name that answers a public IP at check time and an internal IP at fetch time passes the guard but is fetched internally. Same gap affects the OCSP path (`openssl ocsp -url <url>`, verify.py:90-99).\n\n## Relationship to GHSA-54vg-pfh7-jq95\nIncomplete-fix of that mitigation, not a duplicate. Bypass 1 is not mentioned there; bypass 2 is the rebinding gap that advisory's remediation text anticipated (\"pins the resolved IP\") but the code does not implement.\n\n## Affected endpoint\n`POST /api/1/certificates/upload` (operator role) \u2192 ",
+      "link": "https://github.com/advisories/GHSA-f3qq-49m6-rw8f",
+      "published": "2026-08-18T20:51:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70667"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70666",
+      "title": "Lemur: Server-Side Request Forgery via the ACME client following server-controlled URLs",
+      "summary": "### Summary\nThe ACME client (used to issue certificates from Let's Encrypt / Google Public CA / private ACME CAs) connects to an `acme_url`, then issues requests to URLs that the **ACME server returns** in its directory/order/authorization/finalize responses - this is the classic ACME-client SSRF (RFC 8555 design). Lemur validates `acme_url` against an allowlist of public ACME directories, but **only at authority creation**. The authority UPDATE path (`PUT /authorities/<id>`) accepts a new `options` blob with an arbitrary `acme_url` and never re-validates. An attacker who is a member of an authority's role can repoint an existing ACME authority at a malicious ACME server they control, which returns internal URLs in its responses - coercing Lemur into making JWS-signed POST requests to internal services during the next certificate issuance.\n\n### Detail\n**Defect A - allowlist only at creation.**\n`_validate_acme_url` (`lemur/plugins/lemur_acme/plugin.py:35-53`) restricts the host to `{acme-v02.api.letsencrypt.org, acme-staging-v02.api.letsencrypt.org, dv.acme-v02.api.pki.goog}`. It runs **only inside `create_authority`** (lines 337, 481). The update path stores `options` verbatim:\n```python\n# lemur/authorities/views.py:417-424  (Authorities.put)\nreturn service.update(\n    authority_id,\n    owner=data[\"owner\"], description=data[\"description\"],\n    active=data[\"active\"], roles=data[\"roles\"],\n    options=data.get(\"options\")          # <- acme_url lives here, NO re-validation\n)\n```\n`AuthorityUpdateSchema.options = fields.String()` (`authorities/schemas.py:101`) applies no validation. The docstring of `_validate_acme_url` even admits: *\"existing authorities in the DB were already trusted when they were created and are not re-validated.\"*\n\n**Defect B - ACME client follows server-supplied URLs.**\n`setup_acme_client_no_retry` (`acme_handlers.py:161-162, 188-202`) reads `acme_url` from stored authority options and creates an ACME client. Per RFC 8555, the client:\n1. `get_direct",
+      "link": "https://github.com/advisories/GHSA-xpmj-wjcp-6pww",
+      "published": "2026-08-18T20:51:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70666"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62988",
+      "title": "Froxlor: Credential and 2FA secret disclosure via Froxlor API endpoints",
+      "summary": "## Summary\n\nSeveral Froxlor API command classes return sensitive authentication material in JSON API responses. The affected endpoints retrieve full database rows using `SELECT *`, `SELECT alias.*`, or equivalent full-row queries, then return the results directly through `$this->response(...)` without removing credential-related fields.\n\nThe exposed fields include password hashes for customers, administrators, and FTP users, as well as TOTP 2FA seed material for administrator and customer accounts.\n\nThis exposes credential-equivalent data to API clients that should not receive it. Password hashes can be cracked offline and reused for account takeover, while exposed TOTP seeds allow generation of valid 2FA codes for affected accounts. When both a password hash and TOTP seed are exposed for the same account, the vulnerability can defeat both authentication factors if the password hash is cracked or the password is otherwise obtained.\n\n## Details\n\nThe affected API classes retrieve entire database rows and return them without filtering sensitive fields:\n\n### `lib/Froxlor/Api/Commands/Customers.php`\n\n`Customers.get()` and `Customers.listing()` select and return customer rows containing sensitive fields, including:\n\n* `password`\n* `type_2fa`\n* `data_2fa`\n\nWhen `type_2fa = 2`, the `data_2fa` value represents the Base32-encoded TOTP seed used by the customer's authenticator application.\n\nThe result is returned through `$this->response($result)` or `$this->response(['list' => $result])` without removing these fields.\n\n### `lib/Froxlor/Api/Commands/Admins.php`\n\n`Admins.get()` and `Admins.listing()` return administrator rows containing sensitive fields, including:\n\n* `password`\n* `type_2fa`\n* `data_2fa`\n\nWhen `type_2fa = 2`, the `data_2fa` value represents the Base32-encoded TOTP seed used by the administrator's authenticator application.\n\nThese fields are not stripped before returning the API response.\n\n### `lib/Froxlor/Api/Commands/Ftps.php`\n\n`Ftps.get()` and `Ftps.listing()",
+      "link": "https://github.com/advisories/GHSA-7788-ghfq-c6mh",
+      "published": "2026-08-18T20:48:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62988"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55593",
+      "title": "Froxlor has CSRF Vulnerability in AJAX Endpoint \u2014 Missing Cross-Site Request Forgery Protection",
+      "summary": "## Summary\n\nThe Froxlor AJAX endpoint (`lib/ajax.php`) is missing Cross-Site Request Forgery (CSRF) protection. While the main application (`lib/init.php`) enforces CSRF token validation on all state-changing HTTP requests (POST/PUT/PATCH/DELETE), the standalone `lib/ajax.php` endpoint bypasses this mechanism entirely, validating only the user's session. An attacker can craft a malicious webpage that, when visited by an authenticated Froxlor administrator, silently modifies API key properties (e.g., adding the attacker's IP to the `allowed_from` whitelist or extending the `valid_until` expiration).\n\n---\n\n## Affected Component\n\n- **File:** `lib/ajax.php` \u2014 the AJAX endpoint entry point (bypasses `lib/init.php`)\n- **File:** `lib/Froxlor/Ajax/Ajax.php:66-92` \u2014 `Ajax::handle()` (no CSRF check before routing)\n- **File:** `lib/Froxlor/Ajax/Ajax.php:257-315` \u2014 `Ajax::editApiKey()` (writes to database without CSRF check)\n- **Version:** Froxlor 2.3.7 (likely all prior 2.x versions)\n\n---\n\n## Complete Call Chain: Entry Point \u2192 Vulnerable Code\n\n### Step 1: Entry Point \u2014 `lib/ajax.php` (standalone bootstrap, bypasses `lib/init.php`)\n\n```php\n// lib/ajax.php:26-47\nnamespace Froxlor;\n\nuse Froxlor\\Ajax\\Ajax;\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\nrequire_once dirname(__DIR__) . '/lib/userdata.inc.php';\nrequire_once dirname(__DIR__) . '/lib/functions.php';\nrequire_once dirname(__DIR__) . '/lib/tables.inc.php';\n\n// CRITICAL: This file does NOT include lib/init.php\n// Therefore: NO CSRF token is checked before processing the request\necho (new Ajax)->handle();\n```\n\n**Contrast with normal flow:** All admin/customer pages (e.g., `admin_customers.php`, `customer_domains.php`) do:\n```php\nconst AREA = 'admin';\nrequire __DIR__ . '/lib/init.php';  // <-- This enforces CSRF at lines 363-369\n```\n\n### Step 2: Ajax Constructor \u2014 Session Created, No CSRF Check\n\n```php\n// lib/Froxlor/Ajax/Ajax.php:54-61\npublic function __construct()\n{\n    $this->action = Request::any('action');  //",
+      "link": "https://github.com/advisories/GHSA-xpr4-8vp6-c87j",
+      "published": "2026-08-18T20:48:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55593"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54347",
+      "title": "Froxlor: Stored XSS in DNS TXT Record Content Allows Customer-to-Admin Account Takeover",
+      "summary": "### Summary\n\nA stored Cross-Site Scripting (XSS) vulnerability in Froxlor's DNS editor allows an authenticated user with DNS editor access (customer role) to inject arbitrary JavaScript into any administrator's browser session. When an administrator views the DNS configuration of an affected domain, the payload executes automatically \u2014 enabling complete admin account takeover, credential theft, and full server compromise.\n\n---\n\n### Details\n\nThree code locations combine to create this vulnerability:\n\n**1. Input validation does not strip HTML special characters** \u2014 `lib/Froxlor/Api/Commands/DomainZones.php:158`\n\n```php\n// Only strips non-printable chars. < and > (0x3C/0x3E) pass through unmodified.\n$content = preg_replace('/[^\\x09\\x20-\\x7E]/', '', $content);\n$content = Dns::encloseTXTContent($content);  // only wraps in quotes, no HTML encoding\n```\n\n**2. Display callback returns raw HTML without escaping** \u2014 `lib/Froxlor/UI/Callbacks/Text.php:95`\n\n```php\npublic static function wordwrap(array $attributes): string {\n    return wordwrap($attributes['data'], 100, '<br>', true);  // no htmlspecialchars()\n}\n```\n\n**3. Twig template renders the callback output with `|raw`** \u2014 `templates/Froxlor/table/table.html.twig:57`\n\n```twig\n{% else %}\n    {{ td.data|raw }}   {# string from wordwrap() \u2014 rendered without escaping #}\n{% endif %}\n```\n\nThe DNS editor table assigns `[Text::class, 'wordwrap']` as the callback for the `content` column (`lib/tablelisting/tablelisting.dns.php:58`). The callback returns a non-iterable string, so the template falls to the `|raw` branch.\n\nAdditionally, the Content Security Policy header (`lib/Froxlor/UI/Panel/UI.php:140`) includes `'unsafe-inline'`, rendering CSP completely ineffective as a mitigation:\n\n```\nContent-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; ...\n```\n\n---\n\n### PoC\n<img width=\"2025\" height=\"1144\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f6808b24-c4b6-4bd2-9673-d7ddc4939794\" /",
+      "link": "https://github.com/advisories/GHSA-43gm-9rr3-cx7g",
+      "published": "2026-08-18T20:47:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54347"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54723",
+      "title": "devpi-server may leak database contents",
+      "summary": "### Impact\n\nIf the replication protocol is enabled by using the ``primary`` (or deprecated ``master``) role for a server instance, then the ``+changelog`` URL route can be used to read the complete database content including password hashes, and the ids and salts of tokens from ``devpi-tokens`` by using a trivially modified GET request.\n\nThe leaked hashes use the ``argon2`` algorithm, so they are not immediately at risk by brute-force methods, but dictionary attacks are feasible. If a database leak could have happened, it is advised to change the passwords after a patched version or other mitigation is in place.\n\nWhen ``devpi-tokens`` is in use, the quality of the server secret is important. It might be possible to derive the server secret if actual tokens are public by using similar techniques to finding the password for a hash. If a database leak could have happened and any tokens are public, it is advised to change the server secret.\n\nBesides the information leak this can be used to produce significant CPU, IO and bandwidth usage depending on the database size.\n\n### Patches\n\nThe logic bug causing this issue is fixed with devpi-server 6.20.2 and devpi-server 7.0.0b3.\n\n### Workarounds\n\nWhen replication isn't used the role can explicitly be set to ``standalone``.\n\nIf the server instance is exclusively served through ``nginx`` with the ``devpi-lockdown`` plugin, the request is redirected to the login form due to missing user information. There is no known exploit in this case.",
+      "link": "https://github.com/advisories/GHSA-m5pq-69xg-vcq3",
+      "published": "2026-08-18T20:41:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54723"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55107",
+      "title": "kobako Sandbox Escape: guest eval reaches host RCE via method_missing \u2192 public_send (any bound Service)",
+      "summary": "### Summary\nA guest mruby script running inside the Kobako sandbox can execute arbitrary\nRuby in the host process, fully escaping the sandbox.\n\n### Details\nA host embeds bound \"Service\" objects that guest scripts call across the wasm\nboundary through the transport dispatcher. The dispatcher passed the\nguest-supplied method name straight to `Object#public_send` on the bound\nobject, with no restriction to the object's own methods:\n\n```ruby\ntarget.public_send(method.to_sym, *args, **kwargs, &block)\n```\n\n`public_send` can invoke any public method, including Ruby's ambient\nreflection surface. A guest pivots through the public `send` into otherwise\nprivate Kernel methods: a dispatch request with `method = \"send\"` and\n`args = [:eval, \"<ruby>\"]` evaluates to `target.send(:eval, \"<ruby>\")`,\nrunning attacker-controlled Ruby in the host. Any bound Service object is\nsufficient \u2014 no Service-specific behavior is required.\n\n### Proof of Concept\nA guest call equivalent to:\n\n```\nService.send(:eval, \"<arbitrary host ruby>\")\n```\n\nexecutes in the host process and can read or modify host state, spawn\nprocesses, and so on.\n\n### Impact\nComplete sandbox escape leading to remote code execution in the host process,\ndefeating the gem's central guarantee of isolating untrusted mruby scripts.\nAny deployment that runs untrusted or attacker-influenced scripts is affected.\nAll released versions (0.1.0 through 0.9.0) are vulnerable; the dispatcher\ncarried the same unguarded `public_send` sink under three successive names\n(`registry` \u2192 `rpc` \u2192 `transport`).\n\n### Patches\nFixed in 0.9.1. The dispatcher now rejects any method whose resolved owner is\na core/meta module (`BasicObject`, `Kernel`, `Object`, `Module`, `Class`), so\nonly methods the bound object itself defines \u2014 or dynamically handles via\n`method_missing` \u2014 remain reachable. The ambient reflection methods (`send`,\n`__send__`, `public_send`, `instance_eval`, `instance_exec`, `method`,\n`instance_variable_get`, \u2026) are all owned by those modules ",
+      "link": "https://github.com/advisories/GHSA-7pwq-q9jf-539h",
+      "published": "2026-08-18T20:09:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55107"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-68927",
       "title": "MobSF has SSRF port restriction bypass in assetlinks_check",
       "summary": "## Summary\n\nMobSF's Android App Link assetlinks checker validates only the manifest `android:host` value with `valid_host()`, but then appends the separate `android:port` value into the URL used for the server-side request. This bypasses the current port restriction in `valid_host()` and lets a crafted APK cause MobSF to fetch `http://host:<attacker-port>/.well-known/assetlinks.json` or `https://host:<attacker-port>/.well-known/assetlinks.json`.\n\n## Impact\n\nAn authenticated user who can upload or trigger analysis of a crafted APK can cause the MobSF server to make an outbound request to an attacker-selected port during Android manifest analysis. When the host is controlled by the attacker and uses DNS rebinding, the validation lookup can resolve to a public IP while the later HTTP client lookup resolves to an internal address, allowing SSRF to internal services on non-80/443 ports.\n\nThis is not arbitrary URL SSRF. The path remains fixed to `/.well-known/assetlinks.json`, and redirects are disabled. The bypass is that the final fetched URL is assembled after the host-only validation, so the current port guard is not applied to the actual URL.\n\n## Root cause\n\n`valid_host()` rejects ports other than 80 and 443 when a port is included in the string being validated:\n\n```python\nport = parsed.port\n...\nif port and port not in (80, 443):\n    return False\n```\n\nIn `get_browsable_activities()`, only the host attribute is passed to `valid_host()`:\n\n```python\nhost = data.getAttribute(f'{ns}:host')\nport = data.getAttribute(f'{ns}:port')\n...\nif not valid_host(host):\n    logger.warning('Invalid Host: %s', host)\n    continue\nshost = f'{scheme}://{host}'\nif port and is_number(port):\n    c_url = f'{shost}:{port}{WELL_KNOWN_PATH}'\nelse:\n    c_url = f'{shost}{WELL_KNOWN_PATH}'\nwell_known[c_url] = shost\n```\n\n`_check_url()` then fetches the assembled URL after checking only path, query, and params:\n\n```python\npurl = urlparse(url)\nif (purl.path != WELL_KNOWN_PATH\n    or len(purl.query) > 0\n",
@@ -412,76 +759,6 @@
       ],
       "cve_ids": [
         "CVE-2026-69220"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-64849",
-      "title": "MLflow: Unauthenticated full-read SSRF in webhook delivery: _validate_webhook_url bypassed via unvalidated HTTP redirects (and DNS rebinding)",
-      "summary": "### Summary\nThe default MLflow Tracking Server (`mlflow server`, no authentication, default SQLite backend) exposes the model-registry webhooks API unauthenticated, including a synchronous `POST /api/2.0/mlflow/webhooks/{id}/test` endpoint that returns the upstream response status and body to the caller. The SSRF guard added in PR #20747 (`_validate_webhook_url`, shipped in 3.10.0) resolves the webhook hostname and rejects non-public IPs, but it is bypassable: delivery follows HTTP redirects (no `allow_redirects=False`) and never pins the validated IP. An attacker hosts a public HTTPS endpoint that passes the guard and returns `302 Location: http://169.254.169.254/...` (or `http://127.0.0.1:...`); MLflow follows it and never re-validates the redirect target. Because `/test` reflects the response body, this is an unauthenticated full-read SSRF on a default server.\n\n### Details\nThree facts combine:\n\n1. Webhook endpoints are unauthenticated on a default server. The only webhook authorization lives in the optional auth plugin (`mlflow/server/auth/__init__.py`, `WEBHOOK_BEFORE_REQUEST_HANDLERS`), which is not loaded by default.\n\n2. The guard validates but pins nothing \u2014 `mlflow/utils/validation.py` `_validate_webhook_url`:\n```python\nschemes = _MLFLOW_WEBHOOK_ALLOWED_SCHEMES.get()        # default [\"https\"]\nif parsed_url.scheme not in schemes: raise ...\nif not _MLFLOW_WEBHOOK_ALLOW_PRIVATE_IPS.get():        # default False\n    for addr_info in socket.getaddrinfo(hostname, None):\n        ip = ipaddress.ip_address(addr_info[4][0])\n        if not ip.is_global: raise ...                 # blocks RFC1918/loopback/link-local/metadata\n```\nThe resolved IP is never carried into the connection.\n\n3. Delivery follows redirects and re-resolves with no pinning \u2014 mlflow/webhooks/delivery.py:\n```python\ndef _create_webhook_session():\n    adapter = HTTPAdapter(max_retries=retry_strategy)  # retry only; no IP pinning\n    ...\ndef _send_webhook_request(webhook, payload, event, session):\n    _",
-      "link": "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
-      "published": "2026-08-17T21:58:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-64849"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56677",
-      "title": "9Router: Authenticated Server-Side Request Forgery (SSRF) via OIDC Provider Test Endpoint",
-      "summary": "### Summary\n\nA Server-Side Request Forgery (SSRF) vulnerability exists in the 9Router dashboard via the `/api/auth/oidc/test` endpoint. The application accepts a user-controlled URL string through the `issuerUrl` parameter and performs an outbound HTTP request without validating if the destination IP belongs to a restricted internal network range.\n\nNotably, this endpoint can be accessed without active session authentication (Unauthenticated), allowing any remote actor with network visibility to the dashboard API endpoints to trigger outbound infrastructure connections.\n\nDepending on the state and response of the internal port targeted, this flaw exhibits two distinct behaviors:\n\n1. **Port Scanning / Blind SSRF (Non-OIDC structures):** Probing internal ports that are closed or running non-HTTP/non-OIDC services (e.g., SSH, Databases) forces predictable application behavior changes (e.g., structural timeout or clear JSON parsing error messages like \"Unexpected token...\"), allowing internal network reconnaissance.\n2. **Full Data Feed Manipulation (OIDC matching structures):** If the targeted internal service responds with a valid OpenID configuration document structure, the backend successfully processes, parses, and reflects the internal properties back to the client, confirming partial data control.\n\n---\n\n### Vulnerable Code Details\n\n- **Classification:** VE-Class 4 \u2014 OIDC SSRF via issuerUrl (Unauthenticated)\n- **File Path:** `src/app/api/auth/oidc/test/route.js`\n- **Vulnerable Logic:** The endpoint accepts the parameter directly from the client request and passes it directly into the network client routine without prior sanitization or middleware authentication wrapper checks.\n\n```javascript\n// Vulnerable implementation wrapper inside the route handler\nconst discovery = await fetchOidcDiscovery(issuerUrl);\n// Behind the scenes, this executes a direct dynamic outbound request:\n// -> fetch(`${issuerUrl}/.well-known/openid-configuration`)\n```\n\nAn unauthenticated user c",
-      "link": "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
-      "published": "2026-08-17T21:58:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56677"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
-      "title": "Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects",
-      "summary": "GitLab has released security updates to address a critical vulnerability impacting its Community Edition (CE) and Enterprise Edition (EE) software that, under certain conditions, could allow an unauthenticated attacker to remotely modify or delete public projects and user data.\n\nThe flaw, tracked as CVE-2026-19478, has been rated Critical by GitLab and assigned a CVSS score of 9.4.\n\nReleased on",
-      "link": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
-      "published": "2026-08-17T21:03:04+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-19478"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
-      "title": "Forminator WordPress Flaw Can Enable Unauthenticated RCE via Malicious PHP Uploads",
-      "summary": "A critical security flaw has been disclosed in Forminator Forms, a WordPress plugin with more than 600,000 active installations, that could be exploited to achieve arbitrary code execution on susceptible sites.\n\nThe vulnerability, tracked as CVE-2026-15748, is rated 9.8 out of 10.0 on the CVSS scoring system. It was discovered and reported by a security researcher who goes by the online alias \"",
-      "link": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
-      "published": "2026-08-17T18:22:09+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-15748"
       ],
       "is_zero_day": false,
       "is_high_severity": true
