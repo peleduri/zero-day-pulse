@@ -1,29 +1,10 @@
 {
-  "generated": "2026-08-19T18:16:26.224854+00:00",
-  "total": 25,
-  "kev": 1,
-  "zero_day": 12,
+  "generated": "2026-08-20T00:31:59.757603+00:00",
+  "total": 24,
+  "kev": 0,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-64849",
-      "title": "CVE-2026-64849 \u2014 MLflow Server-Side Request Forgery Vulnerability",
-      "summary": "Vendor: MLflow | Product: MLflow. MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-02)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-64849",
-      "published": "2026-08-19",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-64849"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -52,6 +33,60 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54688",
+      "title": "SearXNG MCP Server is Vulnerable to SSRF in web_url_read: the internal-address guard is disabled by default (MCP_HTTP_HARDEN off)",
+      "summary": "Ref: https://github.com/ihor-sokoliuk/mcp-searxng/issues/87#issuecomment-4645453694\n\n\n### Summary\nThe web_url_read tool fetches a caller-supplied URL server-side and converts it to markdown. An SSRF guard (assertUrlAllowed, which blocks private/loopback/metadata addresses) exists but runs only when MCP_HTTP_HARDEN=true, which is off by default. So in the default configuration there is no internal-address filtering, and an attacker who can influence the URL can make the server fetch internal services and cloud metadata and return their content. Confirmed on 1.1.0 (default config): web_url_read fetched a local internal sentinel and returned its content.\n\n### Details\ndist/index.js (around lines 90-101): web_url_read calls fetchAndConvertToMarkdown on the caller URL. dist/url-reader.js (around lines 44-52): assertUrlAllowed performs the private-IP/loopback check, but only when the hardening flag is set; dist/http-security.js (around line 11) defaults MCP_HTTP_HARDEN to off. With the default config the check is skipped entirely. Even when enabled, the check is literal-hostname based with no DNS-rebinding or redirect re-check (the fetch follows redirects). file:// is rejected, so this is HTTP/HTTPS SSRF.\n\n### PoC\nRe-validated on mcp-searxng 1.1.0 over MCP stdio in the default configuration (MCP_HTTP_HARDEN not set):\n```\ntools: searxng_web_search, web_url_read\nweb_url_read({ url: \"http://127.0.0.1:<port>/internal\" }) -> server fetched the internal sentinel; SSRF: CONFIRMED\n```\nThe server fetched the loopback sentinel and returned its content. With MCP_HTTP_HARDEN=true the same request is blocked (policy error), confirming the guard exists but ships off. The same reaches http://169.254.169.254/... on cloud hosts.\n\n### Impact\nIn the default configuration an attacker who can influence the URL (LLM-produced and steerable via prompt injection) can make the server fetch internal-only HTTP services and the cloud metadata endpoint, returning their contents into the model context f",
+      "link": "https://github.com/advisories/GHSA-q87f-qc2r-2gw4",
+      "published": "2026-08-19T19:23:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54688"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55236",
+      "title": "langgraph-api: Incomplete assistant authorization in LangGraph Server run creation",
+      "summary": "## Summary\n\nIn affected versions of `langgraph-api` (the LangGraph Server runtime), the run-creation path authorized the assistant attached to a run using a different authorization event than the rest of the assistant-handling code paths. Direct assistant reads and cron creation dispatch the `assistants.read` authorization event; run creation dispatched `assistants.search` with an incomplete value. In deployments whose custom authorization handlers register only an `assistants.read` handler (without an `assistants.search` handler and without a global fallback handler), no handler was consulted on the run-creation path, the returned filter set was empty, and the owner constraint was omitted from the resulting query.\n\nAs a result, in those deployments a request to create a run could reference a private assistant owned by another user, even where direct assistant reads, assistant search, and cron creation against that assistant were correctly denied. The run-creation response merged the referenced assistant's `metadata`, `config`, and `context` into fields returned to the requesting user. These fields can carry sensitive configuration; the runtime encrypts them at rest for that reason.\n\nWe have no evidence of this behavior occurring in the wild.\n\n## Affected users / systems\n\nYou may be affected if you:\n\n- run `langgraph-api` (the LangGraph Server / Agent Server runtime, including via the LangGraph Platform Helm chart), and\n- use custom authorization handlers that gate assistant access through an `assistants.read` or `assistants.search` handler rather than a global handler covering all assistant events.\n\nDeployments without custom authorization handlers, or whose handlers apply an equivalent owner filter across all assistant events (for example through a global handler), are not affected.\n\n## Impact\n\n- Confidentiality: exposure of another user's private assistant `metadata`, `config`, and `context` through the run-creation response. These fields can contain sensitive co",
+      "link": "https://github.com/advisories/GHSA-jfj5-wrj9-63x4",
+      "published": "2026-08-19T18:56:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55236"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55235",
+      "title": "langgraph-api: Relative webhook targets in LangGraph Server can reach in-process routes without authentication",
+      "summary": "## Summary\n\nIn affected versions of `langgraph-api` (the LangGraph Server runtime), a run or cron could be created with a relative webhook target. When the server later delivers such a webhook, it routes the request back into the same application through an in-process loopback transport that the authentication middleware treats as internal and does not authenticate. As a result, a relative webhook target could reach the server's own routes that operate on threads and runs without the authentication context that applies to ordinary external requests.\n\nIn deployments that scope threads and runs by owner, this could allow a request associated with one user to reach routes operating on another user's thread, resulting in creation of a run on (or modification of the state of) a thread owned by another user, even where the corresponding direct external requests were correctly denied. Limited metadata from the targeted thread may be incorporated into the created run record.\n\nWe have no evidence of this behavior occurring in the wild.\n\n## Affected users / systems\n\nYou may be affected if you:\n\n- run `langgraph-api` (the LangGraph Server / Agent Server runtime, including via the LangGraph Platform Helm chart),\n- allow runs or crons to specify webhook targets, and\n- rely on per-user authorization to separate threads and runs between users.\n\n## Impact\n\n- Integrity: creation of a run on, or modification of the state of, a thread owned by another user, beyond the requesting user's authorization scope.\n- Confidentiality: limited exposure of another user's thread metadata, incorporated into the created run record.\n\n## Patches / mitigation\n\nThe webhook URL policy now denies loopback delivery by default: the `webhooks.url.disable_loopback` policy defaults to enabled. This covers relative webhook targets routed through the in-process transport, as well as localhost-style hostnames, loopback address ranges, and hostnames that resolve into the loopback range. Deployments that legitimate",
+      "link": "https://github.com/advisories/GHSA-2c9q-c2q9-qgqv",
+      "published": "2026-08-19T18:55:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55235"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -217,11 +252,11 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-73974",
-      "title": "linuxfabrik-lib: Arbitrary root file read via live --test argument (lib.lftest) across sudoers-whitelisted plugins (LPE)",
-      "summary": "## Summary\nEvery Linuxfabrik check plugin that supports the shared `--test` argument (routed through `lib.lftest.test()`) will, when `--test` is supplied, treat the first CSV element as a filesystem path and read its full contents as the plugin's simulated STDOUT \u2014 running as root when the plugin is invoked through the shipped `nagios`/`icinga` sudoers allowlist. `--test` is a **live production argument** (centrally mapped to `argparse.SUPPRESS`, so it is hidden from `--help` but still accepted on the command line), not a build-time-only gate. This yields an arbitrary root file-read primitive (full disclosure on `deb-updates`; filtered disclosure / existence-and-readability oracle on ~22 other whitelisted plugins), i.e. local privilege escalation from the `nagios` account to root.\n\n## Root Cause\n- `lib.lftest.test(args)` (`lftest.py` lines 659-664): `stdout = args[0]`; `if stdout and os.path.isfile(stdout): _, stdout = disk.read_file(stdout)`. Element[1] (stderr channel) is read the same way. There is **no path confinement** on the supplied path.\n- `check-plugins/deb-updates/deb-updates`: `--test` is registered with `type=lib.args.csv` (lines 78-82). When supplied, control flows to `stdout, _, retc = lib.lftest.test(args.TEST)` (line 143), bypassing the apt path (`if args.TEST is None:` at 121). Each returned line is stored as a `package` row and, under the default `--query='1'` (`WHERE 1`, matches all rows), every row is printed via `'\\n* '.join([row['package'] ...])` \u2192 `lib.base.oao(...)`.\n- The same `--test`/`lib.lftest.test()` mechanism exists identically on ~22 whitelisted plugins (e.g. `docker-info`), each performing a root `open()`/read of the attacker-named path. Disclosure degree varies by each plugin's downstream parser: full (`deb-updates`), filtered (`docker-info` echoes lines containing `warning:`/`error:`; `openvpn-client-list` echoes `CLIENT_LIST` lines), or existence/readability oracle (JSON parsers).\n\n## Impact\nAn attacker controlling the low-privil",
-      "link": "https://github.com/advisories/GHSA-rh9c-rqvg-f7pr",
-      "published": "2026-08-18T21:18:59Z",
+      "id": "CVE-2026-59992",
+      "title": "Tina: Broken Access Control: arbitrary bucket-key write/delete in `next-tinacms-s3` (and sibling production media adapters)",
+      "summary": "## Summary\n\nThe production media handler shipped by `next-tinacms-s3` (`createMediaHandler` in `packages/next-tinacms-s3/src/handlers.ts`) accepts an attacker-chosen `?key=` query parameter and returns an AWS-signed `PutObject` URL whose `Key` is that value, with no check that the key falls under the operator's configured `mediaRoot`. The same handler's `DELETE` branch reads `objectKey = (req.query.media as string[])[1]` and dispatches a `DeleteObjectCommand` for that exact key, again unbounded by `mediaRoot`. Any caller that passes the operator-supplied `authorized()` predicate \u2014 i.e. any logged-in CMS editor in a typical TinaCloud / self-hosted deployment \u2014 therefore has write and delete authority over the *entire* S3 bucket the IAM key can reach, even though the package documents `mediaRoot` as the place where editors are scoped. The same shape is present in `next-tinacms-dos`, `next-tinacms-azure`, and `next-tinacms-cloudinary`, so a single design mistake spans every first-party production media backend.\n\n* Project: TinaCMS \u2014 first-party production media adapters (consumed by self-hosted Next.js sites and TinaCloud-backed deployments).\n* Source reviewed: `tinacms/tinacms` @ `main` (`b56dad4`).\n* Deployed artefact validated: `next-tinacms-s3@21.0.3` handler logic, exercised against `@aws-sdk/client-s3@3.665.x` via `aws-sdk-client-mock@4.1.0` (the AWS SDK signs the URL identically whether the bucket is real or mocked).\n* Affected file(s):\n  * `packages/next-tinacms-s3/src/handlers.ts:67-90` \u2014 `GET ?key=` returns presigned `PutObjectCommand` URL with attacker-chosen `Key`.\n  * `packages/next-tinacms-s3/src/handlers.ts:199-223` \u2014 `DELETE` reads `[, objectKey] = media` and issues `DeleteObjectCommand` against attacker-chosen `Key`.\n  * `packages/next-tinacms-dos/src/handlers.ts:79-152` and `:249-278` \u2014 same write/delete pattern, plus a server-side upload that builds the key with `path.join(mediaRoot, prefix + filename)` over attacker-controlled `directory` and `filen",
+      "link": "https://github.com/advisories/GHSA-8mq9-5fw2-5rm4",
+      "published": "2026-08-19T21:56:30Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -229,17 +264,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-73974"
+        "CVE-2026-59992"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-71308",
-      "title": "Lemur: Unchecked `replaces[]` lets any user silence notifications and hijack auto-rotation for arbitrary certificates",
-      "summary": "## Summary\n\nRepo under test: https://github.com/Netflix/lemur\n\nThe certificate create and upload endpoints accept a `replaces[]` (alias `replacements`) array that is resolved to live `Certificate` ORM objects with no ownership or `CertificatePermission` check on the referenced certificates. The SQLAlchemy `Certificate.replaces` append listener then immediately sets `victim.notify = False` and populates `victim.replaced`. From that point the victim certificate is excluded from auto-reissue, its expiration notifications are silenced, and the periodic `certificate_rotate` Celery task deploys the attacker's certificate (`endpoint.certificate.replaced[0]`) onto every endpoint serving the victim certificate.\n\nAny authenticated non-read-only user can therefore silently substitute their own certificate onto production load balancers and Kubernetes secrets they hold no role on, while suppressing the legitimate certificate's lifecycle automation.\n\n## Affected route\n\n`POST /api/1/certificates`\n`POST /api/1/certificates/upload`\n`PUT /api/1/certificates/<id>`\n\n## Affected code\n\n- [`lemur/certificates/schemas.py:402`](https://github.com/Netflix/lemur/blob/main/lemur/certificates/schemas.py#L402) \u2014 `replaces = fields.Nested(AssociatedCertificateSchema, missing=[], many=True)` accepted on create/upload/edit\n- [`lemur/schemas.py:152`](https://github.com/Netflix/lemur/blob/main/lemur/schemas.py#L152) \u2014 `AssociatedCertificateSchema` resolves any certificate by id/name via `fetch_objects(Certificate, data)` with no permission check\n- [`lemur/certificates/views.py:651`](https://github.com/Netflix/lemur/blob/main/lemur/certificates/views.py#L651) \u2014 only `StrictRolePermission().can()` gates `/certificates/upload`; no check on `data['replaces']`\n- [`lemur/certificates/models.py:506`](https://github.com/Netflix/lemur/blob/main/lemur/certificates/models.py#L506) \u2014 `@event.listens_for(Certificate.replaces, 'append')` sets `value.notify = False` on the victim\n- [`lemur/certificates/service.py:",
-      "link": "https://github.com/advisories/GHSA-cfh6-pv5c-38jv",
-      "published": "2026-08-18T20:51:33Z",
+      "id": "CVE-2026-63188",
+      "title": "logto-tunnel serves files outside --experience-path via path traversal",
+      "summary": "### Summary\n\n`@logto/tunnel` serves custom sign-in experience files from the `--experience-path` directory. When the tunnel service is reachable, a requester can use `../` path segments in a static asset request to read files outside that directory that the CLI process can read.\n\n### Details\n\nThe tunnel command accepts `--experience-path` as the local folder path for custom sign-in experience assets. `packages/tunnel/src/commands/tunnel/index.ts` enables `createStaticFileProxy(path)` when that option is set and sends non-Logto, non-`--experience-uri` requests to that static proxy. The server is started with `server.listen(port)`.\n\n`packages/tunnel/src/commands/tunnel/utils.ts` builds the filesystem path as `path.join(staticPath, fallBackToIndex ? index : request.url)`. For file asset paths, `request.url` is used directly. A request URL such as `/../secret.txt` resolves outside `staticPath` and is then opened with `fs.open(requestPath, 'r')`. There is no URL normalization and no containment check that the resolved path remains under the configured static directory before the file is read and returned.\n\nThe proof boundary is the packaged CLI end-to-end run. The filesystem read primitive was validated with equivalent Node HTTP handling for the affected code path, including that Node preserves `/../secret.txt` in `request.url` and that bare `server.listen(port)` binds to all interfaces on this platform.\n\n### PoC\n\n1. Create a custom UI directory at `/tmp/logto-ui/static` with `/tmp/logto-ui/static/index.html`.\n2. Create a sibling file outside the static root, for example `/tmp/logto-ui/secret.txt`.\n3. Start the tunnel with `logto-tunnel --endpoint https://<tenant-id>.logto.app --port 9000 --experience-path /tmp/logto-ui/static`.\n4. Request `http://<host>:9000/../secret.txt`.\n5. The response body contains the contents of `/tmp/logto-ui/secret.txt`.\n\n### Impact\n\nThe observed result is arbitrary file read outside the configured custom UI static directory. If the tunnel port",
+      "link": "https://github.com/advisories/GHSA-rxjr-6c9q-h67x",
+      "published": "2026-08-19T20:24:06Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -247,17 +282,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-71308"
+        "CVE-2026-63188"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-71307",
-      "title": "Lemur: Authenticated low-privilege users can read plaintext destination credentials (SFTP password / private-key passphrase) via the destinations API",
-      "summary": "### Summary\nLemur's destination read endpoints -- `GET /api/1/destinations` and `GET /api/1/destinations/<id>` -- return the full set of stored plugin option values to any authenticated user, with no authorization check and no redaction of secret-bearing options. The sibling write endpoints (`POST`/`PUT`/`DELETE`) are gated with `@admin_permission.require(http_exception=403)`, but the two read handlers are protected only by `login_required` (inherited from `AuthenticatedResource`). They do not even exclude `read-only` users.\n\nThe built-in SFTP destination plugin (`sftp-destination`) stores its `password` and `privateKeyPass` options in cleartext in the `destinations.options` column (the plugin's own docstring states \"Passwords are not encrypted and stored as a plain text.\"). Because `DestinationOutputSchema` serializes every option value verbatim, any authenticated principal -- including a `read-only` user -- can retrieve these credentials and use them to authenticate to the remote SFTP server to which Lemur deploys certificates.\n\n\n### Details\nRead endpoints lack the authorization that their write siblings enforce:\n\n`lemur/destinations/views.py`\n```python\nclass DestinationsList(AuthenticatedResource):\n    @validate_schema(None, destinations_output_schema)\n    def get(self):                       # <-- only login_required; no admin/read-only gate\n        ...\n        return service.render(args)\n\n    @validate_schema(destination_input_schema, destination_output_schema)\n    @admin_permission.require(http_exception=403)   # write path IS gated\n    def post(self, data=None): ...\n\nclass Destinations(AuthenticatedResource):\n    @validate_schema(None, destination_output_schema)\n    def get(self, destination_id):       # <-- only login_required; no admin/read-only gate\n        return service.get(destination_id)\n\n    @validate_schema(destination_input_schema, destination_output_schema)\n    @admin_permission.require(http_exception=403)   # write path IS gated\n    def put(self, ",
-      "link": "https://github.com/advisories/GHSA-6c8m-q6g9-vrw3",
-      "published": "2026-08-18T20:51:26Z",
+      "id": "CVE-2026-55694",
+      "title": "Snipe-IT: Chained Information Disclosure and IDOR Leads to Full EULA File Takeover",
+      "summary": "### Impact\nAn attacker can completely bypass file-name randomization security and without authorization download confidential, signed EULA files belonging to any other user across the application.\n\n### Steps to Reproduce:\n1. Log in as a restricted user.\n2. Send a GET request to /api/v1/users/{target_id}/eulas (where target_id belongs to a restricted/denied user).\n3. Observe the response leaks the secret EULA filename (e.g., eula-xxx.pdf).\n4. Attempt to access this file via the main route: GET /stored-eula-file/{filename} (This will correctly return 403 Forbidden).\n5. Now, access the file via the vulnerable profile route: GET /account/stored-eula-file/{filename}.\n6. Observe that the server returns a 200 OK and successfully downloads the target user's secret EULA file.\n\n### Patches\nFixed in https://github.com/grokability/snipe-it/commit/f15d78621b003be30ac114ba68626683894935ef",
+      "link": "https://github.com/advisories/GHSA-3hgv-jr5j-cg9x",
+      "published": "2026-08-19T19:32:18Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -265,17 +300,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-71307"
+        "CVE-2026-55694"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-71303",
-      "title": "Lemur: Incomplete fix for GHSA-v2wp-frmc-5q3v -- ACME authority update endpoint allows non-admin to replace `acme_url` with internal IP, bypassing allowlist",
-      "summary": "### Summary\n\nThe fix for GHSA-v2wp-frmc-5q3v added `_validate_acme_url()` to reject `acme_url` values not in `ACME_DIRECTORY_HOST_ALLOWLIST`, but the validation is only called at **authority creation time** (POST). The authority **update** endpoint (`PUT /api/1/authorities/<id>`) accepts and stores arbitrary `options` -- including a modified `acme_url` -- without invoking the allowlist check. Any user with an authority role (granted by an admin to allow issuing certificates via that authority) can therefore overwrite the stored `acme_url` with an internal IP or IMDS endpoint. The next certificate issuance via that authority causes Lemur's backend to fetch the attacker-controlled URL, achieving SSRF.\n\n### Details\n\n**Where the fix lives (POST path -- protected):**\n\n`lemur/plugins/lemur_acme/plugin.py` lines 333-337 (ACMEIssuerPlugin.create_authority):\n```python\nfor option in plugin_options:\n    if option.get(\"name\") == \"certificate\":\n        acme_root = option.get(\"value\")\n    if option.get(\"name\") == \"acme_url\":\n        _validate_acme_url(option.get(\"value\", \"\"))   # allowlist enforced\n```\n\n`_validate_acme_url` at line 35:\n```python\ndef _validate_acme_url(url):\n    \"\"\"Reject acme_url values that are not in the configured allowlist.\n\n    Called at authority creation time only -- existing authorities in the DB\n    were already trusted when they were created and are not re-validated.\n    \"\"\"\n    allowed_hosts = current_app.config.get(\n        \"ACME_DIRECTORY_HOST_ALLOWLIST\",\n        {\"acme-v02.api.letsencrypt.org\", ...},\n    )\n    parsed = urlparse(url)\n    if parsed.scheme != \"https\" or parsed.hostname not in allowed_hosts:\n        raise InvalidConfiguration(...)\n```\n\n**Where the gap is (PUT path -- unprotected):**\n\n`lemur/authorities/views.py` lines 405-424 (`Authorities.put`):\n```python\nauthority = service.get(authority_id)\nroles = [x.name for x in authority.roles]\npermission = AuthorityPermission(authority_id, roles)\n\nif not permission.can() or not StrictRolePermiss",
-      "link": "https://github.com/advisories/GHSA-v5rc-cpwc-cfpr",
-      "published": "2026-08-18T20:51:21Z",
+      "id": "CVE-2026-54689",
+      "title": "SearXNG MCP Server: Additional hardened-mode SSRF bypasses",
+      "summary": "## Summary\n\n`mcp-searxng` has a hardened-mode URL-reading feature intended to prevent `web_url_read` from reaching private or internal network resources.\n\nPR #79 appears to address one SSRF class: hostnames that resolve to private or internal addresses under hardened mode. I tested PR #79 locally and confirmed that it blocks the DNS-resolves-to-loopback case.\n\nHowever, several other hardened-mode SSRF bypasses still appear to remain:\n\n1. Redirects from an allowed first-hop URL to a loopback/internal URL are followed without re-validating the redirect target.\n2. `0.0.0.0` is not treated as an internal/special address.\n3. IPv4-mapped IPv6 literals can bypass private-address checks after URL canonicalization.\n\nWith hardened mode enabled and private URLs not explicitly allowed, `web_url_read` was still able to fetch and return content from a local loopback sentinel service in all three cases.\n\n## Tested configuration\n\n```bash\nMCP_HTTP_HARDEN=true\nMCP_HTTP_ALLOW_PRIVATE_URLS unset\n```\n\nThe MCP server was driven over stdio.\n\nThe test target was a harmless internal sentinel HTTP service bound to:\n\n```text\n127.0.0.1:6789\n```\n\nThe sentinel response contained:\n\n```text\nINTERNAL_SECRET_DATA__mcp_searxng_ssrf_path2\n```\n\n## Relationship to PR #79\n\nI tested PR #79 locally:\n\n- PR: `fix(url-reader): block DNS-rebinding SSRF via socket-level lookup guard (CWE-918) #79`\n- PR commit tested: `e55d28e7be6786a71cd7a0eaf13d3ec9d0b734d4`\n- Base issue class: CWE-918 / SSRF in `web_url_read`\n- Hardened mode: enabled\n\nObserved results:\n\n```text\nCase                                         Result on PR #79\n-------------------------------------------------------------\nDNS hostname resolving to 127.0.0.1          blocked\n0.0.0.0                                      BYPASS\n[::ffff:127.0.0.1]                           BYPASS\nredirect from non-private IP to 127.0.0.1    BYPASS\n```\n\nSo PR #79 is a useful fix, but it does not fully close hardened-mode internal URL access.\n\n## Root cause\n\n### 1. Redir",
+      "link": "https://github.com/advisories/GHSA-wppf-h75h-6pm6",
+      "published": "2026-08-19T19:23:16Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -283,17 +318,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-71303"
+        "CVE-2026-54689"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-70667",
-      "title": "Lemur: SSRF protection in certificate revocation checking bypassable via HTTP redirects and DNS rebinding (incomplete fix for GHSA-54vg-pfh7-jq95)",
-      "summary": "## Summary\nThe SSRF mitigation added for GHSA-54vg-pfh7-jq95 (`_validate_revocation_url()` in `lemur\n/certificates/verify.py`) can be bypassed. An operator-role user who uploads a certificate with attacker-controlled CRL/OCSP extensions can still make Lemur reach internal destinations (RFC1918, loopback, link-local 169.254.169.254) during verification.\n\n## Affected version\nTested against `main` (the commit that introduced `_validate_revocation_url`). The 1.9.2 release predates that guard and is vulnerable to the original SSRF (GHSA-54vg-pfh7-jq95) directly; this bypass applies to the unreleased mitigation in `main`. Please map the affected range to whichever release will first contain `_validate_revocation_url`.\n\n## Bypass 1 \u2014 HTTP redirect (deterministic)\nThe guard validates only the URL in the certificate; the CRL fetch then follows redirects without re-validating the target:\n```python\n# lemur/certificates/verify.py:174\nresponse = requests.get(point, timeout=(3.05, 6))   \n```\nThe attacker hosts the CRL URL on a public host they control (passes the guard); that host returns `302 Location: http://169.254.169.254/...`. `requests` follows it to the internal target the guard never inspected.\n\n## Bypass 2 \u2014 DNS rebinding / TOCTOU (probabilistic)\nThe guard resolves once during validation; the fetch re-resolves independently:\n```python\n# lemur/certificates/verify.py:51\naddr = ipaddress.ip_address(socket.gethostbyname(hostname))\n```\n\nA low-TTL attacker name that answers a public IP at check time and an internal IP at fetch time passes the guard but is fetched internally. Same gap affects the OCSP path (`openssl ocsp -url <url>`, verify.py:90-99).\n\n## Relationship to GHSA-54vg-pfh7-jq95\nIncomplete-fix of that mitigation, not a duplicate. Bypass 1 is not mentioned there; bypass 2 is the rebinding gap that advisory's remediation text anticipated (\"pins the resolved IP\") but the code does not implement.\n\n## Affected endpoint\n`POST /api/1/certificates/upload` (operator role) \u2192 ",
-      "link": "https://github.com/advisories/GHSA-f3qq-49m6-rw8f",
-      "published": "2026-08-18T20:51:12Z",
+      "id": "CVE-2026-53966",
+      "title": "XWiki Platform Live Data Live Table Connector has privilege escalation from edit to script right through Live Data editing",
+      "summary": "### Impact\nAny user who can edit a page in XWiki can use Live Data's edit REST API in XWiki to change the rights on that page. This allows the user to obtain script right on the page. Script right allows the user to execute potentially dangerous Velocity scripts and send unfiltered HTML and JavaScript to the client. If there are other security checks, e.g., in extensions, implemented as listeners to `UserUpdatingDocumentEvent` and similar `User\u2026` events, these checks can be circumvented, too.\n\n### Patches\nThis vulnerability has been patched by properly calling all checks in Live Data in XWiki 16.10.17, 17.4.10, 17.10.4 and 18.1.0.\n\n### Workarounds\nWe're not aware of any workarounds apart from upgrading.",
+      "link": "https://github.com/advisories/GHSA-45ph-gxxr-gwgw",
+      "published": "2026-08-19T19:18:04Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -301,17 +336,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-70667"
+        "CVE-2026-53966"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-70666",
-      "title": "Lemur: Server-Side Request Forgery via the ACME client following server-controlled URLs",
-      "summary": "### Summary\nThe ACME client (used to issue certificates from Let's Encrypt / Google Public CA / private ACME CAs) connects to an `acme_url`, then issues requests to URLs that the **ACME server returns** in its directory/order/authorization/finalize responses - this is the classic ACME-client SSRF (RFC 8555 design). Lemur validates `acme_url` against an allowlist of public ACME directories, but **only at authority creation**. The authority UPDATE path (`PUT /authorities/<id>`) accepts a new `options` blob with an arbitrary `acme_url` and never re-validates. An attacker who is a member of an authority's role can repoint an existing ACME authority at a malicious ACME server they control, which returns internal URLs in its responses - coercing Lemur into making JWS-signed POST requests to internal services during the next certificate issuance.\n\n### Detail\n**Defect A - allowlist only at creation.**\n`_validate_acme_url` (`lemur/plugins/lemur_acme/plugin.py:35-53`) restricts the host to `{acme-v02.api.letsencrypt.org, acme-staging-v02.api.letsencrypt.org, dv.acme-v02.api.pki.goog}`. It runs **only inside `create_authority`** (lines 337, 481). The update path stores `options` verbatim:\n```python\n# lemur/authorities/views.py:417-424  (Authorities.put)\nreturn service.update(\n    authority_id,\n    owner=data[\"owner\"], description=data[\"description\"],\n    active=data[\"active\"], roles=data[\"roles\"],\n    options=data.get(\"options\")          # <- acme_url lives here, NO re-validation\n)\n```\n`AuthorityUpdateSchema.options = fields.String()` (`authorities/schemas.py:101`) applies no validation. The docstring of `_validate_acme_url` even admits: *\"existing authorities in the DB were already trusted when they were created and are not re-validated.\"*\n\n**Defect B - ACME client follows server-supplied URLs.**\n`setup_acme_client_no_retry` (`acme_handlers.py:161-162, 188-202`) reads `acme_url` from stored authority options and creates an ACME client. Per RFC 8555, the client:\n1. `get_direct",
-      "link": "https://github.com/advisories/GHSA-xpmj-wjcp-6pww",
-      "published": "2026-08-18T20:51:07Z",
+      "id": "CVE-2026-53965",
+      "title": "MCP PHP SDK: client HttpTransport SSE buffer (sseBuffer .= chunk) grows unbounded when server withholds the event delimiter",
+      "summary": "## Summary\n\nThe HTTP client transport in `mcp/sdk` reads a Server-Sent-Events (SSE) response\nstream incrementally and appends each 4 KiB chunk to an in-memory buffer\n(`$this->sseBuffer .= $chunk;`) with **no upper bound**. The buffer is only ever\nflushed when an SSE event delimiter (`\"\\n\\n\"`) appears. A remote MCP server (the\npeer the client connects to) that streams response bytes without ever sending the\n`\"\\n\\n\"` delimiter makes `$sseBuffer` grow without limit until the client process\nexhausts its PHP `memory_limit` (fatal \"Allowed memory size \u2026 exhausted\") or is\nkilled by the OS OOM-killer.\n\nThis is a denial-of-service against the MCP **client**: any server it talks to \u2014\nor a network position that controls the server's response body \u2014 can crash the\nclient by withholding the event delimiter while streaming data.\n\n## Impact\n\n- **Type:** Denial of service (memory exhaustion / process crash) of the MCP client.\n- **Who can trigger it:** The remote MCP server endpoint the client connects to via\n  `HttpTransport`, or any party that can control/inject into that server's SSE\n  response body (e.g. a man-in-the-middle on a plaintext endpoint, or a malicious\n  or compromised server). The buffer growth happens while the transport is reading\n  the response stream, before a complete event is ever parsed.\n- **Effect:** A response stream of N bytes containing no `\"\\n\\n\"` drives the client's\n  resident buffer to track N. A few hundred MB of delimiter-free data is enough to\n  kill a client running with a typical `memory_limit`.\n- **Severity (suggested, maintainer to confirm):** High \u2014 a remote server can\n  reliably crash a connected client over the HTTP/SSE transport.\n\n## How input reaches the sink (reachability)\n\n1. A client connects to a server over the HTTP transport by constructing\n   `Mcp\\Client\\Transport\\HttpTransport` with the server endpoint URL, then runs\n   the connect/request loop.\n2. The transport's loop calls `tick()` (line 182), which calls\n   `processSSEStream()` (li",
+      "link": "https://github.com/advisories/GHSA-7m52-jw36-44r3",
+      "published": "2026-08-19T19:17:49Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -319,17 +354,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-70666"
+        "CVE-2026-53965"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-62988",
-      "title": "Froxlor: Credential and 2FA secret disclosure via Froxlor API endpoints",
-      "summary": "## Summary\n\nSeveral Froxlor API command classes return sensitive authentication material in JSON API responses. The affected endpoints retrieve full database rows using `SELECT *`, `SELECT alias.*`, or equivalent full-row queries, then return the results directly through `$this->response(...)` without removing credential-related fields.\n\nThe exposed fields include password hashes for customers, administrators, and FTP users, as well as TOTP 2FA seed material for administrator and customer accounts.\n\nThis exposes credential-equivalent data to API clients that should not receive it. Password hashes can be cracked offline and reused for account takeover, while exposed TOTP seeds allow generation of valid 2FA codes for affected accounts. When both a password hash and TOTP seed are exposed for the same account, the vulnerability can defeat both authentication factors if the password hash is cracked or the password is otherwise obtained.\n\n## Details\n\nThe affected API classes retrieve entire database rows and return them without filtering sensitive fields:\n\n### `lib/Froxlor/Api/Commands/Customers.php`\n\n`Customers.get()` and `Customers.listing()` select and return customer rows containing sensitive fields, including:\n\n* `password`\n* `type_2fa`\n* `data_2fa`\n\nWhen `type_2fa = 2`, the `data_2fa` value represents the Base32-encoded TOTP seed used by the customer's authenticator application.\n\nThe result is returned through `$this->response($result)` or `$this->response(['list' => $result])` without removing these fields.\n\n### `lib/Froxlor/Api/Commands/Admins.php`\n\n`Admins.get()` and `Admins.listing()` return administrator rows containing sensitive fields, including:\n\n* `password`\n* `type_2fa`\n* `data_2fa`\n\nWhen `type_2fa = 2`, the `data_2fa` value represents the Base32-encoded TOTP seed used by the administrator's authenticator application.\n\nThese fields are not stripped before returning the API response.\n\n### `lib/Froxlor/Api/Commands/Ftps.php`\n\n`Ftps.get()` and `Ftps.listing()",
-      "link": "https://github.com/advisories/GHSA-7788-ghfq-c6mh",
-      "published": "2026-08-18T20:48:35Z",
+      "id": "CVE-2026-53964",
+      "title": "Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)",
+      "summary": "### Impact\nA remote code execution (RCE) via server-side template injection (SSTI) allows for user supplied code to be executed in the server's context where it is executed as the document-merge-server user with the UID 901 thus giving an attacker considerable control over the container. The vulnerability is limited to XLSX templates, were the `xltpl` library uses a npn-sandboxed Jinja environment  for the processing of the template. \n\n### Patches\nIt has been patched in [v9.1.0](https://github.com/adfinis/document-merge-service/releases/tag/v9.1.0)\n\n### Workarounds\nDisable the upload/usage of XLSX templates.\n\n### References\nAre there any links users can visit to find out more?\n\nhttps://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection/jinja2-ssti",
+      "link": "https://github.com/advisories/GHSA-w47q-945m-q9pc",
+      "published": "2026-08-19T19:17:19Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -337,17 +372,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-62988"
+        "CVE-2026-53964"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-55593",
-      "title": "Froxlor has CSRF Vulnerability in AJAX Endpoint \u2014 Missing Cross-Site Request Forgery Protection",
-      "summary": "## Summary\n\nThe Froxlor AJAX endpoint (`lib/ajax.php`) is missing Cross-Site Request Forgery (CSRF) protection. While the main application (`lib/init.php`) enforces CSRF token validation on all state-changing HTTP requests (POST/PUT/PATCH/DELETE), the standalone `lib/ajax.php` endpoint bypasses this mechanism entirely, validating only the user's session. An attacker can craft a malicious webpage that, when visited by an authenticated Froxlor administrator, silently modifies API key properties (e.g., adding the attacker's IP to the `allowed_from` whitelist or extending the `valid_until` expiration).\n\n---\n\n## Affected Component\n\n- **File:** `lib/ajax.php` \u2014 the AJAX endpoint entry point (bypasses `lib/init.php`)\n- **File:** `lib/Froxlor/Ajax/Ajax.php:66-92` \u2014 `Ajax::handle()` (no CSRF check before routing)\n- **File:** `lib/Froxlor/Ajax/Ajax.php:257-315` \u2014 `Ajax::editApiKey()` (writes to database without CSRF check)\n- **Version:** Froxlor 2.3.7 (likely all prior 2.x versions)\n\n---\n\n## Complete Call Chain: Entry Point \u2192 Vulnerable Code\n\n### Step 1: Entry Point \u2014 `lib/ajax.php` (standalone bootstrap, bypasses `lib/init.php`)\n\n```php\n// lib/ajax.php:26-47\nnamespace Froxlor;\n\nuse Froxlor\\Ajax\\Ajax;\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\nrequire_once dirname(__DIR__) . '/lib/userdata.inc.php';\nrequire_once dirname(__DIR__) . '/lib/functions.php';\nrequire_once dirname(__DIR__) . '/lib/tables.inc.php';\n\n// CRITICAL: This file does NOT include lib/init.php\n// Therefore: NO CSRF token is checked before processing the request\necho (new Ajax)->handle();\n```\n\n**Contrast with normal flow:** All admin/customer pages (e.g., `admin_customers.php`, `customer_domains.php`) do:\n```php\nconst AREA = 'admin';\nrequire __DIR__ . '/lib/init.php';  // <-- This enforces CSRF at lines 363-369\n```\n\n### Step 2: Ajax Constructor \u2014 Session Created, No CSRF Check\n\n```php\n// lib/Froxlor/Ajax/Ajax.php:54-61\npublic function __construct()\n{\n    $this->action = Request::any('action');  //",
-      "link": "https://github.com/advisories/GHSA-xpr4-8vp6-c87j",
-      "published": "2026-08-18T20:48:30Z",
+      "id": "CVE-2026-53957",
+      "title": "Contentful MCP Server: export_space/import_space tools pass LLM-controlled `host`/`proxy` args to CMA client, redirecting server PAT to attacker-controlled endpoint",
+      "summary": "### Summary\n\n`export_space` and `import_space` tools in `@contentful/mcp-tools` accept LLM-controlled `host` and `proxy` parameters that are spread directly into the options object passed to `contentful-export` / `contentful-import`. These libraries pass the merged options \u2014 including the attacker-controlled `host` \u2014 to the Contentful Management API (CMA) SDK, which builds `baseURL` from `host` and attaches the server's CMA Personal Access Token as `Authorization: Bearer <PAT>` on every outgoing request. An attacker who can invoke MCP tools, or inject instructions into Contentful content the LLM reads, can redirect all CMA requests \u2014 and the PAT \u2014 to an attacker-controlled endpoint.\n\n---\n\n### Details\n\n**Root cause \u2014 `exportSpace.ts` lines 126\u2013141** (identical pattern in `importSpace.ts` lines 103\u2013119):\n\n```typescript\n// packages/mcp-tools/src/tools/jobs/space-to-space-migration/exportSpace.ts\n\nconst clientConfig    = createClientConfig(config);  // only extracts accessToken; discards config.host\nconst managementToken = clientConfig.accessToken;    // server's CMA PAT\n\nconst exportOptions = {\n  ...args,          // \u2190 LLM-controlled tool call args: args.host enters here, unfiltered\n  managementToken,  // \u2190 server PAT injected alongside attacker-controlled host\n  environmentId: args.environmentId || 'master',\n  exportDir:     args.exportDir     || process.cwd(),\n  contentFile:   args.contentFile   || `contentful-export-${args.spaceId}.json`,\n};\n\nconst contentfulExport = await import('contentful-export');\nawait contentfulExport.default(exportOptions);  // host + PAT reach the SDK here\n```\n\n`createClientConfig` (defined in `utils/tools.ts`) extracts only `accessToken` and ignores `config.host`. The `CONTENTFUL_HOST` environment variable is never applied to `exportOptions`.\n\nThe downstream chain once `contentful-export` receives the merged options:\n\n1. `parseOptions.js` line 61: `options.accessToken = options.managementToken` \u2014 PAT flows to `accessToken`\n2. `init-client.j",
+      "link": "https://github.com/advisories/GHSA-2xhg-73j7-rrgx",
+      "published": "2026-08-19T19:17:00Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -355,61 +390,7 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-55593"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54347",
-      "title": "Froxlor: Stored XSS in DNS TXT Record Content Allows Customer-to-Admin Account Takeover",
-      "summary": "### Summary\n\nA stored Cross-Site Scripting (XSS) vulnerability in Froxlor's DNS editor allows an authenticated user with DNS editor access (customer role) to inject arbitrary JavaScript into any administrator's browser session. When an administrator views the DNS configuration of an affected domain, the payload executes automatically \u2014 enabling complete admin account takeover, credential theft, and full server compromise.\n\n---\n\n### Details\n\nThree code locations combine to create this vulnerability:\n\n**1. Input validation does not strip HTML special characters** \u2014 `lib/Froxlor/Api/Commands/DomainZones.php:158`\n\n```php\n// Only strips non-printable chars. < and > (0x3C/0x3E) pass through unmodified.\n$content = preg_replace('/[^\\x09\\x20-\\x7E]/', '', $content);\n$content = Dns::encloseTXTContent($content);  // only wraps in quotes, no HTML encoding\n```\n\n**2. Display callback returns raw HTML without escaping** \u2014 `lib/Froxlor/UI/Callbacks/Text.php:95`\n\n```php\npublic static function wordwrap(array $attributes): string {\n    return wordwrap($attributes['data'], 100, '<br>', true);  // no htmlspecialchars()\n}\n```\n\n**3. Twig template renders the callback output with `|raw`** \u2014 `templates/Froxlor/table/table.html.twig:57`\n\n```twig\n{% else %}\n    {{ td.data|raw }}   {# string from wordwrap() \u2014 rendered without escaping #}\n{% endif %}\n```\n\nThe DNS editor table assigns `[Text::class, 'wordwrap']` as the callback for the `content` column (`lib/tablelisting/tablelisting.dns.php:58`). The callback returns a non-iterable string, so the template falls to the `|raw` branch.\n\nAdditionally, the Content Security Policy header (`lib/Froxlor/UI/Panel/UI.php:140`) includes `'unsafe-inline'`, rendering CSP completely ineffective as a mitigation:\n\n```\nContent-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; ...\n```\n\n---\n\n### PoC\n<img width=\"2025\" height=\"1144\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f6808b24-c4b6-4bd2-9673-d7ddc4939794\" /",
-      "link": "https://github.com/advisories/GHSA-43gm-9rr3-cx7g",
-      "published": "2026-08-18T20:47:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54347"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54723",
-      "title": "devpi-server may leak database contents",
-      "summary": "### Impact\n\nIf the replication protocol is enabled by using the ``primary`` (or deprecated ``master``) role for a server instance, then the ``+changelog`` URL route can be used to read the complete database content including password hashes, and the ids and salts of tokens from ``devpi-tokens`` by using a trivially modified GET request.\n\nThe leaked hashes use the ``argon2`` algorithm, so they are not immediately at risk by brute-force methods, but dictionary attacks are feasible. If a database leak could have happened, it is advised to change the passwords after a patched version or other mitigation is in place.\n\nWhen ``devpi-tokens`` is in use, the quality of the server secret is important. It might be possible to derive the server secret if actual tokens are public by using similar techniques to finding the password for a hash. If a database leak could have happened and any tokens are public, it is advised to change the server secret.\n\nBesides the information leak this can be used to produce significant CPU, IO and bandwidth usage depending on the database size.\n\n### Patches\n\nThe logic bug causing this issue is fixed with devpi-server 6.20.2 and devpi-server 7.0.0b3.\n\n### Workarounds\n\nWhen replication isn't used the role can explicitly be set to ``standalone``.\n\nIf the server instance is exclusively served through ``nginx`` with the ``devpi-lockdown`` plugin, the request is redirected to the login form due to missing user information. There is no known exploit in this case.",
-      "link": "https://github.com/advisories/GHSA-m5pq-69xg-vcq3",
-      "published": "2026-08-18T20:41:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54723"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55107",
-      "title": "kobako Sandbox Escape: guest eval reaches host RCE via method_missing \u2192 public_send (any bound Service)",
-      "summary": "### Summary\nA guest mruby script running inside the Kobako sandbox can execute arbitrary\nRuby in the host process, fully escaping the sandbox.\n\n### Details\nA host embeds bound \"Service\" objects that guest scripts call across the wasm\nboundary through the transport dispatcher. The dispatcher passed the\nguest-supplied method name straight to `Object#public_send` on the bound\nobject, with no restriction to the object's own methods:\n\n```ruby\ntarget.public_send(method.to_sym, *args, **kwargs, &block)\n```\n\n`public_send` can invoke any public method, including Ruby's ambient\nreflection surface. A guest pivots through the public `send` into otherwise\nprivate Kernel methods: a dispatch request with `method = \"send\"` and\n`args = [:eval, \"<ruby>\"]` evaluates to `target.send(:eval, \"<ruby>\")`,\nrunning attacker-controlled Ruby in the host. Any bound Service object is\nsufficient \u2014 no Service-specific behavior is required.\n\n### Proof of Concept\nA guest call equivalent to:\n\n```\nService.send(:eval, \"<arbitrary host ruby>\")\n```\n\nexecutes in the host process and can read or modify host state, spawn\nprocesses, and so on.\n\n### Impact\nComplete sandbox escape leading to remote code execution in the host process,\ndefeating the gem's central guarantee of isolating untrusted mruby scripts.\nAny deployment that runs untrusted or attacker-influenced scripts is affected.\nAll released versions (0.1.0 through 0.9.0) are vulnerable; the dispatcher\ncarried the same unguarded `public_send` sink under three successive names\n(`registry` \u2192 `rpc` \u2192 `transport`).\n\n### Patches\nFixed in 0.9.1. The dispatcher now rejects any method whose resolved owner is\na core/meta module (`BasicObject`, `Kernel`, `Object`, `Module`, `Class`), so\nonly methods the bound object itself defines \u2014 or dynamically handles via\n`method_missing` \u2014 remain reachable. The ambient reflection methods (`send`,\n`__send__`, `public_send`, `instance_eval`, `instance_exec`, `method`,\n`instance_variable_get`, \u2026) are all owned by those modules ",
-      "link": "https://github.com/advisories/GHSA-7pwq-q9jf-539h",
-      "published": "2026-08-18T20:09:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55107"
+        "CVE-2026-53957"
       ],
       "is_zero_day": false,
       "is_high_severity": true

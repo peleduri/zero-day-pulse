@@ -109,31 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">25</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">24</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-19 18:16 UTC</div>
+            <div class="generated">Updated 2026-08-20 00:31 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-64849" target="_blank" rel="noopener">CVE-2026-64849 — MLflow Server-Side Request Forgery Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-64849</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-19</span>
-  </div>
-  <p class='summary'>Vendor: MLflow | Product: MLflow. MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance …</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -164,6 +148,62 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q87f-qc2r-2gw4" target="_blank" rel="noopener">SearXNG MCP Server is Vulnerable to SSRF in web_url_read: the internal-address guard is disabled by default (MCP_HTTP_HARDEN off)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54688</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>Ref: https://github.com/ihor-sokoliuk/mcp-searxng/issues/87#issuecomment-4645453694
+
+
+### Summary
+The web_url_read tool fetches a caller-supplied URL server-side and converts it to markdown. An SSRF guard (assertUrlAllowed, which blocks private/loopback/metadata addresses) exists but runs only when MCP_HTTP_HARDEN=true, which is off by default. So in the default configuration there is no internal-…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jfj5-wrj9-63x4" target="_blank" rel="noopener">langgraph-api: Incomplete assistant authorization in LangGraph Server run creation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55236</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>## Summary
+
+In affected versions of `langgraph-api` (the LangGraph Server runtime), the run-creation path authorized the assistant attached to a run using a different authorization event than the rest of the assistant-handling code paths. Direct assistant reads and cron creation dispatch the `assistants.read` authorization event; run creation dispatched `assistants.search` with an incomplete value…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2c9q-c2q9-qgqv" target="_blank" rel="noopener">langgraph-api: Relative webhook targets in LangGraph Server can reach in-process routes without authentication</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55235</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>## Summary
+
+In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or cron could be created with a relative webhook target. When the server later delivers such a webhook, it routes the request back into the same application through an in-process loopback transport that the authentication middleware treats as internal and does not authenticate. As a result, a relative webhook…</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -333,210 +373,158 @@ The shortcomings added to the KEV catalog are listed below -
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rh9c-rqvg-f7pr" target="_blank" rel="noopener">linuxfabrik-lib: Arbitrary root file read via live --test argument (lib.lftest) across sudoers-whitelisted plugins (LPE)</a></h2>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8mq9-5fw2-5rm4" target="_blank" rel="noopener">Tina: Broken Access Control: arbitrary bucket-key write/delete in `next-tinacms-s3` (and sibling production media adapters)</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-73974</code>
+            <code class="cve">CVE-2026-59992</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-Every Linuxfabrik check plugin that supports the shared `--test` argument (routed through `lib.lftest.test()`) will, when `--test` is supplied, treat the first CSV element as a filesystem path and read its full contents as the plugin&#x27;s simulated STDOUT — running as root when the plugin is invoked through the shipped `nagios`/`icinga` sudoers allowlist. `--test` is a **live production ar…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cfh6-pv5c-38jv" target="_blank" rel="noopener">Lemur: Unchecked `replaces[]` lets any user silence notifications and hijack auto-rotation for arbitrary certificates</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71308</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
+            <span>2026-08-19</span>
           </div>
           <p class='summary'>## Summary
 
-Repo under test: https://github.com/Netflix/lemur
-
-The certificate create and upload endpoints accept a `replaces[]` (alias `replacements`) array that is resolved to live `Certificate` ORM objects with no ownership or `CertificatePermission` check on the referenced certificates. The SQLAlchemy `Certificate.replaces` append listener then immediately sets `victim.notify = False` and popu…</p>
+The production media handler shipped by `next-tinacms-s3` (`createMediaHandler` in `packages/next-tinacms-s3/src/handlers.ts`) accepts an attacker-chosen `?key=` query parameter and returns an AWS-signed `PutObject` URL whose `Key` is that value, with no check that the key falls under the operator&#x27;s configured `mediaRoot`. The same handler&#x27;s `DELETE` branch reads `objectKey = (req.quer…</p>
 
         </article>
 
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6c8m-q6g9-vrw3" target="_blank" rel="noopener">Lemur: Authenticated low-privilege users can read plaintext destination credentials (SFTP password / private-key passphrase) via the destinations API</a></h2>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rxjr-6c9q-h67x" target="_blank" rel="noopener">logto-tunnel serves files outside --experience-path via path traversal</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-71307</code>
+            <code class="cve">CVE-2026-63188</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>### Summary
-Lemur&#x27;s destination read endpoints -- `GET /api/1/destinations` and `GET /api/1/destinations/&lt;id&gt;` -- return the full set of stored plugin option values to any authenticated user, with no authorization check and no redaction of secret-bearing options. The sibling write endpoints (`POST`/`PUT`/`DELETE`) are gated with `@admin_permission.require(http_exception=403)`, but the two read han…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v5rc-cpwc-cfpr" target="_blank" rel="noopener">Lemur: Incomplete fix for GHSA-v2wp-frmc-5q3v -- ACME authority update endpoint allows non-admin to replace `acme_url` with internal IP, bypassing allowlist</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71303</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
+            <span>2026-08-19</span>
           </div>
           <p class='summary'>### Summary
 
-The fix for GHSA-v2wp-frmc-5q3v added `_validate_acme_url()` to reject `acme_url` values not in `ACME_DIRECTORY_HOST_ALLOWLIST`, but the validation is only called at **authority creation time** (POST). The authority **update** endpoint (`PUT /api/1/authorities/&lt;id&gt;`) accepts and stores arbitrary `options` -- including a modified `acme_url` -- without invoking the allowlist check. Any …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f3qq-49m6-rw8f" target="_blank" rel="noopener">Lemur: SSRF protection in certificate revocation checking bypassable via HTTP redirects and DNS rebinding (incomplete fix for GHSA-54vg-pfh7-jq95)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-70667</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-The SSRF mitigation added for GHSA-54vg-pfh7-jq95 (`_validate_revocation_url()` in `lemur
-/certificates/verify.py`) can be bypassed. An operator-role user who uploads a certificate with attacker-controlled CRL/OCSP extensions can still make Lemur reach internal destinations (RFC1918, loopback, link-local 169.254.169.254) during verification.
-
-## Affected version
-Tested against `main` (t…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xpmj-wjcp-6pww" target="_blank" rel="noopener">Lemur: Server-Side Request Forgery via the ACME client following server-controlled URLs</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-70666</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>### Summary
-The ACME client (used to issue certificates from Let&#x27;s Encrypt / Google Public CA / private ACME CAs) connects to an `acme_url`, then issues requests to URLs that the **ACME server returns** in its directory/order/authorization/finalize responses - this is the classic ACME-client SSRF (RFC 8555 design). Lemur validates `acme_url` against an allowlist of public ACME directories, but **o…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7788-ghfq-c6mh" target="_blank" rel="noopener">Froxlor: Credential and 2FA secret disclosure via Froxlor API endpoints</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62988</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-
-Several Froxlor API command classes return sensitive authentication material in JSON API responses. The affected endpoints retrieve full database rows using `SELECT *`, `SELECT alias.*`, or equivalent full-row queries, then return the results directly through `$this-&gt;response(...)` without removing credential-related fields.
-
-The exposed fields include password hashes for customers, ad…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xpr4-8vp6-c87j" target="_blank" rel="noopener">Froxlor has CSRF Vulnerability in AJAX Endpoint — Missing Cross-Site Request Forgery Protection</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55593</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>## Summary
-
-The Froxlor AJAX endpoint (`lib/ajax.php`) is missing Cross-Site Request Forgery (CSRF) protection. While the main application (`lib/init.php`) enforces CSRF token validation on all state-changing HTTP requests (POST/PUT/PATCH/DELETE), the standalone `lib/ajax.php` endpoint bypasses this mechanism entirely, validating only the user&#x27;s session. An attacker can craft a malicious webpage t…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-43gm-9rr3-cx7g" target="_blank" rel="noopener">Froxlor: Stored XSS in DNS TXT Record Content Allows Customer-to-Admin Account Takeover</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54347</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>### Summary
-
-A stored Cross-Site Scripting (XSS) vulnerability in Froxlor&#x27;s DNS editor allows an authenticated user with DNS editor access (customer role) to inject arbitrary JavaScript into any administrator&#x27;s browser session. When an administrator views the DNS configuration of an affected domain, the payload executes automatically — enabling complete admin account takeover, credential theft, an…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m5pq-69xg-vcq3" target="_blank" rel="noopener">devpi-server may leak database contents</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54723</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>### Impact
-
-If the replication protocol is enabled by using the ``primary`` (or deprecated ``master``) role for a server instance, then the ``+changelog`` URL route can be used to read the complete database content including password hashes, and the ids and salts of tokens from ``devpi-tokens`` by using a trivially modified GET request.
-
-The leaked hashes use the ``argon2`` algorithm, so they are …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7pwq-q9jf-539h" target="_blank" rel="noopener">kobako Sandbox Escape: guest eval reaches host RCE via method_missing → public_send (any bound Service)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55107</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-18</span>
-          </div>
-          <p class='summary'>### Summary
-A guest mruby script running inside the Kobako sandbox can execute arbitrary
-Ruby in the host process, fully escaping the sandbox.
+`@logto/tunnel` serves custom sign-in experience files from the `--experience-path` directory. When the tunnel service is reachable, a requester can use `../` path segments in a static asset request to read files outside that directory that the CLI process can read.
 
 ### Details
-A host embeds bound &quot;Service&quot; objects that guest scripts call across the wasm
-boundary through the transport dispatcher. The dispatcher passed the
-guest-supplied method name straight to `Object#public_send` on the bound
-object, with no restrict…</p>
+
+The tunnel command accepts `--experience-path` as the local folder path for custom sign-in experience asse…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3hgv-jr5j-cg9x" target="_blank" rel="noopener">Snipe-IT: Chained Information Disclosure and IDOR Leads to Full EULA File Takeover</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55694</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>### Impact
+An attacker can completely bypass file-name randomization security and without authorization download confidential, signed EULA files belonging to any other user across the application.
+
+### Steps to Reproduce:
+1. Log in as a restricted user.
+2. Send a GET request to /api/v1/users/{target_id}/eulas (where target_id belongs to a restricted/denied user).
+3. Observe the response leaks the …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wppf-h75h-6pm6" target="_blank" rel="noopener">SearXNG MCP Server: Additional hardened-mode SSRF bypasses</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54689</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>## Summary
+
+`mcp-searxng` has a hardened-mode URL-reading feature intended to prevent `web_url_read` from reaching private or internal network resources.
+
+PR #79 appears to address one SSRF class: hostnames that resolve to private or internal addresses under hardened mode. I tested PR #79 locally and confirmed that it blocks the DNS-resolves-to-loopback case.
+
+However, several other hardened-mode …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-45ph-gxxr-gwgw" target="_blank" rel="noopener">XWiki Platform Live Data Live Table Connector has privilege escalation from edit to script right through Live Data editing</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53966</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>### Impact
+Any user who can edit a page in XWiki can use Live Data&#x27;s edit REST API in XWiki to change the rights on that page. This allows the user to obtain script right on the page. Script right allows the user to execute potentially dangerous Velocity scripts and send unfiltered HTML and JavaScript to the client. If there are other security checks, e.g., in extensions, implemented as listeners …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7m52-jw36-44r3" target="_blank" rel="noopener">MCP PHP SDK: client HttpTransport SSE buffer (sseBuffer .= chunk) grows unbounded when server withholds the event delimiter</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53965</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>## Summary
+
+The HTTP client transport in `mcp/sdk` reads a Server-Sent-Events (SSE) response
+stream incrementally and appends each 4 KiB chunk to an in-memory buffer
+(`$this-&gt;sseBuffer .= $chunk;`) with **no upper bound**. The buffer is only ever
+flushed when an SSE event delimiter (`&quot;\n\n&quot;`) appears. A remote MCP server (the
+peer the client connects to) that streams response bytes without ever se…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w47q-945m-q9pc" target="_blank" rel="noopener">Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53964</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>### Impact
+A remote code execution (RCE) via server-side template injection (SSTI) allows for user supplied code to be executed in the server&#x27;s context where it is executed as the document-merge-server user with the UID 901 thus giving an attacker considerable control over the container. The vulnerability is limited to XLSX templates, were the `xltpl` library uses a npn-sandboxed Jinja environment…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2xhg-73j7-rrgx" target="_blank" rel="noopener">Contentful MCP Server: export_space/import_space tools pass LLM-controlled `host`/`proxy` args to CMA client, redirecting server PAT to attacker-controlled endpoint</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-53957</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-19</span>
+          </div>
+          <p class='summary'>### Summary
+
+`export_space` and `import_space` tools in `@contentful/mcp-tools` accept LLM-controlled `host` and `proxy` parameters that are spread directly into the options object passed to `contentful-export` / `contentful-import`. These libraries pass the merged options — including the attacker-controlled `host` — to the Contentful Management API (CMA) SDK, which builds `baseURL` from `host` an…</p>
 
         </article>
 
