@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-20 00:31 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-20 06:23 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -150,7 +150,20 @@ The shortcomings added to the KEV catalog are listed below -
 
 ---
 
-## 16. 🟡 High Severity — Tina: Broken Access Control: arbitrary bucket-key write/delete in `next-tinacms-s3` (and sibling production media adapters)
+## 16. 🟡 High Severity — Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code
+
+**CVE:** `CVE-2026-32475` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-20
+**Reference:** <https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html>
+
+> Cybersecurity researchers have disclosed details of a critical flaw in the Elementor Pro WordPress plugin that, if successfully exploited, could lead to remote code execution.
+
+The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of 10.0. It has been described as a case of unrestricted upload of a file with a dangerous type.
+
+&quot;The flaw lives in the Forms module&#x27;s…
+
+---
+
+## 17. 🟡 High Severity — Tina: Broken Access Control: arbitrary bucket-key write/delete in `next-tinacms-s3` (and sibling production media adapters)
 
 **CVE:** `CVE-2026-59992` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-8mq9-5fw2-5rm4>
@@ -161,7 +174,7 @@ The production media handler shipped by `next-tinacms-s3` (`createMediaHandler` 
 
 ---
 
-## 17. 🟡 High Severity — logto-tunnel serves files outside --experience-path via path traversal
+## 18. 🟡 High Severity — logto-tunnel serves files outside --experience-path via path traversal
 
 **CVE:** `CVE-2026-63188` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-rxjr-6c9q-h67x>
@@ -176,7 +189,7 @@ The tunnel command accepts `--experience-path` as the local folder path for cust
 
 ---
 
-## 18. 🟡 High Severity — Snipe-IT: Chained Information Disclosure and IDOR Leads to Full EULA File Takeover
+## 19. 🟡 High Severity — Snipe-IT: Chained Information Disclosure and IDOR Leads to Full EULA File Takeover
 
 **CVE:** `CVE-2026-55694` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-3hgv-jr5j-cg9x>
@@ -191,7 +204,7 @@ An attacker can completely bypass file-name randomization security and without a
 
 ---
 
-## 19. 🟡 High Severity — SearXNG MCP Server: Additional hardened-mode SSRF bypasses
+## 20. 🟡 High Severity — SearXNG MCP Server: Additional hardened-mode SSRF bypasses
 
 **CVE:** `CVE-2026-54689` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-wppf-h75h-6pm6>
@@ -206,7 +219,7 @@ However, several other hardened-mode …
 
 ---
 
-## 20. 🟡 High Severity — XWiki Platform Live Data Live Table Connector has privilege escalation from edit to script right through Live Data editing
+## 21. 🟡 High Severity — XWiki Platform Live Data Live Table Connector has privilege escalation from edit to script right through Live Data editing
 
 **CVE:** `CVE-2026-53966` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-45ph-gxxr-gwgw>
@@ -216,7 +229,7 @@ Any user who can edit a page in XWiki can use Live Data&#x27;s edit REST API in 
 
 ---
 
-## 21. 🟡 High Severity — MCP PHP SDK: client HttpTransport SSE buffer (sseBuffer .= chunk) grows unbounded when server withholds the event delimiter
+## 22. 🟡 High Severity — MCP PHP SDK: client HttpTransport SSE buffer (sseBuffer .= chunk) grows unbounded when server withholds the event delimiter
 
 **CVE:** `CVE-2026-53965` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-7m52-jw36-44r3>
@@ -231,7 +244,7 @@ peer the client connects to) that streams response bytes wi…
 
 ---
 
-## 22. 🟡 High Severity — Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)
+## 23. 🟡 High Severity — Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)
 
 **CVE:** `CVE-2026-53964` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-w47q-945m-q9pc>
@@ -241,7 +254,7 @@ A remote code execution (RCE) via server-side template injection (SSTI) allows f
 
 ---
 
-## 23. 🟡 High Severity — Contentful MCP Server: export_space/import_space tools pass LLM-controlled `host`/`proxy` args to CMA client, redirecting server PAT to attacker-controlled endpoint
+## 24. 🟡 High Severity — Contentful MCP Server: export_space/import_space tools pass LLM-controlled `host`/`proxy` args to CMA client, redirecting server PAT to attacker-controlled endpoint
 
 **CVE:** `CVE-2026-53957` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-2xhg-73j7-rrgx>
@@ -252,7 +265,7 @@ A remote code execution (RCE) via server-side template injection (SSTI) allows f
 
 ---
 
-## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 25. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
