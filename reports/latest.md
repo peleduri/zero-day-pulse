@@ -1,10 +1,28 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-20 12:21 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 21 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-20 18:20 UTC &nbsp;|&nbsp; **Total:** 37 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 22 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-72529 — TrueConf Server Missing Authentication for Critical Function Vulnerability
+
+**CVE:** `CVE-2026-72529` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-20
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-72529>
+
+> Vendor: TrueConf | Product: Server. TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Ris…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-72530 — TrueConf Server Code Injection Vulnerability
+
+**CVE:** `CVE-2026-72530` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-20
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-72530>
+
+> Vendor: TrueConf | Product: Server. TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with…
+
+---
+
+## 3. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +31,41 @@
 
 ---
 
-## 2. 🟠 Zero-Day — August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs
+## 4. 🟠 Zero-Day — August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Aug 11, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Critical Zimbra RCE flaw now actively exploited in attacks
+## 5. 🟠 Zero-Day — Velero vulnerable to file path traversal when extracting from backup's tarball
+
+**CVE:** `CVE-2026-32637` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-20
+**Reference:** <https://github.com/advisories/GHSA-j2g6-362q-6qc6>
+
+> ### Impact
+_What kind of vulnerability is it? Who is impacted?_
+If the attacker compromises the backup&#x27;s object storage backend and uploads a malicious backup tarball including file names like the following:
+* ../../../tmp/escape_1              -&gt; file created at /tmp/escape_1
+* ../../../../../../../../tmp/escape_2 -&gt; file created at /tmp/escape_2
+* ../../../tmp/cron_poc              -&…
+
+---
+
+## 6. 🟠 Zero-Day — Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution
+
+**CVE:** `CVE-2026-73570` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-20
+**Reference:** <https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html>
+
+> A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska).
+
+The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of command injection that can lead to remote code execution.
+
+&quot;A remote code execution vulnerability exists in Zimbra
+
+---
+
+## 7. 🟠 Zero-Day — Critical Zimbra RCE flaw now actively exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-zimbra-rce-flaw-now-actively-exploited-in-attacks/>
@@ -29,7 +74,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — [0day-rubbish] ONE Reporter 13.1 Authenticated RCE / privilege escalation via CommandExecutor (8.8)
+## 8. 🟠 Zero-Day — [0day-rubbish] ONE Reporter 13.1 Authenticated RCE / privilege escalation via CommandExecutor (8.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/75>
@@ -38,7 +83,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — [0day-rubbish] RoboTask 11.0.5.1229 Unauthenticated REST API remote task execution (9.8)
+## 9. 🟠 Zero-Day — [0day-rubbish] RoboTask 11.0.5.1229 Unauthenticated REST API remote task execution (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/73>
@@ -47,7 +92,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — [0day-rubbish] ActiveFax Server 10.70 Unauthenticated LPD Ghostscript %pipe% SYSTEM RCE (9.8)
+## 10. 🟠 Zero-Day — [0day-rubbish] ActiveFax Server 10.70 Unauthenticated LPD Ghostscript %pipe% SYSTEM RCE (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/72>
@@ -56,7 +101,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — [0day-rubbish] Tornado 2.11.3 Unauthenticated arbitrary file write to root RCE (storeTo=file: to cron) (9.8)
+## 11. 🟠 Zero-Day — [0day-rubbish] Tornado 2.11.3 Unauthenticated arbitrary file write to root RCE (storeTo=file: to cron) (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/71>
@@ -65,7 +110,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — [0day-rubbish] Datalore On-Premises 2026.2.3 Unauthenticated RCE via InteractiveReport access-mapping flaw (9.8)
+## 12. 🟠 Zero-Day — [0day-rubbish] Datalore On-Premises 2026.2.3 Unauthenticated RCE via InteractiveReport access-mapping flaw (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/70>
@@ -74,7 +119,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — SearXNG MCP Server is Vulnerable to SSRF in web_url_read: the internal-address guard is disabled by default (MCP_HTTP_HARDEN off)
+## 13. 🟠 Zero-Day — SearXNG MCP Server is Vulnerable to SSRF in web_url_read: the internal-address guard is disabled by default (MCP_HTTP_HARDEN off)
 
 **CVE:** `CVE-2026-54688` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-q87f-qc2r-2gw4>
@@ -87,7 +132,7 @@ The web_url_read tool fetches a caller-supplied URL server-side and converts it 
 
 ---
 
-## 10. 🟠 Zero-Day — langgraph-api: Incomplete assistant authorization in LangGraph Server run creation
+## 14. 🟠 Zero-Day — langgraph-api: Incomplete assistant authorization in LangGraph Server run creation
 
 **CVE:** `CVE-2026-55236` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-jfj5-wrj9-63x4>
@@ -98,7 +143,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), the run-
 
 ---
 
-## 11. 🟠 Zero-Day — langgraph-api: Relative webhook targets in LangGraph Server can reach in-process routes without authentication
+## 15. 🟠 Zero-Day — langgraph-api: Relative webhook targets in LangGraph Server can reach in-process routes without authentication
 
 **CVE:** `CVE-2026-55235` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-2c9q-c2q9-qgqv>
@@ -109,16 +154,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 12. 🟠 Zero-Day — CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway
-
-**CVE:** `CVE-2026-19490` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-19
-**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway>
-
-> Overview On August 19, 2026, a security advisory was published for CVE-2026-19490 , a critical authentication bypass vulnerability affecting Citrix NetScaler ADC and NetScaler Gateway. The vulnerability carries a CVSS v4.0 base score of 9.3 and can be exploited remotely by an unauthenticated attacker over the network without user interaction or elevated privileges. NetScaler ADC and NetScaler Gate…
-
----
-
-## 13. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 16. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -127,7 +163,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 14. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 17. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -136,7 +172,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 15. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 18. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -145,7 +181,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 16. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 19. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -154,7 +190,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 17. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 20. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -163,7 +199,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 18. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 21. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -172,7 +208,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 19. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 22. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -181,7 +217,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 20. 🟠 Zero-Day — [0day-rubbish] VMS 6.48.809 Authenticated command injection to root RCE (8.8)
+## 23. 🟠 Zero-Day — [0day-rubbish] VMS 6.48.809 Authenticated command injection to root RCE (8.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/76>
@@ -190,7 +226,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 21. 🟠 Zero-Day — [0day-rubbish] Gemini 7.3.0 Authenticated SQL injection to xp_cmdshell RCE (8.8)
+## 24. 🟠 Zero-Day — [0day-rubbish] Gemini 7.3.0 Authenticated SQL injection to xp_cmdshell RCE (8.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/74>
@@ -199,7 +235,22 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 22. 🟡 High Severity — Critical GitLab Flaw Exploited Shortly After Disclosure
+## 25. 🟡 High Severity — LangChain MongoDB has NoSQL Operator Injection in MongoDBSaver.list() leading to cross-tenant data exposure
+
+**CVE:** `CVE-2026-55253` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-20
+**Reference:** <https://github.com/advisories/GHSA-533j-2v4q-mw5h>
+
+> # Executive Summary
+
+A NoSQL injection issue exists in the langgraph-checkpoint-mongodb and
+langgraph-store-mongodb libraries. MongoDBSaver.list() and MongoDBStore.search() methods
+accept a filter parameter that is incorporated into MongoDB queries without sufficient validation.
+Because MongoDB query operator keys (those prefixed with $) are not rejected during filter
+construction, a caller with c…
+
+---
+
+## 26. 🟡 High Severity — Critical GitLab Flaw Exploited Shortly After Disclosure
 
 **CVE:** `CVE-2026-19478` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://www.securityweek.com/critical-gitlab-flaw-exploited-shortly-after-disclosure/>
@@ -208,7 +259,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 23. 🟡 High Severity — Cudy WR3000: Hard-coded JWT Secret to Root Command Injection
+## 27. 🟡 High Severity — Cudy WR3000: Hard-coded JWT Secret to Root Command Injection
 
 **CVE:** `CVE-2026-71960` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Aug/68>
@@ -217,7 +268,7 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 
 ---
 
-## 24. 🟡 High Severity — Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code
+## 28. 🟡 High Severity — Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code
 
 **CVE:** `CVE-2026-32475` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html>
@@ -230,7 +281,7 @@ The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of
 
 ---
 
-## 25. 🟡 High Severity — Tina: Broken Access Control: arbitrary bucket-key write/delete in `next-tinacms-s3` (and sibling production media adapters)
+## 29. 🟡 High Severity — Tina: Broken Access Control: arbitrary bucket-key write/delete in `next-tinacms-s3` (and sibling production media adapters)
 
 **CVE:** `CVE-2026-59992` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-8mq9-5fw2-5rm4>
@@ -241,7 +292,7 @@ The production media handler shipped by `next-tinacms-s3` (`createMediaHandler` 
 
 ---
 
-## 26. 🟡 High Severity — logto-tunnel serves files outside --experience-path via path traversal
+## 30. 🟡 High Severity — logto-tunnel serves files outside --experience-path via path traversal
 
 **CVE:** `CVE-2026-63188` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-rxjr-6c9q-h67x>
@@ -256,7 +307,7 @@ The tunnel command accepts `--experience-path` as the local folder path for cust
 
 ---
 
-## 27. 🟡 High Severity — Snipe-IT: Chained Information Disclosure and IDOR Leads to Full EULA File Takeover
+## 31. 🟡 High Severity — Snipe-IT: Chained Information Disclosure and IDOR Leads to Full EULA File Takeover
 
 **CVE:** `CVE-2026-55694` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-3hgv-jr5j-cg9x>
@@ -271,7 +322,7 @@ An attacker can completely bypass file-name randomization security and without a
 
 ---
 
-## 28. 🟡 High Severity — SearXNG MCP Server: Additional hardened-mode SSRF bypasses
+## 32. 🟡 High Severity — SearXNG MCP Server: Additional hardened-mode SSRF bypasses
 
 **CVE:** `CVE-2026-54689` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-wppf-h75h-6pm6>
@@ -286,7 +337,7 @@ However, several other hardened-mode …
 
 ---
 
-## 29. 🟡 High Severity — XWiki Platform Live Data Live Table Connector has privilege escalation from edit to script right through Live Data editing
+## 33. 🟡 High Severity — XWiki Platform Live Data Live Table Connector has privilege escalation from edit to script right through Live Data editing
 
 **CVE:** `CVE-2026-53966` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-45ph-gxxr-gwgw>
@@ -296,7 +347,7 @@ Any user who can edit a page in XWiki can use Live Data&#x27;s edit REST API in 
 
 ---
 
-## 30. 🟡 High Severity — MCP PHP SDK: client HttpTransport SSE buffer (sseBuffer .= chunk) grows unbounded when server withholds the event delimiter
+## 34. 🟡 High Severity — MCP PHP SDK: client HttpTransport SSE buffer (sseBuffer .= chunk) grows unbounded when server withholds the event delimiter
 
 **CVE:** `CVE-2026-53965` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-7m52-jw36-44r3>
@@ -311,7 +362,7 @@ peer the client connects to) that streams response bytes wi…
 
 ---
 
-## 31. 🟡 High Severity — Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)
+## 35. 🟡 High Severity — Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)
 
 **CVE:** `CVE-2026-53964` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-w47q-945m-q9pc>
@@ -321,7 +372,7 @@ A remote code execution (RCE) via server-side template injection (SSTI) allows f
 
 ---
 
-## 32. 🟡 High Severity — Contentful MCP Server: export_space/import_space tools pass LLM-controlled `host`/`proxy` args to CMA client, redirecting server PAT to attacker-controlled endpoint
+## 36. 🟡 High Severity — Contentful MCP Server: export_space/import_space tools pass LLM-controlled `host`/`proxy` args to CMA client, redirecting server PAT to attacker-controlled endpoint
 
 **CVE:** `CVE-2026-53957` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-19
 **Reference:** <https://github.com/advisories/GHSA-2xhg-73j7-rrgx>
@@ -332,7 +383,7 @@ A remote code execution (RCE) via server-side template injection (SSTI) allows f
 
 ---
 
-## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 37. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

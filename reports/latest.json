@@ -1,10 +1,48 @@
 {
-  "generated": "2026-08-20T12:21:47.338978+00:00",
-  "total": 33,
-  "kev": 0,
-  "zero_day": 21,
+  "generated": "2026-08-20T18:20:30.152178+00:00",
+  "total": 37,
+  "kev": 2,
+  "zero_day": 22,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-72529",
+      "title": "CVE-2026-72529 \u2014 TrueConf Server Missing Authentication for Critical Function Vulnerability",
+      "summary": "Vendor: TrueConf | Product: Server. TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-72529",
+      "published": "2026-08-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-72529"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72530",
+      "title": "CVE-2026-72530 \u2014 TrueConf Server Code Injection Vulnerability",
+      "summary": "Vendor: TrueConf | Product: Server. TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-03)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-72530",
+      "published": "2026-08-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-72530"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -33,6 +71,41 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-32637",
+      "title": "Velero vulnerable to file path traversal when extracting from backup's tarball",
+      "summary": "### Impact\n_What kind of vulnerability is it? Who is impacted?_\nIf the attacker compromises the backup's object storage backend and uploads a malicious backup tarball including file names like the following:\n* ../../../tmp/escape_1              -> file created at /tmp/escape_1\n* ../../../../../../../../tmp/escape_2 -> file created at /tmp/escape_2\n* ../../../tmp/cron_poc              -> would be /etc/cron.d/backdoor in real attack\n* ../../../tmp/ssh_poc               -> would be ~/.ssh/authorized_keys\n* ../../../tmp/kubeconfig_poc        -> would be ~/.kube/config\n\nIt's possible that extracting files from the tarball during restore can overwrite sensitive files in the Velero pod filesystem. \n\n### Patches\n_Has the problem been patched? What versions should users upgrade to?_\n\nBy far, there is no patch yet.\nWe are working on the main branch, then cherry-pick to the release-1.18 for v1.18.1 patch.\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\nThere is no workaround, but the good news is that keeping your OSS safe will prevent the vulnerability.",
+      "link": "https://github.com/advisories/GHSA-j2g6-362q-6qc6",
+      "published": "2026-08-20T17:26:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-32637"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
+      "title": "Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution",
+      "summary": "A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska).\n\nThe vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of command injection that can lead to remote code execution.\n\n\"A remote code execution vulnerability exists in Zimbra",
+      "link": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
+      "published": "2026-08-20T13:24:28+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-73570"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -181,23 +254,6 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway",
-      "title": "CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway",
-      "summary": "Overview On August 19, 2026, a security advisory was published for CVE-2026-19490 , a critical authentication bypass vulnerability affecting Citrix NetScaler ADC and NetScaler Gateway. The vulnerability carries a CVSS v4.0 base score of 9.3 and can be exploited remotely by an unauthenticated attacker over the network without user interaction or elevated privileges. NetScaler ADC and NetScaler Gateway are widely deployed enterprise networking products commonly positioned at or near the network perimeter. NetScaler ADC provides application delivery, traffic management, load balancing, SSL/TLS offloading, and application security capabilities, while NetScaler Gateway provides secure remote access and VPN functionality. Because these systems are frequently deployed in enterprise DMZs and exposed to the public internet, authentication bypass vulnerabilities affecting Citrix products are nearly always exploited by threat actors. CVE-2026-19490 affects the following systems: NetScaler ADC and NetScaler Gateway 14.1: Versions prior to 14.1-73.32 NetScaler ADC and NetScaler Gateway 13.1: Versions prior to 13.1-63.21 NetScaler ADC FIPS: Versions prior to 14.1-73.32 FIPS NetScaler ADC FIPS and NDcPP: Versions prior to 13.1-37.277 As of August 19, 2026, Rapid7 has not observed evidence that CVE-2026-19490 is being exploited in the wild. However, organizations should prioritize patching affected systems on an emergency basis, since Citrix products are high-value targets that tend to quickly see exploitation in the wild. Mitigation guidance Organizations running affected NetScaler ADC or NetScaler Gateway appliances should review the official NetScaler advisory and apply the required updates to affected systems on an emergency basis. Fixed versions for affected products are listed below: NetScaler ADC and NetScaler Gateway 14.1-73.32 and later releases NetScaler ADC and NetScaler Gateway 13.1-63.21 and later releases of 13.1 NetScaler ADC 14.1-FIPS 14.1-73.32 FIPS and later relea",
-      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway",
-      "published": "2026-08-19T16:46:06+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-19490"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
       "title": "AI threats in the wild: The current state of prompt injections on the web",
       "summary": "Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise AI agents. But while the danger of IPI is widely discussed, are threat actors actually exploiting this vector today \u2013 and if so, how? To answer these questions and to uncover real-world abuse, we initiated a broad sweep of the public web to monitor for known indirect prompt injection patterns. This is what we found. The threat of indirect prompt injection Unlike a direct injection where a user \"jailbreaks\" a chatbot, IPI occurs when an AI system processes content\u2014like a website, email, or document\u2014that contains malicious instructions. When the AI reads this poisoned content, it may silently follow the attacker's commands instead of the user's original intent. This is not a new area of concern for us and Google has been working tirelessly to combat these threats. Our efforts involve cross-functional collaboration between researchers at Google DeepMind (GDM) and defenders like the Google Threat Intelligence Group (GTIG). We have previously detailed our work in this area and researchers have further highlighted the evolving nature of these vulnerabilities. Despite this collective focus, a fundamental question remains: to what degree are real-world malicious actors currently operationalizing these attacks? Proactive monitoring at Google The landscape of IPI on the web There are many channels through which attackers might try to send prompt injections. However, one location is particularly easy to observe - the public web. Here, threat actors may simply seed prompt injections on websites in hope of corrupting AI systems that browse them. Public research confirms these attacks ar",
@@ -338,6 +394,24 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-55253",
+      "title": "LangChain MongoDB has NoSQL Operator Injection in MongoDBSaver.list() leading to cross-tenant data exposure",
+      "summary": "# Executive Summary\n\nA NoSQL injection issue exists in the langgraph-checkpoint-mongodb and\nlanggraph-store-mongodb libraries. MongoDBSaver.list() and MongoDBStore.search() methods\naccept a filter parameter that is incorporated into MongoDB queries without sufficient validation.\nBecause MongoDB query operator keys (those prefixed with $) are not rejected during filter\nconstruction, a caller with control of the filter input can embed MongoDB query operators\ndirectly into the query.\n\n---\n\n## CVSS Details\n\n### CVSS 4.0\n\n| Field | Value |\n|---|---|\n| **CVSS Version** | 4.0 |\n| **Vector String** | `CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N` |\n| **Base Score** | **7.1 (High)** |\n\n| Metric | Value | Rationale |\n|---|---|---|\n| Attack Vector (AV) | Network | Triggerable remotely via API |\n| Attack Complexity (AC) | Low | No special conditions required |\n| Attack Requirements (AT) | None | No prerequisite deployment or execution conditions |\n| Privileges Required (PR) | Low | Authenticated caller of the checkpoint/store API |\n| User Interaction (UI) | None | No user action required |\n| Vulnerable System Confidentiality (VC) | None | No direct impact on the vulnerable component itself |\n| Vulnerable System Integrity (VI) | None | Read-only access |\n| Vulnerable System Availability (VA) | None | No service disruption |\n| Subsequent System Confidentiality (SC) | High | Full access to other tenants' checkpoint data |\n| Subsequent System Integrity (SI) | None | No write or modification capability |\n| Subsequent System Availability (SA) | None | No service disruption to downstream systems |\n\n### CVSS 3.1\n\n| Field | Value |\n|---|---|\n| **CVSS Version** | 3.1 |\n| **Vector String** | `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N` |\n| **Base Score** | **7.7 (High)** |\n\n| Metric | Value | Rationale |\n|---|---|---|\n| Attack Vector | Network | Triggerable remotely via API |\n| Attack Complexity | Low | No special conditions required |\n| Privileges Required | Low | Au",
+      "link": "https://github.com/advisories/GHSA-533j-2v4q-mw5h",
+      "published": "2026-08-20T17:29:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55253"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.securityweek.com/critical-gitlab-flaw-exploited-shortly-after-disclosure/",

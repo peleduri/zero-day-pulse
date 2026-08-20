@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">21</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">22</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">37</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-20 12:21 UTC</div>
+            <div class="generated">Updated 2026-08-20 18:20 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-72529" target="_blank" rel="noopener">CVE-2026-72529 — TrueConf Server Missing Authentication for Critical Function Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-72529</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-20</span>
+  </div>
+  <p class='summary'>Vendor: TrueConf | Product: Server. TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Ris…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-72530" target="_blank" rel="noopener">CVE-2026-72530 — TrueConf Server Code Injection Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-72530</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-20</span>
+  </div>
+  <p class='summary'>Vendor: TrueConf | Product: Server. TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -148,6 +180,47 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j2g6-362q-6qc6" target="_blank" rel="noopener">Velero vulnerable to file path traversal when extracting from backup&#x27;s tarball</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-32637</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Impact
+_What kind of vulnerability is it? Who is impacted?_
+If the attacker compromises the backup&#x27;s object storage backend and uploads a malicious backup tarball including file names like the following:
+* ../../../tmp/escape_1              -&gt; file created at /tmp/escape_1
+* ../../../../../../../../tmp/escape_2 -&gt; file created at /tmp/escape_2
+* ../../../tmp/cron_poc              -&gt; would be /…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html" target="_blank" rel="noopener">Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-73570</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska).
+
+The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of command injection that can lead to remote code execution.
+
+&quot;A remote code execution vulnerability exists in Zimbra</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -304,22 +377,6 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway" target="_blank" rel="noopener">CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-19490</code>
-    <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-19</span>
-  </div>
-  <p class='summary'>Overview On August 19, 2026, a security advisory was published for CVE-2026-19490 , a critical authentication bypass vulnerability affecting Citrix NetScaler ADC and NetScaler Gateway. The vulnerability carries a CVSS v4.0 base score of 9.3 and can be exploited remotely by an unauthenticated attacker over the network without user interaction or elevated privileges. NetScaler ADC and NetScaler Gate…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html" target="_blank" rel="noopener">AI threats in the wild: The current state of prompt injections on the web</a></h2>
   </div>
   <div class="card-meta">
@@ -460,6 +517,28 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
   <p class='summary'>Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in Gemini 7.3.0. Type: Authenticated SQL injection to xp_cmdshell RCE (CWE-89) CVSS: 8.8 (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H) Impact: Authenticated user executes OS commands via stacked SQL and xp_cmdshell as sa/sysadmin Authentication: authenticated Full technical analysis…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-533j-2v4q-mw5h" target="_blank" rel="noopener">LangChain MongoDB has NoSQL Operator Injection in MongoDBSaver.list() leading to cross-tenant data exposure</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55253</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'># Executive Summary
+
+A NoSQL injection issue exists in the langgraph-checkpoint-mongodb and
+langgraph-store-mongodb libraries. MongoDBSaver.list() and MongoDBStore.search() methods
+accept a filter parameter that is incorporated into MongoDB queries without sufficient validation.
+Because MongoDB query operator keys (those prefixed with $) are not rejected during filter
+construction, a caller with c…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
