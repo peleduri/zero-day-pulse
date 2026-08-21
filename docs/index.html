@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">22</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">37</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">20</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">43</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-20 18:20 UTC</div>
+            <div class="generated">Updated 2026-08-21 00:34 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-72529" target="_blank" rel="noopener">CVE-2026-72529 — TrueConf Server Missing Authentication for Critical Function Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-72529</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-20</span>
-  </div>
-  <p class='summary'>Vendor: TrueConf | Product: Server. TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Ris…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-72530" target="_blank" rel="noopener">CVE-2026-72530 — TrueConf Server Code Injection Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-72530</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-20</span>
-  </div>
-  <p class='summary'>Vendor: TrueConf | Product: Server. TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -180,6 +148,29 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6wvw-vrw4-363w" target="_blank" rel="noopener">node-opcua: Unbounded nonce cache enables unauthenticated heap exhaustion DoS</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54156</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>**Summary**
+A process-global nonce cache with no eviction policy allows an unauthenticated remote attacker to exhaust server heap memory by repeatedly opening sessions, causing the node-opcua server process to crash.
+
+**Affected versions:** &lt;= 2.165.0
+**Tested version:** 2.165.0
+**CVSS Score:** 7.5 (High)
+**CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+**CWE:** CWE-770 Allocation of …</p>
+
+        </article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -317,62 +308,6 @@ The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers 
   <p class='summary'>Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in Datalore On-Premises 2026.2.3. Type: Unauthenticated RCE via InteractiveReport access-mapping flaw (CWE-306) CVSS: 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H) Impact: Anonymous attacker executes arbitrary code in the notebook agent container Authentication: unauthenticated …</p>
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q87f-qc2r-2gw4" target="_blank" rel="noopener">SearXNG MCP Server is Vulnerable to SSRF in web_url_read: the internal-address guard is disabled by default (MCP_HTTP_HARDEN off)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54688</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>Ref: https://github.com/ihor-sokoliuk/mcp-searxng/issues/87#issuecomment-4645453694
-
-
-### Summary
-The web_url_read tool fetches a caller-supplied URL server-side and converts it to markdown. An SSRF guard (assertUrlAllowed, which blocks private/loopback/metadata addresses) exists but runs only when MCP_HTTP_HARDEN=true, which is off by default. So in the default configuration there is no internal-…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jfj5-wrj9-63x4" target="_blank" rel="noopener">langgraph-api: Incomplete assistant authorization in LangGraph Server run creation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55236</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>## Summary
-
-In affected versions of `langgraph-api` (the LangGraph Server runtime), the run-creation path authorized the assistant attached to a run using a different authorization event than the rest of the assistant-handling code paths. Direct assistant reads and cron creation dispatch the `assistants.read` authorization event; run creation dispatched `assistants.search` with an incomplete value…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2c9q-c2q9-qgqv" target="_blank" rel="noopener">langgraph-api: Relative webhook targets in LangGraph Server can reach in-process routes without authentication</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55235</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>## Summary
-
-In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or cron could be created with a relative webhook target. When the server later delivers such a webhook, it routes the request back into the same application through an in-process loopback transport that the authentication middleware treats as internal and does not authenticate. As a result, a relative webhook…</p>
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -521,6 +456,373 @@ In affected versions of `langgraph-api` (the LangGraph Server runtime), a run or
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8r62-w5wh-fc5m" target="_blank" rel="noopener">Mailpit: WebSocket origin check bypass via percent-encoded path (regression of CVE-2026-22689)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-67448</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>## Summary
+
+The cross-site WebSocket hijacking fix was reimplemented as an origin check gated on a raw-URI prefix test, but Go&#x27;s ServeMux routes on the percent-decoded path, so requesting /%61pi/events reaches the WebSocket handler while skipping the only origin control, and the upgrader itself accepts every origin. Confirmed at HEAD 408b30d. Affects 1.29.0 through 1.30.5.
+
+## The defect
+
+Two halv…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f4jp-rw7w-ccwg" target="_blank" rel="noopener">gettext-converter: Prototype pollution in js2i18next() via crafted translation keys</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55451</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Impact
+
+`js2i18next()` is vulnerable to prototype pollution. When converting translations, it splits nested keys on the key separator (default `##`) and uses each segment as a dynamic object key while building the output object. A key whose segment is `__proto__` (e.g. `__proto__##gcPolluted`) causes the converter to resolve `Object.prototype` as the nested write target and assign the translat…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8cfw-pcwh-v63w" target="_blank" rel="noopener">Winter: Authenticated Twig sandbox escape in CMS SecurityPolicy (bypass of CVE-2024-54149)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2024-54149</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Impact
+
+Affected versions of Winter CMS allow authenticated backend users with CMS template-editing permissions to escape the Twig sandbox (&quot;safe mode&quot;) that is meant to restrict what template code can do. Using any of the following permissions, an attacker can read and modify arbitrary database records, execute arbitrary SQL (including DDL such as `DROP TABLE`), exfiltrate sensitive data such…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4899-mpch-38p3" target="_blank" rel="noopener">netty-incubator-codec-ohttp BinaryHttpParser: Unauthenticated CPU-exhaustion DoS via infinite loop in field-section decoding</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63202</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'># BinaryHttpParser: Unauthenticated CPU-exhaustion DoS via infinite loop in field-section decoding
+
+- **ID:** BHTTP-LOOP-001
+- **Severity:** High
+- **CVSS v3.1:** 7.5 — `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H`
+- **CWE:** CWE-835 (Loop with Unreachable Exit Condition) — secondary CWE-400 (Uncontrolled Resource Consumption)
+- **Affected component:** `codec-bhttp` → `io.netty.incubator.codec.bh…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-42vx-43vc-x6pr" target="_blank" rel="noopener">Laravel Backpack CRUD: HasMany/MorphMany relation fields allow cross-tenant record re-parenting (IDOR) via attachManyRelation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-57570</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>## Vulnerability Details
+
+Affected area: HasMany / MorphMany relation handling during CRUD create and update operations  
+CWE: CWE-862 — Missing Authorization  
+Severity: Medium  
+CVSS: 6.5 — CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
+
+### Summary
+
+Backpack CRUD contained an authorization issue in the way certain HasMany and MorphMany relationship fields were processed during create and update o…</p>
+
+        </article>
+
+      <article class="card card-high">
+        <div class="card-top">
+          <span class="badge badge-high">🟡 High</span>
+          <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4xfr-4p46-gc6p" target="_blank" rel="noopener">django CMS: Clipboard copy IDOR discloses unauthorized plugin content</a></h2>
+        </div>
+        <div class="card-meta">
+          <code class="cve">CVE-2026-54622</code>
+          <span class="meta-sep">·</span>
+          <span>GitHub Security Advisories</span>
+          <span class="meta-sep">·</span>
+          <span>2026-08-20</span>
+        </div>
+        <p class='summary'>### Summary
+The clipboard copy paths of the `copy_plugins` admin endpoint validate only   the target (the user&#x27;s own clipboard) and skip source-side authorization. A staff user can copy plugins out of a placeholder they have no permission on   into their clipboard, then read the (secret) content.
+
+### Details
+In `cms/admin/placeholderadmin.py`, `_copy_plugin_to_clipboard` and   `_copy_placeh…</p>
+
+      </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r6p4-grq7-xm4m" target="_blank" rel="noopener">Wagtail: Improper permission handling in image preview</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54261</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Impact
+Due to a missing permission check on the image preview endpoint, a user with access to the Wagtail admin can preview any image. The existing data of the image object itself is not exposed. The vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin.
+
+### Patches
+Patched versions have been released as Wagtail 7.0.8, 7.3.3, 7.4.2.
+
+### Workarounds
+…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h54r-xq46-qwqm" target="_blank" rel="noopener">Wagtail: Improper restriction handling on Documents and Images chosen endpoints</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54259</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Impact
+The Documents and Images chooser&#x27;s chosen endpoint incorrectly listed items for which the user has not been granted choose permission. A user with access to the Wagtail admin could see the filename and name and URLs of documents and images in those collections.
+
+The vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin.
+
+### Patches
+Patched ver…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vmr9-j6wf-pmh2" target="_blank" rel="noopener">netty-incubator-codec-ohttp: [OHttpServerCodec] Native Direct-Memory Leak on AEAD Decryption Failure Leads to Gateway Denial of Service</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-54251</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-20</span>
+  </div>
+  <p class='summary'>The **netty-incubator-codec-ohttp** library implements Oblivious HTTP (OHTTP) gateway and client functionality using Netty&#x27;s `ByteBuf` memory management. When an OHTTP gateway processes encrypted client requests, it allocates a pooled direct (native off-heap) `ByteBuf` to hold the decrypted plaintext before the AEAD tag is verified. If the AEAD tag check fails — meaning the ciphertext is invalid —…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7q96-f8xw-jv5j" target="_blank" rel="noopener">Fleet: SQL injection in Okta conditional access endpoint allows host-controlled compromise of the Fleet database</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54245</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Summary
+
+A SQL injection vulnerability in Fleet&#x27;s Okta conditional access integration could allow an attacker who controls a single enrolled host to read or modify arbitrary data in the Fleet database, including stored session tokens. Disclosed session tokens may be replayed to act as a global administrator, which on a managed fleet leads to remote code execution on enrolled hosts.
+
+### Impact…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mrc5-3mm3-45c5" target="_blank" rel="noopener">Laravel Backpack CRUD: OS command injection in Stats::makeCurlRequest via attacker-controlled Host header (pre-auth)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54182</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>## Summary
+
+`Backpack\CRUD\Stats::makeCurlRequest` builds a shell command using unescaped input that originates from the HTTP `Host` header, then passes it to `exec()`. A specially crafted Host header can break out of the shell argument and cause the server to execute arbitrary OS commands as the web user.
+
+The vulnerable code path is reached from `BackpackServiceProvider::boot()` on every HTTP re…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vgmv-8xjc-6rch" target="_blank" rel="noopener">Laravel Backpack CRUD: CRUD panel query scopes are not enforced on Update, Delete, and Reorder (cross-tenant IDOR)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54180</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>## Summary
+
+Backpack CRUD&#x27;s list and read operations correctly apply any query scopes
+registered via `addClause()` / `addBaseClause()` (e.g. tenant isolation, user
+ownership). However, the **Update**, **Delete**, and **Reorder** operations
+bypassed these scopes, fetching records directly from the unscoped model query.
+
+An authenticated user who knows or can guess a record&#x27;s primary key could
+there…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8q2w-pv9p-mjvc" target="_blank" rel="noopener">Laravel Backpack CRUD: HasUploadFields keeps the attacker-supplied file extension — public-disk uploads of `shell.php` reach the webserver</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54177</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>## Summary
+
+`HasUploadFields` (used via `CrudTrait` on Backpack-managed models) and the `withFiles()` uploader preserve the client-supplied file extension without validation. On installations using a `public` disk with `php artisan storage:link`, this allows an authenticated administrator to upload a file with a server-executable extension that the web server will pass to the PHP interpreter - if …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6f2p-296r-cc28" target="_blank" rel="noopener">Tekton Pipelines-as-Code: Unscoped GitHub App installation token allows unauthorized access to private repositories via remote task resolution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54168</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Impact
+When Pipelines-as-Code is configured with a GitHub App installed across multiple repositories, the installation token issued during webhook processing is not scoped to the triggering repository by default. The token retains access to all repositories in the GitHub App installation.
+
+This allows a user with push access to any repository in the installation to craft a PipelineRun with a r…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f5f4-3hh4-f54m" target="_blank" rel="noopener">Pipelines-as-Code GitHub App token request can be redirected via untrusted Enterprise Host header</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54167</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>## Impact
+
+Pipelines-as-Code installations using the GitHub App provider are vulnerable to GitHub App credential exfiltration through the webhook endpoint.
+
+Affected versions accepted the `X-GitHub-Enterprise-Host` request header as the GitHub Enterprise API host during GitHub App token generation. For GitHub webhook events containing an `installation.id`, Pipelines-as-Code generated a GitHub App …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x3g7-qrwc-f6c5" target="_blank" rel="noopener">Ember has unneutralized terminal escape/control sequences from Caddy logs injected into the operator&#x27;s TUI</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54162</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>## Summary
+
+Ember&#x27;s interactive TUI renders fields taken from the monitored Caddy server&#x27;s access logs — most notably the request URI — straight to the operator&#x27;s terminal without neutralising terminal escape or control sequences (CWE-150). Those log fields are populated from arbitrary, unauthenticated HTTP requests, so any remote client can embed ANSI/OSC/CSI control bytes that the operator&#x27;s ter…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mq36-523m-x7vv" target="_blank" rel="noopener">node-opcua missing nonce verification in UserNameIdentityToken authentication</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54155</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>**Summary**
+A missing nonce verification in the UserNameIdentityToken authentication handler allows an unauthenticated remote attacker to forge a password token that extracts as an empty string, and to replay captured authentication tokens across sessions.
+
+**Affected versions:** &lt;= 2.165.0
+**Tested version:** 2.165.0
+**CVSS Score:** 8.1 (High)
+**CVSS Vector:** CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2p39-2jf3-fv2q" target="_blank" rel="noopener">next-video: Unauthenticated arbitrary file read via /api/video request handler</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54150</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-20</span>
+          </div>
+          <p class='summary'>### Impact
+
+The HTTP route handler exported by `next-video/request-handler` — which the README instructs consumers to mount at `/api/video` — allows an unauthenticated remote attacker to read arbitrary `.json` files from the production filesystem of any application following the documented setup.
+
+The handler&#x27;s `GET` endpoint accepts a `url` query parameter and uses it to locate and serve a JSON a…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-533j-2v4q-mw5h" target="_blank" rel="noopener">LangChain MongoDB has NoSQL Operator Injection in MongoDBSaver.list() leading to cross-tenant data exposure</a></h2>
           </div>
           <div class="card-meta">
@@ -589,164 +891,6 @@ construction, a caller with c…</p>
 The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of 10.0. It has been described as a case of unrestricted upload of a file with a dangerous type.
 
 &quot;The flaw lives in the Forms module&#x27;s File</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8mq9-5fw2-5rm4" target="_blank" rel="noopener">Tina: Broken Access Control: arbitrary bucket-key write/delete in `next-tinacms-s3` (and sibling production media adapters)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59992</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>## Summary
-
-The production media handler shipped by `next-tinacms-s3` (`createMediaHandler` in `packages/next-tinacms-s3/src/handlers.ts`) accepts an attacker-chosen `?key=` query parameter and returns an AWS-signed `PutObject` URL whose `Key` is that value, with no check that the key falls under the operator&#x27;s configured `mediaRoot`. The same handler&#x27;s `DELETE` branch reads `objectKey = (req.quer…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rxjr-6c9q-h67x" target="_blank" rel="noopener">logto-tunnel serves files outside --experience-path via path traversal</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63188</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>### Summary
-
-`@logto/tunnel` serves custom sign-in experience files from the `--experience-path` directory. When the tunnel service is reachable, a requester can use `../` path segments in a static asset request to read files outside that directory that the CLI process can read.
-
-### Details
-
-The tunnel command accepts `--experience-path` as the local folder path for custom sign-in experience asse…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3hgv-jr5j-cg9x" target="_blank" rel="noopener">Snipe-IT: Chained Information Disclosure and IDOR Leads to Full EULA File Takeover</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55694</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>### Impact
-An attacker can completely bypass file-name randomization security and without authorization download confidential, signed EULA files belonging to any other user across the application.
-
-### Steps to Reproduce:
-1. Log in as a restricted user.
-2. Send a GET request to /api/v1/users/{target_id}/eulas (where target_id belongs to a restricted/denied user).
-3. Observe the response leaks the …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wppf-h75h-6pm6" target="_blank" rel="noopener">SearXNG MCP Server: Additional hardened-mode SSRF bypasses</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54689</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>## Summary
-
-`mcp-searxng` has a hardened-mode URL-reading feature intended to prevent `web_url_read` from reaching private or internal network resources.
-
-PR #79 appears to address one SSRF class: hostnames that resolve to private or internal addresses under hardened mode. I tested PR #79 locally and confirmed that it blocks the DNS-resolves-to-loopback case.
-
-However, several other hardened-mode …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-45ph-gxxr-gwgw" target="_blank" rel="noopener">XWiki Platform Live Data Live Table Connector has privilege escalation from edit to script right through Live Data editing</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53966</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>### Impact
-Any user who can edit a page in XWiki can use Live Data&#x27;s edit REST API in XWiki to change the rights on that page. This allows the user to obtain script right on the page. Script right allows the user to execute potentially dangerous Velocity scripts and send unfiltered HTML and JavaScript to the client. If there are other security checks, e.g., in extensions, implemented as listeners …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7m52-jw36-44r3" target="_blank" rel="noopener">MCP PHP SDK: client HttpTransport SSE buffer (sseBuffer .= chunk) grows unbounded when server withholds the event delimiter</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53965</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>## Summary
-
-The HTTP client transport in `mcp/sdk` reads a Server-Sent-Events (SSE) response
-stream incrementally and appends each 4 KiB chunk to an in-memory buffer
-(`$this-&gt;sseBuffer .= $chunk;`) with **no upper bound**. The buffer is only ever
-flushed when an SSE event delimiter (`&quot;\n\n&quot;`) appears. A remote MCP server (the
-peer the client connects to) that streams response bytes without ever se…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w47q-945m-q9pc" target="_blank" rel="noopener">Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53964</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>### Impact
-A remote code execution (RCE) via server-side template injection (SSTI) allows for user supplied code to be executed in the server&#x27;s context where it is executed as the document-merge-server user with the UID 901 thus giving an attacker considerable control over the container. The vulnerability is limited to XLSX templates, were the `xltpl` library uses a npn-sandboxed Jinja environment…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2xhg-73j7-rrgx" target="_blank" rel="noopener">Contentful MCP Server: export_space/import_space tools pass LLM-controlled `host`/`proxy` args to CMA client, redirecting server PAT to attacker-controlled endpoint</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53957</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-19</span>
-          </div>
-          <p class='summary'>### Summary
-
-`export_space` and `import_space` tools in `@contentful/mcp-tools` accept LLM-controlled `host` and `proxy` parameters that are spread directly into the options object passed to `contentful-export` / `contentful-import`. These libraries pass the merged options — including the attacker-controlled `host` — to the Contentful Management API (CMA) SDK, which builds `baseURL` from `host` an…</p>
 
         </article>
 
