@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-21T06:24:14.675110+00:00",
-  "total": 42,
+  "generated": "2026-08-21T12:21:33.301287+00:00",
+  "total": 33,
   "kev": 0,
-  "zero_day": 20,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,23 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
+      "title": "Microsoft Entra ID Flaw (CVSS 10.0) Exploited in Wild, Allows Remote Code Execution",
+      "summary": "Microsoft on Thursday warned of a maximum-severity security flaw in Entra ID that it said has been exploited in the wild, but noted that no customer action is required.\n\nThe vulnerability, tracked as CVE-2026-69836 (CVSS score: 10.0), is a case of remote code execution impacting the tech giant's cloud-based identity and access management service. It was previously called Azure Active Directory",
+      "link": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
+      "published": "2026-08-21T06:06:11+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-69836"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -86,96 +103,6 @@
       "cve_ids": [
         "CVE-2026-73570"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-zimbra-rce-flaw-now-actively-exploited-in-attacks/",
-      "title": "Critical Zimbra RCE flaw now actively exploited in attacks",
-      "summary": "CERT Polska, the Polish Computer Emergency Response Team (CERT), warned that attackers have begun exploiting a critical vulnerability in Zimbra Collaboration Suite (ZCS). [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-zimbra-rce-flaw-now-actively-exploited-in-attacks/",
-      "published": "2026-08-20T09:46:54+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/75",
-      "title": "[0day-rubbish] ONE Reporter 13.1 Authenticated RCE / privilege escalation via CommandExecutor (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in ONE Reporter 13.1. Type: Authenticated RCE / privilege escalation via CommandExecutor (CWE-78) CVSS: 8.8 (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H) Impact: Low-privilege user executes arbitrary commands as local-admin service account Authentication: authenticated Full technical analysis and a reproducible proof-of-concept:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/75",
-      "published": "2026-08-20T06:25:25+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/73",
-      "title": "[0day-rubbish] RoboTask 11.0.5.1229 Unauthenticated REST API remote task execution (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in RoboTask 11.0.5.1229. Type: Unauthenticated REST API remote task execution (CWE-306) CVSS: 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H) Impact: Unauthenticated attacker enumerates and triggers pre-existing tasks with Administrator privileges Authentication: unauthenticated / pre-auth Full technical analysis and a reproducible proof-of-concept:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/73",
-      "published": "2026-08-20T06:25:19+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/72",
-      "title": "[0day-rubbish] ActiveFax Server 10.70 Unauthenticated LPD Ghostscript %pipe% SYSTEM RCE (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in ActiveFax Server 10.70. Type: Unauthenticated LPD Ghostscript %pipe% SYSTEM RCE (CWE-78) CVSS: 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H) Impact: Unauthenticated attacker executes arbitrary commands as SYSTEM via an LPD print job Authentication: unauthenticated / pre-auth Full technical analysis and a reproducible proof-of-concept:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/72",
-      "published": "2026-08-20T06:25:17+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/71",
-      "title": "[0day-rubbish] Tornado 2.11.3 Unauthenticated arbitrary file write to root RCE (storeTo=file: to cron) (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in Tornado 2.11.3. Type: Unauthenticated arbitrary file write to root RCE (storeTo=file: to cron) (CWE-22) CVSS: 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H) Impact: Unauthenticated attacker writes arbitrary files and achieves root command execution via cron Authentication: unauthenticated / pre-auth Full technical analysis and a reproducible proof-of-concept:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/71",
-      "published": "2026-08-20T06:25:14+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/70",
-      "title": "[0day-rubbish] Datalore On-Premises 2026.2.3 Unauthenticated RCE via InteractiveReport access-mapping flaw (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in Datalore On-Premises 2026.2.3. Type: Unauthenticated RCE via InteractiveReport access-mapping flaw (CWE-306) CVSS: 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H) Impact: Anonymous attacker executes arbitrary code in the notebook agent container Authentication: unauthenticated / pre-auth Full technical analysis and a reproducible proof-of-concept:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/70",
-      "published": "2026-08-20T06:25:11+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -286,36 +213,6 @@
       "tags": [
         "cisa",
         "ics"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/76",
-      "title": "[0day-rubbish] VMS 6.48.809 Authenticated command injection to root RCE (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in VMS 6.48.809. Type: Authenticated command injection to root RCE (CWE-78) CVSS: 8.8 (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H) Impact: Authenticated attacker executes arbitrary commands as root via unsanitized command injection Authentication: authenticated Full technical analysis and a reproducible proof-of-concept:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/76",
-      "published": "2026-08-20T06:25:27+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/74",
-      "title": "[0day-rubbish] Gemini 7.3.0 Authenticated SQL injection to xp_cmdshell RCE (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Aug 19 0day Rubbish Research Team is publicly disclosing a vulnerability in Gemini 7.3.0. Type: Authenticated SQL injection to xp_cmdshell RCE (CWE-89) CVSS: 8.8 (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H) Impact: Authenticated user executes OS commands via stacked SQL and xp_cmdshell as sa/sysadmin Authentication: authenticated Full technical analysis and a reproducible proof-of-concept:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/74",
-      "published": "2026-08-20T06:25:22+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -659,40 +556,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55253"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/critical-gitlab-flaw-exploited-shortly-after-disclosure/",
-      "title": "Critical GitLab Flaw Exploited Shortly After Disclosure",
-      "summary": "CVE-2026-19478 can be exploited without authentication to modify or delete public projects and user data. The post Critical GitLab Flaw Exploited Shortly After Disclosure appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/critical-gitlab-flaw-exploited-shortly-after-disclosure/",
-      "published": "2026-08-20T07:48:24+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-19478"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Aug/68",
-      "title": "Cudy WR3000: Hard-coded JWT Secret to Root Command Injection",
-      "summary": "Posted by Nir Yehoshua on Aug 19 Hello Full Disclosure list, Cipher Security Labs has published details for two vulnerabilities affecting Cudy WR3000 hardware revision 2.0 running firmware before version 2.5.24. CVE-2026-71960 - Hard-coded JWT Secret Authentication Bypass Severity: Critical, CVSS 9.3 The device firmware contains a hard-coded HMAC signing secret used by the Mosquitto MQTT JWT authentication plugin. Because the secret can be recovered from the firmware image,...",
-      "link": "https://seclists.org/fulldisclosure/2026/Aug/68",
-      "published": "2026-08-20T06:24:59+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-71960"
       ],
       "is_zero_day": false,
       "is_high_severity": true
