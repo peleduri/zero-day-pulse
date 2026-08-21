@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-21 00:34 UTC &nbsp;|&nbsp; **Total:** 43 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 23 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-21 06:24 UTC &nbsp;|&nbsp; **Total:** 42 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -471,20 +471,7 @@ construction, a caller with c…
 
 ---
 
-## 42. 🟡 High Severity — Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code
-
-**CVE:** `CVE-2026-32475` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-20
-**Reference:** <https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html>
-
-> Cybersecurity researchers have disclosed details of a critical flaw in the Elementor Pro WordPress plugin that, if successfully exploited, could lead to remote code execution.
-
-The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of 10.0. It has been described as a case of unrestricted upload of a file with a dangerous type.
-
-&quot;The flaw lives in the Forms module&#x27;s…
-
----
-
-## 43. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 42. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
