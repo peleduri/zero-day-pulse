@@ -1,10 +1,48 @@
 {
-  "generated": "2026-08-21T12:21:33.301287+00:00",
-  "total": 33,
-  "kev": 0,
-  "zero_day": 13,
+  "generated": "2026-08-21T18:20:01.168533+00:00",
+  "total": 32,
+  "kev": 2,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-69836",
+      "title": "CVE-2026-69836 \u2014 Microsoft Entra ID Deserialization of Untrusted Data Vulnerability",
+      "summary": "Vendor: Microsoft | Product: Entra ID . Microsoft Entra ID formerly known as Azure Active Directory contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-24)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-69836",
+      "published": "2026-08-21",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-69836"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73570",
+      "title": "CVE-2026-73570 \u2014 Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
+      "summary": "Vendor: Synacor | Product: Zimbra Collaboration Suite (ZCS). Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as the Zimbra user. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-24)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-73570",
+      "published": "2026-08-21",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-73570"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -37,19 +75,17 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
-      "title": "Microsoft Entra ID Flaw (CVSS 10.0) Exploited in Wild, Allows Remote Code Execution",
-      "summary": "Microsoft on Thursday warned of a maximum-severity security flaw in Entra ID that it said has been exploited in the wild, but noted that no customer action is required.\n\nThe vulnerability, tracked as CVE-2026-69836 (CVSS score: 10.0), is a case of remote code execution impacting the tech giant's cloud-based identity and access management service. It was previously called Azure Active Directory",
-      "link": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
-      "published": "2026-08-21T06:06:11+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-trueconf-server-flaws/",
+      "title": "CISA orders feds to patch actively exploited TrueConf Server flaws",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered U.S. federal agencies to prioritize patching two actively exploited vulnerabilities in the TrueConf Server self-hosted communications platform. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-trueconf-server-flaws/",
+      "published": "2026-08-21T12:25:33+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "zeroday"
+        "malware"
       ],
-      "cve_ids": [
-        "CVE-2026-69836"
-      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -67,41 +103,6 @@
       ],
       "cve_ids": [
         "CVE-2026-54156"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-32637",
-      "title": "Velero vulnerable to file path traversal when extracting from backup's tarball",
-      "summary": "### Impact\n_What kind of vulnerability is it? Who is impacted?_\nIf the attacker compromises the backup's object storage backend and uploads a malicious backup tarball including file names like the following:\n* ../../../tmp/escape_1              -> file created at /tmp/escape_1\n* ../../../../../../../../tmp/escape_2 -> file created at /tmp/escape_2\n* ../../../tmp/cron_poc              -> would be /etc/cron.d/backdoor in real attack\n* ../../../tmp/ssh_poc               -> would be ~/.ssh/authorized_keys\n* ../../../tmp/kubeconfig_poc        -> would be ~/.kube/config\n\nIt's possible that extracting files from the tarball during restore can overwrite sensitive files in the Velero pod filesystem. \n\n### Patches\n_Has the problem been patched? What versions should users upgrade to?_\n\nBy far, there is no patch yet.\nWe are working on the main branch, then cherry-pick to the release-1.18 for v1.18.1 patch.\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\nThere is no workaround, but the good news is that keeping your OSS safe will prevent the vulnerability.",
-      "link": "https://github.com/advisories/GHSA-j2g6-362q-6qc6",
-      "published": "2026-08-20T17:26:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-32637"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
-      "title": "Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution",
-      "summary": "A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska).\n\nThe vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of command injection that can lead to remote code execution.\n\n\"A remote code execution vulnerability exists in Zimbra",
-      "link": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
-      "published": "2026-08-20T13:24:28+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-73570"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -538,24 +539,6 @@
       ],
       "cve_ids": [
         "CVE-2026-54150"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55253",
-      "title": "LangChain MongoDB has NoSQL Operator Injection in MongoDBSaver.list() leading to cross-tenant data exposure",
-      "summary": "# Executive Summary\n\nA NoSQL injection issue exists in the langgraph-checkpoint-mongodb and\nlanggraph-store-mongodb libraries. MongoDBSaver.list() and MongoDBStore.search() methods\naccept a filter parameter that is incorporated into MongoDB queries without sufficient validation.\nBecause MongoDB query operator keys (those prefixed with $) are not rejected during filter\nconstruction, a caller with control of the filter input can embed MongoDB query operators\ndirectly into the query.\n\n---\n\n## CVSS Details\n\n### CVSS 4.0\n\n| Field | Value |\n|---|---|\n| **CVSS Version** | 4.0 |\n| **Vector String** | `CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N` |\n| **Base Score** | **7.1 (High)** |\n\n| Metric | Value | Rationale |\n|---|---|---|\n| Attack Vector (AV) | Network | Triggerable remotely via API |\n| Attack Complexity (AC) | Low | No special conditions required |\n| Attack Requirements (AT) | None | No prerequisite deployment or execution conditions |\n| Privileges Required (PR) | Low | Authenticated caller of the checkpoint/store API |\n| User Interaction (UI) | None | No user action required |\n| Vulnerable System Confidentiality (VC) | None | No direct impact on the vulnerable component itself |\n| Vulnerable System Integrity (VI) | None | Read-only access |\n| Vulnerable System Availability (VA) | None | No service disruption |\n| Subsequent System Confidentiality (SC) | High | Full access to other tenants' checkpoint data |\n| Subsequent System Integrity (SI) | None | No write or modification capability |\n| Subsequent System Availability (SA) | None | No service disruption to downstream systems |\n\n### CVSS 3.1\n\n| Field | Value |\n|---|---|\n| **CVSS Version** | 3.1 |\n| **Vector String** | `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N` |\n| **Base Score** | **7.7 (High)** |\n\n| Metric | Value | Rationale |\n|---|---|---|\n| Attack Vector | Network | Triggerable remotely via API |\n| Attack Complexity | Low | No special conditions required |\n| Privileges Required | Low | Au",
-      "link": "https://github.com/advisories/GHSA-533j-2v4q-mw5h",
-      "published": "2026-08-20T17:29:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55253"
       ],
       "is_zero_day": false,
       "is_high_severity": true

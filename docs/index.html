@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-21 12:21 UTC</div>
+            <div class="generated">Updated 2026-08-21 18:20 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-69836" target="_blank" rel="noopener">CVE-2026-69836 — Microsoft Entra ID Deserialization of Untrusted Data Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-69836</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-21</span>
+  </div>
+  <p class='summary'>Vendor: Microsoft | Product: Entra ID . Microsoft Entra ID formerly known as Azure Active Directory contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see …</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-73570" target="_blank" rel="noopener">CVE-2026-73570 — Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-73570</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-21</span>
+  </div>
+  <p class='summary'>Vendor: Synacor | Product: Zimbra Collaboration Suite (ZCS). Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as the Zimbra user. Required action: Apply mitigations in accordance with vendor instructions, ensuring c…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -149,23 +181,21 @@
 
 </article>
 
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html" target="_blank" rel="noopener">Microsoft Entra ID Flaw (CVSS 10.0) Exploited in Wild, Allows Remote Code Execution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69836</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-21</span>
-          </div>
-          <p class='summary'>Microsoft on Thursday warned of a maximum-severity security flaw in Entra ID that it said has been exploited in the wild, but noted that no customer action is required.
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-trueconf-server-flaws/" target="_blank" rel="noopener">CISA orders feds to patch actively exploited TrueConf Server flaws</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-21</span>
+  </div>
+  <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered U.S. federal agencies to prioritize patching two actively exploited vulnerabilities in the TrueConf Server self-hosted communications platform. [...]</p>
 
-The vulnerability, tracked as CVE-2026-69836 (CVSS score: 10.0), is a case of remote code execution impacting the tech giant&#x27;s cloud-based identity and access management service. It was previously called Azure Active Directory</p>
-
-        </article>
+</article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -187,47 +217,6 @@ A process-global nonce cache with no eviction policy allows an unauthenticated r
 **CVSS Score:** 7.5 (High)
 **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
 **CWE:** CWE-770 Allocation of …</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j2g6-362q-6qc6" target="_blank" rel="noopener">Velero vulnerable to file path traversal when extracting from backup&#x27;s tarball</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-32637</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-20</span>
-          </div>
-          <p class='summary'>### Impact
-_What kind of vulnerability is it? Who is impacted?_
-If the attacker compromises the backup&#x27;s object storage backend and uploads a malicious backup tarball including file names like the following:
-* ../../../tmp/escape_1              -&gt; file created at /tmp/escape_1
-* ../../../../../../../../tmp/escape_2 -&gt; file created at /tmp/escape_2
-* ../../../tmp/cron_poc              -&gt; would be /…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html" target="_blank" rel="noopener">Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-73570</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-20</span>
-          </div>
-          <p class='summary'>A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska).
-
-The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of command injection that can lead to remote code execution.
-
-&quot;A remote code execution vulnerability exists in Zimbra</p>
 
         </article>
 
@@ -707,28 +696,6 @@ A missing nonce verification in the UserNameIdentityToken authentication handler
 The HTTP route handler exported by `next-video/request-handler` — which the README instructs consumers to mount at `/api/video` — allows an unauthenticated remote attacker to read arbitrary `.json` files from the production filesystem of any application following the documented setup.
 
 The handler&#x27;s `GET` endpoint accepts a `url` query parameter and uses it to locate and serve a JSON a…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-533j-2v4q-mw5h" target="_blank" rel="noopener">LangChain MongoDB has NoSQL Operator Injection in MongoDBSaver.list() leading to cross-tenant data exposure</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55253</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-20</span>
-          </div>
-          <p class='summary'># Executive Summary
-
-A NoSQL injection issue exists in the langgraph-checkpoint-mongodb and
-langgraph-store-mongodb libraries. MongoDBSaver.list() and MongoDBStore.search() methods
-accept a filter parameter that is incorporated into MongoDB queries without sufficient validation.
-Because MongoDB query operator keys (those prefixed with $) are not rejected during filter
-construction, a caller with c…</p>
 
         </article>
 

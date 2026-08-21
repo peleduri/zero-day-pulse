@@ -1,10 +1,28 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-21 12:21 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-21 18:20 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-69836 — Microsoft Entra ID Deserialization of Untrusted Data Vulnerability
+
+**CVE:** `CVE-2026-69836` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-21
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-69836>
+
+> Vendor: Microsoft | Product: Entra ID . Microsoft Entra ID formerly known as Azure Active Directory contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see …
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-73570 — Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability
+
+**CVE:** `CVE-2026-73570` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-08-21
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-73570>
+
+> Vendor: Synacor | Product: Zimbra Collaboration Suite (ZCS). Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as the Zimbra user. Required action: Apply mitigations in accordance with vendor instructions, ensuring c…
+
+---
+
+## 3. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,25 +31,23 @@
 
 ---
 
-## 2. 🟠 Zero-Day — August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs
+## 4. 🟠 Zero-Day — August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Aug 11, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Microsoft Entra ID Flaw (CVSS 10.0) Exploited in Wild, Allows Remote Code Execution
+## 5. 🟠 Zero-Day — CISA orders feds to patch actively exploited TrueConf Server flaws
 
-**CVE:** `CVE-2026-69836` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-21
-**Reference:** <https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-21
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-trueconf-server-flaws/>
 
-> Microsoft on Thursday warned of a maximum-severity security flaw in Entra ID that it said has been exploited in the wild, but noted that no customer action is required.
-
-The vulnerability, tracked as CVE-2026-69836 (CVSS score: 10.0), is a case of remote code execution impacting the tech giant&#x27;s cloud-based identity and access management service. It was previously called Azure Active Director…
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered U.S. federal agencies to prioritize patching two actively exploited vulnerabilities in the TrueConf Server self-hosted communications platform. [...]
 
 ---
 
-## 4. 🟠 Zero-Day — node-opcua: Unbounded nonce cache enables unauthenticated heap exhaustion DoS
+## 6. 🟠 Zero-Day — node-opcua: Unbounded nonce cache enables unauthenticated heap exhaustion DoS
 
 **CVE:** `CVE-2026-54156` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-20
 **Reference:** <https://github.com/advisories/GHSA-6wvw-vrw4-363w>
@@ -44,33 +60,6 @@ A process-global nonce cache with no eviction policy allows an unauthenticated r
 **CVSS Score:** 7.5 (High)
 **CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
 **CWE:** CWE-770 Allocation …
-
----
-
-## 5. 🟠 Zero-Day — Velero vulnerable to file path traversal when extracting from backup's tarball
-
-**CVE:** `CVE-2026-32637` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-20
-**Reference:** <https://github.com/advisories/GHSA-j2g6-362q-6qc6>
-
-> ### Impact
-_What kind of vulnerability is it? Who is impacted?_
-If the attacker compromises the backup&#x27;s object storage backend and uploads a malicious backup tarball including file names like the following:
-* ../../../tmp/escape_1              -&gt; file created at /tmp/escape_1
-* ../../../../../../../../tmp/escape_2 -&gt; file created at /tmp/escape_2
-* ../../../tmp/cron_poc              -&…
-
----
-
-## 6. 🟠 Zero-Day — Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution
-
-**CVE:** `CVE-2026-73570` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-20
-**Reference:** <https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html>
-
-> A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska).
-
-The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of command injection that can lead to remote code execution.
-
-&quot;A remote code execution vulnerability exists in Zimbra
 
 ---
 
@@ -377,22 +366,7 @@ The handler&#x27;s `GET` endpoint accepts a `url` query parameter and uses it to
 
 ---
 
-## 32. 🟡 High Severity — LangChain MongoDB has NoSQL Operator Injection in MongoDBSaver.list() leading to cross-tenant data exposure
-
-**CVE:** `CVE-2026-55253` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-20
-**Reference:** <https://github.com/advisories/GHSA-533j-2v4q-mw5h>
-
-> # Executive Summary
-
-A NoSQL injection issue exists in the langgraph-checkpoint-mongodb and
-langgraph-store-mongodb libraries. MongoDBSaver.list() and MongoDBStore.search() methods
-accept a filter parameter that is incorporated into MongoDB queries without sufficient validation.
-Because MongoDB query operator keys (those prefixed with $) are not rejected during filter
-construction, a caller with c…
-
----
-
-## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
