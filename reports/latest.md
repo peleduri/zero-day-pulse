@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-22 12:15 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-22 18:12 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,16 +20,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CISA orders feds to patch actively exploited TrueConf Server flaws
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-21
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-trueconf-server-flaws/>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered U.S. federal agencies to prioritize patching two actively exploited vulnerabilities in the TrueConf Server self-hosted communications platform. [...]
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -38,7 +29,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -47,7 +38,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -56,7 +47,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -65,7 +56,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -74,7 +65,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -83,7 +74,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -92,7 +83,7 @@
 
 ---
 
-## 11. 🟡 High Severity — JSONata vulnerable to Arbitrary Code Execution via crafted JSONata expressions
+## 10. 🟡 High Severity — JSONata vulnerable to Arbitrary Code Execution via crafted JSONata expressions
 
 **CVE:** `CVE-2026-77415` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-21
 **Reference:** <https://github.com/advisories/GHSA-66mm-25pp-rfff>
@@ -105,7 +96,7 @@ crafted expressions, due to:
 
 ---
 
-## 12. 🟡 High Severity — Xinference vulnerable to remote code execution via unsafe `eval()` in Llama3 tool-call parsing
+## 11. 🟡 High Severity — Xinference vulnerable to remote code execution via unsafe `eval()` in Llama3 tool-call parsing
 
 **CVE:** `CVE-2026-61539` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-21
 **Reference:** <https://github.com/advisories/GHSA-x2rj-828p-hx9m>
@@ -116,7 +107,7 @@ Xinference used Python&#x27;s unsafe `eval()` function when parsing Llama3 tool-
 
 ---
 
-## 13. 🟡 High Severity — Phalcon Volt compiler `join` filter compile-time PHP code injection (SSTI leads to RCE)
+## 12. 🟡 High Severity — Phalcon Volt compiler `join` filter compile-time PHP code injection (SSTI leads to RCE)
 
 **CVE:** `CVE-2026-59989` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-21
 **Reference:** <https://github.com/advisories/GHSA-hrwp-4hh9-c8r8>
@@ -127,7 +118,7 @@ The Volt template compiler in Phalcon generates the PHP for the `join` filter by
 
 ---
 
-## 14. 🟡 High Severity — Atlantis Workspace Handling has Path Traversal that Allows Out-of-Bounds Directory Deletion/Creation
+## 13. 🟡 High Severity — Atlantis Workspace Handling has Path Traversal that Allows Out-of-Bounds Directory Deletion/Creation
 
 **CVE:** `CVE-2026-64679` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-21
 **Reference:** <https://github.com/advisories/GHSA-26w5-6g95-gj28>
@@ -139,7 +130,7 @@ A crafted workspace value containing path traversal segments could cause Atlanti
 
 ---
 
-## 15. 🟡 High Severity — Unleash: Addon webhook URL is dialed server-side with no internal-address filtering, enabling SSRF to internal services / cloud metadata and exfiltration of configured request headers
+## 14. 🟡 High Severity — Unleash: Addon webhook URL is dialed server-side with no internal-address filtering, enabling SSRF to internal services / cloud metadata and exfiltration of configured request headers
 
 **CVE:** `CVE-2026-63004` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-21
 **Reference:** <https://github.com/advisories/GHSA-5vf6-jrqr-78fj>
@@ -150,7 +141,7 @@ Unleash&#x27;s addon/integration subsystem lets an operator configure a webhook 
 
 ---
 
-## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

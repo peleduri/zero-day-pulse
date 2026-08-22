@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-22T12:15:04.943317+00:00",
-  "total": 16,
+  "generated": "2026-08-22T18:12:20.508621+00:00",
+  "total": 15,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -31,21 +31,6 @@
         "cloud",
         "threat-intel",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-trueconf-server-flaws/",
-      "title": "CISA orders feds to patch actively exploited TrueConf Server flaws",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) ordered U.S. federal agencies to prioritize patching two actively exploited vulnerabilities in the TrueConf Server self-hosted communications platform. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-trueconf-server-flaws/",
-      "published": "2026-08-21T12:25:33+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
