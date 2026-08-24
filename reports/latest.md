@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-24 12:22 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-24 18:22 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -92,7 +92,14 @@
 
 ---
 
-## 11. 🟡 High Severity — Critical Keycloak Password Reset Flaw Could Let Unauthenticated Attackers Take Over Any Account
+## 11. 🟡 High Severity — Rapid7 Analysis: Microsoft SharePoint Remote Code Execution (CVE-2026-63520)
+
+**CVE:** `CVE-2026-63520` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-24
+**Reference:** <https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-remote-code-execution-cve-2026-63520>
+
+---
+
+## 12. 🟡 High Severity — Critical Keycloak Password Reset Flaw Could Let Unauthenticated Attackers Take Over Any Account
 
 **CVE:** `CVE-2026-18963` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-24
 **Reference:** <https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html>
@@ -103,7 +110,7 @@ The vulnerability, assigned the CVE identifier CVE-2026-18963, is rated 9.1 on 
 
 ---
 
-## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 13. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

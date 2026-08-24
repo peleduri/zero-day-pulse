@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-24T12:22:04.953452+00:00",
-  "total": 12,
+  "generated": "2026-08-24T18:22:05.778241+00:00",
+  "total": 13,
   "kev": 0,
   "zero_day": 10,
   "enriched": 0,
@@ -162,6 +162,23 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-remote-code-execution-cve-2026-63520",
+      "title": "Rapid7 Analysis: Microsoft SharePoint Remote Code Execution (CVE-2026-63520)",
+      "summary": "",
+      "link": "https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-remote-code-execution-cve-2026-63520",
+      "published": "2026-08-24T16:18:05+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-63520"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html",
