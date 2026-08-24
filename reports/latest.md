@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-24 06:33 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-24 12:22 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -83,7 +83,27 @@
 
 ---
 
-## 10. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 10. 🟠 Zero-Day — CISA orders urgent patching of actively exploited Zimbra flaw
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-24
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/>
+
+> The Cybersecurity and Infrastructure Security Agency (CISA) has ordered U.S. government agencies to patch an actively exploited vulnerability in Zimbra Collaboration Suite (ZCS) within three days. [...]
+
+---
+
+## 11. 🟡 High Severity — Critical Keycloak Password Reset Flaw Could Let Unauthenticated Attackers Take Over Any Account
+
+**CVE:** `CVE-2026-18963` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-24
+**Reference:** <https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html>
+
+> Red Hat and the Keycloak project have released patches to address a critical security flaw in the open-source identity and access management server that could allow an unauthenticated remote attacker to take over any user account by forcing a password reset.
+
+The vulnerability, assigned the CVE identifier CVE-2026-18963, is rated 9.1 on the CVSS scoring system by Red Hat, which acts as
+
+---
+
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

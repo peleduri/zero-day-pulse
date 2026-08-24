@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-24T06:33:22.547596+00:00",
-  "total": 10,
+  "generated": "2026-08-24T12:22:04.953452+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -147,6 +147,38 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/",
+      "title": "CISA orders urgent patching of actively exploited Zimbra flaw",
+      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) has ordered U.S. government agencies to patch an actively exploited vulnerability in Zimbra Collaboration Suite (ZCS) within three days. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/",
+      "published": "2026-08-24T10:45:12+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html",
+      "title": "Critical Keycloak Password Reset Flaw Could Let Unauthenticated Attackers Take Over Any Account",
+      "summary": "Red Hat and the Keycloak project have released patches to address a critical security flaw in the open-source identity and access management server that could allow an unauthenticated remote attacker to take over any user account by forcing a password reset.\n\nThe vulnerability, assigned the CVE identifier\u00a0CVE-2026-18963, is rated 9.1 on the CVSS scoring system by Red Hat, which acts as",
+      "link": "https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html",
+      "published": "2026-08-24T11:56:34+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-18963"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
