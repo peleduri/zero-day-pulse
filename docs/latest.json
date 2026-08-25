@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-24T18:22:05.778241+00:00",
-  "total": 13,
+  "generated": "2026-08-25T00:32:59.708611+00:00",
+  "total": 16,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -149,6 +149,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/",
+      "title": "Unpatched Calix flaw lets hackers bypass NAT to expose internal devices",
+      "summary": "An unpatched vulnerability in Calix GS7 XGS (GS5239XG) residential routers used by multiple U.S. broadband providers allows remote, unauthenticated attackers to create port-forwarding rules that can expose local network devices to the public internet. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/",
+      "published": "2026-08-24T21:14:30+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/",
       "title": "CISA orders urgent patching of actively exploited Zimbra flaw",
       "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) has ordered U.S. government agencies to patch an actively exploited vulnerability in Zimbra Collaboration Suite (ZCS) within three days. [...]",
@@ -162,6 +177,42 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-55477",
+      "title": "3X-UI Vulnerable to Authenticated Arbitrary File Write via Database Import and Xray Log Path Manipulation",
+      "summary": "# Summary\n\nAn authenticated administrator can abuse the database import functionality to achieve arbitrary file write on the host by modifying Xray configuration values stored in the database. This can be leveraged to obtain code execution and persistent access as the user running Xray (including root when Xray is running as root).\n\n# Details\n\nThe database import functionality trusts attacker-controlled configuration values without sufficient validation.\n\nAn authenticated administrator can export the SQLite database, modify `xrayTemplateConfig.log.access` to point to an arbitrary file, and import the modified database back into the panel. The attacker can then inject controlled content into an inbound client's `email` field. When a connection is processed, Xray writes the attacker-controlled content to the configured access log path.\n\nBecause the log path is fully attacker-controlled, this behavior results in arbitrary file write as the user running Xray. Depending on the target file and service privileges, this can be used to obtain code execution and persistent host access.\n\n# PoC\n\n1. Authenticate as a panel administrator.\n2. Export the panel database.\n3. Modify `xrayTemplateConfig.log.access` to point to a writable target file (e.g. `~/.ssh/authorized_keys`).\n4. Inject an attacker-controlled SSH public key into an inbound client's `email` field.\n5. Import the modified database.\n6. Trigger a connection through the modified inbound.\n7. Xray writes the attacker-controlled content to the specified file, allowing SSH access as the user running Xray.\n\nA complete PoC is available and can be provided privately.\n\n# Impact\n\nType: Authenticated Arbitrary File Write -> Privilege Escalation / Code Execution\n\nAny authenticated 3X-UI administrator can write attacker-controlled content to arbitrary files accessible by the Xray process. This allows compromise of the account running Xray and may lead to full host compromise depending on deployment configuration and service privile",
+      "link": "https://github.com/advisories/GHSA-jm48-m3rr-9hgg",
+      "published": "2026-08-24T21:05:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55477"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54625",
+      "title": "django CMS: Page cache ignores plugin-declared Vary headers (disclosure & poisoning)",
+      "summary": "### Summary\nThe CMS page cache key ignores the request headers that plugins declare via `get_vary_cache_on()`. The header is added to the response `Vary` header, but the CMS's own cache key does not incorporate the header values, so the first visitor's variant is served to all subsequent visitors regardless of their header values.\n\n### Details\n`_page_cache_key` (in `cms/cache/page.py`) keys only on cache prefix, site, language, path and timezone. `set_page_cache` collects the plugin-declared vary headers and calls `patch_vary_headers(response, ...)` (affecting only the emitted `Vary` header), but stores and retrieves the cached page under the header-agnostic key. `get_page_cache` therefore returns whichever variant was cached first.\n\n### Impact\n- **Information disclosure:** when a plugin varies its output on a request  header (e.g. `Country-Code`), the variant rendered for the first anonymous visitor is served to everyone until the entry expires, leaking request-specific content across users.\n- **Cache poisoning:** an unauthenticated attacker can prime the anonymous page cache with content rendered from attacker-chosen header values, which is then served to subsequent visitors.\n\nApplies only when `CMS_PAGE_CACHE` is enabled and at least one plugin implements `get_vary_cache_on()`.\n\n### Patches\nFixed in 5.0.8: the page cache now folds the request's values implements `get_vary_cache_on()`.\n\n### Patches\nFixed in 5.0.8: the page cache now folds the request's values for plugin-declared vary headers into the content key. The set of vary headers is persisted on write and looked up first on read (mirroring Django's  `learn_cache_key`/`get_cache_key`); a missing header-list entry degrades to a cache miss, never a wrong-variant hit.\n\n### Workarounds\nDisable `CMS_PAGE_CACHE`, or avoid plugins that rely on `get_vary_cache_on()`, until upgraded.\n\n### Credits\nReported by the security team at the University of Sydney ([@reporter]).",
+      "link": "https://github.com/advisories/GHSA-fwjf-m4qw-9f2x",
+      "published": "2026-08-24T20:09:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54625"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-remote-code-execution-cve-2026-63520",

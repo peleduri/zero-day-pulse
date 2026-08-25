@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-24 18:22 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-25 00:32 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -83,7 +83,16 @@
 
 ---
 
-## 10. 🟠 Zero-Day — CISA orders urgent patching of actively exploited Zimbra flaw
+## 10. 🟠 Zero-Day — Unpatched Calix flaw lets hackers bypass NAT to expose internal devices
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-24
+**Reference:** <https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/>
+
+> An unpatched vulnerability in Calix GS7 XGS (GS5239XG) residential routers used by multiple U.S. broadband providers allows remote, unauthenticated attackers to create port-forwarding rules that can expose local network devices to the public internet. [...]
+
+---
+
+## 11. 🟠 Zero-Day — CISA orders urgent patching of actively exploited Zimbra flaw
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-24
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/>
@@ -92,14 +101,42 @@
 
 ---
 
-## 11. 🟡 High Severity — Rapid7 Analysis: Microsoft SharePoint Remote Code Execution (CVE-2026-63520)
+## 12. 🟡 High Severity — 3X-UI Vulnerable to Authenticated Arbitrary File Write via Database Import and Xray Log Path Manipulation
+
+**CVE:** `CVE-2026-55477` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-24
+**Reference:** <https://github.com/advisories/GHSA-jm48-m3rr-9hgg>
+
+> # Summary
+
+An authenticated administrator can abuse the database import functionality to achieve arbitrary file write on the host by modifying Xray configuration values stored in the database. This can be leveraged to obtain code execution and persistent access as the user running Xray (including root when Xray is running as root).
+
+# Details
+
+The database import functionality trusts attacker-cont…
+
+---
+
+## 13. 🟡 High Severity — django CMS: Page cache ignores plugin-declared Vary headers (disclosure & poisoning)
+
+**CVE:** `CVE-2026-54625` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-24
+**Reference:** <https://github.com/advisories/GHSA-fwjf-m4qw-9f2x>
+
+> ### Summary
+The CMS page cache key ignores the request headers that plugins declare via `get_vary_cache_on()`. The header is added to the response `Vary` header, but the CMS&#x27;s own cache key does not incorporate the header values, so the first visitor&#x27;s variant is served to all subsequent visitors regardless of their header values.
+
+### Details
+`_page_cache_key` (in `cms/cache/page.py`) k…
+
+---
+
+## 14. 🟡 High Severity — Rapid7 Analysis: Microsoft SharePoint Remote Code Execution (CVE-2026-63520)
 
 **CVE:** `CVE-2026-63520` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-08-24
 **Reference:** <https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-remote-code-execution-cve-2026-63520>
 
 ---
 
-## 12. 🟡 High Severity — Critical Keycloak Password Reset Flaw Could Let Unauthenticated Attackers Take Over Any Account
+## 15. 🟡 High Severity — Critical Keycloak Password Reset Flaw Could Let Unauthenticated Attackers Take Over Any Account
 
 **CVE:** `CVE-2026-18963` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-24
 **Reference:** <https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html>
@@ -110,7 +147,7 @@ The vulnerability, assigned the CVE identifier CVE-2026-18963, is rated 9.1 on 
 
 ---
 
-## 13. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
