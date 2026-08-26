@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-26 00:34 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-26 06:26 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 23 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -79,18 +79,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 8. 🟠 Zero-Day — Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data
-
-**CVE:** `CVE-2026-21962` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-25
-**Reference:** <https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a maximum-severity security flaw impacting Oracle HTTP Server and Oracle WebLogic Server to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
-
-The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unauthenticated attacker with network access via HTTP to
-
----
-
-## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -99,7 +88,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -108,7 +97,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -117,7 +106,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -126,7 +115,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -135,7 +124,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -144,7 +133,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 15. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -153,7 +142,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 16. 🟠 Zero-Day — browse-mcp has an arbitrary file write via unconfined download and state paths
+## 15. 🟠 Zero-Day — browse-mcp has an arbitrary file write via unconfined download and state paths
 
 **CVE:** `CVE-2026-55557` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-m9mq-7m7q-xc6p>
@@ -163,7 +152,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 17. 🟠 Zero-Day — mcp-shell — Security Disabled by Default in Bare-Binary Deploy Path + Shell Interpreter in Secure-Mode Allowlist
+## 16. 🟠 Zero-Day — mcp-shell — Security Disabled by Default in Bare-Binary Deploy Path + Shell Interpreter in Secure-Mode Allowlist
 
 **CVE:** `CVE-2026-55580` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-f5pj-2738-996m>
@@ -172,7 +161,7 @@ The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unaut
 
 ---
 
-## 18. 🟠 Zero-Day — PraisonAI has a Browser Server WebSocket origin validation bypass via unanchored regex (patch bypass of CVE-2026-40289 / GHSA-8x8f-54wf-vv92)
+## 17. 🟠 Zero-Day — PraisonAI has a Browser Server WebSocket origin validation bypass via unanchored regex (patch bypass of CVE-2026-40289 / GHSA-8x8f-54wf-vv92)
 
 **CVE:** `CVE-2026-55536` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-6g6r-q6gw-w8fg>
@@ -187,13 +176,22 @@ non-alphanumeric trailing characters — …
 
 ---
 
-## 19. 🟠 Zero-Day — PraisonAI: [Path Traversal] agent tools escape the configured workspace via symlinks
+## 18. 🟠 Zero-Day — PraisonAI: [Path Traversal] agent tools escape the configured workspace via symlinks
 
 **CVE:** `CVE-2026-55540` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-ch89-h4r2-c8f8>
 
 > ### Summary
 PraisonAI&#x27;s `praisonai.code` tool wrappers (exported as `CODE_TOOLS` for agents) expose a `workspace` setting that the module itself treats as a path-traversal **security boundary** — `read_file`, `write_file`, `apply_diff`, and `search_replace` explicitly call `is_path_within_directory()` and return `&quot;… is outside the workspace&quot;` on violations. That boundary is enforced…
+
+---
+
+## 19. 🟡 High Severity — CISA Warns of Exploited Gitea Vulnerability
+
+**CVE:** `CVE-2026-60004` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-26
+**Reference:** <https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/>
+
+> CVE-2026-60004 is a remote code execution vulnerability patched by Gitea developers in late July with the release of version 1.27.1. The post CISA Warns of Exploited Gitea Vulnerability appeared first on SecurityWeek .
 
 ---
 

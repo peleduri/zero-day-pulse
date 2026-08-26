@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-26T00:34:05.842570+00:00",
+  "generated": "2026-08-26T06:26:17.318368+00:00",
   "total": 41,
   "kev": 0,
-  "zero_day": 19,
+  "zero_day": 18,
   "enriched": 0,
   "findings": [
     {
@@ -122,23 +122,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55525"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
-      "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a maximum-severity security flaw impacting Oracle HTTP Server and Oracle WebLogic Server to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unauthenticated attacker with network access via HTTP to",
-      "link": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
-      "published": "2026-08-25T06:12:35+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-21962"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -326,6 +309,23 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/",
+      "title": "CISA Warns of Exploited Gitea Vulnerability",
+      "summary": "CVE-2026-60004 is a remote code execution vulnerability patched by Gitea developers in late July with the release of version 1.27.1. The post CISA Warns of Exploited Gitea Vulnerability appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/",
+      "published": "2026-08-26T05:17:28+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-60004"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-54338",

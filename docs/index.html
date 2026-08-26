@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">19</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value zeroday">18</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-26 00:34 UTC</div>
+            <div class="generated">Updated 2026-08-26 06:26 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -240,24 +240,6 @@ An attacker-controlled public URL can pass the initial host check, redirect to l
 `web_crawl` (an exported, model-callable tool) validates only the INITIAL URL&#x27;s resolved IP against a private/loopback blocklist, then fetches with `httpx.Client(follow_redirects=True)` and never re-validates redirect targets. 
 
 An attacker who controls the agent&#x27;s crawl target (a malicious task, or prompt injection inside any page the agent already crawls) supplies a public URL that H…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html" target="_blank" rel="noopener">Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-21962</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-25</span>
-          </div>
-          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a maximum-severity security flaw impacting Oracle HTTP Server and Oracle WebLogic Server to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
-
-The vulnerability, tracked as CVE-2026-21962 (CVSS score: 10.0), allows an unauthenticated attacker with network access via HTTP to</p>
 
         </article>
 
@@ -444,6 +426,22 @@ non-alphanumeric trailing characters — …</p>
 PraisonAI&#x27;s `praisonai.code` tool wrappers (exported as `CODE_TOOLS` for agents) expose a `workspace` setting that the module itself treats as a path-traversal **security boundary** — `read_file`, `write_file`, `apply_diff`, and `search_replace` explicitly call `is_path_within_directory()` and return `&quot;… is outside the workspace&quot;` on violations. That boundary is enforced **unsoundly an…</p>
 
         </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/" target="_blank" rel="noopener">CISA Warns of Exploited Gitea Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-60004</code>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-26</span>
+  </div>
+  <p class='summary'>CVE-2026-60004 is a remote code execution vulnerability patched by Gitea developers in late July with the release of version 1.27.1. The post CISA Warns of Exploited Gitea Vulnerability appeared first on SecurityWeek .</p>
+
+</article>
 
         <article class="card card-high">
           <div class="card-top">
