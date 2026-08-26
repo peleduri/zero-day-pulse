@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">18</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value zeroday">20</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-26 06:26 UTC</div>
+            <div class="generated">Updated 2026-08-26 12:24 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -148,6 +148,40 @@
 
 
 </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://blog.trailofbits.com/2026/08/26/vms-wont-contain-cyber-capable-agents/" target="_blank" rel="noopener">VMs won&#x27;t contain cyber-capable agents</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Trail of Bits Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-26</span>
+  </div>
+  <p class='summary'>As part of Patch the Planet , we received preview access to GPT 5.6-Cyber with a simple task: evaluate its cyber capabilities. Recent events inspired me to give it a challenge to work through: escape the VM I’d normally use for sandboxing. The target was a QEMU/KVM VM on my Linux dev machine (Debian Linux 12, AMD Zen3). It escaped the VM three different times. First, it used recently disclosed bug…</p>
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/critical-gitea-rce-actively-exploited.html" target="_blank" rel="noopener">Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-60004</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-26</span>
+          </div>
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday warned of active exploitation efforts targeting a recently patched critical security flaw impacting Gitea.
+
+The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of remote code execution that allows an attacker with ordinary write access to a repository to execute arbitrary shell commands as the</p>
+
+        </article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -426,22 +460,6 @@ non-alphanumeric trailing characters — …</p>
 PraisonAI&#x27;s `praisonai.code` tool wrappers (exported as `CODE_TOOLS` for agents) expose a `workspace` setting that the module itself treats as a path-traversal **security boundary** — `read_file`, `write_file`, `apply_diff`, and `search_replace` explicitly call `is_path_within_directory()` and return `&quot;… is outside the workspace&quot;` on violations. That boundary is enforced **unsoundly an…</p>
 
         </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/" target="_blank" rel="noopener">CISA Warns of Exploited Gitea Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-60004</code>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-26</span>
-  </div>
-  <p class='summary'>CVE-2026-60004 is a remote code execution vulnerability patched by Gitea developers in late July with the release of version 1.27.1. The post CISA Warns of Exploited Gitea Vulnerability appeared first on SecurityWeek .</p>
-
-</article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -838,27 +856,6 @@ PraisonAI&#x27;s MCP HTTP Stream transport uses an unsafe prefix match when vali
 As a result, an attacker-controlled origin such as `http://localhost.evil.example` passes the localhost origin check.
 
 When the MCP H…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html" target="_blank" rel="noopener">Attackers Target miniOrange SAML Flaws That Can Grant WordPress Admin Access</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61979</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-25</span>
-          </div>
-          <p class='summary'>Bad actors are attempting to exploit two severe unauthenticated authentication bypasses in the Xecurify miniOrange SAML 2.0 Single Sign On plugin that make it possible for an attacker to sign in as any WordPress user, including administrators.
-
-The vulnerabilities, as disclosed by Patchstack, are listed below -
-
-
-  CVE-2026-61979 (CVSS score: 8.1) - An unauthenticated privilege escalation</p>
 
         </article>
 

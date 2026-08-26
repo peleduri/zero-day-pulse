@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-26T06:26:17.318368+00:00",
+  "generated": "2026-08-26T12:24:52.674151+00:00",
   "total": 41,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 20,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,39 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://blog.trailofbits.com/2026/08/26/vms-wont-contain-cyber-capable-agents/",
+      "title": "VMs won't contain cyber-capable agents",
+      "summary": "As part of Patch the Planet , we received preview access to GPT 5.6-Cyber with a simple task: evaluate its cyber capabilities. Recent events inspired me to give it a challenge to work through: escape the VM I\u2019d normally use for sandboxing. The target was a QEMU/KVM VM on my Linux dev machine (Debian Linux 12, AMD Zen3). It escaped the VM three different times. First, it used recently disclosed bugs in my host kernel. When I fully updated, it used disclosed bugs that had not yet reached package maintainers or were not classified as security bugs. When I rebuilt QEMU and dependencies from the latest upstream source, it found several 0-days. It operated autonomously for hours, backtracked from approaches that didn\u2019t work, pulled code and research papers, wrote oracles, made its own minimal examples, and aimed for a reusable, reliable exploit, all with minimal handholding and prompting. My main job was to physically reboot the machine when it hardlocked the host kernel. If it wasn\u2019t clear before, I will state it plainly: you can no longer assume a mere VM will contain a sufficiently advanced AI agent. To use a 2010s term of art, you should treat such agents as an advanced persistent threat. Advancing cybersecurity capabilities Let\u2019s imagine a common situation: you want to run an AI agent, but need its full capabilities, including the ability to download, build and debug software; do research; sift through dependencies; set up fuzzers; triage vulnerabilities; and stand up services under different configurations. The generally accepted solution is to set up a VM that serves as a safety perimeter and isolated prison for the agent: this virtual environment contains nothing of value, is separate from the host, and can be immediately deactivated or snapshotted for later investigation. This setup allows the agent to roam free, while isolating your computer from its consequences. There is, of course, a tiny wrinkle. To be useful, the virtual environment must share resources wit",
+      "link": "https://blog.trailofbits.com/2026/08/26/vms-wont-contain-cyber-capable-agents/",
+      "published": "2026-08-26T11:00:00+00:00",
+      "source": "Trail of Bits Blog",
+      "tags": [
+        "ai",
+        "research",
+        "audit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/critical-gitea-rce-actively-exploited.html",
+      "title": "Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday warned of active exploitation efforts targeting a recently patched critical security flaw impacting Gitea.\n\nThe vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of remote code execution that allows an attacker with ordinary write access to a repository to execute arbitrary shell commands as the",
+      "link": "https://thehackernews.com/2026/08/critical-gitea-rce-actively-exploited.html",
+      "published": "2026-08-26T06:27:07+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-60004"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -309,23 +342,6 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/",
-      "title": "CISA Warns of Exploited Gitea Vulnerability",
-      "summary": "CVE-2026-60004 is a remote code execution vulnerability patched by Gitea developers in late July with the release of version 1.27.1. The post CISA Warns of Exploited Gitea Vulnerability appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/",
-      "published": "2026-08-26T05:17:28+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-60004"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "CVE-2026-54338",
@@ -683,23 +699,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55529"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html",
-      "title": "Attackers Target miniOrange SAML Flaws That Can Grant WordPress Admin Access",
-      "summary": "Bad actors are attempting to exploit two severe unauthenticated authentication bypasses in the Xecurify miniOrange SAML 2.0 Single Sign On plugin that make it possible for an attacker to sign in as any WordPress user, including administrators.\n\nThe vulnerabilities, as disclosed by Patchstack, are listed below -\n\n\n  CVE-2026-61979 (CVSS score: 8.1) - An unauthenticated privilege escalation",
-      "link": "https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html",
-      "published": "2026-08-25T08:34:07+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-61979"
       ],
       "is_zero_day": false,
       "is_high_severity": true

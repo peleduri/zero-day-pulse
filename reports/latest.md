@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-26 06:26 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 23 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-26 12:24 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 21 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,27 @@
 
 ---
 
-## 3. 🟠 Zero-Day — PraisonAI: Origin-validation bypass (startswith prefix match) enables unauthenticated cross-site request forgery against the PraisonAI MCP HTTP server
+## 3. 🟠 Zero-Day — VMs won't contain cyber-capable agents
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Trail of Bits Blog &nbsp;|&nbsp; **Published:** 2026-08-26
+**Reference:** <https://blog.trailofbits.com/2026/08/26/vms-wont-contain-cyber-capable-agents/>
+
+> As part of Patch the Planet , we received preview access to GPT 5.6-Cyber with a simple task: evaluate its cyber capabilities. Recent events inspired me to give it a challenge to work through: escape the VM I’d normally use for sandboxing. The target was a QEMU/KVM VM on my Linux dev machine (Debian Linux 12, AMD Zen3). It escaped the VM three different times. First, it used recently disclosed bug…
+
+---
+
+## 4. 🟠 Zero-Day — Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload
+
+**CVE:** `CVE-2026-60004` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-26
+**Reference:** <https://thehackernews.com/2026/08/critical-gitea-rce-actively-exploited.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday warned of active exploitation efforts targeting a recently patched critical security flaw impacting Gitea.
+
+The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of remote code execution that allows an attacker with ordinary write access to a repository to execute arbitrary shell commands as the
+
+---
+
+## 5. 🟠 Zero-Day — PraisonAI: Origin-validation bypass (startswith prefix match) enables unauthenticated cross-site request forgery against the PraisonAI MCP HTTP server
 
 **CVE:** `CVE-2026-55532` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-pvph-5j39-v8qc>
@@ -31,7 +51,7 @@ The PraisonAI MCP server exposes an HTTP-stream transport (praisonai mcp serve -
 
 ---
 
-## 4. 🟠 Zero-Day — PraisonAI: [Auth Bypass] PraisonAI async Jobs API (`/api/v1/runs`) has no authentication — unauthenticated job execution, result theft, cancel and delete
+## 6. 🟠 Zero-Day — PraisonAI: [Auth Bypass] PraisonAI async Jobs API (`/api/v1/runs`) has no authentication — unauthenticated job execution, result theft, cancel and delete
 
 **CVE:** `CVE-2026-55539` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-2jgc-f764-c5r2>
@@ -41,7 +61,7 @@ PraisonAI&#x27;s async **Jobs API** (the FastAPI service in `praisonai/jobs/`) i
 
 ---
 
-## 5. 🟠 Zero-Day — praisonaiagents vulnerable to SSRF in web_crawl tool via redirect-following and DNS rebinding (validate-then-fetch gap)
+## 7. 🟠 Zero-Day — praisonaiagents vulnerable to SSRF in web_crawl tool via redirect-following and DNS rebinding (validate-then-fetch gap)
 
 **CVE:** `CVE-2026-55524` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-vg6p-v9vm-6fgj>
@@ -54,7 +74,7 @@ va…
 
 ---
 
-## 6. 🟠 Zero-Day — praisonaiagents has a `web_crawl` SSRF protection bypass via unchecked redirect targets
+## 8. 🟠 Zero-Day — praisonaiagents has a `web_crawl` SSRF protection bypass via unchecked redirect targets
 
 **CVE:** `CVE-2026-55523` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-8hjw-25cg-g52h>
@@ -67,7 +87,7 @@ An attacker-controlled public URL can pass the initial host check, redirect to l
 
 ---
 
-## 7. 🟠 Zero-Day — praisonaiagents web_crawl vulnerable to SSRF via redirect-following
+## 9. 🟠 Zero-Day — praisonaiagents web_crawl vulnerable to SSRF via redirect-following
 
 **CVE:** `CVE-2026-55525` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-5r34-2g38-6569>
@@ -79,7 +99,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -88,7 +108,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -97,7 +117,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -106,7 +126,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -115,7 +135,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -124,7 +144,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 15. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -133,7 +153,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 16. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -142,7 +162,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 15. 🟠 Zero-Day — browse-mcp has an arbitrary file write via unconfined download and state paths
+## 17. 🟠 Zero-Day — browse-mcp has an arbitrary file write via unconfined download and state paths
 
 **CVE:** `CVE-2026-55557` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-m9mq-7m7q-xc6p>
@@ -152,7 +172,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 16. 🟠 Zero-Day — mcp-shell — Security Disabled by Default in Bare-Binary Deploy Path + Shell Interpreter in Secure-Mode Allowlist
+## 18. 🟠 Zero-Day — mcp-shell — Security Disabled by Default in Bare-Binary Deploy Path + Shell Interpreter in Secure-Mode Allowlist
 
 **CVE:** `CVE-2026-55580` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-f5pj-2738-996m>
@@ -161,7 +181,7 @@ An attacker who controls the agent&#x27;s crawl target (a malicious task, or pro
 
 ---
 
-## 17. 🟠 Zero-Day — PraisonAI has a Browser Server WebSocket origin validation bypass via unanchored regex (patch bypass of CVE-2026-40289 / GHSA-8x8f-54wf-vv92)
+## 19. 🟠 Zero-Day — PraisonAI has a Browser Server WebSocket origin validation bypass via unanchored regex (patch bypass of CVE-2026-40289 / GHSA-8x8f-54wf-vv92)
 
 **CVE:** `CVE-2026-55536` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-6g6r-q6gw-w8fg>
@@ -176,7 +196,7 @@ non-alphanumeric trailing characters — …
 
 ---
 
-## 18. 🟠 Zero-Day — PraisonAI: [Path Traversal] agent tools escape the configured workspace via symlinks
+## 20. 🟠 Zero-Day — PraisonAI: [Path Traversal] agent tools escape the configured workspace via symlinks
 
 **CVE:** `CVE-2026-55540` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-ch89-h4r2-c8f8>
@@ -186,16 +206,7 @@ PraisonAI&#x27;s `praisonai.code` tool wrappers (exported as `CODE_TOOLS` for ag
 
 ---
 
-## 19. 🟡 High Severity — CISA Warns of Exploited Gitea Vulnerability
-
-**CVE:** `CVE-2026-60004` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://www.securityweek.com/cisa-warns-of-exploited-gitea-vulnerability/>
-
-> CVE-2026-60004 is a remote code execution vulnerability patched by Gitea developers in late July with the release of version 1.27.1. The post CISA Warns of Exploited Gitea Vulnerability appeared first on SecurityWeek .
-
----
-
-## 20. 🟡 High Severity — JupyterHub has Unauthenticated Denial of Service via Unbounded Username Logging on Failed Login
+## 21. 🟡 High Severity — JupyterHub has Unauthenticated Denial of Service via Unbounded Username Logging on Failed Login
 
 **CVE:** `CVE-2026-54338` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-p43p-whwx-q52h>
@@ -214,7 +225,7 @@ Use an Authenticator that doesn&#x27;t use a login form, such as OAuthenticator.
 
 ---
 
-## 21. 🟡 High Severity — Chainlist has SSRF via MCP SSE and streamable-http transports that allows unauthenticated internal network access
+## 22. 🟡 High Severity — Chainlist has SSRF via MCP SSE and streamable-http transports that allows unauthenticated internal network access
 
 **CVE:** `CVE-2026-45019` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-hvfh-5mj3-5f3j>
@@ -229,7 +240,7 @@ When MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint fo
 
 ---
 
-## 22. 🟡 High Severity — Chainlit has command injection via MCP stdio transport that allows unauthenticated remote code execution
+## 23. 🟡 High Severity — Chainlit has command injection via MCP stdio transport that allows unauthenticated remote code execution
 
 **CVE:** `CVE-2026-45018` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-w3fx-mc44-mf6j>
@@ -244,7 +255,7 @@ When MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint fo
 
 ---
 
-## 23. 🟡 High Severity — consciousness-explorer / sublinear-time-solver MCP export_state has an arbitrary file write
+## 24. 🟡 High Severity — consciousness-explorer / sublinear-time-solver MCP export_state has an arbitrary file write
 
 **CVE:** `CVE-2026-55609` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-xc9g-j69q-37xw>
@@ -254,7 +265,7 @@ An arbitrary file write vulnerability (CWE-73, External Control of File Name or 
 
 ---
 
-## 24. 🟡 High Severity — mediasoup: SCTP state cookie lacks cryptographic authentication, enabling unauthorized association establishment (RFC 9260 violation)
+## 25. 🟡 High Severity — mediasoup: SCTP state cookie lacks cryptographic authentication, enabling unauthorized association establishment (RFC 9260 violation)
 
 **CVE:** `CVE-2026-55663` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-p7x2-g5cq-fhmq>
@@ -265,7 +276,7 @@ mediasoup&#x27;s built-in SCTP stack (introduced in v3.20.0) authenticates SCTP 
 
 ---
 
-## 25. 🟡 High Severity — gRPC Erlang package's path bindings are overridable by query string and request body
+## 26. 🟡 High Severity — gRPC Erlang package's path bindings are overridable by query string and request body
 
 **CVE:** `CVE-2026-48599` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-mwr4-5g34-j5cq>
@@ -276,7 +287,7 @@ In the HTTP-to-gRPC transcoding layer of the `grpc` Hex package, query-string an
 
 ---
 
-## 26. 🟡 High Severity — gRPC Erlang package vulnerable to Remote Code Execution with attacker-controlled gRPC payloads
+## 27. 🟡 High Severity — gRPC Erlang package vulnerable to Remote Code Execution with attacker-controlled gRPC payloads
 
 **CVE:** `CVE-2026-48853` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-grp7-v8xh-rj7h>
@@ -287,7 +298,7 @@ In the HTTP-to-gRPC transcoding layer of the `grpc` Hex package, query-string an
 
 ---
 
-## 27. 🟡 High Severity — genieacs-mcp: DNS rebinding reaches local GenieACS MCP Streamable HTTP transport
+## 28. 🟡 High Severity — genieacs-mcp: DNS rebinding reaches local GenieACS MCP Streamable HTTP transport
 
 **CVE:** `CVE-2026-55637` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-cmwv-wf9p-p8wx>
@@ -296,7 +307,7 @@ In the HTTP-to-gRPC transcoding layer of the `grpc` Hex package, query-string an
 
 ---
 
-## 28. 🟡 High Severity — qwed Vulnerable to Authenticated Remote Code Execution via Unsafe SymPy `parse_expr()`
+## 29. 🟡 High Severity — qwed Vulnerable to Authenticated Remote Code Execution via Unsafe SymPy `parse_expr()`
 
 **CVE:** `CVE-2026-55585` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-q27q-98j4-9pfv>
@@ -307,7 +318,7 @@ The `qwed` package (version 5.1.1) passes attacker-controlled input directly to 
 
 ---
 
-## 29. 🟡 High Severity — Echo: Encoded slash (%2F) bypasses route-level protection and exposes static files
+## 30. 🟡 High Severity — Echo: Encoded slash (%2F) bypasses route-level protection and exposes static files
 
 **CVE:** `CVE-2026-55677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-vfp3-v2gw-7wfq>
@@ -322,7 +333,7 @@ Echo&#x27;s router and static file handler disagree on URL path decoding. The ro
 
 ---
 
-## 30. 🟡 High Severity — nextcloud-mcp-server: Unauthenticated `POST /webhooks/nextcloud` allows arbitrary vector data deletion when `WEBHOOK_SECRET` is unset ( default )
+## 31. 🟡 High Severity — nextcloud-mcp-server: Unauthenticated `POST /webhooks/nextcloud` allows arbitrary vector data deletion when `WEBHOOK_SECRET` is unset ( default )
 
 **CVE:** `CVE-2026-55640` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-8vh3-g2qg-2h2c>
@@ -332,7 +343,7 @@ The `POST /webhooks/nextcloud` endpoint has no authentication by default: `WEBHO
 
 ---
 
-## 31. 🟡 High Severity — utcp-gql SSRF: CVE-2026-44661 fix not applied to the GraphQL and WebSocket plugins
+## 32. 🟡 High Severity — utcp-gql SSRF: CVE-2026-44661 fix not applied to the GraphQL and WebSocket plugins
 
 **CVE:** `CVE-2026-12210` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-ppx3-28rw-8fpf>
@@ -343,7 +354,7 @@ The fix for CVE-2026-44661 (commit `5b16e43`) added the `ensure_secure_url()` / 
 
 ---
 
-## 32. 🟡 High Severity — qwed-mcp has Unsafe SymPy `parse_expr()` Remote Code Execution via Unsanitized Math Expression Input
+## 33. 🟡 High Severity — qwed-mcp has Unsafe SymPy `parse_expr()` Remote Code Execution via Unsanitized Math Expression Input
 
 **CVE:** `CVE-2026-55546` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-mw6r-2hvm-4rp2>
@@ -354,7 +365,7 @@ The fix for CVE-2026-44661 (commit `5b16e43`) added the `ensure_secure_url()` / 
 
 ---
 
-## 33. 🟡 High Severity — PraisonAI: Authentication fail-open in Recipe server allows unauthenticated access when API key or JWT auth is configured without a secret
+## 34. 🟡 High Severity — PraisonAI: Authentication fail-open in Recipe server allows unauthenticated access when API key or JWT auth is configured without a secret
 
 **CVE:** `CVE-2026-55533` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-gfq8-hmph-9gjv>
@@ -367,7 +378,7 @@ This creates an authentication fail-open condition. An operator can start the Re
 
 ---
 
-## 34. 🟡 High Severity — PraisonAI vulnerable to Server-Side Request Forgery via DNS rebinding bypass in webhook_url validation
+## 35. 🟡 High Severity — PraisonAI vulnerable to Server-Side Request Forgery via DNS rebinding bypass in webhook_url validation
 
 **CVE:** `CVE-2026-55535` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-hmfx-4v44-9qw9>
@@ -382,7 +393,7 @@ The validator catches `socket.gaierror` and silently allows the URL:
 
 ---
 
-## 35. 🟡 High Severity — PraisonAI: Webhook SSRF via DNS fail-open in `JobSubmitRequest.validate_webhook_url()` — bypass of CVE-2026-40114
+## 36. 🟡 High Severity — PraisonAI: Webhook SSRF via DNS fail-open in `JobSubmitRequest.validate_webhook_url()` — bypass of CVE-2026-40114
 
 **CVE:** `CVE-2026-55537` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-rg5q-pp8p-f7jm>
@@ -397,7 +408,7 @@ the webhook is fired much later by `JobExecutor.…
 
 ---
 
-## 36. 🟡 High Severity — praisonaiagents: ast_grep_rewrite rewrites arbitrary files without the @require_approval gate enforced on every sibling mutation tool
+## 37. 🟡 High Severity — praisonaiagents: ast_grep_rewrite rewrites arbitrary files without the @require_approval gate enforced on every sibling mutation tool
 
 **CVE:** `CVE-2026-55530` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-cfxv-8fw8-rwpv>
@@ -412,7 +423,7 @@ Tools in `praisonaiagents/tools/` that modify on-disk state or run code are un�
 
 ---
 
-## 37. 🟡 High Severity — praisonaiagents has an SSRF protection bypass in `spider_tools._host_is_blocked()` via DNS-resolved hostnames (`127.0.0.1.nip.io`)
+## 38. 🟡 High Severity — praisonaiagents has an SSRF protection bypass in `spider_tools._host_is_blocked()` via DNS-resolved hostnames (`127.0.0.1.nip.io`)
 
 **CVE:** `CVE-2026-55526` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-x44h-65qv-cw74>
@@ -427,7 +438,7 @@ bypasses the protection entirely.…
 
 ---
 
-## 38. 🟡 High Severity — PraisonAI MCP HTTP server has unauthenticated unbounded session accumulation (memory exhaustion; session TTL never enforced)
+## 39. 🟡 High Severity — PraisonAI MCP HTTP server has unauthenticated unbounded session accumulation (memory exhaustion; session TTL never enforced)
 
 **CVE:** `CVE-2026-55531` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-wv94-5qcp-6m36>
@@ -438,7 +449,7 @@ The PraisonAI MCP HTTP-stream server creates a new in-memory session on every in
 
 ---
 
-## 39. 🟡 High Severity — PraisonAI has an origin validation bypass in MCP HTTP Stream transport that allows browser-mediated unauthenticated tool execution on local MCP server
+## 40. 🟡 High Severity — PraisonAI has an origin validation bypass in MCP HTTP Stream transport that allows browser-mediated unauthenticated tool execution on local MCP server
 
 **CVE:** `CVE-2026-55529` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-wj6g-v78p-6fx3>
@@ -450,20 +461,6 @@ PraisonAI&#x27;s MCP HTTP Stream transport uses an unsafe prefix match when vali
 As a result, an attacker-controlled origin such as `http://localhost.evil.example` passes the localhost origin check.
 
 When the …
-
----
-
-## 40. 🟡 High Severity — Attackers Target miniOrange SAML Flaws That Can Grant WordPress Admin Access
-
-**CVE:** `CVE-2026-61979` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-25
-**Reference:** <https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html>
-
-> Bad actors are attempting to exploit two severe unauthenticated authentication bypasses in the Xecurify miniOrange SAML 2.0 Single Sign On plugin that make it possible for an attacker to sign in as any WordPress user, including administrators.
-
-The vulnerabilities, as disclosed by Patchstack, are listed below -
-
-
-  CVE-2026-61979 (CVSS score: 8.1) - An unauthenticated privilege escalation
 
 ---
 
