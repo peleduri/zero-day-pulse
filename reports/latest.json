@@ -1,10 +1,124 @@
 {
-  "generated": "2026-08-26T12:24:52.674151+00:00",
-  "total": 41,
-  "kev": 0,
-  "zero_day": 20,
+  "generated": "2026-08-26T19:30:08.392305+00:00",
+  "total": 33,
+  "kev": 6,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2021-23758",
+      "title": "CVE-2021-23758 \u2014 Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
+      "summary": "Vendor: Ajax.NET Professional | Product: Ajax.NET Professional. Ajax.NET Professional (AjaxPro) contains a deserialization of untrusted data vulnerability that could allow for remote code execution via arbitrary .NET classes. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-09)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-23758",
+      "published": "2026-08-26",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2021-23758"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2015-3246",
+      "title": "CVE-2015-3246 \u2014 Red Hat Libuser Race Condition Vulnerability",
+      "summary": "Vendor: Red Hat | Product: Libuser. Red Hat libuser contains a race condition vulnerability that allows authenticated local users to corrupt the /etc/passwd file to cause a denial of service or privilege escalation.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-09)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-3246",
+      "published": "2026-08-26",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2015-3246"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2015-5287",
+      "title": "CVE-2015-5287 \u2014 Red Hat Automatic Bug Reporting Tool Privilege Escalation Vulnerability",
+      "summary": "Vendor: Red Hat | Product: Automatic Bug Reporting Tool. Red Hat Automatic Bug Reporting Tool (ABRT) contains a privilege escalation vulnerability that could allow local users with certain permissions to gain privileges via a symlink attack on a file with a predictable name. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-09)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-5287",
+      "published": "2026-08-26",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2015-5287"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2019-1068",
+      "title": "CVE-2019-1068 \u2014 Microsoft SQL Server Remote Code Execution Vulnerability",
+      "summary": "Vendor: Microsoft | Product: SQL Server. Microsoft SQL Server contains a remote code execution vulnerability that could allow an attacker to execute code in the context of the SQL Server Database Engine service account. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-29)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2019-1068",
+      "published": "2026-08-26",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2019-1068"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2022-0995",
+      "title": "CVE-2022-0995 \u2014 Linux Kernel Out-of-Bounds Write Vulnerability",
+      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains an out-of-bounds memory write vulnerability which could allow a local user to gain privileged access or cause a denial of service on the system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-09)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2022-0995",
+      "published": "2026-08-26",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2022-0995"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-8452",
+      "title": "CVE-2026-8452 \u2014 Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "summary": "Vendor: Citrix | Product: NetScaler ADC and NetScaler Gateway. Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-08-29)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452",
+      "published": "2026-08-26",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-8452"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -37,6 +151,70 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/08/fbi-disrupts-china-linked-qtfy.html",
+      "title": "FBI Disrupts China-Linked QTFY Infrastructure Used to Steal Data From U.S. Organizations",
+      "summary": "The U.S. Department of Justice (DoJ) on Wednesday announced the disruption of two hacking platforms named QScan and QTRouter operated by Chinese threat actors to target critical infrastructure and other sensitive networks in the country.\n\nThe activity has been attributed to a Chinese state-sponsored group known as QTFY, employed by Nanjing Xinjiuwei Network Technology Company (\u5357\u4eac\u946b\u7396\u7ef4\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8).&",
+      "link": "https://thehackernews.com/2026/08/fbi-disrupts-china-linked-qtfy.html",
+      "published": "2026-08-26T16:42:03+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/nimbus-manticore-expands-toolset-with.html",
+      "title": "Nimbus Manticore Expands Toolset With TWOSTROKE-Like Backdoor and SSH Tunneler",
+      "summary": "Cybersecurity researchers have discovered additional infrastructure and previously undocumented malware associated with Nimbus Manticore, an Iranian state-sponsored hacking group affiliated with the Islamic Revolutionary Guard Corps (IRGC).\n\nGroup-IB, in a new analysis published today, described the cyber espionage actor as among the most active Iranian APT groups in 2026. Nimbus Manticore (aka",
+      "link": "https://thehackernews.com/2026/08/nimbus-manticore-expands-toolset-with.html",
+      "published": "2026-08-26T15:35:05+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/edge-infrastructure-under-siege",
+      "title": "Edge infrastructure under siege: what two independent datasets reveal about who's exploiting your perimeter",
+      "summary": "A joint Tenable-SentinelOne analysis of 93 CVE-actor attribution pairs reveals that both state-sponsored actors and cybercriminals independently converge on the same edge infrastructure. Special thanks to SentinelOne\u00ae Incident Readiness & Response for their contributions to this publication. It is the shared attack surface where state-sponsored threat actors and financially motivated criminal groups independently converge \u2014 not the province of a single adversary category, and not exclusively a nation-state problem, despite two years of headlines about China-nexus actors targeting Ivanti, Fortinet, and Palo Alto Networks. The data here tells a different and much broader story. One focused on vendors vs CVEs. Key Takeaways Two independent observation systems, Tenable exposure telemetry across thousands of customer containers and SentinelOne DFIR casework across 66 CVEs, converge 79% on the same vendor attack surfaces despite minimal CVE-level overlap. Twelve CVEs in the combined dataset have confirmed multi-nexus attribution: state-sponsored and criminal actors independently exploiting the same vulnerability, across five nexus categories (China, Russia, DPRK, Iran, ransomware). The exposure picture is flatter than the headlines suggest: Fortinet, the vendor most associated with edge-device attacks in the press, sits mid-pack on container-grain exposure (25%) \u2014 well behind F5 (54%) and in a tight 10-point band with Check Point, Ivanti, and Citrix. 54% of customer environments running F5 products have at least one exposed, actively-exploited CVE; Citrix customers show the slowest remediation patterns at 461 days median time to patch. Remediation complexity, particularly of high priority CVEs, leads to a statistically significant 24-day remediation gap, leaving large windows of opportunity for attackers. The same product lines get hit again and again: Ivanti EPMM and Ivanti Connect Secure each show a newly exploited CVE roughly every 8.5 to 13 months. Leverage multiple d",
+      "link": "https://www.tenable.com/blog/edge-infrastructure-under-siege",
+      "published": "2026-08-26T13:00:00+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/unpatched-kaltura-mwembed-flaws-could.html",
+      "title": "Unpatched Kaltura mwEmbed Flaws Could Let Remote Attackers Read Files and Run Code",
+      "summary": "The CERT Coordination Center (CERT/CC) has disclosed two unpatched vulnerabilities in Kaltura's HTML5 video player library that allow a remote, unauthenticated attacker to read arbitrary files from a server and execute code on it.\n\nThe flaws, tracked as CVE-2026-19913 and CVE-2026-19912, both stem from the same unsafe deserialization in the mwEmbedLoader.php endpoint of the mwEmbed player",
+      "link": "https://thehackernews.com/2026/08/unpatched-kaltura-mwembed-flaws-could.html",
+      "published": "2026-08-26T11:55:00+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-19913",
+        "CVE-2026-19912"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://blog.trailofbits.com/2026/08/26/vms-wont-contain-cyber-capable-agents/",
       "title": "VMs won't contain cyber-capable agents",
       "summary": "As part of Patch the Planet , we received preview access to GPT 5.6-Cyber with a simple task: evaluate its cyber capabilities. Recent events inspired me to give it a challenge to work through: escape the VM I\u2019d normally use for sandboxing. The target was a QEMU/KVM VM on my Linux dev machine (Debian Linux 12, AMD Zen3). It escaped the VM three different times. First, it used recently disclosed bugs in my host kernel. When I fully updated, it used disclosed bugs that had not yet reached package maintainers or were not classified as security bugs. When I rebuilt QEMU and dependencies from the latest upstream source, it found several 0-days. It operated autonomously for hours, backtracked from approaches that didn\u2019t work, pulled code and research papers, wrote oracles, made its own minimal examples, and aimed for a reusable, reliable exploit, all with minimal handholding and prompting. My main job was to physically reboot the machine when it hardlocked the host kernel. If it wasn\u2019t clear before, I will state it plainly: you can no longer assume a mere VM will contain a sufficiently advanced AI agent. To use a 2010s term of art, you should treat such agents as an advanced persistent threat. Advancing cybersecurity capabilities Let\u2019s imagine a common situation: you want to run an AI agent, but need its full capabilities, including the ability to download, build and debug software; do research; sift through dependencies; set up fuzzers; triage vulnerabilities; and stand up services under different configurations. The generally accepted solution is to set up a VM that serves as a safety perimeter and isolated prison for the agent: this virtual environment contains nothing of value, is separate from the host, and can be immediately deactivated or snapshotted for later investigation. This setup allows the agent to roam free, while isolating your computer from its consequences. There is, of course, a tiny wrinkle. To be useful, the virtual environment must share resources wit",
@@ -65,96 +243,6 @@
       ],
       "cve_ids": [
         "CVE-2026-60004"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55532",
-      "title": "PraisonAI: Origin-validation bypass (startswith prefix match) enables unauthenticated cross-site request forgery against the PraisonAI MCP HTTP server",
-      "summary": "### Summary\n\nThe PraisonAI MCP server exposes an HTTP-stream transport (praisonai mcp serve --transport http-stream) that binds to localhost and, by default, has no API key. Its only access control for browser-originated requests is an Origin allowlist, which the code implements as required by the MCP 2025-11-25 security guidance. The allowlist check uses a prefix match (request_origin.startswith(allowed)), so any Origin whose string begins with http://localhost or http://127.0.0.1 is accepted, for example http://localhost.attacker.com. An attacker who registers such a hostname and serves a page from it can, when a victim visits the page, issue cross-site requests that the MCP server accepts and executes without authentication. Because the request can be sent as a CORS \"simple request\" (Content-Type: text/plain, which the server still parses as JSON), it requires no preflight, and because tools/call does not require a session, a single forged request executes an MCP tool. This is a blind cross-site request forgery against a developer's local agent runtime. A natural end-to-end impact is persistent prompt injection: the forged request creates a rule file that the agent runtime loads with activation \"always\", so attacker-controlled instructions are injected into every subsequent agent run on the victim's machine.\n\n### Details\n\nThe HTTP-stream transport validates the Origin header in transports/http_stream.py. The allowlist is built for a localhost bind, then matched with startswith:\n\n```python\n# __init__: default allowlist when binding to localhost\nself.allowed_origins = [\"http://localhost\", \"http://127.0.0.1\",\n                        \"https://localhost\", \"https://127.0.0.1\"]\n\ndef _validate_origin(self, request_origin):\n    if request_origin is None:\n        return True                      # no Origin -> allowed\n    if self.allowed_origins is None:\n        return False\n    for allowed in self.allowed_origins:\n        if request_origin == allowed or request_origin.sta",
-      "link": "https://github.com/advisories/GHSA-pvph-5j39-v8qc",
-      "published": "2026-08-25T15:18:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55532"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55539",
-      "title": "PraisonAI: [Auth Bypass] PraisonAI async Jobs API (`/api/v1/runs`) has no authentication \u2014 unauthenticated job execution, result theft, cancel and delete",
-      "summary": "### Summary\nPraisonAI's async **Jobs API** (the FastAPI service in `praisonai/jobs/`) installs its router with no authentication middleware, no router-level dependency, and no per-route auth check. Any caller who can reach the jobs server can submit agent jobs (executed against the operator's configured LLM credentials), list every job in the shared store, read other jobs' results, cancel running jobs, and delete terminal jobs \u2014 with no token, cookie, session, or per-job ownership value.\n \nThe server's default bind is `127.0.0.1`, so remote reach requires an operator to bind a public interface, container-publish, reverse-proxy, or tunnel the service. Once reachable, the primitive is fully pre-authenticated.\n \n**This is a distinct, still-unpatched sibling of CVE-2026-44338.** That CVE (GHSA-6rmh-7xcm-cpxj, fixed in 4.6.34) covered only the *legacy Flask* server `src/praisonai/api_server.py`. The fix added `AUTH_ENABLED`/`AUTH_TOKEN`/`check_auth()` to that file and did **not** touch the FastAPI jobs module. At the latest commit (`9fcac3a`, version **4.6.51**) the legacy Flask server is patched but the jobs API remains completely unauthenticated.\n\n## Technical Detail\n \n### Source-to-sink trace\n \nThe FastAPI app includes the jobs router with only CORS middleware \u2014 no auth (`server.py`, `create_app`):\n \n```python\n# src/praisonai/praisonai/jobs/server.py\ndef create_app(store=None, executor=None, cors_origins=None) -> FastAPI:\n    app = FastAPI(title=\"PraisonAI Jobs API\", ...)\n    # ... CORS middleware only (allow_headers includes \"Authorization\",\n    #     but CORS is not authentication) ...\n    jobs_router = create_router(get_store(), get_executor())\n    app.include_router(jobs_router)        # no dependencies=[Depends(...)]\n```\n \nThe router (built inside `create_router()`) registers every job operation with no auth dependency. The only `Header(...)` parameter anywhere is the `Idempotency-Key`, which is deduplication, not authorization:\n \n```python\n# src/praisonai/praiso",
-      "link": "https://github.com/advisories/GHSA-2jgc-f764-c5r2",
-      "published": "2026-08-25T15:14:27Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55539"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55524",
-      "title": "praisonaiagents vulnerable to SSRF in web_crawl tool via redirect-following and DNS rebinding (validate-then-fetch gap)",
-      "summary": "The web_crawl tool performs its SSRF check only on the initial URL: it resolves the hostname once\nwith socket.gethostbyname and rejects private/loopback/link-local results. It then passes the URL to\na fetcher that uses httpx.Client(follow_redirects=True) - or urllib.request.urlopen when httpx is\nabsent, which also follows redirects - and re-resolves the hostname at connect time, with no further\nvalidation. This validate-here/fetch-there gap is bypassable two independent ways: HTTP redirects and\nDNS rebinding.\n\nAffected code: src/praisonai-agents/praisonaiagents/tools/web_crawl_tools.py\n- Single-shot validation (lines 229-238):\n    if os.environ.get(\"ALLOW_LOCAL_CRAWL\") != \"true\":\n        ip_str = socket.gethostbyname(hostname)            # resolved ONCE, at validation time\n        ip = ipaddress.ip_address(ip_str)\n        if ip.is_loopback or ip.is_private or ip.is_link_local or ip.is_multicast or ip.is_unspecified:\n            continue                                       # rejected\n    url_list.append(u)\n- Vulnerable fetch (_crawl_with_httpx, lines 142 / 149): follows redirects, re-resolves DNS, no re-check:\n    with httpx.Client(follow_redirects=True, timeout=30.0) as client: response = client.get(url)\n    # fallback: urllib.request.urlopen(url, timeout=30)  (also follows redirects by default)\n- web_crawl / crawl_web are registered tools (tools/__init__.py:156-157); httpx is the default fallback\n  provider (dispatch at web_crawl_tools.py:269).\n\nThe two bypasses:\n1) Redirect: validation approves an attacker domain resolving to a public IP; attacker server replies\n   302 Location: http://169.254.169.254/... (or any internal host); the fetcher follows it unchecked.\n2) DNS rebinding (TOCTOU): validator's gethostbyname and fetcher's connect-time resolution are\n   independent; a low-TTL attacker domain answers public to the validator and private/loopback to fetch.\n\nImpact:\nAn agent with web_crawl - driven by direct input or indirect prompt injection - can be made to r",
-      "link": "https://github.com/advisories/GHSA-vg6p-v9vm-6fgj",
-      "published": "2026-08-25T14:43:19Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55524"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55523",
-      "title": "praisonaiagents has a `web_crawl` SSRF protection bypass via unchecked redirect targets",
-      "summary": "## Summary\n\n`praisonaiagents.tools.web_crawl_tools.web_crawl()` validates the initial URL and blocks direct loopback/private destinations by default, but the default httpx fallback still uses `httpx.Client(follow_redirects=True)` and does not revalidate redirect targets.\n\nAn attacker-controlled public URL can pass the initial host check, redirect to loopback/private/cloud metadata infrastructure, and have the redirected response body returned by `web_crawl()`.\n\nThis appears to be an incomplete fix / patch bypass for the published `web_crawl` SSRF class (`GHSA-qq9r-63f6-v542` / `CVE-2026-40160`, and `GHSA-8f4v-xfm9-3244`).\n\n## Affected Component\n\nPackage:\n\n```text\npraisonaiagents\n```\n\nFile:\n\n```text\nsrc/praisonai-agents/praisonaiagents/tools/web_crawl_tools.py\n```\n\nFunctions:\n\n```text\nweb_crawl()\n_crawl_with_httpx()\n```\n\n## Affected Versions\n\nValidated affected:\n\n- `praisonaiagents 1.5.128` via repository tag `v4.5.128`;\n- `praisonaiagents 1.6.40` via repository tag `v4.6.40`;\n- `praisonaiagents 1.6.56` via repository tag `v4.6.56`;\n- current `origin/main` commit `095653d78a01cc6c80ff5b2dd20a8e5619686ddc`.\n\nSuggested affected range for maintainer confirmation:\n\n```text\n>= 1.5.128, <= 1.6.56\n```\n\nNo patched version is known to me at submission time.\n\n## Root Cause\n\nCurrent `web_crawl()` validates only the initially supplied URL:\n\n- requires `http` or `https`;\n- resolves the initial hostname with `socket.gethostbyname()`;\n- rejects loopback/private/link-local/multicast/unspecified addresses unless `ALLOW_LOCAL_CRAWL=true`.\n\nThe default fetch sink then follows redirects:\n\n```python\nwith httpx.Client(follow_redirects=True, timeout=30.0) as client:\n    response = client.get(url)\n```\n\nThere is no validation of intermediate or final redirect destinations before `httpx` fetches them. The URL that passes the guard is therefore not necessarily the URL ultimately requested by the server.\n\n## Local Reproduction\n\nThe PoV is local-only. It starts a loopback redirector and a loopba",
-      "link": "https://github.com/advisories/GHSA-8hjw-25cg-g52h",
-      "published": "2026-08-25T14:18:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55523"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55525",
-      "title": "praisonaiagents web_crawl vulnerable to SSRF via redirect-following",
-      "summary": "### Summary\n`web_crawl` (an exported, model-callable tool) validates only the INITIAL URL's resolved IP against a private/loopback blocklist, then fetches with `httpx.Client(follow_redirects=True)` and never re-validates redirect targets. \n\nAn attacker who controls the agent's crawl target (a malicious task, or prompt injection inside any page the agent already crawls) supplies a public URL that HTTP 302-redirects to an internal address. httpx follows the redirect, fetches the internal resource (cloud metadata `169.254.169.254`, localhost services, internal APIs), and returns its body into the agent context. This bypasses the SSRF protection added to fix the earlier web_crawl SSRF reports, so it is an incomplete fix for that class. httpx is the default crawl provider on a stock `pip install praisonaiagents`, so no provider configuration is required.\n\n\n### Details\n\n1. The agent is asked (or prompt-injected) to crawl `https://attacker.example/r`, which the source accepts because `attacker.example` resolves to a public IP.\n2. The attacker server responds 302 Location: `http://169.254.169.254/latest/meta-data/iam/security-credentials/<role>`. \n3. `_crawl_with_httpx` follows the redirect with `follow_redirects=True`, fetches the IAM credential document, and `web_crawl` returns it in the result content field, where it enters the agent context and any downstream tool, log, or model response. \n\nThe same technique reaches `http://127.0.0.1:<port>/` internal services and other link-local and RFC1918 hosts\n\n**Source (validates only the initial hostname)**\n```python\n# src/praisonai-agents/praisonaiagents/tools/web_crawl_tools.py:231\n\nip_str = socket.gethostbyname(hostname)\nip = ipaddress.ip_address(ip_str)\nif ip.is_loopback or ip.is_private or ip.is_link_local or ip.is_multicast or ip.is_unspecified:\n    logger.warning(f\"Rejected SSRF or private IP attempt: {u}\")\n    continue\n```\n\n\n**Sink (follows redirects with no re-validation)**\n```python\n# src/praisonai-agents/praisonaiagen",
-      "link": "https://github.com/advisories/GHSA-5r34-2g38-6569",
-      "published": "2026-08-25T14:05:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55525"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -272,11 +360,26 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-55557",
-      "title": "browse-mcp has an arbitrary file write via unconfined download and state paths",
-      "summary": "### Impact\n`browser_download` wrote a fetched file to `join(save_dir, filename)` with no validation of `save_dir`, and `browser_save_state` / `browser_load_state` honored an explicit `path` unchanged. The MCP caller controls these arguments (a malicious MCP client, or an autonomous agent steered by indirect prompt injection on a visited page), so an attacker could supply an arbitrary `save_dir` (or state `path`) together with a URL whose response body became the file contents, writing attacker-controlled bytes to any path the process can reach (for example `~/.bashrc`, an autostart entry, or a cron file). That is an arbitrary file write that can lead to host code execution. The `force_fetch` fallback additionally used a raw `fetch()` that bypassed the `BROWSE_MCP_ALLOWED_ORIGINS` origin fence.\n\nEstimated severity: CVSS 3.1 around 7.8 (High) for the local / agent-mediated case.\n\n### Patches\nFixed in 0.8.2. `save_dir` is confined under the download root (`~/.browse-mcp/downloads`) and the explicit state `path` under `~/.browse-mcp/state`; absolute paths and `..` escapes are rejected, and download filenames are reduced to a bare basename. `force_fetch` now also honors the origin fence. Data roots remain relocatable via `BROWSE_MCP_HOME`. Upgrade to browse-mcp 0.8.2.\n\n### Workarounds\nRestrict the exposed tools with `BROWSE_MCP_TOOLS` to a set that excludes `browser_download`, `browser_save_state`, and `browser_load_state` (for example the hardened recipe in SECURITY.md). Note that the allowlist hides the tools from an agent but does not stop a malicious MCP client from calling them by name, so upgrading is the real fix.\n\n- Reported privately by novice-22.",
-      "link": "https://github.com/advisories/GHSA-m9mq-7m7q-xc6p",
-      "published": "2026-08-25T16:28:32Z",
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/",
+      "title": "Hackers target Microsoft SharePoint RCE chain with PoC exploit",
+      "summary": "Attackers are now targeting a chain of two Microsoft SharePoint vulnerabilities that can allow them to execute arbitrary code on unpatched servers, according to threat intelligence company Defused. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/",
+      "published": "2026-08-26T14:47:51+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-54550",
+      "title": "IzPack has Path Traversal in UnpackerBase that allows writing files outside the installation directory via malicious pack entries",
+      "summary": "### Summary\n\nIzPack's `UnpackerBase.unpack()` resolves pack-file target paths without any\ncanonical-path or directory-containment check. An attacker who distributes a\ntrojanized installer JAR (the format is unsigned) can include pack entries whose\n`targetPath` contains `../` sequences. When a victim runs the installer the\nfile is written to an attacker-chosen location on disk under the victim's\nprivileges \u2014 including startup folders, PATH directories, or system locations.\n\n### Details\n\n**Vulnerable method:** `com.izforge.izpack.installer.unpacker.UnpackerBase.unpack()`\n**Source file:** `izpack-installer/src/main/java/com/izforge/izpack/installer/unpacker/UnpackerBase.java`\n**Vulnerable lines (5.2.4):** ~618\u2013627\n\nThe relevant code path is:\n\n```java\nString targetPath = packFile.getTargetPath();             // attacker-controlled\nString path       = IoHelper.translatePath(targetPath, variables); // separator swap ONLY\nFile   target     = new File(path);                       // no canonical check\n// ... mkdirs() then file is written to `target`\n```\n\n`IoHelper.translatePath()` (source: `izpack-util/.../IoHelper.java`) performs\n**only** file-separator character conversion (`'/'` \u2194 `File.separatorChar`) and\ncontains no security validation whatsoever. There is no call to\n`getCanonicalPath()`, no `startsWith(installDir)` containment check, and no\nnormalisation of `..` segments.\n\nBecause IzPack installer JARs carry **no digital signature**, an attacker can\nrepack any legitimate installer with malicious `PackFile` entries. The file\nformat is a standard ZIP with serialised resources \u2014 no integrity protection.\n\n**Confirmed unpatched in HEAD (fetched from GitHub, 2025):**\n```\ngit show HEAD:izpack-installer/src/main/java/com/izforge/izpack/installer/unpacker/UnpackerBase.java \\\n  | grep -n 'getCanonicalPath\\|startsWith.*install\\|traversal'\n# (no output \u2014 fix not present)\n```\n\n### PoC\n\n```bash\n# 1. Clone IzPack source and view the vulnerable code directly\ngit clone --depth=1 --bra",
+      "link": "https://github.com/advisories/GHSA-f63g-88cj-hjf9",
+      "published": "2026-08-26T14:24:40Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -284,107 +387,51 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-55557"
+        "CVE-2026-54550"
       ],
       "is_zero_day": true,
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-55580",
-      "title": "mcp-shell \u2014 Security Disabled by Default in Bare-Binary Deploy Path + Shell Interpreter in Secure-Mode Allowlist",
-      "summary": "mcp-shell` at commit `17ac0eef5c9a5a42b8fb132d3d034973d55a5433` has two issues that together mean neither the default deploy path nor the recommended \"secure mode\" delivers the restriction they're marketed as providing. Filing these together because the two failure modes bracket the full intended audience \u2014 the from-source path gets users who skip security config entirely, the Docker path gets users who follow the security.yaml example and believe they're protected.\n\n---\n\nThe first issue is in `config.go`, line 49:\n\n```go\nconfig := &Config{\n    Security: SecurityConfig{\n        Enabled: false,\n    },\n    ...\n}\n```\n\nSecurity is opt-in. The bare binary ships with `Enabled: false`, and `security.go` lines 26\u201329 make the consequence explicit:\n\n```go\nfunc (v *SecurityValidator) validateCommand(command string) error {\n    if !v.config.Enabled {\n        v.logger.Debug().Str(\"command\", command).Msg(\"Security disabled, allowing command\")\n        return nil\n    }\n```\n\n`main.go` lines 35\u201339 confirm the deployment condition:\n\n```go\nconfigFile := os.Getenv(\"MCP_SHELL_SEC_CONFIG_FILE\")\nif configFile != \"\" {\n    log.Info().Str(\"config_file\", configFile).Msg(\"Loading security config\")\n} else {\n    log.Info().Msg(\"No security config file specified, security disabled\")\n}\n```\n\nThe README's from-source install path (lines 22\u201326) runs `git clone ... && make install && mcp-shell` with no environment variable and no config file. The MCP client config example block (lines 78\u201385) passes only `MCP_SHELL_LOG_LEVEL` \u2014 no `MCP_SHELL_SEC_CONFIG_FILE`. Every operator who follows either documented path runs an unrestricted shell-execution server.\n\n**Attack model:** operator installs from source or follows the MCP client config example verbatim. Any LLM connected via stdio can call `shell_exec` with an arbitrary command string \u2014 no allowlist, no blocklist, no filtering, no logging. Because mcp-shell is stdio transport, the attacking agent is the operator's own connected LLM \u2014 prompt injection or a ",
-      "link": "https://github.com/advisories/GHSA-f5pj-2738-996m",
-      "published": "2026-08-25T15:46:50Z",
-      "source": "GitHub Security Advisories",
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/115",
+      "title": "FD - Half-click unauthenticated remote code execution on Horde Groupware IMP (from a stored XSS)",
+      "summary": "Posted by Evan Tang on Aug 26 https://blog.evan.lat/posts/CVE-2026-65053/ the blog talks about two vulns that are chainable together. for the sake of brevity ill write up on the stored xss one. in lib/Mime/Status.php, we see a pretty viable xss sink: $out .= ' ' . $val . ' '; xrefing this we see that most impls are sanitized with the exception of lib/Mime/Viewer/Appledouble.php: $data_name =...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/115",
+      "published": "2026-08-26T16:46:52+00:00",
+      "source": "Full Disclosure",
       "tags": [
-        "github",
-        "advisories",
-        "oss"
+        "disclosure",
+        "exploit"
       ],
       "cve_ids": [
-        "CVE-2026-55580"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-55536",
-      "title": "PraisonAI has a Browser Server WebSocket origin validation bypass via unanchored regex (patch bypass of CVE-2026-40289 / GHSA-8x8f-54wf-vv92)",
-      "summary": "### Summary\n\n`praisonai/browser/server.py` validates incoming WebSocket connections using a Chrome\nextension Origin check. The regex `chrome-extension://[a-z0-9]{32}` is applied with\n`re.match()`, which **only anchors at the start of the string, not the end**. Any Origin\nheader with more than 32 alphanumeric characters after `chrome-extension://` \u2014 including\nnon-alphanumeric trailing characters \u2014 passes the check.\n\nThis is a **patch bypass** of GHSA-8x8f-54wf-vv92. That advisory triggered the addition\nof origin validation; this finding shows the validation is bypassable by any WebSocket\nclient that forges an Origin header. After bypassing, the attacker can send `start_session`\ncommands that are executed by any Chrome extension currently connected to the server \u2014\ncausing the extension to perform arbitrary browser automation including cookie theft and\nscreenshot capture.\n\n### Details\n\n**Vulnerable code \u2014 `browser/server.py` line 186:**\n\n```python\nelif parsed_origin.scheme == \"chrome-extension\" and \\\n     re.match(r\"chrome-extension://[a-z0-9]{32}\", origin):\n    is_allowed = True\n```\n\n`re.match()` returns a match object if the pattern matches at the **beginning** of the\nstring; trailing characters after the 32nd are not evaluated. `re.fullmatch()` (or\nanchoring with `$`) is required to enforce exact length.\n\n**There is no other authentication mechanism** in `_handle_connection()`. Confirmed by\nsource inspection:\n- No bearer token check\n- No API key check  \n- No extension ID allowlist\n- Origin header regex is the only gate before `websocket.accept()`\n\n**After connection, `start_session` reaches `_handle_start_session()` (lines 283-414)**,\nwhich:\n1. Creates a `BrowserAgent` with the attacker-specified `goal` and `model`\n2. Broadcasts `start_automation` to every connected Chrome extension\n3. The extension then performs the goal on the user's browser\n\n### PoC\n\n**Requirements:** PraisonAI browser server running on default `127.0.0.1:8765`\n\n**Start the server:**\n```bash\npyth",
-      "link": "https://github.com/advisories/GHSA-6g6r-q6gw-w8fg",
-      "published": "2026-08-25T15:22:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55536"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-55540",
-      "title": "PraisonAI: [Path Traversal] agent tools escape the configured workspace via symlinks",
-      "summary": "### Summary\nPraisonAI's `praisonai.code` tool wrappers (exported as `CODE_TOOLS` for agents) expose a `workspace` setting that the module itself treats as a path-traversal **security boundary** \u2014 `read_file`, `write_file`, `apply_diff`, and `search_replace` explicitly call `is_path_within_directory()` and return `\"\u2026 is outside the workspace\"` on violations. That boundary is enforced **unsoundly and inconsistently**:\n \n1. The containment helper uses `os.path.abspath()`, not `realpath()`/`Path.resolve()`. A symlink located **inside** the workspace whose target is **outside** has an `abspath()` that is still inside the workspace, so it passes the check while `open()` follows the link. This bypasses read, write, apply_diff, and search_replace (CWE-59).\n2. `list_files()` resolves `path` against the workspace but **never** calls the containment helper at all \u2014 `../` and absolute paths escape directly (CWE-22).\n3. `execute_command()` takes a `workspace` argument documented \"for security validation\" but performs **no** `cwd` containment check; `code_execute_command()` resolves a relative `cwd` against the workspace and also never validates it (and never even passes `workspace` to the low-level helper). A relative `cwd=\"../outside\"` runs commands from outside the workspace (CWE-22).\nAn attacker who can influence an agent that has these tools attached (untrusted prompt, indirect prompt injection, or a server-exposed agent) can read, overwrite, list, and execute from outside the configured workspace, bounded only by the process user's filesystem permissions.\n\n## Technical Detail\n \n### 1. Unsound containment helper (symlink bypass \u2014 CWE-59)\n \n```python\n# src/praisonai/praisonai/code/utils/file_utils.py \u2014 is_path_within_directory()\nabs_file = os.path.abspath(file_path)     # does NOT resolve symlinks\nabs_dir  = os.path.abspath(directory)\nif not abs_dir.endswith(os.sep): abs_dir += os.sep\nreturn abs_file.startswith(abs_dir) or abs_file == abs_dir.rstrip(os.sep)\n```\n \n`read_file`/",
-      "link": "https://github.com/advisories/GHSA-ch89-h4r2-c8f8",
-      "published": "2026-08-25T14:54:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55540"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-54338",
-      "title": "JupyterHub has Unauthenticated Denial of Service via Unbounded Username Logging on Failed Login",
-      "summary": "### Impact\n\nInvalid input to login resulted in unbounded logging output. Only form-based Authenticators (the default PAM Authenticator, but not the more widely used OAuthenticator) are affected.\n\n### Patches\n\nUpgrade to 5.5.0.\n\n### Workarounds\n\nUse an Authenticator that doesn't use a login form, such as OAuthenticator.",
-      "link": "https://github.com/advisories/GHSA-p43p-whwx-q52h",
-      "published": "2026-08-25T19:29:19Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54338"
+        "CVE-2026-65053"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-45019",
-      "title": "Chainlist has SSRF via MCP SSE and streamable-http transports that allows unauthenticated internal network access",
-      "summary": "### Am I affected?\n\nOnly if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.\n\n### Summary\n\nWhen MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `sse` and `streamable-http` transports accepts a user-controlled `url` and optional `headers` dictionary without any validation. An unauthenticated attacker can force the Chainlit server to make outbound HTTP requests to arbitrary URLs \u2014 including internal network services and cloud metadata endpoints \u2014 with attacker-controlled HTTP headers such as `Authorization` and `Cookie`.\n\n\n### Affected / patched versions\n\n| | |\n|---|---|\n| CVE | CVE-2026-45019 |\n| Affected \u2014 URL-based SSRF | `>=2.4.0rc0, <2.12.0` (sink present since MCP support was introduced, PR #1977) |\n| Affected \u2014 attacker-controlled header forwarding (amplifies the above) | `>=2.6.4, <2.12.0` (added in PR #2292) |\n| Patched | **2.12.0** (releasing 2026-08-25) |\n\n### Details\n\nThe Pydantic request models in `backend/chainlit/types.py` define `url` as a bare `str` with no scheme check, no private IP filtering, and no allowlist. When `clientType` is `\"sse\"` or `\"streamable-http\"`, the handler in `backend/chainlit/server.py` passes the URL and headers directly to the MCP SDK's `sse_client()` or `streamablehttp_client()`, which make outbound HTTP requests from the server.\n\nThe SSE URL sink has existed since MCP support was first introduced in v2.4.0rc0 (PR #1977). PR #2292 (merged 2025-07-30, released in v2.6.4) added `streamable-http` support and introduced attacker-controlled `headers` forwarding for both transports. This amplified the SSRF from a simple URL-based request to one where the attacker can set arbitrary HTTP headers like `Authorization` and `Cookie`.\n\nThis is a blind SSRF: the server makes the outbound request, b",
-      "link": "https://github.com/advisories/GHSA-hvfh-5mj3-5f3j",
-      "published": "2026-08-25T19:21:40Z",
-      "source": "GitHub Security Advisories",
+      "id": "https://seclists.org/fulldisclosure/2026/Aug/111",
+      "title": "[NotCVE-2026-0010] Barrier 2.4.0 for Windows Unauthenticated IPC Command Execution Allows Local Privilege Escalation to SYSTEM",
+      "summary": "Posted by advisories on Aug 26 ---------------------------------------------------------------------------- NotCVE Advisory \u2014 NotCVE-2026-0010 ---------------------------------------------------------------------------- [-] Summary: Barrier 2.4.0 for Windows contains a local privilege escalation vulnerability in the IPC command interface exposed by the barrierd.exe service on 127.0.0.1:24801. The IPC server accepts local TCP clients and processes a command line together...",
+      "link": "https://seclists.org/fulldisclosure/2026/Aug/111",
+      "published": "2026-08-26T16:46:34+00:00",
+      "source": "Full Disclosure",
       "tags": [
-        "github",
-        "advisories",
-        "oss"
+        "disclosure",
+        "exploit"
       ],
       "cve_ids": [
-        "CVE-2026-45019"
+        "CVE-2026-0010"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-45018",
-      "title": "Chainlit has command injection via MCP stdio transport that allows unauthenticated remote code execution",
-      "summary": "### Am I affected?\n\nOnly if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.\n\n### Summary\n\nWhen MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `stdio` transport accepts a user-controlled `fullCommand` string. The `validate_mcp_command()` function checks the executable name against a configurable allowlist but does not inspect or restrict the arguments. An attacker can pass `npx -y -c 'ARBITRARY COMMAND'` to execute arbitrary shell commands on the server with the privileges of the Chainlit process.\n\n\n### Affected / patched versions\n\n| | |\n|---|---|\n| CVE | CVE-2026-45018 |\n| Affected | `>=2.4.0rc0, <2.12.0` with `features.mcp.enabled = true` (introduced in PR #1977, the change that added MCP support) |\n| Patched | **2.12.0** (releasing 2026-08-25) |\n\n### Details\n\n`validate_mcp_command()` in `backend/chainlit/mcp.py` uses `shlex.split()` to parse the command string and validates only the executable name (e.g., `npx`, `uvx`) against `config.features.mcp.stdio.allowed_executables`. Arguments are returned unchecked and passed directly to `StdioServerParameters`, which spawns a subprocess.\n\nSince `npx` supports `-c` for arbitrary shell execution, `npx -y -c 'PAYLOAD'` passes the allowlist check while running whatever the attacker specifies. This gives an attacker who can reach the endpoint full control over the host.\n\nThere is a related issue in the Pydantic model: `allowed_executables` defaults to `None`, and the validation code treats `None` as \"allow everything.\" If a developer removes the `allowed_executables` line from their config, any executable can be invoked.\n\nThe `/mcp` route is registered unconditionally on the FastAPI router in every Chainlit deployment; only the runtime `features.mcp.enabled` check and (where config",
-      "link": "https://github.com/advisories/GHSA-w3fx-mc44-mf6j",
-      "published": "2026-08-25T19:19:28Z",
+      "id": "CVE-2026-54590",
+      "title": "asyncssh has an incomplete fix for CVE-2026-45309 \u2014 AuthorizedKeysFile %u still escapes the intended directory via a leading ~ (and weakly via ${ENV}) username substitution",
+      "summary": "**Incomplete fix for CVE-2026-45309 (GHSA-g794-3fmp-753h).** The\n  2.23.0 guard that sanitises the SSH username before `%u` substitution\n  in `AuthorizedKeysFile` blocks `/`, `\\` and `..`, but does not block a\n  leading `~` (or `${ENV}`), both of which are re-introduced by later\n  expansion and reach the file open \u2014 defeating the guard.\n\n  **Affected:** asyncssh 2.23.0 and current `develop` (commit `a60f863`,\n  HEAD on 2026-05-29).\n\n  ## Summary\n  The fix for CVE-2026-45309 added a guard in\n  `SSHServerConfig._set_tokens` (`asyncssh/config.py:715-716`) that\n  rejects an SSH username containing `/`, `\\`, or equal to `..`, before\n  it is substituted for the `%u` token in `AuthorizedKeysFile`:\n\n      if self._user == '..' or '/' in self._user or '\\\\' in self._user:\n          raise IllegalUserName('Unsafe username substitution')\n\n  However, the `%u`-substituted value is subsequently passed through\n  environment-variable expansion (`_expand_val`, `config.py:145-149` \u2014\n  token expansion then env expansion) and, at file-open time, through\n  `expanduser()` (`read_authorized_keys` \u2192 `read_file` \u2192\n  `open(Path(filename).expanduser())`, `auth_keys.py:348` \u2192\n  `misc.py:290`). Both re-introduce the path control the guard was meant\n  to remove, so a username that contains no `/`/`\\` can still cause the\n  server to read an authorized-keys file outside the intended per-user\n  directory.\n\n  The client-supplied username reaches this path pre-authentication:\n  `_process_userauth_request` takes the username from the\n  `SSH_MSG_USERAUTH_REQUEST` packet (`connection.py:2516-2519`) and\n  `_finish_userauth` calls `reload_config()` (`connection.py:2536`),\n  which re-evaluates `AuthorizedKeysFile` with `username=self._username`\n  (`connection.py:5906`) before the offered key is validated.\n\n  ## Primary vector \u2014 leading `~`\n  A username such as `~root` or `~victim` passes the guard (no `/`). For\n  a server whose `AuthorizedKeysFile` begins with `%u` \u2014 e.g.\n  `AuthorizedKeysFile %u/.ssh/author",
+      "link": "https://github.com/advisories/GHSA-qr67-gv47-xwwh",
+      "published": "2026-08-26T15:32:00Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -392,17 +439,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-45018"
+        "CVE-2026-54590"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-55609",
-      "title": "consciousness-explorer / sublinear-time-solver MCP export_state has an arbitrary file write",
-      "summary": "### Impact\nAn arbitrary file write vulnerability (CWE-73, External Control of File Name or Path) exists in the `consciousness-explorer` component of `sublinear-time-solver`. The MCP `export_state` (and `import_state`) tool accepted a user-supplied `filepath` argument and passed it directly to `fs.writeFileSync` / `fs.readFileSync` without constraining the destination or rejecting path traversal. An attacker able to invoke the MCP tool could write or overwrite any file accessible to the server process (e.g. `~/.ssh/authorized_keys`, application files), leading to integrity loss and potential service disruption.\n\nThe same sink class was present in the main solver MCP server (`saveVectorToFile` / `loadVectorFromFile`).\n\n### Affected versions\n- `consciousness-explorer` < 1.1.2\n- `sublinear-time-solver` < 1.6.0\n- `sublinear` (crates.io) < 0.2.0\n\n### Patches\n- `consciousness-explorer@1.1.2`\n- `sublinear-time-solver@1.6.0`\n- `sublinear@0.2.0`\n\nState/vector files are now confined to a dedicated directory (overridable via `$CONSCIOUSNESS_EXPLORER_STATE_DIR` / `$SUBLINEAR_SOLVER_VECTOR_DIR`), a basename-only contract is enforced (rejecting separators, `..`, NUL/control chars, hidden files, and Windows reserved names), and files are opened with `O_NOFOLLOW | O_CLOEXEC` mode `0o600`. Covered by 14 regression tests in `tests/consciousness/safe-path.test.mjs`.\n\n**Breaking change:** callers must now pass a basename, not an absolute path.\n\n### Workarounds\nDo not expose the MCP server to untrusted clients; restrict `export_state` to trusted local users; run the server under a low-privilege account with a restricted working directory.",
-      "link": "https://github.com/advisories/GHSA-xc9g-j69q-37xw",
-      "published": "2026-08-25T18:35:32Z",
+      "id": "CVE-2026-54569",
+      "title": "senaite.core Vulnerable to Eval Injection and Missing Authorization",
+      "summary": "### Summary\n\nAn unauthenticated remote code execution vulnerability in the SENAITE JSON API allows any network-reachable attacker to execute arbitrary Python on the Zope worker process via a two-request anonymous chain. The `/@@API/update` route is reachable to anonymous callers and runs `eval()` on attacker-controlled input before any permission check fires.\n\nThis is a different code path from the `eval()` in the calculations module: no authenticated account of any kind is required.\n\n### Details\n\nThe vulnerability is the chain of two independent flaws. Either fix alone breaks the unauthenticated chain, but the `eval` sink remains exploitable by any authenticated user with write access to a `RecordsField`, so both fixes are needed.\n\n**1. Missing `AccessJSONAPI` gate on JSON API write routes (CWE-862).** The route at [`src/bika/lims/jsonapi/update.py:45-165`](https://github.com/senaite/senaite.core/blob/v2.6.0/src/bika/lims/jsonapi/update.py#L45-L165) does not enforce the `senaite.core: Access JSON API` permission upfront. Compare with the sibling [`create.py:179-182`](https://github.com/senaite/senaite.core/blob/v2.6.0/src/bika/lims/jsonapi/create.py#L179-L182), which does:\n\n```python\nif not getSecurityManager().checkPermission(AccessJSONAPI, parent):\n    raise Unauthorized(...)\n```\n\nThe check is present on `create` and absent on `update`, `update_many`, `remove`, `doActionFor`, `doActionFor_many`, and `getusers`. The underlying `@@API` view is registered by `plone.jsonapi.core` at [`browser/configure.zcml:8-13`](https://github.com/collective/plone.jsonapi.core/blob/0.6/src/plone/jsonapi/core/browser/configure.zcml#L8-L13) with `permission=\"zope2.View\"`, which is granted to Anonymous on the Plone Site root.\n\nWhen an `obj_uid` is supplied, the route resolves the target through `uid_catalog` and `brain.getObject()`. The catalog brain walks the parent path with `unrestrictedTraverse` and applies `restrictedTraverse` only on the final segment, so the per-object View per",
+      "link": "https://github.com/advisories/GHSA-jrw6-7x4q-w25j",
+      "published": "2026-08-26T15:28:47Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -410,17 +457,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-55609"
+        "CVE-2026-54569"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-55663",
-      "title": "mediasoup: SCTP state cookie lacks cryptographic authentication, enabling unauthorized association establishment (RFC 9260 violation)",
-      "summary": "### Summary\n\nmediasoup's built-in SCTP stack (introduced in v3.20.0) authenticates SCTP state cookies using only hardcoded magic byte sequences rather than a per-instance HMAC keyed with a secret, violating RFC 9260 Section 5.1.3. An on-path attacker targeting a PlainTransport with SCTP enabled (and no SRTP/DTLS protection) can craft a forged COOKIE-ECHO chunk that passes all validation, establishing an unauthorized SCTP association and gaining the ability to inject DataChannel messages as a trusted peer.\n\n### Details\n\nRFC 9260 Section 5.1.3 states: \"An endpoint MUST use a one-time-use secret key to protect the State Cookie.\" The mediasoup implementation ignores this requirement. The state cookie is defined in `worker/include/RTC/SCTP/association/StateCookie.hpp` with the following structure (44 bytes total):\n\n- Offset 0: Magic1 = `\"msworker\"` (hardcoded, 8 bytes)\n- Offset 8: localVerificationTag (4 bytes, attacker-controlled)\n- Offset 12: remoteVerificationTag (4 bytes, attacker-controlled)\n- Offset 16-27: TSN and window fields (attacker-controlled)\n- Offset 28: tieTag (8 bytes, attacker-controlled)\n- Offset 36: NegotiatedCapabilitiesField containing Magic2 = `0xAD81` (hardcoded)\n\nThe validation function `StateCookie::IsMediasoupStateCookie()` in `worker/src/RTC/SCTP/association/StateCookie.cpp` only checks:\n1. `bufferLength == 44`\n2. `bytes[0:8] == \"msworker\"` (Magic1, always the same)\n3. `ntohs(bytes[38:40]) == 0xAD81` (Magic2, always the same)\n\nNo HMAC, no per-session secret, no nonce. All \"magic\" values are published constants in the public header.\n\nWhen a COOKIE-ECHO is received in `Association::HandleReceivedCookieEchoChunk()` (without an existing TCB), the sole security check is:\n\n```cpp\nif (receivedPacket->GetVerificationTag() != cookie->GetLocalVerificationTag())\n```\n\nBecause the attacker controls both the SCTP packet header's verification tag field AND the `localVerificationTag` field inside their crafted cookie, this check is trivially satisfied by setti",
-      "link": "https://github.com/advisories/GHSA-p7x2-g5cq-fhmq",
-      "published": "2026-08-25T18:17:21Z",
+      "id": "CVE-2026-54606",
+      "title": "SunEditor Embed Plugin has DOM XSS via External Script Element After Iframe Embed",
+      "summary": "Summary\n\nA DOM-based Cross-Site Scripting (XSS) vulnerability exists in the SunEditor Embed plugin. Crafted iframe embed HTML followed by an external <script src=...> element bypasses the plugin\u2019s sanitization logic. The plugin recreates and appends the attacker-controlled script element to the live DOM, causing JavaScript execution in the context of the editor page.\n\nIf an application stores or reflects SunEditor content without additional backend sanitization, this can lead to stored or reflected XSS when another user opens, previews, renders, or edits the malicious content.\n\nDetails\n\nThe Embed plugin parses raw embed HTML and processes the resulting DOM nodes. When a <script> element is included after a valid iframe, the plugin creates a new script element using the attacker-controlled src value and appends it to the DOM.\n\nRelevant behavior:\n\nconst embedDOM = new DOMParser().parseFromString(src, 'text/html').body.children;\nif (/^script$/i.test(chd.nodeName)) {\n  scriptTag = dom.utils.createElement('script', {\n    src: chd.getAttribute('src'),\n    async: 'true'\n  }, null);\n  continue;\n}\ncover.appendChild(scriptTag);\n\nBecause the script is newly created and appended, it executes.\n\nPoC\n\nStart a local server hosting a JavaScript payload:\n\n```\nmkdir -p /tmp/suneditor-poc\ncd /tmp/suneditor-poc\n\ncat > poc.js <<'EOF'\nalert(1);\nconsole.log(\"SunEditor Embed Plugin XSS executed\");\nEOF\n\npython3 -m http.server 8000\n```\n\nOpen SunEditor with the Embed plugin enabled, then insert the following payload through the Embed modal and save :\n\n`<iframe src=\"https://youtube.com/embed/x\"></iframe><script src=\"http://127.0.0.1:8000/poc.js\"></script>\n`\nSuccessful exploitation is confirmed when:\n\n`alert(1) appears`\n\nor the local server logs:\n\n`GET /poc.js`\n\nImpact\n\nAn attacker who can provide or store embed HTML can execute arbitrary JavaScript in another user\u2019s browser when the content is processed by SunEditor. This may allow account actions as the victim, modification of editor content, ",
+      "link": "https://github.com/advisories/GHSA-w93q-cq9w-58p7",
+      "published": "2026-08-26T15:26:24Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -428,17 +475,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-55663"
+        "CVE-2026-54606"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-48599",
-      "title": "gRPC Erlang package's path bindings are overridable by query string and request body",
-      "summary": "### Summary\n\nIn the HTTP-to-gRPC transcoding layer of the `grpc` Hex package, query-string and request-body parameters can silently overwrite path-bound fields when building the decoded protobuf request struct. An authenticated attacker who can reach a transcoded endpoint can substitute any path-bound identifier (e.g. `user_id` from `/users/{user_id}/profile`) with an arbitrary value, bypassing authorization, multi-tenancy, and ownership checks that rely on the path-derived field.\n\n### Details\n\nAll three clauses of `GRPC.Server.Transcode.map_request/5` (`grpc_server/lib/grpc/server/transcode.ex`) use `Map.merge/2` with path bindings as the first argument, giving them the lowest merge precedence. Path bindings are extracted by the router from the matched URL template and should be the authoritative resource identifiers, but query-string and body parameters overwrite them. The decoded protobuf struct handed to the handler carries the attacker's value instead of the router's.\n\n### PoC\n\n1. Deploy a transcoded gRPC service with a route like `GET /users/{user_id}/profile` where the handler authorizes access based on `request.user_id`.\n2. Send: `GET /users/me/profile?user_id=victim`\n3. The decoded request struct has `user_id = \"victim\"` \u2014 the authorization check passes for the victim's resource, not the caller's.\n4. Alternatively, for a `POST` with `body: \"*\"`: send `{\"user_id\": \"victim\"}` in the JSON body.\n\n### Impact\n\nAffects applications using `grpc` \u2265 0.8.0 with HTTP transcoding enabled that rely on path-bound fields for authorization or tenant isolation. Fixed in 1.0.0. An authenticated attacker can read or modify any other user's resources exposed via transcoded endpoints.\n\n### References\n\n* Introduction commit: https://github.com/elixir-grpc/grpc/commit/8aaf3d3a8c4c7b08ac65e9c6f254e0d24da1d048\n* Patch commit: https://github.com/elixir-grpc/grpc/commit/33b6a095dbc91c6dee3c7b90893d7d74952e82e4",
-      "link": "https://github.com/advisories/GHSA-mwr4-5g34-j5cq",
-      "published": "2026-08-25T18:11:15Z",
+      "id": "CVE-2026-54563",
+      "title": "Cloudreve WebDAV (`/dav`) has Path Traversal / Broken Access Control \u2014 scoped DAV credential escapes its configured account root",
+      "summary": "## Summary\n\nA Cloudreve WebDAV account stores a `uri` that defines the account's root folder. The WebDAV request handler (`stripPrefix` in `pkg/webdav/webdav.go`) trims the `/dav` prefix from the request path and joins the remainder to that root with `fs.URI.JoinRaw`, but never checks that the joined URI stays inside the root.\n\nGo's `net/http` decodes `%2e%2e` to `..` and `%2f` to `/` in `r.URL.Path` before the handler sees it, and `JoinRaw` resolves `..` segments through the standard library's `url.URL.JoinPath`. A request such as `GET /dav/%2e%2e/outside.txt` against a credential rooted at `cloudreve://my/restricted` therefore resolves to `cloudreve://my/outside.txt`. A scoped DAV credential can read and list files outside its configured folder; a writable scoped credential can also create, overwrite, move, and delete them.\n\nThe escape stays inside the same Cloudreve user's namespace because downstream DBFS owner checks still apply. It does not cross into another user's files or onto the OS filesystem. What it breaks is the per-folder WebDAV-account boundary \u2014 the entire reason scoped DAV accounts exist (delegating limited access to a sync client or a third party).\n\n## Technical Detail\n\n### Root cause\n\n`stripPrefix` joins the request suffix onto the account base with no containment check:\n\n```go\n// pkg/webdav/webdav.go @ 54dc81d\nfunc stripPrefix(p string, u *ent.User) (string, *fs.URI, int, error) {\n\tbase, err := fs.NewUriFromString(u.Edges.DavAccounts[0].URI)\n\tif err != nil {\n\t\treturn \"\", nil, http.StatusInternalServerError, err\n\t}\n\n\tprefix := davPrefix // \"/dav\"\n\tif r := strings.TrimPrefix(p, prefix); len(r) < len(p) {\n\t\tr = strings.TrimPrefix(r, fs.Separator)\n\t\treturn r, base.JoinRaw(util.RemoveSlash(r)), http.StatusOK, nil // <-- join, no boundary check\n\t}\n\treturn \"\", nil, http.StatusNotFound, errPrefixMismatch\n}\n```\n\n`JoinRaw` splits on `/` and delegates to the standard library:\n\n```go\n// pkg/filemanager/fs/uri.go @ 54dc81d\nfunc (u *URI) JoinRaw(elem string) ",
+      "link": "https://github.com/advisories/GHSA-w5fv-7x5q-g8qp",
+      "published": "2026-08-26T15:22:12Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -446,17 +493,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-48599"
+        "CVE-2026-54563"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-48853",
-      "title": "gRPC Erlang package vulnerable to Remote Code Execution with attacker-controlled gRPC payloads",
-      "summary": "### Summary\n\n`GRPC.Codec.Erlpack.decode/2` calls `:erlang.binary_to_term/1` directly on the raw gRPC message body without the `:safe` option. Any unauthenticated peer that can reach a gRPC endpoint with `Content-Type: application/grpc+erlpack` can crash the entire BEAM node via atom table exhaustion or, if a decoded fun term flows into a call site that invokes it, achieve remote code execution inside the server process.\n\n### Details\n\n**Root cause** \u2014 `lib/grpc/codec/erlpack.ex` implements `decode/2` as a bare `:erlang.binary_to_term(binary)` call with no `:safe` flag, no size limit, and no type validation. This has two independent exploitation paths:\n\n**1. DoS via atom exhaustion** \u2014 BEAM atoms are never garbage-collected and the global atom table is bounded (~1,048,576 entries). A crafted payload encoding large numbers of fresh atoms saturates the table and crashes the entire VM, taking down all applications on the node.\n\n**2. RCE via fun materialization** \u2014 Without `:safe`, `binary_to_term/1` reconstructs fun and external-fun terms from wire data. If the decoded value reaches any call site that applies it (e.g. `Enum.map`, `Task.async`, direct invocation), attacker-controlled code executes inside the server process.\n\n**Configuration requirement:** `GRPC.Codec.Erlpack` is not registered by default and must be explicitly added to the server's `codecs` option.\n\n### PoC\n\n1. Start a gRPC server with `codecs: [GRPC.Codec.Erlpack]`.\n2. Open an HTTP/2 connection to the server.\n3. Send a gRPC-framed POST to any RPC path with `Content-Type: application/grpc+erlpack` and a body of `:erlang.term_to_binary(fn -> <malicious_code> end)`.\n4. The server's `decode/2` materializes the fun; any downstream call site that invokes the decoded value executes the attacker's code.\n5. For DoS only: send payloads encoding fresh atoms in a loop until the atom table is exhausted and the VM crashes.\n\n### Impact\n\nAffects `grpc` \u2265 0.4.0. Any server that explicitly registers `GRPC.Codec.Erlpack` i",
-      "link": "https://github.com/advisories/GHSA-grp7-v8xh-rj7h",
-      "published": "2026-08-25T18:09:53Z",
+      "id": "CVE-2026-55688",
+      "title": "AsyncHttpClient stores cookie for an unrelated domain (cookie tossing) via ThreadSafeCookieStore",
+      "summary": "### Impact\n A **cookie tossing / cookie injection** issue (CWE-1275). `ThreadSafeCookieStore` stored a cookie under the value of its `Domain` attribute without verifying that the responding host is allowed to set a cookie for that domain (RFC 6265 \u00a75.3 step 6). A host the client connects to can therefore plant a cookie scoped to an unrelated domain, and the client will then send that cookie on later requests to that domain.\n\n### Who is Impacted\nApplications that use a single `AsyncHttpClient` instance - and thus the default, shared `CookieStore` - to reach **both** an attacker-influenced host and a trusted host. Typical exposure: crawlers, link-preview / webhook fetchers, SSRF-style \"fetch this URL\" features, multi-backend aggregators, or following redirects to an attacker-controlled host. The attacker can *write* a cookie the client presents to the victim host (session fixation, overwriting a session id / CSRF-token cookie); they cannot *read* the victim host's cookies. Applications that talk only to a fixed trusted backend, or that disable/scope the cookie store, are not exposed.\n\n### Patches\nFixed in 3.0.11 and 2.16.0\n\n### Workarounds\n- Disable the cookie store (setCookieStore(null)) when cookies are not needed; or\n- Use a separate AsyncHttpClient (separate cookie store) per trust domain so an attacker-influenced host and a trusted host never share a jar\n- Supply a custom CookieStore whose add(Uri, Cookie) rejects cookies whose Domain is not domain-matched by the request host.",
+      "link": "https://github.com/advisories/GHSA-m452-q8c9-rg2f",
+      "published": "2026-08-26T14:35:52Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -464,17 +511,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-48853"
+        "CVE-2026-55688"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-55637",
-      "title": "genieacs-mcp: DNS rebinding reaches local GenieACS MCP Streamable HTTP transport",
-      "summary": "`genieacs-mcp` exposes a local Streamable HTTP MCP endpoint that accepts attacker-controlled `Host` and `Origin` headers. A malicious web page can use DNS rebinding to route browser requests to a victim's loopback MCP listener while preserving the attacker origin. The server accepts the request, initializes an MCP session, lists GenieACS tools, and can invoke tools against the configured GenieACS NBI without a browser-supplied secret.\n\nThe affected package is `genieacs-mcp` version `0.3.1` at commit `4d7d3c74740efb7f3833aadc8a8e9177650eb462`.\n\nThe vulnerable transport setup is in `cmd/server/main.go`. When `TRANSPORT` is not `stdio`, the server creates a Streamable HTTP MCP handler:\n\n```go\n// cmd/server/main.go:92\nhttpSrv := server.NewStreamableHTTPServer(s)\naddr := os.Getenv(\"MCP_LISTEN_ADDR\")\nif addr == \"\" {\n    addr = \"127.0.0.1:8080\"\n}\nauthToken := os.Getenv(\"MCP_AUTH_TOKEN\")\nif authToken == \"\" && !isLoopbackAddr(addr) {\n    log.Fatal(\"MCP_AUTH_TOKEN is required when MCP_LISTEN_ADDR is not loopback\")\n}\nif authToken != \"\" {\n    mux := http.NewServeMux()\n    mux.Handle(\"/mcp\", bearerAuth(httpSrv, authToken))\n    log.Printf(\"GenieACS MCP bridge listening on %s (auth enabled)\", addr)\n    if err := http.ListenAndServe(addr, mux); err != nil {\n        log.Fatalf(\"server error: %v\", err)\n    }\n} else {\n    log.Printf(\"GenieACS MCP bridge listening on %s\", addr)\n    if err := httpSrv.Start(addr); err != nil {\n        log.Fatalf(\"server error: %v\", err)\n    }\n}\n```\n\nFor the default loopback listener, `MCP_AUTH_TOKEN` is not required. The unauthenticated branch calls `httpSrv.Start(addr)` directly. There is no middleware or MCP transport configuration that validates `Host` or `Origin` before `/mcp` handles the request.\n\nThe README documents loopback HTTP as the default deployment mode and says `MCP_AUTH_TOKEN` is required only when `MCP_LISTEN_ADDR` is non-loopback:\n\n```text\nTRANSPORT: empty = HTTP\nMCP_LISTEN_ADDR: 127.0.0.1:8080\nMCP_AUTH_TOKEN: empty, required when MCP_L",
-      "link": "https://github.com/advisories/GHSA-cmwv-wf9p-p8wx",
-      "published": "2026-08-25T18:05:28Z",
+      "id": "CVE-2026-54556",
+      "title": "http4s has HTTP/2 Denial of Service with Ember Backend",
+      "summary": "### Summary\n\nhttp4s 0.23.x and 1.0 servers running ember with http2 enabled are vulnerable to a denial of service attack using a HPACK bomb vulnerability recently disclosed as affecting other http2 servers.\n\n### Impact\n\nDenial of Service:\n- Affects any http4s server running the ember backend with HTTP/2 enabled that is exposed to untrusted traffic.\n- Affects any http4s client running the ember backend with HTTP/2 enabled that can be directed to an untrusted server.\n\n### Details\n\nThe issue occurs in the [Hpack wrapper](https://github.com/http4s/http4s/blob/c63fbff43dfe7e3bec25b789fd0a0027ec40ed62/ember-core/shared/src/main/scala/org/http4s/ember/core/h2/Hpack.scala#L54). Ember concatenates the header and continuation frames before decoding all headers at once. When the code decodes the attack payload, the relatively small packets decode to a significantly larger amount of data which is returned as a single List which is then held in memory for further processing. With enough concurrent connections (~5 with a 2GB heap in testing) this leads to an OOM, eg:\n\n```\njava.lang.OutOfMemoryError: Java heap space\n        at scala.collection.mutable.ListBuffer.scala$collection$mutable$ListBuffer$$freshFrom(ListBuffer.scala:129)\n        at scala.collection.mutable.ListBuffer.addAll(ListBuffer.scala:147)\n        at scala.collection.mutable.ListBuffer.addAll(ListBuffer.scala:40)\n        at scala.collection.mutable.Growable.$plus$plus$eq(Growable.scala:69)\n        at scala.collection.mutable.Growable.$plus$plus$eq$(Growable.scala:69)\n        at scala.collection.mutable.AbstractBuffer.$plus$plus$eq(Buffer.scala:314)\n        at org.http4s.Header$.org$http4s$Header$ToRaw$$anon$10$$_$$lessinit$greater$$anonfun$2(Header.scala:192)\n        at org.http4s.Header$ToRaw$$anon$10$$Lambda/0x00001fe001239c50.apply(Unknown Source)\n        at scala.collection.immutable.List.foreach(List.scala:334)\n        at org.http4s.Header$ToRaw$$anon$10.<init>(Header.scala:192)\n        at org.http4s.Header$ToR",
+      "link": "https://github.com/advisories/GHSA-vmm3-xgcx-67hm",
+      "published": "2026-08-26T14:10:59Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -482,17 +529,17 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-55637"
+        "CVE-2026-54556"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-55585",
-      "title": "qwed Vulnerable to Authenticated Remote Code Execution via Unsafe SymPy `parse_expr()`",
-      "summary": "### Summary\n\nThe `qwed` package (version 5.1.1) passes attacker-controlled input directly to SymPy's `parse_expr()` function without a restricted namespace. Because `parse_expr()` internally calls Python's `eval()`, any authenticated tenant can execute arbitrary Python code inside the API server process. The attack requires only a standard user account, which is freely obtainable through the default-enabled `/auth/signup` endpoint. Successful exploitation gives the attacker full read/write access to the filesystem and the ability to execute operating system commands, resulting in complete server compromise.\n\n### Details\n\nThe vulnerability exists in two independently reachable code paths:\n\n**Primary sink \u2014 `POST /verify/math`**\n\n`src/qwed_new/api/main.py:442` defines the `/verify/math` route, protected only by `get_current_tenant` (line 444), which accepts any valid tenant API key. The request body field `expression` is read at line 463 and passed through a cosmetic regex normalization at line 495 (`re.sub(r'(\\d)(\\()', r'\\1*\\2', expression)`) that performs no security validation. The normalized string is then passed directly to `parse_expr()` at line 504:\n\n```python\n# src/qwed_new/api/main.py\nexpression = request.get(\"expression\")\n...\nexpression_normalized = re.sub(r'(\\d)(\\()', r'\\1*\\2', expression)\n...\nparsed = parse_expr(expression_normalized)   # line 504 \u2014 unsandboxed eval\n```\n\n**Secondary sink \u2014 `POST /verify/batch`**\n\n`src/qwed_new/api/main.py:1481` defines the `/verify/batch` route. Batch items flow through `batch_service.create_job()` (line 1517) into `batch.py:132` where `item.query` is stored verbatim, then processed by `_verify_item()` (line 167). When the item type is `VerificationType.MATH` (line 222), the expression is passed to `parse_expr()` at line 239 with no sanitization:\n\n```python\n# src/qwed_new/core/batch.py\nexpression = item.query\n...\nparsed = parse_expr(expression)              # line 239 \u2014 unsandboxed eval\n```\n\n`parse_expr()` accepts a `globa",
-      "link": "https://github.com/advisories/GHSA-q27q-98j4-9pfv",
-      "published": "2026-08-25T16:25:19Z",
+      "id": "CVE-2026-54356",
+      "title": "Budibase authenticated arbitrary S3 signed upload URL issuance via `/api/attachments/:datasourceId/url`",
+      "summary": "### Summary\nBudibase 3.39.7 allows a low-privilege authenticated published-app user with the built-in BASIC role to obtain arbitrary S3 pre-signed upload URLs backed by a workspace datasource's stored server-side credentials.\n\nThe affected endpoint is:\n\n`POST /api/attachments/:datasourceId/url`\n\nThe caller can control:\n```text\nbucket\nkey\n```\nand receives:\n```text\nsignedUrl\npublicUrl\n```\n\nThis lets a low-privilege published-app user mint S3 `PUT` URLs using server-side datasource credentials for attacker-chosen object destinations.\n\nSteps:\n\n1. Log in as an admin user.\n2. Create a new app/workspace.\n3. In the development app context, create an S3 datasource with valid credentials.\n4. Publish the app.\n5. Create a low-privilege user with the built-in BASIC role on the published production app ID.\n6. Log in as that BASIC user.\n7. Send:\n`POST /api/attachments/<datasourceId>/url`\n\nwith:\n```json\n{\"bucket\":\"foo\",\"key\":\"bar\"}\n```\nand the published app header:\n```text\nx-budibase-app-id: <published_app_id>\n```\nObserve a successful response containing:\n```text\nsignedUrl\npublicUrl\n```\n\n### Observed result\n\nThe following behavior:\n\ndev BASIC request: 403 User does not have permission\napp publish: SUCCESS\nprod BASIC request: 200 OK\nExample confirmed runtime values from the final successful run:\n```text\nprodAppId: app_e6b4cdc6cd6949969a83ff11eee88c5a\ndatasourceId: datasource_0cec491b26a742468257c62382aa3284\npublicUrl: https://foo.s3.eu-west-1.amazonaws.com/bar\n```\nThe returned signedUrl contained standard AWS signing markers, including:\n```text\nX-Amz-Credential=bb\nX-Amz-Signature\nX-Amz-Expires=900\n```\n### Impact\n\nA low-privilege published-app user who knows a valid datasource ID can mint S3 upload URLs backed by server-side datasource credentials and choose arbitrary destination bucket and key values.\n\n### Route definition\n`packages/server/src/api/routes/static.ts:45`\nAuthorization logic\n`packages/server/src/middleware/authorized.ts`\n`packages/server/src/middleware/resourceId.ts`\nCo",
+      "link": "https://github.com/advisories/GHSA-6x9p-4r67-5gjx",
+      "published": "2026-08-26T14:07:26Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -500,205 +547,7 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-55585"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55677",
-      "title": "Echo: Encoded slash (%2F) bypasses route-level protection and exposes static files",
-      "summary": "### Summary\n\nEcho's router and static file handler disagree on URL path decoding. The router matches routes using the raw encoded path (preserving `%2F` as-is), while `StaticDirectoryHandler` unescapes `%2F` to `/` before resolving filesystem paths. This allows an attacker to bypass route-level access controls and read static files without authorization.\n\n### Details\n\n**Root cause 1 \u2014 `router.go` lines 798-802:**\nThe router uses `req.URL.RawPath` for route matching when `useEscapedPathForRouting` is false (the default). This means `/admin%2Fsecret.txt` is treated as a single path segment and does NOT match the `/admin/*` route pattern.\n\n```go\nif !r.useEscapedPathForRouting && req.URL.RawPath != \"\" {\n    path = req.URL.RawPath\n}\n```\n\n**Root cause 2 \u2014 `echo.go` lines 559-568:**\n`StaticDirectoryHandler` calls `url.PathUnescape()` on the path parameter before opening files. This converts `%2F` back to `/`, resolving `admin/secret.txt` on disk.\n\n```go\nif !disablePathUnescaping {\n    tmpPath, err := url.PathUnescape(p)\n    p = tmpPath\n}\nname := filepath.ToSlash(filepath.Clean(strings.TrimPrefix(p, \"/\")))\n```\n\n### PoC (Screenshot)\nSample:\n<img width=\"1291\" height=\"970\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0bc58059-3e6d-4678-ab25-a5c79b006738\" />\n\n403:\n<img width=\"526\" height=\"194\" alt=\"image\" src=\"https://github.com/user-attachments/assets/2f55ffdd-87b2-4a1b-8a13-130ebad0f257\" />\n\nBypass with encoded slash:\n<img width=\"592\" height=\"203\" alt=\"image\" src=\"https://github.com/user-attachments/assets/1191cd39-ae8f-4d7e-8fb1-cb9cf31f484f\" />\n\n### Impact\n\nUnauthorized static file disclosure. Applications that protect route prefixes with authentication middleware while also serving static files from a broader root are vulnerable. An attacker only needs to encode the slash (`/` \u2192 `%2F`) in the URL to bypass all route-level protection.\n\nCommon affected pattern:\n```go\nadminGroup := e.Group(\"/admin\", authMiddleware)\ne.StaticFS(\"/\", os.DirFS(\"public\"))\n```",
-      "link": "https://github.com/advisories/GHSA-vfp3-v2gw-7wfq",
-      "published": "2026-08-25T16:13:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55677"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55640",
-      "title": "nextcloud-mcp-server: Unauthenticated `POST /webhooks/nextcloud` allows arbitrary vector data deletion when `WEBHOOK_SECRET` is unset ( default )",
-      "summary": "## Summary\nThe `POST /webhooks/nextcloud` endpoint has no authentication by default: `WEBHOOK_SECRET` defaults to `None` and is never required by startup validation. When unset, the receiver accepts any unauthenticated POST. The `user_id` is taken directly from the attacker-supplied payload and passed to Qdrant, allowing an unauthenticated attacker to delete or corrupt vector embeddings for any user.\n\n## Details\n**Vulnerable file:** `nextcloud_mcp_server/vector/webhook_receiver.py`, function `handle_nextcloud_webhook()`, **lines 55-67**\n\n**Root cause 1**: Auth check is guarded by `if secret`: - skipped entirely when `WEBHOOK_SECRET` is unset.\n\n**Root cause 2**: `webhook_secret: str | None = None` in config - no startup validator enforces it, even when vector sync is enabled.\n\n**Trusted field**: `payload[\"user\"][\"uid\"]` in `webhook_parser.py` is used as-is for all Qdrant operations - no cross-check against an authenticated session.\n\n`webhook_receiver.py`, **lines 55-67**:\n```python\nsecret = get_settings().webhook_secret  # None by default\nif secret:                           # skipped entirely when unset\n    ... validate Bearer header ...\nelse:\n    _warn_missing_secret_once()     # just logs, still processes\n```\n`webhook_parser.py`, **line 57**:\n```python\nuser_id = payload[\"user\"][\"uid\"]     # attacker-controlled\n```\n## PoC\n**No credentials required**. Works on any deployment where `WEBHOOK_SECRET` is not explicitly set (the default).\n```json\nPOST /webhooks/nextcloud\nContent-Type: application/json\n\n{\n  \"event\": {\n    \"class\": \"OCP\\\\Files\\\\Events\\\\Node\\\\BeforeNodeDeletedEvent\",\n    \"node\": { \"path\": \"/victim/files/Notes/any.md\", \"id\": 12345 }\n  },\n  \"user\": { \"uid\": \"victim\" },\n  \"time\": 0\n}\n```\n**Result:** **Qdrant** deletes all vector embeddings for `victim` doc `12345` with **no authentication**. Attacker can loop over doc IDs for mass deletion.  All user targets accepted.\n\n\n## Impact\n+ Anyone on the network with access to port `8000` - no credentials needed.\n+ Att",
-      "link": "https://github.com/advisories/GHSA-8vh3-g2qg-2h2c",
-      "published": "2026-08-25T16:04:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55640"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-12210",
-      "title": "utcp-gql SSRF: CVE-2026-44661 fix not applied to the GraphQL and WebSocket plugins",
-      "summary": "### Summary\n\nThe fix for CVE-2026-44661 (commit `5b16e43`) added the `ensure_secure_url()` / `is_secure_url()` helpers and wired them into the three HTTP-family plugins, but it did not reach the GraphQL or WebSocket plugins. The GraphQL plugin (`utcp-gql`) still uses the `startswith` prefix check that the fix explicitly replaced, so `http://127.0.0.1.attacker.example` and `http://localhost.evil.com` pass it. The WebSocket plugin (`utcp-websocket`) performs no URL validation at all, even though its own docstrings state it enforces \"WSS or localhost only.\" Both plugins reach the same SSRF that CVE-2026-44661 was filed for, and because both attach the call template's configured auth headers to the outbound connection, the SSRF can also leak API keys and OAuth tokens to an attacker-controlled host.\n\n### Details\n\nIn the CVE-2026-44661 fix (commit `5b16e43` (\"fix(http): block SSRF via attacker-controlled OpenAPI servers[0].url\")), two things in it pointed at sibling issues. The commit message says the change is \"replacing the duplicated prefix check\", and the new `utcp_http/_security.py` docstring names the exact bug:\n\n> URLs whose hostname *starts* with `localhost` / `127.0.0.1` but isn't actually loopback (e.g. `http://localhost.evil.com`, `http://127.0.0.1.attacker.example`). The earlier `startswith` check let these through.\n\nThe word \"duplicated\" says the vulnerable check existed in more than one place. The fix only updated the three HTTP-family plugins (`http`, `streamable_http`, `sse`). The other communication-protocol plugins were also inspected.\n\n**GraphQL plugin (`utcp-gql`).** `plugins/communication_protocols/gql/src/utcp_gql/gql_communication_protocol.py` still has the pre-fix check at line 43:\n\n```python\ndef _enforce_https_or_localhost(self, url: str) -> None:\n    if not (\n        url.startswith(\"https://\")\n        or url.startswith(\"http://localhost\")\n        or url.startswith(\"http://127.0.0.1\")\n    ):\n        raise ValueError(\"Security error: URL must use H",
-      "link": "https://github.com/advisories/GHSA-ppx3-28rw-8fpf",
-      "published": "2026-08-25T15:52:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-12210"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55546",
-      "title": "qwed-mcp has Unsafe SymPy `parse_expr()` Remote Code Execution via Unsanitized Math Expression Input",
-      "summary": "### Summary\n\n`verify_math_expression()` in `qwed-mcp` v0.2.0 passes attacker-controlled strings directly to SymPy's `parse_expr()` without restricting `global_dict` or validating the expression's AST. Because `parse_expr()` internally calls `eval()` and Python automatically injects the current module's `__builtins__` when no explicit restriction is set, an attacker can embed arbitrary Python expressions \u2014 including `__import__('os').system(...)` \u2014 to execute OS commands in the context of the running process. Confirmed exploitation in a Docker container yields root-level arbitrary command execution with no authentication or special configuration required.\n\n### Details\n\nThe vulnerability resides in `src/qwed_mcp/engines/math_engine.py`. The public function `verify_math_expression(expression, claimed_result, operation)` accepts both the `expression` and `claimed_result` arguments as raw strings and passes them \u2014 after a trivial `^` \u2192 `**` substitution \u2014 to `sympy.parsing.sympy_parser.parse_expr()`:\n\n```python\n# math_engine.py:50-54\nexpr = parse_expr(\n    expression.replace(\"^\", \"**\"),\n    local_dict={\"x\": x, \"y\": y, \"z\": z, \"pi\": pi, \"e\": E},\n    transformations=transformations\n)\n```\n\n```python\n# math_engine.py:64-68\nclaimed = parse_expr(\n    claimed_result.replace(\"^\", \"**\"),\n    local_dict={\"x\": x, \"y\": y, \"z\": z, \"pi\": pi, \"e\": E},\n    transformations=transformations\n)\n```\n\n`local_dict` only adds math symbols to the evaluation namespace; it does **not** remove `__builtins__`. SymPy's `parse_expr()` eventually calls Python's built-in `eval()`, which \u2014 absent an explicit `{\"__builtins__\": {}}` in `global_dict` \u2014 receives the full built-in namespace. This makes `__import__`, `open`, `exec`, and every other Python built-in available to the evaluated expression.\n\nThere is no allowlist, AST pre-validation, or sandboxing applied at any point before the `parse_expr()` calls (lines 50 and 64).\n\nData flow:\n\n1. **Source** \u2014 `math_engine.py:13-16`: external caller supplies `exp",
-      "link": "https://github.com/advisories/GHSA-mw6r-2hvm-4rp2",
-      "published": "2026-08-25T15:26:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55546"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55533",
-      "title": "PraisonAI: Authentication fail-open in Recipe server allows unauthenticated access when API key or JWT auth is configured without a secret",
-      "summary": "### Summary\n\nThe PraisonAI Recipe HTTP server silently allows unauthenticated requests when `auth` is configured as `api-key` or `jwt` but the corresponding secret is missing.\n\nThis creates an authentication fail-open condition. An operator can start the Recipe server with authentication enabled, including on a non-localhost interface, but the server still accepts unauthenticated requests if no API key or JWT secret is provided.\n\nThe issue is especially risky because the CLI safety check for non-localhost binding only verifies that `auth != \"none\"`. It does not verify that an actual API key or JWT secret exists.\n\n### Details\n\nThe Recipe server documents the following authentication modes:\n\n- `none`\n- `api-key`\n- `jwt`\n\nRelevant source locations:\n\n- `src/praisonai/praisonai/recipe/serve.py`\n- `src/praisonai/praisonai/cli/features/recipe.py`\n\nIn `create_auth_middleware()`, the API key middleware resolves the expected key as:\n\n```python\nexpected_key = api_key or os.environ.get(\"PRAISONAI_API_KEY\")\n\nif not expected_key:\n    # No key configured, allow request\n    return await call_next(request)\n```\n\nThis means `auth: api-key` does not enforce authentication if `api_key` / `PRAISONAI_API_KEY` is missing.\n\nThe JWT middleware has the same fail-open behavior:\n\n```python\nsecret = jwt_secret or os.environ.get(\"PRAISONAI_JWT_SECRET\")\nif not secret:\n    return await call_next(request)\n```\n\nThe auth middleware is still attached when `auth` is configured:\n\n```python\nauth_type = config.get(\"auth\")\nif auth_type and auth_type != \"none\":\n    auth_middleware = create_auth_middleware(\n        auth_type,\n        api_key=config.get(\"api_key\"),\n        jwt_secret=config.get(\"jwt_secret\"),\n    )\n    if auth_middleware:\n        middleware.append(Middleware(auth_middleware))\n```\n\nThe CLI path makes this externally reachable in a misconfigured deployment. In `cmd_serve`, the non-localhost safety check only verifies that auth is not `\"none\"`:\n\n```python\nif host != \"127.0.0.1\" and host != \"local",
-      "link": "https://github.com/advisories/GHSA-gfq8-hmph-9gjv",
-      "published": "2026-08-25T15:15:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55533"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55535",
-      "title": "PraisonAI vulnerable to Server-Side Request Forgery via DNS rebinding bypass in webhook_url validation",
-      "summary": "### Summary\nThe `webhook_url` field in the Jobs API silently passes validation when DNS resolution fails (`socket.gaierror`), enabling DNS rebinding attacks. An attacker's domain can initially resolve to a public IP (passing validation) then switch to an internal IP before the server makes the HTTP request.\n\n### Details\nThe validator catches `socket.gaierror` and silently allows the URL:\n\n```python\n# src/praisonai/praisonai/jobs/models.py:55\ntry:\n    ip = socket.gethostbyname(hostname)\n    ip_obj = ipaddress.ip_address(ip)\n    if ip_obj.is_private or ip_obj.is_loopback:\n        raise ValueError(\"private address\")\nexcept socket.gaierror:\n    pass  # BUG: DNS failure silently ignored \u2192 SSRF bypass\n```\n\nThe HTTP call is made later with no re-validation:\n\n```python\n# src/praisonai/praisonai/jobs/executor.py:402\nasync with httpx.AsyncClient() as client:\n    await client.post(job.webhook_url, ...)  # no second IP check\n```\n\n### Proof of Concept\n\n**DNS rebinding flow:**\n1. Register `attacker.com` with TTL=1s \u2192 resolves to `1.2.3.4` (public IP)\n2. Submit job: `webhook_url=http://attacker.com/callback`\n3. Validation passes (public IP)\n4. Switch DNS: `attacker.com` \u2192 `127.0.0.1`\n5. Job completes \u2192 server POSTs to `127.0.0.1` \u2192 internal SSRF\n\n**Unresolvable domain bypass (no DNS rebinding required):**\n\n```bash\ncurl -X POST http://:8005/api/v1/runs \\\n  -d '{\"prompt\":\"run\",\"webhook_url\":\"http://unresolvable.internal/cb\",\"agent_yaml\":\"...\"}'\n# Validation: gaierror \u2192 pass \u2192 URL accepted\n```\n\n### Impact\nSSRF to internal HTTP services: admin panels, databases, and cloud metadata APIs (e.g., `http://169.254.169.254/`). Exploitable without authentication.",
-      "link": "https://github.com/advisories/GHSA-hmfx-4v44-9qw9",
-      "published": "2026-08-25T15:02:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55535"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55537",
-      "title": "PraisonAI: Webhook SSRF via DNS fail-open in `JobSubmitRequest.validate_webhook_url()` \u2014 bypass of CVE-2026-40114",
-      "summary": "### Summary\n\n`praisonai/jobs/models.py::JobSubmitRequest.validate_webhook_url()` validates webhook\nURLs by resolving the hostname and checking whether the IP is private. When DNS\nresolution fails (`socket.gaierror`), the validator **silently passes** the URL via\n`except socket.gaierror: pass`. Additionally, even when DNS succeeds at validation time,\nthe webhook is fired much later by `JobExecutor._send_webhook()`, which calls\n`httpx.AsyncClient().post(job.webhook_url)` \u2014 performing a **fresh, independent DNS\nlookup** at execution time. Together, these flaws create a TOCTOU SSRF window.\n\nAn attacker can:\n1. Submit a job with `webhook_url` pointing to a hostname that currently does not\n   resolve (NXDOMAIN) \u2192 validation passes (`gaierror` \u2192 `pass`)\n2. Update DNS to point that hostname to `127.0.0.1` or another private IP\n3. When the job completes, `_send_webhook()` resolves the hostname fresh \u2192 POST sent\n   to the internal IP\n\n### Details\n\n**Flaw 1 \u2014 Fail-open on DNS error (`jobs/models.py` lines 58-66):**\n\n```python\n@field_validator(\"webhook_url\")\n@classmethod\ndef validate_webhook_url(cls, v):\n    ...\n    try:\n        ip = socket.gethostbyname(hostname)\n        ip_obj = ipaddress.ip_address(ip)\n        if ip_obj.is_private or ip_obj.is_loopback or ip_obj.is_link_local:\n            raise ValueError(\"Webhook URL resolves to private network address\")\n    except socket.gaierror:\n        pass    # <-- FAIL-OPEN: DNS failure allows the URL without restriction\n    return v\n```\n\nWhen `socket.gethostbyname(hostname)` raises `socket.gaierror` (NXDOMAIN, timeout,\nnetwork error during validation), execution flows to `pass` and the URL is accepted.\n\n**Flaw 2 \u2014 Fresh DNS at execution time (`jobs/executor.py` lines 376-406):**\n\n```python\nasync def _send_webhook(self, job: Job):\n    async with httpx.AsyncClient(timeout=30.0) as client:\n        response = await client.post(\n            job.webhook_url,      # <-- fresh DNS resolution here, not cached from validation\n            json=",
-      "link": "https://github.com/advisories/GHSA-rg5q-pp8p-f7jm",
-      "published": "2026-08-25T14:59:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55537"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55530",
-      "title": "praisonaiagents: ast_grep_rewrite rewrites arbitrary files without the @require_approval gate enforced on every sibling mutation tool",
-      "summary": "**Target:** PraisonAI (`MervinPraison/PraisonAI`)\n**Affected component:** `praisonaiagents/tools/ast_grep_tool.py` \u2014 `ast_grep_rewrite`\n**Affected versions:** master at `ce97667156a116c50b4a3d1aa21e09f048903fda`; reproduced against the current `praisonaiagents` PyPI release (`praisonaiagents` <= 1.6.52).\n\n## Summary\n\nTools in `praisonaiagents/tools/` that modify on-disk state or run code are uniformly wrapped with `@require_approval`, which routes the call through an interactive approval flow before the body runs and fails closed \u2014 on denial (or with no approval backend configured) it raises `PermissionError` and the side effect does not occur. This is applied at every sibling mutation entry point:\n\n| File | Line | Symbol | Risk level |\n|---|---|---|---|\n| `file_tools.py` | 212 | `copy_file` | high |\n| `file_tools.py` | 239 | `move_file` | high |\n| `file_tools.py` | 266 | `delete_file` | high |\n| `edit_tools.py` | 38 | `EditTools.edit_file` | high |\n| `edit_tools.py` | 155 | `edit_file` | high |\n| `shell_tools.py` | 32 | `execute_command` | critical |\n| `python_tools.py` | 352 | `execute_code` | critical |\n\n`ast_grep_tool.py:149` `ast_grep_rewrite` is structurally a sibling of these but has no decorator and no `from ..approval import require_approval` import. With `dry_run=False` (LLM-controllable), it builds `sg --pattern <P> --rewrite <R> --lang <L> --update-all <path>` (lines 204\u2013211) and calls `subprocess.run(cmd, ...)` (line 215), modifying every file under `path` matching the pattern. There is no approval gate, no `_validate_path` workspace check, and no `cwd=` sandboxing. The function is registered as a top-level tool (`__init__.py:182`) and exposed via the `code_intelligence` built-in profile (`profiles.py`).\n\nA secondary defect: on the `dry_run=False` path `ast_grep_rewrite` returns the literal string `No changes made` to the caller even when it modified files (the \"No changes made\" return at `ast_grep_tool.py:230` is reached on this path), so an operator i",
-      "link": "https://github.com/advisories/GHSA-cfxv-8fw8-rwpv",
-      "published": "2026-08-25T14:46:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55530"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55526",
-      "title": "praisonaiagents has an SSRF protection bypass in `spider_tools._host_is_blocked()` via DNS-resolved hostnames (`127.0.0.1.nip.io`)",
-      "summary": "### Summary\n\n`praisonaiagents/tools/spider_tools.py` contains an SSRF protection bypass. The function\n`_host_is_blocked()` validates URLs against a list of blocked IP literals and hostname\naliases, but **never performs DNS resolution**. Any hostname that resolves to a private or\nloopback IP address \u2014 including public wildcard DNS services like `127.0.0.1.nip.io` \u2014\nbypasses the protection entirely.\n\nThis has been **confirmed with a live exploit**: `scrape_page(\"http://127.0.0.1.nip.io:PORT/secret\")`\nmakes an HTTP request to `127.0.0.1:PORT` and returns the internal service response.\nNo attacker-controlled infrastructure is required.\n\n`scrape_page`, `extract_links`, `crawl`, and `extract_text` are all registered as\nLLM-callable agent tools (see `tools/__init__.py` lines 51-55), so any agent instructed\nto fetch a user-supplied URL will trigger this path.\n\nThis is a **new bypass** of prior fix commit `004dcfef` (GHSA-q9pw-vmhh-384g), which only\nrejected IP literal encoding tricks (hex, octal, backslash). The fix was also applied to\n`web_crawl_tools.py` (line 231: `socket.gethostbyname` call), but that fix was not\nported to `spider_tools.py`.\n\n### Details\n\n**Root cause \u2014 `spider_tools.py` lines 26-65:**\n\n```python\ndef _host_is_blocked(hostname: str) -> bool:\n    host = hostname.lower().rstrip(\".\")\n    # Checks literal aliases only \u2014 never resolves\n    if host in (\"localhost\", \"0.0.0.0\", \"::1\"):\n        return True\n    if host in (\"169.254.169.254\", \"metadata.google.internal\"):\n        return True\n    if any(host.endswith(s) for s in (\".local\", \".internal\", \".localdomain\")):\n        return True\n    # Tries to parse as IP literal only\n    try:\n        return _ip_blocked(ipaddress.ip_address(host))\n    except ValueError:\n        pass\n    try:\n        return _ip_blocked(ipaddress.ip_address(socket.inet_aton(host)))\n    except OSError:\n        pass\n    return False   # <-- ANY real hostname passes without DNS lookup\n```\n\n`socket.inet_aton()` only converts dotted-decimal strin",
-      "link": "https://github.com/advisories/GHSA-x44h-65qv-cw74",
-      "published": "2026-08-25T14:37:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55526"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55531",
-      "title": "PraisonAI MCP HTTP server has unauthenticated unbounded session accumulation (memory exhaustion; session TTL never enforced)",
-      "summary": "### Summary\n\nThe PraisonAI MCP HTTP-stream server creates a new in-memory session on every initialize request and never removes it. The cleanup routine that would expire sessions (_cleanup_sessions) is defined but never called anywhere in the codebase, and the configured session TTL is never enforced. There is no cap on the number of sessions. Because initialize requires no authentication and the server keeps every session dictionary forever, an attacker who can reach the endpoint (directly when the server is bound to a routable address, or from a victim's browser via the separate Origin-validation bypass) can drive memory usage up without bound until the process is killed by the out-of-memory killer. The same unbounded-growth pattern also applies to the cancelled-requests set populated by notifications/cancelled.\n\n### Details\n\nIn transports/http_stream.py, each initialize creates and stores a session with no limit:\n\n```python\nif body.get(\"method\") == \"initialize\":\n    new_session_id = str(uuid.uuid4())\n    self._sessions[new_session_id] = {\n        \"created_at\": time.time(),\n        \"last_activity\": time.time(),\n    }\n```\n\nA cleanup method exists:\n\n```python\ndef _cleanup_sessions(self) -> None:\n    now = time.time()\n    expired = [sid for sid, data in self._sessions.items()\n               if now - data[\"last_activity\"] > self.session_ttl]\n    for sid in expired:\n        del self._sessions[sid]\n```\n\nbut grep across the package shows it has no call sites: it is never invoked on a timer, on request handling, or from any background task. self.session_ttl (default 3600) is stored and otherwise unused. There is no maximum-session check anywhere on the write path. As a result self._sessions grows monotonically for the lifetime of the process.\n\ninitialize is unauthenticated: in mcp_post the API-key check is skipped when no key is configured (the default), and initialize does not require a prior session. The Origin check is the only gate, and a request with no Origin header",
-      "link": "https://github.com/advisories/GHSA-wv94-5qcp-6m36",
-      "published": "2026-08-25T14:34:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55531"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55529",
-      "title": "PraisonAI has an origin validation bypass in MCP HTTP Stream transport that allows browser-mediated unauthenticated tool execution on local MCP server",
-      "summary": "### Summary\n\nPraisonAI's MCP HTTP Stream transport uses an unsafe prefix match when validating the `Origin` header. The default localhost allowlist includes origins such as `http://localhost`, and the validation accepts any origin that starts with an allowed value.\n\nAs a result, an attacker-controlled origin such as `http://localhost.evil.example` passes the localhost origin check.\n\nWhen the MCP HTTP Stream server is started without an API key, which is the CLI default, this allows a malicious webpage to trigger unauthenticated MCP `tools/call` requests against a locally running PraisonAI MCP server.\n\nThis is best framed as a browser-mediated localhost attack / DNS-rebinding-style Origin validation bypass. The default server binds to `127.0.0.1`, so this is not a directly internet-facing unauthenticated API in the default configuration.\n\n### Details\n\nRelevant source locations:\n\n- `src/praisonai/praisonai/mcp_server/cli.py`\n- `src/praisonai/praisonai/mcp_server/transports/http_stream.py`\n- `src/praisonai/praisonai/mcp_server/server.py`\n- `src/praisonai/praisonai/mcp_server/adapters/__init__.py`\n- `src/praisonai/praisonai/mcp_server/adapters/extended_capabilities.py`\n- `src/praisonai/praisonai/mcp_server/adapters/cli_tools.py`\n- `src/praisonai/praisonai/capabilities/files.py`\n\nThe MCP CLI defaults to HTTP host `127.0.0.1`, API key `None`, and allowed origins `None` unless explicitly configured:\n\n```python\nparser.add_argument(\"--host\", default=\"127.0.0.1\")\nparser.add_argument(\"--port\", type=int, default=8080)\nparser.add_argument(\"--api-key\", default=None)\nparser.add_argument(\"--allowed-origins\", default=None, help=\"Comma-separated allowed origins for security\")\n```\n\nThe CLI registers all tools and passes the optional API key and allowed origins into the HTTP Stream transport:\n\n```python\nregister_all()\n\nserver.run_http_stream(\n    host=parsed.host,\n    port=parsed.port,\n    endpoint=parsed.endpoint,\n    api_key=parsed.api_key,\n    cors_origins=cors_origins,\n    allowed_",
-      "link": "https://github.com/advisories/GHSA-wj6g-v78p-6fx3",
-      "published": "2026-08-25T14:26:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55529"
+        "CVE-2026-54356"
       ],
       "is_zero_day": false,
       "is_high_severity": true
