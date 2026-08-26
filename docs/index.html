@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">20</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">40</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">19</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-25 18:21 UTC</div>
+            <div class="generated">Updated 2026-08-26 00:34 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -445,21 +445,92 @@ PraisonAI&#x27;s `praisonai.code` tool wrappers (exported as `CODE_TOOLS` for ag
 
         </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/" target="_blank" rel="noopener">Unpatched Calix flaw lets hackers bypass NAT to expose internal devices</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-24</span>
-  </div>
-  <p class='summary'>An unpatched vulnerability in Calix GS7 XGS (GS5239XG) residential routers used by multiple U.S. broadband providers allows remote, unauthenticated attackers to create port-forwarding rules that can expose local network devices to the public internet. [...]</p>
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p43p-whwx-q52h" target="_blank" rel="noopener">JupyterHub has Unauthenticated Denial of Service via Unbounded Username Logging on Failed Login</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54338</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-25</span>
+          </div>
+          <p class='summary'>### Impact
 
-</article>
+Invalid input to login resulted in unbounded logging output. Only form-based Authenticators (the default PAM Authenticator, but not the more widely used OAuthenticator) are affected.
+
+### Patches
+
+Upgrade to 5.5.0.
+
+### Workarounds
+
+Use an Authenticator that doesn&#x27;t use a login form, such as OAuthenticator.</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hvfh-5mj3-5f3j" target="_blank" rel="noopener">Chainlist has SSRF via MCP SSE and streamable-http transports that allows unauthenticated internal network access</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-45019</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-25</span>
+          </div>
+          <p class='summary'>### Am I affected?
+
+Only if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.
+
+### Summary
+
+When MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `sse` and…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w3fx-mc44-mf6j" target="_blank" rel="noopener">Chainlit has command injection via MCP stdio transport that allows unauthenticated remote code execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-45018</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-25</span>
+          </div>
+          <p class='summary'>### Am I affected?
+
+Only if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.
+
+### Summary
+
+When MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `stdio` t…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xc9g-j69q-37xw" target="_blank" rel="noopener">consciousness-explorer / sublinear-time-solver MCP export_state has an arbitrary file write</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55609</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-25</span>
+          </div>
+          <p class='summary'>### Impact
+An arbitrary file write vulnerability (CWE-73, External Control of File Name or Path) exists in the `consciousness-explorer` component of `sublinear-time-solver`. The MCP `export_state` (and `import_state`) tool accepted a user-supplied `filepath` argument and passed it directly to `fs.writeFileSync` / `fs.readFileSync` without constraining the destination or rejecting path traversal. A…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -790,48 +861,6 @@ The vulnerabilities, as disclosed by Patchstack, are listed below -
 
 
   CVE-2026-61979 (CVSS score: 8.1) - An unauthenticated privilege escalation</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jm48-m3rr-9hgg" target="_blank" rel="noopener">3X-UI Vulnerable to Authenticated Arbitrary File Write via Database Import and Xray Log Path Manipulation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55477</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-24</span>
-          </div>
-          <p class='summary'># Summary
-
-An authenticated administrator can abuse the database import functionality to achieve arbitrary file write on the host by modifying Xray configuration values stored in the database. This can be leveraged to obtain code execution and persistent access as the user running Xray (including root when Xray is running as root).
-
-# Details
-
-The database import functionality trusts attacker-cont…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fwjf-m4qw-9f2x" target="_blank" rel="noopener">django CMS: Page cache ignores plugin-declared Vary headers (disclosure &amp; poisoning)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54625</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-24</span>
-          </div>
-          <p class='summary'>### Summary
-The CMS page cache key ignores the request headers that plugins declare via `get_vary_cache_on()`. The header is added to the response `Vary` header, but the CMS&#x27;s own cache key does not incorporate the header values, so the first visitor&#x27;s variant is served to all subsequent visitors regardless of their header values.
-
-### Details
-`_page_cache_key` (in `cms/cache/page.py`) keys only o…</p>
 
         </article>
 

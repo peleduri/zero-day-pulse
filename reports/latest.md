@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-25 18:21 UTC &nbsp;|&nbsp; **Total:** 40 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-26 00:34 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -197,16 +197,66 @@ PraisonAI&#x27;s `praisonai.code` tool wrappers (exported as `CODE_TOOLS` for ag
 
 ---
 
-## 20. 🟠 Zero-Day — Unpatched Calix flaw lets hackers bypass NAT to expose internal devices
+## 20. 🟡 High Severity — JupyterHub has Unauthenticated Denial of Service via Unbounded Username Logging on Failed Login
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-24
-**Reference:** <https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/>
+**CVE:** `CVE-2026-54338` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
+**Reference:** <https://github.com/advisories/GHSA-p43p-whwx-q52h>
 
-> An unpatched vulnerability in Calix GS7 XGS (GS5239XG) residential routers used by multiple U.S. broadband providers allows remote, unauthenticated attackers to create port-forwarding rules that can expose local network devices to the public internet. [...]
+> ### Impact
+
+Invalid input to login resulted in unbounded logging output. Only form-based Authenticators (the default PAM Authenticator, but not the more widely used OAuthenticator) are affected.
+
+### Patches
+
+Upgrade to 5.5.0.
+
+### Workarounds
+
+Use an Authenticator that doesn&#x27;t use a login form, such as OAuthenticator.
 
 ---
 
-## 21. 🟡 High Severity — mediasoup: SCTP state cookie lacks cryptographic authentication, enabling unauthorized association establishment (RFC 9260 violation)
+## 21. 🟡 High Severity — Chainlist has SSRF via MCP SSE and streamable-http transports that allows unauthenticated internal network access
+
+**CVE:** `CVE-2026-45019` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
+**Reference:** <https://github.com/advisories/GHSA-hvfh-5mj3-5f3j>
+
+> ### Am I affected?
+
+Only if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.
+
+### Summary
+
+When MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `sse` and…
+
+---
+
+## 22. 🟡 High Severity — Chainlit has command injection via MCP stdio transport that allows unauthenticated remote code execution
+
+**CVE:** `CVE-2026-45018` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
+**Reference:** <https://github.com/advisories/GHSA-w3fx-mc44-mf6j>
+
+> ### Am I affected?
+
+Only if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.
+
+### Summary
+
+When MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `stdio` t…
+
+---
+
+## 23. 🟡 High Severity — consciousness-explorer / sublinear-time-solver MCP export_state has an arbitrary file write
+
+**CVE:** `CVE-2026-55609` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
+**Reference:** <https://github.com/advisories/GHSA-xc9g-j69q-37xw>
+
+> ### Impact
+An arbitrary file write vulnerability (CWE-73, External Control of File Name or Path) exists in the `consciousness-explorer` component of `sublinear-time-solver`. The MCP `export_state` (and `import_state`) tool accepted a user-supplied `filepath` argument and passed it directly to `fs.writeFileSync` / `fs.readFileSync` without constraining the destination or rejecting path traversal. A…
+
+---
+
+## 24. 🟡 High Severity — mediasoup: SCTP state cookie lacks cryptographic authentication, enabling unauthorized association establishment (RFC 9260 violation)
 
 **CVE:** `CVE-2026-55663` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-p7x2-g5cq-fhmq>
@@ -217,7 +267,7 @@ mediasoup&#x27;s built-in SCTP stack (introduced in v3.20.0) authenticates SCTP 
 
 ---
 
-## 22. 🟡 High Severity — gRPC Erlang package's path bindings are overridable by query string and request body
+## 25. 🟡 High Severity — gRPC Erlang package's path bindings are overridable by query string and request body
 
 **CVE:** `CVE-2026-48599` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-mwr4-5g34-j5cq>
@@ -228,7 +278,7 @@ In the HTTP-to-gRPC transcoding layer of the `grpc` Hex package, query-string an
 
 ---
 
-## 23. 🟡 High Severity — gRPC Erlang package vulnerable to Remote Code Execution with attacker-controlled gRPC payloads
+## 26. 🟡 High Severity — gRPC Erlang package vulnerable to Remote Code Execution with attacker-controlled gRPC payloads
 
 **CVE:** `CVE-2026-48853` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-grp7-v8xh-rj7h>
@@ -239,7 +289,7 @@ In the HTTP-to-gRPC transcoding layer of the `grpc` Hex package, query-string an
 
 ---
 
-## 24. 🟡 High Severity — genieacs-mcp: DNS rebinding reaches local GenieACS MCP Streamable HTTP transport
+## 27. 🟡 High Severity — genieacs-mcp: DNS rebinding reaches local GenieACS MCP Streamable HTTP transport
 
 **CVE:** `CVE-2026-55637` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-cmwv-wf9p-p8wx>
@@ -248,7 +298,7 @@ In the HTTP-to-gRPC transcoding layer of the `grpc` Hex package, query-string an
 
 ---
 
-## 25. 🟡 High Severity — qwed Vulnerable to Authenticated Remote Code Execution via Unsafe SymPy `parse_expr()`
+## 28. 🟡 High Severity — qwed Vulnerable to Authenticated Remote Code Execution via Unsafe SymPy `parse_expr()`
 
 **CVE:** `CVE-2026-55585` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-q27q-98j4-9pfv>
@@ -259,7 +309,7 @@ The `qwed` package (version 5.1.1) passes attacker-controlled input directly to 
 
 ---
 
-## 26. 🟡 High Severity — Echo: Encoded slash (%2F) bypasses route-level protection and exposes static files
+## 29. 🟡 High Severity — Echo: Encoded slash (%2F) bypasses route-level protection and exposes static files
 
 **CVE:** `CVE-2026-55677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-vfp3-v2gw-7wfq>
@@ -274,7 +324,7 @@ Echo&#x27;s router and static file handler disagree on URL path decoding. The ro
 
 ---
 
-## 27. 🟡 High Severity — nextcloud-mcp-server: Unauthenticated `POST /webhooks/nextcloud` allows arbitrary vector data deletion when `WEBHOOK_SECRET` is unset ( default )
+## 30. 🟡 High Severity — nextcloud-mcp-server: Unauthenticated `POST /webhooks/nextcloud` allows arbitrary vector data deletion when `WEBHOOK_SECRET` is unset ( default )
 
 **CVE:** `CVE-2026-55640` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-8vh3-g2qg-2h2c>
@@ -284,7 +334,7 @@ The `POST /webhooks/nextcloud` endpoint has no authentication by default: `WEBHO
 
 ---
 
-## 28. 🟡 High Severity — utcp-gql SSRF: CVE-2026-44661 fix not applied to the GraphQL and WebSocket plugins
+## 31. 🟡 High Severity — utcp-gql SSRF: CVE-2026-44661 fix not applied to the GraphQL and WebSocket plugins
 
 **CVE:** `CVE-2026-12210` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-ppx3-28rw-8fpf>
@@ -295,7 +345,7 @@ The fix for CVE-2026-44661 (commit `5b16e43`) added the `ensure_secure_url()` / 
 
 ---
 
-## 29. 🟡 High Severity — qwed-mcp has Unsafe SymPy `parse_expr()` Remote Code Execution via Unsanitized Math Expression Input
+## 32. 🟡 High Severity — qwed-mcp has Unsafe SymPy `parse_expr()` Remote Code Execution via Unsanitized Math Expression Input
 
 **CVE:** `CVE-2026-55546` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-mw6r-2hvm-4rp2>
@@ -306,7 +356,7 @@ The fix for CVE-2026-44661 (commit `5b16e43`) added the `ensure_secure_url()` / 
 
 ---
 
-## 30. 🟡 High Severity — PraisonAI: Authentication fail-open in Recipe server allows unauthenticated access when API key or JWT auth is configured without a secret
+## 33. 🟡 High Severity — PraisonAI: Authentication fail-open in Recipe server allows unauthenticated access when API key or JWT auth is configured without a secret
 
 **CVE:** `CVE-2026-55533` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-gfq8-hmph-9gjv>
@@ -319,7 +369,7 @@ This creates an authentication fail-open condition. An operator can start the Re
 
 ---
 
-## 31. 🟡 High Severity — PraisonAI vulnerable to Server-Side Request Forgery via DNS rebinding bypass in webhook_url validation
+## 34. 🟡 High Severity — PraisonAI vulnerable to Server-Side Request Forgery via DNS rebinding bypass in webhook_url validation
 
 **CVE:** `CVE-2026-55535` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-hmfx-4v44-9qw9>
@@ -334,7 +384,7 @@ The validator catches `socket.gaierror` and silently allows the URL:
 
 ---
 
-## 32. 🟡 High Severity — PraisonAI: Webhook SSRF via DNS fail-open in `JobSubmitRequest.validate_webhook_url()` — bypass of CVE-2026-40114
+## 35. 🟡 High Severity — PraisonAI: Webhook SSRF via DNS fail-open in `JobSubmitRequest.validate_webhook_url()` — bypass of CVE-2026-40114
 
 **CVE:** `CVE-2026-55537` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-rg5q-pp8p-f7jm>
@@ -349,7 +399,7 @@ the webhook is fired much later by `JobExecutor.…
 
 ---
 
-## 33. 🟡 High Severity — praisonaiagents: ast_grep_rewrite rewrites arbitrary files without the @require_approval gate enforced on every sibling mutation tool
+## 36. 🟡 High Severity — praisonaiagents: ast_grep_rewrite rewrites arbitrary files without the @require_approval gate enforced on every sibling mutation tool
 
 **CVE:** `CVE-2026-55530` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-cfxv-8fw8-rwpv>
@@ -364,7 +414,7 @@ Tools in `praisonaiagents/tools/` that modify on-disk state or run code are un�
 
 ---
 
-## 34. 🟡 High Severity — praisonaiagents has an SSRF protection bypass in `spider_tools._host_is_blocked()` via DNS-resolved hostnames (`127.0.0.1.nip.io`)
+## 37. 🟡 High Severity — praisonaiagents has an SSRF protection bypass in `spider_tools._host_is_blocked()` via DNS-resolved hostnames (`127.0.0.1.nip.io`)
 
 **CVE:** `CVE-2026-55526` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-x44h-65qv-cw74>
@@ -379,7 +429,7 @@ bypasses the protection entirely.…
 
 ---
 
-## 35. 🟡 High Severity — PraisonAI MCP HTTP server has unauthenticated unbounded session accumulation (memory exhaustion; session TTL never enforced)
+## 38. 🟡 High Severity — PraisonAI MCP HTTP server has unauthenticated unbounded session accumulation (memory exhaustion; session TTL never enforced)
 
 **CVE:** `CVE-2026-55531` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-wv94-5qcp-6m36>
@@ -390,7 +440,7 @@ The PraisonAI MCP HTTP-stream server creates a new in-memory session on every in
 
 ---
 
-## 36. 🟡 High Severity — PraisonAI has an origin validation bypass in MCP HTTP Stream transport that allows browser-mediated unauthenticated tool execution on local MCP server
+## 39. 🟡 High Severity — PraisonAI has an origin validation bypass in MCP HTTP Stream transport that allows browser-mediated unauthenticated tool execution on local MCP server
 
 **CVE:** `CVE-2026-55529` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://github.com/advisories/GHSA-wj6g-v78p-6fx3>
@@ -405,7 +455,7 @@ When the …
 
 ---
 
-## 37. 🟡 High Severity — Attackers Target miniOrange SAML Flaws That Can Grant WordPress Admin Access
+## 40. 🟡 High Severity — Attackers Target miniOrange SAML Flaws That Can Grant WordPress Admin Access
 
 **CVE:** `CVE-2026-61979` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-25
 **Reference:** <https://thehackernews.com/2026/08/attackers-target-miniorange-saml-flaws.html>
@@ -419,35 +469,7 @@ The vulnerabilities, as disclosed by Patchstack, are listed below -
 
 ---
 
-## 38. 🟡 High Severity — 3X-UI Vulnerable to Authenticated Arbitrary File Write via Database Import and Xray Log Path Manipulation
-
-**CVE:** `CVE-2026-55477` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-24
-**Reference:** <https://github.com/advisories/GHSA-jm48-m3rr-9hgg>
-
-> # Summary
-
-An authenticated administrator can abuse the database import functionality to achieve arbitrary file write on the host by modifying Xray configuration values stored in the database. This can be leveraged to obtain code execution and persistent access as the user running Xray (including root when Xray is running as root).
-
-# Details
-
-The database import functionality trusts attacker-cont…
-
----
-
-## 39. 🟡 High Severity — django CMS: Page cache ignores plugin-declared Vary headers (disclosure & poisoning)
-
-**CVE:** `CVE-2026-54625` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-24
-**Reference:** <https://github.com/advisories/GHSA-fwjf-m4qw-9f2x>
-
-> ### Summary
-The CMS page cache key ignores the request headers that plugins declare via `get_vary_cache_on()`. The header is added to the response `Vary` header, but the CMS&#x27;s own cache key does not incorporate the header values, so the first visitor&#x27;s variant is served to all subsequent visitors regardless of their header values.
-
-### Details
-`_page_cache_key` (in `cms/cache/page.py`) k…
-
----
-
-## 40. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 41. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

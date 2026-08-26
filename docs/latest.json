@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-25T18:21:37.103990+00:00",
-  "total": 40,
+  "generated": "2026-08-26T00:34:05.842570+00:00",
+  "total": 41,
   "kev": 0,
-  "zero_day": 20,
+  "zero_day": 19,
   "enriched": 0,
   "findings": [
     {
@@ -328,19 +328,76 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/",
-      "title": "Unpatched Calix flaw lets hackers bypass NAT to expose internal devices",
-      "summary": "An unpatched vulnerability in Calix GS7 XGS (GS5239XG) residential routers used by multiple U.S. broadband providers allows remote, unauthenticated attackers to create port-forwarding rules that can expose local network devices to the public internet. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/",
-      "published": "2026-08-24T21:14:30+00:00",
-      "source": "Bleeping Computer",
+      "id": "CVE-2026-54338",
+      "title": "JupyterHub has Unauthenticated Denial of Service via Unbounded Username Logging on Failed Login",
+      "summary": "### Impact\n\nInvalid input to login resulted in unbounded logging output. Only form-based Authenticators (the default PAM Authenticator, but not the more widely used OAuthenticator) are affected.\n\n### Patches\n\nUpgrade to 5.5.0.\n\n### Workarounds\n\nUse an Authenticator that doesn't use a login form, such as OAuthenticator.",
+      "link": "https://github.com/advisories/GHSA-p43p-whwx-q52h",
+      "published": "2026-08-25T19:29:19Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "malware"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-54338"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45019",
+      "title": "Chainlist has SSRF via MCP SSE and streamable-http transports that allows unauthenticated internal network access",
+      "summary": "### Am I affected?\n\nOnly if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.\n\n### Summary\n\nWhen MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `sse` and `streamable-http` transports accepts a user-controlled `url` and optional `headers` dictionary without any validation. An unauthenticated attacker can force the Chainlit server to make outbound HTTP requests to arbitrary URLs \u2014 including internal network services and cloud metadata endpoints \u2014 with attacker-controlled HTTP headers such as `Authorization` and `Cookie`.\n\n\n### Affected / patched versions\n\n| | |\n|---|---|\n| CVE | CVE-2026-45019 |\n| Affected \u2014 URL-based SSRF | `>=2.4.0rc0, <2.12.0` (sink present since MCP support was introduced, PR #1977) |\n| Affected \u2014 attacker-controlled header forwarding (amplifies the above) | `>=2.6.4, <2.12.0` (added in PR #2292) |\n| Patched | **2.12.0** (releasing 2026-08-25) |\n\n### Details\n\nThe Pydantic request models in `backend/chainlit/types.py` define `url` as a bare `str` with no scheme check, no private IP filtering, and no allowlist. When `clientType` is `\"sse\"` or `\"streamable-http\"`, the handler in `backend/chainlit/server.py` passes the URL and headers directly to the MCP SDK's `sse_client()` or `streamablehttp_client()`, which make outbound HTTP requests from the server.\n\nThe SSE URL sink has existed since MCP support was first introduced in v2.4.0rc0 (PR #1977). PR #2292 (merged 2025-07-30, released in v2.6.4) added `streamable-http` support and introduced attacker-controlled `headers` forwarding for both transports. This amplified the SSRF from a simple URL-based request to one where the attacker can set arbitrary HTTP headers like `Authorization` and `Cookie`.\n\nThis is a blind SSRF: the server makes the outbound request, b",
+      "link": "https://github.com/advisories/GHSA-hvfh-5mj3-5f3j",
+      "published": "2026-08-25T19:21:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45019"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-45018",
+      "title": "Chainlit has command injection via MCP stdio transport that allows unauthenticated remote code execution",
+      "summary": "### Am I affected?\n\nOnly if your deployment sets `features.mcp.enabled = true` in `.chainlit/config.toml`. **MCP has been disabled by default since v2.7.0**, so most Chainlit deployments are not affected. No authentication is required: `/mcp` is reachable by any client that can open a session.\n\n### Summary\n\nWhen MCP is enabled (`features.mcp.enabled = true`), the `POST /mcp` endpoint for `stdio` transport accepts a user-controlled `fullCommand` string. The `validate_mcp_command()` function checks the executable name against a configurable allowlist but does not inspect or restrict the arguments. An attacker can pass `npx -y -c 'ARBITRARY COMMAND'` to execute arbitrary shell commands on the server with the privileges of the Chainlit process.\n\n\n### Affected / patched versions\n\n| | |\n|---|---|\n| CVE | CVE-2026-45018 |\n| Affected | `>=2.4.0rc0, <2.12.0` with `features.mcp.enabled = true` (introduced in PR #1977, the change that added MCP support) |\n| Patched | **2.12.0** (releasing 2026-08-25) |\n\n### Details\n\n`validate_mcp_command()` in `backend/chainlit/mcp.py` uses `shlex.split()` to parse the command string and validates only the executable name (e.g., `npx`, `uvx`) against `config.features.mcp.stdio.allowed_executables`. Arguments are returned unchecked and passed directly to `StdioServerParameters`, which spawns a subprocess.\n\nSince `npx` supports `-c` for arbitrary shell execution, `npx -y -c 'PAYLOAD'` passes the allowlist check while running whatever the attacker specifies. This gives an attacker who can reach the endpoint full control over the host.\n\nThere is a related issue in the Pydantic model: `allowed_executables` defaults to `None`, and the validation code treats `None` as \"allow everything.\" If a developer removes the `allowed_executables` line from their config, any executable can be invoked.\n\nThe `/mcp` route is registered unconditionally on the FastAPI router in every Chainlit deployment; only the runtime `features.mcp.enabled` check and (where config",
+      "link": "https://github.com/advisories/GHSA-w3fx-mc44-mf6j",
+      "published": "2026-08-25T19:19:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45018"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55609",
+      "title": "consciousness-explorer / sublinear-time-solver MCP export_state has an arbitrary file write",
+      "summary": "### Impact\nAn arbitrary file write vulnerability (CWE-73, External Control of File Name or Path) exists in the `consciousness-explorer` component of `sublinear-time-solver`. The MCP `export_state` (and `import_state`) tool accepted a user-supplied `filepath` argument and passed it directly to `fs.writeFileSync` / `fs.readFileSync` without constraining the destination or rejecting path traversal. An attacker able to invoke the MCP tool could write or overwrite any file accessible to the server process (e.g. `~/.ssh/authorized_keys`, application files), leading to integrity loss and potential service disruption.\n\nThe same sink class was present in the main solver MCP server (`saveVectorToFile` / `loadVectorFromFile`).\n\n### Affected versions\n- `consciousness-explorer` < 1.1.2\n- `sublinear-time-solver` < 1.6.0\n- `sublinear` (crates.io) < 0.2.0\n\n### Patches\n- `consciousness-explorer@1.1.2`\n- `sublinear-time-solver@1.6.0`\n- `sublinear@0.2.0`\n\nState/vector files are now confined to a dedicated directory (overridable via `$CONSCIOUSNESS_EXPLORER_STATE_DIR` / `$SUBLINEAR_SOLVER_VECTOR_DIR`), a basename-only contract is enforced (rejecting separators, `..`, NUL/control chars, hidden files, and Windows reserved names), and files are opened with `O_NOFOLLOW | O_CLOEXEC` mode `0o600`. Covered by 14 regression tests in `tests/consciousness/safe-path.test.mjs`.\n\n**Breaking change:** callers must now pass a basename, not an absolute path.\n\n### Workarounds\nDo not expose the MCP server to untrusted clients; restrict `export_state` to trusted local users; run the server under a low-privilege account with a restricted working directory.",
+      "link": "https://github.com/advisories/GHSA-xc9g-j69q-37xw",
+      "published": "2026-08-25T18:35:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55609"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-55663",
@@ -643,42 +700,6 @@
       ],
       "cve_ids": [
         "CVE-2026-61979"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55477",
-      "title": "3X-UI Vulnerable to Authenticated Arbitrary File Write via Database Import and Xray Log Path Manipulation",
-      "summary": "# Summary\n\nAn authenticated administrator can abuse the database import functionality to achieve arbitrary file write on the host by modifying Xray configuration values stored in the database. This can be leveraged to obtain code execution and persistent access as the user running Xray (including root when Xray is running as root).\n\n# Details\n\nThe database import functionality trusts attacker-controlled configuration values without sufficient validation.\n\nAn authenticated administrator can export the SQLite database, modify `xrayTemplateConfig.log.access` to point to an arbitrary file, and import the modified database back into the panel. The attacker can then inject controlled content into an inbound client's `email` field. When a connection is processed, Xray writes the attacker-controlled content to the configured access log path.\n\nBecause the log path is fully attacker-controlled, this behavior results in arbitrary file write as the user running Xray. Depending on the target file and service privileges, this can be used to obtain code execution and persistent host access.\n\n# PoC\n\n1. Authenticate as a panel administrator.\n2. Export the panel database.\n3. Modify `xrayTemplateConfig.log.access` to point to a writable target file (e.g. `~/.ssh/authorized_keys`).\n4. Inject an attacker-controlled SSH public key into an inbound client's `email` field.\n5. Import the modified database.\n6. Trigger a connection through the modified inbound.\n7. Xray writes the attacker-controlled content to the specified file, allowing SSH access as the user running Xray.\n\nA complete PoC is available and can be provided privately.\n\n# Impact\n\nType: Authenticated Arbitrary File Write -> Privilege Escalation / Code Execution\n\nAny authenticated 3X-UI administrator can write attacker-controlled content to arbitrary files accessible by the Xray process. This allows compromise of the account running Xray and may lead to full host compromise depending on deployment configuration and service privile",
-      "link": "https://github.com/advisories/GHSA-jm48-m3rr-9hgg",
-      "published": "2026-08-24T21:05:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55477"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-54625",
-      "title": "django CMS: Page cache ignores plugin-declared Vary headers (disclosure & poisoning)",
-      "summary": "### Summary\nThe CMS page cache key ignores the request headers that plugins declare via `get_vary_cache_on()`. The header is added to the response `Vary` header, but the CMS's own cache key does not incorporate the header values, so the first visitor's variant is served to all subsequent visitors regardless of their header values.\n\n### Details\n`_page_cache_key` (in `cms/cache/page.py`) keys only on cache prefix, site, language, path and timezone. `set_page_cache` collects the plugin-declared vary headers and calls `patch_vary_headers(response, ...)` (affecting only the emitted `Vary` header), but stores and retrieves the cached page under the header-agnostic key. `get_page_cache` therefore returns whichever variant was cached first.\n\n### Impact\n- **Information disclosure:** when a plugin varies its output on a request  header (e.g. `Country-Code`), the variant rendered for the first anonymous visitor is served to everyone until the entry expires, leaking request-specific content across users.\n- **Cache poisoning:** an unauthenticated attacker can prime the anonymous page cache with content rendered from attacker-chosen header values, which is then served to subsequent visitors.\n\nApplies only when `CMS_PAGE_CACHE` is enabled and at least one plugin implements `get_vary_cache_on()`.\n\n### Patches\nFixed in 5.0.8: the page cache now folds the request's values implements `get_vary_cache_on()`.\n\n### Patches\nFixed in 5.0.8: the page cache now folds the request's values for plugin-declared vary headers into the content key. The set of vary headers is persisted on write and looked up first on read (mirroring Django's  `learn_cache_key`/`get_cache_key`); a missing header-list entry degrades to a cache miss, never a wrong-variant hit.\n\n### Workarounds\nDisable `CMS_PAGE_CACHE`, or avoid plugins that rely on `get_vary_cache_on()`, until upgraded.\n\n### Credits\nReported by the security team at the University of Sydney ([@reporter]).",
-      "link": "https://github.com/advisories/GHSA-fwjf-m4qw-9f2x",
-      "published": "2026-08-24T20:09:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-54625"
       ],
       "is_zero_day": false,
       "is_high_severity": true
