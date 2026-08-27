@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-27 05:26 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-27 16:58 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,69 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — FBI Disrupts China-Linked QTFY Infrastructure Used to Steal Data From U.S. Organizations
+## 3. 🟠 Zero-Day — CISA orders feds to patch Citrix NetScaler RCE flaw by Saturday
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://thehackernews.com/2026/08/fbi-disrupts-china-linked-qtfy.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/>
 
-> The U.S. Department of Justice (DoJ) on Wednesday announced the disruption of two hacking platforms named QScan and QTRouter operated by Chinese threat actors to target critical infrastructure and other sensitive networks in the country.
-
-The activity has been attributed to a Chinese state-sponsored group known as QTFY, employed by Nanjing Xinjiuwei Network Technology Company (南京鑫玖维网络科技有限公司).&amp;
+> CISA has ordered U.S. government agencies to patch their Citrix NetScaler appliances against an actively exploited remote code execution vulnerability by Saturday. [...]
 
 ---
 
-## 4. 🟠 Zero-Day — Nimbus Manticore Expands Toolset With TWOSTROKE-Like Backdoor and SSH Tunneler
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://thehackernews.com/2026/08/nimbus-manticore-expands-toolset-with.html>
-
-> Cybersecurity researchers have discovered additional infrastructure and previously undocumented malware associated with Nimbus Manticore, an Iranian state-sponsored hacking group affiliated with the Islamic Revolutionary Guard Corps (IRGC).
-
-Group-IB, in a new analysis published today, described the cyber espionage actor as among the most active Iranian APT groups in 2026. Nimbus Manticore (aka
-
----
-
-## 5. 🟠 Zero-Day — Edge infrastructure under siege: what two independent datasets reveal about who's exploiting your perimeter
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://www.tenable.com/blog/edge-infrastructure-under-siege>
-
-> A joint Tenable-SentinelOne analysis of 93 CVE-actor attribution pairs reveals that both state-sponsored actors and cybercriminals independently converge on the same edge infrastructure. Special thanks to SentinelOne® Incident Readiness &amp; Response for their contributions to this publication. It is the shared attack surface where state-sponsored threat actors and financially motivated criminal …
-
----
-
-## 6. 🟠 Zero-Day — Unpatched Kaltura mwEmbed Flaws Could Let Remote Attackers Read Files and Run Code
-
-**CVE:** `CVE-2026-19913` | `CVE-2026-19912` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://thehackernews.com/2026/08/unpatched-kaltura-mwembed-flaws-could.html>
-
-> The CERT Coordination Center (CERT/CC) has disclosed two unpatched vulnerabilities in Kaltura&#x27;s HTML5 video player library that allow a remote, unauthenticated attacker to read arbitrary files from a server and execute code on it.
-
-The flaws, tracked as CVE-2026-19913 and CVE-2026-19912, both stem from the same unsafe deserialization in the mwEmbedLoader.php endpoint of the mwEmbed player
-
----
-
-## 7. 🟠 Zero-Day — VMs won't contain cyber-capable agents
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Trail of Bits Blog &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://blog.trailofbits.com/2026/08/26/vms-wont-contain-cyber-capable-agents/>
-
-> As part of Patch the Planet , we received preview access to GPT 5.6-Cyber with a simple task: evaluate its cyber capabilities. Recent events inspired me to give it a challenge to work through: escape the VM I’d normally use for sandboxing. The target was a QEMU/KVM VM on my Linux dev machine (Debian Linux 12, AMD Zen3). It escaped the VM three different times. First, it used recently disclosed bug…
-
----
-
-## 8. 🟠 Zero-Day — Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload
-
-**CVE:** `CVE-2026-60004` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://thehackernews.com/2026/08/critical-gitea-rce-actively-exploited.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday warned of active exploitation efforts targeting a recently patched critical security flaw impacting Gitea.
-
-The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of remote code execution that allows an attacker with ordinary write access to a repository to execute arbitrary shell commands as the
-
----
-
-## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -91,7 +38,7 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -100,7 +47,7 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -109,7 +56,7 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -118,7 +65,7 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -127,7 +74,7 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -136,7 +83,7 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 15. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -145,7 +92,27 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 16. 🟠 Zero-Day — Recent Citrix NetScaler Vulnerability Exploited in the Wild
+## 11. 🟠 Zero-Day — PaperCut warns of NG, MF flaw exploited in zero-day attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://www.bleepingcomputer.com/news/security/papercut-warns-of-ng-mf-flaw-exploited-in-zero-day-attacks/>
+
+> PaperCut is warning that hackers are actively exploiting a vulnerability in all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks. [...]
+
+---
+
+## 12. 🟠 Zero-Day — Amazon Kiro Prompt Injection Can Exfiltrate Sensitive Data Through Kiro Powers
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html>
+
+> Cybersecurity researchers have disclosed details of a vulnerability in Amazon Kiro, an artificial intelligence (AI)-powered, agentic integrated development environment (IDE), that could facilitate data exfiltration via prompt injection and Kiro Powers.
+
+The security flaw, which does not have a CVE identifier, works against Kiro IDE 0.7.45 on Windows, according to Mindguard. The latest version of
+
+---
+
+## 13. 🟠 Zero-Day — Recent Citrix NetScaler Vulnerability Exploited in the Wild
 
 **CVE:** `CVE-2026-8452` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://www.securityweek.com/recent-citrix-netscaler-vulnerability-exploited-in-the-wild/>
@@ -154,7 +121,7 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 17. 🟠 Zero-Day — Breaking Claude Code Opus 5 Auto Mode
+## 14. 🟠 Zero-Day — Breaking Claude Code Opus 5 Auto Mode
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Embrace The Red (Prompt Injection Research) &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/>
@@ -163,157 +130,46 @@ The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of rem
 
 ---
 
-## 18. 🟠 Zero-Day — Hackers target Microsoft SharePoint RCE chain with PoC exploit
+## 15. 🟡 High Severity — silverstripe/userforms vulnerable to remote code execution via userforms email subject
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/>
-
-> Attackers are now targeting a chain of two Microsoft SharePoint vulnerabilities that can allow them to execute arbitrary code on unpatched servers, according to threat intelligence company Defused. [...]
-
----
-
-## 19. 🟠 Zero-Day — IzPack has Path Traversal in UnpackerBase that allows writing files outside the installation directory via malicious pack entries
-
-**CVE:** `CVE-2026-54550` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-f63g-88cj-hjf9>
-
-> ### Summary
-
-IzPack&#x27;s `UnpackerBase.unpack()` resolves pack-file target paths without any
-canonical-path or directory-containment check. An attacker who distributes a
-trojanized installer JAR (the format is unsigned) can include pack entries whose
-`targetPath` contains `../` sequences. When a victim runs the installer the
-file is written to an attacker-chosen location on disk under the victim…
-
----
-
-## 20. 🟡 High Severity — FD - Half-click unauthenticated remote code execution on Horde Groupware IMP (from a stored XSS)
-
-**CVE:** `CVE-2026-65053` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://seclists.org/fulldisclosure/2026/Aug/115>
-
-> Posted by Evan Tang on Aug 26 https://blog.evan.lat/posts/CVE-2026-65053/ the blog talks about two vulns that are chainable together. for the sake of brevity ill write up on the stored xss one. in lib/Mime/Status.php, we see a pretty viable xss sink: $out .= &#x27; &#x27; . $val . &#x27; &#x27;; xrefing this we see that most impls are sanitized with the exception of lib/Mime/Viewer/Appledouble.php…
-
----
-
-## 21. 🟡 High Severity — [NotCVE-2026-0010] Barrier 2.4.0 for Windows Unauthenticated IPC Command Execution Allows Local Privilege Escalation to SYSTEM
-
-**CVE:** `CVE-2026-0010` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://seclists.org/fulldisclosure/2026/Aug/111>
-
-> Posted by advisories on Aug 26 ---------------------------------------------------------------------------- NotCVE Advisory — NotCVE-2026-0010 ---------------------------------------------------------------------------- [-] Summary: Barrier 2.4.0 for Windows contains a local privilege escalation vulnerability in the IPC command interface exposed by the barrierd.exe service on 127.0.0.1:24801. The …
-
----
-
-## 22. 🟡 High Severity — asyncssh has an incomplete fix for CVE-2026-45309 — AuthorizedKeysFile %u still escapes the intended directory via a leading ~ (and weakly via ${ENV}) username substitution
-
-**CVE:** `CVE-2026-54590` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-qr67-gv47-xwwh>
-
-> **Incomplete fix for CVE-2026-45309 (GHSA-g794-3fmp-753h).** The
-  2.23.0 guard that sanitises the SSH username before `%u` substitution
-  in `AuthorizedKeysFile` blocks `/`, `\` and `..`, but does not block a
-  leading `~` (or `${ENV}`), both of which are re-introduced by later
-  expansion and reach the file open — defeating the guard.
-
-  **Affected:** asyncssh 2.23.0 and current `develop` (commi…
-
----
-
-## 23. 🟡 High Severity — senaite.core Vulnerable to Eval Injection and Missing Authorization
-
-**CVE:** `CVE-2026-54569` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-jrw6-7x4q-w25j>
-
-> ### Summary
-
-An unauthenticated remote code execution vulnerability in the SENAITE JSON API allows any network-reachable attacker to execute arbitrary Python on the Zope worker process via a two-request anonymous chain. The `/@@API/update` route is reachable to anonymous callers and runs `eval()` on attacker-controlled input before any permission check fires.
-
-This is a different code path from th…
-
----
-
-## 24. 🟡 High Severity — SunEditor Embed Plugin has DOM XSS via External Script Element After Iframe Embed
-
-**CVE:** `CVE-2026-54606` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-w93q-cq9w-58p7>
-
-> Summary
-
-A DOM-based Cross-Site Scripting (XSS) vulnerability exists in the SunEditor Embed plugin. Crafted iframe embed HTML followed by an external &lt;script src=...&gt; element bypasses the plugin’s sanitization logic. The plugin recreates and appends the attacker-controlled script element to the live DOM, causing JavaScript execution in the context of the editor page.
-
-If an application store…
-
----
-
-## 25. 🟡 High Severity — Cloudreve WebDAV (`/dav`) has Path Traversal / Broken Access Control — scoped DAV credential escapes its configured account root
-
-**CVE:** `CVE-2026-54563` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-w5fv-7x5q-g8qp>
-
-> ## Summary
-
-A Cloudreve WebDAV account stores a `uri` that defines the account&#x27;s root folder. The WebDAV request handler (`stripPrefix` in `pkg/webdav/webdav.go`) trims the `/dav` prefix from the request path and joins the remainder to that root with `fs.URI.JoinRaw`, but never checks that the joined URI stays inside the root.
-
-Go&#x27;s `net/http` decodes `%2e%2e` to `..` and `%2f` to `/` in…
-
----
-
-## 26. 🟡 High Severity — AsyncHttpClient stores cookie for an unrelated domain (cookie tossing) via ThreadSafeCookieStore
-
-**CVE:** `CVE-2026-55688` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-m452-q8c9-rg2f>
+**CVE:** `CVE-2026-54721` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://github.com/advisories/GHSA-g8wr-r2v2-vqc6>
 
 > ### Impact
- A **cookie tossing / cookie injection** issue (CWE-1275). `ThreadSafeCookieStore` stored a cookie under the value of its `Domain` attribute without verifying that the responding host is allowed to set a cookie for that domain (RFC 6265 §5.3 step 6). A host the client connects to can therefore plant a cookie scoped to an unrelated domain, and the client will then send that cookie on lat…
+The userform email subject field in the CMS is vulnerable to a specially crafted payload being used to run arbitrary code on the server.
+
+### Reported by
+Jack Wallace from Bastion Security
 
 ---
 
-## 27. 🟡 High Severity — http4s has HTTP/2 Denial of Service with Ember Backend
+## 16. 🟡 High Severity — Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE
 
-**CVE:** `CVE-2026-54556` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-vmm3-xgcx-67hm>
+**CVE:** `CVE-2026-75604` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html>
 
-> ### Summary
+> Credit: Hacktron
+Vercel has released security patches for two critical-severity vulnerabilities in the Next.js web framework, both of which allow unauthenticated remote code execution, one exploitable via specially crafted AVIF image files and the other through a path traversal flaw affecting servers that use a Windows filesystem.
 
-http4s 0.23.x and 1.0 servers running ember with http2 enabled are vulnerable to a denial of service attack using a HPACK bomb vulnerability recently disclosed as affecting other http2 servers.
-
-### Impact
-
-Denial of Service:
-- Affects any http4s server running the ember backend with HTTP/2 enabled that is exposed to untrusted traffic.
-- Affects any http4s client running the ember bac…
+The Windows path traversal, tracked as CVE-2026-75604&amp;
 
 ---
 
-## 28. 🟡 High Severity — Budibase authenticated arbitrary S3 signed upload URL issuance via `/api/attachments/:datasourceId/url`
+## 17. 🟡 High Severity — CISA Adds Six Exploited Flaws to KEV, Including NetScaler, Linux, and SQL Server Bugs
 
-**CVE:** `CVE-2026-54356` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-26
-**Reference:** <https://github.com/advisories/GHSA-6x9p-4r67-5gjx>
+**CVE:** `CVE-2019-1068` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://thehackernews.com/2026/08/cisa-adds-six-exploited-flaws-to-kev.html>
 
-> ### Summary
-Budibase 3.39.7 allows a low-privilege authenticated published-app user with the built-in BASIC role to obtain arbitrary S3 pre-signed upload URLs backed by a workspace datasource&#x27;s stored server-side credentials.
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added six flaws to its Known Exploited Vulnerabilities (KEV) catalog, including a high-severity security vulnerability impacting Citrix NetScaler ADC and NetScaler Gateway, citing evidence of active exploitation.
 
-The affected endpoint is:
+The vulnerabilities are listed below -
 
-`POST /api/attachments/:datasourceId/url`
 
-The caller can control:
-```text
-bucket
-key
-```
-and receives:
-```text
-signedUrl
-publicUrl
-```
-
-This…
+  CVE-2019-1068 - A remote code execution vulnerability in
 
 ---
 
-## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
