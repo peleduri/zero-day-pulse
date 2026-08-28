@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">22</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">18</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">35</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-28 01:51 UTC</div>
+            <div class="generated">Updated 2026-08-28 17:48 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -152,6 +152,56 @@
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-44v6-7fxq-vgf4" target="_blank" rel="noopener">Vikunja has an incomplete fix for CVE-2026-35595: Write-only user can detach shared project from parent hierarchy via parent_project_id=0</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55064</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gates reparent operations when `parent_project_id &gt; 0`. A user with Write (but not Admin) permission on a shared child project can detach it from its parent by sending `parent_project_id: 0`, bypassing the Admin requirement. This severs the recursive CTE permission inheritance chain, potentially disrupting the …</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/" target="_blank" rel="noopener">Over 8,300 Gitea servers vulnerable to code execution attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-28</span>
+  </div>
+  <p class='summary'>Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver. [...]</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-papercut-ng-mf-critical-zero-day-exploited-in-the-wild" target="_blank" rel="noopener">PaperCut NG/MF Critical Zero-Day Exploited in the Wild</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-81578</code> <code class="cve">CVE-2026-82078</code> <code class="cve">CVE-2023-27350</code>
+    <span class="meta-sep">·</span>
+    <span>Rapid7 Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-28</span>
+  </div>
+  <p class='summary'>Overview On August 27, 2026, PaperCut Software published an urgent security advisory stating that it is investigating active exploitation of a vulnerability affecting PaperCut NG and PaperCut MF. PaperCut has confirmed customer incidents and is treating the issue as a security emergency. At the initial time of disclosure, the vulnerability had not been assigned a CVE identifier, and PaperCut had n…</p>
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
             <h2 class="card-title"><a href="https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html" target="_blank" rel="noopener">OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face</a></h2>
           </div>
           <div class="card-meta">
@@ -166,38 +216,6 @@
 The incident, the company said, took place during cybersecurity evaluations of several OpenAI models, and that it was mainly fueled by what it described as a &quot;highly capable</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.wiz.io/blog/ai-infrastructure-honeypot" target="_blank" rel="noopener">Inside 90 days of attacks on AI infrastructure</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Wiz Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-27</span>
-  </div>
-  <p class='summary'>Wiz honeypots uncover active campaigns targeting LiteLLM, MCP servers, and AI frameworks through RCE, blind prompt injection, and memory credential theft.</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/" target="_blank" rel="noopener">CISA orders feds to patch Citrix NetScaler RCE flaw by Saturday</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-27</span>
-  </div>
-  <p class='summary'>CISA has ordered U.S. government agencies to patch their Citrix NetScaler appliances against an actively exploited remote code execution vulnerability by Saturday. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -311,71 +329,386 @@ The incident, the company said, took place during cybersecurity evaluations of s
 
 </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/papercut-warns-of-ng-mf-flaw-exploited-in-zero-day-attacks/" target="_blank" rel="noopener">PaperCut warns of NG, MF flaw exploited in zero-day attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-27</span>
-  </div>
-  <p class='summary'>PaperCut is warning that hackers are actively exploiting a vulnerability in all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks. [...]</p>
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fwww-cp23-7f5g" target="_blank" rel="noopener">Yamcs&#x27;s WebSocket subscription handlers omit the privilege checks their REST siblings enforce</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55545</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>**Asset / scope:** Yamcs 5.12.7 WebSocket topics (`packets`, `algorithm-status`, `mdb-changes`)
 
-</article>
+## Summary
+
+Several WebSocket subscription handlers do not perform the privilege check that their REST counterparts
+enforce, so a principal subscribing over WebSocket receives data the REST API would have scoped or denied.
+
+## Root cause
+
+- `packets` (`PacketsApi.subscribePackets`) performs no `ReadPac…</p>
+
+        </article>
 
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html" target="_blank" rel="noopener">Amazon Kiro Prompt Injection Can Exfiltrate Sensitive Data Through Kiro Powers</a></h2>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p7gw-2pcp-5pf8" target="_blank" rel="noopener">Klever: Marketplace settlement mints KLV when referral % + royalty % exceed the bid (negative seller share silently skipped)</a></h2>
           </div>
           <div class="card-meta">
-            <span class="no-cve">No CVE</span>
+            <code class="cve">CVE-2026-54754</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+When a marketplace order is settled (`MarketBuy` / `BuyItNow`, and auction `Claim`), the buyer&#x27;s
+payment is split three ways — **referral**, **royalties**, and the **seller (market-order owner)
+remainder**:
+
+```
+marketOwnerAmount = CurrentBid − referralAmount − royaltiesAmount
+```
+
+Referral and royalties are paid out **unconditionally**, but the seller remainder is only paid
+**when pos…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/china-made-zbt-routers-ship-with-two.html" target="_blank" rel="noopener">China-Made ZBT Routers Ship With Two Implants Giving Unauthenticated Attackers Root Access</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-74232</code> <code class="cve">CVE-2026-74233</code>
             <span class="meta-sep">·</span>
             <span>The Hacker News Security</span>
             <span class="meta-sep">·</span>
-            <span>2026-08-27</span>
+            <span>2026-08-28</span>
           </div>
-          <p class='summary'>Cybersecurity researchers have disclosed details of a vulnerability in Amazon Kiro, an artificial intelligence (AI)-powered, agentic integrated development environment (IDE), that could facilitate data exfiltration via prompt injection and Kiro Powers.
+          <p class='summary'>VulnCheck has disclosed two previously undocumented factory implants in firmware for routers built by Shenzhen Zhibotong Electronics (ZBT), each of which gives an unauthenticated remote attacker the ability to run commands as root on affected devices.
 
-The security flaw, which does not have a CVE identifier, works against Kiro IDE 0.7.45 on Windows, according to Mindguard. The latest version of</p>
+The implants, named SPEAKINGSTONE and DARKLANTERN by the company&#x27;s zero-day research team, are tracked as CVE-2026-74232 and CVE-2026-74233.</p>
 
         </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/recent-citrix-netscaler-vulnerability-exploited-in-the-wild/" target="_blank" rel="noopener">Recent Citrix NetScaler Vulnerability Exploited in the Wild</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-8452</code>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-27</span>
-  </div>
-  <p class='summary'>CISA is urging government agencies to immediately patch the Citrix NetScaler vulnerability tracked as CVE-2026-8452. The post Recent Citrix NetScaler Vulnerability Exploited in the Wild appeared first on SecurityWeek .</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/" target="_blank" rel="noopener">Breaking Claude Code Opus 5 Auto Mode</a></h2>
+    <h2 class="card-title"><a href="https://www.securityweek.com/papercut-releases-emergency-patch-for-exploited-zero-day/" target="_blank" rel="noopener">PaperCut Releases Emergency Patch for Exploited Zero-Day</a></h2>
   </div>
   <div class="card-meta">
     <span class="no-cve">No CVE</span>
     <span class="meta-sep">·</span>
-    <span>Embrace The Red (Prompt Injection Research)</span>
+    <span>SecurityWeek</span>
     <span class="meta-sep">·</span>
-    <span>2026-08-27</span>
+    <span>2026-08-28</span>
   </div>
-  <p class='summary'>In this post, we explore how a simple website summary request hijacks Claude Code Opus 5 in Auto Mode and achieves code execution with 60-80% attack success rate using a small sample size. This is interesting because a third-party evaluation commissioned by Anthropic showed a 0.00% prompt injection attack success rate for Opus 5 in Auto Mode. Auto Mode Is Now the Default in Claude Code Auto Mode r…</p>
+  <p class='summary'>A CVE identifier has not yet been assigned, but PaperCut is urging NG/MF users to install patches and implement mitigations. The post PaperCut Releases Emergency Patch for Exploited Zero-Day appeared first on SecurityWeek .</p>
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/papercut-zero-day-exploited-in-attacks.html" target="_blank" rel="noopener">PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>PaperCut has alerted customers that bad actors are actively exploiting a vulnerability impacting all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks.
+
+The company has released an emergency patch for v25 and v26 to address the issue. It said it&#x27;s &quot;aware of confirmed customer incidents and is treating this matter with the highest priority.&quot; An</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c64q-hj4j-375f" target="_blank" rel="noopener">Yamcs vulnerable to authenticated remote code execution via unescaped StreamSQL `LIKE` pattern compiled by Janino (`LikeExpression`)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55565</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+Yamcs compiles StreamSQL query expressions to Java at runtime with Janino. The `LIKE` operator inserts the user-supplied pattern into the generated Java **unescaped**, inside a `&quot;...&quot;` literal, so a pattern containing `&quot;` breaks out and injects arbitrary Java (e.g. a `static{}` block that runs an OS command when the compiled filter class loads). Result: RCE as the OS user running Yamcs.…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-73mf-m39p-wpm9" target="_blank" rel="noopener">Yamcs vulnerable to Remote Code Execution via instance-template argument YAML injection (createInstance)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55559</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+
+`templateArgs` sent to `POST /api/instances` (and `PATCH /api/instances/{instance}`) are written into the rendered instance config as raw text, then parsed as YAML and loaded. Yamcs instantiates each `services:` entry by its `class:`, so injecting YAML through a template arg lets you add a `services:` entry for `org.yamcs.ProcessRunner` and run a command on the host. The args aren&#x27;t e…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cvw4-55pp-3hfq" target="_blank" rel="noopener">Yamcs&#x27;s Missing Authorization on Role and Privilege Enumeration Endpoints Allows Any Authenticated User to Disclose Full Security Configuration</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55547</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+Missing authorization checks on three IAM API endpoints (`GET /api/roles`, `GET /api/roles/{name}`, `GET /api/privileges`) allow any authenticated user — regardless of their assigned permissions — to enumerate the complete list of system privileges and role definitions. An attacker with only a low-privilege account (e.g., a read-only operator) can retrieve the full privilege taxonomy o…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-962x-ccwf-8x6p" target="_blank" rel="noopener">Yamcs Core API has Multiple Missing Function Level Access Control vulnerabilities</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55521</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+Multiple Missing Function Level Access Control vulnerabilities exist in the Yamcs Core API. These vulnerabilities allow any authenticated user, regardless of their assigned roles or privileges (e.g., an unprivileged &quot;Guest&quot;), to bypass intended access controls. An attacker can exploit these flaws to extract sensitive telemetry metadata, disrupt satellite communication link protocols (C…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3g44-3m7x-cgg2" target="_blank" rel="noopener">Yamcs vulnerable to authenticated RCE via StreamSQL aggregate-compiler column-name injection in Yamcs `executeSql`</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55511</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Overview
+
+Yamcs compiles StreamSQL expressions to Java on the fly with the Janino `SimpleCompiler` (no restrictive class-loading policy or expression sandbox). When a StreamSQL aggregate such as `sum(...)` is applied to a **column**, the column&#x27;s *name* is interpolated **unescaped** into the generated Java source. Because Yamcs accepts arbitrary characters in a double-quoted column identifier a…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-569v-q83c-3j3g" target="_blank" rel="noopener">Vikunja vulnerable to authenticated cross-tenant kanban-bucket relocation via `project_view_id` mass-assignment</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55067</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+`POST /api/v1/projects/{project}/views/{view}/buckets/{bucket}` mass-assigns the request body&#x27;s `project_view_id` onto the bucket row. The permission check only verifies that the URL-supplied bucket already belongs to the URL-supplied `(project, view)` pair; the body&#x27;s `project_view_id` is never validated. Any signed-in user can therefore take one of their own buckets and graft it into…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5pg6-m483-7vrg" target="_blank" rel="noopener">Vikunja has cross-tenant IDOR in kanban move-task endpoint via unauthorized body task_id</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55066</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+The kanban endpoint `POST /api/v1/projects/{project}/views/{view}/buckets/{bucket}/tasks`
+moves a task into a bucket. The task is identified by `task_id` in the **request
+body**. The endpoint&#x27;s authorization check (`TaskBucket.CanUpdate`) only verifies
+that the caller may update the *project/view/bucket named in the URL* — it never
+checks any permission on `task_id`.
+
+Any authenticated…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2wvm-8mvp-22qv" target="_blank" rel="noopener">Pocket-ID has an Open Redirect on the OIDC /authorize page via unvalidated redirect_uri with prompt=none</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55834</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+The OIDC authorization page in the pocket-id frontend redirects the browser to an attacker-controlled URL without consulting the backend redirect_uri allow-list when the request uses prompt=none. An attacker who knows a valid client_id can craft an /authorize link that sends a victim (or a victim&#x27;s browser doing a silent re-auth) to any external https URL, enabling phishing and OAuth r…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jw39-3688-r4rx" target="_blank" rel="noopener">Trestle has Server-Side Template Injection (SSTI) via Recursive Template Re-evaluation of Untrusted Data</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54757</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Impact
+
+A Server-Side Template Injection (SSTI) vulnerability exists in multiple locations of trestle&#x27;s Jinja2 rendering pipeline due to a systemic pattern: **untrusted data is re-parsed as Jinja2 template source code without sandboxing**. This advisory tracks the root cause across all affected code paths.
+
+The core anti-pattern is: treating runtime data (rendered output, included Markdown con…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fmgp-q6jx-gg3x" target="_blank" rel="noopener">KubeVela Terraform remote loader DoS via unbounded file read</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55108</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+
+KubeVela&#x27;s Terraform remote configuration loader can be abused to make `vela-core` read an unbounded byte stream into memory, causing an out-of-memory kill and a control-plane denial of service.
+
+The issue is reachable when a user with permission to create or update a `core.oam.dev/v1beta1` `ComponentDefinition` registers a Terraform `remote` schematic that points to a malicious or co…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8x7x-83cf-c3pg" target="_blank" rel="noopener">Hatchet allows cross-tenant write/DoS to other tenants&#x27; workers via Dispatcher gRPC UpsertWorkerLabels and Unsubscribe</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54746</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+
+A **cross-tenant write / DoS** vulnerability in the Hatchet `Dispatcher` gRPC service allows any holder of a normal tenant-scoped API token (the lowest credential Hatchet issues — an `OWNER` of a brand-new tenant) to overwrite the affinity labels of, or disconnect from the dispatcher, any worker UUID belonging to any other tenant on the same Hatchet instance. The two affected RPCs — `…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8jqh-95g6-7jpj" target="_blank" rel="noopener">Phalcon: Non-constant-time HMAC verification in `Encryption\Crypt::decrypt` (timing side-channel)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54736</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+`Phalcon\Encryption\Crypt` provides authenticated encryption: when `useSigning` is enabled (the default), `encrypt()` appends an HMAC tag and `decrypt()` verifies it before returning the plaintext. The verification compares the attacker-supplied tag against the freshly computed HMAC using PHP/Zephir identity comparison (`!==`), which the Zephir compiler lowers to `!ZEPHIR_IS_IDENTICAL(…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/openai-agents-exploited-linux-kernel-flaw-on-companys-own-systems/" target="_blank" rel="noopener">OpenAI Agents Exploited Linux Kernel Flaw on Company’s Own Systems</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-53362</code>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-28</span>
+  </div>
+  <p class='summary'>CISA has added the exploited flaw, CVE-2026-53362, to its KEV catalog, alongside a JFrog vulnerability exploited by OpenAI agents. The post OpenAI Agents Exploited Linux Kernel Flaw on Company’s Own Systems appeared first on SecurityWeek .</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/two-unitree-g1-edu-humanoid-robot-flaws.html" target="_blank" rel="noopener">Two Unitree G1 EDU Humanoid Robot Flaws Enable Root RCE, One Starts Over Bluetooth</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-76639</code> <code class="cve">CVE-2026-76640</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>Security researcher Olivier Laflamme has disclosed two independent root remote code execution (RCE) chains affecting the Unitree G1 EDU, including a Bluetooth Low Energy (BLE) path that can reach root on the robot&#x27;s Locomotion PC.
+
+The flaws are tracked as CVE-2026-76639 and CVE-2026-76640, with the first involving a network-adjacent path through chat_go and bashrunner and the</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/critical-cpanel-flaw-could-let-one.html" target="_blank" rel="noopener">Critical cPanel Flaw Could Let One Hosting Customer Take Root Control of a Whole Server</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-65643</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>cPanel has released patches for a security flaw affecting domain parking and addon domain functionality in cPanel and WebHost Manager (WHM), which could allow code execution as the root user.
+
+The vulnerability, assigned the CVE identifier CVE-2026-65643, impacts all supported versions of cPanel &amp; WHM.
+
+cPanel described the issue as a critical security vulnerability and said that an</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -392,87 +725,6 @@ The security flaw, which does not have a CVE identifier, works against Kiro IDE 
           <p class='summary'>## Impact
 
 When a connection is upgraded with STARTTLS, aiosmtplib reads the server&#x27;s 220 go-ahead reply and immediately performs the TLS handshake without discarding any data still sitting in the receive buffer. Bytes the protocol read off the plaintext socket before the handshake survive across the plaintext→TLS boundary (the asyncio transport is swapped in place, so the protocol object and its …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-39mm-rwm3-29jp" target="_blank" rel="noopener">silverstripe-advancedworkflow vulnerable to remote code execution via advanced workflow email template</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54718</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-27</span>
-          </div>
-          <p class='summary'>### Impact
-The advanced workflow email template field is vulnerable to a specially crafted payload that can be used to run arbitrary code on the server.
-
-### Reported by
-Steve Boyd
-Silverstripe Ltd.</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g8wr-r2v2-vqc6" target="_blank" rel="noopener">silverstripe/userforms vulnerable to remote code execution via userforms email subject</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-54721</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-27</span>
-          </div>
-          <p class='summary'>### Impact
-The userform email subject field in the CMS is vulnerable to a specially crafted payload being used to run arbitrary code on the server.
-
-### Reported by
-Jack Wallace from Bastion Security</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html" target="_blank" rel="noopener">Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-75604</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-27</span>
-          </div>
-          <p class='summary'>Credit: Hacktron
-Vercel has released security patches for two critical-severity vulnerabilities in the Next.js web framework, both of which allow unauthenticated remote code execution, one exploitable via specially crafted AVIF image files and the other through a path traversal flaw affecting servers that use a Windows filesystem.
-
-The Windows path traversal, tracked as CVE-2026-75604&amp;</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/cisa-adds-six-exploited-flaws-to-kev.html" target="_blank" rel="noopener">CISA Adds Six Exploited Flaws to KEV, Including NetScaler, Linux, and SQL Server Bugs</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2019-1068</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-27</span>
-          </div>
-          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added six flaws to its Known Exploited Vulnerabilities (KEV) catalog, including a high-severity security vulnerability impacting Citrix NetScaler ADC and NetScaler Gateway, citing evidence of active exploitation.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2019-1068 - A remote code execution vulnerability in</p>
 
         </article>
 
