@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-27T16:58:52.051541+00:00",
-  "total": 18,
+  "generated": "2026-08-28T01:51:18.747164+00:00",
+  "total": 22,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,37 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html",
+      "title": "OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face",
+      "summary": "OpenAI on Wednesday revealed that reward hacking was a key driver behind the artificial intelligence (AI)-powered hack of Hugging Face last month, adding that it found evidence of misaligned behavior as early as late May.\n\nThe incident, the company said, took place during cybersecurity evaluations of several OpenAI models, and that it was mainly fueled by what it described as a \"highly capable",
+      "link": "https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html",
+      "published": "2026-08-27T18:36:19+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.wiz.io/blog/ai-infrastructure-honeypot",
+      "title": "Inside 90 days of attacks on AI infrastructure",
+      "summary": "Wiz honeypots uncover active campaigns targeting LiteLLM, MCP servers, and AI frameworks through RCE, blind prompt injection, and memory credential theft.",
+      "link": "https://www.wiz.io/blog/ai-infrastructure-honeypot",
+      "published": "2026-08-27T16:33:16+00:00",
+      "source": "Wiz Research",
+      "tags": [
+        "cloud",
+        "research",
+        "misconfig"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -226,6 +257,42 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-55558",
+      "title": "aiosmtplib: STARTTLS response injection",
+      "summary": "## Impact\n\nWhen a connection is upgraded with STARTTLS, aiosmtplib reads the server's 220 go-ahead reply and immediately performs the TLS handshake without discarding any data still sitting in the receive buffer. Bytes the protocol read off the plaintext socket before the handshake survive across the plaintext\u2192TLS boundary (the asyncio transport is swapped in place, so the protocol object and its buffer are reused), and are then parsed as though they had arrived inside the TLS session.\n\nWho is affected: Any caller that uses STARTTLS by passing `start_tls=True` or `start_tls=None` when the server advertises STARTTLS, and whose traffic can be intercepted by an active network attacker on the plaintext leg of the connection.\n\nA man in the middle can send, in a single segment immediately after the client's STARTTLS command, the 220 reply followed by attacker-chosen response lines (e.g. 220 Go ahead\\r\\n250-mx.evil\\r\\n250 AUTH LOGIN\\r\\n). aiosmtplib\n  consumes only the 220, leaves the injected lines buffered, completes the handshake, and then parses the attacker's pre-staged plaintext as the first post-TLS server response. This also desynchronizes every\n  subsequent command/response pair inside the \"encrypted\" session.\n\nNot affected: Connections using implicit/direct TLS (`use_tls=True`) have no plaintext phase and are not vulnerable. The attack requires an active man in the middle via network compromise; a passive eavesdropper cannot exploit it.\n\n\n# Patches\n\n  A fix is available in aiosmtplib 5.1.2. All earlier versions that support STARTTLS are affected; upgrade to 5.1.2 or\n  later.\n\n  The fix treats any data buffered after the 220 STARTTLS reply and before the handshake as a protocol violation, per RFC 3207 \u00a74.2 (\"the client MUST discard any knowledge obtained from the server \u2026 which was not\n  obtained from the TLS negotiation itself\").\n\n# Workarounds\n\n  If you cannot upgrade immediately:\n\n  - Use implicit TLS instead of STARTTLS. Connect with `use_tls=True`. This remov",
+      "link": "https://github.com/advisories/GHSA-vxj7-4xrp-5vr4",
+      "published": "2026-08-27T23:32:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55558"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54718",
+      "title": "silverstripe-advancedworkflow vulnerable to remote code execution via advanced workflow email template",
+      "summary": "### Impact\nThe advanced workflow email template field is vulnerable to a specially crafted payload that can be used to run arbitrary code on the server.\n\n### Reported by\nSteve Boyd\nSilverstripe Ltd.",
+      "link": "https://github.com/advisories/GHSA-39mm-rwm3-29jp",
+      "published": "2026-08-27T17:20:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54718"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-54721",

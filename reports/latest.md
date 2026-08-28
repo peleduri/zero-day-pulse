@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-27 16:58 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-28 01:51 UTC &nbsp;|&nbsp; **Total:** 22 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,27 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CISA orders feds to patch Citrix NetScaler RCE flaw by Saturday
+## 3. 🟠 Zero-Day — OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html>
+
+> OpenAI on Wednesday revealed that reward hacking was a key driver behind the artificial intelligence (AI)-powered hack of Hugging Face last month, adding that it found evidence of misaligned behavior as early as late May.
+
+The incident, the company said, took place during cybersecurity evaluations of several OpenAI models, and that it was mainly fueled by what it described as a &quot;highly capabl…
+
+---
+
+## 4. 🟠 Zero-Day — Inside 90 days of attacks on AI infrastructure
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://www.wiz.io/blog/ai-infrastructure-honeypot>
+
+> Wiz honeypots uncover active campaigns targeting LiteLLM, MCP servers, and AI frameworks through RCE, blind prompt injection, and memory credential theft.
+
+---
+
+## 5. 🟠 Zero-Day — CISA orders feds to patch Citrix NetScaler RCE flaw by Saturday
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/>
@@ -29,7 +49,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -38,7 +58,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -47,7 +67,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -56,7 +76,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -65,7 +85,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -74,7 +94,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -83,7 +103,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -92,7 +112,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — PaperCut warns of NG, MF flaw exploited in zero-day attacks
+## 13. 🟠 Zero-Day — PaperCut warns of NG, MF flaw exploited in zero-day attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://www.bleepingcomputer.com/news/security/papercut-warns-of-ng-mf-flaw-exploited-in-zero-day-attacks/>
@@ -101,7 +121,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Amazon Kiro Prompt Injection Can Exfiltrate Sensitive Data Through Kiro Powers
+## 14. 🟠 Zero-Day — Amazon Kiro Prompt Injection Can Exfiltrate Sensitive Data Through Kiro Powers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html>
@@ -112,7 +132,7 @@ The security flaw, which does not have a CVE identifier, works against Kiro IDE 
 
 ---
 
-## 13. 🟠 Zero-Day — Recent Citrix NetScaler Vulnerability Exploited in the Wild
+## 15. 🟠 Zero-Day — Recent Citrix NetScaler Vulnerability Exploited in the Wild
 
 **CVE:** `CVE-2026-8452` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://www.securityweek.com/recent-citrix-netscaler-vulnerability-exploited-in-the-wild/>
@@ -121,7 +141,7 @@ The security flaw, which does not have a CVE identifier, works against Kiro IDE 
 
 ---
 
-## 14. 🟠 Zero-Day — Breaking Claude Code Opus 5 Auto Mode
+## 16. 🟠 Zero-Day — Breaking Claude Code Opus 5 Auto Mode
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Embrace The Red (Prompt Injection Research) &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/>
@@ -130,7 +150,32 @@ The security flaw, which does not have a CVE identifier, works against Kiro IDE 
 
 ---
 
-## 15. 🟡 High Severity — silverstripe/userforms vulnerable to remote code execution via userforms email subject
+## 17. 🟡 High Severity — aiosmtplib: STARTTLS response injection
+
+**CVE:** `CVE-2026-55558` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://github.com/advisories/GHSA-vxj7-4xrp-5vr4>
+
+> ## Impact
+
+When a connection is upgraded with STARTTLS, aiosmtplib reads the server&#x27;s 220 go-ahead reply and immediately performs the TLS handshake without discarding any data still sitting in the receive buffer. Bytes the protocol read off the plaintext socket before the handshake survive across the plaintext→TLS boundary (the asyncio transport is swapped in place, so the protocol object and…
+
+---
+
+## 18. 🟡 High Severity — silverstripe-advancedworkflow vulnerable to remote code execution via advanced workflow email template
+
+**CVE:** `CVE-2026-54718` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-27
+**Reference:** <https://github.com/advisories/GHSA-39mm-rwm3-29jp>
+
+> ### Impact
+The advanced workflow email template field is vulnerable to a specially crafted payload that can be used to run arbitrary code on the server.
+
+### Reported by
+Steve Boyd
+Silverstripe Ltd.
+
+---
+
+## 19. 🟡 High Severity — silverstripe/userforms vulnerable to remote code execution via userforms email subject
 
 **CVE:** `CVE-2026-54721` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://github.com/advisories/GHSA-g8wr-r2v2-vqc6>
@@ -143,7 +188,7 @@ Jack Wallace from Bastion Security
 
 ---
 
-## 16. 🟡 High Severity — Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE
+## 20. 🟡 High Severity — Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE
 
 **CVE:** `CVE-2026-75604` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html>
@@ -155,7 +200,7 @@ The Windows path traversal, tracked as CVE-2026-75604&amp;
 
 ---
 
-## 17. 🟡 High Severity — CISA Adds Six Exploited Flaws to KEV, Including NetScaler, Linux, and SQL Server Bugs
+## 21. 🟡 High Severity — CISA Adds Six Exploited Flaws to KEV, Including NetScaler, Linux, and SQL Server Bugs
 
 **CVE:** `CVE-2019-1068` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-27
 **Reference:** <https://thehackernews.com/2026/08/cisa-adds-six-exploited-flaws-to-kev.html>
@@ -169,7 +214,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 22. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

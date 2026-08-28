@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">18</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">22</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-27 16:58 UTC</div>
+            <div class="generated">Updated 2026-08-28 01:51 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -146,6 +146,40 @@
     <span>Aug 11, 20</span>
   </div>
 
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html" target="_blank" rel="noopener">OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-27</span>
+          </div>
+          <p class='summary'>OpenAI on Wednesday revealed that reward hacking was a key driver behind the artificial intelligence (AI)-powered hack of Hugging Face last month, adding that it found evidence of misaligned behavior as early as late May.
+
+The incident, the company said, took place during cybersecurity evaluations of several OpenAI models, and that it was mainly fueled by what it described as a &quot;highly capable</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.wiz.io/blog/ai-infrastructure-honeypot" target="_blank" rel="noopener">Inside 90 days of attacks on AI infrastructure</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Wiz Research</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-27</span>
+  </div>
+  <p class='summary'>Wiz honeypots uncover active campaigns targeting LiteLLM, MCP servers, and AI frameworks through RCE, blind prompt injection, and memory credential theft.</p>
 
 </article>
 
@@ -342,6 +376,45 @@ The security flaw, which does not have a CVE identifier, works against Kiro IDE 
   <p class='summary'>In this post, we explore how a simple website summary request hijacks Claude Code Opus 5 in Auto Mode and achieves code execution with 60-80% attack success rate using a small sample size. This is interesting because a third-party evaluation commissioned by Anthropic showed a 0.00% prompt injection attack success rate for Opus 5 in Auto Mode. Auto Mode Is Now the Default in Claude Code Auto Mode r…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vxj7-4xrp-5vr4" target="_blank" rel="noopener">aiosmtplib: STARTTLS response injection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55558</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-27</span>
+          </div>
+          <p class='summary'>## Impact
+
+When a connection is upgraded with STARTTLS, aiosmtplib reads the server&#x27;s 220 go-ahead reply and immediately performs the TLS handshake without discarding any data still sitting in the receive buffer. Bytes the protocol read off the plaintext socket before the handshake survive across the plaintext→TLS boundary (the asyncio transport is swapped in place, so the protocol object and its …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-39mm-rwm3-29jp" target="_blank" rel="noopener">silverstripe-advancedworkflow vulnerable to remote code execution via advanced workflow email template</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54718</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-27</span>
+          </div>
+          <p class='summary'>### Impact
+The advanced workflow email template field is vulnerable to a specially crafted payload that can be used to run arbitrary code on the server.
+
+### Reported by
+Steve Boyd
+Silverstripe Ltd.</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
