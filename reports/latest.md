@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-29 11:53 UTC &nbsp;|&nbsp; **Total:** 52 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 37 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-29 15:51 UTC &nbsp;|&nbsp; **Total:** 49 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 35 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -53,16 +53,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 6. 🟠 Zero-Day — Over 8,300 Gitea servers vulnerable to code execution attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/>
-
-> Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver. [...]
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -71,7 +62,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -80,7 +71,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -89,7 +80,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -98,7 +89,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -107,7 +98,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -116,7 +107,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 13. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -125,7 +116,7 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
 
 ---
 
-## 14. 🟠 Zero-Day — Yamcs's WebSocket subscription handlers omit the privilege checks their REST siblings enforce
+## 13. 🟠 Zero-Day — Yamcs's WebSocket subscription handlers omit the privilege checks their REST siblings enforce
 
 **CVE:** `CVE-2026-55545` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-fwww-cp23-7f5g>
@@ -143,7 +134,7 @@ enforce, so a principal subscribing over WebSocket receives data the REST API wo
 
 ---
 
-## 15. 🟠 Zero-Day — Klever: Marketplace settlement mints KLV when referral % + royalty % exceed the bid (negative seller share silently skipped)
+## 14. 🟠 Zero-Day — Klever: Marketplace settlement mints KLV when referral % + royalty % exceed the bid (negative seller share silently skipped)
 
 **CVE:** `CVE-2026-54754` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-p7gw-2pcp-5pf8>
@@ -163,7 +154,7 @@ Referral and royalties are paid out **unconditionally**, but the seller remainde
 
 ---
 
-## 16. 🟡 High Severity — MapFish Print has XXE that allows reading arbitrary files of certain types
+## 15. 🟡 High Severity — MapFish Print has XXE that allows reading arbitrary files of certain types
 
 **CVE:** `CVE-2026-55848` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-5v29-34h8-v68r>
@@ -180,7 +171,7 @@ The…
 
 ---
 
-## 17. 🟡 High Severity — SeaweedFS: Path traversal in the S3 gateway X-Amz-Copy-Source header allows cross-bucket object read
+## 16. 🟡 High Severity — SeaweedFS: Path traversal in the S3 gateway X-Amz-Copy-Source header allows cross-bucket object read
 
 **CVE:** `CVE-2026-55874` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-56wq-x3wv-3ff4>
@@ -190,7 +181,7 @@ The SeaweedFS S3 API gateway did not reject `..` path segments in the `X-Amz-Cop
 
 ---
 
-## 18. 🟡 High Severity — arc has unauthenticated cluster node admission when `cluster.shared_secret` is unset
+## 17. 🟡 High Severity — arc has unauthenticated cluster node admission when `cluster.shared_secret` is unset
 
 **CVE:** `CVE-2026-55678` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-p378-jp5r-gpgw>
@@ -201,7 +192,7 @@ Arc Enterprise clustering accepts cluster join requests without authentication w
 
 ---
 
-## 19. 🟡 High Severity — PrivateBin has reflected JSON injection in backend responses via unescaped REQUEST_URI
+## 18. 🟡 High Severity — PrivateBin has reflected JSON injection in backend responses via unescaped REQUEST_URI
 
 **CVE:** `CVE-2026-55891` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-xrjc-c68j-hp7w>
@@ -221,7 +212,7 @@ public function getRequestUri()
 
 ---
 
-## 20. 🟡 High Severity — PrivateBin has stored Cross-Side-Scripting (XSS) vulnerability in attachment download link via dangerous MIME types with required user-interaction
+## 19. 🟡 High Severity — PrivateBin has stored Cross-Side-Scripting (XSS) vulnerability in attachment download link via dangerous MIME types with required user-interaction
 
 **CVE:** `CVE-2026-55696` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-f2xf-7x3g-4272>
@@ -232,7 +223,7 @@ Stored cross-site scripting (XSS) in PrivateBin&#x27;s attachment download link.
 
 ---
 
-## 21. 🟡 High Severity — Pimcore Vulnerable to Remote Code Execution via DataObject Class-Definition Field Name
+## 20. 🟡 High Severity — Pimcore Vulnerable to Remote Code Execution via DataObject Class-Definition Field Name
 
 **CVE:** `CVE-2026-55634` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-9x44-4gxf-8c25>
@@ -243,7 +234,7 @@ A DataObject **class-definition field name** is concatenated, without an identif
 
 ---
 
-## 22. 🟡 High Severity — Pimcore Hotspotimage getDataFromResource() unrestricted Serialize::unserialize over object-store column (PHP Object Injection, CWE-502)
+## 21. 🟡 High Severity — Pimcore Hotspotimage getDataFromResource() unrestricted Serialize::unserialize over object-store column (PHP Object Injection, CWE-502)
 
 **CVE:** `CVE-2026-55220` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-w23p-wrp7-ch38>
@@ -254,7 +245,7 @@ A DataObject **class-definition field name** is concatenated, without an identif
 
 ---
 
-## 23. 🟡 High Severity — Pimcore: Insufficient Permission Check on Class Definition Creation Endpoint Allows Privilege Escalation
+## 22. 🟡 High Severity — Pimcore: Insufficient Permission Check on Class Definition Creation Endpoint Allows Privilege Escalation
 
 **CVE:** `CVE-2026-55212` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-f97c-ph8j-8vff>
@@ -264,7 +255,7 @@ The Studio API class definition creation endpoint in `pimcore/studio-backend-bun
 
 ---
 
-## 24. 🟡 High Severity — Pimcore: SQL Injection via Column Name in DateFilter allows authenticated user to extract arbitrary database data including admin password hashes
+## 23. 🟡 High Severity — Pimcore: SQL Injection via Column Name in DateFilter allows authenticated user to extract arbitrary database data including admin password hashes
 
 **CVE:** `CVE-2026-55208` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-79cw-hfcc-7mw9>
@@ -275,7 +266,7 @@ An authenticated user extracts the admin password hash and any other database co
 
 ---
 
-## 25. 🟡 High Severity — MariaDB's connector leaks the cleartext password to an MitM despite `ssl: true`
+## 24. 🟡 High Severity — MariaDB's connector leaks the cleartext password to an MitM despite `ssl: true`
 
 **CVE:** `CVE-2026-55215` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-cqhc-2h57-wpxf>
@@ -290,7 +281,7 @@ who presents t…
 
 ---
 
-## 26. 🟡 High Severity — plone.app.event vulnerable to denial of service via iCalendar import
+## 25. 🟡 High Severity — plone.app.event vulnerable to denial of service via iCalendar import
 
 **CVE:** `CVE-2026-55247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-r82h-mqw3-fc56>
@@ -307,7 +298,7 @@ The problem has been patched in `plone.app.event`.
 
 ---
 
-## 27. 🟡 High Severity — Incus has a project restriction bypass in instance copy across projects
+## 26. 🟡 High Severity — Incus has a project restriction bypass in instance copy across projects
 
 **CVE:** `CVE-2026-55622` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-c9f5-j9c3-mhrg>
@@ -320,7 +311,7 @@ Missing authorization checks exist for instance copying where an attacker knowin
 
 ---
 
-## 28. 🟡 High Severity — Incus has a project restriction bypass for custom volume copy across projects
+## 27. 🟡 High Severity — Incus has a project restriction bypass for custom volume copy across projects
 
 **CVE:** `CVE-2026-55621` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-64f3-v33m-w89f>
@@ -335,7 +326,7 @@ The storage volume creation…
 
 ---
 
-## 29. 🟡 High Severity — plone.app.portlets vulnerable to denial of service via RSS feed portlet
+## 28. 🟡 High Severity — plone.app.portlets vulnerable to denial of service via RSS feed portlet
 
 **CVE:** `CVE-2026-55248` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-x5g3-w747-2h8q>
@@ -348,7 +339,7 @@ T…
 
 ---
 
-## 30. 🟡 High Severity — 9router: Unauthenticated `/v1` proxy access via `Host`-header spoofing → open AI relay + SSRF
+## 29. 🟡 High Severity — 9router: Unauthenticated `/v1` proxy access via `Host`-header spoofing → open AI relay + SSRF
 
 **CVE:** `CVE-2026-55641` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-86m2-fcxq-5q7c>
@@ -359,7 +350,7 @@ T…
 
 ---
 
-## 31. 🟡 High Severity — Bifrost's SSRF deny-list is incomplete: isPublicIP permits CGNAT, IPv6 6to4/NAT64, and site-local in FetchAndEncodeURL
+## 30. 🟡 High Severity — Bifrost's SSRF deny-list is incomplete: isPublicIP permits CGNAT, IPv6 6to4/NAT64, and site-local in FetchAndEncodeURL
 
 **CVE:** `CVE-2026-55245` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-w98g-5w9p-p3rc>
@@ -370,7 +361,7 @@ T…
 
 ---
 
-## 32. 🟡 High Severity — piccolo-admin has a privilege escalation issue - admin to superuser via session-token disclosure in GET /api/tables/sessions/.
+## 31. 🟡 High Severity — piccolo-admin has a privilege escalation issue - admin to superuser via session-token disclosure in GET /api/tables/sessions/.
 
 **CVE:** `CVE-2026-55485` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-2gh4-jmwq-rr8w>
@@ -383,7 +374,7 @@ The `sessions` table stores live session tokens **in plaintext**, and the token 
 
 ---
 
-## 33. 🟡 High Severity — WsgiDAV MySQL provider has a blind SQL injection
+## 32. 🟡 High Severity — WsgiDAV MySQL provider has a blind SQL injection
 
 **CVE:** `CVE-2026-55509` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-p6gw-4frg-j7jw>
@@ -394,7 +385,7 @@ The sample `MySQLBrowserProvider` builds its SQL queries by concatenating string
 
 ---
 
-## 34. 🟡 High Severity — Snipe-IT vulnerable to cross-company asset maintenance re-parenting via API update
+## 33. 🟡 High Severity — Snipe-IT vulnerable to cross-company asset maintenance re-parenting via API update
 
 **CVE:** `CVE-2026-55516` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-575r-357h-fhch>
@@ -406,7 +397,7 @@ In a Full Multiple Company Support / multi-company deployment, this allows a use
 
 ---
 
-## 35. 🟡 High Severity — Snipe-IT has CSS Injection via `header_color` Setting
+## 34. 🟡 High Severity — Snipe-IT has CSS Injection via `header_color` Setting
 
 **CVE:** `CVE-2026-55481` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-w7qw-5wfv-gwx9>
@@ -419,7 +410,7 @@ Additionally, th…
 
 ---
 
-## 36. 🟡 High Severity — Snipe-IT's API Location Creation Bypasses FMCS Parent-Child Company Boundary Validation
+## 35. 🟡 High Severity — Snipe-IT's API Location Creation Bypasses FMCS Parent-Child Company Boundary Validation
 
 **CVE:** `CVE-2026-55472` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-8w8c-8mx9-52cw>
@@ -429,7 +420,7 @@ When Full Multiple Companies Support and scope_locations_fmcs are both enabled, 
 
 ---
 
-## 37. 🟡 High Severity — Yamcs vulnerable to authenticated remote code execution via unescaped StreamSQL `LIKE` pattern compiled by Janino (`LikeExpression`)
+## 36. 🟡 High Severity — Yamcs vulnerable to authenticated remote code execution via unescaped StreamSQL `LIKE` pattern compiled by Janino (`LikeExpression`)
 
 **CVE:** `CVE-2026-55565` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-c64q-hj4j-375f>
@@ -439,7 +430,7 @@ Yamcs compiles StreamSQL query expressions to Java at runtime with Janino. The `
 
 ---
 
-## 38. 🟡 High Severity — Yamcs vulnerable to Remote Code Execution via instance-template argument YAML injection (createInstance)
+## 37. 🟡 High Severity — Yamcs vulnerable to Remote Code Execution via instance-template argument YAML injection (createInstance)
 
 **CVE:** `CVE-2026-55559` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-73mf-m39p-wpm9>
@@ -450,7 +441,7 @@ Yamcs compiles StreamSQL query expressions to Java at runtime with Janino. The `
 
 ---
 
-## 39. 🟡 High Severity — Yamcs's Missing Authorization on Role and Privilege Enumeration Endpoints Allows Any Authenticated User to Disclose Full Security Configuration
+## 38. 🟡 High Severity — Yamcs's Missing Authorization on Role and Privilege Enumeration Endpoints Allows Any Authenticated User to Disclose Full Security Configuration
 
 **CVE:** `CVE-2026-55547` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-cvw4-55pp-3hfq>
@@ -461,7 +452,7 @@ Missing authorization checks on three IAM API endpoints (`GET /api/roles`, `GET 
 
 ---
 
-## 40. 🟡 High Severity — Yamcs Core API has Multiple Missing Function Level Access Control vulnerabilities
+## 39. 🟡 High Severity — Yamcs Core API has Multiple Missing Function Level Access Control vulnerabilities
 
 **CVE:** `CVE-2026-55521` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-962x-ccwf-8x6p>
@@ -471,7 +462,7 @@ Multiple Missing Function Level Access Control vulnerabilities exist in the Yamc
 
 ---
 
-## 41. 🟡 High Severity — Yamcs vulnerable to authenticated RCE via StreamSQL aggregate-compiler column-name injection in Yamcs `executeSql`
+## 40. 🟡 High Severity — Yamcs vulnerable to authenticated RCE via StreamSQL aggregate-compiler column-name injection in Yamcs `executeSql`
 
 **CVE:** `CVE-2026-55511` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-3g44-3m7x-cgg2>
@@ -482,7 +473,7 @@ Yamcs compiles StreamSQL expressions to Java on the fly with the Janino `SimpleC
 
 ---
 
-## 42. 🟡 High Severity — Vikunja vulnerable to authenticated cross-tenant kanban-bucket relocation via `project_view_id` mass-assignment
+## 41. 🟡 High Severity — Vikunja vulnerable to authenticated cross-tenant kanban-bucket relocation via `project_view_id` mass-assignment
 
 **CVE:** `CVE-2026-55067` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-569v-q83c-3j3g>
@@ -493,7 +484,7 @@ Yamcs compiles StreamSQL expressions to Java on the fly with the Janino `SimpleC
 
 ---
 
-## 43. 🟡 High Severity — Vikunja has cross-tenant IDOR in kanban move-task endpoint via unauthorized body task_id
+## 42. 🟡 High Severity — Vikunja has cross-tenant IDOR in kanban move-task endpoint via unauthorized body task_id
 
 **CVE:** `CVE-2026-55066` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-5pg6-m483-7vrg>
@@ -510,7 +501,7 @@ Any authenti…
 
 ---
 
-## 44. 🟡 High Severity — Pocket-ID has an Open Redirect on the OIDC /authorize page via unvalidated redirect_uri with prompt=none
+## 43. 🟡 High Severity — Pocket-ID has an Open Redirect on the OIDC /authorize page via unvalidated redirect_uri with prompt=none
 
 **CVE:** `CVE-2026-55834` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-2wvm-8mvp-22qv>
@@ -520,7 +511,7 @@ The OIDC authorization page in the pocket-id frontend redirects the browser to a
 
 ---
 
-## 45. 🟡 High Severity — Trestle has Server-Side Template Injection (SSTI) via Recursive Template Re-evaluation of Untrusted Data
+## 44. 🟡 High Severity — Trestle has Server-Side Template Injection (SSTI) via Recursive Template Re-evaluation of Untrusted Data
 
 **CVE:** `CVE-2026-54757` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-jw39-3688-r4rx>
@@ -533,7 +524,7 @@ The core anti-pattern is: treating runtime data (rendered output, included Markd
 
 ---
 
-## 46. 🟡 High Severity — KubeVela Terraform remote loader DoS via unbounded file read
+## 45. 🟡 High Severity — KubeVela Terraform remote loader DoS via unbounded file read
 
 **CVE:** `CVE-2026-55108` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-fmgp-q6jx-gg3x>
@@ -546,7 +537,7 @@ The issue is reachable when a user with permission to create or update a `core.o
 
 ---
 
-## 47. 🟡 High Severity — Hatchet allows cross-tenant write/DoS to other tenants' workers via Dispatcher gRPC UpsertWorkerLabels and Unsubscribe
+## 46. 🟡 High Severity — Hatchet allows cross-tenant write/DoS to other tenants' workers via Dispatcher gRPC UpsertWorkerLabels and Unsubscribe
 
 **CVE:** `CVE-2026-54746` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-8x7x-83cf-c3pg>
@@ -557,7 +548,7 @@ A **cross-tenant write / DoS** vulnerability in the Hatchet `Dispatcher` gRPC se
 
 ---
 
-## 48. 🟡 High Severity — Phalcon: Non-constant-time HMAC verification in `Encryption\Crypt::decrypt` (timing side-channel)
+## 47. 🟡 High Severity — Phalcon: Non-constant-time HMAC verification in `Encryption\Crypt::decrypt` (timing side-channel)
 
 **CVE:** `CVE-2026-54736` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://github.com/advisories/GHSA-8jqh-95g6-7jpj>
@@ -568,7 +559,7 @@ A **cross-tenant write / DoS** vulnerability in the Hatchet `Dispatcher` gRPC se
 
 ---
 
-## 49. 🟡 High Severity — ownCloud Flaw Exploited to Steal Nuclear Records From Philippine Research Body
+## 48. 🟡 High Severity — ownCloud Flaw Exploited to Steal Nuclear Records From Philippine Research Body
 
 **CVE:** `CVE-2023-49105` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-28
 **Reference:** <https://thehackernews.com/2026/08/snowflake-github-actions-flaw-lets.html>
@@ -579,27 +570,7 @@ The vulnerability, tracked as CVE-2023-49105 (CVSS score: 9.8), is a case of
 
 ---
 
-## 50. 🟡 High Severity — OpenAI Agents Exploited Linux Kernel Flaw on Company’s Own Systems
-
-**CVE:** `CVE-2026-53362` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://www.securityweek.com/openai-agents-exploited-linux-kernel-flaw-on-companys-own-systems/>
-
-> CISA has added the exploited flaw, CVE-2026-53362, to its KEV catalog, alongside a JFrog vulnerability exploited by OpenAI agents. The post OpenAI Agents Exploited Linux Kernel Flaw on Company’s Own Systems appeared first on SecurityWeek .
-
----
-
-## 51. 🟡 High Severity — Two Unitree G1 EDU Humanoid Robot Flaws Enable Root RCE, One Starts Over Bluetooth
-
-**CVE:** `CVE-2026-76639` | `CVE-2026-76640` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://thehackernews.com/2026/08/two-unitree-g1-edu-humanoid-robot-flaws.html>
-
-> Security researcher Olivier Laflamme has disclosed two independent root remote code execution (RCE) chains affecting the Unitree G1 EDU, including a Bluetooth Low Energy (BLE) path that can reach root on the robot&#x27;s Locomotion PC.
-
-The flaws are tracked as CVE-2026-76639 and CVE-2026-76640, with the first involving a network-adjacent path through chat_go and bashrunner and the
-
----
-
-## 52. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 49. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
