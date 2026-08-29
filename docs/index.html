@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">18</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">35</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">19</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">57</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-28 17:48 UTC</div>
+            <div class="generated">Updated 2026-08-29 01:15 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -146,6 +146,42 @@
     <span>Aug 11, 20</span>
   </div>
 
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-ffg3-p8fm-mjx2" target="_blank" rel="noopener">RestrictedPython guard hooks can be shadowed via positional-only arguments</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55830</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Impact
+
+RestrictedPython rewrites sensitive operations to go through guard hooks. Attribute access becomes `_getattr_(obj, name)`, item access becomes `_getitem_(obj, key)`, writes go through `_write_`, and print goes through `_print_`. The embedding application supplies these hooks to enforce its policy.
+
+Argument-name validation rejects these protected names for regular arguments, `*args`, `…</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/" target="_blank" rel="noopener">PaperCut releases second emergency patch for exploited flaws</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-08-28</span>
+  </div>
+  <p class='summary'>PaperCut has released a second emergency security update for two actively exploited vulnerabilities in its PaperCut NG and MF print management software after researchers discovered multiple ways to bypass the initial fixes. [...]</p>
 
 </article>
 
@@ -198,24 +234,6 @@ The fix for CVE-2026-35595 (project re-parenting privilege escalation) only gate
   <p class='summary'>Overview On August 27, 2026, PaperCut Software published an urgent security advisory stating that it is investigating active exploitation of a vulnerability affecting PaperCut NG and PaperCut MF. PaperCut has confirmed customer incidents and is treating the issue as a security emergency. At the initial time of disclosure, the vulnerability had not been assigned a CVE identifier, and PaperCut had n…</p>
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html" target="_blank" rel="noopener">OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-27</span>
-          </div>
-          <p class='summary'>OpenAI on Wednesday revealed that reward hacking was a key driver behind the artificial intelligence (AI)-powered hack of Hugging Face last month, adding that it found evidence of misaligned behavior as early as late May.
-
-The incident, the company said, took place during cybersecurity evaluations of several OpenAI models, and that it was mainly fueled by what it described as a &quot;highly capable</p>
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -430,6 +448,419 @@ The implants, named SPEAKINGSTONE and DARKLANTERN by the company&#x27;s zero-day
           <p class='summary'>PaperCut has alerted customers that bad actors are actively exploiting a vulnerability impacting all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks.
 
 The company has released an emergency patch for v25 and v26 to address the issue. It said it&#x27;s &quot;aware of confirmed customer incidents and is treating this matter with the highest priority.&quot; An</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5v29-34h8-v68r" target="_blank" rel="noopener">MapFish Print has XXE that allows reading arbitrary files of certain types</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55848</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+XXE on MapFish Print allows reading arbitrary files of certain types. Eg /etc/passwd or k8 secrets and certs.
+
+https://github.com/mapfish/mapfish-print/commit/13020c0fbc299e5f604e4e66066311c4bf04d507
+
+### Details
+To trigger the XXE it is required to host a remote script and dtd file. When using the Print feature its possible to send the attacker server url as url of the gml layer.
+
+The…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-56wq-x3wv-3ff4" target="_blank" rel="noopener">SeaweedFS: Path traversal in the S3 gateway X-Amz-Copy-Source header allows cross-bucket object read</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55874</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+The SeaweedFS S3 API gateway did not reject `..` path segments in the `X-Amz-Copy-Source` header used by `CopyObject` and `UploadPartCopy`. The request URL path was hardened against traversal in 4.30 (CVE-2026-54917), but the copy-source header was only checked for emptiness, so a `..` segment in the copy source survived into the server-side filer path and resolved into a different buc…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p378-jp5r-gpgw" target="_blank" rel="noopener">arc has unauthenticated cluster node admission when `cluster.shared_secret` is unset</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55678</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+Arc Enterprise clustering accepts cluster join requests without authentication when `cluster.enabled=true` but `cluster.shared_secret` is not configured. The coordinator validates HMAC authentication only if a shared secret is non-empty; otherwise, a network attacker who can reach the coordinator port can send a join request with attacker-controlled node addresses and role. Accepted no…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xrjc-c68j-hp7w" target="_blank" rel="noopener">PrivateBin has reflected JSON injection in backend responses via unescaped REQUEST_URI</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55891</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Vulnerability Details
+
+A reflected JSON injection allows an attacker to return arbitrary data in the JSON endpoints (like ` /?jsonld=` and `/?pasteid`).
+
+### Root Cause
+
+`Request::getRequestUri()` sanitizes `$_SERVER[&#x27;REQUEST_URI&#x27;]` with `FILTER_SANITIZE_URL`:
+
+```php
+public function getRequestUri()
+{
+    $uri = array_key_exists(&#x27;REQUEST_URI&#x27;, $_SERVER) ? filter_var($_SERVER[&#x27;REQUEST_URI&#x27;], FIL…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f2xf-7x3g-4272" target="_blank" rel="noopener">PrivateBin has stored Cross-Side-Scripting (XSS) vulnerability in attachment download link via dangerous MIME types with required user-interaction</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55696</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+
+Stored cross-site scripting (XSS) in PrivateBin&#x27;s attachment download link. An anonymous attacker can create a paste with a **text/html** attachment that, with certain user interaction, bypasses protections similar to CVE-2022-24833. When a victim opens the &quot;Download attachment&quot; link in a new tab, the attacker&#x27;s inline JavaScript executes in the PrivateBin instance&#x27;s origin with full …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9x44-4gxf-8c25" target="_blank" rel="noopener">Pimcore Vulnerable to Remote Code Execution via DataObject Class-Definition Field Name</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55634</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Overview
+
+A DataObject **class-definition field name** is concatenated, without an identifier allowlist, into the PHP class source that Pimcore generates for every DataObject class (`protected $&lt;fieldName&gt;;`). A user holding only the ordinary `objects` (DataObjects) permission can import a class definition whose field name closes the property and injects arbitrary PHP into the generated class f…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w23p-wrp7-ch38" target="_blank" rel="noopener">Pimcore Hotspotimage getDataFromResource() unrestricted Serialize::unserialize over object-store column (PHP Object Injection, CWE-502)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55220</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+`Pimcore\Model\DataObject\ClassDefinition\Data\Hotspotimage::getDataFromResource()` deserializes the `*__hotspots` object-store column through the `Pimcore\Tool\Serialize::unserialize()` wrapper **without a class allowlist** (the wrapper&#x27;s `$allowedClasses` parameter defaults to `true`, i.e. fully unrestricted). Because the persistence layer always stores this column as PHP-`serialize(…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f97c-ph8j-8vff" target="_blank" rel="noopener">Pimcore: Insufficient Permission Check on Class Definition Creation Endpoint Allows Privilege Escalation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55212</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+The Studio API class definition creation endpoint in `pimcore/studio-backend-bundle` is guarded by the `objects` permission instead of the `classes` permission, allowing any standard editor-level user to create class definitions without admin privileges. Class definition creation is a structural admin operation that generates new database tables and PHP class files on the server. Addit…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-79cw-hfcc-7mw9" target="_blank" rel="noopener">Pimcore: SQL Injection via Column Name in DateFilter allows authenticated user to extract arbitrary database data including admin password hashes</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55208</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+An authenticated user extracts the admin password hash and any other database content through a time-based blind SQL injection in the `DateFilter` column key parameter. The `POST /pimcore-studio/api/website-settings` endpoint (and 11 other listing endpoints) accepts a `columnFilters` array where the `key` field is interpolated directly into SQL with only manual backtick wrapping. The `…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cqhc-2h57-wpxf" target="_blank" rel="noopener">MariaDB&#x27;s connector leaks the cleartext password to an MitM despite `ssl: true`</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55215</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+When SSL/TLS is enabled but no CA / server certificate is provided, the
+connector verifies the server&#x27;s identity using fingerprint validation. The
+check is effective,  the connection is ultimately rejected when it fails, 
+but it happens *after* the authentication exchange. As a result, the
+credentials are sent before validation occurs, so an active man-in-the-middle
+who presents their …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r82h-mqw3-fc56" target="_blank" rel="noopener">plone.app.event vulnerable to denial of service via iCalendar import</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55247</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Impact
+By abusing the iCalendar import functionality, a logged-in editor could take the whole site offline, make the server reach into the internal network and read calendar files off disk (SSRF), and store XSS.
+
+### Patches
+The problem has been patched in `plone.app.event`.
+
+* For Plone 6.2: upgrade to `plone.app.event` 6.0.1
+* For Plone 6.1: upgrade to `plone.app.event` 5.2.4
+* For Plone 6.0…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c9f5-j9c3-mhrg" target="_blank" rel="noopener">Incus has a project restriction bypass in instance copy across projects</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55622</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+Missing authorization checks exist for instance copying where an attacker knowing the name of a project that they don&#x27;t have access to and the name of an instance in that project can copy the instance to a new project. This issue could allow an attacker to access secrets in instances they are not authorized to access.
+
+### Details
+`cmd/incusd/instances.go` authorizes `POST /1.0/instanc…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-64f3-v33m-w89f" target="_blank" rel="noopener">Incus has a project restriction bypass for custom volume copy across projects</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55621</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+
+Missing authorization checks exist for custom volume copying where an attacker who knows the name of a project that they don&#x27;t have access to and the name of a custom volume in that project can copy the custom volume to a new project. This issue could allow an attacker to access secrets in custom volumes they are not authorized to access.
+
+### Details
+
+The storage volume creation hand…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x5g3-w747-2h8q" target="_blank" rel="noopener">plone.app.portlets vulnerable to denial of service via RSS feed portlet</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55248</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Impact
+By adding an RSS portlet, and giving this a link to a very large file, a member can cause a denial of service attack, because Plone will use lots of memory. The member could also use different urls to try to get information about the internal network and open port numbers (SSRF). A malicious RSS feed could cause stored XSS, when the url of a feed item is a javascript url.
+
+### Patches
+T…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-86m2-fcxq-5q7c" target="_blank" rel="noopener">9router: Unauthenticated `/v1` proxy access via `Host`-header spoofing → open AI relay + SSRF</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55641</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+9router&#x27;s request guard decides a request is &quot;local&quot; (and therefore exempt from API-key auth on the `/v1` LLM proxy) by reading the **client-controlled `Host` header**. Because 9router binds `0.0.0.0` by default (and the CLI misleadingly prints &quot;localhost&quot;), a remote, unauthenticated attacker who can reach the port can send `Host: localhost` to be treated as local and obtain `/v1` prox…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w98g-5w9p-p3rc" target="_blank" rel="noopener">Bifrost&#x27;s SSRF deny-list is incomplete: isPublicIP permits CGNAT, IPv6 6to4/NAT64, and site-local in FetchAndEncodeURL</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55245</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+`isPublicIP` in `core/providers/utils/fetch.go` — the SSRF deny-list that gates `FetchAndEncodeURL` — does not reject several routable address ranges that map onto internal infrastructure. Carrier-Grade NAT (`100.64.0.0/10`, RFC 6598), IPv6 6to4 (`2002::/16`), NAT64 (`64:ff9b::/96` and `64:ff9b:1::/48`), and deprecated IPv6 site-local (`fec0::/10`) are all classified as public and perm…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2gh4-jmwq-rr8w" target="_blank" rel="noopener">piccolo-admin has a privilege escalation issue - admin to superuser via session-token disclosure in GET /api/tables/sessions/.</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55485</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>## Summary
+
+`piccolo_admin` uses a helper called `superuser_validators` to gate access to the user and session tables for non-superusers. The helper rejects `PUT`, `PATCH`, `DELETE`, and `POST`, but **does not reject `GET`**.
+
+The `sessions` table stores live session tokens **in plaintext**, and the token column is not marked `secret=True`, so it is included in every `GET` response. Any non-superu…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p6gw-4frg-j7jw" target="_blank" rel="noopener">WsgiDAV MySQL provider has a blind SQL injection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55509</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Summary
+
+The sample `MySQLBrowserProvider` builds its SQL queries by concatenating strings, and the record key from the request URL goes straight into the WHERE clause with no escaping. Any user who can reach a share backed by this provider can inject SQL through the URL. Since these read shares are commonly published without authentication, an anonymous attacker can read arbitrary data from t…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-575r-357h-fhch" target="_blank" rel="noopener">Snipe-IT vulnerable to cross-company asset maintenance re-parenting via API update</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55516</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Impact
+The API endpoint for updating asset maintenance records allows an authorized user to change the asset_id of an existing maintenance record to an asset outside their company scope.
+
+In a Full Multiple Company Support / multi-company deployment, this allows a user from Company A to attach or move a maintenance record onto an asset belonging to Company B. The endpoint appears to authorize …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w7qw-5wfv-gwx9" target="_blank" rel="noopener">Snipe-IT has CSS Injection via `header_color` Setting</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55481</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Impact
+
+Because `default.blade.php` is the base layout loaded on every authenticated page, all active user sessions are affected immediately upon the next page load after the payload is saved. An attacker who has compromised an admin account (or who is a malicious insider) can use this to silently exfiltrate session tokens from all other users, including other administrators.
+
+Additionally, th…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8w8c-8mx9-52cw" target="_blank" rel="noopener">Snipe-IT&#x27;s API Location Creation Bypasses FMCS Parent-Child Company Boundary Validation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55472</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>### Impact
+When Full Multiple Companies Support and scope_locations_fmcs are both enabled, the API endpoint for creating locations can still create a child location under a parent location from a different company. The code detects the invalid parent/child company mismatch, but it appears not to return immediately, so the request continues and the record is still saved. The equivalent Web flow cor…</p>
 
         </article>
 
@@ -656,6 +1087,24 @@ A **cross-tenant write / DoS** vulnerability in the Hatchet `Dispatcher` gRPC se
 
         </article>
 
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/08/snowflake-github-actions-flaw-lets.html" target="_blank" rel="noopener">ownCloud Flaw Exploited to Steal Nuclear Records From Philippine Research Body</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2023-49105</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-28</span>
+          </div>
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a critical security flaw impacting ownCloud to its Known Exploited Vulnerabilities (KEV) catalog following reports that a Chinese-speaking threat actor weaponized the vulnerability to target a nuclear research body in the Philippines.
+
+The vulnerability, tracked as CVE-2023-49105 (CVSS score: 9.8), is a case of</p>
+
+        </article>
+
 <article class="card card-high">
   <div class="card-top">
     <span class="badge badge-high">🟡 High</span>
@@ -707,24 +1156,6 @@ The flaws are tracked as CVE-2026-76639 and CVE-2026-76640, with the first in
 The vulnerability, assigned the CVE identifier CVE-2026-65643, impacts all supported versions of cPanel &amp; WHM.
 
 cPanel described the issue as a critical security vulnerability and said that an</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vxj7-4xrp-5vr4" target="_blank" rel="noopener">aiosmtplib: STARTTLS response injection</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55558</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-27</span>
-          </div>
-          <p class='summary'>## Impact
-
-When a connection is upgraded with STARTTLS, aiosmtplib reads the server&#x27;s 220 go-ahead reply and immediately performs the TLS handshake without discarding any data still sitting in the receive buffer. Bytes the protocol read off the plaintext socket before the handshake survive across the plaintext→TLS boundary (the asyncio transport is swapped in place, so the protocol object and its …</p>
 
         </article>
 

