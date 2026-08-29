@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-29T01:15:15.022342+00:00",
-  "total": 57,
+  "generated": "2026-08-29T11:53:16.783693+00:00",
+  "total": 52,
   "kev": 0,
-  "zero_day": 19,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -99,25 +99,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-papercut-ng-mf-critical-zero-day-exploited-in-the-wild",
-      "title": "PaperCut NG/MF Critical Zero-Day Exploited in the Wild",
-      "summary": "Overview On August 27, 2026, PaperCut Software published an urgent security advisory stating that it is investigating active exploitation of a vulnerability affecting PaperCut NG and PaperCut MF. PaperCut has confirmed customer incidents and is treating the issue as a security emergency. At the initial time of disclosure, the vulnerability had not been assigned a CVE identifier, and PaperCut had not publicly disclosed a CVSS score, vulnerability class, authentication requirements, or the technical details of the exploit path. However on August 28, the vendor assigned CVE-2026-81578 and CVE-2026-82078 for the two vulnerabilities that make up the exploit chain. CVE ID Description CWE CVSSv4 CVE-2026-81578 Authentication Bypass CWE-306 Missing authentication for critical function. 8.8 (High) CVE-2026-82078 Unsafe Dynamic Class Loading in Database Connector CWE-470 Use of Externally-Controlled input to select classes or code ('unsafe reflection'). 9.4 (Critical) PaperCut NG and PaperCut MF are print management platforms commonly deployed within enterprise, education, and other organizational environments. Because the PaperCut Application Server provides web-accessible administrative and application functionality, organizations with servers exposed to the public internet should prioritize remediation and access restriction. PaperCut stated in its advisory that information supplied by a university customer\u2019s security team and digital forensics and incident response team enabled its security response team to reproduce the vulnerability in PaperCut NG and PaperCut MF. On August 28, 2026 at 02:10 AEST, PaperCut released emergency patches for PaperCut NG and PaperCut MF versions 25 and 26, followed later the same day with patches for version 24. PaperCut has been targeted in the past; in 2023, CVE-2023-27350 was broadly exploited in the wild by multiple threat-actor groups, including ransomware operators. This prior history increases the urgency organizations should address t",
-      "link": "https://www.rapid7.com/blog/post/etr-papercut-ng-mf-critical-zero-day-exploited-in-the-wild",
-      "published": "2026-08-28T10:09:12+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-81578",
-        "CVE-2026-82078",
-        "CVE-2023-27350"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -266,54 +247,6 @@
       "cve_ids": [
         "CVE-2026-54754"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/china-made-zbt-routers-ship-with-two.html",
-      "title": "China-Made ZBT Routers Ship With Two Implants Giving Unauthenticated Attackers Root Access",
-      "summary": "VulnCheck has disclosed two previously undocumented factory implants in firmware for routers built by Shenzhen Zhibotong Electronics (ZBT), each of which gives an unauthenticated remote attacker the ability to run commands as root on affected devices.\n\nThe implants, named SPEAKINGSTONE and DARKLANTERN by the company's zero-day research team, are tracked as CVE-2026-74232 and CVE-2026-74233.",
-      "link": "https://thehackernews.com/2026/08/china-made-zbt-routers-ship-with-two.html",
-      "published": "2026-08-28T10:58:29+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-74232",
-        "CVE-2026-74233"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/papercut-releases-emergency-patch-for-exploited-zero-day/",
-      "title": "PaperCut Releases Emergency Patch for Exploited Zero-Day",
-      "summary": "A CVE identifier has not yet been assigned, but PaperCut is urging NG/MF users to install patches and implement mitigations. The post PaperCut Releases Emergency Patch for Exploited Zero-Day appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/papercut-releases-emergency-patch-for-exploited-zero-day/",
-      "published": "2026-08-28T08:40:36+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/papercut-zero-day-exploited-in-attacks.html",
-      "title": "PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions",
-      "summary": "PaperCut has alerted customers that bad actors are actively exploiting a vulnerability impacting all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks.\n\nThe company has released an emergency patch for v25 and v26 to address the issue. It said it's \"aware of confirmed customer incidents and is treating this matter with the highest priority.\" An",
-      "link": "https://thehackernews.com/2026/08/papercut-zero-day-exploited-in-attacks.html",
-      "published": "2026-08-28T08:25:36+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -959,23 +892,6 @@
       "cve_ids": [
         "CVE-2026-76639",
         "CVE-2026-76640"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/critical-cpanel-flaw-could-let-one.html",
-      "title": "Critical cPanel Flaw Could Let One Hosting Customer Take Root Control of a Whole Server",
-      "summary": "cPanel has released patches for a security flaw affecting domain parking and addon domain functionality in cPanel and WebHost Manager (WHM), which could allow code execution as the root user.\n\nThe vulnerability, assigned the CVE identifier CVE-2026-65643, impacts all supported versions of cPanel & WHM.\n\ncPanel described the issue as a critical security vulnerability and said that an",
-      "link": "https://thehackernews.com/2026/08/critical-cpanel-flaw-could-let-one.html",
-      "published": "2026-08-28T09:45:15+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-65643"
       ],
       "is_zero_day": false,
       "is_high_severity": true
