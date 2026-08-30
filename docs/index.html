@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">17</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">11</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-29 20:05 UTC</div>
+            <div class="generated">Updated 2026-08-30 02:03 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -148,26 +148,6 @@
 
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-ffg3-p8fm-mjx2" target="_blank" rel="noopener">RestrictedPython guard hooks can be shadowed via positional-only arguments</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55830</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-28</span>
-          </div>
-          <p class='summary'>### Impact
-
-RestrictedPython rewrites sensitive operations to go through guard hooks. Attribute access becomes `_getattr_(obj, name)`, item access becomes `_getitem_(obj, key)`, writes go through `_write_`, and print goes through `_print_`. The embedding application supplies these hooks to enforce its policy.
-
-Argument-name validation rejects these protected names for regular arguments, `*args`, `…</p>
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -299,110 +279,6 @@ The vulnerabilities, according to Wordfence and Patchstack, are listed below -
 
 
   CVE-2026-76581 (CVSS score: 9.8) - An authentication bypass flaw in</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5v29-34h8-v68r" target="_blank" rel="noopener">MapFish Print has XXE that allows reading arbitrary files of certain types</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55848</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-28</span>
-          </div>
-          <p class='summary'>### Summary
-XXE on MapFish Print allows reading arbitrary files of certain types. Eg /etc/passwd or k8 secrets and certs.
-
-https://github.com/mapfish/mapfish-print/commit/13020c0fbc299e5f604e4e66066311c4bf04d507
-
-### Details
-To trigger the XXE it is required to host a remote script and dtd file. When using the Print feature its possible to send the attacker server url as url of the gml layer.
-
-The…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-56wq-x3wv-3ff4" target="_blank" rel="noopener">SeaweedFS: Path traversal in the S3 gateway X-Amz-Copy-Source header allows cross-bucket object read</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55874</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-28</span>
-          </div>
-          <p class='summary'>### Summary
-The SeaweedFS S3 API gateway did not reject `..` path segments in the `X-Amz-Copy-Source` header used by `CopyObject` and `UploadPartCopy`. The request URL path was hardened against traversal in 4.30 (CVE-2026-54917), but the copy-source header was only checked for emptiness, so a `..` segment in the copy source survived into the server-side filer path and resolved into a different buc…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p378-jp5r-gpgw" target="_blank" rel="noopener">arc has unauthenticated cluster node admission when `cluster.shared_secret` is unset</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55678</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-28</span>
-          </div>
-          <p class='summary'>## Summary
-
-Arc Enterprise clustering accepts cluster join requests without authentication when `cluster.enabled=true` but `cluster.shared_secret` is not configured. The coordinator validates HMAC authentication only if a shared secret is non-empty; otherwise, a network attacker who can reach the coordinator port can send a join request with attacker-controlled node addresses and role. Accepted no…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xrjc-c68j-hp7w" target="_blank" rel="noopener">PrivateBin has reflected JSON injection in backend responses via unescaped REQUEST_URI</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55891</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-28</span>
-          </div>
-          <p class='summary'>## Vulnerability Details
-
-A reflected JSON injection allows an attacker to return arbitrary data in the JSON endpoints (like ` /?jsonld=` and `/?pasteid`).
-
-### Root Cause
-
-`Request::getRequestUri()` sanitizes `$_SERVER[&#x27;REQUEST_URI&#x27;]` with `FILTER_SANITIZE_URL`:
-
-```php
-public function getRequestUri()
-{
-    $uri = array_key_exists(&#x27;REQUEST_URI&#x27;, $_SERVER) ? filter_var($_SERVER[&#x27;REQUEST_URI&#x27;], FIL…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f2xf-7x3g-4272" target="_blank" rel="noopener">PrivateBin has stored Cross-Side-Scripting (XSS) vulnerability in attachment download link via dangerous MIME types with required user-interaction</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55696</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-28</span>
-          </div>
-          <p class='summary'>### Summary
-
-Stored cross-site scripting (XSS) in PrivateBin&#x27;s attachment download link. An anonymous attacker can create a paste with a **text/html** attachment that, with certain user interaction, bypasses protections similar to CVE-2022-24833. When a victim opens the &quot;Download attachment&quot; link in a new tab, the attacker&#x27;s inline JavaScript executes in the PrivateBin instance&#x27;s origin with full …</p>
 
         </article>
 

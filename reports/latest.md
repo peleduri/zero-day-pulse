@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-29 20:05 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-30 02:03 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,20 +20,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — RestrictedPython guard hooks can be shadowed via positional-only arguments
-
-**CVE:** `CVE-2026-55830` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://github.com/advisories/GHSA-ffg3-p8fm-mjx2>
-
-> ### Impact
-
-RestrictedPython rewrites sensitive operations to go through guard hooks. Attribute access becomes `_getattr_(obj, name)`, item access becomes `_getitem_(obj, key)`, writes go through `_write_`, and print goes through `_print_`. The embedding application supplies these hooks to enforce its policy.
-
-Argument-name validation rejects these protected names for regular arguments, `*args`, `…
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -42,7 +29,7 @@ Argument-name validation rejects these protected names for regular arguments, `*
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -51,7 +38,7 @@ Argument-name validation rejects these protected names for regular arguments, `*
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -60,7 +47,7 @@ Argument-name validation rejects these protected names for regular arguments, `*
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -69,7 +56,7 @@ Argument-name validation rejects these protected names for regular arguments, `*
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -78,7 +65,7 @@ Argument-name validation rejects these protected names for regular arguments, `*
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -87,7 +74,7 @@ Argument-name validation rejects these protected names for regular arguments, `*
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -96,7 +83,7 @@ Argument-name validation rejects these protected names for regular arguments, `*
 
 ---
 
-## 11. 🟡 High Severity — Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE
+## 10. 🟡 High Severity — Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE
 
 **CVE:** `CVE-2026-76581` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-29
 **Reference:** <https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html>
@@ -110,76 +97,7 @@ The vulnerabilities, according to Wordfence and Patchstack, are listed below -
 
 ---
 
-## 12. 🟡 High Severity — MapFish Print has XXE that allows reading arbitrary files of certain types
-
-**CVE:** `CVE-2026-55848` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://github.com/advisories/GHSA-5v29-34h8-v68r>
-
-> ### Summary
-XXE on MapFish Print allows reading arbitrary files of certain types. Eg /etc/passwd or k8 secrets and certs.
-
-https://github.com/mapfish/mapfish-print/commit/13020c0fbc299e5f604e4e66066311c4bf04d507
-
-### Details
-To trigger the XXE it is required to host a remote script and dtd file. When using the Print feature its possible to send the attacker server url as url of the gml layer.
-
-The…
-
----
-
-## 13. 🟡 High Severity — SeaweedFS: Path traversal in the S3 gateway X-Amz-Copy-Source header allows cross-bucket object read
-
-**CVE:** `CVE-2026-55874` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://github.com/advisories/GHSA-56wq-x3wv-3ff4>
-
-> ### Summary
-The SeaweedFS S3 API gateway did not reject `..` path segments in the `X-Amz-Copy-Source` header used by `CopyObject` and `UploadPartCopy`. The request URL path was hardened against traversal in 4.30 (CVE-2026-54917), but the copy-source header was only checked for emptiness, so a `..` segment in the copy source survived into the server-side filer path and resolved into a different buc…
-
----
-
-## 14. 🟡 High Severity — arc has unauthenticated cluster node admission when `cluster.shared_secret` is unset
-
-**CVE:** `CVE-2026-55678` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://github.com/advisories/GHSA-p378-jp5r-gpgw>
-
-> ## Summary
-
-Arc Enterprise clustering accepts cluster join requests without authentication when `cluster.enabled=true` but `cluster.shared_secret` is not configured. The coordinator validates HMAC authentication only if a shared secret is non-empty; otherwise, a network attacker who can reach the coordinator port can send a join request with attacker-controlled node addresses and role. Accepted no…
-
----
-
-## 15. 🟡 High Severity — PrivateBin has reflected JSON injection in backend responses via unescaped REQUEST_URI
-
-**CVE:** `CVE-2026-55891` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://github.com/advisories/GHSA-xrjc-c68j-hp7w>
-
-> ## Vulnerability Details
-
-A reflected JSON injection allows an attacker to return arbitrary data in the JSON endpoints (like ` /?jsonld=` and `/?pasteid`).
-
-### Root Cause
-
-`Request::getRequestUri()` sanitizes `$_SERVER[&#x27;REQUEST_URI&#x27;]` with `FILTER_SANITIZE_URL`:
-
-```php
-public function getRequestUri()
-{
-    $uri = array_key_exists(&#x27;REQUEST_URI&#x27;, $_SERVER) ? filter_var($_SERVER…
-
----
-
-## 16. 🟡 High Severity — PrivateBin has stored Cross-Side-Scripting (XSS) vulnerability in attachment download link via dangerous MIME types with required user-interaction
-
-**CVE:** `CVE-2026-55696` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-28
-**Reference:** <https://github.com/advisories/GHSA-f2xf-7x3g-4272>
-
-> ### Summary
-
-Stored cross-site scripting (XSS) in PrivateBin&#x27;s attachment download link. An anonymous attacker can create a paste with a **text/html** attachment that, with certain user interaction, bypasses protections similar to CVE-2022-24833. When a victim opens the &quot;Download attachment&quot; link in a new tab, the attacker&#x27;s inline JavaScript executes in the PrivateBin instance…
-
----
-
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 11. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
