@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-08-30 15:37 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-08-30 20:11 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -83,21 +83,7 @@
 
 ---
 
-## 10. 🟡 High Severity — Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE
-
-**CVE:** `CVE-2026-76581` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-08-29
-**Reference:** <https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html>
-
-> Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution.
-
-The vulnerabilities, according to Wordfence and Patchstack, are listed below -
-
-
-  CVE-2026-76581 (CVSS score: 9.8) - An authentication bypass flaw in
-
----
-
-## 11. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 10. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

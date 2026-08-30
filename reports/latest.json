@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-30T15:37:17.308007+00:00",
-  "total": 11,
+  "generated": "2026-08-30T20:11:14.183713+00:00",
+  "total": 10,
   "kev": 0,
   "zero_day": 9,
   "enriched": 0,
@@ -147,23 +147,6 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
-      "title": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE",
-      "summary": "Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution.\n\nThe vulnerabilities, according to Wordfence and Patchstack, are listed below -\n\n\n  CVE-2026-76581 (CVSS score: 9.8) - An authentication bypass flaw in",
-      "link": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
-      "published": "2026-08-29T16:25:03+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-76581"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
