@@ -1,10 +1,48 @@
 {
-  "generated": "2026-08-31T12:00:05.019849+00:00",
-  "total": 10,
-  "kev": 0,
+  "generated": "2026-08-31T18:49:02.551351+00:00",
+  "total": 12,
+  "kev": 2,
   "zero_day": 9,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-81578",
+      "title": "CVE-2026-81578 \u2014 PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+      "summary": "Vendor: PaperCut | Product: NG/MF. PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-14)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-81578",
+      "published": "2026-08-31",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-81578"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-82078",
+      "title": "CVE-2026-82078 \u2014 PaperCut NG/MF Unsafe Reflection Vulnerability",
+      "summary": "Vendor: PaperCut | Product: NG/MF. PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-14)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-82078",
+      "published": "2026-08-31",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-82078"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
