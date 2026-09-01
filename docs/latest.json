@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-01T15:40:29.178433+00:00",
-  "total": 17,
+  "generated": "2026-09-01T20:15:32.684579+00:00",
+  "total": 20,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -33,23 +33,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/critical-jfrog-artifactory-vulnerability-reportedly-exploited-in-the-wild/",
-      "title": "Critical JFrog Artifactory Vulnerability Reportedly Exploited in the Wild",
-      "summary": "Exploitation of the authentication bypass vulnerability CVE-2026-82329 started just days after its public disclosure. The post Critical JFrog Artifactory Vulnerability Reportedly Exploited in the Wild appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/critical-jfrog-artifactory-vulnerability-reportedly-exploited-in-the-wild/",
-      "published": "2026-09-01T09:59:44+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-82329"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -209,6 +192,77 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-73229",
+      "title": "Django REST framework: AdminRenderer may disclose GET-protected data when rendering invalid write requests",
+      "summary": "Summary\n\nAdminRenderer may disclose data that would normally be protected by GET permissions when rendering a 400 Bad Request response for an invalid write request.\n\nIf a view allows POST (or another write method) but denies GET, an invalid request rendered through AdminRenderer can invoke the view's GET handler and include data from the GET representation in the generated HTML response.\n\nThis behavior appears to be specific to AdminRenderer and does not affect the normal JSON rendering path.\n\n\n---\n\nDetails\n\nWhile investigating the AdminRenderer rendering flow, I observed that invalid write requests are rendered by temporarily overriding the request method and invoking the view's GET handler:\n\n```\nwith override_method(view, request, \"GET\") as request:\n    response = view.get(request, *view.args, **view.kwargs)\n\ndata = response.data\n```\n\nThis execution path differs from a normal GET request.\n\nUnder normal request processing, a GET request flows through:\n\n```\nAPIView.dispatch()\n    \u2514\u2500\u2500 APIView.initial()\n            \u2514\u2500\u2500 APIView.check_permissions()\n```\n\nHowever, during AdminRenderer rendering, the renderer directly invokes:\n\nview.get(...)\n\nA view whose permission class explicitly allowed POST but denied GET still executed its GET handler while rendering an invalid POST request through AdminRenderer.\n\nAs a result, data intended to be available only through an authorized GET request was included in the generated HTML response.\n\n\n---\n\nProof of Concept\n\nUsing a standard ListCreateAPIView.\n\nPermission class:\n\n```\nclass ProbePermission(BasePermission):\n    def has_permission(self, request, view):\n        return request.method == \"POST\"\n\nView:\n\nclass View(ListCreateAPIView):\n    renderer_classes = (AdminRenderer, JSONRenderer)\n    permission_classes = (ProbePermission,)\n    serializer_class = ProbeSerializer\n\n    def get_queryset(self):\n        return [\n            {\n                \"name\": \"visible\",\n                \"secret\": \"GET-ONLY-SECRET\",\n            }\n        ]\n```\n\nEx",
+      "link": "https://github.com/advisories/GHSA-g47c-3xmw-q6m2",
+      "published": "2026-09-01T19:24:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73229"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html",
+      "title": "Attackers Exploit Critical JFrog Artifactory Flaw to Mint Admin Tokens Days After Disclosure",
+      "summary": "Threat actors are exploiting a newly patched critical security flaw impacting JFrog Artifactory merely days after public disclosure, according to watchTowr.\n\nThe vulnerability in question is CVE-2026-82329 (CVSS score: 9.8), a case of authentication bypass that could lead to administrative access in Artifactory.\n\n\"JFrog Artifactory contains an authentication weakness that, under default",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html",
+      "published": "2026-09-01T17:53:11+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-82329"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73089",
+      "title": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
+      "summary": "## Vulnerability Details\n\n**File**: `index.js`\n**Location**: `cache` (browserslist()'s result cache, line ~402) and\n`parseCache` (parseQueries()'s AST cache)\n\n### Root Cause\n```js\nvar cache = {}\nvar parseCache = {}\n\nfunction browserslist(queries, opts) {\n  ...\n  var cacheKey = JSON.stringify([queries, context])\n  if (cache[cacheKey]) return cache[cacheKey]\n  ...\n  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { cache[cacheKey] = result }\n  return result\n}\n\nfunction parseQueries(queries) {\n  var cacheKey = JSON.stringify(queries)\n  if (cacheKey in parseCache) return parseCache[cacheKey]\n  var result = parseWithoutCache(QUERIES, queries)\n  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { parseCache[cacheKey] = result }\n  ...\n}\n```\nEvery distinct `(queries, context)` pair is cached forever \u2014 no size cap,\nTTL, or eviction. `browserslist.clearCaches()` never resets either object\n(it only resets `node.js`'s own filesystem caches); the only opt-out is the\n`BROWSERSLIST_DISABLE_CACHE` env var, controlled by the *calling\napplication*, not an attacker.\n\nSome short, valid queries amplify this badly. The `since <year>-<month>-<day>`\nquery type (`/^since (\\d+)-(\\d+)-(\\d+)$/i`) accepts **any** digit\ncombination \u2014 `Date.UTC()` normalizes rather than rejects out-of-range\nvalues \u2014 giving an effectively unbounded space of ~17-byte distinct cache\nkeys, each of which resolves to (and caches) a result close to the full\n~8.5 KB browser list for any sufficiently old year.\n\n### Measured Impact\n20,000 distinct `since <year>-<month>-<day>` queries (~330 KB total input,\n`--expose-gc` before/after measurement to rule out uncollected garbage)\nretained **over 50 MB** of heap permanently \u2014 roughly **150x**\namplification, growing linearly with no cap observed up to 40,000 queries\n(52.3 MB).\n\n### Attack Scenario\nAny long-running process (server, daemon, warm CI worker) that calls\n`browserslist()` with a query value that varies across requests/items and is\ninfluenced, even partially, by external input accumula",
+      "link": "https://github.com/advisories/GHSA-c83g-rgw3-j3cx",
+      "published": "2026-09-01T16:42:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73089"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62993",
+      "title": "Smarty: SSRF via redirect bypass of trusted_uri using {fetch}",
+      "summary": "When a Security policy is active, {fetch} validates the requested remote URL against the trusted_uri allowlist via Security::isTrustedUri(). For non-http:// schemes (e.g. https://) the resource was then read with file_get_contents(), which follows HTTP redirects by default. Because isTrustedUri() only validates the initial URL, an open redirect on an otherwise-trusted host could be used to redirect the request to a non-trusted, internal target \u2014 bypassing the trusted_uri policy.\n\n## Impact\n\nAn attacker who can supply a fetch target (or influence one) and who has an open redirect available on a trusted host can cause the server to issue requests to attacker-chosen internal endpoints, defeating the trusted_uri allowlist (server-side request forgery).\n\n## Patches\n\nFixed in 5.8.2. When a security policy is active, {fetch} now passes a stream context that disables redirect following (follow_location => 0, max_redirects => 1) to file_get_contents() for remote resources. Behavior is unchanged when no security policy is set, since there is no trusted_uri to bypass.\n\n## Workarounds\n\nAvoid fetching remote resources from within templates under untrusted control; ensure hosts listed in trusted_uri do not expose open redirects.",
+      "link": "https://github.com/advisories/GHSA-cq55-c7wv-pxmq",
+      "published": "2026-09-01T16:38:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62993"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html",
