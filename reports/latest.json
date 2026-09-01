@@ -1,48 +1,10 @@
 {
-  "generated": "2026-08-31T18:49:02.551351+00:00",
+  "generated": "2026-09-01T02:20:56.541793+00:00",
   "total": 12,
-  "kev": 2,
+  "kev": 0,
   "zero_day": 9,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-81578",
-      "title": "CVE-2026-81578 \u2014 PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
-      "summary": "Vendor: PaperCut | Product: NG/MF. PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-14)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-81578",
-      "published": "2026-08-31",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-81578"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-82078",
-      "title": "CVE-2026-82078 \u2014 PaperCut NG/MF Unsafe Reflection Vulnerability",
-      "summary": "Vendor: PaperCut | Product: NG/MF. PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-14)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-82078",
-      "published": "2026-08-31",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-82078"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -185,6 +147,42 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-45822",
+      "title": "decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input",
+      "summary": "### Impact\nAn attacker who can supply input to `decodeUriComponent()` (directly or via a dependency that uses this package on URL/query/path data) can cause excessive CPU usage and application unresponsiveness. This is an availability issue; there is no known memory corruption, data disclosure, or remote code execution impact.\n\n### Patches\nUpgrade to `decode-uri-component@0.5.0`.\n\n### Workarounds\nLimit the size of the input.",
+      "link": "https://github.com/advisories/GHSA-vcc3-ghjq-m6fr",
+      "published": "2026-08-31T22:10:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-45822"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-81889",
+      "title": "elFinder: SSRF protection bypass via DNS rebinding in the `fsock_get_contents()` fallback",
+      "summary": "[poc.zip](https://github.com/user-attachments/files/30352020/poc.zip)\n## Summary\n\nelFinder 2.1.69 is vulnerable to a Server-Side Request Forgery (SSRF) protection bypass when PHP cURL is unavailable and URL uploads use the `fsock_get_contents()` fallback.\n\nAn attacker who can submit a URL for server-side upload can use an attacker-controlled DNS hostname that initially resolves to an allowed public IP address and subsequently resolves to a loopback or private IP address.\n\nThe URL validation checks the first resolved IP, but `fsock_get_contents()` opens the actual connection using the original hostname. This causes a second DNS resolution and allows the connection to reach an address different from the one that was validated.\n\nThe response from the internal service is saved as an uploaded file and can be read through elFinder. This makes the demonstrated issue a non-blind SSRF.\n\nThe most accurate classification is:\n\n* Vulnerability: SSRF protection bypass \n* Exploitation technique: DNS rebinding\n* Root cause: TOCTOU/double DNS resolution without IP pinning\n\n## Affected versions\n\nConfirmed affected:\n\n* elFinder 2.1.69, commit `8f2c3ffafcdd52cf4515f1eec172f4eee44552ad`\n* the current `master` branch inspected on 24 July 2026\n\nThe earliest affected version has not been determined.\n\n## Preconditions\n\nThe demonstrated readback path requires:\n\n* PHP without the cURL extension (`curl_exec()` unavailable);\n* access to the URL upload functionality;\n* permission to upload a MIME type returned by the target service;\n* network connectivity from the PHP process to the internal target;\n* DNS resolution behavior compatible with low or zero TTL responses.\n\nAuthentication requirements depend on the application integrating the elFinder connector. The attached reproduction connector is intentionally minimal and unauthenticated.\n\n## Technical details\n\n`validate_address()` resolves the supplied hostname with `gethostbyname()`, rejects loopback and private ranges, and stores the accepted a",
+      "link": "https://github.com/advisories/GHSA-8x3q-jpjh-qh5c",
+      "published": "2026-08-31T20:28:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-81889"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",

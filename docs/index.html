@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-08-31 18:49 UTC</div>
+            <div class="generated">Updated 2026-09-01 02:20 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-81578" target="_blank" rel="noopener">CVE-2026-81578 — PaperCut NG/MF Missing Authentication for Critical Function Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-81578</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-31</span>
-  </div>
-  <p class='summary'>Vendor: PaperCut | Product: NG/MF. PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Securi…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-82078" target="_blank" rel="noopener">CVE-2026-82078 — PaperCut NG/MF Unsafe Reflection Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-82078</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-08-31</span>
-  </div>
-  <p class='summary'>Vendor: PaperCut | Product: NG/MF. PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578. Required action: Apply mitigations in accordance…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -292,6 +260,50 @@
   <p class='summary'>Executive summary People’s Republic of China (PRC) state-sponsored cyber threat actors are targeting networks globally, including, but not limited to, telecommunications, government, transportation, lodging, and military infrastructure networks. While these actors focus on large backbone routers of major telecommunications providers, as well as provider edge (PE) and customer edge (CE) routers, th…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vcc3-ghjq-m6fr" target="_blank" rel="noopener">decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-45822</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-31</span>
+          </div>
+          <p class='summary'>### Impact
+An attacker who can supply input to `decodeUriComponent()` (directly or via a dependency that uses this package on URL/query/path data) can cause excessive CPU usage and application unresponsiveness. This is an availability issue; there is no known memory corruption, data disclosure, or remote code execution impact.
+
+### Patches
+Upgrade to `decode-uri-component@0.5.0`.
+
+### Workarounds
+…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8x3q-jpjh-qh5c" target="_blank" rel="noopener">elFinder: SSRF protection bypass via DNS rebinding in the `fsock_get_contents()` fallback</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-81889</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-08-31</span>
+          </div>
+          <p class='summary'>[poc.zip](https://github.com/user-attachments/files/30352020/poc.zip)
+## Summary
+
+elFinder 2.1.69 is vulnerable to a Server-Side Request Forgery (SSRF) protection bypass when PHP cURL is unavailable and URL uploads use the `fsock_get_contents()` fallback.
+
+An attacker who can submit a URL for server-side upload can use an attacker-controlled DNS hostname that initially resolves to an allowed publi…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
