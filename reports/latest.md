@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-01 10:39 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-01 15:40 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -92,7 +92,27 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Recently patched PaperCut zero-days used in data theft attacks
+## 11. 🟠 Zero-Day — 13 Malicious Packagist Packages Target Unpatched iPhones to Steal Crypto Wallet Seeds
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-01
+**Reference:** <https://thehackernews.com/2026/09/13-malicious-packagist-packages-target.html>
+
+> Cybersecurity researchers have identified a set of 13 malicious Composer theme packages on Packagist that are designed to inject JavaScript into Vietnamese movie and comic streaming sites that install those libraries and initiate the deployment of spyware aimed at unpatched iOS devices.
+
+&quot;The injected code runs two operations against a site&#x27;s visitors: a mobile ad-fraud and gambling-redi…
+
+---
+
+## 12. 🟠 Zero-Day — Nearly 22,000 Microsoft Exchange servers vulnerable to hijack attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-01
+**Reference:** <https://www.bleepingcomputer.com/news/security/nearly-22-000-microsoft-exchange-servers-vulnerable-to-hijack-attacks/>
+
+> Nearly 22,000 Microsoft Exchange servers exposed online remain unpatched against a high-severity authentication bypass vulnerability that allows attackers to hijack all user mailboxes. [...]
+
+---
+
+## 13. 🟠 Zero-Day — Recently patched PaperCut zero-days used in data theft attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/>
@@ -101,7 +121,7 @@
 
 ---
 
-## 12. 🟡 High Severity — Attackers Exploit Critical Langflow and Rails Flaws in Credential-Probing and C2 Activity
+## 14. 🟡 High Severity — Attackers Exploit Critical Langflow and Rails Flaws in Credential-Probing and C2 Activity
 
 **CVE:** `CVE-2026-0768` | `CVE-2026-66066` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html>
@@ -116,7 +136,7 @@ The vulnerabilities in question are listed below -
 
 ---
 
-## 13. 🟡 High Severity — decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input
+## 15. 🟡 High Severity — decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input
 
 **CVE:** `CVE-2026-45822` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-31
 **Reference:** <https://github.com/advisories/GHSA-vcc3-ghjq-m6fr>
@@ -132,7 +152,7 @@ Upgrade to `decode-uri-component@0.5.0`.
 
 ---
 
-## 14. 🟡 High Severity — elFinder: SSRF protection bypass via DNS rebinding in the `fsock_get_contents()` fallback
+## 16. 🟡 High Severity — elFinder: SSRF protection bypass via DNS rebinding in the `fsock_get_contents()` fallback
 
 **CVE:** `CVE-2026-81889` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-31
 **Reference:** <https://github.com/advisories/GHSA-8x3q-jpjh-qh5c>
@@ -146,7 +166,7 @@ An attacker who can submit a URL for server-side upload can use an attacker-cont
 
 ---
 
-## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
