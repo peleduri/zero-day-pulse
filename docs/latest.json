@@ -1,10 +1,143 @@
 {
-  "generated": "2026-09-02T15:28:30.452429+00:00",
-  "total": 30,
-  "kev": 0,
+  "generated": "2026-09-02T20:12:47.805443+00:00",
+  "total": 35,
+  "kev": 7,
   "zero_day": 15,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-9586",
+      "title": "CVE-2026-9586 \u2014 Sangoma Switchvox SQL Injection Vulnerability",
+      "summary": "Vendor: Sangoma | Product: Switchvox. Sangoma Switchvox contains a SQL injection vulnerability which allows an unauthenticated remote attacker to execute arbitrary SQL statements against the backend PostgreSQL database using a single crafted request, including database operations and remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-9586",
+      "published": "2026-09-02",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-9586"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-83549",
+      "title": "CVE-2026-83549 \u2014 SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
+      "summary": "Vendor: SonicWall | Product: SMA1000 Appliances. SonicWall SMA1000 Appliances contains an OS command injection vulnerability that could enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-83549",
+      "published": "2026-09-02",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-83549"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59822",
+      "title": "CVE-2026-59822 \u2014 BerriAI LiteLLM Improper Authentication Vulnerability",
+      "summary": "Vendor: BerriAI | Product: LiteLLM. BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-16)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-59822",
+      "published": "2026-09-02",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-59822"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-48710",
+      "title": "CVE-2026-48710 \u2014 Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
+      "summary": "Vendor: Kludex | Product: Starlette. Kludex Starlette contains a HTTP request/response smuggling vulnerability that could allow attackers to inject paths into the host part, prepending the actual path leading to issues such as authentication bypass when the authentication depends on the reconstructed URL\u2019s path. This vulnerability could be chaned with CVE-2026-42271. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-16)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48710",
+      "published": "2026-09-02",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-48710"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-49869",
+      "title": "CVE-2026-49869 \u2014 Kestra OSS OS Command Injection Vulnerability",
+      "summary": "Vendor: Kestra | Product: Kestra OSS. Kestra OSS contains an OS command injection vulnerability that could allow an unauthenticated remote attacker to create and execute arbitrary workflows without credentials. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-49869",
+      "published": "2026-09-02",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-49869"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-82329",
+      "title": "CVE-2026-82329 \u2014 JFrog Artifactory Improper Authentication Vulnerability",
+      "summary": "Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-82329",
+      "published": "2026-09-02",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-82329"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-83548",
+      "title": "CVE-2026-83548 \u2014 SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+      "summary": "Vendor: SonicWall | Product: SMA1000 Appliances. SonicWall SMA1000 Appliances contains a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to gain unauthorized access to sensitive functionality and perform unauthorized operations. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-83548",
+      "published": "2026-09-02",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-83548"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -247,6 +380,59 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/",
+      "title": "Hackers exploit critical JFrog Artifactory flaw to forge admin tokens",
+      "summary": "A critical authentication bypass vulnerability (CVE-2026-82329) in JFrog Artifactory is being exploited in attacks to create tokens that provide administrative access. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/",
+      "published": "2026-09-02T15:47:08+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-82329"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75899",
+      "title": "fast-uri vulnerable to server-side request forgery via repeated hostname percent-decoding",
+      "summary": "### Impact\n\n`fast-uri` decodes a hostname's percent escapes twice in a single `normalize()` or `resolve()` call: once during parsing and again during authority recomposition. A nested percent-encoded host therefore survives the first decode and is turned into a live destination by the second, so `normalize('http://%256c%256f%2563%2561%256c%2568%256f%2573%2574/')` returns `http://localhost/`. Applications that normalize or resolve an untrusted URI before an SSRF check, redirect validation, or host allowlist can be steered to a different destination, including internal addresses such as loopback or a cloud metadata endpoint, than the encoded input appeared to contain. This is an incomplete-fix variant of CVE-2026-6322, whose encoded-authority-delimiter fix introduced the second decode.\n\n### Patches\n\nFixed in `fast-uri` 2.4.5, 3.1.6, and 4.1.3.\n\n### Workarounds\n\nReject untrusted URIs whose host component contains an encoded percent sign (`%25`) before passing them to `normalize()` or `resolve()`.",
+      "link": "https://github.com/advisories/GHSA-fph4-wmhf-6fwf",
+      "published": "2026-09-02T15:42:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75899"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63311",
+      "title": "NLTK: SSRF Fail-Open in validate_network_url() via DNS Resolution Failure",
+      "summary": "There is an SSRF vulnerability in NLTK 3.9.4's network URL validation. The validate_network_url() function in nltk/pathsec.py fails open when DNS resolution returns an error.\n\nThe _resolve_hostname() helper at lines 193-234 catches OSError and ValueError during socket.getaddrinfo() and returns an empty list []. When this happens, the validation loop in validate_network_url() iterates over nothing (for addr in resolved: ... never executes), with no else/fallback check. The function returns normally, and urlopen() proceeds to make the request without any IP validation.\n\nThis means:\n1. If DNS is temporarily unavailable, ALL SSRF protections are disabled\n2. DNS rebinding attacks bypass the check after the LRU cache entry expires\n3. In environments with unreliable resolvers, the protection is permanently bypassed\n\nPoC:\n```python\nimport nltk.pathsec\nimport unittest.mock\n\n# Simulate DNS failure\nwith unittest.mock.patch('socket.getaddrinfo', side_effect=OSError('DNS unavailable')):\n    # This SHOULD raise but doesn't -- fails open\n    nltk.pathsec.validate_network_url('http://169.254.169.254/latest/meta-data/')\n    # Returns normally, allowing SSRF to cloud metadata\n```\n\nThe correct behavior is fail-closed: if DNS resolution fails, the URL should be REJECTED (not allowed). The function should raise an exception or return a failure status when _resolve_hostname() returns an empty list.\n\nThis is distinct from CVE-2024-39705 (which addressed pickle deserialization) and CVE-2026-33236 (which addressed XML path traversal). This finding targets the newly-added pathsec.py security layer introduced to fix those earlier issues.\n\nSuggested fix: Add an explicit check after _resolve_hostname() returns: if the result is empty, raise a SecurityError. Never allow a URL request to proceed when IP validation was impossible.\n\nCVSS Note: The CVSS use SC:H (High subsequent confidentiality) because the advisory explicitly identifies cloud metadata endpoints (169.254.169.254) as an attack target",
+      "link": "https://github.com/advisories/GHSA-3gqm-fcw5-w839",
+      "published": "2026-09-02T15:39:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63311"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-75592",
       "title": "Kirby: Access to image files outside of the site root via path traversal in the media handling",
       "summary": "### TL;DR\n\nThis vulnerability affects all Kirby sites that are deployed in a way that their `index` root on the server is next to a second directory that is read-accessible to PHP and shares the same name prefix (such as the site with the index root `/var/www/site` being next to `/var/www/site2`).\n\nIt was possible to create and access thumbnails from media files within such sibling directories that have a valid thumbnail configuration (JSON job file). This can affect staging sites, site backups or other internal sites.\n\n----\n\n### Introduction\n\nA path traversal (also known as directory traversal) vulnerability occurs when untrusted input is used to build a filesystem path without properly confining the result to an intended base directory. By injecting sequences such as `../`, an attacker can escape that directory and reach files elsewhere on the server.\n\n### Affected components\n\nKirby's media handler processes requests for files in the `media` directory that have not been generated yet. It parses the provided path and finds the correct file or asset to generate a thumbnail of. Each thumbnail needs to have a prepared job file (a metadata file with file extension `.json`) in order to allow the media handler to generate a thumbnail.\n\nThe media handler uses filesystem containment checks in several places that are supposed to prevent breakout of the `media` and `index` roots of the site.\n\n### Impact\n\nIn affected releases, the containment checks were incomplete and did not cover the case of a sibling directory next to the containment directory that starts with the same prefix. E.g. a directory `site2` passed the containment check of directory `site`. This allowed attackers to access media files with prepared job files that are stored within such sibling directories of the site's `index` root, opening the potential for information leaks from sensitive files stored within them, and deleting the job file in the process.\n\n### Patches\n\nThe problem has been patched in [Kirby 4.",
@@ -402,94 +588,6 @@
       ],
       "cve_ids": [
         "CVE-2026-9586"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73229",
-      "title": "Django REST framework: AdminRenderer may disclose GET-protected data when rendering invalid write requests",
-      "summary": "Summary\n\nAdminRenderer may disclose data that would normally be protected by GET permissions when rendering a 400 Bad Request response for an invalid write request.\n\nIf a view allows POST (or another write method) but denies GET, an invalid request rendered through AdminRenderer can invoke the view's GET handler and include data from the GET representation in the generated HTML response.\n\nThis behavior appears to be specific to AdminRenderer and does not affect the normal JSON rendering path.\n\n\n---\n\nDetails\n\nWhile investigating the AdminRenderer rendering flow, I observed that invalid write requests are rendered by temporarily overriding the request method and invoking the view's GET handler:\n\n```\nwith override_method(view, request, \"GET\") as request:\n    response = view.get(request, *view.args, **view.kwargs)\n\ndata = response.data\n```\n\nThis execution path differs from a normal GET request.\n\nUnder normal request processing, a GET request flows through:\n\n```\nAPIView.dispatch()\n    \u2514\u2500\u2500 APIView.initial()\n            \u2514\u2500\u2500 APIView.check_permissions()\n```\n\nHowever, during AdminRenderer rendering, the renderer directly invokes:\n\nview.get(...)\n\nA view whose permission class explicitly allowed POST but denied GET still executed its GET handler while rendering an invalid POST request through AdminRenderer.\n\nAs a result, data intended to be available only through an authorized GET request was included in the generated HTML response.\n\n\n---\n\nProof of Concept\n\nUsing a standard ListCreateAPIView.\n\nPermission class:\n\n```\nclass ProbePermission(BasePermission):\n    def has_permission(self, request, view):\n        return request.method == \"POST\"\n\nView:\n\nclass View(ListCreateAPIView):\n    renderer_classes = (AdminRenderer, JSONRenderer)\n    permission_classes = (ProbePermission,)\n    serializer_class = ProbeSerializer\n\n    def get_queryset(self):\n        return [\n            {\n                \"name\": \"visible\",\n                \"secret\": \"GET-ONLY-SECRET\",\n            }\n        ]\n```\n\nEx",
-      "link": "https://github.com/advisories/GHSA-g47c-3xmw-q6m2",
-      "published": "2026-09-01T19:24:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73229"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
-      "title": "Critical Langflow flaw exploited to steal OpenAI and AWS keys",
-      "summary": "Threat actors are exploiting an unauthenticated remote code execution vulnerability (CVE-2026-0768) in Langflow, an open-source framework for building AI applications, to steal credentials, tokens, and keys. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
-      "published": "2026-09-01T17:54:22+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-0768"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html",
-      "title": "Attackers Exploit Critical JFrog Artifactory Flaw to Mint Admin Tokens Days After Disclosure",
-      "summary": "Threat actors are exploiting a newly patched critical security flaw impacting JFrog Artifactory merely days after public disclosure, according to watchTowr.\n\nThe vulnerability in question is CVE-2026-82329 (CVSS score: 9.8), a case of authentication bypass that could lead to administrative access in Artifactory.\n\n\"JFrog Artifactory contains an authentication weakness that, under default",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html",
-      "published": "2026-09-01T17:53:11+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-82329"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73089",
-      "title": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
-      "summary": "## Vulnerability Details\n\n**File**: `index.js`\n**Location**: `cache` (browserslist()'s result cache, line ~402) and\n`parseCache` (parseQueries()'s AST cache)\n\n### Root Cause\n```js\nvar cache = {}\nvar parseCache = {}\n\nfunction browserslist(queries, opts) {\n  ...\n  var cacheKey = JSON.stringify([queries, context])\n  if (cache[cacheKey]) return cache[cacheKey]\n  ...\n  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { cache[cacheKey] = result }\n  return result\n}\n\nfunction parseQueries(queries) {\n  var cacheKey = JSON.stringify(queries)\n  if (cacheKey in parseCache) return parseCache[cacheKey]\n  var result = parseWithoutCache(QUERIES, queries)\n  if (!env.env.BROWSERSLIST_DISABLE_CACHE) { parseCache[cacheKey] = result }\n  ...\n}\n```\nEvery distinct `(queries, context)` pair is cached forever \u2014 no size cap,\nTTL, or eviction. `browserslist.clearCaches()` never resets either object\n(it only resets `node.js`'s own filesystem caches); the only opt-out is the\n`BROWSERSLIST_DISABLE_CACHE` env var, controlled by the *calling\napplication*, not an attacker.\n\nSome short, valid queries amplify this badly. The `since <year>-<month>-<day>`\nquery type (`/^since (\\d+)-(\\d+)-(\\d+)$/i`) accepts **any** digit\ncombination \u2014 `Date.UTC()` normalizes rather than rejects out-of-range\nvalues \u2014 giving an effectively unbounded space of ~17-byte distinct cache\nkeys, each of which resolves to (and caches) a result close to the full\n~8.5 KB browser list for any sufficiently old year.\n\n### Measured Impact\n20,000 distinct `since <year>-<month>-<day>` queries (~330 KB total input,\n`--expose-gc` before/after measurement to rule out uncollected garbage)\nretained **over 50 MB** of heap permanently \u2014 roughly **150x**\namplification, growing linearly with no cap observed up to 40,000 queries\n(52.3 MB).\n\n### Attack Scenario\nAny long-running process (server, daemon, warm CI worker) that calls\n`browserslist()` with a query value that varies across requests/items and is\ninfluenced, even partially, by external input accumula",
-      "link": "https://github.com/advisories/GHSA-c83g-rgw3-j3cx",
-      "published": "2026-09-01T16:42:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73089"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62993",
-      "title": "Smarty: SSRF via redirect bypass of trusted_uri using {fetch}",
-      "summary": "When a Security policy is active, {fetch} validates the requested remote URL against the trusted_uri allowlist via Security::isTrustedUri(). For non-http:// schemes (e.g. https://) the resource was then read with file_get_contents(), which follows HTTP redirects by default. Because isTrustedUri() only validates the initial URL, an open redirect on an otherwise-trusted host could be used to redirect the request to a non-trusted, internal target \u2014 bypassing the trusted_uri policy.\n\n## Impact\n\nAn attacker who can supply a fetch target (or influence one) and who has an open redirect available on a trusted host can cause the server to issue requests to attacker-chosen internal endpoints, defeating the trusted_uri allowlist (server-side request forgery).\n\n## Patches\n\nFixed in 5.8.2. When a security policy is active, {fetch} now passes a stream context that disables redirect following (follow_location => 0, max_redirects => 1) to file_get_contents() for remote resources. Behavior is unchanged when no security policy is set, since there is no trusted_uri to bypass.\n\n## Workarounds\n\nAvoid fetching remote resources from within templates under untrusted control; ensure hosts listed in trusted_uri do not expose open redirects.",
-      "link": "https://github.com/advisories/GHSA-cq55-c7wv-pxmq",
-      "published": "2026-09-01T16:38:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62993"
       ],
       "is_zero_day": false,
       "is_high_severity": true
