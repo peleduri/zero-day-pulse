@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">20</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">18</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-01 20:15 UTC</div>
+            <div class="generated">Updated 2026-09-02 01:42 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -420,50 +420,6 @@ The vulnerabilities in question are listed below -
 
   CVE-2026-0768 (CVSS score: 9.8) - A lack of proper validation of a user-supplied input vulnerability that could be exploited to execute arbitrary Python code in the context of the root user.
   CVE-2026-66066 aka</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vcc3-ghjq-m6fr" target="_blank" rel="noopener">decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-45822</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-31</span>
-          </div>
-          <p class='summary'>### Impact
-An attacker who can supply input to `decodeUriComponent()` (directly or via a dependency that uses this package on URL/query/path data) can cause excessive CPU usage and application unresponsiveness. This is an availability issue; there is no known memory corruption, data disclosure, or remote code execution impact.
-
-### Patches
-Upgrade to `decode-uri-component@0.5.0`.
-
-### Workarounds
-…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8x3q-jpjh-qh5c" target="_blank" rel="noopener">elFinder: SSRF protection bypass via DNS rebinding in the `fsock_get_contents()` fallback</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-81889</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-08-31</span>
-          </div>
-          <p class='summary'>[poc.zip](https://github.com/user-attachments/files/30352020/poc.zip)
-## Summary
-
-elFinder 2.1.69 is vulnerable to a Server-Side Request Forgery (SSRF) protection bypass when PHP cURL is unavailable and URL uploads use the `fsock_get_contents()` fallback.
-
-An attacker who can submit a URL for server-side upload can use an attacker-controlled DNS hostname that initially resolves to an allowed publi…</p>
 
         </article>
 

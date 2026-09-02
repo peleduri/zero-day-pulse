@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-01T20:15:32.684579+00:00",
-  "total": 20,
+  "generated": "2026-09-02T01:42:23.049178+00:00",
+  "total": 18,
   "kev": 0,
   "zero_day": 12,
   "enriched": 0,
@@ -278,42 +278,6 @@
       "cve_ids": [
         "CVE-2026-0768",
         "CVE-2026-66066"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45822",
-      "title": "decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input",
-      "summary": "### Impact\nAn attacker who can supply input to `decodeUriComponent()` (directly or via a dependency that uses this package on URL/query/path data) can cause excessive CPU usage and application unresponsiveness. This is an availability issue; there is no known memory corruption, data disclosure, or remote code execution impact.\n\n### Patches\nUpgrade to `decode-uri-component@0.5.0`.\n\n### Workarounds\nLimit the size of the input.",
-      "link": "https://github.com/advisories/GHSA-vcc3-ghjq-m6fr",
-      "published": "2026-08-31T22:10:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45822"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-81889",
-      "title": "elFinder: SSRF protection bypass via DNS rebinding in the `fsock_get_contents()` fallback",
-      "summary": "[poc.zip](https://github.com/user-attachments/files/30352020/poc.zip)\n## Summary\n\nelFinder 2.1.69 is vulnerable to a Server-Side Request Forgery (SSRF) protection bypass when PHP cURL is unavailable and URL uploads use the `fsock_get_contents()` fallback.\n\nAn attacker who can submit a URL for server-side upload can use an attacker-controlled DNS hostname that initially resolves to an allowed public IP address and subsequently resolves to a loopback or private IP address.\n\nThe URL validation checks the first resolved IP, but `fsock_get_contents()` opens the actual connection using the original hostname. This causes a second DNS resolution and allows the connection to reach an address different from the one that was validated.\n\nThe response from the internal service is saved as an uploaded file and can be read through elFinder. This makes the demonstrated issue a non-blind SSRF.\n\nThe most accurate classification is:\n\n* Vulnerability: SSRF protection bypass \n* Exploitation technique: DNS rebinding\n* Root cause: TOCTOU/double DNS resolution without IP pinning\n\n## Affected versions\n\nConfirmed affected:\n\n* elFinder 2.1.69, commit `8f2c3ffafcdd52cf4515f1eec172f4eee44552ad`\n* the current `master` branch inspected on 24 July 2026\n\nThe earliest affected version has not been determined.\n\n## Preconditions\n\nThe demonstrated readback path requires:\n\n* PHP without the cURL extension (`curl_exec()` unavailable);\n* access to the URL upload functionality;\n* permission to upload a MIME type returned by the target service;\n* network connectivity from the PHP process to the internal target;\n* DNS resolution behavior compatible with low or zero TTL responses.\n\nAuthentication requirements depend on the application integrating the elFinder connector. The attached reproduction connector is intentionally minimal and unauthenticated.\n\n## Technical details\n\n`validate_address()` resolves the supplied hostname with `gethostbyname()`, rejects loopback and private ranges, and stores the accepted a",
-      "link": "https://github.com/advisories/GHSA-8x3q-jpjh-qh5c",
-      "published": "2026-08-31T20:28:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-81889"
       ],
       "is_zero_day": false,
       "is_high_severity": true

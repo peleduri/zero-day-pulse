@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-01 20:15 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-02 01:42 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -189,37 +189,7 @@ The vulnerabilities in question are listed below -
 
 ---
 
-## 18. 🟡 High Severity — decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input
-
-**CVE:** `CVE-2026-45822` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-31
-**Reference:** <https://github.com/advisories/GHSA-vcc3-ghjq-m6fr>
-
-> ### Impact
-An attacker who can supply input to `decodeUriComponent()` (directly or via a dependency that uses this package on URL/query/path data) can cause excessive CPU usage and application unresponsiveness. This is an availability issue; there is no known memory corruption, data disclosure, or remote code execution impact.
-
-### Patches
-Upgrade to `decode-uri-component@0.5.0`.
-
-### Workarounds
-…
-
----
-
-## 19. 🟡 High Severity — elFinder: SSRF protection bypass via DNS rebinding in the `fsock_get_contents()` fallback
-
-**CVE:** `CVE-2026-81889` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-08-31
-**Reference:** <https://github.com/advisories/GHSA-8x3q-jpjh-qh5c>
-
-> [poc.zip](https://github.com/user-attachments/files/30352020/poc.zip)
-## Summary
-
-elFinder 2.1.69 is vulnerable to a Server-Side Request Forgery (SSRF) protection bypass when PHP cURL is unavailable and URL uploads use the `fsock_get_contents()` fallback.
-
-An attacker who can submit a URL for server-side upload can use an attacker-controlled DNS hostname that initially resolves to an allowed publi…
-
----
-
-## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
