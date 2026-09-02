@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-02 01:42 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-02 10:05 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,25 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — SonicWall warns of actively exploited SMA1000 zero-day flaws
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-02
+**Reference:** <https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-actively-exploited-sma1000-zero-day-flaws/>
+
+> SonicWall warned customers that threat actors are chaining two new SMA1000 zero-day vulnerabilities in remote code execution attacks. [...]
+
+---
+
+## 4. 🟠 Zero-Day — SonicWall Warns of Two SMA1000 Zero-Days Exploited in Attacks
+
+**CVE:** `CVE-2026-83549` | `CVE-2026-83548` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-02
+**Reference:** <https://www.securityweek.com/sonicwall-warns-of-two-sma1000-zero-days-exploited-in-attacks/>
+
+> The vulnerabilities CVE-2026-83549 and CVE-2026-83548 can be chained for unauthenticated remote code execution. The post SonicWall Warns of Two SMA1000 Zero-Days Exploited in Attacks appeared first on SecurityWeek .
+
+---
+
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -29,7 +47,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -38,7 +56,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -47,7 +65,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -56,7 +74,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -65,7 +83,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -74,7 +92,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -83,7 +101,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — 13 Malicious Packagist Packages Target Unpatched iPhones to Steal Crypto Wallet Seeds
+## 12. 🟠 Zero-Day — 13 Malicious Packagist Packages Target Unpatched iPhones to Steal Crypto Wallet Seeds
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://thehackernews.com/2026/09/13-malicious-packagist-packages-target.html>
@@ -94,7 +112,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Nearly 22,000 Microsoft Exchange servers vulnerable to hijack attacks
+## 13. 🟠 Zero-Day — Nearly 22,000 Microsoft Exchange servers vulnerable to hijack attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://www.bleepingcomputer.com/news/security/nearly-22-000-microsoft-exchange-servers-vulnerable-to-hijack-attacks/>
@@ -103,16 +121,29 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Recently patched PaperCut zero-days used in data theft attacks
+## 14. 🟡 High Severity — Researchers Use Claude to Port Pre-Auth RCE Exploit From One PLC Model to Another
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-01
-**Reference:** <https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/>
+**CVE:** `CVE-2021-31886` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-02
+**Reference:** <https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html>
 
-> Two security vulnerabilities in the PaperCut NG and MF print management software, patched last week after being exploited as zero-days, are now being abused in data theft attacks. [...]
+> Forescout Research - Vedere Labs said it used Anthropic&#x27;s Claude to port a working pre-authentication remote code execution (RCE) exploit from one WAGO programmable logic controller (PLC) to another, executing attacker-supplied ARM shellcode on live hardware.
+
+The exploit targets CVE-2021-31886, a stack-based buffer overflow in the Nucleus FTP server&#x27;s handling of the USER command
 
 ---
 
-## 13. 🟡 High Severity — Django REST framework: AdminRenderer may disclose GET-protected data when rendering invalid write requests
+## 15. 🟡 High Severity — Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials
+
+**CVE:** `CVE-2026-9586` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-02
+**Reference:** <https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html>
+
+> Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution.
+
+The vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vulnerability in Sangoma Switchvox SMB Edition 8.3 (104997) that can allow attackers to remotely execute arbitrary code as
+
+---
+
+## 16. 🟡 High Severity — Django REST framework: AdminRenderer may disclose GET-protected data when rendering invalid write requests
 
 **CVE:** `CVE-2026-73229` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://github.com/advisories/GHSA-g47c-3xmw-q6m2>
@@ -127,7 +158,16 @@ Thi…
 
 ---
 
-## 14. 🟡 High Severity — Attackers Exploit Critical JFrog Artifactory Flaw to Mint Admin Tokens Days After Disclosure
+## 17. 🟡 High Severity — Critical Langflow flaw exploited to steal OpenAI and AWS keys
+
+**CVE:** `CVE-2026-0768` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-01
+**Reference:** <https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/>
+
+> Threat actors are exploiting an unauthenticated remote code execution vulnerability (CVE-2026-0768) in Langflow, an open-source framework for building AI applications, to steal credentials, tokens, and keys. [...]
+
+---
+
+## 18. 🟡 High Severity — Attackers Exploit Critical JFrog Artifactory Flaw to Mint Admin Tokens Days After Disclosure
 
 **CVE:** `CVE-2026-82329` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://thehackernews.com/2026/09/attackers-exploit-critical-jfrog.html>
@@ -140,7 +180,7 @@ The vulnerability in question is CVE-2026-82329 (CVSS score: 9.8), a case of aut
 
 ---
 
-## 15. 🟡 High Severity — Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM
+## 19. 🟡 High Severity — Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM
 
 **CVE:** `CVE-2026-73089` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://github.com/advisories/GHSA-c83g-rgw3-j3cx>
@@ -165,7 +205,7 @@ function browserslist(queries, opts) {
 
 ---
 
-## 16. 🟡 High Severity — Smarty: SSRF via redirect bypass of trusted_uri using {fetch}
+## 20. 🟡 High Severity — Smarty: SSRF via redirect bypass of trusted_uri using {fetch}
 
 **CVE:** `CVE-2026-62993` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-01
 **Reference:** <https://github.com/advisories/GHSA-cq55-c7wv-pxmq>
@@ -174,22 +214,7 @@ function browserslist(queries, opts) {
 
 ---
 
-## 17. 🟡 High Severity — Attackers Exploit Critical Langflow and Rails Flaws in Credential-Probing and C2 Activity
-
-**CVE:** `CVE-2026-0768` | `CVE-2026-66066` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-01
-**Reference:** <https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html>
-
-> Threat actors are exploiting two critical flaws impacting Langflow and Ruby on Rails, according to new findings from VulnCheck.
-
-The vulnerabilities in question are listed below -
-
-
-  CVE-2026-0768 (CVSS score: 9.8) - A lack of proper validation of a user-supplied input vulnerability that could be exploited to execute arbitrary Python code in the context of the root user.
-  CVE-2026-66066 aka
-
----
-
-## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

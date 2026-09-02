@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-02T01:42:23.049178+00:00",
-  "total": 18,
+  "generated": "2026-09-02T10:05:07.112554+00:00",
+  "total": 21,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,39 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-actively-exploited-sma1000-zero-day-flaws/",
+      "title": "SonicWall warns of actively exploited SMA1000 zero-day flaws",
+      "summary": "SonicWall warned customers that threat actors are chaining two new SMA1000 zero-day vulnerabilities in remote code execution attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-actively-exploited-sma1000-zero-day-flaws/",
+      "published": "2026-09-02T06:39:29+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/sonicwall-warns-of-two-sma1000-zero-days-exploited-in-attacks/",
+      "title": "SonicWall Warns of Two SMA1000 Zero-Days Exploited in Attacks",
+      "summary": "The vulnerabilities CVE-2026-83549 and CVE-2026-83548 can be chained for unauthenticated remote code execution. The post SonicWall Warns of Two SMA1000 Zero-Days Exploited in Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/sonicwall-warns-of-two-sma1000-zero-days-exploited-in-attacks/",
+      "published": "2026-09-02T05:04:52+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-83549",
+        "CVE-2026-83548"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -179,19 +212,38 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/",
-      "title": "Recently patched PaperCut zero-days used in data theft attacks",
-      "summary": "Two security vulnerabilities in the PaperCut NG and MF print management software, patched last week after being exploited as zero-days, are now being abused in data theft attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/",
-      "published": "2026-09-01T07:48:24+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html",
+      "title": "Researchers Use Claude to Port Pre-Auth RCE Exploit From One PLC Model to Another",
+      "summary": "Forescout Research - Vedere Labs said it used Anthropic's Claude to port a working pre-authentication remote code execution (RCE) exploit from one WAGO programmable logic controller (PLC) to another, executing attacker-supplied ARM shellcode on live hardware.\n\nThe exploit targets\u00a0CVE-2021-31886, a stack-based buffer overflow in the Nucleus FTP server's handling of the\u00a0USER\u00a0command",
+      "link": "https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html",
+      "published": "2026-09-02T07:47:13+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "malware"
+        "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2021-31886"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
+      "title": "Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials",
+      "summary": "Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution.\n\nThe vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vulnerability in Sangoma Switchvox SMB Edition 8.3 (104997) that can allow attackers to remotely execute arbitrary code as",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
+      "published": "2026-09-02T07:08:50+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-9586"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-73229",
@@ -207,6 +259,23 @@
       ],
       "cve_ids": [
         "CVE-2026-73229"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
+      "title": "Critical Langflow flaw exploited to steal OpenAI and AWS keys",
+      "summary": "Threat actors are exploiting an unauthenticated remote code execution vulnerability (CVE-2026-0768) in Langflow, an open-source framework for building AI applications, to steal credentials, tokens, and keys. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
+      "published": "2026-09-01T17:54:22+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-0768"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -260,24 +329,6 @@
       ],
       "cve_ids": [
         "CVE-2026-62993"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html",
-      "title": "Attackers Exploit Critical Langflow and Rails Flaws in Credential-Probing and C2 Activity",
-      "summary": "Threat actors are exploiting two critical flaws impacting Langflow and Ruby on Rails, according to new findings from VulnCheck.\n\nThe vulnerabilities in question are listed below -\n\n\n  CVE-2026-0768 (CVSS score: 9.8) - A lack of proper validation of a user-supplied input vulnerability that could be exploited to execute arbitrary Python code in the context of the root user.\n  CVE-2026-66066 aka",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html",
-      "published": "2026-09-01T07:22:30+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-0768",
-        "CVE-2026-66066"
       ],
       "is_zero_day": false,
       "is_high_severity": true
