@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">43</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">38</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-03 10:15 UTC</div>
+            <div class="generated">Updated 2026-09-03 15:22 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -149,6 +149,22 @@
 
 </article>
 
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/cisco-warns-of-unpatched-secure-email-flaws-patches-critical-switch-vulnerabilities/" target="_blank" rel="noopener">Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-03</span>
+  </div>
+  <p class='summary'>Publicly disclosed S/MIME flaws could expose encrypted email content, while critical IOS XR and Nexus bugs could enable remote code execution and authentication bypass. The post Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities appeared first on SecurityWeek .</p>
+
+</article>
+
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -180,40 +196,6 @@
     <span>2026-09-02</span>
   </div>
   <p class='summary'>Overview On September 1, 2026, SonicWall disclosed two vulnerabilities affecting SonicWall SMA1000 appliances that the vendor says are being actively exploited in the wild. The vulnerabilities, CVE-2026-83548 and CVE-2026-83549 , can be chained to achieve unauthenticated remote code execution (RCE) on affected appliances. CVE-2026-83548 is a critical pre-authentication server-side request forgery …</p>
-
-</article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html" target="_blank" rel="noopener">Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>Manifold Security has disclosed eight security flaws across seven command-line AI coding agents in which a repository&#x27;s own Git configuration names a command that the agent runs on the developer&#x27;s machine, four of them still unpatched at publication.
-
-The command executes as the user, outside the agent&#x27;s sandbox and without an approval prompt, and exploitation requires the repository to arrive</p>
-
-        </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/openais-astra-becomes-first-model-to-cross-critical-cybersecurity-threshold/" target="_blank" rel="noopener">OpenAI’s Astra Crosses ‘Critical’ Cyber Threshold After Finding Zero-Days</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-02</span>
-  </div>
-  <p class='summary'>The designation applies when a model can independently find and exploit zero-day vulnerabilities across many well-defended systems. The post OpenAI’s Astra Crosses ‘Critical’ Cyber Threshold After Finding Zero-Days appeared first on SecurityWeek .</p>
 
 </article>
 
@@ -346,23 +328,73 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
         </article>
 
-        <article class="card card-zeroday">
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/" target="_blank" rel="noopener">Critical Elementor Pro flaw exploited to take over WordPress sites</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-32475</code>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-03</span>
+  </div>
+  <p class='summary'>A recently patched critical vulnerability (CVE-2026-32475) in the Elementor Pro plugin for WordPress is being exploited in attacks that deliver a webshell payload and execute arbitrary commands on the server. [...]</p>
+
+</article>
+
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3m5p-2c4r-xxw2" target="_blank" rel="noopener">fastify vulnerable to X-Forwarded-* spoofing under trustProxy hop-count</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-78x9-fhhx-v2g6" target="_blank" rel="noopener">CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-16732</code>
+            <code class="cve">CVE-2026-73846</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
+            <span>2026-09-03</span>
           </div>
-          <p class='summary'>## Impact
+          <p class='summary'>## Summary
 
-The fix for [CVE-2026-3635](https://www.cve.org/CVERecord?id=CVE-2026-3635) ([GHSA-444r-cwp2-x5xf](https://github.com/fastify/fastify/security/advisories/GHSA-444r-cwp2-x5xf)) added a `proxyFn(socket.remoteAddress, 0)` guard on the `X-Forwarded-*` reads in `request.host`, `request.protocol`, `request.hostname`, `request.ip`, and `request.ips`. That guard closes the IP, CIDR, and custom-…</p>
+The response cache derives its key from an ambiguous string serialization of the request parameters. `canonicalizeParams` joins sorted `${key}=${value}` pairs with `&amp;` and does not escape `&amp;`, `=`, or the `|` field separators used in `buildCacheKey`. Two **different** logical parameter sets can therefore serialize to the **same** key and share one cache entry. Because the cached value …</p>
 
         </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6f9w-9hf2-5rg3" target="_blank" rel="noopener">CKAN MCP Server: Information disclosure via verbose error reflection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-73844</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>## Summary
+
+Error paths reflect raw upstream response bodies and internal exception messages back to the caller instead of a sanitized, generic message. When the server is pointed at (or redirected/SSRF&#x27;d to) a host that returns a non-CKAN response, or when an internal exception occurs, the caller receives verbatim upstream content and internal detail (hostnames, internal IPs, DB errors, stack fra…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/" target="_blank" rel="noopener">Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-19949</code>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-03</span>
+  </div>
+  <p class='summary'>The high-severity SQL injection flaw (CVE-2026-19949) could allow unauthenticated attackers to achieve remote code execution. The post Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability appeared first on SecurityWeek .</p>
+
+</article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -735,148 +767,6 @@ The library validates one resolved IP address through resolveDNSHost, but later 
           <p class='summary'>There is an SSRF vulnerability in NLTK 3.9.4&#x27;s network URL validation. The validate_network_url() function in nltk/pathsec.py fails open when DNS resolution returns an error.
 
 The _resolve_hostname() helper at lines 193-234 catches OSError and ValueError during socket.getaddrinfo() and returns an empty list []. When this happens, the validation loop in validate_network_url() iterates over nothing …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6j4c-mgqr-qv76" target="_blank" rel="noopener">Kirby: Access to image files outside of the site root via path traversal in the media handling</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-75592</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### TL;DR
-
-This vulnerability affects all Kirby sites that are deployed in a way that their `index` root on the server is next to a second directory that is read-accessible to PHP and shares the same name prefix (such as the site with the index root `/var/www/site` being next to `/var/www/site2`).
-
-It was possible to create and access thumbnails from media files within such sibling directories tha…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cxq5-97v7-87j8" target="_blank" rel="noopener">Orval: Generation-time SSRF + remote/local file inclusion via unrestricted $ref</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62680</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-
-Orval resolves OpenAPI `$ref`s by fetching remote `http(s)` URLs and reading local files (including
-absolute / out-of-tree paths), inlining the referenced schema into the generated client. Running
-`orval` on a spec whose `$ref` points at an attacker/internal URL or an arbitrary local file yields
-SSRF, remote file inclusion, and local file inclusion. Verified on 8.19.0. This is a diffe…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6mr6-jvcr-2f25" target="_blank" rel="noopener">Orval: Import-time RCE via schema property name -&gt; computed-property-key injection in the zod client</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-71866</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-
-orval&#x27;s zod client emits each schema property name as a double-quoted key in the generated zod.object({...})
-WITHOUT escaping the double quote. A &quot; in a property name closes the key and lands in object-literal
-context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- which
-is at MODULE IMPORT (the `export const X = zod.object({...})` executes …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-83x6-42hr-jc76" target="_blank" rel="noopener">CKAN MCP Server: MQA server allowlist bypass via unanchored regex (`isValidMqaServer`)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-73845</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>## Summary
-
-The `ckan_get_mqa_quality` and `ckan_get_mqa_quality_details` tools restrict their `server_url` argument to `dati.gov.it` via a regular expression. The regex is anchored only at the start and places no boundary after the host, so any URL whose host merely **begins with** `dati.gov.it` — or that uses `dati.gov.it` as URL *userinfo* before an `@` — passes validation while actually target…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fj2p-qj2f-74v5" target="_blank" rel="noopener">Grav: Remote code execution via unrestricted callable in Blueprint::dynamicData()</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-64850</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-An account with the `admin.pages` permission (or `api.pages.write`) can run shell
-commands on the server. The command executes whenever anyone — including an
-unauthenticated visitor — opens the page.
-
-### Details
-`Blueprint::dynamicData()` (system/src/Grav/Common/Data/Blueprint.php:426) passes
-a `Class::method` string and its arguments straight to `call_user_func_array()`
-with no allow…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gxmj-r5rf-ggwq" target="_blank" rel="noopener">elFinder: ZIP extraction bypasses uploadDeny MIME filter allowing PHP file upload (RCE)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-81891</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-
-elFinder provides `uploadDeny` and `uploadAllow` options in its connector configuration to restrict which MIME types may be uploaded. When `uploadDeny` includes `text/x-php`, direct upload of `.php`, `.phtml`, and `.phar` files is correctly blocked. However, the `extract` command (ZIP decompression) internally calls `checkExtractItems()`, which invokes `mimetypeInternalDetect()` direc…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-275h-v5h9-vr82" target="_blank" rel="noopener">Siyuan: Authenticated path traversal in /snippets/ static handler (serveSnippets) leaks conf/conf.json secrets and siyuan.db</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59832</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>Reporter: Cavan Loughran, Celvex Group Inc.
-
-Summary
--------
-The /snippets/*filepath route handler serveSnippets in kernel/server/serve.go performs a bare filepath.Join(util.SnippetsPath, filePath) on the single-decoded c.Request.URL.Path and serves the result with c.File(), with NO IsSubPath containment and NO IsSensitivePath denylist - unlike the sibling /export/ (serveExport) and /appearance/ (…</p>
 
         </article>
 

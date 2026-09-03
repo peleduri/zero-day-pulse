@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-03 10:15 UTC &nbsp;|&nbsp; **Total:** 43 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 28 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-03 15:22 UTC &nbsp;|&nbsp; **Total:** 38 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Researcher Releases FalconFlank PoC Showing Privilege Escalation in CrowdStrike Falcon
+## 3. 🟠 Zero-Day — Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://www.securityweek.com/cisco-warns-of-unpatched-secure-email-flaws-patches-critical-switch-vulnerabilities/>
+
+> Publicly disclosed S/MIME flaws could expose encrypted email content, while critical IOS XR and Nexus bugs could enable remote code execution and authentication bypass. The post Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — Researcher Releases FalconFlank PoC Showing Privilege Escalation in CrowdStrike Falcon
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://thehackernews.com/2026/09/researcher-releases-falconflank-poc.html>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Critical SonicWall SMA1000 Vulnerabilities CVE-2026-83548, CVE-2026-83549 Exploited in the Wild
+## 5. 🟠 Zero-Day — Critical SonicWall SMA1000 Vulnerabilities CVE-2026-83548, CVE-2026-83549 Exploited in the Wild
 
 **CVE:** `CVE-2026-83548` | `CVE-2026-83549` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://www.rapid7.com/blog/post/etr-critical-sonicwall-sma1000-vulnerabilities-cve-2026-83548-cve-2026-83549-exploited-in-the-wild>
@@ -40,27 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html>
-
-> Manifold Security has disclosed eight security flaws across seven command-line AI coding agents in which a repository&#x27;s own Git configuration names a command that the agent runs on the developer&#x27;s machine, four of them still unpatched at publication.
-
-The command executes as the user, outside the agent&#x27;s sandbox and without an approval prompt, and exploitation requires the repositor…
-
----
-
-## 6. 🟠 Zero-Day — OpenAI’s Astra Crosses ‘Critical’ Cyber Threshold After Finding Zero-Days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://www.securityweek.com/openais-astra-becomes-first-model-to-cross-critical-cybersecurity-threshold/>
-
-> The designation applies when a model can independently find and exploit zero-day vulnerabilities across many well-defended systems. The post OpenAI’s Astra Crosses ‘Critical’ Cyber Threshold After Finding Zero-Days appeared first on SecurityWeek .
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -69,7 +58,7 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -78,7 +67,7 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -87,7 +76,7 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -96,7 +85,7 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -105,7 +94,7 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -114,7 +103,7 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 13. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -123,7 +112,7 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 14. 🟠 Zero-Day — Grav: Decompression Bomb via ZipArchiver - Missing Extraction Limits
+## 13. 🟠 Zero-Day — Grav: Decompression Bomb via ZipArchiver - Missing Extraction Limits
 
 **CVE:** `CVE-2026-61690` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-928x-9mpw-8h56>
@@ -133,18 +122,47 @@ The command executes as the user, outside the agent&#x27;s sandbox and without a
 
 ---
 
-## 15. 🟠 Zero-Day — fastify vulnerable to X-Forwarded-* spoofing under trustProxy hop-count
+## 14. 🟡 High Severity — Critical Elementor Pro flaw exploited to take over WordPress sites
 
-**CVE:** `CVE-2026-16732` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-3m5p-2c4r-xxw2>
+**CVE:** `CVE-2026-32475` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/>
 
-> ## Impact
-
-The fix for [CVE-2026-3635](https://www.cve.org/CVERecord?id=CVE-2026-3635) ([GHSA-444r-cwp2-x5xf](https://github.com/fastify/fastify/security/advisories/GHSA-444r-cwp2-x5xf)) added a `proxyFn(socket.remoteAddress, 0)` guard on the `X-Forwarded-*` reads in `request.host`, `request.protocol`, `request.hostname`, `request.ip`, and `request.ips`. That guard closes the IP, CIDR, and custom-…
+> A recently patched critical vulnerability (CVE-2026-32475) in the Elementor Pro plugin for WordPress is being exploited in attacks that deliver a webshell payload and execute arbitrary commands on the server. [...]
 
 ---
 
-## 16. 🟡 High Severity — CISA Adds Seven Exploited Flaws as Attackers Deploy Reverse Shells and Crypto Miners
+## 15. 🟡 High Severity — CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning
+
+**CVE:** `CVE-2026-73846` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-78x9-fhhx-v2g6>
+
+> ## Summary
+
+The response cache derives its key from an ambiguous string serialization of the request parameters. `canonicalizeParams` joins sorted `${key}=${value}` pairs with `&amp;` and does not escape `&amp;`, `=`, or the `|` field separators used in `buildCacheKey`. Two **different** logical parameter sets can therefore serialize to the **same** key and share one cache entry. Because the cache…
+
+---
+
+## 16. 🟡 High Severity — CKAN MCP Server: Information disclosure via verbose error reflection
+
+**CVE:** `CVE-2026-73844` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-6f9w-9hf2-5rg3>
+
+> ## Summary
+
+Error paths reflect raw upstream response bodies and internal exception messages back to the caller instead of a sanitized, generic message. When the server is pointed at (or redirected/SSRF&#x27;d to) a host that returns a non-CKAN response, or when an internal exception occurs, the caller receives verbatim upstream content and internal detail (hostnames, internal IPs, DB errors, stac…
+
+---
+
+## 17. 🟡 High Severity — Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability
+
+**CVE:** `CVE-2026-19949` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/>
+
+> The high-severity SQL injection flaw (CVE-2026-19949) could allow unauthenticated attackers to achieve remote code execution. The post Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability appeared first on SecurityWeek .
+
+---
+
+## 18. 🟡 High Severity — CISA Adds Seven Exploited Flaws as Attackers Deploy Reverse Shells and Crypto Miners
 
 **CVE:** `CVE-2026-83548` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html>
@@ -158,7 +176,7 @@ The vulnerabilities are as follows -
 
 ---
 
-## 17. 🟡 High Severity — OpenChoreo: Authenticated OS command injection via OpenChoreo Workflow Plane templates enables code execution in privileged pods
+## 19. 🟡 High Severity — OpenChoreo: Authenticated OS command injection via OpenChoreo Workflow Plane templates enables code execution in privileged pods
 
 **CVE:** `CVE-2026-73667` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-2mw5-23gm-pccq>
@@ -170,7 +188,7 @@ An authenticated user with permission to configure and trigger an affected workf
 
 ---
 
-## 18. 🟡 High Severity — OpenChoreo: Unauthenticated build/workflow trigger via git-provider confusion (webhook signature bypass)
+## 20. 🟡 High Severity — OpenChoreo: Unauthenticated build/workflow trigger via git-provider confusion (webhook signature bypass)
 
 **CVE:** `CVE-2026-73840` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-c5f6-2rm9-2w8g>
@@ -180,7 +198,7 @@ The OpenChoreo autobuild webhook endpoint (`POST /api/v1alpha1/autobuild`) selec
 
 ---
 
-## 19. 🟡 High Severity — OpenChoreo: Cross-project command execution and wirelog view access via OpenChoreo openchoreo-api exec and wirelogs endpoints
+## 21. 🟡 High Severity — OpenChoreo: Cross-project command execution and wirelog view access via OpenChoreo openchoreo-api exec and wirelogs endpoints
 
 **CVE:** `CVE-2026-73841` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-52gf-6rpq-fgmx>
@@ -191,7 +209,7 @@ The OpenChoreo API server (`openchoreo-api`) authorized requests to its exec and
 
 ---
 
-## 20. 🟡 High Severity — OpenChoreo: Unauthenticated access to data-plane operations via OpenChoreo cluster-gateway management APIs
+## 22. 🟡 High Severity — OpenChoreo: Unauthenticated access to data-plane operations via OpenChoreo cluster-gateway management APIs
 
 **CVE:** `CVE-2026-73843` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-qh9r-j7rp-4x2m>
@@ -201,7 +219,7 @@ The OpenChoreo control-plane **cluster-gateway** served its caller-facing manage
 
 ---
 
-## 21. 🟡 High Severity — SeaweedFS: Filer JWT allowed_prefixes literal prefix match allows cross-tenant access to sibling paths
+## 23. 🟡 High Severity — SeaweedFS: Filer JWT allowed_prefixes literal prefix match allows cross-tenant access to sibling paths
 
 **CVE:** `CVE-2026-72921` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-gv5w-hfx8-8cwq>
@@ -213,7 +231,7 @@ In a multi-tenant deployment this lets the holder of one tenant&#x27;s token acc
 
 ---
 
-## 22. 🟡 High Severity — Scrapy: S3DownloadHandler sends signed S3 requests over plaintext HTTP by default
+## 24. 🟡 High Severity — Scrapy: S3DownloadHandler sends signed S3 requests over plaintext HTTP by default
 
 **CVE:** `CVE-2026-84366` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-76g3-c3x4-crvx>
@@ -228,7 +246,7 @@ Vulnerable code…
 
 ---
 
-## 23. 🟡 High Severity — Omnigent Guardrail policy bypass: shell-command parser fails open in policies/builtins/_shell.py
+## 25. 🟡 High Severity — Omnigent Guardrail policy bypass: shell-command parser fails open in policies/builtins/_shell.py
 
 **CVE:** `CVE-2026-62676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-7mqg-cx4g-x2rf>
@@ -239,7 +257,7 @@ Vulnerable code…
 
 ---
 
-## 24. 🟡 High Severity — Plate: SSRF with response disclosure in DOCX image embedding
+## 26. 🟡 High Severity — Plate: SSRF with response disclosure in DOCX image embedding
 
 **CVE:** `CVE-2026-65842` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-4q39-2jhr-7qx8>
@@ -254,7 +272,7 @@ Applications are affected when they use `@platejs/docx-io` to conv…
 
 ---
 
-## 25. 🟡 High Severity — Hurl: Cookies in Cookies section leak when redirecting to a different host
+## 27. 🟡 High Severity — Hurl: Cookies in Cookies section leak when redirecting to a different host
 
 **CVE:** `CVE-2026-63481` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-7w2g-9mf9-324m>
@@ -270,7 +288,7 @@ When following a redirect to a different host, Hurl correctly strips security-se
 
 ---
 
-## 26. 🟡 High Severity — Mail: Email address spoofing via malformed RFC 2047 encoded-words
+## 28. 🟡 High Severity — Mail: Email address spoofing via malformed RFC 2047 encoded-words
 
 **CVE:** `CVE-2026-63435` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-mvxr-6m87-mv2q>
@@ -281,7 +299,7 @@ Mail::Utilities.q_value_decode and Mail::Utilities.b_value_decode decoded only t
 
 ---
 
-## 27. 🟡 High Severity — Grav: 2FA Bypass via 'login.regenerate2FASecret' - Secret Rotation During Pending Challenge
+## 29. 🟡 High Severity — Grav: 2FA Bypass via 'login.regenerate2FASecret' - Secret Rotation During Pending Challenge
 
 **CVE:** `CVE-2026-62669` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-7mgc-c7pq-3rr3>
@@ -291,7 +309,7 @@ When 2FA is enabled on an account, submitting correct credentials authenticates 
 
 ---
 
-## 28. 🟡 High Severity — Omnigent: Unvalidated os_env.cwd in agent bundle yields arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE
+## 30. 🟡 High Severity — Omnigent: Unvalidated os_env.cwd in agent bundle yields arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE
 
 **CVE:** `CVE-2026-62677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-p8rw-8qj3-hf33>
@@ -302,7 +320,7 @@ An authenticated, non-admin user can obtain **arbitrary host-filesystem read/wri
 
 ---
 
-## 29. 🟡 High Severity — Omnigent: Shared Agent Bundle Overwrite Leads to Authenticated Runner RCE
+## 31. 🟡 High Severity — Omnigent: Shared Agent Bundle Overwrite Leads to Authenticated Runner RCE
 
 **CVE:** `CVE-2026-62674` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-jrrm-9hc7-2v3h>
@@ -315,7 +333,7 @@ Shared/template agents are shown as not MCP-editable, but this upload path still
 
 ---
 
-## 30. 🟡 High Severity — Grav: Twig sandbox config exfiltration via grav.offsetGet + dump filter (CVE-2026-44738 bypass)
+## 32. 🟡 High Severity — Grav: Twig sandbox config exfiltration via grav.offsetGet + dump filter (CVE-2026-44738 bypass)
 
 **CVE:** `CVE-2026-61842` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-mc5q-6hpj-rp7j>
@@ -326,7 +344,7 @@ The Twig content sandbox replaces `config` with the redacted `SandboxConfig` fac
 
 ---
 
-## 31. 🟡 High Severity — link-preview-js DNS Rebinding SSRF Bypass / Incomplete Fix for CVE-2026-43897
+## 33. 🟡 High Severity — link-preview-js DNS Rebinding SSRF Bypass / Incomplete Fix for CVE-2026-43897
 
 **CVE:** `CVE-2026-61704` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-cpjf-6666-r8fx>
@@ -338,7 +356,7 @@ The library validates one resolved IP address through resolveDNSHost, but later 
 
 ---
 
-## 32. 🟡 High Severity — Hackers exploit Sangoma Switchvox flaw to deploy reverse shells
+## 34. 🟡 High Severity — Hackers exploit Sangoma Switchvox flaw to deploy reverse shells
 
 **CVE:** `CVE-2026-9586` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/>
@@ -347,7 +365,7 @@ The library validates one resolved IP address through resolveDNSHost, but later 
 
 ---
 
-## 33. 🟡 High Severity — Hackers exploit critical JFrog Artifactory flaw to forge admin tokens
+## 35. 🟡 High Severity — Hackers exploit critical JFrog Artifactory flaw to forge admin tokens
 
 **CVE:** `CVE-2026-82329` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/>
@@ -356,7 +374,7 @@ The library validates one resolved IP address through resolveDNSHost, but later 
 
 ---
 
-## 34. 🟡 High Severity — fast-uri vulnerable to server-side request forgery via repeated hostname percent-decoding
+## 36. 🟡 High Severity — fast-uri vulnerable to server-side request forgery via repeated hostname percent-decoding
 
 **CVE:** `CVE-2026-75899` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-fph4-wmhf-6fwf>
@@ -367,7 +385,7 @@ The library validates one resolved IP address through resolveDNSHost, but later 
 
 ---
 
-## 35. 🟡 High Severity — NLTK: SSRF Fail-Open in validate_network_url() via DNS Resolution Failure
+## 37. 🟡 High Severity — NLTK: SSRF Fail-Open in validate_network_url() via DNS Resolution Failure
 
 **CVE:** `CVE-2026-63311` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-3gqm-fcw5-w839>
@@ -378,100 +396,7 @@ The _resolve_hostname() helper at lines 193-234 catches OSError and ValueError d
 
 ---
 
-## 36. 🟡 High Severity — Kirby: Access to image files outside of the site root via path traversal in the media handling
-
-**CVE:** `CVE-2026-75592` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-6j4c-mgqr-qv76>
-
-> ### TL;DR
-
-This vulnerability affects all Kirby sites that are deployed in a way that their `index` root on the server is next to a second directory that is read-accessible to PHP and shares the same name prefix (such as the site with the index root `/var/www/site` being next to `/var/www/site2`).
-
-It was possible to create and access thumbnails from media files within such sibling directories tha…
-
----
-
-## 37. 🟡 High Severity — Orval: Generation-time SSRF + remote/local file inclusion via unrestricted $ref
-
-**CVE:** `CVE-2026-62680` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-cxq5-97v7-87j8>
-
-> ### Summary
-
-Orval resolves OpenAPI `$ref`s by fetching remote `http(s)` URLs and reading local files (including
-absolute / out-of-tree paths), inlining the referenced schema into the generated client. Running
-`orval` on a spec whose `$ref` points at an attacker/internal URL or an arbitrary local file yields
-SSRF, remote file inclusion, and local file inclusion. Verified on 8.19.0. This is a diffe…
-
----
-
-## 38. 🟡 High Severity — Orval: Import-time RCE via schema property name -> computed-property-key injection in the zod client
-
-**CVE:** `CVE-2026-71866` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-6mr6-jvcr-2f25>
-
-> ### Summary
-
-orval&#x27;s zod client emits each schema property name as a double-quoted key in the generated zod.object({...})
-WITHOUT escaping the double quote. A &quot; in a property name closes the key and lands in object-literal
-context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- which
-is at MODULE IMPORT (the `export const X = zod.object({...})`…
-
----
-
-## 39. 🟡 High Severity — CKAN MCP Server: MQA server allowlist bypass via unanchored regex (`isValidMqaServer`)
-
-**CVE:** `CVE-2026-73845` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-83x6-42hr-jc76>
-
-> ## Summary
-
-The `ckan_get_mqa_quality` and `ckan_get_mqa_quality_details` tools restrict their `server_url` argument to `dati.gov.it` via a regular expression. The regex is anchored only at the start and places no boundary after the host, so any URL whose host merely **begins with** `dati.gov.it` — or that uses `dati.gov.it` as URL *userinfo* before an `@` — passes validation while actually target…
-
----
-
-## 40. 🟡 High Severity — Grav: Remote code execution via unrestricted callable in Blueprint::dynamicData()
-
-**CVE:** `CVE-2026-64850` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-fj2p-qj2f-74v5>
-
-> ### Summary
-An account with the `admin.pages` permission (or `api.pages.write`) can run shell
-commands on the server. The command executes whenever anyone — including an
-unauthenticated visitor — opens the page.
-
-### Details
-`Blueprint::dynamicData()` (system/src/Grav/Common/Data/Blueprint.php:426) passes
-a `Class::method` string and its arguments straight to `call_user_func_array()`
-with no allow…
-
----
-
-## 41. 🟡 High Severity — elFinder: ZIP extraction bypasses uploadDeny MIME filter allowing PHP file upload (RCE)
-
-**CVE:** `CVE-2026-81891` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-gxmj-r5rf-ggwq>
-
-> ### Summary
-
-elFinder provides `uploadDeny` and `uploadAllow` options in its connector configuration to restrict which MIME types may be uploaded. When `uploadDeny` includes `text/x-php`, direct upload of `.php`, `.phtml`, and `.phar` files is correctly blocked. However, the `extract` command (ZIP decompression) internally calls `checkExtractItems()`, which invokes `mimetypeInternalDetect()` direc…
-
----
-
-## 42. 🟡 High Severity — Siyuan: Authenticated path traversal in /snippets/ static handler (serveSnippets) leaks conf/conf.json secrets and siyuan.db
-
-**CVE:** `CVE-2026-59832` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-275h-v5h9-vr82>
-
-> Reporter: Cavan Loughran, Celvex Group Inc.
-
-Summary
--------
-The /snippets/*filepath route handler serveSnippets in kernel/server/serve.go performs a bare filepath.Join(util.SnippetsPath, filePath) on the single-decoded c.Request.URL.Path and serves the result with c.File(), with NO IsSubPath containment and NO IsSensitivePath denylist - unlike the sibling /export/ (serveExport) and /appearance/ (…
-
----
-
-## 43. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 38. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

