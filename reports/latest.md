@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-03 15:22 UTC &nbsp;|&nbsp; **Total:** 38 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-03 20:13 UTC &nbsp;|&nbsp; **Total:** 44 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 32 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -40,16 +40,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Critical SonicWall SMA1000 Vulnerabilities CVE-2026-83548, CVE-2026-83549 Exploited in the Wild
-
-**CVE:** `CVE-2026-83548` | `CVE-2026-83549` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://www.rapid7.com/blog/post/etr-critical-sonicwall-sma1000-vulnerabilities-cve-2026-83548-cve-2026-83549-exploited-in-the-wild>
-
-> Overview On September 1, 2026, SonicWall disclosed two vulnerabilities affecting SonicWall SMA1000 appliances that the vendor says are being actively exploited in the wild. The vulnerabilities, CVE-2026-83548 and CVE-2026-83549 , can be chained to achieve unauthenticated remote code execution (RCE) on affected appliances. CVE-2026-83548 is a critical pre-authentication server-side request forgery …
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +49,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +58,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +67,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +76,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,7 +85,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -103,7 +94,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -112,7 +103,7 @@
 
 ---
 
-## 13. 🟠 Zero-Day — Grav: Decompression Bomb via ZipArchiver - Missing Extraction Limits
+## 12. 🟠 Zero-Day — Grav: Decompression Bomb via ZipArchiver - Missing Extraction Limits
 
 **CVE:** `CVE-2026-61690` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-928x-9mpw-8h56>
@@ -122,7 +113,119 @@
 
 ---
 
-## 14. 🟡 High Severity — Critical Elementor Pro flaw exploited to take over WordPress sites
+## 13. 🟡 High Severity — ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `</textarea/>` solidus close
+
+**CVE:** `CVE-2026-63670` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-jxwj-j7wr-gfrw>
+
+> ### Summary
+A mutation-XSS / allowedTags bypass: when `textarea` (or `xmp`) is included in `allowedTags`, an input containing a literal `&lt;/textarea/&gt;` (a solidus right after the RCDATA end-tag name) lets non-allowed markup such as `&lt;img src=x onerror=…&gt;` pass through `sanitizeHtml()` **live and unescaped**, even though `img`/`onerror` are not in the allowlist. A spec-compliant browser …
+
+---
+
+## 14. 🟡 High Severity — TOON: Prototype pollution when decoding untrusted TOON input
+
+**CVE:** `CVE-2026-82404` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-p95v-992w-h6c3>
+
+> ### Summary
+
+Decoding attacker-controlled TOON containing a `__proto__`, `constructor`, or `prototype` key wrote through the object&#x27;s prototype chain instead of creating an own property, polluting `Object.prototype` for the whole runtime. The `expandPaths: &#x27;safe&#x27;` path (dotted keys such as `a.__proto__.x`) was the strongest vector; plain nested objects, tabular rows, and quoted keys…
+
+---
+
+## 15. 🟡 High Severity — Semaphore UI: Manager-to-owner privilege escalation via custom-role slug collision
+
+**CVE:** `CVE-2026-73293` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-cxvf-gvfq-36w2>
+
+> ## Summary
+
+Semaphore resolves a project member&#x27;s effective permissions in `ProjectMiddleware` by looking up a role row whose slug matches the member&#x27;s assigned role, and overwrites the built-in permission bitmask with that row&#x27;s value. A member holding the built-in `manager` role creates a custom project role through `POST /api/project/{id}/roles`, a route gated only by the `CanMan…
+
+---
+
+## 16. 🟡 High Severity — Orval: RCE via OpenAPI path -> unescaped request-URL template literal (backtick breakout)
+
+**CVE:** `CVE-2026-62681` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-fg9p-mrxr-hvq7>
+
+> ### Summary
+
+Orval emits the OpenAPI path into the generated request URL as a TEMPLATE LITERAL (`` `/users/...` ``) without escaping the backtick character. A path containing a backtick closes the template literal and injects a concatenation expression that is evaluated when the generated URL/request/key function is called, executing attacker-controlled code. Affects the axios, fetch, react-query,…
+
+---
+
+## 17. 🟡 High Severity — Orval: Import-time RCE via query parameter name -> computed-property-key injection in the zod cli
+
+**CVE:** `CVE-2026-71865` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-653q-5476-x79g>
+
+> ### Summary
+
+orval&#x27;s zod client emits each query parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A &quot; in the query parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const O…
+
+---
+
+## 18. 🟡 High Severity — Orval: Import-time RCE via header parameter name -> computed-property-key injection in the zod client
+
+**CVE:** `CVE-2026-71864` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-6437-gxhq-pqv8>
+
+> ### Summary
+
+orval&#x27;s zod client emits each header parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A &quot; in the header parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const…
+
+---
+
+## 19. 🟡 High Severity — VictoriaMetrics vmrestore: Path traversal via crafted backup part names escapes restore root
+
+**CVE:** `CVE-2026-61625` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-8q3c-rjr9-xxrp>
+
+> ### Summary
+The VictoriaMetrics `vmrestore` utility does not validate backup part path components before writing restored files to the local filesystem. An attacker who can provide or modify a backup source can craft object names containing `..` path components that cause vmrestore to write files outside the intended `-storageDataPath` restore root, subject to the permissions of the `vmrestore` pr…
+
+---
+
+## 20. 🟡 High Severity — Cilium may unexpectedly allow ingress traffic from the local namespace when a Kubernetes NetworkPolicy is configured with an ipBlock match
+
+**CVE:** `CVE-2026-56743` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-fm8w-2m5w-9j7r>
+
+> ### Impact
+
+Standard Kubernetes `NetworkPolicy` specifications using CIDR-based `ipBlock` rules without pod or namespace selectors erroneously generate a wildcard namespace allow rule under specific cluster configurations.
+
+When Cilium deployment is configured with a specific custom `clusterName` (rather than the default `&quot;any&quot;` value), the parser incorrectly instantiates a pod selector …
+
+---
+
+## 21. 🟡 High Severity — unstructured: Server-Side Request Forgery in the URL-based partitioning
+
+**CVE:** `CVE-2026-71428` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://github.com/advisories/GHSA-4mvj-m6j5-pmf7>
+
+> ### Summary
+
+Server-Side Request Forgery in `unstructured`. The `url=` argument of `partition()`, `partition_html()`, and `partition_md()` is fetched via `requests.get()` with no host validation. The response body is returned as `Element` text, so this is a **full-read SSRF** — attackers reach loopback admin APIs, internal HTTP services, and cloud metadata endpoints, and read the response. 
+
+`unst…
+
+---
+
+## 22. 🟡 High Severity — Critical Cisco Nexus 9000 Flaw Lets Unauthenticated Remote Attackers Run Code as Root
+
+**CVE:** `CVE-2026-20212` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-03
+**Reference:** <https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html>
+
+> Cisco has released patches to address a critical security flaw affecting 10 Silicon One-based Nexus 9000 switches that could allow an unauthenticated, remote attacker to execute code as root, alongside an IOS XR hardening release bundling 7 umbrella CVEs, 2 of which are rated 9.8, with no workaround for any IOS XR version.
+
+The Nexus vulnerability, tracked as CVE-2026-20212 (CVSS score: 9.8), is
+
+---
+
+## 23. 🟡 High Severity — Critical Elementor Pro flaw exploited to take over WordPress sites
 
 **CVE:** `CVE-2026-32475` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/>
@@ -131,7 +234,7 @@
 
 ---
 
-## 15. 🟡 High Severity — CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning
+## 24. 🟡 High Severity — CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning
 
 **CVE:** `CVE-2026-73846` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-78x9-fhhx-v2g6>
@@ -142,7 +245,7 @@ The response cache derives its key from an ambiguous string serialization of the
 
 ---
 
-## 16. 🟡 High Severity — CKAN MCP Server: Information disclosure via verbose error reflection
+## 25. 🟡 High Severity — CKAN MCP Server: Information disclosure via verbose error reflection
 
 **CVE:** `CVE-2026-73844` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-6f9w-9hf2-5rg3>
@@ -153,7 +256,7 @@ Error paths reflect raw upstream response bodies and internal exception messages
 
 ---
 
-## 17. 🟡 High Severity — Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability
+## 26. 🟡 High Severity — Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability
 
 **CVE:** `CVE-2026-19949` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/>
@@ -162,7 +265,7 @@ Error paths reflect raw upstream response bodies and internal exception messages
 
 ---
 
-## 18. 🟡 High Severity — CISA Adds Seven Exploited Flaws as Attackers Deploy Reverse Shells and Crypto Miners
+## 27. 🟡 High Severity — CISA Adds Seven Exploited Flaws as Attackers Deploy Reverse Shells and Crypto Miners
 
 **CVE:** `CVE-2026-83548` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html>
@@ -176,7 +279,7 @@ The vulnerabilities are as follows -
 
 ---
 
-## 19. 🟡 High Severity — OpenChoreo: Authenticated OS command injection via OpenChoreo Workflow Plane templates enables code execution in privileged pods
+## 28. 🟡 High Severity — OpenChoreo: Authenticated OS command injection via OpenChoreo Workflow Plane templates enables code execution in privileged pods
 
 **CVE:** `CVE-2026-73667` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-2mw5-23gm-pccq>
@@ -188,7 +291,7 @@ An authenticated user with permission to configure and trigger an affected workf
 
 ---
 
-## 20. 🟡 High Severity — OpenChoreo: Unauthenticated build/workflow trigger via git-provider confusion (webhook signature bypass)
+## 29. 🟡 High Severity — OpenChoreo: Unauthenticated build/workflow trigger via git-provider confusion (webhook signature bypass)
 
 **CVE:** `CVE-2026-73840` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-c5f6-2rm9-2w8g>
@@ -198,7 +301,7 @@ The OpenChoreo autobuild webhook endpoint (`POST /api/v1alpha1/autobuild`) selec
 
 ---
 
-## 21. 🟡 High Severity — OpenChoreo: Cross-project command execution and wirelog view access via OpenChoreo openchoreo-api exec and wirelogs endpoints
+## 30. 🟡 High Severity — OpenChoreo: Cross-project command execution and wirelog view access via OpenChoreo openchoreo-api exec and wirelogs endpoints
 
 **CVE:** `CVE-2026-73841` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-52gf-6rpq-fgmx>
@@ -209,7 +312,7 @@ The OpenChoreo API server (`openchoreo-api`) authorized requests to its exec and
 
 ---
 
-## 22. 🟡 High Severity — OpenChoreo: Unauthenticated access to data-plane operations via OpenChoreo cluster-gateway management APIs
+## 31. 🟡 High Severity — OpenChoreo: Unauthenticated access to data-plane operations via OpenChoreo cluster-gateway management APIs
 
 **CVE:** `CVE-2026-73843` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-qh9r-j7rp-4x2m>
@@ -219,7 +322,7 @@ The OpenChoreo control-plane **cluster-gateway** served its caller-facing manage
 
 ---
 
-## 23. 🟡 High Severity — SeaweedFS: Filer JWT allowed_prefixes literal prefix match allows cross-tenant access to sibling paths
+## 32. 🟡 High Severity — SeaweedFS: Filer JWT allowed_prefixes literal prefix match allows cross-tenant access to sibling paths
 
 **CVE:** `CVE-2026-72921` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-gv5w-hfx8-8cwq>
@@ -231,7 +334,7 @@ In a multi-tenant deployment this lets the holder of one tenant&#x27;s token acc
 
 ---
 
-## 24. 🟡 High Severity — Scrapy: S3DownloadHandler sends signed S3 requests over plaintext HTTP by default
+## 33. 🟡 High Severity — Scrapy: S3DownloadHandler sends signed S3 requests over plaintext HTTP by default
 
 **CVE:** `CVE-2026-84366` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-76g3-c3x4-crvx>
@@ -246,7 +349,7 @@ Vulnerable code…
 
 ---
 
-## 25. 🟡 High Severity — Omnigent Guardrail policy bypass: shell-command parser fails open in policies/builtins/_shell.py
+## 34. 🟡 High Severity — Omnigent Guardrail policy bypass: shell-command parser fails open in policies/builtins/_shell.py
 
 **CVE:** `CVE-2026-62676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-7mqg-cx4g-x2rf>
@@ -257,7 +360,7 @@ Vulnerable code…
 
 ---
 
-## 26. 🟡 High Severity — Plate: SSRF with response disclosure in DOCX image embedding
+## 35. 🟡 High Severity — Plate: SSRF with response disclosure in DOCX image embedding
 
 **CVE:** `CVE-2026-65842` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-4q39-2jhr-7qx8>
@@ -272,7 +375,7 @@ Applications are affected when they use `@platejs/docx-io` to conv…
 
 ---
 
-## 27. 🟡 High Severity — Hurl: Cookies in Cookies section leak when redirecting to a different host
+## 36. 🟡 High Severity — Hurl: Cookies in Cookies section leak when redirecting to a different host
 
 **CVE:** `CVE-2026-63481` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-7w2g-9mf9-324m>
@@ -288,7 +391,7 @@ When following a redirect to a different host, Hurl correctly strips security-se
 
 ---
 
-## 28. 🟡 High Severity — Mail: Email address spoofing via malformed RFC 2047 encoded-words
+## 37. 🟡 High Severity — Mail: Email address spoofing via malformed RFC 2047 encoded-words
 
 **CVE:** `CVE-2026-63435` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-mvxr-6m87-mv2q>
@@ -299,7 +402,7 @@ Mail::Utilities.q_value_decode and Mail::Utilities.b_value_decode decoded only t
 
 ---
 
-## 29. 🟡 High Severity — Grav: 2FA Bypass via 'login.regenerate2FASecret' - Secret Rotation During Pending Challenge
+## 38. 🟡 High Severity — Grav: 2FA Bypass via 'login.regenerate2FASecret' - Secret Rotation During Pending Challenge
 
 **CVE:** `CVE-2026-62669` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-7mgc-c7pq-3rr3>
@@ -309,7 +412,7 @@ When 2FA is enabled on an account, submitting correct credentials authenticates 
 
 ---
 
-## 30. 🟡 High Severity — Omnigent: Unvalidated os_env.cwd in agent bundle yields arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE
+## 39. 🟡 High Severity — Omnigent: Unvalidated os_env.cwd in agent bundle yields arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE
 
 **CVE:** `CVE-2026-62677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-p8rw-8qj3-hf33>
@@ -320,7 +423,7 @@ An authenticated, non-admin user can obtain **arbitrary host-filesystem read/wri
 
 ---
 
-## 31. 🟡 High Severity — Omnigent: Shared Agent Bundle Overwrite Leads to Authenticated Runner RCE
+## 40. 🟡 High Severity — Omnigent: Shared Agent Bundle Overwrite Leads to Authenticated Runner RCE
 
 **CVE:** `CVE-2026-62674` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-jrrm-9hc7-2v3h>
@@ -333,7 +436,7 @@ Shared/template agents are shown as not MCP-editable, but this upload path still
 
 ---
 
-## 32. 🟡 High Severity — Grav: Twig sandbox config exfiltration via grav.offsetGet + dump filter (CVE-2026-44738 bypass)
+## 41. 🟡 High Severity — Grav: Twig sandbox config exfiltration via grav.offsetGet + dump filter (CVE-2026-44738 bypass)
 
 **CVE:** `CVE-2026-61842` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-mc5q-6hpj-rp7j>
@@ -344,7 +447,7 @@ The Twig content sandbox replaces `config` with the redacted `SandboxConfig` fac
 
 ---
 
-## 33. 🟡 High Severity — link-preview-js DNS Rebinding SSRF Bypass / Incomplete Fix for CVE-2026-43897
+## 42. 🟡 High Severity — link-preview-js DNS Rebinding SSRF Bypass / Incomplete Fix for CVE-2026-43897
 
 **CVE:** `CVE-2026-61704` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://github.com/advisories/GHSA-cpjf-6666-r8fx>
@@ -356,7 +459,7 @@ The library validates one resolved IP address through resolveDNSHost, but later 
 
 ---
 
-## 34. 🟡 High Severity — Hackers exploit Sangoma Switchvox flaw to deploy reverse shells
+## 43. 🟡 High Severity — Hackers exploit Sangoma Switchvox flaw to deploy reverse shells
 
 **CVE:** `CVE-2026-9586` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-02
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/>
@@ -365,38 +468,7 @@ The library validates one resolved IP address through resolveDNSHost, but later 
 
 ---
 
-## 35. 🟡 High Severity — Hackers exploit critical JFrog Artifactory flaw to forge admin tokens
-
-**CVE:** `CVE-2026-82329` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/>
-
-> A critical authentication bypass vulnerability (CVE-2026-82329) in JFrog Artifactory is being exploited in attacks to create tokens that provide administrative access. [...]
-
----
-
-## 36. 🟡 High Severity — fast-uri vulnerable to server-side request forgery via repeated hostname percent-decoding
-
-**CVE:** `CVE-2026-75899` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-fph4-wmhf-6fwf>
-
-> ### Impact
-
-`fast-uri` decodes a hostname&#x27;s percent escapes twice in a single `normalize()` or `resolve()` call: once during parsing and again during authority recomposition. A nested percent-encoded host therefore survives the first decode and is turned into a live destination by the second, so `normalize(&#x27;http://%256c%256f%2563%2561%256c%2568%256f%2573%2574/&#x27;)` returns `http://loc…
-
----
-
-## 37. 🟡 High Severity — NLTK: SSRF Fail-Open in validate_network_url() via DNS Resolution Failure
-
-**CVE:** `CVE-2026-63311` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-02
-**Reference:** <https://github.com/advisories/GHSA-3gqm-fcw5-w839>
-
-> There is an SSRF vulnerability in NLTK 3.9.4&#x27;s network URL validation. The validate_network_url() function in nltk/pathsec.py fails open when DNS resolution returns an error.
-
-The _resolve_hostname() helper at lines 193-234 catches OSError and ValueError during socket.getaddrinfo() and returns an empty list []. When this happens, the validation loop in validate_network_url() iterates over not…
-
----
-
-## 38. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 44. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

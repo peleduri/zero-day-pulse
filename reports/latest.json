@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-03T15:22:47.206611+00:00",
-  "total": 38,
+  "generated": "2026-09-03T20:13:46.218556+00:00",
+  "total": 44,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -63,24 +63,6 @@
         "zeroday"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-critical-sonicwall-sma1000-vulnerabilities-cve-2026-83548-cve-2026-83549-exploited-in-the-wild",
-      "title": "Critical SonicWall SMA1000 Vulnerabilities CVE-2026-83548, CVE-2026-83549 Exploited in the Wild",
-      "summary": "Overview On September 1, 2026, SonicWall disclosed two vulnerabilities affecting SonicWall SMA1000 appliances that the vendor says are being actively exploited in the wild. The vulnerabilities, CVE-2026-83548 and CVE-2026-83549 , can be chained to achieve unauthenticated remote code execution (RCE) on affected appliances. CVE-2026-83548 is a critical pre-authentication server-side request forgery (SSRF) vulnerability in the SMA1000 Appliance Work Place interface. The flaw has a CVSS v3.1 base score of 10.0 and can allow a remote, unauthenticated attacker to access sensitive functionality and perform unauthorized operations through an unintended alternate access path. CVE-2026-83549 is a high-severity OS command injection vulnerability in the Appliance Management Console (AMC). On its own, exploitation requires an authenticated administrator and specific system conditions. Although, by leveraging the SSRF vulnerability CVE-2026-83548 an attacker could potentially exploit CVE-2026-83549 to execute arbitrary OS commands without prior authentication. SonicWall SMA1000 appliances are enterprise secure remote access gateways used to provide employees and other authorized users with access to internal applications and resources. Their role as network-edge systems makes successful exploitation particularly concerning, since affected Work Place interfaces may be exposed directly to the internet as part of normal deployment. SonicWall has confirmed active exploitation of both vulnerabilities in the wild, and both CVE-2026-83548 and CVE-2026-83549 have been added to CISA's Known Exploited Vulnerabilities ( KEV ) catalog. No public proof-of-concept exploit, indicators of compromise (IOCs), or attribution for the current activity were identified in the research available at the time of publication. The vulnerabilities affect SMA1000 Models - 6210, 7210, 8200v running the following versions: Vulnerable Versions Fixed Versions 12.4.3-03453 platform-hotfix and earlier 12.4.3-03526 ",
-      "link": "https://www.rapid7.com/blog/post/etr-critical-sonicwall-sma1000-vulnerabilities-cve-2026-83548-cve-2026-83549-exploited-in-the-wild",
-      "published": "2026-09-02T16:58:45+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-83548",
-        "CVE-2026-83549"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -213,6 +195,185 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-63670",
+      "title": "ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `</textarea/>` solidus close",
+      "summary": "### Summary\nA mutation-XSS / allowedTags bypass: when `textarea` (or `xmp`) is included in `allowedTags`, an input containing a literal `</textarea/>` (a solidus right after the RCDATA end-tag name) lets non-allowed markup such as `<img src=x onerror=\u2026>` pass through `sanitizeHtml()` **live and unescaped**, even though `img`/`onerror` are not in the allowlist. A spec-compliant browser executes the surviving handler \u2014 XSS. This is a literal-solidus variant that bypasses the two most recent fixes in this code area (CVE-2026-40186, CVE-2026-44990), both already applied in 2.17.5. The default configuration is not affected.\n\n### Details\n`sanitize-html` emits the text content of HTML raw-text elements (`textarea`, `xmp`) without escaping. Two things combine:\n- **Parser differential:** on input, htmlparser2 does NOT recognize `</textarea/>` (solidus after the RCDATA\n  end-tag name) as a close tag; it emits `</textarea/><img \u2026>` as a single raw-text node.\n- **Unescaped passthrough:** the `ontext` handler (`index.js` ~575-583) appends `textarea`/`xmp` content with\n`result += text` (no `escapeHtml`), assuming it is \"already properly encoded\" \u2014 true for entity-decoded\n  content (what CVE-2026-40186 fixed) but false for this mis-tokenized literal close tag.\nA spec browser treats `</textarea/>` as a valid `textarea` close, so the following `<img onerror>` is parsed as a live element. The recent fixes addressed entity-encoding (CVE-2026-40186) and the `xmp` default (CVE-2026-44990); neither covers the literal-solidus mis-tokenization, so the raw passthrough still leaks.\n\n### PoC\n```js\n// npm i sanitize-html@2.17.5 parse5 && node poc.js\nconst sanitizeHtml = require('sanitize-html');\nconst input = '<textarea></textarea/><img src=x onerror=\"alert(document.domain)\">';\nconst opts  = { allowedTags: sanitizeHtml.defaults.allowedTags.concat(['textarea']) };  // img NOT allowed\nconsole.log(sanitizeHtml(input, opts));\n// => <textarea></textarea/><img src=x onerror=\"alert(document.domain)\">",
+      "link": "https://github.com/advisories/GHSA-jxwj-j7wr-gfrw",
+      "published": "2026-09-03T20:07:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63670"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-82404",
+      "title": "TOON: Prototype pollution when decoding untrusted TOON input",
+      "summary": "### Summary\n\nDecoding attacker-controlled TOON containing a `__proto__`, `constructor`, or `prototype` key wrote through the object's prototype chain instead of creating an own property, polluting `Object.prototype` for the whole runtime. The `expandPaths: 'safe'` path (dotted keys such as `a.__proto__.x`) was the strongest vector; plain nested objects, tabular rows, and quoted keys were all affected. The encoder had a matching defect: it silently dropped own `__proto__` properties and could fire an inherited setter while normalizing.\n\n### Impact\n\nAny service that decodes untrusted TOON is affected. Prototype pollution can escalate to denial of service or, with a suitable downstream gadget, remote code execution.\n\n### Patches\n\nUpgrade to `@toon-format/toon@2.3.1`. Decoders now materialize `__proto__`/`constructor`/`prototype` as ordinary own data properties, matching `JSON.parse` semantics; the encoder preserves the same keys without invoking inherited accessors.\n\n### Workarounds\n\nNone. Upgrade is the only fix. Callers who cannot upgrade should reject input whose keys include `__proto__`, `constructor`, or `prototype` before decoding.\n\n### Port maintainers\n\nThe same bug shape can exist in any implementation that assigns decoded keys with `obj[key] = value`. Rust, Swift, Java, Python, and C# ports should audit their object-construction and path-expansion paths for the three prototype keys.",
+      "link": "https://github.com/advisories/GHSA-p95v-992w-h6c3",
+      "published": "2026-09-03T19:52:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-82404"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73293",
+      "title": "Semaphore UI: Manager-to-owner privilege escalation via custom-role slug collision",
+      "summary": "## Summary\n\nSemaphore resolves a project member's effective permissions in `ProjectMiddleware` by looking up a role row whose slug matches the member's assigned role, and overwrites the built-in permission bitmask with that row's value. A member holding the built-in `manager` role creates a custom project role through `POST /api/project/{id}/roles`, a route gated only by the `CanManageProjectResources` permission that `manager` already holds.\n\nThe role-creation validator does not reserve the built-in slug names (`owner`, `manager`, `task_runner`, `guest`) and sets no ceiling on the permission bits a caller may grant. A manager creates a role with slug `manager` carrying the full bitmask `15`, including the two owner-only bits `CanUpdateProject` and `CanManageProjectUsers` that `manager` does not hold. The slug lookup that backs permission resolution ignores project scope, so this attacker-created row is returned on the next request and the manager's effective permissions become owner-equivalent.\n\nResult: a project manager escalates to full owner of the project with one authenticated request, then adds or removes members, changes project settings, deletes the project, or demotes the legitimate owner.\n\n## Affected\n\nsemaphoreui/semaphore v2.18.12 (current latest as of 2026-06-09) and `develop` HEAD. Confirmed live-exploitable on v2.18.12 (commit 8a4dcf0); the affected files are unchanged on `develop` with no fix commit since the tag. Earlier releases that ship PRO custom project roles are likely affected but were not tested.\n\nRequires the PRO build (custom project roles). The official `semaphoreui/semaphore` Docker image ships this feature active by default, with no subscription or configuration flag.\n\nPure community builds without custom project roles are not affected: the role-creation endpoint returns 404 there.\n\n## Root cause\n\n`ProjectMiddleware` reads the member's built-in role permissions, then calls `GetProjectOrGlobalRoleBySlug` and, when a role row shares the ",
+      "link": "https://github.com/advisories/GHSA-cxvf-gvfq-36w2",
+      "published": "2026-09-03T19:23:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73293"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62681",
+      "title": "Orval: RCE via OpenAPI path -> unescaped request-URL template literal (backtick breakout)",
+      "summary": "### Summary\n\nOrval emits the OpenAPI path into the generated request URL as a TEMPLATE LITERAL (`` `/users/...` ``) without escaping the backtick character. A path containing a backtick closes the template literal and injects a concatenation expression that is evaluated when the generated URL/request/key function is called, executing attacker-controlled code. Affects the axios, fetch, react-query, and swr clients. Verified on Orval 8.19.0; survives Orval's default OpenAPI validation.\n\n### Details\n\n```ts\n// generated URL builder (fetch client)\nreturn `/users/` + (globalThis.X = require(\"fs\").writeFileSync(\"/marker\",\"pwned\")) + `/list`;\n```\n\nThe backtick in the path terminates the `` `...` `` literal; `+ (<code>) +` runs as a live expression; a trailing backtick reopens a template literal so the file stays valid. The code runs whenever the generated request function, URL builder, or query-key function is called.\n\nThis is distinct from Orval's four published CVEs: CVE-2026-22785 (`summary` -> MCP server), CVE-2026-23947 / CVE-2026-25141 (`x-enumDescriptions`), and CVE-2026-24132 (`const` -> mock files). This is a different field (the route path) and a different sink (the request-URL template literal), which those advisories and their fixes do not cover.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`) attached: generates a fetch client with default validation, bundles it, calls the generated functions, and shows a marker file written. Verified on 8.19.0.\n\n### Impact\n\nCode execution in any environment that calls a client generated from an attacker-controlled or attacker-influenced OpenAPI description (developer, CI, or the running application). \n\n### Suggested fix\n\nEscape the path before emitting it into the URL template literal (escape backtick and `${`, or build the URL with an encoder that treats the path as data), and validate path characters.",
+      "link": "https://github.com/advisories/GHSA-fg9p-mrxr-hvq7",
+      "published": "2026-09-03T19:17:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62681"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71865",
+      "title": "Orval: Import-time RCE via query parameter name -> computed-property-key injection in the zod cli",
+      "summary": "### Summary\n\norval's zod client emits each query parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A \" in the query parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const OpQueryParams = zod.object({...}) executes on load) -> import-time RCE. The query parameter name is a pure data field. Verified on orval 8.19.0 / Node.\n\n### Details\n\nexport const OpQueryParams = zod.object({ \"a\":zod.string(),[require(\"fs\").writeFileSync(\"PWNED\",\"\")]:zod.string(),\"b\": ... })\n\nAlso affects the hono client (reuses zod generation). orval escapes values in zod arrays but not keys in zod.object. Sibling fields: schema property name, header parameter name (CVE-97) (separate reports). Distinct from orval's $ref / route-path / server-url / zod-default findings.\n\n### PoC\n\nreproduce.sh (+ make_spec.py) attached: a query parameter name that breaks the zod.object key and injects a computed key; evaluating it (= importing the module) writes the marker. Verified on 8.19.0.\n\n### Impact\n\nJavaScript / OS command execution at import time for anyone who generates an orval zod client from an attacker-controlled spec and imports it.\n\n### Suggested fix\n\nEscape the query parameter name for the JS string key (JSON.stringify) in the zod.object key generation; never interpolate a raw name adjacent to [ ] in object-literal position. [maintainer-report.txt](https://github.com/user-attachments/files/29426090/maintainer-report.txt) [make_spec.py](https://github.com/user-attachments/files/29426091/make_spec.py) [reproduce.sh](https://github.com/user-attachments/files/29426092/reproduce.sh)",
+      "link": "https://github.com/advisories/GHSA-653q-5476-x79g",
+      "published": "2026-09-03T18:18:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71865"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71864",
+      "title": "Orval: Import-time RCE via header parameter name -> computed-property-key injection in the zod client",
+      "summary": "### Summary\n\norval's zod client emits each header parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A \" in the header parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const OpHeader = zod.object({...}) executes on load) -> import-time RCE. The header parameter name is a pure data field. Verified on orval 8.19.0 / Node.\n\n### Details\n\nexport const OpHeader = zod.object({ \"a\":zod.string(),[require(\"fs\").writeFileSync(\"PWNED\",\"\")]:zod.string(),\"b\": ... })\n\nAlso affects the hono client (reuses zod generation). orval escapes values in zod arrays but not keys in zod.object. Sibling fields: schema property name, query parameter name (CVE-96) (separate reports). Distinct from orval's $ref / route-path / server-url / zod-default findings.\n\n### PoC\n\nreproduce.sh (+ make_spec.py) attached: a header parameter name that breaks the zod.object key and injects a computed key; evaluating it (= importing the module) writes the marker. Verified on 8.19.0.\n\n### Impact\n\nJavaScript / OS command execution at import time for anyone who generates an orval zod client from an attacker-controlled spec and imports it. \n\n### Suggested fix\n\nEscape the header parameter name for the JS string key (JSON.stringify) in the zod.object key generation; never interpolate a raw name adjacent to [ ] in object-literal position.",
+      "link": "https://github.com/advisories/GHSA-6437-gxhq-pqv8",
+      "published": "2026-09-03T18:08:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71864"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61625",
+      "title": "VictoriaMetrics vmrestore: Path traversal via crafted backup part names escapes restore root",
+      "summary": "### Summary\nThe VictoriaMetrics `vmrestore` utility does not validate backup part path components before writing restored files to the local filesystem. An attacker who can provide or modify a backup source can craft object names containing `..` path components that cause vmrestore to write files outside the intended `-storageDataPath` restore root, subject to the permissions of the `vmrestore` process.\n\n### Impact\nAn attacker who can supply or modify the backup source -- for example by writing malicious object names to a compromised or misconfigured storage bucket -- can cause arbitrary files to be created or overwritten on the host running `vmrestore`, within the limits of the process's filesystem permissions.\n\n### Patches\nVersions 1.146.0, 1.136.12, 1.122.25\n\n### Resources\n  - https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.146.0\n  - https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.136.12\n  - https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.122.25\n\n### Note\nVictoriaMetrics' security model assumes backup sources are trusted and access-controlled. This vulnerability requires an attacker to have write access to the backup storage (e.g. S3, GCS, or Azure Blob Storage bucket) used as the `-src` for `vmrestore`. Under a correctly secured deployment where backup storage access is properly restricted, unauthorized exploitation of this issue should not be possible. Users are advised to follow the principle of least privilege when granting access to backup storage buckets.",
+      "link": "https://github.com/advisories/GHSA-8q3c-rjr9-xxrp",
+      "published": "2026-09-03T17:49:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61625"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-56743",
+      "title": "Cilium may unexpectedly allow ingress traffic from the local namespace when a Kubernetes NetworkPolicy is configured with an ipBlock match",
+      "summary": "### Impact\n\nStandard Kubernetes `NetworkPolicy` specifications using CIDR-based `ipBlock` rules without pod or namespace selectors erroneously generate a wildcard namespace allow rule under specific cluster configurations.\n\nWhen Cilium deployment is configured with a specific custom `clusterName` (rather than the default `\"any\"` value), the parser incorrectly instantiates a pod selector on selectorless peer definitions. This leads to Cilium appending an unintended wildcard namespace label selector to the policy's allowed Layer 3 rules, which allows traffic from other workloads in the same namespace as the subject of the policy.\n\nExample policy affected by this issue:\n```\napiVersion: networking.k8s.io/v1\nkind: NetworkPolicy\nmetadata:\n  name: test-server\n  namespace: default\nspec:\n  podSelector:\n    matchLabels:\n      app: test-server\n  policyTypes:\n  - Ingress\n  ingress:\n  - from:\n    - ipBlock:\n        cidr: 192.0.2.3\n```\n\nIn affected versions, this policy erroneously allows the `test-server` Pod in the `default` namespace to receive any traffic from other workloads running in the `default` namespace.\n\n### Patches\n\nThis issue has been patched in:\n\n- Cilium v1.19.5\n\nReleases below v1.19.0 are not affected.\n\n### This issue affects:\n\n- Cilium v1.19 between v1.19.0 and v1.19.4 inclusive\n\n### Workarounds\n\nDevelopers can create the equivalent policy using CiliumNetworkPolicy [fromCIDR expressions](https://docs.cilium.io/en/stable/security/policy/layer3/#ip-cidr-based). CiliumNetworkPolicy and CiliumClusterwideNetworkPolicy are not affected by this issue.\n\n### Acknowledgements\n\nSpecial thanks to @TheBeeZee for reporting this issue and preparing the fix, and to @fristonio and @odinuge for their assistance in reviewing the solution.\n\n### For more information\n\nIf a vulnerability affecting Cilium appears to have been found, the Cilium security team strongly encourages reporting it to the security mailing list at security@cilium.io. This is a private mailing list for the Cilium",
+      "link": "https://github.com/advisories/GHSA-fm8w-2m5w-9j7r",
+      "published": "2026-09-03T17:17:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-56743"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71428",
+      "title": "unstructured: Server-Side Request Forgery in the URL-based partitioning",
+      "summary": "### Summary\n\nServer-Side Request Forgery in `unstructured`. The `url=` argument of `partition()`, `partition_html()`, and `partition_md()` is fetched via `requests.get()` with no host validation. The response body is returned as `Element` text, so this is a **full-read SSRF** \u2014 attackers reach loopback admin APIs, internal HTTP services, and cloud metadata endpoints, and read the response. \n\n`unstructured` is the de facto URL ingestion layer for LangChain `UnstructuredURLLoader`, LlamaIndex `UnstructuredReader`, Chainlit, and many agent frameworks \u2014 secure defaults must live in the library, not in every downstream caller.\n\n### Details\n\nThree sinks, all in `unstructured == 0.22.26` (verified on `main` at `199f255`):\n\n- `unstructured/partition/auto.py:303` \u2014 `file_and_type_from_url()`, reached via `partition(url=\u2026)`.\n- `unstructured/partition/html/partition.py:160` \u2014 `partition_html(url=\u2026)`. Post-fetch `Content-Type` check runs after the request hits the target.\n- `unstructured/partition/md.py:96` \u2014 `partition_md(url=\u2026)`. No timeout (SSRF + slow-loris DoS).\n\nNone of `is_private`, `is_loopback`, `ipaddress`, `gethostbyname`, or `allow_redirects` appear in any of the three files. Three exploitation paths apply: direct private-IP target; redirect bypass (`allow_redirects=True` default); DNS rebinding (TOCTOU, closeable only by socket-pinning). Affected since `0.4.7` (Feb 2023) \u2014 ~219 releases, no validation ever introduced.\n\n### PoC\n\nLocal-only. `pip install unstructured==0.22.26 flask requests`.\n\n`internal_server.py`:\n\n```python\nfrom flask import Flask, Response, jsonify\napp = Flask(__name__)\n\n@app.route(\"/imds\")\ndef imds(): return jsonify({\"AccessKeyId\": \"ASIA-FAKE\", \"SecretAccessKey\": \"FAKE/SECRET\"})\n\n@app.route(\"/internal.html\")\ndef html(): return Response(\"<html><body><p>SK_LEAK_42</p></body></html>\", mimetype=\"text/html\")\n\n@app.route(\"/redir\")\ndef redir(): return Response(\"\", 302, headers={\"Location\": \"http://127.0.0.1:9999/imds\"})\n\nif __name__ == \"__main__\": app.r",
+      "link": "https://github.com/advisories/GHSA-4mvj-m6j5-pmf7",
+      "published": "2026-09-03T17:02:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71428"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html",
+      "title": "Critical Cisco Nexus 9000 Flaw Lets Unauthenticated Remote Attackers Run Code as Root",
+      "summary": "Cisco has released patches to address a critical security flaw affecting 10 Silicon One-based Nexus 9000 switches that could allow an unauthenticated, remote attacker to execute code as root, alongside an IOS XR hardening release bundling 7 umbrella CVEs, 2 of which are rated 9.8, with no workaround for any IOS XR version.\n\nThe Nexus vulnerability, tracked as CVE-2026-20212 (CVSS score: 9.8), is",
+      "link": "https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html",
+      "published": "2026-09-03T15:52:07+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-20212"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
@@ -584,59 +745,6 @@
       ],
       "cve_ids": [
         "CVE-2026-9586"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/",
-      "title": "Hackers exploit critical JFrog Artifactory flaw to forge admin tokens",
-      "summary": "A critical authentication bypass vulnerability (CVE-2026-82329) in JFrog Artifactory is being exploited in attacks to create tokens that provide administrative access. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/",
-      "published": "2026-09-02T15:47:08+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-82329"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75899",
-      "title": "fast-uri vulnerable to server-side request forgery via repeated hostname percent-decoding",
-      "summary": "### Impact\n\n`fast-uri` decodes a hostname's percent escapes twice in a single `normalize()` or `resolve()` call: once during parsing and again during authority recomposition. A nested percent-encoded host therefore survives the first decode and is turned into a live destination by the second, so `normalize('http://%256c%256f%2563%2561%256c%2568%256f%2573%2574/')` returns `http://localhost/`. Applications that normalize or resolve an untrusted URI before an SSRF check, redirect validation, or host allowlist can be steered to a different destination, including internal addresses such as loopback or a cloud metadata endpoint, than the encoded input appeared to contain. This is an incomplete-fix variant of CVE-2026-6322, whose encoded-authority-delimiter fix introduced the second decode.\n\n### Patches\n\nFixed in `fast-uri` 2.4.5, 3.1.6, and 4.1.3.\n\n### Workarounds\n\nReject untrusted URIs whose host component contains an encoded percent sign (`%25`) before passing them to `normalize()` or `resolve()`.",
-      "link": "https://github.com/advisories/GHSA-fph4-wmhf-6fwf",
-      "published": "2026-09-02T15:42:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75899"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63311",
-      "title": "NLTK: SSRF Fail-Open in validate_network_url() via DNS Resolution Failure",
-      "summary": "There is an SSRF vulnerability in NLTK 3.9.4's network URL validation. The validate_network_url() function in nltk/pathsec.py fails open when DNS resolution returns an error.\n\nThe _resolve_hostname() helper at lines 193-234 catches OSError and ValueError during socket.getaddrinfo() and returns an empty list []. When this happens, the validation loop in validate_network_url() iterates over nothing (for addr in resolved: ... never executes), with no else/fallback check. The function returns normally, and urlopen() proceeds to make the request without any IP validation.\n\nThis means:\n1. If DNS is temporarily unavailable, ALL SSRF protections are disabled\n2. DNS rebinding attacks bypass the check after the LRU cache entry expires\n3. In environments with unreliable resolvers, the protection is permanently bypassed\n\nPoC:\n```python\nimport nltk.pathsec\nimport unittest.mock\n\n# Simulate DNS failure\nwith unittest.mock.patch('socket.getaddrinfo', side_effect=OSError('DNS unavailable')):\n    # This SHOULD raise but doesn't -- fails open\n    nltk.pathsec.validate_network_url('http://169.254.169.254/latest/meta-data/')\n    # Returns normally, allowing SSRF to cloud metadata\n```\n\nThe correct behavior is fail-closed: if DNS resolution fails, the URL should be REJECTED (not allowed). The function should raise an exception or return a failure status when _resolve_hostname() returns an empty list.\n\nThis is distinct from CVE-2024-39705 (which addressed pickle deserialization) and CVE-2026-33236 (which addressed XML path traversal). This finding targets the newly-added pathsec.py security layer introduced to fix those earlier issues.\n\nSuggested fix: Add an explicit check after _resolve_hostname() returns: if the result is empty, raise a SecurityError. Never allow a URL request to proceed when IP validation was impossible.\n\nCVSS Note: The CVSS use SC:H (High subsequent confidentiality) because the advisory explicitly identifies cloud metadata endpoints (169.254.169.254) as an attack target",
-      "link": "https://github.com/advisories/GHSA-3gqm-fcw5-w839",
-      "published": "2026-09-02T15:39:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63311"
       ],
       "is_zero_day": false,
       "is_high_severity": true

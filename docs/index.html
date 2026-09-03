@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">38</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">44</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-03 15:22 UTC</div>
+            <div class="generated">Updated 2026-09-03 20:13 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -182,22 +182,6 @@
 &quot;FalconFlank is a 0day privilege escalation that abuses the office malicious macros remediation in CrowdStrike Falcon Sensor,&quot; the researcher said in a GitHub README file, adding</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/etr-critical-sonicwall-sma1000-vulnerabilities-cve-2026-83548-cve-2026-83549-exploited-in-the-wild" target="_blank" rel="noopener">Critical SonicWall SMA1000 Vulnerabilities CVE-2026-83548, CVE-2026-83549 Exploited in the Wild</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-83548</code> <code class="cve">CVE-2026-83549</code>
-    <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-02</span>
-  </div>
-  <p class='summary'>Overview On September 1, 2026, SonicWall disclosed two vulnerabilities affecting SonicWall SMA1000 appliances that the vendor says are being actively exploited in the wild. The vulnerabilities, CVE-2026-83548 and CVE-2026-83549 , can be chained to achieve unauthenticated remote code execution (RCE) on affected appliances. CVE-2026-83548 is a critical pre-authentication server-side request forgery …</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -325,6 +309,188 @@
           </div>
           <p class='summary'>## Summary
 `ZipArchiver::extract()` lacks limits on uncompressed size, file count, and nesting depth, creating a distinct, unpatched variant of the GHSA-2vcx-h8p2-9pg9 zip bomb vulnerability. While the parallel method Installer::unZip() received comprehensive limits, ZipArchiver::extract() remains unprotected, leaving a separate code path vulnerable to the same attack vector. The vulnerability is …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jxwj-j7wr-gfrw" target="_blank" rel="noopener">ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `&lt;/textarea/&gt;` solidus close</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63670</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Summary
+A mutation-XSS / allowedTags bypass: when `textarea` (or `xmp`) is included in `allowedTags`, an input containing a literal `&lt;/textarea/&gt;` (a solidus right after the RCDATA end-tag name) lets non-allowed markup such as `&lt;img src=x onerror=…&gt;` pass through `sanitizeHtml()` **live and unescaped**, even though `img`/`onerror` are not in the allowlist. A spec-compliant browser executes the…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p95v-992w-h6c3" target="_blank" rel="noopener">TOON: Prototype pollution when decoding untrusted TOON input</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-82404</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Summary
+
+Decoding attacker-controlled TOON containing a `__proto__`, `constructor`, or `prototype` key wrote through the object&#x27;s prototype chain instead of creating an own property, polluting `Object.prototype` for the whole runtime. The `expandPaths: &#x27;safe&#x27;` path (dotted keys such as `a.__proto__.x`) was the strongest vector; plain nested objects, tabular rows, and quoted keys were all affec…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cxvf-gvfq-36w2" target="_blank" rel="noopener">Semaphore UI: Manager-to-owner privilege escalation via custom-role slug collision</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-73293</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>## Summary
+
+Semaphore resolves a project member&#x27;s effective permissions in `ProjectMiddleware` by looking up a role row whose slug matches the member&#x27;s assigned role, and overwrites the built-in permission bitmask with that row&#x27;s value. A member holding the built-in `manager` role creates a custom project role through `POST /api/project/{id}/roles`, a route gated only by the `CanManageProjectResou…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fg9p-mrxr-hvq7" target="_blank" rel="noopener">Orval: RCE via OpenAPI path -&gt; unescaped request-URL template literal (backtick breakout)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62681</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Summary
+
+Orval emits the OpenAPI path into the generated request URL as a TEMPLATE LITERAL (`` `/users/...` ``) without escaping the backtick character. A path containing a backtick closes the template literal and injects a concatenation expression that is evaluated when the generated URL/request/key function is called, executing attacker-controlled code. Affects the axios, fetch, react-query,…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-653q-5476-x79g" target="_blank" rel="noopener">Orval: Import-time RCE via query parameter name -&gt; computed-property-key injection in the zod cli</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-71865</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Summary
+
+orval&#x27;s zod client emits each query parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A &quot; in the query parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const OpQueryPara…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6437-gxhq-pqv8" target="_blank" rel="noopener">Orval: Import-time RCE via header parameter name -&gt; computed-property-key injection in the zod client</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-71864</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Summary
+
+orval&#x27;s zod client emits each header parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A &quot; in the header parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const OpHeader …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8q3c-rjr9-xxrp" target="_blank" rel="noopener">VictoriaMetrics vmrestore: Path traversal via crafted backup part names escapes restore root</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61625</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Summary
+The VictoriaMetrics `vmrestore` utility does not validate backup part path components before writing restored files to the local filesystem. An attacker who can provide or modify a backup source can craft object names containing `..` path components that cause vmrestore to write files outside the intended `-storageDataPath` restore root, subject to the permissions of the `vmrestore` pr…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fm8w-2m5w-9j7r" target="_blank" rel="noopener">Cilium may unexpectedly allow ingress traffic from the local namespace when a Kubernetes NetworkPolicy is configured with an ipBlock match</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-56743</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Impact
+
+Standard Kubernetes `NetworkPolicy` specifications using CIDR-based `ipBlock` rules without pod or namespace selectors erroneously generate a wildcard namespace allow rule under specific cluster configurations.
+
+When Cilium deployment is configured with a specific custom `clusterName` (rather than the default `&quot;any&quot;` value), the parser incorrectly instantiates a pod selector on selecto…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4mvj-m6j5-pmf7" target="_blank" rel="noopener">unstructured: Server-Side Request Forgery in the URL-based partitioning</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-71428</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>### Summary
+
+Server-Side Request Forgery in `unstructured`. The `url=` argument of `partition()`, `partition_html()`, and `partition_md()` is fetched via `requests.get()` with no host validation. The response body is returned as `Element` text, so this is a **full-read SSRF** — attackers reach loopback admin APIs, internal HTTP services, and cloud metadata endpoints, and read the response. 
+
+`unst…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html" target="_blank" rel="noopener">Critical Cisco Nexus 9000 Flaw Lets Unauthenticated Remote Attackers Run Code as Root</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-20212</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>Cisco has released patches to address a critical security flaw affecting 10 Silicon One-based Nexus 9000 switches that could allow an unauthenticated, remote attacker to execute code as root, alongside an IOS XR hardening release bundling 7 umbrella CVEs, 2 of which are rated 9.8, with no workaround for any IOS XR version.
+
+The Nexus vulnerability, tracked as CVE-2026-20212 (CVSS score: 9.8), is</p>
 
         </article>
 
@@ -717,58 +883,6 @@ The library validates one resolved IP address through resolveDNSHost, but later 
   <p class='summary'>Attackers are actively exploiting CVE-2026-9586, an unauthenticated SQL injection vulnerability in the Sangoma Switchvox VoIP platform that can lead to remote code execution. [...]</p>
 
 </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-jfrog-artifactory-flaw-to-forge-admin-tokens/" target="_blank" rel="noopener">Hackers exploit critical JFrog Artifactory flaw to forge admin tokens</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-82329</code>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-02</span>
-  </div>
-  <p class='summary'>A critical authentication bypass vulnerability (CVE-2026-82329) in JFrog Artifactory is being exploited in attacks to create tokens that provide administrative access. [...]</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fph4-wmhf-6fwf" target="_blank" rel="noopener">fast-uri vulnerable to server-side request forgery via repeated hostname percent-decoding</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-75899</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Impact
-
-`fast-uri` decodes a hostname&#x27;s percent escapes twice in a single `normalize()` or `resolve()` call: once during parsing and again during authority recomposition. A nested percent-encoded host therefore survives the first decode and is turned into a live destination by the second, so `normalize(&#x27;http://%256c%256f%2563%2561%256c%2568%256f%2573%2574/&#x27;)` returns `http://localhost/`. Appli…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3gqm-fcw5-w839" target="_blank" rel="noopener">NLTK: SSRF Fail-Open in validate_network_url() via DNS Resolution Failure</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63311</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>There is an SSRF vulnerability in NLTK 3.9.4&#x27;s network URL validation. The validate_network_url() function in nltk/pathsec.py fails open when DNS resolution returns an error.
-
-The _resolve_hostname() helper at lines 193-234 catches OSError and ValueError during socket.getaddrinfo() and returns an empty list []. When this happens, the validation loop in validate_network_url() iterates over nothing …</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">
