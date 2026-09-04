@@ -1,10 +1,29 @@
 {
-  "generated": "2026-09-04T15:24:15.261825+00:00",
-  "total": 35,
-  "kev": 0,
-  "zero_day": 14,
-  "enriched": 10,
+  "generated": "2026-09-04T19:59:18.412703+00:00",
+  "total": 37,
+  "kev": 1,
+  "zero_day": 19,
+  "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-85046",
+      "title": "CVE-2026-85046 \u2014 Google Chromium V8 Type Confusion Vulnerability",
+      "summary": "Vendor: Google | Product: Chromium V8. Google Chromium V8 contains a type confusion vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-18)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85046",
+      "published": "2026-09-04",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-85046"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -18,19 +37,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "FSB Center 16 actors scan Internet address ranges for exposed SNMP agents accepting common or default community strings, then use spoofed SNMP Set-Requests to copy router configurations and transfer them through TFTP. The actors also target Cisco Smart Install and web-based management portals. CVE-2018-0171 allows a crafted Smart Install message on TCP port 4786 to trigger a buffer overflow, device reload, denial of service, or arbitrary code execution; CVE-2008-4128 is a CSRF flaw in the Cisco IOS 12.4 HTTP administration interface that can permit execution of administrative commands.",
-        "affected_products": "Cisco IOS Software and Cisco IOS XE Software running the Smart Install client on vulnerable releases; Cisco 871 Integrated Services Router running Cisco IOS 12.4 for CVE-2008-4128. Cisco IOS XR, Cisco NX-OS, and Cisco Smart Install director configurations are not affected by CVE-2018-0171.",
-        "cvss_score": "9.8 (CVE-2018-0171); 4.3 (CVE-2008-4128)",
-        "cvss_vector": "CVE-2018-0171: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H; CVE-2008-4128: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
-        "exploit_available": "true - https://github.com/AlrikRr/Cisco-Smart-Exploit; https://www.exploit-db.com/exploits/6476",
-        "patch_available": "Partially: true for CVE-2018-0171 - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi2; no current vendor patch identified for CVE-2008-4128, so legacy equipment should be isolated, mitigated, or replaced.",
-        "active_exploitation": "true - CISA reports ongoing Russian FSB Center 16 exploitation of vulnerable networking devices and says the actors previously exploited CVE-2018-0171 and CVE-2008-4128; CVE-2008-4128 was also added to CISA's Known Exploited Vulnerabilities Catalog: https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-        "threat_actors": "Russian FSB Center 16; aliases reported by CISA include Berserk Bear, Energetic Bear, Crouching Yeti, Dragonfly, Ghost Blizzard, and Static Tundra.",
-        "mitigation": "Disable Cisco Smart Install and, where it is not required, disable SNMPv1/v2; use SNMPv3 with authPriv, non-default credentials, read-only access, and MIB/OID allowlisting. Restrict management protocols with ACLs, block exposed TFTP, Smart Install, and SNMP ports where feasible, update device software, and replace end-of-life equipment.",
-        "vendor_advisory": "CVE-2018-0171: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi2; CVE-2008-4128: URL unavailable."
-      }
+      "is_high_severity": true
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/",
@@ -46,19 +53,78 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "CVE-2026-68820 is a CWE-416 use-after-free vulnerability in the kernel-mode Windows Ancillary Function Driver for WinSock (AFD.sys). A locally authenticated low-privileged attacker can run a specially crafted application and win a race condition involving concurrent socket state access; the resulting memory corruption can provide kernel read/write capability and SYSTEM privileges. The attack is local, high-complexity, requires no user interaction, and is not independently exploitable remotely over the internet.",
-        "affected_products": "Windows 10 Version 1607 (32-bit/x64, affected from 10.0.14393.0 to before 10.0.14393.9418), Windows 10 Version 1809 (32-bit/x64, from 10.0.17763.0 to before 10.0.17763.9121), Windows 10 Version 21H2 (32-bit/ARM64/x64, from 10.0.19044.0 to before 10.0.19044.7663), Windows 10 Version 22H2 (32-bit/ARM64/x64, from 10.0.19045.0 to before 10.0.19045.7663), Windows 11 Version 23H2 (ARM64/x64, from 10.0.22631.0 to before 10.0.22631.7517), Windows 11 Version 24H2 (ARM64/x64, from 10.0.26100.0 to before 10.0.26100.9168), Windows 11 Version 25H2 (ARM64/x64, from 10.0.26200.0 to before 10.0.26200.9168), Windows 11 Version 26H1 (ARM64/x64, from 10.0.28000.0 to before 10.0.28000.2704), Windows Server 2012 and Server Core (x64, from 6.2.9200.0 to before 6.2.9200.26280), Windows Server 2012 R2 and Server Core (x64, from 6.3.9600.0 to before 6.3.9600.23338), Windows Server 2016 and Server Core (x64, from 10.0.14393.0 to before 10.0.14393.9418), Windows Server 2019 and Server Core (x64, from 10.0.17763.0 to before 10.0.17763.9121), Windows Server 2022 (x64, from 10.0.20348.0 to before 10.0.20348.5499), Windows Server 2025 and Server Core (x64, from 10.0.26100.0 to before 10.0.26100.33296)",
-        "cvss_score": "7.0",
-        "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true - https://research.checkpoint.com/2026/shattering-the-dream-when-a-job-offer-becomes-a-zero-day-attack/ (weaponized exploit observed in the Lazarus campaign; no public PoC code reported)",
-        "patch_available": "true - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-68820",
-        "active_exploitation": "true - Microsoft reports exploitation detected; Check Point Research documented Lazarus using CVE-2026-68820 in Operation Dream Job: https://research.checkpoint.com/2026/shattering-the-dream-when-a-job-offer-becomes-a-zero-day-attack/",
-        "threat_actors": "Lazarus Group (DPRK-linked), operating in the Operation Dream Job campaign",
-        "mitigation": "Install Microsoft's August 11, 2026 security updates on all affected Windows builds and reboot as required; for Windows 10 Version 1607 and Windows Server 2016, KB5120418 updates the system to OS Build 14393.9418, with SSU KB5120236 recommended first where applicable. If patching is delayed, restrict untrusted local or remote interactive logons and investigate suspicious SYSTEM-level activity or Lazarus-related compromise indicators.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-68820"
-      }
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75912",
+      "title": "CodeWhale: Argument Injection in `git_blame` Tool Allows Arbitrary File Read Without Approval",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 9a34b5034d29f05d1f28fa61b04719ca6a741020. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n# Argument Injection in `git_blame` Tool Allows Arbitrary File Read Without Approval\n\n## Overview\n\nThe `git_blame` tool in DeepSeek-TUI passes the model-supplied `rev` parameter unvalidated into the argv of `git blame`. `git blame` accepts `--contents=<file>`, which causes it to use the file's contents in place of the working tree and echo each line verbatim in the blame output. A `rev` value of `--contents=/path/to/secret` therefore exfiltrates the targeted file's contents into the tool result, which is returned to the model and displayed in the chat transcript.\n\nThe tool is registered with `ApprovalRequirement::Auto` and declares `ToolCapability::ReadOnly`. The read is in-scope for the capability label, but the *target* of the read is not the user expects `git_blame` to read files inside the workspace, not arbitrary paths on the host.\n\nThis is a sibling of the `git_show` argument-injection vulnerability filed separately, sharing the same root cause (missing `--end-of-options` sentinel and unvalidated `rev`).\n\n## Impact\n\nArbitrary file read at the privilege of the user running DeepSeek-TUI, via malicious repository content combined with prompt injection (the threat model already documented in CVE-2026-45311).\n\nReachable as the invoking user:\n\n- `~/.ssh/id_rsa`, `~/.ssh/id_ed25519`, and other private keys\n- `~/.aws/credentials`, `~/.config/gh/hosts.yml`, `~/.netrc`\n- `.env` files anywhere in the filesystem\n- Any project file outside the workspace the tool would normally restrict to\n\nThe leaked contents land in the model's context. The same model that obeyed the prompt-injection in step one can be instructed to forward the leak via `fetch_url` (network-",
+      "link": "https://github.com/advisories/GHSA-c6mw-8xh8-gpq6",
+      "published": "2026-09-04T18:11:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75912"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75913",
+      "title": "CodeWhale: Argument Injection in `git_show` Tool Allows Arbitrary File Write Without Approval",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 9a34b5034d29f05d1f28fa61b04719ca6a741020. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n# Argument Injection in `git_show` Tool Allows Arbitrary File Write Without Approval\n\n## Overview\n\nThe `git_show` tool in DeepSeek-TUI executes `git show` with the model-supplied `rev` parameter passed unvalidated into the argv. `git show` honours the `--output=<path>` option, so a `rev` value beginning with `--output=` is interpreted as a flag rather than a revision. The tool is registered with `ApprovalRequirement::Auto` and declares `ToolCapability::ReadOnly`, so the write happens without a user prompt and contradicts the capability the catalog advertises to the model and the user.\n\nThis is the same vulnerability class as GHSA-72w5-pf8h-xfp4 (CVE-2026-45374): an auto-approved tool produces an effect outside the boundary the user consented to.\n\n## Impact\n\nA malicious repository combined with prompt injection, the threat model already documented in CVE-2026-45311 (auto-loaded `AGENTS.md` is treated as instructions by the model) yields an unprompted arbitrary file write at the privilege of the user running DeepSeek-TUI.\n\nUseful targets reachable as the invoking user:\n\n- `~/.ssh/authorized_keys`\n- `~/.bashrc`, `~/.zshrc`, `~/.profile`\n- `~/.gitconfig` (chainable into RCE via `core.editor`)\n- `~/.config/**`, `~/.aws/credentials`, project source files\n\nThe written content is the `git show` rendering of HEAD commit hash, author/date header, indented commit message, and (when `patch=true`) diff hunks. The commit subject, body, author identity, and diff text are entirely attacker-controlled because the attacker owns the repository HEAD. The leading `commit <hash>` line prevents clean overwrite of formats that reject unknown tokens, but is silently ignorable ",
+      "link": "https://github.com/advisories/GHSA-7j5w-7r7x-9v27",
+      "published": "2026-09-04T18:02:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75913"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75857",
+      "title": "CodeWhale: exec_shell_interact sends LLM-controlled input to a running shell without an approval prompt (privilege escalation)",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 57f3c89471e27ac4032d9791f6885e5d4408c381. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n`exec_shell` is correctly approval-gated. Its sibling `exec_shell_interact` returns `ApprovalRequirement::Auto`, so when the model writes input into a shell the user already approved (a `python3 -i` REPL, `mysql`, `ssh`, `sudo -i`, etc.), no prompt fires. Inside those processes, \"stdin\" is the command surface, so the model gets to run commands at whatever privilege that process holds. The user approved opening the shell once, for a stated purpose; the input that then runs in it is chosen by the model, and can be steered by any prompt injection the agent ingests afterward.\n\n### Details\nThe vulnerability requires two ordinary preconditions: shell tools are enabled (the normal config for using CodeWhale as a coding agent), and the session already has one approved long-running interactive process. After that, any untrusted content the agent reads can drive a `exec_shell_interact` call.\n\n`crates/tui/src/tools/shell.rs:2834-2910`:\n\n```rust\nfn capabilities(&self) -> Vec<ToolCapability> {\n    vec![ToolCapability::ExecutesCode]\n}\n\nfn approval_requirement(&self) -> ApprovalRequirement {\n    ApprovalRequirement::Auto          // overrides the Required-for-ExecutesCode default\n}\n\nasync fn execute(&self, input: Value, context: &ToolContext) -> Result<ToolResult, ToolError> {\n    let task_id = required_task_id(&input)?;\n    let close_stdin = optional_bool(&input, \"close_stdin\", false);\n    let interaction_input = input\n        .get(\"input\").or_else(|| input.get(\"stdin\")).or_else(|| input.get(\"data\"))  // LLM-controlled\n        .and_then(serde_json::Value::as_str).unwrap_or(\"\");\n    {\n        let mut manager = context.shell_manager.lock()...;\n        if !",
+      "link": "https://github.com/advisories/GHSA-g29h-pfmp-qp9r",
+      "published": "2026-09-04T18:02:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75857"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-target-critical-citrix-netscaler-auth-bypass-in-attacks/",
+      "title": "Critical Citrix NetScaler auth bypass now leveraged in attacks",
+      "summary": "Attackers have begun targeting a critical-severity Citrix NetScaler auth bypass flaw (CVE-2026-19490) in the wild, according to vulnerability intelligence company Previdian. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-critical-citrix-netscaler-auth-bypass-in-attacks/",
+      "published": "2026-09-04T15:25:59+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-19490"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
@@ -74,19 +140,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an AI system processes attacker-controlled content such as a website, email, or document containing malicious instructions. The model may silently follow those instructions instead of the user's intent; observed web examples sought SEO manipulation, resource exhaustion, data exfiltration, or destruction, including attempts to delete files.",
-        "affected_products": "Affected products unavailable.",
-        "cvss_score": ">null<",
-        "cvss_vector": "Vector unavailable.",
-        "exploit_available": "true - https://greshake.github.io/",
-        "patch_available": "false",
-        "active_exploitation": "true - https://blog.google/security/prompt-injections-web/ (Google observed malicious IPI attempts and a 32% increase in the malicious category from November 2025 to February 2026, while noting that activity had not yet been productionized at scale.)",
-        "threat_actors": "None known.",
-        "mitigation": "Treat retrieved web, email, and document content as untrusted; apply least privilege to agents, restrict side effects, and require approval for sensitive actions. Google also describes hardening its AI products, red-team pressure testing Gemini, and an AI Vulnerability Reward Program.",
-        "vendor_advisory": "URL unavailable."
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
@@ -102,19 +156,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when malicious instructions are embedded in external data such as websites, emails, or documents that Gemini processes. The model may confuse those instructions with legitimate commands, potentially causing unauthorized actions, data disclosure, or manipulation of its response without direct malicious input from the user.",
-        "affected_products": "Google Gemini app; Gemini in Google Workspace apps: Gmail, Docs editors, Drive, and Chat (specific versions not specified).",
-        "cvss_score": ":null",
-        "cvss_vector": "Vector unavailable.",
-        "exploit_available": "true - https://www.immersivelabs.com/resources/c7-blog/weaponizing-llms-bypassing-email-security-products-via-indirect-prompt-injection",
-        "patch_available": "false - no discrete versioned patch was identified; Google describes continuous configuration, prompt, model-training, and defense updates instead.",
-        "active_exploitation": "true - https://blog.google/security/prompt-injections-web/ (Google observed malicious indirect prompt-injection attempts in the wild and reported a 32% relative increase from November 2025 to February 2026; activity was generally low sophistication and not attributed to named campaigns).",
-        "threat_actors": "None known.",
-        "mitigation": "Google uses layered defenses including prompt-injection classifiers, security-focused instruction reinforcement, Markdown sanitization, suspicious-URL redaction, model hardening, contextual user confirmation, and security notifications. Users should treat external content as untrusted, heed Gemini warnings, avoid links and shared files from unknown senders, and report malicious content.",
-        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
@@ -130,19 +172,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when malicious instructions are embedded in websites, third-party iframe content, or user-generated content that Chrome\u2019s agentic browsing system processes. The planning model may treat those instructions as trusted directions, causing unwanted actions such as financial transactions or sensitive-data exfiltration. Google describes defenses including an isolated User Alignment Critic, origin gating, user confirmations, and real-time prompt-injection detection.",
-        "affected_products": "Google Chrome with Gemini in Chrome/agentic browsing capabilities; specific impacted versions not specified.",
-        "cvss_score": ".",
-        "cvss_vector": "Vector unavailable.",
-        "exploit_available": "false",
-        "patch_available": "false",
-        "active_exploitation": "false - no confirmed in-the-wild exploitation of Chrome\u2019s agentic capabilities was reported; separate research has documented general web-based indirect prompt-injection activity: https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/",
-        "threat_actors": "None known.",
-        "mitigation": "Use Chrome\u2019s agentic safeguards, including origin restrictions, user confirmation for logins, payments, messages, and other sensitive actions, and the ability to pause or stop tasks. Keep Chrome updated and avoid allowing agents to access unrelated authenticated sites or sensitive data.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -158,19 +188,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "CVE-2025-48530 is an incorrect bounds-check condition in multiple Android locations that permits out-of-bounds memory accesses. The issue affects the CrabbyAVIF component and could enable remote code execution when combined with other vulnerabilities, without requiring additional privileges or user interaction. Google described it as a linear buffer overflow that was caught before public release, while Scudo guard pages made exploitation deterministically non-exploitable.",
-        "affected_products": "Google Android 16 (affected; addressed by security patch level 2025-08-01 or later)",
-        "cvss_score": "8.1",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "false",
-        "patch_available": "true - https://source.android.com/docs/security/bulletin/2025-08-01",
-        "active_exploitation": "false - no confirmed active exploitation reported; Google states the vulnerability never made it into a public release.",
-        "threat_actors": "None known.",
-        "mitigation": "Install the Android security update with patch level 2025-08-01 or later, preferably the latest update provided by the device manufacturer. Android's Scudo hardened allocator also provides defense-in-depth against this issue.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -186,19 +204,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an attacker embeds hidden instructions in external data such as emails, documents, web pages, or calendar content that an AI system processes as context. The injected content can manipulate Gemini into revealing sensitive information, generating unauthorized tool calls, or performing other actions. Google's research models the attack as a malicious payload causing a function call that exfiltrates private data through an externally executed system.",
-        "affected_products": "Gemini 2.5 models, Gemini app, Gemini in Google Workspace apps including Gmail and Docs; exact affected application versions are not specified.",
-        "cvss_score": "]",
-        "cvss_vector": "Vector unavailable.",
-        "exploit_available": "true - https://www.safebreach.com/blog/gemini-voice-assistant-prompt-injection-exploit/",
-        "patch_available": "false - no standalone versioned vendor patch was identified; Google has deployed and continues updating integrated mitigations described at https://blog.google/security/mitigating-prompt-injection-attacks/.",
-        "active_exploitation": "true - https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/; web-based indirect prompt injection has been reported as actively weaponized in real-world activity, although no named group exploiting Gemini specifically was identified.",
-        "threat_actors": "None known.",
-        "mitigation": "Use Google's layered defenses: adversarial model hardening, prompt-injection classifiers, security-thought reinforcement, Markdown and URL sanitization, suspicious-link redaction, user confirmation for sensitive actions, and end-user security notifications. Organizations should also apply human-in-the-loop approval and restrict the privileges and external data accessible to AI agents.",
-        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
-      }
+      "is_high_severity": true
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
@@ -215,19 +221,7 @@
         "CVE-2025-66376"
       ],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "CVE-2025-66376 is a stored cross-site scripting vulnerability in Zimbra\u2019s Classic UI caused by improper sanitization of CSS @import directives in HTML email. A malicious JavaScript payload executes when a user merely views the crafted email, allowing collection and exfiltration of email, directory, authentication, and other sensitive data through the victim\u2019s authenticated webmail session.",
-        "affected_products": "Zimbra Collaboration Suite (ZCS) 10.0.0\u201310.0.17, Zimbra Collaboration Suite (ZCS) 10.1.0\u201310.1.12; specifically the Classic UI",
-        "cvss_score": "6.1",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-        "exploit_available": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-        "patch_available": "true - https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
-        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a; CISA reports successful exploitation by LAUNDRY BEAR and lists CVE-2025-66376 in its Known Exploited Vulnerabilities Catalog.",
-        "threat_actors": "LAUNDRY BEAR; also tracked as Void Blizzard, CL-STA-1114, and TA488 (formerly UNK_PitStop)",
-        "mitigation": "Immediately upgrade ZCS to 10.1.13 or 10.0.18 or later. If patching is not immediately feasible, use an alternative mail client and avoid the Classic ZCS webmail client; monitor for suspicious SOAP requests, DNS activity, and outbound connections, and revoke exposed application passcodes, 2FA scratch keys, and passwords after suspected compromise.",
-        "vendor_advisory": "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories"
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -242,19 +236,25 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "This is a coordinated Chinese cyber-espionage campaign rather than a single CVE-defined vulnerability. The actors exploit publicly known vulnerabilities on internet-exposed network-edge devices, including routers and firewalls, then modify routing, access-control, authentication, and tunneling configurations to maintain persistence and pivot through trusted connections. They also use packet capture, traffic mirroring, virtualized containers such as Cisco Guest Shell, and compromised routers to collect credentials and network traffic.",
-        "affected_products": "Ivanti Connect Secure and Ivanti Policy Secure (CVE-2024-21887; versions not specified), Palo Alto Networks PAN-OS GlobalProtect (CVE-2024-3400; versions not specified), Cisco IOS XE (CVE-2023-20273 and CVE-2023-20198; versions not specified), Cisco IOS and IOS XE Smart Install (CVE-2018-0171; versions not specified).",
-        "cvss_score": ":null",
-        "cvss_vector": "Vector unavailable.",
-        "exploit_available": "true - https://github.com/frostbits-security/SIET",
-        "patch_available": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a (apply the applicable vendor updates for the listed CVEs; there is no single patch for the broader campaign).",
-        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
-        "threat_actors": "PRC state-sponsored APT actors; activity overlaps with Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, and GhostEmperor. CISA does not adopt a specific commercial naming convention for these actors.",
-        "mitigation": "Patch the listed CVEs and keep network-device operating systems on vendor-supported, fully updated releases. Isolate management planes, restrict management services to approved administrators and networks, use SNMPv3 and strong authentication, disable unused ports and protocols, and monitor configuration changes, tunnels, packet capture, Guest Shell, and unexpected local accounts.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
-      }
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-75858",
+      "title": "CodeWhale: rlm_eval auto-approves arbitrary Python execution, bypassing the user's approval policy (RCE)",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 57f3c89471e27ac4032d9791f6885e5d4408c381. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\nThe `rlm_eval` tool runs an arbitrary Python string chosen by the model in a real `python3` interpreter. Its `approval_requirement()` returns `ApprovalRequirement::Auto`, which the engine treats as \"never prompt,\" regardless of the user's configured `--approval-policy`. A single tool call \u2014 which prompt injection from any untrusted content the agent reads (a web page, a fetched URL, a repo file, an MCP tool result) can induce \u2014 runs code on the user's machine at the user's privilege with no prompt and no audit step. This is the same defect that was already patched on the sibling `run_tests` tool (CVE-2026-45311); the fix never reached `rlm_eval` or `rlm_open`, which expose a broader surface (full Python on the host, not just `cargo test`).\n\n### Details\n`rlm_eval`'s `execute()` reads the LLM-controlled `code` field and runs it (`crates/tui/src/tools/rlm.rs:215-300`):\n\n```rust\nfn capabilities(&self) -> Vec<ToolCapability> {\n    vec![ToolCapability::Network, ToolCapability::ExecutesCode]\n}\n\nfn approval_requirement(&self) -> ApprovalRequirement {\n    ApprovalRequirement::Auto          // overrides the safe default below\n}\n\nasync fn execute(&self, input: Value, context: &ToolContext) -> Result<ToolResult, ToolError> {\n    let name = required_non_empty_str(&input, \"name\")?;\n    let code = required_non_empty_str(&input, \"code\")?;   // LLM-controlled\n    ...\n    let round = kernel.run(code, Some(&bridge)).await...   // runs that code in python3\n```\n\nThe trait default at `crates/tui/src/tools/spec.rs:632-633` would have returned `Required` for any tool whose capabilities include `ExecutesCode`. `rlm_eval` deliberately overrides that to `Auto`.\n\nThe ",
+      "link": "https://github.com/advisories/GHSA-wrj3-vj8c-784f",
+      "published": "2026-09-04T18:12:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75858"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
     },
     {
       "id": "https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/",
@@ -271,19 +271,7 @@
         "CVE-2026-9586"
       ],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "The unauthenticated /pa endpoint parses XML beginning with <PolycomIPPhone> and directly concatenates the user-controlled PhoneIP value into PostgreSQL queries without sanitization or parameterization. A remote attacker can send a crafted HTTP request to execute arbitrary SQL as the PostgreSQL superuser, perform database operations, and chain the injection to remote code execution on the Switchvox appliance.",
-        "affected_products": "Sangoma Switchvox SMB Edition 8.2.2.1 through versions prior to 8.4.0.2, including 8.3 build 104997",
-        "cvss_score": "9.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true - https://horizon3.ai/attack-research/disclosures/cve-2026-9586-sangoma-switchvox-rce/",
-        "patch_available": "true - https://sangomakb.atlassian.net/wiki/spaces/Switchvox/pages/1802371073/Switchvox+-+Release+Notes+Version+8.4.0.2+July+14+2026",
-        "active_exploitation": "true - Horizon3 observed valid exploitation attempts on honeypots on August 30, 2026; CISA added CVE-2026-9586 to the KEV Catalog on September 2, 2026: https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-        "threat_actors": "Unidentified threat actors; observed activity includes cryptominer deployment. No named APT or ransomware group has been reported.",
-        "mitigation": "Upgrade Switchvox SMB to 8.4.0.2 or later. Because exploitation is active, investigate exposed systems for compromise, review Switchvox database logs and indicators of compromise, and restrict internet access to the management interface until patched.",
-        "vendor_advisory": "https://sangomakb.atlassian.net/wiki/spaces/Switchvox/pages/1802371073/Switchvox+-+Release+Notes+Version+8.4.0.2+July+14+2026"
-      }
+      "is_high_severity": false
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/",
@@ -346,6 +334,95 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-75856",
+      "title": "CodeWhale: SSRF\u200c bypass - TOCTOU on DNS failure for DNS pinning",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 26de44a8bd5051f8f944ea60b2c37ae1d2b7d25e. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\nDNS-pinning failure allows natural failure of code, however with a custom DNS server that fails the initial requests and allows the secondary requests, it's possible to bypass the logic.\n\n\n### Details\nSimplified attack scenario:\n1. Attacker asks agent to visit the `mydomain.com`.\n2. CodeWhale tries to resolve the IP of `mydomain.com`, however, the custom DNS server that's controlled by the attacker marks the request DNS\u200c query as failed (Time of Check). \n3. CodeWhale allows the code to continue as it expects it request to fail again.\n4. On the secondary (Time of Use), the DNS server resolves mydomain.com to a local IP (e.g., 127.0.0.1)\n5. The request is executed and the content from port 80 is returned to the attacker, allowing full bypass of SSRF mitigations.\n\nIn the [DNS-pinning](https://github.com/Hmbown/CodeWhale/blob/8dff2f7525ead210a01347b48f53ae3f20d094ec/crates/tui/src/tools/fetch_url.rs#L362) section, when DNS fails, the code is allowed to continue as it's expected to fail. However\n\n### PoC\nThis is a custom DNS server that fails the first requests (in this case, the first and second requests must fail, while the 3rd and 4th are allowed due to A and AAAA DNS queries). Here is the code for the DNS\u200c server(for PoC, should be placed in `dnser/dns_resolver.py`:\n```python\n#!/usr/bin/env python3\n\"\"\"\nLocal DNS Resolver \u2014 customizable request/response handling.\nUses only the standard library + dnslib.\n\nUsage:\n    pip install dnslib\n    sudo python dns_resolver.py          # binds to 0.0.0.0:53 by default\n    python dns_resolver.py --port 5353   # unprivileged port for testing\n\"\"\"\n\nimport argparse\nimport socket\nimport threading\nfrom dnslib i",
+      "link": "https://github.com/advisories/GHSA-6v2g-fpxh-pmmh",
+      "published": "2026-09-04T18:05:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75856"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75915",
+      "title": "CodeWhale: js_execution leaks parent environment to model context via missing env scrub",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 26de44a8bd5051f8f944ea60b2c37ae1d2b7d25e. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n\njs_execution exposes parent process environment to model-provided JavaScript\n\nThe js_execution tool spawns Node with tokio::process::Command::new without calling the child_env scrubber that exec_shell, the Python REPL, and the MCP launcher all use. Model-provided JavaScript reads process.env and the values flow back to the parent transcript as the tool's stdout, exposing API keys, cloud credentials, and forge tokens to the next model turn.\n\n### Details\n\nIn `crates/tui/src/tools/js_execution.rs` (v0.8.37, lines 91-105):\n\n```rust\nlet temp_dir = tempfile::tempdir()\n    .map_err(|e| ToolError::execution_failed(format!(\"tempdir failed: {e}\")))?;\nlet script_path = temp_dir.path().join(\"js_execution.js\");\ntokio::fs::write(&script_path, code)\n    .await\n    .map_err(|e| ToolError::execution_failed(format!(\"tempfile write failed: {e}\")))?;\n\nlet mut cmd = tokio::process::Command::new(&node);\ncmd.arg(&script_path);\ncmd.current_dir(workspace);\n\nlet output = tokio::time::timeout(Duration::from_secs(120), cmd.output())\n    .await\n    .map_err(|_| ToolError::Timeout { seconds: 120 })\n    .and_then(|res| res.map_err(|e| ToolError::execution_failed(e.to_string())))?;\n```\n\nThe Command is built without `cmd.env_clear()` and without the project's `crate::child_env::apply_to_tokio_command` helper. Every variable in the parent process environment is inherited by the spawned `node`.\n\nFor comparison, exec_shell (`crates/tui/src/tools/shell.rs:790-792`) and the Python REPL (`crates/tui/src/repl/runtime.rs:238`) both apply the scrubber:\n\n```rust\nchild_env::apply_to_command(&mut cmd, child_env::string_map_env(&exec_env.env));\n```\n\napply_to_tokio_command calls `cmd.e",
+      "link": "https://github.com/advisories/GHSA-h539-c7r8-3xq4",
+      "published": "2026-09-04T18:03:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75915"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75859",
+      "title": "CodeWhale: Project config `instructions` override enables arbitrary file read into AI system prompt via cloned repository",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 43563356b98c6b993085554da82e77370160a31c. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n\nA malicious `.codewhale/config.toml` or `.deepseek/config.toml` committed to a repository can set `instructions` to an array of arbitrary file paths (including paths outside the workspace like `~/.ssh/id_rsa` or `~/.aws/credentials`) that are read from disk and injected into the AI model's system prompt. There is no path validation, workspace boundary check, or tightening guard on the `instructions` field. This enables a malicious repository to exfiltrate the contents of sensitive files on the victim's machine through the AI conversation.\n\n### Details\n\nThe project config merge function at `crates/tui/src/main.rs:5190-5197` (v0.8.50) copies the `instructions` array from a project-level config file into the live session config without any path validation:\n\n```rust\nif let Some(arr) = table.get(\"instructions\").and_then(toml::Value::as_array) {\n    let entries: Vec<String> = arr\n        .iter()\n        .filter_map(|v| v.as_str().map(str::to_string))\n        .filter(|s| !s.trim().is_empty())\n        .collect();\n    config.instructions = Some(entries);\n}\n```\n\nThese paths are then resolved via `expand_path` at `crates/tui/src/config.rs:2361-2371`, which expands `~` to the user's home directory and resolves environment variables:\n\n```rust\npub fn instructions_paths(&self) -> Vec<PathBuf> {\n    self.instructions.as_deref().unwrap_or(&[])\n        .iter()\n        .map(String::as_str)\n        .map(str::trim)\n        .filter(|s| !s.is_empty())\n        .map(expand_path)\n        .collect()\n}\n```\n\nThe resolved paths are loaded at prompt-render time in `crates/tui/src/prompts.rs:216` with no workspace boundary check:\n\n```rust\nInstructionSource::File(path) =>",
+      "link": "https://github.com/advisories/GHSA-62f5-cp2p-vq95",
+      "published": "2026-09-04T18:00:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75859"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75914",
+      "title": "CodeWhale: image_analyze follows workspace symlinks, leaking external file bytes",
+      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 26de44a8bd5051f8f944ea60b2c37ae1d2b7d25e. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n\nimage_analyze follows workspace symlinks and leaks outside-workspace file bytes to the vision endpoint\n\nThe image_analyze tool resolves its image_path with a bare context.workspace.join instead of routing through ToolContext::resolve_path. The pre-join lexical check rejects absolute paths, Windows prefixes, and parent-dir components but never canonicalizes, so a symlink inside the workspace whose name ends in an image extension and whose target sits outside the workspace is read transparently. The tool has ReadOnly capability and the trait default makes it auto-approved, so the bypass executes with no user prompt.\n\n### Details\n\nIn `crates/tui/src/vision/tools.rs` (v0.8.37, lines 104-123):\n\n```rust\nasync fn execute(&self, input: Value, context: &ToolContext) -> Result<ToolResult, ToolError> {\n    let image_path = required_str(&input, \"image_path\")?;\n    let prompt = input\n        .get(\"prompt\")\n        .and_then(|v| v.as_str())\n        .unwrap_or(\"Describe this image in detail.\");\n\n    let image_path_buf = Path::new(image_path);\n    if image_path_buf.components().any(|c| {\n        matches!(\n            c,\n            Component::Prefix(_) | Component::RootDir | Component::ParentDir\n        )\n    }) {\n        return Err(ToolError::execution_failed(\n            \"image_path must be a relative path within the workspace and cannot escape it.\",\n        ));\n    }\n    let resolved_path = context.workspace.join(image_path_buf);\n    let (image_data, mime_type) = Self::read_image_file(&resolved_path).await?;\n```\n\n`read_image_file` (lines 31-39) is a `tokio::fs::read(path)` call which follows symlinks. The bytes are then base64-encoded and embedded as `",
+      "link": "https://github.com/advisories/GHSA-w7wx-5q49-r59w",
+      "published": "2026-09-04T17:34:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75914"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/",
+      "title": "HPE Patches Critical RCE Vulnerabilities in AOS-CX",
+      "summary": "Nearly two dozen issues, tracked collectively as CVE-2026-73749 (CVSS score of 9.8), were addressed with the updates. The post HPE Patches Critical RCE Vulnerabilities in AOS-CX appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/",
+      "published": "2026-09-04T16:11:06+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-73749"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/",
@@ -539,167 +616,6 @@
       ],
       "cve_ids": [
         "CVE-2026-63670"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-82404",
-      "title": "TOON: Prototype pollution when decoding untrusted TOON input",
-      "summary": "### Summary\n\nDecoding attacker-controlled TOON containing a `__proto__`, `constructor`, or `prototype` key wrote through the object's prototype chain instead of creating an own property, polluting `Object.prototype` for the whole runtime. The `expandPaths: 'safe'` path (dotted keys such as `a.__proto__.x`) was the strongest vector; plain nested objects, tabular rows, and quoted keys were all affected. The encoder had a matching defect: it silently dropped own `__proto__` properties and could fire an inherited setter while normalizing.\n\n### Impact\n\nAny service that decodes untrusted TOON is affected. Prototype pollution can escalate to denial of service or, with a suitable downstream gadget, remote code execution.\n\n### Patches\n\nUpgrade to `@toon-format/toon@2.3.1`. Decoders now materialize `__proto__`/`constructor`/`prototype` as ordinary own data properties, matching `JSON.parse` semantics; the encoder preserves the same keys without invoking inherited accessors.\n\n### Workarounds\n\nNone. Upgrade is the only fix. Callers who cannot upgrade should reject input whose keys include `__proto__`, `constructor`, or `prototype` before decoding.\n\n### Port maintainers\n\nThe same bug shape can exist in any implementation that assigns decoded keys with `obj[key] = value`. Rust, Swift, Java, Python, and C# ports should audit their object-construction and path-expansion paths for the three prototype keys.",
-      "link": "https://github.com/advisories/GHSA-p95v-992w-h6c3",
-      "published": "2026-09-03T19:52:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-82404"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73293",
-      "title": "Semaphore UI: Manager-to-owner privilege escalation via custom-role slug collision",
-      "summary": "## Summary\n\nSemaphore resolves a project member's effective permissions in `ProjectMiddleware` by looking up a role row whose slug matches the member's assigned role, and overwrites the built-in permission bitmask with that row's value. A member holding the built-in `manager` role creates a custom project role through `POST /api/project/{id}/roles`, a route gated only by the `CanManageProjectResources` permission that `manager` already holds.\n\nThe role-creation validator does not reserve the built-in slug names (`owner`, `manager`, `task_runner`, `guest`) and sets no ceiling on the permission bits a caller may grant. A manager creates a role with slug `manager` carrying the full bitmask `15`, including the two owner-only bits `CanUpdateProject` and `CanManageProjectUsers` that `manager` does not hold. The slug lookup that backs permission resolution ignores project scope, so this attacker-created row is returned on the next request and the manager's effective permissions become owner-equivalent.\n\nResult: a project manager escalates to full owner of the project with one authenticated request, then adds or removes members, changes project settings, deletes the project, or demotes the legitimate owner.\n\n## Affected\n\nsemaphoreui/semaphore v2.18.12 (current latest as of 2026-06-09) and `develop` HEAD. Confirmed live-exploitable on v2.18.12 (commit 8a4dcf0); the affected files are unchanged on `develop` with no fix commit since the tag. Earlier releases that ship PRO custom project roles are likely affected but were not tested.\n\nRequires the PRO build (custom project roles). The official `semaphoreui/semaphore` Docker image ships this feature active by default, with no subscription or configuration flag.\n\nPure community builds without custom project roles are not affected: the role-creation endpoint returns 404 there.\n\n## Root cause\n\n`ProjectMiddleware` reads the member's built-in role permissions, then calls `GetProjectOrGlobalRoleBySlug` and, when a role row shares the ",
-      "link": "https://github.com/advisories/GHSA-cxvf-gvfq-36w2",
-      "published": "2026-09-03T19:23:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73293"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62681",
-      "title": "Orval: RCE via OpenAPI path -> unescaped request-URL template literal (backtick breakout)",
-      "summary": "### Summary\n\nOrval emits the OpenAPI path into the generated request URL as a TEMPLATE LITERAL (`` `/users/...` ``) without escaping the backtick character. A path containing a backtick closes the template literal and injects a concatenation expression that is evaluated when the generated URL/request/key function is called, executing attacker-controlled code. Affects the axios, fetch, react-query, and swr clients. Verified on Orval 8.19.0; survives Orval's default OpenAPI validation.\n\n### Details\n\n```ts\n// generated URL builder (fetch client)\nreturn `/users/` + (globalThis.X = require(\"fs\").writeFileSync(\"/marker\",\"pwned\")) + `/list`;\n```\n\nThe backtick in the path terminates the `` `...` `` literal; `+ (<code>) +` runs as a live expression; a trailing backtick reopens a template literal so the file stays valid. The code runs whenever the generated request function, URL builder, or query-key function is called.\n\nThis is distinct from Orval's four published CVEs: CVE-2026-22785 (`summary` -> MCP server), CVE-2026-23947 / CVE-2026-25141 (`x-enumDescriptions`), and CVE-2026-24132 (`const` -> mock files). This is a different field (the route path) and a different sink (the request-URL template literal), which those advisories and their fixes do not cover.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`) attached: generates a fetch client with default validation, bundles it, calls the generated functions, and shows a marker file written. Verified on 8.19.0.\n\n### Impact\n\nCode execution in any environment that calls a client generated from an attacker-controlled or attacker-influenced OpenAPI description (developer, CI, or the running application). \n\n### Suggested fix\n\nEscape the path before emitting it into the URL template literal (escape backtick and `${`, or build the URL with an encoder that treats the path as data), and validate path characters.",
-      "link": "https://github.com/advisories/GHSA-fg9p-mrxr-hvq7",
-      "published": "2026-09-03T19:17:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62681"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71865",
-      "title": "Orval: Import-time RCE via query parameter name -> computed-property-key injection in the zod cli",
-      "summary": "### Summary\n\norval's zod client emits each query parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A \" in the query parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const OpQueryParams = zod.object({...}) executes on load) -> import-time RCE. The query parameter name is a pure data field. Verified on orval 8.19.0 / Node.\n\n### Details\n\nexport const OpQueryParams = zod.object({ \"a\":zod.string(),[require(\"fs\").writeFileSync(\"PWNED\",\"\")]:zod.string(),\"b\": ... })\n\nAlso affects the hono client (reuses zod generation). orval escapes values in zod arrays but not keys in zod.object. Sibling fields: schema property name, header parameter name (CVE-97) (separate reports). Distinct from orval's $ref / route-path / server-url / zod-default findings.\n\n### PoC\n\nreproduce.sh (+ make_spec.py) attached: a query parameter name that breaks the zod.object key and injects a computed key; evaluating it (= importing the module) writes the marker. Verified on 8.19.0.\n\n### Impact\n\nJavaScript / OS command execution at import time for anyone who generates an orval zod client from an attacker-controlled spec and imports it.\n\n### Suggested fix\n\nEscape the query parameter name for the JS string key (JSON.stringify) in the zod.object key generation; never interpolate a raw name adjacent to [ ] in object-literal position. [maintainer-report.txt](https://github.com/user-attachments/files/29426090/maintainer-report.txt) [make_spec.py](https://github.com/user-attachments/files/29426091/make_spec.py) [reproduce.sh](https://github.com/user-attachments/files/29426092/reproduce.sh)",
-      "link": "https://github.com/advisories/GHSA-653q-5476-x79g",
-      "published": "2026-09-03T18:18:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71865"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71864",
-      "title": "Orval: Import-time RCE via header parameter name -> computed-property-key injection in the zod client",
-      "summary": "### Summary\n\norval's zod client emits each header parameter name as a double-quoted key in the generated zod.object({...}) request-validation schema WITHOUT escaping the double quote. A \" in the header parameter name closes the key and lands in object-literal context, where an injected computed property key [expr] is evaluated when zod.object({...}) runs -- at MODULE IMPORT (export const OpHeader = zod.object({...}) executes on load) -> import-time RCE. The header parameter name is a pure data field. Verified on orval 8.19.0 / Node.\n\n### Details\n\nexport const OpHeader = zod.object({ \"a\":zod.string(),[require(\"fs\").writeFileSync(\"PWNED\",\"\")]:zod.string(),\"b\": ... })\n\nAlso affects the hono client (reuses zod generation). orval escapes values in zod arrays but not keys in zod.object. Sibling fields: schema property name, query parameter name (CVE-96) (separate reports). Distinct from orval's $ref / route-path / server-url / zod-default findings.\n\n### PoC\n\nreproduce.sh (+ make_spec.py) attached: a header parameter name that breaks the zod.object key and injects a computed key; evaluating it (= importing the module) writes the marker. Verified on 8.19.0.\n\n### Impact\n\nJavaScript / OS command execution at import time for anyone who generates an orval zod client from an attacker-controlled spec and imports it. \n\n### Suggested fix\n\nEscape the header parameter name for the JS string key (JSON.stringify) in the zod.object key generation; never interpolate a raw name adjacent to [ ] in object-literal position.",
-      "link": "https://github.com/advisories/GHSA-6437-gxhq-pqv8",
-      "published": "2026-09-03T18:08:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71864"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61625",
-      "title": "VictoriaMetrics vmrestore: Path traversal via crafted backup part names escapes restore root",
-      "summary": "### Summary\nThe VictoriaMetrics `vmrestore` utility does not validate backup part path components before writing restored files to the local filesystem. An attacker who can provide or modify a backup source can craft object names containing `..` path components that cause vmrestore to write files outside the intended `-storageDataPath` restore root, subject to the permissions of the `vmrestore` process.\n\n### Impact\nAn attacker who can supply or modify the backup source -- for example by writing malicious object names to a compromised or misconfigured storage bucket -- can cause arbitrary files to be created or overwritten on the host running `vmrestore`, within the limits of the process's filesystem permissions.\n\n### Patches\nVersions 1.146.0, 1.136.12, 1.122.25\n\n### Resources\n  - https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.146.0\n  - https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.136.12\n  - https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.122.25\n\n### Note\nVictoriaMetrics' security model assumes backup sources are trusted and access-controlled. This vulnerability requires an attacker to have write access to the backup storage (e.g. S3, GCS, or Azure Blob Storage bucket) used as the `-src` for `vmrestore`. Under a correctly secured deployment where backup storage access is properly restricted, unauthorized exploitation of this issue should not be possible. Users are advised to follow the principle of least privilege when granting access to backup storage buckets.",
-      "link": "https://github.com/advisories/GHSA-8q3c-rjr9-xxrp",
-      "published": "2026-09-03T17:49:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61625"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56743",
-      "title": "Cilium may unexpectedly allow ingress traffic from the local namespace when a Kubernetes NetworkPolicy is configured with an ipBlock match",
-      "summary": "### Impact\n\nStandard Kubernetes `NetworkPolicy` specifications using CIDR-based `ipBlock` rules without pod or namespace selectors erroneously generate a wildcard namespace allow rule under specific cluster configurations.\n\nWhen Cilium deployment is configured with a specific custom `clusterName` (rather than the default `\"any\"` value), the parser incorrectly instantiates a pod selector on selectorless peer definitions. This leads to Cilium appending an unintended wildcard namespace label selector to the policy's allowed Layer 3 rules, which allows traffic from other workloads in the same namespace as the subject of the policy.\n\nExample policy affected by this issue:\n```\napiVersion: networking.k8s.io/v1\nkind: NetworkPolicy\nmetadata:\n  name: test-server\n  namespace: default\nspec:\n  podSelector:\n    matchLabels:\n      app: test-server\n  policyTypes:\n  - Ingress\n  ingress:\n  - from:\n    - ipBlock:\n        cidr: 192.0.2.3\n```\n\nIn affected versions, this policy erroneously allows the `test-server` Pod in the `default` namespace to receive any traffic from other workloads running in the `default` namespace.\n\n### Patches\n\nThis issue has been patched in:\n\n- Cilium v1.19.5\n\nReleases below v1.19.0 are not affected.\n\n### This issue affects:\n\n- Cilium v1.19 between v1.19.0 and v1.19.4 inclusive\n\n### Workarounds\n\nDevelopers can create the equivalent policy using CiliumNetworkPolicy [fromCIDR expressions](https://docs.cilium.io/en/stable/security/policy/layer3/#ip-cidr-based). CiliumNetworkPolicy and CiliumClusterwideNetworkPolicy are not affected by this issue.\n\n### Acknowledgements\n\nSpecial thanks to @TheBeeZee for reporting this issue and preparing the fix, and to @fristonio and @odinuge for their assistance in reviewing the solution.\n\n### For more information\n\nIf a vulnerability affecting Cilium appears to have been found, the Cilium security team strongly encourages reporting it to the security mailing list at security@cilium.io. This is a private mailing list for the Cilium",
-      "link": "https://github.com/advisories/GHSA-fm8w-2m5w-9j7r",
-      "published": "2026-09-03T17:17:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56743"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71428",
-      "title": "unstructured: Server-Side Request Forgery in the URL-based partitioning",
-      "summary": "### Summary\n\nServer-Side Request Forgery in `unstructured`. The `url=` argument of `partition()`, `partition_html()`, and `partition_md()` is fetched via `requests.get()` with no host validation. The response body is returned as `Element` text, so this is a **full-read SSRF** \u2014 attackers reach loopback admin APIs, internal HTTP services, and cloud metadata endpoints, and read the response. \n\n`unstructured` is the de facto URL ingestion layer for LangChain `UnstructuredURLLoader`, LlamaIndex `UnstructuredReader`, Chainlit, and many agent frameworks \u2014 secure defaults must live in the library, not in every downstream caller.\n\n### Details\n\nThree sinks, all in `unstructured == 0.22.26` (verified on `main` at `199f255`):\n\n- `unstructured/partition/auto.py:303` \u2014 `file_and_type_from_url()`, reached via `partition(url=\u2026)`.\n- `unstructured/partition/html/partition.py:160` \u2014 `partition_html(url=\u2026)`. Post-fetch `Content-Type` check runs after the request hits the target.\n- `unstructured/partition/md.py:96` \u2014 `partition_md(url=\u2026)`. No timeout (SSRF + slow-loris DoS).\n\nNone of `is_private`, `is_loopback`, `ipaddress`, `gethostbyname`, or `allow_redirects` appear in any of the three files. Three exploitation paths apply: direct private-IP target; redirect bypass (`allow_redirects=True` default); DNS rebinding (TOCTOU, closeable only by socket-pinning). Affected since `0.4.7` (Feb 2023) \u2014 ~219 releases, no validation ever introduced.\n\n### PoC\n\nLocal-only. `pip install unstructured==0.22.26 flask requests`.\n\n`internal_server.py`:\n\n```python\nfrom flask import Flask, Response, jsonify\napp = Flask(__name__)\n\n@app.route(\"/imds\")\ndef imds(): return jsonify({\"AccessKeyId\": \"ASIA-FAKE\", \"SecretAccessKey\": \"FAKE/SECRET\"})\n\n@app.route(\"/internal.html\")\ndef html(): return Response(\"<html><body><p>SK_LEAK_42</p></body></html>\", mimetype=\"text/html\")\n\n@app.route(\"/redir\")\ndef redir(): return Response(\"\", 302, headers={\"Location\": \"http://127.0.0.1:9999/imds\"})\n\nif __name__ == \"__main__\": app.r",
-      "link": "https://github.com/advisories/GHSA-4mvj-m6j5-pmf7",
-      "published": "2026-09-03T17:02:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71428"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html",
-      "title": "Critical Cisco Nexus 9000 Flaw Lets Unauthenticated Remote Attackers Run Code as Root",
-      "summary": "Cisco has released patches to address a critical security flaw affecting 10 Silicon One-based Nexus 9000 switches that could allow an unauthenticated, remote attacker to execute code as root, alongside an IOS XR hardening release bundling 7 umbrella CVEs, 2 of which are rated 9.8, with no workaround for any IOS XR version.\n\nThe Nexus vulnerability, tracked as CVE-2026-20212 (CVSS score: 9.8), is",
-      "link": "https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html",
-      "published": "2026-09-03T15:52:07+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-20212"
       ],
       "is_zero_day": false,
       "is_high_severity": true
