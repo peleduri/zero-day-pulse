@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">44</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">35</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-03 20:13 UTC</div>
+            <div class="generated">Updated 2026-09-04 01:42 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -295,20 +295,165 @@
 
 </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-928x-9mpw-8h56" target="_blank" rel="noopener">Grav: Decompression Bomb via ZipArchiver - Missing Extraction Limits</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8x84-r2ff-h8pq" target="_blank" rel="noopener">SiYuan: Encrypted-notebook key-derivation material and wrapped notebook keys disclosed to anonymous readers, enabling offline master-password cracking</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-61690</code>
+            <code class="cve">CVE-2026-72801</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
+            <span>2026-09-03</span>
           </div>
-          <p class='summary'>## Summary
-`ZipArchiver::extract()` lacks limits on uncompressed size, file count, and nesting depth, creating a distinct, unpatched variant of the GHSA-2vcx-h8p2-9pg9 zip bomb vulnerability. While the parallel method Installer::unZip() received comprehensive limits, ZipArchiver::extract() remains unprotected, leaving a separate code path vulnerable to the same attack vector. The vulnerability is …</p>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-72801](https://nvd.nist.gov/vuln/detail/CVE-2026-72801).
+
+### Summary
+
+Two `CheckAuth`-only endpoints disclose the complete offline attack material for the encrypted-notebook master password, plus the wrapped per-notebook key needed to use it. Both are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.En…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qvq9-hq6p-v378" target="_blank" rel="noopener">SiYuan: Missing publish-access filter on getBlockAttrs and batchGetBlockAttrs discloses block attributes (name, alias, memo, custom fields) of protected documents</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72803</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-72803](https://nvd.nist.gov/vuln/detail/CVE-2026-72803).
+
+### Summary
+
+`POST /api/attr/getBlockAttrs` and `POST /api/attr/batchGetBlockAttrs` return a block&#x27;s full attribute set (IAL) with no publish-access check. Both are `CheckAuth`-only, so they are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.En…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6mcf-g667-w3qv" target="_blank" rel="noopener">SiYuan: Password (protected) tier omitted in the attribute-view/database publish filter: Reader receives rows of protected documents without the password (publish mode)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72806</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-72806](https://nvd.nist.gov/vuln/detail/CVE-2026-72806).
+
+### Summary
+
+`FilterViewByPublishAccess`, the filter `renderAttributeView` applies for Reader sessions drops rows using only the hidden/forbidden check and never checks the publish password. Its three sibling filters all check both tiers. As a result, a publish `RoleReader` (or the anonym…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x67c-8pwr-m8g3" target="_blank" rel="noopener">SiYuan: Second-order SSTI to arbitrary SQL via attribute-view template column (queryBlocks): malicious imported package executes SQL on victim kernel</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72807</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-72807](https://nvd.nist.gov/vuln/detail/CVE-2026-72807).
+
+### Summary
+
+Attribute-view (AV) template columns are live-evaluated on every render and expose the `queryBlocks` template function, which runs raw SQL on the read-write database handle (`SelectBlocksRawStmt`, using `?`→argument string substitution rather than parameter binding). AV mutat…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v7ph-r5r6-4jcj" target="_blank" rel="noopener">SiYuan: Missing publish-access filter on getFileAnnotation discloses private PDF annotations of forbidden/protected documents (publish mode)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72808</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-72808](https://nvd.nist.gov/vuln/detail/CVE-2026-72808).
+
+### Summary
+
+The `/api/asset/getFileAnnotation` endpoint returns the content of `.sya` PDF-annotation files with no publish-access check. It is gated by `CheckAuth` only, so it is reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q2vg-7qgx-x5fc" target="_blank" rel="noopener">SiYuan: SQL injection in backlink/mention search via unescaped stored and client input (publish mode): first-order (client keyword) and second-order (stored document title) breakout on read-write handle</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72811</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-72811](https://nvd.nist.gov/vuln/detail/CVE-2026-72811).
+
+### Summary
+
+The backlink/mention search query (`kernel/model/backlink.go`) concatenates stored block metadata (title, name, alias, anchor text) and the client-supplied keyword into a SQL `MATCH`/search statement, escaping only the double-quote character (`&quot;`) and not the single quote (`&#x27;…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fph3-ghq9-vw66" target="_blank" rel="noopener">SiYuan: Unauthenticated SQL execution and REGEXP injection via fullTextSearchAssetContent (publish mode): reader-reachable raw SQL (method 2) and unescaped REGEXP (method 3) on read-write asset-content DB</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-69083</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-69083](https://nvd.nist.gov/vuln/detail/CVE-2026-69083).
+
+### Summary
+
+The `/api/search/fullTextSearchAssetContent` endpoint exposes two SQL flaws on the asset-content database, both reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`:
+
+1. **method 2** passes a client-supplied SQL statem…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vh22-h7hf-www7" target="_blank" rel="noopener">SiYuan: Unauthenticated arbitrary SQL execution via searchEmbedBlock (publish mode) : reader-reachable raw statement on read-write handle, cross-notebook read/write</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-69084</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-03</span>
+          </div>
+          <p class='summary'>**CVE:** This vulnerability corresponds to [CVE-2026-69084](https://nvd.nist.gov/vuln/detail/CVE-2026-69084).
+
+### Summary
+
+The `/api/search/searchEmbedBlock` endpoint passes a client-supplied SQL statement verbatim to the database with no validation. The endpoint is gated by `CheckAuth` only reachable by the publish RoleReader token, and by the anonymous account when `Publish.Auth.Enable` is `fal…</p>
 
         </article>
 
@@ -582,307 +727,6 @@ The vulnerabilities are as follows -
   CVE-2026-83548 (CVSS score: 10.0) - A server-side request forgery vulnerability in SonicWall SMA 1000 Appliances that could allow a remote unauthenticated</p>
 
         </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2mw5-23gm-pccq" target="_blank" rel="noopener">OpenChoreo: Authenticated OS command injection via OpenChoreo Workflow Plane templates enables code execution in privileged pods</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-73667</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-OpenChoreo Workflow Plane templates were vulnerable to OS command injection because some developer-controlled workflow parameters were interpolated directly into shell program text executed through sh -c.
-
-An authenticated user with permission to configure and trigger an affected workflow could supply crafted parameter values containing shell metacharacters. Because Argo substituted th…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c5f6-2rm9-2w8g" target="_blank" rel="noopener">OpenChoreo: Unauthenticated build/workflow trigger via git-provider confusion (webhook signature bypass)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-73840</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>## Summary
-The OpenChoreo autobuild webhook endpoint (`POST /api/v1alpha1/autobuild`) selected the git provider used to authenticate an incoming webhook from a client-supplied request header rather than from the target component&#x27;s configuration, and its Bitbucket provider accepted requests without a valid signature. A caller could set the `X-Event-Key` header to be treated as a Bitbucket webhook, …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-52gf-6rpq-fgmx" target="_blank" rel="noopener">OpenChoreo: Cross-project command execution and wirelog view access via OpenChoreo openchoreo-api exec and wirelogs endpoints</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-73841</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-
-The OpenChoreo API server (`openchoreo-api`) authorized requests to its exec and wirelogs endpoints against the project supplied by the caller in the request, rather than against the project that actually owns the target component. The target component was resolved by name only, and the authorization engine decided purely from the caller-supplied resource hierarchy — the component&#x27;s r…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qh9r-j7rp-4x2m" target="_blank" rel="noopener">OpenChoreo: Unauthenticated access to data-plane operations via OpenChoreo cluster-gateway management APIs</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-73843</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-The OpenChoreo control-plane **cluster-gateway** served its caller-facing management APIs on the same network listener that accepts data-plane agent connections. In the multi-cluster topology that listener is published outside the cluster, and the management APIs did not authenticate the calling client. A party able to reach the listener could therefore invoke privileged data-plane ope…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gv5w-hfx8-8cwq" target="_blank" rel="noopener">SeaweedFS: Filer JWT allowed_prefixes literal prefix match allows cross-tenant access to sibling paths</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-72921</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Impact
-When a filer JWT restricts a token to a set of path prefixes via `allowed_prefixes`, the authorization check used a literal byte-prefix match (`strings.HasPrefix`). A token scoped to `/tenant1` therefore also authorized requests to sibling paths such as `/tenant1234`, `/tenant1-old`, and `/tenant1backup`.
-
-In a multi-tenant deployment this lets the holder of one tenant&#x27;s token access an…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-76g3-c3x4-crvx" target="_blank" rel="noopener">Scrapy: S3DownloadHandler sends signed S3 requests over plaintext HTTP by default</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-84366</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Problem
-
-Scrapy’s `S3DownloadHandler` sends signed S3 requests over plaintext HTTP by default.
-
-A normal request like `s3://bucket/key` is converted into `http://bucket.s3.amazonaws.com/key` unless `request.meta[&quot;is_secure&quot;]` is explicitly set. The generated request is then signed with configured AWS credentials, so AWS authorization material can be sent without TLS.
-
-Vulnerable code in `scrap…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7mqg-cx4g-x2rf" target="_blank" rel="noopener">Omnigent Guardrail policy bypass: shell-command parser fails open in policies/builtins/_shell.py</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62676</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>**Reporter:** Aaron / Aeon — autonomous security agent (https://github.com/aaronjmars/aeon)
-**Project:** `omnigent-ai/omnigent` v0.1.0 (Databricks) — meta-harness running Claude Code / Codex / Pi &quot;in check with policies and sandboxing&quot;
-**Component:** `omnigent/policies/builtins/_shell.py` (shared parser) → consumed by `policies/builtins/github.py` (`write_repos`/`write_branches` allowlist) and `po…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4q39-2jhr-7qx8" target="_blank" rel="noopener">Plate: SSRF with response disclosure in DOCX image embedding</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-65842</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>## Summary
-
-`@platejs/docx-io` can fetch remote image URLs while converting HTML to DOCX. When an application converts attacker-controlled HTML in a server-side or privileged environment, this can cause the application environment to make unintended outbound requests and include fetched image data in the generated DOCX.
-
-## Impact
-
-Applications are affected when they use `@platejs/docx-io` to conv…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7w2g-9mf9-324m" target="_blank" rel="noopener">Hurl: Cookies in Cookies section leak when redirecting to a different host</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63481</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>## The Bug
-
-Hurl &lt;= 8.0.1 lets you define cookies two ways in a .hurl file:
-
-1. As a raw Cookie: header in the [Header]/headers area
-2. In a dedicated [Cookies] section (parsed into RequestSpec.cookies)
-
-When following a redirect to a different host, Hurl correctly strips security-sensitive data (Authorization, Cookie header, and basic-auth user) to avoid leaking credentials cross-host — mirroring…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mvxr-6m87-mv2q" target="_blank" rel="noopener">Mail: Email address spoofing via malformed RFC 2047 encoded-words</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63435</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>## Summary
-
-Mail::Utilities.q_value_decode and Mail::Utilities.b_value_decode decoded only the first RFC 2047 encoded-word in a string and used an overly greedy pattern to match the charset token. A crafted, malformed encoded-word embedded in an address display name or local part could cause the decoded output to differ from what a human reviewer or downstream parser would expect, allowing an atta…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7mgc-c7pq-3rr3" target="_blank" rel="noopener">Grav: 2FA Bypass via &#x27;login.regenerate2FASecret&#x27; - Secret Rotation During Pending Challenge</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62669</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-When 2FA is enabled on an account, submitting correct credentials authenticates the user but leaves them unauthorized pending TOTP verification. During this pending-challenge window, the `login.regenerate2FASecret` task which requires only `$user-&gt;exists()`, not `$user-&gt;authorized`  can be called without a CSRF nonce. It overwrites the victim&#x27;s `twofa_secret` on disk with an attacker-c…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p8rw-8qj3-hf33" target="_blank" rel="noopener">Omnigent: Unvalidated os_env.cwd in agent bundle yields arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62677</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-
-An authenticated, non-admin user can obtain **arbitrary host-filesystem read/write** (and host environment-secret disclosure) on an Omnigent **runner** by uploading an agent bundle whose `os_env.cwd` points outside any intended workspace (e.g. `/` or `/home/&lt;victim&gt;`). The `cwd` field is taken **verbatim** from the bundle with no validation, normalization, or boundary check anywhere i…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jrrm-9hc7-2v3h" target="_blank" rel="noopener">Omnigent: Shared Agent Bundle Overwrite Leads to Authenticated Runner RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62674</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-
-An authenticated user with edit access to their own session can overwrite a shared/template agent by uploading a full agent bundle through `PUT /sessions/{session_id}/agent`.
-
-Shared/template agents are shown as not MCP-editable, but this upload path still accepts a replacement bundle. By adding a `stdio` MCP server to the shared agent, the attacker can cause future runner sessions us…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mc5q-6hpj-rp7j" target="_blank" rel="noopener">Grav: Twig sandbox config exfiltration via grav.offsetGet + dump filter (CVE-2026-44738 bypass)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61842</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>### Summary
-
-The Twig content sandbox replaces `config` with the redacted `SandboxConfig` facade and strips `Config::get`/`toArray` from the method allowlist (GHSA-j274-39qw-32c9), so editor content can&#x27;t read config secrets via `config`. That&#x27;s bypassable: `grav` is the raw container, `offsetget` is allow-listed on it, so `grav.offsetGet(&#x27;config&#x27;)` returns the real `Config`. The allow-listed filt…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cpjf-6666-r8fx" target="_blank" rel="noopener">link-preview-js DNS Rebinding SSRF Bypass / Incomplete Fix for CVE-2026-43897</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61704</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-02</span>
-          </div>
-          <p class='summary'>The existing advisory GHSA-4gp8-rjrq-ch6q / CVE-2026-43897 states that the SSRF issue was fixed in 4.0.1. However, 4.0.3 remains bypassable when the documented resolveDNSHost mitigation is used.
-
-Root cause:
-The library validates one resolved IP address through resolveDNSHost, but later performs fetch() against the original hostname without pinning the connection to the validated IP. An attacker-c…</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/" target="_blank" rel="noopener">Hackers exploit Sangoma Switchvox flaw to deploy reverse shells</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-9586</code>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-02</span>
-  </div>
-  <p class='summary'>Attackers are actively exploiting CVE-2026-9586, an unauthenticated SQL injection vulnerability in the Sangoma Switchvox VoIP platform that can lead to remote code execution. [...]</p>
-
-</article>
 
 <article class="card card-high">
   <div class="card-top">
