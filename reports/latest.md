@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-04 01:42 UTC &nbsp;|&nbsp; **Total:** 35 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-04 10:04 UTC &nbsp;|&nbsp; **Total:** 35 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -29,18 +29,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Researcher Releases FalconFlank PoC Showing Privilege Escalation in CrowdStrike Falcon
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-03
-**Reference:** <https://thehackernews.com/2026/09/researcher-releases-falconflank-poc.html>
-
-> The security researcher known as Chaotic Eclipse (aka INFINITE NIGHTMARE, MSNightmare, and Nightmare-Eclipse) has dropped a new zero-day dubbed FalconFlank, a privilege escalation flaw impacting Crowdstrike Falcon.
-
-&quot;FalconFlank is a 0day privilege escalation that abuses the office malicious macros remediation in CrowdStrike Falcon Sensor,&quot; the researcher said in a GitHub README file, ad…
-
----
-
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -49,7 +38,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -58,7 +47,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -67,7 +56,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -76,7 +65,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -85,7 +74,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -94,7 +83,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -103,7 +92,34 @@
 
 ---
 
-## 12. 🟡 High Severity — SiYuan: Encrypted-notebook key-derivation material and wrapped notebook keys disclosed to anonymous readers, enabling offline master-password cracking
+## 11. 🟠 Zero-Day — Google Releases Chrome Update to Patch Actively Exploited V8 Zero-Day
+
+**CVE:** `CVE-2026-85046` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-04
+**Reference:** <https://thehackernews.com/2026/09/google-releases-chrome-update-to-patch.html>
+
+> Google on Thursday released security updates to patch 12 vulnerabilities, including one that has come under active exploitation in the wild.
+
+The high-severity vulnerability, tracked as CVE-2026-85046 (CVSS score: 8.8), has been described as a type confusion bug in V8, Chrome&#x27;s JavaScript and WebAssembly engine.
+
+&quot;Type confusion in V8 in Google Chrome prior to 152.0.7977.82 allowed a rem…
+
+---
+
+## 12. 🟡 High Severity — Over 440,000 Exploit Attempts Target Super Forms and Elementor Pro RCE Flaws
+
+**CVE:** `CVE-2026-14894` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-04
+**Reference:** <https://thehackernews.com/2026/09/over-440000-exploit-attempts-target.html>
+
+> Threat actors are exploiting two critical security flaws in WordPress plugins Super Forms and Elementor Pro, according to findings from Wordfence.
+
+The vulnerabilities in question are -
+
+
+  CVE-2026-14894 (CVSS score: 9.8) - A missing file type validation vulnerability in Super Forms – Drag &amp; Drop Form Builder that allows unauthenticated attackers to upload files of any type, including
+
+---
+
+## 13. 🟡 High Severity — SiYuan: Encrypted-notebook key-derivation material and wrapped notebook keys disclosed to anonymous readers, enabling offline master-password cracking
 
 **CVE:** `CVE-2026-72801` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-8x84-r2ff-h8pq>
@@ -116,7 +132,7 @@ Two `CheckAuth`-only endpoints disclose the complete offline attack material for
 
 ---
 
-## 13. 🟡 High Severity — SiYuan: Missing publish-access filter on getBlockAttrs and batchGetBlockAttrs discloses block attributes (name, alias, memo, custom fields) of protected documents
+## 14. 🟡 High Severity — SiYuan: Missing publish-access filter on getBlockAttrs and batchGetBlockAttrs discloses block attributes (name, alias, memo, custom fields) of protected documents
 
 **CVE:** `CVE-2026-72803` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-qvq9-hq6p-v378>
@@ -129,7 +145,7 @@ Two `CheckAuth`-only endpoints disclose the complete offline attack material for
 
 ---
 
-## 14. 🟡 High Severity — SiYuan: Password (protected) tier omitted in the attribute-view/database publish filter: Reader receives rows of protected documents without the password (publish mode)
+## 15. 🟡 High Severity — SiYuan: Password (protected) tier omitted in the attribute-view/database publish filter: Reader receives rows of protected documents without the password (publish mode)
 
 **CVE:** `CVE-2026-72806` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-6mcf-g667-w3qv>
@@ -142,7 +158,7 @@ Two `CheckAuth`-only endpoints disclose the complete offline attack material for
 
 ---
 
-## 15. 🟡 High Severity — SiYuan: Second-order SSTI to arbitrary SQL via attribute-view template column (queryBlocks): malicious imported package executes SQL on victim kernel
+## 16. 🟡 High Severity — SiYuan: Second-order SSTI to arbitrary SQL via attribute-view template column (queryBlocks): malicious imported package executes SQL on victim kernel
 
 **CVE:** `CVE-2026-72807` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-x67c-8pwr-m8g3>
@@ -155,7 +171,7 @@ Attribute-view (AV) template columns are live-evaluated on every render and expo
 
 ---
 
-## 16. 🟡 High Severity — SiYuan: Missing publish-access filter on getFileAnnotation discloses private PDF annotations of forbidden/protected documents (publish mode)
+## 17. 🟡 High Severity — SiYuan: Missing publish-access filter on getFileAnnotation discloses private PDF annotations of forbidden/protected documents (publish mode)
 
 **CVE:** `CVE-2026-72808` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-v7ph-r5r6-4jcj>
@@ -168,7 +184,7 @@ The `/api/asset/getFileAnnotation` endpoint returns the content of `.sya` PDF-an
 
 ---
 
-## 17. 🟡 High Severity — SiYuan: SQL injection in backlink/mention search via unescaped stored and client input (publish mode): first-order (client keyword) and second-order (stored document title) breakout on read-write handle
+## 18. 🟡 High Severity — SiYuan: SQL injection in backlink/mention search via unescaped stored and client input (publish mode): first-order (client keyword) and second-order (stored document title) breakout on read-write handle
 
 **CVE:** `CVE-2026-72811` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-q2vg-7qgx-x5fc>
@@ -181,7 +197,7 @@ The backlink/mention search query (`kernel/model/backlink.go`) concatenates stor
 
 ---
 
-## 18. 🟡 High Severity — SiYuan: Unauthenticated SQL execution and REGEXP injection via fullTextSearchAssetContent (publish mode): reader-reachable raw SQL (method 2) and unescaped REGEXP (method 3) on read-write asset-content DB
+## 19. 🟡 High Severity — SiYuan: Unauthenticated SQL execution and REGEXP injection via fullTextSearchAssetContent (publish mode): reader-reachable raw SQL (method 2) and unescaped REGEXP (method 3) on read-write asset-content DB
 
 **CVE:** `CVE-2026-69083` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-fph3-ghq9-vw66>
@@ -196,7 +212,7 @@ The `/api/search/fullTextSearchAssetContent` endpoint exposes two SQL flaws on t
 
 ---
 
-## 19. 🟡 High Severity — SiYuan: Unauthenticated arbitrary SQL execution via searchEmbedBlock (publish mode) : reader-reachable raw statement on read-write handle, cross-notebook read/write
+## 20. 🟡 High Severity — SiYuan: Unauthenticated arbitrary SQL execution via searchEmbedBlock (publish mode) : reader-reachable raw statement on read-write handle, cross-notebook read/write
 
 **CVE:** `CVE-2026-69084` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-vh22-h7hf-www7>
@@ -209,7 +225,7 @@ The `/api/search/searchEmbedBlock` endpoint passes a client-supplied SQL stateme
 
 ---
 
-## 20. 🟡 High Severity — ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `</textarea/>` solidus close
+## 21. 🟡 High Severity — ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `</textarea/>` solidus close
 
 **CVE:** `CVE-2026-63670` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-jxwj-j7wr-gfrw>
@@ -219,7 +235,7 @@ A mutation-XSS / allowedTags bypass: when `textarea` (or `xmp`) is included in `
 
 ---
 
-## 21. 🟡 High Severity — TOON: Prototype pollution when decoding untrusted TOON input
+## 22. 🟡 High Severity — TOON: Prototype pollution when decoding untrusted TOON input
 
 **CVE:** `CVE-2026-82404` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-p95v-992w-h6c3>
@@ -230,7 +246,7 @@ Decoding attacker-controlled TOON containing a `__proto__`, `constructor`, or `p
 
 ---
 
-## 22. 🟡 High Severity — Semaphore UI: Manager-to-owner privilege escalation via custom-role slug collision
+## 23. 🟡 High Severity — Semaphore UI: Manager-to-owner privilege escalation via custom-role slug collision
 
 **CVE:** `CVE-2026-73293` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-cxvf-gvfq-36w2>
@@ -241,7 +257,7 @@ Semaphore resolves a project member&#x27;s effective permissions in `ProjectMidd
 
 ---
 
-## 23. 🟡 High Severity — Orval: RCE via OpenAPI path -> unescaped request-URL template literal (backtick breakout)
+## 24. 🟡 High Severity — Orval: RCE via OpenAPI path -> unescaped request-URL template literal (backtick breakout)
 
 **CVE:** `CVE-2026-62681` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-fg9p-mrxr-hvq7>
@@ -252,7 +268,7 @@ Orval emits the OpenAPI path into the generated request URL as a TEMPLATE LITERA
 
 ---
 
-## 24. 🟡 High Severity — Orval: Import-time RCE via query parameter name -> computed-property-key injection in the zod cli
+## 25. 🟡 High Severity — Orval: Import-time RCE via query parameter name -> computed-property-key injection in the zod cli
 
 **CVE:** `CVE-2026-71865` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-653q-5476-x79g>
@@ -263,7 +279,7 @@ orval&#x27;s zod client emits each query parameter name as a double-quoted key i
 
 ---
 
-## 25. 🟡 High Severity — Orval: Import-time RCE via header parameter name -> computed-property-key injection in the zod client
+## 26. 🟡 High Severity — Orval: Import-time RCE via header parameter name -> computed-property-key injection in the zod client
 
 **CVE:** `CVE-2026-71864` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-6437-gxhq-pqv8>
@@ -274,7 +290,7 @@ orval&#x27;s zod client emits each header parameter name as a double-quoted key 
 
 ---
 
-## 26. 🟡 High Severity — VictoriaMetrics vmrestore: Path traversal via crafted backup part names escapes restore root
+## 27. 🟡 High Severity — VictoriaMetrics vmrestore: Path traversal via crafted backup part names escapes restore root
 
 **CVE:** `CVE-2026-61625` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-8q3c-rjr9-xxrp>
@@ -284,7 +300,7 @@ The VictoriaMetrics `vmrestore` utility does not validate backup part path compo
 
 ---
 
-## 27. 🟡 High Severity — Cilium may unexpectedly allow ingress traffic from the local namespace when a Kubernetes NetworkPolicy is configured with an ipBlock match
+## 28. 🟡 High Severity — Cilium may unexpectedly allow ingress traffic from the local namespace when a Kubernetes NetworkPolicy is configured with an ipBlock match
 
 **CVE:** `CVE-2026-56743` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-fm8w-2m5w-9j7r>
@@ -297,7 +313,7 @@ When Cilium deployment is configured with a specific custom `clusterName` (rathe
 
 ---
 
-## 28. 🟡 High Severity — unstructured: Server-Side Request Forgery in the URL-based partitioning
+## 29. 🟡 High Severity — unstructured: Server-Side Request Forgery in the URL-based partitioning
 
 **CVE:** `CVE-2026-71428` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-4mvj-m6j5-pmf7>
@@ -310,7 +326,7 @@ Server-Side Request Forgery in `unstructured`. The `url=` argument of `partition
 
 ---
 
-## 29. 🟡 High Severity — Critical Cisco Nexus 9000 Flaw Lets Unauthenticated Remote Attackers Run Code as Root
+## 30. 🟡 High Severity — Critical Cisco Nexus 9000 Flaw Lets Unauthenticated Remote Attackers Run Code as Root
 
 **CVE:** `CVE-2026-20212` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html>
@@ -321,7 +337,7 @@ The Nexus vulnerability, tracked as CVE-2026-20212 (CVSS score: 9.8), is
 
 ---
 
-## 30. 🟡 High Severity — Critical Elementor Pro flaw exploited to take over WordPress sites
+## 31. 🟡 High Severity — Critical Elementor Pro flaw exploited to take over WordPress sites
 
 **CVE:** `CVE-2026-32475` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/>
@@ -330,7 +346,7 @@ The Nexus vulnerability, tracked as CVE-2026-20212 (CVSS score: 9.8), is
 
 ---
 
-## 31. 🟡 High Severity — CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning
+## 32. 🟡 High Severity — CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning
 
 **CVE:** `CVE-2026-73846` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-78x9-fhhx-v2g6>
@@ -341,7 +357,7 @@ The response cache derives its key from an ambiguous string serialization of the
 
 ---
 
-## 32. 🟡 High Severity — CKAN MCP Server: Information disclosure via verbose error reflection
+## 33. 🟡 High Severity — CKAN MCP Server: Information disclosure via verbose error reflection
 
 **CVE:** `CVE-2026-73844` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://github.com/advisories/GHSA-6f9w-9hf2-5rg3>
@@ -352,26 +368,12 @@ Error paths reflect raw upstream response bodies and internal exception messages
 
 ---
 
-## 33. 🟡 High Severity — Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability
+## 34. 🟡 High Severity — Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability
 
 **CVE:** `CVE-2026-19949` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-03
 **Reference:** <https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/>
 
 > The high-severity SQL injection flaw (CVE-2026-19949) could allow unauthenticated attackers to achieve remote code execution. The post Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability appeared first on SecurityWeek .
-
----
-
-## 34. 🟡 High Severity — CISA Adds Seven Exploited Flaws as Attackers Deploy Reverse Shells and Crypto Miners
-
-**CVE:** `CVE-2026-83548` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-03
-**Reference:** <https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added seven security flaws to its Known Exploited Vulnerabilities (KEV) catalog after they landed in attackers&#x27; crosshairs.
-
-The vulnerabilities are as follows -
-
-
-  CVE-2026-83548 (CVSS score: 10.0) - A server-side request forgery vulnerability in SonicWall SMA 1000 Appliances that could allow a remote unauthentica…
 
 ---
 
