@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-04T10:04:40.734145+00:00",
+  "generated": "2026-09-04T15:24:15.261825+00:00",
   "total": 35,
   "kev": 0,
-  "zero_day": 11,
-  "enriched": 0,
+  "zero_day": 14,
+  "enriched": 10,
   "findings": [
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
@@ -18,7 +18,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "FSB Center 16 actors scan Internet address ranges for exposed SNMP agents accepting common or default community strings, then use spoofed SNMP Set-Requests to copy router configurations and transfer them through TFTP. The actors also target Cisco Smart Install and web-based management portals. CVE-2018-0171 allows a crafted Smart Install message on TCP port 4786 to trigger a buffer overflow, device reload, denial of service, or arbitrary code execution; CVE-2008-4128 is a CSRF flaw in the Cisco IOS 12.4 HTTP administration interface that can permit execution of administrative commands.",
+        "affected_products": "Cisco IOS Software and Cisco IOS XE Software running the Smart Install client on vulnerable releases; Cisco 871 Integrated Services Router running Cisco IOS 12.4 for CVE-2008-4128. Cisco IOS XR, Cisco NX-OS, and Cisco Smart Install director configurations are not affected by CVE-2018-0171.",
+        "cvss_score": "9.8 (CVE-2018-0171); 4.3 (CVE-2008-4128)",
+        "cvss_vector": "CVE-2018-0171: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H; CVE-2008-4128: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+        "exploit_available": "true - https://github.com/AlrikRr/Cisco-Smart-Exploit; https://www.exploit-db.com/exploits/6476",
+        "patch_available": "Partially: true for CVE-2018-0171 - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi2; no current vendor patch identified for CVE-2008-4128, so legacy equipment should be isolated, mitigated, or replaced.",
+        "active_exploitation": "true - CISA reports ongoing Russian FSB Center 16 exploitation of vulnerable networking devices and says the actors previously exploited CVE-2018-0171 and CVE-2008-4128; CVE-2008-4128 was also added to CISA's Known Exploited Vulnerabilities Catalog: https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
+        "threat_actors": "Russian FSB Center 16; aliases reported by CISA include Berserk Bear, Energetic Bear, Crouching Yeti, Dragonfly, Ghost Blizzard, and Static Tundra.",
+        "mitigation": "Disable Cisco Smart Install and, where it is not required, disable SNMPv1/v2; use SNMPv3 with authPriv, non-default credentials, read-only access, and MIB/OID allowlisting. Restrict management protocols with ACLs, block exposed TFTP, Smart Install, and SNMP ports where feasible, update device software, and replace end-of-life equipment.",
+        "vendor_advisory": "CVE-2018-0171: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi2; CVE-2008-4128: URL unavailable."
+      }
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/",
@@ -34,22 +46,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/cisco-warns-of-unpatched-secure-email-flaws-patches-critical-switch-vulnerabilities/",
-      "title": "Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities",
-      "summary": "Publicly disclosed S/MIME flaws could expose encrypted email content, while critical IOS XR and Nexus bugs could enable remote code execution and authentication bypass. The post Cisco Warns of Unpatched Secure Email Flaws, Patches Critical Switch Vulnerabilities appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/cisco-warns-of-unpatched-secure-email-flaws-patches-critical-switch-vulnerabilities/",
-      "published": "2026-09-03T10:30:00+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "CVE-2026-68820 is a CWE-416 use-after-free vulnerability in the kernel-mode Windows Ancillary Function Driver for WinSock (AFD.sys). A locally authenticated low-privileged attacker can run a specially crafted application and win a race condition involving concurrent socket state access; the resulting memory corruption can provide kernel read/write capability and SYSTEM privileges. The attack is local, high-complexity, requires no user interaction, and is not independently exploitable remotely over the internet.",
+        "affected_products": "Windows 10 Version 1607 (32-bit/x64, affected from 10.0.14393.0 to before 10.0.14393.9418), Windows 10 Version 1809 (32-bit/x64, from 10.0.17763.0 to before 10.0.17763.9121), Windows 10 Version 21H2 (32-bit/ARM64/x64, from 10.0.19044.0 to before 10.0.19044.7663), Windows 10 Version 22H2 (32-bit/ARM64/x64, from 10.0.19045.0 to before 10.0.19045.7663), Windows 11 Version 23H2 (ARM64/x64, from 10.0.22631.0 to before 10.0.22631.7517), Windows 11 Version 24H2 (ARM64/x64, from 10.0.26100.0 to before 10.0.26100.9168), Windows 11 Version 25H2 (ARM64/x64, from 10.0.26200.0 to before 10.0.26200.9168), Windows 11 Version 26H1 (ARM64/x64, from 10.0.28000.0 to before 10.0.28000.2704), Windows Server 2012 and Server Core (x64, from 6.2.9200.0 to before 6.2.9200.26280), Windows Server 2012 R2 and Server Core (x64, from 6.3.9600.0 to before 6.3.9600.23338), Windows Server 2016 and Server Core (x64, from 10.0.14393.0 to before 10.0.14393.9418), Windows Server 2019 and Server Core (x64, from 10.0.17763.0 to before 10.0.17763.9121), Windows Server 2022 (x64, from 10.0.20348.0 to before 10.0.20348.5499), Windows Server 2025 and Server Core (x64, from 10.0.26100.0 to before 10.0.26100.33296)",
+        "cvss_score": "7.0",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "true - https://research.checkpoint.com/2026/shattering-the-dream-when-a-job-offer-becomes-a-zero-day-attack/ (weaponized exploit observed in the Lazarus campaign; no public PoC code reported)",
+        "patch_available": "true - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-68820",
+        "active_exploitation": "true - Microsoft reports exploitation detected; Check Point Research documented Lazarus using CVE-2026-68820 in Operation Dream Job: https://research.checkpoint.com/2026/shattering-the-dream-when-a-job-offer-becomes-a-zero-day-attack/",
+        "threat_actors": "Lazarus Group (DPRK-linked), operating in the Operation Dream Job campaign",
+        "mitigation": "Install Microsoft's August 11, 2026 security updates on all affected Windows builds and reboot as required; for Windows 10 Version 1607 and Windows Server 2016, KB5120418 updates the system to OS Build 14393.9418, with SSU KB5120236 recommended first where applicable. If patching is delayed, restrict untrusted local or remote interactive logons and investigate suspicious SYSTEM-level activity or Lazarus-related compromise indicators.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-68820"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
@@ -65,7 +74,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection occurs when an AI system processes attacker-controlled content such as a website, email, or document containing malicious instructions. The model may silently follow those instructions instead of the user's intent; observed web examples sought SEO manipulation, resource exhaustion, data exfiltration, or destruction, including attempts to delete files.",
+        "affected_products": "Affected products unavailable.",
+        "cvss_score": ">null<",
+        "cvss_vector": "Vector unavailable.",
+        "exploit_available": "true - https://greshake.github.io/",
+        "patch_available": "false",
+        "active_exploitation": "true - https://blog.google/security/prompt-injections-web/ (Google observed malicious IPI attempts and a 32% increase in the malicious category from November 2025 to February 2026, while noting that activity had not yet been productionized at scale.)",
+        "threat_actors": "None known.",
+        "mitigation": "Treat retrieved web, email, and document content as untrusted; apply least privilege to agents, restrict side effects, and require approval for sensitive actions. Google also describes hardening its AI products, red-team pressure testing Gemini, and an AI Vulnerability Reward Program.",
+        "vendor_advisory": "URL unavailable."
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
@@ -81,7 +102,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection occurs when malicious instructions are embedded in external data such as websites, emails, or documents that Gemini processes. The model may confuse those instructions with legitimate commands, potentially causing unauthorized actions, data disclosure, or manipulation of its response without direct malicious input from the user.",
+        "affected_products": "Google Gemini app; Gemini in Google Workspace apps: Gmail, Docs editors, Drive, and Chat (specific versions not specified).",
+        "cvss_score": ":null",
+        "cvss_vector": "Vector unavailable.",
+        "exploit_available": "true - https://www.immersivelabs.com/resources/c7-blog/weaponizing-llms-bypassing-email-security-products-via-indirect-prompt-injection",
+        "patch_available": "false - no discrete versioned patch was identified; Google describes continuous configuration, prompt, model-training, and defense updates instead.",
+        "active_exploitation": "true - https://blog.google/security/prompt-injections-web/ (Google observed malicious indirect prompt-injection attempts in the wild and reported a 32% relative increase from November 2025 to February 2026; activity was generally low sophistication and not attributed to named campaigns).",
+        "threat_actors": "None known.",
+        "mitigation": "Google uses layered defenses including prompt-injection classifiers, security-focused instruction reinforcement, Markdown sanitization, suspicious-URL redaction, model hardening, contextual user confirmation, and security notifications. Users should treat external content as untrusted, heed Gemini warnings, avoid links and shared files from unknown senders, and report malicious content.",
+        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
@@ -97,7 +130,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection occurs when malicious instructions are embedded in websites, third-party iframe content, or user-generated content that Chrome\u2019s agentic browsing system processes. The planning model may treat those instructions as trusted directions, causing unwanted actions such as financial transactions or sensitive-data exfiltration. Google describes defenses including an isolated User Alignment Critic, origin gating, user confirmations, and real-time prompt-injection detection.",
+        "affected_products": "Google Chrome with Gemini in Chrome/agentic browsing capabilities; specific impacted versions not specified.",
+        "cvss_score": ".",
+        "cvss_vector": "Vector unavailable.",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "false - no confirmed in-the-wild exploitation of Chrome\u2019s agentic capabilities was reported; separate research has documented general web-based indirect prompt-injection activity: https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/",
+        "threat_actors": "None known.",
+        "mitigation": "Use Chrome\u2019s agentic safeguards, including origin restrictions, user confirmation for logins, payments, messages, and other sensitive actions, and the ability to pause or stop tasks. Keep Chrome updated and avoid allowing agents to access unrelated authenticated sites or sensitive data.",
+        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -113,7 +158,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "CVE-2025-48530 is an incorrect bounds-check condition in multiple Android locations that permits out-of-bounds memory accesses. The issue affects the CrabbyAVIF component and could enable remote code execution when combined with other vulnerabilities, without requiring additional privileges or user interaction. Google described it as a linear buffer overflow that was caught before public release, while Scudo guard pages made exploitation deterministically non-exploitable.",
+        "affected_products": "Google Android 16 (affected; addressed by security patch level 2025-08-01 or later)",
+        "cvss_score": "8.1",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "false",
+        "patch_available": "true - https://source.android.com/docs/security/bulletin/2025-08-01",
+        "active_exploitation": "false - no confirmed active exploitation reported; Google states the vulnerability never made it into a public release.",
+        "threat_actors": "None known.",
+        "mitigation": "Install the Android security update with patch level 2025-08-01 or later, preferably the latest update provided by the device manufacturer. Android's Scudo hardened allocator also provides defense-in-depth against this issue.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
+      }
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -129,7 +186,19 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Indirect prompt injection occurs when an attacker embeds hidden instructions in external data such as emails, documents, web pages, or calendar content that an AI system processes as context. The injected content can manipulate Gemini into revealing sensitive information, generating unauthorized tool calls, or performing other actions. Google's research models the attack as a malicious payload causing a function call that exfiltrates private data through an externally executed system.",
+        "affected_products": "Gemini 2.5 models, Gemini app, Gemini in Google Workspace apps including Gmail and Docs; exact affected application versions are not specified.",
+        "cvss_score": "]",
+        "cvss_vector": "Vector unavailable.",
+        "exploit_available": "true - https://www.safebreach.com/blog/gemini-voice-assistant-prompt-injection-exploit/",
+        "patch_available": "false - no standalone versioned vendor patch was identified; Google has deployed and continues updating integrated mitigations described at https://blog.google/security/mitigating-prompt-injection-attacks/.",
+        "active_exploitation": "true - https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/; web-based indirect prompt injection has been reported as actively weaponized in real-world activity, although no named group exploiting Gemini specifically was identified.",
+        "threat_actors": "None known.",
+        "mitigation": "Use Google's layered defenses: adversarial model hardening, prompt-injection classifiers, security-thought reinforcement, Markdown and URL sanitization, suspicious-link redaction, user confirmation for sensitive actions, and end-user security notifications. Organizations should also apply human-in-the-loop approval and restrict the privileges and external data accessible to AI agents.",
+        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks/"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
@@ -146,7 +215,19 @@
         "CVE-2025-66376"
       ],
       "is_zero_day": true,
-      "is_high_severity": false
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "CVE-2025-66376 is a stored cross-site scripting vulnerability in Zimbra\u2019s Classic UI caused by improper sanitization of CSS @import directives in HTML email. A malicious JavaScript payload executes when a user merely views the crafted email, allowing collection and exfiltration of email, directory, authentication, and other sensitive data through the victim\u2019s authenticated webmail session.",
+        "affected_products": "Zimbra Collaboration Suite (ZCS) 10.0.0\u201310.0.17, Zimbra Collaboration Suite (ZCS) 10.1.0\u201310.1.12; specifically the Classic UI",
+        "cvss_score": "6.1",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+        "exploit_available": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
+        "patch_available": "true - https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
+        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a; CISA reports successful exploitation by LAUNDRY BEAR and lists CVE-2025-66376 in its Known Exploited Vulnerabilities Catalog.",
+        "threat_actors": "LAUNDRY BEAR; also tracked as Void Blizzard, CL-STA-1114, and TA488 (formerly UNK_PitStop)",
+        "mitigation": "Immediately upgrade ZCS to 10.1.13 or 10.0.18 or later. If patching is not immediately feasible, use an alternative mail client and avoid the Classic ZCS webmail client; monitor for suspicious SOAP requests, DNS activity, and outbound connections, and revoke exposed application passcodes, 2FA scratch keys, and passwords after suspected compromise.",
+        "vendor_advisory": "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories"
+      }
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
@@ -158,6 +239,92 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "This is a coordinated Chinese cyber-espionage campaign rather than a single CVE-defined vulnerability. The actors exploit publicly known vulnerabilities on internet-exposed network-edge devices, including routers and firewalls, then modify routing, access-control, authentication, and tunneling configurations to maintain persistence and pivot through trusted connections. They also use packet capture, traffic mirroring, virtualized containers such as Cisco Guest Shell, and compromised routers to collect credentials and network traffic.",
+        "affected_products": "Ivanti Connect Secure and Ivanti Policy Secure (CVE-2024-21887; versions not specified), Palo Alto Networks PAN-OS GlobalProtect (CVE-2024-3400; versions not specified), Cisco IOS XE (CVE-2023-20273 and CVE-2023-20198; versions not specified), Cisco IOS and IOS XE Smart Install (CVE-2018-0171; versions not specified).",
+        "cvss_score": ":null",
+        "cvss_vector": "Vector unavailable.",
+        "exploit_available": "true - https://github.com/frostbits-security/SIET",
+        "patch_available": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a (apply the applicable vendor updates for the listed CVEs; there is no single patch for the broader campaign).",
+        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+        "threat_actors": "PRC state-sponsored APT actors; activity overlaps with Salt Typhoon, OPERATOR PANDA, RedMike, UNC5807, and GhostEmperor. CISA does not adopt a specific commercial naming convention for these actors.",
+        "mitigation": "Patch the listed CVEs and keep network-device operating systems on vendor-supported, fully updated releases. Isolate management planes, restrict management services to approved administrators and networks, use SNMPv3 and strong authentication, disable unused ports and protocols, and monitor configuration changes, tunnels, packet capture, Guest Shell, and unexpected local accounts.",
+        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+      }
+    },
+    {
+      "id": "https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/",
+      "title": "Sangoma Switchvox Vulnerabilities Exploited in the Wild",
+      "summary": "Tracked as CVE-2026-9586, the unauthenticated SQL injection flaw can be exploited remotely for arbitrary code execution. The post Sangoma Switchvox Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/",
+      "published": "2026-09-04T13:23:12+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-9586"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "The unauthenticated /pa endpoint parses XML beginning with <PolycomIPPhone> and directly concatenates the user-controlled PhoneIP value into PostgreSQL queries without sanitization or parameterization. A remote attacker can send a crafted HTTP request to execute arbitrary SQL as the PostgreSQL superuser, perform database operations, and chain the injection to remote code execution on the Switchvox appliance.",
+        "affected_products": "Sangoma Switchvox SMB Edition 8.2.2.1 through versions prior to 8.4.0.2, including 8.3 build 104997",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "true - https://horizon3.ai/attack-research/disclosures/cve-2026-9586-sangoma-switchvox-rce/",
+        "patch_available": "true - https://sangomakb.atlassian.net/wiki/spaces/Switchvox/pages/1802371073/Switchvox+-+Release+Notes+Version+8.4.0.2+July+14+2026",
+        "active_exploitation": "true - Horizon3 observed valid exploitation attempts on honeypots on August 30, 2026; CISA added CVE-2026-9586 to the KEV Catalog on September 2, 2026: https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "threat_actors": "Unidentified threat actors; observed activity includes cryptominer deployment. No named APT or ransomware group has been reported.",
+        "mitigation": "Upgrade Switchvox SMB to 8.4.0.2 or later. Because exploitation is active, investigate exposed systems for compromise, review Switchvox database logs and indicators of compromise, and restrict internet access to the management interface until patched.",
+        "vendor_advisory": "https://sangomakb.atlassian.net/wiki/spaces/Switchvox/pages/1802371073/Switchvox+-+Release+Notes+Version+8.4.0.2+July+14+2026"
+      }
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/",
+      "title": "New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges",
+      "summary": "An anonymous security researcher who uses the \"Nightmare Eclipse\" handle released a CrowdStrike Falcon zero-day exploit named \"FalconFlank\" that lets attackers escalate privileges on up-to-date Windows systems. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/",
+      "published": "2026-09-04T13:22:01+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/",
+      "title": "Google warns of new Chrome zero-day flaw exploited in attacks",
+      "summary": "Google has updated the Chrome browser to address an actively exploited high-severity zero-day flaw in the V8 engine and 11 other vulnerabilities. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/",
+      "published": "2026-09-04T11:48:17+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/",
+      "title": "Google Patches 6th Chrome Zero-Day of 2026",
+      "summary": "Google\u2019s Chrome 152 security update resolves 12 vulnerabilities, including a high-severity type confusion flaw in the V8 engine. The post Google Patches 6th Chrome Zero-Day of 2026 appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/",
+      "published": "2026-09-04T11:31:52+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -179,6 +346,23 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/",
+      "title": "12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover",
+      "summary": "Dubbed PostGREShell, CVE-2026-6471 turns low-level replication access into code execution, permanent superuser privileges and a persistent database backdoor. The post 12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/",
+      "published": "2026-09-04T12:06:13+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-6471"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/over-440000-exploit-attempts-target.html",
@@ -516,76 +700,6 @@
       ],
       "cve_ids": [
         "CVE-2026-20212"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
-      "title": "Critical Elementor Pro flaw exploited to take over WordPress sites",
-      "summary": "A recently patched critical vulnerability (CVE-2026-32475) in the Elementor Pro plugin for WordPress is being exploited in attacks that deliver a webshell payload and execute arbitrary commands on the server. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
-      "published": "2026-09-03T14:52:20+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-32475"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73846",
-      "title": "CKAN MCP Server: Cache-key canonicalization collision enables cache confusion / poisoning",
-      "summary": "## Summary\n\nThe response cache derives its key from an ambiguous string serialization of the request parameters. `canonicalizeParams` joins sorted `${key}=${value}` pairs with `&` and does not escape `&`, `=`, or the `|` field separators used in `buildCacheKey`. Two **different** logical parameter sets can therefore serialize to the **same** key and share one cache entry. Because the cached value is whatever the upstream returned for whichever request populated the entry first, an attacker can prime a colliding key so a victim's distinct query (same `server_url`) is served the attacker's cached response.\n\n## Affected code\n\n```js\n// src/utils/cache.ts\nexport function canonicalizeParams(params) {\n  const keys = Object.keys(params).sort();\n  const pairs = [];\n  for (const key of keys) {\n    const value = params[key];\n    if (value === undefined || value === null) continue;\n    const serialized = typeof value === \"object\" ? JSON.stringify(value) : String(value);\n    pairs.push(`${key}=${serialized}`);        // value not escaped\n  }\n  return pairs.join(\"&\");                        // '&' delimiter, injectable\n}\n\nexport async function buildCacheKey(serverUrl, action, params) {\n  const raw = `${serverUrl}|${action}|${canonicalizeParams(params)}`;  // '|' also unescaped\n  return sha1Hex(raw);\n}\n```\n\nConfirmed collisions (identical key):\n\n- `{ q: \"budget\", rows: 10 }`  \u2261  `{ q: \"budget&rows=10\" }`  \u2192 both canonicalize to `q=budget&rows=10`\n- `{ filters: { a: \"b\" } }`  \u2261  `{ filters: '{\"a\":\"b\"}' }`  \u2192 both canonicalize to `filters={\"a\":\"b\"}` (object-vs-string ambiguity)\n\nAn attacker can reproduce **any** target canonical string by injecting it into the alphabetically-first parameter, so the collision is general, not incidental.\n\n## Impact\n\n- **Cache poisoning / confusion.** On a shared cache (caching is enabled by\n  default; the Cloudflare Workers deployment uses the shared `caches.default`, and\n  a Node HTTP instance shares one in-process LRU across all clients), an attacke",
-      "link": "https://github.com/advisories/GHSA-78x9-fhhx-v2g6",
-      "published": "2026-09-03T14:49:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73846"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73844",
-      "title": "CKAN MCP Server: Information disclosure via verbose error reflection",
-      "summary": "## Summary\n\nError paths reflect raw upstream response bodies and internal exception messages back to the caller instead of a sanitized, generic message. When the server is pointed at (or redirected/SSRF'd to) a host that returns a non-CKAN response, or when an internal exception occurs, the caller receives verbatim upstream content and internal detail (hostnames, internal IPs, DB errors, stack fragments).\n\n## Affected code\n\n`src/utils/http.ts` \u2014 the entire decoded upstream body is embedded in the thrown error, which `formatCkanError` returns to the tool result:\n\n```js\n} else {\n  throw new CkanApiError(\n    `CKAN API returned success=false: ${JSON.stringify(decodedData)}`,   // full body reflected\n    undefined,\n    action\n  );\n}\n```\n\n`src/worker.ts` \u2014 the catch-all handler returns the raw `Error.message` in the JSON-RPC `data` field:\n\n```js\nreturn new Response(JSON.stringify({\n  jsonrpc: '2.0',\n  error: { code: -32603, message: 'Internal error',\n           data: error instanceof Error ? error.message : String(error) },  // raw internal message\n  id: null\n}), { status: 500, ... });\n```\n\n## Impact\n\n- Reflects arbitrary upstream response content to the caller. Combined with the SSRF vectors (advisories #01/#06), an attacker can use this as the *read* channel: point the server at an internal endpoint and receive its body inside the `success=false` error string (turning otherwise-blind SSRF into a semi-blind/return-value SSRF for any host that reaches the guards).\n- Leaks internal operational detail via exception messages: node error codes and target addresses (e.g. `ECONNREFUSED 169.254.169.254:80`), which confirm internal reachability and infrastructure, and any stack/path fragments an upstream includes.\n- Aids reconnaissance and error-oracle attacks against the deployment.\n\nSeverity is Low on its own (the server holds no credentials of its own and sends no auth upstream), but it meaningfully amplifies the SSRF findings by providing a response-content channel.\n\n## Proo",
-      "link": "https://github.com/advisories/GHSA-6f9w-9hf2-5rg3",
-      "published": "2026-09-03T14:49:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73844"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/",
-      "title": "Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability",
-      "summary": "The high-severity SQL injection flaw (CVE-2026-19949) could allow unauthenticated attackers to achieve remote code execution. The post Over 3 Million WordPress Sites Affected by Migration Plugin Vulnerability appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/",
-      "published": "2026-09-03T10:40:00+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-19949"
       ],
       "is_zero_day": false,
       "is_high_severity": true
