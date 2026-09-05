@@ -1,29 +1,10 @@
 {
-  "generated": "2026-09-04T19:59:18.412703+00:00",
-  "total": 37,
-  "kev": 1,
+  "generated": "2026-09-05T01:43:07.498739+00:00",
+  "total": 34,
+  "kev": 0,
   "zero_day": 19,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-85046",
-      "title": "CVE-2026-85046 \u2014 Google Chromium V8 Type Confusion Vulnerability",
-      "summary": "Vendor: Google | Product: Chromium V8. Google Chromium V8 contains a type confusion vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-18)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85046",
-      "published": "2026-09-04",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-85046"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -336,6 +317,139 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-73842",
+      "title": "OpenChoreo: cluster-gateway internal proxy performs no caller authentication and is not read-only \u2014 data-plane Secret disclosure and arbitrary Kubernetes mutation",
+      "summary": "### Summary\n\nThe OpenChoreo control-plane cluster-gateway exposes internal management APIs (`/api/proxy/`, `/api/exec/`, `/api/wirelogs/`) that tunnel requests through to connected data planes' Kubernetes APIs, but the internal listener authenticates no caller. Its request validator permits mutating HTTP methods and reads of Secrets in tenant namespaces (only kube-system Secrets are blocked), so although the client library documents these requests as \"read-only,\" the server enforces no such restriction. Any party able to reach the internal listener can \u2014 with no client certificate or token \u2014 read Secrets in any tenant namespace, create/modify/delete workloads, and exec into pods across every connected data plane.\n\n### Impact\n\nAn attacker with network access to the cluster-gateway internal listener obtains tunneled access to every connected data plane's Kubernetes API with no caller-level access control. Across all connected data planes, this allows:\n\n- Secret disclosure \u2014 reading any Secret outside `kube-system` in any tenant namespace (database credentials, cloud/KMS keys, TLS private keys), independent of any workload ServiceAccount permissions.\n- Workload tampering or destruction \u2014 creating, modifying, or deleting Deployments, Services, and other resources.\n- Pod command execution inside workload pods via `/api/exec/`.\n\nThis is also the missing second authorization layer behind GHSA-52gf-6rpq-fgmx (the openchoreo-api exec/wirelogs cross-project authorization bypass): because the gateway provides no compensating authorization, that bypass \u2014 and any other authz gap or SSRF that reaches the internal API \u2014 reaches the data-plane Kubernetes API unchecked.\n\nDirect exploitability depends on the network isolation of the internal listener, which is not fixed in source. Where the internal port is reachable by untrusted workloads with no restrictive NetworkPolicy \u2014 and with impact landing in a separate data-plane cluster \u2014 this is Critical; it is scored conservatively as Hi",
+      "link": "https://github.com/advisories/GHSA-rh53-xvx2-j327",
+      "published": "2026-09-04T21:41:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73842"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-73555",
+      "title": "vLLM: Unauthenticated Internal Path and Username Disclosure via Validation Error Messages",
+      "summary": "## Summary\n\nWhen the vLLM API receives a malformed request (e.g., invalid JSON or missing required fields), FastAPI raises a Pydantic `RequestValidationError`. The `validation_exception_handler` in `vllm/entrypoints/openai/server_utils.py` converts this exception to a string via `str(exc)`, which includes the internal file path and line number of the handler function. The existing `sanitize_message()` function in `vllm/entrypoints/utils.py` strips memory addresses (e.g., `0x7f...`) but does not strip `File \"...\", line X` patterns. The result is a user-facing HTTP response that leaks internal system information.\n\n## Impact\n\nAn unauthenticated attacker can extract the following with a single malformed request:\n\n- **OS username** running the vLLM process (e.g., `ubuntu`)\n- **Home directory path** (e.g., `/home/ubuntu/`)\n- **Virtual environment path** (e.g., `vllm-env/`)\n- **Python version** (e.g., `3.12`)\n- **Internal package structure and line numbers** (e.g., `vllm/entrypoints/openai/chat_completion/api_router.py`)\n- **Handler function names per endpoint**, enabling precise version fingerprinting\n\nThis information aids attackers in constructing targeted exploits: environment paths narrow the attack surface, and handler function names + line numbers enable exact version identification even when the `/version` endpoint is disabled.\n\nAll POST endpoints that accept JSON bodies are affected, including `/v1/chat/completions`, `/v1/completions`, `/tokenize`, and `/detokenize`.\n\n## Workarounds\n\nDeploying vLLM behind a reverse proxy that rewrites error response bodies to strip file paths would mitigate this, though it is fragile.\n\n## Remediation Recommendation\n\nTwo possible fixes (either suffices):\n\n**Option A \u2014 Fix `validation_exception_handler`:** Construct the error message from `exc.errors()` (the structured Pydantic error list) rather than `str(exc)`. This avoids the traceback-style string entirely.\n\n**Option B \u2014 Fix `sanitize_message`:** Add a regex to strip `File \"...\"",
+      "link": "https://github.com/advisories/GHSA-hwrm-c4cx-rf4j",
+      "published": "2026-09-04T21:36:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73555"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72793",
+      "title": "SiYuan: Non-administrator responses from /api/system/getConf omit three secrets that the configuration-export path explicitly strips, disclosing the session-cookie signing key and the OS username to anonymous readers",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72793](https://nvd.nist.gov/vuln/detail/CVE-2026-72793).\n\n### Summary\n\n`/api/system/getConf` is registered with `CheckAuth` only and is reachable by the publish `RoleReader` token, and anonymously when `Publish.Auth.Enable` is `false`. Its non-administrator masking chain is a blocklist that enumerates fields individually. Three fields that the configuration-export endpoint in the same file deliberately clears are absent from that blocklist and are returned to readers:\n\n| Field | JSON | What it is | Cleared by `exportConf` at |\n|---|---|---|---|\n| `Conf.CookieKey` | `cookieKey` | The session-cookie signing key | `kernel/api/system.go:360` |\n| `Conf.Export.PandocBin` | `export.pandocBin` | Absolute path embedding the OS username | `kernel/api/system.go:338` |\n| `Conf.NotebookCrypto` | `notebookCrypto` | Encrypted-notebook key material | `kernel/api/system.go:360` |\n\nThe project has already classified all three as values that must not leave the server. The reader-facing path returns them.\n\n### Details\n\n**Route.** `kernel/api/router.go:70` : `POST /api/system/getConf` \u2192 `model.CheckAuth` \u2192 `getConf`. No `CheckReadonly`, no `CheckAdminRole`.\n\n**The masking chain, and what each stage covers.** `getConf` masks through `GetMaskedConf()` \u2192 `HideConfSecret()` (non-administrators) \u2192 `FilterConfByPublishIgnore()` (readers) \u2192 a browser-request path strip.\n\n- `GetMaskedConf`: `UserData`, `MCPOAuth`, `AccessAuthCode`.\n- `HideConfSecret`: `AI`, `Api`, `Flashcard`, `ServerAddrs`, `Publish`, `Repo`, `Sync`, `Secrets`, `Variables`, and the System paths. No reference to `CookieKey` or `Export.PandocBin`.\n- `FilterConfByPublishIgnore`: `UILayout` only.\n- Browser strip (`kernel/api/system.go:630-631`): System paths only.\n\nEach stage names fields explicitly, so any field nobody thought to add is returned by default.\n\n---\n\n**1. `CookieKey`: the live session-signing key.**\n\nThe value is passed straight into the session store at startup:\n\n",
+      "link": "https://github.com/advisories/GHSA-h4v5-crx2-3cv4",
+      "published": "2026-09-04T21:16:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72793"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72795",
+      "title": "SiYuan: Embedded (transclusion) block content is returned without publish-access filtering, leaking private and password-protected document content to anonymous readers",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72795](https://nvd.nist.gov/vuln/detail/CVE-2026-72795).\n\n### Summary\n\n`/api/block/getBlockDOMWithEmbed` and `/api/block/getBlockDOMsWithEmbed` gate only the *requested* block against publish access. The blocks pulled in by that block's embed (transclusion) query are inlined into the returned DOM with no publish-access check at all, so a reader who requests a legitimately-published block containing an embed query receives the content of every block that query matched including blocks in hidden, forbidden and password-protected documents.\n\nThe dedicated embed endpoint `getEmbedBlock` filters these same results for reader roles. The DOM-with-embed path does not.\n\n### Details\n\n| Item | Detail |\n|---|---|\n| Routes | `kernel/api/router.go:226` `POST /api/block/getBlockDOMWithEmbed` \u2192 `model.CheckAuth` \u2192 `getBlockDOMWithEmbed`; `:227` `POST /api/block/getBlockDOMsWithEmbed` \u2192 `model.CheckAuth` \u2192 `getBlockDOMsWithEmbed` |\n| Middleware | `CheckAuth` only \u2014 no `CheckReadonly`, no `CheckAdminRole` \u2192 reachable by the publish `RoleReader` token, and anonymously when `Publish.Auth.Enable` is `false` |\n| Guard present | Top-level requested block only. Singular: password + disable checks on the requested id. Plural: `filterBlockDOMsByPublishAccess` over the requested ids. |\n| Guard absent | The embedded blocks resolved from the query |\n| Exposed | Content HTML of every block matched by the embed query, regardless of that block's publish visibility or password tier |\n\n**The leak path.** `getBlockDOMWithEmbed` \u2192 `GetBlockDOMsWithEmbedInBox` \u2192 `resolveEmbedContentInBox` (`kernel/model/block.go:976`). That function walks the tree for `NodeBlockQueryEmbed`, extracts the embed SQL, executes `sql.SelectBlocksRawStmtInBox(stmt, ...)`, builds `embedContents` from each matched block's content HTML, and inlines the result via `SetIALAttr(\"embed-content\", ...)`.\n\n`resolveEmbedContentInBox` takes no `publishAccess` parameter and contains no ",
+      "link": "https://github.com/advisories/GHSA-h6w7-xxcf-w2mq",
+      "published": "2026-09-04T21:13:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72795"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72794",
+      "title": "SiYuan: The session-cookie signing key (Conf.CookieKey) is returned to anonymous readers by /api/system/getConf",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72794](https://nvd.nist.gov/vuln/detail/CVE-2026-72794).\n\n### Summary\n\n`/api/system/getConf` returns `Conf.CookieKey`, the key used to sign the server's session cookies in its response body. The endpoint is registered with `CheckAuth` only, so the field reaches the publish `RoleReader` token and the anonymous account when `Publish.Auth.Enable` is `false`.\n\nThe configuration-export endpoint in the same file strips this exact field before returning config, so the project already treats it as secret. The reader-facing masking path does not.\n\n### Details\n\n| Item | Detail |\n|---|---|\n| Route | `kernel/api/router.go:70` `POST /api/system/getConf` \u2192 `model.CheckAuth` \u2192 `getConf` |\n| Middleware | `CheckAuth` only \u2014 no `CheckReadonly`, no `CheckAdminRole` |\n| Leaked field | `AppConf.CookieKey`, serialized as `cookieKey` |\n| Purpose of the field | Signing key for the `siyuan` session cookie |\n\n**The field survives every stage of the masking chain.** `getConf` masks through `GetMaskedConf()` \u2192 `HideConfSecret()` (non-administrators) \u2192 `FilterConfByPublishIgnore()` (readers) \u2192 the browser-side System-path strip. `CookieKey` is removed by none of them:\n\n- `GetMaskedConf` masks `UserData`, `MCPOAuth` and `AccessAuthCode` only.\n- `HideConfSecret` nulls `AI`, `Api`, `Flashcard`, `ServerAddrs`, `Publish`, `Repo`, `Sync`, `Secrets`, `Variables` and the System paths. It contains no reference to `CookieKey`.\n- `FilterConfByPublishIgnore` touches `UILayout` only.\n- The browser-side strip removes System paths only.\n\n**The key is live, not vestigial.** It is passed straight into the session store at startup:\n\n```\ncli/cmd/serve.go:67   go server.Serve(false, model.Conf.CookieKey)\nkernel/server/serve.go:152   sessionStore = cookie.NewStore([]byte(cookieKey))\nkernel/server/serve.go:159   ginServer.Use(sessions.Sessions(\"siyuan\", sessionStore))\n```\n\n`gin-contrib/sessions/cookie.NewStore` constructed with a single key uses that key as the `g",
+      "link": "https://github.com/advisories/GHSA-34fj-mwm6-fjfg",
+      "published": "2026-09-04T21:12:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72794"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72799",
+      "title": "SiYuan: Missing publish-access filter on the HPath/path-resolution endpoints discloses the private document tree to anonymous readers",
+      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72799](https://nvd.nist.gov/vuln/detail/CVE-2026-72799).\n\n### Summary\n\nFive filetree endpoints resolve arbitrary document IDs and paths with no publish-access check of any kind. All are `CheckAuth`-only, so they are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. An anonymous reader can map the complete private document tree every notebook, folder, and document title, and which notebook holds each document for documents marked hidden, password-protected, or publish-forbidden, and can resolve titles to document IDs.\n\n### Details\n\nNone of the following handlers invokes `IsReadOnlyRoleContext`, `CheckBlockIdAccessableByPublishAccess`, or `CheckPathAccessableByPublishIgnore`:\n\n| Endpoint | Returns | Discloses |\n|---|---|---|\n| `getFullHPathByID` (router 159) | `GetFullHPathByID(id)` | full title path including notebook, e.g. `/MySecretNotebook/Confidential/Q3 Layoffs Plan` |\n| `getHPathByID` (router 157) | `GetHPathByID(id)` | document-relative title path |\n| `getPathByID` (router 158) | `{path, notebook}` | which notebook a document lives in, plus its `.sy` storage path |\n| `getIDsByHPath` (router 160) | `GetIDsByHPath(path, notebook)` | title-path \u2192 document-ID enumeration |\n| `getHPathByPath` (router 155) | HPath from a storage path | title path from a storage path |\n\nEach accepts an arbitrary ID or HPath and resolves it identically for hidden, publish-forbidden, and password-protected documents.\n\nThis enables two operations for an unauthenticated caller:\n1. **Map the private document tree**: `getFullHPathByID` and `getPathByID` yield every notebook/folder/document title and its containing notebook.\n2. **Resolve titles to IDs**: `getIDsByHPath` converts a known or guessed title path into document IDs, which are the required input for other block-read endpoints.\n\nDocument titles and HPaths are precisely the block metadata that the project's block-metada",
+      "link": "https://github.com/advisories/GHSA-5w7r-f4cg-rqq7",
+      "published": "2026-09-04T20:53:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72799"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
+      "title": "Kubernetes v1.37: KubeletInUserNamespace (aka Rootless mode) Graduates to Beta",
+      "summary": "Kubernetes v1.37 promotes the KubeletInUserNamespace feature gate to beta. With this feature enabled, all of the node components (kubelet, CRI and OCI runtimes, CNI plugins, and kube-proxy) can run as a non-root user on the host, using a Linux user namespace . This technique is also known as rootless mode . The work started as an experiment in 2018, and was merged into Kubernetes v1.22 (2021) as an alpha feature (Kubernetes Enhancement Proposal KEP-2033 ). This feature should not be confused with user namespaces for pods ( hostUsers: false with the UserNamespacesSupport feature gate, GA since v1.36), which puts pods in user namespaces but still runs the node components as root. These two features do not conflict. Moreover, they can be combined to nest Kubernetes inside Kubernetes without resorting to the full privileged: true . Why run the node components in a user namespace? Because the node components have historically had container-breakout vulnerabilities that could compromise full root privileges on the host. Examples of such vulnerabilities include: CVE-2022-0811 (\"cr8escape\"): CRI-O could be tricked into setting arbitrary sysctls, such as kernel.core_pattern , resulting in arbitrary code execution as root on the host CVE-2023-27561 : runc could be tricked into bypassing the masked paths of a container via a volume mount race, exposing the host's procfs files (a regression of CVE-2019-19921) CVE-2024-10220 : the kubelet could be made to execute arbitrary commands as root via gitRepo volumes ( gitRepo volumes had a similar vulnerability, CVE-2018-11235 , back in 2018 too) CVE-2025-31133 : runc could be tricked into bind-mounting attacker-controlled paths and writing to the host's procfs files, such as /proc/sysrq-trigger and /proc/sys/kernel/core_pattern CVE-2026-53488 : containerd could be tricked into executing arbitrary commands on the host, via crafted labels in a container image By running the node components in a user namespace, the potential damage is co",
+      "link": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
+      "published": "2026-09-04T18:30:00+00:00",
+      "source": "Kubernetes Security Announcements",
+      "tags": [
+        "cloud",
+        "kubernetes",
+        "k8s",
+        "container"
+      ],
+      "cve_ids": [
+        "CVE-2022-0811",
+        "CVE-2023-27561",
+        "CVE-2019-19921",
+        "CVE-2024-10220",
+        "CVE-2018-11235",
+        "CVE-2025-31133",
+        "CVE-2026-53488"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-75856",
       "title": "CodeWhale: SSRF\u200c bypass - TOCTOU on DNS failure for DNS pinning",
       "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 26de44a8bd5051f8f944ea60b2c37ae1d2b7d25e. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\nDNS-pinning failure allows natural failure of code, however with a custom DNS server that fails the initial requests and allows the secondary requests, it's possible to bypass the logic.\n\n\n### Details\nSimplified attack scenario:\n1. Attacker asks agent to visit the `mydomain.com`.\n2. CodeWhale tries to resolve the IP of `mydomain.com`, however, the custom DNS server that's controlled by the attacker marks the request DNS\u200c query as failed (Time of Check). \n3. CodeWhale allows the code to continue as it expects it request to fail again.\n4. On the secondary (Time of Use), the DNS server resolves mydomain.com to a local IP (e.g., 127.0.0.1)\n5. The request is executed and the content from port 80 is returned to the attacker, allowing full bypass of SSRF mitigations.\n\nIn the [DNS-pinning](https://github.com/Hmbown/CodeWhale/blob/8dff2f7525ead210a01347b48f53ae3f20d094ec/crates/tui/src/tools/fetch_url.rs#L362) section, when DNS fails, the code is allowed to continue as it's expected to fail. However\n\n### PoC\nThis is a custom DNS server that fails the first requests (in this case, the first and second requests must fail, while the 3rd and 4th are allowed due to A and AAAA DNS queries). Here is the code for the DNS\u200c server(for PoC, should be placed in `dnser/dns_resolver.py`:\n```python\n#!/usr/bin/env python3\n\"\"\"\nLocal DNS Resolver \u2014 customizable request/response handling.\nUses only the standard library + dnslib.\n\nUsage:\n    pip install dnslib\n    sudo python dns_resolver.py          # binds to 0.0.0.0:53 by default\n    python dns_resolver.py --port 5353   # unprivileged port for testing\n\"\"\"\n\nimport argparse\nimport socket\nimport threading\nfrom dnslib i",
@@ -454,168 +568,6 @@
       ],
       "cve_ids": [
         "CVE-2026-14894"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72801",
-      "title": "SiYuan: Encrypted-notebook key-derivation material and wrapped notebook keys disclosed to anonymous readers, enabling offline master-password cracking",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72801](https://nvd.nist.gov/vuln/detail/CVE-2026-72801).\n\n### Summary\n\nTwo `CheckAuth`-only endpoints disclose the complete offline attack material for the encrypted-notebook master password, plus the wrapped per-notebook key needed to use it. Both are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. An unauthenticated remote client can retrieve the Argon2id salt and cost parameters, a verifier that confirms a correct password offline, and the encrypted per-notebook data key reducing the security of every encrypted notebook to the master password's resistance to offline GPU cracking.\n\n### Details\n\n**(1) `POST /api/system/getConf` leaks `NotebookCrypto`.**\n\n`getConf` \u2192 `GetMaskedConf()` marshals the full configuration including `NotebookCrypto *conf.NotebookCrypto` (JSON tag `notebookCrypto`, not `-`, so it survives the deep copy). For non-administrators `HideConfSecret()` is applied, which nulls a dozen secret-bearing fields like AI, MCPOAuth, Api, Flashcard, Publish, Repo, Sync, Secrets, Variables, System paths but contains **no reference to `NotebookCrypto`**. `FilterConfByPublishIgnore()` for readers only touches `UILayout`.\n\nThe reader therefore receives:\n\n| Field | What it is |\n|---|---|\n| `MasterSalt` | global Argon2id salt |\n| `KDFParams` | Argon2id memory/time/parallelism cost |\n| `KEKVerifier` + `VerifierNonce` | AES-GCM-encrypted fixed magic, the in-code comment states it exists for offline master-password verification |\n| `KEKMAC` | HMAC-SHA256 of the KEK |\n\nEither `KEKVerifier` or `KEKMAC` is a self-contained offline oracle:\n\n```\nKEK = Argon2id(guess, MasterSalt, KDFParams)\ncorrect if AES-GCM-decrypt(KEKVerifier, VerifierNonce) == magic\n        or HMAC(KEK) == KEKMAC\n```\n\nNo server round-trips are required, so there is no rate limiting, lockout, or logging on guesses, and the work is fully GPU-parallelisable.\n\n**(2) `POST /api/notebook/getN",
-      "link": "https://github.com/advisories/GHSA-8x84-r2ff-h8pq",
-      "published": "2026-09-03T23:02:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72801"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72803",
-      "title": "SiYuan: Missing publish-access filter on getBlockAttrs and batchGetBlockAttrs discloses block attributes (name, alias, memo, custom fields) of protected documents",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72803](https://nvd.nist.gov/vuln/detail/CVE-2026-72803).\n\n### Summary\n\n`POST /api/attr/getBlockAttrs` and `POST /api/attr/batchGetBlockAttrs` return a block's full attribute set (IAL) with no publish-access check. Both are `CheckAuth`-only, so they are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. An anonymous reader supplying a block ID receives the block's name, alias, memo, bookmark, tags, and every `custom-*` attribute including for blocks in publish-forbidden and password-protected documents. The batch variant accepts an ID list, making it a bulk extraction primitive.\n\n### Details\n\nNeither handler applies a filter:\n\n```go\n// /api/attr/getBlockAttrs      (router line 301)\nret.Data = sql.GetBlockAttrs(id)\n\n// /api/attr/batchGetBlockAttrs (router line 302)\nret.Data = sql.BatchGetBlockAttrs(idList)\n```\n\n`sql.GetBlockAttrs` is a direct database read returning the block's entire IAL: `name`, `alias`, `memo`, `bookmark`, `tags`, and any `custom-*` key/value the user has set. Several of these are user-authored free text memos in particular are freeform notes attached to a block so this is document content, not merely structural metadata.\n\n`batchGetBlockAttrs` takes an arbitrary list of block IDs in a single request, so an attacker holding a set of block IDs can sweep attributes across the entire workspace in one call.\n\n**Guarded-sibling asymmetry.** The sibling metadata endpoint `getBlockInfo` calls `checkBlockPublishAccess(c, id, ret)` before returning; `getBlockAttrs` and `batchGetBlockAttrs` call nothing.\n\nVerified at `origin/master`: both handler bodies contain no publish-access, publish-ignore, or readonly-role check, and both routes are registered `CheckAuth` without `CheckAdminRole`.\n\n### Proof of Concept\n\nPrecondition: publish mode enabled (default port 6808); anonymous when `Publish.Auth.Enable` is `false`, otherwise any publish reader account",
-      "link": "https://github.com/advisories/GHSA-qvq9-hq6p-v378",
-      "published": "2026-09-03T22:58:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72803"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72806",
-      "title": "SiYuan: Password (protected) tier omitted in the attribute-view/database publish filter: Reader receives rows of protected documents without the password (publish mode)",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72806](https://nvd.nist.gov/vuln/detail/CVE-2026-72806).\n\n### Summary\n\n`FilterViewByPublishAccess`, the filter `renderAttributeView` applies for Reader sessions drops rows using only the hidden/forbidden check and never checks the publish password. Its three sibling filters all check both tiers. As a result, a publish `RoleReader` (or the anonymous account when `Publish.Auth.Enable` is `false`) who has not entered a document's password still receives every database/attribute-view row bound to that password-protected document, the primary cell (title/ID) and all column values.\n\n### Details\n\n`FilterViewByPublishAccess` (`model/publish_access.go:290`) drops rows on the hidden/forbidden tier only:\n```go\n// Table (line 311), Gallery (348), Kanban (385), all identical:\nif !CheckPathAccessableByPublishIgnore(bt.BoxID, bt.Path, publishIgnore) {\n    row = nil   // hidden/forbidden dropped, but password NEVER checked\n}\n```\n\nThe three sibling filters all check both the hidden/forbidden tier and the password tier (`password == \"\" || CheckPublishAuthCookie(...)`):\n- `FilterBlockAttributeViewKeysByPublishAccess` (line 412)\n- `FilterBlockInfoByPublishAccess` (line 457)\n- `FilterContentByPublishAccess` (line 474)\n\nSo the password (protected) tier is enforced everywhere except this AV/database-view filter. Table layout masks nothing; Gallery and Kanban mask only the cover, keeping the card and its non-cover values. Reachable via `renderAttributeView`, `getAttributeViewKeys`, and `renderSnapshotAttributeView`, all `CheckAuth`-only.\n\n### Proof of Concept\n\nReproduced on a live instance (publish mode on 6808, anonymous Reader, no password cookie), against a password-protected document with a database/AV row.\n\n| Check | Path | Result |\n|---|---|---|\n| Control | `getDoc(secretDoc)` | \ud83d\udd12 placeholder, body withheld password gate works normally |\n| Test | `renderAttributeView(AV)` | row leaked : `blockID=\u2026rk7jofz`, title `secret-db-row` |\n|",
-      "link": "https://github.com/advisories/GHSA-6mcf-g667-w3qv",
-      "published": "2026-09-03T22:50:49Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72806"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72807",
-      "title": "SiYuan: Second-order SSTI to arbitrary SQL via attribute-view template column (queryBlocks): malicious imported package executes SQL on victim kernel",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72807](https://nvd.nist.gov/vuln/detail/CVE-2026-72807).\n\n### Summary\n\nAttribute-view (AV) template columns are live-evaluated on every render and expose the `queryBlocks` template function, which runs raw SQL on the read-write database handle (`SelectBlocksRawStmt`, using `?`\u2192argument string substitution rather than parameter binding). AV mutations are admin-gated, so this is not directly reader-injectable but it is a second-order vector: an attacker distributes a SiYuan document or AV package whose template column contains `.action{queryBlocks \"<arbitrary SQL>\"}` when a victim imports the package and renders the AV, the attacker's SQL executes on the victim's kernel (read and, via statement stacking, write).\n\n### Details\n\nDoc-level `{{\u2026}}` templates are rendered at insert-time and become static, so they are not re-evaluated on reader view. The residual is AV template columns, which are live-evaluated at render. `queryBlocks` passes its argument to `SelectBlocksRawStmt` with `?`\u2192arg string substitution, not a bound parameter, on the main read-write handle (`88250/go-sqlite3` fork, statement-stacking capable) so an attacker-controlled template argument becomes arbitrary SQL.\n\nThe SSTI surface is otherwise hardened: `BuiltInTemplateFuncs` deletes `env`, `expandenv`, and `getHostByName` so there is no environment/host/file/exec SSTI. `queryBlocks`-to-SQL is the remaining live-evaluated sink.\n\n### Proof of Concept\n\nAn AV template column set to `.action{queryBlocks \"<sql>\"}` executes `<sql>` against the read-write handle when the AV is rendered. Delivered second-order: a shared/imported document or AV package carrying such a column runs the embedded SQL on any kernel that imports and renders it.\n\n### Proof of Concept\n\nReproduced on a live instance.\n\n**1. Host doc + AV (admin, 6806):**\n```\nPOST /api/filetree/createDocWithMd {notebook, path:\"/ssti-poc\", markdown:\"host\"}  \u2192 DOC\nPOST /api/av/renderAttributeView   {id:\"<AV",
-      "link": "https://github.com/advisories/GHSA-x67c-8pwr-m8g3",
-      "published": "2026-09-03T22:49:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72807"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72808",
-      "title": "SiYuan: Missing publish-access filter on getFileAnnotation discloses private PDF annotations of forbidden/protected documents (publish mode)",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72808](https://nvd.nist.gov/vuln/detail/CVE-2026-72808).\n\n### Summary\n\nThe `/api/asset/getFileAnnotation` endpoint returns the content of `.sya` PDF-annotation files with no publish-access check. It is gated by `CheckAuth` only, so it is reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. Its sibling, the `/assets/*` asset route does enforce publish access, including the publish password. An anonymous reader who knows an asset path can therefore read the private PDF annotations (highlights, notes) attached to assets in publish-forbidden, password-protected, or unpublished documents.\n\n### Details\n\n`getFileAnnotation` resolves the annotation file via `GetAssetAbsPathInBox` (no path traversal) and returns the `.sya` content. Unlike the `/assets/*` route, which applies the publish-access filter including password enforcement before serving asset bytes, `getFileAnnotation` applies no publish-access, publish-ignore, or password check. The guarded-sibling asymmetry indicates the boundary is meant to apply to this data and was omitted here.\n\n`.sya` files for encrypted-box assets are fail-closed and not exposed. The gap is limited to non-encrypted assets.\n\n**Route / auth tier.** `getFileAnnotation` is registered `CheckAuth`-only. `CheckAuth` admits `RoleReader`; the publish proxy forwards port-6808 traffic with a Reader JWT (anonymous when publish auth is disabled).\n\n### Proof of Concept\n\nReproduced on a local instance (publish mode on 6808, Basic Auth off).\n\n**Setup (admin, 6806):**\n1. `createNotebook{name:\"AnnotPoc\"}` \u2192 box\n2. `createDocWithMd{notebook, path:\"/annot-victim\", markdown:\"doc with a pdf\"}` \u2192 doc\n3. `POST /api/asset/upload` (multipart `id=<doc>`, `file[]=@secret.pdf`) \u2192 `assets/secret-...pdf`\n4. `setFileAnnotation{path:\"<asset>.sya\", data:\"{annotSecret:ANNOT_SECRET_4471,note:private highlight}\"}`\n5. `setPublishAccess{id:<doc>, visible:false, password",
-      "link": "https://github.com/advisories/GHSA-v7ph-r5r6-4jcj",
-      "published": "2026-09-03T22:48:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72808"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72811",
-      "title": "SiYuan: SQL injection in backlink/mention search via unescaped stored and client input (publish mode): first-order (client keyword) and second-order (stored document title) breakout on read-write handle",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72811](https://nvd.nist.gov/vuln/detail/CVE-2026-72811).\n\n### Summary\n\nThe backlink/mention search query (`kernel/model/backlink.go`) concatenates stored block metadata (title, name, alias, anchor text) and the client-supplied keyword into a SQL `MATCH`/search statement, escaping only the double-quote character (`\"`) and not the single quote (`'`). A single quote in either the client keyword or in stored document metadata breaks out of the string literal. The query runs on the main read-write `siyuan.db` handle through a statement-stacking-capable driver.\n\nThis yields two vectors:\n- **First-order:** a client-supplied keyword containing `'` injects directly. This path is reachable by an anonymous reader on the publish surface.\n- **Second-order:** a document whose title/name/alias contains `'` is stored safely (indexing uses parameterized inserts) but detonates when that stored value is later concatenated into the backlink query including on another user's kernel that has ingested the malicious document.\n\n### Details\n\n**Storage is safe; reuse is not.** Indexing INSERTs (`kernel/sql/upsert.go`) are parameterized (`(?,?,\u2026)` with bound arguments for `Name`/`Content`/`Markdown`/`IAL`), so malicious `.sy` content is stored intact and safely. The injection is in the *reuse* path: the backlink/mention MATCH query (`kernel/model/backlink.go`, around line 980) builds its condition by concatenating the stored title/name/alias/anchor and the client keyword, applying only `\"`\u2192escaping and not `'`. A `'` in either source terminates the literal and lands in SQL context.\n\n**Sink / handle.** The concatenated statement reaches `SelectBlocksRawStmtNoParse` \u2192 `query()` on the global read-write `siyuan.db` handle (DSN has no `mode=ro`/`_query_only`), driven by the vendored `88250/go-sqlite3` fork whose connection `query` loops over `;`-separated statements (stacking possible). Ceiling is arbitrary SQL cross-notebook read and write.\n\n**",
-      "link": "https://github.com/advisories/GHSA-q2vg-7qgx-x5fc",
-      "published": "2026-09-03T22:27:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72811"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69083",
-      "title": "SiYuan: Unauthenticated SQL execution and REGEXP injection via fullTextSearchAssetContent (publish mode): reader-reachable raw SQL (method 2) and unescaped REGEXP (method 3) on read-write asset-content DB",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-69083](https://nvd.nist.gov/vuln/detail/CVE-2026-69083).\n\n### Summary\n\nThe `/api/search/fullTextSearchAssetContent` endpoint exposes two SQL flaws on the asset-content database, both reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`:\n\n1. **method 2** passes a client-supplied SQL statement to the read-write asset-content DB with no single-statement or read-only guard, and without the admin restriction its sibling `fullTextSearchBlock` applies to the same SQL method.\n2. **method 3** builds a `REGEXP` clause by concatenating the client expression with no quote-escaping, permitting SQL breakout while the equivalent block-search builder does escape.\n\nBoth run on a read-write handle through a statement-stacking-capable driver, spanning the cross-notebook asset-content store.\n\n### Details\n\n**Route / auth tier.** `router.go`: `Handle(\"POST\", \"/api/search/fullTextSearchAssetContent\", model.CheckAuth, fullTextSearchAssetContent)`, `CheckAuth` only. Anonymous/reader reachable on the publish surface. `parseSearchAssetContentArgs` reads `method` and `query` straight from the JSON body with no constraint, so both are fully client-controlled.\n\n**Missing admin guard (contrast with the sibling).** `fullTextSearchBlock` rejects the SQL method for non-admins (`if method == 2 && !IsAdminRoleContext(c)`). `fullTextSearchAssetContent` has no such check on its handler, so the SQL method is reachable by a reader.\n\n**method 2 : raw SQL, no statement guard.** Dispatch: `FullTextSearchAssetContent` case 2 \u2192 `searchAssetContentBySQL(query, \u2026)`. After `filterQueryInvisibleChars` + `TrimSpace`, the statement is passed to `sql.SelectAssetContentsRawStmt(stmt, \u2026)` \u2192 `queryAssetContent` \u2192 `assetContentDB.Query(query)` directly, with no `CheckSingleStatement`/`CheckReadonlyStatement`. The `assetContentDB` DSN sets no `mode=ro`/`_query_only`, so the handle is read-write (same `88250/go-sq",
-      "link": "https://github.com/advisories/GHSA-fph3-ghq9-vw66",
-      "published": "2026-09-03T21:01:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69083"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69084",
-      "title": "SiYuan: Unauthenticated arbitrary SQL execution via searchEmbedBlock (publish mode) : reader-reachable raw statement on read-write handle, cross-notebook read/write",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-69084](https://nvd.nist.gov/vuln/detail/CVE-2026-69084).\n\n### Summary\n\nThe `/api/search/searchEmbedBlock` endpoint passes a client-supplied SQL statement verbatim to the database with no validation. The endpoint is gated by `CheckAuth` only reachable by the publish RoleReader token, and by the anonymous account when `Publish.Auth.Enable` is `false`. The statement runs on the main read-write `siyuan.db` handle through a driver that executes stacked statements, with no single-statement or read-only guard. An unauthenticated request can therefore execute arbitrary SQL reading and writing content across all cleartext notebooks.\n\nUnlike SQL injection into a fixed query, this endpoint accepts a full SQL statement by design and simply fails to restrict who may call it or what the statement may do.\n\n### Details\n\nData flow verbatim, unvalidated:\n\n- `searchEmbedBlock` (`kernel/api/search.go`): `stmt := arg[\"stmt\"].(string)` passed directly to `model.SearchEmbedBlock(stmt, \u2026)`. No validation.\n- `SearchEmbedBlock` \u2192 `SearchEmbedBlockInBox` \u2192 `sql.SelectBlocksRawStmtNoParse(stmt, \u2026)` \u2192 `selectBlocksRawStmt` \u2192 `query(stmt)`.\n- `query()` (`kernel/sql/database.go`) calls `db.Query(stmt)` on the global `siyuan.db` handle.\n\n**Missing guards.** The comparable endpoints enforce restrictions this one omits:\n- `/api/query/sql` runs `CheckSingleStatement` (all modes) and `CheckReadonlyStatement` (readonly mode) and is route-gated `CheckAuth + CheckAdminRole + CheckReadonly`.\n- `fullTextSearchBlock` rejects the SQL search method for non-admins (`if method == 2 && !IsAdminRoleContext(c)`).\n\n`searchEmbedBlock` has none of these, no statement check, no read-only check, no admin gate.\n\n**Route/auth tier.** `router.go`: `Handle(\"POST\", \"/api/search/searchEmbedBlock\", model.CheckAuth, searchEmbedBlock)`, `CheckAuth` only. `CheckAuth` admits `RoleReader`, and the publish proxy forwards port-6808 traffic with a Reader JWT (anonymous account when",
-      "link": "https://github.com/advisories/GHSA-vh22-h7hf-www7",
-      "published": "2026-09-03T20:19:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69084"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63670",
-      "title": "ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `</textarea/>` solidus close",
-      "summary": "### Summary\nA mutation-XSS / allowedTags bypass: when `textarea` (or `xmp`) is included in `allowedTags`, an input containing a literal `</textarea/>` (a solidus right after the RCDATA end-tag name) lets non-allowed markup such as `<img src=x onerror=\u2026>` pass through `sanitizeHtml()` **live and unescaped**, even though `img`/`onerror` are not in the allowlist. A spec-compliant browser executes the surviving handler \u2014 XSS. This is a literal-solidus variant that bypasses the two most recent fixes in this code area (CVE-2026-40186, CVE-2026-44990), both already applied in 2.17.5. The default configuration is not affected.\n\n### Details\n`sanitize-html` emits the text content of HTML raw-text elements (`textarea`, `xmp`) without escaping. Two things combine:\n- **Parser differential:** on input, htmlparser2 does NOT recognize `</textarea/>` (solidus after the RCDATA\n  end-tag name) as a close tag; it emits `</textarea/><img \u2026>` as a single raw-text node.\n- **Unescaped passthrough:** the `ontext` handler (`index.js` ~575-583) appends `textarea`/`xmp` content with\n`result += text` (no `escapeHtml`), assuming it is \"already properly encoded\" \u2014 true for entity-decoded\n  content (what CVE-2026-40186 fixed) but false for this mis-tokenized literal close tag.\nA spec browser treats `</textarea/>` as a valid `textarea` close, so the following `<img onerror>` is parsed as a live element. The recent fixes addressed entity-encoding (CVE-2026-40186) and the `xmp` default (CVE-2026-44990); neither covers the literal-solidus mis-tokenization, so the raw passthrough still leaks.\n\n### PoC\n```js\n// npm i sanitize-html@2.17.5 parse5 && node poc.js\nconst sanitizeHtml = require('sanitize-html');\nconst input = '<textarea></textarea/><img src=x onerror=\"alert(document.domain)\">';\nconst opts  = { allowedTags: sanitizeHtml.defaults.allowedTags.concat(['textarea']) };  // img NOT allowed\nconsole.log(sanitizeHtml(input, opts));\n// => <textarea></textarea/><img src=x onerror=\"alert(document.domain)\">",
-      "link": "https://github.com/advisories/GHSA-jxwj-j7wr-gfrw",
-      "published": "2026-09-03T20:07:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63670"
       ],
       "is_zero_day": false,
       "is_high_severity": true
