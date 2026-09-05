@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-05 09:34 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-05 14:07 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -146,43 +146,7 @@ The `rlm_eval` tool runs an arbitrary Python string chosen by the mo…
 
 ---
 
-## 15. 🟠 Zero-Day — Sangoma Switchvox Vulnerabilities Exploited in the Wild
-
-**CVE:** `CVE-2026-9586` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/>
-
-> Tracked as CVE-2026-9586, the unauthenticated SQL injection flaw can be exploited remotely for arbitrary code execution. The post Sangoma Switchvox Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .
-
----
-
-## 16. 🟠 Zero-Day — New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/>
-
-> An anonymous security researcher who uses the &quot;Nightmare Eclipse&quot; handle released a CrowdStrike Falcon zero-day exploit named &quot;FalconFlank&quot; that lets attackers escalate privileges on up-to-date Windows systems. [...]
-
----
-
-## 17. 🟠 Zero-Day — Google warns of new Chrome zero-day flaw exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/>
-
-> Google has updated the Chrome browser to address an actively exploited high-severity zero-day flaw in the V8 engine and 11 other vulnerabilities. [...]
-
----
-
-## 18. 🟠 Zero-Day — Google Patches 6th Chrome Zero-Day of 2026
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/>
-
-> Google’s Chrome 152 security update resolves 12 vulnerabilities, including a high-severity type confusion flaw in the V8 engine. The post Google Patches 6th Chrome Zero-Day of 2026 appeared first on SecurityWeek .
-
----
-
-## 19. 🟡 High Severity — Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities
+## 15. 🟡 High Severity — Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities
 
 **CVE:** `CVE-2026-81578` | `CVE-2026-82078` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-05
 **Reference:** <https://thehackernews.com/2026/09/attackers-exploit-papercut-flaws-to.html>
@@ -193,7 +157,7 @@ The Arctic Wolf Adversary Research Team said it observed attackers exploiting CV
 
 ---
 
-## 20. 🟡 High Severity — OpenChoreo: cluster-gateway internal proxy performs no caller authentication and is not read-only — data-plane Secret disclosure and arbitrary Kubernetes mutation
+## 16. 🟡 High Severity — OpenChoreo: cluster-gateway internal proxy performs no caller authentication and is not read-only — data-plane Secret disclosure and arbitrary Kubernetes mutation
 
 **CVE:** `CVE-2026-73842` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-rh53-xvx2-j327>
@@ -204,7 +168,7 @@ The OpenChoreo control-plane cluster-gateway exposes internal management APIs (`
 
 ---
 
-## 21. 🟡 High Severity — vLLM: Unauthenticated Internal Path and Username Disclosure via Validation Error Messages
+## 17. 🟡 High Severity — vLLM: Unauthenticated Internal Path and Username Disclosure via Validation Error Messages
 
 **CVE:** `CVE-2026-73555` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-hwrm-c4cx-rf4j>
@@ -215,7 +179,7 @@ When the vLLM API receives a malformed request (e.g., invalid JSON or missing re
 
 ---
 
-## 22. 🟡 High Severity — SiYuan: Non-administrator responses from /api/system/getConf omit three secrets that the configuration-export path explicitly strips, disclosing the session-cookie signing key and the OS username to anonymous readers
+## 18. 🟡 High Severity — SiYuan: Non-administrator responses from /api/system/getConf omit three secrets that the configuration-export path explicitly strips, disclosing the session-cookie signing key and the OS username to anonymous readers
 
 **CVE:** `CVE-2026-72793` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-h4v5-crx2-3cv4>
@@ -228,7 +192,7 @@ When the vLLM API receives a malformed request (e.g., invalid JSON or missing re
 
 ---
 
-## 23. 🟡 High Severity — SiYuan: Embedded (transclusion) block content is returned without publish-access filtering, leaking private and password-protected document content to anonymous readers
+## 19. 🟡 High Severity — SiYuan: Embedded (transclusion) block content is returned without publish-access filtering, leaking private and password-protected document content to anonymous readers
 
 **CVE:** `CVE-2026-72795` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-h6w7-xxcf-w2mq>
@@ -241,7 +205,7 @@ When the vLLM API receives a malformed request (e.g., invalid JSON or missing re
 
 ---
 
-## 24. 🟡 High Severity — SiYuan: The session-cookie signing key (Conf.CookieKey) is returned to anonymous readers by /api/system/getConf
+## 20. 🟡 High Severity — SiYuan: The session-cookie signing key (Conf.CookieKey) is returned to anonymous readers by /api/system/getConf
 
 **CVE:** `CVE-2026-72794` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-34fj-mwm6-fjfg>
@@ -254,7 +218,7 @@ When the vLLM API receives a malformed request (e.g., invalid JSON or missing re
 
 ---
 
-## 25. 🟡 High Severity — SiYuan: Missing publish-access filter on the HPath/path-resolution endpoints discloses the private document tree to anonymous readers
+## 21. 🟡 High Severity — SiYuan: Missing publish-access filter on the HPath/path-resolution endpoints discloses the private document tree to anonymous readers
 
 **CVE:** `CVE-2026-72799` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-5w7r-f4cg-rqq7>
@@ -267,7 +231,7 @@ Five filetree endpoints resolve arbitrary document IDs and paths with no publish
 
 ---
 
-## 26. 🟡 High Severity — Kubernetes v1.37: KubeletInUserNamespace (aka Rootless mode) Graduates to Beta
+## 22. 🟡 High Severity — Kubernetes v1.37: KubeletInUserNamespace (aka Rootless mode) Graduates to Beta
 
 **CVE:** `CVE-2022-0811` | `CVE-2023-27561` | `CVE-2019-19921` | `CVE-2024-10220` | `CVE-2018-11235` | `CVE-2025-31133` | `CVE-2026-53488` &nbsp;|&nbsp; **Source:** Kubernetes Security Announcements &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/>
@@ -276,7 +240,7 @@ Five filetree endpoints resolve arbitrary document IDs and paths with no publish
 
 ---
 
-## 27. 🟡 High Severity — CodeWhale: SSRF‌ bypass - TOCTOU on DNS failure for DNS pinning
+## 23. 🟡 High Severity — CodeWhale: SSRF‌ bypass - TOCTOU on DNS failure for DNS pinning
 
 **CVE:** `CVE-2026-75856` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-6v2g-fpxh-pmmh>
@@ -290,7 +254,7 @@ DNS-pinning failure allows natural failure of code, however with a c…
 
 ---
 
-## 28. 🟡 High Severity — CodeWhale: js_execution leaks parent environment to model context via missing env scrub
+## 24. 🟡 High Severity — CodeWhale: js_execution leaks parent environment to model context via missing env scrub
 
 **CVE:** `CVE-2026-75915` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-h539-c7r8-3xq4>
@@ -305,7 +269,7 @@ js_execution exposes parent process environment to model-provided J…
 
 ---
 
-## 29. 🟡 High Severity — CodeWhale: Project config `instructions` override enables arbitrary file read into AI system prompt via cloned repository
+## 25. 🟡 High Severity — CodeWhale: Project config `instructions` override enables arbitrary file read into AI system prompt via cloned repository
 
 **CVE:** `CVE-2026-75859` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-62f5-cp2p-vq95>
@@ -320,7 +284,7 @@ A malicious `.codewhale/config.toml` or `.deepseek/config.toml` com…
 
 ---
 
-## 30. 🟡 High Severity — CodeWhale: image_analyze follows workspace symlinks, leaking external file bytes
+## 26. 🟡 High Severity — CodeWhale: image_analyze follows workspace symlinks, leaking external file bytes
 
 **CVE:** `CVE-2026-75914` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://github.com/advisories/GHSA-w7wx-5q49-r59w>
@@ -335,7 +299,7 @@ image_analyze follows workspace symlinks and leaks outside-workspac…
 
 ---
 
-## 31. 🟡 High Severity — HPE Patches Critical RCE Vulnerabilities in AOS-CX
+## 27. 🟡 High Severity — HPE Patches Critical RCE Vulnerabilities in AOS-CX
 
 **CVE:** `CVE-2026-73749` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-04
 **Reference:** <https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/>
@@ -344,16 +308,7 @@ image_analyze follows workspace symlinks and leaks outside-workspac…
 
 ---
 
-## 32. 🟡 High Severity — 12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover
-
-**CVE:** `CVE-2026-6471` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/>
-
-> Dubbed PostGREShell, CVE-2026-6471 turns low-level replication access into code execution, permanent superuser privileges and a persistent database backdoor. The post 12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover appeared first on SecurityWeek .
-
----
-
-## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

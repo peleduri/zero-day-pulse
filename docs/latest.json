@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-05T09:34:18.964917+00:00",
-  "total": 33,
+  "generated": "2026-09-05T14:07:09.440155+00:00",
+  "total": 28,
   "kev": 0,
-  "zero_day": 18,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -234,68 +234,6 @@
       "cve_ids": [
         "CVE-2026-75858"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/",
-      "title": "Sangoma Switchvox Vulnerabilities Exploited in the Wild",
-      "summary": "Tracked as CVE-2026-9586, the unauthenticated SQL injection flaw can be exploited remotely for arbitrary code execution. The post Sangoma Switchvox Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/",
-      "published": "2026-09-04T13:23:12+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-9586"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/",
-      "title": "New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges",
-      "summary": "An anonymous security researcher who uses the \"Nightmare Eclipse\" handle released a CrowdStrike Falcon zero-day exploit named \"FalconFlank\" that lets attackers escalate privileges on up-to-date Windows systems. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/",
-      "published": "2026-09-04T13:22:01+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/",
-      "title": "Google warns of new Chrome zero-day flaw exploited in attacks",
-      "summary": "Google has updated the Chrome browser to address an actively exploited high-severity zero-day flaw in the V8 engine and 11 other vulnerabilities. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/",
-      "published": "2026-09-04T11:48:17+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/",
-      "title": "Google Patches 6th Chrome Zero-Day of 2026",
-      "summary": "Google\u2019s Chrome 152 security update resolves 12 vulnerabilities, including a high-severity type confusion flaw in the V8 engine. The post Google Patches 6th Chrome Zero-Day of 2026 appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/google-patches-6th-chrome-zero-day-of-2026/",
-      "published": "2026-09-04T11:31:52+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -535,23 +473,6 @@
       ],
       "cve_ids": [
         "CVE-2026-73749"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/",
-      "title": "12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover",
-      "summary": "Dubbed PostGREShell, CVE-2026-6471 turns low-level replication access into code execution, permanent superuser privileges and a persistent database backdoor. The post 12-Year-Old PostgreSQL Vulnerability Enables Database, Server Takeover appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/12-year-old-postgresql-vulnerability-enables-database-server-takeover/",
-      "published": "2026-09-04T12:06:13+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-6471"
       ],
       "is_zero_day": false,
       "is_high_severity": true
