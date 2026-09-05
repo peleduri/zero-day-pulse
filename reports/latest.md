@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-05 01:43 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-05 09:34 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -182,16 +182,14 @@ The `rlm_eval` tool runs an arbitrary Python string chosen by the mo…
 
 ---
 
-## 19. 🟠 Zero-Day — Google Releases Chrome Update to Patch Actively Exploited V8 Zero-Day
+## 19. 🟡 High Severity — Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities
 
-**CVE:** `CVE-2026-85046` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://thehackernews.com/2026/09/google-releases-chrome-update-to-patch.html>
+**CVE:** `CVE-2026-81578` | `CVE-2026-82078` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-05
+**Reference:** <https://thehackernews.com/2026/09/attackers-exploit-papercut-flaws-to.html>
 
-> Google on Thursday released security updates to patch 12 vulnerabilities, including one that has come under active exploitation in the wild.
+> Threat actors are exploiting the newly disclosed PaperCut flaws to facilitate credential theft in attacks targeting the education sector in the U.S. and Europe.
 
-The high-severity vulnerability, tracked as CVE-2026-85046 (CVSS score: 8.8), has been described as a type confusion bug in V8, Chrome&#x27;s JavaScript and WebAssembly engine.
-
-&quot;Type confusion in V8 in Google Chrome prior to 152.0.7977.82 allowed a rem…
+The Arctic Wolf Adversary Research Team said it observed attackers exploiting CVE-2026-81578 and CVE-2026-82078 – an authentication bypass and remote code execution chain – to conduct command execution and reconnaissance, as well as
 
 ---
 
@@ -355,21 +353,7 @@ image_analyze follows workspace symlinks and leaks outside-workspac…
 
 ---
 
-## 33. 🟡 High Severity — Over 440,000 Exploit Attempts Target Super Forms and Elementor Pro RCE Flaws
-
-**CVE:** `CVE-2026-14894` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://thehackernews.com/2026/09/over-440000-exploit-attempts-target.html>
-
-> Threat actors are exploiting two critical security flaws in WordPress plugins Super Forms and Elementor Pro, according to findings from Wordfence.
-
-The vulnerabilities in question are -
-
-
-  CVE-2026-14894 (CVSS score: 9.8) - A missing file type validation vulnerability in Super Forms – Drag &amp; Drop Form Builder that allows unauthenticated attackers to upload files of any type, including
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
