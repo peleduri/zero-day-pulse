@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-05T14:07:09.440155+00:00",
-  "total": 28,
+  "generated": "2026-09-05T19:39:15.775420+00:00",
+  "total": 19,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -37,73 +37,17 @@
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-75912",
-      "title": "CodeWhale: Argument Injection in `git_blame` Tool Allows Arbitrary File Read Without Approval",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 9a34b5034d29f05d1f28fa61b04719ca6a741020. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n# Argument Injection in `git_blame` Tool Allows Arbitrary File Read Without Approval\n\n## Overview\n\nThe `git_blame` tool in DeepSeek-TUI passes the model-supplied `rev` parameter unvalidated into the argv of `git blame`. `git blame` accepts `--contents=<file>`, which causes it to use the file's contents in place of the working tree and echo each line verbatim in the blame output. A `rev` value of `--contents=/path/to/secret` therefore exfiltrates the targeted file's contents into the tool result, which is returned to the model and displayed in the chat transcript.\n\nThe tool is registered with `ApprovalRequirement::Auto` and declares `ToolCapability::ReadOnly`. The read is in-scope for the capability label, but the *target* of the read is not the user expects `git_blame` to read files inside the workspace, not arbitrary paths on the host.\n\nThis is a sibling of the `git_show` argument-injection vulnerability filed separately, sharing the same root cause (missing `--end-of-options` sentinel and unvalidated `rev`).\n\n## Impact\n\nArbitrary file read at the privilege of the user running DeepSeek-TUI, via malicious repository content combined with prompt injection (the threat model already documented in CVE-2026-45311).\n\nReachable as the invoking user:\n\n- `~/.ssh/id_rsa`, `~/.ssh/id_ed25519`, and other private keys\n- `~/.aws/credentials`, `~/.config/gh/hosts.yml`, `~/.netrc`\n- `.env` files anywhere in the filesystem\n- Any project file outside the workspace the tool would normally restrict to\n\nThe leaked contents land in the model's context. The same model that obeyed the prompt-injection in step one can be instructed to forward the leak via `fetch_url` (network-",
-      "link": "https://github.com/advisories/GHSA-c6mw-8xh8-gpq6",
-      "published": "2026-09-04T18:11:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75912"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75913",
-      "title": "CodeWhale: Argument Injection in `git_show` Tool Allows Arbitrary File Write Without Approval",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 9a34b5034d29f05d1f28fa61b04719ca6a741020. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n# Argument Injection in `git_show` Tool Allows Arbitrary File Write Without Approval\n\n## Overview\n\nThe `git_show` tool in DeepSeek-TUI executes `git show` with the model-supplied `rev` parameter passed unvalidated into the argv. `git show` honours the `--output=<path>` option, so a `rev` value beginning with `--output=` is interpreted as a flag rather than a revision. The tool is registered with `ApprovalRequirement::Auto` and declares `ToolCapability::ReadOnly`, so the write happens without a user prompt and contradicts the capability the catalog advertises to the model and the user.\n\nThis is the same vulnerability class as GHSA-72w5-pf8h-xfp4 (CVE-2026-45374): an auto-approved tool produces an effect outside the boundary the user consented to.\n\n## Impact\n\nA malicious repository combined with prompt injection, the threat model already documented in CVE-2026-45311 (auto-loaded `AGENTS.md` is treated as instructions by the model) yields an unprompted arbitrary file write at the privilege of the user running DeepSeek-TUI.\n\nUseful targets reachable as the invoking user:\n\n- `~/.ssh/authorized_keys`\n- `~/.bashrc`, `~/.zshrc`, `~/.profile`\n- `~/.gitconfig` (chainable into RCE via `core.editor`)\n- `~/.config/**`, `~/.aws/credentials`, project source files\n\nThe written content is the `git show` rendering of HEAD commit hash, author/date header, indented commit message, and (when `patch=true`) diff hunks. The commit subject, body, author identity, and diff text are entirely attacker-controlled because the attacker owns the repository HEAD. The leading `commit <hash>` line prevents clean overwrite of formats that reject unknown tokens, but is silently ignorable ",
-      "link": "https://github.com/advisories/GHSA-7j5w-7r7x-9v27",
-      "published": "2026-09-04T18:02:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75913"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75857",
-      "title": "CodeWhale: exec_shell_interact sends LLM-controlled input to a running shell without an approval prompt (privilege escalation)",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 57f3c89471e27ac4032d9791f6885e5d4408c381. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n`exec_shell` is correctly approval-gated. Its sibling `exec_shell_interact` returns `ApprovalRequirement::Auto`, so when the model writes input into a shell the user already approved (a `python3 -i` REPL, `mysql`, `ssh`, `sudo -i`, etc.), no prompt fires. Inside those processes, \"stdin\" is the command surface, so the model gets to run commands at whatever privilege that process holds. The user approved opening the shell once, for a stated purpose; the input that then runs in it is chosen by the model, and can be steered by any prompt injection the agent ingests afterward.\n\n### Details\nThe vulnerability requires two ordinary preconditions: shell tools are enabled (the normal config for using CodeWhale as a coding agent), and the session already has one approved long-running interactive process. After that, any untrusted content the agent reads can drive a `exec_shell_interact` call.\n\n`crates/tui/src/tools/shell.rs:2834-2910`:\n\n```rust\nfn capabilities(&self) -> Vec<ToolCapability> {\n    vec![ToolCapability::ExecutesCode]\n}\n\nfn approval_requirement(&self) -> ApprovalRequirement {\n    ApprovalRequirement::Auto          // overrides the Required-for-ExecutesCode default\n}\n\nasync fn execute(&self, input: Value, context: &ToolContext) -> Result<ToolResult, ToolError> {\n    let task_id = required_task_id(&input)?;\n    let close_stdin = optional_bool(&input, \"close_stdin\", false);\n    let interaction_input = input\n        .get(\"input\").or_else(|| input.get(\"stdin\")).or_else(|| input.get(\"data\"))  // LLM-controlled\n        .and_then(serde_json::Value::as_str).unwrap_or(\"\");\n    {\n        let mut manager = context.shell_manager.lock()...;\n        if !",
-      "link": "https://github.com/advisories/GHSA-g29h-pfmp-qp9r",
-      "published": "2026-09-04T18:02:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75857"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-target-critical-citrix-netscaler-auth-bypass-in-attacks/",
-      "title": "Critical Citrix NetScaler auth bypass now leveraged in attacks",
-      "summary": "Attackers have begun targeting a critical-severity Citrix NetScaler auth bypass flaw (CVE-2026-19490) in the wild, according to vulnerability intelligence company Previdian. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-critical-citrix-netscaler-auth-bypass-in-attacks/",
-      "published": "2026-09-04T15:25:59+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
+      "title": "Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials",
+      "summary": "JetBrains is urging Cadence users to revoke and rotate all credentials following a security incident last month in which unidentified threat actors exploited a recently disclosed critical vulnerability in TeamCity to breach its own environment.\n\n\"Cadence users should immediately revoke or rotate all credentials and secrets that may have been used to run their Cadence executions,\" JetBrains said.",
+      "link": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
+      "published": "2026-09-05T16:52:33+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "malware"
+        "zeroday"
       ],
-      "cve_ids": [
-        "CVE-2026-19490"
-      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -220,22 +164,21 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-75858",
-      "title": "CodeWhale: rlm_eval auto-approves arbitrary Python execution, bypassing the user's approval policy (RCE)",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 57f3c89471e27ac4032d9791f6885e5d4408c381. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\nThe `rlm_eval` tool runs an arbitrary Python string chosen by the model in a real `python3` interpreter. Its `approval_requirement()` returns `ApprovalRequirement::Auto`, which the engine treats as \"never prompt,\" regardless of the user's configured `--approval-policy`. A single tool call \u2014 which prompt injection from any untrusted content the agent reads (a web page, a fetched URL, a repo file, an MCP tool result) can induce \u2014 runs code on the user's machine at the user's privilege with no prompt and no audit step. This is the same defect that was already patched on the sibling `run_tests` tool (CVE-2026-45311); the fix never reached `rlm_eval` or `rlm_open`, which expose a broader surface (full Python on the host, not just `cargo test`).\n\n### Details\n`rlm_eval`'s `execute()` reads the LLM-controlled `code` field and runs it (`crates/tui/src/tools/rlm.rs:215-300`):\n\n```rust\nfn capabilities(&self) -> Vec<ToolCapability> {\n    vec![ToolCapability::Network, ToolCapability::ExecutesCode]\n}\n\nfn approval_requirement(&self) -> ApprovalRequirement {\n    ApprovalRequirement::Auto          // overrides the safe default below\n}\n\nasync fn execute(&self, input: Value, context: &ToolContext) -> Result<ToolResult, ToolError> {\n    let name = required_non_empty_str(&input, \"name\")?;\n    let code = required_non_empty_str(&input, \"code\")?;   // LLM-controlled\n    ...\n    let round = kernel.run(code, Some(&bridge)).await...   // runs that code in python3\n```\n\nThe trait default at `crates/tui/src/tools/spec.rs:632-633` would have returned `Required` for any tool whose capabilities include `ExecutesCode`. `rlm_eval` deliberately overrides that to `Auto`.\n\nThe ",
-      "link": "https://github.com/advisories/GHSA-wrj3-vj8c-784f",
-      "published": "2026-09-04T18:12:15Z",
-      "source": "GitHub Security Advisories",
+      "id": "https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html",
+      "title": "Critical VMware Workstation and Fusion Flaw Lets VM Admins Execute Host Code",
+      "summary": "Broadcom has released security updates for two security flaws impacting VMware Workstation and Fusion, including one critical bug that could result in arbitrary code execution under certain conditions.\n\nThe vulnerability, tracked as CVE-2026-59346 (CVSS score: 9.3), is an integer-overflow vulnerability that a local attacker with elevated privileges can exploit to run arbitrary code.\n\n\"A",
+      "link": "https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html",
+      "published": "2026-09-05T16:05:08+00:00",
+      "source": "The Hacker News Security",
       "tags": [
-        "github",
-        "advisories",
-        "oss"
+        "news",
+        "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-75858"
+        "CVE-2026-59346"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/attackers-exploit-papercut-flaws-to.html",
@@ -359,120 +302,6 @@
       ],
       "cve_ids": [
         "CVE-2026-72799"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
-      "title": "Kubernetes v1.37: KubeletInUserNamespace (aka Rootless mode) Graduates to Beta",
-      "summary": "Kubernetes v1.37 promotes the KubeletInUserNamespace feature gate to beta. With this feature enabled, all of the node components (kubelet, CRI and OCI runtimes, CNI plugins, and kube-proxy) can run as a non-root user on the host, using a Linux user namespace . This technique is also known as rootless mode . The work started as an experiment in 2018, and was merged into Kubernetes v1.22 (2021) as an alpha feature (Kubernetes Enhancement Proposal KEP-2033 ). This feature should not be confused with user namespaces for pods ( hostUsers: false with the UserNamespacesSupport feature gate, GA since v1.36), which puts pods in user namespaces but still runs the node components as root. These two features do not conflict. Moreover, they can be combined to nest Kubernetes inside Kubernetes without resorting to the full privileged: true . Why run the node components in a user namespace? Because the node components have historically had container-breakout vulnerabilities that could compromise full root privileges on the host. Examples of such vulnerabilities include: CVE-2022-0811 (\"cr8escape\"): CRI-O could be tricked into setting arbitrary sysctls, such as kernel.core_pattern , resulting in arbitrary code execution as root on the host CVE-2023-27561 : runc could be tricked into bypassing the masked paths of a container via a volume mount race, exposing the host's procfs files (a regression of CVE-2019-19921) CVE-2024-10220 : the kubelet could be made to execute arbitrary commands as root via gitRepo volumes ( gitRepo volumes had a similar vulnerability, CVE-2018-11235 , back in 2018 too) CVE-2025-31133 : runc could be tricked into bind-mounting attacker-controlled paths and writing to the host's procfs files, such as /proc/sysrq-trigger and /proc/sys/kernel/core_pattern CVE-2026-53488 : containerd could be tricked into executing arbitrary commands on the host, via crafted labels in a container image By running the node components in a user namespace, the potential damage is co",
-      "link": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
-      "published": "2026-09-04T18:30:00+00:00",
-      "source": "Kubernetes Security Announcements",
-      "tags": [
-        "cloud",
-        "kubernetes",
-        "k8s",
-        "container"
-      ],
-      "cve_ids": [
-        "CVE-2022-0811",
-        "CVE-2023-27561",
-        "CVE-2019-19921",
-        "CVE-2024-10220",
-        "CVE-2018-11235",
-        "CVE-2025-31133",
-        "CVE-2026-53488"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75856",
-      "title": "CodeWhale: SSRF\u200c bypass - TOCTOU on DNS failure for DNS pinning",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 26de44a8bd5051f8f944ea60b2c37ae1d2b7d25e. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\nDNS-pinning failure allows natural failure of code, however with a custom DNS server that fails the initial requests and allows the secondary requests, it's possible to bypass the logic.\n\n\n### Details\nSimplified attack scenario:\n1. Attacker asks agent to visit the `mydomain.com`.\n2. CodeWhale tries to resolve the IP of `mydomain.com`, however, the custom DNS server that's controlled by the attacker marks the request DNS\u200c query as failed (Time of Check). \n3. CodeWhale allows the code to continue as it expects it request to fail again.\n4. On the secondary (Time of Use), the DNS server resolves mydomain.com to a local IP (e.g., 127.0.0.1)\n5. The request is executed and the content from port 80 is returned to the attacker, allowing full bypass of SSRF mitigations.\n\nIn the [DNS-pinning](https://github.com/Hmbown/CodeWhale/blob/8dff2f7525ead210a01347b48f53ae3f20d094ec/crates/tui/src/tools/fetch_url.rs#L362) section, when DNS fails, the code is allowed to continue as it's expected to fail. However\n\n### PoC\nThis is a custom DNS server that fails the first requests (in this case, the first and second requests must fail, while the 3rd and 4th are allowed due to A and AAAA DNS queries). Here is the code for the DNS\u200c server(for PoC, should be placed in `dnser/dns_resolver.py`:\n```python\n#!/usr/bin/env python3\n\"\"\"\nLocal DNS Resolver \u2014 customizable request/response handling.\nUses only the standard library + dnslib.\n\nUsage:\n    pip install dnslib\n    sudo python dns_resolver.py          # binds to 0.0.0.0:53 by default\n    python dns_resolver.py --port 5353   # unprivileged port for testing\n\"\"\"\n\nimport argparse\nimport socket\nimport threading\nfrom dnslib i",
-      "link": "https://github.com/advisories/GHSA-6v2g-fpxh-pmmh",
-      "published": "2026-09-04T18:05:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75856"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75915",
-      "title": "CodeWhale: js_execution leaks parent environment to model context via missing env scrub",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 26de44a8bd5051f8f944ea60b2c37ae1d2b7d25e. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n\njs_execution exposes parent process environment to model-provided JavaScript\n\nThe js_execution tool spawns Node with tokio::process::Command::new without calling the child_env scrubber that exec_shell, the Python REPL, and the MCP launcher all use. Model-provided JavaScript reads process.env and the values flow back to the parent transcript as the tool's stdout, exposing API keys, cloud credentials, and forge tokens to the next model turn.\n\n### Details\n\nIn `crates/tui/src/tools/js_execution.rs` (v0.8.37, lines 91-105):\n\n```rust\nlet temp_dir = tempfile::tempdir()\n    .map_err(|e| ToolError::execution_failed(format!(\"tempdir failed: {e}\")))?;\nlet script_path = temp_dir.path().join(\"js_execution.js\");\ntokio::fs::write(&script_path, code)\n    .await\n    .map_err(|e| ToolError::execution_failed(format!(\"tempfile write failed: {e}\")))?;\n\nlet mut cmd = tokio::process::Command::new(&node);\ncmd.arg(&script_path);\ncmd.current_dir(workspace);\n\nlet output = tokio::time::timeout(Duration::from_secs(120), cmd.output())\n    .await\n    .map_err(|_| ToolError::Timeout { seconds: 120 })\n    .and_then(|res| res.map_err(|e| ToolError::execution_failed(e.to_string())))?;\n```\n\nThe Command is built without `cmd.env_clear()` and without the project's `crate::child_env::apply_to_tokio_command` helper. Every variable in the parent process environment is inherited by the spawned `node`.\n\nFor comparison, exec_shell (`crates/tui/src/tools/shell.rs:790-792`) and the Python REPL (`crates/tui/src/repl/runtime.rs:238`) both apply the scrubber:\n\n```rust\nchild_env::apply_to_command(&mut cmd, child_env::string_map_env(&exec_env.env));\n```\n\napply_to_tokio_command calls `cmd.e",
-      "link": "https://github.com/advisories/GHSA-h539-c7r8-3xq4",
-      "published": "2026-09-04T18:03:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75915"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75859",
-      "title": "CodeWhale: Project config `instructions` override enables arbitrary file read into AI system prompt via cloned repository",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 43563356b98c6b993085554da82e77370160a31c. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n\nA malicious `.codewhale/config.toml` or `.deepseek/config.toml` committed to a repository can set `instructions` to an array of arbitrary file paths (including paths outside the workspace like `~/.ssh/id_rsa` or `~/.aws/credentials`) that are read from disk and injected into the AI model's system prompt. There is no path validation, workspace boundary check, or tightening guard on the `instructions` field. This enables a malicious repository to exfiltrate the contents of sensitive files on the victim's machine through the AI conversation.\n\n### Details\n\nThe project config merge function at `crates/tui/src/main.rs:5190-5197` (v0.8.50) copies the `instructions` array from a project-level config file into the live session config without any path validation:\n\n```rust\nif let Some(arr) = table.get(\"instructions\").and_then(toml::Value::as_array) {\n    let entries: Vec<String> = arr\n        .iter()\n        .filter_map(|v| v.as_str().map(str::to_string))\n        .filter(|s| !s.trim().is_empty())\n        .collect();\n    config.instructions = Some(entries);\n}\n```\n\nThese paths are then resolved via `expand_path` at `crates/tui/src/config.rs:2361-2371`, which expands `~` to the user's home directory and resolves environment variables:\n\n```rust\npub fn instructions_paths(&self) -> Vec<PathBuf> {\n    self.instructions.as_deref().unwrap_or(&[])\n        .iter()\n        .map(String::as_str)\n        .map(str::trim)\n        .filter(|s| !s.is_empty())\n        .map(expand_path)\n        .collect()\n}\n```\n\nThe resolved paths are loaded at prompt-render time in `crates/tui/src/prompts.rs:216` with no workspace boundary check:\n\n```rust\nInstructionSource::File(path) =>",
-      "link": "https://github.com/advisories/GHSA-62f5-cp2p-vq95",
-      "published": "2026-09-04T18:00:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75859"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75914",
-      "title": "CodeWhale: image_analyze follows workspace symlinks, leaking external file bytes",
-      "summary": "### Maintainer resolution\n\nThe CodeWhale maintainers validated this report. The affected package ranges are recorded in the advisory metadata. Version 0.8.64 contains the fix in commit 26de44a8bd5051f8f944ea60b2c37ae1d2b7d25e. Users should upgrade to 0.8.64 or later. The original reporter analysis is preserved below.\n\n### Summary\n\nimage_analyze follows workspace symlinks and leaks outside-workspace file bytes to the vision endpoint\n\nThe image_analyze tool resolves its image_path with a bare context.workspace.join instead of routing through ToolContext::resolve_path. The pre-join lexical check rejects absolute paths, Windows prefixes, and parent-dir components but never canonicalizes, so a symlink inside the workspace whose name ends in an image extension and whose target sits outside the workspace is read transparently. The tool has ReadOnly capability and the trait default makes it auto-approved, so the bypass executes with no user prompt.\n\n### Details\n\nIn `crates/tui/src/vision/tools.rs` (v0.8.37, lines 104-123):\n\n```rust\nasync fn execute(&self, input: Value, context: &ToolContext) -> Result<ToolResult, ToolError> {\n    let image_path = required_str(&input, \"image_path\")?;\n    let prompt = input\n        .get(\"prompt\")\n        .and_then(|v| v.as_str())\n        .unwrap_or(\"Describe this image in detail.\");\n\n    let image_path_buf = Path::new(image_path);\n    if image_path_buf.components().any(|c| {\n        matches!(\n            c,\n            Component::Prefix(_) | Component::RootDir | Component::ParentDir\n        )\n    }) {\n        return Err(ToolError::execution_failed(\n            \"image_path must be a relative path within the workspace and cannot escape it.\",\n        ));\n    }\n    let resolved_path = context.workspace.join(image_path_buf);\n    let (image_data, mime_type) = Self::read_image_file(&resolved_path).await?;\n```\n\n`read_image_file` (lines 31-39) is a `tokio::fs::read(path)` call which follows symlinks. The bytes are then base64-encoded and embedded as `",
-      "link": "https://github.com/advisories/GHSA-w7wx-5q49-r59w",
-      "published": "2026-09-04T17:34:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75914"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/",
-      "title": "HPE Patches Critical RCE Vulnerabilities in AOS-CX",
-      "summary": "Nearly two dozen issues, tracked collectively as CVE-2026-73749 (CVSS score of 9.8), were addressed with the updates. The post HPE Patches Critical RCE Vulnerabilities in AOS-CX appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/hpe-patches-critical-rce-vulnerabilities-in-aos-cx/",
-      "published": "2026-09-04T16:11:06+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-73749"
       ],
       "is_zero_day": false,
       "is_high_severity": true
