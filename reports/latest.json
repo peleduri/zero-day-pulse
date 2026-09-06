@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-06T01:37:01.062424+00:00",
-  "total": 14,
+  "generated": "2026-09-06T09:48:56.998399+00:00",
+  "total": 13,
   "kev": 0,
   "zero_day": 11,
   "enriched": 0,
@@ -191,24 +191,6 @@
       ],
       "cve_ids": [
         "CVE-2026-59346"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/attackers-exploit-papercut-flaws-to.html",
-      "title": "Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities",
-      "summary": "Threat actors are exploiting the newly disclosed PaperCut flaws to facilitate credential theft in attacks targeting the education sector in the U.S. and Europe.\n\nThe Arctic Wolf Adversary Research Team said it observed attackers exploiting CVE-2026-81578 and CVE-2026-82078 \u2013 an authentication bypass and remote code execution chain \u2013 to conduct command execution and reconnaissance, as well as",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-papercut-flaws-to.html",
-      "published": "2026-09-05T07:31:53+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-81578",
-        "CVE-2026-82078"
       ],
       "is_zero_day": false,
       "is_high_severity": true
