@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-06T14:31:10.893613+00:00",
-  "total": 14,
+  "generated": "2026-09-06T19:41:40.545239+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -42,21 +42,6 @@
       "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an\u00a0advisory published on September 5.\n\nSansec, which discovered the flaw and named it StyleSmuggler, said attacks started on September 4. \"Sansec is",
       "link": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
       "published": "2026-09-05T20:14:47+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
-      "title": "Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials",
-      "summary": "JetBrains is urging Cadence users to revoke and rotate all credentials following a security incident last month in which unidentified threat actors exploited a recently disclosed critical vulnerability in TeamCity to breach its own environment.\n\n\"Cadence users should immediately revoke or rotate all credentials and secrets that may have been used to run their Cadence executions,\" JetBrains said.",
-      "link": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
-      "published": "2026-09-05T16:52:33+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
@@ -192,23 +177,6 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html",
-      "title": "Critical VMware Workstation and Fusion Flaw Lets VM Admins Execute Host Code",
-      "summary": "Broadcom has released security updates for two security flaws impacting VMware Workstation and Fusion, including one critical bug that could result in arbitrary code execution under certain conditions.\n\nThe vulnerability, tracked as CVE-2026-59346 (CVSS score: 9.3), is an integer-overflow vulnerability that a local attacker with elevated privileges can exploit to run arbitrary code.\n\n\"A",
-      "link": "https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html",
-      "published": "2026-09-05T16:05:08+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-59346"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
