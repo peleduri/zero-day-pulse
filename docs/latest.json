@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-06T09:48:56.998399+00:00",
-  "total": 13,
+  "generated": "2026-09-06T14:31:10.893613+00:00",
+  "total": 14,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -173,6 +173,21 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/attackers-hijack-mikrotik-routers.html",
+      "title": "Attackers Hijack MikroTik Routers Through Internet-Exposed SSH Without Authentication",
+      "summary": "Attackers are exploiting MikroTik routers with their Secure Shell (SSH) remote-access service, which is reachable from the internet, to gain full administrative control without authentication, according to\u00a0CERT Polska's attack warning, published on September 5.\n\nSuccessful attacks date to at least September 2. The Hacker News\u2019s September 6 review of the warning found no victim count or",
+      "link": "https://thehackernews.com/2026/09/attackers-hijack-mikrotik-routers.html",
+      "published": "2026-09-06T09:32:38+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,

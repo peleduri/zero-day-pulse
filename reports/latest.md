@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-06 09:48 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-06 14:31 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -105,7 +105,18 @@ Sansec, which discovered the flaw and named it StyleSmuggler, said attacks start
 
 ---
 
-## 12. 🟡 High Severity — Critical VMware Workstation and Fusion Flaw Lets VM Admins Execute Host Code
+## 12. 🟠 Zero-Day — Attackers Hijack MikroTik Routers Through Internet-Exposed SSH Without Authentication
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-06
+**Reference:** <https://thehackernews.com/2026/09/attackers-hijack-mikrotik-routers.html>
+
+> Attackers are exploiting MikroTik routers with their Secure Shell (SSH) remote-access service, which is reachable from the internet, to gain full administrative control without authentication, according to CERT Polska&#x27;s attack warning, published on September 5.
+
+Successful attacks date to at least September 2. The Hacker News’s September 6 review of the warning found no victim count or
+
+---
+
+## 13. 🟡 High Severity — Critical VMware Workstation and Fusion Flaw Lets VM Admins Execute Host Code
 
 **CVE:** `CVE-2026-59346` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-05
 **Reference:** <https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html>
@@ -118,7 +129,7 @@ The vulnerability, tracked as CVE-2026-59346 (CVSS score: 9.3), is an integer-ov
 
 ---
 
-## 13. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
