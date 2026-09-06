@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-05T19:39:15.775420+00:00",
-  "total": 19,
+  "generated": "2026-09-06T01:37:01.062424+00:00",
+  "total": 14,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,21 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
+      "title": "Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores",
+      "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an\u00a0advisory published on September 5.\n\nSansec, which discovered the flaw and named it StyleSmuggler, said attacks started on September 4. \"Sansec is",
+      "link": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
+      "published": "2026-09-05T20:14:47+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -194,114 +209,6 @@
       "cve_ids": [
         "CVE-2026-81578",
         "CVE-2026-82078"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73842",
-      "title": "OpenChoreo: cluster-gateway internal proxy performs no caller authentication and is not read-only \u2014 data-plane Secret disclosure and arbitrary Kubernetes mutation",
-      "summary": "### Summary\n\nThe OpenChoreo control-plane cluster-gateway exposes internal management APIs (`/api/proxy/`, `/api/exec/`, `/api/wirelogs/`) that tunnel requests through to connected data planes' Kubernetes APIs, but the internal listener authenticates no caller. Its request validator permits mutating HTTP methods and reads of Secrets in tenant namespaces (only kube-system Secrets are blocked), so although the client library documents these requests as \"read-only,\" the server enforces no such restriction. Any party able to reach the internal listener can \u2014 with no client certificate or token \u2014 read Secrets in any tenant namespace, create/modify/delete workloads, and exec into pods across every connected data plane.\n\n### Impact\n\nAn attacker with network access to the cluster-gateway internal listener obtains tunneled access to every connected data plane's Kubernetes API with no caller-level access control. Across all connected data planes, this allows:\n\n- Secret disclosure \u2014 reading any Secret outside `kube-system` in any tenant namespace (database credentials, cloud/KMS keys, TLS private keys), independent of any workload ServiceAccount permissions.\n- Workload tampering or destruction \u2014 creating, modifying, or deleting Deployments, Services, and other resources.\n- Pod command execution inside workload pods via `/api/exec/`.\n\nThis is also the missing second authorization layer behind GHSA-52gf-6rpq-fgmx (the openchoreo-api exec/wirelogs cross-project authorization bypass): because the gateway provides no compensating authorization, that bypass \u2014 and any other authz gap or SSRF that reaches the internal API \u2014 reaches the data-plane Kubernetes API unchecked.\n\nDirect exploitability depends on the network isolation of the internal listener, which is not fixed in source. Where the internal port is reachable by untrusted workloads with no restrictive NetworkPolicy \u2014 and with impact landing in a separate data-plane cluster \u2014 this is Critical; it is scored conservatively as Hi",
-      "link": "https://github.com/advisories/GHSA-rh53-xvx2-j327",
-      "published": "2026-09-04T21:41:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73842"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73555",
-      "title": "vLLM: Unauthenticated Internal Path and Username Disclosure via Validation Error Messages",
-      "summary": "## Summary\n\nWhen the vLLM API receives a malformed request (e.g., invalid JSON or missing required fields), FastAPI raises a Pydantic `RequestValidationError`. The `validation_exception_handler` in `vllm/entrypoints/openai/server_utils.py` converts this exception to a string via `str(exc)`, which includes the internal file path and line number of the handler function. The existing `sanitize_message()` function in `vllm/entrypoints/utils.py` strips memory addresses (e.g., `0x7f...`) but does not strip `File \"...\", line X` patterns. The result is a user-facing HTTP response that leaks internal system information.\n\n## Impact\n\nAn unauthenticated attacker can extract the following with a single malformed request:\n\n- **OS username** running the vLLM process (e.g., `ubuntu`)\n- **Home directory path** (e.g., `/home/ubuntu/`)\n- **Virtual environment path** (e.g., `vllm-env/`)\n- **Python version** (e.g., `3.12`)\n- **Internal package structure and line numbers** (e.g., `vllm/entrypoints/openai/chat_completion/api_router.py`)\n- **Handler function names per endpoint**, enabling precise version fingerprinting\n\nThis information aids attackers in constructing targeted exploits: environment paths narrow the attack surface, and handler function names + line numbers enable exact version identification even when the `/version` endpoint is disabled.\n\nAll POST endpoints that accept JSON bodies are affected, including `/v1/chat/completions`, `/v1/completions`, `/tokenize`, and `/detokenize`.\n\n## Workarounds\n\nDeploying vLLM behind a reverse proxy that rewrites error response bodies to strip file paths would mitigate this, though it is fragile.\n\n## Remediation Recommendation\n\nTwo possible fixes (either suffices):\n\n**Option A \u2014 Fix `validation_exception_handler`:** Construct the error message from `exc.errors()` (the structured Pydantic error list) rather than `str(exc)`. This avoids the traceback-style string entirely.\n\n**Option B \u2014 Fix `sanitize_message`:** Add a regex to strip `File \"...\"",
-      "link": "https://github.com/advisories/GHSA-hwrm-c4cx-rf4j",
-      "published": "2026-09-04T21:36:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73555"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72793",
-      "title": "SiYuan: Non-administrator responses from /api/system/getConf omit three secrets that the configuration-export path explicitly strips, disclosing the session-cookie signing key and the OS username to anonymous readers",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72793](https://nvd.nist.gov/vuln/detail/CVE-2026-72793).\n\n### Summary\n\n`/api/system/getConf` is registered with `CheckAuth` only and is reachable by the publish `RoleReader` token, and anonymously when `Publish.Auth.Enable` is `false`. Its non-administrator masking chain is a blocklist that enumerates fields individually. Three fields that the configuration-export endpoint in the same file deliberately clears are absent from that blocklist and are returned to readers:\n\n| Field | JSON | What it is | Cleared by `exportConf` at |\n|---|---|---|---|\n| `Conf.CookieKey` | `cookieKey` | The session-cookie signing key | `kernel/api/system.go:360` |\n| `Conf.Export.PandocBin` | `export.pandocBin` | Absolute path embedding the OS username | `kernel/api/system.go:338` |\n| `Conf.NotebookCrypto` | `notebookCrypto` | Encrypted-notebook key material | `kernel/api/system.go:360` |\n\nThe project has already classified all three as values that must not leave the server. The reader-facing path returns them.\n\n### Details\n\n**Route.** `kernel/api/router.go:70` : `POST /api/system/getConf` \u2192 `model.CheckAuth` \u2192 `getConf`. No `CheckReadonly`, no `CheckAdminRole`.\n\n**The masking chain, and what each stage covers.** `getConf` masks through `GetMaskedConf()` \u2192 `HideConfSecret()` (non-administrators) \u2192 `FilterConfByPublishIgnore()` (readers) \u2192 a browser-request path strip.\n\n- `GetMaskedConf`: `UserData`, `MCPOAuth`, `AccessAuthCode`.\n- `HideConfSecret`: `AI`, `Api`, `Flashcard`, `ServerAddrs`, `Publish`, `Repo`, `Sync`, `Secrets`, `Variables`, and the System paths. No reference to `CookieKey` or `Export.PandocBin`.\n- `FilterConfByPublishIgnore`: `UILayout` only.\n- Browser strip (`kernel/api/system.go:630-631`): System paths only.\n\nEach stage names fields explicitly, so any field nobody thought to add is returned by default.\n\n---\n\n**1. `CookieKey`: the live session-signing key.**\n\nThe value is passed straight into the session store at startup:\n\n",
-      "link": "https://github.com/advisories/GHSA-h4v5-crx2-3cv4",
-      "published": "2026-09-04T21:16:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72793"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72795",
-      "title": "SiYuan: Embedded (transclusion) block content is returned without publish-access filtering, leaking private and password-protected document content to anonymous readers",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72795](https://nvd.nist.gov/vuln/detail/CVE-2026-72795).\n\n### Summary\n\n`/api/block/getBlockDOMWithEmbed` and `/api/block/getBlockDOMsWithEmbed` gate only the *requested* block against publish access. The blocks pulled in by that block's embed (transclusion) query are inlined into the returned DOM with no publish-access check at all, so a reader who requests a legitimately-published block containing an embed query receives the content of every block that query matched including blocks in hidden, forbidden and password-protected documents.\n\nThe dedicated embed endpoint `getEmbedBlock` filters these same results for reader roles. The DOM-with-embed path does not.\n\n### Details\n\n| Item | Detail |\n|---|---|\n| Routes | `kernel/api/router.go:226` `POST /api/block/getBlockDOMWithEmbed` \u2192 `model.CheckAuth` \u2192 `getBlockDOMWithEmbed`; `:227` `POST /api/block/getBlockDOMsWithEmbed` \u2192 `model.CheckAuth` \u2192 `getBlockDOMsWithEmbed` |\n| Middleware | `CheckAuth` only \u2014 no `CheckReadonly`, no `CheckAdminRole` \u2192 reachable by the publish `RoleReader` token, and anonymously when `Publish.Auth.Enable` is `false` |\n| Guard present | Top-level requested block only. Singular: password + disable checks on the requested id. Plural: `filterBlockDOMsByPublishAccess` over the requested ids. |\n| Guard absent | The embedded blocks resolved from the query |\n| Exposed | Content HTML of every block matched by the embed query, regardless of that block's publish visibility or password tier |\n\n**The leak path.** `getBlockDOMWithEmbed` \u2192 `GetBlockDOMsWithEmbedInBox` \u2192 `resolveEmbedContentInBox` (`kernel/model/block.go:976`). That function walks the tree for `NodeBlockQueryEmbed`, extracts the embed SQL, executes `sql.SelectBlocksRawStmtInBox(stmt, ...)`, builds `embedContents` from each matched block's content HTML, and inlines the result via `SetIALAttr(\"embed-content\", ...)`.\n\n`resolveEmbedContentInBox` takes no `publishAccess` parameter and contains no ",
-      "link": "https://github.com/advisories/GHSA-h6w7-xxcf-w2mq",
-      "published": "2026-09-04T21:13:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72795"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72794",
-      "title": "SiYuan: The session-cookie signing key (Conf.CookieKey) is returned to anonymous readers by /api/system/getConf",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72794](https://nvd.nist.gov/vuln/detail/CVE-2026-72794).\n\n### Summary\n\n`/api/system/getConf` returns `Conf.CookieKey`, the key used to sign the server's session cookies in its response body. The endpoint is registered with `CheckAuth` only, so the field reaches the publish `RoleReader` token and the anonymous account when `Publish.Auth.Enable` is `false`.\n\nThe configuration-export endpoint in the same file strips this exact field before returning config, so the project already treats it as secret. The reader-facing masking path does not.\n\n### Details\n\n| Item | Detail |\n|---|---|\n| Route | `kernel/api/router.go:70` `POST /api/system/getConf` \u2192 `model.CheckAuth` \u2192 `getConf` |\n| Middleware | `CheckAuth` only \u2014 no `CheckReadonly`, no `CheckAdminRole` |\n| Leaked field | `AppConf.CookieKey`, serialized as `cookieKey` |\n| Purpose of the field | Signing key for the `siyuan` session cookie |\n\n**The field survives every stage of the masking chain.** `getConf` masks through `GetMaskedConf()` \u2192 `HideConfSecret()` (non-administrators) \u2192 `FilterConfByPublishIgnore()` (readers) \u2192 the browser-side System-path strip. `CookieKey` is removed by none of them:\n\n- `GetMaskedConf` masks `UserData`, `MCPOAuth` and `AccessAuthCode` only.\n- `HideConfSecret` nulls `AI`, `Api`, `Flashcard`, `ServerAddrs`, `Publish`, `Repo`, `Sync`, `Secrets`, `Variables` and the System paths. It contains no reference to `CookieKey`.\n- `FilterConfByPublishIgnore` touches `UILayout` only.\n- The browser-side strip removes System paths only.\n\n**The key is live, not vestigial.** It is passed straight into the session store at startup:\n\n```\ncli/cmd/serve.go:67   go server.Serve(false, model.Conf.CookieKey)\nkernel/server/serve.go:152   sessionStore = cookie.NewStore([]byte(cookieKey))\nkernel/server/serve.go:159   ginServer.Use(sessions.Sessions(\"siyuan\", sessionStore))\n```\n\n`gin-contrib/sessions/cookie.NewStore` constructed with a single key uses that key as the `g",
-      "link": "https://github.com/advisories/GHSA-34fj-mwm6-fjfg",
-      "published": "2026-09-04T21:12:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72794"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72799",
-      "title": "SiYuan: Missing publish-access filter on the HPath/path-resolution endpoints discloses the private document tree to anonymous readers",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72799](https://nvd.nist.gov/vuln/detail/CVE-2026-72799).\n\n### Summary\n\nFive filetree endpoints resolve arbitrary document IDs and paths with no publish-access check of any kind. All are `CheckAuth`-only, so they are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. An anonymous reader can map the complete private document tree every notebook, folder, and document title, and which notebook holds each document for documents marked hidden, password-protected, or publish-forbidden, and can resolve titles to document IDs.\n\n### Details\n\nNone of the following handlers invokes `IsReadOnlyRoleContext`, `CheckBlockIdAccessableByPublishAccess`, or `CheckPathAccessableByPublishIgnore`:\n\n| Endpoint | Returns | Discloses |\n|---|---|---|\n| `getFullHPathByID` (router 159) | `GetFullHPathByID(id)` | full title path including notebook, e.g. `/MySecretNotebook/Confidential/Q3 Layoffs Plan` |\n| `getHPathByID` (router 157) | `GetHPathByID(id)` | document-relative title path |\n| `getPathByID` (router 158) | `{path, notebook}` | which notebook a document lives in, plus its `.sy` storage path |\n| `getIDsByHPath` (router 160) | `GetIDsByHPath(path, notebook)` | title-path \u2192 document-ID enumeration |\n| `getHPathByPath` (router 155) | HPath from a storage path | title path from a storage path |\n\nEach accepts an arbitrary ID or HPath and resolves it identically for hidden, publish-forbidden, and password-protected documents.\n\nThis enables two operations for an unauthenticated caller:\n1. **Map the private document tree**: `getFullHPathByID` and `getPathByID` yield every notebook/folder/document title and its containing notebook.\n2. **Resolve titles to IDs**: `getIDsByHPath` converts a known or guessed title path into document IDs, which are the required input for other block-read endpoints.\n\nDocument titles and HPaths are precisely the block metadata that the project's block-metada",
-      "link": "https://github.com/advisories/GHSA-5w7r-f4cg-rqq7",
-      "published": "2026-09-04T20:53:34Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72799"
       ],
       "is_zero_day": false,
       "is_high_severity": true

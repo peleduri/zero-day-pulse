@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-05 19:39 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-06 01:37 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials
+## 3. 🟠 Zero-Day — Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-05
+**Reference:** <https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html>
+
+> Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store&#x27;s server without logging in, Dutch e-commerce security company Sansec said in an advisory published on September 5.
+
+Sansec, which discovered the flaw and named it StyleSmuggler, said attacks started on September 4. &quot;Sansec is
+
+---
+
+## 4. 🟠 Zero-Day — Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-05
 **Reference:** <https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html>
@@ -31,7 +42,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +51,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +60,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +69,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +78,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +87,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,7 +96,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 11. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -94,7 +105,7 @@
 
 ---
 
-## 11. 🟡 High Severity — Critical VMware Workstation and Fusion Flaw Lets VM Admins Execute Host Code
+## 12. 🟡 High Severity — Critical VMware Workstation and Fusion Flaw Lets VM Admins Execute Host Code
 
 **CVE:** `CVE-2026-59346` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-05
 **Reference:** <https://thehackernews.com/2026/09/critical-vmware-workstation-and-fusion.html>
@@ -107,7 +118,7 @@ The vulnerability, tracked as CVE-2026-59346 (CVSS score: 9.3), is an integer-ov
 
 ---
 
-## 12. 🟡 High Severity — Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities
+## 13. 🟡 High Severity — Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities
 
 **CVE:** `CVE-2026-81578` | `CVE-2026-82078` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-05
 **Reference:** <https://thehackernews.com/2026/09/attackers-exploit-papercut-flaws-to.html>
@@ -118,81 +129,7 @@ The Arctic Wolf Adversary Research Team said it observed attackers exploiting CV
 
 ---
 
-## 13. 🟡 High Severity — OpenChoreo: cluster-gateway internal proxy performs no caller authentication and is not read-only — data-plane Secret disclosure and arbitrary Kubernetes mutation
-
-**CVE:** `CVE-2026-73842` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://github.com/advisories/GHSA-rh53-xvx2-j327>
-
-> ### Summary
-
-The OpenChoreo control-plane cluster-gateway exposes internal management APIs (`/api/proxy/`, `/api/exec/`, `/api/wirelogs/`) that tunnel requests through to connected data planes&#x27; Kubernetes APIs, but the internal listener authenticates no caller. Its request validator permits mutating HTTP methods and reads of Secrets in tenant namespaces (only kube-system Secrets are blocked),…
-
----
-
-## 14. 🟡 High Severity — vLLM: Unauthenticated Internal Path and Username Disclosure via Validation Error Messages
-
-**CVE:** `CVE-2026-73555` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://github.com/advisories/GHSA-hwrm-c4cx-rf4j>
-
-> ## Summary
-
-When the vLLM API receives a malformed request (e.g., invalid JSON or missing required fields), FastAPI raises a Pydantic `RequestValidationError`. The `validation_exception_handler` in `vllm/entrypoints/openai/server_utils.py` converts this exception to a string via `str(exc)`, which includes the internal file path and line number of the handler function. The existing `sanitize_messag…
-
----
-
-## 15. 🟡 High Severity — SiYuan: Non-administrator responses from /api/system/getConf omit three secrets that the configuration-export path explicitly strips, disclosing the session-cookie signing key and the OS username to anonymous readers
-
-**CVE:** `CVE-2026-72793` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://github.com/advisories/GHSA-h4v5-crx2-3cv4>
-
-> **CVE:** This vulnerability corresponds to [CVE-2026-72793](https://nvd.nist.gov/vuln/detail/CVE-2026-72793).
-
-### Summary
-
-`/api/system/getConf` is registered with `CheckAuth` only and is reachable by the publish `RoleReader` token, and anonymously when `Publish.Auth.Enable` is `false`. Its non-administrator masking chain is a blocklist that enumerates fields individually. Three fields that the c…
-
----
-
-## 16. 🟡 High Severity — SiYuan: Embedded (transclusion) block content is returned without publish-access filtering, leaking private and password-protected document content to anonymous readers
-
-**CVE:** `CVE-2026-72795` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://github.com/advisories/GHSA-h6w7-xxcf-w2mq>
-
-> **CVE:** This vulnerability corresponds to [CVE-2026-72795](https://nvd.nist.gov/vuln/detail/CVE-2026-72795).
-
-### Summary
-
-`/api/block/getBlockDOMWithEmbed` and `/api/block/getBlockDOMsWithEmbed` gate only the *requested* block against publish access. The blocks pulled in by that block&#x27;s embed (transclusion) query are inlined into the returned DOM with no publish-access check at all, so a re…
-
----
-
-## 17. 🟡 High Severity — SiYuan: The session-cookie signing key (Conf.CookieKey) is returned to anonymous readers by /api/system/getConf
-
-**CVE:** `CVE-2026-72794` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://github.com/advisories/GHSA-34fj-mwm6-fjfg>
-
-> **CVE:** This vulnerability corresponds to [CVE-2026-72794](https://nvd.nist.gov/vuln/detail/CVE-2026-72794).
-
-### Summary
-
-`/api/system/getConf` returns `Conf.CookieKey`, the key used to sign the server&#x27;s session cookies in its response body. The endpoint is registered with `CheckAuth` only, so the field reaches the publish `RoleReader` token and the anonymous account when `Publish.Auth.Enab…
-
----
-
-## 18. 🟡 High Severity — SiYuan: Missing publish-access filter on the HPath/path-resolution endpoints discloses the private document tree to anonymous readers
-
-**CVE:** `CVE-2026-72799` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-04
-**Reference:** <https://github.com/advisories/GHSA-5w7r-f4cg-rqq7>
-
-> **CVE:** This vulnerability corresponds to [CVE-2026-72799](https://nvd.nist.gov/vuln/detail/CVE-2026-72799).
-
-### Summary
-
-Five filetree endpoints resolve arbitrary document IDs and paths with no publish-access check of any kind. All are `CheckAuth`-only, so they are reachable by the publish `RoleReader` token and by the anonymous account when `Publish.Auth.Enable` is `false`. An anonymous reader…
-
----
-
-## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
