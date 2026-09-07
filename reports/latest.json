@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-07T16:45:47.542200+00:00",
-  "total": 15,
+  "generated": "2026-09-07T20:52:45.792568+00:00",
+  "total": 16,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,21 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/magento-stylesmuggler-zero-day-exploited-to-deploy-linux-backdoor/",
+      "title": "Magento StyleSmuggler zero-day exploited to deploy Linux backdoor",
+      "summary": "A zero-day vulnerability dubbed \"StyleSmuggler\" affecting all versions of Magento and Adobe Commerce is being exploited in attacks to deploy a backdoor. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/magento-stylesmuggler-zero-day-exploited-to-deploy-linux-backdoor/",
+      "published": "2026-09-07T16:50:29+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,

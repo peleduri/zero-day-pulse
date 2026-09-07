@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-07 16:45 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-07 20:52 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — ⚡ Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More
+## 3. 🟠 Zero-Day — Magento StyleSmuggler zero-day exploited to deploy Linux backdoor
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-07
+**Reference:** <https://www.bleepingcomputer.com/news/security/magento-stylesmuggler-zero-day-exploited-to-deploy-linux-backdoor/>
+
+> A zero-day vulnerability dubbed &quot;StyleSmuggler&quot; affecting all versions of Magento and Adobe Commerce is being exploited in attacks to deploy a backdoor. [...]
+
+---
+
+## 4. 🟠 Zero-Day — ⚡ Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://thehackernews.com/2026/09/weekly-recap-chrome-0-day-router.html>
@@ -31,7 +40,7 @@ Elsewhere, a trusted software source delivered code that stole credentials, and 
 
 ---
 
-## 4. 🟠 Zero-Day — Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits
+## 5. 🟠 Zero-Day — Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-crowdstrike-nvidia-avast-zero-day-exploits/>
@@ -40,7 +49,7 @@ Elsewhere, a trusted software source delivered code that stole credentials, and 
 
 ---
 
-## 5. 🟠 Zero-Day — Adobe Commerce Zero-Day Exploited to Backdoor Online Stores
+## 6. 🟠 Zero-Day — Adobe Commerce Zero-Day Exploited to Backdoor Online Stores
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://www.securityweek.com/adobe-commerce-zero-day-exploited-to-backdoor-online-stores/>
@@ -49,7 +58,7 @@ Elsewhere, a trusted software source delivered code that stole credentials, and 
 
 ---
 
-## 6. 🟠 Zero-Day — Telerik UI Padding-Oracle Bug Chained to Unauthenticated RCE — Public Exploit Released
+## 7. 🟠 Zero-Day — Telerik UI Padding-Oracle Bug Chained to Unauthenticated RCE — Public Exploit Released
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://thehackernews.com/2026/09/telerik-ui-padding-oracle-bug-chained.html>
@@ -60,7 +69,7 @@ Security firm TantoSec has published a working exploit chain targeting vulnerabi
 
 ---
 
-## 7. 🟠 Zero-Day — N-able Issues Fourth N-central Hotfix in Five Weeks for Unauthenticated RCE Flaw
+## 8. 🟠 Zero-Day — N-able Issues Fourth N-central Hotfix in Five Weeks for Unauthenticated RCE Flaw
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://thehackernews.com/2026/09/n-able-issues-fourth-n-central-hotfix.html>
@@ -71,7 +80,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -80,7 +89,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -89,7 +98,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -98,7 +107,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -107,7 +116,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -116,7 +125,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -125,7 +134,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 14. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
+## 15. 🟠 Zero-Day — Countering Chinese State-Sponsored Actors Compromise of Networks Worldwide to Feed Global Espionage System
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 25 Au
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a>
@@ -134,7 +143,7 @@ N-able has released its fourth hotfix in five weeks for the N-central remote m
 
 ---
 
-## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
