@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-08T10:11:56.412221+00:00",
+  "generated": "2026-09-08T15:31:51.012853+00:00",
   "total": 16,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -37,19 +37,50 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
-      "title": "Adobe Patches Magento Zero-Day Exploited to Deploy Rust Backdoor and PHP Web Shell",
-      "summary": "Adobe on Monday released security patches to address a maximum-severity flaw impacting Adobe\u202fCommerce and\u202fMagento Open Source that has come under active exploitation in the wild.\n\nThe vulnerability, now tracked as CVE-2026-75650 (CVSS score: 10.0), has been codenamed StyleSmuggler by Sansec, which discovered zero-day exploitation starting September 4, 2026.\n\n\"This update resolves a critical",
-      "link": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
-      "published": "2026-09-08T09:13:47+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-6-astra-can-find-zero-days-but-is-also-harder-to-monitor/",
+      "title": "OpenAI says GPT-6 Astra can find zero-days, but is also harder to monitor",
+      "summary": "OpenAI confirmed that GPT-6 Astra is the first model it has broadly deployed to reach the \"Critical level\" for cybersecurity capabilities. [...]",
+      "link": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-6-astra-can-find-zero-days-but-is-also-harder-to-monitor/",
+      "published": "2026-09-08T14:40:32+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "zeroday"
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero",
+      "title": "StyleSmuggler (CVE-2026-75650): Frequently asked questions about Adobe Commerce and Magento zero-day",
+      "summary": "A critical unauthenticated remote code execution (RCE) zero-day in Adobe Commerce and Magento Open Source, dubbed StyleSmuggler, has been actively exploited since September 4 with attacks observed three days before a vendor patch became available. Key takeaways CVE-2026-75650 is a critical remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source that can be triggered without authentication. Active exploitation of CVE-2026-75650 began on September 4, 2026, three days before Adobe released a hotfix, with multiple victim stores confirmed across different attack campaigns. Adobe released Hotfix VULN-39341 on September 7, 2026, and Tenable detection plugins will be published as they become available. Background Tenable's Research Special Operations Team (RSO) has compiled this blog to answer Frequently Asked Questions (FAQ) regarding CVE-2026-75650, a zero-day remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source that has been actively exploited in the wild. FAQ When was CVE-2026-75650 first disclosed? On September 5, 2026, the Sansec Forensics Team published research detailing an actively exploited zero-day vulnerability in Magento and Adobe Commerce that it named StyleSmuggler. What is CVE-2026-75650? CVE-2026-75650 is a remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source. Successful exploitation grants an unauthenticated attacker the ability to execute arbitrary code on a vulnerable server. CVE-2026-75650 carries a CVSSv3 score of 10.0, the highest possible rating. Additionally, its scope is changed, meaning exploitation can impact resources beyond the vulnerable component itself. CVE Description CVSSv3 CVE-2026-75650 Adobe Commerce and Magento Open Source Remote Code Execution 10.0 The following products and versions are affected: Product Affected versions Adobe Commerce 2.4.4 through 2.4.9 Adobe Commerce B2B 1.3.3 through 1.5.3 Magento O",
+      "link": "https://www.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero",
+      "published": "2026-09-08T14:00:43+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
       ],
       "cve_ids": [
         "CVE-2026-75650"
       ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/n-able-patches-critical-zero-day-in-n-central/",
+      "title": "N-able Patches Critical Zero-Day in N-central",
+      "summary": "Administrators are advised to check their deployments for newly created user accounts they don\u2019t recognize. The post N-able Patches Critical Zero-Day in N-central appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/n-able-patches-critical-zero-day-in-n-central/",
+      "published": "2026-09-08T10:37:58+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -63,66 +94,6 @@
       "tags": [
         "news",
         "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/weekly-recap-chrome-0-day-router.html",
-      "title": "\u26a1 Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More",
-      "summary": "Turning off email images should at least stop the pictures. This week, attackers had a workaround: a scannable QR code built out of text. It still appears, even with images blocked. A small detail, but an annoying one if that was a precaution you were counting on.\n\nElsewhere, a trusted software source delivered code that stole credentials, and a protocol designed for secure network management",
-      "link": "https://thehackernews.com/2026/09/weekly-recap-chrome-0-day-router.html",
-      "published": "2026-09-07T14:36:07+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/nightmare-eclipse-drops-crowdstrike-nvidia-avast-zero-day-exploits/",
-      "title": "Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits",
-      "summary": "The proof-of-concept (PoC) exploits lead to privilege escalation, spawning a shell with System privileges. The post Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/nightmare-eclipse-drops-crowdstrike-nvidia-avast-zero-day-exploits/",
-      "published": "2026-09-07T12:15:57+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/adobe-commerce-zero-day-exploited-to-backdoor-online-stores/",
-      "title": "Adobe Commerce Zero-Day Exploited to Backdoor Online Stores",
-      "summary": "The StyleSmuggler zero-day allows attackers to execute code and deploy a stealthy backdoor on Adobe Commerce and Magento stores. The post Adobe Commerce Zero-Day Exploited to Backdoor Online Stores appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/adobe-commerce-zero-day-exploited-to-backdoor-online-stores/",
-      "published": "2026-09-07T11:58:37+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/telerik-ui-padding-oracle-bug-chained.html",
-      "title": "Telerik UI Padding-Oracle Bug Chained to Unauthenticated RCE \u2014 Public Exploit Released",
-      "summary": "A TantoSec proof-of-concept turns an AES-CBC \"padding oracle\" in Telerik UI for ASP.NET AJAX into unauthenticated remote code execution \u2014 but only against applications in a specific non-default configuration, and Progress patched the chain in July. There are no confirmed reports of exploitation in the wild.\n\nSecurity firm TantoSec has published a working exploit chain targeting vulnerabilities",
-      "link": "https://thehackernews.com/2026/09/telerik-ui-padding-oracle-bug-chained.html",
-      "published": "2026-09-07T11:20:14+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -239,6 +210,42 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-65915",
+      "title": "NLTK: FileSystemPathPointer.open() sandbox check is dead code \u2014 arbitrary file read via file:// protocol",
+      "summary": "### Summary\n\nThere's a logic bug in `FileSystemPathPointer.open()` inside `nltk/data.py`\nthat makes the sandbox check permanently inert. The guard condition is always\n`False` \u2014 meaning any file the process can read is accessible by passing a\n`file://` URL to `nltk.data.load()`.\n\n---\n\n### Details\n\nIn `nltk/data.py`, `FileSystemPathPointer.open()` was patched at some point\nwith a comment saying \"SECURITY PATCH ENFORCING SANDBOX\", but the check\ndoesn't work:\n```python\ndef open(self, encoding=None):\n    path = os.path.normpath(self._path)\n\n    # Block raw absolute reads such as \"/\" \"C:\\\\Windows\" etc.\n    if os.path.isabs(path) and path != os.path.normpath(self._path):\n        raise ValueError(f\"Direct absolute file access blocked: {path}\")\n\n    stream = open(self._path, \"rb\")\n```\n\n`path` is set to `os.path.normpath(self._path)` on line 1, then compared\nagainst `os.path.normpath(self._path)` again in the condition. They are\nalways equal. The `ValueError` never fires.\n\nOn top of that, `__init__` already calls `os.path.abspath()` before storing\n`self._path`, so it's normalized before `open()` is even called. Running\n`normpath` on it again changes nothing.\n\nThe `stream = open(self._path, \"rb\")` line is always reached regardless of\nwhat path was passed in.\n\n---\n\n### PoC\n\nTested on Python 3.11, NLTK 3.9.1, Ubuntu 22.04.\n```python\nimport nltk\nfrom nltk.data import FileSystemPathPointer\n\n# direct construction\nptr = FileSystemPathPointer(\"/etc/passwd\")\nwith ptr.open() as f:\n    print(f.read(300))\n\n# via load() using file:// URL\ndata = nltk.data.load(\"file:///etc/passwd\", format=\"raw\")\nprint(data[:300])\n```\n\nBoth print file contents. No exception is raised.\n\n---\n\n### Impact\n\nAny app that lets users influence the string passed to `nltk.data.load()` or\n`nltk.data.find()` is exposed \u2014 web APIs, notebook servers, multi-tenant\npipelines. An attacker can read any file the process user has access to:\n`/etc/passwd`, `.env` files, private keys, `~/.aws/credentials`, etc.\n\n## Suggested Fix",
+      "link": "https://github.com/advisories/GHSA-72r2-7mfr-5xr9",
+      "published": "2026-09-08T15:27:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65915"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70626",
+      "title": "NLTK: Symlink escape in CorpusReader allows arbitrary local file read outside the corpus root",
+      "summary": "### Summary\n`nltk.corpus.reader.api.CorpusReader.open()` can be used to read files outside the intended corpus root via a symlink placed inside that root. Although NLTK blocks absolute paths and `..` traversal, the current boundary check is only lexical and does not account for symlink resolution. This leads to an arbitrary local file read / filesystem sandbox bypass for applications that rely on `CorpusReader` or `FileSystemPathPointer` to restrict file access.\n\n### Details\nThe vulnerable flow is:\n\n- [`nltk/corpus/reader/api.py:222`](/mnt/Data/my_brains/test/nltk/nltk/corpus/reader/api.py#L222)\n  - `CorpusReader.open()` blocks absolute paths and `..`, then calls `self._root.join(file).open()`\n\n- [`nltk/data.py:398`](/mnt/Data/my_brains/test/nltk/nltk/data.py#L398)\n  - `FileSystemPathPointer.join()` joins the requested file ID and checks whether the resulting path still appears to remain under the configured root\n\nThe problem is that the check is based on the lexical path after `os.path.normpath()`, not on the resolved path after following symlinks.\n\nCurrent behavior:\n\n1. `CorpusReader.open()` rejects:\n   - absolute paths\n   - `..` path traversal\n2. `FileSystemPathPointer.join()` computes:\n   - `joined = os.path.normpath(os.path.join(self._path, fileid))`\n   - `root = os.path.normpath(self._path)`\n3. It allows the access if `joined` starts with `root`\n\nThis misses the case where a path stays inside the root lexically, but resolves outside the root via a symlink already present under the allowed directory.\n\nExample:\n\n```text\nJOINED=/tmp/nltk-root/link/secret.txt\nREALPATH=/tmp/outside/secret.txt\n```\n\n`JOINED` still appears to be inside the root, but `REALPATH` is outside it.\n\nThis is distinct from simple `../` traversal:\n\n- the file ID is not absolute\n- the file ID does not contain `..`\n- the escape only happens after filesystem resolution of a symlink under the allowed root\n\n### PoC\nReproduced in an isolated Docker sandbox using the local `nltk` clone.\n\nMinimal Pytho",
+      "link": "https://github.com/advisories/GHSA-r6gq-whwq-mvg9",
+      "published": "2026-09-08T15:26:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70626"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
