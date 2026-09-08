@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-08 01:46 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-08 10:11 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,20 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Magento StyleSmuggler zero-day exploited to deploy Linux backdoor
+## 3. 🟠 Zero-Day — Adobe Patches Magento Zero-Day Exploited to Deploy Rust Backdoor and PHP Web Shell
+
+**CVE:** `CVE-2026-75650` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-08
+**Reference:** <https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html>
+
+> Adobe on Monday released security patches to address a maximum-severity flaw impacting Adobe Commerce and Magento Open Source that has come under active exploitation in the wild.
+
+The vulnerability, now tracked as CVE-2026-75650 (CVSS score: 10.0), has been codenamed StyleSmuggler by Sansec, which discovered zero-day exploitation starting September 4, 2026.
+
+&quot;This update resolves a critical
+
+---
+
+## 4. 🟠 Zero-Day — Magento StyleSmuggler zero-day exploited to deploy Linux backdoor
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://www.bleepingcomputer.com/news/security/magento-stylesmuggler-zero-day-exploited-to-deploy-linux-backdoor/>
@@ -29,7 +42,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — ⚡ Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More
+## 5. 🟠 Zero-Day — ⚡ Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://thehackernews.com/2026/09/weekly-recap-chrome-0-day-router.html>
@@ -40,7 +53,7 @@ Elsewhere, a trusted software source delivered code that stole credentials, and 
 
 ---
 
-## 5. 🟠 Zero-Day — Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits
+## 6. 🟠 Zero-Day — Nightmare Eclipse Drops CrowdStrike, Nvidia, Avast Zero-Day Exploits
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://www.securityweek.com/nightmare-eclipse-drops-crowdstrike-nvidia-avast-zero-day-exploits/>
@@ -49,7 +62,7 @@ Elsewhere, a trusted software source delivered code that stole credentials, and 
 
 ---
 
-## 6. 🟠 Zero-Day — Adobe Commerce Zero-Day Exploited to Backdoor Online Stores
+## 7. 🟠 Zero-Day — Adobe Commerce Zero-Day Exploited to Backdoor Online Stores
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://www.securityweek.com/adobe-commerce-zero-day-exploited-to-backdoor-online-stores/>
@@ -58,7 +71,7 @@ Elsewhere, a trusted software source delivered code that stole credentials, and 
 
 ---
 
-## 7. 🟠 Zero-Day — Telerik UI Padding-Oracle Bug Chained to Unauthenticated RCE — Public Exploit Released
+## 8. 🟠 Zero-Day — Telerik UI Padding-Oracle Bug Chained to Unauthenticated RCE — Public Exploit Released
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-07
 **Reference:** <https://thehackernews.com/2026/09/telerik-ui-padding-oracle-bug-chained.html>
@@ -66,17 +79,6 @@ Elsewhere, a trusted software source delivered code that stole credentials, and 
 > A TantoSec proof-of-concept turns an AES-CBC &quot;padding oracle&quot; in Telerik UI for ASP.NET AJAX into unauthenticated remote code execution — but only against applications in a specific non-default configuration, and Progress patched the chain in July. There are no confirmed reports of exploitation in the wild.
 
 Security firm TantoSec has published a working exploit chain targeting vulnerabi…
-
----
-
-## 8. 🟠 Zero-Day — N-able Issues Fourth N-central Hotfix in Five Weeks for Unauthenticated RCE Flaw
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-07
-**Reference:** <https://thehackernews.com/2026/09/n-able-issues-fourth-n-central-hotfix.html>
-
-> Every on-premises N-central build below 2026.3.1.14 — including servers updated to Hotfix 3 a day earlier — needs Hotfix 4. N-able&#x27;s incident notice says the flaw has been exploited in the wild; its release notes say that is unconfirmed.
-
-N-able has released its fourth hotfix in five weeks for the N-central remote monitoring and management (RMM) platform, this time for a
 
 ---
 
