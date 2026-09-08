@@ -269,6 +269,10 @@ def generate_html_report(findings: List[Dict], timestamp: str, repo_url: str = "
               background: var(--surface); border: 1px solid var(--border);
               border-radius: 8px; padding: 1.1rem 1.25rem;
               border-left: 3px solid var(--border);
+              /* Feed titles and summaries carry unbreakable tokens (long dotted
+                 identifiers, bare URLs) that otherwise push the page wider than a
+                 phone viewport and make the whole dashboard scroll sideways. */
+              overflow-wrap: anywhere;
             }}
             .card-kev     {{ border-left-color: var(--red);    background: linear-gradient(90deg, var(--red-dim) 0%, var(--surface) 60%); }}
             .card-zeroday {{ border-left-color: var(--orange); background: linear-gradient(90deg, var(--orange-dim) 0%, var(--surface) 60%); }}
