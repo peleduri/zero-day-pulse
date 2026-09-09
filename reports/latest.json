@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-09T01:52:24.416729+00:00",
-  "total": 61,
+  "generated": "2026-09-09T10:16:13.627516+00:00",
+  "total": 68,
   "kev": 0,
-  "zero_day": 27,
+  "zero_day": 33,
   "enriched": 0,
   "findings": [
     {
@@ -21,11 +21,11 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/",
-      "title": "August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs",
+      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
+      "title": "September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs",
       "summary": "",
-      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-august-2026/",
-      "published": "Aug 11, 2026 00:00:00-0500",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
+      "published": "Sep 08, 2026 00:00:00-0500",
       "source": "CrowdStrike Blog",
       "tags": [
         "cloud",
@@ -33,6 +33,53 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/over-36-000-plex-servers-unpatched-against-recently-disclosed-flaws/",
+      "title": "Over 36,000 exposed Plex servers vulnerable to recent flaws",
+      "summary": "Over 36,000 Plex Media servers exposed online remain unpatched against multiple security vulnerabilities and are vulnerable to attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/over-36-000-plex-servers-unpatched-against-recently-disclosed-flaws/",
+      "published": "2026-09-09T10:11:29+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html",
+      "title": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days",
+      "summary": "Microsoft on Tuesday broke Patch Tuesday records by addressing an earth-shattering 974 vulnerabilities spanning its software portfolio, including two flaws that it said have been actively exploited in the wild.\n\nThese include 723 flaws in Windows, 111 in Office and Office 2016, 62 in SQL, and 22 in Developer Tools. Of these, over 110 shortcomings have been assigned a critical severity rating.",
+      "link": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html",
+      "published": "2026-09-09T04:41:29+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html",
+      "title": "N-able N-central Pre-Auth RCE Flaw Exploited in the Wild",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a maximum-severity security flaw impacting N-able N-central to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the fixes by September 11, 2026.\n\nThe vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has been described as a",
+      "link": "https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html",
+      "published": "2026-09-09T04:27:51+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-86218"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -198,21 +245,6 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-6-astra-can-find-zero-days-but-is-also-harder-to-monitor/",
-      "title": "OpenAI says GPT-6 Astra can find zero-days, but is also harder to monitor",
-      "summary": "OpenAI confirmed that GPT-6 Astra is the first model it has broadly deployed to reach the \"Critical level\" for cybersecurity capabilities. [...]",
-      "link": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-says-gpt-6-astra-can-find-zero-days-but-is-also-harder-to-monitor/",
-      "published": "2026-09-08T14:40:32+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "https://www.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero",
       "title": "StyleSmuggler (CVE-2026-75650): Frequently asked questions about Adobe Commerce and Magento zero-day",
       "summary": "A critical unauthenticated remote code execution (RCE) zero-day in Adobe Commerce and Magento Open Source, dubbed StyleSmuggler, has been actively exploited since September 4 with attacks observed three days before a vendor patch became available. Key takeaways CVE-2026-75650 is a critical remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source that can be triggered without authentication. Active exploitation of CVE-2026-75650 began on September 4, 2026, three days before Adobe released a hotfix, with multiple victim stores confirmed across different attack campaigns. Adobe released Hotfix VULN-39341 on September 7, 2026, and Tenable detection plugins will be published as they become available. Background Tenable's Research Special Operations Team (RSO) has compiled this blog to answer Frequently Asked Questions (FAQ) regarding CVE-2026-75650, a zero-day remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source that has been actively exploited in the wild. FAQ When was CVE-2026-75650 first disclosed? On September 5, 2026, the Sansec Forensics Team published research detailing an actively exploited zero-day vulnerability in Magento and Adobe Commerce that it named StyleSmuggler. What is CVE-2026-75650? CVE-2026-75650 is a remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source. Successful exploitation grants an unauthenticated attacker the ability to execute arbitrary code on a vulnerable server. CVE-2026-75650 carries a CVSSv3 score of 10.0, the highest possible rating. Additionally, its scope is changed, meaning exploitation can impact resources beyond the vulnerable component itself. CVE Description CVSSv3 CVE-2026-75650 Adobe Commerce and Magento Open Source Remote Code Execution 10.0 The following products and versions are affected: Product Affected versions Adobe Commerce 2.4.4 through 2.4.9 Adobe Commerce B2B 1.3.3 through 1.5.3 Magento O",
@@ -227,21 +259,6 @@
       "cve_ids": [
         "CVE-2026-75650"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/n-able-patches-critical-zero-day-in-n-central/",
-      "title": "N-able Patches Critical Zero-Day in N-central",
-      "summary": "Administrators are advised to check their deployments for newly created user accounts they don\u2019t recognize. The post N-able Patches Critical Zero-Day in N-central appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/n-able-patches-critical-zero-day-in-n-central/",
-      "published": "2026-09-08T10:37:58+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -343,6 +360,85 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.securityweek.com/chrome-153-patches-seventh-zero-day-of-2026/",
+      "title": "Chrome 153 Patches Seventh Zero-Day of 2026",
+      "summary": "The Chrome update includes 230 security fixes, and users are advised to update their browsers as soon as possible. The post Chrome 153 Patches Seventh Zero-Day of 2026 appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/chrome-153-patches-seventh-zero-day-of-2026/",
+      "published": "2026-09-09T09:45:00+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
+      "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
+      "summary": "Google on Thursday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild.\n\nThe medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds bug in V8, Chrome's JavaScript and WebAssembly engine.\n\n\"Out-of-bounds write in V8 in Google Chrome prior to",
+      "link": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
+      "published": "2026-09-09T09:11:03+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-87491"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldcrash-zero-day-grants-system-access/",
+      "title": "New Microsoft Defender 'ShieldCrash' zero-day grants SYSTEM access",
+      "summary": "An anonymous\u00a0security researcher known as Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named \"ShieldCrash\" right after Microsoft rolled out its September 2026 Patch Tuesday security updates. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldcrash-zero-day-grants-system-access/",
+      "published": "2026-09-09T07:30:15+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html",
+      "title": "Researcher Drops New Microsoft Defender PoC Showing ShieldBreak Patch Can Be Bypassed",
+      "summary": "The security researcher known as Chaotic Eclipse has dropped a proof-of-concept (PoC) for yet another zero-day in Microsoft Defender.\n\nThe vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for CVE-2026-69414 (CVSS score: 7.8), also called ShieldBreak, which the researcher reported last month.\n\n\"Microsoft has failed to properly patch ShieldBreak CVE-2026-69414,\" Chaotic",
+      "link": "https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html",
+      "published": "2026-09-09T06:47:27+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-69414"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/google-patches-seventh-chrome-zero-day-exploited-in-attacks-this-year/",
+      "title": "Google warns of new Chrome zero-day bug exploited in attacks",
+      "summary": "Google has patched 230 vulnerabilities on Tuesday, including another actively exploited Chrome zero-day bug, the seventh such vulnerability patched since the start of the year. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/google-patches-seventh-chrome-zero-day-exploited-in-attacks-this-year/",
+      "published": "2026-09-09T06:25:48+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://seclists.org/fulldisclosure/2026/Sep/39",
       "title": "[0day-rubbish] core-admin 1.0.164 (build 16468) Systemic shell command injection via ineffective quote escaping (8.8)",
       "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] core-admin 1.0.164 (build 16468) Systemic shell command injection via ineffective quote escaping (8.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in core-admin 1.0.164 (build 16468). Type: Systemic shell command injection via ineffective quote escaping (CWE-78) CVSS: 8.8 (AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H)...",
@@ -433,6 +529,23 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/sap-patches-cvss-100-kernel-flaw.html",
+      "title": "SAP Patches CVSS 10.0 Kernel Flaw Enabling Unauthenticated Remote Code Execution",
+      "summary": "SAP has released security updates to address multiple vulnerabilities, including a maximum-severity flaw in SAP Extended Passport (EPP) Processing that could have a severe impact on the confidentiality, integrity, and availability of the application\n\nThe vulnerability, tracked as CVE-2026-44756 (CVSS score: 10.0), has been described as a case of memory corruption. Discovered and reported by SAP",
+      "link": "https://thehackernews.com/2026/09/sap-patches-cvss-100-kernel-flaw.html",
+      "published": "2026-09-09T06:25:45+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-44756"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-77037",
