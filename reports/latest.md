@@ -1,10 +1,46 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-09 15:27 UTC &nbsp;|&nbsp; **Total:** 68 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 34 &nbsp;|&nbsp; 🟡 High: 34 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-09 20:08 UTC &nbsp;|&nbsp; **Total:** 55 &nbsp;|&nbsp; 🔴 KEV: 4 &nbsp;|&nbsp; 🟠 Zero-Day: 23 &nbsp;|&nbsp; 🟡 High: 28 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-19490 — Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability
+
+**CVE:** `CVE-2026-19490` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-19490>
+
+> Vendor: Citrix | Product: NetScaler. Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication. Required action: Apply mitigat…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2025-25249 — Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability
+
+**CVE:** `CVE-2025-25249` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2025-25249>
+
+> Vendor: Fortinet | Product: Multiple Products. Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based o…
+
+---
+
+## 3. 🔴 CISA KEV — CVE-2026-87491 — Google Chromium V8 Out of Bounds Write Vulnerability
+
+**CVE:** `CVE-2026-87491` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-87491>
+
+> Vendor: Google | Product: Chromium V8. Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply mitigations in accordan…
+
+---
+
+## 4. 🔴 CISA KEV — CVE-2026-20079 — Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability
+
+**CVE:** `CVE-2026-20079` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-20079>
+
+> Vendor: Cisco | Product: Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management. Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and exe…
+
+---
+
+## 5. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +49,14 @@
 
 ---
 
-## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 6. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Introducing the CyberAgents Exchange AI Inspector: Rigorous review for community-built AI
+## 7. 🟠 Zero-Day — Introducing the CyberAgents Exchange AI Inspector: Rigorous review for community-built AI
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://www.tenable.com/blog/ai-agent-security-openai-tenable-cyberagents-exchange-inspector>
@@ -29,7 +65,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Over 36,000 exposed Plex servers vulnerable to recent flaws
+## 8. 🟠 Zero-Day — Over 36,000 exposed Plex servers vulnerable to recent flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://www.bleepingcomputer.com/news/security/over-36-000-plex-servers-unpatched-against-recently-disclosed-flaws/>
@@ -38,7 +74,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days
+## 9. 🟠 Zero-Day — Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html>
@@ -49,7 +85,7 @@ These include 723 flaws in Windows, 111 in Office and Office 2016, 62 in SQL, an
 
 ---
 
-## 6. 🟠 Zero-Day — N-able N-central Pre-Auth RCE Flaw Exploited in the Wild
+## 10. 🟠 Zero-Day — N-able N-central Pre-Auth RCE Flaw Exploited in the Wild
 
 **CVE:** `CVE-2026-86218` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html>
@@ -60,7 +96,16 @@ The vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has be
 
 ---
 
-## 7. 🟠 Zero-Day — OpenAPI3 version value escapes `emitterOutputDir` and overwrites YAML/JSON outside the output tree
+## 11. 🟠 Zero-Day — Patch Tuesday - September 2026
+
+**CVE:** `CVE-2026-85880` | `CVE-2026-81963` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-08
+**Reference:** <https://www.rapid7.com/blog/post/em-patch-tuesday-september-2026>
+
+> Microsoft is publishing 974 own-product vulnerabilities on September 2026 Patch Tuesday , including 723 vulnerabilities in Windows. Along with Microsoft fixes for 25 non-Microsoft CVEs, that brings the total number of vulnerabilities on the table today to 999. Whether this is the biggest Patch Tuesday ever depends on how we count, but this is by far the most CVEs that Microsoft has ever published …
+
+---
+
+## 12. 🟠 Zero-Day — OpenAPI3 version value escapes `emitterOutputDir` and overwrites YAML/JSON outside the output tree
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
 **Reference:** <https://github.com/advisories/GHSA-2q42-4q24-7rgv>
@@ -73,7 +118,7 @@ A crafted dec…
 
 ---
 
-## 8. 🟠 Zero-Day — Microsoft Security Advisory CVE-2026-62900 – .NET Information Disclosure Vulnerability
+## 13. 🟠 Zero-Day — Microsoft Security Advisory CVE-2026-62900 – .NET Information Disclosure Vulnerability
 
 **CVE:** `CVE-2026-62900` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
 **Reference:** <https://github.com/advisories/GHSA-23fw-v26w-5fgq>
@@ -86,7 +131,7 @@ Improper removal of sensitive information before storage or transfer in .NET all
 
 ---
 
-## 9. 🟠 Zero-Day — The EU CRA's Real Question: What Shipped, and When Did You Know?
+## 14. 🟠 Zero-Day — The EU CRA's Real Question: What Shipped, and When Did You Know?
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-08
 **Reference:** <https://www.bleepingcomputer.com/news/security/the-eu-cras-real-question-what-shipped-and-when-did-you-know/>
@@ -95,72 +140,7 @@ Improper removal of sensitive information before storage or transfer in .NET all
 
 ---
 
-## 10. 🟠 Zero-Day — September 2026 Microsoft Patch Tuesday, (Tue, Sep 8th)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://isc.sans.edu/diary/rss/33320>
-
-> This month, Microsoft released patches for a record-breaking 973 vulnerabilities, including 113 rated critical. It is by far the largest Patch Tuesday to date, well ahead of the previous high of 664 set in July 2026. Two vulnerabilities are listed as exploited in the wild, while none were publicly disclosed before Patch Tuesday. Notable fixes include Windows privilege escalation and critical RCEs …
-
----
-
-## 11. 🟠 Zero-Day — Microsoft Patches Record 974 Vulnerabilities, Including Two Exploited Zero-Days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://www.securityweek.com/microsoft-patches-record-974-vulnerabilities-including-two-exploited-zero-days/>
-
-> The record-breaking September security update fixes two exploited privilege-escalation zero-days and 20 potentially wormable vulnerabilities. The post Microsoft Patches Record 974 Vulnerabilities, Including Two Exploited Zero-Days appeared first on SecurityWeek .
-
----
-
-## 12. 🟠 Zero-Day — Microsoft September 2026 Patch Tuesday fixes 966 flaws, 2 zero-days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-september-2026-patch-tuesday-fixes-966-flaws-2-zero-days/>
-
-> Today is Microsoft&#x27;s September 2026 Patch Tuesday, with security updates released for a record-breaking 966 flaws, including two actively exploited zero-day vulnerabilities. [...]
-
----
-
-## 13. 🟠 Zero-Day — Microsoft’s September 2026 Patch Tuesday addresses 964 CVEs (CVE-2026-81963, CVE-2026-85880)
-
-**CVE:** `CVE-2026-81963` | `CVE-2026-85880` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://www.tenable.com/blog/microsofts-september-2026-patch-tuesday-addresses-964-cves-cve-2026-81963-cve-2026-85880>
-
-> 104 Critical 860 Important 0 Moderate 0 Low Microsoft addresses 964 CVEs, smashing July’s release as the largest Patch Tuesday release. This month’s updates include patches for two zero-days that were exploited in the wild. Microsoft patched a record 964 CVEs in its September 2026 Patch Tuesday release, with 104 rated critical and 860 rated as important. This month’s update includes patches for: .…
-
----
-
-## 14. 🟠 Zero-Day — [0day-rubbish] Royal Server 5.04.50529.0 Local privilege escalation to LocalSystem on the execution path without credential override (7.2)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/40>
-
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] Royal Server 5.04.50529.0 Local privilege escalation to LocalSystem on the execution path without credential override (7.2) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in Royal Server 5.04.50529.0. Type: Local privilege…
-
----
-
-## 15. 🟠 Zero-Day — [0day-rubbish] DBxtra .NET 13.1.1.0 Unauthenticated SOAP API to xp_cmdshell code execution (9.8)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/33>
-
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] DBxtra .NET 13.1.1.0 Unauthenticated SOAP API to xp_cmdshell code execution (9.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in DBxtra .NET 13.1.1.0. Type: Unauthenticated SOAP API to xp_cmdshell code execution (CWE-30…
-
----
-
-## 16. 🟠 Zero-Day — NLTK: Unsafe Pickle Deserialization in TransitionParser Allows Remote Code Execution
-
-**CVE:** `CVE-2026-78683` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-rhp5-r9x4-f5g2>
-
-> ## Summary
-
-The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model files using `pickle_load()` with the default `restricted=False` parameter, allowing arbitrary Python code execution when loading a malicious model file. The library provides a `RestrictedUnpickler` class for safe deserialization, but it is never used by production code paths, leaving the vulnerability unpatche…
-
----
-
-## 17. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 15. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -169,7 +149,7 @@ The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model fil
 
 ---
 
-## 18. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 16. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -178,7 +158,7 @@ The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model fil
 
 ---
 
-## 19. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 17. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -187,7 +167,7 @@ The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model fil
 
 ---
 
-## 20. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 18. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -196,7 +176,7 @@ The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model fil
 
 ---
 
-## 21. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 19. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -205,7 +185,7 @@ The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model fil
 
 ---
 
-## 22. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 20. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -214,12 +194,32 @@ The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model fil
 
 ---
 
-## 23. 🟠 Zero-Day — Chrome 153 Patches Seventh Zero-Day of 2026
+## 21. 🟠 Zero-Day — AI Is Giving Lesser-Resourced Attackers Nation-State-Level Reach, Google Warns
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://www.securityweek.com/chrome-153-patches-seventh-zero-day-of-2026/>
+**Reference:** <https://www.securityweek.com/ai-is-giving-lesser-resourced-attackers-nation-state-level-reach-google-warns/>
 
-> The Chrome update includes 230 security fixes, and users are advised to update their browsers as soon as possible. The post Chrome 153 Patches Seventh Zero-Day of 2026 appeared first on SecurityWeek .
+> Criminal and state-sponsored adversaries are increasingly using AI to automate and scale their attacks, according to GTIG. The post AI Is Giving Lesser-Resourced Attackers Nation-State-Level Reach, Google Warns appeared first on SecurityWeek .
+
+---
+
+## 22. 🟠 Zero-Day — Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html>
+
+> Multiple espionage-motivated threat activity clusters have been found deploying a previously undocumented exploit kit called BlueMoon that chains together multiple vulnerabilities in Microsoft Windows and Google Chrome.
+
+The first in-the-wild use of BlueMoon has been attributed to the China-aligned state-sponsored group tracked as APT31 (aka Bronze Vinewood, Judgement Panda, JungleBamboo,
+
+---
+
+## 23. 🟠 Zero-Day — Multiple Chinese hacking groups seen using identical Chrome zero-day exploit
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://therecord.media/china-hackers-chrome-browser-zero-day-multiple-groups>
+
+> A Google Chrome bug identified in August was exploited by at least four China-linked cyber-espionage groups, according to researchers.
 
 ---
 
@@ -267,66 +267,97 @@ The vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for C
 
 ---
 
-## 28. 🟠 Zero-Day — Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day
+## 28. 🟡 High Severity — smol-toml: Denial of Service via malformed TOML documents
 
-**CVE:** `CVE-2026-75650` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/>
+**CVE:** `CVE-2026-85730` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://github.com/advisories/GHSA-7w5x-hrqm-74c2>
 
-> Tracked as CVE-2026-75650, the exploited defect allows unauthenticated attackers to execute arbitrary code. The post Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day appeared first on SecurityWeek .
+> ### Summary
+`parse()` can be forced into an infinite loop when a value inside an array or inline table is followed by a comment that has no trailing newline (i.e. the comment &quot;ends&quot; the document).
 
----
-
-## 29. 🟠 Zero-Day — [0day-rubbish] core-admin 1.0.164 (build 16468) Systemic shell command injection via ineffective quote escaping (8.8)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/39>
-
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] core-admin 1.0.164 (build 16468) Systemic shell command injection via ineffective quote escaping (8.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in core-admin 1.0.164 (build 16468). Type: Systemic shell command inject…
+The library fails to exit an internal loop when attempting to find the end of the structure, resetting its cursor to the beginning of the string instead. This causes the parser to indefinitely…
 
 ---
 
-## 30. 🟠 Zero-Day — [0day-rubbish] OP5 Monitor 9.20 Command injection surviving the CVE-2025-34115 patch (OPT-IN fix ineffective) (8.8)
+## 29. 🟡 High Severity — weasyprint Has Server-Side Request Forgery (SSRF)
 
-**CVE:** `CVE-2025-34115` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/38>
+**CVE:** `CVE-2026-55073` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://github.com/advisories/GHSA-jf6q-chmf-3h3v>
 
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] OP5 Monitor 9.20 Command injection surviving the CVE-2025-34115 patch (OPT-IN fix ineffective) (8.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in OP5 Monitor 9.20. Type: Command injection surviving the CVE-2025-34115 …
+> ## Summary
 
----
+`url_fetcher` is WeasyPrint&#x27;s documented mechanism for restricting resource loading - applications use it to block `file://`, internal hosts, etc. when rendering untrusted input.
 
-## 31. 🟠 Zero-Day — [0day-rubbish] QuantaStor 6.8.3.018 Command injection in the alert-mail command via the smtpPassword field (8.8)
+Two `write_pdf()` channels ignore the document&#x27;s `url_fetcher` and build a fresh default `URLFetcher()` instead. A restrictive fetcher set on `HTML()` is silently bypassed for:
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/37>
-
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] QuantaStor 6.8.3.018 Command injection in the alert-mail command via the smtpPassword field (8.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in QuantaStor 6.8.3.018. Type: Command injection in the alert-mail command vi…
+- **`xmp_metadata=[u…
 
 ---
 
-## 32. 🟠 Zero-Day — [0day-rubbish] SmarterMail 100.0.9693 (Build 9693) Antivirus command-line configuration executing as NT AUTHORITY\SYSTEM (7.2)
+## 30. 🟡 High Severity — SQLAdmin: Unvalidated sortBy parameter in `ModelView` bypasses `column_sortable_list`
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/36>
+**CVE:** `CVE-2026-54529` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://github.com/advisories/GHSA-ccg5-9c8w-xh6v>
 
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] SmarterMail 100.0.9693 (Build 9693) Antivirus command-line configuration executing as NT AUTHORITY\SYSTEM (7.2) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in SmarterMail 100.0.9693 (Build 9693). Type: Antivirus command…
+> ## Summary
 
----
-
-## 33. 🟠 Zero-Day — [0day-rubbish] Jitterbit Agent 12.8.1.6 (Docker jitterbit/agent:12.8.1.6) Unauthenticated SOAP with hard-coded credentials leading to OS command execution (9.8)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/35>
-
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] Jitterbit Agent 12.8.1.6 (Docker jitterbit/agent:12.8.1.6) Unauthenticated SOAP with hard-coded credentials leading to OS command execution (9.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in Jitterbit Agent 12.8.1.6 (…
+`ModelView.sort_query()` uses the attacker-controlled `sortBy` list-view query parameter without checking it against the configured `column_sortable_list` allow-list. The value is resolved with `getattr(model, ...)` and fed into relationship joins and `order_by()`, so a request can sort by **any** column of the model — including ones hidden from `column_list` — and, via a dotted path, …
 
 ---
 
-## 34. 🟠 Zero-Day — [0day-rubbish] Accurate Online Private Cloud on-prem (current) Unauthenticated Hessian deserialization leading to JNDI remote class loading (9.8)
+## 31. 🟡 High Severity — LF Edge eKuiper: Arbitrary File and Directory Deletion via Path Traversal in Plugin Installation Endpoint
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/34>
+**CVE:** `CVE-2025-58363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://github.com/advisories/GHSA-c23q-fw86-9h5x>
 
-> Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] Accurate Online Private Cloud on-prem (current) Unauthenticated Hessian deserialization leading to JNDI remote class loading (9.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in Accurate Online Private Cloud on-prem (cu…
+> ### Summary
+A path traversal vulnerability in eKuiper&#x27;s administrative management endpoints allows privileged users or attackers with access to management APIs to delete arbitrary files or directories on the host system.
+
+### Details
+In `internal/plugin/native/manager.go`, the plugin installation endpoint (`POST /plugins/*`) constructs a temporary directory path by directly joining user-suppl…
+
+---
+
+## 32. 🟡 High Severity — LF Edge eKuiper: SSRF in External Service
+
+**CVE:** `CVE-2025-24979` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://github.com/advisories/GHSA-pqqc-8v73-9gg2>
+
+> ### Summary
+Server-side request forgery (SSRF) vulnerability in eKuiper allows an attacker with permissions to register external services or create rules to induce the eKuiper server to make requests to unintended network locations, such as internal services, loopback interfaces (localhost), or cloud metadata endpoints.
+
+### Details
+Prior to v2.4.0, eKuiper external service registrations and HTTP …
+
+---
+
+## 33. 🟡 High Severity — Microsoft Security Advisory CVE-2026-69522 – .NET and Visual Studio Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-69522` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://github.com/advisories/GHSA-2j8r-3c22-8565>
+
+> # Microsoft Security Advisory CVE-2026-69522 – .NET and Visual Studio Remote Code Execution Vulnerability
+
+## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.DiaSymReader.Native. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
+
+An out of bounds write …
+
+---
+
+## 34. 🟡 High Severity — Microsoft Security Advisory CVE-2026-71328 – .NET and Visual Studio Remote Code Execution Vulnerability
+
+**CVE:** `CVE-2026-71328` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
+**Reference:** <https://github.com/advisories/GHSA-63gh-g2x5-x69v>
+
+> # Microsoft Security Advisory CVE-2026-71328 – .NET and Visual Studio Remote Code Execution Vulnerability
+
+## Executive summary
+
+Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.DiaSymReader.Native. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
+
+Microsoft.DiaSymReader.…
 
 ---
 
@@ -595,191 +626,7 @@ An unauthenticated attacker could…
 
 ---
 
-## 55. 🟡 High Severity — GitPython: Incomplete unsafe_git_revision_options denylist omits --contents/-S, enabling arbitrary file read via Repo.blame()
-
-**CVE:** `CVE-2026-78678` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-5xxx-qhh7-9287>
-
-> ## Summary
-`Repo.blame()` / `Repo.blame_incremental()` guard forwarded revision options against `unsafe_git_revision_options`, but that denylist only contains the file-WRITE options `--output`/`-o`. `git blame` also honors `--contents &lt;file&gt;` and `-S &lt;file&gt;`, which cause the file&#x27;s lines to be echoed into the blame result — an arbitrary file READ. Neither option is in the denylist…
-
----
-
-## 56. 🟡 High Severity — Duplicate Advisory: Microsoft Security Advisory CVE-2026-69522 – .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-69522` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-q72m-f2r4-w4cw>
-
-> ### Duplicate Advisory
-This advisory has been withdrawn because it is a duplicate of GHSA-2j8r-3c22-8565. This link is maintained to preserve external references.
-
-### Original Description
-Heap-based buffer overflow in Visual Studio allows an unauthorized attacker to execute code over a network.
-
----
-
-## 57. 🟡 High Severity — Infracost: Terraform Cloud and registry token disclosure via unvalidated hostname
-
-**CVE:** `CVE-2026-71494` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-6x6c-w9w9-hv4h>
-
-> ### Impact
-
-Sensitive information exposure in the Infracost Terraform Cloud/Enterprise integration. Several code paths attached a configured secret token to a request whose host was taken straight from the scanned Terraform, with no check that the host was the trusted endpoint. 
-
-The condition that matters is whether a Terraform Cloud/Enterprise (or registry) token is present in the run: if one is…
-
----
-
-## 58. 🟡 High Severity — Infracost: Arbitrary file read via config-template readFile symlink traversal
-
-**CVE:** `CVE-2026-71493` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-mmg6-4qmv-6pc8>
-
-> ### Impact
-
-Path traversal via link following in the Infracost config-template parser. The `readFile`, `pathExists`, `isDir`, and `matchPaths` template functions confined repo-supplied paths with a lexical `filepath.Rel` check plus a leaf-only `os.Lstat`:
-
-```
-{{ readFile &quot;evil/file&quot; }}
-```
-
-With an intermediate directory symlink committed in the repo (`evil -&gt; /`), the path is lexica…
-
----
-
-## 59. 🟡 High Severity — Dozzle: SSRF guard bypass via IPv6 transition addresses (6to4/NAT64/Teredo) in webhook notification dispatcher
-
-**CVE:** `CVE-2026-73087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-p2w3-6x73-2f6x>
-
-> ## Summary
-
-The `isBlockedIP` SSRF guard in Dozzle&#x27;s webhook notification dispatcher blocks loopback, link-local, multicast, and unspecified addresses but does not recognize IPv6 transition mechanism addresses (RFC 3056 6to4, RFC 6052 NAT64, RFC 4380 Teredo) that embed arbitrary IPv4 addresses. An authenticated user can bypass the guard to reach loopback services, cloud metadata endpoints (16…
-
----
-
-## 60. 🟡 High Severity — Semaphore U: OS Command Injection
-
-**CVE:** `CVE-2026-73294` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-xp7j-h7jc-4w8p>
-
-> # Summary
-An OS command injection in repository git_url handling lets any user holding the Manager or Owner role on any project (the normal project-collaborator roles) achieve remote code execution on the Semaphore server host. Using git&#x27;s --upload-pack=&lt;cmd&gt; option, an attacker runs arbitrary commands. The command executes inside the main Semaphore server process (via the schedule comm…
-
----
-
-## 61. 🟡 High Severity — Gitea: Remote Code Execution via diffpatch Git Hook Installation
-
-**CVE:** `CVE-2026-60004` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-rcr6-4jqh-j84m>
-
-> ### Summary
-
-Gitea&#x27;s `diffpatch` endpoint can be abused to install and execute a Git hook from repository-controlled content.
-
-An attacker with ordinary write access to a repository can execute arbitrary shell commands as the Gitea OS user. With default open registration, an unauthenticated visitor can obtain the required write access by registering an account and creating a repository.
-
-### …
-
----
-
-## 62. 🟡 High Severity — SiYuan: The publish-access gate treats encrypted notebooks as publicly accessible by default, allowing anonymous readers to retrieve fully decrypted document content while a notebook is unlocked
-
-**CVE:** `CVE-2026-72789` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-v684-q882-jgmq>
-
-> **CVE:** This vulnerability corresponds to [CVE-2026-72789](https://nvd.nist.gov/vuln/detail/CVE-2026-72789).
-
-### Summary
-
-`publishAccess.json` is an opt-out list. The publish gate returns *accessible* for anything not explicitly listed in it. Encrypted notebooks are never written into that file, because only the administrator-gated `setPublishAccess` writes it and no part of the encryption subsy…
-
----
-
-## 63. 🟡 High Severity — NLTK: Corpus readers follow symlinks outside trusted roots despite pathsec enforcement
-
-**CVE:** `CVE-2026-79676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-p4rw-rvv2-7xwr>
-
-> ### Summary
-
-Several corpus readers still step outside NLTK&#x27;s symlink-aware trusted-root model. They derive in-root paths from trusted corpus state, convert those paths back into plain strings, and reopen them with built-in `open()` rather than `nltk.pathsec.open()`.
-
-### Details
-
-- **Vulnerability type:** Path traversal and symlink boundary bypass
-- **Affected component:** `nltk.corpus.reade…
-
----
-
-## 64. 🟡 High Severity — NLTK: Allowlisted pickle loaders still permit code execution in current source
-
-**CVE:** `CVE-2026-79657` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-x99w-6fgc-pmfw>
-
-> ### Summary
-
-The current source tree still allows arbitrary code execution during supposedly safer allowlisted pickle loading. The allowlist trusts whole module namespaces instead of exact safe globals, so crafted pickles can invoke dangerous in-namespace callables through pickle REDUCE.
-
-### Details
-
-- **Vulnerability type:** Remote code execution via unsafe deserialization
-- **Affected component…
-
----
-
-## 65. 🟡 High Severity — NLTK: pathsec SSRF protection can be bypassed when a proxy is configured
-
-**CVE:** `CVE-2026-78682` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-6ww7-3frv-cqxh>
-
-> ### Summary
-
-Current NLTK source reopens SSRF in proxied environments. `pathsec.urlopen()` validates the requested hostname locally, but once proxy inheritance is enabled the real fetch is performed by the proxy rather than by the validated direct-connect socket path.
-
-### Details
-
-- **Vulnerability type:** Server-side request forgery
-- **Affected component:** `nltk.pathsec.urlopen`, `nltk.data.lo…
-
----
-
-## 66. 🟡 High Severity — NLTK: Symlink-based sandbox bypass in FramenetCorpusReader (bypasses the fix for CVE-2026-54292)
-
-**CVE:** `CVE-2026-62384` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-f833-7jw8-xwrv>
-
-> This is a **new, distinct vulnerability**: a bypass of the fix already published as [GHSA-xh95-f55m-82fw](https://github.com/nltk/nltk/security/advisories/GHSA-xh95-f55m-82fw) (&quot;Path traversal in NLTK FramenetCorpusReader.frame() allows arbitrary XML file read, bypassing the nltk.pathsec sandbox&quot;), not a duplicate of it.
-
-## Summary
-
-The original advisory was fixed (PR [#3581](https://gi…
-
----
-
-## 67. 🟡 High Severity — NLTK: FileSystemPathPointer.open() sandbox check is dead code — arbitrary file read via file:// protocol
-
-**CVE:** `CVE-2026-65915` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-08
-**Reference:** <https://github.com/advisories/GHSA-72r2-7mfr-5xr9>
-
-> ### Summary
-
-There&#x27;s a logic bug in `FileSystemPathPointer.open()` inside `nltk/data.py`
-that makes the sandbox check permanently inert. The guard condition is always
-`False` — meaning any file the process can read is accessible by passing a
-`file://` URL to `nltk.data.load()`.
-
----
-
-### Details
-
-In `nltk/data.py`, `FileSystemPathPointer.open()` was patched at some point
-with a comment saying…
-
----
-
-## 68. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 55. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

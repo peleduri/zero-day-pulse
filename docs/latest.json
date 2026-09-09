@@ -1,10 +1,86 @@
 {
-  "generated": "2026-09-09T15:27:13.518217+00:00",
-  "total": 68,
-  "kev": 0,
-  "zero_day": 34,
+  "generated": "2026-09-09T20:08:44.752425+00:00",
+  "total": 55,
+  "kev": 4,
+  "zero_day": 23,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-19490",
+      "title": "CVE-2026-19490 \u2014 Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "summary": "Vendor: Citrix | Product: NetScaler. Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-12)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-19490",
+      "published": "2026-09-09",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-19490"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2025-25249",
+      "title": "CVE-2025-25249 \u2014 Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
+      "summary": "Vendor: Fortinet | Product: Multiple Products. Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-12)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-25249",
+      "published": "2026-09-09",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2025-25249"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-87491",
+      "title": "CVE-2026-87491 \u2014 Google Chromium V8 Out of Bounds Write Vulnerability",
+      "summary": "Vendor: Google | Product: Chromium V8. Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87491",
+      "published": "2026-09-09",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-87491"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-20079",
+      "title": "CVE-2026-20079 \u2014 Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "summary": "Vendor: Cisco | Product: Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management. Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-12)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20079",
+      "published": "2026-09-09",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-20079"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -100,6 +176,24 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.rapid7.com/blog/post/em-patch-tuesday-september-2026",
+      "title": "Patch Tuesday - September 2026",
+      "summary": "Microsoft is publishing 974 own-product vulnerabilities on September 2026 Patch Tuesday , including 723 vulnerabilities in Windows. Along with Microsoft fixes for 25 non-Microsoft CVEs, that brings the total number of vulnerabilities on the table today to 999. Whether this is the biggest Patch Tuesday ever depends on how we count, but this is by far the most CVEs that Microsoft has ever published in a single day. As Rapid7 noted last month, there is no reason to suppose that Patch Tuesday will ever return to the lower volumes we saw prior to 2026. Microsoft is aware of exploitation in the wild for two of the vulnerabilities published today. Windows ALPC: zero-day EoP The eternal game of elevation of privilege whack-a-mole between Microsoft and attackers continues. This month, the battle is centered on the Windows Advanced Local Procedure Call (ALPC) mechanism, a kernel capability that facilitates inter-process communication. Microsoft is aware of exploitation in the wild already. Successful abuse of the flaw underlying CVE-2026-85880 grants an attacker SYSTEM via a buffer overflow that enables an out-of-bounds write, and as we all know by now, this is exactly what would happen during the first five minutes of a technically accurate horror movie about ransomware. We can infer one silver lining here: since neither Server 2025 nor Windows 11 receives patches for CVE-2026-85880, it is likely that Microsoft\u2019s ongoing efforts to level up memory safety by rewriting critical kernel components in Rust are paying off. Windows Update Stack: zero-day EoP Attackers disappointed by Microsoft\u2019s move towards memory safety improvements for various critical kernel components need not leave empty-handed today. Microsoft is aware of existing exploitation in the wild for CVE-2026-81963 , an elevation of privilege vulnerability in the Windows Update Stack that leads to SYSTEM privileges via improper link resolution. All supported versions of Windows receive a patch, which presumably tigh",
+      "link": "https://www.rapid7.com/blog/post/em-patch-tuesday-september-2026",
+      "published": "2026-09-08T21:44:04+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-85880",
+        "CVE-2026-81963"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "GHSA-2q42-4q24-7rgv",
       "title": "OpenAPI3 version value escapes `emitterOutputDir` and overwrites YAML/JSON outside the output tree",
       "summary": "### Summary\n\nThe `@typespec/openapi3` emitter retains the value of a `@versioned` enum member and interpolates it into the output filename as `{version}` without sanitizing path separators or traversal components. The completed path reaches the compiler's `emitFile()`, which creates the parent directory and writes the file without verifying containment under `emitterOutputDir`.\n\nA crafted declarative `.tsp` input can therefore create or overwrite an OpenAPI-formatted `.yaml` or `.json` file outside the configured output tree, subject to the compiler process's filesystem permissions. No executable TypeSpec extension or attacker-controlled JavaScript is required.\n\n### Affected version\n\nConfirmed on:\n\n- `@typespec/compiler` `1.15.0`\n- `@typespec/openapi3` `1.15.0`\n- `@typespec/http` `1.15.0`\n- `@typespec/versioning` `0.85.0`\n- release tag commit `f30cd352f93997e04c75d48c7ace6947a1d5d07a`\n\nThe critical `openapi.ts` and `emitter-utils.ts` blobs are unchanged on main commit `365ec52b50b82cd9e1e037de4c6fcd5de7e32e90` as checked on 2026-08-19. No patched version was identified.\n\n### Root cause\n\nThe value originates at `packages/openapi3/src/openapi.ts:592-608`:\n\n```ts\nserviceRecord.versions.push({\n  service,\n  version: snapshot.version!.value,\n  document: document[0],\n  diagnostics: document[1],\n});\n```\n\nIt is interpolated without path validation at `openapi.ts:629-641`:\n\n```ts\nreturn interpolatePath(options.outputFile, {\n  \"openapi-version\": specVersion,\n  \"service-name-if-multiple\": multipleService ? getNamespaceFullName(service.type) : undefined,\n  \"service-name\": getNamespaceFullName(service.type),\n  \"file-type\": fileType,\n  version,\n});\n```\n\nThe path reaches `emitFile()` at `openapi.ts:392-401`. The sink at `packages/compiler/src/core/emitter-utils.ts:29-39` performs no output-root containment check:\n\n```ts\nconst outputFolder = getDirectoryPath(options.path);\nawait program.host.mkdirp(outputFolder);\nreturn await program.host.writeFile(options.path, content);\n```\n\n`reso",
@@ -145,118 +239,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://isc.sans.edu/diary/rss/33320",
-      "title": "September 2026 Microsoft Patch Tuesday, (Tue, Sep 8th)",
-      "summary": "This month, Microsoft released patches for a record-breaking 973 vulnerabilities, including 113 rated critical. It is by far the largest Patch Tuesday to date, well ahead of the previous high of 664 set in July 2026. Two vulnerabilities are listed as exploited in the wild, while none were publicly disclosed before Patch Tuesday. Notable fixes include Windows privilege escalation and critical RCEs in Skype for Business, MSMQ and RRAS.",
-      "link": "https://isc.sans.edu/diary/rss/33320",
-      "published": "2026-09-08T19:20:30+00:00",
-      "source": "SANS Internet Storm Center",
-      "tags": [
-        "sans",
-        "isc"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/microsoft-patches-record-974-vulnerabilities-including-two-exploited-zero-days/",
-      "title": "Microsoft Patches Record 974 Vulnerabilities, Including Two Exploited Zero-Days",
-      "summary": "The record-breaking September security update fixes two exploited privilege-escalation zero-days and 20 potentially wormable vulnerabilities. The post Microsoft Patches Record 974 Vulnerabilities, Including Two Exploited Zero-Days appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/microsoft-patches-record-974-vulnerabilities-including-two-exploited-zero-days/",
-      "published": "2026-09-08T19:20:06+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-september-2026-patch-tuesday-fixes-966-flaws-2-zero-days/",
-      "title": "Microsoft September 2026 Patch Tuesday fixes 966 flaws, 2 zero-days",
-      "summary": "Today is Microsoft's September 2026 Patch Tuesday, with security updates released for a record-breaking 966 flaws, including two actively exploited zero-day vulnerabilities. [...]",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-september-2026-patch-tuesday-fixes-966-flaws-2-zero-days/",
-      "published": "2026-09-08T18:18:05+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/microsofts-september-2026-patch-tuesday-addresses-964-cves-cve-2026-81963-cve-2026-85880",
-      "title": "Microsoft\u2019s September 2026 Patch Tuesday addresses 964 CVEs (CVE-2026-81963, CVE-2026-85880)",
-      "summary": "104 Critical 860 Important 0 Moderate 0 Low Microsoft addresses 964 CVEs, smashing July\u2019s release as the largest Patch Tuesday release. This month\u2019s updates include patches for two zero-days that were exploited in the wild. Microsoft patched a record 964 CVEs in its September 2026 Patch Tuesday release, with 104 rated critical and 860 rated as important. This month\u2019s update includes patches for: .NET .NET and Visual Studio ASP.NET Core Active Directory Certificate Services (AD CS) Active Directory Domain Services Active Directory Federation Services (AD FS) Audio Video Control Transport Protocol Azure Arc Azure CycleCloud Azure HDInsights BranchCache Connected Devices Platform Service (Cdpsvc) Data Sharing Service Client GitHub Copilot and Visual Studio Code Graphic Fonts HID class driver IP Helper Internet Storage Name Service Kernel Streaming WOW Thunk Service Driver Microsoft Account Microsoft Authenticator Microsoft Azure Attestation service and Device Health Attestation Service Microsoft Azure CLI Microsoft COM for Windows Microsoft Dynamics 365 Microsoft Exchange Server Microsoft Graphics Component Microsoft Install Service Microsoft JScript Microsoft Local Security Authority Server (lsasrv) Microsoft Office Microsoft Office Access Microsoft Office Excel Microsoft Office Outlook Microsoft Office PowerPoint Microsoft Office Publisher Microsoft Office SharePoint Microsoft Office Word Microsoft Standard XPS Microsoft Teams for Android Microsoft Trace Data Helper Microsoft UxTheme Library (uxtheme.dll) Microsoft WDAC OLE DB provider for SQL Microsoft WebP Image Extension Microsoft Windows Codecs Library Microsoft Windows Media Foundation Microsoft Windows PDF Microsoft Windows SCSI Class System File Microsoft Windows Search Component Microsoft Windows Speech OpenSSH for Windows Power Automate Push Message Routing Service RPC Runtime Reliable Multicast Transport Driver (RMCAST) Remote Desktop Client Remote Desktop Gateway Service Role: DNS Server Role: Windows Fax ",
-      "link": "https://www.tenable.com/blog/microsofts-september-2026-patch-tuesday-addresses-964-cves-cve-2026-81963-cve-2026-85880",
-      "published": "2026-09-08T18:07:55+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-81963",
-        "CVE-2026-85880"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/40",
-      "title": "[0day-rubbish] Royal Server 5.04.50529.0 Local privilege escalation to LocalSystem on the execution path without credential override (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] Royal Server 5.04.50529.0 Local privilege escalation to LocalSystem on the execution path without credential override (7.2) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in Royal Server 5.04.50529.0. Type: Local privilege escalation to LocalSystem on the execution path without credential override (CWE-250) CVSS: 7.2...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/40",
-      "published": "2026-09-08T17:31:09+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/33",
-      "title": "[0day-rubbish] DBxtra .NET 13.1.1.0 Unauthenticated SOAP API to xp_cmdshell code execution (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] DBxtra .NET 13.1.1.0 Unauthenticated SOAP API to xp_cmdshell code execution (9.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in DBxtra .NET 13.1.1.0. Type: Unauthenticated SOAP API to xp_cmdshell code execution (CWE-306) CVSS: 9.8 (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H) Impact: unauthenticated remote code execution as...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/33",
-      "published": "2026-09-08T17:31:00+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-78683",
-      "title": "NLTK: Unsafe Pickle Deserialization in TransitionParser Allows Remote Code Execution",
-      "summary": "## Summary\n\nThe NLTK library's `TransitionParser.parse()` method deserializes model files using `pickle_load()` with the default `restricted=False` parameter, allowing arbitrary Python code execution when loading a malicious model file. The library provides a `RestrictedUnpickler` class for safe deserialization, but it is never used by production code paths, leaving the vulnerability unpatched.\n\n## Root Cause\n\n**File:** `nltk/parse/transitionparser.py` (lines 542-557)\n\nThe `parse()` method calls `pickle_load(f)` without `restricted=True`, routing through `WarningUnpickler` which inherits from `pickle.Unpickler` and does NOT override `find_class()`. This allows arbitrary class/function resolution during unpickling, enabling RCE via standard pickle gadgets (e.g., `os.system`, `subprocess.Popen`).\n\n**Vulnerability chain in `nltk/picklesec.py`:**\n\n```python\ndef pickle_load(file, *, context=None, restricted=False):\n    if restricted:\n        return RestrictedUnpickler(file).load()  # Safe: blocks all globals\n    return WarningUnpickler(file, context=context).load()  # VULNERABLE PATH\n```\n\n`WarningUnpickler` only emits a warning but does NOT block unsafe class loading \u2014 it calls `super().load()` which is standard `pickle.Unpickler.load()`.\n\n**Why this is not by design:**\n- NLTK intentionally created `RestrictedUnpickler` to block unsafe deserialization\n- The `restricted=True` parameter exists in the API but is **never used** by any production code path\n- All call sites use the default `restricted=False`: `transitionparser.py:557`, `parse/chartparser_app.py:816`, `parse/chartparser_app.py:2273`, `parse/chartparser_app.py:2311`\n\n## Attack Surface\n\n**Entry point:** `TransitionParser().parse(depgraphs, modelFile)` receives a filesystem path with no validation.\n\n**Exploitation path:**\n1. Attacker places a malicious pickle file at a known or attacker-controlled location\n2. Victim calls `parser.parse(sentences, \"/path/to/malicious_model.pkl\")`\n3. `pickle_load()` deserializes the",
-      "link": "https://github.com/advisories/GHSA-rhp5-r9x4-f5g2",
-      "published": "2026-09-08T16:41:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-78683"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -358,15 +340,45 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/chrome-153-patches-seventh-zero-day-of-2026/",
-      "title": "Chrome 153 Patches Seventh Zero-Day of 2026",
-      "summary": "The Chrome update includes 230 security fixes, and users are advised to update their browsers as soon as possible. The post Chrome 153 Patches Seventh Zero-Day of 2026 appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/chrome-153-patches-seventh-zero-day-of-2026/",
-      "published": "2026-09-09T09:45:00+00:00",
+      "id": "https://www.securityweek.com/ai-is-giving-lesser-resourced-attackers-nation-state-level-reach-google-warns/",
+      "title": "AI Is Giving Lesser-Resourced Attackers Nation-State-Level Reach, Google Warns",
+      "summary": "Criminal and state-sponsored adversaries are increasingly using AI to automate and scale their attacks, according to GTIG. The post AI Is Giving Lesser-Resourced Attackers Nation-State-Level Reach, Google Warns appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/ai-is-giving-lesser-resourced-attackers-nation-state-level-reach-google-warns/",
+      "published": "2026-09-09T16:56:25+00:00",
       "source": "SecurityWeek",
       "tags": [
         "news",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html",
+      "title": "Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week",
+      "summary": "Multiple espionage-motivated threat activity clusters have been found deploying a previously undocumented exploit kit called BlueMoon that chains together multiple vulnerabilities in Microsoft Windows and Google Chrome.\n\nThe first in-the-wild use of BlueMoon has been attributed to the China-aligned state-sponsored group tracked as APT31 (aka Bronze Vinewood, Judgement Panda, JungleBamboo,",
+      "link": "https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html",
+      "published": "2026-09-09T16:34:05+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://therecord.media/china-hackers-chrome-browser-zero-day-multiple-groups",
+      "title": "Multiple Chinese hacking groups seen using identical Chrome zero-day exploit",
+      "summary": "A Google Chrome bug identified in August was exploited by at least four China-linked cyber-espionage groups, according to researchers.",
+      "link": "https://therecord.media/china-hackers-chrome-browser-zero-day-multiple-groups",
+      "published": "2026-09-09T16:30:00+00:00",
+      "source": "The Record by Recorded Future",
+      "tags": [
+        "news",
+        "threat-intel"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -437,113 +449,130 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/",
-      "title": "Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day",
-      "summary": "Tracked as CVE-2026-75650, the exploited defect allows unauthenticated attackers to execute arbitrary code. The post Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/",
-      "published": "2026-09-08T18:37:17+00:00",
-      "source": "SecurityWeek",
+      "id": "CVE-2026-85730",
+      "title": "smol-toml: Denial of Service via malformed TOML documents",
+      "summary": "### Summary\n`parse()` can be forced into an infinite loop when a value inside an array or inline table is followed by a comment that has no trailing newline (i.e. the comment \"ends\" the document).\n\nThe library fails to exit an internal loop when attempting to find the end of the structure, resetting its cursor to the beginning of the string instead. This causes the parser to indefinitely hang, compromising the availability of the service.\n\n### Proof of concept\n\n```js\nimport { parse } from 'smol-toml'\nparse('a=[1 #')   // never returns; CPU pinned at 100%\n```\n\n### Impact\n\nApplications which parse arbitrary TOML documents can suffer major availability issues if they receive malicious input. This issue is particularly severe for these use-cases, and it is **strongly advised** to upgrade to an up-to-date version of the library as soon as possible.\n\nIf your use-case does not involve parsing arbitrary TOML documents from untrusted sources, the impact is much lower in practice, although it's still advisable to update to version 1.7.1.\n\n### Patches\n\nVersion 1.7.1 properly breaks out of the loop in these situations and throws the expected `TomlError`.\n\n### Workarounds\n\nNone that don't involve refactors. Update the library **as soon as possible** if your use-case involves parsing arbitrary TOML documents from untrusted sources.\n\n\nReported By : [Ravindu Lakmina Munaweera](https://www.linkedin.com/in/ravindulakmina/)",
+      "link": "https://github.com/advisories/GHSA-7w5x-hrqm-74c2",
+      "published": "2026-09-09T18:07:11Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "research"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-75650"
+        "CVE-2026-85730"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/39",
-      "title": "[0day-rubbish] core-admin 1.0.164 (build 16468) Systemic shell command injection via ineffective quote escaping (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] core-admin 1.0.164 (build 16468) Systemic shell command injection via ineffective quote escaping (8.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in core-admin 1.0.164 (build 16468). Type: Systemic shell command injection via ineffective quote escaping (CWE-78) CVSS: 8.8 (AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H)...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/39",
-      "published": "2026-09-08T17:31:08+00:00",
-      "source": "Full Disclosure",
+      "id": "CVE-2026-55073",
+      "title": "weasyprint Has Server-Side Request Forgery (SSRF)",
+      "summary": "## Summary\n\n`url_fetcher` is WeasyPrint's documented mechanism for restricting resource loading - applications use it to block `file://`, internal hosts, etc. when rendering untrusted input.\n\nTwo `write_pdf()` channels ignore the document's `url_fetcher` and build a fresh default `URLFetcher()` instead. A restrictive fetcher set on `HTML()` is silently bypassed for:\n\n- **`xmp_metadata=[url]`** - the URL is fetched and the bytes are embedded verbatim in the output PDF. This is an **arbitrary local file read** when the path is attacker-influenced.\n- **`stylesheets=[url_or_path]`** - the sheet is fetched and applied. This is **SSRF / arbitrary local-or-internal resource loading**, and it is **transitive**: the permissive fetcher propagates through the whole `@import` / `url()` graph.\n\nApplications affected are those that (1) run WeasyPrint server-side, (2) set a restrictive `url_fetcher` to block `file://` or internal hosts, and (3) forward an attacker-influenced URL/path into either parameter - e.g. PDF rendering APIs, invoice/report generators, document SaaS.\n\n## Affected versions\n\nAll versions through current `main` - v69.0, commit `2945986160dedd97a7547be03805b667964e422a`.\n\n## Root cause\n\n`select_source()` defaults to a fresh fetcher when none is passed (`weasyprint/urls.py`):\n\n```python\ndef select_source(guess=None, filename=None, url=None, ..., url_fetcher=None, ...):\n    ...\n    if url_fetcher is None:\n        url_fetcher = URLFetcher()\n```\n\nFive of the seven resource-loading sites thread the document's fetcher correctly:\n\n- `<link rel=stylesheet>` in `weasyprint/css/__init__.py`\n- `<style>` in `weasyprint/css/__init__.py`\n- `@import` in `weasyprint/css/__init__.py`\n- `@font-face` / `local()` in `weasyprint/text/fonts.py`\n- `@color-profile src` in `weasyprint/css/__init__.py`\n- images (`<img>`, CSS `url()`, SVG) in `weasyprint/images.py`\n\nTwo do **not** \u2014 they build a fresh default fetcher instead:\n\n- `write_pdf(xmp_metadata=[...])` in `weasyprint/pdf/__init__.",
+      "link": "https://github.com/advisories/GHSA-jf6q-chmf-3h3v",
+      "published": "2026-09-09T18:06:38Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/38",
-      "title": "[0day-rubbish] OP5 Monitor 9.20 Command injection surviving the CVE-2025-34115 patch (OPT-IN fix ineffective) (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] OP5 Monitor 9.20 Command injection surviving the CVE-2025-34115 patch (OPT-IN fix ineffective) (8.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in OP5 Monitor 9.20. Type: Command injection surviving the CVE-2025-34115 patch (OPT-IN fix ineffective) (CWE-78) CVSS: 8.8 (AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H) Impact:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/38",
-      "published": "2026-09-08T17:31:07+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2025-34115"
+        "CVE-2026-55073"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/37",
-      "title": "[0day-rubbish] QuantaStor 6.8.3.018 Command injection in the alert-mail command via the smtpPassword field (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] QuantaStor 6.8.3.018 Command injection in the alert-mail command via the smtpPassword field (8.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in QuantaStor 6.8.3.018. Type: Command injection in the alert-mail command via the smtpPassword field (CWE-78) CVSS: 8.8 (AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H) Impact:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/37",
-      "published": "2026-09-08T17:31:05+00:00",
-      "source": "Full Disclosure",
+      "id": "CVE-2026-54529",
+      "title": "SQLAdmin: Unvalidated sortBy parameter in `ModelView` bypasses `column_sortable_list`",
+      "summary": "## Summary\n\n`ModelView.sort_query()` uses the attacker-controlled `sortBy` list-view query parameter without checking it against the configured `column_sortable_list` allow-list. The value is resolved with `getattr(model, ...)` and fed into relationship joins and `order_by()`, so a request can sort by **any** column of the model \u2014 including ones hidden from `column_list` \u2014 and, via a dotted path, by columns of related models. Because row order then reflects the value of an unexposed column, this is an information-exposure **ordering oracle**.\n\n## Root cause\n\n`column_sortable_list` is consulted only in the list template to decide which header links to render; the server never enforces it, so removing a column from the UI does not prevent sorting by it.\n\n## Exploitation\n\nA single request leaks the relative ordering of an unexposed column; the `asc`\u2194`desc` reversal confirms rows are ordered by the secret's actual value. Pairing `sortBy` with searchable/filterable columns and pagination can narrow the oracle toward specific values, though value recovery is conditional on having a filterable target column.",
+      "link": "https://github.com/advisories/GHSA-ccg5-9c8w-xh6v",
+      "published": "2026-09-09T18:01:56Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "disclosure",
-        "exploit"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-54529"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/36",
-      "title": "[0day-rubbish] SmarterMail 100.0.9693 (Build 9693) Antivirus command-line configuration executing as NT AUTHORITY\\SYSTEM (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] SmarterMail 100.0.9693 (Build 9693) Antivirus command-line configuration executing as NT AUTHORITY\\SYSTEM (7.2) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in SmarterMail 100.0.9693 (Build 9693). Type: Antivirus command-line configuration executing as NT AUTHORITY\\SYSTEM (CWE-250) CVSS: 7.2...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/36",
-      "published": "2026-09-08T17:31:04+00:00",
-      "source": "Full Disclosure",
+      "id": "CVE-2025-58363",
+      "title": "LF Edge eKuiper: Arbitrary File and Directory Deletion via Path Traversal in Plugin Installation Endpoint",
+      "summary": "### Summary\nA path traversal vulnerability in eKuiper's administrative management endpoints allows privileged users or attackers with access to management APIs to delete arbitrary files or directories on the host system.\n\n### Details\nIn `internal/plugin/native/manager.go`, the plugin installation endpoint (`POST /plugins/*`) constructs a temporary directory path by directly joining user-supplied resource names (`name`) without sufficient sanitization. Supplying path traversal sequences (such as `../../...`) causes the deferred cleanup operation (`os.RemoveAll`) to target arbitrary directories outside the intended plugin directory.\n\nA related issue in configuration and rule lifecycle management where unvalidated rule identifiers could influence file deletion paths was also addressed by introducing unified identifier and file name validation.\n\n### PoC\n1. Target file deletion via plugin installation endpoint:\n```http\nPOST /plugins/sources HTTP/1.1\nHost: 127.0.0.1:9081\nContent-Type: application/json\n\n{\n  \"name\": \"../../../../../tmp/target.txt\",\n  \"file\": \"http://example.com/plugin.zip\",\n  \"shellParas\": [],\n  \"functions\": []\n}\n```\n2. When the request finishes, `/tmp/target.txt` is removed by `os.RemoveAll`.\n\n### Impact\nAn attacker with access to eKuiper management APIs can cause arbitrary file or directory deletion, potentially leading to denial of service or disruption of the host environment. This vulnerability provides a delete-only capability and does not permit arbitrary file creation, modification, or code execution.\n\n### Remediation & Patches\n- **Upgrade to eKuiper >= 2.4.1**: Input validation (`validate.ValidateID`) and file path validation (`path.VerifyFileName`) have been enforced across management endpoints.\n\n### Workarounds\n- Restrict network access to eKuiper management port (`9081`) via authentication, reverse proxies, and firewall rules.\n- Run eKuiper with a dedicated non-root user account to limit file system deletion permissions.\n\n### Credits\n- @kosmosec",
+      "link": "https://github.com/advisories/GHSA-c23q-fw86-9h5x",
+      "published": "2026-09-09T17:59:27Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "disclosure",
-        "exploit"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2025-58363"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/35",
-      "title": "[0day-rubbish] Jitterbit Agent 12.8.1.6 (Docker jitterbit/agent:12.8.1.6) Unauthenticated SOAP with hard-coded credentials leading to OS command execution (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] Jitterbit Agent 12.8.1.6 (Docker jitterbit/agent:12.8.1.6) Unauthenticated SOAP with hard-coded credentials leading to OS command execution (9.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in Jitterbit Agent 12.8.1.6 (Docker jitterbit/agent:12.8.1.6). Type: Unauthenticated SOAP with hard-coded credentials leading...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/35",
-      "published": "2026-09-08T17:31:02+00:00",
-      "source": "Full Disclosure",
+      "id": "CVE-2025-24979",
+      "title": "LF Edge eKuiper: SSRF in External Service",
+      "summary": "### Summary\nServer-side request forgery (SSRF) vulnerability in eKuiper allows an attacker with permissions to register external services or create rules to induce the eKuiper server to make requests to unintended network locations, such as internal services, loopback interfaces (localhost), or cloud metadata endpoints.\n\n### Details\nPrior to v2.4.0, eKuiper external service registrations and HTTP invocations did not validate destination IP addresses. An attacker with access to the eKuiper management API could register an external service pointing to an internal address (such as `http://127.0.0.1:9081` or other internal network services) and trigger queries using service functions (e.g. `SELECT tsschemaless(...) FROM demo`). This allows probing internal networks, leaking sensitive information (such as internal endpoints/credentials), or interacting with internal APIs accessible to the eKuiper host.\n\n### PoC\n1. Create an external service with an address pointing to an internal network / localhost:\n\n```json\n{\n  \"interfaces\": {\n    \"tsschemaless\": {\n      \"address\": \"http://127.0.0.1:9081\",\n      \"protocol\": \"rest\",\n      \"options\": {\n        \"insecureSkipVerify\": true,\n        \"headers\": {\n          \"Accept-Charset\": \"utf-8\"\n        }\n      },\n      \"schemaless\": true\n    }\n  }\n}\n```\n2. Load it to eKuiper and create a rule invoking it, e.g.: `SELECT tsschemaless(\"get\", \"/metadata/sources/yaml/mqtt\", *) FROM demo`.\n3. Run the rule. When data flows through the stream, the response from the internal service is retrieved and can be routed to an external sink or inspected.\n\n### Impact\nServer-Side Request Forgery (SSRF) allowing unauthorized access / probing of internal network services.\n\n### Remediation & Patches\n- **Upgrade to eKuiper >= 2.4.0**: Starting with v2.4.0, SSRF protection (`httpx.GetSSRFDialContext`) is enabled by default across HTTP clients, blocking requests to private, loopback, link-local, multicast, and unspecified IP addresses.\n\n### Workarounds (for versi",
+      "link": "https://github.com/advisories/GHSA-pqqc-8v73-9gg2",
+      "published": "2026-09-09T17:56:32Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "disclosure",
-        "exploit"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2025-24979"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/34",
-      "title": "[0day-rubbish] Accurate Online Private Cloud on-prem (current) Unauthenticated Hessian deserialization leading to JNDI remote class loading (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 08 TO: fulldisclosure () seclists org SUBJECT: [0day-rubbish] Accurate Online Private Cloud on-prem (current) Unauthenticated Hessian deserialization leading to JNDI remote class loading (9.8) FROM: disclosure () 0day-rubbish com ----BODY---- 0day Rubbish Research Team is publicly disclosing a vulnerability in Accurate Online Private Cloud on-prem (current). Type: Unauthenticated Hessian deserialization leading to JNDI remote class loading...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/34",
-      "published": "2026-09-08T17:31:01+00:00",
-      "source": "Full Disclosure",
+      "id": "CVE-2026-69522",
+      "title": "Microsoft Security Advisory CVE-2026-69522 \u2013 .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "# Microsoft Security Advisory CVE-2026-69522 \u2013 .NET and Visual Studio Remote Code Execution Vulnerability\n\n## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.DiaSymReader.Native. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nAn out of bounds write can occur when processing PDB files.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/439\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n- **Weakness:** CWE-122 (Heap-based Buffer Overflow)\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\nThe vulnerability affects any Microsoft .NET project if it uses any of affected package versions listed below\n\nSupported .NET Framework versions listed in the [Microsoft Security Update Guide](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69522) are also affected. Install the September 2026 .NET Framework security update applicable to a project's Windows version.\n\n### <a name=\".NET 11 RC1\"></a>.NET 11 RC1\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.DiaSymReader.Native](https://www.nuget.org/packages/Microsoft.DiaSymReader.Native) | >= 17.10.0-beta1.24272.1, <= 18.9.0-beta1.26405.1 | 18.9.0-beta1.26405.2\n\n### <a name=\".NET 10\"></a>.NET 10\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.DiaSymReader.Native](https://www.nuget.org/packages/Microsoft.DiaSymReader.Native) | >= 17.12.0-beta1.24603.5, <= 18.9.0-beta1.26405.1 | 18.9.0-beta1.26405.2\n\n### <a name=\".NET 9\"></a>.NET 9\nPackage name | Affected version | Patched version\n------------ | ----------------",
+      "link": "https://github.com/advisories/GHSA-2j8r-3c22-8565",
+      "published": "2026-09-09T16:04:04Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "disclosure",
-        "exploit"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-69522"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71328",
+      "title": "Microsoft Security Advisory CVE-2026-71328 \u2013 .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "# Microsoft Security Advisory CVE-2026-71328 \u2013 .NET and Visual Studio Remote Code Execution Vulnerability\n\n## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.DiaSymReader.Native. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nMicrosoft.DiaSymReader.Native can perform an out of bounds write while processing MSFZ PDB files.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/440\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n- **Weakness:** CWE-122 (Heap-based Buffer Overflow)\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\nThe vulnerability affects any Microsoft .NET project if it uses any of affected package versions listed below\n\n### <a name=\".NET 11 RC1\"></a>.NET 11 RC1\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.DiaSymReader.Native](https://www.nuget.org/packages/Microsoft.DiaSymReader.Native) | >= 17.10.0-beta1.24272.1, <= 18.9.0-beta1.26405.1 | 18.9.0-beta1.26405.2\n\n### <a name=\".NET 10\"></a>.NET 10\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.DiaSymReader.Native](https://www.nuget.org/packages/Microsoft.DiaSymReader.Native) | >= 17.12.0-beta1.24603.5, <= 18.9.0-beta1.26405.1 | 18.9.0-beta1.26405.2\n\n### <a name=\".NET 9\"></a>.NET 9\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.DiaSymReader.Native](https://www.nuget.org/packages/Microsoft.DiaSymReader.Native) | >= 17.12.0-beta1.24603.5, <= 18.9.0-beta1.26405.1 | 18.9.0-beta1.26405.2\n\n### <a name=\".NET 8\"></a>.NET 8\nPack",
+      "link": "https://github.com/advisories/GHSA-63gh-g2x5-x69v",
+      "published": "2026-09-09T16:01:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71328"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/sap-patches-cvss-100-kernel-flaw.html",
@@ -900,240 +929,6 @@
       ],
       "cve_ids": [
         "CVE-2026-62815"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-78678",
-      "title": "GitPython: Incomplete unsafe_git_revision_options denylist omits --contents/-S, enabling arbitrary file read via Repo.blame()",
-      "summary": "## Summary\n`Repo.blame()` / `Repo.blame_incremental()` guard forwarded revision options against `unsafe_git_revision_options`, but that denylist only contains the file-WRITE options `--output`/`-o`. `git blame` also honors `--contents <file>` and `-S <file>`, which cause the file's lines to be echoed into the blame result \u2014 an arbitrary file READ. Neither option is in the denylist, so a caller-influenced revision value of `--contents=<path>` passes the guard and leaks file contents. This is a distinct sink-option and impact class (READ) from GHSA-956x-8gvw-wg5v (which addressed the blame `--output` WRITE), directly analogous to GHSA-539m-9xh6-q6rr (archive READ gap accepted separately from the archive write/exec advisory).\n\n## Root Cause\n`unsafe_git_revision_options = [\"--output\",\"-o\"]` (`git/repo/base.py:188`). The `rev` string is passed to `_option_candidates([rev], kwargs)` and placed BEFORE the `--` separator (base.py:841). The canonical name of `--contents=...` is `contents`, which is not on the denylist, so no `UnsafeOptionError` is raised. The trailing `--` protects only the pathspec, not the option before the revision.\n\n## Impact\nArbitrary local file read at the privileges of the host process; the file's line contents appear in the blame result returned to the caller. Pure VALUE control (the caller forwards a user-influenced revision string). Default `allow_unsafe_options=False`.\n\n## Proof of Concept\n```python\nresult = repo.blame(\"--contents=/etc/passwd\", \"a.txt\")\n# result rows carry the victim file's line text\n```\n\n## Attack Chain\n1. Entry: app calls `repo.blame(rev, file)` with attacker `rev=\"--contents=/etc/passwd\"` (or kwarg `contents=\"/etc/passwd\"`, or `-S`).\n2. Check: `Git.check_unsafe_options(_option_candidates([rev,...], kwargs), unsafe_git_revision_options)` @ base.py:841. Guard: denylist = `[\"--output\",\"-o\"]` only. Bypass proof: canonical name `contents` \u2209 denylist \u2192 no error.\n3. Sink: `self.git.blame(rev, \"--\", file, p=True, ...)`. argv (observed)",
-      "link": "https://github.com/advisories/GHSA-5xxx-qhh7-9287",
-      "published": "2026-09-08T18:41:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-78678"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-q72m-f2r4-w4cw",
-      "title": "Duplicate Advisory: Microsoft Security Advisory CVE-2026-69522 \u2013 .NET and Visual Studio Remote Code Execution Vulnerability",
-      "summary": "### Duplicate Advisory\nThis advisory has been withdrawn because it is a duplicate of GHSA-2j8r-3c22-8565. This link is maintained to preserve external references.\n\n### Original Description\nHeap-based buffer overflow in Visual Studio allows an unauthorized attacker to execute code over a network.",
-      "link": "https://github.com/advisories/GHSA-q72m-f2r4-w4cw",
-      "published": "2026-09-08T18:32:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69522"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71494",
-      "title": "Infracost: Terraform Cloud and registry token disclosure via unvalidated hostname",
-      "summary": "### Impact\n\nSensitive information exposure in the Infracost Terraform Cloud/Enterprise integration. Several code paths attached a configured secret token to a request whose host was taken straight from the scanned Terraform, with no check that the host was the trusted endpoint. \n\nThe condition that matters is whether a Terraform Cloud/Enterprise (or registry) token is present in the run: if one is, the injected hostname can disclose it. Impact therefore depends on the trigger. Under `on: pull_request` (the only configuration in Infracost's documentation) fork pull requests run without secrets, so no token is present. It only reaches token disclosure under `pull_request_target`, a same-repository pull request, or another CI setup that provides the token alongside untrusted Terraform, and exploiting an untrusted fork pull request also typically needs a maintainer to approve the workflow run. The patch scopes the token to the trusted host regardless of trigger.\n\n### Patches\n\nFixed in `v0.10.45` ([#3590](https://github.com/infracost/infracost/pull/3590)) by attaching a token only when the destination host matches the configured trusted host; otherwise Infracost refuses to send it and skips remote variable loading\n  - Installed via the official script, a package manager, or the `latest` Docker tag: upgrade to `v0.10.45` (or later) to receive the fix.\n  - Pinned to a specific version or image digest: bump to `v0.10.45`.\n\n### Workarounds\n\nNo full fix without upgrading. To limit exposure: use `on: pull_request` rather than `pull_request_target`, pin `organization`, `workspace`, and `host` in Infracost config so the `.tf` hostname is ignored, and keep Terraform Cloud and registry tokens out of runs that process untrusted pull request content.",
-      "link": "https://github.com/advisories/GHSA-6x6c-w9w9-hv4h",
-      "published": "2026-09-08T18:14:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71494"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71493",
-      "title": "Infracost: Arbitrary file read via config-template readFile symlink traversal",
-      "summary": "### Impact\n\nPath traversal via link following in the Infracost config-template parser. The `readFile`, `pathExists`, `isDir`, and `matchPaths` template functions confined repo-supplied paths with a lexical `filepath.Rel` check plus a leaf-only `os.Lstat`:\n\n```\n{{ readFile \"evil/file\" }}\n```\n\nWith an intermediate directory symlink committed in the repo (`evil -> /`), the path is lexically clean and the leaf is a regular file, so both checks pass, but `os.ReadFile` follows the symlink and reads outside the checkout. The contents are rendered into the generated config and surfaced via the Infracost dashboard and PR comment, so anyone who can open a pull request can read files off the runner.\n\nAffects `infracost` up to and including `v0.10.44`. Successful exploitation reads any file the CLI process can reach on the runner. Impact depends on what the run exposes: under `on: pull_request` (the configuration in Infracost's documentation) fork pull requests run without secrets and with a read-only token, so exposure is limited. If Infracost runs under `pull_request_target`, or is triggered by a same-repository pull request, the read reaches the repository's secrets, enabling secret theft. The patch confines all four functions regardless of trigger.\n\n### Patches\n\nFixed in `v0.10.45` ([#3586](https://github.com/infracost/infracost/pull/3586)) by routing all four functions through `security.IsPathAllowed`, which resolves symlinks anywhere in the path before a segment-aware containment check. The same fix landed in [config#14](https://github.com/infracost/config/pull/14) and [parser#144](https://github.com/infracost/parser/pull/144).\n  - Installed via the official script, a package manager, or the `latest` Docker tag: upgrade to `v0.10.45` (or later) to receive the fix.\n  - Pinned to a specific version or image digest: bump to `v0.10.45`.\n\n### Workarounds\n\nNo full fix without upgrading. To limit exposure: run Infracost under `on: pull_request` rather than `pull_request_target`,",
-      "link": "https://github.com/advisories/GHSA-mmg6-4qmv-6pc8",
-      "published": "2026-09-08T18:14:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71493"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73087",
-      "title": "Dozzle: SSRF guard bypass via IPv6 transition addresses (6to4/NAT64/Teredo) in webhook notification dispatcher",
-      "summary": "## Summary\n\nThe `isBlockedIP` SSRF guard in Dozzle's webhook notification dispatcher blocks loopback, link-local, multicast, and unspecified addresses but does not recognize IPv6 transition mechanism addresses (RFC 3056 6to4, RFC 6052 NAT64, RFC 4380 Teredo) that embed arbitrary IPv4 addresses. An authenticated user can bypass the guard to reach loopback services, cloud metadata endpoints (169.254.169.254), and other blocked ranges via webhook notification URLs.\n\n## Affected component / versions\n\n- Package: `github.com/amir20/dozzle`\n- Affected versions: all versions with SSRF guard (current HEAD [`b9df313`](https://github.com/amir20/dozzle/commit/b9df31356fc024e6768a1aac605844dc041d95ee))\n- Vulnerable code: `internal/notification/dispatcher/webhook.go`\n\n## Details\n\n### Root cause (CWE-918)\n\n[`internal/notification/dispatcher/webhook.go:32-51`](https://github.com/amir20/dozzle/blob/b9df31356fc024e6768a1aac605844dc041d95ee/internal/notification/dispatcher/webhook.go#L32-L51):\n\n```go\nfunc isBlockedIP(ip net.IP) bool {\n\tif ip.IsLoopback() ||\n\t\tip.IsLinkLocalUnicast() ||\n\t\tip.IsLinkLocalMulticast() ||\n\t\tip.IsMulticast() ||\n\t\tip.IsInterfaceLocalMulticast() ||\n\t\tip.IsUnspecified() {\n\t\treturn true\n\t}\n\tif v4 := ip.To4(); v4 != nil && zeroNetV4.Contains(v4) {\n\t\treturn true\n\t}\n\tif ip.Equal(net.IPv4bcast) {\n\t\treturn true\n\t}\n\treturn false\n}\n```\n\nThe guard intentionally allows RFC 1918 private ranges for self-hosted webhook targets, but blocks loopback (127.0.0.0/8, ::1), link-local (169.254.0.0/16, fe80::/10), and other non-routable addresses. IPv6 transition mechanism addresses bypass all these checks:\n\n| Mechanism | Prefix | Embeds | `isBlockedIP` result |\n|-----------|--------|--------|---------------------|\n| 6to4 | `2002::/16` | any IPv4 in bits 16-47 | `false` |\n| NAT64 WKP | `64:ff9b::/96` | any IPv4 in bits 96-127 | `false` |\n| Teredo | `2001:0000::/32` | any IPv4 in bits 96-127 | `false` |\n\n### Reachability / trust boundary\n\nThe `safeDialContext` function (line 53) res",
-      "link": "https://github.com/advisories/GHSA-p2w3-6x73-2f6x",
-      "published": "2026-09-08T18:11:56Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73087"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73294",
-      "title": "Semaphore U: OS Command Injection",
-      "summary": "# Summary\nAn OS command injection in repository git_url handling lets any user holding the Manager or Owner role on any project (the normal project-collaborator roles) achieve remote code execution on the Semaphore server host. Using git's --upload-pack=<cmd> option, an attacker runs arbitrary commands. The command executes inside the main Semaphore server process (via the schedule commit-hash poller), so it runs even when jobs are configured for remote runners \u2014 bypassing runner isolation and exposing the master encryption key and every project's secrets. Reproducible on a default install (git_client: cmd_git); no non-default configuration is required.\n\n# Details\nThe repository git_url is attacker-controlled (HTTP body) and reaches exec.Command(\"git\", ...) unvalidated. Two missing controls cause this:\n\n1. git_url is never validated against option injection.\nRepository.Validate() (db/Repository.go, ~lines 138\u2013156) validates the branch via ValidateGitBranch (db/git_branch.go, which rejects a leading -), but performs no equivalent check on GitURL (only \"non-empty\"). ValidateRepository (db/Store.go, ~802\u2013806) only checks the SSH key. CreateRepository (db/sql/repository.go, ~76\u201395) stores it verbatim. Because --upload-pack=... has no scheme:// and no leading /, GetType() (db/Repository.go, ~113\u2013136) classifies it as RepositorySSH and GetGitURL(false) (~72\u2013111) returns it raw/unchanged.\n\n2. The git command is built with no -- separator.\nCmdGitClient.GetLastRemoteCommitHash (db_lib/CmdGitClient.go, ~169\u2013185) calls:\nc.output(r, GitRepositoryTmpPath, \"ls-remote\",\n           r.Repository.GetGitURL(false),   // attacker-controlled\n           r.Repository.GitBranch)          // \"master\"\noutput (~79\u201393) \u2192 makeCmd (~21\u201360): exec.Command(\"git\") (line ~27), cmd.Args = append(cmd.Args, args...) (line ~55). The resulting argv has no --:\n[\"git\", \"ls-remote\", \"--upload-pack=<cmd>;true\", \"master\"]\ngit parses --upload-pack=... as an option; master becomes the (local-transport) repositor",
-      "link": "https://github.com/advisories/GHSA-xp7j-h7jc-4w8p",
-      "published": "2026-09-08T17:57:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73294"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-60004",
-      "title": "Gitea: Remote Code Execution via diffpatch Git Hook Installation",
-      "summary": "### Summary\n\nGitea's `diffpatch` endpoint can be abused to install and execute a Git hook from repository-controlled content.\n\nAn attacker with ordinary write access to a repository can execute arbitrary shell commands as the Gitea OS user. With default open registration, an unauthenticated visitor can obtain the required write access by registering an account and creating a repository.\n\n### Details\n\n`services/repository/files/patch.go` applies attacker-controlled patches in a shared bare temporary clone:\n\n```go\ncmdApply := gitcmd.NewCommand(\"apply\", \"--index\", \"--recount\", \"--cached\", \"--binary\")\nif git.DefaultFeatures().CheckVersionAtLeast(\"2.32\") {\n    cmdApply.AddArguments(\"-3\")\n}\n````\n\nSubmitting the same patch twice creates an add/add collision. Git's three-way fallback checks the indexed path out even though the operation is performed with `--cached`.\n\nIn a bare clone, the repository root is `$GIT_DIR`. As a result, an executable entry named:\n\n```text\nhooks/post-index-change\n```\n\nbecomes a live Git hook.\n\nGit invokes the hook while writing the index, allowing repository-controlled content to execute arbitrary commands as the Gitea service account.\n\nThe hook's return value is not propagated to the `diffpatch` response.\n\nThe attached PoC stores command output in Git objects and creates a branch containing the result, so no outbound connection is required. The result is fetched through authenticated smart HTTP.\n\n### PoC\n\nThe supplied `gitea_diffpatch_rce_poc.py` uses an existing Gitea account. Run it against a test instance where the account can create a repository.\n\nSet the account password:\n\n```bash\nexport GITEA_PASSWORD='account-password'\n```\n\nExecute a command through the `diffpatch` chain:\n\n```bash\npython3 ./gitea_diffpatch_rce_poc.py \\\n  https://gitea.example \\\n  pocuser \\\n  'id; uname -srm; pwd'\n```\n\nThe script:\n\n* Creates an initialized private repository.\n* Submits the same executable-hook patch twice.\n* Fetches the result branch.\n* Prints the command's",
-      "link": "https://github.com/advisories/GHSA-rcr6-4jqh-j84m",
-      "published": "2026-09-08T17:56:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-60004"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72789",
-      "title": "SiYuan: The publish-access gate treats encrypted notebooks as publicly accessible by default, allowing anonymous readers to retrieve fully decrypted document content while a notebook is unlocked",
-      "summary": "**CVE:** This vulnerability corresponds to [CVE-2026-72789](https://nvd.nist.gov/vuln/detail/CVE-2026-72789).\n\n### Summary\n\n`publishAccess.json` is an opt-out list. The publish gate returns *accessible* for anything not explicitly listed in it. Encrypted notebooks are never written into that file, because only the administrator-gated `setPublishAccess` writes it and no part of the encryption subsystem does. Consequently every encrypted notebook is publish-accessible as far as the gate is concerned.\n\nWhile an encrypted notebook is unlocked, an anonymous reader in publish mode can list it, enumerate its documents, and retrieve their fully decrypted content. No key material, no password, and no cracking is involved. The kernel decrypts the data and serves it because the authorization layer never asks whether the notebook is encrypted.\n\nThis is reported as a defect in the gate rather than in any individual handler. Endpoints that were previously reviewed and found to apply the correct checks do apply them. The checks return true.\n\n### Details\n\n**The gate defaults to accessible.** `CheckPathAccessableByPublishIgnore(box, path, ignore)` iterates the ignore list and returns false only on a match:\n\n```go\nfor _, item := range publishIgnore {\n    if item.ID == box || strings.Contains(path, item.ID) {\n        return false\n    }\n}\nreturn true   // unlisted means accessible\n```\n\n**Encrypted notebooks are never listed.** `publishAccess.json` is written only by `setPublishAccess` (`kernel/api/router.go:169`), which carries `CheckAdminRole` and `CheckReadonly`. Nothing in `crypto.go`, `encrypted_ops.go` or `notebook_crypto.go` writes to it. An administrator would have to manually add each encrypted notebook to the ignore list to protect it, and nothing in the product prompts or documents that.\n\n**Neither core gate rejects them.** On both `eef105683` and `v3.7.4-alpha.1`:\n\n```go\nfunc checkBlockTreeAccessableByPublishAccess(...) bool {\n    return CheckPathAccessableByPublishIgnore(bt",
-      "link": "https://github.com/advisories/GHSA-v684-q882-jgmq",
-      "published": "2026-09-08T17:56:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72789"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-79676",
-      "title": "NLTK: Corpus readers follow symlinks outside trusted roots despite pathsec enforcement",
-      "summary": "### Summary\n\nSeveral corpus readers still step outside NLTK's symlink-aware trusted-root model. They derive in-root paths from trusted corpus state, convert those paths back into plain strings, and reopen them with built-in `open()` rather than `nltk.pathsec.open()`.\n\n### Details\n\n- **Vulnerability type:** Path traversal and symlink boundary bypass\n- **Affected component:** `nltk.corpus.reader.ipipan`, `nltk.corpus.reader.crubadan`, `nltk.corpus.reader.lin`\n- **Affected versions:** Published `3.9.4` and current source `v3.10.0-rc2` both reproduced.\n- **Patched versions:** Not yet patched\n- **Root cause:** Root-derived paths are reopened with raw `open()` without preserving the trusted-root boundary.\n\n`IPIPANCorpusReader` opens `header.xml` derived from `morph.xml`, `CrubadanCorpusReader` opens `table.txt` directly, and `LinThesaurusCorpusReader` opens `simN.lsp` paths returned from its own root helpers. Under `pathsec.ENFORCE=True`, a symlink placed inside the trusted corpus root can point outside the root and still be parsed successfully. It was confirmed parsed outside-root content is returned through public methods such as `channels()`, `domains()`, `categories()`, `langs()`, `crubadan_to_iso()`, `synonyms()`, and `scored_synonyms()`.\n\n### PoC\n\n**Preconditions**\n- The application processes attacker-influenced corpora inside a trusted NLTK data root or trusted corpus directory.\n\n**Steps**\n1. Create a trusted corpus root and keep `pathsec.ENFORCE=True` with that root allowlisted.\n2. Place symlinked reader inputs such as `header.xml`, `table.txt`, or `simN.lsp` inside the root and point them to external files.\n3. Instantiate the corresponding corpus reader and call its normal public methods.\n4. Observe that parsed outside-root values are returned even though `pathsec.open()` blocks the same symlink targets.\n\n**Minimal reproducible excerpt**\n\n```text\n{'ipipan': ['LEAK', 'TOPSECRET', 'CLASSIFIED'], 'crubadan': ['LEAK'], 'lin': [('LEAK', 9.5)]}\n```\n\n### Impact\n\nAn atta",
-      "link": "https://github.com/advisories/GHSA-p4rw-rvv2-7xwr",
-      "published": "2026-09-08T16:55:38Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-79676"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-79657",
-      "title": "NLTK: Allowlisted pickle loaders still permit code execution in current source",
-      "summary": "### Summary\n\nThe current source tree still allows arbitrary code execution during supposedly safer allowlisted pickle loading. The allowlist trusts whole module namespaces instead of exact safe globals, so crafted pickles can invoke dangerous in-namespace callables through pickle REDUCE.\n\n### Details\n\n- **Vulnerability type:** Remote code execution via unsafe deserialization\n- **Affected component:** `nltk.picklesec.allowlisted_pickle_load`, `nltk.tokenize.punkt.punkt_pickle_load`, `nltk.parse.transitionparser.TransitionParser.parse`\n- **Affected versions:** Current source `v3.10.0-rc2`; published `3.9.4` was not the claim target for this bypass.\n- **Patched versions:** Not yet patched\n- **Root cause:** Module-prefix allowlists include dangerous callables such as `nltk.tokenize.repp.ReppTokenizer._execute` and `numpy.f2py.crackfortran.myeval`.\n\n`punkt_pickle_load()` allowlists both `nltk.tokenize.punkt` and the whole `nltk.tokenize` namespace, which exposes `ReppTokenizer._execute()` and its `subprocess.Popen(...)` sink during unpickling. `TransitionParser.parse()` uses `allowlisted_pickle_load(..., allowed_modules=(\"numpy\", \"scipy\", \"sklearn\"))`, which permits `numpy.f2py.crackfortran.myeval()` and its attacker-controlled `eval(...)` path. I confirmed both gadgets create marker files before the caller returns or later aborts on type misuse.\n\n### PoC\n\n**Preconditions**\n- The application loads an attacker-controlled tokenizer or model artifact through these public loaders.\n\n**Steps**\n1. Create a pickle whose REDUCE callable is `ReppTokenizer._execute` and point its command to a harmless marker-file write.\n2. Pass that payload to `punkt_pickle_load(BytesIO(payload))` and observe the marker file is created during unpickling.\n3. Create a second pickle whose REDUCE callable is `numpy.f2py.crackfortran.myeval` and load it through `TransitionParser.parse()`.\n4. Observe the second marker file is created before `TransitionParser.parse()` later fails on the returned object ty",
-      "link": "https://github.com/advisories/GHSA-x99w-6fgc-pmfw",
-      "published": "2026-09-08T16:42:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-79657"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-78682",
-      "title": "NLTK: pathsec SSRF protection can be bypassed when a proxy is configured",
-      "summary": "### Summary\n\nCurrent NLTK source reopens SSRF in proxied environments. `pathsec.urlopen()` validates the requested hostname locally, but once proxy inheritance is enabled the real fetch is performed by the proxy rather than by the validated direct-connect socket path.\n\n### Details\n\n- **Vulnerability type:** Server-side request forgery\n- **Affected component:** `nltk.pathsec.urlopen`, `nltk.data.load`, `nltk.downloader.Downloader.index`, `nltk.downloader.Downloader.download`\n- **Affected versions:** Current source `v3.10.0-rc2`; published `3.9.4` was a negative control and did not reproduce.\n- **Patched versions:** Not yet patched\n- **Root cause:** Proxy-handler inheritance disables `_SafeHTTPHandler` and `_SafeHTTPSHandler`, so the validated hostname no longer matches the actual egress destination.\n\nThe hardened direct path pins the validated numeric destination IP before opening the socket. The proxied branch instead copies `ProxyHandler` instances from the global opener, marks the request as proxied, and skips the pinned handlers. I confirmed that a validated public URL can be fetched from a loopback-only internal service through the proxy path via `pathsec.urlopen()`, `nltk.data.load()`, `Downloader.index()`, and `Downloader.download()`.\n\n### PoC\n\n**Preconditions**\n- The runtime has an HTTP proxy configured and the caller relies on `pathsec` to keep network fetches SSRF-safe.\n\n**Steps**\n1. Start a loopback-only HTTP server that serves secret text, a valid downloader index, and a ZIP payload.\n2. Configure a proxy that forwards a validated public URL to that internal loopback service.\n3. Call `pathsec.urlopen()` or `nltk.data.load()` on the public URL and observe the internal response is returned.\n4. Instantiate `Downloader(server_index_url=...)`, call `index()` and `download()`, and observe internal-only content is parsed and installed.\n\n**Minimal reproducible excerpt**\n\n```text\n{'urlopen': 'PROXY_TEXT_SECRET', 'data_load': 'PROXY_TEXT_SECRET', 'downloaded_file': ",
-      "link": "https://github.com/advisories/GHSA-6ww7-3frv-cqxh",
-      "published": "2026-09-08T16:41:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-78682"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62384",
-      "title": "NLTK: Symlink-based sandbox bypass in FramenetCorpusReader (bypasses the fix for CVE-2026-54292)",
-      "summary": "This is a **new, distinct vulnerability**: a bypass of the fix already published as [GHSA-xh95-f55m-82fw](https://github.com/nltk/nltk/security/advisories/GHSA-xh95-f55m-82fw) (\"Path traversal in NLTK FramenetCorpusReader.frame() allows arbitrary XML file read, bypassing the nltk.pathsec sandbox\"), not a duplicate of it.\n\n## Summary\n\nThe original advisory was fixed (PR [#3581](https://github.com/nltk/nltk/pull/3581)) by adding `_reject_unsafe_path_component()`, which blocks literal `/`, `\\`, `..`, and Windows drive prefixes in caller-/corpus-supplied names. It never resolves symlinks. All three call sites that use this guard still resolve the resulting path through `self.abspath()` (`nltk/corpus/reader/api.py`, `self._root.join(fileid)`), which is a plain lexical join, not the symlink-resolving, `required_root`-scoped check that `CorpusReader.open()` (and `NKJPCorpusReader`'s own fix for its sibling advisory) correctly use elsewhere in this same codebase.\n\nA symlink placed inside the corpus's own subdirectory, with a name containing no separators at all, passes the guard cleanly and reads a file completely outside the corpus root.\n\n## Affected code (`nltk/corpus/reader/framenet.py`)\n\n- `frame_by_name()` reads `<frame_dir>/<name>.xml`\n- `_lu_file()` reads `<lu_dir>/lu<id>.xml`\n- `doc()` reads `<fulltext_dir>/<filename>`\n\nAll three follow the same chain: `_reject_unsafe_path_component(value, ...)`, then `self.abspath(os.path.join(subdir, value))`, then `XMLCorpusView(...)`, opened via `PathPointer.open()` with no `required_root`.\n\n## Proof of concept\n\nSelf-contained, runnable end to end.\n\n```python\nimport os\nimport tempfile\n\nfrom nltk.corpus.reader.framenet import FramenetCorpusReader\n\nroot = tempfile.mkdtemp()\ncorpus_root = os.path.join(root, \"framenet_v17\")\nframe_dir = os.path.join(corpus_root, \"frame\")\nsecret_dir = os.path.join(root, \"outside_framenet_root\")\nos.makedirs(frame_dir)\nos.makedirs(secret_dir)\n\nwith open(os.path.join(corpus_root, \"frRelation.xml\"), \"w\") ",
-      "link": "https://github.com/advisories/GHSA-f833-7jw8-xwrv",
-      "published": "2026-09-08T16:39:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62384"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-65915",
-      "title": "NLTK: FileSystemPathPointer.open() sandbox check is dead code \u2014 arbitrary file read via file:// protocol",
-      "summary": "### Summary\n\nThere's a logic bug in `FileSystemPathPointer.open()` inside `nltk/data.py`\nthat makes the sandbox check permanently inert. The guard condition is always\n`False` \u2014 meaning any file the process can read is accessible by passing a\n`file://` URL to `nltk.data.load()`.\n\n---\n\n### Details\n\nIn `nltk/data.py`, `FileSystemPathPointer.open()` was patched at some point\nwith a comment saying \"SECURITY PATCH ENFORCING SANDBOX\", but the check\ndoesn't work:\n```python\ndef open(self, encoding=None):\n    path = os.path.normpath(self._path)\n\n    # Block raw absolute reads such as \"/\" \"C:\\\\Windows\" etc.\n    if os.path.isabs(path) and path != os.path.normpath(self._path):\n        raise ValueError(f\"Direct absolute file access blocked: {path}\")\n\n    stream = open(self._path, \"rb\")\n```\n\n`path` is set to `os.path.normpath(self._path)` on line 1, then compared\nagainst `os.path.normpath(self._path)` again in the condition. They are\nalways equal. The `ValueError` never fires.\n\nOn top of that, `__init__` already calls `os.path.abspath()` before storing\n`self._path`, so it's normalized before `open()` is even called. Running\n`normpath` on it again changes nothing.\n\nThe `stream = open(self._path, \"rb\")` line is always reached regardless of\nwhat path was passed in.\n\n---\n\n### PoC\n\nTested on Python 3.11, NLTK 3.9.1, Ubuntu 22.04.\n```python\nimport nltk\nfrom nltk.data import FileSystemPathPointer\n\n# direct construction\nptr = FileSystemPathPointer(\"/etc/passwd\")\nwith ptr.open() as f:\n    print(f.read(300))\n\n# via load() using file:// URL\ndata = nltk.data.load(\"file:///etc/passwd\", format=\"raw\")\nprint(data[:300])\n```\n\nBoth print file contents. No exception is raised.\n\n---\n\n### Impact\n\nAny app that lets users influence the string passed to `nltk.data.load()` or\n`nltk.data.find()` is exposed \u2014 web APIs, notebook servers, multi-tenant\npipelines. An attacker can read any file the process user has access to:\n`/etc/passwd`, `.env` files, private keys, `~/.aws/credentials`, etc.\n\n## Suggested Fix",
-      "link": "https://github.com/advisories/GHSA-72r2-7mfr-5xr9",
-      "published": "2026-09-08T15:27:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-65915"
       ],
       "is_zero_day": false,
       "is_high_severity": true
