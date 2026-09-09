@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">33</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value zeroday">34</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">68</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-09 10:16 UTC</div>
+            <div class="generated">Updated 2026-09-09 15:27 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -146,6 +146,22 @@
     <span>Sep 08, 20</span>
   </div>
 
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.tenable.com/blog/ai-agent-security-openai-tenable-cyberagents-exchange-inspector" target="_blank" rel="noopener">Introducing the CyberAgents Exchange AI Inspector: Rigorous review for community-built AI</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Tenable Security Research</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-09</span>
+  </div>
+  <p class='summary'>Open-source registries for AI agents are only effective when they include a rigorous, transparent security review process for community submissions. That’s why for its new CyberAgents Exchange registry, Tenable paired its exposure management expertise with OpenAI GPT Cyber models to create the CyberAgents Exchange AI Inspector. Key takeaways The Exchange Inspector combines Tenable’s exposure detec…</p>
 
 </article>
 
@@ -376,22 +392,6 @@ The NLTK library&#x27;s `TransitionParser.parse()` method deserializes model fil
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero" target="_blank" rel="noopener">StyleSmuggler (CVE-2026-75650): Frequently asked questions about Adobe Commerce and Magento zero-day</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-75650</code>
-    <span class="meta-sep">·</span>
-    <span>Tenable Security Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-08</span>
-  </div>
-  <p class='summary'>A critical unauthenticated remote code execution (RCE) zero-day in Adobe Commerce and Magento Open Source, dubbed StyleSmuggler, has been actively exploited since September 4 with attacks observed three days before a vendor patch became available. Key takeaways CVE-2026-75650 is a critical remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source that can be…</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html" target="_blank" rel="noopener">AI threats in the wild: The current state of prompt injections on the web</a></h2>
   </div>
   <div class="card-meta">
@@ -570,6 +570,22 @@ The vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for C
     <span>2026-09-09</span>
   </div>
   <p class='summary'>Google has patched 230 vulnerabilities on Tuesday, including another actively exploited Chrome zero-day bug, the seventh such vulnerability patched since the start of the year. [...]</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/" target="_blank" rel="noopener">Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-75650</code>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-08</span>
+  </div>
+  <p class='summary'>Tracked as CVE-2026-75650, the exploited defect allows unauthenticated attackers to execute arbitrary code. The post Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day appeared first on SecurityWeek .</p>
 
 </article>
 
@@ -1346,23 +1362,6 @@ that makes the sandbox check permanently inert. The guard condition is always
 
 In `nltk/data.py`, `FileSystemPathPointer.open()` was patched at some point
 with a comment saying &quot;SEC…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r6gq-whwq-mvg9" target="_blank" rel="noopener">NLTK: Symlink escape in CorpusReader allows arbitrary local file read outside the corpus root</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-70626</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-08</span>
-          </div>
-          <p class='summary'>### Summary
-`nltk.corpus.reader.api.CorpusReader.open()` can be used to read files outside the intended corpus root via a symlink placed inside that root. Although NLTK blocks absolute paths and `..` traversal, the current boundary check is only lexical and does not account for symlink resolution. This leads to an arbitrary local file read / filesystem sandbox bypass for applications that rely on …</p>
 
         </article>
 

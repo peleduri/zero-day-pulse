@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-09T10:16:13.627516+00:00",
+  "generated": "2026-09-09T15:27:13.518217+00:00",
   "total": 68,
   "kev": 0,
-  "zero_day": 33,
+  "zero_day": 34,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,22 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/ai-agent-security-openai-tenable-cyberagents-exchange-inspector",
+      "title": "Introducing the CyberAgents Exchange AI Inspector: Rigorous review for community-built AI",
+      "summary": "Open-source registries for AI agents are only effective when they include a rigorous, transparent security review process for community submissions. That\u2019s why for its new CyberAgents Exchange registry, Tenable paired its exposure management expertise with OpenAI GPT Cyber models to create the CyberAgents Exchange AI Inspector. Key takeaways The Exchange Inspector combines Tenable\u2019s exposure detection with OpenAI\u2019s GPT Cyber models and with human oversight to rigorously vet submissions made to the CyberAgents Exchange. Securing AI agents requires analyzing a broad attack surface that includes LLM instructions, tool-chaining permissions, and prompt injection risks, going far beyond traditional software security. The CyberAgents Exchange inspection process dynamically matches the appropriate AI model tier to each submission\u2019s risk level, ensuring comprehensive vetting without excessive computational overhead. Recently at OpenAI's \u201cIntelligence at Work: Cyber Summit,\u201d Tenable and OpenAI announced a groundbreaking review process to vet the security of open-source AI agents, skills, MCP servers, and multi-agent playbooks, building on our June partnership. The new CyberAgents Exchange AI Inspector, which is built into our CyberAgents Exchange registry, will help security teams adopt agentic AI quickly and confidently. Powered by Tenable, the CyberAgents Exchange is a purpose-built, cybersecurity-native registry for AI agents, skills, MCP servers, and multi-agent playbooks. Launched in August as an open source and vendor-agnostic registry, the CyberAgents Exchange has already grown to host more than 100 AI listings, including a wave of contributions created at Tenable\u2019s SWARM build event at Black Hat USA. From the CyberAgents Exchange\u2019s inception, we understood the importance of a rigorous, comprehensive review process for agents submitted by contributors. Every submission to the CyberAgents Exchange gets a baseline review prior to being listed. Now, we are further strengt",
+      "link": "https://www.tenable.com/blog/ai-agent-security-openai-tenable-cyberagents-exchange-inspector",
+      "published": "2026-09-09T13:00:00+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -245,24 +261,6 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero",
-      "title": "StyleSmuggler (CVE-2026-75650): Frequently asked questions about Adobe Commerce and Magento zero-day",
-      "summary": "A critical unauthenticated remote code execution (RCE) zero-day in Adobe Commerce and Magento Open Source, dubbed StyleSmuggler, has been actively exploited since September 4 with attacks observed three days before a vendor patch became available. Key takeaways CVE-2026-75650 is a critical remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source that can be triggered without authentication. Active exploitation of CVE-2026-75650 began on September 4, 2026, three days before Adobe released a hotfix, with multiple victim stores confirmed across different attack campaigns. Adobe released Hotfix VULN-39341 on September 7, 2026, and Tenable detection plugins will be published as they become available. Background Tenable's Research Special Operations Team (RSO) has compiled this blog to answer Frequently Asked Questions (FAQ) regarding CVE-2026-75650, a zero-day remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source that has been actively exploited in the wild. FAQ When was CVE-2026-75650 first disclosed? On September 5, 2026, the Sansec Forensics Team published research detailing an actively exploited zero-day vulnerability in Magento and Adobe Commerce that it named StyleSmuggler. What is CVE-2026-75650? CVE-2026-75650 is a remote code execution vulnerability in Adobe Commerce, Adobe Commerce B2B and Magento Open Source. Successful exploitation grants an unauthenticated attacker the ability to execute arbitrary code on a vulnerable server. CVE-2026-75650 carries a CVSSv3 score of 10.0, the highest possible rating. Additionally, its scope is changed, meaning exploitation can impact resources beyond the vulnerable component itself. CVE Description CVSSv3 CVE-2026-75650 Adobe Commerce and Magento Open Source Remote Code Execution 10.0 The following products and versions are affected: Product Affected versions Adobe Commerce 2.4.4 through 2.4.9 Adobe Commerce B2B 1.3.3 through 1.5.3 Magento O",
-      "link": "https://www.tenable.com/blog/stylesmuggler-cve-2026-75650-frequently-asked-questions-about-adobe-commerce-and-magento-zero",
-      "published": "2026-09-08T14:00:43+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-75650"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
       "title": "AI threats in the wild: The current state of prompt injections on the web",
       "summary": "Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise AI agents. But while the danger of IPI is widely discussed, are threat actors actually exploiting this vector today \u2013 and if so, how? To answer these questions and to uncover real-world abuse, we initiated a broad sweep of the public web to monitor for known indirect prompt injection patterns. This is what we found. The threat of indirect prompt injection Unlike a direct injection where a user \"jailbreaks\" a chatbot, IPI occurs when an AI system processes content\u2014like a website, email, or document\u2014that contains malicious instructions. When the AI reads this poisoned content, it may silently follow the attacker's commands instead of the user's original intent. This is not a new area of concern for us and Google has been working tirelessly to combat these threats. Our efforts involve cross-functional collaboration between researchers at Google DeepMind (GDM) and defenders like the Google Threat Intelligence Group (GTIG). We have previously detailed our work in this area and researchers have further highlighted the evolving nature of these vulnerabilities. Despite this collective focus, a fundamental question remains: to what degree are real-world malicious actors currently operationalizing these attacks? Proactive monitoring at Google The landscape of IPI on the web There are many channels through which attackers might try to send prompt injections. However, one location is particularly easy to observe - the public web. Here, threat actors may simply seed prompt injections on websites in hope of corrupting AI systems that browse them. Public research confirms these attacks ar",
@@ -435,6 +433,23 @@
         "malware"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/",
+      "title": "Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day",
+      "summary": "Tracked as CVE-2026-75650, the exploited defect allows unauthenticated attackers to execute arbitrary code. The post Adobe Patches Over 170 Vulnerabilities, Including Commerce Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/adobe-patches-over-170-vulnerabilities-including-commerce-zero-day/",
+      "published": "2026-09-08T18:37:17+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-75650"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -1119,24 +1134,6 @@
       ],
       "cve_ids": [
         "CVE-2026-65915"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-70626",
-      "title": "NLTK: Symlink escape in CorpusReader allows arbitrary local file read outside the corpus root",
-      "summary": "### Summary\n`nltk.corpus.reader.api.CorpusReader.open()` can be used to read files outside the intended corpus root via a symlink placed inside that root. Although NLTK blocks absolute paths and `..` traversal, the current boundary check is only lexical and does not account for symlink resolution. This leads to an arbitrary local file read / filesystem sandbox bypass for applications that rely on `CorpusReader` or `FileSystemPathPointer` to restrict file access.\n\n### Details\nThe vulnerable flow is:\n\n- [`nltk/corpus/reader/api.py:222`](/mnt/Data/my_brains/test/nltk/nltk/corpus/reader/api.py#L222)\n  - `CorpusReader.open()` blocks absolute paths and `..`, then calls `self._root.join(file).open()`\n\n- [`nltk/data.py:398`](/mnt/Data/my_brains/test/nltk/nltk/data.py#L398)\n  - `FileSystemPathPointer.join()` joins the requested file ID and checks whether the resulting path still appears to remain under the configured root\n\nThe problem is that the check is based on the lexical path after `os.path.normpath()`, not on the resolved path after following symlinks.\n\nCurrent behavior:\n\n1. `CorpusReader.open()` rejects:\n   - absolute paths\n   - `..` path traversal\n2. `FileSystemPathPointer.join()` computes:\n   - `joined = os.path.normpath(os.path.join(self._path, fileid))`\n   - `root = os.path.normpath(self._path)`\n3. It allows the access if `joined` starts with `root`\n\nThis misses the case where a path stays inside the root lexically, but resolves outside the root via a symlink already present under the allowed directory.\n\nExample:\n\n```text\nJOINED=/tmp/nltk-root/link/secret.txt\nREALPATH=/tmp/outside/secret.txt\n```\n\n`JOINED` still appears to be inside the root, but `REALPATH` is outside it.\n\nThis is distinct from simple `../` traversal:\n\n- the file ID is not absolute\n- the file ID does not contain `..`\n- the escape only happens after filesystem resolution of a symlink under the allowed root\n\n### PoC\nReproduced in an isolated Docker sandbox using the local `nltk` clone.\n\nMinimal Pytho",
-      "link": "https://github.com/advisories/GHSA-r6gq-whwq-mvg9",
-      "published": "2026-09-08T15:26:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-70626"
       ],
       "is_zero_day": false,
       "is_high_severity": true
