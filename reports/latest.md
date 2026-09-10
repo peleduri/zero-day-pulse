@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-10 01:48 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 20 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-10 10:10 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Introducing the CyberAgents Exchange AI Inspector: Rigorous review for community-built AI
+## 3. 🟠 Zero-Day — CISA: WatchGuard RCE flaw now exploited in ransomware attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-watchguard-rce-flaw-now-exploited-in-ransomware-attacks/>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has confirmed that ransomware gangs are also exploiting a critical WatchGuard Firebox firewall vulnerability, which it flagged as actively exploited in December. [...]
+
+---
+
+## 4. 🟠 Zero-Day — Introducing the CyberAgents Exchange AI Inspector: Rigorous review for community-built AI
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://www.tenable.com/blog/ai-agent-security-openai-tenable-cyberagents-exchange-inspector>
@@ -29,7 +38,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Over 36,000 exposed Plex servers vulnerable to recent flaws
+## 5. 🟠 Zero-Day — Over 36,000 exposed Plex servers vulnerable to recent flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://www.bleepingcomputer.com/news/security/over-36-000-plex-servers-unpatched-against-recently-disclosed-flaws/>
@@ -38,29 +47,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html>
-
-> Microsoft on Tuesday broke Patch Tuesday records by addressing an earth-shattering 974 vulnerabilities spanning its software portfolio, including two flaws that it said have been actively exploited in the wild.
-
-These include 723 flaws in Windows, 111 in Office and Office 2016, 62 in SQL, and 22 in Developer Tools. Of these, over 110 shortcomings have been assigned a critical severity rating.
-
----
-
-## 6. 🟠 Zero-Day — N-able N-central Pre-Auth RCE Flaw Exploited in the Wild
-
-**CVE:** `CVE-2026-86218` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a maximum-severity security flaw impacting N-able N-central to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the fixes by September 11, 2026.
-
-The vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has been described as a
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -69,7 +56,7 @@ The vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has be
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -78,7 +65,7 @@ The vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has be
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -87,7 +74,7 @@ The vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has be
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -96,7 +83,7 @@ The vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has be
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -105,12 +92,21 @@ The vulnerability in question is CVE-2026-86218 (CVSS score: 10.0), which has be
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
 
 > Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …
+
+---
+
+## 12. 🟠 Zero-Day — New ‘ShieldCrash’ Zero-Day Exploit Targets Microsoft Defender
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-10
+**Reference:** <https://www.securityweek.com/new-shieldcrash-zero-day-exploit-targets-microsoft-defender/>
+
+> The exploit provides full System privileges on Windows machines running the September 2026 patches. The post New ‘ShieldCrash’ Zero-Day Exploit Targets Microsoft Defender appeared first on SecurityWeek .
 
 ---
 
@@ -152,51 +148,7 @@ The first in-the-wild use of BlueMoon has been attributed to the China-aligned s
 
 ---
 
-## 17. 🟠 Zero-Day — Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox
-
-**CVE:** `CVE-2026-87491` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html>
-
-> Google on Thursday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild.
-
-The medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds bug in V8, Chrome&#x27;s JavaScript and WebAssembly engine.
-
-&quot;Out-of-bounds write in V8 in Google Chrome prior to
-
----
-
-## 18. 🟠 Zero-Day — New Microsoft Defender 'ShieldCrash' zero-day grants SYSTEM access
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldcrash-zero-day-grants-system-access/>
-
-> An anonymous security researcher known as Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named &quot;ShieldCrash&quot; right after Microsoft rolled out its September 2026 Patch Tuesday security updates. [...]
-
----
-
-## 19. 🟠 Zero-Day — Researcher Drops New Microsoft Defender PoC Showing ShieldBreak Patch Can Be Bypassed
-
-**CVE:** `CVE-2026-69414` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html>
-
-> The security researcher known as Chaotic Eclipse has dropped a proof-of-concept (PoC) for yet another zero-day in Microsoft Defender.
-
-The vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for CVE-2026-69414 (CVSS score: 7.8), also called ShieldBreak, which the researcher reported last month.
-
-&quot;Microsoft has failed to properly patch ShieldBreak CVE-2026-69414,&quot; Chaot…
-
----
-
-## 20. 🟠 Zero-Day — Google warns of new Chrome zero-day bug exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://www.bleepingcomputer.com/news/security/google-patches-seventh-chrome-zero-day-exploited-in-attacks-this-year/>
-
-> Google has patched 230 vulnerabilities on Tuesday, including another actively exploited Chrome zero-day bug, the seventh such vulnerability patched since the start of the year. [...]
-
----
-
-## 21. 🟡 High Severity — Identrail Cross-tenant IDOR: Client-supplied GitHub App installation_id is bound to the caller's workspace without ownership verification
+## 17. 🟡 High Severity — Identrail Cross-tenant IDOR: Client-supplied GitHub App installation_id is bound to the caller's workspace without ownership verification
 
 **CVE:** `CVE-2026-59185` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-cp3j-m783-3ph5>
@@ -207,7 +159,7 @@ identrail&#x27;s GitHub App connection-completion endpoint binds a fully client-
 
 ---
 
-## 22. 🟡 High Severity — functype-mcp-server: MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import
+## 18. 🟡 High Severity — functype-mcp-server: MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import
 
 **CVE:** `CVE-2026-59176` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-wcjj-9m6g-2fr2>
@@ -220,7 +172,7 @@ The `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstr
 
 ---
 
-## 23. 🟡 High Severity — @yeger/turbo-graph: Unauthenticated Network-Exposed Task Execution via /api/run
+## 19. 🟡 High Severity — @yeger/turbo-graph: Unauthenticated Network-Exposed Task Execution via /api/run
 
 **CVE:** `CVE-2026-59160` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-2r5q-h53f-9rp3>
@@ -233,7 +185,7 @@ The `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstr
 
 ---
 
-## 24. 🟡 High Severity — Nuxt Ollama: Public Runtime Config Exposes Ollama API Key to Browser Clients
+## 20. 🟡 High Severity — Nuxt Ollama: Public Runtime Config Exposes Ollama API Key to Browser Clients
 
 **CVE:** `CVE-2026-59158` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-fxg7-897c-57mp>
@@ -246,7 +198,7 @@ The `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstr
 
 ---
 
-## 25. 🟡 High Severity — GeoNetwork Web Module: Unauthenticaded Server-Side Request Forgery  in SLD Tool
+## 21. 🟡 High Severity — GeoNetwork Web Module: Unauthenticaded Server-Side Request Forgery  in SLD Tool
 
 **CVE:** `CVE-2026-55864` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-5hx7-j24v-rffj>
@@ -258,7 +210,7 @@ The SLD tooling endpoint `POST /api/tools/ogc/sld` takes a caller-s…
 
 ---
 
-## 26. 🟡 High Severity — smol-toml: Denial of Service via malformed TOML documents
+## 22. 🟡 High Severity — smol-toml: Denial of Service via malformed TOML documents
 
 **CVE:** `CVE-2026-85730` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-7w5x-hrqm-74c2>
@@ -270,7 +222,7 @@ The library fails to exit an internal loop when attempting to find the end of th
 
 ---
 
-## 27. 🟡 High Severity — weasyprint Has Server-Side Request Forgery (SSRF)
+## 23. 🟡 High Severity — weasyprint Has Server-Side Request Forgery (SSRF)
 
 **CVE:** `CVE-2026-55073` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-jf6q-chmf-3h3v>
@@ -285,7 +237,7 @@ Two `write_pdf()` channels ignore the document&#x27;s `url_fetcher` and build a 
 
 ---
 
-## 28. 🟡 High Severity — SQLAdmin: Unvalidated sortBy parameter in `ModelView` bypasses `column_sortable_list`
+## 24. 🟡 High Severity — SQLAdmin: Unvalidated sortBy parameter in `ModelView` bypasses `column_sortable_list`
 
 **CVE:** `CVE-2026-54529` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-ccg5-9c8w-xh6v>
@@ -296,7 +248,7 @@ Two `write_pdf()` channels ignore the document&#x27;s `url_fetcher` and build a 
 
 ---
 
-## 29. 🟡 High Severity — LF Edge eKuiper: Arbitrary File and Directory Deletion via Path Traversal in Plugin Installation Endpoint
+## 25. 🟡 High Severity — LF Edge eKuiper: Arbitrary File and Directory Deletion via Path Traversal in Plugin Installation Endpoint
 
 **CVE:** `CVE-2025-58363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-c23q-fw86-9h5x>
@@ -309,7 +261,7 @@ In `internal/plugin/native/manager.go`, the plugin installation endpoint (`POST 
 
 ---
 
-## 30. 🟡 High Severity — LF Edge eKuiper: SSRF in External Service
+## 26. 🟡 High Severity — LF Edge eKuiper: SSRF in External Service
 
 **CVE:** `CVE-2025-24979` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-pqqc-8v73-9gg2>
@@ -322,7 +274,7 @@ Prior to v2.4.0, eKuiper external service registrations and HTTP …
 
 ---
 
-## 31. 🟡 High Severity — Microsoft Security Advisory CVE-2026-69522 – .NET and Visual Studio Remote Code Execution Vulnerability
+## 27. 🟡 High Severity — Microsoft Security Advisory CVE-2026-69522 – .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-69522` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-2j8r-3c22-8565>
@@ -337,7 +289,7 @@ An out of bounds write …
 
 ---
 
-## 32. 🟡 High Severity — Microsoft Security Advisory CVE-2026-71328 – .NET and Visual Studio Remote Code Execution Vulnerability
+## 28. 🟡 High Severity — Microsoft Security Advisory CVE-2026-71328 – .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-71328` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-63gh-g2x5-x69v>
@@ -352,18 +304,7 @@ Microsoft.DiaSymReader.…
 
 ---
 
-## 33. 🟡 High Severity — SAP Patches CVSS 10.0 Kernel Flaw Enabling Unauthenticated Remote Code Execution
-
-**CVE:** `CVE-2026-44756` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://thehackernews.com/2026/09/sap-patches-cvss-100-kernel-flaw.html>
-
-> SAP has released security updates to address multiple vulnerabilities, including a maximum-severity flaw in SAP Extended Passport (EPP) Processing that could have a severe impact on the confidentiality, integrity, and availability of the application
-
-The vulnerability, tracked as CVE-2026-44756 (CVSS score: 10.0), has been described as a case of memory corruption. Discovered and reported by SAP
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
