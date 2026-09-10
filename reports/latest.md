@@ -1,10 +1,28 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-10 15:22 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-10 20:10 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-86060 — MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability
+
+**CVE:** `CVE-2026-86060` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-86060>
+
+> Vendor: MikroTik | Product: RouterOS. MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on …
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-67277 — MikroTik RouterOS Missing Authentication for Critical Function Vulnerability
+
+**CVE:** `CVE-2026-67277` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-67277>
+
+> Vendor: MikroTik | Product: RouterOS. MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and …
+
+---
+
+## 3. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +31,23 @@
 
 ---
 
-## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 4. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws
+## 5. 🟠 Zero-Day — Cisco FMC flaws exploited by ransomware gang, state-sponsored hackers
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/>
+
+> Cisco Talos says two recently patched Secure Firewall Management Center (FMC) vulnerabilities have been exploited by three separate threat clusters linked to ransomware and state-sponsored attacks. [...]
+
+---
+
+## 6. 🟠 Zero-Day — New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/new-bluemoon-kit-exploited-windows-and-chrome-zero-day-flaws/>
@@ -29,7 +56,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Critical NetScaler Vulnerability Exploited in Attacks
+## 7. 🟠 Zero-Day — Critical NetScaler Vulnerability Exploited in Attacks
 
 **CVE:** `CVE-2026-19490` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.securityweek.com/critical-netscaler-vulnerability-exploited-in-attacks/>
@@ -38,7 +65,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — CISA: WatchGuard RCE flaw now exploited in ransomware attacks
+## 8. 🟠 Zero-Day — CISA: WatchGuard RCE flaw now exploited in ransomware attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-watchguard-rce-flaw-now-exploited-in-ransomware-attacks/>
@@ -47,7 +74,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -56,7 +83,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -65,7 +92,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -74,7 +101,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -83,7 +110,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -92,7 +119,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -101,7 +128,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — New ‘ShieldCrash’ Zero-Day Exploit Targets Microsoft Defender
+## 15. 🟠 Zero-Day — New ‘ShieldCrash’ Zero-Day Exploit Targets Microsoft Defender
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.securityweek.com/new-shieldcrash-zero-day-exploit-targets-microsoft-defender/>
@@ -110,18 +137,16 @@
 
 ---
 
-## 13. 🟠 Zero-Day — Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week
+## 16. 🟡 High Severity — Artifactory Under Attack: In-the-Wild Exploitation of CVE-2026-42016, CVE-2026-42018 & CVE-2026-82329
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html>
+**CVE:** `CVE-2026-42016` | `CVE-2026-42018` | `CVE-2026-82329` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-09-10
+**Reference:** <https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201>
 
-> Multiple espionage-motivated threat activity clusters have been found deploying a previously undocumented exploit kit called BlueMoon that chains together multiple vulnerabilities in Microsoft Windows and Google Chrome.
-
-The first in-the-wild use of BlueMoon has been attributed to the China-aligned state-sponsored group tracked as APT31 (aka Bronze Vinewood, Judgement Panda, JungleBamboo,
+> Wiz Research has identified active, in-the-wild exploitation of three critical and high-severity vulnerabilities impacting JFrog Artifactory (CVE-2026-42016, CVE-2026-42018 &amp; CVE-2026-82329). Attackers are chaining these vulnerabilities to bypass authentication and gain administrative control.
 
 ---
 
-## 14. 🟡 High Severity — n8n: Domain-Restriction Bypass via Unguarded Model-Search Endpoint in OpenAI Chat Model Node
+## 17. 🟡 High Severity — n8n: Domain-Restriction Bypass via Unguarded Model-Search Endpoint in OpenAI Chat Model Node
 
 **CVE:** `CVE-2026-86082` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-34ff-336r-5q23>
@@ -132,7 +157,7 @@ The OpenAI Chat Model node checked a custom base URL against the credential&#x27
 
 ---
 
-## 15. 🟡 High Severity — Open WebUI: SSRF into internal services via DNS rebinding in the Playwright web loader
+## 18. 🟡 High Severity — Open WebUI: SSRF into internal services via DNS rebinding in the Playwright web loader
 
 **CVE:** `CVE-2026-87996` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-4v28-j6q3-5m4r>
@@ -142,7 +167,7 @@ With the Playwright web loader enabled, Open WebUI checks the address behind a u
 
 ---
 
-## 16. 🟡 High Severity — Open WebUI: Any authenticated user can inject chats into another user's folder via chat completions
+## 19. 🟡 High Severity — Open WebUI: Any authenticated user can inject chats into another user's folder via chat completions
 
 **CVE:** `CVE-2026-87997` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-3pf7-q2g3-wj28>
@@ -152,7 +177,7 @@ The chat-completions endpoint reads a folder id out of the request body and save
 
 ---
 
-## 17. 🟡 High Severity — Open WebUI: Non-admin users can delete admin-owned external knowledge connections via knowledge base deletion
+## 20. 🟡 High Severity — Open WebUI: Non-admin users can delete admin-owned external knowledge connections via knowledge base deletion
 
 **CVE:** `CVE-2026-87998` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-2724-6cpj-gf3v>
@@ -162,7 +187,7 @@ External knowledge connections are created and owned by administrators, and are 
 
 ---
 
-## 18. 🟡 High Severity — Open WebUI: Any authenticated user can reach the Azure platform channel via server-side web fetch
+## 21. 🟡 High Severity — Open WebUI: Any authenticated user can reach the Azure platform channel via server-side web fetch
 
 **CVE:** `CVE-2026-87999` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-34r3-9m95-vq73>
@@ -173,7 +198,7 @@ Open WebUI fetches user-supplied URLs on the server for RAG URL ingestion and we
 
 ---
 
-## 19. 🟡 High Severity — CISA Flags Exploited Cisco, Citrix, Fortinet Flaws, Sets Sept. 12 Federal Patch Deadline
+## 22. 🟡 High Severity — CISA Flags Exploited Cisco, Citrix, Fortinet Flaws, Sets Sept. 12 Federal Patch Deadline
 
 **CVE:** `CVE-2026-20079` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://thehackernews.com/2026/09/cisa-flags-exploited-cisco-citrix.html>
@@ -187,7 +212,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 20. 🟡 High Severity — Identrail Cross-tenant IDOR: Client-supplied GitHub App installation_id is bound to the caller's workspace without ownership verification
+## 23. 🟡 High Severity — Identrail Cross-tenant IDOR: Client-supplied GitHub App installation_id is bound to the caller's workspace without ownership verification
 
 **CVE:** `CVE-2026-59185` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-cp3j-m783-3ph5>
@@ -198,7 +223,7 @@ identrail&#x27;s GitHub App connection-completion endpoint binds a fully client-
 
 ---
 
-## 21. 🟡 High Severity — functype-mcp-server: MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import
+## 24. 🟡 High Severity — functype-mcp-server: MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import
 
 **CVE:** `CVE-2026-59176` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-wcjj-9m6g-2fr2>
@@ -211,7 +236,7 @@ The `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstr
 
 ---
 
-## 22. 🟡 High Severity — @yeger/turbo-graph: Unauthenticated Network-Exposed Task Execution via /api/run
+## 25. 🟡 High Severity — @yeger/turbo-graph: Unauthenticated Network-Exposed Task Execution via /api/run
 
 **CVE:** `CVE-2026-59160` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-2r5q-h53f-9rp3>
@@ -224,7 +249,7 @@ The `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstr
 
 ---
 
-## 23. 🟡 High Severity — Nuxt Ollama: Public Runtime Config Exposes Ollama API Key to Browser Clients
+## 26. 🟡 High Severity — Nuxt Ollama: Public Runtime Config Exposes Ollama API Key to Browser Clients
 
 **CVE:** `CVE-2026-59158` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-fxg7-897c-57mp>
@@ -237,7 +262,7 @@ The `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstr
 
 ---
 
-## 24. 🟡 High Severity — GeoNetwork Web Module: Unauthenticaded Server-Side Request Forgery  in SLD Tool
+## 27. 🟡 High Severity — GeoNetwork Web Module: Unauthenticaded Server-Side Request Forgery  in SLD Tool
 
 **CVE:** `CVE-2026-55864` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
 **Reference:** <https://github.com/advisories/GHSA-5hx7-j24v-rffj>
@@ -249,101 +274,7 @@ The SLD tooling endpoint `POST /api/tools/ogc/sld` takes a caller-s…
 
 ---
 
-## 25. 🟡 High Severity — smol-toml: Denial of Service via malformed TOML documents
-
-**CVE:** `CVE-2026-85730` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://github.com/advisories/GHSA-7w5x-hrqm-74c2>
-
-> ### Summary
-`parse()` can be forced into an infinite loop when a value inside an array or inline table is followed by a comment that has no trailing newline (i.e. the comment &quot;ends&quot; the document).
-
-The library fails to exit an internal loop when attempting to find the end of the structure, resetting its cursor to the beginning of the string instead. This causes the parser to indefinitely…
-
----
-
-## 26. 🟡 High Severity — weasyprint Has Server-Side Request Forgery (SSRF)
-
-**CVE:** `CVE-2026-55073` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://github.com/advisories/GHSA-jf6q-chmf-3h3v>
-
-> ## Summary
-
-`url_fetcher` is WeasyPrint&#x27;s documented mechanism for restricting resource loading - applications use it to block `file://`, internal hosts, etc. when rendering untrusted input.
-
-Two `write_pdf()` channels ignore the document&#x27;s `url_fetcher` and build a fresh default `URLFetcher()` instead. A restrictive fetcher set on `HTML()` is silently bypassed for:
-
-- **`xmp_metadata=[u…
-
----
-
-## 27. 🟡 High Severity — SQLAdmin: Unvalidated sortBy parameter in `ModelView` bypasses `column_sortable_list`
-
-**CVE:** `CVE-2026-54529` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://github.com/advisories/GHSA-ccg5-9c8w-xh6v>
-
-> ## Summary
-
-`ModelView.sort_query()` uses the attacker-controlled `sortBy` list-view query parameter without checking it against the configured `column_sortable_list` allow-list. The value is resolved with `getattr(model, ...)` and fed into relationship joins and `order_by()`, so a request can sort by **any** column of the model — including ones hidden from `column_list` — and, via a dotted path, …
-
----
-
-## 28. 🟡 High Severity — LF Edge eKuiper: Arbitrary File and Directory Deletion via Path Traversal in Plugin Installation Endpoint
-
-**CVE:** `CVE-2025-58363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://github.com/advisories/GHSA-c23q-fw86-9h5x>
-
-> ### Summary
-A path traversal vulnerability in eKuiper&#x27;s administrative management endpoints allows privileged users or attackers with access to management APIs to delete arbitrary files or directories on the host system.
-
-### Details
-In `internal/plugin/native/manager.go`, the plugin installation endpoint (`POST /plugins/*`) constructs a temporary directory path by directly joining user-suppl…
-
----
-
-## 29. 🟡 High Severity — LF Edge eKuiper: SSRF in External Service
-
-**CVE:** `CVE-2025-24979` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://github.com/advisories/GHSA-pqqc-8v73-9gg2>
-
-> ### Summary
-Server-side request forgery (SSRF) vulnerability in eKuiper allows an attacker with permissions to register external services or create rules to induce the eKuiper server to make requests to unintended network locations, such as internal services, loopback interfaces (localhost), or cloud metadata endpoints.
-
-### Details
-Prior to v2.4.0, eKuiper external service registrations and HTTP …
-
----
-
-## 30. 🟡 High Severity — Microsoft Security Advisory CVE-2026-69522 – .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-69522` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://github.com/advisories/GHSA-2j8r-3c22-8565>
-
-> # Microsoft Security Advisory CVE-2026-69522 – .NET and Visual Studio Remote Code Execution Vulnerability
-
-## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.DiaSymReader.Native. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-An out of bounds write …
-
----
-
-## 31. 🟡 High Severity — Microsoft Security Advisory CVE-2026-71328 – .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-71328` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-09
-**Reference:** <https://github.com/advisories/GHSA-63gh-g2x5-x69v>
-
-> # Microsoft Security Advisory CVE-2026-71328 – .NET and Visual Studio Remote Code Execution Vulnerability
-
-## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.DiaSymReader.Native. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Microsoft.DiaSymReader.…
-
----
-
-## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
