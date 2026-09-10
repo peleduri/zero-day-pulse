@@ -1,86 +1,10 @@
 {
-  "generated": "2026-09-09T20:08:44.752425+00:00",
-  "total": 55,
-  "kev": 4,
-  "zero_day": 23,
+  "generated": "2026-09-10T01:48:28.467597+00:00",
+  "total": 34,
+  "kev": 0,
+  "zero_day": 20,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-19490",
-      "title": "CVE-2026-19490 \u2014 Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "summary": "Vendor: Citrix | Product: NetScaler. Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-12)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-19490",
-      "published": "2026-09-09",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-19490"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2025-25249",
-      "title": "CVE-2025-25249 \u2014 Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
-      "summary": "Vendor: Fortinet | Product: Multiple Products. Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-12)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-25249",
-      "published": "2026-09-09",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2025-25249"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-87491",
-      "title": "CVE-2026-87491 \u2014 Google Chromium V8 Out of Bounds Write Vulnerability",
-      "summary": "Vendor: Google | Product: Chromium V8. Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87491",
-      "published": "2026-09-09",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-87491"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-20079",
-      "title": "CVE-2026-20079 \u2014 Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "summary": "Vendor: Cisco | Product: Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management. Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-12)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20079",
-      "published": "2026-09-09",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-20079"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -172,73 +96,6 @@
       "cve_ids": [
         "CVE-2026-86218"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/em-patch-tuesday-september-2026",
-      "title": "Patch Tuesday - September 2026",
-      "summary": "Microsoft is publishing 974 own-product vulnerabilities on September 2026 Patch Tuesday , including 723 vulnerabilities in Windows. Along with Microsoft fixes for 25 non-Microsoft CVEs, that brings the total number of vulnerabilities on the table today to 999. Whether this is the biggest Patch Tuesday ever depends on how we count, but this is by far the most CVEs that Microsoft has ever published in a single day. As Rapid7 noted last month, there is no reason to suppose that Patch Tuesday will ever return to the lower volumes we saw prior to 2026. Microsoft is aware of exploitation in the wild for two of the vulnerabilities published today. Windows ALPC: zero-day EoP The eternal game of elevation of privilege whack-a-mole between Microsoft and attackers continues. This month, the battle is centered on the Windows Advanced Local Procedure Call (ALPC) mechanism, a kernel capability that facilitates inter-process communication. Microsoft is aware of exploitation in the wild already. Successful abuse of the flaw underlying CVE-2026-85880 grants an attacker SYSTEM via a buffer overflow that enables an out-of-bounds write, and as we all know by now, this is exactly what would happen during the first five minutes of a technically accurate horror movie about ransomware. We can infer one silver lining here: since neither Server 2025 nor Windows 11 receives patches for CVE-2026-85880, it is likely that Microsoft\u2019s ongoing efforts to level up memory safety by rewriting critical kernel components in Rust are paying off. Windows Update Stack: zero-day EoP Attackers disappointed by Microsoft\u2019s move towards memory safety improvements for various critical kernel components need not leave empty-handed today. Microsoft is aware of existing exploitation in the wild for CVE-2026-81963 , an elevation of privilege vulnerability in the Windows Update Stack that leads to SYSTEM privileges via improper link resolution. All supported versions of Windows receive a patch, which presumably tigh",
-      "link": "https://www.rapid7.com/blog/post/em-patch-tuesday-september-2026",
-      "published": "2026-09-08T21:44:04+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-85880",
-        "CVE-2026-81963"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-2q42-4q24-7rgv",
-      "title": "OpenAPI3 version value escapes `emitterOutputDir` and overwrites YAML/JSON outside the output tree",
-      "summary": "### Summary\n\nThe `@typespec/openapi3` emitter retains the value of a `@versioned` enum member and interpolates it into the output filename as `{version}` without sanitizing path separators or traversal components. The completed path reaches the compiler's `emitFile()`, which creates the parent directory and writes the file without verifying containment under `emitterOutputDir`.\n\nA crafted declarative `.tsp` input can therefore create or overwrite an OpenAPI-formatted `.yaml` or `.json` file outside the configured output tree, subject to the compiler process's filesystem permissions. No executable TypeSpec extension or attacker-controlled JavaScript is required.\n\n### Affected version\n\nConfirmed on:\n\n- `@typespec/compiler` `1.15.0`\n- `@typespec/openapi3` `1.15.0`\n- `@typespec/http` `1.15.0`\n- `@typespec/versioning` `0.85.0`\n- release tag commit `f30cd352f93997e04c75d48c7ace6947a1d5d07a`\n\nThe critical `openapi.ts` and `emitter-utils.ts` blobs are unchanged on main commit `365ec52b50b82cd9e1e037de4c6fcd5de7e32e90` as checked on 2026-08-19. No patched version was identified.\n\n### Root cause\n\nThe value originates at `packages/openapi3/src/openapi.ts:592-608`:\n\n```ts\nserviceRecord.versions.push({\n  service,\n  version: snapshot.version!.value,\n  document: document[0],\n  diagnostics: document[1],\n});\n```\n\nIt is interpolated without path validation at `openapi.ts:629-641`:\n\n```ts\nreturn interpolatePath(options.outputFile, {\n  \"openapi-version\": specVersion,\n  \"service-name-if-multiple\": multipleService ? getNamespaceFullName(service.type) : undefined,\n  \"service-name\": getNamespaceFullName(service.type),\n  \"file-type\": fileType,\n  version,\n});\n```\n\nThe path reaches `emitFile()` at `openapi.ts:392-401`. The sink at `packages/compiler/src/core/emitter-utils.ts:29-39` performs no output-root containment check:\n\n```ts\nconst outputFolder = getDirectoryPath(options.path);\nawait program.host.mkdirp(outputFolder);\nreturn await program.host.writeFile(options.path, content);\n```\n\n`reso",
-      "link": "https://github.com/advisories/GHSA-2q42-4q24-7rgv",
-      "published": "2026-09-08T21:31:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62900",
-      "title": "Microsoft Security Advisory CVE-2026-62900 \u2013 .NET Information Disclosure Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.Build.Tasks.Git and Microsoft.SourceLink.AzureRepos.Git. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nImproper removal of sensitive information before storage or transfer in .NET allows an unauthorized attacker to disclose information over a network.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/**TBD**\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Medium\n- **Score:** 5.9\n- **Vector:** `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C`\n- **Weakness:** CWE-212: Improper Removal of Sensitive Information Before Storage or Transfer\n\n## Affected Platforms\n\n- **Platforms:** Windows, Linux, macOS\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\nThe vulnerability affects any Microsoft .NET project if it uses any of affected package versions listed below\n\n### <a name=\"published-nuget-packages\"></a>Published NuGet packages\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.Build.Tasks.Git](https://www.nuget.org/packages/Microsoft.Build.Tasks.Git) | = 8.0.0 | No patched NuGet version; update to a fixed .NET 8 SDK\n[Microsoft.Build.Tasks.Git](https://www.nuget.org/packages/Microsoft.Build.Tasks.Git) | >= 10.0.102, <= 10.0.110 | 10.0.111\n[Microsoft.Build.Tasks.Git](https://www.nuget.org/packages/Microsoft.Build.Tasks.Git) | >= 10.0.200, <= 10.0.204 | No patched NuGet version; the 10.0.2xx SDK feature band is no longer serviced\n[Microsoft.Build.Tasks.Git](https://www.nuget.org/packages/Microsoft.Build.Tasks.Git) | >= 10.0.300, <= 10.0.301 | 10.0.303\n[Microsoft.SourceLink.AzureRepos.Git](https://www.nuget.org/packages/Microsoft.SourceLink.AzureRepos.Git) | = 8.0.0 | No patched NuGet version; update to a f",
-      "link": "https://github.com/advisories/GHSA-23fw-v26w-5fgq",
-      "published": "2026-09-08T20:25:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62900"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/the-eu-cras-real-question-what-shipped-and-when-did-you-know/",
-      "title": "The EU CRA's Real Question: What Shipped, and When Did You Know?",
-      "summary": "The EU Cyber Resilience Act's vulnerability reporting requirements take effect September 11, giving software vendors as little as 24 hours to report actively exploited flaws. ActiveState explains why knowing exactly what shipped and when vulnerabilities were discovered will be critical to meeting the new requirements. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/the-eu-cras-real-question-what-shipped-and-when-did-you-know/",
-      "published": "2026-09-08T20:24:16+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -335,6 +192,23 @@
       ],
       "cve_ids": [
         "CVE-2025-66376"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisco-confirms-cve-2026-20079-secure-fmc-flaw-exploited-in-attacks/",
+      "title": "Cisco confirms CVE-2026-20079 Secure FMC flaw exploited in attacks",
+      "summary": "Cisco has confirmed that a maximum-severity authentication bypass vulnerability tracked as CVE-2026-20079 in its Secure Firewall Management Center (FMC) software is being actively exploited in attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisco-confirms-cve-2026-20079-secure-fmc-flaw-exploited-in-attacks/",
+      "published": "2026-09-09T21:40:44+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-20079"
       ],
       "is_zero_day": true,
       "is_high_severity": false
@@ -447,6 +321,96 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-59185",
+      "title": "Identrail Cross-tenant IDOR: Client-supplied GitHub App installation_id is bound to the caller's workspace without ownership verification",
+      "summary": "## Summary\n\nidentrail's GitHub App connection-completion endpoint binds a fully client-supplied `installation_id` to the caller's workspace without verifying that the installation belongs to, or was installed by, the workspace that initiated the connect flow. identrail then mints a GitHub App installation access token for the supplied `installation_id` using the app's own JWT, so an authenticated tenant can link any other identrail customer's GitHub App installation into their own workspace and read that victim organization's private repositories.\n\n## Affected code (default-on path, no feature flag)\n\n- Route: `internal/api/router.go:3590` \u2014 `POST /v1/workspaces/:workspace_id/projects/:project_id/github/connect/complete`. `installation_id` is read from the JSON body or the attacker-controlled `X-GitHub-Installation-ID` header (`router.go:3582-3588`).\n- Service: `internal/api/github_connect.go:781` `CompleteGitHubConnection`. The `state` token IS rigorously bound to the caller's scope (`github_connect.go:818`: `if stateRecord.TenantID != scope.TenantID || stateRecord.WorkspaceID != project.WorkspaceID || stateRecord.ProjectID != project.ProjectID { ... }`), but the only check on `installation_id` is `request.InstallationID <= 0` (`:794`). The raw client value is persisted as the workspace's connection (`:840`).\n- Cross-tenant read primitive: `internal/connectors/github/repositories.go:39` `ListInstallationRepositories` \u2192 `internal/connectors/github/app.go:170` mints a token via `POST /app/installations/{installationId}/access_tokens` signed with the App JWT, succeeding for any installation where identrail's app is installed.\n\nThe feature-flagged V2 path `CompleteGitHubConnector` (`github_connect.go:447`, default off) shares the gap and is additionally weaker (matches pending connector by `state` value alone with no caller-scope re-check); a single fix should cover both.\n\n## Intent proof\n\nThe code binds `state` to `{TenantID, WorkspaceID, ProjectID}` and re-verifies it",
+      "link": "https://github.com/advisories/GHSA-cp3j-m783-3ph5",
+      "published": "2026-09-09T23:52:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59185"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59176",
+      "title": "functype-mcp-server: MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import",
+      "summary": "## MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import\n\n### Summary\n\nThe `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstrained `version` string, interpolates it directly into an npm package specifier (`functype@<version>`), and installs it via `pnpm add` without any validation. Because npm/pnpm package specifiers support `file:`, `npm:`, and other alias syntaxes, an attacker who can send an MCP `tools/call` request to this tool can cause the server to install an arbitrary local or remote package as `functype`. Immediately after installation, the server calls `initDocsData(true)`, which dynamically imports `functype/cli` from the newly installed location, executing attacker-controlled JavaScript in the MCP server process. This results in full Remote Code Execution (RCE) with the privileges of the server process \u2014 full confidentiality, integrity, and availability impact (CVSS 7.8 High).\n\n### Details\n\nThe vulnerable code is in `packages/mcp-server/src/index.ts`. The `set_functype_version` tool is registered at line 115 and is enabled by default (no authentication required in stdio mode).\n\n**Source (user input accepted without validation):**\n```ts\n// packages/mcp-server/src/index.ts:119-121\nparameters: z.object({\n  version: z.string().describe('The functype version to install (e.g., \"0.46.0\", \"latest\", \"^0.45.0\")'),\n}),\n```\nOnly `z.string()` validation is applied \u2014 no semver format check, no allowlist for dist-tags, and no rejection of `file:`, `npm:`, URL, or path alias syntaxes.\n\n**Sink 1 \u2014 arbitrary package installation:**\n```ts\n// packages/mcp-server/src/index.ts:122-125\nexecute: async (args) => {\n  const spec = `functype@${args.version}`\n  try {\n    execFileSync(\"pnpm\", [\"add\", spec], { cwd: PROJECT_ROOT, stdio: \"pipe\", timeout: 60_000 })\n```\n`args.version` is interpolated into the package specifier string and passed directly to `pnpm add`. Supplying `file:/path/to/evil` causes pnpm to install an at",
+      "link": "https://github.com/advisories/GHSA-wcjj-9m6g-2fr2",
+      "published": "2026-09-09T23:49:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59176"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59160",
+      "title": "@yeger/turbo-graph: Unauthenticated Network-Exposed Task Execution via /api/run",
+      "summary": "## Unauthenticated Network-Exposed Turborepo Task Execution via /api/run\n\n### Summary\n\n`@yeger/turbo-graph` starts its embedded Next.js server without binding to the loopback interface, causing it to listen on all network interfaces (`0.0.0.0:29312` by default). The `/api/run` HTTP endpoint exposed by this server performs no authentication, authorization, CSRF protection, or task allowlist check before executing attacker-supplied Turborepo task names via `spawn()`. Any adjacent-network attacker can send an unauthenticated GET request to trigger arbitrary tasks defined in the victim's repository, resulting in code execution, file modification, destructive build side effects, or deployment of attacker-chosen targets with the privileges of the developer's OS user.\n\n### Details\n\nTwo independent flaws combine to create a remotely exploitable unauthenticated code execution vulnerability:\n\n**Flaw 1 \u2014 Server bound to all interfaces (not loopback)**\n\n`packages/turbo-graph/src/index.ts:44` calls `.listen(options.port, callback)` without passing a hostname argument. Although `const hostname = 'localhost'` is declared at line 19, it is used only for constructing the console log URL and is never passed to `listen()`. Node.js therefore defaults to binding on `0.0.0.0` (all IPv4 interfaces) and `::` (all IPv6 interfaces), making the server reachable from the local network segment.\n\n```ts\n// packages/turbo-graph/src/index.ts\n19    const hostname = 'localhost'  // used only for console URL, not for listen()\n...\n44        .listen(options.port, () => {   // hostname argument missing \u2192 0.0.0.0 bind\n45          const url = `http://${hostname}:${options.port}`\n```\n\n**Flaw 2 \u2014 Unauthenticated `/api/run` task execution endpoint**\n\n`packages/turbo-graph-ui/app/api/run/route.ts:156\u2013177` defines `GET()`, which reads `tasks`, `filter`, and `force` from the request query string and passes them directly to `buildResponseFromArgs`, which appends them to a Turbo CLI argument array and calls `spawn",
+      "link": "https://github.com/advisories/GHSA-2r5q-h53f-9rp3",
+      "published": "2026-09-09T23:47:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59160"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59158",
+      "title": "Nuxt Ollama: Public Runtime Config Exposes Ollama API Key to Browser Clients",
+      "summary": "## Public Runtime Config Exposes Ollama API Key to Browser Clients\n\n### Summary\n\n`nuxt-ollama@1.2.26` unconditionally merges all module options \u2014 including `api_key` \u2014 into Nuxt's **public** runtime config (`runtimeConfig.public.ollama`). Nuxt serializes `runtimeConfig.public` into the SSR HTML response inside a `<script>` payload block (`window.__NUXT__`), making the API key visible in plaintext to any unauthenticated HTTP client that fetches the page. An attacker with no credentials can steal the Ollama cloud API key with a single HTTP GET request, then use it to make arbitrary requests to the Ollama API at the operator's expense.\n\n### Details\n\nThe vulnerability is a design flaw in `src/module.ts`. During Nuxt module setup, the entire `_options` object \u2014 which contains `api_key` when configured for cloud Ollama as documented in `README.md:71-80` \u2014 is merged into the **public** runtime config namespace:\n\n```ts\n// src/module.ts:35-36\nconst currentConfig = (runtimeConfig.public.ollama ?? {}) as OllamaOptions\nruntimeConfig.public.ollama = defu(currentConfig, _options)\n```\n\nNuxt's SSR pipeline serializes `runtimeConfig.public` and embeds it in every server-rendered HTML page for client-side hydration. This results in the `api_key` appearing verbatim in the `window.__NUXT__` script block:\n\n```html\n<script>\nwindow.__NUXT__={};\nwindow.__NUXT__.config={\n  public:{\n    ollama:{\n      protocol:\"https\",\n      host:\"api.ollama.com\",\n      port:\"\",\n      proxy:false,\n      api_key:\"LEAKED_TEST_KEY_123\"  // \u2190 secret exposed to browser\n    }\n  }\n}\n</script>\n```\n\nThe browser-side composable (`src/runtime/composables/useOllama.ts`) then reads this value and sends it as an `Authorization: Bearer` header in client-side Ollama API calls:\n\n```ts\n// src/runtime/composables/useOllama.ts:6-10\nconst options: ModuleOptions = useRuntimeConfig().public.ollama as ModuleOptions\nif (options.api_key) {\n  headers.Authorization = `Bearer ${options.api_key}`\n}\nreturn new Ollama({ host, proxy: option",
+      "link": "https://github.com/advisories/GHSA-fxg7-897c-57mp",
+      "published": "2026-09-09T23:47:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59158"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55864",
+      "title": "GeoNetwork Web Module: Unauthenticaded Server-Side Request Forgery  in SLD Tool",
+      "summary": "### Summary\nAn unauthenticated server-side request forgery vulnerability lets any anonymous user make the GeoNetwork server issue arbitrary outbound HTTP requests. This gives an external attacker a position inside the server's network, making it possible to make internal requests no matter if the response is XML-type or not.\n\nThe SLD tooling endpoint `POST /api/tools/ogc/sld` takes a caller-supplied **WMS server URL** and performs a **server-side HTTP GET** to it, with no validation. The fetched body can also be stored and downloaded if the output of the outbound request is in XML format, making the SSRF non-blind.\n\n### Impact\nAny unauthenticated user can make the server send arbitrary HTTP requests to internal hosts it would never expose publicly, and read the responses back if the request responses are XML. This enables internal data disclosure, for example, configuration files that return as XML, authorization bypass, and reconnaissance of the internal network all from an anonymous position.\n\n### Resolution \n\nPatched releases:\n\n* 4.4.12\n* 4.2.17\n\n### Resources\n\n* https://github.com/geonetwork/core-geonetwork/pull/9343",
+      "link": "https://github.com/advisories/GHSA-5hx7-j24v-rffj",
+      "published": "2026-09-09T23:43:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55864"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-85730",
@@ -587,348 +551,6 @@
       ],
       "cve_ids": [
         "CVE-2026-44756"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77037",
-      "title": "multer vulnerable to Denial of Service via file descriptor leak on aborted uploads",
-      "summary": "### Impact\n\nA vulnerability in multer `2.2.0` allows an attacker to trigger a Denial of Service (DoS) by aborting or truncating multipart uploads. When using `diskStorage`, the destination write stream is not closed if the upload is aborted before it finishes, so each failed request leaks an open file descriptor and retains its disk blocks until the process exits. Repeated failed uploads can exhaust the available file descriptors. All applications using multer's disk storage are affected.\n\n### Patches\n\nUsers should upgrade to `2.3.0`.\n\n### Workarounds\n\nNone.",
-      "link": "https://github.com/advisories/GHSA-qfvm-cv95-jqjf",
-      "published": "2026-09-08T21:29:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77037"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84452",
-      "title": "Windows ML CLI: CORS misconfig enables localhost RCE",
-      "summary": "Case Description:\n\nMSRC Notes: Attachments: 1 file(s) attached (1 mp4) Summary: The vulnerability lies in the 'serve/cli_api.py' component of the 'winml-cli' project, which exposes all winml CLI commands over HTTP without authentication. Although it binds to localhost by default, it sets 'allow_origins' to a wildcard, allowing any website to interact with the endpoint. This, combined with the '--trust-remote-code' flag in 'build' and 'config' commands, enables an attacker to execute arbitrary code by hosting a malicious model repository. The root cause is the lack of proper authentication and validation of the 'trust_remote_code' parameter, leading to Remote Code Execution (RCE).\n\nFinder Description: WARNING: Original content contained invalid characters. Please see original submission in the event that the characters removed are relevant for the PoC.\n\nserve/cli_api.py exposes every winml CLI command over HTTP with no authentication. That's defensible on its own - it binds 127.0.0.1 by default, so the audience is this machine. But it also sets allow_origins=[\"*\"] (cli_api.py:150, duplicated at app.py:219), and the victim's browser is a local process: the wildcard lets any website call the endpoint and read the reply, erasing the boundary the loopback bind draws.\n\nbuild and config both accept --trust-remote-code, and a JSON true becomes that flag unfiltered. An attacker-named model repo reaches AutoConfig.from_pretrained(..., trust_remote_code=True) (_autoconfig.py:191), where transformers imports Python from that repo - RCE as the server user from any page the victim loads. The payload runs on import, so the command's exit_code: 1 is irrelevant.\n\nReported Repro Steps:\n\n1. Setup\n\ngit clone -q https://github.com/microsoft/winml-cli.git ~/winml-poc && cd ~/winml-poc &&  mkdir -p temp /tmp/poc/evil/pwn\npython3 -m pip install -q --target /tmp/poc/deps onnx onnxruntime transformers fastapi uvicorn click\n2. Hostile model repo (payload is module-level \u2192 runs on import)\n\ncat",
-      "link": "https://github.com/advisories/GHSA-96p9-rh4f-92cf",
-      "published": "2026-09-08T21:27:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84452"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84361",
-      "title": "Composer arbitrary command execution via a malicious package's Perforce source URL",
-      "summary": "## Summary\n\nIf the `p4` Perforce CLI client is installed, a malicious dependency package from a package repository allowing arbitrary perforce source URLs (packagist.org is safe) could execute arbitrary commands when running `composer install` or `composer update`. Composer passed a package's Perforce source address to the `p4` CLI client without validating it. The `p4` CLI client accepts addresses that mean \"run this local command\" instead of \"connect to this server\". This is remote code execution with the privileges of the user or CI account running Composer.\n\n## Am I affected?\n\nYou are only affected if all of the following are true:\n\n- The Perforce `p4` command line client is installed and on the `PATH` of the machine running Composer.\n- An attacker can control a package metadata's `source` section with a perforce type. Packagist.org does not allow perforce source metadata, so you are only exploitable if you rely on another Composer repository (any custom `composer`-type repository, or an inline `package` repository entry), or a `composer.lock` file you obtained from somewhere you do not trust.\n- The package gets installed from source, either because it has no dist artifact or because source installs are selected (for example `--prefer-source`).\n\nPlainly not affected: anyone without the `p4` client installed, which is the large majority of Composer users. Perforce is an optional VCS integration. Also not affected: projects that only consume packages from Packagist.org, which does not allow Perforce source repositories and therefore cannot serve a package with a Perforce source address.\n\nMost realistic way to get hit: a developer workstation or CI image that has Perforce tooling installed, pulling packages from a private or third party Composer repository that an attacker has compromised.\n\n## Patched versions\n\nComposer now validates Perforce source addresses before handing them to the `p4` client, and accepts only real network endpoints (an optional `tcp`/`ssl` tr",
-      "link": "https://github.com/advisories/GHSA-rvx4-ffvw-m9q3",
-      "published": "2026-09-08T21:25:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84361"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-rgj7-g3m4-5g8c",
-      "title": "sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545",
-      "summary": "### Impact\nA number of vulnerabilities, two rated as \"Critical\" severity using CVSSv3, have been discovered and fixed in the upstream libheif dependency. These can lead to possible remote code execution (RCE) on glibc-based Linux when run under certain conditions.\n\nThe attack vector for these claims to be \"network\" however sharp does not provide any networking features so this vulnerability is down-rated to a \"High\" severity using CVSSv4 but please note its Subsequent System Impact.\n\nThose processing untrusted input with versions of sharp prior to 0.35.4 are affected.\n\n### Patches\n\n#### Using prebuilt binaries provided by sharp?\n\nMost people rely on the prebuilt binaries provided by sharp.\n\nPlease upgrade sharp to the latest version, currently 0.35.4, which provides libheif 1.23.2.\n\n#### Using a globally-installed libheif?\n\nPlease ensure you are using the latest libheif 1.23.2.\n\n### Workarounds\nAdd the following to your code to prevent sharp from decoding AVIF images.\n```js\nsharp.block({ operation: [\"VipsForeignLoadHeif\"] });\n```\n\nEnsure you are using a `node` executable binary compiled as a Position Independent Executable (PIE). Most Linux package managers already do this for protection against RCE however be warned that the \"official\" Node.js binaries do not.\n\n### References\n- [CVE-2026-84383](https://github.com/strukturag/libheif/security/advisories/GHSA-g89c-p67h-r497)\n- https://github.com/strukturag/libheif/security/advisories/GHSA-2jg2-4ch7-h545",
-      "link": "https://github.com/advisories/GHSA-rgj7-g3m4-5g8c",
-      "published": "2026-09-08T21:25:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84383"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84308",
-      "title": "phpseclib \u2014 non-constant-time X25519 scalar multiplication permits full private-key recovery",
-      "summary": "The pure-PHP X25519 scalar multiplication in phpseclib is not constant-time. Field addition and subtraction each perform a **data-dependent conditional modular reduction**, so the cost of each Montgomery-ladder step is a linear function of that step's reduction count which is a quantity determined by the secret scalar's *prefix*.\n\nAn observer with per-ladder-step resolution recovers the 251-bit clamped private scalar. This is a per-step leak, not an aggregate one: an instrumented code proof-of-concept recovers 20/20 test keys from 32 observed operations, and an observer that counts libgmp calls instead of timing them recovers a key from a **single** operation.\n\nThis is **not** a low-order-input issue. Recovery works with the RFC 7748 base point `u = 9`, with no attacker-chosen input at all. Rejecting low-order public values does not close it.\n\n## 2. Affected component\n\nConfirmed on **phpseclib 3.0.56** (338 files under `phpseclib/`,`sha256(sorted(relpath NUL file_sha256 LF)) = cc7250b611f520e809131aab0931503457c44d8cbfb10d535251c6fec5f62a2b`).\nThe code appears unchanged across the 3.0 series wherever Curve25519 is supported, please confirm the affected range.\n\n| file:line | role |\n|---|---|\n| `Math/PrimeField/Integer.php:189` | `add()` \u2014 conditional `subtract($modulo)` when the sum \u2265 p |\n| `Math/PrimeField/Integer.php:207` | `subtract()` \u2014 conditional `add($modulo)` when the result is negative |\n| `Crypt/EC/BaseCurves/Montgomery.php:229\u2013234` | ladder branch on the secret bit, selecting argument order of `doubleAndAddPoint` |\n| `Crypt/EC/Formats/Keys/MontgomeryPrivate.php:66` | `multiplyPoint(getBasePoint(), dA)` \u2014 **no engine check of any kind** |\n| `Crypt/EC/Formats/Keys/PKCS8.php:194\u2013200` | the same derivation, correctly gated on ext-sodium \u2014 the pattern `MontgomeryPrivate` is missing |\n\n## 3. Technical description\n\nOperation *counts* in the ladder are already constant \u2014 10 field multiplications, 4 additions and 4 subtractions per step, 2560 multiplications per 25",
-      "link": "https://github.com/advisories/GHSA-q97c-8qh3-fpc6",
-      "published": "2026-09-08T21:24:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84308"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84364",
-      "title": "Hono: Unbounded dot-notation nesting in `parseBody()` can cause memory exhaustion",
-      "summary": "### Summary\n\nWhen `parseBody()` expands dot-separated form field names into nested objects, it does not limit the nesting depth or the total number of objects created. A request body well within a normal size limit can therefore allocate an object graph far larger than the request itself, and concurrent requests can exhaust the heap and terminate the process.\n\n### Details\n\nEach dot-separated segment of a field name creates an intermediate object. Neither the segments within a single field name nor the total across a request was bounded, and empty segments were preserved, so a field name could encode one nesting level per byte.\n\nBoth shapes produce the effect: a single deeply dotted field name, and a large number of shallowly dotted ones within one body. A request body size limit does not prevent it, because the amplification happens after the body has been accepted.\n\nDot-notation parsing is not enabled by default.\n\n### Impact\n\nAn attacker who can reach an endpoint that parses request bodies with dot-notation enabled can send concurrent requests whose memory cost is disproportionate to their size.\n\nThis may lead to:\n\n- exhaustion of the JavaScript heap and termination of the server process\n- the service remaining unavailable until it is restarted\n\nThis issue affects applications that explicitly enable dot-notation parsing. Applications using the default behaviour are not affected.",
-      "link": "https://github.com/advisories/GHSA-g6gw-c38x-mqfc",
-      "published": "2026-09-08T21:23:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84364"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-83616",
-      "title": "xmldom: Processing Instruction Target Injection Bypasses requireWellFormed",
-      "summary": "## Summary\n\n`Document.createProcessingInstruction()` in `@xmldom/xmldom` performs no validation on the `target` parameter. The `requireWellFormed: true` serializer option validates only for `:` in the target and a case-insensitive `xml` prefix, but does not check for `>` characters. A `>` in the target breaks the processing instruction boundary (`<?...?>`), allowing injection of arbitrary content into the serialized XML output.\n\n## Details\n\n`Document.createProcessingInstruction(target, data)` at `lib/dom.js` around line 2413 accepts any string as the `target` parameter and stores it on the PI node without validation.\n\nDuring serialization, the `requireWellFormed` code path (around line 3286) performs two checks on PI targets:\n\n1. Rejects targets containing `:` (namespace prefix check)\n2. Rejects targets matching `xml` case-insensitively (reserved prefix)\n\nHowever, it does NOT validate that the target conforms to the XML Name production, and critically does NOT check for `>` characters. Since processing instructions are serialized as `<?target data?>`, a `>` in the target prematurely closes the PI, causing the remaining content to be interpreted as document content by any downstream XML parser.\n\n### Root Cause\n\n1. `createProcessingInstruction()` performs no validation on `target`\n2. The serializer's `requireWellFormed` check is incomplete -- it only checks for `:` and `xml`, missing characters that break PI syntax (`>`, `?`, whitespace)\n3. The serializer emits the target verbatim: `<?${target} ${data}?>`\n\n## Proof of Concept\n\n```javascript\nconst { DOMImplementation, XMLSerializer } = require('@xmldom/xmldom');\n\nconst impl = new DOMImplementation();\nconst serializer = new XMLSerializer();\nconst doc = impl.createDocument(null, 'root', null);\n\n// PI target containing > breaks the PI boundary\nconst pi = doc.createProcessingInstruction('a>', 'data');\ndoc.documentElement.appendChild(pi);\n\nconst output = serializer.serializeToString(doc, { requireWellFormed: true });\nconsol",
-      "link": "https://github.com/advisories/GHSA-c7q8-3ch8-vqpv",
-      "published": "2026-09-08T21:03:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-83616"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-83618",
-      "title": "xmldom: requireWellFormed DocType publicId/systemId validation is bypassable via an embedded line terminator",
-      "summary": "## Summary\n\nAn embedded line terminator bypasses the `requireWellFormed` serializer check for a `DocumentType`'s\npublicId and systemId. The check was added to fix GHSA-f6ww-3ggp-fr8h; an id whose first line is a\nvalid literal slips past it and is emitted verbatim into the `<!DOCTYPE \u2026>` declaration, so the markup\nafter the line terminator breaks out into the surrounding document. Callers who enabled\n`requireWellFormed` to neutralize DocumentType injection remain exposed.\n\n## Details\n\n`publicId` and `systemId` are stored as raw values **including their surrounding quotes**, and the\n`PubidLiteral`/`SystemLiteral` productions include those quotes. The serializer validates them with\n`g.PubidLiteral_match.test(publicId)` and `g.SystemLiteral_match.test(systemId)`, where both matchers\nare `reg('^', \u2026, '$')` and inherit the `m` flag from xmldom's shared regexp builder. Under `m`, `$`\nmatches at an interior line terminator, so a value such as `\"valid pubid\"\\n\"><!ENTITY \u2026>` satisfies\nthe matcher on its first line (`\"valid pubid\"` is a complete `PubidLiteral`) and the whole value \u2014\nincluding the post-newline breakout \u2014 is emitted after `PUBLIC`/`SYSTEM`.\n\n### Root Cause\n\n1. A shared regexp builder compiles anchored productions with the `m` flag.\n2. `^\u2026$` under `m` are line anchors, not string anchors.\n3. A full-string validator built on such a production (`.test()`) accepts any string with one\n   conforming line, so a complete, valid literal on the first line passes even though a line terminator\n   and breakout markup follow. `PubidChar` excluding `<`/`>` does not prevent it \u2014 the breakout is\n   appended *after* the literal, not embedded inside it.\n\nThe triggering line terminators are the ECMAScript `LineTerminator` set: U+000A, U+000D, U+2028, U+2029.\n\n## Affected Versions\n\nOnly `@xmldom/xmldom` 0.9.x is affected. The vulnerable matchers are built by `lib/grammar.js`'s\n`m`-flagged `reg()` builder, and the DocType `publicId`/`systemId` `requireWellFormed` check that\nconsumes ",
-      "link": "https://github.com/advisories/GHSA-vr34-hp96-76pp",
-      "published": "2026-09-08T21:02:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-83618"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-83611",
-      "title": "xmldom: Parser silently accepts a not-well-formed end tag whose name is followed by a line break and trailing content",
-      "summary": "## Summary\n\nxmldom's parser silently accepts a **not-well-formed end tag** whose valid name is followed by\ntrailing content \u2014 e.g. `</a\u23cejunk>`. The element is closed, the trailing content is discarded, and no\nerror is reported, even though the XML end-tag production allows only optional whitespace after the\nname and both Chromium and Firefox reject such input as `application/xml`. An application that relies\non xmldom to reject not-well-formed input therefore receives a false \"valid\" result for a document the\nspecification and browsers consider malformed.\n\n## Details\n\nAcross every affected version, an end tag whose valid `Name` is followed by trailing content before\n`>` is silently accepted: the element is closed, the residue is dropped, and no error is reported. How\nmuch leaks differs by line (see Affected Versions), but the observable weakness is the same.\n\nOn the current (`0.9.x`) line, the parser validates the end-tag name against the XML `ETag` production\nwith an anchored regular expression (`^ QName S? $`). That expression is compiled with the `m`\n(multiline) flag by a shared builder, so `$` matches at an interior line terminator: a valid name on\nthe first line satisfies the anchored production and any content after the line break escapes the\ncheck. On 0.9.x the whitespace-separated variant (`</a junk>`) is already rejected; only the\nline-terminator variant leaks. Older lines have no anchored end-tag validator at all, so they accept\nboth the line-terminator and the whitespace variant.\n\nThis is **not** content injection \u2014 the trailing content is dropped, and the resulting DOM is a normal\nsingle-root document (`<a/>`). The security-relevant property is the silent acceptance of\nnot-well-formed input: xmldom's parse result disagrees with the specification and with browser XML\nparsers, so any control that treats \"xmldom parsed it without error\" as \"well-formed\" is bypassed.\n\n### Root Cause\n\nOn the `0.9.x` line, where the line-terminator variant specifically leaks:\n\n",
-      "link": "https://github.com/advisories/GHSA-6h8r-xr42-gp59",
-      "published": "2026-09-08T21:02:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-83611"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75604",
-      "title": "Next.js: Unauthenticated Remote Code Execution on windows-hosted servers",
-      "summary": "## Impact\n\nA vulnerability in applications using Pages and App router without Cache Component can lead to remote code execution when the server is hosted on machines using a Windows filesystem.\n\n## Workaround\n\nThere is no known workaround for affected windows-hosted applications. You should upgrade immediately if your server is hosted on Windows.",
-      "link": "https://github.com/advisories/GHSA-p293-qw3h-jr36",
-      "published": "2026-09-08T20:51:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75604"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84382",
-      "title": "HTTPX2: Streaming response decompression does not bound peak memory (decompression amplification)",
-      "summary": "### Summary\n\nWhen decoding a compressed response body (`gzip`, `deflate`, `br`, or `zstd`), HTTPX2 fully decompressed each network read before yielding content to the application. A small compressed input could therefore cause a large intermediate memory allocation, even when the application streamed the response to keep memory usage bounded.\n\n### Details\n\nHTTPX2's default transport reads the socket in pieces of up to 64 KiB. Before `2.12.0`, each piece was inflated completely into one intermediate allocation before any decompressed bytes were yielded.\n\nAt DEFLATE's maximum compression ratio of roughly 1032:1, a 64 KiB compressed chunk can expand to about 64 MiB in one allocation. Brotli and Zstandard responses can cause similarly large amplification. Streaming the response did not prevent these transient allocations.\n\n### Impact\n\nApplications that fetch resources from untrusted or attacker-influenced servers - such as webhook receivers, link unfurlers, crawlers, SSRF-reachable fetchers, and redirect followers - can experience memory pressure or out-of-memory termination when processing a malicious compressed response. No authentication or user interaction is required beyond issuing a request to the server.\n\n### Mitigation\n\nUpgrade to HTTPX2 `2.12.0` or later. Patched versions decompress responses incrementally with bounded intermediate buffers, including responses with multiple content encodings.",
-      "link": "https://github.com/advisories/GHSA-8xx6-hgc6-gc2m",
-      "published": "2026-09-08T20:48:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84382"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84378",
-      "title": "HTTPX2: Quadratic SSE line buffering can cause CPU denial of service",
-      "summary": "### Summary\n\nHTTPX2's Server-Sent Events (SSE) parser repeatedly copied and rescanned buffered text when a server split one unterminated line across many response chunks. The total work grows quadratically with the length of the line. An attacker-controlled or compromised SSE endpoint can exploit this behavior to consume excessive client CPU.\n\n### Details\n\nBefore version 2.10.0, HTTPX2 combined the complete pending SSE line with each newly received chunk and then scanned the combined text for line separators. If an SSE server sends a long line as many small chunks without a line separator, every chunk causes all previously received text to be copied and scanned again. For `n` fixed-size chunks, this results in O(n\u00b2) processing.\n\nThe behavior affects both `httpx2.Client.sse()` and `httpx2.AsyncClient.sse()`. Other response APIs do not use the SSE parsing path.\n\n### Impact\n\nApplications that consume SSE from an attacker-controlled or compromised endpoint can experience excessive CPU usage. A crafted stream can block a synchronous worker or the asynchronous event loop that is consuming it, degrading availability for other work in that process. Confidentiality and integrity are not affected.\n\n### Mitigation\n\nUpgrade to HTTPX2 2.10.0 or later. SSE parsing now accumulates incomplete line fragments and combines them only when necessary, making processing linear in the amount of received data. HTTPX2 2.10.0 also limits buffered SSE events to 1 MiB by default through `max_event_size`.\n\nIf upgrading is not immediately possible, only consume SSE from trusted endpoints and enforce an external size or time budget on the stream.",
-      "link": "https://github.com/advisories/GHSA-f2fp-rgf2-35cp",
-      "published": "2026-09-08T20:45:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84378"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84381",
-      "title": "HTTPX2: Secure WebSocket traffic sent without TLS through SOCKS proxies",
-      "summary": "### Summary\n\nhttpcore2 does not start TLS for `wss://` connections routed through a SOCKS5 proxy. The WebSocket opening handshake and all subsequent frames are sent in plaintext through the proxy path, despite the caller selecting the secure `wss` scheme.\n\nThe transport flaw affects httpcore2 releases before `2.10.0`. HTTPX2 exposed this behavior through its public `Client.websocket()` and `AsyncClient.websocket()` APIs from `2.6.0` through `2.9.1`.\n\n### Details\n\nThe synchronous and asynchronous SOCKS5 connection implementations upgrade the established proxy tunnel to TLS only when the remote origin scheme is `https`. The equivalent check does not include `wss`. After the SOCKS5 handshake succeeds, the raw stream is therefore passed directly to the HTTP/1.1 connection, which writes the WebSocket upgrade request without first performing a TLS handshake or verifying the destination certificate.\n\nFor example, an application using HTTPX2 `2.6.0` through `2.9.1` may open an authenticated WebSocket through a SOCKS proxy:\n\n```python\nimport httpx2\n\nwith httpx2.Client(proxy=\"socks5://proxy.example:1080\") as client:\n    with client.websocket(\n        \"wss://service.example/private?token=query-secret\",\n        headers={\"Authorization\": \"Bearer header-secret\"},\n        cookies={\"session\": \"cookie-secret\"},\n    ) as websocket:\n        websocket.send_text(\"private message\")\n```\n\nOn affected versions, the stream passing through the SOCKS proxy begins with a plaintext request such as:\n\n```text\nGET /private?token=query-secret HTTP/1.1\nHost: service.example\nAuthorization: Bearer header-secret\nCookie: session=cookie-secret\n```\n\nBefore HTTPX2 `2.6.0`, the same underlying httpcore2 behavior could be reached by integrations constructing a WebSocket upgrade request through the low-level transport API, but HTTPX2 did not yet provide its native WebSocket client API.\n\nA normal secure WebSocket server will usually reject these plaintext bytes because it expects a TLS ClientHello. However, a m",
-      "link": "https://github.com/advisories/GHSA-7mj9-2mp8-4m2p",
-      "published": "2026-09-08T20:45:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84381"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73560",
-      "title": "vLLM: SSRF + arbitrary local file read in MiMoV2OmniMultiModalProcessor `_fetch_image` and audio loader bypass MediaConnector protections",
-      "summary": "### Summary\n\n`vllm/transformers_utils/processors/mimo_v2_omni.py` \u2014 the multimodal processor for `MiMoV2OmniForCausalLM` \u2014 issues `requests.get(...)` directly on user-supplied image and audio URL strings and `Image.open(...)` on user-supplied local paths, **without** the SSRF / `allowed_local_media_path` checks that `vllm.multimodal.utils.MediaConnector` was hardened with in **GHSA-qh4c-xf7m-gxfc**, **GHSA-v359-jj2v-j536**, and **GHSA-pf3h-qjgv-vcpr**.\n\nThis is the same bug class as those three published advisories, in a code path the patches missed. When a user passes a URL or local-file string through `multi_modal_data` (e.g. `LLM.generate(multi_modal_data={\"image\": \"http://...\"})`), the processor takes the unsanitized string and dispatches it without any URL-scheme allowlist, network-target allowlist, size cap, or local-path allowlist.\n\n### Details\n\n**File:** `vllm/transformers_utils/processors/mimo_v2_omni.py` (current `main`)\n\n**Sink 1 \u2014 image SSRF + local-file read (`_fetch_image`, lines 231\u2013249):**\n\n```python\ndef _fetch_image(src: Any) -> Image.Image:\n    if isinstance(src, Image.Image):\n        return _to_rgb(src)\n    if isinstance(src, bytes):\n        return _to_rgb(copy.deepcopy(Image.open(BytesIO(src))))\n    if isinstance(src, str):\n        if src.startswith((\"http://\", \"https://\")):\n            r = requests.get(src, timeout=30)              # SSRF: no allowlist, follows redirects\n            r.raise_for_status()\n            return _to_rgb(copy.deepcopy(Image.open(BytesIO(r.content))))\n        if src.startswith(\"file://\"):\n            return _to_rgb(Image.open(src[7:]))            # arbitrary local file read\n        if src.startswith(\"data:image\"):\n            ...\n        return _to_rgb(Image.open(src))                    # fallback also opens local files\n    raise ValueError(f\"Unrecognized image source: {type(src)}\")\n```\n\n**Sink 2 \u2014 audio SSRF (around line 471):**\n\n```python\nelif audio.startswith((\"http://\", \"https://\")):\n    r = requests.get(audio, time",
-      "link": "https://github.com/advisories/GHSA-4hhp-h66f-j5j7",
-      "published": "2026-09-08T20:42:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73560"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-83607",
-      "title": "xmldom: Element name injection via createElement() bypasses requireWellFormed",
-      "summary": "## Summary\n\n`Document.createElement()` in `@xmldom/xmldom` accepts arbitrary strings as the `tagName` parameter with zero validation. The serializer emits the tag name verbatim into XML/HTML output. Critically, the `requireWellFormed: true` serializer option \u2014 the recommended mitigation from CVE-2026-41672, CVE-2026-41674, and CVE-2026-34601 \u2014 did NOT catch this, making it a bypass of the existing security controls.\n\nAn attacker who controls the element name string can inject arbitrary attributes (including event handlers) into the serialized output, leading to XSS when the output is consumed by a browser or downstream parser.\n\n## Details\n\n`Document.createElement()` accepts any string as `tagName` and stores it directly on the element node without validation. When the document is later serialized via `XMLSerializer.serializeToString()`, the serializer emits the `tagName` verbatim into the output.\n\nThe XML specification requires element names to conform to the `Name` production. The existing `createAttributeNS()` and `createElementNS()` methods validate qualified names against an anchored name/`QName` pattern, but `createElement()` bypasses this entirely, and the `requireWellFormed: true` serializer path performed no element-name validation \u2014 rendering it ineffective against this vector.\n\n### Root Cause\n\n1. `createElement()` stores the raw `tagName` string without any validation.\n2. The serializer's `requireWellFormed` code path did not validate element names against the XML `Name`/`QName` production.\n3. The serializer emits `tagName` directly into angle brackets: `<${tagName}...>`.\n\n## Proof of Concept\n\n```js\nconst { DOMImplementation, XMLSerializer } = require('@xmldom/xmldom');\n\nconst impl = new DOMImplementation();\nconst serializer = new XMLSerializer();\nconst doc = impl.createDocument(null, 'root', null);\n\n// Inject an element whose \"name\" contains attributes with an XSS payload\nconst el = doc.createElement('img src=x onerror=\"alert(1)\"');\ndoc.documentElement.ap",
-      "link": "https://github.com/advisories/GHSA-w2rr-34g9-rvrj",
-      "published": "2026-09-08T20:31:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-83607"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-50646",
-      "title": "Microsoft Security Advisory CVE-2026-50646 \u2013 .NET Remote Code Execution Vulnerability",
-      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Windows Presentation Foundation (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nA remote code execution vulnerability exists in Windows Presentation Foundation (WPF) in .NET 8, .NET 9, and .NET 10 when parsing specially crafted XAML input. An attacker who successfully exploits this vulnerability could execute arbitrary code in the context of the current user.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/**TBD**\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 7.8\n- **Vector:** `CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n- **Weakness:** CWE-693 (Protection Mechanism Failure)\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\nThe vulnerability affects any Microsoft .NET project if it uses any of affected package versions listed below\n\n### <a name=\".NET 10.0\"></a>.NET 10.0\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64)               | >= 10.0.0, <= 10.0.9 | 10.0.10\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64)               | >= 10.0.0, <= 10.0.9 | 10.0.10\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86)               | >= 10.0.0, <= 10.0.9 | 10.0.10\n\n### <a name=\".NET 9.0\"></a>.NET 9.0\nPackage name | Affected version | Patched version\n------------ | ---------------- | -------------------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/M",
-      "link": "https://github.com/advisories/GHSA-gh2h-rhph-h37g",
-      "published": "2026-09-08T20:30:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-50646"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-81725",
-      "title": "NLTK: Pl196xCorpusReader has quadratic ReDoS on malformed TEI blocks",
-      "summary": "### Summary\n\n`Pl196xCorpusReader` still parses whole TEI blocks with multiple lazy regexes over attacker-controlled text. A malformed file with many opening tags and no matching closing tags forces repeated rescans and produces quadratic CPU growth in public reader APIs.\n\n### Details\n\n- **Vulnerability type:** Regular-expression denial of service\n- **Affected component:** `nltk.corpus.reader.pl196x.TEICorpusView.read_block` and `Pl196xCorpusReader` public methods\n- **Affected versions:** Published `3.9.4` and current source `v3.10.0-rc2` both reproduced.\n- **Patched versions:** Not yet patched\n- **Root cause:** Lazy `.*?` whole-block regexes rescan untrusted XML-like blocks from each opening-tag position.\n\nThe parser uses regexes for paragraphs, sentences, and word tags across the whole `<text>` block. When the attacker supplies many unmatched opening tags, each attempt scans toward the end of the block and fails, then restarts from the next opening tag. There is near four-times runtime growth each time the number of malformed `<p>` tags doubled, through normal public calls such as `words()` and `tagged_words()`.\n\n### PoC\n\n**Preconditions**\n- The application parses attacker-influenced PL196X or TEI-like corpus files through public reader APIs.\n\n**Steps**\n1. Create a corpus file with a valid header followed by a `<text>` block that contains many opening tags and no matching closing tags.\n2. Instantiate `Pl196xCorpusReader` on that corpus.\n3. Call `words()` or `tagged_words()` and measure elapsed time as the malformed tag count doubles.\n4. Observe near quadratic growth instead of near-linear behavior.\n\n**Minimal reproducible excerpt**\n\n```text\nsize=1000 0.014s\nsize=2000 0.057s\nsize=4000 0.231s\nsize=8000 0.927s\n```\n\n### Impact\n\nA consumer that accepts attacker-influenced corpus files can be forced into heavy CPU use and parser-thread stalling before the application concludes the input contains no valid content.\n\n### Remediation\n\nReplace the whole-block lazy-regex parse",
-      "link": "https://github.com/advisories/GHSA-8mpw-7fpc-4gqj",
-      "published": "2026-09-08T20:28:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-81725"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-80206",
-      "title": "NLTK: ReDoS in nltk.tgrep via unvalidated user-supplied regular expressions",
-      "summary": "### Summary\nThe NLTK `tgrep` module accepts user-supplied regular expressions and passes them to the Python `re` engine without a timeout or validation, enabling catastrophic backtracking (ReDoS). Applications that expose the `tgrep` API to external input are vulnerable to a single-request denial of service that blocks the Python process indefinitely.\n\n### Affected Code\n`nltk/tgrep.py` \u2014 `_tgrep_node_action()` (around line 320)\n\nWhen a tgrep pattern contains a `/regex/` node, `_tgrep_node_action` compiles the embedded regex literal directly with no validation:\n\n```python\ndef _tgrep_node_action(_s, _l, tokens):\n    ...\n    elif tokens[0].startswith(\"/\"):\n        assert tokens[0].endswith(\"/\")\n        node_lit = tokens[0][1:-1]\n        return (\n            lambda r: lambda n, m=None, l=None: r.search(\n                _tgrep_node_literal_value(n)\n            )\n        )(re.compile(node_lit))  # User regex compiled and executed with no timeout\n```\nThe compiled regex is applied against every matching tree node label via `r.search(...)`. A caller reaching this path via `tgrep_positions()` or `tgrep_compile()` controls `node_lit` entirely.\n\n### Proof of Concept\n```python\nimport nltk\nfrom nltk.tgrep import tgrep_positions\n\n# Root node label is 25 'a' characters.\n# tgrep /regex/ branch calls re.compile(\"((a+)+)b\").search(\"aaa...a\")\n# No 'b' is present \u2014 exponential backtracking occurs.\ntree = nltk.Tree.fromstring(\"(\" + \"a\" * 25 + \" (NP (DT the)))\")\ntgrep_positions(r\"/((a+)+)b/\", [tree])   # Never returns\n```\n\n### Working Poc\n\nThe following script uses increasing values of n (the number of repeated as in the tree root label) to measure the execution time of tgrep_positions with the catastrophic regex /((a+)+)b/. On standard CPython with NLTK 3.10.2, the runtime grows exponentially, confirming the ReDoS vulnerability. For n \u2265 35, the function will hang indefinitely.\n\n```python\nimport nltk\nfrom nltk.tgrep import tgrep_positions\nimport time\n\ndef test_n(n):\n    tree = nltk.Tree.f",
-      "link": "https://github.com/advisories/GHSA-w3v8-gmh9-3wv7",
-      "published": "2026-09-08T20:28:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-80206"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62815",
-      "title": "Microsoft QUIC: Remote Code Execution Vulnerability",
-      "summary": "# Summary\nUse after free in Microsoft QUIC allows an unauthorized attacker to execute code over a network.\n\n# Details\n\nNew network path creations and removals triggered by incoming packets can lead to a pointer invalidation.\n\n## Patches\n\n- Guard path promotion [e0f55b5](https://github.com/microsoft/msquic/commit/e0f55b5fdc9fff0b4465976d066ebd22fb7e2b3b)\n\n# Impact\n\nAn unauthenticated attacker could exploit this vulnerability by sending a specially crafted packet to an affected service over the network. Successful exploitation could allow the attacker to execute code on the target system. No authentication or user interaction is required.",
-      "link": "https://github.com/advisories/GHSA-92f5-vc22-8j33",
-      "published": "2026-09-08T20:27:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62815"
       ],
       "is_zero_day": false,
       "is_high_severity": true
