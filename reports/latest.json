@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-11T10:07:24.364509+00:00",
-  "total": 32,
+  "generated": "2026-09-11T15:23:39.285811+00:00",
+  "total": 28,
   "kev": 0,
   "zero_day": 13,
   "enriched": 0,
@@ -31,6 +31,21 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/claude-used-to-automate-exploitation.html",
+      "title": "Claude Used to Automate Exploitation and Data Theft Across Multiple Victims",
+      "summary": "Anthropic has warned that cybercriminals and state-sponsored hackers alike are using its Claude models for cyber attacks, weapons design, propaganda, and mass surveillance between December 2025 and August 2026.\n\nThe threat actors, which the artificial intelligence (AI) company has branded Generative Threat Groups (GTGs), span state-sponsored groups, financially motivated criminals, commercial",
+      "link": "https://thehackernews.com/2026/09/claude-used-to-automate-exploitation.html",
+      "published": "2026-09-11T14:29:47+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -80,38 +95,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-bluemoon-kit-exploited-windows-and-chrome-zero-day-flaws/",
-      "title": "New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws",
-      "summary": "Multiple cyber-espionage groups deployed an exploit kit dubbed \"BlueMoon\" that leveraged zero-day vulnerabilities in Microsoft Windows and Google Chrome. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-bluemoon-kit-exploited-windows-and-chrome-zero-day-flaws/",
-      "published": "2026-09-10T14:11:34+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/critical-netscaler-vulnerability-exploited-in-attacks/",
-      "title": "Critical NetScaler Vulnerability Exploited in Attacks",
-      "summary": "Tracked as CVE-2026-19490, the authentication bypass flaw has been exploited in the wild since at least September 3. The post Critical NetScaler Vulnerability Exploited in Attacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/critical-netscaler-vulnerability-exploited-in-attacks/",
-      "published": "2026-09-10T12:20:21+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-19490"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -211,6 +194,39 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/russian-state-sponsored-hackers-use.html",
+      "title": "Russian State-Sponsored Hackers Use Claude to Rebuild Malware After Detection",
+      "summary": "Anthropic on Thursday revealed it disrupted a campaign mounted by a Russian state-sponsored threat actor that abused Claude for developing an AI-assisted workflow to get ahead of the detection curve.\n\nThe operation has been attributed to a cyber espionage group it calls GTG-20006 (where \"GTG\" stands for Generative Threat Group), which aligns with broader reporting linking the cluster to Midnight",
+      "link": "https://thehackernews.com/2026/09/russian-state-sponsored-hackers-use.html",
+      "published": "2026-09-11T14:10:20+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/",
+      "title": "Check Point Patches Critical VPN Vulnerabilities",
+      "summary": "Tracked as CVE-2026-85102 and CVE-2026-85103, the flaws could be exploited for remote code execution. The post Check Point Patches Critical VPN Vulnerabilities appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/",
+      "published": "2026-09-11T11:10:02+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-85102",
+        "CVE-2026-85103"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-88013",
@@ -444,96 +460,6 @@
         "CVE-2026-42016",
         "CVE-2026-42018",
         "CVE-2026-82329"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-86082",
-      "title": "n8n: Domain-Restriction Bypass via Unguarded Model-Search Endpoint in OpenAI Chat Model Node",
-      "summary": "## Impact\n\nThe OpenAI Chat Model node checked a custom base URL against the credential's allowed-domains configuration before sending a request, but the model-search dropdown did not. A request setting `options.baseURL` on that path reached an arbitrary host with the credential attached, so the domain restriction an administrator configured did not hold for every route the node offered. The patch routes every OpenAI call site, including model listing, through one shared allowed-domains check.\n\n## Patches\n\nThe issue has been fixed in n8n versions 1.123.76, 2.37.7, and 2.38.2. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\n\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Restrict n8n instance access to fully trusted users only.\n- Audit all domain-restricted `openAiApi` credentials and revoke use-only shares granted to untrusted users.\n- Rotate any `openAiApi` credential secrets that may have been exposed and review downstream OpenAI account activity for unexpected usage.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
-      "link": "https://github.com/advisories/GHSA-34ff-336r-5q23",
-      "published": "2026-09-10T15:12:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-86082"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-87996",
-      "title": "Open WebUI: SSRF into internal services via DNS rebinding in the Playwright web loader",
-      "summary": "## Summary\nWith the Playwright web loader enabled, Open WebUI checks the address behind a user-submitted URL before allowing the request, then handed the request to the browser to perform. The browser resolved the hostname a second time, on its own, and that answer was never checked. An attacker who controls the authoritative DNS for a hostname they submit can answer the first lookup with a public address and the second with an internal one, so the browser connects to an address the check exists to block. The connection-layer pinning that protects the other fetch paths could not apply here, because the request ran inside the browser rather than through our own HTTP clients.\n\n## Preconditions\n- `WEB_LOADER_ENGINE=playwright`. This is not the default, and deployments on the default web loader are unaffected.\n- A reachable Playwright browser, either local or via `PLAYWRIGHT_WS_URL`.\n- Any authenticated user who can submit a URL for ingestion or trigger a web search. No administrator role is required.\n- Control of the authoritative DNS for a hostname the attacker submits, serving a short TTL and alternating answers. No timing race is needed, because the two lookups are separate queries the attacker answers differently.\n- Internal services the browser process can actually reach. A deployment whose browser has no route to internal addresses loses nothing here.\n\n## Impact\nAn authenticated user can make the server read HTTP responses from addresses only it can reach: cloud instance metadata, loopback-bound admin APIs, and internal services on the same network. The response body is fulfilled back into the page, and the loader returns that page as the document, so the content lands in the web-search or ingestion result the user receives. On a cloud host with IMDSv1 reachable, that is enough to take instance IAM credentials.\n\nBecause the intercepted request forwards the original method and headers, a page the attacker controls can also drive requests that need a header or a no",
-      "link": "https://github.com/advisories/GHSA-4v28-j6q3-5m4r",
-      "published": "2026-09-10T15:10:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-87996"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-87997",
-      "title": "Open WebUI: Any authenticated user can inject chats into another user's folder via chat completions",
-      "summary": "## Summary\nThe chat-completions endpoint reads a folder id out of the request body and saves the newly created chat into that folder without checking that the caller is allowed to write there. Any authenticated user who knows a folder's id can put a chat of their own into another user's folder, including a shared folder where they hold read-only access and a folder they have no access to at all. The chat then shows up in that folder for everyone who can read it, under a title and with content the attacker controls. The dedicated chat-creation and chat-move endpoints already enforced this check, the chat-completions path did not.\n\n## Preconditions\n- An authenticated account of any role. No elevated permission, no admin involvement.\n- Folders enabled, which is the default (`ENABLE_FOLDERS=true`, `USER_PERMISSIONS_FEATURES_FOLDERS=true`).\n- The attacker needs the target folder's id. A member of a shared folder gets it from the shared-folder listing. Sharing a folder with named users is available to ordinary users by default; only wildcard public sharing is gated. A folder that was never shared has an id the attacker cannot obtain through any endpoint available to them, so those folders are not practically reachable.\n- Releases before 0.10.0 contain the same missing check but have no read path that lists a folder's chats across owners, so the injected row was never visible to anyone.\n\n## Impact\nThe integrity of folder contents. An attacker who cannot write to a folder can place chats into it, and every member with read access, the owner included, sees the entry with the attacker's display name and a title the attacker can change to arbitrary text at any time. Members can also open the injected chat and read its messages. In a workspace where a shared folder is treated as trusted, that is a usable surface for planting misleading or phishing content under another team's nose.\n\nNothing is disclosed to the attacker and nothing existing is altered. Writing into a folder gran",
-      "link": "https://github.com/advisories/GHSA-3pf7-q2g3-wj28",
-      "published": "2026-09-10T15:10:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-87997"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-87998",
-      "title": "Open WebUI: Non-admin users can delete admin-owned external knowledge connections via knowledge base deletion",
-      "summary": "## Summary\nExternal knowledge connections are created and owned by administrators, and are shared by every external knowledge base bound to them. Deleting an external knowledge base also removed that connection from the instance configuration, with no check on the caller's role and no check for other knowledge bases still using it. Any authenticated user holding a write grant on a single external knowledge base could therefore wipe a shared connection that other knowledge bases depend on, and the dedicated administrator route for deleting a connection explicitly refuses that same operation while the connection is still in use.\n\n## Preconditions\nThe deployment uses external knowledge bases, backed by the qdrant, milvus or pgvector external providers. Instances with only local knowledge bases are not affected.\n\nAn administrator created at least one external connection and at least one external knowledge base bound to it. Both of those actions are admin-only.\n\nThe attacker is an ordinary authenticated user holding a write grant on one of those external knowledge bases. A read grant is not enough, and an unrelated user cannot reach the route at all.\n\nThe damage scales with sharing. It is worst when one connection backs several knowledge bases, because deleting a single knowledge base destroys the connection for all of them.\n\n## Impact\nAn ordinary user removes instance-wide configuration that only administrators can create or manage. Every other external knowledge base bound to the deleted connection keeps its stored connection id and stops working: retrieval against it fails with \"External knowledge connection not found\", so those knowledge bases return nothing in chat until an administrator recreates the connection by hand. The stored credential goes with it, and connection API responses strip credentials, so an administrator who did not keep the key elsewhere cannot restore the connection without obtaining it again.\n\nNothing is disclosed to the attacker and the extern",
-      "link": "https://github.com/advisories/GHSA-2724-6cpj-gf3v",
-      "published": "2026-09-10T15:09:52Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-87998"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-87999",
-      "title": "Open WebUI: Any authenticated user can reach the Azure platform channel via server-side web fetch",
-      "summary": "## Summary\n\nOpen WebUI fetches user-supplied URLs on the server for RAG URL ingestion and web search, and screens the resolved addresses so internal destinations cannot be reached. That screen decided whether a destination was external by asking Python's standard library whether the address is globally routable. Several addresses reserved for internal use answer yes to that question, including 168.63.129.16, the Azure platform channel every Azure virtual machine can reach. Any authenticated user could therefore make the server issue requests to those addresses and read the responses back through the API.\n\n## Preconditions\n\n- The affected paths are the server-side URL fetches: RAG URL ingestion and web search. Both require an authenticated, verified account. No administrator role and no special workspace permission are needed.\n- `ENABLE_LOCAL_WEB_FETCH` must be at its default of `false`. Setting it to `true` disables the address screen by design, and internal destinations are reachable on purpose.\n- `WEB_FETCH_FILTER_LIST` is empty by default in affected versions, so no operator-supplied block entry covered these addresses unless one was added by hand.\n- For the Azure platform channel specifically, the Open WebUI host must run on Azure (virtual machine, AKS, Container Apps or equivalent). That address is reachable from every Azure virtual machine regardless of network security group rules. On a host that is not on Azure the address routes nowhere and nothing is reachable through it.\n\n## Impact\n\nAn authenticated user could direct the server to issue GET requests at addresses reserved for internal use and receive the response body back in the API response, which also lands in the RAG context. On Azure that includes the platform channel, an endpoint the operator never intended to expose to application users. The same gap applied to the IPv4-translated range and to deprecated IPv6 site-local space, which on a host that routes them would reach internal services the same w",
-      "link": "https://github.com/advisories/GHSA-34r3-9m95-vq73",
-      "published": "2026-09-10T15:09:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-87999"
       ],
       "is_zero_day": false,
       "is_high_severity": true
