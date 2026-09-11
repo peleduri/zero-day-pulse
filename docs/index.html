@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-10 20:10 UTC</div>
+            <div class="generated">Updated 2026-09-11 01:47 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-86060" target="_blank" rel="noopener">CVE-2026-86060 — MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-86060</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-10</span>
-  </div>
-  <p class='summary'>Vendor: MikroTik | Product: RouterOS. MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on …</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-67277" target="_blank" rel="noopener">CVE-2026-67277 — MikroTik RouterOS Missing Authentication for Critical Function Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-67277</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-10</span>
-  </div>
-  <p class='summary'>Vendor: MikroTik | Product: RouterOS. MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and …</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -341,21 +309,234 @@
 
 </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/new-shieldcrash-zero-day-exploit-targets-microsoft-defender/" target="_blank" rel="noopener">New ‘ShieldCrash’ Zero-Day Exploit Targets Microsoft Defender</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-10</span>
-  </div>
-  <p class='summary'>The exploit provides full System privileges on Windows machines running the September 2026 patches. The post New ‘ShieldCrash’ Zero-Day Exploit Targets Microsoft Defender appeared first on SecurityWeek .</p>
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-486v-q2wf-fp2r" target="_blank" rel="noopener">rclone: http backend forwards custom/auth headers to a different host on redirect</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88013</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Vulnerability Details
 
-</article>
+**File**: `backend/http/http.go`
+**Lines**: 285 (client construction — no `CheckRedirect`), 505-510 (`addHeaders`, writes configured secret headers onto every request), 533-534 / 700-701 / 782-785 (`f.httpClient.Do(req)` used by List/stat/download)
+
+### Root Cause
+The `http` backend lets a user attach arbitrary secret headers to every request via `--http-headers`/`headers…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f8g7-2xjc-7mfh" target="_blank" rel="noopener">rclone: Directory metadata (chmod/chown/chtimes) applied through a planted symlink in rclone local --links escapes the destination</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88016</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Summary
+With `-l/--links`, rclone&#x27;s local backend recreates a source `.rclonelink` object as a real symlink at the destination **verbatim** (preserved by design for faithful backups). Directory-metadata application, however, does **not** go through the `os.Root` sandbox and does **not** use NOFOLLOW syscalls. A local `Directory` always has `translatedLink=false`, so when the destination path al…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xwwr-4h3p-r22c" target="_blank" rel="noopener">rclone serve s3: --auth-proxy without --auth-key authenticates nobody - full SigV4 signature bypass</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88018</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>### Summary
+`rclone serve s3`&#x27;s handler chain, when `--auth-proxy` is configured, is (outermost first): `authPairMiddleware` -&gt; `proxyAuthMiddleware` -&gt; gofakes3&#x27;s own SigV4-verifying handler.
+
+`authPairMiddleware` parses the accessKeyID straight out of the incoming request&#x27;s own `Authorization` header (entirely client-controlled) and registers `{accessKey: ws.s3Secret}` into gofakes3&#x27;s shared cre…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3g9q-v48f-hh9w" target="_blank" rel="noopener">Open WebUI: Unauthenticated requests can stall the server via uncached OIDC fetches in back-channel logout</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-87011</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Summary
+
+The OIDC back-channel logout endpoint is unauthenticated by design, because the identity provider calls it without a browser session. Before checking whether the submitted logout token was genuine, the handler fetched the provider&#x27;s discovery document and its signing keys over the network, and repeated both fetches on every request because nothing was cached. The signing-key fetch also…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wjwr-xfp9-r66p" target="_blank" rel="noopener">Open WebUI: Admin demoted through SSO role sync keeps read and write access to all users&#x27; notes</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-87014</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Summary
+
+A user who is demoted from admin by an identity provider keeps admin-level read and write access to every user&#x27;s notes, over any Socket.IO connection that was already open when the demotion happened. Open WebUI caches the user&#x27;s role on the socket at connection time, and the two SSO role-sync paths, the reverse-proxy trusted role header and OAuth role mapping, changed the role in the d…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hf57-cqmx-p4gr" target="_blank" rel="noopener"> OmniRoute ACP Custom-Agent Remote Code Execution (RCE)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88062</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## 2. Summary
+
+`POST /api/acp/agents` registers a custom ACP agent. The endpoint accepts user-controlled
+`binary` and `versionCommand` values. After saving the custom agent, the same request calls
+`refreshAgentCache()`, which triggers agent version detection. The version probe eventually runs:
+
+```ts
+execFileSync(probe.command, probe.args, ...)
+```
+
+The only validation is `resolveVersionProbe(bina…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cqr2-h44g-v75v" target="_blank" rel="noopener">n8n: Cross-Tenant Project-Member PII Disclosure via Missing Per-Project Scope Check on Role Assignment Endpoints</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-86085</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Impact
+
+The endpoints `/rest/roles/:slug/assignments` and `/rest/roles/:slug/assignments/:projectId/members` checked only that the caller could manage the role type, not that they could see the project named in the request. A user holding role-management permission could therefore name any project on the instance and read back its members&#x27; names and email addresses. The patch adds a project-acc…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pq6c-vh67-xpm3" target="_blank" rel="noopener">n8n: Log Streaming Event Destinations Decrypt Generic-Auth Credentials Without Ownership Check</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-86993</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Impact
+
+A log streaming event destination may reference a generic HTTP credential, and the destination resolved and decrypted whichever credential it named without checking that the caller had access to it. A user holding a custom global role scoped to Log Streaming operations could therefore name a credential belonging to another project and have its decrypted secret sent to an endpoint they c…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5m98-cgcr-xx3q" target="_blank" rel="noopener">n8n: GitHub Trigger 422 Reuse Path Skips Webhook Secret Storage, Causing Signature Verification to Fail-Open</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-86080</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Impact
+
+The GitHub Trigger generated a signing secret when it registered a webhook and verified `X-Hub-Signature-256` on each delivery. When GitHub answered the create request with a 422 because a webhook for the URL already existed, the node adopted the remote hook but kept only its id and events, discarding the secret it had generated. Deliveries to that workflow&#x27;s webhook URL were then accep…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-65xw-2v52-jhxc" target="_blank" rel="noopener">n8n: Cross-User Active Workflow ID and Lifecycle Event Disclosure via Missing userId Filter</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-86994</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>## Impact
+
+The endpoint `/rest/active-workflows` returned every active workflow ID on the instance to any member, regardless of sharing, and workflow activation, deactivation and publication push events were broadcast to every connected client, carrying workflow IDs, version IDs and activation-error detail across users. The patch scopes both the listing and the push events through the sharing serv…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v3p8-whq6-r5jg" target="_blank" rel="noopener">Angular: SSR XSS via Unescaped &lt;template&gt; Content Across DocumentFragment Boundaries in Fallback Raw-Content Elements</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88060</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>### Summary
+An XSS vulnerability exists in `@angular/platform-server` during server-side rendering (SSR) HTML serialization when traversing ancestor tags across `&lt;template&gt;` element boundaries. When an application renders untrusted user input within raw-text tags (`&lt;xmp&gt;`, `&lt;style&gt;`, `&lt;script&gt;`), comments, or text nodes inside a `&lt;template&gt;` that is nested within a fallback raw-content element (`&lt;…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f6mr-pjwc-34m4" target="_blank" rel="noopener">Angular: SSRF and Cross-Origin Credential Disclosure via URL Resolution Discrepancy in SSR</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88056</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-10</span>
+          </div>
+          <p class='summary'>### Summary
+A discrepancy between WHATWG URL parsing and Angular SSR&#x27;s URL resolution allows attackers to bypass same-origin checks and cause Server-Side Request Forgery (SSRF), potentially leaking sensitive server-side credentials.
+
+### Technical Description
+When applications validate incoming URLs using the WHATWG URL standard (`new URL(input, trustedOrigin)`), Unicode whitespace characters (suc…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
@@ -478,103 +659,6 @@ The vulnerabilities are listed below -
 
 
   CVE-2026-20079 (CVSS score: 10.0) - An authentication</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cp3j-m783-3ph5" target="_blank" rel="noopener">Identrail Cross-tenant IDOR: Client-supplied GitHub App installation_id is bound to the caller&#x27;s workspace without ownership verification</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59185</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-09</span>
-          </div>
-          <p class='summary'>## Summary
-
-identrail&#x27;s GitHub App connection-completion endpoint binds a fully client-supplied `installation_id` to the caller&#x27;s workspace without verifying that the installation belongs to, or was installed by, the workspace that initiated the connect flow. identrail then mints a GitHub App installation access token for the supplied `installation_id` using the app&#x27;s own JWT, so an authenticated …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wcjj-9m6g-2fr2" target="_blank" rel="noopener">functype-mcp-server: MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59176</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-09</span>
-          </div>
-          <p class='summary'>## MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import
-
-### Summary
-
-The `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstrained `version` string, interpolates it directly into an npm package specifier (`functype@&lt;version&gt;`), and installs it via `pnpm add` without any validation. Because npm/pnpm package specifiers support `file:`, `…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2r5q-h53f-9rp3" target="_blank" rel="noopener">@yeger/turbo-graph: Unauthenticated Network-Exposed Task Execution via /api/run</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59160</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-09</span>
-          </div>
-          <p class='summary'>## Unauthenticated Network-Exposed Turborepo Task Execution via /api/run
-
-### Summary
-
-`@yeger/turbo-graph` starts its embedded Next.js server without binding to the loopback interface, causing it to listen on all network interfaces (`0.0.0.0:29312` by default). The `/api/run` HTTP endpoint exposed by this server performs no authentication, authorization, CSRF protection, or task allowlist check b…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fxg7-897c-57mp" target="_blank" rel="noopener">Nuxt Ollama: Public Runtime Config Exposes Ollama API Key to Browser Clients</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59158</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-09</span>
-          </div>
-          <p class='summary'>## Public Runtime Config Exposes Ollama API Key to Browser Clients
-
-### Summary
-
-`nuxt-ollama@1.2.26` unconditionally merges all module options — including `api_key` — into Nuxt&#x27;s **public** runtime config (`runtimeConfig.public.ollama`). Nuxt serializes `runtimeConfig.public` into the SSR HTML response inside a `&lt;script&gt;` payload block (`window.__NUXT__`), making the API key visible in plaintext …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5hx7-j24v-rffj" target="_blank" rel="noopener">GeoNetwork Web Module: Unauthenticaded Server-Side Request Forgery  in SLD Tool</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-55864</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-09</span>
-          </div>
-          <p class='summary'>### Summary
-An unauthenticated server-side request forgery vulnerability lets any anonymous user make the GeoNetwork server issue arbitrary outbound HTTP requests. This gives an external attacker a position inside the server&#x27;s network, making it possible to make internal requests no matter if the response is XML-type or not.
-
-The SLD tooling endpoint `POST /api/tools/ogc/sld` takes a caller-suppli…</p>
 
         </article>
 

@@ -1,48 +1,10 @@
 {
-  "generated": "2026-09-10T20:10:25.539114+00:00",
-  "total": 28,
-  "kev": 2,
-  "zero_day": 13,
+  "generated": "2026-09-11T01:47:13.453347+00:00",
+  "total": 32,
+  "kev": 0,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-86060",
-      "title": "CVE-2026-86060 \u2014 MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
-      "summary": "Vendor: MikroTik | Product: RouterOS. MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-13)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060",
-      "published": "2026-09-10",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-86060"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-67277",
-      "title": "CVE-2026-67277 \u2014 MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
-      "summary": "Vendor: MikroTik | Product: RouterOS. MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-13)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-67277",
-      "published": "2026-09-10",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-67277"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -234,19 +196,220 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/new-shieldcrash-zero-day-exploit-targets-microsoft-defender/",
-      "title": "New \u2018ShieldCrash\u2019 Zero-Day Exploit Targets Microsoft Defender",
-      "summary": "The exploit provides full System privileges on Windows machines running the September 2026 patches. The post New \u2018ShieldCrash\u2019 Zero-Day Exploit Targets Microsoft Defender appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/new-shieldcrash-zero-day-exploit-targets-microsoft-defender/",
-      "published": "2026-09-10T07:09:36+00:00",
-      "source": "SecurityWeek",
+      "id": "CVE-2026-88013",
+      "title": "rclone: http backend forwards custom/auth headers to a different host on redirect",
+      "summary": "## Vulnerability Details\n\n**File**: `backend/http/http.go`\n**Lines**: 285 (client construction \u2014 no `CheckRedirect`), 505-510 (`addHeaders`, writes configured secret headers onto every request), 533-534 / 700-701 / 782-785 (`f.httpClient.Do(req)` used by List/stat/download)\n\n### Root Cause\nThe `http` backend lets a user attach arbitrary secret headers to every request via `--http-headers`/`headers=` (documented for authentication: `'\"Cookie\",\"name=value\",\"Authorization\",\"xxx\"'`). The backend's HTTP client is built with `fshttp.NewClient(ctx)`, which never sets `http.Client.CheckRedirect`, so it falls back to Go's stdlib default redirect policy.\n\nGo's default policy only strips four header names (`Authorization`, `Www-Authenticate`, `Cookie`, `Cookie2`), and only when the redirect target's *host* differs from the original \u2014 every other configured header is copied to the redirect target unconditionally, regardless of host or scheme. Even the four protected names survive a same-host `https://` \u2192 `http://` downgrade, since Go only checks host equality, not scheme.\n\nAny redirect response from the configured remote \u2014 whether from server compromise, an open redirect, a CDN/mirror failover to a different domain, or a malicious server from the start \u2014 causes rclone to resend every configured secret header (and, for a scheme downgrade, `Authorization`/`Cookie` in cleartext) to the new destination.\n\nThis is the exact vulnerability class already fixed for the `s3` backend (`9328763`/`7543a7a`, GHSA-8mxv-9xhp-86h4 and the `webdav` backend (`59b513b`, GHSA-h4mf-4v27-hggj, wiring `rest.RefuseHTTPSDowngradeRedirectFn`). `backend/http` was not touched by either fix.\n\n### Vulnerable Code\n```go\n// backend/http/http.go:285\nclient := fshttp.NewClient(ctx)   // no CheckRedirect set\n...\nf.httpClient = client             // used by readDir / NewObject / Object.Open\n```\n```go\n// backend/http/http.go:505-510\nfunc addHeaders(req *http.Request, opt *Options) {\n\tfor i := 0; i < len(opt.Headers)",
+      "link": "https://github.com/advisories/GHSA-486v-q2wf-fp2r",
+      "published": "2026-09-10T23:02:53Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "research"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-88013"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88016",
+      "title": "rclone: Directory metadata (chmod/chown/chtimes) applied through a planted symlink in rclone local --links escapes the destination",
+      "summary": "## Summary\nWith `-l/--links`, rclone's local backend recreates a source `.rclonelink` object as a real symlink at the destination **verbatim** (preserved by design for faithful backups). Directory-metadata application, however, does **not** go through the `os.Root` sandbox and does **not** use NOFOLLOW syscalls. A local `Directory` always has `translatedLink=false`, so when the destination path already exists as a planted symlink, rclone applies `chmod`/`chown`/`chtimes` **through** that symlink to a target **outside** the destination tree. An attacker who controls the source contents (malicious/compromised remote, shared bucket) obtains attacker-valued `chmod`/`chown`/`chtimes` of an arbitrary path outside the backup destination.\n\n## Root Cause\n- `MkdirMetadata` (`backend/local/local.go:895`) calls `f.lstat` (=`os.Lstat`, local.go:465) on the destination path. On a pre-planted symlink, `os.Lstat` succeeds, so the `errors.Is(err, os.ErrNotExist)` branch (local.go:896) that would create a real directory via the `os.Root`-guarded `f.Mkdir` is **not** taken. Instead a `Directory` is built directly on the symlink path.\n- `writeMetadataToFile` runs raw `os.Chown` (`backend/local/metadata.go:131`) and `os.Chmod` (`metadata.go:158`); `setTimes` runs raw `os.Chtimes` (`backend/local/local.go:1318`).\n- The CVE-2024-52522 NOFOLLOW fix (`os.Lchown`/`lChmod`/`lChtimes`) is gated on `if o.translatedLink` (metadata.go:128/150, local.go:1315). A `Directory` (`newDirectory`\u2192`newObject` with no `.rclonelink` suffix) is never `translatedLink`, so it always takes the raw *following* branch. The CVE-2026-54572 `os.Root` fix covers only content **writes**, not metadata syscalls.\n\n## Impact\nAttacker-controlled `chmod`/`chown`/`chtimes` (values taken from the source directory's mode/uid/gid/mtime) applied to any file or directory **outside** the destination. `chtimes` (mtime) escape works with just `--links` and default flags; `chmod`/`chown` escape additionally needs `--metadata`. When r",
+      "link": "https://github.com/advisories/GHSA-f8g7-2xjc-7mfh",
+      "published": "2026-09-10T22:51:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88016"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88018",
+      "title": "rclone serve s3: --auth-proxy without --auth-key authenticates nobody - full SigV4 signature bypass",
+      "summary": "### Summary\n`rclone serve s3`'s handler chain, when `--auth-proxy` is configured, is (outermost first): `authPairMiddleware` -> `proxyAuthMiddleware` -> gofakes3's own SigV4-verifying handler.\n\n`authPairMiddleware` parses the accessKeyID straight out of the incoming request's own `Authorization` header (entirely client-controlled) and registers `{accessKey: ws.s3Secret}` into gofakes3's shared credential store via `AddAuthKeys`, for EVERY access key any client presents - not just ones previously known to the server. `ws.s3Secret` defaults to `\"\"` whenever `--auth-key` is not set, which the `--auth-proxy` documentation (and the reference `bin/test_proxy.py`) presents as a complete, standalone authentication mechanism requiring no other flag - matching how it's used for `serve webdav`/`ftp`/`sftp`.\n\ngofakes3's SigV4 verification then checks the request's signature against exactly the secret `authPairMiddleware` just registered for that same client-chosen key. An empty string is a valid HMAC key, so a caller can trivially compute a correct SigV4 signature for ANY access key ID of their choosing using an empty secret, and verification passes.\n\nCrucially, the auth-proxy script never receives a real secret to verify against, for S3 specifically: `Server.auth()` calls `w.proxy.Call(md5(accessKeyID), accessKeyID, false, r.RemoteAddr)` - passing the access key ID itself as BOTH the hashed \"user\" and the raw \"auth\"/password fields. Contrast with `serve webdav`/`ftp`/`sftp`, whose proxy integration passes the client's actual typed password (see `bin/test_proxy.py`, which forwards it into a backing SFTP login for real verification). For S3, no independent secret is ever transmitted to the proxy script at all, so no script - however carefully written - can distinguish a legitimate holder of an access key ID from an attacker who merely picked the same string.\n\nNet effect: with `--auth-proxy` configured and `--auth-key` not also set (the configuration the feature is documented to ",
+      "link": "https://github.com/advisories/GHSA-xwwr-4h3p-r22c",
+      "published": "2026-09-10T22:49:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88018"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-87011",
+      "title": "Open WebUI: Unauthenticated requests can stall the server via uncached OIDC fetches in back-channel logout",
+      "summary": "## Summary\n\nThe OIDC back-channel logout endpoint is unauthenticated by design, because the identity provider calls it without a browser session. Before checking whether the submitted logout token was genuine, the handler fetched the provider's discovery document and its signing keys over the network, and repeated both fetches on every request because nothing was cached. The signing-key fetch also ran as a blocking call inside the async event loop. A small number of requests carrying a worthless token was therefore enough to make the whole instance stop answering.\n\n## Preconditions\n\n- `ENABLE_OAUTH_BACKCHANNEL_LOGOUT=true`. The default is `False`, so a stock deployment is not affected. This setting is recommended in the Open WebUI hardening documentation, which is why the issue is treated as in scope.\n- At least one OIDC provider configured (`OAUTH_CLIENT_ID`, `OAUTH_CLIENT_SECRET`, `OPENID_PROVIDER_URL`).\n- No account, credential, session or secret identifier is required. The attacker needs network access to the instance and the configured issuer string, which is published in the provider's own discovery document.\n\n## Impact\n\nAgainst 0.11.0, with the identity provider answering in 150 ms, 60 concurrent requests carrying a token whose signature was four characters long stalled the async event loop for 8.3 seconds, measured against an idle baseline of 10.8 ms. For the length of that stall the process answers nothing: no chat requests, no API calls, no health check. Open WebUI runs a single worker by default, so the effect is instance-wide rather than per-connection, and no rate limit sits in front of the endpoint.\n\nThe same traffic is also amplified outward: 20 sequential requests produced 20 discovery fetches and 40 key-set fetches at the identity provider, so an attacker can drive load onto the provider through the instance.\n\nNo data is read, modified or exposed, and the forged token is still rejected. The cost is paid before the rejection.\n\n## Fix\n\nFixed in 0.11.1",
+      "link": "https://github.com/advisories/GHSA-3g9q-v48f-hh9w",
+      "published": "2026-09-10T22:44:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-87011"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-87014",
+      "title": "Open WebUI: Admin demoted through SSO role sync keeps read and write access to all users' notes",
+      "summary": "## Summary\n\nA user who is demoted from admin by an identity provider keeps admin-level read and write access to every user's notes, over any Socket.IO connection that was already open when the demotion happened. Open WebUI caches the user's role on the socket at connection time, and the two SSO role-sync paths, the reverse-proxy trusted role header and OAuth role mapping, changed the role in the database without tearing that cached session down. Only the admin user-management endpoints invalidated sessions, so a demotion driven by the identity provider left the old privileges live on the socket.\n\n## Preconditions\n\nA role-sync SSO mode has to be enabled. Either trusted-header authentication with `WEBUI_AUTH_TRUSTED_ROLE_HEADER` set, which is unset by default, or OAuth with role mapping enabled, which is off by default. Deployments that change roles only through the admin panel are not affected, because that path already invalidated the user's sockets.\n\nThe account has to be an admin at the moment it opens a Socket.IO connection, has to keep that connection open across the demotion, and has to be demoted through the SSO path rather than through the admin panel. Signing out, reloading the page, or any network interruption ends the exposure, because the reconnect reads a fresh role from the database.\n\n## Impact\n\nUntil the socket closes, the demoted account can open and edit any user's note through the collaborative-notes socket handlers, which grant admins access to every note. That is read and write access to other users' private notes, held by someone the operator has already removed from the admin role.\n\nThe rest of the product is not affected. Every HTTP endpoint reads the role fresh from the database on each request, so the demoted account has no admin access to the REST API, no user management, no settings and no model or connection configuration. The exposure ends the moment the connection drops, and the account controls that only by keeping the browser tab open.",
+      "link": "https://github.com/advisories/GHSA-wjwr-xfp9-r66p",
+      "published": "2026-09-10T22:41:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-87014"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88062",
+      "title": " OmniRoute ACP Custom-Agent Remote Code Execution (RCE)",
+      "summary": "## 2. Summary\n\n`POST /api/acp/agents` registers a custom ACP agent. The endpoint accepts user-controlled\n`binary` and `versionCommand` values. After saving the custom agent, the same request calls\n`refreshAgentCache()`, which triggers agent version detection. The version probe eventually runs:\n\n```ts\nexecFileSync(probe.command, probe.args, ...)\n```\n\nThe only validation is `resolveVersionProbe(binary, versionCommand, true)`, which checks that the\nfirst token of `versionCommand` matches the request-provided `binary`. Because `binary` is also\nattacker-controlled, an attacker can submit:\n\n```json\n{\n  \"binary\": \"node\",\n  \"versionCommand\": \"node -e \\\"...arbitrary JavaScript...\\\"\"\n}\n```\n\nThis executes arbitrary Node.js code inside the server container, and that code can execute OS\ncommands via `child_process.execSync()`.\n\nWhen `requireLogin=false`, `isAuthenticated()` treats anonymous requests as authenticated. At the\nsame time, `/api/acp/` is not included in `LOCAL_ONLY_API_PREFIXES` or `SPAWN_CAPABLE_PREFIXES`, so\nthe endpoint is not blocked by the LOCAL_ONLY policy before reaching the anonymous allow branch.\nAs a result, a remote anonymous attacker can execute commands inside the OmniRoute container with a\nsingle HTTP request.\n\n## 3. Preconditions\n\nThe unauthenticated exploit is reachable in either of the following scenarios:\n\n1. The target instance has `requireLogin=false`. This is the primary scenario covered by this\n   report and by the reproduction steps below.\n2. A fresh instance has no management password configured yet. During this bootstrap window,\n   `/api/settings/require-login` allows unauthenticated setup writes, so an attacker can first set\n   `requireLogin=false` and then call the vulnerable endpoint.\n\nIf the instance is in the default `requireLogin=true` state and already has a management password,\nexploitation requires a valid management session or management-scoped API key. In that case, the\nbug is authenticated RCE rather than the unauthenticated scena",
+      "link": "https://github.com/advisories/GHSA-hf57-cqmx-p4gr",
+      "published": "2026-09-10T21:22:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88062"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-86085",
+      "title": "n8n: Cross-Tenant Project-Member PII Disclosure via Missing Per-Project Scope Check on Role Assignment Endpoints",
+      "summary": "## Impact\n\nThe endpoints `/rest/roles/:slug/assignments` and `/rest/roles/:slug/assignments/:projectId/members` checked only that the caller could manage the role type, not that they could see the project named in the request. A user holding role-management permission could therefore name any project on the instance and read back its members' names and email addresses. The patch adds a project-access check to both routes, hiding projects the caller cannot see and returning not-found for a project it cannot list.\n\n## Patches\n\nThe issue has been fixed in n8n versions 2.38.2 and 2.37.7. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\n\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Restrict n8n instance access to fully trusted users only.\n- Audit and revoke any custom global roles that carry the `role:manageProject` scope, limiting that scope to fully trusted users only.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-cqr2-h44g-v75v",
+      "published": "2026-09-10T21:13:24Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-86085"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-86993",
+      "title": "n8n: Log Streaming Event Destinations Decrypt Generic-Auth Credentials Without Ownership Check",
+      "summary": "## Impact\n\nA log streaming event destination may reference a generic HTTP credential, and the destination resolved and decrypted whichever credential it named without checking that the caller had access to it. A user holding a custom global role scoped to Log Streaming operations could therefore name a credential belonging to another project and have its decrypted secret sent to an endpoint they controlled. The patch applies the standard credential access check when a destination resolves its credential.\n\n## Patches\n\nThe issue has been fixed in n8n versions 1.123.76, 2.37.7, and 2.38.2. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\n\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Restrict n8n instance access to fully trusted users only.\n- Audit and revoke any custom global roles that carry Log Streaming scopes (`eventBusDestination:create`, `eventBusDestination:test`, etc.), limiting those scopes to fully trusted users only.\n- Review existing Log Streaming event destinations for unexpected webhook URLs and remove any that are not recognized, then rotate any credentials that may have been referenced.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-pq6c-vh67-xpm3",
+      "published": "2026-09-10T21:07:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-86993"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-86080",
+      "title": "n8n: GitHub Trigger 422 Reuse Path Skips Webhook Secret Storage, Causing Signature Verification to Fail-Open",
+      "summary": "## Impact\n\nThe GitHub Trigger generated a signing secret when it registered a webhook and verified `X-Hub-Signature-256` on each delivery. When GitHub answered the create request with a 422 because a webhook for the URL already existed, the node adopted the remote hook but kept only its id and events, discarding the secret it had generated. Deliveries to that workflow's webhook URL were then accepted from anyone. The patch re-fetches the existing hook by its stored id, re-applies the signing secret, and makes verification fail closed when no secret is stored.\n\n## Patches\n\nThe issue has been fixed in n8n versions 1.123.76, 2.37.7, and 2.38.2. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\n\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Deactivate and reactivate any GitHub Trigger workflows to force a fresh webhook registration with a new secret, provided the remote GitHub hook has been deleted first so that the 422 reuse path is not taken again.\n- Restrict network access to the n8n webhook endpoint to GitHub's published IP ranges only.\n- Audit GitHub Trigger workflow static data for entries that contain a `webhookId` but no `webhookSecret`, and treat those workflows as unprotected until reactivated successfully.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-5m98-cgcr-xx3q",
+      "published": "2026-09-10T21:06:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-86080"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-86994",
+      "title": "n8n: Cross-User Active Workflow ID and Lifecycle Event Disclosure via Missing userId Filter",
+      "summary": "## Impact\n\nThe endpoint `/rest/active-workflows` returned every active workflow ID on the instance to any member, regardless of sharing, and workflow activation, deactivation and publication push events were broadcast to every connected client, carrying workflow IDs, version IDs and activation-error detail across users. The patch scopes both the listing and the push events through the sharing service, so a user only sees workflows they can access.\n\n## Patches\n\nThe issue has been fixed in n8n versions 1.123.76, 2.37.7, and 2.38.2. Users should upgrade to one of these versions or later to remediate the vulnerability.\n\n## Workarounds\n\nIf upgrading is not immediately possible, administrators should consider the following temporary mitigations:\n- Restrict n8n instance access to fully trusted users only.\n- Avoid provisioning `global:member` accounts for untrusted users until the instance is patched.\n\nThese workarounds do not fully remediate the risk and should only be used as short-term mitigation measures.",
+      "link": "https://github.com/advisories/GHSA-65xw-2v52-jhxc",
+      "published": "2026-09-10T21:01:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-86994"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88060",
+      "title": "Angular: SSR XSS via Unescaped <template> Content Across DocumentFragment Boundaries in Fallback Raw-Content Elements",
+      "summary": "### Summary\nAn XSS vulnerability exists in `@angular/platform-server` during server-side rendering (SSR) HTML serialization when traversing ancestor tags across `<template>` element boundaries. When an application renders untrusted user input within raw-text tags (`<xmp>`, `<style>`, `<script>`), comments, or text nodes inside a `<template>` that is nested within a fallback raw-content element (`<noscript>`, `<iframe>`, `<noembed>`, `<noframes>`), matching closing tags (e.g., `</noscript>`) are not escaped during HTML serialization. When rendered in a browser, this unescaped closing tag prematurely terminates the fallback container and executes trailing markup as active DOM elements.\n\n### Technical Description\nIn HTML5 parsing, fallback raw-content elements (`<noscript>`, `<iframe>`, `<noembed>`, `<noframes>`) place the browser's tokenizer into `RAWTEXT` mode. In this mode, inner content is parsed as literal text until an end tag matching the container tag name (e.g., `</noscript>`) is encountered.\n\nTo prevent XSS breakout vectors during SSR serialization, the DOM serializer inspects a node's ancestors to escape any matching fallback closing tags (`</tag` -> `&lt;/tag`). However:\n1. Per DOM specifications, the children of a `<template>` element reside in a separate `DocumentFragment` (`template.content`), whose own `parentNode` is `null`.\n2. The serializer's ancestor traversal previously only inspected element nodes. When traversing upward from a node inside `template.content`, traversal terminated immediately at the `DocumentFragment` boundary.\n3. Because traversal stopped before reaching the outer document tree, enclosing fallback raw-content ancestors (such as `<noscript>` or `<iframe>`) were not discovered. As a result, closing sequences like `</noscript>` within `<template>` content were emitted unescaped.\n\n### Impact & Reachability\n* **Framework Guarantee Bypass**: Angular guarantees that standard text interpolation (`{{ userInput }}` bound as element text con",
+      "link": "https://github.com/advisories/GHSA-v3p8-whq6-r5jg",
+      "published": "2026-09-10T20:25:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88060"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88056",
+      "title": "Angular: SSRF and Cross-Origin Credential Disclosure via URL Resolution Discrepancy in SSR",
+      "summary": "### Summary\nA discrepancy between WHATWG URL parsing and Angular SSR's URL resolution allows attackers to bypass same-origin checks and cause Server-Side Request Forgery (SSRF), potentially leaking sensitive server-side credentials.\n\n### Technical Description\nWhen applications validate incoming URLs using the WHATWG URL standard (`new URL(input, trustedOrigin)`), Unicode whitespace characters (such as NO-BREAK SPACE `U+00A0` or ZERO WIDTH NO-BREAK SPACE `U+FEFF`) are not stripped and are evaluated as part of a same-origin relative path (e.g. `http://trusted-origin/%C2%A0//attacker.example/collect`). Consequently, these URLs successfully pass application-level same-origin checks.\n\nHowever, `@angular/platform-server`'s URL resolution utility (`resolveUrl` / `parseUrl`) previously executed `String.prototype.trim()`. Because JavaScript's `String.prototype.trim()` strips all Unicode whitespace (including `U+00A0`), the leading non-breaking space was removed, converting the string into a cross-origin protocol-relative URL (`//attacker.example/collect`). When resolved during server-side rendering (such as in `relativeUrlsTransformerInterceptorFn`), this caused the HTTP request to be dispatched to the attacker-controlled origin (`http://attacker.example/collect`), leaking any credentials (such as `Authorization` headers) attached by the application for the intended same-origin request.\n\n### Impact & Reachability\n* **Reachability**: The vulnerability affects Angular Server-Side Rendering (SSR) applications where user-controlled input influences resource or request URLs processed by Angular's `HttpClient`, an application-level same-origin check is performed before dispatching, and sensitive server-side credentials (such as API keys or Bearer tokens) are attached to approved requests.\n* **Impact**: Successful exploitation allows attackers to bypass same-origin validation, triggering Server-Side Request Forgery (SSRF) and leaking sensitive server-side credentials attached to th",
+      "link": "https://github.com/advisories/GHSA-f6mr-pjwc-34m4",
+      "published": "2026-09-10T20:19:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88056"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201",
@@ -371,96 +534,6 @@
       ],
       "cve_ids": [
         "CVE-2026-20079"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59185",
-      "title": "Identrail Cross-tenant IDOR: Client-supplied GitHub App installation_id is bound to the caller's workspace without ownership verification",
-      "summary": "## Summary\n\nidentrail's GitHub App connection-completion endpoint binds a fully client-supplied `installation_id` to the caller's workspace without verifying that the installation belongs to, or was installed by, the workspace that initiated the connect flow. identrail then mints a GitHub App installation access token for the supplied `installation_id` using the app's own JWT, so an authenticated tenant can link any other identrail customer's GitHub App installation into their own workspace and read that victim organization's private repositories.\n\n## Affected code (default-on path, no feature flag)\n\n- Route: `internal/api/router.go:3590` \u2014 `POST /v1/workspaces/:workspace_id/projects/:project_id/github/connect/complete`. `installation_id` is read from the JSON body or the attacker-controlled `X-GitHub-Installation-ID` header (`router.go:3582-3588`).\n- Service: `internal/api/github_connect.go:781` `CompleteGitHubConnection`. The `state` token IS rigorously bound to the caller's scope (`github_connect.go:818`: `if stateRecord.TenantID != scope.TenantID || stateRecord.WorkspaceID != project.WorkspaceID || stateRecord.ProjectID != project.ProjectID { ... }`), but the only check on `installation_id` is `request.InstallationID <= 0` (`:794`). The raw client value is persisted as the workspace's connection (`:840`).\n- Cross-tenant read primitive: `internal/connectors/github/repositories.go:39` `ListInstallationRepositories` \u2192 `internal/connectors/github/app.go:170` mints a token via `POST /app/installations/{installationId}/access_tokens` signed with the App JWT, succeeding for any installation where identrail's app is installed.\n\nThe feature-flagged V2 path `CompleteGitHubConnector` (`github_connect.go:447`, default off) shares the gap and is additionally weaker (matches pending connector by `state` value alone with no caller-scope re-check); a single fix should cover both.\n\n## Intent proof\n\nThe code binds `state` to `{TenantID, WorkspaceID, ProjectID}` and re-verifies it",
-      "link": "https://github.com/advisories/GHSA-cp3j-m783-3ph5",
-      "published": "2026-09-09T23:52:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59185"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59176",
-      "title": "functype-mcp-server: MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import",
-      "summary": "## MCP `set_functype_version` Package Alias RCE via Unsanitized pnpm install + Dynamic Import\n\n### Summary\n\nThe `set_functype_version` MCP tool in `functype-mcp-server` accepts an unconstrained `version` string, interpolates it directly into an npm package specifier (`functype@<version>`), and installs it via `pnpm add` without any validation. Because npm/pnpm package specifiers support `file:`, `npm:`, and other alias syntaxes, an attacker who can send an MCP `tools/call` request to this tool can cause the server to install an arbitrary local or remote package as `functype`. Immediately after installation, the server calls `initDocsData(true)`, which dynamically imports `functype/cli` from the newly installed location, executing attacker-controlled JavaScript in the MCP server process. This results in full Remote Code Execution (RCE) with the privileges of the server process \u2014 full confidentiality, integrity, and availability impact (CVSS 7.8 High).\n\n### Details\n\nThe vulnerable code is in `packages/mcp-server/src/index.ts`. The `set_functype_version` tool is registered at line 115 and is enabled by default (no authentication required in stdio mode).\n\n**Source (user input accepted without validation):**\n```ts\n// packages/mcp-server/src/index.ts:119-121\nparameters: z.object({\n  version: z.string().describe('The functype version to install (e.g., \"0.46.0\", \"latest\", \"^0.45.0\")'),\n}),\n```\nOnly `z.string()` validation is applied \u2014 no semver format check, no allowlist for dist-tags, and no rejection of `file:`, `npm:`, URL, or path alias syntaxes.\n\n**Sink 1 \u2014 arbitrary package installation:**\n```ts\n// packages/mcp-server/src/index.ts:122-125\nexecute: async (args) => {\n  const spec = `functype@${args.version}`\n  try {\n    execFileSync(\"pnpm\", [\"add\", spec], { cwd: PROJECT_ROOT, stdio: \"pipe\", timeout: 60_000 })\n```\n`args.version` is interpolated into the package specifier string and passed directly to `pnpm add`. Supplying `file:/path/to/evil` causes pnpm to install an at",
-      "link": "https://github.com/advisories/GHSA-wcjj-9m6g-2fr2",
-      "published": "2026-09-09T23:49:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59176"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59160",
-      "title": "@yeger/turbo-graph: Unauthenticated Network-Exposed Task Execution via /api/run",
-      "summary": "## Unauthenticated Network-Exposed Turborepo Task Execution via /api/run\n\n### Summary\n\n`@yeger/turbo-graph` starts its embedded Next.js server without binding to the loopback interface, causing it to listen on all network interfaces (`0.0.0.0:29312` by default). The `/api/run` HTTP endpoint exposed by this server performs no authentication, authorization, CSRF protection, or task allowlist check before executing attacker-supplied Turborepo task names via `spawn()`. Any adjacent-network attacker can send an unauthenticated GET request to trigger arbitrary tasks defined in the victim's repository, resulting in code execution, file modification, destructive build side effects, or deployment of attacker-chosen targets with the privileges of the developer's OS user.\n\n### Details\n\nTwo independent flaws combine to create a remotely exploitable unauthenticated code execution vulnerability:\n\n**Flaw 1 \u2014 Server bound to all interfaces (not loopback)**\n\n`packages/turbo-graph/src/index.ts:44` calls `.listen(options.port, callback)` without passing a hostname argument. Although `const hostname = 'localhost'` is declared at line 19, it is used only for constructing the console log URL and is never passed to `listen()`. Node.js therefore defaults to binding on `0.0.0.0` (all IPv4 interfaces) and `::` (all IPv6 interfaces), making the server reachable from the local network segment.\n\n```ts\n// packages/turbo-graph/src/index.ts\n19    const hostname = 'localhost'  // used only for console URL, not for listen()\n...\n44        .listen(options.port, () => {   // hostname argument missing \u2192 0.0.0.0 bind\n45          const url = `http://${hostname}:${options.port}`\n```\n\n**Flaw 2 \u2014 Unauthenticated `/api/run` task execution endpoint**\n\n`packages/turbo-graph-ui/app/api/run/route.ts:156\u2013177` defines `GET()`, which reads `tasks`, `filter`, and `force` from the request query string and passes them directly to `buildResponseFromArgs`, which appends them to a Turbo CLI argument array and calls `spawn",
-      "link": "https://github.com/advisories/GHSA-2r5q-h53f-9rp3",
-      "published": "2026-09-09T23:47:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59160"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59158",
-      "title": "Nuxt Ollama: Public Runtime Config Exposes Ollama API Key to Browser Clients",
-      "summary": "## Public Runtime Config Exposes Ollama API Key to Browser Clients\n\n### Summary\n\n`nuxt-ollama@1.2.26` unconditionally merges all module options \u2014 including `api_key` \u2014 into Nuxt's **public** runtime config (`runtimeConfig.public.ollama`). Nuxt serializes `runtimeConfig.public` into the SSR HTML response inside a `<script>` payload block (`window.__NUXT__`), making the API key visible in plaintext to any unauthenticated HTTP client that fetches the page. An attacker with no credentials can steal the Ollama cloud API key with a single HTTP GET request, then use it to make arbitrary requests to the Ollama API at the operator's expense.\n\n### Details\n\nThe vulnerability is a design flaw in `src/module.ts`. During Nuxt module setup, the entire `_options` object \u2014 which contains `api_key` when configured for cloud Ollama as documented in `README.md:71-80` \u2014 is merged into the **public** runtime config namespace:\n\n```ts\n// src/module.ts:35-36\nconst currentConfig = (runtimeConfig.public.ollama ?? {}) as OllamaOptions\nruntimeConfig.public.ollama = defu(currentConfig, _options)\n```\n\nNuxt's SSR pipeline serializes `runtimeConfig.public` and embeds it in every server-rendered HTML page for client-side hydration. This results in the `api_key` appearing verbatim in the `window.__NUXT__` script block:\n\n```html\n<script>\nwindow.__NUXT__={};\nwindow.__NUXT__.config={\n  public:{\n    ollama:{\n      protocol:\"https\",\n      host:\"api.ollama.com\",\n      port:\"\",\n      proxy:false,\n      api_key:\"LEAKED_TEST_KEY_123\"  // \u2190 secret exposed to browser\n    }\n  }\n}\n</script>\n```\n\nThe browser-side composable (`src/runtime/composables/useOllama.ts`) then reads this value and sends it as an `Authorization: Bearer` header in client-side Ollama API calls:\n\n```ts\n// src/runtime/composables/useOllama.ts:6-10\nconst options: ModuleOptions = useRuntimeConfig().public.ollama as ModuleOptions\nif (options.api_key) {\n  headers.Authorization = `Bearer ${options.api_key}`\n}\nreturn new Ollama({ host, proxy: option",
-      "link": "https://github.com/advisories/GHSA-fxg7-897c-57mp",
-      "published": "2026-09-09T23:47:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59158"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55864",
-      "title": "GeoNetwork Web Module: Unauthenticaded Server-Side Request Forgery  in SLD Tool",
-      "summary": "### Summary\nAn unauthenticated server-side request forgery vulnerability lets any anonymous user make the GeoNetwork server issue arbitrary outbound HTTP requests. This gives an external attacker a position inside the server's network, making it possible to make internal requests no matter if the response is XML-type or not.\n\nThe SLD tooling endpoint `POST /api/tools/ogc/sld` takes a caller-supplied **WMS server URL** and performs a **server-side HTTP GET** to it, with no validation. The fetched body can also be stored and downloaded if the output of the outbound request is in XML format, making the SSRF non-blind.\n\n### Impact\nAny unauthenticated user can make the server send arbitrary HTTP requests to internal hosts it would never expose publicly, and read the responses back if the request responses are XML. This enables internal data disclosure, for example, configuration files that return as XML, authorization bypass, and reconnaissance of the internal network all from an anonymous position.\n\n### Resolution \n\nPatched releases:\n\n* 4.4.12\n* 4.2.17\n\n### Resources\n\n* https://github.com/geonetwork/core-geonetwork/pull/9343",
-      "link": "https://github.com/advisories/GHSA-5hx7-j24v-rffj",
-      "published": "2026-09-09T23:43:51Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55864"
       ],
       "is_zero_day": false,
       "is_high_severity": true
