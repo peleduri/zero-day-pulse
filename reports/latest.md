@@ -1,10 +1,46 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-11 15:23 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-11 20:09 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 4 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-42016 — JFrog Artifactory Incorrect Authorization Vulnerability
+
+**CVE:** `CVE-2026-42016` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-11
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-42016>
+
+> Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-84869 — ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability
+
+**CVE:** `CVE-2026-84869` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-11
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-84869>
+
+> Vendor: ConnectWise | Product: ScreenConnect. ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’…
+
+---
+
+## 3. 🔴 CISA KEV — CVE-2026-42018 — JFrog Artifactory Improper Authentication Vulnerability
+
+**CVE:** `CVE-2026-42018` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-11
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-42018>
+
+> Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Securit…
+
+---
+
+## 4. 🔴 CISA KEV — CVE-2026-85706 — GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability
+
+**CVE:** `CVE-2026-85706` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-11
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-85706>
+
+> Vendor: GitLab | Product: Community Edition and Enterprise Edition. GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API. Required action: Apply mitigations in accordance with vendor instructions, ens…
+
+---
+
+## 5. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +49,14 @@
 
 ---
 
-## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 6. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Claude Used to Automate Exploitation and Data Theft Across Multiple Victims
+## 7. 🟠 Zero-Day — Claude Used to Automate Exploitation and Data Theft Across Multiple Victims
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://thehackernews.com/2026/09/claude-used-to-automate-exploitation.html>
@@ -31,7 +67,7 @@ The threat actors, which the artificial intelligence (AI) company has branded Ge
 
 ---
 
-## 4. 🟠 Zero-Day — PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws
+## 8. 🟠 Zero-Day — PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://thehackernews.com/2026/09/papercut-replaces-emergency-patches.html>
@@ -44,7 +80,7 @@ The software development company said PaperCut NG/MF versions 26.0.5, 25.0.13 an
 
 ---
 
-## 5. 🟠 Zero-Day — Cisco FMC Flaws Exploited to Steal Credentials and Deploy Qilin Ransomware
+## 9. 🟠 Zero-Day — Cisco FMC Flaws Exploited to Steal Credentials and Deploy Qilin Ransomware
 
 **CVE:** `CVE-2026-20079` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://thehackernews.com/2026/09/cisco-fmc-flaws-exploited-to-steal.html>
@@ -55,16 +91,7 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
 
 ---
 
-## 6. 🟠 Zero-Day — Cisco FMC flaws exploited by ransomware gang, state-sponsored hackers
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/>
-
-> Cisco Talos says two recently patched Secure Firewall Management Center (FMC) vulnerabilities have been exploited by three separate threat clusters linked to ransomware and state-sponsored attacks. [...]
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -73,7 +100,7 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -82,7 +109,7 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -91,7 +118,7 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -100,7 +127,7 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -109,7 +136,7 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 15. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -118,7 +145,7 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Sponsored Hackers Use Claude to Rebuild Malware After Detection
+## 16. 🟠 Zero-Day — Russian State-Sponsored Hackers Use Claude to Rebuild Malware After Detection
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://thehackernews.com/2026/09/russian-state-sponsored-hackers-use.html>
@@ -129,7 +156,18 @@ The operation has been attributed to a cyber espionage group it calls GTG-20006 
 
 ---
 
-## 14. 🟡 High Severity — Check Point Patches Critical VPN Vulnerabilities
+## 17. 🟡 High Severity — GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure
+
+**CVE:** `CVE-2026-85706` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
+**Reference:** <https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html>
+
+> GitLab has released patches to address multiple flaws, including a maximum-severity security vulnerability that has witnessed in-the-wild probes within hours of public disclosure.
+
+The vulnerability in question is CVE-2026-85706 (CVSS score: 10.0), a path traversal issue in the repository commits API that could allow an unauthenticated user to read arbitrary files from the GitLab server under
+
+---
+
+## 18. 🟡 High Severity — Check Point Patches Critical VPN Vulnerabilities
 
 **CVE:** `CVE-2026-85102` | `CVE-2026-85103` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/>
@@ -138,7 +176,7 @@ The operation has been attributed to a cyber espionage group it calls GTG-20006 
 
 ---
 
-## 15. 🟡 High Severity — rclone: http backend forwards custom/auth headers to a different host on redirect
+## 19. 🟡 High Severity — rclone: http backend forwards custom/auth headers to a different host on redirect
 
 **CVE:** `CVE-2026-88013` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-486v-q2wf-fp2r>
@@ -153,7 +191,7 @@ The `http` backend lets a user attach arbitrary secret headers to every request 
 
 ---
 
-## 16. 🟡 High Severity — rclone: Directory metadata (chmod/chown/chtimes) applied through a planted symlink in rclone local --links escapes the destination
+## 20. 🟡 High Severity — rclone: Directory metadata (chmod/chown/chtimes) applied through a planted symlink in rclone local --links escapes the destination
 
 **CVE:** `CVE-2026-88016` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-f8g7-2xjc-7mfh>
@@ -163,7 +201,7 @@ With `-l/--links`, rclone&#x27;s local backend recreates a source `.rclonelink` 
 
 ---
 
-## 17. 🟡 High Severity — rclone serve s3: --auth-proxy without --auth-key authenticates nobody - full SigV4 signature bypass
+## 21. 🟡 High Severity — rclone serve s3: --auth-proxy without --auth-key authenticates nobody - full SigV4 signature bypass
 
 **CVE:** `CVE-2026-88018` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-xwwr-4h3p-r22c>
@@ -175,7 +213,7 @@ With `-l/--links`, rclone&#x27;s local backend recreates a source `.rclonelink` 
 
 ---
 
-## 18. 🟡 High Severity — Open WebUI: Unauthenticated requests can stall the server via uncached OIDC fetches in back-channel logout
+## 22. 🟡 High Severity — Open WebUI: Unauthenticated requests can stall the server via uncached OIDC fetches in back-channel logout
 
 **CVE:** `CVE-2026-87011` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-3g9q-v48f-hh9w>
@@ -186,7 +224,7 @@ The OIDC back-channel logout endpoint is unauthenticated by design, because the 
 
 ---
 
-## 19. 🟡 High Severity — Open WebUI: Admin demoted through SSO role sync keeps read and write access to all users' notes
+## 23. 🟡 High Severity — Open WebUI: Admin demoted through SSO role sync keeps read and write access to all users' notes
 
 **CVE:** `CVE-2026-87014` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-wjwr-xfp9-r66p>
@@ -197,7 +235,7 @@ A user who is demoted from admin by an identity provider keeps admin-level read 
 
 ---
 
-## 20. 🟡 High Severity —  OmniRoute ACP Custom-Agent Remote Code Execution (RCE)
+## 24. 🟡 High Severity —  OmniRoute ACP Custom-Agent Remote Code Execution (RCE)
 
 **CVE:** `CVE-2026-88062` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-hf57-cqmx-p4gr>
@@ -216,7 +254,7 @@ The only validation is `resolveVersionProbe(bina…
 
 ---
 
-## 21. 🟡 High Severity — n8n: Cross-Tenant Project-Member PII Disclosure via Missing Per-Project Scope Check on Role Assignment Endpoints
+## 25. 🟡 High Severity — n8n: Cross-Tenant Project-Member PII Disclosure via Missing Per-Project Scope Check on Role Assignment Endpoints
 
 **CVE:** `CVE-2026-86085` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-cqr2-h44g-v75v>
@@ -227,7 +265,7 @@ The endpoints `/rest/roles/:slug/assignments` and `/rest/roles/:slug/assignments
 
 ---
 
-## 22. 🟡 High Severity — n8n: Log Streaming Event Destinations Decrypt Generic-Auth Credentials Without Ownership Check
+## 26. 🟡 High Severity — n8n: Log Streaming Event Destinations Decrypt Generic-Auth Credentials Without Ownership Check
 
 **CVE:** `CVE-2026-86993` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-pq6c-vh67-xpm3>
@@ -238,7 +276,7 @@ A log streaming event destination may reference a generic HTTP credential, and t
 
 ---
 
-## 23. 🟡 High Severity — n8n: GitHub Trigger 422 Reuse Path Skips Webhook Secret Storage, Causing Signature Verification to Fail-Open
+## 27. 🟡 High Severity — n8n: GitHub Trigger 422 Reuse Path Skips Webhook Secret Storage, Causing Signature Verification to Fail-Open
 
 **CVE:** `CVE-2026-86080` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-5m98-cgcr-xx3q>
@@ -249,7 +287,7 @@ The GitHub Trigger generated a signing secret when it registered a webhook and v
 
 ---
 
-## 24. 🟡 High Severity — n8n: Cross-User Active Workflow ID and Lifecycle Event Disclosure via Missing userId Filter
+## 28. 🟡 High Severity — n8n: Cross-User Active Workflow ID and Lifecycle Event Disclosure via Missing userId Filter
 
 **CVE:** `CVE-2026-86994` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-65xw-2v52-jhxc>
@@ -260,7 +298,7 @@ The endpoint `/rest/active-workflows` returned every active workflow ID on the i
 
 ---
 
-## 25. 🟡 High Severity — Angular: SSR XSS via Unescaped <template> Content Across DocumentFragment Boundaries in Fallback Raw-Content Elements
+## 29. 🟡 High Severity — Angular: SSR XSS via Unescaped <template> Content Across DocumentFragment Boundaries in Fallback Raw-Content Elements
 
 **CVE:** `CVE-2026-88060` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-v3p8-whq6-r5jg>
@@ -270,7 +308,7 @@ An XSS vulnerability exists in `@angular/platform-server` during server-side ren
 
 ---
 
-## 26. 🟡 High Severity — Angular: SSRF and Cross-Origin Credential Disclosure via URL Resolution Discrepancy in SSR
+## 30. 🟡 High Severity — Angular: SSRF and Cross-Origin Credential Disclosure via URL Resolution Discrepancy in SSR
 
 **CVE:** `CVE-2026-88056` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-f6mr-pjwc-34m4>
@@ -283,16 +321,7 @@ When applications validate incoming URLs using the WHATWG URL standard (`new URL
 
 ---
 
-## 27. 🟡 High Severity — Artifactory Under Attack: In-the-Wild Exploitation of CVE-2026-42016, CVE-2026-42018 & CVE-2026-82329
-
-**CVE:** `CVE-2026-42016` | `CVE-2026-42018` | `CVE-2026-82329` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-09-10
-**Reference:** <https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201>
-
-> Wiz Research has identified active, in-the-wild exploitation of three critical and high-severity vulnerabilities impacting JFrog Artifactory (CVE-2026-42016, CVE-2026-42018 &amp; CVE-2026-82329). Attackers are chaining these vulnerabilities to bypass authentication and gain administrative control.
-
----
-
-## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

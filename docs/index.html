@@ -109,15 +109,79 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">4</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">31</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-11 15:23 UTC</div>
+            <div class="generated">Updated 2026-09-11 20:09 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42016" target="_blank" rel="noopener">CVE-2026-42016 — JFrog Artifactory Incorrect Authorization Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-42016</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-11</span>
+  </div>
+  <p class='summary'>Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-84869" target="_blank" rel="noopener">CVE-2026-84869 — ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-84869</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-11</span>
+  </div>
+  <p class='summary'>Vendor: ConnectWise | Product: ScreenConnect. ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42018" target="_blank" rel="noopener">CVE-2026-42018 — JFrog Artifactory Improper Authentication Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-42018</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-11</span>
+  </div>
+  <p class='summary'>Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Securit…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-85706" target="_blank" rel="noopener">CVE-2026-85706 — GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-85706</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-11</span>
+  </div>
+  <p class='summary'>Vendor: GitLab | Product: Community Edition and Enterprise Edition. GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API. Required action: Apply mitigations in accordance with vendor instructions, ens…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -204,22 +268,6 @@ The software development company said PaperCut NG/MF versions 26.0.5, 25.0.13 an
 The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass vulnerability in the web interface of FMC software that could allow an unauthenticated, remote attacker to bypass</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/" target="_blank" rel="noopener">Cisco FMC flaws exploited by ransomware gang, state-sponsored hackers</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-10</span>
-  </div>
-  <p class='summary'>Cisco Talos says two recently patched Secure Firewall Management Center (FMC) vulnerabilities have been exploited by three separate threat clusters linked to ransomware and state-sponsored attacks. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -332,6 +380,24 @@ The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass
           <p class='summary'>Anthropic on Thursday revealed it disrupted a campaign mounted by a Russian state-sponsored threat actor that abused Claude for developing an AI-assisted workflow to get ahead of the detection curve.
 
 The operation has been attributed to a cyber espionage group it calls GTG-20006 (where &quot;GTG&quot; stands for Generative Threat Group), which aligns with broader reporting linking the cluster to Midnight</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html" target="_blank" rel="noopener">GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-85706</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-11</span>
+          </div>
+          <p class='summary'>GitLab has released patches to address multiple flaws, including a maximum-severity security vulnerability that has witnessed in-the-wild probes within hours of public disclosure.
+
+The vulnerability in question is CVE-2026-85706 (CVSS score: 10.0), a path traversal issue in the repository commits API that could allow an unauthenticated user to read arbitrary files from the GitLab server under</p>
 
         </article>
 
@@ -579,22 +645,6 @@ A discrepancy between WHATWG URL parsing and Angular SSR&#x27;s URL resolution a
 When applications validate incoming URLs using the WHATWG URL standard (`new URL(input, trustedOrigin)`), Unicode whitespace characters (suc…</p>
 
         </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201" target="_blank" rel="noopener">Artifactory Under Attack: In-the-Wild Exploitation of CVE-2026-42016, CVE-2026-42018 &amp; CVE-2026-82329</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-42016</code> <code class="cve">CVE-2026-42018</code> <code class="cve">CVE-2026-82329</code>
-    <span class="meta-sep">·</span>
-    <span>Wiz Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-10</span>
-  </div>
-  <p class='summary'>Wiz Research has identified active, in-the-wild exploitation of three critical and high-severity vulnerabilities impacting JFrog Artifactory (CVE-2026-42016, CVE-2026-42018 &amp; CVE-2026-82329). Attackers are chaining these vulnerabilities to bypass authentication and gain administrative control.</p>
-
-</article>
 
 <article class="card card-high">
   <div class="card-top">

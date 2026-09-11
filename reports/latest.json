@@ -1,10 +1,86 @@
 {
-  "generated": "2026-09-11T15:23:39.285811+00:00",
-  "total": 28,
-  "kev": 0,
-  "zero_day": 13,
+  "generated": "2026-09-11T20:09:14.145373+00:00",
+  "total": 31,
+  "kev": 4,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-42016",
+      "title": "CVE-2026-42016 \u2014 JFrog Artifactory Incorrect Authorization Vulnerability",
+      "summary": "Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token\u2019s scope. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-25)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42016",
+      "published": "2026-09-11",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-42016"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84869",
+      "title": "CVE-2026-84869 \u2014 ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
+      "summary": "Vendor: ConnectWise | Product: ScreenConnect. ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-14)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-84869",
+      "published": "2026-09-11",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-84869"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-42018",
+      "title": "CVE-2026-42018 \u2014 JFrog Artifactory Improper Authentication Vulnerability",
+      "summary": "Vendor: JFrog | Product: Artifactory. JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-25)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42018",
+      "published": "2026-09-11",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-42018"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-85706",
+      "title": "CVE-2026-85706 \u2014 GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+      "summary": "Vendor: GitLab | Product: Community Edition and Enterprise Edition. GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-14)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85706",
+      "published": "2026-09-11",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-85706"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -80,21 +156,6 @@
       "cve_ids": [
         "CVE-2026-20079"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/",
-      "title": "Cisco FMC flaws exploited by ransomware gang, state-sponsored hackers",
-      "summary": "Cisco Talos says two recently patched Secure Firewall Management Center (FMC) vulnerabilities have been exploited by three separate threat clusters linked to ransomware and state-sponsored attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/",
-      "published": "2026-09-10T15:43:58+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -209,6 +270,23 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html",
+      "title": "GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure",
+      "summary": "GitLab has released patches to address multiple flaws, including a maximum-severity security vulnerability that has witnessed in-the-wild probes within hours of public disclosure.\n\nThe vulnerability in question is CVE-2026-85706 (CVSS score: 10.0), a path traversal issue in the repository commits API that could allow an unauthenticated user to read arbitrary files from the GitLab server under",
+      "link": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html",
+      "published": "2026-09-11T16:30:18+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-85706"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/",
@@ -440,26 +518,6 @@
       ],
       "cve_ids": [
         "CVE-2026-88056"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201",
-      "title": "Artifactory Under Attack: In-the-Wild Exploitation of CVE-2026-42016, CVE-2026-42018 & CVE-2026-82329",
-      "summary": "Wiz Research has identified active, in-the-wild exploitation of three critical and high-severity vulnerabilities impacting JFrog Artifactory (CVE-2026-42016, CVE-2026-42018 & CVE-2026-82329). Attackers are chaining these vulnerabilities to bypass authentication and gain administrative control.",
-      "link": "https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201",
-      "published": "2026-09-10T19:04:00+00:00",
-      "source": "Wiz Research",
-      "tags": [
-        "cloud",
-        "research",
-        "misconfig"
-      ],
-      "cve_ids": [
-        "CVE-2026-42016",
-        "CVE-2026-42018",
-        "CVE-2026-82329"
       ],
       "is_zero_day": false,
       "is_high_severity": true
