@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-11 01:47 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-11 10:07 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,31 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Cisco FMC flaws exploited by ransomware gang, state-sponsored hackers
+## 3. 🟠 Zero-Day — PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
+**Reference:** <https://thehackernews.com/2026/09/papercut-replaces-emergency-patches.html>
+
+> PaperCut on Thursday released a new security maintenance release that replaces all previously published emergency patches that were pushed to address two security flaws that have come under active exploitation.
+
+The software development company said PaperCut NG/MF versions 26.0.5, 25.0.13 and 24.1.10 are now available for customers to download.
+
+&quot;These are Regular Maintenance Releases (MR) th…
+
+---
+
+## 4. 🟠 Zero-Day — Cisco FMC Flaws Exploited to Steal Credentials and Deploy Qilin Ransomware
+
+**CVE:** `CVE-2026-20079` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
+**Reference:** <https://thehackernews.com/2026/09/cisco-fmc-flaws-exploited-to-steal.html>
+
+> Cisco has revealed that three distinct threat clusters linked to ransomware and state-sponsored attacks have been exploiting two recently patched Secure Firewall Management Center (FMC) vulnerabilities.
+
+The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass vulnerability in the web interface of FMC software that could allow an unauthenticated, remote attacker to bypass
+
+---
+
+## 5. 🟠 Zero-Day — Cisco FMC flaws exploited by ransomware gang, state-sponsored hackers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/>
@@ -29,7 +53,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws
+## 6. 🟠 Zero-Day — New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/new-bluemoon-kit-exploited-windows-and-chrome-zero-day-flaws/>
@@ -38,7 +62,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Critical NetScaler Vulnerability Exploited in Attacks
+## 7. 🟠 Zero-Day — Critical NetScaler Vulnerability Exploited in Attacks
 
 **CVE:** `CVE-2026-19490` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.securityweek.com/critical-netscaler-vulnerability-exploited-in-attacks/>
@@ -47,16 +71,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — CISA: WatchGuard RCE flaw now exploited in ransomware attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-10
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-watchguard-rce-flaw-now-exploited-in-ransomware-attacks/>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has confirmed that ransomware gangs are also exploiting a critical WatchGuard Firebox firewall vulnerability, which it flagged as actively exploited in December. [...]
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -65,7 +80,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -74,7 +89,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -83,7 +98,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -92,7 +107,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -101,7 +116,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -110,7 +125,7 @@
 
 ---
 
-## 13. 🟡 High Severity — rclone: http backend forwards custom/auth headers to a different host on redirect
+## 14. 🟡 High Severity — rclone: http backend forwards custom/auth headers to a different host on redirect
 
 **CVE:** `CVE-2026-88013` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-486v-q2wf-fp2r>
@@ -125,7 +140,7 @@ The `http` backend lets a user attach arbitrary secret headers to every request 
 
 ---
 
-## 14. 🟡 High Severity — rclone: Directory metadata (chmod/chown/chtimes) applied through a planted symlink in rclone local --links escapes the destination
+## 15. 🟡 High Severity — rclone: Directory metadata (chmod/chown/chtimes) applied through a planted symlink in rclone local --links escapes the destination
 
 **CVE:** `CVE-2026-88016` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-f8g7-2xjc-7mfh>
@@ -135,7 +150,7 @@ With `-l/--links`, rclone&#x27;s local backend recreates a source `.rclonelink` 
 
 ---
 
-## 15. 🟡 High Severity — rclone serve s3: --auth-proxy without --auth-key authenticates nobody - full SigV4 signature bypass
+## 16. 🟡 High Severity — rclone serve s3: --auth-proxy without --auth-key authenticates nobody - full SigV4 signature bypass
 
 **CVE:** `CVE-2026-88018` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-xwwr-4h3p-r22c>
@@ -147,7 +162,7 @@ With `-l/--links`, rclone&#x27;s local backend recreates a source `.rclonelink` 
 
 ---
 
-## 16. 🟡 High Severity — Open WebUI: Unauthenticated requests can stall the server via uncached OIDC fetches in back-channel logout
+## 17. 🟡 High Severity — Open WebUI: Unauthenticated requests can stall the server via uncached OIDC fetches in back-channel logout
 
 **CVE:** `CVE-2026-87011` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-3g9q-v48f-hh9w>
@@ -158,7 +173,7 @@ The OIDC back-channel logout endpoint is unauthenticated by design, because the 
 
 ---
 
-## 17. 🟡 High Severity — Open WebUI: Admin demoted through SSO role sync keeps read and write access to all users' notes
+## 18. 🟡 High Severity — Open WebUI: Admin demoted through SSO role sync keeps read and write access to all users' notes
 
 **CVE:** `CVE-2026-87014` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-wjwr-xfp9-r66p>
@@ -169,7 +184,7 @@ A user who is demoted from admin by an identity provider keeps admin-level read 
 
 ---
 
-## 18. 🟡 High Severity —  OmniRoute ACP Custom-Agent Remote Code Execution (RCE)
+## 19. 🟡 High Severity —  OmniRoute ACP Custom-Agent Remote Code Execution (RCE)
 
 **CVE:** `CVE-2026-88062` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-hf57-cqmx-p4gr>
@@ -188,7 +203,7 @@ The only validation is `resolveVersionProbe(bina…
 
 ---
 
-## 19. 🟡 High Severity — n8n: Cross-Tenant Project-Member PII Disclosure via Missing Per-Project Scope Check on Role Assignment Endpoints
+## 20. 🟡 High Severity — n8n: Cross-Tenant Project-Member PII Disclosure via Missing Per-Project Scope Check on Role Assignment Endpoints
 
 **CVE:** `CVE-2026-86085` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-cqr2-h44g-v75v>
@@ -199,7 +214,7 @@ The endpoints `/rest/roles/:slug/assignments` and `/rest/roles/:slug/assignments
 
 ---
 
-## 20. 🟡 High Severity — n8n: Log Streaming Event Destinations Decrypt Generic-Auth Credentials Without Ownership Check
+## 21. 🟡 High Severity — n8n: Log Streaming Event Destinations Decrypt Generic-Auth Credentials Without Ownership Check
 
 **CVE:** `CVE-2026-86993` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-pq6c-vh67-xpm3>
@@ -210,7 +225,7 @@ A log streaming event destination may reference a generic HTTP credential, and t
 
 ---
 
-## 21. 🟡 High Severity — n8n: GitHub Trigger 422 Reuse Path Skips Webhook Secret Storage, Causing Signature Verification to Fail-Open
+## 22. 🟡 High Severity — n8n: GitHub Trigger 422 Reuse Path Skips Webhook Secret Storage, Causing Signature Verification to Fail-Open
 
 **CVE:** `CVE-2026-86080` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-5m98-cgcr-xx3q>
@@ -221,7 +236,7 @@ The GitHub Trigger generated a signing secret when it registered a webhook and v
 
 ---
 
-## 22. 🟡 High Severity — n8n: Cross-User Active Workflow ID and Lifecycle Event Disclosure via Missing userId Filter
+## 23. 🟡 High Severity — n8n: Cross-User Active Workflow ID and Lifecycle Event Disclosure via Missing userId Filter
 
 **CVE:** `CVE-2026-86994` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-65xw-2v52-jhxc>
@@ -232,7 +247,7 @@ The endpoint `/rest/active-workflows` returned every active workflow ID on the i
 
 ---
 
-## 23. 🟡 High Severity — Angular: SSR XSS via Unescaped <template> Content Across DocumentFragment Boundaries in Fallback Raw-Content Elements
+## 24. 🟡 High Severity — Angular: SSR XSS via Unescaped <template> Content Across DocumentFragment Boundaries in Fallback Raw-Content Elements
 
 **CVE:** `CVE-2026-88060` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-v3p8-whq6-r5jg>
@@ -242,7 +257,7 @@ An XSS vulnerability exists in `@angular/platform-server` during server-side ren
 
 ---
 
-## 24. 🟡 High Severity — Angular: SSRF and Cross-Origin Credential Disclosure via URL Resolution Discrepancy in SSR
+## 25. 🟡 High Severity — Angular: SSRF and Cross-Origin Credential Disclosure via URL Resolution Discrepancy in SSR
 
 **CVE:** `CVE-2026-88056` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-f6mr-pjwc-34m4>
@@ -255,7 +270,7 @@ When applications validate incoming URLs using the WHATWG URL standard (`new URL
 
 ---
 
-## 25. 🟡 High Severity — Artifactory Under Attack: In-the-Wild Exploitation of CVE-2026-42016, CVE-2026-42018 & CVE-2026-82329
+## 26. 🟡 High Severity — Artifactory Under Attack: In-the-Wild Exploitation of CVE-2026-42016, CVE-2026-42018 & CVE-2026-82329
 
 **CVE:** `CVE-2026-42016` | `CVE-2026-42018` | `CVE-2026-82329` &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201>
@@ -264,7 +279,7 @@ When applications validate incoming URLs using the WHATWG URL standard (`new URL
 
 ---
 
-## 26. 🟡 High Severity — n8n: Domain-Restriction Bypass via Unguarded Model-Search Endpoint in OpenAI Chat Model Node
+## 27. 🟡 High Severity — n8n: Domain-Restriction Bypass via Unguarded Model-Search Endpoint in OpenAI Chat Model Node
 
 **CVE:** `CVE-2026-86082` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-34ff-336r-5q23>
@@ -275,7 +290,7 @@ The OpenAI Chat Model node checked a custom base URL against the credential&#x27
 
 ---
 
-## 27. 🟡 High Severity — Open WebUI: SSRF into internal services via DNS rebinding in the Playwright web loader
+## 28. 🟡 High Severity — Open WebUI: SSRF into internal services via DNS rebinding in the Playwright web loader
 
 **CVE:** `CVE-2026-87996` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-4v28-j6q3-5m4r>
@@ -285,7 +300,7 @@ With the Playwright web loader enabled, Open WebUI checks the address behind a u
 
 ---
 
-## 28. 🟡 High Severity — Open WebUI: Any authenticated user can inject chats into another user's folder via chat completions
+## 29. 🟡 High Severity — Open WebUI: Any authenticated user can inject chats into another user's folder via chat completions
 
 **CVE:** `CVE-2026-87997` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-3pf7-q2g3-wj28>
@@ -295,7 +310,7 @@ The chat-completions endpoint reads a folder id out of the request body and save
 
 ---
 
-## 29. 🟡 High Severity — Open WebUI: Non-admin users can delete admin-owned external knowledge connections via knowledge base deletion
+## 30. 🟡 High Severity — Open WebUI: Non-admin users can delete admin-owned external knowledge connections via knowledge base deletion
 
 **CVE:** `CVE-2026-87998` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-2724-6cpj-gf3v>
@@ -305,7 +320,7 @@ External knowledge connections are created and owned by administrators, and are 
 
 ---
 
-## 30. 🟡 High Severity — Open WebUI: Any authenticated user can reach the Azure platform channel via server-side web fetch
+## 31. 🟡 High Severity — Open WebUI: Any authenticated user can reach the Azure platform channel via server-side web fetch
 
 **CVE:** `CVE-2026-87999` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-10
 **Reference:** <https://github.com/advisories/GHSA-34r3-9m95-vq73>
@@ -313,20 +328,6 @@ External knowledge connections are created and owned by administrators, and are 
 > ## Summary
 
 Open WebUI fetches user-supplied URLs on the server for RAG URL ingestion and web search, and screens the resolved addresses so internal destinations cannot be reached. That screen decided whether a destination was external by asking Python&#x27;s standard library whether the address is globally routable. Several addresses reserved for internal use answer yes to that question, includin…
-
----
-
-## 31. 🟡 High Severity — CISA Flags Exploited Cisco, Citrix, Fortinet Flaws, Sets Sept. 12 Federal Patch Deadline
-
-**CVE:** `CVE-2026-20079` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-10
-**Reference:** <https://thehackernews.com/2026/09/cisa-flags-exploited-cisco-citrix.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added three flaws, each impacting Cisco, Citrix, and Fortinet, to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the patches by September 12, 2026.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2026-20079 (CVSS score: 10.0) - An authentication
 
 ---
 
