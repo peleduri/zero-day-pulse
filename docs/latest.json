@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-12T09:42:32.192374+00:00",
-  "total": 24,
+  "generated": "2026-09-12T14:31:37.770298+00:00",
+  "total": 23,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -46,21 +46,6 @@
       "tags": [
         "news",
         "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/claude-used-to-automate-exploitation.html",
-      "title": "Claude Used to Automate Exploitation and Data Theft Across Multiple Victims",
-      "summary": "Anthropic has warned that cybercriminals and state-sponsored hackers alike are using its Claude models for cyber attacks, weapons design, propaganda, and mass surveillance between December 2025 and August 2026.\n\nThe threat actors, which the artificial intelligence (AI) company has branded Generative Threat Groups (GTGs), span state-sponsored groups, financially motivated criminals, commercial",
-      "link": "https://thehackernews.com/2026/09/claude-used-to-automate-exploitation.html",
-      "published": "2026-09-11T14:29:47+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -164,19 +149,37 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/09/russian-state-sponsored-hackers-use.html",
-      "title": "Russian State-Sponsored Hackers Use Claude to Rebuild Malware After Detection",
-      "summary": "Anthropic on Thursday revealed it disrupted a campaign mounted by a Russian state-sponsored threat actor that abused Claude for developing an AI-assisted workflow to get ahead of the detection curve.\n\nThe operation has been attributed to a cyber espionage group it calls GTG-20006 (where \"GTG\" stands for Generative Threat Group), which aligns with broader reporting linking the cluster to Midnight",
-      "link": "https://thehackernews.com/2026/09/russian-state-sponsored-hackers-use.html",
-      "published": "2026-09-11T14:10:20+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/",
+      "title": "BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days",
+      "summary": "Multiple espionage-motivated threat actors have adopted BlueMoon in opportunistic, rushed deployments. The post BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/",
+      "published": "2026-09-12T11:10:00+00:00",
+      "source": "SecurityWeek",
       "tags": [
         "news",
-        "zeroday"
+        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/",
+      "title": "Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent",
+      "summary": "The Dutch Nationaal Cyber Security Centrum (NCSC) is warning of imminent exploitation of two critical flaws in Check Point VPN tracked as CVE-2026-85102 and CVE-2026-85103. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/",
+      "published": "2026-09-12T14:14:32+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-85102",
+        "CVE-2026-85103"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-59148",
@@ -371,24 +374,6 @@
       ],
       "cve_ids": [
         "CVE-2026-85706"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/",
-      "title": "Check Point Patches Critical VPN Vulnerabilities",
-      "summary": "Tracked as CVE-2026-85102 and CVE-2026-85103, the flaws could be exploited for remote code execution. The post Check Point Patches Critical VPN Vulnerabilities appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/",
-      "published": "2026-09-11T11:10:02+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-85102",
-        "CVE-2026-85103"
       ],
       "is_zero_day": false,
       "is_high_severity": true
