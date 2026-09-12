@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-12 14:31 UTC &nbsp;|&nbsp; **Total:** 23 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-12 19:47 UTC &nbsp;|&nbsp; **Total:** 23 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,21 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Hackers abused Claude to extract secrets from 1.8M Android apps
+## 3. 🟠 Zero-Day — CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV
+
+**CVE:** `CVE-2026-42016` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-12
+**Reference:** <https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added five security flaws impacting JFrog Artifactory, ConnectWise ScreenConnect, and MikroTik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild.
+
+Details of the vulnerabilities are as follows -
+
+
+  CVE-2026-42016 (CVSS score: 8.1) - An incorrect authorization
+
+---
+
+## 4. 🟠 Zero-Day — Hackers abused Claude to extract secrets from 1.8M Android apps
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-abused-claude-to-extract-secrets-from-18m-android-apps/>
@@ -29,7 +43,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -38,7 +52,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -47,7 +61,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -56,7 +70,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -65,7 +79,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -74,7 +88,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -83,7 +97,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days
+## 11. 🟠 Zero-Day — BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-12
 **Reference:** <https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/>
@@ -92,7 +106,7 @@
 
 ---
 
-## 11. 🟡 High Severity — Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent
+## 12. 🟡 High Severity — Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent
 
 **CVE:** `CVE-2026-85102` | `CVE-2026-85103` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-12
 **Reference:** <https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/>
@@ -101,7 +115,7 @@
 
 ---
 
-## 12. 🟡 High Severity — @Mockoon/commons-server: Unauthenticated admin API + wildcard CORS allows mock-state hijack and secret theft
+## 13. 🟡 High Severity — @Mockoon/commons-server: Unauthenticated admin API + wildcard CORS allows mock-state hijack and secret theft
 
 **CVE:** `CVE-2026-59148` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-rqx4-3f6q-3x2v>
@@ -112,7 +126,7 @@ Mockoon&#x27;s admin API ([`commons-server/src/libs/server/admin-api.ts`](https:
 
 ---
 
-## 13. 🟡 High Severity — FrontMCP and mcp-from-openapi have bypass of OpenAPI external $ref SSRF fix
+## 14. 🟡 High Severity — FrontMCP and mcp-from-openapi have bypass of OpenAPI external $ref SSRF fix
 
 **CVE:** `CVE-2026-59973` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-65h7-9wrw-629c>
@@ -125,7 +139,7 @@ FrontMCP latest release v1.2.1 and current main st…
 
 ---
 
-## 14. 🟡 High Severity — Prowler: SAML Domain Claiming Enables Cross-Tenant Account Takeover
+## 15. 🟡 High Severity — Prowler: SAML Domain Claiming Enables Cross-Tenant Account Takeover
 
 **CVE:** `CVE-2026-59151` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-h8m9-jgf8-vwvp>
@@ -138,7 +152,7 @@ Prowler&#x27;s SAML authentication flow trusted the email domain asserted in a S
 
 ---
 
-## 15. 🟡 High Severity — ZITADEL: Missing Token Expiration (`exp`) Validation in JWT IdP Provider
+## 16. 🟡 High Severity — ZITADEL: Missing Token Expiration (`exp`) Validation in JWT IdP Provider
 
 **CVE:** `CVE-2026-56665` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-v77h-2w3m-94hx>
@@ -152,7 +166,7 @@ Per the OIDC Core 1.0 specification, identity token validat…
 
 ---
 
-## 16. 🟡 High Severity — Shopper: privilege escalation via improper Livewire admin component authorization
+## 17. 🟡 High Severity — Shopper: privilege escalation via improper Livewire admin component authorization
 
 **CVE:** `CVE-2026-56828` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-j328-xmgp-j4q3>
@@ -163,7 +177,7 @@ Three Livewire admin components in `shopper/framework` (latest master at commit 
 
 ---
 
-## 17. 🟡 High Severity — Shopping privilege escalation through missing authorization in Settings components
+## 18. 🟡 High Severity — Shopping privilege escalation through missing authorization in Settings components
 
 **CVE:** `CVE-2026-56826` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-f7h9-qv4x-9x57>
@@ -174,7 +188,7 @@ Four Livewire components in the Settings area expose destructive Filament action
 
 ---
 
-## 18. 🟡 High Severity — Shopper: Authorization bypass in Filament bulk actions allows browse-only staff to mass-delete attributes/tags and mass-toggle visibility of brands/categories/suppliers
+## 19. 🟡 High Severity — Shopper: Authorization bypass in Filament bulk actions allows browse-only staff to mass-delete attributes/tags and mass-toggle visibility of brands/categories/suppliers
 
 **CVE:** `CVE-2026-56827` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-243p-f3cv-c5wh>
@@ -185,7 +199,7 @@ Five Filament `groupedBulkActions` blocks across the Shopper admin Livewire page
 
 ---
 
-## 19. 🟡 High Severity — Central Dogma: SSH host-key verification permanently disabled in Git mirror (SshGitMirror)
+## 20. 🟡 High Severity — Central Dogma: SSH host-key verification permanently disabled in Git mirror (SshGitMirror)
 
 **CVE:** `CVE-2026-11745` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-vjfw-cpmh-xwv3>
@@ -196,7 +210,7 @@ Central Dogma&#x27;s Git mirror SSH client installs an Apache MINA SSHD `ServerK
 
 ---
 
-## 20. 🟡 High Severity — Central Dogma: Hard-coded ZooKeeper replication secret 'ch4n63m3' with silent fallback enables cluster takeover
+## 21. 🟡 High Severity — Central Dogma: Hard-coded ZooKeeper replication secret 'ch4n63m3' with silent fallback enables cluster takeover
 
 **CVE:** `CVE-2026-11746` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-2j95-gqxf-v3vg>
@@ -207,7 +221,7 @@ Central Dogma&#x27;s Git mirror SSH client installs an Apache MINA SSHD `ServerK
 
 ---
 
-## 21. 🟡 High Severity — MySQL MCP Server: Missing Origin/Host Validation in SSE Transport Enables Unauthenticated SQL Execution (DNS Rebinding / Direct Exposure)
+## 22. 🟡 High Severity — MySQL MCP Server: Missing Origin/Host Validation in SSE Transport Enables Unauthenticated SQL Execution (DNS Rebinding / Direct Exposure)
 
 **CVE:** `CVE-2026-59971` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-11
 **Reference:** <https://github.com/advisories/GHSA-rqfv-2mw9-78g2>
@@ -217,17 +231,6 @@ Central Dogma&#x27;s Git mirror SSH client installs an Apache MINA SSHD `ServerK
 In SSE/HTTP transport mode, `mysql_mcp_server` constructs `SseServerTransport` without passing `security_settings`. As a result, the MCP Python SDK&#x27;s DNS-rebinding protection (Origin/Host header validation) is disabled; the Starlette application has no CORS or TrustedHost middleware; and the service binds to `0.0.0.0` by default with no authentication on any route.
 
 **Trigger cond…
-
----
-
-## 22. 🟡 High Severity — GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure
-
-**CVE:** `CVE-2026-85706` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-11
-**Reference:** <https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html>
-
-> GitLab has released patches to address multiple flaws, including a maximum-severity security vulnerability that has witnessed in-the-wild probes within hours of public disclosure.
-
-The vulnerability in question is CVE-2026-85706 (CVSS score: 10.0), a path traversal issue in the repository commits API that could allow an unauthenticated user to read arbitrary files from the GitLab server under
 
 ---
 
