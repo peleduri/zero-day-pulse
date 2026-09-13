@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-12T19:47:20.705670+00:00",
-  "total": 23,
+  "generated": "2026-09-13T01:44:21.535708+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -50,21 +50,6 @@
       "cve_ids": [
         "CVE-2026-42016"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-abused-claude-to-extract-secrets-from-18m-android-apps/",
-      "title": "Hackers abused Claude to extract secrets from 1.8M Android apps",
-      "summary": "Anthropic says multiple threat groups, including the financially motivated and state-sponsored espionage groups linked to Russia and China, tried to abuse its Claude AI model for malicious purposes. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-abused-claude-to-extract-secrets-from-18m-android-apps/",
-      "published": "2026-09-11T20:19:09+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -194,186 +179,6 @@
       "cve_ids": [
         "CVE-2026-85102",
         "CVE-2026-85103"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59148",
-      "title": "@Mockoon/commons-server: Unauthenticated admin API + wildcard CORS allows mock-state hijack and secret theft",
-      "summary": "## Summary\n\nMockoon's admin API ([`commons-server/src/libs/server/admin-api.ts`](https://github.com/mockoon/mockoon/blob/4375a8f/packages/commons-server/src/libs/server/admin-api.ts)) is mounted on the same Express listener as the user-defined mock routes, **enabled by default** in every shipped runtime (commons-server, CLI, serverless), serves **`Access-Control-Allow-Origin: *` on every endpoint with all HTTP methods allowed including PUT/POST/PATCH/DELETE/PURGE and `Content-Type` in `Access-Control-Allow-Headers`**, and has **zero authentication of any kind** (no token, no shared secret, no `MOCKOON_ADMIN_TOKEN` env var \u2014 searched the repo, returns zero hits).\n\nAny unauthenticated caller who can reach the mock server's port (default `0.0.0.0:3000`) can:\n\n- Read every `MOCKOON_*` env var used by the operator as secret material in templates (`getEnvVar` helper).\n- **Write arbitrary process env vars (no prefix check on the WRITE path)** \u2014 poison operator's `MOCKOON_API_KEY`, `MOCKOON_JWT_SECRET`, \u2026, or write process-level vars like `AWS_SECRET_ACCESS_KEY` that the surrounding runtime consumes.\n- **Rewrite every mock route's body / status / headers in-runtime** via `PUT /mockoon-admin/environment` \u2014 downstream consumers (frontend dev-server, CI test suite, integration partner) receive attacker-controlled responses and headers including `Set-Cookie`, `Location`, `Content-Security-Policy`, etc.\n- Read transaction logs / SSE stream (consumer's request bodies + auth headers in clear).\n- Read/write global template vars; purge state / data buckets / logs.\n\nBecause of the wildcard CORS reply, the attack **also lands cross-origin from a browser**: a developer who runs `mockoon-cli start ...` locally and visits a malicious website gets their mock state hijacked.\n\n---\n\n## Details\n\n### Root cause\n\n`packages/commons-server/src/libs/server/server.ts:127`:\n\n```ts\nprivate options: ServerOptions = {\n  ...,\n  enableAdminApi: true,        // \u2190 default on\n};\n```\n\n`packages/cli/src/comma",
-      "link": "https://github.com/advisories/GHSA-rqx4-3f6q-3x2v",
-      "published": "2026-09-11T22:04:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59148"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59973",
-      "title": "FrontMCP and mcp-from-openapi have bypass of OpenAPI external $ref SSRF fix",
-      "summary": "## Summary\n\nThe published fix for GHSA-v6ph-xcq9-qxxj / CVE-2026-39885 added a direct hostname denylist for OpenAPI external `$ref` dereferencing, but the latest patched dependency `mcp-from-openapi` 2.3.0 still makes backend-origin requests to loopback when the target is reached through hostname resolution, redirects, or IPv4-mapped IPv6 syntax.\n\nFrontMCP latest release v1.2.1 and current main still call `OpenAPIToolGenerator.fromURL()` and `OpenAPIToolGenerator.fromJSON()` from `mcp-from-openapi` 2.3.0 when loading OpenAPI adapters. An attacker who can cause a hosted or multi-user FrontMCP deployment to load an untrusted OpenAPI spec can trigger requests from the server to localhost or private services during tool generation.\n\nThis is a latest-version bypass of the previous fix. A direct `http://127.0.0.1` `$ref` control is now denied and produces zero canary hits, while semantically equivalent loopback targets still reach the canary.\n\n## Latest versions checked\n\n- `frontmcp` npm latest: 1.2.1\n- `@frontmcp/adapters` npm latest: 1.2.1\n- `mcp-from-openapi` npm latest: 2.3.0\n- FrontMCP release tag: v1.2.1, commit db323976c66297d684a3e63bbfe1db6b310f2944\n- FrontMCP current main checked: c15b79abe8c6a3cb71d4b7a3bafb8190730dc756\n\nThe release tag and current main both keep `mcp-from-openapi` 2.3.0 in `package.json` and `libs/adapters/package.json`, and both keep the OpenAPI adapter forwarding untrusted `url`, `spec`, and `loadOptions.refResolution` into `OpenAPIToolGenerator`.\n\n## Technical details\n\nFrontMCP's OpenAPI adapter reaches the affected dependency paths:\n\n- `libs/adapters/src/openapi/openapi.adapter.ts` imports `OpenAPIToolGenerator` from `mcp-from-openapi`.\n- `loadOpenAPISpec()` calls `OpenAPIToolGenerator.fromURL(this.options.url, ...)` and forwards `loadOptions.refResolution`.\n- The same method calls `OpenAPIToolGenerator.fromJSON(this.options.spec, ...)` and forwards `loadOptions.refResolution`.\n\nIn `mcp-from-openapi` 2.3.0, the patched guard is applied bef",
-      "link": "https://github.com/advisories/GHSA-65h7-9wrw-629c",
-      "published": "2026-09-11T22:02:04Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59973"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59151",
-      "title": "Prowler: SAML Domain Claiming Enables Cross-Tenant Account Takeover",
-      "summary": "## SAML Tenant Binding Enables Cross-Tenant Account Takeover\n\n### Summary\n\nProwler's SAML authentication flow trusted the email domain asserted in a SAMLResponse when deciding which tenant should receive the final token. A malicious tenant with its own SAML configuration and a self-controlled IdP could complete a valid SAML flow for its own configured domain, while asserting an email address from another configured domain.\n\nIn the vulnerable flow, the ACS finish logic later derived the tenant from the asserted email domain instead of binding token issuance to the tenant associated with the validated SAML configuration. This could cause a token to be issued for the wrong tenant.\n\nThe attacker does not generally need to claim the victim's email domain. If the victim tenant already has SAML configured for that domain, another tenant cannot claim it because `SAMLConfiguration.email_domain` and `SAMLDomainIndex.email_domain` are globally unique.\n\n### Details\nThe confirmed root cause is in the SAML ACS finish and token issuance flow. The flow selected a SAML configuration through the ACS route, but later recalculated the tenant from the asserted user email domain:\n\n```python\nemail_domain = user.email.split(\"@\")[-1]\ntenant = (\n    SAMLConfiguration.objects.using(MainRouter.admin_db)\n    .get(email_domain=email_domain)\n    .tenant\n)\n```\n\nThis is unsafe because `user.email` is derived from the SAML assertion. The tenant used for membership updates and token issuance must come from the SAML configuration validated for the current ACS route, not from the asserted email domain.\n\nThe attack is made possible by several compounding weaknesses:\n\n1. **No domain ownership proof** (`api/src/backend/api/models.py:2100, 2130-2152`): `SAMLConfiguration.email_domain` is validated for format and global uniqueness, but not for domain ownership. Any authenticated tenant admin can claim an unclaimed domain string, but cannot claim a domain already configured by another tenant.\n\n2. **Global SA",
-      "link": "https://github.com/advisories/GHSA-h8m9-jgf8-vwvp",
-      "published": "2026-09-11T21:38:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59151"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56665",
-      "title": "ZITADEL: Missing Token Expiration (`exp`) Validation in JWT IdP Provider",
-      "summary": "### Summary\n\nA token lifecycle validation vulnerability was discovered in ZITADEL's external JWT Identity Provider (IdP) implementation\nSpecifically, within the validation pipeline, if an incoming JWT omits the `exp` claim entirely, the expiration block is silently skipped rather than rejected. The token is treated as valid forever.\n\nPer the OIDC Core 1.0 specification, identity token validation pipelines must strictly handle and enforce session expiration. ZITADEL's silent acceptance of tokens missing these temporal constraints compromises session integrity.\n\n### Impact\n\nAn attacker in possession of a token lacking an `exp` claim holds a permanent credential with no automatic expiration or revocation window.\n\n### Affected Versions\n\nSystems running one of the following versions are affected:\n\n* **4.x**: `4.0.0` through `4.15.1` (including RC versions)\n* **3.x**: `3.0.0` through `3.4.11` (including RC versions)\n\n### Patches\n\nThe vulnerability has been addressed in the latest releases. ZITADEL now explicitly rejects tokens that lack an `exp` claim.\n\n* **4.x**: Upgrade to $\\ge$ [4.15.2](https://github.com/zitadel/zitadel/releases/tag/v4.15.2)\n* **3.x**: Upgrade to $\\ge$ [3.4.12](https://github.com/zitadel/zitadel/releases/tag/v3.4.12)\n\n### Workarounds\n\nThe recommended solution is to update ZITADEL to a patched version.\n\nIf an immediate upgrade is not feasible, ensure at the upstream Identity Provider level that an external IdP explicitly includes the `exp` claim in all signed JWTs.\n\n### Publication Note\n\nThis issue was originally disclosed as part of a unified security bulletin published under [GHSA-wxg7-w2v3-w38g](https://github.com/zitadel/zitadel/security/advisories/GHSA-wxg7-w2v3-w38g). To satisfy CVE Numbering Authority regulations regarding independently fixable logic flaws, the missing token expiration validation (`exp`) has been moved into this separate tracking entry so a distinct CVE ID can be correctly mapped to it.\n\n### Questions\n\nIf there are any questions",
-      "link": "https://github.com/advisories/GHSA-v77h-2w3m-94hx",
-      "published": "2026-09-11T21:32:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56665"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56828",
-      "title": "Shopper: privilege escalation via improper Livewire admin component authorization",
-      "summary": "## Summary\n\nThree Livewire admin components in `shopper/framework` (latest master at commit `fcd0c59`, released as v2.8.0) gate state-mutating actions on the read-only `view_users` permission. This is the same class as the issue Shopper fixed in v2.8.0 / PR #511 / [GHSA-f946-9qp6-vgch](https://github.com/shopperlabs/shopper/security/advisories/GHSA-f946-9qp6-vgch) \u2014 the PR moved most write actions from `view_users` to `access_setting`, but three were missed (one of them is a brand-new file added by the security commit itself).\n\nA staff user holding only `view_users` + `access_dashboard` (a realistic \"support\" or \"viewer\" role per Shopper's own `PermissionsTableSeeder`) can: (1) self-escalate by granting any permission to their own role; (2) create a brand-new admin team member with a chosen password and the `admin` role and then log in as that user; (3) delete arbitrary `permissions` rows (RBAC DoS) or \u2014 when `can_be_removed=true` \u2014 delete entire roles.\n\nCVSS 3.1: `AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H` = 8.8 (High). CWE-285 (Improper Authorization) + CWE-862 (Missing Authorization).\n\n## Vulnerable components (paths relative to repo root)\n\n### 1) `packages/admin/src/Livewire/Components/Settings/Team/Permissions.php`\n\n- `togglePermission(int $id)` at line 28 calls `$this->authorize('view_users');`\n- `removePermission(int $id)` at line 55 calls `$this->authorize('view_users');`\n\nThe Permissions blade at `packages/admin/resources/views/livewire/components/settings/team/permissions.blade.php` line 34 emits every permission's `id` directly in `wire:click` handlers, so the attacker does not even need to guess IDs \u2014 the page itself enumerates them.\n\nNet effect: any user who can mount the Permissions component (gated on `view_users`) can grant any permission row to the bound `$role`. Granting `access_setting` to the attacker's own role unlocks every action that PR #511 supposedly hardened with `->authorize('access_setting')`. Granting `delete_customers`, `edit_orders`, `edit_",
-      "link": "https://github.com/advisories/GHSA-j328-xmgp-j4q3",
-      "published": "2026-09-11T21:28:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56828"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56826",
-      "title": "Shopping privilege escalation through missing authorization in Settings components",
-      "summary": "## Summary\n\nFour Livewire components in the Settings area expose destructive Filament actions (`delete` / `edit`) that perform **no server-side authorization**. Any authenticated user who can reach the Settings pages \u2014 i.e. holding only the coarse `access_setting` permission, **without** being an admin and **without** any `delete_*`/`edit_*` permission \u2014 can delete tax zones, tax rates, shipping zones, and carrier (shipping-rate) options by invoking the component action directly over the Livewire endpoint.\n\nThese records sit on the storefront checkout path, so deleting them breaks shipping-rate calculation, removes region-scoped payment methods, and corrupts tax resolution at checkout.\n\nThis is inconsistent with the rest of the admin, where destructive actions are gated by granular permissions (e.g. `Settings/Locations/Index` uses `->authorize('delete_inventories')`, and `Order/Detail` gates mutating actions with `edit_orders`).\n\n## Affected components\n\n| Component | File | Unauthorized action |\n|---|---|---|\n| `Settings\\Zones\\ZoneShippingOptions` | `packages/admin/src/Livewire/Components/Settings/Zones/ZoneShippingOptions.php:47` | `delete` \u2192 `CarrierOption::query()->find($arguments['id'])->delete()` (id is client-supplied) |\n| `Settings\\Zones\\Detail` | `packages/admin/src/Livewire/Components/Settings/Zones/Detail.php:46` | `delete` \u2192 `DeleteAction` on the bound `Zone` |\n| `Settings\\Taxes\\Detail` | `packages/admin/src/Livewire/Components/Settings/Taxes/Detail.php:42` | `delete` \u2192 `DeleteAction` on the bound `TaxZone` |\n| `Settings\\Taxes\\TaxRates` | `packages/admin/src/Livewire/Components/Settings/Taxes/TaxRates.php:97` | `delete` \u2192 `DeleteAction` on a `TaxRate` |\n\nEach file contains **zero** `authorize` calls, and the actions declare neither `->authorize()` nor an enforced `->visible()` guard.\n\n## Details\n\nThe Settings pages mount these as child Livewire components. The parent page authorizes `access_setting` (e.g. `Pages/Settings/Taxes.php:29`), but the child comp",
-      "link": "https://github.com/advisories/GHSA-f7h9-qv4x-9x57",
-      "published": "2026-09-11T21:28:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56826"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56827",
-      "title": "Shopper: Authorization bypass in Filament bulk actions allows browse-only staff to mass-delete attributes/tags and mass-toggle visibility of brands/categories/suppliers",
-      "summary": "## Summary\n\nFive Filament `groupedBulkActions` blocks across the Shopper admin Livewire pages omit the `->authorize(...)` permission gate, while their per-record sibling actions (and other Shopper Index pages such as `Pages/Settings/Currencies.php`, `Pages/Reviews/Index.php`, `Pages/Collection/Index.php`, and `Pages/Discount/Index.php`) correctly chain `->authorize(...)`. Each affected page's `mount()` only requires the read-only `browse_*` permission, so a low-privilege staff user holding only the read permission can drive the bulk endpoint via the standard Livewire `callTableBulkAction` flow and execute state-mutating operations they were never granted. The vulnerability is the same class as GHSA-f946-9qp6-vgch and GHSA-j328-xmgp-j4q3 (read-only permission gating a write action), just on a different surface (Filament 4 `groupedBulkActions` rather than top-level Livewire methods).\n\nA staff user holding only `browse_attributes` can permanently delete every product attribute in the catalog (cascading break of every dependent product variant). A user holding only `browse_tags` can permanently delete every product tag. Users holding `browse_brands`, `browse_categories`, or `browse_suppliers` can flip the visibility (`is_enabled`) of every brand/category/supplier in bulk, sabotaging storefront catalog visibility.\n\nCVSS 3.1: `AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H` = 8.1 High. CWE-285 (Improper Authorization) and CWE-862 (Missing Authorization). The attacker has low privilege (browse-only staff role), no user interaction, network reachable.\n\n## Vulnerable components (paths relative to repo root)\n\nAll references are HEAD = commit `ac9a760` on `master` (the very commit that closed the previous wave of authorization-drift bugs from GHSA-j328-xmgp-j4q3).\n\n### 1) `packages/admin/src/Livewire/Pages/Attribute/Browse.php`\n\nMount at line 36\u201339 requires only `browse_attributes`.\n\n- Lines 106\u2013122: `DeleteBulkAction::make()` has NO `->authorize(...)` chain (the surrounding per-record `",
-      "link": "https://github.com/advisories/GHSA-243p-f3cv-c5wh",
-      "published": "2026-09-11T20:47:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56827"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-11745",
-      "title": "Central Dogma: SSH host-key verification permanently disabled in Git mirror (SshGitMirror)",
-      "summary": "# Vulnerability\n\nCentral Dogma's Git mirror SSH client installs an Apache MINA SSHD `ServerKeyVerifier` lambda that returns `true` unconditionally for every outbound SSH connection used by `git+ssh://` mirrors. The accompanying lines disable the `known_hosts` and `~/.ssh/config` fallbacks, and a repo-wide search confirms that no host-key pinning mechanism (no `acceptedHostKeys`, `knownHosts`, `KnownHostsServerKeyVerifier`, `StaticServerKeyVerifier`, or `RequiredServerKeyVerifier`) exists anywhere in `server-mirror-git/`. Operators have no opt-in way to enable verification. Every outbound mirror connection blindly trusts whatever host key the remote presents.\n\n## Evidence\n\nFile: `server-mirror-git/src/main/java/com/linecorp/centraldogma/server/internal/mirror/SshGitMirror.java`\nLines 143-160 (especially 149) on branch `main` @ commit `d64a5151`:\n\n```java\nprivate SshClient createSshClient() {\n    final ClientBuilder builder = ClientBuilder.builder();\n    // Do not use local file system.\n    builder.hostConfigEntryResolver(HostConfigEntryResolver.EMPTY);   // line 146\n    builder.fileSystemFactory(NoneFileSystemFactory.INSTANCE);        // line 147\n    // Do not verify the server key.\n    builder.serverKeyVerifier((clientSession, remoteAddress, serverKey) -> true);  // line 149\n    ...\n}\n```\n\nVerification:\n\n- Read confirmed on 2026-05-21 against `main` @ `d64a5151`.\n- A multi-agent code audit verified that no operator-facing pinning field exists on `SshKeyCredential`, `PasswordCredential`, or `MirrorContext`.\n- Exploit PoC reproduced locally with a `paramiko`-based fake SSH server bound to 127.0.0.1. The fake server presents an ephemeral RSA host key never seen before; the Central Dogma mirror client accepts the connection and proceeds to authentication, logging the offered username and public-key fingerprint. A correctly hardened SSH client would refuse the connection before reaching the authentication phase.\n- Full PoC artifacts (read-only, loopback-only) at `~/centr",
-      "link": "https://github.com/advisories/GHSA-vjfw-cpmh-xwv3",
-      "published": "2026-09-11T20:45:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-11745"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-11746",
-      "title": "Central Dogma: Hard-coded ZooKeeper replication secret 'ch4n63m3' with silent fallback enables cluster takeover",
-      "summary": "## Vulnerability\n\n`ZooKeeperReplicationConfig.secret()` silently substitutes the hard-coded constant `\"ch4n63m3\"` (leetspeak for \"change me\") whenever the operator omits `replication.secret`. The same secret is wired into both the **client-facing SASL context** and the **quorum/learner SASL contexts** of the embedded ZooKeeper. The constant is in OSS source on GitHub and is discoverable via code search in seconds.\n\n### Three Reinforcing Defects\n\n1. **OSS-public credential** \u2014 `DEFAULT_SECRET` is in `line/centraldogma` source.\n2. **Silent fallback** \u2014 `firstNonNull(convertValue(...), DEFAULT_SECRET)` substitutes the default with no log, no warning, no startup banner. The only sanity check `checkArgument(!secret().isEmpty(), ...)` passes because the getter substitutes the literal before the emptiness check runs.\n3. **Dual-purpose secret** \u2014 used for both ZK client-port super auth and inter-peer quorum SASL. A single leaked password authenticates against both surfaces.\n\n### Architecture Context (Important)\n\nCentral Dogma does **NOT** connect to an external ZooKeeper ensemble. Each replica embeds a `QuorumPeer` (`EmbeddedZooKeeper extends QuorumPeer`) inside its own JVM. The Central Dogma cluster **IS** the ZK ensemble. So the \"ZK network\" is the inter-replica network of the Central Dogma cluster itself.\n\n### Applicability\n\n| `replication.method` | ZK Started? | Applicable? |\n|---|---|---|\n| `NONE` (standalone, dev default) | No | **NOT applicable** |\n| `ZOOKEEPER` (HA production) | Yes, embedded on every replica | **Fully applicable** \u2014 canonical production configuration |\n\n---\n\n## Evidence\n\n**File:** `server/src/main/java/com/linecorp/centraldogma/server/ZooKeeperReplicationConfig.java`\n**Branch:** `main` @ commit `d64a5151`\n\n**Line 53** \u2014 the constant:\n\n```java\nprivate static final String DEFAULT_SECRET = \"ch4n63m3\";\n```\n\n**Lines 210\u2013215** \u2014 the silent fallback:\n\n```java\n/**\n * Returns the secret string used for authenticating the ZooKeeper peers.\n */\npublic String s",
-      "link": "https://github.com/advisories/GHSA-2j95-gqxf-v3vg",
-      "published": "2026-09-11T20:44:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-11746"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59971",
-      "title": "MySQL MCP Server: Missing Origin/Host Validation in SSE Transport Enables Unauthenticated SQL Execution (DNS Rebinding / Direct Exposure)",
-      "summary": "## Summary\n\nIn SSE/HTTP transport mode, `mysql_mcp_server` constructs `SseServerTransport` without passing `security_settings`. As a result, the MCP Python SDK's DNS-rebinding protection (Origin/Host header validation) is disabled; the Starlette application has no CORS or TrustedHost middleware; and the service binds to `0.0.0.0` by default with no authentication on any route.\n\n**Trigger condition:** `MCP_TRANSPORT=sse`. The default stdio mode is not affected.\n\n## Attack Scenarios\n\n**Scenario A \u2014 Direct exposure:** Any network attacker can invoke `execute_sql` to run arbitrary SQL without credentials \u2192 full data dump, and via MySQL `FILE` privileges, arbitrary file read/write and RCE.\n\n**Scenario B \u2014 DNS rebinding (local bind):** An attacker lures a victim's browser to a malicious page, rebinds their domain to `127.0.0.1`, and uses the browser as a proxy to invoke `execute_sql` as same-origin.\n\n## Root Cause\n\nIn `src/mysql_mcp_server/server.py`:\n\n1. `SseServerTransport` is constructed without `security_settings` \u2014 the SDK defaults `enable_dns_rebinding_protection` to `False`.\n2. The Starlette app has no CORS or TrustedHost middleware.\n3. All three routes (`/`, `/sse`, `/messages/`) are unauthenticated.\n4. The service binds to `0.0.0.0` by default.\n5. The sink is `cursor.execute(query)` with a fully attacker-controlled query.\n\n## Impact\n\n- Unauthenticated arbitrary SQL execution against the configured database\n- Full data exfiltration and modification\n- If the MySQL account holds `FILE` privilege: arbitrary file read (`LOAD_FILE`) and write (`INTO OUTFILE`) \u2014 potential RCE via webshell drop\n- Internet-wide scanning has identified 25 publicly reachable SSE instances of this project\n\n## Fix\n\nReleased in v0.4.2: DNS-rebinding protection is now enabled by passing `TransportSecuritySettings(enable_dns_rebinding_protection=True)` to `SseServerTransport`, and the documented recommended bind address is `127.0.0.1`.\n\n## Credits\n\nDiscovered by Huanchen, SongWu (JHU), and Brook",
-      "link": "https://github.com/advisories/GHSA-rqfv-2mw9-78g2",
-      "published": "2026-09-11T20:35:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59971"
       ],
       "is_zero_day": false,
       "is_high_severity": true

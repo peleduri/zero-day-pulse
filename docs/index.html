@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">23</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-12 19:47 UTC</div>
+            <div class="generated">Updated 2026-09-13 01:44 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -169,22 +169,6 @@ Details of the vulnerabilities are as follows -
   CVE-2026-42016 (CVSS score: 8.1) - An incorrect authorization</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/hackers-abused-claude-to-extract-secrets-from-18m-android-apps/" target="_blank" rel="noopener">Hackers abused Claude to extract secrets from 1.8M Android apps</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-11</span>
-  </div>
-  <p class='summary'>Anthropic says multiple threat groups, including the financially motivated and state-sponsored espionage groups linked to Russia and China, tried to abuse its Claude AI model for malicious purposes. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -313,195 +297,6 @@ Details of the vulnerabilities are as follows -
   <p class='summary'>The Dutch Nationaal Cyber Security Centrum (NCSC) is warning of imminent exploitation of two critical flaws in Check Point VPN tracked as CVE-2026-85102 and CVE-2026-85103. [...]</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rqx4-3f6q-3x2v" target="_blank" rel="noopener">@Mockoon/commons-server: Unauthenticated admin API + wildcard CORS allows mock-state hijack and secret theft</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59148</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## Summary
-
-Mockoon&#x27;s admin API ([`commons-server/src/libs/server/admin-api.ts`](https://github.com/mockoon/mockoon/blob/4375a8f/packages/commons-server/src/libs/server/admin-api.ts)) is mounted on the same Express listener as the user-defined mock routes, **enabled by default** in every shipped runtime (commons-server, CLI, serverless), serves **`Access-Control-Allow-Origin: *` on every endpoint …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-65h7-9wrw-629c" target="_blank" rel="noopener">FrontMCP and mcp-from-openapi have bypass of OpenAPI external $ref SSRF fix</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59973</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## Summary
-
-The published fix for GHSA-v6ph-xcq9-qxxj / CVE-2026-39885 added a direct hostname denylist for OpenAPI external `$ref` dereferencing, but the latest patched dependency `mcp-from-openapi` 2.3.0 still makes backend-origin requests to loopback when the target is reached through hostname resolution, redirects, or IPv4-mapped IPv6 syntax.
-
-FrontMCP latest release v1.2.1 and current main st…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h8m9-jgf8-vwvp" target="_blank" rel="noopener">Prowler: SAML Domain Claiming Enables Cross-Tenant Account Takeover</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59151</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## SAML Tenant Binding Enables Cross-Tenant Account Takeover
-
-### Summary
-
-Prowler&#x27;s SAML authentication flow trusted the email domain asserted in a SAMLResponse when deciding which tenant should receive the final token. A malicious tenant with its own SAML configuration and a self-controlled IdP could complete a valid SAML flow for its own configured domain, while asserting an email address from …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v77h-2w3m-94hx" target="_blank" rel="noopener">ZITADEL: Missing Token Expiration (`exp`) Validation in JWT IdP Provider</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56665</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>### Summary
-
-A token lifecycle validation vulnerability was discovered in ZITADEL&#x27;s external JWT Identity Provider (IdP) implementation
-Specifically, within the validation pipeline, if an incoming JWT omits the `exp` claim entirely, the expiration block is silently skipped rather than rejected. The token is treated as valid forever.
-
-Per the OIDC Core 1.0 specification, identity token validation p…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j328-xmgp-j4q3" target="_blank" rel="noopener">Shopper: privilege escalation via improper Livewire admin component authorization</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56828</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## Summary
-
-Three Livewire admin components in `shopper/framework` (latest master at commit `fcd0c59`, released as v2.8.0) gate state-mutating actions on the read-only `view_users` permission. This is the same class as the issue Shopper fixed in v2.8.0 / PR #511 / [GHSA-f946-9qp6-vgch](https://github.com/shopperlabs/shopper/security/advisories/GHSA-f946-9qp6-vgch) — the PR moved most write actions…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f7h9-qv4x-9x57" target="_blank" rel="noopener">Shopping privilege escalation through missing authorization in Settings components</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56826</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## Summary
-
-Four Livewire components in the Settings area expose destructive Filament actions (`delete` / `edit`) that perform **no server-side authorization**. Any authenticated user who can reach the Settings pages — i.e. holding only the coarse `access_setting` permission, **without** being an admin and **without** any `delete_*`/`edit_*` permission — can delete tax zones, tax rates, shipping z…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-243p-f3cv-c5wh" target="_blank" rel="noopener">Shopper: Authorization bypass in Filament bulk actions allows browse-only staff to mass-delete attributes/tags and mass-toggle visibility of brands/categories/suppliers</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56827</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## Summary
-
-Five Filament `groupedBulkActions` blocks across the Shopper admin Livewire pages omit the `-&gt;authorize(...)` permission gate, while their per-record sibling actions (and other Shopper Index pages such as `Pages/Settings/Currencies.php`, `Pages/Reviews/Index.php`, `Pages/Collection/Index.php`, and `Pages/Discount/Index.php`) correctly chain `-&gt;authorize(...)`. Each affected page&#x27;s `mou…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vjfw-cpmh-xwv3" target="_blank" rel="noopener">Central Dogma: SSH host-key verification permanently disabled in Git mirror (SshGitMirror)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-11745</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'># Vulnerability
-
-Central Dogma&#x27;s Git mirror SSH client installs an Apache MINA SSHD `ServerKeyVerifier` lambda that returns `true` unconditionally for every outbound SSH connection used by `git+ssh://` mirrors. The accompanying lines disable the `known_hosts` and `~/.ssh/config` fallbacks, and a repo-wide search confirms that no host-key pinning mechanism (no `acceptedHostKeys`, `knownHosts`, `Kno…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2j95-gqxf-v3vg" target="_blank" rel="noopener">Central Dogma: Hard-coded ZooKeeper replication secret &#x27;ch4n63m3&#x27; with silent fallback enables cluster takeover</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-11746</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## Vulnerability
-
-`ZooKeeperReplicationConfig.secret()` silently substitutes the hard-coded constant `&quot;ch4n63m3&quot;` (leetspeak for &quot;change me&quot;) whenever the operator omits `replication.secret`. The same secret is wired into both the **client-facing SASL context** and the **quorum/learner SASL contexts** of the embedded ZooKeeper. The constant is in OSS source on GitHub and is discoverable via code s…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rqfv-2mw9-78g2" target="_blank" rel="noopener">MySQL MCP Server: Missing Origin/Host Validation in SSE Transport Enables Unauthenticated SQL Execution (DNS Rebinding / Direct Exposure)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59971</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-11</span>
-          </div>
-          <p class='summary'>## Summary
-
-In SSE/HTTP transport mode, `mysql_mcp_server` constructs `SseServerTransport` without passing `security_settings`. As a result, the MCP Python SDK&#x27;s DNS-rebinding protection (Origin/Host header validation) is disabled; the Starlette application has no CORS or TrustedHost middleware; and the service binds to `0.0.0.0` by default with no authentication on any route.
-
-**Trigger condition…</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">
