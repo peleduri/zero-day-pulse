@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-13T10:44:04.209386+00:00",
-  "total": 12,
+  "generated": "2026-09-13T15:11:53.077642+00:00",
+  "total": 11,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -151,34 +151,18 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/",
-      "title": "BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days",
-      "summary": "Multiple espionage-motivated threat actors have adopted BlueMoon in opportunistic, rushed deployments. The post BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/",
-      "published": "2026-09-12T11:10:00+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/",
-      "title": "Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent",
-      "summary": "The Dutch Nationaal Cyber Security Centrum (NCSC) is warning of imminent exploitation of two critical flaws in Check Point VPN tracked as CVE-2026-85102 and CVE-2026-85103. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/",
-      "published": "2026-09-12T14:14:32+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/",
+      "title": "Hackers exploit Tencent app flaw to deploy GrayRabbit malware",
+      "summary": "Threat actors linked to a China-aligned espionage group are exploiting a critical vulnerability (CVE-2026-51990) in Tencent's Sogou Input Method for Windows to deploy the GrayRabbit backdoor. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/",
+      "published": "2026-09-13T14:26:32+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
         "malware"
       ],
       "cve_ids": [
-        "CVE-2026-85102",
-        "CVE-2026-85103"
+        "CVE-2026-51990"
       ],
       "is_zero_day": false,
       "is_high_severity": true

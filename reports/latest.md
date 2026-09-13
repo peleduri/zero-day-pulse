@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-13 10:44 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-13 15:11 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -88,25 +88,16 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 10. 🟠 Zero-Day — BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days
+## 10. 🟡 High Severity — Hackers exploit Tencent app flaw to deploy GrayRabbit malware
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-12
-**Reference:** <https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/>
+**CVE:** `CVE-2026-51990` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-13
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/>
 
-> Multiple espionage-motivated threat actors have adopted BlueMoon in opportunistic, rushed deployments. The post BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days appeared first on SecurityWeek .
-
----
-
-## 11. 🟡 High Severity — Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent
-
-**CVE:** `CVE-2026-85102` | `CVE-2026-85103` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-12
-**Reference:** <https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/>
-
-> The Dutch Nationaal Cyber Security Centrum (NCSC) is warning of imminent exploitation of two critical flaws in Check Point VPN tracked as CVE-2026-85102 and CVE-2026-85103. [...]
+> Threat actors linked to a China-aligned espionage group are exploiting a critical vulnerability (CVE-2026-51990) in Tencent&#x27;s Sogou Input Method for Windows to deploy the GrayRabbit backdoor. [...]
 
 ---
 
-## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 11. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
