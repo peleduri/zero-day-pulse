@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-13 15:11 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-13 19:57 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,21 +20,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV
-
-**CVE:** `CVE-2026-42016` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-12
-**Reference:** <https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added five security flaws impacting JFrog Artifactory, ConnectWise ScreenConnect, and MikroTik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild.
-
-Details of the vulnerabilities are as follows -
-
-
-  CVE-2026-42016 (CVSS score: 8.1) - An incorrect authorization
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -43,7 +29,7 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -52,7 +38,7 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -61,7 +47,7 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -70,7 +56,7 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -79,7 +65,7 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -88,7 +74,7 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 10. 🟡 High Severity — Hackers exploit Tencent app flaw to deploy GrayRabbit malware
+## 9. 🟡 High Severity — Hackers exploit Tencent app flaw to deploy GrayRabbit malware
 
 **CVE:** `CVE-2026-51990` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/>
@@ -97,7 +83,7 @@ Details of the vulnerabilities are as follows -
 
 ---
 
-## 11. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 10. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

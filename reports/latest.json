@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-13T15:11:53.077642+00:00",
-  "total": 11,
+  "generated": "2026-09-13T19:57:04.898858+00:00",
+  "total": 10,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 8,
   "enriched": 0,
   "findings": [
     {
@@ -33,23 +33,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html",
-      "title": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added five security flaws impacting JFrog Artifactory, ConnectWise ScreenConnect, and MikroTik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild.\n\nDetails of the vulnerabilities are as follows -\n\n\n  CVE-2026-42016 (CVSS score: 8.1) - An incorrect authorization",
-      "link": "https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html",
-      "published": "2026-09-12T15:54:45+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-42016"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
