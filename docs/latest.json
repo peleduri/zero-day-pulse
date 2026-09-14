@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-14T02:02:06.374902+00:00",
-  "total": 10,
+  "generated": "2026-09-14T11:06:41.728808+00:00",
+  "total": 11,
   "kev": 0,
-  "zero_day": 8,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,23 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-85706-critical-gitlab-path-traversal-exploited-in-the-wild",
+      "title": "CVE-2026-85706: Critical GitLab Path Traversal Exploited in the Wild",
+      "summary": "Overview On September 10, 2026, GitLab published a critical patch release for GitLab Community Edition (CE) and Enterprise Edition (EE). The release addresses CVE-2026-85706 , a critical path traversal vulnerability ( CWE-22 ) in the repository commits API with a CVSSv3.1 score of 10.0 . According to GitLab, improper path confinement and missing authentication enforcement could allow an unauthenticated user to read arbitrary files from an affected GitLab server under certain conditions. On September 11, 2026, CVE-2026-85706 was added to the U.S. Cybersecurity and Infrastructure Security Agency's (CISA) Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation. CISA set a remediation due date of September 14, 2026, for affected Federal Civilian Executive Branch agencies and marked the vulnerability as subject to forensic triage requirements under Binding Operational Directive 26-04. Organizations running affected self-managed GitLab instances should remediate CVE-2026-85706 on an emergency basis, outside of normal patch cycles. Mitigation guidance A vendor-supplied update is available to remediate CVE-2026-85706. Organizations running affected self-managed GitLab CE or EE instances should upgrade to a fixed version immediately. Affected GitLab CE/EE versions Fixed version All versions from 18.7 before 19.1.8 19.1.8 All versions from 19.2 before 19.2.6 19.2.6 All versions from 19.3 before 19.3.2 19.3.2 GitLab.com is already running a patched version, and GitLab Dedicated customers do not need to take action. Per GitLab, all self-managed deployment types are affected, including Omnibus, source code, and Helm chart deployments. The updates include database migrations. Single-node installations will experience downtime while the migrations run; multi-node deployments can use GitLab's zero-downtime upgrade procedure. Of the fixed releases, only 19.3.2 includes post-deployment migrations. The patch release also addresses 17 other vulnerabiliti",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-85706-critical-gitlab-path-traversal-exploited-in-the-wild",
+      "published": "2026-09-14T10:02:57+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-85706"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
