@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-14T11:06:41.728808+00:00",
-  "total": 11,
+  "generated": "2026-09-14T17:09:28.181435+00:00",
+  "total": 10,
   "kev": 0,
   "zero_day": 9,
   "enriched": 0,
@@ -149,23 +149,6 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/",
-      "title": "Hackers exploit Tencent app flaw to deploy GrayRabbit malware",
-      "summary": "Threat actors linked to a China-aligned espionage group are exploiting a critical vulnerability (CVE-2026-51990) in Tencent's Sogou Input Method for Windows to deploy the GrayRabbit backdoor. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/",
-      "published": "2026-09-13T14:26:32+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-51990"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
