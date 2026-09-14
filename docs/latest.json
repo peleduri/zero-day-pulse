@@ -1,10 +1,29 @@
 {
-  "generated": "2026-09-14T17:09:28.181435+00:00",
-  "total": 10,
-  "kev": 0,
+  "generated": "2026-09-14T21:07:55.120081+00:00",
+  "total": 12,
+  "kev": 1,
   "zero_day": 9,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-76461",
+      "title": "CVE-2026-76461 \u2014 Cisco Secure Email Gateway SQL Injection Vulnerability",
+      "summary": "Vendor: Cisco | Product: Secure Email Gateway. Cisco AsyncOS software for Cisco Secure Email Gateway (SEG) contains a SQL injection vulnerability that could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on the underlying operating system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-17)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76461",
+      "published": "2026-09-14",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-76461"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -149,6 +168,24 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-46696",
+      "title": "October CMS: Safe Mode Sandbox Bypass via Session Store and Forwarded Builder Calls",
+      "summary": "A vulnerability was identified in the Twig sandbox security policy that allowed a chained bypass when `cms.safe_mode` is enabled. The Laravel session store was exposed to Twig with unrestricted method access, and raw SQL methods reachable through Eloquent's `__call` forwarding were not blocked across the full builder chain. When combined, a backend user with CMS markup editing access could read arbitrary database values via raw SQL expressions and write to the backend authentication session key, forging a backend session as another existing user.\n\n**Scope of impact is narrow.** Safe Mode is a niche feature, primarily used for demo installations and multi-tenant or shared-editor scenarios where untrusted users are deliberately granted access to the CMS markup editor. Standard production deployments do not enable Safe Mode, because under normal October CMS guidance backend access - including markup editing - is restricted to trusted administrators, and direct PHP injection through markup is already possible without Safe Mode in that configuration.\n\n**This issue only affects sites that meet all of the following conditions:**\n- `cms.safe_mode` is enabled (a deliberate opt-in for demos or untrusted-editor scenarios)\n- The site has at least one backend user with CMS markup editing access who is not intended to be trusted as a full administrator\n- The site has at least one existing superuser account whose session the lower-privileged user can impersonate\n\n### Impact\n- Arbitrary read access to database tables, including superuser persistence codes from `backend_users`, via raw SQL expressions reachable through `Eloquent\\Model`, `Eloquent\\Builder`, or any allowlisted class that `__call`-forwards to a query builder\n- Forgery of a backend authentication session by writing to the `admin_auth` session key from a Twig template, allowing a markup editor to impersonate an existing superuser\n- Requires authenticated backend access with CMS markup editing permission AND `cms.safe_mod",
+      "link": "https://github.com/advisories/GHSA-xv9m-fm3w-8w5x",
+      "published": "2026-09-14T16:02:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-46696"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
