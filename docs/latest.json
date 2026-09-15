@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-15T10:36:10.432454+00:00",
-  "total": 14,
+  "generated": "2026-09-15T15:49:05.221714+00:00",
+  "total": 15,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -177,6 +177,21 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
+      "title": "What Zero-Day Response Should Be in the Post-Mythos Era",
+      "summary": "AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposure gaps before attackers arrive. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
+      "published": "2026-09-15T13:45:54+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },

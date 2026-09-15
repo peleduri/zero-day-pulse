@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-15 10:36 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-15 15:49 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -107,7 +107,16 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 ---
 
-## 12. 🟡 High Severity — ZITADEL: Unauthorized Token Privilege Escalation in OAuth2 Token Exchange
+## 12. 🟠 Zero-Day — What Zero-Day Response Should Be in the Post-Mythos Era
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-15
+**Reference:** <https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/>
+
+> AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposure gaps before attackers arrive. [...]
+
+---
+
+## 13. 🟡 High Severity — ZITADEL: Unauthorized Token Privilege Escalation in OAuth2 Token Exchange
 
 **CVE:** `CVE-2026-56668` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-14
 **Reference:** <https://github.com/advisories/GHSA-vrh8-c9cm-wh8v>
@@ -122,7 +131,7 @@ ZITADEL enables administrators to restrict token issuance based o…
 
 ---
 
-## 13. 🟡 High Severity — October CMS: Safe Mode Sandbox Bypass via Session Store and Forwarded Builder Calls
+## 14. 🟡 High Severity — October CMS: Safe Mode Sandbox Bypass via Session Store and Forwarded Builder Calls
 
 **CVE:** `CVE-2026-46696` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-14
 **Reference:** <https://github.com/advisories/GHSA-xv9m-fm3w-8w5x>
@@ -131,7 +140,7 @@ ZITADEL enables administrators to restrict token issuance based o…
 
 ---
 
-## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
