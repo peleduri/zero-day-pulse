@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">15</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">16</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-15 15:49 UTC</div>
+            <div class="generated">Updated 2026-09-15 20:33 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -318,6 +318,44 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cp4q-fqw9-4hf6" target="_blank" rel="noopener">Http4s Ember HTTP/2: unbounded continuation frame accumulation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-69218</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-15</span>
+          </div>
+          <p class='summary'>When Ember receives an HTTP/2 `HEADERS` or `PUSH_PROMISE` frame without the `END_HEADERS` flag, it buffers the header block fragment and waits for subsequent `CONTINUATION` frames.  These accumulate unbounded until the connection closes. 
+
+### Impact
+
+A remote, unauthenticated peer can exhaust the heap on any Ember endpoint that has HTTP/2 enabled:
+
+- **ember-server with `.withHttp2`**: any HTTP/2…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wv64-j4fq-5f9x" target="_blank" rel="noopener">Http4s: CookieJar middleware accepts arbitrary Set-Cookie domain</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-69214</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-15</span>
+  </div>
+  <p class='summary'>When processing a `Set-Cookie` from a response, the `CookieJar` client middleware trusts the server-supplied `Domain` attribute verbatim, with no check that it domain-matches the host that sent the cookie (RFC6265 §5.3 step 6) and no public suffix check.  A malicious or compromised server can therefore plant a cookie for any domain in the cookie jar, which is subsequently set on the client&#x27;s next …</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vrh8-c9cm-wh8v" target="_blank" rel="noopener">ZITADEL: Unauthorized Token Privilege Escalation in OAuth2 Token Exchange</a></h2>
           </div>
           <div class="card-meta">
@@ -336,22 +374,6 @@ A vulnerability in ZITADEL’s OAuth2 Token Exchange endpoint allows an authenti
 ZITADEL enables administrators to restrict token issuance based o…</p>
 
         </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xv9m-fm3w-8w5x" target="_blank" rel="noopener">October CMS: Safe Mode Sandbox Bypass via Session Store and Forwarded Builder Calls</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-46696</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-14</span>
-  </div>
-  <p class='summary'>A vulnerability was identified in the Twig sandbox security policy that allowed a chained bypass when `cms.safe_mode` is enabled. The Laravel session store was exposed to Twig with unrestricted method access, and raw SQL methods reachable through Eloquent&#x27;s `__call` forwarding were not blocked across the full builder chain. When combined, a backend user with CMS markup editing access could read ar…</p>
-
-</article>
 
 <article class="card card-high">
   <div class="card-top">

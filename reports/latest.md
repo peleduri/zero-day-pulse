@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-15 15:49 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-15 20:33 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -116,7 +116,31 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 ---
 
-## 13. 🟡 High Severity — ZITADEL: Unauthorized Token Privilege Escalation in OAuth2 Token Exchange
+## 13. 🟡 High Severity — Http4s Ember HTTP/2: unbounded continuation frame accumulation
+
+**CVE:** `CVE-2026-69218` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
+**Reference:** <https://github.com/advisories/GHSA-cp4q-fqw9-4hf6>
+
+> When Ember receives an HTTP/2 `HEADERS` or `PUSH_PROMISE` frame without the `END_HEADERS` flag, it buffers the header block fragment and waits for subsequent `CONTINUATION` frames.  These accumulate unbounded until the connection closes. 
+
+### Impact
+
+A remote, unauthenticated peer can exhaust the heap on any Ember endpoint that has HTTP/2 enabled:
+
+- **ember-server with `.withHttp2`**: any HTTP/2…
+
+---
+
+## 14. 🟡 High Severity — Http4s: CookieJar middleware accepts arbitrary Set-Cookie domain
+
+**CVE:** `CVE-2026-69214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
+**Reference:** <https://github.com/advisories/GHSA-wv64-j4fq-5f9x>
+
+> When processing a `Set-Cookie` from a response, the `CookieJar` client middleware trusts the server-supplied `Domain` attribute verbatim, with no check that it domain-matches the host that sent the cookie (RFC6265 §5.3 step 6) and no public suffix check.  A malicious or compromised server can therefore plant a cookie for any domain in the cookie jar, which is subsequently set on the client&#x27;s …
+
+---
+
+## 15. 🟡 High Severity — ZITADEL: Unauthorized Token Privilege Escalation in OAuth2 Token Exchange
 
 **CVE:** `CVE-2026-56668` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-14
 **Reference:** <https://github.com/advisories/GHSA-vrh8-c9cm-wh8v>
@@ -131,16 +155,7 @@ ZITADEL enables administrators to restrict token issuance based o…
 
 ---
 
-## 14. 🟡 High Severity — October CMS: Safe Mode Sandbox Bypass via Session Store and Forwarded Builder Calls
-
-**CVE:** `CVE-2026-46696` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-14
-**Reference:** <https://github.com/advisories/GHSA-xv9m-fm3w-8w5x>
-
-> A vulnerability was identified in the Twig sandbox security policy that allowed a chained bypass when `cms.safe_mode` is enabled. The Laravel session store was exposed to Twig with unrestricted method access, and raw SQL methods reachable through Eloquent&#x27;s `__call` forwarding were not blocked across the full builder chain. When combined, a backend user with CMS markup editing access could re…
-
----
-
-## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
