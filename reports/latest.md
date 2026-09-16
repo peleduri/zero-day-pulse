@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-16 02:01 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-16 10:24 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,20 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Acronis warns of actively exploited flaw in its cPanel backup plugin
+## 3. 🟠 Zero-Day — Active Exploitation Attempts Target WSO2 API Manager JWT Bypass With Forged Admin Tokens
+
+**CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
+**Reference:** <https://thehackernews.com/2026/09/active-exploitation-attempts-target.html>
+
+> A critical security flaw in WSO2 API Manager has come under active exploitation in the wild, according to findings from watchTowr.
+
+The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of improper verification of a cryptographic signature that could result in account takeover. Hacktron Team has been credited with discovering and reporting the flaw.
+
+&quot;JWT authenticatio…
+
+---
+
+## 4. 🟠 Zero-Day — Acronis warns of actively exploited flaw in its cPanel backup plugin
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/>
@@ -29,40 +42,16 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Cisco patches Secure Email Gateway zero-day exploited in attacks
+## 5. 🟠 Zero-Day — CVE-2026-76461: Critical Cisco Secure Email Gateway Vulnerability Exploited in the Wild
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-15
-**Reference:** <https://www.bleepingcomputer.com/news/security/new-cisco-secure-email-zero-day-exploited-to-execute-commands-as-root/>
+**CVE:** `CVE-2026-76461` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-15
+**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-76461-critical-cisco-secure-email-gateway-vulnerability-exploited-in-the-wild>
 
-> Cisco warned customers to patch a critical Secure Email Gateway zero-day security flaw that threat actors have been exploiting in attacks. [...]
-
----
-
-## 5. 🟠 Zero-Day — Cisco Secure Email Gateway Flaw Exploited in the Wild, Enables Root Command Execution
-
-**CVE:** `CVE-2026-76461` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-15
-**Reference:** <https://thehackernews.com/2026/09/cisco-secure-email-gateway-flaw.html>
-
-> Cisco has warned that a new critical vulnerability impacting AsyncOS Software for Cisco Secure Email Gateway has come under active exploitation in the wild.
-
-The vulnerability, tracked as CVE-2026-76461, carries a CVSS score of 9.8 out of a maximum of 10.0. It has been described as a case of insufficient validation in the email parsing logic that could allow an unauthenticated, remote attacker
+> Overview On September 14, 2026, Cisco published a security advisory for CVE-2026-76461 , a critical SQL injection vulnerability affecting Cisco AsyncOS Software for Cisco Secure Email Gateway. The vulnerability has a reported CVSS v3.1 base score of 9.8 and could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on an affected appliance. Cisco Secure Emai…
 
 ---
 
-## 6. 🟠 Zero-Day — China-Linked Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy GRIMWEDGE
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-15
-**Reference:** <https://thehackernews.com/2026/09/china-linked-hackers-exploit-chrome.html>
-
-> A Chinese threat actor has been attributed to a spear-phishing campaign that exploits recently patched security flaws in Google Chrome and Microsoft Windows to deliver a malicious JavaScript backdoor called GRIMWEDGE.
-
-Volexity, which is tracking the threat cluster under the moniker UTA0560, said the activity targeted multiple non-governmental organizations (NGOs) on September 1, 2026.
-
-&quot;The
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -71,7 +60,7 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -80,7 +69,7 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -89,7 +78,7 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -98,7 +87,7 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -107,12 +96,21 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
 
 > Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …
+
+---
+
+## 12. 🟠 Zero-Day — Google fixes actively exploited Android zero-day on Pixel devices
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-16
+**Reference:** <https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/>
+
+> Google has released the September 2026 security patches to address 110 vulnerabilities affecting its Pixel devices, including one zero-day flaw actively exploited in targeted attacks. [...]
 
 ---
 
@@ -137,7 +135,16 @@ Reviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package ver…
 
 ---
 
-## 15. 🟡 High Severity — @zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery
+## 15. 🟡 High Severity — Acronis Patches Exploited Vulnerability in cPanel Backup Plugin
+
+**CVE:** `CVE-2026-87886` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-16
+**Reference:** <https://www.securityweek.com/acronis-patches-exploited-vulnerability-in-cpanel-backup-plugin/>
+
+> CVE-2026-87886 is a high-severity insecure file permissions flaw that can lead to local privilege escalation. The post Acronis Patches Exploited Vulnerability in cPanel Backup Plugin appeared first on SecurityWeek .
+
+---
+
+## 16. 🟡 High Severity — @zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery
 
 **CVE:** `CVE-2026-61559` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-2h44-8472-frjj>
@@ -160,7 +167,7 @@ When the environment variable `ENABLE_DYNAMIC_API_URL=true` is …
 
 ---
 
-## 16. 🟡 High Severity — @zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport
+## 17. 🟡 High Severity — @zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport
 
 **CVE:** `CVE-2026-61568` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-vmp7-252j-cwp7>
@@ -169,7 +176,7 @@ When the environment variable `ENABLE_DYNAMIC_API_URL=true` is …
 
 ---
 
-## 17. 🟡 High Severity — emp3r0r has an unauthenticated HTTP Polling DoS
+## 18. 🟡 High Severity — emp3r0r has an unauthenticated HTTP Polling DoS
 
 **CVE:** `CVE-2026-61554` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-4595-rvpx-4q34>
@@ -182,7 +189,7 @@ The plain HTTP C2 server starts t…
 
 ---
 
-## 18. 🟡 High Severity — Http4s Ember HTTP/2: unbounded continuation frame accumulation
+## 19. 🟡 High Severity — Http4s Ember HTTP/2: unbounded continuation frame accumulation
 
 **CVE:** `CVE-2026-69218` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-cp4q-fqw9-4hf6>
@@ -197,7 +204,7 @@ A remote, unauthenticated peer can exhaust the heap on any Ember endpoint that h
 
 ---
 
-## 19. 🟡 High Severity — Http4s: CookieJar middleware accepts arbitrary Set-Cookie domain
+## 20. 🟡 High Severity — Http4s: CookieJar middleware accepts arbitrary Set-Cookie domain
 
 **CVE:** `CVE-2026-69214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-wv64-j4fq-5f9x>
@@ -206,7 +213,7 @@ A remote, unauthenticated peer can exhaust the heap on any Ember endpoint that h
 
 ---
 
-## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

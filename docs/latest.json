@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-16T02:01:54.023522+00:00",
-  "total": 20,
+  "generated": "2026-09-16T10:24:44.218849+00:00",
+  "total": 21,
   "kev": 0,
   "zero_day": 14,
   "enriched": 0,
@@ -37,6 +37,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/09/active-exploitation-attempts-target.html",
+      "title": "Active Exploitation Attempts Target WSO2 API Manager JWT Bypass With Forged Admin Tokens",
+      "summary": "A critical security flaw in WSO2 API Manager has come under active exploitation in the wild, according to findings from watchTowr.\n\nThe vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of improper verification of a cryptographic signature that could result in account takeover. Hacktron Team has been credited with discovering and reporting the flaw.\n\n\"JWT authentication",
+      "link": "https://thehackernews.com/2026/09/active-exploitation-attempts-target.html",
+      "published": "2026-09-16T05:18:06+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-5430"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/",
       "title": "Acronis warns of actively exploited flaw in its cPanel backup plugin",
       "summary": "Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its backup plugin for cPanel, WebHost Manager (WHM), and Plesk that may be exploited in the wild. [...]",
@@ -52,49 +69,19 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/new-cisco-secure-email-zero-day-exploited-to-execute-commands-as-root/",
-      "title": "Cisco patches Secure Email Gateway zero-day exploited in attacks",
-      "summary": "Cisco warned customers to patch a critical Secure Email Gateway zero-day security flaw that threat actors have been exploiting in attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-cisco-secure-email-zero-day-exploited-to-execute-commands-as-root/",
-      "published": "2026-09-15T07:31:09+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-76461-critical-cisco-secure-email-gateway-vulnerability-exploited-in-the-wild",
+      "title": "CVE-2026-76461: Critical Cisco Secure Email Gateway Vulnerability Exploited in the Wild",
+      "summary": "Overview On September 14, 2026, Cisco published a security advisory for CVE-2026-76461 , a critical SQL injection vulnerability affecting Cisco AsyncOS Software for Cisco Secure Email Gateway. The vulnerability has a reported CVSS v3.1 base score of 9.8 and could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on an affected appliance. Cisco Secure Email Gateway, formerly known as IronPort Email Security Appliance, is an enterprise email security product that inspects inbound and outbound email for threats including phishing, malware, spam, and business email compromise. Because affected gateways process externally delivered email as part of their normal operation, exploitation does not require access to an administrative interface or authentication. An attacker can reportedly trigger the vulnerability by sending a specially crafted email through a vulnerable gateway. CVE-2026-76461 was added to CISA's Known Exploited Vulnerabilities ( KEV ) catalog on the same day as the vendor disclosed the vulnerability, indicating that CVE-2026-76461 was exploited as a zero-day prior to disclosure. Cisco noted that their PSIRT became aware of active exploitation in September 2026. At the time of publication, there is no public proof-of-concept exploit code available, and no attribution for the current threat actor activity. Mitigation guidance Organizations running Cisco Secure Email Gateway should prioritize upgrading to a vendor-supplied fixed version on an emergency basis, outside of normal patching cycles. Affected Version Fixed Version 15.5 and earlier 15.5.5-014 16.0 16.0.4-302 16.5 16.5.0-780 Given the reported active exploitation and the ability to achieve unauthenticated root-level command execution through malicious email processing, organizations should prioritize patching rather than relying solely on network controls or monitoring. Cisco also strongly recommends that customers migrate to the latest product version, 16.5.0",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-76461-critical-cisco-secure-email-gateway-vulnerability-exploited-in-the-wild",
+      "published": "2026-09-15T12:22:50+00:00",
+      "source": "Rapid7 Blog",
       "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/cisco-secure-email-gateway-flaw.html",
-      "title": "Cisco Secure Email Gateway Flaw Exploited in the Wild, Enables Root Command Execution",
-      "summary": "Cisco has warned that a new critical vulnerability impacting AsyncOS Software for Cisco Secure Email Gateway has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-76461, carries a CVSS score of 9.8 out of a maximum of 10.0. It has been described as a case of insufficient validation in the email parsing logic that could allow an unauthenticated, remote attacker",
-      "link": "https://thehackernews.com/2026/09/cisco-secure-email-gateway-flaw.html",
-      "published": "2026-09-15T06:11:11+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
+        "research",
+        "metasploit"
       ],
       "cve_ids": [
         "CVE-2026-76461"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/china-linked-hackers-exploit-chrome.html",
-      "title": "China-Linked Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy GRIMWEDGE",
-      "summary": "A Chinese threat actor has been attributed to a spear-phishing campaign that exploits recently patched security flaws in Google Chrome and Microsoft Windows to deliver a malicious JavaScript backdoor called GRIMWEDGE.\n\nVolexity, which is tracking the threat cluster under the moniker UTA0560, said the activity targeted multiple non-governmental organizations (NGOs) on September 1, 2026.\n\n\"The",
-      "link": "https://thehackernews.com/2026/09/china-linked-hackers-exploit-chrome.html",
-      "published": "2026-09-15T05:31:05+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -196,6 +183,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/",
+      "title": "Google fixes actively exploited Android zero-day on Pixel devices",
+      "summary": "Google has released the September 2026 security patches to address 110 vulnerabilities affecting its Pixel devices, including one zero-day flaw actively exploited in targeted attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/",
+      "published": "2026-09-16T07:00:19+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "GHSA-5648-rgj9-v224",
       "title": "@zereight/mcp-gitlab has multiple safety-control bypasses: execute_graphql read-only + allow-list bypass, unauthenticated transports, session-exhaustion DoS",
       "summary": "### Summary\n@zereight/mcp-gitlab exposes GitLab to an LLM agent while relying on read-only mode, a project allow-list, and transport auth as its safety controls. Five defects defeat those controls. Under the MCP threat model, tool-call arguments/content can be shaped by untrusted input (prompt injection) or a malicious client.\n\nReviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package version 2.1.28). Source review only; PoCs are local/offline.\n\n- F1 (HIGH) execute_graphql defeats BOTH read-only mode and GITLAB_ALLOWED_PROJECT_IDS.\n- F2 (HIGH, deployment-conditional) Streamable HTTP /mcp unauthenticated under cookie-jar / device-flow credentials.\n- F3 (MEDIUM) SSE unauthenticated by default, no Origin/Host validation (DNS rebinding).\n- F4 (HIGH) unauthenticated session/transport-exhaustion DoS (token check is syntactic only).\n- F5 (LOW) CI job trace returned verbatim (prompt-injection surface).\n\n### Details\n\nF1 \u2014 index.ts:9194-9245 (case \"execute_graphql\"), guard at :9196, detector in utils/graphql-query.ts.\n(a) Read-only bypass: graphqlQueryContainsWriteOperation() strips comments/strings then tests /(?:^|[};]\\s*)(mutation|subscription)\\b/. GraphQL treats commas as insignificant, and stripGraphQLCommentsAndStrings does not remove them, so a document beginning with `,mutation{...}` executes as a write but is classified read-only. (b) Allow-list bypass: the handler never calls getEffectiveProjectId() or rejectIfProjectScopedDeployment() (unlike other tools), so a raw GraphQL body reaches /api/graphql with the server token against any project the token can access, regardless of GITLAB_ALLOWED_PROJECT_IDS. execute_graphql is listed in readOnlyTools (tools/registry.ts:1288).\n\nF2 \u2014 index.ts:1048-1052 forces REMOTE_AUTHORIZATION/GITLAB_MCP_OAUTH only when started with a PAT or job token; hasCookie (:1029) and useOAuth (:1026) are absent from the gate. Started with --cookie-path or --use-oauth, validation passes and mcpBearerAuth degrades to next() (:12903). Every",
@@ -225,6 +227,23 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/acronis-patches-exploited-vulnerability-in-cpanel-backup-plugin/",
+      "title": "Acronis Patches Exploited Vulnerability in cPanel Backup Plugin",
+      "summary": "CVE-2026-87886 is a high-severity insecure file permissions flaw that can lead to local privilege escalation. The post Acronis Patches Exploited Vulnerability in cPanel Backup Plugin appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/acronis-patches-exploited-vulnerability-in-cpanel-backup-plugin/",
+      "published": "2026-09-16T09:52:31+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-87886"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-61559",
