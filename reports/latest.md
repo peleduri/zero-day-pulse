@@ -1,10 +1,19 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-16 15:41 UTC &nbsp;|&nbsp; **Total:** 27 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-16 20:33 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-58704 — Google Pixel Improper Authorization Vulnerability
+## 1. 🔴 CISA KEV — CVE-2026-87886 — Acronis Backup Incorrect Default Permissions Vulnerability
+
+**CVE:** `CVE-2026-87886` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-16
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-87886>
+
+> Vendor: Acronis | Product: Backup. Acronis Backup plugin for cPanel &amp; WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-58704 — Google Pixel Improper Authorization Vulnerability
 
 **CVE:** `CVE-2026-58704` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-58704>
@@ -13,7 +22,16 @@
 
 ---
 
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 3. 🔴 CISA KEV — CVE-2026-76460 — Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability
+
+**CVE:** `CVE-2026-76460` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-16
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-76460>
+
+> Vendor: Cisco | Product: Identity Services Engine. Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface. Required action: Apply mitigations in accordance w…
+
+---
+
+## 4. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,14 +40,14 @@
 
 ---
 
-## 3. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 5. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 4. 🟠 Zero-Day — AIUC Raises $40 Million to Certify Enterprise AI Agents
+## 6. 🟠 Zero-Day — AIUC Raises $40 Million to Certify Enterprise AI Agents
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/>
@@ -38,7 +56,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Patches Pixel Modem Flaw Amid Signs of Limited Targeted Exploitation
+## 7. 🟠 Zero-Day — Google Patches Pixel Modem Flaw Amid Signs of Limited Targeted Exploitation
 
 **CVE:** `CVE-2026-58704` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html>
@@ -51,7 +69,7 @@ The vulnerability, tracked as CVE-2026-58704 (CVSS score: 8.0), is a privilege e
 
 ---
 
-## 6. 🟠 Zero-Day — Critical ScreenConnect flaw now actively exploited in attacks
+## 8. 🟠 Zero-Day — Critical ScreenConnect flaw now actively exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/>
@@ -60,7 +78,7 @@ The vulnerability, tracked as CVE-2026-58704 (CVSS score: 8.0), is a privilege e
 
 ---
 
-## 7. 🟠 Zero-Day — Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks
+## 9. 🟠 Zero-Day — Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks
 
 **CVE:** `CVE-2026-87886` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html>
@@ -74,7 +92,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 8. 🟠 Zero-Day — Active Exploitation Attempts Target WSO2 API Manager JWT Bypass With Forged Admin Tokens
+## 10. 🟠 Zero-Day — Active Exploitation Attempts Target WSO2 API Manager JWT Bypass With Forged Admin Tokens
 
 **CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://thehackernews.com/2026/09/active-exploitation-attempts-target.html>
@@ -87,7 +105,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 9. 🟠 Zero-Day — Acronis warns of actively exploited flaw in its cPanel backup plugin
+## 11. 🟠 Zero-Day — Acronis warns of actively exploited flaw in its cPanel backup plugin
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/>
@@ -96,7 +114,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 12. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -105,7 +123,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 13. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -114,7 +132,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 14. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -123,7 +141,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 15. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -132,7 +150,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 16. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -141,7 +159,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 15. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 17. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -150,7 +168,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 16. 🟠 Zero-Day — Google fixes actively exploited Android zero-day on Pixel devices
+## 18. 🟠 Zero-Day — Google fixes actively exploited Android zero-day on Pixel devices
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/>
@@ -159,7 +177,7 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 ---
 
-## 17. 🟠 Zero-Day — @zereight/mcp-gitlab has multiple safety-control bypasses: execute_graphql read-only + allow-list bypass, unauthenticated transports, session-exhaustion DoS
+## 19. 🟠 Zero-Day — @zereight/mcp-gitlab has multiple safety-control bypasses: execute_graphql read-only + allow-list bypass, unauthenticated transports, session-exhaustion DoS
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-5648-rgj9-v224>
@@ -171,7 +189,18 @@ Reviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package ver…
 
 ---
 
-## 18. 🟡 High Severity — LMdeploy has Remote Code Execution by Pickle Deserialization via zmq_rpc.call_and_response() in InterLM/lmdeploy
+## 20. 🟡 High Severity — Attackers Exploit Issabel Framework Flaw Enabling Unauthenticated OS Command Execution
+
+**CVE:** `CVE-2026-89026` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
+**Reference:** <https://thehackernews.com/2026/09/attackers-exploit-issabel-framework.html>
+
+> A critical security flaw in Issabel Framework, a web-based framework for the open-source unified communications PBX software, has come under active exploitation.
+
+The vulnerability in question is CVE-2026-89026 (CVSS v3.1 score: 9.8/CVSS v4.0 score: 9.3), which can allow an unauthenticated remote attacker to execute arbitrary operating system (OS) commands by taking advantage of a hard-coded
+
+---
+
+## 21. 🟡 High Severity — LMdeploy has Remote Code Execution by Pickle Deserialization via zmq_rpc.call_and_response() in InterLM/lmdeploy
 
 **CVE:** `CVE-2025-59953` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-5h8j-6crg-7rmw>
@@ -187,7 +216,7 @@ The vic…
 
 ---
 
-## 19. 🟡 High Severity — djust: Multi-tenant isolation fails open on the WebSocket/SSE path, disclosing other tenants' data
+## 22. 🟡 High Severity — djust: Multi-tenant isolation fails open on the WebSocket/SSE path, disclosing other tenants' data
 
 **CVE:** `CVE-2026-61595` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-3492-cvg7-9mr2>
@@ -197,7 +226,7 @@ The vic…
 
 ---
 
-## 20. 🟡 High Severity — djust: Client mass-assignment of arbitrary view attributes via the default dj-model update_model handler
+## 23. 🟡 High Severity — djust: Client mass-assignment of arbitrary view attributes via the default dj-model update_model handler
 
 **CVE:** `CVE-2026-61598` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-cc7c-9jff-58wj>
@@ -207,7 +236,7 @@ The vic…
 
 ---
 
-## 21. 🟡 High Severity — OpenTelemetry.Resources.Host vulnerable to arbitrary code execution via local PATH hijacking on macOS
+## 24. 🟡 High Severity — OpenTelemetry.Resources.Host vulnerable to arbitrary code execution via local PATH hijacking on macOS
 
 **CVE:** `CVE-2026-81192` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-v8pv-4842-x354>
@@ -221,7 +250,7 @@ A local attacker who is less privileged than the host application, and who can i
 
 ---
 
-## 22. 🟡 High Severity — @zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery
+## 25. 🟡 High Severity — @zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery
 
 **CVE:** `CVE-2026-61559` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-2h44-8472-frjj>
@@ -244,7 +273,7 @@ When the environment variable `ENABLE_DYNAMIC_API_URL=true` is …
 
 ---
 
-## 23. 🟡 High Severity — @zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport
+## 26. 🟡 High Severity — @zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport
 
 **CVE:** `CVE-2026-61568` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-vmp7-252j-cwp7>
@@ -253,7 +282,7 @@ When the environment variable `ENABLE_DYNAMIC_API_URL=true` is …
 
 ---
 
-## 24. 🟡 High Severity — emp3r0r has an unauthenticated HTTP Polling DoS
+## 27. 🟡 High Severity — emp3r0r has an unauthenticated HTTP Polling DoS
 
 **CVE:** `CVE-2026-61554` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
 **Reference:** <https://github.com/advisories/GHSA-4595-rvpx-4q34>
@@ -266,31 +295,7 @@ The plain HTTP C2 server starts t…
 
 ---
 
-## 25. 🟡 High Severity — Http4s Ember HTTP/2: unbounded continuation frame accumulation
-
-**CVE:** `CVE-2026-69218` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
-**Reference:** <https://github.com/advisories/GHSA-cp4q-fqw9-4hf6>
-
-> When Ember receives an HTTP/2 `HEADERS` or `PUSH_PROMISE` frame without the `END_HEADERS` flag, it buffers the header block fragment and waits for subsequent `CONTINUATION` frames.  These accumulate unbounded until the connection closes. 
-
-### Impact
-
-A remote, unauthenticated peer can exhaust the heap on any Ember endpoint that has HTTP/2 enabled:
-
-- **ember-server with `.withHttp2`**: any HTTP/2…
-
----
-
-## 26. 🟡 High Severity — Http4s: CookieJar middleware accepts arbitrary Set-Cookie domain
-
-**CVE:** `CVE-2026-69214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-15
-**Reference:** <https://github.com/advisories/GHSA-wv64-j4fq-5f9x>
-
-> When processing a `Set-Cookie` from a response, the `CookieJar` client middleware trusts the server-supplied `Domain` attribute verbatim, with no check that it domain-matches the host that sent the cookie (RFC6265 §5.3 step 6) and no public suffix check.  A malicious or compromised server can therefore plant a cookie for any domain in the cookie jar, which is subsequently set on the client&#x27;s …
-
----
-
-## 27. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

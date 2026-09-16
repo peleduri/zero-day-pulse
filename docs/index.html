@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">3</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">27</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-16 15:41 UTC</div>
+            <div class="generated">Updated 2026-09-16 20:33 UTC</div>
           </header>
           <main>
             <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-87886" target="_blank" rel="noopener">CVE-2026-87886 — Acronis Backup Incorrect Default Permissions Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-87886</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-16</span>
+  </div>
+  <p class='summary'>Vendor: Acronis | Product: Backup. Acronis Backup plugin for cPanel &amp; WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Fo…</p>
+
+</article>
+
+<article class="card card-kev">
   <div class="card-top">
     <span class="badge badge-kev">🔴 CISA KEV</span>
     <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-58704" target="_blank" rel="noopener">CVE-2026-58704 — Google Pixel Improper Authorization Vulnerability</a></h2>
@@ -130,6 +146,22 @@
     <span>2026-09-16</span>
   </div>
   <p class='summary'>Vendor: Google | Product: Pixel. Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidan…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-76460" target="_blank" rel="noopener">CVE-2026-76460 — Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-76460</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-16</span>
+  </div>
+  <p class='summary'>Vendor: Cisco | Product: Identity Services Engine. Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface. Required action: Apply mitigations in accordance w…</p>
 
 </article>
 
@@ -408,6 +440,24 @@ Reviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package ver…</p>
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/attackers-exploit-issabel-framework.html" target="_blank" rel="noopener">Attackers Exploit Issabel Framework Flaw Enabling Unauthenticated OS Command Execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-89026</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-16</span>
+          </div>
+          <p class='summary'>A critical security flaw in Issabel Framework, a web-based framework for the open-source unified communications PBX software, has come under active exploitation.
+
+The vulnerability in question is CVE-2026-89026 (CVSS v3.1 score: 9.8/CVSS v4.0 score: 9.3), which can allow an unauthenticated remote attacker to execute arbitrary operating system (OS) commands by taking advantage of a hard-coded</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5h8j-6crg-7rmw" target="_blank" rel="noopener">LMdeploy has Remote Code Execution by Pickle Deserialization via zmq_rpc.call_and_response() in InterLM/lmdeploy</a></h2>
           </div>
           <div class="card-meta">
@@ -548,44 +598,6 @@ The `http_poll` C2 transport accepts attacker-controlled HTTP polling sessions b
 The plain HTTP C2 server starts t…</p>
 
         </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cp4q-fqw9-4hf6" target="_blank" rel="noopener">Http4s Ember HTTP/2: unbounded continuation frame accumulation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69218</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-15</span>
-          </div>
-          <p class='summary'>When Ember receives an HTTP/2 `HEADERS` or `PUSH_PROMISE` frame without the `END_HEADERS` flag, it buffers the header block fragment and waits for subsequent `CONTINUATION` frames.  These accumulate unbounded until the connection closes. 
-
-### Impact
-
-A remote, unauthenticated peer can exhaust the heap on any Ember endpoint that has HTTP/2 enabled:
-
-- **ember-server with `.withHttp2`**: any HTTP/2…</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wv64-j4fq-5f9x" target="_blank" rel="noopener">Http4s: CookieJar middleware accepts arbitrary Set-Cookie domain</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-69214</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-15</span>
-  </div>
-  <p class='summary'>When processing a `Set-Cookie` from a response, the `CookieJar` client middleware trusts the server-supplied `Domain` attribute verbatim, with no check that it domain-matches the host that sent the cookie (RFC6265 §5.3 step 6) and no public suffix check.  A malicious or compromised server can therefore plant a cookie for any domain in the cookie jar, which is subsequently set on the client&#x27;s next …</p>
-
-</article>
 
 <article class="card card-high">
   <div class="card-top">
