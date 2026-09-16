@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">16</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">20</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-15 20:33 UTC</div>
+            <div class="generated">Updated 2026-09-16 02:01 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -146,6 +146,22 @@
     <span>Sep 08, 20</span>
   </div>
 
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/" target="_blank" rel="noopener">Acronis warns of actively exploited flaw in its cPanel backup plugin</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-15</span>
+  </div>
+  <p class='summary'>Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its backup plugin for cPanel, WebHost Manager (WHM), and Plesk that may be exploited in the wild. [...]</p>
 
 </article>
 
@@ -299,6 +315,25 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
 
 </article>
 
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5648-rgj9-v224" target="_blank" rel="noopener">@zereight/mcp-gitlab has multiple safety-control bypasses: execute_graphql read-only + allow-list bypass, unauthenticated transports, session-exhaustion DoS</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-15</span>
+          </div>
+          <p class='summary'>### Summary
+@zereight/mcp-gitlab exposes GitLab to an LLM agent while relying on read-only mode, a project allow-list, and transport auth as its safety controls. Five defects defeat those controls. Under the MCP threat model, tool-call arguments/content can be shaped by untrusted input (prompt injection) or a malicious client.
+
+Reviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package ver…</p>
+
+        </article>
+
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -314,6 +349,72 @@ Volexity, which is tracking the threat cluster under the moniker UTA0560, said t
   <p class='summary'>AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposure gaps before attackers arrive. [...]</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2h44-8472-frjj" target="_blank" rel="noopener">@zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61559</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-15</span>
+          </div>
+          <p class='summary'># Server-Side Request Forgery via X-GitLab-API-URL Header Allows Credential Theft
+
+## Affected
+
+- **Repository:** `zereight/gitlab-mcp`
+- **Affected versions:** All versions through commit `74a8c83`
+- **Patched versions:** None at time of report
+
+## Severity
+
+High. CVSS v3.1 8.5 (`AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N`)
+
+## Description
+
+When the environment variable `ENABLE_DYNAMIC_API_URL=true` is …</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vmp7-252j-cwp7" target="_blank" rel="noopener">@zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-61568</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-15</span>
+  </div>
+  <p class='summary'>`@zereight/mcp-gitlab` exposes its Streamable HTTP MCP endpoint without an effective Host or Origin allowlist. A malicious web page can use DNS rebinding to route browser requests to a victim&#x27;s local MCP listener while preserving an attacker-controlled `Host` and `Origin`. The server accepts those headers and reaches the MCP initialization path instead of rejecting the request at the HTTP boundary…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4595-rvpx-4q34" target="_blank" rel="noopener">emp3r0r has an unauthenticated HTTP Polling DoS</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61554</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-15</span>
+          </div>
+          <p class='summary'>### Summary
+The `http_poll` C2 transport accepts attacker-controlled HTTP polling sessions before CBOR `MsgAuth` authentication is completed. A remote unauthenticated attacker can create arbitrary polling sessions and send request bodies that are forwarded into the C2 dispatch path. This can consume server resources and trigger pre-auth C2 processing.
+
+### Details
+The plain HTTP C2 server starts t…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -352,28 +453,6 @@ A remote, unauthenticated peer can exhaust the heap on any Ember endpoint that h
   <p class='summary'>When processing a `Set-Cookie` from a response, the `CookieJar` client middleware trusts the server-supplied `Domain` attribute verbatim, with no check that it domain-matches the host that sent the cookie (RFC6265 §5.3 step 6) and no public suffix check.  A malicious or compromised server can therefore plant a cookie for any domain in the cookie jar, which is subsequently set on the client&#x27;s next …</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vrh8-c9cm-wh8v" target="_blank" rel="noopener">ZITADEL: Unauthorized Token Privilege Escalation in OAuth2 Token Exchange</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56668</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-14</span>
-          </div>
-          <p class='summary'>### Summary
-
-A vulnerability in ZITADEL’s OAuth2 Token Exchange endpoint allows an authenticated user or client to exchange a low-privilege access token for a token with elevated permissions at a completely different application. This bypasses the intended authorization and separation policies configured within ZITADEL.
-
-### Impact
-
-ZITADEL enables administrators to restrict token issuance based o…</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">

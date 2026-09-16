@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-15T20:33:34.400525+00:00",
-  "total": 16,
+  "generated": "2026-09-16T02:01:54.023522+00:00",
+  "total": 20,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,21 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/",
+      "title": "Acronis warns of actively exploited flaw in its cPanel backup plugin",
+      "summary": "Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its backup plugin for cPanel, WebHost Manager (WHM), and Plesk that may be exploited in the wild. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/",
+      "published": "2026-09-15T21:37:35+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -181,6 +196,22 @@
       "is_high_severity": false
     },
     {
+      "id": "GHSA-5648-rgj9-v224",
+      "title": "@zereight/mcp-gitlab has multiple safety-control bypasses: execute_graphql read-only + allow-list bypass, unauthenticated transports, session-exhaustion DoS",
+      "summary": "### Summary\n@zereight/mcp-gitlab exposes GitLab to an LLM agent while relying on read-only mode, a project allow-list, and transport auth as its safety controls. Five defects defeat those controls. Under the MCP threat model, tool-call arguments/content can be shaped by untrusted input (prompt injection) or a malicious client.\n\nReviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package version 2.1.28). Source review only; PoCs are local/offline.\n\n- F1 (HIGH) execute_graphql defeats BOTH read-only mode and GITLAB_ALLOWED_PROJECT_IDS.\n- F2 (HIGH, deployment-conditional) Streamable HTTP /mcp unauthenticated under cookie-jar / device-flow credentials.\n- F3 (MEDIUM) SSE unauthenticated by default, no Origin/Host validation (DNS rebinding).\n- F4 (HIGH) unauthenticated session/transport-exhaustion DoS (token check is syntactic only).\n- F5 (LOW) CI job trace returned verbatim (prompt-injection surface).\n\n### Details\n\nF1 \u2014 index.ts:9194-9245 (case \"execute_graphql\"), guard at :9196, detector in utils/graphql-query.ts.\n(a) Read-only bypass: graphqlQueryContainsWriteOperation() strips comments/strings then tests /(?:^|[};]\\s*)(mutation|subscription)\\b/. GraphQL treats commas as insignificant, and stripGraphQLCommentsAndStrings does not remove them, so a document beginning with `,mutation{...}` executes as a write but is classified read-only. (b) Allow-list bypass: the handler never calls getEffectiveProjectId() or rejectIfProjectScopedDeployment() (unlike other tools), so a raw GraphQL body reaches /api/graphql with the server token against any project the token can access, regardless of GITLAB_ALLOWED_PROJECT_IDS. execute_graphql is listed in readOnlyTools (tools/registry.ts:1288).\n\nF2 \u2014 index.ts:1048-1052 forces REMOTE_AUTHORIZATION/GITLAB_MCP_OAUTH only when started with a PAT or job token; hasCookie (:1029) and useOAuth (:1026) are absent from the gate. Started with --cookie-path or --use-oauth, validation passes and mcpBearerAuth degrades to next() (:12903). Every",
+      "link": "https://github.com/advisories/GHSA-5648-rgj9-v224",
+      "published": "2026-09-15T20:48:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
       "title": "What Zero-Day Response Should Be in the Post-Mythos Era",
       "summary": "AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposure gaps before attackers arrive. [...]",
@@ -194,6 +225,60 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-61559",
+      "title": "@zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery",
+      "summary": "# Server-Side Request Forgery via X-GitLab-API-URL Header Allows Credential Theft\n\n## Affected\n\n- **Repository:** `zereight/gitlab-mcp`\n- **Affected versions:** All versions through commit `74a8c83`\n- **Patched versions:** None at time of report\n\n## Severity\n\nHigh. CVSS v3.1 8.5 (`AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N`)\n\n## Description\n\nWhen the environment variable `ENABLE_DYNAMIC_API_URL=true` is set, the server\nreads the `X-GitLab-API-URL` HTTP request header and uses it as the base URL for\nall outbound GitLab API calls made within that request. The server validates that\nthe value is a well-formed URL (`new URL(dynamicApiUrl)`) but applies no\nallowlist or hostname restriction. The server then attaches the victim's\n`Private-Token` to every outbound fetch that uses the redirected URL.\n\nAny caller who can reach the HTTP transport can set `X-GitLab-API-URL` to an\nattacker-controlled host. The next GitLab API call the server makes delivers the\nvictim's token to that host.\n\nThe vulnerable code appears at two locations.\n\n**SSE handler (`index.ts:11541`):**\n\n```typescript\nconst dynamicApiUrl = req.headers[\"x-gitlab-api-url\"]?.trim();\nif (ENABLE_DYNAMIC_API_URL && dynamicApiUrl) {\n  apiUrl = normalizeGitLabApiUrl(dynamicApiUrl);   // no allowlist check\n}\n```\n\n**Streamable HTTP handler (`index.ts:11787`), inside `parseAuthHeaders`:**\n\n```typescript\nconst dynamicApiUrl = req.headers[\"x-gitlab-api-url\"]?.trim();\nif (ENABLE_DYNAMIC_API_URL && dynamicApiUrl) {\n  new URL(dynamicApiUrl);                          // syntax-only check\n  apiUrl = normalizeGitLabApiUrl(dynamicApiUrl);   // any reachable host accepted\n}\n```\n\nIn both cases, `apiUrl` propagates through `getEffectiveApiUrl()` and into\n`getFetchConfig()`, which attaches `Private-Token: <victim_token>` to every\noutbound fetch. The token reaches the attacker's host, not GitLab.\n\n## Proof of Concept\n\nRun upstream `zereight/gitlab-mcp` at commit `74a8c83` with\n`ENABLE_DYNAMIC_API_URL=true` and `REMOTE_AUTHORIZATION=true`.\n\n```",
+      "link": "https://github.com/advisories/GHSA-2h44-8472-frjj",
+      "published": "2026-09-15T20:57:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61559"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61568",
+      "title": "@zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport",
+      "summary": "`@zereight/mcp-gitlab` exposes its Streamable HTTP MCP endpoint without an effective Host or Origin allowlist. A malicious web page can use DNS rebinding to route browser requests to a victim's local MCP listener while preserving an attacker-controlled `Host` and `Origin`. The server accepts those headers and reaches the MCP initialization path instead of rejecting the request at the HTTP boundary.\n\nThis is CWE-350, Reliance on Reverse DNS Resolution for a Security-Critical Action. The affected package is `@zereight/mcp-gitlab` version `2.1.18` at commit `74a8c834424ff557ad8bc6f225e4dc5acf80aa13`.\n\nThe vulnerable transport setup is in `index.ts`. Express JSON parsing is installed globally before any MCP route-level Host or Origin allowlist:\n\n```typescript\n// index.ts:12077\napp.use(express.json());\n\nregisterDownloadProxy(app);\n```\n\nThe Streamable HTTP transport is then created without the SDK DNS-rebinding controls:\n\n```typescript\n// index.ts:12375\ntransport = new StreamableHTTPServerTransport({\n  sessionIdGenerator: () => randomUUID(),\n  onsessioninitialized: (newSessionId: string) => {\n    streamableTransports[newSessionId] = transport;\n    metrics.totalSessions++;\n    metrics.activeSessions++;\n  },\n});\n```\n\nThe transport constructor does not set `enableDnsRebindingProtection`, `allowedHosts`, or `allowedOrigins`. The server also does not add an Express middleware that rejects unexpected `Host` or `Origin` headers before `/mcp`.\n\nThe default host is loopback, which is the exact target DNS rebinding attacks are designed to reach:\n\n```typescript\n// config.ts:192\nexport const HOST = getConfig(\"host\", \"HOST\") || \"127.0.0.1\";\n\n// config.ts:196\nexport const PORT = _intEnv(\"PORT\", \"port\", _PORT_DEFAULT);\n```\n\nThe README documents Streamable HTTP as a supported transport for modern remote deployments and documents `REMOTE_AUTHORIZATION=true` for multi-user HTTP deployments. In that mode, unauthenticated `tools/list` and material GitLab API tool calls are blocked by token c",
+      "link": "https://github.com/advisories/GHSA-vmp7-252j-cwp7",
+      "published": "2026-09-15T20:54:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61568"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61554",
+      "title": "emp3r0r has an unauthenticated HTTP Polling DoS",
+      "summary": "### Summary\nThe `http_poll` C2 transport accepts attacker-controlled HTTP polling sessions before CBOR `MsgAuth` authentication is completed. A remote unauthenticated attacker can create arbitrary polling sessions and send request bodies that are forwarded into the C2 dispatch path. This can consume server resources and trigger pre-auth C2 processing.\n\n### Details\nThe plain HTTP C2 server starts the HTTP polling listener and forwards requests into `HandleHTTPServerSession`:\n```go\n// core/internal/cc/server/c2_http_server.go\nmux.HandleFunc(c2Path, func(w http.ResponseWriter, req *http.Request) {\n    stream, err := transport.HandleHTTPServerSession(w, req, &live.RuntimeConfig.MalleableC2)\n    ...\n    if stream != nil {\n        go cborStreamAccept(transport.NewStreamTransport(stream, req.RemoteAddr))\n    }\n})\n```\nThe HTTP polling handler accepts an attacker-supplied `sessionID` and `init=1` cookie, then creates and stores a server-side stream before authentication:\n\n```go\n// core/internal/transport/c2channel_http.go\nif isInit {\n    stream = newHTTPServerStream(sessionID)\n    w.WriteHeader(http.StatusOK)\n    return stream, nil\n}\n```\nPOST bodies for that unauthenticated session are read and queued before CBOR authentication rejects them:\n```go\n// core/internal/transport/c2channel_http.go\ncase http.MethodPost:\n    data, err := io.ReadAll(req.Body)\n    if err == nil && len(data) > 0 {\n        select {\n        case stream.readCh <- data:\n            w.WriteHeader(http.StatusOK)\n        ...\n        }\n    }\n```\nAuthentication only happens later in the C2 dispatch layer:\n```go\n// core/internal/cc/server/dispatcher.go\nsecureConn := transport.NewSecureConn(t)\n...\nn, err := secureConn.Read(authFrame)\n```\n\n### PoC\n1. Start the C2 server in a lab environment with the HTTP polling transport exposed, for example with `--http-port 12345`.\n2. Send an unauthenticated HTTP POST to the default polling path `/api/v1/telemetry` with a random `sessionID` cookie and the `init=1` cookie value.",
+      "link": "https://github.com/advisories/GHSA-4595-rvpx-4q34",
+      "published": "2026-09-15T20:47:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61554"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-69218",
@@ -227,24 +312,6 @@
       ],
       "cve_ids": [
         "CVE-2026-69214"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56668",
-      "title": "ZITADEL: Unauthorized Token Privilege Escalation in OAuth2 Token Exchange",
-      "summary": "### Summary\n\nA vulnerability in ZITADEL\u2019s OAuth2 Token Exchange endpoint allows an authenticated user or client to exchange a low-privilege access token for a token with elevated permissions at a completely different application. This bypasses the intended authorization and separation policies configured within ZITADEL.\n\n### Impact\n\nZITADEL enables administrators to restrict token issuance based on client permissions, project roles, and specific scopes. Due to a missing verification step during the Token Exchange flow (`urn:ietf:params:oauth:grant-type:token-exchange`), ZITADEL fails to validate whether the incoming access token belongs to or is authorized for the client initiating the exchange. Additionally, ZITADEL does not enforce that the newly requested scopes must stay within the boundaries of the original token's scopes.\n\nAn attacker with valid access to a low-privilege application can exploit this behavior by sending a token exchange request to a highly-privileged target application. This allows them to obtain administrative project roles, access sensitive profile data, or gain unauthorized access to other applications across the system. If public clients (which do not require client secrets) are used, this risk increases significantly as it requires no client authentication.\n\n### Affected Versions\n\nSystems running one of the following versions are affected:\n\n* **4.x:** `4.0.0` through `4.15.2` (including RC versions)\n* **3.x:** `3.0.0` through `3.4.12` (including RC versions)\n\n### Patches\n\nThe vulnerability has been addressed in the latest releases. The patch resolves the issue by enforcing strict audience ownership verification and ensuring that requested scopes during a token exchange are restricted to a subset of the original token\u2019s scopes.\n\n* **4.x**: Upgrade to $\\ge$ [4.15.3](https://github.com/zitadel/zitadel/releases/tag/v4.15.3)\n* **3.x**: Upgrade to $\\ge$ [4.15.3](https://github.com/zitadel/zitadel/releases/tag/v4.15.3)\n\n### Workarounds\n\nThe recom",
-      "link": "https://github.com/advisories/GHSA-vrh8-c9cm-wh8v",
-      "published": "2026-09-14T21:28:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56668"
       ],
       "is_zero_day": false,
       "is_high_severity": true
