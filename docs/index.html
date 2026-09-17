@@ -109,63 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">3</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">26</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-16 20:33 UTC</div>
+            <div class="generated">Updated 2026-09-17 02:06 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-87886" target="_blank" rel="noopener">CVE-2026-87886 — Acronis Backup Incorrect Default Permissions Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-87886</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-16</span>
-  </div>
-  <p class='summary'>Vendor: Acronis | Product: Backup. Acronis Backup plugin for cPanel &amp; WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Fo…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-58704" target="_blank" rel="noopener">CVE-2026-58704 — Google Pixel Improper Authorization Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-58704</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-16</span>
-  </div>
-  <p class='summary'>Vendor: Google | Product: Pixel. Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidan…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-76460" target="_blank" rel="noopener">CVE-2026-76460 — Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-76460</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-16</span>
-  </div>
-  <p class='summary'>Vendor: Cisco | Product: Identity Services Engine. Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface. Required action: Apply mitigations in accordance w…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -196,6 +148,27 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-33f5-2c5q-wgwj" target="_blank" rel="noopener">RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63127</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-16</span>
+          </div>
+          <p class='summary'>### Summary
+The `rmcp` library does not validate the `resource` parameter in OAuth Protected Resource metadata (RFC 9728), allowing a malicious MCP server to redirect OAuth flows to a legitimate authorization server and steal the resulting access tokens.
+
+### Details
+RFC 9728 specifies two MUST requirements for resource parameter validation:
+- Section 7.3: the client MUST ensure that the resource …</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -289,22 +262,6 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 &quot;JWT authentication</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/" target="_blank" rel="noopener">Acronis warns of actively exploited flaw in its cPanel backup plugin</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-15</span>
-  </div>
-  <p class='summary'>Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its backup plugin for cPanel, WebHost Manager (WHM), and Plesk that may be exploited in the wild. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -418,22 +375,92 @@ The vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of
 
 </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5648-rgj9-v224" target="_blank" rel="noopener">@zereight/mcp-gitlab has multiple safety-control bypasses: execute_graphql read-only + allow-list bypass, unauthenticated transports, session-exhaustion DoS</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mxm6-v9r6-r94c" target="_blank" rel="noopener">@nuxtjs/mdc&#x27;s URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration</a></h2>
           </div>
           <div class="card-meta">
-            <span class="no-cve">No CVE</span>
+            <code class="cve">CVE-2026-63671</code>
             <span class="meta-sep">·</span>
             <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-09-15</span>
+            <span>2026-09-16</span>
           </div>
-          <p class='summary'>### Summary
-@zereight/mcp-gitlab exposes GitLab to an LLM agent while relying on read-only mode, a project allow-list, and transport auth as its safety controls. Five defects defeat those controls. Under the MCP threat model, tool-call arguments/content can be shaped by untrusted input (prompt injection) or a malicious client.
+          <p class='summary'>## Summary
 
-Reviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package ver…</p>
+`@nuxtjs/mdc` renders untrusted markdown (including raw HTML) to a Vue component tree. Across two prior advisories it added a URL/attribute sanitizer to block dangerous links in that HTML: `validateProps` / `validateProp` and an `unsafeLinkPrefix` deny-list (`dist/runtime/parser/utils/props.js`). The sanitizer runs at parse time (`dist/runtime/parser/compiler.js`) and `parseMarkdown` e…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v9rj-xjfv-xj9r" target="_blank" rel="noopener">djust: WebSocket/runtime reconstructed request omits the client Host, causing host/subdomain TenantResolvers to misresolve the tenant on the live path</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61589</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-16</span>
+          </div>
+          <p class='summary'>### Impact
+The WebSocket `handle_mount` and `ViewRuntime._build_request` rebuild an `HttpRequest` via `RequestFactory().get(...)` with no `HTTP_HOST`, so `request.get_host()` defaulted to `&quot;testserver&quot;` on the live path. Host/subdomain/domain `TenantResolver`s then misresolved the tenant — `None` on the live path while the HTTP path resolved correctly. With `STRICT_MODE=False` the tenant-scoped ma…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pvg3-6q9j-mj3x" target="_blank" rel="noopener">djust&#x27;s Django model serialization has no sensitive-field denylist: password hashes, privilege flags, and PII on a public view attribute are sent to the client</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61588</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-16</span>
+          </div>
+          <p class='summary'>### Impact
+When a Django `Model` instance is assigned to a **public** view attribute, djust serialized it to the client with **no sensitive-field denylist** — sending fields such as `password` (the hash), privilege flags (e.g. `is_staff` / `is_superuser`), tokens, and other PII to the browser. Because exposing model objects to templates is a normal djust pattern, this could leak credentials/PII wi…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c67v-vqrp-m5wj" target="_blank" rel="noopener">djust: Unsigned client state snapshot is restored as trusted view state (privilege escalation / state injection)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61591</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-16</span>
+          </div>
+          <p class='summary'>### Impact
+For views that opt into state snapshots, the snapshot `state_json` embedded in the client page was restored on reconnect as **trusted** view state with no integrity check. A client could edit the unsigned `state_json` in their page and return it in the reconnect mount frame to **inject arbitrary view attributes** — e.g. flip `is_admin` to `True`, or change `account_id` / `balance` — esc…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f795-p5jw-j6g2" target="_blank" rel="noopener">djust: SSE sessions are not bound to the authenticated user; the client-chosen session_id is the sole authorization capability (session hijack)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61592</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-16</span>
+          </div>
+          <p class='summary'>### Impact
+SSE sessions were keyed solely by a **client-chosen** `session_id` with no binding to the authenticated user — a control the WebSocket transport has but that was dropped on SSE. An attacker who learns (or a victim who leaks) a `session_id` could connect to the message endpoint and dispatch event handlers that execute with the **victim&#x27;s identity and state**.
+
+### Patches
+Fixed in **djus…</p>
 
         </article>
 
@@ -530,72 +557,6 @@ The `OpenTelemetry.Resources.Host` NuGet package is affected by an untrusted sea
 through the `PATH` environment variable.
 
 A local attacker who is less privileged than the host application, and who can influ…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2h44-8472-frjj" target="_blank" rel="noopener">@zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61559</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-15</span>
-          </div>
-          <p class='summary'># Server-Side Request Forgery via X-GitLab-API-URL Header Allows Credential Theft
-
-## Affected
-
-- **Repository:** `zereight/gitlab-mcp`
-- **Affected versions:** All versions through commit `74a8c83`
-- **Patched versions:** None at time of report
-
-## Severity
-
-High. CVSS v3.1 8.5 (`AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N`)
-
-## Description
-
-When the environment variable `ENABLE_DYNAMIC_API_URL=true` is …</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vmp7-252j-cwp7" target="_blank" rel="noopener">@zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-61568</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-15</span>
-  </div>
-  <p class='summary'>`@zereight/mcp-gitlab` exposes its Streamable HTTP MCP endpoint without an effective Host or Origin allowlist. A malicious web page can use DNS rebinding to route browser requests to a victim&#x27;s local MCP listener while preserving an attacker-controlled `Host` and `Origin`. The server accepts those headers and reaches the MCP initialization path instead of rejecting the request at the HTTP boundary…</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4595-rvpx-4q34" target="_blank" rel="noopener">emp3r0r has an unauthenticated HTTP Polling DoS</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61554</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-15</span>
-          </div>
-          <p class='summary'>### Summary
-The `http_poll` C2 transport accepts attacker-controlled HTTP polling sessions before CBOR `MsgAuth` authentication is completed. A remote unauthenticated attacker can create arbitrary polling sessions and send request bodies that are forwarded into the C2 dispatch path. This can consume server resources and trigger pre-auth C2 processing.
-
-### Details
-The plain HTTP C2 server starts t…</p>
 
         </article>
 

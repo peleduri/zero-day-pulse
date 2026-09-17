@@ -1,67 +1,10 @@
 {
-  "generated": "2026-09-16T20:33:36.823914+00:00",
-  "total": 28,
-  "kev": 3,
-  "zero_day": 16,
+  "generated": "2026-09-17T02:06:23.756394+00:00",
+  "total": 26,
+  "kev": 0,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-87886",
-      "title": "CVE-2026-87886 \u2014 Acronis Backup Incorrect Default Permissions Vulnerability",
-      "summary": "Vendor: Acronis | Product: Backup. Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-19)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87886",
-      "published": "2026-09-16",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-87886"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-58704",
-      "title": "CVE-2026-58704 \u2014 Google Pixel Improper Authorization Vulnerability",
-      "summary": "Vendor: Google | Product: Pixel. Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-19)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-58704",
-      "published": "2026-09-16",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-58704"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-76460",
-      "title": "CVE-2026-76460 \u2014 Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
-      "summary": "Vendor: Cisco | Product: Identity Services Engine. Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-19)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76460",
-      "published": "2026-09-16",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-76460"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -90,6 +33,24 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63127",
+      "title": "RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery",
+      "summary": "### Summary\nThe `rmcp` library does not validate the `resource` parameter in OAuth Protected Resource metadata (RFC 9728), allowing a malicious MCP server to redirect OAuth flows to a legitimate authorization server and steal the resulting access tokens.\n\n### Details\nRFC 9728 specifies two MUST requirements for resource parameter validation:\n- Section 7.3: the client MUST ensure that the resource identifier URL it is using as the prefix for the metadata request exactly matches the `resource` value in the returned metadata document.\n- Section 3.3: if the `resource` value returned is not identical to the URL the client used, the data MUST NOT be used.\n\nIn the current implementation (`crates/rmcp/src/transport/auth.rs`), the `ResourceServerMetadata` struct (lines 390\u2013394) does not include a resource field:\n```rust\nstruct ResourceServerMetadata {\n    authorization_server: Option<String>,\n    authorization_servers: Option<Vec<String>>,\n    scopes_supported: Option<Vec<String>>,\n}\n```\nAnd discover_oauth_server_via_resource_metadata() (lines 1446\u20131465) proceeds without any resource URL validation.\n\n#### Recommended fix\n1. Add the `resource` field to the struct:\n    ```rust\n    struct ResourceServerMetadata {\n        resource: Option<String>,  // RFC 9728 REQUIRED field\n        authorization_server: Option<String>,\n        authorization_servers: Option<Vec<String>>,\n        scopes_supported: Option<Vec<String>>,\n    }\n    ```\n2. Add validation logic after fetching metadata:\n    ```rust\n    let Some(resource_metadata) = self\n        .fetch_resource_metadata_from_url(&resource_metadata_url)\n        .await?\n    else {\n        return Ok(None);\n    };\n \n    // RFC 9728: validate that the resource identifier matches our target server\n    if let Some(resource) = &resource_metadata.resource {\n        if resource.trim_end_matches('/') != self.base_url.as_str().trim_end_matches('/') {\n            return Err(AuthError::MetadataError(format!(\n                \"Resource metadata mismatch",
+      "link": "https://github.com/advisories/GHSA-33f5-2c5q-wgwj",
+      "published": "2026-09-16T22:13:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63127"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -171,21 +132,6 @@
       "cve_ids": [
         "CVE-2026-5430"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/",
-      "title": "Acronis warns of actively exploited flaw in its cPanel backup plugin",
-      "summary": "Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its backup plugin for cPanel, WebHost Manager (WHM), and Plesk that may be exploited in the wild. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/",
-      "published": "2026-09-15T21:37:35+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -302,20 +248,94 @@
       "is_high_severity": false
     },
     {
-      "id": "GHSA-5648-rgj9-v224",
-      "title": "@zereight/mcp-gitlab has multiple safety-control bypasses: execute_graphql read-only + allow-list bypass, unauthenticated transports, session-exhaustion DoS",
-      "summary": "### Summary\n@zereight/mcp-gitlab exposes GitLab to an LLM agent while relying on read-only mode, a project allow-list, and transport auth as its safety controls. Five defects defeat those controls. Under the MCP threat model, tool-call arguments/content can be shaped by untrusted input (prompt injection) or a malicious client.\n\nReviewed commit: 60adcc0de5b0e96c4c2029f7a25d2775946421d8 (package version 2.1.28). Source review only; PoCs are local/offline.\n\n- F1 (HIGH) execute_graphql defeats BOTH read-only mode and GITLAB_ALLOWED_PROJECT_IDS.\n- F2 (HIGH, deployment-conditional) Streamable HTTP /mcp unauthenticated under cookie-jar / device-flow credentials.\n- F3 (MEDIUM) SSE unauthenticated by default, no Origin/Host validation (DNS rebinding).\n- F4 (HIGH) unauthenticated session/transport-exhaustion DoS (token check is syntactic only).\n- F5 (LOW) CI job trace returned verbatim (prompt-injection surface).\n\n### Details\n\nF1 \u2014 index.ts:9194-9245 (case \"execute_graphql\"), guard at :9196, detector in utils/graphql-query.ts.\n(a) Read-only bypass: graphqlQueryContainsWriteOperation() strips comments/strings then tests /(?:^|[};]\\s*)(mutation|subscription)\\b/. GraphQL treats commas as insignificant, and stripGraphQLCommentsAndStrings does not remove them, so a document beginning with `,mutation{...}` executes as a write but is classified read-only. (b) Allow-list bypass: the handler never calls getEffectiveProjectId() or rejectIfProjectScopedDeployment() (unlike other tools), so a raw GraphQL body reaches /api/graphql with the server token against any project the token can access, regardless of GITLAB_ALLOWED_PROJECT_IDS. execute_graphql is listed in readOnlyTools (tools/registry.ts:1288).\n\nF2 \u2014 index.ts:1048-1052 forces REMOTE_AUTHORIZATION/GITLAB_MCP_OAUTH only when started with a PAT or job token; hasCookie (:1029) and useOAuth (:1026) are absent from the gate. Started with --cookie-path or --use-oauth, validation passes and mcpBearerAuth degrades to next() (:12903). Every",
-      "link": "https://github.com/advisories/GHSA-5648-rgj9-v224",
-      "published": "2026-09-15T20:48:22Z",
+      "id": "CVE-2026-63671",
+      "title": "@nuxtjs/mdc's URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration",
+      "summary": "## Summary\n\n`@nuxtjs/mdc` renders untrusted markdown (including raw HTML) to a Vue component tree. Across two prior advisories it added a URL/attribute sanitizer to block dangerous links in that HTML: `validateProps` / `validateProp` and an `unsafeLinkPrefix` deny-list (`dist/runtime/parser/utils/props.js`). The sanitizer runs at parse time (`dist/runtime/parser/compiler.js`) and `parseMarkdown` enables raw HTML by default (`allowDangerousHtml: true`, `dist/runtime/parser/options.js`), so the sanitizer is the only barrier and it applies with no configuration required.\n\nTwo sibling vectors bypass that sanitizer at the default configuration:\n\n1. SVG anchor `xlink:href`. `validateProp` only scheme-checks attributes named exactly `href` or `src`:\n\n   ```\n   if (attribute === \"href\" || attribute === \"src\") return isAnchorLinkAllowed(value);\n   return true;\n   ```\n\n   An `xlink:href` (parsed to the hast property `xLinkHref`) is neither, so a `javascript:` URL on an SVG `<a>` is passed through. The renderer maps the property back to the real attribute (`MDCRenderer.vue`: `find(html, \"xLinkHref\").attribute` is `xlink:href`), so the output element is `<a xlink:href=\"javascript:...\">`. Clicking it runs the script in the page origin. Plain `<a href=\"javascript:...\">` is correctly stripped, which is what makes this the un-patched sibling.\n\n2. `<iframe src=\"data:text/html,...\">`. `data:text/html` is present in `unsafeLinkPrefix`, but the check compares it against `url.protocol`:\n\n   ```\n   if (unsafeLinkPrefix.some((prefix) => url.protocol.toLowerCase().startsWith(prefix))) return false;\n   ```\n\n   For any data URI `url.protocol` is just `\"data:\"`, so `\"data:\".startsWith(\"data:text/html\")` is always false. Every `data:text/*` entry in the deny-list is therefore dead code, and `<iframe src=\"data:text/html,<script>...</script>\">` is allowed (iframe is not in the render-time `dangerousTags`, which is only `[\"script\",\"base\"]`). The framed document executes script in an opaque origin",
+      "link": "https://github.com/advisories/GHSA-mxm6-v9r6-r94c",
+      "published": "2026-09-16T22:14:01Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
         "advisories",
         "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-63671"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61589",
+      "title": "djust: WebSocket/runtime reconstructed request omits the client Host, causing host/subdomain TenantResolvers to misresolve the tenant on the live path",
+      "summary": "### Impact\nThe WebSocket `handle_mount` and `ViewRuntime._build_request` rebuild an `HttpRequest` via `RequestFactory().get(...)` with no `HTTP_HOST`, so `request.get_host()` defaulted to `\"testserver\"` on the live path. Host/subdomain/domain `TenantResolver`s then misresolved the tenant \u2014 `None` on the live path while the HTTP path resolved correctly. With `STRICT_MODE=False` the tenant-scoped managers returned unscoped rows (**cross-tenant disclosure**); with the default they returned an empty queryset (broken tenancy).\n\n### Patches\nFixed in **djust 1.0.7**. The handshake Host is extracted from the ASGI scope, validated against `ALLOWED_HOSTS` (the same logic as the CSWSH Origin gate, parsed with Django's `split_domain_port` so malformed Hosts are rejected at the boundary), and propagated \u2014 with the TLS scheme \u2014 into the reconstructed request, so live-path tenant resolution matches HTTP exactly.\n\n### Workarounds\nNo workaround on the live path short of upgrading. Most exposed when combined with `STRICT_MODE=False`.",
+      "link": "https://github.com/advisories/GHSA-v9rj-xjfv-xj9r",
+      "published": "2026-09-16T22:07:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61589"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61588",
+      "title": "djust's Django model serialization has no sensitive-field denylist: password hashes, privilege flags, and PII on a public view attribute are sent to the client",
+      "summary": "### Impact\nWhen a Django `Model` instance is assigned to a **public** view attribute, djust serialized it to the client with **no sensitive-field denylist** \u2014 sending fields such as `password` (the hash), privilege flags (e.g. `is_staff` / `is_superuser`), tokens, and other PII to the browser. Because exposing model objects to templates is a normal djust pattern, this could leak credentials/PII without the developer realizing the full object crossed the wire.\n\n### Patches\nFixed in **djust 1.0.7**. Model serialization applies a secure-by-default sensitive-field denylist (password/hash/token/secret-style fields and known privilege flags are withheld) with an identity-subset fallback.\n\n### Workarounds\nKeep `Model` instances on `_private` attributes and expose only the specific fields needed, until patched.",
+      "link": "https://github.com/advisories/GHSA-pvg3-6q9j-mj3x",
+      "published": "2026-09-16T22:02:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61588"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61591",
+      "title": "djust: Unsigned client state snapshot is restored as trusted view state (privilege escalation / state injection)",
+      "summary": "### Impact\nFor views that opt into state snapshots, the snapshot `state_json` embedded in the client page was restored on reconnect as **trusted** view state with no integrity check. A client could edit the unsigned `state_json` in their page and return it in the reconnect mount frame to **inject arbitrary view attributes** \u2014 e.g. flip `is_admin` to `True`, or change `account_id` / `balance` \u2014 escalating privilege or tampering with business state held in public view attributes (the normal djust pattern).\n\n### Patches\nFixed in **djust 1.0.7**. State snapshots are signed; unsigned or forged snapshots are rejected on the back-navigation restore path.\n\n### Workarounds\nDo not enable state snapshots; do not hold authorization/ownership state in public view attributes.",
+      "link": "https://github.com/advisories/GHSA-c67v-vqrp-m5wj",
+      "published": "2026-09-16T21:56:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61591"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61592",
+      "title": "djust: SSE sessions are not bound to the authenticated user; the client-chosen session_id is the sole authorization capability (session hijack)",
+      "summary": "### Impact\nSSE sessions were keyed solely by a **client-chosen** `session_id` with no binding to the authenticated user \u2014 a control the WebSocket transport has but that was dropped on SSE. An attacker who learns (or a victim who leaks) a `session_id` could connect to the message endpoint and dispatch event handlers that execute with the **victim's identity and state**.\n\n### Patches\nFixed in **djust 1.0.7**. Each SSE session is bound to its owning principal at creation and cross-principal access is rejected; SSE session creation is additionally capped per principal.\n\n### Workarounds\nDisable the SSE transport short of upgrading.",
+      "link": "https://github.com/advisories/GHSA-f795-p5jw-j6g2",
+      "published": "2026-09-16T21:53:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61592"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/attackers-exploit-issabel-framework.html",
@@ -402,60 +422,6 @@
       ],
       "cve_ids": [
         "CVE-2026-81192"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61559",
-      "title": "@zereight/mcp-gitlab Vulnerable to Server-Side Request Forgery",
-      "summary": "# Server-Side Request Forgery via X-GitLab-API-URL Header Allows Credential Theft\n\n## Affected\n\n- **Repository:** `zereight/gitlab-mcp`\n- **Affected versions:** All versions through commit `74a8c83`\n- **Patched versions:** None at time of report\n\n## Severity\n\nHigh. CVSS v3.1 8.5 (`AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N`)\n\n## Description\n\nWhen the environment variable `ENABLE_DYNAMIC_API_URL=true` is set, the server\nreads the `X-GitLab-API-URL` HTTP request header and uses it as the base URL for\nall outbound GitLab API calls made within that request. The server validates that\nthe value is a well-formed URL (`new URL(dynamicApiUrl)`) but applies no\nallowlist or hostname restriction. The server then attaches the victim's\n`Private-Token` to every outbound fetch that uses the redirected URL.\n\nAny caller who can reach the HTTP transport can set `X-GitLab-API-URL` to an\nattacker-controlled host. The next GitLab API call the server makes delivers the\nvictim's token to that host.\n\nThe vulnerable code appears at two locations.\n\n**SSE handler (`index.ts:11541`):**\n\n```typescript\nconst dynamicApiUrl = req.headers[\"x-gitlab-api-url\"]?.trim();\nif (ENABLE_DYNAMIC_API_URL && dynamicApiUrl) {\n  apiUrl = normalizeGitLabApiUrl(dynamicApiUrl);   // no allowlist check\n}\n```\n\n**Streamable HTTP handler (`index.ts:11787`), inside `parseAuthHeaders`:**\n\n```typescript\nconst dynamicApiUrl = req.headers[\"x-gitlab-api-url\"]?.trim();\nif (ENABLE_DYNAMIC_API_URL && dynamicApiUrl) {\n  new URL(dynamicApiUrl);                          // syntax-only check\n  apiUrl = normalizeGitLabApiUrl(dynamicApiUrl);   // any reachable host accepted\n}\n```\n\nIn both cases, `apiUrl` propagates through `getEffectiveApiUrl()` and into\n`getFetchConfig()`, which attaches `Private-Token: <victim_token>` to every\noutbound fetch. The token reaches the attacker's host, not GitLab.\n\n## Proof of Concept\n\nRun upstream `zereight/gitlab-mcp` at commit `74a8c83` with\n`ENABLE_DYNAMIC_API_URL=true` and `REMOTE_AUTHORIZATION=true`.\n\n```",
-      "link": "https://github.com/advisories/GHSA-2h44-8472-frjj",
-      "published": "2026-09-15T20:57:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61559"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61568",
-      "title": "@zereight/mcp-gitlab: DNS rebinding reaches local Streamable HTTP MCP transport",
-      "summary": "`@zereight/mcp-gitlab` exposes its Streamable HTTP MCP endpoint without an effective Host or Origin allowlist. A malicious web page can use DNS rebinding to route browser requests to a victim's local MCP listener while preserving an attacker-controlled `Host` and `Origin`. The server accepts those headers and reaches the MCP initialization path instead of rejecting the request at the HTTP boundary.\n\nThis is CWE-350, Reliance on Reverse DNS Resolution for a Security-Critical Action. The affected package is `@zereight/mcp-gitlab` version `2.1.18` at commit `74a8c834424ff557ad8bc6f225e4dc5acf80aa13`.\n\nThe vulnerable transport setup is in `index.ts`. Express JSON parsing is installed globally before any MCP route-level Host or Origin allowlist:\n\n```typescript\n// index.ts:12077\napp.use(express.json());\n\nregisterDownloadProxy(app);\n```\n\nThe Streamable HTTP transport is then created without the SDK DNS-rebinding controls:\n\n```typescript\n// index.ts:12375\ntransport = new StreamableHTTPServerTransport({\n  sessionIdGenerator: () => randomUUID(),\n  onsessioninitialized: (newSessionId: string) => {\n    streamableTransports[newSessionId] = transport;\n    metrics.totalSessions++;\n    metrics.activeSessions++;\n  },\n});\n```\n\nThe transport constructor does not set `enableDnsRebindingProtection`, `allowedHosts`, or `allowedOrigins`. The server also does not add an Express middleware that rejects unexpected `Host` or `Origin` headers before `/mcp`.\n\nThe default host is loopback, which is the exact target DNS rebinding attacks are designed to reach:\n\n```typescript\n// config.ts:192\nexport const HOST = getConfig(\"host\", \"HOST\") || \"127.0.0.1\";\n\n// config.ts:196\nexport const PORT = _intEnv(\"PORT\", \"port\", _PORT_DEFAULT);\n```\n\nThe README documents Streamable HTTP as a supported transport for modern remote deployments and documents `REMOTE_AUTHORIZATION=true` for multi-user HTTP deployments. In that mode, unauthenticated `tools/list` and material GitLab API tool calls are blocked by token c",
-      "link": "https://github.com/advisories/GHSA-vmp7-252j-cwp7",
-      "published": "2026-09-15T20:54:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61568"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61554",
-      "title": "emp3r0r has an unauthenticated HTTP Polling DoS",
-      "summary": "### Summary\nThe `http_poll` C2 transport accepts attacker-controlled HTTP polling sessions before CBOR `MsgAuth` authentication is completed. A remote unauthenticated attacker can create arbitrary polling sessions and send request bodies that are forwarded into the C2 dispatch path. This can consume server resources and trigger pre-auth C2 processing.\n\n### Details\nThe plain HTTP C2 server starts the HTTP polling listener and forwards requests into `HandleHTTPServerSession`:\n```go\n// core/internal/cc/server/c2_http_server.go\nmux.HandleFunc(c2Path, func(w http.ResponseWriter, req *http.Request) {\n    stream, err := transport.HandleHTTPServerSession(w, req, &live.RuntimeConfig.MalleableC2)\n    ...\n    if stream != nil {\n        go cborStreamAccept(transport.NewStreamTransport(stream, req.RemoteAddr))\n    }\n})\n```\nThe HTTP polling handler accepts an attacker-supplied `sessionID` and `init=1` cookie, then creates and stores a server-side stream before authentication:\n\n```go\n// core/internal/transport/c2channel_http.go\nif isInit {\n    stream = newHTTPServerStream(sessionID)\n    w.WriteHeader(http.StatusOK)\n    return stream, nil\n}\n```\nPOST bodies for that unauthenticated session are read and queued before CBOR authentication rejects them:\n```go\n// core/internal/transport/c2channel_http.go\ncase http.MethodPost:\n    data, err := io.ReadAll(req.Body)\n    if err == nil && len(data) > 0 {\n        select {\n        case stream.readCh <- data:\n            w.WriteHeader(http.StatusOK)\n        ...\n        }\n    }\n```\nAuthentication only happens later in the C2 dispatch layer:\n```go\n// core/internal/cc/server/dispatcher.go\nsecureConn := transport.NewSecureConn(t)\n...\nn, err := secureConn.Read(authFrame)\n```\n\n### PoC\n1. Start the C2 server in a lab environment with the HTTP polling transport exposed, for example with `--http-port 12345`.\n2. Send an unauthenticated HTTP POST to the default polling path `/api/v1/telemetry` with a random `sessionID` cookie and the `init=1` cookie value.",
-      "link": "https://github.com/advisories/GHSA-4595-rvpx-4q34",
-      "published": "2026-09-15T20:47:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61554"
       ],
       "is_zero_day": false,
       "is_high_severity": true
