@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">25</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">44</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-17 15:46 UTC</div>
+            <div class="generated">Updated 2026-09-17 20:40 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -320,19 +320,406 @@ The vulnerability, tracked as CVE-2026-76460 (CVSS score: 10.0), could allow an 
 
         </article>
 
-<article class="card card-zeroday">
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gjv8-xp57-g29c" target="_blank" rel="noopener">Soup Sieve: Polynomial-time ReDoS (O(n²)) in the `IDENTIFIER` / `VALUE` selector sub-patterns</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-86000</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+soupsieve compiles CSS selector strings with a set of hand-written regular expressions. The shared `IDENTIFIER` sub-pattern (also embedded in `VALUE`, and therefore in attribute selectors) places two adjacent quantified groups over overlapping character classes: `(?:[classA]|ESC)+(?:[classB]|ESC)*`, where both classes match ordinary identifier characters such as `a`. When a selector co…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5mq7-rwhj-4fh9" target="_blank" rel="noopener">Steeltoe: Header-forwarded client cert lacks proof of private-key possession</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-81868</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>### Summary
+
+When Steeltoe&#x27;s certificate-based authorization (`UseCertificateAuthorization`) is configured, the default configuration of the middleware relies on the `X-Client-Cert` HTTP header to identify the client certificate, without verifying private-key possession. This header is not stripped by common Cloud Foundry routers (like Gorouter or Envoy) on inbound requests.
+
+### Impact
+
+An attack…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-67c9-f6v2-qv86" target="_blank" rel="noopener">Steeltoe.Discovery.Consul: malformed &#x27;secure&#x27; metadata aborts service instance lookup (DoS)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-81516</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+Steeltoe&#x27;s Consul discovery client parses the `secure` metadata field on each registered service instance using `bool.Parse`, which throws on any value other than `true` or `false`. A single service instance registered with a malformed `secure` value (for example `yes` or `1`) aborts construction of the entire instance list for that service, making the service undiscoverable. When `Get…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c3mw-737p-c7g2" target="_blank" rel="noopener">Jupyter Server: 5xx request logging leaks token-bearing Referer header values</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-86049</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>### Summary
+
+When a request returns a 500, `jupyter_server/log.py` logs a small JSON block of request headers. 
+
+The Referer header was copied into it as-is, so a token in the Referer URL ended up in the logs in plain text.
+
+### Impact
+
+Anyone who can read the server logs can pick tokens out of these 500 entries. Tokens end up in the Referer during normal token-based login and launch flows.
+
+Affec…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3jhr-mxmx-38cx" target="_blank" rel="noopener">Grav: UserInterface offsetget/offsetexists allow-listed in Twig sandbox let editor-authored content leak hashed_password and 2FA secrets via offsetGet()</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-76839</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+`system/config/security.yaml`&#x27;s Twig sandbox policy allow-lists `offsetget` and
+`offsetexists` for `Grav\Common\User\Interfaces\UserInterface`. The concrete
+`Grav\Common\User\DataUser\User` class does not filter which fields `offsetGet()`
+returns, so any sandboxed template with access to a `User` object can read
+`hashed_password`, `secret` (2FA seed), and `twofa_secret` directly, bypas…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xjw5-q542-3vmr" target="_blank" rel="noopener">Grav: config_denied_paths default list omits `system`, exposing real secrets (e.g. system.cache.redis.password) via the Twig sandbox when config_access is enabled</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-76846</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+`system/config/security.yaml`&#x27;s default `twig_sandbox.config_denied_paths` list
+(`plugins`, `streams`, `security`, `backups`, `scheduler`) omits the `system` prefix.
+When an operator enables the documented, non-default `twig_content.config_access: true`
+setting (intended to safely expose low-sensitivity values like `site.title` to
+editor-authored Twig content), any real secret stored u…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p597-crqc-m349" target="_blank" rel="noopener">Grav: The system, site, and theme Twig variables bypass the content sandbox entirely and are never covered by config_denied_paths</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72698</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+`Grav\Common\Twig\Twig::init()` unconditionally puts the raw `system`, `site`, and `theme` config arrays into `$this-&gt;twig_vars`. `Twig::processPage()` builds the variables for the sandboxed, editor-authored page-content render by copying that same base array (`$sandbox_vars = $twig_vars;`) and replacing only the `config` key with a filtered `SandboxConfig` facade. The `system`, `site`…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-38p6-h87p-r4cg" target="_blank" rel="noopener">Grav: Non constant time nonce comparison in Utils::verifyNonce() used for CSRF protection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72701</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+`Grav\Common\Utils::verifyNonce()`, the core function Grav and its plugins use to validate CSRF nonces, compares the submitted nonce to the expected value with PHP&#x27;s `===` operator instead of `hash_equals()`. `===` on strings short circuits at the first differing byte, so the comparison time leaks how many leading bytes of a guess are correct. This is CWE-208, Observable Timing Discrep…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g4c3-4g96-6g4m" target="_blank" rel="noopener">Chamilo LMS CStudio upload flow allows unauthenticated remote code execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-45140</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>### Impact
+Ability to run arbitrary code on the server without authentication.</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j5cx-ph8g-95v3" target="_blank" rel="noopener">Fulgur: Unbounded page slicing from attacker-controlled CSS height causes denial of service</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-68523</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>`fulgur` converts untrusted HTML/CSS into PDF, commonly on a server that
+processes input supplied by many tenants. In versions prior to 0.19.0, a
+body-direct child whose CSS-resolved height greatly exceeds the page height was
+sliced into one fragment per page with **no upper bound**.
+
+The height is taken directly from attacker-controlled HTML/CSS (`height`, `vh`
+units), so a few bytes such as:
+
+``…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8phw-xrj9-cpqp" target="_blank" rel="noopener">Steeltoe.Management.Endpoint: HttpExchanges URI masking leaks query-string secrets</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-75523</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+Steeltoe&#x27;s `/actuator/httpexchanges` endpoint records and displays request URIs after passing them through `MaskedUri`. The masking only covers the `UserInfo` portion of the URI (inline `user:password@host` credentials) and does not inspect the query string. With `IncludeQueryString` enabled by default, any secrets carried in query strings (for example: OAuth tokens, password-reset tok…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6qw9-4vv5-jr97" target="_blank" rel="noopener">Grav: Stored XSS via Markdown audio/video media &lt;source&gt; URL</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-75831</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>**Target:** github.com/getgrav/grav  
+**Affected resource:** `Grav\Common\Media\Traits\AudioMediaTrait` / `VideoMediaTrait` `sourceParsedownElement()` — verified on 2.0.13 (latest stable) and `develop` HEAD `5a7070f`  
+**Severity:** Medium (~6.9 CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:L/A:N — anchored to the sibling script-XSS advisory [CVE-2026-42841](https://github.com/getgrav/grav/security/advis…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fj9w-c36g-h5x8" target="_blank" rel="noopener">AsyncHttpClient doesn&#x27;t verify SCRAM and Digest mutual-authentication responses</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-85716</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>### Impact
+For SCRAM, and for Digest with mutual authentication, the client computes the server&#x27;s verification value (the SCRAM ServerSignature, or the Digest rspauth) but does not act on the result. If the value is present and does not verify, the client only logs it and still delivers the response to the application as a successful, authenticated result. A server that never proved knowledge of t…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h7vf-4x9w-h99v" target="_blank" rel="noopener">oras-go: Blind SSRF via unvalidated Link header URL in pagination allows internal network probing</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-85732</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+
+oras-go&#x27;s pagination helper `parseLink()` in `registry/remote/utils.go` follows the `Link` response header from a registry without validating the URL&#x27;s host or scheme. When a malicious registry returns a `Link` header containing an absolute URL pointing to an arbitrary host (e.g., a cloud metadata endpoint), the client makes GET requests to that host from the victim&#x27;s network.
+
+This af…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r56g-q4p6-m3p6" target="_blank" rel="noopener">Kestra: SSRF via Pebble http() function allows unauthenticated access to internal services &amp; cloud metadata</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-73247</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>### Summary
+The Pebble template engine&#x27;s `http()` function in Kestra OSS accepts user-controlled URLs without any validation, allowing Server-Side Request Forgery (SSRF) attacks. An unauthenticated attacker can import a malicious Flow YAML and execute it to access internal services, cloud metadata endpoints (AWS 169.254.169.254), or localhost services. The vulnerability affects all Kestra OSS depl…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c5pq-fr2g-9jpf" target="_blank" rel="noopener">RabbitMQ amqp091-go: Protocol Desynchronization and Frame Injection via Integer Overflow in readLongstr</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-77411</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>**Summary**
+
+A critical stream desynchronization vulnerability has been identified in the AMQP wire-protocol parser. When parsing a long string (`readLongstr`) within a table field, providing a length that exceeds the maximum signed 32-bit integer (`2^31 - 1`, or roughly `2.1` GiB) triggers an improper error-handling condition. The parser abruptly aborts the read and returns a success status (`&quot;&quot;,…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j497-x9hr-x34x" target="_blank" rel="noopener">RabbitMQ amqp091-go: Silent Data Truncation and State Corruption via Shortstr Integer Overflow</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-77408</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+A data integrity and protocol corruption vulnerability exists in the AMQP client&#x27;s property serialization logic. When encoding AMQP short string (`shortstr`) fields—such as identifiers, routing strings, and content metadata—the length of the string is explicitly cast to a fixed-size 8-bit unsigned integer (`uint8`). 
+
+If an application provides a property string exceeding 255 bytes, the…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-33mj-cw25-m34h" target="_blank" rel="noopener">RabbitMQ amqp091-go: Missing Explicit TLS Minimum Version Configuration In URI Parser</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-77405</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+A structural security weakness exists in the AMQP client&#x27;s TLS configuration generator (`tlsConfigFromURI`). When constructing a `*tls.Config` object from an `amqps://` connection URI, the library initializes the structure without explicitly defining the `MinVersion` field. 
+
+While modern versions of the Go compiler toolchain (Go 1.18+) default the implicit minimum version to TLS 1.2, t…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-465g-fh3v-9jw4" target="_blank" rel="noopener">RabbitMQ amqp091-go: Connection Configuration Overwrite via Unsanitized TLS Path Parameter Injection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-77404</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+A query parameter injection vulnerability exists in the AMQP client&#x27;s connection URI formatting logic. When generating or parsing connection URIs, TLS-related filesystem paths (such as certificates or keys) are appended directly to the URI&#x27;s query string using string concatenation rather than secure URL encoding via functions like `url.QueryEscape`.
+
+If an application handles a TLS file…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pq59-9fq7-m886" target="_blank" rel="noopener">Zope AccessControl vulnerable to information disclosure through Python string `format` and `format_map` functions</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-77401</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>### Impact
+Python&#x27;s string `format` functionality allows someone controlling the format string to &quot;read&quot; objects accessible (recursively) via attribute access and subscription from accessible objects. Those attribute accesses and subscriptions use Python&#x27;s full blown `getattr` and `getitem`, not the policy restricted `AccessControl` variants `_getattr_` and `_getitem_`. This can lead to critical i…</p>
+
+        </article>
+
+<article class="card card-high">
   <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/active-exploitation-triggers-emergency-patch-for-cisco-ise-zero-day/" target="_blank" rel="noopener">Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day</a></h2>
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wr57-hqmp-fgvh" target="_blank" rel="noopener">Umbraco: Delivery API leaks protected (Public Access) content through Content Picker / Multi-Node Tree Picker expansion</a></h2>
   </div>
   <div class="card-meta">
-    <span class="no-cve">No CVE</span>
+    <code class="cve">CVE-2026-69197</code>
     <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
+    <span>GitHub Security Advisories</span>
     <span class="meta-sep">·</span>
     <span>2026-09-17</span>
   </div>
-  <p class='summary'>Remote, unauthenticated attackers can exploit the vulnerability to bypass authentication via crafted requests. The post Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day appeared first on SecurityWeek .</p>
+  <p class='summary'>The Content Delivery API enforces member / Public Access protection only at the controller layer, against the node that is directly requested. When a public (unprotected) node references a protected node through a Content Picker or Multi-Node Tree Picker (including those nested inside Block List, Block Grid, or Rich Text Editor blocks), the Delivery API expands and serializes the protected node wi…</p>
 
 </article>
 
@@ -523,24 +910,6 @@ SSE sessions were keyed solely by a **client-chosen** `session_id` with no bindi
 
 ### Patches
 Fixed in **djus…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/attackers-exploit-issabel-framework.html" target="_blank" rel="noopener">Attackers Exploit Issabel Framework Flaw Enabling Unauthenticated OS Command Execution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-89026</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-16</span>
-          </div>
-          <p class='summary'>A critical security flaw in Issabel Framework, a web-based framework for the open-source unified communications PBX software, has come under active exploitation.
-
-The vulnerability in question is CVE-2026-89026 (CVSS v3.1 score: 9.8/CVSS v4.0 score: 9.3), which can allow an unauthenticated remote attacker to execute arbitrary operating system (OS) commands by taking advantage of a hard-coded</p>
 
         </article>
 
