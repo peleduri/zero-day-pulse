@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T02:06:23.756394+00:00",
+  "generated": "2026-09-17T10:34:06.181119+00:00",
   "total": 26,
   "kev": 0,
   "zero_day": 15,
@@ -119,23 +119,6 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/09/active-exploitation-attempts-target.html",
-      "title": "Active Exploitation Attempts Target WSO2 API Manager JWT Bypass With Forged Admin Tokens",
-      "summary": "A critical security flaw in WSO2 API Manager has come under active exploitation in the wild, according to findings from watchTowr.\n\nThe vulnerability, tracked as CVE-2026-5430 (CVSS score: 9.8/10.0), is a case of improper verification of a cryptographic signature that could result in account takeover. Hacktron Team has been credited with discovering and reporting the flaw.\n\n\"JWT authentication",
-      "link": "https://thehackernews.com/2026/09/active-exploitation-attempts-target.html",
-      "published": "2026-09-16T05:18:06+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-5430"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
       "title": "AI threats in the wild: The current state of prompt injections on the web",
       "summary": "Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise AI agents. But while the danger of IPI is widely discussed, are threat actors actually exploiting this vector today \u2013 and if so, how? To answer these questions and to uncover real-world abuse, we initiated a broad sweep of the public web to monitor for known indirect prompt injection patterns. This is what we found. The threat of indirect prompt injection Unlike a direct injection where a user \"jailbreaks\" a chatbot, IPI occurs when an AI system processes content\u2014like a website, email, or document\u2014that contains malicious instructions. When the AI reads this poisoned content, it may silently follow the attacker's commands instead of the user's original intent. This is not a new area of concern for us and Google has been working tirelessly to combat these threats. Our efforts involve cross-functional collaboration between researchers at Google DeepMind (GDM) and defenders like the Google Threat Intelligence Group (GTIG). We have previously detailed our work in this area and researchers have further highlighted the evolving nature of these vulnerabilities. Despite this collective focus, a fundamental question remains: to what degree are real-world malicious actors currently operationalizing these attacks? Proactive monitoring at Google The landscape of IPI on the web There are many channels through which attackers might try to send prompt injections. However, one location is particularly easy to observe - the public web. Here, threat actors may simply seed prompt injections on websites in hope of corrupting AI systems that browse them. Public research confirms these attacks ar",
@@ -233,15 +216,30 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/",
-      "title": "Google fixes actively exploited Android zero-day on Pixel devices",
-      "summary": "Google has released the September 2026 security patches to address 110 vulnerabilities affecting its Pixel devices, including one zero-day flaw actively exploited in targeted attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/",
-      "published": "2026-09-16T07:00:19+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-identity-service-engine-zero-day-exploited-in-attacks/",
+      "title": "Cisco warns of max severity ISE zero-day exploited in attacks",
+      "summary": "Cisco has released security updates to address a maximum-severity Identity Services Engine vulnerability that attackers are actively exploiting in the wild. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-identity-service-engine-zero-day-exploited-in-attacks/",
+      "published": "2026-09-17T07:20:54+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
         "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/active-exploitation-triggers-emergency-patch-for-cisco-ise-zero-day/",
+      "title": "Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day",
+      "summary": "Remote, unauthenticated attackers can exploit the vulnerability to bypass authentication via crafted requests. The post Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/active-exploitation-triggers-emergency-patch-for-cisco-ise-zero-day/",
+      "published": "2026-09-17T06:19:52+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
