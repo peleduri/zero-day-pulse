@@ -1,10 +1,72 @@
 {
-  "generated": "2026-09-18T10:14:17.653337+00:00",
+  "generated": "2026-09-18T15:24:51.819076+00:00",
   "total": 41,
-  "kev": 0,
+  "kev": 2,
   "zero_day": 9,
   "enriched": 10,
   "findings": [
+    {
+      "id": "CVE-2025-39964",
+      "title": "CVE-2025-39964 \u2014 Linux Kernel Race Condition Vulnerability",
+      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains a race condition vulnerability which allows concurrent writes to the same AF_ALG socket causing data to be unpredictably interleaved and creating inconsistencies in the socket's internal state. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-21)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39964",
+      "published": "2026-09-18",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2025-39964"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "The vulnerability is a race in the Linux kernel's crypto AF_ALG af_alg_sendmsg path: concurrent writes to the same AF_ALG socket can interleave unpredictably and corrupt the socket's internal state. The fix adds ctx->write ownership tracking so concurrent writers are rejected, including with an -EBUSY response.",
+        "affected_products": "Linux kernel with AF_ALG support: affected from 2.6.38 until fixes in 5.10.245, 5.15.194, 6.1.154, 6.6.108, 6.12.49, 6.16.9, and 6.17; Debian bullseye linux 5.10.223-1 was vulnerable, with fixes including 5.10.259-1/5.10.247-1, bookworm 6.1.176-1, and trixie 6.12.95-1",
+        "cvss_score": "7.8",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "true - https://cve.imfht.com/detail/CVE-2025-39964?lang=en",
+        "patch_available": "true - https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285",
+        "active_exploitation": "true - https://www.cisa.gov/news-events/alerts/2025/09/04/cisa-adds-three-known-exploited-vulnerabilities-catalog",
+        "threat_actors": "None known",
+        "mitigation": "Upgrade to a kernel release containing the AF_ALG fix, such as the listed fixed stable-branch versions. If immediate patching is not possible, prevent the af_alg kernel module from loading by blacklisting it, subject to application compatibility requirements.",
+        "vendor_advisory": "https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285"
+      }
+    },
+    {
+      "id": "CVE-2026-53266",
+      "title": "CVE-2026-53266 \u2014 Linux Kernel Out-of-Bounds Write Vulnerability",
+      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains an out-of-bounds write vulnerability in the ebtables SNAT target which allows an ARP sender hardware address rewrite to write directly into a nonlinear socket-buffer fragment backed by a splice-imported file page. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-21)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53266",
+      "published": "2026-09-18",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-53266"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "The ebtables SNAT target's optional ARP sender-hardware-address rewrite uses skb_store_bits() after only safely reading the ARP header, without first making the target range writable. When that range resides in a nonlinear socket-buffer fragment backed by a splice-imported file page, the operation can write the replacement MAC address directly into the file-backed page, causing an out-of-bounds write and memory corruption. Exploitation requires local access and a system configured with relevant bridge netfilter rules.",
+        "affected_products": "Linux kernel, including net/bridge/netfilter/ebt_snat.c: 5.4.73 through <5.5; 5.8.17 through <5.9; 5.9.2 through <5.10.259; 5.11 through <5.15.210; 5.16 through <6.1.176; 6.2 through <6.6.143; 6.7 through <6.12.94; 6.13 through <6.18.36; 6.19 through <7.0.13; and Linux 7.1-rc1 through 7.1-rc6.",
+        "cvss_score": "8.8",
+        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+        "exploit_available": "true - https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-53266",
+        "patch_available": "true - https://git.kernel.org/stable/c/153ea96c806aea395daba907a4f88480b6ad5093",
+        "active_exploitation": "true - https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-53266",
+        "threat_actors": "None known",
+        "mitigation": "Apply the upstream Linux stable-kernel patches or the corresponding distribution kernel updates. If patching is unavailable, disable ARP hardware-address rewriting in ebtables SNAT rules or remove ebtables SNAT rules operating on ARP traffic over bridge interfaces.",
+        "vendor_advisory": "https://git.kernel.org/stable/c/153ea96c806aea395daba907a4f88480b6ad5093"
+      }
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -20,15 +82,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "FSB Center 16 actors scan Internet address ranges for exposed SNMP agents accepting common or default community strings, primarily to identify poorly configured routers. They also occasionally exploit Cisco Smart Install and web-based network-device management portals, including the referenced CVE-2018-0171 and CVE-2008-4128 vulnerabilities.",
-        "affected_products": "Poorly configured or end-of-life networking devices, primarily internet-exposed routers; Cisco IOS and IOS XE devices using Smart Install (CVE-2018-0171; exact vulnerable releases are not specified in AA26-194A); Cisco IOS 12.4 on the Cisco 871 Integrated Services Router (CVE-2008-4128).",
-        "cvss_score": "://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-        "cvss_vector": "://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-        "exploit_available": "true for referenced vulnerabilities. Public exploit material is documented for the referenced Cisco vulnerabilities; the CVE-2008-4128 record lists Exploit-DB entry 6476. Source: https://www.cve.org/CVERecord?id=CVE-2008-4128",
-        "patch_available": "false for AA26-194A itself: this is a joint threat-activity advisory, not a single-product patch bulletin. Relevant products require their own vendor updates; Cisco's separate advisory for CVE-2018-0171 is https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi2.",
-        "active_exploitation": "true. CISA reports that Russian FSB Center 16 actors continue to exploit poorly configured and vulnerable networking devices worldwide, and identifies prior exploitation of CVE-2018-0171 and CVE-2008-4128.",
-        "threat_actors": "Russian FSB Center 16; commonly used industry aliases include Berserk Bear, Energetic Bear, Crouching Yeti, Dragonfly, Ghost Blizzard, and Static Tundra.",
-        "mitigation": "Update network-device software and firmware, patch known vulnerabilities, and replace or upgrade end-of-life devices with supported versions. Apply the relevant vendor remediation for any exposed Cisco devices and eliminate default or weak management credentials and publicly exposed management services.",
+        "technical_details": "FSB Center 16 primarily uses scanning to identify poorly configured networking devices, especially routers. The actors also exploit common vulnerabilities in Cisco devices, Cisco Smart Install (SMI), and web portals used to manage network devices.",
+        "affected_products": "Poorly configured networking devices, primarily routers; Cisco devices; Cisco Smart Install (SMI); web portals used to manage network devices; specific versions not identified",
+        "cvss_score": "null",
+        "cvss_vector": "null",
+        "exploit_available": "false",
+        "patch_available": "false",
+        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
+        "threat_actors": "Russian FSB Center 16; Berserk Bear; Energetic Bear; Crouching Yeti; Dragonfly; Ghost Blizzard; Static Tundra",
+        "mitigation": "Correct insecure router configurations, restrict and secure management interfaces, disable unnecessary services such as SMI where applicable, and apply available vendor updates for known Cisco vulnerabilities. CISA urges device owners and network defenders to take mitigation and remediation actions against this activity.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a"
       }
     },
@@ -48,16 +110,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "The supplied CrowdStrike URL covers two exploited local elevation-of-privilege flaws: CVE-2026-81963 is improper link resolution before file access in the Windows Update Stack, while CVE-2026-85880 is a heap-based buffer overflow in Windows ALPC. The ALPC flaw can be exploited by an attacker able to execute code in a low-privilege AppContainer to escape the sandbox and obtain SYSTEM privileges.",
-        "affected_products": "CVE-2026-81963: Windows 11 23H2, affected 10.0.22631.0 < 10.0.22631.7582; Windows 11 24H2, affected 10.0.26100.0 < 10.0.26100.9445; Windows 11 25H2, affected 10.0.26200.0 < 10.0.26200.9445; Windows 11 26H1, affected 10.0.28000.0 < 10.0.28000.2954; Windows Server 2025 and Server Core, affected 10.0.26100.0 < 10.0.26100.33438. CVE-2026-85880: Windows 10 1607, affected 10.0.14393.0 < 10.0.14393.9512; Windows 10 1809, affected 10.0.17763.0 < 10.0.17763.9245; Windows 10 21H2, affected 10.0.19044.0 < 10.0.19044.7725; Windows 10 22H2, affected 10.0.19045.0 < 10.0.19045.7725; Windows Server 2012, affected 6.2.9200.0 < 6.2.9200.26349; Windows Server 2012 R2, affected 6.3.9600.0 < 6.3.9600.23397; Windows Server 2016, affected 10.0.14393.0 < 10.0.14393.9512; Windows Server 2019, affected 10.0.17763.0 < 10.0.17763.9245; Windows Server 2022, affected 10.0.20348.0 < 10.0.20348.5622, including the corresponding Server Core variants where listed.",
+        "technical_details": "CVE-2026-81963 is a local elevation-of-privilege flaw caused by improper link resolution before file access in the Windows Update Stack, allowing an authorized attacker to reach SYSTEM privileges. CVE-2026-85880 is a heap-based buffer overflow in Windows ALPC that can let an attacker with code execution, including inside an AppContainer sandbox, escape the sandbox and obtain SYSTEM privileges. Both attacks require local code execution but no user interaction.",
+        "affected_products": "Windows 10; Windows Server 2012, 2016, 2019, and 2022 (CVE-2026-85880); supported Windows client and server editions running the Windows Update Stack (CVE-2026-81963)",
         "cvss_score": "7.8",
         "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true. Both vulnerabilities have confirmed weaponized exploitation in the wild, although the reviewed sources state that exploitation details have not been publicly shared and do not identify a public PoC.",
-        "patch_available": "true. Microsoft released official fixes for both vulnerabilities through the MSRC advisories: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-81963 and https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880.",
-        "active_exploitation": "true. CrowdStrike states that Microsoft confirmed both CVE-2026-81963 and CVE-2026-85880 were being exploited in the wild, and contemporaneous reporting describes them as actively exploited zero-days.",
-        "threat_actors": "None known. The reports identify vulnerability discoverers, not a threat actor group, APT campaign, or ransomware operator.",
-        "mitigation": "Apply Microsoft's September 8, 2026 security updates for both CVEs using the official MSRC advisories. If updates or vendor mitigations cannot be applied, CISA guidance calls for applying available vendor mitigations or discontinuing use of the affected product; prioritize these flaws because exploitation is confirmed.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-81963; https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880"
+        "exploit_available": "false",
+        "patch_available": "true - https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963; https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-85880",
+        "active_exploitation": "true - https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
+        "threat_actors": "None known",
+        "mitigation": "Install Microsoft's September 8, 2026 security updates addressing both CVEs and prioritize remediation across Windows clients and servers. Review potentially affected systems for signs of post-compromise privilege escalation.",
+        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-81963, https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-85880"
       }
     },
     {
@@ -76,16 +138,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "With default configuration, AgentCore Harness exposes built-in shell and file-operation tools, and the shell runs as root. Because the shell shares the process memory space in which AgentCore Identity resolves credentials into plaintext, prompt injection can cause the agent to access and exfiltrate an operator service-account credential rather than merely the end user's JWT.",
-        "affected_products": "Amazon Bedrock AgentCore Harness managed harness, specifically its default built-in shell and file_operations tools; Amazon Bedrock AgentCore Identity. No specific vulnerable software version is identified; the issue concerns default configuration and tool permissions.",
-        "cvss_score": "null",
-        "cvss_vector": "null",
-        "exploit_available": "true. Unit 42 publicly demonstrates the attack path in a test scenario showing prompt injection leading to exfiltration of an AgentCore Identity JWT: https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/. No standalone exploit code or weaponized package is identified in the report.",
-        "patch_available": "false for the Unit 42-described default-configuration credential exposure. Unit 42 states that AWS closed the report as informative under the shared-responsibility model and recommends configuration hardening rather than identifying a vendor patch; the separate CVE-2026-18830 InvokeHarness bulletin addresses a different input-validation issue.",
-        "active_exploitation": "false. No confirmed exploitation in the wild is reported for this issue; the available reporting concerns Unit 42's controlled research demonstration and responsible disclosure to AWS.",
-        "threat_actors": "None known. The Unit 42 report describes a research demonstration and disclosure to AWS, but does not identify any APT, ransomware, or other threat actor exploiting the issue.",
-        "mitigation": "At InvokeHarness time, restrict allowedTools to only the capabilities required for that session; apply least privilege to every AgentCore Identity vault service account and monitor unexpected outbound traffic from harness containers. AWS's guidance also emphasizes the shared AgentCore Runtime trust boundary, input validation, prompt-injection prevention, IAM controls, and microVM isolation.",
-        "vendor_advisory": "null"
+        "technical_details": "In the default configuration, AgentCore Harness provides shell and file_operations tools to sessions unless restricted with allowedTools. The shell tool runs in the same memory space and UID context as the harness process, allowing prompt injection to cause commands that read plaintext credentials after AgentCore Identity resolves them at runtime. The credentials can then be exfiltrated through an attacker-controlled destination.",
+        "affected_products": "Amazon Bedrock AgentCore Harness; affected default configurations with built-in shell and file_operations tools enabled. Specific version range not stated.",
+        "cvss_score": ":null",
+        "cvss_vector": ":null",
+        "exploit_available": "true - https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/",
+        "patch_available": "false",
+        "active_exploitation": "false",
+        "threat_actors": "None known",
+        "mitigation": "Restrict allowedTools at InvokeHarness time to only the tools required for each session, disabling the default shell and file_operations tools when unnecessary. Apply least privilege to Identity vault service accounts and monitor or filter outbound traffic from harness containers.",
+        "vendor_advisory": ":null"
       }
     },
     {
@@ -104,16 +166,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an AI system processes attacker-controlled content\u2014such as a website, email, or document\u2014and follows embedded instructions instead of the user's intent. Google observed examples targeting AI summaries, data exfiltration, and potentially destructive actions against machines used with AI assistants.",
-        "affected_products": "No specific software, hardware product, or vulnerable version is identified; the article discusses AI assistants and agents that browse public websites.",
-        "cvss_score": ":",
-        "cvss_vector": ":",
-        "exploit_available": "false. The Google article identifies observed low-sophistication prompt-injection attempts, but no public proof-of-concept or weaponized product exploit is reported: https://blog.google/security/prompt-injections-web/",
-        "patch_available": "false. No product-specific vendor patch is identified because the article describes a broader attack technique rather than a CVE-linked software defect: https://blog.google/security/prompt-injections-web/",
-        "active_exploitation": "true, with an important qualification: Google observed malicious indirect-prompt-injection attempts on public websites, including data-theft and destructive-instruction examples. The article says the observed activity was generally low sophistication and does not report confirmed successful compromise; advanced attacks were not observed at significant levels.",
-        "threat_actors": "None known. The article names no specific threat actor group, APT, or ransomware campaign; it refers generically to attackers and website authors.",
-        "mitigation": "Use layered detection: coarse pattern matching followed by LLM-based intent classification and human validation. Google also recommends hardening AI models and products, pressure-testing them through red teaming, and reporting issues through its AI Vulnerability Reward Program.",
-        "vendor_advisory": "https://blog.google/security/prompt-injections-web/ (official Google Security Blog research post; not a CVE bulletin)."
+        "technical_details": "Indirect prompt injection occurs when an AI system processes external content\u2014such as a website, email, or document\u2014that contains malicious instructions. The AI may then silently follow those instructions instead of the user's intended request, potentially manipulating outputs or causing unintended actions.",
+        "affected_products": "null",
+        "cvss_score": "null",
+        "cvss_vector": "null",
+        "exploit_available": "true - https://greshake.github.io/",
+        "patch_available": "false",
+        "active_exploitation": "true - https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
+        "threat_actors": "None known",
+        "mitigation": "Treat external web pages, emails, and documents as untrusted input; separate data from executable instructions and restrict agent permissions. Apply layered defenses, confirmation requirements for consequential actions, monitoring, and ongoing adversarial testing of AI systems.",
+        "vendor_advisory": "https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
     {
@@ -132,16 +194,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when malicious instructions are embedded in external data such as websites, email, or documents that an AI system processes, causing the model to treat attacker-controlled content as instructions. The Google material describes this as a general AI security vulnerability affecting Gemini and Workspace applications rather than a uniquely versioned product flaw.",
-        "affected_products": "Google Workspace with Gemini, including Gemini-enabled Gmail and Docs; specific vulnerable versions are not stated.",
-        "cvss_score": ":null",
-        "cvss_vector": ":null",
-        "exploit_available": "false for a Google Workspace-specific PoC or weaponized exploit. Public research and observed web activity demonstrate that generic indirect prompt injection attacks are possible, but no Workspace-specific exploit is identified in the cited materials.",
-        "patch_available": "false for a conventional product patch. Google describes continuous policy/configuration updates, model retraining, prompt engineering, and Gemini hardening rather than a released patch for a specific vulnerable version; advisory: https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/",
-        "active_exploitation": "true for generic indirect prompt injection activity: Google reports attackers experimenting with IPI on the web and observed prompt-injection attempts. The evidence does not confirm exploitation of a specific Google Workspace product vulnerability.",
-        "threat_actors": "None known. Google\u2019s materials do not identify a named APT, ransomware operator, or threat group exploiting a specific Google Workspace flaw.",
-        "mitigation": "Google describes layered defenses including prompt-injection classifiers, markdown sanitization and suspicious-URL redaction, explicit user confirmation for sensitive actions, URL sanitization, tool-chaining policies, ML retraining, refined LLM system instructions, Gemini model hardening, and continuous red-team testing.",
-        "vendor_advisory": "https://blog.google/security/google-workspaces-continuous-approach-to-mitigating-indirect-prompt-injections/"
+        "technical_details": "Indirect prompt injection occurs when an LLM processes external data such as websites, email, documents, or connected tools containing hidden malicious instructions. The LLM may follow those instructions while completing the user's request, potentially without any direct attacker input. This can cause unintended actions or information disclosure.",
+        "affected_products": "Google Gemini app, Gemini in Google Workspace apps including Gmail, Docs editors, Drive, and Chat; specific versions not stated",
+        "cvss_score": ".",
+        "cvss_vector": ".",
+        "exploit_available": "true - http://unit42.paloaltonetworks.com/ai-agent-prompt-injection",
+        "patch_available": "false",
+        "active_exploitation": "true - http://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026",
+        "threat_actors": "None known",
+        "mitigation": "Use layered defenses including user confirmation, URL sanitization, tool-chaining policies, and centralized policy controls. Google also recommends model hardening so Gemini can identify and ignore harmful instructions embedded in data.",
+        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
     {
@@ -160,16 +222,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Google identifies indirect prompt injection as the primary new threat to agentic browsers: malicious instructions embedded in websites, third-party content, or user-generated content can influence the browsing agent's planning and cause unintended actions or sensitive-data exposure. Chrome's design uses alignment checks, prompt-injection detection, origin gating, and confirmation controls to limit such actions.",
-        "affected_products": "Google Chrome agentic capabilities, including Gemini in Chrome; no specific vulnerable Chrome version is identified.",
-        "cvss_score": ".",
-        "cvss_vector": ".",
-        "exploit_available": "true \u2014 Public demonstrations of indirect prompt injection against agentic browsers exist, including Brave's Perplexity Comet write-up: https://brave.com/blog/comet-prompt-injection. However, no Chrome-specific weaponized exploit is identified in the reviewed sources.",
-        "patch_available": "false \u2014 No CVE-specific or versioned vendor patch is disclosed for this issue. Google's advisory describes layered product and architectural defenses rather than remediation of a version-specific software vulnerability.",
-        "active_exploitation": "false for a Chrome-specific implementation. The Chrome advisory does not report confirmed in-the-wild exploitation of Chrome's agentic capabilities, although separate research has documented real-world indirect prompt-injection activity against AI agents more generally.",
-        "threat_actors": "None known. Google's post does not attribute the indirect prompt-injection threat to any named APT, ransomware operator, or other threat-actor group.",
-        "mitigation": "Use Chrome's built-in agentic safeguards, including alignment critics, prompt-injection detection, Agent Origin Sets/origin gating, restricted navigation, confirmation prompts for sensitive actions, and user pause/takeover/stop controls. Keep Chrome updated because Google states that Chrome auto-update is used to deliver security improvements and fixes.",
-        "vendor_advisory": "https://blog.google/security/architecting-security-for-agentic/"
+        "technical_details": "Indirect prompt injection occurs when an AI agent processes untrusted external content\u2014such as webpages, iframes, email, or documents\u2014that contains hidden malicious instructions. The agent may treat those instructions as task guidance, causing unwanted actions, information disclosure, data exfiltration, or financial transactions. In agentic browsing, the attack targets the planning model through content encountered during navigation.",
+        "affected_products": "Google Chrome agentic browsing / Gemini in Chrome (specific versions not stated), other agentic browsers (versions not specified)",
+        "cvss_score": "null",
+        "cvss_vector": "null",
+        "exploit_available": "true - http://immersivelabs.com/resources/c7-blog/weaponizing-llms-bypassing-email-security-products-via-indirect-prompt-injection",
+        "patch_available": "false",
+        "active_exploitation": "true - http://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026",
+        "threat_actors": "None known",
+        "mitigation": "Use layered defenses such as a user-alignment critic isolated from untrusted content, origin isolation, user confirmations for critical actions, real-time threat detection, and red-team response processes. Treat webpage and document content as untrusted and require explicit confirmation before sensitive actions.",
+        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
       }
     },
     {
@@ -188,16 +250,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2025-48530 involved a linear buffer overflow or out-of-bounds access caused by incorrect bounds checks in CrabbyAVIF's unsafe-Rust code. The flaw could theoretically enable remote code execution in combination with other bugs, but Android's Scudo hardened allocator used guard pages that converted the condition into a crash and made it non-exploitable.",
-        "affected_products": "Google Android 16; CrabbyAVIF, an AVIF parser/decoder implemented in unsafe Rust. Google states that the vulnerability was fixed before release and never shipped in a public Android release.",
+        "technical_details": "CVE-2025-48530 is an incorrect bounds-check condition in multiple locations of CrabbyAVIF, producing out-of-bounds accesses in Android 16's AVIF parsing/decoding path. The flaw could contribute to remote code execution when combined with other bugs, without additional privileges or user interaction. Google's analysis describes it as a linear buffer overflow in unsafe Rust; Android's Scudo allocator deterministically prevented exploitation on configurations using its guard pages.",
+        "affected_products": "Google Android 16, including the CrabbyAVIF AVIF parser/decoder component",
         "cvss_score": "8.1",
         "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "false. No public proof-of-concept or weaponized exploit was identified; Google states that Android's Scudo allocator rendered the flaw non-exploitable and that it never entered a public release.",
-        "patch_available": "true. Google fixed the issue before public release and linked the source patch from its official security post; the Android security bulletin reference is https://source.android.com/security/bulletin/2025-08-01. This was a pre-release fix rather than a patch issued for a publicly affected Android version.",
-        "active_exploitation": "false. No confirmed in-the-wild exploitation of CVE-2025-48530 has been reported; the CVE record lists exploitation as none, and Google says the vulnerability never made it into a public release.",
-        "threat_actors": "None known.",
-        "mitigation": "Because Google fixed the issue before it shipped publicly, no end-user workaround for an affected public Android release is identified. Keep Android devices on current security updates; Scudo guard pages and crash reporting improvements provide additional platform protection.",
-        "vendor_advisory": "https://source.android.com/security/bulletin/2025-08-01"
+        "exploit_available": "false - https://app.opencve.io/cve/CVE-2025-48530",
+        "patch_available": "true - https://source.android.com/docs/security/bulletin/2025-08-01",
+        "active_exploitation": "false - https://app.opencve.io/cve/CVE-2025-48530",
+        "threat_actors": "None known",
+        "mitigation": "Apply Android security patch level 2025-08-05 or later. Keep Google Play Protect enabled; Scudo allocator hardening also mitigates this overflow on devices using it.",
+        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
       }
     },
     {
@@ -216,16 +278,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection embeds attacker-controlled instructions in external content such as emails, documents, websites, or calendar invitations. When an AI system processes that content, the instructions may cause it to exfiltrate data, generate malicious URLs, or perform other unauthorized actions.",
-        "affected_products": "Google Gemini 2.5 models, Gemini app, and Gemini in Google Workspace applications/workflows, including Gmail, Docs, and Calendar-related actions; no specific vulnerable version range was identified.",
-        "cvss_score": "/",
-        "cvss_vector": "/",
-        "exploit_available": "true. Public research and demonstrations of indirect prompt injection exist, including a demonstration against Perplexity Comet: https://brave.com/blog/comet-prompt-injection",
-        "patch_available": "false. No standalone, version-specific security patch was announced for this issue; Google's response is a defense-in-depth strategy built into Gemini and related services. Advisory: https://blog.google/security/mitigating-prompt-injection-attacks",
-        "active_exploitation": "true for the broader indirect-prompt-injection technique. Google reported attackers experimenting with malicious IPI content on the public web and a 32% relative increase in malicious detections between November 2025 and February 2026, although the activity was low sophistication and not attributed to named groups: https://blog.google/security/prompt-injections-web/",
-        "threat_actors": "None known. Google reported individual website authors experimenting with indirect prompt injection, but no named APT, ransomware operator, or coordinated campaign was identified.",
-        "mitigation": "Google describes layered defenses including Gemini 2.5 model hardening, prompt-injection classifiers, security-oriented instruction reinforcement, markdown and suspicious-URL sanitization, external-image blocking, contextual user confirmation, and end-user security notifications. Organizations should restrict AI-agent permissions, require confirmation for high-impact actions, and treat external content as untrusted.",
-        "vendor_advisory": "https://blog.google/security/mitigating-prompt-injection-attacks"
+        "technical_details": "Indirect prompt injection occurs when an AI system processes attacker-controlled external content\u2014such as a website, email, document, or calendar invite\u2014containing hidden instructions. The model may follow those instructions instead of the user's request, potentially exfiltrating data, executing rogue actions, or causing destructive effects.",
+        "affected_products": "Generative AI systems, AI assistants, AI agents, and LLM-integrated applications processing untrusted external content; no specific products or versions identified",
+        "cvss_score": ".",
+        "cvss_vector": ".",
+        "exploit_available": "true - https://greshake.github.io/",
+        "patch_available": "false",
+        "active_exploitation": "true - https://blog.google/security/prompt-injections-web",
+        "threat_actors": "None known",
+        "mitigation": "Treat external content as untrusted input; isolate model access to sensitive data and tools, require confirmation for consequential actions, and apply layered monitoring, guardrails, and red-team testing. Limit agent privileges and prevent arbitrary execution or unrestricted data access.",
+        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
       }
     },
     {
@@ -243,19 +305,60 @@
         "CVE-2025-66376"
       ],
       "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "CVE-2025-66376 is a stored cross-site scripting vulnerability in Zimbra's Classic UI caused by improper sanitization of CSS @import directives in HTML email. A malicious message can execute JavaScript when viewed in Zimbra webmail, enabling theft of mailbox contents and address-book data.",
-        "affected_products": "Zimbra Collaboration (ZCS) 10.0 before 10.0.18; Zimbra Collaboration (ZCS) 10.1 before 10.1.13.",
-        "cvss_score": "7.2",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-        "exploit_available": "true \u2014 CISA reports that LAUNDRY BEAR used a novel weaponized exploit for CVE-2025-66376, which was a zero-day when first exploited. Source: https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-        "patch_available": "true \u2014 Zimbra released fixes in ZCS 10.1.13 and 10.0.18. Vendor advisory: https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories?cve=title",
-        "active_exploitation": "true \u2014 CISA reports that LAUNDRY BEAR has successfully exploited CVE-2025-66376 in an ongoing phishing campaign targeting Zimbra users. Source: https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-        "threat_actors": "LAUNDRY BEAR, also known as Void Blizzard, CL-STA-1114, and TA488.",
-        "mitigation": "Immediately upgrade to ZCS 10.1.13 or 10.0.18. If patching is not immediately possible, have users access mail through alternative clients and avoid the Classic ZCS webmail interface; monitor internet-facing ZCS systems and connected workstations. Source: https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-        "vendor_advisory": "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories?cve=title"
-      }
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2025-53837",
+      "title": "org.xwiki.rendering:xwiki-rendering-xml has an Eval Injection issue",
+      "summary": "### Impact\nAny user who can edit their own user profile or any other document can execute arbitrary script macros including Groovy and Python macros that allow remote code execution including unrestricted read and write access to all wiki contents. The reason is that rendering output is included as content of HTML macros without further escaping and it is thus possible to close the HTML macro and inject script macros that are executed with programming rights.\n\nThis can be demonstrated by adding an object of type `XWiki.UIExtensionClass` to a document with content `{{html wiki=\"true\"}}~{~{~/~h~t~m~l~}~}~ ~{~{~c~a~c~h~e~}~}~{~{~g~r~o~o~v~y~}~}~p~r~i~n~t~l~n~(~1~)~{~{~/~g~r~o~o~v~y~}~}~{~{~/~c~a~c~h~e~}~}{{/html}}`, extension point id `org.xwiki.platform.html.head`, extension id `org.xwiki.myuser.test` and extension scope \"current user\". When opening `<xwiki-server>/xwiki/bin/view/Main/?sheet=CKEditor.ContentSheet&xpage=plain` where `<xwiki-server>` is the URL of the XWiki installation, the output should start with `{{/html}} {{cache}}{{groovy}}println(1){{/groovy}}{{/cache}}` and not with `\u00a01</p>`.\n\nThis escaping was always missing at least in XWiki syntax version 2, it is definitely exploitable in XWiki 3.3 Milestone 1 via the user profile (not through extension points), though this has also been fixed by a separate patch, see the [advisory](https://github.com/xwiki/xwiki-platform/security/advisories/GHSA-x764-ff8r-9hpx). Exploitable extension points include [`org.xwiki.platform.search.ui.docdoesnotexist`](https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/ExtensionPoint/Suggestions%20for%20Document%20Does%20Not%20Exist/) which has been added in XWiki 8.3 Milestone 1.\n\n### Patches\nThis has been patched in XWiki 14.10.2 and 15.0 RC1 by making sure that rendering output cannot close the surrounding HTML macro.\n\n### Workarounds\nIt is in principle possible to add escaping to all places where rendering output is used in wiki documents but at the moment there is n",
+      "link": "https://github.com/advisories/GHSA-26vp-8gxg-v4pg",
+      "published": "2026-09-18T15:05:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-53837"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77615",
+      "title": "Opencast: Stored XSS in Paella player via WebVTT/DFXP caption cue text",
+      "summary": "## Summary\n\nThe Opencast Paella player renders caption cue text into `innerHTML` without escaping. The captions canvas clears `_captionsContainer.innerHTML` and then appends each active cue with `_captionsContainer.innerHTML += cue`, so HTML inside a WebVTT or DFXP cue becomes live DOM and executes in the Opencast origin.\n\nThe caption track is read from any media package element with a `captions/*` flavor and is served, with the player manifest, to anonymous viewers through `/search/episode.json`. The caption plugins that consume it are enabled in the default player configuration, the \"Subtitles\" upload that produces a `captions/source` track is active by default, and no caption processing step escapes the cue text.\n\nA user who can upload a subtitle to an event and publish it stores the payload in the published caption file. Any viewer who opens the event and turns captions on runs the script.\n\nResult: a non-admin content author stores JavaScript in a subtitle cue that executes in the browser session of every viewer who enables captions on that event, including anonymous viewers and authenticated staff.\n\n## Affected\n\nopencast/opencast, `engage-paella-player` module. Supported release lines 19.x and 20.x are affected (and 18.x). Live-confirmed on 18.8 (Paella 7, paella-core 1.50.2) and 20.0 (Paella 8, paella-core 1.50.4); 19.5 ships the code-identical caption path (paella-core 1.50.4, same `EpisodeConversor` and default plugin config as 20.0). The captions canvas uses the same `innerHTML += cue` sink across these versions.\nDefault configuration: the WebVTT and DFXP caption plugins are `enabled: true` in `etc/ui-config/mh_default_org/paella7/config.json`, the \"Subtitles\" upload option (`captions/source`, `.vtt`) is active in `etc/listproviders/event.upload.asset.options.properties`, and the `fast` workflow publishes `captions/*` to the engage player.\nCondition: an event with a caption track published to the engage player. No non-default flag required.\n\n## Root cause\n\n",
+      "link": "https://github.com/advisories/GHSA-m6c8-jcw2-5r25",
+      "published": "2026-09-18T13:11:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77615"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html",
+      "title": "Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation",
+      "summary": "Microsoft has released fixes for a maximum-severity security flaw in Azure AI Foundry that could be exploited to achieve privilege escalation. No customer action is required.\n\nThe vulnerability, tracked as CVE-2026-85889, carries a CVSS score of 10.0.\n\n\"Missing authentication for critical function in Azure AI Foundry allows an unauthorized attacker to elevate privileges over a network,\"",
+      "link": "https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html",
+      "published": "2026-09-18T12:47:04+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-85889"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.securityweek.com/critical-orkes-conductor-vulnerability-exploited-in-attacks/",
@@ -272,19 +375,7 @@
         "CVE-2026-58138"
       ],
       "is_zero_day": false,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "This is an unauthenticated remote-code-execution flaw in Orkes Conductor: attackers can submit inline workflow definitions containing malicious JavaScript or Python expressions to the workflow API before authentication. Unsandboxed GraalVM evaluators configured with broad host access can then be abused to execute arbitrary operating-system commands.",
-        "affected_products": "Orkes Conductor / conductor-oss Conductor 3.21.21 through 3.30.1 (versions before 3.30.2).",
-        "cvss_score": "9.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true \u2014 A public Exploit-DB exploit is available at https://www.exploit-db.com/exploits/52633, and public GitHub PoCs are also reported, including https://github.com/BiiTts/CVE-2026-58138-Conductor-Unauth-RCE.",
-        "patch_available": "true \u2014 Version 3.30.2 is identified as the fixed release, with fixes including \u201cRestrict graaljs further\u201d and evaluator host-access restrictions. Official release: https://github.com/conductor-oss/conductor/releases/tag/v3.30.2",
-        "active_exploitation": "true \u2014 SecurityWeek reports that CVE-2026-58138 has been exploited in attacks, and FortiGuard reports active targeting of vulnerable Orkes Conductor servers.",
-        "threat_actors": "None known.",
-        "mitigation": "Upgrade affected deployments to Conductor 3.30.2 or later. The listed fixes restrict GraalJS access and deny dangerous class/host access in the JavaScript and Python evaluators; until upgraded, restrict exposure of the workflow API and enforce authentication and network-level access controls.",
-        "vendor_advisory": "."
-      }
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-72819",
@@ -731,95 +822,6 @@
       ],
       "cve_ids": [
         "CVE-2026-77179"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62949",
-      "title": "AsyncSSH: asyncio event-loop freeze via SSH maximum packet size = 0 in SSH_MSG_CHANNEL_OPEN / OPEN_CONFIRMATION",
-      "summary": "## Summary\n\nA malicious SSH server can wedge an AsyncSSH **client**, and an authenticated\nclient can wedge an AsyncSSH **server**, by sending a channel `maximum packet\nsize` of `0` in `SSH_MSG_CHANNEL_OPEN_CONFIRMATION` (server\u2192client) or\n`SSH_MSG_CHANNEL_OPEN` (client\u2192server). AsyncSSH stores the peer-supplied value\nverbatim with no lower-bound check; the first time channel data is written,\n`SSHChannel._flush_send_buf` enters a **synchronous infinite loop** that cannot\nbe interrupted by `asyncio.wait_for` or any timeout. The loop body has no\n`await`, so it blocks the entire asyncio event loop \u2014 for a server, one\nmalicious authenticated channel freezes **all** current and future connections.\n\nRFC 4254 \u00a75.1 leaves receiver behavior for a peer-reported \"maximum packet\nsize = 0\" undefined, so the value must be rejected rather than stored.\n\n## Root cause\n\n`asyncssh/channel.py`:\n\n```python\n# process_open (server side)        -- line 465\nself._send_pktsize = send_pktsize    # peer value, no >= 1 check\n\n# process_open_confirmation (client) -- line 528\nself._send_pktsize = send_pktsize    # peer value, no >= 1 check\n\n# _flush_send_buf                    -- lines 305-320\nwhile self._send_buf and self._send_window:\n    pktsize = min(self._send_window, self._send_pktsize)  # 0 when peer sends 0\n    buf, datatype = self._send_buf[0]\n    if len(buf) > pktsize:          # True for any buffered data\n        data = buf[:pktsize]        # empty (b'')\n        del buf[:pktsize]           # no-op\n    ...\n    self._send_window -= len(data)  # -= 0, unchanged\n```\n\nWith `_send_pktsize == 0`, `pktsize` is `0`, so `buf[:0]` is empty,\n`del buf[:0]` is a no-op, and `_send_window` is never decremented \u2014 the\n`while` condition is permanently true, and with no `await` in the body the\nevent loop is blocked.\n\n## Impact\n\n- **Client vector (primary):** a malicious SSH server replies to the client's\n  channel open with `maximum packet size = 0`; the client wedges on its first\n  channel write. The atta",
-      "link": "https://github.com/advisories/GHSA-rw4j-r22c-9gc3",
-      "published": "2026-09-17T14:53:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62949"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63126",
-      "title": "Wire: Unauthenticated decoder crash via 32-bit length integer overflow in ByteArrayProtoReader32 (incomplete fix of CVE-2026-45799)",
-      "summary": "Wire's protobuf decoders did not consistently validate attacker-controlled length-delimited sizes against the current reader bounds before computing cursor, limit, or pointer positions.\n\nIn the Kotlin runtime, `ProtoAdapter.decode(ByteArray)` and `ProtoAdapter.decode(ByteString)` use the `ProtoReader32` fast path implemented by `ByteArrayProtoReader32`. In `ByteArrayProtoReader32.internalNextLengthDelimited()`, Wire read an untrusted varint length into an `Int` and rejected only negative values. A length such as `2147483647` is non-negative, so it passed that check, but `pos + length` overflowed the signed 32-bit cursor and produced a negative `limit`. The following `if (limit > pushedLimit)` guard did not catch this because the overflowed value was negative.\n\nThat invalid limit then reached string, bytes, skip, and scalar-reading paths as an invalid byte count or invalid range. Instead of failing as a checked decode error such as `IOException`, malformed input could throw unchecked runtime exceptions including `IllegalArgumentException` and `ArrayIndexOutOfBoundsException`. Applications commonly treat malformed protobuf input as an expected decode failure; unchecked runtime exceptions escaping that boundary can crash request handling or the process.\n\nThe original report is a sibling of the negative-length skipped-group bug fixed as CVE-2026-45799. It is not the same bug. The length in this advisory is positive, and the overflow occurs when setting a length-delimited message limit, not only when skipping a group.\n\nWhile auditing for the same bug class, related boundary flaws were also found and fixed:\n\n- Kotlin `ProtoReader` now validates logical message limits before varint, fixed32, fixed64, and skip operations. The originally reported byte-array overflow payload did not reproduce as the same signed overflow in `ProtoReader`, because that reader tracks positions as `Long`, but the streaming reader still needed consistent current-message-limit enforcement.\n- Swift ",
-      "link": "https://github.com/advisories/GHSA-9rm7-3qhh-h2mc",
-      "published": "2026-09-17T14:52:52Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63126"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71538",
-      "title": "@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows",
-      "summary": "## Summary\n\nA **Windows-specific** command injection vulnerability exists in `@cyclonedx/cyclonedx-npm` when the CLI is invoked with the `--workspace <value>` option.  \nUser-supplied `--workspace` values can be passed to a shell command without proper neutralization on the Windows fallback execution path, enabling attackers to inject arbitrary OS commands.  \n\nThe vulnerability was fixed in version [6.0.0][v6.0.0].\n\n## Vulnerability Details\n\nWhen `cyclonedx-npm` is executed with the `--workspace` option, the provided argument is incorporated into an internal command execution flow.  \nOn **Windows systems**, this path can interpret untrusted `--workspace` input as shell syntax if not safely handled.\n\nAs a result, specially crafted workspace names can break out of the intended command context and execute arbitrary commands with the privileges of the invoking user.\n\n## Impact\n\nAn attacker who can influence the value passed to `--workspace` can execute arbitrary OS commands **on Windows hosts**.  \nThis may lead to:\n\n* Arbitrary command execution\n* Data exfiltration\n* Local privilege escalation (depending on runtime context and privileges)\n* Modification or destruction of files accessible to the user running the CLI\n\nThe vulnerability affects only scenarios where:\n\n* The user invokes `cyclonedx-npm` with `--workspace <value>`, and\n* The vulnerable execution path is reached on **Windows**.\n\n## Exploitation Conditions (High-Level)\n\nExploitation requires the attacker to supply or influence the `--workspace` value passed to the CLI.  \nIf the tool falls back to the vulnerable shell execution path on **Windows**, specially crafted workspace identifiers can cause unintended command execution.  \nNo exploit code is included here to avoid providing weaponizable examples.\n\n## Root Cause\n\nThe CLI fallback execution path on **Windows** constructed a shell command using untrusted input from the `--workspace` option.  \nBecause the fallback code path does not sanitize or escape the works",
-      "link": "https://github.com/advisories/GHSA-q69g-4hcv-6jg4",
-      "published": "2026-09-17T14:50:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-71538"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61793",
-      "title": "Nuxt OG Image has unauthenticated SSRF via `fonts[].path` URL parameter",
-      "summary": "### Summary\n`nuxt-og-image` exposes an **unauthenticated HTTP endpoint** at `/_og/d/**` that base64url-decodes and `JSON.parse`s a `fonts` URL segment, then passes each `fonts[i].path` value directly into `fetch()` server-side **without any URL validation** (no scheme allowlist, no loopback/RFC1918 block, no host allowlist, no DNS rebinding mitigation).\n\nUnder the module's documented default configuration (`security.strict = false`, `security.secret = \"\"`, `restrictRuntimeImagesToOrigin = false`), any caller able to reach the deployed Nuxt site can force the Nuxt server to issue arbitrary outbound `GET` requests to any host reachable from the server - including loopback, RFC1918 LAN, and cloud metadata services (AWS IMDS, GCE/Azure metadata, Kubernetes `kubelet`, internal admin panels, Redis/etcd/Consul/Vault HTTP APIs).\n\nThe chain is **blind** (Satori consumes the response as font bytes and silently discards non-fonts) but a robust **side-channel** exists: the outer HTTP status is `500` when the SSRF target returns `2xx`, and `200` when it fails or returns non-`2xx`. This is sufficient to (a) enumerate live internal services and open ports, (b) confirm IMDSv1 reachability, and (c) detect credential issuance on environments still allowing IMDSv1.\n\nDemonstrated end-to-end on a stock `npm create nuxt@latest` install with the module's documented default usage.\n\n### Detail\n\n#### Endpoint registration (unauthenticated)\n\nThe module registers `/_og/d/**` and `/_og/s/**` with no authentication / Origin check / Sec\u2011Fetch\u2011Site validation:\n\n```js\n// dist/shared/nuxt-og-image.DdbTs-xp.mjs : 5113-5133\naddServerHandler({ route: \"/_og/d/**\", handler: resolve(\"./runtime/server/routes/image\") })\naddServerHandler({ route: \"/_og/s/**\", handler: resolve(\"./runtime/server/routes/image\") })\n```\n\n#### Default security config (permissive)\n\n```js\n// dist/shared/nuxt-og-image.DdbTs-xp.mjs : 5618-5640\nsecurity: {\n  strict:                       config.security?.strict ?? false,         // <- ",
-      "link": "https://github.com/advisories/GHSA-q8hw-4fvp-9rwv",
-      "published": "2026-09-17T14:48:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61793"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
-      "title": "Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone",
-      "summary": "Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an\u00a0advisory\u00a0on Wednesday.\n\nAn attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code execution.\n\nUnbound 1.26.1, released the same day, fixes the bug, tracked as\u00a0CVE-2026-81642, along with",
-      "link": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
-      "published": "2026-09-17T12:30:00+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-81642"
       ],
       "is_zero_day": false,
       "is_high_severity": true
