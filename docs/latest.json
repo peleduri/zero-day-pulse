@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-18T15:24:51.819076+00:00",
+  "generated": "2026-09-18T20:11:50.679587+00:00",
   "total": 41,
-  "kev": 2,
-  "zero_day": 9,
+  "kev": 3,
+  "zero_day": 11,
   "enriched": 10,
   "findings": [
     {
@@ -24,15 +24,15 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "The vulnerability is a race in the Linux kernel's crypto AF_ALG af_alg_sendmsg path: concurrent writes to the same AF_ALG socket can interleave unpredictably and corrupt the socket's internal state. The fix adds ctx->write ownership tracking so concurrent writers are rejected, including with an -EBUSY response.",
-        "affected_products": "Linux kernel with AF_ALG support: affected from 2.6.38 until fixes in 5.10.245, 5.15.194, 6.1.154, 6.6.108, 6.12.49, 6.16.9, and 6.17; Debian bullseye linux 5.10.223-1 was vulnerable, with fixes including 5.10.259-1/5.10.247-1, bookworm 6.1.176-1, and trixie 6.12.95-1",
+        "technical_details": "CVE-2025-39964 is a race condition in the Linux kernel AF_ALG cryptographic user API. Concurrent writes to the same AF_ALG socket can interleave unpredictably and leave the socket's internal state inconsistent. The flaw can be triggered by a local user and may crash the system or corrupt cryptographic operation results, causing denial of service or data-integrity issues. The upstream fix adds exclusive write ownership so only one writer can issue sendmsg() at a time.",
+        "affected_products": "Linux Kernel \u2014 affected from version 2.6.38 until the corresponding fixes; fixed in 5.10.245, 5.15.194, 6.1.154, 6.6.108, 6.12.49, 6.16.9, and 6.17.",
         "cvss_score": "7.8",
         "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true - https://cve.imfht.com/detail/CVE-2025-39964?lang=en",
+        "exploit_available": "true - https://github.com/n1k0oowang/CVE-2025-39964_EXP",
         "patch_available": "true - https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285",
-        "active_exploitation": "true - https://www.cisa.gov/news-events/alerts/2025/09/04/cisa-adds-three-known-exploited-vulnerabilities-catalog",
+        "active_exploitation": "true - CISA KEV",
         "threat_actors": "None known",
-        "mitigation": "Upgrade to a kernel release containing the AF_ALG fix, such as the listed fixed stable-branch versions. If immediate patching is not possible, prevent the af_alg kernel module from loading by blacklisting it, subject to application compatibility requirements.",
+        "mitigation": "Upgrade to a kernel containing the upstream stable fix and apply the applicable distribution security update. Where patching is not immediately possible, Red Hat recommends preventing the af_alg module from loading, such as by blacklisting it; this may affect applications that require AF_ALG cryptographic interfaces. CISA also directs organizations to follow applicable BOD 26-04 prioritization and forensic-triage guidance.",
         "vendor_advisory": "https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285"
       }
     },
@@ -55,16 +55,47 @@
       "is_zero_day": true,
       "is_high_severity": false,
       "enrichment": {
-        "technical_details": "The ebtables SNAT target's optional ARP sender-hardware-address rewrite uses skb_store_bits() after only safely reading the ARP header, without first making the target range writable. When that range resides in a nonlinear socket-buffer fragment backed by a splice-imported file page, the operation can write the replacement MAC address directly into the file-backed page, causing an out-of-bounds write and memory corruption. Exploitation requires local access and a system configured with relevant bridge netfilter rules.",
-        "affected_products": "Linux kernel, including net/bridge/netfilter/ebt_snat.c: 5.4.73 through <5.5; 5.8.17 through <5.9; 5.9.2 through <5.10.259; 5.11 through <5.15.210; 5.16 through <6.1.176; 6.2 through <6.6.143; 6.7 through <6.12.94; 6.13 through <6.18.36; 6.19 through <7.0.13; and Linux 7.1-rc1 through 7.1-rc6.",
+        "technical_details": "The vulnerability is in the Linux kernel's netfilter bridge ebtables SNAT target. Its optional ARP sender hardware-address rewrite uses skb_store_bits() after only safely reading the ARP header; it does not ensure that the subsequent sender-hardware-address range is writable. If that range resides in a nonlinear socket-buffer fragment backed by a splice-imported file page, the kernel can write the replacement MAC address directly into the underlying page, causing memory corruption and potentially denial of service or local privilege escalation.\n\nExploitation requires local access and a system configured with applicable bridge netfilter/ebtables SNAT rules, particularly ARP hardware-address rewriting. The upstream fix adds a writability check covering the ARP header and Ethernet address before the rewrite.",
+        "affected_products": "Linux kernel netfilter bridge ebtables SNAT: 5.4.73 through versions before 5.5; 5.8.17 through versions before 5.9; 5.9.2 through versions before 5.10; 5.10.x before 5.10.259; 5.15.x before 5.15.210; 6.1.x before 6.1.176; 6.6.x before 6.6.143; 6.12.x before 6.12.94; 6.18.x before 6.18.36; 7.0.x before 7.0.13. Linux 7.1 is listed as unaffected.",
         "cvss_score": "8.8",
         "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-        "exploit_available": "true - https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-53266",
-        "patch_available": "true - https://git.kernel.org/stable/c/153ea96c806aea395daba907a4f88480b6ad5093",
-        "active_exploitation": "true - https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-53266",
+        "exploit_available": "false - No public proof-of-concept was identified; https://feedly.com/cve/CVE-2026-53266",
+        "patch_available": "true - https://lore.kernel.org/linux-cve-announce/2026062517-CVE-2026-53266-6162@gregkh/T",
+        "active_exploitation": "true - CISA Known Exploited Vulnerabilities Catalog; added 2026-09-18 based on evidence of active exploitation",
         "threat_actors": "None known",
-        "mitigation": "Apply the upstream Linux stable-kernel patches or the corresponding distribution kernel updates. If patching is unavailable, disable ARP hardware-address rewriting in ebtables SNAT rules or remove ebtables SNAT rules operating on ARP traffic over bridge interfaces.",
-        "vendor_advisory": "https://git.kernel.org/stable/c/153ea96c806aea395daba907a4f88480b6ad5093"
+        "mitigation": "Upgrade to a kernel release containing the upstream fix, preferably the latest stable kernel for the applicable branch. If an update cannot be applied immediately, disable ARP hardware-address rewriting in ebtables SNAT rules or remove ebtables SNAT rules operating on ARP traffic over bridge interfaces. CISA also requires KEV remediation in accordance with applicable BOD 26-04 guidance.",
+        "vendor_advisory": "https://lore.kernel.org/linux-cve-announce/2026062517-CVE-2026-53266-6162@gregkh/T"
+      }
+    },
+    {
+      "id": "CVE-2025-39682",
+      "title": "CVE-2025-39682 \u2014 Linux Kernel Improper Check for Unusual or Exceptional Conditions Vulnerability",
+      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains an improper check for unusual or exceptional conditions vulnerability in the TLS receive path which allows a zero-length record retrieved from the rx_list to bypass the intended recvmsg() record-type handling, potentially causing subsequent TLS records to be processed using incorrect zero-copy and queuing assumptions. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-21)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39682",
+      "published": "2026-09-18",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2025-39682"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false,
+      "enrichment": {
+        "technical_details": "The Linux kernel kTLS receive path mishandles a zero-length TLS record initially retrieved from rx_list. Because the record does not establish the expected content type, a subsequent record of a different type can bypass recvmsg() record-type handling and enter an invalid zero-copy path.\n\nIn zero-copy mode, the code may requeue an skb that cannot safely be queued, corrupting the receive-list fragment structure and reference counting. This can lead to a use-after-free when the socket is closed, with potential denial of service or privilege escalation when kTLS is enabled.",
+        "affected_products": "Linux Kernel net/tls: 6.0\u20136.1.148, 6.2\u20136.6.102, 6.7\u20136.12.43, 6.13\u20136.16.3, 6.17-rc1, and 6.17-rc2",
+        "cvss_score": "9.8",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "exploit_available": "true - https://github.com/khoatran107/cve-2025-39682",
+        "patch_available": "true - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/tls?id=62708b9452f8eb77513115b17c4f8d1a22ebf843",
+        "active_exploitation": "true - CISA KEV",
+        "threat_actors": "None known",
+        "mitigation": "Upgrade to a kernel containing the upstream fix, including stable branches at or above 6.1.149, 6.6.103, 6.12.44, or 6.16.4; the fix is also present from Linux 6.17-rc3. Apply the corresponding distribution kernel update, such as the Debian or Amazon Linux security packages.\n\nAs an interim mitigation where patching is not immediately possible, prevent the kTLS `tls` kernel module from loading or disable kTLS use, recognizing that this may affect applications that depend on kernel TLS.",
+        "vendor_advisory": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/tls?id=62708b9452f8eb77513115b17c4f8d1a22ebf843"
       }
     },
     {
@@ -82,15 +113,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "FSB Center 16 primarily uses scanning to identify poorly configured networking devices, especially routers. The actors also exploit common vulnerabilities in Cisco devices, Cisco Smart Install (SMI), and web portals used to manage network devices.",
-        "affected_products": "Poorly configured networking devices, primarily routers; Cisco devices; Cisco Smart Install (SMI); web portals used to manage network devices; specific versions not identified",
-        "cvss_score": "null",
-        "cvss_vector": "null",
-        "exploit_available": "false",
-        "patch_available": "false",
+        "technical_details": "The actors primarily scan Internet-facing IP ranges for poorly configured networking devices, especially routers, and exploit exposed SNMP services and weak or default community strings. They also occasionally exploit Cisco vulnerabilities, Cisco Smart Install (SMI), and web portals used to manage network devices, including CVE-2018-0171 and CVE-2008-4128.",
+        "affected_products": "Networking devices, primarily routers; Cisco devices and Cisco Smart Install (SMI); cited CVEs CVE-2018-0171 and CVE-2008-4128; specific vulnerable product versions: Information unavailable.",
+        "cvss_score": "",
+        "cvss_vector": "Information unavailable.",
+        "exploit_available": "Information unavailable.",
+        "patch_available": "Information unavailable.",
         "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-        "threat_actors": "Russian FSB Center 16; Berserk Bear; Energetic Bear; Crouching Yeti; Dragonfly; Ghost Blizzard; Static Tundra",
-        "mitigation": "Correct insecure router configurations, restrict and secure management interfaces, disable unnecessary services such as SMI where applicable, and apply available vendor updates for known Cisco vulnerabilities. CISA urges device owners and network defenders to take mitigation and remediation actions against this activity.",
+        "threat_actors": "Russian FSB Center 16 cyber actors; commonly associated tracking names include Berserk Bear, Energetic Bear, Crouching Yeti, Dragonfly, Ghost Blizzard, and Static Tundra.",
+        "mitigation": "Use strong, unique credentials for network-device accounts and store them securely. Update device software and firmware, patch known vulnerabilities, replace end-of-life devices with supported models, and restrict or disable unnecessary Internet-facing management and SNMP exposure.",
         "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a"
       }
     },
@@ -110,16 +141,76 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "CVE-2026-81963 is a local elevation-of-privilege flaw caused by improper link resolution before file access in the Windows Update Stack, allowing an authorized attacker to reach SYSTEM privileges. CVE-2026-85880 is a heap-based buffer overflow in Windows ALPC that can let an attacker with code execution, including inside an AppContainer sandbox, escape the sandbox and obtain SYSTEM privileges. Both attacks require local code execution but no user interaction.",
-        "affected_products": "Windows 10; Windows Server 2012, 2016, 2019, and 2022 (CVE-2026-85880); supported Windows client and server editions running the Windows Update Stack (CVE-2026-81963)",
-        "cvss_score": "7.8",
+        "technical_details": "CVE-2026-85880 is a heap-based buffer overflow in Windows Advanced Local Procedure Call (ALPC). An attacker with low-privilege local code execution, including code running inside an AppContainer, can exploit the flaw to escape the sandbox and elevate to SYSTEM without additional user interaction.\n\nCVE-2026-81963 is an improper link-resolution-before-file-access flaw in the Windows Update Stack. A locally authenticated attacker with low privileges can abuse the high-privilege update components to reach SYSTEM privileges; the attack requires no user interaction.",
+        "affected_products": "CVE-2026-85880: Windows 10 versions 1607, 1809, 21H2, and 22H2; Windows Server 2012, 2012 R2, 2016, 2019, and 2022, including listed Server Core editions, in the vulnerable build ranges specified by Microsoft. CVE-2026-81963: Windows 11 versions 23H2, 24H2, 25H2, and 26H1; Windows Server 2025, including Server Core, in the vulnerable build ranges specified by Microsoft.",
+        "cvss_score": "7.8 for both CVE-2026-85880 and CVE-2026-81963",
         "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "false",
-        "patch_available": "true - https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963; https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-85880",
-        "active_exploitation": "true - https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
+        "exploit_available": "true - https://www.proofpoint.com/us/blog/threat-insight/once-bluemoon-multiple-state-aligned-threat-actors-rapidly-adopt-novel-exploit (weaponized BlueMoon chain using CVE-2026-85880); false for CVE-2026-81963 based on Microsoft's 'Publicly disclosed: No' assessment.",
+        "patch_available": "true - CVE-2026-85880: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880; CVE-2026-81963: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963",
+        "active_exploitation": "true - Microsoft lists both vulnerabilities as exploited, and CISA added both to its Known Exploited Vulnerabilities catalog.",
+        "threat_actors": "TA412, UNK_LateNight, and UNK_DoubleCheck are reported exploiting CVE-2026-85880 through the BlueMoon exploit chain. None known for CVE-2026-81963.",
+        "mitigation": "Install Microsoft's September 8, 2026 security updates for all affected Windows builds, prioritizing internet-connected and high-value systems. Both vulnerabilities are in CISA's Known Exploited Vulnerabilities catalog, so organizations should accelerate remediation, restrict untrusted local code execution where practical, and monitor for post-compromise privilege escalation activity until patch deployment is complete.",
+        "vendor_advisory": "CVE-2026-85880: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880; CVE-2026-81963: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963"
+      }
+    },
+    {
+      "id": "CVE-2026-81505",
+      "title": "Convoy: Cross-Tenant Source IDOR Leaks Plaintext Message Broker Credentials",
+      "summary": "## Summary\nfrain-dev/convoy (all versions up to and including v26.6.2, no patch\navailable) lets any authenticated caller who is authorized on at least one\nproject read ANY OTHER project's \"Source\" record by ID via\nGET /api/v1/projects/{projectID}/sources/{sourceID} -- regardless of whether\nthat Source actually belongs to the project named in the URL. The response\nincludes the Source's full PubSub broker configuration in plaintext\n(AMQP/Kafka/SQS/Google credentials), with no redaction.\n\n## Details\n`Handler.GetSource` (api/handlers/source.go) resolves the caller's\nauthorization against the {projectID} in the URL via retrieveProject(), then\ncalls `sources.Service.FindSourceByID(ctx, project.UID, sourceID)`\n(internal/sources/impl.go). That function accepts a projectID parameter but\nnever uses it:\n\n    func (s *Service) FindSourceByID(ctx context.Context, projectID, id string) (*datastore.Source, error) {\n        row, err := s.repo.FetchSourceByID(ctx, common.StringToPgText(id))\n        ...\n    }\n\nThe underlying SQL query (internal/sources/repo/queries.sql,\n`fetchSourceByID`) has no project_id predicate at all:\n\n    SELECT ... FROM convoy.sources AS s\n    LEFT JOIN convoy.source_verifiers sv ON s.source_verifier_id = sv.id\n    WHERE s.id = $1 AND s.deleted_at IS NULL\n\nSo the {projectID} in the URL only gates \"is the caller authorized to view\n*a* project\" -- it never re-validates that the fetched Source actually\nbelongs to that project. `LoadSourcesPaged` (the list endpoint) does\ncorrectly scope by project; only the single-item GetSource lookup is\naffected. `SourceResponse{*datastore.Source}` embeds the full database\nrecord with no redaction, so if the leaked Source is an AMQP/Kafka type, its\n`pub_sub.*.auth.password` field (a live, plaintext broker credential) is\nreturned verbatim.\n\n## Proof of Concept\n1. As a test account, create \"Victim Project\" and an AMQP Source in it\n   with a known broker password (verified against a real RabbitMQ broker,\n   not just stored -- Conv",
+      "link": "https://github.com/advisories/GHSA-p5vg-v7mj-f6q4",
+      "published": "2026-09-18T17:17:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-81505"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "An authenticated user or project-scoped API key holder authorized for one Convoy project can request another project's Source by supplying its source ID in GET /api/v1/projects/{projectID}/sources/{sourceID}. The handler authorizes the project from the URL, but the underlying FindSourceByID lookup and SQL query use only the source ID and do not verify that the Source belongs to the authorized project.\n\nThe endpoint can therefore return another tenant's complete Source record. Because the response is not redacted, AMQP, Kafka, SQS, and Google Pub/Sub configurations may expose plaintext broker credentials, including passwords.",
+        "affected_products": "frain-dev/convoy versions before 26.6.8, including v26.6.2 and earlier",
+        "cvss_score": "6.5 (estimated)",
+        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N (estimated; no CVSS v3.x assignment was published)",
+        "exploit_available": "true - https://github.com/frain-dev/convoy/security/advisories/GHSA-p5vg-v7mj-f6q4",
+        "patch_available": "true - https://github.com/frain-dev/convoy/releases/tag/v26.6.8",
+        "active_exploitation": "false - no confirmed in-the-wild exploitation report or CISA KEV listing was identified",
         "threat_actors": "None known",
-        "mitigation": "Install Microsoft's September 8, 2026 security updates addressing both CVEs and prioritize remediation across Windows clients and servers. Review potentially affected systems for signs of post-compromise privilege escalation.",
-        "vendor_advisory": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-81963, https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-85880"
+        "mitigation": "Upgrade Convoy to v26.6.8 or later, which adds project scoping to Source lookups and rejects cross-project IDs. Rotate any broker credentials that may have been exposed, review access and application logs for suspicious Source-ID requests, and restrict Convoy API access to trusted networks while upgrading.",
+        "vendor_advisory": "https://github.com/frain-dev/convoy/security/advisories/GHSA-p5vg-v7mj-f6q4"
+      }
+    },
+    {
+      "id": "CVE-2026-58197",
+      "title": "ToolHive: containerized MCP servers can reach host services via host.docker.internal, enabling lateral movement",
+      "summary": "## Summary\n\nA containerized MCP server running with the default `network` permission profile (`insecure_allow_all: true`) can reach host-local services via `host.docker.internal`. This includes the ToolHive API itself, other ToolHive-managed MCP server proxies, and any other service listening on the host's localhost. Combined with the unauthenticated ToolHive API and MCP proxy endpoints, this enables a compromised or malicious MCP server to perform lateral movement without any container escape.\n\n## Severity\n\n**High** \u2014 This bypasses the container isolation model that is ToolHive's core security value proposition.\n\n## Reproduction\n\nAll tests performed from inside the `filesystem` MCP container (`docker.io/mcp/filesystem:latest`), started with default settings via `thv run filesystem -- /tmp`.\n\n### 1. Container can reach the ToolHive control plane MCP endpoint\n\n```bash\n$ docker exec <container_id> wget -qO- \\\n  --header=\"Content-Type: application/json\" \\\n  --header=\"Accept: application/json\" \\\n  --post-data='{\"jsonrpc\":\"2.0\",\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-03-26\",\"capabilities\":{},\"clientInfo\":{\"name\":\"evil-mcp\",\"version\":\"1.0\"}},\"id\":1}' \\\n  http://host.docker.internal:50444/mcp\n```\n\n**Result:** Full MCP handshake succeeds:\n```json\n{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-03-26\",\"capabilities\":{\"logging\":{},\"tools\":{}},\"serverInfo\":{\"name\":\"toolhive-mcp\",\"version\":\"v0.9.3\"}}}\n```\n\n### 2. Container can connect to another MCP server's proxy and call its tools\n\n```bash\n$ docker exec <container_id> wget -qO- \\\n  --header=\"Content-Type: application/json\" \\\n  --header=\"Accept: application/json\" \\\n  --post-data='{\"jsonrpc\":\"2.0\",\"method\":\"tools/list\",\"params\":{},\"id\":2}' \\\n  http://host.docker.internal:64965/mcp\n```\n\n**Result:** Returns the full tool list of the target MCP server (read_file, write_file, edit_file, move_file, etc.), and tools can be called:\n\n```json\n{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"content\":[{\"text\":\"Allowed directo",
+      "link": "https://github.com/advisories/GHSA-qg2g-g9w3-m5h8",
+      "published": "2026-09-18T17:16:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-58197"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true,
+      "enrichment": {
+        "technical_details": "Prior to ToolHive CLI 0.30.1 and ToolHive Studio 0.38.0, containerized MCP servers used a default network profile that did not isolate them from host services. With host.docker.internal or the Docker gateway reachable, a malicious or compromised MCP server could access the ToolHive control plane, other MCP proxies, localhost-bound services, and potentially privileged MCP tools without escaping its container.\n\nThe issue combines unrestricted container networking with unauthenticated ToolHive API and MCP proxy endpoints. ToolHive Studio also forced network_isolation to false, overriding the backend\u2019s secure isolation behavior.",
+        "affected_products": "ToolHive CLI versions < 0.30.1, ToolHive Studio versions < 0.38.0",
+        "cvss_score": "8.8",
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+        "exploit_available": "true - https://github.com/stacklok/toolhive/security/advisories/GHSA-qg2g-g9w3-m5h8",
+        "patch_available": "true - https://github.com/stacklok/toolhive/releases/tag/v0.30.1; https://github.com/stacklok/toolhive-studio/releases/tag/v0.38.0",
+        "active_exploitation": "false - no confirmed active exploitation report identified in the cited advisory or CVE record",
+        "threat_actors": "None known",
+        "mitigation": "Upgrade ToolHive CLI to 0.30.1 or later and ToolHive Studio to 0.38.0 or later. Until upgraded, block host.docker.internal and 172.17.0.1 from container networking, isolate MCP server networks from the Docker bridge gateway, and require authentication or authorization tokens for MCP proxy and control-plane endpoints.\n\nUse explicit per-container network allow-lists where possible, avoid exposing privileged native MCP tools on reachable localhost ports, and enable audit logging for MCP tool calls. Existing servers may need to be restarted before the new network-isolation defaults take effect.",
+        "vendor_advisory": "https://github.com/stacklok/toolhive/security/advisories/GHSA-qg2g-g9w3-m5h8"
       }
     },
     {
@@ -138,16 +229,16 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "In the default configuration, AgentCore Harness provides shell and file_operations tools to sessions unless restricted with allowedTools. The shell tool runs in the same memory space and UID context as the harness process, allowing prompt injection to cause commands that read plaintext credentials after AgentCore Identity resolves them at runtime. The credentials can then be exfiltrated through an attacker-controlled destination.",
-        "affected_products": "Amazon Bedrock AgentCore Harness; affected default configurations with built-in shell and file_operations tools enabled. Specific version range not stated.",
-        "cvss_score": ":null",
-        "cvss_vector": ":null",
+        "technical_details": "A prompt injection can steer an AgentCore Harness agent into invoking its built-in shell tool. In the default configuration, shell and file_operations are available unless restricted through allowedTools, and the shell runs with the same UID as PID 1, including root-level access.",
+        "affected_products": "Amazon Bedrock AgentCore Harness in its default configuration, particularly sessions exposing the built-in shell and file_operations tools while using AgentCore Identity; no vulnerable-version range identified.",
+        "cvss_score": "technical_details",
+        "cvss_vector": "Information unavailable.",
         "exploit_available": "true - https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/",
-        "patch_available": "false",
-        "active_exploitation": "false",
+        "patch_available": "false - no official vendor patch identified for this finding.",
+        "active_exploitation": "false - no confirmed in-the-wild exploitation reported.",
         "threat_actors": "None known",
-        "mitigation": "Restrict allowedTools at InvokeHarness time to only the tools required for each session, disabling the default shell and file_operations tools when unnecessary. Apply least privilege to Identity vault service accounts and monitor or filter outbound traffic from harness containers.",
-        "vendor_advisory": ":null"
+        "mitigation": "At InvokeHarness time, restrict allowedTools to only what each session requires; remove shell and file_operations when they are unnecessary. Apply least privilege to AgentCore Identity service accounts, filter and monitor outbound traffic from harness containers, and treat unexpected destinations as potential evidence of prompt injection.",
+        "vendor_advisory": "Information unavailable."
       }
     },
     {
@@ -166,15 +257,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an AI system processes external content\u2014such as a website, email, or document\u2014that contains malicious instructions. The AI may then silently follow those instructions instead of the user's intended request, potentially manipulating outputs or causing unintended actions.",
-        "affected_products": "null",
-        "cvss_score": "null",
-        "cvss_vector": "null",
+        "technical_details": "Indirect prompt injection occurs when an AI system processes untrusted content\u2014such as a website, email, or document\u2014that contains malicious instructions. The poisoned content can cause the AI to follow the attacker's commands instead of the user's intended request. The observed attack vector involves seeding such instructions on public websites so browsing AI agents or other systems ingest them.",
+        "affected_products": "Information unavailable (the report describes a general AI-agent attack class and does not identify product names or vulnerable versions).",
+        "cvss_score": "",
+        "cvss_vector": "Information unavailable.",
         "exploit_available": "true - https://greshake.github.io/",
-        "patch_available": "false",
-        "active_exploitation": "true - https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
+        "patch_available": "false - no versioned vendor patch is identified; https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
+        "active_exploitation": "true - https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html; http://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026",
         "threat_actors": "None known",
-        "mitigation": "Treat external web pages, emails, and documents as untrusted input; separate data from executable instructions and restrict agent permissions. Apply layered defenses, confirmation requirements for consequential actions, monitoring, and ongoing adversarial testing of AI systems.",
+        "mitigation": "Treat websites, emails, and documents processed by AI agents as untrusted input. Separate retrieved content from trusted system instructions, restrict agent permissions and external side effects, and require confirmation for consequential actions. Google also recommends hardening AI models and products, red-team pressure testing, and real-time monitoring to identify and neutralize malicious activity.",
         "vendor_advisory": "https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
       }
     },
@@ -194,15 +285,15 @@
       "is_zero_day": true,
       "is_high_severity": true,
       "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an LLM processes external data such as websites, email, documents, or connected tools containing hidden malicious instructions. The LLM may follow those instructions while completing the user's request, potentially without any direct attacker input. This can cause unintended actions or information disclosure.",
-        "affected_products": "Google Gemini app, Gemini in Google Workspace apps including Gmail, Docs editors, Drive, and Chat; specific versions not stated",
-        "cvss_score": ".",
-        "cvss_vector": ".",
+        "technical_details": "Indirect prompt injection occurs when an AI application processes untrusted external content\u2014such as web pages, email, or documents\u2014that contains hidden malicious instructions. The LLM may interpret those instructions as part of the task and silently follow the attacker\u2019s commands rather than the user\u2019s intent.\n\nThe attack can cause unintended actions or information disclosure and may occur without direct malicious input from the user. The relevant attack surface is therefore AI applications that combine LLMs with external data sources or tools, including Workspace with Gemini.",
+        "affected_products": "Google Workspace with Gemini, Gemini app, and Gemini in Workspace apps including Gmail, Docs editors, Drive, and Chat; no specific vulnerable versions identified",
+        "cvss_score": "Information unavailable.",
+        "cvss_vector": "Information unavailable.",
         "exploit_available": "true - http://unit42.paloaltonetworks.com/ai-agent-prompt-injection",
-        "patch_available": "false",
-        "active_exploitation": "true - http://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026",
+        "patch_available": "false - no conventional vendor patch release was identified; Google describes continuous, layered mitigation instead",
+        "active_exploitation": "true - Cloud Security Alliance reports live exploitation, citing Google, Forcepoint X-Labs, and Palo Alto Networks Unit 42",
         "threat_actors": "None known",
-        "mitigation": "Use layered defenses including user confirmation, URL sanitization, tool-chaining policies, and centralized policy controls. Google also recommends model hardening so Gemini can identify and ignore harmful instructions embedded in data.",
+        "mitigation": "Use Google\u2019s layered Gemini and Workspace defenses, keep the relevant services and security controls current, and treat web pages, email, and documents supplied to an AI system as untrusted input. Review AI outputs and require human confirmation before consequential actions, especially where the AI can access sensitive data or invoke tools.\n\nGoogle describes ongoing model hardening, red-team testing, attack reproduction and cataloguing, and continuous improvement rather than a one-time fix; organizations should therefore maintain defense-in-depth controls and monitor for newly disclosed indirect prompt-injection techniques.",
         "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
       }
     },
@@ -220,19 +311,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an AI agent processes untrusted external content\u2014such as webpages, iframes, email, or documents\u2014that contains hidden malicious instructions. The agent may treat those instructions as task guidance, causing unwanted actions, information disclosure, data exfiltration, or financial transactions. In agentic browsing, the attack targets the planning model through content encountered during navigation.",
-        "affected_products": "Google Chrome agentic browsing / Gemini in Chrome (specific versions not stated), other agentic browsers (versions not specified)",
-        "cvss_score": "null",
-        "cvss_vector": "null",
-        "exploit_available": "true - http://immersivelabs.com/resources/c7-blog/weaponizing-llms-bypassing-email-security-products-via-indirect-prompt-injection",
-        "patch_available": "false",
-        "active_exploitation": "true - http://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026",
-        "threat_actors": "None known",
-        "mitigation": "Use layered defenses such as a user-alignment critic isolated from untrusted content, origin isolation, user confirmations for critical actions, real-time threat detection, and red-team response processes. Treat webpage and document content as untrusted and require explicit confirmation before sensitive actions.",
-        "vendor_advisory": "http://security.googleblog.com/2025/12/architecting-security-for-agentic.html"
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-8619085627823664385",
@@ -248,19 +327,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "CVE-2025-48530 is an incorrect bounds-check condition in multiple locations of CrabbyAVIF, producing out-of-bounds accesses in Android 16's AVIF parsing/decoding path. The flaw could contribute to remote code execution when combined with other bugs, without additional privileges or user interaction. Google's analysis describes it as a linear buffer overflow in unsafe Rust; Android's Scudo allocator deterministically prevented exploitation on configurations using its guard pages.",
-        "affected_products": "Google Android 16, including the CrabbyAVIF AVIF parser/decoder component",
-        "cvss_score": "8.1",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "false - https://app.opencve.io/cve/CVE-2025-48530",
-        "patch_available": "true - https://source.android.com/docs/security/bulletin/2025-08-01",
-        "active_exploitation": "false - https://app.opencve.io/cve/CVE-2025-48530",
-        "threat_actors": "None known",
-        "mitigation": "Apply Android security patch level 2025-08-05 or later. Keep Google Play Protect enabled; Scudo allocator hardening also mitigates this overflow on devices using it.",
-        "vendor_advisory": "https://source.android.com/docs/security/bulletin/2025-08-01"
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1436003009998740920",
@@ -276,19 +343,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an AI system processes attacker-controlled external content\u2014such as a website, email, document, or calendar invite\u2014containing hidden instructions. The model may follow those instructions instead of the user's request, potentially exfiltrating data, executing rogue actions, or causing destructive effects.",
-        "affected_products": "Generative AI systems, AI assistants, AI agents, and LLM-integrated applications processing untrusted external content; no specific products or versions identified",
-        "cvss_score": ".",
-        "cvss_vector": ".",
-        "exploit_available": "true - https://greshake.github.io/",
-        "patch_available": "false",
-        "active_exploitation": "true - https://blog.google/security/prompt-injections-web",
-        "threat_actors": "None known",
-        "mitigation": "Treat external content as untrusted input; isolate model access to sensitive data and tools, require confirmation for consequential actions, and apply layered monitoring, guardrails, and red-team testing. Limit agent privileges and prevent arbitrary execution or unrestricted data access.",
-        "vendor_advisory": "http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html"
-      }
+      "is_high_severity": true
     },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
@@ -306,6 +361,186 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-59163",
+      "title": "Mnemosyne has JWT signature verification bypass sync server that allows authentication bypass",
+      "summary": "### Summary\n\nThe Mnemosyne sync server's authentication check decoded JWT bearer tokens but never verified their HMAC-SHA256 signatures. Any well-formed token was accepted, allowing an unauthenticated attacker to impersonate any user and read or modify their sync data.\n\n**Severity: Critical**\n\nCVSS 3.1: AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N = 9.1\n\nAssumes the sync server endpoint is network-reachable. If your deployment is localhost-only, the score drops substantially and severity becomes High or Medium depending on local exposure. Confirm your threat model.\n\n### Affected versions\n\nAll mnemosyne versions exposing the sync server endpoint, up to and including v3.10.0.\n\n### Patched versions\n\nv3.10.1 (commit a0b6b871 on branch security/jwt-signature-verification)\n\n___\n\n### Description\n\nThe sync server uses JWT bearer tokens to authenticate clients. Prior to v3.10.1, the auth check in mnemosyne/core/sync_server.py parsed the JWT's header and payload using base64 decoding, then passed the token to a jwt library call with options that effectively disabled signature verification. The server accepted any well-formed token regardless of the signature, including tokens with alg: none and tokens signed with the wrong key.\n\nThe fix in v3.10.1 replaces the broken decode with a from-scratch HS256 verifier using only the Python standard library:\n\n- Constant-time signature comparison via hmac.compare_digest\n- Strict alg: HS256 check, rejecting none and other algorithms\n- UTC-aware exp validation with leeway\n- Loud errors with specific failure reasons\n- Type validation of decoded payload before use\n\n### Impact\n\nAn attacker with network access to the sync server can:\n\n- Forge a JWT for any user_id without knowing the secret\n- Authenticate as that user to /sync/status, /sync/push, and /sync/pull\n- Read the victim's sync state\n- Push malicious sync state to corrupt the victim's local database\n- Pivot within a shared deployment (multi-user sync server)\n\nConfidentiality and integrity of sy",
+      "link": "https://github.com/advisories/GHSA-xcw4-53cc-hv32",
+      "published": "2026-09-18T17:54:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59163"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63199",
+      "title": "Perses's missing authorization in datasource proxy allows cross-scope secret disclosure",
+      "summary": "### Impact\n\nThe datasource proxy authorizes the caller on the Datasource scope, then resolves and decrypts any Secret named in the request body with no Secret-scope check.\n\nDatasource and Secret are distinct, independently grantable role scopes, so an operator can grant datasource access without secret access. The proxy and the service to create a datasource does not verify that the operator has the correct right.\n\nA user holding only `GlobalDatasource:create` can create a `GlobalDatasource` and attached to it a `GlobalSecret` without having the right to get access to. The user can also do the same by using the `unSaved datasource` feature proposed by the proxy used to verify the connectivity to the datasource before creating the resource.\n\nAs soon as you can attach a secret that you don't have right to see, you can then create a Datasource that you control and then read anything send by Perses. Which include the secret in plain text. You can then have access to the secret without being granted to.\n\nThe project-scoped variant does the same within a project.\n\n### Patches\nThe proxy and the service to create the datasource is verifying if you have the right to read a secret if a secret is attached to the datasource.\nThis is patch in v0.54.0-rc.0\n\n### Workarounds\nThis issue can be avoided by using the provisioning to create the datasource and by removing the right to create datasource.",
+      "link": "https://github.com/advisories/GHSA-4227-9989-jrhx",
+      "published": "2026-09-18T17:39:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63199"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63458",
+      "title": "Perses's project query parameter authorization bypass exposes cross-project resources",
+      "summary": "### Impact\n_What kind of vulnerability is it?_\n\nAn authenticated user who is only a viewer on project team-a requests GET /api/v1/projects/team-a/dashboards?project=finance-secret (or simply GET /api/v1/datasources?project=finance-secret) and receives the full list of the finance-secret project's dashboards and datasource specifications, despite having no role on that project. This defeats Perses' project-level tenant isolation for all project-scoped read resources.\n\n_Who is impacted?_\n\nAny authenticated user reads every project's dashboards, datasources, variables across tenants.\n\n### Patches\n_Has the problem been patched? What versions should users upgrade to?_\n\n### Workarounds\nNone",
+      "link": "https://github.com/advisories/GHSA-cjgj-2fwf-4c2w",
+      "published": "2026-09-18T17:39:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63458"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77339",
+      "title": "Process Compose: Browser DNS rebinding lets websites control local process-compose MCP tools",
+      "summary": "## Summary\n\nA malicious website can use DNS rebinding to control a developer's local process-compose MCP SSE listener when MCP SSE is enabled. The vulnerable path accepts browser-origin requests before any Host validation, Origin validation, or caller-secret check, then dispatches the requests into process-compose MCP tools.\n\nThis advisory covers `https://github.com/F1bonacc1/process-compose`, confirmed at commit `d56aa59df04b72f8644811ac581a051bec05e485`.\n\nThe issue is in the MCP SSE transport, not the Gin REST API. The REST API token middleware protects REST routes, but the MCP listener is started separately and does not inherit that protection.\n\n## Affected Code\n\nRoot cause:\n\n```text\nsrc/types/mcp.go:24-30      SSE is the default MCP transport when mcp_server.transport is omitted.\nsrc/types/mcp.go:64-70      SSE configuration requires only host and port. There is no auth, Host allowlist, Origin allowlist, or caller-secret field.\nsrc/mcp/server.go:203-214   The server starts server.NewSSEServer(s.mcpServer) directly on the configured address.\nsrc/api/routes.go:32-39     X-PC-Token-Key middleware is installed on the Gin REST router, not on the MCP SSE listener.\n```\n\nImpact surface:\n\n```text\nsrc/mcp/mcp_manager.go:33-38     expose_control_tools registers built-in process-compose control tools.\nsrc/mcp/control_tools.go:26-116  The registered tools start, stop, restart, scale, read logs, search logs, and truncate logs.\nsrc/mcp/control_tools.go:121-142 The registered tools return project and process state.\n```\n\n## Reproduction\n\nStart process-compose from the affected commit with MCP SSE and built-in control tools enabled:\n\n```bash\nworkdir=\"$(mktemp -d)\"\ncd \"$workdir\"\ngit clone https://github.com/F1bonacc1/process-compose process-compose-target\ncd process-compose-target\ngit checkout d56aa59df04b72f8644811ac581a051bec05e485\n\ngo build -o ./process-compose-poc .\n\ncat > process-compose-mcp-poc.yaml <<'YAML'\nmcp_server:\n  host: 127.0.0.1\n  port: 8081\n  transport: sse\n  expos",
+      "link": "https://github.com/advisories/GHSA-5gm3-9crp-6g3v",
+      "published": "2026-09-18T17:17:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77339"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63406",
+      "title": "AnyCable: Telemetry Subsystem Contains Hardcoded Authentication Token and Transmits CLI Arguments Including Secrets",
+      "summary": "### Summary\nThe telemetry subsystem embeds a hardcoded auth token (`\"secret\"`) in the public source and transmits raw CLI arguments\u2014including `--secret`, `--jwt_secret`, and `--http_rpc_secret` values\u2014to a third-party telemetry endpoint.\n\n### Details\nIn `telemetry/config.go` line 12, `var authToken = \"secret\"` is committed in the public repository and used to authenticate to `https://telemetry.anycable.io`. In `telemetry/telemetry.go`, `clusterFingerprint()` (line 320) calls both `anycableFileConfig(c.ConfigFilePath)` (line 333), which reads the full TOML config file contents, and `anycableCLIArgs()` (line 402), which reads `os.Args[1:]` verbatim\u2014including any `--secret=...`, `--jwt_secret=...`, `--http_rpc_secret=...` arguments. Both raw values are passed to `generateDigest()` (line 373), meaning the actual secret strings flow through the code path and are included in telemetry data sent to the third-party server. Since the hardcoded `authToken = \"secret\"` is public, any attacker who can perform DNS hijacking or is positioned on the network path can intercept and read the telemetry payload containing operator credentials.\n\n### PoC\n1. Read `telemetry/config.go` in the public repo to find `authToken = \"secret\"`.\n2. Set up a DNS spoof for `telemetry.anycable.io` pointing to an attacker-controlled server.\n3. Start anycable-go with `--secret=my-production-secret`.\n4. The server sends a POST to the attacker's endpoint with the telemetry JSON payload. The `clusterFingerprint` field contains data derived from raw `os.Args` including `--secret=my-production-secret`.\n\n### Impact\nIn MITM/DNS-hijack scenarios, production secrets (JWT secrets, broadcast keys, RPC auth) are exposed to third parties. The hardcoded `authToken = \"secret\"` provides no protection since it is known to anyone reading the open-source code.\n\n### Fix\n1. Remove the hardcoded `authToken` from source; generate or require operator configuration at build time or deployment time. 2. Remove `anycableCLIArgs()` f",
+      "link": "https://github.com/advisories/GHSA-w72w-9qmj-c9qm",
+      "published": "2026-09-18T17:17:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63406"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63405",
+      "title": "AnyCable: Pusher REST API Does Not Verify Request Body MD5 Enabling Signed-Request Replay with Arbitrary Body",
+      "summary": "### Summary\nThe Pusher-compatible REST API includes `body_md5` in the HMAC signature string but never computes or verifies the MD5 of the received HTTP body, allowing anyone who observes a signed request to replay it with an entirely different body.\n\n### Details\nIn `pusher/http.go`, the `Handler` function extracts `body_md5` from the URL query string (line 169) and includes it verbatim in `stringToSign` (line 175). It then verifies `HMAC(stringToSign, secret) == auth_signature`. After verification succeeds, `handleEvents` reads and parses `r.Body` (lines 201-212) without ever computing `md5(body)` and comparing it against the `body_md5` that was signed. The Pusher protocol specification explicitly requires the server to verify this digest to prevent body-substitution attacks. There is also no `auth_timestamp` staleness check, so replays are valid indefinitely.\n\n### PoC\n1. Capture a legitimate signed POST to `/apps/<app_id>/events?auth_key=K&auth_timestamp=T&auth_version=1.0&body_md5=LEGIT_MD5&auth_signature=SIG` carrying body `{\"name\":\"safe-event\",\"channel\":\"ch\",\"data\":\"...\"}` (e.g., from TLS-terminating load-balancer logs).\n2. Send a new request with the same query string parameters but a different body:\n   `{\"name\":\"injected-event\",\"channel\":\"admin\",\"data\":\"malicious-payload\"}`\n3. The server accepts the request (HMAC over `stringToSign` matches the original) and broadcasts the injected event to all subscribers of `admin`.\n\n### Impact\nAn attacker who can read any single signed Pusher API request (from logs, a shared proxy, or a network tap) can broadcast arbitrary events to any channel indefinitely, potentially forging server-side events, corrupting application state, or delivering phishing messages to WebSocket clients.\n\n### Fix\nAfter reading `r.Body`, compute `hex(md5(body))` and compare it to the `body_md5` query parameter using a constant-time comparison before proceeding. Additionally, reject requests whose `auth_timestamp` is more than 600 seconds from the cu",
+      "link": "https://github.com/advisories/GHSA-5p54-whvp-x327",
+      "published": "2026-09-18T17:16:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63405"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61682",
+      "title": "kcp front-proxy does not strip inbound X-Remote-* identity headers, allowing any authenticated client to inject groups/warrants and impersonate system:masters in any workspace",
+      "summary": "# Summary\n\nThe kcp front-proxy fails to strip client-supplied identity headers before forwarding requests to shards. Any authenticated tenant can inject their own `X-Remote-Group` and `X-Remote-Extra-*` headers, which the shard trusts as a verified identity assertion \u2014 allowing a low-privilege user to escalate to cluster administrator (`system:masters`) and read, write, or delete resources in any workspace on the shard. This is a complete multi-tenant isolation and authorization bypass.\n\n## Impact \n\nIn a sharded kcp deployment, external clients reach shards through the front-proxy, which authenticates the client and then forwards the resulting identity to the shard using Kubernetes request-header authentication (`X-Remote-User` / `X-Remote-Group` / `X-Remote-Extra-*`). The shard trusts these headers because they arrive over the front-proxy's mutually-authenticated connection.\n\nBecause the front-proxy appended its identity headers instead of replacing them \u2014 and never removed any copies the client sent \u2014 an authenticated attacker could smuggle forged identity headers through to the shard. With this, an attacker holding any ordinary credential (client certificate, OIDC token, or service-account token) and no special privileges could:\n\n- assert `X-Remote-Group: system:masters` and act as cluster super-user, bypassing the entire kcp authorizer chain in every workspace on the shard;\n- forge `authorization.kcp.io/warrant` to assume an arbitrary user/group identity via kcp's delegated-identity mechanism;\n- forge `authentication.kcp.io/scopes` to escape the cluster-scoping that confines service-account and impersonated identities to their origin workspace;\n- satisfy per-workspace required-group gating by injecting the required group.\n\nThe result is arbitrary read/write/delete access to any tenant's resources, secrets, RBAC, APIExports/APIBindings, and LogicalClusters \u2014 a cross-workspace access break and authorizer bypass across the proxy's trust boundary.\n\n\n# Patches\nFixed ",
+      "link": "https://github.com/advisories/GHSA-c8w2-fgvx-vhv4",
+      "published": "2026-09-18T17:15:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61682"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61672",
+      "title": "Capsule: Tenant owner bypasses Capsule's forbidden namespace/service/node label and annotation enforcement",
+      "summary": "## Summary\n\nCapsule lets a cluster administrator forbid specific metadata keys that tenant owners must not place on their own resources: `Tenant.spec.namespaceOptions.forbiddenLabels` / `forbiddenAnnotations` (namespaces), `Tenant.spec.serviceOptions.forbiddenLabels` / `forbiddenAnnotations` (Services), and the cluster-wide forbidden worker-node labels/annotations. These lists are an isolation control \u2014 they exist to stop a tenant owner from setting metadata that other controllers or admission plugins key on (Pod Security Admission labels, `kubernetes.io/metadata.name`, LoadBalancer/externalIP service annotations, scheduler annotations, vendor labels that grant network reach, etc.). The validating webhooks enforce them through `api.ValidateForbidden`, which calls `ForbiddenListSpec.ExactMatch(key)` for every key the tenant submits.\n\n`ExactMatch` is broken. It sorts the denied list **case-insensitively** (`sort.SliceStable` with a `strings.ToLower` comparator) and then performs a **byte-order binary search** (`sort.SearchStrings`) over the result. `sort.SearchStrings` is only correct on a slice sorted in plain byte-ascending order. Whenever the denied list contains an entry whose case-insensitive position differs from its byte position \u2014 which happens any time the list mixes a capitalised key with lowercase keys, because ASCII uppercase letters (0x41\u20130x5A) sort *before* lowercase (0x61\u20130x7A) by byte but are interleaved by `ToLower` \u2014 the binary search lands on the wrong index and `ExactMatch` returns **false for a key that is literally present in the denied list**. The webhook then *allows* the forbidden metadata.\n\nA tenant owner (who legitimately holds patch/create rights on their own tenant-owned namespaces and Services) can therefore set a metadata key the administrator explicitly forbade, defeating the control and reaching metadata-driven cross-tenant / system effects of exactly the kind Capsule's forbidden lists are meant to prevent. The bug is deterministic, re",
+      "link": "https://github.com/advisories/GHSA-gjw4-3v3v-rqxg",
+      "published": "2026-09-18T17:14:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61672"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2025-66455",
+      "title": "LMDeploy has Remote Code Execution\u00a0by Pickle Deserialization via handle_zmq_recv in lmdeploy/lmdeploy/pytorch/disagg/conn/engine_conn.py",
+      "summary": "## Summary\n\nLMDeploy's PyTorch DistServe/PD-disaggregation control plane used\n`recv_pyobj()` to deserialize messages received through a ZeroMQ PULL\nsocket. PyZMQ implements `recv_pyobj()` using Python pickle\ndeserialization, which can execute arbitrary code while reconstructing\nan object.\n\nThe peer address used by the receiver was supplied through the\n`POST /distserve/p2p_connect` HTTP endpoint. An attacker who could reach\nan affected DistServe API server could cause the server to connect to an\nattacker-controlled ZeroMQ endpoint and deserialize a crafted pickle\npayload.\n\nAPI-key authentication is not enabled unless the operator explicitly\nconfigures it. As a result, affected DistServe deployments without API\nkeys allowed unauthenticated remote code execution with the privileges\nof the LMDeploy serving process.\n\nThis issue affects the PyTorch backend when PD-disaggregation/DistServe\nis enabled. Ordinary deployments that do not use the affected\ndisaggregated-serving path do not expose this data flow.\n\n## Affected components\n\n- HTTP entry point:\n  `lmdeploy/serve/openai/endpoints/distserve.py`,\n  `POST /distserve/p2p_connect`\n- Attacker-controlled peer address:\n  `DistServeConnectionRequest.remote_engine_endpoint_info.zmq_address`\n- Vulnerable receiver:\n  `lmdeploy/pytorch/disagg/conn/engine_conn.py`,\n  `EngineP2PConnection.handle_zmq_recv()`\n- Unsafe operation: `recv_pyobj()`, which performs pickle deserialization\n\n## Vulnerable data flow\n\n1. A caller submits a DistServe P2P connection request containing a\n   ZeroMQ address.\n2. The LMDeploy engine connects its ZeroMQ PULL socket to that address.\n3. `handle_zmq_recv()` receives messages using `recv_pyobj()`.\n4. A malicious peer sends a crafted pickle object.\n5. Python code executes during deserialization, before LMDeploy can\n   perform any type or field validation.\n\n  A type check performed after `recv_pyobj()` cannot mitigate this issue\n  because pickle payload execution occurs during deserialization.\n\n## Impact\n\nSuc",
+      "link": "https://github.com/advisories/GHSA-2vh9-42vm-xmv2",
+      "published": "2026-09-18T17:03:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-66455"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77616",
+      "title": "Semantic MediaWiki affected by reflected XSS in `Special:Ask` via a forged cursor pagination token",
+      "summary": "## Reflected XSS via a forged cursor pagination token\n\n#### Failure mode\n\n`Special:Ask` accepts a `cursor` query parameter for keyset pagination (added in 7.0.0). The token is decoded by `CursorEncoder`, which is an **unsigned** base64url-encoded JSON blob, so its contents are fully attacker-controlled. When the cursor's sort anchor does not match the request's `sort=` / `order=`, `QueryCreator::applyCursorIfRequested()` builds an error message by interpolating the attacker-controlled `sort_prop` / `sort_order` values into a raw string via `Query::addErrors()`.\n\nUnlike SMW's message-key errors, this raw string bypasses the message layer's sanitisation (`ProcessingErrorMsgHandler::normalizeAndDecodeMessages()` passes a non-key, non-encoded string through unchanged). `ErrorWidget::queryError()` then assembles the errors and passes them to `Html::errorBox()`, whose first argument is emitted as raw HTML. The result is a reflected cross-site scripting vulnerability: a crafted `cursor` token containing markup in `sort_prop` (or `sort_order`) executes script in the victim's browser on the wiki origin.\n\nNo authentication or special permission is required. The payload is delivered via a crafted link, e.g. `Special:Ask?q=...&p[cursor]=<forged token>` where the token decodes to `{\"v\":1,\"sort_prop\":\"<script>...</script>\"}`. Confirmed executing in a browser; the responses carry no Content-Security-Policy, so inline script is not blocked.\n\n#### Remediation\n\n- Output-encode the attacker-controlled `sort_prop` / `sort_order` values before they are interpolated into the error text in `QueryCreator`, so no raw user input enters the error stream.\n- Defense in depth: the `format=debug` output path that reflected the same error text was hardened separately in GHSA-q5fm-9mx6-44f4.\n\n#### Maintenance note\n\nQuery error strings are rendered as raw HTML by `ErrorWidget::queryError()` via `Html::errorBox()`. Any error added through `Query::addErrors()` that embeds user-controlled text must be ",
+      "link": "https://github.com/advisories/GHSA-cx86-7xwp-w9wf",
+      "published": "2026-09-18T16:58:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77616"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2025-53837",
@@ -589,239 +824,6 @@
       ],
       "cve_ids": [
         "CVE-2026-45140"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-68523",
-      "title": "Fulgur: Unbounded page slicing from attacker-controlled CSS height causes denial of service",
-      "summary": "`fulgur` converts untrusted HTML/CSS into PDF, commonly on a server that\nprocesses input supplied by many tenants. In versions prior to 0.19.0, a\nbody-direct child whose CSS-resolved height greatly exceeds the page height was\nsliced into one fragment per page with **no upper bound**.\n\nThe height is taken directly from attacker-controlled HTML/CSS (`height`, `vh`\nunits), so a few bytes such as:\n\n```html\n<div style=\"height:99999999px\"></div>\n```\n\nforced on the order of 125,000 page fragments. The pagination code then\nallocates `vec![Vec::new(); page_count]` and runs a per-page render loop,\nresulting in CPU and memory exhaustion. A non-finite height (one that resolves\nto `+inf`) additionally made the slicing loop's `remaining -= last_slice_h`\ndecrement never terminate, causing an infinite loop.\n\nAn attacker able to submit HTML/CSS to a fulgur-based conversion service can\ntrigger this with a trivially small payload, denying service to the host and\nany co-tenants.\n\n## Patches\n\nFixed in **0.19.0**. A `MAX_PAGES` cap bounds the slice loop \u2014 halting it even\nfor a `+inf` height \u2014 and non-finite layout heights are sanitized so they can no\nlonger drive the loop.\n\n## Workarounds\n\nUpgrade to 0.19.0 or later. If upgrading is not immediately possible, validate\nor constrain untrusted CSS (in particular `height` / `vh` on body-level\nelements) before passing HTML to fulgur.\n\n## Attack Vector rationale\n\n`fulgur` performs no network I/O of its own; it renders HTML/CSS handed to it by\nthe embedding application. This advisory scores the crate independent of any\nspecific adopting program, so per the CVSS v3.1 User Guide \u00a73.7 (scoring library\nvulnerabilities related to incoming data) the Attack Vector is assessed as\n**Network** for the reasonable worst-case deployment \u2014 a network-facing service\nthat renders untrusted, attacker-supplied HTML without user interaction. A\nconcrete system that receives the HTML in one component and passes it to fulgur\nin a separate component may assess a lower ",
-      "link": "https://github.com/advisories/GHSA-j5cx-ph8g-95v3",
-      "published": "2026-09-17T18:48:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-68523"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75523",
-      "title": "Steeltoe.Management.Endpoint: HttpExchanges URI masking leaks query-string secrets",
-      "summary": "## Summary\n\nSteeltoe's `/actuator/httpexchanges` endpoint records and displays request URIs after passing them through `MaskedUri`. The masking only covers the `UserInfo` portion of the URI (inline `user:password@host` credentials) and does not inspect the query string. With `IncludeQueryString` enabled by default, any secrets carried in query strings (for example: OAuth tokens, password-reset tokens, signed-URL signatures, API keys) are returned verbatim in the `uri` field of the response and written to logs at DEBUG level.\n\n## Impact\n\nAny caller who can reach `/actuator/httpexchanges` can receive full request URIs from prior traffic, including any secrets those URIs contained in their query strings. Applications with DEBUG-level logging enabled for the `Steeltoe.Management.Endpoint.Actuators.HttpExchanges` namespace also write these URIs to their application logs.\n\n## Affected configuration\n\n- `httpexchanges` is explicitly added to the actuator exposure list (`Management:Endpoints:Web:Exposure:Include`). It is not included by default.\n- The application handles requests that carry secrets in query strings, such as OAuth callbacks, signed URLs, or password-reset links.\n- DEBUG logging is enabled for `Steeltoe.Management.Endpoint.Actuators.HttpExchanges` (log exposure only).\n\n## Mitigations\n\nIf an immediate upgrade is not possible:\n\n- Remove `httpexchanges` from the actuator exposure list, or restrict it behind authentication.\n- Set `Management:Endpoints:HttpExchanges:IncludeQueryString` to `false` to strip query strings from recorded exchanges entirely.",
-      "link": "https://github.com/advisories/GHSA-8phw-xrj9-cpqp",
-      "published": "2026-09-17T18:01:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75523"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75831",
-      "title": "Grav: Stored XSS via Markdown audio/video media <source> URL",
-      "summary": "**Target:** github.com/getgrav/grav  \n**Affected resource:** `Grav\\Common\\Media\\Traits\\AudioMediaTrait` / `VideoMediaTrait` `sourceParsedownElement()` \u2014 verified on 2.0.13 (latest stable) and `develop` HEAD `5a7070f`  \n**Severity:** Medium (~6.9 CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:L/A:N \u2014 anchored to the sibling script-XSS advisory [CVE-2026-42841](https://github.com/getgrav/grav/security/advisories/GHSA-r7fx-8g49-7hhr), same PR:H / S:C / C:H / I:L)  \n**Weakness:** CWE-79 (Improper Neutralization of Input During Web Page Generation)\n\n## Summary\n\nA Markdown audio or video embed renders its `<source>` element as **raw HTML** with the media URL concatenated unescaped. The URL fragment is reflected without any encoding, so `![x](song.mp3#\"><svg/onload=alert(1)>)` breaks out of `<source src=\"\u2026\">` and injects arbitrary HTML \u2014 including a script-executing `<svg onload>` \u2014 into the rendered page. Any user who views the page runs the attacker's JavaScript in their session; a logged-in administrator who views it exposes their same-origin Grav Admin session to the attacker's script.\n\nThis is the next sink in the media-parameter injection class the maintainer has been closing: [GHSA-r7fx-8g49-7hhr](https://github.com/getgrav/grav/security/advisories/GHSA-r7fx-8g49-7hhr) (`attribute()`), [GHSA-pmf8-g7c8-7v54 / CVE-2026-55890](https://github.com/getgrav/grav/security/advisories/GHSA-pmf8-g7c8-7v54) (`style()`, 2.0.0-rc.9), and [GHSA-ffmg-hfvg-jhg9](https://github.com/getgrav/grav/security/advisories/GHSA-ffmg-hfvg-jhg9) (`resize()`, 2.0.0-rc.10). All three guarded image `style`/`attribute` sinks; the [`aba291a5` audit](https://github.com/getgrav/grav/commit/aba291a59cab29ddce491175791888d8d0b65e20) scoped itself to \"sinks reaching the style attribute\" and did not cover the audio/video `<source>` rawHtml sink, which reaches full script execution rather than CSS injection.\n\n## Root Cause\n\nThe audio/video player builds its inner source as Parsedown **rawHtml** (emitted verbatim, ",
-      "link": "https://github.com/advisories/GHSA-6qw9-4vv5-jr97",
-      "published": "2026-09-17T17:31:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75831"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-85716",
-      "title": "AsyncHttpClient doesn't verify SCRAM and Digest mutual-authentication responses",
-      "summary": "### Impact\nFor SCRAM, and for Digest with mutual authentication, the client computes the server's verification value (the SCRAM ServerSignature, or the Digest rspauth) but does not act on the result. If the value is present and does not verify, the client only logs it and still delivers the response to the application as a successful, authenticated result. A server that never proved knowledge of the shared secret is accepted, so the client loses its ability to detect an impostor. Over TLS the real server always returns a valid value and the issue is inert; it matters over a non TLS transport, or when the transport is already compromised, where it removes the client's only signal that the peer does not know the secret.\n\n### Affected versions\n* 3.x: 3.0.8 through 3.0.11\n\nEarlier 3.0.x releases are not affected: neither SCRAM nor the Digest Authentication-Info handling existed before 3.0.8. The 2.x line is not affected either: it has no SCRAM support, and its interceptor chain does not implement Digest mutual authentication, so there is no verification result to act on.\n\n### Patches\nFixed in 3.0.12. A present ServerSignature (SCRAM) or rspauth (Digest) that does not verify now fails the request instead of being logged and ignored, on both the origin and proxy paths.\n\n### Known limitations\nVerification is only enforced when the value is present and the parameters the client sent can be recovered. A response that omits the Authentication-Info header entirely, or that carries the header without a recognisable verification parameter, is still accepted: a well behaved server may send the value in chunked trailers, which the client does not read. An impostor that simply omits the value is therefore still accepted. The two schemes differ on malformed input: SCRAM aborts when the data parameter is present but is not valid base64, whereas Digest treats an unparseable rspauth (an unterminated quote, an empty unquoted value, or a bare rspauth token) as absent and accepts the resp",
-      "link": "https://github.com/advisories/GHSA-fj9w-c36g-h5x8",
-      "published": "2026-09-17T17:18:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-85716"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-85732",
-      "title": "oras-go: Blind SSRF via unvalidated Link header URL in pagination allows internal network probing",
-      "summary": "## Summary\n\noras-go's pagination helper `parseLink()` in `registry/remote/utils.go` follows the `Link` response header from a registry without validating the URL's host or scheme. When a malicious registry returns a `Link` header containing an absolute URL pointing to an arbitrary host (e.g., a cloud metadata endpoint), the client makes GET requests to that host from the victim's network.\n\nThis affects all pagination-based listing operations: Tags, Referrers, and Repositories (catalog).\n\n## Root Cause\n\n`parseLink()` at `registry/remote/utils.go:54` calls `resp.Request.URL.Parse(link)` which, for absolute URLs, returns the absolute URL unchanged. The result is passed directly to the next pagination loop iteration where `http.NewRequestWithContext()` creates a GET request to the attacker-specified URL. No host comparison, scheme validation, or IP filtering exists between `parseLink` output and the HTTP request.\n\n## Affected Code Paths\n\n- `registry/remote/repository.go:Tags()` calls `parseLink()` for next page URL\n- `registry/remote/repository.go:Referrers()` calls `parseLink()` for next page URL\n- `registry/remote/registry.go:Repositories()` calls `parseLink()` for next page URL\n\n## Impact\n\n**Blind SSRF from the victim's network.** A malicious registry operator can force any oras-go client that lists tags, referrers, or repositories to issue GET requests to arbitrary internal endpoints:\n\n- Cloud instance metadata endpoints for service discovery and IAM role enumeration\n- Internal HTTP services for port scanning and triggering side effects\n- If the victim's credential store maps credentials for the SSRF target host, those credentials are attached to the request (auth.Client looks up creds by request host)\n\nThe attacker cannot read the response body (it's parsed as JSON and fails), making this a blind SSRF. However, timing and error differences can confirm internal service existence.\n\n## Attack Chain\n\n1. Victim calls `repo.Tags()` / `repo.Referrers()` / `registry.Reposi",
-      "link": "https://github.com/advisories/GHSA-h7vf-4x9w-h99v",
-      "published": "2026-09-17T17:16:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-85732"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73247",
-      "title": "Kestra: SSRF via Pebble http() function allows unauthenticated access to internal services & cloud metadata",
-      "summary": "### Summary\nThe Pebble template engine's `http()` function in Kestra OSS accepts user-controlled URLs without any validation, allowing Server-Side Request Forgery (SSRF) attacks. An unauthenticated attacker can import a malicious Flow YAML and execute it to access internal services, cloud metadata endpoints (AWS 169.254.169.254), or localhost services. The vulnerability affects all Kestra OSS deployments with default configuration.\n\n### Details\nThe root cause is in `core/src/main/java/io/kestra/core/runners/pebble/functions/HttpFunction.java` (lines 77-106):\n\n1. **No URL validation**: User input is passed directly to `URI.create()` with no checks for private IPs, internal hosts, or restricted schemes\n2. **No IP filtering**: Missing checks for 10.0.0.0/8, 192.168.0.0/16, 169.254.169.254, 127.0.0.1\n3. **No scheme restriction**: `file://`, `gopher://` schemes are not blocked\n4. **No authentication required**: `TenantValidationFilter.java` only checks tenant == \"main\" \u2014 no authentication\n5. **Unconditional registration**: `HttpFunction` is registered without any feature flags in `Extension.java:180`\n\n### PoC\n**Prerequisites:**\n```bash\ndocker run -d --name kestra-ssrf -p 8080:8080 kestra/kestra:latest server local\nsleep 30\n```\n\n**Step 1: Create malicious Flow YAML**\n```yaml\ncat > /tmp/ssrf_poc.yaml << 'YAML'\nid: ssrf_metadata\nnamespace: company.team\ntasks:\n  - id: exfiltrate\n    type: io.kestra.plugin.core.log.Log\n    message: |\n      {{ http(uri='http://169.254.169.254/latest/meta-data/', method='GET') }}\nYAML\n```\n\n**Step 2: Import without authentication**\n```bash\ncurl -X POST http://localhost:8080/api/v1/main/flows/import \\\n  -F \"fileUpload=@/tmp/ssrf_poc.yaml\"\n```\n\n**Step 3: Execute the flow**\n```bash\ncurl -X POST http://localhost:8080/api/v1/main/executions/company.team/ssrf_metadata\n```\n\n**Step 4: Verify** \u2014 the flow execution output contains AWS EC2 metadata (ami-id, instance-type, IAM credentials if available)\n\n### Impact\n- **CVSS 3.1**: 8.6 (HIGH) \u2014 AV:N/AC:L/PR:",
-      "link": "https://github.com/advisories/GHSA-r56g-q4p6-m3p6",
-      "published": "2026-09-17T17:15:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73247"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77411",
-      "title": "RabbitMQ amqp091-go: Protocol Desynchronization and Frame Injection via Integer Overflow in readLongstr",
-      "summary": "**Summary**\n\nA critical stream desynchronization vulnerability has been identified in the AMQP wire-protocol parser. When parsing a long string (`readLongstr`) within a table field, providing a length that exceeds the maximum signed 32-bit integer (`2^31 - 1`, or roughly `2.1` GiB) triggers an improper error-handling condition. The parser abruptly aborts the read and returns a success status (`\"\",nil`) without consuming the specified bytes from the underlying network buffer. This causes all subsequent read operations to become misaligned. The parser interprets arbitrary offsets within the remaining payload bytes as valid AMQP frame headers, leading to potential Remote Code Execution (RCE), data injection, or complete connection hijacking.\n\n**Vulnerability Details**\n\nThe vulnerability exists within the bounds-checking logic of the readLongstr function:\n```go\n// read.go:113-114 \u2014 silent no-op return, bytes left in stream\nif length > (^uint32(0) >> 1) {\n    return  // returns \"\", nil, does NOT consume `length` bytes\n}\n```\nWhen `length` evaluates to a value greater than `0x7FFFFFFF`:\n\n1. The function executes a silent `return` statement.\n2. Because Go utilizes named or zero-value initialization for unassigned return registers, this yields `\"\", nil` (indicating a successful read of an empty string).\n3. The Critical Failure: The reader's cursor is not advanced by `length` bytes. The malformed payload remains sitting in the TCP/buffer stream.\n\n**Impact**\n\nAs `readTable` continues iterating over the stream under the assumption that the string was successfully parsed, the byte alignment is entirely broken.\n\n- Parser Desynchronization: Future AMQP frame headers are read from arbitrary offsets inside the attacker-controlled message payload.\n- Payload Reinterpretation: A malicious actor can carefully craft the trailing bytes of the initial payload to perfectly mimic valid AMQP frames (e.g., `connection.close`, `channel.open`, or message publishing frames), forcing the client/se",
-      "link": "https://github.com/advisories/GHSA-c5pq-fr2g-9jpf",
-      "published": "2026-09-17T17:04:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77411"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77408",
-      "title": "RabbitMQ amqp091-go: Silent Data Truncation and State Corruption via Shortstr Integer Overflow",
-      "summary": "## Summary\nA data integrity and protocol corruption vulnerability exists in the AMQP client's property serialization logic. When encoding AMQP short string (`shortstr`) fields\u2014such as identifiers, routing strings, and content metadata\u2014the length of the string is explicitly cast to a fixed-size 8-bit unsigned integer (`uint8`). \n\nIf an application provides a property string exceeding 255 bytes, the length counter silently wraps around (e.g., a length of 300 wraps to 44). As a result, the parser writes only a truncated portion of the string into the outgoing connection buffer without returning an error. This leads to silent data corruption, broken RPC routing, and unpredictable broker-side state behavior.\n\n---\n\n## Vulnerability Details\n\n### Mechanism\nThe vulnerability resides in the wire-level serialization logic for application publishing properties:\n\n```go\n// write.go:246\nlength := uint8(len(b))  // wraps silently when len(b) > 255 (e.g., 300 -> 44)\n```\n\nBecause Go allows silent integer truncation during explicit type casting, lengths larger than $2^8 - 1$ lose their most significant bits. The underlying stream writer reads `length` to determine how many bytes to pull from the buffer. Because no error or boundary check accompanies this truncation, the application believes the full payload was transmitted successfully.\n\n### Affected Properties\nThis truncation behavior affects every standard AMQP field serialized as a `shortstr`:\n* `CorrelationId`\n* `ReplyTo`\n* `MessageId`\n* `Expiration`\n* `UserId`\n* `AppId`\n* `ContentType`\n* `ContentEncoding`\n* `Type`\n\n### Impact\nThe critical consequence is **silent protocol desynchronization at the application layer**. The underlying TCP stream remains framed properly (because the shortened length matches the bytes written), but the business logic is corrupted. Distributed transactions, request-reply correlations, and tracing headers are truncated, causing downstream systems to drop messages or route them to incorrect consumers.\n\n--",
-      "link": "https://github.com/advisories/GHSA-j497-x9hr-x34x",
-      "published": "2026-09-17T17:04:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77408"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77405",
-      "title": "RabbitMQ amqp091-go: Missing Explicit TLS Minimum Version Configuration In URI Parser",
-      "summary": "## Summary\nA structural security weakness exists in the AMQP client's TLS configuration generator (`tlsConfigFromURI`). When constructing a `*tls.Config` object from an `amqps://` connection URI, the library initializes the structure without explicitly defining the `MinVersion` field. \n\nWhile modern versions of the Go compiler toolchain (Go 1.18+) default the implicit minimum version to TLS 1.2, this security posture relies entirely on an implicit toolchain dependency. If the library is compiled using legacy Go toolchains (Go < 1.18), or if a future toolchain introduces fallback behavior, the client could silently negotiate obsolete and insecure TLS 1.0 or TLS 1.1 protocols during connection handshakes with a compromised or malicious AMQP broker.\n\n---\n\n## Vulnerability Details\n\n### Mechanism\nThe vulnerability lies in the lack of an explicit safety floor when assigning configurations inside the URI component:\n\n```go\n// Example within uri.go's tlsConfigFromURI\ncfg := &tls.Config{\n    ServerName: host,\n    // MinVersion is left completely unassigned (defaults to 0, or toolchain default)\n}\n```\n\nIn the Go standard library (`crypto/tls`), leaving `MinVersion: 0` instructs the runtime to choose the toolchain's default minimum. Prior to Go 1.18, this default allowed negotiation down to TLS 1.0. Relying on implicit compiler configurations violates secure coding practices by decoupling the library's security posture from its source code, leaving applications vulnerable based solely on how they are built.\n\n### Impact\nIf a client application is built with a legacy compiler environment or a custom Go runtime, an attacker capable of executing a Man-in-the-Middle (MitM) attack can force the connection to downgrade to TLS 1.0 or 1.1. This exposes the AMQP protocol data stream to well-known cryptographic vulnerabilities (such as BEAST, POODLE, or SWEET32), allowing the attacker to decrypt or alter message payloads, connection parameters, and authentication credentials.\n\n---\n\n## Atta",
-      "link": "https://github.com/advisories/GHSA-33mj-cw25-m34h",
-      "published": "2026-09-17T17:04:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77405"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77404",
-      "title": "RabbitMQ amqp091-go: Connection Configuration Overwrite via Unsanitized TLS Path Parameter Injection",
-      "summary": "## Summary\nA query parameter injection vulnerability exists in the AMQP client's connection URI formatting logic. When generating or parsing connection URIs, TLS-related filesystem paths (such as certificates or keys) are appended directly to the URI's query string using string concatenation rather than secure URL encoding via functions like `url.QueryEscape`.\n\nIf an application handles a TLS file path containing special character delimiters (such as `&` or `=`), these characters are interpreted as parameter separators by the URI parser. If the resulting `URI.String()` output is subsequently re-parsed via `ParseURI`, the injected fields can silently overwrite or hijack critical configuration parameters, forcing the client to use arbitrary connection settings or alternate TLS files.\n\n---\n\n## Vulnerability Details\n\n### Mechanism\nThe vulnerability lies within the lack of proper escaping when compiling connection string components into a raw URL format:\n\n```go\n// Example of insecure string concatenation during URI building\nuri := fmt.Sprintf(\"amqps://user:pass@host/%s?certfile=%s&keyfile=%s\", vhost, certPath, keyPath)\n```\n\nBecause `certPath` and `keyPath` are not passed through `url.QueryEscape`, special URL characters preserve their control meanings. For instance, if a user supply a certificate path named:\n`/tmp/cert=foo&keyfile=/evil/path`\n\nThe generated string translates into:\n`...?certfile=/tmp/cert=foo&keyfile=/evil/path&keyfile=/original/path`\n\nWhen this string passes back through `ParseURI` (common in connection re-dial routines or configuration replication steps), standard URL parsing mechanics treat the string as multiple distinct parameters. Depending on map assignment order inside the parser, the injected keys take precedence over the original parameters.\n\n### Impact\nBy manipulating the file paths used for TLS assets, an attacker or compromised local sub-system can:\n* Inject arbitrary alternative options or override protocol settings.\n* Substitute or switch k",
-      "link": "https://github.com/advisories/GHSA-465g-fh3v-9jw4",
-      "published": "2026-09-17T17:03:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77404"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77401",
-      "title": "Zope AccessControl vulnerable to information disclosure through Python string `format` and `format_map` functions",
-      "summary": "### Impact\nPython's string `format` functionality allows someone controlling the format string to \"read\" objects accessible (recursively) via attribute access and subscription from accessible objects. Those attribute accesses and subscriptions use Python's full blown `getattr` and `getitem`, not the policy restricted `AccessControl` variants `_getattr_` and `_getitem_`. This can lead to critical information disclosure.\n\nThe `AccessControl` package already guards against direct access to the formatting functions on string instances, but these mitigations did not cover subclasses of `str`.\n\nAffected are all users who allow untrusted users to create AccessControl controlled Python code and execute it.\n\n### Patches\nA fix was published with version 7.4.\n\n### Workarounds\nThere is no workaround.",
-      "link": "https://github.com/advisories/GHSA-pq59-9fq7-m886",
-      "published": "2026-09-17T16:30:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77401"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-69197",
-      "title": "Umbraco: Delivery API leaks protected (Public Access) content through Content Picker / Multi-Node Tree Picker expansion",
-      "summary": "The Content Delivery API enforces member / Public Access protection only at the controller layer, against the node that is directly requested. When a public (unprotected) node references a protected node through a Content Picker or Multi-Node Tree Picker (including those nested inside Block List, Block Grid, or Rich Text Editor blocks), the Delivery API expands and serializes the protected node with no access check applied.\n\nSimilarly, configuration based restrictions based on aliases of allowed or disallowed content types are by-passed for referenced content items that are retrieved via property expansion.\n\nAs a result, an anonymous / unauthorized caller can retrieve a protected node's:\n- Name, route, and id \u2014 always, even without expansion, and\n- Full property values \u2014 when the request uses ?expand on the picker property.\nA direct request for the same protected node correctly returns 401 Unauthorized, which makes the leak easy to miss: the protection appears to work, but is bypassed via reference expansion.\n\n### Impact\nConfidential, member-gated content (e.g. pricing, internal documents, gated articles) referenced by any publicly readable node is disclosed to unauthenticated clients. No write/integrity or availability impact.\n\nHighest impact when the Delivery API is publicly readable (DeliveryApi:PublicAccess: true).\nStill exploitable, at reduced severity, when the Delivery API is gated by the org-wide API key (the key holder still bypasses per-node Public Access).\n\n### Patches\n13.15.1, 17.5.3, 18.0.2\n\n### References\nhttps://docs.umbraco.com/umbraco-cms/develop-with-umbraco/headless-and-apis/content-delivery-api",
-      "link": "https://github.com/advisories/GHSA-wr57-hqmp-fgvh",
-      "published": "2026-09-17T16:29:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-69197"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/critical-docker-sandboxes-flaw-lets.html",
-      "title": "Critical Docker Sandboxes Flaw Lets Malicious Guest Code Read and Modify macOS Host Files",
-      "summary": "Malicious code running inside a Docker Sandboxes virtual machine on macOS could escape the project directory shared into it and read or change files anywhere else on the host, Docker warns in a\u00a0security announcement\u00a0on September 15.\n\nThe escape runs with the rights of the host account that runs the virtual machine. The flaw,\u00a0CVE-2026-77179, is rated Critical, affects versions",
-      "link": "https://thehackernews.com/2026/09/critical-docker-sandboxes-flaw-lets.html",
-      "published": "2026-09-17T15:37:56+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-77179"
       ],
       "is_zero_day": false,
       "is_high_severity": true
