@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-17T20:40:10.707189+00:00",
-  "total": 44,
+  "generated": "2026-09-18T01:53:34.545107+00:00",
+  "total": 41,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -48,24 +48,6 @@
         "zeroday"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63127",
-      "title": "RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery",
-      "summary": "### Summary\nThe `rmcp` library does not validate the `resource` parameter in OAuth Protected Resource metadata (RFC 9728), allowing a malicious MCP server to redirect OAuth flows to a legitimate authorization server and steal the resulting access tokens.\n\n### Details\nRFC 9728 specifies two MUST requirements for resource parameter validation:\n- Section 7.3: the client MUST ensure that the resource identifier URL it is using as the prefix for the metadata request exactly matches the `resource` value in the returned metadata document.\n- Section 3.3: if the `resource` value returned is not identical to the URL the client used, the data MUST NOT be used.\n\nIn the current implementation (`crates/rmcp/src/transport/auth.rs`), the `ResourceServerMetadata` struct (lines 390\u2013394) does not include a resource field:\n```rust\nstruct ResourceServerMetadata {\n    authorization_server: Option<String>,\n    authorization_servers: Option<Vec<String>>,\n    scopes_supported: Option<Vec<String>>,\n}\n```\nAnd discover_oauth_server_via_resource_metadata() (lines 1446\u20131465) proceeds without any resource URL validation.\n\n#### Recommended fix\n1. Add the `resource` field to the struct:\n    ```rust\n    struct ResourceServerMetadata {\n        resource: Option<String>,  // RFC 9728 REQUIRED field\n        authorization_server: Option<String>,\n        authorization_servers: Option<Vec<String>>,\n        scopes_supported: Option<Vec<String>>,\n    }\n    ```\n2. Add validation logic after fetching metadata:\n    ```rust\n    let Some(resource_metadata) = self\n        .fetch_resource_metadata_from_url(&resource_metadata_url)\n        .await?\n    else {\n        return Ok(None);\n    };\n \n    // RFC 9728: validate that the resource identifier matches our target server\n    if let Some(resource) = &resource_metadata.resource {\n        if resource.trim_end_matches('/') != self.base_url.as_str().trim_end_matches('/') {\n            return Err(AuthError::MetadataError(format!(\n                \"Resource metadata mismatch",
-      "link": "https://github.com/advisories/GHSA-33f5-2c5q-wgwj",
-      "published": "2026-09-16T22:13:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63127"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -197,6 +179,60 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-72819",
+      "title": "Grav CMS vulnerable to remote code execution via .zip file upload",
+      "summary": "### Summary\n\nA logged-in user can run any command on the server. A settings field can fill itself by calling one of Grav's built-in routines, and a safety check is supposed to allow only harmless ones. The check only recognises a routine when its name is written as one piece of text; named as a pair of values instead, it is not examined at all and is passed as safe. Pointing such a field at the routine that unpacks ZIP archives writes a PHP file from an uploaded archive into the site's public folder, which the server then runs.\n\n### Details\n\nThe check rejects known-dangerous routines and, for those belonging to a component, allows only a short approved list. Both of those cases only apply when the name arrives as a single string. The same routine can be named as a pair (the component and the routine inside it), and in that form the check matches neither case, skips both lists and answers \"safe\". Grav then calls it, with arguments the attacker supplies in the same field. Any routine shipped with Grav becomes callable.\n\nThe one used here is what Grav runs when installing a plugin from an archive. It takes an archive and a destination folder. It does check the names of the files inside, so an archive cannot escape with `../`, but the destination is used exactly as given, so naming the folder the website is served from drops the contents there. Getting the archive in is trivial: ZIP is an accepted upload type and the files inside are never examined, so an archive containing a PHP file uploads as ordinary media to a predictable address.\n\nEverything is set up over the web. Saving a plugin's settings stores the values as sent, and the Flex Objects plugin treats each entry of its own directory list as the address of a file describing fields. Pointing that list at the settings file being saved makes one file act as both, so the malicious field is created through a normal settings save with no file edited on the server.\n\n### PoC\n\n1. Log in at `http://TARGET/login` (or `/admin",
+      "link": "https://github.com/advisories/GHSA-r94f-hx44-8jqf",
+      "published": "2026-09-17T20:45:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72819"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75837",
+      "title": "Grav: Missing admin.super guard on core group blueprint access field allows admin.users operator to escalate to super-admin",
+      "summary": "## Summary\nThe core Flex group blueprint `system/blueprints/user/group.yaml` (access field, lines 48-55) omits the `security@: admin.super` field guard that its sibling account blueprint carries (`account.yaml:131/138/150`, added by the CVE-2026-42613 fix). A delegated non-super operator holding `admin.users.update` can therefore save a group whose `access` map contains `admin.super: true`, which `UserGroupObject::authorize` then grants to every member of that group, a full privilege escalation to super-admin (scheduler/cron RCE, Twig eval). This is a distinct file, sink, and fix from all four related advisories.\n\n## Root Cause\nThe CVE-2026-42613 fix protected the account `access`/`groups` fields with a blueprint-level `security@: admin.super` gate, which `Blueprint::dynamicSecurity()` (`system/src/Grav/Common/Data/Blueprint.php:644-662`) uses to mark a field `validate.ignore=true` for non-super users so `BlueprintSchema::filterArray()` (`BlueprintSchema.php:263-311`) drops it. The functionally-identical group `access` field, a permission map granted to every member of the group, is declared in `system/blueprints/user/group.yaml:48-55` with `check_authorize: false` and NO `security@` guard. `check_authorize` has ZERO PHP enforcement (`grep -rn check_authorize` across the repo returns 0 PHP consumers; only two YAML blueprints reference it), so `security@` is the sole real control. Because the group access field lacks `security@`, `dynamicSecurity` never flags it, `filterArray` retains it, and `Validation::filterArray` (`type: array, value_type: bool`) passes the nested `admin.super:true` leaf through. The core save path (`FlexObject::update()` then `Framework/Flex/FlexObject.php:683` `$blueprint->filter($data,true,true)` then `save()`) persists it to `user://config/groups.yaml`.\n\n## Impact\nA delegated `admin.users` operator (strictly below `admin.super`) escalates to super-admin, gaining the admin panel, the scheduler (cron to RCE) and Twig evaluation. Full read/writ",
+      "link": "https://github.com/advisories/GHSA-xhfv-7758-r9hx",
+      "published": "2026-09-17T20:45:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75837"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-75827",
+      "title": "Grav: Blueprint dynamic-data bare-function branch is denylist-gated and omits error_log, giving arbitrary file write",
+      "summary": "## Affected versions and vulnerable location\n\n- Confirmed on grav core at `78ebfc1` (tag 2.0.13).\n- Sinks:\n  - `system/src/Grav/Common/Data/Blueprint.php:455-458` `call_user_func_array($o, $params)` (bare-function dynamic-data provider).\n  - Twin: `system/src/Grav/Framework/Flex/FlexDirectory.php:936-938` `call_user_func_array($function, $params)`.\n- Validation gate: `Blueprint::isSafeDynamicCall()` at `Blueprint.php:514-536`.\n  - `Class::method` branch (`:514-527`) uses a strict positive allowlist `self::$allowedDynamicCallables`.\n  - Bare-function branch (`:530-534`) uses only a denylist: `if (is_string($function) && Utils::isDangerousFunction($function)) return false; return !self::paramsContainDangerousCallable($params);`.\n- Denylist: `Utils::isDangerousFunction()` (`system/src/Grav/Common/Utils.php`, list around `:2020-2270`).\n\n## Root cause\n\nGHSA-7pgq/CVE-2026-64850 hardened the `Class::method` half of the dynamic-callable validation to a positive allowlist because a page-edit account could otherwise name any static method as a provider and reach file/secret gadgets. The bare-function half was left on a denylist (`isDangerousFunction`). Any bare PHP function not on that list executes.\n\n`error_log` is not on the denylist (verified: no occurrence in `Utils.php`). `error_log($message, 3, $destination)` appends attacker-controlled `$message` to attacker-controlled file `$destination`, an arbitrary-file-append primitive. `paramsContainDangerousCallable()` (`:587-603`) only scans params for dangerous callable strings, so a PHP payload string and a destination path both pass. (`stream_socket_client`, `dl`, and `mb_send_mail` are likewise absent, giving SSRF/other primitives.)\n\n## Attacker model\n\nThe same surface the published dynamic-data advisories accept as reachable: a `data-*@` directive in a form blueprint the Form plugin assembles from page frontmatter (GHSA-fj2p), or a `data@` field in a Flex directory/pages/users blueprint (GHSA-c4wf). A page-edit / blueprint",
+      "link": "https://github.com/advisories/GHSA-f8wv-xp27-6gq7",
+      "published": "2026-09-17T20:44:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-75827"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-86000",
@@ -661,96 +697,6 @@
       ],
       "cve_ids": [
         "CVE-2026-81642"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63671",
-      "title": "@nuxtjs/mdc's URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration",
-      "summary": "## Summary\n\n`@nuxtjs/mdc` renders untrusted markdown (including raw HTML) to a Vue component tree. Across two prior advisories it added a URL/attribute sanitizer to block dangerous links in that HTML: `validateProps` / `validateProp` and an `unsafeLinkPrefix` deny-list (`dist/runtime/parser/utils/props.js`). The sanitizer runs at parse time (`dist/runtime/parser/compiler.js`) and `parseMarkdown` enables raw HTML by default (`allowDangerousHtml: true`, `dist/runtime/parser/options.js`), so the sanitizer is the only barrier and it applies with no configuration required.\n\nTwo sibling vectors bypass that sanitizer at the default configuration:\n\n1. SVG anchor `xlink:href`. `validateProp` only scheme-checks attributes named exactly `href` or `src`:\n\n   ```\n   if (attribute === \"href\" || attribute === \"src\") return isAnchorLinkAllowed(value);\n   return true;\n   ```\n\n   An `xlink:href` (parsed to the hast property `xLinkHref`) is neither, so a `javascript:` URL on an SVG `<a>` is passed through. The renderer maps the property back to the real attribute (`MDCRenderer.vue`: `find(html, \"xLinkHref\").attribute` is `xlink:href`), so the output element is `<a xlink:href=\"javascript:...\">`. Clicking it runs the script in the page origin. Plain `<a href=\"javascript:...\">` is correctly stripped, which is what makes this the un-patched sibling.\n\n2. `<iframe src=\"data:text/html,...\">`. `data:text/html` is present in `unsafeLinkPrefix`, but the check compares it against `url.protocol`:\n\n   ```\n   if (unsafeLinkPrefix.some((prefix) => url.protocol.toLowerCase().startsWith(prefix))) return false;\n   ```\n\n   For any data URI `url.protocol` is just `\"data:\"`, so `\"data:\".startsWith(\"data:text/html\")` is always false. Every `data:text/*` entry in the deny-list is therefore dead code, and `<iframe src=\"data:text/html,<script>...</script>\">` is allowed (iframe is not in the render-time `dangerousTags`, which is only `[\"script\",\"base\"]`). The framed document executes script in an opaque origin",
-      "link": "https://github.com/advisories/GHSA-mxm6-v9r6-r94c",
-      "published": "2026-09-16T22:14:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63671"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61589",
-      "title": "djust: WebSocket/runtime reconstructed request omits the client Host, causing host/subdomain TenantResolvers to misresolve the tenant on the live path",
-      "summary": "### Impact\nThe WebSocket `handle_mount` and `ViewRuntime._build_request` rebuild an `HttpRequest` via `RequestFactory().get(...)` with no `HTTP_HOST`, so `request.get_host()` defaulted to `\"testserver\"` on the live path. Host/subdomain/domain `TenantResolver`s then misresolved the tenant \u2014 `None` on the live path while the HTTP path resolved correctly. With `STRICT_MODE=False` the tenant-scoped managers returned unscoped rows (**cross-tenant disclosure**); with the default they returned an empty queryset (broken tenancy).\n\n### Patches\nFixed in **djust 1.0.7**. The handshake Host is extracted from the ASGI scope, validated against `ALLOWED_HOSTS` (the same logic as the CSWSH Origin gate, parsed with Django's `split_domain_port` so malformed Hosts are rejected at the boundary), and propagated \u2014 with the TLS scheme \u2014 into the reconstructed request, so live-path tenant resolution matches HTTP exactly.\n\n### Workarounds\nNo workaround on the live path short of upgrading. Most exposed when combined with `STRICT_MODE=False`.",
-      "link": "https://github.com/advisories/GHSA-v9rj-xjfv-xj9r",
-      "published": "2026-09-16T22:07:52Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61589"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61588",
-      "title": "djust's Django model serialization has no sensitive-field denylist: password hashes, privilege flags, and PII on a public view attribute are sent to the client",
-      "summary": "### Impact\nWhen a Django `Model` instance is assigned to a **public** view attribute, djust serialized it to the client with **no sensitive-field denylist** \u2014 sending fields such as `password` (the hash), privilege flags (e.g. `is_staff` / `is_superuser`), tokens, and other PII to the browser. Because exposing model objects to templates is a normal djust pattern, this could leak credentials/PII without the developer realizing the full object crossed the wire.\n\n### Patches\nFixed in **djust 1.0.7**. Model serialization applies a secure-by-default sensitive-field denylist (password/hash/token/secret-style fields and known privilege flags are withheld) with an identity-subset fallback.\n\n### Workarounds\nKeep `Model` instances on `_private` attributes and expose only the specific fields needed, until patched.",
-      "link": "https://github.com/advisories/GHSA-pvg3-6q9j-mj3x",
-      "published": "2026-09-16T22:02:49Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61588"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61591",
-      "title": "djust: Unsigned client state snapshot is restored as trusted view state (privilege escalation / state injection)",
-      "summary": "### Impact\nFor views that opt into state snapshots, the snapshot `state_json` embedded in the client page was restored on reconnect as **trusted** view state with no integrity check. A client could edit the unsigned `state_json` in their page and return it in the reconnect mount frame to **inject arbitrary view attributes** \u2014 e.g. flip `is_admin` to `True`, or change `account_id` / `balance` \u2014 escalating privilege or tampering with business state held in public view attributes (the normal djust pattern).\n\n### Patches\nFixed in **djust 1.0.7**. State snapshots are signed; unsigned or forged snapshots are rejected on the back-navigation restore path.\n\n### Workarounds\nDo not enable state snapshots; do not hold authorization/ownership state in public view attributes.",
-      "link": "https://github.com/advisories/GHSA-c67v-vqrp-m5wj",
-      "published": "2026-09-16T21:56:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61591"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61592",
-      "title": "djust: SSE sessions are not bound to the authenticated user; the client-chosen session_id is the sole authorization capability (session hijack)",
-      "summary": "### Impact\nSSE sessions were keyed solely by a **client-chosen** `session_id` with no binding to the authenticated user \u2014 a control the WebSocket transport has but that was dropped on SSE. An attacker who learns (or a victim who leaks) a `session_id` could connect to the message endpoint and dispatch event handlers that execute with the **victim's identity and state**.\n\n### Patches\nFixed in **djust 1.0.7**. Each SSE session is bound to its owning principal at creation and cross-principal access is rejected; SSE session creation is additionally capped per principal.\n\n### Workarounds\nDisable the SSE transport short of upgrading.",
-      "link": "https://github.com/advisories/GHSA-f795-p5jw-j6g2",
-      "published": "2026-09-16T21:53:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61592"
       ],
       "is_zero_day": false,
       "is_high_severity": true

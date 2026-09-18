@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">44</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-17 20:40 UTC</div>
+            <div class="generated">Updated 2026-09-18 01:53 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -164,27 +164,6 @@
           <p class='summary'>The China-aligned state-sponsored threat actor known as FamousSparrow has been observed deploying a previously unreported backdoor called SparroWocky in attacks targeting multiple countries in Latin America since at least August 2025.
 
 &quot;SparroWocky is a modular, C++ backdoor,&quot; ESET security researchers Alexandre Côté Cyr and Romain Dumont said in a technical report shared with The Hacker News</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-33f5-2c5q-wgwj" target="_blank" rel="noopener">RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63127</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-16</span>
-          </div>
-          <p class='summary'>### Summary
-The `rmcp` library does not validate the `resource` parameter in OAuth Protected Resource metadata (RFC 9728), allowing a malicious MCP server to redirect OAuth flows to a legitimate authorization server and steal the resulting access tokens.
-
-### Details
-RFC 9728 specifies two MUST requirements for resource parameter validation:
-- Section 7.3: the client MUST ensure that the resource …</p>
 
         </article>
 
@@ -317,6 +296,63 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 The vulnerability, tracked as CVE-2026-76460 (CVSS score: 10.0), could allow an unauthenticated, remote attacker to bypass authentication.
 
 &quot;This vulnerability is due to insufficient authentication control on an API endpoint,&quot; Cisco said. &quot;An attacker</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r94f-hx44-8jqf" target="_blank" rel="noopener">Grav CMS vulnerable to remote code execution via .zip file upload</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-72819</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>### Summary
+
+A logged-in user can run any command on the server. A settings field can fill itself by calling one of Grav&#x27;s built-in routines, and a safety check is supposed to allow only harmless ones. The check only recognises a routine when its name is written as one piece of text; named as a pair of values instead, it is not examined at all and is passed as safe. Pointing such a field at the ro…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xhfv-7758-r9hx" target="_blank" rel="noopener">Grav: Missing admin.super guard on core group blueprint access field allows admin.users operator to escalate to super-admin</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-75837</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Summary
+The core Flex group blueprint `system/blueprints/user/group.yaml` (access field, lines 48-55) omits the `security@: admin.super` field guard that its sibling account blueprint carries (`account.yaml:131/138/150`, added by the CVE-2026-42613 fix). A delegated non-super operator holding `admin.users.update` can therefore save a group whose `access` map contains `admin.super: true`, which …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f8wv-xp27-6gq7" target="_blank" rel="noopener">Grav: Blueprint dynamic-data bare-function branch is denylist-gated and omits error_log, giving arbitrary file write</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-75827</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-17</span>
+          </div>
+          <p class='summary'>## Affected versions and vulnerable location
+
+- Confirmed on grav core at `78ebfc1` (tag 2.0.13).
+- Sinks:
+  - `system/src/Grav/Common/Data/Blueprint.php:455-458` `call_user_func_array($o, $params)` (bare-function dynamic-data provider).
+  - Twin: `system/src/Grav/Framework/Flex/FlexDirectory.php:936-938` `call_user_func_array($function, $params)`.
+- Validation gate: `Blueprint::isSafeDynamicCall(…</p>
 
         </article>
 
@@ -821,95 +857,6 @@ Under the module&#x27;s documented default confi…</p>
 An attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code execution.
 
 Unbound 1.26.1, released the same day, fixes the bug, tracked as CVE-2026-81642, along with</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mxm6-v9r6-r94c" target="_blank" rel="noopener">@nuxtjs/mdc&#x27;s URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-63671</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-16</span>
-          </div>
-          <p class='summary'>## Summary
-
-`@nuxtjs/mdc` renders untrusted markdown (including raw HTML) to a Vue component tree. Across two prior advisories it added a URL/attribute sanitizer to block dangerous links in that HTML: `validateProps` / `validateProp` and an `unsafeLinkPrefix` deny-list (`dist/runtime/parser/utils/props.js`). The sanitizer runs at parse time (`dist/runtime/parser/compiler.js`) and `parseMarkdown` e…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v9rj-xjfv-xj9r" target="_blank" rel="noopener">djust: WebSocket/runtime reconstructed request omits the client Host, causing host/subdomain TenantResolvers to misresolve the tenant on the live path</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61589</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-16</span>
-          </div>
-          <p class='summary'>### Impact
-The WebSocket `handle_mount` and `ViewRuntime._build_request` rebuild an `HttpRequest` via `RequestFactory().get(...)` with no `HTTP_HOST`, so `request.get_host()` defaulted to `&quot;testserver&quot;` on the live path. Host/subdomain/domain `TenantResolver`s then misresolved the tenant — `None` on the live path while the HTTP path resolved correctly. With `STRICT_MODE=False` the tenant-scoped ma…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pvg3-6q9j-mj3x" target="_blank" rel="noopener">djust&#x27;s Django model serialization has no sensitive-field denylist: password hashes, privilege flags, and PII on a public view attribute are sent to the client</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61588</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-16</span>
-          </div>
-          <p class='summary'>### Impact
-When a Django `Model` instance is assigned to a **public** view attribute, djust serialized it to the client with **no sensitive-field denylist** — sending fields such as `password` (the hash), privilege flags (e.g. `is_staff` / `is_superuser`), tokens, and other PII to the browser. Because exposing model objects to templates is a normal djust pattern, this could leak credentials/PII wi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c67v-vqrp-m5wj" target="_blank" rel="noopener">djust: Unsigned client state snapshot is restored as trusted view state (privilege escalation / state injection)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61591</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-16</span>
-          </div>
-          <p class='summary'>### Impact
-For views that opt into state snapshots, the snapshot `state_json` embedded in the client page was restored on reconnect as **trusted** view state with no integrity check. A client could edit the unsigned `state_json` in their page and return it in the reconnect mount frame to **inject arbitrary view attributes** — e.g. flip `is_admin` to `True`, or change `account_id` / `balance` — esc…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f795-p5jw-j6g2" target="_blank" rel="noopener">djust: SSE sessions are not bound to the authenticated user; the client-chosen session_id is the sole authorization capability (session hijack)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61592</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-16</span>
-          </div>
-          <p class='summary'>### Impact
-SSE sessions were keyed solely by a **client-chosen** `session_id` with no binding to the authenticated user — a control the WebSocket transport has but that was dropped on SSE. An attacker who learns (or a victim who leaks) a `session_id` could connect to the message endpoint and dispatch event handlers that execute with the **victim&#x27;s identity and state**.
-
-### Patches
-Fixed in **djus…</p>
 
         </article>
 

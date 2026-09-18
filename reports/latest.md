@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-17 20:40 UTC &nbsp;|&nbsp; **Total:** 44 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 32 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-18 01:53 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 30 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -31,21 +31,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — RMCP: Missing Resource Field Validation in OAuth Protected Resource Metadata Discovery
-
-**CVE:** `CVE-2026-63127` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-33f5-2c5q-wgwj>
-
-> ### Summary
-The `rmcp` library does not validate the `resource` parameter in OAuth Protected Resource metadata (RFC 9728), allowing a malicious MCP server to redirect OAuth flows to a legitimate authorization server and steal the resulting access tokens.
-
-### Details
-RFC 9728 specifies two MUST requirements for resource parameter validation:
-- Section 7.3: the client MUST ensure that the resource …
-
----
-
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -54,7 +40,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -63,7 +49,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -72,7 +58,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -81,7 +67,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -90,7 +76,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -99,7 +85,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 11. 🟠 Zero-Day — Cisco warns of max severity ISE zero-day exploited in attacks
+## 10. 🟠 Zero-Day — Cisco warns of max severity ISE zero-day exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-identity-service-engine-zero-day-exploited-in-attacks/>
@@ -108,7 +94,7 @@ RFC 9728 specifies two MUST requirements for resource parameter validation:
 
 ---
 
-## 12. 🟠 Zero-Day — Cisco Warns of New Zero-Day ISE Auth Bypass (CVSS 10.0) Exploited in Active Attacks
+## 11. 🟠 Zero-Day — Cisco Warns of New Zero-Day ISE Auth Bypass (CVSS 10.0) Exploited in Active Attacks
 
 **CVE:** `CVE-2026-76460` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://thehackernews.com/2026/09/cisco-warns-of-new-zero-day-ise-auth.html>
@@ -121,7 +107,43 @@ The vulnerability, tracked as CVE-2026-76460 (CVSS score: 10.0), could allow an 
 
 ---
 
-## 13. 🟡 High Severity — Soup Sieve: Polynomial-time ReDoS (O(n²)) in the `IDENTIFIER` / `VALUE` selector sub-patterns
+## 12. 🟡 High Severity — Grav CMS vulnerable to remote code execution via .zip file upload
+
+**CVE:** `CVE-2026-72819` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://github.com/advisories/GHSA-r94f-hx44-8jqf>
+
+> ### Summary
+
+A logged-in user can run any command on the server. A settings field can fill itself by calling one of Grav&#x27;s built-in routines, and a safety check is supposed to allow only harmless ones. The check only recognises a routine when its name is written as one piece of text; named as a pair of values instead, it is not examined at all and is passed as safe. Pointing such a field at t…
+
+---
+
+## 13. 🟡 High Severity — Grav: Missing admin.super guard on core group blueprint access field allows admin.users operator to escalate to super-admin
+
+**CVE:** `CVE-2026-75837` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://github.com/advisories/GHSA-xhfv-7758-r9hx>
+
+> ## Summary
+The core Flex group blueprint `system/blueprints/user/group.yaml` (access field, lines 48-55) omits the `security@: admin.super` field guard that its sibling account blueprint carries (`account.yaml:131/138/150`, added by the CVE-2026-42613 fix). A delegated non-super operator holding `admin.users.update` can therefore save a group whose `access` map contains `admin.super: true`, which …
+
+---
+
+## 14. 🟡 High Severity — Grav: Blueprint dynamic-data bare-function branch is denylist-gated and omits error_log, giving arbitrary file write
+
+**CVE:** `CVE-2026-75827` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
+**Reference:** <https://github.com/advisories/GHSA-f8wv-xp27-6gq7>
+
+> ## Affected versions and vulnerable location
+
+- Confirmed on grav core at `78ebfc1` (tag 2.0.13).
+- Sinks:
+  - `system/src/Grav/Common/Data/Blueprint.php:455-458` `call_user_func_array($o, $params)` (bare-function dynamic-data provider).
+  - Twin: `system/src/Grav/Framework/Flex/FlexDirectory.php:936-938` `call_user_func_array($function, $params)`.
+- Validation gate: `Blueprint::isSafeDynamicCall(…
+
+---
+
+## 15. 🟡 High Severity — Soup Sieve: Polynomial-time ReDoS (O(n²)) in the `IDENTIFIER` / `VALUE` selector sub-patterns
 
 **CVE:** `CVE-2026-86000` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-gjv8-xp57-g29c>
@@ -132,7 +154,7 @@ soupsieve compiles CSS selector strings with a set of hand-written regular expre
 
 ---
 
-## 14. 🟡 High Severity — Steeltoe: Header-forwarded client cert lacks proof of private-key possession
+## 16. 🟡 High Severity — Steeltoe: Header-forwarded client cert lacks proof of private-key possession
 
 **CVE:** `CVE-2026-81868` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-5mq7-rwhj-4fh9>
@@ -147,7 +169,7 @@ An a…
 
 ---
 
-## 15. 🟡 High Severity — Steeltoe.Discovery.Consul: malformed 'secure' metadata aborts service instance lookup (DoS)
+## 17. 🟡 High Severity — Steeltoe.Discovery.Consul: malformed 'secure' metadata aborts service instance lookup (DoS)
 
 **CVE:** `CVE-2026-81516` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-67c9-f6v2-qv86>
@@ -158,7 +180,7 @@ Steeltoe&#x27;s Consul discovery client parses the `secure` metadata field on ea
 
 ---
 
-## 16. 🟡 High Severity — Jupyter Server: 5xx request logging leaks token-bearing Referer header values
+## 18. 🟡 High Severity — Jupyter Server: 5xx request logging leaks token-bearing Referer header values
 
 **CVE:** `CVE-2026-86049` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-c3mw-737p-c7g2>
@@ -177,7 +199,7 @@ Affec…
 
 ---
 
-## 17. 🟡 High Severity — Grav: UserInterface offsetget/offsetexists allow-listed in Twig sandbox let editor-authored content leak hashed_password and 2FA secrets via offsetGet()
+## 19. 🟡 High Severity — Grav: UserInterface offsetget/offsetexists allow-listed in Twig sandbox let editor-authored content leak hashed_password and 2FA secrets via offsetGet()
 
 **CVE:** `CVE-2026-76839` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-3jhr-mxmx-38cx>
@@ -192,7 +214,7 @@ returns, so any sandboxed template with access to a `User` object can read
 
 ---
 
-## 18. 🟡 High Severity — Grav: config_denied_paths default list omits `system`, exposing real secrets (e.g. system.cache.redis.password) via the Twig sandbox when config_access is enabled
+## 20. 🟡 High Severity — Grav: config_denied_paths default list omits `system`, exposing real secrets (e.g. system.cache.redis.password) via the Twig sandbox when config_access is enabled
 
 **CVE:** `CVE-2026-76846` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-xjw5-q542-3vmr>
@@ -207,7 +229,7 @@ editor-authored Twig content), any real secret sto…
 
 ---
 
-## 19. 🟡 High Severity — Grav: The system, site, and theme Twig variables bypass the content sandbox entirely and are never covered by config_denied_paths
+## 21. 🟡 High Severity — Grav: The system, site, and theme Twig variables bypass the content sandbox entirely and are never covered by config_denied_paths
 
 **CVE:** `CVE-2026-72698` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-p597-crqc-m349>
@@ -218,7 +240,7 @@ editor-authored Twig content), any real secret sto…
 
 ---
 
-## 20. 🟡 High Severity — Grav: Non constant time nonce comparison in Utils::verifyNonce() used for CSRF protection
+## 22. 🟡 High Severity — Grav: Non constant time nonce comparison in Utils::verifyNonce() used for CSRF protection
 
 **CVE:** `CVE-2026-72701` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-38p6-h87p-r4cg>
@@ -229,7 +251,7 @@ editor-authored Twig content), any real secret sto…
 
 ---
 
-## 21. 🟡 High Severity — Chamilo LMS CStudio upload flow allows unauthenticated remote code execution
+## 23. 🟡 High Severity — Chamilo LMS CStudio upload flow allows unauthenticated remote code execution
 
 **CVE:** `CVE-2026-45140` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-g4c3-4g96-6g4m>
@@ -239,7 +261,7 @@ Ability to run arbitrary code on the server without authentication.
 
 ---
 
-## 22. 🟡 High Severity — Fulgur: Unbounded page slicing from attacker-controlled CSS height causes denial of service
+## 24. 🟡 High Severity — Fulgur: Unbounded page slicing from attacker-controlled CSS height causes denial of service
 
 **CVE:** `CVE-2026-68523` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-j5cx-ph8g-95v3>
@@ -256,7 +278,7 @@ units), so a few bytes such as:
 
 ---
 
-## 23. 🟡 High Severity — Steeltoe.Management.Endpoint: HttpExchanges URI masking leaks query-string secrets
+## 25. 🟡 High Severity — Steeltoe.Management.Endpoint: HttpExchanges URI masking leaks query-string secrets
 
 **CVE:** `CVE-2026-75523` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-8phw-xrj9-cpqp>
@@ -267,7 +289,7 @@ Steeltoe&#x27;s `/actuator/httpexchanges` endpoint records and displays request 
 
 ---
 
-## 24. 🟡 High Severity — Grav: Stored XSS via Markdown audio/video media <source> URL
+## 26. 🟡 High Severity — Grav: Stored XSS via Markdown audio/video media <source> URL
 
 **CVE:** `CVE-2026-75831` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-6qw9-4vv5-jr97>
@@ -278,7 +300,7 @@ Steeltoe&#x27;s `/actuator/httpexchanges` endpoint records and displays request 
 
 ---
 
-## 25. 🟡 High Severity — AsyncHttpClient doesn't verify SCRAM and Digest mutual-authentication responses
+## 27. 🟡 High Severity — AsyncHttpClient doesn't verify SCRAM and Digest mutual-authentication responses
 
 **CVE:** `CVE-2026-85716` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-fj9w-c36g-h5x8>
@@ -288,7 +310,7 @@ For SCRAM, and for Digest with mutual authentication, the client computes the se
 
 ---
 
-## 26. 🟡 High Severity — oras-go: Blind SSRF via unvalidated Link header URL in pagination allows internal network probing
+## 28. 🟡 High Severity — oras-go: Blind SSRF via unvalidated Link header URL in pagination allows internal network probing
 
 **CVE:** `CVE-2026-85732` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-h7vf-4x9w-h99v>
@@ -299,7 +321,7 @@ oras-go&#x27;s pagination helper `parseLink()` in `registry/remote/utils.go` fol
 
 ---
 
-## 27. 🟡 High Severity — Kestra: SSRF via Pebble http() function allows unauthenticated access to internal services & cloud metadata
+## 29. 🟡 High Severity — Kestra: SSRF via Pebble http() function allows unauthenticated access to internal services & cloud metadata
 
 **CVE:** `CVE-2026-73247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-r56g-q4p6-m3p6>
@@ -309,7 +331,7 @@ The Pebble template engine&#x27;s `http()` function in Kestra OSS accepts user-c
 
 ---
 
-## 28. 🟡 High Severity — RabbitMQ amqp091-go: Protocol Desynchronization and Frame Injection via Integer Overflow in readLongstr
+## 30. 🟡 High Severity — RabbitMQ amqp091-go: Protocol Desynchronization and Frame Injection via Integer Overflow in readLongstr
 
 **CVE:** `CVE-2026-77411` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-c5pq-fr2g-9jpf>
@@ -320,7 +342,7 @@ A critical stream desynchronization vulnerability has been identified in the AMQ
 
 ---
 
-## 29. 🟡 High Severity — RabbitMQ amqp091-go: Silent Data Truncation and State Corruption via Shortstr Integer Overflow
+## 31. 🟡 High Severity — RabbitMQ amqp091-go: Silent Data Truncation and State Corruption via Shortstr Integer Overflow
 
 **CVE:** `CVE-2026-77408` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-j497-x9hr-x34x>
@@ -332,7 +354,7 @@ If an application provides a property string exceeding 255 bytes…
 
 ---
 
-## 30. 🟡 High Severity — RabbitMQ amqp091-go: Missing Explicit TLS Minimum Version Configuration In URI Parser
+## 32. 🟡 High Severity — RabbitMQ amqp091-go: Missing Explicit TLS Minimum Version Configuration In URI Parser
 
 **CVE:** `CVE-2026-77405` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-33mj-cw25-m34h>
@@ -344,7 +366,7 @@ While modern versions of the Go compiler toolchain (Go 1.18+) default the implic
 
 ---
 
-## 31. 🟡 High Severity — RabbitMQ amqp091-go: Connection Configuration Overwrite via Unsanitized TLS Path Parameter Injection
+## 33. 🟡 High Severity — RabbitMQ amqp091-go: Connection Configuration Overwrite via Unsanitized TLS Path Parameter Injection
 
 **CVE:** `CVE-2026-77404` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-465g-fh3v-9jw4>
@@ -356,7 +378,7 @@ If an application handles …
 
 ---
 
-## 32. 🟡 High Severity — Zope AccessControl vulnerable to information disclosure through Python string `format` and `format_map` functions
+## 34. 🟡 High Severity — Zope AccessControl vulnerable to information disclosure through Python string `format` and `format_map` functions
 
 **CVE:** `CVE-2026-77401` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-pq59-9fq7-m886>
@@ -366,7 +388,7 @@ Python&#x27;s string `format` functionality allows someone controlling the forma
 
 ---
 
-## 33. 🟡 High Severity — Umbraco: Delivery API leaks protected (Public Access) content through Content Picker / Multi-Node Tree Picker expansion
+## 35. 🟡 High Severity — Umbraco: Delivery API leaks protected (Public Access) content through Content Picker / Multi-Node Tree Picker expansion
 
 **CVE:** `CVE-2026-69197` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-wr57-hqmp-fgvh>
@@ -375,7 +397,7 @@ Python&#x27;s string `format` functionality allows someone controlling the forma
 
 ---
 
-## 34. 🟡 High Severity — AsyncSSH: asyncio event-loop freeze via SSH maximum packet size = 0 in SSH_MSG_CHANNEL_OPEN / OPEN_CONFIRMATION
+## 36. 🟡 High Severity — AsyncSSH: asyncio event-loop freeze via SSH maximum packet size = 0 in SSH_MSG_CHANNEL_OPEN / OPEN_CONFIRMATION
 
 **CVE:** `CVE-2026-62949` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-rw4j-r22c-9gc3>
@@ -391,7 +413,7 @@ verbatim with no lower-bound check; the first time channel data is written,
 
 ---
 
-## 35. 🟡 High Severity — Wire: Unauthenticated decoder crash via 32-bit length integer overflow in ByteArrayProtoReader32 (incomplete fix of CVE-2026-45799)
+## 37. 🟡 High Severity — Wire: Unauthenticated decoder crash via 32-bit length integer overflow in ByteArrayProtoReader32 (incomplete fix of CVE-2026-45799)
 
 **CVE:** `CVE-2026-63126` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-9rm7-3qhh-h2mc>
@@ -402,7 +424,7 @@ In the Kotlin runtime, `ProtoAdapter.decode(ByteArray)` and `ProtoAdapter.decode
 
 ---
 
-## 36. 🟡 High Severity — @cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows
+## 38. 🟡 High Severity — @cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows
 
 **CVE:** `CVE-2026-71538` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-q69g-4hcv-6jg4>
@@ -416,7 +438,7 @@ The vulnerability was fixed in v…
 
 ---
 
-## 37. 🟡 High Severity — Nuxt OG Image has unauthenticated SSRF via `fonts[].path` URL parameter
+## 39. 🟡 High Severity — Nuxt OG Image has unauthenticated SSRF via `fonts[].path` URL parameter
 
 **CVE:** `CVE-2026-61793` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://github.com/advisories/GHSA-q8hw-4fvp-9rwv>
@@ -428,7 +450,7 @@ Under the module&#x27;s documented default …
 
 ---
 
-## 38. 🟡 High Severity — Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone
+## 40. 🟡 High Severity — Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone
 
 **CVE:** `CVE-2026-81642` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-17
 **Reference:** <https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html>
@@ -441,61 +463,7 @@ Unbound 1.26.1, released the same day, fixes the bug, tracked as CVE-2026-81642
 
 ---
 
-## 39. 🟡 High Severity — @nuxtjs/mdc's URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration
-
-**CVE:** `CVE-2026-63671` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-mxm6-v9r6-r94c>
-
-> ## Summary
-
-`@nuxtjs/mdc` renders untrusted markdown (including raw HTML) to a Vue component tree. Across two prior advisories it added a URL/attribute sanitizer to block dangerous links in that HTML: `validateProps` / `validateProp` and an `unsafeLinkPrefix` deny-list (`dist/runtime/parser/utils/props.js`). The sanitizer runs at parse time (`dist/runtime/parser/compiler.js`) and `parseMarkdown` e…
-
----
-
-## 40. 🟡 High Severity — djust: WebSocket/runtime reconstructed request omits the client Host, causing host/subdomain TenantResolvers to misresolve the tenant on the live path
-
-**CVE:** `CVE-2026-61589` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-v9rj-xjfv-xj9r>
-
-> ### Impact
-The WebSocket `handle_mount` and `ViewRuntime._build_request` rebuild an `HttpRequest` via `RequestFactory().get(...)` with no `HTTP_HOST`, so `request.get_host()` defaulted to `&quot;testserver&quot;` on the live path. Host/subdomain/domain `TenantResolver`s then misresolved the tenant — `None` on the live path while the HTTP path resolved correctly. With `STRICT_MODE=False` the tenant…
-
----
-
-## 41. 🟡 High Severity — djust's Django model serialization has no sensitive-field denylist: password hashes, privilege flags, and PII on a public view attribute are sent to the client
-
-**CVE:** `CVE-2026-61588` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-pvg3-6q9j-mj3x>
-
-> ### Impact
-When a Django `Model` instance is assigned to a **public** view attribute, djust serialized it to the client with **no sensitive-field denylist** — sending fields such as `password` (the hash), privilege flags (e.g. `is_staff` / `is_superuser`), tokens, and other PII to the browser. Because exposing model objects to templates is a normal djust pattern, this could leak credentials/PII wi…
-
----
-
-## 42. 🟡 High Severity — djust: Unsigned client state snapshot is restored as trusted view state (privilege escalation / state injection)
-
-**CVE:** `CVE-2026-61591` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-c67v-vqrp-m5wj>
-
-> ### Impact
-For views that opt into state snapshots, the snapshot `state_json` embedded in the client page was restored on reconnect as **trusted** view state with no integrity check. A client could edit the unsigned `state_json` in their page and return it in the reconnect mount frame to **inject arbitrary view attributes** — e.g. flip `is_admin` to `True`, or change `account_id` / `balance` — esc…
-
----
-
-## 43. 🟡 High Severity — djust: SSE sessions are not bound to the authenticated user; the client-chosen session_id is the sole authorization capability (session hijack)
-
-**CVE:** `CVE-2026-61592` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-16
-**Reference:** <https://github.com/advisories/GHSA-f795-p5jw-j6g2>
-
-> ### Impact
-SSE sessions were keyed solely by a **client-chosen** `session_id` with no binding to the authenticated user — a control the WebSocket transport has but that was dropped on SSE. An attacker who learns (or a victim who leaks) a `session_id` could connect to the message endpoint and dispatch event handlers that execute with the **victim&#x27;s identity and state**.
-
-### Patches
-Fixed in *…
-
----
-
-## 44. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 41. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
