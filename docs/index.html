@@ -109,69 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">3</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
-              <div class="stat"><span class="stat-value enriched">10</span><span class="stat-label">Enriched</span></div>
+              <div class="stat"><span class="stat-value">26</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-18 20:11 UTC</div>
+            <div class="generated">Updated 2026-09-19 01:58 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-39964" target="_blank" rel="noopener">CVE-2025-39964 — Linux Kernel Race Condition Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2025-39964</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-18</span>
-  </div>
-  <p class='summary'>Vendor: Linux | Product: Kernel. Linux Kernel contains a race condition vulnerability which allows concurrent writes to the same AF_ALG socket causing data to be unpredictably interleaved and creating inconsistencies in the socket&#x27;s internal state. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Base…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2025-39964 is a race condition in the Linux kernel AF_ALG cryptographic user API. Concurrent writes to the same AF_ALG socket can interleave unpredictably and leave the socket&#x27;s internal state inconsistent. The flaw can be triggered by a local user and may crash the system or corrupt cryptographic operation results, causing denial of service or data-integrity issues. The upstream fix adds exclusive write ownership so only one writer can issue sendmsg() at a time.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Linux Kernel — affected from version 2.6.38 until the corresponding fixes; fixed in 5.10.245, 5.15.194, 6.1.154, 6.6.108, 6.12.49, 6.16.9, and 6.17.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://github.com/n1k0oowang/CVE-2025-39964_EXP</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true - https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - CISA KEV</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Upgrade to a kernel containing the upstream stable fix and apply the applicable distribution security update. Where patching is not immediately possible, Red Hat recommends preventing the af_alg module from loading, such as by blacklisting it; this may affect applications that require AF_ALG cryptographic interfaces. CISA also directs organizations to follow applicable BOD 26-04 prioritization and forensic-triage guidance.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285</span></div></div>
-</article>
-
-        <article class="card card-kev">
-          <div class="card-top">
-            <span class="badge badge-kev">🔴 CISA KEV</span>
-            <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-53266" target="_blank" rel="noopener">CVE-2026-53266 — Linux Kernel Out-of-Bounds Write Vulnerability</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-53266</code>
-            <span class="meta-sep">·</span>
-            <span>CISA KEV</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-18</span>
-          </div>
-          <p class='summary'>Vendor: Linux | Product: Kernel. Linux Kernel contains an out-of-bounds write vulnerability in the ebtables SNAT target which allows an ARP sender hardware address rewrite to write directly into a nonlinear socket-buffer fragment backed by a splice-imported file page. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transit…</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The vulnerability is in the Linux kernel&#x27;s netfilter bridge ebtables SNAT target. Its optional ARP sender hardware-address rewrite uses skb_store_bits() after only safely reading the ARP header; it does not ensure that the subsequent sender-hardware-address range is writable. If that range resides in a nonlinear socket-buffer fragment backed by a splice-imported file page, the kernel can write the replacement MAC address directly into the underlying page, causing memory corruption and potentially denial of service or local privilege escalation.
-
-Exploitation requires local access and a system configured with applicable bridge netfilter/ebtables SNAT rules, particularly ARP hardware-address rewriting. The upstream fix adds a writability check covering the ARP header and Ethernet address before the rewrite.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Linux kernel netfilter bridge ebtables SNAT: 5.4.73 through versions before 5.5; 5.8.17 through versions before 5.9; 5.9.2 through versions before 5.10; 5.10.x before 5.10.259; 5.15.x before 5.15.210; 6.1.x before 6.1.176; 6.6.x before 6.6.143; 6.12.x before 6.12.94; 6.18.x before 6.18.36; 7.0.x before 7.0.13. Linux 7.1 is listed as unaffected.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">8.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">false - No public proof-of-concept was identified; https://feedly.com/cve/CVE-2026-53266</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true - https://lore.kernel.org/linux-cve-announce/2026062517-CVE-2026-53266-6162@gregkh/T</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - CISA Known Exploited Vulnerabilities Catalog; added 2026-09-18 based on evidence of active exploitation</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Upgrade to a kernel release containing the upstream fix, preferably the latest stable kernel for the applicable branch. If an update cannot be applied immediately, disable ARP hardware-address rewriting in ebtables SNAT rules or remove ebtables SNAT rules operating on ARP traffic over bridge interfaces. CISA also requires KEV remediation in accordance with applicable BOD 26-04 guidance.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://lore.kernel.org/linux-cve-announce/2026062517-CVE-2026-53266-6162@gregkh/T</span></div></div>
-        </article>
-
-        <article class="card card-kev">
-          <div class="card-top">
-            <span class="badge badge-kev">🔴 CISA KEV</span>
-            <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-39682" target="_blank" rel="noopener">CVE-2025-39682 — Linux Kernel Improper Check for Unusual or Exceptional Conditions Vulnerability</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2025-39682</code>
-            <span class="meta-sep">·</span>
-            <span>CISA KEV</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-18</span>
-          </div>
-          <p class='summary'>Vendor: Linux | Product: Kernel. Linux Kernel contains an improper check for unusual or exceptional conditions vulnerability in the TLS receive path which allows a zero-length record retrieved from the rx_list to bypass the intended recvmsg() record-type handling, potentially causing subsequent TLS records to be processed using incorrect zero-copy and queuing assumptions. The impacted product(s) c…</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The Linux kernel kTLS receive path mishandles a zero-length TLS record initially retrieved from rx_list. Because the record does not establish the expected content type, a subsequent record of a different type can bypass recvmsg() record-type handling and enter an invalid zero-copy path.
-
-In zero-copy mode, the code may requeue an skb that cannot safely be queued, corrupting the receive-list fragment structure and reference counting. This can lead to a use-after-free when the socket is closed, with potential denial of service or privilege escalation when kTLS is enabled.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Linux Kernel net/tls: 6.0–6.1.148, 6.2–6.6.102, 6.7–6.12.43, 6.13–6.16.3, 6.17-rc1, and 6.17-rc2</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">9.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://github.com/khoatran107/cve-2025-39682</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/tls?id=62708b9452f8eb77513115b17c4f8d1a22ebf843</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - CISA KEV</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Upgrade to a kernel containing the upstream fix, including stable branches at or above 6.1.149, 6.6.103, 6.12.44, or 6.16.4; the fix is also present from Linux 6.17-rc3. Apply the corresponding distribution kernel update, such as the Debian or Amazon Linux security packages.
-
-As an interim mitigation where patching is not immediately possible, prevent the kTLS `tls` kernel module from loading or disable kTLS use, recognizing that this may affect applications that depend on kernel TLS.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/tls?id=62708b9452f8eb77513115b17c4f8d1a22ebf843</span></div></div>
-        </article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -184,26 +130,24 @@ As an interim mitigation where patching is not immediately possible, prevent the
     <span>Wed, 08 Ju</span>
   </div>
   <p class='summary'>Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">The actors primarily scan Internet-facing IP ranges for poorly configured networking devices, especially routers, and exploit exposed SNMP services and weak or default community strings. They also occasionally exploit Cisco vulnerabilities, Cisco Smart Install (SMI), and web portals used to manage network devices, including CVE-2018-0171 and CVE-2008-4128.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Networking devices, primarily routers; Cisco devices and Cisco Smart Install (SMI); cited CVEs CVE-2018-0171 and CVE-2008-4128; specific vulnerable product versions: Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">Russian FSB Center 16 cyber actors; commonly associated tracking names include Berserk Bear, Energetic Bear, Crouching Yeti, Dragonfly, Ghost Blizzard, and Static Tundra.</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Use strong, unique credentials for network-device accounts and store them securely. Update device software and firmware, patch known vulnerabilities, replace end-of-life devices with supported models, and restrict or disable unnecessary Internet-facing management and SNMP exposure.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a</span></div></div>
+
 </article>
 
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/" target="_blank" rel="noopener">September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>CrowdStrike Blog</span>
-            <span class="meta-sep">·</span>
-            <span>Sep 08, 20</span>
-          </div>
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/" target="_blank" rel="noopener">September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>CrowdStrike Blog</span>
+    <span class="meta-sep">·</span>
+    <span>Sep 08, 20</span>
+  </div>
 
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">CVE-2026-85880 is a heap-based buffer overflow in Windows Advanced Local Procedure Call (ALPC). An attacker with low-privilege local code execution, including code running inside an AppContainer, can exploit the flaw to escape the sandbox and elevate to SYSTEM without additional user interaction.
 
-CVE-2026-81963 is an improper link-resolution-before-file-access flaw in the Windows Update Stack. A locally authenticated attacker with low privileges can abuse the high-privilege update components to reach SYSTEM privileges; the attack requires no user interaction.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">CVE-2026-85880: Windows 10 versions 1607, 1809, 21H2, and 22H2; Windows Server 2012, 2012 R2, 2016, 2019, and 2022, including listed Server Core editions, in the vulnerable build ranges specified by Microsoft. CVE-2026-81963: Windows 11 versions 23H2, 24H2, 25H2, and 26H1; Windows Server 2025, including Server Core, in the vulnerable build ranges specified by Microsoft.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">7.8 for both CVE-2026-85880 and CVE-2026-81963</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://www.proofpoint.com/us/blog/threat-insight/once-bluemoon-multiple-state-aligned-threat-actors-rapidly-adopt-novel-exploit (weaponized BlueMoon chain using CVE-2026-85880); false for CVE-2026-81963 based on Microsoft&#x27;s &#x27;Publicly disclosed: No&#x27; assessment.</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true - CVE-2026-85880: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880; CVE-2026-81963: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - Microsoft lists both vulnerabilities as exploited, and CISA added both to its Known Exploited Vulnerabilities catalog.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">TA412, UNK_LateNight, and UNK_DoubleCheck are reported exploiting CVE-2026-85880 through the BlueMoon exploit chain. None known for CVE-2026-81963.</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Install Microsoft&#x27;s September 8, 2026 security updates for all affected Windows builds, prioritizing internet-connected and high-value systems. Both vulnerabilities are in CISA&#x27;s Known Exploited Vulnerabilities catalog, so organizations should accelerate remediation, restrict untrusted local code execution where practical, and monitor for post-compromise privilege escalation activity until patch deployment is complete.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">CVE-2026-85880: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880; CVE-2026-81963: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963</span></div></div>
-        </article>
+</article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -224,9 +168,7 @@ project read ANY OTHER project&#x27;s &quot;Source&quot; record by ID via
 GET /api/v1/projects/{projectID}/sources/{sourceID} -- regardless of whether
 that Source actually belongs to the project named in the URL. The response
 includes the Source&#x27;s full PubSub …</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">An authenticated user or project-scoped API key holder authorized for one Convoy project can request another project&#x27;s Source by supplying its source ID in GET /api/v1/projects/{projectID}/sources/{sourceID}. The handler authorizes the project from the URL, but the underlying FindSourceByID lookup and SQL query use only the source ID and do not verify that the Source belongs to the authorized project.
 
-The endpoint can therefore return another tenant&#x27;s complete Source record. Because the response is not redacted, AMQP, Kafka, SQS, and Google Pub/Sub configurations may expose plaintext broker credentials, including passwords.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">frain-dev/convoy versions before 26.6.8, including v26.6.2 and earlier</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">6.5 (estimated)</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N (estimated; no CVSS v3.x assignment was published)</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://github.com/frain-dev/convoy/security/advisories/GHSA-p5vg-v7mj-f6q4</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true - https://github.com/frain-dev/convoy/releases/tag/v26.6.8</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false - no confirmed in-the-wild exploitation report or CISA KEV listing was identified</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Upgrade Convoy to v26.6.8 or later, which adds project scoping to Source lookups and rejects cross-project IDs. Rotate any broker credentials that may have been exposed, review access and application logs for suspicious Source-ID requests, and restrict Convoy API access to trusted networks while upgrading.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://github.com/frain-dev/convoy/security/advisories/GHSA-p5vg-v7mj-f6q4</span></div></div>
         </article>
 
         <article class="card card-zeroday">
@@ -244,11 +186,7 @@ The endpoint can therefore return another tenant&#x27;s complete Source record. 
           <p class='summary'>## Summary
 
 A containerized MCP server running with the default `network` permission profile (`insecure_allow_all: true`) can reach host-local services via `host.docker.internal`. This includes the ToolHive API itself, other ToolHive-managed MCP server proxies, and any other service listening on the host&#x27;s localhost. Combined with the unauthenticated ToolHive API and MCP proxy endpoints, this enab…</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Prior to ToolHive CLI 0.30.1 and ToolHive Studio 0.38.0, containerized MCP servers used a default network profile that did not isolate them from host services. With host.docker.internal or the Docker gateway reachable, a malicious or compromised MCP server could access the ToolHive control plane, other MCP proxies, localhost-bound services, and potentially privileged MCP tools without escaping its container.
 
-The issue combines unrestricted container networking with unauthenticated ToolHive API and MCP proxy endpoints. ToolHive Studio also forced network_isolation to false, overriding the backend’s secure isolation behavior.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">ToolHive CLI versions &lt; 0.30.1, ToolHive Studio versions &lt; 0.38.0</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">8.8</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://github.com/stacklok/toolhive/security/advisories/GHSA-qg2g-g9w3-m5h8</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">true - https://github.com/stacklok/toolhive/releases/tag/v0.30.1; https://github.com/stacklok/toolhive-studio/releases/tag/v0.38.0</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false - no confirmed active exploitation report identified in the cited advisory or CVE record</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Upgrade ToolHive CLI to 0.30.1 or later and ToolHive Studio to 0.38.0 or later. Until upgraded, block host.docker.internal and 172.17.0.1 from container networking, isolate MCP server networks from the Docker bridge gateway, and require authentication or authorization tokens for MCP proxy and control-plane endpoints.
-
-Use explicit per-container network allow-lists where possible, avoid exposing privileged native MCP tools on reachable localhost ports, and enable audit logging for MCP tool calls. Existing servers may need to be restarted before the new network-isolation defaults take effect.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://github.com/stacklok/toolhive/security/advisories/GHSA-qg2g-g9w3-m5h8</span></div></div>
         </article>
 
 <article class="card card-zeroday">
@@ -264,7 +202,7 @@ Use explicit per-container network allow-lists where possible, avoid exposing pr
     <span>2026-09-18</span>
   </div>
   <p class='summary'>Analysis of how default configurations in AWS AgentCore Harness allow prompt injection to exfiltrate credentials, and key steps to secure your agents. The post A Vault with a Heap-View: The Uncomfortable Space Between AgentCore Harness and Identity appeared first on Unit 42 .</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">A prompt injection can steer an AgentCore Harness agent into invoking its built-in shell tool. In the default configuration, shell and file_operations are available unless restricted through allowedTools, and the shell runs with the same UID as PID 1, including root-level access.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Amazon Bedrock AgentCore Harness in its default configuration, particularly sessions exposing the built-in shell and file_operations tools while using AgentCore Identity; no vulnerable-version range identified.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">technical_details</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false - no official vendor patch identified for this finding.</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">false - no confirmed in-the-wild exploitation reported.</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">At InvokeHarness time, restrict allowedTools to only what each session requires; remove shell and file_operations when they are unnecessary. Apply least privilege to AgentCore Identity service accounts, filter and monitor outbound traffic from harness containers, and treat unexpected destinations as potential evidence of prompt injection.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">Information unavailable.</span></div></div>
+
 </article>
 
 <article class="card card-zeroday">
@@ -280,28 +218,24 @@ Use explicit per-container network allow-lists where possible, avoid exposing pr
     <span>2026-04-23</span>
   </div>
   <p class='summary'>Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise …</p>
-  <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect prompt injection occurs when an AI system processes untrusted content—such as a website, email, or document—that contains malicious instructions. The poisoned content can cause the AI to follow the attacker&#x27;s commands instead of the user&#x27;s intended request. The observed attack vector involves seeding such instructions on public websites so browsing AI agents or other systems ingest them.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Information unavailable (the report describes a general AI-agent attack class and does not identify product names or vulnerable versions).</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - https://greshake.github.io/</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false - no versioned vendor patch is identified; https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html; http://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Treat websites, emails, and documents processed by AI agents as untrusted input. Separate retrieved content from trusted system instructions, restrict agent permissions and external side effects, and require confirmation for consequential actions. Google also recommends hardening AI models and products, red-team pressure testing, and real-time monitoring to identify and neutralize malicious activity.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html</span></div></div>
+
 </article>
 
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html" target="_blank" rel="noopener">Google Workspace’s continuous approach to mitigating indirect prompt injections</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>Google Security Blog</span>
-            <span class="meta-sep">·</span>
-            <span>2026-04-02</span>
-          </div>
-          <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user’s query. This m…</p>
-          <div class="enrichment"><div class="enrich-header">✨ Parallel AI Enrichment</div><div class="enrich-row"><span class="enrich-label">Technical Details</span><span class="enrich-value">Indirect prompt injection occurs when an AI application processes untrusted external content—such as web pages, email, or documents—that contains hidden malicious instructions. The LLM may interpret those instructions as part of the task and silently follow the attacker’s commands rather than the user’s intent.
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html" target="_blank" rel="noopener">Google Workspace’s continuous approach to mitigating indirect prompt injections</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Google Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-04-02</span>
+  </div>
+  <p class='summary'>Posted by Adam Gavish, Google GenAI Security Team Indirect prompt injection (IPI) is an evolving threat vector targeting users of complex AI applications with multiple data sources, such as Workspace with Gemini. This technique enables the attacker to influence the behavior of an LLM by injecting malicious instructions into the data or tools used by the LLM as it completes the user’s query. This m…</p>
 
-The attack can cause unintended actions or information disclosure and may occur without direct malicious input from the user. The relevant attack surface is therefore AI applications that combine LLMs with external data sources or tools, including Workspace with Gemini.</span></div><div class="enrich-row"><span class="enrich-label">Affected Products</span><span class="enrich-value">Google Workspace with Gemini, Gemini app, and Gemini in Workspace apps including Gmail, Docs editors, Drive, and Chat; no specific vulnerable versions identified</span></div><div class="enrich-row"><span class="enrich-label">CVSS Score</span><span class="enrich-value">Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">CVSS Vector</span><span class="enrich-value">Information unavailable.</span></div><div class="enrich-row"><span class="enrich-label">Exploit Available</span><span class="enrich-value">true - http://unit42.paloaltonetworks.com/ai-agent-prompt-injection</span></div><div class="enrich-row"><span class="enrich-label">Patch Available</span><span class="enrich-value">false - no conventional vendor patch release was identified; Google describes continuous, layered mitigation instead</span></div><div class="enrich-row"><span class="enrich-label">Active Exploitation</span><span class="enrich-value">true - Cloud Security Alliance reports live exploitation, citing Google, Forcepoint X-Labs, and Palo Alto Networks Unit 42</span></div><div class="enrich-row"><span class="enrich-label">Threat Actors</span><span class="enrich-value">None known</span></div><div class="enrich-row"><span class="enrich-label">Mitigation</span><span class="enrich-value">Use Google’s layered Gemini and Workspace defenses, keep the relevant services and security controls current, and treat web pages, email, and documents supplied to an AI system as untrusted input. Review AI outputs and require human confirmation before consequential actions, especially where the AI can access sensitive data or invoke tools.
-
-Google describes ongoing model hardening, red-team testing, attack reproduction and cataloguing, and continuous improvement rather than a one-time fix; organizations should therefore maintain defense-in-depth controls and monitor for newly disclosed indirect prompt-injection techniques.</span></div><div class="enrich-row"><span class="enrich-label">Vendor Advisory</span><span class="enrich-value">http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html</span></div></div>
-        </article>
+</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -643,244 +577,6 @@ The vulnerability, tracked as CVE-2026-85889, carries a CVSS score of 10.0.
   <p class='summary'>CVE-2026-58138 is an unauthenticated remote code execution vulnerability that attackers can exploit via inline workflow definitions. The post Critical Orkes Conductor Vulnerability Exploited in Attacks appeared first on SecurityWeek .</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r94f-hx44-8jqf" target="_blank" rel="noopener">Grav CMS vulnerable to remote code execution via .zip file upload</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-72819</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>### Summary
-
-A logged-in user can run any command on the server. A settings field can fill itself by calling one of Grav&#x27;s built-in routines, and a safety check is supposed to allow only harmless ones. The check only recognises a routine when its name is written as one piece of text; named as a pair of values instead, it is not examined at all and is passed as safe. Pointing such a field at the ro…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xhfv-7758-r9hx" target="_blank" rel="noopener">Grav: Missing admin.super guard on core group blueprint access field allows admin.users operator to escalate to super-admin</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-75837</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Summary
-The core Flex group blueprint `system/blueprints/user/group.yaml` (access field, lines 48-55) omits the `security@: admin.super` field guard that its sibling account blueprint carries (`account.yaml:131/138/150`, added by the CVE-2026-42613 fix). A delegated non-super operator holding `admin.users.update` can therefore save a group whose `access` map contains `admin.super: true`, which …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f8wv-xp27-6gq7" target="_blank" rel="noopener">Grav: Blueprint dynamic-data bare-function branch is denylist-gated and omits error_log, giving arbitrary file write</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-75827</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Affected versions and vulnerable location
-
-- Confirmed on grav core at `78ebfc1` (tag 2.0.13).
-- Sinks:
-  - `system/src/Grav/Common/Data/Blueprint.php:455-458` `call_user_func_array($o, $params)` (bare-function dynamic-data provider).
-  - Twin: `system/src/Grav/Framework/Flex/FlexDirectory.php:936-938` `call_user_func_array($function, $params)`.
-- Validation gate: `Blueprint::isSafeDynamicCall(…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gjv8-xp57-g29c" target="_blank" rel="noopener">Soup Sieve: Polynomial-time ReDoS (O(n²)) in the `IDENTIFIER` / `VALUE` selector sub-patterns</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-86000</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Summary
-
-soupsieve compiles CSS selector strings with a set of hand-written regular expressions. The shared `IDENTIFIER` sub-pattern (also embedded in `VALUE`, and therefore in attribute selectors) places two adjacent quantified groups over overlapping character classes: `(?:[classA]|ESC)+(?:[classB]|ESC)*`, where both classes match ordinary identifier characters such as `a`. When a selector co…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5mq7-rwhj-4fh9" target="_blank" rel="noopener">Steeltoe: Header-forwarded client cert lacks proof of private-key possession</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-81868</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>### Summary
-
-When Steeltoe&#x27;s certificate-based authorization (`UseCertificateAuthorization`) is configured, the default configuration of the middleware relies on the `X-Client-Cert` HTTP header to identify the client certificate, without verifying private-key possession. This header is not stripped by common Cloud Foundry routers (like Gorouter or Envoy) on inbound requests.
-
-### Impact
-
-An attack…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-67c9-f6v2-qv86" target="_blank" rel="noopener">Steeltoe.Discovery.Consul: malformed &#x27;secure&#x27; metadata aborts service instance lookup (DoS)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-81516</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Summary
-
-Steeltoe&#x27;s Consul discovery client parses the `secure` metadata field on each registered service instance using `bool.Parse`, which throws on any value other than `true` or `false`. A single service instance registered with a malformed `secure` value (for example `yes` or `1`) aborts construction of the entire instance list for that service, making the service undiscoverable. When `Get…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c3mw-737p-c7g2" target="_blank" rel="noopener">Jupyter Server: 5xx request logging leaks token-bearing Referer header values</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-86049</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>### Summary
-
-When a request returns a 500, `jupyter_server/log.py` logs a small JSON block of request headers. 
-
-The Referer header was copied into it as-is, so a token in the Referer URL ended up in the logs in plain text.
-
-### Impact
-
-Anyone who can read the server logs can pick tokens out of these 500 entries. Tokens end up in the Referer during normal token-based login and launch flows.
-
-Affec…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3jhr-mxmx-38cx" target="_blank" rel="noopener">Grav: UserInterface offsetget/offsetexists allow-listed in Twig sandbox let editor-authored content leak hashed_password and 2FA secrets via offsetGet()</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-76839</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Summary
-
-`system/config/security.yaml`&#x27;s Twig sandbox policy allow-lists `offsetget` and
-`offsetexists` for `Grav\Common\User\Interfaces\UserInterface`. The concrete
-`Grav\Common\User\DataUser\User` class does not filter which fields `offsetGet()`
-returns, so any sandboxed template with access to a `User` object can read
-`hashed_password`, `secret` (2FA seed), and `twofa_secret` directly, bypas…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xjw5-q542-3vmr" target="_blank" rel="noopener">Grav: config_denied_paths default list omits `system`, exposing real secrets (e.g. system.cache.redis.password) via the Twig sandbox when config_access is enabled</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-76846</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Summary
-
-`system/config/security.yaml`&#x27;s default `twig_sandbox.config_denied_paths` list
-(`plugins`, `streams`, `security`, `backups`, `scheduler`) omits the `system` prefix.
-When an operator enables the documented, non-default `twig_content.config_access: true`
-setting (intended to safely expose low-sensitivity values like `site.title` to
-editor-authored Twig content), any real secret stored u…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p597-crqc-m349" target="_blank" rel="noopener">Grav: The system, site, and theme Twig variables bypass the content sandbox entirely and are never covered by config_denied_paths</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-72698</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Summary
-
-`Grav\Common\Twig\Twig::init()` unconditionally puts the raw `system`, `site`, and `theme` config arrays into `$this-&gt;twig_vars`. `Twig::processPage()` builds the variables for the sandboxed, editor-authored page-content render by copying that same base array (`$sandbox_vars = $twig_vars;`) and replacing only the `config` key with a filtered `SandboxConfig` facade. The `system`, `site`…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-38p6-h87p-r4cg" target="_blank" rel="noopener">Grav: Non constant time nonce comparison in Utils::verifyNonce() used for CSRF protection</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-72701</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>## Summary
-
-`Grav\Common\Utils::verifyNonce()`, the core function Grav and its plugins use to validate CSRF nonces, compares the submitted nonce to the expected value with PHP&#x27;s `===` operator instead of `hash_equals()`. `===` on strings short circuits at the first differing byte, so the comparison time leaks how many leading bytes of a guess are correct. This is CWE-208, Observable Timing Discrep…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g4c3-4g96-6g4m" target="_blank" rel="noopener">Chamilo LMS CStudio upload flow allows unauthenticated remote code execution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-45140</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-17</span>
-          </div>
-          <p class='summary'>### Impact
-Ability to run arbitrary code on the server without authentication.</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">

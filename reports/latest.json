@@ -1,103 +1,10 @@
 {
-  "generated": "2026-09-18T20:11:50.679587+00:00",
-  "total": 41,
-  "kev": 3,
+  "generated": "2026-09-19T01:58:37.474366+00:00",
+  "total": 26,
+  "kev": 0,
   "zero_day": 11,
-  "enriched": 10,
+  "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2025-39964",
-      "title": "CVE-2025-39964 \u2014 Linux Kernel Race Condition Vulnerability",
-      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains a race condition vulnerability which allows concurrent writes to the same AF_ALG socket causing data to be unpredictably interleaved and creating inconsistencies in the socket's internal state. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39964",
-      "published": "2026-09-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2025-39964"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "CVE-2025-39964 is a race condition in the Linux kernel AF_ALG cryptographic user API. Concurrent writes to the same AF_ALG socket can interleave unpredictably and leave the socket's internal state inconsistent. The flaw can be triggered by a local user and may crash the system or corrupt cryptographic operation results, causing denial of service or data-integrity issues. The upstream fix adds exclusive write ownership so only one writer can issue sendmsg() at a time.",
-        "affected_products": "Linux Kernel \u2014 affected from version 2.6.38 until the corresponding fixes; fixed in 5.10.245, 5.15.194, 6.1.154, 6.6.108, 6.12.49, 6.16.9, and 6.17.",
-        "cvss_score": "7.8",
-        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true - https://github.com/n1k0oowang/CVE-2025-39964_EXP",
-        "patch_available": "true - https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285",
-        "active_exploitation": "true - CISA KEV",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade to a kernel containing the upstream stable fix and apply the applicable distribution security update. Where patching is not immediately possible, Red Hat recommends preventing the af_alg module from loading, such as by blacklisting it; this may affect applications that require AF_ALG cryptographic interfaces. CISA also directs organizations to follow applicable BOD 26-04 prioritization and forensic-triage guidance.",
-        "vendor_advisory": "https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285"
-      }
-    },
-    {
-      "id": "CVE-2026-53266",
-      "title": "CVE-2026-53266 \u2014 Linux Kernel Out-of-Bounds Write Vulnerability",
-      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains an out-of-bounds write vulnerability in the ebtables SNAT target which allows an ARP sender hardware address rewrite to write directly into a nonlinear socket-buffer fragment backed by a splice-imported file page. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53266",
-      "published": "2026-09-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-53266"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "The vulnerability is in the Linux kernel's netfilter bridge ebtables SNAT target. Its optional ARP sender hardware-address rewrite uses skb_store_bits() after only safely reading the ARP header; it does not ensure that the subsequent sender-hardware-address range is writable. If that range resides in a nonlinear socket-buffer fragment backed by a splice-imported file page, the kernel can write the replacement MAC address directly into the underlying page, causing memory corruption and potentially denial of service or local privilege escalation.\n\nExploitation requires local access and a system configured with applicable bridge netfilter/ebtables SNAT rules, particularly ARP hardware-address rewriting. The upstream fix adds a writability check covering the ARP header and Ethernet address before the rewrite.",
-        "affected_products": "Linux kernel netfilter bridge ebtables SNAT: 5.4.73 through versions before 5.5; 5.8.17 through versions before 5.9; 5.9.2 through versions before 5.10; 5.10.x before 5.10.259; 5.15.x before 5.15.210; 6.1.x before 6.1.176; 6.6.x before 6.6.143; 6.12.x before 6.12.94; 6.18.x before 6.18.36; 7.0.x before 7.0.13. Linux 7.1 is listed as unaffected.",
-        "cvss_score": "8.8",
-        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-        "exploit_available": "false - No public proof-of-concept was identified; https://feedly.com/cve/CVE-2026-53266",
-        "patch_available": "true - https://lore.kernel.org/linux-cve-announce/2026062517-CVE-2026-53266-6162@gregkh/T",
-        "active_exploitation": "true - CISA Known Exploited Vulnerabilities Catalog; added 2026-09-18 based on evidence of active exploitation",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade to a kernel release containing the upstream fix, preferably the latest stable kernel for the applicable branch. If an update cannot be applied immediately, disable ARP hardware-address rewriting in ebtables SNAT rules or remove ebtables SNAT rules operating on ARP traffic over bridge interfaces. CISA also requires KEV remediation in accordance with applicable BOD 26-04 guidance.",
-        "vendor_advisory": "https://lore.kernel.org/linux-cve-announce/2026062517-CVE-2026-53266-6162@gregkh/T"
-      }
-    },
-    {
-      "id": "CVE-2025-39682",
-      "title": "CVE-2025-39682 \u2014 Linux Kernel Improper Check for Unusual or Exceptional Conditions Vulnerability",
-      "summary": "Vendor: Linux | Product: Kernel. Linux Kernel contains an improper check for unusual or exceptional conditions vulnerability in the TLS receive path which allows a zero-length record retrieved from the rx_list to bypass the intended recvmsg() record-type handling, potentially causing subsequent TLS records to be processed using incorrect zero-copy and queuing assumptions. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-21)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39682",
-      "published": "2026-09-18",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2025-39682"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false,
-      "enrichment": {
-        "technical_details": "The Linux kernel kTLS receive path mishandles a zero-length TLS record initially retrieved from rx_list. Because the record does not establish the expected content type, a subsequent record of a different type can bypass recvmsg() record-type handling and enter an invalid zero-copy path.\n\nIn zero-copy mode, the code may requeue an skb that cannot safely be queued, corrupting the receive-list fragment structure and reference counting. This can lead to a use-after-free when the socket is closed, with potential denial of service or privilege escalation when kTLS is enabled.",
-        "affected_products": "Linux Kernel net/tls: 6.0\u20136.1.148, 6.2\u20136.6.102, 6.7\u20136.12.43, 6.13\u20136.16.3, 6.17-rc1, and 6.17-rc2",
-        "cvss_score": "9.8",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true - https://github.com/khoatran107/cve-2025-39682",
-        "patch_available": "true - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/tls?id=62708b9452f8eb77513115b17c4f8d1a22ebf843",
-        "active_exploitation": "true - CISA KEV",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade to a kernel containing the upstream fix, including stable branches at or above 6.1.149, 6.6.103, 6.12.44, or 6.16.4; the fix is also present from Linux 6.17-rc3. Apply the corresponding distribution kernel update, such as the Debian or Amazon Linux security packages.\n\nAs an interim mitigation where patching is not immediately possible, prevent the kTLS `tls` kernel module from loading or disable kTLS use, recognizing that this may affect applications that depend on kernel TLS.",
-        "vendor_advisory": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/tls?id=62708b9452f8eb77513115b17c4f8d1a22ebf843"
-      }
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -111,19 +18,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "The actors primarily scan Internet-facing IP ranges for poorly configured networking devices, especially routers, and exploit exposed SNMP services and weak or default community strings. They also occasionally exploit Cisco vulnerabilities, Cisco Smart Install (SMI), and web portals used to manage network devices, including CVE-2018-0171 and CVE-2008-4128.",
-        "affected_products": "Networking devices, primarily routers; Cisco devices and Cisco Smart Install (SMI); cited CVEs CVE-2018-0171 and CVE-2008-4128; specific vulnerable product versions: Information unavailable.",
-        "cvss_score": "",
-        "cvss_vector": "Information unavailable.",
-        "exploit_available": "Information unavailable.",
-        "patch_available": "Information unavailable.",
-        "active_exploitation": "true - https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-        "threat_actors": "Russian FSB Center 16 cyber actors; commonly associated tracking names include Berserk Bear, Energetic Bear, Crouching Yeti, Dragonfly, Ghost Blizzard, and Static Tundra.",
-        "mitigation": "Use strong, unique credentials for network-device accounts and store them securely. Update device software and firmware, patch known vulnerabilities, replace end-of-life devices with supported models, and restrict or disable unnecessary Internet-facing management and SNMP exposure.",
-        "vendor_advisory": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a"
-      }
+      "is_high_severity": true
     },
     {
       "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/",
@@ -139,19 +34,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "CVE-2026-85880 is a heap-based buffer overflow in Windows Advanced Local Procedure Call (ALPC). An attacker with low-privilege local code execution, including code running inside an AppContainer, can exploit the flaw to escape the sandbox and elevate to SYSTEM without additional user interaction.\n\nCVE-2026-81963 is an improper link-resolution-before-file-access flaw in the Windows Update Stack. A locally authenticated attacker with low privileges can abuse the high-privilege update components to reach SYSTEM privileges; the attack requires no user interaction.",
-        "affected_products": "CVE-2026-85880: Windows 10 versions 1607, 1809, 21H2, and 22H2; Windows Server 2012, 2012 R2, 2016, 2019, and 2022, including listed Server Core editions, in the vulnerable build ranges specified by Microsoft. CVE-2026-81963: Windows 11 versions 23H2, 24H2, 25H2, and 26H1; Windows Server 2025, including Server Core, in the vulnerable build ranges specified by Microsoft.",
-        "cvss_score": "7.8 for both CVE-2026-85880 and CVE-2026-81963",
-        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-        "exploit_available": "true - https://www.proofpoint.com/us/blog/threat-insight/once-bluemoon-multiple-state-aligned-threat-actors-rapidly-adopt-novel-exploit (weaponized BlueMoon chain using CVE-2026-85880); false for CVE-2026-81963 based on Microsoft's 'Publicly disclosed: No' assessment.",
-        "patch_available": "true - CVE-2026-85880: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880; CVE-2026-81963: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963",
-        "active_exploitation": "true - Microsoft lists both vulnerabilities as exploited, and CISA added both to its Known Exploited Vulnerabilities catalog.",
-        "threat_actors": "TA412, UNK_LateNight, and UNK_DoubleCheck are reported exploiting CVE-2026-85880 through the BlueMoon exploit chain. None known for CVE-2026-81963.",
-        "mitigation": "Install Microsoft's September 8, 2026 security updates for all affected Windows builds, prioritizing internet-connected and high-value systems. Both vulnerabilities are in CISA's Known Exploited Vulnerabilities catalog, so organizations should accelerate remediation, restrict untrusted local code execution where practical, and monitor for post-compromise privilege escalation activity until patch deployment is complete.",
-        "vendor_advisory": "CVE-2026-85880: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85880; CVE-2026-81963: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2026-81963"
-      }
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-81505",
@@ -169,19 +52,7 @@
         "CVE-2026-81505"
       ],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "An authenticated user or project-scoped API key holder authorized for one Convoy project can request another project's Source by supplying its source ID in GET /api/v1/projects/{projectID}/sources/{sourceID}. The handler authorizes the project from the URL, but the underlying FindSourceByID lookup and SQL query use only the source ID and do not verify that the Source belongs to the authorized project.\n\nThe endpoint can therefore return another tenant's complete Source record. Because the response is not redacted, AMQP, Kafka, SQS, and Google Pub/Sub configurations may expose plaintext broker credentials, including passwords.",
-        "affected_products": "frain-dev/convoy versions before 26.6.8, including v26.6.2 and earlier",
-        "cvss_score": "6.5 (estimated)",
-        "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N (estimated; no CVSS v3.x assignment was published)",
-        "exploit_available": "true - https://github.com/frain-dev/convoy/security/advisories/GHSA-p5vg-v7mj-f6q4",
-        "patch_available": "true - https://github.com/frain-dev/convoy/releases/tag/v26.6.8",
-        "active_exploitation": "false - no confirmed in-the-wild exploitation report or CISA KEV listing was identified",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade Convoy to v26.6.8 or later, which adds project scoping to Source lookups and rejects cross-project IDs. Rotate any broker credentials that may have been exposed, review access and application logs for suspicious Source-ID requests, and restrict Convoy API access to trusted networks while upgrading.",
-        "vendor_advisory": "https://github.com/frain-dev/convoy/security/advisories/GHSA-p5vg-v7mj-f6q4"
-      }
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-58197",
@@ -199,19 +70,7 @@
         "CVE-2026-58197"
       ],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Prior to ToolHive CLI 0.30.1 and ToolHive Studio 0.38.0, containerized MCP servers used a default network profile that did not isolate them from host services. With host.docker.internal or the Docker gateway reachable, a malicious or compromised MCP server could access the ToolHive control plane, other MCP proxies, localhost-bound services, and potentially privileged MCP tools without escaping its container.\n\nThe issue combines unrestricted container networking with unauthenticated ToolHive API and MCP proxy endpoints. ToolHive Studio also forced network_isolation to false, overriding the backend\u2019s secure isolation behavior.",
-        "affected_products": "ToolHive CLI versions < 0.30.1, ToolHive Studio versions < 0.38.0",
-        "cvss_score": "8.8",
-        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-        "exploit_available": "true - https://github.com/stacklok/toolhive/security/advisories/GHSA-qg2g-g9w3-m5h8",
-        "patch_available": "true - https://github.com/stacklok/toolhive/releases/tag/v0.30.1; https://github.com/stacklok/toolhive-studio/releases/tag/v0.38.0",
-        "active_exploitation": "false - no confirmed active exploitation report identified in the cited advisory or CVE record",
-        "threat_actors": "None known",
-        "mitigation": "Upgrade ToolHive CLI to 0.30.1 or later and ToolHive Studio to 0.38.0 or later. Until upgraded, block host.docker.internal and 172.17.0.1 from container networking, isolate MCP server networks from the Docker bridge gateway, and require authentication or authorization tokens for MCP proxy and control-plane endpoints.\n\nUse explicit per-container network allow-lists where possible, avoid exposing privileged native MCP tools on reachable localhost ports, and enable audit logging for MCP tool calls. Existing servers may need to be restarted before the new network-isolation defaults take effect.",
-        "vendor_advisory": "https://github.com/stacklok/toolhive/security/advisories/GHSA-qg2g-g9w3-m5h8"
-      }
+      "is_high_severity": true
     },
     {
       "id": "https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/",
@@ -227,19 +86,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "A prompt injection can steer an AgentCore Harness agent into invoking its built-in shell tool. In the default configuration, shell and file_operations are available unless restricted through allowedTools, and the shell runs with the same UID as PID 1, including root-level access.",
-        "affected_products": "Amazon Bedrock AgentCore Harness in its default configuration, particularly sessions exposing the built-in shell and file_operations tools while using AgentCore Identity; no vulnerable-version range identified.",
-        "cvss_score": "technical_details",
-        "cvss_vector": "Information unavailable.",
-        "exploit_available": "true - https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/",
-        "patch_available": "false - no official vendor patch identified for this finding.",
-        "active_exploitation": "false - no confirmed in-the-wild exploitation reported.",
-        "threat_actors": "None known",
-        "mitigation": "At InvokeHarness time, restrict allowedTools to only what each session requires; remove shell and file_operations when they are unnecessary. Apply least privilege to AgentCore Identity service accounts, filter and monitor outbound traffic from harness containers, and treat unexpected destinations as potential evidence of prompt injection.",
-        "vendor_advisory": "Information unavailable."
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
@@ -255,19 +102,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an AI system processes untrusted content\u2014such as a website, email, or document\u2014that contains malicious instructions. The poisoned content can cause the AI to follow the attacker's commands instead of the user's intended request. The observed attack vector involves seeding such instructions on public websites so browsing AI agents or other systems ingest them.",
-        "affected_products": "Information unavailable (the report describes a general AI-agent attack class and does not identify product names or vulnerable versions).",
-        "cvss_score": "",
-        "cvss_vector": "Information unavailable.",
-        "exploit_available": "true - https://greshake.github.io/",
-        "patch_available": "false - no versioned vendor patch is identified; https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html",
-        "active_exploitation": "true - https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html; http://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026",
-        "threat_actors": "None known",
-        "mitigation": "Treat websites, emails, and documents processed by AI agents as untrusted input. Separate retrieved content from trusted system instructions, restrict agent permissions and external side effects, and require confirmation for consequential actions. Google also recommends hardening AI models and products, red-team pressure testing, and real-time monitoring to identify and neutralize malicious activity.",
-        "vendor_advisory": "https://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html"
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-7611943504123181983",
@@ -283,19 +118,7 @@
       ],
       "cve_ids": [],
       "is_zero_day": true,
-      "is_high_severity": true,
-      "enrichment": {
-        "technical_details": "Indirect prompt injection occurs when an AI application processes untrusted external content\u2014such as web pages, email, or documents\u2014that contains hidden malicious instructions. The LLM may interpret those instructions as part of the task and silently follow the attacker\u2019s commands rather than the user\u2019s intent.\n\nThe attack can cause unintended actions or information disclosure and may occur without direct malicious input from the user. The relevant attack surface is therefore AI applications that combine LLMs with external data sources or tools, including Workspace with Gemini.",
-        "affected_products": "Google Workspace with Gemini, Gemini app, and Gemini in Workspace apps including Gmail, Docs editors, Drive, and Chat; no specific vulnerable versions identified",
-        "cvss_score": "Information unavailable.",
-        "cvss_vector": "Information unavailable.",
-        "exploit_available": "true - http://unit42.paloaltonetworks.com/ai-agent-prompt-injection",
-        "patch_available": "false - no conventional vendor patch release was identified; Google describes continuous, layered mitigation instead",
-        "active_exploitation": "true - Cloud Security Alliance reports live exploitation, citing Google, Forcepoint X-Labs, and Palo Alto Networks Unit 42",
-        "threat_actors": "None known",
-        "mitigation": "Use Google\u2019s layered Gemini and Workspace defenses, keep the relevant services and security controls current, and treat web pages, email, and documents supplied to an AI system as untrusted input. Review AI outputs and require human confirmation before consequential actions, especially where the AI can access sensitive data or invoke tools.\n\nGoogle describes ongoing model hardening, red-team testing, attack reproduction and cataloguing, and continuous improvement rather than a one-time fix; organizations should therefore maintain defense-in-depth controls and monitor for newly disclosed indirect prompt-injection techniques.",
-        "vendor_advisory": "http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html"
-      }
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-5444043768676554819",
@@ -608,222 +431,6 @@
       ],
       "cve_ids": [
         "CVE-2026-58138"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72819",
-      "title": "Grav CMS vulnerable to remote code execution via .zip file upload",
-      "summary": "### Summary\n\nA logged-in user can run any command on the server. A settings field can fill itself by calling one of Grav's built-in routines, and a safety check is supposed to allow only harmless ones. The check only recognises a routine when its name is written as one piece of text; named as a pair of values instead, it is not examined at all and is passed as safe. Pointing such a field at the routine that unpacks ZIP archives writes a PHP file from an uploaded archive into the site's public folder, which the server then runs.\n\n### Details\n\nThe check rejects known-dangerous routines and, for those belonging to a component, allows only a short approved list. Both of those cases only apply when the name arrives as a single string. The same routine can be named as a pair (the component and the routine inside it), and in that form the check matches neither case, skips both lists and answers \"safe\". Grav then calls it, with arguments the attacker supplies in the same field. Any routine shipped with Grav becomes callable.\n\nThe one used here is what Grav runs when installing a plugin from an archive. It takes an archive and a destination folder. It does check the names of the files inside, so an archive cannot escape with `../`, but the destination is used exactly as given, so naming the folder the website is served from drops the contents there. Getting the archive in is trivial: ZIP is an accepted upload type and the files inside are never examined, so an archive containing a PHP file uploads as ordinary media to a predictable address.\n\nEverything is set up over the web. Saving a plugin's settings stores the values as sent, and the Flex Objects plugin treats each entry of its own directory list as the address of a file describing fields. Pointing that list at the settings file being saved makes one file act as both, so the malicious field is created through a normal settings save with no file edited on the server.\n\n### PoC\n\n1. Log in at `http://TARGET/login` (or `/admin",
-      "link": "https://github.com/advisories/GHSA-r94f-hx44-8jqf",
-      "published": "2026-09-17T20:45:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72819"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75837",
-      "title": "Grav: Missing admin.super guard on core group blueprint access field allows admin.users operator to escalate to super-admin",
-      "summary": "## Summary\nThe core Flex group blueprint `system/blueprints/user/group.yaml` (access field, lines 48-55) omits the `security@: admin.super` field guard that its sibling account blueprint carries (`account.yaml:131/138/150`, added by the CVE-2026-42613 fix). A delegated non-super operator holding `admin.users.update` can therefore save a group whose `access` map contains `admin.super: true`, which `UserGroupObject::authorize` then grants to every member of that group, a full privilege escalation to super-admin (scheduler/cron RCE, Twig eval). This is a distinct file, sink, and fix from all four related advisories.\n\n## Root Cause\nThe CVE-2026-42613 fix protected the account `access`/`groups` fields with a blueprint-level `security@: admin.super` gate, which `Blueprint::dynamicSecurity()` (`system/src/Grav/Common/Data/Blueprint.php:644-662`) uses to mark a field `validate.ignore=true` for non-super users so `BlueprintSchema::filterArray()` (`BlueprintSchema.php:263-311`) drops it. The functionally-identical group `access` field, a permission map granted to every member of the group, is declared in `system/blueprints/user/group.yaml:48-55` with `check_authorize: false` and NO `security@` guard. `check_authorize` has ZERO PHP enforcement (`grep -rn check_authorize` across the repo returns 0 PHP consumers; only two YAML blueprints reference it), so `security@` is the sole real control. Because the group access field lacks `security@`, `dynamicSecurity` never flags it, `filterArray` retains it, and `Validation::filterArray` (`type: array, value_type: bool`) passes the nested `admin.super:true` leaf through. The core save path (`FlexObject::update()` then `Framework/Flex/FlexObject.php:683` `$blueprint->filter($data,true,true)` then `save()`) persists it to `user://config/groups.yaml`.\n\n## Impact\nA delegated `admin.users` operator (strictly below `admin.super`) escalates to super-admin, gaining the admin panel, the scheduler (cron to RCE) and Twig evaluation. Full read/writ",
-      "link": "https://github.com/advisories/GHSA-xhfv-7758-r9hx",
-      "published": "2026-09-17T20:45:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75837"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75827",
-      "title": "Grav: Blueprint dynamic-data bare-function branch is denylist-gated and omits error_log, giving arbitrary file write",
-      "summary": "## Affected versions and vulnerable location\n\n- Confirmed on grav core at `78ebfc1` (tag 2.0.13).\n- Sinks:\n  - `system/src/Grav/Common/Data/Blueprint.php:455-458` `call_user_func_array($o, $params)` (bare-function dynamic-data provider).\n  - Twin: `system/src/Grav/Framework/Flex/FlexDirectory.php:936-938` `call_user_func_array($function, $params)`.\n- Validation gate: `Blueprint::isSafeDynamicCall()` at `Blueprint.php:514-536`.\n  - `Class::method` branch (`:514-527`) uses a strict positive allowlist `self::$allowedDynamicCallables`.\n  - Bare-function branch (`:530-534`) uses only a denylist: `if (is_string($function) && Utils::isDangerousFunction($function)) return false; return !self::paramsContainDangerousCallable($params);`.\n- Denylist: `Utils::isDangerousFunction()` (`system/src/Grav/Common/Utils.php`, list around `:2020-2270`).\n\n## Root cause\n\nGHSA-7pgq/CVE-2026-64850 hardened the `Class::method` half of the dynamic-callable validation to a positive allowlist because a page-edit account could otherwise name any static method as a provider and reach file/secret gadgets. The bare-function half was left on a denylist (`isDangerousFunction`). Any bare PHP function not on that list executes.\n\n`error_log` is not on the denylist (verified: no occurrence in `Utils.php`). `error_log($message, 3, $destination)` appends attacker-controlled `$message` to attacker-controlled file `$destination`, an arbitrary-file-append primitive. `paramsContainDangerousCallable()` (`:587-603`) only scans params for dangerous callable strings, so a PHP payload string and a destination path both pass. (`stream_socket_client`, `dl`, and `mb_send_mail` are likewise absent, giving SSRF/other primitives.)\n\n## Attacker model\n\nThe same surface the published dynamic-data advisories accept as reachable: a `data-*@` directive in a form blueprint the Form plugin assembles from page frontmatter (GHSA-fj2p), or a `data@` field in a Flex directory/pages/users blueprint (GHSA-c4wf). A page-edit / blueprint",
-      "link": "https://github.com/advisories/GHSA-f8wv-xp27-6gq7",
-      "published": "2026-09-17T20:44:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75827"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-86000",
-      "title": "Soup Sieve: Polynomial-time ReDoS (O(n\u00b2)) in the `IDENTIFIER` / `VALUE` selector sub-patterns",
-      "summary": "## Summary\n\nsoupsieve compiles CSS selector strings with a set of hand-written regular expressions. The shared `IDENTIFIER` sub-pattern (also embedded in `VALUE`, and therefore in attribute selectors) places two adjacent quantified groups over overlapping character classes: `(?:[classA]|ESC)+(?:[classB]|ESC)*`, where both classes match ordinary identifier characters such as `a`. When a selector contains a long identifier/value run that must ultimately fail to match (e.g. an attribute value with no closing `]`, or an identifier followed by an invalid character), the regex engine backtracks across all O(n) ways to split the run between the `+` group and the `*` group, giving O(n\u00b2) parse time. A single attacker-controlled selector of a few kilobytes stalls the interpreter for many seconds of CPU; tens of kilobytes reach minutes.\n\n## Trust model (Q0)\n\nThe selector string is the input. It reaches this code via `soupsieve.compile()`, `soupsieve.select/iselect/match/filter`, and \u2014 most commonly \u2014 BeautifulSoup's `soup.select(selector)` / `soup.select_one(selector)`, which delegate to soupsieve. This is exploitable in any application that passes a user-controlled CSS selector to BeautifulSoup/soupsieve (scrapers that accept selectors, no-code extraction tools, admin/query UIs). Applications that only use hard-coded selectors are not affected.\n\n## Root cause (exact anchors) \u2014 `src/soupsieve/css_parser.py`\n\n```python\n# lines 122-126\nIDENTIFIER = fr'''\n(?:(?:-?(?:[^\\x00-\\x2f\\x30-\\x40\\x5B-\\x5E\\x60\\x7B-\\x9f]|{CSS_ESCAPES})+|--)\n(?:[^\\x00-\\x2c\\x2e\\x2f\\x3A-\\x40\\x5B-\\x5E\\x60\\x7B-\\x9f]|{CSS_ESCAPES})*)\n'''\n# line 129 \u2014 VALUE embeds IDENTIFIER (so attribute values inherit the pattern)\nVALUE = fr'''(?:\"(?:\\\\(?:.|{NEWLINE})|[^\\\\\"\\r\\n\\f])*?\"|'...'|{IDENTIFIER})'''\n```\n\n- classA `[^\\x00-\\x2f\\x30-\\x40\\x5B-\\x5E\\x60\\x7B-\\x9f]` excludes digits (0x30-0x39); classB `[^\\x00-\\x2c\\x2e\\x2f\\x3A-\\x40\\x5B-\\x5E\\x60\\x7B-\\x9f]` allows digits. The intent is \"first char not a digit, remaining chars may be",
-      "link": "https://github.com/advisories/GHSA-gjv8-xp57-g29c",
-      "published": "2026-09-17T20:32:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-86000"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-81868",
-      "title": "Steeltoe: Header-forwarded client cert lacks proof of private-key possession",
-      "summary": "### Summary\n\nWhen Steeltoe's certificate-based authorization (`UseCertificateAuthorization`) is configured, the default configuration of the middleware relies on the `X-Client-Cert` HTTP header to identify the client certificate, without verifying private-key possession. This header is not stripped by common Cloud Foundry routers (like Gorouter or Envoy) on inbound requests.\n\n### Impact\n\nAn attacker who obtains the public certificate of an application instance in the target organization or space can spoof the `X-Client-Cert` header. This allows the attacker to bypass `SameOrg` and `SameSpace` authorization policies, granting unauthorized access to protected endpoints for the duration of the certificate's validity period.\n\n### Affected configuration\n\n- The application uses `AddOrgAndSpacePolicies()` and `UseCertificateAuthorization()` for inter-service authorization.\n- Inbound requests are not restricted to a known trusted proxy source IP.\n- The application's endpoints are network-accessible to the attacker (e.g., exposed to the internet via a public Cloud Foundry route, or the attacker has access to the internal Cloud Foundry network).\n\n### Mitigations\n\nIf an immediate upgrade to a patched version is not possible:\n\n- Restrict `UseCertificateForwarding` to trusted proxy source IPs using `ForwardedHeadersOptions.KnownProxies` and `KnownNetworks`.\n- Change the forwarding header to `X-Forwarded-Client-Cert` so that Cloud Foundry Gorouter and Envoy header stripping mechanisms apply to inbound untrusted requests.\n- Add a secondary authorization layer (e.g., a shared secret or mutual TLS at the proxy layer) for sensitive endpoints.\n- Ensure the application is not bound to a public route unless explicitly required. Use Cloud Foundry internal routes (e.g., `.apps.internal`) and container-to-container network policies to strictly limit network access to intended internal clients.",
-      "link": "https://github.com/advisories/GHSA-5mq7-rwhj-4fh9",
-      "published": "2026-09-17T20:30:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-81868"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-81516",
-      "title": "Steeltoe.Discovery.Consul: malformed 'secure' metadata aborts service instance lookup (DoS)",
-      "summary": "## Summary\n\nSteeltoe's Consul discovery client parses the `secure` metadata field on each registered service instance using `bool.Parse`, which throws on any value other than `true` or `false`. A single service instance registered with a malformed `secure` value (for example `yes` or `1`) aborts construction of the entire instance list for that service, making the service undiscoverable. When `GetAllInstancesAsync` is used, one malformed instance in any service can abort enumeration across all services.\nThis is the same \"one malformed field aborts the whole batch\" availability class as [CVE-2026-50196](https://github.com/advisories/GHSA-j8ph-6fxj-g533), but affecting the Consul discovery client.\n\n## Impact\n\nAny principal that can register a service in the Consul catalog can trigger a service-discovery outage for all Steeltoe applications resolving that service. The outage affects all instances of the targeted service \u2014 not just the malformed one \u2014 and persists until the offending registration is removed.\n\n## Affected configuration\n\n- Application uses `ConsulDiscoveryClient` (any deployment).\n- The Consul catalog contains at least one service instance with a `secure` metadata value that is not `true` or `false`.\n- Mixed-platform environments where non-.NET clients register services with non-standard metadata values are more likely to encounter this condition.\n\n## Mitigations\n\nIf an immediate upgrade is not possible:\n\n- Audit the Consul catalog for service registrations with non-standard `secure` metadata values.\n- Restrict write access to the Consul service registration API to trusted services.",
-      "link": "https://github.com/advisories/GHSA-67c9-f6v2-qv86",
-      "published": "2026-09-17T20:30:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-81516"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-86049",
-      "title": "Jupyter Server: 5xx request logging leaks token-bearing Referer header values",
-      "summary": "### Summary\n\nWhen a request returns a 500, `jupyter_server/log.py` logs a small JSON block of request headers. \n\nThe Referer header was copied into it as-is, so a token in the Referer URL ended up in the logs in plain text.\n\n### Impact\n\nAnyone who can read the server logs can pick tokens out of these 500 entries. Tokens end up in the Referer during normal token-based login and launch flows.\n\nAffected: all versions before 2.21.0.\n\n### PoC\n\nAny malformed request that returns a 500 works:\n\n```bash\ncurl -i -X POST \\\n  -H 'Content-Type: application/json' \\\n  -H 'Referer: http://127.0.0.1:8899/tree?token=REFERTOKEN' \\\n  --data '{\"name\":123}' \\\n  'http://127.0.0.1:8899/api/kernels?token=VALIDTOKEN'\n```\n\nThe log shows the token twice, once raw and once redacted:\n\n```\n\"Referer\": \"http://127.0.0.1:8899/tree?token=REFERTOKEN\",\n[E ... ServerApp] 500 POST /api/kernels?token=[secret] (...) referer=http://127.0.0.1:8899/tree?token=[secret]\n```\n\n### Patches\n\nFixed in 2.21.0 by 5251352. Header values are now scrubbed before the block is logged. Upgrade to 2.21.0 or later.\n\n### Workarounds\n\nLimit who can read the server logs. If you can, avoid flows that put the token in the URL.",
-      "link": "https://github.com/advisories/GHSA-c3mw-737p-c7g2",
-      "published": "2026-09-17T20:28:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-86049"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-76839",
-      "title": "Grav: UserInterface offsetget/offsetexists allow-listed in Twig sandbox let editor-authored content leak hashed_password and 2FA secrets via offsetGet()",
-      "summary": "## Summary\n\n`system/config/security.yaml`'s Twig sandbox policy allow-lists `offsetget` and\n`offsetexists` for `Grav\\Common\\User\\Interfaces\\UserInterface`. The concrete\n`Grav\\Common\\User\\DataUser\\User` class does not filter which fields `offsetGet()`\nreturns, so any sandboxed template with access to a `User` object can read\n`hashed_password`, `secret` (2FA seed), and `twofa_secret` directly, bypassing the\nredaction Grav's own code applies everywhere else.\n\n## The core evidence, from Grav's own code\n\n`system/src/Grav/Common/User/DataUser/User.php`:\n\n```php\n/**\n * {@inheritdoc}\n * Override to filter out sensitive fields like password hashes\n */\npublic function jsonSerialize(): array\n{\n    $items = parent::jsonSerialize();\n\n    // Security: Remove sensitive fields that should never be exposed to frontend\n    unset($items['hashed_password']);\n    unset($items['secret']);         // 2FA secret\n    unset($items['twofa_secret']);   // Alternative 2FA field name\n\n    return $items;\n}\n\npublic function offsetGet($offset)\n{\n    $value = parent::offsetGet($offset);\n    // only special-cases 'authorized', nothing else -- no redaction\n    return $value;\n}\n```\n\n`system/config/security.yaml`:\n\n```yaml\n- class: 'Grav\\Common\\User\\Interfaces\\UserInterface'\n  methods: 'authorize, authorized, authenticated, username, fullname, email, language, offsetget, offsetexists'\n```\n\nThis is the same vulnerability shape as two already-fixed issues in this file\n(GHSA-j274-39qw-32c9 and GHSA-mc5q-6hpj-rp7j -- both a raw, unfiltered data-access\npath bypassing an intended redaction) recurring on a third class neither fix covered.\n\n## Live, end-to-end verification\n\nBuilt a real `Twig\\Environment` wired with the real `Twig\\Extension\\SandboxExtension`,\npoliced by Grav's own `GravSecurityPolicy` class, constructed directly from values\nparsed out of the actual `system/config/security.yaml` (via\n`Symfony\\Component\\Yaml\\Yaml::parseFile`, not a hand-copied excerpt), rendering real\ntemplate strings against a r",
-      "link": "https://github.com/advisories/GHSA-3jhr-mxmx-38cx",
-      "published": "2026-09-17T20:27:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-76839"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-76846",
-      "title": "Grav: config_denied_paths default list omits `system`, exposing real secrets (e.g. system.cache.redis.password) via the Twig sandbox when config_access is enabled",
-      "summary": "## Summary\n\n`system/config/security.yaml`'s default `twig_sandbox.config_denied_paths` list\n(`plugins`, `streams`, `security`, `backups`, `scheduler`) omits the `system` prefix.\nWhen an operator enables the documented, non-default `twig_content.config_access: true`\nsetting (intended to safely expose low-sensitivity values like `site.title` to\neditor-authored Twig content), any real secret stored under `system.*` , for example\n`system.cache.redis.password` , is also exposed, both via `config.get(...)` and via\n`config.toArray()`, to any user with page-edit permission.\n\nThis is a follow-up gap in the fix for GHSA-j274-39qw-32c9 (config.toArray() secret\nexfiltration): that fix correctly introduced a `SandboxConfig` facade with a denylist,\nbut the shipped default denylist is incomplete.\n\n## Environment used to verify\n\n- Grav commit at HEAD of the default branch, `GRAV_VERSION` `2.0.15`\n- PHP 8.3.6 with curl, zip, dom, gd extensions installed\n- Full `composer install --no-dev` run against the real repository (no mocked\n  dependencies) so the actual `Grav\\Common\\Config\\Config` and\n  `Grav\\Common\\Twig\\Sandbox\\SandboxConfig` classes could be exercised directly\n\n## Commands run to set up the verification environment\n\n```bash\ngit clone https://github.com/getgrav/grav.git\ncd grav\n\n# install missing PHP extensions required by composer.json\napt-get install -y php8.3-curl php8.3-zip php8.3-xml php8.3-gd\n\n# composer.phar fetched directly from GitHub releases\ncurl -sL -o /tmp/composer.phar \\\n  \"https://github.com/composer/composer/releases/latest/download/composer.phar\"\n\nCOMPOSER_ALLOW_SUPERUSER=1 php /tmp/composer.phar install --no-dev --no-interaction\n```\n\n## Proof of Concept\n\nConfirmed the real, currently-shipped config field first, rather than assuming one:\n\n```bash\ngrep -n \"redis\" -A3 system/config/system.yaml\n#   redis:\n#     socket: false\n#     password:                # <- system.cache.redis.password, a real field\n#     database:\n\ngrep -n \"cache.redis.password\" -A6 system/bl",
-      "link": "https://github.com/advisories/GHSA-xjw5-q542-3vmr",
-      "published": "2026-09-17T20:27:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-76846"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72698",
-      "title": "Grav: The system, site, and theme Twig variables bypass the content sandbox entirely and are never covered by config_denied_paths",
-      "summary": "## Summary\n\n`Grav\\Common\\Twig\\Twig::init()` unconditionally puts the raw `system`, `site`, and `theme` config arrays into `$this->twig_vars`. `Twig::processPage()` builds the variables for the sandboxed, editor-authored page-content render by copying that same base array (`$sandbox_vars = $twig_vars;`) and replacing only the `config` key with a filtered `SandboxConfig` facade. The `system`, `site`, and `theme` keys are carried into the sandboxed render completely untouched.\n\nBecause these are plain PHP arrays, not objects, Twig's sandbox `SecurityPolicy` (the `allowed_classes`/`allowed_methods`/`allowed_properties` lists in `system/config/security.yaml`) has no jurisdiction over them at all. The sandbox only gates method calls and property access on objects. Dot notation or subscript access on an array is always allowed by Twig regardless of any sandbox policy. So `{{ system.cache.redis.password }}` in page content renders the value directly, with the sandbox doing nothing to stop it, and with `security.twig_sandbox.config_denied_paths` never even being consulted, since that list only filters the separate `config` facade object, not the `system` array.\n\nThis means: even on a default install where `twig_content.config_access` is `false` (its documented default) so the `config` Twig variable is empty inside sandboxed renders, an attacker with page-content edit access (or a stored-XSS-style Twig injection into page content, if `twig_content.process_enabled` is on) can still read `system.*`, `site.*`, and `theme.*` in full, including any admin-configured secret nested under those trees.\n\n## Affected product and version\n\nProduct: Grav CMS, getgrav/grav\nConfirmed present in: 2.0.15, commit c2b46866857a93a0aa7048e7ed707ed3ed45dbc3\n\n## Affected code\n\n`system/src/Grav/Common/Twig/Twig.php`, in `init()`, the base variable set (around line 300):\n```php\n$this->twig_vars += [\n        'config'            => $config,\n        'system'            => $config->get('system'),\n        '",
-      "link": "https://github.com/advisories/GHSA-p597-crqc-m349",
-      "published": "2026-09-17T20:25:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72698"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72701",
-      "title": "Grav: Non constant time nonce comparison in Utils::verifyNonce() used for CSRF protection",
-      "summary": "## Summary\n\n`Grav\\Common\\Utils::verifyNonce()`, the core function Grav and its plugins use to validate CSRF nonces, compares the submitted nonce to the expected value with PHP's `===` operator instead of `hash_equals()`. `===` on strings short circuits at the first differing byte, so the comparison time leaks how many leading bytes of a guess are correct. This is CWE-208, Observable Timing Discrepancy.\n\nThe codebase already knows to avoid this pattern. `hash_equals()` is used for the equivalent purpose in four other places I found: `system/src/Grav/Common/Session.php`, `system/src/Grav/Framework/Cache/Adapter/FileCache.php`, `system/src/Grav/Common/Scheduler/Scheduler.php` (the webhook token check), and `system/src/Grav/Common/Scheduler/JobQueue.php`. `Utils::verifyNonce()` is the one place I found that still uses a plain equality check for a secret comparison.\n\n## Affected product and version\n\nProduct: Grav CMS, getgrav/grav\nConfirmed present in: 2.0.15, commit c2b46866857a93a0aa7048e7ed707ed3ed45dbc3\n\n## Affected code\n\n`system/src/Grav/Common/Utils.php`, lines 1512 to 1521:\n```php\npublic static function verifyNonce($nonce, $action)\n{\n    //Safety check for multiple nonces\n    if (is_array($nonce)) {\n        $nonce = array_shift($nonce);\n    }\n\n    //Nonce generated 0-12 hours ago\n    if ($nonce === self::getNonce($action)) {\n        return true;\n    }\n\n    //Nonce generated 12-24 hours ago\n    return $nonce === self::getNonce($action, true);\n}\n```\n\nThe nonce itself is `md5($tick . '|' . $action . '|' . $username . '|' . session_id() . '|' . Security::getNonceKey())`, computed in the private `generateNonceString()` a few lines above. `Security::getNonceKey()` is an installation level secret. So the value being compared with `===` is a value derived from a secret, which is exactly the case `hash_equals()` exists for.\n\n## Proof of concept, verified, real output\n\nI could not exploit this end to end over a real network from this sandbox, since that requires a live depl",
-      "link": "https://github.com/advisories/GHSA-38p6-h87p-r4cg",
-      "published": "2026-09-17T20:25:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72701"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-45140",
-      "title": "Chamilo LMS CStudio upload flow allows unauthenticated remote code execution",
-      "summary": "### Impact\nAbility to run arbitrary code on the server without authentication.",
-      "link": "https://github.com/advisories/GHSA-g4c3-4g96-6g4m",
-      "published": "2026-09-17T20:23:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-45140"
       ],
       "is_zero_day": false,
       "is_high_severity": true
