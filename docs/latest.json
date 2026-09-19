@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-19T01:58:37.474366+00:00",
-  "total": 26,
+  "generated": "2026-09-19T09:50:54.830587+00:00",
+  "total": 27,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,40 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html",
+      "title": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild",
+      "summary": "A critical vulnerability impacting Orkes Conductor is being actively exploited in the wild, according to Fortinet.\n\nThe vulnerability in question is CVE-2026-58138 (CVSS v3.1 score: 9.8/CVSS v4 score: 9.3), which relates to a case of unauthenticated remote code execution.\n\n\"Orkes Conductor 3.21.21 before 3.30.2 contains an unauthenticated remote code execution vulnerability that allows remote",
+      "link": "https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html",
+      "published": "2026-09-19T08:18:54+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-58138"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
+      "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2025-39682 (CVSS score: 9.8) - An improper check for unusual or exceptional conditions vulnerability in the TLS receive path",
+      "link": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
+      "published": "2026-09-19T06:24:10+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2025-39682"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -414,23 +448,6 @@
       ],
       "cve_ids": [
         "CVE-2026-85889"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/critical-orkes-conductor-vulnerability-exploited-in-attacks/",
-      "title": "Critical Orkes Conductor Vulnerability Exploited in Attacks",
-      "summary": "CVE-2026-58138 is an unauthenticated remote code execution vulnerability that attackers can exploit via inline workflow definitions. The post Critical Orkes Conductor Vulnerability Exploited in Attacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/critical-orkes-conductor-vulnerability-exploited-in-attacks/",
-      "published": "2026-09-18T08:42:18+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-58138"
       ],
       "is_zero_day": false,
       "is_high_severity": true

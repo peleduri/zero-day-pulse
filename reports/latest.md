@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-19 01:58 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-19 09:50 UTC &nbsp;|&nbsp; **Total:** 27 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,34 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Convoy: Cross-Tenant Source IDOR Leaks Plaintext Message Broker Credentials
+## 3. 🟠 Zero-Day — Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild
+
+**CVE:** `CVE-2026-58138` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-19
+**Reference:** <https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html>
+
+> A critical vulnerability impacting Orkes Conductor is being actively exploited in the wild, according to Fortinet.
+
+The vulnerability in question is CVE-2026-58138 (CVSS v3.1 score: 9.8/CVSS v4 score: 9.3), which relates to a case of unauthenticated remote code execution.
+
+&quot;Orkes Conductor 3.21.21 before 3.30.2 contains an unauthenticated remote code execution vulnerability that allows remote
+
+---
+
+## 4. 🟠 Zero-Day — CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild
+
+**CVE:** `CVE-2025-39682` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-19
+**Reference:** <https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2025-39682 (CVSS score: 9.8) - An improper check for unusual or exceptional conditions vulnerability in the TLS receive path
+
+---
+
+## 5. 🟠 Zero-Day — Convoy: Cross-Tenant Source IDOR Leaks Plaintext Message Broker Credentials
 
 **CVE:** `CVE-2026-81505` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-p5vg-v7mj-f6q4>
@@ -35,7 +62,7 @@ includes the Source…
 
 ---
 
-## 4. 🟠 Zero-Day — ToolHive: containerized MCP servers can reach host services via host.docker.internal, enabling lateral movement
+## 6. 🟠 Zero-Day — ToolHive: containerized MCP servers can reach host services via host.docker.internal, enabling lateral movement
 
 **CVE:** `CVE-2026-58197` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-qg2g-g9w3-m5h8>
@@ -46,7 +73,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 5. 🟠 Zero-Day — A Vault with a Heap-View: The Uncomfortable Space Between AgentCore Harness and Identity
+## 7. 🟠 Zero-Day — A Vault with a Heap-View: The Uncomfortable Space Between AgentCore Harness and Identity
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/>
@@ -55,7 +82,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -64,7 +91,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -73,7 +100,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -82,7 +109,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -91,7 +118,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -100,7 +127,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -109,7 +136,7 @@ A containerized MCP server running with the default `network` permission profile
 
 ---
 
-## 12. 🟡 High Severity — Mnemosyne has JWT signature verification bypass sync server that allows authentication bypass
+## 14. 🟡 High Severity — Mnemosyne has JWT signature verification bypass sync server that allows authentication bypass
 
 **CVE:** `CVE-2026-59163` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-xcw4-53cc-hv32>
@@ -126,7 +153,7 @@ Assumes the sync server endpoint is network-rea…
 
 ---
 
-## 13. 🟡 High Severity — Perses's missing authorization in datasource proxy allows cross-scope secret disclosure
+## 15. 🟡 High Severity — Perses's missing authorization in datasource proxy allows cross-scope secret disclosure
 
 **CVE:** `CVE-2026-63199` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-4227-9989-jrhx>
@@ -139,7 +166,7 @@ Datasource and Secret are distinct, independently grantable role scopes, so an o
 
 ---
 
-## 14. 🟡 High Severity — Perses's project query parameter authorization bypass exposes cross-project resources
+## 16. 🟡 High Severity — Perses's project query parameter authorization bypass exposes cross-project resources
 
 **CVE:** `CVE-2026-63458` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-cjgj-2fwf-4c2w>
@@ -151,7 +178,7 @@ An authenticated user who is only a viewer on project team-a requests GET /api/v
 
 ---
 
-## 15. 🟡 High Severity — Process Compose: Browser DNS rebinding lets websites control local process-compose MCP tools
+## 17. 🟡 High Severity — Process Compose: Browser DNS rebinding lets websites control local process-compose MCP tools
 
 **CVE:** `CVE-2026-77339` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-5gm3-9crp-6g3v>
@@ -164,7 +191,7 @@ This advisory covers `https://github.com/F1bonacc1/process-compose`…
 
 ---
 
-## 16. 🟡 High Severity — AnyCable: Telemetry Subsystem Contains Hardcoded Authentication Token and Transmits CLI Arguments Including Secrets
+## 18. 🟡 High Severity — AnyCable: Telemetry Subsystem Contains Hardcoded Authentication Token and Transmits CLI Arguments Including Secrets
 
 **CVE:** `CVE-2026-63406` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-w72w-9qmj-c9qm>
@@ -177,7 +204,7 @@ In `telemetry/config.go` line 12, `var authToken = &quot;secret&quot;` is commit
 
 ---
 
-## 17. 🟡 High Severity — AnyCable: Pusher REST API Does Not Verify Request Body MD5 Enabling Signed-Request Replay with Arbitrary Body
+## 19. 🟡 High Severity — AnyCable: Pusher REST API Does Not Verify Request Body MD5 Enabling Signed-Request Replay with Arbitrary Body
 
 **CVE:** `CVE-2026-63405` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-5p54-whvp-x327>
@@ -190,7 +217,7 @@ In `pusher/http.go`, the `Handler` function extracts `body_md5` from the URL que
 
 ---
 
-## 18. 🟡 High Severity — kcp front-proxy does not strip inbound X-Remote-* identity headers, allowing any authenticated client to inject groups/warrants and impersonate system:masters in any workspace
+## 20. 🟡 High Severity — kcp front-proxy does not strip inbound X-Remote-* identity headers, allowing any authenticated client to inject groups/warrants and impersonate system:masters in any workspace
 
 **CVE:** `CVE-2026-61682` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-c8w2-fgvx-vhv4>
@@ -201,7 +228,7 @@ The kcp front-proxy fails to strip client-supplied identity headers before forwa
 
 ---
 
-## 19. 🟡 High Severity — Capsule: Tenant owner bypasses Capsule's forbidden namespace/service/node label and annotation enforcement
+## 21. 🟡 High Severity — Capsule: Tenant owner bypasses Capsule's forbidden namespace/service/node label and annotation enforcement
 
 **CVE:** `CVE-2026-61672` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-gjw4-3v3v-rqxg>
@@ -212,7 +239,7 @@ Capsule lets a cluster administrator forbid specific metadata keys that tenant o
 
 ---
 
-## 20. 🟡 High Severity — LMDeploy has Remote Code Execution by Pickle Deserialization via handle_zmq_recv in lmdeploy/lmdeploy/pytorch/disagg/conn/engine_conn.py
+## 22. 🟡 High Severity — LMDeploy has Remote Code Execution by Pickle Deserialization via handle_zmq_recv in lmdeploy/lmdeploy/pytorch/disagg/conn/engine_conn.py
 
 **CVE:** `CVE-2025-66455` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-2vh9-42vm-xmv2>
@@ -230,7 +257,7 @@ The peer address used by the receiver was supplied through the
 
 ---
 
-## 21. 🟡 High Severity — Semantic MediaWiki affected by reflected XSS in `Special:Ask` via a forged cursor pagination token
+## 23. 🟡 High Severity — Semantic MediaWiki affected by reflected XSS in `Special:Ask` via a forged cursor pagination token
 
 **CVE:** `CVE-2026-77616` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-cx86-7xwp-w9wf>
@@ -243,7 +270,7 @@ The peer address used by the receiver was supplied through the
 
 ---
 
-## 22. 🟡 High Severity — org.xwiki.rendering:xwiki-rendering-xml has an Eval Injection issue
+## 24. 🟡 High Severity — org.xwiki.rendering:xwiki-rendering-xml has an Eval Injection issue
 
 **CVE:** `CVE-2025-53837` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-26vp-8gxg-v4pg>
@@ -253,7 +280,7 @@ Any user who can edit their own user profile or any other document can execute a
 
 ---
 
-## 23. 🟡 High Severity — Opencast: Stored XSS in Paella player via WebVTT/DFXP caption cue text
+## 25. 🟡 High Severity — Opencast: Stored XSS in Paella player via WebVTT/DFXP caption cue text
 
 **CVE:** `CVE-2026-77615` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://github.com/advisories/GHSA-m6c8-jcw2-5r25>
@@ -266,7 +293,7 @@ The caption track is read from any media package element with a `captions/*…
 
 ---
 
-## 24. 🟡 High Severity — Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation
+## 26. 🟡 High Severity — Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation
 
 **CVE:** `CVE-2026-85889` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-18
 **Reference:** <https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html>
@@ -279,16 +306,7 @@ The vulnerability, tracked as CVE-2026-85889, carries a CVSS score of 10.0.
 
 ---
 
-## 25. 🟡 High Severity — Critical Orkes Conductor Vulnerability Exploited in Attacks
-
-**CVE:** `CVE-2026-58138` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-18
-**Reference:** <https://www.securityweek.com/critical-orkes-conductor-vulnerability-exploited-in-attacks/>
-
-> CVE-2026-58138 is an unauthenticated remote code execution vulnerability that attackers can exploit via inline workflow definitions. The post Critical Orkes Conductor Vulnerability Exploited in Attacks appeared first on SecurityWeek .
-
----
-
-## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 27. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
