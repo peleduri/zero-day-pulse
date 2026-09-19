@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-19T09:50:54.830587+00:00",
-  "total": 27,
+  "generated": "2026-09-19T14:57:12.030989+00:00",
+  "total": 26,
   "kev": 0,
   "zero_day": 13,
   "enriched": 0,
@@ -107,22 +107,6 @@
       "is_high_severity": true
     },
     {
-      "id": "https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/",
-      "title": "A Vault with a Heap-View: The Uncomfortable Space Between AgentCore Harness and Identity",
-      "summary": "Analysis of how default configurations in AWS AgentCore Harness allow prompt injection to exfiltrate credentials, and key steps to secure your agents. The post A Vault with a Heap-View: The Uncomfortable Space Between AgentCore Harness and Identity appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/",
-      "published": "2026-09-18T10:00:36+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
       "title": "AI threats in the wild: The current state of prompt injections on the web",
       "summary": "Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise AI agents. But while the danger of IPI is widely discussed, are threat actors actually exploiting this vector today \u2013 and if so, how? To answer these questions and to uncover real-world abuse, we initiated a broad sweep of the public web to monitor for known indirect prompt injection patterns. This is what we found. The threat of indirect prompt injection Unlike a direct injection where a user \"jailbreaks\" a chatbot, IPI occurs when an AI system processes content\u2014like a website, email, or document\u2014that contains malicious instructions. When the AI reads this poisoned content, it may silently follow the attacker's commands instead of the user's original intent. This is not a new area of concern for us and Google has been working tirelessly to combat these threats. Our efforts involve cross-functional collaboration between researchers at Google DeepMind (GDM) and defenders like the Google Threat Intelligence Group (GTIG). We have previously detailed our work in this area and researchers have further highlighted the evolving nature of these vulnerabilities. Despite this collective focus, a fundamental question remains: to what degree are real-world malicious actors currently operationalizing these attacks? Proactive monitoring at Google The landscape of IPI on the web There are many channels through which attackers might try to send prompt injections. However, one location is particularly easy to observe - the public web. Here, threat actors may simply seed prompt injections on websites in hope of corrupting AI systems that browse them. Public research confirms these attacks ar",
@@ -218,6 +202,38 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/",
+      "title": "BragJack attacks hijack AI browser agents through malicious extensions",
+      "summary": "BragJack, a proof-of-concept attack from Forever Security's Gal Weizman, hijacks the AI assistants in Chrome, Edge, Opera Neon, Perplexity Comet, and Claude in Chrome using one malicious extension. The Prompt Forcing technique earned over $20,000 in bounties and two CVEs. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/bragjack-attacks-hijack-ai-browser-agents-through-malicious-extensions/",
+      "published": "2026-09-19T14:56:31+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
+      "title": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
+      "summary": "SolarWinds has released security updates to address a high-severity flaw in Access Rights Manager (ARM) that, if successfully exploited, could lead to an unauthenticated remote code execution vulnerability.\n\nThe vulnerability, tracked as CVE-2026-28326, is rated 8.8 out of 10.0 on the CVSS scoring system. The issue affects all versions of Access Rights Manager 2026.2 and prior.\n\n\"SolarWinds",
+      "link": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
+      "published": "2026-09-19T09:31:17+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-28326"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-59163",
@@ -413,41 +429,6 @@
       ],
       "cve_ids": [
         "CVE-2025-53837"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77615",
-      "title": "Opencast: Stored XSS in Paella player via WebVTT/DFXP caption cue text",
-      "summary": "## Summary\n\nThe Opencast Paella player renders caption cue text into `innerHTML` without escaping. The captions canvas clears `_captionsContainer.innerHTML` and then appends each active cue with `_captionsContainer.innerHTML += cue`, so HTML inside a WebVTT or DFXP cue becomes live DOM and executes in the Opencast origin.\n\nThe caption track is read from any media package element with a `captions/*` flavor and is served, with the player manifest, to anonymous viewers through `/search/episode.json`. The caption plugins that consume it are enabled in the default player configuration, the \"Subtitles\" upload that produces a `captions/source` track is active by default, and no caption processing step escapes the cue text.\n\nA user who can upload a subtitle to an event and publish it stores the payload in the published caption file. Any viewer who opens the event and turns captions on runs the script.\n\nResult: a non-admin content author stores JavaScript in a subtitle cue that executes in the browser session of every viewer who enables captions on that event, including anonymous viewers and authenticated staff.\n\n## Affected\n\nopencast/opencast, `engage-paella-player` module. Supported release lines 19.x and 20.x are affected (and 18.x). Live-confirmed on 18.8 (Paella 7, paella-core 1.50.2) and 20.0 (Paella 8, paella-core 1.50.4); 19.5 ships the code-identical caption path (paella-core 1.50.4, same `EpisodeConversor` and default plugin config as 20.0). The captions canvas uses the same `innerHTML += cue` sink across these versions.\nDefault configuration: the WebVTT and DFXP caption plugins are `enabled: true` in `etc/ui-config/mh_default_org/paella7/config.json`, the \"Subtitles\" upload option (`captions/source`, `.vtt`) is active in `etc/listproviders/event.upload.asset.options.properties`, and the `fast` workflow publishes `captions/*` to the engage player.\nCondition: an event with a caption track published to the engage player. No non-default flag required.\n\n## Root cause\n\n",
-      "link": "https://github.com/advisories/GHSA-m6c8-jcw2-5r25",
-      "published": "2026-09-18T13:11:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77615"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html",
-      "title": "Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation",
-      "summary": "Microsoft has released fixes for a maximum-severity security flaw in Azure AI Foundry that could be exploited to achieve privilege escalation. No customer action is required.\n\nThe vulnerability, tracked as CVE-2026-85889, carries a CVSS score of 10.0.\n\n\"Missing authentication for critical function in Azure AI Foundry allows an unauthorized attacker to elevate privileges over a network,\"",
-      "link": "https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html",
-      "published": "2026-09-18T12:47:04+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-85889"
       ],
       "is_zero_day": false,
       "is_high_severity": true
