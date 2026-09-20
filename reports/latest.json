@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-20T02:01:35.305734+00:00",
-  "total": 13,
+  "generated": "2026-09-20T10:13:11.206554+00:00",
+  "total": 10,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -33,40 +33,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html",
-      "title": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild",
-      "summary": "A critical vulnerability impacting Orkes Conductor is being actively exploited in the wild, according to Fortinet.\n\nThe vulnerability in question is CVE-2026-58138 (CVSS v3.1 score: 9.8/CVSS v4 score: 9.3), which relates to a case of unauthenticated remote code execution.\n\n\"Orkes Conductor 3.21.21 before 3.30.2 contains an unauthenticated remote code execution vulnerability that allows remote",
-      "link": "https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html",
-      "published": "2026-09-19T08:18:54+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-58138"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
-      "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2025-39682 (CVSS score: 9.8) - An improper check for unusual or exceptional conditions vulnerability in the TLS receive path",
-      "link": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
-      "published": "2026-09-19T06:24:10+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2025-39682"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -181,23 +147,6 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
-      "title": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
-      "summary": "SolarWinds has released security updates to address a high-severity flaw in Access Rights Manager (ARM) that, if successfully exploited, could lead to an unauthenticated remote code execution vulnerability.\n\nThe vulnerability, tracked as CVE-2026-28326, is rated 8.8 out of 10.0 on the CVSS scoring system. The issue affects all versions of Access Rights Manager 2026.2 and prior.\n\n\"SolarWinds",
-      "link": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
-      "published": "2026-09-19T09:31:17+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-28326"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
