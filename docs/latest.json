@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-21T11:16:41.084606+00:00",
-  "total": 9,
+  "generated": "2026-09-21T17:18:18.078242+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 8,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,37 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://aws.amazon.com/blogs/security/transforming-bedrock-guardrails-events-into-ocsf-with-cloudwatch/",
+      "title": "Transforming Bedrock Guardrails events into OCSF with CloudWatch",
+      "summary": "Security teams investigating possible AI-related security events need guardrail intervention data alongside their existing security telemetry. When a guardrail identifies or blocks a prompt injection attempt or redacts sensitive data, that intervention carries additional investigative value comparable to a failed sign-in or a network intrusion alert. AWS Bedrock publishes this telemetry to AWS CloudWatch metrics [\u2026]",
+      "link": "https://aws.amazon.com/blogs/security/transforming-bedrock-guardrails-events-into-ocsf-with-cloudwatch/",
+      "published": "2026-09-21T15:33:25+00:00",
+      "source": "AWS Security Blog",
+      "tags": [
+        "cloud",
+        "aws",
+        "blog"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html",
+      "title": "\u26a1 Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks",
+      "summary": "A browser. A plugin. A package. A login screen. Normal stuff. That is basically the problem this week.\n\nThe trouble keeps showing up inside things people already trust: code that takes a bad turn, old payloads coming back, exposed systems, weak checks, fake fixes, and attack paths that look almost too easy. Even the research side is getting messy, with more findings, more automation, and not",
+      "link": "https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html",
+      "published": "2026-09-21T14:24:13+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -132,6 +163,24 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://projectzero.google/2026/09/windows-dangling-com",
+      "title": "Windows Exploitation Techniques: Dangling COM Object Registrations",
+      "summary": "This short blog post is about abusing a privilege escalation bug that Microsoft recently fixed in Windows, CVE-2026-66804 , that I and 14 others reported. This issue is an incomplete fix for CVE-2026-50343, a bug dubbed \u201cDark Elevator\u201d by Calif . The root cause of the bug was a dangling COM object registration for the CrossDevice COM object with the CLSID {E9F83CF2-E0C0-4CA7-AF01-E90C70BEF496} . A COM registration typically needs two parts: a server executable, which for in-process components is a DLL and a CLSID entry under the HKEY_CLASSES_ROOT registry key which points to that DLL. This object was registered in the system wide classes key, meaning it was accessible to all users on the system, including system services. However the server executable was missing. Specifically it was registered to use the DLL %PROGRAMDATA%\\CrossDevice\\CrossDevice.Streaming.Source.dll . Not only does this path not exist, it\u2019s also within the C:\\ProgramData directory. This is a common location for all users on the system and therefore permits anyone to create directories. Therefore you can create an arbitrary DLL file at that location and the COM object can be instantiated potentially leading to privilege escalation. But how to get the COM object, and thus the DLL, loaded into a privileged process? The fixed bug Calif blogged about, CVE-2026-50343, abused a weak registry key permissions to add the class as a installer plugin and then get the InstallService to load it into memory. The issue with the InstallService was fixed, so we need an alternative way to abuse the unfixed dangling COM reference. Abuse Custom COM Marshaling, Again A technique I\u2019ve used multiple times in the past to load an arbitrary DLL into a privileged process is to abuse custom COM marshaling. When you call an interface method which is implemented out-of-process, the COM runtime will marshal the parameters into an RPC call to send to the server. If a parameter is a COM object then the runtime marshals that object ",
+      "link": "https://projectzero.google/2026/09/windows-dangling-com.html",
+      "published": "2026-09-21T07:00:00+00:00",
+      "source": "Google Project Zero",
+      "tags": [
+        "research",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-66804",
+        "CVE-2026-50343"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
