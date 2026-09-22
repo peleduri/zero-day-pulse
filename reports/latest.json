@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-22T10:28:12.442944+00:00",
-  "total": 14,
+  "generated": "2026-09-22T15:52:29.467565+00:00",
+  "total": 17,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -37,33 +37,38 @@
       "is_high_severity": true
     },
     {
-      "id": "https://aws.amazon.com/blogs/security/transforming-bedrock-guardrails-events-into-ocsf-with-cloudwatch/",
-      "title": "Transforming Bedrock Guardrails events into OCSF with CloudWatch",
-      "summary": "Security teams investigating possible AI-related security events need guardrail intervention data alongside their existing security telemetry. When a guardrail identifies or blocks a prompt injection attempt or redacts sensitive data, that intervention carries additional investigative value comparable to a failed sign-in or a network intrusion alert. AWS Bedrock publishes this telemetry to AWS CloudWatch metrics [\u2026]",
-      "link": "https://aws.amazon.com/blogs/security/transforming-bedrock-guardrails-events-into-ocsf-with-cloudwatch/",
-      "published": "2026-09-21T15:33:25+00:00",
-      "source": "AWS Security Blog",
+      "id": "CVE-2026-61612",
+      "title": "@aborruso/ckan-mcp-server has SSRF via DNS-name \u2192 internal IP \u2014 incomplete fix of CVE-2026-53509",
+      "summary": "## Summary\nThe SSRF guard `validateServerUrl` (added for CVE-2026-33060, extended for CVE-2026-53509) validates only the **hostname string** and never resolves DNS. Any caller-supplied `server_url` whose hostname *resolves* to an internal address passes the guard, so the server issues requests to **loopback and cloud metadata (`169.254.169.254`)**. This is a third bypass of the same guard, still present in the current latest **0.4.107**, and it reaches IMDS \u2014 strictly more than CVE-2026-53509, which only reached loopback.\n\n## Affected / patched\n- `@aborruso/ckan-mcp-server` (npm) \u2014 all versions with the guard, through **0.4.107** (current `latest`). The guard has never resolved DNS. No patch yet.\n\n## Severity\nIt is effectively **High** for the self-hosted **unauthenticated HTTP transport** (`TRANSPORT=http`, `POST /mcp`), where any remote client reaches IMDS/internal hosts directly. The official Cloudflare Worker endpoint is CF-sandboxed (cannot reach loopback/RFC-1918/IMDS).\n\n## Root cause \u2014 `src/utils/http.ts`, `validateServerUrl`\nThe guard blocks IP **literals** and three loopback alias strings, but does no name resolution:\n```ts\nconst hostname = parsed.hostname.toLowerCase();\nif (new Set(['localhost','ip6-localhost','ip6-loopback']).has(hostname)) throw;   // string denylist\nif (hostname.match(/^(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)$/)) { /* block private/special IPv4 LITERALS */ }\n// no DNS resolution \u2192 a hostname that RESOLVES to 127.0.0.1 / 169.254.169.254 / 10.x is allowed\n```\nBoth prior fixes only added literal strings to the denylist (CVE-2026-33060 added the guard; CVE-2026-53509 added `ip6-localhost`/`ip6-loopback`). The DNS-resolution gap \u2014 the actual root cause \u2014 remains. `server_url` is a caller-controlled argument (`z.string().url()`) on every tool, reaching `makeCkanRequest` (all CKAN tools) and `querySparqlEndpoint` (`sparql_query`). The sink is **non-blind**: a non-CKAN response is returned to the caller verbatim via `CKAN API returned success=false: <body>`",
+      "link": "https://github.com/advisories/GHSA-798p-78g2-v556",
+      "published": "2026-09-22T14:51:20Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "cloud",
-        "aws",
-        "blog"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-61612"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html",
-      "title": "\u26a1 Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks",
-      "summary": "A browser. A plugin. A package. A login screen. Normal stuff. That is basically the problem this week.\n\nThe trouble keeps showing up inside things people already trust: code that takes a bad turn, old payloads coming back, exposed systems, weak checks, fake fixes, and attack paths that look almost too easy. Even the research side is getting messy, with more findings, more automation, and not",
-      "link": "https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html",
-      "published": "2026-09-21T14:24:13+00:00",
-      "source": "The Hacker News Security",
+      "id": "CVE-2026-61647",
+      "title": "@roomi-fields/notebooklm-mcp has a path traversal in vault.batch tool that allows arbitrary file write outside intended vault directory",
+      "summary": "## Summary\n\nThe `vault_batch` MCP tool (and the equivalent `POST /batch-to-vault` HTTP endpoint) accepted a caller-supplied `vault_dir` path that was passed directly to `path.resolve()` + `fs.mkdir()` with no containment check. A caller \u2014 or a prompt-injected LLM driving the MCP \u2014 could therefore create directories and write `.md` / `.json` answer files anywhere the server process can write.\n\nThe `slug_prefix` parameter had a parallel, smaller traversal vector: it was concatenated into the filename without sanitization, so a prefix containing `/` or `..` could escape the resolved vault directory through the filename component.\n\n## Impact\n\nFile write (markdown + JSON sidecars) to any location writable by the server process. The written files are inert content (no code execution by themselves), but in a multi-user context \u2014 or when the MCP server is driven by an LLM that has read untrusted content (prompt injection) \u2014 this allows an attacker to plant files in sensitive locations (autostart folders, shell startup files, etc.) for downstream exploitation.\n\nThe vulnerability exists from **v1.6.0** (when the HTTP `/batch-to-vault` endpoint was introduced) and v1.7.0 (when the same logic was exposed as the `batch_to_vault` MCP tool) through **v2.0.2**.\n\n## Patch\n\nFixed in **v2.0.3**:\n\n- **Opt-in containment via `NOTEBOOKLM_VAULT_ROOT` env var.** When set, `vault_dir` is resolved relative to that root and `realpath`-based containment is enforced. Absolute paths or `..` segments outside the root are rejected with a clear error.\n- **`slug_prefix` is always sanitized.** Path separators (`/`, `\\`), `..` sequences and NUL bytes are stripped, length capped at 64 characters. This applies regardless of whether `NOTEBOOKLM_VAULT_ROOT` is set.\n- 15 unit tests in `src/__tests__/vault-writer.test.ts` cover the escape vectors (absolute paths, sibling-prefix attacks, `..` traversal, NUL/separator stripping).\n\n## Workarounds for users who cannot upgrade\n\n- Run the MCP server under a dedic",
+      "link": "https://github.com/advisories/GHSA-jjhp-8crj-mppq",
+      "published": "2026-09-22T14:43:26Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "zeroday"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-61647"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -165,6 +170,40 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/",
+      "title": "D-Link warns of max severity zero-day bug in DIR-822A routers",
+      "summary": "D-Link warned customers of a maximum-severity vulnerability (CVE-2026-86296) with public proof-of-concept (PoC) exploit code and no patch, affecting legacy DIR-822A dual-band Wi-Fi routers. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/",
+      "published": "2026-09-22T12:48:06+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-86296"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html",
+      "title": "New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups",
+      "summary": "Attackers are exploiting a new flaw in on-premises VeloCloud Orchestrator (VCO), the server that manages the Edge devices in a VeloCloud SD-WAN, Arista said on September 22.\n\nThe flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login access to privilege internal functions and affect the VCO host. Only orchestrators set up to authenticate their Edges with certificates are",
+      "link": "https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html",
+      "published": "2026-09-22T12:29:00+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-93952"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
       "title": "New Windows Defender zero-day blocks Microsoft antivirus updates",
       "summary": "Over the weekend, security researcher Abdelhamid Naceri (also known as\u00a0Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]",
@@ -178,6 +217,23 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html",
+      "title": "SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE",
+      "summary": "A SharePoint Server vulnerability that Microsoft initially classified as a spoofing flaw with a CVSS score of 6.5 actually enables authenticated remote code execution, according to\u00a0full technical details\u00a0published today by Viettel Cyber Security researcher Dinh Ho Anh Khoa.\n\nThe flaw, CVE-2026-65660, affects SharePoint Server 2016, 2019, and Subscription Edition. Patches have been",
+      "link": "https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html",
+      "published": "2026-09-22T11:17:41+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-65660"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html",

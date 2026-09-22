@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-22 10:28 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-22 15:52 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,23 +20,26 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Transforming Bedrock Guardrails events into OCSF with CloudWatch
+## 3. 🟠 Zero-Day — @aborruso/ckan-mcp-server has SSRF via DNS-name → internal IP — incomplete fix of CVE-2026-53509
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-09-21
-**Reference:** <https://aws.amazon.com/blogs/security/transforming-bedrock-guardrails-events-into-ocsf-with-cloudwatch/>
+**CVE:** `CVE-2026-61612` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
+**Reference:** <https://github.com/advisories/GHSA-798p-78g2-v556>
 
-> Security teams investigating possible AI-related security events need guardrail intervention data alongside their existing security telemetry. When a guardrail identifies or blocks a prompt injection attempt or redacts sensitive data, that intervention carries additional investigative value comparable to a failed sign-in or a network intrusion alert. AWS Bedrock publishes this telemetry to AWS Clo…
+> ## Summary
+The SSRF guard `validateServerUrl` (added for CVE-2026-33060, extended for CVE-2026-53509) validates only the **hostname string** and never resolves DNS. Any caller-supplied `server_url` whose hostname *resolves* to an internal address passes the guard, so the server issues requests to **loopback and cloud metadata (`169.254.169.254`)**. This is a third bypass of the same guard, still p…
 
 ---
 
-## 4. 🟠 Zero-Day — ⚡ Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks
+## 4. 🟠 Zero-Day — @roomi-fields/notebooklm-mcp has a path traversal in vault.batch tool that allows arbitrary file write outside intended vault directory
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-21
-**Reference:** <https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html>
+**CVE:** `CVE-2026-61647` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
+**Reference:** <https://github.com/advisories/GHSA-jjhp-8crj-mppq>
 
-> A browser. A plugin. A package. A login screen. Normal stuff. That is basically the problem this week.
+> ## Summary
 
-The trouble keeps showing up inside things people already trust: code that takes a bad turn, old payloads coming back, exposed systems, weak checks, fake fixes, and attack paths that look almost too easy. Even the research side is getting messy, with more findings, more automation, and not
+The `vault_batch` MCP tool (and the equivalent `POST /batch-to-vault` HTTP endpoint) accepted a caller-supplied `vault_dir` path that was passed directly to `path.resolve()` + `fs.mkdir()` with no containment check. A caller — or a prompt-injected LLM driving the MCP — could therefore create directories and write `.md` / `.json` answer files anywhere the server process can write.
+
+The …
 
 ---
 
@@ -94,7 +97,27 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 11. 🟠 Zero-Day — New Windows Defender zero-day blocks Microsoft antivirus updates
+## 11. 🟠 Zero-Day — D-Link warns of max severity zero-day bug in DIR-822A routers
+
+**CVE:** `CVE-2026-86296` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-22
+**Reference:** <https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/>
+
+> D-Link warned customers of a maximum-severity vulnerability (CVE-2026-86296) with public proof-of-concept (PoC) exploit code and no patch, affecting legacy DIR-822A dual-band Wi-Fi routers. [...]
+
+---
+
+## 12. 🟠 Zero-Day — New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups
+
+**CVE:** `CVE-2026-93952` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
+**Reference:** <https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html>
+
+> Attackers are exploiting a new flaw in on-premises VeloCloud Orchestrator (VCO), the server that manages the Edge devices in a VeloCloud SD-WAN, Arista said on September 22.
+
+The flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login access to privilege internal functions and affect the VCO host. Only orchestrators set up to authenticate their Edges with certificates are
+
+---
+
+## 13. 🟠 Zero-Day — New Windows Defender zero-day blocks Microsoft antivirus updates
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/>
@@ -103,7 +126,18 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 12. 🟡 High Severity — Zyxel and Veeam Flaws Under Active Exploitation With Command and SYSTEM Access
+## 14. 🟡 High Severity — SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE
+
+**CVE:** `CVE-2026-65660` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
+**Reference:** <https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html>
+
+> A SharePoint Server vulnerability that Microsoft initially classified as a spoofing flaw with a CVSS score of 6.5 actually enables authenticated remote code execution, according to full technical details published today by Viettel Cyber Security researcher Dinh Ho Anh Khoa.
+
+The flaw, CVE-2026-65660, affects SharePoint Server 2016, 2019, and Subscription Edition. Patches have been
+
+---
+
+## 15. 🟡 High Severity — Zyxel and Veeam Flaws Under Active Exploitation With Command and SYSTEM Access
 
 **CVE:** `CVE-2026-7273` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html>
@@ -114,7 +148,7 @@ The vulnerability, tracked as CVE-2026-7273 (CVSS score: 8.8), is a stack-based 
 
 ---
 
-## 13. 🟡 High Severity — nginx ignition has TOTP Reuse During Validity Window
+## 16. 🟡 High Severity — nginx ignition has TOTP Reuse During Validity Window
 
 **CVE:** `CVE-2026-61630` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-21
 **Reference:** <https://github.com/advisories/GHSA-hf33-q6cf-c66f>
@@ -127,7 +161,7 @@ The https://github.com/pquerna/otp package [doesn&#x27;t include](https://github
 
 ---
 
-## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
