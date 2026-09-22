@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-21 21:18 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-22 02:08 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-7273 — Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability
-
-**CVE:** `CVE-2026-7273` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-21
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-7273>
-
-> Vendor: Zyxel | Product: GS1900 Series Switches. Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD …
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,14 +13,14 @@
 
 ---
 
-## 3. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 4. 🟠 Zero-Day — Transforming Bedrock Guardrails events into OCSF with CloudWatch
+## 3. 🟠 Zero-Day — Transforming Bedrock Guardrails events into OCSF with CloudWatch
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-09-21
 **Reference:** <https://aws.amazon.com/blogs/security/transforming-bedrock-guardrails-events-into-ocsf-with-cloudwatch/>
@@ -38,7 +29,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — ⚡ Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks
+## 4. 🟠 Zero-Day — ⚡ Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-21
 **Reference:** <https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html>
@@ -49,7 +40,7 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +49,7 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +58,7 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +67,7 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +76,7 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,12 +85,25 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
 
 > Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …
+
+---
+
+## 11. 🟡 High Severity — nginx ignition has TOTP Reuse During Validity Window
+
+**CVE:** `CVE-2026-61630` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-21
+**Reference:** <https://github.com/advisories/GHSA-hf33-q6cf-c66f>
+
+> ### Summary
+Any user that has enabled the OTP 2FA can have their TOTP reused during the standard 30 second validity window.
+
+### Details
+The https://github.com/pquerna/otp package [doesn&#x27;t include](https://github.com/pquerna/otp/issues/61) checking for already used TOTPs within its the validity window. This requires each application that uses the package to implement their own method of track…
 
 ---
 

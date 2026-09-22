@@ -1,29 +1,10 @@
 {
-  "generated": "2026-09-21T21:18:57.604205+00:00",
+  "generated": "2026-09-22T02:08:51.197418+00:00",
   "total": 13,
-  "kev": 1,
+  "kev": 0,
   "zero_day": 10,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-7273",
-      "title": "CVE-2026-7273 \u2014 Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
-      "summary": "Vendor: Zyxel | Product: GS1900 Series Switches. Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-24)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-7273",
-      "published": "2026-09-21",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-7273"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -182,6 +163,24 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-61630",
+      "title": "nginx ignition has TOTP Reuse During Validity Window",
+      "summary": "### Summary\nAny user that has enabled the OTP 2FA can have their TOTP reused during the standard 30 second validity window.\n\n### Details\nThe https://github.com/pquerna/otp package [doesn't include](https://github.com/pquerna/otp/issues/61) checking for already used TOTPs within its the validity window. This requires each application that uses the package to implement their own method of tracking and verifying that codes can't be reused.\n\nSection 6.5.1 within the [Authentication](https://github.com/OWASP/ASVS/blob/master/5.0/en/0x15-V6-Authentication.md) section of the OWASP ASVS recommends multiple checks, some of which involving TOTPs:\n\n> Verify that lookup secrets, out-of-band authentication requests or codes, and time-based one-time passwords (TOTPs) are only successfully usable once.\n\nThe OWASP WSTG also references this as one of their [checks](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_Multi-Factor_Authentication) to look for:\n\n> Can the OTPs be used more than once?\n\n### PoC\n\nhttps://github.com/user-attachments/assets/86a43374-39bf-4d61-8f6d-5cc440c99a1e\n\n### Impact\nAny user who uses 2FA could be impacted if their traffic is able to be captured, they're phished/social engineered, or other methods of attack. This disrupts one layer of the defense-in-depth model surrounding 2FA.\n\n### Similar CVEs\n- [CVE-2025-6014](https://nvd.nist.gov/vuln/detail/CVE-2025-6014)\n- [CVE-2025-55003](https://nvd.nist.gov/vuln/detail/CVE-2025-55003)\n- [CVE-2026-33473](https://github.com/go-vikunja/vikunja/security/advisories/GHSA-p747-qc5p-773r)\n\n### Remediation\nStore a deny-list of TOTP codes for their validity windows and check submitted codes against it to ensure none are being reused. After their validity window has closed, the 2FA code can be removed from the list.",
+      "link": "https://github.com/advisories/GHSA-hf33-q6cf-c66f",
+      "published": "2026-09-21T21:47:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61630"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://projectzero.google/2026/09/windows-dangling-com",

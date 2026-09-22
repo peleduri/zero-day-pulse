@@ -109,31 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">13</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-21 21:18 UTC</div>
+            <div class="generated">Updated 2026-09-22 02:08 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-7273" target="_blank" rel="noopener">CVE-2026-7273 — Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-7273</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-21</span>
-  </div>
-  <p class='summary'>Vendor: Zyxel | Product: GS1900 Series Switches. Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD …</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -294,6 +278,26 @@ The trouble keeps showing up inside things people already trust: code that takes
   <p class='summary'>Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hf33-q6cf-c66f" target="_blank" rel="noopener">nginx ignition has TOTP Reuse During Validity Window</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61630</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-21</span>
+          </div>
+          <p class='summary'>### Summary
+Any user that has enabled the OTP 2FA can have their TOTP reused during the standard 30 second validity window.
+
+### Details
+The https://github.com/pquerna/otp package [doesn&#x27;t include](https://github.com/pquerna/otp/issues/61) checking for already used TOTPs within its the validity window. This requires each application that uses the package to implement their own method of tracking a…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
