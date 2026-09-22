@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-22 02:08 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-22 10:28 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -94,7 +94,27 @@ The trouble keeps showing up inside things people already trust: code that takes
 
 ---
 
-## 11. 🟡 High Severity — nginx ignition has TOTP Reuse During Validity Window
+## 11. 🟠 Zero-Day — New Windows Defender zero-day blocks Microsoft antivirus updates
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-22
+**Reference:** <https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/>
+
+> Over the weekend, security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]
+
+---
+
+## 12. 🟡 High Severity — Zyxel and Veeam Flaws Under Active Exploitation With Command and SYSTEM Access
+
+**CVE:** `CVE-2026-7273` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
+**Reference:** <https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a now-patched security flaw impacting Zyxel GS1900 series switches to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
+
+The vulnerability, tracked as CVE-2026-7273 (CVSS score: 8.8), is a stack-based buffer overflow vulnerability that could result in arbitrary operating
+
+---
+
+## 13. 🟡 High Severity — nginx ignition has TOTP Reuse During Validity Window
 
 **CVE:** `CVE-2026-61630` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-21
 **Reference:** <https://github.com/advisories/GHSA-hf33-q6cf-c66f>
@@ -107,16 +127,7 @@ The https://github.com/pquerna/otp package [doesn&#x27;t include](https://github
 
 ---
 
-## 12. 🟡 High Severity — Windows Exploitation Techniques: Dangling COM Object Registrations
-
-**CVE:** `CVE-2026-66804` | `CVE-2026-50343` &nbsp;|&nbsp; **Source:** Google Project Zero &nbsp;|&nbsp; **Published:** 2026-09-21
-**Reference:** <https://projectzero.google/2026/09/windows-dangling-com.html>
-
-> This short blog post is about abusing a privilege escalation bug that Microsoft recently fixed in Windows, CVE-2026-66804 , that I and 14 others reported. This issue is an incomplete fix for CVE-2026-50343, a bug dubbed “Dark Elevator” by Calif . The root cause of the bug was a dangling COM object registration for the CrossDevice COM object with the CLSID {E9F83CF2-E0C0-4CA7-AF01-E90C70BEF496} . A…
-
----
-
-## 13. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

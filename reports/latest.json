@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-22T02:08:51.197418+00:00",
-  "total": 13,
+  "generated": "2026-09-22T10:28:12.442944+00:00",
+  "total": 14,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -165,6 +165,38 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
+      "title": "New Windows Defender zero-day blocks Microsoft antivirus updates",
+      "summary": "Over the weekend, security researcher Abdelhamid Naceri (also known as\u00a0Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
+      "published": "2026-09-22T09:55:11+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html",
+      "title": "Zyxel and Veeam Flaws Under Active Exploitation With Command and SYSTEM Access",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a now-patched security flaw impacting Zyxel GS1900 series switches to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-7273 (CVSS score: 8.8), is a stack-based buffer overflow vulnerability that could result in arbitrary operating",
+      "link": "https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html",
+      "published": "2026-09-22T05:31:59+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-7273"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-61630",
       "title": "nginx ignition has TOTP Reuse During Validity Window",
       "summary": "### Summary\nAny user that has enabled the OTP 2FA can have their TOTP reused during the standard 30 second validity window.\n\n### Details\nThe https://github.com/pquerna/otp package [doesn't include](https://github.com/pquerna/otp/issues/61) checking for already used TOTPs within its the validity window. This requires each application that uses the package to implement their own method of tracking and verifying that codes can't be reused.\n\nSection 6.5.1 within the [Authentication](https://github.com/OWASP/ASVS/blob/master/5.0/en/0x15-V6-Authentication.md) section of the OWASP ASVS recommends multiple checks, some of which involving TOTPs:\n\n> Verify that lookup secrets, out-of-band authentication requests or codes, and time-based one-time passwords (TOTPs) are only successfully usable once.\n\nThe OWASP WSTG also references this as one of their [checks](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_Multi-Factor_Authentication) to look for:\n\n> Can the OTPs be used more than once?\n\n### PoC\n\nhttps://github.com/user-attachments/assets/86a43374-39bf-4d61-8f6d-5cc440c99a1e\n\n### Impact\nAny user who uses 2FA could be impacted if their traffic is able to be captured, they're phished/social engineered, or other methods of attack. This disrupts one layer of the defense-in-depth model surrounding 2FA.\n\n### Similar CVEs\n- [CVE-2025-6014](https://nvd.nist.gov/vuln/detail/CVE-2025-6014)\n- [CVE-2025-55003](https://nvd.nist.gov/vuln/detail/CVE-2025-55003)\n- [CVE-2026-33473](https://github.com/go-vikunja/vikunja/security/advisories/GHSA-p747-qc5p-773r)\n\n### Remediation\nStore a deny-list of TOTP codes for their validity windows and check submitted codes against it to ensure none are being reused. After their validity window has closed, the 2FA code can be removed from the list.",
@@ -178,24 +210,6 @@
       ],
       "cve_ids": [
         "CVE-2026-61630"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://projectzero.google/2026/09/windows-dangling-com",
-      "title": "Windows Exploitation Techniques: Dangling COM Object Registrations",
-      "summary": "This short blog post is about abusing a privilege escalation bug that Microsoft recently fixed in Windows, CVE-2026-66804 , that I and 14 others reported. This issue is an incomplete fix for CVE-2026-50343, a bug dubbed \u201cDark Elevator\u201d by Calif . The root cause of the bug was a dangling COM object registration for the CrossDevice COM object with the CLSID {E9F83CF2-E0C0-4CA7-AF01-E90C70BEF496} . A COM registration typically needs two parts: a server executable, which for in-process components is a DLL and a CLSID entry under the HKEY_CLASSES_ROOT registry key which points to that DLL. This object was registered in the system wide classes key, meaning it was accessible to all users on the system, including system services. However the server executable was missing. Specifically it was registered to use the DLL %PROGRAMDATA%\\CrossDevice\\CrossDevice.Streaming.Source.dll . Not only does this path not exist, it\u2019s also within the C:\\ProgramData directory. This is a common location for all users on the system and therefore permits anyone to create directories. Therefore you can create an arbitrary DLL file at that location and the COM object can be instantiated potentially leading to privilege escalation. But how to get the COM object, and thus the DLL, loaded into a privileged process? The fixed bug Calif blogged about, CVE-2026-50343, abused a weak registry key permissions to add the class as a installer plugin and then get the InstallService to load it into memory. The issue with the InstallService was fixed, so we need an alternative way to abuse the unfixed dangling COM reference. Abuse Custom COM Marshaling, Again A technique I\u2019ve used multiple times in the past to load an arbitrary DLL into a privileged process is to abuse custom COM marshaling. When you call an interface method which is implemented out-of-process, the COM runtime will marshal the parameters into an RPC call to send to the server. If a parameter is a COM object then the runtime marshals that object ",
-      "link": "https://projectzero.google/2026/09/windows-dangling-com.html",
-      "published": "2026-09-21T07:00:00+00:00",
-      "source": "Google Project Zero",
-      "tags": [
-        "research",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-66804",
-        "CVE-2026-50343"
       ],
       "is_zero_day": false,
       "is_high_severity": true
