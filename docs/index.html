@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">29</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">76</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">78</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-23 10:23 UTC</div>
+            <div class="generated">Updated 2026-09-23 15:41 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -148,6 +148,40 @@
 
 
 </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/" target="_blank" rel="noopener">InfraTrust report warns network management systems under attack</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-23</span>
+  </div>
+  <p class='summary'>Attackers are increasingly targeting the management systems used to control enterprise infrastructure, with several critical vulnerabilities actively exploited before or shortly after vendors disclosed them. [...]</p>
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html" target="_blank" rel="noopener">Exploit Released for Unpatched Ubuntu Linux Flaw Enabling Host-Root Container Escape</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-80521</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-23</span>
+          </div>
+          <p class='summary'>A use-after-free in the Linux kernel&#x27;s AF_UNIX socket subsystem can be used to escape a container and gain root on the host, security firm DepthFirst said in research published September 22.
+
+The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on August 6, but Ubuntu has not shipped the patch for its 26.04, 24.04, or 22.04 LTS releases. DepthFirst</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -287,43 +321,6 @@ In local `stdio` deployments, this can expose files readable by the user&#x27;s 
 
 </article>
 
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-798p-78g2-v556" target="_blank" rel="noopener">@aborruso/ckan-mcp-server has SSRF via DNS-name → internal IP — incomplete fix of CVE-2026-53509</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61612</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-22</span>
-          </div>
-          <p class='summary'>## Summary
-The SSRF guard `validateServerUrl` (added for CVE-2026-33060, extended for CVE-2026-53509) validates only the **hostname string** and never resolves DNS. Any caller-supplied `server_url` whose hostname *resolves* to an internal address passes the guard, so the server issues requests to **loopback and cloud metadata (`169.254.169.254`)**. This is a third bypass of the same guard, still p…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jjhp-8crj-mppq" target="_blank" rel="noopener">@roomi-fields/notebooklm-mcp has a path traversal in vault.batch tool that allows arbitrary file write outside intended vault directory</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61647</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-22</span>
-          </div>
-          <p class='summary'>## Summary
-
-The `vault_batch` MCP tool (and the equivalent `POST /batch-to-vault` HTTP endpoint) accepted a caller-supplied `vault_dir` path that was passed directly to `path.resolve()` + `fs.mkdir()` with no containment check. A caller — or a prompt-injected LLM driving the MCP — could therefore create directories and write `.md` / `.json` answer files anywhere the server process can write.
-
-The …</p>
-
-        </article>
-
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -417,6 +414,45 @@ The …</p>
     <span>Tue, 21 Ju</span>
   </div>
   <p class='summary'>Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …</p>
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6cp7-3m3c-5x5c" target="_blank" rel="noopener">Zapros: Streaming decoders ignored the requested chunk size, allowing a single compressed response chunk to allocate unbounded memory (decompression bomb)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61652</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-23</span>
+          </div>
+          <p class='summary'>### Impact
+
+Denial of service via memory exhaustion. Affects all callers who streamed compressed responses relying on the chunk size — explicit (`iter_bytes(chunk_size=...)`) or the default — to bound memory. The decoder ignored that bound, so a chunk could be far larger than requested and a single compressed response could overflow memory.
+
+```python
+import gzip, zapros
+
+# Server returns ~1 GiB o…</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/" target="_blank" rel="noopener">Arista patches actively exploited VeloCloud Orchestrator zero-day</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-23</span>
+  </div>
+  <p class='summary'>Arista Networks has released security patches for a zero-day flaw that is being actively exploited and affects VeloCloud Orchestrator (VCO) On-Prem deployments. [...]</p>
 
 </article>
 
@@ -576,37 +612,60 @@ The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory.
 
         </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/" target="_blank" rel="noopener">D-Link warns of max severity zero-day bug in DIR-822A routers</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-86296</code>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-22</span>
-  </div>
-  <p class='summary'>D-Link warned customers of a maximum-severity vulnerability (CVE-2026-86296) with public proof-of-concept (PoC) exploit code and no patch, affecting legacy DIR-822A dual-band Wi-Fi routers. [...]</p>
-
-</article>
-
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html" target="_blank" rel="noopener">New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gxrg-x694-283w" target="_blank" rel="noopener">Solspace Freeform: Limited Twig template injection via submitted field values</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-93952</code>
+            <code class="cve">CVE-2026-73858</code>
             <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
+            <span>GitHub Security Advisories</span>
             <span class="meta-sep">·</span>
-            <span>2026-09-22</span>
+            <span>2026-09-23</span>
           </div>
-          <p class='summary'>Attackers are exploiting a new flaw in on-premises VeloCloud Orchestrator (VCO), the server that manages the Edge devices in a VeloCloud SD-WAN, Arista said on September 22.
+          <p class='summary'>### Summary
 
-The flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login access to privilege internal functions and affect the VCO host. Only orchestrators set up to authenticate their Edges with certificates are</p>
+A limited server-side Twig template injection issue was identified in Solspace Freeform for Craft CMS. In affected versions, submitted form field values could be evaluated as Twig in certain rendering contexts.
+
+Unauthenticated users could submit Twig expressions through public Freeform forms and have those expressions evaluated when the submitted values were rendered back into the fo…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m8r3-22v6-g877" target="_blank" rel="noopener">REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63000</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-23</span>
+          </div>
+          <p class='summary'>### Summary
+The `rex_api_install_package_update` API function (`install` addon) does not override `requiresCsrfProtection()`, which defaults to `false` in the base class `rex_api_function`. Any authenticated admin can therefore be tricked via a CSRF attack into silently triggering a package update from the REDAXO package server.
+
+### Details
+**File:** `redaxo/src/core/lib/api_function.php:277-280`…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rr49-f9g6-c9r5" target="_blank" rel="noopener">plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-57149</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-23</span>
+          </div>
+          <p class='summary'>### Impact
+The Classic portlet (plone.app.portlets.portlets.classic) used its user-supplied template/macro fields to build a TALES path expression that was then evaluated by the TAL path() helper. Because the value was interpreted as a full TALES expression, a user able to add or edit a Classic portlet could supply a crafted value that escapes simple path traversal and is evaluated as arbitrary co…</p>
 
         </article>
 
@@ -1521,24 +1580,6 @@ When the SDK spawns a sandbox, the `msb sandbox` child process receives the full
           <p class='summary'>A critical vulnerability in Bifrost, an open-source AI gateway that routes requests to more than 20 LLM providers, allows an unauthenticated attacker to run arbitrary commands on the gateway server with a single HTTP request.
 
 The flaw, tracked as CVE-2026-90898 (CVSS score: 9.8), affects all versions of the Bifrost HTTP transport before 2.1.0 when management authentication is</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html" target="_blank" rel="noopener">SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-65660</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-22</span>
-          </div>
-          <p class='summary'>A SharePoint Server vulnerability that Microsoft initially classified as a spoofing flaw with a CVSS score of 6.5 actually enables authenticated remote code execution, according to full technical details published today by Viettel Cyber Security researcher Dinh Ho Anh Khoa.
-
-The flaw, CVE-2026-65660, affects SharePoint Server 2016, 2019, and Subscription Edition. Patches have been</p>
 
         </article>
 

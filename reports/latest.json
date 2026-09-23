@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-23T10:23:25.326164+00:00",
-  "total": 76,
+  "generated": "2026-09-23T15:41:12.533310+00:00",
+  "total": 78,
   "kev": 0,
   "zero_day": 29,
   "enriched": 0,
@@ -33,6 +33,38 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/",
+      "title": "InfraTrust report warns network management systems under attack",
+      "summary": "Attackers are increasingly targeting the management systems used to control enterprise infrastructure, with several critical vulnerabilities actively exploited before or shortly after vendors disclosed them. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/",
+      "published": "2026-09-23T14:35:26+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html",
+      "title": "Exploit Released for Unpatched Ubuntu Linux Flaw Enabling Host-Root Container Escape",
+      "summary": "A use-after-free in the Linux kernel's AF_UNIX socket subsystem can be used to escape a container and gain root on the host, security firm DepthFirst\u00a0said in research published September 22.\n\nThe flaw, tracked as\u00a0CVE-2026-80521\u00a0(CVSS score: 7.8), was fixed upstream on August 6, but Ubuntu has not shipped the patch for its 26.04, 24.04, or 22.04 LTS releases. DepthFirst",
+      "link": "https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html",
+      "published": "2026-09-23T11:12:18+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-80521"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -165,42 +197,6 @@
       "is_high_severity": true
     },
     {
-      "id": "CVE-2026-61612",
-      "title": "@aborruso/ckan-mcp-server has SSRF via DNS-name \u2192 internal IP \u2014 incomplete fix of CVE-2026-53509",
-      "summary": "## Summary\nThe SSRF guard `validateServerUrl` (added for CVE-2026-33060, extended for CVE-2026-53509) validates only the **hostname string** and never resolves DNS. Any caller-supplied `server_url` whose hostname *resolves* to an internal address passes the guard, so the server issues requests to **loopback and cloud metadata (`169.254.169.254`)**. This is a third bypass of the same guard, still present in the current latest **0.4.107**, and it reaches IMDS \u2014 strictly more than CVE-2026-53509, which only reached loopback.\n\n## Affected / patched\n- `@aborruso/ckan-mcp-server` (npm) \u2014 all versions with the guard, through **0.4.107** (current `latest`). The guard has never resolved DNS. No patch yet.\n\n## Severity\nIt is effectively **High** for the self-hosted **unauthenticated HTTP transport** (`TRANSPORT=http`, `POST /mcp`), where any remote client reaches IMDS/internal hosts directly. The official Cloudflare Worker endpoint is CF-sandboxed (cannot reach loopback/RFC-1918/IMDS).\n\n## Root cause \u2014 `src/utils/http.ts`, `validateServerUrl`\nThe guard blocks IP **literals** and three loopback alias strings, but does no name resolution:\n```ts\nconst hostname = parsed.hostname.toLowerCase();\nif (new Set(['localhost','ip6-localhost','ip6-loopback']).has(hostname)) throw;   // string denylist\nif (hostname.match(/^(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)$/)) { /* block private/special IPv4 LITERALS */ }\n// no DNS resolution \u2192 a hostname that RESOLVES to 127.0.0.1 / 169.254.169.254 / 10.x is allowed\n```\nBoth prior fixes only added literal strings to the denylist (CVE-2026-33060 added the guard; CVE-2026-53509 added `ip6-localhost`/`ip6-loopback`). The DNS-resolution gap \u2014 the actual root cause \u2014 remains. `server_url` is a caller-controlled argument (`z.string().url()`) on every tool, reaching `makeCkanRequest` (all CKAN tools) and `querySparqlEndpoint` (`sparql_query`). The sink is **non-blind**: a non-CKAN response is returned to the caller verbatim via `CKAN API returned success=false: <body>`",
-      "link": "https://github.com/advisories/GHSA-798p-78g2-v556",
-      "published": "2026-09-22T14:51:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61612"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61647",
-      "title": "@roomi-fields/notebooklm-mcp has a path traversal in vault.batch tool that allows arbitrary file write outside intended vault directory",
-      "summary": "## Summary\n\nThe `vault_batch` MCP tool (and the equivalent `POST /batch-to-vault` HTTP endpoint) accepted a caller-supplied `vault_dir` path that was passed directly to `path.resolve()` + `fs.mkdir()` with no containment check. A caller \u2014 or a prompt-injected LLM driving the MCP \u2014 could therefore create directories and write `.md` / `.json` answer files anywhere the server process can write.\n\nThe `slug_prefix` parameter had a parallel, smaller traversal vector: it was concatenated into the filename without sanitization, so a prefix containing `/` or `..` could escape the resolved vault directory through the filename component.\n\n## Impact\n\nFile write (markdown + JSON sidecars) to any location writable by the server process. The written files are inert content (no code execution by themselves), but in a multi-user context \u2014 or when the MCP server is driven by an LLM that has read untrusted content (prompt injection) \u2014 this allows an attacker to plant files in sensitive locations (autostart folders, shell startup files, etc.) for downstream exploitation.\n\nThe vulnerability exists from **v1.6.0** (when the HTTP `/batch-to-vault` endpoint was introduced) and v1.7.0 (when the same logic was exposed as the `batch_to_vault` MCP tool) through **v2.0.2**.\n\n## Patch\n\nFixed in **v2.0.3**:\n\n- **Opt-in containment via `NOTEBOOKLM_VAULT_ROOT` env var.** When set, `vault_dir` is resolved relative to that root and `realpath`-based containment is enforced. Absolute paths or `..` segments outside the root are rejected with a clear error.\n- **`slug_prefix` is always sanitized.** Path separators (`/`, `\\`), `..` sequences and NUL bytes are stripped, length capped at 64 characters. This applies regardless of whether `NOTEBOOKLM_VAULT_ROOT` is set.\n- 15 unit tests in `src/__tests__/vault-writer.test.ts` cover the escape vectors (absolute paths, sibling-prefix attacks, `..` traversal, NUL/separator stripping).\n\n## Workarounds for users who cannot upgrade\n\n- Run the MCP server under a dedic",
-      "link": "https://github.com/advisories/GHSA-jjhp-8crj-mppq",
-      "published": "2026-09-22T14:43:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61647"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-820776653483778595",
       "title": "AI threats in the wild: The current state of prompt injections on the web",
       "summary": "Posted by Thomas Brunner, Yu-Han Liu, Moni Pande At Google, our Threat Intelligence teams are dedicated to staying ahead of real-world adversarial activity, proactively monitoring emerging threats before they can impact users. Right now, Indirect Prompt Injection (IPI) is a top priority for the security community, anticipating it as a primary attack vector for adversaries to target and compromise AI agents. But while the danger of IPI is widely discussed, are threat actors actually exploiting this vector today \u2013 and if so, how? To answer these questions and to uncover real-world abuse, we initiated a broad sweep of the public web to monitor for known indirect prompt injection patterns. This is what we found. The threat of indirect prompt injection Unlike a direct injection where a user \"jailbreaks\" a chatbot, IPI occurs when an AI system processes content\u2014like a website, email, or document\u2014that contains malicious instructions. When the AI reads this poisoned content, it may silently follow the attacker's commands instead of the user's original intent. This is not a new area of concern for us and Google has been working tirelessly to combat these threats. Our efforts involve cross-functional collaboration between researchers at Google DeepMind (GDM) and defenders like the Google Threat Intelligence Group (GTIG). We have previously detailed our work in this area and researchers have further highlighted the evolving nature of these vulnerabilities. Despite this collective focus, a fundamental question remains: to what degree are real-world malicious actors currently operationalizing these attacks? Proactive monitoring at Google The landscape of IPI on the web There are many channels through which attackers might try to send prompt injections. However, one location is particularly easy to observe - the public web. Here, threat actors may simply seed prompt injections on websites in hope of corrupting AI systems that browse them. Public research confirms these attacks ar",
@@ -294,6 +290,39 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-61652",
+      "title": "Zapros: Streaming decoders ignored the requested chunk size, allowing a single compressed response chunk to allocate unbounded memory (decompression bomb)",
+      "summary": "### Impact\n\nDenial of service via memory exhaustion. Affects all callers who streamed compressed responses relying on the chunk size \u2014 explicit (`iter_bytes(chunk_size=...)`) or the default \u2014 to bound memory. The decoder ignored that bound, so a chunk could be far larger than requested and a single compressed response could overflow memory.\n\n```python\nimport gzip, zapros\n\n# Server returns ~1 GiB of zeros gzip-compressed to ~1 MiB,\n# with header: Content-Encoding: gzip\nbomb = gzip.compress(b\"\\0\" * 1_000_000_000)  # ~1 MiB on the wire\n\nwith zapros.stream(\"GET\", \"https://malicious.example/bomb\") as response:\n    # Caller asks for 8 KiB chunks, expecting bounded memory:\n    for chunk in response.iter_bytes(chunk_size=8192):\n        ...  # first `chunk` is ~1 GiB, not 8 KiB -> memory exhaustion\n```\n\n### Patches\n\nUpgrade to `0.14.0` or later. The decoders now bound the output of each decompression step to the requested `chunk_size`: gzip/deflate via `zlib`'s `max_length` + `unconsumed_tail`, brotli via `output_buffer_limit`, and zstd via a bounded `stream_writer`. Peak memory during streaming decode is now proportional to `chunk_size` for all supported encodings.\n\n### Workarounds\n\nFor unpatched versions:\n- Read the still-compressed body with `Response.iter_raw()` / `Response.async_iter_raw()`, which bypass the built-in decoders, and decompress it yourself with an explicit output-size bound (e.g. `zlib`'s `max_length`), aborting once a configured limit is exceeded.\n- Where feasible, send `Accept-Encoding: identity` to disable response compression so bodies are not decompressed client-side.\n- Avoid decoding response bodies from untrusted servers.",
+      "link": "https://github.com/advisories/GHSA-6cp7-3m3c-5x5c",
+      "published": "2026-09-23T13:57:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61652"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/",
+      "title": "Arista patches actively exploited VeloCloud Orchestrator zero-day",
+      "summary": "Arista Networks has released security patches for a zero-day flaw that is being actively exploited and affects VeloCloud Orchestrator (VCO) On-Prem deployments. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/",
+      "published": "2026-09-23T12:29:53+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -447,38 +476,58 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/",
-      "title": "D-Link warns of max severity zero-day bug in DIR-822A routers",
-      "summary": "D-Link warned customers of a maximum-severity vulnerability (CVE-2026-86296) with public proof-of-concept (PoC) exploit code and no patch, affecting legacy DIR-822A dual-band Wi-Fi routers. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/",
-      "published": "2026-09-22T12:48:06+00:00",
-      "source": "Bleeping Computer",
+      "id": "CVE-2026-73858",
+      "title": "Solspace Freeform: Limited Twig template injection via submitted field values",
+      "summary": "### Summary\n\nA limited server-side Twig template injection issue was identified in Solspace Freeform for Craft CMS. In affected versions, submitted form field values could be evaluated as Twig in certain rendering contexts.\n\nUnauthenticated users could submit Twig expressions through public Freeform forms and have those expressions evaluated when the submitted values were rendered back into the form response. Confirmed impact includes disclosure of limited server/environment information, such as the PHP version and absolute filesystem paths.\n\nNo evidence was found that this issue allowed access to Craft globals, environment variables, database credentials, mailer credentials, security keys, or remote code execution in the tested environment.\n\n### Details\n\n**Plugin:** Solspace Freeform\n**Affected versions:** Freeform 5.0.0 through 5.10.13\n**CMS:** Craft CMS\n**Authentication required:** None\n**Attack vector:** Public Freeform form submission\n\nSubmitted field values were passed through Freeform\u2019s isolated Twig renderer. As a result, Twig expressions included in submitted values could be evaluated server-side and reflected in the HTTP response.\n\nThe isolated Twig context appears to limit the available functions and globals. Confirmed accessible values were limited to PHP/core constants and Craft bootstrap constants such as:\n\n```twig\n{{ constant('PHP_VERSION') }}\n{{ constant('PHP_OS') }}\n{{ constant('CRAFT_BASE_PATH') }}\n{{ constant('CRAFT_VENDOR_PATH') }}\n```\n\nTesting did not confirm access to:\n\n```text\ncraft\ncraft.app\nalias()\ngetenv()\ndatabase credentials\nmailer credentials\nCraft security key\nCraft license key\nenvironment variables\n```\n\n### Proof of Concept\n\n1. Submit a public Freeform form.\n\n2. Inject the following payload into an email field:\n\n```twig\n{{ constant('PHP_VERSION') }}@example.com\n```\n\nThe response may reflect the evaluated PHP version, for example:\n\n```html\nvalue=\"8.2.27@example.com\"\n```\n\n3. Inject the following payload into a text field:\n\n```twig\n{{ con",
+      "link": "https://github.com/advisories/GHSA-gxrg-x694-283w",
+      "published": "2026-09-23T14:31:10Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "malware"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-86296"
+        "CVE-2026-73858"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html",
-      "title": "New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups",
-      "summary": "Attackers are exploiting a new flaw in on-premises VeloCloud Orchestrator (VCO), the server that manages the Edge devices in a VeloCloud SD-WAN, Arista said on September 22.\n\nThe flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login access to privilege internal functions and affect the VCO host. Only orchestrators set up to authenticate their Edges with certificates are",
-      "link": "https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html",
-      "published": "2026-09-22T12:29:00+00:00",
-      "source": "The Hacker News Security",
+      "id": "CVE-2026-63000",
+      "title": "REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates",
+      "summary": "### Summary\nThe `rex_api_install_package_update` API function (`install` addon) does not override `requiresCsrfProtection()`, which defaults to `false` in the base class `rex_api_function`. Any authenticated admin can therefore be tricked via a CSRF attack into silently triggering a package update from the REDAXO package server.\n\n### Details\n**File:** `redaxo/src/core/lib/api_function.php:277-280`\n```php\nprotected function requiresCsrfProtection()\n{\n    return false;  // DEFAULT \u2014 subclasses must opt in\n}\n```\n\n**File:** `redaxo/src/addons/install/lib/api/api_package_update.php:8-39`\n```php\nclass rex_api_install_package_update extends rex_api_function\n{\n    public function execute()\n    {\n        if (!rex::getUser()?->isAdmin()) {\n            throw new rex_api_exception('You do not have the permission!');\n        }\n        $addonkey = rex_request('addonkey', 'string');\n        $fileId = rex_request('file', 'int');\n        $installer = new rex_install_package_update();\n        // ... downloads and installs $addonkey version $fileId from redaxo.org\n    }\n    // requiresCsrfProtection() NOT overridden \u2014 defaults to false\n}\n```\n\nFor comparison, `rex_api_install_package_add` and `rex_api_install_package_delete` both correctly return `true`. Only `rex_api_install_package_update` is missing this.\n\n### PoC\n```html\n<!-- Attacker-controlled page -->\n<img src=\"https://victim-redaxo.example.com/index.php?page=install/packages&rex-api-call=install_package_update&addonkey=some_addon&file=42\" />\n```\nWhen an authenticated admin visits this page, the request is automatically made with their session cookie, causing `some_addon` to be updated to version `file_id=42`.\n\n### Impact\nAn attacker who can lure an admin to a malicious page can force-install specific addon versions. If combined with a supply-chain compromise of a package on redaxo.org, or by targeting a downgrade to a known-vulnerable version, this becomes a remote code execution vector. Even without supply-chain compromise, it",
+      "link": "https://github.com/advisories/GHSA-m8r3-22v6-g877",
+      "published": "2026-09-23T14:09:15Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "zeroday"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-93952"
+        "CVE-2026-63000"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-57149",
+      "title": "plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection",
+      "summary": "### Impact\nThe Classic portlet (plone.app.portlets.portlets.classic) used its user-supplied template/macro fields to build a TALES path expression that was then evaluated by the TAL path() helper. Because the value was interpreted as a full TALES expression, a user able to add or edit a Classic portlet could supply a crafted value that escapes simple path traversal and is evaluated as arbitrary code.\n\nThis is exploitable by any authenticated user who can configure a Classic portlet - which, with the default role map, includes regular users on their personal dashboard. The result is code execution in the context of the Plone process, i.e. a privilege escalation across the trust boundary between an authenticated web user and the server-side process.\n\n### Patches\nThe problem has been patched in `plone.app.portlets`\n\n* For Plone 6.2, upgrade to `plone.app.portlets` 7.0.2.\n* For Plone 6.1, upgrade to `plone.app.portlets` 6.0.4.\n* For Plone 6.0, upgrade to `plone.app.portlets` 5.0.8.\n\n### Workarounds\nIf upgrading is not immediately possible:\n\n- Restrict who can manage portlets: remove the `plone.app.portlets.ManageOwnPortlets` permission from untrusted roles, and limit Manage portlets to trusted administrators (usually this is already restricted to the Manager and Site Administrator roles).\n- Where the Classic portlet is not needed, unregister it so it cannot be added. This would need to be done by editing a `portlets.xml` in your own code, so it is not a quick fix.\n- You could also effectively disable showing the classic portlet by customising its template. In the Zope Management Interface go to the `portal_view_customizations` tool, locate the `classic.pt` template and click it. Click the Customize button.  Remove all text and replace it with `<div>The classic portlet was disabled.</div>`. (This is not a recommended way of customising a template, but in this case it is quite effective.)\n\n### Credits\n\nDiscovered by Giuseppe Caruso, and reported to the [Plone/Zope Securit",
+      "link": "https://github.com/advisories/GHSA-rr49-f9g6-c9r5",
+      "published": "2026-09-23T13:55:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-57149"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-91129",
@@ -1284,23 +1333,6 @@
       ],
       "cve_ids": [
         "CVE-2026-90898"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html",
-      "title": "SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE",
-      "summary": "A SharePoint Server vulnerability that Microsoft initially classified as a spoofing flaw with a CVSS score of 6.5 actually enables authenticated remote code execution, according to\u00a0full technical details\u00a0published today by Viettel Cyber Security researcher Dinh Ho Anh Khoa.\n\nThe flaw, CVE-2026-65660, affects SharePoint Server 2016, 2019, and Subscription Edition. Patches have been",
-      "link": "https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html",
-      "published": "2026-09-22T11:17:41+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-65660"
       ],
       "is_zero_day": false,
       "is_high_severity": true
