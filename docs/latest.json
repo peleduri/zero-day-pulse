@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-23T02:08:09.376049+00:00",
-  "total": 72,
+  "generated": "2026-09-23T10:23:25.326164+00:00",
+  "total": 76,
   "kev": 0,
-  "zero_day": 24,
+  "zero_day": 29,
   "enriched": 0,
   "findings": [
     {
@@ -30,6 +30,83 @@
       "tags": [
         "cloud",
         "threat-intel",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/arista-urges-immediate-patching-of-exploited-vco-zero-day/",
+      "title": "Arista Urges Immediate Patching of Exploited VCO Zero-Day",
+      "summary": "Remote attackers could trigger the critical-severity flaw to access privileged internal functionality. The post Arista Urges Immediate Patching of Exploited VCO Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/arista-urges-immediate-patching-of-exploited-vco-zero-day/",
+      "published": "2026-09-23T08:33:06+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html",
+      "title": "F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers",
+      "summary": "Attackers are exploiting a critical flaw in F5 BIG-IP Access Policy Manager (APM) that lets them run code on a BIG-IP system without logging in, F5 says.\n\nThe flaw,\u00a0CVE-2026-94127, affects only systems in which APM serves as an OAuth authorization server, issuing access tokens to applications. F5 disclosed it in\u00a0an advisory\u00a0on September 22 and has released engineering hotfixes.",
+      "link": "https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html",
+      "published": "2026-09-23T08:29:48+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-94127"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/critical-f5-big-ip-vulnerability-exploited-as-zero-day/",
+      "title": "Critical F5 BIG-IP Vulnerability Exploited as Zero-Day",
+      "summary": "Unauthenticated attackers could send malicious traffic to BIG-IP to achieve remote code execution. The post Critical F5 BIG-IP Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/critical-f5-big-ip-vulnerability-exploited-as-zero-day/",
+      "published": "2026-09-23T07:34:18+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/",
+      "title": "F5 patches BIG-IP APM zero-day flaw exploited in RCE attacks",
+      "summary": "F5 has released security updates to address a critical BIG-IP APM zero-day vulnerability being exploited in remote code execution attacks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/",
+      "published": "2026-09-23T07:17:23+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/check-point-patches-exploited-management-server-zero-day/",
+      "title": "Check Point Patches Exploited Management Server Zero-Day",
+      "summary": "The critical-severity flaw could allow unauthenticated attackers to upload and execute arbitrary scripts. The post Check Point Patches Exploited Management Server Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/check-point-patches-exploited-management-server-zero-day/",
+      "published": "2026-09-23T06:14:03+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
         "research"
       ],
       "cve_ids": [],
@@ -221,6 +298,25 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
+      "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
+      "summary": "A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites.\n\nThe attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome (CVE-2026-85046, CVE-2026-87491) and one impacting Windows Advanced Local Procedure Call (CVE-2026-85880) to break",
+      "link": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
+      "published": "2026-09-23T08:29:24+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-85046",
+        "CVE-2026-87491",
+        "CVE-2026-85880"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-62370",
       "title": "KubeEdge: Unbounded allocation in viaduct packer enables authenticated remote DoS against CloudHub",
       "summary": "## Summary\n\nKubeEdge CloudHub uses the viaduct packer to decode messages received from connected peers. The packer reads a 32-bit payload length from the message header and previously allocated a buffer of that size without enforcing an upper bound.\n\nAn authenticated peer that can establish a viaduct connection to CloudHub can send a crafted message header containing an excessively large payload length. This may cause CloudHub to allocate a large amount of memory and can result in memory exhaustion, process termination, or denial of service.\n\n## Impact\n\nA successfully authenticated malicious or compromised edge node may repeatedly send crafted viaduct message headers to increase CloudHub memory consumption.\n\nDepending on available memory and deployment limits, exploitation may cause:\n\n* Increased CloudHub memory usage\n* Out-of-memory termination\n* CloudHub restart loops\n* Temporary disruption of cloud-edge communication\n\nAuthentication to the viaduct endpoint is required. This issue does not provide unauthenticated access or direct code execution.\n\n## Root cause\n\nThe viaduct packer trusted the payload length encoded in the message header and allocated the payload buffer before validating whether the declared length was within an acceptable range.\n\n## Fix\n\nThe fix introduces a maximum viaduct payload size of 32 MiB.\n\nThe updated implementation:\n\n* Rejects oversized payload lengths in the reader before memory allocation\n* Enforces the same maximum size in the writer\n* Adds regression tests covering oversized and valid payloads\n\nFixes have been prepared for the following patch releases:\n\n* KubeEdge v1.23.1\n* KubeEdge v1.22.2\n* KubeEdge v1.21.2\n\nThese versions should not be listed as released until the coordinated release process is complete.\n\n## Workarounds\n\nBefore patched versions are available, operators should:\n\n* Restrict access to the CloudHub endpoint to trusted edge nodes and networks\n* Protect and rotate edge-node credentials\n* Revoke credentials belonging to d",
@@ -381,21 +477,6 @@
       "cve_ids": [
         "CVE-2026-93952"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
-      "title": "New Windows Defender zero-day blocks Microsoft antivirus updates",
-      "summary": "Over the weekend, security researcher Abdelhamid Naceri (also known as\u00a0Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
-      "published": "2026-09-22T09:55:11+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -1220,23 +1301,6 @@
       ],
       "cve_ids": [
         "CVE-2026-65660"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html",
-      "title": "Zyxel and Veeam Flaws Under Active Exploitation With Command and SYSTEM Access",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a now-patched security flaw impacting Zyxel GS1900 series switches to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-7273 (CVSS score: 8.8), is a stack-based buffer overflow vulnerability that could result in arbitrary operating",
-      "link": "https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html",
-      "published": "2026-09-22T05:31:59+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-7273"
       ],
       "is_zero_day": false,
       "is_high_severity": true

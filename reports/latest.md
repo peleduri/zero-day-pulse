@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-23 02:08 UTC &nbsp;|&nbsp; **Total:** 72 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 24 &nbsp;|&nbsp; 🟡 High: 48 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-23 10:23 UTC &nbsp;|&nbsp; **Total:** 76 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 29 &nbsp;|&nbsp; 🟡 High: 47 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,54 @@
 
 ---
 
-## 3. 🟠 Zero-Day — MCP Atlassian: Arbitrary file read/exfiltration via upload_attachment missing validate_safe_path()
+## 3. 🟠 Zero-Day — Arista Urges Immediate Patching of Exploited VCO Zero-Day
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-23
+**Reference:** <https://www.securityweek.com/arista-urges-immediate-patching-of-exploited-vco-zero-day/>
+
+> Remote attackers could trigger the critical-severity flaw to access privileged internal functionality. The post Arista Urges Immediate Patching of Exploited VCO Zero-Day appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers
+
+**CVE:** `CVE-2026-94127` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-23
+**Reference:** <https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html>
+
+> Attackers are exploiting a critical flaw in F5 BIG-IP Access Policy Manager (APM) that lets them run code on a BIG-IP system without logging in, F5 says.
+
+The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth authorization server, issuing access tokens to applications. F5 disclosed it in an advisory on September 22 and has released engineering hotfixes.
+
+---
+
+## 5. 🟠 Zero-Day — Critical F5 BIG-IP Vulnerability Exploited as Zero-Day
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-23
+**Reference:** <https://www.securityweek.com/critical-f5-big-ip-vulnerability-exploited-as-zero-day/>
+
+> Unauthenticated attackers could send malicious traffic to BIG-IP to achieve remote code execution. The post Critical F5 BIG-IP Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .
+
+---
+
+## 6. 🟠 Zero-Day — F5 patches BIG-IP APM zero-day flaw exploited in RCE attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
+**Reference:** <https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/>
+
+> F5 has released security updates to address a critical BIG-IP APM zero-day vulnerability being exploited in remote code execution attacks. [...]
+
+---
+
+## 7. 🟠 Zero-Day — Check Point Patches Exploited Management Server Zero-Day
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-23
+**Reference:** <https://www.securityweek.com/check-point-patches-exploited-management-server-zero-day/>
+
+> The critical-severity flaw could allow unauthenticated attackers to upload and execute arbitrary scripts. The post Check Point Patches Exploited Management Server Zero-Day appeared first on SecurityWeek .
+
+---
+
+## 8. 🟠 Zero-Day — MCP Atlassian: Arbitrary file read/exfiltration via upload_attachment missing validate_safe_path()
 
 **CVE:** `CVE-2026-77258` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-93xw-j965-9mx3>
@@ -33,7 +80,7 @@ An AI a…
 
 ---
 
-## 4. 🟠 Zero-Day — MCP Atlassian: Arbitrary server-local file upload to Jira/Confluence attachments via unrestricted file_path parameters
+## 9. 🟠 Zero-Day — MCP Atlassian: Arbitrary server-local file upload to Jira/Confluence attachments via unrestricted file_path parameters
 
 **CVE:** `CVE-2026-77247` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-f6pj-qv47-g96w>
@@ -46,7 +93,7 @@ In local `stdio` deployments, this can expose files readable by the user&#x27;s 
 
 ---
 
-## 5. 🟠 Zero-Day — Check Point warns of Management Server zero-day exploited in attacks
+## 10. 🟠 Zero-Day — Check Point warns of Management Server zero-day exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/>
@@ -55,7 +102,7 @@ In local `stdio` deployments, this can expose files readable by the user&#x27;s 
 
 ---
 
-## 6. 🟠 Zero-Day — @aborruso/ckan-mcp-server has SSRF via DNS-name → internal IP — incomplete fix of CVE-2026-53509
+## 11. 🟠 Zero-Day — @aborruso/ckan-mcp-server has SSRF via DNS-name → internal IP — incomplete fix of CVE-2026-53509
 
 **CVE:** `CVE-2026-61612` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-798p-78g2-v556>
@@ -65,7 +112,7 @@ The SSRF guard `validateServerUrl` (added for CVE-2026-33060, extended for CVE-2
 
 ---
 
-## 7. 🟠 Zero-Day — @roomi-fields/notebooklm-mcp has a path traversal in vault.batch tool that allows arbitrary file write outside intended vault directory
+## 12. 🟠 Zero-Day — @roomi-fields/notebooklm-mcp has a path traversal in vault.batch tool that allows arbitrary file write outside intended vault directory
 
 **CVE:** `CVE-2026-61647` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-jjhp-8crj-mppq>
@@ -78,7 +125,7 @@ The …
 
 ---
 
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 13. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -87,7 +134,7 @@ The …
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 14. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -96,7 +143,7 @@ The …
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 15. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -105,7 +152,7 @@ The …
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 16. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -114,7 +161,7 @@ The …
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 17. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -123,7 +170,7 @@ The …
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 18. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -132,7 +179,18 @@ The …
 
 ---
 
-## 14. 🟠 Zero-Day — KubeEdge: Unbounded allocation in viaduct packer enables authenticated remote DoS against CloudHub
+## 19. 🟠 Zero-Day — Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware
+
+**CVE:** `CVE-2026-85046` | `CVE-2026-87491` | `CVE-2026-85880` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-23
+**Reference:** <https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html>
+
+> A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites.
+
+The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome (CVE-2026-85046, CVE-2026-87491) and one impacting Windows Advanced Local Procedure Call (CVE-2026-85880) to break
+
+---
+
+## 20. 🟠 Zero-Day — KubeEdge: Unbounded allocation in viaduct packer enables authenticated remote DoS against CloudHub
 
 **CVE:** `CVE-2026-62370` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-gfw4-49f9-cp25>
@@ -145,7 +203,7 @@ An authenticated peer that can establish a viaduct connection to CloudHub can se
 
 ---
 
-## 15. 🟠 Zero-Day — MCP Atlassian: Arbitrary File Read via Upload Attachment Tools
+## 21. 🟠 Zero-Day — MCP Atlassian: Arbitrary File Read via Upload Attachment Tools
 
 **CVE:** `CVE-2026-77270` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-f26r-j276-ggg4>
@@ -156,7 +214,7 @@ The upload attachment tools in both Confluence and Jira accept arbitrary file pa
 
 ---
 
-## 16. 🟠 Zero-Day — ShinyHunters claims FBI hack, data theft in PeopleSoft zero-day breach
+## 22. 🟠 Zero-Day — ShinyHunters claims FBI hack, data theft in PeopleSoft zero-day breach
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/shinyhunters-claims-fbi-hack-data-theft-in-peoplesoft-zero-day-breach/>
@@ -165,7 +223,7 @@ The upload attachment tools in both Confluence and Jira accept arbitrary file pa
 
 ---
 
-## 17. 🟠 Zero-Day — CVE-2026-17613: Penpot cross-team file takeover via import-binfile (unpatched in 2.17.2)
+## 23. 🟠 Zero-Day — CVE-2026-17613: Penpot cross-team file takeover via import-binfile (unpatched in 2.17.2)
 
 **CVE:** `CVE-2026-17613` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/47>
@@ -174,7 +232,7 @@ The upload attachment tools in both Confluence and Jira accept arbitrary file pa
 
 ---
 
-## 18. 🟠 Zero-Day — [0day-rubbish] TigerGraph Community Edition 4.2.4 Default credentials plus GSQL TO_CSV arbitrary file write to SSH code execution (9.8)
+## 24. 🟠 Zero-Day — [0day-rubbish] TigerGraph Community Edition 4.2.4 Default credentials plus GSQL TO_CSV arbitrary file write to SSH code execution (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/64>
@@ -183,7 +241,7 @@ The upload attachment tools in both Confluence and Jira accept arbitrary file pa
 
 ---
 
-## 19. 🟠 Zero-Day — [0day-rubbish] Teltonika RutOS 00.07.06.21 Authenticated ipsec.lua logread command injection with reflected output (8.8)
+## 25. 🟠 Zero-Day — [0day-rubbish] Teltonika RutOS 00.07.06.21 Authenticated ipsec.lua logread command injection with reflected output (8.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/63>
@@ -192,7 +250,7 @@ The upload attachment tools in both Confluence and Jira accept arbitrary file pa
 
 ---
 
-## 20. 🟠 Zero-Day — Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks
+## 26. 🟠 Zero-Day — Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks
 
 **CVE:** `CVE-2026-93616` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://thehackernews.com/2026/09/check-point-warns-of-management-server.html>
@@ -203,7 +261,7 @@ The flaw, CVE-2026-93616, allows an attacker who can access the server&#x27;s we
 
 ---
 
-## 21. 🟠 Zero-Day — Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates
+## 27. 🟠 Zero-Day — Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html>
@@ -214,7 +272,7 @@ The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory.
 
 ---
 
-## 22. 🟠 Zero-Day — D-Link warns of max severity zero-day bug in DIR-822A routers
+## 28. 🟠 Zero-Day — D-Link warns of max severity zero-day bug in DIR-822A routers
 
 **CVE:** `CVE-2026-86296` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/>
@@ -223,7 +281,7 @@ The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory.
 
 ---
 
-## 23. 🟠 Zero-Day — New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups
+## 29. 🟠 Zero-Day — New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups
 
 **CVE:** `CVE-2026-93952` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html>
@@ -234,16 +292,7 @@ The flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login a
 
 ---
 
-## 24. 🟠 Zero-Day — New Windows Defender zero-day blocks Microsoft antivirus updates
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-22
-**Reference:** <https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/>
-
-> Over the weekend, security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]
-
----
-
-## 25. 🟡 High Severity — Home Assistant: mDNS Server-Side Request Forgery
+## 30. 🟡 High Severity — Home Assistant: mDNS Server-Side Request Forgery
 
 **CVE:** `CVE-2026-91129` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-4ghv-53cq-7wp3>
@@ -254,7 +303,7 @@ Home Assistant Green is vulnerable to a Server-Side Request Forgery (SSRF) via t
 
 ---
 
-## 26. 🟡 High Severity — Traefik: BasicAuth singleflight coalescing reintroduces an unauthenticated username-enumeration timing oracle
+## 31. 🟡 High Severity — Traefik: BasicAuth singleflight coalescing reintroduces an unauthenticated username-enumeration timing oracle
 
 **CVE:** `CVE-2026-88010` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-8fcf-v89g-xpg6>
@@ -265,7 +314,7 @@ Traefik&#x27;s BasicAuth middleware coalesces concurrent credential checks throu
 
 ---
 
-## 27. 🟡 High Severity — Hatchet DurableTask WorkerStatus gRPC resolves caller-supplied durable-task UUIDs via ListSatisfiedEntries with no tenant_id filter
+## 32. 🟡 High Severity — Hatchet DurableTask WorkerStatus gRPC resolves caller-supplied durable-task UUIDs via ListSatisfiedEntries with no tenant_id filter
 
 **CVE:** `CVE-2026-88978` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-992g-9cr3-vm5x>
@@ -280,7 +329,7 @@ This advisory requires an attacker to success…
 
 ---
 
-## 28. 🟡 High Severity — Hatchet: Cross-tenant durable callback payload disclosure in Hatchet V1 Dispatcher
+## 33. 🟡 High Severity — Hatchet: Cross-tenant durable callback payload disclosure in Hatchet V1 Dispatcher
 
 **CVE:** `CVE-2026-84298` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-9q4h-f4x5-ffq8>
@@ -293,7 +342,7 @@ Durable callback delivery resolves the destination stream by `…
 
 ---
 
-## 29. 🟡 High Severity — Cloudreve: SSRF guard bypass: checkIP does not decode IPv6-transition wrappers (NAT64, IPv4-compatible, 6to4) reaching internal and cloud-metadata addresses
+## 34. 🟡 High Severity — Cloudreve: SSRF guard bypass: checkIP does not decode IPv6-transition wrappers (NAT64, IPv4-compatible, 6to4) reaching internal and cloud-metadata addresses
 
 **CVE:** `CVE-2026-79913` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-jvh5-97xg-v99f>
@@ -304,7 +353,7 @@ Cloudreve&#x27;s server-side request forgery guard `ValidateExternalURL` (`pkg/r
 
 ---
 
-## 30. 🟡 High Severity — Cloudreve: Privilege Scope Bypass: State-Mutating Admin Operations Accessible via Read-Only OAuth Scope
+## 35. 🟡 High Severity — Cloudreve: Privilege Scope Bypass: State-Mutating Admin Operations Accessible via Read-Only OAuth Scope
 
 **CVE:** `CVE-2026-77637` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-w89x-c962-c44g>
@@ -314,7 +363,7 @@ There is a privilege scope bypass in Cloudreve&#x27;s admin API where two endpoi
 
 ---
 
-## 31. 🟡 High Severity — Cloudreve: Storage-quota TOCTOU race allows quota bypass and storage-based denial of service
+## 36. 🟡 High Severity — Cloudreve: Storage-quota TOCTOU race allows quota bypass and storage-based denial of service
 
 **CVE:** `CVE-2026-77633` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-xj3h-wwxq-gfcj>
@@ -325,7 +374,7 @@ Cloudreve v4 splits the storage-quota **check** (reading the user&#x27;s `used` 
 
 ---
 
-## 32. 🟡 High Severity — Spree: Broken Access Control in `PATCH /api/v3/store/carts/:id/associate` (IDOR)
+## 37. 🟡 High Severity — Spree: Broken Access Control in `PATCH /api/v3/store/carts/:id/associate` (IDOR)
 
 **CVE:** `CVE-2026-94462` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-4825-p4xm-pcf2>
@@ -336,7 +385,7 @@ The Store API v3 endpoint `PATCH /api/v3/store/carts/:id/associate` binds a gues
 
 ---
 
-## 33. 🟡 High Severity — lightrag-hku: SSRF via IPv6-transition address bypass (NAT64, IPv4-compatible, 6to4) of the native-markdown image-download guard
+## 38. 🟡 High Severity — lightrag-hku: SSRF via IPv6-transition address bypass (NAT64, IPv4-compatible, 6to4) of the native-markdown image-download guard
 
 **CVE:** `CVE-2026-85740` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-vv3m-f8x4-7377>
@@ -347,7 +396,7 @@ LightRAG&#x27;s native markdown parser downloads external images referenced by a
 
 ---
 
-## 34. 🟡 High Severity — lightrag-hku: Plaintext Passwords Compared Without Constant-Time Function
+## 39. 🟡 High Severity — lightrag-hku: Plaintext Passwords Compared Without Constant-Time Function
 
 **CVE:** `CVE-2026-85725` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-c759-cx9p-mrwq>
@@ -364,7 +413,7 @@ def verify_password(plain_password: str, stored_password: str) -&gt; bool:
 
 ---
 
-## 35. 🟡 High Severity — lightrag-hku: Sensitive Information Exposure Through Raw Exception Messages in API Error Responses
+## 40. 🟡 High Severity — lightrag-hku: Sensitive Information Exposure Through Raw Exception Messages in API Error Responses
 
 **CVE:** `CVE-2026-85709` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-hrmj-7rvj-4hg8>
@@ -379,7 +428,7 @@ internal infrastructure — server filesystem paths, database host/port/user,…
 
 ---
 
-## 36. 🟡 High Severity — Nautobot: Stored cross-site scripting (XSS) in object create/edit form help text
+## 41. 🟡 High Severity — Nautobot: Stored cross-site scripting (XSS) in object create/edit form help text
 
 **CVE:** `CVE-2026-83801` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-56v6-2fhr-wxgq>
@@ -393,7 +442,7 @@ In both cases the script executes in the browser of any user who opens an affect
 
 ---
 
-## 37. 🟡 High Severity — Nuclei: Local File Read via Workflow File-Protocol Gate Bypass
+## 42. 🟡 High Severity — Nuclei: Local File Read via Workflow File-Protocol Gate Bypass
 
 **CVE:** `CVE-2026-76804` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-qgw5-7j4f-fg97>
@@ -406,7 +455,7 @@ The issue is in the workflow template loading path. The main template loader enf
 
 ---
 
-## 38. 🟡 High Severity — Tinyauth: forward-auth per-app ACL is matched case-sensitively against the (case-insensitive) hostname, letting an authenticated user reach apps they are not on the allowlist for
+## 43. 🟡 High Severity — Tinyauth: forward-auth per-app ACL is matched case-sensitively against the (case-insensitive) hostname, letting an authenticated user reach apps they are not on the allowlist for
 
 **CVE:** `CVE-2026-77560` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-328g-jx67-v94g>
@@ -425,7 +474,7 @@ The issue is in the workflow template loading path. The main template loader enf
 
 ---
 
-## 39. 🟡 High Severity — OpenBao Skips Stricter Deny Policy for LIST operations
+## 44. 🟡 High Severity — OpenBao Skips Stricter Deny Policy for LIST operations
 
 **CVE:** `CVE-2026-63131` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-xp3c-3jw3-4vcr>
@@ -440,7 +489,7 @@ This has been patched in OpenBao v2.6.0.
 
 ---
 
-## 40. 🟡 High Severity —  OpenBao's Templated Policies Allow Privilege Escalation via Wildcard Characters
+## 45. 🟡 High Severity —  OpenBao's Templated Policies Allow Privilege Escalation via Wildcard Characters
 
 **CVE:** `CVE-2026-71543` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-59w7-v8rr-pr4p>
@@ -457,7 +506,7 @@ If the data use…
 
 ---
 
-## 41. 🟡 High Severity — OpenBao Agent Writes Secrets to Stdout
+## 46. 🟡 High Severity — OpenBao Agent Writes Secrets to Stdout
 
 **CVE:** `CVE-2026-77285` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-444v-8vxr-p36h>
@@ -474,7 +523,7 @@ This is addressed in OpenBao v2.6.0 GA.
 
 ---
 
-## 42. 🟡 High Severity — Unleash: Missing await on permission check + cross-project IDOR in admin API
+## 47. 🟡 High Severity — Unleash: Missing await on permission check + cross-project IDOR in admin API
 
 **CVE:** `CVE-2026-77426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-72h8-wp98-7hch>
@@ -491,7 +540,7 @@ Multiple authorization vulnerabilities in Unleash admin API, including a critica
 
 ---
 
-## 43. 🟡 High Severity — MCP Atlassian: OAuth fallback token storage writes plaintext access and refresh tokens with group-readable permissions
+## 48. 🟡 High Severity — MCP Atlassian: OAuth fallback token storage writes plaintext access and refresh tokens with group-readable permissions
 
 **CVE:** `CVE-2026-77250` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-g5xv-mhgm-v5f6>
@@ -502,7 +551,7 @@ When OAuth tokens are saved, MCP Atlassian always writes a plaintext fallback co
 
 ---
 
-## 44. 🟡 High Severity — MCP Atlassian:  Incomplete fix for GHSA-7r34-79r5-rcc9: redirect-based SSRF via unhooked requests session in Jira user-permission lookup
+## 49. 🟡 High Severity — MCP Atlassian:  Incomplete fix for GHSA-7r34-79r5-rcc9: redirect-based SSRF via unhooked requests session in Jira user-permission lookup
 
 **CVE:** `CVE-2026-77249` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-v9m3-wfh8-5646>
@@ -513,7 +562,7 @@ The fix for the SSRF vulnerability tracked as GHSA-7r34-79r5-rcc9 / CVE-2026-278
 
 ---
 
-## 45. 🟡 High Severity — MCP Atlassian: SSRF Protection Bypass
+## 50. 🟡 High Severity — MCP Atlassian: SSRF Protection Bypass
 
 **CVE:** `CVE-2026-77274` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-hgcf-4mq8-5266>
@@ -537,7 +586,7 @@ Affected code:
 
 ---
 
-## 46. 🟡 High Severity — MCP Atlassian: Incomplete path traversal fix allows intra-CWD module overwrite and RCE (bypass of GHSA-xjgw-4wvw-rgm4)
+## 51. 🟡 High Severity — MCP Atlassian: Incomplete path traversal fix allows intra-CWD module overwrite and RCE (bypass of GHSA-xjgw-4wvw-rgm4)
 
 **CVE:** `CVE-2026-77271` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-6vmq-24h2-pj7j>
@@ -549,7 +598,7 @@ r…
 
 ---
 
-## 47. 🟡 High Severity — mcp-atlassian has an incomplete SSRF remediation
+## 52. 🟡 High Severity — mcp-atlassian has an incomplete SSRF remediation
 
 **CVE:** `CVE-2026-77267` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-5wf4-jqxh-8gm3>
@@ -567,7 +616,7 @@ The `UserTokenMiddleware` extracts URLs from `X-Atlassian-Jira-Url` and `X-Atlas
 
 ---
 
-## 48. 🟡 High Severity — MCP Atlassian: Arbitrary file read via confluence_upload_attachment allows exfiltration of server credentials
+## 53. 🟡 High Severity — MCP Atlassian: Arbitrary file read via confluence_upload_attachment allows exfiltration of server credentials
 
 **CVE:** `CVE-2026-77259` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-6cr4-ccf3-x7h4>
@@ -583,7 +632,7 @@ Missing path validation in `confluence_upload_attachment` allows any authenticat
 
 ---
 
-## 49. 🟡 High Severity — MCP Atlassian: SSRF redirect protection missing for basic-auth and OAuth authentication branches
+## 54. 🟡 High Severity — MCP Atlassian: SSRF redirect protection missing for basic-auth and OAuth authentication branches
 
 **CVE:** `CVE-2026-77261` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-6529-c226-h328>
@@ -594,7 +643,7 @@ Missing path validation in `confluence_upload_attachment` allows any authenticat
 
 ---
 
-## 50. 🟡 High Severity — MCP Atlassian: SSRF via DNS Rebinding in Header-Based Authentication Flow
+## 55. 🟡 High Severity — MCP Atlassian: SSRF via DNS Rebinding in Header-Based Authentication Flow
 
 **CVE:** `CVE-2026-77265` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-49xv-9743-pw8w>
@@ -605,7 +654,7 @@ The SSRF protection for header-based authentication uses a validate-then-use pat
 
 ---
 
-## 51. 🟡 High Severity — MCP Atlassian: Path traversal in upload_attachment allows arbitrary file read (incomplete fix for CVE-2026-27825)
+## 56. 🟡 High Severity — MCP Atlassian: Path traversal in upload_attachment allows arbitrary file read (incomplete fix for CVE-2026-27825)
 
 **CVE:** `CVE-2026-77269` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-h7wj-5v37-59r2>
@@ -616,7 +665,7 @@ The `confluence_upload_attachment` and `confluence_upload_attachments` MCP tools
 
 ---
 
-## 52. 🟡 High Severity — MCP Atlassian: Arbitrary local file READ via unconstrained file_path in upload_attachment (Confluence + Jira)
+## 57. 🟡 High Severity — MCP Atlassian: Arbitrary local file READ via unconstrained file_path in upload_attachment (Confluence + Jira)
 
 **CVE:** `CVE-2026-77260` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-f4p7-qx46-wc5j>
@@ -631,7 +680,7 @@ This is an arbitrary local file READ vulnerability on the Confluence and Jira `u
 
 ---
 
-## 53. 🟡 High Severity — MCP Atlassian: HTTP upload tools accept arbitrary server-local file paths
+## 58. 🟡 High Severity — MCP Atlassian: HTTP upload tools accept arbitrary server-local file paths
 
 **CVE:** `CVE-2026-77257` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-mrq8-fv7v-hhjg>
@@ -648,7 +697,7 @@ Commit: `d8bc78698a63cb6b321c7ca796d6329d448f7f6d`
 
 ---
 
-## 54. 🟡 High Severity — MCP Atlassian: ENABLED_TOOLS / Toolset authorization bypass
+## 59. 🟡 High Severity — MCP Atlassian: ENABLED_TOOLS / Toolset authorization bypass
 
 **CVE:** `CVE-2026-77243` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-3r68-hf9h-887v>
@@ -661,7 +710,7 @@ Commit: `d8bc78698a63cb6b321c7ca796d6329d448f7f6d`
 
 ---
 
-## 55. 🟡 High Severity — MCP Atlassian: Arbitrary File Read & Exfiltration (Confused Deputy) in JIRA update_issue
+## 60. 🟡 High Severity — MCP Atlassian: Arbitrary File Read & Exfiltration (Confused Deputy) in JIRA update_issue
 
 **CVE:** `CVE-2026-77255` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-2xj6-xx86-cwwc>
@@ -671,7 +720,7 @@ A critical Confused Deputy (Arbitrary File Read &amp; Exfiltration) vulnerabilit
 
 ---
 
-## 56. 🟡 High Severity — MCP Atlassian: JIRA_PROJECTS_FILTER / CONFLUENCE_SPACES_FILTER allow forbidden-project content exfiltration (one LIVE-proven on Atlassian Cloud)
+## 61. 🟡 High Severity — MCP Atlassian: JIRA_PROJECTS_FILTER / CONFLUENCE_SPACES_FILTER allow forbidden-project content exfiltration (one LIVE-proven on Atlassian Cloud)
 
 **CVE:** `CVE-2026-77251` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-w66g-j6c4-hcfc>
@@ -682,7 +731,7 @@ A critical Confused Deputy (Arbitrary File Read &amp; Exfiltration) vulnerabilit
 
 ---
 
-## 57. 🟡 High Severity — MCP Atlassian: MCP HTTP Client Server-Local File Exfiltration via Unvalidated Attachment Upload Path
+## 62. 🟡 High Severity — MCP Atlassian: MCP HTTP Client Server-Local File Exfiltration via Unvalidated Attachment Upload Path
 
 **CVE:** `CVE-2026-77246` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-wv8v-v4c5-v75j>
@@ -693,7 +742,7 @@ The `mcp-atlassian` server exposes an MCP tool (`confluence_upload_attachment` a
 
 ---
 
-## 58. 🟡 High Severity — MCP Atlassian: Unauthenticated arbitrary local file read via upload_attachment file_path, chained with missing auth on streamable-http transport
+## 63. 🟡 High Severity — MCP Atlassian: Unauthenticated arbitrary local file read via upload_attachment file_path, chained with missing auth on streamable-http transport
 
 **CVE:** `CVE-2026-77248` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-cc5h-2pwp-pvcc>
@@ -703,7 +752,7 @@ In the documented multi-user HTTP deployment (`--transport streamable-http` with
 
 ---
 
-## 59. 🟡 High Severity — Unleash: Clone-feature lets a user copy a feature from a project they cannot read
+## 64. 🟡 High Severity — Unleash: Clone-feature lets a user copy a feature from a project they cannot read
 
 **CVE:** `CVE-2026-76910` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-8xcj-9hfr-fh9j>
@@ -716,7 +765,7 @@ This vulnerability cannot be confirmed without Enterprise access. Report is base
 
 ---
 
-## 60. 🟡 High Severity — Graylog: Manager-to-Owner privilege escalation on saved searches and dashboards
+## 65. 🟡 High Severity — Graylog: Manager-to-Owner privilege escalation on saved searches and dashboards
 
 **CVE:** `CVE-2026-69190` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-m9c2-85gv-8xr5>
@@ -731,7 +780,7 @@ This issue has been patched in the…
 
 ---
 
-## 61. 🟡 High Severity — Hatchet: Cross-Tenant Durable Task Event Log Disclosure via Missing Authorization Check
+## 66. 🟡 High Severity — Hatchet: Cross-Tenant Durable Task Event Log Disclosure via Missing Authorization Check
 
 **CVE:** `CVE-2026-63342` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-g26x-m427-f48f>
@@ -747,7 +796,7 @@ Any authenticated Hatchet user can read durable task event logs from any other t
 
 ---
 
-## 62. 🟡 High Severity — Hatchet: SSRF via Unsigned UnsubscribeURL in SNS UnsubscribeConfirmation Handler
+## 67. 🟡 High Severity — Hatchet: SSRF via Unsigned UnsubscribeURL in SNS UnsubscribeConfirmation Handler
 
 **CVE:** `CVE-2026-61681` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-fjwv-jf2v-j499>
@@ -760,7 +809,7 @@ Any authenticated Hatchet user can read durable task event logs from any other t
 
 ---
 
-## 63. 🟡 High Severity — wlc may disclose API tokens to project-configured URLs
+## 68. 🟡 High Severity — wlc may disclose API tokens to project-configured URLs
 
 **CVE:** `CVE-2026-62364` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-3mqq-hv9c-85hc>
@@ -775,7 +824,7 @@ Impacted users are those run…
 
 ---
 
-## 64. 🟡 High Severity — deepstream: PATCH_MULTI action bypasses Valve permission system allowing unauthorized record writes
+## 69. 🟡 High Severity — deepstream: PATCH_MULTI action bypasses Valve permission system allowing unauthorized record writes
 
 **CVE:** `CVE-2026-63116` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-89vx-jh4q-vg3w>
@@ -786,7 +835,7 @@ The `RECORD_ACTION.PATCH_MULTI` action is not registered in the Valve permission
 
 ---
 
-## 65. 🟡 High Severity — OpenCVE: Server-Side Request Forgery (SSRF) in notifications
+## 70. 🟡 High Severity — OpenCVE: Server-Side Request Forgery (SSRF) in notifications
 
 **CVE:** `CVE-2026-62282` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-ch3g-4xvr-674q>
@@ -799,7 +848,7 @@ An authenticated user with permission to configure notification channels can tri
 
 ---
 
-## 66. 🟡 High Severity — psd-tools composite/numpy has uncontrolled memory allocation via crafted PSD geometry
+## 71. 🟡 High Severity — psd-tools composite/numpy has uncontrolled memory allocation via crafted PSD geometry
 
 **CVE:** `CVE-2026-59991` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-8q6g-vjhf-jp8m>
@@ -809,7 +858,7 @@ An authenticated user with permission to configure notification channels can tri
 
 ---
 
-## 67. 🟡 High Severity — microsandbox: Secret values exposed in world-readable process arguments
+## 72. 🟡 High Severity — microsandbox: Secret values exposed in world-readable process arguments
 
 **CVE:** `CVE-2026-61670` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://github.com/advisories/GHSA-m8f5-rh7h-vgg3>
@@ -820,7 +869,7 @@ When the SDK spawns a sandbox, the `msb sandbox` child process receives the full
 
 ---
 
-## 68. 🟡 High Severity — CVE-2026-44756: Pre-Auth RCE in SAP EPP Processing (ICM, Web Dispatcher, disp+work)
+## 73. 🟡 High Severity — CVE-2026-44756: Pre-Auth RCE in SAP EPP Processing (ICM, Web Dispatcher, disp+work)
 
 **CVE:** `CVE-2026-44756` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/65>
@@ -829,7 +878,7 @@ When the SDK spawns a sandbox, the `msb sandbox` child process receives the full
 
 ---
 
-## 69. 🟡 High Severity — Critical Bifrost AI Gateway Flaw Lets Attackers Run Commands Without Credentials
+## 74. 🟡 High Severity — Critical Bifrost AI Gateway Flaw Lets Attackers Run Commands Without Credentials
 
 **CVE:** `CVE-2026-90898` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://thehackernews.com/2026/09/critical-bifrost-ai-gateway-flaw-lets.html>
@@ -840,7 +889,7 @@ The flaw, tracked as CVE-2026-90898 (CVSS score: 9.8), affects all versions of
 
 ---
 
-## 70. 🟡 High Severity — SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE
+## 75. 🟡 High Severity — SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE
 
 **CVE:** `CVE-2026-65660` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
 **Reference:** <https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html>
@@ -851,18 +900,7 @@ The flaw, CVE-2026-65660, affects SharePoint Server 2016, 2019, and Subscription
 
 ---
 
-## 71. 🟡 High Severity — Zyxel and Veeam Flaws Under Active Exploitation With Command and SYSTEM Access
-
-**CVE:** `CVE-2026-7273` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-22
-**Reference:** <https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a now-patched security flaw impacting Zyxel GS1900 series switches to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
-
-The vulnerability, tracked as CVE-2026-7273 (CVSS score: 8.8), is a stack-based buffer overflow vulnerability that could result in arbitrary operating
-
----
-
-## 72. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 76. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
