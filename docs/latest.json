@@ -1,86 +1,10 @@
 {
-  "generated": "2026-09-22T20:35:41.993099+00:00",
-  "total": 51,
-  "kev": 4,
-  "zero_day": 21,
+  "generated": "2026-09-23T02:08:09.376049+00:00",
+  "total": 72,
+  "kev": 0,
+  "zero_day": 24,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-94127",
-      "title": "CVE-2026-94127 \u2014 F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
-      "summary": "Vendor: F5 | Product: BIG-IP APM. F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-25)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-94127",
-      "published": "2026-09-22",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-94127"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-93952",
-      "title": "CVE-2026-93952 \u2014 Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
-      "summary": "Vendor: Arista | Product: VeloCloud Orchestrator. Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-25)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-93952",
-      "published": "2026-09-22",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-93952"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-93616",
-      "title": "CVE-2026-93616 \u2014 Check Point Multiple Products Path Traversal Vulnerability",
-      "summary": "Vendor: Check Point | Product: Multiple Products. Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scripts. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-25)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-93616",
-      "published": "2026-09-22",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-93616"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-85102",
-      "title": "CVE-2026-85102 \u2014 Check Point Multiple Products Improper Certificate Validation Vulnerability",
-      "summary": "Vendor: Check Point | Product: Multiple Products. Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the Gateway. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-25)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85102",
-      "published": "2026-09-22",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-85102"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -109,6 +33,42 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77258",
+      "title": "MCP Atlassian: Arbitrary file read/exfiltration via upload_attachment missing validate_safe_path()",
+      "summary": "## Summary\n\nThe `upload_attachment` method in `confluence/attachments.py` reads and uploads arbitrary local files to Confluence without calling `validate_safe_path()`. Both download methods (`download_attachment` at line 223, `download_content_attachments` at line 272) correctly call `validate_safe_path()` before writing files, but the upload path at lines 35-79 skips this check entirely.\n\nAn AI agent connected via MCP (or an attacker influencing that agent through prompt injection) can read any file on the host and exfiltrate it by uploading it as a Confluence page attachment.\n\n## Vulnerable Code\n\nFile: `src/mcp_atlassian/confluence/attachments.py`, lines 62-79\n\n```python\n# No validate_safe_path() call anywhere in this method\nif not os.path.isabs(file_path):\n    file_path = os.path.abspath(file_path)\n\nif not os.path.exists(file_path):\n    return {\"success\": False, \"error\": f\"File not found: {file_path}\"}\n\nfilename = os.path.basename(file_path)\nattachment = self._upload_attachment_direct(\n    content_id, file_path, filename, comment, minor_edit\n)\n```\n\nThe `validate_safe_path` function is already imported at line 9 of the same file, and used in the download methods. It was just not added to the upload path.\n\n## Proof of Concept\n\nTested with mcp-atlassian 0.21.1 on Python 3.11 (EC2, Amazon Linux 2023).\n\n```python\nimport inspect\nfrom mcp_atlassian.confluence.attachments import AttachmentsMixin\n\n# Confirm: no validate_safe_path in upload\nsource = inspect.getsource(AttachmentsMixin.upload_attachment)\nassert \"validate_safe_path\" not in source  # passes\n\n# Confirm: validate_safe_path IS in downloads\nassert \"validate_safe_path\" in inspect.getsource(AttachmentsMixin.download_attachment)  # passes\nassert \"validate_safe_path\" in inspect.getsource(AttachmentsMixin.download_content_attachments)  # passes\n```\n\nAn MCP tool call like this reads /etc/passwd and uploads it to Confluence:\n\n```json\n{\"tool\": \"confluence_upload_attachment\", \"arguments\": {\"content_id\": \"123456\", \"file_pat",
+      "link": "https://github.com/advisories/GHSA-93xw-j965-9mx3",
+      "published": "2026-09-22T20:36:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77258"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77247",
+      "title": "MCP Atlassian: Arbitrary server-local file upload to Jira/Confluence attachments via unrestricted file_path parameters",
+      "summary": "## Summary\n\nThe Jira and Confluence attachment upload tools accept caller-controlled file path parameters and read those paths from the MCP server's local filesystem before uploading the file as an Atlassian attachment.\n\nIn local `stdio` deployments, this can expose files readable by the user's MCP process. In documented HTTP/SSE or `streamable-http` deployments, the impact is higher: any MCP client that is allowed to invoke write/upload tools can cause the server process to read a server-local file and upload it to Jira or Confluence.\n\nThis is not dependent on an AI prompt injection or model behavior. It can be triggered deterministically with a normal MCP tool call.\n\n## Details\n\nThe vulnerable behavior exists because upload tool arguments are treated as server-local filesystem paths.\n\nRelevant implementation points:\n\n- `mcp_atlassian.confluence.attachments.AttachmentsMixin.upload_attachment`\n  - Accepts `file_path`.\n  - Converts the supplied value to an absolute path when needed.\n  - Checks existence with `os.path.exists`.\n  - Passes the path into the attachment upload flow.\n\n- `mcp_atlassian.confluence.attachments.AttachmentsMixin._upload_attachment_direct`\n  - Opens the supplied `file_path` with `open(file_path, \"rb\")`.\n  - Sends the resulting file object as multipart form data to Confluence.\n\n- `mcp_atlassian.confluence.attachments.AttachmentsMixin.upload_attachments`\n  - Iterates caller-supplied `file_paths`.\n  - Calls `upload_attachment` for each path.\n\n- `mcp_atlassian.jira.attachments.AttachmentsMixin.upload_attachment`\n  - Accepts `file_path`.\n  - Converts the supplied value to an absolute path when needed.\n  - Checks existence with `os.path.exists`.\n  - Opens the file and uploads it as a Jira attachment.\n\n- `mcp_atlassian.jira.attachments.AttachmentsMixin.upload_attachments`\n  - Iterates caller-supplied `file_paths`.\n  - Calls `upload_attachment` for each path.\n\n- `mcp_atlassian.servers.jira.update_issue`\n  - Accepts an `attachments` argument as a JSON ar",
+      "link": "https://github.com/advisories/GHSA-f6pj-qv47-g96w",
+      "published": "2026-09-22T20:36:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77247"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -256,6 +216,24 @@
       ],
       "cve_ids": [
         "CVE-2025-66376"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-62370",
+      "title": "KubeEdge: Unbounded allocation in viaduct packer enables authenticated remote DoS against CloudHub",
+      "summary": "## Summary\n\nKubeEdge CloudHub uses the viaduct packer to decode messages received from connected peers. The packer reads a 32-bit payload length from the message header and previously allocated a buffer of that size without enforcing an upper bound.\n\nAn authenticated peer that can establish a viaduct connection to CloudHub can send a crafted message header containing an excessively large payload length. This may cause CloudHub to allocate a large amount of memory and can result in memory exhaustion, process termination, or denial of service.\n\n## Impact\n\nA successfully authenticated malicious or compromised edge node may repeatedly send crafted viaduct message headers to increase CloudHub memory consumption.\n\nDepending on available memory and deployment limits, exploitation may cause:\n\n* Increased CloudHub memory usage\n* Out-of-memory termination\n* CloudHub restart loops\n* Temporary disruption of cloud-edge communication\n\nAuthentication to the viaduct endpoint is required. This issue does not provide unauthenticated access or direct code execution.\n\n## Root cause\n\nThe viaduct packer trusted the payload length encoded in the message header and allocated the payload buffer before validating whether the declared length was within an acceptable range.\n\n## Fix\n\nThe fix introduces a maximum viaduct payload size of 32 MiB.\n\nThe updated implementation:\n\n* Rejects oversized payload lengths in the reader before memory allocation\n* Enforces the same maximum size in the writer\n* Adds regression tests covering oversized and valid payloads\n\nFixes have been prepared for the following patch releases:\n\n* KubeEdge v1.23.1\n* KubeEdge v1.22.2\n* KubeEdge v1.21.2\n\nThese versions should not be listed as released until the coordinated release process is complete.\n\n## Workarounds\n\nBefore patched versions are available, operators should:\n\n* Restrict access to the CloudHub endpoint to trusted edge nodes and networks\n* Protect and rotate edge-node credentials\n* Revoke credentials belonging to d",
+      "link": "https://github.com/advisories/GHSA-gfw4-49f9-cp25",
+      "published": "2026-09-22T20:37:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62370"
       ],
       "is_zero_day": true,
       "is_high_severity": false
@@ -420,6 +398,420 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-91129",
+      "title": "Home Assistant: mDNS Server-Side Request Forgery",
+      "summary": "## Summary\n\nHome Assistant Green is vulnerable to a Server-Side Request Forgery (SSRF) via the mDNS/Zeroconf IPP integration. An unauthenticated attacker on the local network can send a crafted mDNS response to trick Home Assistant into making HTTP requests to arbitrary hosts, including internal services bound to localhost. The IPP integration automatically processes `_ipp._tcp.local` service announcements without any user interaction or authentication, and follows HTTP redirects from the attacker-controlled host.\n\n## Details\n\nHome Assistant listens for mDNS service announcements on port 5353. When a service of type `_ipp._tcp.local` is discovered, the IPP integration's zeroconf handler (`homeassistant/components/ipp/config_flow.py`) processes it automatically.\n\nThe `async_step_zeroconf` method extracts `host`, `port`, and `base_path` directly from the mDNS discovery info without validation:\n\n```python\nasync def async_step_zeroconf(\n    self, discovery_info: ZeroconfServiceInfo\n) -> ConfigFlowResult:\n    host = discovery_info.host\n    port = discovery_info.port\n    zctype = discovery_info.type\n    name = discovery_info.name.replace(f\".{zctype}\", \"\")\n    tls = zctype == \"_ipps._tcp.local.\"\n    base_path = discovery_info.properties.get(\"rp\", \"ipp/print\")\n\n    self.discovery_info.update(\n        {\n            CONF_HOST: host,\n            CONF_PORT: port,\n            CONF_SSL: tls,\n            CONF_VERIFY_SSL: False,\n            CONF_BASE_PATH: f\"/{base_path}\",\n            CONF_NAME: name,\n            CONF_UUID: unique_id,\n        }\n    )\n```\n\nThese values are then passed to `validate_input()`, which constructs an HTTP request (IPP over HTTP) to the attacker-controlled host:\n\n```python\nasync def validate_input(hass: HomeAssistant, data: dict) -> dict[str, Any]:\n    session = async_get_clientsession(hass)\n    ipp = IPP(\n        host=data[CONF_HOST],\n        port=data[CONF_PORT],\n        base_path=data[CONF_BASE_PATH],\n        tls=data[CONF_SSL],\n        verify_ssl=data[C",
+      "link": "https://github.com/advisories/GHSA-4ghv-53cq-7wp3",
+      "published": "2026-09-22T20:40:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-91129"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88010",
+      "title": "Traefik: BasicAuth singleflight coalescing reintroduces an unauthenticated username-enumeration timing oracle",
+      "summary": "## Summary\n\nTraefik's BasicAuth middleware coalesces concurrent credential checks through a `singleflight.Group` to avoid hashing the same password many times at once. Since v3.6.11 the deduplication key was built from the submitted password plus the stored secret, so it depended on server state: a non-existent username collapsed onto one shared key while each configured username produced its own. Under attacker-controlled concurrency, a probe request arriving inside a leader request's in-flight window is served the leader's fast coalesced result when the username does not exist, but computes its own hash (slow) when the username exists \u2014 reintroducing, only in the concurrent case, the unauthenticated username-enumeration timing oracle that GHSA-g3hg-j4jv-cwfr had hardened for sequential probing. The fix derives the singleflight key from the submitted credentials (username and password) only, so it no longer depends on whether the account exists or on any stored secret. Traefik v2 is not affected: the v2.11 BasicAuth middleware does not use singleflight coalescing, and Digest authentication is not affected. The impact is limited to username enumeration; no credential disclosure or authentication bypass is possible.\n\nThe vulnerability originates on the v3.6 line, which has reached end of life; users on v3.6 or earlier v3.x must upgrade to v3.7.13 to receive the fix.\n\n## Patches\n\n- https://github.com/traefik/traefik/releases/tag/v3.7.13\n\n## For more information\n\nIf you have any questions or comments about this advisory, please [open an issue](https://github.com/traefik/traefik/issues).\n\n<details>\n<summary>Original Description</summary>\n\n## Summary\n\nConfirmed. `checkPassword` derives the `singleflight` key from the *stored secret*, so the key encodes whether the submitted username exists:\n\n- username absent, `secret == \"\"`, key `= len(P) + \":\" + P`\n- username present, key `= len(P) + \":\" + P + secret_T`\n\nEvery non-existent username therefore lands on one shared key, wh",
+      "link": "https://github.com/advisories/GHSA-8fcf-v89g-xpg6",
+      "published": "2026-09-22T20:40:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88010"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88978",
+      "title": "Hatchet DurableTask WorkerStatus gRPC resolves caller-supplied durable-task UUIDs via ListSatisfiedEntries with no tenant_id filter",
+      "summary": "# Cross-tenant disclosure risk on `DurableTask` bidi RPC\n\nThis is a low-severity, low-risk cross-tenant data exposure vuln caused by blindly accepting a durable task id, in addition to a list of node and branch ids that identify records in that task's event log, and returning them to the caller via the `handleWorkerStatus` polling path.\n\n# Impact\n\nThis advisory requires an attacker to successfully guess a durable task's external uuid belonging to another tenant. External ids are generated uuid v4s (`uuid.New()` in Go), so exploitation requires prior knowledge of a target task UUID through an out-of-band channel. Thus, while the following environments are impacted, there is an extremely low probability it would be exploited.\n\n### Who is impacted. Any Hatchet deployment that hosts more than one tenant on the same instance:\n\n* Hatchet Cloud (multi-tenant SaaS)\n* Self-hosted Hatchet with multiple internal teams / business units sharing one instance\n* Any deployment where a single tenant's API token can be obtained by an attacker\n\nSingle-tenant self-hosted deployments are unaffected in practice (the \"victim\" and \"attacker\" tenants would be the same).",
+      "link": "https://github.com/advisories/GHSA-992g-9cr3-vm5x",
+      "published": "2026-09-22T20:40:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88978"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84298",
+      "title": "Hatchet: Cross-tenant durable callback payload disclosure in Hatchet V1 Dispatcher",
+      "summary": "## Summary\n\nThe V1 `DurableTask` stream handler registers worker-supplied durable task external IDs in an in-memory callback routing map before verifying that the authenticated tenant owns the task. If the tenant-scoped ownership check fails, the handler logs the error and continues, but the map entry persists until the stream closes.\n\nDurable callback delivery resolves the destination stream by `task_external_id` only, without checking tenant identity. As a result, a tenant A worker that knows a tenant B durable task external UUID can hold its stream open and receive tenant B's durable callback result payload when the callback is delivered on the same dispatcher process.\n\n## Impact\n\nThis advisory requires an attacker to successfully guess a durable task external UUID belonging to another tenant. Durable task external IDs are generated with `uuid.New()` (UUIDv4) and are not enumerable across tenants, so exploitation requires prior knowledge of a target task UUID through an out-of-band channel. Thus, while the following environments are impacted, there is an extremely low probability it would be exploited. \n\n**Who is impacted.** Any Hatchet deployment that hosts more than one tenant on the same instance:\n- Hatchet Cloud (multi-tenant SaaS) \n- Self-hosted Hatchet with multiple internal teams / business units sharing one instance\n- Any deployment where a single tenant's API token can be obtained by an attacker\n\nSingle-tenant self-hosted deployments are unaffected in practice (the \"victim\" and \"attacker\" tenants would be the same).",
+      "link": "https://github.com/advisories/GHSA-9q4h-f4x5-ffq8",
+      "published": "2026-09-22T20:40:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84298"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-79913",
+      "title": "Cloudreve: SSRF guard bypass: checkIP does not decode IPv6-transition wrappers (NAT64, IPv4-compatible, 6to4) reaching internal and cloud-metadata addresses",
+      "summary": "**Summary**\n\nCloudreve's server-side request forgery guard `ValidateExternalURL` (`pkg/request/ssrf.go`) resolves a user-supplied URL host and rejects it when any resolved IP is a loopback, private, link-local, multicast, unspecified, CGNAT, or the cloud-metadata address. The classification is performed by `checkIP`, which uses Go's `net.IP` builtins (`IsLoopback`, `IsPrivate`, `IsLinkLocalUnicast`, ...) directly on the resolved address. These builtins inspect only the outer IPv6 address and do not decode IPv4-in-IPv6 transition wrappers. An attacker who controls a hostname's AAAA record (or, on a DNS64/NAT64 network, any hostname) can point the remote-download URL at a NAT64 well-known-prefix address (`64:ff9b::a.b.c.d`, RFC 6052), an IPv4-compatible address (`::a.b.c.d`, RFC 4291), or a 6to4 address (`2002:AABB:CCDD::`, RFC 3056) that wraps an internal IPv4. Go classifies these wrappers as ordinary global IPv6 addresses, so `checkIP` accepts them; the network then delivers the request to the embedded internal IPv4 (loopback, RFC 1918, or the cloud instance metadata service `169.254.169.254`). This bypasses the SSRF guard that was added to block direct access to internal services.\n\n**Affected component and versions**\n\n- Component: `pkg/request/ssrf.go` (`ValidateExternalURL` / `checkIP`), reached from the remote-download workflow `pkg/filemanager/workflows/remote_download.go` (`RemoteDownloadTask.createDownloadTask`, which passes the user-supplied `SrcUri` to `ValidateExternalURL`).\n- Affected: Cloudreve `<= 4.17.0` (latest release at time of report) and current `main`.\n- Reachable by an authenticated remote-download user; administrative privileges are not required.\n\n**Vulnerable form vs correctly-guarded sibling**\n\n`checkIP` DOES block IPv4-mapped IPv6 (`::ffff:a.b.c.d`), because Go's `net.IP.To4()` returns the embedded IPv4 for that form and the standard checks then fire. It does NOT block the other IPv4-in-IPv6 transition forms, because for those `To4()` returns",
+      "link": "https://github.com/advisories/GHSA-jvh5-97xg-v99f",
+      "published": "2026-09-22T20:40:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-79913"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77637",
+      "title": "Cloudreve: Privilege Scope Bypass: State-Mutating Admin Operations Accessible via Read-Only OAuth Scope",
+      "summary": "### Summary\nThere is a privilege scope bypass in Cloudreve's admin API where two endpoints that mutate server state are missing the write-scope enforcement that their neighboring endpoints correctly apply. Specifically, the WOPI configuration fetch endpoint and the SMTP test/mail endpoint can both be triggered by an OAuth token that only has Admin.Read authorization \u2014 no Admin.Write needed. This breaks the intended OAuth scope boundary in a way that's subtle enough to have slipped through but meaningful enough to matter in a real deployment.\n\n### Details\nThe root cause is an inconsistency in how the admin tool routes are wired up in `routers/router.go`. The admin route group sets a baseline of `ScopeAdminRead` for everything underneath it (around line 868), and most write-capable endpoints inside the `tool` sub-group correctly layer on an additional `RequiredScopes(types.ScopeAdminWrite)` check on top of that. For example, the thumbnail executable setter (line 929) and the entity URL cache deletion (line 937) both do this properly.\n\nThe two endpoints that don't follow this pattern are `tool.GET('wopi')` (line 925) and `tool.POST('mail')` (line 933). Despite `POST /mail` clearly triggering an outbound email and `GET /wopi` fetching or probing WOPI service connectivity, neither has the `ScopeAdminWrite` guard. What that means in practice is that any OAuth application granted only Admin.Read \u2014 a scope that should be limited to inspecting configuration, not changing anything \u2014 can silently invoke both of these operations. The developer looking at the route definitions would reasonably assume all the write-adjacent tool endpoints were protected, because the ones right above and below them are. It's the kind of gap that's easy to miss in a code review.\n\n### PoC\n```bash\n# OAuth app with ONLY Admin.Read scope can send emails:\ncurl -s -X POST -H 'Content-Type: application/json' \\\n  -H 'Authorization: Bearer <ADMIN_READ_ONLY_TOKEN>' \\\n  'https://cloudreve.example.com/api/v4/a",
+      "link": "https://github.com/advisories/GHSA-w89x-c962-c44g",
+      "published": "2026-09-22T20:40:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77637"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77633",
+      "title": "Cloudreve: Storage-quota TOCTOU race allows quota bypass and storage-based denial of service",
+      "summary": "## Summary\n\nCloudreve v4 splits the storage-quota **check** (reading the user's `used` bytes and comparing them to `MaxStorage`) and the **charge** (incrementing `users.storage`) into two non-atomic steps in the `PrepareUpload` code path. This creates a Time-of-Check to Time-of-Use (TOCTOU) race condition. Any authenticated user \u2014 including an unprivileged account in the default `User` group \u2014 can concurrently issue several upload-session requests that all read the same stale `used` snapshot, each pass the check, and then each contribute their declared `size` to `users.storage`. The end result is that the total approved capacity exceeds the group's `MaxStorage` many times over.\n\nThe same primitive is trivially amplifiable into a storage-based denial of service. During `PrepareUpload`, Cloudreve reserves the declared size against `users.storage` before any bytes are written, so an attacker can push the reserved amount far beyond the host's physical disk (tested: a 1 GiB-quota account reserved 17 GiB in a single 20-way burst), and can then materialise the reservation by completing chunked uploads to actually write the excess bytes to disk. Amplification to the host's free space fills the disk and denies uploads for every user of the instance.\n\nExploitation requires only a valid session with `Files.Write` permission. No administrator configuration, no non-default storage policy, and no elevated privileges are needed. The default deployment (local storage policy, default `User` group) is affected.\n\n## Technical details\n\n`PrepareUpload` in `pkg/filemanager/fs/dbfs/upload.go` splits quota enforcement across two stages:\n\n**Stage A \u2014 the check (snapshot compare, no lock)** \u2014 `pkg/filemanager/fs/dbfs/validator.go`:\n\n```go\nfunc (f *DBFS) validateUserCapacity(ctx context.Context, size int64, u *ent.User) error {\n    capacity, err := f.Capacity(ctx, u)              // reads \"used\"\n    if err != nil { return ... }\n    return f.validateUserCapacityRaw(ctx, size, capacity)\n}\n\nfunc",
+      "link": "https://github.com/advisories/GHSA-xj3h-wwxq-gfcj",
+      "published": "2026-09-22T20:40:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77633"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-94462",
+      "title": "Spree: Broken Access Control in `PATCH /api/v3/store/carts/:id/associate` (IDOR)",
+      "summary": "## Summary\n\nThe Store API v3 endpoint `PATCH /api/v3/store/carts/:id/associate` binds a guest cart to the authenticated caller without verifying possession of that cart. It locates the cart by prefixed ID only \u2014 `current_store.carts.where(user: [nil, current_user]).find_by_prefix_id!(params[:id])` \u2014 and omits the `authorize!(:update, @cart, cart_token)` check that every other action in the controller performs via `CartResolvable`. Because prefixed IDs are a reversible Sqids encoding of the auto-increment primary key (obfuscation, not a token), an authenticated customer can name arbitrary guest cart IDs, take them over, and read the checkout addresses stored on them. This is broken access control / IDOR, reachable by any low-privilege registered user.\n\n## Severity\n\nRequires an authenticated store account and depends on target guest carts already carrying an address and not yet being associated, on a store not running in `login_required` mode. Confidentiality impact is the driver (guest checkout PII); integrity impact is limited and recoverable (cart reassignment + email overwrite on an in-progress cart). Not Critical: the action is gated behind authentication (`PR:L`, not `PR:N`) and constrained by cart state, so it is not anonymously exploitable.\n\n## Details\n\n**Root cause:** `associate` skips the cart-possession check its sibling actions enforce and trusts a guessable identifier as the sole locator.\n\n**Entry point.** `Spree::Api::V3::Store::CartsController#associate` (`carts_controller.rb:88-96`), guarded only by `prepend_before_action :require_authentication!, only: [:index, :associate]`. That requires the *caller* be authenticated; it does not tie the request to a specific guest cart.\n\n```ruby\n# spree/api/app/controllers/spree/api/v3/store/carts_controller.rb:88-96\n# PATCH /api/v3/store/carts/:id/associate\ndef associate\n  @cart = find_cart_for_association\n\n  result = Spree.cart_associate_service.call(guest_order: @cart, user: current_user, guest_only: true)\n\n  if ",
+      "link": "https://github.com/advisories/GHSA-4825-p4xm-pcf2",
+      "published": "2026-09-22T20:40:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-94462"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-85740",
+      "title": "lightrag-hku: SSRF via IPv6-transition address bypass (NAT64, IPv4-compatible, 6to4) of the native-markdown image-download guard",
+      "summary": "## Summary\n\nLightRAG's native markdown parser downloads external images referenced by an uploaded markdown or textpack document. The only SSRF guard, `_validated_addresses()` in `lightrag/parser/markdown/parser.py`, resolves the image host and rejects it when the resolved IP is not `is_global`. That check is evaluated on the raw resolved address and never decodes IPv6 transition wrappers that embed an internal IPv4. Python's `ipaddress` classifies a NAT64 (`64:ff9b::/96` and the RFC 8215 `64:ff9b:1::/48` prefix), IPv4-compatible (`::a.b.c.d`), or 6to4 (`2002::/16`) literal that wraps an internal IPv4 as globally routable, so the guard passes it. On a host with NAT64/DNS64 routing the request is then delivered to the embedded internal target (loopback, RFC1918, or a cloud metadata endpoint), and the fetched body is ingested. The plain and IPv4-mapped (`::ffff:`) forms of the same internal address are correctly blocked, so this is an encoding that defeats the existing filter.\n\n## Affected component and versions\n\n- Package: `lightrag-hku` (LightRAG), the native markdown image-download path.\n- Component: `lightrag/parser/markdown/parser.py`, guard `_validated_addresses()` (the `if not (ip.is_global or ...)` check), reached from `_download()` -> `_build_guarded_opener().open(req)`.\n- Enabled by default: `download_enabled = _env_bool(\"NATIVE_MD_IMAGE_DOWNLOAD_ENABLED\", True)`.\n- Affected: LightRAG `<= 1.5.4` (latest release at time of report, commit `9a45b64`).\n- Precondition: the caller can upload a document (API key via `Depends(combined_auth)`); the host has NAT64/DNS64 routing for the encoded address to reach the internal endpoint.\n\n## Vulnerable code vs the guarded sibling\n\nEvaluated on the exact resolved addresses (CPython `ipaddress`):\n\n| Form | address | is_global | guard verdict |\n|---|---|---|---|\n| plain internal 127.0.0.1 | `127.0.0.1` | False | BLOCK (correct) |\n| IPv4-mapped | `::ffff:7f00:1` | False | BLOCK (correct) |\n| NAT64 64:ff9b::/96 | `64:ff9b::7f00:",
+      "link": "https://github.com/advisories/GHSA-vv3m-f8x4-7377",
+      "published": "2026-09-22T20:40:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-85740"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-85725",
+      "title": "lightrag-hku: Plaintext Passwords Compared Without Constant-Time Function",
+      "summary": "### Summary\nWhen plaintext passwords are stored in AUTH_ACCOUNTS, the comparison uses Python's == operator which is not constant-time. An attacker with low-latency access can exploit timing differences to recover the password character by character.\n\n### Details\n\n```python\n# lightrag/api/passwords.py:13-26\ndef verify_password(plain_password: str, stored_password: str) -> bool:\n    if stored_password.startswith(\"{bcrypt}\"):\n        ...\n        return bcrypt.checkpw(...)    # constant-time  OK\n\n    return stored_password == plain_password  # NOT constant-time  VULN\n    #   Python == short-circuits on first mismatched byte\n    #   Timing leaks: password length + individual characters\n```\n\n### PoC\n\n```python\n# Timing oracle: recover password char-by-char\nimport httpx, time, string\n\nTARGET = \"http://<TARGET>:9621/login\"\nUSER   = \"admin\"\n\ndef measure(pwd: str) -> float:\n    t = time.perf_counter()\n    httpx.post(TARGET, data={\"username\": USER, \"password\": pwd})\n    return time.perf_counter() - t\n\nknown = \"\"\nfor _ in range(32):\n    best = max(string.printable,\n               key=lambda c: sum(measure(known+c+\"A\"*20) for _ in range(10)))\n    known += best\n    print(f\"Recovered: {known}\")\n```\n\n### Impact\nObservable timing discrepancy. Attackers with low-latency access can recover plaintext passwords character by character without triggering brute-force limits. Only affects deployments using unhashed passwords in AUTH_ACCOUNTS.",
+      "link": "https://github.com/advisories/GHSA-c759-cx9p-mrwq",
+      "published": "2026-09-22T20:40:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-85725"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-85709",
+      "title": "lightrag-hku: Sensitive Information Exposure Through Raw Exception Messages in API Error Responses",
+      "summary": "### Summary\n\nThe LightRAG API server passes raw Python exception messages directly into HTTP\nerror responses across 30+ error handlers in every router. When combined with\nthe default unauthenticated configuration (see companion report on CWE-306), any\nnetwork-reachable client can trigger exceptions whose raw text discloses\ninternal infrastructure \u2014 server filesystem paths, database host/port/user, LLM\nprovider error details, and Python library internals. No global exception\nhandler sanitizes error messages before they reach the client.\n\n### Details\n\nThroughout the API route handlers, exceptions are caught and their string\nrepresentation is returned verbatim via `detail=str(e)` / `detail=str(exc)`\n(and f-string variants such as `detail=f\"...: {str(e)}\"`). This occurs in every\nrouter file. Location breakdown on the current `main` branch:\n\n**HTTP 500 \u2014 raw exception passthrough (`except Exception as e`):**\n- `document_routes.py` \u2014 13\n- `graph_routes.py` \u2014 12 (mix of `detail=f\"...{str(e)}\"` and `detail=error_msg`)\n- `query_routes.py` \u2014 3\n- `ollama_api.py` \u2014 2\n- `lightrag_server.py` \u2014 1 (health endpoint)\n\n**HTTP 422 \u2014 raw exception passthrough (`except ValueError as exc`):**\n- `document_routes.py` \u2014 2 (chunking-config validation)\n\n**Total: ~33 raw-exception-to-HTTP-response locations.** The only pre-existing\ncustom exception handler in `lightrag_server.py` is specific to\n`RequestValidationError` for `/query/data`; it does not cover the generic\n`Exception` handlers in route code.\n\nExample pattern (`document_routes.py`, upload handler):\n\n```python\nexcept Exception as e:\n    logger.error(f\"Error /documents/upload: {file.filename}: {str(e)}\")\n    raise HTTPException(status_code=500, detail=str(e))\n```\n\n**Categories of sensitive information that can leak through these responses:**\n\n1. **Server filesystem paths.** File-I/O errors from the default JSON storage\n   backend expose the server's directory layout\n   (e.g. `[Errno 13] Permission denied: '/app/data/rag_storage/default/",
+      "link": "https://github.com/advisories/GHSA-hrmj-7rvj-4hg8",
+      "published": "2026-09-22T20:37:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-85709"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-83801",
+      "title": "Nautobot: Stored cross-site scripting (XSS) in object create/edit form help text",
+      "summary": "### Impact\n_What kind of vulnerability is it? Who is impacted?_\n\nIt has two related instances that share the same root cause: a user-controlled model field is assigned verbatim to a form field's `help_text`, which is rendered with Django's `|safe` filter (`render_field.html`), bypassing auto-escaping.\n\nIn both cases the script executes in the browser of any user who opens an affected create or edit form, **including administrators and superusers**. Because the payload runs in the victim's authenticated session, it can lead to actions performed as the victim, session/token theft, and further privilege escalation. Exploitation requires the victim to open an affected form.\n\n#### Relationship description\n\nA user who holds the add/change permission for Relationships (`extras.add_relationship` / `extras.change_relationship`) can set a Relationship's **description** to an HTML/JavaScript payload. That description is used as the help text of the relationship's form field and is rendered on the create/edit page of every object type the relationship applies to.\n\n#### Module Family name\n\nA user who holds the add/change permission for Module Families (`dcim.add_modulefamily` / `dcim.change_modulefamily`) can put a payload in a Module Family **name**, which is interpolated into the `module_family` field's help text on the Module \"Install module\" form for any module bay assigned to that family.\n\n### Patches\n_Has the problem been patched? What versions should users upgrade to?_\n\nFixes are available in Nautobot v2.4.37+ & v3.1.8+\n\n> Note: The underlying weakness exists in earlier EOL versions of Nautobot (v1.x). Users on those older EOL versions are highly encouraged to upgrade to a supported version.\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\nThere is no configuration-only fix. To remediate without upgrading:\n\n- Restrict the `extras.add_relationship` / `extras.change_relationship` and `dcim.add_modulefamily` / `dcim.change",
+      "link": "https://github.com/advisories/GHSA-56v6-2fhr-wxgq",
+      "published": "2026-09-22T20:37:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-83801"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-76804",
+      "title": "Nuclei: Local File Read via Workflow File-Protocol Gate Bypass",
+      "summary": "A vulnerability in Nuclei's workflow template loader allows `file:` protocol templates to execute without the `-file` flag, bypassing a security gate that is meant to prevent local file reads on the scanner host.\n\n**Affected Component**\n\nThe issue is in the workflow template loading path. The main template loader enforces the `-file` gate for file-protocol templates, but the workflow loader did not apply the same check when resolving templates referenced by a workflow.\n\n**Description**\n\nNuclei disables file-protocol templates by default because they read local files from the host running the scanner. Operators must explicitly enable them with the `-file` flag. When a workflow references a file-protocol template, the workflow loader accepted and executed that template without verifying that `-file` was enabled.\n\nBecause workflows run unsigned by default, an untrusted workflow could load and execute a file-protocol template and read local files from the scan target path, even though the operator had not enabled file templates.\n\n> [!NOTE]\nFile-protocol templates are disabled by default. This issue only affects users who run workflows from untrusted sources without having explicitly enabled `-file`.\n\n**Affected Users**\n\n- **CLI users** running workflows (`-w`) that reference file-protocol templates from untrusted or third-party sources.\n- **SDK users** who integrate Nuclei into platforms where end users can supply workflow files and rely on the default `-file` restriction to block local file access.\n\n**Patches**\n\n- The vulnerability is fixed in Nuclei v3.10.0. Upgrading is strongly recommended.\n- Fix reference: https://github.com/projectdiscovery/nuclei/pull/7489\n\n**Mitigation**\n\nUpgrade to Nuclei v3.10.0, where template execution requirements (including the `-file` gate) are enforced consistently across the main loader, workflow parsing, and request compilation paths.\n\nIn the meantime, avoid running workflows from unverified sources.\n\n**Workarounds**\n\nIf upgrading is n",
+      "link": "https://github.com/advisories/GHSA-qgw5-7j4f-fg97",
+      "published": "2026-09-22T20:37:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-76804"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77560",
+      "title": "Tinyauth: forward-auth per-app ACL is matched case-sensitively against the (case-insensitive) hostname, letting an authenticated user reach apps they are not on the allowlist for",
+      "summary": "# tinyauth: forward-auth per-app ACL is matched case-sensitively against the (case-insensitive) hostname, letting an authenticated user reach apps they are not on the allowlist for\n\n\n\n## GitHub Advisory Details (form fields \u2014 paste-ready)\n\n**Affected products**\n| Field | Value |\n|-------|-------|\n| Ecosystem | `Other (self-hosted)` / Go |\n| Package name | `github.com/steveiliop56/tinyauth` (forward-auth middleware) |\n| Affected versions | `< 5.1.2` |\n| Patched versions | `5.1.2` |\n\n**Advisory details**\n| Field | Value |\n|-------|-------|\n| Title | tinyauth forward-auth authorization bypass: per-app ACL host matching is case-sensitive while hostnames are case-insensitive, so a mixed-case host defeats `users`/`groups`/`ip` allowlists and fails open |\n\n- **Status:** Runtime-confirmed (local lab, 127.0.0.1 only)\n- **Target:** steveiliop56/tinyauth `v5.0.7` (commit `479f1657812b7bf01438607464dedaa148155301`); root cause also present on `main` HEAD\n- **Component:** `internal/service/access_controls_service.go` (`lookupStaticACLs` / `GetAccessControls`), `internal/service/docker_service.go` (`GetLabels`), `internal/controller/proxy_controller.go` (`proxyHandler`)\n- **Class:** Broken access control / authorization bypass across the per-app trust boundary\n\n## Summary\n\ntinyauth is a forward-auth service: a reverse proxy (Traefik/Caddy/nginx/Envoy) calls `GET /api/auth/<proxy>` on every request and only forwards the request upstream if tinyauth returns `200`. tinyauth decides *which* per-app access rules apply by looking up the forwarded hostname (the app) in its ACL set \u2014 the static `apps:` config and/or Docker labels. Each app can restrict access with `users.allow` / `users.block`, `oauth.whitelist`, `oauth.groups` / `ldap.groups`, and `ip.allow`. These allowlists are the entire authorization model that separates one protected app from another for a shared pool of authenticated users.\n\nThe hostname \u2192 ACL lookup is performed with **case-sensitive** Go string comparisons (`con",
+      "link": "https://github.com/advisories/GHSA-328g-jx67-v94g",
+      "published": "2026-09-22T20:37:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77560"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63131",
+      "title": "OpenBao Skips Stricter Deny Policy for LIST operations",
+      "summary": "## Impact\n\nWhen a policy operator has written `capabilities = [\"deny\"]` on a path with a trailing wildcard but allowed a broader list operation (e.g., a `deny` on `secrets/metadata/restricted/*` but allowed `list` on `secrets/metadata/*`), OpenBao would incorrectly allow the operation. This did not impact other operation types.\n\n## Patches\n\nThis has been patched in OpenBao v2.6.0.",
+      "link": "https://github.com/advisories/GHSA-xp3c-3jw3-4vcr",
+      "published": "2026-09-22T20:36:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63131"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71543",
+      "title": " OpenBao's Templated Policies Allow Privilege Escalation via Wildcard Characters",
+      "summary": "## Impact\n\n### ACL Policies\n\nOpenBao supports \"templated polices\": Policies with placeholders that are replaced at evaluation time.\n\nThis allows you to write a single policy which e.g. grants user \"alice\" access to all entries in a key value engine prefixed with `alice/` while granting \"bob\" access to `bob/`, \"carol\" access to `carol/`, etc.\n\nIf the data used in the template can be controlled by an attacker (e.g. your system allows the user to freely select their username) and \"globbing\" characters are considered valid ( e.g. `*` is a valid username) they will be able to escalate their privileges.\n\nThe problematic characters are `*`, `+` and `/`.\n\n### PKI Secrets Engine `allowed_uri_sans_template` and `allowed_domains` Polices\n\nThe PKI secrets engine allows you to limit the \"common names\" a user can requests a TLS certificate for. Similar to the ACL polices this allows you to restrict e.g. \"alice\" to  `alice.example.com`, \"bob\" to  `bob.example.com`, etc. via templates.\n\nAgain, if an attacker can control this data freely, they can trick the PKI engine into using e.g. the `*.example.com` glob effectively allowing them to issue certificates for any subdomain of `example.com`\n\nThe problematic character in this case is `*`.\n\n### SSH Secrets Engine `allowed_users` and `allowed_domains` Polices\n\nThe SSH secrets engine allows you to limit the \"principal\" a user can request as SSH certificate for. Similar to ACL and PKI, this allows templates.\n\nThe problematic character in this case is `,` as the template result is split at all commas and each entry will be allowed.\n\n## Am I affected?\n\nYou are affected, if a) you use a templated policy (ACL, PKI or SSH) and b) your users can modify data used by your template freely.\n\nIf you can guarantee that the data used in your templates will never contain the problematic characters, you are not affected. For example, if you use `{{ identity.entity.id }}` in your policy, you are not affected, because `identity.entity.id` is randomly gene",
+      "link": "https://github.com/advisories/GHSA-59w7-v8rr-pr4p",
+      "published": "2026-09-22T20:36:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-71543"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77285",
+      "title": "OpenBao Agent Writes Secrets to Stdout",
+      "summary": "### Impact\n\nDuring certain error conditions, OpenBao Agent's exec rendering mode will incorrectly write secrets specified in `env_template` to stdout. This primarily happens when `num_retries` is met.\n\nThis vulnerability is original to Vault and was reported via the OpenBao security mailing list.\n\n### Patches\n\nThis is addressed in OpenBao v2.6.0 GA.",
+      "link": "https://github.com/advisories/GHSA-444v-8vxr-p36h",
+      "published": "2026-09-22T20:36:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77285"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77426",
+      "title": "Unleash: Missing await on permission check + cross-project IDOR in admin API",
+      "summary": "## Summary\n\nMultiple authorization vulnerabilities in Unleash admin API, including a critical missing `await` that completely bypasses a permission check.\n\n## Vulnerability 1: Missing `await` on Permission Check (HIGH)\n\n**File:** `src/lib/features/segment/segment-controller.ts` (line 345)\n\n`POST /api/admin/segments/strategies` has `permission: NONE` at the route level. The handler performs its own check via `this.accessService.hasPermission()`, but **omits the `await` keyword**. Since `hasPermission()` is async (returns `Promise<boolean>`), the variable always receives a truthy Promise object. The `if (!hasFeatureStrategyPermission)` check never triggers.\n\n```typescript\n// BUG: missing await - hasPermission() returns Promise<boolean>\nconst hasFeatureStrategyPermission = this.accessService.hasPermission(\n    req.user, UPDATE_FEATURE_STRATEGY, projectId, environmentId,\n);\nif (!hasFeatureStrategyPermission) { // Always false - Promise is truthy!\n    res.status(403).send();\n    return;\n}\n```\n\n**Impact:** Any authenticated user can modify segment assignments on ANY strategy across ALL projects.\n\n**Fix:** Add `await`: `const hasFeatureStrategyPermission = await this.accessService.hasPermission(...)`\n\n## Vulnerability 2: Cross-Project Variant Read (MEDIUM)\n\n**File:** `src/lib/routes/admin-api/project/variants.ts` (line 213-223)\n\n`GET /api/admin/projects/:projectId/features/:featureName/environments/:environment/variants` completely ignores `projectId`. `getVariantsOnEnv()` only uses `featureName` and `environment`.\n\n**Impact:** Any authenticated user can read variant configs (names, weights, payloads) from any project.\n\n## Vulnerability 3: Cross-Project Strategy Read (MEDIUM)\n\n**File:** `src/lib/features/feature-toggle/feature-toggle-controller.ts` (line 1107-1116)\n\n`GET .../strategies/:strategyId` ignores all params except `strategyId`. Any authenticated user can read any strategy's full configuration.\n\n## Vulnerability 4: Cross-Project Environment Info Leak (MEDIUM)\n\n**F",
+      "link": "https://github.com/advisories/GHSA-72h8-wp98-7hch",
+      "published": "2026-09-22T20:36:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77426"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77250",
+      "title": "MCP Atlassian: OAuth fallback token storage writes plaintext access and refresh tokens with group-readable permissions",
+      "summary": "### Summary\n\nWhen OAuth tokens are saved, MCP Atlassian always writes a plaintext fallback copy under `~/.mcp-atlassian/oauth-<client_id>.json`. The fallback file is created with the process default umask rather than restrictive permissions. In this environment the file was created as mode `0664`, exposing access and refresh tokens to same-group local users and any process that can read the home directory.\n\n### Details\n\n`OAuthConfig._save_tokens()` stores OAuth token data in keyring, but it also unconditionally maintains a plaintext file fallback for backwards compatibility in `src/mcp_atlassian/utils/oauth.py:350-386`. If keyring saving fails it also falls back to the same file path in `src/mcp_atlassian/utils/oauth.py:387-391`.\n\nThe fallback writer creates `~/.mcp-atlassian` and then writes `oauth-<client_id>.json` with a normal `open(token_path, \"w\")` call in `src/mcp_atlassian/utils/oauth.py:392-420`. No `mode=0o600`, `os.open(..., 0o600)`, `chmod`, or owner-only directory permission is applied. The file contains both `access_token` and `refresh_token` (`src/mcp_atlassian/utils/oauth.py:360-367`) and is later loaded from the same plaintext path in `src/mcp_atlassian/utils/oauth.py:450-470`.\n\nThe security policy warns that OAuth client credentials and secrets should not be exposed (`SECURITY.md:39-44`), but the current implementation creates a persistent plaintext token copy even when keyring succeeds.\n\n### PoC\n\nThe following safe local proof uses a temporary `HOME` and mocked keyring writes. It creates and deletes only temporary files.\n\n```bash\nuv run python - <<'PY'\nimport json, os, shutil, stat, tempfile\nfrom pathlib import Path\nfrom unittest.mock import patch\nfrom mcp_atlassian.utils.oauth import OAuthConfig\n\nhome = tempfile.mkdtemp(prefix='mcp-atlassian-oauth-poc-')\nold_home = os.environ.get('HOME')\nos.environ['HOME'] = home\ntry:\n    cfg = OAuthConfig(client_id='poc-client', client_secret='client-secret', redirect_uri='http://localhost/callback', scope='offl",
+      "link": "https://github.com/advisories/GHSA-g5xv-mhgm-v5f6",
+      "published": "2026-09-22T20:36:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77250"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77249",
+      "title": "MCP Atlassian:  Incomplete fix for GHSA-7r34-79r5-rcc9: redirect-based SSRF via unhooked requests session in Jira user-permission lookup",
+      "summary": "Summary\n\nThe fix for the SSRF vulnerability tracked as GHSA-7r34-79r5-rcc9 / CVE-2026-27826 is incomplete. That fix added two defenses: validate_url_for_ssrf() on the per-request X-Atlassian-Jira-Url / X-Atlassian-Confluence-Url headers (blocking a directly-internal base URL), and a redirect-validation hook (_make_ssrf_safe_hook) attached to the fetcher's HTTP session so that an attacker-controlled public host cannot redirect outbound requests to an internal address.\n\nHowever, one outbound request path does not go through the hooked session. JiraUserMixin._lookup_user_by_permissions issues its request with the module-level requests.get instead of self.jira._session.get, so the redirect-validation hook never runs for it. An unauthenticated attacker (in the HTTP / multi-tenant transport mode that binds 0.0.0.0 with no credentials) can therefore set a public base URL that passes validate_url_for_ssrf(), then have their own server return an HTTP redirect to an internal address. The bare requests.get follows that redirect with no validation, resulting in a blind server-side request to an arbitrary internal host and port.\n\nAffected component\n\nsrc/mcp_atlassian/jira/users.py, method _lookup_user_by_permissions (the requests.get(...) call):\n\n    url = f\"{self.config.url}/rest/api/2/user/permission/search\"\n    params = {\"query\": username, \"permissions\": \"BROWSE\"}\n    ...\n    response = requests.get(           # module-level requests, NOT self.jira._session\n        url,\n        params=params,\n        auth=auth,\n        headers=headers,\n        verify=self.config.ssl_verify,\n    )\n\nFor comparison, the equivalent non-standard-endpoint call in src/mcp_atlassian/jira/development.py correctly uses the hooked session (self.jira._session.get(...)), and the SSRF redirect hook is attached only to that session in src/mcp_atlassian/servers/dependencies.py (get_session=lambda f: f.jira._session). The bare requests.get in users.py is the one outbound path the hook does not cover.\n\nDetails",
+      "link": "https://github.com/advisories/GHSA-v9m3-wfh8-5646",
+      "published": "2026-09-22T20:36:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77249"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77274",
+      "title": "MCP Atlassian: SSRF Protection Bypass",
+      "summary": "## Environment\n\n- Project: `sooperset/mcp-atlassian`\n- Affected function: `validate_url_for_ssrf()`\n- Affected path: header-based Jira/Confluence URL authentication flow\n- Tested endpoint: `POST /mcp`\n- Tested version: `2.14.5`\n\n## Description\n\nThe SSRF protection in `validate_url_for_ssrf()` can be bypassed with a URL containing a backslash before userinfo-like syntax.\n\nAffected code:\n\n```python\nparsed = urlparse(url)\nhostname = parsed.hostname\n...\nip_error = _check_ip_address(hostname)\n...\ndns_error = _check_dns_resolution(hostname)\n```\n\nPayload:\n\n```text\nhttp://127.0.0.1:6666\\@www.baidu.com\n```\n\nFor this input, `urllib.parse.urlparse()` treats the hostname as:\n\n```text\nwww.baidu.com\n```\n\nTherefore, `validate_url_for_ssrf()` validates `www.baidu.com` instead of `127.0.0.1`. However, the downstream request made through the Atlassian client / `requests.Session` reaches the local service:\n\n```text\nhttp://127.0.0.1:6666/%5C@www.baidu.com/rest/api/2/myself\n```\n\nThis allows an attacker-controlled Jira URL to target loopback or internal services.\n\n## Proof of Concept\n\nStart a local HTTP server:\n\n```bash\npython3 -m http.server 6666 --bind 127.0.0.1\n```\n\nStart `mcp-atlassian` with streamable HTTP transport on port `9000`.\n\nInitialize an MCP session with the malicious Jira URL:\n\n```bash\ncurl -i http://127.0.0.1:9000/mcp \\\n  -H 'Content-Type: application/json' \\\n  -H 'Accept: application/json, text/event-stream' \\\n  -H 'X-Atlassian-Jira-Url: http://127.0.0.1:6666\\@www.baidu.com' \\\n  -H 'X-Atlassian-Jira-Personal-Token: dummy-token' \\\n  --data '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-06-18\",\"capabilities\":{},\"clientInfo\":{\"name\":\"ssrf-test\",\"version\":\"0.1\"}}}'\n```\n\nSend the initialized notification using the returned `Mcp-Session-Id`:\n\n```bash\ncurl -i http://127.0.0.1:9000/mcp \\\n  -H 'Content-Type: application/json' \\\n  -H 'Accept: application/json, text/event-stream' \\\n  -H 'mcp-session-id: <SESSION_ID>' \\\n  -H 'X-Atlassian-Jira-Url: h",
+      "link": "https://github.com/advisories/GHSA-hgcf-4mq8-5266",
+      "published": "2026-09-22T20:36:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77274"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77271",
+      "title": "MCP Atlassian: Incomplete path traversal fix allows intra-CWD module overwrite and RCE (bypass of GHSA-xjgw-4wvw-rgm4)",
+      "summary": "### Summary\n\nThe path traversal fix introduced in v0.17.0 (GHSA-xjgw-4wvw-rgm4) is incomplete. `validate_safe_path()` is called without an explicit `base_dir`, defaulting to `os.getcwd()`. In standard container deployments the process CWD is the application directory (e.g. `/app`), so paths within that directory, including the application's own Python source modules, pass validation without\nraising an exception. An attacker can overwrite a module file and achieve remote code execution on the next process restart. Versions >= 0.17.0 are not fully patched as stated in the original advisory. Confirmed on v0.21.0 (latest).\n\n### Details\n\n`src/mcp_atlassian/utils/io.py` \u2014 `validate_safe_path()` defaults to CWD when no `base_dir` is supplied:\n\n```python\ndef validate_safe_path(path, base_dir=None) -> Path:\n    if base_dir is None:\n        base_dir = os.getcwd()       # root of the issue\n    resolved_base = Path(base_dir).resolve(strict=False)\n    ...\n    if not resolved_path.is_relative_to(resolved_base):\n        raise ValueError(\"Path traversal detected\")\n```\n\nBoth call sites in `src/mcp_atlassian/confluence/attachments.py` omit `base_dir`:\n\n```python\nvalidate_safe_path(target_path)   # line ~227, download_attachment()\nvalidate_safe_path(target_dir)    # line ~270, download_content_attachments()\n```\n\nWhen the process CWD is `/app`, any path under `/app` satisfies `is_relative_to(CWD)` and passes the guard, including all Python source modules:\n\n```\n/app/src/mcp_atlassian/confluence/attachments.py  -> passes, no exception\n/app/src/mcp_atlassian/servers/main.py            -> passes, no exception\n/app/.env                                          -> passes, no exception\n```\n\n### PoC\n\n**Prerequisites:** same as GHSA-xjgw-4wvw-rgm4 \u2014 Confluence credentials with write access to at least one page, and network access to the MCP HTTP port.\nAdditionally requires Python 3.10+ and `uvx` to run the proof below.\n\nThe script imports `validate_safe_path` directly from the installed package",
+      "link": "https://github.com/advisories/GHSA-6vmq-24h2-pj7j",
+      "published": "2026-09-22T20:36:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77271"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77267",
+      "title": "mcp-atlassian has an incomplete SSRF remediation",
+      "summary": "### Summary\n\nThe `UserTokenMiddleware` extracts URLs from `X-Atlassian-Jira-Url` and `X-Atlassian-Confluence-Url` HTTP headers and passes them directly to API client constructors without any SSRF validation.\n\n### Affected Package\n\n- **Ecosystem:** PyPI\n- **Package:** mcp-atlassian\n- **Affected versions:** all versions before fix commit 5cd697dfce91\n- **Patched versions:** >= commit 5cd697dfce91\n\n### Details\n\nIn `main.py`, `_process_authentication_headers()` extracts URLs from ASGI headers without validation. In `dependencies.py`, `get_jira_fetcher()` creates `JiraConfig` with `url=jira_url_header` directly. There is no `validate_url` call, no IP range check, no hostname validation.\n\nThe fix adds URL validation to some paths but the header-based URL extraction in `_process_authentication_headers()` still passes raw URLs through. The derived config objects use the header URL directly and the fetcher makes HTTP requests to that URL.\n\n### PoC\n\n```python\njira_url_header = headers.get(b\"x-atlassian-jira-url\")\njira_url_str = jira_url_header.decode(\"latin-1\") if jira_url_header else None\nservice_headers[\"X-Atlassian-Jira-Url\"] = jira_url_str\n```\n\n**Steps to reproduce:**\n1. `git clone https://github.com/sooperset/mcp-atlassian /tmp/mcp-atlassian_test`\n2. `cd /tmp/mcp-atlassian_test && git checkout 5cd697dfce91~1`\n3. `pip install -e .`\n4. `python3 poc.py`\n\n**Expected output:**\n```\nVULNERABILITY CONFIRMED\nUser-supplied URLs from HTTP headers passed directly to JiraConfig/JiraFetcher with no SSRF validation\n```\n\n### Impact\n\nAn attacker can set `X-Atlassian-Jira-Url: http://169.254.169.254/latest/meta-data/` to access AWS instance metadata, or target any internal service. The server makes authenticated HTTP requests to the attacker-specified URL.\n\n### Suggested Remediation\n\nValidate all user-supplied URLs against an allowlist of permitted hostnames or reject private/loopback/link-local IP ranges. Consider requiring server-side configuration of allowed Atlassian instance URLs.",
+      "link": "https://github.com/advisories/GHSA-5wf4-jqxh-8gm3",
+      "published": "2026-09-22T20:36:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77267"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-77259",
@@ -845,24 +1237,6 @@
       ],
       "cve_ids": [
         "CVE-2026-7273"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61630",
-      "title": "nginx ignition has TOTP Reuse During Validity Window",
-      "summary": "### Summary\nAny user that has enabled the OTP 2FA can have their TOTP reused during the standard 30 second validity window.\n\n### Details\nThe https://github.com/pquerna/otp package [doesn't include](https://github.com/pquerna/otp/issues/61) checking for already used TOTPs within its the validity window. This requires each application that uses the package to implement their own method of tracking and verifying that codes can't be reused.\n\nSection 6.5.1 within the [Authentication](https://github.com/OWASP/ASVS/blob/master/5.0/en/0x15-V6-Authentication.md) section of the OWASP ASVS recommends multiple checks, some of which involving TOTPs:\n\n> Verify that lookup secrets, out-of-band authentication requests or codes, and time-based one-time passwords (TOTPs) are only successfully usable once.\n\nThe OWASP WSTG also references this as one of their [checks](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_Multi-Factor_Authentication) to look for:\n\n> Can the OTPs be used more than once?\n\n### PoC\n\nhttps://github.com/user-attachments/assets/86a43374-39bf-4d61-8f6d-5cc440c99a1e\n\n### Impact\nAny user who uses 2FA could be impacted if their traffic is able to be captured, they're phished/social engineered, or other methods of attack. This disrupts one layer of the defense-in-depth model surrounding 2FA.\n\n### Similar CVEs\n- [CVE-2025-6014](https://nvd.nist.gov/vuln/detail/CVE-2025-6014)\n- [CVE-2025-55003](https://nvd.nist.gov/vuln/detail/CVE-2025-55003)\n- [CVE-2026-33473](https://github.com/go-vikunja/vikunja/security/advisories/GHSA-p747-qc5p-773r)\n\n### Remediation\nStore a deny-list of TOTP codes for their validity windows and check submitted codes against it to ensure none are being reused. After their validity window has closed, the 2FA code can be removed from the list.",
-      "link": "https://github.com/advisories/GHSA-hf33-q6cf-c66f",
-      "published": "2026-09-21T21:47:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61630"
       ],
       "is_zero_day": false,
       "is_high_severity": true
