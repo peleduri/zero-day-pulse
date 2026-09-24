@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">24</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-24 16:02 UTC</div>
+            <div class="generated">Updated 2026-09-24 20:52 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-5430" target="_blank" rel="noopener">CVE-2026-5430 — WSO2 Multiple Products Path Traversal Vulnerability </a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-5430</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-24</span>
+  </div>
+  <p class='summary'>Vendor: WSO2 | Product: Multiple Products. WSO2 API Control Plane, API Manager, Traffic Manager &amp; Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (s…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-71362" target="_blank" rel="noopener">CVE-2026-71362 — Adobe Commerce and Magento Incorrect Authorization Vulnerability </a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-71362</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-24</span>
+  </div>
+  <p class='summary'>Vendor: Adobe | Product: Commerce and Magento . Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Securit…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -148,6 +180,44 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fm8p-53ww-hf6w" target="_blank" rel="noopener">DBHub HTTP transport DNS rebinding allows unauthenticated browser-origin SQL execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61742</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Summary
+
+DBHub `0.21.2` exposes an unauthenticated HTTP MCP endpoint when started with the documented HTTP transport mode, for example `--transport http --port 8080`.
+
+The HTTP server attempts to protect browser-origin access by checking whether the `Origin` hostname equals the `Host` hostname, then reflecting the validated `Origin` into `Access-Control-Allow-Origin`. This does not stop DNS re…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/unpatched-oneplus-flaws-let-installed.html" target="_blank" rel="noopener">Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>A OnePlus 15 running the latest OxygenOS can be rooted by a malicious app the owner installs, one that asks for no special permissions. A researcher, Rasmus Moorats, chained two flaws in OnePlus&#x27;s own software to gain root access, the highest level of control over an Android phone.
+
+OnePlus told him the same flaws affect many more of its own devices and those of OPPO, though it has not</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -298,6 +368,250 @@ Read</p>
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-87mg-5grr-rhwh" target="_blank" rel="noopener">Contao: Server-Side Request Forgery (SSRF) via Unvalidated RSS Feed URL in Feed Reader Module</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-57232</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Summary
+
+The Feed Reader front-end module passes RSS feed URLs from its configuration directly to `$this-&gt;feedIo-&gt;read($url)` without any scheme validation or private-IP blocklist. A backend user with module-edit permissions can configure an arbitrary URL pointing to internal network services, cloud-provider metadata endpoints, or loopback addresses, causing the server to fetch those resources…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f4hc-ppw9-4hhw" target="_blank" rel="noopener">Ash: Private action arguments can be set by user input via string-keyed params and atomic changesets</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55736</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Summary
+
+Ash fails to consistently strip private action arguments (those declared with `public?: false`) when a changeset is built from an untrusted parameter map. Private arguments are meant to be set only by trusted server-side code, but a caller who controls the parameters supplied to an action can inject a value for one. Any actor able to submit parameters to an action that defines a priva…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3cj3-hqcr-g934" target="_blank" rel="noopener">Cline: Cross-Origin WebSocket Hijacking in Cline Hub Dashboard (`/browser` endpoint)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-59723</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Summary
+
+The Cline Hub dashboard server (`@cline/cline-hub`), launched via the `cline dashboard` CLI command, accepts WebSocket connections on the `/browser` endpoint without validating the HTTP `Origin` header. When `ROOM_SECRET` is not set—the default for local (`127.0.0.1`) binds—`isAuthorizedBrowserRequest()` returns `true` unconditionally, allowing any website a developer visits to open a…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mwwr-p57h-56pf" target="_blank" rel="noopener">@bytebase/dbhub&#x27;s read-only mode does not prevent database writes</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61788</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Summary
+
+Setting `readonly = true` on the `execute_sql` tool does not make the connection read-only. The connectors are written to set PostgreSQL `default_transaction_read_only=on` (and open SQLite in `readOnly` mode), but that code is gated on a config value that is never populated, so it never runs. The only thing left enforcing read-only is a classifier that inspects the first keyword of e…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cjx3-73hr-rpw7" target="_blank" rel="noopener">http4s-scala-xml has an XML External Entity (XXE) processing issue</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61741</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>http4s-scala-xml provides `EntityDecoder[F, scala.xml.Elem]` instances that parse XML message bodies. These decoders used a `javax.xml.parsers.SAXParserFactory` obtained from `SAXParserFactory.newInstance` without any security configuration.  With the JDK&#x27;s default settings, the parser resolves DOCTYPE declarations, external general and parameter entities, and external DTDs.
+
+An application that u…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rw77-vq4g-x3hp" target="_blank" rel="noopener">phpMyFAQ has SQL Injection in `StopWords::add()` — Unescaped Stop Word Insertion</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-56738</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>## Summary
+
+The `StopWords::add()` method in phpMyFAQ builds a SQL `INSERT` statement using `sprintf()` and inserts the user-supplied stop word value directly into the query string **without calling the application&#x27;s database escaping function** on it. A sibling method, `StopWords::update()`, which modifies an *existing* stop word, correctly escapes the same kind of input. The omission is isolated…</p>
+
+        </article>
+
+      <article class="card card-high">
+        <div class="card-top">
+          <span class="badge badge-high">🟡 High</span>
+          <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w3rp-4cm2-4wgc" target="_blank" rel="noopener">ixo Blockchain x/bonds DID-resolved payer drain + x/entity ICA authorization bypass</a></h2>
+        </div>
+        <div class="card-meta">
+          <code class="cve">CVE-2026-61604</code>
+          <span class="meta-sep">·</span>
+          <span>GitHub Security Advisories</span>
+          <span class="meta-sep">·</span>
+          <span>2026-09-24</span>
+        </div>
+        <p class='summary'>Impact
+
+Type: Improper authorization leading to unauthorized movement of user funds.
+
+The x/bonds module moved funds from an address that was resolved from a DID verification method, without verifying that the resolved address belonged to the transaction signer. Affected handlers included MsgMakeOutcomePayment, MsgBuy, MsgSell, MsgSwap, and MsgWithdrawShare, as well as the batch order processo…</p>
+
+      </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6v3r-4p5c-mrp5" target="_blank" rel="noopener">Language Servers for AWS vulnerable to arbitrary file write</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-12958</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>## Summary
+Language Servers for AWS (the aws/language-servers project) provides the Language Server Protocol implementations that power AWS developer tooling, including the Amazon Q Developer agentic chat experience, across IDEs such as VS Code, JetBrains, Visual Studio, and Eclipse.
+
+Missing symlink validation in Language Servers for AWS may allow an arbitrary file write outside of the workspace …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xhcr-j4j9-3gh7" target="_blank" rel="noopener">Language Servers for AWS Vulnerable to Arbitrary Code Execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-12957</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Summary
+Language Servers for AWS (the aws/language-servers project) provide the underlying language-server runtime that powers Amazon Q Developer&#x27;s AI coding assistance across its IDE plugins (Visual Studio Code, JetBrains, Eclipse, and
+Visual Studio).
+
+Improper trust boundary enforcement in Language Servers for AWS may allow for arbitrary code execution. If a local user opens a maliciously cr…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fgmf-7rf8-m6vf" target="_blank" rel="noopener">ZITADEL: Actions V1 sandbox escape: host file read via require()</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-85057</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Summary
+
+A vulnerability in ZITADEL Actions V1 allows an organization Action author to read files from the ZITADEL host filesystem through the JavaScript `require()` module loader. On common self-hosted deployments this can be chained to steal bootstrap credentials (including the Login Client PAT) and escalate from a single-tenant organization owner to instance administrator.
+
+### Impact
+
+ZITA…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p9h3-gvpq-5539" target="_blank" rel="noopener">Snipe-IT: Stored XSS via Custom Field name in asset-list column headers</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62368</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Impact
+A user with the &quot;customfields.create&quot; permission can store HTML/JS in a Custom Field name, which is later rendered as an asset-list column title WITHOUT escaping at app/Presenters/AssetPresenter.php line 364 (&#x27;title&#x27; =&gt; $field-&gt;name) and injected into the table header by the bundled bootstrap-table plugin. It executes for anyone who opens an asset list (e.g. /hardware), including superu…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xcw9-qmmf-vqxj" target="_blank" rel="noopener">Dozzle label filters do not restrict container event and statistics streams</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62286</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>## Summary
+
+Dozzle supports per-user label filters in `users.yml` that are documented as an access-control boundary: &quot;Filters are used to restrict the containers that a user can see&quot; and &quot;the `guest` user can only see containers with the label `com.example.app` … useful for restricting access to specific containers&quot; (docs/guide/authentication.md). This is the mechanism operators use to give differ…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hxcx-9h4f-42xx" target="_blank" rel="noopener">Snipe-IT: 2FA bypass via the API token flow</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63493</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-24</span>
+          </div>
+          <p class='summary'>### Impact
+
+An attacker who knows a victim&#x27;s password fully bypasses that account&#x27;s 2FA and obtains a persistent token with full API access as the user (read and write across the user&#x27;s permissions, including admin if the victim is an admin).
+
+The token is an API credential, not a web/UI session (using it on web routes redirects to `/login`), but the REST API covers essentially the whole applicati…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6rf4-v2fh-m6p4" target="_blank" rel="noopener">SunEditor: Critical XSS vulnerability - sanitizer bypass</a></h2>
           </div>
           <div class="card-meta">
@@ -376,165 +690,6 @@ Preconditions:
 - Attacker can send large tokens with control over chunk sizes.
 
 ### …</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/check-point-warns-of-hackers-exploiting-security-gateway-vpn-rce-flaw/" target="_blank" rel="noopener">Check Point warns of hackers exploiting Security Gateway VPN RCE flaw</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-85102</code>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-23</span>
-  </div>
-  <p class='summary'>Cybersecurity company Check Point has confirmed active exploitation of CVE-2026-85102, a pre-authentication remote code execution (RCE) vulnerability in the VPN certificate-handling functionality of its Security Gateway product. [...]</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jjq7-m736-w977" target="_blank" rel="noopener">OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-77602</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>### Summary
-
-COSMOS reads configuration from a user-writable overlay (`targets_modified/`) before the read-only plugin-installed `targets/` tree, and the config subsystem executes code on those files: `ConfigParser` renders every file as ERB by default, a `GENERIC_READ_CONVERSION` / `GENERIC_WRITE_CONVERSION` block is evaluated as code by `GenericConversion` (Ruby and Python), and the Script Runne…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v3f3-cmj4-cvj9" target="_blank" rel="noopener">Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-76086</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>### Impact
-
-The control panel action `formie/integrations/form-settings` (`IntegrationsController::actionFormSettings`) was reachable by any authenticated user without the appropriate form integration permissions. The action applied request-supplied settings to a fully configured integration via `setAttributes($settings, false)`, allowing an attacker to overwrite outbound host properties (e.g. `ap…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r2xf-8xr9-62gw" target="_blank" rel="noopener">JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-77422</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>### Summary
-
-The JLine3 built-in `grep` command wraps the user-supplied regular expression with
-`.*` before compiling it with Java&#x27;s backtracking regex engine. This amplifies
-catastrophic backtracking and allows a short pattern such as `(a+)+b` to hang the
-command thread on non-matching input. In environments that expose the JLine shell to
-remote users, this is a denial-of-service issue.
-
-### Deta…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vmjq-hvgq-2wv4" target="_blank" rel="noopener">9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56679</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>### Summary
-The `PATCH /api/settings` endpoint writes the entire request body to persistent settings without a field whitelist. An authenticated user can set security-critical fields that are not meant to be modifiable here — notably `requireLogin`. Setting `requireLogin: false` disables authentication for the whole application, exposing all protected routes (e.g. `/api/keys`, `/api/providers`) to…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6mwv-4mrm-5p3m" target="_blank" rel="noopener">9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56678</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>### Summary
-
-The Kiro API-key validation endpoint builds an upstream URL using a user-controlled
-`region` value. By supplying a crafted region such as `kiro-canary.local:8443#`, an
-authenticated attacker can cause 9router to send the Kiro validation request to an
-attacker-controlled host under the constructed `codewhisperer.&lt;region&gt;` hostname. The
-request forwards the submitted Kiro API key as an …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cmhj-wh2f-9cgx" target="_blank" rel="noopener">9router: Image prefetch DNS rebinding allows SSRF to internal services</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-56676</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>## Summary
-
-9router validates image URLs by resolving the host before fetching, but the later
-server-side fetch performs a separate DNS resolution. An attacker-controlled DNS name can
-resolve to a public IP during validation and then rebind to an internal Docker/private IP
-during the fetch. This allows the server-side image prefetch to reach internal-only HTTP
-services (SSRF).
-
-## Details
-
-- **Aff…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5f42-97gr-vfhq" target="_blank" rel="noopener">Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-85724</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>moquette is reachable by untrusted MQTT clients (anonymous by default), so every byte from any client, including pre-authentication, is untrusted. This is a memory-safe JVM: the ceiling is authorization/ACL bypass + denial of service + cross-session integrity, **not RCE** (I did not find one and do not claim one). Audited at commit `da7f719a6bab9829d520b5838e13ea7b1f9be3ef`, module `broker/`.
-
-## …</p>
 
         </article>
 

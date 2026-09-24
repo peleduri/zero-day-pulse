@@ -1,10 +1,48 @@
 {
-  "generated": "2026-09-24T16:02:16.911706+00:00",
-  "total": 24,
-  "kev": 0,
-  "zero_day": 11,
+  "generated": "2026-09-24T20:52:30.092979+00:00",
+  "total": 33,
+  "kev": 2,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-5430",
+      "title": "CVE-2026-5430 \u2014 WSO2 Multiple Products Path Traversal Vulnerability ",
+      "summary": "Vendor: WSO2 | Product: Multiple Products. WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-27)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-5430",
+      "published": "2026-09-24",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-5430"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-71362",
+      "title": "CVE-2026-71362 \u2014 Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+      "summary": "Vendor: Adobe | Product: Commerce and Magento . Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-27)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-71362",
+      "published": "2026-09-24",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-71362"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -31,6 +69,39 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61742",
+      "title": "DBHub HTTP transport DNS rebinding allows unauthenticated browser-origin SQL execution",
+      "summary": "### Summary\n\nDBHub `0.21.2` exposes an unauthenticated HTTP MCP endpoint when started with the documented HTTP transport mode, for example `--transport http --port 8080`.\n\nThe HTTP server attempts to protect browser-origin access by checking whether the `Origin` hostname equals the `Host` hostname, then reflecting the validated `Origin` into `Access-Control-Allow-Origin`. This does not stop DNS rebinding. After an attacker-controlled hostname rebinds to a victim-accessible DBHub HTTP server, both `Origin` and `Host` can contain the attacker-controlled hostname, so DBHub accepts the request and dispatches MCP tool calls.\n\nAs a result, a malicious website can deterministically invoke DBHub MCP tools from the victim's browser without prompt injection or model involvement. With the default demo configuration this can read and write the demo SQLite database; with a real configured database, the same primitive can read, enumerate, and potentially write database contents depending on DBHub's configured tool permissions and database credentials.\n\nRecommended severity: High. It may become Critical when HTTP transport is connected to production or broadly privileged database credentials.\n\n### Details\n\nAffected target:\n\n- Package: `@bytebase/dbhub`\n- Version tested: `0.21.2`\n- Repository commit tested: `72adfdcf7bcfe46b25edbc776ce096006eba9b02`\n- Affected mode: HTTP transport (`--transport http`)\n- Default package transport: stdio\n- Not affected by this specific browser-origin vector: stdio transport\n\nRelevant code path: `src/server.ts`\n\nThe HTTP server installs a middleware that:\n\n1. reads `req.headers.origin`;\n2. extracts the hostname from `req.headers.host`;\n3. parses the hostname from `Origin`;\n4. rejects only when the two hostnames differ;\n5. reflects the validated `Origin` into `Access-Control-Allow-Origin`;\n6. enables credentials with `Access-Control-Allow-Credentials: true`.\n\nRelevant code:\n\n```ts\nconst origin = req.headers.origin;\n\nif (origin) {\n  const host = (req.he",
+      "link": "https://github.com/advisories/GHSA-fm8p-53ww-hf6w",
+      "published": "2026-09-24T19:36:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61742"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/unpatched-oneplus-flaws-let-installed.html",
+      "title": "Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions",
+      "summary": "A OnePlus 15 running the latest OxygenOS can be rooted by a malicious app the owner installs, one that asks for no special permissions. A researcher, Rasmus Moorats,\u00a0chained two flaws in OnePlus's own software\u00a0to gain root access, the highest level of control over an Android phone.\n\nOnePlus told him the same flaws affect many more of its own devices and those of OPPO, though it has not",
+      "link": "https://thehackernews.com/2026/09/unpatched-oneplus-flaws-let-installed.html",
+      "published": "2026-09-24T18:10:18+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -185,6 +256,240 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-57232",
+      "title": "Contao: Server-Side Request Forgery (SSRF) via Unvalidated RSS Feed URL in Feed Reader Module",
+      "summary": "### Summary\n\nThe Feed Reader front-end module passes RSS feed URLs from its configuration directly to `$this->feedIo->read($url)` without any scheme validation or private-IP blocklist. A backend user with module-edit permissions can configure an arbitrary URL pointing to internal network services, cloud-provider metadata endpoints, or loopback addresses, causing the server to fetch those resources unconditionally. Confirmed live: the server successfully reaches the internal MySQL database container and its own loopback Apache instance.\n\n---\n\n### Details\n\nIn `core-bundle/src/Controller/FrontendModule/FeedReaderController.php`, the `getResponse()` function iterates over the configured feed URLs and passes each one directly to the HTTP client with no validation:\n\n```php\n// Line 50-55\nforeach (StringUtil::trimsplit('[\\n\\t ]', trim($model->rss_feed)) as $url) {\n    try {\n        $feed = $this->cache->get(\n            'feed_reader_'.$model->id.'_'.md5($url),\n            function (ItemInterface $item) use ($url, $model) {\n                $readerResult = $this->feedIo->read($url, new Feed()); // <-- no validation\n```\n\nThe DCA field definition for `rss_feed` in `tl_module.php` carries no URL scheme or host validation:\n```php\n'eval' => array('mandatory'=>true, 'decodeEntities'=>true, 'style'=>'height:60px')\n```\n\nThe HTTP client is wired as `@psr18.http_client` (Symfony HttpClient) with no SSRF protection configured (`NoPrivateNetworkHttpClient` is not used).\n\n---\n\n### Impact\n\nThis is a CWE-918 (SSRF) vulnerability. A backend user with module-edit access can:\n\n1. **Enumerate internal network services** -- probe any IP/port on the internal network by observing response times and error messages\n2. **Reach internal APIs** -- access unauthenticated services inside the Docker/Kubernetes network (databases, caches, admin panels)\n3. **Steal cloud metadata credentials** -- on AWS, fetch `http://169.254.169.254/latest/meta-data/iam/security-credentials/` to obtain IAM role credentials ",
+      "link": "https://github.com/advisories/GHSA-87mg-5grr-rhwh",
+      "published": "2026-09-24T19:59:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-57232"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-55736",
+      "title": "Ash: Private action arguments can be set by user input via string-keyed params and atomic changesets",
+      "summary": "### Summary\n\nAsh fails to consistently strip private action arguments (those declared with `public?: false`) when a changeset is built from an untrusted parameter map. Private arguments are meant to be set only by trusted server-side code, but a caller who controls the parameters supplied to an action can inject a value for one. Any actor able to submit parameters to an action that defines a private argument can trigger it.\n\n### Details\n\nPrivate arguments (`public?: false`) are meant to be populated internally (e.g. via `Ash.Changeset.set_private_argument/3`) and never accepted from external input. When an action is invoked with a parameter map, Ash should discard keys that name a private argument. The filtering in `lib/ash/changeset/changeset.ex` is incomplete, and the gap differs across the two parameter paths.\n\n**1. Regular path (`for_create`, `for_update`, `for_destroy`).** `cast_params/4` validates keys via `get_action_argument/2`. Its atom-keyed clause filters on `public?`, but the binary-keyed (string) clause does not, so a string key matching a private argument name is accepted and written into `changeset.arguments`. User-supplied parameter maps are string-keyed, making this the reachable case.\n\n**2. Atomic / bulk path (`Ash.Changeset.fully_atomic_changeset/4`).** `atomic_params/4` gates assignment on `has_argument?/2`, whose atom and binary clauses both omit the `public?` check, so private arguments are accepted regardless of key type.\n\n### PoC\n\n1. Define an action with a private argument, e.g. `argument :acting_user_id, :string, public?: false`, and a change that writes it into an attribute.\n2. Build the changeset from a string-keyed map including it, e.g. `Ash.Changeset.for_create(Resource, :place, %{\"item\" => \"book\", \"acting_user_id\" => \"victim-user-id\"})`.\n3. Observe `acting_user_id` is present in `changeset.arguments` and persisted, whereas the same map with atom keys is correctly stripped.\n4. For the atomic path, call `Ash.Changeset.fully_atomic_chang",
+      "link": "https://github.com/advisories/GHSA-f4hc-ppw9-4hhw",
+      "published": "2026-09-24T19:53:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-55736"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-59723",
+      "title": "Cline: Cross-Origin WebSocket Hijacking in Cline Hub Dashboard (`/browser` endpoint)",
+      "summary": "### Summary\n\nThe Cline Hub dashboard server (`@cline/cline-hub`), launched via the `cline dashboard` CLI command, accepts WebSocket connections on the `/browser` endpoint without validating the HTTP `Origin` header. When `ROOM_SECRET` is not set\u2014the default for local (`127.0.0.1`) binds\u2014`isAuthorizedBrowserRequest()` returns `true` unconditionally, allowing any website a developer visits to open a cross-origin WebSocket to `ws://127.0.0.1:8787/browser`. An attacker-controlled page can then send `desktopCommand` frames to read workspace/session state, mutate MCP and provider settings, and\u2014because dashboard sessions default to `autoApprove: true` for all tools\u2014trigger arbitrary command execution when a provider/model is configured. Dynamically confirmed: an `upsert_mcp_server` frame injected a malicious `stdio` MCP server entry into the victim's Cline settings file with `ok: true` response.\n\n### Details\n\nThe vulnerable code path spans multiple files in the `apps/cline-hub` workspace.\n\n**No secret by default (local bind)**\n\n`apps/cline-hub/src/options.ts:54\u201357` converts an empty `ROOM_SECRET` environment variable to `undefined`:\n\n```ts\n// apps/cline-hub/src/options.ts:54\nfunction normalizeRoomSecret(value: string | undefined): string | undefined {\n    const secret = value?.trim();\n    return secret ? secret : undefined;\n}\n```\n\n`apps/cline-hub/src/options.ts:67\u201385` allows the local default host (`127.0.0.1`) to start without a secret, so `roomSecret` remains `undefined` in the default configuration.\n\n**Authorization bypass \u2014 Origin not checked**\n\n`apps/cline-hub/src/server.ts:61\u201364` short-circuits all authorization when `roomSecret` is `undefined`, and performs no `Origin` header check at any point:\n\n```ts\n// apps/cline-hub/src/server.ts:61\nfunction isAuthorizedBrowserRequest(url: URL): boolean {\n    if (!roomSecret) return true;\n    return url.searchParams.get(\"roomSecret\") === roomSecret;\n}\n```\n\n**WebSocket upgrade without Origin validation**\n\n`apps/cline-hub/src/serv",
+      "link": "https://github.com/advisories/GHSA-3cj3-hqcr-g934",
+      "published": "2026-09-24T19:48:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59723"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61788",
+      "title": "@bytebase/dbhub's read-only mode does not prevent database writes",
+      "summary": "### Summary\n \nSetting `readonly = true` on the `execute_sql` tool does not make the connection read-only. The connectors are written to set PostgreSQL `default_transaction_read_only=on` (and open SQLite in `readOnly` mode), but that code is gated on a config value that is never populated, so it never runs. The only thing left enforcing read-only is a classifier that inspects the first keyword of each statement. Any `SELECT` that writes or has side effects through a function call passes it. With an ordinary role this allows sequence tampering; with a privileged role it allows writing arbitrary files on the server (`lo_export`), reading arbitrary host files (`pg_read_file`), and remote code execution (`dblink` + `COPY ... TO PROGRAM`). The HTTP transport is unauthenticated and binds to `0.0.0.0` by default, so this is reachable by any network caller of `/mcp`.\n \n### Details\n \nTwo problems combine.\n \n**1. The database-level read-only control is dead code.**\n \n`PostgresConnector.connect()` only enables it when `config.readonly` is truthy (`src/connectors/postgres/index.ts:175-177`):\n \n```ts\n// SDK-level readonly enforcement: Set default_transaction_read_only for the entire connection\nif (config?.readonly) {\n  poolConfig.options = (poolConfig.options || '') + ' -c default_transaction_read_only=on';\n}\n```\n \nSQLite is gated the same way (`src/connectors/sqlite/index.ts:192`). `ConnectorConfig.readonly` is assigned in exactly one place, and only from `source.readonly` (`src/connectors/manager.ts:236-238`):\n \n```ts\n// Pass readonly flag for SDK-level enforcement (PostgreSQL, SQLite)\nif (source.readonly !== undefined) {\n  config.readonly = source.readonly;\n}\n```\n \n`source.readonly` can never have a value:\n \n- `SourceConfig` has no `readonly` field (`src/types/config.ts:49-62`). `readonly` exists only on the per-tool `ExecuteSqlToolConfig` / `CustomToolConfig`.\n- The TOML loader rejects `readonly` at source level (`src/config/toml-loader.ts:476-481`: \"readonly must be configur",
+      "link": "https://github.com/advisories/GHSA-mwwr-p57h-56pf",
+      "published": "2026-09-24T19:37:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61788"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61741",
+      "title": "http4s-scala-xml has an XML External Entity (XXE) processing issue",
+      "summary": "http4s-scala-xml provides `EntityDecoder[F, scala.xml.Elem]` instances that parse XML message bodies. These decoders used a `javax.xml.parsers.SAXParserFactory` obtained from `SAXParserFactory.newInstance` without any security configuration.  With the JDK's default settings, the parser resolves DOCTYPE declarations, external general and parameter entities, and external DTDs.\n\nAn application that uses these decoders to parse untrusted XML is vulnerable to XML External Entity (XXE) attacks.  An attacker can craft a request that:\n\n- discloses local files readable by the service process,\n- performs server-side request forgery (SSRF) against internal network resources, and/or\n- causes denial of service through entity expansion.\n\n### Impact\n\nAny service that derives an XML `EntityDecoder` from this library and parses attacker-controlled input is affected.\n\n### Patches\n\nThe default SAXParserFactory is now hardened: \n- secure processing is enabled\n- `DOCTYPE` declarations are disallowed\n- external general/parameter entities and external DTD loading are disabled\n- DTD URIs are not resolved\n- XInclude is disabled.\n\nThese defaults match `scala.xml.XMLLoader`'s defaults since 2.0.0.\n\n### Workarounds\n\nBefore upgrading, override `ElemInstances#saxFactory` with a hardened factory.\n\n```scala\n  val secured = new ElemInstances {\n    override protected val saxFactory = {\n      val f = javax.xml.parsers.SAXParserFactory.newInstance\n      f.setFeature(\"http://apache.org/xml/features/disallow-doctype-decl\", true)\n      // etc.\n      f\n    }\n  }\n  import secured._\n```",
+      "link": "https://github.com/advisories/GHSA-cjx3-73hr-rpw7",
+      "published": "2026-09-24T19:35:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61741"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-56738",
+      "title": "phpMyFAQ has SQL Injection in `StopWords::add()` \u2014 Unescaped Stop Word Insertion",
+      "summary": "## Summary\n\nThe `StopWords::add()` method in phpMyFAQ builds a SQL `INSERT` statement using `sprintf()` and inserts the user-supplied stop word value directly into the query string **without calling the application's database escaping function** on it. A sibling method, `StopWords::update()`, which modifies an *existing* stop word, correctly escapes the same kind of input. The omission is isolated to the `add()` (insert) code path.\n\nAn authenticated administrator who can reach the stop-word management feature can submit a crafted value as the \"word\" parameter that breaks out of the SQL string literal and injects arbitrary SQL, including statements to drop tables, exfiltrate data, or modify other rows in the database.\n\n---\n\n## Affected Code\n\n**File:** `phpmyfaq/src/phpMyFAQ/StopWords.php`\n**Method:** `add()` (approx. lines 60\u201375 in the audited revision)\n\n```php\n$sql = sprintf(\n    \"INSERT INTO %s VALUES(%d, '%s', '%s')\",\n    $this->getTableName(),\n    $id,\n    $this->configuration->getDb()->escape($this->language), // language IS escaped\n    $word                                                     // <-- $word is NOT escaped\n);\n```\n\n`$word` is taken directly from the administrative form input (the new stop word to add) and concatenated into the SQL string via `sprintf(\"'%s'\", ...)` with no call to the database driver's `escape()` method.\n\n### Contrast with the safe sibling method\n\n**Method:** `update()` (line 82 in the audited revision)\n\n```php\n$this->configuration->getDb()->escape($word)\n```\n\n`update()` \u2014 which modifies an existing stop word \u2014 correctly escapes `$word` before use. `add()` does not perform the same escaping on the equivalent value. This inconsistency between two methods handling the same data type is the root cause: the escaping convention used throughout the rest of the file was not applied uniformly to this one insertion path.\n\n---\n\n## Proof of Concept\n\n**Precondition:** Attacker has valid administrator credentials (or has otherwise obtained an au",
+      "link": "https://github.com/advisories/GHSA-rw77-vq4g-x3hp",
+      "published": "2026-09-24T19:30:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-56738"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61604",
+      "title": "ixo Blockchain x/bonds DID-resolved payer drain + x/entity ICA authorization bypass",
+      "summary": "Impact\n\n  Type: Improper authorization leading to unauthorized movement of user funds.\n\n  The x/bonds module moved funds from an address that was resolved from a DID verification method, without verifying that the resolved address belonged to the transaction signer. Affected handlers included MsgMakeOutcomePayment, MsgBuy, MsgSell, MsgSwap, and MsgWithdrawShare, as well as the batch order processor.\n\n  Because any account may list an arbitrary blockchainAccountID as a verification method on a DID it controls (without the consent of that address's owner), an attacker could register victims' addresses as verification methods on their own DID and then move the victims' balances into a bond the attacker controlled \u2014 later withdrawing and bridging the proceeds off-chain.\n\n  This was exploited on ixo mainnet (ixo-5) on 2026-06-20. The attack required no victim keys, signatures, or system compromise \u2014 any account holding a balance in a token a bond could use was at risk.\n\n  Patches\n\n  Fixed in v8.0.0, delivered via the on-chain v8 software-upgrade. The x/bonds module is disabled: every bonds message is rejected on all routes (top-level, authz, CosmWasm, and ICA), and the bonds batch EndBlocker is a no-op so no further reserve movements can occur.\n\n  All node operators and validators must upgrade to v8.0.0. The flaw is in chain state-machine logic and can only be remediated by running the patched binary.\n\n  Workarounds\n\n  There is no application-level workaround. The vulnerability is in consensus logic; remediation requires the network to run the patched (v8.0.0) binary. The bonds module remains disabled in v8.0.0 and will only be re-enabled in a future release once the signer-authorization model has been corrected.",
+      "link": "https://github.com/advisories/GHSA-w3rp-4cm2-4wgc",
+      "published": "2026-09-24T19:22:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61604"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-12958",
+      "title": "Language Servers for AWS vulnerable to arbitrary file write",
+      "summary": "## Summary\nLanguage Servers for AWS (the aws/language-servers project) provides the Language Server Protocol implementations that power AWS developer tooling, including the Amazon Q Developer agentic chat experience, across IDEs such as VS Code, JetBrains, Visual Studio, and Eclipse.\n\nMissing symlink validation in Language Servers for AWS may allow an arbitrary file write outside of the workspace trust boundary. This may occur when a local user opens a workspace containing a maliciously crafted symlink that resolves to a file path outside the workspace trust boundary.\n\n## Impact\n\nIf a user opens a maliciously crafted workspace containing a symlink that resides within the workspace but resolves to a location outside the workspace trust boundary, the agent may follow that symlink and write to the external location without prompting the user for approval. This can result in the modification of files outside the intended workspace boundary.\n\nThis issue is triggered when a user opens a workspace, trusts it, and the agent subsequently writes to a path within that workspace.\n\nImpacted versions: Language Servers for AWS version <1.69.0.\n\n## Patches\nThis issue has been addressed in AWS Language Servers version 1.69.0. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. \n\n## Workarounds\nNo workarounds are available.\n\n## References\nIf you have any questions or comments about this advisory, AWS Security ask that you contact them via their [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\n## Acknowledgement \n\nAWS Security would like to thank Wiz and Maor Dokhanian for collaborating on this issue through the coordinated vulnerability disclosure process.",
+      "link": "https://github.com/advisories/GHSA-6v3r-4p5c-mrp5",
+      "published": "2026-09-24T19:15:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-12958"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-12957",
+      "title": "Language Servers for AWS Vulnerable to Arbitrary Code Execution",
+      "summary": "### Summary\nLanguage Servers for AWS (the aws/language-servers project) provide the underlying language-server runtime that powers Amazon Q Developer's AI coding assistance across its IDE plugins (Visual Studio Code, JetBrains, Eclipse, and\nVisual Studio).\n\nImproper trust boundary enforcement in Language Servers for AWS may allow for arbitrary code execution. If a local user opens a maliciously crafted workspace, any commands within the project configuration files may be automatically\nexecuted.\n\n### Impact\n\nWhen a local user opens a maliciously crafted workspace and trusts it when prompted, commands defined in the workspace's project-level configuration files may be executed automatically, resulting in arbitrary code execution on the\nuser's host.\n\nThis issue is triggered when a user opens a workspace, trusts it, and the agent subsequently executes commands defined in the project-level configuration files.\n\n\nImpacted versions: Language Servers for AWS version <1.65.0.\n\n### Patches\nThis issue has been addressed in Language Servers for AWS version 1.65.0. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. \n\n### Workarounds\nNo workarounds are available.\n\n### References\nIf you have any questions or comments about this advisory, AWS Security asks that you contact them via their [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.\n\n### Acknowledgement \n\nAWS Security would like to thank Wiz and Maor Dokhanian for collaborating on this issue through the coordinated vulnerability disclosure process.",
+      "link": "https://github.com/advisories/GHSA-xhcr-j4j9-3gh7",
+      "published": "2026-09-24T19:13:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-12957"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-85057",
+      "title": "ZITADEL: Actions V1 sandbox escape: host file read via require()",
+      "summary": "### Summary\n\nA vulnerability in ZITADEL Actions V1 allows an organization Action author to read files from the ZITADEL host filesystem through the JavaScript `require()` module loader. On common self-hosted deployments this can be chained to steal bootstrap credentials (including the Login Client PAT) and escalate from a single-tenant organization owner to instance administrator.\n\n### Impact\n\nZITADEL Actions V1 run custom JavaScript inside the ZITADEL server process at OIDC, SAML, and login-flow trigger points. The runtime enables the goja Node-compatible `require()` registry without restricting the source loader, so Action scripts can load host files readable by the ZITADEL process (notably `.js` and `.json`, and in some cases other file contents via error channels).\n\nAn attacker with **ORG_OWNER** on any organization (which includes `org.action.write` and `org.flow.write`) can therefore:\n\n* Read process-readable host files, including configuration or secrets mounted into the API container (for example service-account material, projected secrets, or config carrying sensitive values).\n* On deployments that follow ZITADEL\u2019s documented bootstrap paths (`ZITADEL_FIRSTINSTANCE_LOGINCLIENTPATPATH`, `ZITADEL_FIRSTINSTANCE_MACHINEKEYPATH`), recover instance-wide credentials such as the **IAM_LOGIN_CLIENT** PAT or the **IAM_OWNER** service-account key, enabling escalation to full instance control.\n\nThis collapses the expected multi-tenant isolation boundary: a tenant organization administrator is not meant to access host filesystem secrets or instance-wide credentials.\n\n**Scope note:** This issue affects **Actions V1**. Host command execution was not identified as part of this vulnerability. Impact depends on what the ZITADEL process can read on disk and on deployment layout \u2014 documented Compose and quick-start setups that write bootstrap PATs or machine keys into the API container amplify severity.\n\n### Affected Versions\n\nSystems running one of the following versions are a",
+      "link": "https://github.com/advisories/GHSA-fgmf-7rf8-m6vf",
+      "published": "2026-09-24T18:19:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-85057"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62368",
+      "title": "Snipe-IT: Stored XSS via Custom Field name in asset-list column headers",
+      "summary": "### Impact\nA user with the \"customfields.create\" permission can store HTML/JS in a Custom Field name, which is later rendered as an asset-list column title WITHOUT escaping at app/Presenters/AssetPresenter.php line 364 ('title' => $field->name) and injected into the table header by the bundled bootstrap-table plugin. It executes for anyone who opens an asset list (e.g. /hardware), including superusers, on page load with no interaction. Since \"customfields.create\" can be granted to non-superusers, a lower-privileged user gets script execution in a superuser's session -> privilege escalation.\n\nSTEPS TO REPRODUCE\n1. As a user with \"customfields.create\", create a Custom Field named: `<img src=x onerror=alert(1)>`\n2. Add the field to a fieldset that is associated with an asset model.\n3. Open `/hardware` -> the payload executes on load.\n\nDEMONSTRATED IMPACT\nAn account holding ONLY \"customfields.create\" (HTTP 403 on /users) planted a payload that, when a superuser opened /hardware, issued an authenticated request in that session and granted the attacker's own account the \"superuser\" permission (afterwards: GET /users = 200, isSuperUser() = true).\n\nROOT CAUSE\n- Blade {{ }} encodes the data-columns attribute, but the browser decodes it back before bootstrap-table reads the title; bootstrap-table then renders the header title unescaped because its table-level \"escape\" option defaults to false and is never enabled. (The per-column 'escape' => true covers cell values, not the header title.)\n### Patches\nPatched in https://github.com/grokability/snipe-it/commit/58754e4e3b86b58a0c4523012ef04a2ae990d2c8",
+      "link": "https://github.com/advisories/GHSA-p9h3-gvpq-5539",
+      "published": "2026-09-24T18:19:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62368"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62286",
+      "title": "Dozzle label filters do not restrict container event and statistics streams",
+      "summary": "## Summary\n\nDozzle supports per-user label filters in `users.yml` that are documented as an access-control boundary: \"Filters are used to restrict the containers that a user can see\" and \"the `guest` user can only see containers with the label `com.example.app` \u2026 useful for restricting access to specific containers\" (docs/guide/authentication.md). This is the mechanism operators use to give different users/tenants visibility into disjoint subsets of containers on the same host.\n\nThe events stream handler `streamEvents` (GET `/api/events/stream`) honors that filter for the initial container list and for the incremental `containers-changed` updates, but it forwards two other channels \u2014 `container-stat` (live per-container CPU, memory, network and disk telemetry) and `container-event` (container lifecycle events: start/die/destroy/rename/pause/unpause, with the container's full attribute/label set) \u2014 to every authenticated client unconditionally, with no comparison against the caller's label filter. The upstream subscription `SubscribeEventsAndStats` fans out across every Docker client/host and never receives a label filter at all.\n\nAs a result, any authenticated user \u2014 including one explicitly constrained to a single label scope \u2014 receives live resource telemetry for every container on every monitored host, plus lifecycle events carrying each container's name, image and complete label map. This crosses the exact isolation boundary the filter feature is documented to enforce. The leak requires no special role (it is not gated behind the shell/actions/download roles) and works on the local Docker host, so it is distinct from the previously-patched agent-path exec/attach bypass (CVE-2026-24740 / GHSA-m855-r557-5rc5) and from the exec/attach CSWSH issue (CVE-2026-44985 / GHSA-j643-x8pv-8m67).\n\n## Affected code (v10.6.5)\n\n`internal/web/events.go` \u2014 `streamEvents`. The handler resolves the caller's `userLabels` and applies them to the initial list (`ListAllContainers(userLa",
+      "link": "https://github.com/advisories/GHSA-xcw9-qmmf-vqxj",
+      "published": "2026-09-24T18:15:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62286"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63493",
+      "title": "Snipe-IT: 2FA bypass via the API token flow",
+      "summary": "### Impact\n\nAn attacker who knows a victim's password fully bypasses that account's 2FA and obtains a persistent token with full API access as the user (read and write across the user's permissions, including admin if the victim is an admin).\n\nThe token is an API credential, not a web/UI session (using it on web routes redirects to `/login`), but the REST API covers essentially the whole application. If the victim is an admin, the token can also call the admin `users/two_factor_reset` endpoint, which is in the same un-gated API surface, to clear the account's enrolled 2FA. The next login is then forced to re-enroll a second factor, which the password-holding attacker can complete with their own device, taking over the account's web access and locking the legitimate user out.\n\n### Summary:\n\n2FA is enforced only by the `web` middleware group, not the `api` group, and the personal-access-token endpoint is in the `api` group. A session that has passed the password check but not the 2FA can mint a persistent API token and use it for full API access. \n\n\n### Details:\n\n`CheckForTwoFactor` is in the `web` group but not the `api` group:\n\n    // app/Http/Kernel.php\n    'web' => [ ..., CheckForTwoFactor::class, CreateFreshApiToken::class, ... ],\n    'api' => [ 'auth:api', EnforceApiUserAgent::class, ... ],   // no CheckForTwoFactor\n\nTwo consequences:\n\n1. `/two-factor` is exempt from the check, and `CreateFreshApiToken` runs right after it in the web group:\n\n    // app/Http/Middleware/CheckForTwoFactor.php\n    public const IGNORE_ROUTES = ['two-factor', 'two-factor-enroll', 'setup', 'logout'];\n\nSo a password-authenticated session that lands on `/two-factor` (before entering a code) is let through and gets issued the Passport `snipeit_passport_token` cookie.\n\n2. The token endpoint is in the `api` group, which never checks 2FA, gated only by `self.api`:\n\n    // routes/api.php -> Api\\ProfileController::createApiToken (line 98)\n    if (! Gate::allows('self.api')) { ... }   // the on",
+      "link": "https://github.com/advisories/GHSA-hxcx-9h4f-42xx",
+      "published": "2026-09-24T16:38:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63493"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-59167",
       "title": "SunEditor: Critical XSS vulnerability - sanitizer bypass",
       "summary": "## Summary\n\nSUNEDITOR `v2.47.10` appears to allow JavaScript execution through crafted namespaced HTML elements.\n\nThe sanitization logic does not fully remove executable event-handler attributes from certain custom/namespaced tags. As a result, an attacker may be able to inject HTML content that executes JavaScript when the rendered element is interacted with.\n\nThis behavior was observed after the changes introduced in this commit:\n\nhttps://github.com/JiHong88/suneditor/commit/9ed405fb0de676e56cd0e6a13c19c103ad5948d3\n\n---\n\n## Affected Version\n\nConfirmed vulnerable:\n\n* SUNEDITOR =< `2.47.10`\n\nPotentially affected:\n\n* Previous versions, if the same sanitization logic is still present\n\n---\n\n## Proof of Concept\n\nThe following payload preserves an executable event handler:\n\n```html\n<a:b src=\"/x\"><iframe src=javascript:alert(1)></iframe></a:b>\n\n<p><a:b src=\"/x\" onclick=\"document.body.style.background='red'\">click</a:b></p>\n```\n\nSimplified PoC:\n\n```html\n<a:b src=\"/x\" onclick=\"console.log('XSS:',document.domain,document.cookie)\">click</a:b>\n```\n\n```html\n<p><a:b src=\"/x\" onmouseover=\"alert('XSS \u2014 '+document.domain)\">\ud83d\udcce Click here for solutions</a:b></p>\n```\n---\n\n## Steps to Reproduce\n\n1. Open SUNEDITOR using version `2.47.10`.\n2. Insert the payload above into the editor.\n3. Save or render the generated content.\n4. Click the generated element.\n5. Observe that JavaScript is executed.\n\n---\n\n## Impact\n\nThis may allow an attacker to inject arbitrary JavaScript into rendered editor content.\n\nDepending on how SUNEDITOR is integrated into an application, this could lead to:\n\n* Stored XSS\n* DOM manipulation\n* Session theft\n* Credential theft\n* Account takeover actions performed in the victim\u2019s browser context\n\n---\n\n## Technical Details\n\nThe issue appears to be related to incomplete handling of namespaced/custom HTML elements such as:\n\n```html\n<a:b>\n```\n\nEvent-handler attributes such as `onclick` can remain attached to these crafted elements and execute when interacted with.\n\nThis sugg",
@@ -251,149 +556,6 @@
       ],
       "cve_ids": [
         "CVE-2026-61814"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/check-point-warns-of-hackers-exploiting-security-gateway-vpn-rce-flaw/",
-      "title": "Check Point warns of hackers exploiting Security Gateway VPN RCE flaw",
-      "summary": "Cybersecurity company Check Point has confirmed active exploitation of CVE-2026-85102, a pre-authentication remote code execution (RCE) vulnerability in the VPN certificate-handling functionality of its Security Gateway product. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/check-point-warns-of-hackers-exploiting-security-gateway-vpn-rce-flaw/",
-      "published": "2026-09-23T19:53:54+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-85102"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77602",
-      "title": "OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)",
-      "summary": "### Summary\n\nCOSMOS reads configuration from a user-writable overlay (`targets_modified/`) before the read-only plugin-installed `targets/` tree, and the config subsystem executes code on those files: `ConfigParser` renders every file as ERB by default, a `GENERIC_READ_CONVERSION` / `GENERIC_WRITE_CONVERSION` block is evaluated as code by `GenericConversion` (Ruby and Python), and the Script Runner suite analysis `require`s a procedure file. An authenticated user can write into `targets_modified/` below the admin tier (the storage-upload endpoint exempts that area from the admin gate, and the screen-save endpoint stores its body verbatim there), so the same root cause is reachable through several features, each giving arbitrary code execution on a COSMOS server.\n\nThree vulnerable routes were identified, all reachable by an authenticated non-admin user (in the open-source edition `authorize` ignores the permission string, so any authenticated user qualifies):\n\n1. **Table definitions** (immediate). `tables#generate|report|load` reads a definition from `targets_modified/` and ERB-renders it and evaluates its `GENERIC_*_CONVERSION` block in the `cmd-tlm-api` container.\n2. **Command/telemetry definitions** (persistent). A file written to `targets_modified/<TARGET>/cmd_tlm/` is overlaid by `System.setup_targets` and processed by `PacketConfig` in the decom/multi microservices: ERB-rendered in the Ruby implementation, and GENERIC-evaluated in both the Ruby and Python implementations (the Python `ConfigParser` does not run ERB). It executes on the next microservice (re)start.\n3. **Script Runner suites** (immediate). A procedure written to `targets_modified/<TARGET>/procedures/` is `require`d by the suite analysis, reachable at the read-only `script_view` tier through `scripts#body` and `running_script#show` (the analysis subprocess is spawned when `OPENC3_SERVICE_PASSWORD` is configured, which it is in the shipped `.env`).\n\n### Details\n\nRoot cause. `TargetFile.body` (Ruby `",
-      "link": "https://github.com/advisories/GHSA-jjq7-m736-w977",
-      "published": "2026-09-23T18:57:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77602"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-76086",
-      "title": "Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials",
-      "summary": "### Impact\n\nThe control panel action `formie/integrations/form-settings` (`IntegrationsController::actionFormSettings`) was reachable by any authenticated user without the appropriate form integration permissions. The action applied request-supplied settings to a fully configured integration via `setAttributes($settings, false)`, allowing an attacker to overwrite outbound host properties (e.g. `apiUrl`) while the server sent stored API keys or OAuth tokens to the attacker-controlled host. The remote response was returned in the JSON body (non-blind SSRF).\n\nThis is an incomplete remediation of [GHSA-cvpc-hccg-wmw4](https://github.com/advisories?query=GHSA-cvpc-hccg-wmw4). The `form-settings` action was excluded from the permission gate added in 3.1.28.\n\nAny site where a low-privileged user can authenticate (including front-end members on sites with public registration) could exfiltrate CRM/email-marketing/webhook integration credentials and probe internal network endpoints.\n\n### Patches\n\nFixed in **3.1.31** (Craft 5) and **2.2.23** (Craft 4).\n\nThe action now requires a CP request, a valid `formId`, and form integration permissions (`formie-showFormIntegrations` / per-form variant on Craft 5; `formie-manageFormIntegrations` / per-form variant on Craft 4). Request settings are filtered to an allowlist; URL, host, and credential properties cannot be overridden from user input.\n\n### Workarounds\n\nRestrict front-end user registration and limit CP access until upgraded. No configuration-only workaround fully mitigates the issue.\n\n- Reported by Jorge Gonz\u00e1lez (jorge@jmilla.es)",
-      "link": "https://github.com/advisories/GHSA-v3f3-cmj4-cvj9",
-      "published": "2026-09-23T18:33:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-76086"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77422",
-      "title": "JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping",
-      "summary": "### Summary\n\nThe JLine3 built-in `grep` command wraps the user-supplied regular expression with\n`.*` before compiling it with Java's backtracking regex engine. This amplifies\ncatastrophic backtracking and allows a short pattern such as `(a+)+b` to hang the\ncommand thread on non-matching input. In environments that expose the JLine shell to\nremote users, this is a denial-of-service issue.\n\n### Details\n\nIn `builtins/src/main/java/org/jline/builtins/PosixCommands.java`, the grep\nimplementation rewrites the user pattern before compilation:\n\n```java\nString regex = args.remove(0);\nString regexp = regex;\nif (opt.isSet(\"word-regexp\")) {\n    regexp = \"\\\\b\" + regexp + \"\\\\b\";\n}\nif (opt.isSet(\"line-regexp\")) {\n    regexp = \"^\" + regexp + \"$\";\n} else {\n    regexp = \".*\" + regexp + \".*\";\n}\n```\n\nThe transformed pattern is compiled with `Pattern.compile(...)` and then used to test\neach input line. For a payload such as `(a+)+b`, the automatic `.*` prefix and suffix\nincrease the backtracking search space substantially.\n\nAffected source location:\n- `builtins/src/main/java/org/jline/builtins/PosixCommands.java`\n- `grep(...)`\n\n### PoC\n\n1. Create a file containing a long run of `a` characters:\n\n```sh\nprintf 'aaaaaaaaaaaaaaaaaaaaaaa\\n' > /tmp/testfile.txt\n```\n\n2. Run JLine3's built-in `grep` against that file:\n\n```sh\ngrep '(a+)+b' /tmp/testfile.txt\n```\n\nExpected result:\n- The command stops responding.\n- The executing thread consumes high CPU.\n\nReproduction environment:\n- JLine3 on x86_64 Linux\n- OpenJDK 25.0.2\n\n### Impact\n\nThis is a denial-of-service vulnerability caused by catastrophic regex backtracking.\nAny application embedding `org.jline:jline-builtins` and exposing the built-in `grep`\ncommand is impacted. In remote shell deployments, an attacker can occupy a worker\nthread indefinitely and repeat the attack across multiple sessions to reduce service\navailability for other users.\n\n### Suggested Fix\n\nThe preferred fix for the current git head is:\n- stop rewriting non-line-regexp searc",
-      "link": "https://github.com/advisories/GHSA-r2xf-8xr9-62gw",
-      "published": "2026-09-23T18:12:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77422"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56679",
-      "title": "9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade",
-      "summary": "### Summary\nThe `PATCH /api/settings` endpoint writes the entire request body to persistent settings without a field whitelist. An authenticated user can set security-critical fields that are not meant to be modifiable here \u2014 notably `requireLogin`. Setting `requireLogin: false` disables authentication for the whole application, exposing all protected routes (e.g. `/api/keys`, `/api/providers`) to unauthenticated access.\n\n### Details\nRoot cause is unfiltered mass assignment (CWE-915):\n\n- `src/app/api/settings/route.js` (PATCH handler) parses the body and passes it to `updateSettings(body)`, with special handling only for `newPassword` and `oidcClientSecret`. All other fields pass through.\n- `src/lib/db/repos/settingsRepo.js` \u2014 `updateSettings` does `next = { ...current, ...updates }`, so any key in the body overwrites stored settings, including `requireLogin`, `tunnelDashboardAccess`, `authMode`.\n- `src/dashboardGuard.js` \u2014 `isAuthenticated` returns `true` whenever `settings.requireLogin === false`, bypassing auth on all protected routes.\n\nThis is distinct from CVE-2026-5842 (CWE-285, pre-auth bypass on `/api`, patched in 0.3.75). This finding requires a valid authenticated session and abuses input handling, not missing authentication.\n\n### PoC\nInstance on `localhost:20128`, default password `123456`.\n\n1. Authenticate, capture session:\n   `POST /api/auth/login` body `{\"password\":\"123456\"}` \u2192 `200 {\"success\":true}`\n2. Mass-assign with the authenticated session:\n   `PATCH /api/settings` body `{\"requireLogin\":false}` \u2192 `200`, response confirms `\"requireLogin\":false`\n3. Verify bypass with NO session/credentials:\n   `GET /api/keys` \u2192 `200`, returns full API key list unauthenticated\n4. Cleanup (authenticated): `PATCH /api/settings` body `{\"requireLogin\":true}` \u2192 `GET /api/keys` returns `401` again\n\n### Impact\nPost-authentication mass assignment. Any authenticated user (including one using the default password) can disable authentication globally, then read all stored API ",
-      "link": "https://github.com/advisories/GHSA-vmjq-hvgq-2wv4",
-      "published": "2026-09-23T18:12:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56679"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56678",
-      "title": "9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding",
-      "summary": "### Summary\n\nThe Kiro API-key validation endpoint builds an upstream URL using a user-controlled\n`region` value. By supplying a crafted region such as `kiro-canary.local:8443#`, an\nauthenticated attacker can cause 9router to send the Kiro validation request to an\nattacker-controlled host under the constructed `codewhisperer.<region>` hostname. The\nrequest forwards the submitted Kiro API key as an `Authorization: Bearer` header.\n\n### Details\n\n- **Affected version / commit:** 9router v0.5.2 @ `5da508a`.\n- **Endpoint:** `POST /api/oauth/kiro/api-key`.\n- **Correct runtime payload:** `region: \"kiro-canary.local:8443#\"`.\n- Do **not** use the old `@host#` payload (`region: \"@kiro-canary.local:8443#\"`); it is\n  blocked by Node/undici `fetch()` because it creates URL credentials\n  (`\"Request cannot be constructed from a URL that includes credentials\"`).\n- **Constructed upstream host becomes:** `codewhisperer.kiro-canary.local:8443`\n  (the `#` turns the trailing `.amazonaws.com` into a URL fragment).\n- HTTPS canary captured: `Authorization: Bearer DUMMY_KIRO_API_KEY_FOR_LOCAL_REPRO`.\n- TLS verification was **not** globally disabled; the reproduction uses a local CA via\n  `NODE_EXTRA_CA_CERTS`.\n- The no-auth control returns 401, so this standalone issue is **authenticated**.\n- `SameSite=Lax` on the session cookie prevents cross-site POST cookie delivery, so do\n  **not** claim drive-by CSRF unless another same-site / auth-bypass primitive is\n  chained.\n\n**Root cause.** The route reads `region` straight from the request body and passes it,\nunvalidated, into the upstream URL template; the bearer credential is forwarded to that\nhost, and the upstream response body is reflected back to the client on error:\n\n```js\n// src/app/api/oauth/kiro/api-key/route.js\nconst { apiKey, region } = await request.json();\n...\nconst credential = await kiroService.validateApiKey(apiKey, region || \"us-east-1\");\n...\n} catch (error) {\n  return NextResponse.json({ error: error.message }, { status: 500 }); ",
-      "link": "https://github.com/advisories/GHSA-6mwv-4mrm-5p3m",
-      "published": "2026-09-23T18:12:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56678"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-56676",
-      "title": "9router: Image prefetch DNS rebinding allows SSRF to internal services",
-      "summary": "## Summary\n\n9router validates image URLs by resolving the host before fetching, but the later\nserver-side fetch performs a separate DNS resolution. An attacker-controlled DNS name can\nresolve to a public IP during validation and then rebind to an internal Docker/private IP\nduring the fetch. This allows the server-side image prefetch to reach internal-only HTTP\nservices (SSRF).\n\n## Details\n\n- **Affected version / commit:** 9router `v0.4.80` @ `b282f05`.\n- **Reachable through** `/v1/chat/completions` with a **vision-capable model** and an\n  `image_url` content part. A vision-capable model name is required so the image survives\n  modality stripping and the server-side prefetch is armed.\n- The provider used in this reproduction is the bundled **mock provider** \u2014 **no real API\n  key and no real provider call**.\n- **internal-admin** (the SSRF target) is **not exposed to the host network**; it is\n  reachable only from inside the Docker network.\n- **rebind-dns** behaviour for `rebind.9r.test`:\n  - first A response \u2192 `1.1.1.1` (public) to pass the public-host guard,\n  - second A response \u2192 `172.29.0.10` (internal-admin) during the fetch.\n- **internal-admin** logs `GET /ssrf-marker` with `peer=172.29.0.30` (the `proxied-router`\n  container), proving the server-side fetch landed on the internal service.\n- **mock-provider** receives `POST /api/chat` and the flow completes with `HTTP 200`.\n- **Root cause:** DNS TOCTOU \u2014 the IP is **not pinned** between the validation resolution\n  (the public-host guard) and the fetch resolution. The guard and the fetch each resolve the\n  hostname independently, so a TTL-0 rebinding authority can return a public IP to the guard\n  and an internal IP to the fetch.\n\n## Proof of Concept\n\nThis repository is a self-contained Docker Compose reproduction. No real provider is called\nand no real API key is required.\n\n1. Build and start the stack:\n   ```bash\n   docker compose up --build\n   ```\n2. Confirm `internal-admin` is unreachable from the host:\n   ```",
-      "link": "https://github.com/advisories/GHSA-cmhj-wh2f-9cgx",
-      "published": "2026-09-23T18:12:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-56676"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-85724",
-      "title": "Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug",
-      "summary": "moquette is reachable by untrusted MQTT clients (anonymous by default), so every byte from any client, including pre-authentication, is untrusted. This is a memory-safe JVM: the ceiling is authorization/ACL bypass + denial of service + cross-session integrity, **not RCE** (I did not find one and do not claim one). Audited at commit `da7f719a6bab9829d520b5838e13ea7b1f9be3ef`, module `broker/`.\n\n## What a connecting client can do\n\n1. (Critical) Bypass `pattern`-based ACLs across tenants. In `AuthorizationsCollector.canDoOperation` (AuthorizationsCollector.java:116-131, esp. line 123) the clientId/username is substituted raw into a pattern ACL rule and then wildcard-matched, and the clientId is never validated for MQTT wildcard characters +/# at CONNECT (MQTTConnection.processConnect):\n\nTopic substitutedTopic = new Topic(auth.topic.toString().replace(\"%c\", client).replace(\"%u\", username));\nif (topic.match(substitutedTopic)) return true;\n\nA client that connects with clientId + turns sensor/%c/# into the filter sensor/+/#, gaining cross-tenant read AND write. (Precondition: pattern ACL rules configured \u2014 a common multi-tenant setup.)\n\n2. (High) Crash the whole broker. SessionEventLoop (SessionEventLoop.java:40-54) catches only InterruptedException and is never restarted (SessionEventLoopGroup), so any uncaught exception on it wedges every co-located client. Trivially reachable inputs: malformed $share/grp SUBSCRIBE (SharedSubscriptionUtils.extractShareName -> StringIndexOutOfBoundsException), deeply nested topic (CTrie recursion -> StackOverflowError), and ACL NPE below. Unbounded subscriptions / retained / in-flight / topic-alias / interceptor state (BrokerInterceptor uses an unbounded queue) also allow OOM; durable stores allow disk exhaustion.\n\n3. (High) NPE in ACL sink on clientId # (invalid filter sensor/#/# -> null tokens -> Topic.match NPE at Topic.java:173).\n\n4. (High) Will-message authorization bypass. Last-Will topic is published (PostOffice.publishWill) withou",
-      "link": "https://github.com/advisories/GHSA-5f42-97gr-vfhq",
-      "published": "2026-09-23T16:11:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-85724"
       ],
       "is_zero_day": false,
       "is_high_severity": true
