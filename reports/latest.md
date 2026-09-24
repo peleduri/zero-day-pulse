@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-23 20:46 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-24 01:55 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -168,7 +168,26 @@ The attacks, detected on September 3 and 4, 2026, involved the chaining of two v
 
 ---
 
-## 18. 🟡 High Severity — Check Point warns of hackers exploiting Security Gateway VPN RCE flaw
+## 18. 🟡 High Severity — Jawn: Quadratic parsing effort in AsyncParser
+
+**CVE:** `CVE-2026-61814` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
+**Reference:** <https://github.com/advisories/GHSA-w4cm-gvhj-cgw6>
+
+> `AsyncParser` can be forced to perform O(n^2) work on the length of the input.  When a single JSON token arrives across many small chunks, each `absorb` call rescans the incomplete token from the start.
+
+### Impact
+
+Denial of service via CPU exhaustion when parsing untrusted JSON.
+
+Preconditions:
+- Application uses `AsyncParser`
+- Attacker can send large tokens with control over chunk sizes.
+
+### …
+
+---
+
+## 19. 🟡 High Severity — Check Point warns of hackers exploiting Security Gateway VPN RCE flaw
 
 **CVE:** `CVE-2026-85102` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/check-point-warns-of-hackers-exploiting-security-gateway-vpn-rce-flaw/>
@@ -177,7 +196,7 @@ The attacks, detected on September 3 and 4, 2026, involved the chaining of two v
 
 ---
 
-## 19. 🟡 High Severity — OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)
+## 20. 🟡 High Severity — OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)
 
 **CVE:** `CVE-2026-77602` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-jjq7-m736-w977>
@@ -188,7 +207,7 @@ COSMOS reads configuration from a user-writable overlay (`targets_modified/`) be
 
 ---
 
-## 20. 🟡 High Severity — Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials
+## 21. 🟡 High Severity — Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials
 
 **CVE:** `CVE-2026-76086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-v3f3-cmj4-cvj9>
@@ -199,7 +218,7 @@ The control panel action `formie/integrations/form-settings` (`IntegrationsContr
 
 ---
 
-## 21. 🟡 High Severity — Hackers start exploiting critical WordPress flaw for code execution
+## 22. 🟡 High Severity — Hackers start exploiting critical WordPress flaw for code execution
 
 **CVE:** `CVE-2026-87902` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-start-exploiting-critical-wordpress-flaw-for-code-execution/>
@@ -208,7 +227,7 @@ The control panel action `formie/integrations/form-settings` (`IntegrationsContr
 
 ---
 
-## 22. 🟡 High Severity — JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping
+## 23. 🟡 High Severity — JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping
 
 **CVE:** `CVE-2026-77422` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-r2xf-8xr9-62gw>
@@ -225,7 +244,7 @@ remote users, this is a denial-of-service issue.
 
 ---
 
-## 23. 🟡 High Severity — 9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade
+## 24. 🟡 High Severity — 9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade
 
 **CVE:** `CVE-2026-56679` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-vmjq-hvgq-2wv4>
@@ -235,7 +254,7 @@ The `PATCH /api/settings` endpoint writes the entire request body to persistent 
 
 ---
 
-## 24. 🟡 High Severity — 9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding
+## 25. 🟡 High Severity — 9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding
 
 **CVE:** `CVE-2026-56678` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-6mwv-4mrm-5p3m>
@@ -250,7 +269,7 @@ request forwards the submitted Kiro API key …
 
 ---
 
-## 25. 🟡 High Severity — 9router: Image prefetch DNS rebinding allows SSRF to internal services
+## 26. 🟡 High Severity — 9router: Image prefetch DNS rebinding allows SSRF to internal services
 
 **CVE:** `CVE-2026-56676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-cmhj-wh2f-9cgx>
@@ -269,7 +288,7 @@ services (SSRF).
 
 ---
 
-## 26. 🟡 High Severity — Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug
+## 27. 🟡 High Severity — Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug
 
 **CVE:** `CVE-2026-85724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-5f42-97gr-vfhq>
@@ -280,7 +299,7 @@ services (SSRF).
 
 ---
 
-## 27. 🟡 High Severity — Solspace Freeform: Limited Twig template injection via submitted field values
+## 28. 🟡 High Severity — Solspace Freeform: Limited Twig template injection via submitted field values
 
 **CVE:** `CVE-2026-73858` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-gxrg-x694-283w>
@@ -293,7 +312,7 @@ Unauthenticated users could submit Twig expressions through public Freeform form
 
 ---
 
-## 28. 🟡 High Severity — REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates
+## 29. 🟡 High Severity — REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates
 
 **CVE:** `CVE-2026-63000` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-m8r3-22v6-g877>
@@ -306,7 +325,7 @@ The `rex_api_install_package_update` API function (`install` addon) does not ove
 
 ---
 
-## 29. 🟡 High Severity — plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection
+## 30. 🟡 High Severity — plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection
 
 **CVE:** `CVE-2026-57149` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-rr49-f9g6-c9r5>
@@ -316,7 +335,7 @@ The Classic portlet (plone.app.portlets.portlets.classic) used its user-supplied
 
 ---
 
-## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

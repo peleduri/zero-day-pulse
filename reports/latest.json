@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-23T20:46:19.003958+00:00",
-  "total": 30,
+  "generated": "2026-09-24T01:55:37.844748+00:00",
+  "total": 31,
   "kev": 0,
   "zero_day": 17,
   "enriched": 0,
@@ -278,6 +278,24 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-61814",
+      "title": "Jawn: Quadratic parsing effort in AsyncParser",
+      "summary": "`AsyncParser` can be forced to perform O(n^2) work on the length of the input.  When a single JSON token arrives across many small chunks, each `absorb` call rescans the incomplete token from the start.\n\n### Impact\n\nDenial of service via CPU exhaustion when parsing untrusted JSON.\n\nPreconditions:\n- Application uses `AsyncParser`\n- Attacker can send large tokens with control over chunk sizes.\n\n### Patches\n\nFixed in jawn-parser-1.7.0.\n\n### Workarounds\n\nIf you can't upgrade immediately:\n- Use the synchronous `Parser`.\n- Buffer incoming bytes into larger chunks before calling `absorb`",
+      "link": "https://github.com/advisories/GHSA-w4cm-gvhj-cgw6",
+      "published": "2026-09-23T21:23:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61814"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://www.bleepingcomputer.com/news/security/check-point-warns-of-hackers-exploiting-security-gateway-vpn-rce-flaw/",
