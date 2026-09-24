@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-24 01:55 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-24 10:39 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -40,45 +40,7 @@ The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on A
 
 ---
 
-## 5. 🟠 Zero-Day — Arista Urges Immediate Patching of Exploited VCO Zero-Day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://www.securityweek.com/arista-urges-immediate-patching-of-exploited-vco-zero-day/>
-
-> Remote attackers could trigger the critical-severity flaw to access privileged internal functionality. The post Arista Urges Immediate Patching of Exploited VCO Zero-Day appeared first on SecurityWeek .
-
----
-
-## 6. 🟠 Zero-Day — F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers
-
-**CVE:** `CVE-2026-94127` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html>
-
-> Attackers are exploiting a critical flaw in F5 BIG-IP Access Policy Manager (APM) that lets them run code on a BIG-IP system without logging in, F5 says.
-
-The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth authorization server, issuing access tokens to applications. F5 disclosed it in an advisory on September 22 and has released engineering hotfixes.
-
----
-
-## 7. 🟠 Zero-Day — Critical F5 BIG-IP Vulnerability Exploited as Zero-Day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://www.securityweek.com/critical-f5-big-ip-vulnerability-exploited-as-zero-day/>
-
-> Unauthenticated attackers could send malicious traffic to BIG-IP to achieve remote code execution. The post Critical F5 BIG-IP Vulnerability Exploited as Zero-Day appeared first on SecurityWeek .
-
----
-
-## 8. 🟠 Zero-Day — F5 patches BIG-IP APM zero-day flaw exploited in RCE attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/>
-
-> F5 has released security updates to address a critical BIG-IP APM zero-day vulnerability being exploited in remote code execution attacks. [...]
-
----
-
-## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -87,7 +49,7 @@ The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth 
 
 ---
 
-## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -96,7 +58,7 @@ The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth 
 
 ---
 
-## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -105,7 +67,7 @@ The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth 
 
 ---
 
-## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -114,7 +76,7 @@ The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth 
 
 ---
 
-## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -123,7 +85,7 @@ The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth 
 
 ---
 
-## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -132,7 +94,7 @@ The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth 
 
 ---
 
-## 15. 🟠 Zero-Day — Zapros: Streaming decoders ignored the requested chunk size, allowing a single compressed response chunk to allocate unbounded memory (decompression bomb)
+## 11. 🟠 Zero-Day — Zapros: Streaming decoders ignored the requested chunk size, allowing a single compressed response chunk to allocate unbounded memory (decompression bomb)
 
 **CVE:** `CVE-2026-61652` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-6cp7-3m3c-5x5c>
@@ -148,7 +110,7 @@ import gzip, zapros
 
 ---
 
-## 16. 🟠 Zero-Day — Arista patches actively exploited VeloCloud Orchestrator zero-day
+## 12. 🟠 Zero-Day — Arista patches actively exploited VeloCloud Orchestrator zero-day
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/>
@@ -157,18 +119,20 @@ import gzip, zapros
 
 ---
 
-## 17. 🟠 Zero-Day — Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware
+## 13. 🟡 High Severity — Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure
 
-**CVE:** `CVE-2026-85046` | `CVE-2026-87491` | `CVE-2026-85880` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html>
+**CVE:** `CVE-2026-87902` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-24
+**Reference:** <https://thehackernews.com/2026/09/attackers-exploit-wordpress-cve-2026.html>
 
-> A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites.
+> Threat actors have begun to actively exploit a critical security flaw in WordPress within hours of public disclosure.
 
-The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome (CVE-2026-85046, CVE-2026-87491) and one impacting Windows Advanced Local Procedure Call (CVE-2026-85880) to break
+The vulnerability in question is CVE-2026-87902 (CVSS score: 9.2), which could allow an unauthenticated attacker to obtain remote code execution (RCE).
+
+&quot;An unauthenticated attacker can make get_page_template() page-template resolution include a chosen readable local .php fil…
 
 ---
 
-## 18. 🟡 High Severity — Jawn: Quadratic parsing effort in AsyncParser
+## 14. 🟡 High Severity — Jawn: Quadratic parsing effort in AsyncParser
 
 **CVE:** `CVE-2026-61814` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-w4cm-gvhj-cgw6>
@@ -187,7 +151,7 @@ Preconditions:
 
 ---
 
-## 19. 🟡 High Severity — Check Point warns of hackers exploiting Security Gateway VPN RCE flaw
+## 15. 🟡 High Severity — Check Point warns of hackers exploiting Security Gateway VPN RCE flaw
 
 **CVE:** `CVE-2026-85102` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/check-point-warns-of-hackers-exploiting-security-gateway-vpn-rce-flaw/>
@@ -196,7 +160,7 @@ Preconditions:
 
 ---
 
-## 20. 🟡 High Severity — OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)
+## 16. 🟡 High Severity — OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)
 
 **CVE:** `CVE-2026-77602` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-jjq7-m736-w977>
@@ -207,7 +171,7 @@ COSMOS reads configuration from a user-writable overlay (`targets_modified/`) be
 
 ---
 
-## 21. 🟡 High Severity — Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials
+## 17. 🟡 High Severity — Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials
 
 **CVE:** `CVE-2026-76086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-v3f3-cmj4-cvj9>
@@ -218,16 +182,7 @@ The control panel action `formie/integrations/form-settings` (`IntegrationsContr
 
 ---
 
-## 22. 🟡 High Severity — Hackers start exploiting critical WordPress flaw for code execution
-
-**CVE:** `CVE-2026-87902` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-start-exploiting-critical-wordpress-flaw-for-code-execution/>
-
-> Threat actors have moved from probing WordPress sites vulnerable to CVE-2026-87902 to exploiting the flaw to write files to disk that execute shell commands when accessed. [...]
-
----
-
-## 23. 🟡 High Severity — JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping
+## 18. 🟡 High Severity — JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping
 
 **CVE:** `CVE-2026-77422` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-r2xf-8xr9-62gw>
@@ -244,7 +199,7 @@ remote users, this is a denial-of-service issue.
 
 ---
 
-## 24. 🟡 High Severity — 9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade
+## 19. 🟡 High Severity — 9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade
 
 **CVE:** `CVE-2026-56679` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-vmjq-hvgq-2wv4>
@@ -254,7 +209,7 @@ The `PATCH /api/settings` endpoint writes the entire request body to persistent 
 
 ---
 
-## 25. 🟡 High Severity — 9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding
+## 20. 🟡 High Severity — 9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding
 
 **CVE:** `CVE-2026-56678` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-6mwv-4mrm-5p3m>
@@ -269,7 +224,7 @@ request forwards the submitted Kiro API key …
 
 ---
 
-## 26. 🟡 High Severity — 9router: Image prefetch DNS rebinding allows SSRF to internal services
+## 21. 🟡 High Severity — 9router: Image prefetch DNS rebinding allows SSRF to internal services
 
 **CVE:** `CVE-2026-56676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-cmhj-wh2f-9cgx>
@@ -288,7 +243,7 @@ services (SSRF).
 
 ---
 
-## 27. 🟡 High Severity — Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug
+## 22. 🟡 High Severity — Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug
 
 **CVE:** `CVE-2026-85724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-5f42-97gr-vfhq>
@@ -299,7 +254,7 @@ services (SSRF).
 
 ---
 
-## 28. 🟡 High Severity — Solspace Freeform: Limited Twig template injection via submitted field values
+## 23. 🟡 High Severity — Solspace Freeform: Limited Twig template injection via submitted field values
 
 **CVE:** `CVE-2026-73858` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-gxrg-x694-283w>
@@ -312,7 +267,7 @@ Unauthenticated users could submit Twig expressions through public Freeform form
 
 ---
 
-## 29. 🟡 High Severity — REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates
+## 24. 🟡 High Severity — REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates
 
 **CVE:** `CVE-2026-63000` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-m8r3-22v6-g877>
@@ -325,7 +280,7 @@ The `rex_api_install_package_update` API function (`install` addon) does not ove
 
 ---
 
-## 30. 🟡 High Severity — plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection
+## 25. 🟡 High Severity — plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection
 
 **CVE:** `CVE-2026-57149` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-rr49-f9g6-c9r5>
@@ -335,7 +290,7 @@ The Classic portlet (plone.app.portlets.portlets.classic) used its user-supplied
 
 ---
 
-## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
