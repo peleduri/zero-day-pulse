@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-24 10:39 UTC &nbsp;|&nbsp; **Total:** 26 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-24 16:02 UTC &nbsp;|&nbsp; **Total:** 24 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,27 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — InfraTrust report warns network management systems under attack
+## 3. 🟠 Zero-Day — Hackers now exploit critical Roundcube flaw in code injection attacks
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-24
+**Reference:** <https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/>
 
-> Attackers are increasingly targeting the management systems used to control enterprise infrastructure, with several critical vulnerabilities actively exploited before or shortly after vendors disclosed them. [...]
-
----
-
-## 4. 🟠 Zero-Day — Exploit Released for Unpatched Ubuntu Linux Flaw Enabling Host-Root Container Escape
-
-**CVE:** `CVE-2026-80521` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html>
-
-> A use-after-free in the Linux kernel&#x27;s AF_UNIX socket subsystem can be used to escape a container and gain root on the host, security firm DepthFirst said in research published September 22.
-
-The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on August 6, but Ubuntu has not shipped the patch for its 26.04, 24.04, or 22.04 LTS releases. DepthFirst
+> A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security. [...]
 
 ---
 
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -49,7 +38,7 @@ The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on A
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -58,7 +47,7 @@ The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on A
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -67,7 +56,7 @@ The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on A
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -76,7 +65,7 @@ The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on A
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -85,7 +74,7 @@ The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on A
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -94,32 +83,51 @@ The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on A
 
 ---
 
-## 11. 🟠 Zero-Day — Zapros: Streaming decoders ignored the requested chunk size, allowing a single compressed response chunk to allocate unbounded memory (decompression bomb)
+## 10. 🟠 Zero-Day — When Business Email Compromise Starts Rewriting Reality
 
-**CVE:** `CVE-2026-61652` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://github.com/advisories/GHSA-6cp7-3m3c-5x5c>
+**CVE:** `CVE-2024-45519` | `CVE-2025-27915` | `CVE-2026-73570` | `CVE-2022-27925` | `CVE-2022-37042` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-24
+**Reference:** <https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve>
 
-> ### Impact
-
-Denial of service via memory exhaustion. Affects all callers who streamed compressed responses relying on the chunk size — explicit (`iter_bytes(chunk_size=...)`) or the default — to bound memory. The decoder ignored that bound, so a chunk could be far larger than requested and a single compressed response could overflow memory.
-
-```python
-import gzip, zapros
-
-# Server returns ~1 GiB o…
+> Business Email Compromise (BEC) operates on a familiar playbook. Threat actors breach a mailbox, silently monitor operations, map approval chains, and ultimately exploit that access to divert funds or exfiltrate sensitive assets. This dynamic is central to our analysis as we kick off a series around Rapid7&#x27;s collaborative research with Zimbra; upcoming installments will explore technical deta…
 
 ---
 
-## 12. 🟠 Zero-Day — Arista patches actively exploited VeloCloud Orchestrator zero-day
+## 11. 🟠 Zero-Day — 17,000 URLs Reveal How ClickFix Turns Trusted Websites Into Malware Traps: Report by CTM360
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-24
+**Reference:** <https://thehackernews.com/2026/09/17000-urls-reveal-how-clickfix-turns.html>
 
-> Arista Networks has released security patches for a zero-day flaw that is being actively exploited and affects VeloCloud Orchestrator (VCO) On-Prem deployments. [...]
+> ClickFix has become the most common way attackers get into enterprise networks, and it does it without an exploit, an attachment, or a file on disk. Our new global threat report traces the technique from a novelty in late 2023 to a subscription product with on-chain infrastructure and a state-sponsored user base, and explains why blocking malicious domains is no longer a useful defense.
+
+Read
 
 ---
 
-## 13. 🟡 High Severity — Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure
+## 12. 🟡 High Severity — SunEditor: Critical XSS vulnerability - sanitizer bypass
+
+**CVE:** `CVE-2026-59167` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
+**Reference:** <https://github.com/advisories/GHSA-6rf4-v2fh-m6p4>
+
+> ## Summary
+
+SUNEDITOR `v2.47.10` appears to allow JavaScript execution through crafted namespaced HTML elements.
+
+The sanitization logic does not fully remove executable event-handler attributes from certain custom/namespaced tags. As a result, an attacker may be able to inject HTML content that executes JavaScript when the rendered element is interacted with.
+
+This behavior was observed after the…
+
+---
+
+## 13. 🟡 High Severity — SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted
+
+**CVE:** `CVE-2026-28324` | `CVE-2026-28325` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-24
+**Reference:** <https://www.securityweek.com/solarwinds-patches-critical-rce-flaws-in-observability-self-hosted/>
+
+> The vulnerabilities, tracked as CVE-2026-28324 and CVE-2026-28325, can be exploited without authentication. The post SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted appeared first on SecurityWeek .
+
+---
+
+## 14. 🟡 High Severity — Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure
 
 **CVE:** `CVE-2026-87902` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://thehackernews.com/2026/09/attackers-exploit-wordpress-cve-2026.html>
@@ -132,7 +140,7 @@ The vulnerability in question is CVE-2026-87902 (CVSS score: 9.2), which could a
 
 ---
 
-## 14. 🟡 High Severity — Jawn: Quadratic parsing effort in AsyncParser
+## 15. 🟡 High Severity — Jawn: Quadratic parsing effort in AsyncParser
 
 **CVE:** `CVE-2026-61814` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-w4cm-gvhj-cgw6>
@@ -151,7 +159,7 @@ Preconditions:
 
 ---
 
-## 15. 🟡 High Severity — Check Point warns of hackers exploiting Security Gateway VPN RCE flaw
+## 16. 🟡 High Severity — Check Point warns of hackers exploiting Security Gateway VPN RCE flaw
 
 **CVE:** `CVE-2026-85102` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://www.bleepingcomputer.com/news/security/check-point-warns-of-hackers-exploiting-security-gateway-vpn-rce-flaw/>
@@ -160,7 +168,7 @@ Preconditions:
 
 ---
 
-## 16. 🟡 High Severity — OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)
+## 17. 🟡 High Severity — OpenC3 COSMOS: Authenticated remote code execution via the user-writable config overlay (table definitions, cmd/tlm definitions, and script suites)
 
 **CVE:** `CVE-2026-77602` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-jjq7-m736-w977>
@@ -171,7 +179,7 @@ COSMOS reads configuration from a user-writable overlay (`targets_modified/`) be
 
 ---
 
-## 17. 🟡 High Severity — Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials
+## 18. 🟡 High Severity — Formie: Integration form-settings action allows SSRF and exfiltration of stored integration credentials
 
 **CVE:** `CVE-2026-76086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-v3f3-cmj4-cvj9>
@@ -182,7 +190,7 @@ The control panel action `formie/integrations/form-settings` (`IntegrationsContr
 
 ---
 
-## 18. 🟡 High Severity — JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping
+## 19. 🟡 High Severity — JLine: ReDoS in Built-in grep Command Amplified by Automatic `.*` Wrapping
 
 **CVE:** `CVE-2026-77422` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-r2xf-8xr9-62gw>
@@ -199,7 +207,7 @@ remote users, this is a denial-of-service issue.
 
 ---
 
-## 19. 🟡 High Severity — 9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade
+## 20. 🟡 High Severity — 9router: Mass assignment in PATCH /api/settings allows authenticated authorization downgrade
 
 **CVE:** `CVE-2026-56679` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-vmjq-hvgq-2wv4>
@@ -209,7 +217,7 @@ The `PATCH /api/settings` endpoint writes the entire request body to persistent 
 
 ---
 
-## 20. 🟡 High Severity — 9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding
+## 21. 🟡 High Severity — 9router: Kiro region injection allows authenticated SSRF with Authorization header forwarding
 
 **CVE:** `CVE-2026-56678` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-6mwv-4mrm-5p3m>
@@ -224,7 +232,7 @@ request forwards the submitted Kiro API key …
 
 ---
 
-## 21. 🟡 High Severity — 9router: Image prefetch DNS rebinding allows SSRF to internal services
+## 22. 🟡 High Severity — 9router: Image prefetch DNS rebinding allows SSRF to internal services
 
 **CVE:** `CVE-2026-56676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-cmhj-wh2f-9cgx>
@@ -243,7 +251,7 @@ services (SSRF).
 
 ---
 
-## 22. 🟡 High Severity — Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug
+## 23. 🟡 High Severity — Moquette: Pattern-ACL wildcard injection (cross-tenant authorization bypass) plus a remote-unauthenticated DoS cluster, a Will-message authorization bypass, and a cross-session durable-corruption bug
 
 **CVE:** `CVE-2026-85724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
 **Reference:** <https://github.com/advisories/GHSA-5f42-97gr-vfhq>
@@ -254,43 +262,7 @@ services (SSRF).
 
 ---
 
-## 23. 🟡 High Severity — Solspace Freeform: Limited Twig template injection via submitted field values
-
-**CVE:** `CVE-2026-73858` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://github.com/advisories/GHSA-gxrg-x694-283w>
-
-> ### Summary
-
-A limited server-side Twig template injection issue was identified in Solspace Freeform for Craft CMS. In affected versions, submitted form field values could be evaluated as Twig in certain rendering contexts.
-
-Unauthenticated users could submit Twig expressions through public Freeform forms and have those expressions evaluated when the submitted values were rendered back into the fo…
-
----
-
-## 24. 🟡 High Severity — REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates
-
-**CVE:** `CVE-2026-63000` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://github.com/advisories/GHSA-m8r3-22v6-g877>
-
-> ### Summary
-The `rex_api_install_package_update` API function (`install` addon) does not override `requiresCsrfProtection()`, which defaults to `false` in the base class `rex_api_function`. Any authenticated admin can therefore be tricked via a CSRF attack into silently triggering a package update from the REDAXO package server.
-
-### Details
-**File:** `redaxo/src/core/lib/api_function.php:277-280`…
-
----
-
-## 25. 🟡 High Severity — plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection
-
-**CVE:** `CVE-2026-57149` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://github.com/advisories/GHSA-rr49-f9g6-c9r5>
-
-> ### Impact
-The Classic portlet (plone.app.portlets.portlets.classic) used its user-supplied template/macro fields to build a TALES path expression that was then evaluated by the TAL path() helper. Because the value was interpreted as a full TALES expression, a user able to add or edit a Classic portlet could supply a crafted value that escapes simple path traversal and is evaluated as arbitrary co…
-
----
-
-## 26. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 24. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

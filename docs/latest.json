@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-24T10:39:30.932430+00:00",
-  "total": 26,
+  "generated": "2026-09-24T16:02:16.911706+00:00",
+  "total": 24,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -37,34 +37,17 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/",
-      "title": "InfraTrust report warns network management systems under attack",
-      "summary": "Attackers are increasingly targeting the management systems used to control enterprise infrastructure, with several critical vulnerabilities actively exploited before or shortly after vendors disclosed them. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/",
-      "published": "2026-09-23T14:35:26+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/",
+      "title": "Hackers now exploit critical Roundcube flaw in code injection attacks",
+      "summary": "A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/",
+      "published": "2026-09-24T13:27:57+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html",
-      "title": "Exploit Released for Unpatched Ubuntu Linux Flaw Enabling Host-Root Container Escape",
-      "summary": "A use-after-free in the Linux kernel's AF_UNIX socket subsystem can be used to escape a container and gain root on the host, security firm DepthFirst\u00a0said in research published September 22.\n\nThe flaw, tracked as\u00a0CVE-2026-80521\u00a0(CVSS score: 7.8), was fixed upstream on August 6, but Ubuntu has not shipped the patch for its 26.04, 24.04, or 22.04 LTS releases. DepthFirst",
-      "link": "https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html",
-      "published": "2026-09-23T11:12:18+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-80521"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -166,11 +149,47 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-61652",
-      "title": "Zapros: Streaming decoders ignored the requested chunk size, allowing a single compressed response chunk to allocate unbounded memory (decompression bomb)",
-      "summary": "### Impact\n\nDenial of service via memory exhaustion. Affects all callers who streamed compressed responses relying on the chunk size \u2014 explicit (`iter_bytes(chunk_size=...)`) or the default \u2014 to bound memory. The decoder ignored that bound, so a chunk could be far larger than requested and a single compressed response could overflow memory.\n\n```python\nimport gzip, zapros\n\n# Server returns ~1 GiB of zeros gzip-compressed to ~1 MiB,\n# with header: Content-Encoding: gzip\nbomb = gzip.compress(b\"\\0\" * 1_000_000_000)  # ~1 MiB on the wire\n\nwith zapros.stream(\"GET\", \"https://malicious.example/bomb\") as response:\n    # Caller asks for 8 KiB chunks, expecting bounded memory:\n    for chunk in response.iter_bytes(chunk_size=8192):\n        ...  # first `chunk` is ~1 GiB, not 8 KiB -> memory exhaustion\n```\n\n### Patches\n\nUpgrade to `0.14.0` or later. The decoders now bound the output of each decompression step to the requested `chunk_size`: gzip/deflate via `zlib`'s `max_length` + `unconsumed_tail`, brotli via `output_buffer_limit`, and zstd via a bounded `stream_writer`. Peak memory during streaming decode is now proportional to `chunk_size` for all supported encodings.\n\n### Workarounds\n\nFor unpatched versions:\n- Read the still-compressed body with `Response.iter_raw()` / `Response.async_iter_raw()`, which bypass the built-in decoders, and decompress it yourself with an explicit output-size bound (e.g. `zlib`'s `max_length`), aborting once a configured limit is exceeded.\n- Where feasible, send `Accept-Encoding: identity` to disable response compression so bodies are not decompressed client-side.\n- Avoid decoding response bodies from untrusted servers.",
-      "link": "https://github.com/advisories/GHSA-6cp7-3m3c-5x5c",
-      "published": "2026-09-23T13:57:48Z",
+      "id": "https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve",
+      "title": "When Business Email Compromise Starts Rewriting Reality",
+      "summary": "Business Email Compromise (BEC) operates on a familiar playbook. Threat actors breach a mailbox, silently monitor operations, map approval chains, and ultimately exploit that access to divert funds or exfiltrate sensitive assets. This dynamic is central to our analysis as we kick off a series around Rapid7's collaborative research with Zimbra; upcoming installments will explore technical details and broader findings based within the Zimbra Collaboration Suite. Our investigation disrupted the traditional BEC model in unexpected ways. We uncovered over 50 vulnerabilities, and found that several allow attackers not just to observe environments, but to actively rewrite them by impersonating senders without credentials, controlling inbox visibility, and altering shared documents and calendars. Business Email Compromise in action: Digital abuse of trust None of this is theoretical for Zimbra. But don\u2019t take my word for it, just ask Russia . CISA keeps putting Zimbra bugs into the Known Exploited Vulnerabilities catalog , and the last three years make the point on their own: CVE-2024-45519 , command injection in the postjournal service, unauthenticated command execution. Proofpoint saw attackers stuffing base64 payloads into CC fields on September 28, 2024. CISA added it to KEV on October 3. CVE-2025-27915 , stored XSS in the Classic Web Client, triggered by a crafted .ICS attachment. It is used as a zero-day against Brazilian military targets to steal mail and quietly set forwarding filters. It went into KEV in October, 2025. CVE-2026-73570 , unauthenticated command injection through SNMP notification handling. CISA added it on August 21 of this year and gave federal agencies three days. Shadowserver has been counting somewhere north of 260 compromised instances while hunting for exploitation artifacts. Go back further and the pattern holds. Rapid7 tracked widespread exploitation of CVE-2022-27925 and CVE-2022-37042 in 2022, a path traversal chained with an authentication",
+      "link": "https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve",
+      "published": "2026-09-24T13:00:00+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2024-45519",
+        "CVE-2025-27915",
+        "CVE-2026-73570",
+        "CVE-2022-27925",
+        "CVE-2022-37042"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/17000-urls-reveal-how-clickfix-turns.html",
+      "title": "17,000 URLs Reveal How ClickFix Turns Trusted Websites Into Malware Traps: Report by CTM360",
+      "summary": "ClickFix has become the most common way attackers get into enterprise networks, and it does it without an exploit, an attachment, or a file on disk. Our new global threat report traces the technique from a novelty in late 2023 to a subscription product with on-chain infrastructure and a state-sponsored user base, and explains why blocking malicious domains is no longer a useful defense.\n\nRead",
+      "link": "https://thehackernews.com/2026/09/17000-urls-reveal-how-clickfix-turns.html",
+      "published": "2026-09-24T09:14:21+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-59167",
+      "title": "SunEditor: Critical XSS vulnerability - sanitizer bypass",
+      "summary": "## Summary\n\nSUNEDITOR `v2.47.10` appears to allow JavaScript execution through crafted namespaced HTML elements.\n\nThe sanitization logic does not fully remove executable event-handler attributes from certain custom/namespaced tags. As a result, an attacker may be able to inject HTML content that executes JavaScript when the rendered element is interacted with.\n\nThis behavior was observed after the changes introduced in this commit:\n\nhttps://github.com/JiHong88/suneditor/commit/9ed405fb0de676e56cd0e6a13c19c103ad5948d3\n\n---\n\n## Affected Version\n\nConfirmed vulnerable:\n\n* SUNEDITOR =< `2.47.10`\n\nPotentially affected:\n\n* Previous versions, if the same sanitization logic is still present\n\n---\n\n## Proof of Concept\n\nThe following payload preserves an executable event handler:\n\n```html\n<a:b src=\"/x\"><iframe src=javascript:alert(1)></iframe></a:b>\n\n<p><a:b src=\"/x\" onclick=\"document.body.style.background='red'\">click</a:b></p>\n```\n\nSimplified PoC:\n\n```html\n<a:b src=\"/x\" onclick=\"console.log('XSS:',document.domain,document.cookie)\">click</a:b>\n```\n\n```html\n<p><a:b src=\"/x\" onmouseover=\"alert('XSS \u2014 '+document.domain)\">\ud83d\udcce Click here for solutions</a:b></p>\n```\n---\n\n## Steps to Reproduce\n\n1. Open SUNEDITOR using version `2.47.10`.\n2. Insert the payload above into the editor.\n3. Save or render the generated content.\n4. Click the generated element.\n5. Observe that JavaScript is executed.\n\n---\n\n## Impact\n\nThis may allow an attacker to inject arbitrary JavaScript into rendered editor content.\n\nDepending on how SUNEDITOR is integrated into an application, this could lead to:\n\n* Stored XSS\n* DOM manipulation\n* Session theft\n* Credential theft\n* Account takeover actions performed in the victim\u2019s browser context\n\n---\n\n## Technical Details\n\nThe issue appears to be related to incomplete handling of namespaced/custom HTML elements such as:\n\n```html\n<a:b>\n```\n\nEvent-handler attributes such as `onclick` can remain attached to these crafted elements and execute when interacted with.\n\nThis sugg",
+      "link": "https://github.com/advisories/GHSA-6rf4-v2fh-m6p4",
+      "published": "2026-09-24T14:57:55Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -178,25 +197,28 @@
         "oss"
       ],
       "cve_ids": [
-        "CVE-2026-61652"
+        "CVE-2026-59167"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/",
-      "title": "Arista patches actively exploited VeloCloud Orchestrator zero-day",
-      "summary": "Arista Networks has released security patches for a zero-day flaw that is being actively exploited and affects VeloCloud Orchestrator (VCO) On-Prem deployments. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/",
-      "published": "2026-09-23T12:29:53+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://www.securityweek.com/solarwinds-patches-critical-rce-flaws-in-observability-self-hosted/",
+      "title": "SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted",
+      "summary": "The vulnerabilities, tracked as CVE-2026-28324 and CVE-2026-28325, can be exploited without authentication. The post SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/solarwinds-patches-critical-rce-flaws-in-observability-self-hosted/",
+      "published": "2026-09-24T10:40:40+00:00",
+      "source": "SecurityWeek",
       "tags": [
         "news",
-        "malware"
+        "research"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-28324",
+        "CVE-2026-28325"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/attackers-exploit-wordpress-cve-2026.html",
@@ -372,60 +394,6 @@
       ],
       "cve_ids": [
         "CVE-2026-85724"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73858",
-      "title": "Solspace Freeform: Limited Twig template injection via submitted field values",
-      "summary": "### Summary\n\nA limited server-side Twig template injection issue was identified in Solspace Freeform for Craft CMS. In affected versions, submitted form field values could be evaluated as Twig in certain rendering contexts.\n\nUnauthenticated users could submit Twig expressions through public Freeform forms and have those expressions evaluated when the submitted values were rendered back into the form response. Confirmed impact includes disclosure of limited server/environment information, such as the PHP version and absolute filesystem paths.\n\nNo evidence was found that this issue allowed access to Craft globals, environment variables, database credentials, mailer credentials, security keys, or remote code execution in the tested environment.\n\n### Details\n\n**Plugin:** Solspace Freeform\n**Affected versions:** Freeform 5.0.0 through 5.10.13\n**CMS:** Craft CMS\n**Authentication required:** None\n**Attack vector:** Public Freeform form submission\n\nSubmitted field values were passed through Freeform\u2019s isolated Twig renderer. As a result, Twig expressions included in submitted values could be evaluated server-side and reflected in the HTTP response.\n\nThe isolated Twig context appears to limit the available functions and globals. Confirmed accessible values were limited to PHP/core constants and Craft bootstrap constants such as:\n\n```twig\n{{ constant('PHP_VERSION') }}\n{{ constant('PHP_OS') }}\n{{ constant('CRAFT_BASE_PATH') }}\n{{ constant('CRAFT_VENDOR_PATH') }}\n```\n\nTesting did not confirm access to:\n\n```text\ncraft\ncraft.app\nalias()\ngetenv()\ndatabase credentials\nmailer credentials\nCraft security key\nCraft license key\nenvironment variables\n```\n\n### Proof of Concept\n\n1. Submit a public Freeform form.\n\n2. Inject the following payload into an email field:\n\n```twig\n{{ constant('PHP_VERSION') }}@example.com\n```\n\nThe response may reflect the evaluated PHP version, for example:\n\n```html\nvalue=\"8.2.27@example.com\"\n```\n\n3. Inject the following payload into a text field:\n\n```twig\n{{ con",
-      "link": "https://github.com/advisories/GHSA-gxrg-x694-283w",
-      "published": "2026-09-23T14:31:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73858"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-63000",
-      "title": "REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates",
-      "summary": "### Summary\nThe `rex_api_install_package_update` API function (`install` addon) does not override `requiresCsrfProtection()`, which defaults to `false` in the base class `rex_api_function`. Any authenticated admin can therefore be tricked via a CSRF attack into silently triggering a package update from the REDAXO package server.\n\n### Details\n**File:** `redaxo/src/core/lib/api_function.php:277-280`\n```php\nprotected function requiresCsrfProtection()\n{\n    return false;  // DEFAULT \u2014 subclasses must opt in\n}\n```\n\n**File:** `redaxo/src/addons/install/lib/api/api_package_update.php:8-39`\n```php\nclass rex_api_install_package_update extends rex_api_function\n{\n    public function execute()\n    {\n        if (!rex::getUser()?->isAdmin()) {\n            throw new rex_api_exception('You do not have the permission!');\n        }\n        $addonkey = rex_request('addonkey', 'string');\n        $fileId = rex_request('file', 'int');\n        $installer = new rex_install_package_update();\n        // ... downloads and installs $addonkey version $fileId from redaxo.org\n    }\n    // requiresCsrfProtection() NOT overridden \u2014 defaults to false\n}\n```\n\nFor comparison, `rex_api_install_package_add` and `rex_api_install_package_delete` both correctly return `true`. Only `rex_api_install_package_update` is missing this.\n\n### PoC\n```html\n<!-- Attacker-controlled page -->\n<img src=\"https://victim-redaxo.example.com/index.php?page=install/packages&rex-api-call=install_package_update&addonkey=some_addon&file=42\" />\n```\nWhen an authenticated admin visits this page, the request is automatically made with their session cookie, causing `some_addon` to be updated to version `file_id=42`.\n\n### Impact\nAn attacker who can lure an admin to a malicious page can force-install specific addon versions. If combined with a supply-chain compromise of a package on redaxo.org, or by targeting a downgrade to a known-vulnerable version, this becomes a remote code execution vector. Even without supply-chain compromise, it",
-      "link": "https://github.com/advisories/GHSA-m8r3-22v6-g877",
-      "published": "2026-09-23T14:09:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-63000"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-57149",
-      "title": "plone.app.portlets Vulnerable to Remote Code Execution via TALES Injection",
-      "summary": "### Impact\nThe Classic portlet (plone.app.portlets.portlets.classic) used its user-supplied template/macro fields to build a TALES path expression that was then evaluated by the TAL path() helper. Because the value was interpreted as a full TALES expression, a user able to add or edit a Classic portlet could supply a crafted value that escapes simple path traversal and is evaluated as arbitrary code.\n\nThis is exploitable by any authenticated user who can configure a Classic portlet - which, with the default role map, includes regular users on their personal dashboard. The result is code execution in the context of the Plone process, i.e. a privilege escalation across the trust boundary between an authenticated web user and the server-side process.\n\n### Patches\nThe problem has been patched in `plone.app.portlets`\n\n* For Plone 6.2, upgrade to `plone.app.portlets` 7.0.2.\n* For Plone 6.1, upgrade to `plone.app.portlets` 6.0.4.\n* For Plone 6.0, upgrade to `plone.app.portlets` 5.0.8.\n\n### Workarounds\nIf upgrading is not immediately possible:\n\n- Restrict who can manage portlets: remove the `plone.app.portlets.ManageOwnPortlets` permission from untrusted roles, and limit Manage portlets to trusted administrators (usually this is already restricted to the Manager and Site Administrator roles).\n- Where the Classic portlet is not needed, unregister it so it cannot be added. This would need to be done by editing a `portlets.xml` in your own code, so it is not a quick fix.\n- You could also effectively disable showing the classic portlet by customising its template. In the Zope Management Interface go to the `portal_view_customizations` tool, locate the `classic.pt` template and click it. Click the Customize button.  Remove all text and replace it with `<div>The classic portlet was disabled.</div>`. (This is not a recommended way of customising a template, but in this case it is quite effective.)\n\n### Credits\n\nDiscovered by Giuseppe Caruso, and reported to the [Plone/Zope Securit",
-      "link": "https://github.com/advisories/GHSA-rr49-f9g6-c9r5",
-      "published": "2026-09-23T13:55:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-57149"
       ],
       "is_zero_day": false,
       "is_high_severity": true
