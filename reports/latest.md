@@ -1,10 +1,28 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-25 10:43 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-25 16:02 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-67279 — Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability
+
+**CVE:** `CVE-2026-67279` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-67279>
+
+> Vendor: MikroTik | Product: RouterOS. Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060. Required action: Apply mitigations in accordance with vendor instructions, ensuring co…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-65660 — Microsoft SharePoint Code Injection Vulnerability
+
+**CVE:** `CVE-2026-65660` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-65660>
+
+> Vendor: Microsoft | Product: SharePoint. Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Require…
+
+---
+
+## 3. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +31,14 @@
 
 ---
 
-## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 4. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild
+## 5. 🟠 Zero-Day — Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild
 
 **CVE:** `CVE-2026-48842` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html>
@@ -33,7 +51,7 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 4. 🟠 Zero-Day — DBHub HTTP transport DNS rebinding allows unauthenticated browser-origin SQL execution
+## 6. 🟠 Zero-Day — DBHub HTTP transport DNS rebinding allows unauthenticated browser-origin SQL execution
 
 **CVE:** `CVE-2026-61742` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-fm8p-53ww-hf6w>
@@ -46,7 +64,7 @@ The HTTP server attempts to protect browser-origin access by checking whether th
 
 ---
 
-## 5. 🟠 Zero-Day — Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions
+## 7. 🟠 Zero-Day — Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://thehackernews.com/2026/09/unpatched-oneplus-flaws-let-installed.html>
@@ -57,16 +75,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 6. 🟠 Zero-Day — Hackers now exploit critical Roundcube flaw in code injection attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-24
-**Reference:** <https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/>
-
-> A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security. [...]
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -75,7 +84,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -84,7 +93,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -93,7 +102,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -102,7 +111,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -111,7 +120,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -120,16 +129,19 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 13. 🟠 Zero-Day — When Business Email Compromise Starts Rewriting Reality
+## 14. 🟡 High Severity — code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute
 
-**CVE:** `CVE-2024-45519` | `CVE-2025-27915` | `CVE-2026-73570` | `CVE-2022-27925` | `CVE-2022-37042` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-24
-**Reference:** <https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve>
+**CVE:** `CVE-2026-61823` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://github.com/advisories/GHSA-qxg3-46rw-79j8>
 
-> Business Email Compromise (BEC) operates on a familiar playbook. Threat actors breach a mailbox, silently monitor operations, map approval chains, and ultimately exploit that access to divert funds or exfiltrate sensitive assets. This dynamic is central to our analysis as we kick off a series around Rapid7&#x27;s collaborative research with Zimbra; upcoming installments will explore technical deta…
+> ### Impact
+A Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on &lt;iframe&gt; elements.
+
+While the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting &lt;script&gt; to &amp;lt;script&amp;gt;), the HTML specification mandates that browsers automat…
 
 ---
 
-## 14. 🟡 High Severity — WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV
+## 15. 🟡 High Severity — WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV
 
 **CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html>
@@ -143,7 +155,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 15. 🟡 High Severity — Contao: Server-Side Request Forgery (SSRF) via Unvalidated RSS Feed URL in Feed Reader Module
+## 16. 🟡 High Severity — Contao: Server-Side Request Forgery (SSRF) via Unvalidated RSS Feed URL in Feed Reader Module
 
 **CVE:** `CVE-2026-57232` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-87mg-5grr-rhwh>
@@ -154,7 +166,7 @@ The Feed Reader front-end module passes RSS feed URLs from its configuration dir
 
 ---
 
-## 16. 🟡 High Severity — Ash: Private action arguments can be set by user input via string-keyed params and atomic changesets
+## 17. 🟡 High Severity — Ash: Private action arguments can be set by user input via string-keyed params and atomic changesets
 
 **CVE:** `CVE-2026-55736` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-f4hc-ppw9-4hhw>
@@ -165,7 +177,7 @@ Ash fails to consistently strip private action arguments (those declared with `p
 
 ---
 
-## 17. 🟡 High Severity — Cline: Cross-Origin WebSocket Hijacking in Cline Hub Dashboard (`/browser` endpoint)
+## 18. 🟡 High Severity — Cline: Cross-Origin WebSocket Hijacking in Cline Hub Dashboard (`/browser` endpoint)
 
 **CVE:** `CVE-2026-59723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-3cj3-hqcr-g934>
@@ -176,7 +188,7 @@ The Cline Hub dashboard server (`@cline/cline-hub`), launched via the `cline das
 
 ---
 
-## 18. 🟡 High Severity — @bytebase/dbhub's read-only mode does not prevent database writes
+## 19. 🟡 High Severity — @bytebase/dbhub's read-only mode does not prevent database writes
 
 **CVE:** `CVE-2026-61788` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-mwwr-p57h-56pf>
@@ -187,7 +199,7 @@ Setting `readonly = true` on the `execute_sql` tool does not make the connection
 
 ---
 
-## 19. 🟡 High Severity — http4s-scala-xml has an XML External Entity (XXE) processing issue
+## 20. 🟡 High Severity — http4s-scala-xml has an XML External Entity (XXE) processing issue
 
 **CVE:** `CVE-2026-61741` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-cjx3-73hr-rpw7>
@@ -198,7 +210,7 @@ An application t…
 
 ---
 
-## 20. 🟡 High Severity — phpMyFAQ has SQL Injection in `StopWords::add()` — Unescaped Stop Word Insertion
+## 21. 🟡 High Severity — phpMyFAQ has SQL Injection in `StopWords::add()` — Unescaped Stop Word Insertion
 
 **CVE:** `CVE-2026-56738` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-rw77-vq4g-x3hp>
@@ -209,7 +221,7 @@ The `StopWords::add()` method in phpMyFAQ builds a SQL `INSERT` statement using 
 
 ---
 
-## 21. 🟡 High Severity — ixo Blockchain x/bonds DID-resolved payer drain + x/entity ICA authorization bypass
+## 22. 🟡 High Severity — ixo Blockchain x/bonds DID-resolved payer drain + x/entity ICA authorization bypass
 
 **CVE:** `CVE-2026-61604` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-w3rp-4cm2-4wgc>
@@ -222,7 +234,7 @@ The `StopWords::add()` method in phpMyFAQ builds a SQL `INSERT` statement using 
 
 ---
 
-## 22. 🟡 High Severity — Language Servers for AWS vulnerable to arbitrary file write
+## 23. 🟡 High Severity — Language Servers for AWS vulnerable to arbitrary file write
 
 **CVE:** `CVE-2026-12958` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-6v3r-4p5c-mrp5>
@@ -234,7 +246,7 @@ Missing symlink validation in Language Servers for AWS may allow an arbitrary fi
 
 ---
 
-## 23. 🟡 High Severity — Language Servers for AWS Vulnerable to Arbitrary Code Execution
+## 24. 🟡 High Severity — Language Servers for AWS Vulnerable to Arbitrary Code Execution
 
 **CVE:** `CVE-2026-12957` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-xhcr-j4j9-3gh7>
@@ -247,7 +259,7 @@ Improper trust boundary enforcement in Language Servers for AWS may allow for ar
 
 ---
 
-## 24. 🟡 High Severity — ZITADEL: Actions V1 sandbox escape: host file read via require()
+## 25. 🟡 High Severity — ZITADEL: Actions V1 sandbox escape: host file read via require()
 
 **CVE:** `CVE-2026-85057` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-fgmf-7rf8-m6vf>
@@ -262,7 +274,7 @@ ZITA…
 
 ---
 
-## 25. 🟡 High Severity — Snipe-IT: Stored XSS via Custom Field name in asset-list column headers
+## 26. 🟡 High Severity — Snipe-IT: Stored XSS via Custom Field name in asset-list column headers
 
 **CVE:** `CVE-2026-62368` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-p9h3-gvpq-5539>
@@ -272,7 +284,7 @@ A user with the &quot;customfields.create&quot; permission can store HTML/JS in 
 
 ---
 
-## 26. 🟡 High Severity — Dozzle label filters do not restrict container event and statistics streams
+## 27. 🟡 High Severity — Dozzle label filters do not restrict container event and statistics streams
 
 **CVE:** `CVE-2026-62286` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-xcw9-qmmf-vqxj>
@@ -283,7 +295,7 @@ Dozzle supports per-user label filters in `users.yml` that are documented as an 
 
 ---
 
-## 27. 🟡 High Severity — Snipe-IT: 2FA bypass via the API token flow
+## 28. 🟡 High Severity — Snipe-IT: 2FA bypass via the API token flow
 
 **CVE:** `CVE-2026-63493` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-hxcx-9h4f-42xx>
@@ -293,21 +305,6 @@ Dozzle supports per-user label filters in `users.yml` that are documented as an 
 An attacker who knows a victim&#x27;s password fully bypasses that account&#x27;s 2FA and obtains a persistent token with full API access as the user (read and write across the user&#x27;s permissions, including admin if the victim is an admin).
 
 The token is an API credential, not a web/UI session (using it on web routes redirects to `/login`), but the REST API covers essentially the …
-
----
-
-## 28. 🟡 High Severity — SunEditor: Critical XSS vulnerability - sanitizer bypass
-
-**CVE:** `CVE-2026-59167` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
-**Reference:** <https://github.com/advisories/GHSA-6rf4-v2fh-m6p4>
-
-> ## Summary
-
-SUNEDITOR `v2.47.10` appears to allow JavaScript execution through crafted namespaced HTML elements.
-
-The sanitization logic does not fully remove executable event-handler attributes from certain custom/namespaced tags. As a result, an attacker may be able to inject HTML content that executes JavaScript when the rendered element is interacted with.
-
-This behavior was observed after the…
 
 ---
 

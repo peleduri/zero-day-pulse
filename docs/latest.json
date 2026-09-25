@@ -1,10 +1,48 @@
 {
-  "generated": "2026-09-25T10:43:09.798628+00:00",
+  "generated": "2026-09-25T16:02:52.173754+00:00",
   "total": 29,
-  "kev": 0,
-  "zero_day": 13,
+  "kev": 2,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-67279",
+      "title": "CVE-2026-67279 \u2014 Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+      "summary": "Vendor: MikroTik | Product: RouterOS. Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-28)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-67279",
+      "published": "2026-09-25",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-67279"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-65660",
+      "title": "CVE-2026-65660 \u2014 Microsoft SharePoint Code Injection Vulnerability",
+      "summary": "Vendor: Microsoft | Product: SharePoint. Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-28)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-65660",
+      "published": "2026-09-25",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-65660"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -81,21 +119,6 @@
       "tags": [
         "news",
         "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/",
-      "title": "Hackers now exploit critical Roundcube flaw in code injection attacks",
-      "summary": "A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/",
-      "published": "2026-09-24T13:27:57+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -199,25 +222,22 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve",
-      "title": "When Business Email Compromise Starts Rewriting Reality",
-      "summary": "Business Email Compromise (BEC) operates on a familiar playbook. Threat actors breach a mailbox, silently monitor operations, map approval chains, and ultimately exploit that access to divert funds or exfiltrate sensitive assets. This dynamic is central to our analysis as we kick off a series around Rapid7's collaborative research with Zimbra; upcoming installments will explore technical details and broader findings based within the Zimbra Collaboration Suite. Our investigation disrupted the traditional BEC model in unexpected ways. We uncovered over 50 vulnerabilities, and found that several allow attackers not just to observe environments, but to actively rewrite them by impersonating senders without credentials, controlling inbox visibility, and altering shared documents and calendars. Business Email Compromise in action: Digital abuse of trust None of this is theoretical for Zimbra. But don\u2019t take my word for it, just ask Russia . CISA keeps putting Zimbra bugs into the Known Exploited Vulnerabilities catalog , and the last three years make the point on their own: CVE-2024-45519 , command injection in the postjournal service, unauthenticated command execution. Proofpoint saw attackers stuffing base64 payloads into CC fields on September 28, 2024. CISA added it to KEV on October 3. CVE-2025-27915 , stored XSS in the Classic Web Client, triggered by a crafted .ICS attachment. It is used as a zero-day against Brazilian military targets to steal mail and quietly set forwarding filters. It went into KEV in October, 2025. CVE-2026-73570 , unauthenticated command injection through SNMP notification handling. CISA added it on August 21 of this year and gave federal agencies three days. Shadowserver has been counting somewhere north of 260 compromised instances while hunting for exploitation artifacts. Go back further and the pattern holds. Rapid7 tracked widespread exploitation of CVE-2022-27925 and CVE-2022-37042 in 2022, a path traversal chained with an authentication",
-      "link": "https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve",
-      "published": "2026-09-24T13:00:00+00:00",
-      "source": "Rapid7 Blog",
+      "id": "CVE-2026-61823",
+      "title": "code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute",
+      "summary": "### Impact\nA Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on <iframe> elements.\n\nWhile the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting <script> to &lt;script&gt;), the HTML specification mandates that browsers automatically decode HTML entities inside attribute values before processing them. As a result, any encoded JavaScript inside a srcdoc attribute is evaluated and executed as live HTML/JS in the context of the iframe when the page is rendered.\n\nAn attacker with permissions to edit an Editor field can inject malicious scripts to target other users viewing the content. Potential impacts include:\n\n- Session Hijacking (stealing admin session cookies via document.cookie)\n- Account Takeover & Privilege Escalation (e.g., a low-privileged editor triggering actions as an Administrator)\n- Admin panel data theft\n\n### Patches\nThe vulnerability has been patched in version v9.22.5.\n\nThe fix explicitly removes srcdoc from the list of allowed iframe attributes in `src/Utils/Sanitization/FormatsSanitizedValue.php`.\n\n### Workarounds\nUsers who cannot upgrade immediately can manually sanitize all content of editor fields to strip `srcdoc` attributes.",
+      "link": "https://github.com/advisories/GHSA-qxg3-46rw-79j8",
+      "published": "2026-09-25T15:02:11Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "research",
-        "metasploit"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2024-45519",
-        "CVE-2025-27915",
-        "CVE-2026-73570",
-        "CVE-2022-27925",
-        "CVE-2022-37042"
+        "CVE-2026-61823"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html",
@@ -466,24 +486,6 @@
       ],
       "cve_ids": [
         "CVE-2026-63493"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59167",
-      "title": "SunEditor: Critical XSS vulnerability - sanitizer bypass",
-      "summary": "## Summary\n\nSUNEDITOR `v2.47.10` appears to allow JavaScript execution through crafted namespaced HTML elements.\n\nThe sanitization logic does not fully remove executable event-handler attributes from certain custom/namespaced tags. As a result, an attacker may be able to inject HTML content that executes JavaScript when the rendered element is interacted with.\n\nThis behavior was observed after the changes introduced in this commit:\n\nhttps://github.com/JiHong88/suneditor/commit/9ed405fb0de676e56cd0e6a13c19c103ad5948d3\n\n---\n\n## Affected Version\n\nConfirmed vulnerable:\n\n* SUNEDITOR =< `2.47.10`\n\nPotentially affected:\n\n* Previous versions, if the same sanitization logic is still present\n\n---\n\n## Proof of Concept\n\nThe following payload preserves an executable event handler:\n\n```html\n<a:b src=\"/x\"><iframe src=javascript:alert(1)></iframe></a:b>\n\n<p><a:b src=\"/x\" onclick=\"document.body.style.background='red'\">click</a:b></p>\n```\n\nSimplified PoC:\n\n```html\n<a:b src=\"/x\" onclick=\"console.log('XSS:',document.domain,document.cookie)\">click</a:b>\n```\n\n```html\n<p><a:b src=\"/x\" onmouseover=\"alert('XSS \u2014 '+document.domain)\">\ud83d\udcce Click here for solutions</a:b></p>\n```\n---\n\n## Steps to Reproduce\n\n1. Open SUNEDITOR using version `2.47.10`.\n2. Insert the payload above into the editor.\n3. Save or render the generated content.\n4. Click the generated element.\n5. Observe that JavaScript is executed.\n\n---\n\n## Impact\n\nThis may allow an attacker to inject arbitrary JavaScript into rendered editor content.\n\nDepending on how SUNEDITOR is integrated into an application, this could lead to:\n\n* Stored XSS\n* DOM manipulation\n* Session theft\n* Credential theft\n* Account takeover actions performed in the victim\u2019s browser context\n\n---\n\n## Technical Details\n\nThe issue appears to be related to incomplete handling of namespaced/custom HTML elements such as:\n\n```html\n<a:b>\n```\n\nEvent-handler attributes such as `onclick` can remain attached to these crafted elements and execute when interacted with.\n\nThis sugg",
-      "link": "https://github.com/advisories/GHSA-6rf4-v2fh-m6p4",
-      "published": "2026-09-24T14:57:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59167"
       ],
       "is_zero_day": false,
       "is_high_severity": true

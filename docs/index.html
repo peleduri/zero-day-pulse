@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">29</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-25 10:43 UTC</div>
+            <div class="generated">Updated 2026-09-25 16:02 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-67279" target="_blank" rel="noopener">CVE-2026-67279 — Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-67279</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-25</span>
+  </div>
+  <p class='summary'>Vendor: MikroTik | Product: RouterOS. Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060. Required action: Apply mitigations in accordance with vendor instructions, ensuring co…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-65660" target="_blank" rel="noopener">CVE-2026-65660 — Microsoft SharePoint Code Injection Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-65660</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-25</span>
+  </div>
+  <p class='summary'>Vendor: Microsoft | Product: SharePoint. Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Require…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -206,22 +238,6 @@ The HTTP server attempts to protect browser-origin access by checking whether th
 OnePlus told him the same flaws affect many more of its own devices and those of OPPO, though it has not</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/" target="_blank" rel="noopener">Hackers now exploit critical Roundcube flaw in code injection attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-24</span>
-  </div>
-  <p class='summary'>A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -319,21 +335,24 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve" target="_blank" rel="noopener">When Business Email Compromise Starts Rewriting Reality</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2024-45519</code> <code class="cve">CVE-2025-27915</code> <code class="cve">CVE-2026-73570</code> <code class="cve">CVE-2022-27925</code> <code class="cve">CVE-2022-37042</code>
-    <span class="meta-sep">·</span>
-    <span>Rapid7 Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-24</span>
-  </div>
-  <p class='summary'>Business Email Compromise (BEC) operates on a familiar playbook. Threat actors breach a mailbox, silently monitor operations, map approval chains, and ultimately exploit that access to divert funds or exfiltrate sensitive assets. This dynamic is central to our analysis as we kick off a series around Rapid7&#x27;s collaborative research with Zimbra; upcoming installments will explore technical details a…</p>
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qxg3-46rw-79j8" target="_blank" rel="noopener">code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-61823</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-25</span>
+          </div>
+          <p class='summary'>### Impact
+A Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on &lt;iframe&gt; elements.
 
-</article>
+While the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting &lt;script&gt; to &amp;lt;script&amp;gt;), the HTML specification mandates that browsers automatically decode HTML e…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -597,28 +616,6 @@ Dozzle supports per-user label filters in `users.yml` that are documented as an 
 An attacker who knows a victim&#x27;s password fully bypasses that account&#x27;s 2FA and obtains a persistent token with full API access as the user (read and write across the user&#x27;s permissions, including admin if the victim is an admin).
 
 The token is an API credential, not a web/UI session (using it on web routes redirects to `/login`), but the REST API covers essentially the whole applicati…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6rf4-v2fh-m6p4" target="_blank" rel="noopener">SunEditor: Critical XSS vulnerability - sanitizer bypass</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-59167</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-24</span>
-          </div>
-          <p class='summary'>## Summary
-
-SUNEDITOR `v2.47.10` appears to allow JavaScript execution through crafted namespaced HTML elements.
-
-The sanitization logic does not fully remove executable event-handler attributes from certain custom/namespaced tags. As a result, an attacker may be able to inject HTML content that executes JavaScript when the rendered element is interacted with.
-
-This behavior was observed after the…</p>
 
         </article>
 
