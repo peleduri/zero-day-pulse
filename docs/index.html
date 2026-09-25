@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">30</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-24 20:52 UTC</div>
+            <div class="generated">Updated 2026-09-25 02:12 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-5430" target="_blank" rel="noopener">CVE-2026-5430 — WSO2 Multiple Products Path Traversal Vulnerability </a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-5430</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-24</span>
-  </div>
-  <p class='summary'>Vendor: WSO2 | Product: Multiple Products. WSO2 API Control Plane, API Manager, Traffic Manager &amp; Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (s…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-71362" target="_blank" rel="noopener">CVE-2026-71362 — Adobe Commerce and Magento Incorrect Authorization Vulnerability </a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-71362</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-24</span>
-  </div>
-  <p class='summary'>Vendor: Adobe | Product: Commerce and Magento . Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Securit…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -664,32 +632,6 @@ This behavior was observed after the…</p>
 The vulnerability in question is CVE-2026-87902 (CVSS score: 9.2), which could allow an unauthenticated attacker to obtain remote code execution (RCE).
 
 &quot;An unauthenticated attacker can make get_page_template() page-template resolution include a chosen readable local .php file</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w4cm-gvhj-cgw6" target="_blank" rel="noopener">Jawn: Quadratic parsing effort in AsyncParser</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61814</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-23</span>
-          </div>
-          <p class='summary'>`AsyncParser` can be forced to perform O(n^2) work on the length of the input.  When a single JSON token arrives across many small chunks, each `absorb` call rescans the incomplete token from the start.
-
-### Impact
-
-Denial of service via CPU exhaustion when parsing untrusted JSON.
-
-Preconditions:
-- Application uses `AsyncParser`
-- Attacker can send large tokens with control over chunk sizes.
-
-### …</p>
 
         </article>
 

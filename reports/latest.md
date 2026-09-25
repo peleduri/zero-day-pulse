@@ -1,28 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-24 20:52 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 2 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-25 02:12 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-5430 — WSO2 Multiple Products Path Traversal Vulnerability 
-
-**CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-24
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-5430>
-
-> Vendor: WSO2 | Product: Multiple Products. WSO2 API Control Plane, API Manager, Traffic Manager &amp; Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Ris…
-
----
-
-## 2. 🔴 CISA KEV — CVE-2026-71362 — Adobe Commerce and Magento Incorrect Authorization Vulnerability 
-
-**CVE:** `CVE-2026-71362` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-24
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-71362>
-
-> Vendor: Adobe | Product: Commerce and Magento . Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Securit…
-
----
-
-## 3. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -31,14 +13,14 @@
 
 ---
 
-## 4. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 5. 🟠 Zero-Day — DBHub HTTP transport DNS rebinding allows unauthenticated browser-origin SQL execution
+## 3. 🟠 Zero-Day — DBHub HTTP transport DNS rebinding allows unauthenticated browser-origin SQL execution
 
 **CVE:** `CVE-2026-61742` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-fm8p-53ww-hf6w>
@@ -51,7 +33,7 @@ The HTTP server attempts to protect browser-origin access by checking whether th
 
 ---
 
-## 6. 🟠 Zero-Day — Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions
+## 4. 🟠 Zero-Day — Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://thehackernews.com/2026/09/unpatched-oneplus-flaws-let-installed.html>
@@ -62,7 +44,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 7. 🟠 Zero-Day — Hackers now exploit critical Roundcube flaw in code injection attacks
+## 5. 🟠 Zero-Day — Hackers now exploit critical Roundcube flaw in code injection attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/>
@@ -71,7 +53,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 8. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -80,7 +62,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 9. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -89,7 +71,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 10. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -98,7 +80,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 11. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -107,7 +89,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 12. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -116,7 +98,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 13. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -125,7 +107,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 14. 🟠 Zero-Day — When Business Email Compromise Starts Rewriting Reality
+## 12. 🟠 Zero-Day — When Business Email Compromise Starts Rewriting Reality
 
 **CVE:** `CVE-2024-45519` | `CVE-2025-27915` | `CVE-2026-73570` | `CVE-2022-27925` | `CVE-2022-37042` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://www.rapid7.com/blog/post/ve-business-email-compromise-rewriting-reality-zimbra-cve>
@@ -134,7 +116,7 @@ OnePlus told him the same flaws affect many more of its own devices and those of
 
 ---
 
-## 15. 🟠 Zero-Day — 17,000 URLs Reveal How ClickFix Turns Trusted Websites Into Malware Traps: Report by CTM360
+## 13. 🟠 Zero-Day — 17,000 URLs Reveal How ClickFix Turns Trusted Websites Into Malware Traps: Report by CTM360
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://thehackernews.com/2026/09/17000-urls-reveal-how-clickfix-turns.html>
@@ -145,7 +127,7 @@ Read
 
 ---
 
-## 16. 🟡 High Severity — Contao: Server-Side Request Forgery (SSRF) via Unvalidated RSS Feed URL in Feed Reader Module
+## 14. 🟡 High Severity — Contao: Server-Side Request Forgery (SSRF) via Unvalidated RSS Feed URL in Feed Reader Module
 
 **CVE:** `CVE-2026-57232` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-87mg-5grr-rhwh>
@@ -156,7 +138,7 @@ The Feed Reader front-end module passes RSS feed URLs from its configuration dir
 
 ---
 
-## 17. 🟡 High Severity — Ash: Private action arguments can be set by user input via string-keyed params and atomic changesets
+## 15. 🟡 High Severity — Ash: Private action arguments can be set by user input via string-keyed params and atomic changesets
 
 **CVE:** `CVE-2026-55736` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-f4hc-ppw9-4hhw>
@@ -167,7 +149,7 @@ Ash fails to consistently strip private action arguments (those declared with `p
 
 ---
 
-## 18. 🟡 High Severity — Cline: Cross-Origin WebSocket Hijacking in Cline Hub Dashboard (`/browser` endpoint)
+## 16. 🟡 High Severity — Cline: Cross-Origin WebSocket Hijacking in Cline Hub Dashboard (`/browser` endpoint)
 
 **CVE:** `CVE-2026-59723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-3cj3-hqcr-g934>
@@ -178,7 +160,7 @@ The Cline Hub dashboard server (`@cline/cline-hub`), launched via the `cline das
 
 ---
 
-## 19. 🟡 High Severity — @bytebase/dbhub's read-only mode does not prevent database writes
+## 17. 🟡 High Severity — @bytebase/dbhub's read-only mode does not prevent database writes
 
 **CVE:** `CVE-2026-61788` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-mwwr-p57h-56pf>
@@ -189,7 +171,7 @@ Setting `readonly = true` on the `execute_sql` tool does not make the connection
 
 ---
 
-## 20. 🟡 High Severity — http4s-scala-xml has an XML External Entity (XXE) processing issue
+## 18. 🟡 High Severity — http4s-scala-xml has an XML External Entity (XXE) processing issue
 
 **CVE:** `CVE-2026-61741` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-cjx3-73hr-rpw7>
@@ -200,7 +182,7 @@ An application t…
 
 ---
 
-## 21. 🟡 High Severity — phpMyFAQ has SQL Injection in `StopWords::add()` — Unescaped Stop Word Insertion
+## 19. 🟡 High Severity — phpMyFAQ has SQL Injection in `StopWords::add()` — Unescaped Stop Word Insertion
 
 **CVE:** `CVE-2026-56738` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-rw77-vq4g-x3hp>
@@ -211,7 +193,7 @@ The `StopWords::add()` method in phpMyFAQ builds a SQL `INSERT` statement using 
 
 ---
 
-## 22. 🟡 High Severity — ixo Blockchain x/bonds DID-resolved payer drain + x/entity ICA authorization bypass
+## 20. 🟡 High Severity — ixo Blockchain x/bonds DID-resolved payer drain + x/entity ICA authorization bypass
 
 **CVE:** `CVE-2026-61604` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-w3rp-4cm2-4wgc>
@@ -224,7 +206,7 @@ The `StopWords::add()` method in phpMyFAQ builds a SQL `INSERT` statement using 
 
 ---
 
-## 23. 🟡 High Severity — Language Servers for AWS vulnerable to arbitrary file write
+## 21. 🟡 High Severity — Language Servers for AWS vulnerable to arbitrary file write
 
 **CVE:** `CVE-2026-12958` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-6v3r-4p5c-mrp5>
@@ -236,7 +218,7 @@ Missing symlink validation in Language Servers for AWS may allow an arbitrary fi
 
 ---
 
-## 24. 🟡 High Severity — Language Servers for AWS Vulnerable to Arbitrary Code Execution
+## 22. 🟡 High Severity — Language Servers for AWS Vulnerable to Arbitrary Code Execution
 
 **CVE:** `CVE-2026-12957` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-xhcr-j4j9-3gh7>
@@ -249,7 +231,7 @@ Improper trust boundary enforcement in Language Servers for AWS may allow for ar
 
 ---
 
-## 25. 🟡 High Severity — ZITADEL: Actions V1 sandbox escape: host file read via require()
+## 23. 🟡 High Severity — ZITADEL: Actions V1 sandbox escape: host file read via require()
 
 **CVE:** `CVE-2026-85057` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-fgmf-7rf8-m6vf>
@@ -264,7 +246,7 @@ ZITA…
 
 ---
 
-## 26. 🟡 High Severity — Snipe-IT: Stored XSS via Custom Field name in asset-list column headers
+## 24. 🟡 High Severity — Snipe-IT: Stored XSS via Custom Field name in asset-list column headers
 
 **CVE:** `CVE-2026-62368` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-p9h3-gvpq-5539>
@@ -274,7 +256,7 @@ A user with the &quot;customfields.create&quot; permission can store HTML/JS in 
 
 ---
 
-## 27. 🟡 High Severity — Dozzle label filters do not restrict container event and statistics streams
+## 25. 🟡 High Severity — Dozzle label filters do not restrict container event and statistics streams
 
 **CVE:** `CVE-2026-62286` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-xcw9-qmmf-vqxj>
@@ -285,7 +267,7 @@ Dozzle supports per-user label filters in `users.yml` that are documented as an 
 
 ---
 
-## 28. 🟡 High Severity — Snipe-IT: 2FA bypass via the API token flow
+## 26. 🟡 High Severity — Snipe-IT: 2FA bypass via the API token flow
 
 **CVE:** `CVE-2026-63493` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-hxcx-9h4f-42xx>
@@ -298,7 +280,7 @@ The token is an API credential, not a web/UI session (using it on web routes red
 
 ---
 
-## 29. 🟡 High Severity — SunEditor: Critical XSS vulnerability - sanitizer bypass
+## 27. 🟡 High Severity — SunEditor: Critical XSS vulnerability - sanitizer bypass
 
 **CVE:** `CVE-2026-59167` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://github.com/advisories/GHSA-6rf4-v2fh-m6p4>
@@ -313,7 +295,7 @@ This behavior was observed after the…
 
 ---
 
-## 30. 🟡 High Severity — SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted
+## 28. 🟡 High Severity — SolarWinds Patches Critical RCE Flaws in Observability Self-Hosted
 
 **CVE:** `CVE-2026-28324` | `CVE-2026-28325` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://www.securityweek.com/solarwinds-patches-critical-rce-flaws-in-observability-self-hosted/>
@@ -322,7 +304,7 @@ This behavior was observed after the…
 
 ---
 
-## 31. 🟡 High Severity — Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure
+## 29. 🟡 High Severity — Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure
 
 **CVE:** `CVE-2026-87902` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-24
 **Reference:** <https://thehackernews.com/2026/09/attackers-exploit-wordpress-cve-2026.html>
@@ -335,26 +317,7 @@ The vulnerability in question is CVE-2026-87902 (CVSS score: 9.2), which could a
 
 ---
 
-## 32. 🟡 High Severity — Jawn: Quadratic parsing effort in AsyncParser
-
-**CVE:** `CVE-2026-61814` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-23
-**Reference:** <https://github.com/advisories/GHSA-w4cm-gvhj-cgw6>
-
-> `AsyncParser` can be forced to perform O(n^2) work on the length of the input.  When a single JSON token arrives across many small chunks, each `absorb` call rescans the incomplete token from the start.
-
-### Impact
-
-Denial of service via CPU exhaustion when parsing untrusted JSON.
-
-Preconditions:
-- Application uses `AsyncParser`
-- Attacker can send large tokens with control over chunk sizes.
-
-### …
-
----
-
-## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

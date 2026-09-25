@@ -1,48 +1,10 @@
 {
-  "generated": "2026-09-24T20:52:30.092979+00:00",
-  "total": 33,
-  "kev": 2,
+  "generated": "2026-09-25T02:12:19.098029+00:00",
+  "total": 30,
+  "kev": 0,
   "zero_day": 13,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-5430",
-      "title": "CVE-2026-5430 \u2014 WSO2 Multiple Products Path Traversal Vulnerability ",
-      "summary": "Vendor: WSO2 | Product: Multiple Products. WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-27)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-5430",
-      "published": "2026-09-24",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-5430"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-71362",
-      "title": "CVE-2026-71362 \u2014 Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
-      "summary": "Vendor: Adobe | Product: Commerce and Magento . Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-09-27)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-71362",
-      "published": "2026-09-24",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-71362"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -538,24 +500,6 @@
       ],
       "cve_ids": [
         "CVE-2026-87902"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61814",
-      "title": "Jawn: Quadratic parsing effort in AsyncParser",
-      "summary": "`AsyncParser` can be forced to perform O(n^2) work on the length of the input.  When a single JSON token arrives across many small chunks, each `absorb` call rescans the incomplete token from the start.\n\n### Impact\n\nDenial of service via CPU exhaustion when parsing untrusted JSON.\n\nPreconditions:\n- Application uses `AsyncParser`\n- Attacker can send large tokens with control over chunk sizes.\n\n### Patches\n\nFixed in jawn-parser-1.7.0.\n\n### Workarounds\n\nIf you can't upgrade immediately:\n- Use the synchronous `Parser`.\n- Buffer incoming bytes into larger chunks before calling `absorb`",
-      "link": "https://github.com/advisories/GHSA-w4cm-gvhj-cgw6",
-      "published": "2026-09-23T21:23:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61814"
       ],
       "is_zero_day": false,
       "is_high_severity": true
