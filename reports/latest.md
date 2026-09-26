@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-26 10:25 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-26 15:15 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,20 @@
 
 ---
 
-## 3. 🟠 Zero-Day — SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild
+## 3. 🟠 Zero-Day — Attackers Bypass WAFs to Exploit Oracle PeopleSoft Flaw and Deploy Web Shells
+
+**CVE:** `CVE-2026-35273` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-26
+**Reference:** <https://thehackernews.com/2026/09/attackers-bypass-wafs-to-exploit-oracle.html>
+
+> Google is warning of renewed mass exploitation of a known security vulnerability in Oracle PeopleSoft as part of a campaign targeting multiple sectors globally.
+
+The ShinyHunters-linked activity involves the weaponization of CVE-2026-35273 (CVSS score: 9.8), a critical security flaw that could result in unauthenticated remote code execution.
+
+The vulnerability was first exploited as a zero-day
+
+---
+
+## 4. 🟠 Zero-Day — SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild
 
 **CVE:** `CVE-2026-65660` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-26
 **Reference:** <https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html>
@@ -34,7 +47,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -43,7 +56,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -52,7 +65,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -61,7 +74,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -70,7 +83,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -79,7 +92,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -88,7 +101,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 10. 🟠 Zero-Day — Kiteworks urges 6-hour server shutdown over potential zero-day attacks
+## 11. 🟠 Zero-Day — Kiteworks urges 6-hour server shutdown over potential zero-day attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://www.bleepingcomputer.com/news/security/kiteworks-urges-6-hour-server-shutdown-over-potential-zero-day-attacks/>
@@ -97,7 +110,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 11. 🟠 Zero-Day — ShinyHunters hacked Clop leak site using Grav CMS path traversal flaw
+## 12. 🟠 Zero-Day — ShinyHunters hacked Clop leak site using Grav CMS path traversal flaw
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://www.bleepingcomputer.com/news/security/shinyhunters-hacked-clop-leak-site-using-grav-cms-path-traversal-flaw/>
@@ -106,7 +119,7 @@ The vulnerabilities in question are as follows -
 
 ---
 
-## 12. 🟡 High Severity — SCBE-AETHERMOORE Unauthenticated AetherBrowser Ops API Exposes Operator Email Digests
+## 13. 🟡 High Severity — SCBE-AETHERMOORE Unauthenticated AetherBrowser Ops API Exposes Operator Email Digests
 
 **CVE:** `CVE-2026-57443` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://github.com/advisories/GHSA-q986-4x7x-gx39>
@@ -117,7 +130,7 @@ The AetherBrowser API server (`scripts/aetherbrowser/api_server.py`) exposes the
 
 ---
 
-## 13. 🟡 High Severity — CliInvoke.Specializations has command injection in PowerShell and Cmd shell wrappers
+## 14. 🟡 High Severity — CliInvoke.Specializations has command injection in PowerShell and Cmd shell wrappers
 
 **CVE:** `CVE-2026-100368` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://github.com/advisories/GHSA-wrvw-254r-wpmv>
@@ -129,24 +142,12 @@ The wrappers re-run a caller-supplied target and arguments inside a shell comman
 
 ---
 
-## 14. 🟡 High Severity — CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited in attacks
+## 15. 🟡 High Severity — CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited in attacks
 
 **CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/>
 
 > The Cybersecurity and Infrastructure Security Agency (CISA) warns that hackers are exploiting a critical authentication bypass vulnerability (CVE-2026-5430) affecting multiple products from enterprise software provider WSO2. [...]
-
----
-
-## 15. 🟡 High Severity — code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute
-
-**CVE:** `CVE-2026-61823` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
-**Reference:** <https://github.com/advisories/GHSA-qxg3-46rw-79j8>
-
-> ### Impact
-A Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on &lt;iframe&gt; elements.
-
-While the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting &lt;script&gt; to &amp;lt;script&amp;gt;), the HTML specification mandates that browsers automat…
 
 ---
 

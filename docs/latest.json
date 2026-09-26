@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-26T10:25:52.861095+00:00",
+  "generated": "2026-09-26T15:15:14.780800+00:00",
   "total": 16,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,23 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/attackers-bypass-wafs-to-exploit-oracle.html",
+      "title": "Attackers Bypass WAFs to Exploit Oracle PeopleSoft Flaw and Deploy Web Shells",
+      "summary": "Google is warning of renewed mass exploitation of a known security vulnerability in Oracle PeopleSoft as part of a campaign targeting multiple sectors globally.\n\nThe ShinyHunters-linked activity involves the weaponization of CVE-2026-35273 (CVSS score: 9.8), a critical security flaw that could result in unauthenticated remote code execution.\n\nThe vulnerability was first exploited as a zero-day",
+      "link": "https://thehackernews.com/2026/09/attackers-bypass-wafs-to-exploit-oracle.html",
+      "published": "2026-09-26T11:46:40+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -229,24 +246,6 @@
       ],
       "cve_ids": [
         "CVE-2026-5430"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61823",
-      "title": "code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute",
-      "summary": "### Impact\nA Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on <iframe> elements.\n\nWhile the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting <script> to &lt;script&gt;), the HTML specification mandates that browsers automatically decode HTML entities inside attribute values before processing them. As a result, any encoded JavaScript inside a srcdoc attribute is evaluated and executed as live HTML/JS in the context of the iframe when the page is rendered.\n\nAn attacker with permissions to edit an Editor field can inject malicious scripts to target other users viewing the content. Potential impacts include:\n\n- Session Hijacking (stealing admin session cookies via document.cookie)\n- Account Takeover & Privilege Escalation (e.g., a low-privileged editor triggering actions as an Administrator)\n- Admin panel data theft\n\n### Patches\nThe vulnerability has been patched in version v9.22.5.\n\nThe fix explicitly removes srcdoc from the list of allowed iframe attributes in `src/Utils/Sanitization/FormatsSanitizedValue.php`.\n\n### Workarounds\nUsers who cannot upgrade immediately can manually sanitize all content of editor fields to strip `srcdoc` attributes.",
-      "link": "https://github.com/advisories/GHSA-qxg3-46rw-79j8",
-      "published": "2026-09-25T15:02:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61823"
       ],
       "is_zero_day": false,
       "is_high_severity": true
