@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-26 02:18 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-26 10:25 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,16 +20,17 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild
+## 3. 🟠 Zero-Day — SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild
 
-**CVE:** `CVE-2026-48842` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-25
-**Reference:** <https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html>
+**CVE:** `CVE-2026-65660` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-26
+**Reference:** <https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html>
 
-> The Canadian Centre for Cyber Security has warned that a now-patched Roundcube Webmail vulnerability is being actively exploited in the wild.
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Microsoft SharePoint and Mikrotik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
 
-The vulnerability in question is CVE-2026-48842 (CVSS score: 8.1), a pre-authentication SQL injection in the virtuser_query plugin of Roundcube Webmail versions 1.6.x before 1.6.16 and 1.7.x before 1.7.1.
+The vulnerabilities in question are as follows -
 
-The issue stems from a preg_replace() backslash
+
+  CVE-2026-65660 (CVSS score: 8.8) - A code injection vulnerability in Microsoft Office SharePoint
 
 ---
 
@@ -128,7 +129,16 @@ The wrappers re-run a caller-supplied target and arguments inside a shell comman
 
 ---
 
-## 14. 🟡 High Severity — code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute
+## 14. 🟡 High Severity — CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited in attacks
+
+**CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/>
+
+> The Cybersecurity and Infrastructure Security Agency (CISA) warns that hackers are exploiting a critical authentication bypass vulnerability (CVE-2026-5430) affecting multiple products from enterprise software provider WSO2. [...]
+
+---
+
+## 15. 🟡 High Severity — code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute
 
 **CVE:** `CVE-2026-61823` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://github.com/advisories/GHSA-qxg3-46rw-79j8>
@@ -137,20 +147,6 @@ The wrappers re-run a caller-supplied target and arguments inside a shell comman
 A Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on &lt;iframe&gt; elements.
 
 While the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting &lt;script&gt; to &amp;lt;script&amp;gt;), the HTML specification mandates that browsers automat…
-
----
-
-## 15. 🟡 High Severity — WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV
-
-**CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-25
-**Reference:** <https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on Thursday, added two critical security flaws impacting WSO2 and Adobe Commerce and Magento to its Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2026-5430 (CVS score: 9.8) - A path traversal vulnerability in  WSO2 API Control Plane,
 
 ---
 

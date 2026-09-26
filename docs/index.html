@@ -114,7 +114,7 @@
               <div class="stat"><span class="stat-value">16</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-26 02:18 UTC</div>
+            <div class="generated">Updated 2026-09-26 10:25 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -152,20 +152,21 @@
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html" target="_blank" rel="noopener">Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild</a></h2>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html" target="_blank" rel="noopener">SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-48842</code>
+            <code class="cve">CVE-2026-65660</code>
             <span class="meta-sep">·</span>
             <span>The Hacker News Security</span>
             <span class="meta-sep">·</span>
-            <span>2026-09-25</span>
+            <span>2026-09-26</span>
           </div>
-          <p class='summary'>The Canadian Centre for Cyber Security has warned that a now-patched Roundcube Webmail vulnerability is being actively exploited in the wild.
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Microsoft SharePoint and Mikrotik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
 
-The vulnerability in question is CVE-2026-48842 (CVSS score: 8.1), a pre-authentication SQL injection in the virtuser_query plugin of Roundcube Webmail versions 1.6.x before 1.6.16 and 1.7.x before 1.7.1.
+The vulnerabilities in question are as follows -
 
-The issue stems from a preg_replace() backslash</p>
+
+  CVE-2026-65660 (CVSS score: 8.8) - A code injection vulnerability in Microsoft Office SharePoint</p>
 
         </article>
 
@@ -334,6 +335,22 @@ The wrappers re-run a caller-supplied target and arguments inside a shell comman
 
         </article>
 
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/" target="_blank" rel="noopener">CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited in attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-5430</code>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-25</span>
+  </div>
+  <p class='summary'>The Cybersecurity and Infrastructure Security Agency (CISA) warns that hackers are exploiting a critical authentication bypass vulnerability (CVE-2026-5430) affecting multiple products from enterprise software provider WSO2. [...]</p>
+
+</article>
+
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
@@ -350,27 +367,6 @@ The wrappers re-run a caller-supplied target and arguments inside a shell comman
 A Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on &lt;iframe&gt; elements.
 
 While the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting &lt;script&gt; to &amp;lt;script&amp;gt;), the HTML specification mandates that browsers automatically decode HTML e…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html" target="_blank" rel="noopener">WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-5430</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-25</span>
-          </div>
-          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on Thursday, added two critical security flaws impacting WSO2 and Adobe Commerce and Magento to its Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2026-5430 (CVS score: 9.8) - A path traversal vulnerability in  WSO2 API Control Plane,</p>
 
         </article>
 

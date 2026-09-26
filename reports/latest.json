@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-26T02:18:13.743021+00:00",
+  "generated": "2026-09-26T10:25:52.861095+00:00",
   "total": 16,
   "kev": 0,
   "zero_day": 11,
@@ -37,18 +37,18 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html",
-      "title": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild",
-      "summary": "The Canadian Centre for Cyber Security has warned that a now-patched Roundcube Webmail vulnerability is being actively exploited in the wild.\n\nThe vulnerability in question is CVE-2026-48842 (CVSS score: 8.1), a pre-authentication SQL injection in the virtuser_query plugin of Roundcube Webmail versions 1.6.x before 1.6.16 and 1.7.x before 1.7.1.\n\nThe issue stems from a preg_replace() backslash",
-      "link": "https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html",
-      "published": "2026-09-25T10:14:02+00:00",
+      "id": "https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html",
+      "title": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Microsoft SharePoint and Mikrotik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities in question are as follows -\n\n\n  CVE-2026-65660 (CVSS score: 8.8) - A code injection vulnerability in Microsoft Office SharePoint",
+      "link": "https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html",
+      "published": "2026-09-26T08:49:53+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-48842"
+        "CVE-2026-65660"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -217,6 +217,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/",
+      "title": "CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited in attacks",
+      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) warns that hackers are exploiting a critical authentication bypass vulnerability (CVE-2026-5430) affecting multiple products from enterprise software provider WSO2. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/",
+      "published": "2026-09-25T17:24:20+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-5430"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-61823",
       "title": "code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute",
       "summary": "### Impact\nA Stored Cross-Site Scripting (XSS) vulnerability exists in the rich text editor due to improper sanitization of the srcdoc attribute on <iframe> elements.\n\nWhile the underlying Symfony HtmlSanitizer correctly HTML-encodes special characters inside the attribute value (e.g., converting <script> to &lt;script&gt;), the HTML specification mandates that browsers automatically decode HTML entities inside attribute values before processing them. As a result, any encoded JavaScript inside a srcdoc attribute is evaluated and executed as live HTML/JS in the context of the iframe when the page is rendered.\n\nAn attacker with permissions to edit an Editor field can inject malicious scripts to target other users viewing the content. Potential impacts include:\n\n- Session Hijacking (stealing admin session cookies via document.cookie)\n- Account Takeover & Privilege Escalation (e.g., a low-privileged editor triggering actions as an Administrator)\n- Admin panel data theft\n\n### Patches\nThe vulnerability has been patched in version v9.22.5.\n\nThe fix explicitly removes srcdoc from the list of allowed iframe attributes in `src/Utils/Sanitization/FormatsSanitizedValue.php`.\n\n### Workarounds\nUsers who cannot upgrade immediately can manually sanitize all content of editor fields to strip `srcdoc` attributes.",
@@ -230,23 +247,6 @@
       ],
       "cve_ids": [
         "CVE-2026-61823"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html",
-      "title": "WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on Thursday, added two critical security flaws impacting WSO2 and Adobe Commerce and Magento to its Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-5430 (CVS score: 9.8) - A path traversal vulnerability in\u00a0 WSO2 API Control Plane,",
-      "link": "https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html",
-      "published": "2026-09-25T04:46:34+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-5430"
       ],
       "is_zero_day": false,
       "is_high_severity": true
