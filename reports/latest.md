@@ -1,37 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-25 20:49 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 3 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-26 02:18 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-87902 — WordPress Core Remote File Inclusion Vulnerability
-
-**CVE:** `CVE-2026-87902` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-25
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-87902>
-
-> Vendor: WordPress | Product: Core. WordPress Core contains a remote file inclusion vulnerability which could allow an unauthenticated attacker to make page-template resolution include a chosen readable local `.php` file outside the active theme directories, leading to remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s B…
-
----
-
-## 2. 🔴 CISA KEV — CVE-2026-67279 — Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability
-
-**CVE:** `CVE-2026-67279` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-25
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-67279>
-
-> Vendor: MikroTik | Product: RouterOS. Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060. Required action: Apply mitigations in accordance with vendor instructions, ensuring co…
-
----
-
-## 3. 🔴 CISA KEV — CVE-2026-65660 — Microsoft SharePoint Code Injection Vulnerability
-
-**CVE:** `CVE-2026-65660` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-25
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-65660>
-
-> Vendor: Microsoft | Product: SharePoint. Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Require…
-
----
-
-## 4. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -40,14 +13,14 @@
 
 ---
 
-## 5. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 6. 🟠 Zero-Day — Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild
+## 3. 🟠 Zero-Day — Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild
 
 **CVE:** `CVE-2026-48842` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html>
@@ -60,7 +33,7 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -69,7 +42,7 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -78,7 +51,7 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -87,7 +60,7 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -96,7 +69,7 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -105,7 +78,7 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -114,7 +87,48 @@ The issue stems from a preg_replace() backslash
 
 ---
 
-## 13. 🟡 High Severity — code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute
+## 10. 🟠 Zero-Day — Kiteworks urges 6-hour server shutdown over potential zero-day attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://www.bleepingcomputer.com/news/security/kiteworks-urges-6-hour-server-shutdown-over-potential-zero-day-attacks/>
+
+> Secure file-sharing software company Kiteworks is urging customers worldwide to temporarily shut down their servers on Saturday for a six-hour window after receiving threat intelligence warning of a potentially imminent cyberattack. [...]
+
+---
+
+## 11. 🟠 Zero-Day — ShinyHunters hacked Clop leak site using Grav CMS path traversal flaw
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://www.bleepingcomputer.com/news/security/shinyhunters-hacked-clop-leak-site-using-grav-cms-path-traversal-flaw/>
+
+> The Clop ransomware gang has moved its data leak site to a new Tor address after confirming its previous server was compromised and defaced through an unpatched Grav CMS flaw that BleepingComputer has learned is an unauthenticated path traversal vulnerability. [...]
+
+---
+
+## 12. 🟡 High Severity — SCBE-AETHERMOORE Unauthenticated AetherBrowser Ops API Exposes Operator Email Digests
+
+**CVE:** `CVE-2026-57443` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://github.com/advisories/GHSA-q986-4x7x-gx39>
+
+> ### Summary
+
+The AetherBrowser API server (`scripts/aetherbrowser/api_server.py`) exposes the `POST /api/ops/check-email` endpoint without any authentication. Any remote attacker can call this endpoint and trigger execution of the `email_reader.py` subprocess, which connects to configured ProtonMail or Gmail accounts via IMAP and returns email metadata (sender, subject, body snippet) in the JSON r…
+
+---
+
+## 13. 🟡 High Severity — CliInvoke.Specializations has command injection in PowerShell and Cmd shell wrappers
+
+**CVE:** `CVE-2026-100368` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
+**Reference:** <https://github.com/advisories/GHSA-wrvw-254r-wpmv>
+
+> ### Impact
+An OS command injection vulnerability exists in the PowerShell and Cmd shell wrappers provided by the `CliInvoke.Specializations` package (the `PowershellProcessInvoker`/`CmdProcessInvoker` invokers, and the `UsePowerShell`/`UseCmd` middleware in v3 pre-release versions).
+
+The wrappers re-run a caller-supplied target and arguments inside a shell command (`pwsh -Command ...` / `cmd /c ..…
+
+---
+
+## 14. 🟡 High Severity — code16 Sharp vulnerable to stored XSS via iframe srcdoc Attribute
 
 **CVE:** `CVE-2026-61823` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://github.com/advisories/GHSA-qxg3-46rw-79j8>
@@ -126,7 +140,7 @@ While the underlying Symfony HtmlSanitizer correctly HTML-encodes special charac
 
 ---
 
-## 14. 🟡 High Severity — WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV
+## 15. 🟡 High Severity — WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV
 
 **CVE:** `CVE-2026-5430` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-25
 **Reference:** <https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html>
@@ -140,7 +154,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
