@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-26T15:15:14.780800+00:00",
-  "total": 16,
+  "generated": "2026-09-26T20:17:51.726778+00:00",
+  "total": 15,
   "kev": 0,
   "zero_day": 12,
   "enriched": 0,
@@ -229,23 +229,6 @@
       ],
       "cve_ids": [
         "CVE-2026-100368"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/",
-      "title": "CISA warns of Sharepoint, WSO2, Adobe Commerce flaws exploited in attacks",
-      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) warns that hackers are exploiting a critical authentication bypass vulnerability (CVE-2026-5430) affecting multiple products from enterprise software provider WSO2. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-sharepoint-wso2-adobe-commerce-flaws-exploited-in-attacks/",
-      "published": "2026-09-25T17:24:20+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-5430"
       ],
       "is_zero_day": false,
       "is_high_severity": true
