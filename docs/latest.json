@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-27T02:12:10.681538+00:00",
-  "total": 11,
+  "generated": "2026-09-27T10:56:57.850337+00:00",
+  "total": 17,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -37,6 +37,37 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.tenable.com/blog/frequently-asked-questions-about-reported-citrix-netscaler-zero-day-vulnerabilities",
+      "title": "Frequently asked questions about reported Citrix NetScaler zero-day vulnerabilities",
+      "summary": "There are reportedly two unpatched zero-day Citrix NetScaler vulnerabilities capable of enabling remote code execution that have been actively exploited in the wild, with no patches available at this time. Key takeaways Reports indicate that there are two critical zero-day vulnerabilities in Citrix NetScaler. The reports originate from a pre-notification sent out ahead of public disclosure, so there are currently no specific details about these flaws and no patches available. This post will be updated as new information becomes available. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding two reported zero-day vulnerabilities in Citrix NetScaler that sources say were actively exploited in the wild. The following FAQ is based on limited public information. This post will be updated with additional details once more information becomes public over the next week. FAQ What is the source of the NetScaler vulnerabilities? On September 25, 2026, reports surfaced through a reddit post on r/Citrix regarding advice to shut down \u201cNetscalers.\u201d This included a report from a user that said this information came from the \u201cDutch national cyber security center\u201d and further details included a note about two zero-day vulnerabilities. On September 26, 2026, additional reports confirming the existence of these flaws became public, including social posts from researchers at watchTowr on X , as well as Kevin Beaumont on Mastodon. What is the context surrounding the National Cyber Security Centre (NCSC-NL) alert? The Reddit post on r/Citrix cited details from an NCSC-NL pre-notification that had not yet been made public. Community members in that thread said the pre-notification was distributed under Traffic Light Protocol (TLP):AMBER+STRICT restrictions. Tenable's RSO has not independently obtained or reviewed the contents of this notification. Has Citrix confirmed the presence of zero-day vulnerabilities",
+      "link": "https://www.tenable.com/blog/frequently-asked-questions-about-reported-citrix-netscaler-zero-day-vulnerabilities",
+      "published": "2026-09-27T09:35:21+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
+      "title": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation",
+      "summary": "Two new unpatched zero-day vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway appliances that allow remote code execution are being actively exploited in the wild, security firm watchTowr said on September 26.\n\nCitrix has not confirmed the flaws or published a fix. Some administrators say they have taken appliances offline rather than wait for one to be available.\n\nNetScaler ADC and",
+      "link": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
+      "published": "2026-09-27T07:47:57+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/09/attackers-bypass-wafs-to-exploit-oracle.html",
       "title": "Attackers Bypass WAFs to Exploit Oracle PeopleSoft Flaw and Deploy Web Shells",
       "summary": "Google is warning of renewed mass exploitation of a known security vulnerability in Oracle PeopleSoft as part of a campaign targeting multiple sectors globally.\n\nThe ShinyHunters-linked activity involves the weaponization of CVE-2026-35273 (CVSS score: 9.8), a critical security flaw that could result in unauthenticated remote code execution.\n\nThe vulnerability was first exploited as a zero-day",
@@ -49,23 +80,6 @@
       ],
       "cve_ids": [
         "CVE-2026-35273"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html",
-      "title": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Microsoft SharePoint and Mikrotik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities in question are as follows -\n\n\n  CVE-2026-65660 (CVSS score: 8.8) - A code injection vulnerability in Microsoft Office SharePoint",
-      "link": "https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html",
-      "published": "2026-09-26T08:49:53+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-65660"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -166,6 +180,83 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Sep/79",
+      "title": "[0day-rubbish] Server Technology PRO3X PDU 030600 port_mux listener program override to root command execution (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Server Technology (Legrand group) PRO3X series intelligent rack PDUs, firmware spdu-pro3x-030600 build 46640 (ARM 32-bit uClibc Linux). Type: authenticated listener program override leading to root command execution (CWE-78, CWE-269; a separate hard-coded factory credential is reported as CWE-798). PRO3X PDUs run port_mux, an inetd-style launcher that starts every protocol...",
+      "link": "https://seclists.org/fulldisclosure/2026/Sep/79",
+      "published": "2026-09-27T04:12:47+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Sep/78",
+      "title": "[0day-rubbish] Netsis NetOpenX REST 2.0.6.9 Unauthenticated SQL injection to xp_cmdshell SYSTEM command execution (9.8)",
+      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Logo Netsis NetOpenX REST 2.0.6.9 (also distributed as Netsis Nox REST), the REST API gateway of the Netsis enterprise ERP suite. Type: unauthenticated SQL injection in the OAuth 2.0 token endpoint leading to operating-system command execution via SQL Server xp_cmdshell (CWE-89, CWE-306, CWE-78). A single POST /api/v2/token carrying no client and no user credentials supplies a...",
+      "link": "https://seclists.org/fulldisclosure/2026/Sep/78",
+      "published": "2026-09-27T04:12:46+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Sep/77",
+      "title": "[0day-rubbish] MultiTech Conduit AEP 6.3.6 Authenticated import_config filename command injection to root RCE (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in MultiTech Conduit AEP (models mtcdt / mtcdtip / mtcdtiphp), IoT gateways running mLinux on ARM 32-bit. Type: authenticated OS command injection (CWE-78) through the uploaded filename of the admin-only upload_config command. The management API is served by lighttpd on TCP 8080 and proxied to the proprietary FastCGI daemon /usr/bin/rcell_api. The import_config handler wraps the...",
+      "link": "https://seclists.org/fulldisclosure/2026/Sep/77",
+      "published": "2026-09-27T04:12:44+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Sep/76",
+      "title": "[0day-rubbish] Lightstreamer Server 7.4.8 Unauthenticated JMX jvmtiAgentLoad native code execution (8.1)",
+      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Lightstreamer Server 7.4.8 build 3506 (with JMS Extender 2.1.0). Type: unauthenticated JMX inspection console allowing an anonymous caller to invoke any MBean operation, reaching jvmtiAgentLoad on com.sun.management:type=DiagnosticCommand to load and run a native agent library inside the broker JVM (CWE-306, CWE-345, CWE-20, CWE-250, CWE-1188) Scoring. This finding is...",
+      "link": "https://seclists.org/fulldisclosure/2026/Sep/76",
+      "published": "2026-09-27T04:12:43+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Sep/88",
+      "title": "SEC Consult SA-20260923-0 :: Local Privilege Escalation in Honeywell IQ MultiAccess Update Service #CVE-2026-13742",
+      "summary": "Posted by SEC Consult Vulnerability Lab via Fulldisclosure on Sep 26 SEC Consult Vulnerability Lab Security Advisory < 20260923-0 > ======================================================================= title: Local Privilege Escalation product: Honeywell IQ MultiAccess Update Service vulnerable version: IQ V27 & IQ V28 fixed version: IQ V27 SP1 & IQ V28 SP1 CVE number: CVE-2026-13742 impact: high homepage:...",
+      "link": "https://seclists.org/fulldisclosure/2026/Sep/88",
+      "published": "2026-09-27T04:16:15+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-13742"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
