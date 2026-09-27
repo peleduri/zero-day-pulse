@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-27T15:55:04.746633+00:00",
-  "total": 16,
+  "generated": "2026-09-27T20:32:33.307924+00:00",
+  "total": 17,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -37,6 +37,24 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
+      "title": "Citrix confirms two NetScaler RCE zero-days exploited in attacks",
+      "summary": "Citrix has confirmed that two critical NetScaler remote code execution vulnerabilities, tracked as CVE-2026-88771 and CVE-2026-88772, are being exploited in attacks and that it has released security updates to fix the flaws. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
+      "published": "2026-09-27T16:02:37+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-88771",
+        "CVE-2026-88772"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.tenable.com/blog/frequently-asked-questions-about-reported-citrix-netscaler-zero-day-vulnerabilities",
       "title": "Frequently asked questions about reported Citrix NetScaler zero-day vulnerabilities",
       "summary": "There are reportedly two unpatched zero-day Citrix NetScaler vulnerabilities capable of enabling remote code execution that have been actively exploited in the wild, with no patches available at this time. Key takeaways Reports indicate that there are two critical zero-day vulnerabilities in Citrix NetScaler. The reports originate from a pre-notification sent out ahead of public disclosure, so there are currently no specific details about these flaws and no patches available. This post will be updated as new information becomes available. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding two reported zero-day vulnerabilities in Citrix NetScaler that sources say were actively exploited in the wild. The following FAQ is based on limited public information. This post will be updated with additional details once more information becomes public over the next week. FAQ What is the source of the NetScaler vulnerabilities? On September 25, 2026, reports surfaced through a reddit post on r/Citrix regarding advice to shut down \u201cNetscalers.\u201d This included a report from a user that said this information came from the \u201cDutch national cyber security center\u201d and further details included a note about two zero-day vulnerabilities. On September 26, 2026, additional reports confirming the existence of these flaws became public, including social posts from researchers at watchTowr on X , as well as Kevin Beaumont on Mastodon. What is the context surrounding the National Cyber Security Centre (NCSC-NL) alert? The Reddit post on r/Citrix cited details from an NCSC-NL pre-notification that had not yet been made public. Community members in that thread said the pre-notification was distributed under Traffic Light Protocol (TLP):AMBER+STRICT restrictions. Tenable's RSO has not independently obtained or reviewed the contents of this notification. Has Citrix confirmed the presence of zero-day vulnerabilities",
@@ -55,7 +73,7 @@
     {
       "id": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
       "title": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation",
-      "summary": "Two new unpatched zero-day vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway appliances that allow remote code execution are being actively exploited in the wild, security firm watchTowr said on September 26.\n\nCitrix has not confirmed the flaws or published a fix. Some administrators say they have taken appliances offline rather than wait for one to be available.\n\nNetScaler ADC and",
+      "summary": "Two critical vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway that allow remote code execution have been exploited in the wild, Citrix confirmed on September 27. It released fixes for both, along with six other flaws. One of the two affects every deployment on an affected version, including those in the default configuration.\n\nThe bulletin came a day after security firm watchTowr",
       "link": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
       "published": "2026-09-27T07:47:57+00:00",
       "source": "The Hacker News Security",
