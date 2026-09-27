@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-27 10:56 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-27 15:55 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -42,20 +42,7 @@ NetScaler ADC and
 
 ---
 
-## 5. 🟠 Zero-Day — Attackers Bypass WAFs to Exploit Oracle PeopleSoft Flaw and Deploy Web Shells
-
-**CVE:** `CVE-2026-35273` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-26
-**Reference:** <https://thehackernews.com/2026/09/attackers-bypass-wafs-to-exploit-oracle.html>
-
-> Google is warning of renewed mass exploitation of a known security vulnerability in Oracle PeopleSoft as part of a campaign targeting multiple sectors globally.
-
-The ShinyHunters-linked activity involves the weaponization of CVE-2026-35273 (CVSS score: 9.8), a critical security flaw that could result in unauthenticated remote code execution.
-
-The vulnerability was first exploited as a zero-day
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -64,7 +51,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -73,7 +60,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -82,7 +69,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -91,7 +78,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -100,7 +87,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -109,7 +96,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 12. 🟠 Zero-Day — [0day-rubbish] Server Technology PRO3X PDU 030600 port_mux listener program override to root command execution (7.2)
+## 11. 🟠 Zero-Day — [0day-rubbish] Server Technology PRO3X PDU 030600 port_mux listener program override to root command execution (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/79>
@@ -118,7 +105,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 13. 🟠 Zero-Day — [0day-rubbish] Netsis NetOpenX REST 2.0.6.9 Unauthenticated SQL injection to xp_cmdshell SYSTEM command execution (9.8)
+## 12. 🟠 Zero-Day — [0day-rubbish] Netsis NetOpenX REST 2.0.6.9 Unauthenticated SQL injection to xp_cmdshell SYSTEM command execution (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/78>
@@ -127,7 +114,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 14. 🟠 Zero-Day — [0day-rubbish] MultiTech Conduit AEP 6.3.6 Authenticated import_config filename command injection to root RCE (7.2)
+## 13. 🟠 Zero-Day — [0day-rubbish] MultiTech Conduit AEP 6.3.6 Authenticated import_config filename command injection to root RCE (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/77>
@@ -136,7 +123,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 15. 🟠 Zero-Day — [0day-rubbish] Lightstreamer Server 7.4.8 Unauthenticated JMX jvmtiAgentLoad native code execution (8.1)
+## 14. 🟠 Zero-Day — [0day-rubbish] Lightstreamer Server 7.4.8 Unauthenticated JMX jvmtiAgentLoad native code execution (8.1)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/76>
@@ -145,7 +132,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 16. 🟡 High Severity — SEC Consult SA-20260923-0 :: Local Privilege Escalation in Honeywell IQ MultiAccess Update Service #CVE-2026-13742
+## 15. 🟡 High Severity — SEC Consult SA-20260923-0 :: Local Privilege Escalation in Honeywell IQ MultiAccess Update Service #CVE-2026-13742
 
 **CVE:** `CVE-2026-13742` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
 **Reference:** <https://seclists.org/fulldisclosure/2026/Sep/88>
@@ -154,7 +141,7 @@ The vulnerability was first exploited as a zero-day
 
 ---
 
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
