@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-28 02:16 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-28 12:12 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,27 +20,39 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Frequently asked questions about reported Citrix NetScaler zero-day vulnerabilities
+## 3. 🟠 Zero-Day — Zero-Day Exploitation of Citrix NetScaler ADC and Gateway: CVE-2026-88771 and CVE-2026-88772
 
-**CVE:** `CVE-2026-88771` | `CVE-2026-88772` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-09-27
-**Reference:** <https://www.tenable.com/blog/frequently-asked-questions-about-reported-citrix-netscaler-zero-day-vulnerabilities>
+**CVE:** `CVE-2026-88771` | `CVE-2026-88772` | `CVE-2026-88773` | `CVE-2026-88774` | `CVE-2026-88775` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-28
+**Reference:** <https://www.rapid7.com/blog/post/etr-zero-day-exploitation-of-citrix-netscaler-adc-and-gateway-cve-2026-88771-and-cve-2026-88772>
 
-> CVE-2026-88771 and CVE-2026-88772, two zero-day vulnerabilities in Citrix NetScaler, have been confirmed as exploited in the wild. Citrix released patches on September 27, 2026. Change log Update September 27: Citrix published security bulletin CTX697096, confirming CVE-2026-88771 and CVE-2026-88772 as the two zero-day RCE vulnerabilities and releasing patches. Post updated with CVE IDs, CVSS scor…
-
----
-
-## 4. 🟠 Zero-Day — Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-27
-**Reference:** <https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html>
-
-> Two critical vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway that allow remote code execution have been exploited in the wild, Citrix confirmed on September 27. It released fixes for both, along with six other flaws. One of the two affects every deployment on an affected version, including those in the default configuration.
-
-The bulletin came a day after security firm watchTowr
+> Overview On September 27, 2026, Citrix disclosed eight new vulnerabilities affecting NetScaler ADC and NetScaler Gateway, including two critical remote code execution (RCE) vulnerabilities: CVE-2026-88771 and CVE-2026-88772 . Both of these RCE vulnerabilities carry a critical CVSSv4 score of 9.5, and both have been confirmed as being actively exploited in the wild as zero-days prior to the vendor …
 
 ---
 
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — CISA Says Attackers Are Exploiting Two Critical Citrix NetScaler Flaws Globally
+
+**CVE:** `CVE-2026-88771` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-28
+**Reference:** <https://thehackernews.com/2026/09/cisa-says-attackers-are-exploiting-two.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Sunday added two critical Citrix NetScaler ADC and Gateway flaws to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2026-88771 (CVSS score: 9.5) - An improper input validation vulnerability that could allow an unauthenticated attacker to
+
+---
+
+## 5. 🟠 Zero-Day — Citrix confirms two NetScaler RCE zero-days exploited in attacks
+
+**CVE:** `CVE-2026-88771` | `CVE-2026-88772` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-27
+**Reference:** <https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/>
+
+> Citrix has confirmed that two critical NetScaler remote code execution vulnerabilities, tracked as CVE-2026-88771 and CVE-2026-88772, are being exploited in attacks and that it has released security updates to fix the flaws. [...]
+
+---
+
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -49,7 +61,7 @@ The bulletin came a day after security firm watchTowr
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -58,7 +70,7 @@ The bulletin came a day after security firm watchTowr
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -67,7 +79,7 @@ The bulletin came a day after security firm watchTowr
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -76,7 +88,7 @@ The bulletin came a day after security firm watchTowr
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -85,7 +97,7 @@ The bulletin came a day after security firm watchTowr
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -94,52 +106,7 @@ The bulletin came a day after security firm watchTowr
 
 ---
 
-## 11. 🟠 Zero-Day — [0day-rubbish] Server Technology PRO3X PDU 030600 port_mux listener program override to root command execution (7.2)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/79>
-
-> Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Server Technology (Legrand group) PRO3X series intelligent rack PDUs, firmware spdu-pro3x-030600 build 46640 (ARM 32-bit uClibc Linux). Type: authenticated listener program override leading to root command execution (CWE-78, CWE-269; a separate hard-coded factory credential is rep…
-
----
-
-## 12. 🟠 Zero-Day — [0day-rubbish] Netsis NetOpenX REST 2.0.6.9 Unauthenticated SQL injection to xp_cmdshell SYSTEM command execution (9.8)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/78>
-
-> Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Logo Netsis NetOpenX REST 2.0.6.9 (also distributed as Netsis Nox REST), the REST API gateway of the Netsis enterprise ERP suite. Type: unauthenticated SQL injection in the OAuth 2.0 token endpoint leading to operating-system command execution via SQL Server xp_cmdshell (CWE-89, C…
-
----
-
-## 13. 🟠 Zero-Day — [0day-rubbish] MultiTech Conduit AEP 6.3.6 Authenticated import_config filename command injection to root RCE (7.2)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/77>
-
-> Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in MultiTech Conduit AEP (models mtcdt / mtcdtip / mtcdtiphp), IoT gateways running mLinux on ARM 32-bit. Type: authenticated OS command injection (CWE-78) through the uploaded filename of the admin-only upload_config command. The management API is served by lighttpd on TCP 8080 and …
-
----
-
-## 14. 🟠 Zero-Day — [0day-rubbish] Lightstreamer Server 7.4.8 Unauthenticated JMX jvmtiAgentLoad native code execution (8.1)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/76>
-
-> Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Lightstreamer Server 7.4.8 build 3506 (with JMS Extender 2.1.0). Type: unauthenticated JMX inspection console allowing an anonymous caller to invoke any MBean operation, reaching jvmtiAgentLoad on com.sun.management:type=DiagnosticCommand to load and run a native agent library ins…
-
----
-
-## 15. 🟡 High Severity — SEC Consult SA-20260923-0 :: Local Privilege Escalation in Honeywell IQ MultiAccess Update Service #CVE-2026-13742
-
-**CVE:** `CVE-2026-13742` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-09-27
-**Reference:** <https://seclists.org/fulldisclosure/2026/Sep/88>
-
-> Posted by SEC Consult Vulnerability Lab via Fulldisclosure on Sep 26 SEC Consult Vulnerability Lab Security Advisory &lt; 20260923-0 &gt; ======================================================================= title: Local Privilege Escalation product: Honeywell IQ MultiAccess Update Service vulnerable version: IQ V27 &amp; IQ V28 fixed version: IQ V27 SP1 &amp; IQ V28 SP1 CVE number: CVE-2026-137…
-
----
-
-## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

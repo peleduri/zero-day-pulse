@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-28T02:16:45.246147+00:00",
-  "total": 16,
+  "generated": "2026-09-28T12:12:01.180007+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -37,36 +37,58 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.tenable.com/blog/frequently-asked-questions-about-reported-citrix-netscaler-zero-day-vulnerabilities",
-      "title": "Frequently asked questions about reported Citrix NetScaler zero-day vulnerabilities",
-      "summary": "CVE-2026-88771 and CVE-2026-88772, two zero-day vulnerabilities in Citrix NetScaler, have been confirmed as exploited in the wild. Citrix released patches on September 27, 2026. Change log Update September 27: Citrix published security bulletin CTX697096, confirming CVE-2026-88771 and CVE-2026-88772 as the two zero-day RCE vulnerabilities and releasing patches. Post updated with CVE IDs, CVSS scores, patch versions, and IoC guidance. Click here to review the change log history Update September 27: Citrix published security bulletin CTX697096, confirming CVE-2026-88771 and CVE-2026-88772 as the two zero-day RCE vulnerabilities and releasing patches. Post updated with CVE IDs, CVSS scores, patch versions, and IoC guidance. September 27: Original publication based on limited public information ahead of Citrix's official advisory. Key takeaways Citrix has confirmed two critical zero-day vulnerabilities in NetScaler ADC and NetScaler Gateway, both capable of remote code execution and actively exploited in the wild. Citrix released patches on September 27, 2026. Citrix says generic indicators of compromise will be available through NetScaler Console, and customers can request them from Citrix Support. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding two reported zero-day vulnerabilities in Citrix NetScaler that sources say were actively exploited in the wild. The following FAQ is based on limited public information. This post was last updated on September 27, 2026 following publication of the official Citrix security bulletin. FAQ What is the source of the NetScaler vulnerabilities? On September 25, 2026, reports surfaced through a reddit post on r/Citrix regarding advice to shut down \u201cNetscalers.\u201d This included a report from a user that said this information came from the \u201cDutch national cyber security center\u201d and further details included a note about two zero-day vulnerabilities. On S",
-      "link": "https://www.tenable.com/blog/frequently-asked-questions-about-reported-citrix-netscaler-zero-day-vulnerabilities",
-      "published": "2026-09-27T09:35:21+00:00",
-      "source": "Tenable Security Research",
+      "id": "https://www.rapid7.com/blog/post/etr-zero-day-exploitation-of-citrix-netscaler-adc-and-gateway-cve-2026-88771-and-cve-2026-88772",
+      "title": "Zero-Day Exploitation of Citrix NetScaler ADC and Gateway: CVE-2026-88771 and CVE-2026-88772",
+      "summary": "Overview On September 27, 2026, Citrix disclosed eight new vulnerabilities affecting NetScaler ADC and NetScaler Gateway, including two critical remote code execution (RCE) vulnerabilities: CVE-2026-88771 and CVE-2026-88772 . Both of these RCE vulnerabilities carry a critical CVSSv4 score of 9.5, and both have been confirmed as being actively exploited in the wild as zero-days prior to the vendor disclosure . CVE-2026-88771 affects vulnerable NetScaler deployments in their default configuration, with no additional product features required. The vendor has also indicated that the attack complexity for exploiting CVE-2026-88771 is low, meaning reliable RCE is likely against all vulnerable NetScaler appliances regardless of their configuration. This is especially concerning due to the prevalence of NetScaler appliances. CVE-2026-88772 is a memory corruption vulnerability and requires the DTLS feature to be enabled on the appliance. The vendor has indicated that the attack complexity is high, meaning achieving reliable exploitation may be more difficult for an attacker than that of CVE-2026-88771. The U.S. Cybersecurity and Infrastructure Security Agency (CISA) reports active exploitation is occurring globally, and added both CVE-2026-88771 and CVE-2026-88772 to its Known Exploited Vulnerabilities (KEV) catalog on September 27, 2026. Multiple CERTs worldwide have begun issuing alerts due to the critical nature of this situation. The following table summarizes all eight vulnerabilities: CVE CVSSv4 Vulnerability Exploitation confirmed CVE-2026-88771 9.5 (Critical) Improper input validation leading to RCE in a default configuration (CWE-20) Yes ( CISA ) CVE-2026-88772 9.5 (Critical) Memory overflow leading to RCE in a DTLS configuration (CWE-119) Yes ( CISA ) CVE-2026-88773 9.3 (Critical) HTTP request smuggling (CWE-444) No CVE-2026-88774 7.0 (High) Policy bypass involving URL expressions (CWE-16) No CVE-2026-88775 8.8 (High) Memory overflow in Gateway or AAA configuration",
+      "link": "https://www.rapid7.com/blog/post/etr-zero-day-exploitation-of-citrix-netscaler-adc-and-gateway-cve-2026-88771-and-cve-2026-88772",
+      "published": "2026-09-28T10:05:00+00:00",
+      "source": "Rapid7 Blog",
       "tags": [
-        "cloud",
         "research",
-        "vuln"
+        "metasploit"
       ],
       "cve_ids": [
         "CVE-2026-88771",
-        "CVE-2026-88772"
+        "CVE-2026-88772",
+        "CVE-2026-88773",
+        "CVE-2026-88774",
+        "CVE-2026-88775"
       ],
       "is_zero_day": true,
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
-      "title": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation",
-      "summary": "Two critical vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway that allow remote code execution have been exploited in the wild, Citrix confirmed on September 27. It released fixes for both, along with six other flaws. One of the two affects every deployment on an affected version, including those in the default configuration.\n\nThe bulletin came a day after security firm watchTowr",
-      "link": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
-      "published": "2026-09-27T07:47:57+00:00",
+      "id": "https://thehackernews.com/2026/09/cisa-says-attackers-are-exploiting-two.html",
+      "title": "CISA Says Attackers Are Exploiting Two Critical Citrix NetScaler Flaws Globally",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Sunday added two critical Citrix NetScaler ADC and Gateway flaws to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-88771 (CVSS score: 9.5) - An improper input validation vulnerability that could allow an unauthenticated attacker to",
+      "link": "https://thehackernews.com/2026/09/cisa-says-attackers-are-exploiting-two.html",
+      "published": "2026-09-28T07:21:49+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-88771"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
+      "title": "Citrix confirms two NetScaler RCE zero-days exploited in attacks",
+      "summary": "Citrix has confirmed that two critical NetScaler remote code execution vulnerabilities, tracked as CVE-2026-88771 and CVE-2026-88772, are being exploited in attacks and that it has released security updates to fix the flaws. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
+      "published": "2026-09-27T16:02:37+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-88771",
+        "CVE-2026-88772"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -166,83 +188,6 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/79",
-      "title": "[0day-rubbish] Server Technology PRO3X PDU 030600 port_mux listener program override to root command execution (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Server Technology (Legrand group) PRO3X series intelligent rack PDUs, firmware spdu-pro3x-030600 build 46640 (ARM 32-bit uClibc Linux). Type: authenticated listener program override leading to root command execution (CWE-78, CWE-269; a separate hard-coded factory credential is reported as CWE-798). PRO3X PDUs run port_mux, an inetd-style launcher that starts every protocol...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/79",
-      "published": "2026-09-27T04:12:47+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/78",
-      "title": "[0day-rubbish] Netsis NetOpenX REST 2.0.6.9 Unauthenticated SQL injection to xp_cmdshell SYSTEM command execution (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Logo Netsis NetOpenX REST 2.0.6.9 (also distributed as Netsis Nox REST), the REST API gateway of the Netsis enterprise ERP suite. Type: unauthenticated SQL injection in the OAuth 2.0 token endpoint leading to operating-system command execution via SQL Server xp_cmdshell (CWE-89, CWE-306, CWE-78). A single POST /api/v2/token carrying no client and no user credentials supplies a...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/78",
-      "published": "2026-09-27T04:12:46+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/77",
-      "title": "[0day-rubbish] MultiTech Conduit AEP 6.3.6 Authenticated import_config filename command injection to root RCE (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in MultiTech Conduit AEP (models mtcdt / mtcdtip / mtcdtiphp), IoT gateways running mLinux on ARM 32-bit. Type: authenticated OS command injection (CWE-78) through the uploaded filename of the admin-only upload_config command. The management API is served by lighttpd on TCP 8080 and proxied to the proprietary FastCGI daemon /usr/bin/rcell_api. The import_config handler wraps the...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/77",
-      "published": "2026-09-27T04:12:44+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/76",
-      "title": "[0day-rubbish] Lightstreamer Server 7.4.8 Unauthenticated JMX jvmtiAgentLoad native code execution (8.1)",
-      "summary": "Posted by disclosure via Fulldisclosure on Sep 26 0day Rubbish Research Team is publicly disclosing a vulnerability in Lightstreamer Server 7.4.8 build 3506 (with JMS Extender 2.1.0). Type: unauthenticated JMX inspection console allowing an anonymous caller to invoke any MBean operation, reaching jvmtiAgentLoad on com.sun.management:type=DiagnosticCommand to load and run a native agent library inside the broker JVM (CWE-306, CWE-345, CWE-20, CWE-250, CWE-1188) Scoring. This finding is...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/76",
-      "published": "2026-09-27T04:12:43+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Sep/88",
-      "title": "SEC Consult SA-20260923-0 :: Local Privilege Escalation in Honeywell IQ MultiAccess Update Service #CVE-2026-13742",
-      "summary": "Posted by SEC Consult Vulnerability Lab via Fulldisclosure on Sep 26 SEC Consult Vulnerability Lab Security Advisory < 20260923-0 > ======================================================================= title: Local Privilege Escalation product: Honeywell IQ MultiAccess Update Service vulnerable version: IQ V27 & IQ V28 fixed version: IQ V27 SP1 & IQ V28 SP1 CVE number: CVE-2026-13742 impact: high homepage:...",
-      "link": "https://seclists.org/fulldisclosure/2026/Sep/88",
-      "published": "2026-09-27T04:16:15+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-13742"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",
