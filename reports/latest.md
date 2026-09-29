@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-29 17:09 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-29 21:35 UTC &nbsp;|&nbsp; **Total:** 21 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -94,7 +94,16 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 11. 🟠 Zero-Day — Apple patches CoreGraphics zero-day flaw exploited in attacks
+## 11. 🟠 Zero-Day — Hackers exploit Citrix NetScaler zero-day to deploy web shells
+
+**CVE:** `CVE-2026-88772` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/>
+
+> Cybersecurity firms say attackers exploited the Citrix NetScaler CVE-2026-88772 zero-day to deploy custom web shells and tunneling malware, gain root access, steal credentials, and spread into internal networks. [...]
+
+---
+
+## 12. 🟠 Zero-Day — Apple patches CoreGraphics zero-day flaw exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/>
@@ -103,7 +112,86 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 12. 🟡 High Severity — webpack-dev-middleware vulnerable to Path Traversal via non-slash-terminated publicPath
+## 13. 🟡 High Severity — adm-zip: Decompression-bomb protection (fix for CVE-2026-39244) can be bypassed by declaring uncompressed size as 0
+
+**CVE:** `CVE-2026-39244` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://github.com/advisories/GHSA-rcw4-f5rp-g42v>
+
+> **Affected package:** adm-zip (npm)
+**Affected version:** 0.6.0
+
+## Summary
+
+The fix shipped for CVE-2026-39244 (`methods/inflater.js`) caps zlib&#x27;s decompression output via `maxOutputLength: expectedLength`, where `expectedLength` is read directly from the ZIP entry&#x27;s attacker-controlled &quot;uncompressed size&quot; header field (`CENLEN`/`LOCLEN`). This cap is only applied when `expect…
+
+---
+
+## 14. 🟡 High Severity — adm-zip extraction preserves SUID/SGID bits from untrusted ZIPs -> local privilege escalation
+
+**CVE:** `CVE-2026-102282` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://github.com/advisories/GHSA-j5f4-cc29-5x44>
+
+> ## Summary
+
+adm-zip applies the Unix permission bits stored in a zip entry directly to the extracted file via `fs.chmodSync()` when `keepOriginalPermission=true` is passed to `extractAllTo()`/`extractEntryTo()` — and it never filters the setuid/setgid/sticky bits out of those bits. A zip crafted by an attacker can therefore produce an extracted binary with mode `04755`. When extraction runs as roo…
+
+---
+
+## 15. 🟡 High Severity — PyJWT: Malformed RSA JWK aborts parsing of an entire JWK Set
+
+**CVE:** `CVE-2026-102274` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://github.com/advisories/GHSA-w6j9-cwv2-h6wq>
+
+> ## Summary
+
+A malformed RSA JWK inside a JWK Set aborts parsing of the entire set instead of being skipped, because `RSAAlgorithm.from_jwk` can raise a plain `ValueError` that isn&#x27;t caught by `PyJWKSet`&#x27;s per-key error-skipping logic.
+
+## Affected component / version
+
+- Package: `PyJWT` (PyPI, ecosystem `pip`)
+- Files: `jwt/api_jwk.py` (`PyJWK.__init__`, `PyJWKSet.__init__`), `jwt/algori…
+
+---
+
+## 16. 🟡 High Severity — undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors
+
+**CVE:** `CVE-2026-85152` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://github.com/advisories/GHSA-vp8m-p9jh-q5pm>
+
+> ## Impact
+
+When `interceptors.cache()` or `interceptors.deduplicate()` is used with a dispatcher that does not carry a single authoritative origin, or when a request supplies its own `origin`, undici builds the cache and deduplication keys without the actual destination origin. If a cache store or interceptor instance is shared across more than one origin, otherwise-identical requests to different…
+
+---
+
+## 17. 🟡 High Severity — Flysystem: WhitespacePathNormalizer's control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter
+
+**CVE:** `CVE-2026-102601` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://github.com/advisories/GHSA-cxf4-7mrp-vvpr>
+
+> ## Related public issue (context, not a duplicate)
+
+Closed issue #1429 (&quot;Handle non-UTF-8 paths&quot;, 2024-03-24) raised exactly this general concern and
+even suggested detection via `preg_match(&#x27;//u&#x27;, $path) !== 1` -- note the reporter&#x27;s suggested check
+explicitly compares `!== 1`, which *would* correctly treat PCRE&#x27;s `false` return as &quot;reject.&quot; The
+maintainer&…
+
+---
+
+## 18. 🟡 High Severity — PHPCSUtils: Remote code execution via eval() in AbstractArrayDeclarationSniff::getActualArrayKey()
+
+**CVE:** `CVE-2026-65954` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://github.com/advisories/GHSA-r6hr-vr92-vv28>
+
+> ### Impact
+
+PHPCSUtils versions 1.0.0-alpha1 through 1.2.2 contain an arbitrary code execution vulnerability in `PHPCSUtils\AbstractSniffs\AbstractArrayDeclarationSniff::getActualArrayKey()`. The vulnerable method is reached by any sniff that extends `AbstractArrayDeclarationSniff` and calls `getActualArrayKey()`.
+
+Running PHPCS over untrusted PHP code through such a sniff, for example, in a CI pi…
+
+---
+
+## 19. 🟡 High Severity — webpack-dev-middleware vulnerable to Path Traversal via non-slash-terminated publicPath
 
 **CVE:** `CVE-2026-76844` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-g84c-rxfj-3j2c>
@@ -113,7 +201,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 13. 🟡 High Severity — Apple Emergency Patch for iOS 26, macOS26, macOS15 (CVE-2026-86950), (Mon, Sep 28th)
+## 20. 🟡 High Severity — Apple Emergency Patch for iOS 26, macOS26, macOS15 (CVE-2026-86950), (Mon, Sep 28th)
 
 **CVE:** `CVE-2026-86950` &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://isc.sans.edu/diary/rss/33376>
@@ -122,52 +210,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 14. 🟡 High Severity — fast-uri vulnerable to host confusion via an unclosed bracket in the URI authority
-
-**CVE:** `CVE-2026-84394` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
-**Reference:** <https://github.com/advisories/GHSA-58mr-gqgx-xq4g>
-
-> ### Impact
-
-`fast-uri` accepts a host that contains an unbalanced or misplaced authority bracket (`[` or `]`) without reporting an error. A host that starts with `[` but does not end with `]`, such as `[@127.0.0.1`, is neither validated as an IP literal nor canonicalized as a domain name, so `parse()` returns it as the host with `error` undefined, while Node&#x27;s `URL` (and `http.get`, `axios`, …
-
----
-
-## 15. 🟡 High Severity — ip-address: Address6.isLinkLocal() recognizes fe80::/64 rather than fe80::/10, allowing SSRF and trust-boundary bypass to on-link hosts
-
-**CVE:** `CVE-2026-101913` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
-**Reference:** <https://github.com/advisories/GHSA-rpw4-54j3-4h4q>
-
-> ### Summary
-
-`Address6.isLinkLocal()` recognizes `fe80::/64` rather than `fe80::/10`. Link-local unicast is the whole `/10` under RFC 4291 §2.4 and the IANA IPv6 Special-Purpose Address Registry, so the method returns `false` for every link-local address outside the one `/64` that stateless address autoconfiguration happens to use. `new Address6(&#x27;fe81::1&#x27;).isLinkLocal()` is `false`.
-
-The…
-
----
-
-## 16. 🟡 High Severity — ip-address: no classifier recognizes the NAT64 local-use range 64:ff9b:1::/48, allowing SSRF and trust-boundary bypass
-
-**CVE:** `CVE-2026-101910` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
-**Reference:** <https://github.com/advisories/GHSA-2vr4-cq9g-pvrc>
-
-> ### Summary
-
-No classifier on `Address6` recognizes the NAT64 local-use range `64:ff9b:1::/48` (RFC 8215). `isPrivate()`, `isLoopback()`, `isLinkLocal()` and their siblings all return `false` for every address in it, so an internal IPv4 destination written through a local-use NAT64 prefix (`64:ff9b:1:7f00:0:100::` for `127.0.0.1`, `64:ff9b:1:a9fe:a9:fe00::` for `169.254.169.254`) reads as an ordin…
-
----
-
-## 17. 🟡 High Severity — jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization
-
-**CVE:** `CVE-2026-77310` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
-**Reference:** <https://github.com/advisories/GHSA-vvgp-rfg2-7rr6>
-
-> ### Summary
-CVE-2026-54514 (GHSA-hgj6-7826-r7m5) fixed an eager-DNS-resolution / SSRF issue in jackson-databind&#x27;s deserialization of `java.net.InetSocketAddress` by switching to `InetSocketAddress.createUnresolved(...)` (PR #5951, commit 1f5a1037, released in 2.18.8 / 2.21.4 / 3.1.4). That fix did not cover the sibling `java.net.InetAddress` branch in the very same `FromStringDeserializer.Std…
-
----
-
-## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 21. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

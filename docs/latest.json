@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-29T17:09:30.577066+00:00",
-  "total": 18,
+  "generated": "2026-09-29T21:35:55.070220+00:00",
+  "total": 21,
   "kev": 1,
-  "zero_day": 10,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -168,6 +168,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/",
+      "title": "Hackers exploit Citrix NetScaler zero-day to deploy web shells",
+      "summary": "Cybersecurity firms say attackers exploited the Citrix NetScaler CVE-2026-88772 zero-day to deploy custom web shells and tunneling malware, gain root access, steal credentials, and spread into internal networks. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/",
+      "published": "2026-09-29T18:37:12+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-88772"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/",
       "title": "Apple patches CoreGraphics zero-day flaw exploited in attacks",
       "summary": "Apple released security updates to fix a zero-day vulnerability exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
@@ -181,6 +198,114 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "GHSA-rcw4-f5rp-g42v",
+      "title": "adm-zip: Decompression-bomb protection (fix for CVE-2026-39244) can be bypassed by declaring uncompressed size as 0",
+      "summary": "**Affected package:** adm-zip (npm)\n**Affected version:** 0.6.0\n\n## Summary\n\nThe fix shipped for CVE-2026-39244 (`methods/inflater.js`) caps zlib's decompression output via `maxOutputLength: expectedLength`, where `expectedLength` is read directly from the ZIP entry's attacker-controlled \"uncompressed size\" header field (`CENLEN`/`LOCLEN`). This cap is only applied when `expectedLength > 0`:\n\n```js\nconst option = version >= 15 && expectedLength > 0 ? { maxOutputLength: expectedLength } : {};\nreturn zlib.inflateRawSync(inbuf, option);\n```\n\nIf an attacker sets the declared uncompressed-size field to exactly **0**, this condition is false, `option` becomes `{}`, and no output cap is passed to zlib at all. Node then falls back to zlib's own internal default limit (several GB), so a small, highly-compressible payload can still be decompressed to a very large size in memory -- the same class of resource-exhaustion issue the original CVE addressed, just triggered differently.\n\n## Steps to Reproduce\n\n1. Build a ZIP archive containing one DEFLATE-compressed entry whose real content is highly redundant (e.g. several MB of a repeated byte, achieving close to the ~1032:1 theoretical raw-DEFLATE compression ratio).\n2. Patch the entry's declared uncompressed-size fields (both the local file header copy and the central directory copy, 4-byte little-endian values) to `0`. The compressed bytes and CRC32 are left untouched -- CRC validation still passes because CRC is computed over the real decompressed output, not the declared size.\n3. Load the archive with `new AdmZip(buffer)` and call `.getEntries()[0].getData()` (or `readFile`/`readAsText`/`extractAllTo`/etc. -- all share the same code path).\n4. Observe: decompression succeeds and returns the full-size buffer with no size restriction applied, whereas the same real data with an honest (but undersized) declared value correctly throws `Cannot create a Buffer larger than N bytes`.\n\n## Proof of Concept\n\nAttached script demonstrates a ",
+      "link": "https://github.com/advisories/GHSA-rcw4-f5rp-g42v",
+      "published": "2026-09-29T18:25:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-39244"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102282",
+      "title": "adm-zip extraction preserves SUID/SGID bits from untrusted ZIPs -> local privilege escalation",
+      "summary": "## Summary\n\nadm-zip applies the Unix permission bits stored in a zip entry directly to the extracted file via `fs.chmodSync()` when `keepOriginalPermission=true` is passed to `extractAllTo()`/`extractEntryTo()` \u2014 and it never filters the setuid/setgid/sticky bits out of those bits. A zip crafted by an attacker can therefore produce an extracted binary with mode `04755`. When extraction runs as root (the default posture in Docker builds, CI runners, and privileged install steps \u2014 the exact environments where this flag is used), the resulting root-owned setuid file is executed later by a lesser-privileged user, turning the attacker's code into a root execution.\n\n## Details\n\nThe mode a zip entry wants is read back from the external file attributes in the header, and the mask used keeps every special bit:\n\n```js\n// headers/entryHeader.js:187\nget fileAttr() {\n    return (_attr || 0) >> 16 & 0xfff;\n}\n```\n\n`0xfff` is `0o7777` \u2014 it preserves setuid (`0o4000`), setgid (`0o2000`) and the sticky bit (`0o1000`) along with the rwx bits. Shifting by 16 is the standard Unix convention for where zip stores the mode; the mask is the problem.\n\nWhen the flag is on, that value goes straight to the write:\n\n```js\n// adm-zip.js:726-727 (extractEntryTo, and identically in extractAllTo)\nconst fileAttr = keepOriginalPermission ? entry.header.fileAttr : undefined;\nfiletools.writeFileTo(target, content, overwrite, fileAttr);\n```\n\n```js\n// util/utils.js:94\nself.fs.chmodSync(path, attr || 0o666);\n```\n\nNo `& 0o777`, no stripping of `0o7000`. Attacker-controlled bytes in the zip decide the final mode of a file the library creates on disk. Directory entries are affected too (`adm-zip.js:855`), so a setgid bit on a directory entry also carries over and gives new files inside it group inheritance.\n\n## PoC\n\nTested against adm-zip@0.6.0 (latest as of 2026-08-01), Node 22, Linux.\n\n1. Craft a zip with a setuid binary using standard tooling (this is the\n   realistic attacker path \u2014 no adm-zip APIs involve",
+      "link": "https://github.com/advisories/GHSA-j5f4-cc29-5x44",
+      "published": "2026-09-29T18:24:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102282"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102274",
+      "title": "PyJWT: Malformed RSA JWK aborts parsing of an entire JWK Set",
+      "summary": "## Summary\n\nA malformed RSA JWK inside a JWK Set aborts parsing of the entire set instead of being skipped, because `RSAAlgorithm.from_jwk` can raise a plain `ValueError` that isn't caught by `PyJWKSet`'s per-key error-skipping logic.\n\n## Affected component / version\n\n- Package: `PyJWT` (PyPI, ecosystem `pip`)\n- Files: `jwt/api_jwk.py` (`PyJWK.__init__`, `PyJWKSet.__init__`), `jwt/algorithms.py` (`RSAAlgorithm.from_jwk`)\n- Confirmed present in the `master` branch as of 2026-09-05 (commit `7144e4534c34810f4525dc4578a32addd8212cff`, tag `2.13.0`). Directly verified identical in tags `2.9.0`, `2.10.0`, `2.11.0`, `2.12.0`, `2.12.1`, `2.13.0` -- the vulnerable call and the `except PyJWTError` guard are unchanged across all six releases. Not verified against any release prior to `2.9.0`.\n\n## Details\n\n`PyJWKSet.__init__` (`jwt/api_jwk.py:145-152`) iterates each key in a JWK Set:\n\n```python\nfor key in keys:\n    try:\n        self.keys.append(PyJWK(key))\n    except PyJWTError as error:\n        if isinstance(error, MissingCryptographyError):\n            raise error\n        # skip unusable keys\n        continue\n```\n\n`PyJWK.__init__` (`api_jwk.py:82`) calls `self.Algorithm.from_jwk(self._jwk_data)` with no try/except of its own. For an RSA JWK, this dispatches to `RSAAlgorithm.from_jwk` (`jwt/algorithms.py:539-586`). When the JWK supplies `d`, `e`, `n` without the CRT parameters (`p`, `q`, `dp`, `dq`, `qi`), `from_jwk` calls `cryptography`'s `rsa_recover_prime_factors(public_numbers.n, d, public_numbers.e)` (`algorithms.py:572-574`) to derive the key. If `d` is not the correct private exponent for that `n`/`e` pair, `rsa_recover_prime_factors` raises a plain `ValueError`.\n\n`ValueError` is a built-in Python exception and is not a subclass of `jwt.exceptions.PyJWTError` (`PyJWTError(Exception)` is the root of PyJWT's own exception hierarchy). It is therefore not caught by `PyJWKSet.__init__`'s `except PyJWTError`, and propagates out of the constructor, aborting the `for key in key",
+      "link": "https://github.com/advisories/GHSA-w6j9-cwv2-h6wq",
+      "published": "2026-09-29T18:23:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102274"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-85152",
+      "title": "undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors",
+      "summary": "## Impact\n\nWhen `interceptors.cache()` or `interceptors.deduplicate()` is used with a dispatcher that does not carry a single authoritative origin, or when a request supplies its own `origin`, undici builds the cache and deduplication keys without the actual destination origin. If a cache store or interceptor instance is shared across more than one origin, otherwise-identical requests to different origins are keyed together.\n\nAn attacker who controls the response from one origin can then have that response returned for a request to a different, trusted origin when the method, path, and relevant headers match. This allows cross-origin information disclosure and persistent cache poisoning, including chains such as JWKS cache poisoning where a token signed with an attacker-held key is accepted as belonging to a trusted issuer.\n\nApplications that share `interceptors.cache()` or `interceptors.deduplicate()` state across origins are affected. An `Agent` is not affected, because its dispatch options include the request origin.\n\nThis was introduced in undici 8.10.0 and affects 8.10.0 and 8.10.1.\n\n## Patches\n\nUpgrade to undici v8.10.2.\n\n## Workarounds\n\nUse a separate cache store and a separate interceptor instance for each origin, and do not share them across origins.",
+      "link": "https://github.com/advisories/GHSA-vp8m-p9jh-q5pm",
+      "published": "2026-09-29T18:15:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-85152"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102601",
+      "title": "Flysystem: WhitespacePathNormalizer's control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter",
+      "summary": "## Related public issue (context, not a duplicate)\n\nClosed issue #1429 (\"Handle non-UTF-8 paths\", 2024-03-24) raised exactly this general concern and\neven suggested detection via `preg_match('//u', $path) !== 1` -- note the reporter's suggested check\nexplicitly compares `!== 1`, which *would* correctly treat PCRE's `false` return as \"reject.\" The\nmaintainer's reply pointed to the `PathNormalizer` interface as the place to implement this. The\ncontrol-character check that ended up shipping in `WhitespacePathNormalizer`\n(`if (preg_match('#\\p{C}+#u', $unixPath))`) addresses the general concern but does **not** use the\n`!== 1`-style comparison the original issue suggested -- it uses a bare truthy check, which is exactly\nthe gap this report demonstrates. So this is not a duplicate of #1429; it's a concrete bypass\nsurviving in the fix that issue's concern led to.\n\n## Vulnerability Details\n\n**File**: `src/WhitespacePathNormalizer.php`, lines 22-28 (`normalizePath()`) -- the **default**\n`PathNormalizer` used by `Filesystem` for every adapter (Local, FTP, SFTP, S3, AsyncAwsS3, Azure, GCS,\nZipArchive, GridFS, InMemory) unless the application supplies a custom one.\n\n### Root Cause\n\n```php\npublic function normalizePath(string $path): string\n{\n    $unixPath = str_replace('\\\\', '/', $path);\n\n    if (preg_match('#\\p{C}+#u', $unixPath)) {\n        throw CorruptedPathDetected::forPath($path);\n    }\n    ...\n```\n\n`preg_match()` returns `false` (a PHP engine error) rather than `0` when the subject string is not\nvalid UTF-8 and the pattern uses the `/u` modifier -- PCRE can't even attempt the match. `false` and\n`0` are both falsy in PHP, and `if (preg_match(...))` does not distinguish them. So a path containing\n**any single invalid UTF-8 byte anywhere in the string** makes `preg_match()` fail with a \"Malformed\nUTF-8 characters\" engine error, the `if` evaluates false, and `CorruptedPathDetected` is silently **not**\nthrown -- even when the same string also contains literal control character",
+      "link": "https://github.com/advisories/GHSA-cxf4-7mrp-vvpr",
+      "published": "2026-09-29T18:10:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102601"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-65954",
+      "title": "PHPCSUtils: Remote code execution via eval() in AbstractArrayDeclarationSniff::getActualArrayKey()",
+      "summary": "### Impact\n\nPHPCSUtils versions 1.0.0-alpha1 through 1.2.2 contain an arbitrary code execution vulnerability in `PHPCSUtils\\AbstractSniffs\\AbstractArrayDeclarationSniff::getActualArrayKey()`. The vulnerable method is reached by any sniff that extends `AbstractArrayDeclarationSniff` and calls `getActualArrayKey()`.\n\nRunning PHPCS over untrusted PHP code through such a sniff, for example, in a CI pipeline that lints pull requests, or on a developer machine reviewing third-party code, could lead to arbitrary command execution on the scanning host.\n\nThe vulnerability happens when the method determines the value of an array key using `eval()`. A maliciously crafted array key such as `'system'('id')` would be executed when the code was scanned.\n\n### Known attack vectors\n\nKnown code paths that reach the vulnerable method include the following PHPCSExtra sniffs:\n\n- `Universal.Arrays.DuplicateArrayKey`\n- `Universal.Arrays.MixedArrayKeyTypes`\n\nOther packages that call `AbstractArrayDeclarationSniff::getActualArrayKey()` may also be vulnerable.\n\n### Patches\n\nThis issue has been fixed in PHPCSUtils 1.2.3. We recommend all users upgrade to 1.2.3 or later.\n\n### Workaround\n\nUsers who cannot upgrade immediately can disable the sniffs that reach the vulnerable method by adding `<exclude>` tags to their custom ruleset (replace the placeholder standard and sniff names with the ones used in your setup):\n\n```xml\n<rule ref=\"Standard\">\n\t<exclude name=\"Standard.Category.SniffName\"/>\n</rule>\n```\n\nFor example, to disable the two PHPCSExtra sniffs listed under \"Known attack vectors\":\n\n```xml\n<rule ref=\"Universal\">\n\t<exclude name=\"Universal.Arrays.DuplicateArrayKey\"/>\n\t<exclude name=\"Universal.Arrays.MixedArrayKeyTypes\"/>\n</rule>\n```\n\nTo verify that the sniffs have been disabled, run PHPCS with the `-e` flag, which lists all the sniffs a standard will run. The excluded sniffs should no longer appear in the output:\n\n```\nphpcs -e --standard=/path/to/ruleset.xml\n```\n\n### Credits\n\nMany thanks to [",
+      "link": "https://github.com/advisories/GHSA-r6hr-vr92-vv28",
+      "published": "2026-09-29T17:57:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-65954"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-76844",
@@ -213,78 +338,6 @@
       ],
       "cve_ids": [
         "CVE-2026-86950"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84394",
-      "title": "fast-uri vulnerable to host confusion via an unclosed bracket in the URI authority",
-      "summary": "### Impact\n\n`fast-uri` accepts a host that contains an unbalanced or misplaced authority bracket (`[` or `]`) without reporting an error. A host that starts with `[` but does not end with `]`, such as `[@127.0.0.1`, is neither validated as an IP literal nor canonicalized as a domain name, so `parse()` returns it as the host with `error` undefined, while Node's `URL` (and `http.get`, `axios`, `got`, and other clients built on it) resolve the same string to `127.0.0.1`. An application that reads `parse().host` to make a host decision (an SSRF denylist, a redirect allowlist, or proxy routing) and then passes the original URL to an HTTP client evaluates its policy against a string that is not the host the request reaches. The same host is carried through `normalize()`, `equal()`, and `resolve()`.\n\n### Patches\n\nThis vulnerability has been patched in fast-uri `4.1.4`, `3.1.7`, and `2.4.6`. `parse()` now reports `URI host is malformed.` for any host that contains a bracket but is not a valid `[IPv6]` literal. All users should upgrade.\n\n### Workarounds\n\nIf upgrading is not immediately possible, reject any URL whose host contains a `[` or `]` that is not a well-formed IPv6 literal before making a host decision. Clients that fail closed on credential-bearing URLs, such as Node's global `fetch()`, are not affected by the reported vector.",
-      "link": "https://github.com/advisories/GHSA-58mr-gqgx-xq4g",
-      "published": "2026-09-28T21:23:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84394"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-101913",
-      "title": "ip-address: Address6.isLinkLocal() recognizes fe80::/64 rather than fe80::/10, allowing SSRF and trust-boundary bypass to on-link hosts",
-      "summary": "### Summary\n\n`Address6.isLinkLocal()` recognizes `fe80::/64` rather than `fe80::/10`. Link-local unicast is the whole `/10` under RFC 4291 \u00a72.4 and the IANA IPv6 Special-Purpose Address Registry, so the method returns `false` for every link-local address outside the one `/64` that stateless address autoconfiguration happens to use. `new Address6('fe81::1').isLinkLocal()` is `false`.\n\nThe library contradicts itself on the same object: for `fe81::1`, `getType()` returns `'Link-local unicast'`, `getScope()` returns `'Link local'`, and `isHostInSubnet(new Address6('fe80::/10'))` returns `true`, while `isLinkLocal()` returns `false`.\n\nAn application that builds a network trust-boundary decision on these checks (for example a filter intended to block Server-Side Request Forgery, or SSRF) will classify a link-local target as unremarkable and allow the request. SSRF is an attack in which a user-supplied address coaxes the server into making a request to an internal destination the user could not otherwise reach.\n\n### Details\n\n`isLinkLocal()` in `src/ipv6.ts` compares the first 64 bits of the address against a literal string:\n\n```ts\n// Zeroes are required, i.e. we can't check isHostInSubnet with 'fe80::/10'\nif (\n  this.getBitsBase2(0, 64) ===\n  '1111111010000000000000000000000000000000000000000000000000000000'\n) {\n  return true;\n}\n```\n\nThe comparison requires the first 64 bits to be exactly `fe80:0000:0000:0000`, so it accepts 2\u2076\u2074 of the 2\u00b9\u00b9\u2078 addresses in `fe80::/10`. The comment states a premise the library disproves: `getType()` classifies the same range with `isHostInSubnet` against the `'fe80::/10': 'Link-local unicast'` entry in `src/v6/constants.ts`, and `Address4.isLinkLocal()` is a plain `isHostInSubnet` test against `169.254.0.0/16`. RFC 4291 \u00a72.5.6 constrains the format of an autoconfigured link-local address; it does not define the range, and reading it as the definition is the likeliest origin of the `/64` comparison.\n\nThe IPv4-mapped and NAT64 well-known paths o",
-      "link": "https://github.com/advisories/GHSA-rpw4-54j3-4h4q",
-      "published": "2026-09-28T20:43:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-101913"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-101910",
-      "title": "ip-address: no classifier recognizes the NAT64 local-use range 64:ff9b:1::/48, allowing SSRF and trust-boundary bypass",
-      "summary": "### Summary\n\nNo classifier on `Address6` recognizes the NAT64 local-use range `64:ff9b:1::/48` (RFC 8215). `isPrivate()`, `isLoopback()`, `isLinkLocal()` and their siblings all return `false` for every address in it, so an internal IPv4 destination written through a local-use NAT64 prefix (`64:ff9b:1:7f00:0:100::` for `127.0.0.1`, `64:ff9b:1:a9fe:a9:fe00::` for `169.254.169.254`) reads as an ordinary global address. `getType()` names the range `'NAT64 (local-use)'`, so the library knows what the address is and classifies it as nothing.\n\nAn application that builds a network trust-boundary decision on these checks (for example a filter intended to block Server-Side Request Forgery, or SSRF) will classify an internal target as external and allow the request. SSRF is an attack in which a user-supplied address coaxes the server into making a request to an internal destination the user could not otherwise reach, such as a loopback service or a cloud metadata endpoint.\n\n### Details\n\nThe fix for GHSA-22jq-vg5j-6vgg (10.2.1) classifies IPv4-mapped (`::ffff:0:0/96`) and NAT64 well-known (`64:ff9b::/96`) addresses by their embedded IPv4 address: `embeddedIPv4()` in `src/ipv6.ts` decodes the trailing 32 bits and every special-use classifier delegates to the resulting `Address4`. Those are the only two ranges `embeddedIPv4()` handles.\n\nThe local-use range differs in kind from the well-known prefix, which is why extending the decoder does not fix it. RFC 8215 reserves `64:ff9b:1::/48` so an operator can carve their own NAT64 prefix out of it, of any length RFC 6052 allows (`/48`, `/56`, `/64`, or `/96`). Where the IPv4 address sits depends on that choice: `127.0.0.1` is `64:ff9b:1:7f00:0:100::` under a `/48` prefix and `64:ff9b:1::7f00:1` under a `/96` prefix, and each of those decodes to a different address under the other prefix length. There is no single embedded IPv4 address for the library to classify by.\n\nWhat is well-defined is the range as a whole. The IANA IPv6 Special-P",
-      "link": "https://github.com/advisories/GHSA-2vr4-cq9g-pvrc",
-      "published": "2026-09-28T20:43:03Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-101910"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77310",
-      "title": "jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization",
-      "summary": "### Summary\nCVE-2026-54514 (GHSA-hgj6-7826-r7m5) fixed an eager-DNS-resolution / SSRF issue in jackson-databind's deserialization of `java.net.InetSocketAddress` by switching to `InetSocketAddress.createUnresolved(...)` (PR #5951, commit 1f5a1037, released in 2.18.8 / 2.21.4 / 3.1.4). That fix did not cover the sibling `java.net.InetAddress` branch in the very same `FromStringDeserializer.Std._deserialize()` switch statement, which still calls `InetAddress.getByName(value)` and therefore performs an eager forward DNS lookup on attacker-controlled input at deserialization time. The fix is incomplete: the same vulnerability class remains reachable through `InetAddress`.\n\n### Details\nFile: src/main/java/com/fasterxml/jackson/databind/deser/std/FromStringDeserializer.java\n\nSibling cases in the same switch:\n- Line 357-358 (UNFIXED):\n    case STD_INET_ADDRESS:\n        return InetAddress.getByName(value);     // eager forward DNS lookup\n- Line 359-381 + helper at 494-496 (FIXED by PR #5951):\n    protected InetSocketAddress _inetSocketAddress(String host, int port) {\n        // 05-May-2026, tatu: [databind#5951] Prevent DNS lookup:\n        return InetSocketAddress.createUnresolved(host, port);   // no DNS\n    }\n\n`InetAddress` is a registered standard string-like scalar type (FromStringDeserializer.types() line 73; findDeserializer() maps it to STD_INET_ADDRESS at line 119-120). Any value deserialized into an `InetAddress`-typed target \u2014 a plain POJO field, a polymorphic subtype, or a default-typing-permitted slot \u2014 reaches `InetAddress.getByName(attackerControlledString)`, which invokes the OS/JVM resolver and performs forward DNS resolution before any application validation.\n\nThe parent fix's own added unit test asserts `address.isUnresolved()` with the comment \"should NOT resolve address\", confirming that performing DNS resolution during deserialization is precisely the behavior being treated as the vulnerability. The InetAddress branch still violates that property.\n\nVeri",
-      "link": "https://github.com/advisories/GHSA-vvgp-rfg2-7rr6",
-      "published": "2026-09-28T20:17:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77310"
       ],
       "is_zero_day": false,
       "is_high_severity": true
