@@ -1,10 +1,29 @@
 {
-  "generated": "2026-09-29T11:43:06.655853+00:00",
+  "generated": "2026-09-29T17:09:30.577066+00:00",
   "total": 18,
-  "kev": 0,
-  "zero_day": 12,
+  "kev": 1,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-86950",
+      "title": "CVE-2026-86950 \u2014 Apple Multiple Products Out-of-Bounds Write Vulnerability",
+      "summary": "Vendor: Apple | Product: Multiple Products. Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-02)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+      "published": "2026-09-29",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-86950"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -164,38 +183,22 @@
       "is_high_severity": false
     },
     {
-      "id": "https://therecord.media/us-uk-warn-of-citrix-netscaler-zero-day-bug",
-      "title": "US, UK warn of exploited Citrix NetScaler zero-day bugs",
-      "summary": "Incident responders began warning of potential vulnerabilities in NetScaler Gateway products on Saturday before cybersecurity agencies in the Netherlands, U.S. and U.K. released advisories on Sunday confirming vulnerabilities. Citrix itself confirmed eight new vulnerabilities.",
-      "link": "https://therecord.media/us-uk-warn-of-citrix-netscaler-zero-day-bug",
-      "published": "2026-09-28T16:19:00+00:00",
-      "source": "The Record by Recorded Future",
+      "id": "CVE-2026-76844",
+      "title": "webpack-dev-middleware vulnerable to Path Traversal via non-slash-terminated publicPath",
+      "summary": "> [!IMPORTANT]\n> CVE-2026-76844 was assigned and published for this issue by VulnCheck on 2026-08-24 without prior coordination with the webpack maintainers or the OpenJS Foundation, which holds the CVE Numbering Authority scope for webpack projects. Neither the maintainers nor the OpenJS CNA were notified before publication, and no fix was available at that time. This advisory is the coordinated record produced by the webpack maintainers and the OpenJS Foundation CNA.\n\n### Impact\n\n`webpack-dev-middleware` resolves a request to a local file in `getFilenameFromUrl`. When the configured `publicPath` has no trailing slash (for example `/assets`), a request that shares that prefix without being under it (for example `/assets../secret`) still passes the containment check, and the `..` guard does not catch it because it runs on the path before the `publicPath` prefix is stripped. The stripped remainder then escapes the configured output directory once joined, so an unauthenticated request can read files outside the output root. Applications serving `webpack-dev-middleware` (directly or via `webpack-dev-server`) with a `publicPath` that does not end in a slash are affected. A development server reachable on the network can be attacked with a single request and no victim interaction.\n\n### Patches\n\nPatched in `webpack-dev-middleware` 8.3.0. There is no backport to the 5.x, 6.x, or 7.x lines; users on those lines should upgrade to 8.3.0 or later.\n\n### Workarounds\n\nConfigure `publicPath` with a trailing slash (for example `/assets/` instead of `/assets`), or upgrade to a patched version.\n\n### References\n\n- [CVE-2024-29180](https://www.cve.org/CVERecord?id=CVE-2024-29180) ([GHSA-wr3j-pwj9-hqq6](https://github.com/webpack/webpack-dev-middleware/security/advisories/GHSA-wr3j-pwj9-hqq6)), the earlier path traversal in the same component that this issue bypasses.",
+      "link": "https://github.com/advisories/GHSA-g84c-rxfj-3j2c",
+      "published": "2026-09-29T16:59:18Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "news",
-        "threat-intel"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
-      "title": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild",
-      "summary": "Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
-      "published": "2026-09-28T15:02:04+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-88771",
-        "CVE-2026-88772"
+        "CVE-2026-76844"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://isc.sans.edu/diary/rss/33376",

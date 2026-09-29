@@ -1,10 +1,19 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-29 11:43 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-29 17:09 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-86950 — Apple Multiple Products Out-of-Bounds Write Vulnerability
+
+**CVE:** `CVE-2026-86950` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-86950>
+
+> Vendor: Apple | Product: Multiple Products. Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requi…
+
+---
+
+## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +22,14 @@
 
 ---
 
-## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 3. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Official MCP Python SDK Flaw Can Let Malicious Servers Steal OAuth Credentials
+## 4. 🟠 Zero-Day — Official MCP Python SDK Flaw Can Let Malicious Servers Steal OAuth Credentials
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://thehackernews.com/2026/09/official-mcp-python-sdk-flaw-can-let.html>
@@ -31,7 +40,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +49,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +58,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +67,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +76,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +85,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,7 +94,7 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 10. 🟠 Zero-Day — Apple patches CoreGraphics zero-day flaw exploited in attacks
+## 11. 🟠 Zero-Day — Apple patches CoreGraphics zero-day flaw exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/>
@@ -94,21 +103,13 @@ Affected versions sent the client secret, the authorization code, and the PKCE p
 
 ---
 
-## 11. 🟠 Zero-Day — US, UK warn of exploited Citrix NetScaler zero-day bugs
+## 12. 🟡 High Severity — webpack-dev-middleware vulnerable to Path Traversal via non-slash-terminated publicPath
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-09-28
-**Reference:** <https://therecord.media/us-uk-warn-of-citrix-netscaler-zero-day-bug>
+**CVE:** `CVE-2026-76844` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://github.com/advisories/GHSA-g84c-rxfj-3j2c>
 
-> Incident responders began warning of potential vulnerabilities in NetScaler Gateway products on Saturday before cybersecurity agencies in the Netherlands, U.S. and U.K. released advisories on Sunday confirming vulnerabilities. Citrix itself confirmed eight new vulnerabilities.
-
----
-
-## 12. 🟠 Zero-Day — Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild
-
-**CVE:** `CVE-2026-88771` | `CVE-2026-88772` &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-09-28
-**Reference:** <https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/>
-
-> Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild appeared first on Unit 42 .
+> &gt; [!IMPORTANT]
+&gt; CVE-2026-76844 was assigned and published for this issue by VulnCheck on 2026-08-24 without prior coordination with the webpack maintainers or the OpenJS Foundation, which holds the CVE Numbering Authority scope for webpack projects. Neither the maintainers nor the OpenJS CNA were notified before publication, and no fix was available at that time. This advisory is the coordi…
 
 ---
 
