@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-29 03:01 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-29 11:43 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,12 +20,14 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Zero-Day Exploitation of Citrix NetScaler ADC and Gateway: CVE-2026-88771 and CVE-2026-88772
+## 3. 🟠 Zero-Day — Official MCP Python SDK Flaw Can Let Malicious Servers Steal OAuth Credentials
 
-**CVE:** `CVE-2026-88771` | `CVE-2026-88772` | `CVE-2026-88773` | `CVE-2026-88774` | `CVE-2026-88775` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-28
-**Reference:** <https://www.rapid7.com/blog/post/etr-zero-day-exploitation-of-citrix-netscaler-adc-and-gateway-cve-2026-88771-and-cve-2026-88772>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://thehackernews.com/2026/09/official-mcp-python-sdk-flaw-can-let.html>
 
-> Overview On September 27, 2026, Citrix disclosed eight new vulnerabilities affecting NetScaler ADC and NetScaler Gateway, including two critical remote code execution (RCE) vulnerabilities: CVE-2026-88771 and CVE-2026-88772 . Both of these RCE vulnerabilities carry a critical CVSSv4 score of 9.5, and both have been confirmed as being actively exploited in the wild as zero-days prior to the vendor …
+> A malicious MCP server could trick an application built on the official MCP Python SDK into handing over the OAuth credentials it uses to log in to a real service, the SDK&#x27;s maintainers said in a security advisory.
+
+Affected versions sent the client secret, the authorization code, and the PKCE proof key to a token endpoint the attacker controlled. The fix is in versions 1.30.0 and
 
 ---
 
@@ -83,7 +85,16 @@
 
 ---
 
-## 10. 🟠 Zero-Day — US, UK warn of exploited Citrix NetScaler zero-day bugs
+## 10. 🟠 Zero-Day — Apple patches CoreGraphics zero-day flaw exploited in attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-29
+**Reference:** <https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/>
+
+> Apple released security updates to fix a zero-day vulnerability exploited in &quot;extremely sophisticated&quot; targeted attacks on iOS devices. [...]
+
+---
+
+## 11. 🟠 Zero-Day — US, UK warn of exploited Citrix NetScaler zero-day bugs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://therecord.media/us-uk-warn-of-citrix-netscaler-zero-day-bug>
@@ -92,7 +103,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild
+## 12. 🟠 Zero-Day — Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild
 
 **CVE:** `CVE-2026-88771` | `CVE-2026-88772` &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/>
@@ -101,7 +112,7 @@
 
 ---
 
-## 12. 🟡 High Severity — Apple Emergency Patch for iOS 26, macOS26, macOS15 (CVE-2026-86950), (Mon, Sep 28th)
+## 13. 🟡 High Severity — Apple Emergency Patch for iOS 26, macOS26, macOS15 (CVE-2026-86950), (Mon, Sep 28th)
 
 **CVE:** `CVE-2026-86950` &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://isc.sans.edu/diary/rss/33376>
@@ -110,7 +121,7 @@
 
 ---
 
-## 13. 🟡 High Severity — fast-uri vulnerable to host confusion via an unclosed bracket in the URI authority
+## 14. 🟡 High Severity — fast-uri vulnerable to host confusion via an unclosed bracket in the URI authority
 
 **CVE:** `CVE-2026-84394` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://github.com/advisories/GHSA-58mr-gqgx-xq4g>
@@ -121,7 +132,7 @@
 
 ---
 
-## 14. 🟡 High Severity — ip-address: Address6.isLinkLocal() recognizes fe80::/64 rather than fe80::/10, allowing SSRF and trust-boundary bypass to on-link hosts
+## 15. 🟡 High Severity — ip-address: Address6.isLinkLocal() recognizes fe80::/64 rather than fe80::/10, allowing SSRF and trust-boundary bypass to on-link hosts
 
 **CVE:** `CVE-2026-101913` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://github.com/advisories/GHSA-rpw4-54j3-4h4q>
@@ -134,7 +145,7 @@ The…
 
 ---
 
-## 15. 🟡 High Severity — ip-address: no classifier recognizes the NAT64 local-use range 64:ff9b:1::/48, allowing SSRF and trust-boundary bypass
+## 16. 🟡 High Severity — ip-address: no classifier recognizes the NAT64 local-use range 64:ff9b:1::/48, allowing SSRF and trust-boundary bypass
 
 **CVE:** `CVE-2026-101910` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://github.com/advisories/GHSA-2vr4-cq9g-pvrc>
@@ -145,7 +156,7 @@ No classifier on `Address6` recognizes the NAT64 local-use range `64:ff9b:1::/48
 
 ---
 
-## 16. 🟡 High Severity — jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization
+## 17. 🟡 High Severity — jackson-databind: Incomplete fix for CVE-2026-54514: eager DNS resolution (SSRF) still present in InetAddress deserialization
 
 **CVE:** `CVE-2026-77310` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-28
 **Reference:** <https://github.com/advisories/GHSA-vvgp-rfg2-7rr6>
@@ -155,7 +166,7 @@ CVE-2026-54514 (GHSA-hgj6-7826-r7m5) fixed an eager-DNS-resolution / SSRF issue 
 
 ---
 
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
