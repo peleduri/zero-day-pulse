@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-30T11:29:37.472184+00:00",
-  "total": 25,
+  "generated": "2026-09-30T17:07:21.065190+00:00",
+  "total": 32,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,60 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html",
+      "title": "Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager",
+      "summary": "Attackers are exploiting a new critical zero-day flaw in Cisco Catalyst SD-WAN Manager, the system companies use to manage their Cisco SD-WAN networks, Cisco said in an\u00a0advisory\u00a0on September 30.\n\nThe flaw, CVE-2026-76504, could allow a remote attacker with no login access to use the Manager's API as the admin user. Fixed releases are available, and there is no workaround. It carries a",
+      "link": "https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html",
+      "published": "2026-09-30T15:24:54+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-76504"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504",
+      "title": "Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild (CVE-2026-76504)",
+      "summary": "Overview On September 30, 2026, Cisco published a security advisory for CVE-2026-76504 , a critical API authentication bypass vulnerability affecting Cisco Catalyst SD-WAN Manager. The vulnerability has a CVSSv3.1 score of 9.8 and results from improper handling of URL encoding ( CWE-177 ). An unauthenticated, remote attacker can send a crafted HTTP request that bypasses an authentication rule for a specific API endpoint, gaining access to the API with the privileges of the admin user. According to Cisco, CVE-2026-76504 is being actively exploited in the wild; Cisco PSIRT became aware of the activity in September 2026. Cisco Catalyst SD-WAN Manager systems with ports exposed to the internet are at risk of compromise. The vulnerability affects the product regardless of system configuration, and Cisco has not provided a workaround, however vendor supplied updates are available. Rapid7 strongly recommends that organizations upgrade affected systems to a fixed release on an emergency basis, outside of normal patch cycles, and investigate internet-facing systems for signs of exploitation. Cisco Catalyst SD-WAN Manager was also affected by two critical, unauthenticated peering authentication flaws earlier in 2026: CVE-2026-20127 and Rapid7-discovered CVE-2026-20182 . Both were distinct issues in the vdaemon service and similar parts of its networking stack. CVE-2026-76504 targets a separate API authentication path, but the recurrence of authentication bypasses in internet-facing Catalyst SD-WAN control components reinforces the need for emergency remediation. Mitigation guidance Cisco has released software updates that remediate CVE-2026-76504. Organizations running affected instances of Cisco Catalyst SD-WAN Manager should upgrade to an appropriate fixed release listed below without waiting for a regular patch cycle: Cisco Catalyst SD-WAN Software release First fixed release Earlier than 20.9 Migrate to a fixed release 20.9 20.9.10.1 20.12 20.12.8.2 20.15 20.15.6.1 20.18 ",
+      "link": "https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504",
+      "published": "2026-09-30T15:09:22+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-76504",
+        "CVE-2026-20127",
+        "CVE-2026-20182"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/government-finance-orgs-targeted-in-weeks-long-netscaler-zero-day-attacks/",
+      "title": "Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks",
+      "summary": "Several security firms have confirmed seeing exploitation of the NetScaler vulnerabilities CVE-2026-88771 and CVE-2026-88772. The post Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/government-finance-orgs-targeted-in-weeks-long-netscaler-zero-day-attacks/",
+      "published": "2026-09-30T12:48:20+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-88771",
+        "CVE-2026-88772"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -197,6 +251,96 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-91776",
+      "title": "jackson-databind retains every unknown raw type ID ",
+      "summary": "### Summary\n\nWith `@JsonTypeInfo(use = Id.NAME, defaultImpl = ...)`, every distinct unknown\nraw type ID selects the same fallback deserializer but is retained as a\nseparate key in `TypeDeserializerBase._deserializers`. An attacker who can\nrepeatedly supply new unknown type IDs can grow this process-lifetime cache\nwithout a configured bound.\n\n### Details\n\nThe affected path is `TypeDeserializerBase._findDeserializer()`. After an\nunknown name-based type ID resolves to the configured fallback/default\nimplementation, jackson-databind caches the result under the attacker-provided\nraw `typeId`. Although all such IDs select the same fallback deserializer, each\nnew string remains a distinct cache key.\n\nThe behavior is runtime-confirmed in jackson-databind 2.22.1 and 3.2.1.\nCurrent 2.22 and 3.2 source branches retained the unbounded `_deserializers`\nmap and per-raw-ID cache write when rechecked. The earlier affected floor has\nnot been established, patched versions are: 2.18.11, 2.21.7, 2.22.3, 3.1.7 and 3.2.3.\n\nThe vulnerable application must enable name-based polymorphism with a\n`defaultImpl` or equivalent fallback, accept attacker-influenced type IDs, and\nreuse a long-lived mapper/type deserializer across requests.\n\nSuggested correction: avoid caching each unknown raw ID when every such ID\nresolves to the same fallback, use a fallback sentinel, or use an explicitly\nbounded concurrency-safe cache. A regression should contrast many distinct\nunknown IDs with repetitions of one unknown ID across requests.\n\n### PoC\n\nConfigure a polymorphic base type with\n`@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = Fallback.class)` and\ndeserialize inputs containing unknown type names through the same mapper.\nInspect `TypeDeserializerBase._deserializers` after the run.\n\nOn affected 2.x and 3.x versions, 10,000 distinct unknown raw type IDs produce\n10,000 retained cache entries even though every input selects the same\nfallback deserializer. A matched control that repeats one unknown ID",
+      "link": "https://github.com/advisories/GHSA-wv8q-qhhj-9h54",
+      "published": "2026-09-30T15:36:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-91776"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-101904",
+      "title": "Axios: Header Injection via Inherited headers After Minimal Interceptor",
+      "summary": "## Summary\n\nAxios request interceptors may return a replacement config object. If an interceptor returns a plain object without an own `headers` property, `dispatchRequest()` later evaluates `config.headers` and can resolve an inherited `Object.prototype.headers` value. In a process where another vulnerability has polluted `Object.prototype.headers`, axios can send attacker-controlled headers.\n\nAxios does not create the prototype pollution source, and the interceptor itself is trusted caller code. The vulnerable behavior is the post-interceptor axios config read that reopens a prototype-pollution gadget after earlier null-prototype config hardening.\n\n## Impact\n\nAn attacker with a prior same-process prototype-pollution primitive can inject headers into affected axios requests when the application uses an interceptor that rebuilds config and omits headers. Depending on the target service, injected headers can affect cache behavior, conditional requests, metadata services, or application-specific authorization and routing logic.\n\nThe issue is conditional and should not be described as affecting every interceptor or every request.\n\n## Affected Functionality\n\nAffected:\n\n- Request interceptor chains where an interceptor returns a new ordinary object.\n- Replacement config objects that omit an own `headers` property.\n- `dispatchRequest()` header normalization through `AxiosHeaders.from(config.headers)`.\n\nNot affected:\n\n- Requests whose interceptor preserves an own `headers` property.\n- Interceptors that mutate and return the existing null-prototype config.\n- Processes without prototype pollution.\n\n## Technical Details\n\n`lib/core/dispatchRequest.js` contains:\n\n```js\nconfig.headers = AxiosHeaders.from(config.headers);\n```\n\nThe initial merged config is null-prototype, but an interceptor can replace it with a normal object. If that object has no own `headers`, the read can resolve `Object.prototype.headers`.\n\nLocal verification on axios `1.18.1` polluted `Object.prototype.heade",
+      "link": "https://github.com/advisories/GHSA-j8rh-479h-cp32",
+      "published": "2026-09-30T15:35:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-101904"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-101899",
+      "title": "Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges",
+      "summary": "## Summary\n\nAxios supports proxy environment variables and evaluates `NO_PROXY` exclusions in the Node.js adapter. CIDR-form `NO_PROXY` entries such as `127.0.0.0/8`, `10.0.0.0/8`, or `169.254.169.254/32` are not interpreted as IP ranges. As a result, a request to an IP address inside a configured CIDR exclusion can still be sent through the configured proxy.\n\nThis affects deployments that rely on CIDR notation to keep loopback, private, Kubernetes, CI, or cloud metadata traffic away from proxy infrastructure.\n\n## Impact\n\nIf the configured proxy is outside the intended trust boundary, requests that operators expected to bypass the proxy may be exposed to it. For plaintext HTTP targets, the proxy can see and modify URLs, headers, and bodies. For HTTPS targets, the proxy still observes connection metadata and may receive CONNECT requests that policy expected to avoid.\n\nThis is a proxy exclusion bypass, not arbitrary proxy injection by itself.\n\n## Affected Functionality\n\nAffected:\n\n- Node.js adapter proxy environment handling.\n- `HTTP_PROXY`, `HTTPS_PROXY`, `NO_PROXY`, or lowercase equivalents.\n- CIDR entries in `NO_PROXY`.\n\nNot affected:\n\n- Exact host or exact IP `NO_PROXY` entries where axios matching succeeds.\n- Requests configured with `proxy: false`.\n- Browser adapters.\n\n## Technical Details\n\n`lib/helpers/shouldBypassProxy.js` parses each `NO_PROXY` entry into a host and optional port, normalizes hostnames, and then compares exact hostnames, suffix entries, wildcard-prefix entries, and loopback equivalents. It does not parse CIDR notation.\n\nLocal verification on axios `1.18.1`:\n\n```js\nprocess.env.NO_PROXY = '127.0.0.0/8';\nshouldBypassProxy('http://127.0.0.1:1234/'); // false\n```\n\nThe expected result for CIDR-aware bypass policy is `true`.\n\n## Proof of Concept of Attack\n\nConstrained local demonstration:\n\n1. Set `HTTP_PROXY=http://127.0.0.1:<proxy-port>`.\n2. Set `NO_PROXY=127.0.0.0/8`.\n3. Request `http://127.0.0.1:<internal-port>/metadata`.\n4. Observe that axios sen",
+      "link": "https://github.com/advisories/GHSA-44g4-m2mj-wpvx",
+      "published": "2026-09-30T15:32:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-101899"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-101907",
+      "title": "Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF",
+      "summary": "## Summary\n\nAxios exposes `maxRedirects` to limit redirect following, and `maxRedirects: 0` is used by applications as a redirect-based SSRF guard. The Node HTTP adapter enforces this option. The fetch adapter does not read it and does not set a Fetch API `redirect` mode, so the runtime default of `redirect: 'follow'` applies.\n\nApplications are affected when they rely on `maxRedirects: 0` and use the fetch adapter, either explicitly or because the runtime selects it.\n\n## Impact\n\nAn attacker who controls the initial URL or a redirecting server can cause a fetch-adapter request to follow a redirect even though the caller configured `maxRedirects: 0`. If the redirect target is reachable only from the application environment, this can expose internal responses or trigger state-changing internal endpoints.\n\nThis should not be described as unconditional SSRF. The bypass requires a redirect source, such as an attacker-controlled server or open redirect, and an application that trusted `maxRedirects: 0` as the redirect guard.\n\n## Affected Functionality\n\nAffected:\n\n- `adapter: 'fetch'`.\n- Runtime environments where fetch is selected by adapter resolution.\n- Requests configured with `maxRedirects: 0` but without `fetchOptions.redirect: 'manual'` or equivalent runtime-specific redirect control.\n\nNot affected:\n\n- Node HTTP adapter, which enforces `maxRedirects: 0`.\n- Requests that do not follow redirects in the underlying fetch implementation because the caller explicitly configured fetch redirect behavior.\n\n## Technical Details\n\n`lib/adapters/fetch.js` destructures many fields from `resolveConfig(config)`, but not `maxRedirects`. It then builds fetch options without a `redirect` key:\n\n```js\nconst resolvedOptions = {\n  ...fetchOptions,\n  signal: composedSignal,\n  method: method.toUpperCase(),\n  headers: toByteStringHeaderObject(headers.normalize()),\n  body: data,\n  duplex: 'half',\n  credentials: isCredentialsSupported ? withCredentials : undefined,\n};\n```\n\nBecause `redirect` is",
+      "link": "https://github.com/advisories/GHSA-r4gj-5m52-g5wh",
+      "published": "2026-09-30T15:31:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-101907"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-101898",
+      "title": "Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls",
+      "summary": "## Summary\n\nAxios for Node.js does not apply configured DNS lookup or proxy controls when a request uses `httpVersion: 2`. The HTTP/1 adapter path wraps and forwards `config.lookup`, builds normal request options, and applies proxy routing through `setProxy()`. The HTTP/2 path builds a session with `http2.connect()` using only `options.http2Options`, which drops the top-level `lookup`, `agent`, and proxy state.\n\nApplications are affected when they allow a user to influence request destinations, enable axios HTTP/2, and rely on axios `lookup` or proxy routing to prevent SSRF or enforce outbound network policy.\n\n## Impact\n\nIn affected server-side deployments, an attacker can cause axios to connect directly to destinations that the configured resolver or proxy would have rejected. Depending on reachable services, this can expose cloud metadata, internal service responses, or allow state-changing requests to internal systems.\n\nThis is not an unconditional SSRF in every axios deployment. It requires `httpVersion: 2` and an application-level trust boundary where user-influenced URLs are constrained by `lookup` or proxy policy.\n\n## Affected Functionality\n\nAffected:\n\n- Node.js HTTP adapter with `httpVersion: 2`.\n- `config.lookup` supplied as a DNS policy.\n- Explicit `config.proxy` and environment-derived proxy settings for HTTPS HTTP/2 requests.\n\nNot affected:\n\n- Browser adapters.\n- Node HTTP/1 requests, which pass `lookup` to the transport and apply proxy handling.\n- Applications that validate destination hosts independently before calling axios.\n\n## Technical Details\n\nIn `lib/adapters/http.js`, the adapter reads `lookup`, wraps it, stores it on the request `options`, and applies `setProxy()` before selecting a transport. For HTTP/2, `http2Transport.request()` builds an authority from `options.protocol`, `options.hostname`, and `options.port`, then calls:\n\n```js\nconst { http2Options, headers } = options;\nconst session = http2Sessions.getSession(authority, http2Options);\n``",
+      "link": "https://github.com/advisories/GHSA-3pq3-5fj3-cg6v",
+      "published": "2026-09-30T15:02:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-101898"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-101894",
@@ -392,24 +536,6 @@
       ],
       "cve_ids": [
         "CVE-2026-65954"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-76844",
-      "title": "webpack-dev-middleware vulnerable to Path Traversal via non-slash-terminated publicPath",
-      "summary": "> [!IMPORTANT]\n> CVE-2026-76844 was assigned and published for this issue by VulnCheck on 2026-08-24 without prior coordination with the webpack maintainers or the OpenJS Foundation, which holds the CVE Numbering Authority scope for webpack projects. Neither the maintainers nor the OpenJS CNA were notified before publication, and no fix was available at that time. This advisory is the coordinated record produced by the webpack maintainers and the OpenJS Foundation CNA.\n\n### Impact\n\n`webpack-dev-middleware` resolves a request to a local file in `getFilenameFromUrl`. When the configured `publicPath` has no trailing slash (for example `/assets`), a request that shares that prefix without being under it (for example `/assets../secret`) still passes the containment check, and the `..` guard does not catch it because it runs on the path before the `publicPath` prefix is stripped. The stripped remainder then escapes the configured output directory once joined, so an unauthenticated request can read files outside the output root. Applications serving `webpack-dev-middleware` (directly or via `webpack-dev-server`) with a `publicPath` that does not end in a slash are affected. A development server reachable on the network can be attacked with a single request and no victim interaction.\n\n### Patches\n\nPatched in `webpack-dev-middleware` 8.3.0. There is no backport to the 5.x, 6.x, or 7.x lines; users on those lines should upgrade to 8.3.0 or later.\n\n### Workarounds\n\nConfigure `publicPath` with a trailing slash (for example `/assets/` instead of `/assets`), or upgrade to a patched version.\n\n### References\n\n- [CVE-2024-29180](https://www.cve.org/CVERecord?id=CVE-2024-29180) ([GHSA-wr3j-pwj9-hqq6](https://github.com/webpack/webpack-dev-middleware/security/advisories/GHSA-wr3j-pwj9-hqq6)), the earlier path traversal in the same component that this issue bypasses.",
-      "link": "https://github.com/advisories/GHSA-g84c-rxfj-3j2c",
-      "published": "2026-09-29T16:59:18Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-76844"
       ],
       "is_zero_day": false,
       "is_high_severity": true
