@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-30T02:43:24.424257+00:00",
+  "generated": "2026-09-30T11:29:37.472184+00:00",
   "total": 25,
   "kev": 0,
   "zero_day": 12,
@@ -37,6 +37,38 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.securityweek.com/russian-apt-star-blizzard-uses-redflick-infection-chain-in-recent-attacks/",
+      "title": "Russian APT Star Blizzard Uses \u2018RedFlick\u2019 Infection Chain in Recent Attacks",
+      "summary": "The state-sponsored group has launched larger-scale phishing campaigns to deploy the CosmicPulse backdoor. The post Russian APT Star Blizzard Uses \u2018RedFlick\u2019 Infection Chain in Recent Attacks appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/russian-apt-star-blizzard-uses-redflick-infection-chain-in-recent-attacks/",
+      "published": "2026-09-30T10:59:30+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/citrix-netscaler-cve-2026-88772-exploit.html",
+      "title": "Citrix NetScaler CVE-2026-88772 Exploit Details Show Pre-Auth Path to Shellcode Execution",
+      "summary": "Cybersecurity researchers have disclosed technical details of a recently patched critical security flaw in Citrix NetScaler ADC and Gateway that has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-88772 (CVSS score: 9.5), has been described as a memory overflow bug in the Datagram Transport Layer Security (DTLS) protocol handling that's rooted in the NetScaler",
+      "link": "https://thehackernews.com/2026/09/citrix-netscaler-cve-2026-88772-exploit.html",
+      "published": "2026-09-30T05:30:30+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-88772"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-102272",
       "title": "PyJWT BOM Bypass",
       "summary": "## Affected Package\n\n- **Package**: PyJWT (`pyjwt` on PyPI)\n- **Repository**: https://www.google.com/url?q=https://github.com/jpadilla/pyjwt&source=gmail&ust=1781794518474000&sa=E\n- **Affected version**: 2.13.0\n- **Vulnerability class**: Algorithm confusion / patch bypass\n\n---\n\n## Root Cause\n\nPyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algorithms.py`, approximately line 344) to prevent RSA public key material from being used as an HMAC secret \u2014 the root cause of CVE-2026-48526.\n\nThe guard uses `bytes.lstrip()` before calling `startswith(b\"{\")`:\n\n```python\nstripped = key_bytes.lstrip() # strips ASCII whitespace only\nif stripped.startswith(b\"{\"): # JWK detection\n ...\n raise InvalidKeyError(\"The specified key is an asymmetric key...\")\n```\n\n`bytes.lstrip()` with no argument removes only bytes in the ASCII whitespace set (`\\x20 \\t \\n \\r \\x0b \\x0c`). A UTF-8 BOM prefix (`\\xef\\xbb\\xbf`) is not stripped, so `stripped.startswith(b\"{\")` returns `False` for any BOM-prefixed JWK JSON. The JWK detection block is never entered, and the RSA public key bytes are silently accepted as the HMAC-SHA256 secret.\n\n---\n\n## PoC Sketch (pseudocode \u2014 not a weaponized payload)\n\n```python\n# 1. Attacker obtains RSA public key JWK (e.g., from /jwks.json endpoint)\n# and prepends a UTF-8 BOM byte sequence before the JSON opening brace.\n# 2. Attacker signs a JWT using HS256, with the BOM-prefixed JWK as the secret.\n# 3. Attacker submits the forged token to a verifier that:\n# - accepts algorithms=[\"HS256\", \"RS256\"]\n# - holds the same RSA public key as raw bytes (BOM-prefixed key file)\n# 4. PyJWT 2.13.0 accepts the token because the BOM causes the JWK\n# detection check to be skipped \u2014 the RSA JWK bytes become a valid HMAC key.\n# Result: arbitrary claims (role, sub, etc.) accepted by the verifier.\n```\n\n---\n\n## Impact\n\nAn unauthenticated network attacker who knows the target application's RSA public key \u2014 which is public by design and obtainable from a JWKS endpoint or ce",
@@ -51,21 +83,6 @@
       "cve_ids": [
         "CVE-2026-102272"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/official-mcp-python-sdk-flaw-can-let.html",
-      "title": "Official MCP Python SDK Flaw Can Let Malicious Servers Steal OAuth Credentials",
-      "summary": "A malicious MCP server could trick an application built on the official\u00a0MCP Python SDK\u00a0into handing over the OAuth credentials it uses to log in to a real service, the SDK's maintainers said in a security advisory.\n\nAffected versions sent the client secret, the authorization code, and the PKCE proof key to a token endpoint the attacker controlled. The fix is in versions 1.30.0 and",
-      "link": "https://thehackernews.com/2026/09/official-mcp-python-sdk-flaw-can-let.html",
-      "published": "2026-09-29T06:08:25+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -167,28 +184,11 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/",
-      "title": "Hackers exploit Citrix NetScaler zero-day to deploy web shells",
-      "summary": "Cybersecurity firms say attackers exploited the Citrix NetScaler CVE-2026-88772 zero-day to deploy custom web shells and tunneling malware, gain root access, steal credentials, and spread into internal networks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/",
-      "published": "2026-09-29T18:37:12+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-88772"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/",
-      "title": "Apple patches CoreGraphics zero-day flaw exploited in attacks",
-      "summary": "Apple released security updates to fix a zero-day vulnerability exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/",
-      "published": "2026-09-29T07:33:12+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/",
+      "title": "Bitget hacked via zero-day in third-party security products",
+      "summary": "Cryptocurrency exchange Bitget revealed today that attackers who stole $387.5 million last week breached its systems after exploiting a zero-day flaw in third-party security products. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/",
+      "published": "2026-09-30T11:11:46+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
