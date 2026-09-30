@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">31</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-30 17:07 UTC</div>
+            <div class="generated">Updated 2026-09-30 21:36 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-76504" target="_blank" rel="noopener">CVE-2026-76504 — Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-76504</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-30</span>
+  </div>
+  <p class='summary'>Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -359,6 +375,22 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/" target="_blank" rel="noopener">DIVD says Zammad zero-days enabled AI-driven network breach</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-30</span>
+  </div>
+  <p class='summary'>The Dutch Institute for Vulnerability Disclosure (DIVD) says that the breach of its network was possible by exploiting a chain of two zero-day vulnerabilities in the open-source Zammad ticketing system. [...]</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/" target="_blank" rel="noopener">Bitget hacked via zero-day in third-party security products</a></h2>
   </div>
   <div class="card-meta">
@@ -371,6 +403,42 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
   <p class='summary'>Cryptocurrency exchange Bitget revealed today that attackers who stole $387.5 million last week breached its systems after exploiting a zero-day flaw in third-party security products. [...]</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3cv6-jpf6-8222" target="_blank" rel="noopener">LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-84377</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>### Impact
+
+Any authenticated LiteLLM proxy user could redirect an outbound provider call to a destination they control and cause the proxy to send its own configured provider credentials to that destination. The proxy&#x27;s request-body validation was a denylist that did not cover every sensitive parameter and did not inspect parameters nested inside other request fields, so a caller could supply a r…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/attackers-exploit-zimbra-flaw-to-deploy.html" target="_blank" rel="noopener">Attackers Exploit Zimbra Flaw to Deploy Web Shells and Harvest Authentication Secrets</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-73570</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>Threat actors have weaponized a now-patched security flaw in Zimbra Collaboration Suite (ZCS) to deploy web shells and access mailbox data, according to findings from the Microsoft Security Research team.
+
+The attack exploits CVE-2026-73570 (CVSS score: 8.9), an unauthenticated operating system command injection flaw that can lead to remote code execution when Simple Network Management Protocol</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -602,106 +670,6 @@ Denial of Service in `adm-zip`&#x27;s async decompression API allows an unauthen
 **Affected package**: adm-zip
 **Affected versions**: at least 0.6.0 (current latest); likely all versions containing the current `inflateAsync` implementation in `methods/inflater.js`
 **Patched versio…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j5f4-cc29-5x44" target="_blank" rel="noopener">adm-zip extraction preserves SUID/SGID bits from untrusted ZIPs -&gt; local privilege escalation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102282</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>## Summary
-
-adm-zip applies the Unix permission bits stored in a zip entry directly to the extracted file via `fs.chmodSync()` when `keepOriginalPermission=true` is passed to `extractAllTo()`/`extractEntryTo()` — and it never filters the setuid/setgid/sticky bits out of those bits. A zip crafted by an attacker can therefore produce an extracted binary with mode `04755`. When extraction runs as roo…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w6j9-cwv2-h6wq" target="_blank" rel="noopener">PyJWT: Malformed RSA JWK aborts parsing of an entire JWK Set</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102274</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>## Summary
-
-A malformed RSA JWK inside a JWK Set aborts parsing of the entire set instead of being skipped, because `RSAAlgorithm.from_jwk` can raise a plain `ValueError` that isn&#x27;t caught by `PyJWKSet`&#x27;s per-key error-skipping logic.
-
-## Affected component / version
-
-- Package: `PyJWT` (PyPI, ecosystem `pip`)
-- Files: `jwt/api_jwk.py` (`PyJWK.__init__`, `PyJWKSet.__init__`), `jwt/algorithms.py` (…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vp8m-p9jh-q5pm" target="_blank" rel="noopener">undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-85152</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>## Impact
-
-When `interceptors.cache()` or `interceptors.deduplicate()` is used with a dispatcher that does not carry a single authoritative origin, or when a request supplies its own `origin`, undici builds the cache and deduplication keys without the actual destination origin. If a cache store or interceptor instance is shared across more than one origin, otherwise-identical requests to different…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cxf4-7mrp-vvpr" target="_blank" rel="noopener">Flysystem: WhitespacePathNormalizer&#x27;s control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102601</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>## Related public issue (context, not a duplicate)
-
-Closed issue #1429 (&quot;Handle non-UTF-8 paths&quot;, 2024-03-24) raised exactly this general concern and
-even suggested detection via `preg_match(&#x27;//u&#x27;, $path) !== 1` -- note the reporter&#x27;s suggested check
-explicitly compares `!== 1`, which *would* correctly treat PCRE&#x27;s `false` return as &quot;reject.&quot; The
-maintainer&#x27;s reply pointed to the `PathNormalizer` …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r6hr-vr92-vv28" target="_blank" rel="noopener">PHPCSUtils: Remote code execution via eval() in AbstractArrayDeclarationSniff::getActualArrayKey()</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-65954</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>### Impact
-
-PHPCSUtils versions 1.0.0-alpha1 through 1.2.2 contain an arbitrary code execution vulnerability in `PHPCSUtils\AbstractSniffs\AbstractArrayDeclarationSniff::getActualArrayKey()`. The vulnerable method is reached by any sniff that extends `AbstractArrayDeclarationSniff` and calls `getActualArrayKey()`.
-
-Running PHPCS over untrusted PHP code through such a sniff, for example, in a CI pi…</p>
 
         </article>
 

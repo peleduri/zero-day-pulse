@@ -1,10 +1,29 @@
 {
-  "generated": "2026-09-30T17:07:21.065190+00:00",
-  "total": 32,
-  "kev": 0,
-  "zero_day": 15,
+  "generated": "2026-09-30T21:36:44.230237+00:00",
+  "total": 31,
+  "kev": 1,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-76504",
+      "title": "CVE-2026-76504 \u2014 Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability",
+      "summary": "Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-03)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76504",
+      "published": "2026-09-30",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-76504"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -238,6 +257,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
+      "title": "DIVD says Zammad zero-days enabled AI-driven network breach",
+      "summary": "The Dutch Institute for Vulnerability Disclosure (DIVD) says that the breach of its network was possible by exploiting a chain of two zero-day vulnerabilities in the open-source Zammad ticketing system. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
+      "published": "2026-09-30T19:49:15+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/",
       "title": "Bitget hacked via zero-day in third-party security products",
       "summary": "Cryptocurrency exchange Bitget revealed today that attackers who stole $387.5 million last week breached its systems after exploiting a zero-day flaw in third-party security products. [...]",
@@ -251,6 +285,41 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-84377",
+      "title": "LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters",
+      "summary": "### Impact\n\nAny authenticated LiteLLM proxy user could redirect an outbound provider call to a destination they control and cause the proxy to send its own configured provider credentials to that destination. The proxy's request-body validation was a denylist that did not cover every sensitive parameter and did not inspect parameters nested inside other request fields, so a caller could supply a routing or credential value that the proxy applied without clearing the operator's stored key. Any authenticated user could therefore exfiltrate the operator's upstream provider credentials and other configured secrets, and perform Server-Side Request Forgery against internal services reachable from the proxy.\n\n### Patches\n\nFixed in 1.96.2, 1.95.1, 1.94.3, 1.93.2, 1.92.2, 1.91.5, 1.90.7, 1.89.7, and 1.88.6.\n\n### Workarounds\n\nSet `general_settings.allow_client_side_credentials` to `false` so callers cannot override connection parameters, restrict proxy keys to trusted callers, and block the affected parameters (`api_base`, `base_url`, `model_list`, `fallbacks`, provider credential fields) at a reverse proxy or API gateway.",
+      "link": "https://github.com/advisories/GHSA-3cv6-jpf6-8222",
+      "published": "2026-09-30T21:11:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84377"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/09/attackers-exploit-zimbra-flaw-to-deploy.html",
+      "title": "Attackers Exploit Zimbra Flaw to Deploy Web Shells and Harvest Authentication Secrets",
+      "summary": "Threat actors have weaponized a now-patched security flaw in Zimbra Collaboration Suite (ZCS) to deploy web shells and access mailbox data, according to findings from the Microsoft Security Research team.\n\nThe attack exploits CVE-2026-73570 (CVSS score: 8.9), an unauthenticated operating system command injection flaw that can lead to remote code execution when Simple Network Management Protocol",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-zimbra-flaw-to-deploy.html",
+      "published": "2026-09-30T16:46:29+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-73570"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-91776",
@@ -446,96 +515,6 @@
       ],
       "cve_ids": [
         "CVE-2026-39244"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102282",
-      "title": "adm-zip extraction preserves SUID/SGID bits from untrusted ZIPs -> local privilege escalation",
-      "summary": "## Summary\n\nadm-zip applies the Unix permission bits stored in a zip entry directly to the extracted file via `fs.chmodSync()` when `keepOriginalPermission=true` is passed to `extractAllTo()`/`extractEntryTo()` \u2014 and it never filters the setuid/setgid/sticky bits out of those bits. A zip crafted by an attacker can therefore produce an extracted binary with mode `04755`. When extraction runs as root (the default posture in Docker builds, CI runners, and privileged install steps \u2014 the exact environments where this flag is used), the resulting root-owned setuid file is executed later by a lesser-privileged user, turning the attacker's code into a root execution.\n\n## Details\n\nThe mode a zip entry wants is read back from the external file attributes in the header, and the mask used keeps every special bit:\n\n```js\n// headers/entryHeader.js:187\nget fileAttr() {\n    return (_attr || 0) >> 16 & 0xfff;\n}\n```\n\n`0xfff` is `0o7777` \u2014 it preserves setuid (`0o4000`), setgid (`0o2000`) and the sticky bit (`0o1000`) along with the rwx bits. Shifting by 16 is the standard Unix convention for where zip stores the mode; the mask is the problem.\n\nWhen the flag is on, that value goes straight to the write:\n\n```js\n// adm-zip.js:726-727 (extractEntryTo, and identically in extractAllTo)\nconst fileAttr = keepOriginalPermission ? entry.header.fileAttr : undefined;\nfiletools.writeFileTo(target, content, overwrite, fileAttr);\n```\n\n```js\n// util/utils.js:94\nself.fs.chmodSync(path, attr || 0o666);\n```\n\nNo `& 0o777`, no stripping of `0o7000`. Attacker-controlled bytes in the zip decide the final mode of a file the library creates on disk. Directory entries are affected too (`adm-zip.js:855`), so a setgid bit on a directory entry also carries over and gives new files inside it group inheritance.\n\n## PoC\n\nTested against adm-zip@0.6.0 (latest as of 2026-08-01), Node 22, Linux.\n\n1. Craft a zip with a setuid binary using standard tooling (this is the\n   realistic attacker path \u2014 no adm-zip APIs involve",
-      "link": "https://github.com/advisories/GHSA-j5f4-cc29-5x44",
-      "published": "2026-09-29T18:24:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102282"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102274",
-      "title": "PyJWT: Malformed RSA JWK aborts parsing of an entire JWK Set",
-      "summary": "## Summary\n\nA malformed RSA JWK inside a JWK Set aborts parsing of the entire set instead of being skipped, because `RSAAlgorithm.from_jwk` can raise a plain `ValueError` that isn't caught by `PyJWKSet`'s per-key error-skipping logic.\n\n## Affected component / version\n\n- Package: `PyJWT` (PyPI, ecosystem `pip`)\n- Files: `jwt/api_jwk.py` (`PyJWK.__init__`, `PyJWKSet.__init__`), `jwt/algorithms.py` (`RSAAlgorithm.from_jwk`)\n- Confirmed present in the `master` branch as of 2026-09-05 (commit `7144e4534c34810f4525dc4578a32addd8212cff`, tag `2.13.0`). Directly verified identical in tags `2.9.0`, `2.10.0`, `2.11.0`, `2.12.0`, `2.12.1`, `2.13.0` -- the vulnerable call and the `except PyJWTError` guard are unchanged across all six releases. Not verified against any release prior to `2.9.0`.\n\n## Details\n\n`PyJWKSet.__init__` (`jwt/api_jwk.py:145-152`) iterates each key in a JWK Set:\n\n```python\nfor key in keys:\n    try:\n        self.keys.append(PyJWK(key))\n    except PyJWTError as error:\n        if isinstance(error, MissingCryptographyError):\n            raise error\n        # skip unusable keys\n        continue\n```\n\n`PyJWK.__init__` (`api_jwk.py:82`) calls `self.Algorithm.from_jwk(self._jwk_data)` with no try/except of its own. For an RSA JWK, this dispatches to `RSAAlgorithm.from_jwk` (`jwt/algorithms.py:539-586`). When the JWK supplies `d`, `e`, `n` without the CRT parameters (`p`, `q`, `dp`, `dq`, `qi`), `from_jwk` calls `cryptography`'s `rsa_recover_prime_factors(public_numbers.n, d, public_numbers.e)` (`algorithms.py:572-574`) to derive the key. If `d` is not the correct private exponent for that `n`/`e` pair, `rsa_recover_prime_factors` raises a plain `ValueError`.\n\n`ValueError` is a built-in Python exception and is not a subclass of `jwt.exceptions.PyJWTError` (`PyJWTError(Exception)` is the root of PyJWT's own exception hierarchy). It is therefore not caught by `PyJWKSet.__init__`'s `except PyJWTError`, and propagates out of the constructor, aborting the `for key in key",
-      "link": "https://github.com/advisories/GHSA-w6j9-cwv2-h6wq",
-      "published": "2026-09-29T18:23:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102274"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-85152",
-      "title": "undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors",
-      "summary": "## Impact\n\nWhen `interceptors.cache()` or `interceptors.deduplicate()` is used with a dispatcher that does not carry a single authoritative origin, or when a request supplies its own `origin`, undici builds the cache and deduplication keys without the actual destination origin. If a cache store or interceptor instance is shared across more than one origin, otherwise-identical requests to different origins are keyed together.\n\nAn attacker who controls the response from one origin can then have that response returned for a request to a different, trusted origin when the method, path, and relevant headers match. This allows cross-origin information disclosure and persistent cache poisoning, including chains such as JWKS cache poisoning where a token signed with an attacker-held key is accepted as belonging to a trusted issuer.\n\nApplications that share `interceptors.cache()` or `interceptors.deduplicate()` state across origins are affected. An `Agent` is not affected, because its dispatch options include the request origin.\n\nThis was introduced in undici 8.10.0 and affects 8.10.0 and 8.10.1.\n\n## Patches\n\nUpgrade to undici v8.10.2.\n\n## Workarounds\n\nUse a separate cache store and a separate interceptor instance for each origin, and do not share them across origins.",
-      "link": "https://github.com/advisories/GHSA-vp8m-p9jh-q5pm",
-      "published": "2026-09-29T18:15:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-85152"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102601",
-      "title": "Flysystem: WhitespacePathNormalizer's control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter",
-      "summary": "## Related public issue (context, not a duplicate)\n\nClosed issue #1429 (\"Handle non-UTF-8 paths\", 2024-03-24) raised exactly this general concern and\neven suggested detection via `preg_match('//u', $path) !== 1` -- note the reporter's suggested check\nexplicitly compares `!== 1`, which *would* correctly treat PCRE's `false` return as \"reject.\" The\nmaintainer's reply pointed to the `PathNormalizer` interface as the place to implement this. The\ncontrol-character check that ended up shipping in `WhitespacePathNormalizer`\n(`if (preg_match('#\\p{C}+#u', $unixPath))`) addresses the general concern but does **not** use the\n`!== 1`-style comparison the original issue suggested -- it uses a bare truthy check, which is exactly\nthe gap this report demonstrates. So this is not a duplicate of #1429; it's a concrete bypass\nsurviving in the fix that issue's concern led to.\n\n## Vulnerability Details\n\n**File**: `src/WhitespacePathNormalizer.php`, lines 22-28 (`normalizePath()`) -- the **default**\n`PathNormalizer` used by `Filesystem` for every adapter (Local, FTP, SFTP, S3, AsyncAwsS3, Azure, GCS,\nZipArchive, GridFS, InMemory) unless the application supplies a custom one.\n\n### Root Cause\n\n```php\npublic function normalizePath(string $path): string\n{\n    $unixPath = str_replace('\\\\', '/', $path);\n\n    if (preg_match('#\\p{C}+#u', $unixPath)) {\n        throw CorruptedPathDetected::forPath($path);\n    }\n    ...\n```\n\n`preg_match()` returns `false` (a PHP engine error) rather than `0` when the subject string is not\nvalid UTF-8 and the pattern uses the `/u` modifier -- PCRE can't even attempt the match. `false` and\n`0` are both falsy in PHP, and `if (preg_match(...))` does not distinguish them. So a path containing\n**any single invalid UTF-8 byte anywhere in the string** makes `preg_match()` fail with a \"Malformed\nUTF-8 characters\" engine error, the `if` evaluates false, and `CorruptedPathDetected` is silently **not**\nthrown -- even when the same string also contains literal control character",
-      "link": "https://github.com/advisories/GHSA-cxf4-7mrp-vvpr",
-      "published": "2026-09-29T18:10:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102601"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-65954",
-      "title": "PHPCSUtils: Remote code execution via eval() in AbstractArrayDeclarationSniff::getActualArrayKey()",
-      "summary": "### Impact\n\nPHPCSUtils versions 1.0.0-alpha1 through 1.2.2 contain an arbitrary code execution vulnerability in `PHPCSUtils\\AbstractSniffs\\AbstractArrayDeclarationSniff::getActualArrayKey()`. The vulnerable method is reached by any sniff that extends `AbstractArrayDeclarationSniff` and calls `getActualArrayKey()`.\n\nRunning PHPCS over untrusted PHP code through such a sniff, for example, in a CI pipeline that lints pull requests, or on a developer machine reviewing third-party code, could lead to arbitrary command execution on the scanning host.\n\nThe vulnerability happens when the method determines the value of an array key using `eval()`. A maliciously crafted array key such as `'system'('id')` would be executed when the code was scanned.\n\n### Known attack vectors\n\nKnown code paths that reach the vulnerable method include the following PHPCSExtra sniffs:\n\n- `Universal.Arrays.DuplicateArrayKey`\n- `Universal.Arrays.MixedArrayKeyTypes`\n\nOther packages that call `AbstractArrayDeclarationSniff::getActualArrayKey()` may also be vulnerable.\n\n### Patches\n\nThis issue has been fixed in PHPCSUtils 1.2.3. We recommend all users upgrade to 1.2.3 or later.\n\n### Workaround\n\nUsers who cannot upgrade immediately can disable the sniffs that reach the vulnerable method by adding `<exclude>` tags to their custom ruleset (replace the placeholder standard and sniff names with the ones used in your setup):\n\n```xml\n<rule ref=\"Standard\">\n\t<exclude name=\"Standard.Category.SniffName\"/>\n</rule>\n```\n\nFor example, to disable the two PHPCSExtra sniffs listed under \"Known attack vectors\":\n\n```xml\n<rule ref=\"Universal\">\n\t<exclude name=\"Universal.Arrays.DuplicateArrayKey\"/>\n\t<exclude name=\"Universal.Arrays.MixedArrayKeyTypes\"/>\n</rule>\n```\n\nTo verify that the sniffs have been disabled, run PHPCS with the `-e` flag, which lists all the sniffs a standard will run. The excluded sniffs should no longer appear in the output:\n\n```\nphpcs -e --standard=/path/to/ruleset.xml\n```\n\n### Credits\n\nMany thanks to [",
-      "link": "https://github.com/advisories/GHSA-r6hr-vr92-vv28",
-      "published": "2026-09-29T17:57:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-65954"
       ],
       "is_zero_day": false,
       "is_high_severity": true

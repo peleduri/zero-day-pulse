@@ -1,10 +1,19 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-09-30 17:07 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-09-30 21:36 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-76504 — Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability
+
+**CVE:** `CVE-2026-76504` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-09-30
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-76504>
+
+> Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’…
+
+---
+
+## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +22,14 @@
 
 ---
 
-## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 3. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager
+## 4. 🟠 Zero-Day — Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager
 
 **CVE:** `CVE-2026-76504` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html>
@@ -31,7 +40,7 @@ The flaw, CVE-2026-76504, could allow a remote attacker with no login access to 
 
 ---
 
-## 4. 🟠 Zero-Day — Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild (CVE-2026-76504)
+## 5. 🟠 Zero-Day — Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild (CVE-2026-76504)
 
 **CVE:** `CVE-2026-76504` | `CVE-2026-20127` | `CVE-2026-20182` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504>
@@ -40,7 +49,7 @@ The flaw, CVE-2026-76504, could allow a remote attacker with no login access to 
 
 ---
 
-## 5. 🟠 Zero-Day — Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks
+## 6. 🟠 Zero-Day — Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks
 
 **CVE:** `CVE-2026-88771` | `CVE-2026-88772` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://www.securityweek.com/government-finance-orgs-targeted-in-weeks-long-netscaler-zero-day-attacks/>
@@ -49,7 +58,7 @@ The flaw, CVE-2026-76504, could allow a remote attacker with no login access to 
 
 ---
 
-## 6. 🟠 Zero-Day — Russian APT Star Blizzard Uses ‘RedFlick’ Infection Chain in Recent Attacks
+## 7. 🟠 Zero-Day — Russian APT Star Blizzard Uses ‘RedFlick’ Infection Chain in Recent Attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://www.securityweek.com/russian-apt-star-blizzard-uses-redflick-infection-chain-in-recent-attacks/>
@@ -58,7 +67,7 @@ The flaw, CVE-2026-76504, could allow a remote attacker with no login access to 
 
 ---
 
-## 7. 🟠 Zero-Day — Citrix NetScaler CVE-2026-88772 Exploit Details Show Pre-Auth Path to Shellcode Execution
+## 8. 🟠 Zero-Day — Citrix NetScaler CVE-2026-88772 Exploit Details Show Pre-Auth Path to Shellcode Execution
 
 **CVE:** `CVE-2026-88772` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://thehackernews.com/2026/09/citrix-netscaler-cve-2026-88772-exploit.html>
@@ -69,7 +78,7 @@ The vulnerability, tracked as CVE-2026-88772 (CVSS score: 9.5), has been describ
 
 ---
 
-## 8. 🟠 Zero-Day — PyJWT BOM Bypass
+## 9. 🟠 Zero-Day — PyJWT BOM Bypass
 
 **CVE:** `CVE-2026-102272` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-r6x4-923q-g947>
@@ -89,7 +98,7 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -98,7 +107,7 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -107,7 +116,7 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -116,7 +125,7 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -125,7 +134,7 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -134,7 +143,7 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 15. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -143,7 +152,16 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 15. 🟠 Zero-Day — Bitget hacked via zero-day in third-party security products
+## 16. 🟠 Zero-Day — DIVD says Zammad zero-days enabled AI-driven network breach
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-30
+**Reference:** <https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/>
+
+> The Dutch Institute for Vulnerability Disclosure (DIVD) says that the breach of its network was possible by exploiting a chain of two zero-day vulnerabilities in the open-source Zammad ticketing system. [...]
+
+---
+
+## 17. 🟠 Zero-Day — Bitget hacked via zero-day in third-party security products
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/>
@@ -152,7 +170,29 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 
 ---
 
-## 16. 🟡 High Severity — jackson-databind retains every unknown raw type ID 
+## 18. 🟡 High Severity — LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters
+
+**CVE:** `CVE-2026-84377` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
+**Reference:** <https://github.com/advisories/GHSA-3cv6-jpf6-8222>
+
+> ### Impact
+
+Any authenticated LiteLLM proxy user could redirect an outbound provider call to a destination they control and cause the proxy to send its own configured provider credentials to that destination. The proxy&#x27;s request-body validation was a denylist that did not cover every sensitive parameter and did not inspect parameters nested inside other request fields, so a caller could suppl…
+
+---
+
+## 19. 🟡 High Severity — Attackers Exploit Zimbra Flaw to Deploy Web Shells and Harvest Authentication Secrets
+
+**CVE:** `CVE-2026-73570` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-30
+**Reference:** <https://thehackernews.com/2026/09/attackers-exploit-zimbra-flaw-to-deploy.html>
+
+> Threat actors have weaponized a now-patched security flaw in Zimbra Collaboration Suite (ZCS) to deploy web shells and access mailbox data, according to findings from the Microsoft Security Research team.
+
+The attack exploits CVE-2026-73570 (CVSS score: 8.9), an unauthenticated operating system command injection flaw that can lead to remote code execution when Simple Network Management Protocol
+
+---
+
+## 20. 🟡 High Severity — jackson-databind retains every unknown raw type ID 
 
 **CVE:** `CVE-2026-91776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-wv8q-qhhj-9h54>
@@ -171,7 +211,7 @@ The affected path is `TypeDeserializerBase.…
 
 ---
 
-## 17. 🟡 High Severity — Axios: Header Injection via Inherited headers After Minimal Interceptor
+## 21. 🟡 High Severity — Axios: Header Injection via Inherited headers After Minimal Interceptor
 
 **CVE:** `CVE-2026-101904` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-j8rh-479h-cp32>
@@ -184,7 +224,7 @@ Ax…
 
 ---
 
-## 18. 🟡 High Severity — Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges
+## 22. 🟡 High Severity — Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges
 
 **CVE:** `CVE-2026-101899` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-44g4-m2mj-wpvx>
@@ -197,7 +237,7 @@ This affects deployments that rely on…
 
 ---
 
-## 19. 🟡 High Severity — Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF
+## 23. 🟡 High Severity — Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF
 
 **CVE:** `CVE-2026-101907` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-r4gj-5m52-g5wh>
@@ -210,7 +250,7 @@ Applications are affected when they rely on `maxRedirects: 0…
 
 ---
 
-## 20. 🟡 High Severity — Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls
+## 24. 🟡 High Severity — Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls
 
 **CVE:** `CVE-2026-101898` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-3pq3-5fj3-cg6v>
@@ -221,7 +261,7 @@ Axios for Node.js does not apply configured DNS lookup or proxy controls when a 
 
 ---
 
-## 21. 🟡 High Severity — @xhmikosr/decompress: Path traversal via symlink chain
+## 25. 🟡 High Severity — @xhmikosr/decompress: Path traversal via symlink chain
 
 **CVE:** `CVE-2026-101894` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-hrh2-vp3x-79xf>
@@ -232,7 +272,7 @@ When extracting an untrusted archive with the default `decompress(input, output)
 
 ---
 
-## 22. 🟡 High Severity — PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT's empty-key validation
+## 26. 🟡 High Severity — PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT's empty-key validation
 
 **CVE:** `CVE-2026-102266` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-9j54-fg26-wv3r>
@@ -247,7 +287,7 @@ An `oct` JWK containing…
 
 ---
 
-## 23. 🟡 High Severity — PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard
+## 27. 🟡 High Severity — PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard
 
 **CVE:** `CVE-2026-102268` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-ffc3-869f-jxw9>
@@ -259,7 +299,7 @@ An `oct` JWK containing…
 
 ---
 
-## 24. 🟡 High Severity — PyJWT accepts public JWK containers as HMAC secrets
+## 28. 🟡 High Severity — PyJWT accepts public JWK containers as HMAC secrets
 
 **CVE:** `CVE-2026-102273` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-w2cx-738m-mc7w>
@@ -278,7 +318,7 @@ An att…
 
 ---
 
-## 25. 🟡 High Severity — PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard
+## 29. 🟡 High Severity — PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard
 
 **CVE:** `CVE-2026-102271` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-p4g4-x82p-q773>
@@ -291,7 +331,7 @@ An application that verifies tokens with an RSA or EC public key, and also allow
 
 ---
 
-## 26. 🟡 High Severity — adm-zip: Unhandled error event in async DEFLATE decompression crashes Node.js process (DoS)
+## 30. 🟡 High Severity — adm-zip: Unhandled error event in async DEFLATE decompression crashes Node.js process (DoS)
 
 **CVE:** `CVE-2026-39244` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
 **Reference:** <https://github.com/advisories/GHSA-8238-w5pm-2374>
@@ -308,72 +348,7 @@ Denial of Service in `adm-zip`&#x27;s async decompression API allows an unauthen
 
 ---
 
-## 27. 🟡 High Severity — adm-zip extraction preserves SUID/SGID bits from untrusted ZIPs -> local privilege escalation
-
-**CVE:** `CVE-2026-102282` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
-**Reference:** <https://github.com/advisories/GHSA-j5f4-cc29-5x44>
-
-> ## Summary
-
-adm-zip applies the Unix permission bits stored in a zip entry directly to the extracted file via `fs.chmodSync()` when `keepOriginalPermission=true` is passed to `extractAllTo()`/`extractEntryTo()` — and it never filters the setuid/setgid/sticky bits out of those bits. A zip crafted by an attacker can therefore produce an extracted binary with mode `04755`. When extraction runs as roo…
-
----
-
-## 28. 🟡 High Severity — PyJWT: Malformed RSA JWK aborts parsing of an entire JWK Set
-
-**CVE:** `CVE-2026-102274` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
-**Reference:** <https://github.com/advisories/GHSA-w6j9-cwv2-h6wq>
-
-> ## Summary
-
-A malformed RSA JWK inside a JWK Set aborts parsing of the entire set instead of being skipped, because `RSAAlgorithm.from_jwk` can raise a plain `ValueError` that isn&#x27;t caught by `PyJWKSet`&#x27;s per-key error-skipping logic.
-
-## Affected component / version
-
-- Package: `PyJWT` (PyPI, ecosystem `pip`)
-- Files: `jwt/api_jwk.py` (`PyJWK.__init__`, `PyJWKSet.__init__`), `jwt/algori…
-
----
-
-## 29. 🟡 High Severity — undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors
-
-**CVE:** `CVE-2026-85152` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
-**Reference:** <https://github.com/advisories/GHSA-vp8m-p9jh-q5pm>
-
-> ## Impact
-
-When `interceptors.cache()` or `interceptors.deduplicate()` is used with a dispatcher that does not carry a single authoritative origin, or when a request supplies its own `origin`, undici builds the cache and deduplication keys without the actual destination origin. If a cache store or interceptor instance is shared across more than one origin, otherwise-identical requests to different…
-
----
-
-## 30. 🟡 High Severity — Flysystem: WhitespacePathNormalizer's control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter
-
-**CVE:** `CVE-2026-102601` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
-**Reference:** <https://github.com/advisories/GHSA-cxf4-7mrp-vvpr>
-
-> ## Related public issue (context, not a duplicate)
-
-Closed issue #1429 (&quot;Handle non-UTF-8 paths&quot;, 2024-03-24) raised exactly this general concern and
-even suggested detection via `preg_match(&#x27;//u&#x27;, $path) !== 1` -- note the reporter&#x27;s suggested check
-explicitly compares `!== 1`, which *would* correctly treat PCRE&#x27;s `false` return as &quot;reject.&quot; The
-maintainer&…
-
----
-
-## 31. 🟡 High Severity — PHPCSUtils: Remote code execution via eval() in AbstractArrayDeclarationSniff::getActualArrayKey()
-
-**CVE:** `CVE-2026-65954` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-29
-**Reference:** <https://github.com/advisories/GHSA-r6hr-vr92-vv28>
-
-> ### Impact
-
-PHPCSUtils versions 1.0.0-alpha1 through 1.2.2 contain an arbitrary code execution vulnerability in `PHPCSUtils\AbstractSniffs\AbstractArrayDeclarationSniff::getActualArrayKey()`. The vulnerable method is reached by any sniff that extends `AbstractArrayDeclarationSniff` and calls `getActualArrayKey()`.
-
-Running PHPCS over untrusted PHP code through such a sniff, for example, in a CI pi…
-
----
-
-## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
