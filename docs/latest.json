@@ -1,29 +1,10 @@
 {
-  "generated": "2026-09-29T21:35:55.070220+00:00",
-  "total": 21,
-  "kev": 1,
-  "zero_day": 11,
+  "generated": "2026-09-30T02:43:24.424257+00:00",
+  "total": 25,
+  "kev": 0,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-86950",
-      "title": "CVE-2026-86950 \u2014 Apple Multiple Products Out-of-Bounds Write Vulnerability",
-      "summary": "Vendor: Apple | Product: Multiple Products. Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-02)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
-      "published": "2026-09-29",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-86950"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -52,6 +33,24 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102272",
+      "title": "PyJWT BOM Bypass",
+      "summary": "## Affected Package\n\n- **Package**: PyJWT (`pyjwt` on PyPI)\n- **Repository**: https://www.google.com/url?q=https://github.com/jpadilla/pyjwt&source=gmail&ust=1781794518474000&sa=E\n- **Affected version**: 2.13.0\n- **Vulnerability class**: Algorithm confusion / patch bypass\n\n---\n\n## Root Cause\n\nPyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algorithms.py`, approximately line 344) to prevent RSA public key material from being used as an HMAC secret \u2014 the root cause of CVE-2026-48526.\n\nThe guard uses `bytes.lstrip()` before calling `startswith(b\"{\")`:\n\n```python\nstripped = key_bytes.lstrip() # strips ASCII whitespace only\nif stripped.startswith(b\"{\"): # JWK detection\n ...\n raise InvalidKeyError(\"The specified key is an asymmetric key...\")\n```\n\n`bytes.lstrip()` with no argument removes only bytes in the ASCII whitespace set (`\\x20 \\t \\n \\r \\x0b \\x0c`). A UTF-8 BOM prefix (`\\xef\\xbb\\xbf`) is not stripped, so `stripped.startswith(b\"{\")` returns `False` for any BOM-prefixed JWK JSON. The JWK detection block is never entered, and the RSA public key bytes are silently accepted as the HMAC-SHA256 secret.\n\n---\n\n## PoC Sketch (pseudocode \u2014 not a weaponized payload)\n\n```python\n# 1. Attacker obtains RSA public key JWK (e.g., from /jwks.json endpoint)\n# and prepends a UTF-8 BOM byte sequence before the JSON opening brace.\n# 2. Attacker signs a JWT using HS256, with the BOM-prefixed JWK as the secret.\n# 3. Attacker submits the forged token to a verifier that:\n# - accepts algorithms=[\"HS256\", \"RS256\"]\n# - holds the same RSA public key as raw bytes (BOM-prefixed key file)\n# 4. PyJWT 2.13.0 accepts the token because the BOM causes the JWK\n# detection check to be skipped \u2014 the RSA JWK bytes become a valid HMAC key.\n# Result: arbitrary claims (role, sub, etc.) accepted by the verifier.\n```\n\n---\n\n## Impact\n\nAn unauthenticated network attacker who knows the target application's RSA public key \u2014 which is public by design and obtainable from a JWKS endpoint or ce",
+      "link": "https://github.com/advisories/GHSA-r6x4-923q-g947",
+      "published": "2026-09-29T23:14:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102272"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -200,11 +199,101 @@
       "is_high_severity": false
     },
     {
-      "id": "GHSA-rcw4-f5rp-g42v",
-      "title": "adm-zip: Decompression-bomb protection (fix for CVE-2026-39244) can be bypassed by declaring uncompressed size as 0",
-      "summary": "**Affected package:** adm-zip (npm)\n**Affected version:** 0.6.0\n\n## Summary\n\nThe fix shipped for CVE-2026-39244 (`methods/inflater.js`) caps zlib's decompression output via `maxOutputLength: expectedLength`, where `expectedLength` is read directly from the ZIP entry's attacker-controlled \"uncompressed size\" header field (`CENLEN`/`LOCLEN`). This cap is only applied when `expectedLength > 0`:\n\n```js\nconst option = version >= 15 && expectedLength > 0 ? { maxOutputLength: expectedLength } : {};\nreturn zlib.inflateRawSync(inbuf, option);\n```\n\nIf an attacker sets the declared uncompressed-size field to exactly **0**, this condition is false, `option` becomes `{}`, and no output cap is passed to zlib at all. Node then falls back to zlib's own internal default limit (several GB), so a small, highly-compressible payload can still be decompressed to a very large size in memory -- the same class of resource-exhaustion issue the original CVE addressed, just triggered differently.\n\n## Steps to Reproduce\n\n1. Build a ZIP archive containing one DEFLATE-compressed entry whose real content is highly redundant (e.g. several MB of a repeated byte, achieving close to the ~1032:1 theoretical raw-DEFLATE compression ratio).\n2. Patch the entry's declared uncompressed-size fields (both the local file header copy and the central directory copy, 4-byte little-endian values) to `0`. The compressed bytes and CRC32 are left untouched -- CRC validation still passes because CRC is computed over the real decompressed output, not the declared size.\n3. Load the archive with `new AdmZip(buffer)` and call `.getEntries()[0].getData()` (or `readFile`/`readAsText`/`extractAllTo`/etc. -- all share the same code path).\n4. Observe: decompression succeeds and returns the full-size buffer with no size restriction applied, whereas the same real data with an honest (but undersized) declared value correctly throws `Cannot create a Buffer larger than N bytes`.\n\n## Proof of Concept\n\nAttached script demonstrates a ",
-      "link": "https://github.com/advisories/GHSA-rcw4-f5rp-g42v",
-      "published": "2026-09-29T18:25:20Z",
+      "id": "CVE-2026-101894",
+      "title": "@xhmikosr/decompress: Path traversal via symlink chain",
+      "summary": "### Impact\n\nWhen extracting an untrusted archive with the default `decompress(input, output)` API, a crafted archive containing a chain of symlink entries can make a later entry resolve **outside** the output directory. The lexical containment checks pass, but the kernel follows the planted symlinks to a path outside `output`, letting an attacker write (and read) files outside the intended extraction directory. Overwriting startup scripts or configuration can lead to remote code execution.\n\nThis is a bypass of the hardening in GHSA-mp2f-45pm-3cg9. Any application that extracts attacker-controlled archives is affected.\n\n### Patches\n\nFixed in **11.1.4** (`latest`) and backported to **10.2.2** (`release-v10` dist-tag). Upgrade to one of these.\n\nThe unmaintained upstream `decompress` package shares this flaw and will not be patched. Migrate to `@xhmikosr/decompress@11.1.4` (or `@10.2.2`).\n\n### Workarounds\n\nNone. Do not extract untrusted archives on affected versions. If you cannot upgrade, validate entries out of band and reject any whose resolved path escapes the target directory.",
+      "link": "https://github.com/advisories/GHSA-hrh2-vp3x-79xf",
+      "published": "2026-09-29T23:49:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-101894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102266",
+      "title": "PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT's empty-key validation",
+      "summary": "### Summary\n\nA service that verifies HS256 tokens using an empty oct JWK through PyJWK, including a PyJWK obtained from PyJWKSet, can therefore accept attacker-generated tokens as authenticated.\n\nPyJWT 2.13.0 rejects an empty HMAC key when it is supplied through the raw `str`/`bytes` key path, but accepts the same zero-length key when it is supplied as a symmetric `PyJWK`.\n\nAn `oct` JWK containing an empty Base64URL key value:\n\n```json\n{\"kty\":\"oct\",\"k\":\"\"}\n```\n\nis decoded to `b\"\"`. During signature verification, the `PyJWK` path uses this decoded value directly and does not invoke the empty-key validation in `HMACAlgorithm.prepare_key`. With the default `enforce_minimum_key_length=False`, PyJWT emits a warning and proceeds with HMAC verification using the zero-length key.\n\nAn attacker can independently calculate `HMAC-SHA256(b\"\", signing_input)` and create valid HS256 JWTs with arbitrary claims. A service that verifies HS256 tokens using an empty `oct` JWK through `PyJWK` or `PyJWKSet` can therefore accept attacker-generated tokens as authenticated.\n\nThe application must already contain an empty HMAC JWK, for example because a missing Base64URL configuration or secret-manager value was serialized as `\"k\": \"\"`. The attacker does not need control of the JWK/JWKS source, a signing oracle, a private key, or a mixed algorithm allow-list.\n\n### Details\n\nThe vulnerability is caused by inconsistent validation of the same HMAC key material depending on whether it enters PyJWT as a raw key or through `PyJWK`.\n\n#### Raw empty HMAC keys are rejected\n\n[`[HMACAlgorithm.prepare_key](https://github.com/jpadilla/pyjwt/blob/7144e4534c34810f4525dc4578a32addd8212cff/jwt/algorithms.py#L325-L357)`](https://github.com/jpadilla/pyjwt/blob/7144e4534c34810f4525dc4578a32addd8212cff/jwt/algorithms.py#L325-L357) rejects an empty HMAC key.\n\nAs a result, an empty raw key is rejected in PyJWT 2.13.0:\n\n```python\njwt.decode(token, b\"\", algorithms=[\"HS256\"])\n```\n\nwith `InvalidKeyError`.\n\n#### Empty `o",
+      "link": "https://github.com/advisories/GHSA-9j54-fg26-wv3r",
+      "published": "2026-09-29T23:43:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102266"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102268",
+      "title": "PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard",
+      "summary": "**Prerequisites** (both conditions must hold; both are deployment properties, not attacker-controlled at request time):\n\n- The `jwt.decode` allow-list mixes an HMAC algorithm with an asymmetric one, e.g. `algorithms=[\"ES256\", \"HS256\"]` (the RFC 8725 footgun the guard exists to backstop).\n- The verification key is passed as raw PEM text/bytes on the non-`PyJWK` path, in a byte-form that `cryptography`'s loader accepts but PyJWT's `is_pem_format` regex does not recognize (marker-adjacent whitespace/indentation, CR-only line terminators, or the PEM folded to a single line). Such forms arise naturally from an indented YAML/JSON block, a single-line environment variable or JSON string, or a CR/LF round-trip through config tooling.\n\nThe attacker additionally needs the public verification key, which is public by definition, and `cryptography` must be installed.\n\nThe fix for CVE-2022-29217 rejects an asymmetric key handed to an HMAC algorithm, but only when `is_pem_format()` recognizes the key as PEM. That recognizer accepts strictly fewer byte-forms than the loader that later parses the key, so a PEM the guard misses still loads as a valid public key and is then used as an HMAC secret. This is an incomplete-guard bypass of the CVE-2022-29217 family.\n\n### Summary\nA PEM public key with marker-adjacent whitespace, CR-only line terminators, or folded to a single line makes PyJWT's `is_pem_format()` return `False` while `cryptography.load_pem_public_key()` accepts the identical bytes. The asymmetric-key rejection in `HMACAlgorithm.prepare_key` is skipped, the public key becomes the HMAC secret, and an attacker who knows the public key mints a valid `HS256` token \u2014 universal forgery \u2014 whenever the verify allow-list mixes an HMAC and an asymmetric algorithm.\n\n### Details\nAt `jwt/algorithms.py:331-335`, `HMACAlgorithm.prepare_key` contains the sole family-mismatch guard:\n\n    if is_pem_format(key_bytes) or is_ssh_key(key_bytes):\n        raise InvalidKeyError(\n            \"The spec",
+      "link": "https://github.com/advisories/GHSA-ffc3-869f-jxw9",
+      "published": "2026-09-29T23:17:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102268"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102273",
+      "title": "PyJWT accepts public JWK containers as HMAC secrets",
+      "summary": "### Summary\n\nPyJWT 2.13.0 contains an incomplete defense against algorithm confusion when\nan application mixes symmetric and asymmetric algorithms in one verification\npath. A public RSA, EC, or OKP JWK can be accepted as an HMAC secret when it\nis wrapped in a JWKS object, nested in an array, or represented in another\ncontainer form that does not expose a top-level `kty` member.\n\n### Impact\n\nAn attacker who knows the public key material can forge HS256/HS384/HS512\ntokens if the application simultaneously:\n\n* allows both HS* and asymmetric algorithms;\n* passes raw public JWK/JWKS JSON as `key=`; and\n* uses that same value as the HMAC secret.\n\nThis can allow forged JWT claims in affected application configurations. The\nissue does not affect applications that keep symmetric and asymmetric\nverification paths separate and follow PyJWT's algorithm-selection guidance.\n\n### Fix status\n\nThe fix is on `master` in commit `801cd12` (`fix: reject public JWK container\nHMAC keys`). `HMACAlgorithm.prepare_key` now rejects public JWK members found in\nobjects, arrays, nested containers, BOM/UTF variants, and recursion-limit\ninputs. It also recognizes escaped JSON member names without treating ordinary\nstring values as JWKs. Ordinary JSON secrets remain accepted byte-for-byte.\n\nThe change was tested with focused regression tests and the full local tox\nmatrix. Available Python 3.9, 3.12, and 3.13 crypto/no-crypto suites, mypy,\npackage metadata, and coverage passed; unavailable interpreters were skipped\nby the project configuration. A fresh independent Astra/max security review\naccepted the final diff with no blocking findings.\n\nThe affected range is `= 2.13.0`. The fix is on the unreleased development\nbranch; the patched version will be recorded when a released 2.x version\ncontaining the fix is available. This advisory is being moved to draft pending\nthat release.\n\n### Reporter credit\n\nCredit: Charles Vosburgh / Trilobyte.\n\n### Original report\n\nThe original report and reproduction packa",
+      "link": "https://github.com/advisories/GHSA-w2cx-738m-mc7w",
+      "published": "2026-09-29T23:16:55Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102273"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102271",
+      "title": "PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard",
+      "summary": "### Summary\n\n`HMACAlgorithm.prepare_key` blocks asymmetric keys from being used as HMAC secrets by searching for text markers only. It looks for `-----BEGIN` and for an `ssh-` prefix. The same key in DER form is binary ASN.1 and has neither marker, so it passes the check and is used as an HMAC secret.\n\nAn application that verifies tokens with an RSA or EC public key, and also allows HS256 with that same key, can be given a forged token. The attacker signs it with the public key, which is public. This is the key confusion problem CVE-2022-29217 was filed for, reachable again through a different encoding.\n\nThe reach is smaller than the original CVE. The application must already be in that misconfiguration, and it must hold its public key as DER bytes rather than PEM.\n\n### Details\n\nThe guard is at `jwt/algorithms.py:331`:\n\n```python\nif is_pem_format(key_bytes) or is_ssh_key(key_bytes):\n    raise InvalidKeyError(\n        \"The specified key is an asymmetric key or x509 certificate and\"\n        \" should not be used as an HMAC secret.\"\n    )\n```\n\nBoth helpers are text matchers. Neither one parses the key.\n\n- `jwt/utils.py:126`, `is_pem_format`, runs a regex for `----[- ]BEGIN ...----`.\n- `jwt/utils.py:141`, `is_ssh_key`, checks `startswith` against a list of `ssh-` and `ecdsa-sha2-` prefixes.\n\nA DER encoded public key starts with the bytes `0x30 0x82`. It matches neither, so `prepare_key` returns it unchanged and it becomes the HMAC secret.\n\nThere is no DER handling anywhere in the package. `grep -rni \"\\bDER\\b|load_der\" jwt/ tests/` returns nothing.\n\nThis affects three encodings that are all blocked in their PEM form today:\n\n- DER SubjectPublicKeyInfo\n- DER PKCS#1\n- DER encoded X.509 certificate\n\nHistory of this guard:\n\n- Added in 2.4.0 for CVE-2022-29217 and GHSA-ffqj-6fqr-9h24, covering PEM and SSH.\n- Extended in 2.13.0 for GHSA-xgmm-8j9v-c9wx, covering JWK JSON documents.\n- DER has never been covered.\n\nApplications that use `PyJWK` or `PyJWKClient` are not affected. `jw",
+      "link": "https://github.com/advisories/GHSA-p4g4-x82p-q773",
+      "published": "2026-09-29T23:14:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102271"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "GHSA-8238-w5pm-2374",
+      "title": "adm-zip: Unhandled error event in async DEFLATE decompression crashes Node.js process (DoS)",
+      "summary": "## Summary\n\nDenial of Service in `adm-zip`'s async decompression API allows an unauthenticated attacker to crash the entire Node.js host process by supplying a single malformed ZIP file.\n\n## Details\n\n**Affected package**: adm-zip\n**Affected versions**: at least 0.6.0 (current latest); likely all versions containing the current `inflateAsync` implementation in `methods/inflater.js`\n**Patched version**: 0.6.1\n\n### Root Cause\n\n`methods/inflater.js:12-32` (`inflateAsync`) creates a `zlib.createInflateRaw(option)` stream and feeds it attacker-controlled compressed bytes via `tmp.end(inbuf)`, but never registers an `\"error\"` listener on the stream:\n\n```js\ninflateAsync: function (/*Function*/ callback) {\n    var tmp = zlib.createInflateRaw(option),\n        parts = [],\n        total = 0;\n    tmp.on(\"data\", function (data) { parts.push(data); total += data.length; });\n    tmp.on(\"end\", function () { /* build buf, callback(buf) */ });\n    tmp.end(inbuf);   // no tmp.on(\"error\", ...) registered anywhere\n}\n```\n\nPer Node.js `EventEmitter`/stream semantics, an `\"error\"` event emitted with zero listeners is rethrown as an **uncaught exception on a later tick**, originating from the zlib C++ binding. This cannot be caught by a `try/catch` wrapped around the calling code, because the throw happens asynchronously, outside the synchronous call stack the `try/catch` covers.\n\nThis code path is reached from every public async API that decompresses entry data: `readFileAsync`, `readAsTextAsync`, `extractAllToAsync`, and `ZipEntry.getDataAsync` (`zipEntry.js:51`, `:97-120`, `:309-315`; `adm-zip.js:157-164`, `:192-210`, `:893`).\n\nThis library recently patched **CVE-2026-39244** (GHSA-xcpc-8h2w-3j85), an unbounded `Buffer.alloc()` on the *synchronous* decompression path. That fix added a `maxOutputLength` option to `zlib.inflateRawSync`/`zlib.createInflateRaw`, and the sync path's resulting throw is naturally catchable. The async path shares the same `maxOutputLength` option (`methods/inflat",
+      "link": "https://github.com/advisories/GHSA-8238-w5pm-2374",
+      "published": "2026-09-29T23:10:09Z",
       "source": "GitHub Security Advisories",
       "tags": [
         "github",
@@ -321,23 +410,6 @@
       ],
       "cve_ids": [
         "CVE-2026-76844"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://isc.sans.edu/diary/rss/33376",
-      "title": "Apple Emergency Patch for iOS 26, macOS26, macOS15 (CVE-2026-86950), (Mon, Sep 28th)",
-      "summary": "Apple today released patches for all of its operating systems. However, only patches for older branches include a security fix. The vulnerability being addressed in iOS 26, macOS 26 and macOS 15 is already being exploited. iOS and macOS 27 are not affected. Today&#;x26;#;39;s update for the current \"27\" branch does not address security issues, but fixes some functional issues that got caught after the release two weeks ago. A 27.1 version was also expected to support the new foldable iPhone and will likely include specific features geared to the soon to be available device.",
-      "link": "https://isc.sans.edu/diary/rss/33376",
-      "published": "2026-09-28T22:35:35+00:00",
-      "source": "SANS Internet Storm Center",
-      "tags": [
-        "sans",
-        "isc"
-      ],
-      "cve_ids": [
-        "CVE-2026-86950"
       ],
       "is_zero_day": false,
       "is_high_severity": true
