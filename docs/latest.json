@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-01T02:48:30.512994+00:00",
-  "total": 29,
+  "generated": "2026-10-01T11:57:49.336405+00:00",
+  "total": 31,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
     {
@@ -37,6 +37,21 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/",
+      "title": "Zammad Zero-Days Exploited in AI-Powered DIVD Hack",
+      "summary": "The flaws were chained to hijack sessions, achieve remote code execution, and elevate privileges to root. The post Zammad Zero-Days Exploited in AI-Powered DIVD Hack appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/",
+      "published": "2026-10-01T10:42:49+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-103001",
       "title": "PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse",
       "summary": "### Summary\n\n`PyJWT.decode()`/`decode_complete()` mutates a caller-supplied `options` dict in place whenever `verify_signature` is falsy, adding `verify_exp`/`verify_nbf`/`verify_iat`/`verify_aud`/`verify_iss`/`verify_sub`/`verify_jti` keys directly onto that object. If application code reuses the same `options` dict across calls (a config object, a module-level constant, a wrapper's `self.options`), a later call that explicitly sets `verify_signature=True` for a full, normal verification silently inherits the leftover `verify_exp=False` etc. from an earlier `verify_signature=False` call on the same object -- and accepts an expired, wrong-audience, wrong-issuer, or wrong-subject token as valid with no exception. Signature verification itself is unaffected; this is specifically a claims-check bypass.\n\nThis is a regression of an already-fixed, closed issue: originally reported in #679 (2021), fixed in #743 (2022, via a shallow copy of `options`), and silently reintroduced by #1045 (merged 2025-03-05, a typing/logic refactor that dropped the 2022 shallow-copy line). It has been present since #1045 merged, so it likely shipped in several releases already in the wild.\n\n### Details\n\nFile: `jwt/api_jwt.py`, `PyJWT._merge_options()` (called from `decode_complete()`, which backs both `jwt.decode()` and `jwt.decode_complete()`):\n\n```python\ndef _merge_options(self, options=None):\n    if options is None:\n        return self.options\n    if not options.get(\"verify_signature\", True):\n        options[\"verify_exp\"] = options.get(\"verify_exp\", False)\n        options[\"verify_nbf\"] = options.get(\"verify_nbf\", False)\n        # ...5 more, same pattern -- all written directly onto the caller's dict\n    return {**self.options, **options}\n```\n\nNo `dict(options)` copy occurs before these writes, unlike the pre-2025-03-05 code (see #743's fix, `options = dict(options or {})`). Confirmed via `gh api repos/jpadilla/pyjwt/commits/29fbfc36` that #1045's diff removes that line. Confirmed still pre",
@@ -55,26 +70,9 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html",
-      "title": "Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager",
-      "summary": "Attackers are exploiting a new critical zero-day flaw in Cisco Catalyst SD-WAN Manager, the system companies use to manage their Cisco SD-WAN networks, Cisco said in an\u00a0advisory\u00a0on September 30.\n\nThe flaw, CVE-2026-76504, could allow a remote attacker with no login access to use the Manager's API as the admin user. Fixed releases are available, and there is no workaround. It carries a",
-      "link": "https://thehackernews.com/2026/09/cisco-warns-of-attackers-exploiting.html",
-      "published": "2026-09-30T15:24:54+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-76504"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504",
       "title": "Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild (CVE-2026-76504)",
-      "summary": "Overview On September 30, 2026, Cisco published a security advisory for CVE-2026-76504 , a critical API authentication bypass vulnerability affecting Cisco Catalyst SD-WAN Manager. The vulnerability has a CVSSv3.1 score of 9.8 and results from improper handling of URL encoding ( CWE-177 ). An unauthenticated, remote attacker can send a crafted HTTP request that bypasses an authentication rule for a specific API endpoint, gaining access to the API with the privileges of the admin user. According to Cisco, CVE-2026-76504 is being actively exploited in the wild; Cisco PSIRT became aware of the activity in September 2026. Cisco Catalyst SD-WAN Manager systems with ports exposed to the internet are at risk of compromise. The vulnerability affects the product regardless of system configuration, and Cisco has not provided a workaround, however vendor supplied updates are available. Rapid7 strongly recommends that organizations upgrade affected systems to a fixed release on an emergency basis, outside of normal patch cycles, and investigate internet-facing systems for signs of exploitation. Cisco Catalyst SD-WAN Manager was also affected by two critical, unauthenticated peering authentication flaws earlier in 2026: CVE-2026-20127 and Rapid7-discovered CVE-2026-20182 . Both were distinct issues in the vdaemon service and similar parts of its networking stack. CVE-2026-76504 targets a separate API authentication path, but the recurrence of authentication bypasses in internet-facing Catalyst SD-WAN control components reinforces the need for emergency remediation. Mitigation guidance Cisco has released software updates that remediate CVE-2026-76504. Organizations running affected instances of Cisco Catalyst SD-WAN Manager should upgrade to an appropriate fixed release listed below without waiting for a regular patch cycle: Cisco Catalyst SD-WAN Software release First fixed release Earlier than 20.9 Migrate to a fixed release 20.9 20.9.10.1 20.12 20.12.8.2 20.15 20.15.6.1 20.18 ",
+      "summary": "Overview On September 30, 2026, Cisco published a security advisory for CVE-2026-76504 , a critical API authentication bypass vulnerability affecting Cisco Catalyst SD-WAN Manager. The vulnerability has a CVSSv3.1 score of 9.8 and results from improper handling of URL encoding ( CWE-177 ). An unauthenticated, remote attacker can send a crafted HTTP request that bypasses an authentication rule for a specific API endpoint, gaining access to the API with the privileges of the admin user. According to Cisco, CVE-2026-76504 is being actively exploited in the wild; Cisco PSIRT became aware of the activity in September 2026. Cisco Catalyst SD-WAN Manager systems with ports exposed to the internet are at risk of compromise. The vulnerability affects the product regardless of system configuration, and Cisco has not provided a workaround, however vendor supplied updates are available. Rapid7 strongly recommends that organizations upgrade affected systems to a fixed release on an emergency basis, outside of normal patch cycles, and investigate internet-facing systems for signs of exploitation. Cisco Catalyst SD-WAN Manager was also affected by two critical, unauthenticated peering authentication flaws earlier in 2026: CVE-2026-20127 and Rapid7-discovered CVE-2026-20182 . Both were distinct issues in the vdaemon service and similar parts of its networking stack. CVE-2026-76504 targets a separate API authentication path, but the recurrence of authentication bypasses in internet-facing Catalyst SD-WAN control components reinforces the need for emergency remediation. On September 30, 2026, CVE-2026-76504 was added to the U.S. Cybersecurity and Infrastructure Security Agency's (CISA) list of known exploited vulnerabilities (KEV) , based on evidence of active exploitation. CISA set a remediation due date of October 3, 2026. Mitigation guidance Cisco has released software updates that remediate CVE-2026-76504. Organizations running affected instances of Cisco Catalyst SD-WAN Manager ",
       "link": "https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504",
       "published": "2026-09-30T15:09:22+00:00",
       "source": "Rapid7 Blog",
@@ -87,21 +85,6 @@
         "CVE-2026-20127",
         "CVE-2026-20182"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/russian-apt-star-blizzard-uses-redflick-infection-chain-in-recent-attacks/",
-      "title": "Russian APT Star Blizzard Uses \u2018RedFlick\u2019 Infection Chain in Recent Attacks",
-      "summary": "The state-sponsored group has launched larger-scale phishing campaigns to deploy the CosmicPulse backdoor. The post Russian APT Star Blizzard Uses \u2018RedFlick\u2019 Infection Chain in Recent Attacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/russian-apt-star-blizzard-uses-redflick-infection-chain-in-recent-attacks/",
-      "published": "2026-09-30T10:59:30+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -203,6 +186,53 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.securityweek.com/cisco-patches-exploited-catalyst-sd-wan-zero-day-vulnerability/",
+      "title": "Cisco Patches Exploited Catalyst SD-WAN Zero-Day Vulnerability",
+      "summary": "The flaw could allow remote, unauthenticated attackers to access vulnerable appliances with administrative privileges. The post Cisco Patches Exploited Catalyst SD-WAN Zero-Day Vulnerability appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/cisco-patches-exploited-catalyst-sd-wan-zero-day-vulnerability/",
+      "published": "2026-10-01T08:26:03+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html",
+      "title": "Apple CoreGraphics PoC Emerges as WhatsApp PDF Checks Hint at Possible Delivery Path",
+      "summary": "Security researchers have published the first public proof-of-concept for CVE-2026-86950, an Apple CoreGraphics flaw Apple says may have been used in attacks against specific targeted individuals.\n\nThe trigger is a malicious PDF with a crafted embedded font that crashes unpatched iPhones and Macs. The code causes a crash, not an execution error. Turning the memory corruption into a working",
+      "link": "https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html",
+      "published": "2026-10-01T05:54:41+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-86950"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html",
+      "title": "Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft",
+      "summary": "Cryptocurrency exchange Bitget on Wednesday confirmed that attackers who stole $387.5 million last week exploited a zero-day flaw in third-party security products, citing ongoing investigation findings from SlowMist.\n\n\"Their investigation identified malicious activity involving third-party security products, including a zero-day vulnerability, and recovered a customized tool used by the attacker",
+      "link": "https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html",
+      "published": "2026-10-01T05:21:10+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
       "title": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)",
       "summary": "Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30) appeared first on Unit 42 .",
@@ -237,19 +267,21 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/",
-      "title": "Bitget hacked via zero-day in third-party security products",
-      "summary": "Cryptocurrency exchange Bitget revealed today that attackers who stole $387.5 million last week breached its systems after exploiting a zero-day flaw in third-party security products. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/",
-      "published": "2026-09-30T11:11:46+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html",
+      "title": "CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a critical authentication bypass flaw impacting Cisco Catalyst SD-WAN Manager to its Known Exploited Vulnerabilities (KEV), following reports of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-76504 (CVSS score: 9.8), could allow an unauthenticated, remote attacker to access an affected system with",
+      "link": "https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html",
+      "published": "2026-10-01T10:33:16+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "malware"
+        "zeroday"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "cve_ids": [
+        "CVE-2026-76504"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-84428",
