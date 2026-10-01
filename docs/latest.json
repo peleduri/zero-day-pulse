@@ -1,29 +1,10 @@
 {
-  "generated": "2026-09-30T21:36:44.230237+00:00",
-  "total": 31,
-  "kev": 1,
-  "zero_day": 16,
+  "generated": "2026-10-01T02:48:30.512994+00:00",
+  "total": 29,
+  "kev": 0,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-76504",
-      "title": "CVE-2026-76504 \u2014 Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability",
-      "summary": "Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-03)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76504",
-      "published": "2026-09-30",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-76504"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -52,6 +33,24 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-103001",
+      "title": "PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse",
+      "summary": "### Summary\n\n`PyJWT.decode()`/`decode_complete()` mutates a caller-supplied `options` dict in place whenever `verify_signature` is falsy, adding `verify_exp`/`verify_nbf`/`verify_iat`/`verify_aud`/`verify_iss`/`verify_sub`/`verify_jti` keys directly onto that object. If application code reuses the same `options` dict across calls (a config object, a module-level constant, a wrapper's `self.options`), a later call that explicitly sets `verify_signature=True` for a full, normal verification silently inherits the leftover `verify_exp=False` etc. from an earlier `verify_signature=False` call on the same object -- and accepts an expired, wrong-audience, wrong-issuer, or wrong-subject token as valid with no exception. Signature verification itself is unaffected; this is specifically a claims-check bypass.\n\nThis is a regression of an already-fixed, closed issue: originally reported in #679 (2021), fixed in #743 (2022, via a shallow copy of `options`), and silently reintroduced by #1045 (merged 2025-03-05, a typing/logic refactor that dropped the 2022 shallow-copy line). It has been present since #1045 merged, so it likely shipped in several releases already in the wild.\n\n### Details\n\nFile: `jwt/api_jwt.py`, `PyJWT._merge_options()` (called from `decode_complete()`, which backs both `jwt.decode()` and `jwt.decode_complete()`):\n\n```python\ndef _merge_options(self, options=None):\n    if options is None:\n        return self.options\n    if not options.get(\"verify_signature\", True):\n        options[\"verify_exp\"] = options.get(\"verify_exp\", False)\n        options[\"verify_nbf\"] = options.get(\"verify_nbf\", False)\n        # ...5 more, same pattern -- all written directly onto the caller's dict\n    return {**self.options, **options}\n```\n\nNo `dict(options)` copy occurs before these writes, unlike the pre-2025-03-05 code (see #743's fix, `options = dict(options or {})`). Confirmed via `gh api repos/jpadilla/pyjwt/commits/29fbfc36` that #1045's diff removes that line. Confirmed still pre",
+      "link": "https://github.com/advisories/GHSA-gvp8-978c-rx2q",
+      "published": "2026-09-30T23:53:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-103001"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -92,24 +91,6 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.securityweek.com/government-finance-orgs-targeted-in-weeks-long-netscaler-zero-day-attacks/",
-      "title": "Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks",
-      "summary": "Several security firms have confirmed seeing exploitation of the NetScaler vulnerabilities CVE-2026-88771 and CVE-2026-88772. The post Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/government-finance-orgs-targeted-in-weeks-long-netscaler-zero-day-attacks/",
-      "published": "2026-09-30T12:48:20+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-88771",
-        "CVE-2026-88772"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
       "id": "https://www.securityweek.com/russian-apt-star-blizzard-uses-redflick-infection-chain-in-recent-attacks/",
       "title": "Russian APT Star Blizzard Uses \u2018RedFlick\u2019 Infection Chain in Recent Attacks",
       "summary": "The state-sponsored group has launched larger-scale phishing campaigns to deploy the CosmicPulse backdoor. The post Russian APT Star Blizzard Uses \u2018RedFlick\u2019 Infection Chain in Recent Attacks appeared first on SecurityWeek .",
@@ -121,41 +102,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/citrix-netscaler-cve-2026-88772-exploit.html",
-      "title": "Citrix NetScaler CVE-2026-88772 Exploit Details Show Pre-Auth Path to Shellcode Execution",
-      "summary": "Cybersecurity researchers have disclosed technical details of a recently patched critical security flaw in Citrix NetScaler ADC and Gateway that has come under active exploitation in the wild.\n\nThe vulnerability, tracked as CVE-2026-88772 (CVSS score: 9.5), has been described as a memory overflow bug in the Datagram Transport Layer Security (DTLS) protocol handling that's rooted in the NetScaler",
-      "link": "https://thehackernews.com/2026/09/citrix-netscaler-cve-2026-88772-exploit.html",
-      "published": "2026-09-30T05:30:30+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-88772"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102272",
-      "title": "PyJWT BOM Bypass",
-      "summary": "## Affected Package\n\n- **Package**: PyJWT (`pyjwt` on PyPI)\n- **Repository**: https://www.google.com/url?q=https://github.com/jpadilla/pyjwt&source=gmail&ust=1781794518474000&sa=E\n- **Affected version**: 2.13.0\n- **Vulnerability class**: Algorithm confusion / patch bypass\n\n---\n\n## Root Cause\n\nPyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algorithms.py`, approximately line 344) to prevent RSA public key material from being used as an HMAC secret \u2014 the root cause of CVE-2026-48526.\n\nThe guard uses `bytes.lstrip()` before calling `startswith(b\"{\")`:\n\n```python\nstripped = key_bytes.lstrip() # strips ASCII whitespace only\nif stripped.startswith(b\"{\"): # JWK detection\n ...\n raise InvalidKeyError(\"The specified key is an asymmetric key...\")\n```\n\n`bytes.lstrip()` with no argument removes only bytes in the ASCII whitespace set (`\\x20 \\t \\n \\r \\x0b \\x0c`). A UTF-8 BOM prefix (`\\xef\\xbb\\xbf`) is not stripped, so `stripped.startswith(b\"{\")` returns `False` for any BOM-prefixed JWK JSON. The JWK detection block is never entered, and the RSA public key bytes are silently accepted as the HMAC-SHA256 secret.\n\n---\n\n## PoC Sketch (pseudocode \u2014 not a weaponized payload)\n\n```python\n# 1. Attacker obtains RSA public key JWK (e.g., from /jwks.json endpoint)\n# and prepends a UTF-8 BOM byte sequence before the JSON opening brace.\n# 2. Attacker signs a JWT using HS256, with the BOM-prefixed JWK as the secret.\n# 3. Attacker submits the forged token to a verifier that:\n# - accepts algorithms=[\"HS256\", \"RS256\"]\n# - holds the same RSA public key as raw bytes (BOM-prefixed key file)\n# 4. PyJWT 2.13.0 accepts the token because the BOM causes the JWK\n# detection check to be skipped \u2014 the RSA JWK bytes become a valid HMAC key.\n# Result: arbitrary claims (role, sub, etc.) accepted by the verifier.\n```\n\n---\n\n## Impact\n\nAn unauthenticated network attacker who knows the target application's RSA public key \u2014 which is public by design and obtainable from a JWKS endpoint or ce",
-      "link": "https://github.com/advisories/GHSA-r6x4-923q-g947",
-      "published": "2026-09-29T23:14:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102272"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -257,6 +203,25 @@
       "is_high_severity": false
     },
     {
+      "id": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
+      "title": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)",
+      "summary": "Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30) appeared first on Unit 42 .",
+      "link": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
+      "published": "2026-09-30T20:00:04+00:00",
+      "source": "Unit 42 (Palo Alto)",
+      "tags": [
+        "cloud",
+        "research",
+        "threat-intel"
+      ],
+      "cve_ids": [
+        "CVE-2026-88771",
+        "CVE-2026-88772"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
       "title": "DIVD says Zammad zero-days enabled AI-driven network breach",
       "summary": "The Dutch Institute for Vulnerability Disclosure (DIVD) says that the breach of its network was possible by exploiting a chain of two zero-day vulnerabilities in the open-source Zammad ticketing system. [...]",
@@ -287,6 +252,96 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-84428",
+      "title": "fastify vulnerable to header validation bypass via incomplete schema case normalization",
+      "summary": "### Impact\n\nFastify lowercases header-schema property names before compiling the schema, because Node.js stores request header names in lowercase. That normalization was incomplete: it lowercased only top-level `properties` keys and the root `required` array, and did not lowercase the JSON Schema Draft 7 `dependencies` keyword (its trigger keys and dependent property names) or names in nested subschemas. As a result, a header schema that uses `dependencies` to require one header when another is present (for example `X-Admin` requiring `X-Admin-Token`) never matches the lowercased request headers, so the dependency assertion is silently skipped. An unauthenticated remote client can send the header that activates a privileged path while omitting the header the dependency was meant to require, bypassing a schema-enforced security control. The header schema is idiomatic, valid JSON Schema Draft 7, and no custom validator, malformed request, or misconfiguration is required.\n\n### Patches\n\nHeader-schema names are now normalized across all schema positions (`properties`, `required`, `dependencies`, `dependentRequired`, `dependentSchemas`, and nested subschemas). Patched in fastify `5.12.2`. The fix is also included in the `6.0.0` release. Header schemas referenced through an external shared `$ref` (registered with `addSchema`) are not reached by this normalization and now emit an `FSTSEC002` startup warning; inline the header schema to keep case-insensitive assertions in effect.\n\n### Workarounds\n\nIf upgrading is not immediately possible, write header-schema names in lowercase so the `dependencies` and other case-sensitive assertions match Node's lowercased request headers, or enforce the cross-header requirement in an `onRequest` or `preValidation` hook instead of the schema.",
+      "link": "https://github.com/advisories/GHSA-9q9j-q6p8-xq58",
+      "published": "2026-09-30T23:44:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84428"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102821",
+      "title": "Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey",
+      "summary": "## Summary\n\nA russh **server** can be driven to unbounded heap growth (process OOM / kill) by\na peer that speaks only standard SSH messages, in the **default configuration**.\n\nThe peer starts a key re-exchange (sends `SSH_MSG_KEXINIT`) but never sends the\nfollow-up `SSH_MSG_KEX_ECDH_INIT`, leaving the server's kex state machine in\n`SessionKexState::InProgress` **indefinitely**. While a rekey is in progress the\nserver's three message-drain paths are all gated off (`if !self.kex.active()`),\nbut the network-read path stays active, so every `SSH_MSG_CHANNEL_OPEN` the peer\nsends is processed inline and appends one reply to an **unbounded** internal\nqueue (`priority_receiver`, an `UnboundedReceiver`) that is not dequeued until\nthe rekey completes. Because the peer decides whether the rekey ever completes,\nthe queue \u2014 and the server's memory \u2014 grows without bound.\n\nThis is reproducible end-to-end against a real russh server over a real\nencrypted transport; see \"Proof of concept\". A one-line negative control (same\nflood, no rekey) keeps memory flat, isolating the rekey window as the sole\ntrigger.\n\n## Impact\n\n- **Availability / DoS.** Server RSS climbs at roughly 3.3 KB per\n  `CHANNEL_OPEN`, driven entirely by the peer, until the process is OOM-killed.\n  In the reproduction one connection pushed the server from ~4 MB to **2.57 GB**\n  (and past **4.8 GB** against the stock `echoserver` example) and it was still\n  climbing when the flood was stopped.\n- **Reached with standard messages, no special configuration.** Any handler is\n  affected, including one that rejects every channel (the reply enqueued on\n  rejection is exactly what accumulates). There is no per-connection cap on\n  in-flight channel opens or on the queue, and the queue's sender has no\n  backpressure.\n- The peer keeps the connection alive simply by continuing to send, so the\n  inactivity timer never fires.\n\n## Affected component\n\n- `russh/src/server/session.rs` \u2014 `Session::run` `tokio::select!` loop. The\n  network",
+      "link": "https://github.com/advisories/GHSA-35g8-35p8-c8fw",
+      "published": "2026-09-30T23:40:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102821"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102983",
+      "title": "Astro: Netlify Image CDN allowlist bypass enables SSRF",
+      "summary": "## Summary\n\nThe `@astrojs/netlify` adapter generated regular expressions for Netlify Image CDN remote-image allowlists without anchoring them to the beginning of the URL. Netlify evaluates these expressions with `RegExp.test()`, so an allowed image origin appearing anywhere in a URL, including its path or query string, could satisfy the allowlist.\n\nFor example, an application allowing `images.example.com` could accept a source URL such as:\n\n```text\nhttp://127.0.0.1:6379/?url=https://images.example.com/image.png\n```\n\nThe allowlist matched the approved origin in the query string, but Netlify parsed and fetched the URL whose actual host was `127.0.0.1`.\n\n## Impact\n\nAn unauthenticated attacker can bypass the configured `image.domains` or `image.remotePatterns` allowlist through the public `/.netlify/images` endpoint and cause Netlify Image CDN to make requests to attacker-selected URLs. This may allow probing or reaching internal services, depending on Netlify's network-level egress protections.\n\nThe Image CDN attempts to transform responses as images, which limits direct response exfiltration. No confidentiality or integrity impact has been demonstrated.\n\n## Affected versions\n\n`@astrojs/netlify` versions from 5.2.0 through 8.2.3.\n\n## Patches\n\nFixed in `@astrojs/netlify` 8.2.4. Generated remote-image allowlist expressions are now anchored to both the beginning and end of the source URL.\n\n## Workarounds\n\nUpgrade to `@astrojs/netlify` 8.2.4 or later. Before upgrading, disable Netlify Image CDN by setting `imageCDN: false` in the adapter configuration, or remove remote image allowlist entries.\n\n## Credits\n\nReported by @pacocartones.",
+      "link": "https://github.com/advisories/GHSA-4233-jc72-56c5",
+      "published": "2026-09-30T23:40:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102983"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102822",
+      "title": "russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic",
+      "summary": "### Summary\n`SshBlockCipher` implementations (AES-CBC, AES-CTR, 3DES-CBC, etc.) report `needs_mac() == true`, meaning they are documented/intended to always be paired with a separate integrity MAC. However, key-exchange negotiation only checks `needs_mac()` inside the *fallback* branch of MAC algorithm selection (used when no common MAC algorithm exists). If both peers' preferred MAC lists simply contain `none` and it is successfully negotiated through the normal selection path, nothing rejects pairing `none` with a cipher that requires a MAC. Once negotiated, a single crafted packet from either peer causes `cipher::read()` to shrink an already-allocated buffer below the number of bytes it is about to index, causing a Rust slice-index-out-of-range panic and killing that connection's task.\n\n### Details\nIn `russh/src/cipher/mod.rs`, `read()` for a block cipher:\n1. Reads `packet_length_to_read_for_block_length()` bytes up front (16 bytes for any `SshBlockCipher`) into `buffer.buffer`.\n2. Decrypts the first block to recover the plaintext packet-length field `len`.\n3. Computes `buffer.len = len + cipher.tag_len()`.\n4. Calls `buffer.buffer.resize(buffer.len + 4, 0)`.\n5. Immediately indexes `buffer.buffer[16..]` (via the constant used for the first block read) to continue decrypting/reading the rest of the packet.\n\nWhen the negotiated MAC is `none`, `tag_len() == 0`. If the attacker (or a MITM holding the session key, or simply the accepting peer testing a hostile client) sends a packet whose *decrypted* length field is `0`, then `buffer.len = 0` and `resize(0 + 4, 0)` **shrinks** the buffer that was already grown to 16 bytes in step 1 down to 4 bytes. The subsequent slice operation `buffer.buffer[16..]` then panics with `range start index 16 out of range for slice of length 4`.\n\nThe file already defines a `MINIMUM_PACKET_LEN` constant, but it is only consulted on the *write*/padding side, never on the read path \u2014 so nothing prevents an incoming packet from declaring a len",
+      "link": "https://github.com/advisories/GHSA-p8qx-h547-fjw9",
+      "published": "2026-09-30T23:27:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102822"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102824",
+      "title": "Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange",
+      "summary": "## Vulnerability\n\nThe hybrid ML-KEM 768 + X25519 key exchange implementation in `russh/src/kex/hybrid_mlkem.rs` does not validate that the remote peer's X25519 public key is not the zero point (all-zero 32-byte value). This allows a remote peer to force the X25519 contribution to the combined shared secret to zero, reducing the hybrid KEX to a single-algorithm exchange.\n\nAffected code at HEAD (v0.62.4, commit 0089c89):\n\n**Server-side** (`server_dh`, lines 92-93):\n```rust\nlet mut c_pk1 = MontgomeryPoint([0; 32]);\nc_pk1.0.copy_from_slice(c_pk1_bytes);\n// No zero-point check - proceeds to: let k_cl = s_secret * c_pk1;\n```\n\n**Client-side** (`compute_shared_secret`, lines 154-155):\n```rust\nlet mut s_pk1 = MontgomeryPoint([0; 32]);\ns_pk1.0.copy_from_slice(s_pk1_bytes);\n// No zero-point check - proceeds to: let k_cl = x25519_secret * s_pk1;\n```\n\n## Root Cause\n\nCommit a7fc1eb (2026-07-22, \"fix mpint encoding and validate curve25519 keys\") added zero-point validation to the standalone Curve25519 KEX in `russh/src/kex/curve25519.rs` at two locations:\n- `server_dh` line 77: `if client_pubkey.0 == [0u8; 32] { return Err(crate::Error::Kex); }`\n- `compute_shared_secret` line 122: `if remote_pubkey.0 == [0u8; 32] { return Err(crate::Error::Kex); }`\n\nThe same X25519 scalar multiplication pattern appears in `hybrid_mlkem.rs`, but the fix was not applied there.\n\n## Proof of Concept\n\nA malicious SSH client negotiating `mlkem768x25519-sha256` can send a KEX_HYBRID_INIT message containing a valid ML-KEM 768 encapsulation key followed by 32 zero bytes as the X25519 component.\n\nWhen the server computes `k_cl = s_secret * c_pk1`, the result is the zero point regardless of the server's secret scalar. The combined shared secret `K = SHA-256(k_pq || k_cl)` then depends only on the ML-KEM component. The same attack works in reverse against a client connecting to a malicious server.\n\nThe zero X25519 public key passes all existing validation (the length check on line 78 succeeds since 32 bytes i",
+      "link": "https://github.com/advisories/GHSA-w3jg-pjxf-73p4",
+      "published": "2026-09-30T23:26:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102824"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-84377",
       "title": "LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters",
       "summary": "### Impact\n\nAny authenticated LiteLLM proxy user could redirect an outbound provider call to a destination they control and cause the proxy to send its own configured provider credentials to that destination. The proxy's request-body validation was a denylist that did not cover every sensitive parameter and did not inspect parameters nested inside other request fields, so a caller could supply a routing or credential value that the proxy applied without clearing the operator's stored key. Any authenticated user could therefore exfiltrate the operator's upstream provider credentials and other configured secrets, and perform Server-Side Request Forgery against internal services reachable from the proxy.\n\n### Patches\n\nFixed in 1.96.2, 1.95.1, 1.94.3, 1.93.2, 1.92.2, 1.91.5, 1.90.7, 1.89.7, and 1.88.6.\n\n### Workarounds\n\nSet `general_settings.allow_client_side_credentials` to `false` so callers cannot override connection parameters, restrict proxy keys to trusted callers, and block the affected parameters (`api_base`, `base_url`, `model_list`, `fallbacks`, provider credential fields) at a reverse proxy or API gateway.",
@@ -300,6 +355,25 @@
       ],
       "cve_ids": [
         "CVE-2026-84377"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/",
+      "title": "From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)",
+      "summary": "Two weeks back I presented at BlueHat Asia 2026 about my research on Microsoft\u2019s Copilot in SSMS, the SQL Server Management Studio. This post is a write up about the talk, which covered CVE-2026-65669 , a SQL Server Elevation of Privilege Vulnerability rated critical by Microsoft. So, make sure your installations are up-to-date. The slides of the presentation can be found here . BlueHat Asia 2026 in Singapore First, a few words about the conference. I have spoken at BlueHat before, sometime back in 2017, and also two years ago. Both times at Microsoft\u2019s Redmond Campus.",
+      "link": "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/",
+      "published": "2026-09-30T21:00:40+00:00",
+      "source": "Embrace The Red (Prompt Injection Research)",
+      "tags": [
+        "ai",
+        "prompt-injection",
+        "agent",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-65669"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -407,114 +481,6 @@
       ],
       "cve_ids": [
         "CVE-2026-101898"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-101894",
-      "title": "@xhmikosr/decompress: Path traversal via symlink chain",
-      "summary": "### Impact\n\nWhen extracting an untrusted archive with the default `decompress(input, output)` API, a crafted archive containing a chain of symlink entries can make a later entry resolve **outside** the output directory. The lexical containment checks pass, but the kernel follows the planted symlinks to a path outside `output`, letting an attacker write (and read) files outside the intended extraction directory. Overwriting startup scripts or configuration can lead to remote code execution.\n\nThis is a bypass of the hardening in GHSA-mp2f-45pm-3cg9. Any application that extracts attacker-controlled archives is affected.\n\n### Patches\n\nFixed in **11.1.4** (`latest`) and backported to **10.2.2** (`release-v10` dist-tag). Upgrade to one of these.\n\nThe unmaintained upstream `decompress` package shares this flaw and will not be patched. Migrate to `@xhmikosr/decompress@11.1.4` (or `@10.2.2`).\n\n### Workarounds\n\nNone. Do not extract untrusted archives on affected versions. If you cannot upgrade, validate entries out of band and reject any whose resolved path escapes the target directory.",
-      "link": "https://github.com/advisories/GHSA-hrh2-vp3x-79xf",
-      "published": "2026-09-29T23:49:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-101894"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102266",
-      "title": "PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT's empty-key validation",
-      "summary": "### Summary\n\nA service that verifies HS256 tokens using an empty oct JWK through PyJWK, including a PyJWK obtained from PyJWKSet, can therefore accept attacker-generated tokens as authenticated.\n\nPyJWT 2.13.0 rejects an empty HMAC key when it is supplied through the raw `str`/`bytes` key path, but accepts the same zero-length key when it is supplied as a symmetric `PyJWK`.\n\nAn `oct` JWK containing an empty Base64URL key value:\n\n```json\n{\"kty\":\"oct\",\"k\":\"\"}\n```\n\nis decoded to `b\"\"`. During signature verification, the `PyJWK` path uses this decoded value directly and does not invoke the empty-key validation in `HMACAlgorithm.prepare_key`. With the default `enforce_minimum_key_length=False`, PyJWT emits a warning and proceeds with HMAC verification using the zero-length key.\n\nAn attacker can independently calculate `HMAC-SHA256(b\"\", signing_input)` and create valid HS256 JWTs with arbitrary claims. A service that verifies HS256 tokens using an empty `oct` JWK through `PyJWK` or `PyJWKSet` can therefore accept attacker-generated tokens as authenticated.\n\nThe application must already contain an empty HMAC JWK, for example because a missing Base64URL configuration or secret-manager value was serialized as `\"k\": \"\"`. The attacker does not need control of the JWK/JWKS source, a signing oracle, a private key, or a mixed algorithm allow-list.\n\n### Details\n\nThe vulnerability is caused by inconsistent validation of the same HMAC key material depending on whether it enters PyJWT as a raw key or through `PyJWK`.\n\n#### Raw empty HMAC keys are rejected\n\n[`[HMACAlgorithm.prepare_key](https://github.com/jpadilla/pyjwt/blob/7144e4534c34810f4525dc4578a32addd8212cff/jwt/algorithms.py#L325-L357)`](https://github.com/jpadilla/pyjwt/blob/7144e4534c34810f4525dc4578a32addd8212cff/jwt/algorithms.py#L325-L357) rejects an empty HMAC key.\n\nAs a result, an empty raw key is rejected in PyJWT 2.13.0:\n\n```python\njwt.decode(token, b\"\", algorithms=[\"HS256\"])\n```\n\nwith `InvalidKeyError`.\n\n#### Empty `o",
-      "link": "https://github.com/advisories/GHSA-9j54-fg26-wv3r",
-      "published": "2026-09-29T23:43:19Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102266"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102268",
-      "title": "PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard",
-      "summary": "**Prerequisites** (both conditions must hold; both are deployment properties, not attacker-controlled at request time):\n\n- The `jwt.decode` allow-list mixes an HMAC algorithm with an asymmetric one, e.g. `algorithms=[\"ES256\", \"HS256\"]` (the RFC 8725 footgun the guard exists to backstop).\n- The verification key is passed as raw PEM text/bytes on the non-`PyJWK` path, in a byte-form that `cryptography`'s loader accepts but PyJWT's `is_pem_format` regex does not recognize (marker-adjacent whitespace/indentation, CR-only line terminators, or the PEM folded to a single line). Such forms arise naturally from an indented YAML/JSON block, a single-line environment variable or JSON string, or a CR/LF round-trip through config tooling.\n\nThe attacker additionally needs the public verification key, which is public by definition, and `cryptography` must be installed.\n\nThe fix for CVE-2022-29217 rejects an asymmetric key handed to an HMAC algorithm, but only when `is_pem_format()` recognizes the key as PEM. That recognizer accepts strictly fewer byte-forms than the loader that later parses the key, so a PEM the guard misses still loads as a valid public key and is then used as an HMAC secret. This is an incomplete-guard bypass of the CVE-2022-29217 family.\n\n### Summary\nA PEM public key with marker-adjacent whitespace, CR-only line terminators, or folded to a single line makes PyJWT's `is_pem_format()` return `False` while `cryptography.load_pem_public_key()` accepts the identical bytes. The asymmetric-key rejection in `HMACAlgorithm.prepare_key` is skipped, the public key becomes the HMAC secret, and an attacker who knows the public key mints a valid `HS256` token \u2014 universal forgery \u2014 whenever the verify allow-list mixes an HMAC and an asymmetric algorithm.\n\n### Details\nAt `jwt/algorithms.py:331-335`, `HMACAlgorithm.prepare_key` contains the sole family-mismatch guard:\n\n    if is_pem_format(key_bytes) or is_ssh_key(key_bytes):\n        raise InvalidKeyError(\n            \"The spec",
-      "link": "https://github.com/advisories/GHSA-ffc3-869f-jxw9",
-      "published": "2026-09-29T23:17:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102268"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102273",
-      "title": "PyJWT accepts public JWK containers as HMAC secrets",
-      "summary": "### Summary\n\nPyJWT 2.13.0 contains an incomplete defense against algorithm confusion when\nan application mixes symmetric and asymmetric algorithms in one verification\npath. A public RSA, EC, or OKP JWK can be accepted as an HMAC secret when it\nis wrapped in a JWKS object, nested in an array, or represented in another\ncontainer form that does not expose a top-level `kty` member.\n\n### Impact\n\nAn attacker who knows the public key material can forge HS256/HS384/HS512\ntokens if the application simultaneously:\n\n* allows both HS* and asymmetric algorithms;\n* passes raw public JWK/JWKS JSON as `key=`; and\n* uses that same value as the HMAC secret.\n\nThis can allow forged JWT claims in affected application configurations. The\nissue does not affect applications that keep symmetric and asymmetric\nverification paths separate and follow PyJWT's algorithm-selection guidance.\n\n### Fix status\n\nThe fix is on `master` in commit `801cd12` (`fix: reject public JWK container\nHMAC keys`). `HMACAlgorithm.prepare_key` now rejects public JWK members found in\nobjects, arrays, nested containers, BOM/UTF variants, and recursion-limit\ninputs. It also recognizes escaped JSON member names without treating ordinary\nstring values as JWKs. Ordinary JSON secrets remain accepted byte-for-byte.\n\nThe change was tested with focused regression tests and the full local tox\nmatrix. Available Python 3.9, 3.12, and 3.13 crypto/no-crypto suites, mypy,\npackage metadata, and coverage passed; unavailable interpreters were skipped\nby the project configuration. A fresh independent Astra/max security review\naccepted the final diff with no blocking findings.\n\nThe affected range is `= 2.13.0`. The fix is on the unreleased development\nbranch; the patched version will be recorded when a released 2.x version\ncontaining the fix is available. This advisory is being moved to draft pending\nthat release.\n\n### Reporter credit\n\nCredit: Charles Vosburgh / Trilobyte.\n\n### Original report\n\nThe original report and reproduction packa",
-      "link": "https://github.com/advisories/GHSA-w2cx-738m-mc7w",
-      "published": "2026-09-29T23:16:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102273"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102271",
-      "title": "PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard",
-      "summary": "### Summary\n\n`HMACAlgorithm.prepare_key` blocks asymmetric keys from being used as HMAC secrets by searching for text markers only. It looks for `-----BEGIN` and for an `ssh-` prefix. The same key in DER form is binary ASN.1 and has neither marker, so it passes the check and is used as an HMAC secret.\n\nAn application that verifies tokens with an RSA or EC public key, and also allows HS256 with that same key, can be given a forged token. The attacker signs it with the public key, which is public. This is the key confusion problem CVE-2022-29217 was filed for, reachable again through a different encoding.\n\nThe reach is smaller than the original CVE. The application must already be in that misconfiguration, and it must hold its public key as DER bytes rather than PEM.\n\n### Details\n\nThe guard is at `jwt/algorithms.py:331`:\n\n```python\nif is_pem_format(key_bytes) or is_ssh_key(key_bytes):\n    raise InvalidKeyError(\n        \"The specified key is an asymmetric key or x509 certificate and\"\n        \" should not be used as an HMAC secret.\"\n    )\n```\n\nBoth helpers are text matchers. Neither one parses the key.\n\n- `jwt/utils.py:126`, `is_pem_format`, runs a regex for `----[- ]BEGIN ...----`.\n- `jwt/utils.py:141`, `is_ssh_key`, checks `startswith` against a list of `ssh-` and `ecdsa-sha2-` prefixes.\n\nA DER encoded public key starts with the bytes `0x30 0x82`. It matches neither, so `prepare_key` returns it unchanged and it becomes the HMAC secret.\n\nThere is no DER handling anywhere in the package. `grep -rni \"\\bDER\\b|load_der\" jwt/ tests/` returns nothing.\n\nThis affects three encodings that are all blocked in their PEM form today:\n\n- DER SubjectPublicKeyInfo\n- DER PKCS#1\n- DER encoded X.509 certificate\n\nHistory of this guard:\n\n- Added in 2.4.0 for CVE-2022-29217 and GHSA-ffqj-6fqr-9h24, covering PEM and SSH.\n- Extended in 2.13.0 for GHSA-xgmm-8j9v-c9wx, covering JWK JSON documents.\n- DER has never been covered.\n\nApplications that use `PyJWK` or `PyJWKClient` are not affected. `jw",
-      "link": "https://github.com/advisories/GHSA-p4g4-x82p-q773",
-      "published": "2026-09-29T23:14:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102271"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-8238-w5pm-2374",
-      "title": "adm-zip: Unhandled error event in async DEFLATE decompression crashes Node.js process (DoS)",
-      "summary": "## Summary\n\nDenial of Service in `adm-zip`'s async decompression API allows an unauthenticated attacker to crash the entire Node.js host process by supplying a single malformed ZIP file.\n\n## Details\n\n**Affected package**: adm-zip\n**Affected versions**: at least 0.6.0 (current latest); likely all versions containing the current `inflateAsync` implementation in `methods/inflater.js`\n**Patched version**: 0.6.1\n\n### Root Cause\n\n`methods/inflater.js:12-32` (`inflateAsync`) creates a `zlib.createInflateRaw(option)` stream and feeds it attacker-controlled compressed bytes via `tmp.end(inbuf)`, but never registers an `\"error\"` listener on the stream:\n\n```js\ninflateAsync: function (/*Function*/ callback) {\n    var tmp = zlib.createInflateRaw(option),\n        parts = [],\n        total = 0;\n    tmp.on(\"data\", function (data) { parts.push(data); total += data.length; });\n    tmp.on(\"end\", function () { /* build buf, callback(buf) */ });\n    tmp.end(inbuf);   // no tmp.on(\"error\", ...) registered anywhere\n}\n```\n\nPer Node.js `EventEmitter`/stream semantics, an `\"error\"` event emitted with zero listeners is rethrown as an **uncaught exception on a later tick**, originating from the zlib C++ binding. This cannot be caught by a `try/catch` wrapped around the calling code, because the throw happens asynchronously, outside the synchronous call stack the `try/catch` covers.\n\nThis code path is reached from every public async API that decompresses entry data: `readFileAsync`, `readAsTextAsync`, `extractAllToAsync`, and `ZipEntry.getDataAsync` (`zipEntry.js:51`, `:97-120`, `:309-315`; `adm-zip.js:157-164`, `:192-210`, `:893`).\n\nThis library recently patched **CVE-2026-39244** (GHSA-xcpc-8h2w-3j85), an unbounded `Buffer.alloc()` on the *synchronous* decompression path. That fix added a `maxOutputLength` option to `zlib.inflateRawSync`/`zlib.createInflateRaw`, and the sync path's resulting throw is naturally catchable. The async path shares the same `maxOutputLength` option (`methods/inflat",
-      "link": "https://github.com/advisories/GHSA-8238-w5pm-2374",
-      "published": "2026-09-29T23:10:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-39244"
       ],
       "is_zero_day": false,
       "is_high_severity": true

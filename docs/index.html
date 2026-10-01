@@ -109,31 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">31</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">29</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-09-30 21:36 UTC</div>
+            <div class="generated">Updated 2026-10-01 02:48 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-76504" target="_blank" rel="noopener">CVE-2026-76504 — Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-76504</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-30</span>
-  </div>
-  <p class='summary'>Vendor: Cisco | Product: Catalyst SD-WAN Manager. Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -164,6 +148,24 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gvp8-978c-rx2q" target="_blank" rel="noopener">PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-103001</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+`PyJWT.decode()`/`decode_complete()` mutates a caller-supplied `options` dict in place whenever `verify_signature` is falsy, adding `verify_exp`/`verify_nbf`/`verify_iat`/`verify_aud`/`verify_iss`/`verify_sub`/`verify_jti` keys directly onto that object. If application code reuses the same `options` dict across calls (a config object, a module-level constant, a wrapper&#x27;s `self.options…</p>
+
+        </article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -202,22 +204,6 @@ The flaw, CVE-2026-76504, could allow a remote attacker with no login access to 
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/government-finance-orgs-targeted-in-weeks-long-netscaler-zero-day-attacks/" target="_blank" rel="noopener">Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-88771</code> <code class="cve">CVE-2026-88772</code>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-09-30</span>
-  </div>
-  <p class='summary'>Several security firms have confirmed seeing exploitation of the NetScaler vulnerabilities CVE-2026-88771 and CVE-2026-88772. The post Government, Finance Orgs Targeted in Weeks-Long NetScaler Zero-Day Attacks appeared first on SecurityWeek .</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.securityweek.com/russian-apt-star-blizzard-uses-redflick-infection-chain-in-recent-attacks/" target="_blank" rel="noopener">Russian APT Star Blizzard Uses ‘RedFlick’ Infection Chain in Recent Attacks</a></h2>
   </div>
   <div class="card-meta">
@@ -230,51 +216,6 @@ The flaw, CVE-2026-76504, could allow a remote attacker with no login access to 
   <p class='summary'>The state-sponsored group has launched larger-scale phishing campaigns to deploy the CosmicPulse backdoor. The post Russian APT Star Blizzard Uses ‘RedFlick’ Infection Chain in Recent Attacks appeared first on SecurityWeek .</p>
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/09/citrix-netscaler-cve-2026-88772-exploit.html" target="_blank" rel="noopener">Citrix NetScaler CVE-2026-88772 Exploit Details Show Pre-Auth Path to Shellcode Execution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-88772</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-30</span>
-          </div>
-          <p class='summary'>Cybersecurity researchers have disclosed technical details of a recently patched critical security flaw in Citrix NetScaler ADC and Gateway that has come under active exploitation in the wild.
-
-The vulnerability, tracked as CVE-2026-88772 (CVSS score: 9.5), has been described as a memory overflow bug in the Datagram Transport Layer Security (DTLS) protocol handling that&#x27;s rooted in the NetScaler</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r6x4-923q-g947" target="_blank" rel="noopener">PyJWT BOM Bypass</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102272</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>## Affected Package
-
-- **Package**: PyJWT (`pyjwt` on PyPI)
-- **Repository**: https://www.google.com/url?q=https://github.com/jpadilla/pyjwt&amp;source=gmail&amp;ust=1781794518474000&amp;sa=E
-- **Affected version**: 2.13.0
-- **Vulnerability class**: Algorithm confusion / patch bypass
-
----
-
-## Root Cause
-
-PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algorithms.py`, approximately …</p>
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -375,6 +316,22 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/" target="_blank" rel="noopener">Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-88771</code> <code class="cve">CVE-2026-88772</code>
+    <span class="meta-sep">·</span>
+    <span>Unit 42 (Palo Alto)</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-30</span>
+  </div>
+  <p class='summary'>Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30) appeared first on Unit 42 .</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/" target="_blank" rel="noopener">DIVD says Zammad zero-days enabled AI-driven network breach</a></h2>
   </div>
   <div class="card-meta">
@@ -407,6 +364,104 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9q9j-q6p8-xq58" target="_blank" rel="noopener">fastify vulnerable to header validation bypass via incomplete schema case normalization</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-84428</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>### Impact
+
+Fastify lowercases header-schema property names before compiling the schema, because Node.js stores request header names in lowercase. That normalization was incomplete: it lowercased only top-level `properties` keys and the root `required` array, and did not lowercase the JSON Schema Draft 7 `dependencies` keyword (its trigger keys and dependent property names) or names in nested subs…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-35g8-35p8-c8fw" target="_blank" rel="noopener">Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102821</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>## Summary
+
+A russh **server** can be driven to unbounded heap growth (process OOM / kill) by
+a peer that speaks only standard SSH messages, in the **default configuration**.
+
+The peer starts a key re-exchange (sends `SSH_MSG_KEXINIT`) but never sends the
+follow-up `SSH_MSG_KEX_ECDH_INIT`, leaving the server&#x27;s kex state machine in
+`SessionKexState::InProgress` **indefinitely**. While a rekey is in…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4233-jc72-56c5" target="_blank" rel="noopener">Astro: Netlify Image CDN allowlist bypass enables SSRF</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102983</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>## Summary
+
+The `@astrojs/netlify` adapter generated regular expressions for Netlify Image CDN remote-image allowlists without anchoring them to the beginning of the URL. Netlify evaluates these expressions with `RegExp.test()`, so an allowed image origin appearing anywhere in a URL, including its path or query string, could satisfy the allowlist.
+
+For example, an application allowing `images.exam…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p8qx-h547-fjw9" target="_blank" rel="noopener">russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102822</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>### Summary
+`SshBlockCipher` implementations (AES-CBC, AES-CTR, 3DES-CBC, etc.) report `needs_mac() == true`, meaning they are documented/intended to always be paired with a separate integrity MAC. However, key-exchange negotiation only checks `needs_mac()` inside the *fallback* branch of MAC algorithm selection (used when no common MAC algorithm exists). If both peers&#x27; preferred MAC lists simply …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w3jg-pjxf-73p4" target="_blank" rel="noopener">Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102824</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-09-30</span>
+          </div>
+          <p class='summary'>## Vulnerability
+
+The hybrid ML-KEM 768 + X25519 key exchange implementation in `russh/src/kex/hybrid_mlkem.rs` does not validate that the remote peer&#x27;s X25519 public key is not the zero point (all-zero 32-byte value). This allows a remote peer to force the X25519 contribution to the combined shared secret to zero, reducing the hybrid KEX to a single-algorithm exchange.
+
+Affected code at HEAD (v0.…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3cv6-jpf6-8222" target="_blank" rel="noopener">LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters</a></h2>
           </div>
           <div class="card-meta">
@@ -421,6 +476,22 @@ PyJWT 2.13.0 introduced a guard in `HMACAlgorithm.prepare_key()` (file `jwt/algo
 Any authenticated LiteLLM proxy user could redirect an outbound provider call to a destination they control and cause the proxy to send its own configured provider credentials to that destination. The proxy&#x27;s request-body validation was a denylist that did not cover every sensitive parameter and did not inspect parameters nested inside other request fields, so a caller could supply a r…</p>
 
         </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/" target="_blank" rel="noopener">From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-65669</code>
+    <span class="meta-sep">·</span>
+    <span>Embrace The Red (Prompt Injection Research)</span>
+    <span class="meta-sep">·</span>
+    <span>2026-09-30</span>
+  </div>
+  <p class='summary'>Two weeks back I presented at BlueHat Asia 2026 about my research on Microsoft’s Copilot in SSMS, the SQL Server Management Studio. This post is a write up about the talk, which covered CVE-2026-65669 , a SQL Server Elevation of Privilege Vulnerability rated critical by Microsoft. So, make sure your installations are up-to-date. The slides of the presentation can be found here . BlueHat Asia 2026 …</p>
+
+</article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -541,135 +612,6 @@ Applications are affected when they rely on `maxRedirects: 0` and use …</p>
           <p class='summary'>## Summary
 
 Axios for Node.js does not apply configured DNS lookup or proxy controls when a request uses `httpVersion: 2`. The HTTP/1 adapter path wraps and forwards `config.lookup`, builds normal request options, and applies proxy routing through `setProxy()`. The HTTP/2 path builds a session with `http2.connect()` using only `options.http2Options`, which drops the top-level `lookup`, `agent`, an…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hrh2-vp3x-79xf" target="_blank" rel="noopener">@xhmikosr/decompress: Path traversal via symlink chain</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-101894</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>### Impact
-
-When extracting an untrusted archive with the default `decompress(input, output)` API, a crafted archive containing a chain of symlink entries can make a later entry resolve **outside** the output directory. The lexical containment checks pass, but the kernel follows the planted symlinks to a path outside `output`, letting an attacker write (and read) files outside the intended extract…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9j54-fg26-wv3r" target="_blank" rel="noopener">PyJWT: PyJWK accepts empty HMAC keys, bypassing PyJWT&#x27;s empty-key validation</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102266</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>### Summary
-
-A service that verifies HS256 tokens using an empty oct JWK through PyJWK, including a PyJWK obtained from PyJWKSet, can therefore accept attacker-generated tokens as authenticated.
-
-PyJWT 2.13.0 rejects an empty HMAC key when it is supplied through the raw `str`/`bytes` key path, but accepts the same zero-length key when it is supplied as a symmetric `PyJWK`.
-
-An `oct` JWK containing…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-ffc3-869f-jxw9" target="_blank" rel="noopener">PyJWT: Asymmetric-PEM detection bypass: whitespace/line-ending-mutated public keys skip the HS/asymmetric confusion guard</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102268</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>**Prerequisites** (both conditions must hold; both are deployment properties, not attacker-controlled at request time):
-
-- The `jwt.decode` allow-list mixes an HMAC algorithm with an asymmetric one, e.g. `algorithms=[&quot;ES256&quot;, &quot;HS256&quot;]` (the RFC 8725 footgun the guard exists to backstop).
-- The verification key is passed as raw PEM text/bytes on the non-`PyJWK` path, in a byte-form that `cryptograp…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w2cx-738m-mc7w" target="_blank" rel="noopener">PyJWT accepts public JWK containers as HMAC secrets</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102273</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>### Summary
-
-PyJWT 2.13.0 contains an incomplete defense against algorithm confusion when
-an application mixes symmetric and asymmetric algorithms in one verification
-path. A public RSA, EC, or OKP JWK can be accepted as an HMAC secret when it
-is wrapped in a JWKS object, nested in an array, or represented in another
-container form that does not expose a top-level `kty` member.
-
-### Impact
-
-An att…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p4g4-x82p-q773" target="_blank" rel="noopener">PyJWT: Public keys in DER form are accepted as HMAC secrets, bypassing the CVE-2022-29217 guard</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102271</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>### Summary
-
-`HMACAlgorithm.prepare_key` blocks asymmetric keys from being used as HMAC secrets by searching for text markers only. It looks for `-----BEGIN` and for an `ssh-` prefix. The same key in DER form is binary ASN.1 and has neither marker, so it passes the check and is used as an HMAC secret.
-
-An application that verifies tokens with an RSA or EC public key, and also allows HS256 with tha…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8238-w5pm-2374" target="_blank" rel="noopener">adm-zip: Unhandled error event in async DEFLATE decompression crashes Node.js process (DoS)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-39244</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-29</span>
-          </div>
-          <p class='summary'>## Summary
-
-Denial of Service in `adm-zip`&#x27;s async decompression API allows an unauthenticated attacker to crash the entire Node.js host process by supplying a single malformed ZIP file.
-
-## Details
-
-**Affected package**: adm-zip
-**Affected versions**: at least 0.6.0 (current latest); likely all versions containing the current `inflateAsync` implementation in `methods/inflater.js`
-**Patched versio…</p>
 
         </article>
 
