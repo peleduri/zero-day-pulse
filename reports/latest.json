@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-01T11:57:49.336405+00:00",
-  "total": 31,
+  "generated": "2026-10-01T17:50:01.455354+00:00",
+  "total": 33,
   "kev": 0,
   "zero_day": 16,
   "enriched": 0,
@@ -37,6 +37,21 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html",
+      "title": "ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories",
+      "summary": "This week, the useful words are boring ones: inspect, cache, compile, store, trust. Each sounds harmless. Each can become an attack path when a system does a little more than people expect. A model check can run code. A cache can mix up requests. A public secret can stay useful for years.\n\nThat is the lesson running through the list. Attackers do not always need a brilliant new trick. They can",
+      "link": "https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html",
+      "published": "2026-10-01T16:45:38+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/",
       "title": "Zammad Zero-Days Exploited in AI-Powered DIVD Hack",
       "summary": "The flaws were chained to hijack sessions, achieve remote code execution, and elevate privileges to root. The post Zammad Zero-Days Exploited in AI-Powered DIVD Hack appeared first on SecurityWeek .",
@@ -65,25 +80,6 @@
       ],
       "cve_ids": [
         "CVE-2026-103001"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504",
-      "title": "Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild (CVE-2026-76504)",
-      "summary": "Overview On September 30, 2026, Cisco published a security advisory for CVE-2026-76504 , a critical API authentication bypass vulnerability affecting Cisco Catalyst SD-WAN Manager. The vulnerability has a CVSSv3.1 score of 9.8 and results from improper handling of URL encoding ( CWE-177 ). An unauthenticated, remote attacker can send a crafted HTTP request that bypasses an authentication rule for a specific API endpoint, gaining access to the API with the privileges of the admin user. According to Cisco, CVE-2026-76504 is being actively exploited in the wild; Cisco PSIRT became aware of the activity in September 2026. Cisco Catalyst SD-WAN Manager systems with ports exposed to the internet are at risk of compromise. The vulnerability affects the product regardless of system configuration, and Cisco has not provided a workaround, however vendor supplied updates are available. Rapid7 strongly recommends that organizations upgrade affected systems to a fixed release on an emergency basis, outside of normal patch cycles, and investigate internet-facing systems for signs of exploitation. Cisco Catalyst SD-WAN Manager was also affected by two critical, unauthenticated peering authentication flaws earlier in 2026: CVE-2026-20127 and Rapid7-discovered CVE-2026-20182 . Both were distinct issues in the vdaemon service and similar parts of its networking stack. CVE-2026-76504 targets a separate API authentication path, but the recurrence of authentication bypasses in internet-facing Catalyst SD-WAN control components reinforces the need for emergency remediation. On September 30, 2026, CVE-2026-76504 was added to the U.S. Cybersecurity and Infrastructure Security Agency's (CISA) list of known exploited vulnerabilities (KEV) , based on evidence of active exploitation. CISA set a remediation due date of October 3, 2026. Mitigation guidance Cisco has released software updates that remediate CVE-2026-76504. Organizations running affected instances of Cisco Catalyst SD-WAN Manager ",
-      "link": "https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504",
-      "published": "2026-09-30T15:09:22+00:00",
-      "source": "Rapid7 Blog",
-      "tags": [
-        "research",
-        "metasploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-76504",
-        "CVE-2026-20127",
-        "CVE-2026-20182"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -186,17 +182,19 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/cisco-patches-exploited-catalyst-sd-wan-zero-day-vulnerability/",
-      "title": "Cisco Patches Exploited Catalyst SD-WAN Zero-Day Vulnerability",
-      "summary": "The flaw could allow remote, unauthenticated attackers to access vulnerable appliances with administrative privileges. The post Cisco Patches Exploited Catalyst SD-WAN Zero-Day Vulnerability appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/cisco-patches-exploited-catalyst-sd-wan-zero-day-vulnerability/",
-      "published": "2026-10-01T08:26:03+00:00",
+      "id": "https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/",
+      "title": "Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure",
+      "summary": "Under certain conditions, CVE-2026-73570 can be exploited via specially crafted emails without user interaction. The post Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/",
+      "published": "2026-10-01T12:55:57+00:00",
       "source": "SecurityWeek",
       "tags": [
         "news",
         "research"
       ],
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-73570"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -265,6 +263,150 @@
       "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-92944",
+      "title": "vm2 sandbox escape on Node.js 26 through a stale PromiseThenLookupChain protector",
+      "summary": "## Reporter\n\n- Name or handle: `[YMsora]`\n- Report date: 2026-08-14\n\n## Summary\n\nThe latest published vm2 release, **3.11.5**, and the current `main` branch are vulnerable to a sandbox escape when used on Node.js 26. An ordinary fulfilled Promise created by an async function can retain an attacker-controlled `constructor[Symbol.species]` across `Promise.prototype.finally()`.\n\nvm2 installs wrappers on the intrinsic `Promise.prototype.then` and `catch` methods. On Node.js 26 / V8 14.6, V8's `SetPrototypeProperties` path updates these existing data properties without invalidating the `PromiseThenLookupChain` protector. `Promise.prototype.finally()` subsequently trusts the stale protector and uses an internal `InvokeThen` fast path that calls the original native `then`, bypassing vm2's wrapper and its `resetPromiseSpecies(this)` hardening.\n\nThe attacker-controlled species constructor therefore supplies the resolve and reject functions used by a native Promise reaction. A calibrated stack overflow at that native reaction boundary yields a raw host-realm `RangeError` to the attacker-controlled reject function. Its constructor chain reaches the host `Function` constructor and consequently the host `process` object.\n\nThe attached proof is non-destructive: it reads only `process.version`. It does not execute commands, access files, or perform network requests.\n\n## Latest-version status\n\nVerified on 2026-08-14:\n\n- npm `latest`: `vm2@3.11.5`\n- `vm2@3.11.5` publication time: 2026-05-18T15:37:26.138Z\n- npm `gitHead`: `7a1f5100b96f48d34e0fe104ab37c0acc5944f92`\n- npm tarball: `https://registry.npmjs.org/vm2/-/vm2-3.11.5.tgz`\n- npm integrity: `sha512-RSrkBiwrj6FRU+QdqNs6KG0XdlvJCjpQ4GXiqmMbrhmwfu5k/XIMpAer0L8f6iuf0uJ3a4T1xJN126Q8yf0VIA==`\n- GitHub default branch `main` HEAD: the same commit, also tagged `v3.11.5`\n- latest formal Node.js release: `v26.7.0`, V8 `14.6.202.34`\n\nThe npm tarball and current GitHub `main` contain the same relevant `lib/setup-sandbox.js` Git blob. There is",
+      "link": "https://github.com/advisories/GHSA-27g9-p43v-cw3v",
+      "published": "2026-10-01T15:28:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-92944"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-92941",
+      "title": "vm2 NodeVM can replace the host process TLS trust store",
+      "summary": "Summary\n\nvm2 3.11.6 exposes the host `tls` module to a `NodeVM` when that builtin is explicitly allowed. Although the module object is wrapped as read-only, its functions still execute against process-wide host state. On Node.js versions that provide `tls.setDefaultCACertificates()`, sandbox code can replace the certificate authorities trusted by subsequent host-realm TLS clients.\n\nThe exploit needs only the narrowly allowed `tls` and `url` builtins. It does not require `fs`, `process`, `module`, `child_process`, an external package, or a general `'*'` builtin grant. A host HTTPS request rejected an attacker certificate before sandbox execution, then accepted the same certificate and returned an application marker after the sandbox replaced the default CA list.\n\nThis crosses the intended sandbox boundary. An attacker can make host HTTPS clients trust an attacker-controlled CA, enabling credential theft and response tampering when the attacker can influence a subsequent destination or network path. Replacing the list also removes the normal trust roots, disrupting unrelated host TLS traffic.\n\n### Details\n\nThe vulnerable boundary is the default builtin loader in `lib/builtin.js`. Builtins that are not classified as dangerous are exposed through a recursive read-only bridge:\n\n```js\nbuiltins.set(key, special ? special : vm => vm.readonly(hostRequire(key)));\n```\n\nThe read-only wrapper prevents ordinary property assignment through the sandbox proxy. It does not make calls such as `tls.setDefaultCACertificates()` sandbox-local. That function changes the default CA list for the current Node.js thread and affects subsequent TLS connections that do not provide their own `ca` option.\n\nThe dangerous-builtin list now rejects `dns` because `dns.setServers()` mutates process-wide host networking state. It does not reject `tls`, even though current Node.js exposes an equivalent process-wide trust mutation through it.\n\nA direct call with a normal sandbox array is not necessary. The ",
+      "link": "https://github.com/advisories/GHSA-98xx-8mx4-x7cm",
+      "published": "2026-10-01T15:27:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-92941"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102830",
+      "title": "JupyterLab: Cross-site scripting (XSS) in JupyterLab via crafted language package (jupyterlab.json)",
+      "summary": "## Description\n\nA language pack ships a `Plural-Forms` header saying how the language counts, for example `nplurals=2; plural=(n != 1);`. JupyterLab turns that string into a function with `new Function`, so the header gets executed. The check that meant to keep it safe was a regular expression. The regex was anchored at the start but not at the end, so it accepted any string that began with a valid plural rule and ignored everything after it.\n\nA header such as the following passed the check, and the part after the plural rule ran in the JupyterLab page as soon as the first plural string was translated:\n\n```\nnplurals=2; plural=(n > 1); <anything here ran as JavaScript>\n```\n\nUsers are affected if all of the following are true:\n\n- they run JupyterLab 3.0.0 through 4.6.3, or an application that bundles it such as Notebook 7;\n- a language pack they did not write is installed in the environment; and\n- that language is selected, so its catalogue is loaded\n\nAn installation using the default English locale loads no catalogue and is not affected.\n\n> CVE assignment pending, GitHub CNA is experiencing severe backlog\n\n### Impact\n\nThe code in the header ran in the JupyterLab page, in the same origin and session as the authenticated user. It could call the Jupyter Server REST API as that user: read and write any file under the server root, start a kernel and run code in it, and open a terminal where terminals are enabled. Nothing had to be clicked; translating one plural string was enough, and that happens during normal use of the interface.\n\nWhat this changes is who has to be trusted. A language pack is a Python package, and installing one is already a privileged act, so an attacker who can get any package installed has server-side code execution regardless of this issue. The header is different because it is catalogue metadata: it travels with translation content, through the [translation pipeline](https://jupyterlab.readthedocs.io/en/latest/developer/internationalization.html) ",
+      "link": "https://github.com/advisories/GHSA-3jqq-pw4j-pqcj",
+      "published": "2026-10-01T15:22:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102830"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102904",
+      "title": "JupyterLab: Argument injection in JupyterLab extension uninstall exposes server-readable files and internal URLs",
+      "summary": "JupyterLab's PyPI extension manager runs `python -m pip uninstall` with the extension name taken from the request body. `ExtensionHandler.post` validates the name for `cmd=install` but not for `cmd=uninstall`, so a name that begins with `-` reaches the command line and pip reads it as an option rather than as a package.\n\n```python\ncmdline = [\n    sys.executable,\n    \"-m\",\n    \"pip\",\n    \"uninstall\",\n    \"--yes\",\n    \"--no-input\",\n    extension,\n]\n```\n\nAn extension name of the form `-r` followed by a path therefore made pip open that path as a requirements file. pip's parse error quotes the line it could not read and names the file it came from, and JupyterLab returned that error in the response body, so the line reached the requester.\n\nThis has security implications only for deployments that combine all of the following:\n\n- the (default) PyPI Extension Manager enabled, so that uninstall requests reach pip;\n- an authenticated account permitted to call the extension API; and\n- kernels and terminals disabled or delegated to remote hosts (otherwise a user with kernel access can read the same files and make the same outbound requests directly, regardless of this endpoint)\n\nUnlike [GHSA-37w4-hwhx-4rc4](https://github.com/jupyterlab/jupyterlab/security/advisories/GHSA-37w4-hwhx-4rc4) and [GHSA-89vp-jrxv-24w8](https://github.com/jupyterlab/jupyterlab/security/advisories/GHSA-89vp-jrxv-24w8), this does not need an allowlist or blocklist to be configured. The uninstall path never consulted the listing.\n\n### Impact\n\nAn authenticated user gains a read of server-side files and an outbound request from the server, both outside the confinement that the contents root and the disabled kernels were meant to provide. The user cannot choose which line of a file is returned, and cannot write content of their choosing.\n\n#### Reading files the account cannot reach\n\n`-r<path>` makes pip open the path as a requirements file. The first line that pip cannot parse as a requirement comes back i",
+      "link": "https://github.com/advisories/GHSA-3325-v43h-43rv",
+      "published": "2026-10-01T15:21:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102904"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102831",
+      "title": "JupyterLab: Cross-site scripting (XSS) in JupyterLab via notebook cells pasted from the system clipboard",
+      "summary": "## Description\n\nJupyterLab 4.5.0 enabled copying and pasing cells through the system clipboard. The paste path parses clipboard text as cell JSON and inserts the cells without clearing `metadata.trusted`, so a payload can declare its own output as trusted. JupyterLab does not sanitize a trusted output and evaluates the `<script>` elements it contains, so pasting the cell runs attacker's JavaScript in the JupyterLab origin. The same payload with `\"trusted\": false` is sanitized.\n\n```json\n[\n  {\n    \"cell_type\": \"code\",\n    \"execution_count\": null,\n    \"source\": \"\",\n    \"metadata\": { \"trusted\": true },\n    \"outputs\": [\n      {\n        \"output_type\": \"display_data\",\n        \"metadata\": {},\n        \"data\": { \"text/html\": \"<script>/* runs on paste */</script>\" }\n      }\n    ]\n  }\n]\n```\n\nUsers are affected if all of the following are true:\n\n- they run JupyterLab 4.5.0 through 4.6.3, or an application that bundles it such as Notebook 7.5+;\n- if running 4.5.2 or newer, `useSystemClipboardForCells` is enabled - it is off by default in 4.5.2+, and always enabled on 4.5.0 and 4.5.1 with no opt-out\n- they run a Paste Cells command (e.g. from context menu, command palette, shortcut) while attacker-controlled text is in the clipboard; and\n- `pasteCodeCellsWithoutOutput` is off, the default, so the pasted cell keeps its outputs\n\n\n### Impact\n\nThe script runs in the JupyterLab page, in the same origin and session as the authenticated user, so it can call the Jupyter Server REST API as that user: read and write any file under the server root, start a kernel and run code in it, and open a terminal where terminals are enabled. It runs on paste, without the user executing anything.\n\nOnly the output of a code cell can run a script this way. Markdown and raw cells are always sanitized, as the [trust documentation](https://jupyterlab.readthedocs.io/en/latest/user/notebook.html#trust) states.\n\nThe attacker needs no JupyterLab account and no access to the server, only the user's clipboard at t",
+      "link": "https://github.com/advisories/GHSA-6966-vjj6-99xv",
+      "published": "2026-10-01T15:20:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102831"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-89407",
+      "title": " jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()",
+      "summary": "## Status\n\n**FULLY REPRODUCED** with a clean, textbook empirical signature: measured runtime grew almost\nexactly 4x for every doubling of input size across five consecutive doublings (5,000 \u2192 160,000\ncharacters), confirming O(n\u00b2) behavior. A single 160,000-character string (smaller than a typical\nHTTP request body) took **74.4 seconds** for one call to `NumberInput.looksLikeValidNumber()`.\n\n## Affected Component / Version\n\n- **Package:** `com.fasterxml.jackson.core:jackson-core`\n- **Confirmed against:** `jackson-core-2.20.2`\n- **Affected file:** `src/main/java/com/fasterxml/jackson/core/io/NumberInput.java`\n  (`PATTERN_FLOAT` line ~41-42, `PATTERN_FLOAT_TRAILING_DOT` line ~51, entry point\n  `looksLikeValidNumber()` lines ~646-656)\n\n## Technical Analysis\n\n```java\nprivate final static Pattern PATTERN_FLOAT = Pattern.compile(\n      \"[+-]?[0-9]*[\\\\.]?[0-9]+([eE][+-]?[0-9]+)?\");\n\nprivate final static Pattern PATTERN_FLOAT_TRAILING_DOT = Pattern.compile(\n        \"[+-]?[0-9]+[\\\\.]\");\n\npublic static boolean looksLikeValidNumber(final String s) {\n    // ... short-circuits only for null/empty/length==1 ...\n    return PATTERN_FLOAT.matcher(s).matches()\n            || PATTERN_FLOAT_TRAILING_DOT.matcher(s).matches();\n}\n```\n\n`PATTERN_FLOAT` contains ambiguous, adjacent quantifiers over the identical character class:\n`[0-9]*` (optional digits), an optional `[.]`, then `[0-9]+` (required digits). Java's\nbacktracking `Pattern`/`Matcher` engine has no possessive quantifiers or atomic grouping here,\nso on a non-matching input the engine must explore every possible split point between the\n`[0-9]*` and `[0-9]+` groups before concluding failure \u2014 the classic quadratic-backtracking\nshape. `looksLikeValidNumber()` compounds the cost by running a **second** full-string regex\n(`PATTERN_FLOAT_TRAILING_DOT`) whenever the first fails, roughly doubling the constant factor\nwithout changing the asymptotic class.\n\nCritically, the length gate that applies to this specific path is\n`StreamReadConstrai",
+      "link": "https://github.com/advisories/GHSA-p6pp-m3f8-5c89",
+      "published": "2026-10-01T15:19:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-89407"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-72788",
+      "title": "SiYuan discloses an administrator's open documents and search terms to anonymous readers",
+      "summary": "### Summary\n\n`/api/system/getConf` serves `Conf.UILayout` to publish readers after passing it through `FilterConfByPublishIgnore`, whose only function is to filter that layout. The layout is written exclusively by `setUILayout`, which is administrator-gated, so what readers receive is the administrator's own live workspace state, re-saved on every tab open, close and focus change.\n\nThe filter that is supposed to protect it, `filterLayoutItemByPublishIgnore`, has four separate defects. Together they mean a single unauthenticated POST with no arguments returns the titles and identifiers of the administrator's open password-protected documents, the titles of documents in locked or closed notebooks, their recent search terms and the paths those searches were scoped to, and the paths of private assets they have open.\n\nThis report concerns `FilterConfByPublishIgnore` and its layout walker. It is distinct from the previously reported `getConf` issues, which concern configuration fields surviving `HideConfSecret`'s blocklist. Restructuring the secret-masking path would not affect this, because `UILayout` is not a secret to be stripped. It is a field intended to be served and filtered.\n\n### Details\n\n**Route and writer asymmetry.** `kernel/api/router.go:70` registers `POST /api/system/getConf` with `model.CheckAuth` only, so it is reachable by the publish `RoleReader` token and anonymously when `Publish.Auth.Enable` is `false`. The corresponding writer, `setUILayout` at `kernel/api/router.go:67`, carries `CheckAuth`, `CheckAdminRole` and `CheckReadonly`. Only an administrator can write this state, and any reader can read it.\n\n**The filter exists and is intended to work.** `HideConfSecret` never touches `UILayout` (zero matches on both refs). Instead the reader branch runs:\n\n```go\nif model.IsReadOnlyRoleContext(c) {\n    publishIgnore := model.GetInvisiblePublishAccess(publishAccess)\n    maskedConf = model.FilterConfByPublishIgnore(publishIgnore, maskedConf)\n}\n```\n\n`FilterConfB",
+      "link": "https://github.com/advisories/GHSA-hgfg-j9pg-43xw",
+      "published": "2026-10-01T14:39:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-72788"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-69085",
+      "title": "SiYuan: Unauthenticated SQL injection in searchDocs via unescaped keyword (publish mode): cross-notebook read/write with statement stacking",
+      "summary": "### Summary\n\nThe `/api/filetree/searchDocs` endpoint concatenates the caller-supplied search keyword directly into a SQL statement with no escaping and no parameter binding. The endpoint is gated by `CheckAuth` only reachable by the publish RoleReader token, and by the anonymous account when `Publish.Auth.Enable` is `false`. The resulting statement runs on a read-write SQLite handle through a driver that executes stacked (`;`-separated) statements, against the global `blocks` table spanning all cleartext notebooks. An unauthenticated request can therefore read and write database content across every non-encrypted notebook on the instance.\n\n### Details\n\nData flow, unescaped and unbound at every hop:\n\n- `searchDocs` (`kernel/api/filetree.go`): `k := arg[\"k\"].(string)` passed straight to `model.SearchDocs(k, \u2026)`, no sanitization.\n- `SearchDocs` (`kernel/model/file.go`): after `TrimSpace` and `strings.Fields`, each token is spliced into a single-quoted `LIKE` literal by concatenation `condition.WriteString(\"(hpath LIKE '%\" + k + \"%'\")`. No escaping, no `''` doubling, no bind placeholder.\n- `NAMFilter` (`kernel/conf/search.go`): appends `\" OR name LIKE '%\" + keyword + \"%'\"` (and `alias`, `memo`) the same way, enabled by default.\n- `QueryRootBlockByCondition` (`kernel/sql/block_query.go`): `\"SELECT *, \u2026 FROM blocks WHERE type = 'd' AND \" + condition + \" ORDER BY \u2026 LIMIT \u2026\"` passed to `query(sqlStmt)`.\n\nThe only value-inspecting guard is `ast.IsNodeIDPattern(keyword)`, which merely routes an exact-ID-shaped keyword to a different branch; a normal keyword falls through to the concatenation. `strings.Fields` prevents literal whitespace within a token this constrains payload construction but is not sanitization or confinement.\n\n**Driver / statement stacking.** The driver is the vendored `github.com/88250/go-sqlite3` (mattn fork), registered as `sqlite3_extended`. `query()` calls `db.Query`, and the driver's connection `query` implementation loops over `;`-separated statements",
+      "link": "https://github.com/advisories/GHSA-33jq-p8c2-q3q4",
+      "published": "2026-10-01T14:38:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-69085"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html",
@@ -406,113 +548,6 @@
       ],
       "cve_ids": [
         "CVE-2026-65669"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/09/attackers-exploit-zimbra-flaw-to-deploy.html",
-      "title": "Attackers Exploit Zimbra Flaw to Deploy Web Shells and Harvest Authentication Secrets",
-      "summary": "Threat actors have weaponized a now-patched security flaw in Zimbra Collaboration Suite (ZCS) to deploy web shells and access mailbox data, according to findings from the Microsoft Security Research team.\n\nThe attack exploits CVE-2026-73570 (CVSS score: 8.9), an unauthenticated operating system command injection flaw that can lead to remote code execution when Simple Network Management Protocol",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-zimbra-flaw-to-deploy.html",
-      "published": "2026-09-30T16:46:29+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-73570"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-91776",
-      "title": "jackson-databind retains every unknown raw type ID ",
-      "summary": "### Summary\n\nWith `@JsonTypeInfo(use = Id.NAME, defaultImpl = ...)`, every distinct unknown\nraw type ID selects the same fallback deserializer but is retained as a\nseparate key in `TypeDeserializerBase._deserializers`. An attacker who can\nrepeatedly supply new unknown type IDs can grow this process-lifetime cache\nwithout a configured bound.\n\n### Details\n\nThe affected path is `TypeDeserializerBase._findDeserializer()`. After an\nunknown name-based type ID resolves to the configured fallback/default\nimplementation, jackson-databind caches the result under the attacker-provided\nraw `typeId`. Although all such IDs select the same fallback deserializer, each\nnew string remains a distinct cache key.\n\nThe behavior is runtime-confirmed in jackson-databind 2.22.1 and 3.2.1.\nCurrent 2.22 and 3.2 source branches retained the unbounded `_deserializers`\nmap and per-raw-ID cache write when rechecked. The earlier affected floor has\nnot been established, patched versions are: 2.18.11, 2.21.7, 2.22.3, 3.1.7 and 3.2.3.\n\nThe vulnerable application must enable name-based polymorphism with a\n`defaultImpl` or equivalent fallback, accept attacker-influenced type IDs, and\nreuse a long-lived mapper/type deserializer across requests.\n\nSuggested correction: avoid caching each unknown raw ID when every such ID\nresolves to the same fallback, use a fallback sentinel, or use an explicitly\nbounded concurrency-safe cache. A regression should contrast many distinct\nunknown IDs with repetitions of one unknown ID across requests.\n\n### PoC\n\nConfigure a polymorphic base type with\n`@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, defaultImpl = Fallback.class)` and\ndeserialize inputs containing unknown type names through the same mapper.\nInspect `TypeDeserializerBase._deserializers` after the run.\n\nOn affected 2.x and 3.x versions, 10,000 distinct unknown raw type IDs produce\n10,000 retained cache entries even though every input selects the same\nfallback deserializer. A matched control that repeats one unknown ID",
-      "link": "https://github.com/advisories/GHSA-wv8q-qhhj-9h54",
-      "published": "2026-09-30T15:36:55Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-91776"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-101904",
-      "title": "Axios: Header Injection via Inherited headers After Minimal Interceptor",
-      "summary": "## Summary\n\nAxios request interceptors may return a replacement config object. If an interceptor returns a plain object without an own `headers` property, `dispatchRequest()` later evaluates `config.headers` and can resolve an inherited `Object.prototype.headers` value. In a process where another vulnerability has polluted `Object.prototype.headers`, axios can send attacker-controlled headers.\n\nAxios does not create the prototype pollution source, and the interceptor itself is trusted caller code. The vulnerable behavior is the post-interceptor axios config read that reopens a prototype-pollution gadget after earlier null-prototype config hardening.\n\n## Impact\n\nAn attacker with a prior same-process prototype-pollution primitive can inject headers into affected axios requests when the application uses an interceptor that rebuilds config and omits headers. Depending on the target service, injected headers can affect cache behavior, conditional requests, metadata services, or application-specific authorization and routing logic.\n\nThe issue is conditional and should not be described as affecting every interceptor or every request.\n\n## Affected Functionality\n\nAffected:\n\n- Request interceptor chains where an interceptor returns a new ordinary object.\n- Replacement config objects that omit an own `headers` property.\n- `dispatchRequest()` header normalization through `AxiosHeaders.from(config.headers)`.\n\nNot affected:\n\n- Requests whose interceptor preserves an own `headers` property.\n- Interceptors that mutate and return the existing null-prototype config.\n- Processes without prototype pollution.\n\n## Technical Details\n\n`lib/core/dispatchRequest.js` contains:\n\n```js\nconfig.headers = AxiosHeaders.from(config.headers);\n```\n\nThe initial merged config is null-prototype, but an interceptor can replace it with a normal object. If that object has no own `headers`, the read can resolve `Object.prototype.headers`.\n\nLocal verification on axios `1.18.1` polluted `Object.prototype.heade",
-      "link": "https://github.com/advisories/GHSA-j8rh-479h-cp32",
-      "published": "2026-09-30T15:35:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-101904"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-101899",
-      "title": "Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges",
-      "summary": "## Summary\n\nAxios supports proxy environment variables and evaluates `NO_PROXY` exclusions in the Node.js adapter. CIDR-form `NO_PROXY` entries such as `127.0.0.0/8`, `10.0.0.0/8`, or `169.254.169.254/32` are not interpreted as IP ranges. As a result, a request to an IP address inside a configured CIDR exclusion can still be sent through the configured proxy.\n\nThis affects deployments that rely on CIDR notation to keep loopback, private, Kubernetes, CI, or cloud metadata traffic away from proxy infrastructure.\n\n## Impact\n\nIf the configured proxy is outside the intended trust boundary, requests that operators expected to bypass the proxy may be exposed to it. For plaintext HTTP targets, the proxy can see and modify URLs, headers, and bodies. For HTTPS targets, the proxy still observes connection metadata and may receive CONNECT requests that policy expected to avoid.\n\nThis is a proxy exclusion bypass, not arbitrary proxy injection by itself.\n\n## Affected Functionality\n\nAffected:\n\n- Node.js adapter proxy environment handling.\n- `HTTP_PROXY`, `HTTPS_PROXY`, `NO_PROXY`, or lowercase equivalents.\n- CIDR entries in `NO_PROXY`.\n\nNot affected:\n\n- Exact host or exact IP `NO_PROXY` entries where axios matching succeeds.\n- Requests configured with `proxy: false`.\n- Browser adapters.\n\n## Technical Details\n\n`lib/helpers/shouldBypassProxy.js` parses each `NO_PROXY` entry into a host and optional port, normalizes hostnames, and then compares exact hostnames, suffix entries, wildcard-prefix entries, and loopback equivalents. It does not parse CIDR notation.\n\nLocal verification on axios `1.18.1`:\n\n```js\nprocess.env.NO_PROXY = '127.0.0.0/8';\nshouldBypassProxy('http://127.0.0.1:1234/'); // false\n```\n\nThe expected result for CIDR-aware bypass policy is `true`.\n\n## Proof of Concept of Attack\n\nConstrained local demonstration:\n\n1. Set `HTTP_PROXY=http://127.0.0.1:<proxy-port>`.\n2. Set `NO_PROXY=127.0.0.0/8`.\n3. Request `http://127.0.0.1:<internal-port>/metadata`.\n4. Observe that axios sen",
-      "link": "https://github.com/advisories/GHSA-44g4-m2mj-wpvx",
-      "published": "2026-09-30T15:32:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-101899"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-101907",
-      "title": "Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF",
-      "summary": "## Summary\n\nAxios exposes `maxRedirects` to limit redirect following, and `maxRedirects: 0` is used by applications as a redirect-based SSRF guard. The Node HTTP adapter enforces this option. The fetch adapter does not read it and does not set a Fetch API `redirect` mode, so the runtime default of `redirect: 'follow'` applies.\n\nApplications are affected when they rely on `maxRedirects: 0` and use the fetch adapter, either explicitly or because the runtime selects it.\n\n## Impact\n\nAn attacker who controls the initial URL or a redirecting server can cause a fetch-adapter request to follow a redirect even though the caller configured `maxRedirects: 0`. If the redirect target is reachable only from the application environment, this can expose internal responses or trigger state-changing internal endpoints.\n\nThis should not be described as unconditional SSRF. The bypass requires a redirect source, such as an attacker-controlled server or open redirect, and an application that trusted `maxRedirects: 0` as the redirect guard.\n\n## Affected Functionality\n\nAffected:\n\n- `adapter: 'fetch'`.\n- Runtime environments where fetch is selected by adapter resolution.\n- Requests configured with `maxRedirects: 0` but without `fetchOptions.redirect: 'manual'` or equivalent runtime-specific redirect control.\n\nNot affected:\n\n- Node HTTP adapter, which enforces `maxRedirects: 0`.\n- Requests that do not follow redirects in the underlying fetch implementation because the caller explicitly configured fetch redirect behavior.\n\n## Technical Details\n\n`lib/adapters/fetch.js` destructures many fields from `resolveConfig(config)`, but not `maxRedirects`. It then builds fetch options without a `redirect` key:\n\n```js\nconst resolvedOptions = {\n  ...fetchOptions,\n  signal: composedSignal,\n  method: method.toUpperCase(),\n  headers: toByteStringHeaderObject(headers.normalize()),\n  body: data,\n  duplex: 'half',\n  credentials: isCredentialsSupported ? withCredentials : undefined,\n};\n```\n\nBecause `redirect` is",
-      "link": "https://github.com/advisories/GHSA-r4gj-5m52-g5wh",
-      "published": "2026-09-30T15:31:58Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-101907"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-101898",
-      "title": "Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls",
-      "summary": "## Summary\n\nAxios for Node.js does not apply configured DNS lookup or proxy controls when a request uses `httpVersion: 2`. The HTTP/1 adapter path wraps and forwards `config.lookup`, builds normal request options, and applies proxy routing through `setProxy()`. The HTTP/2 path builds a session with `http2.connect()` using only `options.http2Options`, which drops the top-level `lookup`, `agent`, and proxy state.\n\nApplications are affected when they allow a user to influence request destinations, enable axios HTTP/2, and rely on axios `lookup` or proxy routing to prevent SSRF or enforce outbound network policy.\n\n## Impact\n\nIn affected server-side deployments, an attacker can cause axios to connect directly to destinations that the configured resolver or proxy would have rejected. Depending on reachable services, this can expose cloud metadata, internal service responses, or allow state-changing requests to internal systems.\n\nThis is not an unconditional SSRF in every axios deployment. It requires `httpVersion: 2` and an application-level trust boundary where user-influenced URLs are constrained by `lookup` or proxy policy.\n\n## Affected Functionality\n\nAffected:\n\n- Node.js HTTP adapter with `httpVersion: 2`.\n- `config.lookup` supplied as a DNS policy.\n- Explicit `config.proxy` and environment-derived proxy settings for HTTPS HTTP/2 requests.\n\nNot affected:\n\n- Browser adapters.\n- Node HTTP/1 requests, which pass `lookup` to the transport and apply proxy handling.\n- Applications that validate destination hosts independently before calling axios.\n\n## Technical Details\n\nIn `lib/adapters/http.js`, the adapter reads `lookup`, wraps it, stores it on the request `options`, and applies `setProxy()` before selecting a transport. For HTTP/2, `http2Transport.request()` builds an authority from `options.protocol`, `options.hostname`, and `options.port`, then calls:\n\n```js\nconst { http2Options, headers } = options;\nconst session = http2Sessions.getSession(authority, http2Options);\n``",
-      "link": "https://github.com/advisories/GHSA-3pq3-5fj3-cg6v",
-      "published": "2026-09-30T15:02:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-101898"
       ],
       "is_zero_day": false,
       "is_high_severity": true

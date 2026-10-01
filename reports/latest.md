@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-01 11:57 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-01 17:50 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Zammad Zero-Days Exploited in AI-Powered DIVD Hack
+## 3. 🟠 Zero-Day — ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html>
+
+> This week, the useful words are boring ones: inspect, cache, compile, store, trust. Each sounds harmless. Each can become an attack path when a system does a little more than people expect. A model check can run code. A cache can mix up requests. A public secret can stay useful for years.
+
+That is the lesson running through the list. Attackers do not always need a brilliant new trick. They can
+
+---
+
+## 4. 🟠 Zero-Day — Zammad Zero-Days Exploited in AI-Powered DIVD Hack
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/>
@@ -29,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse
+## 5. 🟠 Zero-Day — PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse
 
 **CVE:** `CVE-2026-103001` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-gvp8-978c-rx2q>
@@ -37,15 +48,6 @@
 > ### Summary
 
 `PyJWT.decode()`/`decode_complete()` mutates a caller-supplied `options` dict in place whenever `verify_signature` is falsy, adding `verify_exp`/`verify_nbf`/`verify_iat`/`verify_aud`/`verify_iss`/`verify_sub`/`verify_jti` keys directly onto that object. If application code reuses the same `options` dict across calls (a config object, a module-level constant, a wrapper&#x27;s `self.op…
-
----
-
-## 5. 🟠 Zero-Day — Critical Cisco Catalyst SD-WAN Manager API authentication bypass exploited in the wild (CVE-2026-76504)
-
-**CVE:** `CVE-2026-76504` | `CVE-2026-20127` | `CVE-2026-20182` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://www.rapid7.com/blog/post/etr-critical-cisco-catalyst-sd-wan-manager-api-authentication-bypass-exploited-in-the-wild-cve-2026-76504>
-
-> Overview On September 30, 2026, Cisco published a security advisory for CVE-2026-76504 , a critical API authentication bypass vulnerability affecting Cisco Catalyst SD-WAN Manager. The vulnerability has a CVSSv3.1 score of 9.8 and results from improper handling of URL encoding ( CWE-177 ). An unauthenticated, remote attacker can send a crafted HTTP request that bypasses an authentication rule for …
 
 ---
 
@@ -103,12 +105,12 @@
 
 ---
 
-## 12. 🟠 Zero-Day — Cisco Patches Exploited Catalyst SD-WAN Zero-Day Vulnerability
+## 12. 🟠 Zero-Day — Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-01
-**Reference:** <https://www.securityweek.com/cisco-patches-exploited-catalyst-sd-wan-zero-day-vulnerability/>
+**CVE:** `CVE-2026-73570` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/>
 
-> The flaw could allow remote, unauthenticated attackers to access vulnerable appliances with administrative privileges. The post Cisco Patches Exploited Catalyst SD-WAN Zero-Day Vulnerability appeared first on SecurityWeek .
+> Under certain conditions, CVE-2026-73570 can be exploited via specially crafted emails without user interaction. The post Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure appeared first on SecurityWeek .
 
 ---
 
@@ -152,7 +154,115 @@ The trigger is a malicious PDF with a crafted embedded font that crashes unpatch
 
 ---
 
-## 17. 🟡 High Severity — CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV
+## 17. 🟡 High Severity — vm2 sandbox escape on Node.js 26 through a stale PromiseThenLookupChain protector
+
+**CVE:** `CVE-2026-92944` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-27g9-p43v-cw3v>
+
+> ## Reporter
+
+- Name or handle: `[YMsora]`
+- Report date: 2026-08-14
+
+## Summary
+
+The latest published vm2 release, **3.11.5**, and the current `main` branch are vulnerable to a sandbox escape when used on Node.js 26. An ordinary fulfilled Promise created by an async function can retain an attacker-controlled `constructor[Symbol.species]` across `Promise.prototype.finally()`.
+
+vm2 installs wrappers…
+
+---
+
+## 18. 🟡 High Severity — vm2 NodeVM can replace the host process TLS trust store
+
+**CVE:** `CVE-2026-92941` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-98xx-8mx4-x7cm>
+
+> Summary
+
+vm2 3.11.6 exposes the host `tls` module to a `NodeVM` when that builtin is explicitly allowed. Although the module object is wrapped as read-only, its functions still execute against process-wide host state. On Node.js versions that provide `tls.setDefaultCACertificates()`, sandbox code can replace the certificate authorities trusted by subsequent host-realm TLS clients.
+
+The exploit nee…
+
+---
+
+## 19. 🟡 High Severity — JupyterLab: Cross-site scripting (XSS) in JupyterLab via crafted language package (jupyterlab.json)
+
+**CVE:** `CVE-2026-102830` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-3jqq-pw4j-pqcj>
+
+> ## Description
+
+A language pack ships a `Plural-Forms` header saying how the language counts, for example `nplurals=2; plural=(n != 1);`. JupyterLab turns that string into a function with `new Function`, so the header gets executed. The check that meant to keep it safe was a regular expression. The regex was anchored at the start but not at the end, so it accepted any string that began with a vali…
+
+---
+
+## 20. 🟡 High Severity — JupyterLab: Argument injection in JupyterLab extension uninstall exposes server-readable files and internal URLs
+
+**CVE:** `CVE-2026-102904` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-3325-v43h-43rv>
+
+> JupyterLab&#x27;s PyPI extension manager runs `python -m pip uninstall` with the extension name taken from the request body. `ExtensionHandler.post` validates the name for `cmd=install` but not for `cmd=uninstall`, so a name that begins with `-` reaches the command line and pip reads it as an option rather than as a package.
+
+```python
+cmdline = [
+    sys.executable,
+    &quot;-m&quot;,
+    &quot;…
+
+---
+
+## 21. 🟡 High Severity — JupyterLab: Cross-site scripting (XSS) in JupyterLab via notebook cells pasted from the system clipboard
+
+**CVE:** `CVE-2026-102831` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-6966-vjj6-99xv>
+
+> ## Description
+
+JupyterLab 4.5.0 enabled copying and pasing cells through the system clipboard. The paste path parses clipboard text as cell JSON and inserts the cells without clearing `metadata.trusted`, so a payload can declare its own output as trusted. JupyterLab does not sanitize a trusted output and evaluates the `&lt;script&gt;` elements it contains, so pasting the cell runs attacker&#x27;s…
+
+---
+
+## 22. 🟡 High Severity —  jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()
+
+**CVE:** `CVE-2026-89407` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-p6pp-m3f8-5c89>
+
+> ## Status
+
+**FULLY REPRODUCED** with a clean, textbook empirical signature: measured runtime grew almost
+exactly 4x for every doubling of input size across five consecutive doublings (5,000 → 160,000
+characters), confirming O(n²) behavior. A single 160,000-character string (smaller than a typical
+HTTP request body) took **74.4 seconds** for one call to `NumberInput.looksLikeValidNumber()`.
+
+## Aff…
+
+---
+
+## 23. 🟡 High Severity — SiYuan discloses an administrator's open documents and search terms to anonymous readers
+
+**CVE:** `CVE-2026-72788` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-hgfg-j9pg-43xw>
+
+> ### Summary
+
+`/api/system/getConf` serves `Conf.UILayout` to publish readers after passing it through `FilterConfByPublishIgnore`, whose only function is to filter that layout. The layout is written exclusively by `setUILayout`, which is administrator-gated, so what readers receive is the administrator&#x27;s own live workspace state, re-saved on every tab open, close and focus change.
+
+The filter…
+
+---
+
+## 24. 🟡 High Severity — SiYuan: Unauthenticated SQL injection in searchDocs via unescaped keyword (publish mode): cross-notebook read/write with statement stacking
+
+**CVE:** `CVE-2026-69085` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://github.com/advisories/GHSA-33jq-p8c2-q3q4>
+
+> ### Summary
+
+The `/api/filetree/searchDocs` endpoint concatenates the caller-supplied search keyword directly into a SQL statement with no escaping and no parameter binding. The endpoint is gated by `CheckAuth` only reachable by the publish RoleReader token, and by the anonymous account when `Publish.Auth.Enable` is `false`. The resulting statement runs on a read-write SQLite handle through a driv…
+
+---
+
+## 25. 🟡 High Severity — CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV
 
 **CVE:** `CVE-2026-76504` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html>
@@ -163,7 +273,7 @@ The vulnerability, tracked as CVE-2026-76504 (CVSS score: 9.8), could allow an u
 
 ---
 
-## 18. 🟡 High Severity — fastify vulnerable to header validation bypass via incomplete schema case normalization
+## 26. 🟡 High Severity — fastify vulnerable to header validation bypass via incomplete schema case normalization
 
 **CVE:** `CVE-2026-84428` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-9q9j-q6p8-xq58>
@@ -174,7 +284,7 @@ Fastify lowercases header-schema property names before compiling the schema, bec
 
 ---
 
-## 19. 🟡 High Severity — Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey
+## 27. 🟡 High Severity — Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey
 
 **CVE:** `CVE-2026-102821` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-35g8-35p8-c8fw>
@@ -190,7 +300,7 @@ follow-up `SSH_MSG_KEX_ECDH_INIT`, leaving the server&#x27;s kex state machine i
 
 ---
 
-## 20. 🟡 High Severity — Astro: Netlify Image CDN allowlist bypass enables SSRF
+## 28. 🟡 High Severity — Astro: Netlify Image CDN allowlist bypass enables SSRF
 
 **CVE:** `CVE-2026-102983` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-4233-jc72-56c5>
@@ -203,7 +313,7 @@ For example, an application allowing `images.exam…
 
 ---
 
-## 21. 🟡 High Severity — russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic
+## 29. 🟡 High Severity — russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic
 
 **CVE:** `CVE-2026-102822` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-p8qx-h547-fjw9>
@@ -213,7 +323,7 @@ For example, an application allowing `images.exam…
 
 ---
 
-## 22. 🟡 High Severity — Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange
+## 30. 🟡 High Severity — Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange
 
 **CVE:** `CVE-2026-102824` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-w3jg-pjxf-73p4>
@@ -226,7 +336,7 @@ Affected code at HEAD…
 
 ---
 
-## 23. 🟡 High Severity — LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters
+## 31. 🟡 High Severity — LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters
 
 **CVE:** `CVE-2026-84377` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-3cv6-jpf6-8222>
@@ -237,7 +347,7 @@ Any authenticated LiteLLM proxy user could redirect an outbound provider call to
 
 ---
 
-## 24. 🟡 High Severity — From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)
+## 32. 🟡 High Severity — From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)
 
 **CVE:** `CVE-2026-65669` &nbsp;|&nbsp; **Source:** Embrace The Red (Prompt Injection Research) &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/>
@@ -246,87 +356,7 @@ Any authenticated LiteLLM proxy user could redirect an outbound provider call to
 
 ---
 
-## 25. 🟡 High Severity — Attackers Exploit Zimbra Flaw to Deploy Web Shells and Harvest Authentication Secrets
-
-**CVE:** `CVE-2026-73570` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://thehackernews.com/2026/09/attackers-exploit-zimbra-flaw-to-deploy.html>
-
-> Threat actors have weaponized a now-patched security flaw in Zimbra Collaboration Suite (ZCS) to deploy web shells and access mailbox data, according to findings from the Microsoft Security Research team.
-
-The attack exploits CVE-2026-73570 (CVSS score: 8.9), an unauthenticated operating system command injection flaw that can lead to remote code execution when Simple Network Management Protocol
-
----
-
-## 26. 🟡 High Severity — jackson-databind retains every unknown raw type ID 
-
-**CVE:** `CVE-2026-91776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://github.com/advisories/GHSA-wv8q-qhhj-9h54>
-
-> ### Summary
-
-With `@JsonTypeInfo(use = Id.NAME, defaultImpl = ...)`, every distinct unknown
-raw type ID selects the same fallback deserializer but is retained as a
-separate key in `TypeDeserializerBase._deserializers`. An attacker who can
-repeatedly supply new unknown type IDs can grow this process-lifetime cache
-without a configured bound.
-
-### Details
-
-The affected path is `TypeDeserializerBase.…
-
----
-
-## 27. 🟡 High Severity — Axios: Header Injection via Inherited headers After Minimal Interceptor
-
-**CVE:** `CVE-2026-101904` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://github.com/advisories/GHSA-j8rh-479h-cp32>
-
-> ## Summary
-
-Axios request interceptors may return a replacement config object. If an interceptor returns a plain object without an own `headers` property, `dispatchRequest()` later evaluates `config.headers` and can resolve an inherited `Object.prototype.headers` value. In a process where another vulnerability has polluted `Object.prototype.headers`, axios can send attacker-controlled headers.
-
-Ax…
-
----
-
-## 28. 🟡 High Severity — Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges
-
-**CVE:** `CVE-2026-101899` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://github.com/advisories/GHSA-44g4-m2mj-wpvx>
-
-> ## Summary
-
-Axios supports proxy environment variables and evaluates `NO_PROXY` exclusions in the Node.js adapter. CIDR-form `NO_PROXY` entries such as `127.0.0.0/8`, `10.0.0.0/8`, or `169.254.169.254/32` are not interpreted as IP ranges. As a result, a request to an IP address inside a configured CIDR exclusion can still be sent through the configured proxy.
-
-This affects deployments that rely on…
-
----
-
-## 29. 🟡 High Severity — Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF
-
-**CVE:** `CVE-2026-101907` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://github.com/advisories/GHSA-r4gj-5m52-g5wh>
-
-> ## Summary
-
-Axios exposes `maxRedirects` to limit redirect following, and `maxRedirects: 0` is used by applications as a redirect-based SSRF guard. The Node HTTP adapter enforces this option. The fetch adapter does not read it and does not set a Fetch API `redirect` mode, so the runtime default of `redirect: &#x27;follow&#x27;` applies.
-
-Applications are affected when they rely on `maxRedirects: 0…
-
----
-
-## 30. 🟡 High Severity — Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls
-
-**CVE:** `CVE-2026-101898` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://github.com/advisories/GHSA-3pq3-5fj3-cg6v>
-
-> ## Summary
-
-Axios for Node.js does not apply configured DNS lookup or proxy controls when a request uses `httpVersion: 2`. The HTTP/1 adapter path wraps and forwards `config.lookup`, builds normal request options, and applies proxy routing through `setProxy()`. The HTTP/2 path builds a session with `http2.connect()` using only `options.http2Options`, which drops the top-level `lookup`, `agent`, an…
-
----
-
-## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
