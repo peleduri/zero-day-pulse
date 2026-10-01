@@ -1,10 +1,19 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-01 17:50 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-01 22:05 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-104286 — Fortinet FortiMail Path Traversal Vulnerability
+
+**CVE:** `CVE-2026-104286` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-01
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-104286>
+
+> Vendor: Fortinet | Product: FortiMail. Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD …
+
+---
+
+## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +22,14 @@
 
 ---
 
-## 2. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
+## 3. 🟠 Zero-Day — September 2026 Patch Tuesday: Two Exploited Zero-Days and 113 Critical Vulnerabilities Among 972 CVEs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Sep 08, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-september-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories
+## 4. 🟠 Zero-Day — ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html>
@@ -31,7 +40,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 4. 🟠 Zero-Day — Zammad Zero-Days Exploited in AI-Powered DIVD Hack
+## 5. 🟠 Zero-Day — Zammad Zero-Days Exploited in AI-Powered DIVD Hack
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/>
@@ -40,7 +49,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 5. 🟠 Zero-Day — PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse
+## 6. 🟠 Zero-Day — PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse
 
 **CVE:** `CVE-2026-103001` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-gvp8-978c-rx2q>
@@ -51,7 +60,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -60,7 +69,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -69,7 +78,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -78,7 +87,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -87,7 +96,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -96,7 +105,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -105,7 +114,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 12. 🟠 Zero-Day — Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure
+## 13. 🟠 Zero-Day — Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure
 
 **CVE:** `CVE-2026-73570` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/>
@@ -114,7 +123,7 @@ That is the lesson running through the list. Attackers do not always need a bril
 
 ---
 
-## 13. 🟠 Zero-Day — Apple CoreGraphics PoC Emerges as WhatsApp PDF Checks Hint at Possible Delivery Path
+## 14. 🟠 Zero-Day — Apple CoreGraphics PoC Emerges as WhatsApp PDF Checks Hint at Possible Delivery Path
 
 **CVE:** `CVE-2026-86950` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html>
@@ -125,7 +134,7 @@ The trigger is a malicious PDF with a crafted embedded font that crashes unpatch
 
 ---
 
-## 14. 🟠 Zero-Day — Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft
+## 15. 🟠 Zero-Day — Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html>
@@ -136,25 +145,7 @@ The trigger is a malicious PDF with a crafted embedded font that crashes unpatch
 
 ---
 
-## 15. 🟠 Zero-Day — Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)
-
-**CVE:** `CVE-2026-88771` | `CVE-2026-88772` &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/>
-
-> Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30) appeared first on Unit 42 .
-
----
-
-## 16. 🟠 Zero-Day — DIVD says Zammad zero-days enabled AI-driven network breach
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/>
-
-> The Dutch Institute for Vulnerability Disclosure (DIVD) says that the breach of its network was possible by exploiting a chain of two zero-day vulnerabilities in the open-source Zammad ticketing system. [...]
-
----
-
-## 17. 🟡 High Severity — vm2 sandbox escape on Node.js 26 through a stale PromiseThenLookupChain protector
+## 16. 🟡 High Severity — vm2 sandbox escape on Node.js 26 through a stale PromiseThenLookupChain protector
 
 **CVE:** `CVE-2026-92944` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-27g9-p43v-cw3v>
@@ -172,7 +163,7 @@ vm2 installs wrappers…
 
 ---
 
-## 18. 🟡 High Severity — vm2 NodeVM can replace the host process TLS trust store
+## 17. 🟡 High Severity — vm2 NodeVM can replace the host process TLS trust store
 
 **CVE:** `CVE-2026-92941` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-98xx-8mx4-x7cm>
@@ -185,7 +176,7 @@ The exploit nee…
 
 ---
 
-## 19. 🟡 High Severity — JupyterLab: Cross-site scripting (XSS) in JupyterLab via crafted language package (jupyterlab.json)
+## 18. 🟡 High Severity — JupyterLab: Cross-site scripting (XSS) in JupyterLab via crafted language package (jupyterlab.json)
 
 **CVE:** `CVE-2026-102830` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-3jqq-pw4j-pqcj>
@@ -196,7 +187,7 @@ A language pack ships a `Plural-Forms` header saying how the language counts, fo
 
 ---
 
-## 20. 🟡 High Severity — JupyterLab: Argument injection in JupyterLab extension uninstall exposes server-readable files and internal URLs
+## 19. 🟡 High Severity — JupyterLab: Argument injection in JupyterLab extension uninstall exposes server-readable files and internal URLs
 
 **CVE:** `CVE-2026-102904` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-3325-v43h-43rv>
@@ -211,7 +202,7 @@ cmdline = [
 
 ---
 
-## 21. 🟡 High Severity — JupyterLab: Cross-site scripting (XSS) in JupyterLab via notebook cells pasted from the system clipboard
+## 20. 🟡 High Severity — JupyterLab: Cross-site scripting (XSS) in JupyterLab via notebook cells pasted from the system clipboard
 
 **CVE:** `CVE-2026-102831` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-6966-vjj6-99xv>
@@ -222,7 +213,7 @@ JupyterLab 4.5.0 enabled copying and pasing cells through the system clipboard. 
 
 ---
 
-## 22. 🟡 High Severity —  jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()
+## 21. 🟡 High Severity —  jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()
 
 **CVE:** `CVE-2026-89407` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-p6pp-m3f8-5c89>
@@ -238,7 +229,7 @@ HTTP request body) took **74.4 seconds** for one call to `NumberInput.looksLikeV
 
 ---
 
-## 23. 🟡 High Severity — SiYuan discloses an administrator's open documents and search terms to anonymous readers
+## 22. 🟡 High Severity — SiYuan discloses an administrator's open documents and search terms to anonymous readers
 
 **CVE:** `CVE-2026-72788` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-hgfg-j9pg-43xw>
@@ -251,7 +242,7 @@ The filter…
 
 ---
 
-## 24. 🟡 High Severity — SiYuan: Unauthenticated SQL injection in searchDocs via unescaped keyword (publish mode): cross-notebook read/write with statement stacking
+## 23. 🟡 High Severity — SiYuan: Unauthenticated SQL injection in searchDocs via unescaped keyword (publish mode): cross-notebook read/write with statement stacking
 
 **CVE:** `CVE-2026-69085` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://github.com/advisories/GHSA-33jq-p8c2-q3q4>
@@ -262,7 +253,7 @@ The `/api/filetree/searchDocs` endpoint concatenates the caller-supplied search 
 
 ---
 
-## 25. 🟡 High Severity — CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV
+## 24. 🟡 High Severity — CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV
 
 **CVE:** `CVE-2026-76504` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-01
 **Reference:** <https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html>
@@ -273,7 +264,7 @@ The vulnerability, tracked as CVE-2026-76504 (CVSS score: 9.8), could allow an u
 
 ---
 
-## 26. 🟡 High Severity — fastify vulnerable to header validation bypass via incomplete schema case normalization
+## 25. 🟡 High Severity — fastify vulnerable to header validation bypass via incomplete schema case normalization
 
 **CVE:** `CVE-2026-84428` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-9q9j-q6p8-xq58>
@@ -284,7 +275,7 @@ Fastify lowercases header-schema property names before compiling the schema, bec
 
 ---
 
-## 27. 🟡 High Severity — Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey
+## 26. 🟡 High Severity — Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey
 
 **CVE:** `CVE-2026-102821` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-35g8-35p8-c8fw>
@@ -300,7 +291,7 @@ follow-up `SSH_MSG_KEX_ECDH_INIT`, leaving the server&#x27;s kex state machine i
 
 ---
 
-## 28. 🟡 High Severity — Astro: Netlify Image CDN allowlist bypass enables SSRF
+## 27. 🟡 High Severity — Astro: Netlify Image CDN allowlist bypass enables SSRF
 
 **CVE:** `CVE-2026-102983` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-4233-jc72-56c5>
@@ -313,7 +304,7 @@ For example, an application allowing `images.exam…
 
 ---
 
-## 29. 🟡 High Severity — russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic
+## 28. 🟡 High Severity — russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic
 
 **CVE:** `CVE-2026-102822` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-p8qx-h547-fjw9>
@@ -323,7 +314,7 @@ For example, an application allowing `images.exam…
 
 ---
 
-## 30. 🟡 High Severity — Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange
+## 29. 🟡 High Severity — Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange
 
 **CVE:** `CVE-2026-102824` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
 **Reference:** <https://github.com/advisories/GHSA-w3jg-pjxf-73p4>
@@ -336,27 +327,7 @@ Affected code at HEAD…
 
 ---
 
-## 31. 🟡 High Severity — LiteLLM: Authenticated SSRF and provider-credential exfiltration via unvalidated request-body routing parameters
-
-**CVE:** `CVE-2026-84377` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://github.com/advisories/GHSA-3cv6-jpf6-8222>
-
-> ### Impact
-
-Any authenticated LiteLLM proxy user could redirect an outbound provider call to a destination they control and cause the proxy to send its own configured provider credentials to that destination. The proxy&#x27;s request-body validation was a denylist that did not cover every sensitive parameter and did not inspect parameters nested inside other request fields, so a caller could suppl…
-
----
-
-## 32. 🟡 High Severity — From SELECT to SYSADMIN with SQL Copilot (CVE-2026-65669)
-
-**CVE:** `CVE-2026-65669` &nbsp;|&nbsp; **Source:** Embrace The Red (Prompt Injection Research) &nbsp;|&nbsp; **Published:** 2026-09-30
-**Reference:** <https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/>
-
-> Two weeks back I presented at BlueHat Asia 2026 about my research on Microsoft’s Copilot in SSMS, the SQL Server Management Studio. This post is a write up about the talk, which covered CVE-2026-65669 , a SQL Server Elevation of Privilege Vulnerability rated critical by Microsoft. So, make sure your installations are up-to-date. The slides of the presentation can be found here . BlueHat Asia 2026 …
-
----
-
-## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
