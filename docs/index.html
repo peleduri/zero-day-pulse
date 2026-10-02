@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">19</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-02 11:29 UTC</div>
+            <div class="generated">Updated 2026-10-02 16:56 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-102489" target="_blank" rel="noopener">CVE-2026-102489 — Zammad GmbH Zammad Session Fixation Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-102489</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-02</span>
+  </div>
+  <p class='summary'>Vendor: Zammad GmbH | Product: Zammad. Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guida…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-102490" target="_blank" rel="noopener">CVE-2026-102490 — Zammad GmbH Zammad Improper Privilege Management Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-102490</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-02</span>
+  </div>
+  <p class='summary'>Vendor: Zammad GmbH | Product: Zammad. Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk …</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -166,24 +198,6 @@
 The vulnerability, tracked as CVE-2026-104286 (CVSS score: 9.8), allows unauthenticated attackers to write arbitrary files on the underlying system.
 
 &quot;An improper</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html" target="_blank" rel="noopener">ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>This week, the useful words are boring ones: inspect, cache, compile, store, trust. Each sounds harmless. Each can become an attack path when a system does a little more than people expect. A model check can run code. A cache can mix up requests. A public secret can stay useful for years.
-
-That is the lesson running through the list. Attackers do not always need a brilliant new trick. They can</p>
 
         </article>
 
@@ -282,171 +296,6 @@ That is the lesson running through the list. Attackers do not always need a bril
   <p class='summary'>Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-27g9-p43v-cw3v" target="_blank" rel="noopener">vm2 sandbox escape on Node.js 26 through a stale PromiseThenLookupChain protector</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-92944</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>## Reporter
-
-- Name or handle: `[YMsora]`
-- Report date: 2026-08-14
-
-## Summary
-
-The latest published vm2 release, **3.11.5**, and the current `main` branch are vulnerable to a sandbox escape when used on Node.js 26. An ordinary fulfilled Promise created by an async function can retain an attacker-controlled `constructor[Symbol.species]` across `Promise.prototype.finally()`.
-
-vm2 installs wrappers…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-98xx-8mx4-x7cm" target="_blank" rel="noopener">vm2 NodeVM can replace the host process TLS trust store</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-92941</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>Summary
-
-vm2 3.11.6 exposes the host `tls` module to a `NodeVM` when that builtin is explicitly allowed. Although the module object is wrapped as read-only, its functions still execute against process-wide host state. On Node.js versions that provide `tls.setDefaultCACertificates()`, sandbox code can replace the certificate authorities trusted by subsequent host-realm TLS clients.
-
-The exploit nee…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3jqq-pw4j-pqcj" target="_blank" rel="noopener">JupyterLab: Cross-site scripting (XSS) in JupyterLab via crafted language package (jupyterlab.json)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102830</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>## Description
-
-A language pack ships a `Plural-Forms` header saying how the language counts, for example `nplurals=2; plural=(n != 1);`. JupyterLab turns that string into a function with `new Function`, so the header gets executed. The check that meant to keep it safe was a regular expression. The regex was anchored at the start but not at the end, so it accepted any string that began with a vali…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3325-v43h-43rv" target="_blank" rel="noopener">JupyterLab: Argument injection in JupyterLab extension uninstall exposes server-readable files and internal URLs</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102904</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>JupyterLab&#x27;s PyPI extension manager runs `python -m pip uninstall` with the extension name taken from the request body. `ExtensionHandler.post` validates the name for `cmd=install` but not for `cmd=uninstall`, so a name that begins with `-` reaches the command line and pip reads it as an option rather than as a package.
-
-```python
-cmdline = [
-    sys.executable,
-    &quot;-m&quot;,
-    &quot;pip&quot;,
-    &quot;uninstall…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6966-vjj6-99xv" target="_blank" rel="noopener">JupyterLab: Cross-site scripting (XSS) in JupyterLab via notebook cells pasted from the system clipboard</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102831</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>## Description
-
-JupyterLab 4.5.0 enabled copying and pasing cells through the system clipboard. The paste path parses clipboard text as cell JSON and inserts the cells without clearing `metadata.trusted`, so a payload can declare its own output as trusted. JupyterLab does not sanitize a trusted output and evaluates the `&lt;script&gt;` elements it contains, so pasting the cell runs attacker&#x27;s JavaScript…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p6pp-m3f8-5c89" target="_blank" rel="noopener"> jackson-core: ReDoS: quadratic backtracking in NumberInput.PATTERN_FLOAT via looksLikeValidNumber()</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-89407</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>## Status
-
-**FULLY REPRODUCED** with a clean, textbook empirical signature: measured runtime grew almost
-exactly 4x for every doubling of input size across five consecutive doublings (5,000 → 160,000
-characters), confirming O(n²) behavior. A single 160,000-character string (smaller than a typical
-HTTP request body) took **74.4 seconds** for one call to `NumberInput.looksLikeValidNumber()`.
-
-## Aff…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hgfg-j9pg-43xw" target="_blank" rel="noopener">SiYuan discloses an administrator&#x27;s open documents and search terms to anonymous readers</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-72788</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>### Summary
-
-`/api/system/getConf` serves `Conf.UILayout` to publish readers after passing it through `FilterConfByPublishIgnore`, whose only function is to filter that layout. The layout is written exclusively by `setUILayout`, which is administrator-gated, so what readers receive is the administrator&#x27;s own live workspace state, re-saved on every tab open, close and focus change.
-
-The filter that…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-33jq-p8c2-q3q4" target="_blank" rel="noopener">SiYuan: Unauthenticated SQL injection in searchDocs via unescaped keyword (publish mode): cross-notebook read/write with statement stacking</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-69085</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-01</span>
-          </div>
-          <p class='summary'>### Summary
-
-The `/api/filetree/searchDocs` endpoint concatenates the caller-supplied search keyword directly into a SQL statement with no escaping and no parameter binding. The endpoint is gated by `CheckAuth` only reachable by the publish RoleReader token, and by the anonymous account when `Publish.Auth.Enable` is `false`. The resulting statement runs on a read-write SQLite handle through a driv…</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">
