@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-02T02:51:52.156207+00:00",
-  "total": 24,
+  "generated": "2026-10-02T11:29:14.495264+00:00",
+  "total": 19,
   "kev": 0,
-  "zero_day": 14,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -37,15 +37,15 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/",
-      "title": "Fortinet warns of critical FortiMail flaw exploited in zero-day attacks",
-      "summary": "Fortinet is warning customers of a critical FortiMail vulnerability, tracked as CVE-2026-104286, that is being actively exploited in zero-day attacks to execute unauthorized code or commands on vulnerable devices. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/",
-      "published": "2026-10-01T22:42:49+00:00",
-      "source": "Bleeping Computer",
+      "id": "https://thehackernews.com/2026/10/critical-fortimail-zero-day-flaw.html",
+      "title": "Critical FortiMail Zero-Day Flaw Exploited in Attacks Allows Unauthenticated Arbitrary File Writes",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on Thursday, added a critical security flaw impacting Fortinet FortiMail to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-104286 (CVSS score: 9.8), allows unauthenticated attackers to write arbitrary files on the underlying system.\n\n\"An improper",
+      "link": "https://thehackernews.com/2026/10/critical-fortimail-zero-day-flaw.html",
+      "published": "2026-10-02T05:49:50+00:00",
+      "source": "The Hacker News Security",
       "tags": [
         "news",
-        "malware"
+        "zeroday"
       ],
       "cve_ids": [
         "CVE-2026-104286"
@@ -63,21 +63,6 @@
       "tags": [
         "news",
         "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/",
-      "title": "Zammad Zero-Days Exploited in AI-Powered DIVD Hack",
-      "summary": "The flaws were chained to hijack sessions, achieve remote code execution, and elevate privileges to root. The post Zammad Zero-Days Exploited in AI-Powered DIVD Hack appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/zammad-zero-days-exploited-in-ai-powered-divd-hack/",
-      "published": "2026-10-01T10:42:49+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -177,55 +162,6 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/",
-      "title": "Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure",
-      "summary": "Under certain conditions, CVE-2026-73570 can be exploited via specially crafted emails without user interaction. The post Zimbra Vulnerability Exploited in the Wild Prior to Public Disclosure appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/zimbra-vulnerability-exploited-in-the-wild-prior-to-public-disclosure/",
-      "published": "2026-10-01T12:55:57+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-73570"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html",
-      "title": "Apple CoreGraphics PoC Emerges as WhatsApp PDF Checks Hint at Possible Delivery Path",
-      "summary": "Security researchers have published the first public proof-of-concept for CVE-2026-86950, an Apple CoreGraphics flaw Apple says may have been used in attacks against specific targeted individuals.\n\nThe trigger is a malicious PDF with a crafted embedded font that crashes unpatched iPhones and Macs. The code causes a crash, not an execution error. Turning the memory corruption into a working",
-      "link": "https://thehackernews.com/2026/10/apple-coregraphics-poc-emerges-as.html",
-      "published": "2026-10-01T05:54:41+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-86950"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html",
-      "title": "Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft",
-      "summary": "Cryptocurrency exchange Bitget on Wednesday confirmed that attackers who stole $387.5 million last week exploited a zero-day flaw in third-party security products, citing ongoing investigation findings from SlowMist.\n\n\"Their investigation identified malicious activity involving third-party security products, including a zero-day vulnerability, and recovered a customized tool used by the attacker",
-      "link": "https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html",
-      "published": "2026-10-01T05:21:10+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -369,23 +305,6 @@
       ],
       "cve_ids": [
         "CVE-2026-69085"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html",
-      "title": "CISA Adds Exploited Cisco Catalyst SD-WAN Manager Auth Bypass to KEV",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a critical authentication bypass flaw impacting Cisco Catalyst SD-WAN Manager to its Known Exploited Vulnerabilities (KEV), following reports of active exploitation.\n\nThe vulnerability, tracked as CVE-2026-76504 (CVSS score: 9.8), could allow an unauthenticated, remote attacker to access an affected system with",
-      "link": "https://thehackernews.com/2026/10/cisa-adds-exploited-cisco-catalyst-sd.html",
-      "published": "2026-10-01T10:33:16+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-76504"
       ],
       "is_zero_day": false,
       "is_high_severity": true
