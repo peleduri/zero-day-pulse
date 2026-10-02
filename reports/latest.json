@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-02T16:56:37.652025+00:00",
-  "total": 12,
+  "generated": "2026-10-02T21:31:22.222054+00:00",
+  "total": 15,
   "kev": 2,
   "zero_day": 9,
   "enriched": 0,
@@ -187,6 +187,59 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-59944",
+      "title": "Composer: GHSA-gjfg-22fp-rrxx fix bypass via symlinked package bin path",
+      "summary": "## Summary\n\nA malicious or compromised Composer package could, when installed as a dependency, cause Composer to change the permissions of a file outside that package's own directory and to register a runnable `vendor/bin` command that points at that outside file. This is a path traversal and link following issue. It is not remote code execution, the attacker gains no ability to read or receive your data directly. The risk is that a file which was readable only by its owner, but modifiable by Composer, can be made world readable and executable, which is enough to expose its contents on a shared or multi tenant host. The earlier hardening from GHSA-gjfg-22fp-rrxx can be bypassed, since it only rejected literal `..` path segments in a package's declared binaries, and was only applied in a single place during dependency resolution.\n\n## Am I affected?\n\nYou can be affected if a malicious or compromised package, including a transitive dependency, is installed in your project, and either of the following is true:\n\n- The dependency package ships one of its declared binaries as a symbolic link that resolves to a location outside the package's own directory. Nothing beyond a normal install or update is required.\n- Or, the recorded metadata of your installed dependencies (`vendor/composer/installed.json`) declares a binary path that escapes the package's directory. Composer regenerates missing binaries from that recorded metadata at the end of an install, and uses this metadata for reinstalls of the same package. In both of these cases the validation applied during dependency resolution is skipped. This situation is only reachable when your `vendor` directory is not populated from the same install run, which performs validation. For example a vendor directory restored from a shared or untrusted CI cache, copied in from an earlier container build stage, carried over from a Composer older than 2.10.2 or 2.2.29, or writable by a lower trust build step, could contain such maliciou",
+      "link": "https://github.com/advisories/GHSA-96h3-5x6v-m776",
+      "published": "2026-10-02T19:14:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-59944"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61586",
+      "title": "Copernik XML Factory (stock JDK provider) has Improper restriction of XInclude resource resolution",
+      "summary": "Copernik XML Factory through `0.1.1`, when running on its stock JDK provider, does not block XInclude resource resolution after an application enables XInclude on a factory returned by `XmlFactories.newDocumentBuilderFactory()` or `XmlFactories.newSAXParserFactory()`, or on an `XMLReader` passed through `XmlFactories.harden()`. The library's documented guarantee that XInclude resolution stays disabled therefore does not hold on that provider.\n\nAn application that parses untrusted XML in this configuration can be made to resolve `xi:include` references, allowing an attacker to read local files (information disclosure) or, through `http` hrefs, reach internal network endpoints (SSRF).\n\nAll of the following conditions must hold for an application to be affected:\n- it obtains a factory from `XmlFactories.newDocumentBuilderFactory()` or `XmlFactories.newSAXParserFactory()`, or hardens an externally obtained `XMLReader` with `XmlFactories.harden()`;\n- the stock JDK provider is in effect, that is, Apache Xerces is not on the classpath;\n- XInclude is enabled, by calling `setXIncludeAware(true)` or the equivalent reader feature;\n- it parses XML from an untrusted source.\n\nThe Xerces provider (selected when Xerces is on the classpath) and the Android provider are not affected.\n\nApplications are advised to upgrade to `0.1.2`, which fixes the defect. As a workaround add Apache Xerces (`xercesImpl`) to the classpath so the library selects its unaffected Xerces provider.\n\n### Acknowledgements\n\nThe maintainer thank the following people for finding, reporting, and helping to remediate this issue:\n\n- Finders: Ta Duc Thien and Duc Anh Nguyen (Danzation)\n- Remediation developer: Ta Duc Thien\n- Tooling: Claude Code (Anthropic), Claude Opus 4.8",
+      "link": "https://github.com/advisories/GHSA-xm28-xvqc-gxxg",
+      "published": "2026-10-02T18:27:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61586"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html",
+      "title": "Dell CSM Flaws Enable Unauthenticated Admin Access and Root on Kubernetes Nodes",
+      "summary": "Dell has released security updates to address multiple critical security flaws in Dell Container Storage Modules (CSM) that could be exploited by bad actors to take over susceptible systems.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-63688 (CVSS score: 10.0) - A missing authentication for critical function vulnerability in the csm-authorization-storage gRPC server that an",
+      "link": "https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html",
+      "published": "2026-10-02T17:02:12+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-63688"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "tag:blogger.com,1999:blog-1176949257541686127.post-1469360228826887140",

@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">15</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-02 16:56 UTC</div>
+            <div class="generated">Updated 2026-10-02 21:31 UTC</div>
           </header>
           <main>
             <article class="card card-kev">
@@ -296,6 +296,61 @@ The vulnerability, tracked as CVE-2026-104286 (CVSS score: 9.8), allows unauthen
   <p class='summary'>Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-96h3-5x6v-m776" target="_blank" rel="noopener">Composer: GHSA-gjfg-22fp-rrxx fix bypass via symlinked package bin path</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-59944</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-02</span>
+          </div>
+          <p class='summary'>## Summary
+
+A malicious or compromised Composer package could, when installed as a dependency, cause Composer to change the permissions of a file outside that package&#x27;s own directory and to register a runnable `vendor/bin` command that points at that outside file. This is a path traversal and link following issue. It is not remote code execution, the attacker gains no ability to read or receive yo…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xm28-xvqc-gxxg" target="_blank" rel="noopener">Copernik XML Factory (stock JDK provider) has Improper restriction of XInclude resource resolution</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-61586</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-02</span>
+  </div>
+  <p class='summary'>Copernik XML Factory through `0.1.1`, when running on its stock JDK provider, does not block XInclude resource resolution after an application enables XInclude on a factory returned by `XmlFactories.newDocumentBuilderFactory()` or `XmlFactories.newSAXParserFactory()`, or on an `XMLReader` passed through `XmlFactories.harden()`. The library&#x27;s documented guarantee that XInclude resolution stays disa…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html" target="_blank" rel="noopener">Dell CSM Flaws Enable Unauthenticated Admin Access and Root on Kubernetes Nodes</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63688</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-02</span>
+          </div>
+          <p class='summary'>Dell has released security updates to address multiple critical security flaws in Dell Container Storage Modules (CSM) that could be exploited by bad actors to take over susceptible systems.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2026-63688 (CVSS score: 10.0) - A missing authentication for critical function vulnerability in the csm-authorization-storage gRPC server that an</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
