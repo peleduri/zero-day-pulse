@@ -1,29 +1,10 @@
 {
-  "generated": "2026-10-01T22:05:10.540891+00:00",
-  "total": 30,
-  "kev": 1,
+  "generated": "2026-10-02T02:51:52.156207+00:00",
+  "total": 24,
+  "kev": 0,
   "zero_day": 14,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-104286",
-      "title": "CVE-2026-104286 \u2014 Fortinet FortiMail Path Traversal Vulnerability",
-      "summary": "Vendor: Fortinet | Product: FortiMail. Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-04)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-104286",
-      "published": "2026-10-01",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-104286"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -56,6 +37,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/",
+      "title": "Fortinet warns of critical FortiMail flaw exploited in zero-day attacks",
+      "summary": "Fortinet is warning customers of a critical FortiMail vulnerability, tracked as CVE-2026-104286, that is being actively exploited in zero-day attacks to execute unauthorized code or commands on vulnerable devices. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/",
+      "published": "2026-10-01T22:42:49+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-104286"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html",
       "title": "ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories",
       "summary": "This week, the useful words are boring ones: inspect, cache, compile, store, trust. Each sounds harmless. Each can become an attack path when a system does a little more than people expect. A model check can run code. A cache can mix up requests. A public secret can stay useful for years.\n\nThat is the lesson running through the list. Attackers do not always need a brilliant new trick. They can",
@@ -82,24 +80,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-103001",
-      "title": "PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse",
-      "summary": "### Summary\n\n`PyJWT.decode()`/`decode_complete()` mutates a caller-supplied `options` dict in place whenever `verify_signature` is falsy, adding `verify_exp`/`verify_nbf`/`verify_iat`/`verify_aud`/`verify_iss`/`verify_sub`/`verify_jti` keys directly onto that object. If application code reuses the same `options` dict across calls (a config object, a module-level constant, a wrapper's `self.options`), a later call that explicitly sets `verify_signature=True` for a full, normal verification silently inherits the leftover `verify_exp=False` etc. from an earlier `verify_signature=False` call on the same object -- and accepts an expired, wrong-audience, wrong-issuer, or wrong-subject token as valid with no exception. Signature verification itself is unaffected; this is specifically a claims-check bypass.\n\nThis is a regression of an already-fixed, closed issue: originally reported in #679 (2021), fixed in #743 (2022, via a shallow copy of `options`), and silently reintroduced by #1045 (merged 2025-03-05, a typing/logic refactor that dropped the 2022 shallow-copy line). It has been present since #1045 merged, so it likely shipped in several releases already in the wild.\n\n### Details\n\nFile: `jwt/api_jwt.py`, `PyJWT._merge_options()` (called from `decode_complete()`, which backs both `jwt.decode()` and `jwt.decode_complete()`):\n\n```python\ndef _merge_options(self, options=None):\n    if options is None:\n        return self.options\n    if not options.get(\"verify_signature\", True):\n        options[\"verify_exp\"] = options.get(\"verify_exp\", False)\n        options[\"verify_nbf\"] = options.get(\"verify_nbf\", False)\n        # ...5 more, same pattern -- all written directly onto the caller's dict\n    return {**self.options, **options}\n```\n\nNo `dict(options)` copy occurs before these writes, unlike the pre-2025-03-05 code (see #743's fix, `options = dict(options or {})`). Confirmed via `gh api repos/jpadilla/pyjwt/commits/29fbfc36` that #1045's diff removes that line. Confirmed still pre",
-      "link": "https://github.com/advisories/GHSA-gvp8-978c-rx2q",
-      "published": "2026-09-30T23:53:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-103001"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -406,96 +386,6 @@
       ],
       "cve_ids": [
         "CVE-2026-76504"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-84428",
-      "title": "fastify vulnerable to header validation bypass via incomplete schema case normalization",
-      "summary": "### Impact\n\nFastify lowercases header-schema property names before compiling the schema, because Node.js stores request header names in lowercase. That normalization was incomplete: it lowercased only top-level `properties` keys and the root `required` array, and did not lowercase the JSON Schema Draft 7 `dependencies` keyword (its trigger keys and dependent property names) or names in nested subschemas. As a result, a header schema that uses `dependencies` to require one header when another is present (for example `X-Admin` requiring `X-Admin-Token`) never matches the lowercased request headers, so the dependency assertion is silently skipped. An unauthenticated remote client can send the header that activates a privileged path while omitting the header the dependency was meant to require, bypassing a schema-enforced security control. The header schema is idiomatic, valid JSON Schema Draft 7, and no custom validator, malformed request, or misconfiguration is required.\n\n### Patches\n\nHeader-schema names are now normalized across all schema positions (`properties`, `required`, `dependencies`, `dependentRequired`, `dependentSchemas`, and nested subschemas). Patched in fastify `5.12.2`. The fix is also included in the `6.0.0` release. Header schemas referenced through an external shared `$ref` (registered with `addSchema`) are not reached by this normalization and now emit an `FSTSEC002` startup warning; inline the header schema to keep case-insensitive assertions in effect.\n\n### Workarounds\n\nIf upgrading is not immediately possible, write header-schema names in lowercase so the `dependencies` and other case-sensitive assertions match Node's lowercased request headers, or enforce the cross-header requirement in an `onRequest` or `preValidation` hook instead of the schema.",
-      "link": "https://github.com/advisories/GHSA-9q9j-q6p8-xq58",
-      "published": "2026-09-30T23:44:27Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-84428"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102821",
-      "title": "Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey",
-      "summary": "## Summary\n\nA russh **server** can be driven to unbounded heap growth (process OOM / kill) by\na peer that speaks only standard SSH messages, in the **default configuration**.\n\nThe peer starts a key re-exchange (sends `SSH_MSG_KEXINIT`) but never sends the\nfollow-up `SSH_MSG_KEX_ECDH_INIT`, leaving the server's kex state machine in\n`SessionKexState::InProgress` **indefinitely**. While a rekey is in progress the\nserver's three message-drain paths are all gated off (`if !self.kex.active()`),\nbut the network-read path stays active, so every `SSH_MSG_CHANNEL_OPEN` the peer\nsends is processed inline and appends one reply to an **unbounded** internal\nqueue (`priority_receiver`, an `UnboundedReceiver`) that is not dequeued until\nthe rekey completes. Because the peer decides whether the rekey ever completes,\nthe queue \u2014 and the server's memory \u2014 grows without bound.\n\nThis is reproducible end-to-end against a real russh server over a real\nencrypted transport; see \"Proof of concept\". A one-line negative control (same\nflood, no rekey) keeps memory flat, isolating the rekey window as the sole\ntrigger.\n\n## Impact\n\n- **Availability / DoS.** Server RSS climbs at roughly 3.3 KB per\n  `CHANNEL_OPEN`, driven entirely by the peer, until the process is OOM-killed.\n  In the reproduction one connection pushed the server from ~4 MB to **2.57 GB**\n  (and past **4.8 GB** against the stock `echoserver` example) and it was still\n  climbing when the flood was stopped.\n- **Reached with standard messages, no special configuration.** Any handler is\n  affected, including one that rejects every channel (the reply enqueued on\n  rejection is exactly what accumulates). There is no per-connection cap on\n  in-flight channel opens or on the queue, and the queue's sender has no\n  backpressure.\n- The peer keeps the connection alive simply by continuing to send, so the\n  inactivity timer never fires.\n\n## Affected component\n\n- `russh/src/server/session.rs` \u2014 `Session::run` `tokio::select!` loop. The\n  network",
-      "link": "https://github.com/advisories/GHSA-35g8-35p8-c8fw",
-      "published": "2026-09-30T23:40:43Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102821"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102983",
-      "title": "Astro: Netlify Image CDN allowlist bypass enables SSRF",
-      "summary": "## Summary\n\nThe `@astrojs/netlify` adapter generated regular expressions for Netlify Image CDN remote-image allowlists without anchoring them to the beginning of the URL. Netlify evaluates these expressions with `RegExp.test()`, so an allowed image origin appearing anywhere in a URL, including its path or query string, could satisfy the allowlist.\n\nFor example, an application allowing `images.example.com` could accept a source URL such as:\n\n```text\nhttp://127.0.0.1:6379/?url=https://images.example.com/image.png\n```\n\nThe allowlist matched the approved origin in the query string, but Netlify parsed and fetched the URL whose actual host was `127.0.0.1`.\n\n## Impact\n\nAn unauthenticated attacker can bypass the configured `image.domains` or `image.remotePatterns` allowlist through the public `/.netlify/images` endpoint and cause Netlify Image CDN to make requests to attacker-selected URLs. This may allow probing or reaching internal services, depending on Netlify's network-level egress protections.\n\nThe Image CDN attempts to transform responses as images, which limits direct response exfiltration. No confidentiality or integrity impact has been demonstrated.\n\n## Affected versions\n\n`@astrojs/netlify` versions from 5.2.0 through 8.2.3.\n\n## Patches\n\nFixed in `@astrojs/netlify` 8.2.4. Generated remote-image allowlist expressions are now anchored to both the beginning and end of the source URL.\n\n## Workarounds\n\nUpgrade to `@astrojs/netlify` 8.2.4 or later. Before upgrading, disable Netlify Image CDN by setting `imageCDN: false` in the adapter configuration, or remove remote image allowlist entries.\n\n## Credits\n\nReported by @pacocartones.",
-      "link": "https://github.com/advisories/GHSA-4233-jc72-56c5",
-      "published": "2026-09-30T23:40:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102983"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102822",
-      "title": "russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic",
-      "summary": "### Summary\n`SshBlockCipher` implementations (AES-CBC, AES-CTR, 3DES-CBC, etc.) report `needs_mac() == true`, meaning they are documented/intended to always be paired with a separate integrity MAC. However, key-exchange negotiation only checks `needs_mac()` inside the *fallback* branch of MAC algorithm selection (used when no common MAC algorithm exists). If both peers' preferred MAC lists simply contain `none` and it is successfully negotiated through the normal selection path, nothing rejects pairing `none` with a cipher that requires a MAC. Once negotiated, a single crafted packet from either peer causes `cipher::read()` to shrink an already-allocated buffer below the number of bytes it is about to index, causing a Rust slice-index-out-of-range panic and killing that connection's task.\n\n### Details\nIn `russh/src/cipher/mod.rs`, `read()` for a block cipher:\n1. Reads `packet_length_to_read_for_block_length()` bytes up front (16 bytes for any `SshBlockCipher`) into `buffer.buffer`.\n2. Decrypts the first block to recover the plaintext packet-length field `len`.\n3. Computes `buffer.len = len + cipher.tag_len()`.\n4. Calls `buffer.buffer.resize(buffer.len + 4, 0)`.\n5. Immediately indexes `buffer.buffer[16..]` (via the constant used for the first block read) to continue decrypting/reading the rest of the packet.\n\nWhen the negotiated MAC is `none`, `tag_len() == 0`. If the attacker (or a MITM holding the session key, or simply the accepting peer testing a hostile client) sends a packet whose *decrypted* length field is `0`, then `buffer.len = 0` and `resize(0 + 4, 0)` **shrinks** the buffer that was already grown to 16 bytes in step 1 down to 4 bytes. The subsequent slice operation `buffer.buffer[16..]` then panics with `range start index 16 out of range for slice of length 4`.\n\nThe file already defines a `MINIMUM_PACKET_LEN` constant, but it is only consulted on the *write*/padding side, never on the read path \u2014 so nothing prevents an incoming packet from declaring a len",
-      "link": "https://github.com/advisories/GHSA-p8qx-h547-fjw9",
-      "published": "2026-09-30T23:27:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102822"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102824",
-      "title": "Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange",
-      "summary": "## Vulnerability\n\nThe hybrid ML-KEM 768 + X25519 key exchange implementation in `russh/src/kex/hybrid_mlkem.rs` does not validate that the remote peer's X25519 public key is not the zero point (all-zero 32-byte value). This allows a remote peer to force the X25519 contribution to the combined shared secret to zero, reducing the hybrid KEX to a single-algorithm exchange.\n\nAffected code at HEAD (v0.62.4, commit 0089c89):\n\n**Server-side** (`server_dh`, lines 92-93):\n```rust\nlet mut c_pk1 = MontgomeryPoint([0; 32]);\nc_pk1.0.copy_from_slice(c_pk1_bytes);\n// No zero-point check - proceeds to: let k_cl = s_secret * c_pk1;\n```\n\n**Client-side** (`compute_shared_secret`, lines 154-155):\n```rust\nlet mut s_pk1 = MontgomeryPoint([0; 32]);\ns_pk1.0.copy_from_slice(s_pk1_bytes);\n// No zero-point check - proceeds to: let k_cl = x25519_secret * s_pk1;\n```\n\n## Root Cause\n\nCommit a7fc1eb (2026-07-22, \"fix mpint encoding and validate curve25519 keys\") added zero-point validation to the standalone Curve25519 KEX in `russh/src/kex/curve25519.rs` at two locations:\n- `server_dh` line 77: `if client_pubkey.0 == [0u8; 32] { return Err(crate::Error::Kex); }`\n- `compute_shared_secret` line 122: `if remote_pubkey.0 == [0u8; 32] { return Err(crate::Error::Kex); }`\n\nThe same X25519 scalar multiplication pattern appears in `hybrid_mlkem.rs`, but the fix was not applied there.\n\n## Proof of Concept\n\nA malicious SSH client negotiating `mlkem768x25519-sha256` can send a KEX_HYBRID_INIT message containing a valid ML-KEM 768 encapsulation key followed by 32 zero bytes as the X25519 component.\n\nWhen the server computes `k_cl = s_secret * c_pk1`, the result is the zero point regardless of the server's secret scalar. The combined shared secret `K = SHA-256(k_pq || k_cl)` then depends only on the ML-KEM component. The same attack works in reverse against a client connecting to a malicious server.\n\nThe zero X25519 public key passes all existing validation (the length check on line 78 succeeds since 32 bytes i",
-      "link": "https://github.com/advisories/GHSA-w3jg-pjxf-73p4",
-      "published": "2026-09-30T23:26:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-102824"
       ],
       "is_zero_day": false,
       "is_high_severity": true

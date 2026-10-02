@@ -109,31 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">30</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">24</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-01 22:05 UTC</div>
+            <div class="generated">Updated 2026-10-02 02:51 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-104286" target="_blank" rel="noopener">CVE-2026-104286 — Fortinet FortiMail Path Traversal Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-104286</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-01</span>
-  </div>
-  <p class='summary'>Vendor: Fortinet | Product: FortiMail. Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD …</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -162,6 +146,22 @@
     <span>Sep 08, 20</span>
   </div>
 
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/" target="_blank" rel="noopener">Fortinet warns of critical FortiMail flaw exploited in zero-day attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-104286</code>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-01</span>
+  </div>
+  <p class='summary'>Fortinet is warning customers of a critical FortiMail vulnerability, tracked as CVE-2026-104286, that is being actively exploited in zero-day attacks to execute unauthorized code or commands on vulnerable devices. [...]</p>
 
 </article>
 
@@ -198,24 +198,6 @@ That is the lesson running through the list. Attackers do not always need a bril
   <p class='summary'>The flaws were chained to hijack sessions, achieve remote code execution, and elevate privileges to root. The post Zammad Zero-Days Exploited in AI-Powered DIVD Hack appeared first on SecurityWeek .</p>
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gvp8-978c-rx2q" target="_blank" rel="noopener">PyJWT.decode() reintroduces options-dict mutation, enabling silent claim-verification bypass on dict reuse</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-103001</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-30</span>
-          </div>
-          <p class='summary'>### Summary
-
-`PyJWT.decode()`/`decode_complete()` mutates a caller-supplied `options` dict in place whenever `verify_signature` is falsy, adding `verify_exp`/`verify_nbf`/`verify_iat`/`verify_aud`/`verify_iss`/`verify_sub`/`verify_jti` keys directly onto that object. If application code reuses the same `options` dict across calls (a config object, a module-level constant, a wrapper&#x27;s `self.options…</p>
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -545,104 +527,6 @@ The `/api/filetree/searchDocs` endpoint concatenates the caller-supplied search 
           <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a critical authentication bypass flaw impacting Cisco Catalyst SD-WAN Manager to its Known Exploited Vulnerabilities (KEV), following reports of active exploitation.
 
 The vulnerability, tracked as CVE-2026-76504 (CVSS score: 9.8), could allow an unauthenticated, remote attacker to access an affected system with</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9q9j-q6p8-xq58" target="_blank" rel="noopener">fastify vulnerable to header validation bypass via incomplete schema case normalization</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-84428</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-30</span>
-          </div>
-          <p class='summary'>### Impact
-
-Fastify lowercases header-schema property names before compiling the schema, because Node.js stores request header names in lowercase. That normalization was incomplete: it lowercased only top-level `properties` keys and the root `required` array, and did not lowercase the JSON Schema Draft 7 `dependencies` keyword (its trigger keys and dependent property names) or names in nested subs…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-35g8-35p8-c8fw" target="_blank" rel="noopener">Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102821</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-30</span>
-          </div>
-          <p class='summary'>## Summary
-
-A russh **server** can be driven to unbounded heap growth (process OOM / kill) by
-a peer that speaks only standard SSH messages, in the **default configuration**.
-
-The peer starts a key re-exchange (sends `SSH_MSG_KEXINIT`) but never sends the
-follow-up `SSH_MSG_KEX_ECDH_INIT`, leaving the server&#x27;s kex state machine in
-`SessionKexState::InProgress` **indefinitely**. While a rekey is in…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4233-jc72-56c5" target="_blank" rel="noopener">Astro: Netlify Image CDN allowlist bypass enables SSRF</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102983</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-30</span>
-          </div>
-          <p class='summary'>## Summary
-
-The `@astrojs/netlify` adapter generated regular expressions for Netlify Image CDN remote-image allowlists without anchoring them to the beginning of the URL. Netlify evaluates these expressions with `RegExp.test()`, so an allowed image origin appearing anywhere in a URL, including its path or query string, could satisfy the allowlist.
-
-For example, an application allowing `images.exam…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p8qx-h547-fjw9" target="_blank" rel="noopener">russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102822</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-30</span>
-          </div>
-          <p class='summary'>### Summary
-`SshBlockCipher` implementations (AES-CBC, AES-CTR, 3DES-CBC, etc.) report `needs_mac() == true`, meaning they are documented/intended to always be paired with a separate integrity MAC. However, key-exchange negotiation only checks `needs_mac()` inside the *fallback* branch of MAC algorithm selection (used when no common MAC algorithm exists). If both peers&#x27; preferred MAC lists simply …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w3jg-pjxf-73p4" target="_blank" rel="noopener">Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-102824</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-09-30</span>
-          </div>
-          <p class='summary'>## Vulnerability
-
-The hybrid ML-KEM 768 + X25519 key exchange implementation in `russh/src/kex/hybrid_mlkem.rs` does not validate that the remote peer&#x27;s X25519 public key is not the zero point (all-zero 32-byte value). This allows a remote peer to force the X25519 contribution to the combined shared secret to zero, reducing the hybrid KEX to a single-algorithm exchange.
-
-Affected code at HEAD (v0.…</p>
 
         </article>
 
