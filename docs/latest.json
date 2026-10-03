@@ -1,48 +1,10 @@
 {
-  "generated": "2026-10-02T21:31:22.222054+00:00",
-  "total": 15,
-  "kev": 2,
+  "generated": "2026-10-03T02:38:19.769374+00:00",
+  "total": 16,
+  "kev": 0,
   "zero_day": 9,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-102489",
-      "title": "CVE-2026-102489 \u2014 Zammad GmbH Zammad Session Fixation Vulnerability",
-      "summary": "Vendor: Zammad GmbH | Product: Zammad. Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102489",
-      "published": "2026-10-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-102489"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-102490",
-      "title": "CVE-2026-102490 \u2014 Zammad GmbH Zammad Improper Privilege Management Vulnerability",
-      "summary": "Vendor: Zammad GmbH | Product: Zammad. Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-05)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102490",
-      "published": "2026-10-02",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-102490"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -187,6 +149,60 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-73802",
+      "title": "gitea-runner: workflow container.options passes host namespaces and capability flags to job container when privileged mode is disabled",
+      "summary": "### Summary\nact_runner appends workflow-controlled `jobs.<job>.container.options` directly \nto the Docker HostConfig for the job container. When runner privileged mode is \ndisabled, only `Privileged` is forced false. Host namespace flags, capability \nexpansion, and security profile overrides from workflow YAML are preserved in \nthe final HostConfig. A workflow author can enter host PID/IPC namespaces and \nexecute commands on the runner host as root.\n\n### Details\nSource-to-sink path in act_runner:\n\n- `ContainerSpec.Options` accepts workflow YAML `container.options`\n- `RunContext.options()` appends workflow options to runner-level container options\n- Job container is created with `Privileged: rc.Config.Privileged` but also \n  with `Options: rc.options(ctx)`\n- `mergeContainerConfigs()` parses Docker CLI-style options into HostConfig\n- When privileged mode is disabled, only `copts.privileged` is forced false\n- `sanitizeConfig()` only filters `Binds` and `Mounts`\n- Preserved dangerous HostConfig fields:\n\n```text\nPrivileged=false\nPidMode=host\nIpcMode=host\nCapAdd=[\"ALL\"]\nSecurityOpt=[\"seccomp=unconfined\",\"apparmor=unconfined\"]\n```\n\nAttacker workflow YAML:\n```yaml\njobs:\n  breakout:\n    runs-on: ubuntu-latest\n    container:\n      image: ubuntu:22.04\n      options: >-\n        --pid=host --ipc=host --cap-add=ALL \n        --security-opt seccomp=unconfined \n        --security-opt apparmor=unconfined\n    steps:\n      - name: host namespace marker\n        run: |\n          nsenter -t 1 -m -u -i -n -p -- sh -c \"id > /tmp/marker\"\n```\n\n### Impact\nAn attacker who can submit a workflow to a repository using a shared \nDocker-backed act_runner can:\n\n- Enter host PID, IPC, and mount namespaces\n- Execute arbitrary commands as root on the runner host\n- Access runner host secrets, deployment credentials, and environment variables\n- Pivot to adjacent jobs running on the same runner\n- Access internal build infrastructure reachable from the runner host\n\nCritical severity for shared runners where",
+      "link": "https://github.com/advisories/GHSA-x4q3-gcj3-m6cf",
+      "published": "2026-10-02T23:18:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-73802"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "GHSA-p23f-cm6q-2qp8",
+      "title": "SiYuan MCP asset.upload Reads Arbitrary Absolute File Paths (Workspace Boundary Bypass)",
+      "summary": "# Security Advisory \u2014 SiYuan MCP `asset.upload` Reads Arbitrary Absolute File Paths (Workspace Boundary Bypass)\n\n| Field | Value |\n|---|---|\n| **Disclosed by** | joysinleung (`joysinleung@gmail.com`) |\n| **Report date** | 2026-08-13 |\n| **Product** | SiYuan (\u601d\u6e90\u7b14\u8bb0) \u2014 `siyuan-note/siyuan` |\n| **Go module** | `github.com/siyuan-note/siyuan/kernel` |\n| **Affected versions** | `<= 3.8.0` (latest release at report time; statically confirmed on v3.8.0) |\n| **Patched versions** | 3.8.1 |\n| **Component** | `kernel/mcp/tools/asset.go` (`assetUpload`), `kernel/model/upload.go` (`InsertLocalAssets`) |\n| **Relationship to prior advisory** | **Residual of CVE-2026-66012** (GHSA-cvhv-7xhj-xjp8) MCP remediation. See \u00a7Relationship. |\n| **EPSS (exploitation probability)** | Low. Requires the AI Agent to invoke `asset.upload` and the user to approve the (category-level) confirmation; reachable via prompt-injection of the agent. |\n| **KEV (CISA Known Exploited)** | No (not listed in CISA KEV at report time). |\n| **Default-config reachable** | **Partial** \u2014 requires the Agent/MCP surface to be configured (admin) and a user approval click; the boundary check itself is entirely absent, so any approved upload reads outside the workspace. |\n\n---\n\n## Summary\n\nSiYuan exposes a native MCP tool `asset` \u2192 `asset.upload`. Its `files` argument is documented as a **comma-separated list of absolute file paths**. The handler (`kernel/mcp/tools/asset.go:195`) only normalizes each entry with `filepath.Abs(...)` \u2014 it performs **no workspace boundary check** (`IsSubPath`) and **no sensitive-path check** (`IsSensitivePath`). The downstream `model.InsertLocalAssets` (`kernel/model/upload.go:97`) then `os.Open`s each path and copies its bytes into the workspace `assets/` directory.\n\nEvery other AI-plane file primitive in SiYuan is workspace-constrained:\n- `file` / `unzip` tools resolve paths via `resolvePath` (workspace-relative, escape-proof).\n\n`asset.upload` is the **only** AI tool that accepts arbitrary ",
+      "link": "https://github.com/advisories/GHSA-p23f-cm6q-2qp8",
+      "published": "2026-10-02T23:16:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-66012"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-18140",
+      "title": "aws-smithy-json: Uncontrolled recursion in the aws-smithy-json unknown-key skip path allows unauthenticated remote denial of service in smithy-rs generated servers",
+      "summary": "### Summary\nSmithy-RS is a Rust code generation and runtime framework that generates HTTP clients and servers from Smithy interface definitions, powering the AWS SDK for Rust and custom service implementations. An issue exists which allows uncontrolled recursion in the unknown-key skip path of the Amazon aws-smithy-json runtime crate in versions 0.62.6 and earlier.\n\n### Impact\nUncontrolled recursion in the unknown-key skip path of the aws-smithy-json runtime crate before 0.62.7, which the smithy-rs code generator invokes from every generated struct deserializer, might allow remote unauthenticated users to cause a denial of service (process abort via stack exhaustion) via a single small HTTP request containing deeply nested JSON to a smithy-rs generated server.\n\nImpacted versions: aws-smithy-json <= 0.62.6\n\n### Patches\nThis issue has been addressed in aws-smithy-json version 0.62.7. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.\n\n### Workarounds\nThere are no workarounds besides updating to the patched version.\n\n### References\nIf you have any questions or comments about this advisory, AWS asks that you contact [AWS/Amazon] Security via their [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.",
+      "link": "https://github.com/advisories/GHSA-8ffr-xgwf-xj56",
+      "published": "2026-10-02T22:44:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-18140"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-59944",

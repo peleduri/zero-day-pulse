@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">15</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">16</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-02 21:31 UTC</div>
+            <div class="generated">Updated 2026-10-03 02:38 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-102489" target="_blank" rel="noopener">CVE-2026-102489 — Zammad GmbH Zammad Session Fixation Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-102489</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-02</span>
-  </div>
-  <p class='summary'>Vendor: Zammad GmbH | Product: Zammad. Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guida…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-102490" target="_blank" rel="noopener">CVE-2026-102490 — Zammad GmbH Zammad Improper Privilege Management Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-102490</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-02</span>
-  </div>
-  <p class='summary'>Vendor: Zammad GmbH | Product: Zammad. Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk …</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -296,6 +264,71 @@ The vulnerability, tracked as CVE-2026-104286 (CVSS score: 9.8), allows unauthen
   <p class='summary'>Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x4q3-gcj3-m6cf" target="_blank" rel="noopener">gitea-runner: workflow container.options passes host namespaces and capability flags to job container when privileged mode is disabled</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-73802</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-02</span>
+          </div>
+          <p class='summary'>### Summary
+act_runner appends workflow-controlled `jobs.&lt;job&gt;.container.options` directly 
+to the Docker HostConfig for the job container. When runner privileged mode is 
+disabled, only `Privileged` is forced false. Host namespace flags, capability 
+expansion, and security profile overrides from workflow YAML are preserved in 
+the final HostConfig. A workflow author can enter host PID/IPC namespa…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p23f-cm6q-2qp8" target="_blank" rel="noopener">SiYuan MCP asset.upload Reads Arbitrary Absolute File Paths (Workspace Boundary Bypass)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-66012</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-02</span>
+          </div>
+          <p class='summary'># Security Advisory — SiYuan MCP `asset.upload` Reads Arbitrary Absolute File Paths (Workspace Boundary Bypass)
+
+| Field | Value |
+|---|---|
+| **Disclosed by** | joysinleung (`joysinleung@gmail.com`) |
+| **Report date** | 2026-08-13 |
+| **Product** | SiYuan (思源笔记) — `siyuan-note/siyuan` |
+| **Go module** | `github.com/siyuan-note/siyuan/kernel` |
+| **Affected versions** | `&lt;= 3.8.0` (latest releas…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8ffr-xgwf-xj56" target="_blank" rel="noopener">aws-smithy-json: Uncontrolled recursion in the aws-smithy-json unknown-key skip path allows unauthenticated remote denial of service in smithy-rs generated servers</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-18140</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-02</span>
+          </div>
+          <p class='summary'>### Summary
+Smithy-RS is a Rust code generation and runtime framework that generates HTTP clients and servers from Smithy interface definitions, powering the AWS SDK for Rust and custom service implementations. An issue exists which allows uncontrolled recursion in the unknown-key skip path of the Amazon aws-smithy-json runtime crate in versions 0.62.6 and earlier.
+
+### Impact
+Uncontrolled recursi…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
