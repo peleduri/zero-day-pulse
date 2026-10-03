@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-03 15:19 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-03 20:18 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -118,41 +118,7 @@ Uncontrolled recursi…
 
 ---
 
-## 12. 🟡 High Severity — Composer: GHSA-gjfg-22fp-rrxx fix bypass via symlinked package bin path
-
-**CVE:** `CVE-2026-59944` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-02
-**Reference:** <https://github.com/advisories/GHSA-96h3-5x6v-m776>
-
-> ## Summary
-
-A malicious or compromised Composer package could, when installed as a dependency, cause Composer to change the permissions of a file outside that package&#x27;s own directory and to register a runnable `vendor/bin` command that points at that outside file. This is a path traversal and link following issue. It is not remote code execution, the attacker gains no ability to read or recei…
-
----
-
-## 13. 🟡 High Severity — Copernik XML Factory (stock JDK provider) has Improper restriction of XInclude resource resolution
-
-**CVE:** `CVE-2026-61586` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-02
-**Reference:** <https://github.com/advisories/GHSA-xm28-xvqc-gxxg>
-
-> Copernik XML Factory through `0.1.1`, when running on its stock JDK provider, does not block XInclude resource resolution after an application enables XInclude on a factory returned by `XmlFactories.newDocumentBuilderFactory()` or `XmlFactories.newSAXParserFactory()`, or on an `XMLReader` passed through `XmlFactories.harden()`. The library&#x27;s documented guarantee that XInclude resolution stays…
-
----
-
-## 14. 🟡 High Severity — Dell CSM Flaws Enable Unauthenticated Admin Access and Root on Kubernetes Nodes
-
-**CVE:** `CVE-2026-63688` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-02
-**Reference:** <https://thehackernews.com/2026/10/dell-csm-flaws-enable-unauthenticated.html>
-
-> Dell has released security updates to address multiple critical security flaws in Dell Container Storage Modules (CSM) that could be exploited by bad actors to take over susceptible systems.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2026-63688 (CVSS score: 10.0) - A missing authentication for critical function vulnerability in the csm-authorization-storage gRPC server that an
-
----
-
-## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
