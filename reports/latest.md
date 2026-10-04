@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-03 20:18 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-04 03:09 UTC &nbsp;|&nbsp; **Total:** 9 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 1 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -74,51 +74,7 @@
 
 ---
 
-## 9. 🟡 High Severity — gitea-runner: workflow container.options passes host namespaces and capability flags to job container when privileged mode is disabled
-
-**CVE:** `CVE-2026-73802` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-02
-**Reference:** <https://github.com/advisories/GHSA-x4q3-gcj3-m6cf>
-
-> ### Summary
-act_runner appends workflow-controlled `jobs.&lt;job&gt;.container.options` directly 
-to the Docker HostConfig for the job container. When runner privileged mode is 
-disabled, only `Privileged` is forced false. Host namespace flags, capability 
-expansion, and security profile overrides from workflow YAML are preserved in 
-the final HostConfig. A workflow author can enter host PID/IPC n…
-
----
-
-## 10. 🟡 High Severity — SiYuan MCP asset.upload Reads Arbitrary Absolute File Paths (Workspace Boundary Bypass)
-
-**CVE:** `CVE-2026-66012` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-02
-**Reference:** <https://github.com/advisories/GHSA-p23f-cm6q-2qp8>
-
-> # Security Advisory — SiYuan MCP `asset.upload` Reads Arbitrary Absolute File Paths (Workspace Boundary Bypass)
-
-| Field | Value |
-|---|---|
-| **Disclosed by** | joysinleung (`joysinleung@gmail.com`) |
-| **Report date** | 2026-08-13 |
-| **Product** | SiYuan (思源笔记) — `siyuan-note/siyuan` |
-| **Go module** | `github.com/siyuan-note/siyuan/kernel` |
-| **Affected versions** | `&lt;= 3.8.0` (latest rel…
-
----
-
-## 11. 🟡 High Severity — aws-smithy-json: Uncontrolled recursion in the aws-smithy-json unknown-key skip path allows unauthenticated remote denial of service in smithy-rs generated servers
-
-**CVE:** `CVE-2026-18140` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-02
-**Reference:** <https://github.com/advisories/GHSA-8ffr-xgwf-xj56>
-
-> ### Summary
-Smithy-RS is a Rust code generation and runtime framework that generates HTTP clients and servers from Smithy interface definitions, powering the AWS SDK for Rust and custom service implementations. An issue exists which allows uncontrolled recursion in the unknown-key skip path of the Amazon aws-smithy-json runtime crate in versions 0.62.6 and earlier.
-
-### Impact
-Uncontrolled recursi…
-
----
-
-## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 9. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
