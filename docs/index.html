@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">42</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-06 03:35 UTC</div>
+            <div class="generated">Updated 2026-10-06 12:20 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -267,6 +267,22 @@ There are actively exploited bugs in the mix, cleaner intrusion paths, smarter a
 
 </article>
 
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://isc.sans.edu/diary/rss/33400" target="_blank" rel="noopener">More RMM Tools In the Wild, (Tue, Oct 6th)</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>SANS Internet Storm Center</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-06</span>
+  </div>
+  <p class='summary'>It seems that a trend startedâ€¦ I continue my journey discovering more RMM (&quot;Remote Management &amp; Monitoring&quot;) tools abused by threat actors! A few days ago, I wrote a diary[ 1 ] about ScreenConnect used in the wild. Today, I found another one.</p>
+
+</article>
+
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -383,23 +399,21 @@ The streaming JSON parser (StreamValues/StreamObject/jsonc variants) writes keys
 
         </article>
 
-        <article class="card card-zeroday">
+        <article class="card card-high">
           <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html" target="_blank" rel="noopener">New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline</a></h2>
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html" target="_blank" rel="noopener">Critical Atlassian Flaw Lets Unauthenticated Attackers Read Known Files Across 8 Products</a></h2>
           </div>
           <div class="card-meta">
-            <code class="cve">CVE-2026-88779</code>
+            <code class="cve">CVE-2026-21589</code>
             <span class="meta-sep">·</span>
             <span>The Hacker News Security</span>
             <span class="meta-sep">·</span>
-            <span>2026-10-05</span>
+            <span>2026-10-06</span>
           </div>
-          <p class='summary'>Citrix has released security updates for a high-severity security flaw in NetScaler ADC and NetScaler Gateway that has been exploited as part of targeted zero-day attacks.
+          <p class='summary'>A critical flaw in 8 Atlassian Data Center products, which customers host themselves, allows an attacker with no login access to read specific files in each product&#x27;s web application root directory.
 
-The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0.
-
-&quot;CVE-2026-88779 is a memory overflow vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway that can lead to</p>
+The attacker must already know a file&#x27;s exact name and path and cannot list what the directory holds. Atlassian disclosed the flaw, CVE-2026-21589, on October 5, rated it 9.3 out of 10, and</p>
 
         </article>
 
@@ -839,23 +853,21 @@ A critical Authenticated Remote Code Execution (RCE) vulnerability exists in the
 
         </article>
 
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html" target="_blank" rel="noopener">Attackers Target Rejetto HFS Flaw That Enables Admin Session Forgery and RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61500</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-05</span>
-          </div>
-          <p class='summary'>A critical security flaw impacting Rejetto HTTP File Server (HFS) is witnessing active exploitation attempts, according to VulnCheck.
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/" target="_blank" rel="noopener">Rejetto HFS servers now actively scanned for critical RCE flaw</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-61500</code>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-05</span>
+  </div>
+  <p class='summary'>Hackers are actively scanning for a Rejetto HFS weak signing key vulnerability, tracked as CVE-2026-61500, that allows session forgery, account takeover, and remote code execution (RCE). [...]</p>
 
-The vulnerability in question is CVE-2026-61500 (CVSS score: 9.3), a case of session forgery stemming from the use of a weak pseudo-random number generator (PRNG) that can lead to a predictable key, which an attacker can then use to gain unauthorized access and</p>
-
-        </article>
+</article>
 
 <article class="card card-high">
   <div class="card-top">

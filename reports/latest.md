@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-06 03:35 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-06 12:20 UTC &nbsp;|&nbsp; **Total:** 42 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 26 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -91,7 +91,16 @@ There are actively exploited bugs in the mix, cleaner intrusion paths, smarter a
 
 ---
 
-## 10. 🟠 Zero-Day — simple-git: `VISUAL` editor environment variable is omitted from unsafe editor detection
+## 10. 🟠 Zero-Day — More RMM Tools In the Wild, (Tue, Oct 6th)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-10-06
+**Reference:** <https://isc.sans.edu/diary/rss/33400>
+
+> It seems that a trend startedâ€¦ I continue my journey discovering more RMM (&quot;Remote Management &amp; Monitoring&quot;) tools abused by threat actors! A few days ago, I wrote a diary[ 1 ] about ScreenConnect used in the wild. Today, I found another one.
+
+---
+
+## 11. 🟠 Zero-Day — simple-git: `VISUAL` editor environment variable is omitted from unsafe editor detection
 
 **CVE:** `CVE-2026-102829` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-v5rq-49vh-5v5c>
@@ -108,7 +117,7 @@ There are actively exploited bugs in the mix, cleaner intrusion paths, smarter a
 
 ---
 
-## 11. 🟠 Zero-Day — @nx/docker: OS command injection in the @nx/docker release pipeline
+## 12. 🟠 Zero-Day — @nx/docker: OS command injection in the @nx/docker release pipeline
 
 **CVE:** `CVE-2026-104859` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-6vc5-vf29-ffr2>
@@ -119,7 +128,7 @@ The `@nx/docker` release pipeline builds its `docker` invocations as shell comma
 
 ---
 
-## 12. 🟠 Zero-Day — Nx: OS command injection via git revisions and remote refs
+## 13. 🟠 Zero-Day — Nx: OS command injection via git revisions and remote refs
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-w2vw-w76x-qr89>
@@ -130,7 +139,7 @@ Nx core builds several `git` invocations as shell command strings with untrusted
 
 ---
 
-## 13. 🟠 Zero-Day — Nx daemon and plugin worker sockets are accessible to other local users
+## 14. 🟠 Zero-Day — Nx daemon and plugin worker sockets are accessible to other local users
 
 **CVE:** `CVE-2026-104854` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-w3vv-58gj-gw77>
@@ -141,7 +150,7 @@ Nx creates the Unix domain sockets for its daemon and its plugin workers in a sh
 
 ---
 
-## 14. 🟠 Zero-Day — Nx: Path traversal in nx migrate package-migrations extraction
+## 15. 🟠 Zero-Day — Nx: Path traversal in nx migrate package-migrations extraction
 
 **CVE:** `CVE-2026-104853` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-hrvq-x7jp-36xv>
@@ -152,7 +161,7 @@ Nx creates the Unix domain sockets for its daemon and its plugin workers in a sh
 
 ---
 
-## 15. 🟠 Zero-Day — stream-json has a prototype pollution issue: Assembler writes this.current[this.key] on plain objects
+## 16. 🟠 Zero-Day — stream-json has a prototype pollution issue: Assembler writes this.current[this.key] on plain objects
 
 **CVE:** `CVE-2026-104183` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-mjw6-4jj6-33hc>
@@ -165,20 +174,18 @@ The streaming JSON parser (StreamValues/StreamObject/jsonc variants) writes keys
 
 ---
 
-## 16. 🟠 Zero-Day — New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline
+## 17. 🟡 High Severity — Critical Atlassian Flaw Lets Unauthenticated Attackers Read Known Files Across 8 Products
 
-**CVE:** `CVE-2026-88779` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-05
-**Reference:** <https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html>
+**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-06
+**Reference:** <https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html>
 
-> Citrix has released security updates for a high-severity security flaw in NetScaler ADC and NetScaler Gateway that has been exploited as part of targeted zero-day attacks.
+> A critical flaw in 8 Atlassian Data Center products, which customers host themselves, allows an attacker with no login access to read specific files in each product&#x27;s web application root directory.
 
-The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0.
-
-&quot;CVE-2026-88779 is a memory overflow vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway that can lead to
+The attacker must already know a file&#x27;s exact name and path and cannot list what the directory holds. Atlassian disclosed the flaw, CVE-2026-21589, on October 5, rated it 9.3 out of 10, and
 
 ---
 
-## 17. 🟡 High Severity — vLLM: Mirrored multimodal IPC caches desync after a rejected request — a later request reusing the same media hash trips a receiver assertion in the engine core
+## 18. 🟡 High Severity — vLLM: Mirrored multimodal IPC caches desync after a rejected request — a later request reusing the same media hash trips a receiver assertion in the engine core
 
 **CVE:** `CVE-2026-105753` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-ph3r-5jfg-f84f>
@@ -194,7 +201,7 @@ vLLM&#x27;s default multimodal cache (`m…
 
 ---
 
-## 18. 🟡 High Severity — vLLM: Harmony tool continuations drop `cache_salt` — restoring a cross-tenant prefix-cache membership oracle
+## 19. 🟡 High Severity — vLLM: Harmony tool continuations drop `cache_salt` — restoring a cross-tenant prefix-cache membership oracle
 
 **CVE:** `CVE-2026-105752` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-935w-9g4m-p28p>
@@ -210,7 +217,7 @@ On the GPT-OSS &quot;Harmony&quot; …
 
 ---
 
-## 19. 🟡 High Severity — Mako: Path traversal via drive-letter URI on Windows in TemplateLookup
+## 20. 🟡 High Severity — Mako: Path traversal via drive-letter URI on Windows in TemplateLookup
 
 **CVE:** `CVE-2026-102991` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-5639-2j2p-m4mx>
@@ -223,7 +230,7 @@ This is a third, independent instance of the root cause behind CVE-2026-41205 (t
 
 ---
 
-## 20. 🟡 High Severity — KaTeX: Existing prototype pollution can bypass trust restrictions
+## 21. 🟡 High Severity — KaTeX: Existing prototype pollution can bypass trust restrictions
 
 **CVE:** `CVE-2026-103923` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-238p-pmpm-9mq7>
@@ -236,7 +243,7 @@ Affected versions may…
 
 ---
 
-## 21. 🟡 High Severity — Multidict: Reference leak in CIMultiDict/MultiDict items-view union and subtraction
+## 22. 🟡 High Severity — Multidict: Reference leak in CIMultiDict/MultiDict items-view union and subtraction
 
 **CVE:** `CVE-2026-104874` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-54p9-h82j-f925>
@@ -247,7 +254,7 @@ A reference leak in the items-view union and subtraction operators of aio-libs/m
 
 ---
 
-## 22. 🟡 High Severity — Rustls: TLS 1.3 handshake messages incorrectly accepted across encryption level boundaries
+## 23. 🟡 High Severity — Rustls: TLS 1.3 handshake messages incorrectly accepted across encryption level boundaries
 
 **CVE:** `CVE-2025-61730` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-2mjx-qc3c-rqvc>
@@ -256,7 +263,7 @@ A reference leak in the items-view union and subtraction operators of aio-libs/m
 
 ---
 
-## 23. 🟡 High Severity — compression vulnerable to Denial of Service via memory leak on premature response close
+## 24. 🟡 High Severity — compression vulnerable to Denial of Service via memory leak on premature response close
 
 **CVE:** `CVE-2026-87776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-vc2v-76pw-4v95>
@@ -267,7 +274,7 @@ A vulnerability in compression `&lt; 1.8.2` allows an attacker to trigger a Deni
 
 ---
 
-## 24. 🟡 High Severity — vm2: NodeVM zlib Buffers expose pooled host memory across the VM boundary
+## 25. 🟡 High Severity — vm2: NodeVM zlib Buffers expose pooled host memory across the VM boundary
 
 **CVE:** `CVE-2026-100723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-489w-w794-jq94>
@@ -278,7 +285,7 @@ When an application explicitly exposes Node&#x27;s `zlib` module through vm2&#x2
 
 ---
 
-## 25. 🟡 High Severity — GraphQL Tools: TLS Certificate Validation Disabled in Legacy GraphQL WebSocket Executor
+## 26. 🟡 High Severity — GraphQL Tools: TLS Certificate Validation Disabled in Legacy GraphQL WebSocket Executor
 
 **CVE:** `CVE-2026-103921` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-6fw5-9hq8-w87g>
@@ -289,7 +296,7 @@ When an application explicitly exposes Node&#x27;s `zlib` module through vm2&#x2
 
 ---
 
-## 26. 🟡 High Severity — Snowflake drivers writes sensitive information to logs
+## 27. 🟡 High Severity — Snowflake drivers writes sensitive information to logs
 
 **CVE:** `CVE-2026-86597` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-qqj6-54q6-cxv6>
@@ -298,7 +305,7 @@ When an application explicitly exposes Node&#x27;s `zlib` module through vm2&#x2
 
 ---
 
-## 27. 🟡 High Severity — fsspec: Server-Side Template Injection in ReferenceFileSystem leads to Remote Code Execution
+## 28. 🟡 High Severity — fsspec: Server-Side Template Injection in ReferenceFileSystem leads to Remote Code Execution
 
 **CVE:** `CVE-2026-104851` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-27vj-qcqg-25rc>
@@ -314,7 +321,7 @@ victim opens with…
 
 ---
 
-## 28. 🟡 High Severity — Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution
+## 29. 🟡 High Severity — Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution
 
 **CVE:** `CVE-2026-104848` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-5gmw-xhrv-c9v3>
@@ -325,7 +332,7 @@ Node core ignores `Worker` options inherited from `Object.prototype`. By reading
 
 ---
 
-## 29. 🟡 High Severity — Tinypool: Prototype Pollution Gadget to RCE in run() options
+## 30. 🟡 High Severity — Tinypool: Prototype Pollution Gadget to RCE in run() options
 
 **CVE:** `CVE-2026-104849` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-85c8-ppgw-ccpr>
@@ -336,7 +343,7 @@ An attacker who can pollute `Object.prototype.filename` (for example, via a vuln
 
 ---
 
-## 30. 🟡 High Severity — stream-json: JSONC parser and verifier re-scan the whole accumulated comment on every input chunk
+## 31. 🟡 High Severity — stream-json: JSONC parser and verifier re-scan the whole accumulated comment on every input chunk
 
 **CVE:** `CVE-2026-104182` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-hqr4-qq8f-hg3x>
@@ -347,7 +354,7 @@ The JSONC parser (`stream-json/jsonc/parser.js`) and verifier (`stream-json/json
 
 ---
 
-## 31. 🟡 High Severity — vm2: Host-returned Promise rejection can bypass vm2's unhandled-rejection hardening and terminate the host process
+## 32. 🟡 High Severity — vm2: Host-returned Promise rejection can bypass vm2's unhandled-rejection hardening and terminate the host process
 
 **CVE:** `CVE-2026-92954` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-gjq8-xm47-88rc>
@@ -360,7 +367,7 @@ This is an incomplete-fix variant of the `GHSA-hw58-p9xv-2mjh` unhandled rejecti
 
 ---
 
-## 32. 🟡 High Severity — vm2: Default VM can mutate host TypedArray and ArrayBuffer intrinsics after the host-prototype pollution fix
+## 33. 🟡 High Severity — vm2: Default VM can mutate host TypedArray and ArrayBuffer intrinsics after the host-prototype pollution fix
 
 **CVE:** `CVE-2026-92953` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-3vgf-8m4q-q4qr>
@@ -372,7 +379,7 @@ vm2&#x27;s current host-intrinsic prototype protection is incomplete. The fix fo
 
 ---
 
-## 33. 🟡 High Severity — vm2 sandbox escape to host RCE via revisited host-wrapped AggregateError bypassing Error sanitization cycle short-circuit
+## 34. 🟡 High Severity — vm2 sandbox escape to host RCE via revisited host-wrapped AggregateError bypassing Error sanitization cycle short-circuit
 
 **CVE:** `CVE-2026-92934` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-x965-fc75-jpqh>
@@ -382,7 +389,7 @@ vm2 `3.11.6` (this fork&#x27;s latest release) contains an incomplete-fix bypass
 
 ---
 
-## 34. 🟡 High Severity — vm2: util.getCallSites() bypasses GHSA-v27g-jcqj-v8rw host-frame redaction, leaks host call stack
+## 35. 🟡 High Severity — vm2: util.getCallSites() bypasses GHSA-v27g-jcqj-v8rw host-frame redaction, leaks host call stack
 
 **CVE:** `CVE-2026-92933` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-r273-hxvj-fxhp>
@@ -393,7 +400,7 @@ NodeVM exposes the host `util` module to the sandbox through an unfiltered shall
 
 ---
 
-## 35. 🟡 High Severity — vm2 leaks absolute host filesystem paths to sandbox code via error stack formatting
+## 36. 🟡 High Severity — vm2 leaks absolute host filesystem paths to sandbox code via error stack formatting
 
 **CVE:** `CVE-2026-92936` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-x6m4-chr9-cg97>
@@ -408,7 +415,7 @@ A default-configur…
 
 ---
 
-## 36. 🟡 High Severity — vm2 sandbox escape via WebAssembly.compileStreaming Promise species bypass
+## 37. 🟡 High Severity — vm2 sandbox escape via WebAssembly.compileStreaming Promise species bypass
 
 **CVE:** `CVE-2026-92956` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-wjwh-qqvp-g4p4>
@@ -421,7 +428,7 @@ The escape is a patch-bypass of the same security invariant addressed by GHSA-6j
 
 ---
 
-## 37. 🟡 High Severity — Langflow: Weak Fernet Key via random.seed()
+## 38. 🟡 High Severity — Langflow: Weak Fernet Key via random.seed()
 
 **CVE:** `CVE-2026-9205` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-jxw3-mjmx-3pqm>
@@ -432,7 +439,7 @@ Langflow uses Python&#x27;s `random` module (Mersenne Twister, a non-cryptograph
 
 ---
 
-## 38. 🟡 High Severity — Langflow: Unauthenticated Flow Execution via Webhook Authentication Bypass
+## 39. 🟡 High Severity — Langflow: Unauthenticated Flow Execution via Webhook Authentication Bypass
 
 **CVE:** `CVE-2026-8505` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-cf6m-vc3m-7cgm>
@@ -442,7 +449,7 @@ A vulnerability in Langflow&#x27;s webhook authentication logic allows unauthent
 
 ---
 
-## 39. 🟡 High Severity — Langflow: Title Authenticated Remote Code Execution in  validate_code  via Malicious Decorators  Description
+## 40. 🟡 High Severity — Langflow: Title Authenticated Remote Code Execution in  validate_code  via Malicious Decorators  Description
 
 **CVE:** `CVE-2026-51886` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-05
 **Reference:** <https://github.com/advisories/GHSA-w584-2h2r-2hvf>
@@ -452,18 +459,16 @@ A critical Authenticated Remote Code Execution (RCE) vulnerability exists in the
 
 ---
 
-## 40. 🟡 High Severity — Attackers Target Rejetto HFS Flaw That Enables Admin Session Forgery and RCE
+## 41. 🟡 High Severity — Rejetto HFS servers now actively scanned for critical RCE flaw
 
-**CVE:** `CVE-2026-61500` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-05
-**Reference:** <https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html>
+**CVE:** `CVE-2026-61500` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-05
+**Reference:** <https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/>
 
-> A critical security flaw impacting Rejetto HTTP File Server (HFS) is witnessing active exploitation attempts, according to VulnCheck.
-
-The vulnerability in question is CVE-2026-61500 (CVSS score: 9.3), a case of session forgery stemming from the use of a weak pseudo-random number generator (PRNG) that can lead to a predictable key, which an attacker can then use to gain unauthorized access and
+> Hackers are actively scanning for a Rejetto HFS weak signing key vulnerability, tracked as CVE-2026-61500, that allows session forgery, account takeover, and remote code execution (RCE). [...]
 
 ---
 
-## 41. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 42. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

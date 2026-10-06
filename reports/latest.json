@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-06T03:35:12.173431+00:00",
-  "total": 41,
+  "generated": "2026-10-06T12:20:10.499379+00:00",
+  "total": 42,
   "kev": 0,
   "zero_day": 16,
   "enriched": 0,
@@ -151,6 +151,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://isc.sans.edu/diary/rss/33400",
+      "title": "More RMM Tools In the Wild, (Tue, Oct 6th)",
+      "summary": "It seems that a trend started\u00e2\u20ac\u00a6 I continue my journey discovering more RMM (\"Remote Management & Monitoring\") tools abused by threat actors! A few days ago, I wrote a diary[ 1 ] about ScreenConnect used in the wild. Today, I found another one.",
+      "link": "https://isc.sans.edu/diary/rss/33400",
+      "published": "2026-10-06T09:34:56+00:00",
+      "source": "SANS Internet Storm Center",
+      "tags": [
+        "sans",
+        "isc"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-102829",
       "title": "simple-git: `VISUAL` editor environment variable is omitted from unsafe editor detection",
       "summary": "# Security control bypass in `@simple-git/argv-parser`: Git's `VISUAL` editor fallback is not classified as `allowUnsafeEditor`\n\n## Report metadata\n\n| Field | Value |\n| --- | --- |\n| Package | `@simple-git/argv-parser` (npm, `pkg:npm/%40simple-git/argv-parser`) |\n| Repository | https://github.com/steveukx/git-js |\n| Component | `parseEnv` (`packages/argv-parser/src/env/parse-env.ts`), reached via `vulnerabilityCheck(tokens, env)` |\n| Vulnerability class | Security-control bypass \u2014 incomplete denylist in unsafe-editor detection |\n| Verified against | `c427fbad33f1f2b11341f1cf852eedecbb106400` (`@simple-git/argv-parser` 1.1.1), plus the published npm artifact 1.1.1; `main` at `98864c6` observed still unpatched |\n| API surface | Public documented API (`parseEnv(raw)` / `vulnerabilityCheck(tokens, env)`) |\n| Affected in default configuration | Yes \u2014 reproduced with `blockUnsafeOperationsPlugin` under default options, with no unsafe allowances enabled |\n\n## Summary\n\n`GitEnvKeys` in `packages/argv-parser/src/env/parse-env.ts` maps only `editor`, `git_editor` and `git_sequence_editor` to the `allowUnsafeEditor` category. `prepareEnv` keeps an environment entry only when its lowercased name is a known `GitEnvKey` or starts with `git`, so `VISUAL` is discarded before `collectConfigVulnerabilities` ever inspects it. Git, however, falls back to `VISUAL` when resolving an editor, so `parseEnv({ VISUAL: '/tmp/evileditor' })` reports no vulnerability while an interactive Git operation will execute that binary.\n\nIn a consuming application the shape is: environment values derived from a request or job are forwarded into the child Git environment and classified by this parser before spawn. The parser exists to classify exactly such values, and the equivalent `EDITOR` or `GIT_EDITOR` value is rejected \u2014 so the attacker gains an editor substitution that the guard is specifically designed to block.\n\n- `EDITOR` -> classified `allowUnsafeEditor` (`GitEnvKeys`, lines 5-27)\n- `GIT_EDITOR` ",
@@ -257,21 +272,21 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html",
-      "title": "New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline",
-      "summary": "Citrix has released security updates for a high-severity security flaw in NetScaler ADC and NetScaler Gateway that has been exploited as part of targeted zero-day attacks.\n\nThe vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0.\n\n\"CVE-2026-88779 is a memory overflow vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway that can lead to",
-      "link": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html",
-      "published": "2026-10-05T06:40:19+00:00",
+      "id": "https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html",
+      "title": "Critical Atlassian Flaw Lets Unauthenticated Attackers Read Known Files Across 8 Products",
+      "summary": "A critical flaw in 8 Atlassian Data Center products, which customers host themselves, allows an attacker with no login access to read specific files in each product's web application root directory.\n\nThe attacker must already know a file's exact name and path and cannot list what the directory holds. Atlassian\u00a0disclosed the flaw, CVE-2026-21589, on October 5, rated it 9.3 out of 10, and",
+      "link": "https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html",
+      "published": "2026-10-06T06:58:56+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
         "zeroday"
       ],
       "cve_ids": [
-        "CVE-2026-88779"
+        "CVE-2026-21589"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-105753",
@@ -688,15 +703,15 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html",
-      "title": "Attackers Target Rejetto HFS Flaw That Enables Admin Session Forgery and RCE",
-      "summary": "A critical security flaw impacting Rejetto HTTP File Server (HFS) is witnessing active exploitation attempts, according to VulnCheck.\n\nThe vulnerability in question is CVE-2026-61500 (CVSS score: 9.3), a case of session forgery stemming from the use of a weak pseudo-random number generator (PRNG) that can lead to a predictable key, which an attacker can then use to gain unauthorized access and",
-      "link": "https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html",
-      "published": "2026-10-05T08:09:23+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/",
+      "title": "Rejetto HFS servers now actively scanned for critical RCE flaw",
+      "summary": "Hackers are actively scanning for a Rejetto HFS weak signing key vulnerability, tracked as CVE-2026-61500, that allows session forgery, account takeover, and remote code execution (RCE). [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/",
+      "published": "2026-10-05T20:20:05+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "zeroday"
+        "malware"
       ],
       "cve_ids": [
         "CVE-2026-61500"
