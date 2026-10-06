@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-05T23:25:47.689293+00:00",
-  "total": 29,
+  "generated": "2026-10-06T03:35:12.173431+00:00",
+  "total": 41,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
     {
@@ -151,6 +151,94 @@
       "is_high_severity": false
     },
     {
+      "id": "CVE-2026-102829",
+      "title": "simple-git: `VISUAL` editor environment variable is omitted from unsafe editor detection",
+      "summary": "# Security control bypass in `@simple-git/argv-parser`: Git's `VISUAL` editor fallback is not classified as `allowUnsafeEditor`\n\n## Report metadata\n\n| Field | Value |\n| --- | --- |\n| Package | `@simple-git/argv-parser` (npm, `pkg:npm/%40simple-git/argv-parser`) |\n| Repository | https://github.com/steveukx/git-js |\n| Component | `parseEnv` (`packages/argv-parser/src/env/parse-env.ts`), reached via `vulnerabilityCheck(tokens, env)` |\n| Vulnerability class | Security-control bypass \u2014 incomplete denylist in unsafe-editor detection |\n| Verified against | `c427fbad33f1f2b11341f1cf852eedecbb106400` (`@simple-git/argv-parser` 1.1.1), plus the published npm artifact 1.1.1; `main` at `98864c6` observed still unpatched |\n| API surface | Public documented API (`parseEnv(raw)` / `vulnerabilityCheck(tokens, env)`) |\n| Affected in default configuration | Yes \u2014 reproduced with `blockUnsafeOperationsPlugin` under default options, with no unsafe allowances enabled |\n\n## Summary\n\n`GitEnvKeys` in `packages/argv-parser/src/env/parse-env.ts` maps only `editor`, `git_editor` and `git_sequence_editor` to the `allowUnsafeEditor` category. `prepareEnv` keeps an environment entry only when its lowercased name is a known `GitEnvKey` or starts with `git`, so `VISUAL` is discarded before `collectConfigVulnerabilities` ever inspects it. Git, however, falls back to `VISUAL` when resolving an editor, so `parseEnv({ VISUAL: '/tmp/evileditor' })` reports no vulnerability while an interactive Git operation will execute that binary.\n\nIn a consuming application the shape is: environment values derived from a request or job are forwarded into the child Git environment and classified by this parser before spawn. The parser exists to classify exactly such values, and the equivalent `EDITOR` or `GIT_EDITOR` value is rejected \u2014 so the attacker gains an editor substitution that the guard is specifically designed to block.\n\n- `EDITOR` -> classified `allowUnsafeEditor` (`GitEnvKeys`, lines 5-27)\n- `GIT_EDITOR` ",
+      "link": "https://github.com/advisories/GHSA-v5rq-49vh-5v5c",
+      "published": "2026-10-05T23:48:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102829"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-104859",
+      "title": "@nx/docker: OS command injection in the @nx/docker release pipeline",
+      "summary": "## Summary\n\nThe `@nx/docker` release pipeline builds its `docker` invocations as shell command strings, interpolating `release.docker.repositoryName` and `registryUrl` from Nx configuration into them. Because those strings are handed to `/bin/sh -c`, a crafted repository or registry name executes as a command during `nx release version` and `nx release publish`. Anyone running a Docker release against a repository whose Nx configuration they do not control \u2014 or whose configuration a pull request has changed \u2014 executes the injected command with the privileges of the release job, which in CI typically holds registry credentials and cloud tokens.\n\n## Severity\n\nExploitable when someone runs a Docker release against attacker-supplied configuration, with high impact because release jobs hold publishing credentials. There is no known evidence of exploitation in the wild.\n\n## Affected & Patched Versions\n\n| Package | Vulnerable | Patched |\n| --- | --- | --- |\n| `@nx/docker` | `>= 21.4.0, < 22.7.8`; `>= 23.0.0, < 23.1.1` | `22.7.8`, `23.1.1` |\n\nEvery published `@nx/docker` release before the patched versions is affected.\n\n> [!IMPORTANT]\n> `--dry-run` does not protect you: one of the injected commands runs before the dry-run check, so even a dry-run publish reaches a shell.\n\n## Remediation\n\nUpgrade to **22.7.8** (22.x line) or **23.1.1** (23.x line) or later:\n\n```\nnx migrate 23.1.1\n```\n\nThe fix is a drop-in and requires no configuration change. If you have run `nx release version` with a configuration you do not trust, delete the generated Docker version file before your next publish, since the composed reference is read back from disk.\n\n## Details\n\nSeveral `docker` commands in the release pipeline (`docker tag` during `nx release version`; the image existence check and `docker push` during `nx release publish`) are built as shell command strings with the image reference interpolated in. The reference is composed from the project's `release.docker` `repositoryName` and `regist",
+      "link": "https://github.com/advisories/GHSA-6vc5-vf29-ffr2",
+      "published": "2026-10-05T23:29:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-104859"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "GHSA-w2vw-w76x-qr89",
+      "title": "Nx: OS command injection via git revisions and remote refs",
+      "summary": "## Summary\n\nNx core builds several `git` invocations as shell command strings with untrusted values interpolated into them, so a value that should be a git revision or ref is parsed by `/bin/sh` instead. Two entry points are reachable by an attacker: `affected` commands, where `defaultBase` / `affected.defaultBase` from `nx.json` (and the `NX_BASE` / `NX_HEAD` environment variables) reach `git merge-base` and `git diff`; and `nx import`, where a branch name advertised by a remote repository reaches `git fetch`, `git checkout`, and `git config`. In both cases an attacker who controls a repository \u2014 or who opens a pull request against one \u2014 gets arbitrary command execution on the machine of anyone who runs an ordinary Nx command against it, including CI runners.\n\nThe `affected` path is the more serious of the two. `nx affected` and `nx show projects --affected` run constantly in CI, so a pull request that changes nothing but `nx.json` is enough to execute code on the runner with whatever credentials that job holds.\n\n## Severity\n\nExploitable by anyone who controls repository content \u2014 a fork's pull request, or a repository the victim clones \u2014 that the victim then runs an ordinary `nx affected` or `nx import` against; no access to the victim's machine is required. We have no evidence of exploitation in the wild.\n\n## Affected & Patched Versions\n\n| Package | Vulnerable | Patched |\n| --- | --- | --- |\n| `nx` | `>= 14.0.0, < 22.7.8`; `>= 23.0.0, < 23.1.1` | `22.7.8`, `23.1.1` |\n\nTreat every version below the patched ones as affected.\n\n## Remediation\n\nUpgrade to **22.7.8** (22.x line) or **23.1.1** (23.x line) or later:\n\n```\nnx migrate 23.1.1\n```\n\nThe fix is a drop-in \u2014 no configuration changes are required. If you cannot upgrade, treat `nx.json` from untrusted sources as executable content, do not run `affected` commands against pull requests you have not reviewed, and do not run `nx import` against repositories you do not trust.\n\n## Details\n\n### `affected` commands\n\nNx com",
+      "link": "https://github.com/advisories/GHSA-w2vw-w76x-qr89",
+      "published": "2026-10-05T23:29:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-104854",
+      "title": "Nx daemon and plugin worker sockets are accessible to other local users",
+      "summary": "## Summary\n\nNx creates the Unix domain sockets for its daemon and its plugin workers in a shared temporary directory with default permissions, so any other user on the same machine can connect to them. The daemon accepts a `PROCESS_IN_BACKGROUND` request that names a module to load and invokes its default export, which turns socket access into code execution inside the daemon process. On a multi-user machine \u2014 a shared build server, a shared developer box, or a container running several accounts \u2014 one local user can execute code as another user running Nx.\n\n## Severity\n\n\nExploitable by any other unprivileged local user on a shared host while a daemon or plugin worker is running, with no user interaction. There is no known evidence of exploitation in the wild.\n\n## Affected & Patched Versions\n\n| Package | Vulnerable | Patched |\n| --- | --- | --- |\n| `nx` | `>= 14.6.0, < 22.7.9`; `>= 23.0.0, < 23.1.2` | `22.7.9`, `23.1.2` |\n\nEvery version in the ranges above is affected. The lower bound is 14.6.0, when the daemon request handler that turns socket access into code execution was added.\n\n> [!IMPORTANT]\n> Single-user machines are not exposed. The vulnerability requires another local account on the same host, so an ordinary laptop with one user account is unaffected \u2014 the exposure is shared CI runners, shared build and development servers, and containers or images that run more than one uid.\n>\n> Disabling the daemon is not sufficient on its own: the plugin worker sockets used by plugin isolation are created in the same directory with the same permissions, and those are used during normal command runs whether or not the daemon is enabled.\n\n## Remediation\n\nUpgrade to **22.7.9** (22.x line) or **23.1.2** (23.x line) or later:\n\n```\nnx migrate 23.1.2\n```\n\nOn a shared machine, run `nx reset` after upgrading so that any sockets and directories created by an older version are removed rather than reused.\n\nIf you cannot upgrade, point `NX_SOCKET_DIR` at a directory you own with mode ",
+      "link": "https://github.com/advisories/GHSA-w3vv-58gj-gw77",
+      "published": "2026-10-05T23:28:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-104854"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-104853",
+      "title": "Nx: Path traversal in nx migrate package-migrations extraction",
+      "summary": "## Summary\n\n`nx migrate` reads each target package's `nx-migrations.migrations` value from its manifest and extracts the referenced file to a path built by joining that value onto a temporary directory. The value is never validated, so a package whose `migrations` field contains `..` segments (or an absolute path) steers the extraction to write outside the temporary directory. A hostile package \u2014 or any package pulled in transitively through a trusted package's `packageGroup` \u2014 can write attacker-controlled content, or truncate an existing file, anywhere the running user can write. This happens during migration *planning*, before the user reviews the migration list and before `--run-migrations`, so it does not require the user to approve or execute anything.\n\n**Most workspaces need no action.** By default `nx migrate` does not run the nx installed in your workspace \u2014 it installs `nx@latest` into a temporary directory and performs the upgrade planning, including this extraction, with that copy. Now that a patched nx is the latest release, a default `nx migrate` run is unaffected whatever version the workspace has installed. The installed version only runs, and is only then exposed, when that hand-off is bypassed \u2014 see Remediation.\n\n## Severity\n\nExploitable when the victim runs `nx migrate` against a package the attacker controls, directly or through a trusted package's `packageGroup`. The primary impact is a file write with attacker-controlled content and no path confinement; overwriting an auto-loaded file (a shell rc, a git hook, a CI script) escalates that write to code execution. There is no known evidence of exploitation in the wild.\n\n## Affected & Patched Versions\n\n| Package | Vulnerable | Patched |\n| --- | --- | --- |\n| `nx` | `>= 13.10.0, < 22.7.10`; `>= 23.0.0, < 23.2.1` | `22.7.10`, `23.2.1` |\n\nEvery version in the ranges above is affected. The lower bound is 13.10.0, the first release where `nx migrate` extracted a package's migrations file from its tarbal",
+      "link": "https://github.com/advisories/GHSA-hrvq-x7jp-36xv",
+      "published": "2026-10-05T23:28:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-104853"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-104183",
       "title": "stream-json has a prototype pollution issue: Assembler writes this.current[this.key] on plain objects",
       "summary": "### Summary\nA prototype-pollution vulnerability in stream-json lets attacker-controlled JSON replace a parsed object's prototype.\n\n### Details\nThe streaming JSON parser (StreamValues/StreamObject/jsonc variants) writes keys via plain assignment, so a __proto__ key replaces the parsed object's prototype with attacker-controlled content (verified 3.5.0 npm latest; native JSON.parse twin control stays clean). Parsing untrusted JSON is the contract. Assembler in Assembler.js.\n\n### PoC\n\nRun:\n```bash\nnode poc-stream-json-proto-injection.mjs\n```\n\nFull proof-of-concept source (poc-stream-json-proto-injection.mjs):\n```js\n// stream-json v3.5.0 (npm latest) \u2014 local [[Prototype]] replacement via `__proto__` keys\n// Class: prototype injection in a JSON deserializer (jsonparse/bser/jsonc-parser/plist family)\n// Root cause: Assembler builds every object as a plain `Object` and writes\n//   `this.current[this.key] = value` (src/core/assembler.js:160,180 \u2014 plain assignment,\n//   ToPropertyKey \u2192 inherited Object.prototype __proto__ setter fires)\n// Spec baseline: JSON.parse (CreateDataProperty) \u2192 own data property, no prototype change\n// Run:  node poc-stream-json-proto-injection.mjs   (from C:/Users/rncb0/AppData/Local/Temp/0day/sj-lab)\nimport { parser } from 'stream-json';\nimport jsoncParser from 'stream-json/jsonc/Parser.js';\nimport { streamValues } from 'stream-json/streamers/stream-values.js';\nimport { streamObject } from 'stream-json/streamers/stream-object.js';\nimport { Readable } from 'node:stream';\n\nconst sv = (input, P = parser) => new Promise((res, rej) => {\n  const vals = [];\n  Readable.from([input]).pipe(P.asStream()).pipe(streamValues.asStream())\n    .on('data', d => vals.push(d.value)).on('end', () => res(vals)).on('error', rej);\n});\nconst so = (input) => new Promise((res, rej) => {\n  const out = {};\n  Readable.from([input]).pipe(parser.asStream()).pipe(streamObject.asStream())\n    .on('data', d => { out[d.key] = d.value; }).on('end', () => res(out)).on('error', rej);\n}",
@@ -184,6 +272,132 @@
       ],
       "is_zero_day": true,
       "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-105753",
+      "title": "vLLM: Mirrored multimodal IPC caches desync after a rejected request \u2014 a later request reusing the same media hash trips a receiver assertion in the engine core",
+      "summary": "## Affected\n\n- **Ecosystem / package:** pip / `vllm`\n- **Affected versions:** vLLM \u2264 0.25.1 (confirmed on 0.25.1, commit [`752a3a504485`](https://github.com/vllm-project/vllm/tree/752a3a504485790a2e8491cacbb35c137339ad34)). The lower bound predates 0.25.1; maintainers can confirm how far back the mirrored sender/receiver cache protocol reaches.\n\n## Summary\n\nvLLM's default multimodal cache (`mm_processor_cache_type=\"lru\"`) mirrors state across two processes: the frontend (P0) holds only metadata (`MultiModalProcessorSenderCache`) while the engine core (P1) holds the real payload (`MultiModalReceiverCache`). The design invariant is that `get_and_update()` runs on P0 and P1 in lockstep for every request, so eviction order stays mirrored and P0 can answer \"is this cached in P1?\" without talking to P1.\n\nThat invariant breaks when a request is **rejected after P0 has rendered and hashed the multimodal input** (populating the P0 cache) **but before P1 receives the item** \u2014 for example, an oversized chat prompt rejected on `max_model_len` *after* rendering. P0 now believes the media is cached while P1 never got it. A later request reusing the same media hash gets a P0 hit, so P0 sends `None` instead of the payload, and P1 \u2014 which has nothing cached \u2014 trips `assert mm_item is not None, f\"Expected a cached item for {mm_hash=}\"`.\n\nThis is a remotely reachable, request-controlled cache-mirroring desync on the standard multimodal inference path. It requires only the default cache configuration.\n\n## Affected code\n\nLinks pinned to the confirmed commit [`752a3a504485`](https://github.com/vllm-project/vllm/tree/752a3a504485790a2e8491cacbb35c137339ad34) (v0.25.1):\n\n- **P0 metadata cache** \u2014 `MultiModalProcessorSenderCache` at [`vllm/multimodal/cache.py#L379`](https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c137339ad34/vllm/multimodal/cache.py#L379); `get_and_update_item` at [`#L410-L421`](https://github.com/vllm-project/vllm/blob/752a3a504485790a2e8491cacbb35c1",
+      "link": "https://github.com/advisories/GHSA-ph3r-5jfg-f84f",
+      "published": "2026-10-06T00:02:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-105753"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-105752",
+      "title": "vLLM: Harmony tool continuations drop `cache_salt` \u2014 restoring a cross-tenant prefix-cache membership oracle",
+      "summary": "## Affected\n\n- **Ecosystem / package:** pip / `vllm`\n- **Affected versions:** vLLM \u2264 0.25.1 (confirmed on 0.25.1, commit [`752a3a504485`](https://github.com/vllm-project/vllm/tree/752a3a504485790a2e8491cacbb35c137339ad34)). The lower bound predates 0.25.1; maintainers can confirm how far back the tool-continuation re-submission has omitted the salt.\n\n## Summary\n\nOn the GPT-OSS \"Harmony\" path (`POST /v1/responses`), a request that uses a built-in or MCP tool runs as a multi-turn loop: after each tool call vLLM re-renders the full next-turn Harmony prompt and re-submits it to the engine. Turn 1 correctly carries `request.cache_salt`, but the tool-continuation re-submission rebuilds the engine input via `tokens_input(token_ids)` with **no** `cache_salt`. The continuation prefix is therefore cached in the global *unsalted* namespace even though the caller opted into salting. A second tenant who can guess the low-entropy post-tool history submits the reconstructed continuation (unsalted) and reads exact per-turn cached-token counts from the Responses usage \u2014 restoring the prompt-membership oracle that `cache_salt` is documented to prevent.\n\nSilently dropping a preserved salt *after* the supported tool workflow is enabled is a broken isolation control: the caller enabled salting and every turn should stay isolated, but continuation turns leak into the shared cache.\n\nThis is distinct from [GHSA-4qjh-9fv9-r85r](https://github.com/vllm-project/vllm/security/advisories/GHSA-4qjh-9fv9-r85r) ([CVE-2025-46570](https://nvd.nist.gov/vuln/detail/CVE-2025-46570)): that advisory is the prefix-cache membership oracle for which `cache_salt` is the documented mitigation, and its PR-17045 fix does not close this site \u2014 the Harmony tool continuation silently drops the preserved salt, caching in the unsalted namespace and leaking exact `cached_tokens_per_turn` counts from a different sink (the Responses serving continuation, not general TTFT timing).\n\n## Affected code\n\nLinks pinned to the ",
+      "link": "https://github.com/advisories/GHSA-935w-9g4m-p28p",
+      "published": "2026-10-06T00:02:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-105752"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102991",
+      "title": "Mako: Path traversal via drive-letter URI on Windows in TemplateLookup",
+      "summary": "## Summary\n\nOn Windows, a `TemplateLookup` URI beginning with a drive designator (e.g. `C:/../../secret.txt` or `C:\\..\\..\\secret.txt`) bypasses the directory traversal check in `Template.__init__`, allowing reads of files outside the configured template directory.\n\nThis is a third, independent instance of the root cause behind CVE-2026-41205 (the `//` prefix) and CVE-2026-44307 (the backslash form). Both of those fixes normalized a separator *spelling*. Neither addressed the other way `posixpath` and `ntpath` disagree: the drive designator. Both prior fixes remain effective on their own terms; this variant survives them for an independent reason.\n\n## Details\n\nThe root cause is the same `posixpath` / `os.path` mismatch: resolution is done with `posixpath`, confinement is checked with `os.path`, which is `ntpath` on Windows.\n\n```\n# mako/lookup.py -- resolution\n247:  srcfile = posixpath.normpath(posixpath.join(dir_, u))   # posixpath, always\n248:  if os.path.isfile(srcfile):                             # ntpath on Windows\n\n# mako/template.py -- confinement\n268:  u_norm = os.path.normpath(u_norm)                       # ntpath on Windows\n269:  if u_norm.startswith(\"..\"):                             # never true for a drive URI\n```\n\n`posixpath` has no concept of a drive, so it treats `C:` as an ordinary path component; the `..` segments pop `C:` and then escape the template root. `ntpath`, by contrast, splits the drive off and treats the remainder as rooted, discarding the `..` entirely -- so the guard on line 269 inspects a string from which the evidence has already been removed:\n\n| URI | `ntpath.normpath` (what the guard sees) | guard fires |\n|---|---|---|\n| `//../secret.txt` | `..\\secret.txt` | yes |\n| `\\..\\secret.txt` | `..\\secret.txt` | yes |\n| `C:/../../secret.txt` | `C:\\secret.txt` | **no** |\n\nBecause the guard cannot fire for *any* URI beginning with a single-letter drive designator, the traversal is unconstrained, and its depth does not have to be guessed. `posi",
+      "link": "https://github.com/advisories/GHSA-5639-2j2p-m4mx",
+      "published": "2026-10-05T23:42:02Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102991"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-103923",
+      "title": "KaTeX: Existing prototype pollution can bypass trust restrictions",
+      "summary": "### Impact\n\nKaTeX can act as a read-side prototype pollution gadget in applications where `Object.prototype` has already been polluted, or where an attacker can influence the prototype of the renderer options object. (KaTeX does not enable said prototype pollution. This advisory applies when combining KaTeX with other vulnerable software that allows for prototype pollution.)\n\nAffected versions may treat inherited properties from `Object.prototype` as renderer options, internal setting metadata, or namespace entries. In particular, an inherited `trust` value will be treated as though the application explicitly enabled trusted rendering, rather than using the documented default of `false`.\n\nWith attacker-controlled mathematical expressions, this can produce links capable of user-interaction cross-site scripting or load attacker-selected external resources. Exploitation requires the consuming application to insert KaTeX output into a web page without a separate sanitizer. (KaTeX does not execute scripts merely by rendering an expression.)\n\nOther inherited settings can alter rendering behavior or resource limits. Inherited setting metadata can affect how defaults and supplied options are processed, while inherited namespace properties can be mistaken for defined macros or other internal values.\n\n### Patches\n\nUpgrade to KaTeX v0.18.2 to remove this vulnerability.\n\n### Workarounds\n\n- Address any prototype-pollution vulnerability in the application or its dependencies.\n- `delete Object.prototype.trust`, `delete Object.prototype.default`, and `delete Object.prototype.processor` before calling KaTeX\n- Do not allow untrusted input to control the renderer options object or its prototype.\n- Sanitize KaTeX-generated HTML before inserting it into a document.\n\n### Details\n\nKaTeX previously used ordinary JavaScript property access in the following contexts:\n\n- Renderer settings could be inherited from the prototype of the options object.\n- Internal `default` and `processor` setting",
+      "link": "https://github.com/advisories/GHSA-238p-pmpm-9mq7",
+      "published": "2026-10-05T23:41:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-103923"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-104874",
+      "title": "Multidict: Reference leak in CIMultiDict/MultiDict items-view union and subtraction",
+      "summary": "## Description\n\nA reference leak in the items-view union and subtraction operators of aio-libs/multidict 6.7.0 through 6.9.0 (C extension) lets a remote client drive unbounded, unreclaimable memory growth by having each operand element leak one key-identity object and one value object. The reflected-union path (`operand | d.items()`, `multidict_itemsview_or2_impl`) and the subtraction path (`d.items() - operand`, `multidict_itemsview_sub1_impl`) parse each element into new strong references but release only the tuple wrapper, never the identity and value. Servers in the aio-libs stack build these views over attacker-supplied HTTP headers and query strings, so the operand size is under remote control. Forced garbage collection does not recover the leaked objects, so resident memory rises monotonically until the process is killed.\n\n---\n\n## Root Cause\n\n`_multidict_itemsview_parse_item()` returns **new** references: a fresh identity via `md_calc_identity()` and a fresh value via `Py_NewRef()`. The `or2_impl` first parse loop requests both but clears only `arg`:\n\n```c\n// views.h:565 \u2014 or2_impl first parse loop\nwhile ((st = PyIter_NextItem(iter, &arg)) > 0) {\n    int tmp = _multidict_itemsview_parse_item(\n        self, arg, &identity, NULL, &value);   // identity + value: new refs\n    if (tmp < 0) goto fail;\n    else if (tmp > 0) {\n        if (_set_add(tmp_set, identity, value) < 0) goto fail;\n    }\n    Py_CLEAR(arg);                             // :575 clears arg ONLY\n}\n```\n\n`_set_add()` builds its own tuple with `PyTuple_Pack` and `Py_DECREF`s it, so it never borrows the loop's `identity`/`value`. On the next iteration those variables are overwritten, so the previous references are lost permanently. The `sub1_impl` first loop (`:686-696`) has the identical omission.\n\nThis is an editing slip, not an ownership contract: every sibling path clears all three references per iteration, `and1_impl` (`:304-306`), `and2_impl` (`:389-391`), `or1_impl` (`:506-508`), and the second ",
+      "link": "https://github.com/advisories/GHSA-54p9-h82j-f925",
+      "published": "2026-10-05T23:40:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-104874"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "GHSA-2mjx-qc3c-rqvc",
+      "title": "Rustls: TLS 1.3 handshake messages incorrectly accepted across encryption level boundaries",
+      "summary": "Rustls accepted TLS 1.3 handshake messages sent at the wrong encryption level when they followed a key-changing message in the same record. The handshake transcript is still authenticated, so a network-position attacker cannot use this to alter or complete a handshake; the practical effect is that a peer could send handshake messages that should be encrypted in plaintext without rustls rejecting the connection.\n\nThis issue affects rustls versions 0.23.13 through 0.23.44 inclusive.\n\n# Original report\n### Summary\nRustls (tested version 0.23.44, and it appears still an issue on latest master though I have not tested this) accepts a TLS 1.3 server flight where a plaintext EncryptedExtensions is packed into the same record as the ServerHello.\n\nThis is very similar to Go's CVE-2025-61730 fixed in https://github.com/golang/go/commit/5046bdf8a612b35a2c1a9e168054c1d5c65e7dd7\n\n### Details\nIt appears `Deframer::aligned` considers itself aligned as long as all messages remaining in the buffer are complete. Rustls processes the ServerHello, installs the handshake keys, then pulls the complete (plaintext) EncryptedExtensions out of the buffer.\n\nThis is insufficient per RFC 8446 section 5.1's\n\n> Handshake messages MUST NOT span key changes.  Implementations MUST verify that all messages immediately preceding a key change align with a record boundary; if not, then they MUST terminate the connection with an \"unexpected_message\" alert.  Because the ClientHello, EndOfEarlyData, ServerHello, Finished, and KeyUpdate messages can immediately precede a key change, implementations MUST send these messages in alignment with a record boundary.\n\n### Impact\nAn on path attacker can inject plaintext messages that are accepted.\n\n### Tool Use Disclosure\nThis was discovered by a new TLS/DTLS test suite currently under construction. The specific testcase was inspired by the Go CVE. Other tested implementations (Botan, OpenSSL, BoringSSL, Go, wolfSSL) reject this protocol flow. Daybreak Blue reviewed",
+      "link": "https://github.com/advisories/GHSA-2mjx-qc3c-rqvc",
+      "published": "2026-10-05T23:30:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2025-61730"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-87776",
+      "title": "compression vulnerable to Denial of Service via memory leak on premature response close",
+      "summary": "### Impact\n\nA vulnerability in compression `< 1.8.2` allows an attacker to trigger a Denial of Service (DoS) by disconnecting while a compressed response is being sent. When the client aborts the connection before the response finishes, the zlib stream created to compress that response is never destroyed, so each aborted compressed response leaks its native zlib memory. Repeated aborted requests can exhaust available memory. All applications using compression are affected.\n\n### Patches\n\nUsers should upgrade to `1.8.2`.\n\n### Workarounds\n\nNone.",
+      "link": "https://github.com/advisories/GHSA-vc2v-76pw-4v95",
+      "published": "2026-10-05T23:28:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-87776"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
     },
     {
       "id": "CVE-2026-100723",

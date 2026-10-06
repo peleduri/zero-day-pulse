@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">29</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-05 23:25 UTC</div>
+            <div class="generated">Updated 2026-10-06 03:35 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -270,6 +270,102 @@ There are actively exploited bugs in the mix, cleaner intrusion paths, smarter a
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v5rq-49vh-5v5c" target="_blank" rel="noopener">simple-git: `VISUAL` editor environment variable is omitted from unsafe editor detection</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102829</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'># Security control bypass in `@simple-git/argv-parser`: Git&#x27;s `VISUAL` editor fallback is not classified as `allowUnsafeEditor`
+
+## Report metadata
+
+| Field | Value |
+| --- | --- |
+| Package | `@simple-git/argv-parser` (npm, `pkg:npm/%40simple-git/argv-parser`) |
+| Repository | https://github.com/steveukx/git-js |
+| Component | `parseEnv` (`packages/argv-parser/src/env/parse-env.ts`), reached via …</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6vc5-vf29-ffr2" target="_blank" rel="noopener">@nx/docker: OS command injection in the @nx/docker release pipeline</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-104859</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>## Summary
+
+The `@nx/docker` release pipeline builds its `docker` invocations as shell command strings, interpolating `release.docker.repositoryName` and `registryUrl` from Nx configuration into them. Because those strings are handed to `/bin/sh -c`, a crafted repository or registry name executes as a command during `nx release version` and `nx release publish`. Anyone running a Docker release aga…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w2vw-w76x-qr89" target="_blank" rel="noopener">Nx: OS command injection via git revisions and remote refs</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>## Summary
+
+Nx core builds several `git` invocations as shell command strings with untrusted values interpolated into them, so a value that should be a git revision or ref is parsed by `/bin/sh` instead. Two entry points are reachable by an attacker: `affected` commands, where `defaultBase` / `affected.defaultBase` from `nx.json` (and the `NX_BASE` / `NX_HEAD` environment variables) reach `git mer…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w3vv-58gj-gw77" target="_blank" rel="noopener">Nx daemon and plugin worker sockets are accessible to other local users</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-104854</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>## Summary
+
+Nx creates the Unix domain sockets for its daemon and its plugin workers in a shared temporary directory with default permissions, so any other user on the same machine can connect to them. The daemon accepts a `PROCESS_IN_BACKGROUND` request that names a module to load and invokes its default export, which turns socket access into code execution inside the daemon process. On a multi-u…</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hrvq-x7jp-36xv" target="_blank" rel="noopener">Nx: Path traversal in nx migrate package-migrations extraction</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-104853</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>## Summary
+
+`nx migrate` reads each target package&#x27;s `nx-migrations.migrations` value from its manifest and extracts the referenced file to a path built by joining that value onto a temporary directory. The value is never validated, so a package whose `migrations` field contains `..` segments (or an absolute path) steers the extraction to write outside the temporary directory. A hostile package — …</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mjw6-4jj6-33hc" target="_blank" rel="noopener">stream-json has a prototype pollution issue: Assembler writes this.current[this.key] on plain objects</a></h2>
           </div>
           <div class="card-meta">
@@ -304,6 +400,144 @@ The streaming JSON parser (StreamValues/StreamObject/jsonc variants) writes keys
 The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0.
 
 &quot;CVE-2026-88779 is a memory overflow vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway that can lead to</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-ph3r-5jfg-f84f" target="_blank" rel="noopener">vLLM: Mirrored multimodal IPC caches desync after a rejected request — a later request reusing the same media hash trips a receiver assertion in the engine core</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-105753</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-06</span>
+          </div>
+          <p class='summary'>## Affected
+
+- **Ecosystem / package:** pip / `vllm`
+- **Affected versions:** vLLM ≤ 0.25.1 (confirmed on 0.25.1, commit [`752a3a504485`](https://github.com/vllm-project/vllm/tree/752a3a504485790a2e8491cacbb35c137339ad34)). The lower bound predates 0.25.1; maintainers can confirm how far back the mirrored sender/receiver cache protocol reaches.
+
+## Summary
+
+vLLM&#x27;s default multimodal cache (`mm_pro…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-935w-9g4m-p28p" target="_blank" rel="noopener">vLLM: Harmony tool continuations drop `cache_salt` — restoring a cross-tenant prefix-cache membership oracle</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-105752</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-06</span>
+          </div>
+          <p class='summary'>## Affected
+
+- **Ecosystem / package:** pip / `vllm`
+- **Affected versions:** vLLM ≤ 0.25.1 (confirmed on 0.25.1, commit [`752a3a504485`](https://github.com/vllm-project/vllm/tree/752a3a504485790a2e8491cacbb35c137339ad34)). The lower bound predates 0.25.1; maintainers can confirm how far back the tool-continuation re-submission has omitted the salt.
+
+## Summary
+
+On the GPT-OSS &quot;Harmony&quot; path (`POS…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5639-2j2p-m4mx" target="_blank" rel="noopener">Mako: Path traversal via drive-letter URI on Windows in TemplateLookup</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102991</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>## Summary
+
+On Windows, a `TemplateLookup` URI beginning with a drive designator (e.g. `C:/../../secret.txt` or `C:\..\..\secret.txt`) bypasses the directory traversal check in `Template.__init__`, allowing reads of files outside the configured template directory.
+
+This is a third, independent instance of the root cause behind CVE-2026-41205 (the `//` prefix) and CVE-2026-44307 (the backslash form…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-238p-pmpm-9mq7" target="_blank" rel="noopener">KaTeX: Existing prototype pollution can bypass trust restrictions</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-103923</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>### Impact
+
+KaTeX can act as a read-side prototype pollution gadget in applications where `Object.prototype` has already been polluted, or where an attacker can influence the prototype of the renderer options object. (KaTeX does not enable said prototype pollution. This advisory applies when combining KaTeX with other vulnerable software that allows for prototype pollution.)
+
+Affected versions may…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-54p9-h82j-f925" target="_blank" rel="noopener">Multidict: Reference leak in CIMultiDict/MultiDict items-view union and subtraction</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-104874</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>## Description
+
+A reference leak in the items-view union and subtraction operators of aio-libs/multidict 6.7.0 through 6.9.0 (C extension) lets a remote client drive unbounded, unreclaimable memory growth by having each operand element leak one key-identity object and one value object. The reflected-union path (`operand | d.items()`, `multidict_itemsview_or2_impl`) and the subtraction path (`d.ite…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2mjx-qc3c-rqvc" target="_blank" rel="noopener">Rustls: TLS 1.3 handshake messages incorrectly accepted across encryption level boundaries</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2025-61730</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-05</span>
+  </div>
+  <p class='summary'>Rustls accepted TLS 1.3 handshake messages sent at the wrong encryption level when they followed a key-changing message in the same record. The handshake transcript is still authenticated, so a network-position attacker cannot use this to alter or complete a handshake; the practical effect is that a peer could send handshake messages that should be encrypted in plaintext without rustls rejecting t…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vc2v-76pw-4v95" target="_blank" rel="noopener">compression vulnerable to Denial of Service via memory leak on premature response close</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-87776</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-05</span>
+          </div>
+          <p class='summary'>### Impact
+
+A vulnerability in compression `&lt; 1.8.2` allows an attacker to trigger a Denial of Service (DoS) by disconnecting while a compressed response is being sent. When the client aborts the connection before the response finishes, the zlib stream created to compress that response is never destroyed, so each aborted compressed response leaks its native zlib memory. Repeated aborted requests c…</p>
 
         </article>
 
