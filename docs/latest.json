@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-07T03:01:03.949458+00:00",
-  "total": 28,
+  "generated": "2026-10-07T12:11:57.844694+00:00",
+  "total": 29,
   "kev": 0,
-  "zero_day": 16,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
     {
@@ -253,6 +253,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://isc.sans.edu/diary/rss/33400",
+      "title": "More RMM Tools In the Wild, (Tue, Oct 6th)",
+      "summary": "It seems that a trend started\u00e2\u20ac\u00a6 I continue my journey discovering more RMM (\"Remote Management & Monitoring\") tools abused by threat actors! A few days ago, I wrote a diary[ 1 ] about ScreenConnect used in the wild. Today, I found another one.",
+      "link": "https://isc.sans.edu/diary/rss/33400",
+      "published": "2026-10-06T13:16:02+00:00",
+      "source": "SANS Internet Storm Center",
+      "tags": [
+        "sans",
+        "isc"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-41510",
       "title": "Coraza: Silent argument drop at ArgumentLimit allows bypass of ARGS-targeted rules via parameter flooding",
       "summary": "## Root Cause\n\nFile: `internal/corazawaf/transaction.go`, lines 770\u2013808 (since commit 2fd87b89, PR #812, 2023-06-14)\n\n```go\nfunc (tx *Transaction) AddGetRequestArgument(key string, value string) {\n    if tx.checkArgumentLimit(tx.variables.argsGet) {\n        tx.debugLogger.Warn().Msg(\"skipping get request argument, over limit\")\n        return\n    }\n    tx.variables.argsGet.Add(key, value)\n}\n\nfunc (tx *Transaction) checkArgumentLimit(c *collections.NamedCollection) bool {\n    return c.Len() >= tx.WAF.ArgumentLimit\n}\n```\n\n`AddGetRequestArgument`, `AddPostRequestArgument`, and `AddPathRequestArgument` silently `return` once the per-collection argument count reaches `WAF.ArgumentLimit` (default `1000`, see `internal/corazawaf/waf.go:346`). No error variable is set, no transaction flag is raised, and no rule can observe that a drop occurred.\n\nWorse, `ExtractGetArguments` (`transaction.go:761`) iterates the `map[string][]string` returned by `urlutil.ParseQuery`:\n\n```go\nfunc (tx *Transaction) ExtractGetArguments(uri string) {\n    data := urlutil.ParseQuery(uri, '&')\n    for k, vs := range data {        // Go map iteration order is randomized\n        for _, v := range vs {\n            tx.AddGetRequestArgument(k, v)\n        }\n    }\n}\n```\n\nBecause Go randomizes map iteration order, which of the caller-supplied arguments survive the limit is non-deterministic. An attacker can pad the URI with filler arguments; any one of them \u2014 including the malicious payload \u2014 may be the one silently discarded, and therefore invisible to every `SecRule` targeting `ARGS`, `ARGS_GET`, or `ARGS_NAMES`.\n\n### Secondary finding \u2014 POST urlencoded processor bypasses the cap entirely\n\n`internal/bodyprocessors/urlencoded.go:29` populates `ARGS_POST` without invoking `checkArgumentLimit`:\n\n```go\nvalues := urlutil.ParseQuery(b, '&')\nargsCol := v.ArgsPost()\nfor k, vs := range values {\n    argsCol.Set(k, vs)            // direct write, no limit check\n}\n```\n\nSo `AddPostRequestArgument`'s cap is effectively d",
@@ -302,6 +317,23 @@
       ],
       "cve_ids": [
         "CVE-2026-86540"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/atlassian-warns-of-critical-file-access-flaw-in-jira-confluence/",
+      "title": "Atlassian warns of critical file-access flaw in Jira, Confluence",
+      "summary": "Atlassian is warning customers of a critical vulnerability, tracked as CVE-2026-21589, that can be exploited for arbitrary file-access in multiple self-hosted Data Center products, including Confluence, Jira, and Bitbucket. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/atlassian-warns-of-critical-file-access-flaw-in-jira-confluence/",
+      "published": "2026-10-06T17:34:59+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-21589"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -428,23 +460,6 @@
       ],
       "cve_ids": [
         "CVE-2026-10561"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html",
-      "title": "Critical Atlassian Flaw Lets Unauthenticated Attackers Read Known Files Across 8 Products",
-      "summary": "A critical flaw in 8 Atlassian Data Center products, which customers host themselves, allows an attacker with no login access to read specific files in each product's web application root directory.\n\nThe attacker must already know a file's exact name and path and cannot list what the directory holds. Atlassian\u00a0disclosed the flaw, CVE-2026-21589, on October 5, rated it 9.3 out of 10, and",
-      "link": "https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html",
-      "published": "2026-10-06T06:58:56+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-21589"
       ],
       "is_zero_day": false,
       "is_high_severity": true

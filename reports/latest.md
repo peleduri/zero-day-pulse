@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-07 03:01 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 16 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-07 12:11 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -148,7 +148,16 @@
 
 ---
 
-## 17. 🟡 High Severity — Coraza: Silent argument drop at ArgumentLimit allows bypass of ARGS-targeted rules via parameter flooding
+## 17. 🟠 Zero-Day — More RMM Tools In the Wild, (Tue, Oct 6th)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SANS Internet Storm Center &nbsp;|&nbsp; **Published:** 2026-10-06
+**Reference:** <https://isc.sans.edu/diary/rss/33400>
+
+> It seems that a trend startedâ€¦ I continue my journey discovering more RMM (&quot;Remote Management &amp; Monitoring&quot;) tools abused by threat actors! A few days ago, I wrote a diary[ 1 ] about ScreenConnect used in the wild. Today, I found another one.
+
+---
+
+## 18. 🟡 High Severity — Coraza: Silent argument drop at ArgumentLimit allows bypass of ARGS-targeted rules via parameter flooding
 
 **CVE:** `CVE-2026-41510` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-6r3q-mjv7-xr8m>
@@ -167,7 +176,7 @@ func (tx *Transaction) AddGetRequestArgument(key string, value string) {
 
 ---
 
-## 18. 🟡 High Severity — Coraza: Truncated multipart body bypasses MULTIPART_STRICT_ERROR (rule 200003) via silent io.ErrUnexpectedEOF handling
+## 19. 🟡 High Severity — Coraza: Truncated multipart body bypasses MULTIPART_STRICT_ERROR (rule 200003) via silent io.ErrUnexpectedEOF handling
 
 **CVE:** `CVE-2026-41508` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-r3rm-qphw-hh76>
@@ -182,7 +191,7 @@ The multipart body processor treats `io.ErrUnexpectedEOF` as a benign condition.
 
 ---
 
-## 19. 🟡 High Severity — knowns OS Command Injection via Insecure LSP Binary Path Config in .knowns/config.json
+## 20. 🟡 High Severity — knowns OS Command Injection via Insecure LSP Binary Path Config in .knowns/config.json
 
 **CVE:** `CVE-2026-86540` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-mc52-mwq4-vfx3>
@@ -195,7 +204,16 @@ Because this field is **never validated** against an allowlist of managed binari
 
 ---
 
-## 20. 🟡 High Severity — Kiota: Code injection through doc-comment delimiter reformation in Kiota Java and PHP generators
+## 21. 🟡 High Severity — Atlassian warns of critical file-access flaw in Jira, Confluence
+
+**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-06
+**Reference:** <https://www.bleepingcomputer.com/news/security/atlassian-warns-of-critical-file-access-flaw-in-jira-confluence/>
+
+> Atlassian is warning customers of a critical vulnerability, tracked as CVE-2026-21589, that can be exploited for arbitrary file-access in multiple self-hosted Data Center products, including Confluence, Jira, and Bitbucket. [...]
+
+---
+
+## 22. 🟡 High Severity — Kiota: Code injection through doc-comment delimiter reformation in Kiota Java and PHP generators
 
 **CVE:** `CVE-2026-105796` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-rm89-rhwj-9j92>
@@ -206,7 +224,7 @@ An attacker who controls or tampers with an OpenAPI description can cause Kiota 
 
 ---
 
-## 21. 🟡 High Severity — MCP TypeScript SDK: OAuth client could send credentials to an authorization server chosen by the MCP server
+## 23. 🟡 High Severity — MCP TypeScript SDK: OAuth client could send credentials to an authorization server chosen by the MCP server
 
 **CVE:** `CVE-2026-104850` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-6qxp-vccf-f47h>
@@ -220,7 +238,7 @@ A malicious or compromised MCP server could name its own authorization server. W
 
 ---
 
-## 22. 🟡 High Severity — i18next-http-backend incomplete URL validation permits SSRF
+## 24. 🟡 High Severity — i18next-http-backend incomplete URL validation permits SSRF
 
 **CVE:** `CVE-2026-105800` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-xvq9-wjp8-hwqf>
@@ -236,7 +254,7 @@ This is reachable under the following conditions: Attacker controls i18next lang
 
 ---
 
-## 23. 🟡 High Severity — LangChain: RediSearch Filter Injection via Unescaped Tag/Text Values
+## 25. 🟡 High Severity — LangChain: RediSearch Filter Injection via Unescaped Tag/Text Values
 
 **CVE:** `CVE-2026-105799` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-5x6v-p487-7qh2>
@@ -255,7 +273,7 @@ An attacker who can control values passed to the a…
 
 ---
 
-## 24. 🟡 High Severity — External Secrets Operator: label enforcement bypass in webhook generator enables secret exfiltration
+## 26. 🟡 High Severity — External Secrets Operator: label enforcement bypass in webhook generator enables secret exfiltration
 
 **CVE:** `CVE-2026-26287` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-q7hv-xx6h-q2x8>
@@ -265,7 +283,7 @@ A bug in the `webhook` generator initialization order incorrectly cleared the la
 
 ---
 
-## 25. 🟡 High Severity — sharp : Vulnerability in librsvg dependency CVE-2026-96889
+## 27. 🟡 High Severity — sharp : Vulnerability in librsvg dependency CVE-2026-96889
 
 **CVE:** `CVE-2026-96889` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-wq5f-xc86-pv6w>
@@ -284,7 +302,7 @@ Please upgrade sharp to the …
 
 ---
 
-## 26. 🟡 High Severity — Langflow: PythonREPLComponent executes unsandboxed Python code, enabling authenticated RCE and privilege escalation
+## 28. 🟡 High Severity — Langflow: PythonREPLComponent executes unsandboxed Python code, enabling authenticated RCE and privilege escalation
 
 **CVE:** `CVE-2026-10561` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-06
 **Reference:** <https://github.com/advisories/GHSA-8qpj-27x8-pwpq>
@@ -295,18 +313,7 @@ Langflow&#x27;s built-in Python interpreter components — `PythonREPLComponent`
 
 ---
 
-## 27. 🟡 High Severity — Critical Atlassian Flaw Lets Unauthenticated Attackers Read Known Files Across 8 Products
-
-**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-06
-**Reference:** <https://thehackernews.com/2026/10/critical-atlassian-flaw-lets.html>
-
-> A critical flaw in 8 Atlassian Data Center products, which customers host themselves, allows an attacker with no login access to read specific files in each product&#x27;s web application root directory.
-
-The attacker must already know a file&#x27;s exact name and path and cannot list what the directory holds. Atlassian disclosed the flaw, CVE-2026-21589, on October 5, rated it 9.3 out of 10, and
-
----
-
-## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
