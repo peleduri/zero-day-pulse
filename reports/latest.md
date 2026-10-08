@@ -1,10 +1,55 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-08 12:22 UTC &nbsp;|&nbsp; **Total:** 37 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 27 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-08 22:34 UTC &nbsp;|&nbsp; **Total:** 54 &nbsp;|&nbsp; 🔴 KEV: 5 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 36 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2023-22894 — Strapi Cleartext Storage of Sensitive Information Vulnerability
+
+**CVE:** `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2023-22894>
+
+> Vendor: Strapi | Product: Strapi. Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. This vulnerabilit…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2021-3199 — ONLYOFFICE Docs Server Path Traversal Vulnerability
+
+**CVE:** `CVE-2021-3199` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2021-3199>
+
+> Vendor: ONLYOFFICE | Product: Docs. ONLYOFFICE Docs contains a path traversal vulnerability that can occur when JWT is used, via a /.. sequence in an image upload parameter and could allow for remote code execution. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guid…
+
+---
+
+## 3. 🔴 CISA KEV — CVE-2015-5477 —  ISC BIND Data Processing Errors Vulnerability
+
+**CVE:** `CVE-2015-5477` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2015-5477>
+
+> Vendor: ISC | Product: BIND. ISC BIND contains a data processing errors vulnerability that could allow remote attackers to cause a denial of service via TKEY queries. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (…
+
+---
+
+## 4. 🔴 CISA KEV — CVE-2016-3081 — Apache Struts Command Injection Vulnerability
+
+**CVE:** `CVE-2016-3081` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2016-3081>
+
+> Vendor: Apache | Product: Struts. Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance…
+
+---
+
+## 5. 🔴 CISA KEV — CVE-2015-3306 — ProFTPD Improper Access Control Vulnerability
+
+**CVE:** `CVE-2015-3306` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2015-3306>
+
+> Vendor: ProFTPD | Product: ProFTPD. ProFTPD contains an improper access control vulnerability that could allow remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and …
+
+---
+
+## 6. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,30 +58,56 @@
 
 ---
 
-## 2. 🟠 Zero-Day — PraisonAI: Prompt Injection Defense Bypassed for HIGH-Level Threats
+## 7. 🟠 Zero-Day — PraisonAI: AICoder Arbitrary File Write and Command Execution via LLM Tool Calls
 
-**CVE:** `CVE-2026-61439` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-fj8f-m44g-c479>
+**CVE:** `CVE-2026-61445` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-9mp3-24cc-77mg>
 
 > ### Summary
-Injection Defense is a purpose-built prompt injection defense layer. It scans LLM inputs through six detection categories: instruction overrides, authority claims, boundary manipulation, obfuscation, financial manipulation, and self-harm instructions.
-
-The defense is misconfigured by default. The block threshold defaults to Threat Level. CRITICAL, which is only reached when 3 or more d…
+The `AICoder` UI component exposes `write_to_file` and `execute_command` tools to the LLM with no path validation and no command sanitization. An attacker can achieve arbitrary file write to any location on the filesystem (including `/root/.ssh/authorized_keys`, `/etc/crontab`) and arbitrary command execution through prompt injection in the chat interface. Docker containers run as root…
 
 ---
 
-## 3. 🟠 Zero-Day — Unpatched Critical LMCache Flaw Lets Unauthenticated Attackers Run Code Remotely
+## 8. 🟠 Zero-Day — FBI disrupts Chinese hacking tools used to breach critical infrastructure
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://www.bleepingcomputer.com/news/security/fbi-disrupts-chinese-hacking-tools-used-to-breach-critical-infrastructure/>
 
-> A critical vulnerability in LMCache, open-source software that speeds up large language model (LLM) servers such as vLLM, lets an attacker run code on the cache server without logging in, and no fixed version is available.
-
-The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a standalone server that LLM workers reach over the ZeroMQ messaging library. A single network
+> The FBI has seized seven domains used by Chinese state-sponsored hackers known as Flax Typhoon to operate two hacking tools, MicroScan and FishHub, used in attacks that breached critical infrastructure and other organizations worldwide. [...]
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 9. 🟠 Zero-Day — PraisonAI: Prompt-injection defense blocks only when 3+ detector families fire simultaneously; realistic single-vector injections pass through unblocked
+
+**CVE:** `CVE-2026-60086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-4r3p-w3mc-5v34>
+
+> ## Summary
+
+PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) only blocks at `ThreatLevel.CRITICAL`, which requires three or more distinct detector families to match simultaneously. A realistic single- or double-vector prompt injection (e.g. &quot;Ignore all previous instructions…&quot;) is classified `HIGH` and passes through unmodified. The documented `HIGH` &quot;s…
+
+---
+
+## 10. 🟠 Zero-Day — PraisonAI: CodeAgent Executes LLM-Generated Code Without Sandboxing and Leaks All Environment Secrets
+
+**CVE:** `CVE-2026-61447` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-2xv2-w8cq-5gxw>
+
+> ### Summary
+`CodeAgent._execute_python()` executes LLM-generated Python code in a subprocess with the complete parent-process environment (`os.environ.copy()`), zero AST validation, zero import restrictions, and no sandbox enforcement — even when `CodeConfig(sandbox=True)` is explicitly set. This allows an attacker who can influence LLM output (via prompt injection in agent input, tool results, or…
+
+---
+
+## 11. 🟠 Zero-Day — Inside the Exchange Inspector: How Tenable uses OpenAI GPT cyber models to review open-source AI agents
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://www.tenable.com/blog/tenable-openai-security-vetting-open-source-ai-agents-exchange-inspector>
+
+> Community-built AI agents, skills, and MCP servers are landing in SOC workflows fast. Here’s what the Exchange Inspector tests before a listing earns its vetted tag on the CyberAgents Exchange. Three tools have already passed. Key takeaways Every Inspector-vetted listing clears three gates: an automated check, a frontier model assessment, and human verification. Tenable uses Tenable One AI Exposur…
+
+---
+
+## 12. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -45,7 +116,7 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 13. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -54,7 +125,7 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 14. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -63,7 +134,7 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 15. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -72,7 +143,7 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 16. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -81,7 +152,7 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 17. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -90,7 +161,7 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 10. 🟠 Zero-Day — Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland
+## 18. 🟠 Zero-Day — Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://www.bleepingcomputer.com/news/security/samsung-galaxy-s26-hacked-three-more-times-at-pwn2own-ireland/>
@@ -99,401 +170,431 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 11. 🟡 High Severity — Ghost: Remote Code Execution via Bookmark Card Images
+## 19. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
-**CVE:** `CVE-2026-105642` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-788w-68h3-cvxp>
+**CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
+**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
 
-> ### Impact
-
-An image processing library bundled with Ghost contained a vulnerability in its SVG handling. Any staff user, including Contributors, could create a bookmark card for an attacker-controlled website, resulting in arbitrary commands being run on the Ghost server.
-
-### Vulnerable versions
-
-This vulnerability is present in Ghost from v6.56.0 up to v6.65.0.
-
-### Patches
-
-v6.67.0 contains a …
+> Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and s…
 
 ---
 
-## 12. 🟡 High Severity — Docling: Configured HTTP headers sent to every remote image host named by a document
+## 20. 🟡 High Severity — Hazelcast allows arbitrary member memory access by low-privileged client
 
-**CVE:** `CVE-2026-105742` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-p3fw-7699-7926>
+**CVE:** `CVE-2026-107726` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-6v25-8wq6-xq4j>
+
+> ### Impact
+
+A flaw has been found in Hazelcast Enterprise Edition and Community Edition, which would allow a low-privileged malicious client to read arbitrary data in memory from any cluster member (including Java heap memory, off-heap data, and JVM process address space). Additionally, such a client may be able to cause one or more cluster members to crash, or in some Enterprise Edition configura…
+
+---
+
+## 21. 🟡 High Severity — Banks: Symlink traversal and arbitrary file disclosure/overwrite in DirectoryPromptRegistry
+
+**CVE:** `CVE-2026-107716` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-556j-vv39-8rqv>
 
 > ### Summary
-
-`HTMLBackendOptions.headers` is documented for passing authentication headers (API keys, bearer tokens) when fetching remote images. docling sends these headers on every remote image request, to whichever host the document names. An untrusted document that references an attacker-controlled image URL receives the caller&#x27;s credentials.
-
-### Details
-
-`docling/backend/utils/image_res…
+In `banks.registries.DirectoryPromptRegistry`, prompt file paths and the index file (`index.json`) do not refuse symbolic links. When a prompt directory contains or accepts untrusted files (e.g. unpacked archives, shared repositories, or multi-tenant folders), symbolic links pointing outside the registry root can be used to disclose arbitrary files via `_scan()` / `get()` or overwrite …
 
 ---
 
-## 13. 🟡 High Severity — Docling has SSRF guard bypass in remote resource fetching (DNS rebinding / multi-record resolution; no IP validation in HTML render mode)
+## 22. 🟡 High Severity — Indico: Incomplete Server-Side Request Forgery (SSRF) check
 
-**CVE:** `CVE-2026-105743` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-pc36-qwjq-x68c>
-
-> ### Summary
-
-When remote fetching is enabled (`enable_remote_fetch=True`, together with `fetch_images=True` or HTML `render_page=True`), docling&#x27;s protection against requests to private and loopback addresses can be bypassed.
-
-- The URL check resolves the host name once, to a single IPv4 address. The HTTP request then resolves it again. A name that returns a public A record together with an i…
-
----
-
-## 14. 🟡 High Severity — Langflow: OS command injection (RCE) via arbitrary command in MCP stdio server configuration
-
-**CVE:** `CVE-2026-105697` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-w794-rj3p-xv45>
-
-> ### Summary
-
-Before **Langflow 1.10.3**, the MCP stdio transport launched whatever `command` / `args` a user put in an MCP server configuration, with no allowlist and (before 1.10.3) wrapped in `bash -c &quot;exec {command} ...&quot;`. Any user able to reach the MCP server settings (&quot;Settings → MCP Servers → Add MCP Server&quot;, `POST/PATCH /api/v2/mcp/servers/{server_name}`) or to build a f…
-
----
-
-## 15. 🟡 High Severity — yawkat LZ4 Java: Native library extraction to a shared temporary directory is vulnerable to file replacement by another local user
-
-**CVE:** `CVE-2026-106451` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-mcr4-qmvw-px4g>
-
-> ### Summary
-
-When no system-installed `liblz4-java` is found, `net.jpountz.util.Native.load()` extracts the bundled native library to `java.io.tmpdir` and loads it with `System.load`. The path of the extracted library can be predicted before it is created, and the library file is opened without exclusive creation. Another local user who can write to the same temporary directory can therefore creat…
-
----
-
-## 16. 🟡 High Severity — yawkat LZ4 Java: LZ4FrameInputStream reallocates block buffers for every frame, allowing CPU and GC amplification from small inputs
-
-**CVE:** `CVE-2026-106450` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-gm45-99xc-r7wv>
-
-> ### Summary
-
-`LZ4FrameInputStream` allocates two new buffers of the frame&#x27;s maximum block size, up to 4 MiB each, every time it reads a frame header. Because concatenated frames are read by default, an input made of many minimal empty frames forces about 8 MiB of zeroed heap allocation for every 11 input bytes.
-
-### Details
-
-In `net.jpountz.lz4.LZ4FrameInputStream.readHeader()`:
-
-```java
-maxB…
-
----
-
-## 17. 🟡 High Severity — Langflow has Authenticated Cross-Project File Disclosure via Unscoped MCP Resource Handlers
-
-**CVE:** `CVE-2026-105699` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-4hmc-cfm3-w43c>
-
-> ### Summary
-Langflow&#x27;s project-scoped MCP transport authenticates the caller for the `project_id` in the connection URL, but the subsequent `resources/read` operation does not authorize the resource URI being requested. An authenticated user can connect to their own project-scoped MCP endpoint and supply a crafted file-download URI that points to another user&#x27;s flow-backed file. The serv…
-
----
-
-## 18. 🟡 High Severity — Next.js: Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages
-
-**CVE:** `CVE-2026-94544` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-3w37-wq28-93x7>
-
-> Pending `use cache` fills are shared across requests for the same key without distinguishing Draft Mode requests from regular requests. When two such requests overlap, the second request receives the first request&#x27;s fill:
-
-- A regular request that overlaps an editor&#x27;s Draft Mode request receives unpublished content, without any authentication.
-- A Draft Mode request that overlaps a regul…
-
----
-
-## 19. 🟡 High Severity — Payload: Remote Code Execution through first-register
-
-**CVE:** `CVE-2026-105858` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-97rh-rhh2-7vjv>
+**CVE:** `CVE-2026-107394` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-2v95-h47v-g4x9>
 
 > ### Impact
-A crafted request to the public first-register operation can be used to perform a RCE exploit.
-
-**You are affected if:**
-
-- You use local auth strategy and your application remains without an initial user created
-
-## Patches
-
-In the patched version data submission to create first user is properly sanitized.
-
-Users should upgrade Payload packages to `&gt;= 3.90.0` or `&gt;= 4.0.0-canary.…
+Indico makes outgoing requests to user-provides URLs in various places. This is mostly intentional and part of Indico&#x27;s functionality, but of course it is never intended to let you access &quot;special&quot; targets such as localhost or cloud metadata endpoints. The previous fix (CVE-2026-25738) did not cover an edge case so it was still possible to craft a URL that pointed to a lo…
 
 ---
 
-## 20. 🟡 High Severity — @payloadcms/plugin-multi-tenant has a cross-tenant create issue
+## 23. 🟡 High Severity — Mechanize sends credential headers to another host after an HTTP redirect
 
-**CVE:** `CVE-2026-105864` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-xhm9-gwgw-3q2q>
-
-> ### Impact
-An authenticated user limited to one tenant could create a record in another tenant. This requires the multi-tenant plugin with at least one tenant-enabled collection.
-
-Reads and direct edits to an existing target-tenant document were not bypassed.
-
-You are affected if:
-- You are using @payloadcms/plugin-multi-tenant
-
-### Patches
-Users should upgrade Payload packages to `&gt;= 3.90.0` o…
-
----
-
-## 21. 🟡 High Severity — Ghost: Invite Token Disclosure in Ghost Admin API
-
-**CVE:** `CVE-2026-105675` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-v6q3-xqxm-6f5v>
-
-> ### Impact
-
-Staff users with permission to view staff invites were able to discover the secret token of pending invites, including invites for roles with higher privileges than their own. This could allow a staff user to escalate their privileges by accepting a pending invite.
-
-### Vulnerable versions
-
-This vulnerability is present in Ghost from v4.39.0 up to v6.64.0.
-
-### Patches
-
-v6.64.0 contain…
-
----
-
-## 22. 🟡 High Severity — Ghost: Path Traversal via Locale Setting
-
-**CVE:** `CVE-2026-105676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-m382-6jw4-fmp6>
-
-> ### Impact
-
-A vulnerability in how Ghost loads theme translation files allowed an authenticated Administrator to read JSON files outside of the active theme&#x27;s directory, potentially exposing server configuration secrets.
-
-### Vulnerable versions
-
-This vulnerability is present in Ghost from v1.20.0 up to v6.64.0.
-
-### Patches
-
-v6.64.0 contains a fix for this issue.
-
-### How to update
-
-For self…
-
----
-
-## 23. 🟡 High Severity — Ghost: Remote Code Execution via Theme Translation Files
-
-**CVE:** `CVE-2026-105677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-jj74-hc2q-xrvm>
-
-> ### Impact
-
-A vulnerability in how Ghost loads theme translation files allowed an authenticated Administrator to execute arbitrary code on the server via a crafted theme.
-
-### Vulnerable versions
-
-This vulnerability is present in Ghost from v6.10.3 up to v6.64.0.
-
-### Patches
-
-v6.64.0 contains a fix for this issue.
-
-### How to update
-
-For self-hosters using Docker, find [Docker&#x27;s official Gho…
-
----
-
-## 24. 🟡 High Severity — Backstage: Improper validation of MkDocs plugin configuration in TechDocs
-
-**CVE:** `CVE-2026-106455` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-q38j-6vcm-2f5m>
-
-> ### Impact
-
-An authenticated attacker with control over a TechDocs source repository could cause a documentation build to retrieve and publish data from network locations reachable by the build environment. Exposure depends on deployment topology, build mode, and target endpoint protections. Modern cloud metadata services that require tokens or special headers are not directly accessible through t…
-
----
-
-## 25. 🟡 High Severity — Excelize: Unbounded spinCount in agile decryption burns CPU during OpenFile
-
-**CVE:** `CVE-2026-107219` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-jrfj-fhj2-jjvm>
-
-> Opening a file whose first eight bytes are the OLE magic number sends excelize down the decryption path whether or not the caller set a password, or supports encrypted workbooks at all. `openReaderAt` (excelize.go:198-215) branches on the header alone, and `agileDecrypt` calls `convertPasswdToKey` before the verifier hash is checked, so the key-derivation loop runs `spinCount` times regardless.
-
-`…
-
----
-
-## 26. 🟡 High Severity — PraisonAI: Crawl4AI/Chromium backend is also affected by the `web_crawl` SSRF validation bypass
-
-**CVE:** `CVE-2026-61429` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-6g59-gm2v-qhvq>
+**CVE:** `CVE-2026-107715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-2mwr-xjcg-37j7>
 
 > ## Summary
 
-The DNS-rebinding / redirect SSRF bypass in PRAI-05 is **not limited to the httpx/urllib backend**. When `crawl4ai` (headless Chromium via Playwright) is installed, `web_crawl` auto-selects `provider=crawl4ai`, and the headless browser re-resolves DNS and follows redirects on its own — with no per-connection SSRF guard. Runtime-confirmed read-back of the internal canary via both DNS re…
+`mechanize` leaked credentials to the redirect target when an HTTP redirect crossed to another host. Credentials set through `Mechanize#request_headers=` leaked even when they were `Authorization`.
+
+## Details
+
+Two defects, both in `lib/mechanize/http/agent.rb`.
+
+**1. `Mechanize#request_headers=` bypassed the redirect strip entirely.** `#request_add_headers` copied `@request_headers` o…
 
 ---
 
-## 27. 🟡 High Severity — WeasyPrint: EPS images reach the Ghostscript interpreter resulting in RCE
+## 24. 🟡 High Severity — fast-jwt: createVerifier accepts unsigned JWTs when key is '' or null and algorithms is explicitly set
 
-**CVE:** `CVE-2026-106443` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-r543-q48m-4c9j>
+**CVE:** `CVE-2026-107720` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-8wpc-h4q6-8fxv>
 
 > ### Summary
 
-This was found during a pentest, funded by the NLNnet foundation, conducted by Stefan Vink from Radically Open Security and the only High issue found. 
+`createVerifier` in fast-jwt ≤ 6.3.0 skips signature verification entirely when the `key` option is a falsy synchronous value (`&#x27;&#x27;` or `null`) **and** the `algorithms` option is set to a non-empty allowlist. An attacker who can present a JWT to the application — regardless of algorithm — can forge arbitrary claims without possessing any signing key.
 
-WeasyPrint passes fetched image bytes directly to Pillow&#x27;s generic format dispatcher without restricting the input format. When Ghostscript is installed on the host, Pillow&#x27;s EpsImagePlugin invokes it to rasterize attacker-c…
+### Details
+
+**Root caus…
 
 ---
 
-## 28. 🟡 High Severity — Kunstmaan CMS: MediaBundle extension blacklist bypass allows authenticated administrators to upload executable PHP files leading to remote code execution
+## 25. 🟡 High Severity — fast-jwt: Incomplete patch of CVE-2026-34950: Non-whitespace key-prefix re-enables RSA→HS256 algorithm confusion
 
-**CVE:** `CVE-2026-104890` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-p279-5wcv-45vq>
+**CVE:** `CVE-2026-107722` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-ww5h-9m49-7xx4>
 
 > ### Summary
 
-The MediaBundle blocks dangerous upload extensions with a blacklist that was matched
-case-sensitively, while the stored filename was lowercased afterwards. A file uploaded
-as `webshell.pHp` therefore bypassed the blacklist and was written to the web-accessible
-upload directory as `webshell.php`, where the web server executed it. Any authenticated
-backend user with access to the media …
+The fix for CVE-2026-34950 (CVSS 9.1, released in v6.2.0) is **incomplete**. It adds `key.trim()` to the PEM-detection path in `src/crypto.js`, but `String.prototype.trim()` only strips characters classified as whitespace by the ECMAScript specification. The subsequent `^`-anchored regex (`/^-----BEGIN(?: (RSA))? PUBLIC KEY-----/`) still requires the PEM header at position 0 — so **an…
 
 ---
 
-## 29. 🟡 High Severity — Backstage: Remote code execution via crafted markdown_extensions in TechDocs mkdocs.yml
+## 26. 🟡 High Severity — fast-jwt clockTolerance: Infinity silently bypasses both exp and nbf validation (and persists in the verifier cache)
 
-**CVE:** `CVE-2026-106510` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-4488-j8vj-vqqv>
+**CVE:** `CVE-2026-107721` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-687g-22h4-j4w4>
+
+> ## Summary
+
+`createVerifier({ clockTolerance: Infinity })` silently bypasses both `exp` (expiry) AND `nbf` (not-before) validation. Any expired or not-yet-active token is accepted as valid. The same primitive also corrupts the verifier&#x27;s internal cache so cached entries inherit infinite validity — they remain valid past a later developer-removed Infinity config until LRU eviction.
+
+## Vulnera…
+
+---
+
+## 27. 🟡 High Severity — fast-jwt : Silent claim-validator bypass when JWT payload is a JSON array
+
+**CVE:** `CVE-2026-107723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-5hjw-83fp-phq9>
+
+> ### Summary
+ `fast-jwt`&#x27;s `createVerifier` silently skips **all** configured claim validators (`exp`, `nbf`, `iss`, `aud`, `sub`, `jti`, `nonce`) when a validly-signed JWT carries a JSON array as its payload instead of an object. The verifier reports success while having enforced only the signature. This breaks the library&#x27;s documented `allowedIss` / `allowedAud` / `allowedSub` / expiry …
+
+---
+
+## 28. 🟡 High Severity — fast-jwt treats raw public JWK JSON as an HMAC secret, enabling HS256 token forgery
+
+**CVE:** `CVE-2026-107724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-g3jj-5cmm-3hxx>
+
+> ### Summary
+
+`fast-jwt` 6.2.4 silently classifies raw serialized public JWK JSON
+as an HMAC secret.
+
+If an application supplies public JWK JSON text as the verifier key and
+HS256 is explicitly allowed or automatically inferred, an attacker who
+knows the same public JSON text can use it as an HMAC key and create an
+arbitrary HS256 token that `fast-jwt` accepts as valid.
+
+This can result in authenti…
+
+---
+
+## 29. 🟡 High Severity — PraisonAI: AgentOS defaults to network-exposed no-auth mode, allowing unauthenticated agent invocation and instruction disclosure
+
+**CVE:** `CVE-2026-61426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-6wjp-v33h-5cvq>
+
+> ## Summary
+
+The AgentOS server in the `praisonai` TypeScript/npm package ships an insecure default: it binds `0.0.0.0`, sets no API key, and uses CORS `*` with credentials. The API-key middleware is only registered when an API key is configured, so the documented quickstart (`new AgentOS({agents:[...]}).serve({port})`) exposes, **unauthenticated**, `GET /api/agents` (which leaks agent names/roles/…
+
+---
+
+## 30. 🟡 High Severity — PraisonAI: SecurityPolicy command/path/import restrictions are completely unenforced by the default SubprocessSandbox backend
+
+**CVE:** `CVE-2026-60085` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-5r6c-gj4g-r697>
+
+> Summary
+SecurityPolicy in praisonaiagents/sandbox/config.py is a documented configuration data class with fields for allow_subprocess, allowed_paths, blocked_paths, allowed_commands, blocked_commands, allowed_imports, and blocked_imports. Its strict() classmethod is explicitly described as creating &quot;a strict security policy for untrusted code,&quot; setting allow_subprocess=False and allow_fi…
+
+---
+
+## 31. 🟡 High Severity — PraisonAI: Jobs API is unauthenticated by default and allows attacker-controlled webhook SSRF
+
+**CVE:** `CVE-2026-60091` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-4w49-gwv8-fpjg>
+
+> ## Summary
+
+PraisonAI&#x27;s Async Jobs API enables its API-key middleware **only when `PRAISONAI_JOBS_API_KEY` is set**, so by default every endpoint is unauthenticated. An unauthenticated `POST /api/v1/runs` accepts an attacker-controlled `webhook_url`; on job completion the server POSTs the job payload to it via `httpx`. The `webhook_url` has an SSRF validator (`gethostbyname` + private-IP chec…
+
+---
+
+## 32. 🟡 High Severity — music-metadata: MP4 stsd sample-entry size==0 causes a synchronous infinite loop (DoS) — unreleased regression on master
+
+**CVE:** `CVE-2026-107391` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-f94x-6692-553q>
+
+> ### Summary
+
+`StsdAtom.get()` in `lib/mp4/AtomToken.ts` parses an MP4 `stsd` (sample description) box&#x27;s entry table by advancing a cursor with `off += size - 4`, where `size` is a 32-bit, attacker-controlled per-entry length read straight from the file. When `size == 0`, that advance is `0`, so a file declaring a huge `entry_count` and a first entry `size` of `0` spins forever: same bytes rea…
+
+---
+
+## 33. 🟡 High Severity — music-metadata: EBML parser trusts element lengths, allowing memory exhaustion or process abort
+
+**CVE:** `CVE-2026-107389` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-5gfj-9q3v-qfp3>
+
+> ## Summary
+
+The Matroska/WebM EBML parser decodes attacker-controlled variable-length integer (VINT) element lengths without first validating that the declared element fits within its enclosing container or the available input. Leaf lengths are then used directly for string-token and `Uint8Array` allocations.
+
+A very small crafted `.webm`, `.mkv`, or `.mka` file can therefore cause a disproportion…
+
+---
+
+## 34. 🟡 High Severity — Pydantic AI: Concurrency-limited models can keep their slot when a streamed request ends early
+
+**CVE:** `CVE-2026-107286` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-6fqq-452j-qhrp>
+
+> &gt; This issue was posted by Codex Desktop using gpt-6.1-sol on behalf of David.
+
+### Summary
+
+Applications that wrap a model with `ConcurrencyLimitedModel` or `limit_model_concurrency` can permanently lose shared concurrency capacity when a streamed request releases its slot from a different task than the one that acquired it. This can happen when a stream ends early, and also when a stream is f…
+
+---
+
+## 35. 🟡 High Severity — MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS
+
+**CVE:** `CVE-2026-107382` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-cx2f-j9fh-8g68>
+
+> ### Description
+On the zero-configuration TLS path, the connector accepts a self-signed server certificate at the TLS level and then validates the server&#x27;s identity from the fingerprint hash the server appends to the final OK_Packet (`Authentication.validateFingerPrint`). That validation calls `hash()` on the authentication plugin in use to obtain the password-derived secret both sides combin…
+
+---
+
+## 36. 🟡 High Severity — PraisonAI: API deploy code generator embeds unescaped YAML fields into Python source
+
+**CVE:** `CVE-2026-61433` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-79fv-7hq9-w7xg>
+
+> # API deploy code generator embeds unescaped YAML fields into Python source
+
+## Summary
+
+PraisonAI&#x27;s API deployment generator copies `deploy.api.host` from `agents.yaml` directly into generated Python source without safe literal encoding. A malicious PraisonAI project can set that host value to a Python expression splice; when an operator runs the API deploy flow, the generated server source …
+
+---
+
+## 37. 🟡 High Severity — PraisonAI: Project custom command templates can read outside-workspace files into model prompts
+
+**CVE:** `CVE-2026-60088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-xpx6-x8c2-mw5w>
+
+> # Project custom command templates can read outside-workspace files into model prompts
+
+## Summary
+
+PraisonAI&#x27;s new file-based custom command feature auto-discovers project commands from `.praisonai/commands/*.md`. When a user runs `praisonai run --command &lt;name&gt;` inside a repository, the command body is interpolated before it is sent as the model prompt.
+
+The interpolation code expands…
+
+---
+
+## 38. 🟡 High Severity — Handlebars: JavaScript Injection via Own Property Check Bypass
+
+**CVE:** `CVE-2026-106445` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-p8wg-vrv2-v86f>
+
+> ## Summary
+
+Handlebars can expose the `Function` constructor despite its prototype-access deny list. When a template reaches `Function.prototype`, its own `constructor` property is returned before the deny list is checked. An attacker who can render a controlled template with `allowProtoMethodsByDefault: true` can inject and execute arbitrary JavaScript, leading to Remote Code Execution on the ser…
+
+---
+
+## 39. 🟡 High Severity — JHipster: Generated Applications Allow Stored XSS via Unrestricted Blob ContentType Opened as Same-Origin Blob
+
+**CVE:** `CVE-2026-107303` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-9ffp-22j7-56r2>
+
+> ## Summary
+Applications generated by generator-jhipster v9.2.0 can persist user-controlled Blob ContentType values and later use those values as the MIME type for client-side Blob objects. The shared generated `openFile` helper creates an object URL from the Blob and opens it in a new window.
+
+For Blob-bearing entities writable by normal authenticated users, this creates a stored XSS chain: attack…
+
+---
+
+## 40. 🟡 High Severity — msgpack5: Quadratic parsing in the streaming decoder
+
+**CVE:** `CVE-2026-107297` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-gcx5-hxj7-gpqq>
 
 > ### Impact
 
-An authenticated user who can register catalog entities can provide a crafted `mkdocs.yml` causing arbitrary OS command execution on the TechDocs build host when the docs are built.
+The streaming decoder reparses an incomplete container from the beginning whenever another chunk arrives. A remote peer can split one valid MessagePack value across many small chunks, causing quadratic CPU usage and blocking the event loop.
 
 ### Patches
 
-Patched in `@backstage/plugin-techdocs-node`, version `1.15.4`.
+The decoder now preserves incremental container state so completed elements are not parsed again when more input arrives.
 
-### Workarounds
-
-If you cannot upgrade immediately:
-
-- Switch to `techdocs.builder: external` to isolate TechDocs builds in a c…
+### Workar…
 
 ---
 
-## 30. 🟡 High Severity — Backstage: Improper entity validation in deprecated Kubernetes services endpoint
+## 41. 🟡 High Severity — PraisonAI: PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL
 
-**CVE:** `CVE-2026-106563` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-r9ph-3637-55px>
+**CVE:** `CVE-2026-60090` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-wf65-4jjx-q444>
+
+> # PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL
+
+## Summary
+
+The PGVector and Cassandra knowledge-store backends validate SQL/CQL identifiers such as schema, keyspace, and collection names, but still insert the caller-controlled `dimension` argument directly into `CREATE TABLE` vector column declarations. A caller that can influence collection creation dimensions c…
+
+---
+
+## 42. 🟡 High Severity — Pydantic AI: Unbounded memory use when downloading remote content via web_fetch or FileUrl
+
+**CVE:** `CVE-2026-107294` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-v2xh-2vp8-57h8>
+
+> ### Summary
+
+Several remote-content download paths in Pydantic AI buffered the entire HTTP response body into memory before enforcing any size limit. An application that exposes the local web-fetch tool (`web_fetch_tool`, or the `WebFetch` capability&#x27;s local fallback) to untrusted prompts can be driven to fetch an attacker-chosen URL that streams a very large body, exhausting process memory a…
+
+---
+
+## 43. 🟡 High Severity — AsyncHttpClient: Pooled connections can still be shared across NTLM, Negotiate and proxy logins
+
+**CVE:** `CVE-2026-107230` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-v2j5-22fr-j62r>
 
 > ### Impact
-
-An authenticated user with Kubernetes read permissions could access Kubernetes workload data beyond their intended scope by supplying crafted entity data to the deprecated services endpoint. The exposure is limited to read-only access to Kubernetes object metadata across configured clusters.
-
-### Patches
-
-Patched in `@backstage/plugin-kubernetes-backend` version 0.21.8.
-
-### Workaround…
+The fix for GHSA-vvp4-63h8-v5pm in 3.0.13 folded the authenticated principal into the HTTP/1.1 connection pool key, so that a connection one principal authenticated with NTLM, Kerberos or SPNEGO is not handed to another. It left three cases out. In each, a socket that one identity authenticated can still be drawn by a request belonging to a different identity, and the server serves that…
 
 ---
 
-## 31. 🟡 High Severity — Backstage has a sensitive information disclosure in Kubernetes resource queries
+## 44. 🟡 High Severity — Pydantic AI: Event loop blocked by quadratic title extraction in `web_fetch`
 
-**CVE:** `CVE-2026-106561` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-p795-mqf2-36mf>
+**CVE:** `CVE-2026-107290` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-fpf4-vwcp-v4hp>
+
+> ### Summary
+
+The local web-fetch tool (`web_fetch_tool`, also used as the `WebFetch` capability&#x27;s local fallback) processed responses with several steps whose running time grows quadratically with the size of certain server-controlled inputs, and ran them on the event loop: decoding the body with whichever charset the server declared, extracting the page title with a backtracking regular expr…
+
+---
+
+## 45. 🟡 High Severity — Pydantic AI: SSRF cloud-metadata blocklist bypass via IPv6 zone identifiers
+
+**CVE:** `CVE-2026-107289` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-vmxc-h2x2-jmf3>
+
+> ### Summary
+
+When an application using Pydantic AI opts a URL into local network access — either a `FileUrl` with `force_download=&#x27;allow-local&#x27;`, or `web_fetch_tool(allow_local_urls=True)` — the cloud-metadata blocklist could be bypassed by appending an IPv6 zone identifier to a metadata address (for example `fd00:ec2::254%251`). The host ignores the zone identifier on a destination that…
+
+---
+
+## 46. 🟡 High Severity — PraisonAI: Plugin Auto-Discovery Executes Arbitrary Python Files Without Verification
+
+**CVE:** `CVE-2026-61446` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-m6wp-h223-4c8g>
+
+> ### Summary
+The plugin manager loads and executes arbitrary `.py` files from `.praisonai/plugins/` directories (both project-level and user home) via `importlib.util.spec_from_file_location()` + `exec_module()` with zero code signing, integrity verification, or sandboxing. Any attacker who can write a file to the plugins directory (via path traversal, supply chain attack, or compromised dependency…
+
+---
+
+## 47. 🟡 High Severity — PraisonAI: Human-in-the-loop tool approval is cached by tool name and silently reused for all subsequent calls with arbitrary arguments
+
+**CVE:** `CVE-2026-60087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-29r9-67vg-qj56>
+
+> ## Summary
+
+PraisonAI gates dangerous tools (file writes, deletes, shell/code execution) behind an interactive approval prompt. The first approval of a tool is cached for the remainder of the run and silently reused for all later invocations of that tool with arbitrary, unreviewed arguments.
+
+## Root cause
+
+`ApprovalRegistry.is_already_approved` (`src/praisonai-agents/praisonaiagents/approval/regi…
+
+---
+
+## 48. 🟡 High Severity — PraisonAI: DNS rebinding bypass in `web_crawl` SSRF protection allows internal response disclosure
+
+**CVE:** `CVE-2026-61430` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-qg25-6gc4-48mg>
+
+> ## Summary
+
+PraisonAI&#x27;s `web_crawl` agent tool performs a server-side HTTP fetch of an agent/attacker-influenced URL. SSRF is meant to be prevented by `_is_safe_crawl_url()`, which resolves the hostname and rejects private/loopback/link-local IPs **at validation time**. The validated value is the URL *string* (not a pinned IP); the fetch backend then **re-resolves the hostname at connection t…
+
+---
+
+## 49. 🟡 High Severity — Excelize Decrypt: unrecoverable panics on malformed OLE/CFB encrypted workbooks
+
+**CVE:** `CVE-2026-107214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-2j4c-ffch-9f23>
+
+> ### Summary
+
+Any file whose first 8 bytes are the OLE compound-file signature (`D0 CF 11 E0 A1 B1 1A E1`) is routed by `OpenFile`/`OpenReader`/`OpenBytes` → `openReaderAt` → `Decrypt`. The version dispatch only guarantees `len(EncryptionInfo) &gt;= 4` before handing attacker-controlled `EncryptionInfo`/`EncryptedPackage` buffers to `standardDecrypt`/`agileDecrypt`, and no callee validates structur…
+
+---
+
+## 50. 🟡 High Severity — Excelize: extractPart allocates attacker-controlled, unbounded and negative-sized buffers from CFB directory entries: remote panic / OOM DoS
+
+**CVE:** `CVE-2026-107215` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-x2q3-8cjh-766f>
+
+> ### Summary
+
+`extractPart` allocates directly from the mscfb directory-entry size with no clamping (`crypt.go:198`, same missing bound at `crypt.go:204`):
+
+```go
+buf := make([]byte, entry.Size)
+```
+
+`entry.Size` is the raw `streamSize` field from the attacker-controlled CFB directory entry (mscfb v1.0.8 `fixFile`, `file.go:109-120`: full uint64 → int64 for major version 4, low uint32 for v3). mscf…
+
+---
+
+## 51. 🟡 High Severity — Excelize ANCHORARRAY: mutually-referencing array formulas recurse unboundedly via re-entrant CalcCellValue, causing a fatal stack overflow
+
+**CVE:** `CVE-2026-107216` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-wp2g-vpjj-g53r>
+
+> ### Summary
+
+`ANCHORARRAY` (calc.go:15137 on current master) evaluates each cell of the referenced spill range by calling the **exported** `CalcCellValue`, which unconditionally constructs a fresh `calcContext` — fresh entry marker, fresh iterations map, full `MaxCalcIterations` budget (calc.go:896-900). The circular-reference control only exists **within one context**: the entry-exclusion marker …
+
+---
+
+## 52. 🟡 High Severity — AsyncHttpClient: Cookie Domain attribute is not checked against the public suffix list, so a cookie can be set for co.uk
+
+**CVE:** `CVE-2026-107280` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://github.com/advisories/GHSA-f9m8-cv68-674w>
 
 > ### Impact
+The cookie store decides whether a `Domain` attribute may be accepted using only the domain-matching rule of RFC 6265 Section 5.1.3, which asks whether the request host is the domain or ends with a dot followed by it. Section 5.3 step 5, which additionally requires rejecting a `Domain` that is a public suffix, is not implemented anywhere in the client.
 
-An authenticated user holding the standard Kubernetes resource read permission could retrieve sensitive values that the Kubernetes plugin is designed to mask, potentially exposing credentials and other confidential material held in the connected clusters. Exposure is limited to resources that the Backstage service account is permitted to read and that match the targeted catalog entity&…
-
----
-
-## 32. 🟡 High Severity — Backstage's scaffolder credential handling may allow unintended GitHub authentication fallback
-
-**CVE:** `CVE-2026-106462` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-29gx-h2m3-xw44>
-
-> ### Impact
-
-Scaffolder actions that interact with source control systems may not consistently enforce the intended credential boundaries under certain configurations. An authenticated user could perform operations with broader access than intended.
-
-### Patches
-
-- `@backstage/plugin-scaffolder-backend` version `4.1.0`
-- `@backstage/plugin-scaffolder-backend-module-azure` version `0.2.25`
-- `@backs…
+So a host under a multi-label pub…
 
 ---
 
-## 33. 🟡 High Severity — Backstage: Unsupported catalog cluster authentication mode in kubernetes backend
+## 53. 🟡 High Severity — Attackers Target Critical Atlassian Vulnerability Within Hours of PoC Publication
 
-**CVE:** `CVE-2026-106487` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-h53x-hjx6-25gr>
+**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://www.securityweek.com/attackers-target-critical-atlassian-vulnerability-within-hours-of-poc-publication/>
 
-> ### Impact
-
-Deployments using catalog cluster discovery may be affected when catalog contributors can create or modify `kubernetes-cluster` Resource entities. With the required endpoint permissions and pod RBAC, the backend can use its local in-cluster identity, potentially exposing Kubernetes resources readable by that identity. The credential is used only with the local in-cluster API endpoint a…
+> Threat actors have started targeting CVE-2026-21589, a critical vulnerability in Atlassian’s self-hosted Data Center products. The post Attackers Target Critical Atlassian Vulnerability Within Hours of PoC Publication appeared first on SecurityWeek .
 
 ---
 
-## 34. 🟡 High Severity — Backstage: Improper input validation in TechDocs static content requests
-
-**CVE:** `CVE-2026-106490` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-7mfx-xg57-53c9>
-
-> ### Impact
-
-When using the Azure Blob Storage provider, an authenticated Backstage user may be able to read restricted TechDocs content when entity-level permissions are enabled. Deployments that intentionally disable the default backend authentication policy may have broader exposure.
-
-### Patches
-
-Patched in `@backstage/plugin-techdocs-backend` version `2.2.4`
-
-### Workarounds
-
-- Restrict access…
-
----
-
-## 35. 🟡 High Severity — Backstage: Cloud storage catalog locations may cross configured storage boundaries
-
-**CVE:** `CVE-2026-106493` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://github.com/advisories/GHSA-xvh9-35w9-42m4>
-
-> ### Impact
-
-Catalog entity providers for Azure Blob Storage and AWS S3 did not sufficiently validate storage object paths, which could allow catalog descriptors to be read from outside the intended storage boundary. Access is limited to locations reachable by the backend&#x27;s configured credentials.
-
-### Patches
-
-- `@backstage/plugin-catalog-backend-module-azure` version `0.3.21`
-- `@backstage/p…
-
----
-
-## 36. 🟡 High Severity — Hackers exploit critical Atlassian flaw after public PoC release
-
-**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/>
-
-> A critical vulnerability (CVE-2026-21589) affecting multiple Atlassian product families, including Jira, Confluence, and Bitbucket, is being exploited in attacks that do not require authentication. [...]
-
----
-
-## 37. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 54. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
