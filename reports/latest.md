@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-08 03:17 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 27 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-08 12:22 UTC &nbsp;|&nbsp; **Total:** 37 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 27 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -90,7 +90,16 @@ The flaw is in LMCache&#x27;s multiprocess mode, where the cache runs as a stan
 
 ---
 
-## 10. 🟡 High Severity — Ghost: Remote Code Execution via Bookmark Card Images
+## 10. 🟠 Zero-Day — Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-08
+**Reference:** <https://www.bleepingcomputer.com/news/security/samsung-galaxy-s26-hacked-three-more-times-at-pwn2own-ireland/>
+
+> ​​​On the second day of Pwn2Own Ireland 2026, security researchers collected $232,500 in cash awards after exploiting 45 unique zero-day vulnerabilities. [...]
+
+---
+
+## 11. 🟡 High Severity — Ghost: Remote Code Execution via Bookmark Card Images
 
 **CVE:** `CVE-2026-105642` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-788w-68h3-cvxp>
@@ -109,7 +118,7 @@ v6.67.0 contains a …
 
 ---
 
-## 11. 🟡 High Severity — Docling: Configured HTTP headers sent to every remote image host named by a document
+## 12. 🟡 High Severity — Docling: Configured HTTP headers sent to every remote image host named by a document
 
 **CVE:** `CVE-2026-105742` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-p3fw-7699-7926>
@@ -124,7 +133,7 @@ v6.67.0 contains a …
 
 ---
 
-## 12. 🟡 High Severity — Docling has SSRF guard bypass in remote resource fetching (DNS rebinding / multi-record resolution; no IP validation in HTML render mode)
+## 13. 🟡 High Severity — Docling has SSRF guard bypass in remote resource fetching (DNS rebinding / multi-record resolution; no IP validation in HTML render mode)
 
 **CVE:** `CVE-2026-105743` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-pc36-qwjq-x68c>
@@ -137,7 +146,7 @@ When remote fetching is enabled (`enable_remote_fetch=True`, together with `fetc
 
 ---
 
-## 13. 🟡 High Severity — Langflow: OS command injection (RCE) via arbitrary command in MCP stdio server configuration
+## 14. 🟡 High Severity — Langflow: OS command injection (RCE) via arbitrary command in MCP stdio server configuration
 
 **CVE:** `CVE-2026-105697` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-w794-rj3p-xv45>
@@ -148,7 +157,7 @@ Before **Langflow 1.10.3**, the MCP stdio transport launched whatever `command` 
 
 ---
 
-## 14. 🟡 High Severity — yawkat LZ4 Java: Native library extraction to a shared temporary directory is vulnerable to file replacement by another local user
+## 15. 🟡 High Severity — yawkat LZ4 Java: Native library extraction to a shared temporary directory is vulnerable to file replacement by another local user
 
 **CVE:** `CVE-2026-106451` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-mcr4-qmvw-px4g>
@@ -159,7 +168,7 @@ When no system-installed `liblz4-java` is found, `net.jpountz.util.Native.load()
 
 ---
 
-## 15. 🟡 High Severity — yawkat LZ4 Java: LZ4FrameInputStream reallocates block buffers for every frame, allowing CPU and GC amplification from small inputs
+## 16. 🟡 High Severity — yawkat LZ4 Java: LZ4FrameInputStream reallocates block buffers for every frame, allowing CPU and GC amplification from small inputs
 
 **CVE:** `CVE-2026-106450` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-gm45-99xc-r7wv>
@@ -177,7 +186,7 @@ maxB…
 
 ---
 
-## 16. 🟡 High Severity — Langflow has Authenticated Cross-Project File Disclosure via Unscoped MCP Resource Handlers
+## 17. 🟡 High Severity — Langflow has Authenticated Cross-Project File Disclosure via Unscoped MCP Resource Handlers
 
 **CVE:** `CVE-2026-105699` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-4hmc-cfm3-w43c>
@@ -187,7 +196,7 @@ Langflow&#x27;s project-scoped MCP transport authenticates the caller for the `p
 
 ---
 
-## 17. 🟡 High Severity — Next.js: Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages
+## 18. 🟡 High Severity — Next.js: Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages
 
 **CVE:** `CVE-2026-94544` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-3w37-wq28-93x7>
@@ -199,7 +208,7 @@ Langflow&#x27;s project-scoped MCP transport authenticates the caller for the `p
 
 ---
 
-## 18. 🟡 High Severity — Payload: Remote Code Execution through first-register
+## 19. 🟡 High Severity — Payload: Remote Code Execution through first-register
 
 **CVE:** `CVE-2026-105858` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-97rh-rhh2-7vjv>
@@ -219,7 +228,7 @@ Users should upgrade Payload packages to `&gt;= 3.90.0` or `&gt;= 4.0.0-canary.�
 
 ---
 
-## 19. 🟡 High Severity — @payloadcms/plugin-multi-tenant has a cross-tenant create issue
+## 20. 🟡 High Severity — @payloadcms/plugin-multi-tenant has a cross-tenant create issue
 
 **CVE:** `CVE-2026-105864` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-xhm9-gwgw-3q2q>
@@ -237,7 +246,7 @@ Users should upgrade Payload packages to `&gt;= 3.90.0` o…
 
 ---
 
-## 20. 🟡 High Severity — Ghost: Invite Token Disclosure in Ghost Admin API
+## 21. 🟡 High Severity — Ghost: Invite Token Disclosure in Ghost Admin API
 
 **CVE:** `CVE-2026-105675` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-v6q3-xqxm-6f5v>
@@ -256,7 +265,7 @@ v6.64.0 contain…
 
 ---
 
-## 21. 🟡 High Severity — Ghost: Path Traversal via Locale Setting
+## 22. 🟡 High Severity — Ghost: Path Traversal via Locale Setting
 
 **CVE:** `CVE-2026-105676` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-m382-6jw4-fmp6>
@@ -279,7 +288,7 @@ For self…
 
 ---
 
-## 22. 🟡 High Severity — Ghost: Remote Code Execution via Theme Translation Files
+## 23. 🟡 High Severity — Ghost: Remote Code Execution via Theme Translation Files
 
 **CVE:** `CVE-2026-105677` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-jj74-hc2q-xrvm>
@@ -302,7 +311,7 @@ For self-hosters using Docker, find [Docker&#x27;s official Gho…
 
 ---
 
-## 23. 🟡 High Severity — Backstage: Improper validation of MkDocs plugin configuration in TechDocs
+## 24. 🟡 High Severity — Backstage: Improper validation of MkDocs plugin configuration in TechDocs
 
 **CVE:** `CVE-2026-106455` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-q38j-6vcm-2f5m>
@@ -313,7 +322,7 @@ An authenticated attacker with control over a TechDocs source repository could c
 
 ---
 
-## 24. 🟡 High Severity — Excelize: Unbounded spinCount in agile decryption burns CPU during OpenFile
+## 25. 🟡 High Severity — Excelize: Unbounded spinCount in agile decryption burns CPU during OpenFile
 
 **CVE:** `CVE-2026-107219` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-jrfj-fhj2-jjvm>
@@ -324,7 +333,7 @@ An authenticated attacker with control over a TechDocs source repository could c
 
 ---
 
-## 25. 🟡 High Severity — PraisonAI: Crawl4AI/Chromium backend is also affected by the `web_crawl` SSRF validation bypass
+## 26. 🟡 High Severity — PraisonAI: Crawl4AI/Chromium backend is also affected by the `web_crawl` SSRF validation bypass
 
 **CVE:** `CVE-2026-61429` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-6g59-gm2v-qhvq>
@@ -335,7 +344,7 @@ The DNS-rebinding / redirect SSRF bypass in PRAI-05 is **not limited to the http
 
 ---
 
-## 26. 🟡 High Severity — WeasyPrint: EPS images reach the Ghostscript interpreter resulting in RCE
+## 27. 🟡 High Severity — WeasyPrint: EPS images reach the Ghostscript interpreter resulting in RCE
 
 **CVE:** `CVE-2026-106443` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-r543-q48m-4c9j>
@@ -348,7 +357,7 @@ WeasyPrint passes fetched image bytes directly to Pillow&#x27;s generic format d
 
 ---
 
-## 27. 🟡 High Severity — Kunstmaan CMS: MediaBundle extension blacklist bypass allows authenticated administrators to upload executable PHP files leading to remote code execution
+## 28. 🟡 High Severity — Kunstmaan CMS: MediaBundle extension blacklist bypass allows authenticated administrators to upload executable PHP files leading to remote code execution
 
 **CVE:** `CVE-2026-104890` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-p279-5wcv-45vq>
@@ -363,7 +372,7 @@ backend user with access to the media …
 
 ---
 
-## 28. 🟡 High Severity — Backstage: Remote code execution via crafted markdown_extensions in TechDocs mkdocs.yml
+## 29. 🟡 High Severity — Backstage: Remote code execution via crafted markdown_extensions in TechDocs mkdocs.yml
 
 **CVE:** `CVE-2026-106510` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-4488-j8vj-vqqv>
@@ -384,7 +393,7 @@ If you cannot upgrade immediately:
 
 ---
 
-## 29. 🟡 High Severity — Backstage: Improper entity validation in deprecated Kubernetes services endpoint
+## 30. 🟡 High Severity — Backstage: Improper entity validation in deprecated Kubernetes services endpoint
 
 **CVE:** `CVE-2026-106563` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-r9ph-3637-55px>
@@ -401,7 +410,7 @@ Patched in `@backstage/plugin-kubernetes-backend` version 0.21.8.
 
 ---
 
-## 30. 🟡 High Severity — Backstage has a sensitive information disclosure in Kubernetes resource queries
+## 31. 🟡 High Severity — Backstage has a sensitive information disclosure in Kubernetes resource queries
 
 **CVE:** `CVE-2026-106561` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-p795-mqf2-36mf>
@@ -412,7 +421,7 @@ An authenticated user holding the standard Kubernetes resource read permission c
 
 ---
 
-## 31. 🟡 High Severity — Backstage's scaffolder credential handling may allow unintended GitHub authentication fallback
+## 32. 🟡 High Severity — Backstage's scaffolder credential handling may allow unintended GitHub authentication fallback
 
 **CVE:** `CVE-2026-106462` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-29gx-h2m3-xw44>
@@ -429,7 +438,7 @@ Scaffolder actions that interact with source control systems may not consistentl
 
 ---
 
-## 32. 🟡 High Severity — Backstage: Unsupported catalog cluster authentication mode in kubernetes backend
+## 33. 🟡 High Severity — Backstage: Unsupported catalog cluster authentication mode in kubernetes backend
 
 **CVE:** `CVE-2026-106487` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-h53x-hjx6-25gr>
@@ -440,7 +449,7 @@ Deployments using catalog cluster discovery may be affected when catalog contrib
 
 ---
 
-## 33. 🟡 High Severity — Backstage: Improper input validation in TechDocs static content requests
+## 34. 🟡 High Severity — Backstage: Improper input validation in TechDocs static content requests
 
 **CVE:** `CVE-2026-106490` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-7mfx-xg57-53c9>
@@ -459,7 +468,7 @@ Patched in `@backstage/plugin-techdocs-backend` version `2.2.4`
 
 ---
 
-## 34. 🟡 High Severity — Backstage: Cloud storage catalog locations may cross configured storage boundaries
+## 35. 🟡 High Severity — Backstage: Cloud storage catalog locations may cross configured storage boundaries
 
 **CVE:** `CVE-2026-106493` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-07
 **Reference:** <https://github.com/advisories/GHSA-xvh9-35w9-42m4>
@@ -475,18 +484,16 @@ Catalog entity providers for Azure Blob Storage and AWS S3 did not sufficiently 
 
 ---
 
-## 35. 🟡 High Severity — Atlassian Data Center Flaw Draws Exploitation Attempts Within Two Hours of Public Details
+## 36. 🟡 High Severity — Hackers exploit critical Atlassian flaw after public PoC release
 
-**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-07
-**Reference:** <https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html>
+**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-07
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/>
 
-> Threat actors have begun to exploit a newly disclosed critical security flaw impacting Atlassian Data Center products that could allow access to sensitive files under certain conditions.
-
-The arbitrary file access flaw, tracked as CVE-2026-21589 (CVSS score: 9.3) affects multiple products, including Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software
+> A critical vulnerability (CVE-2026-21589) affecting multiple Atlassian product families, including Jira, Confluence, and Bitbucket, is being exploited in attacks that do not require authentication. [...]
 
 ---
 
-## 36. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 37. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

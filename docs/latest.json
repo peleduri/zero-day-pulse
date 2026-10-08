@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-08T03:17:44.476736+00:00",
-  "total": 36,
+  "generated": "2026-10-08T12:22:50.592993+00:00",
+  "total": 37,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -147,6 +147,21 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/samsung-galaxy-s26-hacked-three-more-times-at-pwn2own-ireland/",
+      "title": "Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland",
+      "summary": "\u200b\u200b\u200bOn the second day of Pwn2Own Ireland 2026, security researchers collected $232,500 in cash awards after exploiting 45 unique zero-day vulnerabilities. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/samsung-galaxy-s26-hacked-three-more-times-at-pwn2own-ireland/",
+      "published": "2026-10-08T06:32:16+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -601,15 +616,15 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html",
-      "title": "Atlassian Data Center Flaw Draws Exploitation Attempts Within Two Hours of Public Details",
-      "summary": "Threat actors have begun to exploit a newly disclosed critical security flaw impacting Atlassian Data Center products that could allow access to sensitive files under certain conditions.\n\nThe arbitrary file access flaw, tracked as CVE-2026-21589 (CVSS score: 9.3) affects multiple products, including Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software",
-      "link": "https://thehackernews.com/2026/10/atlassian-data-center-flaw-draws.html",
-      "published": "2026-10-07T11:49:26+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/",
+      "title": "Hackers exploit critical Atlassian flaw after public PoC release",
+      "summary": "A critical vulnerability (CVE-2026-21589) affecting multiple Atlassian product families, including Jira, Confluence, and Bitbucket, is being exploited in attacks that do not require authentication. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/",
+      "published": "2026-10-07T12:49:01+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "zeroday"
+        "malware"
       ],
       "cve_ids": [
         "CVE-2026-21589"
