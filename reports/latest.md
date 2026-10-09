@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-09 12:12 UTC &nbsp;|&nbsp; **Total:** 51 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 36 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-09 21:57 UTC &nbsp;|&nbsp; **Total:** 49 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 35 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -13,7 +13,16 @@
 
 ---
 
-## 2. 🟠 Zero-Day — Unpatched AhsayCBS Vulnerabilities Exploited in the Wild
+## 2. 🟠 Zero-Day — Unpatched AhsayCBS flaws exploited to deploy webshells, mine crypto
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/>
+
+> Threat actors are exploiting one critical and one medium-severity vulnerability still unpatched in the AhsayCBS backup management platform to deploy webshells and cryptocurrency miners. [...]
+
+---
+
+## 3. 🟠 Zero-Day — Unpatched AhsayCBS Vulnerabilities Exploited in the Wild
 
 **CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/>
@@ -22,7 +31,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — US Disrupts Chinese State-Sponsored Hacking Tools
+## 4. 🟠 Zero-Day — US Disrupts Chinese State-Sponsored Hacking Tools
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://www.securityweek.com/us-disrupts-chinese-state-sponsored-hacking-tools/>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Hackers get $1,262,000 for 98 zero-days at Pwn2Own Ireland
+## 5. 🟠 Zero-Day — Hackers get $1,262,000 for 98 zero-days at Pwn2Own Ireland
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-earn-1262000-for-98-zero-days-at-pwn2own-ireland/>
@@ -40,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — PraisonAI: AICoder Arbitrary File Write and Command Execution via LLM Tool Calls
+## 6. 🟠 Zero-Day — PraisonAI: AICoder Arbitrary File Write and Command Execution via LLM Tool Calls
 
 **CVE:** `CVE-2026-61445` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-9mp3-24cc-77mg>
@@ -50,46 +59,7 @@ The `AICoder` UI component exposes `write_to_file` and `execute_command` tools t
 
 ---
 
-## 6. 🟠 Zero-Day — FBI disrupts Chinese hacking tools used to breach critical infrastructure
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://www.bleepingcomputer.com/news/security/fbi-disrupts-chinese-hacking-tools-used-to-breach-critical-infrastructure/>
-
-> The FBI has seized seven domains used by Chinese state-sponsored hackers known as Flax Typhoon to operate two hacking tools, MicroScan and FishHub, used in attacks that breached critical infrastructure and other organizations worldwide. [...]
-
----
-
-## 7. 🟠 Zero-Day — PraisonAI: Prompt-injection defense blocks only when 3+ detector families fire simultaneously; realistic single-vector injections pass through unblocked
-
-**CVE:** `CVE-2026-60086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-4r3p-w3mc-5v34>
-
-> ## Summary
-
-PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) only blocks at `ThreatLevel.CRITICAL`, which requires three or more distinct detector families to match simultaneously. A realistic single- or double-vector prompt injection (e.g. &quot;Ignore all previous instructions…&quot;) is classified `HIGH` and passes through unmodified. The documented `HIGH` &quot;s…
-
----
-
-## 8. 🟠 Zero-Day — PraisonAI: CodeAgent Executes LLM-Generated Code Without Sandboxing and Leaks All Environment Secrets
-
-**CVE:** `CVE-2026-61447` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-2xv2-w8cq-5gxw>
-
-> ### Summary
-`CodeAgent._execute_python()` executes LLM-generated Python code in a subprocess with the complete parent-process environment (`os.environ.copy()`), zero AST validation, zero import restrictions, and no sandbox enforcement — even when `CodeConfig(sandbox=True)` is explicitly set. This allows an attacker who can influence LLM output (via prompt injection in agent input, tool results, or…
-
----
-
-## 9. 🟠 Zero-Day — Inside the Exchange Inspector: How Tenable uses OpenAI GPT cyber models to review open-source AI agents
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://www.tenable.com/blog/tenable-openai-security-vetting-open-source-ai-agents-exchange-inspector>
-
-> Community-built AI agents, skills, and MCP servers are landing in SOC workflows fast. Here’s what the Exchange Inspector tests before a listing earns its vetted tag on the CyberAgents Exchange. Three tools have already passed. Key takeaways Every Inspector-vetted listing clears three gates: an automated check, a frontier model assessment, and human verification. Tenable uses Tenable One AI Exposur…
-
----
-
-## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -98,7 +68,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -107,7 +77,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -116,7 +86,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -125,7 +95,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -134,7 +104,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 15. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -143,7 +113,27 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 16. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 13. 🟠 Zero-Day — pyLoad: Privilege revocation and password change through the REST API do not invalidate the user's session
+
+**CVE:** `CVE-2026-33509` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-jq7h-wrvp-3rgx>
+
+> An admin who revokes a user&#x27;s privileges through the REST API does not actually revoke them, because the session carrying those privileges is never invalidated.
+
+pyLoad authorizes each request from values copied into the Flask session at login. set_session in webui/app/helpers.py writes role and perms once, and both login_required and the session branch of apikey_auth read them back from the …
+
+---
+
+## 14. 🟠 Zero-Day — Max severity SonicWall SMA1000 flaw now exploited in attacks
+
+**CVE:** `CVE-2026-102255` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/>
+
+> Attackers are exploiting a maximum-severity vulnerability in SonicWall SMA1000 appliances (CVE-2026-102255) that was patched on Tuesday, three days ago. [...]
+
+---
+
+## 15. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -152,7 +142,258 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 17. 🟡 High Severity — Citrix Patches Critical NetScaler Flaw That Could Enable RCE in SAML Deployments
+## 16. 🟡 High Severity — Vikunja: Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
+
+**CVE:** `CVE-2026-91970` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-wq92-8x3r-fm38>
+
+> # Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
+
+## Summary
+
+The always-registered Planka migration lets any ordinary user select a Planka server. Although Vikunja caps each JSON response, pagination loop, and attachment independently, it has no aggregate job budget. The conversion stage downloads every advertised non-link attachment and keeps e…
+
+---
+
+## 17. 🟡 High Severity — Vikunja: Any user can enumerate every team and its members by attaching arbitrary teams to a throwaway project
+
+**CVE:** `CVE-2026-91980` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-39p5-2wrr-xh29>
+
+> ### Summary
+When you share a project with a team, the API lets you attach any team on the instance, including teams you have nothing to do with, as long as you&#x27;re an admin of the project. Listing a project&#x27;s teams then returns each team&#x27;s full member roster. So any logged-in user can spin up a throwaway project, attach team IDs one by one, and read back the name, description, and co…
+
+---
+
+## 18. 🟡 High Severity — Vikunja: CalDAV and feeds BasicAuth endpoints have no rate limit, bypassing the anti-brute-force floor on account passwords
+
+**CVE:** `CVE-2026-91973` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-m469-88xx-8rx2>
+
+> ### Summary
+The `/dav`, `/.well-known`, and `/feeds` groups are registered on the root Echo instance with only BasicAuth and no rate limiter. CalDAV BasicAuth accepts the plain account password, so password guessing over `/dav` is unbounded and never returns 429, while `/api/v1/login` is throttled from the tenth attempt. The only anti-brute-force control on the instance is therefore bypassable.
+
+#…
+
+---
+
+## 19. 🟡 High Severity — Vikunja: Cross-tenant task-position rows can be injected into arbitrary project views via the unvalidated project_view_id in the task position endpoint (v1 and v2)
+
+**CVE:** `CVE-2026-91984` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-w39f-h553-h2mx>
+
+> ## Summary
+
+The task-position endpoint authorizes only the task side of the write: `TaskPosition.CanUpdate` delegates to `Task.CanUpdate` (write access to the task&#x27;s own project) and the request body&#x27;s `project_view_id` is never validated to belong to the task&#x27;s project, nor is any access to that view required. Any authenticated user with a single writable task of their own can pers…
+
+---
+
+## 20. 🟡 High Severity — Vikunja: Read-only project members can obtain any link share's access hash via the single-share read endpoint (v1 and v2) and escalate to the share's permission level
+
+**CVE:** `CVE-2026-91985` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-qfwc-vx6f-3g6g>
+
+> ## Summary
+
+A user who has only read permission on a project can call the single link-share read endpoint and receive the share&#x27;s `hash` field — the secret credential that the anonymous `POST /shares/{share}/auth` endpoint exchanges for a link-share JWT carrying the share&#x27;s permission (read / read-write / admin). A read-only member can therefore mint a write- or admin-level token for the…
+
+---
+
+## 21. 🟡 High Severity — Vikunja: TOTP secret is readable after enrollment, no step-up auth
+
+**CVE:** `CVE-2026-91982` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-88f6-4rjv-x774>
+
+> ### Summary
+Once a user has TOTP enabled, the API still hands back the raw shared secret to anyone holding that account&#x27;s access token. Reading it doesn&#x27;t ask for the password, even though disabling TOTP does. So a stolen token, an XSS, or a browser left open is enough to copy the second factor into your own authenticator and keep generating valid codes indefinitely.
+
+### Details
+`GET /a…
+
+---
+
+## 22. 🟡 High Severity — Vikunja: Every /api/v2 pre-auth endpoint is unthrottled on a stock install while its /api/v1 twin is rate limited
+
+**CVE:** `CVE-2026-91972` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-6rvj-qwjf-3m4q>
+
+> ### Summary
+`registerAPIRoutesV2` never applies the unconditional pre-auth rate-limit floor (`unauthRateLimit()`) to the v2 public routes — it passes that limiter only to `/api/v2/ws` — and otherwise relies on `setupRateLimit`, which registers nothing when `ratelimit.enabled` is false (the default). So on a stock install every v2 pre-auth endpoint (login, register, password-reset token, oauth toke…
+
+---
+
+## 23. 🟡 High Severity — Nginx UI: Authenticated Remote Code Execution via Backup Restore App Config Overwrite
+
+**CVE:** `CVE-2026-107806` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-p393-cf76-4jmr>
+
+> ## Summary
+
+An authenticated nginx-ui user can call `POST /api/restore`, upload a forged encrypted backup, restore `app.ini`, set nginx command settings such as `TestConfigCmd`, and then trigger command execution with `POST /api/nginx/test`.
+
+This was validated on nginx-ui `2.3.11 2(523) 6c86e5a5` in the local Docker container `uozi/nginx-ui:latest`.
+
+
+
+
+## Impact
+
+An authenticated user can overwr…
+
+---
+
+## 24. 🟡 High Severity — ageLANServer: Unbounded JSON Array Allocation in AoE3 Cloud `getFileURL` Endpoint Leads to Remote Denial of Service
+
+**CVE:** `CVE-2026-107839` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-4jfq-pmq9-257h>
+
+> ### Summary
+The AoE3 `POST /game/cloud/getFileURL` handler in `luskaner/ageLANServer`&#x27;s bundled game server decodes an attacker-controlled `names` JSON array and immediately allocates response storage sized directly from the array&#x27;s length (`make(i.A, len(req.Names.Data))`), with no request body size limit and no cap on the number of array elements anywhere in the request path. Because t…
+
+---
+
+## 25. 🟡 High Severity — Vikunja: Link-share token reads any tenant's kanban buckets and enumerates usernames/IDs instance-wide (BOLA)
+
+**CVE:** `CVE-2026-68582` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-rj9j-8772-4h6c>
+
+> ## Summary
+
+The task-collection endpoint `GET /api/v1/projects/{project}/views/{view}/tasks` loads the requested project view straight from the URL path without verifying the caller is authorized for it. For a **link-share token**, the task query is correctly pinned to the share&#x27;s own project, but the *view* is taken from the attacker-controlled path and never re-validated against the share. …
+
+---
+
+## 26. 🟡 High Severity — Vikunja: Scoped API token can mint unrestricted OAuth session credentials
+
+**CVE:** `CVE-2026-57458` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-v3p6-34mc-hj7v>
+
+> ## Summary
+
+A scoped API token can bypass its declared permissions by using the OAuth authorization flow to mint normal session credentials.
+
+A token limited to:
+
+```json
+{&quot;oauth&quot;:[&quot;authorize&quot;]}
+```
+
+can call `/api/v1/oauth/authorize`, receive an OAuth authorization code, exchange it at `/api/v1/oauth/token`, and obtain a normal bearer JWT plus refresh token. The resulting cred…
+
+---
+
+## 27. 🟡 High Severity — Nginx UI: Authentication bypass: password login does not enforce a passkey-only second factor (2FA bypass)
+
+**CVE:** `CVE-2026-107808` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-45gv-9wjv-xh7p>
+
+> ## Summary
+
+nginx-ui supports two second-factor methods — TOTP (OTP) and WebAuthn passkeys —
+and reports an account as 2FA-enabled when **either** is configured. However, the
+password login endpoint (`POST /api/login`) only enforces a second factor when a
+**TOTP secret** is present. An account that has registered a **passkey but no
+TOTP** is logged in after password verification alone — the passke…
+
+---
+
+## 28. 🟡 High Severity — Nginx UI: Incomplete fix of CVE-2026-84315 - the api/cluster router was not -  wrapped in RequireSecureSession, so those sensitive mutations run without OTP step-up
+
+**CVE:** `CVE-2026-107813` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-h246-wpgf-vmq5>
+
+> ## Summary
+
+Incomplete fix of GHSA-5v7c-xpfp-p65m: the secure-session (OTP step-up) requirement added to the nginx, cert, dns, backup, site, and stream mutation routers was not applied to the parallel api/cluster router, so cluster node management and cluster-wide nginx reload/restart run with only a JWT and no step-up. An authenticated user whose JWT is stolen or persisted, but who does not hold …
+
+---
+
+## 29. 🟡 High Severity — 0xJacky/nginx-ui /api/nodes Leaks Cluster Node Tokens and Allows Cross-Node Impersonation as initUser
+
+**CVE:** `CVE-2026-107811` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-32gc-wf3m-78w9>
+
+> Summary
+0xJacky/nginx-ui contains a high-severity trust-boundary failure between ordinary users and cluster node credentials. The source code shows that cluster node list and detail endpoints are reachable by ordinary authenticated users and return node objects containing the token field.
+
+That same token is also used as the X-Node-Secret shared credential for node-to-node authentication. When the…
+
+---
+
+## 30. 🟡 High Severity — Nginx UI: Node Secret Credential Exposure via URL Query Parameter
+
+**CVE:** `CVE-2026-107807` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-pvgv-gcp7-v38g>
+
+> ## 1. Vulnerability Summary
+
+nginx-ui&#x27;s `Node.Secret` is a master credential that bypasses all JWT/password authentication for the entire API. The application accepts this credential via a **URL query parameter** (`?node_secret=`), causing it to be recorded in plaintext in HTTP access logs, reverse proxy logs, browser history, and HTTP `Referer` headers. Additionally, the official cluster con…
+
+---
+
+## 31. 🟡 High Severity — Nginx UI: Backup restore follows crafted symlinks into the live Nginx configuration path before restore flags are applied
+
+**CVE:** `CVE-2026-107810` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-p8v3-89rh-jxc7>
+
+> ### Summary
+An authenticated user who can create and restore a backup can craft a valid backup archive that causes the restore staging process to write attacker-controlled files into the live Nginx configuration path even when both `restore_nginx` and `restore_nginx_ui` are set to `false`.
+
+### Details
+The restore flow always extracts the outer archive, verifies the manifest, decrypts `nginx-ui.zi…
+
+---
+
+## 32. 🟡 High Severity — pyLoad: Unauthenticated access to /web/<path:filename> bypasses authentication on sensitive templates and leaks internal error details via exception attribute typo
+
+**CVE:** `CVE-2026-75597` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-j92p-c242-7hfx>
+
+> ### Summary
+
+The `/web/&lt;path:filename&gt;` route in `src/pyload/webui/app/blueprints/app_blueprint.py` renders Jinja2 templates without any authentication requirement. Every equivalent direct route (`/logs`, `/settings`, `/queue`, `/dashboard`, etc.) is protected by `@login_required`, but the underlying templates for all of these pages are accessible unauthenticated via this endpoint. Combined …
+
+---
+
+## 33. 🟡 High Severity — Argo CD repo-server command injection via crafted SSH repository SOCKS5 proxy URL
+
+**CVE:** `CVE-2026-55797` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-j6cw-g6p4-7hch>
+
+> ### Impact
+
+Argo CD runs a shell command in the repo-server when it clones or fetches an SSH Git repository that has a proxy URL. The proxy host and port are copied into an SSH `ProxyCommand`. A host that contains shell metacharacters breaks out of that command and runs in the repo-server.
+
+All versions from v2.11.0 onward are affected, including every currently supported release. v2.10.20 and ear…
+
+---
+
+## 34. 🟡 High Severity — Strawberry GraphQL: Synchronous permission checks can treat an awaitable authorization result as truthy
+
+**CVE:** `CVE-2026-107728` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://github.com/advisories/GHSA-pfvf-fwfp-25mp>
+
+> ### Summary
+
+`PermissionExtension.resolve()` evaluates the return value of `has_permission()` for truthiness on the synchronous path. `supports_sync` only classifies a permission as asynchronous when `has_permission` is declared with `async def` (via `inspect.iscoroutinefunction`), so a plain `def` that returns an awaitable is treated as synchronous. An awaitable is always truthy, so the check pas…
+
+---
+
+## 35. 🟡 High Severity — Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge
+
+**CVE:** `CVE-2026-105133` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html>
+
+> Threat actors have been observed exploiting two recently disclosed flaws in the AhsayCBS backup utility to seize control of affected devices and deploy web shells and XMRig cryptocurrency miners.
+
+Details of the flaws are below -
+
+
+  CVE-2026-105133 (CVSS v4 score: 5.5) - An improper authentication vulnerability in the checkSysPwd() function in the &quot;com/ahsay/obs/api/ApiStructsAction.java&quo…
+
+---
+
+## 36. 🟡 High Severity — Citrix Patches Critical NetScaler Flaw That Could Enable RCE in SAML Deployments
 
 **CVE:** `CVE-2026-107406` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html>
@@ -165,7 +406,7 @@ The vulnerab…
 
 ---
 
-## 18. 🟡 High Severity — Hazelcast allows arbitrary member memory access by low-privileged client
+## 37. 🟡 High Severity — Hazelcast allows arbitrary member memory access by low-privileged client
 
 **CVE:** `CVE-2026-107726` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-6v25-8wq6-xq4j>
@@ -176,7 +417,7 @@ A flaw has been found in Hazelcast Enterprise Edition and Community Edition, whi
 
 ---
 
-## 19. 🟡 High Severity — Banks: Symlink traversal and arbitrary file disclosure/overwrite in DirectoryPromptRegistry
+## 38. 🟡 High Severity — Banks: Symlink traversal and arbitrary file disclosure/overwrite in DirectoryPromptRegistry
 
 **CVE:** `CVE-2026-107716` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-556j-vv39-8rqv>
@@ -186,7 +427,7 @@ In `banks.registries.DirectoryPromptRegistry`, prompt file paths and the index f
 
 ---
 
-## 20. 🟡 High Severity — Indico: Incomplete Server-Side Request Forgery (SSRF) check
+## 39. 🟡 High Severity — Indico: Incomplete Server-Side Request Forgery (SSRF) check
 
 **CVE:** `CVE-2026-107394` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-2v95-h47v-g4x9>
@@ -196,7 +437,7 @@ Indico makes outgoing requests to user-provides URLs in various places. This is 
 
 ---
 
-## 21. 🟡 High Severity — Mechanize sends credential headers to another host after an HTTP redirect
+## 40. 🟡 High Severity — Mechanize sends credential headers to another host after an HTTP redirect
 
 **CVE:** `CVE-2026-107715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-2mwr-xjcg-37j7>
@@ -213,7 +454,7 @@ Two defects, both in `lib/mechanize/http/agent.rb`.
 
 ---
 
-## 22. 🟡 High Severity — fast-jwt: createVerifier accepts unsigned JWTs when key is '' or null and algorithms is explicitly set
+## 41. 🟡 High Severity — fast-jwt: createVerifier accepts unsigned JWTs when key is '' or null and algorithms is explicitly set
 
 **CVE:** `CVE-2026-107720` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-8wpc-h4q6-8fxv>
@@ -228,7 +469,7 @@ Two defects, both in `lib/mechanize/http/agent.rb`.
 
 ---
 
-## 23. 🟡 High Severity — fast-jwt: Incomplete patch of CVE-2026-34950: Non-whitespace key-prefix re-enables RSA→HS256 algorithm confusion
+## 42. 🟡 High Severity — fast-jwt: Incomplete patch of CVE-2026-34950: Non-whitespace key-prefix re-enables RSA→HS256 algorithm confusion
 
 **CVE:** `CVE-2026-107722` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-ww5h-9m49-7xx4>
@@ -239,7 +480,7 @@ The fix for CVE-2026-34950 (CVSS 9.1, released in v6.2.0) is **incomplete**. It 
 
 ---
 
-## 24. 🟡 High Severity — fast-jwt clockTolerance: Infinity silently bypasses both exp and nbf validation (and persists in the verifier cache)
+## 43. 🟡 High Severity — fast-jwt clockTolerance: Infinity silently bypasses both exp and nbf validation (and persists in the verifier cache)
 
 **CVE:** `CVE-2026-107721` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-687g-22h4-j4w4>
@@ -252,7 +493,7 @@ The fix for CVE-2026-34950 (CVSS 9.1, released in v6.2.0) is **incomplete**. It 
 
 ---
 
-## 25. 🟡 High Severity — fast-jwt : Silent claim-validator bypass when JWT payload is a JSON array
+## 44. 🟡 High Severity — fast-jwt : Silent claim-validator bypass when JWT payload is a JSON array
 
 **CVE:** `CVE-2026-107723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-5hjw-83fp-phq9>
@@ -262,7 +503,7 @@ The fix for CVE-2026-34950 (CVSS 9.1, released in v6.2.0) is **incomplete**. It 
 
 ---
 
-## 26. 🟡 High Severity — fast-jwt treats raw public JWK JSON as an HMAC secret, enabling HS256 token forgery
+## 45. 🟡 High Severity — fast-jwt treats raw public JWK JSON as an HMAC secret, enabling HS256 token forgery
 
 **CVE:** `CVE-2026-107724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-g3jj-5cmm-3hxx>
@@ -281,7 +522,7 @@ This can result in authenti…
 
 ---
 
-## 27. 🟡 High Severity — PraisonAI: AgentOS defaults to network-exposed no-auth mode, allowing unauthenticated agent invocation and instruction disclosure
+## 46. 🟡 High Severity — PraisonAI: AgentOS defaults to network-exposed no-auth mode, allowing unauthenticated agent invocation and instruction disclosure
 
 **CVE:** `CVE-2026-61426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-6wjp-v33h-5cvq>
@@ -292,7 +533,7 @@ The AgentOS server in the `praisonai` TypeScript/npm package ships an insecure d
 
 ---
 
-## 28. 🟡 High Severity — PraisonAI: SecurityPolicy command/path/import restrictions are completely unenforced by the default SubprocessSandbox backend
+## 47. 🟡 High Severity — PraisonAI: SecurityPolicy command/path/import restrictions are completely unenforced by the default SubprocessSandbox backend
 
 **CVE:** `CVE-2026-60085` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-5r6c-gj4g-r697>
@@ -302,7 +543,7 @@ SecurityPolicy in praisonaiagents/sandbox/config.py is a documented configuratio
 
 ---
 
-## 29. 🟡 High Severity — PraisonAI: Jobs API is unauthenticated by default and allows attacker-controlled webhook SSRF
+## 48. 🟡 High Severity — PraisonAI: Jobs API is unauthenticated by default and allows attacker-controlled webhook SSRF
 
 **CVE:** `CVE-2026-60091` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-4w49-gwv8-fpjg>
@@ -313,265 +554,7 @@ PraisonAI&#x27;s Async Jobs API enables its API-key middleware **only when `PRAI
 
 ---
 
-## 30. 🟡 High Severity — music-metadata: MP4 stsd sample-entry size==0 causes a synchronous infinite loop (DoS) — unreleased regression on master
-
-**CVE:** `CVE-2026-107391` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-f94x-6692-553q>
-
-> ### Summary
-
-`StsdAtom.get()` in `lib/mp4/AtomToken.ts` parses an MP4 `stsd` (sample description) box&#x27;s entry table by advancing a cursor with `off += size - 4`, where `size` is a 32-bit, attacker-controlled per-entry length read straight from the file. When `size == 0`, that advance is `0`, so a file declaring a huge `entry_count` and a first entry `size` of `0` spins forever: same bytes rea…
-
----
-
-## 31. 🟡 High Severity — music-metadata: EBML parser trusts element lengths, allowing memory exhaustion or process abort
-
-**CVE:** `CVE-2026-107389` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-5gfj-9q3v-qfp3>
-
-> ## Summary
-
-The Matroska/WebM EBML parser decodes attacker-controlled variable-length integer (VINT) element lengths without first validating that the declared element fits within its enclosing container or the available input. Leaf lengths are then used directly for string-token and `Uint8Array` allocations.
-
-A very small crafted `.webm`, `.mkv`, or `.mka` file can therefore cause a disproportion…
-
----
-
-## 32. 🟡 High Severity — Pydantic AI: Concurrency-limited models can keep their slot when a streamed request ends early
-
-**CVE:** `CVE-2026-107286` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-6fqq-452j-qhrp>
-
-> &gt; This issue was posted by Codex Desktop using gpt-6.1-sol on behalf of David.
-
-### Summary
-
-Applications that wrap a model with `ConcurrencyLimitedModel` or `limit_model_concurrency` can permanently lose shared concurrency capacity when a streamed request releases its slot from a different task than the one that acquired it. This can happen when a stream ends early, and also when a stream is f…
-
----
-
-## 33. 🟡 High Severity — MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS
-
-**CVE:** `CVE-2026-107382` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-cx2f-j9fh-8g68>
-
-> ### Description
-On the zero-configuration TLS path, the connector accepts a self-signed server certificate at the TLS level and then validates the server&#x27;s identity from the fingerprint hash the server appends to the final OK_Packet (`Authentication.validateFingerPrint`). That validation calls `hash()` on the authentication plugin in use to obtain the password-derived secret both sides combin…
-
----
-
-## 34. 🟡 High Severity — PraisonAI: API deploy code generator embeds unescaped YAML fields into Python source
-
-**CVE:** `CVE-2026-61433` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-79fv-7hq9-w7xg>
-
-> # API deploy code generator embeds unescaped YAML fields into Python source
-
-## Summary
-
-PraisonAI&#x27;s API deployment generator copies `deploy.api.host` from `agents.yaml` directly into generated Python source without safe literal encoding. A malicious PraisonAI project can set that host value to a Python expression splice; when an operator runs the API deploy flow, the generated server source …
-
----
-
-## 35. 🟡 High Severity — PraisonAI: Project custom command templates can read outside-workspace files into model prompts
-
-**CVE:** `CVE-2026-60088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-xpx6-x8c2-mw5w>
-
-> # Project custom command templates can read outside-workspace files into model prompts
-
-## Summary
-
-PraisonAI&#x27;s new file-based custom command feature auto-discovers project commands from `.praisonai/commands/*.md`. When a user runs `praisonai run --command &lt;name&gt;` inside a repository, the command body is interpolated before it is sent as the model prompt.
-
-The interpolation code expands…
-
----
-
-## 36. 🟡 High Severity — Handlebars: JavaScript Injection via Own Property Check Bypass
-
-**CVE:** `CVE-2026-106445` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-p8wg-vrv2-v86f>
-
-> ## Summary
-
-Handlebars can expose the `Function` constructor despite its prototype-access deny list. When a template reaches `Function.prototype`, its own `constructor` property is returned before the deny list is checked. An attacker who can render a controlled template with `allowProtoMethodsByDefault: true` can inject and execute arbitrary JavaScript, leading to Remote Code Execution on the ser…
-
----
-
-## 37. 🟡 High Severity — JHipster: Generated Applications Allow Stored XSS via Unrestricted Blob ContentType Opened as Same-Origin Blob
-
-**CVE:** `CVE-2026-107303` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-9ffp-22j7-56r2>
-
-> ## Summary
-Applications generated by generator-jhipster v9.2.0 can persist user-controlled Blob ContentType values and later use those values as the MIME type for client-side Blob objects. The shared generated `openFile` helper creates an object URL from the Blob and opens it in a new window.
-
-For Blob-bearing entities writable by normal authenticated users, this creates a stored XSS chain: attack…
-
----
-
-## 38. 🟡 High Severity — msgpack5: Quadratic parsing in the streaming decoder
-
-**CVE:** `CVE-2026-107297` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-gcx5-hxj7-gpqq>
-
-> ### Impact
-
-The streaming decoder reparses an incomplete container from the beginning whenever another chunk arrives. A remote peer can split one valid MessagePack value across many small chunks, causing quadratic CPU usage and blocking the event loop.
-
-### Patches
-
-The decoder now preserves incremental container state so completed elements are not parsed again when more input arrives.
-
-### Workar…
-
----
-
-## 39. 🟡 High Severity — PraisonAI: PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL
-
-**CVE:** `CVE-2026-60090` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-wf65-4jjx-q444>
-
-> # PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL
-
-## Summary
-
-The PGVector and Cassandra knowledge-store backends validate SQL/CQL identifiers such as schema, keyspace, and collection names, but still insert the caller-controlled `dimension` argument directly into `CREATE TABLE` vector column declarations. A caller that can influence collection creation dimensions c…
-
----
-
-## 40. 🟡 High Severity — Pydantic AI: Unbounded memory use when downloading remote content via web_fetch or FileUrl
-
-**CVE:** `CVE-2026-107294` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-v2xh-2vp8-57h8>
-
-> ### Summary
-
-Several remote-content download paths in Pydantic AI buffered the entire HTTP response body into memory before enforcing any size limit. An application that exposes the local web-fetch tool (`web_fetch_tool`, or the `WebFetch` capability&#x27;s local fallback) to untrusted prompts can be driven to fetch an attacker-chosen URL that streams a very large body, exhausting process memory a…
-
----
-
-## 41. 🟡 High Severity — AsyncHttpClient: Pooled connections can still be shared across NTLM, Negotiate and proxy logins
-
-**CVE:** `CVE-2026-107230` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-v2j5-22fr-j62r>
-
-> ### Impact
-The fix for GHSA-vvp4-63h8-v5pm in 3.0.13 folded the authenticated principal into the HTTP/1.1 connection pool key, so that a connection one principal authenticated with NTLM, Kerberos or SPNEGO is not handed to another. It left three cases out. In each, a socket that one identity authenticated can still be drawn by a request belonging to a different identity, and the server serves that…
-
----
-
-## 42. 🟡 High Severity — Pydantic AI: Event loop blocked by quadratic title extraction in `web_fetch`
-
-**CVE:** `CVE-2026-107290` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-fpf4-vwcp-v4hp>
-
-> ### Summary
-
-The local web-fetch tool (`web_fetch_tool`, also used as the `WebFetch` capability&#x27;s local fallback) processed responses with several steps whose running time grows quadratically with the size of certain server-controlled inputs, and ran them on the event loop: decoding the body with whichever charset the server declared, extracting the page title with a backtracking regular expr…
-
----
-
-## 43. 🟡 High Severity — Pydantic AI: SSRF cloud-metadata blocklist bypass via IPv6 zone identifiers
-
-**CVE:** `CVE-2026-107289` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-vmxc-h2x2-jmf3>
-
-> ### Summary
-
-When an application using Pydantic AI opts a URL into local network access — either a `FileUrl` with `force_download=&#x27;allow-local&#x27;`, or `web_fetch_tool(allow_local_urls=True)` — the cloud-metadata blocklist could be bypassed by appending an IPv6 zone identifier to a metadata address (for example `fd00:ec2::254%251`). The host ignores the zone identifier on a destination that…
-
----
-
-## 44. 🟡 High Severity — PraisonAI: Plugin Auto-Discovery Executes Arbitrary Python Files Without Verification
-
-**CVE:** `CVE-2026-61446` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-m6wp-h223-4c8g>
-
-> ### Summary
-The plugin manager loads and executes arbitrary `.py` files from `.praisonai/plugins/` directories (both project-level and user home) via `importlib.util.spec_from_file_location()` + `exec_module()` with zero code signing, integrity verification, or sandboxing. Any attacker who can write a file to the plugins directory (via path traversal, supply chain attack, or compromised dependency…
-
----
-
-## 45. 🟡 High Severity — PraisonAI: Human-in-the-loop tool approval is cached by tool name and silently reused for all subsequent calls with arbitrary arguments
-
-**CVE:** `CVE-2026-60087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-29r9-67vg-qj56>
-
-> ## Summary
-
-PraisonAI gates dangerous tools (file writes, deletes, shell/code execution) behind an interactive approval prompt. The first approval of a tool is cached for the remainder of the run and silently reused for all later invocations of that tool with arbitrary, unreviewed arguments.
-
-## Root cause
-
-`ApprovalRegistry.is_already_approved` (`src/praisonai-agents/praisonaiagents/approval/regi…
-
----
-
-## 46. 🟡 High Severity — PraisonAI: DNS rebinding bypass in `web_crawl` SSRF protection allows internal response disclosure
-
-**CVE:** `CVE-2026-61430` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-qg25-6gc4-48mg>
-
-> ## Summary
-
-PraisonAI&#x27;s `web_crawl` agent tool performs a server-side HTTP fetch of an agent/attacker-influenced URL. SSRF is meant to be prevented by `_is_safe_crawl_url()`, which resolves the hostname and rejects private/loopback/link-local IPs **at validation time**. The validated value is the URL *string* (not a pinned IP); the fetch backend then **re-resolves the hostname at connection t…
-
----
-
-## 47. 🟡 High Severity — Excelize Decrypt: unrecoverable panics on malformed OLE/CFB encrypted workbooks
-
-**CVE:** `CVE-2026-107214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-2j4c-ffch-9f23>
-
-> ### Summary
-
-Any file whose first 8 bytes are the OLE compound-file signature (`D0 CF 11 E0 A1 B1 1A E1`) is routed by `OpenFile`/`OpenReader`/`OpenBytes` → `openReaderAt` → `Decrypt`. The version dispatch only guarantees `len(EncryptionInfo) &gt;= 4` before handing attacker-controlled `EncryptionInfo`/`EncryptedPackage` buffers to `standardDecrypt`/`agileDecrypt`, and no callee validates structur…
-
----
-
-## 48. 🟡 High Severity — Excelize: extractPart allocates attacker-controlled, unbounded and negative-sized buffers from CFB directory entries: remote panic / OOM DoS
-
-**CVE:** `CVE-2026-107215` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-x2q3-8cjh-766f>
-
-> ### Summary
-
-`extractPart` allocates directly from the mscfb directory-entry size with no clamping (`crypt.go:198`, same missing bound at `crypt.go:204`):
-
-```go
-buf := make([]byte, entry.Size)
-```
-
-`entry.Size` is the raw `streamSize` field from the attacker-controlled CFB directory entry (mscfb v1.0.8 `fixFile`, `file.go:109-120`: full uint64 → int64 for major version 4, low uint32 for v3). mscf…
-
----
-
-## 49. 🟡 High Severity — Excelize ANCHORARRAY: mutually-referencing array formulas recurse unboundedly via re-entrant CalcCellValue, causing a fatal stack overflow
-
-**CVE:** `CVE-2026-107216` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-wp2g-vpjj-g53r>
-
-> ### Summary
-
-`ANCHORARRAY` (calc.go:15137 on current master) evaluates each cell of the referenced spill range by calling the **exported** `CalcCellValue`, which unconditionally constructs a fresh `calcContext` — fresh entry marker, fresh iterations map, full `MaxCalcIterations` budget (calc.go:896-900). The circular-reference control only exists **within one context**: the entry-exclusion marker …
-
----
-
-## 50. 🟡 High Severity — AsyncHttpClient: Cookie Domain attribute is not checked against the public suffix list, so a cookie can be set for co.uk
-
-**CVE:** `CVE-2026-107280` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://github.com/advisories/GHSA-f9m8-cv68-674w>
-
-> ### Impact
-The cookie store decides whether a `Domain` attribute may be accepted using only the domain-matching rule of RFC 6265 Section 5.1.3, which asks whether the request host is the domain or ends with a dot followed by it. Section 5.3 step 5, which additionally requires rejecting a `Domain` that is a public suffix, is not implemented anywhere in the client.
-
-So a host under a multi-label pub…
-
----
-
-## 51. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 49. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

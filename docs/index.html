@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">51</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">49</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-09 12:12 UTC</div>
+            <div class="generated">Updated 2026-10-09 21:57 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -130,6 +130,22 @@
     <span>Wed, 08 Ju</span>
   </div>
   <p class='summary'>Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/" target="_blank" rel="noopener">Unpatched AhsayCBS flaws exploited to deploy webshells, mine crypto</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-09</span>
+  </div>
+  <p class='summary'>Threat actors are exploiting one critical and one medium-severity vulnerability still unpatched in the AhsayCBS backup management platform to deploy webshells and cryptocurrency miners. [...]</p>
 
 </article>
 
@@ -197,73 +213,6 @@
 The `AICoder` UI component exposes `write_to_file` and `execute_command` tools to the LLM with no path validation and no command sanitization. An attacker can achieve arbitrary file write to any location on the filesystem (including `/root/.ssh/authorized_keys`, `/etc/crontab`) and arbitrary command execution through prompt injection in the chat interface. Docker containers run as root…</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/fbi-disrupts-chinese-hacking-tools-used-to-breach-critical-infrastructure/" target="_blank" rel="noopener">FBI disrupts Chinese hacking tools used to breach critical infrastructure</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-08</span>
-  </div>
-  <p class='summary'>The FBI has seized seven domains used by Chinese state-sponsored hackers known as Flax Typhoon to operate two hacking tools, MicroScan and FishHub, used in attacks that breached critical infrastructure and other organizations worldwide. [...]</p>
-
-</article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4r3p-w3mc-5v34" target="_blank" rel="noopener">PraisonAI: Prompt-injection defense blocks only when 3+ detector families fire simultaneously; realistic single-vector injections pass through unblocked</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-60086</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>## Summary
-
-PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) only blocks at `ThreatLevel.CRITICAL`, which requires three or more distinct detector families to match simultaneously. A realistic single- or double-vector prompt injection (e.g. &quot;Ignore all previous instructions…&quot;) is classified `HIGH` and passes through unmodified. The documented `HIGH` &quot;sanitize&quot; behavior is…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2xv2-w8cq-5gxw" target="_blank" rel="noopener">PraisonAI: CodeAgent Executes LLM-Generated Code Without Sandboxing and Leaks All Environment Secrets</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61447</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-`CodeAgent._execute_python()` executes LLM-generated Python code in a subprocess with the complete parent-process environment (`os.environ.copy()`), zero AST validation, zero import restrictions, and no sandbox enforcement — even when `CodeConfig(sandbox=True)` is explicitly set. This allows an attacker who can influence LLM output (via prompt injection in agent input, tool results, or…</p>
-
-        </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.tenable.com/blog/tenable-openai-security-vetting-open-source-ai-agents-exchange-inspector" target="_blank" rel="noopener">Inside the Exchange Inspector: How Tenable uses OpenAI GPT cyber models to review open-source AI agents</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Tenable Security Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-08</span>
-  </div>
-  <p class='summary'>Community-built AI agents, skills, and MCP servers are landing in SOC workflows fast. Here’s what the Exchange Inspector tests before a listing earns its vetted tag on the CyberAgents Exchange. Three tools have already passed. Key takeaways Every Inspector-vetted listing clears three gates: an automated check, a frontier model assessment, and human verification. Tenable uses Tenable One AI Exposur…</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -361,6 +310,40 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 </article>
 
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jq7h-wrvp-3rgx" target="_blank" rel="noopener">pyLoad: Privilege revocation and password change through the REST API do not invalidate the user&#x27;s session</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-33509</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>An admin who revokes a user&#x27;s privileges through the REST API does not actually revoke them, because the session carrying those privileges is never invalidated.
+
+pyLoad authorizes each request from values copied into the Flask session at login. set_session in webui/app/helpers.py writes role and perms once, and both login_required and the session branch of apikey_auth read them back from the sessi…</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/" target="_blank" rel="noopener">Max severity SonicWall SMA1000 flaw now exploited in attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-102255</code>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-09</span>
+  </div>
+  <p class='summary'>Attackers are exploiting a maximum-severity vulnerability in SonicWall SMA1000 appliances (CVE-2026-102255) that was patched on Tuesday, three days ago. [...]</p>
+
+</article>
+
 <article class="card card-high">
   <div class="card-top">
     <span class="badge badge-high">🟡 High</span>
@@ -376,6 +359,397 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
   <p class='summary'>Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and s…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wq92-8x3r-fm38" target="_blank" rel="noopener">Vikunja: Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-91970</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'># Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
+
+## Summary
+
+The always-registered Planka migration lets any ordinary user select a Planka server. Although Vikunja caps each JSON response, pagination loop, and attachment independently, it has no aggregate job budget. The conversion stage downloads every advertised non-link attachment and keeps e…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-39p5-2wrr-xh29" target="_blank" rel="noopener">Vikunja: Any user can enumerate every team and its members by attaching arbitrary teams to a throwaway project</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-91980</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+When you share a project with a team, the API lets you attach any team on the instance, including teams you have nothing to do with, as long as you&#x27;re an admin of the project. Listing a project&#x27;s teams then returns each team&#x27;s full member roster. So any logged-in user can spin up a throwaway project, attach team IDs one by one, and read back the name, description, and complete member l…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m469-88xx-8rx2" target="_blank" rel="noopener">Vikunja: CalDAV and feeds BasicAuth endpoints have no rate limit, bypassing the anti-brute-force floor on account passwords</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-91973</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+The `/dav`, `/.well-known`, and `/feeds` groups are registered on the root Echo instance with only BasicAuth and no rate limiter. CalDAV BasicAuth accepts the plain account password, so password guessing over `/dav` is unbounded and never returns 429, while `/api/v1/login` is throttled from the tenth attempt. The only anti-brute-force control on the instance is therefore bypassable.
+
+#…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w39f-h553-h2mx" target="_blank" rel="noopener">Vikunja: Cross-tenant task-position rows can be injected into arbitrary project views via the unvalidated project_view_id in the task position endpoint (v1 and v2)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-91984</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+The task-position endpoint authorizes only the task side of the write: `TaskPosition.CanUpdate` delegates to `Task.CanUpdate` (write access to the task&#x27;s own project) and the request body&#x27;s `project_view_id` is never validated to belong to the task&#x27;s project, nor is any access to that view required. Any authenticated user with a single writable task of their own can persist `(task_id, …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qfwc-vx6f-3g6g" target="_blank" rel="noopener">Vikunja: Read-only project members can obtain any link share&#x27;s access hash via the single-share read endpoint (v1 and v2) and escalate to the share&#x27;s permission level</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-91985</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+A user who has only read permission on a project can call the single link-share read endpoint and receive the share&#x27;s `hash` field — the secret credential that the anonymous `POST /shares/{share}/auth` endpoint exchanges for a link-share JWT carrying the share&#x27;s permission (read / read-write / admin). A read-only member can therefore mint a write- or admin-level token for the project a…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-88f6-4rjv-x774" target="_blank" rel="noopener">Vikunja: TOTP secret is readable after enrollment, no step-up auth</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-91982</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+Once a user has TOTP enabled, the API still hands back the raw shared secret to anyone holding that account&#x27;s access token. Reading it doesn&#x27;t ask for the password, even though disabling TOTP does. So a stolen token, an XSS, or a browser left open is enough to copy the second factor into your own authenticator and keep generating valid codes indefinitely.
+
+### Details
+`GET /api/v1/user…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6rvj-qwjf-3m4q" target="_blank" rel="noopener">Vikunja: Every /api/v2 pre-auth endpoint is unthrottled on a stock install while its /api/v1 twin is rate limited</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-91972</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+`registerAPIRoutesV2` never applies the unconditional pre-auth rate-limit floor (`unauthRateLimit()`) to the v2 public routes — it passes that limiter only to `/api/v2/ws` — and otherwise relies on `setupRateLimit`, which registers nothing when `ratelimit.enabled` is false (the default). So on a stock install every v2 pre-auth endpoint (login, register, password-reset token, oauth toke…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p393-cf76-4jmr" target="_blank" rel="noopener">Nginx UI: Authenticated Remote Code Execution via Backup Restore App Config Overwrite</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107806</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+An authenticated nginx-ui user can call `POST /api/restore`, upload a forged encrypted backup, restore `app.ini`, set nginx command settings such as `TestConfigCmd`, and then trigger command execution with `POST /api/nginx/test`.
+
+This was validated on nginx-ui `2.3.11 2(523) 6c86e5a5` in the local Docker container `uozi/nginx-ui:latest`.
+
+
+
+
+## Impact
+
+An authenticated user can overwr…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4jfq-pmq9-257h" target="_blank" rel="noopener">ageLANServer: Unbounded JSON Array Allocation in AoE3 Cloud `getFileURL` Endpoint Leads to Remote Denial of Service</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107839</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+The AoE3 `POST /game/cloud/getFileURL` handler in `luskaner/ageLANServer`&#x27;s bundled game server decodes an attacker-controlled `names` JSON array and immediately allocates response storage sized directly from the array&#x27;s length (`make(i.A, len(req.Names.Data))`), with no request body size limit and no cap on the number of array elements anywhere in the request path. Because the default…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rj9j-8772-4h6c" target="_blank" rel="noopener">Vikunja: Link-share token reads any tenant&#x27;s kanban buckets and enumerates usernames/IDs instance-wide (BOLA)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-68582</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+The task-collection endpoint `GET /api/v1/projects/{project}/views/{view}/tasks` loads the requested project view straight from the URL path without verifying the caller is authorized for it. For a **link-share token**, the task query is correctly pinned to the share&#x27;s own project, but the *view* is taken from the attacker-controlled path and never re-validated against the share. A hol…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v3p6-34mc-hj7v" target="_blank" rel="noopener">Vikunja: Scoped API token can mint unrestricted OAuth session credentials</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-57458</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+A scoped API token can bypass its declared permissions by using the OAuth authorization flow to mint normal session credentials.
+
+A token limited to:
+
+```json
+{&quot;oauth&quot;:[&quot;authorize&quot;]}
+```
+
+can call `/api/v1/oauth/authorize`, receive an OAuth authorization code, exchange it at `/api/v1/oauth/token`, and obtain a normal bearer JWT plus refresh token. The resulting credentials are not rest…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-45gv-9wjv-xh7p" target="_blank" rel="noopener">Nginx UI: Authentication bypass: password login does not enforce a passkey-only second factor (2FA bypass)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107808</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+nginx-ui supports two second-factor methods — TOTP (OTP) and WebAuthn passkeys —
+and reports an account as 2FA-enabled when **either** is configured. However, the
+password login endpoint (`POST /api/login`) only enforces a second factor when a
+**TOTP secret** is present. An account that has registered a **passkey but no
+TOTP** is logged in after password verification alone — the passke…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h246-wpgf-vmq5" target="_blank" rel="noopener">Nginx UI: Incomplete fix of CVE-2026-84315 - the api/cluster router was not -  wrapped in RequireSecureSession, so those sensitive mutations run without OTP step-up</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107813</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+Incomplete fix of GHSA-5v7c-xpfp-p65m: the secure-session (OTP step-up) requirement added to the nginx, cert, dns, backup, site, and stream mutation routers was not applied to the parallel api/cluster router, so cluster node management and cluster-wide nginx reload/restart run with only a JWT and no step-up. An authenticated user whose JWT is stolen or persisted, but who does not hold …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-32gc-wf3m-78w9" target="_blank" rel="noopener">0xJacky/nginx-ui /api/nodes Leaks Cluster Node Tokens and Allows Cross-Node Impersonation as initUser</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107811</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>Summary
+0xJacky/nginx-ui contains a high-severity trust-boundary failure between ordinary users and cluster node credentials. The source code shows that cluster node list and detail endpoints are reachable by ordinary authenticated users and return node objects containing the token field.
+
+That same token is also used as the X-Node-Secret shared credential for node-to-node authentication. When the…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pvgv-gcp7-v38g" target="_blank" rel="noopener">Nginx UI: Node Secret Credential Exposure via URL Query Parameter</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107807</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>## 1. Vulnerability Summary
+
+nginx-ui&#x27;s `Node.Secret` is a master credential that bypasses all JWT/password authentication for the entire API. The application accepts this credential via a **URL query parameter** (`?node_secret=`), causing it to be recorded in plaintext in HTTP access logs, reverse proxy logs, browser history, and HTTP `Referer` headers. Additionally, the official cluster configur…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p8v3-89rh-jxc7" target="_blank" rel="noopener">Nginx UI: Backup restore follows crafted symlinks into the live Nginx configuration path before restore flags are applied</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107810</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+An authenticated user who can create and restore a backup can craft a valid backup archive that causes the restore staging process to write attacker-controlled files into the live Nginx configuration path even when both `restore_nginx` and `restore_nginx_ui` are set to `false`.
+
+### Details
+The restore flow always extracts the outer archive, verifies the manifest, decrypts `nginx-ui.zi…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j92p-c242-7hfx" target="_blank" rel="noopener">pyLoad: Unauthenticated access to /web/&lt;path:filename&gt; bypasses authentication on sensitive templates and leaks internal error details via exception attribute typo</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-75597</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+
+The `/web/&lt;path:filename&gt;` route in `src/pyload/webui/app/blueprints/app_blueprint.py` renders Jinja2 templates without any authentication requirement. Every equivalent direct route (`/logs`, `/settings`, `/queue`, `/dashboard`, etc.) is protected by `@login_required`, but the underlying templates for all of these pages are accessible unauthenticated via this endpoint. Combined with a…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j6cw-g6p4-7hch" target="_blank" rel="noopener">Argo CD repo-server command injection via crafted SSH repository SOCKS5 proxy URL</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-55797</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Impact
+
+Argo CD runs a shell command in the repo-server when it clones or fetches an SSH Git repository that has a proxy URL. The proxy host and port are copied into an SSH `ProxyCommand`. A host that contains shell metacharacters breaks out of that command and runs in the repo-server.
+
+All versions from v2.11.0 onward are affected, including every currently supported release. v2.10.20 and ear…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pfvf-fwfp-25mp" target="_blank" rel="noopener">Strawberry GraphQL: Synchronous permission checks can treat an awaitable authorization result as truthy</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-107728</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>### Summary
+
+`PermissionExtension.resolve()` evaluates the return value of `has_permission()` for truthiness on the synchronous path. `supports_sync` only classifies a permission as asynchronous when `has_permission` is declared with `async def` (via `inspect.iscoroutinefunction`), so a plain `def` that returns an awaitable is treated as synchronous. An awaitable is always truthy, so the check pas…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html" target="_blank" rel="noopener">Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-105133</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-09</span>
+          </div>
+          <p class='summary'>Threat actors have been observed exploiting two recently disclosed flaws in the AhsayCBS backup utility to seize control of affected devices and deploy web shells and XMRig cryptocurrency miners.
+
+Details of the flaws are below -
+
+
+  CVE-2026-105133 (CVSS v4 score: 5.5) - An improper authentication vulnerability in the checkSysPwd() function in the &quot;com/ahsay/obs/api/ApiStructsAction.java&quot;</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -626,411 +1000,6 @@ SecurityPolicy in praisonaiagents/sandbox/config.py is a documented configuratio
           <p class='summary'>## Summary
 
 PraisonAI&#x27;s Async Jobs API enables its API-key middleware **only when `PRAISONAI_JOBS_API_KEY` is set**, so by default every endpoint is unauthenticated. An unauthenticated `POST /api/v1/runs` accepts an attacker-controlled `webhook_url`; on job completion the server POSTs the job payload to it via `httpx`. The `webhook_url` has an SSRF validator (`gethostbyname` + private-IP check), b…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f94x-6692-553q" target="_blank" rel="noopener">music-metadata: MP4 stsd sample-entry size==0 causes a synchronous infinite loop (DoS) — unreleased regression on master</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107391</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-
-`StsdAtom.get()` in `lib/mp4/AtomToken.ts` parses an MP4 `stsd` (sample description) box&#x27;s entry table by advancing a cursor with `off += size - 4`, where `size` is a 32-bit, attacker-controlled per-entry length read straight from the file. When `size == 0`, that advance is `0`, so a file declaring a huge `entry_count` and a first entry `size` of `0` spins forever: same bytes read eve…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5gfj-9q3v-qfp3" target="_blank" rel="noopener">music-metadata: EBML parser trusts element lengths, allowing memory exhaustion or process abort</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107389</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>## Summary
-
-The Matroska/WebM EBML parser decodes attacker-controlled variable-length integer (VINT) element lengths without first validating that the declared element fits within its enclosing container or the available input. Leaf lengths are then used directly for string-token and `Uint8Array` allocations.
-
-A very small crafted `.webm`, `.mkv`, or `.mka` file can therefore cause a disproportion…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6fqq-452j-qhrp" target="_blank" rel="noopener">Pydantic AI: Concurrency-limited models can keep their slot when a streamed request ends early</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107286</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>&gt; This issue was posted by Codex Desktop using gpt-6.1-sol on behalf of David.
-
-### Summary
-
-Applications that wrap a model with `ConcurrencyLimitedModel` or `limit_model_concurrency` can permanently lose shared concurrency capacity when a streamed request releases its slot from a different task than the one that acquired it. This can happen when a stream ends early, and also when a stream is full…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cx2f-j9fh-8g68" target="_blank" rel="noopener">MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107382</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Description
-On the zero-configuration TLS path, the connector accepts a self-signed server certificate at the TLS level and then validates the server&#x27;s identity from the fingerprint hash the server appends to the final OK_Packet (`Authentication.validateFingerPrint`). That validation calls `hash()` on the authentication plugin in use to obtain the password-derived secret both sides combine wit…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-79fv-7hq9-w7xg" target="_blank" rel="noopener">PraisonAI: API deploy code generator embeds unescaped YAML fields into Python source</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61433</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'># API deploy code generator embeds unescaped YAML fields into Python source
-
-## Summary
-
-PraisonAI&#x27;s API deployment generator copies `deploy.api.host` from `agents.yaml` directly into generated Python source without safe literal encoding. A malicious PraisonAI project can set that host value to a Python expression splice; when an operator runs the API deploy flow, the generated server source compi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xpx6-x8c2-mw5w" target="_blank" rel="noopener">PraisonAI: Project custom command templates can read outside-workspace files into model prompts</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-60088</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'># Project custom command templates can read outside-workspace files into model prompts
-
-## Summary
-
-PraisonAI&#x27;s new file-based custom command feature auto-discovers project commands from `.praisonai/commands/*.md`. When a user runs `praisonai run --command &lt;name&gt;` inside a repository, the command body is interpolated before it is sent as the model prompt.
-
-The interpolation code expands `@path` re…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p8wg-vrv2-v86f" target="_blank" rel="noopener">Handlebars: JavaScript Injection via Own Property Check Bypass</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-106445</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>## Summary
-
-Handlebars can expose the `Function` constructor despite its prototype-access deny list. When a template reaches `Function.prototype`, its own `constructor` property is returned before the deny list is checked. An attacker who can render a controlled template with `allowProtoMethodsByDefault: true` can inject and execute arbitrary JavaScript, leading to Remote Code Execution on the ser…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9ffp-22j7-56r2" target="_blank" rel="noopener">JHipster: Generated Applications Allow Stored XSS via Unrestricted Blob ContentType Opened as Same-Origin Blob</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107303</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>## Summary
-Applications generated by generator-jhipster v9.2.0 can persist user-controlled Blob ContentType values and later use those values as the MIME type for client-side Blob objects. The shared generated `openFile` helper creates an object URL from the Blob and opens it in a new window.
-
-For Blob-bearing entities writable by normal authenticated users, this creates a stored XSS chain: attack…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gcx5-hxj7-gpqq" target="_blank" rel="noopener">msgpack5: Quadratic parsing in the streaming decoder</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107297</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Impact
-
-The streaming decoder reparses an incomplete container from the beginning whenever another chunk arrives. A remote peer can split one valid MessagePack value across many small chunks, causing quadratic CPU usage and blocking the event loop.
-
-### Patches
-
-The decoder now preserves incremental container state so completed elements are not parsed again when more input arrives.
-
-### Workar…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wf65-4jjx-q444" target="_blank" rel="noopener">PraisonAI: PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-60090</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'># PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL
-
-## Summary
-
-The PGVector and Cassandra knowledge-store backends validate SQL/CQL identifiers such as schema, keyspace, and collection names, but still insert the caller-controlled `dimension` argument directly into `CREATE TABLE` vector column declarations. A caller that can influence collection creation dimensions c…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v2xh-2vp8-57h8" target="_blank" rel="noopener">Pydantic AI: Unbounded memory use when downloading remote content via web_fetch or FileUrl</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107294</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-
-Several remote-content download paths in Pydantic AI buffered the entire HTTP response body into memory before enforcing any size limit. An application that exposes the local web-fetch tool (`web_fetch_tool`, or the `WebFetch` capability&#x27;s local fallback) to untrusted prompts can be driven to fetch an attacker-chosen URL that streams a very large body, exhausting process memory and cr…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-v2j5-22fr-j62r" target="_blank" rel="noopener">AsyncHttpClient: Pooled connections can still be shared across NTLM, Negotiate and proxy logins</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107230</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Impact
-The fix for GHSA-vvp4-63h8-v5pm in 3.0.13 folded the authenticated principal into the HTTP/1.1 connection pool key, so that a connection one principal authenticated with NTLM, Kerberos or SPNEGO is not handed to another. It left three cases out. In each, a socket that one identity authenticated can still be drawn by a request belonging to a different identity, and the server serves that…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fpf4-vwcp-v4hp" target="_blank" rel="noopener">Pydantic AI: Event loop blocked by quadratic title extraction in `web_fetch`</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107290</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-
-The local web-fetch tool (`web_fetch_tool`, also used as the `WebFetch` capability&#x27;s local fallback) processed responses with several steps whose running time grows quadratically with the size of certain server-controlled inputs, and ran them on the event loop: decoding the body with whichever charset the server declared, extracting the page title with a backtracking regular expressio…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vmxc-h2x2-jmf3" target="_blank" rel="noopener">Pydantic AI: SSRF cloud-metadata blocklist bypass via IPv6 zone identifiers</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107289</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-
-When an application using Pydantic AI opts a URL into local network access — either a `FileUrl` with `force_download=&#x27;allow-local&#x27;`, or `web_fetch_tool(allow_local_urls=True)` — the cloud-metadata blocklist could be bypassed by appending an IPv6 zone identifier to a metadata address (for example `fd00:ec2::254%251`). The host ignores the zone identifier on a destination that is not li…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m6wp-h223-4c8g" target="_blank" rel="noopener">PraisonAI: Plugin Auto-Discovery Executes Arbitrary Python Files Without Verification</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61446</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-The plugin manager loads and executes arbitrary `.py` files from `.praisonai/plugins/` directories (both project-level and user home) via `importlib.util.spec_from_file_location()` + `exec_module()` with zero code signing, integrity verification, or sandboxing. Any attacker who can write a file to the plugins directory (via path traversal, supply chain attack, or compromised dependency…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-29r9-67vg-qj56" target="_blank" rel="noopener">PraisonAI: Human-in-the-loop tool approval is cached by tool name and silently reused for all subsequent calls with arbitrary arguments</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-60087</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>## Summary
-
-PraisonAI gates dangerous tools (file writes, deletes, shell/code execution) behind an interactive approval prompt. The first approval of a tool is cached for the remainder of the run and silently reused for all later invocations of that tool with arbitrary, unreviewed arguments.
-
-## Root cause
-
-`ApprovalRegistry.is_already_approved` (`src/praisonai-agents/praisonaiagents/approval/regi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qg25-6gc4-48mg" target="_blank" rel="noopener">PraisonAI: DNS rebinding bypass in `web_crawl` SSRF protection allows internal response disclosure</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61430</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>## Summary
-
-PraisonAI&#x27;s `web_crawl` agent tool performs a server-side HTTP fetch of an agent/attacker-influenced URL. SSRF is meant to be prevented by `_is_safe_crawl_url()`, which resolves the hostname and rejects private/loopback/link-local IPs **at validation time**. The validated value is the URL *string* (not a pinned IP); the fetch backend then **re-resolves the hostname at connection time**…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2j4c-ffch-9f23" target="_blank" rel="noopener">Excelize Decrypt: unrecoverable panics on malformed OLE/CFB encrypted workbooks</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107214</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-
-Any file whose first 8 bytes are the OLE compound-file signature (`D0 CF 11 E0 A1 B1 1A E1`) is routed by `OpenFile`/`OpenReader`/`OpenBytes` → `openReaderAt` → `Decrypt`. The version dispatch only guarantees `len(EncryptionInfo) &gt;= 4` before handing attacker-controlled `EncryptionInfo`/`EncryptedPackage` buffers to `standardDecrypt`/`agileDecrypt`, and no callee validates structure. …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x2q3-8cjh-766f" target="_blank" rel="noopener">Excelize: extractPart allocates attacker-controlled, unbounded and negative-sized buffers from CFB directory entries: remote panic / OOM DoS</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107215</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-
-`extractPart` allocates directly from the mscfb directory-entry size with no clamping (`crypt.go:198`, same missing bound at `crypt.go:204`):
-
-```go
-buf := make([]byte, entry.Size)
-```
-
-`entry.Size` is the raw `streamSize` field from the attacker-controlled CFB directory entry (mscfb v1.0.8 `fixFile`, `file.go:109-120`: full uint64 → int64 for major version 4, low uint32 for v3). mscf…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wp2g-vpjj-g53r" target="_blank" rel="noopener">Excelize ANCHORARRAY: mutually-referencing array formulas recurse unboundedly via re-entrant CalcCellValue, causing a fatal stack overflow</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107216</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Summary
-
-`ANCHORARRAY` (calc.go:15137 on current master) evaluates each cell of the referenced spill range by calling the **exported** `CalcCellValue`, which unconditionally constructs a fresh `calcContext` — fresh entry marker, fresh iterations map, full `MaxCalcIterations` budget (calc.go:896-900). The circular-reference control only exists **within one context**: the entry-exclusion marker …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f9m8-cv68-674w" target="_blank" rel="noopener">AsyncHttpClient: Cookie Domain attribute is not checked against the public suffix list, so a cookie can be set for co.uk</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107280</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-08</span>
-          </div>
-          <p class='summary'>### Impact
-The cookie store decides whether a `Domain` attribute may be accepted using only the domain-matching rule of RFC 6265 Section 5.1.3, which asks whether the request host is the domain or ends with a dot followed by it. Section 5.3 step 5, which additionally requires rejecting a `Domain` that is a public suffix, is not implemented anywhere in the client.
-
-So a host under a multi-label pub…</p>
 
         </article>
 
