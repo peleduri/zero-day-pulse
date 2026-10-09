@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-09 03:23 UTC &nbsp;|&nbsp; **Total:** 49 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 36 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-09 12:12 UTC &nbsp;|&nbsp; **Total:** 51 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 36 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -13,7 +13,34 @@
 
 ---
 
-## 2. 🟠 Zero-Day — PraisonAI: AICoder Arbitrary File Write and Command Execution via LLM Tool Calls
+## 2. 🟠 Zero-Day — Unpatched AhsayCBS Vulnerabilities Exploited in the Wild
+
+**CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/>
+
+> The flaws, CVE-2026-105133 and CVE-2026-105134, allow attackers to bypass authentication and inject OS commands. The post Unpatched AhsayCBS Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .
+
+---
+
+## 3. 🟠 Zero-Day — US Disrupts Chinese State-Sponsored Hacking Tools
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://www.securityweek.com/us-disrupts-chinese-state-sponsored-hacking-tools/>
+
+> Flax Typhoon and other APTs used MicroScan and FishHub to scan and hack US and foreign critical infrastructure. The post US Disrupts Chinese State-Sponsored Hacking Tools appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — Hackers get $1,262,000 for 98 zero-days at Pwn2Own Ireland
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-earn-1262000-for-98-zero-days-at-pwn2own-ireland/>
+
+> The Pwn2Own Ireland 2026 hacking contest has concluded, with hackers collecting $1,262,000 in rewards after exploiting 98 zero-day flaws. [...]
+
+---
+
+## 5. 🟠 Zero-Day — PraisonAI: AICoder Arbitrary File Write and Command Execution via LLM Tool Calls
 
 **CVE:** `CVE-2026-61445` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-9mp3-24cc-77mg>
@@ -23,7 +50,7 @@ The `AICoder` UI component exposes `write_to_file` and `execute_command` tools t
 
 ---
 
-## 3. 🟠 Zero-Day — FBI disrupts Chinese hacking tools used to breach critical infrastructure
+## 6. 🟠 Zero-Day — FBI disrupts Chinese hacking tools used to breach critical infrastructure
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://www.bleepingcomputer.com/news/security/fbi-disrupts-chinese-hacking-tools-used-to-breach-critical-infrastructure/>
@@ -32,7 +59,7 @@ The `AICoder` UI component exposes `write_to_file` and `execute_command` tools t
 
 ---
 
-## 4. 🟠 Zero-Day — PraisonAI: Prompt-injection defense blocks only when 3+ detector families fire simultaneously; realistic single-vector injections pass through unblocked
+## 7. 🟠 Zero-Day — PraisonAI: Prompt-injection defense blocks only when 3+ detector families fire simultaneously; realistic single-vector injections pass through unblocked
 
 **CVE:** `CVE-2026-60086` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-4r3p-w3mc-5v34>
@@ -43,7 +70,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 5. 🟠 Zero-Day — PraisonAI: CodeAgent Executes LLM-Generated Code Without Sandboxing and Leaks All Environment Secrets
+## 8. 🟠 Zero-Day — PraisonAI: CodeAgent Executes LLM-Generated Code Without Sandboxing and Leaks All Environment Secrets
 
 **CVE:** `CVE-2026-61447` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-2xv2-w8cq-5gxw>
@@ -53,7 +80,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 6. 🟠 Zero-Day — Inside the Exchange Inspector: How Tenable uses OpenAI GPT cyber models to review open-source AI agents
+## 9. 🟠 Zero-Day — Inside the Exchange Inspector: How Tenable uses OpenAI GPT cyber models to review open-source AI agents
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://www.tenable.com/blog/tenable-openai-security-vetting-open-source-ai-agents-exchange-inspector>
@@ -62,7 +89,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 10. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -71,7 +98,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 11. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -80,7 +107,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 12. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -89,7 +116,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 13. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -98,7 +125,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 14. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -107,7 +134,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 15. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -116,16 +143,7 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 13. 🟠 Zero-Day — Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://www.bleepingcomputer.com/news/security/samsung-galaxy-s26-hacked-three-more-times-at-pwn2own-ireland/>
-
-> ​​​On the second day of Pwn2Own Ireland 2026, security researchers collected $232,500 in cash awards after exploiting 45 unique zero-day vulnerabilities. [...]
-
----
-
-## 14. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 16. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -134,7 +152,20 @@ PraisonAI&#x27;s opt-in prompt-injection defense (`enable_injection_defense()`) 
 
 ---
 
-## 15. 🟡 High Severity — Hazelcast allows arbitrary member memory access by low-privileged client
+## 17. 🟡 High Severity — Citrix Patches Critical NetScaler Flaw That Could Enable RCE in SAML Deployments
+
+**CVE:** `CVE-2026-107406` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-09
+**Reference:** <https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html>
+
+> Citrix has released patches for yet another critical security flaw impacting NetScaler ADC and NetScaler Gateway that could result in remote code execution or denial-of-service (DoS) under certain conditions.
+
+&quot;CVE-2026-107406 is a memory overflow vulnerability that may lead to remote code execution or denial-of-service under specific configuration conditions,&quot; Citrix said.
+
+The vulnerab…
+
+---
+
+## 18. 🟡 High Severity — Hazelcast allows arbitrary member memory access by low-privileged client
 
 **CVE:** `CVE-2026-107726` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-6v25-8wq6-xq4j>
@@ -145,7 +176,7 @@ A flaw has been found in Hazelcast Enterprise Edition and Community Edition, whi
 
 ---
 
-## 16. 🟡 High Severity — Banks: Symlink traversal and arbitrary file disclosure/overwrite in DirectoryPromptRegistry
+## 19. 🟡 High Severity — Banks: Symlink traversal and arbitrary file disclosure/overwrite in DirectoryPromptRegistry
 
 **CVE:** `CVE-2026-107716` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-556j-vv39-8rqv>
@@ -155,7 +186,7 @@ In `banks.registries.DirectoryPromptRegistry`, prompt file paths and the index f
 
 ---
 
-## 17. 🟡 High Severity — Indico: Incomplete Server-Side Request Forgery (SSRF) check
+## 20. 🟡 High Severity — Indico: Incomplete Server-Side Request Forgery (SSRF) check
 
 **CVE:** `CVE-2026-107394` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-2v95-h47v-g4x9>
@@ -165,7 +196,7 @@ Indico makes outgoing requests to user-provides URLs in various places. This is 
 
 ---
 
-## 18. 🟡 High Severity — Mechanize sends credential headers to another host after an HTTP redirect
+## 21. 🟡 High Severity — Mechanize sends credential headers to another host after an HTTP redirect
 
 **CVE:** `CVE-2026-107715` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-2mwr-xjcg-37j7>
@@ -182,7 +213,7 @@ Two defects, both in `lib/mechanize/http/agent.rb`.
 
 ---
 
-## 19. 🟡 High Severity — fast-jwt: createVerifier accepts unsigned JWTs when key is '' or null and algorithms is explicitly set
+## 22. 🟡 High Severity — fast-jwt: createVerifier accepts unsigned JWTs when key is '' or null and algorithms is explicitly set
 
 **CVE:** `CVE-2026-107720` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-8wpc-h4q6-8fxv>
@@ -197,7 +228,7 @@ Two defects, both in `lib/mechanize/http/agent.rb`.
 
 ---
 
-## 20. 🟡 High Severity — fast-jwt: Incomplete patch of CVE-2026-34950: Non-whitespace key-prefix re-enables RSA→HS256 algorithm confusion
+## 23. 🟡 High Severity — fast-jwt: Incomplete patch of CVE-2026-34950: Non-whitespace key-prefix re-enables RSA→HS256 algorithm confusion
 
 **CVE:** `CVE-2026-107722` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-ww5h-9m49-7xx4>
@@ -208,7 +239,7 @@ The fix for CVE-2026-34950 (CVSS 9.1, released in v6.2.0) is **incomplete**. It 
 
 ---
 
-## 21. 🟡 High Severity — fast-jwt clockTolerance: Infinity silently bypasses both exp and nbf validation (and persists in the verifier cache)
+## 24. 🟡 High Severity — fast-jwt clockTolerance: Infinity silently bypasses both exp and nbf validation (and persists in the verifier cache)
 
 **CVE:** `CVE-2026-107721` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-687g-22h4-j4w4>
@@ -221,7 +252,7 @@ The fix for CVE-2026-34950 (CVSS 9.1, released in v6.2.0) is **incomplete**. It 
 
 ---
 
-## 22. 🟡 High Severity — fast-jwt : Silent claim-validator bypass when JWT payload is a JSON array
+## 25. 🟡 High Severity — fast-jwt : Silent claim-validator bypass when JWT payload is a JSON array
 
 **CVE:** `CVE-2026-107723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-5hjw-83fp-phq9>
@@ -231,7 +262,7 @@ The fix for CVE-2026-34950 (CVSS 9.1, released in v6.2.0) is **incomplete**. It 
 
 ---
 
-## 23. 🟡 High Severity — fast-jwt treats raw public JWK JSON as an HMAC secret, enabling HS256 token forgery
+## 26. 🟡 High Severity — fast-jwt treats raw public JWK JSON as an HMAC secret, enabling HS256 token forgery
 
 **CVE:** `CVE-2026-107724` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-g3jj-5cmm-3hxx>
@@ -250,7 +281,7 @@ This can result in authenti…
 
 ---
 
-## 24. 🟡 High Severity — PraisonAI: AgentOS defaults to network-exposed no-auth mode, allowing unauthenticated agent invocation and instruction disclosure
+## 27. 🟡 High Severity — PraisonAI: AgentOS defaults to network-exposed no-auth mode, allowing unauthenticated agent invocation and instruction disclosure
 
 **CVE:** `CVE-2026-61426` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-6wjp-v33h-5cvq>
@@ -261,7 +292,7 @@ The AgentOS server in the `praisonai` TypeScript/npm package ships an insecure d
 
 ---
 
-## 25. 🟡 High Severity — PraisonAI: SecurityPolicy command/path/import restrictions are completely unenforced by the default SubprocessSandbox backend
+## 28. 🟡 High Severity — PraisonAI: SecurityPolicy command/path/import restrictions are completely unenforced by the default SubprocessSandbox backend
 
 **CVE:** `CVE-2026-60085` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-5r6c-gj4g-r697>
@@ -271,7 +302,7 @@ SecurityPolicy in praisonaiagents/sandbox/config.py is a documented configuratio
 
 ---
 
-## 26. 🟡 High Severity — PraisonAI: Jobs API is unauthenticated by default and allows attacker-controlled webhook SSRF
+## 29. 🟡 High Severity — PraisonAI: Jobs API is unauthenticated by default and allows attacker-controlled webhook SSRF
 
 **CVE:** `CVE-2026-60091` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-4w49-gwv8-fpjg>
@@ -282,7 +313,7 @@ PraisonAI&#x27;s Async Jobs API enables its API-key middleware **only when `PRAI
 
 ---
 
-## 27. 🟡 High Severity — music-metadata: MP4 stsd sample-entry size==0 causes a synchronous infinite loop (DoS) — unreleased regression on master
+## 30. 🟡 High Severity — music-metadata: MP4 stsd sample-entry size==0 causes a synchronous infinite loop (DoS) — unreleased regression on master
 
 **CVE:** `CVE-2026-107391` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-f94x-6692-553q>
@@ -293,7 +324,7 @@ PraisonAI&#x27;s Async Jobs API enables its API-key middleware **only when `PRAI
 
 ---
 
-## 28. 🟡 High Severity — music-metadata: EBML parser trusts element lengths, allowing memory exhaustion or process abort
+## 31. 🟡 High Severity — music-metadata: EBML parser trusts element lengths, allowing memory exhaustion or process abort
 
 **CVE:** `CVE-2026-107389` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-5gfj-9q3v-qfp3>
@@ -306,7 +337,7 @@ A very small crafted `.webm`, `.mkv`, or `.mka` file can therefore cause a dispr
 
 ---
 
-## 29. 🟡 High Severity — Pydantic AI: Concurrency-limited models can keep their slot when a streamed request ends early
+## 32. 🟡 High Severity — Pydantic AI: Concurrency-limited models can keep their slot when a streamed request ends early
 
 **CVE:** `CVE-2026-107286` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-6fqq-452j-qhrp>
@@ -319,7 +350,7 @@ Applications that wrap a model with `ConcurrencyLimitedModel` or `limit_model_co
 
 ---
 
-## 30. 🟡 High Severity — MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS
+## 33. 🟡 High Severity — MariaDB Connector/Node.js: Uncaught exception crashes the client during ed25519 authentication with zero-configuration TLS
 
 **CVE:** `CVE-2026-107382` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-cx2f-j9fh-8g68>
@@ -329,7 +360,7 @@ On the zero-configuration TLS path, the connector accepts a self-signed server c
 
 ---
 
-## 31. 🟡 High Severity — PraisonAI: API deploy code generator embeds unescaped YAML fields into Python source
+## 34. 🟡 High Severity — PraisonAI: API deploy code generator embeds unescaped YAML fields into Python source
 
 **CVE:** `CVE-2026-61433` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-79fv-7hq9-w7xg>
@@ -342,7 +373,7 @@ PraisonAI&#x27;s API deployment generator copies `deploy.api.host` from `agents.
 
 ---
 
-## 32. 🟡 High Severity — PraisonAI: Project custom command templates can read outside-workspace files into model prompts
+## 35. 🟡 High Severity — PraisonAI: Project custom command templates can read outside-workspace files into model prompts
 
 **CVE:** `CVE-2026-60088` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-xpx6-x8c2-mw5w>
@@ -357,7 +388,7 @@ The interpolation code expands…
 
 ---
 
-## 33. 🟡 High Severity — Handlebars: JavaScript Injection via Own Property Check Bypass
+## 36. 🟡 High Severity — Handlebars: JavaScript Injection via Own Property Check Bypass
 
 **CVE:** `CVE-2026-106445` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-p8wg-vrv2-v86f>
@@ -368,7 +399,7 @@ Handlebars can expose the `Function` constructor despite its prototype-access de
 
 ---
 
-## 34. 🟡 High Severity — JHipster: Generated Applications Allow Stored XSS via Unrestricted Blob ContentType Opened as Same-Origin Blob
+## 37. 🟡 High Severity — JHipster: Generated Applications Allow Stored XSS via Unrestricted Blob ContentType Opened as Same-Origin Blob
 
 **CVE:** `CVE-2026-107303` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-9ffp-22j7-56r2>
@@ -380,7 +411,7 @@ For Blob-bearing entities writable by normal authenticated users, this creates a
 
 ---
 
-## 35. 🟡 High Severity — msgpack5: Quadratic parsing in the streaming decoder
+## 38. 🟡 High Severity — msgpack5: Quadratic parsing in the streaming decoder
 
 **CVE:** `CVE-2026-107297` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-gcx5-hxj7-gpqq>
@@ -397,7 +428,7 @@ The decoder now preserves incremental container state so completed elements are 
 
 ---
 
-## 36. 🟡 High Severity — PraisonAI: PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL
+## 39. 🟡 High Severity — PraisonAI: PGVector and Cassandra knowledge stores interpolate vector dimensions into DDL
 
 **CVE:** `CVE-2026-60090` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-wf65-4jjx-q444>
@@ -410,7 +441,7 @@ The PGVector and Cassandra knowledge-store backends validate SQL/CQL identifiers
 
 ---
 
-## 37. 🟡 High Severity — Pydantic AI: Unbounded memory use when downloading remote content via web_fetch or FileUrl
+## 40. 🟡 High Severity — Pydantic AI: Unbounded memory use when downloading remote content via web_fetch or FileUrl
 
 **CVE:** `CVE-2026-107294` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-v2xh-2vp8-57h8>
@@ -421,7 +452,7 @@ Several remote-content download paths in Pydantic AI buffered the entire HTTP re
 
 ---
 
-## 38. 🟡 High Severity — AsyncHttpClient: Pooled connections can still be shared across NTLM, Negotiate and proxy logins
+## 41. 🟡 High Severity — AsyncHttpClient: Pooled connections can still be shared across NTLM, Negotiate and proxy logins
 
 **CVE:** `CVE-2026-107230` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-v2j5-22fr-j62r>
@@ -431,7 +462,7 @@ The fix for GHSA-vvp4-63h8-v5pm in 3.0.13 folded the authenticated principal int
 
 ---
 
-## 39. 🟡 High Severity — Pydantic AI: Event loop blocked by quadratic title extraction in `web_fetch`
+## 42. 🟡 High Severity — Pydantic AI: Event loop blocked by quadratic title extraction in `web_fetch`
 
 **CVE:** `CVE-2026-107290` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-fpf4-vwcp-v4hp>
@@ -442,7 +473,7 @@ The local web-fetch tool (`web_fetch_tool`, also used as the `WebFetch` capabili
 
 ---
 
-## 40. 🟡 High Severity — Pydantic AI: SSRF cloud-metadata blocklist bypass via IPv6 zone identifiers
+## 43. 🟡 High Severity — Pydantic AI: SSRF cloud-metadata blocklist bypass via IPv6 zone identifiers
 
 **CVE:** `CVE-2026-107289` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-vmxc-h2x2-jmf3>
@@ -453,7 +484,7 @@ When an application using Pydantic AI opts a URL into local network access — e
 
 ---
 
-## 41. 🟡 High Severity — PraisonAI: Plugin Auto-Discovery Executes Arbitrary Python Files Without Verification
+## 44. 🟡 High Severity — PraisonAI: Plugin Auto-Discovery Executes Arbitrary Python Files Without Verification
 
 **CVE:** `CVE-2026-61446` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-m6wp-h223-4c8g>
@@ -463,7 +494,7 @@ The plugin manager loads and executes arbitrary `.py` files from `.praisonai/plu
 
 ---
 
-## 42. 🟡 High Severity — PraisonAI: Human-in-the-loop tool approval is cached by tool name and silently reused for all subsequent calls with arbitrary arguments
+## 45. 🟡 High Severity — PraisonAI: Human-in-the-loop tool approval is cached by tool name and silently reused for all subsequent calls with arbitrary arguments
 
 **CVE:** `CVE-2026-60087` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-29r9-67vg-qj56>
@@ -478,7 +509,7 @@ PraisonAI gates dangerous tools (file writes, deletes, shell/code execution) beh
 
 ---
 
-## 43. 🟡 High Severity — PraisonAI: DNS rebinding bypass in `web_crawl` SSRF protection allows internal response disclosure
+## 46. 🟡 High Severity — PraisonAI: DNS rebinding bypass in `web_crawl` SSRF protection allows internal response disclosure
 
 **CVE:** `CVE-2026-61430` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-qg25-6gc4-48mg>
@@ -489,7 +520,7 @@ PraisonAI&#x27;s `web_crawl` agent tool performs a server-side HTTP fetch of an 
 
 ---
 
-## 44. 🟡 High Severity — Excelize Decrypt: unrecoverable panics on malformed OLE/CFB encrypted workbooks
+## 47. 🟡 High Severity — Excelize Decrypt: unrecoverable panics on malformed OLE/CFB encrypted workbooks
 
 **CVE:** `CVE-2026-107214` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-2j4c-ffch-9f23>
@@ -500,7 +531,7 @@ Any file whose first 8 bytes are the OLE compound-file signature (`D0 CF 11 E0 A
 
 ---
 
-## 45. 🟡 High Severity — Excelize: extractPart allocates attacker-controlled, unbounded and negative-sized buffers from CFB directory entries: remote panic / OOM DoS
+## 48. 🟡 High Severity — Excelize: extractPart allocates attacker-controlled, unbounded and negative-sized buffers from CFB directory entries: remote panic / OOM DoS
 
 **CVE:** `CVE-2026-107215` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-x2q3-8cjh-766f>
@@ -517,7 +548,7 @@ buf := make([]byte, entry.Size)
 
 ---
 
-## 46. 🟡 High Severity — Excelize ANCHORARRAY: mutually-referencing array formulas recurse unboundedly via re-entrant CalcCellValue, causing a fatal stack overflow
+## 49. 🟡 High Severity — Excelize ANCHORARRAY: mutually-referencing array formulas recurse unboundedly via re-entrant CalcCellValue, causing a fatal stack overflow
 
 **CVE:** `CVE-2026-107216` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-wp2g-vpjj-g53r>
@@ -528,7 +559,7 @@ buf := make([]byte, entry.Size)
 
 ---
 
-## 47. 🟡 High Severity — AsyncHttpClient: Cookie Domain attribute is not checked against the public suffix list, so a cookie can be set for co.uk
+## 50. 🟡 High Severity — AsyncHttpClient: Cookie Domain attribute is not checked against the public suffix list, so a cookie can be set for co.uk
 
 **CVE:** `CVE-2026-107280` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-08
 **Reference:** <https://github.com/advisories/GHSA-f9m8-cv68-674w>
@@ -540,16 +571,7 @@ So a host under a multi-label pub…
 
 ---
 
-## 48. 🟡 High Severity — Attackers Target Critical Atlassian Vulnerability Within Hours of PoC Publication
-
-**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-08
-**Reference:** <https://www.securityweek.com/attackers-target-critical-atlassian-vulnerability-within-hours-of-poc-publication/>
-
-> Threat actors have started targeting CVE-2026-21589, a critical vulnerability in Atlassian’s self-hosted Data Center products. The post Attackers Target Critical Atlassian Vulnerability Within Hours of PoC Publication appeared first on SecurityWeek .
-
----
-
-## 49. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 51. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
