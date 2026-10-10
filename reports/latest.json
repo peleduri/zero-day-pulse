@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-10T16:29:37.011070+00:00",
-  "total": 29,
+  "generated": "2026-10-10T20:48:28.552122+00:00",
+  "total": 16,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 7,
   "enriched": 0,
   "findings": [
     {
@@ -15,21 +15,6 @@
       "tags": [
         "cisa",
         "ics"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/",
-      "title": "Unpatched AhsayCBS flaws exploited to deploy webshells, mine crypto",
-      "summary": "Threat actors are exploiting one critical and one medium-severity vulnerability still unpatched in the AhsayCBS backup management platform to deploy webshells and cryptocurrency miners. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/",
-      "published": "2026-10-09T17:17:23+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -128,24 +113,6 @@
       ],
       "cve_ids": [
         "CVE-2025-66376"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "GHSA-jq7h-wrvp-3rgx",
-      "title": "pyLoad: Privilege revocation and password change through the REST API do not invalidate the user's session",
-      "summary": "An admin who revokes a user's privileges through the REST API does not actually revoke them, because the session carrying those privileges is never invalidated.\n\npyLoad authorizes each request from values copied into the Flask session at login. set_session in webui/app/helpers.py writes role and perms once, and both login_required and the session branch of apikey_auth read them back from the session rather than from the database. The fix for GHSA-66hx-chf7-3332 handled this by deleting the user's session files, but the call was added only in webui/app/blueprints/json_blueprint.py, at the three WebUI form handlers. Api.set_user_permission and Api.change_password in core/api/__init__.py write to the database and return. Both are exported over /api/<func> and both appear in the OpenAPI spec the project serves at /api, so the documented administration interface takes the unpatched route.\n\nI should concede an overlap up front. GHSA-66hx-chf7-3332 does name the core method in its own Details, pointing at set_user_permission and noting that it updates the database role and permission only. What that advisory does not do is name /api/set_user_permission as a reachable route, and it does not mention change_password at all, which is the half I think is new.\n\nI ran this against pyload-ng 0.5.0b3.dev101 installed from PyPI, on a real instance with real users. Demoting an admin from role 0 to role 1 with permission 0 by POSTing /api/set_user_permission updated the database immediately. The demoted user's existing session still returned 200 on /api/get_userdir, still loaded /settings, and still wrote reconnect.script through /api/set_config_value, which is the admin-only option CVE-2026-33509 was published for. The identical change through /json/update_users killed that session at once: the same request returned 401 and /settings redirected to the login page.\n\nThe password path behaves the same way. After POSTing /api/change_password for a user, their old password was refused at ",
-      "link": "https://github.com/advisories/GHSA-jq7h-wrvp-3rgx",
-      "published": "2026-10-09T17:09:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-33509"
       ],
       "is_zero_day": true,
       "is_high_severity": false
@@ -296,204 +263,6 @@
       ],
       "cve_ids": [
         "CVE-2026-91972"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107806",
-      "title": "Nginx UI: Authenticated Remote Code Execution via Backup Restore App Config Overwrite",
-      "summary": "## Summary\n\nAn authenticated nginx-ui user can call `POST /api/restore`, upload a forged encrypted backup, restore `app.ini`, set nginx command settings such as `TestConfigCmd`, and then trigger command execution with `POST /api/nginx/test`.\n\nThis was validated on nginx-ui `2.3.11 2(523) 6c86e5a5` in the local Docker container `uozi/nginx-ui:latest`.\n\n\n\n\n## Impact\n\nAn authenticated user can overwrite nginx-ui application configuration and database state through restore, including protected settings that are normally not writable through the settings API. By setting nginx command fields in the restored `app.ini`, the attacker can execute commands in the nginx-ui runtime context. This affects confidentiality, integrity, and availability because the attacker can read or replace secrets, change node/JWT secrets, corrupt application state, and execute arbitrary commands.\n\n## Affected Version / Environment\n\n- Version: `nginx-ui 2.3.11 2(523) 6c86e5a5`\n- Deployment: local Docker, `uozi/nginx-ui:latest`\n- Base URL used in validation: `http://127.0.0.1:8080`\n\n\n## Root Cause\n\n`/api/restore` is reachable through normal authenticated-user authorization. The restore handler accepts attacker-supplied backup key material, validates the manifest with a key derived from that supplied AES key, decrypts attacker-controlled backup contents, and copies restored `app.ini` into the live nginx-ui config path.\n\nRelevant code paths:\n\n- `api/backup/router.go`: `POST /api/restore`\n- `api/backup/restore.go`: accepts `security_token` and uploaded backup file\n- `internal/backup/manifest.go`: derives backup signing key from supplied AES key\n- `internal/backup/restore.go`: `restoreNginxUIConfig` overwrites live `app.ini`\n- `internal/nginx/exec.go`: nginx command settings execute through shell-backed command paths\n\n## Proof of Concept\n\nAssumptions:\n\n- nginx-ui is already running.\n- `$TOKEN` is a valid user JWT.\n- `$CONTAINER` is the local disposable Docker container name for cleanup and evidence che",
-      "link": "https://github.com/advisories/GHSA-p393-cf76-4jmr",
-      "published": "2026-10-09T20:45:02Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107806"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107839",
-      "title": "ageLANServer: Unbounded JSON Array Allocation in AoE3 Cloud `getFileURL` Endpoint Leads to Remote Denial of Service",
-      "summary": "### Summary\nThe AoE3 `POST /game/cloud/getFileURL` handler in `luskaner/ageLANServer`'s bundled game server decodes an attacker-controlled `names` JSON array and immediately allocates response storage sized directly from the array's length (`make(i.A, len(req.Names.Data))`), with no request body size limit and no cap on the number of array elements anywhere in the request path. Because the default configuration ships with `Authentication = 'disabled'`, any network client can obtain a session through unauthenticated platform login and then send a single crafted request that forces the server to allocate memory proportional to attacker-chosen input. Dynamic testing against an unmodified build confirmed both large memory-amplification growth from a single request and a full server process kill via the kernel OOM killer when a memory-constrained instance received a few concurrent oversized requests. This is a high-severity, pre-authentication (self-registration only) remote denial-of-service vulnerability (CVSS 3.1 Base Score 7.5, CWE-400).\n\n### Details\n`server/internal/routes/game/cloud/getFileURL.go` defines the request struct and handler for the AoE3 cloud \"get file URL\" endpoint:\n\n```go\ntype getFileURLRequest struct {\n\tNames i.Json[[]string] `json:\"names\"`\n}\n\nfunc GetFileURL(w http.ResponseWriter, r *http.Request) {\n\tvar req getFileURLRequest\n\terr := i.Bind(r, &req)\n\t...\n\tdescriptions := make(i.A, len(req.Names.Data))\n\tfor j, name := range req.Names.Data {\n\t...\n```\n\n`Names` is typed as `i.Json[[]string]`, a wrapper whose `UnmarshalText` is invoked by `encoding/json` whenever the incoming JSON value for `names` is itself a string, so the attacker supplies a JSON-string-encoded array (e.g. `{\"names\":\"[\\\"x\\\",\\\"x\\\",...]\"}`). The request body is decoded in `server/internal/http.go`'s `Bind()` via `json.NewDecoder(r.Body).Decode(data)`, with no `http.MaxBytesReader`, no `LimitReader`, and no `MaxHeaderBytes` configured on the `http.Server` in `server/internal/cmd/root.go`",
-      "link": "https://github.com/advisories/GHSA-4jfq-pmq9-257h",
-      "published": "2026-10-09T20:44:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107839"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-68582",
-      "title": "Vikunja: Link-share token reads any tenant's kanban buckets and enumerates usernames/IDs instance-wide (BOLA)",
-      "summary": "## Summary\n\nThe task-collection endpoint `GET /api/v1/projects/{project}/views/{view}/tasks` loads the requested project view straight from the URL path without verifying the caller is authorized for it. For a **link-share token**, the task query is correctly pinned to the share's own project, but the *view* is taken from the attacker-controlled path and never re-validated against the share. A holder of a share link to **any** project can therefore point the endpoint at any other tenant's kanban view and receive that view's bucket records \u2014 bucket titles plus the full `created_by` user object (username, name, id) \u2014 for every view in the instance. The same missing pre-authorization view load also yields a project/view-ID existence oracle (404 vs. non-404) usable by link shares and ordinary authenticated users alike.\n\n## Details\n\nRoot cause is in `TaskCollection.ReadAll` (`pkg/models/task_collection.go`).\n\n1. The view is resolved from the URL params before any permission check:\n\n```go\n// pkg/models/task_collection.go  (ReadAll)\nif tf.ProjectViewID != 0 {\n    view, err = GetProjectViewByIDAndProject(s, tf.ProjectViewID, tf.ProjectID) // (URL params)\n    ...\n}\n```\n\n`GetProjectViewByIDAndProject` (`pkg/models/project_view.go`) filters only on `WHERE id = ? AND project_id = ?` \u2014 it performs no authorization. A valid `(project, view)` pair returns the view; an invalid pair returns `ErrProjectViewDoesNotExist` (HTTP 404).\n\n2. For a link-share caller, the code pins the *task* scope to the token's own project but reuses the attacker-supplied `view`:\n\n```go\nshareAuth, is := a.(*LinkSharing)\nif is {\n    project, err := GetProjectSimpleByID(s, shareAuth.ProjectID)   // token's project\n    ...\n    return getTaskOrTasksInBuckets(s, a, []*Project{project}, view, opts, filteringForBucket, tf.forceFlatTasks)\n    // `view` is the foreign, attacker-controlled view \u2014 never validated against shareAuth.ProjectID\n}\n```\n\n3. `getTaskOrTasksInBuckets` \u2192 `GetTasksInBucketsForView` (`pkg/models",
-      "link": "https://github.com/advisories/GHSA-rj9j-8772-4h6c",
-      "published": "2026-10-09T20:42:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-68582"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-57458",
-      "title": "Vikunja: Scoped API token can mint unrestricted OAuth session credentials",
-      "summary": "## Summary\n\nA scoped API token can bypass its declared permissions by using the OAuth authorization flow to mint normal session credentials.\n\nA token limited to:\n\n```json\n{\"oauth\":[\"authorize\"]}\n```\n\ncan call `/api/v1/oauth/authorize`, receive an OAuth authorization code, exchange it at `/api/v1/oauth/token`, and obtain a normal bearer JWT plus refresh token. The resulting credentials are not restricted by the original API-token permissions.\n\n## Affected Component\n\n* Scoped API tokens\n* OAuth authorization flow\n* `POST /api/v1/oauth/authorize`\n* `POST /api/v1/oauth/token`\n\n## Impact\n\nA narrowly scoped API token with only `oauth.authorize` can be converted into normal session credentials for the same user.\n\nThis bypasses the intended API-token permission boundary. An attacker who obtains or is delegated such a limited token can mint a normal JWT and refresh token, then access routes outside the original token scope.\n\nRuntime validation showed that the original scoped token could not access `GET /api/v1/user`, but the minted OAuth access token could access:\n\n* `GET /api/v1/user`\n* `GET /api/v1/projects`\n\nNo cross-user access, privilege escalation to admin, or access to another account was validated.\n\n## Technical Details\n\nThe issue is caused by an authentication-context mismatch between scoped API-token authentication and OAuth authorization-code issuance.\n\nThe vulnerable chain is:\n\n1. A scoped API token authenticates the request and sets the current user context.\n2. `/api/v1/oauth/authorize` accepts that API-token-authenticated user as a valid OAuth resource owner.\n3. The OAuth authorization endpoint issues an authorization code.\n4. `/api/v1/oauth/token` exchanges that code for a normal bearer JWT and refresh token.\n5. The resulting credentials are not bound to the original API-token permissions.\n\nRelevant code paths:\n\n* `pkg/routes/routes.go`\n\n  * registers `/api/v1/oauth/authorize` in an authenticated API route group that also accepts scoped API tokens\n\n* `pkg/mode",
-      "link": "https://github.com/advisories/GHSA-v3p6-34mc-hj7v",
-      "published": "2026-10-09T20:40:28Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-57458"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107808",
-      "title": "Nginx UI: Authentication bypass: password login does not enforce a passkey-only second factor (2FA bypass)",
-      "summary": "## Summary\n\nnginx-ui supports two second-factor methods \u2014 TOTP (OTP) and WebAuthn passkeys \u2014\nand reports an account as 2FA-enabled when **either** is configured. However, the\npassword login endpoint (`POST /api/login`) only enforces a second factor when a\n**TOTP secret** is present. An account that has registered a **passkey but no\nTOTP** is logged in after password verification alone \u2014 the passkey is never\nrequested. This silently downgrades a passkey-protected account to single-factor\n(password-only) authentication.\n\n## Details\n\nThe account's 2FA policy treats passkeys as a valid factor (`model/user.go`):\n\n```go\nfunc (u *User) EnabledOTP() bool     { return len(u.OTPSecret) != 0 }\nfunc (u *User) EnabledPasskey() bool { /* true if a passkey row exists */ }\nfunc (u *User) Enabled2FA() bool     { return u.EnabledOTP() || u.EnabledPasskey() }\n\nfunc (u *User) AfterFind(_ *gorm.DB) error {\n    u.EnabledTwoFA = u.Enabled2FA() // exposed to the UI as `enabled_2fa`\n    return nil\n}\n```\n\nBut the login handler only checks `EnabledOTP()` (`api/user/auth.go`, `Login`):\n\n```go\nu, err := user.Login(json.Name, json.Password)\n...\nif u.EnabledOTP() {                       // <-- only TOTP is enforced\n    if json.OTP == \"\" && json.RecoveryCode == \"\" {\n        c.JSON(http.StatusOK, LoginResponse{Message: \"The user has enabled 2FA\", Code: Enabled2FA}) // 199\n        user.BanIP(clientIP)\n        return\n    }\n    if _, err = user.VerifyOTP(u, json.OTP, json.RecoveryCode); err != nil { /* ... */ }\n    secureSessionID = user.SetSecureSessionID(u.ID)\n}\n\n// Passkey-only accounts fall through to here and receive a full session token:\naccessToken, err := user.GenerateJWT(u)\n```\n\nNo branch requires a WebAuthn assertion during password login when\n`EnabledPasskey()` is true. The root cause is the mismatch between the\n**policy definition** (`Enabled2FA()` = OTP **or** passkey) and the\n**enforcement check** (`EnabledOTP()` only).\n\nThe same `EnabledOTP()`-only gating in `RequireSecureSession()`\n(`i",
-      "link": "https://github.com/advisories/GHSA-45gv-9wjv-xh7p",
-      "published": "2026-10-09T17:08:15Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107808"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107813",
-      "title": "Nginx UI: Incomplete fix of CVE-2026-84315 - the api/cluster router was not -  wrapped in RequireSecureSession, so those sensitive mutations run without OTP step-up",
-      "summary": "## Summary\n\nIncomplete fix of GHSA-5v7c-xpfp-p65m: the secure-session (OTP step-up) requirement added to the nginx, cert, dns, backup, site, and stream mutation routers was not applied to the parallel api/cluster router, so cluster node management and cluster-wide nginx reload/restart run with only a JWT and no step-up. An authenticated user whose JWT is stolen or persisted, but who does not hold a fresh secure-session, can perform cluster node CRUD (including reading and rewriting a node token secret) and trigger cluster-wide nginx reload/restart. Confirmed at HEAD 2cb7ee9102c9d87274de2fa104db804841d140a0.\n\n## The defect\n\nGHSA-5v7c-xpfp-p65m required a fresh secure session (an OTP step-up beyond the JWT) for sensitive mutation routes. The fix wrapped the nginx, cert, dns, backup, site, and stream mutation handlers in middleware.RequireSecureSession() and added reload/restart to the MCP sensitive-tool list. It did not touch the physically separate api/cluster package, whose router registers the same class of sensitive operations on the bare authenticated group.\n\nThe fixed sibling, api/nginx/router.go:\n\n```go\no := r.Group(\"\", middleware.RequireSecureSession())   // line 28\n{\n    o.POST(\"nginx/reload\", Reload)                     // line 30\n    o.POST(\"nginx/restart\", Restart)                   // line 31\n}\n```\n\nThe missed router, api/cluster/router.go, registers every sensitive operation directly on r with no RequireSecureSession wrapper:\n\n```go\nnodeGroup := r.Group(\"nodes\")                          // line 9, no step-up\n{\n    nodeGroup.POST(\"\", AddNode)                        // line 12\n    nodeGroup.POST(\"/:id\", EditNode)                   // line 13\n    nodeGroup.DELETE(\"/:id\", DeleteNode)               // line 14\n}\nr.POST(\"nodes/reload_nginx\", ReloadNginx)              // line 17\nr.POST(\"nodes/restart_nginx\", RestartNginx)            // line 18\nr.POST(\"namespaces\", AddNamespace)                     // line 22\nr.POST(\"namespaces/:id\", ModifyNamespace)             ",
-      "link": "https://github.com/advisories/GHSA-h246-wpgf-vmq5",
-      "published": "2026-10-09T17:08:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107813"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107811",
-      "title": "0xJacky/nginx-ui /api/nodes Leaks Cluster Node Tokens and Allows Cross-Node Impersonation as initUser",
-      "summary": "Summary\n0xJacky/nginx-ui contains a high-severity trust-boundary failure between ordinary users and cluster node credentials. The source code shows that cluster node list and detail endpoints are reachable by ordinary authenticated users and return node objects containing the token field.\n\nThat same token is also used as the X-Node-Secret shared credential for node-to-node authentication. When the middleware receives a correct node secret, it upgrades the request to initUser and bypasses the normal user-authentication path. As a result, any low-privileged authenticated user can first read a node token from /api/nodes and then impersonate a trusted node against a remote node's management API, achieving cross-node administrative authentication bypass.\n\nDetails\nThe root cause is a combination of sensitive credential exposure and improper trust elevation for node-to-node authentication. First, router/routers.go:87-105 mounts cluster.InitRouter(g) inside the shared /api authenticated route group, so any successfully authenticated user can access node list and detail endpoints.\n\nNext, api/cluster/node.go:19-48 implements GetNode and GetNodeList by directly returning analytic.GetNode(node). Meanwhile, model/node.go:8-13 defines Token with the JSON tag json:\"token\", meaning the node secret is serialized into API responses. The surrounding code path does not redact that field. Therefore, a low-privileged user can call /api/nodes or /api/nodes/:id and retrieve both the target node URL and the token value used for trusted node authentication.\n\nThe second half of the exploit chain is in internal/middleware/middleware.go:73-103. The middleware reads a node secret from the X-Node-Secret header or node_secret query parameter. If that supplied value matches settings.NodeSettings.Secret, the request is immediately associated with user.GetInitUser(c), stored in the context as user, and allowed to continue. In other words, possession of the node secret is treated as sufficient to beco",
-      "link": "https://github.com/advisories/GHSA-32gc-wf3m-78w9",
-      "published": "2026-10-09T17:07:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107811"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107807",
-      "title": "Nginx UI: Node Secret Credential Exposure via URL Query Parameter",
-      "summary": "## 1. Vulnerability Summary\n\nnginx-ui's `Node.Secret` is a master credential that bypasses all JWT/password authentication for the entire API. The application accepts this credential via a **URL query parameter** (`?node_secret=`), causing it to be recorded in plaintext in HTTP access logs, reverse proxy logs, browser history, and HTTP `Referer` headers. Additionally, the official cluster configuration format embeds node secrets directly into URL query strings stored in `app.ini` and environment variables, creating a systemic credential exposure pattern across the entire cluster deployment model.\n\nAn attacker who gains read access to any log aggregation system, proxy log, or configuration file can extract the node secret and obtain full, persistent, unauthenticated administrative access to the nginx-ui API \u2014 including reading TLS private keys, modifying nginx configurations, and (when chained with Bug #1) achieving OS-level code execution.\n\n---\n\n## 2. Root Cause Analysis\n\n### 2.1 Node Secret Accepted as URL Query Parameter\n\nThe `getNodeSecret` function reads the credential from the URL query string as a fallback when the `X-Node-Secret` header is absent: [1](#3-0) \n\nThis function is called in both `AuthRequired()` and `AuthRequiredWS()` middleware, meaning the query parameter bypass works for **all authenticated HTTP and WebSocket endpoints**: [2](#3-1) [3](#3-2) \n\nThe same pattern is repeated in the WebSocket origin checker, which also reads `node_secret` from the URL: [4](#3-3) \n\n### 2.2 Node Secret Is a Full Authentication Bypass\n\nThe documentation explicitly states this is by design: [5](#3-4) \n\nWhen the secret matches, the middleware sets the request context to an admin-level init user and calls `c.Next()` \u2014 bypassing all JWT validation, session checks, and 2FA: [2](#3-1) \n\n### 2.3 Cluster Configuration Embeds Node Secrets in URLs\n\nThe official cluster configuration format, documented and used in `app.example.ini`, stores node secrets as URL query parameters: [",
-      "link": "https://github.com/advisories/GHSA-pvgv-gcp7-v38g",
-      "published": "2026-10-09T17:07:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107807"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107810",
-      "title": "Nginx UI: Backup restore follows crafted symlinks into the live Nginx configuration path before restore flags are applied",
-      "summary": "### Summary\nAn authenticated user who can create and restore a backup can craft a valid backup archive that causes the restore staging process to write attacker-controlled files into the live Nginx configuration path even when both `restore_nginx` and `restore_nginx_ui` are set to `false`.\n\n### Details\nThe restore flow always extracts the outer archive, verifies the manifest, decrypts `nginx-ui.zip` and `nginx.zip`, and extracts both inner archives before it decides whether `RestoreNginx` or `RestoreNginxUI` should be applied. The zip extractor explicitly allows absolute symlinks when the link target is under `nginx.GetConfPath()` or `nginx.GetModulesPath()`. Later regular-file entries are then created with `os.OpenFile()` on the symlinked path, which follows the symlink and writes into the live path.\n\nRelevant code paths:\n- [internal/backup/restore.go](/home/kali/Desktop/bounty/nginx-ui/internal/backup/restore.go:39)\n- [internal/backup/restore.go](/home/kali/Desktop/bounty/nginx-ui/internal/backup/restore.go:79)\n- [internal/backup/restore.go](/home/kali/Desktop/bounty/nginx-ui/internal/backup/restore.go:204)\n- [internal/backup/restore.go](/home/kali/Desktop/bounty/nginx-ui/internal/backup/restore.go:286)\n- [api/backup/restore.go](/home/kali/Desktop/bounty/nginx-ui/api/backup/restore.go:31)\n- [api/backup/backup.go](/home/kali/Desktop/bounty/nginx-ui/api/backup/backup.go:15)\n\nThis means the restore trust boundary is broken during extraction. A restore request that explicitly opted out of restoring either Nginx or Nginx UI can still modify the live Nginx configuration tree during staging.\n\n### PoC\nI verified this locally in an isolated environment with a temporary package-level harness that exercised the real `Backup()` and `Restore()` implementations.\n\nWhat the executed test did:\n1. Created a temporary `app.ini`, database file, and a temporary live Nginx config directory.\n2. Called the real `Backup()` implementation to obtain a valid backup archive plus AES key/IV.\n3",
-      "link": "https://github.com/advisories/GHSA-p8v3-89rh-jxc7",
-      "published": "2026-10-09T17:07:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107810"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-75597",
-      "title": "pyLoad: Unauthenticated access to /web/<path:filename> bypasses authentication on sensitive templates and leaks internal error details via exception attribute typo",
-      "summary": "### Summary\n\nThe `/web/<path:filename>` route in `src/pyload/webui/app/blueprints/app_blueprint.py` renders Jinja2 templates without any authentication requirement. Every equivalent direct route (`/logs`, `/settings`, `/queue`, `/dashboard`, etc.) is protected by `@login_required`, but the underlying templates for all of these pages are accessible unauthenticated via this endpoint. Combined with an exception attribute typo in `src/pyload/webui/app/handlers.py` (`exc.desc` instead of `exc.description`), internal Jinja2 variable names are leaked in HTTP 500 response bodies to unauthenticated callers. An attacker can also enumerate all valid template names by observing 200 vs 500 response differentiation.\n\n### Details\n\n**Bug 1 \u2014 Missing authentication on `/web/<path:filename>`**\n\nFile: `src/pyload/webui/app/blueprints/app_blueprint.py`, lines 32\u201336\n\n```python\n@bp.route(\"/web/<path:filename>\", endpoint=\"web\")\ndef render(filename):                          # \u2190 no @login_required\n    mimetype = mimetypes.guess_type(filename)[0] or \"text/html\"\n    data = render_template(filename)\n    return flask.Response(data, mimetype=mimetype)\n```\n\nEvery other sensitive route in the same file is protected:\n\n```python\n@bp.route(\"/logs\", ...)\n@login_required(\"LIST\")       # protected\n\n@bp.route(\"/settings\", ...)\n@login_required(\"SETTINGS\")  # protected\n\n@bp.route(\"/files\", ...)\n@login_required(\"DOWNLOAD\")  # protected\n```\n\nThe `/web/<path:filename>` route has no such decorator, allowing any unauthenticated HTTP client to render arbitrary templates by supplying their filename in the URL path.\n\n**Bug 2 \u2014 Exception attribute typo causes internal details in error responses**\n\nFile: `src/pyload/webui/app/handlers.py`, lines 12\u201320\n\n```python\ndef handle_exception_error(exc):\n    try:\n        code = exc.code\n        desc = exc.desc          # BUG: attribute does not exist on standard exceptions\n    except AttributeError:       # always raised \u2014 falls here for every exception\n        code = 500\n  ",
-      "link": "https://github.com/advisories/GHSA-j92p-c242-7hfx",
-      "published": "2026-10-09T16:40:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-75597"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-55797",
-      "title": "Argo CD repo-server command injection via crafted SSH repository SOCKS5 proxy URL",
-      "summary": "### Impact\n\nArgo CD runs a shell command in the repo-server when it clones or fetches an SSH Git repository that has a proxy URL. The proxy host and port are copied into an SSH `ProxyCommand`. A host that contains shell metacharacters breaks out of that command and runs in the repo-server.\n\nAll versions from v2.11.0 onward are affected, including every currently supported release. v2.10.20 and earlier are not. The behavior was introduced in [9b27aeb1a4](https://github.com/argoproj/argo-cd/commit/9b27aeb1a4fb15d11a0f01cad65dea1fdfc60205) (2024-01-09, [#15864](https://github.com/argoproj/argo-cd/pull/15864)), the change that added SOCKS5 proxy support for SSH Git URLs, and was first released in v2.11.0.\n\nThe repository must use SSH. `http`, `https`, and `socks5` proxy URLs all take this path when they are set on an SSH repository. An HTTPS Git repository uses the proxy as an HTTP proxy and does not build this command.\n\nAnyone who can create or update a repository or a repository credential template can set the proxy. That includes a project-scoped repository permission, `argocd repo add --proxy`, and a repository Secret. A credential template applies its proxy to every matching SSH repository that does not have its own credentials. Argo CD runs the command when it tests the repository connection and on later fetches. The process can read other Git, Helm, and OCI credentials stored for the repo-server.\n\n### Patches\n\nA patch for this vulnerability has been released in the following Argo CD versions:\n\n* v3.6.0-rc2\n* v3.5.4\n* v3.4.10\n* v3.3.15\n\nThe fix stops passing the proxy host and port through a shell.\n\nArgo CD 2.x and 3.0 through 3.2 are out of support and will not receive a patch. Upgrade to a patched 3.3 or newer release.\n\n### Workarounds\n\nThere is no setting that keeps SSH repository proxies and removes the shell command.\n\n* Do not grant repository create or update to untrusted users, including project-scoped repository access. See [RBAC resources](https://argo-cd",
-      "link": "https://github.com/advisories/GHSA-j6cw-g6p4-7hch",
-      "published": "2026-10-09T16:37:24Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-55797"
       ],
       "is_zero_day": false,
       "is_high_severity": true
