@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">29</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-10 11:29 UTC</div>
+            <div class="generated">Updated 2026-10-10 16:29 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -262,22 +262,6 @@
 pyLoad authorizes each request from values copied into the Flask session at login. set_session in webui/app/helpers.py writes role and perms once, and both login_required and the session branch of apikey_auth read them back from the sessi…</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/" target="_blank" rel="noopener">Max severity SonicWall SMA1000 flaw now exploited in attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-102255</code>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-09</span>
-  </div>
-  <p class='summary'>Attackers are exploiting a maximum-severity vulnerability in SonicWall SMA1000 appliances (CVE-2026-102255) that was patched on Tuesday, three days ago. [...]</p>
-
-</article>
 
 <article class="card card-high">
   <div class="card-top">
@@ -644,45 +628,6 @@ The `/web/&lt;path:filename&gt;` route in `src/pyload/webui/app/blueprints/app_b
 Argo CD runs a shell command in the repo-server when it clones or fetches an SSH Git repository that has a proxy URL. The proxy host and port are copied into an SSH `ProxyCommand`. A host that contains shell metacharacters breaks out of that command and runs in the repo-server.
 
 All versions from v2.11.0 onward are affected, including every currently supported release. v2.10.20 and ear…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pfvf-fwfp-25mp" target="_blank" rel="noopener">Strawberry GraphQL: Synchronous permission checks can treat an awaitable authorization result as truthy</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-107728</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-09</span>
-          </div>
-          <p class='summary'>### Summary
-
-`PermissionExtension.resolve()` evaluates the return value of `has_permission()` for truthiness on the synchronous path. `supports_sync` only classifies a permission as asynchronous when `has_permission` is declared with `async def` (via `inspect.iscoroutinefunction`), so a plain `def` that returns an awaitable is treated as synchronous. An awaitable is always truthy, so the check pas…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html" target="_blank" rel="noopener">Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-105133</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-09</span>
-          </div>
-          <p class='summary'>Threat actors have been observed exploiting two recently disclosed flaws in the AhsayCBS backup utility to seize control of affected devices and deploy web shells and XMRig cryptocurrency miners.
-
-Details of the flaws are below -
-
-
-  CVE-2026-105133 (CVSS v4 score: 5.5) - An improper authentication vulnerability in the checkSysPwd() function in the &quot;com/ahsay/obs/api/ApiStructsAction.java&quot;</p>
 
         </article>
 

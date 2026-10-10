@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-10T11:29:47.867113+00:00",
-  "total": 32,
+  "generated": "2026-10-10T16:29:37.011070+00:00",
+  "total": 29,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -146,23 +146,6 @@
       ],
       "cve_ids": [
         "CVE-2026-33509"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/",
-      "title": "Max severity SonicWall SMA1000 flaw now exploited in attacks",
-      "summary": "Attackers are exploiting a maximum-severity vulnerability in SonicWall SMA1000 appliances (CVE-2026-102255) that was patched on Tuesday, three days ago. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/",
-      "published": "2026-10-09T12:32:16+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-102255"
       ],
       "is_zero_day": true,
       "is_high_severity": false
@@ -511,41 +494,6 @@
       ],
       "cve_ids": [
         "CVE-2026-55797"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-107728",
-      "title": "Strawberry GraphQL: Synchronous permission checks can treat an awaitable authorization result as truthy",
-      "summary": "### Summary\n\n`PermissionExtension.resolve()` evaluates the return value of `has_permission()` for truthiness on the synchronous path. `supports_sync` only classifies a permission as asynchronous when `has_permission` is declared with `async def` (via `inspect.iscoroutinefunction`), so a plain `def` that returns an awaitable is treated as synchronous. An awaitable is always truthy, so the check passes even when it resolves to `False` and the protected resolver runs.\n\nThe resolve path is chosen by the field resolver, not by the execution method, so any field with a synchronous resolver is affected under both `execute_sync()` and `execute()`. Permissions declared with `async def has_permission()`, or a plain `def` returning a boolean, are not affected.\n\n### Details\n\nThe affected code is `PermissionExtension.resolve()` in `strawberry/permission.py`. A permission attached to a field whose `has_permission` is a normal `def` returning an awaitable reaches this path; the awaitable is never awaited and its truthiness grants access. `resolve_async()` is not affected because it uses `await_maybe()`.\n\n### PoC\n\n```python\nimport strawberry\nfrom strawberry.permission import BasePermission\n\n\nclass DenyViaAwaitable(BasePermission):\n    message = \"denied\"\n\n    def has_permission(self, source, info, **kwargs):\n        async def result():\n            return False\n\n        return result()\n\n\n@strawberry.type\nclass Query:\n    @strawberry.field(permission_classes=[DenyViaAwaitable])\n    def secret(self) -> str:\n        return \"secret\"\n\n\nschema = strawberry.Schema(Query)\nprint(schema.execute_sync(\"{ secret }\").data)  # {'secret': 'secret'} instead of a permission error\n```\n\n### Impact\n\nAn application using a custom permission whose `has_permission` is a normal `def` returning an awaitable can unintentionally grant access to the protected field. Standard permissions (a `def` returning a boolean, or an `async def`) are not affected, so exploitability depends on the application using this spec",
-      "link": "https://github.com/advisories/GHSA-pfvf-fwfp-25mp",
-      "published": "2026-10-09T14:07:16Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-107728"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html",
-      "title": "Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge",
-      "summary": "Threat actors have been observed exploiting two recently disclosed flaws in the AhsayCBS backup utility to seize control of affected devices and deploy web shells and XMRig cryptocurrency miners.\n\nDetails of the flaws are below -\n\n\n  CVE-2026-105133 (CVSS v4 score: 5.5) - An improper authentication vulnerability in the checkSysPwd() function in the \"com/ahsay/obs/api/ApiStructsAction.java\"",
-      "link": "https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html",
-      "published": "2026-10-09T12:47:26+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-105133"
       ],
       "is_zero_day": false,
       "is_high_severity": true

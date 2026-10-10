@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-10 11:29 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-10 16:29 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 20 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -87,16 +87,7 @@ pyLoad authorizes each request from values copied into the Flask session at logi
 
 ---
 
-## 10. 🟠 Zero-Day — Max severity SonicWall SMA1000 flaw now exploited in attacks
-
-**CVE:** `CVE-2026-102255` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/>
-
-> Attackers are exploiting a maximum-severity vulnerability in SonicWall SMA1000 appliances (CVE-2026-102255) that was patched on Tuesday, three days ago. [...]
-
----
-
-## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -105,7 +96,7 @@ pyLoad authorizes each request from values copied into the Flask session at logi
 
 ---
 
-## 12. 🟡 High Severity — Vikunja: Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
+## 11. 🟡 High Severity — Vikunja: Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
 
 **CVE:** `CVE-2026-91970` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-wq92-8x3r-fm38>
@@ -118,7 +109,7 @@ The always-registered Planka migration lets any ordinary user select a Planka se
 
 ---
 
-## 13. 🟡 High Severity — Vikunja: Any user can enumerate every team and its members by attaching arbitrary teams to a throwaway project
+## 12. 🟡 High Severity — Vikunja: Any user can enumerate every team and its members by attaching arbitrary teams to a throwaway project
 
 **CVE:** `CVE-2026-91980` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-39p5-2wrr-xh29>
@@ -128,7 +119,7 @@ When you share a project with a team, the API lets you attach any team on the in
 
 ---
 
-## 14. 🟡 High Severity — Vikunja: CalDAV and feeds BasicAuth endpoints have no rate limit, bypassing the anti-brute-force floor on account passwords
+## 13. 🟡 High Severity — Vikunja: CalDAV and feeds BasicAuth endpoints have no rate limit, bypassing the anti-brute-force floor on account passwords
 
 **CVE:** `CVE-2026-91973` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-m469-88xx-8rx2>
@@ -140,7 +131,7 @@ The `/dav`, `/.well-known`, and `/feeds` groups are registered on the root Echo 
 
 ---
 
-## 15. 🟡 High Severity — Vikunja: Cross-tenant task-position rows can be injected into arbitrary project views via the unvalidated project_view_id in the task position endpoint (v1 and v2)
+## 14. 🟡 High Severity — Vikunja: Cross-tenant task-position rows can be injected into arbitrary project views via the unvalidated project_view_id in the task position endpoint (v1 and v2)
 
 **CVE:** `CVE-2026-91984` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-w39f-h553-h2mx>
@@ -151,7 +142,7 @@ The task-position endpoint authorizes only the task side of the write: `TaskPosi
 
 ---
 
-## 16. 🟡 High Severity — Vikunja: Read-only project members can obtain any link share's access hash via the single-share read endpoint (v1 and v2) and escalate to the share's permission level
+## 15. 🟡 High Severity — Vikunja: Read-only project members can obtain any link share's access hash via the single-share read endpoint (v1 and v2) and escalate to the share's permission level
 
 **CVE:** `CVE-2026-91985` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-qfwc-vx6f-3g6g>
@@ -162,7 +153,7 @@ A user who has only read permission on a project can call the single link-share 
 
 ---
 
-## 17. 🟡 High Severity — Vikunja: TOTP secret is readable after enrollment, no step-up auth
+## 16. 🟡 High Severity — Vikunja: TOTP secret is readable after enrollment, no step-up auth
 
 **CVE:** `CVE-2026-91982` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-88f6-4rjv-x774>
@@ -175,7 +166,7 @@ Once a user has TOTP enabled, the API still hands back the raw shared secret to 
 
 ---
 
-## 18. 🟡 High Severity — Vikunja: Every /api/v2 pre-auth endpoint is unthrottled on a stock install while its /api/v1 twin is rate limited
+## 17. 🟡 High Severity — Vikunja: Every /api/v2 pre-auth endpoint is unthrottled on a stock install while its /api/v1 twin is rate limited
 
 **CVE:** `CVE-2026-91972` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-6rvj-qwjf-3m4q>
@@ -185,7 +176,7 @@ Once a user has TOTP enabled, the API still hands back the raw shared secret to 
 
 ---
 
-## 19. 🟡 High Severity — Nginx UI: Authenticated Remote Code Execution via Backup Restore App Config Overwrite
+## 18. 🟡 High Severity — Nginx UI: Authenticated Remote Code Execution via Backup Restore App Config Overwrite
 
 **CVE:** `CVE-2026-107806` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-p393-cf76-4jmr>
@@ -205,7 +196,7 @@ An authenticated user can overwr…
 
 ---
 
-## 20. 🟡 High Severity — ageLANServer: Unbounded JSON Array Allocation in AoE3 Cloud `getFileURL` Endpoint Leads to Remote Denial of Service
+## 19. 🟡 High Severity — ageLANServer: Unbounded JSON Array Allocation in AoE3 Cloud `getFileURL` Endpoint Leads to Remote Denial of Service
 
 **CVE:** `CVE-2026-107839` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-4jfq-pmq9-257h>
@@ -215,7 +206,7 @@ The AoE3 `POST /game/cloud/getFileURL` handler in `luskaner/ageLANServer`&#x27;s
 
 ---
 
-## 21. 🟡 High Severity — Vikunja: Link-share token reads any tenant's kanban buckets and enumerates usernames/IDs instance-wide (BOLA)
+## 20. 🟡 High Severity — Vikunja: Link-share token reads any tenant's kanban buckets and enumerates usernames/IDs instance-wide (BOLA)
 
 **CVE:** `CVE-2026-68582` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-rj9j-8772-4h6c>
@@ -226,7 +217,7 @@ The task-collection endpoint `GET /api/v1/projects/{project}/views/{view}/tasks`
 
 ---
 
-## 22. 🟡 High Severity — Vikunja: Scoped API token can mint unrestricted OAuth session credentials
+## 21. 🟡 High Severity — Vikunja: Scoped API token can mint unrestricted OAuth session credentials
 
 **CVE:** `CVE-2026-57458` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-v3p6-34mc-hj7v>
@@ -245,7 +236,7 @@ can call `/api/v1/oauth/authorize`, receive an OAuth authorization code, exchang
 
 ---
 
-## 23. 🟡 High Severity — Nginx UI: Authentication bypass: password login does not enforce a passkey-only second factor (2FA bypass)
+## 22. 🟡 High Severity — Nginx UI: Authentication bypass: password login does not enforce a passkey-only second factor (2FA bypass)
 
 **CVE:** `CVE-2026-107808` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-45gv-9wjv-xh7p>
@@ -260,7 +251,7 @@ TOTP** is logged in after password verification alone — the passke…
 
 ---
 
-## 24. 🟡 High Severity — Nginx UI: Incomplete fix of CVE-2026-84315 - the api/cluster router was not -  wrapped in RequireSecureSession, so those sensitive mutations run without OTP step-up
+## 23. 🟡 High Severity — Nginx UI: Incomplete fix of CVE-2026-84315 - the api/cluster router was not -  wrapped in RequireSecureSession, so those sensitive mutations run without OTP step-up
 
 **CVE:** `CVE-2026-107813` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-h246-wpgf-vmq5>
@@ -271,7 +262,7 @@ Incomplete fix of GHSA-5v7c-xpfp-p65m: the secure-session (OTP step-up) requirem
 
 ---
 
-## 25. 🟡 High Severity — 0xJacky/nginx-ui /api/nodes Leaks Cluster Node Tokens and Allows Cross-Node Impersonation as initUser
+## 24. 🟡 High Severity — 0xJacky/nginx-ui /api/nodes Leaks Cluster Node Tokens and Allows Cross-Node Impersonation as initUser
 
 **CVE:** `CVE-2026-107811` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-32gc-wf3m-78w9>
@@ -283,7 +274,7 @@ That same token is also used as the X-Node-Secret shared credential for node-to-
 
 ---
 
-## 26. 🟡 High Severity — Nginx UI: Node Secret Credential Exposure via URL Query Parameter
+## 25. 🟡 High Severity — Nginx UI: Node Secret Credential Exposure via URL Query Parameter
 
 **CVE:** `CVE-2026-107807` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-pvgv-gcp7-v38g>
@@ -294,7 +285,7 @@ nginx-ui&#x27;s `Node.Secret` is a master credential that bypasses all JWT/passw
 
 ---
 
-## 27. 🟡 High Severity — Nginx UI: Backup restore follows crafted symlinks into the live Nginx configuration path before restore flags are applied
+## 26. 🟡 High Severity — Nginx UI: Backup restore follows crafted symlinks into the live Nginx configuration path before restore flags are applied
 
 **CVE:** `CVE-2026-107810` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-p8v3-89rh-jxc7>
@@ -307,7 +298,7 @@ The restore flow always extracts the outer archive, verifies the manifest, decry
 
 ---
 
-## 28. 🟡 High Severity — pyLoad: Unauthenticated access to /web/<path:filename> bypasses authentication on sensitive templates and leaks internal error details via exception attribute typo
+## 27. 🟡 High Severity — pyLoad: Unauthenticated access to /web/<path:filename> bypasses authentication on sensitive templates and leaks internal error details via exception attribute typo
 
 **CVE:** `CVE-2026-75597` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-j92p-c242-7hfx>
@@ -318,7 +309,7 @@ The `/web/&lt;path:filename&gt;` route in `src/pyload/webui/app/blueprints/app_b
 
 ---
 
-## 29. 🟡 High Severity — Argo CD repo-server command injection via crafted SSH repository SOCKS5 proxy URL
+## 28. 🟡 High Severity — Argo CD repo-server command injection via crafted SSH repository SOCKS5 proxy URL
 
 **CVE:** `CVE-2026-55797` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-j6cw-g6p4-7hch>
@@ -331,32 +322,7 @@ All versions from v2.11.0 onward are affected, including every currently support
 
 ---
 
-## 30. 🟡 High Severity — Strawberry GraphQL: Synchronous permission checks can treat an awaitable authorization result as truthy
-
-**CVE:** `CVE-2026-107728` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-pfvf-fwfp-25mp>
-
-> ### Summary
-
-`PermissionExtension.resolve()` evaluates the return value of `has_permission()` for truthiness on the synchronous path. `supports_sync` only classifies a permission as asynchronous when `has_permission` is declared with `async def` (via `inspect.iscoroutinefunction`), so a plain `def` that returns an awaitable is treated as synchronous. An awaitable is always truthy, so the check pas…
-
----
-
-## 31. 🟡 High Severity — Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge
-
-**CVE:** `CVE-2026-105133` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html>
-
-> Threat actors have been observed exploiting two recently disclosed flaws in the AhsayCBS backup utility to seize control of affected devices and deploy web shells and XMRig cryptocurrency miners.
-
-Details of the flaws are below -
-
-
-  CVE-2026-105133 (CVSS v4 score: 5.5) - An improper authentication vulnerability in the checkSysPwd() function in the &quot;com/ahsay/obs/api/ApiStructsAction.java&quo…
-
----
-
-## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
