@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-10 03:03 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 23 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-10 11:29 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -22,34 +22,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Unpatched AhsayCBS Vulnerabilities Exploited in the Wild
-
-**CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://www.securityweek.com/unpatched-ahsaycbs-vulnerabilities-exploited-in-the-wild/>
-
-> The flaws, CVE-2026-105133 and CVE-2026-105134, allow attackers to bypass authentication and inject OS commands. The post Unpatched AhsayCBS Vulnerabilities Exploited in the Wild appeared first on SecurityWeek .
-
----
-
-## 4. 🟠 Zero-Day — US Disrupts Chinese State-Sponsored Hacking Tools
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://www.securityweek.com/us-disrupts-chinese-state-sponsored-hacking-tools/>
-
-> Flax Typhoon and other APTs used MicroScan and FishHub to scan and hack US and foreign critical infrastructure. The post US Disrupts Chinese State-Sponsored Hacking Tools appeared first on SecurityWeek .
-
----
-
-## 5. 🟠 Zero-Day — Hackers get $1,262,000 for 98 zero-days at Pwn2Own Ireland
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-earn-1262000-for-98-zero-days-at-pwn2own-ireland/>
-
-> The Pwn2Own Ireland 2026 hacking contest has concluded, with hackers collecting $1,262,000 in rewards after exploiting 98 zero-day flaws. [...]
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +31,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +40,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +49,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +58,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,7 +67,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -103,7 +76,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — pyLoad: Privilege revocation and password change through the REST API do not invalidate the user's session
+## 9. 🟠 Zero-Day — pyLoad: Privilege revocation and password change through the REST API do not invalidate the user's session
 
 **CVE:** `CVE-2026-33509` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-jq7h-wrvp-3rgx>
@@ -114,7 +87,7 @@ pyLoad authorizes each request from values copied into the Flask session at logi
 
 ---
 
-## 13. 🟠 Zero-Day — Max severity SonicWall SMA1000 flaw now exploited in attacks
+## 10. 🟠 Zero-Day — Max severity SonicWall SMA1000 flaw now exploited in attacks
 
 **CVE:** `CVE-2026-102255` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://www.bleepingcomputer.com/news/security/max-severity-sonicwall-sma1000-flaw-now-exploited-in-attacks/>
@@ -123,7 +96,7 @@ pyLoad authorizes each request from values copied into the Flask session at logi
 
 ---
 
-## 14. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -132,7 +105,7 @@ pyLoad authorizes each request from values copied into the Flask session at logi
 
 ---
 
-## 15. 🟡 High Severity — Vikunja: Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
+## 12. 🟡 High Severity — Vikunja: Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
 
 **CVE:** `CVE-2026-91970` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-wq92-8x3r-fm38>
@@ -145,7 +118,7 @@ The always-registered Planka migration lets any ordinary user select a Planka se
 
 ---
 
-## 16. 🟡 High Severity — Vikunja: Any user can enumerate every team and its members by attaching arbitrary teams to a throwaway project
+## 13. 🟡 High Severity — Vikunja: Any user can enumerate every team and its members by attaching arbitrary teams to a throwaway project
 
 **CVE:** `CVE-2026-91980` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-39p5-2wrr-xh29>
@@ -155,7 +128,7 @@ When you share a project with a team, the API lets you attach any team on the in
 
 ---
 
-## 17. 🟡 High Severity — Vikunja: CalDAV and feeds BasicAuth endpoints have no rate limit, bypassing the anti-brute-force floor on account passwords
+## 14. 🟡 High Severity — Vikunja: CalDAV and feeds BasicAuth endpoints have no rate limit, bypassing the anti-brute-force floor on account passwords
 
 **CVE:** `CVE-2026-91973` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-m469-88xx-8rx2>
@@ -167,7 +140,7 @@ The `/dav`, `/.well-known`, and `/feeds` groups are registered on the root Echo 
 
 ---
 
-## 18. 🟡 High Severity — Vikunja: Cross-tenant task-position rows can be injected into arbitrary project views via the unvalidated project_view_id in the task position endpoint (v1 and v2)
+## 15. 🟡 High Severity — Vikunja: Cross-tenant task-position rows can be injected into arbitrary project views via the unvalidated project_view_id in the task position endpoint (v1 and v2)
 
 **CVE:** `CVE-2026-91984` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-w39f-h553-h2mx>
@@ -178,7 +151,7 @@ The task-position endpoint authorizes only the task side of the write: `TaskPosi
 
 ---
 
-## 19. 🟡 High Severity — Vikunja: Read-only project members can obtain any link share's access hash via the single-share read endpoint (v1 and v2) and escalate to the share's permission level
+## 16. 🟡 High Severity — Vikunja: Read-only project members can obtain any link share's access hash via the single-share read endpoint (v1 and v2) and escalate to the share's permission level
 
 **CVE:** `CVE-2026-91985` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-qfwc-vx6f-3g6g>
@@ -189,7 +162,7 @@ A user who has only read permission on a project can call the single link-share 
 
 ---
 
-## 20. 🟡 High Severity — Vikunja: TOTP secret is readable after enrollment, no step-up auth
+## 17. 🟡 High Severity — Vikunja: TOTP secret is readable after enrollment, no step-up auth
 
 **CVE:** `CVE-2026-91982` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-88f6-4rjv-x774>
@@ -202,7 +175,7 @@ Once a user has TOTP enabled, the API still hands back the raw shared secret to 
 
 ---
 
-## 21. 🟡 High Severity — Vikunja: Every /api/v2 pre-auth endpoint is unthrottled on a stock install while its /api/v1 twin is rate limited
+## 18. 🟡 High Severity — Vikunja: Every /api/v2 pre-auth endpoint is unthrottled on a stock install while its /api/v1 twin is rate limited
 
 **CVE:** `CVE-2026-91972` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-6rvj-qwjf-3m4q>
@@ -212,7 +185,7 @@ Once a user has TOTP enabled, the API still hands back the raw shared secret to 
 
 ---
 
-## 22. 🟡 High Severity — Nginx UI: Authenticated Remote Code Execution via Backup Restore App Config Overwrite
+## 19. 🟡 High Severity — Nginx UI: Authenticated Remote Code Execution via Backup Restore App Config Overwrite
 
 **CVE:** `CVE-2026-107806` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-p393-cf76-4jmr>
@@ -232,7 +205,7 @@ An authenticated user can overwr…
 
 ---
 
-## 23. 🟡 High Severity — ageLANServer: Unbounded JSON Array Allocation in AoE3 Cloud `getFileURL` Endpoint Leads to Remote Denial of Service
+## 20. 🟡 High Severity — ageLANServer: Unbounded JSON Array Allocation in AoE3 Cloud `getFileURL` Endpoint Leads to Remote Denial of Service
 
 **CVE:** `CVE-2026-107839` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-4jfq-pmq9-257h>
@@ -242,7 +215,7 @@ The AoE3 `POST /game/cloud/getFileURL` handler in `luskaner/ageLANServer`&#x27;s
 
 ---
 
-## 24. 🟡 High Severity — Vikunja: Link-share token reads any tenant's kanban buckets and enumerates usernames/IDs instance-wide (BOLA)
+## 21. 🟡 High Severity — Vikunja: Link-share token reads any tenant's kanban buckets and enumerates usernames/IDs instance-wide (BOLA)
 
 **CVE:** `CVE-2026-68582` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-rj9j-8772-4h6c>
@@ -253,7 +226,7 @@ The task-collection endpoint `GET /api/v1/projects/{project}/views/{view}/tasks`
 
 ---
 
-## 25. 🟡 High Severity — Vikunja: Scoped API token can mint unrestricted OAuth session credentials
+## 22. 🟡 High Severity — Vikunja: Scoped API token can mint unrestricted OAuth session credentials
 
 **CVE:** `CVE-2026-57458` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-v3p6-34mc-hj7v>
@@ -272,7 +245,7 @@ can call `/api/v1/oauth/authorize`, receive an OAuth authorization code, exchang
 
 ---
 
-## 26. 🟡 High Severity — Nginx UI: Authentication bypass: password login does not enforce a passkey-only second factor (2FA bypass)
+## 23. 🟡 High Severity — Nginx UI: Authentication bypass: password login does not enforce a passkey-only second factor (2FA bypass)
 
 **CVE:** `CVE-2026-107808` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-45gv-9wjv-xh7p>
@@ -287,7 +260,7 @@ TOTP** is logged in after password verification alone — the passke…
 
 ---
 
-## 27. 🟡 High Severity — Nginx UI: Incomplete fix of CVE-2026-84315 - the api/cluster router was not -  wrapped in RequireSecureSession, so those sensitive mutations run without OTP step-up
+## 24. 🟡 High Severity — Nginx UI: Incomplete fix of CVE-2026-84315 - the api/cluster router was not -  wrapped in RequireSecureSession, so those sensitive mutations run without OTP step-up
 
 **CVE:** `CVE-2026-107813` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-h246-wpgf-vmq5>
@@ -298,7 +271,7 @@ Incomplete fix of GHSA-5v7c-xpfp-p65m: the secure-session (OTP step-up) requirem
 
 ---
 
-## 28. 🟡 High Severity — 0xJacky/nginx-ui /api/nodes Leaks Cluster Node Tokens and Allows Cross-Node Impersonation as initUser
+## 25. 🟡 High Severity — 0xJacky/nginx-ui /api/nodes Leaks Cluster Node Tokens and Allows Cross-Node Impersonation as initUser
 
 **CVE:** `CVE-2026-107811` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-32gc-wf3m-78w9>
@@ -310,7 +283,7 @@ That same token is also used as the X-Node-Secret shared credential for node-to-
 
 ---
 
-## 29. 🟡 High Severity — Nginx UI: Node Secret Credential Exposure via URL Query Parameter
+## 26. 🟡 High Severity — Nginx UI: Node Secret Credential Exposure via URL Query Parameter
 
 **CVE:** `CVE-2026-107807` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-pvgv-gcp7-v38g>
@@ -321,7 +294,7 @@ nginx-ui&#x27;s `Node.Secret` is a master credential that bypasses all JWT/passw
 
 ---
 
-## 30. 🟡 High Severity — Nginx UI: Backup restore follows crafted symlinks into the live Nginx configuration path before restore flags are applied
+## 27. 🟡 High Severity — Nginx UI: Backup restore follows crafted symlinks into the live Nginx configuration path before restore flags are applied
 
 **CVE:** `CVE-2026-107810` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-p8v3-89rh-jxc7>
@@ -334,7 +307,7 @@ The restore flow always extracts the outer archive, verifies the manifest, decry
 
 ---
 
-## 31. 🟡 High Severity — pyLoad: Unauthenticated access to /web/<path:filename> bypasses authentication on sensitive templates and leaks internal error details via exception attribute typo
+## 28. 🟡 High Severity — pyLoad: Unauthenticated access to /web/<path:filename> bypasses authentication on sensitive templates and leaks internal error details via exception attribute typo
 
 **CVE:** `CVE-2026-75597` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-j92p-c242-7hfx>
@@ -345,7 +318,7 @@ The `/web/&lt;path:filename&gt;` route in `src/pyload/webui/app/blueprints/app_b
 
 ---
 
-## 32. 🟡 High Severity — Argo CD repo-server command injection via crafted SSH repository SOCKS5 proxy URL
+## 29. 🟡 High Severity — Argo CD repo-server command injection via crafted SSH repository SOCKS5 proxy URL
 
 **CVE:** `CVE-2026-55797` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-j6cw-g6p4-7hch>
@@ -358,7 +331,7 @@ All versions from v2.11.0 onward are affected, including every currently support
 
 ---
 
-## 33. 🟡 High Severity — Strawberry GraphQL: Synchronous permission checks can treat an awaitable authorization result as truthy
+## 30. 🟡 High Severity — Strawberry GraphQL: Synchronous permission checks can treat an awaitable authorization result as truthy
 
 **CVE:** `CVE-2026-107728` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://github.com/advisories/GHSA-pfvf-fwfp-25mp>
@@ -369,7 +342,7 @@ All versions from v2.11.0 onward are affected, including every currently support
 
 ---
 
-## 34. 🟡 High Severity — Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge
+## 31. 🟡 High Severity — Attackers Exploit AhsayCBS Flaws to Deploy XMRig Miners Disguised as Microsoft Edge
 
 **CVE:** `CVE-2026-105133` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-09
 **Reference:** <https://thehackernews.com/2026/10/attackers-exploit-ahsaycbs-flaws-to.html>
@@ -383,20 +356,7 @@ Details of the flaws are below -
 
 ---
 
-## 35. 🟡 High Severity — Citrix Patches Critical NetScaler Flaw That Could Enable RCE in SAML Deployments
-
-**CVE:** `CVE-2026-107406` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html>
-
-> Citrix has released patches for yet another critical security flaw impacting NetScaler ADC and NetScaler Gateway that could result in remote code execution or denial-of-service (DoS) under certain conditions.
-
-&quot;CVE-2026-107406 is a memory overflow vulnerability that may lead to remote code execution or denial-of-service under specific configuration conditions,&quot; Citrix said.
-
-The vulnerab…
-
----
-
-## 36. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
