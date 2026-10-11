@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-10 20:48 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 7 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-11 02:34 UTC &nbsp;|&nbsp; **Total:** 9 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 7 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -76,87 +76,7 @@
 
 ---
 
-## 9. 🟡 High Severity — Vikunja: Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
-
-**CVE:** `CVE-2026-91970` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-wq92-8x3r-fm38>
-
-> # Planka migration retains an unbounded aggregate of attacker-served attachments and can OOM the API
-
-## Summary
-
-The always-registered Planka migration lets any ordinary user select a Planka server. Although Vikunja caps each JSON response, pagination loop, and attachment independently, it has no aggregate job budget. The conversion stage downloads every advertised non-link attachment and keeps e…
-
----
-
-## 10. 🟡 High Severity — Vikunja: Any user can enumerate every team and its members by attaching arbitrary teams to a throwaway project
-
-**CVE:** `CVE-2026-91980` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-39p5-2wrr-xh29>
-
-> ### Summary
-When you share a project with a team, the API lets you attach any team on the instance, including teams you have nothing to do with, as long as you&#x27;re an admin of the project. Listing a project&#x27;s teams then returns each team&#x27;s full member roster. So any logged-in user can spin up a throwaway project, attach team IDs one by one, and read back the name, description, and co…
-
----
-
-## 11. 🟡 High Severity — Vikunja: CalDAV and feeds BasicAuth endpoints have no rate limit, bypassing the anti-brute-force floor on account passwords
-
-**CVE:** `CVE-2026-91973` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-m469-88xx-8rx2>
-
-> ### Summary
-The `/dav`, `/.well-known`, and `/feeds` groups are registered on the root Echo instance with only BasicAuth and no rate limiter. CalDAV BasicAuth accepts the plain account password, so password guessing over `/dav` is unbounded and never returns 429, while `/api/v1/login` is throttled from the tenth attempt. The only anti-brute-force control on the instance is therefore bypassable.
-
-#…
-
----
-
-## 12. 🟡 High Severity — Vikunja: Cross-tenant task-position rows can be injected into arbitrary project views via the unvalidated project_view_id in the task position endpoint (v1 and v2)
-
-**CVE:** `CVE-2026-91984` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-w39f-h553-h2mx>
-
-> ## Summary
-
-The task-position endpoint authorizes only the task side of the write: `TaskPosition.CanUpdate` delegates to `Task.CanUpdate` (write access to the task&#x27;s own project) and the request body&#x27;s `project_view_id` is never validated to belong to the task&#x27;s project, nor is any access to that view required. Any authenticated user with a single writable task of their own can pers…
-
----
-
-## 13. 🟡 High Severity — Vikunja: Read-only project members can obtain any link share's access hash via the single-share read endpoint (v1 and v2) and escalate to the share's permission level
-
-**CVE:** `CVE-2026-91985` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-qfwc-vx6f-3g6g>
-
-> ## Summary
-
-A user who has only read permission on a project can call the single link-share read endpoint and receive the share&#x27;s `hash` field — the secret credential that the anonymous `POST /shares/{share}/auth` endpoint exchanges for a link-share JWT carrying the share&#x27;s permission (read / read-write / admin). A read-only member can therefore mint a write- or admin-level token for the…
-
----
-
-## 14. 🟡 High Severity — Vikunja: TOTP secret is readable after enrollment, no step-up auth
-
-**CVE:** `CVE-2026-91982` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-88f6-4rjv-x774>
-
-> ### Summary
-Once a user has TOTP enabled, the API still hands back the raw shared secret to anyone holding that account&#x27;s access token. Reading it doesn&#x27;t ask for the password, even though disabling TOTP does. So a stolen token, an XSS, or a browser left open is enough to copy the second factor into your own authenticator and keep generating valid codes indefinitely.
-
-### Details
-`GET /a…
-
----
-
-## 15. 🟡 High Severity — Vikunja: Every /api/v2 pre-auth endpoint is unthrottled on a stock install while its /api/v1 twin is rate limited
-
-**CVE:** `CVE-2026-91972` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-09
-**Reference:** <https://github.com/advisories/GHSA-6rvj-qwjf-3m4q>
-
-> ### Summary
-`registerAPIRoutesV2` never applies the unconditional pre-auth rate-limit floor (`unauthRateLimit()`) to the v2 public routes — it passes that limiter only to `/api/v2/ws` — and otherwise relies on `setupRateLimit`, which registers nothing when `ratelimit.enabled` is false (the default). So on a stock install every v2 pre-auth endpoint (login, register, password-reset token, oauth toke…
-
----
-
-## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 9. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
