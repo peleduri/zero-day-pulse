@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-12 13:43 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-12 23:53 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -78,7 +78,18 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 9. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 9. 🟠 Zero-Day — ⚡ Weekly Recap: Helpdesk 0-Days, Rogue Certs, ShinyHunters Arrest, AI-Fooling Malware and More
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-12
+**Reference:** <https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html>
+
+> Some meetings last longer than it took attackers to jump on a newly disclosed security flaw this week. Within hours, they were already testing it. That&#x27;s not much time to read the warning, let alone do something about it.
+
+But speed is only part of the problem. A secure connection didn&#x27;t always mean a safe destination. People offering to fix a ransomware mess had questions to answer them…
+
+---
+
+## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -87,7 +98,7 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 10. 🟡 High Severity — Critical SonicWall SMA 1000 Flaw Targeted in 135 Exploitation Attempts After Patch
+## 11. 🟡 High Severity — Critical SonicWall SMA 1000 Flaw Targeted in 135 Exploitation Attempts After Patch
 
 **CVE:** `CVE-2026-102255` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-12
 **Reference:** <https://thehackernews.com/2026/10/critical-sonicwall-sma-1000-flaw.html>
@@ -98,7 +109,7 @@ The vulnerability, tracked as CVE-2026-102255 (CVSS score: 10.0), is a case of p
 
 ---
 
-## 11. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

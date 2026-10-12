@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-12T13:43:39.597184+00:00",
-  "total": 11,
+  "generated": "2026-10-12T23:53:55.599017+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 8,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -131,6 +131,21 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html",
+      "title": "\u26a1 Weekly Recap: Helpdesk 0-Days, Rogue Certs, ShinyHunters Arrest, AI-Fooling Malware and More",
+      "summary": "Some meetings last longer than it took attackers to jump on a newly disclosed security flaw this week. Within hours, they were already testing it. That's not much time to read the warning, let alone do something about it.\n\nBut speed is only part of the problem. A secure connection didn't always mean a safe destination. People offering to fix a ransomware mess had questions to answer themselves.",
+      "link": "https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html",
+      "published": "2026-10-12T15:16:26+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
