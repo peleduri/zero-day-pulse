@@ -1,10 +1,48 @@
 {
-  "generated": "2026-10-13T13:04:29.926674+00:00",
-  "total": 13,
-  "kev": 0,
-  "zero_day": 11,
+  "generated": "2026-10-13T22:02:10.975577+00:00",
+  "total": 34,
+  "kev": 2,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-104935",
+      "title": "CVE-2026-104935 \u2014 Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+      "summary": "Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-16)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-104935",
+      "published": "2026-10-13",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-104935"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-96951",
+      "title": "CVE-2026-96951 \u2014 Microsoft Windows Command Injection Vulnerability",
+      "summary": "Vendor: Microsoft | Product: Windows. Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-16)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96951",
+      "published": "2026-10-13",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-96951"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -21,16 +59,47 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.tenable.com/blog/critical-infrastructure-orgs-face-heightened-cyber-risk-from-nation-state-groups-ai-threats",
-      "title": "Critical infrastructure orgs face heightened cyber risk from nation-state groups, AI threats",
-      "summary": "Critical infrastructure faces mounting threats from nation-state groups and AI-driven attacks. In the latest installment of our Cybersecurity Awareness Month blog series, learn how leading cybersecurity agencies, such as CISA, are advising critical infrastructure organizations on ways to protect themselves and the essential services they provide. Key takeaways Critical infrastructure organizations often struggle with asset visibility gaps that create hidden attack vectors. Many older OT systems are difficult to inventory, leaving them unmonitored and unpatched. Attackers are leveraging AI to map converged IT/OT networks at machine speed and exploit uninventoried legacy systems. Attackers are also using AI to attain the specialized know-how to breach complex industrial control systems. Iran-affiliated APT groups have attacked U.S. water, energy, and government facilities since the U.S. launched Operation Epic Fury in February, according to the U.S. government . As part of Cybersecurity Awareness Month, CISA is urging critical infrastructure operators to establish a solid cyber hygiene foundation, anchored on reducing vulnerabilities, replacing unsupported legacy devices, and preparing rapid recovery plans. Cybersecurity Awareness Month 2026 finds critical infrastructure organizations facing a particularly daunting cyber risk landscape. Always a prime target for cybercriminals, hacktivists, and nation-state hacking groups, critical infrastructure organizations this year have been grappling with a heightened threat from adversaries affiliated with Iran\u2019s government, as documented by global cybersecurity agencies and researchers. Specifically, many of these nation-state groups have shifted their focus from stealthy cyber espionage activities to destructive cyber attacks designed to disrupt victims\u2019 operations, experts have observed. In addition, critical infrastructure organizations, which often must secure complex environments where IT and operational technology (OT) c",
-      "link": "https://www.tenable.com/blog/critical-infrastructure-orgs-face-heightened-cyber-risk-from-nation-state-groups-ai-threats",
-      "published": "2026-10-13T13:00:00+00:00",
-      "source": "Tenable Security Research",
+      "id": "https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/",
+      "title": "Microsoft October 2026 Patch Tuesday fixes 1,411 flaws, 3 zero-days",
+      "summary": "Today is Microsoft's October 2026 Patch Tuesday, with security updates addressing a record-breaking 1,411 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/",
+      "published": "2026-10-13T19:56:09+00:00",
+      "source": "Bleeping Computer",
       "tags": [
-        "cloud",
-        "research",
-        "vuln"
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/",
+      "title": "Ivanti Zero-Day Chain Gave Attackers Root Access to Fully Patched VPN",
+      "summary": "CVE-2026-104935 affects Ivanti Connect Secure and it can be exploited for unauthenticated remote code execution with elevated privileges. The post Ivanti Zero-Day Chain Gave Attackers Root Access to Fully Patched VPN appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/ivanti-zero-day-chain-gave-attackers-root-access-to-fully-patched-vpn/",
+      "published": "2026-10-13T18:43:43+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-104935"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html",
+      "title": "Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access, Only Two Patched So Far",
+      "summary": "An attacker chained three zero-day flaws in Ivanti Connect Secure, a VPN appliance, to run commands as root without logging in, security firm\u00a0Volexity said\u00a0on October 13. Ivanti has released fixes for two of the flaws and told customers on affected versions to \"act immediately.\" A fix for the third is still pending, according to Volexity.\n\nVolexity, which reported the flaws to Ivanti,",
+      "link": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html",
+      "published": "2026-10-13T17:33:11+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -151,34 +220,17 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html",
-      "title": "\u26a1 Weekly Recap: Helpdesk 0-Days, Rogue Certs, ShinyHunters Arrest, AI-Fooling Malware and More",
-      "summary": "Some meetings last longer than it took attackers to jump on a newly disclosed security flaw this week. Within hours, they were already testing it. That's not much time to read the warning, let alone do something about it.\n\nBut speed is only part of the problem. A secure connection didn't always mean a safe destination. People offering to fix a ransomware mess had questions to answer themselves.",
-      "link": "https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html",
-      "published": "2026-10-12T15:16:26+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
+      "title": "Ivanti warns of Connect Secure zero-day exploited in attacks",
+      "summary": "Ivanti urged customers on Tuesday to immediately patch an actively exploited zero-day vulnerability in the Ivanti Connect Secure (ICS) remote access gateway. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
+      "published": "2026-10-13T15:45:50+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "zeroday"
+        "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/bricksforge-wordpress-plugin-vulnerability-exploited-in-the-wild/",
-      "title": "Bricksforge WordPress Plugin Vulnerability Exploited in the Wild",
-      "summary": "The vulnerability tracked as CVE-2026-85097 can allow threat actors to take control of the targeted WordPress websites. The post Bricksforge WordPress Plugin Vulnerability Exploited in the Wild appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/bricksforge-wordpress-plugin-vulnerability-exploited-in-the-wild/",
-      "published": "2026-10-12T13:14:37+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-85097"
-      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -202,6 +254,328 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/",
+      "title": "Ghostscript flaw lets hackers hijack servers via PDF uploads",
+      "summary": "A critical heap buffer overflow vulnerability (CVE-2026-39919) in the Ghostscript interpreter and rendering engine could allow\u00a0remote code execution through specially crafted PDF files. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/",
+      "published": "2026-10-13T21:33:26+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-39919"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70035",
+      "title": "Microsoft Security Advisory CVE-2026-70035 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nRestrictive XAML and XPS security fixes block unsafe URI fetching and navigation, propagate untrusted-input state through hyperlink navigation, add TrueType font protection and XAML nesting-depth limits, and avoid caching positive DNS zone-policy decisions.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/451\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-502 (Deserialization of Untrusted Data)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.A",
+      "link": "https://github.com/advisories/GHSA-4j9v-h7pp-725h",
+      "published": "2026-10-13T20:53:46Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70035"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70007",
+      "title": "Microsoft Security Advisory CVE-2026-70007 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nCrafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `CPSTrans::Initialize`, causing heap out-of-bounds writes or reads.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/450\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-787 (Out-of-bounds Write)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x",
+      "link": "https://github.com/advisories/GHSA-pfwj-2f93-rf42",
+      "published": "2026-10-13T20:52:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70007"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-87697",
+      "title": "Microsoft Security Advisory CVE-2026-87697 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nWPF XPS synthetic hyperlinks exposed through UI Automation can bypass restrictive navigation checks and reach attacker-controlled content, enabling remote code execution after user interaction.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/471\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-502 (Deserialization of Untrusted Data)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDeskt",
+      "link": "https://github.com/advisories/GHSA-c27m-942f-rcfh",
+      "published": "2026-10-13T20:52:24Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-87697"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96230",
+      "title": "Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.AspNetCore.Components.WebAssembly.Server. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nThe Blazor WebAssembly development-server debug page can reflect unencoded exception text, allowing cross-origin script injection through the unauthenticated `/_framework/debug` endpoint used by `dotnet watch`.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/478\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n- **Weakness:** CWE-79 (Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'))\n\n## Affected Platforms\n\n- **Platforms:** Windows, Linux, macOS\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.AspNetCore.Components.WebAssembly.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Components.WebAssembly.Server) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.AspNetCore.Components.WebAssembly.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Components.WebAssembly.Server) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.AspNetCore.Components.WebAssembly.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Components.WebAssembly.Server) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.AspNetCore.Components.WebAssembly.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Components.WebAssembly.Server) | >= 9.0.0, <= 9.0.20 | 9.0.21\n\n## Advisory FAQ\n\n### <a name=\"how-affected\"></a>How do I know if I am affected?\n\nIf using a package l",
+      "link": "https://github.com/advisories/GHSA-qjpx-jqm5-h2c4",
+      "published": "2026-10-13T20:51:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96230"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96224",
+      "title": "Microsoft Security Advisory CVE-2026-96224 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nCrafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `CPSTrans::Initialize`, causing heap out-of-bounds writes or reads.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/475\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-787 (Out-of-bounds Write)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runt",
+      "link": "https://github.com/advisories/GHSA-xq57-crx4-g373",
+      "published": "2026-10-13T20:50:11Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96224"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-85363",
+      "title": "Microsoft Security Advisory CVE-2026-85363 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nAttacker-controlled XPS glyph coordinates can overflow destination pointer arithmetic in `CD3DGlyphBank::RectFillAlpha`, causing an out-of-bounds write and process termination.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/469\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-190 (Integer Overflow or Wraparound)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime",
+      "link": "https://github.com/advisories/GHSA-f63g-mx39-3r38",
+      "published": "2026-10-13T20:49:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-85363"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-83520",
+      "title": "Microsoft Security Advisory CVE-2026-83520 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nRestrictive XAML and XPS security fixes block unsafe URI fetching and navigation, propagate untrusted-input state through hyperlink navigation, add TrueType font protection and XAML nesting-depth limits, and avoid caching positive DNS zone-policy decisions.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/467\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-502 (Deserialization of Untrusted Data)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) |",
+      "link": "https://github.com/advisories/GHSA-4w5f-7jp2-w48g",
+      "published": "2026-10-13T20:48:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-83520"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70174",
+      "title": "Microsoft Security Advisory CVE-2026-70174 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nWPF XPS hyperlink navigation can bypass URI restrictions and reach an attacker-controlled `ObjectDataProvider`, enabling remote code execution after user interaction.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/456\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-358 (Improperly Implemented Security Check for Standard)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Run",
+      "link": "https://github.com/advisories/GHSA-f749-vhgx-39h6",
+      "published": "2026-10-13T20:48:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70174"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96235",
+      "title": "Microsoft Security Advisory CVE-2026-96235 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nCrafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `CPSTrans::Initialize`, causing heap out-of-bounds writes or reads.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/483\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-787 (Out-of-bounds Write)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.WindowsDesktop.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-arm64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x64) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.WindowsDesktop.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Runtime.win-x86) | >= 10.0.0, <= 10.0.12 | 10.0.1",
+      "link": "https://github.com/advisories/GHSA-g44w-h65v-4cw9",
+      "published": "2026-10-13T20:45:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96235"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-66822",
+      "title": "Microsoft Security Advisory CVE-2026-66822 - .NET and Visual Studio Information Disclosure Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in System.Net.Http. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nSocketsHttpHandler can retain a `Proxy-Authorization` header across an HTTP redirect and leak basic proxy credentials to the destination server.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/448\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Moderate\n- **Score:** 5.9\n- **Vector:** `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N`\n- **Weakness:** CWE-201 (Insertion of Sensitive Information Into Sent Data)\n\n## Affected Platforms\n\n- **Platforms:** Windows, Linux, macOS\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.NETCore.App.Runtime.linux-arm](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.linux-arm) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.NETCore.App.Runtime.linux-arm64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.linux-arm64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.NETCore.App.Runtime.linux-musl-arm](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.linux-musl-arm) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.NETCore.App.Runtime.linux-musl-arm64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.linux-musl-arm64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.NETCore.App.Runtime.linux-musl-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.linux-musl-x64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.NETCore.App.Runtime.linux-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.linux-x64) | >= 9.0.0, <= 9.0.20 | 9.0.21\n[Microsoft.NETCor",
+      "link": "https://github.com/advisories/GHSA-wxxw-5cvc-53j7",
+      "published": "2026-10-13T20:41:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-66822"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88092",
+      "title": "Microsoft Security Advisory CVE-2026-88092 - ASP.NET Core Security Feature Bypass Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.AspNetCore.Server.Kestrel.Core. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nAn aborted Kestrel HTTP/1 connection can reparse unread request-body bytes as another request, creating a request-smuggling or desynchronization path.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/472\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Critical\n- **Score:** 9.4\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L`\n- **Weakness:** CWE-444 (Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling'))\n\n## Affected Platforms\n\n- **Platforms:** Windows, Linux, macOS\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.AspNetCore.App.Runtime.linux-arm](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-arm) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.AspNetCore.App.Runtime.linux-arm64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.AspNetCore.App.Runtime.linux-musl-arm](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-arm) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.AspNetCore.App.Runtime.linux-musl-arm64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.AspNetCore.App.Runtime.linux-musl-x64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-x64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.AspNetCore.App.Runtime.linux-x64](https://www.nuget.org/pac",
+      "link": "https://github.com/advisories/GHSA-rv87-ccxw-8ggf",
+      "published": "2026-10-13T20:40:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88092"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70188",
+      "title": "Microsoft Security Advisory CVE-2026-70188 - ASP.NET Core Security Feature Bypass Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft.AspNetCore.Server.Kestrel.Core. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nKestrel accepts newline characters in HTTP/2 request trailers and values retrieved from the dynamic HPACK table instead of treating them as malformed.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/462\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Critical\n- **Score:** 9.1\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N`\n- **Weakness:** CWE-444 (Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling'))\n\n## Affected Platforms\n\n- **Platforms:** Windows, Linux, macOS\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.AspNetCore.App.Runtime.linux-arm](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-arm) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.AspNetCore.App.Runtime.linux-arm64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-arm64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.AspNetCore.App.Runtime.linux-musl-arm](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-arm) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.AspNetCore.App.Runtime.linux-musl-arm64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-arm64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.AspNetCore.App.Runtime.linux-musl-x64](https://www.nuget.org/packages/Microsoft.AspNetCore.App.Runtime.linux-musl-x64) | >= 11.0.0-previ",
+      "link": "https://github.com/advisories/GHSA-fpq8-4vhr-rcxx",
+      "published": "2026-10-13T20:37:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70188"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70197",
+      "title": "Microsoft Security Advisory CVE-2026-70197 - .NET and Visual Studio Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in System.Net.Sockets. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nOn Windows, reusing a `SocketAsyncEventArgs` instance across IPv4 and IPv6 datagram sockets can retain an undersized cached native address buffer, allowing an unauthenticated out-of-bounds write during `ReceiveFromAsync`.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/466\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.1\n- **Vector:** `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-787 (Out-of-bounds Write)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.NETCore.App.Runtime.win-arm](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-arm) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.NETCore.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-arm64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.NETCore.App.Runtime.win-x64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.NETCore.App.Runtime.win-x86](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x86) | >= 8.0.0, <= 8.0.31 | 8.0.32\n[Microsoft.NETCore.App.Runtime.win-arm](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-arm) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[Microsoft.NETCore.App.Runtime.win-arm64](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-arm64) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc",
+      "link": "https://github.com/advisories/GHSA-4mpw-cpwj-hxxj",
+      "published": "2026-10-13T20:34:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70197"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102870",
+      "title": "Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in the Blazor WebAssembly debugger included in `Microsoft.AspNetCore.Components.WebAssembly.Server`. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nThe Blazor WebAssembly debug proxy evaluates debugger expressions by generating and compiling C# source. Certain values originating in the application being debugged, including `ToString()` results, descriptions, and class names, are embedded in that generated source without consistent escaping. An attacker-controlled value can escape the generated string literal and execute code on a developer's machine when the developer evaluates an expression during debugging.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/445\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** High\n- **Score:** 8.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`\n- **Weakness:** CWE-94 (Improper Control of Generation of Code ('Code Injection'))\n\n## Affected Platforms\n\n- **Platforms:** Windows, Linux, macOS\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.AspNetCore.Components.WebAssembly.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Components.WebAssembly.Server) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[Microsoft.AspNetCore.Components.WebAssembly.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Components.WebAssembly.Server) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2.26478.115\n\n## Advisory FAQ\n\n### <a name=\"how-affected\"></a>How do I know if I am affected?\n\nYou are affected if you use a vulnerable version of `Microsoft.AspN",
+      "link": "https://github.com/advisories/GHSA-g27p-qf6j-c96c",
+      "published": "2026-10-13T20:27:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102870"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-70162",
+      "title": "Microsoft Security Advisory CVE-2026-70162 - .NET Denial of Service Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in System.Security.Cryptography.Pkcs. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nOn Windows, `EnvelopedCms.Decode` can perform quadratic work while processing attacker-supplied CMS or PKCS#7 attributes, causing pre-authentication CPU exhaustion.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/454\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Moderate\n- **Score:** 5.9\n- **Vector:** `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H`\n- **Weakness:** CWE-405 (Asymmetric Resource Consumption (Amplification))\n\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs) | >= 10.0.0, <= 10.0.12 | 10.0.13\n[System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs) | >= 11.0.0-preview.1, <= 11.0.0-rc.1 | 11.0.0-rc.2\n[System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs) | >= 8.0.0, <= 8.0.1 | 8.0.2\n[System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs) | >= 9.0.0, <= 9.0.20 | 9.0.21\n\n## Advisory FAQ\n\n### <a name=\"how-affected\"></a>How do I know if I am affected?\n\nIf using a package listed in [affected packages](#affected-packages), you're exposed to the vulnerability.\n\n### <a name=\"how-fix\"></a>How do I fix the issue?\n\n1. To fix the issue please install the latest version of .NET. If you have installed one or more .NET SDKs t",
+      "link": "https://github.com/advisories/GHSA-2fmv-rv2c-59x7",
+      "published": "2026-10-13T20:07:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-70162"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-105016",
+      "title": "Microsoft Security Advisory CVE-2026-105016 - Microsoft QUIC Remote Code Execution Vulnerability",
+      "summary": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Microsoft QUIC as used by .NET 8.0, .NET 9.0, .NET 10.0, and .NET 11 RC2 on Windows. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.\n\nA crafted IPv6 QUIC packet can reach the Microsoft QUIC HTTP/3 path without authentication or user interaction and trigger remote code execution.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/446\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Critical\n- **Score:** 9.8\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`\n\n- **Weakness:** CWE-122 (Heap-based Buffer Overflow)\n## Affected Platforms\n\n- **Platforms:** Windows\n- **Architectures:** All\n\n## <a name=\"affected-packages\"></a>Affected Packages\n\nThe vulnerability affects Microsoft .NET projects that use an affected package version listed below.\n\nPackage name | Affected version | Patched version\n------------ | ---------------- | ---------------\n[Microsoft.Native.Quic.MsQuic.Schannel](https://www.nuget.org/packages/Microsoft.Native.Quic.MsQuic.Schannel) | >= 2.5.11-ci.156755675, <= 2.5.11-ci.156755675 | 2.5.11-ci.159417053\n\n## Advisory FAQ\n\n### <a name=\"how-affected\"></a>How do I know if I am affected?\n\nIf your application uses a package version listed in [affected packages](#affected-packages), it is exposed to the vulnerability.\n\n### <a name=\"how-fix\"></a>How do I fix the issue?\n\n1. Install the latest servicing update for your supported .NET release. If you have installed one or more .NET SDKs through Visual Studio, Visual Studio will prompt you to update Visual Studio, which will also update your .NET SDKs.\n2. If your application directly references `Microsoft.Native.Quic.MsQuic.Schannel`, update the package reference to version 2.5.11-ci.159417053 or later. You can list the .NET versions installed on your system by ru",
+      "link": "https://github.com/advisories/GHSA-5gjq-3f94-rcf7",
+      "published": "2026-10-13T19:56:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-105016"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/docker-hub-flaw-let-attackers-impersonate-users-tamper-with-images/",
+      "title": "Docker Hub flaw let attackers impersonate users, tamper with images",
+      "summary": "Docker has disclosed a critical vulnerability (CVE-2026-105445) in Docker Hub that let attackers access another user's container repositories using a personal access token (PAT). [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/docker-hub-flaw-let-attackers-impersonate-users-tamper-with-images/",
+      "published": "2026-10-13T15:20:20+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-105445"
       ],
       "is_zero_day": false,
       "is_high_severity": true
