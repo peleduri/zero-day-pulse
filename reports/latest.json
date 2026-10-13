@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-13T04:13:43.844217+00:00",
-  "total": 12,
+  "generated": "2026-10-13T13:04:29.926674+00:00",
+  "total": 13,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -21,18 +21,34 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/10/attackers-exploit-cvss-100-bricksforge.html",
-      "title": "Attackers Exploit CVSS 10.0 Bricksforge WordPress Flaw Enabling Unauthenticated RCE",
-      "summary": "A maximum-severity security flaw impacting the Bricksforge plugin for WordPress has come under active exploitation in the wild, according to Patchstack.\n\nThe critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), which allows unauthenticated attackers to upload and execute arbitrary PHP code on vulnerable WordPress websites, resulting in remote code execution (RCE). The",
-      "link": "https://thehackernews.com/2026/10/attackers-exploit-cvss-100-bricksforge.html",
-      "published": "2026-10-12T09:02:14+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.tenable.com/blog/critical-infrastructure-orgs-face-heightened-cyber-risk-from-nation-state-groups-ai-threats",
+      "title": "Critical infrastructure orgs face heightened cyber risk from nation-state groups, AI threats",
+      "summary": "Critical infrastructure faces mounting threats from nation-state groups and AI-driven attacks. In the latest installment of our Cybersecurity Awareness Month blog series, learn how leading cybersecurity agencies, such as CISA, are advising critical infrastructure organizations on ways to protect themselves and the essential services they provide. Key takeaways Critical infrastructure organizations often struggle with asset visibility gaps that create hidden attack vectors. Many older OT systems are difficult to inventory, leaving them unmonitored and unpatched. Attackers are leveraging AI to map converged IT/OT networks at machine speed and exploit uninventoried legacy systems. Attackers are also using AI to attain the specialized know-how to breach complex industrial control systems. Iran-affiliated APT groups have attacked U.S. water, energy, and government facilities since the U.S. launched Operation Epic Fury in February, according to the U.S. government . As part of Cybersecurity Awareness Month, CISA is urging critical infrastructure operators to establish a solid cyber hygiene foundation, anchored on reducing vulnerabilities, replacing unsupported legacy devices, and preparing rapid recovery plans. Cybersecurity Awareness Month 2026 finds critical infrastructure organizations facing a particularly daunting cyber risk landscape. Always a prime target for cybercriminals, hacktivists, and nation-state hacking groups, critical infrastructure organizations this year have been grappling with a heightened threat from adversaries affiliated with Iran\u2019s government, as documented by global cybersecurity agencies and researchers. Specifically, many of these nation-state groups have shifted their focus from stealthy cyber espionage activities to destructive cyber attacks designed to disrupt victims\u2019 operations, experts have observed. In addition, critical infrastructure organizations, which often must secure complex environments where IT and operational technology (OT) c",
+      "link": "https://www.tenable.com/blog/critical-infrastructure-orgs-face-heightened-cyber-risk-from-nation-state-groups-ai-threats",
+      "published": "2026-10-13T13:00:00+00:00",
+      "source": "Tenable Security Research",
       "tags": [
-        "news",
-        "zeroday"
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.rapid7.com/blog/post/etr-cve-2026-97229-critical-unauthenticated-remote-code-execution-in-gitlab",
+      "title": "CVE-2026-97229: Critical Unauthenticated Remote Code Execution in GitLab",
+      "summary": "Overview On October 12, 2026, GitLab published a critical patch release for CVE-2026-97229 , an integer overflow or wraparound ( CWE-190 ) in the CI/CD regular expression compiler affecting GitLab Community Edition (CE) and Enterprise Edition (EE). GitLab assigned the vulnerability a CVSSv3.1 score of 10.0 . Under certain conditions, a remote attacker can execute arbitrary code on an affected GitLab server through a specially crafted regular expression stored in a malicious CI/CD configuration. While the vendor supplied CVSS score indicates that exploitation is fully unauthenticated, in reproducing the exploit it was noted that an attacker must have a mechanism to plant a malicious CI/CD configuration to a repository prior to triggering the vulnerability. On GitLab instances where new users can self register and create projects, this constraint is removed. The vulnerability affects self-managed GitLab instances across all deployment types. GitLab.com is already running a patched version, and GitLab Dedicated customers do not need to take action. As of this writing, there is no confirmed in-the-wild exploitation of CVE-2026-97229. However, Rapid7 Intelligence has independently reproduced arbitrary code execution on an unpatched, official GitLab CE image. Given the vulnerability's maximum CVSS score, network-accessible trigger, and code execution in a GitLab application worker, Rapid7 recommends upgrading affected self-managed instances on an urgent basis, outside of normal patch cycles. Technical overview Rapid7's testing found that an attacker must first be able to commit a malicious CI/CD configuration file .gitlab-ci.yml, and a repository path containing UTF-8 characters to a branch in a public project. For example, an ordinary account can satisfy this prerequisite by creating a public project on a self-managed GitLab instance where that functionality is permitted. The crafted regular expression initially compiles in a compact US-ASCII representation and passes Gi",
+      "link": "https://www.rapid7.com/blog/post/etr-cve-2026-97229-critical-unauthenticated-remote-code-execution-in-gitlab",
+      "published": "2026-10-13T11:29:03+00:00",
+      "source": "Rapid7 Blog",
+      "tags": [
+        "research",
+        "metasploit"
       ],
       "cve_ids": [
-        "CVE-2026-85097"
+        "CVE-2026-97229"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -150,6 +166,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.securityweek.com/bricksforge-wordpress-plugin-vulnerability-exploited-in-the-wild/",
+      "title": "Bricksforge WordPress Plugin Vulnerability Exploited in the Wild",
+      "summary": "The vulnerability tracked as CVE-2026-85097 can allow threat actors to take control of the targeted WordPress websites. The post Bricksforge WordPress Plugin Vulnerability Exploited in the Wild appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/bricksforge-wordpress-plugin-vulnerability-exploited-in-the-wild/",
+      "published": "2026-10-12T13:14:37+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-85097"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -169,23 +202,6 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/critical-sonicwall-sma-1000-flaw.html",
-      "title": "Critical SonicWall SMA 1000 Flaw Targeted in 135 Exploitation Attempts After Patch",
-      "summary": "Threat actors have been observed exploiting a recently disclosed critical security flaw in SonicWall Secure Mobile Access (SMA) 1000 appliances within days of public disclosure.\n\nThe vulnerability, tracked as CVE-2026-102255 (CVSS score: 10.0), is a case of pre-authenticated server-side request forgery (SSRF) that could allow a remote attacker \"to direct the appliance to issue requests on their",
-      "link": "https://thehackernews.com/2026/10/critical-sonicwall-sma-1000-flaw.html",
-      "published": "2026-10-12T10:36:56+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-102255"
       ],
       "is_zero_day": false,
       "is_high_severity": true

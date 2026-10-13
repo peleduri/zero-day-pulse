@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-13 04:13 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-13 13:04 UTC &nbsp;|&nbsp; **Total:** 13 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -13,18 +13,25 @@
 
 ---
 
-## 2. 🟠 Zero-Day — Attackers Exploit CVSS 10.0 Bricksforge WordPress Flaw Enabling Unauthenticated RCE
+## 2. 🟠 Zero-Day — Critical infrastructure orgs face heightened cyber risk from nation-state groups, AI threats
 
-**CVE:** `CVE-2026-85097` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-12
-**Reference:** <https://thehackernews.com/2026/10/attackers-exploit-cvss-100-bricksforge.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-13
+**Reference:** <https://www.tenable.com/blog/critical-infrastructure-orgs-face-heightened-cyber-risk-from-nation-state-groups-ai-threats>
 
-> A maximum-severity security flaw impacting the Bricksforge plugin for WordPress has come under active exploitation in the wild, according to Patchstack.
-
-The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), which allows unauthenticated attackers to upload and execute arbitrary PHP code on vulnerable WordPress websites, resulting in remote code execution (RCE). The
+> Critical infrastructure faces mounting threats from nation-state groups and AI-driven attacks. In the latest installment of our Cybersecurity Awareness Month blog series, learn how leading cybersecurity agencies, such as CISA, are advising critical infrastructure organizations on ways to protect themselves and the essential services they provide. Key takeaways Critical infrastructure organizations…
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — CVE-2026-97229: Critical Unauthenticated Remote Code Execution in GitLab
+
+**CVE:** `CVE-2026-97229` &nbsp;|&nbsp; **Source:** Rapid7 Blog &nbsp;|&nbsp; **Published:** 2026-10-13
+**Reference:** <https://www.rapid7.com/blog/post/etr-cve-2026-97229-critical-unauthenticated-remote-code-execution-in-gitlab>
+
+> Overview On October 12, 2026, GitLab published a critical patch release for CVE-2026-97229 , an integer overflow or wraparound ( CWE-190 ) in the CI/CD regular expression compiler affecting GitLab Community Edition (CE) and Enterprise Edition (EE). GitLab assigned the vulnerability a CVSSv3.1 score of 10.0 . Under certain conditions, a remote attacker can execute arbitrary code on an affected GitL…
+
+---
+
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -33,7 +40,7 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -42,7 +49,7 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -51,7 +58,7 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -60,7 +67,7 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -69,7 +76,7 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -78,7 +85,7 @@ The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), whi
 
 ---
 
-## 9. 🟠 Zero-Day — ⚡ Weekly Recap: Helpdesk 0-Days, Rogue Certs, ShinyHunters Arrest, AI-Fooling Malware and More
+## 10. 🟠 Zero-Day — ⚡ Weekly Recap: Helpdesk 0-Days, Rogue Certs, ShinyHunters Arrest, AI-Fooling Malware and More
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-12
 **Reference:** <https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html>
@@ -89,7 +96,16 @@ But speed is only part of the problem. A secure connection didn&#x27;t always me
 
 ---
 
-## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 11. 🟠 Zero-Day — Bricksforge WordPress Plugin Vulnerability Exploited in the Wild
+
+**CVE:** `CVE-2026-85097` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-12
+**Reference:** <https://www.securityweek.com/bricksforge-wordpress-plugin-vulnerability-exploited-in-the-wild/>
+
+> The vulnerability tracked as CVE-2026-85097 can allow threat actors to take control of the targeted WordPress websites. The post Bricksforge WordPress Plugin Vulnerability Exploited in the Wild appeared first on SecurityWeek .
+
+---
+
+## 12. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -98,18 +114,7 @@ But speed is only part of the problem. A secure connection didn&#x27;t always me
 
 ---
 
-## 11. 🟡 High Severity — Critical SonicWall SMA 1000 Flaw Targeted in 135 Exploitation Attempts After Patch
-
-**CVE:** `CVE-2026-102255` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-12
-**Reference:** <https://thehackernews.com/2026/10/critical-sonicwall-sma-1000-flaw.html>
-
-> Threat actors have been observed exploiting a recently disclosed critical security flaw in SonicWall Secure Mobile Access (SMA) 1000 appliances within days of public disclosure.
-
-The vulnerability, tracked as CVE-2026-102255 (CVSS score: 10.0), is a case of pre-authenticated server-side request forgery (SSRF) that could allow a remote attacker &quot;to direct the appliance to issue requests on the…
-
----
-
-## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 13. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
