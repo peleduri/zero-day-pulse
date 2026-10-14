@@ -1,48 +1,10 @@
 {
-  "generated": "2026-10-13T22:02:10.975577+00:00",
-  "total": 34,
-  "kev": 2,
-  "zero_day": 12,
+  "generated": "2026-10-14T02:26:26.618386+00:00",
+  "total": 36,
+  "kev": 0,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-104935",
-      "title": "CVE-2026-104935 \u2014 Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
-      "summary": "Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-16)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-104935",
-      "published": "2026-10-13",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-104935"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-96951",
-      "title": "CVE-2026-96951 \u2014 Microsoft Windows Command Injection Vulnerability",
-      "summary": "Vendor: Microsoft | Product: Windows. Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-16)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96951",
-      "published": "2026-10-13",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-96951"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -55,6 +17,43 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2026/",
+      "title": "October 2026 Patch Tuesday: 1,413 CVEs Include Three Zero-Days and 75 Critical Vulnerabilities",
+      "summary": "",
+      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2026/",
+      "published": "Oct 13, 2026 00:00:00-0500",
+      "source": "CrowdStrike Blog",
+      "tags": [
+        "cloud",
+        "threat-intel",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/microsofts-october-2026-patch-tuesday-addresses-1407-cves-cve-2026-96951",
+      "title": "Microsoft\u2019s October 2026 Patch Tuesday addresses 1407 CVEs (CVE-2026-96951)",
+      "summary": "69 Critical 1337 Important 0 Moderate 1 Low Microsoft addresses 1407 CVEs in the tenth Patch Tuesday of 2026, marking the second consecutive month to reset the bar as the largest Patch Tuesday release. This month\u2019s updates include patches for two zero days, including one that was exploited in the wild. Microsoft patched 1,407 CVEs in its October 2026 Patch Tuesday release, with 69 rated critical, 1,337 rated as important, and one rated as low. This month\u2019s update includes patches for 301 products and components. The following table lists the products with the most CVEs patched this month. A full list of patched products is available in the appendix. Rank Product CVE Count 1 Microsoft Office Excel 69 2 Role: DNS Server 52 3 Windows Kernel 46 4 Windows Installer 38 5 Windows Win32 Kernel Subsystem 36 6 Microsoft Office SharePoint 34 7 Microsoft Windows Search Component 29 8 Windows NTFS 26 9 .NET 25 10 (Tie) Microsoft Office Word 22 10 (Tie) SQL Server 22 10 (Tie) Windows Error Reporting 22 Elevation of Privilege (EoP) vulnerabilities accounted for 47.9% of the vulnerabilities patched this month, followed by remote code execution (RCE) vulnerabilities at 22.3%. Important CVE-2026-96951 | Windows Shell security feature bypass vulnerability CVE-2026-96951 is a security feature bypass vulnerability affecting Windows Shell. It received a CVSSv3 score of 8.8 and was rated as important. According to Microsoft, this vulnerability was exploited in the wild as a zero-day. An attacker could exploit this vulnerability using social engineering tactics, via email or messages, to convince their target to open a malicious file. Successful exploitation would bypass the Mark of the Web (MOTW) security feature. This is the third flaw in Windows Shell that was exploited in the wild in 2026: CVE-2026-21510 was patched in February 2026\u2019s Patch Tuesday while CVE-2026-32202 was patched in April 2026\u2019s Patch Tuesday . Important CVE-2026-108398 |.NET Framework security feature bypass vulnerab",
+      "link": "https://www.tenable.com/blog/microsofts-october-2026-patch-tuesday-addresses-1407-cves-cve-2026-96951",
+      "published": "2026-10-13T21:49:11+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-96951",
+        "CVE-2026-21510",
+        "CVE-2026-32202",
+        "CVE-2026-108398"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -100,6 +99,22 @@
       "tags": [
         "news",
         "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/critical-infrastructure-orgs-face-heightened-cyber-risk-from-nation-state-groups-ai-threats",
+      "title": "Critical infrastructure orgs face heightened cyber risk from nation-state groups, AI threats",
+      "summary": "Critical infrastructure faces mounting threats from nation-state groups and AI-driven attacks. In the latest installment of our Cybersecurity Awareness Month blog series, learn how leading cybersecurity agencies, such as CISA, are advising critical infrastructure organizations on ways to protect themselves and the essential services they provide. Key takeaways Critical infrastructure organizations often struggle with asset visibility gaps that create hidden attack vectors. Many older OT systems are difficult to inventory, leaving them unmonitored and unpatched. Attackers are leveraging AI to map converged IT/OT networks at machine speed and exploit uninventoried legacy systems. Attackers are also using AI to attain the specialized know-how to breach complex industrial control systems. Iran-affiliated APT groups have attacked U.S. water, energy, and government facilities since the U.S. launched Operation Epic Fury in February, according to the U.S. government . As part of Cybersecurity Awareness Month, CISA is urging critical infrastructure operators to establish a solid cyber hygiene foundation, anchored on reducing vulnerabilities, replacing unsupported legacy devices, and preparing rapid recovery plans. Cybersecurity Awareness Month 2026 finds critical infrastructure organizations facing a particularly daunting cyber risk landscape. Always a prime target for cybercriminals, hacktivists, and nation-state hacking groups, critical infrastructure organizations this year have been grappling with a heightened threat from adversaries affiliated with Iran\u2019s government, as documented by global cybersecurity agencies and researchers. Specifically, many of these nation-state groups have shifted their focus from stealthy cyber espionage activities to destructive cyber attacks designed to disrupt victims\u2019 operations, experts have observed. In addition, critical infrastructure organizations, which often must secure complex environments where IT and operational technology (OT) c",
+      "link": "https://www.tenable.com/blog/critical-infrastructure-orgs-face-heightened-cyber-risk-from-nation-state-groups-ai-threats",
+      "published": "2026-10-13T13:00:00+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -254,6 +269,25 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/",
+      "title": "Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)",
+      "summary": "A . is all you need! Today Microsoft shipped the patch for a vulnerability in Visual Studio Copilot that I reported in August. Microsoft classified it as Important severity Remote Code Execution vulnerability. At the root cause it allows Copilot in Visual Studio or SQL Server Management Studio to bypass a path validation check and write to its own settings and configuration files . This allows Copilot to escape containment restrictions and achieve arbitrary command execution.",
+      "link": "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/",
+      "published": "2026-10-13T22:00:40+00:00",
+      "source": "Embrace The Red (Prompt Injection Research)",
+      "tags": [
+        "ai",
+        "prompt-injection",
+        "agent",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-103572"
       ],
       "is_zero_day": false,
       "is_high_severity": true
