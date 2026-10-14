@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-14 02:26 UTC &nbsp;|&nbsp; **Total:** 36 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 21 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-14 10:46 UTC &nbsp;|&nbsp; **Total:** 37 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 22 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -148,7 +148,18 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 17. 🟡 High Severity — Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)
+## 17. 🟡 High Severity — AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host
+
+**CVE:** `CVE-2026-74580` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html>
+
+> A flaw in Linux&#x27;s vhost subsystem lets a local user read and write kernel memory at will and become root across nearly a decade of kernel versions. In one virtualization setup, it lets an untrusted virtual machine write to the host&#x27;s memory and hijack the program that runs the virtual machine.
+
+The bug is tracked as CVE-2026-74580 and named Vghost. Tencent Zhuque Lab, which found the
+
+---
+
+## 18. 🟡 High Severity — Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)
 
 **CVE:** `CVE-2026-103572` &nbsp;|&nbsp; **Source:** Embrace The Red (Prompt Injection Research) &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/>
@@ -157,7 +168,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 18. 🟡 High Severity — Ghostscript flaw lets hackers hijack servers via PDF uploads
+## 19. 🟡 High Severity — Ghostscript flaw lets hackers hijack servers via PDF uploads
 
 **CVE:** `CVE-2026-39919` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/>
@@ -166,7 +177,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 19. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70035 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 20. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70035 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-70035` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-4j9v-h7pp-725h>
@@ -179,7 +190,7 @@ Restrictive XAML and XPS security fixes block unsafe URI fetching and navigation
 
 ---
 
-## 20. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70007 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 21. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70007 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-70007` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-pfwj-2f93-rf42>
@@ -192,7 +203,7 @@ Crafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `C
 
 ---
 
-## 21. 🟡 High Severity — Microsoft Security Advisory CVE-2026-87697 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 22. 🟡 High Severity — Microsoft Security Advisory CVE-2026-87697 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-87697` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-c27m-942f-rcfh>
@@ -205,7 +216,7 @@ WPF XPS synthetic hyperlinks exposed through UI Automation can bypass restrictiv
 
 ---
 
-## 22. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability
+## 23. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-96230` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-qjpx-jqm5-h2c4>
@@ -218,7 +229,7 @@ The Blazor WebAssembly development-server debug page can reflect unencoded excep
 
 ---
 
-## 23. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96224 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 24. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96224 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-96224` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-xq57-crx4-g373>
@@ -231,7 +242,7 @@ Crafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `C
 
 ---
 
-## 24. 🟡 High Severity — Microsoft Security Advisory CVE-2026-85363 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 25. 🟡 High Severity — Microsoft Security Advisory CVE-2026-85363 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-85363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-f63g-mx39-3r38>
@@ -244,7 +255,7 @@ Attacker-controlled XPS glyph coordinates can overflow destination pointer arith
 
 ---
 
-## 25. 🟡 High Severity — Microsoft Security Advisory CVE-2026-83520 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-83520 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-83520` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-4w5f-7jp2-w48g>
@@ -257,7 +268,7 @@ Restrictive XAML and XPS security fixes block unsafe URI fetching and navigation
 
 ---
 
-## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70174 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 27. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70174 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-70174` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-f749-vhgx-39h6>
@@ -270,7 +281,7 @@ WPF XPS hyperlink navigation can bypass URI restrictions and reach an attacker-c
 
 ---
 
-## 27. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96235 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 28. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96235 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-96235` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-g44w-h65v-4cw9>
@@ -283,7 +294,7 @@ Crafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `C
 
 ---
 
-## 28. 🟡 High Severity — Microsoft Security Advisory CVE-2026-66822 - .NET and Visual Studio Information Disclosure Vulnerability
+## 29. 🟡 High Severity — Microsoft Security Advisory CVE-2026-66822 - .NET and Visual Studio Information Disclosure Vulnerability
 
 **CVE:** `CVE-2026-66822` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-wxxw-5cvc-53j7>
@@ -296,7 +307,7 @@ SocketsHttpHandler can retain a `Proxy-Authorization` header across an HTTP redi
 
 ---
 
-## 29. 🟡 High Severity — Microsoft Security Advisory CVE-2026-88092 - ASP.NET Core Security Feature Bypass Vulnerability
+## 30. 🟡 High Severity — Microsoft Security Advisory CVE-2026-88092 - ASP.NET Core Security Feature Bypass Vulnerability
 
 **CVE:** `CVE-2026-88092` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-rv87-ccxw-8ggf>
@@ -309,7 +320,7 @@ An aborted Kestrel HTTP/1 connection can reparse unread request-body bytes as an
 
 ---
 
-## 30. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70188 - ASP.NET Core Security Feature Bypass Vulnerability
+## 31. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70188 - ASP.NET Core Security Feature Bypass Vulnerability
 
 **CVE:** `CVE-2026-70188` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-fpq8-4vhr-rcxx>
@@ -322,7 +333,7 @@ Kestrel accepts newline characters in HTTP/2 request trailers and values retriev
 
 ---
 
-## 31. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70197 - .NET and Visual Studio Remote Code Execution Vulnerability
+## 32. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70197 - .NET and Visual Studio Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-70197` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-4mpw-cpwj-hxxj>
@@ -335,7 +346,7 @@ On Windows, reusing a `SocketAsyncEventArgs` instance across IPv4 and IPv6 datag
 
 ---
 
-## 32. 🟡 High Severity — Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability
+## 33. 🟡 High Severity — Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-102870` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-g27p-qf6j-c96c>
@@ -348,7 +359,7 @@ The Blazor WebAssembly debug proxy evaluates debugger expressio…
 
 ---
 
-## 33. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70162 - .NET Denial of Service Vulnerability
+## 34. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70162 - .NET Denial of Service Vulnerability
 
 **CVE:** `CVE-2026-70162` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-2fmv-rv2c-59x7>
@@ -361,7 +372,7 @@ On Windows, `EnvelopedCms.Decode` can perform quadratic work while processing at
 
 ---
 
-## 34. 🟡 High Severity — Microsoft Security Advisory CVE-2026-105016 - Microsoft QUIC Remote Code Execution Vulnerability
+## 35. 🟡 High Severity — Microsoft Security Advisory CVE-2026-105016 - Microsoft QUIC Remote Code Execution Vulnerability
 
 **CVE:** `CVE-2026-105016` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://github.com/advisories/GHSA-5gjq-3f94-rcf7>
@@ -374,7 +385,7 @@ A crafted IPv6 QUIC packet can reach the Microsoft QUIC HTTP/3 path without …
 
 ---
 
-## 35. 🟡 High Severity — Docker Hub flaw let attackers impersonate users, tamper with images
+## 36. 🟡 High Severity — Docker Hub flaw let attackers impersonate users, tamper with images
 
 **CVE:** `CVE-2026-105445` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/docker-hub-flaw-let-attackers-impersonate-users-tamper-with-images/>
@@ -383,7 +394,7 @@ A crafted IPv6 QUIC packet can reach the Microsoft QUIC HTTP/3 path without …
 
 ---
 
-## 36. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 37. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

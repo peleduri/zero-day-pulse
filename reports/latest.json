@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-14T02:26:26.618386+00:00",
-  "total": 36,
+  "generated": "2026-10-14T10:46:00.315738+00:00",
+  "total": 37,
   "kev": 0,
   "zero_day": 15,
   "enriched": 0,
@@ -269,6 +269,23 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html",
+      "title": "AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host",
+      "summary": "A flaw in Linux's vhost subsystem lets a local user read and write kernel memory at will and become root across nearly a decade of kernel versions. In one virtualization setup, it lets an untrusted virtual machine write to the host's memory and hijack the program that runs the virtual machine.\n\nThe bug is tracked as\u00a0CVE-2026-74580\u00a0and named Vghost. Tencent Zhuque Lab, which found the",
+      "link": "https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html",
+      "published": "2026-10-14T07:46:57+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-74580"
       ],
       "is_zero_day": false,
       "is_high_severity": true
