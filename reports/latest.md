@@ -1,10 +1,46 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-14 16:04 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 21 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-14 21:03 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 4 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-105134 — Ahsay AhsayCBS Command Injection Vulnerability
+
+**CVE:** `CVE-2026-105134` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-105134>
+
+> Vendor: Ahsay | Product: AhsayCBS. Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133. Required action: Apply mitigations in accordance with v…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-76519 — Cisco Secure Email Gateway Relative Path Traversal Vulnerability
+
+**CVE:** `CVE-2026-76519` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-76519>
+
+> Vendor: Cisco | Product: Secure Email Gateway. Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (s…
+
+---
+
+## 3. 🔴 CISA KEV — CVE-2026-105133 — Ahsay AhsayCBS Improper Authentication Vulnerability
+
+**CVE:** `CVE-2026-105133` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-105133>
+
+> Vendor: Ahsay | Product: AhsayCBS. Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. This vulnerability can be chained with CVE-2026-105134. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance wit…
+
+---
+
+## 4. 🔴 CISA KEV — CVE-2026-0322 — Palo Alto Networks PAN-OS Code Injection Vulnerability
+
+**CVE:** `CVE-2026-0322` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-0322>
+
+> Vendor: Palo Alto Networks | Product: PAN-OS. Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk …
+
+---
+
+## 5. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,14 +49,25 @@
 
 ---
 
-## 2. 🟠 Zero-Day — October 2026 Patch Tuesday: 1,413 CVEs Include Three Zero-Days and 75 Critical Vulnerabilities
+## 6. 🟠 Zero-Day — October 2026 Patch Tuesday: 1,413 CVEs Include Three Zero-Days and 75 Critical Vulnerabilities
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Oct 13, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2026/>
 
 ---
 
-## 3. 🟠 Zero-Day — Microsoft’s October 2026 Patch Tuesday addresses 1407 CVEs (CVE-2026-96951)
+## 7. 🟠 Zero-Day — Cisco Warns of Active Attacks Exploiting New Critical Secure Email Gateway Vulnerability
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://thehackernews.com/2026/10/cisco-warns-of-active-attacks.html>
+
+> Attackers are exploiting a critical flaw in Cisco Secure Email Gateway that lets a sender with no login write files to the appliance&#x27;s operating system, Cisco said in an advisory on Wednesday.
+
+The attacker sends an email with a crafted attachment through the gateway and, if it succeeds, could then run commands as root. The appliance filters an organization&#x27;s email for spam, malware,
+
+---
+
+## 8. 🟠 Zero-Day — Microsoft’s October 2026 Patch Tuesday addresses 1407 CVEs (CVE-2026-96951)
 
 **CVE:** `CVE-2026-96951` | `CVE-2026-21510` | `CVE-2026-32202` | `CVE-2026-108398` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://www.tenable.com/blog/microsofts-october-2026-patch-tuesday-addresses-1407-cves-cve-2026-96951>
@@ -29,27 +76,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Microsoft October 2026 Patch Tuesday fixes 1,411 flaws, 3 zero-days
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/>
-
-> Today is Microsoft&#x27;s October 2026 Patch Tuesday, with security updates addressing a record-breaking 1,411 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]
-
----
-
-## 5. 🟠 Zero-Day — Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access, Only Two Patched So Far
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html>
-
-> An attacker chained three zero-day flaws in Ivanti Connect Secure, a VPN appliance, to run commands as root without logging in, security firm Volexity said on October 13. Ivanti has released fixes for two of the flaws and told customers on affected versions to &quot;act immediately.&quot; A fix for the third is still pending, according to Volexity.
-
-Volexity, which reported the flaws to Ivanti,
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +85,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +94,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +103,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +112,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,7 +121,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -103,7 +130,16 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 12. 🟠 Zero-Day — CISA warns admins to immediately fix Ivanti flaw exploited as zero-day
+## 15. 🟠 Zero-Day — Cisco patches new Secure Email Gateway zero-day exploited in attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/>
+
+> Cisco has patched another actively exploited zero-day flaw in its Secure Email Gateway (SEG) that lets remote unauthenticated attackers execute commands with root privileges. [...]
+
+---
+
+## 16. 🟠 Zero-Day — CISA warns admins to immediately fix Ivanti flaw exploited as zero-day
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/>
@@ -112,7 +148,7 @@ Volexity, which reported the flaws to Ivanti,
 
 ---
 
-## 13. 🟠 Zero-Day — CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts
+## 17. 🟠 Zero-Day — CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts
 
 **CVE:** `CVE-2026-104935` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html>
@@ -123,7 +159,7 @@ The security flaw, tracked as CVE-2026-104935 (CVSS score: 8.6), is a case of au
 
 ---
 
-## 14. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 18. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -132,7 +168,44 @@ The security flaw, tracked as CVE-2026-104935 (CVSS score: 8.6), is a case of au
 
 ---
 
-## 15. 🟡 High Severity — AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host
+## 19. 🟡 High Severity — Microsoft.OpenApi.YamlReader vulnerable to denial of service via YAML alias expansion
+
+**CVE:** `CVE-2026-72923` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://github.com/advisories/GHSA-7pxr-59rr-hqj2>
+
+> ### Impact
+
+A small YAML OpenAPI document containing nested anchors and aliases can cause uncontrolled resource consumption in Microsoft.OpenApi.YamlReader and Microsoft.OpenApi.Readers. The issue affects OpenAPI document parsing through the public YAML reader APIs and can cause the parsing process to allocate excessive memory and terminate through out-of-memory conditions.
+
+## Affected versions
+
+…
+
+---
+
+## 20. 🟡 High Severity — Metalama allows local code execution through DLL planting in shared temporary directories
+
+**CVE:** `CVE-2026-62847` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://github.com/advisories/GHSA-m6wq-39m7-9xpp>
+
+> ## Summary
+
+Metalama loaded and executed compile-time assemblies, auxiliary executable tools, and embedded helper assemblies from predictable temporary directories. On Linux and macOS the default cache location was the world-writable system temporary directory (`Path.GetTempPath()`, i.e. `/tmp`), and previously-generated artifacts were trusted based on the presence of a sentinel/`.completed` marke…
+
+---
+
+## 21. 🟡 High Severity — Apprise forwards configured auth headers across cross-origin HTTP redirects
+
+**CVE:** `CVE-2026-59180` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
+**Reference:** <https://github.com/advisories/GHSA-856c-92hv-3vxx>
+
+> # Summary
+
+Apprise&#x27;s HTTP-based notification plugins and its HTTP attachment / config loaders (`apprise/attachment/http.py`, `apprise/config/http.py`) follow HTTP 3xx redirects by default and **re-send the user-configured auth headers and query parameters on the redirected request**. If an operator-configured destination is later compromised (service takeover, malicious update), or an attacke…
+
+---
+
+## 22. 🟡 High Severity — AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host
 
 **CVE:** `CVE-2026-74580` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html>
@@ -143,7 +216,7 @@ The bug is tracked as CVE-2026-74580 and named Vghost. Tencent Zhuque Lab, whi
 
 ---
 
-## 16. 🟡 High Severity — Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)
+## 23. 🟡 High Severity — Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)
 
 **CVE:** `CVE-2026-103572` &nbsp;|&nbsp; **Source:** Embrace The Red (Prompt Injection Research) &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/>
@@ -152,7 +225,7 @@ The bug is tracked as CVE-2026-74580 and named Vghost. Tencent Zhuque Lab, whi
 
 ---
 
-## 17. 🟡 High Severity — Ghostscript flaw lets hackers hijack servers via PDF uploads
+## 24. 🟡 High Severity — Ghostscript flaw lets hackers hijack servers via PDF uploads
 
 **CVE:** `CVE-2026-39919` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-13
 **Reference:** <https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/>
@@ -161,215 +234,7 @@ The bug is tracked as CVE-2026-74580 and named Vghost. Tencent Zhuque Lab, whi
 
 ---
 
-## 18. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70035 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-70035` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-4j9v-h7pp-725h>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Restrictive XAML and XPS security fixes block unsafe URI fetching and navigation, propagate untrusted-input state thr…
-
----
-
-## 19. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70007 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-70007` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-pfwj-2f93-rf42>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Crafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `CPSTrans::Initialize`, causing heap ou…
-
----
-
-## 20. 🟡 High Severity — Microsoft Security Advisory CVE-2026-87697 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-87697` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-c27m-942f-rcfh>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-WPF XPS synthetic hyperlinks exposed through UI Automation can bypass restrictive navigation checks and reach attacke…
-
----
-
-## 21. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96230 - ASP.NET Core Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-96230` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-qjpx-jqm5-h2c4>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.AspNetCore.Components.WebAssembly.Server. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-The Blazor WebAssembly development-server debug page can reflect unencoded exception text, allowing cross-ori…
-
----
-
-## 22. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96224 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-96224` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-xq57-crx4-g373>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Crafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `CPSTrans::Initialize`, causing heap ou…
-
----
-
-## 23. 🟡 High Severity — Microsoft Security Advisory CVE-2026-85363 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-85363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-f63g-mx39-3r38>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Attacker-controlled XPS glyph coordinates can overflow destination pointer arithmetic in `CD3DGlyphBank::RectFillAlph…
-
----
-
-## 24. 🟡 High Severity — Microsoft Security Advisory CVE-2026-83520 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-83520` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-4w5f-7jp2-w48g>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Restrictive XAML and XPS security fixes block unsafe URI fetching and navigation, propagate untrusted-input state thr…
-
----
-
-## 25. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70174 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-70174` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-f749-vhgx-39h6>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-WPF XPS hyperlink navigation can bypass URI restrictions and reach an attacker-controlled `ObjectDataProvider`, enabl…
-
----
-
-## 26. 🟡 High Severity — Microsoft Security Advisory CVE-2026-96235 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-96235` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-g44w-h65v-4cw9>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.WindowsDesktop.App.Runtime (WPF). This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Crafted WPF pixel-shader bytecode can desynchronize the two parsing passes in `CPSTrans::Initialize`, causing heap ou…
-
----
-
-## 27. 🟡 High Severity — Microsoft Security Advisory CVE-2026-66822 - .NET and Visual Studio Information Disclosure Vulnerability
-
-**CVE:** `CVE-2026-66822` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-wxxw-5cvc-53j7>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in System.Net.Http. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-SocketsHttpHandler can retain a `Proxy-Authorization` header across an HTTP redirect and leak basic proxy credentials to the destination server.…
-
----
-
-## 28. 🟡 High Severity — Microsoft Security Advisory CVE-2026-88092 - ASP.NET Core Security Feature Bypass Vulnerability
-
-**CVE:** `CVE-2026-88092` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-rv87-ccxw-8ggf>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.AspNetCore.Server.Kestrel.Core. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-An aborted Kestrel HTTP/1 connection can reparse unread request-body bytes as another request, creating a request-smugg…
-
----
-
-## 29. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70188 - ASP.NET Core Security Feature Bypass Vulnerability
-
-**CVE:** `CVE-2026-70188` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-fpq8-4vhr-rcxx>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft.AspNetCore.Server.Kestrel.Core. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-Kestrel accepts newline characters in HTTP/2 request trailers and values retrieved from the dynamic HPACK table instead…
-
----
-
-## 30. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70197 - .NET and Visual Studio Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-70197` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-4mpw-cpwj-hxxj>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in System.Net.Sockets. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-On Windows, reusing a `SocketAsyncEventArgs` instance across IPv4 and IPv6 datagram sockets can retain an undersized cached native address bu…
-
----
-
-## 31. 🟡 High Severity — Microsoft Security Advisory CVE-2026-102870 - ASP.NET Core Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-102870` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-g27p-qf6j-c96c>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in the Blazor WebAssembly debugger included in `Microsoft.AspNetCore.Components.WebAssembly.Server`. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-The Blazor WebAssembly debug proxy evaluates debugger expressio…
-
----
-
-## 32. 🟡 High Severity — Microsoft Security Advisory CVE-2026-70162 - .NET Denial of Service Vulnerability
-
-**CVE:** `CVE-2026-70162` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-2fmv-rv2c-59x7>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in System.Security.Cryptography.Pkcs. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-On Windows, `EnvelopedCms.Decode` can perform quadratic work while processing attacker-supplied CMS or PKCS#7 attributes, caus…
-
----
-
-## 33. 🟡 High Severity — Microsoft Security Advisory CVE-2026-105016 - Microsoft QUIC Remote Code Execution Vulnerability
-
-**CVE:** `CVE-2026-105016` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-13
-**Reference:** <https://github.com/advisories/GHSA-5gjq-3f94-rcf7>
-
-> ## Executive summary
-
-Microsoft is releasing this security advisory to provide information about a vulnerability in Microsoft QUIC as used by .NET 8.0, .NET 9.0, .NET 10.0, and .NET 11 RC2 on Windows. This advisory also provides guidance on what developers can do to update their applications to remove this vulnerability.
-
-A crafted IPv6 QUIC packet can reach the Microsoft QUIC HTTP/3 path without …
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 25. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
