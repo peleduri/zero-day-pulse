@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-15 10:28 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 23 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-15 15:53 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 21 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -193,27 +193,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 22. 🟠 Zero-Day — CISA warns admins to immediately fix Ivanti flaw exploited as zero-day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-14
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) urged security teams to immediately patch an Ivanti Connect Secure (ICS) flaw exploited in zero-day attacks since at least October 1st. [...]
-
----
-
-## 23. 🟠 Zero-Day — CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts
-
-**CVE:** `CVE-2026-104935` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
-**Reference:** <https://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday urged organizations to take steps to immediately update their Ivanti Connect Secure (ICS) appliances and deployments to the latest version following the disclosure of an actively exploited vulnerability.
-
-The security flaw, tracked as CVE-2026-104935 (CVSS score: 8.6), is a case of authentication bypass impacting ICS
-
----
-
-## 24. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 22. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -222,33 +202,7 @@ The security flaw, tracked as CVE-2026-104935 (CVSS score: 8.6), is a case of au
 
 ---
 
-## 25. 🟡 High Severity — Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts
-
-**CVE:** `CVE-2026-105740` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
-**Reference:** <https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html>
-
-> Threat actors are exploiting a critical security flaw in Langflow, according to an alert from Previdian.
-
-Langflow is an open-source platform that allows developers to build artificial intelligence (AI) applications and agentic workflows. In February 2025, DataStax, the parent company of Langflow, was acquired by IBM.
-
-The vulnerability in question is CVE-2026-105740 (CVSS score: 9.9), a case of
-
----
-
-## 26. 🟡 High Severity — AhsayCBS Flaws Exploited to Deploy Web Shells Get New Fixes After Incomplete Patches
-
-**CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
-**Reference:** <https://thehackernews.com/2026/10/ahsaycbs-flaws-exploited-to-deploy-web.html>
-
-> Singapore-based Ahsay Backup has released security updates to address two security flaws in AhsayCBS that have been exploited by bad actors to drop web shells and XMRig cryptocurrency miners.
-
-The vulnerabilities in question are CVE-2026-105133 and CVE-2026-105134, which could be chained to sidestep authentication and execute arbitrary commands on affected systems.
-
-In a report published earlier
-
----
-
-## 27. 🟡 High Severity — Palo Alto Networks Patches PAN-OS Authenticated RCE Flaw Amid Active Exploitation
+## 23. 🟡 High Severity — Palo Alto Networks Patches PAN-OS Authenticated RCE Flaw Amid Active Exploitation
 
 **CVE:** `CVE-2026-0322` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://thehackernews.com/2026/10/palo-alto-networks-patches-pan-os.html>
@@ -261,7 +215,33 @@ The vulnerability, tracked as CVE-2026-0322 (CVSS score: 8.6), is a case of remo
 
 ---
 
-## 28. 🟡 High Severity — Microsoft.OpenApi.YamlReader vulnerable to denial of service via YAML alias expansion
+## 24. 🟡 High Severity — Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts
+
+**CVE:** `CVE-2026-105740` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html>
+
+> Threat actors are exploiting a critical security flaw in Langflow, according to an alert from Previdian.
+
+Langflow is an open-source platform that allows developers to build artificial intelligence (AI) applications and agentic workflows. In February 2025, DataStax, the parent company of Langflow, was acquired by IBM.
+
+The vulnerability in question is CVE-2026-105740 (CVSS score: 9.9), a case of
+
+---
+
+## 25. 🟡 High Severity — AhsayCBS Flaws Exploited to Deploy Web Shells Get New Fixes After Incomplete Patches
+
+**CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://thehackernews.com/2026/10/ahsaycbs-flaws-exploited-to-deploy-web.html>
+
+> Singapore-based Ahsay Backup has released security updates to address two security flaws in AhsayCBS that have been exploited by bad actors to drop web shells and XMRig cryptocurrency miners.
+
+The vulnerabilities in question are CVE-2026-105133 and CVE-2026-105134, which could be chained to sidestep authentication and execute arbitrary commands on affected systems.
+
+In a report published earlier
+
+---
+
+## 26. 🟡 High Severity — Microsoft.OpenApi.YamlReader vulnerable to denial of service via YAML alias expansion
 
 **CVE:** `CVE-2026-72923` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://github.com/advisories/GHSA-7pxr-59rr-hqj2>
@@ -276,7 +256,7 @@ A small YAML OpenAPI document containing nested anchors and aliases can cause un
 
 ---
 
-## 29. 🟡 High Severity — Metalama allows local code execution through DLL planting in shared temporary directories
+## 27. 🟡 High Severity — Metalama allows local code execution through DLL planting in shared temporary directories
 
 **CVE:** `CVE-2026-62847` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://github.com/advisories/GHSA-m6wq-39m7-9xpp>
@@ -287,7 +267,7 @@ Metalama loaded and executed compile-time assemblies, auxiliary executable tools
 
 ---
 
-## 30. 🟡 High Severity — Apprise forwards configured auth headers across cross-origin HTTP redirects
+## 28. 🟡 High Severity — Apprise forwards configured auth headers across cross-origin HTTP redirects
 
 **CVE:** `CVE-2026-59180` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://github.com/advisories/GHSA-856c-92hv-3vxx>
@@ -298,7 +278,7 @@ Apprise&#x27;s HTTP-based notification plugins and its HTTP attachment / config 
 
 ---
 
-## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
