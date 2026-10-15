@@ -1,86 +1,10 @@
 {
-  "generated": "2026-10-14T21:03:39.309527+00:00",
-  "total": 25,
-  "kev": 4,
-  "zero_day": 13,
+  "generated": "2026-10-15T02:07:20.685588+00:00",
+  "total": 20,
+  "kev": 0,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-105134",
-      "title": "CVE-2026-105134 \u2014 Ahsay AhsayCBS Command Injection Vulnerability",
-      "summary": "Vendor: Ahsay | Product: AhsayCBS. Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component\u2019s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-17)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-105134",
-      "published": "2026-10-14",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-105134"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-76519",
-      "title": "CVE-2026-76519 \u2014 Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
-      "summary": "Vendor: Cisco | Product: Secure Email Gateway. Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-17)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76519",
-      "published": "2026-10-14",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-76519"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-105133",
-      "title": "CVE-2026-105133 \u2014 Ahsay AhsayCBS Improper Authentication Vulnerability",
-      "summary": "Vendor: Ahsay | Product: AhsayCBS. Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component\u2019s checkSysPwd function. This vulnerability can be chained with CVE-2026-105134. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-17)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-105133",
-      "published": "2026-10-14",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-105133"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-0322",
-      "title": "CVE-2026-0322 \u2014 Palo Alto Networks PAN-OS Code Injection Vulnerability",
-      "summary": "Vendor: Palo Alto Networks | Product: PAN-OS. Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-17)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-0322",
-      "published": "2026-10-14",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-0322"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -124,27 +48,6 @@
         "zeroday"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/microsofts-october-2026-patch-tuesday-addresses-1407-cves-cve-2026-96951",
-      "title": "Microsoft\u2019s October 2026 Patch Tuesday addresses 1407 CVEs (CVE-2026-96951)",
-      "summary": "69 Critical 1337 Important 0 Moderate 1 Low Microsoft addresses 1407 CVEs in the tenth Patch Tuesday of 2026, marking the second consecutive month to reset the bar as the largest Patch Tuesday release. This month\u2019s updates include patches for two zero days, including one that was exploited in the wild. Microsoft patched 1,407 CVEs in its October 2026 Patch Tuesday release, with 69 rated critical, 1,337 rated as important, and one rated as low. This month\u2019s update includes patches for 301 products and components. The following table lists the products with the most CVEs patched this month. A full list of patched products is available in the appendix. Rank Product CVE Count 1 Microsoft Office Excel 69 2 Role: DNS Server 52 3 Windows Kernel 46 4 Windows Installer 38 5 Windows Win32 Kernel Subsystem 36 6 Microsoft Office SharePoint 34 7 Microsoft Windows Search Component 29 8 Windows NTFS 26 9 .NET 25 10 (Tie) Microsoft Office Word 22 10 (Tie) SQL Server 22 10 (Tie) Windows Error Reporting 22 Elevation of Privilege (EoP) vulnerabilities accounted for 47.9% of the vulnerabilities patched this month, followed by remote code execution (RCE) vulnerabilities at 22.3%. Important CVE-2026-96951 | Windows Shell security feature bypass vulnerability CVE-2026-96951 is a security feature bypass vulnerability affecting Windows Shell. It received a CVSSv3 score of 8.8 and was rated as important. According to Microsoft, this vulnerability was exploited in the wild as a zero-day. An attacker could exploit this vulnerability using social engineering tactics, via email or messages, to convince their target to open a malicious file. Successful exploitation would bypass the Mark of the Web (MOTW) security feature. This is the third flaw in Windows Shell that was exploited in the wild in 2026: CVE-2026-21510 was patched in February 2026\u2019s Patch Tuesday while CVE-2026-32202 was patched in April 2026\u2019s Patch Tuesday . Important CVE-2026-108398 |.NET Framework security feature bypass vulnerab",
-      "link": "https://www.tenable.com/blog/microsofts-october-2026-patch-tuesday-addresses-1407-cves-cve-2026-96951",
-      "published": "2026-10-13T21:49:11+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-96951",
-        "CVE-2026-21510",
-        "CVE-2026-32202",
-        "CVE-2026-108398"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -246,6 +149,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/",
+      "title": "Palo Alto Networks warns of PAN-OS RCE flaw exploited in attacks",
+      "summary": "Palo Alto Networks has released security updates for a high-severity PAN-OS RCE zero-day, tracked as CVE-2026-0322, that has been exploited in attacks targeting firewalls. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/",
+      "published": "2026-10-14T22:56:47+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-0322"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/",
       "title": "Cisco patches new Secure Email Gateway zero-day exploited in attacks",
       "summary": "Cisco has patched another actively exploited zero-day flaw in its Secure Email Gateway (SEG) that lets remote unauthenticated attackers execute commands with root privileges. [...]",
@@ -288,6 +208,23 @@
       ],
       "cve_ids": [
         "CVE-2026-104935"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/microsoft-patches-record-1413-vulnerabilities-including-exploited-windows-zero-day/",
+      "title": "Microsoft Patches Record 1,413 Vulnerabilities, Including Exploited Windows Zero-Day",
+      "summary": "The most important is CVE-2026-96951, a security feature bypass flaw in Windows that has been exploited in the wild. The post Microsoft Patches Record 1,413 Vulnerabilities, Including Exploited Windows Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/microsoft-patches-record-1413-vulnerabilities-including-exploited-windows-zero-day/",
+      "published": "2026-10-14T07:16:12+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-96951"
       ],
       "is_zero_day": true,
       "is_high_severity": false
@@ -383,42 +320,6 @@
       ],
       "cve_ids": [
         "CVE-2026-74580"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/",
-      "title": "Visual Studio Copilot and SSMS Remote Code Execution (CVE-2026-103572)",
-      "summary": "A . is all you need! Today Microsoft shipped the patch for a vulnerability in Visual Studio Copilot that I reported in August. Microsoft classified it as Important severity Remote Code Execution vulnerability. At the root cause it allows Copilot in Visual Studio or SQL Server Management Studio to bypass a path validation check and write to its own settings and configuration files . This allows Copilot to escape containment restrictions and achieve arbitrary command execution.",
-      "link": "https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/",
-      "published": "2026-10-13T22:00:40+00:00",
-      "source": "Embrace The Red (Prompt Injection Research)",
-      "tags": [
-        "ai",
-        "prompt-injection",
-        "agent",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-103572"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/",
-      "title": "Ghostscript flaw lets hackers hijack servers via PDF uploads",
-      "summary": "A critical heap buffer overflow vulnerability (CVE-2026-39919) in the Ghostscript interpreter and rendering engine could allow\u00a0remote code execution through specially crafted PDF files. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/",
-      "published": "2026-10-13T21:33:26+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-39919"
       ],
       "is_zero_day": false,
       "is_high_severity": true
