@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-15 02:07 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-15 10:28 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 23 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Cisco Warns of Active Attacks Exploiting New Critical Secure Email Gateway Vulnerability
+## 3. 🟠 Zero-Day — Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://www.securityweek.com/palo-alto-networks-patches-pan-os-zero-day-exploited-for-remote-code-execution/>
+
+> The company says it’s aware of limited exploitation against customers’ firewalls, and it has made IoCs available. The post Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — Cisco Warns of Active Attacks Exploiting New Critical Secure Email Gateway Vulnerability
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://thehackernews.com/2026/10/cisco-warns-of-active-attacks.html>
@@ -31,7 +40,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +49,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +58,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +67,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +76,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +85,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,16 +94,97 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 10. 🟠 Zero-Day — Palo Alto Networks warns of PAN-OS RCE flaw exploited in attacks
+## 11. 🟠 Zero-Day — [0day-rubbish] Synametrics Syncrify 6.2 build 1178 authenticated PublicLink chunk-upload path traversal to /etc/cron.d and root command execution (7.5)
 
-**CVE:** `CVE-2026-0322` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-14
-**Reference:** <https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/21>
 
-> Palo Alto Networks has released security updates for a high-severity PAN-OS RCE zero-day, tracked as CVE-2026-0322, that has been exploited in attacks targeting firewalls. [...]
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Synametrics Syncrify 6.2 build 1178, the closed-source incremental backup and file-replication server from Synametrics Technologies, Inc. (United States). The product is written in Java, distributed for Linux as a tarball archive, and served by an embedded Tomcat 9.0.113 through t…
 
 ---
 
-## 11. 🟠 Zero-Day — Cisco patches new Secure Email Gateway zero-day exploited in attacks
+## 12. 🟠 Zero-Day — [0day-rubbish] South River Technologies Titan MFT Server 26.0.0 first-run administrator setup chained to job post-command injection, NT AUTHORITY\SYSTEM (8.1)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/20>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability chain in South River Technologies Titan MFT Server 26.0.0.364, the NextGen generation of the commercial managed file transfer server from South River Technologies (Annapolis, Maryland, United States). The product runs as a single .NET 8 process, titanmft.exe, registered as the Window…
+
+---
+
+## 13. 🟠 Zero-Day — [0day-rubbish] SmartBear Collaborator Server 15.1.15101 authenticated DOORS/Simulink review-file upload zip-slip to anonymous webroot Groovy Server Page execution as uid 1001 (7.5)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/19>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in SmartBear Collaborator Server 15.1.15101, the closed-source peer and technical code-review platform from SmartBear that runs as a Java web application on Apache Tomcat. One low-privilege authenticated account plants a Groovy Server Page in the Tomcat webroot through an archive-ext…
+
+---
+
+## 14. 🟠 Zero-Day — [0day-rubbish] PacsOne Server 7.3.9 authenticated DICOMweb STOW-RS SOP Instance UID path traversal to www-data code execution on a PACS host (7.2)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/18>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in PacsOne Server 7.3.9, Premium Edition, Linux x86-64 distribution, the closed-source commercial PACS (medical imaging archive and DICOM server) from RainbowFish Software, California, United States. The product combines a native C++ DICOM and HL7 service with a PHP web interface of …
+
+---
+
+## 15. 🟠 Zero-Day — [0day-rubbish] Maian Pal 2.1 product image upload with no extension allow-list to PHP webshell and www-data uid 33 code execution (7.2, PR:H)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/17>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Maian Pal 2.1, the self-hosted PHP shopping-cart script from Maian Media (United Kingdom), oriented at PayPal checkout and distributed as a commercial closed-source archive, verified end to end against a real installation of that version in three independent reproductions. Type: u…
+
+---
+
+## 16. 🟠 Zero-Day — [0day-rubbish] Maian Guardian 2.1 license generator projid command injection to www-data uid 33 code execution (7.2, PR:H)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/16>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Maian Guardian 2.1, the self-hosted licensing system for PHP applications encoded with SourceGuardian, distributed as a closed-source commercial PHP script by Maian Script World (United Kingdom) and verified end to end against a real installation of that version. Type: OS command …
+
+---
+
+## 17. 🟠 Zero-Day — [0day-rubbish] Dataedo Portal 26.2.8 with Dataedo Agent 26.2.8 unrestricted scheduler job-type deserialization to Agent-host command execution (8.1)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/15>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Dataedo Portal 26.2.8 together with Dataedo Agent 26.2.8, the closed-source enterprise data-catalog and data-governance platform from Dataedo sp. z o.o. (Poland). Both components are in scope because the chain crosses from one to the other: the Portal discloses a database credenti…
+
+---
+
+## 18. 🟠 Zero-Day — [0day-rubbish] CloudPanel 2.5.4-3 site-settings rootDirectory nginx virtual-host injection to host root code execution (8.8)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/14>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in CloudPanel Community Edition 2.5.4-3+clp-bookworm, the closed-source server-management panel from cloudpanel.io (Germany) that provisions and supervises nginx, php-fpm, MariaDB and hosted web sites from a Symfony application listening on port 8443. The build under advisory is the …
+
+---
+
+## 19. 🟠 Zero-Day — [0day-rubbish] Auerswald COMmander 6000 / 6000R 8.6D unauthenticated provisioning import zip-slip to root binary hijack and root code execution (9.8)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/13>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Auerswald COMmander 6000 and COMmander 6000R, firmware 8.6D build 128154, the closed-source enterprise IP-PBX and unified-communications appliances from Auerswald (Germany). Two unauthenticated HTTP requests, carrying no cookie and no credential of any kind, yield uid=0(root) gid=…
+
+---
+
+## 20. 🟠 Zero-Day — [0day-rubbish] Abyss Web Server X1 2.16.22.0 first-run console credential takeover to configuration-write log-as-CGI command execution (7.5)
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/12>
+
+> Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability chain in Abyss Web Server X1 2.16.22.0, the free edition of the closed-source Abyss web server from Aprelium (Tunisia), a product family that has shipped for more than twenty years. The release artefacts identify 2.16.22.0 as the vendor&#x27;s current official release. Between first …
+
+---
+
+## 21. 🟠 Zero-Day — Cisco patches new Secure Email Gateway zero-day exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/>
@@ -103,7 +193,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 12. 🟠 Zero-Day — CISA warns admins to immediately fix Ivanti flaw exploited as zero-day
+## 22. 🟠 Zero-Day — CISA warns admins to immediately fix Ivanti flaw exploited as zero-day
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/>
@@ -112,7 +202,7 @@ The attacker sends an email with a crafted attachment through the gateway and, i
 
 ---
 
-## 13. 🟠 Zero-Day — CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts
+## 23. 🟠 Zero-Day — CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts
 
 **CVE:** `CVE-2026-104935` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html>
@@ -123,16 +213,7 @@ The security flaw, tracked as CVE-2026-104935 (CVSS score: 8.6), is a case of au
 
 ---
 
-## 14. 🟠 Zero-Day — Microsoft Patches Record 1,413 Vulnerabilities, Including Exploited Windows Zero-Day
-
-**CVE:** `CVE-2026-96951` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-14
-**Reference:** <https://www.securityweek.com/microsoft-patches-record-1413-vulnerabilities-including-exploited-windows-zero-day/>
-
-> The most important is CVE-2026-96951, a security feature bypass flaw in Windows that has been exploited in the wild. The post Microsoft Patches Record 1,413 Vulnerabilities, Including Exploited Windows Zero-Day appeared first on SecurityWeek .
-
----
-
-## 15. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 24. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -141,7 +222,46 @@ The security flaw, tracked as CVE-2026-104935 (CVSS score: 8.6), is a case of au
 
 ---
 
-## 16. 🟡 High Severity — Microsoft.OpenApi.YamlReader vulnerable to denial of service via YAML alias expansion
+## 25. 🟡 High Severity — Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts
+
+**CVE:** `CVE-2026-105740` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html>
+
+> Threat actors are exploiting a critical security flaw in Langflow, according to an alert from Previdian.
+
+Langflow is an open-source platform that allows developers to build artificial intelligence (AI) applications and agentic workflows. In February 2025, DataStax, the parent company of Langflow, was acquired by IBM.
+
+The vulnerability in question is CVE-2026-105740 (CVSS score: 9.9), a case of
+
+---
+
+## 26. 🟡 High Severity — AhsayCBS Flaws Exploited to Deploy Web Shells Get New Fixes After Incomplete Patches
+
+**CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://thehackernews.com/2026/10/ahsaycbs-flaws-exploited-to-deploy-web.html>
+
+> Singapore-based Ahsay Backup has released security updates to address two security flaws in AhsayCBS that have been exploited by bad actors to drop web shells and XMRig cryptocurrency miners.
+
+The vulnerabilities in question are CVE-2026-105133 and CVE-2026-105134, which could be chained to sidestep authentication and execute arbitrary commands on affected systems.
+
+In a report published earlier
+
+---
+
+## 27. 🟡 High Severity — Palo Alto Networks Patches PAN-OS Authenticated RCE Flaw Amid Active Exploitation
+
+**CVE:** `CVE-2026-0322` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
+**Reference:** <https://thehackernews.com/2026/10/palo-alto-networks-patches-pan-os.html>
+
+> Palo Alto Networks on Wednesday issued security updates for a high-severity flaw in PAN-OS software that has come under active exploitation.
+
+The vulnerability, tracked as CVE-2026-0322 (CVSS score: 8.6), is a case of remote code execution in the management interface.
+
+&quot;A remote code execution (RCE) vulnerability in the management interface of Palo Alto Networks PAN-OS software enables an
+
+---
+
+## 28. 🟡 High Severity — Microsoft.OpenApi.YamlReader vulnerable to denial of service via YAML alias expansion
 
 **CVE:** `CVE-2026-72923` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://github.com/advisories/GHSA-7pxr-59rr-hqj2>
@@ -156,7 +276,7 @@ A small YAML OpenAPI document containing nested anchors and aliases can cause un
 
 ---
 
-## 17. 🟡 High Severity — Metalama allows local code execution through DLL planting in shared temporary directories
+## 29. 🟡 High Severity — Metalama allows local code execution through DLL planting in shared temporary directories
 
 **CVE:** `CVE-2026-62847` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://github.com/advisories/GHSA-m6wq-39m7-9xpp>
@@ -167,7 +287,7 @@ Metalama loaded and executed compile-time assemblies, auxiliary executable tools
 
 ---
 
-## 18. 🟡 High Severity — Apprise forwards configured auth headers across cross-origin HTTP redirects
+## 30. 🟡 High Severity — Apprise forwards configured auth headers across cross-origin HTTP redirects
 
 **CVE:** `CVE-2026-59180` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-14
 **Reference:** <https://github.com/advisories/GHSA-856c-92hv-3vxx>
@@ -178,18 +298,7 @@ Apprise&#x27;s HTTP-based notification plugins and its HTTP attachment / config 
 
 ---
 
-## 19. 🟡 High Severity — AI-Found Linux Kernel Flaw Gives Local Users Root, and Can Break a Guest Out to the Host
-
-**CVE:** `CVE-2026-74580` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-14
-**Reference:** <https://thehackernews.com/2026/10/ai-found-linux-kernel-flaw-gives-local.html>
-
-> A flaw in Linux&#x27;s vhost subsystem lets a local user read and write kernel memory at will and become root across nearly a decade of kernel versions. In one virtualization setup, it lets an untrusted virtual machine write to the host&#x27;s memory and hijack the program that runs the virtual machine.
-
-The bug is tracked as CVE-2026-74580 and named Vghost. Tencent Zhuque Lab, which found the
-
----
-
-## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
