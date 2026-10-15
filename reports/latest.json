@@ -1,10 +1,29 @@
 {
-  "generated": "2026-10-15T15:53:04.946965+00:00",
-  "total": 29,
-  "kev": 0,
-  "zero_day": 21,
+  "generated": "2026-10-15T20:38:02.901140+00:00",
+  "total": 48,
+  "kev": 1,
+  "zero_day": 23,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-21589",
+      "title": "CVE-2026-21589 \u2014 Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+      "summary": "Vendor: Atlassian | Product: Multiple Products. Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files within the web application root directory in affected versions. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-18)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-21589",
+      "published": "2026-10-15",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-21589"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -37,6 +56,24 @@
       "is_high_severity": true
     },
     {
+      "id": "CVE-2026-95837",
+      "title": "containerd CRI plugin: Checkpoint restore bypasses destination security context",
+      "summary": "### Impact\n\nA vulnerability in containerd's CRI implementation allows a container restored from an untrusted checkpoint via the `CreateContainer` API to bypass the destination security context and execute with elevated privileges. When restoring a container from a checkpoint archive or annotated OCI image, CRIU restores process credentials, Linux capabilities, `no_new_privs`, and seccomp state directly from checkpoint data rather than enforcing the destination CRI `ContainerConfig`. An attacker who can run a container with a crafted checkpoint image can execute processes as root with full capabilities and no enforced seccomp filters despite restrictive security policies requested by the orchestrator. Additionally, containerd's CRI status reporting reflects the requested configuration rather than the actual restored process state, masking the privilege discrepancy from orchestrators. This issue affects Linux systems running containerd with CRI checkpoint restore enabled; users not utilizing CRI checkpoint restore are not affected.\n\n### Patches\n\nThis bug has been addressed in containerd 2.2.7 and 2.3.4 by disabling checkpoint restore via `CreateContainer` by default.  The feature has been removed entirely in containerd 2.4.0. Users should update to these versions to resolve the issue. Running containers that were restored from untrusted checkpoints should be stopped, deleted, and recreated.\n\nUsers who rely on restore via the `CreateContainer` API can re-enable the feature by setting the new `enable_experimental_restore_via_create` configuration option. However, enabling restore via `CreateContainer` leaves this vulnerability present, as containerd cannot enforce destination security policy during CRIU process restoration. \n\n### Workarounds\n\nOn unpatched versions, containerd does not provide a configuration option to disable checkpoint restore via `CreateContainer`. Deployments should restrict container creation permissions to trusted users, validate container image re",
+      "link": "https://github.com/advisories/GHSA-p7v4-vr35-mj6f",
+      "published": "2026-10-15T20:21:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-95837"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.securityweek.com/palo-alto-networks-patches-pan-os-zero-day-exploited-for-remote-code-execution/",
       "title": "Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution",
       "summary": "The company says it\u2019s aware of limited exploitation against customers\u2019 firewalls, and it has made IoCs available. The post Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution appeared first on SecurityWeek .",
@@ -46,21 +83,6 @@
       "tags": [
         "news",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/cisco-warns-of-active-attacks.html",
-      "title": "Cisco Warns of Active Attacks Exploiting New Critical Secure Email Gateway Vulnerability",
-      "summary": "Attackers are exploiting a critical flaw in Cisco Secure Email Gateway that lets a sender with no login write files to the appliance's operating system, Cisco\u00a0said in an advisory\u00a0on Wednesday.\n\nThe attacker sends an email with a crafted attachment through the gateway and, if it succeeds, could then run commands as root. The appliance filters an organization's email for spam, malware,",
-      "link": "https://thehackernews.com/2026/10/cisco-warns-of-active-attacks.html",
-      "published": "2026-10-14T18:38:56+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -159,6 +181,60 @@
       ],
       "cve_ids": [
         "CVE-2025-66376"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-86063",
+      "title": "Claude Code: Plugin Hash Pin Bypass Allows Bypass of Hash Pinning",
+      "summary": "The plugin install flow in Claude Code and Claude Desktop checked out a marketplace's pinned commit SHA using `git checkout` without verifying that the resulting HEAD matched the pinned SHA. An attacker controlling a plugin's upstream repository could create a branch named identically to the pinned 40-character SHA, causing the checkout to silently resolve to the attacker's branch tip instead of the reviewed commit, resulting in attacker-controlled code being installed bypassing the pinned hash. Exploitation required a user to install a malicious plugin, pin to a safe hash, and for the plugin source to be hosted on a git host that permitted SHA-shaped branch names.\n\nUsers on standard Claude Code auto-update have received this fix already. Users performing manual updates are advised to update to the latest version.\n\nThank you to Or Nevo Michrowski of Air Security for reporting this issue.",
+      "link": "https://github.com/advisories/GHSA-pq7j-f95f-qfcv",
+      "published": "2026-10-15T20:22:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-86063"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-100353",
+      "title": "kin-openapi: Incomplete Fix for GHSA-p6wj-qrr4-pgh5: Three Unpatched nil-Items Panic Paths in openapi3filter",
+      "summary": "## Summary\n\nThe fix for GHSA-p6wj-qrr4-pgh5 addressed a nil-pointer dereference that occurs when an OpenAPI 3.1 array schema omits the `items` keyword (which is legal under JSON Schema 2020-12). That fix patched three decoder paths: the standalone `parseArray` function, the top-level array check in `UrlencodedBodyDecoder`, and `MultipartBodyDecoder`.\n\nThree additional crash paths were missed. All of them reach the unguarded `urlValuesDecoder.parseArray` method (`openapi3filter/req_resp_decoder.go:576`) or the unguarded array branch in `buildResObj` (line 1015):\n\n1. **Query parameters** with `type: array` and no `items`.\n2. **deepObject** query parameters containing an array property with no `items`.\n3. **URL-encoded request bodies** where the array lives inside an `allOf` / `anyOf` / `oneOf` sub-schema. This path bypasses the guard added by the GHSA-p6wj-qrr4-pgh5 fix, because that guard only inspects top-level properties.\n\nEach path is triggerable by an unauthenticated client and produces a deterministic nil-pointer panic during request validation.\n\n## Details\n### Root Cause\n\nThe three paths patched for GHSA-p6wj-qrr4-pgh5 each received a nil-`items` guard:\n\n```go\n// standalone parseArray (line 1143) -- GUARDED\nfunc parseArray(raw []string, schemaRef *openapi3.SchemaRef) ([]any, error) {\n\tif schemaRef.Value.Items == nil || schemaRef.Value.Items.Value == nil { ... }\n\n// UrlencodedBodyDecoder top-level property loop (line 1441) -- GUARDED\nif propSchema.Value.Items == nil || propSchema.Value.Items.Value == nil { ... }\n\n// MultipartBodyDecoder (line 1587) -- GUARDED\nif valueSchema.Value.Items == nil { ... }\n```\n\nBut `urlValuesDecoder.parseArray` (line 576), which handles query-parameter and urlencoded-body array decoding, has **no** such guard:\n\n```go\nfunc (d *urlValuesDecoder) parseArray(raw []string, schemaRef *openapi3.SchemaRef) ([]any, error) {\n\tvar value []any\n\tfor i, v := range raw {\n\t\titem, err := d.parseValue(v, schemaRef.Value.Items) // Items is nil -> panic ",
+      "link": "https://github.com/advisories/GHSA-vrcc-3ch7-hppw",
+      "published": "2026-10-15T20:20:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-100353"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-84317",
+      "title": "Nginx UI: MCP nginx_config_add skips config directive validation \u2192 authenticated nginx directive injection (RCE on the official image)",
+      "summary": "## Summary\n`internal/config/validation.go` (`ValidateConfigFile`) is a security control that blocks dangerous\nnginx directives \u2014 `js_*`, `perl_*`, `load_module` of the njs/perl modules, and `user root`. It is\nenforced on three of the four config-write paths: `api/config/add.go`, `api/config/modify.go`, and\n`mcp/config/config_modify.go`. The fourth path \u2014 the MCP tool `nginx_config_add`\n(`mcp/config/config_add.go`) \u2014 does NOT call it: it writes the caller-supplied `content` straight to\ndisk and reloads nginx. An authenticated MCP caller (or an MCP agent induced via prompt injection)\ncan therefore inject exactly the directives the control is meant to block, leading to nginx code\nexecution on deployments where the njs/perl module is available (e.g. the official Docker image).\n\n## Root cause \u2014 an incomplete hardening patch\nCommit `3e411d38` (\"Harden config write paths\", 2026-04-21) introduced `ValidateConfigFile` and\nwired it into the config-write paths \u2014 but its changeset touched only:\n  api/config/add.go (+6), api/config/modify.go (+8), internal/config/validation.go (+199),\n  mcp/config/config_modify.go (+5)\nIt did NOT touch `mcp/config/config_add.go`. So the MCP add path was left without the validation\nthat all of its sibling paths received. `config_add.go` has never called `ValidateConfigFile`\n(verified via git history); this is an oversight in the hardening, not a regression.\n\n## Affected code (mcp/config/config_add.go, handleNginxConfigAdd)\n```go\ncontent := mcp.GetString(args, \"content\")        // caller-controlled\n...\npath, err := config.ResolveConfPath(baseDir, name)   // path is sandboxed to the conf dir (OK)\n...\nerr = os.WriteFile(path, []byte(content), 0644)  // <-- no config.ValidateConfigFile(path, content)\n...\nres := nginx.Control(nginx.Reload)               // reloads nginx\n```\nContrast \u2014 the guarded sibling (mcp/config/config_modify.go) does:\n```go\nerr = config.ValidateConfigFile(absPath, content)   // rejects js_*/perl_*/load_module/user root\nif err != ",
+      "link": "https://github.com/advisories/GHSA-76pm-mq2q-9gcr",
+      "published": "2026-10-15T20:11:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84317"
       ],
       "is_zero_day": true,
       "is_high_severity": false
@@ -314,21 +390,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/",
-      "title": "Cisco patches new Secure Email Gateway zero-day exploited in attacks",
-      "summary": "Cisco has patched another actively exploited zero-day flaw in its Secure Email Gateway (SEG) that lets remote unauthenticated attackers execute commands with root privileges. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-patches-actively-exploited-secure-email-gateway-zero-day/",
-      "published": "2026-10-14T17:29:14+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -348,6 +409,346 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-exploit-collabora-rce-flaw-to-backdoor-nextcloud-servers/",
+      "title": "Hackers exploit Collabora RCE flaw to backdoor Nextcloud servers",
+      "summary": "Threat actors are exploiting a critical command execution flaw, now tracked as CVE-2026-110447, in the Collabora Online - Built-in CODE Server app (richdocumentscode) for Nextcloud. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-collabora-rce-flaw-to-backdoor-nextcloud-servers/",
+      "published": "2026-10-15T20:25:04+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-110447"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/critical-pwnescape-linux-kernel.html",
+      "title": "Critical PwnEscape Linux Kernel Vulnerability Lets Guest VMs Read Host Memory",
+      "summary": "A newly disclosed critical flaw in the Linux kernel allows code inside a virtual machine to read memory on the host computer it runs on. A researcher demonstrated the leak against Vercel's live cloud sandboxes, and Vercel confirmed it.\n\nThe flaw, now tracked as CVE-2026-99999 and nicknamed PwnEscape, is in the Linux kernel's networking code, not in any one cloud's setup, so it reaches the shared",
+      "link": "https://thehackernews.com/2026/10/critical-pwnescape-linux-kernel.html",
+      "published": "2026-10-15T20:24:36+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-99999"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102832",
+      "title": "JupyterLab: Command link trust prompt in JupyterLab can trust a document other than the one clicked",
+      "summary": "## Description\n\nA Markdown file or a notebook output can carry a button that runs a JupyterLab command. Since 4.5.7 the first click on such a button opens a prompt naming the command, with Cancel, Run Once and Trust. Choosing Trust runs the command and marks the document trusted, so its later buttons run without a prompt.\n\nWhich document gets marked is decided when the user answers, not when they click. Both trust commands read whichever document is current at that moment: `markdownviewer:trust` uses `tracker.currentWidget`, and `notebook:trust` uses the equivalent lookup. If another document becomes current while the prompt is open, that document is the one marked trusted, and the one the user was looking at stays untrusted.\n\nUsers are affected if all of the following are true:\n\n- they run JupyterLab 4.5.7 through 4.6.3, or an application that bundles it such as Notebook 7.5+;\n- they open a Markdown file or notebook from someone else and click a button in it;\n- they answer Trust rather than Cancel or Run Once; and\n- a second document becomes the current one while the prompt is open, for example through a workspace restoring at startup, an extension activating a widget, or a command that opens a file\n\n### Impact\n\nThe user loses control over which document they trusted. Every button in the document that was (incorrectly) marked as trusted runs from then on without a prompt, so if that document also came from an untrusted source, its buttons fire on a single click with no confirmation. That is the state the prompt was added to prevent, in [GHSA-mqcg-5x36-vfcg](https://github.com/jupyterlab/jupyterlab/security/advisories/GHSA-mqcg-5x36-vfcg).\n\nThe command that ran had the user's consent, because the prompt named it and they pressed Trust. The document they were reading stays untrusted, so it prompts again on the next click.\n\n#### Notebooks are written to disk\n\nWhen the document marked is a notebook, the effect outlives the browser session. `notebook:trust` marks every ",
+      "link": "https://github.com/advisories/GHSA-jwrc-gm9j-263p",
+      "published": "2026-10-15T20:22:13Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102832"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-95838",
+      "title": "containerd: Unpack DoS via repeated opaque whiteouts",
+      "summary": "### Impact\n\nA vulnerability exists in containerd's layer unpack handler where the processing of certain image layers causes superlinear time complexity. During the unpack operation, specific file configurations within the layer can trigger repeated directory traversals.\n\nConsequently, pulling or importing a maliciously crafted image can result in increased unpack times and a moderate increase in CPU usage. This delays container startup, even if the compressed image layers are small. Additionally, in orchestrators like Kubernetes that apply concurrency limits to image pulls, these excessively long operations can reduce the available concurrency for other pulls, potentially delaying unrelated container deployments.\n\n### Patches\n\nThis bug has been fixed in containerd 2.3.5, 2.2.8, 2.0.12, and 1.7.35. Users should update to these versions to resolve the issue.\n\n### Workarounds\n\nThere are no known workarounds for this issue. Users are advised to only pull and import trusted images from known registries until the patch can be applied.\n\n### Credits\n\nThe containerd project would like to thank Jakub Ciolek of AlphaSense for responsibly disclosing this issue in accordance with the [containerd security policy](https://github.com/containerd/project/blob/main/SECURITY.md).\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n* Open an issue in [containerd](https://github.com/containerd/containerd/issues/new/choose)\n* Email us at [security@containerd.io](mailto:security@containerd.io)\n\nTo report a security issue in containerd:\n* [Report a new vulnerability](https://github.com/containerd/containerd/security/advisories/new)\n* Email us at [security@containerd.io](mailto:security@containerd.io)",
+      "link": "https://github.com/advisories/GHSA-rp3h-jf77-q9p4",
+      "published": "2026-10-15T20:22:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-95838"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77564",
+      "title": "Talos Linux: Support bundle does not redact registry credentials",
+      "summary": "### Summary\nWhen generating a support bundle with `talosctl support` the credentials entered for private registries are included in the bundle.\n\n\n### Details\n\nWithin the generated support bundle, inside `resources/registryconfigs.cri.talos.dev.yaml` the `auth` field of the spec is retained.\nThe same, potentially sensitive information is present within `etcfilespecs.files.talos.dev.yaml`.\n\n### PoC\n\nSimply run `talosctl -n [...] support` on a cluster with a `RegistryAuthConfig` resource \n\n### Impact\n\nThe problem itself is minor, however, anyone who has ever uploaded a support.zip bundle on a github issue, slack thread or public forum could have potentially leaked their internal authentication parameters for a private registry.\n\nIn most situations, if the network and credentials are set correctly, this should not be a problem. On the other hand, if the affected registry is publicly accessible, and the provided credentials have write access to it, this could lead to possibly serious consequences, from denial of service, to data loss and possibly existing tag hijacking leading to supply chain compromise, for the affected parties which were under the impression that the support bundle is redacted of sensitive information and thus can be shared publicly.\n\n\n### Notes\n\nTalos 1.14+ by default encrypts the support bundle to the age recipients specified (defaulting to siderolabs GitHub org members), so the impact is even lower.\n\n### Environment\n\n- Talos version: v1.13.0\n- Kubernetes version: 1.35.3\n- Platform: amd64",
+      "link": "https://github.com/advisories/GHSA-7cxh-94cf-mfp6",
+      "published": "2026-10-15T20:20:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77564"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-77524",
+      "title": "KEDA: Privilege escalation from namespace admin to cluster admin via KEDA TriggerAuthentication",
+      "summary": "## Summary\n\nA namespace admin who creates a `TriggerAuthentication` and a `ScaledObject` in their own namespace can make the KEDA operator send its own ServiceAccount token to a tenant-controlled URL. That token holds `[\"*\"]/[\"*\"] get` cluster-wide, so it reads every Secret in every namespace, plus `batch/jobs` and `horizontalpodautoscalers` create/delete cluster-wide, `*/scale` update on any workload, `validatingwebhookconfigurations` update (rewrite or disable cluster admission), and `apiservices` update (hijack aggregated API routing). This is effectively privilege escalation from namespace admin to cluster admin in real environments: a cluster-wide Secret read alone is enough to find a token for a more privileged ServiceAccount, and the cluster-wide `batch/jobs` create lets the attacker run a workload in any namespace whose Pod Security Admission level permits it (or that is PSA-exempt, such as `kube-system` , `kyverno`) to reach the node filesystem and a control-plane kubeconfig.\n\nThis is an incomplete fix of CVE-2025-68476: its content filter only requires the loaded file to be a JWT whose subject begins with `system:serviceaccount:`, which the operator's own projected token satisfies by construction. The destination field `hashiCorpVault.address` is unvalidated.\n\nFinder credits: Artem Cherezov @cherez0ff, with Claude Opus 4.8\n\n## Verified live\n\nkind v1.31.2, kedacore/keda v2.20.0 (latest at the time of audit, <https://github.com/kedacore/keda>) installed from the unmodified release manifest `keda-2.20.0.yaml` (`ghcr.io/kedacore/keda:2.20.0`), default settings.\n\n## Preconditions\n\n1. The tenant holds `create` on `triggerauthentications.keda.sh` and `scaledobjects.keda.sh` in its own namespace (the documented KEDA tenant workflow), plus the built-in `edit` ClusterRole in that namespace. Often granted by a namespaced admin Role (`--verb='*' --resource='*.*'`) in multi-tenant environments.\n2. KEDA is installed with default settings.\n\n## Reproduction\n\n### Cluster p",
+      "link": "https://github.com/advisories/GHSA-637c-6jxx-4rwm",
+      "published": "2026-10-15T20:19:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-77524"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-103030",
+      "title": "Dio: Cross-origin redirect leaks sensitive request headers in `dio_http2_adapter`",
+      "summary": "### Summary\n\n`dio_http2_adapter` follows HTTP `Location` redirects without stripping sensitive request headers when the redirect target is a different origin. An attacker who can cause any origin server to return a cross-origin `302` redirect receives the victim's `Authorization`, `Cookie`, and `Proxy-Authorization` headers verbatim. This vulnerability has a CVSS v3.1 base score of **7.5 (High)** because `followRedirects` is enabled by default, no authentication is required to exploit it, and the confidentiality impact is high.\n\n### Details\n\nWhen `Dio` is configured to use `Http2Adapter`, the adapter's internal `_fetch` method constructs HTTP/2 request headers by unconditionally copying all entries from `options.headers`:\n\n```dart\n// plugins/http2_adapter/lib/src/http2_adapter.dart:111\nheaders.addAll(\n  options.headers.entries.map((entry) {\n    ...\n    return Header.ascii(entry.key.toLowerCase(), v);\n  }).toList(),\n);\n```\n\nOn receiving a `3xx` response, the adapter reads the `Location` header and resolves the redirect target URI:\n\n```dart\n// plugins/http2_adapter/lib/src/http2_adapter.dart:254-263\nfinal url = responseHeaders.value('location');\nfinal uri = Uri.parse(url ?? '');\nfinal String path = resolveRedirectUri(options.uri, uri).toString();\nreturn _fetch(options.copyWith(path: path, maxRedirects: --options.maxRedirects), ...);\n```\n\n`options.copyWith` is called without an explicit `headers` argument; `dio/lib/src/options.dart:629` therefore preserves the full original header map via `headers ?? Map.from(this.headers)`. `resolveRedirectUri` (`http2_adapter.dart:290`) returns an attacker-controlled cross-origin URI without any origin comparison. The combination means that on every redirect, the full set of original sensitive headers \u2014 including `Authorization`, `Cookie`, and `Proxy-Authorization` \u2014 is forwarded to the new authority with no sanitization.\n\n**Data flow (source \u2192 sink):**\n\n1. `dio/lib/src/dio_mixin.dart:383` \u2014 public `Dio.request<T>(String path, ...)` ",
+      "link": "https://github.com/advisories/GHSA-cr65-55v9-xhvv",
+      "published": "2026-10-15T20:18:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-103030"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102748",
+      "title": "Dgraph: Zero Unauthenticated HTTP Admin removeNode Denial of Service",
+      "summary": "### Summary\n\nDgraph `v25.3.8` exposes a Zero HTTP administrative surface that is unauthenticated when port `6080` is reachable.\n\nThe exposed routes include:\n\n- `/state`\n- `/assign`\n- `/removeNode`\n- `/moveTablet`\n\nAn unauthenticated request to `/removeNode?id=1&group=0` on a single-node standalone deployment breaks the Zero control plane and leaves Alpha repeatedly failing to reconnect to `localhost:5080`.\n\n### Details\n\nThe issue exists because Zero administrative HTTP endpoints are registered directly without any authentication or IP-whitelist wrapper.\n\nRelevant code paths:\n\n- `worker/server_state.go:41`\n- `dgraph/cmd/zero/run.go:295-301`\n- `dgraph/cmd/zero/http.go:106-129`\n- `dgraph/cmd/zero/zero.go:475-477`\n\nThe relevant behavior is:\n\n- `disable-admin-http=false` by default\n- `/removeNode` accepts attacker-controlled `id` and `group`\n- `removeNode` forwards those directly into `Server.RemoveNode`\n- for `group=0`, `Server.RemoveNode` immediately calls `ProposePeerRemoval`\n\nThis means a remote unauthenticated caller can directly trigger destructive membership operations if `6080` is exposed.\n\n### PoC\n\n### Read state without authentication\n\n```bash\ncurl -i http://127.0.0.1:6080/state\n```\n\nObserved response included:\n\n- Zero node `id=1`\n- `groupId=0`\n- `leader=true`\n- cluster topology and tablet state\n\n<img width=\"1878\" height=\"810\" alt=\"\u56fe\u7247\" src=\"https://github.com/user-attachments/assets/c6a0001c-bcf7-45b6-a301-481f918be98a\" />\n\n### Write-capable route without authentication\n\n```bash\ncurl -i 'http://127.0.0.1:6080/assign?what=nsids&num=1'\n```\n\nObserved response:\n\n```text\nHTTP/1.1 200 OK\n...\n{\"startId\":\"1\", \"endId\":\"1\", \"readOnly\":\"0\"}\n```\n\nThis confirms the admin plane is not merely informational.\n\n<img width=\"1877\" height=\"805\" alt=\"\u56fe\u7247\" src=\"https://github.com/user-attachments/assets/caf60927-83ba-495d-8c55-e48343b8a2c7\" />\n\n### Destructive unauthenticated removeNode\n\n```bash\ncurl -i 'http://127.0.0.1:6080/removeNode?id=1&group=0'\n```\n\nObserved result:\n\n```text\ncur",
+      "link": "https://github.com/advisories/GHSA-qj98-gp63-54xj",
+      "published": "2026-10-15T20:17:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102748"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-100348",
+      "title": "kin-openapi spec loader panics on a self-referential additionalProperties $ref (nil-pointer DoS)",
+      "summary": "The defect\n----------\nConfirmed at HEAD (f0407d5, v0.144.0). openapi3/loader.go, inside resolveComponent's drill closure (around line 455), the case *SchemaRef branch for pathPart == \"additionalProperties\" dereferences c.Value.AdditionalProperties with no nil-check on c.Value:\n\n    case *SchemaRef:\n        if pathPart == \"additionalProperties\" {\n            if ap := c.Value.AdditionalProperties.Has; ap != nil {   // c.Value can be nil here\n                cursor = *ap\n            } else {\n                cursor = c.Value.AdditionalProperties.Schema\n            }\n            attempted = true\n        }\n\nWhen a $ref fragment drills through .../additionalProperties of a schema whose Value is still nil (a pure, not-yet-resolved $ref, or a self-reference resolved before its own Value is set), c.Value is nil and the .AdditionalProperties access panics.\n\nInput and attacker\n-------------------\nA tiny crafted OpenAPI document, one schema, no external refs, no network:\n\n    openapi: 3.0.3\n    info: {title: t, version: \"1.0.0\"}\n    paths: {}\n    components:\n      schemas:\n        A:\n          $ref: '#/components/schemas/A/additionalProperties'\n\nAttacker model: any service or tool that loads an untrusted spec via the default openapi3.Loader (LoadFromData / LoadFromFile / LoadFromURI), e.g. a spec registry, an API-management platform ingesting user specs, a linter, or a converter. It crashes during LOAD (ResolveRefsIn), before Validate.\n\nVerification level\n------------------\nEXECUTED with negative controls (agent-run go test at HEAD f0407d5, including yesterday's security merge; the bug is still present). The full stack pins LoadFromData:196 -> ResolveRefsIn:274 -> resolveSchemaRef:1048 -> resolveComponent:485 -> drill:439 -> :455, propagating to main(); no recover() in loader.go/schema.go (grep + trace). Two negative controls stay clean: drilling additionalProperties of a resolved schema loads fine (the existing TestIssue376 happy path), and a normal recursive schema loads fine,",
+      "link": "https://github.com/advisories/GHSA-mh7x-f8wq-4jhx",
+      "published": "2026-10-15T20:15:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-100348"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102527",
+      "title": "Nuxt OG Image cache poisoning through derivable cache keys on unsigned dynamic image routes",
+      "summary": "**Vendor:** Nuxt\n**Product:** Nuxt OG Image\n**Version:** 6.2.5\n**Description:** Due to the specifics of caching and key generation in the Open Graph image cache created by the module, an unauthenticated attacker can modify the content of the image (for example, the `title` parameter) that is delivered to the user. \n**Impact:** Content Spoofing\n**Vulnerable component:** route `/_og/d/*.png`\n**Exploitation conditions:** Access to the application\n**Mitigation:** Upgrade to 6.7.2 and set a sufficiently secure `secret` in config `ogImage`\n**Researcher:** Dmitry Vanin (Positive Technologies)\n\n## Research\nDuring [the previous vulnerability research](https://github.com/nuxt-modules/og-image/security/advisories/GHSA-6c86-prf5-hj4h), it was discovered that version 6.2.5 changed the mechanism for generating cache indexes; it now takes into account the parameters passed during image generation.\n\nHowever, the image is still generated from data transmitted to the attacker.\n\n_Listing 1. New code for generating indexes in cache_\n```\nexport function resolvePathCacheKey(e: H3Event, path: string, resolvedOptions?: Record<string, any>) {\n  const siteConfig = getSiteConfig(e, {\n    resolveRefs: true,\n  })\n  const basePath = withoutTrailingSlash(withoutLeadingSlash(normalizeKey(path)))\n  const hashParts: any[] = [\n    basePath,\n    import.meta.prerender ? '' : siteConfig.url,\n  ]\n  // Hash resolved options (not raw query string) so unknown/extra query params\n  // cannot produce unique cache keys and bypass the cache.\n  if (resolvedOptions)\n    hashParts.push(hash(resolvedOptions))\n  return [\n    (!basePath || basePath === '/') ? 'index' : basePath,\n    hash(hashParts),\n  ].join(':')\n}\n```\nIn this case, `basePath` is obtained from the `_path` parameter, `resolvedOptions` are the normalized settings of the component, for example:\n\n_Listing 2. An example of `resolvedOptions`_\n```\n{\"emojis\":\"noto\",\"extension\":\"png\",\"width\":1200,\"height\":600,\"cacheMaxAgeSeconds\":259200,\"component\":\"OgImageDef",
+      "link": "https://github.com/advisories/GHSA-2x6f-rp82-ppmj",
+      "published": "2026-10-15T20:15:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102527"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-100409",
+      "title": "OpenNext Cloudflare: Cache interception can bypass middleware protection for encoded paths",
+      "summary": "## Summary\n\nWhen cache interception is enabled, `@opennextjs/cloudflare` can interpret percent-encoded paths differently during middleware matching and cache lookup.\n\nAn encoded request may fail to match authorization middleware, then be decoded into the cache key of a protected route. The cached response may consequently be returned without invoking the middleware.\n\n`enableCacheInterception` is disabled by default.\n\n## Impact\n\nA remote unauthenticated attacker may retrieve cached content from routes intended to be protected by middleware.\n\nAn application is affected when it:\n\n- explicitly enables `enableCacheInterception`;\n- relies on middleware for access control; and\n- has a matching cached route.\n\n## Details\n\nMiddleware matching previously used the encoded request pathname, while cache interception decoded the pathname before selecting a cache entry.\n\nFor example, consider an application with:\n\n- middleware matcher `/admin/:path*`;\n- middleware returning `401 Authentication required` for `/admin`;\n- a statically generated, cached `/admin` route; and\n- cache interception enabled:\n\n```ts\nexport default defineCloudflareConfig({\n  incrementalCache: staticAssetsIncrementalCache,\n  enableCacheInterception: true,\n});\n```\n\nAn attacker can request:\n\n```http\nGET /%61dmin\n```\n\nThe encoded pathname does not match `/admin/:path*`, so the authorization middleware is not invoked. Cache interception then decodes `%61dmin` to `admin` and may return the cached `/admin` response:\n\n```http\nHTTP/1.1 200 OK\nx-opennext-cache: HIT\n\nProtected content\n```\n\nMalformed paths exposed an additional inconsistency. For example:\n\n```http\nGET /%61dmin/%ZZ\n```\n\nThe previous implementation decoded each segment independently. It decoded `%61dmin` to `admin` but retained the malformed `%ZZ` segment, allowing cache lookup to continue using a partially decoded pathname.\n\n## Patches\n\nThe fix aligns encoded-path handling across middleware matching and cache lookup, and rejects malformed paths instead of ",
+      "link": "https://github.com/advisories/GHSA-2vc4-c4r6-p6v6",
+      "published": "2026-10-15T20:15:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-100409"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-82416",
+      "title": "FrankenPHP: Cross-request PHP session ID leak in worker mode when the session extension is a shared module",
+      "summary": "## Summary\nIn worker mode under concurrency, FrankenPHP can hand a PHP session id from one request to another when PHP's `session` extension is loaded as a shared module instead of being statically linked into the FrankenPHP binary. A request presenting `Cookie: session=A` can have `session_id()` resolve to `B` (a different concurrent client's id) or to a stale id from a previous request served by the same worker thread.\n\n## Impact\n- **Security:** cross-user session exposure / session hijacking in worker mode. Same impact class as CVE-2026-24894.\n- **Functional:** users are intermittently logged out; their cookie's session is ignored and they receive a foreign or empty session.\n\n## Affected / not affected\nExposure is determined by how the `session` extension is linked in the PHP build FrankenPHP is compiled against, **not** by the FrankenPHP release:\n\n- **Affected:** any build where the `session` extension is not visible to FrankenPHP at compile time, i.e. loaded as a shared / out-of-tree module (`extension=session` in an ini). This includes the RPM and Debian packages and other packaged `php-zts` distributions that ship `session` as a shared extension under `conf.d`.\n- **Not affected:** builds where `session` is statically compiled into the PHP that FrankenPHP links against, such as the official static binaries and Docker images. There, the reset code below is compiled in and clears the id every request.\n\nThe C session-reset code is unchanged across 1.11.x-1.12.x, so this is not a code regression between releases. A \"1.12.2 works / 1.12.3 leaks\" observation on the same host reflects two differently-built packages, not a source change. The persistent-zval helpers (#2366) are compiled only under `FRANKENPHP_TEST` and are unrelated.\n\n## Root cause\nFrankenPHP resets per-request session state in `frankenphp_reset_session_state()`, which releases `PS(id)` so the next `session_start()` re-reads the request cookie. That whole function is guarded by `#ifdef HAVE_PHP_SESSION",
+      "link": "https://github.com/advisories/GHSA-v3ph-cgqh-r8p5",
+      "published": "2026-10-15T20:14:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-82416"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84360",
+      "title": "Nginx UI: OTP secure-session step-up can be bypassed via MCP configuration tools",
+      "summary": "### Summary\nAn OTP-enabled authenticated user who cannot use the HTTP configuration mutation endpoints without a valid secure session can still mutate Nginx configuration through `/mcp` and `/mcp_message` using only ordinary authentication.\n\n### Details\nThe HTTP configuration mutation surface is explicitly grouped behind `middleware.RequireSecureSession()`. By contrast, the MCP endpoints are exposed with only `middleware.AuthRequired()`. The MCP server exposes configuration mutation tools including `nginx_config_add` and `nginx_config_modify`, so OTP-enabled users gain an alternate path around the intended step-up requirement.\n\nRelevant code paths:\n- [api/config/router.go](/home/kali/Desktop/bounty/nginx-ui/api/config/router.go:14)\n- [internal/middleware/secure_session.go](/home/kali/Desktop/bounty/nginx-ui/internal/middleware/secure_session.go:52)\n- [mcp/router.go](/home/kali/Desktop/bounty/nginx-ui/mcp/router.go:9)\n- [mcp/config/config_add.go](/home/kali/Desktop/bounty/nginx-ui/mcp/config/config_add.go:34)\n- [mcp/config/config_modify.go](/home/kali/Desktop/bounty/nginx-ui/mcp/config/config_modify.go:55)\n\nThis is a security-control bypass rather than a missing feature. The product already established that OTP-enabled users should complete a secure session before high-impact configuration mutations are accepted on the HTTP path.\n\n### PoC\nI verified this locally in an isolated environment with a temporary end-to-end harness that exercised the real `/mcp` and `/mcp_message` routes.\n\nWhat the executed test did:\n1. Created a temporary config directory and configured Nginx control commands to harmless local values (`true`) to avoid touching the host.\n2. Created a real OTP-enabled user in a temporary SQLite database.\n3. Generated a real JWT for that OTP-enabled user.\n4. Started a local test server exposing the real `/mcp` and `/mcp_message` routes.\n5. Opened an authenticated SSE connection to `/mcp` with the JWT and no `X-Secure-Session-ID`.\n6. Initialized the MCP session",
+      "link": "https://github.com/advisories/GHSA-vc32-4gwf-77xp",
+      "published": "2026-10-15T20:14:10Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84360"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84315",
+      "title": "Nginx UI OTP secure-session step-up is missing on sensitive mutation routes",
+      "summary": "Reporter: Jagadesh Achanta\n\nTarget: `0xJacky/nginx-ui`\n\nAffected version / commit tested:\n- App version: `2.3.10`\n- Commit: `4948fba8744e82c3d7003f68ee164e9f49421066`\n- Disclosure channel: GitHub Private Vulnerability Reporting\n- Credential reference: `cred:github-jagstack-gh-cli`\n\n## AI assistance disclosure\n\nThis report was prepared by Jagadesh Achanta with assistance from OpenAI/Codex for public source review, local evidence collection, and report drafting.\n\n## Summary\n\nNginx UI has a short-lived OTP/passkey \"secure session\" step-up boundary for users with 2FA enabled. `RequireSecureSession()` rejects an OTP-enabled user's request unless the request includes a valid `X-Secure-Session-ID` issued after a fresh OTP/passkey verification.\n\nThe project already applies this step-up middleware to sensitive operations such as:\n\n- Nginx config create/edit/rename/delete;\n- site save/delete/enable/disable/rename/duplicate;\n- stream save/delete/enable/disable/rename/duplicate;\n- settings save and protected secret reads;\n- backup restore.\n\nHowever, several similarly sensitive authenticated mutation routes remain outside `RequireSecureSession()`. An attacker who obtains an authenticated JWT/session for a 2FA-enabled user, but does not have the victim's fresh OTP/passkey secure-session token, can still perform those operations.\n\nThe affected route groups include:\n\n- automatic backup create/modify/delete/restore/test-S3 operations;\n- DNS credential create/edit/delete operations;\n- certificate and ACME user create/modify/delete/register operations;\n- DNS domain, record, and DDNS create/update/delete operations;\n- Nginx reload/restart, stub-status toggle, performance-setting update, and module-cache refresh operations;\n- site/stream advanced-mode toggles and batch updates;\n- auto-certificate binding/unbinding for sites;\n- site navigation order and health-check updates.\n\nThis report is distinct from my earlier Nginx UI report about auto-backup path traversal. This report is about mi",
+      "link": "https://github.com/advisories/GHSA-5v7c-xpfp-p65m",
+      "published": "2026-10-15T20:12:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84315"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84313",
+      "title": "Nginx UI: TOTP / passkey enrolment requires no re-authentication, enabling persistent account takeover",
+      "summary": "## Summary\n\nEndpoints that bind a TOTP secret (`POST /api/otp_enroll`) or register a WebAuthn passkey (`POST /api/finish_passkey_register`) for the *current* user require only a valid JWT. There is no current-password re-prompt and the routes are explicitly registered **outside** the `RequireSecureSession()` group. With only a stolen JWT, an attacker can attach their own second factor to the victim's account, surviving any subsequent password rotation and locking the legitimate user out.\n\n## Details\n\n`api/user/router.go:34-39` \u2014 note the routes registered *before* the secure-session group:\n\n```go\nr.GET(\"/otp_secret\", GenerateTOTP)\nr.POST(\"/otp_enroll\", EnrollTOTP)                     // \u2190 outside RequireSecureSession\nr.GET(\"/begin_passkey_register\", BeginPasskeyRegistration)\nr.POST(\"/finish_passkey_register\", FinishPasskeyRegistration)  // \u2190 outside RequireSecureSession\n\no := r.Group(\"\", middleware.RequireSecureSession())\n{\n    o.GET(\"/otp_reset\", ResetOTP)                     // reset *is* protected \u2014 inconsistent\n    ...\n}\n```\n\n`EnrollTOTP` (`api/user/otp.go:45-102`) only refuses if `cUser.EnabledOTP()` is already `true`; for any victim who has never enabled TOTP it accepts an attacker-supplied `Secret` and `Passcode` pair (the validator only checks that the passcode is a valid TOTP for the supplied secret \u2014 i.e., the attacker proves they know the secret they are submitting):\n\n```go\nif cUser.EnabledOTP() { ... abort ... }\nvar twoFA struct {\n    Secret   string `json:\"secret\"   binding:\"required\"`\n    Passcode string `json:\"passcode\" binding:\"required\"`\n}\nif !cosy.BindAndValid(c, &twoFA) { return }\nif ok := totp.Validate(twoFA.Passcode, twoFA.Secret); !ok { ... abort ... }\nciphertext, _ := crypto.AesEncrypt([]byte(twoFA.Secret))\nu.Where(u.ID.Eq(cUser.ID)).Update(u.OTPSecret, ciphertext)\n```\n\n`FinishPasskeyRegistration` (`api/user/passkey.go`) is structurally identical and additionally has *no* \"already enrolled\" guard \u2014 an attacker can register multiple passkeys to",
+      "link": "https://github.com/advisories/GHSA-gfrc-g87h-7h5w",
+      "published": "2026-10-15T20:11:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84313"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84318",
+      "title": "Nginx UI: MCP `nginx_config_add` Bypasses Directive Validation \u2014 Authenticated RCE",
+      "summary": "### Summary\n\nThe MCP tool `nginx_config_add` writes nginx configuration files to disk and triggers an nginx reload without calling `config.ValidateConfigFile`. The identical flow in the REST API (`POST /api/configs`) does call that function and correctly rejects dangerous directives. An authenticated attacker can exploit this gap to write config files containing any blocked directive (`perl`, `js_import`, `load_module`, `user root`, etc.), bypassing nginx-ui's entire security layer. On a server with the nginx Perl, njs, or Lua module loaded, this is post-authentication Remote Code Execution.\n\n### Details\n\n`api/config/add.go` (line 46) calls `config.ValidateConfigFile` before writing:\n\n```go\nerr = config.ValidateConfigFile(path, content)  // validates directives, checks blocklist\nif err != nil {\n    cosy.ErrHandler(c, err)\n    return\n}\n```\n\n`mcp/config/config_add.go` (line 79) omits that call entirely and writes directly:\n\n```go\nerr = os.WriteFile(path, []byte(content), 0644)  // no ValidateConfigFile, no blocklist check\n...\nres := nginx.Control(nginx.Reload)               // reload triggered immediately\n```\n\n`config.ValidateConfigFile` runs two checks:\n- **`ValidateConfigContent`** \u2014 rejects control characters, enforces encoding.\n- **`ValidateConfigDirectives`** \u2014 rejects a blocklist of dangerous directives: `perl`, `perl_modules`, `perl_require`, `perl_set`, `js_import`, `js_set`, `js_content`, `load_module` (restricted modules), `user root`, and others.\n\nNeither check runs on the MCP path. Note that `mcp/config/config_modify.go` does call `ValidateConfigFile` correctly \u2014 only `config_add.go` is affected.\n\nThe MCP endpoint (`GET /mcp` SSE + `POST /mcp_message` JSON-RPC) accepts the same JWT and node-secret tokens as the REST API, so the attack surface is any authenticated session.\n\n### PoC\n\n**1 \u2014 Control: confirm REST API blocks the payload**\n\n```\nPOST /api/configs\nAuthorization: <token>\n\n{ \"name\": \"rce.conf\", \"base_dir\": \"conf.d\", \"content\": \"<perl config below>\",",
+      "link": "https://github.com/advisories/GHSA-9jww-cxg5-rj9m",
+      "published": "2026-10-15T20:11:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84318"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-84320",
+      "title": "Nginx UI: Auto backup name allows path traversal outside validated storage path",
+      "summary": "## Summary\n\nNginx UI validates `backup_path` and `storage_path` against the administrator-defined `backup.GrantedAccessPath` boundary, but the final auto-backup output filename is built from the user-controlled auto-backup `name` without stripping path separators or `..` components.\n\nAn authenticated user who can create or modify an auto-backup task can set a name such as `task/../../../escaped`. The configured `storage_path` still passes validation because it is inside `GrantedAccessPath`, but the generated backup path escapes that storage directory when `filepath.Join(storage_path, filename)` resolves the embedded traversal sequence.\n\nThis bypasses the documented backup path boundary and allows backup archives, and for encrypted configuration backups the adjacent `.key` file, to be written outside the intended storage directory with the Nginx UI process privileges.\n\n## Affected Versions\n\n- Current `dev` branch commit checked: `4948fba8744e82c3d7003f68ee164e9f49421066`\n- Latest release checked: `v2.3.10`, published 2026-04-28\n- The vulnerable filename construction is present in both current `dev` and `v2.3.10`.\n\n## Security Boundary\n\nThe project documentation describes `backup.GrantedAccessPath` as the critical security boundary for backup operations. It says the setting:\n\n- restricts backup operations to explicitly authorized directories,\n- prevents unauthorized access to sensitive system directories,\n- enforces administrator-defined boundaries,\n- normalizes paths to prevent traversal attempts.\n\nThat boundary is enforced for the configured `storage_path`, but not for the final path after the backup name is appended.\n\n## Root Cause\n\n`model.AutoBackup.GetName()` only trims whitespace and replaces spaces:\n\n```go\nfunc (a *AutoBackup) GetName() string {\n    return strings.ReplaceAll(strings.TrimSpace(a.Name), \" \", \"_\")\n}\n```\n\nThe result is then embedded directly into filenames:\n\n```go\nfilename := fmt.Sprintf(\"%s_%d.zip\", autoBackup.GetName(), time.Now().Unix())\noutputP",
+      "link": "https://github.com/advisories/GHSA-jrq7-xrjx-pcfw",
+      "published": "2026-10-15T20:10:56Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-84320"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-97370",
+      "title": "Junrar: RarVM VM_JMP maxOpCount bypass causes infinite CPU loop during RAR4 extraction",
+      "summary": "### Summary\n\nJunrar's RAR virtual machine can be forced into a deterministic infinite loop while extracting a crafted RAR4 archive. The `RarVM.ExecuteCode` loop is intended to be bounded by `maxOpCount`, but jump instructions can bypass this limit when `setIP()` is called with a target instruction pointer greater than or equal to `codeSize`.\n\nAn unauthenticated attacker who can provide a RAR archive to an application using `Junrar.extract()` can cause the extraction thread to spin forever, consuming CPU and blocking the process. The issue is a denial of service vulnerability, not remote code execution.\n\n### Details\n\nThe root cause is in `src/main/java/com/github/junrar/unpack/vm/RarVM.java`.\n\n`setIP()` returns early when the target IP is outside the prepared VM program:\n\n```java\nprivate boolean setIP(int ip) {\n    if ((ip) >= codeSize) {\n        return (true);\n    }\n\n    if (--maxOpCount <= 0) {\n        return (false);\n    }\n\n    IP = ip;\n    return true;\n}\n```\n\nWhen `ip >= codeSize`, this branch:\n\n- does not update `IP`;\n- does not decrement `maxOpCount`;\n- returns `true`, so callers treat it as success.\n\nThe `VM_JMP` handler and the other jump-like handlers discard the return value of `setIP()` and immediately `continue` the main VM loop:\n\n```java\ncase VM_JMP:\n    setIP(getValue(false, mem, op1));\n    continue;\n```\n\nBecause of the `continue`, execution also skips the loop-end accounting:\n\n```java\nIP++;\n--maxOpCount;\n```\n\nAs a result, a VM program containing a single `VM_JMP` instruction can freeze both `IP` and `maxOpCount`:\n\n1. `IP` points to the `VM_JMP` instruction.\n2. The jump target resolves to `codeSize` or larger.\n3. `setIP()` returns before modifying `IP` or decrementing `maxOpCount`.\n4. The caller ignores the return value and continues.\n5. The same `VM_JMP` instruction is executed again forever.\n\n### Impact\n\nThis is a CPU denial of service vulnerability. Any application that uses junrar to extract untrusted RAR archives can have an extraction worker threa",
+      "link": "https://github.com/advisories/GHSA-h9h9-2rmf-rvhp",
+      "published": "2026-10-15T20:09:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-97370"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-64653",
+      "title": "GitHub CLI allows path traversal through unescaped request URL components",
+      "summary": "### Summary\n\nA path traversal vulnerability has been identified in the GitHub CLI where some HTTP request URLs, REST API calls in particular, were built without properly escaping their variable path components. A value containing URL path metacharacters can alter the request path and cause `gh` to address a different resource than intended.\n\n### Details\n\nNot all request URLs in the codebase were built with proper escaping of their variable path components. When a component is interpolated into the path without percent encoding, and that component contains URL path metacharacters, it breaks out of its intended segment and changes the effective request path.\n\nIn `2.97.0`, request URLs are constructed in a safe manner, so a variable component can no longer escape its intended segment.\n\n### Impact\n\nAn attacker who can control a value that flows into a request path can cause `gh` to send the request to a different API endpoint than intended. This can lead the CLI to read or act on a resource other than the one the user meant to target.\n\n### Remediation and Mitigation\n\n1. Upgrade `gh` to `2.97.0`.\n2. Be cautious when running `gh` against untrusted repositories or inputs whose names you do not control.",
+      "link": "https://github.com/advisories/GHSA-4fjg-2h4q-fwg3",
+      "published": "2026-10-15T18:07:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-64653"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -400,60 +801,6 @@
       "cve_ids": [
         "CVE-2026-105133",
         "CVE-2026-105134"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-72923",
-      "title": "Microsoft.OpenApi.YamlReader vulnerable to denial of service via YAML alias expansion",
-      "summary": "### Impact\n\nA small YAML OpenAPI document containing nested anchors and aliases can cause uncontrolled resource consumption in Microsoft.OpenApi.YamlReader and Microsoft.OpenApi.Readers. The issue affects OpenAPI document parsing through the public YAML reader APIs and can cause the parsing process to allocate excessive memory and terminate through out-of-memory conditions.\n\n## Affected versions\n\n### Microsoft.OpenApi.YamlReader\n\n* `>= 2.0.0-preview.11, < 2.12.0`\n* `>= 3.0.0, < 3.10.0`\n\n### Microsoft.OpenApi.Readers\n\n* `< 1.6.30`\n\n### Patches\n\n* For the 1.X major version, versions 1.6.30 and above are patched.\n* For the 2.X major version, versions 2.12.0 and above are patched.\n* For the 3.X major version, versions 3.10.0 and above are patched.\n\n## Impact\n\nApplications, CLIs, developer tools, or services that parse untrusted YAML OpenAPI documents in-process may be terminated by a crafted YAML document containing nested anchors and aliases.\n\nThe impact is availability/process termination only. This report does not claim remote code execution, authentication bypass, credential exposure, privilege escalation, data exposure, or Microsoft hosted service impact.\n\n## Details\n\nMicrosoft.OpenApi.YamlReader and Microsoft.OpenApi.Readers parses YAML through SharpYaml. SharpYaml represents aliases as shared `YamlNode` instances in a directed acyclic graph, so the initial parsed YAML graph remains small. During conversion to `System.Text.Json.Nodes.JsonNode`, aliases must be materialized as independent nodes because `JsonNode` instances cannot be attached to multiple parents.\n\nWithout a bound on that conversion work, a small YAML document using nested anchors and aliases can expand exponentially during conversion. With `N` nested anchors each referenced `k` times, conversion can require `k^N` materialized JSON nodes, leading to excessive memory allocation and possible process termination.\n\nThis is an uncontrolled resource consumption vulnerability, also known as a \"billion laugh",
-      "link": "https://github.com/advisories/GHSA-7pxr-59rr-hqj2",
-      "published": "2026-10-14T20:11:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-72923"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62847",
-      "title": "Metalama allows local code execution through DLL planting in shared temporary directories",
-      "summary": "## Summary\n\nMetalama loaded and executed compile-time assemblies, auxiliary executable tools, and embedded helper assemblies from predictable temporary directories. On Linux and macOS the default cache location was the world-writable system temporary directory (`Path.GetTempPath()`, i.e. `/tmp`), and previously-generated artifacts were trusted based on the presence of a sentinel/`.completed` marker file rather than on any integrity verification.\n\nA local, unprivileged user on a shared machine or CI/build agent can pre-create the deterministic cache directory structure and plant a malicious DLL together with the matching sentinel file. When a higher-privileged user (or build/service account) subsequently runs a build, Metalama finds the sentinel, skips regeneration, and loads and executes the attacker-supplied assembly inside the compiler / IDE / MSBuild process.\n\nAffected load-and-execute paths:\n- the cache of compile-time assemblies that Metalama generates from your aspects;\n- auxiliary executable tools that Metalama extracts to a local directory and then launches;\n- embedded .NET helper assemblies that Metalama extracts to a local directory and loads into the build / IDE process.\n\n## Impact\n\nArbitrary code execution in the security context of the building user \u2014 i.e. a local privilege escalation across user accounts on shared POSIX systems (multi-user developer machines, CI/build agents). The attacker obtains code execution as the victim without holding the victim's privileges, and can read source/secrets, tamper with build output (supply-chain injection), or disrupt builds.\n\n## Affected configurations\n\n- **Linux and macOS, default configuration \u2014 affected.** The shipped default uses the world-writable system temp directory.\n- **Windows, default configuration \u2014 not affected.** The default per-user temporary directory is protected by OS ACLs, so cross-user planting is not possible.\n- The `METALAMA_TEMP` environment variable is a deployer-controlled override and is ",
-      "link": "https://github.com/advisories/GHSA-m6wq-39m7-9xpp",
-      "published": "2026-10-14T19:24:53Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62847"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-59180",
-      "title": "Apprise forwards configured auth headers across cross-origin HTTP redirects",
-      "summary": "# Summary\n\nApprise's HTTP-based notification plugins and its HTTP attachment / config loaders (`apprise/attachment/http.py`, `apprise/config/http.py`) follow HTTP 3xx redirects by default and **re-send the user-configured auth headers and query parameters on the redirected request**. If an operator-configured destination is later compromised (service takeover, malicious update), or an attacker holds a MITM position on an unprotected network path, that destination can return a `302 Location:` to an arbitrary host and Apprise forwards the user's secret (`X-Gotify-Key`, `Authorization`, bearer tokens in query, custom `+Header=` values) to that cross-origin host. The attacker does **not** need to control the original Apprise URL \u2014 only the response from a destination the operator already trusts.\n\nThis is the application-layer analogue of urllib3 [`GHSA-34jh-p97f-mpxf`](https://github.com/urllib3/urllib3/security/advisories/GHSA-34jh-p97f-mpxf) / `CVE-2026-44431` (\"`Proxy-Authorization` forwarded across cross-origin redirect\").\n\n# Affected versions\n\nAll releases up to and including `v1.10.0` (latest PyPI release as of filing, 2026-04-26). Fixed in v1.11.0 (released 2026-05-29), which includes [PR #1610](https://github.com/caronc/apprise/pull/1610) (merged 2026-05-16, commit 68c0aef218055e4586cf4605fd6b56358f5f462d).\n\n# Details\n\n`apprise/plugins/gotify.py` (pre-fix HEAD, lines 226-244, verbatim):\n\n```python\nheaders = {\n    \"User-Agent\": self.app_id,\n    \"Content-Type\": \"application/json\",\n    \"X-Gotify-Key\": self.token,    # user-supplied secret\n}\n...\nr = requests.post(\n    url,\n    data=dumps(payload),\n    headers=headers,\n    verify=self.verify_certificate,\n    timeout=self.request_timeout,\n    # NO allow_redirects=False -- requests default is True\n)\n```\n\n`requests` follows 3xx redirects by default and re-attaches the `headers=` dict on the redirected request, regardless of origin. The same shape exists across ~50 plugins (`custom_json`, `custom_xml`, `custom_form`, `go",
-      "link": "https://github.com/advisories/GHSA-856c-92hv-3vxx",
-      "published": "2026-10-14T18:38:05Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-59180"
       ],
       "is_zero_day": false,
       "is_high_severity": true
