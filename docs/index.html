@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">36</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">40</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-16 15:41 UTC</div>
+            <div class="generated">Updated 2026-10-16 20:10 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-102764" target="_blank" rel="noopener">CVE-2026-102764 — BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-102764</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-16</span>
+  </div>
+  <p class='summary'>Vendor: BeyondTrust | Product: Remote Support. BeyondTrust Remote Support contains an authentication bypass by spoofing vulnerability that could allow a remote attacker to perform file operations on the appliance. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidan…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61624" target="_blank" rel="noopener">CVE-2025-61624 — Fortinet Multiple Products Path Traversal Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2025-61624</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-16</span>
+  </div>
+  <p class='summary'>Vendor: Fortinet | Product: Multiple Products. FortiOS, FortiPAM, FortiProxy, and FortiSwitchManager contain a path traversal vulnerability that may allow an authenticated attacker with admin profile and at least read-write permissions to write or delete arbitrary files via specific CLI commands. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CI…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -385,6 +417,80 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
   <p class='summary'>Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and s…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w5f2-9q9c-ff4h" target="_blank" rel="noopener">LMCache: Remote code execution via unsafe deserialization in multiprocess mode transport</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-105192</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-16</span>
+          </div>
+          <p class='summary'>### Summary
+
+LMCache is vulnerable to Unauthenticated Remote Code Execution via Pickle Deserialization on the Multiprocess ZMQ Transport
+
+
+
+### Details
+
+LMCache multiprocess mode, also called distributed mode, opens an unauthenticated ZeroMQ ROUTER so worker processes can register and share KV cache blocks. The intended clients are sibling LMCache processes. There is no CURVE, ZAP, password, or me…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/critical-blockstrap-flaw-lets-hackers-run-code-on-magento-servers/" target="_blank" rel="noopener">Critical BlockStrap flaw lets hackers run code on Magento servers</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-103849</code>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-16</span>
+  </div>
+  <p class='summary'>Researchers warn that hackers could soon exploit a maximum-severity vulnerability (CVE-2026-103849) affecting Magento and Adobe Commerce, potentially allowing them to execute arbitrary PHP code on store servers. [...]</p>
+
+</article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h4mw-j7qp-8mwm" target="_blank" rel="noopener">Claude Agent SDK: Argument Injection via resume Option Allows Arbitrary Command Execution</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-96620</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-16</span>
+  </div>
+  <p class='summary'>The Claude Agent SDK for Python passed the `resume` option to the Claude CLI without validation, allowing a value beginning with `-` to be interpreted as a separate CLI flag. An attacker who controlled the `resume` value could inject an `--mcp-config` flag defining a stdio MCP server, resulting in arbitrary command execution at CLI startup that bypassed the SDK&#x27;s permission controls. Exploitation …</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-74w3-63xv-x9mv" target="_blank" rel="noopener">CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62994</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-16</span>
+          </div>
+          <p class='summary'>### Summary
+
+A network DNS client allowed to request AXFR for a CoreDNS zone can trigger a panic when CoreDNS is configured with `k8s_external` headless-service zone transfers and Kubernetes contains a headless service endpoint with no declared ports. The built-in `k8s_external` transferer can emit an empty `[]dns.RR` batch, and the shared `transfer` plugin indexes `records[0]` without checking th…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
@@ -733,48 +839,6 @@ The MCP tool `nginx_config_add` writes nginx configuration files to disk and tri
 Nginx UI validates `backup_path` and `storage_path` against the administrator-defined `backup.GrantedAccessPath` boundary, but the final auto-backup output filename is built from the user-controlled auto-backup `name` without stripping path separators or `..` components.
 
 An authenticated user who can create or modify an auto-backup task can set a name such as `task/../../../escaped`. …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h9h9-2rmf-rvhp" target="_blank" rel="noopener">Junrar: RarVM VM_JMP maxOpCount bypass causes infinite CPU loop during RAR4 extraction</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-97370</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-15</span>
-          </div>
-          <p class='summary'>### Summary
-
-Junrar&#x27;s RAR virtual machine can be forced into a deterministic infinite loop while extracting a crafted RAR4 archive. The `RarVM.ExecuteCode` loop is intended to be bounded by `maxOpCount`, but jump instructions can bypass this limit when `setIP()` is called with a target instruction pointer greater than or equal to `codeSize`.
-
-An unauthenticated attacker who can provide a RAR archi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4fjg-2h4q-fwg3" target="_blank" rel="noopener">GitHub CLI allows path traversal through unescaped request URL components</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-64653</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-15</span>
-          </div>
-          <p class='summary'>### Summary
-
-A path traversal vulnerability has been identified in the GitHub CLI where some HTTP request URLs, REST API calls in particular, were built without properly escaping their variable path components. A value containing URL path metacharacters can alter the request path and cause `gh` to address a different resource than intended.
-
-### Details
-
-Not all request URLs in the codebase were b…</p>
 
         </article>
 

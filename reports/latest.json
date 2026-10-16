@@ -1,10 +1,48 @@
 {
-  "generated": "2026-10-16T15:41:02.840876+00:00",
-  "total": 36,
-  "kev": 0,
+  "generated": "2026-10-16T20:10:41.825957+00:00",
+  "total": 40,
+  "kev": 2,
   "zero_day": 15,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-102764",
+      "title": "CVE-2026-102764 \u2014 BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability",
+      "summary": "Vendor: BeyondTrust | Product: Remote Support. BeyondTrust Remote Support contains an authentication bypass by spoofing vulnerability that could allow a remote attacker to perform file operations on the appliance. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102764",
+      "published": "2026-10-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-102764"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2025-61624",
+      "title": "CVE-2025-61624 \u2014 Fortinet Multiple Products Path Traversal Vulnerability",
+      "summary": "Vendor: Fortinet | Product: Multiple Products. FortiOS, FortiPAM, FortiProxy, and FortiSwitchManager contain a path traversal vulnerability that may allow an authenticated attacker with admin profile and at least read-write permissions to write or delete arbitrary files via specific CLI commands. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-19)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-61624",
+      "published": "2026-10-16",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2025-61624"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -272,6 +310,77 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-105192",
+      "title": "LMCache: Remote code execution via unsafe deserialization in multiprocess mode transport",
+      "summary": "### Summary\n\nLMCache is vulnerable to Unauthenticated Remote Code Execution via Pickle Deserialization on the Multiprocess ZMQ Transport\n\n\n\n### Details\n\nLMCache multiprocess mode, also called distributed mode, opens an unauthenticated ZeroMQ ROUTER so worker processes can register and share KV cache blocks. The intended clients are sibling LMCache processes. There is no CURVE, ZAP, password, or message authentication on that socket. LMCache used only inside a vLLM process does not open this port. The transport binds to localhost unless the operator sets a routable address with --host, which is how multi-node deployments let peers connect. The 9.8 score is for that routable configuration. A stock single-host install that leaves the default bind is not reachable from other machines.\n\nMessages on the socket are msgpack. Extension code 1 is registered for DeviceIPCWrapper and is passed to DeviceIPCWrapper.Deserialize in lmcache/v1/platform/base/ipc_wrapper.py, which calls pickle.loads. That hook runs from ext_hook in lmcache/v1/multiprocess/custom_types.py while the server is still decoding REGISTER_KV_CACHE arguments, before the handler runs. A single unauthenticated ZMQ DEALER message to the transport port (default 5555) therefore executes code as the user the LMCache process runs as. Official container images run that process as root.\n\nThe decode path shipped in v0.3.9. It is still present in the latest PyPI release, v0.5.5, in the v0.5.6 release candidates through v0.5.6rc3, and on the dev branch as of 2026-10-07. No fixed version has been published.\n\n\n\n### Proof of concept\n\nStep 1 - Start multiprocess mode bound to a routable address\n\n\nThis is the documented multi-node setting. The ZMQ transport listens on port 5555.\n\n```\n   python -m lmcache.v1.multiprocess.http_server \\\n    --http-host 127.0.0.1 --http-port 8080 \\\n    --host 0.0.0.0 --port 5555 \\\n    --l1-size-gb 0.25 --eviction-policy LRU \\\n    --hash-algorithm blake3 --instance-id mp-node-01\n```\nStep 2 - Build ",
+      "link": "https://github.com/advisories/GHSA-w5f2-9q9c-ff4h",
+      "published": "2026-10-16T20:08:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-105192"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/critical-blockstrap-flaw-lets-hackers-run-code-on-magento-servers/",
+      "title": "Critical BlockStrap flaw lets hackers run code on Magento servers",
+      "summary": "Researchers warn that hackers could soon exploit a maximum-severity vulnerability (CVE-2026-103849) affecting Magento and Adobe Commerce, potentially allowing them to execute arbitrary PHP code on store servers. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-blockstrap-flaw-lets-hackers-run-code-on-magento-servers/",
+      "published": "2026-10-16T20:00:59+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-103849"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96620",
+      "title": "Claude Agent SDK: Argument Injection via resume Option Allows Arbitrary Command Execution",
+      "summary": "The Claude Agent SDK for Python passed the `resume` option to the Claude CLI without validation, allowing a value beginning with `-` to be interpreted as a separate CLI flag. An attacker who controlled the `resume` value could inject an `--mcp-config` flag defining a stdio MCP server, resulting in arbitrary command execution at CLI startup that bypassed the SDK's permission controls. Exploitation required an application to pass untrusted input as the session ID to resume.\n\nUsers are advised to update to the latest version of the claude-agent-sdk package.\n\nThank you to hackerone.com/moamenmahmood for reporting this issue.",
+      "link": "https://github.com/advisories/GHSA-h4mw-j7qp-8mwm",
+      "published": "2026-10-16T19:44:37Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96620"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62994",
+      "title": "CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin",
+      "summary": "### Summary\n\nA network DNS client allowed to request AXFR for a CoreDNS zone can trigger a panic when CoreDNS is configured with `k8s_external` headless-service zone transfers and Kubernetes contains a headless service endpoint with no declared ports. The built-in `k8s_external` transferer can emit an empty `[]dns.RR` batch, and the shared `transfer` plugin indexes `records[0]` without checking that the batch is non-empty. In normal CoreDNS mode the panic is recovered and returned as `SERVFAIL`, but repeated triggering can disrupt requests and amplify panic logging; if the `debug` plugin disables recovery, the same path can crash the CoreDNS process.\n\n### Details\n\n`plugin/transfer/transfer.go` assumes that every `Transferer` emits only non-empty `[]dns.RR` batches. During AXFR/IXFR response generation it indexes `records[0]` without checking the slice length:\n\n- `plugin/transfer/transfer.go:129-131`\n\n```go\nfor records := range pchan {\n    if x, ok := records[0].(*dns.SOA); ok && soa == nil {\n        soa = x\n    }\n```\n\nThe built-in `k8s_external` transferer violates that contract for headless services whose endpoints have no declared ports. `plugin/k8s_external/transfer.go` sends the SRV result slice unconditionally:\n\n- `plugin/k8s_external/transfer.go:104-106`\n\n```go\nrecs, _ := e.srv(ctx, svcs, s)\nch <- recs\n```\n\n`plugin/k8s_external/msg_to_dns.go` intentionally skips services whose port is `-1`:\n\n- `plugin/k8s_external/msg_to_dns.go:107-112`\n\n```go\nfor _, s := range services {\n    // Don't add the entry if the port is -1 (invalid). The kubernetes plugin uses port -1 when a service/endpoint\n    // does not have any declared ports.\n    if s.Port == -1 {\n        continue\n    }\n```\n\nThe Kubernetes EndpointSlice conversion creates that sentinel when an EndpointSlice has no ports:\n\n- `plugin/kubernetes/object/endpoint.go:62-66`\n\n```go\nif len(ends.Ports) == 0 {\n    // Add sentinel if there are no ports.\n    e.Subsets[0].Ports = []EndpointPort{{Port: -1}}\n```\n\nThis creates",
+      "link": "https://github.com/advisories/GHSA-74w3-63xv-x9mv",
+      "published": "2026-10-16T19:26:42Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62994"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -576,42 +685,6 @@
       ],
       "cve_ids": [
         "CVE-2026-84320"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-97370",
-      "title": "Junrar: RarVM VM_JMP maxOpCount bypass causes infinite CPU loop during RAR4 extraction",
-      "summary": "### Summary\n\nJunrar's RAR virtual machine can be forced into a deterministic infinite loop while extracting a crafted RAR4 archive. The `RarVM.ExecuteCode` loop is intended to be bounded by `maxOpCount`, but jump instructions can bypass this limit when `setIP()` is called with a target instruction pointer greater than or equal to `codeSize`.\n\nAn unauthenticated attacker who can provide a RAR archive to an application using `Junrar.extract()` can cause the extraction thread to spin forever, consuming CPU and blocking the process. The issue is a denial of service vulnerability, not remote code execution.\n\n### Details\n\nThe root cause is in `src/main/java/com/github/junrar/unpack/vm/RarVM.java`.\n\n`setIP()` returns early when the target IP is outside the prepared VM program:\n\n```java\nprivate boolean setIP(int ip) {\n    if ((ip) >= codeSize) {\n        return (true);\n    }\n\n    if (--maxOpCount <= 0) {\n        return (false);\n    }\n\n    IP = ip;\n    return true;\n}\n```\n\nWhen `ip >= codeSize`, this branch:\n\n- does not update `IP`;\n- does not decrement `maxOpCount`;\n- returns `true`, so callers treat it as success.\n\nThe `VM_JMP` handler and the other jump-like handlers discard the return value of `setIP()` and immediately `continue` the main VM loop:\n\n```java\ncase VM_JMP:\n    setIP(getValue(false, mem, op1));\n    continue;\n```\n\nBecause of the `continue`, execution also skips the loop-end accounting:\n\n```java\nIP++;\n--maxOpCount;\n```\n\nAs a result, a VM program containing a single `VM_JMP` instruction can freeze both `IP` and `maxOpCount`:\n\n1. `IP` points to the `VM_JMP` instruction.\n2. The jump target resolves to `codeSize` or larger.\n3. `setIP()` returns before modifying `IP` or decrementing `maxOpCount`.\n4. The caller ignores the return value and continues.\n5. The same `VM_JMP` instruction is executed again forever.\n\n### Impact\n\nThis is a CPU denial of service vulnerability. Any application that uses junrar to extract untrusted RAR archives can have an extraction worker threa",
-      "link": "https://github.com/advisories/GHSA-h9h9-2rmf-rvhp",
-      "published": "2026-10-15T20:09:47Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-97370"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-64653",
-      "title": "GitHub CLI allows path traversal through unescaped request URL components",
-      "summary": "### Summary\n\nA path traversal vulnerability has been identified in the GitHub CLI where some HTTP request URLs, REST API calls in particular, were built without properly escaping their variable path components. A value containing URL path metacharacters can alter the request path and cause `gh` to address a different resource than intended.\n\n### Details\n\nNot all request URLs in the codebase were built with proper escaping of their variable path components. When a component is interpolated into the path without percent encoding, and that component contains URL path metacharacters, it breaks out of its intended segment and changes the effective request path.\n\nIn `2.97.0`, request URLs are constructed in a safe manner, so a variable component can no longer escape its intended segment.\n\n### Impact\n\nAn attacker who can control a value that flows into a request path can cause `gh` to send the request to a different API endpoint than intended. This can lead the CLI to read or act on a resource other than the one the user meant to target.\n\n### Remediation and Mitigation\n\n1. Upgrade `gh` to `2.97.0`.\n2. Be cautious when running `gh` against untrusted repositories or inputs whose names you do not control.",
-      "link": "https://github.com/advisories/GHSA-4fjg-2h4q-fwg3",
-      "published": "2026-10-15T18:07:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-64653"
       ],
       "is_zero_day": false,
       "is_high_severity": true
