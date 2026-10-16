@@ -1,29 +1,10 @@
 {
-  "generated": "2026-10-15T20:38:02.901140+00:00",
-  "total": 48,
-  "kev": 1,
+  "generated": "2026-10-16T01:57:50.056493+00:00",
+  "total": 47,
+  "kev": 0,
   "zero_day": 23,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-21589",
-      "title": "CVE-2026-21589 \u2014 Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
-      "summary": "Vendor: Atlassian | Product: Multiple Products. Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files within the web application root directory in affected versions. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-18)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-21589",
-      "published": "2026-10-15",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-21589"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",

@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-15 20:38 UTC &nbsp;|&nbsp; **Total:** 48 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 23 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-16 01:57 UTC &nbsp;|&nbsp; **Total:** 47 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 23 &nbsp;|&nbsp; 🟡 High: 24 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-21589 — Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability
-
-**CVE:** `CVE-2026-21589` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-10-15
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-21589>
-
-> Vendor: Atlassian | Product: Multiple Products. Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files with…
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,14 +13,14 @@
 
 ---
 
-## 3. 🟠 Zero-Day — October 2026 Patch Tuesday: 1,413 CVEs Include Three Zero-Days and 75 Critical Vulnerabilities
+## 2. 🟠 Zero-Day — October 2026 Patch Tuesday: 1,413 CVEs Include Three Zero-Days and 75 Critical Vulnerabilities
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Oct 13, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2026/>
 
 ---
 
-## 4. 🟠 Zero-Day — containerd CRI plugin: Checkpoint restore bypasses destination security context
+## 3. 🟠 Zero-Day — containerd CRI plugin: Checkpoint restore bypasses destination security context
 
 **CVE:** `CVE-2026-95837` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-p7v4-vr35-mj6f>
@@ -40,7 +31,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 5. 🟠 Zero-Day — Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution
+## 4. 🟠 Zero-Day — Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://www.securityweek.com/palo-alto-networks-patches-pan-os-zero-day-exploited-for-remote-code-execution/>
@@ -49,7 +40,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -58,7 +49,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -67,7 +58,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -76,7 +67,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -85,7 +76,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -94,7 +85,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -103,7 +94,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 12. 🟠 Zero-Day — Claude Code: Plugin Hash Pin Bypass Allows Bypass of Hash Pinning
+## 11. 🟠 Zero-Day — Claude Code: Plugin Hash Pin Bypass Allows Bypass of Hash Pinning
 
 **CVE:** `CVE-2026-86063` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-pq7j-f95f-qfcv>
@@ -112,7 +103,7 @@ A vulnerability in containerd&#x27;s CRI implementation allows a container resto
 
 ---
 
-## 13. 🟠 Zero-Day — kin-openapi: Incomplete Fix for GHSA-p6wj-qrr4-pgh5: Three Unpatched nil-Items Panic Paths in openapi3filter
+## 12. 🟠 Zero-Day — kin-openapi: Incomplete Fix for GHSA-p6wj-qrr4-pgh5: Three Unpatched nil-Items Panic Paths in openapi3filter
 
 **CVE:** `CVE-2026-100353` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-vrcc-3ch7-hppw>
@@ -125,7 +116,7 @@ Three additional crash paths were missed. All …
 
 ---
 
-## 14. 🟠 Zero-Day — Nginx UI: MCP nginx_config_add skips config directive validation → authenticated nginx directive injection (RCE on the official image)
+## 13. 🟠 Zero-Day — Nginx UI: MCP nginx_config_add skips config directive validation → authenticated nginx directive injection (RCE on the official image)
 
 **CVE:** `CVE-2026-84317` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-76pm-mq2q-9gcr>
@@ -139,7 +130,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 15. 🟠 Zero-Day — [0day-rubbish] Synametrics Syncrify 6.2 build 1178 authenticated PublicLink chunk-upload path traversal to /etc/cron.d and root command execution (7.5)
+## 14. 🟠 Zero-Day — [0day-rubbish] Synametrics Syncrify 6.2 build 1178 authenticated PublicLink chunk-upload path traversal to /etc/cron.d and root command execution (7.5)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/21>
@@ -148,7 +139,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 16. 🟠 Zero-Day — [0day-rubbish] South River Technologies Titan MFT Server 26.0.0 first-run administrator setup chained to job post-command injection, NT AUTHORITY\SYSTEM (8.1)
+## 15. 🟠 Zero-Day — [0day-rubbish] South River Technologies Titan MFT Server 26.0.0 first-run administrator setup chained to job post-command injection, NT AUTHORITY\SYSTEM (8.1)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/20>
@@ -157,7 +148,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 17. 🟠 Zero-Day — [0day-rubbish] SmartBear Collaborator Server 15.1.15101 authenticated DOORS/Simulink review-file upload zip-slip to anonymous webroot Groovy Server Page execution as uid 1001 (7.5)
+## 16. 🟠 Zero-Day — [0day-rubbish] SmartBear Collaborator Server 15.1.15101 authenticated DOORS/Simulink review-file upload zip-slip to anonymous webroot Groovy Server Page execution as uid 1001 (7.5)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/19>
@@ -166,7 +157,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 18. 🟠 Zero-Day — [0day-rubbish] PacsOne Server 7.3.9 authenticated DICOMweb STOW-RS SOP Instance UID path traversal to www-data code execution on a PACS host (7.2)
+## 17. 🟠 Zero-Day — [0day-rubbish] PacsOne Server 7.3.9 authenticated DICOMweb STOW-RS SOP Instance UID path traversal to www-data code execution on a PACS host (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/18>
@@ -175,7 +166,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 19. 🟠 Zero-Day — [0day-rubbish] Maian Pal 2.1 product image upload with no extension allow-list to PHP webshell and www-data uid 33 code execution (7.2, PR:H)
+## 18. 🟠 Zero-Day — [0day-rubbish] Maian Pal 2.1 product image upload with no extension allow-list to PHP webshell and www-data uid 33 code execution (7.2, PR:H)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/17>
@@ -184,7 +175,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 20. 🟠 Zero-Day — [0day-rubbish] Maian Guardian 2.1 license generator projid command injection to www-data uid 33 code execution (7.2, PR:H)
+## 19. 🟠 Zero-Day — [0day-rubbish] Maian Guardian 2.1 license generator projid command injection to www-data uid 33 code execution (7.2, PR:H)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/16>
@@ -193,7 +184,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 21. 🟠 Zero-Day — [0day-rubbish] Dataedo Portal 26.2.8 with Dataedo Agent 26.2.8 unrestricted scheduler job-type deserialization to Agent-host command execution (8.1)
+## 20. 🟠 Zero-Day — [0day-rubbish] Dataedo Portal 26.2.8 with Dataedo Agent 26.2.8 unrestricted scheduler job-type deserialization to Agent-host command execution (8.1)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/15>
@@ -202,7 +193,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 22. 🟠 Zero-Day — [0day-rubbish] CloudPanel 2.5.4-3 site-settings rootDirectory nginx virtual-host injection to host root code execution (8.8)
+## 21. 🟠 Zero-Day — [0day-rubbish] CloudPanel 2.5.4-3 site-settings rootDirectory nginx virtual-host injection to host root code execution (8.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/14>
@@ -211,7 +202,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 23. 🟠 Zero-Day — [0day-rubbish] Auerswald COMmander 6000 / 6000R 8.6D unauthenticated provisioning import zip-slip to root binary hijack and root code execution (9.8)
+## 22. 🟠 Zero-Day — [0day-rubbish] Auerswald COMmander 6000 / 6000R 8.6D unauthenticated provisioning import zip-slip to root binary hijack and root code execution (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/13>
@@ -220,7 +211,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 24. 🟠 Zero-Day — [0day-rubbish] Abyss Web Server X1 2.16.22.0 first-run console credential takeover to configuration-write log-as-CGI command execution (7.5)
+## 23. 🟠 Zero-Day — [0day-rubbish] Abyss Web Server X1 2.16.22.0 first-run console credential takeover to configuration-write log-as-CGI command execution (7.5)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/12>
@@ -229,7 +220,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 25. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 24. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -238,7 +229,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 26. 🟡 High Severity — Hackers exploit Collabora RCE flaw to backdoor Nextcloud servers
+## 25. 🟡 High Severity — Hackers exploit Collabora RCE flaw to backdoor Nextcloud servers
 
 **CVE:** `CVE-2026-110447` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-exploit-collabora-rce-flaw-to-backdoor-nextcloud-servers/>
@@ -247,7 +238,7 @@ enforced on three of the four config-write paths: `api/config/add.go`, `api/conf
 
 ---
 
-## 27. 🟡 High Severity — Critical PwnEscape Linux Kernel Vulnerability Lets Guest VMs Read Host Memory
+## 26. 🟡 High Severity — Critical PwnEscape Linux Kernel Vulnerability Lets Guest VMs Read Host Memory
 
 **CVE:** `CVE-2026-99999` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://thehackernews.com/2026/10/critical-pwnescape-linux-kernel.html>
@@ -258,7 +249,7 @@ The flaw, now tracked as CVE-2026-99999 and nicknamed PwnEscape, is in the Linux
 
 ---
 
-## 28. 🟡 High Severity — JupyterLab: Command link trust prompt in JupyterLab can trust a document other than the one clicked
+## 27. 🟡 High Severity — JupyterLab: Command link trust prompt in JupyterLab can trust a document other than the one clicked
 
 **CVE:** `CVE-2026-102832` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-jwrc-gm9j-263p>
@@ -271,7 +262,7 @@ Which document gets marked is decided when the user answers, not when they …
 
 ---
 
-## 29. 🟡 High Severity — containerd: Unpack DoS via repeated opaque whiteouts
+## 28. 🟡 High Severity — containerd: Unpack DoS via repeated opaque whiteouts
 
 **CVE:** `CVE-2026-95838` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-rp3h-jf77-q9p4>
@@ -284,7 +275,7 @@ Consequently, pulling or importing a maliciously crafted image can result in inc
 
 ---
 
-## 30. 🟡 High Severity — Talos Linux: Support bundle does not redact registry credentials
+## 29. 🟡 High Severity — Talos Linux: Support bundle does not redact registry credentials
 
 **CVE:** `CVE-2026-77564` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-7cxh-94cf-mfp6>
@@ -303,7 +294,7 @@ The same, potentially sensitive information is present within `etcfilespecs.file
 
 ---
 
-## 31. 🟡 High Severity — KEDA: Privilege escalation from namespace admin to cluster admin via KEDA TriggerAuthentication
+## 30. 🟡 High Severity — KEDA: Privilege escalation from namespace admin to cluster admin via KEDA TriggerAuthentication
 
 **CVE:** `CVE-2026-77524` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-637c-6jxx-4rwm>
@@ -314,7 +305,7 @@ A namespace admin who creates a `TriggerAuthentication` and a `ScaledObject` in 
 
 ---
 
-## 32. 🟡 High Severity — Dio: Cross-origin redirect leaks sensitive request headers in `dio_http2_adapter`
+## 31. 🟡 High Severity — Dio: Cross-origin redirect leaks sensitive request headers in `dio_http2_adapter`
 
 **CVE:** `CVE-2026-103030` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-cr65-55v9-xhvv>
@@ -325,7 +316,7 @@ A namespace admin who creates a `TriggerAuthentication` and a `ScaledObject` in 
 
 ---
 
-## 33. 🟡 High Severity — Dgraph: Zero Unauthenticated HTTP Admin removeNode Denial of Service
+## 32. 🟡 High Severity — Dgraph: Zero Unauthenticated HTTP Admin removeNode Denial of Service
 
 **CVE:** `CVE-2026-102748` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-qj98-gp63-54xj>
@@ -345,7 +336,7 @@ An unauthenticated request to `/removeNode?id=1&amp;group=0` on a single-node st
 
 ---
 
-## 34. 🟡 High Severity — kin-openapi spec loader panics on a self-referential additionalProperties $ref (nil-pointer DoS)
+## 33. 🟡 High Severity — kin-openapi spec loader panics on a self-referential additionalProperties $ref (nil-pointer DoS)
 
 **CVE:** `CVE-2026-100348` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-mh7x-f8wq-4jhx>
@@ -360,7 +351,7 @@ Confirmed at HEAD (f0407d5, v0.144.0). openapi3/loader.go, inside resolveCompone
 
 ---
 
-## 35. 🟡 High Severity — Nuxt OG Image cache poisoning through derivable cache keys on unsigned dynamic image routes
+## 34. 🟡 High Severity — Nuxt OG Image cache poisoning through derivable cache keys on unsigned dynamic image routes
 
 **CVE:** `CVE-2026-102527` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-2x6f-rp82-ppmj>
@@ -375,7 +366,7 @@ Confirmed at HEAD (f0407d5, v0.144.0). openapi3/loader.go, inside resolveCompone
 
 ---
 
-## 36. 🟡 High Severity — OpenNext Cloudflare: Cache interception can bypass middleware protection for encoded paths
+## 35. 🟡 High Severity — OpenNext Cloudflare: Cache interception can bypass middleware protection for encoded paths
 
 **CVE:** `CVE-2026-100409` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-2vc4-c4r6-p6v6>
@@ -390,7 +381,7 @@ An encoded request may fail to match authorization middleware, then be decoded i
 
 ---
 
-## 37. 🟡 High Severity — FrankenPHP: Cross-request PHP session ID leak in worker mode when the session extension is a shared module
+## 36. 🟡 High Severity — FrankenPHP: Cross-request PHP session ID leak in worker mode when the session extension is a shared module
 
 **CVE:** `CVE-2026-82416` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-v3ph-cgqh-r8p5>
@@ -400,7 +391,7 @@ In worker mode under concurrency, FrankenPHP can hand a PHP session id from one 
 
 ---
 
-## 38. 🟡 High Severity — Nginx UI: OTP secure-session step-up can be bypassed via MCP configuration tools
+## 37. 🟡 High Severity — Nginx UI: OTP secure-session step-up can be bypassed via MCP configuration tools
 
 **CVE:** `CVE-2026-84360` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-vc32-4gwf-77xp>
@@ -413,7 +404,7 @@ The HTTP configuration mutation surface is explicitly grouped behind `middleware
 
 ---
 
-## 39. 🟡 High Severity — Nginx UI OTP secure-session step-up is missing on sensitive mutation routes
+## 38. 🟡 High Severity — Nginx UI OTP secure-session step-up is missing on sensitive mutation routes
 
 **CVE:** `CVE-2026-84315` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-5v7c-xpfp-p65m>
@@ -434,7 +425,7 @@ This report was prepared by Jagadesh Achanta with assistance from OpenAI/Codex f
 
 ---
 
-## 40. 🟡 High Severity — Nginx UI: TOTP / passkey enrolment requires no re-authentication, enabling persistent account takeover
+## 39. 🟡 High Severity — Nginx UI: TOTP / passkey enrolment requires no re-authentication, enabling persistent account takeover
 
 **CVE:** `CVE-2026-84313` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-gfrc-g87h-7h5w>
@@ -445,7 +436,7 @@ Endpoints that bind a TOTP secret (`POST /api/otp_enroll`) or register a WebAuth
 
 ---
 
-## 41. 🟡 High Severity — Nginx UI: MCP `nginx_config_add` Bypasses Directive Validation — Authenticated RCE
+## 40. 🟡 High Severity — Nginx UI: MCP `nginx_config_add` Bypasses Directive Validation — Authenticated RCE
 
 **CVE:** `CVE-2026-84318` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-9jww-cxg5-rj9m>
@@ -456,7 +447,7 @@ The MCP tool `nginx_config_add` writes nginx configuration files to disk and tri
 
 ---
 
-## 42. 🟡 High Severity — Nginx UI: Auto backup name allows path traversal outside validated storage path
+## 41. 🟡 High Severity — Nginx UI: Auto backup name allows path traversal outside validated storage path
 
 **CVE:** `CVE-2026-84320` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-jrq7-xrjx-pcfw>
@@ -469,7 +460,7 @@ An authenticated user who can create or modify an auto-backup task can set a nam
 
 ---
 
-## 43. 🟡 High Severity — Junrar: RarVM VM_JMP maxOpCount bypass causes infinite CPU loop during RAR4 extraction
+## 42. 🟡 High Severity — Junrar: RarVM VM_JMP maxOpCount bypass causes infinite CPU loop during RAR4 extraction
 
 **CVE:** `CVE-2026-97370` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-h9h9-2rmf-rvhp>
@@ -482,7 +473,7 @@ An unauthenticated attacker who can provide a RAR …
 
 ---
 
-## 44. 🟡 High Severity — GitHub CLI allows path traversal through unescaped request URL components
+## 43. 🟡 High Severity — GitHub CLI allows path traversal through unescaped request URL components
 
 **CVE:** `CVE-2026-64653` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://github.com/advisories/GHSA-4fjg-2h4q-fwg3>
@@ -497,7 +488,7 @@ Not all request URLs in the codebase were b…
 
 ---
 
-## 45. 🟡 High Severity — Palo Alto Networks Patches PAN-OS Authenticated RCE Flaw Amid Active Exploitation
+## 44. 🟡 High Severity — Palo Alto Networks Patches PAN-OS Authenticated RCE Flaw Amid Active Exploitation
 
 **CVE:** `CVE-2026-0322` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://thehackernews.com/2026/10/palo-alto-networks-patches-pan-os.html>
@@ -510,7 +501,7 @@ The vulnerability, tracked as CVE-2026-0322 (CVSS score: 8.6), is a case of remo
 
 ---
 
-## 46. 🟡 High Severity — Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts
+## 45. 🟡 High Severity — Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts
 
 **CVE:** `CVE-2026-105740` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html>
@@ -523,7 +514,7 @@ The vulnerability in question is CVE-2026-105740 (CVSS score: 9.9), a case of
 
 ---
 
-## 47. 🟡 High Severity — AhsayCBS Flaws Exploited to Deploy Web Shells Get New Fixes After Incomplete Patches
+## 46. 🟡 High Severity — AhsayCBS Flaws Exploited to Deploy Web Shells Get New Fixes After Incomplete Patches
 
 **CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-15
 **Reference:** <https://thehackernews.com/2026/10/ahsaycbs-flaws-exploited-to-deploy-web.html>
@@ -536,7 +527,7 @@ In a report published earlier
 
 ---
 
-## 48. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 47. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
