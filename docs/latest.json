@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-16T01:57:50.056493+00:00",
-  "total": 47,
+  "generated": "2026-10-16T10:16:08.290411+00:00",
+  "total": 36,
   "kev": 0,
-  "zero_day": 23,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -37,6 +37,21 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
+      "title": "BeyondTrust patches zero-day exploited in attacks since August",
+      "summary": "BeyondTrust warned customers on Thursday to patch a critical flaw in its Remote Support (RS) that has been exploited in zero-day attacks since late August. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
+      "published": "2026-10-16T06:18:08+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-95837",
       "title": "containerd CRI plugin: Checkpoint restore bypasses destination security context",
       "summary": "### Impact\n\nA vulnerability in containerd's CRI implementation allows a container restored from an untrusted checkpoint via the `CreateContainer` API to bypass the destination security context and execute with elevated privileges. When restoring a container from a checkpoint archive or annotated OCI image, CRIU restores process credentials, Linux capabilities, `no_new_privs`, and seccomp state directly from checkpoint data rather than enforcing the destination CRI `ContainerConfig`. An attacker who can run a container with a crafted checkpoint image can execute processes as root with full capabilities and no enforced seccomp filters despite restrictive security policies requested by the orchestrator. Additionally, containerd's CRI status reporting reflects the requested configuration rather than the actual restored process state, masking the privilege discrepancy from orchestrators. This issue affects Linux systems running containerd with CRI checkpoint restore enabled; users not utilizing CRI checkpoint restore are not affected.\n\n### Patches\n\nThis bug has been addressed in containerd 2.2.7 and 2.3.4 by disabling checkpoint restore via `CreateContainer` by default.  The feature has been removed entirely in containerd 2.4.0. Users should update to these versions to resolve the issue. Running containers that were restored from untrusted checkpoints should be stopped, deleted, and recreated.\n\nUsers who rely on restore via the `CreateContainer` API can re-enable the feature by setting the new `enable_experimental_restore_via_create` configuration option. However, enabling restore via `CreateContainer` leaves this vulnerability present, as containerd cannot enforce destination security policy during CRIU process restoration. \n\n### Workarounds\n\nOn unpatched versions, containerd does not provide a configuration option to disable checkpoint restore via `CreateContainer`. Deployments should restrict container creation permissions to trusted users, validate container image re",
@@ -51,21 +66,6 @@
       "cve_ids": [
         "CVE-2026-95837"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/palo-alto-networks-patches-pan-os-zero-day-exploited-for-remote-code-execution/",
-      "title": "Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution",
-      "summary": "The company says it\u2019s aware of limited exploitation against customers\u2019 firewalls, and it has made IoCs available. The post Palo Alto Networks Patches PAN-OS Zero-Day Exploited for Remote Code Execution appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/palo-alto-networks-patches-pan-os-zero-day-exploited-for-remote-code-execution/",
-      "published": "2026-10-15T06:59:54+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -167,6 +167,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/10/china-linked-hackers-exploited.html",
+      "title": "China-Linked Hackers Exploited BeyondTrust Zero-Day to Take Over Remote Support Servers",
+      "summary": "The China-nexus cyber espionage group tracked as Armory Castle (previously UNC5221 or Warp Panda) exploited a newly disclosed security flaw in BeyondTrust Remote Support (formerly Bomgar) as a zero-day in late August 2026.\n\nThe vulnerability, tracked as CVE-2026-102764 (CVSS score: 9.3), is a case of improper origin validation in an internal messaging component that could be exploited by a",
+      "link": "https://thehackernews.com/2026/10/china-linked-hackers-exploited.html",
+      "published": "2026-10-16T06:55:55+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-102764"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-86063",
       "title": "Claude Code: Plugin Hash Pin Bypass Allows Bypass of Hash Pinning",
       "summary": "The plugin install flow in Claude Code and Claude Desktop checked out a marketplace's pinned commit SHA using `git checkout` without verifying that the resulting HEAD matched the pinned SHA. An attacker controlling a plugin's upstream repository could create a branch named identically to the pinned 40-character SHA, causing the checkout to silently resolve to the attacker's branch tip instead of the reviewed commit, resulting in attacker-controlled code being installed bypassing the pinned hash. Exploitation required a user to install a malicious plugin, pin to a safe hash, and for the plugin source to be hosted on a git host that permitted SHA-shaped branch names.\n\nUsers on standard Claude Code auto-update have received this fix already. Users performing manual updates are advised to update to the latest version.\n\nThank you to Or Nevo Michrowski of Air Security for reporting this issue.",
@@ -217,156 +234,6 @@
       "cve_ids": [
         "CVE-2026-84317"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/21",
-      "title": "[0day-rubbish] Synametrics Syncrify 6.2 build 1178 authenticated PublicLink chunk-upload path traversal to /etc/cron.d and root command execution (7.5)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Synametrics Syncrify 6.2 build 1178, the closed-source incremental backup and file-replication server from Synametrics Technologies, Inc. (United States). The product is written in Java, distributed for Linux as a tarball archive, and served by an embedded Tomcat 9.0.113 through the vendor's in-house sradef framework, whose single front controller routes every request as...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/21",
-      "published": "2026-10-15T07:42:13+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/20",
-      "title": "[0day-rubbish] South River Technologies Titan MFT Server 26.0.0 first-run administrator setup chained to job post-command injection, NT AUTHORITY\\SYSTEM (8.1)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability chain in South River Technologies Titan MFT Server 26.0.0.364, the NextGen generation of the commercial managed file transfer server from South River Technologies (Annapolis, Maryland, United States). The product runs as a single .NET 8 process, titanmft.exe, registered as the Windows service SrtTitanMFTServerService under LocalSystem, serves a Blazor Server administration...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/20",
-      "published": "2026-10-15T07:42:12+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/19",
-      "title": "[0day-rubbish] SmartBear Collaborator Server 15.1.15101 authenticated DOORS/Simulink review-file upload zip-slip to anonymous webroot Groovy Server Page execution as uid 1001 (7.5)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in SmartBear Collaborator Server 15.1.15101, the closed-source peer and technical code-review platform from SmartBear that runs as a Java web application on Apache Tomcat. One low-privilege authenticated account plants a Groovy Server Page in the Tomcat webroot through an archive-extraction path traversal, and any anonymous client - a crawler, a scanner, anyone - then executes it...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/19",
-      "published": "2026-10-15T07:42:10+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/18",
-      "title": "[0day-rubbish] PacsOne Server 7.3.9 authenticated DICOMweb STOW-RS SOP Instance UID path traversal to www-data code execution on a PACS host (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in PacsOne Server 7.3.9, Premium Edition, Linux x86-64 distribution, the closed-source commercial PACS (medical imaging archive and DICOM server) from RainbowFish Software, California, United States. The product combines a native C++ DICOM and HL7 service with a PHP web interface of 204 endpoints running on MySQL and Apache, fronted by a single Apache alias that maps /pacsone to...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/18",
-      "published": "2026-10-15T07:42:09+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/17",
-      "title": "[0day-rubbish] Maian Pal 2.1 product image upload with no extension allow-list to PHP webshell and www-data uid 33 code execution (7.2, PR:H)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Maian Pal 2.1, the self-hosted PHP shopping-cart script from Maian Media (United Kingdom), oriented at PayPal checkout and distributed as a commercial closed-source archive, verified end to end against a real installation of that version in three independent reproductions. Type: unrestricted upload of a file with a dangerous type (CWE-434 primary, with CWE-94 and CWE-693...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/17",
-      "published": "2026-10-15T07:42:08+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/16",
-      "title": "[0day-rubbish] Maian Guardian 2.1 license generator projid command injection to www-data uid 33 code execution (7.2, PR:H)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Maian Guardian 2.1, the self-hosted licensing system for PHP applications encoded with SourceGuardian, distributed as a closed-source commercial PHP script by Maian Script World (United Kingdom) and verified end to end against a real installation of that version. Type: OS command injection (CWE-78 primary; CWE-116, CWE-20 and CWE-561 contributing; CWE-250 and CWE-732 as...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/16",
-      "published": "2026-10-15T07:42:07+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/15",
-      "title": "[0day-rubbish] Dataedo Portal 26.2.8 with Dataedo Agent 26.2.8 unrestricted scheduler job-type deserialization to Agent-host command execution (8.1)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Dataedo Portal 26.2.8 together with Dataedo Agent 26.2.8, the closed-source enterprise data-catalog and data-governance platform from Dataedo sp. z o.o. (Poland). Both components are in scope because the chain crosses from one to the other: the Portal discloses a database credential, and the separately installed Agent executes an injected scheduler job on its own host. In the...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/15",
-      "published": "2026-10-15T07:42:05+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/14",
-      "title": "[0day-rubbish] CloudPanel 2.5.4-3 site-settings rootDirectory nginx virtual-host injection to host root code execution (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in CloudPanel Community Edition 2.5.4-3+clp-bookworm, the closed-source server-management panel from cloudpanel.io (Germany) that provisions and supervises nginx, php-fpm, MariaDB and hosted web sites from a Symfony application listening on port 8443. The build under advisory is the vendor's own distribution package, 69,183,476 bytes, md5 24c36a4739ce065c5c188c89def06f29, on...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/14",
-      "published": "2026-10-15T07:42:04+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/13",
-      "title": "[0day-rubbish] Auerswald COMmander 6000 / 6000R 8.6D unauthenticated provisioning import zip-slip to root binary hijack and root code execution (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability in Auerswald COMmander 6000 and COMmander 6000R, firmware 8.6D build 128154, the closed-source enterprise IP-PBX and unified-communications appliances from Auerswald (Germany). Two unauthenticated HTTP requests, carrying no cookie and no credential of any kind, yield uid=0(root) gid=0(root) groups=0(root) on an appliance that holds extension credentials, SIP trunk credentials, call...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/13",
-      "published": "2026-10-15T07:42:02+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/12",
-      "title": "[0day-rubbish] Abyss Web Server X1 2.16.22.0 first-run console credential takeover to configuration-write log-as-CGI command execution (7.5)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 15 0day Rubbish Research Team is publicly disclosing a vulnerability chain in Abyss Web Server X1 2.16.22.0, the free edition of the closed-source Abyss web server from Aprelium (Tunisia), a product family that has shipped for more than twenty years. The release artefacts identify 2.16.22.0 as the vendor's current official release. Between first start and the moment an administrator sets a console password, any client admitted by the shipped...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/12",
-      "published": "2026-10-15T07:42:01+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -747,41 +614,6 @@
       ],
       "cve_ids": [
         "CVE-2026-0322"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html",
-      "title": "Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts",
-      "summary": "Threat actors are exploiting a critical security flaw in Langflow, according to an alert from Previdian.\n\nLangflow is an open-source platform that allows developers to build artificial intelligence (AI) applications and agentic workflows. In February 2025, DataStax, the parent company of Langflow, was acquired by IBM.\n\nThe vulnerability in question is CVE-2026-105740 (CVSS score: 9.9), a case of",
-      "link": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html",
-      "published": "2026-10-15T07:07:05+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-105740"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/ahsaycbs-flaws-exploited-to-deploy-web.html",
-      "title": "AhsayCBS Flaws Exploited to Deploy Web Shells Get New Fixes After Incomplete Patches",
-      "summary": "Singapore-based Ahsay Backup has released security updates to address two security flaws in AhsayCBS that have been exploited by bad actors to drop web shells and XMRig cryptocurrency miners.\n\nThe vulnerabilities in question are CVE-2026-105133 and CVE-2026-105134, which could be chained to sidestep authentication and execute arbitrary commands on affected systems.\n\nIn a report published earlier",
-      "link": "https://thehackernews.com/2026/10/ahsaycbs-flaws-exploited-to-deploy-web.html",
-      "published": "2026-10-15T06:43:08+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-105133",
-        "CVE-2026-105134"
       ],
       "is_zero_day": false,
       "is_high_severity": true
