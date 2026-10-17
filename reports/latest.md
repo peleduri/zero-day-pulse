@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-17 14:32 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-17 19:46 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -109,27 +109,7 @@ LMCache multiprocess mode, also called distributed mode, opens an unauthenticate
 
 ---
 
-## 12. 🟡 High Severity — Claude Agent SDK: Argument Injection via resume Option Allows Arbitrary Command Execution
-
-**CVE:** `CVE-2026-96620` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-16
-**Reference:** <https://github.com/advisories/GHSA-h4mw-j7qp-8mwm>
-
-> The Claude Agent SDK for Python passed the `resume` option to the Claude CLI without validation, allowing a value beginning with `-` to be interpreted as a separate CLI flag. An attacker who controlled the `resume` value could inject an `--mcp-config` flag defining a stdio MCP server, resulting in arbitrary command execution at CLI startup that bypassed the SDK&#x27;s permission controls. Exploita…
-
----
-
-## 13. 🟡 High Severity — CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin
-
-**CVE:** `CVE-2026-62994` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-16
-**Reference:** <https://github.com/advisories/GHSA-74w3-63xv-x9mv>
-
-> ### Summary
-
-A network DNS client allowed to request AXFR for a CoreDNS zone can trigger a panic when CoreDNS is configured with `k8s_external` headless-service zone transfers and Kubernetes contains a headless service endpoint with no declared ports. The built-in `k8s_external` transferer can emit an empty `[]dns.RR` batch, and the shared `transfer` plugin indexes `records[0]` without checking th…
-
----
-
-## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

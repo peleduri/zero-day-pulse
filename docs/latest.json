@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-17T14:32:47.011235+00:00",
-  "total": 14,
+  "generated": "2026-10-17T19:46:49.124088+00:00",
+  "total": 12,
   "kev": 0,
   "zero_day": 8,
   "enriched": 0,
@@ -188,42 +188,6 @@
       ],
       "cve_ids": [
         "CVE-2026-103849"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-96620",
-      "title": "Claude Agent SDK: Argument Injection via resume Option Allows Arbitrary Command Execution",
-      "summary": "The Claude Agent SDK for Python passed the `resume` option to the Claude CLI without validation, allowing a value beginning with `-` to be interpreted as a separate CLI flag. An attacker who controlled the `resume` value could inject an `--mcp-config` flag defining a stdio MCP server, resulting in arbitrary command execution at CLI startup that bypassed the SDK's permission controls. Exploitation required an application to pass untrusted input as the session ID to resume.\n\nUsers are advised to update to the latest version of the claude-agent-sdk package.\n\nThank you to hackerone.com/moamenmahmood for reporting this issue.",
-      "link": "https://github.com/advisories/GHSA-h4mw-j7qp-8mwm",
-      "published": "2026-10-16T19:44:37Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-96620"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62994",
-      "title": "CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin",
-      "summary": "### Summary\n\nA network DNS client allowed to request AXFR for a CoreDNS zone can trigger a panic when CoreDNS is configured with `k8s_external` headless-service zone transfers and Kubernetes contains a headless service endpoint with no declared ports. The built-in `k8s_external` transferer can emit an empty `[]dns.RR` batch, and the shared `transfer` plugin indexes `records[0]` without checking that the batch is non-empty. In normal CoreDNS mode the panic is recovered and returned as `SERVFAIL`, but repeated triggering can disrupt requests and amplify panic logging; if the `debug` plugin disables recovery, the same path can crash the CoreDNS process.\n\n### Details\n\n`plugin/transfer/transfer.go` assumes that every `Transferer` emits only non-empty `[]dns.RR` batches. During AXFR/IXFR response generation it indexes `records[0]` without checking the slice length:\n\n- `plugin/transfer/transfer.go:129-131`\n\n```go\nfor records := range pchan {\n    if x, ok := records[0].(*dns.SOA); ok && soa == nil {\n        soa = x\n    }\n```\n\nThe built-in `k8s_external` transferer violates that contract for headless services whose endpoints have no declared ports. `plugin/k8s_external/transfer.go` sends the SRV result slice unconditionally:\n\n- `plugin/k8s_external/transfer.go:104-106`\n\n```go\nrecs, _ := e.srv(ctx, svcs, s)\nch <- recs\n```\n\n`plugin/k8s_external/msg_to_dns.go` intentionally skips services whose port is `-1`:\n\n- `plugin/k8s_external/msg_to_dns.go:107-112`\n\n```go\nfor _, s := range services {\n    // Don't add the entry if the port is -1 (invalid). The kubernetes plugin uses port -1 when a service/endpoint\n    // does not have any declared ports.\n    if s.Port == -1 {\n        continue\n    }\n```\n\nThe Kubernetes EndpointSlice conversion creates that sentinel when an EndpointSlice has no ports:\n\n- `plugin/kubernetes/object/endpoint.go:62-66`\n\n```go\nif len(ends.Ports) == 0 {\n    // Add sentinel if there are no ports.\n    e.Subsets[0].Ports = []EndpointPort{{Port: -1}}\n```\n\nThis creates",
-      "link": "https://github.com/advisories/GHSA-74w3-63xv-x9mv",
-      "published": "2026-10-16T19:26:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62994"
       ],
       "is_zero_day": false,
       "is_high_severity": true
