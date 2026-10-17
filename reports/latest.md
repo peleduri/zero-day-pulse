@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-17 09:49 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-17 14:32 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -74,25 +74,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Suspected Chinese espionage attackers abusing BeyondTrust IT support zero-day
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-10-16
-**Reference:** <https://therecord.media/beyond-trust-cyberattack-china>
-
-> An alleged Chinese state-backed group is using a new zero-day affecting BeyondTrust IT support software to conduct espionage attacks.
-
----
-
-## 10. 🟠 Zero-Day — Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day
-
-**CVE:** `CVE-2026-102764` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-16
-**Reference:** <https://www.securityweek.com/chinese-apt-exploited-beyondtrust-vulnerability-as-zero-day/>
-
-> Armory Castle exploited CVE-2026-102764 for initial access, deployed custom tools, and deleted logs and artifacts. The post Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day appeared first on SecurityWeek .
-
----
-
-## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 9. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -101,7 +83,7 @@
 
 ---
 
-## 12. 🟡 High Severity — LMCache: Remote code execution via unsafe deserialization in multiprocess mode transport
+## 10. 🟡 High Severity — LMCache: Remote code execution via unsafe deserialization in multiprocess mode transport
 
 **CVE:** `CVE-2026-105192` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-16
 **Reference:** <https://github.com/advisories/GHSA-w5f2-9q9c-ff4h>
@@ -118,7 +100,7 @@ LMCache multiprocess mode, also called distributed mode, opens an unauthenticate
 
 ---
 
-## 13. 🟡 High Severity — Critical BlockStrap flaw lets hackers run code on Magento servers
+## 11. 🟡 High Severity — Critical BlockStrap flaw lets hackers run code on Magento servers
 
 **CVE:** `CVE-2026-103849` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-16
 **Reference:** <https://www.bleepingcomputer.com/news/security/critical-blockstrap-flaw-lets-hackers-run-code-on-magento-servers/>
@@ -127,7 +109,7 @@ LMCache multiprocess mode, also called distributed mode, opens an unauthenticate
 
 ---
 
-## 14. 🟡 High Severity — Claude Agent SDK: Argument Injection via resume Option Allows Arbitrary Command Execution
+## 12. 🟡 High Severity — Claude Agent SDK: Argument Injection via resume Option Allows Arbitrary Command Execution
 
 **CVE:** `CVE-2026-96620` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-16
 **Reference:** <https://github.com/advisories/GHSA-h4mw-j7qp-8mwm>
@@ -136,7 +118,7 @@ LMCache multiprocess mode, also called distributed mode, opens an unauthenticate
 
 ---
 
-## 15. 🟡 High Severity — CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin
+## 13. 🟡 High Severity — CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin
 
 **CVE:** `CVE-2026-62994` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-16
 **Reference:** <https://github.com/advisories/GHSA-74w3-63xv-x9mv>
@@ -147,7 +129,7 @@ A network DNS client allowed to request AXFR for a CoreDNS zone can trigger a pa
 
 ---
 
-## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-17T09:49:43.057006+00:00",
-  "total": 16,
+  "generated": "2026-10-17T14:32:47.011235+00:00",
+  "total": 14,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 8,
   "enriched": 0,
   "findings": [
     {
@@ -129,38 +129,6 @@
       ],
       "cve_ids": [
         "CVE-2025-66376"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://therecord.media/beyond-trust-cyberattack-china",
-      "title": "Suspected Chinese espionage attackers abusing BeyondTrust IT support zero-day",
-      "summary": "An alleged Chinese state-backed group is using a new zero-day affecting BeyondTrust IT support software to conduct espionage attacks.",
-      "link": "https://therecord.media/beyond-trust-cyberattack-china",
-      "published": "2026-10-16T13:00:00+00:00",
-      "source": "The Record by Recorded Future",
-      "tags": [
-        "news",
-        "threat-intel"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/chinese-apt-exploited-beyondtrust-vulnerability-as-zero-day/",
-      "title": "Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day",
-      "summary": "Armory Castle exploited CVE-2026-102764 for initial access, deployed custom tools, and deleted logs and artifacts. The post Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/chinese-apt-exploited-beyondtrust-vulnerability-as-zero-day/",
-      "published": "2026-10-16T10:53:22+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-102764"
       ],
       "is_zero_day": true,
       "is_high_severity": false
