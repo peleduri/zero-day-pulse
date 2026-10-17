@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-17T01:52:23.989368+00:00",
-  "total": 17,
+  "generated": "2026-10-17T09:49:43.057006+00:00",
+  "total": 16,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -31,21 +31,6 @@
         "cloud",
         "threat-intel",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
-      "title": "BeyondTrust patches zero-day exploited in attacks since August",
-      "summary": "BeyondTrust warned customers on Thursday to patch a critical flaw in its Remote Support (RS) that has been exploited in zero-day attacks since late August. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
-      "published": "2026-10-16T06:18:08+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -164,15 +149,15 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/10/china-linked-hackers-exploited.html",
-      "title": "China-Linked Hackers Exploited BeyondTrust Zero-Day to Take Over Remote Support Servers",
-      "summary": "The China-nexus cyber espionage group tracked as Armory Castle (previously UNC5221 or Warp Panda) exploited a newly disclosed security flaw in BeyondTrust Remote Support (formerly Bomgar) as a zero-day in late August 2026.\n\nThe vulnerability, tracked as CVE-2026-102764 (CVSS score: 9.3), is a case of improper origin validation in an internal messaging component that could be exploited by a",
-      "link": "https://thehackernews.com/2026/10/china-linked-hackers-exploited.html",
-      "published": "2026-10-16T06:55:55+00:00",
-      "source": "The Hacker News Security",
+      "id": "https://www.securityweek.com/chinese-apt-exploited-beyondtrust-vulnerability-as-zero-day/",
+      "title": "Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day",
+      "summary": "Armory Castle exploited CVE-2026-102764 for initial access, deployed custom tools, and deleted logs and artifacts. The post Chinese APT Exploited BeyondTrust Vulnerability as Zero-Day appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/chinese-apt-exploited-beyondtrust-vulnerability-as-zero-day/",
+      "published": "2026-10-16T10:53:22+00:00",
+      "source": "SecurityWeek",
       "tags": [
         "news",
-        "zeroday"
+        "research"
       ],
       "cve_ids": [
         "CVE-2026-102764"
