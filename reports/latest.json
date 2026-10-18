@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-17T19:46:49.124088+00:00",
-  "total": 12,
+  "generated": "2026-10-18T01:51:08.690936+00:00",
+  "total": 10,
   "kev": 0,
   "zero_day": 8,
   "enriched": 0,
@@ -153,41 +153,6 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-105192",
-      "title": "LMCache: Remote code execution via unsafe deserialization in multiprocess mode transport",
-      "summary": "### Summary\n\nLMCache is vulnerable to Unauthenticated Remote Code Execution via Pickle Deserialization on the Multiprocess ZMQ Transport\n\n\n\n### Details\n\nLMCache multiprocess mode, also called distributed mode, opens an unauthenticated ZeroMQ ROUTER so worker processes can register and share KV cache blocks. The intended clients are sibling LMCache processes. There is no CURVE, ZAP, password, or message authentication on that socket. LMCache used only inside a vLLM process does not open this port. The transport binds to localhost unless the operator sets a routable address with --host, which is how multi-node deployments let peers connect. The 9.8 score is for that routable configuration. A stock single-host install that leaves the default bind is not reachable from other machines.\n\nMessages on the socket are msgpack. Extension code 1 is registered for DeviceIPCWrapper and is passed to DeviceIPCWrapper.Deserialize in lmcache/v1/platform/base/ipc_wrapper.py, which calls pickle.loads. That hook runs from ext_hook in lmcache/v1/multiprocess/custom_types.py while the server is still decoding REGISTER_KV_CACHE arguments, before the handler runs. A single unauthenticated ZMQ DEALER message to the transport port (default 5555) therefore executes code as the user the LMCache process runs as. Official container images run that process as root.\n\nThe decode path shipped in v0.3.9. It is still present in the latest PyPI release, v0.5.5, in the v0.5.6 release candidates through v0.5.6rc3, and on the dev branch as of 2026-10-07. No fixed version has been published.\n\n\n\n### Proof of concept\n\nStep 1 - Start multiprocess mode bound to a routable address\n\n\nThis is the documented multi-node setting. The ZMQ transport listens on port 5555.\n\n```\n   python -m lmcache.v1.multiprocess.http_server \\\n    --http-host 127.0.0.1 --http-port 8080 \\\n    --host 0.0.0.0 --port 5555 \\\n    --l1-size-gb 0.25 --eviction-policy LRU \\\n    --hash-algorithm blake3 --instance-id mp-node-01\n```\nStep 2 - Build ",
-      "link": "https://github.com/advisories/GHSA-w5f2-9q9c-ff4h",
-      "published": "2026-10-16T20:08:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-105192"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/critical-blockstrap-flaw-lets-hackers-run-code-on-magento-servers/",
-      "title": "Critical BlockStrap flaw lets hackers run code on Magento servers",
-      "summary": "Researchers warn that hackers could soon exploit a maximum-severity vulnerability (CVE-2026-103849) affecting Magento and Adobe Commerce, potentially allowing them to execute arbitrary PHP code on store servers. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-blockstrap-flaw-lets-hackers-run-code-on-magento-servers/",
-      "published": "2026-10-16T20:00:59+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-103849"
       ],
       "is_zero_day": false,
       "is_high_severity": true
