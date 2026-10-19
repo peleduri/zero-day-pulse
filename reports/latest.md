@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-19 11:25 UTC &nbsp;|&nbsp; **Total:** 11 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-19 17:52 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,27 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — Supply Chain Zero Days: Closing the Gap Between Publication and Detection
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-10-19
+**Reference:** <https://www.wiz.io/blog/detect-supply-chain-zero-days-at-publication>
+
+> When trusted packages are compromised, malicious code can quickly spread throughout and beyond developer environments. See how Wiz’s supply chain pipeline identifies compromised packages at publication, helping teams detect zero-day supply chain compromises in Wiz Defend before a CVE is published
+
+---
+
+## 4. 🟠 Zero-Day — ⚡ Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-19
+**Reference:** <https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html>
+
+> The worst problems don&#x27;t always come with a warning. Sometimes they arrive through a service everyone trusts, a device someone bought, or a system nobody thought to check. By the time something looks wrong, the damage may already be done.
+
+This week had plenty of that. Trusted connections became a problem. Hardware wasn&#x27;t as safe as it looked. Old bugs found new victims, and some systems…
+
+---
+
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -29,7 +49,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -38,7 +58,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -47,7 +67,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -56,7 +76,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -65,7 +85,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -74,7 +94,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Unpatched Broadcom Wi-Fi Flaw Lets Attackers in Range Run Code as Root on Routers
+## 11. 🟠 Zero-Day — Unpatched Broadcom Wi-Fi Flaw Lets Attackers in Range Run Code as Root on Routers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-19
 **Reference:** <https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html>
@@ -85,7 +105,7 @@ He showed the attack working against home gateways supplied by three Belgian int
 
 ---
 
-## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 12. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -94,7 +114,62 @@ He showed the attack working against home gateways supplied by three Belgian int
 
 ---
 
-## 11. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 13. 🟡 High Severity — Mercury: Stored / DOM Cross-Site Scripting (XSS): mr.Markdown renders untrusted content as raw, unsanitized HTML
+
+**CVE:** `CVE-2026-111059` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
+**Reference:** <https://github.com/advisories/GHSA-2658-85cv-9wwq>
+
+> ## Summary
+
+Mercury turns Jupyter notebooks into shared web apps/dashboards. The `mr.Markdown`
+widget converts its input to HTML with **python-markdown and no sanitization
+step**. `MarkdownWidget` is an `ipywidgets.HTML` widget, whose value is written to
+the page as **raw HTML (via `innerHTML`) with no sanitization**, so the result
+reaches the DOM verbatim. When an app passes **untrusted data** (d…
+
+---
+
+## 14. 🟡 High Severity — Mercury: Unauthenticated Remote Code Execution in /api/terminals - access control bypass
+
+**CVE:** `CVE-2026-111057` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
+**Reference:** <https://github.com/advisories/GHSA-f8c7-rwf9-fmgm>
+
+> ### Summary
+A missing comma in `mercury_app/block_handler.py`&#x27;s `BLOCKED_PATTERNS` list causes the blocklist to fail to cover the `/api/terminals` endpoint. As a result, any unauthenticated attacker can spawn a full, interactive OS-level shell on the host running Mercury.
+
+### Details
+The blocklist in `mercury_app/block_handler.py` is defined as:
+```
+BLOCKED_PATTERNS = [
+    # JupyterLab UI +…
+
+---
+
+## 15. 🟡 High Severity — Mercury: Unauthenticated Remote Code Execution via /api/kernels
+
+**CVE:** `CVE-2026-111058` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
+**Reference:** <https://github.com/advisories/GHSA-rv4m-xm3f-3ccq>
+
+> Mercury runs a JupyterLab server with **anonymous access by default** (`mercury_app/__main__.py` sets `--IdentityProvider.token=&#x27;&#x27;` when no `--token`/`MERCURY_TOKEN` is given; when tokenless it also sets `--ServerApp.disable_check_xsrf=True`). It relies on a **blocklist** (`mercury_app/block_handler.py` `BLOCKED_PATTERNS`: `/lab`, `/api/terminals`, `/api/shutdown`, `/files`) to keep anon…
+
+---
+
+## 16. 🟡 High Severity — LoopX serve-status permissive CORS policy exposes control-plane state and private Markdown files
+
+**CVE:** `CVE-2026-108372` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
+**Reference:** <https://github.com/advisories/GHSA-vx2m-gpq4-8j5q>
+
+> ## Summary
+
+`loopx serve-status` sends `Access-Control-Allow-Origin: *` on **every** response,
+including its unauthenticated `GET` routes. Because the endpoint is unauthenticated and
+bound to a fixed, well-known loopback port, **any website the operator visits can read
+LoopX control-plane state and the contents of Markdown files inside every registered goal
+repo**, using a plain `fetch()` with no …
+
+---
+
+## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

