@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-20T10:32:23.359395+00:00",
+  "generated": "2026-10-20T15:56:26.956612+00:00",
   "total": 16,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -37,27 +37,11 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.wiz.io/blog/detect-supply-chain-zero-days-at-publication",
-      "title": "Supply Chain Zero Days: Closing the Gap Between Publication and Detection",
-      "summary": "When trusted packages are compromised, malicious code can quickly spread throughout and beyond developer environments. See how Wiz\u2019s supply chain pipeline identifies compromised packages at publication, helping teams detect zero-day supply chain compromises in Wiz Defend before a CVE is published",
-      "link": "https://www.wiz.io/blog/detect-supply-chain-zero-days-at-publication",
-      "published": "2026-10-19T14:39:29+00:00",
-      "source": "Wiz Research",
-      "tags": [
-        "cloud",
-        "research",
-        "misconfig"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html",
-      "title": "\u26a1 Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More",
-      "summary": "The worst problems don't always come with a warning. Sometimes they arrive through a service everyone trusts, a device someone bought, or a system nobody thought to check. By the time something looks wrong, the damage may already be done.\n\nThis week had plenty of that. Trusted connections became a problem. Hardware wasn't as safe as it looked. Old bugs found new victims, and some systems were",
-      "link": "https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html",
-      "published": "2026-10-19T14:14:07+00:00",
+      "id": "https://thehackernews.com/2026/10/russian-apt28-breaches-nato-naval.html",
+      "title": "Russian APT28 Breaches NATO Naval Shipbuilder in NATO Country, Deploys New Reflective Loader",
+      "summary": "The Russia-linked state-sponsored threat actor tracked as APT28 (aka BlueDelta, Fancy Bear, and Forest Blizzard) has been attributed to attacks targeting two member states of the North Atlantic Treaty Organization (NATO).\n\nThe Symantec Threat Hunter Team, which is tracking the activity cluster under the moniker Swallowtail, involved the use of a backdoor called HOOKEDGE and a previously",
+      "link": "https://thehackernews.com/2026/10/russian-apt28-breaches-nato-naval.html",
+      "published": "2026-10-20T11:06:25+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
@@ -184,6 +168,24 @@
         "CVE-2021-22205",
         "CVE-2021-3199",
         "CVE-2023-22894"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111752",
+      "title": "@angular/router: Denial of Service via Unmatched Empty-Path Outlet Route Matching in Server-Side Rendering (SSR)",
+      "summary": "A denial of service (DoS) vulnerability was identified in `@angular/router` when Server-Side Rendering (SSR) is enabled on Node.js (V8).\n\nDuring route recognition, `@angular/router` fails to validate whether an auxiliary outlet segment in the URL matches a route configured for that specific outlet name. Because unconfigured empty-path outlet groups (such as `a:/()`, `x:/(...)`, or `///(...)`) are not rejected during matching, the router repeatedly re-evaluates the route configuration against each arbitrary outlet segment provided in the URL.\n\nWhen a request URL contains multiple arbitrary empty-path outlet segments, this improper matching forces the router to instantiate duplicate `ActivatedRouteSnapshot` trees, repeatedly execute `canMatch` guards and route resolvers, and allocate separate copies of route parameters and `queryParams` for each unconfigured outlet.\n\nAn unauthenticated remote attacker can exploit this behavior by sending requests with crafted outlet segments to exhaust the Node.js memory heap or overwhelm CPU resources, leading to SSR worker termination and service disruption.\n\n### Impact\n\nSuccessful exploitation allows an unauthenticated remote attacker to exhaust the Node.js heap with a single crafted request or a small number of concurrent requests, terminating the SSR worker process with a fatal JavaScript heap out-of-memory crash. When the matched routes declare `canMatch` guards or resolvers, a single short request can also trigger repeated guard or resolver executions, increasing load on backend services and holding worker connections open.\n\n* **Transient Allocation:** Memory is released once route recognition completes; there is no persistent memory leak. The primary impact is process termination.\n* **Client-side SPAs Unaffected:** Client-side Angular applications running in the browser are not vulnerable, as browser memory consumption does not cross a security boundary.\n* **Prerendering (SSG) Unaffected:** Build-time prerendering does not pro",
+      "link": "https://github.com/advisories/GHSA-62vg-58rm-qff7",
+      "published": "2026-10-20T14:36:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111752"
       ],
       "is_zero_day": false,
       "is_high_severity": true

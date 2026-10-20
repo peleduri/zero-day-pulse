@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-20 10:32 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-20 15:56 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,27 +20,18 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Supply Chain Zero Days: Closing the Gap Between Publication and Detection
+## 3. 🟠 Zero-Day — Russian APT28 Breaches NATO Naval Shipbuilder in NATO Country, Deploys New Reflective Loader
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-10-19
-**Reference:** <https://www.wiz.io/blog/detect-supply-chain-zero-days-at-publication>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-20
+**Reference:** <https://thehackernews.com/2026/10/russian-apt28-breaches-nato-naval.html>
 
-> When trusted packages are compromised, malicious code can quickly spread throughout and beyond developer environments. See how Wiz’s supply chain pipeline identifies compromised packages at publication, helping teams detect zero-day supply chain compromises in Wiz Defend before a CVE is published
+> The Russia-linked state-sponsored threat actor tracked as APT28 (aka BlueDelta, Fancy Bear, and Forest Blizzard) has been attributed to attacks targeting two member states of the North Atlantic Treaty Organization (NATO).
 
----
-
-## 4. 🟠 Zero-Day — ⚡ Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-19
-**Reference:** <https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html>
-
-> The worst problems don&#x27;t always come with a warning. Sometimes they arrive through a service everyone trusts, a device someone bought, or a system nobody thought to check. By the time something looks wrong, the damage may already be done.
-
-This week had plenty of that. Trusted connections became a problem. Hardware wasn&#x27;t as safe as it looked. Old bugs found new victims, and some systems…
+The Symantec Threat Hunter Team, which is tracking the activity cluster under the moniker Swallowtail, involved the use of a backdoor called HOOKEDGE and a previously
 
 ---
 
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -49,7 +40,7 @@ This week had plenty of that. Trusted connections became a problem. Hardware was
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -58,7 +49,7 @@ This week had plenty of that. Trusted connections became a problem. Hardware was
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -67,7 +58,7 @@ This week had plenty of that. Trusted connections became a problem. Hardware was
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -76,7 +67,7 @@ This week had plenty of that. Trusted connections became a problem. Hardware was
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -85,7 +76,7 @@ This week had plenty of that. Trusted connections became a problem. Hardware was
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -94,12 +85,23 @@ This week had plenty of that. Trusted connections became a problem. Hardware was
 
 ---
 
-## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
 
 > Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and s…
+
+---
+
+## 11. 🟡 High Severity — @angular/router: Denial of Service via Unmatched Empty-Path Outlet Route Matching in Server-Side Rendering (SSR)
+
+**CVE:** `CVE-2026-111752` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-20
+**Reference:** <https://github.com/advisories/GHSA-62vg-58rm-qff7>
+
+> A denial of service (DoS) vulnerability was identified in `@angular/router` when Server-Side Rendering (SSR) is enabled on Node.js (V8).
+
+During route recognition, `@angular/router` fails to validate whether an auxiliary outlet segment in the URL matches a route configured for that specific outlet name. Because unconfigured empty-path outlet groups (such as `a:/()`, `x:/(...)`, or `///(...)`) are …
 
 ---
 
