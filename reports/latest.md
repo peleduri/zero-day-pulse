@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-20 02:23 UTC &nbsp;|&nbsp; **Total:** 17 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-20 10:32 UTC &nbsp;|&nbsp; **Total:** 16 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -94,18 +94,7 @@ This week had plenty of that. Trusted connections became a problem. Hardware was
 
 ---
 
-## 11. 🟠 Zero-Day — Unpatched Broadcom Wi-Fi Flaw Lets Attackers in Range Run Code as Root on Routers
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-19
-**Reference:** <https://thehackernews.com/2026/10/unpatched-broadcom-wi-fi-flaw-lets.html>
-
-> A flaw in Broadcom&#x27;s Wi-Fi setup software lets an attacker within radio range run code as root on Broadcom-based routers, without the network password or any pairing step, security researcher Quentin Kaiser disclosed on October 16.
-
-He showed the attack working against home gateways supplied by three Belgian internet providers, in one case reading the Wi-Fi password off the device
-
----
-
-## 12. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -114,7 +103,7 @@ He showed the attack working against home gateways supplied by three Belgian int
 
 ---
 
-## 13. 🟡 High Severity — Mercury: Stored / DOM Cross-Site Scripting (XSS): mr.Markdown renders untrusted content as raw, unsanitized HTML
+## 12. 🟡 High Severity — Mercury: Stored / DOM Cross-Site Scripting (XSS): mr.Markdown renders untrusted content as raw, unsanitized HTML
 
 **CVE:** `CVE-2026-111059` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
 **Reference:** <https://github.com/advisories/GHSA-2658-85cv-9wwq>
@@ -129,7 +118,7 @@ reaches the DOM verbatim. When an app passes **untrusted data** (d…
 
 ---
 
-## 14. 🟡 High Severity — Mercury: Unauthenticated Remote Code Execution in /api/terminals - access control bypass
+## 13. 🟡 High Severity — Mercury: Unauthenticated Remote Code Execution in /api/terminals - access control bypass
 
 **CVE:** `CVE-2026-111057` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
 **Reference:** <https://github.com/advisories/GHSA-f8c7-rwf9-fmgm>
@@ -145,7 +134,7 @@ BLOCKED_PATTERNS = [
 
 ---
 
-## 15. 🟡 High Severity — Mercury: Unauthenticated Remote Code Execution via /api/kernels
+## 14. 🟡 High Severity — Mercury: Unauthenticated Remote Code Execution via /api/kernels
 
 **CVE:** `CVE-2026-111058` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
 **Reference:** <https://github.com/advisories/GHSA-rv4m-xm3f-3ccq>
@@ -154,7 +143,7 @@ BLOCKED_PATTERNS = [
 
 ---
 
-## 16. 🟡 High Severity — LoopX serve-status permissive CORS policy exposes control-plane state and private Markdown files
+## 15. 🟡 High Severity — LoopX serve-status permissive CORS policy exposes control-plane state and private Markdown files
 
 **CVE:** `CVE-2026-108372` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-19
 **Reference:** <https://github.com/advisories/GHSA-vx2m-gpq4-8j5q>
@@ -169,7 +158,7 @@ repo**, using a plain `fetch()` with no …
 
 ---
 
-## 17. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 16. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
