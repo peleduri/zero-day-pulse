@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-21T16:13:11.961208+00:00",
-  "total": 38,
+  "generated": "2026-10-21T20:58:16.282631+00:00",
+  "total": 35,
   "kev": 0,
-  "zero_day": 17,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -167,107 +167,20 @@
       "is_high_severity": false
     },
     {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/34",
-      "title": "[0day-rubbish] TRENDnet TV-IP302PI firmware 1.02.38 authenticated NTP server-address OS command injection to root command execution via a shell-form system() call (7.2 High, PR:H)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in TRENDnet TV-IP302PI firmware 1.02.38, the closed-source IP surveillance camera from TRENDnet (United States). The camera's application daemon is shipped at /hunt/hunt_server: an ARM 32-bit EABI5 version 5TE soft-float binary, dynamically linked against /lib/ld-linux.so.3, 4.5 MB and stripped. Its own string pool carries hunt_camera, HuntAudioConverter, HuntDataDirect and...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/34",
-      "published": "2026-10-20T18:50:07+00:00",
-      "source": "Full Disclosure",
+      "id": "CVE-2026-114125",
+      "title": "Storybook: Missing origin validation in Storybook preview allows code injection from malicious websites",
+      "summary": "**Summary:** A malicious website may be able to cause unauthorized file changes in a developer\u2019s project while an affected Storybook development server is running. Under additional conditions, a changed file could be executed by a local runtime with the developer\u2019s privileges. We are not aware of exploitation in the wild.\n\n## Who is impacted?\n\nYou are impacted if you run a Storybook dev server in the affected versions.\n\nYou are not impacted if:\n\n- You run a dev server that you never open in a web browser (e.g. headless automation, MCP clients)\n- You run or visit a built version of Storybook\n\nRecent versions of Chrome and Firefox may ask for permission before a website can connect to a `localhost` service. This reduces the risk, but does not remove it. Do not grant this permission to websites you don\u2019t trust.\n\n## Recommended actions\n\n### Upgrade Storybook\n\nStorybook has released patched versions of all affected major Storybook versions that fix all the vulnerabilities necessary for the worst-case scenario above to occur. \n\nUpgrade to a patched version listed below before running `storybook dev` again. If you cannot upgrade immediately, do not run an affected Storybook dev server until you can apply the fix.\n\n- 11.0.0-alpha.6\n- 10.6.2\n- 9.1.21\n- 8.6.19\n\n### Review potentially breaking changes\n\nDue to the exceptional nature of the reported vulnerabilities, the Storybook team has decided to change the default behavior of Storybook, including versions 8 and 9, for several network-related features that are not essential to most Storybook users' workflow. If your team relies on the affected features, we've added feature flags that can disable specific security updates to support your existing workflows.\n\nPlease carefully read the introduced flags and the consequences of using them.\n\n#### Iframe embedding over the network is disabled by default\n\nStorybook no longer allows the manager or preview to be embedded as an iframe on a website with a different host name. Built versi",
+      "link": "https://github.com/advisories/GHSA-f2ph-cmg5-wxc8",
+      "published": "2026-10-21T17:23:29Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "disclosure",
-        "exploit"
+        "github",
+        "advisories",
+        "oss"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/33",
-      "title": "[0day-rubbish] Royal Render 9.1.26b: default-unauthenticated job submission on rrServer TCP 7773 reaches worker-side shell execution as the worker identity, measured root (8.1 High)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in Royal Render 9.1.26b, the closed-source render-farm job manager for VFX and animation studios from Binary Alchemy (proprietor Holger Schoenberger) of Ludwigsburg, Germany. Royal Render is a different product from the Royal Server gateway sold by Royal Apps GmbH of Austria; the two are unrelated companies sharing one word in their names, and this disclosure concerns the German...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/33",
-      "published": "2026-10-20T18:50:06+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
+      "cve_ids": [
+        "CVE-2026-114125"
       ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/32",
-      "title": "[0day-rubbish] ProSoft Technology RLX-IFH24E v2.2.44 unsigned firmware upgrade package to root command execution and full account-database overwrite (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in the ProSoft RLX-IFH24E, version v2.2.44, the industrial wireless radio from ProSoft Technology, Inc. (United States). The appliance is a closed-source embedded device and an OEM build of the MicroHard Systems IPx21 platform on the MHX-910 board design: an Intel IXP425 XScale processor, ARM big-endian, Linux 2.4.24-uc0, with static management pages under /usr/web and 57 ARM...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/32",
-      "published": "2026-10-20T18:50:05+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/31",
-      "title": "[0day-rubbish] Parasoft Continuous Testing Platform 10.7.5-SNAPSHOT anonymous deserialization in the database restore path to JSP command execution as uid=1000 (9.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in Parasoft Continuous Testing Platform 10.7.5-SNAPSHOT, the closed-source commercial continuous-testing, service-virtualisation and environment-management product from Parasoft, a United States software-testing vendor headquartered in Monrovia, California. The affected component is the em web application inside the vendor's own container image, running on Tomcat 10.1.57 with...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/31",
-      "published": "2026-10-20T18:50:03+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/30",
-      "title": "[0day-rubbish] Exasol Database 7.1.30 docker-db form: shipped default SYS credential to PYTHON3 UDF os.popen command execution as uid=500(exadefusr), output returned in-band (8.8)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in Exasol Database 7.1.30, the in-memory MPP analytical database from Exasol AG (Germany), examined in its docker-db single-container deployment form. The SQL engine is a proprietary C implementation named EXASolution, the server process is exacts, clients speak a proprietary binary SQL protocol on port 8563 rather than HTTP, TLS terminates on that port with a self-signed...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/30",
-      "published": "2026-10-20T18:50:02+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/29",
-      "title": "[0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the setWAN WAN-configuration handler, root command execution (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in the Edimax BR-6478AC, firmware image BR6478AC_v2.20.bin, the dual-band AC1750 SOHO wireless router from Edimax Technology Co., Ltd. (Taiwan). A single authenticated POST that looks like an ordinary WAN settings submission reaches system() with a request-controlled username interpolated unquoted into a shell command line, behind a sanitiser that inspects exactly one character,...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/29",
-      "published": "2026-10-20T18:50:00+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/28",
-      "title": "[0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the formWlanMP manufacturing-test handler, root command execution (7.2)",
-      "summary": "Posted by disclosure via Fulldisclosure on Oct 20 0day Rubbish Research Team is publicly disclosing a vulnerability in the Edimax BR-6478AC, firmware image BR6478AC_v2.20.bin, the dual-band AC1750 SOHO wireless router from Edimax Technology Co., Ltd. (Taiwan). A single authenticated POST to a manufacturing radio-calibration route that is still registered in production firmware reaches system() with thirty raw request fields interpolated into one command line, and the web server process that...",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/28",
-      "published": "2026-10-20T18:49:59+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -298,7 +211,7 @@
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
       "title": "#StopRansomware: SafePay Ransomware",
-      "summary": "Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to networks by stealing or guessing passwords, exploiting vulnerabilities in security systems, and using phishing tactics. Once inside the network, SafePay actors establish control by creating new accounts or taking over existing ones. They then use legitimate system tools to move through the network, identify valuable files, and disable security protections to avoid detection. Following, they encrypt the victim\u2019s files, making them inaccessible, and leave a ransom note demanding payment in cryptocurrency. This advisory urges organizations to follow recommended security measures to reduce the risk and impact of SafePay ransomware attacks. Affected Products CVE-2020-3259 [ Common Weakness Enumeration (CWE)-200: Exposure of Sensitive Information to an Unauthorized Actor ] CVE-2023-20269 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ] CVE-2023-27532 [ CWE-306: Missing Authentication for Critical Function ] CVE-2024-40711 [ CWE-502: Deserialization of Untrusted Data ] CVE-2024-40766 [ CWE-284: Improper Access Control ] Key Actions Regularly patch and update systems, especially firewalls, and other edge devices. Implement Zero Trust Principle. Restrict administrative tools and privileges to necessary users only. Strengthen account security by implementing identity, credential, and access management (ICAM) policies and multifactor authentication (MFA). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-293A STIX XML (40 KB) AA26-293A STIX JSON (38 KB) Intended Audience Organizations: Government; Federal Civilian Executive Branc",
+      "summary": "Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to networks by stealing or guessing passwords, exploiting vulnerabilities in security systems, and using phishing tactics. Once inside the network, SafePay actors establish control by creating new accounts or taking over existing ones. They then use legitimate system tools to move through the network, identify valuable files, and disable security protections to avoid detection. Next, they encrypt the victim\u2019s files, making them inaccessible, and leave a ransom note demanding payment in cryptocurrency. This advisory urges organizations to follow recommended security measures to reduce the risk and impact of SafePay ransomware attacks. Affected Products CVE-2020-3259 [ Common Weakness Enumeration (CWE)-200: Exposure of Sensitive Information to an Unauthorized Actor ] CVE-2023-20269 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ] CVE-2023-27532 [ CWE-306: Missing Authentication for Critical Function ] CVE-2024-40711 [ CWE-502: Deserialization of Untrusted Data ] CVE-2024-40766 [ CWE-284: Improper Access Control ] Key Actions Regularly patch and update systems, especially firewalls, and other edge devices. Implement Zero Trust Principle. Restrict administrative tools and privileges to necessary users only. Strengthen account security by implementing identity, credential, and access management (ICAM) policies and multifactor authentication (MFA). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-293A STIX XML (40 KB) AA26-293A STIX JSON (38 KB) Intended Audience Organizations: Government; Federal Civilian Executive Branch (FC",
       "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
       "published": "Mon, 19 Oct 2026 15:18:07 EDT",
       "source": "CISA US-CERT Alerts",
@@ -317,6 +230,313 @@
       "is_high_severity": true
     },
     {
+      "id": "CVE-2026-112898",
+      "title": "Pillow: Image.quantize() with empty palette leaks uninitialized stack memory",
+      "summary": "```\n============================================================================\nImage.quantize() with empty palette leaks uninitialized stack memory\nLocation: src/libImaging/Palette.c:216  in ImagingPaletteCacheUpdate()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nWhen an application lets a user supply the palette image for Pillow's `Image.quantize(palette=...)`, the user can get back 512 bytes of the server process's stack memory in the pixels of the returned image. An 80-byte PNG with an empty palette is enough, and the leaked bytes survive saving to PNG or GIF. In the runs examined, those bytes included memory addresses inside the stack, heap, libc, libpython and Pillow's own C module, along with the stack-protector canary.\n\nThe bug is in `ImagingPaletteCacheUpdate()` in `src/libImaging/Palette.c`. It fills a local `UINT8 c[512]` only inside loops bounded by `palette->size`. When the palette has zero entries, the array is never written, but it is still copied into the colour cache. `topalette()` in `src/libImaging/Convert.c` then emits the cached values as output pixel indices. `topalette()` rejects a `NULL` palette but not one with `size == 0`. Three inputs produce such a zero-entry `\"P\"` image: a PNG with a zero-length `PLTE` chunk opened with `Image.open()`, a colour-mapped TGA with colour-map length 0, or a bare `Image.new(\"P\", ...)`. The attacker must control the *palette* image; the source image can be anything, and `RGB` sources are affected with either dither mode. There is no out-of-bounds access and no memory corruption. The consequence is a bounded stack disclosure that can reveal address layout and the canary of a long-lived worker, with no crash and no log entry. The attached reproducer quantizes a 512-colour strip against the empty-palette PNG and finds 8 of the 64 output words pointing into the process's own `[stack]` mapping, while a one-entry palette control ",
+      "link": "https://github.com/advisories/GHSA-rfgq-q3w2-pmv2",
+      "published": "2026-10-21T20:44:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112898"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112394",
+      "title": "Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size",
+      "summary": "### Summary\n\nOn `main`, even with the guard in #9725, it's possible to have these decoders read 1 to 3 bytes past the end of the passed buffer with a suitable width/height.\n\n### Details\n\n`ImagingRawDecode` and the `P;2L` / `P;4L` unpackers disagree about how many bytes a line of data occupies.\n\nThe raw decoder derives the line size from the bits per pixel\n\n```c\nstate->bytes = (state->xsize * state->bits + 7) / 8;\n```\n\nand uses it both for the bounds check and to advance to the next line. For `P;2L` and `P;4L`, `bits` is 2 and 4 respectively.\n\nBut these two rawmodes are not packed pixels but 2 or 4 *bit planes*, each padded to a whole number of bytes. `unpackP2L` computes `s = (pixels + 7) / 8` and reads plane *k* at offset `k * s`, and `unpackP4L` does the same across four planes. Their real footprint is therefore `planes * ((xsize + 7) / 8)`.\n\nFor some widths, padding each plane separately makes this footprint larger than `state->bytes`. For example, at width 1, the decoder accounts for one byte, while the unpackers read two or four bytes. The decoder accepts data that is too short for the last line and on the other hand advances to subsequent lines by less than a line, so every line after the first is also read from the wrong offset.\n\n#9725's check is misshapen for this:\n\n* It can reject data of the right length: 8x1 `P;2L` image is 2 bytes but is not accepted.\n* It still accepts buffers shorter than the unpackers require for a given image shape.\n* It measures the length with `len(data)`, which is an element count rather than a byte count; e.g. `memoryview(array(\"I\", [0,0,0,0,0]))` (20 bytes) is rejected while `mv.tobytes()` is accepted.\n\n### PoC ( `ghsa_p2l_p4l.py`)\n\n```python\nfrom array import array\nfrom PIL import Image\n\n# 1 byte past\nImage.frombytes(\"P\", (1, 4), array(\"B\", [0] * 4), \"raw\", \"P;2L\")\n\n# 3 bytes past\nImage.frombytes(\"P\", (1, 8), array(\"B\", [0] * 8), \"raw\", \"P;4L\")\n```\nis the almost-simplest reproducer.\n\n(`array` is needed to get ASan to reliably s",
+      "link": "https://github.com/advisories/GHSA-4558-3h8r-v8xp",
+      "published": "2026-10-21T20:00:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112394"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112948",
+      "title": "Vitest: Servers misapply `server.fs.deny`, serving `.env`, private keys, `.git`, and the API token file",
+      "summary": "### Summary\n\nIn Vitest 5, Vite's `server.fs.deny` is not applied as intended on Vitest's dev servers. Depending on the server, files that Vite refuses to serve by default (such as `.env`, private keys and certificates, `.npmrc`, and `.git`) or Vitest's own API token file (`.vitest-secret-token`) can be read over plain HTTP by a client that can reach the server. In Browser Mode with `test.projects`, a malicious website can also read `.env` values through the developer's browser.\n\nThis only applies when Vitest runs an HTTP server, which happens with the UI (`--ui`), Browser Mode, or `api` enabled. Plain `vitest` and `vitest run` don't listen on any port and are not affected. The fix ships in `vitest`, and `@vitest/ui` and `@vitest/browser` are listed because they are what enables the affected setups. Both pin `vitest` to the same version as a peer dependency, so upgrading either one also requires the patched `vitest`. Users who enable `api` without `@vitest/ui` or `@vitest/browser` are also affected and should upgrade `vitest`.\n\n### Details\n\nVitest 5 adds its API token file to `server.fs.deny`, but neither server ended up with the intended list. That's because of two Vite behaviors. Vite applies its default deny list only when `server.fs.deny` is unset, and it compiles the list into a matcher during config resolution, so later changes to the array have no effect.\n\n| setup                              | listening server                | Vite's default deny list | `.vitest-secret-token`              |\n| ---------------------------------- | ------------------------------- | ------------------------ | ----------------------------------- |\n| plain `vitest` / `vitest run`      | none                            | not reachable            | not reachable                       |\n| `--ui` or `api`                    | root                            | denied                   | **served** (fallback location only) |\n| Browser Mode, single project       | root (also the browser s",
+      "link": "https://github.com/advisories/GHSA-p458-7748-mcp3",
+      "published": "2026-10-21T19:57:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112948"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112950",
+      "title": "Vitest: Windows backslash traversal bypasses the @vitest/mocker redirect allowlist fix",
+      "summary": "## Summary\n\nThe path traversal fix released for [GHSA-82fw-gwwq-j7x9](https://github.com/vitest-dev/vitest/security/advisories/GHSA-82fw-gwwq-j7x9) can be bypassed on Windows by using a backslash in the redirect URL pathname.\n\nThe fixed code joins an attacker-controlled URL pathname with the Vite root using `node:path/posix`, then passes that string to Vite's file allowlist check. On Windows, a value such as `C:/project/root/..\\secret.txt` retains `..\\` during the POSIX join and begins with the allowed root, so the allowlist accepts it. The later `readFile()` call uses Windows filesystem semantics, where the backslash is a path separator, and reads the sibling file outside the configured root.\n\nI reproduced the issue with the published `@vitest/mocker` packages in both fixed release lines:\n\n- `@vitest/mocker@4.1.11`\n- `@vitest/mocker@5.0.0`\n\nThe current `main` source at commit `2ce29d5fa758046e5453bd92b8ed6c9da9709bb5` has the same behavior.\n\n## Patches\n\nFixed in `@vitest/mocker` 5.0.3, released on 2026-09-30 (PR #11377), and backported to 4.1.12. The redirect registration now converts backslashes in the URL pathname to forward slashes before it joins the pathname with the root, so `..\\` resolves the same as `../` and the allowlist check rejects it.\n\n## Relationship to GHSA-82fw-gwwq-j7x9\n\nThis is a bypass of the accepted fix, not a separate unrelated path. It uses the same `vitest:interceptor:register` redirect registration and the same file-reading sink as the original advisory. A forward-slash traversal is rejected after the fix, while the equivalent Windows backslash traversal is accepted.\n\nThe original advisory marks 4.1.11 and 5.0.0-rc.2 as patched. The newly affected ranges introduced by the incomplete fix are therefore:\n\n- `4.1.11`\n- `>=5.0.0-rc.2, <5.0.3`\n\nOlder affected releases remain covered by GHSA-82fw-gwwq-j7x9.\n\n## Root cause\n\n`packages/mocker/src/node/interceptorPlugin.ts` imports `join` from `node:path/posix`. Redirect registration currently perfor",
+      "link": "https://github.com/advisories/GHSA-xp26-3454-mjgp",
+      "published": "2026-10-21T19:48:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112950"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112953",
+      "title": "ApostropheCMS: Exposure of Sensitive Information via predictable export filenames",
+      "summary": "## Summary\n\nWhen a user exports content through `@apostrophecms/import-export`, the module copies the generated archive into uploadfs at `/exports/` and returns a public URL under `/uploads/exports/`. The filename is fully deterministic: site `shortName`, document type, a `YYYYMMDDHHmmss` timestamp, and the format extension. There is no secret token.\n\nAnyone who can guess that path can download the archive with a normal unauthenticated HTTP GET while the file is still present (10 minutes by default, longer if the site raises `importExport.export.expiration`). That is a different model from attachment URLs, which rely on hard-to-guess IDs.\n\nSites that disable export, store uploads on a private backend with no anonymous read, or serve `/uploads` only behind authentication are not hit by the network download step\u2014but the predictable naming is still a design flaw for the default local/public uploadfs layout.\n\nImport-only workflows and imports themselves are out of scope; this is specific to the export download URL.\n\n## Affected configurations\n\nAll of the following must apply:\n\n1. The `@apostrophecms/import-export` module is enabled and export is allowed for at least one page or piece type, **and**\n2. Export files are served the usual way: `copyIn` to `/exports/\u2026` and delivery via the public `uploads` URL (default local uploadfs or any deployment that exposes the same path without per-file auth).\n\nIf export is turned off per type or globally, or `/uploads` is not world-readable, an anonymous attacker cannot pull the file over HTTP\u2014but a co-resident attacker with filesystem or bucket listing access would still see guessable names.\n\n## Remediation\n\n- Put a high-entropy component in the export filename (e.g. `apos.util.generateId()`), **or**\n- Stop publishing exports on a world-readable URL\u2014serve downloads through an authenticated route and keep objects in a private prefix until then, **or**\n- Document that `importExport.export.expiration` must stay short and treat `/upload",
+      "link": "https://github.com/advisories/GHSA-5gc8-frw3-3vqm",
+      "published": "2026-10-21T19:45:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112953"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113731",
+      "title": "djust: Arbitrary absolute-path file read in the find_handlers_for_template MCP tool",
+      "summary": "### Affected version / file / line\nVersion: djust v1.1.4 (latest release, published 2026-09-23). File: python/djust/mcp/server.py:354-433 (MCP tool find_handlers_for_template). Confirmed identical on the commit used for triage, a7e4fafd1667b4db0b1465652d4a63cb17117a07.\n\n### Description\n```\n@mcp.tool()\ndef find_handlers_for_template(template_path: str) -> str:\n    \"\"\"\n    Args:\n        template_path: Either a logical template name (e.g.\n            'demos/counter.html' \u2014 what you'd pass to `render`) OR\n            an absolute filesystem path. Both are searched.\n    \"\"\"\n    ...\n    resolved_path: str | None = None\n    if os.path.isabs(template_path) and os.path.isfile(template_path):\n        resolved_path = template_path\n    else:\n        ...  # logical-name resolution via Django's template loader\n    ...\n    with open(resolved_path, \"r\", encoding=\"utf-8\", errors=\"replace\") as f:\n        source = f.read()\n    handler_names_in_template = sorted({m.group(2) for m in dj_event_attr_re.finditer(source)})\n```\nWhen template_path is an absolute path to an existing file, it is used directly, with no confinement to the project/template directories \u2014 no realpath() + prefix check, no allowlist. open(resolved_path, ...) then reads the file.\n\nThis is inconsistent with the sibling tool in the same file (loaddata, ~line 290-303), which explicitly rejects paths outside the project directory for its own path-like parameter:\n```\ncandidate = os.path.realpath(...)\nif base_dir and not candidate.startswith(os.path.realpath(str(base_dir))):\n    return json.dumps({\"error\": f\"fixture path '{p}' resolves outside the project directory\", ...})\n```\nfind_handlers_for_template has no equivalent check for template_path before the open() call.\n\n### Impact\nAn MCP client with access to this tool (available whenever the Django project is running the MCP server via python manage.py djust_mcp \u2014 no separate opt-in flag gates this specific tool beyond that) can read the contents of any file on disk that the ",
+      "link": "https://github.com/advisories/GHSA-r57g-mc79-8hj2",
+      "published": "2026-10-21T17:21:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113731"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112952",
+      "title": "ApostropheCMS: POST /api/v1/@apostrophecms/doc/slugTaken discloses existence of private/admin-only content to any authenticated user",
+      "summary": "### Summary\nThe `slugTaken` endpoint returns a boolean indicating whether a slug is in use across\nall document types and visibility levels, with no permission or type filter. Any logged-in\nuser (including editors) can enumerate the slug space of private pages, drafts, and\narchived content.\n\n### Details\n`POST /api/v1/@apostrophecms/doc/slugTaken` with body `{ \"slug\": \"target-slug\" }` runs\na raw existence check against the documents collection. It does not:\n- Check whether the requesting user has read permission for documents of that type.\n- Filter by `visibility` (public, loginRequired, private).\n- Filter by `viewRole`.\n- Filter by publication status (draft vs published).\n\nA single authenticated session can iterate the slug space to enumerate the full content\ninventory of the CMS, including content the user is explicitly prohibited from viewing.\n\n### PoC\n```bash\n# Any authenticated session works \u2014 editor role sufficient\ncurl -b \"$EDITOR_JAR\" -X POST \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"slug\":\"known-private-page-slug\"}' \\\n  \"http://TARGET/api/v1/@apostrophecms/doc/slugTaken\"\n# \u2192 { \"taken\": true }  \u2014 confirms private page exists\n\ncurl -b \"$EDITOR_JAR\" -X POST \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"slug\":\"zzz-nonexistent\"}' \\\n  \"http://TARGET/api/v1/@apostrophecms/doc/slugTaken\"\n# \u2192 { \"taken\": false }\n```\n\n### Impact\nInformation disclosure. An attacker with any authenticated session can enumerate all\nslugs in the system, mapping the full content structure of the CMS including private and\nadmin-only content.",
+      "link": "https://github.com/advisories/GHSA-f66c-mpj2-3r8h",
+      "published": "2026-10-21T17:17:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112952"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112957",
+      "title": "ApostropheCMS: GET /api/v1/@apostrophecms/page/:id bypasses viewRole restriction and exposes viewPermission-gated fields to lower-privileged users",
+      "summary": "### Summary\nThe `getOne` REST endpoint for pages does not apply `viewRole` type-level restrictions\nor `viewPermission` field-level redaction. An editor-level user who knows a document\n`_id` can read the full content of admin-only pages and their privileged fields, while\nthe `getAll` endpoint correctly enforces both restrictions.\n\n### Details\n**Finding 3 \u2014 viewRole bypass:**\n`modules/@apostrophecms/page/index.js` exposes `getRestQuery(req, omitPermissionCheck =\nfalse)`. The `getAll` path calls `publicApiCheckAsync` and threads the full query builder\npipeline including `viewRole` filtering. The `getOne` path uses a divergent code path\nthat skips this pipeline.\n\nA page type declared with `viewRole: 'admin'` is inaccessible via `GET\n/api/v1/@apostrophecms/page?type=secretPage` (returns 403 to an editor) but is fully\nreturned by `GET /api/v1/@apostrophecms/page/:id:en:published` to the same editor.\n\n**Finding 4 \u2014 viewPermission field leak:**\nFields decorated with `viewPermission: { action: 'edit', type: '@apostrophecms/page' }`\nare stripped by `removeForbiddenFields` in the `getAll` path but are returned verbatim\nin `getOne`. An editor who knows any document `_id` can read all\n`viewPermission`-restricted fields.\n\n### PoC\n```bash\n# Log in as editor, get session jar\nEDITOR_JAR=\"...\"\n\n# getAll \u2014 correctly blocked\ncurl -b \"$EDITOR_JAR\" \\\n  \"http://TARGET/api/v1/@apostrophecms/page?type=secretPage\"\n# \u2192 403 Forbidden\n\n# getOne \u2014 bypassed, returns full document including viewPermission fields\ncurl -b \"$EDITOR_JAR\" \\\n  \"http://TARGET/api/v1/@apostrophecms/page/ADMIN_PAGE_ID:en:published\"\n# \u2192 200 OK, full doc including secretField value\n```\n\n### Impact\nEditors can read the full content of any page \u2014 including those restricted to admins via\n`viewRole` \u2014 if they know or can guess the `_id`. Sensitive field values gated by\n`viewPermission` are also fully exposed. This breaks the content access control model\nfor any site using these decorators.",
+      "link": "https://github.com/advisories/GHSA-vh56-5m88-39rq",
+      "published": "2026-10-21T17:15:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112957"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113650",
+      "title": "ApostropheCMS sanitize-html: unbounded recursion when re-sanitizing the fallback of a discarded iframe (stack overflow, nestingLimit not enforced)",
+      "summary": "### Summary\n\nSince 2.18.0, when an `<iframe>` is not allowed and `disallowedTagsMode` is `'discard'` (the defaults),\nits raw-text content is re-sanitized by a recursive call to `sanitizeHtml(text, options)` (the change\nfrom #5564, fixing #5550). The recursion has no bound and starts each nested call with a fresh state.\nTwo consequences, both absent from 2.17.7 and 2.17.4:\n\n1. A few kilobytes of unclosed `<iframe>` tags throw `RangeError: Maximum call stack size exceeded`\n   with the default options. Any application that sanitizes untrusted HTML with 2.18.0 can be made to\n   throw on a small crafted input.\n2. `nestingLimit` is not enforced across a discarded iframe: each nested iframe restarts the depth\n   count at zero, so the output can be nested arbitrarily deep regardless of the configured limit.\n\n### Affected versions\n\n- 2.18.0 (the current `latest`), and the `main` branch at the time of writing (the recursive call is\n  still in `packages/sanitize-html/index.js`, in the `ontext` handler, branch\n  `tag === 'iframe' && !tagAllowed(tag) && options.disallowedTagsMode === 'discard'`).\n- Not affected: 2.17.7 and 2.17.4 (tested with the same inputs below).\n\nTested with Node.js v26.7.0.\n\n### Reproduction 1: stack overflow with the default options\n\n```js\nconst sanitizeHtml = require('sanitize-html');\n\n// with 2.18.0:\nsanitizeHtml('<iframe>'.repeat(1000));  // 8,000 chars: returns ''\nsanitizeHtml('<iframe>'.repeat(2000));  // 16,000 chars: throws RangeError: Maximum call stack size exceeded\nsanitizeHtml('<iframe>'.repeat(20000)); // 160,000 chars: throws RangeError: Maximum call stack size exceeded\n```\n\nResults:\n\n| input | 2.17.4 | 2.17.7 | 2.18.0 |\n|---|---|---|---|\n| `'<iframe>'.repeat(1000)` | ok | ok | ok |\n| `'<iframe>'.repeat(2000)` | ok | ok | RangeError |\n| `'<iframe>'.repeat(20000)` | ok | ok | RangeError |\n\nThe threshold depends on the remaining stack, so it is lower when `sanitizeHtml` is called from an\nalready deep call stack (for example inside a server-side ",
+      "link": "https://github.com/advisories/GHSA-c9rx-x947-fp3h",
+      "published": "2026-10-21T17:05:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113650"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113725",
+      "title": "virtualenv bash activate runs commands from an environment name with a backslash before $",
+      "summary": "### Summary\n\nThe bash `activate` script escapes the environment name for only one of the two passes bash makes over `PS1`, so a\nbackslash in the name undoes the escaping and a name containing `\\$(...)` runs as commands in the user's shell each\ntime bash draws the prompt.\n\n### Affected area\n\n`src/virtualenv/activation/bash/activate.sh`, the block that prepends the environment name to `PS1`.\n\n### Attacker-controlled input\n\nThe environment name: the environment directory's name, or the `--prompt` or `VIRTUALENV_PROMPT` value. An attacker\nneeds to influence it, for example through a CI job or wrapper tool that passes a branch, project or job name through,\nor a directory in a cloned repository or unpacked archive. `--prompt .` takes the current directory's name.\n\n### Details\n\nbash handles `PS1` in two passes each time it draws the prompt: it first decodes backslash prompt escapes, turning `\\\\`\ninto `\\` and `\\$` into `$` (or `#` for root), and then runs parameter expansion, command substitution and arithmetic\nexpansion on the result. Since 21.13.0 the script escapes backslashes, dollar signs and backticks in the name, but only\nfor the second pass, so the decode pass strips the escaping that a backslash in the name precedes. Releases before\n21.13.0 do not escape the name at all. A bash running as root decodes `\\$` to `#`, so the payload shows the wrong text\nthere but runs nothing. zsh does no decode pass and is not affected.\n\n### Proof of concept\n\n```console\n$ virtualenv --prompt 'a\\$(touch PWNED)' env\n$ bash --norc --noprofile -c 'source env/bin/activate; printf \"%s\" \"${PS1@P}\"'\n$ ls PWNED\nPWNED\n```\n\n### Impact\n\nArbitrary command execution in the shell of a user who sources the `activate` script of an environment whose name an\nattacker influenced, with that user's privileges, once per prompt draw.\n\n### Versions tested\n\n21.14.6 with bash 5.2.15 on Debian bookworm, as an unprivileged user and as root.\n\n### Known mitigation\n\nSet `VIRTUAL_ENV_DISABLE_PROMPT=1` before you sour",
+      "link": "https://github.com/advisories/GHSA-vxj4-q4g9-crj7",
+      "published": "2026-10-21T16:49:01Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113725"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112945",
+      "title": "Vite: Cross origin script execution through Vite custom middleware",
+      "summary": "### Summary\n\nWhen accessing a malicious site while a dev server using Vite is running, that site was able to load scripts in a page served by the dev server.\n\n### Impact\n\nOnly apps that match the following conditions are affected:\n\n- the dev server passes an unchanged browser request URL to `server.transformIndexHtml`: this is normally used for `server.middlewareMode: true` or `appType: 'custom'`. The internal call for `appType: 'spa'` and `appType: 'mpa'` does not match this.\n- the transformed HTML contains an inline module script\n- from the script in the page served by the dev server, the app stores sensitive values in the location accessible or allows critical actions\n\n### Details\n\n[Vite's SSR guide for 8.2.1](https://github.com/vitejs/vite/blob/421615865dad3ed39137d17281814fc78a41246c/docs/guide/ssr.md#L119-L131) documents the affected setup. The application embeds Vite in middleware mode, reads trusted HTML, and passes the browser's unchanged request URL to the transform:\n\n```js\nconst url = req.originalUrl\ntemplate = await vite.transformIndexHtml(url, template)\n```\n\nFor a development server at `http://localhost:5173`, an attacker can send this URL:\n\n```text\nhttp://localhost:5173//evil.example/payload.js?/../../package.json\n```\n\nIn Vite 8.2.1, [`createDevHtmlTransformFn` and `getHtmlFilename` in `indexHtml.ts`](https://github.com/vitejs/vite/blob/421615865dad3ed39137d17281814fc78a41246c/packages/vite/src/node/server/middlewares/indexHtml.ts#L99-L115) use the request URL as both the transform `path` and the input to `path.join`. The value passed to `path.join` still includes its query text.\n\nChromium preserves `/../../package.json` because it follows `?` and is therefore query text. Vite treats the same characters as filesystem path components, so the `..` components resolve the derived filename to the existing project `package.json`.\n\n[The existing file branch in `indexHtml.ts`](https://github.com/vitejs/vite/blob/421615865dad3ed39137d17281814fc78a41246c/package",
+      "link": "https://github.com/advisories/GHSA-9jrq-w75r-8gcw",
+      "published": "2026-10-21T16:48:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112945"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112947",
+      "title": "Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`",
+      "summary": "### Summary\n\nThe first 4 bytes of files outside of `server.fs` setting can be returned to the browser by a request containing `?vite-wasm-instance`.\n\n### Impact\n\n Only apps that match one of the following conditions are affected:\n\n- explicitly expose the Vite dev server to the network using `--host` or the [`server.host`](https://vite.dev/config/server-options#server-host) option\n- there's a file that has a sensitive information in **the first 4 bytes**\n- uses Node.js or Deno to run Vite (if Bun is used, it is not affected)\n\n### Details\nRequests containing the `?vite-wasm-instance` query are handled by the internal Wasm plugin's `load` hook. The hook removes the query and reads the resulting path directly from disk, but the `server.fs` checks were not applied.\n\nAfter reading the file, Vite attempts to parse it as WebAssembly. When that parse fails, Node and deno throws an error that contains the first 4 bytes of the file.\n\n### PoC\n\nCreate a denied file and start an affected Vite dev server:\n\n```bash\necho 'SECRET_KEY=abc123\\n' > .env\nnpm run dev\ncurl 'http://localhost:5173/.env?vite-wasm-instance'\n```\n\nThis will show\n```\nFailed to parse WASM file \"<root>/.env\": WebAssembly.compile(): expected magic word 00 61 73 6d, found 53 45 43 52 @+0\n```",
+      "link": "https://github.com/advisories/GHSA-vfpm-58rq-9qcg",
+      "published": "2026-10-21T16:47:15Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112947"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113726",
+      "title": "virtualenv activate runs commands from the environment name in zsh with PROMPT_SUBST",
+      "summary": "### Impact\n\nzsh users activate an environment with the bash `activate` script, which puts the environment name into `PS1`. Since\n21.13.0 the script escapes backslashes, dollar signs and backticks in that name, but only when `BASH_VERSION` is set, so\nzsh gets the raw value. With the `PROMPT_SUBST` option set, zsh runs parameter expansion, command substitution and\narithmetic expansion on `PS1` each time it draws the prompt. A name that contains `$(...)`, backticks or `${...}` then\nruns as commands in the user's shell, once per prompt.\n\nThe name comes from the environment directory, or from `--prompt` or `VIRTUALENV_PROMPT`. After you create an\nenvironment with:\n\n```console\n$ virtualenv 'x$(touch PWNED)y'\n```\n\n`source 'x$(touch PWNED)y/bin/activate'` in a zsh session with `PROMPT_SUBST` set creates `PWNED`, and the prompt shows\n`(xy)`. Passing that value as `--prompt` to an environment with a plain name has the same effect. Without\n`PROMPT_SUBST`, zsh shows the name as text and runs nothing. bash runs nothing either.\n\nA plain zsh starts with `PROMPT_SUBST` off. oh-my-zsh users have it on: oh-my-zsh loads\n[`lib/theme-and-appearance.zsh`](https://github.com/ohmyzsh/ohmyzsh/blob/4d4cfc287e9d887b81242c0e431b5f49f9cec5c1/lib/theme-and-appearance.zsh#L5)\nat startup, and that file sets it. An attacker needs to influence the environment path or prompt: a CI job or wrapper\ntool that passes a branch, project or job name through, or a directory in a cloned repository or unpacked archive.\n`--prompt .` takes the current directory's name.\n\nzsh also reads `%` in `PS1` as a prompt escape, so a name with `%n` showed the user name in place of those characters,\nthough without running commands.\n\nThe bug is in releases up to and including 21.14.3. The payload runs on 20.26.6 and 21.14.3, and the reporter confirmed\n21.9.1.\n\n### Patches\n\nFixed in 21.14.4. Under zsh, `activate` now escapes the name the way it does under bash and doubles\n`%`, so the example above runs nothing and the prompt sh",
+      "link": "https://github.com/advisories/GHSA-5vjq-rrrf-7h2q",
+      "published": "2026-10-21T16:46:23Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113726"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113776",
+      "title": "virtualenv activation scripts run code from a path that contains a placeholder name",
+      "summary": "### Impact\n\n`ViaTemplateActivator.instantiate_template` replaces the placeholders in an activation template one key at a time, each across the whole text. When a value that it already substituted and quoted contains the name of a later placeholder, the later pass rewrites that name inside the quoted literal. The inserted value brings its own quotes, which close the outer literal, and the rest of the path runs as code when a user activates the environment.\n\n`__VIRTUAL_NAME__` holds the environment's directory name, so a destination such as `A__VIRTUAL_NAME__B/x'$(touch PWNED)'y` is enough. In the default `activate` for bash, the `VIRTUAL_ENV` line renders as:\n\n```sh\nVIRTUAL_ENV='/tmp/t/A'x'\"'\"'$(touch PWNED)'\"'\"'y'B/x'\"'\"'$(touch PWNED)'\"'\"'y'\n```\n\nSourcing that script runs `touch PWNED`. The same payload in a path without the placeholder name runs nothing. `activate.fish` runs the command the same way, and the reporter also showed Python code execution through `activate.xsh` and `bin/activate_this.py`. In `activate.csh`, a directory named after a prompt display placeholder, such as `__VIRTUAL_PROMPT_DISPLAY_TCSH__`, breaks the script with `Unmatched '''`.\n\nNo change to `quote()` can stop this, because the rewrite happens after `quote()` ran; it defeats `shlex.quote` and `repr()` alike.\n\nAn attacker needs to influence the destination path or `--prompt`: a CI job or wrapper tool that builds the path from a branch or project name, or a directory in a cloned repository or unpacked archive.\n\nThe bug affects versions 20.26.6 through 21.14.1. Version 20.26.6 first quoted template values (#2768) and introduced the per-key loop.\n\n### Patches\n\nFixed in 21.14.2. Activation scripts now keep a placeholder name in the environment's path or prompt as plain text, and activating the example above runs nothing. Fix: https://github.com/pypa/virtualenv/commit/602b26623a724827ff171bf11fef4ad186d01f74\n\n### Workarounds\n\nDo not create an environment whose path or `--prompt` contains a plac",
+      "link": "https://github.com/advisories/GHSA-8rjx-v5ww-45pp",
+      "published": "2026-10-21T16:39:38Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113776"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113799",
+      "title": "Slack Morphism verifier errors disclose valid HMACs in the logs",
+      "summary": "### Summary\n\nSlack Morphism exposes the correct Slack request HMAC when signature verification fails.\n\nFor an invalid request, `slack-morphism` computes the correct signature for the attacker-controlled timestamp and request body and stores it in `SlackEventWrongSignatureError.generated_hash`. The error's `Debug` and `Display` representations expose that value, and the default Axum listener error handler logs it at error level.\n\nAn attacker who can both reach the application's Slack callback endpoint and read its application/service logs can therefore use the verifier as a chosen-message HMAC oracle. The attacker can send an arbitrary request with an invalid signature, recover the correct signature from the resulting log entry, and resend the same request within the five-minute freshness window. The second request passes Slack Morphism's signature verification and reaches the protected application callback without the attacker knowing the Slack signing secret.\n\nI reproduced this end-to-end against both the Axum and Hyper integrations in `slack-morphism` 2.26.0 and 2.27.0.\n\n### Details\n\nThe vulnerability is in Slack Morphism's request signature verification error path.\n\nIn `src/signature_verifier.rs`, `SlackEventSignatureVerifier::verify` computes the expected signature before comparing it with the untrusted `X-Slack-Signature` supplied by the request.\n\nOn a mismatch, the implementation creates a `SlackEventWrongSignatureError` containing the complete correct signature in its public `generated_hash` field.\n\nRelevant source path:\n\n```text\nsrc/signature_verifier.rs:46-59\n```\n\nThe error type is defined around:\n\n```text\nsrc/signature_verifier.rs:182-199\n```\n\n`generated_hash` is a public `String`; the type derives `Debug`, and its `Display` implementation also prints the generated signature.\n\nThe resulting source-to-sink path is:\n\n1. `SlackEventSignatureVerifier::verify` computes the expected HMAC for the attacker-controlled timestamp and raw request body.\n2. Signature ve",
+      "link": "https://github.com/advisories/GHSA-26w4-8w32-4x3v",
+      "published": "2026-10-21T16:38:47Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113799"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619",
+      "summary": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 appeared first on Unit 42 .",
+      "link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+      "published": "2026-10-21T16:30:34+00:00",
+      "source": "Unit 42 (Palo Alto)",
+      "tags": [
+        "cloud",
+        "research",
+        "threat-intel"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113727",
+      "title": "OpenChoreo: Authorization bypass on WorkflowRun update allows cross-project takeover of workflow runs",
+      "summary": "## Summary\n\nThe OpenChoreo API server authorized `PUT .../workflowruns/{runName}` against ownership metadata taken from the request body, while the object it actually mutated was selected by the URL path. Nothing forced the two to agree.\n\nA `WorkflowRun`'s membership in a project and component is carried entirely by its `openchoreo.dev/project` and `openchoreo.dev/component` labels. Because the `workflowrun:update` check read those labels from the submitted object rather than the stored one, a caller holding `workflowrun:update` on one component could name a run belonging to a different project or component in the URL, supply labels for the component they legitimately control, pass the check, and have the unrelated run rewritten with their own ownership labels.\n\nThe namespace is taken from the URL and feeds both the authorization check and the Kubernetes read, so it cannot diverge. This is cross-project and cross-component escalation inside a single namespace, not a cross-tenant issue.\n\n## Impact\n\nRewriting the ownership labels transfers authority over the run. Every other WorkflowRun check (view, logs, events, status, delete, list) derives its scope from the stored labels, so once the write lands the policy engine legitimately grants the attacker access to an object they never had rights to. They can then:\n\n- Read the victim's build logs. These stream raw pod logs from the workflow plane and routinely carry source paths, registry destinations, and credentials a build step echoed by accident.\n- Read the run's Kubernetes events.\n- Delete the run.\n\nSo the primary impact is confidentiality and availability, not only integrity. On the integrity side, `spec.workflow.parameters` can be overwritten on a pending run, and manipulating the two ownership labels can either wedge the run in a permanent `ComponentValidationFailed` condition or downgrade it to a standalone run that skips component validation.\n\nExploitation requires an authenticated caller with an `AuthzRoleBinding",
+      "link": "https://github.com/advisories/GHSA-46r4-q7wv-32fc",
+      "published": "2026-10-21T16:29:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113727"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-113711",
       "title": "ApostropheCMS: Unauthenticated resource exhaustion via pre-auth aposBigUpload processing in @apostrophecms/import-export",
       "summary": "## Summary\n\nA potential unauthenticated denial-of-service vulnerability exists in the chunked import upload path used by `@apostrophecms/import-export`.\n\nThe affected import API routes invoke:\n\n`self.apos.http.bigUploadMiddleware()`\n\nbefore the actual import handler performs its authentication check.\n\nBecause no `authorize` callback is supplied to `bigUploadMiddleware()`, unauthenticated requests can reach the `aposBigUpload` `start`, `chunk`, and `end` operations before the later `req.user` check rejects the import.\n\nAs a result, an unauthenticated remote attacker can create server-side upload state, write chunk data to upload storage, trigger temporary-file processing, and cause attacker-controlled cleanup operations before authentication is enforced.\n\n## Affected Component\n\nPackage:\n\n`@apostrophecms/import-export`\n\nConfirmed affected version:\n\n`3.6.2`\n\nPotential earlier affected versions:\n\nThe issue may affect earlier 3.x releases in which the current big-upload-based import implementation is present. I have not yet fully verified the exact introduction version and recommend that the maintainers confirm the affected version range.\n\n## Vulnerability Type\n\nPrimary:\n\n**CWE-400 \u2014 Uncontrolled Resource Consumption**\n\nRelated:\n\n**CWE-306 \u2014 Missing Authentication for Critical Function**\n\n**CWE-770 \u2014 Allocation of Resources Without Limits or Throttling**\n\n## Technical Details\n\nThe page import route registers the following middleware chain:\n\n`packages/import-export/modules/@apostrophecms/import-export-page/index.js`\n\n```javascript\nimportExportImport: [\n  self.apos.http.bigUploadMiddleware(),\n  async (req) => {\n    return self.apos.modules['@apostrophecms/import-export']\n      .import(req, self.__meta.name);\n  }\n]\n```\n\nNo `authorize` callback is passed to `bigUploadMiddleware()`.\n\nThe `bigUploadMiddleware()` implementation explicitly supports an `authorize` callback and performs that authorization before processing the `aposBigUpload` protocol when supplied.\n\nWithout that ",
@@ -330,25 +550,6 @@
       ],
       "cve_ids": [
         "CVE-2026-113711"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619",
-      "summary": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "published": "2026-10-21T13:40:34+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -402,240 +603,6 @@
       ],
       "cve_ids": [
         "CVE-2026-111761"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112404",
-      "title": "Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels",
-      "summary": "```\n============================================================================\nOOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels\nLocation: src/libImaging/TiffDecode.c:483  in _decodeTile()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nPillow reads past the end of a heap buffer when decoding certain malformed compressed TIFF files, and copies the bytes it reads into the pixels of the image it returns. An attacker who can get an application to open and load an image file, for example by uploading it to a service that returns thumbnails, previews or converted images, gets back fragments of that process's heap memory, including pointer values. A slightly larger file instead crashes the process. No special settings are needed, and nothing is written out of bounds.\n\nThe bug is in `_decodeTile()` and `_decodeAsRGBA()` in `src/libImaging/TiffDecode.c`. Both size their decode buffer from libtiff's view of the pixel layout (`TIFFTileSize()`/`TIFFTileRowSize()`, or `img.width * 4`). They then unpack each row with the unpacker that `TiffImagePlugin._setup()` chose from Pillow's own parse of the directory, and neither checks that the unpacker's input row fits inside the row libtiff produced. `_decodeStrip()` has exactly this check, added for OSS-Fuzz `crash-0da0` in 8.2.0, but the tile and RGBA paths never got it.\n\nThe two parsers can be made to disagree with a duplicated `PhotometricInterpretation` or `BitsPerSample` tag, because libtiff keeps the first occurrence and Pillow keeps the last. Pillow then unpacks 4 to 8 bytes per pixel from rows that libtiff filled with 1 to 4 bytes, so the last rows of each tile are read from beyond the buffer. The disclosed memory is a few tile rows past the buffer, and the attacker chooses the tile width. The amount does not grow with the number of tiles, because the buffer is reused for every tile.\n\nThe tile half was introduced in ",
-      "link": "https://github.com/advisories/GHSA-c6hw-5grf-ff96",
-      "published": "2026-10-20T20:42:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112404"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111758",
-      "title": "markdown-it: Quadratic-time rendering of a single multi-line link reference definition with default options (regression since 14.0)",
-      "summary": "### Summary\n\nA link reference definition whose label or title is never closed is O(n\u00b2) in markdown-it 15.0.2 with default options. Continuation lines are pulled lazily with str += lineContent in src/rules_block/reference.ts, and the subsequent charCodeAt and slice calls flatten the V8 cons-string, copying everything collected so far; this runs before the rule decides the definition is invalid. It is a regression introduced by PR #1004 in 14.0.0: 13.0.2 processed a 313 KB input in 125 ms, while every version since takes about 11 seconds on the same input. At the sizes below, 200 KB takes 3.6 seconds, 400 KB takes 18.1 seconds, and 800 KB takes 74.0 seconds, which is roughly 4\u20135\u00d7 per doubling. No options are required to trigger it.\n\n### Details\n\nsrc/rules_block/reference.ts appends continuation lines with str += lineContent at lines 74, 83, 100, 133, and 150, then keeps indexing the accumulated string via str.charCodeAt(pos) in the label and whitespace loops and str.slice(...) in parseLinkTitle. V8 represents += as a cons-string, and the next charCodeAt or slice flattens it, copying everything collected so far, so one definition spanning n lines costs O(n\u00b2). Isolation confirms the rule is responsible: block-only parsing with inline disabled is still quadratic, md.disable('reference') makes the same input linear, and the same text without the leading [ is linear. The fix is to track positions in state.src instead of building str, or to collect line slices in an array and parse across them. At minimum, stop scanning the label after 999 characters (CommonMark \u00a76.3) before pulling more lines, and cap title continuation. Add a pathological test with a 100k-line unclosed title and label. Open PR #1215 edits the same file but its label check runs after the label loop, so it does not bound either variant and the fix can land together with that PR.\n\nThe observed output from PoC was:\nunclosed title n=100000   200009 B    3585.5 ms\nunclosed title n=200000   400009 B   18107.1 ms",
-      "link": "https://github.com/advisories/GHSA-gfr2-rv44-r23c",
-      "published": "2026-10-20T20:28:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111758"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111766",
-      "title": "markdown-it: Quadratic-time denial of service in inline HTML parsing with html enabled",
-      "summary": "### Summary\n\nWith `html: true`, markdown-it takes quadratic time to parse repeated unterminated HTML constructs inside a paragraph. This affects HTML comments (`<!--`), processing instructions (`<?`), declarations (`<!A`), and CDATA sections (`<![CDATA[`).\n\nAn attacker-controlled input of a few hundred kilobytes can block the Node.js event loop for seconds or tens of seconds. The default configuration has HTML disabled, but the `commonmark` preset enables it.\n\nThe issue was reported against the published `markdown-it@15.0.2` package on Node.js 20 and reproduced on the current source with Node.js 24.16.0.\n\n### Details\n\n`src/rules_inline/text.ts` treats `<` as a terminator, causing the inline parser to attempt the HTML rule at successive HTML construct openers.\n\nWith HTML enabled, `src/rules_inline/html_inline.ts` applies an anchored regular expression to the remaining input:\n\n```js\nconst match = state.src.slice(pos).match(HTML_TAG_RE)\n```\n\nThe comment, processing instruction, declaration, and CDATA alternatives in `src/common/html_re.ts` scan the remaining input for their respective terminators: `-->`, `?>`, `>`, and `]]>`.\n\nWhen the terminator is absent, matching fails. Parsing eventually reaches the next opener and scans an overlapping suffix again. Repeating this across the paragraph produces quadratic total work. For these inputs, the problem is repeated scanning across separate matches.\n\nThe payload must reach inline parsing. Prefixing it with `x ` keeps it inside a paragraph. Starting a line directly with one of these constructs instead invokes HTML block parsing, which does not exhibit the same repeated inline scans for these payloads.\n\nThe existing `unclosed <!--` test in `test/markdown-it/pathological.test.mjs` already contains a reproducer:\n\n```js\n'</' + '<!--'.repeat(100000)\n```\n\nHowever, it runs with default options, where HTML is disabled.\n\nA fix should avoid repeated searches for absent terminators across all four affected alternatives, for example by c",
-      "link": "https://github.com/advisories/GHSA-vfgh-jcmw-g37q",
-      "published": "2026-10-20T20:08:19Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111766"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111770",
-      "title": "MCP  TypeScript server SDK: Shared transport or server instances delivered one HTTP client's messages to another",
-      "summary": "### Summary\nIn affected versions, an MCP server reached over HTTP could deliver one client's responses and notifications to another client. This happened when clients shared one stateless transport, or one `McpServer` or `Server` instance.\n\nMessages were matched to a connection by JSON-RPC `id` alone. SDK clients number requests from 0, so ids collide in normal use.\n\n### Am I affected?\nYes, if more than one client can reach your HTTP endpoint and your code creates the transport or the server once at startup, instead of once per request or per session. Until this release, the README examples of `@modelcontextprotocol/hono`, `express`, `fastify` and `node` showed that pattern.\n\nAffected versions: `@modelcontextprotocol/server` 2.0.0 through 2.2.0.\n\nNot affected:\n\n- `createMcpHandler()` with a factory that builds a new server on every call\n- stdio servers\n- `@modelcontextprotocol/sdk` 1.26.0 and later\n\n### Fix\nUpgrade to `@modelcontextprotocol/server` 2.3.0 or later.\n\n**You also need to change your code.** The SDK now refuses to be shared, so an affected app fails requests after upgrading: a second `connect()` rejects with `ALREADY_CONNECTED`, and a stateless transport rejects its second request.\n\nChange to one of these:\n\n- **`createMcpHandler()`:** pass a factory that builds a new `McpServer` on every call.\n- **Per request:** build a new `McpServer` and a new transport inside the request handler.\n- **Per session:** set `sessionIdGenerator` and keep one `McpServer` and one transport per session.\n\nIf you cannot upgrade yet, the same change fixes affected versions.",
-      "link": "https://github.com/advisories/GHSA-jm63-cq47-j5jp",
-      "published": "2026-10-20T20:07:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111770"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111771",
-      "title": "MCP TypeScript SDK: Server bearer authentication accepted tokens issued for another service",
-      "summary": "### Summary\nIn affected versions, the SDK's server-side bearer authentication had no way to check that a token was issued for your server (its audience). Where one authorization server issues tokens for several services, a valid token for another service was also accepted by your MCP server.\n\n### Am I affected?\nYes, if your HTTP server uses `requireBearerAuth()` or `verifyBearerToken()`, its authorization server also issues tokens for other services, and your `verifyAccessToken()` does not check the token's audience (`aud`) itself.\n\nAffected versions:\n\n- `@modelcontextprotocol/sdk` 1.6.0 through 1.31.0\n- `@modelcontextprotocol/server` 2.0.0 through 2.2.0\n- `@modelcontextprotocol/express` 2.0.0 through 2.0.1\n- `@modelcontextprotocol/server-legacy` 2.0.0 through 2.3.0\n\n### Fix\nUpgrade to:\n\n- 1.x: `@modelcontextprotocol/sdk` 1.32.0 or later\n- 2.x: `@modelcontextprotocol/server` 2.3.0 or later, together with `@modelcontextprotocol/express` 2.0.2 or later if you use it\n- `@modelcontextprotocol/server-legacy` 2.3.1 or later\n\n**Upgrading alone changes nothing.** The patched versions add an `expectedResource` setting that is off by default. To turn the check on, make both of these changes together:\n\n1. Pass the audience your authorization server puts in tokens for your server: `requireBearerAuth({ verifier, expectedResource: new URL('https://mcp.example.com/mcp') })`.\n2. Return the token's audience from `verifyAccessToken()` as `AuthInfo.resource`, also a `URL`.\n\nA token for another service then gets `401`. With only the first change, every request gets `401`.\n\nIf you cannot upgrade yet, reject any token whose `aud` does not include your server inside `verifyAccessToken()`. That closes the issue on every version.",
-      "link": "https://github.com/advisories/GHSA-rvq5-wwqv-78pq",
-      "published": "2026-10-20T19:43:36Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111771"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111769",
-      "title": "MCP TypeScript client SDK: HTTP client transports and OAuth requests followed cross-origin redirects and re-sent custom headers and request bodies",
-      "summary": "### Summary\nIn affected versions, the SDK's HTTP client transports and OAuth requests followed redirects to any origin.\n\nIf an MCP server or authorization server redirected a request to another origin, that origin received custom request headers (such as an `X-API-Key` set in `requestInit.headers`) and the `mcp-session-id` header. On a `307` or `308` it also received the request body, including OAuth token requests with their `refresh_token` and `client_secret`.\n\nOn current runtimes `fetch` already drops the `Authorization` header across origins.\n\n### Am I affected?\nYes, if your application uses `StreamableHTTPClientTransport`, `SSEClientTransport`, or the SDK's OAuth client functions such as `auth()`. stdio clients are not affected.\n\nAffected versions:\n\n- `@modelcontextprotocol/sdk` all versions through 1.31.0\n- `@modelcontextprotocol/client` 2.0.0 through 2.2.0\n\n### Fix\nUpgrade to:\n\n- 1.x: `@modelcontextprotocol/sdk` 1.32.0 or later\n- 2.x: `@modelcontextprotocol/client` 2.3.0 or later\n\nRedirects are now followed only within the same origin, and not at all in browsers. If your MCP server or authorization server redirects to another origin on purpose, configure the final URL instead. Setting `redirectPolicy: 'follow'` on a transport restores the old behaviour and the exposure.\n\nIf a redirect may have reached a host you do not control, rotate the API keys and `client_secret` your application held and revoke its tokens.\n\nIf you cannot upgrade yet, pass a `fetch` that refuses redirects, for example `(url, init) => fetch(url, { ...init, redirect: 'error' })`.",
-      "link": "https://github.com/advisories/GHSA-6prh-2h8m-c8cw",
-      "published": "2026-10-20T18:26:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111769"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113652",
-      "title": "ApostropheCMS uploadfs Azure backend leaks account-level SAS token into every public attachment URL (sas: true)",
-      "summary": "## Summary\n\nWhen uploadfs is configured with the Azure backend and `sas: true` (a supported configuration introduced in uploadfs 1.25.0), `createContainer()` builds the `BlobServiceClient` from a URL that embeds the full SAS query string, and Azure SDK v12 derived clients inherit that query string. As a result, `getUrl()` returns a base URL carrying the complete account/container SAS signature (`?sv=...&sig=...`), and Apostrophe's `attachment.url()` prepends it to every public attachment link \u2014 broadcasting a container-level SAS credential (commonly `sp=rwdlac`, full read/write/delete/list) to every site visitor, including anonymous ones. Anyone who can see an attachment URL can read, overwrite, delete, and list every blob in the container for the SAS lifetime. A companion functional bug (blob path appended after the query string, producing broken URLs) shows this code path was never exercised end to end. Shared-key mode (default) and non-Azure backends are not affected.\n\nVerified at commit `5a3746aaed49761e171c2cbfe793267c959829fd` (uploadfs 1.27.0 in the apostrophe monorepo).\n\n## Details\n\nRoot cause: a credential-bearing client URL is reused as the public base URL. The chain:\n\n- Credential-embedded client: [azure.js#L123-L125](https://github.com/apostrophecms/apostrophe/blob/5a3746aaed49761e171c2cbfe793267c959829fd/packages/uploadfs/lib/storage/azure.js#L123-L125) \u2014 `new BlobServiceClient(\"https://<account>.blob.core.windows.net?<SAS query string>\")` where `cluster.key` is the full SAS string including `sig`\n- Leak point: [azure.js#L513-L520](https://github.com/apostrophecms/apostrophe/blob/5a3746aaed49761e171c2cbfe793267c959829fd/packages/uploadfs/lib/storage/azure.js#L513-L520) \u2014 `getUrl()` takes `getContainerClient(...).getBlobClient('').url` as `baseUrl`; SDK v12 derived clients inherit the SAS query string, so `baseUrl` already contains `?sv=...&sig=...`\n- Public exposure: [attachment/index.js#L694](https://github.com/apostrophecms/apostrophe/blob/5a3746aaed4",
-      "link": "https://github.com/advisories/GHSA-hhph-8536-gfq5",
-      "published": "2026-10-20T18:20:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113652"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113670",
-      "title": "ApostropheCMS: Page REST API authorization bypass",
-      "summary": "**Summary**\nThe core page REST API reads full page documents with `.permission(false)` in `getOne` and in the `all=1` tree dump, bypassing page-type `viewRole`, `visibility: private`, and `visibility: loginRequired` checks. Unauthenticated visitors and low-privilege contributors can read admin-only and non-public page content by `_id`/slug.\n\n**Details**\n`packages/apostrophe/modules/@apostrophecms/page/index.js`:\n- `getOne` (L456\u2013465): `await self.publicApiCheckAsync(req); ... self.getRestQuery(req).permission(false).and(criteria)` \u2014 no `viewRole` threshold, no `visibility` filtering.\n- `all` handler (L318\u2013395): `getRestQuery(req).permission(false)` (L384\u2013385) walks every page type and returns the projection including `visibility`.\n- `publicApiCheckAsync` (L3044) only checks that `publicApiProjection` exists \u2014 it performs no authorization.\n- Correct control behaves differently: `piece-type/index.js:getOne` (L319\u2013327) uses `getRestQuery(req)` without `.permission(false)` and enforces `viewRole`.\n\n**PoC**\n```\n# Anonymous (no session) \u2014 private, admin-only page:\ncurl \"http://localhost:3100/api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:published\"\n# \u2192 200  {\"_id\":\"...:en:published\",\"title\":\"Secret Private Page\",\"slug\":\"/secret-page\",\n#         \"type\":\"private-type\",\"visibility\":\"private\",\"secretData\":\"TOP-SECRET-VALUE-abc123\"}\n\n# Anonymous full site-map dump (includes private + loginRequired pages):\ncurl \"http://localhost:3100/api/v1/@apostrophecms/page?all=1\"        # \u2192 200, full tree\n\n# Contributor (cont_admin) reads full admin-only doc incl. protected field:\ncurl -b contrib.cookies \".../api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:published\"\n# \u2192 200  secretData = TOP-SECRET-VALUE-abc123\n# Controls (correctly enforced):\ncurl -b contrib.cookies \".../api/v1/@apostrophecms/page?type=private-type&autocomplete=zz\"   # \u2192 403\ncurl -b contrib.cookies \".../api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:draft\"   # \u2192 403\n```\n\n**Impact**\nUnauthenticated d",
-      "link": "https://github.com/advisories/GHSA-2j32-q6rx-h844",
-      "published": "2026-10-20T18:13:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113670"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113671",
-      "title": "ApostropheCMS: Host header controls server-side image fetch origin in @apostrophecms/ai-helper, enabling authenticated SSRF",
-      "summary": "## Summary\n\nThe `@apostrophecms/ai-helper` package builds the URL for a server-side image fetch by resolving a storage-relative path against `req.baseUrl`. When the site does not set a global base URL (the default), `req.baseUrl` is derived from the incoming HTTP `Host` header. An authenticated editor can generate a base64 AI image (which is persisted without a stored `url`) and then send an unauthorized `PATCH` accept request with an attacker-chosen `Host` header. The server then issues an outbound `GET` to the attacker-selected origin, producing a Server-Side Request Forgery primitive that reaches hosts and ports the client cannot otherwise contact. The affected code lives in `packages/ai-helper/modules/@apostrophecms/ai-helper-image/index.js`.\n\n## Root Cause\n\nThe image accept route trusts `req.baseUrl` as a safe origin for constructing an internal fetch target, but `req.baseUrl` is attacker-influenced whenever the site has no configured base URL. The URL builder concatenates a default local storage path (which is relative, for example `/uploads`) and resolves it against `req.baseUrl`; because the left operand is relative, the resulting origin is taken entirely from `req.baseUrl`. Two protections that exist elsewhere are missing on this path: the generate route enforces an edit capability, but the accept route performs no authorization or ownership check, and no allowlist or validation constrains the resolved origin before the fetch.\n\n```text\npackages/ai-helper/modules/@apostrophecms/ai-helper-image/index.js\n  aiHelperImageUrl (line 91-92): image.url || new URL(self.uploadfs.getUrl() + `/ai-helper-images/${image._id}.png`, req.baseUrl)\n  aiHelperFetchImage (line 64-65): fetch(self.aiHelperImageUrl(req, image))\n  apiRoutes.patch['ai-helper/:_id'] (line 314-333): findOne({ _id }) only; no permission or ownership check\npackages/apostrophe/modules/@apostrophecms/i18n/index.js\n  setPrefixUrls (line 799-820): req.baseUrl falls back to `${req.protocol}://${host}`, host f",
-      "link": "https://github.com/advisories/GHSA-527g-ff96-x6wj",
-      "published": "2026-10-20T18:11:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113671"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113669",
-      "title": "ApostropheCMS: Cross-domain session token in URL confers session takeover",
-      "summary": "**Summary**\nApostrophe's cross-domain session migration emits a single-use session token as a URL query parameter and stores it in the Mongo cache. Any client that presents the token silently adopts the target user's full session (including `passport.user`) with no credentials.\n\n**Details**\n`packages/apostrophe/modules/@apostrophecms/i18n/index.js`:\n- Token generation on cross-host/locale flows (L479\u2013487) and passport-bridge cross-locale redirect (`passport-bridge/index.js` L557\u2013593) places the token in the URL.\n- `acceptCrossDomainSessionToken` (L258\u2013298) reads `?aposCrossDomainSessionToken`, `Object.assign`s the stored session (cookie + `passport.user`) onto `req.session`, then nulls the cache entry under namespace `@apostrophecms/i18n:cross-domain-sessions`.\n- Middleware without `before:` is registered for every URL (express `findModuleMiddlewareAndRoutes` L820\u2013879); verified with `APOS_LOG_ALL_ROUTES=1`.\n\n**PoC**\n```\n# 0) Anonymous baseline: admin-only draft \u2192 403\n# 1) Admin logs in legitimately (token minted into redirect URL):\ncurl -c admin.cookies -X POST -H \"Content-Type: application/json\" \\\n     --data '{\"username\":\"admin\",\"password\":\"adminpassword\",\"session\":true}' \\\n     http://localhost:3100/api/v1/@apostrophecms/login/login\n# 2) Attacker with NO credentials visits the leaked token URL:\ncurl -c atk.cookies \"http://localhost:3100/?aposCrossDomainSessionToken=HUNTING_TOKEN\"\n#    \u2192 302 Location: / ; attacker now holds a vulnlab.sid SID cookie\n# 3) Attacker reads admin-only content via adopted session:\ncurl -b atk.cookies \".../api/v1/@apostrophecms/page/d576242ve1dkzb12jiiabujd:en:draft\"\n#    \u2192 200  adopted-session read -> Secret Private Page | secretData = TOP-SECRET-VALUE-abc123\n# 4) Cache entry consumed (single-use): {\"value\":null}\n```\n\n**Impact**\nSession hijack / account takeover of the migrated user for anyone who obtains the token, inheriting all the account's privileges. Exposure is realistic precisely because the token is in URLs: server/proxy/browse",
-      "link": "https://github.com/advisories/GHSA-hhvr-8m24-qqr3",
-      "published": "2026-10-20T18:09:01Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113669"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113667",
-      "title": "ApostropheCMS: CAPTCHA response token not URL-encoded",
-      "summary": "**Summary**\nForm and login CAPTCHA verification interpolate the user-supplied widget token unencoded into the server-side verification URL/body, allowing a crafted token to inject query parameters into the reCAPTCHA/hCaptcha verify request.\n\n**Details**\n- `packages/form/lib/recaptcha.js:39` \u2014 `recaptchaUri = 'https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${input.recaptcha}'`\n- `packages/login-recaptcha/index.js:44` \u2014 same pattern for login\n- `packages/login-hcaptcha/index.js:47` \u2014 `body: 'response=${token}&secret=${secret}'`\n\n**PoC**\n```\ninput.recaptcha = 'attacker_token&secret=INJECTED_SECRET&something=1'\n\u2192 resulting verify URL:\n   https://www.google.com/recaptcha/api/siteverify?secret=<real>&response=attacker_token&secret=INJECTED_SECRET&something=1\n# (replicated exactly from recaptcha.js:39)\n```\n\n**Impact**\nLow: a crafted token smuggles extra `key=value` pairs (`secret`, extra `response`) into the outbound verify call, forcing verification failures (DoS of the captcha gate and of captcha-gated login/form flows) and enabling automated bypass probing; no secret exfiltration.\n\n**Remediation** \u2014 Build the verify request with `URL` + `searchParams` (or `encodeURIComponent` on both `secret` and `response`), and validate the token against `^[A-Za-z0-9._-]{1,2048}$` before use.",
-      "link": "https://github.com/advisories/GHSA-44qr-rrjg-2cqq",
-      "published": "2026-10-20T18:05:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113667"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113666",
-      "title": "ApostropheCMS: Authenticated projection-exclusion prototype-member deletion in @apostrophecms/db-connect causes process-wide denial of service",
-      "summary": "## Summary\n\n`@apostrophecms/db-connect` ships an in-memory MongoDB emulation used by its SQLite, PostgreSQL, and multipostgres adapters. Its `unsetNestedField` helper walks an attacker-controlled dotted field path with no segment validation and calls `delete` on the resolved property. A low-privileged authenticated user (any role holding `view-draft`, which every editor and contributor has; reduced to any logged-in user when `guestApiAccess` is enabled) can send a piece-type REST GET request whose `project` query builder contains an exclusion key such as `constructor.prototype.hasOwnProperty`. On a SQLite or PostgreSQL adapter this key reaches `unsetNestedField`, which resolves `Object.prototype` and deletes a shared runtime method. Because that method is shared across the whole Node process, the deletion breaks request handling for every tenant and user until the process is restarted, giving a single request a persistent denial of service.\n\n## Root Cause\n\nThe projection query builder laundens only projection values, never projection keys, so an arbitrary dotted key survives to the database layer. On the SQLite and PostgreSQL adapters an exclusion projection is applied in JavaScript by `applyProjection`, which for each excluded field calls `unsetNestedField(result, field)`. `unsetNestedField` splits the field on `.` and walks the resulting segments with no guard: unlike its sibling `setNestedField`, it does not even block a literal `__proto__`, and neither helper blocks `constructor` or `prototype`. Because the working object is a plain object produced by `JSON.parse(JSON.stringify(doc))`, its `constructor` resolves to the global `Object`, so a path of `constructor.prototype.<member>` reaches the shared `Object.prototype` and deletes a core, configurable method. The violated invariant is that untrusted input must never be able to traverse into and mutate shared prototype objects.\n\n```text\nAffected functions (repository-relative paths):\n- unsetNestedField  packages/d",
-      "link": "https://github.com/advisories/GHSA-j5rq-xfvr-p969",
-      "published": "2026-10-20T18:03:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113666"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113654",
-      "title": "ApostropheCMS sanitize-html: nonTextTags discard region ends early on an implied close, letting <noscript> content render",
-      "summary": "## Summary\n\n`sanitize-html` discards the *content* of every element in `nonTextTags`. It delimits that region\nusing htmlparser2's close events, and ignores the `isImplied` flag htmlparser2 passes it. Closing a\nstill-open **ancestor** from inside a `<noscript>` makes htmlparser2 unwind its stack past the\n`noscript`; the synthetic implied close it emits on the way ends the discard region early, and\neverything after it is treated as ordinary body content.\n\nA browser with scripting enabled parses `<noscript>` content as **raw text**, so the same markup\nrenders as inert text there. The sanitizer therefore emits elements the page itself would not have.\n\n## Reproduction\n\n```js\nconst sanitizeHtml = require(\"sanitize-html\");\n\nsanitizeHtml('<div><noscript></div><img src=\"http://evil.test/t.gif\"></noscript>', {\n  allowedTags: [\"div\", \"img\"],\n  allowedAttributes: { img: [\"src\"] },\n  nonTextTags: [\"script\", \"style\", \"textarea\", \"option\", \"noscript\"],\n});\n// => '<div></div><img src=\"http://evil.test/t.gif\" />'\n```\n\nChrome, given the same input, renders **no** `<img>` \u2014 the whole payload is raw text inside the\nunclosed `<noscript>`. Verified with Playwright, `srcdoc` into an iframe so the scripting flag is on.\n\nA `<![CDATA[` variant hides the opening tag from the parser entirely and has the same effect:\n\n```\n<p>Hi</p><![CDATA[ x > <noscript>]]><a href=\"\u2026\">Reset your password</a><img src=\"\u2026beacon.gif\"></noscript>\n```\n\nhtmlparser2 runs a CDATA token to `]]>`; Chrome ends a bogus comment at the first `>`, so the\n`<noscript>` after it is real to the browser and invisible to the parser.\n\n## Where the behaviour is\n\n`index.js`:\n\n- `:154` \u2014 `nonTextTagsArray` (the default list, `['script','style','textarea','option','xmp']`).\n- `:638` \u2014 `onclosetag: function (name, isImplied)` \u2014 receives the flag.\n- `:644` \u2014 `skipTextDepth--` \u2014 decrements without consulting `isImplied`.\n\n## Suggested fix\n\nDo not end a discard region on an implied close. htmlparser2 already distinguishes them; the flag\nis ",
-      "link": "https://github.com/advisories/GHSA-x3q4-9hxx-gx8m",
-      "published": "2026-10-20T18:03:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113654"
       ],
       "is_zero_day": false,
       "is_high_severity": true
