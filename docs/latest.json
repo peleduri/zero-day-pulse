@@ -1,124 +1,10 @@
 {
-  "generated": "2026-10-20T20:58:06.587980+00:00",
-  "total": 40,
-  "kev": 6,
-  "zero_day": 16,
+  "generated": "2026-10-21T02:17:17.340279+00:00",
+  "total": 37,
+  "kev": 0,
+  "zero_day": 17,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-96655",
-      "title": "CVE-2026-96655 \u2014 Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
-      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96656. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-03)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96655",
-      "published": "2026-10-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-96655"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-96652",
-      "title": "CVE-2026-96652 \u2014 Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
-      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656.  Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-03)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96652",
-      "published": "2026-10-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-96652"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-106931",
-      "title": "CVE-2026-106931 \u2014 EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
-      "summary": "Vendor: EG Secure Solutions | Product: SiteGuard Server Edition. EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-106931",
-      "published": "2026-10-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-106931"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-96656",
-      "title": "CVE-2026-96656 \u2014 Plex Media Server External Control of File Name or Path Vulnerability",
-      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96656",
-      "published": "2026-10-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-96656"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-96654",
-      "title": "CVE-2026-96654 \u2014 Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
-      "summary": "Vendor: Plex | Product: Media Server. Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96655, and CVE-2026-96656. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-10-23)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96654",
-      "published": "2026-10-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-96654"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-110936",
-      "title": "CVE-2026-110936 \u2014 Siemens Software Center Uncontrolled Search Path Element Vulnerability",
-      "summary": "Vendor: Siemens | Product: Software Center. Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-03)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-110936",
-      "published": "2026-10-20",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-110936"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -147,6 +33,24 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111765",
+      "title": "A2A Java SDK: Android synchronous POST forwards credentials across authorities after incomplete redirect fix",
+      "summary": "The GHSA-9rhm fix added this safe setting in\nAndroidA2AHttpClient.createConnection():\n\n    connection.setInstanceFollowRedirects(false);\n\nThe synchronous POST builder later overwrites it:\n\n    private boolean followRedirects = true;\n\n    public A2AHttpResponse post() throws IOException {\n        HttpURLConnection connection = createConnection(\"POST\", false);\n        connection.setInstanceFollowRedirects(followRedirects);\n        // ...\n    }\n\nThe second assignment wins. JSONRPCTransport and RestTransport both\nadd interceptor-produced headers and call synchronous post() without\nsetting followRedirects(false).\n\nOn Android's repackaged OkHttp implementation, a cross-authority\nredirect strips Authorization but retains nonstandard request headers.\nAuthInterceptor permits four nonstandard authentication header names:\n\n    X-API-Key\n    API-Key\n    X-Auth-Token\n    X-Authentication\n\nI confirmed that the exact v1.3.1.Final Maven artifact forwards\ncomplete synthetic values under all four names to a second loopback\nauthority. I also reproduced the supported AuthInterceptor to Android\nPOST path. Explicitly calling followRedirects(false) returns the\noriginal 302 and produces no request to the collector.\n\nAll test traffic stayed on two ephemeral 127.0.0.1 listeners. All\ncredentials were synthetic FULCRUM-SYNTHETIC-* values.\n\nReproduction\n\nI have attached AndroidA2AHttpClientRedirectTest.java. Copy it to:\n\n    extras/http-client-android/src/test/java/org/a2aproject/sdk/client/http/android/\n\nRun:\n\n    mvn -pl extras/http-client-android -am \\\n      -Dtest=AndroidA2AHttpClientRedirectTest \\\n      -Dsurefire.failIfNoSpecifiedTests=false test\n\nOn unpatched current main, the default test fails with:\n\n    Android synchronous POST must retain the documented no-redirect default\n    expected: <302> but was: <200>\n\nThe explicit followRedirects(true) control still passes.\n\nThe separate exact-artifact fixture passed three consecutive runs. Its\nrelevant output was:\n\n    default status=200 x-ap",
+      "link": "https://github.com/advisories/GHSA-4fpj-g9jf-9rgg",
+      "published": "2026-10-20T21:08:06Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111765"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -408,6 +312,42 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111762",
+      "title": "A2A Java SDK: Push notification credentials logged in cleartext on protobuf parse failure",
+      "summary": "### *Impact.** Push notification bearer tokens and authentication credentials submitted by clients are written to server log files in cleartext. Any operator, log aggregation system, or attacker with log access can read these secrets and use them to authenticate to the client's push notification endpoints, potentially sending forged task status updates.\n\n**Where.** `transport/rest/src/main/java/org/a2aproject/sdk/transport/rest/handler/RestHandler.java:676` in `parseRequestBody`\n\n**What.** The `parseRequestBody` method logs the entire JSON request body at `SEVERE` level when `JsonFormat.parser().merge()` throws `InvalidProtocolBufferException`. This method is called from `createTaskPushNotificationConfiguration` (line 377), where the body contains client-supplied push notification bearer tokens (field `token`) and authentication credentials (field `authentication.credentials`). These secrets are written to server log files in full.\n\n**Exploit scenario.** A client creates a push notification configuration by POSTing to `/v1/tenants/{tenant}/tasks/{taskId}/pushNotificationConfigs` with a body containing `{\"url\": \"https://client.example.com/webhook\", \"token\": \"secret-bearer-token\", \"authentication\": {\"scheme\": \"Bearer\", \"credentials\": \"oauth-access-token\"}, \"extraField\": \"value\"}`. The extra field causes `JsonFormat.parser().merge()` to throw `InvalidProtocolBufferException`. The entire body including `secret-bearer-token` and `oauth-access-token` is logged at SEVERE level. An attacker with log access retrieves the cleartext credentials.\n\n**Preconditions.**\n- Attacker must have access to server log files (centralized logging, log aggregation, shared infrastructure, or insider access)\n- Push notification capability must be enabled\n- A request body must fail protobuf deserialization while being valid JSON (unknown fields with strict parsing, schema mismatches)\n\n**Fix.** Do not log the raw request body. Log only a sanitized summary \u2014 body length and content type, not cont",
+      "link": "https://github.com/advisories/GHSA-x32g-jvvm-4725",
+      "published": "2026-10-20T21:08:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111762"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-111761",
+      "title": "A2A Java SDK has Server-Side Request Forgery (SSRF) in push-notification delivery",
+      "summary": "---\n\n- **Ecosystem:** Maven\n- **Affected package:** `org.a2aproject.sdk:a2a-java-sdk-server-common` (push-notification delivery)\n- **Affected versions:** `<= 1.2.0.Final` (and `1.2.1.Final-SNAPSHOT` on `main` prior to the fix)\n- **Patched version:** _(the release that carries the fix)_\n- **CWE:** CWE-918 (Server-Side Request Forgery)\n- **Severity:** High\n- **CVSS v3.1:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N` (5.8, Moderate)\n\n---\n\n## Summary\n\nAn **unauthenticated** attacker can coerce the a2a-java server into issuing HTTP requests to\narbitrary internal and cloud-metadata endpoints from the server's own network position \u2014 a\nServer-Side Request Forgery reachable in the default deployment with no credentials, no user\ninteraction, and a single request. The behaviour is the shipped default, not a misconfiguration.\n\n## Details\n\n`BasePushNotificationSender` (in `server-common`) POSTs task data to the URL stored on a task's\n`TaskPushNotificationConfig` with no validation of the destination: no block on loopback, RFC1918,\nlink-local (`169.254.0.0/16`, including the `169.254.169.254` metadata address), unique-local,\nunspecified, or multicast ranges; no scheme restriction; and no bound on redirects.\n`InMemoryPushNotificationConfigStore.setInfo` stores the URL verbatim and\n`onCreateTaskPushNotificationConfig` does not check it either.\n\nBoth shipped HTTP clients follow redirects (`JdkA2AHttpClient` \u2192 `followRedirects(NORMAL)`,\n`VertxA2AHttpClient` \u2192 `setFollowRedirects(true)`), so a creation-time URL allowlist is bypassable:\nan attacker webhook answers `302 Location: http://169.254.169.254/...` and the client follows it. A\nhostname check is likewise defeated by DNS rebinding. A correct guard must validate the *resolved*\nIP of every hop at connection time, not the URL string.\n\n## Exploitation\n\nDemonstrated end-to-end against a running server (default wiring, unauthenticated caller):\n\n- **Arbitrary internal reachability.** The attacker picks the destination and the server ",
+      "link": "https://github.com/advisories/GHSA-q78c-5jjq-57g8",
+      "published": "2026-10-20T21:06:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-111761"
       ],
       "is_zero_day": false,
       "is_high_severity": true
