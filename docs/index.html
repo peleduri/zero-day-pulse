@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">19</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">40</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">17</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">38</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-21 10:45 UTC</div>
+            <div class="generated">Updated 2026-10-21 16:13 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -163,25 +163,11 @@
           </div>
           <p class='summary'>This story is developing and was written before PHP&#x27;s scheduled 14:00 UTC release on October 21. Once the release is out, the affected and fixed versions below are confirmed by the official advisory.
 
-PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described.</p>
+PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described.
+
+⚡</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote" target="_blank" rel="noopener">php2shell (CVE-2026-109618, CVE-2026-109619): Frequently asked questions about critical PHP remote code execution vulnerabilities</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
-    <span class="meta-sep">·</span>
-    <span>Tenable Security Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-21</span>
-  </div>
-  <p class='summary'>Two critical PHP remote code execution vulnerabilities will be patched in an emergency release on October 21. Fixes are only expected for supported PHP 8.x branches. Key takeaways CVE-2026-109618 and CVE-2026-109619 are critical vulnerabilities in PHP, both rated CVSSv4.0 9.2 by the PHP security team. Public reporting describes both as remote code execution vulnerabilities. watchTowr says it belie…</p>
-
-</article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -207,24 +193,6 @@ The synchronous POST builder later overwrites it:
     public A2AHttpResponse post() throws IOException {
         HttpURLConnection connection = createConnection(&quot;POST&quot;, false);
         connection.setInstanceFollowRed…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/russian-apt28-breaches-nato-naval.html" target="_blank" rel="noopener">Russian APT28 Breaches NATO Naval Shipbuilder in NATO Country, Deploys New Reflective Loader</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-20</span>
-          </div>
-          <p class='summary'>The Russia-linked state-sponsored threat actor tracked as APT28 (aka BlueDelta, Fancy Bear, and Forest Blizzard) has been attributed to attacks targeting two member states of the North Atlantic Treaty Organization (NATO).
-
-The Symantec Threat Hunter Team, which is tracking the activity cluster under the moniker Swallowtail, involved the use of a backdoor called HOOKEDGE and a previously</p>
 
         </article>
 
@@ -465,6 +433,48 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
     <span>Mon, 19 Oc</span>
   </div>
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-86wm-68pq-5jwq" target="_blank" rel="noopener">ApostropheCMS: Unauthenticated resource exhaustion via pre-auth aposBigUpload processing in @apostrophecms/import-export</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-113711</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-21</span>
+          </div>
+          <p class='summary'>## Summary
+
+A potential unauthenticated denial-of-service vulnerability exists in the chunked import upload path used by `@apostrophecms/import-export`.
+
+The affected import API routes invoke:
+
+`self.apos.http.bigUploadMiddleware()`
+
+before the actual import handler performs its authentication check.
+
+Because no `authorize` callback is supplied to `bigUploadMiddleware()`, unauthenticated requests …</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/" target="_blank" rel="noopener">Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
+    <span class="meta-sep">·</span>
+    <span>Unit 42 (Palo Alto)</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-21</span>
+  </div>
+  <p class='summary'>CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 appeared first on Unit 42 .</p>
 
 </article>
 
@@ -788,42 +798,6 @@ using htmlparser2&#x27;s close events, and ignores the `isImplied` flag htmlpars
 still-open **ancestor** from inside a `&lt;noscript&gt;` makes htmlparser2 unwind its stack past the
 `noscript`; the synthetic implied close it emits on the way ends the discard region early, and
 …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html" target="_blank" rel="noopener">Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-106173</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-20</span>
-          </div>
-          <p class='summary'>Cybersecurity researchers have released a proof-of-concept (PoC) exploit for a recently patched critical security flaw impacting Fortinet FortiSIEM that could result in arbitrary code execution.
-
-The vulnerability, tracked as CVE-2026-106173 (CVSS score: 9.4), is a critical path traversal flaw that could allow an unauthenticated attacker to execute unauthorized code or commands via specially</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-62vg-58rm-qff7" target="_blank" rel="noopener">@angular/router: Denial of Service via Unmatched Empty-Path Outlet Route Matching in Server-Side Rendering (SSR)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-111752</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-20</span>
-          </div>
-          <p class='summary'>A denial of service (DoS) vulnerability was identified in `@angular/router` when Server-Side Rendering (SSR) is enabled on Node.js (V8).
-
-During route recognition, `@angular/router` fails to validate whether an auxiliary outlet segment in the URL matches a route configured for that specific outlet name. Because unconfigured empty-path outlet groups (such as `a:/()`, `x:/(...)`, or `///(...)`) are …</p>
 
         </article>
 

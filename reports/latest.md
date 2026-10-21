@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-21 10:45 UTC &nbsp;|&nbsp; **Total:** 40 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 19 &nbsp;|&nbsp; 🟡 High: 21 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-21 16:13 UTC &nbsp;|&nbsp; **Total:** 38 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 21 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -27,20 +27,11 @@
 
 > This story is developing and was written before PHP&#x27;s scheduled 14:00 UTC release on October 21. Once the release is out, the affected and fixed versions below are confirmed by the official advisory.
 
-PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described.
+PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described.…
 
 ---
 
-## 4. 🟠 Zero-Day — php2shell (CVE-2026-109618, CVE-2026-109619): Frequently asked questions about critical PHP remote code execution vulnerabilities
-
-**CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote>
-
-> Two critical PHP remote code execution vulnerabilities will be patched in an emergency release on October 21. Fixes are only expected for supported PHP 8.x branches. Key takeaways CVE-2026-109618 and CVE-2026-109619 are critical vulnerabilities in PHP, both rated CVSSv4.0 9.2 by the PHP security team. Public reporting describes both as remote code execution vulnerabilities. watchTowr says it belie…
-
----
-
-## 5. 🟠 Zero-Day — A2A Java SDK: Android synchronous POST forwards credentials across authorities after incomplete redirect fix
+## 4. 🟠 Zero-Day — A2A Java SDK: Android synchronous POST forwards credentials across authorities after incomplete redirect fix
 
 **CVE:** `CVE-2026-111765` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://github.com/advisories/GHSA-4fpj-g9jf-9rgg>
@@ -60,18 +51,7 @@ The synchronous POST builder later overwrites it:
 
 ---
 
-## 6. 🟠 Zero-Day — Russian APT28 Breaches NATO Naval Shipbuilder in NATO Country, Deploys New Reflective Loader
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-20
-**Reference:** <https://thehackernews.com/2026/10/russian-apt28-breaches-nato-naval.html>
-
-> The Russia-linked state-sponsored threat actor tracked as APT28 (aka BlueDelta, Fancy Bear, and Forest Blizzard) has been attributed to attacks targeting two member states of the North Atlantic Treaty Organization (NATO).
-
-The Symantec Threat Hunter Team, which is tracking the activity cluster under the moniker Swallowtail, involved the use of a backdoor called HOOKEDGE and a previously
-
----
-
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -80,7 +60,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -89,7 +69,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -98,7 +78,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -107,7 +87,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -116,7 +96,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -125,7 +105,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 13. 🟠 Zero-Day — [0day-rubbish] TRENDnet TV-IP302PI firmware 1.02.38 authenticated NTP server-address OS command injection to root command execution via a shell-form system() call (7.2 High, PR:H)
+## 11. 🟠 Zero-Day — [0day-rubbish] TRENDnet TV-IP302PI firmware 1.02.38 authenticated NTP server-address OS command injection to root command execution via a shell-form system() call (7.2 High, PR:H)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/34>
@@ -134,7 +114,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 14. 🟠 Zero-Day — [0day-rubbish] Royal Render 9.1.26b: default-unauthenticated job submission on rrServer TCP 7773 reaches worker-side shell execution as the worker identity, measured root (8.1 High)
+## 12. 🟠 Zero-Day — [0day-rubbish] Royal Render 9.1.26b: default-unauthenticated job submission on rrServer TCP 7773 reaches worker-side shell execution as the worker identity, measured root (8.1 High)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/33>
@@ -143,7 +123,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 15. 🟠 Zero-Day — [0day-rubbish] ProSoft Technology RLX-IFH24E v2.2.44 unsigned firmware upgrade package to root command execution and full account-database overwrite (7.2)
+## 13. 🟠 Zero-Day — [0day-rubbish] ProSoft Technology RLX-IFH24E v2.2.44 unsigned firmware upgrade package to root command execution and full account-database overwrite (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/32>
@@ -152,7 +132,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 16. 🟠 Zero-Day — [0day-rubbish] Parasoft Continuous Testing Platform 10.7.5-SNAPSHOT anonymous deserialization in the database restore path to JSP command execution as uid=1000 (9.8)
+## 14. 🟠 Zero-Day — [0day-rubbish] Parasoft Continuous Testing Platform 10.7.5-SNAPSHOT anonymous deserialization in the database restore path to JSP command execution as uid=1000 (9.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/31>
@@ -161,7 +141,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 17. 🟠 Zero-Day — [0day-rubbish] Exasol Database 7.1.30 docker-db form: shipped default SYS credential to PYTHON3 UDF os.popen command execution as uid=500(exadefusr), output returned in-band (8.8)
+## 15. 🟠 Zero-Day — [0day-rubbish] Exasol Database 7.1.30 docker-db form: shipped default SYS credential to PYTHON3 UDF os.popen command execution as uid=500(exadefusr), output returned in-band (8.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/30>
@@ -170,7 +150,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 18. 🟠 Zero-Day — [0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the setWAN WAN-configuration handler, root command execution (7.2)
+## 16. 🟠 Zero-Day — [0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the setWAN WAN-configuration handler, root command execution (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/29>
@@ -179,7 +159,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 19. 🟠 Zero-Day — [0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the formWlanMP manufacturing-test handler, root command execution (7.2)
+## 17. 🟠 Zero-Day — [0day-rubbish] Edimax BR-6478AC firmware v2.20 authenticated command injection in the formWlanMP manufacturing-test handler, root command execution (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-20
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/28>
@@ -188,7 +168,7 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 20. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 18. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -197,12 +177,40 @@ The Symantec Threat Hunter Team, which is tracking the activity cluster under th
 
 ---
 
-## 21. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 19. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
 
 > Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…
+
+---
+
+## 20. 🟡 High Severity — ApostropheCMS: Unauthenticated resource exhaustion via pre-auth aposBigUpload processing in @apostrophecms/import-export
+
+**CVE:** `CVE-2026-113711` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
+**Reference:** <https://github.com/advisories/GHSA-86wm-68pq-5jwq>
+
+> ## Summary
+
+A potential unauthenticated denial-of-service vulnerability exists in the chunked import upload path used by `@apostrophecms/import-export`.
+
+The affected import API routes invoke:
+
+`self.apos.http.bigUploadMiddleware()`
+
+before the actual import handler performs its authentication check.
+
+Because no `authorize` callback is supplied to `bigUploadMiddleware()`, unauthenticated requests …
+
+---
+
+## 21. 🟡 High Severity — Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619
+
+**CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-10-21
+**Reference:** <https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/>
+
+> CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 appeared first on Unit 42 .
 
 ---
 
@@ -416,29 +424,7 @@ still-open **ancestor** from inside a `&lt;noscript&gt;` makes htmlparser2 unwin
 
 ---
 
-## 38. 🟡 High Severity — Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution
-
-**CVE:** `CVE-2026-106173` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-20
-**Reference:** <https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html>
-
-> Cybersecurity researchers have released a proof-of-concept (PoC) exploit for a recently patched critical security flaw impacting Fortinet FortiSIEM that could result in arbitrary code execution.
-
-The vulnerability, tracked as CVE-2026-106173 (CVSS score: 9.4), is a critical path traversal flaw that could allow an unauthenticated attacker to execute unauthorized code or commands via specially
-
----
-
-## 39. 🟡 High Severity — @angular/router: Denial of Service via Unmatched Empty-Path Outlet Route Matching in Server-Side Rendering (SSR)
-
-**CVE:** `CVE-2026-111752` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-20
-**Reference:** <https://github.com/advisories/GHSA-62vg-58rm-qff7>
-
-> A denial of service (DoS) vulnerability was identified in `@angular/router` when Server-Side Rendering (SSR) is enabled on Node.js (V8).
-
-During route recognition, `@angular/router` fails to validate whether an auxiliary outlet segment in the URL matches a route configured for that specific outlet name. Because unconfigured empty-path outlet groups (such as `a:/()`, `x:/(...)`, or `///(...)`) are …
-
----
-
-## 40. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 38. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
