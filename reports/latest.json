@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-21T02:17:17.340279+00:00",
-  "total": 37,
+  "generated": "2026-10-21T10:45:07.700137+00:00",
+  "total": 40,
   "kev": 0,
-  "zero_day": 17,
+  "zero_day": 19,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,40 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
+      "title": "PHP2Shell: Two Unpatched Critical PHP RCE Flaws (CVSS 9.2) Trigger Emergency Security Alert",
+      "summary": "This story is developing and was written before PHP's scheduled 14:00 UTC release on October 21. Once the release is out, the affected and fixed versions below are confirmed by the official advisory.\n\nPHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described.",
+      "link": "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
+      "published": "2026-10-21T09:05:17+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote",
+      "title": "php2shell (CVE-2026-109618, CVE-2026-109619): Frequently asked questions about critical PHP remote code execution vulnerabilities",
+      "summary": "Two critical PHP remote code execution vulnerabilities will be patched in an emergency release on October 21. Fixes are only expected for supported PHP 8.x branches. Key takeaways CVE-2026-109618 and CVE-2026-109619 are critical vulnerabilities in PHP, both rated CVSSv4.0 9.2 by the PHP security team. Public reporting describes both as remote code execution vulnerabilities. watchTowr says it believes it has reproduced CVE-2026-109618, and Cloudflare CTO Dane Knecht says the company is seeing early attacks emerging. The patch release is scheduled for October 21, 2026 at 14:00 UTC. Version numbers reported before the release point to PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. End-of-life branches are not expected to receive fixes. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding two critical vulnerabilities in PHP that were announced on October 20, 2026. FAQ When were these PHP vulnerabilities first disclosed? On October 20, 2026, the CVE identifiers circulated on Hacker News and social media. Later that day, the PHP security team published an advance notice of a security release scheduled for October 21 at 14:00 UTC (10:00 AM ET) to address two critical vulnerabilities. The notice said the team could release earlier if details became public or if exploitation appeared in the wild. CERT-EU also published an advisory (2026-018) naming both CVEs. According to watchTowr , the vulnerabilities were originally set to be disclosed on Thursday, October 22, under embargo. A video shared by researcher Kirill Firsov demonstrates the exploit chain, dubbed php2shell. Firsov credited the video and exploit to researcher LCFR and Calif.io. The PHP security team is giving advance notice: Upcoming security release Wed, Oct 21st 2026, 14:00UTC, two critical vulnerabilities, both rated CVSSv4 9.2. PHP users are encouraged to prepare to update. Earlier release if details become public or active exploit evid",
+      "link": "https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote",
+      "published": "2026-10-21T09:01:24+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -312,6 +346,23 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
+      "title": "CISA Orders Federal Agencies to Patch Exploited Plex2Shell, Siemens, and SiteGuard Flaws",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, including four vulnerabilities impacting Plex Media Server that's collectively called Plex2Shell.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-96652 (CVSS score: 5.3) - Plex Media Server Server-Side Request Forgery (SSRF)",
+      "link": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
+      "published": "2026-10-21T07:26:49+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-96652"
       ],
       "is_zero_day": false,
       "is_high_severity": true
