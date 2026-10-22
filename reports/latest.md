@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-22 16:11 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 27 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-22 20:56 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,31 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Amazon says PHP2Shell exploitation began 4 days before patches
+## 3. 🟠 Zero-Day — Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html>
+
+> Attackers are exploiting a zero-day SQL injection flaw in Arista&#x27;s VeloCloud Orchestrator (VCO), the central management system for VeloCloud SD-WAN networks, the company said in an advisory on October 22.
+
+The flaw lets anyone who can log in to the orchestrator, even with a read-only customer account, gain operator privileges, the top level of control over it.
+
+For
+
+---
+
+## 4. 🟠 Zero-Day — Two CVSS 9.0 Linux KSMBD RCE Flaws Disclosed on Public Mailing Lists Before Kernel Fixes
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html>
+
+> Linux servers running KSMBD, the kernel&#x27;s built-in SMB server, are exposed to two publicly reported remote code execution flaws rated 9.0 by Trend Micro&#x27;s Zero Day Initiative, with no fix yet in the mainline kernel.
+
+One of them, ZDI-CAN-33774, can be triggered before any network authentication. The other, ZDI-CAN-33549, requires the SMB Direct transport and an RDMA-capable network
+
+---
+
+## 5. 🟠 Zero-Day — Amazon says PHP2Shell exploitation began 4 days before patches
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/>
@@ -29,7 +53,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors
+## 6. 🟠 Zero-Day — ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors>
@@ -38,7 +62,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
+## 7. 🟠 Zero-Day — OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html>
@@ -49,18 +73,18 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 6. 🟠 Zero-Day — Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed
+## 8. 🟠 Zero-Day — Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html>
 
-> Amazon&#x27;s Threat Intelligence team on Wednesday said it detected an attempt to exploit the newly disclosed PHP2Shell vulnerabilities on October 17, 2026, against its MadPot honeypot service, as the flaws come under broad exploitation in the wild following the release of the patches.
+> Amazon&#x27;s Threat Intelligence team on Wednesday said it detected an attempt to exploit the newly disclosed PHP2Shell vulnerabilities dating back to October 17, 2026, against its MadPot honeypot service, as the flaws come under broad exploitation in the wild following the release of the patches.
 
-&quot;The exploit attempt originated from an IP address associated with a commercial anonymization network,&quo…
+&quot;The exploit attempt originated from an IP address associated with a commercial anonymization …
 
 ---
 
-## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 9. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -69,7 +93,7 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 10. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -78,7 +102,7 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 11. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -87,7 +111,7 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 12. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -96,7 +120,7 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 13. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -105,7 +129,7 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 14. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -114,7 +138,46 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 13. 🟠 Zero-Day — PHP2Shell Exploitation Started Days Before Patches
+## 15. 🟠 Zero-Day — Arista patches new VeloCloud Orchestrator zero-day exploited in attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/>
+
+> Arista Networks released security updates to patch an actively exploited zero-day vulnerability affecting VeloCloud Orchestrator (VCO) On-Prem deployments. [...]
+
+---
+
+## 16. 🟠 Zero-Day — toml-node: Quadratic-complexity DoS via many array-of-tables headers in toml.parse()
+
+**CVE:** `CVE-2026-114141` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-4qx8-w7c3-pj3p>
+
+> ## Summary
+
+`toml.parse()` is vulnerable to a quadratic-complexity (O(n²)) denial-of-service via many
+array-of-tables (`[[name]]`) headers. `addTableArray()` in `lib/compiler.js` rescans two
+entire bookkeeping Sets on every `[[name]]` header without pruning unrelated or distinct
+entries, so a document containing n such headers costs O(n²) compiler work. A ~321KB document
+of 20,000 distinct-named `…
+
+---
+
+## 17. 🟠 Zero-Day — toml-node: Quadratic-complexity DoS via long dotted keys or table paths in toml.parse()
+
+**CVE:** `CVE-2026-114143` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-9j65-hcg3-gc64>
+
+> ## Summary
+
+`toml.parse()` is vulnerable to a quadratic-complexity (O(n²)) denial-of-service via a single
+long dotted key, table header, or inline-table key. A ~100KB crafted document causes a
+multi-second synchronous hang; a ~200KB document crashes the Node.js process outright with an
+uncatchable out-of-memory error. This is a separate, unpatched code path from the previously
+fixed stack-overflow…
+
+---
+
+## 18. 🟠 Zero-Day — PHP2Shell Exploitation Started Days Before Patches
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/>
@@ -123,20 +186,7 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 14. 🟠 Zero-Day — Storybook: Missing origin validation in Storybook preview allows code injection from malicious websites
-
-**CVE:** `CVE-2026-114125` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-f2ph-cmg5-wxc8>
-
-> **Summary:** A malicious website may be able to cause unauthorized file changes in a developer’s project while an affected Storybook development server is running. Under additional conditions, a changed file could be executed by a local runtime with the developer’s privileges. We are not aware of exploitation in the wild.
-
-## Who is impacted?
-
-You are impacted if you run a Storybook dev server in …
-
----
-
-## 15. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 19. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -145,7 +195,7 @@ You are impacted if you run a Storybook dev server in …
 
 ---
 
-## 16. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 20. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -154,7 +204,76 @@ You are impacted if you run a Storybook dev server in …
 
 ---
 
-## 17. 🟡 High Severity — next.js cache leak across root param values in nested 'use cache' functions
+## 21. 🟡 High Severity — Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive
+
+**CVE:** `CVE-2026-114132` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-vjh5-4x84-xrqp>
+
+> ## Impact
+
+With the default `router.options.sensitive: false`, Nuxt&#x27;s page router resolves routes case-insensitively, so `/Admin` renders the same page as `/admin`. On the server, however, route rules were resolved with Nitro&#x27;s route-rule matcher, which matches keys case-sensitively. A request whose path differs from a rule key only in letter case therefore rendered the page with none of…
+
+---
+
+## 22. 🟡 High Severity — GitPython validates a submodule's ".git" path only after cloning into it (RCE)
+
+**CVE:** `CVE-2026-114145` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-83vg-56qc-22m7>
+
+> ### Summary
+
+
+`create_submodule(name, path, url)` clones a submodule into the repo&#x27;s own `.git`
+directory before it rejects the path. A `path` of &quot;.git/hooks&quot; is accepted by the
+pre-clone check, so the submodule is cloned straight into the live hooks directory,
+and a file named `post-checkout` in the submodule becomes an executable
+`.git/hooks/post-checkout`. On 3.2.0+ the later ind…
+
+---
+
+## 23. 🟡 High Severity — toml-node: Prototype pollution: parsing a TOML document can write to Object.prototype
+
+**CVE:** `CVE-2026-114142` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-h895-cgqg-jf52>
+
+> ### Summary
+CVE-2026-63376 described prototype pollution through __proto__ key-path desynchronization and was fixed in 4.1.2 by rewriting the path bookkeeping and adding an ownedContainers WeakSet. The desynchronization is still reachable, spelled with a quote character instead of a dot, and the owned-container check is not applied on the path that matters.
+
+A four-line TOML document parsed with t…
+
+---
+
+## 24. 🟡 High Severity — nbconvert: Arbitrary file write through path traversal in cell output filenames when exporting to md, latex, rst and asciidoc
+
+**CVE:** `CVE-2026-114140` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-pjvx-prjx-h659>
+
+> ### Summary
+
+nbconvert &lt;= v7.17.1 has an arbitrary file write vulnerability due to a path traversal in ipynb cell output metadata, more specifically on the filename attribute.
+
+Vulnerable converters : `--to markdown`, `--to latex`, `--to rst`, `--to asciidoc`.
+
+In `ExtractOutputPreprocessor`, `extractoutput.py:116-119` joins attacker-controlled  `path` to `output_files_dir` with no canonicaliza…
+
+---
+
+## 25. 🟡 High Severity — Black: GitHub Action installs unvalidated required-version from pyproject.toml
+
+**CVE:** `CVE-2026-114134` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-cg8m-r9f2-5wm2>
+
+> ### Summary
+
+The GitHub Action bundled with Black can read the version from `tool.black.required-version` if `use_pyproject` is set to True. This version is not validated and therefore can be used to execute untrusted code in the context of a victim&#x27;s repository.
+
+### Details
+
+This is similar to the previous CVE-2026-31900. The value in `tool.black.required-version` is accepted as the version…
+
+---
+
+## 26. 🟡 High Severity — next.js cache leak across root param values in nested 'use cache' functions
 
 **CVE:** `CVE-2026-103004` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-h694-7cp9-m8p3>
@@ -165,7 +284,7 @@ With Cache Components enabled (`cacheComponents: true`), a `&#x27;use cache&#x27
 
 ---
 
-## 18. 🟡 High Severity — Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer
+## 27. 🟡 High Severity — Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer
 
 **CVE:** `CVE-2026-96778` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-g7cr-3p24-7wf7>
@@ -182,7 +301,7 @@ A heap buffer overflow in Pillow&#x27;s JPEG en…
 
 ---
 
-## 19. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
+## 28. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
 
 **CVE:** `CVE-2026-96638` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-24rc-8hj2-v98c>
@@ -198,7 +317,7 @@ BmpRleDecoder.decode() (BmpImagePlugin.py:327-395) builds a Python bytearray `da
 
 ---
 
-## 20. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
+## 29. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
 
 **CVE:** `CVE-2026-44351` | `CVE-2026-45363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-pxh4-856f-4h89>
@@ -214,7 +333,7 @@ same emp…
 
 ---
 
-## 21. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
+## 30. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
 
 **CVE:** `CVE-2026-114135` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-354v-3q48-cv69>
@@ -227,16 +346,16 @@ In Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically 
 
 ---
 
-## 22. 🟡 High Severity — Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)
+## 31. 🟡 High Severity — Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)
 
 **CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/>
 
-> On October 21, 2026, the PHP project released emergency fixes for two critical remote code execution (RCE) vulnerabilities in the PHP core runtime, tracked as CVE-2026-109618 and CVE-2026-109619 and collectively named PHP2Shell. Both are rated 9.2 (Critical) under CVSS v4.0, and both allow an unauthenticated attacker to run code on a vulnerable server. The fixed […]
+> October 22, 2026: We updated this post to add the AWS WAF PHP application managed rule group. Version 2.3 of the rule group adds the PHP2Shell_BODY rule for CVE-2026-109619, and AWS made it the default version. On October 21, 2026, the PHP project released emergency fixes for two critical remote code execution (RCE) vulnerabilities in the […]
 
 ---
 
-## 23. 🟡 High Severity — Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
+## 32. 🟡 High Severity — Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
 
 **CVE:** `CVE-2026-112393` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-332p-7hrc-92wf>
@@ -253,7 +372,7 @@ Pillow can write attacker-chosen data past the end of a h…
 
 ---
 
-## 24. 🟡 High Severity — Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer
+## 33. 🟡 High Severity — Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer
 
 **CVE:** `CVE-2026-112396` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-4rr5-89j8-mwwm>
@@ -263,253 +382,7 @@ Saving an image as TIFF to an in-memory buffer can trigger a heap use-after-free
 
 ---
 
-## 25. 🟡 High Severity — Pillow: Image.quantize() with empty palette leaks uninitialized stack memory
-
-**CVE:** `CVE-2026-112898` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-rfgq-q3w2-pmv2>
-
-> ```
-============================================================================
-Image.quantize() with empty palette leaks uninitialized stack memory
-Location: src/libImaging/Palette.c:216  in ImagingPaletteCacheUpdate()
-Commit:   a707c6b21c313880d0771e54965d142dd42358b6
-============================================================================
-```
-
-When an application lets a user supply the pal…
-
----
-
-## 26. 🟡 High Severity — Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size
-
-**CVE:** `CVE-2026-112394` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-4558-3h8r-v8xp>
-
-> ### Summary
-
-On `main`, even with the guard in #9725, it&#x27;s possible to have these decoders read 1 to 3 bytes past the end of the passed buffer with a suitable width/height.
-
-### Details
-
-`ImagingRawDecode` and the `P;2L` / `P;4L` unpackers disagree about how many bytes a line of data occupies.
-
-The raw decoder derives the line size from the bits per pixel
-
-```c
-state-&gt;bytes = (state-&gt;xs…
-
----
-
-## 27. 🟡 High Severity — Vitest: Servers misapply `server.fs.deny`, serving `.env`, private keys, `.git`, and the API token file
-
-**CVE:** `CVE-2026-112948` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-p458-7748-mcp3>
-
-> ### Summary
-
-In Vitest 5, Vite&#x27;s `server.fs.deny` is not applied as intended on Vitest&#x27;s dev servers. Depending on the server, files that Vite refuses to serve by default (such as `.env`, private keys and certificates, `.npmrc`, and `.git`) or Vitest&#x27;s own API token file (`.vitest-secret-token`) can be read over plain HTTP by a client that can reach the server. In Browser Mode with …
-
----
-
-## 28. 🟡 High Severity — Vitest: Windows backslash traversal bypasses the @vitest/mocker redirect allowlist fix
-
-**CVE:** `CVE-2026-112950` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-xp26-3454-mjgp>
-
-> ## Summary
-
-The path traversal fix released for [GHSA-82fw-gwwq-j7x9](https://github.com/vitest-dev/vitest/security/advisories/GHSA-82fw-gwwq-j7x9) can be bypassed on Windows by using a backslash in the redirect URL pathname.
-
-The fixed code joins an attacker-controlled URL pathname with the Vite root using `node:path/posix`, then passes that string to Vite&#x27;s file allowlist check. On Windows,…
-
----
-
-## 29. 🟡 High Severity — ApostropheCMS: Exposure of Sensitive Information via predictable export filenames
-
-**CVE:** `CVE-2026-112953` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-5gc8-frw3-3vqm>
-
-> ## Summary
-
-When a user exports content through `@apostrophecms/import-export`, the module copies the generated archive into uploadfs at `/exports/` and returns a public URL under `/uploads/exports/`. The filename is fully deterministic: site `shortName`, document type, a `YYYYMMDDHHmmss` timestamp, and the format extension. There is no secret token.
-
-Anyone who can guess that path can download th…
-
----
-
-## 30. 🟡 High Severity — djust: Arbitrary absolute-path file read in the find_handlers_for_template MCP tool
-
-**CVE:** `CVE-2026-113731` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-r57g-mc79-8hj2>
-
-> ### Affected version / file / line
-Version: djust v1.1.4 (latest release, published 2026-09-23). File: python/djust/mcp/server.py:354-433 (MCP tool find_handlers_for_template). Confirmed identical on the commit used for triage, a7e4fafd1667b4db0b1465652d4a63cb17117a07.
-
-### Description
-```
-@mcp.tool()
-def find_handlers_for_template(template_path: str) -&gt; str:
-    &quot;&quot;&quot;
-    Args:
-  …
-
----
-
-## 31. 🟡 High Severity — ApostropheCMS: POST /api/v1/@apostrophecms/doc/slugTaken discloses existence of private/admin-only content to any authenticated user
-
-**CVE:** `CVE-2026-112952` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-f66c-mpj2-3r8h>
-
-> ### Summary
-The `slugTaken` endpoint returns a boolean indicating whether a slug is in use across
-all document types and visibility levels, with no permission or type filter. Any logged-in
-user (including editors) can enumerate the slug space of private pages, drafts, and
-archived content.
-
-### Details
-`POST /api/v1/@apostrophecms/doc/slugTaken` with body `{ &quot;slug&quot;: &quot;target-slug&quo…
-
----
-
-## 32. 🟡 High Severity — ApostropheCMS: GET /api/v1/@apostrophecms/page/:id bypasses viewRole restriction and exposes viewPermission-gated fields to lower-privileged users
-
-**CVE:** `CVE-2026-112957` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-vh56-5m88-39rq>
-
-> ### Summary
-The `getOne` REST endpoint for pages does not apply `viewRole` type-level restrictions
-or `viewPermission` field-level redaction. An editor-level user who knows a document
-`_id` can read the full content of admin-only pages and their privileged fields, while
-the `getAll` endpoint correctly enforces both restrictions.
-
-### Details
-**Finding 3 — viewRole bypass:**
-`modules/@apostrophecms…
-
----
-
-## 33. 🟡 High Severity — ApostropheCMS sanitize-html: unbounded recursion when re-sanitizing the fallback of a discarded iframe (stack overflow, nestingLimit not enforced)
-
-**CVE:** `CVE-2026-113650` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-c9rx-x947-fp3h>
-
-> ### Summary
-
-Since 2.18.0, when an `&lt;iframe&gt;` is not allowed and `disallowedTagsMode` is `&#x27;discard&#x27;` (the defaults),
-its raw-text content is re-sanitized by a recursive call to `sanitizeHtml(text, options)` (the change
-from #5564, fixing #5550). The recursion has no bound and starts each nested call with a fresh state.
-Two consequences, both absent from 2.17.7 and 2.17.4:
-
-1. A few…
-
----
-
-## 34. 🟡 High Severity — virtualenv bash activate runs commands from an environment name with a backslash before $
-
-**CVE:** `CVE-2026-113725` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-vxj4-q4g9-crj7>
-
-> ### Summary
-
-The bash `activate` script escapes the environment name for only one of the two passes bash makes over `PS1`, so a
-backslash in the name undoes the escaping and a name containing `\$(...)` runs as commands in the user&#x27;s shell each
-time bash draws the prompt.
-
-### Affected area
-
-`src/virtualenv/activation/bash/activate.sh`, the block that prepends the environment name to `PS1`.
-
-#…
-
----
-
-## 35. 🟡 High Severity — Vite: Cross origin script execution through Vite custom middleware
-
-**CVE:** `CVE-2026-112945` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-9jrq-w75r-8gcw>
-
-> ### Summary
-
-When accessing a malicious site while a dev server using Vite is running, that site was able to load scripts in a page served by the dev server.
-
-### Impact
-
-Only apps that match the following conditions are affected:
-
-- the dev server passes an unchanged browser request URL to `server.transformIndexHtml`: this is normally used for `server.middlewareMode: true` or `appType: &#x27;cust…
-
----
-
-## 36. 🟡 High Severity — Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`
-
-**CVE:** `CVE-2026-112947` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-vfpm-58rq-9qcg>
-
-> ### Summary
-
-The first 4 bytes of files outside of `server.fs` setting can be returned to the browser by a request containing `?vite-wasm-instance`.
-
-### Impact
-
- Only apps that match one of the following conditions are affected:
-
-- explicitly expose the Vite dev server to the network using `--host` or the [`server.host`](https://vite.dev/config/server-options#server-host) option
-- there&#x27;s a …
-
----
-
-## 37. 🟡 High Severity — virtualenv activate runs commands from the environment name in zsh with PROMPT_SUBST
-
-**CVE:** `CVE-2026-113726` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-5vjq-rrrf-7h2q>
-
-> ### Impact
-
-zsh users activate an environment with the bash `activate` script, which puts the environment name into `PS1`. Since
-21.13.0 the script escapes backslashes, dollar signs and backticks in that name, but only when `BASH_VERSION` is set, so
-zsh gets the raw value. With the `PROMPT_SUBST` option set, zsh runs parameter expansion, command substitution and
-arithmetic expansion on `PS1` each …
-
----
-
-## 38. 🟡 High Severity — virtualenv activation scripts run code from a path that contains a placeholder name
-
-**CVE:** `CVE-2026-113776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-8rjx-v5ww-45pp>
-
-> ### Impact
-
-`ViaTemplateActivator.instantiate_template` replaces the placeholders in an activation template one key at a time, each across the whole text. When a value that it already substituted and quoted contains the name of a later placeholder, the later pass rewrites that name inside the quoted literal. The inserted value brings its own quotes, which close the outer literal, and the rest of t…
-
----
-
-## 39. 🟡 High Severity — Slack Morphism verifier errors disclose valid HMACs in the logs
-
-**CVE:** `CVE-2026-113799` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-26w4-8w32-4x3v>
-
-> ### Summary
-
-Slack Morphism exposes the correct Slack request HMAC when signature verification fails.
-
-For an invalid request, `slack-morphism` computes the correct signature for the attacker-controlled timestamp and request body and stores it in `SlackEventWrongSignatureError.generated_hash`. The error&#x27;s `Debug` and `Display` representations expose that value, and the default Axum listener e…
-
----
-
-## 40. 🟡 High Severity — OpenChoreo: Authorization bypass on WorkflowRun update allows cross-project takeover of workflow runs
-
-**CVE:** `CVE-2026-113727` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-46r4-q7wv-32fc>
-
-> ## Summary
-
-The OpenChoreo API server authorized `PUT .../workflowruns/{runName}` against ownership metadata taken from the request body, while the object it actually mutated was selected by the URL path. Nothing forced the two to agree.
-
-A `WorkflowRun`&#x27;s membership in a project and component is carried entirely by its `openchoreo.dev/project` and `openchoreo.dev/component` labels. Because t…
-
----
-
-## 41. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
