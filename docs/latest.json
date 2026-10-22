@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-22T02:11:56.319914+00:00",
+  "generated": "2026-10-22T10:45:58.115201+00:00",
   "total": 34,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -37,11 +37,11 @@
       "is_high_severity": true
     },
     {
-      "id": "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
-      "title": "PHP2Shell: Two Unpatched Critical PHP RCE Flaws (CVSS 9.2) Trigger Emergency Security Alert",
-      "summary": "This story is developing and was written before PHP's scheduled 14:00 UTC release on October 21. Once the release is out, the affected and fixed versions below are confirmed by the official advisory.\n\nPHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described.\n\n\u26a1",
-      "link": "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
-      "published": "2026-10-21T09:05:17+00:00",
+      "id": "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
+      "title": "Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed",
+      "summary": "Amazon's Threat Intelligence team on Wednesday said it detected an attempt to exploit the newly disclosed PHP2Shell vulnerabilities on October 17, 2026, against its MadPot honeypot service, as the flaws come under broad exploitation in the wild following the release of the patches.\n\n\"The exploit attempt originated from an IP address associated with a commercial anonymization network,\" CJ Moses,",
+      "link": "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
+      "published": "2026-10-22T06:34:10+00:00",
       "source": "The Hacker News Security",
       "tags": [
         "news",
@@ -145,6 +145,21 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+      "title": "PHP2Shell Exploitation Started Days Before Patches",
+      "summary": "Initial attempts were observed on October 17, and mass activity began shortly after patches were released. The post PHP2Shell Exploitation Started Days Before Patches appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+      "published": "2026-10-22T09:48:58+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -568,23 +583,6 @@
       ],
       "cve_ids": [
         "CVE-2026-113711"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
-      "title": "CISA Orders Federal Agencies to Patch Exploited Plex2Shell, Siemens, and SiteGuard Flaws",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, including four vulnerabilities impacting Plex Media Server that's collectively called Plex2Shell.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-96652 (CVSS score: 5.3) - Plex Media Server Server-Side Request Forgery (SSRF)",
-      "link": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
-      "published": "2026-10-21T07:26:49+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-96652"
       ],
       "is_zero_day": false,
       "is_high_severity": true
