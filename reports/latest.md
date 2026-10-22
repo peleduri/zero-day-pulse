@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-22 10:45 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 23 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-22 16:11 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 14 &nbsp;|&nbsp; 🟡 High: 27 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,36 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed
+## 3. 🟠 Zero-Day — Amazon says PHP2Shell exploitation began 4 days before patches
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/>
+
+> Security researchers at Amazon Threat Intelligence say attackers began targeting the PHP2Shell flaws four days before security patches were released on Wednesday. [...]
+
+---
+
+## 4. 🟠 Zero-Day — ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors>
+
+> Wiz Research is tracking an ARTEX-using actor, overlapping with Storm-0940, across multiple targeted software vendors. Learn how the AI agent attacks Okta, Entra, and Cognito, and what it left behind in the logs.
+
+---
+
+## 5. 🟠 Zero-Day — OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html>
+
+> A flaw in the OpenCode AI coding agent allowed a malicious or hijacked MCP server to run code on a developer&#x27;s Windows or WSL machine when the developer signed in. OpenCode connects to MCP (Model Context Protocol) servers to add outside tools, and such code would run with the developer&#x27;s own access.
+
+Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on September
+
+---
+
+## 6. 🟠 Zero-Day — Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html>
@@ -31,7 +60,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 7. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +69,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 8. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +78,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 9. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +87,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 10. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +96,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 11. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +105,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 12. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,7 +114,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — PHP2Shell Exploitation Started Days Before Patches
+## 13. 🟠 Zero-Day — PHP2Shell Exploitation Started Days Before Patches
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/>
@@ -94,7 +123,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Storybook: Missing origin validation in Storybook preview allows code injection from malicious websites
+## 14. 🟠 Zero-Day — Storybook: Missing origin validation in Storybook preview allows code injection from malicious websites
 
 **CVE:** `CVE-2026-114125` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-f2ph-cmg5-wxc8>
@@ -107,7 +136,7 @@ You are impacted if you run a Storybook dev server in …
 
 ---
 
-## 12. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 15. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -116,7 +145,7 @@ You are impacted if you run a Storybook dev server in …
 
 ---
 
-## 13. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 16. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -125,7 +154,80 @@ You are impacted if you run a Storybook dev server in …
 
 ---
 
-## 14. 🟡 High Severity — Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)
+## 17. 🟡 High Severity — next.js cache leak across root param values in nested 'use cache' functions
+
+**CVE:** `CVE-2026-103004` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-h694-7cp9-m8p3>
+
+> ### Impact
+
+With Cache Components enabled (`cacheComponents: true`), a `&#x27;use cache&#x27;` function that calls another `&#x27;use cache&#x27;` function that reads a root param can be keyed incorrectly when the inner call is served from an existing entry: the enclosing function&#x27;s cache key then omits that root param. The enclosing entry is written once and reused for all root param values,…
+
+---
+
+## 18. 🟡 High Severity — Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer
+
+**CVE:** `CVE-2026-96778` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-g7cr-3p24-7wf7>
+
+> ```
+============================================================================
+Heap buffer overflow writing JPEG comment after ICC profile fills buffer
+Location: src/libImaging/JpegEncode.c:330  in ImagingJpegEncode()
+Commit:   a707c6b21c313880d0771e54965d142dd42358b6
+============================================================================
+```
+
+A heap buffer overflow in Pillow&#x27;s JPEG en…
+
+---
+
+## 19. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
+
+**CVE:** `CVE-2026-96638` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-24rc-8hj2-v98c>
+
+> ## Summary
+BmpRleDecoder can be forced to allocate gigabytes of memory from a kilobyte-sized crafted BMP file via unbounded growth in the delta escape and absolute mode branches.
+
+## Affected versions
+All versions up to and including current HEAD (v13.0.0.dev0, commit e7a7ea84)
+
+## Root cause
+BmpRleDecoder.decode() (BmpImagePlugin.py:327-395) builds a Python bytearray `data` with dest_length = xsi…
+
+---
+
+## 20. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
+
+**CVE:** `CVE-2026-44351` | `CVE-2026-45363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-pxh4-856f-4h89>
+
+> ### Summary
+
+`HMACAlgorithm.from_jwk` accepts a symmetric (`kty=oct`) JWK whose `k` value is
+the empty string and returns a zero-length key without raising. When a token is
+then verified with that key object (a `PyJWK`, or a `PyJWK` resolved by
+`PyJWKSet` / `PyJWKClient`), the HMAC verifier computes
+`HMAC(key=b&quot;&quot;, signing_input)` and accepts any token an attacker forged with the
+same emp…
+
+---
+
+## 21. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
+
+**CVE:** `CVE-2026-114135` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://github.com/advisories/GHSA-354v-3q48-cv69>
+
+> ### Summary
+
+Jupyter Server&#x27;s gateway WebSocket handler checks that a user is authenticated, but it does not ask the configured Authorizer whether that user may execute kernels.
+
+In Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically replaced the normal kernel channel handler with this gateway-specific handler. An authenticated user who is denied the `execute` action …
+
+---
+
+## 22. 🟡 High Severity — Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)
 
 **CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/>
@@ -134,7 +236,7 @@ You are impacted if you run a Storybook dev server in …
 
 ---
 
-## 15. 🟡 High Severity — Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
+## 23. 🟡 High Severity — Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
 
 **CVE:** `CVE-2026-112393` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-332p-7hrc-92wf>
@@ -151,7 +253,7 @@ Pillow can write attacker-chosen data past the end of a h…
 
 ---
 
-## 16. 🟡 High Severity — Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer
+## 24. 🟡 High Severity — Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer
 
 **CVE:** `CVE-2026-112396` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-4rr5-89j8-mwwm>
@@ -161,7 +263,7 @@ Saving an image as TIFF to an in-memory buffer can trigger a heap use-after-free
 
 ---
 
-## 17. 🟡 High Severity — Pillow: Image.quantize() with empty palette leaks uninitialized stack memory
+## 25. 🟡 High Severity — Pillow: Image.quantize() with empty palette leaks uninitialized stack memory
 
 **CVE:** `CVE-2026-112898` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-rfgq-q3w2-pmv2>
@@ -178,7 +280,7 @@ When an application lets a user supply the pal…
 
 ---
 
-## 18. 🟡 High Severity — Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size
+## 26. 🟡 High Severity — Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size
 
 **CVE:** `CVE-2026-112394` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-4558-3h8r-v8xp>
@@ -198,7 +300,7 @@ state-&gt;bytes = (state-&gt;xs…
 
 ---
 
-## 19. 🟡 High Severity — Vitest: Servers misapply `server.fs.deny`, serving `.env`, private keys, `.git`, and the API token file
+## 27. 🟡 High Severity — Vitest: Servers misapply `server.fs.deny`, serving `.env`, private keys, `.git`, and the API token file
 
 **CVE:** `CVE-2026-112948` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-p458-7748-mcp3>
@@ -209,7 +311,7 @@ In Vitest 5, Vite&#x27;s `server.fs.deny` is not applied as intended on Vitest&#
 
 ---
 
-## 20. 🟡 High Severity — Vitest: Windows backslash traversal bypasses the @vitest/mocker redirect allowlist fix
+## 28. 🟡 High Severity — Vitest: Windows backslash traversal bypasses the @vitest/mocker redirect allowlist fix
 
 **CVE:** `CVE-2026-112950` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-xp26-3454-mjgp>
@@ -222,7 +324,7 @@ The fixed code joins an attacker-controlled URL pathname with the Vite root usin
 
 ---
 
-## 21. 🟡 High Severity — ApostropheCMS: Exposure of Sensitive Information via predictable export filenames
+## 29. 🟡 High Severity — ApostropheCMS: Exposure of Sensitive Information via predictable export filenames
 
 **CVE:** `CVE-2026-112953` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-5gc8-frw3-3vqm>
@@ -235,7 +337,7 @@ Anyone who can guess that path can download th…
 
 ---
 
-## 22. 🟡 High Severity — djust: Arbitrary absolute-path file read in the find_handlers_for_template MCP tool
+## 30. 🟡 High Severity — djust: Arbitrary absolute-path file read in the find_handlers_for_template MCP tool
 
 **CVE:** `CVE-2026-113731` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-r57g-mc79-8hj2>
@@ -253,7 +355,7 @@ def find_handlers_for_template(template_path: str) -&gt; str:
 
 ---
 
-## 23. 🟡 High Severity — ApostropheCMS: POST /api/v1/@apostrophecms/doc/slugTaken discloses existence of private/admin-only content to any authenticated user
+## 31. 🟡 High Severity — ApostropheCMS: POST /api/v1/@apostrophecms/doc/slugTaken discloses existence of private/admin-only content to any authenticated user
 
 **CVE:** `CVE-2026-112952` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-f66c-mpj2-3r8h>
@@ -269,7 +371,7 @@ archived content.
 
 ---
 
-## 24. 🟡 High Severity — ApostropheCMS: GET /api/v1/@apostrophecms/page/:id bypasses viewRole restriction and exposes viewPermission-gated fields to lower-privileged users
+## 32. 🟡 High Severity — ApostropheCMS: GET /api/v1/@apostrophecms/page/:id bypasses viewRole restriction and exposes viewPermission-gated fields to lower-privileged users
 
 **CVE:** `CVE-2026-112957` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-vh56-5m88-39rq>
@@ -286,7 +388,7 @@ the `getAll` endpoint correctly enforces both restrictions.
 
 ---
 
-## 25. 🟡 High Severity — ApostropheCMS sanitize-html: unbounded recursion when re-sanitizing the fallback of a discarded iframe (stack overflow, nestingLimit not enforced)
+## 33. 🟡 High Severity — ApostropheCMS sanitize-html: unbounded recursion when re-sanitizing the fallback of a discarded iframe (stack overflow, nestingLimit not enforced)
 
 **CVE:** `CVE-2026-113650` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-c9rx-x947-fp3h>
@@ -302,7 +404,7 @@ Two consequences, both absent from 2.17.7 and 2.17.4:
 
 ---
 
-## 26. 🟡 High Severity — virtualenv bash activate runs commands from an environment name with a backslash before $
+## 34. 🟡 High Severity — virtualenv bash activate runs commands from an environment name with a backslash before $
 
 **CVE:** `CVE-2026-113725` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-vxj4-q4g9-crj7>
@@ -321,7 +423,7 @@ time bash draws the prompt.
 
 ---
 
-## 27. 🟡 High Severity — Vite: Cross origin script execution through Vite custom middleware
+## 35. 🟡 High Severity — Vite: Cross origin script execution through Vite custom middleware
 
 **CVE:** `CVE-2026-112945` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-9jrq-w75r-8gcw>
@@ -338,7 +440,7 @@ Only apps that match the following conditions are affected:
 
 ---
 
-## 28. 🟡 High Severity — Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`
+## 36. 🟡 High Severity — Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`
 
 **CVE:** `CVE-2026-112947` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-vfpm-58rq-9qcg>
@@ -356,7 +458,7 @@ The first 4 bytes of files outside of `server.fs` setting can be returned to the
 
 ---
 
-## 29. 🟡 High Severity — virtualenv activate runs commands from the environment name in zsh with PROMPT_SUBST
+## 37. 🟡 High Severity — virtualenv activate runs commands from the environment name in zsh with PROMPT_SUBST
 
 **CVE:** `CVE-2026-113726` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-5vjq-rrrf-7h2q>
@@ -370,7 +472,7 @@ arithmetic expansion on `PS1` each …
 
 ---
 
-## 30. 🟡 High Severity — virtualenv activation scripts run code from a path that contains a placeholder name
+## 38. 🟡 High Severity — virtualenv activation scripts run code from a path that contains a placeholder name
 
 **CVE:** `CVE-2026-113776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-8rjx-v5ww-45pp>
@@ -381,7 +483,7 @@ arithmetic expansion on `PS1` each …
 
 ---
 
-## 31. 🟡 High Severity — Slack Morphism verifier errors disclose valid HMACs in the logs
+## 39. 🟡 High Severity — Slack Morphism verifier errors disclose valid HMACs in the logs
 
 **CVE:** `CVE-2026-113799` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-26w4-8w32-4x3v>
@@ -394,7 +496,7 @@ For an invalid request, `slack-morphism` computes the correct signature for the 
 
 ---
 
-## 32. 🟡 High Severity — OpenChoreo: Authorization bypass on WorkflowRun update allows cross-project takeover of workflow runs
+## 40. 🟡 High Severity — OpenChoreo: Authorization bypass on WorkflowRun update allows cross-project takeover of workflow runs
 
 **CVE:** `CVE-2026-113727` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
 **Reference:** <https://github.com/advisories/GHSA-46r4-q7wv-32fc>
@@ -407,26 +509,7 @@ A `WorkflowRun`&#x27;s membership in a project and component is carried entirely
 
 ---
 
-## 33. 🟡 High Severity — ApostropheCMS: Unauthenticated resource exhaustion via pre-auth aposBigUpload processing in @apostrophecms/import-export
-
-**CVE:** `CVE-2026-113711` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-86wm-68pq-5jwq>
-
-> ## Summary
-
-A potential unauthenticated denial-of-service vulnerability exists in the chunked import upload path used by `@apostrophecms/import-export`.
-
-The affected import API routes invoke:
-
-`self.apos.http.bigUploadMiddleware()`
-
-before the actual import handler performs its authentication check.
-
-Because no `authorize` callback is supplied to `bigUploadMiddleware()`, unauthenticated requests …
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 41. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

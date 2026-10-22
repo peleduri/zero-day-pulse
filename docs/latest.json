@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-22T10:45:58.115201+00:00",
-  "total": 34,
+  "generated": "2026-10-22T16:11:38.783293+00:00",
+  "total": 41,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 14,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,52 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/",
+      "title": "Amazon says PHP2Shell exploitation began 4 days before patches",
+      "summary": "Security researchers at Amazon Threat Intelligence say attackers began targeting the PHP2Shell flaws four days before security patches were released on Wednesday. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/",
+      "published": "2026-10-22T13:09:12+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors",
+      "title": "ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors",
+      "summary": "Wiz Research is tracking an ARTEX-using actor, overlapping with Storm-0940, across multiple targeted software vendors. Learn how the AI agent attacks Okta, Entra, and Cognito, and what it left behind in the logs.",
+      "link": "https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors",
+      "published": "2026-10-22T13:05:31+00:00",
+      "source": "Wiz Research",
+      "tags": [
+        "cloud",
+        "research",
+        "misconfig"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html",
+      "title": "OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL",
+      "summary": "A flaw in the OpenCode AI coding agent allowed a malicious or hijacked MCP server to run code on a developer's Windows or WSL machine when the developer signed in. OpenCode connects to MCP (Model Context Protocol) servers to add outside tools, and such code would run with the developer's own access.\n\nAnomaly, the company behind OpenCode, fixed the flaw in\u00a0version 1.18.33\u00a0on September",
+      "link": "https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html",
+      "published": "2026-10-22T10:44:05+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -222,6 +268,97 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-103004",
+      "title": "next.js cache leak across root param values in nested 'use cache' functions",
+      "summary": "### Impact\n\nWith Cache Components enabled (`cacheComponents: true`), a `'use cache'` function that calls another `'use cache'` function that reads a root param can be keyed incorrectly when the inner call is served from an existing entry: the enclosing function's cache key then omits that root param. The enclosing entry is written once and reused for all root param values, so a response for one root param value can serve content produced for a different value \u2014 whether the page is prerendered at build time or at runtime, or rendered dynamically. Shared cache headers let downstream caches redistribute the content further. \n\nWhat values are leaked cannot be attacker controlled. Which value's content is served depends only on which invocation wrote the entry first.\n\n### Workarounds\n\nThere are no known workarounds. Apps should upgrade to the patched version as soon as possible.",
+      "link": "https://github.com/advisories/GHSA-h694-7cp9-m8p3",
+      "published": "2026-10-22T16:08:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-103004"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96778",
+      "title": "Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer",
+      "summary": "```\n============================================================================\nHeap buffer overflow writing JPEG comment after ICC profile fills buffer\nLocation: src/libImaging/JpegEncode.c:330  in ImagingJpegEncode()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nA heap buffer overflow in Pillow's JPEG encoder lets anyone who can supply an image write up to 64 KB of bytes they choose, followed by the rest of the compressed image, past the end of a 64 KB heap buffer. The target is any application that re-saves the image as JPEG while keeping its colour profile. The reliable result is that the Python process is killed outright rather than raising an exception. Because the overwritten memory sits directly in front of function pointers that the encoder calls next, this could allow code execution, though the attached reproducer demonstrates only the crash.\n\nThe bug is in `ImagingJpegEncode()` in `src/libImaging/JpegEncode.c`. State 4 (line 330) calls `jpeg_write_marker()` for the COM comment marker without checking that the output buffer has room. Meanwhile, `JpegImagePlugin._save()` sizes that buffer from the EXIF and ICC/XMP data only and reserves nothing for the comment. When a 65498-byte ICC profile fills the 65536-byte buffer exactly, libjpeg's `emit_byte()` stores one byte past the end and then decrements `free_in_buffer` from 0. The `size_t` counter wraps, so the marker, the comment and the entire compressed image are written out of bounds.\n\nTriggering it takes only a valid JPEG (or PNG) carrying that profile and any comment, passed through `Image.open()` and then `im.save(..., \"JPEG\", icc_profile=im.info.get(\"icc_profile\"))`. That is the documented way to preserve colour. The comment is forwarded from `im.info` automatically, and no non-default setting is involved.\n\nThe attached reproducer re-saves such a file on the stock build, and the process dies with SIGSEGV. An identica",
+      "link": "https://github.com/advisories/GHSA-g7cr-3p24-7wf7",
+      "published": "2026-10-22T16:05:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96778"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96638",
+      "title": "Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode",
+      "summary": "## Summary\nBmpRleDecoder can be forced to allocate gigabytes of memory from a kilobyte-sized crafted BMP file via unbounded growth in the delta escape and absolute mode branches.\n\n## Affected versions\nAll versions up to and including current HEAD (v13.0.0.dev0, commit e7a7ea84)\n\n## Root cause\nBmpRleDecoder.decode() (BmpImagePlugin.py:327-395) builds a Python bytearray `data` with dest_length = xsize*ysize, looping `while len(data) < dest_length`. The loop condition is only checked at the TOP; individual branches append attacker-controlled amounts UNBOUNDED by dest_length:\n\n- delta escape (line 370): data += b\"\\x00\" * (right + up * self.state.xsize) with right,up in 0..255 -> up to ~255*xsize bytes in ONE iteration.\n- absolute mode (line 385): data += bytes_read (up to 255).\n\nBecause a single delta can push len(data) to ~256 * (row size), a tiny RLE stream combined with a large-but-legal xsize (xsize*ysize just under MAX_IMAGE_PIXELS, ~89M) yields a multi-GB `data` bytearray (then copied again by bytes(data) and set_as_raw). No heap OOB (bytearray/set_as_raw are bounds-safe), but a severe memory-amplification DoS: the attacker file stays tiny.\n\n## Reproduction\nPython 3.13, Pillow HEAD e7a7ea84\n\nAttached: pillow_poc_bmp_rle_dos.py\n\nA 1084-byte BMP (BI_RLE8, width=3,000,000, height=1 -> 3M px, passes bomb check) with one delta escape (00 02 00 150) produces ~429 MB `data`; measured peak RSS 911 MB. Scaling width toward the bomb limit and up=255 produces tens of GB from a ~1 KB file.\n\n## Suggested fix\nCap growth at dest_length in the delta and absolute branches, e.g. clamp the delta fill to (dest_length - len(data)) and stop appending once len(data) >= dest_length; reject deltas that would move the cursor beyond the image, matching the existing per-row clamp at line 341-343.\n\nCredit: Yazan Balawneh - CyStack Security Team (GitHub: sonicnew)\n\n[pillow_poc_bmp_rle_dos.py](https://github.com/user-attachments/files/30244974/pillow_poc_bmp_rle_dos.py)",
+      "link": "https://github.com/advisories/GHSA-24rc-8hj2-v98c",
+      "published": "2026-10-22T15:59:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96638"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "GHSA-pxh4-856f-4h89",
+      "title": "PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery",
+      "summary": "### Summary\n\n`HMACAlgorithm.from_jwk` accepts a symmetric (`kty=oct`) JWK whose `k` value is\nthe empty string and returns a zero-length key without raising. When a token is\nthen verified with that key object (a `PyJWK`, or a `PyJWK` resolved by\n`PyJWKSet` / `PyJWKClient`), the HMAC verifier computes\n`HMAC(key=b\"\", signing_input)` and accepts any token an attacker forged with the\nsame empty key. The attacker needs no secret knowledge: they reproduce the digest\nlocally with an empty key and set the token's `kid` to the empty-`k` JWK.\n\nThe empty-key rejection that `HMACAlgorithm.prepare_key` performs for\nstring/bytes secrets (added in 2.13.0) was never propagated to the sibling\n`from_jwk` code path, so the JWK/JWKS verification route stays exploitable. Under\ndefault decode options this path only emits an `InsecureKeyLengthWarning`, not an\nerror, so verification still succeeds. This is the same \"empty/nil HMAC key is\naccepted by verify\" defect the JWT ecosystem is currently closing library-side:\nfast-jwt CVE-2026-44351 (CVSS 9.1) and ruby-jwt CVE-2026-45363 both added a\nlibrary-side reject-empty-HMAC-key precondition.\n\n### Affected versions\n\n`PyJWT` (PyPI package `pyjwt`) `<= 2.13.0`, current `master` at commit\n`7144e4534c34810f4525dc4578a32addd8212cff`. The string/bytes secret path is\nalready guarded in 2.13.0; the JWK/JWKS path is not.\n\n### Privilege required\n\nUnauthenticated. Any party who can reach a JWT-verifying endpoint of an\napplication that verifies via a `PyJWK` / `PyJWKSet` / `PyJWKClient` whose oct\nkey has an empty `k` can forge tokens with arbitrary claims.\n\nPreconditions: the verifier resolves the HMAC key from a JWK/JWKS whose oct\nentry carries an empty `k`. This occurs when the signing secret is sourced from\nan unset environment variable / unset config row / key-finder fallback that\nbase64url-encodes `b\"\"` into the published JWKS, or when the application trusts a\nJWKS containing such an entry. The equivalent unset-secret case for the\nstring-secret API (`",
+      "link": "https://github.com/advisories/GHSA-pxh4-856f-4h89",
+      "published": "2026-10-22T15:48:04Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44351",
+        "CVE-2026-45363"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114135",
+      "title": "Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization",
+      "summary": "### Summary\n\nJupyter Server's gateway WebSocket handler checks that a user is authenticated, but it does not ask the configured Authorizer whether that user may execute kernels.\n\nIn Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically replaced the normal kernel channel handler with this gateway-specific handler. An authenticated user who is denied the `execute` action on the `kernels` resource can therefore still open a kernel channel and send messages to the upstream kernel.\n\n### Details\n\nThe normal handler performs the expected authorization check before creating the WebSocket connection:\n\nhttps://github.com/jupyter-server/jupyter_server/blob/v2.5.0/jupyter_server/services/kernels/websocket.py#L39-L47\n\nThe gateway handler only checks `current_user` and then opens the upstream channel. It never calls `authorizer.is_authorized(...)`:\n\nhttps://github.com/jupyter-server/jupyter_server/blob/v2.5.0/jupyter_server/gateway/handlers.py#L49-L75\nhttps://github.com/jupyter-server/jupyter_server/blob/v2.5.0/jupyter_server/gateway/handlers.py#L87-L98\n\nGateway mode selected that handler automatically by replacing handlers with matching routes:\n\nhttps://github.com/jupyter-server/jupyter_server/blob/v2.5.0/jupyter_server/serverapp.py#L437-L446\n\nPR #1261 stopped replacing the normal handler and routed gateway traffic through `GatewayWebSocketConnection` instead. This appears to have fixed the default gateway configuration in 2.6.0, although the deprecated handler is still present in current releases and can still be registered directly.\n\nhttps://github.com/jupyter-server/jupyter_server/pull/1261\n\n### Code-level validation\n\n1. Configure a custom Authorizer that returns false for `execute` on `kernels` for a regular authenticated user.\n2. Configure `GatewayClient.url` on Jupyter Server 2.0.0-2.5.0.\n3. The normal `KernelWebsocketHandler` would reject that user with 403 in `pre_get`.\n4. Gateway mode replaces it with `WebSocketChannelsHandler`. Its `authenticate`",
+      "link": "https://github.com/advisories/GHSA-354v-3q48-cv69",
+      "published": "2026-10-22T15:46:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114135"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -565,24 +702,6 @@
       ],
       "cve_ids": [
         "CVE-2026-113727"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113711",
-      "title": "ApostropheCMS: Unauthenticated resource exhaustion via pre-auth aposBigUpload processing in @apostrophecms/import-export",
-      "summary": "## Summary\n\nA potential unauthenticated denial-of-service vulnerability exists in the chunked import upload path used by `@apostrophecms/import-export`.\n\nThe affected import API routes invoke:\n\n`self.apos.http.bigUploadMiddleware()`\n\nbefore the actual import handler performs its authentication check.\n\nBecause no `authorize` callback is supplied to `bigUploadMiddleware()`, unauthenticated requests can reach the `aposBigUpload` `start`, `chunk`, and `end` operations before the later `req.user` check rejects the import.\n\nAs a result, an unauthenticated remote attacker can create server-side upload state, write chunk data to upload storage, trigger temporary-file processing, and cause attacker-controlled cleanup operations before authentication is enforced.\n\n## Affected Component\n\nPackage:\n\n`@apostrophecms/import-export`\n\nConfirmed affected version:\n\n`3.6.2`\n\nPotential earlier affected versions:\n\nThe issue may affect earlier 3.x releases in which the current big-upload-based import implementation is present. I have not yet fully verified the exact introduction version and recommend that the maintainers confirm the affected version range.\n\n## Vulnerability Type\n\nPrimary:\n\n**CWE-400 \u2014 Uncontrolled Resource Consumption**\n\nRelated:\n\n**CWE-306 \u2014 Missing Authentication for Critical Function**\n\n**CWE-770 \u2014 Allocation of Resources Without Limits or Throttling**\n\n## Technical Details\n\nThe page import route registers the following middleware chain:\n\n`packages/import-export/modules/@apostrophecms/import-export-page/index.js`\n\n```javascript\nimportExportImport: [\n  self.apos.http.bigUploadMiddleware(),\n  async (req) => {\n    return self.apos.modules['@apostrophecms/import-export']\n      .import(req, self.__meta.name);\n  }\n]\n```\n\nNo `authorize` callback is passed to `bigUploadMiddleware()`.\n\nThe `bigUploadMiddleware()` implementation explicitly supports an `authorize` callback and performs that authorization before processing the `aposBigUpload` protocol when supplied.\n\nWithout that ",
-      "link": "https://github.com/advisories/GHSA-86wm-68pq-5jwq",
-      "published": "2026-10-21T13:51:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113711"
       ],
       "is_zero_day": false,
       "is_high_severity": true

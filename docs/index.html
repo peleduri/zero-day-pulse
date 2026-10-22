@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">34</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">14</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">41</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-22 10:45 UTC</div>
+            <div class="generated">Updated 2026-10-22 16:11 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -148,6 +148,56 @@
 
 
 </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/" target="_blank" rel="noopener">Amazon says PHP2Shell exploitation began 4 days before patches</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-22</span>
+  </div>
+  <p class='summary'>Security researchers at Amazon Threat Intelligence say attackers began targeting the PHP2Shell flaws four days before security patches were released on Wednesday. [...]</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors" target="_blank" rel="noopener">ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Wiz Research</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-22</span>
+  </div>
+  <p class='summary'>Wiz Research is tracking an ARTEX-using actor, overlapping with Storm-0940, across multiple targeted software vendors. Learn how the AI agent attacks Okta, Entra, and Cognito, and what it left behind in the logs.</p>
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html" target="_blank" rel="noopener">OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-22</span>
+          </div>
+          <p class='summary'>A flaw in the OpenCode AI coding agent allowed a malicious or hijacked MCP server to run code on a developer&#x27;s Windows or WSL machine when the developer signed in. OpenCode connects to MCP (Model Context Protocol) servers to add outside tools, and such code would run with the developer&#x27;s own access.
+
+Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on September</p>
+
+        </article>
 
         <article class="card card-zeroday">
           <div class="card-top">
@@ -330,6 +380,114 @@ You are impacted if you run a Storybook dev server in …</p>
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h694-7cp9-m8p3" target="_blank" rel="noopener">next.js cache leak across root param values in nested &#x27;use cache&#x27; functions</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-103004</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-22</span>
+          </div>
+          <p class='summary'>### Impact
+
+With Cache Components enabled (`cacheComponents: true`), a `&#x27;use cache&#x27;` function that calls another `&#x27;use cache&#x27;` function that reads a root param can be keyed incorrectly when the inner call is served from an existing entry: the enclosing function&#x27;s cache key then omits that root param. The enclosing entry is written once and reused for all root param values, so a response for one ro…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g7cr-3p24-7wf7" target="_blank" rel="noopener">Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-96778</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-22</span>
+          </div>
+          <p class='summary'>```
+============================================================================
+Heap buffer overflow writing JPEG comment after ICC profile fills buffer
+Location: src/libImaging/JpegEncode.c:330  in ImagingJpegEncode()
+Commit:   a707c6b21c313880d0771e54965d142dd42358b6
+============================================================================
+```
+
+A heap buffer overflow in Pillow&#x27;s JPEG encoder…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-24rc-8hj2-v98c" target="_blank" rel="noopener">Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-96638</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-22</span>
+          </div>
+          <p class='summary'>## Summary
+BmpRleDecoder can be forced to allocate gigabytes of memory from a kilobyte-sized crafted BMP file via unbounded growth in the delta escape and absolute mode branches.
+
+## Affected versions
+All versions up to and including current HEAD (v13.0.0.dev0, commit e7a7ea84)
+
+## Root cause
+BmpRleDecoder.decode() (BmpImagePlugin.py:327-395) builds a Python bytearray `data` with dest_length = xsi…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pxh4-856f-4h89" target="_blank" rel="noopener">PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-44351</code> <code class="cve">CVE-2026-45363</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-22</span>
+          </div>
+          <p class='summary'>### Summary
+
+`HMACAlgorithm.from_jwk` accepts a symmetric (`kty=oct`) JWK whose `k` value is
+the empty string and returns a zero-length key without raising. When a token is
+then verified with that key object (a `PyJWK`, or a `PyJWK` resolved by
+`PyJWKSet` / `PyJWKClient`), the HMAC verifier computes
+`HMAC(key=b&quot;&quot;, signing_input)` and accepts any token an attacker forged with the
+same empty key. Th…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-354v-3q48-cv69" target="_blank" rel="noopener">Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114135</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-22</span>
+          </div>
+          <p class='summary'>### Summary
+
+Jupyter Server&#x27;s gateway WebSocket handler checks that a user is authenticated, but it does not ask the configured Authorizer whether that user may execute kernels.
+
+In Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically replaced the normal kernel channel handler with this gateway-specific handler. An authenticated user who is denied the `execute` action on th…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
@@ -744,32 +902,6 @@ For an invalid request, `slack-morphism` computes the correct signature for the 
 The OpenChoreo API server authorized `PUT .../workflowruns/{runName}` against ownership metadata taken from the request body, while the object it actually mutated was selected by the URL path. Nothing forced the two to agree.
 
 A `WorkflowRun`&#x27;s membership in a project and component is carried entirely by its `openchoreo.dev/project` and `openchoreo.dev/component` labels. Because the `w…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-86wm-68pq-5jwq" target="_blank" rel="noopener">ApostropheCMS: Unauthenticated resource exhaustion via pre-auth aposBigUpload processing in @apostrophecms/import-export</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-113711</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-21</span>
-          </div>
-          <p class='summary'>## Summary
-
-A potential unauthenticated denial-of-service vulnerability exists in the chunked import upload path used by `@apostrophecms/import-export`.
-
-The affected import API routes invoke:
-
-`self.apos.http.bigUploadMiddleware()`
-
-before the actual import handler performs its authentication check.
-
-Because no `authorize` callback is supplied to `bigUploadMiddleware()`, unauthenticated requests …</p>
 
         </article>
 
