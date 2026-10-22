@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-21T20:58:16.282631+00:00",
-  "total": 35,
+  "generated": "2026-10-22T02:11:56.319914+00:00",
+  "total": 34,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -48,24 +48,6 @@
         "zeroday"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111765",
-      "title": "A2A Java SDK: Android synchronous POST forwards credentials across authorities after incomplete redirect fix",
-      "summary": "The GHSA-9rhm fix added this safe setting in\nAndroidA2AHttpClient.createConnection():\n\n    connection.setInstanceFollowRedirects(false);\n\nThe synchronous POST builder later overwrites it:\n\n    private boolean followRedirects = true;\n\n    public A2AHttpResponse post() throws IOException {\n        HttpURLConnection connection = createConnection(\"POST\", false);\n        connection.setInstanceFollowRedirects(followRedirects);\n        // ...\n    }\n\nThe second assignment wins. JSONRPCTransport and RestTransport both\nadd interceptor-produced headers and call synchronous post() without\nsetting followRedirects(false).\n\nOn Android's repackaged OkHttp implementation, a cross-authority\nredirect strips Authorization but retains nonstandard request headers.\nAuthInterceptor permits four nonstandard authentication header names:\n\n    X-API-Key\n    API-Key\n    X-Auth-Token\n    X-Authentication\n\nI confirmed that the exact v1.3.1.Final Maven artifact forwards\ncomplete synthetic values under all four names to a second loopback\nauthority. I also reproduced the supported AuthInterceptor to Android\nPOST path. Explicitly calling followRedirects(false) returns the\noriginal 302 and produces no request to the collector.\n\nAll test traffic stayed on two ephemeral 127.0.0.1 listeners. All\ncredentials were synthetic FULCRUM-SYNTHETIC-* values.\n\nReproduction\n\nI have attached AndroidA2AHttpClientRedirectTest.java. Copy it to:\n\n    extras/http-client-android/src/test/java/org/a2aproject/sdk/client/http/android/\n\nRun:\n\n    mvn -pl extras/http-client-android -am \\\n      -Dtest=AndroidA2AHttpClientRedirectTest \\\n      -Dsurefire.failIfNoSpecifiedTests=false test\n\nOn unpatched current main, the default test fails with:\n\n    Android synchronous POST must retain the documented no-redirect default\n    expected: <302> but was: <200>\n\nThe explicit followRedirects(true) control still passes.\n\nThe separate exact-artifact fixture passed three consecutive runs. Its\nrelevant output was:\n\n    default status=200 x-ap",
-      "link": "https://github.com/advisories/GHSA-4fpj-g9jf-9rgg",
-      "published": "2026-10-20T21:08:06Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111765"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -225,6 +207,61 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/",
+      "title": "Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)",
+      "summary": "On October 21, 2026, the PHP project released emergency fixes for two critical remote code execution (RCE) vulnerabilities in the PHP core runtime, tracked as CVE-2026-109618 and CVE-2026-109619 and collectively named PHP2Shell. Both are rated 9.2 (Critical) under CVSS v4.0, and both allow an unauthenticated attacker to run code on a vulnerable server. The fixed [\u2026]",
+      "link": "https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/",
+      "published": "2026-10-22T00:50:04+00:00",
+      "source": "AWS Security Blog",
+      "tags": [
+        "cloud",
+        "aws",
+        "blog"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112393",
+      "title": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
+      "summary": "```\n============================================================================\nHeap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO\nLocation: src/libImaging/TiffDecode.c:94  in _tiffWriteProc()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nPillow can write attacker-chosen data past the end of a heap buffer when it saves a TIFF image to an in-memory destination such as `io.BytesIO` rather than to a file. The same code also copies leftover heap memory from the process into the saved file. Anyone who can supply an image to a service that opens it and re-saves it as TIFF this way can trigger this with default settings. The attached reproducer crashes the process, and the overflow could potentially be developed further, but code execution is not demonstrated here.\n\nThe bug is in `_tiffWriteProc` in `src/libImaging/TiffDecode.c`. This is the write callback for the in-memory sink that Pillow gives libtiff whenever the save target has no `fileno()`. While writing the directory, libtiff seeks past the current end of data and writes tag values there. `_tiffWriteProc` sizes its `realloc()` from `state->size + size` instead of from the write position `state->loc`. As a result, the first out-of-line tag value written after that seek can run past the allocation by up to the size of the directory: 12 bytes per entry, 126 bytes in the minimal case, and 2384 bytes observed with a 331-entry directory. The overflowing bytes are the tail of a tag value taken from the uploaded file.\n\nNo save options are needed, because compression and tags are inherited from the source image. The overflow does require an attacker-sized out-of-line tag to reach libtiff. That happens when the opened TIFF is saved directly (ImageDescription, DocumentName or XMP), or through an embedded ICC profile, which survives `copy()` in `im.info`. The bytes libtiff skips for alignment are never initialised, so any co",
+      "link": "https://github.com/advisories/GHSA-332p-7hrc-92wf",
+      "published": "2026-10-21T21:28:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112393"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-112396",
+      "title": "Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer",
+      "summary": "### Summary\nSaving an image as TIFF to an in-memory buffer can trigger a heap use-after-free if libtiff rejects a tag at encode time. When `TIFFWriteScanline` fails, the encoder frees its output buffer but leaves the libtiff handle open. Later, when the encoder object is torn down, `TIFFClose` flushes buffered bytes through the write callback and writes into the freed buffer. An application that re-encodes attacker-influenced images to TIFF in memory can be crashed and is a candidate for remote code execution.\n\n### Details\nThe failure path in `ImagingLibTiffEncode` frees `clientstate->data` for the in-memory case but does not close the TIFF or null `clientstate->tiff` (the file-descriptor branch just above it does set `tiff = NULL`):\n\n- `src/libImaging/TiffDecode.c:1041-1046`\n\nTeardown then calls `ImagingLibTiffEncodeCleanup`, which runs `TIFFClose(tiff)` because `tiff` is still set:\n\n- `src/encode.c:99-101`\n- `src/libImaging/TiffDecode.c:955`\n\n`TIFFClose` flushes through `_tiffWriteProc`, which reallocs and memcpys into the freed `state->data`:\n\n- `src/libImaging/TiffDecode.c:103-115`\n\nThe Predictor tag is a convenient trigger: the floating-point predictor (value 3) is invalid for integer sample data, so libtiff aborts the write.\n\n### PoC\n```python\nimport io\nfrom PIL import Image\n\n# In-memory TIFF re-encode. libtiff rejects Predictor=3 (floating point) on integer\n# data, so TIFFWriteScanline fails. The encoder frees clientstate->data but leaves the\n# TIFF open; cleanup's TIFFClose then writes through the callback into the freed buffer.\nim = Image.new(\"L\", (64, 64))\nbuf = io.BytesIO()\nim.save(buf, format=\"TIFF\", compression=\"tiff_lzw\", tiffinfo={317: 3})  # 317 = Predictor\n```\n\nRun it:\n```\n$ python 01_poc.py\nPredictorSetup: Floating point \"Predictor\" not supported with 1 data format.\nOSError: encoder error -2 when writing image file\nSegmentation fault (core dumped)\n```\n\nObserved on a source build of commit `3e2ab96` with libtiff. The process aborts during cleanup af",
+      "link": "https://github.com/advisories/GHSA-4rr5-89j8-mwwm",
+      "published": "2026-10-21T21:24:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-112396"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -500,25 +537,6 @@
       "is_high_severity": true
     },
     {
-      "id": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619",
-      "summary": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "published": "2026-10-21T16:30:34+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
       "id": "CVE-2026-113727",
       "title": "OpenChoreo: Authorization bypass on WorkflowRun update allows cross-project takeover of workflow runs",
       "summary": "## Summary\n\nThe OpenChoreo API server authorized `PUT .../workflowruns/{runName}` against ownership metadata taken from the request body, while the object it actually mutated was selected by the URL path. Nothing forced the two to agree.\n\nA `WorkflowRun`'s membership in a project and component is carried entirely by its `openchoreo.dev/project` and `openchoreo.dev/component` labels. Because the `workflowrun:update` check read those labels from the submitted object rather than the stored one, a caller holding `workflowrun:update` on one component could name a run belonging to a different project or component in the URL, supply labels for the component they legitimately control, pass the check, and have the unrelated run rewritten with their own ownership labels.\n\nThe namespace is taken from the URL and feeds both the authorization check and the Kubernetes read, so it cannot diverge. This is cross-project and cross-component escalation inside a single namespace, not a cross-tenant issue.\n\n## Impact\n\nRewriting the ownership labels transfers authority over the run. Every other WorkflowRun check (view, logs, events, status, delete, list) derives its scope from the stored labels, so once the write lands the policy engine legitimately grants the attacker access to an object they never had rights to. They can then:\n\n- Read the victim's build logs. These stream raw pod logs from the workflow plane and routinely carry source paths, registry destinations, and credentials a build step echoed by accident.\n- Read the run's Kubernetes events.\n- Delete the run.\n\nSo the primary impact is confidentiality and availability, not only integrity. On the integrity side, `spec.workflow.parameters` can be overwritten on a pending run, and manipulating the two ownership labels can either wedge the run in a permanent `ComponentValidationFailed` condition or downgrade it to a standalone run that skips component validation.\n\nExploitation requires an authenticated caller with an `AuthzRoleBinding",
@@ -567,42 +585,6 @@
       ],
       "cve_ids": [
         "CVE-2026-96652"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111762",
-      "title": "A2A Java SDK: Push notification credentials logged in cleartext on protobuf parse failure",
-      "summary": "### *Impact.** Push notification bearer tokens and authentication credentials submitted by clients are written to server log files in cleartext. Any operator, log aggregation system, or attacker with log access can read these secrets and use them to authenticate to the client's push notification endpoints, potentially sending forged task status updates.\n\n**Where.** `transport/rest/src/main/java/org/a2aproject/sdk/transport/rest/handler/RestHandler.java:676` in `parseRequestBody`\n\n**What.** The `parseRequestBody` method logs the entire JSON request body at `SEVERE` level when `JsonFormat.parser().merge()` throws `InvalidProtocolBufferException`. This method is called from `createTaskPushNotificationConfiguration` (line 377), where the body contains client-supplied push notification bearer tokens (field `token`) and authentication credentials (field `authentication.credentials`). These secrets are written to server log files in full.\n\n**Exploit scenario.** A client creates a push notification configuration by POSTing to `/v1/tenants/{tenant}/tasks/{taskId}/pushNotificationConfigs` with a body containing `{\"url\": \"https://client.example.com/webhook\", \"token\": \"secret-bearer-token\", \"authentication\": {\"scheme\": \"Bearer\", \"credentials\": \"oauth-access-token\"}, \"extraField\": \"value\"}`. The extra field causes `JsonFormat.parser().merge()` to throw `InvalidProtocolBufferException`. The entire body including `secret-bearer-token` and `oauth-access-token` is logged at SEVERE level. An attacker with log access retrieves the cleartext credentials.\n\n**Preconditions.**\n- Attacker must have access to server log files (centralized logging, log aggregation, shared infrastructure, or insider access)\n- Push notification capability must be enabled\n- A request body must fail protobuf deserialization while being valid JSON (unknown fields with strict parsing, schema mismatches)\n\n**Fix.** Do not log the raw request body. Log only a sanitized summary \u2014 body length and content type, not cont",
-      "link": "https://github.com/advisories/GHSA-x32g-jvvm-4725",
-      "published": "2026-10-20T21:08:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111762"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-111761",
-      "title": "A2A Java SDK has Server-Side Request Forgery (SSRF) in push-notification delivery",
-      "summary": "---\n\n- **Ecosystem:** Maven\n- **Affected package:** `org.a2aproject.sdk:a2a-java-sdk-server-common` (push-notification delivery)\n- **Affected versions:** `<= 1.2.0.Final` (and `1.2.1.Final-SNAPSHOT` on `main` prior to the fix)\n- **Patched version:** _(the release that carries the fix)_\n- **CWE:** CWE-918 (Server-Side Request Forgery)\n- **Severity:** High\n- **CVSS v3.1:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N` (5.8, Moderate)\n\n---\n\n## Summary\n\nAn **unauthenticated** attacker can coerce the a2a-java server into issuing HTTP requests to\narbitrary internal and cloud-metadata endpoints from the server's own network position \u2014 a\nServer-Side Request Forgery reachable in the default deployment with no credentials, no user\ninteraction, and a single request. The behaviour is the shipped default, not a misconfiguration.\n\n## Details\n\n`BasePushNotificationSender` (in `server-common`) POSTs task data to the URL stored on a task's\n`TaskPushNotificationConfig` with no validation of the destination: no block on loopback, RFC1918,\nlink-local (`169.254.0.0/16`, including the `169.254.169.254` metadata address), unique-local,\nunspecified, or multicast ranges; no scheme restriction; and no bound on redirects.\n`InMemoryPushNotificationConfigStore.setInfo` stores the URL verbatim and\n`onCreateTaskPushNotificationConfig` does not check it either.\n\nBoth shipped HTTP clients follow redirects (`JdkA2AHttpClient` \u2192 `followRedirects(NORMAL)`,\n`VertxA2AHttpClient` \u2192 `setFollowRedirects(true)`), so a creation-time URL allowlist is bypassable:\nan attacker webhook answers `302 Location: http://169.254.169.254/...` and the client follows it. A\nhostname check is likewise defeated by DNS rebinding. A correct guard must validate the *resolved*\nIP of every hop at connection time, not the URL string.\n\n## Exploitation\n\nDemonstrated end-to-end against a running server (default wiring, unauthenticated caller):\n\n- **Arbitrary internal reachability.** The attacker picks the destination and the server ",
-      "link": "https://github.com/advisories/GHSA-q78c-5jjq-57g8",
-      "published": "2026-10-20T21:06:22Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-111761"
       ],
       "is_zero_day": false,
       "is_high_severity": true

@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">35</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">34</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-21 20:58 UTC</div>
+            <div class="generated">Updated 2026-10-22 02:11 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -166,33 +166,6 @@
 PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described.
 
 ⚡</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4fpj-g9jf-9rgg" target="_blank" rel="noopener">A2A Java SDK: Android synchronous POST forwards credentials across authorities after incomplete redirect fix</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-111765</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-20</span>
-          </div>
-          <p class='summary'>The GHSA-9rhm fix added this safe setting in
-AndroidA2AHttpClient.createConnection():
-
-    connection.setInstanceFollowRedirects(false);
-
-The synchronous POST builder later overwrites it:
-
-    private boolean followRedirects = true;
-
-    public A2AHttpResponse post() throws IOException {
-        HttpURLConnection connection = createConnection(&quot;POST&quot;, false);
-        connection.setInstanceFollowRed…</p>
 
         </article>
 
@@ -343,6 +316,63 @@ You are impacted if you run a Storybook dev server in …</p>
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/" target="_blank" rel="noopener">Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
+    <span class="meta-sep">·</span>
+    <span>AWS Security Blog</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-22</span>
+  </div>
+  <p class='summary'>On October 21, 2026, the PHP project released emergency fixes for two critical remote code execution (RCE) vulnerabilities in the PHP core runtime, tracked as CVE-2026-109618 and CVE-2026-109619 and collectively named PHP2Shell. Both are rated 9.2 (Critical) under CVSS v4.0, and both allow an unauthenticated attacker to run code on a vulnerable server. The fixed […]</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-332p-7hrc-92wf" target="_blank" rel="noopener">Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-112393</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-21</span>
+          </div>
+          <p class='summary'>```
+============================================================================
+Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
+Location: src/libImaging/TiffDecode.c:94  in _tiffWriteProc()
+Commit:   a707c6b21c313880d0771e54965d142dd42358b6
+============================================================================
+```
+
+Pillow can write attacker-chosen data past the end of a h…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4rr5-89j8-mwwm" target="_blank" rel="noopener">Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-112396</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-21</span>
+          </div>
+          <p class='summary'>### Summary
+Saving an image as TIFF to an in-memory buffer can trigger a heap use-after-free if libtiff rejects a tag at encode time. When `TIFFWriteScanline` fails, the encoder frees its output buffer but leaves the libtiff handle open. Later, when the encoder object is torn down, `TIFFClose` flushes buffered bytes through the write callback and writes into the freed buffer. An application that r…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -683,22 +713,6 @@ For an invalid request, `slack-morphism` computes the correct signature for the 
 
         </article>
 
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/" target="_blank" rel="noopener">Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
-    <span class="meta-sep">·</span>
-    <span>Unit 42 (Palo Alto)</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-21</span>
-  </div>
-  <p class='summary'>CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 appeared first on Unit 42 .</p>
-
-</article>
-
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
@@ -763,48 +777,6 @@ The vulnerabilities are listed below -
 
 
   CVE-2026-96652 (CVSS score: 5.3) - Plex Media Server Server-Side Request Forgery (SSRF)</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x32g-jvvm-4725" target="_blank" rel="noopener">A2A Java SDK: Push notification credentials logged in cleartext on protobuf parse failure</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-111762</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-20</span>
-          </div>
-          <p class='summary'>### *Impact.** Push notification bearer tokens and authentication credentials submitted by clients are written to server log files in cleartext. Any operator, log aggregation system, or attacker with log access can read these secrets and use them to authenticate to the client&#x27;s push notification endpoints, potentially sending forged task status updates.
-
-**Where.** `transport/rest/src/main/java/or…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q78c-5jjq-57g8" target="_blank" rel="noopener">A2A Java SDK has Server-Side Request Forgery (SSRF) in push-notification delivery</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-111761</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-20</span>
-          </div>
-          <p class='summary'>---
-
-- **Ecosystem:** Maven
-- **Affected package:** `org.a2aproject.sdk:a2a-java-sdk-server-common` (push-notification delivery)
-- **Affected versions:** `&lt;= 1.2.0.Final` (and `1.2.1.Final-SNAPSHOT` on `main` prior to the fix)
-- **Patched version:** _(the release that carries the fix)_
-- **CWE:** CWE-918 (Server-Side Request Forgery)
-- **Severity:** High
-- **CVSS v3.1:** `CVSS:3.1/AV:N/AC:L/PR:N/U…</p>
 
         </article>
 
