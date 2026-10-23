@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-23 02:17 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-23 10:37 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks
+## 3. 🟠 Zero-Day — Attackers Exploit Third VeloCloud Orchestrator Zero-Day in Four Months
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-23
+**Reference:** <https://www.securityweek.com/attackers-exploit-third-velocloud-orchestrator-zero-day-in-four-months/>
+
+> The critical-severity SQL injection flaw allows attackers to access privileged internal functionality and gain operator privileges. The post Attackers Exploit Third VeloCloud Orchestrator Zero-Day in Four Months appeared first on SecurityWeek .
+
+---
+
+## 4. 🟠 Zero-Day — Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html>
@@ -33,7 +42,7 @@ For
 
 ---
 
-## 4. 🟠 Zero-Day — Two CVSS 9.0 Linux KSMBD RCE Flaws Disclosed on Public Mailing Lists Before Kernel Fixes
+## 5. 🟠 Zero-Day — Two CVSS 9.0 Linux KSMBD RCE Flaws Disclosed on Public Mailing Lists Before Kernel Fixes
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html>
@@ -44,7 +53,7 @@ One of them, ZDI-CAN-33774, can be triggered before any network authentication. 
 
 ---
 
-## 5. 🟠 Zero-Day — Amazon says PHP2Shell exploitation began 4 days before patches
+## 6. 🟠 Zero-Day — Amazon says PHP2Shell exploitation began 4 days before patches
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/>
@@ -53,7 +62,7 @@ One of them, ZDI-CAN-33774, can be triggered before any network authentication. 
 
 ---
 
-## 6. 🟠 Zero-Day — ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors
+## 7. 🟠 Zero-Day — ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors>
@@ -62,7 +71,7 @@ One of them, ZDI-CAN-33774, can be triggered before any network authentication. 
 
 ---
 
-## 7. 🟠 Zero-Day — OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
+## 8. 🟠 Zero-Day — OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html>
@@ -70,17 +79,6 @@ One of them, ZDI-CAN-33774, can be triggered before any network authentication. 
 > A flaw in the OpenCode AI coding agent allowed a malicious or hijacked MCP server to run code on a developer&#x27;s Windows or WSL machine when the developer signed in. OpenCode connects to MCP (Model Context Protocol) servers to add outside tools, and such code would run with the developer&#x27;s own access.
 
 Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on September
-
----
-
-## 8. 🟠 Zero-Day — Someone Tried to Exploit PHP2Shell 4 Days Before the Vulnerabilities Were Publicly Disclosed
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html>
-
-> Amazon&#x27;s Threat Intelligence team on Wednesday said it detected an attempt to exploit the newly disclosed PHP2Shell vulnerabilities dating back to October 17, 2026, against its MadPot honeypot service, as the flaws come under broad exploitation in the wild following the release of the patches.
-
-&quot;The exploit attempt originated from an IP address associated with a commercial anonymization …
 
 ---
 
@@ -138,7 +136,16 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 15. 🟠 Zero-Day — Arista patches new VeloCloud Orchestrator zero-day exploited in attacks
+## 15. 🟠 Zero-Day — China APT Uses AI Pentest Tool Artex in ConnectWise Attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-23
+**Reference:** <https://www.securityweek.com/china-apt-uses-ai-pentest-tool-artex-in-connectwise-attacks/>
+
+> The state-sponsored hackers targeted hundreds of organizations and gained privileged access to some environments. The post China APT Uses AI Pentest Tool Artex in ConnectWise Attacks appeared first on SecurityWeek .
+
+---
+
+## 16. 🟠 Zero-Day — Arista patches new VeloCloud Orchestrator zero-day exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/>
@@ -147,7 +154,7 @@ Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on Sep
 
 ---
 
-## 16. 🟠 Zero-Day — toml-node: Quadratic-complexity DoS via many array-of-tables headers in toml.parse()
+## 17. 🟠 Zero-Day — toml-node: Quadratic-complexity DoS via many array-of-tables headers in toml.parse()
 
 **CVE:** `CVE-2026-114141` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-4qx8-w7c3-pj3p>
@@ -162,7 +169,7 @@ of 20,000 distinct-named `…
 
 ---
 
-## 17. 🟠 Zero-Day — toml-node: Quadratic-complexity DoS via long dotted keys or table paths in toml.parse()
+## 18. 🟠 Zero-Day — toml-node: Quadratic-complexity DoS via long dotted keys or table paths in toml.parse()
 
 **CVE:** `CVE-2026-114143` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-9j65-hcg3-gc64>
@@ -174,15 +181,6 @@ long dotted key, table header, or inline-table key. A ~100KB crafted document ca
 multi-second synchronous hang; a ~200KB document crashes the Node.js process outright with an
 uncatchable out-of-memory error. This is a separate, unpatched code path from the previously
 fixed stack-overflow…
-
----
-
-## 18. 🟠 Zero-Day — PHP2Shell Exploitation Started Days Before Patches
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/>
-
-> Initial attempts were observed on October 17, and mass activity began shortly after patches were released. The post PHP2Shell Exploitation Started Days Before Patches appeared first on SecurityWeek .
 
 ---
 
@@ -204,7 +202,18 @@ fixed stack-overflow…
 
 ---
 
-## 21. 🟡 High Severity — The adversary economy: How threat actors are reacting to PHP2Shell
+## 21. 🟡 High Severity — Critical Flaw in Python’s Popular Pillow Image Library Allows Code Execution via a Crafted Image
+
+**CVE:** `CVE-2026-112900` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-23
+**Reference:** <https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html>
+
+> Pillow, the most widely used image library for Python, can be made to run operating system commands on a server by specifying the name of a file it is told to open.
+
+The flaw, CVE-2026-112900, is in the way Pillow handles EPS images, which it opens by passing the file&#x27;s name to Ghostscript, a separate program it runs to turn the image into pixels, without checking the name first.
+
+---
+
+## 22. 🟡 High Severity — The adversary economy: How threat actors are reacting to PHP2Shell
 
 **CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://www.tenable.com/blog/php2shell-vulnerability-threat-actor-response>
@@ -213,7 +222,7 @@ fixed stack-overflow…
 
 ---
 
-## 22. 🟡 High Severity — Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive
+## 23. 🟡 High Severity — Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive
 
 **CVE:** `CVE-2026-114132` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-vjh5-4x84-xrqp>
@@ -224,7 +233,7 @@ With the default `router.options.sensitive: false`, Nuxt&#x27;s page router reso
 
 ---
 
-## 23. 🟡 High Severity — GitPython validates a submodule's ".git" path only after cloning into it (RCE)
+## 24. 🟡 High Severity — GitPython validates a submodule's ".git" path only after cloning into it (RCE)
 
 **CVE:** `CVE-2026-114145` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-83vg-56qc-22m7>
@@ -240,7 +249,7 @@ and a file named `post-checkout` in the submodule becomes an executable
 
 ---
 
-## 24. 🟡 High Severity — toml-node: Prototype pollution: parsing a TOML document can write to Object.prototype
+## 25. 🟡 High Severity — toml-node: Prototype pollution: parsing a TOML document can write to Object.prototype
 
 **CVE:** `CVE-2026-114142` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-h895-cgqg-jf52>
@@ -252,7 +261,7 @@ A four-line TOML document parsed with t…
 
 ---
 
-## 25. 🟡 High Severity — nbconvert: Arbitrary file write through path traversal in cell output filenames when exporting to md, latex, rst and asciidoc
+## 26. 🟡 High Severity — nbconvert: Arbitrary file write through path traversal in cell output filenames when exporting to md, latex, rst and asciidoc
 
 **CVE:** `CVE-2026-114140` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-pjvx-prjx-h659>
@@ -267,7 +276,7 @@ In `ExtractOutputPreprocessor`, `extractoutput.py:116-119` joins attacker-contro
 
 ---
 
-## 26. 🟡 High Severity — Black: GitHub Action installs unvalidated required-version from pyproject.toml
+## 27. 🟡 High Severity — Black: GitHub Action installs unvalidated required-version from pyproject.toml
 
 **CVE:** `CVE-2026-114134` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-cg8m-r9f2-5wm2>
@@ -282,7 +291,7 @@ This is similar to the previous CVE-2026-31900. The value in `tool.black.require
 
 ---
 
-## 27. 🟡 High Severity — next.js cache leak across root param values in nested 'use cache' functions
+## 28. 🟡 High Severity — next.js cache leak across root param values in nested 'use cache' functions
 
 **CVE:** `CVE-2026-103004` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-h694-7cp9-m8p3>
@@ -293,7 +302,7 @@ With Cache Components enabled (`cacheComponents: true`), a `&#x27;use cache&#x27
 
 ---
 
-## 28. 🟡 High Severity — Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer
+## 29. 🟡 High Severity — Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer
 
 **CVE:** `CVE-2026-96778` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-g7cr-3p24-7wf7>
@@ -310,7 +319,7 @@ A heap buffer overflow in Pillow&#x27;s JPEG en…
 
 ---
 
-## 29. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
+## 30. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
 
 **CVE:** `CVE-2026-96638` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-24rc-8hj2-v98c>
@@ -326,7 +335,7 @@ BmpRleDecoder.decode() (BmpImagePlugin.py:327-395) builds a Python bytearray `da
 
 ---
 
-## 30. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
+## 31. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
 
 **CVE:** `CVE-2026-44351` | `CVE-2026-45363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-pxh4-856f-4h89>
@@ -342,7 +351,7 @@ same emp…
 
 ---
 
-## 31. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
+## 32. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
 
 **CVE:** `CVE-2026-114135` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-354v-3q48-cv69>
@@ -355,7 +364,7 @@ In Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically 
 
 ---
 
-## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
