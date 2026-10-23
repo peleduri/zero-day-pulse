@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-22 20:56 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-23 02:17 UTC &nbsp;|&nbsp; **Total:** 32 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 14 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -204,7 +204,16 @@ fixed stack-overflow…
 
 ---
 
-## 21. 🟡 High Severity — Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive
+## 21. 🟡 High Severity — The adversary economy: How threat actors are reacting to PHP2Shell
+
+**CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-22
+**Reference:** <https://www.tenable.com/blog/php2shell-vulnerability-threat-actor-response>
+
+> Two critical PHP vulnerabilities sent criminal forum operators scrambling to protect their own infrastructure, revealing that threat actors face the same exposure management challenges as the organizations they target. Key takeaways The adversary economy operates on the same fundamental principles as the legitimate economy. Forum self-evacuations: Criminal forums including BreachForums initiated e…
+
+---
+
+## 22. 🟡 High Severity — Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive
 
 **CVE:** `CVE-2026-114132` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-vjh5-4x84-xrqp>
@@ -215,7 +224,7 @@ With the default `router.options.sensitive: false`, Nuxt&#x27;s page router reso
 
 ---
 
-## 22. 🟡 High Severity — GitPython validates a submodule's ".git" path only after cloning into it (RCE)
+## 23. 🟡 High Severity — GitPython validates a submodule's ".git" path only after cloning into it (RCE)
 
 **CVE:** `CVE-2026-114145` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-83vg-56qc-22m7>
@@ -231,7 +240,7 @@ and a file named `post-checkout` in the submodule becomes an executable
 
 ---
 
-## 23. 🟡 High Severity — toml-node: Prototype pollution: parsing a TOML document can write to Object.prototype
+## 24. 🟡 High Severity — toml-node: Prototype pollution: parsing a TOML document can write to Object.prototype
 
 **CVE:** `CVE-2026-114142` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-h895-cgqg-jf52>
@@ -243,7 +252,7 @@ A four-line TOML document parsed with t…
 
 ---
 
-## 24. 🟡 High Severity — nbconvert: Arbitrary file write through path traversal in cell output filenames when exporting to md, latex, rst and asciidoc
+## 25. 🟡 High Severity — nbconvert: Arbitrary file write through path traversal in cell output filenames when exporting to md, latex, rst and asciidoc
 
 **CVE:** `CVE-2026-114140` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-pjvx-prjx-h659>
@@ -258,7 +267,7 @@ In `ExtractOutputPreprocessor`, `extractoutput.py:116-119` joins attacker-contro
 
 ---
 
-## 25. 🟡 High Severity — Black: GitHub Action installs unvalidated required-version from pyproject.toml
+## 26. 🟡 High Severity — Black: GitHub Action installs unvalidated required-version from pyproject.toml
 
 **CVE:** `CVE-2026-114134` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-cg8m-r9f2-5wm2>
@@ -273,7 +282,7 @@ This is similar to the previous CVE-2026-31900. The value in `tool.black.require
 
 ---
 
-## 26. 🟡 High Severity — next.js cache leak across root param values in nested 'use cache' functions
+## 27. 🟡 High Severity — next.js cache leak across root param values in nested 'use cache' functions
 
 **CVE:** `CVE-2026-103004` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-h694-7cp9-m8p3>
@@ -284,7 +293,7 @@ With Cache Components enabled (`cacheComponents: true`), a `&#x27;use cache&#x27
 
 ---
 
-## 27. 🟡 High Severity — Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer
+## 28. 🟡 High Severity — Pillow: Heap buffer overflow writing JPEG comment after ICC profile fills buffer
 
 **CVE:** `CVE-2026-96778` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-g7cr-3p24-7wf7>
@@ -301,7 +310,7 @@ A heap buffer overflow in Pillow&#x27;s JPEG en…
 
 ---
 
-## 28. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
+## 29. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
 
 **CVE:** `CVE-2026-96638` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-24rc-8hj2-v98c>
@@ -317,7 +326,7 @@ BmpRleDecoder.decode() (BmpImagePlugin.py:327-395) builds a Python bytearray `da
 
 ---
 
-## 29. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
+## 30. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
 
 **CVE:** `CVE-2026-44351` | `CVE-2026-45363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-pxh4-856f-4h89>
@@ -333,7 +342,7 @@ same emp…
 
 ---
 
-## 30. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
+## 31. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
 
 **CVE:** `CVE-2026-114135` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://github.com/advisories/GHSA-354v-3q48-cv69>
@@ -346,43 +355,7 @@ In Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically 
 
 ---
 
-## 31. 🟡 High Severity — Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)
-
-**CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** AWS Security Blog &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/>
-
-> October 22, 2026: We updated this post to add the AWS WAF PHP application managed rule group. Version 2.3 of the rule group adds the PHP2Shell_BODY rule for CVE-2026-109619, and AWS made it the default version. On October 21, 2026, the PHP project released emergency fixes for two critical remote code execution (RCE) vulnerabilities in the […]
-
----
-
-## 32. 🟡 High Severity — Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
-
-**CVE:** `CVE-2026-112393` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-332p-7hrc-92wf>
-
-> ```
-============================================================================
-Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
-Location: src/libImaging/TiffDecode.c:94  in _tiffWriteProc()
-Commit:   a707c6b21c313880d0771e54965d142dd42358b6
-============================================================================
-```
-
-Pillow can write attacker-chosen data past the end of a h…
-
----
-
-## 33. 🟡 High Severity — Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer
-
-**CVE:** `CVE-2026-112396` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-21
-**Reference:** <https://github.com/advisories/GHSA-4rr5-89j8-mwwm>
-
-> ### Summary
-Saving an image as TIFF to an in-memory buffer can trigger a heap use-after-free if libtiff rejects a tag at encode time. When `TIFFWriteScanline` fails, the encoder frees its output buffer but leaves the libtiff handle open. Later, when the encoder object is torn down, `TIFFClose` flushes buffered bytes through the write callback and writes into the freed buffer. An application that r…
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 32. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

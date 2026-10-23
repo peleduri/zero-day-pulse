@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-22T20:56:38.159612+00:00",
-  "total": 34,
+  "generated": "2026-10-23T02:17:36.680677+00:00",
+  "total": 32,
   "kev": 0,
   "zero_day": 18,
   "enriched": 0,
@@ -336,6 +336,25 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.tenable.com/blog/php2shell-vulnerability-threat-actor-response",
+      "title": "The adversary economy: How threat actors are reacting to PHP2Shell",
+      "summary": "Two critical PHP vulnerabilities sent criminal forum operators scrambling to protect their own infrastructure, revealing that threat actors face the same exposure management challenges as the organizations they target. Key takeaways The adversary economy operates on the same fundamental principles as the legitimate economy. Forum self-evacuations: Criminal forums including BreachForums initiated emergency infrastructure migrations, taking themselves offline within hours of PHP2Shell disclosure, citing direct risk to their operations. Underground operators face a dual threat: both law enforcement and rival criminal groups could weaponize PHP2Shell against forum infrastructure storing member identities, private communications, and stolen credentials. The adversary response mirrors legitimate enterprise incident response, including emergency patching, platform migration, and business continuity planning. Historical precedent from the 2024 BreachForums seizure conditioned criminal operators to treat infrastructure vulnerabilities as existential business risks Background PHP powers an estimated 75% of websites with identifiable server-side technology, making it the backbone of the modern web. That infrastructure extends far beyond legitimate businesses. Criminal forums, dark web marketplaces, and underground communication platforms rely on the same PHP-based software stacks, such as phpBB, custom forum engines, and web-based administration panels, that power their legitimate counterparts. On Oct. 20, 2026, two critical unauthenticated remote code execution vulnerabilities in PHP were publicly disclosed: CVE-2026-109618 (OOM Corruption) and CVE-2026-109619 (Stale Global State), each carrying a CVSS v4.0 score of 9.2. The two flaws target different stages of PHP\u2019s memory management, and chaining them together yields a more reliable exploitation path than either alone. Researchers credit frontier AI models with both the initial discovery and the exploitation chain connectin",
+      "link": "https://www.tenable.com/blog/php2shell-vulnerability-threat-actor-response",
+      "published": "2026-10-22T22:04:00+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-114132",
       "title": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
       "summary": "## Impact\n\nWith the default `router.options.sensitive: false`, Nuxt's page router resolves routes case-insensitively, so `/Admin` renders the same page as `/admin`. On the server, however, route rules were resolved with Nitro's route-rule matcher, which matches keys case-sensitively. A request whose path differs from a rule key only in letter case therefore rendered the page with none of that rule applied.\n\nEarlier fixes ([GHSA-mm7m-92g8-7m47](https://github.com/nuxt/nuxt/security/advisories/GHSA-mm7m-92g8-7m47), [GHSA-hxvh-4h3w-prp9](https://github.com/nuxt/nuxt/security/advisories/GHSA-hxvh-4h3w-prp9)) case-folded the route rules that the Nuxt app itself reads, such as `appMiddleware`. This advisory covers the rules applied on the server:\n\n- `redirect`: a rule used to send visitors away from a page, such as `'/admin/**': { redirect: '/login' }`, was skipped, and the page and its server-fetched data were rendered instead.\n- `headers`: per-route response headers, including security headers such as `Content-Security-Policy` or `X-Frame-Options`, were not sent.\n- `proxy`: the request was not proxied.\n- `ssr: false` and `noScripts`: the page was server-rendered, or shipped scripts, despite the rule.\n- `getRouteRules(event)` (auto-imported, or from `nuxt/server`) and `matchRouteRules` from `nuxt/server` returned no rules for the case variant.\n\n```ts\nexport default defineNuxtConfig({\n  routeRules: {\n    '/admin/**': { redirect: '/login' },\n  },\n})\n```\n\nWith this configuration, `/admin/secret` redirects to `/login`, but `/Admin/secret` rendered `app/pages/admin/secret.vue`.\n\n## Mitigating factors\n\n- Applications that set `router.options.sensitive: true` in `nuxt.config` are not affected, because their pages are only served for the exact case of the route.\n- Access checks performed in server middleware, route middleware attached with `definePageMeta`, or in the page's data fetching are not affected. The issue only affects protections that rely on a server-side route rule m",
@@ -512,61 +531,6 @@
       ],
       "cve_ids": [
         "CVE-2026-114135"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/",
-      "title": "Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)",
-      "summary": "October 22, 2026: We updated this post to add the AWS WAF PHP application managed rule group. Version 2.3 of the rule group adds the PHP2Shell_BODY\u00a0rule for CVE-2026-109619, and AWS made it the default version. On October 21, 2026, the PHP project released emergency fixes for two critical remote code execution (RCE) vulnerabilities in the [\u2026]",
-      "link": "https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/",
-      "published": "2026-10-22T00:50:04+00:00",
-      "source": "AWS Security Blog",
-      "tags": [
-        "cloud",
-        "aws",
-        "blog"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112393",
-      "title": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
-      "summary": "```\n============================================================================\nHeap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO\nLocation: src/libImaging/TiffDecode.c:94  in _tiffWriteProc()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nPillow can write attacker-chosen data past the end of a heap buffer when it saves a TIFF image to an in-memory destination such as `io.BytesIO` rather than to a file. The same code also copies leftover heap memory from the process into the saved file. Anyone who can supply an image to a service that opens it and re-saves it as TIFF this way can trigger this with default settings. The attached reproducer crashes the process, and the overflow could potentially be developed further, but code execution is not demonstrated here.\n\nThe bug is in `_tiffWriteProc` in `src/libImaging/TiffDecode.c`. This is the write callback for the in-memory sink that Pillow gives libtiff whenever the save target has no `fileno()`. While writing the directory, libtiff seeks past the current end of data and writes tag values there. `_tiffWriteProc` sizes its `realloc()` from `state->size + size` instead of from the write position `state->loc`. As a result, the first out-of-line tag value written after that seek can run past the allocation by up to the size of the directory: 12 bytes per entry, 126 bytes in the minimal case, and 2384 bytes observed with a 331-entry directory. The overflowing bytes are the tail of a tag value taken from the uploaded file.\n\nNo save options are needed, because compression and tags are inherited from the source image. The overflow does require an attacker-sized out-of-line tag to reach libtiff. That happens when the opened TIFF is saved directly (ImageDescription, DocumentName or XMP), or through an embedded ICC profile, which survives `copy()` in `im.info`. The bytes libtiff skips for alignment are never initialised, so any co",
-      "link": "https://github.com/advisories/GHSA-332p-7hrc-92wf",
-      "published": "2026-10-21T21:28:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112393"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112396",
-      "title": "Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer",
-      "summary": "### Summary\nSaving an image as TIFF to an in-memory buffer can trigger a heap use-after-free if libtiff rejects a tag at encode time. When `TIFFWriteScanline` fails, the encoder frees its output buffer but leaves the libtiff handle open. Later, when the encoder object is torn down, `TIFFClose` flushes buffered bytes through the write callback and writes into the freed buffer. An application that re-encodes attacker-influenced images to TIFF in memory can be crashed and is a candidate for remote code execution.\n\n### Details\nThe failure path in `ImagingLibTiffEncode` frees `clientstate->data` for the in-memory case but does not close the TIFF or null `clientstate->tiff` (the file-descriptor branch just above it does set `tiff = NULL`):\n\n- `src/libImaging/TiffDecode.c:1041-1046`\n\nTeardown then calls `ImagingLibTiffEncodeCleanup`, which runs `TIFFClose(tiff)` because `tiff` is still set:\n\n- `src/encode.c:99-101`\n- `src/libImaging/TiffDecode.c:955`\n\n`TIFFClose` flushes through `_tiffWriteProc`, which reallocs and memcpys into the freed `state->data`:\n\n- `src/libImaging/TiffDecode.c:103-115`\n\nThe Predictor tag is a convenient trigger: the floating-point predictor (value 3) is invalid for integer sample data, so libtiff aborts the write.\n\n### PoC\n```python\nimport io\nfrom PIL import Image\n\n# In-memory TIFF re-encode. libtiff rejects Predictor=3 (floating point) on integer\n# data, so TIFFWriteScanline fails. The encoder frees clientstate->data but leaves the\n# TIFF open; cleanup's TIFFClose then writes through the callback into the freed buffer.\nim = Image.new(\"L\", (64, 64))\nbuf = io.BytesIO()\nim.save(buf, format=\"TIFF\", compression=\"tiff_lzw\", tiffinfo={317: 3})  # 317 = Predictor\n```\n\nRun it:\n```\n$ python 01_poc.py\nPredictorSetup: Floating point \"Predictor\" not supported with 1 data format.\nOSError: encoder error -2 when writing image file\nSegmentation fault (core dumped)\n```\n\nObserved on a source build of commit `3e2ab96` with libtiff. The process aborts during cleanup af",
-      "link": "https://github.com/advisories/GHSA-4rr5-89j8-mwwm",
-      "published": "2026-10-21T21:24:19Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112396"
       ],
       "is_zero_day": false,
       "is_high_severity": true

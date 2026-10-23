@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">18</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">34</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">32</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-22 20:56 UTC</div>
+            <div class="generated">Updated 2026-10-23 02:17 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -459,6 +459,22 @@ fixed stack-overflow…</p>
 
 </article>
 
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://www.tenable.com/blog/php2shell-vulnerability-threat-actor-response" target="_blank" rel="noopener">The adversary economy: How threat actors are reacting to PHP2Shell</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
+    <span class="meta-sep">·</span>
+    <span>Tenable Security Research</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-22</span>
+  </div>
+  <p class='summary'>Two critical PHP vulnerabilities sent criminal forum operators scrambling to protect their own infrastructure, revealing that threat actors face the same exposure management challenges as the organizations they target. Key takeaways The adversary economy operates on the same fundamental principles as the legitimate economy. Forum self-evacuations: Criminal forums including BreachForums initiated e…</p>
+
+</article>
+
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
@@ -668,63 +684,6 @@ same empty key. Th…</p>
 Jupyter Server&#x27;s gateway WebSocket handler checks that a user is authenticated, but it does not ask the configured Authorizer whether that user may execute kernels.
 
 In Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically replaced the normal kernel channel handler with this gateway-specific handler. An authenticated user who is denied the `execute` action on th…</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/" target="_blank" rel="noopener">Using AWS WAF to apply mitigations for PHP2Shell RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619)</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
-    <span class="meta-sep">·</span>
-    <span>AWS Security Blog</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-22</span>
-  </div>
-  <p class='summary'>October 22, 2026: We updated this post to add the AWS WAF PHP application managed rule group. Version 2.3 of the rule group adds the PHP2Shell_BODY rule for CVE-2026-109619, and AWS made it the default version. On October 21, 2026, the PHP project released emergency fixes for two critical remote code execution (RCE) vulnerabilities in the […]</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-332p-7hrc-92wf" target="_blank" rel="noopener">Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-112393</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-21</span>
-          </div>
-          <p class='summary'>```
-============================================================================
-Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO
-Location: src/libImaging/TiffDecode.c:94  in _tiffWriteProc()
-Commit:   a707c6b21c313880d0771e54965d142dd42358b6
-============================================================================
-```
-
-Pillow can write attacker-chosen data past the end of a h…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4rr5-89j8-mwwm" target="_blank" rel="noopener">Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-112396</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-21</span>
-          </div>
-          <p class='summary'>### Summary
-Saving an image as TIFF to an in-memory buffer can trigger a heap use-after-free if libtiff rejects a tag at encode time. When `TIFFWriteScanline` fails, the encoder frees its output buffer but leaves the libtiff handle open. Later, when the encoder object is torn down, `TIFFClose` flushes buffered bytes through the write callback and writes into the freed buffer. An application that r…</p>
 
         </article>
 
