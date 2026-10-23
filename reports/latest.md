@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-23 10:37 UTC &nbsp;|&nbsp; **Total:** 33 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-23 16:01 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,16 +20,47 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Attackers Exploit Third VeloCloud Orchestrator Zero-Day in Four Months
+## 3. 🟠 Zero-Day — PHP shares mitigation for new RCE vulnerability with no patch
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-23
+**Reference:** <https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/>
+
+> The PHP security team has shared mitigation measures for a new remote code execution vulnerability that affects systems with non-default configurations and has no patch. [...]
+
+---
+
+## 4. 🟠 Zero-Day — PHP Warns of Another Unpatched RCE Risk Two Days After Emergency PHP2Shell Patches
+
+**CVE:** `CVE-2026-115560` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-23
+**Reference:** <https://thehackernews.com/2026/10/urgent-php-warns-of-another-unpatched.html>
+
+> PHP has warned of another way an attacker could run code on a web server, two days after it shipped emergency fixes for the critical PHP2Shell flaws.
+
+The new issue, assigned CVE-2026-115560, affects only web applications configured in an unusual way, and PHP considers it an unlikely risk.The project is not issuing an emergency fix for it. Instead, it recommends turning off a feature called
+
+---
+
+## 5. 🟠 Zero-Day — Russian-Linked Hackers Used New Mesh Network Backdoor in Destructive Ukraine Attack
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-23
+**Reference:** <https://thehackernews.com/2026/10/russian-linked-hackers-used-new-mesh.html>
+
+> The Russian state-sponsored hacking group Sandworm teamed up with another threat actor to carry out a destructive wiping attack targeting a Ukrainian logistics company last year.
+
+According to ESET, the attack involved UAC-0099 (aka Earth Sirrush) obtaining initial access to the target on July 16, 2025, via a spear-phishing email bearing a malware-laced attachment that led to the deployment of
+
+---
+
+## 6. 🟠 Zero-Day — Attackers Exploit Third Arista VCO Zero-Day in Four Months
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://www.securityweek.com/attackers-exploit-third-velocloud-orchestrator-zero-day-in-four-months/>
 
-> The critical-severity SQL injection flaw allows attackers to access privileged internal functionality and gain operator privileges. The post Attackers Exploit Third VeloCloud Orchestrator Zero-Day in Four Months appeared first on SecurityWeek .
+> The critical-severity SQL injection flaw allows attackers to access privileged internal functionality and gain operator privileges. The post Attackers Exploit Third Arista VCO Zero-Day in Four Months appeared first on SecurityWeek .
 
 ---
 
-## 4. 🟠 Zero-Day — Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks
+## 7. 🟠 Zero-Day — Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html>
@@ -42,7 +73,7 @@ For
 
 ---
 
-## 5. 🟠 Zero-Day — Two CVSS 9.0 Linux KSMBD RCE Flaws Disclosed on Public Mailing Lists Before Kernel Fixes
+## 8. 🟠 Zero-Day — Two CVSS 9.0 Linux KSMBD RCE Flaws Disclosed on Public Mailing Lists Before Kernel Fixes
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
 **Reference:** <https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html>
@@ -50,35 +81,6 @@ For
 > Linux servers running KSMBD, the kernel&#x27;s built-in SMB server, are exposed to two publicly reported remote code execution flaws rated 9.0 by Trend Micro&#x27;s Zero Day Initiative, with no fix yet in the mainline kernel.
 
 One of them, ZDI-CAN-33774, can be triggered before any network authentication. The other, ZDI-CAN-33549, requires the SMB Direct transport and an RDMA-capable network
-
----
-
-## 6. 🟠 Zero-Day — Amazon says PHP2Shell exploitation began 4 days before patches
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://www.bleepingcomputer.com/news/security/amazon-says-php2shell-exploitation-began-4-days-before-patches/>
-
-> Security researchers at Amazon Threat Intelligence say attackers began targeting the PHP2Shell flaws four days before security patches were released on Wednesday. [...]
-
----
-
-## 7. 🟠 Zero-Day — ARTEX in the Wild: Storm-0940 Expands Targeting of IT and Software Vendors
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors>
-
-> Wiz Research is tracking an ARTEX-using actor, overlapping with Storm-0940, across multiple targeted software vendors. Learn how the AI agent attacks Okta, Entra, and Cognito, and what it left behind in the logs.
-
----
-
-## 8. 🟠 Zero-Day — OpenCode Flaw Lets Malicious MCP Servers Execute Code During Sign-In on Windows and WSL
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://thehackernews.com/2026/10/opencode-flaw-lets-malicious-mcp.html>
-
-> A flaw in the OpenCode AI coding agent allowed a malicious or hijacked MCP server to run code on a developer&#x27;s Windows or WSL machine when the developer signed in. OpenCode connects to MCP (Model Context Protocol) servers to add outside tools, and such code would run with the developer&#x27;s own access.
-
-Anomaly, the company behind OpenCode, fixed the flaw in version 1.18.33 on September
 
 ---
 
@@ -319,52 +321,7 @@ A heap buffer overflow in Pillow&#x27;s JPEG en…
 
 ---
 
-## 30. 🟡 High Severity — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode
-
-**CVE:** `CVE-2026-96638` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://github.com/advisories/GHSA-24rc-8hj2-v98c>
-
-> ## Summary
-BmpRleDecoder can be forced to allocate gigabytes of memory from a kilobyte-sized crafted BMP file via unbounded growth in the delta escape and absolute mode branches.
-
-## Affected versions
-All versions up to and including current HEAD (v13.0.0.dev0, commit e7a7ea84)
-
-## Root cause
-BmpRleDecoder.decode() (BmpImagePlugin.py:327-395) builds a Python bytearray `data` with dest_length = xsi…
-
----
-
-## 31. 🟡 High Severity — PyJWT: HS256/384/512 verify accepts empty HMAC key via oct JWK (PyJWK/PyJWKClient) enabling token forgery
-
-**CVE:** `CVE-2026-44351` | `CVE-2026-45363` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://github.com/advisories/GHSA-pxh4-856f-4h89>
-
-> ### Summary
-
-`HMACAlgorithm.from_jwk` accepts a symmetric (`kty=oct`) JWK whose `k` value is
-the empty string and returns a zero-length key without raising. When a token is
-then verified with that key object (a `PyJWK`, or a `PyJWK` resolved by
-`PyJWKSet` / `PyJWKClient`), the HMAC verifier computes
-`HMAC(key=b&quot;&quot;, signing_input)` and accepts any token an attacker forged with the
-same emp…
-
----
-
-## 32. 🟡 High Severity — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization
-
-**CVE:** `CVE-2026-114135` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-22
-**Reference:** <https://github.com/advisories/GHSA-354v-3q48-cv69>
-
-> ### Summary
-
-Jupyter Server&#x27;s gateway WebSocket handler checks that a user is authenticated, but it does not ask the configured Authorizer whether that user may execute kernels.
-
-In Jupyter Server 2.0.0 through 2.5.0, enabling GatewayClient.url automatically replaced the normal kernel channel handler with this gateway-specific handler. An authenticated user who is denied the `execute` action …
-
----
-
-## 33. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
