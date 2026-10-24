@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">34</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-24 02:15 UTC</div>
+            <div class="generated">Updated 2026-10-24 09:55 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -148,6 +148,27 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html" target="_blank" rel="noopener">CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-110447</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-24</span>
+          </div>
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two vulnerabilities impacting Collabora Online Built-in CODE Server and Arista VeloCloud Orchestrator (VCO) to its Known Exploited Vulnerabilities (KEV), citing reports of active exploitation in the wild.
+
+The critical-severity vulnerabilities are listed below -
+
+
+  CVE-2026-110447 (CVSS score: 9.2) - An operating</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -669,24 +690,6 @@ Tool dispatch did not check the caller-supplied `input.vault` against the caller
           </div>
           <p class='summary'>### Impact
 With a default configuration, an undefined `readPaths`/`writePaths` meant allow-all, the `strictReadDefault` flag was inert, and the `.obsidian`/`.git`/`.trash` control directories were denied only during enumeration — not on the direct request path. A caller could read `.obsidian/plugins/*/data.json`, exfiltrating **plugin API keys and Obsidian Sync passwords** (live-reproduced), as we…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/critical-flaw-in-pythons-popular-pillow.html" target="_blank" rel="noopener">Critical Flaw in Python’s Popular Pillow Image Library Allows Code Execution via a Crafted Image</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-112900</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>Pillow, the most widely used image library for Python, can be made to run operating system commands on a server by specifying the name of a file it is told to open.
-
-The flaw, CVE-2026-112900, is in the way Pillow handles EPS images, which it opens by passing the file&#x27;s name to Ghostscript, a separate program it runs to turn the image into pixels, without checking the name first.</p>
 
         </article>
 
