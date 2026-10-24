@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-24T14:59:09.741644+00:00",
-  "total": 30,
+  "generated": "2026-10-24T19:55:32.707290+00:00",
+  "total": 23,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -50,21 +50,6 @@
       "cve_ids": [
         "CVE-2026-110447"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/",
-      "title": "PHP shares mitigation for new RCE vulnerability with no patch",
-      "summary": "The PHP security team has shared mitigation measures for a new remote code execution vulnerability that affects systems with non-default configurations and has no patch. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/",
-      "published": "2026-10-23T15:38:05+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -180,21 +165,6 @@
       "cve_ids": [
         "CVE-2026-115895"
       ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html",
-      "title": "BlackX UEFI Bootkit Bypasses Secure Boot on Patched Windows Systems Missing Revocations",
-      "summary": "Diplomatic organizations in Central Asia have been targeted by a sophisticated new Unified Extensible Firmware Interface (UEFI) bootkit called BlackX.\n\nThe activity, which singled out diplomatic entities in Tajikistan, Uzbekistan, and Turkmenistan in early 2026, is suspected to be orchestrated by a China-linked state-sponsored hacking group known as APT41, Kaspersky said in a technical report",
-      "link": "https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html",
-      "published": "2026-10-23T18:50:13+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -419,97 +389,6 @@
       ],
       "cve_ids": [
         "CVE-2026-115778"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23)",
-      "summary": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23) appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "published": "2026-10-23T19:00:34+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-73630",
-      "title": "SiYuan: authFilePublishAccess distinguishes hidden and forbidden documents from public and nonexistent ones, and issues a publish-auth cookie for documents it reports as forbidden",
-      "summary": "### Summary\n\n`/api/filetree/authFilePublishAccess` is registered with `CheckAuth` only and is reachable anonymously. It never sets a failure code, so its outcome is signalled entirely by the response message and by whether a `Set-Cookie` header is present. Those two signals differ across access tiers, which lets an anonymous caller determine, for any candidate document identifier, whether that document is public or nonexistent, password-protected, or exists at the hidden or forbidden tier.\n\nSeparately, hidden and forbidden entries carry an empty password. Submitting `password:\"\"` therefore satisfies the equality check for them, and the server responds by issuing `Set-Cookie: publish-auth-<docID>` for a document whose own tier is forbidden.\n\n### Details\n\n**Route,** identical on both refs:\n\n```go\nginServer.Handle(\"POST\", \"/api/filetree/authFilePublishAccess\", model.CheckAuth, authFilePublishAccess)\n```\n\nNo `CheckAdminRole`, no `CheckReadonly`.\n\n**Handler,** `kernel/api/filetree.go:1608` on the development branch and `:1421` on master. `ret.Code` is never assigned on the failure path, so every response carries `code:0`. The branch is:\n\n```go\nif item.Password == password {\n    // SetPublishAuthCookie\n} else {\n    ret.Msg = Conf.Language(285)\n}\n```\n\n**The cookie is issued for forbidden documents.** Entries at the hidden and forbidden tiers store `Password == \"\"`. A request with `password:\"\"` therefore makes `item.Password == password` true for them, and the handler takes the success branch. The server issues a publish-auth cookie for a document it otherwise treats as inaccessible.\n\nThe cookie itself confers nothing, because those tiers are decided before any password check elsewhere in the codebase. The defect is that the endpoint's success signal does not correspond to access being granted, and that signal is observable.\n\n**Three distinguishable outcomes.** With `password:\"\"`, one request per candidate identifier:\n\n| Tier of the target | `Set-Cookie` | Body |\n|---|---|-",
-      "link": "https://github.com/advisories/GHSA-4pjg-x8qj-33j5",
-      "published": "2026-10-23T18:31:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-73630"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115477",
-      "title": "obsidian-tc: Declined human-in-the-loop confirmations can permit destructive calls over HTTP",
-      "summary": "### Summary\nOn a Streamable HTTP deployment with `auth.jwtSecret` configured, serving a 2026-07-28-era client that declared `elicitation.form` support, a call to a dispatch-gated tool (`destructive: true`, or a scope with an HITL floor) that was offered an `inputRequired` confirmation could still complete after the human declined, cancelled, or the elicitation response was omitted or malformed, provided the client echoed the validly bound `requestState` on resubmission. The server trusted an authentic, call-bound state as proof of approval; the state is minted before the elicitation leg is asked, so it proves only that the resubmission belongs to the same call.\n\n### Details\nReproduced directly: a `destructive: true` tool call, offered `inputRequired`, answered with `{action: \"decline\"}` on the `elicitation/create` leg, still wrote. Present since the 2026-07-28 round trip shipped in v1.13.0 (THE-583). Only dispatch-gated tools were reachable; the sixteen handler-side conditionally gated tools (`write_note` overwrite, `move_note`, and others) did not read the elicitation state on the modern wire at all, so they neither let a decline nor an approval through.\n\n### Impact\nA client that echoes state after a decline can execute destructive vault operations (delete, cross-folder move, frontmatter replace, link rewrite) that the human explicitly refused. The precondition is a compliant client behaving incorrectly or a client under an attacker's control; the human's refusal is not enforced by the server.\n\n### Patches\nFixed in 1.31.4: the server now also requires the confirm leg's own response (`inputResponse`) to be `{action: \"accept\", content: {approve: true}}` before trusting the echoed state. A declined, cancelled or not-approved round renders the ordinary `elicit_required` error and is never offered a second round for the same declined confirmation. The same release adds server-initiated in-band confirmation on stdio (legacy era), so stdio agents no longer need to mint `e",
-      "link": "https://github.com/advisories/GHSA-737x-cwfr-5vvc",
-      "published": "2026-10-23T17:30:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115477"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77366",
-      "title": "obsidian-tc tokens can access arbitrary configured vaults",
-      "summary": "### Impact\nTool dispatch did not check the caller-supplied `input.vault` against the caller's bound vault (`ctx.vaultId`); the folder ACL was a single global instance and the JWT carried no vault claim. As a result, **any valid token could read, write, or delete any configured vault** by passing `input.vault`, defeating multi-tenant isolation across ~90 tool sites. (`resources/read` was the only surface that already guarded this.)\n\n### Patches\nFixed in **1.3.1** (the fix was developed on the `v1.3.0` tag, which never published to npm; 1.3.1 is the first published release with the fix). Upgrade to `>= 1.3.1`.\n\n### Workarounds\nRun a single vault per server process, or isolate each tenant on a separate process/credential.\n\n### Fix\nA central `input.vault === ctx.vaultId` guard was added in dispatch before the scope check.",
-      "link": "https://github.com/advisories/GHSA-84c9-qqpq-2pq5",
-      "published": "2026-10-23T17:29:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77366"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-77364",
-      "title": "obsidian-tc: Default folder ACL is fail-open; .obsidian plugin secrets are readable by default",
-      "summary": "### Impact\nWith a default configuration, an undefined `readPaths`/`writePaths` meant allow-all, the `strictReadDefault` flag was inert, and the `.obsidian`/`.git`/`.trash` control directories were denied only during enumeration \u2014 not on the direct request path. A caller could read `.obsidian/plugins/*/data.json`, exfiltrating **plugin API keys and Obsidian Sync passwords** (live-reproduced), as well as any other in-vault file by path.\n\n### Patches\nFixed in **1.3.1**. Upgrade to `>= 1.3.1`. The default now denies `.obsidian`/`.git`/`.trash` on read/write/delete and honors `strictReadDefault` on the request path.\n\n### Workarounds\nSet an explicit `readPaths`/`writePaths` whitelist that excludes the control directories.",
-      "link": "https://github.com/advisories/GHSA-cvp8-vvgf-69q4",
-      "published": "2026-10-23T17:28:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-77364"
       ],
       "is_zero_day": false,
       "is_high_severity": true

@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-24 14:59 UTC &nbsp;|&nbsp; **Total:** 30 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-24 19:55 UTC &nbsp;|&nbsp; **Total:** 23 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -34,16 +34,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 4. 🟠 Zero-Day — PHP shares mitigation for new RCE vulnerability with no patch
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/>
-
-> The PHP security team has shared mitigation measures for a new remote code execution vulnerability that affects systems with non-default configurations and has no patch. [...]
-
----
-
-## 5. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -52,7 +43,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 6. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -61,7 +52,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 7. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -70,7 +61,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 8. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -79,7 +70,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 9. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -88,7 +79,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 10. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -97,7 +88,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 11. 🟠 Zero-Day — Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution
+## 10. 🟠 Zero-Day — Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution
 
 **CVE:** `CVE-2026-115895` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-834v-8h66-3h79>
@@ -112,18 +103,7 @@ This appears to be an alternate injection path and incomplete remediation of GHS
 
 ---
 
-## 12. 🟠 Zero-Day — BlackX UEFI Bootkit Bypasses Secure Boot on Patched Windows Systems Missing Revocations
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html>
-
-> Diplomatic organizations in Central Asia have been targeted by a sophisticated new Unified Extensible Firmware Interface (UEFI) bootkit called BlackX.
-
-The activity, which singled out diplomatic entities in Tajikistan, Uzbekistan, and Turkmenistan in early 2026, is suspected to be orchestrated by a China-linked state-sponsored hacking group known as APT41, Kaspersky said in a technical report
-
----
-
-## 13. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -132,7 +112,7 @@ The activity, which singled out diplomatic entities in Tajikistan, Uzbekistan, a
 
 ---
 
-## 14. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 12. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -141,7 +121,7 @@ The activity, which singled out diplomatic entities in Tajikistan, Uzbekistan, a
 
 ---
 
-## 15. 🟡 High Severity — virtualenv: Bash prompt values can change meaning under older compatibility modes
+## 13. 🟡 High Severity — virtualenv: Bash prompt values can change meaning under older compatibility modes
 
 **CVE:** `CVE-2026-113723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-6w3r-xr62-4xcp>
@@ -158,7 +138,7 @@ newer compatibility modes, le…
 
 ---
 
-## 16. 🟡 High Severity — undici vulnerable to Denial of Service via unbounded memory in the EventSource parser
+## 14. 🟡 High Severity — undici vulnerable to Denial of Service via unbounded memory in the EventSource parser
 
 **CVE:** `CVE-2026-109924` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-4qv8-2p9j-2685>
@@ -169,7 +149,7 @@ undici&#x27;s `EventSource` client can be driven to exhaust process memory by a 
 
 ---
 
-## 17. 🟡 High Severity — MLflow: SSRF on unauthenticated MLflow servers via third-party scorer kwargs in the scorer invoke, register, and GenAI evaluate endpoints
+## 15. 🟡 High Severity — MLflow: SSRF on unauthenticated MLflow servers via third-party scorer kwargs in the scorer invoke, register, and GenAI evaluate endpoints
 
 **CVE:** `CVE-2026-115886` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-2wqp-q3c6-ccj5>
@@ -179,7 +159,7 @@ MLflow&#x27;s tracking server exposes `POST /ajax-api/3.0/mlflow/scorer/invoke` 
 
 ---
 
-## 18. 🟡 High Severity — filelock: SoftFileLock evicts a fresh lock file whose watched age another local user's pre-dated file passed on through inode reuse
+## 16. 🟡 High Severity — filelock: SoftFileLock evicts a fresh lock file whose watched age another local user's pre-dated file passed on through inode reuse
 
 **CVE:** `CVE-2026-112906` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-2g95-wg33-c5x2>
@@ -188,7 +168,7 @@ MLflow&#x27;s tracking server exposes `POST /ajax-api/3.0/mlflow/scorer/invoke` 
 
 ---
 
-## 19. 🟡 High Severity — filelock: SoftFileLock stale-break restore follows a swapped-in symbolic link and hard-links a file of the user running the lock into the lock directory
+## 17. 🟡 High Severity — filelock: SoftFileLock stale-break restore follows a swapped-in symbolic link and hard-links a file of the user running the lock into the lock directory
 
 **CVE:** `CVE-2026-112914` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-crv4-6mhj-j5jh>
@@ -197,7 +177,7 @@ MLflow&#x27;s tracking server exposes `POST /ajax-api/3.0/mlflow/scorer/invoke` 
 
 ---
 
-## 20. 🟡 High Severity — Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT > 1
+## 18. 🟡 High Severity — Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT > 1
 
 **CVE:** `CVE-2026-114501` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-654x-cwwv-5j9c>
@@ -212,7 +192,7 @@ With an alignment above 1, the default allocator pads each row up to `aligned_li
 
 ---
 
-## 21. 🟡 High Severity — odf-kit has HTML injection leading to XSS in odsToHtml() via unescaped style attribute values
+## 19. 🟡 High Severity — odf-kit has HTML injection leading to XSS in odsToHtml() via unescaped style attribute values
 
 **CVE:** `CVE-2026-113787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-2rqm-h6hv-g79v>
@@ -223,7 +203,7 @@ ODF style values are interpolated into `style=&quot;...&quot;` attributes withou
 
 ---
 
-## 22. 🟡 High Severity — Strands Agents SDK: Exposure of data element to wrong session in the A2A Server
+## 20. 🟡 High Severity — Strands Agents SDK: Exposure of data element to wrong session in the A2A Server
 
 **CVE:** `CVE-2026-115419` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-4v6f-7vjh-6x4m>
@@ -233,7 +213,7 @@ Strands Agents SDK is an open-source SDK, available for Python (strands-agents) 
 
 ---
 
-## 23. 🟡 High Severity — Twisted: Denial of Service in the Twisted IMAP4 Server via a Negative Literal Size in SEARCH
+## 21. 🟡 High Severity — Twisted: Denial of Service in the Twisted IMAP4 Server via a Negative Literal Size in SEARCH
 
 **CVE:** `CVE-2026-115774` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-2qrf-pqgx-qh9v>
@@ -244,7 +224,7 @@ An infinite-loop vulnerability (CWE-835) in the Twisted IMAP4 server lets an aut
 
 ---
 
-## 24. 🟡 High Severity — Twisted: Unauthenticated Remote Denial of Service in the Twisted conch Telnet Transport via an Unbounded Subnegotiation Buffer
+## 22. 🟡 High Severity — Twisted: Unauthenticated Remote Denial of Service in the Twisted conch Telnet Transport via an Unbounded Subnegotiation Buffer
 
 **CVE:** `CVE-2026-115778` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
 **Reference:** <https://github.com/advisories/GHSA-cwm5-jh59-mwxr>
@@ -255,57 +235,7 @@ An allocation-without-limits vulnerability (CWE-770) in the Twisted conch telnet
 
 ---
 
-## 25. 🟡 High Severity — Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23)
-
-**CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/>
-
-> CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23) appeared first on Unit 42 .
-
----
-
-## 26. 🟡 High Severity — SiYuan: authFilePublishAccess distinguishes hidden and forbidden documents from public and nonexistent ones, and issues a publish-auth cookie for documents it reports as forbidden
-
-**CVE:** `CVE-2026-73630` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-4pjg-x8qj-33j5>
-
-> ### Summary
-
-`/api/filetree/authFilePublishAccess` is registered with `CheckAuth` only and is reachable anonymously. It never sets a failure code, so its outcome is signalled entirely by the response message and by whether a `Set-Cookie` header is present. Those two signals differ across access tiers, which lets an anonymous caller determine, for any candidate document identifier, whether that doc…
-
----
-
-## 27. 🟡 High Severity — obsidian-tc: Declined human-in-the-loop confirmations can permit destructive calls over HTTP
-
-**CVE:** `CVE-2026-115477` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-737x-cwfr-5vvc>
-
-> ### Summary
-On a Streamable HTTP deployment with `auth.jwtSecret` configured, serving a 2026-07-28-era client that declared `elicitation.form` support, a call to a dispatch-gated tool (`destructive: true`, or a scope with an HITL floor) that was offered an `inputRequired` confirmation could still complete after the human declined, cancelled, or the elicitation response was omitted or malformed, pr…
-
----
-
-## 28. 🟡 High Severity — obsidian-tc tokens can access arbitrary configured vaults
-
-**CVE:** `CVE-2026-77366` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-84c9-qqpq-2pq5>
-
-> ### Impact
-Tool dispatch did not check the caller-supplied `input.vault` against the caller&#x27;s bound vault (`ctx.vaultId`); the folder ACL was a single global instance and the JWT carried no vault claim. As a result, **any valid token could read, write, or delete any configured vault** by passing `input.vault`, defeating multi-tenant isolation across ~90 tool sites. (`resources/read` was the o…
-
----
-
-## 29. 🟡 High Severity — obsidian-tc: Default folder ACL is fail-open; .obsidian plugin secrets are readable by default
-
-**CVE:** `CVE-2026-77364` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-cvp8-vvgf-69q4>
-
-> ### Impact
-With a default configuration, an undefined `readPaths`/`writePaths` meant allow-all, the `strictReadDefault` flag was inert, and the `.obsidian`/`.git`/`.trash` control directories were denied only during enumeration — not on the direct request path. A caller could read `.obsidian/plugins/*/data.json`, exfiltrating **plugin API keys and Obsidian Sync passwords** (live-reproduced), as we…
-
----
-
-## 30. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 23. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

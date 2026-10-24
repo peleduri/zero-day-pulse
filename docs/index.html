@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">30</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">23</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-24 14:59 UTC</div>
+            <div class="generated">Updated 2026-10-24 19:55 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -169,22 +169,6 @@ The critical-severity vulnerabilities are listed below -
   CVE-2026-110447 (CVSS score: 9.2) - An operating</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/" target="_blank" rel="noopener">PHP shares mitigation for new RCE vulnerability with no patch</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-23</span>
-  </div>
-  <p class='summary'>The PHP security team has shared mitigation measures for a new remote code execution vulnerability that affects systems with non-default configurations and has no patch. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -301,24 +285,6 @@ The ESM compiler in `happy-dom@20.14.5` does not validate imported local binding
 As a result, an invalid ESM import alias can be transformed into a valid JavaScript destructuring default initializer and executed.
 
 This appears to be an alternate injection path and incomplete remediation of GHSA-6q6h-j7hj-3r64 / CVE-2026-3394…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html" target="_blank" rel="noopener">BlackX UEFI Bootkit Bypasses Secure Boot on Patched Windows Systems Missing Revocations</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>Diplomatic organizations in Central Asia have been targeted by a sophisticated new Unified Extensible Firmware Interface (UEFI) bootkit called BlackX.
-
-The activity, which singled out diplomatic entities in Tajikistan, Uzbekistan, and Turkmenistan in early 2026, is suspected to be orchestrated by a China-linked state-sponsored hacking group known as APT41, Kaspersky said in a technical report</p>
 
         </article>
 
@@ -537,91 +503,6 @@ An infinite-loop vulnerability (CWE-835) in the Twisted IMAP4 server lets an aut
           <p class='summary'>## Summary
 
 An allocation-without-limits vulnerability (CWE-770) in the Twisted conch telnet transport lets any unauthenticated remote peer exhaust server memory over a single connection. When the peer opens a telnet subnegotiation with `IAC SB` and then streams bytes without ever sending the `IAC SE` terminator, every byte is appended to a per-connection buffer that has no maximum length. The buf…</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/" target="_blank" rel="noopener">Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23)</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
-    <span class="meta-sep">·</span>
-    <span>Unit 42 (Palo Alto)</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-23</span>
-  </div>
-  <p class='summary'>CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23) appeared first on Unit 42 .</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4pjg-x8qj-33j5" target="_blank" rel="noopener">SiYuan: authFilePublishAccess distinguishes hidden and forbidden documents from public and nonexistent ones, and issues a publish-auth cookie for documents it reports as forbidden</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-73630</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Summary
-
-`/api/filetree/authFilePublishAccess` is registered with `CheckAuth` only and is reachable anonymously. It never sets a failure code, so its outcome is signalled entirely by the response message and by whether a `Set-Cookie` header is present. Those two signals differ across access tiers, which lets an anonymous caller determine, for any candidate document identifier, whether that doc…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-737x-cwfr-5vvc" target="_blank" rel="noopener">obsidian-tc: Declined human-in-the-loop confirmations can permit destructive calls over HTTP</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115477</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Summary
-On a Streamable HTTP deployment with `auth.jwtSecret` configured, serving a 2026-07-28-era client that declared `elicitation.form` support, a call to a dispatch-gated tool (`destructive: true`, or a scope with an HITL floor) that was offered an `inputRequired` confirmation could still complete after the human declined, cancelled, or the elicitation response was omitted or malformed, pr…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-84c9-qqpq-2pq5" target="_blank" rel="noopener">obsidian-tc tokens can access arbitrary configured vaults</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-77366</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Impact
-Tool dispatch did not check the caller-supplied `input.vault` against the caller&#x27;s bound vault (`ctx.vaultId`); the folder ACL was a single global instance and the JWT carried no vault claim. As a result, **any valid token could read, write, or delete any configured vault** by passing `input.vault`, defeating multi-tenant isolation across ~90 tool sites. (`resources/read` was the only s…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cvp8-vvgf-69q4" target="_blank" rel="noopener">obsidian-tc: Default folder ACL is fail-open; .obsidian plugin secrets are readable by default</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-77364</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Impact
-With a default configuration, an undefined `readPaths`/`writePaths` meant allow-all, the `strictReadDefault` flag was inert, and the `.obsidian`/`.git`/`.trash` control directories were denied only during enumeration — not on the direct request path. A caller could read `.obsidian/plugins/*/data.json`, exfiltrating **plugin API keys and Obsidian Sync passwords** (live-reproduced), as we…</p>
 
         </article>
 
