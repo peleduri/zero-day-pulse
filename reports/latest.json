@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-25T02:01:43.303569+00:00",
-  "total": 12,
+  "generated": "2026-10-25T10:17:40.604340+00:00",
+  "total": 11,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 8,
   "enriched": 0,
   "findings": [
     {
@@ -33,23 +33,6 @@
         "research"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html",
-      "title": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two vulnerabilities impacting Collabora Online Built-in CODE Server and Arista VeloCloud Orchestrator (VCO) to its Known Exploited Vulnerabilities (KEV), citing reports of active exploitation in the wild.\n\nThe critical-severity vulnerabilities are listed below -\n\n\n  CVE-2026-110447 (CVSS score: 9.2) - An operating",
-      "link": "https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html",
-      "published": "2026-10-24T06:25:57+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-110447"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
