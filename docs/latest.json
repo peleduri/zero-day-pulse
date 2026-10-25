@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-25T10:17:40.604340+00:00",
-  "total": 11,
+  "generated": "2026-10-25T15:10:05.346408+00:00",
+  "total": 12,
   "kev": 0,
   "zero_day": 8,
   "enriched": 0,
@@ -174,6 +174,24 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.wiz.io/blog/cve-2026-111497-brotli-rce-node-js",
+      "title": "Broccoli2shell: Everything You Need To Know About The Critical Brotli Decoder Vulnerability",
+      "summary": "Detect and mitigate CVE-2026-111497, a critical Brotli decoder vulnerability enables remote code execution.",
+      "link": "https://www.wiz.io/blog/cve-2026-111497-brotli-rce-node-js",
+      "published": "2026-10-25T14:46:53+00:00",
+      "source": "Wiz Research",
+      "tags": [
+        "cloud",
+        "research",
+        "misconfig"
+      ],
+      "cve_ids": [
+        "CVE-2026-111497"
       ],
       "is_zero_day": false,
       "is_high_severity": true
