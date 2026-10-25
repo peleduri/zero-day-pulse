@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-24 19:55 UTC &nbsp;|&nbsp; **Total:** 23 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-25 02:01 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -88,22 +88,7 @@ The critical-severity vulnerabilities are listed below -
 
 ---
 
-## 10. 🟠 Zero-Day — Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution
-
-**CVE:** `CVE-2026-115895` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-834v-8h66-3h79>
-
-> ## Summary
-
-The ESM compiler in `happy-dom@20.14.5` does not validate imported local binding aliases before interpolating them into generated JavaScript.
-
-As a result, an invalid ESM import alias can be transformed into a valid JavaScript destructuring default initializer and executed.
-
-This appears to be an alternate injection path and incomplete remediation of GHSA-6q6h-j7hj-3r64 / CVE-2026-3394…
-
----
-
-## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -112,7 +97,7 @@ This appears to be an alternate injection path and incomplete remediation of GHS
 
 ---
 
-## 12. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 11. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -121,121 +106,7 @@ This appears to be an alternate injection path and incomplete remediation of GHS
 
 ---
 
-## 13. 🟡 High Severity — virtualenv: Bash prompt values can change meaning under older compatibility modes
-
-**CVE:** `CVE-2026-113723` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-6w3r-xr62-4xcp>
-
-> ## Summary
-
-Caller-supplied prompt text can become executable syntax in the bash activation prompt. An attacker must influence the
-value passed to virtualenv, and a user must subsequently activate the environment and draw the prompt.
-
-## Affected area
-
-Bash runs with compatibility level 4.2 and draws the environment prompt. Its replacement-string behavior differs from
-newer compatibility modes, le…
-
----
-
-## 14. 🟡 High Severity — undici vulnerable to Denial of Service via unbounded memory in the EventSource parser
-
-**CVE:** `CVE-2026-109924` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-4qv8-2p9j-2685>
-
-> ### Impact
-
-undici&#x27;s `EventSource` client can be driven to exhaust process memory by a malicious or compromised Server-Sent Events peer. By sending millions of tiny completed `data:` fields with no blank event separator, or a single unfinished line split across many chunks, the parser retains a growing amount of per-field and per-chunk state. The byte-based `maxEventSize` and `maxResponseSize…
-
----
-
-## 15. 🟡 High Severity — MLflow: SSRF on unauthenticated MLflow servers via third-party scorer kwargs in the scorer invoke, register, and GenAI evaluate endpoints
-
-**CVE:** `CVE-2026-115886` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-2wqp-q3c6-ccj5>
-
-> ### Summary
-MLflow&#x27;s tracking server exposes `POST /ajax-api/3.0/mlflow/scorer/invoke` with **no authentication**, and the handler reflectively instantiates an attacker-named class from attacker-supplied JSON with unconstrained constructor kwargs. With the optional `trulens` + `trulens-providers-litellm` packages installed, an unauthenticated attacker can force the server to make an outbound …
-
----
-
-## 16. 🟡 High Severity — filelock: SoftFileLock evicts a fresh lock file whose watched age another local user's pre-dated file passed on through inode reuse
-
-**CVE:** `CVE-2026-112906` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-2g95-wg33-c5x2>
-
-> `SoftFileLock` and `MarkerSoftFileLock` evict an unparsable marker (the lock file at `&lt;path&gt;`, whose presence says a process holds the lock) once a waiting contender has watched it unchanged for two seconds. `SoftFileLease` expires a lease the same way. The watch tells two looks apart by the marker&#x27;s modification time (mtime) and inode number (the kernel&#x27;s identity for a file, inde…
-
----
-
-## 17. 🟡 High Severity — filelock: SoftFileLock stale-break restore follows a swapped-in symbolic link and hard-links a file of the user running the lock into the lock directory
-
-**CVE:** `CVE-2026-112914` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-crv4-6mhj-j5jh>
-
-> When a soft-lock stale break finds that the marker (the lock file at `&lt;path&gt;`) it renamed aside was a live one recreated by a successor, the restore branch of `break_lock_file()` checks the break name with `lstat` (a check that reads a name without following a symbolic link) and then calls `os.link(break_path, lock_file)` by name. On CPython 3.12 and later on Linux (and on macOS) that call f…
-
----
-
-## 18. 🟡 High Severity — Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT > 1
-
-**CVE:** `CVE-2026-114501` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-654x-cwwv-5j9c>
-
-> ### Summary
-
-When [`PILLOW_ALIGNMENT`](https://pillow.readthedocs.io/en/stable/reference/block_allocator.html#memory-pools) is set above 1, exporting an image to Arrow returns uninitialized heap memory mixed in with the pixel data. That memory can include pixels from images the process freed earlier. 
-
-### Details
-
-With an alignment above 1, the default allocator pads each row up to `aligned_lines…
-
----
-
-## 19. 🟡 High Severity — odf-kit has HTML injection leading to XSS in odsToHtml() via unescaped style attribute values
-
-**CVE:** `CVE-2026-113787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-2rqm-h6hv-g79v>
-
-> ### Summary
-
-ODF style values are interpolated into `style=&quot;...&quot;` attributes without HTML-escaping in odf-kit&#x27;s ODS to-HTML renderer (`odsToHtml()`). A double-quote character inside an attacker-controlled style value breaks out of the attribute, allowing arbitrary HTML/attribute injection — and therefore script execution (XSS) — from a crafted `.ods` file wherever the rendered outpu…
-
----
-
-## 20. 🟡 High Severity — Strands Agents SDK: Exposure of data element to wrong session in the A2A Server
-
-**CVE:** `CVE-2026-115419` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-4v6f-7vjh-6x4m>
-
-> **Summary**  
-Strands Agents SDK is an open-source SDK, available for Python (strands-agents) and TypeScript (@strands-agents/sdk), for building and running AI agents. An issue exists where, under certain circumstances, the Agent2Agent (A2A) server shares conversation history across callers with different context\_id values, allowing one caller to read and influence another caller&#x27;s session. …
-
----
-
-## 21. 🟡 High Severity — Twisted: Denial of Service in the Twisted IMAP4 Server via a Negative Literal Size in SEARCH
-
-**CVE:** `CVE-2026-115774` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-2qrf-pqgx-qh9v>
-
-> ## Summary
-
-An infinite-loop vulnerability (CWE-835) in the Twisted IMAP4 server lets an authenticated client freeze the whole process with one small command. `twisted.mail.imap4.parseNestedParens` reads an IMAP literal size with `int()` and never rejects a negative value. A negative size such as `{-100}` drives the parser cursor negative, and because a negative Python index wraps around the end o…
-
----
-
-## 22. 🟡 High Severity — Twisted: Unauthenticated Remote Denial of Service in the Twisted conch Telnet Transport via an Unbounded Subnegotiation Buffer
-
-**CVE:** `CVE-2026-115778` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-23
-**Reference:** <https://github.com/advisories/GHSA-cwm5-jh59-mwxr>
-
-> ## Summary
-
-An allocation-without-limits vulnerability (CWE-770) in the Twisted conch telnet transport lets any unauthenticated remote peer exhaust server memory over a single connection. When the peer opens a telnet subnegotiation with `IAC SB` and then streams bytes without ever sending the `IAC SE` terminator, every byte is appended to a per-connection buffer that has no maximum length. The buf…
-
----
-
-## 23. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

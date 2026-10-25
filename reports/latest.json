@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-24T19:55:32.707290+00:00",
-  "total": 23,
+  "generated": "2026-10-25T02:01:43.303569+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -151,24 +151,6 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-115895",
-      "title": "Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution",
-      "summary": "## Summary\n\nThe ESM compiler in `happy-dom@20.14.5` does not validate imported local binding aliases before interpolating them into generated JavaScript.\n\nAs a result, an invalid ESM import alias can be transformed into a valid JavaScript destructuring default initializer and executed.\n\nThis appears to be an alternate injection path and incomplete remediation of GHSA-6q6h-j7hj-3r64 / CVE-2026-33943. The previous fix validates `importName` in the local `export { ... }` handler, but the named import handler still places an unvalidated `alias` directly into code context.\n\nThese issues were confirmed through the public `Window` and `<script type=\"module\">` APIs using the published `happy-dom` npm package. The PoC reaches the Node.js host `process`, obtains `node:fs`, and creates a proof directory on the host filesystem.\n\n## Confirmed affected versions\n\nThe PoC was directly tested against:\n\n- `happy-dom@17.0.0`\n- `happy-dom@20.0.0`\n- `happy-dom@20.1.0`\n- `happy-dom@20.14.5`\n\nThe same PoC does not trigger on `happy-dom@16.8.1`.\n\nThe ESM compiler was introduced by commit `7bc831df2`, first released in `v17.0.0`. The vulnerable interpolation remains present through `v20.14.5`, the latest release at the time of testing.\n\nSuggested affected range:\n\n```text\n>= 17.0.0, <= 20.14.5\n```\n\nNo patched version is currently available.\n\n## Preconditions\n\n- JavaScript evaluation is enabled with `enableJavaScriptEvaluation: true`.\n- Attacker-controlled HTML or module source is processed by Happy DOM.\n- This may affect SSR, preview, scraping, or testing services that evaluate externally supplied HTML.\n\n## Technical details\n\nIn `packages/happy-dom/src/module/ECMAScriptModuleCompiler.ts`, the named import handler splits an import specifier and extracts its alias:\n\n```ts\nconst nameParts = part.trim().split(/\\s+as\\s+/);\nconst alias = (nameParts[1] || nameParts[0]).replace(/[\"']/g, '');\nconst name = nameParts[0].replace(/[\"']/g, '');\n\nif (alias && name) {\n  properties.push({ name, alias });\n}\n`",
-      "link": "https://github.com/advisories/GHSA-834v-8h66-3h79",
-      "published": "2026-10-23T22:06:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115895"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -209,186 +191,6 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-113723",
-      "title": "virtualenv: Bash prompt values can change meaning under older compatibility modes",
-      "summary": "## Summary\n\nCaller-supplied prompt text can become executable syntax in the bash activation prompt. An attacker must influence the\nvalue passed to virtualenv, and a user must subsequently activate the environment and draw the prompt.\n\n## Affected area\n\nBash runs with compatibility level 4.2 and draws the environment prompt. Its replacement-string behavior differs from\nnewer compatibility modes, leaving prompt text subject to a second interpretation. The report concerns POSIX activation.\nIt does not establish exposure through unrelated activators.\n\n## Attacker-controlled input\n\nThe attacker controls prompt or destination data passed as a virtualenv argument. The user later sources the generated\nactivation script.\n\n## Affected code\n\nThe relevant 21.14.8 source is in\n[bash prompt assembly](https://github.com/pypa/virtualenv/blob/a795ab116356afde11039cf2763d77e8a06da738/src/virtualenv/activation/bash/activate.sh).\n\n## Mechanism\n\n`bin/activate` copies the prompt into `PS1`. A shell expands `PS1` again when it draws a prompt, so the value must\nsurvive both the assignment and that later expansion. The bash and zsh branches escape for their usual prompt rules.\nThree other paths still interpret prompt data as commands: dash sourcing `activate` directly, a child dash inheriting an\nexported `PS1` from bash, and bash running at compatibility level 4.2 or lower. A value such as `x$(touch MARKER)y` then\nruns `touch` on prompt display. Creating the environment does not run the payload.\n\n## Reproduction and evidence\n\nThe scanner's child-shell reproducer creates an environment with `--prompt 'x$(touch MARKER)y'`, sources `bin/activate`\nin interactive bash, and starts interactive `sh` (dash). Its control leaves `PS1` unexported: neither shell creates\n`MARKER`. With `PS1` exported, bash displays the prompt without executing the value, but the child dash creates\n`MARKER`; the reproducer ends in `BUG`. The report gives separate console reproductions for direct dash activation and\nbash c",
-      "link": "https://github.com/advisories/GHSA-6w3r-xr62-4xcp",
-      "published": "2026-10-23T22:21:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113723"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-109924",
-      "title": "undici vulnerable to Denial of Service via unbounded memory in the EventSource parser",
-      "summary": "### Impact\n\nundici's `EventSource` client can be driven to exhaust process memory by a malicious or compromised Server-Sent Events peer. By sending millions of tiny completed `data:` fields with no blank event separator, or a single unfinished line split across many chunks, the parser retains a growing amount of per-field and per-chunk state. The byte-based `maxEventSize` and `maxResponseSize` limits do not bound that retained state, and `maxResponseSize` is enforced on the compressed body before decompression, so a small compressed response can expand into enough retained memory to terminate the process. The application only needs to maintain an `EventSource` connection to an untrusted peer, which controls only the response. Availability is the only impact.\n\n### Patches\n\nUpgrade to `6.29.1`, `7.30.1`, or `8.12.2`, which bound the retained EventSource parser state (the number of `data` fields and buffered chunks, the unfinished-line length, and per-field byte totals) independently of the byte limits.\n\n### Workarounds\n\nNone.",
-      "link": "https://github.com/advisories/GHSA-4qv8-2p9j-2685",
-      "published": "2026-10-23T22:13:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-109924"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115886",
-      "title": "MLflow: SSRF on unauthenticated MLflow servers via third-party scorer kwargs in the scorer invoke, register, and GenAI evaluate endpoints",
-      "summary": "### Summary\nMLflow's tracking server exposes `POST /ajax-api/3.0/mlflow/scorer/invoke` with **no authentication**, and the handler reflectively instantiates an attacker-named class from attacker-supplied JSON with unconstrained constructor kwargs. With the optional `trulens` + `trulens-providers-litellm` packages installed, an unauthenticated attacker can force the server to make an outbound HTTP request to an arbitrary host of their choosing, carrying attacker-controlled headers (SSRF).\n\n### Details\n`Scorer.model_validate_json()` reflects a class name from a JSON payload behind an import-path allowlist that never constrains the reflected attribute or its kwargs, in `mlflow/genai/scorers/base.py:549-604`:\n\n```python\ndata = serialized.third_party_scorer_data          # attacker JSON\nmodule_path = data.get(\"module\") or \"\"\nclass_name = data.get(\"class\")\nif not any(module_path == m or module_path.startswith(m + \".\")\n           for m in THIRD_PARTY_SCORER_ALLOWED_MODULES):\n    raise MlflowException.invalid_parameter_value(...)\nmodule = importlib.import_module(module_path)\nscorer_class = getattr(module, class_name, None)   # attribute NOT constrained\n...\ninit_kwargs: dict[str, Any] = dict(data.get(\"kwargs\") or {})  # kwargs NOT constrained\n...\ninit_kwargs[\"model\"] = data[\"model\"]               # attacker model URI\nscorer_instance = scorer_class(**init_kwargs)      # reflective instantiation\n```\n\nThe allowlist (`mlflow/genai/scorers/scorer_utils.py:46-51`) only gates the import path:\n\n```python\nTHIRD_PARTY_SCORER_ALLOWED_MODULES = frozenset({\n    \"mlflow.genai.scorers.ragas\",\n    \"mlflow.genai.scorers.deepeval\",\n    \"mlflow.genai.scorers.trulens\",\n    \"mlflow.genai.scorers.phoenix\",\n})\n```\n\nFor a `mlflow.genai.scorers.trulens` class, the forwarded `model`/`kwargs` reach an outbound LLM client through a routing choice the attacker controls (`mlflow/genai/scorers/trulens/models.py:97-121`):\n\n```python\nbackend = ScorerLLMClient(model_uri)\nif backend.route == \"databricks\":\n   ",
-      "link": "https://github.com/advisories/GHSA-2wqp-q3c6-ccj5",
-      "published": "2026-10-23T22:07:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115886"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112906",
-      "title": "filelock: SoftFileLock evicts a fresh lock file whose watched age another local user's pre-dated file passed on through inode reuse",
-      "summary": "`SoftFileLock` and `MarkerSoftFileLock` evict an unparsable marker (the lock file at `<path>`, whose presence says a process holds the lock) once a waiting contender has watched it unchanged for two seconds. `SoftFileLease` expires a lease the same way. The watch tells two looks apart by the marker's modification time (mtime) and inode number (the kernel's identity for a file, independent of its name) alone.\n\nAnother local user (the other user below) who can create files in the lock's directory, a sticky `/tmp` included (the sticky bit is a directory flag that lets only a file's owner remove it), parks an empty file of its own at the lock path. It dates that file to a future tick of the kernel's coarse clock (a clock that advances in steps of 4 ms), lets the waiters of the user running the lock (the lock user below) watch it past two seconds, and unlinks it in that tick. On a filesystem that hands a freed inode number straight back (ext4, overlayfs on ext4) the lock user's next marker repeats both values. It inherits the time spent watching the other user's file, and a second waiter removes it while its owner holds the lock.\n\nTwo of the lock user's processes then run the critical section together with no error. A `SoftFileLease` waiter takes a live lease that its owner wrote moments before, within milliseconds instead of after `lease_duration`. Affected versions: filelock >= 4.1.0 and <= 4.2.0 (finding `ANT-2026-RKC48J5B`).\n\n## Severity\n\n**CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N, 4.7 (Medium).**\n\n`AV:L` (local): the other user needs an account on the same host. `AC:H` (high attack complexity): a race the other user cannot steer. It needs ext4-style inode reuse, a coarse-clock timestamp tick the other user can predict, and two polls of the lock user inside a 4 ms tick and a ~75 \u00b5s create-to-write gap. The scanner measured 2 to 10 % of attempts; none of our own 250 attempts fired. `PR:L` (low privileges): an unprivileged account is enough. `UI:N` (no user interac",
-      "link": "https://github.com/advisories/GHSA-2g95-wg33-c5x2",
-      "published": "2026-10-23T22:00:33Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112906"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112914",
-      "title": "filelock: SoftFileLock stale-break restore follows a swapped-in symbolic link and hard-links a file of the user running the lock into the lock directory",
-      "summary": "When a soft-lock stale break finds that the marker (the lock file at `<path>`) it renamed aside was a live one recreated by a successor, the restore branch of `break_lock_file()` checks the break name with `lstat` (a check that reads a name without following a symbolic link) and then calls `os.link(break_path, lock_file)` by name. On CPython 3.12 and later on Linux (and on macOS) that call follows a symbolic link (a file that redirects to another path). A local user (the other user below) who can write a shared lock directory without the sticky bit (a directory flag that lets only a file's owner rename or remove it) replaces the break name with a symbolic link between those two calls.\n\nThe `SoftFileLock`, `MarkerSoftFileLock`, `SoftFileLease` or `lifetime` break of the user running the lock (the lock user below) then creates a hard link (a second name for the same file), in that directory, to any of the lock user's own files on the same filesystem. That includes files inside directories the other user cannot enter and links that `fs.protected_hardlinks` (a Linux setting that forbids hard links to files one does not own) refuses the other user when it asks itself. The link exposes the file's size, times, mode and owner, keeps the inode (the kernel's identity for a file, independent of its name) alive, and gives the other user a name it can move. On 4.2.0 a later `FileLock` of the lock user on that name truncated the file. Affected versions: filelock >= 4.1.0 and <= 4.2.0 (finding `ANT-2026-SB29HIAL`).\n\n## Severity\n\n**CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:N, 5.3 (Medium).**\n\n`AV:L` (local): the other user needs an account on the same host. `AC:H` (high attack complexity): two short races against a few lines of Python, timed by inotify (a Linux facility that reports file events), and the lock user must take the lock again and again (the scanner won 10 runs out of 10 after 9 to 910 lock cycles). `PR:L` (low privileges): an unprivileged account is enough. `UI:N` (no",
-      "link": "https://github.com/advisories/GHSA-crv4-6mhj-j5jh",
-      "published": "2026-10-23T22:00:11Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112914"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-114501",
-      "title": "Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT > 1",
-      "summary": "### Summary\n\nWhen [`PILLOW_ALIGNMENT`](https://pillow.readthedocs.io/en/stable/reference/block_allocator.html#memory-pools) is set above 1, exporting an image to Arrow returns uninitialized heap memory mixed in with the pixel data. That memory can include pixels from images the process freed earlier. \n\n### Details\n\nWith an alignment above 1, the default allocator pads each row up to `aligned_linesize` and starts the first row at an aligned offset into the block. It then exports `im->blocks[0].ptr` as `xsize * ysize` tightly packed pixels, so exported data includes the padding bytes, and can include a few bytes from before the first row.\n\nTested vulnerable on 11.2.1, 12.3.0, 4c1ed27a5.\n\n### PoC\n\nWhether things leak may depend on allocator configuration. This does show a leak on my Mac.\n\n```python\nimport os\n\nos.environ[\"PILLOW_ALIGNMENT\"] = \"64\"\n\nfrom PIL import Image\n\n# Image A: 64 px wide, so its rows fill the whole aligned stride\na = Image.new(\"L\", (64, 40), 0x41).transpose(Image.Transpose.FLIP_LEFT_RIGHT)\ndel a\n\n# Image B: 61 px wide, so each row has 3 bytes of padding; its pixels are all 0\nb = Image.new(\"L\", (61, 40), 0).transpose(Image.Transpose.FLIP_LEFT_RIGHT)\n\ntry:\n    exported = Image.fromarrow(b, b.mode, b.size).tobytes()\nexcept ValueError as e:\n    print(\"Not vulnerable:\", e)\nelse:\n    if leaked := len(exported) - exported.count(0):\n        raise RuntimeError(f\"{leaked} of {len(exported)} exported bytes are not B's pixels\")\n```\n\n### Impact\n\nInformation disclosure for applications that set `PILLOW_ALIGNMENT` and export images to Arrow. Likely any image whose row length isn't a multiple of the alignment will do. In a service handling several users' images, one user's exported data can contain pixels from another user's image, or other stale heap contents.",
-      "link": "https://github.com/advisories/GHSA-654x-cwwv-5j9c",
-      "published": "2026-10-23T21:53:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-114501"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "GHSA-2rqm-h6hv-g79v",
-      "title": "odf-kit has HTML injection leading to XSS in odsToHtml() via unescaped style attribute values",
-      "summary": "### Summary\n\nODF style values are interpolated into `style=\"...\"` attributes without HTML-escaping in odf-kit's ODS to-HTML renderer (`odsToHtml()`). A double-quote character inside an attacker-controlled style value breaks out of the attribute, allowing arbitrary HTML/attribute injection \u2014 and therefore script execution (XSS) \u2014 from a crafted `.ods` file wherever the rendered output is inserted as HTML, which is the documented purpose of the function.\n\n### Details\n\nTwo emission sites in `src/ods/to-html/html-renderer.ts` (before 0.14.0, `src/ods-reader/html-renderer.ts`) write document-controlled values into a `style` attribute without escaping:\n\n- **Cell style.** `buildInlineStyle()` assembles a CSS string from the cell's formatting properties (`fo:color`, `fo:font-size`, `fo:font-family`, `fo:background-color`, `fo:text-align`, etc.) with no escaping, and `renderCell` emits it raw as the cell's `style` attribute.\n- **Row height.** `row.height` (from `style:row-height`) is emitted raw into the row element's `style` attribute.\n\nThe same defect in the ODT renderer (`odtToHtml()`) is tracked as GHSA-3cgg-c5pp-57h6 (CVE-2026-113787).\n\n### Impact\n\nAny consumer that renders `odsToHtml()` output as HTML gets XSS from a crafted `.ods` file they convert: untrusted file \u2192 arbitrary tags and attributes \u2192 script execution in the host page with the page's origin.\n\n### Patches\n\nFixed in 0.14.2. Both sites now route document-controlled values through a shared attribute-escaping helper:\n\n- [`1424227`](https://github.com/GitHubNewbie0/odf-kit/commit/1424227d1ca2716a249b623d1456575ff0331dcc): escape style attribute values in the ODS HTML renderer\n- [`aa64c73`](https://github.com/GitHubNewbie0/odf-kit/commit/aa64c734ebd7e7be40e35fcda83b1144193c3da2): the shared `escapeAttr` helper\n\nUsers should upgrade to 0.14.2 or later.\n\n### Credit\n\nReported by @PethuKannan.",
-      "link": "https://github.com/advisories/GHSA-2rqm-h6hv-g79v",
-      "published": "2026-10-23T20:55:31Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-113787"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115419",
-      "title": "Strands Agents SDK: Exposure of data element to wrong session in the A2A Server",
-      "summary": "**Summary**  \nStrands Agents SDK is an open-source SDK, available for Python (strands-agents) and TypeScript (@strands-agents/sdk), for building and running AI agents. An issue exists where, under certain circumstances, the Agent2Agent (A2A) server shares conversation history across callers with different context\\_id values, allowing one caller to read and influence another caller's session.  \n  \n**Impact**  \nThe A2A server did not properly isolate conversation state between callers. In multi-tenant deployments, an authenticated remote user could access another caller's conversation history or influence model behavior for other callers (CWE-488: Unintended Disclosure of Data Element to Wrong Session). This affects any deployment where an A2A server is reachable by more than one user or tenant.  \n  \n**Impacted versions:**  \nstrands-agents (Python): all versions containing the multiagent.a2a module, < 1.43.0  \n@strands-agents/sdk (TypeScript): < 1.5.0  \n  \n**Patches**  \nThis issue has been addressed in strands-agents version 1.43.0 and @strands-agents/sdk version 1.5.0. The A2A server now uses an agent factory so conversation state is isolated per A2A context\\_id. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes.  \n  \n**Workarounds**  \nThere is no workaround that fully addresses this issue in affected versions. Until you upgrade, do not expose an A2A server to more than one user or tenant. If multiple callers need access, run a separate A2A server instance for each user or tenant.  \n  \n**References**  \nIf you have any questions or comments about this advisory, we ask that you contact AWS Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.",
-      "link": "https://github.com/advisories/GHSA-4v6f-7vjh-6x4m",
-      "published": "2026-10-23T20:48:29Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115419"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115774",
-      "title": "Twisted: Denial of Service in the Twisted IMAP4 Server via a Negative Literal Size in SEARCH",
-      "summary": "## Summary\n\nAn infinite-loop vulnerability (CWE-835) in the Twisted IMAP4 server lets an authenticated client freeze the whole process with one small command. `twisted.mail.imap4.parseNestedParens` reads an IMAP literal size with `int()` and never rejects a negative value. A negative size such as `{-100}` drives the parser cursor negative, and because a negative Python index wraps around the end of the string instead of raising, the scanning loop never terminates. It runs synchronously on the single-threaded reactor, so one `SEARCH` command holds the reactor at full CPU forever and every other connection stops being served.\n\n## Details\n\nMeeting an inline literal, `parseNestedParens` reads the size between the braces and advances the cursor past the body:\n\n```python\n# twisted/mail/imap4.py  parseNestedParens\nliteralSize = int(s[i + 1 : end])          # no sign check\ncontentStack[-1].append((s[end + 3 : end + 3 + literalSize],))\ni = end + 3 + literalSize                    # negative size -> i goes negative\n```\n\n`int(b\"-100\")` is `-100`, so `i` goes negative; the loop condition `i < len(s)` stays true and `s[i : i + 1]` on a negative index never raises, so the cursor cycles forever. The `_literalStringLimit` guard only covers the synchronizing-literal continuation path, not this inline branch. The call is reached from `select_SEARCH` through `arg_searchkeys`, dispatched only in the selected state, so a valid login and a selected mailbox (any low-privilege account) suffice. It runs in the reactor thread, and the connection timeout cannot fire because the reactor itself is frozen.\n\nAffected product: Twisted (`twisted.mail`), the IMAP4 server `twisted.mail.imap4.IMAP4Server`\nAffected versions: 26.4.0 and earlier\n\n## PoC\n\nLog in, select a mailbox, and send a `SEARCH` whose literal size is negative:\n\n```text\nC: t1 LOGIN testuser password-test\nC: t2 SELECT INBOX\nC: t3 SEARCH {-100}zzzzzzzzzz\n```\n\nThe server never responds and one core stays at 100 percent. In a measured run",
-      "link": "https://github.com/advisories/GHSA-2qrf-pqgx-qh9v",
-      "published": "2026-10-23T20:46:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115774"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115778",
-      "title": "Twisted: Unauthenticated Remote Denial of Service in the Twisted conch Telnet Transport via an Unbounded Subnegotiation Buffer",
-      "summary": "## Summary\n\nAn allocation-without-limits vulnerability (CWE-770) in the Twisted conch telnet transport lets any unauthenticated remote peer exhaust server memory over a single connection. When the peer opens a telnet subnegotiation with `IAC SB` and then streams bytes without ever sending the `IAC SE` terminator, every byte is appended to a per-connection buffer that has no maximum length. The buffer persists across reads and is released only on the terminator the attacker withholds, so it grows without bound until the process is killed.\n\n## Details\n\nThe option-negotiation state machine in `Telnet.dataReceived` enters the `subnegotiation` state on `IAC SB` and sets an empty command list. In that state every non-`IAC` byte is appended to the list with no length check:\n\n```python\n# src/twisted/conch/telnet.py  (Telnet.dataReceived)\nelif self.state == \"subnegotiation\":\n    if b == IAC:\n        self.state = \"subnegotiation-escaped\"\n    else:\n        self.commands.append(b)      # unbounded: no len(self.commands) check\n```\n\n`self.commands` is an instance attribute that persists across `dataReceived` calls and is deleted only when `IAC SE` completes the subnegotiation. Negotiation runs at the transport layer before authentication, and the bytes are consumed inside `dataReceived` before any application callback, so an application cannot impose a bound. Twisted caps other parser buffers, for example `NetstringReceiver.MAX_LENGTH`, but not this one.\n\nAffected product: Twisted, `twisted.conch.telnet` transport\nAffected versions: confirmed against 26.4.0\n\n## PoC\n\nOn any endpoint that exposes the Twisted telnet transport, such as the Twisted manhole telnet service, open one connection and send the two bytes `IAC SB` (`0xFF 0xFA`), then stream any non-`0xFF` bytes continuously and never send the `IAC SE` terminator (`0xFF 0xF0`). No credentials are required, because option negotiation runs before authentication.\n\nEvery byte is appended to the per-connection subnegotiation buffer",
-      "link": "https://github.com/advisories/GHSA-cwm5-jh59-mwxr",
-      "published": "2026-10-23T20:45:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115778"
       ],
       "is_zero_day": false,
       "is_high_severity": true

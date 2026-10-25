@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">23</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-24 19:55 UTC</div>
+            <div class="generated">Updated 2026-10-25 02:01 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -266,28 +266,6 @@ The critical-severity vulnerabilities are listed below -
 
 </article>
 
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-834v-8h66-3h79" target="_blank" rel="noopener">Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115895</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>## Summary
-
-The ESM compiler in `happy-dom@20.14.5` does not validate imported local binding aliases before interpolating them into generated JavaScript.
-
-As a result, an invalid ESM import alias can be transformed into a valid JavaScript destructuring default initializer and executed.
-
-This appears to be an alternate injection path and incomplete remediation of GHSA-6q6h-j7hj-3r64 / CVE-2026-3394…</p>
-
-        </article>
-
 <article class="card card-high">
   <div class="card-top">
     <span class="badge badge-high">🟡 High</span>
@@ -319,192 +297,6 @@ This appears to be an alternate injection path and incomplete remediation of GHS
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6w3r-xr62-4xcp" target="_blank" rel="noopener">virtualenv: Bash prompt values can change meaning under older compatibility modes</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-113723</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>## Summary
-
-Caller-supplied prompt text can become executable syntax in the bash activation prompt. An attacker must influence the
-value passed to virtualenv, and a user must subsequently activate the environment and draw the prompt.
-
-## Affected area
-
-Bash runs with compatibility level 4.2 and draws the environment prompt. Its replacement-string behavior differs from
-newer compatibility modes, le…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4qv8-2p9j-2685" target="_blank" rel="noopener">undici vulnerable to Denial of Service via unbounded memory in the EventSource parser</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-109924</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Impact
-
-undici&#x27;s `EventSource` client can be driven to exhaust process memory by a malicious or compromised Server-Sent Events peer. By sending millions of tiny completed `data:` fields with no blank event separator, or a single unfinished line split across many chunks, the parser retains a growing amount of per-field and per-chunk state. The byte-based `maxEventSize` and `maxResponseSize` lim…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2wqp-q3c6-ccj5" target="_blank" rel="noopener">MLflow: SSRF on unauthenticated MLflow servers via third-party scorer kwargs in the scorer invoke, register, and GenAI evaluate endpoints</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115886</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Summary
-MLflow&#x27;s tracking server exposes `POST /ajax-api/3.0/mlflow/scorer/invoke` with **no authentication**, and the handler reflectively instantiates an attacker-named class from attacker-supplied JSON with unconstrained constructor kwargs. With the optional `trulens` + `trulens-providers-litellm` packages installed, an unauthenticated attacker can force the server to make an outbound HTTP …</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2g95-wg33-c5x2" target="_blank" rel="noopener">filelock: SoftFileLock evicts a fresh lock file whose watched age another local user&#x27;s pre-dated file passed on through inode reuse</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-112906</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-23</span>
-  </div>
-  <p class='summary'>`SoftFileLock` and `MarkerSoftFileLock` evict an unparsable marker (the lock file at `&lt;path&gt;`, whose presence says a process holds the lock) once a waiting contender has watched it unchanged for two seconds. `SoftFileLease` expires a lease the same way. The watch tells two looks apart by the marker&#x27;s modification time (mtime) and inode number (the kernel&#x27;s identity for a file, independent of its n…</p>
-
-</article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-crv4-6mhj-j5jh" target="_blank" rel="noopener">filelock: SoftFileLock stale-break restore follows a swapped-in symbolic link and hard-links a file of the user running the lock into the lock directory</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-112914</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-23</span>
-  </div>
-  <p class='summary'>When a soft-lock stale break finds that the marker (the lock file at `&lt;path&gt;`) it renamed aside was a live one recreated by a successor, the restore branch of `break_lock_file()` checks the break name with `lstat` (a check that reads a name without following a symbolic link) and then calls `os.link(break_path, lock_file)` by name. On CPython 3.12 and later on Linux (and on macOS) that call follows…</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-654x-cwwv-5j9c" target="_blank" rel="noopener">Pillow: Arrow export leaks stale heap memory when PILLOW_ALIGNMENT &gt; 1</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-114501</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Summary
-
-When [`PILLOW_ALIGNMENT`](https://pillow.readthedocs.io/en/stable/reference/block_allocator.html#memory-pools) is set above 1, exporting an image to Arrow returns uninitialized heap memory mixed in with the pixel data. That memory can include pixels from images the process freed earlier. 
-
-### Details
-
-With an alignment above 1, the default allocator pads each row up to `aligned_lines…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2rqm-h6hv-g79v" target="_blank" rel="noopener">odf-kit has HTML injection leading to XSS in odsToHtml() via unescaped style attribute values</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-113787</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>### Summary
-
-ODF style values are interpolated into `style=&quot;...&quot;` attributes without HTML-escaping in odf-kit&#x27;s ODS to-HTML renderer (`odsToHtml()`). A double-quote character inside an attacker-controlled style value breaks out of the attribute, allowing arbitrary HTML/attribute injection — and therefore script execution (XSS) — from a crafted `.ods` file wherever the rendered output is inserted a…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4v6f-7vjh-6x4m" target="_blank" rel="noopener">Strands Agents SDK: Exposure of data element to wrong session in the A2A Server</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115419</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>**Summary**  
-Strands Agents SDK is an open-source SDK, available for Python (strands-agents) and TypeScript (@strands-agents/sdk), for building and running AI agents. An issue exists where, under certain circumstances, the Agent2Agent (A2A) server shares conversation history across callers with different context\_id values, allowing one caller to read and influence another caller&#x27;s session.  
-
-…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2qrf-pqgx-qh9v" target="_blank" rel="noopener">Twisted: Denial of Service in the Twisted IMAP4 Server via a Negative Literal Size in SEARCH</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115774</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>## Summary
-
-An infinite-loop vulnerability (CWE-835) in the Twisted IMAP4 server lets an authenticated client freeze the whole process with one small command. `twisted.mail.imap4.parseNestedParens` reads an IMAP literal size with `int()` and never rejects a negative value. A negative size such as `{-100}` drives the parser cursor negative, and because a negative Python index wraps around the end o…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cwm5-jh59-mwxr" target="_blank" rel="noopener">Twisted: Unauthenticated Remote Denial of Service in the Twisted conch Telnet Transport via an Unbounded Subnegotiation Buffer</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115778</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-23</span>
-          </div>
-          <p class='summary'>## Summary
-
-An allocation-without-limits vulnerability (CWE-770) in the Twisted conch telnet transport lets any unauthenticated remote peer exhaust server memory over a single connection. When the peer opens a telnet subnegotiation with `IAC SB` and then streams bytes without ever sending the `IAC SE` terminator, every byte is appended to a per-connection buffer that has no maximum length. The buf…</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">
