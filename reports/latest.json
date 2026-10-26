@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-26T02:03:15.279920+00:00",
-  "total": 13,
+  "generated": "2026-10-26T11:43:17.263058+00:00",
+  "total": 14,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 10,
   "enriched": 0,
   "findings": [
     {
@@ -33,6 +33,24 @@
         "research"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+      "title": "PHP2Shell security flaws now sucessfully exploited in the wild",
+      "summary": "Two critical RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619), collectively tracked as PHP2Shell, have been successfully exploited in the wild. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+      "published": "2026-10-26T09:19:57+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
