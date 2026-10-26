@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-26T11:43:17.263058+00:00",
-  "total": 14,
+  "generated": "2026-10-26T17:46:54.079057+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 8,
   "enriched": 0,
   "findings": [
     {
@@ -31,39 +31,6 @@
         "cloud",
         "threat-intel",
         "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
-      "title": "PHP2Shell security flaws now sucessfully exploited in the wild",
-      "summary": "Two critical RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619), collectively tracked as PHP2Shell, have been successfully exploited in the wild. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
-      "published": "2026-10-26T09:19:57+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
-      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
-      "summary": "A single hacked device on a Tailscale network can be used to gain root access to other servers it can reach, according to a security researcher who published the findings this week.\n\nThe attack requires two things: Tailscale SSH set up to allow port forwarding, and an attacker who already controls one device that the network's access rules permit to connect to the target.\n\nThe findings were",
-      "link": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
-      "published": "2026-10-25T17:44:09+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -212,19 +179,22 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.wiz.io/blog/cve-2026-111497-brotli-rce-node-js",
-      "title": "Broccoli2shell: Everything You Need To Know About The Critical Brotli Decoder Vulnerability",
-      "summary": "Detect and mitigate CVE-2026-111497, a critical Brotli decoder vulnerability enables remote code execution.",
-      "link": "https://www.wiz.io/blog/cve-2026-111497-brotli-rce-node-js",
-      "published": "2026-10-25T14:46:53+00:00",
-      "source": "Wiz Research",
+      "id": "https://snyk.io/blog/php-patches-critical-unauthenticated-rces/",
+      "title": "PHP Patches Two Critical Unauthenticated RCEs (CVE-2026-109618, CVE-2026-109619): [Updated for CVE-2026-115560]",
+      "summary": "Two critical flaws in PHP\u2019s request lifecycle can enable unauthenticated remote code execution. Upgrade to a fixed release or install a vendor backport for older versions.",
+      "link": "https://snyk.io/blog/php-patches-critical-unauthenticated-rces/",
+      "published": "2026-10-26T04:00:00+00:00",
+      "source": "Snyk Vulnerability Research",
       "tags": [
         "cloud",
-        "research",
-        "misconfig"
+        "container",
+        "dependencies",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2026-111497"
+        "CVE-2026-109618",
+        "CVE-2026-109619",
+        "CVE-2026-115560"
       ],
       "is_zero_day": false,
       "is_high_severity": true
