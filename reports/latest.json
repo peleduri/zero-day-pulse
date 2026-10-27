@@ -1,10 +1,48 @@
 {
-  "generated": "2026-10-27T16:57:36.639749+00:00",
-  "total": 33,
-  "kev": 0,
+  "generated": "2026-10-27T21:32:41.704394+00:00",
+  "total": 44,
+  "kev": 2,
   "zero_day": 13,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-48356",
+      "title": "CVE-2026-48356 \u2014 Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "summary": "Vendor: Adobe | Product: Commerce and Magento. Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-10)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48356",
+      "published": "2026-10-27",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-48356"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-111497",
+      "title": "CVE-2026-111497 \u2014 Google Brotli Unchecked Return Value Vulnerability",
+      "summary": "Vendor: Google | Product: Brotli. Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-10)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
+      "published": "2026-10-27",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-111497"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -250,6 +288,186 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116691",
+      "title": "MLflow CrewAI autologging records LLM provider API keys in logged trace spans",
+      "summary": "### Summary\n\n`mlflow.crewai.autolog()` leaks CrewAI LLM provider API keys into MLflow trace telemetry.\n\nWhen a CrewAI `Agent` is instrumented with MLflow autologging, MLflow serializes the agent's `__dict__` and converts its fields to strings. The `llm` field contains the CrewAI LLM object, whose string representation includes its `api_key` in plaintext.\n\nAs a result, an application that calls `mlflow.crewai.autolog()` can unintentionally send its LLM provider API key to the MLflow trace backend or configured OTLP destination.\n\nThe application does not need to explicitly log the credential or place it in a span attribute. The credential is extracted automatically by MLflow's instrumentation.\n\nThis was verified on **MLflow 3.16.0** with **CrewAI 1.15.18** using MLflow's own OTLP exporter. The fake credential appeared in **5 attribute locations across 2 spans**.\n\n### Details\n\nThe primary issue is in:\n\n`mlflow/crewai/autolog.py::_get_agent_attributes()`\n\nThe function walks the CrewAI `Agent.__dict__` and converts agent fields to strings. `tools` and `embedder` receive special handling, but credential-bearing objects such as the following are not sanitized:\n\n* `llm`\n* `function_calling_llm`\n* `agent_executor`\n* `crew`\n\nFor example, `agent.llm` is a CrewAI `LLM` object. In CrewAI 1.15.18, the underlying LLM model contains `api_key` as a normal field. Its string representation therefore contains the credential:\n\n```text\nllm_type='openai' model='gpt-4.1-mini' ... api_key='sk-proj-...' ...\n```\n\nMLflow subsequently stores this string as a span attribute.\n\nThere is an important indication that this is an unintended disclosure: MLflow's dedicated LLM attribute extraction already explicitly excludes `api_key` in `_get_llm_attributes()`. The LLM span therefore does not expose the credential, while the broader Agent `__dict__` serialization bypasses that protection.\n\nThere is also a second, independent serialization path in:\n\n`mlflow/crewai/autolog.py::_construct_full_inputs()`\n\n",
+      "link": "https://github.com/advisories/GHSA-j7qq-vr8c-xvw3",
+      "published": "2026-10-27T21:26:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116691"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116692",
+      "title": "MLflow vulnerable to remote code execution on unauthenticated servers via third-party scorer deserialization importing caller-placed artifact modules",
+      "summary": "## Summary\n\nMLflow 3.12.0 introduced registration and deserialization support for third-party scorers in OSS MLflow. During scorer deserialization, the server accepts a request-controlled Python module path beneath one of four allowed package prefixes, imports that module, obtains a request-controlled class, and instantiates it synchronously.\n\nAn HTTP caller can combine this behavior with MLflow's built-in experiment, run, and artifact-upload endpoints:\n\n1. Create an experiment whose local artifact location points to a writable allowed scorer package.\n2. Create a run, causing MLflow to allocate `<artifact_location>/<run_id>/artifacts/`.\n3. Upload a Python module into that run artifact directory.\n4. Submit a serialized third-party scorer whose module path resolves to the uploaded file.\n5. Trigger server-side import and class construction through `/ajax-api/3.0/mlflow/scorer/invoke`.\n\nOn the default no-auth server using the official MLflow v3.14.0 image, this produces unauthenticated arbitrary Python code execution with the privileges of the MLflow server process. The reproduced image runs the process as uid 0 and permits writes to its installed Python package tree.\n\nThe attached proof of concept is intentionally harmless. The uploaded constructor performs one action only: it writes a random marker beside its own uploaded run artifact. The marker is then downloaded through MLflow's run-artifact endpoint and checked for an exact match.\n\n## Technical details\n\n### 1. The allow-list accepts attacker-created descendants\n\nAt release commit `86cd7f5a1dc25a1387ad07c87811bbc30f62951c`, `mlflow/genai/scorers/scorer_utils.py` defines these allowed roots:\n\n```python\nTHIRD_PARTY_SCORER_ALLOWED_MODULES = frozenset({\n    \"mlflow.genai.scorers.ragas\",\n    \"mlflow.genai.scorers.deepeval\",\n    \"mlflow.genai.scorers.trulens\",\n    \"mlflow.genai.scorers.phoenix\",\n})\n```\n\nIn `mlflow/genai/scorers/base.py`, the deserializer accepts either an exact root or any descendant:\n\n```python\nmodule_p",
+      "link": "https://github.com/advisories/GHSA-26p8-2jq9-3vq9",
+      "published": "2026-10-27T21:26:32Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116692"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116693",
+      "title": "dd-trace: ReDOS in URL query string obfuscation",
+      "summary": "### Summary\n\nA regular expression used to obfuscate URL query strings can consume excessive CPU when processing certain attacker-controlled input. This can stall request processing and cause denial of service in applications using affected HTTP tracing integrations.\n\n### Details\n\nThe default query-string obfuscation pattern can exhibit excessive backtracking. The pattern is applied synchronously when recording HTTP URL metadata, allowing query-string processing to occupy application resources for an extended period.\n\nAs a workaround, set DD_TRACE_OBFUSCATION_QUERY_STRING_REGEXP to the fixed regex below, then restart the application.\n\n```\nDD_TRACE_OBFUSCATION_QUERY_STRING_REGEXP='(?:(?:\"|%22)?)(?:(?:old[-_]?|new[-_]?)?p(?:ass)?w(?:or)?d(?:1|2)?|pass(?:[-_]?phrase)?|secret|(?:api[-_]?|private[-_]?|public[-_]?|access[-_]?|secret[-_]?|app(?:lication)?[-_]?)key(?:[-_]?id)?|token|consumer[-_]?(?:id|key|secret)|sign(?:ed|ature)?|auth(?:entication|orization)?)(?:(?:\\s|%20)*(?:=|%3D)[^&]+|(?:\"|%22)(?:\\s|%20)*(?::|%3A)(?:\\s|%20)*(?:\"|%22)(?:%2[^2]|%[^2]|[^\"%])+(?:\"|%22))|(?:bearer(?:\\s|%20)+[a-z0-9._\\-]+|token(?::|%3A)[a-z0-9]{13}|gh[opsu]_[0-9a-zA-Z]{36}|(?:(?<![\\w-])|(?<=%[0-9a-f]{2}))ey[I-L][\\w-]+(?:=|%3D)*\\.ey[I-L][\\w-]+(?:=|%3D)*(?:\\.(?:[\\w.+/=-]|%3D|%2F|%2B)+)?|-{5}BEGIN(?:[a-z\\s]|%20)+PRIVATE(?:\\s|%20)KEY-{5}[^\\-]+-{5}END(?:[a-z\\s]|%20)+PRIVATE(?:\\s|%20)KEY(?:-{5})?(?:\\n|%0A)?|(?:ssh-(?:rsa|dss)|ecdsa-[a-z0-9]+-[a-z0-9]+)(?:\\s|%20|%09)+(?:[a-z0-9/.+]|%2F|%5C|%2B){100,}(?:=|%3D)*(?:(?:\\s|%20|%09)+[a-z0-9._-]+)?)'\n```\n\n### Proof of concept\n\nDetailed triggering inputs and reproduction steps are omitted from this advisory. The patched version includes regression coverage for the affected behavior.\n\n### Impact\n\nRegular expression denial of service (ReDoS) affecting applications that process attacker-controlled URL query strings through the vulnerable obfuscation pattern. Successful exploitation can cause excessive CPU consumption, prolonged request latency, and service unav",
+      "link": "https://github.com/advisories/GHSA-x94g-w73q-hpcw",
+      "published": "2026-10-27T21:07:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116693"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116684",
+      "title": "Model Context Protocol Python SDK: Server bearer-token authentication accepts tokens issued for a different resource server",
+      "summary": "### Summary\nIn affected versions, the SDK's server-side bearer authentication had no way to check that a token was issued for your server (its audience). Where one authorization server issues tokens for several services, a valid token for another service was also accepted by your MCP server.\n\n### Am I affected?\nYes, if your HTTP server uses the SDK's bearer authentication (`auth=AuthSettings(...)` with `token_verifier=`), its authorization server also issues tokens for other services, and your `TokenVerifier` does not check the token's audience (`aud`) itself.\n\nAffected versions:\n\n- `mcp` 1.10.0 through 1.29.1\n- `mcp` 2.0.0 through 2.1.1\n\n### Fix\nUpgrade to:\n\n- 1.x: `mcp` 1.30.0 or later\n- 2.x: `mcp` 2.2.0 or later\n\n**Upgrading alone changes nothing.** The patched versions add a `validate_token_resource` setting that is off unless you set it. To turn the check on, make both of these changes together:\n\n1. Set `validate_token_resource=True` in `AuthSettings`, with `resource_server_url` set to the audience your authorization server puts in tokens for your server.\n2. Return the token's audience from `verify_token()` as `AccessToken.resource`.\n\nA token for another service then gets `401`. With only the first change, every request gets `401`.\n\nIf your `TokenVerifier` already checks the audience, set `validate_token_resource=False` to silence the deprecation warning. The setting will default to `True` in 3.0.\n\nIf you cannot upgrade yet, reject any token whose `aud` does not include your server inside `verify_token()`. That closes the issue on every version.",
+      "link": "https://github.com/advisories/GHSA-w4fh-qvv9-3v23",
+      "published": "2026-10-27T21:06:59Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116684"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116685",
+      "title": "Model Context Protocol Python SDK: HTTP client transports followed cross-origin redirects carrying custom headers and bodies",
+      "summary": "### Summary\nIn affected versions, the SDK's Streamable HTTP and SSE client transports followed HTTP redirects to any host. If the configured MCP endpoint answered with a redirect to a different origin:\n\n- custom headers set on the client (for example an `X-API-Key` credential) were sent to that origin, and\n- on a `307` or `308` redirect the request body was re-sent there too.\n\nThe SDK's OAuth client providers followed redirects on their own discovery, registration and token requests in the same way.\n\nA lone `Authorization` bearer header was not exposed; the HTTP library already drops it on cross-origin redirects.\n\nAnyone able to make an endpoint you trust redirect elsewhere (a stale redirect to a lapsed domain, a misrouted proxy rule, redirect logic an attacker can influence) could capture that material. A server that is itself malicious gains nothing this way; it already receives your requests directly.\n\n### Am I affected?\nYes, if your code uses the SDK as an MCP client over HTTP through any of:\n\n- `streamable_http_client` (on 2.x also `Client` given an `http://` or `https://` URL)\n- `streamablehttp_client` or `sse_client`\n- `ClientSessionGroup` with HTTP server parameters\n- the internal `create_mcp_http_client` helper\n\nThis includes an HTTP client you passed in yourself with `follow_redirects=True`.\n\nAffected versions: 1.8.0 through 1.29.1, and 2.0.0 through 2.1.1.\n\nNot affected:\n\n- MCP servers\n- stdio clients\n- a client you supplied with `follow_redirects` left at its default of `False`\n\n### Fix\nUpgrade to `mcp` 1.30.0 (1.x) or 2.2.0 (2.x) or later; no code changes are needed.\n\nThe transports, and the OAuth providers' own requests, now follow a redirect only when it stays on the endpoint's origin (same scheme, host and port, or an `http` to `https` upgrade on the same host) and keeps the request method. Any other redirect is not followed and the request fails with an error naming the target (`MCPError` on 2.x, `httpx.HTTPStatusError` on 1.x), whichever HTTP clien",
+      "link": "https://github.com/advisories/GHSA-5h93-6whr-6q8j",
+      "published": "2026-10-27T21:05:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116685"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116686",
+      "title": "Model Context Protocol Python SDK: Client fetched server-chosen $ref URLs while validating tool results against output schemas",
+      "summary": "### Summary\nIn affected versions, when a connected MCP server declared an `outputSchema` for a tool, the SDK's client validated each `call_tool` result with `jsonschema`'s default resolver, which fetches any `$ref` it cannot resolve locally by opening the URL. A server could therefore put an `http://`, `https://` or `file://` reference in a tool's output schema and make the client:\n\n- request that URL, or read that local file, from the client's own network position on every call of the tool (the content was used only as a schema and never sent back to the server), and\n- stall: the fetch ran synchronously on the event loop with no timeout, so a target that accepted the connection and then went quiet froze every session in the process for as long as it held the connection.\n\n### Am I affected?\nYes, if your application uses the SDK as an MCP client (`ClientSession` over any transport, `ClientSessionGroup`, or the 2.x `Client`) and calls tools on servers you do not fully control. There was no setting that turned the validation off.\n\nAffected versions: 1.10.0 through 1.29.1, and 2.0.0 through 2.1.1.\n\nNot affected: applications that only build servers. If nothing in your code uses `ClientSession`, `ClientSessionGroup` or the 2.x `Client` class, you are not affected.\n\n### Fix\nUpgrade to `mcp` 1.30.0 (1.x) or 2.2.0 (2.x) or later. The client now resolves references only within the schema document the server sent (plus the standard JSON Schema metaschemas), so result validation performs no network or file access. A tool whose output schema points outside its own document fails at call time with `RuntimeError` (`Invalid schema for tool ...`); in-document references such as `#/$defs/...` work as before.\n\nUntil you can upgrade, call tools only on servers you trust. As a partial stopgap, skip tools whose `outputSchema` contains an `$id`, or a `$ref` / `$dynamicRef` that does not start with `#`.",
+      "link": "https://github.com/advisories/GHSA-rwrf-2pqf-9j8j",
+      "published": "2026-10-27T21:05:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116686"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116679",
+      "title": "Neko: Authorization bypass in legacy WebRTC input handling",
+      "summary": "### Impact\n\nWhen legacy mode is enabled and `session.implicit_hosting` is enabled, the legacy WebRTC data channel incorrectly authorizes input events due to a logic error in `LegacyIsHost()`.\n\nAs a result, an authenticated room member may be able to send mouse and keyboard input through the legacy WebRTC control channel even when controls are locked or the member would otherwise not be authorized through the modern control API.\n\nThe issue affects only the legacy WebRTC input path. The modern HTTP/WebSocket control path correctly enforces authorization checks and is not affected.\n\nTo exploit this issue, an attacker must:\n\n* Be authenticated as a room member.\n* Successfully establish a WebRTC connection.\n* Access a deployment using the legacy WebRTC input handler.\n\nNo unauthenticated access or privilege escalation outside the application is possible.\n\n### Patches\n\nThe issue has been fixed in **[v3.1.5](https://github.com/m1k1o/neko/releases/tag/v3.1.5)** by correcting the authorization logic in the legacy WebRTC handler.\n\nUsers should upgrade to **[v3.1.5](https://github.com/m1k1o/neko/releases/tag/v3.1.5)** or later. Fix: *[395ca1a](https://github.com/m1k1o/neko/commit/395ca1a6f62b7b0e270e654d366a2d57b8042efd)*\n\n### Workarounds\n\nUsers who cannot immediately upgrade can mitigate the issue by one of the following:\n\n* Disable legacy mode if it is not required.\n* Disable implicit hosting (`session.implicit_hosting=false`).\n* Restrict access to trusted authenticated users.\n\n### Credits\n\nThanks to @KasperBuilds for responsibly disclosing this vulnerability and reaching out directly. This contribution helped strengthen the project, and the whole community benefits from it.",
+      "link": "https://github.com/advisories/GHSA-5cp7-fp4j-wwcv",
+      "published": "2026-10-27T21:04:57Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116679"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116676",
+      "title": "Atlantis: OS command injection through PR-controlled Terraform workspace enables RCE during plan",
+      "summary": "### Summary\n\nAtlantis passes the Terraform `workspace` value from a pull request's `atlantis.yaml` into a shell command without quoting or escaping it.\n\nA contributor whose pull request is eligible for an Atlantis plan can include shell metacharacters in the workspace name and execute arbitrary commands as the Atlantis service account. This does not require custom workflows, `allow_custom_workflows`, or permission to run `terraform apply`.\n\nThe executed command inherits the Atlantis process environment, which commonly contains cloud-provider, Terraform, and VCS credentials.\n\n### Details\n\nVerified against current `upstream/main` commit `92ce5c51d1a050357e44df3535483425e59fa984` on August 13, 2026.\n\nThe vulnerable data flow is:\n\n1. The PR-controlled project workspace is validated in [`server/core/config/raw/project.go`](https://github.com/runatlantis/atlantis/blob/92ce5c51d1a050357e44df3535483425e59fa984/server/core/config/raw/project.go#L139-L149).\n\n   Validation rejects only `..`, `/`, and `\\`. Shell metacharacters such as `;`, `#`, `$`, redirections, and whitespace remain permitted.\n\n2. The workspace is passed directly as a Terraform command argument in [`server/core/runtime/workspace_step_runner_delegate.go`](https://github.com/runatlantis/atlantis/blob/92ce5c51d1a050357e44df3535483425e59fa984/server/core/runtime/workspace_step_runner_delegate.go#L86-L96):\n\n   ```go\n   []string{workspaceCmd, \"select\", ctx.Workspace}\n   ```\n\n3. Terraform arguments are concatenated into a single string using `strings.Join(args, \" \")` in [`server/core/terraform/tfclient/terraform_client.go`](https://github.com/runatlantis/atlantis/blob/92ce5c51d1a050357e44df3535483425e59fa984/server/core/terraform/tfclient/terraform_client.go#L451-L468):\n\n   ```go\n   tfCmd := fmt.Sprintf(\"%s %s\", binPath, strings.Join(args, \" \"))\n   ```\n\n4. The resulting string is executed through `sh -c` in [`server/core/terraform/tfclient/terraform_client.go`](https://github.com/runatlantis/atlantis/blob/92ce5c51d1",
+      "link": "https://github.com/advisories/GHSA-rjh2-4xgw-p2hj",
+      "published": "2026-10-27T21:04:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116676"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116682",
+      "title": "FileBrowser: Symlink following escapes user scope allowing arbitrary file read outside the served directory",
+      "summary": "## Summary\n\nFile read paths resolve symbolic links with `filepath.EvalSymlinks` and then operate on the resolved target without re-checking that the target still lies inside the user's source/scope. \n\nA symlink located inside a user's accessible directory that points outside the scope (for example to `/etc/passwd`, another tenant's directory, SSH keys, or container secrets) is followed transparently, and its contents are served through the normal download, preview, media, and OnlyOffice endpoints. Any authenticated user with download access can read files anywhere the server process can, whenever such a symlink is reachable in their scope. \n\nThe same symlink-following read path is used by the public share endpoints, which are authorized only by a share hash and not by any account, so when a public share exposes a directory that contains such a symlink, an unauthenticated attacker holding only the share link reads files outside the scope with no credential.\n\n## Details\n\n**1. Symlink resolution performs no containment check (`indexing/iteminfo/utils.go:110-119`)**\n\n```go\nfunc ResolveSymlinks(path string) (string, bool, error) {\n    resolvedPath, err := filepath.EvalSymlinks(path)   // follows the link to its real target\n    if err != nil {\n        return path, false, fmt.Errorf(\"could not resolve symlinks for %s: %v\", path, err)\n    }\n    info, err := os.Lstat(resolvedPath)\n    // ...\n    return resolvedPath, IsDirectory(info), nil         // returned with no scope validation\n}\n```\n\nThere is no comparison of `resolvedPath` against the index/scope root.\n\n**2. `GetRealPath` returns the resolved target unchecked (`indexing/indexingFiles.go:991-1008`)**\n\n```go\nabsolutePath, err := filepath.Abs(joinedPath)\n// ...\nrealPath, isDir, err := iteminfo.ResolveSymlinks(absolutePath)   // escapes scope here\n// ...\nreturn realPath, isDir, err\n```\n\n`realPath` is then used by file handlers to open and serve the file. No caller re-validates that `realPath` is a descendant of the user's",
+      "link": "https://github.com/advisories/GHSA-mgqf-5mf5-prfj",
+      "published": "2026-10-27T21:04:40Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116682"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116683",
+      "title": "CTFer.io's CTFd Terraform Provider allows a local or remote attacker to read team passwords in state as non sensitive values",
+      "summary": "### Impact\n\nCTFer.io's CTFd Terraform Provider stores `ctfd_team.password` as non-sensitive values (CWE-522). A local or remote attacker, who can have access to the Terraform state, can read team passwords without the need for the state password for decryption.\n\n### Patches\n\nPatched in v2.8.2.\n\n### Workarounds\n\nNo workaround exist, yet CTFer.io recommends you keep your state in safe environments with a limited set of users who can access it as a good practice to avoid exploitation of this vulnerability.",
+      "link": "https://github.com/advisories/GHSA-vg84-c5mg-76xh",
+      "published": "2026-10-27T19:00:50Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116683"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -538,25 +756,6 @@
       ],
       "cve_ids": [
         "CVE-2026-111497"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/discover-and-remediate-php2shell-exposure-with-tenable",
-      "title": "Discover and remediate PHP2Shell exposure with Tenable",
-      "summary": "Learn how to use Tenable solutions to find vulnerable PHP versions, prioritize remediation, and patch the critical PHP2Shell vulnerabilities (CVE-2026-109618 and CVE-2026-109619) faster. Key takeaways The PHP2Shell vulnerabilities ( CVE-2026-109618 and CVE-2026-109619 ) put security teams in a race against attackers. PHP runs on more than 70% of websites, so organizations need to quickly find where they\u2019re affected and update PHP to fixed versions. Tenable helps you find PHP2Shell across your attack surface. Tenable One Attack Surface Management discovers externally facing PHP assets. Tenable One Vulnerability Management and Tenable Security Center provide detections, including local checks for Linux distribution packages. Tenable One Web App Scanning assesses web applications, and Tenable One Cloud Exposure covers cloud workloads. Tenable accelerates remediation. Tenable Patch Management matches exposures to the right patches, launches patch workflows, and validates fixes with post-scan checks. Tenable One with Tenable Hexa AI lets you find vulnerable assets, create exposure initiatives, and generate remediation tickets with simple prompts. Respond faster with Tenable solutions The recently disclosed PHP2Shell vulnerabilities ( CVE-2026-109618 and CVE-2026-109619 ) have put security teams in a race against attackers to remediate or mitigate exposure before their systems are targeted. PHP runs on more than 70% of websites, and many of those sites run unsupported, legacy branches that no longer receive upstream support. Organizations need to quickly find where they\u2019re affected and update PHP to fixed versions . To help cybersecurity teams accelerate emergency response, this blog outlines tips for using the Tenable solutions to identify vulnerable versions of PHP, prioritize remediation decisions, and implement patches as quickly as possible. External Attack Surface Management Tenable One Attack Surface Management (ASM) helps you discover externally facing assets runn",
-      "link": "https://www.tenable.com/blog/discover-and-remediate-php2shell-exposure-with-tenable",
-      "published": "2026-10-26T19:48:07+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
       ],
       "is_zero_day": false,
       "is_high_severity": true

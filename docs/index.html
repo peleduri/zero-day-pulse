@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">44</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-27 16:57 UTC</div>
+            <div class="generated">Updated 2026-10-27 21:32 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48356" target="_blank" rel="noopener">CVE-2026-48356 — Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-48356</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-27</span>
+  </div>
+  <p class='summary'>Vendor: Adobe | Product: Commerce and Magento. Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim&#x27;s account or session. Required action: Apply mitigations in accordance with vendor instructions, ensuring co…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-111497" target="_blank" rel="noopener">CVE-2026-111497 — Google Brotli Unchecked Return Value Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-111497</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-27</span>
+  </div>
+  <p class='summary'>Vendor: Google | Product: Brotli. Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream. Required action: Apply mitigations in accordance with vendor instruction…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -360,6 +392,217 @@ The `FileSessionManager` defaults to storing session data in `/tmp/strands/sessi
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j7qq-vr8c-xvw3" target="_blank" rel="noopener">MLflow CrewAI autologging records LLM provider API keys in logged trace spans</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116691</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+
+`mlflow.crewai.autolog()` leaks CrewAI LLM provider API keys into MLflow trace telemetry.
+
+When a CrewAI `Agent` is instrumented with MLflow autologging, MLflow serializes the agent&#x27;s `__dict__` and converts its fields to strings. The `llm` field contains the CrewAI LLM object, whose string representation includes its `api_key` in plaintext.
+
+As a result, an application that calls `ml…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-26p8-2jq9-3vq9" target="_blank" rel="noopener">MLflow vulnerable to remote code execution on unauthenticated servers via third-party scorer deserialization importing caller-placed artifact modules</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116692</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>## Summary
+
+MLflow 3.12.0 introduced registration and deserialization support for third-party scorers in OSS MLflow. During scorer deserialization, the server accepts a request-controlled Python module path beneath one of four allowed package prefixes, imports that module, obtains a request-controlled class, and instantiates it synchronously.
+
+An HTTP caller can combine this behavior with MLflow&#x27;s…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x94g-w73q-hpcw" target="_blank" rel="noopener">dd-trace: ReDOS in URL query string obfuscation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116693</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+
+A regular expression used to obfuscate URL query strings can consume excessive CPU when processing certain attacker-controlled input. This can stall request processing and cause denial of service in applications using affected HTTP tracing integrations.
+
+### Details
+
+The default query-string obfuscation pattern can exhibit excessive backtracking. The pattern is applied synchronously w…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-w4fh-qvv9-3v23" target="_blank" rel="noopener">Model Context Protocol Python SDK: Server bearer-token authentication accepts tokens issued for a different resource server</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116684</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+In affected versions, the SDK&#x27;s server-side bearer authentication had no way to check that a token was issued for your server (its audience). Where one authorization server issues tokens for several services, a valid token for another service was also accepted by your MCP server.
+
+### Am I affected?
+Yes, if your HTTP server uses the SDK&#x27;s bearer authentication (`auth=AuthSettings(...)`…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5h93-6whr-6q8j" target="_blank" rel="noopener">Model Context Protocol Python SDK: HTTP client transports followed cross-origin redirects carrying custom headers and bodies</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116685</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+In affected versions, the SDK&#x27;s Streamable HTTP and SSE client transports followed HTTP redirects to any host. If the configured MCP endpoint answered with a redirect to a different origin:
+
+- custom headers set on the client (for example an `X-API-Key` credential) were sent to that origin, and
+- on a `307` or `308` redirect the request body was re-sent there too.
+
+The SDK&#x27;s OAuth clie…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rwrf-2pqf-9j8j" target="_blank" rel="noopener">Model Context Protocol Python SDK: Client fetched server-chosen $ref URLs while validating tool results against output schemas</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116686</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+In affected versions, when a connected MCP server declared an `outputSchema` for a tool, the SDK&#x27;s client validated each `call_tool` result with `jsonschema`&#x27;s default resolver, which fetches any `$ref` it cannot resolve locally by opening the URL. A server could therefore put an `http://`, `https://` or `file://` reference in a tool&#x27;s output schema and make the client:
+
+- request that…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5cp7-fp4j-wwcv" target="_blank" rel="noopener">Neko: Authorization bypass in legacy WebRTC input handling</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116679</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Impact
+
+When legacy mode is enabled and `session.implicit_hosting` is enabled, the legacy WebRTC data channel incorrectly authorizes input events due to a logic error in `LegacyIsHost()`.
+
+As a result, an authenticated room member may be able to send mouse and keyboard input through the legacy WebRTC control channel even when controls are locked or the member would otherwise not be authorized …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rjh2-4xgw-p2hj" target="_blank" rel="noopener">Atlantis: OS command injection through PR-controlled Terraform workspace enables RCE during plan</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116676</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+
+Atlantis passes the Terraform `workspace` value from a pull request&#x27;s `atlantis.yaml` into a shell command without quoting or escaping it.
+
+A contributor whose pull request is eligible for an Atlantis plan can include shell metacharacters in the workspace name and execute arbitrary commands as the Atlantis service account. This does not require custom workflows, `allow_custom_workflow…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mgqf-5mf5-prfj" target="_blank" rel="noopener">FileBrowser: Symlink following escapes user scope allowing arbitrary file read outside the served directory</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116682</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>## Summary
+
+File read paths resolve symbolic links with `filepath.EvalSymlinks` and then operate on the resolved target without re-checking that the target still lies inside the user&#x27;s source/scope. 
+
+A symlink located inside a user&#x27;s accessible directory that points outside the scope (for example to `/etc/passwd`, another tenant&#x27;s directory, SSH keys, or container secrets) is followed transparent…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vg84-c5mg-76xh" target="_blank" rel="noopener">CTFer.io&#x27;s CTFd Terraform Provider allows a local or remote attacker to read team passwords in state as non sensitive values</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116683</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Impact
+
+CTFer.io&#x27;s CTFd Terraform Provider stores `ctfd_team.password` as non-sensitive values (CWE-522). A local or remote attacker, who can have access to the Terraform state, can read team passwords without the need for the state password for decryption.
+
+### Patches
+
+Patched in v2.8.2.
+
+### Workarounds
+
+No workaround exist, yet CTFer.io recommends you keep your state in safe environments w…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
@@ -662,22 +905,6 @@ This is fixed in the version 2.2.13. Users should upgrade to this version as soo
     <span>2026-10-27</span>
   </div>
   <p class='summary'>Researchers have demonstrated remote code execution through CVE-2026-111497, an out-of-bounds write in Google&#x27;s Brotli decoder library, and public proofs-of-concept (PoCs) are available. Software that uses the decoder includes Node.js, .NET, Bun, Envoy Proxy, Istio, Python HTTP clients and PHP for Windows. Key Takeaways CVE-2026-111497, known as Brotli2Shell and by several other names, is an out-o…</p>
-
-</article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://www.tenable.com/blog/discover-and-remediate-php2shell-exposure-with-tenable" target="_blank" rel="noopener">Discover and remediate PHP2Shell exposure with Tenable</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
-    <span class="meta-sep">·</span>
-    <span>Tenable Security Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-26</span>
-  </div>
-  <p class='summary'>Learn how to use Tenable solutions to find vulnerable PHP versions, prioritize remediation, and patch the critical PHP2Shell vulnerabilities (CVE-2026-109618 and CVE-2026-109619) faster. Key takeaways The PHP2Shell vulnerabilities ( CVE-2026-109618 and CVE-2026-109619 ) put security teams in a race against attackers. PHP runs on more than 70% of websites, so organizations need to quickly find wher…</p>
 
 </article>
 
