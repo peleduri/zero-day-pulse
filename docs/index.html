@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">17</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">33</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-27 11:11 UTC</div>
+            <div class="generated">Updated 2026-10-27 16:57 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -148,6 +148,26 @@
 
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3w55-933p-8pv5" target="_blank" rel="noopener">Strands Agents: Local Privilege Escalation via Symlink Attack in Default Session File Storage</a></h2>
+          </div>
+          <div class="card-meta">
+            <span class="no-cve">No CVE</span>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>## Summary
+
+The `FileSessionManager` defaults to storing session data in `/tmp/strands/sessions/` (a world-writable directory) using predictable file paths and a write pattern (`open(path + &quot;.tmp&quot;, &quot;w&quot;)` → `os.replace()`) that follows symbolic links. A local attacker can exploit this to overwrite arbitrary files or inject malicious session data for persistent prompt injection.
+
+## Vulnerability De…</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -264,6 +284,22 @@
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/" target="_blank" rel="noopener">iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>SecurityWeek</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-27</span>
+  </div>
+  <p class='summary'>Apple patched 286 vulnerabilities in iOS and macOS 27.2 and brought the fix for an exploited CoreGraphics zero-day to older iPhones. The post iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18 appeared first on SecurityWeek .</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/" target="_blank" rel="noopener">Apple backports CoreGraphics zero-day patches to older iPhones</a></h2>
   </div>
   <div class="card-meta">
@@ -324,6 +360,278 @@
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x4rv-c3wx-4cr8" target="_blank" rel="noopener">Authlib: Unvalidated request_uri fetch in JWT-secured authorization request (JAR) leading to SSRF</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114620</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+
+Authlib&#x27;s RFC 9101 (JAR) extension passes the attacker-controlled `request_uri` authorization parameter straight to the `get_request_object()` fetch hook with no validation, at a pre-authentication endpoint. Authlib already defines the pre-registration allowlist for this (`request_uris` client metadata and `require_request_uri_registration` server metadata) but the extension never con…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7vr2-2fgp-9w7p" target="_blank" rel="noopener">Authlib incomplete algorithm-confusion fix permits HMAC forgery with prefixed public keys</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114615</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>## Summary
+
+`OctKey.import_key()` carries the only guard that stops an asymmetric public key from being used as an
+HMAC secret in `authlib.jose`. That guard is `raw_key.startswith(POSSIBLE_UNSAFE_KEYS)` — anchored at
+byte 0 — while the loader that consumes the identical bytes on the asymmetric path
+(`cryptography.hazmat.primitives.serialization.load_pem_public_key` / `load_pem_x509_certificate`)
+s…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2phh-27fw-q4gc" target="_blank" rel="noopener">PhpSpreadsheet: SSRF whitelist bypass via unre-validated HTTP redirect in Drawing::setPath external image loading</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-108360</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>## Summary
+PhpSpreadsheet&#x27;s `Worksheet\Drawing::setPath()` validates an external-image URL against an operator-supplied `isWhitelisted` callback **once**, on the initial URL only, then fetches it with `file_get_contents()` using a stream context that does **not** set `follow_location =&gt; 0`. A whitelisted host that returns an HTTP `302 Location:` redirect to an internal target is therefore followed…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3x94-m842-937c" target="_blank" rel="noopener">PhpSpreadsheet: XmlScanner Bypass via ISO-2022 Escape Sequences Allows XXE and Denial of Service</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-108358</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+PhpSpreadsheet&#x27;s `XmlScanner::scan()` uses a regex pattern that only accounts for NULL byte (0x00) interleaving when detecting `&lt;!DOCTYPE`. ISO-2022 escape sequences (0x1B bytes) inserted between the characters of the pattern break the regex match entirely, allowing DOCTYPE declarations with entity definitions to pass through undetected. This enables Denial of Service via quadratic ent…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rxj4-h86g-25gc" target="_blank" rel="noopener">PhpSpreadsheet: XmlScanner Bypass via Double-Encoded unentity() TOCTOU Allows XXE and Denial of Service</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-108357</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+The SpreadsheetML XML reader (`Reader\Xml`) scans file content **twice** through `XmlScanner::scan()`, and each scan runs an `unentity()` callback that calls `html_entity_decode()` **after** the pattern check. By double-encoding the `&lt;` character as `&amp;#38;#60;`, the first scan decodes `&amp;#38;` to `&amp;` (forming `&amp;#60;`), and the second scan decodes `&amp;#60;` to `&lt;` (forming `&lt;!DOCTYPE`). Ne…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-fpmh-frq8-7rj8" target="_blank" rel="noopener">compress zstd: Panic on two-block frames</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116591</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+
+A crafted ~27 KB two-block zstd frame makes DecodeAll and the streaming decoder panic with an out-of-range slice index instead of returning a decode error. The same bytes decode fine with the reference zstd. Any program that decompresses untrusted zstd input can be crashed by it. Reproduced on v1.20.0 and v1.20.1.
+
+Released in https://github.com/klauspost/compress/releases/tag/v1.20.2…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3633-r77q-h3v3" target="_blank" rel="noopener">Datadog dd-trace-py: ReDoS in URL query string obfuscation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116588</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+
+A regular expression used to obfuscate URL query strings can consume excessive CPU when processing certain attacker-controlled input. This can stall request processing and cause denial of service in applications using affected HTTP tracing integrations.
+
+### Details
+
+The default query-string obfuscation pattern can exhibit excessive backtracking. The pattern is applied synchronously w…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h3rc-6mm3-gc2m" target="_blank" rel="noopener">vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114053</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>## Summary
+
+An untrusted multimodal request can set `mm_processor_kwargs.code_revision`. When vLLM serves a model whose Hugging Face processor uses dynamic `auto_map` code and the operator enabled `--trust-remote-code`, this request value reaches `AutoProcessor.from_pretrained` and selects the Python revision imported by Transformers.
+
+This lets a client replace the operator-reviewed processor mod…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vqrg-773h-4wxc" target="_blank" rel="noopener">Flexible GraphRAG: Cypher/Graph Injection via broken string-escaping in FalkorDB adapter (_escape()) - full graph wipe from ingested-document content</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114510</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>**Description**
+def _escape(v: str) -&gt; str:
+    return str(v).replace(&quot;&#x27;&quot;, &quot;\\&#x27;&quot;).replace(&quot;\\&quot;, &quot;\\\\&quot;)
+The escaping order is backwards, exactly like the classic HTML double-escape bug: step 1 inserts a literal backslash in front of every &#x27;, then step 2 re-matches that just-inserted backslash and doubles it. For an input ending in a single quote, the two steps combined produce \\&#x27; (two backslashes…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7hp6-4w63-5g45" target="_blank" rel="noopener">LiteLLM: Privilege Escalation to Proxy Admin via Cross-Domain Reuse of the Salt Key</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114612</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Summary
+
+An authenticated user with `internal_user` privileges can escalate to `proxy_admin` and achieve remote code execution. The proxy uses one encryption key for two purposes: sealing secrets at rest and minting session tokens. An attacker exploits this by requesting a new API key with a crafted metadata field containing a forged admin credential as the &quot;secret&quot; value. The proxy encrypts a…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j586-36cw-2gc2" target="_blank" rel="noopener">MessagePack: Unbounded memory leak in msgpack C extension on strict_map_key validation failure</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114613</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Impact
+
+The msgpack-python C extension (`msgpack._cmsgpack`) leaks a decoded map value when deserialization rejects a key with `strict_map_key=True` (the default). Repeated malformed inputs can cause unbounded process memory growth and denial of service in applications that deserialize attacker-controlled MessagePack data. Both `unpackb()` and the streaming `Unpacker` API are affected. The pur…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rw7v-4hrq-x6r9" target="_blank" rel="noopener">fpdf2 implicitly loads external URLs and local image paths when rendering attacker-controlled content</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-114609</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>## Summary
+
+`fpdf2` implicitly dereferences image resource references supplied to rendering APIs. If an application passes untrusted HTML, SVG, template data, or image paths into those APIs, `fpdf2` may issue outbound HTTP(S) requests or attempt to open local filesystem paths.
+
+This behavior is relevant in applications that render untrusted or user-provided input without sanitizing or restricting …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m4w4-3r8h-jw98" target="_blank" rel="noopener">Agno: Arbitrary code execution via `eval()` on `field_type` in `FunctionCall`</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-35002</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Impact
+Agno versions prior to 2.3.24 contain an arbitrary code execution vulnerability
+in the model execution component. The `field_type` parameter on a `FunctionCall`
+input field was passed to Python&#x27;s built-in `eval()`, allowing an attacker who
+could influence that value to execute arbitrary Python code in the Agno process.
+
+This is a code injection flaw (CWE-95) with full impact to confiden…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vcw3-r3fx-j444" target="_blank" rel="noopener">Ajenti has potential Remote Code Execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-27975</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-27</span>
+          </div>
+          <p class='summary'>### Impact
+
+An unauthenticated user could gain access to a server to execute arbitrary code on this server.
+
+### Patches
+
+This is fixed in the version 2.2.13. Users should upgrade to this version as soon as possible.</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">

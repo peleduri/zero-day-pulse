@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-27T11:11:29.234136+00:00",
-  "total": 17,
+  "generated": "2026-10-27T16:57:36.639749+00:00",
+  "total": 33,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,22 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "GHSA-3w55-933p-8pv5",
+      "title": "Strands Agents: Local Privilege Escalation via Symlink Attack in Default Session File Storage",
+      "summary": "## Summary\n\nThe `FileSessionManager` defaults to storing session data in `/tmp/strands/sessions/` (a world-writable directory) using predictable file paths and a write pattern (`open(path + \".tmp\", \"w\")` \u2192 `os.replace()`) that follows symbolic links. A local attacker can exploit this to overwrite arbitrary files or inject malicious session data for persistent prompt injection.\n\n## Vulnerability Details\n\n**Component:** `strands-py/src/strands/session/file_session_manager.py`\n\n**Root Cause:**\n1. Default storage directory is `tempfile.gettempdir() + \"/strands/sessions/\"` (line 58) \u2014 resolves to `/tmp/strands/sessions/` on Linux/macOS\n2. The `_write_file()` method (lines 116-123) writes to a predictable `.tmp` path without symlink protection:\n   ```python\n   tmp = f\"{path}.tmp\"\n   with open(tmp, \"w\", encoding=\"utf-8\", newline=\"\\n\") as f:\n       json.dump(data, f, indent=2, ensure_ascii=False)\n   os.replace(tmp, path)\n   ```\n3. `open()` follows symlinks \u2014 a pre-placed symlink at the `.tmp` path causes writes to an arbitrary target file\n4. No integrity verification (HMAC/signature) on session files \u2014 tampered data is loaded as-is\n\n## Attack Vectors\n\n### 1. Arbitrary File Overwrite (Local Privilege Escalation)\n1. Attacker pre-creates `/tmp/strands/sessions/session_<id>/` (or monitors for new directories via inotify)\n2. Attacker creates a symlink: `session.json.tmp` \u2192 `/home/victim/.bashrc` (or any writable file)\n3. Victim application writes session data \u2192 follows symlink \u2192 overwrites target file with JSON content\n4. Attacker achieves code execution on next shell login (or targets `.ssh/authorized_keys`, cron files, etc.)\n\n### 2. Persistent Prompt Injection via Session Tampering\n1. Attacker writes crafted message files into the session directory\n2. Victim application restores the session \u2192 loads attacker-controlled conversation history\n3. Injected messages instruct the agent to execute attacker commands on every future interaction\n4. No integrity check prevents this \u2014 the S",
+      "link": "https://github.com/advisories/GHSA-3w55-933p-8pv5",
+      "published": "2026-10-27T15:34:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -149,6 +165,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/",
+      "title": "iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18",
+      "summary": "Apple patched 286 vulnerabilities in iOS and macOS 27.2 and brought the fix for an exploited CoreGraphics zero-day to older iPhones. The post iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18 appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/",
+      "published": "2026-10-27T11:49:57+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
       "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
       "summary": "\u200bApple has backported security patches released last month to older iPhones and iPads, addressing a zero-day bug exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
@@ -219,6 +250,258 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114620",
+      "title": "Authlib: Unvalidated request_uri fetch in JWT-secured authorization request (JAR) leading to SSRF",
+      "summary": "### Summary\n\nAuthlib's RFC 9101 (JAR) extension passes the attacker-controlled `request_uri` authorization parameter straight to the `get_request_object()` fetch hook with no validation, at a pre-authentication endpoint. Authlib already defines the pre-registration allowlist for this (`request_uris` client metadata and `require_request_uri_registration` server metadata) but the extension never consults it, and both docstrings instruct integrators to implement the hook as an unrestricted `requests.get(request_uri)`. Deployments following the documented pattern get an unauthenticated SSRF primitive. \n### Details\n\nVerified against authlib 1.7.2 and current `main`. All line numbers below are from `authlib/oauth2/rfc9101/authorization_server.py`.\n\nThe extension registers itself on the `before_get_authorization_grant` hook (lines 62-65), so it runs on every authorization request before any user or client authentication. `support_request_uri` defaults to `True` (line 58).\n\nThe only gate before the sink is that `client_id` names an existing client (lines 91-103). A `client_id` is a public, non-secret identifier.\n\nThe sink at line 159 forwards the raw parameter with no scheme, host, or allowlist check:\n\n```python\ndef _get_raw_request_object(self, request: OAuth2Request) -> str:\n    if \"request_uri\" in request.payload.data:\n        raw_request_object = self.get_request_object(\n            request.payload.data[\"request_uri\"]\n        )\n        if not raw_request_object:\n            raise InvalidRequestUriError(state=request.payload.state)\n```\n\n`get_request_object` is abstract (line 213, `raise NotImplementedError()` at line 225), so authlib itself performs no outbound request. The defect is that authlib supplies unvalidated attacker input to that extension point and then documents the insecure implementation twice \u2014 in the class docstring (lines 34-38) and in the hook's own docstring (lines 218-223):\n\n```python\ndef get_request_object(self, request_uri: str):\n    try:\n        re",
+      "link": "https://github.com/advisories/GHSA-x4rv-c3wx-4cr8",
+      "published": "2026-10-27T15:39:18Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114620"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114615",
+      "title": "Authlib incomplete algorithm-confusion fix permits HMAC forgery with prefixed public keys",
+      "summary": "## Summary\n\n`OctKey.import_key()` carries the only guard that stops an asymmetric public key from being used as an\nHMAC secret in `authlib.jose`. That guard is `raw_key.startswith(POSSIBLE_UNSAFE_KEYS)` \u2014 anchored at\nbyte 0 \u2014 while the loader that consumes the identical bytes on the asymmetric path\n(`cryptography.hazmat.primitives.serialization.load_pem_public_key` / `load_pem_x509_certificate`)\nskips anything before the `-----BEGIN` line. A PEM public key or X.509 certificate carrying **one\nleading byte** \u2014 a newline, a space, four spaces of indentation, a UTF-8 BOM, or a comment line \u2014 is\ntherefore not recognised, falls through, and becomes the HMAC secret. An attacker holding only the\nissuer's public key then mints an `HS256` token with arbitrary claims that `jwt.decode()` accepts as\nauthentic.\n\nThis is an incomplete fix of **CVE-2024-37568 / GHSA-5357-c2jx-v7qh**. That advisory's fix is exactly\nthis guard (`git log -S 'POSSIBLE_UNSAFE_KEYS' -- authlib/jose/rfc7518/oct_key.py` returns a single\ncommit, `3bea812` \"fix: prevent OctKey to import ssh/rsa/pem keys\", referencing issue #654), and the\noriginal attack works again unchanged whenever the stored PEM does not start at offset 0.\n\nReproduced end-to-end on **1.8.0**, the newest release (published 2026-08-30), and on `origin/main`\n(`c529a61`), with `cryptography` 50.0.2.\n\n## Preconditions\n\nBoth are deployment properties; neither is attacker-controlled at request time, and the attacker needs\nno secret and no user interaction.\n\n1. **The relying party uses the documented module-level `jwt` object.** `from authlib.jose import jwt`\n   is built at `authlib/jose/__init__.py:55-72` with the full list\n   `[\"HS256\",\"HS384\",\"HS512\",\"RS256\",...,\"EdDSA\"]`, and `JsonWebToken.decode`\n   (`authlib/jose/rfc7519/jwt.py:80`) exposes **no `algorithms` parameter**, so a caller of the\n   documented object has no way to narrow it. This is the first code sample in\n   `docs/jose/jwt.rst:21-31`.\n\n   This hazard is already documented: `docs",
+      "link": "https://github.com/advisories/GHSA-7vr2-2fgp-9w7p",
+      "published": "2026-10-27T15:38:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114615"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-108360",
+      "title": "PhpSpreadsheet: SSRF whitelist bypass via unre-validated HTTP redirect in Drawing::setPath external image loading",
+      "summary": "## Summary\nPhpSpreadsheet's `Worksheet\\Drawing::setPath()` validates an external-image URL against an operator-supplied `isWhitelisted` callback **once**, on the initial URL only, then fetches it with `file_get_contents()` using a stream context that does **not** set `follow_location => 0`. A whitelisted host that returns an HTTP `302 Location:` redirect to an internal target is therefore followed by PHP's HTTP wrapper (default `follow_location=1`, `max_redirects=20`) with **no re-validation of the redirect hop** \u2014 defeating the whitelist and yielding a blind SSRF from the server.\n\nThis is an unfixed variant of CVE-2026-59931 (GHSA-6hq5-7373-42rg, the WEBSERVICE redirect-whitelist-bypass): the `follow_location => 0` fix (commit `7ef7b25e`) was applied ONLY to `Calculation/Web/Service.php`; `Worksheet/Drawing.php` was never touched.\n\n## Root Cause\n`src/PhpSpreadsheet/Worksheet/Drawing.php`:\n- Scheme allowlist at `:125` (`/^(http|https|file|ftp|s3):/`) permits `http`/`https` (the redirect-following schemes) and runs on the initial URL only.\n- Opt-in gate `if (!$allowExternal)` at `:128` (requires `setAllowExternalImages(true)`; default `false`, `BaseReader.php:55`).\n- Whitelist check `if ($isWhitelisted !== null && !$isWhitelisted($path))` at `:131` \u2014 validates the INITIAL URL only; never re-applied after a redirect.\n- Stream context built at `:140-152` sets `user_agent` + `header` (+ `ssl.crypto_method` for https) but **omits `follow_location`**. `git grep follow_location` on tag 5.9.0 yields a single hit \u2014 `Service.php:45` (the CVE-2026-59931 fix) \u2014 confirming it was never added to `Drawing.php`.\n- Sink `file_get_contents($path, false, $ctx)` at `:154`.\n\n## Impact\nBlind SSRF from the server: reach and trigger internal GET-driven endpoints, coarse internal reachability/port probing, and reach cloud-metadata endpoints. The fetched body is written to a temp file, checked with `isImage()` (mime `image/*`, or `application/octet-stream` with `bin`/`emf` extension), only i",
+      "link": "https://github.com/advisories/GHSA-2phh-27fw-q4gc",
+      "published": "2026-10-27T15:38:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-108360"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-108358",
+      "title": "PhpSpreadsheet: XmlScanner Bypass via ISO-2022 Escape Sequences Allows XXE and Denial of Service",
+      "summary": "### Summary\nPhpSpreadsheet's `XmlScanner::scan()` uses a regex pattern that only accounts for NULL byte (0x00) interleaving when detecting `<!DOCTYPE`. ISO-2022 escape sequences (0x1B bytes) inserted between the characters of the pattern break the regex match entirely, allowing DOCTYPE declarations with entity definitions to pass through undetected. This enables Denial of Service via quadratic entity expansion on **all PHP versions**, and XXE/SSRF on PHP < 8.0 or when `LIBXML_NOENT` is used. Any application using PhpSpreadsheet to process user-uploaded XLSX files is affected.\n\n### Details\nThe vulnerability exists in `src/PhpSpreadsheet/Reader/Security/XmlScanner.php`, method `scan()`, lines 87\u2013100.\n\nThe scanner builds a regex pattern `/\\0*<\\0*!\\0*D\\0*O\\0*C\\0*T\\0*Y\\0*P\\0*E\\0*/` that only handles NULL byte interleaving. ISO-2022 escape sequences (e.g., `0x1B 0x28 0x42` for ISO-2022-JP) inserted between each character of `<!DOCTYPE` break the regex because it only expects optional `\\0` between characters.\n\nThe XLSX reader extracts XML parts from the ZIP archive and passes each through `XmlScanner::scan()` before `simplexml_load_string()`. The XML parser strips the ESC bytes during charset normalization, producing a valid `<!DOCTYPE` declaration that the scanner never detected.\n\nSeven ISO-2022 encoding variants bypass the scanner:\n- ISO-2022-JP (`ESC ( B`)\n- ISO-2022-JP-2 (`ESC $ B`)\n- ISO-2022-KR (`ESC $ ) C`)\n- ISO-2022-CN (`ESC $ ) A`)\n- ISO-2022-CN-EXT (`ESC $ ) G`)\n- ISO-2022-JP-2004 (`ESC $ ( Q`)\n- ISO-2022-JP-MS (`ESC & @ ESC $ B`)\n\nInternal entity expansion (quadratic blowup) is **not blocked** by libxml2 2.9+ defaults, making this directly exploitable for DoS on all modern PHP versions.\n\n### PoC\n\nSave the following as `poc_iso2022.php` in a directory with PhpSpreadsheet installed via Composer:\n\n```php\n<?php\nrequire 'vendor/autoload.php';\n\n// ESC ( B = ISO-2022-JP escape sequence (switch to ASCII)\n$esc = \"\\x1b\\x28\\x42\";\n\n// Build <!DOCTYPE with ESC bytes between",
+      "link": "https://github.com/advisories/GHSA-3x94-m842-937c",
+      "published": "2026-10-27T15:38:28Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-108358"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-108357",
+      "title": "PhpSpreadsheet: XmlScanner Bypass via Double-Encoded unentity() TOCTOU Allows XXE and Denial of Service",
+      "summary": "### Summary\nThe SpreadsheetML XML reader (`Reader\\Xml`) scans file content **twice** through `XmlScanner::scan()`, and each scan runs an `unentity()` callback that calls `html_entity_decode()` **after** the pattern check. By double-encoding the `<` character as `&#38;#60;`, the first scan decodes `&#38;` to `&` (forming `&#60;`), and the second scan decodes `&#60;` to `<` (forming `<!DOCTYPE`). Neither scan's pattern check detects the `<!DOCTYPE` string because the callback runs after each check. This enables Denial of Service via entity expansion on **all PHP versions**, and XXE/SSRF on PHP < 8.0 or when `LIBXML_NOENT` is used.\n\n### Details\n\nThe vulnerability involves an interaction between three code locations:\n\n**1. `XmlScanner::scan()`** (XmlScanner.php, lines 87\u2013108) \u2014 checks the pattern *before* the callback:\n\n```php\npublic function scan($xml): string\n{\n    $pattern = '/\\0*<\\0*!\\0*D\\0*O\\0*...\\0*/';\n\n    if (preg_match($pattern, $xml)) {       // CHECK 1 (raw)\n        throw new Exception('Detected use of ENTITY...');\n    }\n    $xml = $this->toUtf8($xml);\n    if (preg_match($pattern, $xml)) {       // CHECK 2 (UTF-8)\n        throw new Exception('Detected use of ENTITY...');\n    }\n    if ($this->callback !== null) {\n        $xml = call_user_func($this->callback, $xml); // DECODE (after checks!)\n    }\n    return $xml;  // <!DOCTYPE now present, never checked\n}\n```\n\n**2. `Xml::canRead()`** (Xml.php, lines 79\u2013117) \u2014 scans and stores the result:\n\n```php\n$data = file_get_contents($filename);\n$data = $this->getSecurityScannerOrThrow()->scan($data); // 1st scan\n// ...\n$this->fileContents = $data; // stores partially-decoded content\n```\n\n**3. `Xml::trySimpleXMLLoadStringPrivate()`** (Xml.php, lines 120\u2013150) \u2014 re-scans the stored content:\n\n```php\n$data = $this->fileContents; // already partially decoded\n$xml = simplexml_load_string(\n    $this->getSecurityScannerOrThrow()->scan($data) // 2nd scan finishes decoding\n);\n```\n\nThe double-scan decode chain:\n\n```\nRaw file:       ",
+      "link": "https://github.com/advisories/GHSA-rxj4-h86g-25gc",
+      "published": "2026-10-27T15:38:22Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-108357"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116591",
+      "title": "compress zstd: Panic on two-block frames",
+      "summary": "### Summary\n\nA crafted ~27 KB two-block zstd frame makes DecodeAll and the streaming decoder panic with an out-of-range slice index instead of returning a decode error. The same bytes decode fine with the reference zstd. Any program that decompresses untrusted zstd input can be crashed by it. Reproduced on v1.20.0 and v1.20.1.\n\nReleased in https://github.com/klauspost/compress/releases/tag/v1.20.2\n\n### Details\n\n The panic is in the FSE decoder that `huff0.ReadTable` uses to read a block's Huffman-weight table. Three conditions have to hold at once, and the crafted frame arranges all three.\n\n  **1. A count that doesn't fit is accepted.** `readNCount` permits a tableLog up to 15 ([`tablelogAbsoluteMax`](https://github.com/klauspost/compress/blob/v1.20.0/fse/decompress.go#L9), checked at [`fse/decompress.go:54`](https://github.com/klauspost/compress/blob/v1.20.0/fse/decompress.go#L54)), so a symbol's normalized count can reach 32768 (2^15). The count is stored in an `int16` at [`fse/decompress.go:126`](https://github.com/klauspost/compress/blob/v1.20.0/fse/decompress.go#L126), where 32768 wraps to \u221232768. The validation only looks at the `int32` running totals (`remaining` and `gotTotal`), which still match, so the bad value passes. The crafted second block produces `norm = [0, -32768]`, `symbolLen = 2`.\n\n  **2. The decode table is built empty, with no error.** In `buildDtable`, \u221232768 isn't the \u22121 that flags a low-probability symbol, so it skips that branch, and the spread loop [`for i := 0; i < int(v); i++`](https://github.com/klauspost/compress/blob/v1.20.0/fse/decompress.go#L221) runs zero times for a negative `v`. `position` never advances, so the [`position != 0`](https://github.com/klauspost/compress/blob/v1.20.0/fse/decompress.go#L230) guard passes as well.\n\n  **3. Stale state from the previous block is reused.** `huff0` shares one `fse.Scratch` across both blocks, and [`allocDtable`](https://github.com/klauspost/compress/blob/v1.20.0/fse/decompress.go#L173-L18",
+      "link": "https://github.com/advisories/GHSA-fpmh-frq8-7rj8",
+      "published": "2026-10-27T15:38:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116591"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116588",
+      "title": "Datadog dd-trace-py: ReDoS in URL query string obfuscation",
+      "summary": "### Summary\n\nA regular expression used to obfuscate URL query strings can consume excessive CPU when processing certain attacker-controlled input. This can stall request processing and cause denial of service in applications using affected HTTP tracing integrations.\n\n### Details\n\nThe default query-string obfuscation pattern can exhibit excessive backtracking. The pattern is applied synchronously when recording HTTP URL metadata, allowing query-string processing to occupy application resources for an extended period.\n\nAs a workaround, set both DD_TRACE_OBFUSCATION_QUERY_STRING_REGEXP and DD_TRACE_OBFUSCATION_QUERY_STRING_PATTERN to the fixed Python-compatible regex below, then restart the application. Setting both variables covers all affected ddtrace versions, including releases before 1.19.0.\n\n```\nexport DD_TRACE_OBFUSCATION_QUERY_STRING_REGEXP='(?i)(?:(?:\"|%22)?)(?:(?:old[-_]?|new[-_]?)?p(?:ass)?w(?:or)?d(?:1|2)?|pass(?:[-_]?phrase)?|secret|(?:api[-_]?|private[-_]?|public[-_]?|access[-_]?|secret[-_]?|app(?:lication)?[-_]?)key(?:[-_]?id)?|token|consumer[-_]?(?:id|key|secret)|sign(?:ed|ature)?|auth(?:entication|orization)?)(?:(?:\\s|%20)*(?:=|%3D)[^&]+|(?:\"|%22)(?:\\s|%20)*(?::|%3A)(?:\\s|%20)*(?:\"|%22)(?:%2[^2]|%[^2]|[^\"%])+(?:\"|%22))|(?:bearer(?:\\s|%20)+[a-z0-9._\\-]+|token(?::|%3A)[a-z0-9]{13}|gh[opsu]_[0-9a-zA-Z]{36}|(?:(?<![\\w-])|(?<=%[0-9a-f]{2}))ey[I-L][\\w-]+(?:=|%3D)*\\.ey[I-L][\\w-]+(?:=|%3D)*(?:\\.(?:[\\w.+/=-]|%3D|%2F|%2B)+)?|-{5}BEGIN(?:[a-z\\s]|%20)+PRIVATE(?:\\s|%20)KEY-{5}[^\\-]+-{5}END(?:[a-z\\s]|%20)+PRIVATE(?:\\s|%20)KEY(?:-{5})?(?:\\n|%0A)?|(?:ssh-(?:rsa|dss)|ecdsa-[a-z0-9]+-[a-z0-9]+)(?:\\s|%20|%09)+(?:[a-z0-9/.+]|%2F|%5C|%2B){100,}(?:=|%3D)*(?:(?:\\s|%20|%09)+[a-z0-9._-]+)?)'\n\nexport DD_TRACE_OBFUSCATION_QUERY_STRING_PATTERN=\"$DD_TRACE_OBFUSCATION_QUERY_STRING_REGEXP\"\n```\n\n### Proof of concept\n\nDetailed triggering inputs and reproduction steps are omitted from this advisory. The patched version includes regression coverage for the affected behavior.\n\n### Impact",
+      "link": "https://github.com/advisories/GHSA-3633-r77q-h3v3",
+      "published": "2026-10-27T15:37:31Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116588"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114053",
+      "title": "vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution",
+      "summary": "## Summary\n\nAn untrusted multimodal request can set `mm_processor_kwargs.code_revision`. When vLLM serves a model whose Hugging Face processor uses dynamic `auto_map` code and the operator enabled `--trust-remote-code`, this request value reaches `AutoProcessor.from_pretrained` and selects the Python revision imported by Transformers.\n\nThis lets a client replace the operator-reviewed processor module with code from another revision of the same model repository. The operator-selected model/data `revision` remains pinned; only the executed processor code changes.\n\nImporting a Python module is arbitrary code execution in the vLLM API/renderer process. The PoC below demonstrates this with an import-time filesystem write. It is fully offline and does not require a GPU, model weights, or changes to a real Hub repository.\n\n## Affected snapshot\n\n- Repository: [`vllm-project/vllm`](https://github.com/vllm-project/vllm)\n- Verified commit: [`570735520942b6428ae98f1eb442c6d88adae55e`](https://github.com/vllm-project/vllm/commit/570735520942b6428ae98f1eb442c6d88adae55e)\n- Verified with Transformers 5.15.0 and 5.16.1\n- Affected release range has not been bisected\n\n## Affected configuration\n\nThe vulnerable path exists when all of the following are true:\n\n1. The served model's processor uses dynamic `auto_map.AutoProcessor` code.\n2. The operator enabled `trust_remote_code`.\n3. The server can fetch the request-selected revision, or it is already cached.\n4. The attacker can create or otherwise control a revision in the served model repository. An example is a [Hugging Face community pull-request ref](https://huggingface.co/docs/hub/en/repositories-pull-requests-discussions#where-in-the-git-repo-are-changes-stored) when that repository permits them.\n5. A multimodal request reaches the processor path.\n\nThe default `trust_remote_code=False` configuration is not affected.\n\n## Attack surface\n\n`mm_processor_kwargs` is accepted directly by public request models:\n\n- [`TokenizeChatRequest.mm_",
+      "link": "https://github.com/advisories/GHSA-h3rc-6mm3-gc2m",
+      "published": "2026-10-27T15:36:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114053"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114510",
+      "title": "Flexible GraphRAG: Cypher/Graph Injection via broken string-escaping in FalkorDB adapter (_escape()) - full graph wipe from ingested-document content",
+      "summary": "**Description**\ndef _escape(v: str) -> str:\n    return str(v).replace(\"'\", \"\\\\'\").replace(\"\\\\\", \"\\\\\\\\\")\nThe escaping order is backwards, exactly like the classic HTML double-escape bug: step 1 inserts a literal backslash in front of every ', then step 2 re-matches that just-inserted backslash and doubles it. For an input ending in a single quote, the two steps combined produce \\\\' (two backslashes followed by the quote) in the output \u2014 which, under the standard backslash-escape convention used by Cypher/openCypher single-quoted string literals, is parsed as one escaped backslash followed by an unescaped, string-terminating quote. The quote is not neutralized; the string breaks open.\n\nThis escaped value is interpolated directly into Cypher query strings built by string formatting (not parameters) at 5 call sites in the same method:\n\nself.lc_graph.query(\n    f\"MERGE (n:`{node.type}` {{id: '{_escape(node.id)}'}}) \"\n    f\"{props}\"\n    f\"RETURN distinct 'done' AS result\"\n)\n...\nself.lc_graph.query(\n    f\"MATCH (a:`{rel.source.type}` {{id: '{_escape(rel.source.id)}'}}), \"\n    f\"(b:`{rel.target.type}` {{id: '{_escape(rel.target.id)}'}}) \"\n    f\"MERGE (a)-[r:`{rel_type}`]->(b) \"\n    f\"{props}\"\n    f\"RETURN distinct 'done' AS result\"\n)\nnode.type, rel.source.type, rel.target.type and rel_type are also interpolated into backtick-quoted identifiers with no escaping at all.\n\nWhere the attacker-controlled data comes from: node/rel objects are LLM-extracted entities and relationships derived from ingested document content (the whole point of this GraphRAG pipeline). Document content is therefore untrusted input relative to this database layer \u2014 a classic indirect-prompt-injection-to-query-injection chain: craft a document whose text causes the extraction LLM to produce an entity id containing the payload below, ingest it, and the broken escape function turns it into live Cypher.\n\n**Impact**\nFull Cypher clause injection into lc_graph.query() calls that run with no query parameteriza",
+      "link": "https://github.com/advisories/GHSA-vqrg-773h-4wxc",
+      "published": "2026-10-27T15:32:45Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114510"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114612",
+      "title": "LiteLLM: Privilege Escalation to Proxy Admin via Cross-Domain Reuse of the Salt Key",
+      "summary": "### Summary\n\nAn authenticated user with `internal_user` privileges can escalate to `proxy_admin` and achieve remote code execution. The proxy uses one encryption key for two purposes: sealing secrets at rest and minting session tokens. An attacker exploits this by requesting a new API key with a crafted metadata field containing a forged admin credential as the \"secret\" value. The proxy encrypts and returns this payload. When this value is then presented as a bearer token, the proxy decrypts it, trusts the forged admin identity, and grants full administrative access, including the ability to execute arbitrary commands via the MCP stdio endpoint.\n\n### Affected versions\n\nVersions later than 1.91.0 are exploitable in the default configuration. Versions 1.87.0 through 1.90.x are exploitable only if `EXPERIMENTAL_UI_LOGIN=true` was explicitly set.\n\n### Mitigation\n\nUpgrade to a patched version as soon as possible.\n\nIf you cannot upgrade immediately, set `EXPERIMENTAL_UI_LOGIN=false`. This disables the vulnerable authentication path but also breaks CLI SSO and Claude Code gateway login.\n\n### Impact\n\nAn internal user can escalate to proxy admin and execute arbitrary commands on the host.\n\n**Discovery Credit:** Hoa X. Nguyen (OPSWAT Unit 515)",
+      "link": "https://github.com/advisories/GHSA-7hp6-4w63-5g45",
+      "published": "2026-10-27T15:04:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114612"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114613",
+      "title": "MessagePack: Unbounded memory leak in msgpack C extension on strict_map_key validation failure",
+      "summary": "### Impact\n\nThe msgpack-python C extension (`msgpack._cmsgpack`) leaks a decoded map value when deserialization rejects a key with `strict_map_key=True` (the default). Repeated malformed inputs can cause unbounded process memory growth and denial of service in applications that deserialize attacker-controlled MessagePack data. Both `unpackb()` and the streaming `Unpacker` API are affected. The pure-Python fallback does not exhibit this leak in the reported tests.\n\nThe report measured approximately 4 MiB retained per failed parse and 100 MiB after 25 failed parses on Windows with Python 3.14 and msgpack 1.2.2. These are reporter-provided results.\n\n### Additional impact: stale parser-stack references\n\nThe reference-ownership audit performed while fixing this leak found an\nadditional memory-safety issue in the streaming `Unpacker`.\n\nAfter `unpack()` completed a nested container, an inactive parser-stack slot\ncould retain a non-owning pointer to the decoded object. A subsequent `skip()`\ncould reactivate that slot. If parsing then failed, context cleanup treated the\nstale pointer as an owned reference and decremented it.\n\nThis corrupts the object's reference count and can result in a use-after-free\nor double `Py_DECREF` when its actual owners later release it.\n\nAlthough few users use this API, but those who do may experience crashes or unexpected errors due to a use-after-free.\n\n### Details\n\nIn `msgpack/unpack.h`, `unpack_callback_map_item()` rejects keys that are neither `str` nor `bytes`. At this point the map value has already been constructed. The early error return does not release the value reference.\n\nIn `msgpack/unpack_template.h`, the value is held in the local `obj` in `unpack_execute()`. The `CT_MAP_VALUE` error path jumps to `_failed` without decrementing that reference. Cleanup of the parser stack does not recover the value because it is not stored in the stack. The fallback checks the key before decoding the value.\n\n### Affected versions\n\nThe report reprodu",
+      "link": "https://github.com/advisories/GHSA-j586-36cw-2gc2",
+      "published": "2026-10-27T15:04:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114613"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-114609",
+      "title": "fpdf2 implicitly loads external URLs and local image paths when rendering attacker-controlled content",
+      "summary": "## Summary\n\n`fpdf2` implicitly dereferences image resource references supplied to rendering APIs. If an application passes untrusted HTML, SVG, template data, or image paths into those APIs, `fpdf2` may issue outbound HTTP(S) requests or attempt to open local filesystem paths.\n\nThis behavior is relevant in applications that render untrusted or user-provided input without sanitizing or restricting embedded resource references.\n\n## Description\n\nIn affected versions, `fpdf2` uses a shared internal image-loading mechanism for multiple features. This loader:\n\n* fetches `http://` and `https://` URLs over the network\n* opens other string values as local filesystem paths\n\nDuring document processing, resource references embedded in input content are automatically dereferenced using this mechanism.\n\nThis behavior is reachable through:\n\n* `FPDF.image()`\n* `FPDF.write_html()` via HTML `<img src=\"...\">`\n* `FPDF.image()` when rendering SVG files containing `<image href=\"...\">` or `xlink:href=\"...\">`\n* template image elements that forward values into `FPDF.image()`\n\nIf an application renders attacker-controlled input through these APIs, that input can cause:\n\n* outbound HTTP(S) requests to attacker-chosen destinations\n* local file open attempts for attacker-chosen paths\n\nThis may enable Server-Side Request Forgery (SSRF) in applications that render untrusted content.\n\nLocal file access impact is limited: the library attempts to open the referenced path, but successful embedding depends on the target being a valid and supported image or SVG resource.\n\n`file://` URLs are not specially handled; raw filesystem paths such as `/path/to/file` or `../../file.png` are the relevant local-path cases.\n\n## Impact\n\nThis issue affects applications that render untrusted or partially trusted content using `fpdf2`.\n\nApplications may be impacted if they:\n\n* pass untrusted HTML into `write_html()`\n* render untrusted SVG with embedded `<image>` references\n* pass user-controlled strings into `image()`\n",
+      "link": "https://github.com/advisories/GHSA-rw7v-4hrq-x6r9",
+      "published": "2026-10-27T14:43:16Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-114609"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-35002",
+      "title": "Agno: Arbitrary code execution via `eval()` on `field_type` in `FunctionCall`",
+      "summary": "### Impact\nAgno versions prior to 2.3.24 contain an arbitrary code execution vulnerability\nin the model execution component. The `field_type` parameter on a `FunctionCall`\ninput field was passed to Python's built-in `eval()`, allowing an attacker who\ncould influence that value to execute arbitrary Python code in the Agno process.\n\nThis is a code injection flaw (CWE-95) with full impact to confidentiality,\nintegrity, and availability. CVSS 3.1 score: 9.3 (Critical).\n\nAny deployment that exposes Agno to user-influenced FunctionCall inputs\n(for example via an API, web UI, or untrusted tool/model output) is affected.\n\n### Patches\nFixed in **Agno 2.3.24**.\n\nThe unsafe `eval()` call was replaced with a fixed `type_mapping` dictionary\nlookup, and `field_type` is now validated as either a known string key or an\nalready-resolved `type` object before use. See commit\n[cbf67552](https://github.com/agno-agi/agno/commit/cbf675521d4d2281925a051784a3b94172e56416)\n(PR #5912).\n\nAll users should upgrade to 2.3.24 or later. The current release line (2.6.x)\nincludes the fix.\n\n### Workarounds\nThere is no safe workaround. Users who cannot upgrade should ensure no\nuntrusted input can reach the `field_type` parameter of `FunctionCall`\ninput fields, but upgrading is strongly preferred.\n\n### References\n- Patch commit: https://github.com/agno-agi/agno/commit/cbf675521d4d2281925a051784a3b94172e56416\n- Patch PR: https://github.com/agno-agi/agno/pull/5912\n- CWE-95: https://cwe.mitre.org/data/definitions/95.html",
+      "link": "https://github.com/advisories/GHSA-m4w4-3r8h-jw98",
+      "published": "2026-10-27T13:30:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-35002"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-27975",
+      "title": "Ajenti has potential Remote Code Execution",
+      "summary": "### Impact\n\nAn unauthenticated user could gain access to a server to execute arbitrary code on this server.\n\n### Patches\n\nThis is fixed in the version 2.2.13. Users should upgrade to this version as soon as possible.",
+      "link": "https://github.com/advisories/GHSA-vcw3-r3fx-j444",
+      "published": "2026-10-27T13:27:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-27975"
       ],
       "is_zero_day": false,
       "is_high_severity": true
