@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-26T22:00:13.270068+00:00",
-  "total": 12,
+  "generated": "2026-10-27T02:40:35.226721+00:00",
+  "total": 14,
   "kev": 0,
   "zero_day": 8,
   "enriched": 0,
@@ -174,6 +174,43 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/brotli2shell-frequently-asked-questions-for-google-brotli-decoder-cve-2026-111497",
+      "title": "Brotli2Shell: Frequently asked questions for Google Brotli decoder vulnerability (CVE-2026-111497)",
+      "summary": "Researchers have demonstrated remote code execution through CVE-2026-111497, an out-of-bounds write in Google's Brotli decoder library, and public proofs-of-concept (PoCs) are available. Software that uses the decoder includes Node.js, .NET, Bun, Envoy Proxy, Istio, Python HTTP clients and PHP for Windows. Key Takeaways CVE-2026-111497, known as Brotli2Shell and by several other names, is an out-of-bounds write in Google's Brotli decoder library that Google, the CVE Numbering Authority (CNA), scored 9.2 under CVSSv4.0. Any application that decompresses attacker-controlled data with a vulnerable Brotli decoder is potentially at risk, including Node.js, .NET, Bun, Envoy Proxy, Istio, Python HTTP clients, FFmpeg, Apache Arrow and ClickHouse. Patches are available for Google Brotli and the major runtimes, though some projects had not shipped a fixed release as of October 26, and applications that bundle their own copy of Brotli each need their own fix. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding Brotli2Shell, a vulnerability in Google's Brotli C decoder library, which Node.js, .NET and other software embed. FAQ What is Brotli2Shell? Brotli2Shell is one of several names for CVE-2026-111497, a memory corruption flaw in Google's open-source Brotli compression library. Some researchers call it Node2Shell, after Node.js, which disclosed the flaw in its October 21 security advisory. Others use HTTP2Shell, since the same bug reaches HTTP software outside Node.js. It has circulated as Broccoli2Shell as well. We use Brotli2Shell because the bug sits in the Brotli decoder itself, not in any one downstream product. What is the vulnerability associated with Brotli2Shell? CVE-2026-111497 is an out-of-bounds write vulnerability in the Google Brotli C decoder library. CVE Description CVSSv4.0 CVE-2026-111497 Google Brotli decoder out-of-bounds write vulnerability 9.2 An attacker can trigger the",
+      "link": "https://www.tenable.com/blog/brotli2shell-frequently-asked-questions-for-google-brotli-decoder-cve-2026-111497",
+      "published": "2026-10-27T01:19:40+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-111497"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/discover-and-remediate-php2shell-exposure-with-tenable",
+      "title": "Discover and remediate PHP2Shell exposure with Tenable",
+      "summary": "Learn how to use Tenable solutions to find vulnerable PHP versions, prioritize remediation, and patch the critical PHP2Shell vulnerabilities (CVE-2026-109618 and CVE-2026-109619) faster. Key takeaways The PHP2Shell vulnerabilities ( CVE-2026-109618 and CVE-2026-109619 ) put security teams in a race against attackers. PHP runs on more than 70% of websites, so organizations need to quickly find where they\u2019re affected and update PHP to fixed versions. Tenable helps you find PHP2Shell across your attack surface. Tenable One Attack Surface Management discovers externally facing PHP assets. Tenable One Vulnerability Management and Tenable Security Center provide detections, including local checks for Linux distribution packages. Tenable One Web App Scanning assesses web applications, and Tenable One Cloud Exposure covers cloud workloads. Tenable accelerates remediation. Tenable Patch Management matches exposures to the right patches, launches patch workflows, and validates fixes with post-scan checks. Tenable One with Tenable Hexa AI lets you find vulnerable assets, create exposure initiatives, and generate remediation tickets with simple prompts. Respond faster with Tenable solutions The recently disclosed PHP2Shell vulnerabilities ( CVE-2026-109618 and CVE-2026-109619 ) have put security teams in a race against attackers to remediate or mitigate exposure before their systems are targeted. PHP runs on more than 70% of websites, and many of those sites run unsupported, legacy branches that no longer receive upstream support. Organizations need to quickly find where they\u2019re affected and update PHP to fixed versions . To help cybersecurity teams accelerate emergency response, this blog outlines tips for using the Tenable solutions to identify vulnerable versions of PHP, prioritize remediation decisions, and implement patches as quickly as possible. External Attack Surface Management Tenable One Attack Surface Management (ASM) helps you discover externally facing assets runn",
+      "link": "https://www.tenable.com/blog/discover-and-remediate-php2shell-exposure-with-tenable",
+      "published": "2026-10-26T19:48:07+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
       ],
       "is_zero_day": false,
       "is_high_severity": true

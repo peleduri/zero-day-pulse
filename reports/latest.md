@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-26 22:00 UTC &nbsp;|&nbsp; **Total:** 12 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-27 02:40 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 6 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -92,7 +92,25 @@
 
 ---
 
-## 11. 🟡 High Severity — PHP Patches Two Critical Unauthenticated RCEs (CVE-2026-109618, CVE-2026-109619): [Updated for CVE-2026-115560]
+## 11. 🟡 High Severity — Brotli2Shell: Frequently asked questions for Google Brotli decoder vulnerability (CVE-2026-111497)
+
+**CVE:** `CVE-2026-111497` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-27
+**Reference:** <https://www.tenable.com/blog/brotli2shell-frequently-asked-questions-for-google-brotli-decoder-cve-2026-111497>
+
+> Researchers have demonstrated remote code execution through CVE-2026-111497, an out-of-bounds write in Google&#x27;s Brotli decoder library, and public proofs-of-concept (PoCs) are available. Software that uses the decoder includes Node.js, .NET, Bun, Envoy Proxy, Istio, Python HTTP clients and PHP for Windows. Key Takeaways CVE-2026-111497, known as Brotli2Shell and by several other names, is an …
+
+---
+
+## 12. 🟡 High Severity — Discover and remediate PHP2Shell exposure with Tenable
+
+**CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-10-26
+**Reference:** <https://www.tenable.com/blog/discover-and-remediate-php2shell-exposure-with-tenable>
+
+> Learn how to use Tenable solutions to find vulnerable PHP versions, prioritize remediation, and patch the critical PHP2Shell vulnerabilities (CVE-2026-109618 and CVE-2026-109619) faster. Key takeaways The PHP2Shell vulnerabilities ( CVE-2026-109618 and CVE-2026-109619 ) put security teams in a race against attackers. PHP runs on more than 70% of websites, so organizations need to quickly find wher…
+
+---
+
+## 13. 🟡 High Severity — PHP Patches Two Critical Unauthenticated RCEs (CVE-2026-109618, CVE-2026-109619): [Updated for CVE-2026-115560]
 
 **CVE:** `CVE-2026-109618` | `CVE-2026-109619` | `CVE-2026-115560` &nbsp;|&nbsp; **Source:** Snyk Vulnerability Research &nbsp;|&nbsp; **Published:** 2026-10-26
 **Reference:** <https://snyk.io/blog/php-patches-critical-unauthenticated-rces/>
@@ -101,7 +119,7 @@
 
 ---
 
-## 12. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
