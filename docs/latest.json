@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-27T02:40:35.226721+00:00",
-  "total": 14,
+  "generated": "2026-10-27T11:11:29.234136+00:00",
+  "total": 17,
   "kev": 0,
-  "zero_day": 8,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,21 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/",
+      "title": "CISA confirms PHP2Shell vulnerabilities now exploited in attacks",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added the PHP2Shell  vulnerabilities to its catalog of actively exploited security flaws and ordered federal agencies to patch their systems by Thursday. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/",
+      "published": "2026-10-27T08:20:54+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -134,6 +149,36 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
+      "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
+      "summary": "\u200bApple has backported security patches released last month to older iPhones and iPads, addressing a zero-day bug exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
+      "link": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
+      "published": "2026-10-27T10:36:12+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/this-is-fine-what-netscaler-zero-days-tell-us-about-the-new-normal/",
+      "title": "This is Fine: What NetScaler Zero-Days Tell Us About the New Normal",
+      "summary": "Keep your patch management pipelines primed in case another round of Citrix NetScaler patches get released soon. The post This is Fine: What NetScaler Zero-Days Tell Us About the New Normal appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/this-is-fine-what-netscaler-zero-days-tell-us-about-the-new-normal/",
+      "published": "2026-10-27T10:02:24+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -179,6 +224,24 @@
       "is_high_severity": true
     },
     {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/38",
+      "title": "CVE-2026-109618: PHP-CGI Pointer Underflow \u2192 Remote Code Execution (CVSS 9.2)",
+      "summary": "Posted by jose on Oct 27 CVE-2026-109618: Pointer underflow in PHP's CGI SAPI enables unauthenticated remote code execution. Affected: ALL PHP versions 5.x through 8.4.26 with cgi.fix_pathinfo=1 (default configuration). Same vulnerability class as CVE-2019-11043 (PHP-FPM, CVSS 9.8, patched 2019) \u2014 the CGI SAPI never received the equivalent fix. Fix: PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 (scheduled Oct 21, 2026 14:00 UTC) PHP 8.1 and earlier (EOL) receive NO fix....",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/38",
+      "published": "2026-10-27T07:29:58+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2019-11043"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "https://www.tenable.com/blog/brotli2shell-frequently-asked-questions-for-google-brotli-decoder-cve-2026-111497",
       "title": "Brotli2Shell: Frequently asked questions for Google Brotli decoder vulnerability (CVE-2026-111497)",
       "summary": "Researchers have demonstrated remote code execution through CVE-2026-111497, an out-of-bounds write in Google's Brotli decoder library, and public proofs-of-concept (PoCs) are available. Software that uses the decoder includes Node.js, .NET, Bun, Envoy Proxy, Istio, Python HTTP clients and PHP for Windows. Key Takeaways CVE-2026-111497, known as Brotli2Shell and by several other names, is an out-of-bounds write in Google's Brotli decoder library that Google, the CVE Numbering Authority (CNA), scored 9.2 under CVSSv4.0. Any application that decompresses attacker-controlled data with a vulnerable Brotli decoder is potentially at risk, including Node.js, .NET, Bun, Envoy Proxy, Istio, Python HTTP clients, FFmpeg, Apache Arrow and ClickHouse. Patches are available for Google Brotli and the major runtimes, though some projects had not shipped a fixed release as of October 26, and applications that bundle their own copy of Brotli each need their own fix. Background Tenable's Research Special Operations (RSO) team has compiled this blog to answer Frequently Asked Questions (FAQ) regarding Brotli2Shell, a vulnerability in Google's Brotli C decoder library, which Node.js, .NET and other software embed. FAQ What is Brotli2Shell? Brotli2Shell is one of several names for CVE-2026-111497, a memory corruption flaw in Google's open-source Brotli compression library. Some researchers call it Node2Shell, after Node.js, which disclosed the flaw in its October 21 security advisory. Others use HTTP2Shell, since the same bug reaches HTTP software outside Node.js. It has circulated as Broccoli2Shell as well. We use Brotli2Shell because the bug sits in the Brotli decoder itself, not in any one downstream product. What is the vulnerability associated with Brotli2Shell? CVE-2026-111497 is an out-of-bounds write vulnerability in the Google Brotli C decoder library. CVE Description CVSSv4.0 CVE-2026-111497 Google Brotli decoder out-of-bounds write vulnerability 9.2 An attacker can trigger the",
@@ -211,27 +274,6 @@
       "cve_ids": [
         "CVE-2026-109618",
         "CVE-2026-109619"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://snyk.io/blog/php-patches-critical-unauthenticated-rces/",
-      "title": "PHP Patches Two Critical Unauthenticated RCEs (CVE-2026-109618, CVE-2026-109619): [Updated for CVE-2026-115560]",
-      "summary": "Two critical flaws in PHP\u2019s request lifecycle can enable unauthenticated remote code execution. Upgrade to a fixed release or install a vendor backport for older versions.",
-      "link": "https://snyk.io/blog/php-patches-critical-unauthenticated-rces/",
-      "published": "2026-10-26T04:00:00+00:00",
-      "source": "Snyk Vulnerability Research",
-      "tags": [
-        "cloud",
-        "container",
-        "dependencies",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619",
-        "CVE-2026-115560"
       ],
       "is_zero_day": false,
       "is_high_severity": true
