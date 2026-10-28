@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-28 11:45 UTC &nbsp;|&nbsp; **Total:** 41 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 29 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-28 17:31 UTC &nbsp;|&nbsp; **Total:** 27 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 15 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws
+## 3. 🟠 Zero-Day — Hackers now scanning systems for recently-patched Oracle flaw
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-28
+**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw/>
+
+> Attackers have begun probing the Internet for systems unpatched against a recently disclosed critical Oracle E-Business Suite (EBS) vulnerability. [...]
+
+---
+
+## 4. 🟠 Zero-Day — ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws
 
 **CVE:** `CVE-2026-35273` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html>
@@ -28,18 +37,6 @@
 > The critical Oracle PeopleSoft bug that ShinyHunters has exploited since May is not one flaw but three chained together, the researchers who reported it said this week.
 
 Oracle patched all three under a single identifier, CVE-2026-35273, in June. Its root is a server-side request forgery (SSRF) that reaches an internal management interface because PeopleSoft trusts its own loopback address
-
----
-
-## 4. 🟠 Zero-Day — Strands Agents: Local Privilege Escalation via Symlink Attack in Default Session File Storage
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-3w55-933p-8pv5>
-
-> ## Summary
-
-The `FileSessionManager` defaults to storing session data in `/tmp/strands/sessions/` (a world-writable directory) using predictable file paths and a write pattern (`open(path + &quot;.tmp&quot;, &quot;w&quot;)` → `os.replace()`) that follows symbolic links. A local attacker can exploit this to overwrite arbitrary files or inject malicious session data for persistent prompt injection.
-…
 
 ---
 
@@ -97,7 +94,16 @@ The `FileSessionManager` defaults to storing session data in `/tmp/strands/sessi
 
 ---
 
-## 11. 🟠 Zero-Day — Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach
+## 11. 🟠 Zero-Day — Volt Typhoon hides zero-day attacks using 'Silent Train' framework
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-28
+**Reference:** <https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/>
+
+> Chinese state-sponsored hacking group Volt Typhoon has been using a framework that relies on rotating chains of connected devices compromised on demand, including for zero-day attacks targeting high-value systems. [...]
+
+---
+
+## 12. 🟠 Zero-Day — Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html>
@@ -105,15 +111,6 @@ The `FileSessionManager` defaults to storing session data in `/tmp/strands/sessi
 > Japan&#x27;s GMO Internet Group is offering up to $1 million in total for tips that help catch the attackers who breached its Onamae.com Desktop Cloud service, after refusing to pay an extortion demand.
 
 The reward program opened on October 28 and pays only if a tip helps lead to an arrest or an international wanted notice. The service hosts Windows desktops used for FX trading,
-
----
-
-## 12. 🟠 Zero-Day — iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/>
-
-> Apple patched 286 vulnerabilities in iOS and macOS 27.2 and brought the fix for an exploited CoreGraphics zero-day to older iPhones. The post iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18 appeared first on SecurityWeek .
 
 ---
 
@@ -135,7 +132,20 @@ The reward program opened on October 28 and pays only if a tip helps lead to an 
 
 ---
 
-## 15. 🟡 High Severity — Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass
+## 15. 🟡 High Severity — Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch
+
+**CVE:** `CVE-2026-101767` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-28
+**Reference:** <https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html>
+
+> Threat actors are beginning to probe for a newly patched critical vulnerability in Oracle E-Business Suite (EBS), according to threat intelligence firm Defused Cyber.
+
+The vulnerability in question is CVE-2026-101767 (CVSS score: 9.8) in the Oracle Application Object Library of Oracle E-Business Suite. It was patched by Oracle last week as part of its Critical Patch Update.
+
+Security researchers
+
+---
+
+## 16. 🟡 High Severity — Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass
 
 **CVE:** `CVE-2026-104351` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html>
@@ -146,15 +156,6 @@ The list of eight vulnerabilities is as follows -
 
 
   CVE-2026-104351 (CVSS score: 9.9) - A code injection vulnerability that could lead to arbitrary code execution.
-
----
-
-## 16. 🟡 High Severity — Hackers Start Probing Fresh Oracle EBS Vulnerability
-
-**CVE:** `CVE-2026-101767` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-28
-**Reference:** <https://www.securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability/>
-
-> CVE-2026-101767 is an unauthenticated SQL injection that can be exploited for remote code execution. The post Hackers Start Probing Fresh Oracle EBS Vulnerability appeared first on SecurityWeek .
 
 ---
 
@@ -298,181 +299,7 @@ No workaround exist, yet CTFer.io recommends you keep your state in safe environ
 
 ---
 
-## 27. 🟡 High Severity — Authlib: Unvalidated request_uri fetch in JWT-secured authorization request (JAR) leading to SSRF
-
-**CVE:** `CVE-2026-114620` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-x4rv-c3wx-4cr8>
-
-> ### Summary
-
-Authlib&#x27;s RFC 9101 (JAR) extension passes the attacker-controlled `request_uri` authorization parameter straight to the `get_request_object()` fetch hook with no validation, at a pre-authentication endpoint. Authlib already defines the pre-registration allowlist for this (`request_uris` client metadata and `require_request_uri_registration` server metadata) but the extension neve…
-
----
-
-## 28. 🟡 High Severity — Authlib incomplete algorithm-confusion fix permits HMAC forgery with prefixed public keys
-
-**CVE:** `CVE-2026-114615` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-7vr2-2fgp-9w7p>
-
-> ## Summary
-
-`OctKey.import_key()` carries the only guard that stops an asymmetric public key from being used as an
-HMAC secret in `authlib.jose`. That guard is `raw_key.startswith(POSSIBLE_UNSAFE_KEYS)` — anchored at
-byte 0 — while the loader that consumes the identical bytes on the asymmetric path
-(`cryptography.hazmat.primitives.serialization.load_pem_public_key` / `load_pem_x509_certificate`)
-s…
-
----
-
-## 29. 🟡 High Severity — PhpSpreadsheet: SSRF whitelist bypass via unre-validated HTTP redirect in Drawing::setPath external image loading
-
-**CVE:** `CVE-2026-108360` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-2phh-27fw-q4gc>
-
-> ## Summary
-PhpSpreadsheet&#x27;s `Worksheet\Drawing::setPath()` validates an external-image URL against an operator-supplied `isWhitelisted` callback **once**, on the initial URL only, then fetches it with `file_get_contents()` using a stream context that does **not** set `follow_location =&gt; 0`. A whitelisted host that returns an HTTP `302 Location:` redirect to an internal target is therefore …
-
----
-
-## 30. 🟡 High Severity — PhpSpreadsheet: XmlScanner Bypass via ISO-2022 Escape Sequences Allows XXE and Denial of Service
-
-**CVE:** `CVE-2026-108358` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-3x94-m842-937c>
-
-> ### Summary
-PhpSpreadsheet&#x27;s `XmlScanner::scan()` uses a regex pattern that only accounts for NULL byte (0x00) interleaving when detecting `&lt;!DOCTYPE`. ISO-2022 escape sequences (0x1B bytes) inserted between the characters of the pattern break the regex match entirely, allowing DOCTYPE declarations with entity definitions to pass through undetected. This enables Denial of Service via quadr…
-
----
-
-## 31. 🟡 High Severity — PhpSpreadsheet: XmlScanner Bypass via Double-Encoded unentity() TOCTOU Allows XXE and Denial of Service
-
-**CVE:** `CVE-2026-108357` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-rxj4-h86g-25gc>
-
-> ### Summary
-The SpreadsheetML XML reader (`Reader\Xml`) scans file content **twice** through `XmlScanner::scan()`, and each scan runs an `unentity()` callback that calls `html_entity_decode()` **after** the pattern check. By double-encoding the `&lt;` character as `&amp;#38;#60;`, the first scan decodes `&amp;#38;` to `&amp;` (forming `&amp;#60;`), and the second scan decodes `&amp;#60;` to `&lt;`…
-
----
-
-## 32. 🟡 High Severity — compress zstd: Panic on two-block frames
-
-**CVE:** `CVE-2026-116591` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-fpmh-frq8-7rj8>
-
-> ### Summary
-
-A crafted ~27 KB two-block zstd frame makes DecodeAll and the streaming decoder panic with an out-of-range slice index instead of returning a decode error. The same bytes decode fine with the reference zstd. Any program that decompresses untrusted zstd input can be crashed by it. Reproduced on v1.20.0 and v1.20.1.
-
-Released in https://github.com/klauspost/compress/releases/tag/v1.20.2…
-
----
-
-## 33. 🟡 High Severity — Datadog dd-trace-py: ReDoS in URL query string obfuscation
-
-**CVE:** `CVE-2026-116588` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-3633-r77q-h3v3>
-
-> ### Summary
-
-A regular expression used to obfuscate URL query strings can consume excessive CPU when processing certain attacker-controlled input. This can stall request processing and cause denial of service in applications using affected HTTP tracing integrations.
-
-### Details
-
-The default query-string obfuscation pattern can exhibit excessive backtracking. The pattern is applied synchronously w…
-
----
-
-## 34. 🟡 High Severity — vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution
-
-**CVE:** `CVE-2026-114053` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-h3rc-6mm3-gc2m>
-
-> ## Summary
-
-An untrusted multimodal request can set `mm_processor_kwargs.code_revision`. When vLLM serves a model whose Hugging Face processor uses dynamic `auto_map` code and the operator enabled `--trust-remote-code`, this request value reaches `AutoProcessor.from_pretrained` and selects the Python revision imported by Transformers.
-
-This lets a client replace the operator-reviewed processor mod…
-
----
-
-## 35. 🟡 High Severity — Flexible GraphRAG: Cypher/Graph Injection via broken string-escaping in FalkorDB adapter (_escape()) - full graph wipe from ingested-document content
-
-**CVE:** `CVE-2026-114510` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-vqrg-773h-4wxc>
-
-> **Description**
-def _escape(v: str) -&gt; str:
-    return str(v).replace(&quot;&#x27;&quot;, &quot;\\&#x27;&quot;).replace(&quot;\\&quot;, &quot;\\\\&quot;)
-The escaping order is backwards, exactly like the classic HTML double-escape bug: step 1 inserts a literal backslash in front of every &#x27;, then step 2 re-matches that just-inserted backslash and doubles it. For an input ending in a single …
-
----
-
-## 36. 🟡 High Severity — LiteLLM: Privilege Escalation to Proxy Admin via Cross-Domain Reuse of the Salt Key
-
-**CVE:** `CVE-2026-114612` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-7hp6-4w63-5g45>
-
-> ### Summary
-
-An authenticated user with `internal_user` privileges can escalate to `proxy_admin` and achieve remote code execution. The proxy uses one encryption key for two purposes: sealing secrets at rest and minting session tokens. An attacker exploits this by requesting a new API key with a crafted metadata field containing a forged admin credential as the &quot;secret&quot; value. The proxy …
-
----
-
-## 37. 🟡 High Severity — MessagePack: Unbounded memory leak in msgpack C extension on strict_map_key validation failure
-
-**CVE:** `CVE-2026-114613` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-j586-36cw-2gc2>
-
-> ### Impact
-
-The msgpack-python C extension (`msgpack._cmsgpack`) leaks a decoded map value when deserialization rejects a key with `strict_map_key=True` (the default). Repeated malformed inputs can cause unbounded process memory growth and denial of service in applications that deserialize attacker-controlled MessagePack data. Both `unpackb()` and the streaming `Unpacker` API are affected. The pur…
-
----
-
-## 38. 🟡 High Severity — fpdf2 implicitly loads external URLs and local image paths when rendering attacker-controlled content
-
-**CVE:** `CVE-2026-114609` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-rw7v-4hrq-x6r9>
-
-> ## Summary
-
-`fpdf2` implicitly dereferences image resource references supplied to rendering APIs. If an application passes untrusted HTML, SVG, template data, or image paths into those APIs, `fpdf2` may issue outbound HTTP(S) requests or attempt to open local filesystem paths.
-
-This behavior is relevant in applications that render untrusted or user-provided input without sanitizing or restricting …
-
----
-
-## 39. 🟡 High Severity — Agno: Arbitrary code execution via `eval()` on `field_type` in `FunctionCall`
-
-**CVE:** `CVE-2026-35002` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-m4w4-3r8h-jw98>
-
-> ### Impact
-Agno versions prior to 2.3.24 contain an arbitrary code execution vulnerability
-in the model execution component. The `field_type` parameter on a `FunctionCall`
-input field was passed to Python&#x27;s built-in `eval()`, allowing an attacker who
-could influence that value to execute arbitrary Python code in the Agno process.
-
-This is a code injection flaw (CWE-95) with full impact to con…
-
----
-
-## 40. 🟡 High Severity — Ajenti has potential Remote Code Execution
-
-**CVE:** `CVE-2026-27975` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-27
-**Reference:** <https://github.com/advisories/GHSA-vcw3-r3fx-j444>
-
-> ### Impact
-
-An unauthenticated user could gain access to a server to execute arbitrary code on this server.
-
-### Patches
-
-This is fixed in the version 2.2.13. Users should upgrade to this version as soon as possible.
-
----
-
-## 41. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 27. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
