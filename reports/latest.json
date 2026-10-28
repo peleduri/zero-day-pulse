@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-28T02:49:53.126911+00:00",
+  "generated": "2026-10-28T11:45:31.712506+00:00",
   "total": 41,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -37,6 +37,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+      "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
+      "summary": "The critical Oracle PeopleSoft bug that ShinyHunters has exploited since May is not one flaw but three chained together, the researchers who reported it said this week.\n\nOracle patched all three under a single identifier,\u00a0CVE-2026-35273, in June. Its root is a server-side request forgery (SSRF) that reaches an internal management interface because PeopleSoft trusts its own loopback address",
+      "link": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+      "published": "2026-10-28T06:04:58+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "GHSA-3w55-933p-8pv5",
       "title": "Strands Agents: Local Privilege Escalation via Symlink Attack in Default Session File Storage",
       "summary": "## Summary\n\nThe `FileSessionManager` defaults to storing session data in `/tmp/strands/sessions/` (a world-writable directory) using predictable file paths and a write pattern (`open(path + \".tmp\", \"w\")` \u2192 `os.replace()`) that follows symbolic links. A local attacker can exploit this to overwrite arbitrary files or inject malicious session data for persistent prompt injection.\n\n## Vulnerability Details\n\n**Component:** `strands-py/src/strands/session/file_session_manager.py`\n\n**Root Cause:**\n1. Default storage directory is `tempfile.gettempdir() + \"/strands/sessions/\"` (line 58) \u2014 resolves to `/tmp/strands/sessions/` on Linux/macOS\n2. The `_write_file()` method (lines 116-123) writes to a predictable `.tmp` path without symlink protection:\n   ```python\n   tmp = f\"{path}.tmp\"\n   with open(tmp, \"w\", encoding=\"utf-8\", newline=\"\\n\") as f:\n       json.dump(data, f, indent=2, ensure_ascii=False)\n   os.replace(tmp, path)\n   ```\n3. `open()` follows symlinks \u2014 a pre-placed symlink at the `.tmp` path causes writes to an arbitrary target file\n4. No integrity verification (HMAC/signature) on session files \u2014 tampered data is loaded as-is\n\n## Attack Vectors\n\n### 1. Arbitrary File Overwrite (Local Privilege Escalation)\n1. Attacker pre-creates `/tmp/strands/sessions/session_<id>/` (or monitors for new directories via inotify)\n2. Attacker creates a symlink: `session.json.tmp` \u2192 `/home/victim/.bashrc` (or any writable file)\n3. Victim application writes session data \u2192 follows symlink \u2192 overwrites target file with JSON content\n4. Attacker achieves code execution on next shell login (or targets `.ssh/authorized_keys`, cron files, etc.)\n\n### 2. Persistent Prompt Injection via Session Tampering\n1. Attacker writes crafted message files into the session directory\n2. Victim application restores the session \u2192 loads attacker-controlled conversation history\n3. Injected messages instruct the agent to execute attacker commands on every future interaction\n4. No integrity check prevents this \u2014 the S",
@@ -47,21 +64,6 @@
         "github",
         "advisories",
         "oss"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/",
-      "title": "CISA confirms PHP2Shell vulnerabilities now exploited in attacks",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added the PHP2Shell  vulnerabilities to its catalog of actively exploited security flaws and ordered federal agencies to patch their systems by Thursday. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/",
-      "published": "2026-10-27T08:20:54+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -165,41 +167,26 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
+      "title": "Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach",
+      "summary": "Japan's GMO Internet Group is\u00a0offering up to $1 million in total\u00a0for tips that help catch the attackers who breached its Onamae.com Desktop Cloud service, after refusing to pay an extortion demand.\n\nThe reward program opened on October 28 and pays only if a tip helps lead to an arrest or an international wanted notice. The service\u00a0hosts Windows desktops\u00a0used for FX trading,",
+      "link": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
+      "published": "2026-10-28T07:13:21+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/",
       "title": "iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18",
       "summary": "Apple patched 286 vulnerabilities in iOS and macOS 27.2 and brought the fix for an exploited CoreGraphics zero-day to older iPhones. The post iOS, macOS 27.2 Patch 286 Bugs; Fix for Exploited Flaw Backported to iOS 18 appeared first on SecurityWeek .",
       "link": "https://www.securityweek.com/ios-macos-27-2-patch-286-bugs-fix-for-exploited-flaw-backported-to-ios-18/",
       "published": "2026-10-27T11:49:57+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
-      "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
-      "summary": "\u200bApple has backported security patches released last month to older iPhones and iPads, addressing a zero-day bug exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
-      "link": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
-      "published": "2026-10-27T10:36:12+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.securityweek.com/this-is-fine-what-netscaler-zero-days-tell-us-about-the-new-normal/",
-      "title": "This is Fine: What NetScaler Zero-Days Tell Us About the New Normal",
-      "summary": "Keep your patch management pipelines primed in case another round of Citrix NetScaler patches get released soon. The post This is Fine: What NetScaler Zero-Days Tell Us About the New Normal appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/this-is-fine-what-netscaler-zero-days-tell-us-about-the-new-normal/",
-      "published": "2026-10-27T10:02:24+00:00",
       "source": "SecurityWeek",
       "tags": [
         "news",
@@ -250,6 +237,40 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
+      "title": "Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass",
+      "summary": "Adobe has released patches to address multiple critical security flaws in Campaign Classic that, if successfully exploited, could result in arbitrary code execution, security feature bypass, and privilege escalation.\n\nThe list of eight vulnerabilities is as follows -\n\n\n  CVE-2026-104351 (CVSS score: 9.9) - A code injection vulnerability that could lead to arbitrary code execution.",
+      "link": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
+      "published": "2026-10-28T11:15:51+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-104351"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability/",
+      "title": "Hackers Start Probing Fresh Oracle EBS Vulnerability",
+      "summary": "CVE-2026-101767 is an unauthenticated SQL injection that can be exploited for remote code execution. The post Hackers Start Probing Fresh Oracle EBS Vulnerability appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability/",
+      "published": "2026-10-28T09:14:23+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [
+        "CVE-2026-101767"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -682,24 +703,6 @@
       ],
       "cve_ids": [
         "CVE-2026-27975"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://seclists.org/fulldisclosure/2026/Oct/38",
-      "title": "CVE-2026-109618: PHP-CGI Pointer Underflow \u2192 Remote Code Execution (CVSS 9.2)",
-      "summary": "Posted by jose on Oct 27 CVE-2026-109618: Pointer underflow in PHP's CGI SAPI enables unauthenticated remote code execution. Affected: ALL PHP versions 5.x through 8.4.26 with cgi.fix_pathinfo=1 (default configuration). Same vulnerability class as CVE-2019-11043 (PHP-FPM, CVSS 9.8, patched 2019) \u2014 the CGI SAPI never received the equivalent fix. Fix: PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35 (scheduled Oct 21, 2026 14:00 UTC) PHP 8.1 and earlier (EOL) receive NO fix....",
-      "link": "https://seclists.org/fulldisclosure/2026/Oct/38",
-      "published": "2026-10-27T07:29:58+00:00",
-      "source": "Full Disclosure",
-      "tags": [
-        "disclosure",
-        "exploit"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2019-11043"
       ],
       "is_zero_day": false,
       "is_high_severity": true
