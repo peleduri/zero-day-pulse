@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">16</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">43</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">42</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-28 21:57 UTC</div>
+            <div class="generated">Updated 2026-10-29 03:12 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46300" target="_blank" rel="noopener">CVE-2026-46300 — Linux Kernel Missing Initialization of a Variable Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-46300</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-28</span>
-  </div>
-  <p class='summary'>Vendor: Linux | Product: Kernel. Linux Kernel contains a missing initialization of a variable vulnerability that could allow for unintended modification of page-cache-backed data via failure to preserve the shared-fragment marker during socket buffer coalescing, causing ESP input processing to decrypt shared fragments in place. This vulnerability can be chained with CVE-2026-109618 and CVE-2026-10…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-41709" target="_blank" rel="noopener">CVE-2026-41709 — Broadcom VMWare ESX Insufficient Logging Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-41709</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-28</span>
-  </div>
-  <p class='summary'>Vendor: Broadcom | Product: VMware ESX. Broadcom VMWare ESX contains an insufficient logging vulnerability that could allow a malicious actor with admin access to perform certain operations without being logged. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -456,6 +424,26 @@ The reward program opened on October 28 and pays only if a tip helps lead to an 
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pcg2-g6cj-q92c" target="_blank" rel="noopener">Tornado: Quadratic CPU usage when parsing HTTP headers with line folding</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116577</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-28</span>
+          </div>
+          <p class='summary'>### Summary
+
+Tornado&#x27;s HTTP header parser takes quadratic time (O(n²)) when a header value is continued across many &quot;obsolete line folding&quot; (obs-fold) lines. An unauthenticated attacker can send a request whose header block is mostly short continuation lines. Parsing it uses a large amount of CPU on the IOLoop thread and blocks every other connection that process is serving.
+
+This issue is closely…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
