@@ -1,10 +1,48 @@
 {
-  "generated": "2026-10-29T17:42:30.680945+00:00",
-  "total": 56,
-  "kev": 0,
-  "zero_day": 25,
+  "generated": "2026-10-29T22:07:42.510541+00:00",
+  "total": 38,
+  "kev": 2,
+  "zero_day": 22,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-97229",
+      "title": "CVE-2026-97229 \u2014 GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+      "summary": "Vendor: GitLab | Product: Community Edition and Enterprise Edition. GitLab Community Edition and Enterprise Edition contain a integer overflow or wraparound vulnerability that could allow an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expression in a CI/CD configuration, due to insufficient regular expression validation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-01)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-97229",
+      "published": "2026-10-29",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-97229"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "CVE-2026-76418",
+      "title": "CVE-2026-76418 \u2014 Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+      "summary": "Vendor: Cisco | Product: Secure Firewall ASA Software and Cisco Secure FTD Software. Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-01)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76418",
+      "published": "2026-10-29",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-76418"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -63,24 +101,6 @@
         "exploit"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118654",
-      "title": "Echo static file middleware route protection bypass via encoded dot-dot traversal",
-      "summary": "## Summary\n\nEcho v5.2.0 contains a bypass of the fix for GHSA-vfp3-v2gw-7wfq. The fix rejects encoded path separators such as `%2F` and `%5C` before static file path unescaping, but two traversal forms still bypass route-level middleware protections for static files.\n\nThe primary bypass uses encoded dot-dot segments. A request such as `/public/%2E%2E/admin/secret.txt` passes the encoded-separator guard, is unescaped to `public/../admin/secret.txt`, then `path.Clean` resolves it to `admin/secret.txt`. If `/admin/*` is protected by middleware but the static filesystem is mounted at `/`, the protected file is returned through the public static route.\n\nA second bypass exists when `UseEscapedPathForMatching=true`. In that mode, the router normalizes encoded separators before the static handler checks the wildcard. The handler receives a decoded wildcard with no `%` characters, so the encoded-separator guard does not run on the original encoded path.\n\n## Impact\n\nAn unauthenticated attacker can read files that an application intended to protect with route-level middleware, when those files are also reachable through a static filesystem mount after path normalization.\n\nThe high-severity variant works with the default router configuration and requires only encoded dot-dot path segments. The direct protected route returns 403, while the public static route returns the protected file content.\n\nThe `UseEscapedPathForMatching=true` variant is lower severity because it requires a non-default router configuration.\n\n## Affected versions\n\nTested vulnerable:\n\n- `github.com/labstack/echo/v5` v5.2.0\n- Current `master` at `5786024ea4d85c01784796e8aa7aac53e007b39b`\n\nNo patched version is currently known.\n\n\n## Policy and version checks\n\nGitHub Private Vulnerability Reporting is enabled for `labstack/echo`. The repository has a root `SECURITY.md` and accepts security reports through GitHub Security Advisories.\n\nThe vulnerable code was revalidated on both current `master` and the latest rel",
-      "link": "https://github.com/advisories/GHSA-3pmx-cf9f-34xr",
-      "published": "2026-10-28T21:04:46Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118654"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -178,6 +198,22 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/",
+      "title": "New Prompt Injection Techniques Cover Agent-Planning Attacks",
+      "summary": "",
+      "link": "https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/",
+      "published": "Oct 29, 2026 00:00:00-0500",
+      "source": "CrowdStrike Blog",
+      "tags": [
+        "cloud",
+        "threat-intel",
+        "research"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -351,57 +387,6 @@
       "is_high_severity": false
     },
     {
-      "id": "CVE-2026-117601",
-      "title": "Electrum: Malicious server can replace a just-broadcast tx and try to trick user into RBF-ing it",
-      "summary": "### Summary\n\nThe main Electrum server the client connects to is trusted with mempool (\"unconfirmed\") transactions. This is documented [design](https://electrum.readthedocs.io/en/latest/faq.html#does-electrum-trust-servers). [0]\n\nHowever now someone figured out a way to practically exploit it:\n- when the client broadcasts a new tx1, a malicious server can swallow it,\n- and update the client's history with a conflicting (invalid) tx2 that replaces the outputs with the attacker's output address.\n- Tx2 has invalid signatures, but this is not checked (due to light client design).\n- The wallet will display tx2 as an unconfirmed transaction - tx1 will not be displayed.\n- If the client then manually RBF fee-bumps tx2, the client will sign it with a higher fee, and hence pay the attacker.\n\n### Fixes\n\nCommit 90fe30822 contains the fix [1], included in version 4.8.3.\nThe client now verifies the signatures of `wallet.is_mine` inputs for mempool txs (before adding them to its local history).\n\nUsers should upgrade (and regularly do so in any case).\nAs a workaround, without upgrading, when signing any transaction, for bumping the fee or not, they should verify the output addresses and amounts are as expected.\n\nClients that connect to servers they trust (e.g. run their own) are not affected.\n\n\n### Remarks\n\n- some servers are performing this attack in the wild\n- electrum received two user-reports of this. user1 noticed after broadcasting tx1 the wallet history contained a different tx. user2 bumped the fee of tx2 and lost money.\n- user1 reported tx1 was not propagated over the bitcoin p2p, so the server held it\n- both reported the attacker's output address in tx2 was grinded to match the last four chars of the legit address from tx1\n- based on user2's report, the server constructed a tx2 with zero fee (presumably in hope of the user bumping its fee)\n- even with the fix, we still only validate \"is_mine\" inputs (i.e. paying from addresses that the wallet owns). So e.g. \"incoming\" txs ",
-      "link": "https://github.com/advisories/GHSA-6jp4-8v48-cc5v",
-      "published": "2026-10-28T21:23:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-117601"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-118661",
-      "title": "Happy DOM has cookie scope forgery: no DNS-label boundary on Domain= matching , attacker origin sets victim cookies",
-      "summary": "### Summary\nA cookie-scoping bug in happy-dom lets an attacker origin set cookies that a victim origin then receives, diverging from browser semantics.\n\n### Details\nhappy-dom matches Domain=example.com against notexample.com (endsWith without a DNS-label boundary), diverging from browser semantics (verified 20.11.6 npm latest: cookieMatchesURL(Domain=example.com, url=http://notexample.com) = true). Relevant where happy-dom is used for SSR/prerender cookie handling. Matching in src/cookie/CookieContainer.ts.\n\n### PoC\n\nRun:\n```bash\nnode poc-happydom-cookie-domain.js\n```\n\nFull proof-of-concept source (poc-happydom-cookie-domain.js):\n```js\n// PoC: happy-dom cookie-domain scoping gap -> cross-origin cookie injection / session fixation\n// Chain: app (window at http://localhost:PORT2) fetches attacker server (http://127.0.0.1:PORT1)\n//        -> attacker Set-Cookie with Domain=localhost (a host that is NOT a suffix of 127.0.0.1)\n//        -> happy-dom stores it (a real browser rejects: RFC 6265 \u00a75.3.6-7 + PSL)\n//        -> app's same-origin fetch to http://localhost:PORT2/api/account carries the forged cookie\n// Run:  cd C:/Users/rncb0/AppData/Local/Temp/0day && node poc/poc-happydom-cookie-domain.js\nconst http = require('http');\nconst { Window } = require('happy-dom');\n\nconst ATK_PORT = 19311; // attacker server, 127.0.0.1\nconst VIC_PORT = 19312; // victim server, localhost\n\nlet victimReceivedCookies = [];\n\nlet attackerSetCookie = `session=FORGED_BY_ATTACKER; Domain=localhost; Path=/; SameSite=None; Secure`;\n\nconst attacker = http.createServer((req, res) => {\n  if (req.method === 'OPTIONS') {\n    // CORS preflight (happy-dom enforces same-origin policy with a preflight; the\n    // attacker trivially answers it \u2014 an attacker-controlled server always can)\n    res.writeHead(204, {\n      'Access-Control-Allow-Origin': '*',\n      'Access-Control-Allow-Methods': 'GET, OPTIONS',\n      'Access-Control-Allow-Headers': '*'\n    });\n    res.end();\n    return;\n  }\n  res.writeHead(200,",
-      "link": "https://github.com/advisories/GHSA-5fpq-26gf-qwcr",
-      "published": "2026-10-28T21:06:13Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118661"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
-      "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
-      "summary": "The China-nexus cyber espionage group known as Volt Typhoon has been attributed to a now-disrupted covert access network dubbed Silent Train that has been put to use for zero-day exploitation and strategic access.\n\n\"First identified in late 2023, Silent Train uses rotating chains of compromised SOHO, IoT, and enterprise infrastructure,\" Lumen Technologies Black Lotus Labs said in a report shared",
-      "link": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
-      "published": "2026-10-28T18:08:33+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -442,6 +427,25 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
+      "summary": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29) appeared first on Unit 42 .",
+      "link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+      "published": "2026-10-29T18:00:34+00:00",
+      "source": "Unit 42 (Palo Alto)",
+      "tags": [
+        "cloud",
+        "research",
+        "threat-intel"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -620,330 +624,6 @@
       ],
       "cve_ids": [
         "CVE-2026-116577"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-116575",
-      "title": "Mem0: Cross-tenant conversation leak via unescaped delimiter collision in session-scope key (_build_session_scope)",
-      "summary": "Summary\n\n_build_session_scope() in mem0/memory/main.py builds the conversation-history scope key used to fetch/store the last N raw messages by naively joining caller-supplied user_id/agent_id/run_id values with unescaped & and = delimiters:\n\ndef _build_session_scope(filters):\n    parts = []\n    for key in sorted([\"user_id\", \"agent_id\", \"run_id\"]):\n        val = filters.get(key)\n        if val:\n            parts.append(f\"{key}={val}\")\n    return \"&\".join(parts)\n\n_validate_and_trim_entity_id() (the only validation applied to these values) rejects only empty/whitespace-only strings \u2014 it never forbids & or =. This scope string is then used as an exact-match key against a SQLite column (storage.py: WHERE session_scope = ?) to fetch the last 10 raw messages for a given scope (main.py, Phase 0 of _add_to_vector_store, both sync and async).\n\nImpact\n\nAny caller who controls only their own run_id (or agent_id) \u2014 a very common integration shape, since apps frequently pass a client-/session-supplied identifier straight through as run_id without namespacing \u2014 can craft a value containing &user_id=<victim> (or &agent_id=<victim>) that produces a scope string byte-for-byte identical to a different tenant's real scope string.\n\nConcretely: Tenant A calls add(msgs, user_id=\"alice\", run_id=\"proj-x\") \u2192 scope \"run_id=proj-x&user_id=alice\". An attacker who can only set run_id calls add(msgs, run_id=\"proj-x&user_id=alice\") \u2192 identical scope string. The attacker's next add() call:\n\n1. Reads Tenant A's raw prior conversation via get_last_messages(session_scope) and splices it verbatim into the attacker's own LLM fact-extraction prompt \u2014 a direct cross-tenant confidentiality leak (conversation content, potentially including PII, credentials, etc.).\n2. Writes into the same colliding row-set via save_messages(), whose eviction logic (DELETE FROM messages WHERE session_scope = ? AND id NOT IN (...)) can evict/interleave Tenant A's history \u2014 permanent cross-tenant data corruption, not just a re",
-      "link": "https://github.com/advisories/GHSA-5324-3w58-qpp2",
-      "published": "2026-10-28T21:17:08Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-116575"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115917",
-      "title": "vLLM: Permissive default CORS origins allow cross-origin requests to the vLLM HTTP server",
-      "summary": "### Summary\n\nThe OpenAI-compatible server registers Starlette `CORSMiddleware` with\n`allowed_origins` defaulting to `[\"*\"]`, and performs no authentication unless\n`--api-key` (or `VLLM_API_KEY`) is configured. A web page on any origin can send\nrequests to a vLLM server that the victim's browser can reach (for example\n`localhost` or an internal/VPN address) and read the responses. The default\n`allow_credentials=False` blocks cookie-bearing cross-origin requests; because\nvLLM authenticates with a bearer header rather than cookies, the wildcard still\npermits untokenized access to an unauthenticated server and read access when the\ncaller already holds a token.\n\n### Details\n\nAffected components\n\n- `vllm/entrypoints/launchers/cli_args.py` - `allowed_origins` default value.\n- `vllm/entrypoints/serve/middleware/register.py` - `CORSMiddleware`\n  registration.\n- `vllm/entrypoints/serve/middleware/authenticate.py` - auth middleware and its\n  guarded path prefixes.\n\n Root cause\n\n`vllm/entrypoints/launchers/cli_args.py`:\n\n```python\nallow_credentials: bool = False\n\"\"\"Allow credentials.\"\"\"\nallowed_origins: list[str] = field(default_factory=lambda: [\"*\"])\n\"\"\"Allowed origins.\"\"\"\n```\n\n`vllm/entrypoints/serve/middleware/register.py`:\n\n```python\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=args.allowed_origins,\n    allow_credentials=args.allow_credentials,\n    allow_methods=args.allowed_methods,\n    allow_headers=args.allowed_headers,\n)\n```\n\nThe auth middleware is added only when a token is configured and guards only the\n`/v1`, `/v2`, `/inference`, and `/cohere` prefixes. `/v1/load_lora_adapter` and\n`/v1/unload_lora_adapter` are inside `/v1` and therefore do require a key when\none is set; they are open only when no key is configured and dynamic LoRA\nupdating is enabled.\n\n### Impact\n\n\n- A malicious page can enumerate models (`GET /v1/models`), issue\n  `POST /v1/chat/completions`, consume GPU time, and read model output through\n  the victim's browser.\n- When the server is re",
-      "link": "https://github.com/advisories/GHSA-vvpg-rrww-wpmh",
-      "published": "2026-10-28T21:15:49Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115917"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115911",
-      "title": "vLLM: DoS via unbounded chat_template Jinja2 rendering exhausts the renderer thread pool",
-      "summary": "### Summary\nvLLM renders chat templates by passing the resolved Jinja2 source to `tokenizer.apply_chat_template()`, which compiles and `.render()`s it in an `ImmutableSandboxedEnvironment`. The sandbox prevents code-execution escapes but imposes **no wall-clock timeout, no output-size cap, and no nested-loop or binop limit**. The render runs in a `ThreadPoolExecutor` whose `max_workers` defaults to **1**, and CPython worker threads cannot be interrupted. An authenticated API client (or a malicious model repo loaded with `trust_remote_code=False`) can therefore submit a single short template and permanently wedge **all** chat-style endpoints (`/v1/chat/completions`, `/v1/responses`, `/tokenize`, `/pooling`-chat, `/invocations`-chat) for every tenant until the process is restarted. A string-multiplication variant instead OOM-kills the API-server process. Because of a separately-reported (GHSA-jmjw-q4x3-hmc2) gate omission on `/v1/responses`, the remote authenticated attacker vector works in **default `vllm serve` configuration** with no operator opt-in.\n\n### Impact\nA single authenticated request of <100 bytes permanently denies all chat-style inference (`/v1/chat/completions`, `/v1/responses`, `/tokenize`, `/pooling`-chat, `/invocations`-chat) to **every tenant** of the API-server replica until the operator restarts the process. The string-multiplication variant OOM-kills the process. In a multi-tenant deployment this is a cross-tenant denial-of-service from any one tenant. From the malicious-model angle, a model repo whose `tokenizer_config.json` carries the hostile template wedges every replica that loads it on the first legitimate chat request, with `trust_remote_code=False`.\n\n**Preconditions:** any non-harmony model (`model_type != gpt_oss`); `renderer_num_workers` at its default of 1; for the default-config authenticated API attacker vector, `--chat-template` must be unset (the default because most HF models ship their own).\n**Blast radius:** API-server process, ",
-      "link": "https://github.com/advisories/GHSA-542m-9234-8gvf",
-      "published": "2026-10-28T21:14:52Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115911"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-116585",
-      "title": "Go JOSE: Panic during CBC-HMAC processing",
-      "summary": "### Summary\n\nDecrypting a ciphertext with \"A128CBC-HS256\", \"A192CBC-HS384\", or \"A256CBC-HS512\" can result in a panic on untrusted input.\n\nNote this advisory is the same as https://github.com/go-jose/go-jose/security/advisories/GHSA-6mp9-8xrw-74r4.\n\n### Details\n\nInsufficient validation of parameters can lead to attempting to index into an empty buffer. See https://github.com/go-jose/go-jose/pull/292.\n\n### Workarounds\n\nIf the application does not require the CBC-HMAC modes for content encryption, and is using github.com/go-jose/go-jose/v4, do not include them in the list of ContentEncryption algorithms passed to ParseEncrypted / ParseEncryptedJSON / ParseEncryptedCompact.\n\n### Impact\n\nDenial of service vulnerability. Any application which decrypts untrusted ciphertexts with the indicated algorithms is affected.\n\n### Acknowledgements\n\nThanks to Joshua Rogers of AISLE Research for reporting this problem.",
-      "link": "https://github.com/advisories/GHSA-4w3g-jfj2-cw2q",
-      "published": "2026-10-28T21:14:00Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-116585"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-116673",
-      "title": "systeminformation has path traversal in Linux networkStats() that allows symlink-based file disclosure outside /sys/class/net",
-      "summary": "### Summary\n\nOn Linux, `systeminformation@5.33.13` builds `/sys/class/net/<iface>` paths from the caller-supplied `networkStats(iface)` value without checking that the resolved path stays inside `/sys/class/net`. A caller who can create a symlink fixture and control the value passed to this API can make the function return the first line of a file readable by the Node process.\n\n### Details\n\nThe strict string sanitizer removes shell metacharacters but retains `/` and `.`. The Linux implementation uses this value in an `fs.existsSync('/sys/class/net/' + iface)` check and then in seven `cat` paths for interface statistics. Both operations follow `..` path components and symlinks. The code does not validate the value as an interface name or enforce resolved-path containment.\n\nThe proof of concept below creates the expected statistics files in a directory writable by the unprivileged `nobody` user. Its `operstate` symlink points to a synthetic mode-0600 file under `/root`. The package call runs as root and returns the marker even though `nobody` cannot read that file.\n\n### PoC\n\nUse a disposable Ubuntu Linux VM with Node.js, npm, and `runuser` installed. These steps create and remove only a synthetic marker and a temporary fixture. Install the affected version:\n\n```sh\nmkdir si-netstats-repro\ncd si-netstats-repro\nnpm init -y\nnpm install systeminformation@5.33.13\n```\n\nSave the following as `poc.cjs` in that directory, then run `sudo node poc.cjs`:\n\n```js\n'use strict';\n\nconst fs = require('node:fs');\nconst { execFileSync } = require('node:child_process');\nconst si = require('systeminformation');\n\nconst root = `/tmp/si-netstats-${process.pid}`;\nconst secret = `/root/si-netstats-secret-${process.pid}`;\nconst marker = `SYNTHETIC_ROOT_ONLY_MARKER_${process.pid}`;\nconst fixtureCode = `\n  const fs = require('node:fs');\n  const root = process.env.SI_FIXTURE_ROOT;\n  const secret = process.env.SI_SECRET;\n  fs.mkdirSync(root + '/statistics', { recursive: true });\n  for (const name of ",
-      "link": "https://github.com/advisories/GHSA-4vjg-vx72-qq4g",
-      "published": "2026-10-28T21:13:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-116673"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115887",
-      "title": "graphql-scalars PhoneNumber scalar is vulnerable to regular expression denial of service",
-      "summary": "## Summary\n\nThe regular expression behind `GraphQLPhoneNumber` since 1.24.1 backtracks exponentially. A string made of a run of digits followed by one character that makes the match fail (for example `\"1\".repeat(30) + \"x\"`) blocks the JavaScript thread for seconds, and every additional digit doubles the time.\n\ngraphql-js calls `parseLiteral` while *validating* a document and `parseValue` while coercing variables, so the regex runs for every request that merely contains such a value in a `PhoneNumber` position, before execution and before any authentication or authorization step of the server. One small unauthenticated request is enough to stall a server process.\n\n## Affected versions\n\n- `graphql-scalars` >= 1.24.1, <= 2.0.0 (2.0.0 is the current `latest`; the default branch still has the same pattern).\n- Not affected: 1.24.0 and the earlier versions I checked (1.22.4, 1.23.0), which use the linear `/^\\+[1-9]\\d{6,14}$/`.\n- Introduced by #2719 (c7f58da16, \"PhoneNumber scalar is not fully compatible with E.164 format so updated regex to support phone number with extension\"), released as 1.24.1 on 2025-01-29.\n\nThe payload was ran against 1.22.4, 1.23.0, 1.24.0, 1.24.1, 1.24.2, 1.25.0, 1.26.0 and 2.0.0: the first three reject it instantly, the other five show the exponential growth.\n\n## Root cause\n\n`src/scalars/PhoneNumber.ts`:\n\n```js\nconst PHONE_NUMBER_REGEX = /^\\+?\\d{1,3}(\\-|\\x20)?\\(?\\d+\\)?((\\-|\\x20)?\\d+)+$/;\n```\n\nIn `\\d+\\)?((\\-|\\x20)?\\d+)+$` the separator is optional, so a run of n digits can be split across the inner `\\d+` and the outer `+` iterations in a number of ways that is exponential in n. When the overall match fails, for instance on a trailing non-digit, the engine tries all of them.\n\n## Proof of concept\n\n1. The scalar alone (`npm i graphql graphql-scalars@2.0.0`):\n\n```js\nimport { GraphQLPhoneNumber } from 'graphql-scalars';\n\nfor (const ok of ['+41791234567', '079 123 45 67', '+1 (123) 456-7890', 'nope']) {\n  try { GraphQLPhoneNumber.parseValue(ok); } catch ",
-      "link": "https://github.com/advisories/GHSA-x8rm-f576-gq67",
-      "published": "2026-10-28T21:13:10Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115887"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-116579",
-      "title": "Autobahn Python: permessage-brotli inflates a whole frame before maxMessagePayloadSize is checked (incomplete fix of GHSA-hxp9-w8x3-p566)",
-      "summary": "### Summary\n\npermessage-brotli inflates each frame fully before checking maxMessagePayloadSize, so one 421-byte frame makes the server allocate about 545 MiB even with a 1 MiB message limit (brotli expands about 1,000,000:1). Any unauthenticated client can exhaust server memory this way on servers that enable permessage-brotli. This bypasses the GHSA-hxp9-w8x3-p566 fix.\n\n### Details\n\nIn 26.7.1 the receive path passes the remaining `maxMessagePayloadSize` budget to `decompress_message_data(..., max_output_len=...)`. deflate and bzip2 stop at that budget. `PerMessageBrotli.decompress_message_data` (`compress_brotli.py`) instead calls `self._decompressor.process(data)` with no limit and compares the length afterwards, so the whole frame is inflated first.\n\nThe code comment and changelog say this is still \"bounded on the wire by `maxFramePayloadSize`\", but brotli reaches about 1,000,000:1 (841 bytes inflate to 1 GiB), so that bound means little. A 421-byte frame against a 1 MiB budget peaks at 545 MiB before the 1009 rejection.\n\nAn autobahn asyncio server on 127.0.0.1 accepting permessage-brotli, with `maxFramePayloadSize=64 KiB` and `maxMessagePayloadSize=1 MiB`, received one small brotli frame from an autobahn client and peaked at 545 MiB (baseline 28 MiB). A few concurrent connections can exhaust memory.\n\nbrotli \u2265 1.2.0 has `Decompressor.process(data, output_buffer_limit=N)`, so the backend can stop at `max_output_len` like deflate and bzip2 (and the extra's floor can be raised to `brotli>=1.2.0`).\n\nTested on autobahn 26.7.1 (latest) with brotli 1.2.0; `compress_brotli.py` on master is unchanged. This affects servers that enable permessage-brotli (opt-in, needs the `compress` extra).\n\n### Proof of concept\n\nHow to run the PoC\n```\npython3 -m venv venv && . venv/bin/activate\npip install autobahn==26.7.1 brotli==1.2.0\npython3 poc_autobahn.py\n```\n\n```python\n# PoC: autobahn 26.7.1 permessage-brotli inflates a whole frame before maxMessagePayloadSize is checked.\nimport brot",
-      "link": "https://github.com/advisories/GHSA-pjh6-c8mg-3x7m",
-      "published": "2026-10-28T21:10:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-116579"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115905",
-      "title": "zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE",
-      "summary": "## Summary\nA critical architectural parser differential exists in the `zip` crate (`<= 9.0.4`) between random-access archive readers (`ZipArchive`) and streaming readers (`ZipStreamReader`). `ZipArchive` considers the Central Directory File Header (CDFH) authoritative and ignores the filename declared in the Local File Header (LFH). In contrast, `ZipStreamReader` relies exclusively on the Local File Header (LFH) when extracting files to the filesystem.\n\nThis discrepancy enables ZIP archives to appear to have different file paths and contents according to which tool is reading them.\n\n---\n\n## Details\n\n### Architectural Root Cause\nIn the PKWARE ZIP archive format, every file entry is defined in two distinct locations:\n1. **Local File Header (LFH):** Precedes the compressed payload of each file in the body of the archive.\n2. **Central Directory File Header (CDFH):** Stored in a contiguous index at the end of the archive.\n\nIn `zip2`:\n- `src/read/zip_archive.rs`: `ZipArchive` parses the central directory into `SharedBuilder.files`. All file lookups by index or name read exclusively from the CDFH table, completely ignoring the filename present in the LFH.\n- `src/read/stream.rs:L86-L141`: `ZipStreamReader::visit` and `ZipStreamReader::extract` read sequentially from the stream without verifying the central directory index. Each entry is parsed via `read_zipfile_from_stream` and written to disk using the unverified filename declared in the LFH:\n  ```rust\n  // src/read/stream.rs\n  fn visit_file<R: Read>(&mut self, file: &mut ZipFile<'_, R>) -> ZipResult<()> {\n      file.safe_prepare_path(&self.outpath, &mut outpath, None::<&(_, fn(&Path) -> bool)>)?;\n      let mut outfile = fs::File::create(&outpath)?;\n      io::copy(file, &mut outfile)?;\n      Ok(())\n  }\n  ```\n- `src/write.rs:L1552`: The crate explicitly exposes `shallow_copy_file`, an API that constructs dual-header desynchronizations by adding a new CDFH entry with an alias name pointing to an existing file without updatin",
-      "link": "https://github.com/advisories/GHSA-m665-v7pm-7grj",
-      "published": "2026-10-28T21:09:50Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115905"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118668",
-      "title": "LangGraph JavaScript custom authentication may permit cross-user Store access",
-      "summary": "## Summary\n\nLangGraph deployments using JavaScript or TypeScript custom authentication may fail to apply Store authorization changes returned by an authorization handler. In affected deployments, an authenticated user may be able to access Store data outside their authorized namespace.\n\n## Required conditions\n\nA deployment is affected only when all of the following conditions apply:\n\n- It uses an affected `langgraph-api` version.\n- It runs JavaScript or TypeScript custom authentication.\n- Its Store authorization handler relies on rewriting the requested namespace to restrict each user to their own data.\n- The attacker can authenticate as an ordinary user.\n- Multiple users' data is stored through the affected authorization path.\n\nPython custom authentication handlers are not affected. JavaScript or TypeScript handlers that reject unauthorized namespace requests instead of rewriting them are also not affected.\n\nThe attack does not require administrator privileges, user interaction, a race condition, or the bypass of another mitigation.\n\n## Impact\n\nAn authenticated user may be able to read, overwrite, search, or delete Store data belonging to another user.\n\n## Patches\n\nThe issue is fixed in `langgraph-api` version `0.15.0`. The server now carries changes made by a JavaScript or TypeScript authorization handler across the runtime boundary and applies them before performing the Store operation. It validates the resulting namespace after authorization and rejects the request if an authorization change is malformed or cannot be applied safely.\n\nUsers should upgrade to `langgraph-api>=0.15.0`.\n\n## Workarounds\n\nDeployments that cannot upgrade immediately should change JavaScript or TypeScript Store authorization handlers to reject requests for unauthorized namespaces rather than relying on namespace rewriting.\n\nThis workaround must be applied to every Store action exposed by the deployment.",
-      "link": "https://github.com/advisories/GHSA-4hm6-w6qq-w73v",
-      "published": "2026-10-28T21:09:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118668"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112911",
-      "title": "filelock: StrictSoftFileLock and SoftReadWriteLock adopt a protocol directory another user created first, losing mutual exclusion",
-      "summary": "`StrictSoftFileLock`, `AsyncStrictSoftFileLock`, `SoftReadWriteLock` and `AsyncSoftReadWriteLock` keep their whole ownership state as files in a directory derived from the lock path (`<path>.filelock/claims`, `<path>.rw/{gen,holders}`). When that directory already exists they adopt it after checking only that it is a real directory, not who owns it. Another local user who can create names in the lock's directory can create the tree before the first acquire on that path by the user running the lock (below: the lock user). In `/tmp`, `/var/tmp` or another sticky shared directory any user can do that; the sticky bit is a directory flag that lets only a file's owner remove or rename it. The other user then owns the tree. They can unlink the lock user's claims while the lock user holds the lock, so a second process of the lock user, root included, enters the same critical section and neither process sees an error.\n\nAgainst `SoftReadWriteLock` the same position also admits two writers with `on_compromise` silent. It redirects the lock user's own creates and renames into a directory the other user picks (the scanner replaced a repository's `.git/HEAD` with a filelock record written with the lock user's privileges). It also keeps the lock user's acquire or release running past any `timeout`. Affected versions are filelock 3.30.0 through 4.2.0 (finding `ANT-2026-Q5VK5JEE`).\n\n## Severity\n\n**CVSS 3.1 `CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:H` scores 6.3 (Medium).** `AV:L` (local): the other user needs an account on the same host. `PR:L` (low privileges): an ordinary account is enough. `UI:N` (no user interaction). `AC:H` (high attack complexity): the other user must create the protocol directory before the lock user's first acquire on that path. That depends on the path being new, or on a reboot, a tmp cleaner or the documented `<path>.rw` recovery having removed its tree; once planted, the rest needs no race. `I:H` (high integrity impact): two holders write whatever the l",
-      "link": "https://github.com/advisories/GHSA-9c4x-gm8v-wgc4",
-      "published": "2026-10-28T21:08:59Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112911"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112939",
-      "title": "filelock: SoftFileLock removes a live holder's marker when another user forges the PID in a writable marker",
-      "summary": "`SoftFileLock`, `MarkerSoftFileLock`, `SoftFileLease`, their async variants and a `FileLock` that has fallen back to a soft lock on `ENOSYS` decide from the record inside the marker file whether its owner is gone. The marker is the file whose presence says a process holds the lock. They do not check who could have written that record.\n\nA local user who can write the marker but cannot remove it rewrites the holder's record to name a dead PID (process id). That position arises with an explicit `mode` with group or other write bits, or the default mode under a lax umask (the process setting that strips permission bits from new files), in a sticky or otherwise non-removable directory. The sticky bit is a directory flag that lets only a file's owner remove or rename it. The next contender running as the holder's account, or root, judges the lock stale, removes the live marker on that user's behalf and acquires it. Two processes then run the critical section together and neither gets an error. Affected versions are filelock 3.22.0 through 4.2.0 (finding `ANT-2026-W1H9NXUH`).\n\n## Severity\n\n**CVSS 3.1 `CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N` scores 4.7 (Medium).** `AV:L` (local): the other user needs an account on the same host. `PR:L` (low privileges): an ordinary account is enough. `UI:N` (no user interaction). `AC:H` (high attack complexity): the marker must carry group or other write bits (an explicit permissive `mode`, or umask `002`/`000` with a shared group), and a contender of the holder's account must ask for the lock while the forged record is in place. `I:H` (high integrity impact): two holders then write whatever the lock protects, and the holder is not told. `C:N` and `A:N` (no confidentiality or availability impact). `S:U` (scope unchanged). Classification from the review: **security, conditional** on another user being able to write the live marker. The scanner rated it high (CWE-345). The default mode under umask `022` is not affected.\n\n## Scope and pr",
-      "link": "https://github.com/advisories/GHSA-rfpc-qcw5-3pc4",
-      "published": "2026-10-28T21:08:45Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112939"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112912",
-      "title": "filelock: Symlink swap during SoftFileLock's writability check leaks whether a path exists and is writable by the lock taker",
-      "summary": "`raise_on_not_writable_file()` is the check that `SoftFileLock` and the locks sharing its acquire path run before every attempt. It looks at the lock path with `os.lstat`, so that it judges a planted symlink (a file that points at another path) by itself. When the node has no owner-write bit, it then calls `os.access(filename, os.W_OK)`, which follows symlinks. A local user who can create entries in the lock's directory can swap the path between a mode-`0466` file and a symlink to a path of their choosing. The second call then reports on the symlink's target with the permissions of the user running the lock (below: the lock user). The lock user's `acquire()` ends in `PermissionError` within a fraction of a second when the target is missing or not writable by the lock user, and in the ordinary `Timeout` otherwise.\n\nThat yields one bit per watched acquire. The bit says whether a path exists and is writable by the lock taker. It covers paths under directories the other user cannot search, or any path when root takes the lock. The lock does not open, create or modify anything through the symlink. On Linux, `fs.protected_symlinks` (a kernel setting that refuses to follow another user's symlink in a sticky world-writable directory) blocks it in a directory such as `/tmp`. It does not block it in a `0777` directory without the sticky bit (a directory flag that lets only a file's owner remove or rename it) or in a sticky group-writable one. This reopens the leak PR #567 closed. Affected versions are filelock 3.32.6 through 4.2.0.\n\nAnthropic's OSS Scanner reported this in private. Finding covered by this advisory:\n\n- `ANT-2026-RQ91AXTW` [medium, CWE-59]: Symlink TOCTOU in raise_on_not_writable_file leaks file existence.\n\n## Severity\n\n**CVSS 3.1 `CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N` scores 2.5 (Low).**\n\n`AV:L` (local): the other user needs an account on the same host. `PR:L` (low privileges): an ordinary account is enough. `UI:N` (no user interaction). `AC:H` (high a",
-      "link": "https://github.com/advisories/GHSA-9j6q-wvj5-jgjg",
-      "published": "2026-10-28T21:08:40Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112912"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-112938",
-      "title": "filelock: StrictSoftFileLock follows a symbolic link swapped in at <path>.filelock and creates claim files in a directory another local user chooses",
-      "summary": "`StrictSoftFileLock` and `AsyncStrictSoftFileLock` check `<path>.filelock` (the coordination directory that holds the lock's state) with one `lstat` call on its name. `lstat` reports what a name is without following a symbolic link (a file that redirects to another path). After that check, the code reaches `<path>.filelock/claims` by pathname for every later operation (`mkdir`, scan, publish, link, unlink). `_open_directory` passes `O_NOFOLLOW` (a flag that makes an open fail when the final name is a symbolic link), but the flag covers only the final `claims` component. The kernel follows a symbolic link in any earlier component.\n\nAnother local user (the other user below) who can rename `<path>.filelock` exchanges it for a symbolic link after the check. In a shared directory without the sticky bit (a directory flag that lets only a file's owner rename or remove it), any user with write access can do this. Where the shared directory is sticky, such as `/tmp`, only the user who created `<path>.filelock` before the user running the lock (the lock user below) first used it can. The lock user's process (root's, if root takes the lock) then creates a `claims` directory and claim files (the files whose presence says a process wants or holds the lock) inside a directory the other user chooses but only the lock user can write.\n\nWhen the link points at another strict lock's `.filelock` directory, the stranded claims make that lock time out for every process until an operator finds and force-breaks each one. The `claims` property and `force_break()` resolve the same path with no check at all. Affected versions: filelock >= 3.30.0 and <= 4.2.0 (finding `ANT-2026-SVFEYX89`).\n\n## Severity\n\n**CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H, 5.8 (Medium).**\n\n`AV:L` (local): the other user needs an account on the same host. `AC:H` (high attack complexity): the swap must land between the `lstat` and the next `mkdir`. The other user does not aim at that window. It flips the name in a loo",
-      "link": "https://github.com/advisories/GHSA-m462-7rxw-wvpg",
-      "published": "2026-10-28T21:08:23Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-112938"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118660",
-      "title": "Happy DOM: SSRF via iframe and link stylesheet when parsing untrusted HTML",
-      "summary": "## Summary\nhappy-dom v20.8.9 makes real server-side HTTP requests to arbitrary URLs when parsing HTML containing `<iframe>` or `<link rel=\"stylesheet\">` elements. This behavior is enabled by default (`disableIframePageLoading: false`, `disableCSSFileLoading: false`). When an application uses happy-dom to parse untrusted HTML on the server side, an attacker can trigger Server-Side Request Forgery by embedding these elements.\n\n## Affected Versions\n- happy-dom <= 20.8.9 (latest)\n\n## Vulnerable Behavior\n\nBy default, happy-dom has:\n- `disableIframePageLoading: false` \u2014 iframes fetch their `src` URL via real HTTP requests\n- `disableCSSFileLoading: false` \u2014 `<link>` stylesheets fetch their `href` URL via real HTTP requests\n\nWhen untrusted HTML is parsed, these elements trigger real server-side HTTP requests to whatever URLs are specified. No special configuration or opt-in is needed.\n\n## Proof of Concept\n\n### Verified test (attacker server receives requests):\n```javascript\nconst http = require('http');\nconst { Window } = require('happy-dom');\n\n// Start attacker server\nconst srv = http.createServer((req, res) => {\n    console.log(`SSRF HIT: ${req.method} ${req.url}`);\n    res.writeHead(200, {'Content-Type': 'text/html'});\n    res.end('<html><body>stolen</body></html>');\n});\n\nsrv.listen(9995, () => {\n    // iframe SSRF \u2014 happy-dom makes a real GET request\n    const win1 = new Window({ url: 'http://localhost' });\n    win1.document.write('<html><body><iframe src=\"http://127.0.0.1:9995/iframe-ssrf\"></iframe></body></html>');\n\n    // stylesheet SSRF \u2014 happy-dom makes a real GET request\n    const win2 = new Window({ url: 'http://localhost' });\n    win2.document.write('<html><head><link rel=\"stylesheet\" href=\"http://127.0.0.1:9995/stylesheet-ssrf\"></head><body></body></html>');\n});\n```\n\n**Test output:**\n```\nSSRF HIT: GET /iframe-ssrf\nSSRF HIT: GET /stylesheet-ssrf\n```\n\nBoth requests confirmed received by the attacker server. Tested on happy-dom v20.8.9, Node.js v22.17.0, macOS.\n\n#",
-      "link": "https://github.com/advisories/GHSA-c8p4-j97h-3vg8",
-      "published": "2026-10-28T21:06:42Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118660"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118665",
-      "title": "GraphQL Tools: Per-request connection parameters persist into later users' WebSocket authentications",
-      "summary": "# Stale authentication state in `@graphql-tools/executor-legacy-ws`: per-request `extensions.connectionParams` persist in executor closure state and are replayed in a later caller's `connection_init`\n\n## Report metadata\n\n| Field | Value |\n| --- | --- |\n| Package | `@graphql-tools/executor-legacy-ws` (npm, `pkg:npm/%40graphql-tools/executor-legacy-ws`) |\n| Repository | https://github.com/ardatan/graphql-tools |\n| Component | `buildWSLegacyExecutor` (`packages/executors/legacy-ws/src/index.ts`) |\n| Vulnerability class | Stale authentication state / credential reuse across requests |\n| Verified against | Commit `b5d1c36ebb8ed3868260ffee5bbcbb423ad5c1f1`; npm release `1.1.33` installed and exercised. During validation the same behaviour was also observed on the current latest release `1.1.35`, and the unreset closure is still present on `master`. |\n| API surface | Public documented API (`buildWSLegacyExecutor`, and `request.extensions.connectionParams` on the returned executor) |\n| Affected in default configuration | Yes \u2014 the factory returns a general, reusable `Executor` with no per-identity or single-use restriction, and no supported teardown clears the retained parameters. |\n\nVersion note: the originally recorded affected range was `<= 1.1.33`. Validation showed that range understates exposure \u2014 the same proof of concept leaks identically on `1.1.35`.\n\n## Summary\n\n`buildWSLegacyExecutor` keeps a single closure-scoped object, `executorConnectionParams`, for the lifetime of the executor. Every execution that carries `request.extensions.connectionParams` merges those keys into that object with `Object.assign`, and the object is merged into the `connection_init` payload each time a new WebSocket opens. Nothing ever removes keys: `cleanupWebsocket` terminates the socket and nulls the handle but leaves `executorConnectionParams` intact, and a later request that simply omits a key skips the conditional update entirely.\n\nThe consumer-side shape is a shared executor that for",
-      "link": "https://github.com/advisories/GHSA-434m-5hcj-pxf3",
-      "published": "2026-10-28T21:05:17Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118665"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118666",
-      "title": "GraphQL Tools: Shared legacy executor routes one subscription's results to a different caller",
-      "summary": "# Cross-tenant subscription data leak in `@graphql-tools/executor-legacy-ws`: a shared `websocket.onmessage` is replaced on every `subscribe()`, and `DATA` frames are delivered without checking the protocol operation id\n\n## Report metadata\n\n| Field | Value |\n| --- | --- |\n| Package | `@graphql-tools/executor-legacy-ws` (npm, `pkg:npm/%40graphql-tools/executor-legacy-ws`) |\n| Repository | https://github.com/ardatan/graphql-tools |\n| Component | `buildWSLegacyExecutor` \u2192 the returned executor's `subscribe(observer)` / `websocket.onmessage` handler |\n| Vulnerability class | Cross-tenant data leak (subscription results delivered to the wrong caller) |\n| Verified against | Source at `b5d1c36ebb8ed3868260ffee5bbcbb423ad5c1f1` (package version 1.1.33); published npm tarball `1.1.33` with matching source at `d304214db06e8a4ce9cb41138f199e3bc6ed36f2`; the same behaviour also reproduces on the current release `1.1.35` |\n| API surface | Public documented API (`buildWSLegacyExecutor`) |\n| Affected in default configuration | Yes \u2014 `ensureWebsocket()` reuses an already-`OPEN` socket (`index.ts:35-42`), and the socket has a single mutable `onmessage` property (`index.ts:113`). No single-operation-only restriction is documented, and the return type is the general reusable `DisposableExecutor` (`packages/utils/src/executor.ts:34-57`) |\n\nAffected version range: the range recorded for this finding is `<= 1.1.33`, but that is understated \u2014 the same proof of concept reproduces on `1.1.35`, and a byte diff of the built CJS output between `1.1.33` and `1.1.35` shows only one unrelated change (`rejectUnauthorized`).\n\n## Summary\n\n`buildWSLegacyExecutor` keeps one WebSocket in closure state and installs the message handler by assigning to the socket's single `websocket.onmessage` property inside `subscribe()`. Every new subscription therefore overwrites the previous subscriber's handler, and the handler's `case LEGACY_WS.DATA` branch calls `observer.next(data.payload)` without ever comparing",
-      "link": "https://github.com/advisories/GHSA-mp66-8ww2-pcwm",
-      "published": "2026-10-28T21:05:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118666"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118655",
-      "title": "Echo has a Static Middleware Double-Unescape Path Traversal",
-      "summary": "## Summary\n\nCommit a9ede66a (PR #3006, issue #2599) silently fixed a path traversal vulnerability in the Echo web framework's static file middleware.\n\n## Vulnerability\n\nThe static middleware double-unescaped URL paths. Go's net/http already decodes Request.URL.Path, but middleware/static.go unconditionally called url.PathUnescape() again:\n\n```go\n// BEFORE (vulnerable)\npathUnescape := true\n```\n\nThis reassembled path traversal sequences from double-encoded input. An attacker could send GET /%2e%2e%2fsecret.txt or /..%252fsecret.txt and the double-unescape would produce ../secret.txt.\n\n## Fix\n```go\n// AFTER (fixed)\npathUnescape := false\n```\n\nThe commit's test TestStatic_percentEncodedTraversalIsBlocked explicitly verifies traversal vectors are blocked.\n\n## Impact\nArbitrary file read from server filesystem via percent-encoded path traversal.\n\n## References\n- Fix: https://github.com/labstack/echo/commit/a9ede66a\n- Issue: https://github.com/labstack/echo/issues/2599\n- PR: https://github.com/labstack/echo/pull/3006\n\n## Patches\n\nFixed in `github.com/labstack/echo/v5` v5.2.0 and `github.com/labstack/echo/v4` v4.15.3, where the Static middleware stopped unescaping an already decoded path. Maintainer analysis: reading files outside the configured root could not be reproduced; the confirmed impact was that a double-encoded slash (`%252F`) could reach a file under a guarded route when the Static middleware is registered globally. Upgrade to v5.4.0 / v4.16.0 or later, which also includes related fixes for encoded and dot-segment paths.\n\n## Workarounds\n\nKeep files that need protection outside the Static middleware's root directory.",
-      "link": "https://github.com/advisories/GHSA-xwq5-6cqp-vx96",
-      "published": "2026-10-28T21:04:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118655"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118252",
-      "title": "Highcharts Dashboards parses sidebar component labels as HTML",
-      "summary": "### Impact\nThe component language strings shown in the edit mode sidebar are parsed as HTML rather than inserted as text. An attacker who controls those language options can supply markup carrying event handlers, which execute in the origin of the page hosting the dashboard once the sidebar renders the affected labels. Exploitation requires that untrusted data reach the Dashboards language configuration and that a user open the edit mode sidebar.\n\n### Workarounds\n\nUntil you can upgrade, patch `EditMode` once at application startup. The hook runs before the sidebar is built, so the labels are already harmless by the time they are rendered. Assigning a string to `textContent` and reading back `innerHTML` turns any markup into literal text, which is exactly what the fixed version renders.\n\nAfter importing the module, use this code snipped once, before any board is created.\n\n```js\n{\n    const EditMode = window.Dashboards?.EditMode;\n    const escapeHTML = (text) => text\n        .replace(/&/g, '&amp;')\n        .replace(/</g, '&lt;')\n        .replace(/>/g, '&gt;');\n    const patched = new WeakSet();\n    const originalInit = EditMode.prototype.init;\n\n    EditMode.prototype.init = function (...args) {\n        const labels = this.lang?.sidebar;\n\n        if (labels && !patched.has(this)) {\n            patched.add(this);\n\n            for (const key of Object.keys(labels)) {\n                if (typeof labels[key] === 'string') {\n                    labels[key] = escapeHTML(labels[key]);\n                }\n            }\n        }\n\n        return originalInit.apply(this, args);\n    };\n}\n```\n\nIf your application does not need Edit Mode, leaving it disabled (`editMode.enabled: false`) removes the exposure as well.\n\n### Obtaining the patched version\nThe patched releases are available from all the usual distribution channels. With npm, upgrade the affected package to the patched version listed above, for example `npm install @highcharts/dashboards@4.2.3`. If you load Highcharts Dashboa",
-      "link": "https://github.com/advisories/GHSA-rcqf-f6h2-ccg9",
-      "published": "2026-10-28T19:56:57Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118252"
       ],
       "is_zero_day": false,
       "is_high_severity": true

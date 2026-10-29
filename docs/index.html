@@ -109,15 +109,47 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">25</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">56</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">22</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">38</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-29 17:42 UTC</div>
+            <div class="generated">Updated 2026-10-29 22:07 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-97229" target="_blank" rel="noopener">CVE-2026-97229 — GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-97229</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-29</span>
+  </div>
+  <p class='summary'>Vendor: GitLab | Product: Community Edition and Enterprise Edition. GitLab Community Edition and Enterprise Edition contain a integer overflow or wraparound vulnerability that could allow an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expression in a CI/CD configuration, due to insufficient regular expression validation. Required action: Appl…</p>
+
+</article>
+
+<article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-76418" target="_blank" rel="noopener">CVE-2026-76418 — Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-76418</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-29</span>
+  </div>
+  <p class='summary'>Vendor: Cisco | Product: Secure Firewall ASA Software and Cisco Secure FTD Software. Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition. Required action: Apply mit…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -180,26 +212,6 @@
   <p class='summary'>Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in NUUO Crystal Server 3.19.0.85, the video management and NVR server software from NUUO Inc. of Taipei (Taiwan), distributed as the Crystal virtual-machine appliance: an Ubuntu-based OVA whose web tier is a lighttpd server fronting a PHP application, with .php requests dispatched to…</p>
 
 </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3pmx-cf9f-34xr" target="_blank" rel="noopener">Echo static file middleware route protection bypass via encoded dot-dot traversal</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118654</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>## Summary
-
-Echo v5.2.0 contains a bypass of the fix for GHSA-vfp3-v2gw-7wfq. The fix rejects encoded path separators such as `%2F` and `%5C` before static file path unescaping, but two traversal forms still bypass route-level middleware protections for static files.
-
-The primary bypass uses encoded dot-dot segments. A request such as `/public/%2E%2E/admin/secret.txt` passes the encoded-separator …</p>
-
-        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -294,6 +306,22 @@ The primary bypass uses encoded dot-dot segments. A request such as `/public/%2E
     <span>Tue, 21 Ju</span>
   </div>
   <p class='summary'>Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/" target="_blank" rel="noopener">New Prompt Injection Techniques Cover Agent-Planning Attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>CrowdStrike Blog</span>
+    <span class="meta-sep">·</span>
+    <span>Oct 29, 20</span>
+  </div>
+
 
 </article>
 
@@ -477,66 +505,6 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:</p>
 
 </article>
 
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-6jp4-8v48-cc5v" target="_blank" rel="noopener">Electrum: Malicious server can replace a just-broadcast tx and try to trick user into RBF-ing it</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-117601</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Summary
-
-The main Electrum server the client connects to is trusted with mempool (&quot;unconfirmed&quot;) transactions. This is documented [design](https://electrum.readthedocs.io/en/latest/faq.html#does-electrum-trust-servers). [0]
-
-However now someone figured out a way to practically exploit it:
-- when the client broadcasts a new tx1, a malicious server can swallow it,
-- and update the client&#x27;s histo…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5fpq-26gf-qwcr" target="_blank" rel="noopener">Happy DOM has cookie scope forgery: no DNS-label boundary on Domain= matching , attacker origin sets victim cookies</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118661</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Summary
-A cookie-scoping bug in happy-dom lets an attacker origin set cookies that a victim origin then receives, diverging from browser semantics.
-
-### Details
-happy-dom matches Domain=example.com against notexample.com (endsWith without a DNS-label boundary), diverging from browser semantics (verified 20.11.6 npm latest: cookieMatchesURL(Domain=example.com, url=http://notexample.com) = true)…</p>
-
-        </article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html" target="_blank" rel="noopener">Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns</a></h2>
-          </div>
-          <div class="card-meta">
-            <span class="no-cve">No CVE</span>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>The China-nexus cyber espionage group known as Volt Typhoon has been attributed to a now-disrupted covert access network dubbed Silent Train that has been put to use for zero-day exploitation and strategic access.
-
-&quot;First identified in late 2023, Silent Train uses rotating chains of compromised SOHO, IoT, and enterprise infrastructure,&quot; Lumen Technologies Black Lotus Labs said in a report shared</p>
-
-        </article>
-
 <article class="card card-high">
   <div class="card-top">
     <span class="badge badge-high">🟡 High</span>
@@ -566,6 +534,22 @@ happy-dom matches Domain=example.com against notexample.com (endsWith without a 
     <span>Mon, 19 Oc</span>
   </div>
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
+
+</article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/" target="_blank" rel="noopener">Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
+    <span class="meta-sep">·</span>
+    <span>Unit 42 (Palo Alto)</span>
+    <span class="meta-sep">·</span>
+    <span>2026-10-29</span>
+  </div>
+  <p class='summary'>CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29) appeared first on Unit 42 .</p>
 
 </article>
 
@@ -756,375 +740,6 @@ The flaw, CVE-2026-97229 (CVSS score: 10.0), can let an attacker run code on a G
 Tornado&#x27;s HTTP header parser takes quadratic time (O(n²)) when a header value is continued across many &quot;obsolete line folding&quot; (obs-fold) lines. An unauthenticated attacker can send a request whose header block is mostly short continuation lines. Parsing it uses a large amount of CPU on the IOLoop thread and blocks every other connection that process is serving.
 
 This issue is closely…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5324-3w58-qpp2" target="_blank" rel="noopener">Mem0: Cross-tenant conversation leak via unescaped delimiter collision in session-scope key (_build_session_scope)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-116575</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>Summary
-
-_build_session_scope() in mem0/memory/main.py builds the conversation-history scope key used to fetch/store the last N raw messages by naively joining caller-supplied user_id/agent_id/run_id values with unescaped &amp; and = delimiters:
-
-def _build_session_scope(filters):
-    parts = []
-    for key in sorted([&quot;user_id&quot;, &quot;agent_id&quot;, &quot;run_id&quot;]):
-        val = filters.get(key)
-        if val:
-  …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-vvpg-rrww-wpmh" target="_blank" rel="noopener">vLLM: Permissive default CORS origins allow cross-origin requests to the vLLM HTTP server</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115917</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Summary
-
-The OpenAI-compatible server registers Starlette `CORSMiddleware` with
-`allowed_origins` defaulting to `[&quot;*&quot;]`, and performs no authentication unless
-`--api-key` (or `VLLM_API_KEY`) is configured. A web page on any origin can send
-requests to a vLLM server that the victim&#x27;s browser can reach (for example
-`localhost` or an internal/VPN address) and read the responses. The default
-`allo…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-542m-9234-8gvf" target="_blank" rel="noopener">vLLM: DoS via unbounded chat_template Jinja2 rendering exhausts the renderer thread pool</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115911</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Summary
-vLLM renders chat templates by passing the resolved Jinja2 source to `tokenizer.apply_chat_template()`, which compiles and `.render()`s it in an `ImmutableSandboxedEnvironment`. The sandbox prevents code-execution escapes but imposes **no wall-clock timeout, no output-size cap, and no nested-loop or binop limit**. The render runs in a `ThreadPoolExecutor` whose `max_workers` defaults t…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4w3g-jfj2-cw2q" target="_blank" rel="noopener">Go JOSE: Panic during CBC-HMAC processing</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-116585</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Summary
-
-Decrypting a ciphertext with &quot;A128CBC-HS256&quot;, &quot;A192CBC-HS384&quot;, or &quot;A256CBC-HS512&quot; can result in a panic on untrusted input.
-
-Note this advisory is the same as https://github.com/go-jose/go-jose/security/advisories/GHSA-6mp9-8xrw-74r4.
-
-### Details
-
-Insufficient validation of parameters can lead to attempting to index into an empty buffer. See https://github.com/go-jose/go-jose/pull/29…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4vjg-vx72-qq4g" target="_blank" rel="noopener">systeminformation has path traversal in Linux networkStats() that allows symlink-based file disclosure outside /sys/class/net</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-116673</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Summary
-
-On Linux, `systeminformation@5.33.13` builds `/sys/class/net/&lt;iface&gt;` paths from the caller-supplied `networkStats(iface)` value without checking that the resolved path stays inside `/sys/class/net`. A caller who can create a symlink fixture and control the value passed to this API can make the function return the first line of a file readable by the Node process.
-
-### Details
-
-The st…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-x8rm-f576-gq67" target="_blank" rel="noopener">graphql-scalars PhoneNumber scalar is vulnerable to regular expression denial of service</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115887</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>## Summary
-
-The regular expression behind `GraphQLPhoneNumber` since 1.24.1 backtracks exponentially. A string made of a run of digits followed by one character that makes the match fail (for example `&quot;1&quot;.repeat(30) + &quot;x&quot;`) blocks the JavaScript thread for seconds, and every additional digit doubles the time.
-
-graphql-js calls `parseLiteral` while *validating* a document and `parseValue` while coe…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-pjh6-c8mg-3x7m" target="_blank" rel="noopener">Autobahn Python: permessage-brotli inflates a whole frame before maxMessagePayloadSize is checked (incomplete fix of GHSA-hxp9-w8x3-p566)</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-116579</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Summary
-
-permessage-brotli inflates each frame fully before checking maxMessagePayloadSize, so one 421-byte frame makes the server allocate about 545 MiB even with a 1 MiB message limit (brotli expands about 1,000,000:1). Any unauthenticated client can exhaust server memory this way on servers that enable permessage-brotli. This bypasses the GHSA-hxp9-w8x3-p566 fix.
-
-### Details
-
-In 26.7.1 the…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m665-v7pm-7grj" target="_blank" rel="noopener">zip: Critical Parser Differential &amp; Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite &amp; RCE</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115905</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>## Summary
-A critical architectural parser differential exists in the `zip` crate (`&lt;= 9.0.4`) between random-access archive readers (`ZipArchive`) and streaming readers (`ZipStreamReader`). `ZipArchive` considers the Central Directory File Header (CDFH) authoritative and ignores the filename declared in the Local File Header (LFH). In contrast, `ZipStreamReader` relies exclusively on the Local Fi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4hm6-w6qq-w73v" target="_blank" rel="noopener">LangGraph JavaScript custom authentication may permit cross-user Store access</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118668</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>## Summary
-
-LangGraph deployments using JavaScript or TypeScript custom authentication may fail to apply Store authorization changes returned by an authorization handler. In affected deployments, an authenticated user may be able to access Store data outside their authorized namespace.
-
-## Required conditions
-
-A deployment is affected only when all of the following conditions apply:
-
-- It uses an …</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9c4x-gm8v-wgc4" target="_blank" rel="noopener">filelock: StrictSoftFileLock and SoftReadWriteLock adopt a protocol directory another user created first, losing mutual exclusion</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-112911</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-28</span>
-  </div>
-  <p class='summary'>`StrictSoftFileLock`, `AsyncStrictSoftFileLock`, `SoftReadWriteLock` and `AsyncSoftReadWriteLock` keep their whole ownership state as files in a directory derived from the lock path (`&lt;path&gt;.filelock/claims`, `&lt;path&gt;.rw/{gen,holders}`). When that directory already exists they adopt it after checking only that it is a real directory, not who owns it. Another local user who can create names in the l…</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rfpc-qcw5-3pc4" target="_blank" rel="noopener">filelock: SoftFileLock removes a live holder&#x27;s marker when another user forges the PID in a writable marker</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-112939</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>`SoftFileLock`, `MarkerSoftFileLock`, `SoftFileLease`, their async variants and a `FileLock` that has fallen back to a soft lock on `ENOSYS` decide from the record inside the marker file whether its owner is gone. The marker is the file whose presence says a process holds the lock. They do not check who could have written that record.
-
-A local user who can write the marker but cannot remove it rew…</p>
-
-        </article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9j6q-wvj5-jgjg" target="_blank" rel="noopener">filelock: Symlink swap during SoftFileLock&#x27;s writability check leaks whether a path exists and is writable by the lock taker</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-112912</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-28</span>
-  </div>
-  <p class='summary'>`raise_on_not_writable_file()` is the check that `SoftFileLock` and the locks sharing its acquire path run before every attempt. It looks at the lock path with `os.lstat`, so that it judges a planted symlink (a file that points at another path) by itself. When the node has no owner-write bit, it then calls `os.access(filename, os.W_OK)`, which follows symlinks. A local user who can create entries …</p>
-
-</article>
-
-<article class="card card-high">
-  <div class="card-top">
-    <span class="badge badge-high">🟡 High</span>
-    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-m462-7rxw-wvpg" target="_blank" rel="noopener">filelock: StrictSoftFileLock follows a symbolic link swapped in at &lt;path&gt;.filelock and creates claim files in a directory another local user chooses</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-112938</code>
-    <span class="meta-sep">·</span>
-    <span>GitHub Security Advisories</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-28</span>
-  </div>
-  <p class='summary'>`StrictSoftFileLock` and `AsyncStrictSoftFileLock` check `&lt;path&gt;.filelock` (the coordination directory that holds the lock&#x27;s state) with one `lstat` call on its name. `lstat` reports what a name is without following a symbolic link (a file that redirects to another path). After that check, the code reaches `&lt;path&gt;.filelock/claims` by pathname for every later operation (`mkdir`, scan, publish, link…</p>
-
-</article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c8p4-j97h-3vg8" target="_blank" rel="noopener">Happy DOM: SSRF via iframe and link stylesheet when parsing untrusted HTML</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118660</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>## Summary
-happy-dom v20.8.9 makes real server-side HTTP requests to arbitrary URLs when parsing HTML containing `&lt;iframe&gt;` or `&lt;link rel=&quot;stylesheet&quot;&gt;` elements. This behavior is enabled by default (`disableIframePageLoading: false`, `disableCSSFileLoading: false`). When an application uses happy-dom to parse untrusted HTML on the server side, an attacker can trigger Server-Side Request Forgery b…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-434m-5hcj-pxf3" target="_blank" rel="noopener">GraphQL Tools: Per-request connection parameters persist into later users&#x27; WebSocket authentications</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118665</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'># Stale authentication state in `@graphql-tools/executor-legacy-ws`: per-request `extensions.connectionParams` persist in executor closure state and are replayed in a later caller&#x27;s `connection_init`
-
-## Report metadata
-
-| Field | Value |
-| --- | --- |
-| Package | `@graphql-tools/executor-legacy-ws` (npm, `pkg:npm/%40graphql-tools/executor-legacy-ws`) |
-| Repository | https://github.com/ardatan/gr…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mp66-8ww2-pcwm" target="_blank" rel="noopener">GraphQL Tools: Shared legacy executor routes one subscription&#x27;s results to a different caller</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118666</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'># Cross-tenant subscription data leak in `@graphql-tools/executor-legacy-ws`: a shared `websocket.onmessage` is replaced on every `subscribe()`, and `DATA` frames are delivered without checking the protocol operation id
-
-## Report metadata
-
-| Field | Value |
-| --- | --- |
-| Package | `@graphql-tools/executor-legacy-ws` (npm, `pkg:npm/%40graphql-tools/executor-legacy-ws`) |
-| Repository | https://g…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xwq5-6cqp-vx96" target="_blank" rel="noopener">Echo has a Static Middleware Double-Unescape Path Traversal</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118655</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>## Summary
-
-Commit a9ede66a (PR #3006, issue #2599) silently fixed a path traversal vulnerability in the Echo web framework&#x27;s static file middleware.
-
-## Vulnerability
-
-The static middleware double-unescaped URL paths. Go&#x27;s net/http already decodes Request.URL.Path, but middleware/static.go unconditionally called url.PathUnescape() again:
-
-```go
-// BEFORE (vulnerable)
-pathUnescape := true
-```
-
-Thi…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rcqf-f6h2-ccg9" target="_blank" rel="noopener">Highcharts Dashboards parses sidebar component labels as HTML</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118252</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-28</span>
-          </div>
-          <p class='summary'>### Impact
-The component language strings shown in the edit mode sidebar are parsed as HTML rather than inserted as text. An attacker who controls those language options can supply markup carrying event handlers, which execute in the origin of the page hosting the dashboard once the sidebar renders the affected labels. Exploitation requires that untrusted data reach the Dashboards language configu…</p>
 
         </article>
 
