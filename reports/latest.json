@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-29T03:12:11.516337+00:00",
-  "total": 42,
+  "generated": "2026-10-29T11:54:14.957166+00:00",
+  "total": 52,
   "kev": 0,
-  "zero_day": 16,
+  "zero_day": 25,
   "enriched": 0,
   "findings": [
     {
@@ -31,6 +31,21 @@
         "cloud",
         "threat-intel",
         "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/56",
+      "title": "[0day-rubbish] NUUO Crystal Server 3.19.0.85 unauthenticated upload.php PHP web-root write with fastcgi execution into server-side code execution as the web service account (9.8 Critical)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in NUUO Crystal Server 3.19.0.85, the video management and NVR server software from NUUO Inc. of Taipei (Taiwan), distributed as the Crystal virtual-machine appliance: an Ubuntu-based OVA whose web tier is a lighttpd server fronting a PHP application, with .php requests dispatched to /usr/bin/php-cgi through lighttpd's fastcgi mapping. The product sits in the management plane...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/56",
+      "published": "2026-10-29T04:12:43+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -66,23 +81,6 @@
         "malware"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
-      "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
-      "summary": "The critical Oracle PeopleSoft bug that ShinyHunters has exploited since May is not one flaw but three chained together, the researchers who reported it said this week.\n\nOracle patched all three under a single identifier,\u00a0CVE-2026-35273, in June. Its root is a server-side request forgery (SSRF) that reaches an internal management interface because PeopleSoft trusts its own loopback address",
-      "link": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
-      "published": "2026-10-28T06:04:58+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-35273"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -184,6 +182,160 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/",
+      "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+      "summary": "Cisco released security updates to patch a denial-of-service zero-day in Adaptive Security Appliance (ASA) and Threat Defense (FTD) software that attackers are exploiting to remotely crash vulnerable firewall devices. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/",
+      "published": "2026-10-29T11:10:13+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+      "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
+      "summary": "Cisco has released patches to address a high-severity security flaw in Secure Firewall Adaptive Security Appliance (ASA) Software and Secure Firewall Threat Defense (FTD) Software that it said has been exploited in the wild.\n\nThe vulnerability, tracked as CVE-2026-76418, is rated 8.6 on the CVSS scoring system. Successful exploitation could allow an unauthenticated, remote attacker to cause the",
+      "link": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+      "published": "2026-10-29T10:44:46+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-76418"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/",
+      "title": "Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon\u2019s \u2018Silent Train\u2019 Network",
+      "summary": "Cisco Talos linked SD-WAN key-stealing malware to infrastructure overlapping Volt Typhoon\u2019s Silent Train network, which Lumen detailed. The post Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon\u2019s \u2018Silent Train\u2019 Network appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/",
+      "published": "2026-10-29T10:29:25+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/",
+      "title": "Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August",
+      "summary": "An exploited flaw in the Remote Access SSL VPN service lets unauthenticated attackers remotely force ASA and FTD firewalls to reload. The post Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/",
+      "published": "2026-10-29T09:47:10+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+      "title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a security flaw impacting Broadcom VMware ESX to its Known Exploited Vulnerabilities (KEV) catalog, after CrowdStrike revealed that it had been weaponized by a China-nexus threat actor known as Warp Panda in attacks targeting the U.S. legal sector.\n\nThe vulnerability in question is CVE-2026-41709 (CVSS score:",
+      "link": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+      "published": "2026-10-29T06:22:33+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-41709"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/57",
+      "title": "[0day-rubbish] NETGEAR RAX120 V1.2.5.18 authenticated SOAP InstallApp OS command injection to root-configured web-stack execution (6.8 Medium; conditionally 7.2 High with management exposure)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in NETGEAR RAX120 (Nighthawk AX12) firmware V1.2.5.18, the WiFi 6 consumer router from NETGEAR (United States), built on the Qualcomm IPQ8074 platform. The administrative web plane of this firmware generation is a lighttpd server fronting the vendor's DNI-framework CGI handler /usr/sbin/net-cgi (an aarch64, musl, stripped image; the handler binary measures 1,042,120 bytes and...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/57",
+      "published": "2026-10-29T04:12:45+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/54",
+      "title": "[0day-rubbish] Raritan PX3 PDU G4 firmware 4.3.14 command injection in the ping and traceroute diagnostics through an inverted hostname-validation return check (8.8)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Raritan PX3 PDU G4, firmware version 4.3.14, the intelligent rack power distribution unit from Raritan, a Legrand company (United States). A low-privilege authenticated session converts one diagnostics request into operating-system command execution in the product's web-service context, because the hostname validation that is supposed to gate the ping and traceroute...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/54",
+      "published": "2026-10-29T04:12:44+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/55",
+      "title": "[0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 scenario ping condition command injection through the auto-executing ping thread (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Moxa MAR-2000 series industrial 4G/LTE cellular router, firmware image FWR_MAR2000_V1.0_Build_15010909, from Moxa Inc. (Taiwan). An authenticated administrator converts one saved monitoring-condition field into recurring, product-scheduled arbitrary command execution, because the thread that implements the scenario ping condition builds its command line from the...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/55",
+      "published": "2026-10-29T04:12:41+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/53",
+      "title": "[0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 IPsec tunnel address command injection through the route-management shell commands (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Moxa MAR-2000 series industrial 4G/LTE cellular router, firmware image FWR_MAR2000_V1.0_Build_15010909, from Moxa Inc. (Taiwan). An authenticated administrator converts one stored VPN address field into arbitrary command execution as the identity of the product's model process, because the IPsec model manages the tunnel's addresses and routes by interpolating...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/53",
+      "published": "2026-10-29T04:12:40+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/52",
+      "title": "[0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 command injection in the Executer program activation path (7.2)",
+      "summary": "Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Moxa MAR-2000 series industrial 4G/LTE cellular router, firmware image FWR_MAR2000_V1.0_Build_15010909, from Moxa Inc. (Taiwan). An authenticated administrator converts one stored configuration field into arbitrary command execution as the identity of the product's model process, because the Executer model builds the launch command of an operator program as a shell...",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/52",
+      "published": "2026-10-29T04:12:39+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-117601",
       "title": "Electrum: Malicious server can replace a just-broadcast tx and try to trick user into RBF-ing it",
       "summary": "### Summary\n\nThe main Electrum server the client connects to is trusted with mempool (\"unconfirmed\") transactions. This is documented [design](https://electrum.readthedocs.io/en/latest/faq.html#does-electrum-trust-servers). [0]\n\nHowever now someone figured out a way to practically exploit it:\n- when the client broadcasts a new tx1, a malicious server can swallow it,\n- and update the client's history with a conflicting (invalid) tx2 that replaces the outputs with the attacker's output address.\n- Tx2 has invalid signatures, but this is not checked (due to light client design).\n- The wallet will display tx2 as an unconfirmed transaction - tx1 will not be displayed.\n- If the client then manually RBF fee-bumps tx2, the client will sign it with a higher fee, and hence pay the attacker.\n\n### Fixes\n\nCommit 90fe30822 contains the fix [1], included in version 4.8.3.\nThe client now verifies the signatures of `wallet.is_mine` inputs for mempool txs (before adding them to its local history).\n\nUsers should upgrade (and regularly do so in any case).\nAs a workaround, without upgrading, when signing any transaction, for bumping the fee or not, they should verify the output addresses and amounts are as expected.\n\nClients that connect to servers they trust (e.g. run their own) are not affected.\n\n\n### Remarks\n\n- some servers are performing this attack in the wild\n- electrum received two user-reports of this. user1 noticed after broadcasting tx1 the wallet history contained a different tx. user2 bumped the fee of tx2 and lost money.\n- user1 reported tx1 was not propagated over the bitcoin p2p, so the server held it\n- both reported the attacker's output address in tx2 was grinded to match the last four chars of the legit address from tx1\n- based on user2's report, the server constructed a tx2 with zero fee (presumably in hope of the user bumping its fee)\n- even with the fix, we still only validate \"is_mine\" inputs (i.e. paying from addresses that the wallet owns). So e.g. \"incoming\" txs ",
@@ -250,21 +402,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
-      "title": "Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach",
-      "summary": "Japan's GMO Internet Group is\u00a0offering up to $1 million in total\u00a0for tips that help catch the attackers who breached its Onamae.com Desktop Cloud service, after refusing to pay an extortion demand.\n\nThe reward program opened on October 28 and pays only if a tip helps lead to an arrest or an international wanted notice. The service\u00a0hosts Windows desktops\u00a0used for FX trading,",
-      "link": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html",
-      "published": "2026-10-28T07:13:21+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -305,6 +442,40 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+      "title": "Attacker Tried to Exploit Alpine Linux\u2019s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
+      "summary": "An attacker tried to exploit a critical GitLab vulnerability on the Alpine Linux project's own GitLab server a week after GitLab\u00a0released a fix, Alpine Linux\u00a0said\u00a0on 28 October.\n\nThe flaw, CVE-2026-97229 (CVSS score: 10.0), can let an attacker run code on a GitLab server through a crafted regular expression in a CI configuration. Alpine found no evidence that the attack worked but",
+      "link": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+      "published": "2026-10-29T09:05:39+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-97229"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://seclists.org/fulldisclosure/2026/Oct/51",
+      "title": "Re: CVE-2026-109618: PHP-CGI Pointer Underflow \u2192 Remote Code Execution (CVSS 9.2)",
+      "summary": "Posted by fulldisclosure on Oct 28 Am 21.10.26 um 07:23 schrieb jose: that is the CVE for the OOM RCE vulnerability in fpm and mod_php. Sure you got the right on? Best regards, Marius",
+      "link": "https://seclists.org/fulldisclosure/2026/Oct/51",
+      "published": "2026-10-29T04:12:02+00:00",
+      "source": "Full Disclosure",
+      "tags": [
+        "disclosure",
+        "exploit"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -700,23 +871,6 @@
       ],
       "cve_ids": [
         "CVE-2026-101767"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
-      "title": "Adobe Fixes 8 Critical Campaign Classic Flaws Allowing Code Execution and Security Bypass",
-      "summary": "Adobe has released patches to address multiple critical security flaws in Campaign Classic that, if successfully exploited, could result in arbitrary code execution, security feature bypass, and privilege escalation.\n\nThe list of eight vulnerabilities is as follows -\n\n\n  CVE-2026-104351 (CVSS score: 9.9) - A code injection vulnerability that could lead to arbitrary code execution.",
-      "link": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html",
-      "published": "2026-10-28T11:15:51+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-104351"
       ],
       "is_zero_day": false,
       "is_high_severity": true
