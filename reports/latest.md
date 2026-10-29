@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-29 11:54 UTC &nbsp;|&nbsp; **Total:** 52 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 25 &nbsp;|&nbsp; 🟡 High: 27 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-29 17:42 UTC &nbsp;|&nbsp; **Total:** 56 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 25 &nbsp;|&nbsp; 🟡 High: 31 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -20,7 +20,16 @@
 
 ---
 
-## 3. 🟠 Zero-Day — [0day-rubbish] NUUO Crystal Server 3.19.0.85 unauthenticated upload.php PHP web-root write with fastcgi execution into server-side code execution as the web service account (9.8 Critical)
+## 3. 🟠 Zero-Day — CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies to patch a high-severity Linux kernel privilege escalation bug that attackers are chaining with the PHP2Shell flaws in the wild. [...]
+
+---
+
+## 4. 🟠 Zero-Day — [0day-rubbish] NUUO Crystal Server 3.19.0.85 unauthenticated upload.php PHP web-root write with fastcgi execution into server-side code execution as the web service account (9.8 Critical)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/56>
@@ -29,7 +38,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Echo static file middleware route protection bypass via encoded dot-dot traversal
+## 5. 🟠 Zero-Day — Echo static file middleware route protection bypass via encoded dot-dot traversal
 
 **CVE:** `CVE-2026-118654` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-3pmx-cf9f-34xr>
@@ -39,15 +48,6 @@
 Echo v5.2.0 contains a bypass of the fix for GHSA-vfp3-v2gw-7wfq. The fix rejects encoded path separators such as `%2F` and `%5C` before static file path unescaping, but two traversal forms still bypass route-level middleware protections for static files.
 
 The primary bypass uses encoded dot-dot segments. A request such as `/public/%2E%2E/admin/secret.txt` passes the encoded-separator …
-
----
-
-## 5. 🟠 Zero-Day — Hackers now scanning systems for recently-patched Oracle flaw
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-28
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw/>
-
-> Attackers have begun probing the Internet for systems unpatched against a recently disclosed critical Oracle E-Business Suite (EBS) vulnerability. [...]
 
 ---
 
@@ -105,7 +105,16 @@ The primary bypass uses encoded dot-dot segments. A request such as `/public/%2E
 
 ---
 
-## 12. 🟠 Zero-Day — New Cisco firewall zero-day exploited to crash SSL VPN devices
+## 12. 🟠 Zero-Day — How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://www.securityweek.com/how-secure-are-us-elections-voting-machine-risks-and-the-growing-threat-of-ai/>
+
+> Unpatched voting machines, unverifiable QR-coded ballots, and AI-driven influence campaigns leave US elections short of secure. The post How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI appeared first on SecurityWeek .
+
+---
+
+## 13. 🟠 Zero-Day — New Cisco firewall zero-day exploited to crash SSL VPN devices
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/>
@@ -114,7 +123,7 @@ The primary bypass uses encoded dot-dot segments. A request such as `/public/%2E
 
 ---
 
-## 13. 🟠 Zero-Day — Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls
+## 14. 🟠 Zero-Day — Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls
 
 **CVE:** `CVE-2026-76418` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html>
@@ -125,7 +134,7 @@ The vulnerability, tracked as CVE-2026-76418, is rated 8.6 on the CVSS scoring s
 
 ---
 
-## 14. 🟠 Zero-Day — Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon’s ‘Silent Train’ Network
+## 15. 🟠 Zero-Day — Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon’s ‘Silent Train’ Network
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/>
@@ -134,7 +143,7 @@ The vulnerability, tracked as CVE-2026-76418, is rated 8.6 on the CVSS scoring s
 
 ---
 
-## 15. 🟠 Zero-Day — Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August
+## 16. 🟠 Zero-Day — Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/>
@@ -143,7 +152,7 @@ The vulnerability, tracked as CVE-2026-76418, is rated 8.6 on the CVSS scoring s
 
 ---
 
-## 16. 🟠 Zero-Day — China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility
+## 17. 🟠 Zero-Day — China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility
 
 **CVE:** `CVE-2026-41709` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html>
@@ -154,7 +163,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 17. 🟠 Zero-Day — [0day-rubbish] NETGEAR RAX120 V1.2.5.18 authenticated SOAP InstallApp OS command injection to root-configured web-stack execution (6.8 Medium; conditionally 7.2 High with management exposure)
+## 18. 🟠 Zero-Day — [0day-rubbish] NETGEAR RAX120 V1.2.5.18 authenticated SOAP InstallApp OS command injection to root-configured web-stack execution (6.8 Medium; conditionally 7.2 High with management exposure)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/57>
@@ -163,7 +172,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 18. 🟠 Zero-Day — [0day-rubbish] Raritan PX3 PDU G4 firmware 4.3.14 command injection in the ping and traceroute diagnostics through an inverted hostname-validation return check (8.8)
+## 19. 🟠 Zero-Day — [0day-rubbish] Raritan PX3 PDU G4 firmware 4.3.14 command injection in the ping and traceroute diagnostics through an inverted hostname-validation return check (8.8)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/54>
@@ -172,7 +181,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 19. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 scenario ping condition command injection through the auto-executing ping thread (7.2)
+## 20. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 scenario ping condition command injection through the auto-executing ping thread (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/55>
@@ -181,7 +190,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 20. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 IPsec tunnel address command injection through the route-management shell commands (7.2)
+## 21. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 IPsec tunnel address command injection through the route-management shell commands (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/53>
@@ -190,7 +199,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 21. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 command injection in the Executer program activation path (7.2)
+## 22. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 command injection in the Executer program activation path (7.2)
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/52>
@@ -199,7 +208,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 22. 🟠 Zero-Day — Electrum: Malicious server can replace a just-broadcast tx and try to trick user into RBF-ing it
+## 23. 🟠 Zero-Day — Electrum: Malicious server can replace a just-broadcast tx and try to trick user into RBF-ing it
 
 **CVE:** `CVE-2026-117601` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-6jp4-8v48-cc5v>
@@ -214,7 +223,7 @@ However now someone figured out a way to practically exploit it:
 
 ---
 
-## 23. 🟠 Zero-Day — Happy DOM has cookie scope forgery: no DNS-label boundary on Domain= matching , attacker origin sets victim cookies
+## 24. 🟠 Zero-Day — Happy DOM has cookie scope forgery: no DNS-label boundary on Domain= matching , attacker origin sets victim cookies
 
 **CVE:** `CVE-2026-118661` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-5fpq-26gf-qwcr>
@@ -227,7 +236,7 @@ happy-dom matches Domain=example.com against notexample.com (endsWith without a 
 
 ---
 
-## 24. 🟠 Zero-Day — Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns
+## 25. 🟠 Zero-Day — Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html>
@@ -235,15 +244,6 @@ happy-dom matches Domain=example.com against notexample.com (endsWith without a 
 > The China-nexus cyber espionage group known as Volt Typhoon has been attributed to a now-disrupted covert access network dubbed Silent Train that has been put to use for zero-day exploitation and strategic access.
 
 &quot;First identified in late 2023, Silent Train uses rotating chains of compromised SOHO, IoT, and enterprise infrastructure,&quot; Lumen Technologies Black Lotus Labs said in a repor…
-
----
-
-## 25. 🟠 Zero-Day — Volt Typhoon hides zero-day attacks using 'Silent Train' framework
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-28
-**Reference:** <https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/>
-
-> Chinese state-sponsored hacking group Volt Typhoon has been using a framework that relies on rotating chains of connected devices compromised on demand, including for zero-day attacks targeting high-value systems. [...]
 
 ---
 
@@ -265,7 +265,94 @@ happy-dom matches Domain=example.com against notexample.com (endsWith without a 
 
 ---
 
-## 28. 🟡 High Severity — Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open
+## 28. 🟡 High Severity — zip: Arbitrary file write outside the extraction directory, because ZipArchive::extract validates symlink targets lexically. 
+
+**CVE:** `CVE-2026-115908` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://github.com/advisories/GHSA-hjqx-j4rw-g7xv>
+
+> ### Summary
+
+- **Verified version:** zip `9.0.0-pre3`
+- **Affected versions:** `7.2.0` and later
+- **Precondition:** The attacker knows (or can guess) the absolute path of the extraction destination
+
+The validation applied to symlinks is purely lexical.
+As a result, an attacker can write arbitrary files outside the extraction directory through a symlink.
+Exploitation requires the attacker to know …
+
+---
+
+## 29. 🟡 High Severity — zip: AES Entry HMAC Authentication Bypass on Premature EOF
+
+**CVE:** `CVE-2026-115906` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://github.com/advisories/GHSA-8hxf-qr8p-62x4>
+
+> ### Summary
+
+An AES-encrypted (AE-x) entry&#x27;s authentication code is verified only when the reader&#x27;s byte counter lands exactly on zero. If the bounded entry reader reaches the archive&#x27;s actual EOF before the attacker-controlled, header-declared `compressed_size`, the counter remains positive, the HMAC is never read or compared, and the truncated, unauthenticated plaintext is returne…
+
+---
+
+## 30. 🟡 High Severity — cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials
+
+**CVE:** `CVE-2026-62290` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://github.com/advisories/GHSA-8rvj-mm4h-c258>
+
+> ## Summary
+
+`Challenge` resources under `acme.cert-manager.io` can be created directly by namespace users. On create, cert-manager performs no admission validation tying the Challenge to an `Order`, an owner reference, or an Issuer-selected solver. The ACME Challenge controller then reconciles the direct resource and uses `Challenge.spec.solver` as the DNS01 provider configuration.
+
+When the direc…
+
+---
+
+## 31. 🟡 High Severity — Keycloak: Attacker can re-enable and take over disabled clients via registration access token
+
+**CVE:** `CVE-2026-9705` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://github.com/advisories/GHSA-r7rc-c989-86g6>
+
+> ### Description
+A flaw was found in Keycloak&#x27;s client registration service. A remote attacker, possessing a previously issued Registration Access Token (RAT), could exploit this vulnerability to re-enable a client that an administrator had explicitly disabled. This bypasses security controls, allowing the attacker to reset the client&#x27;s secret and potentially regain privileged API access.…
+
+---
+
+## 32. 🟡 High Severity — @sylphx/pdf-reader-mcp: HTTP transport accepts unauthenticated requests despite a configured MCP_API_KEY
+
+**CVE:** `CVE-2026-62264` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://github.com/advisories/GHSA-q344-5v34-gm84>
+
+> ### Impact
+
+When `@sylphx/pdf-reader-mcp` is run as an HTTP server (`MCP_TRANSPORT=http`), it reads the `MCP_API_KEY` environment variable and logs `API key authentication enabled (X-API-Key header)` at startup, but it never validated the `X-API-Key` header on incoming requests. The key was read into a variable and never enforced on the request path.
+
+As a result, the `/mcp` endpoint accepted **un…
+
+---
+
+## 33. 🟡 High Severity — PraisonAI vulnerable to Remote Code Execution via Broken AST Sandbox
+
+**CVE:** `CVE-2026-61438` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://github.com/advisories/GHSA-26mh-57q7-jfvr>
+
+> ### Summary
+JobWorkflowExecutor._exec_inline_python() is designed to safely execute inline Python expressions from YAML workflow script: steps using AST validation. The function claims to block dangerous operations by (a) checking all AST nodes against an allowlist, and (b) providing a __builtins__ whitelist that omits __import__, exec, eval, and open.
+
+The sandbox is broken. The module import all…
+
+---
+
+## 34. 🟡 High Severity — Parse Server vulnerable to stored XSS via malformed Content-Type bypassing file upload extension blocklist
+
+**CVE:** `CVE-2026-61448` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
+**Reference:** <https://github.com/advisories/GHSA-r899-h629-j84r>
+
+> ### Impact
+
+Parse Server&#x27;s file upload validation uses the `fileUpload.fileExtensions` option (enabled by default with a blocklist) to reject files that browsers may render as active content, mitigating stored cross-site scripting (XSS). When an uploaded file&#x27;s extension is not recognized by the `mime` package, Parse Server preserves the client-supplied `Content-Type` and passes it to th…
+
+---
+
+## 35. 🟡 High Severity — Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open
 
 **CVE:** `CVE-2026-97229` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html>
@@ -276,7 +363,7 @@ The flaw, CVE-2026-97229 (CVSS score: 10.0), can let an attacker run code on a G
 
 ---
 
-## 29. 🟡 High Severity — Re: CVE-2026-109618: PHP-CGI Pointer Underflow → Remote Code Execution (CVSS 9.2)
+## 36. 🟡 High Severity — Re: CVE-2026-109618: PHP-CGI Pointer Underflow → Remote Code Execution (CVSS 9.2)
 
 **CVE:** `CVE-2026-109618` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://seclists.org/fulldisclosure/2026/Oct/51>
@@ -285,7 +372,7 @@ The flaw, CVE-2026-97229 (CVSS score: 10.0), can let an attacker run code on a G
 
 ---
 
-## 30. 🟡 High Severity — Tornado: Quadratic CPU usage when parsing HTTP headers with line folding
+## 37. 🟡 High Severity — Tornado: Quadratic CPU usage when parsing HTTP headers with line folding
 
 **CVE:** `CVE-2026-116577` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-pcg2-g6cj-q92c>
@@ -298,7 +385,7 @@ This i…
 
 ---
 
-## 31. 🟡 High Severity — Mem0: Cross-tenant conversation leak via unescaped delimiter collision in session-scope key (_build_session_scope)
+## 38. 🟡 High Severity — Mem0: Cross-tenant conversation leak via unescaped delimiter collision in session-scope key (_build_session_scope)
 
 **CVE:** `CVE-2026-116575` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-5324-3w58-qpp2>
@@ -314,7 +401,7 @@ def _build_session_scope(filters):
 
 ---
 
-## 32. 🟡 High Severity — vLLM: Permissive default CORS origins allow cross-origin requests to the vLLM HTTP server
+## 39. 🟡 High Severity — vLLM: Permissive default CORS origins allow cross-origin requests to the vLLM HTTP server
 
 **CVE:** `CVE-2026-115917` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-vvpg-rrww-wpmh>
@@ -329,7 +416,7 @@ requests to a vLLM server that the victim&#x27;s browser can reach (for example
 
 ---
 
-## 33. 🟡 High Severity — vLLM: DoS via unbounded chat_template Jinja2 rendering exhausts the renderer thread pool
+## 40. 🟡 High Severity — vLLM: DoS via unbounded chat_template Jinja2 rendering exhausts the renderer thread pool
 
 **CVE:** `CVE-2026-115911` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-542m-9234-8gvf>
@@ -339,7 +426,7 @@ vLLM renders chat templates by passing the resolved Jinja2 source to `tokenizer.
 
 ---
 
-## 34. 🟡 High Severity — Go JOSE: Panic during CBC-HMAC processing
+## 41. 🟡 High Severity — Go JOSE: Panic during CBC-HMAC processing
 
 **CVE:** `CVE-2026-116585` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-4w3g-jfj2-cw2q>
@@ -356,7 +443,7 @@ Insufficient validation of parameters can lead to attempting to index into an em
 
 ---
 
-## 35. 🟡 High Severity — systeminformation has path traversal in Linux networkStats() that allows symlink-based file disclosure outside /sys/class/net
+## 42. 🟡 High Severity — systeminformation has path traversal in Linux networkStats() that allows symlink-based file disclosure outside /sys/class/net
 
 **CVE:** `CVE-2026-116673` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-4vjg-vx72-qq4g>
@@ -371,7 +458,7 @@ On Linux, `systeminformation@5.33.13` builds `/sys/class/net/&lt;iface&gt;` path
 
 ---
 
-## 36. 🟡 High Severity — graphql-scalars PhoneNumber scalar is vulnerable to regular expression denial of service
+## 43. 🟡 High Severity — graphql-scalars PhoneNumber scalar is vulnerable to regular expression denial of service
 
 **CVE:** `CVE-2026-115887` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-x8rm-f576-gq67>
@@ -384,7 +471,7 @@ graphql-js calls `parseLiteral` while *validating* a document and `p…
 
 ---
 
-## 37. 🟡 High Severity — Autobahn Python: permessage-brotli inflates a whole frame before maxMessagePayloadSize is checked (incomplete fix of GHSA-hxp9-w8x3-p566)
+## 44. 🟡 High Severity — Autobahn Python: permessage-brotli inflates a whole frame before maxMessagePayloadSize is checked (incomplete fix of GHSA-hxp9-w8x3-p566)
 
 **CVE:** `CVE-2026-116579` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-pjh6-c8mg-3x7m>
@@ -399,7 +486,7 @@ In 26.7.1 the…
 
 ---
 
-## 38. 🟡 High Severity — zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
+## 45. 🟡 High Severity — zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE
 
 **CVE:** `CVE-2026-115905` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-m665-v7pm-7grj>
@@ -409,7 +496,7 @@ A critical architectural parser differential exists in the `zip` crate (`&lt;= 9
 
 ---
 
-## 39. 🟡 High Severity — LangGraph JavaScript custom authentication may permit cross-user Store access
+## 46. 🟡 High Severity — LangGraph JavaScript custom authentication may permit cross-user Store access
 
 **CVE:** `CVE-2026-118668` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-4hm6-w6qq-w73v>
@@ -426,7 +513,7 @@ A deployment is affected only when all of the following conditions apply:
 
 ---
 
-## 40. 🟡 High Severity — filelock: StrictSoftFileLock and SoftReadWriteLock adopt a protocol directory another user created first, losing mutual exclusion
+## 47. 🟡 High Severity — filelock: StrictSoftFileLock and SoftReadWriteLock adopt a protocol directory another user created first, losing mutual exclusion
 
 **CVE:** `CVE-2026-112911` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-9c4x-gm8v-wgc4>
@@ -435,7 +522,7 @@ A deployment is affected only when all of the following conditions apply:
 
 ---
 
-## 41. 🟡 High Severity — filelock: SoftFileLock removes a live holder's marker when another user forges the PID in a writable marker
+## 48. 🟡 High Severity — filelock: SoftFileLock removes a live holder's marker when another user forges the PID in a writable marker
 
 **CVE:** `CVE-2026-112939` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-rfpc-qcw5-3pc4>
@@ -446,7 +533,7 @@ A local user who can write the marker but cannot remove it rew…
 
 ---
 
-## 42. 🟡 High Severity — filelock: Symlink swap during SoftFileLock's writability check leaks whether a path exists and is writable by the lock taker
+## 49. 🟡 High Severity — filelock: Symlink swap during SoftFileLock's writability check leaks whether a path exists and is writable by the lock taker
 
 **CVE:** `CVE-2026-112912` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-9j6q-wvj5-jgjg>
@@ -455,7 +542,7 @@ A local user who can write the marker but cannot remove it rew…
 
 ---
 
-## 43. 🟡 High Severity — filelock: StrictSoftFileLock follows a symbolic link swapped in at <path>.filelock and creates claim files in a directory another local user chooses
+## 50. 🟡 High Severity — filelock: StrictSoftFileLock follows a symbolic link swapped in at <path>.filelock and creates claim files in a directory another local user chooses
 
 **CVE:** `CVE-2026-112938` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-m462-7rxw-wvpg>
@@ -464,7 +551,7 @@ A local user who can write the marker but cannot remove it rew…
 
 ---
 
-## 44. 🟡 High Severity — Happy DOM: SSRF via iframe and link stylesheet when parsing untrusted HTML
+## 51. 🟡 High Severity — Happy DOM: SSRF via iframe and link stylesheet when parsing untrusted HTML
 
 **CVE:** `CVE-2026-118660` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-c8p4-j97h-3vg8>
@@ -474,7 +561,7 @@ happy-dom v20.8.9 makes real server-side HTTP requests to arbitrary URLs when pa
 
 ---
 
-## 45. 🟡 High Severity — GraphQL Tools: Per-request connection parameters persist into later users' WebSocket authentications
+## 52. 🟡 High Severity — GraphQL Tools: Per-request connection parameters persist into later users' WebSocket authentications
 
 **CVE:** `CVE-2026-118665` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-434m-5hcj-pxf3>
@@ -490,7 +577,7 @@ happy-dom v20.8.9 makes real server-side HTTP requests to arbitrary URLs when pa
 
 ---
 
-## 46. 🟡 High Severity — GraphQL Tools: Shared legacy executor routes one subscription's results to a different caller
+## 53. 🟡 High Severity — GraphQL Tools: Shared legacy executor routes one subscription's results to a different caller
 
 **CVE:** `CVE-2026-118666` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-mp66-8ww2-pcwm>
@@ -506,7 +593,7 @@ happy-dom v20.8.9 makes real server-side HTTP requests to arbitrary URLs when pa
 
 ---
 
-## 47. 🟡 High Severity — Echo has a Static Middleware Double-Unescape Path Traversal
+## 54. 🟡 High Severity — Echo has a Static Middleware Double-Unescape Path Traversal
 
 **CVE:** `CVE-2026-118655` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-xwq5-6cqp-vx96>
@@ -525,7 +612,7 @@ pathUnescape := tru…
 
 ---
 
-## 48. 🟡 High Severity — Highcharts Dashboards parses sidebar component labels as HTML
+## 55. 🟡 High Severity — Highcharts Dashboards parses sidebar component labels as HTML
 
 **CVE:** `CVE-2026-118252` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
 **Reference:** <https://github.com/advisories/GHSA-rcqf-f6h2-ccg9>
@@ -535,39 +622,7 @@ The component language strings shown in the edit mode sidebar are parsed as HTML
 
 ---
 
-## 49. 🟡 High Severity — Highcharts Dashboards: `__proto__` data table id writes sync listeners to `Object.prototype`
-
-**CVE:** `CVE-2026-118243` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
-**Reference:** <https://github.com/advisories/GHSA-jqgh-w3cc-7jqw>
-
-> ### Impact
-The data cursor keeps its listener and state bookkeeping in plain objects keyed by data table id, so a table id of `__proto__` supplied in the `dataPool` connector configuration resolves to `Object.prototype` when a sync registers its listeners, and the registration creates a property on `Object.prototype` named after the sync state and holding the internal listener array. The property …
-
----
-
-## 50. 🟡 High Severity — Echo's middleware.Static: `%2F`-encoded path bypasses route/group middleware guarding a statically-served path
-
-**CVE:** `CVE-2026-118650` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-28
-**Reference:** <https://github.com/advisories/GHSA-375p-5qhx-8wq4>
-
-> ## Summary
-
-When `middleware.Static` is mounted globally (`e.Use(middleware.Static(...))`) and an application relies on a **route- or group-level middleware guard** to restrict a path that also falls under the served static root, a `%2F`-encoded request bypasses that guard while the file is still served. This is the same encoding/decoding mismatch fixed for `StaticFS`/`StaticDirectoryHandler` in C…
-
----
-
-## 51. 🟡 High Severity — Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch
-
-**CVE:** `CVE-2026-101767` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-28
-**Reference:** <https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html>
-
-> Threat actors are beginning to probe for a newly patched critical vulnerability in Oracle E-Business Suite (EBS), according to threat intelligence firm Defused Cyber.
-
-The vulnerability in question is CVE-2026-101767 (CVSS score: 9.8) , a case of improper authentication in the Oracle Application Object Library of Oracle E-Business Suite. It was patched by Oracle last week as part of its Critical
-
----
-
-## 52. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 56. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-29T11:54:14.957166+00:00",
-  "total": 52,
+  "generated": "2026-10-29T17:42:30.680945+00:00",
+  "total": 56,
   "kev": 0,
   "zero_day": 25,
   "enriched": 0,
@@ -37,6 +37,21 @@
       "is_high_severity": true
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+      "title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies to patch a high-severity Linux kernel privilege escalation bug that attackers are chaining with the PHP2Shell flaws in the wild. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+      "published": "2026-10-29T13:59:48+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "https://seclists.org/fulldisclosure/2026/Oct/56",
       "title": "[0day-rubbish] NUUO Crystal Server 3.19.0.85 unauthenticated upload.php PHP web-root write with fastcgi execution into server-side code execution as the web service account (9.8 Critical)",
       "summary": "Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in NUUO Crystal Server 3.19.0.85, the video management and NVR server software from NUUO Inc. of Taipei (Taiwan), distributed as the Crystal virtual-machine appliance: an Ubuntu-based OVA whose web tier is a lighttpd server fronting a PHP application, with .php requests dispatched to /usr/bin/php-cgi through lighttpd's fastcgi mapping. The product sits in the management plane...",
@@ -66,21 +81,6 @@
       "cve_ids": [
         "CVE-2026-118654"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw/",
-      "title": "Hackers now scanning systems for recently-patched Oracle flaw",
-      "summary": "Attackers have begun probing the Internet for systems unpatched against a recently disclosed critical Oracle E-Business Suite (EBS) vulnerability. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-scanning-systems-for-recently-patched-oracle-flaw/",
-      "published": "2026-10-28T12:19:57+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -178,6 +178,21 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.securityweek.com/how-secure-are-us-elections-voting-machine-risks-and-the-growing-threat-of-ai/",
+      "title": "How Secure Are US Elections? Voting Machine Risks and\u00a0the Growing Threat of AI",
+      "summary": "Unpatched voting machines, unverifiable QR-coded ballots, and AI-driven influence campaigns leave US elections short of secure. The post How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI appeared first on SecurityWeek .",
+      "link": "https://www.securityweek.com/how-secure-are-us-elections-voting-machine-risks-and-the-growing-threat-of-ai/",
+      "published": "2026-10-29T15:00:00+00:00",
+      "source": "SecurityWeek",
+      "tags": [
+        "news",
+        "research"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -387,21 +402,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/",
-      "title": "Volt Typhoon hides zero-day attacks using 'Silent Train' framework",
-      "summary": "Chinese state-sponsored hacking group Volt Typhoon has been using a framework that relies on rotating chains of connected devices compromised on demand, including for zero-day attacks targeting high-value systems. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/",
-      "published": "2026-10-28T16:00:00+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -442,6 +442,132 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-115908",
+      "title": "zip: Arbitrary file write outside the extraction directory, because ZipArchive::extract validates symlink targets lexically. ",
+      "summary": "### Summary\n\n- **Verified version:** zip `9.0.0-pre3`\n- **Affected versions:** `7.2.0` and later\n- **Precondition:** The attacker knows (or can guess) the absolute path of the extraction destination\n\nThe validation applied to symlinks is purely lexical.\nAs a result, an attacker can write arbitrary files outside the extraction directory through a symlink.\nExploitation requires the attacker to know (or guess) the absolute path of the destination, but this is realistic in practice: CI workspaces, `/opt/app`, a fixed Downloads path, and so on.\n\n> **Impact extends further on Windows (verified on real hardware for both the separate-drive and UNC-share cases)**:  \n> Because `simplified_components` discards the `Prefix` component, paths like `D:\\<same tail as dest>` or a UNC path `\\\\attacker\\share\\<same tail>` pass the `starts_with` check.  \n> As a result, `outpath.push` gets replaced onto a different drive/remote share, so **a single symlink is enough \u2014 no intermediate symlink chain is required**.  \n> That said, creating a symlink on Windows requires `SeCreateSymbolicLinkPrivilege` (administrator rights or Developer Mode enabled).\n> **Real-hardware verification (Windows 10 VM (19045.2604), `tests/poc_win.rs`)**:  \n> With the extraction target set to a temporary directory under `C:`, both of the following paths returned `Ok(())` from `extract()` and successfully wrote outside the extraction target.  \n> In both cases `extract()` returned no error (`Ok(())`), and it was confirmed that the contents of `pwned.txt` matched the attacker-specified value.\n\n### Relationship to CVE-2025-29787\n\nThis is **not a duplicate** of the existing [CVE-2025-29787](https://github.com/zip-rs/zip2/security/advisories/GHSA-94vh-gphv-8pm8) (2025-03); rather, **the protection introduced for that CVE was subsequently lost**.\n\n#### Timeline (git history, UTC)\n\n| commit     | Date       | Description                                                                                                      |\n|",
+      "link": "https://github.com/advisories/GHSA-hjqx-j4rw-g7xv",
+      "published": "2026-10-29T16:40:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-115908"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-115906",
+      "title": "zip: AES Entry HMAC Authentication Bypass on Premature EOF",
+      "summary": "### Summary\n\nAn AES-encrypted (AE-x) entry's authentication code is verified only when the reader's byte counter lands exactly on zero. If the bounded entry reader reaches the archive's actual EOF before the attacker-controlled, header-declared `compressed_size`, the counter remains positive, the HMAC is never read or compared, and the truncated, unauthenticated plaintext is returned as a clean end of stream. A zero-payload entry also returns before authentication. An attacker who does not know the password can modify an archive so chosen or modified plaintext is accepted with no error.\n\n### Details\n\n[`src/aes.rs:246-292`](https://github.com/zip-rs/zip2/blob/6f09b3064ec87c3a69ea9f3413f9f9638b4aa446/src/aes.rs#L246-L292):\n\n```rust\nfn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {\n    if self.data_remaining == 0 { // @audit insufficient check\n        return Ok(0);\n    }\n\n    // get the number of bytes to read, compare as u64 to make sure we can read more than\n    // 2^32 bytes even on 32 bit systems.\n    let bytes_to_read = self.data_remaining.min(buf.len() as u64) as usize;\n    let read = self.reader.read(&mut buf[0..bytes_to_read])?;\n    self.data_remaining -= read as u64;\n\n    // Update the hmac with the encrypted data\n    self.hmac.update(&buf[0..read]);\n\n    // decrypt the data\n    self.cipher.crypt_in_place(&mut buf[0..read]);\n\n    // if there is no data left to read, check the integrity of the data\n    if self.data_remaining == 0 {\n        debug_assert!(\n            !self.finalized,\n            \"Tried to use an already finalized HMAC. This is a bug!\"\n        );\n        if self.finalized {\n            return Err(Error::new(\n                ErrorKind::InvalidData,\n                \"Tried to use an already finalized HMAC\",\n            ));\n        }\n        self.finalized = true;\n\n        // Zip uses HMAC-Sha1-80, which only uses the first half of the hash\n        // see https://www.winzip.com/win/en/aes_info.html#auth-faq\n        let mut read_auth_code = [0",
+      "link": "https://github.com/advisories/GHSA-8hxf-qr8p-62x4",
+      "published": "2026-10-29T16:40:07Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-115906"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62290",
+      "title": "cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials",
+      "summary": "## Summary\n\n`Challenge` resources under `acme.cert-manager.io` can be created directly by namespace users. On create, cert-manager performs no admission validation tying the Challenge to an `Order`, an owner reference, or an Issuer-selected solver. The ACME Challenge controller then reconciles the direct resource and uses `Challenge.spec.solver` as the DNS01 provider configuration.\n\nWhen the direct Challenge references a `ClusterIssuer`, cert-manager derives the DNS provider secret namespace and ambient-credential policy from the `ClusterIssuer` reference, but the DNS provider configuration itself is attacker-controlled through `Challenge.spec.solver`. This lets a namespace user bypass `Issuer`/`ClusterIssuer` solver selectors such as `dnsZones`, `dnsNames`, and `matchLabels`, and make the cert-manager controller use ClusterIssuer DNS credentials for attacker-selected provider settings and DNS names.\n\nIn the acme-dns case, this becomes credential disclosure because the attacker-controlled solver host receives the `X-Api-User` and `X-Api-Key` headers loaded by cert-manager from the ClusterIssuer resource namespace.\n\n## Attack preconditions\n\n- The attacker can create `challenges.acme.cert-manager.io` resources in at least one namespace.\n- The cert-manager controller is running and reconciles ACME `Challenge` resources cluster-wide.\n- A usable `ClusterIssuer` exists in the cluster.\n- The referenced `ClusterIssuer` has a DNS01 solver that uses a Secret in the cluster resource namespace, or relies on ambient credentials enabled for `ClusterIssuer`.\n- The cluster is multi-tenant or otherwise separates namespace users from platform-owned Issuer/ClusterIssuer and DNS credential administration.\n\n## Severity\n\nRationale: a tenant with namespace-level ACME Challenge create permissions, including permissions granted by cert-manager's aggregate edit role, can cause a cluster-scoped controller to use DNS credentials or ambient cloud credentials outside the Issuer's intended solver",
+      "link": "https://github.com/advisories/GHSA-8rvj-mm4h-c258",
+      "published": "2026-10-29T16:39:41Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62290"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-9705",
+      "title": "Keycloak: Attacker can re-enable and take over disabled clients via registration access token",
+      "summary": "### Description\nA flaw was found in Keycloak's client registration service. A remote attacker, possessing a previously issued Registration Access Token (RAT), could exploit this vulnerability to re-enable a client that an administrator had explicitly disabled. This bypasses security controls, allowing the attacker to reset the client's secret and potentially regain privileged API access. The primary impact includes unauthorized information disclosure and potential integrity compromise.",
+      "link": "https://github.com/advisories/GHSA-r7rc-c989-86g6",
+      "published": "2026-10-29T16:36:21Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-9705"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62264",
+      "title": "@sylphx/pdf-reader-mcp: HTTP transport accepts unauthenticated requests despite a configured MCP_API_KEY",
+      "summary": "### Impact\n\nWhen `@sylphx/pdf-reader-mcp` is run as an HTTP server (`MCP_TRANSPORT=http`), it reads the `MCP_API_KEY` environment variable and logs `API key authentication enabled (X-API-Key header)` at startup, but it never validated the `X-API-Key` header on incoming requests. The key was read into a variable and never enforced on the request path.\n\nAs a result, the `/mcp` endpoint accepted **unauthenticated** requests. Combined with the default bind address of `0.0.0.0` (all interfaces), any client able to reach the port could invoke every PDF tool and read the contents of any PDF the server process could open anywhere on the host. URL-based sources also enable limited SSRF (private/loopback addresses are blocked by default unless `--allow-private-ips` is set).\n\nThe misleading startup log made the exposure silent: an operator who set `MCP_API_KEY` reasonably believed the server was protected when it was not.\n\nThis affects only the opt-in HTTP transport; the default `stdio` transport is unaffected.\n\n### Patches\n\nFixed in `@sylphx/pdf-reader-mcp@3.0.1`. The fix enforces the `X-API-Key` header with a constant-time comparison (rejecting missing/mismatched keys with HTTP 401), changes the default bind host to `127.0.0.1` (loopback), and emits a startup warning when binding a non-loopback host without an API key.\n\n### Workarounds\n\nFor deployments that cannot upgrade immediately:\n\n- Bind to loopback only: `MCP_HTTP_HOST=127.0.0.1`.\n- Place a reverse proxy in front that enforces authentication.\n- Use the default `stdio` transport instead of HTTP.\n- Restrict filesystem reach with `--allow-dir` / `MCP_PDF_ALLOWED_DIRS`.\n\nReported privately by **novice-22** via responsible disclosure.",
+      "link": "https://github.com/advisories/GHSA-q344-5v34-gm84",
+      "published": "2026-10-29T16:34:35Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62264"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61438",
+      "title": "PraisonAI vulnerable to Remote Code Execution via Broken AST Sandbox",
+      "summary": "### Summary\nJobWorkflowExecutor._exec_inline_python() is designed to safely execute inline Python expressions from YAML workflow script: steps using AST validation. The function claims to block dangerous operations by (a) checking all AST nodes against an allowlist, and (b) providing a __builtins__ whitelist that omits __import__, exec, eval, and open.\n\nThe sandbox is broken. The module import allowlist (allowed_modules) explicitly includes 'os', and the AST allowlist permits ast.Import, ast.ImportFrom, ast.Call, and ast.Attribute nodes. This means the following malicious workflow script: step passes all AST validation checks and executes without error.\n\nAttack Scenario\n\nAttacker creates or contributes a YAML workflow file (type: job) with a script: step containing import os; os.system(...).\nA user or CI pipeline with PRAISONAI_ALLOW_JOB_WORKFLOWS=true executes the workflow via praisonai workflow run malicious.yaml.\nArbitrary OS commands execute with the privileges of the calling process.\n\n\nThis is particularly dangerous in multi-tenant or CI environments where YAML workflows may originate from untrusted sources (e.g., downloaded templates, shared repositories, AI-generated workflows).\n### PoC\n_Complete instructions, including specific configuration details, to reproduce the vulnerability._\n\n### Impact\n\nRoot Cause \u2014 Lines 364\u2013372:\n\npythonallowed_modules = {'os', 'datetime', 'time', 'json', 'math', 're', 'collections', 'itertools'}\nif isinstance(node, ast.Import):\n    for alias in node.names:\n        if alias.name.split('.')[0] not in allowed_modules:\n            return {\"ok\": False, \"error\": f\"Import of '{alias.name}' not allowed...\"}\n\nos is trusted because it is commonly used for path operations (os.path, os.getcwd). However, os.system(), os.popen(), os.execvp(), os.spawn*(), and os._exit() are all accessible once the module is imported, none of which are individually blocked.\n\nThe __builtins__ restriction (blocking __import__) is irrelevant because the code uses a",
+      "link": "https://github.com/advisories/GHSA-26mh-57q7-jfvr",
+      "published": "2026-10-29T16:34:26Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61438"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-61448",
+      "title": "Parse Server vulnerable to stored XSS via malformed Content-Type bypassing file upload extension blocklist",
+      "summary": "### Impact\n\nParse Server's file upload validation uses the `fileUpload.fileExtensions` option (enabled by default with a blocklist) to reject files that browsers may render as active content, mitigating stored cross-site scripting (XSS). When an uploaded file's extension is not recognized by the `mime` package, Parse Server preserves the client-supplied `Content-Type` and passes it to the storage adapter. A malformed `Content-Type` that is not a valid `type/subtype` media type \u2014 for example `image` (no subtype), `image/` (empty subtype), or `image//svg+xml` (invalid token) \u2014 bypassed the blocklist and was stored unchanged. On storage adapters that persist and serve the uploaded `Content-Type` (such as Amazon S3, Google Cloud Storage, or Azure Blob Storage), a browser cannot parse the malformed `Content-Type` and falls back to MIME-sniffing the file content; a file whose body begins with HTML markup is then rendered as HTML, executing any embedded script in the application's origin. This allows a user permitted to upload files to store content that executes as script against other users who open the file URL. The default GridFS storage adapter is not affected, as it recomputes the `Content-Type` from the filename and serves files with `X-Content-Type-Options: nosniff`.\n\n### Patches\n\nThe file upload handler now validates that the client-supplied `Content-Type` is a well-formed media type (`type/subtype` with non-empty tokens per RFC 9110 \u00a75.6.2) whenever the filename extension is not recognized by `mime`. Malformed values are rejected instead of being stored, while well-formed types \u2014 including custom or vendor types that the `mime` package does not recognize \u2014 continue to be accepted; only blocklisted subtypes are rejected.\n\n### Workarounds\n\nConfigure `fileUpload.fileExtensions` as a strict allowlist of only the extensions the application needs (for example `[\"^(png|jpe?g|gif|pdf)$\"]`). Additionally, serve uploaded files from a domain separate from the application so",
+      "link": "https://github.com/advisories/GHSA-r899-h629-j84r",
+      "published": "2026-10-29T16:33:48Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-61448"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -818,59 +944,6 @@
       ],
       "cve_ids": [
         "CVE-2026-118252"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118243",
-      "title": "Highcharts Dashboards: `__proto__` data table id writes sync listeners to `Object.prototype`",
-      "summary": "### Impact\nThe data cursor keeps its listener and state bookkeeping in plain objects keyed by data table id, so a table id of `__proto__` supplied in the `dataPool` connector configuration resolves to `Object.prototype` when a sync registers its listeners, and the registration creates a property on `Object.prototype` named after the sync state and holding the internal listener array. The property name begins with a state prefix fixed by the library, to which the sync `group` option can append an attacker-chosen suffix, and its value is the library's own listener array, but the property is enumerable and visible on every object in the page, and emitting a lasting state for that table id then throws, so syncs that keep lasting states, such as `extremes`, stop working. Exploitation requires that untrusted data reach the Dashboards configuration and that a sync such as `highlight` or `extremes` be enabled on a component using that table, which the same configuration can do. No user interaction is required beyond loading the board.\n\nThe injected property is inert until other code on the page reads or enumerates it, so consequences depend on the consuming application.\n\n### Workarounds\n**Drop-in fix - for any Highcharts Dashboards versions affected (1.0.0-4.2.1).**\nAdd the below IIFE to run after Highcharts Dashboards is loaded. \n\n```\n!function(t){if(t&&t.DataCursor&&t.DataTable){var e=t.DataCursor.prototype,r=t.DataTable.prototype;e.tableIdPollutionPatched||(e.tableIdPollutionPatched=!0,null!==Object.getPrototypeOf((new t.DataCursor).listenerMap)&&['addListener','emitCursor','remitCursor','removeListener'].forEach(function(t){var r=e[t];r&&(e[t]=function(){var t;return t=this,['listenerMap','stateMap'].forEach(function(e){var r,a=t[e];a&&null!==Object.getPrototypeOf(a)&&(r=Object.create(null),Object.keys(a).forEach(function(t){r[t]=a[t]}),t[e]=r)}),r.apply(this,arguments)})}),'__proto__'!==new t.DataTable({id:'__proto__'}).id||Object.getOwnPropertyDescriptor(r,'id')||Obje",
-      "link": "https://github.com/advisories/GHSA-jqgh-w3cc-7jqw",
-      "published": "2026-10-28T19:55:32Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118243"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118650",
-      "title": "Echo's middleware.Static: `%2F`-encoded path bypasses route/group middleware guarding a statically-served path",
-      "summary": "## Summary\n\nWhen `middleware.Static` is mounted globally (`e.Use(middleware.Static(...))`) and an application relies on a **route- or group-level middleware guard** to restrict a path that also falls under the served static root, a `%2F`-encoded request bypasses that guard while the file is still served. This is the same encoding/decoding mismatch fixed for `StaticFS`/`StaticDirectoryHandler` in CVE-2026-55677 / GHSA-vfp3-v2gw-7wfq, but the fix did not cover the `middleware.Static` path. In addition, the `StaticConfig.EnablePathUnescaping` docstring states the default configuration prevents exactly this bypass, which is inaccurate for the global-mount case.\n\n**This is not path traversal:** no file outside the static root is accessed. The served file lives inside the static root; the issue is that access-control expectations set by a route guard are inconsistent between the literal and `%2F`-encoded forms of the same path.\n\n## Details\n\nRoot cause \u2014 the router and the static handler disagree on how to interpret `%2F`:\n\n- The router matches routes on the **raw, still-encoded** path, so `GET /admin%2Fsecret.txt` does **not** match a `/admin/...` route or group; any middleware attached to that route/group is therefore skipped.\n- `middleware.Static` selects its path source in `middleware/static.go` (~L219): with a global `e.Use` mount there is no wildcard route, so it uses `c.Request().URL.Path`, which `net/http` has already **decoded** (`%2F` \u2192 `/`). It then `path.Clean`s (~L235) and `Open`s (~L259) `admin/secret.txt`, serving the file.\n\nNet effect: for the literal path the guard runs; for the `%2F`-encoded path the guard is skipped but the same file is served.\n\nRelevant code:\n- `middleware/static.go` ~L219 (`p := c.Request().URL.Path`), ~L235 (`path.Clean`), ~L259 (`currentFS.Open`)\n- `StaticConfig.EnablePathUnescaping` docstring (`static.go` ~L60-67) \u2014 claims the default prevents the `/admin%2fprivate.txt` \u2192 `/admin/*` guard bypass; this is not true for the global moun",
-      "link": "https://github.com/advisories/GHSA-375p-5qhx-8wq4",
-      "published": "2026-10-28T19:54:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-118650"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
-      "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
-      "summary": "Threat actors are beginning to probe for a newly patched critical vulnerability in Oracle E-Business Suite (EBS), according to threat intelligence firm Defused Cyber.\n\nThe vulnerability in question is CVE-2026-101767 (CVSS score: 9.8) , a case of improper authentication in the Oracle Application Object Library of Oracle E-Business Suite. It was patched by Oracle last week as part of its Critical",
-      "link": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
-      "published": "2026-10-28T12:48:03+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-101767"
       ],
       "is_zero_day": false,
       "is_high_severity": true
