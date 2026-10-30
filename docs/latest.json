@@ -1,10 +1,48 @@
 {
-  "generated": "2026-10-30T17:21:37.122806+00:00",
-  "total": 19,
-  "kev": 0,
-  "zero_day": 13,
+  "generated": "2026-10-30T21:45:15.988967+00:00",
+  "total": 22,
+  "kev": 2,
+  "zero_day": 15,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-111357",
+      "title": "CVE-2026-111357 \u2014 Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+      "summary": "Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains a missing authentication for critical function vulnerability that could allow a local authenticated attacker to escalate their privileges. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-118527. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-02)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111357",
+      "published": "2026-10-30",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-111357"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-118527",
+      "title": "CVE-2026-118527 \u2014 Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+      "summary": "Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains a generation of predictable numbers or identifiers vulnerability that allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-111357. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-13)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-118527",
+      "published": "2026-10-30",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-118527"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -63,6 +101,25 @@
       ],
       "cve_ids": [
         "CVE-2026-97229"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/php2shell-one-week-later-why-one-exploit-doesnt-work-everywhere",
+      "title": "php2shell one week later: Why one exploit doesn\u2019t work everywhere",
+      "summary": "php2shell raised fears of mass exploitation. A week of testing by our research team found that working exploits had to be fitted to each target\u2019s exact PHP setup. Systems that share one build, such as network appliances, are the exception: one tuned exploit can reach every device that runs it. Key takeaways The five vulnerable PHP sites we exposed to the internet were not compromised, and public proofs-of-concept (PoCs) that go beyond version checks do not reliably confirm whether a host is vulnerable. Exploitation has been confirmed elsewhere, on researcher honeypots and on some network appliances. In realistic environments, turning php2shell into remote code execution usually takes an exploit built for the specific target. That is hard, not impossible, and it puts php2shell in a different category from Log4Shell, even though both received near-maximum severity ratings. Where many systems share one build, such as network appliances, a single calibrated exploit can work against all of them. Patch now, starting with internet-facing management interfaces, network appliances, and end-of-life PHP branches. Tenable Nessus and Tenable One Web App Scanning have had version-based detection since October 21. Background On October 20, 2026, PHP announced two vulnerabilities , and on October 21 released fixes for flaws that can allow unauthenticated remote code execution. CVE-2026-109618 is an out-of-memory handling flaw. CVE-2026-109619 is a use-after-free flaw caused by stale state shared between requests on the same worker. Each has a CVSSv4 score of 9.2. For a full breakdown of affected versions, fixes and mitigations, see our frequently asked questions blog post . This post covers what happened after the disclosure, based on what our team observed directly. From disclosure to headline in under 48 hours php2shell got big fast. Details of the vulnerabilities leaked online before the official release. Within two days, the vulnerability had a name, a logo and coverage in main",
+      "link": "https://www.tenable.com/blog/php2shell-one-week-later-why-one-exploit-doesnt-work-everywhere",
+      "published": "2026-10-30T01:42:06+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -181,6 +238,21 @@
       "is_high_severity": false
     },
     {
+      "id": "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html",
+      "title": "Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide",
+      "summary": "Chinese state-sponsored threat actors have been observed using a Go-based artificial intelligence (AI)-powered penetration testing framework called ARTEX in attacks aimed at high-value targets simultaneously.\n\nThe activity has been attributed by CrowdStrike to a China-based \"targeted intrusion adversary\" it tracks under the moniker Vapor Panda (previously VexatiousTemper). First identified in",
+      "link": "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html",
+      "published": "2026-10-30T16:58:44+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "CVE-2026-119282",
       "title": "@nx/maven and @nx/gradle have OS command injection via nx.json plugin options",
       "summary": "## Summary\n\n`@nx/maven` and `@nx/gradle` spawn their project-graph analyzers through a shell and interpolate plugin options read from `nx.json` straight into the command line. Because a shell parses the whole line, an option value containing shell syntax is executed as a command by any `nx` command that constructs the project graph. Anyone who clones a hostile repository, or who checks out a pull request that edits `nx.json`, runs the injected command with their own privileges.\n\n## Severity\n\nA victim who runs an ordinary `nx` command in an attacker-supplied Maven or Gradle workspace gets code execution as themselves. In most such workspaces an attacker who can write `nx.json` can already run code through the repository's build files (`./mvnw`, `pom.xml`, and the Gradle equivalents), so the genuinely new exposure is narrow \u2014 for example CI building a fork's pull request where `nx.json` is writable but the build files are not. We have no evidence of exploitation in the wild.\n\n## Affected & Patched Versions\n\n| Package | Vulnerable | Patched |\n| --- | --- | --- |\n| `@nx/maven` | `>= 22.0.2, < 22.7.9`; `>= 23.0.0, < 23.1.2` | `22.7.9`, `23.1.2` |\n| `@nx/gradle` | `>= 21.0.0, < 22.7.9`; `>= 23.0.0, < 23.1.2` | `22.7.9`, `23.1.2` |\n\n> [!IMPORTANT]\n> Workspaces that register neither `@nx/maven` nor `@nx/gradle` in `nx.json` are unaffected \u2014 the vulnerable code only runs from those plugins' graph-construction paths, and no other Nx plugin shares this pattern.\n\n## Remediation\n\nUpgrade to **22.7.9** (22.x line) or **23.1.2** (23.x line) or later:\n\n```\nnx migrate 23.1.2\n```\n\nUpgrade both `nx` and the affected plugin (`@nx/maven` and/or `@nx/gradle`). The plugin's fix depends on code that ships in the `nx` package, so bumping the plugin without a matching `nx` upgrade will not resolve it.\n\nThere is no configuration to change \u2014 upgrading is the whole fix. If you cannot upgrade yet, only run `nx` commands in repositories you trust, since a malicious `nx.json` can execute code on a",
@@ -289,25 +361,6 @@
       ],
       "cve_ids": [
         "CVE-2026-118539"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
-      "summary": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29) appeared first on Unit 42 .",
-      "link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "published": "2026-10-29T18:00:34+00:00",
-      "source": "Unit 42 (Palo Alto)",
-      "tags": [
-        "cloud",
-        "research",
-        "threat-intel"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
       ],
       "is_zero_day": false,
       "is_high_severity": true
