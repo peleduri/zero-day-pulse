@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-30T11:46:50.575314+00:00",
-  "total": 25,
+  "generated": "2026-10-30T17:21:37.122806+00:00",
+  "total": 19,
   "kev": 0,
   "zero_day": 13,
   "enriched": 0,
@@ -64,21 +64,6 @@
       "cve_ids": [
         "CVE-2026-97229"
       ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
-      "title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies to patch a high-severity Linux kernel privilege escalation bug that attackers are chaining with the PHP2Shell flaws in the wild. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
-      "published": "2026-10-29T13:59:48+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -196,15 +181,33 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/how-secure-are-us-elections-voting-machine-risks-and-the-growing-threat-of-ai/",
-      "title": "How Secure Are US Elections? Voting Machine Risks and\u00a0the Growing Threat of AI",
-      "summary": "Unpatched voting machines, unverifiable QR-coded ballots, and AI-driven influence campaigns leave US elections short of secure. The post How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/how-secure-are-us-elections-voting-machine-risks-and-the-growing-threat-of-ai/",
-      "published": "2026-10-29T15:00:00+00:00",
-      "source": "SecurityWeek",
+      "id": "CVE-2026-119282",
+      "title": "@nx/maven and @nx/gradle have OS command injection via nx.json plugin options",
+      "summary": "## Summary\n\n`@nx/maven` and `@nx/gradle` spawn their project-graph analyzers through a shell and interpolate plugin options read from `nx.json` straight into the command line. Because a shell parses the whole line, an option value containing shell syntax is executed as a command by any `nx` command that constructs the project graph. Anyone who clones a hostile repository, or who checks out a pull request that edits `nx.json`, runs the injected command with their own privileges.\n\n## Severity\n\nA victim who runs an ordinary `nx` command in an attacker-supplied Maven or Gradle workspace gets code execution as themselves. In most such workspaces an attacker who can write `nx.json` can already run code through the repository's build files (`./mvnw`, `pom.xml`, and the Gradle equivalents), so the genuinely new exposure is narrow \u2014 for example CI building a fork's pull request where `nx.json` is writable but the build files are not. We have no evidence of exploitation in the wild.\n\n## Affected & Patched Versions\n\n| Package | Vulnerable | Patched |\n| --- | --- | --- |\n| `@nx/maven` | `>= 22.0.2, < 22.7.9`; `>= 23.0.0, < 23.1.2` | `22.7.9`, `23.1.2` |\n| `@nx/gradle` | `>= 21.0.0, < 22.7.9`; `>= 23.0.0, < 23.1.2` | `22.7.9`, `23.1.2` |\n\n> [!IMPORTANT]\n> Workspaces that register neither `@nx/maven` nor `@nx/gradle` in `nx.json` are unaffected \u2014 the vulnerable code only runs from those plugins' graph-construction paths, and no other Nx plugin shares this pattern.\n\n## Remediation\n\nUpgrade to **22.7.9** (22.x line) or **23.1.2** (23.x line) or later:\n\n```\nnx migrate 23.1.2\n```\n\nUpgrade both `nx` and the affected plugin (`@nx/maven` and/or `@nx/gradle`). The plugin's fix depends on code that ships in the `nx` package, so bumping the plugin without a matching `nx` upgrade will not resolve it.\n\nThere is no configuration to change \u2014 upgrading is the whole fix. If you cannot upgrade yet, only run `nx` commands in repositories you trust, since a malicious `nx.json` can execute code on a",
+      "link": "https://github.com/advisories/GHSA-qm8w-vx34-5j9j",
+      "published": "2026-10-30T14:42:14Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119282"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/",
+      "title": "CISA says max severity GitLab flaw now exploited in the wild",
+      "summary": "Attackers have started exploiting a maximum-severity GitLab vulnerability patched earlier this month, according to the US Cybersecurity and Infrastructure Security Agency (CISA). [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/",
+      "published": "2026-10-30T13:00:32+00:00",
+      "source": "Bleeping Computer",
       "tags": [
         "news",
-        "research"
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -256,6 +259,24 @@
       "is_high_severity": true
     },
     {
+      "id": "CVE-2026-119283",
+      "title": "joserfc: Unbounded JWE General JSON `recipients` Array Leads to CPU Exhaustion (DoS) via Repeated RSA Private-Key Decryption",
+      "summary": "### Summary\n\n`joserfc.jwe.decrypt_json()`, the library's public parser for JWE General JSON Serialization, accepts an attacker-controlled `recipients` array of unbounded length and performs one full private-key decryption operation (`decrypt_cek`) for **every** recipient present in the input, with no cap on recipient count. An unauthenticated network attacker who can send a JWE General JSON document to any endpoint that decrypts it with an RSA key (e.g. RSA-OAEP) can force the victim to perform an arbitrary, attacker-chosen number of RSA private-key decryption operations from a single, relatively small HTTP request. This gives the attacker a highly asymmetric CPU-exhaustion (Denial of Service) primitive: local reproduction shows request size growing linearly with recipient count (~396 bytes/recipient) while server-side CPU time grows in lock-step (near 1:1 ratio between recipient-count growth and decrypt-time growth), and the library's only documented mitigation knob, `verify_all_recipients=False`, does **not** reduce the CPU cost, since the decrypt loop attempts every recipient's `decrypt_cek()` unconditionally before that flag is ever consulted. This is CWE-400 (Uncontrolled Resource Consumption) with CVSS v3.1 Base Score 7.5 (High).\n\n### Details\n\n`joserfc` validates and caps several structural elements of a JWE (protected header size, encrypted key size, IV size, ciphertext size, and auth-tag size) inside `src/joserfc/_rfc7516/registry.py`, but performs **no validation whatsoever on the number of entries in the `recipients` array** of a JWE General JSON Serialization object.\n\nData flow (source \u2192 sink), verified directly against the repository source at commit `26a10275e88276184f91ae2a6409647bfac7fea5` (joserfc 1.7.4):\n\n1. `src/joserfc/jwe.py:214` \u2014 public parser entry point `decrypt_json(data, private_key, ...)`. This is a documented, unauthenticated (at the library boundary) API for parsing externally supplied JWE JSON.\n2. `src/joserfc/jwe.py:238` \u2014 if `\"recipie",
+      "link": "https://github.com/advisories/GHSA-jpxq-7h8p-2q76",
+      "published": "2026-10-30T14:54:20Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119283"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
       "title": "Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw",
       "summary": "Drupal has warned that threat actors are exploiting a \"highly critical\" security flaw in its Commerce Core component.\n\nThe vulnerability, tracked as CVE-2026-118539 (CVSS score: N/A), is a case of missing authorization affecting Commerce Core versions from 0.0.0 to 2.41 and from 3.0.0 to 3.3.13.\n\n\"This module enables you to sell goods and services to customers through an included shopping cart",
@@ -287,132 +308,6 @@
       "cve_ids": [
         "CVE-2026-109618",
         "CVE-2026-109619"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115908",
-      "title": "zip: Arbitrary file write outside the extraction directory, because ZipArchive::extract validates symlink targets lexically. ",
-      "summary": "### Summary\n\n- **Verified version:** zip `9.0.0-pre3`\n- **Affected versions:** `7.2.0` and later\n- **Precondition:** The attacker knows (or can guess) the absolute path of the extraction destination\n\nThe validation applied to symlinks is purely lexical.\nAs a result, an attacker can write arbitrary files outside the extraction directory through a symlink.\nExploitation requires the attacker to know (or guess) the absolute path of the destination, but this is realistic in practice: CI workspaces, `/opt/app`, a fixed Downloads path, and so on.\n\n> **Impact extends further on Windows (verified on real hardware for both the separate-drive and UNC-share cases)**:  \n> Because `simplified_components` discards the `Prefix` component, paths like `D:\\<same tail as dest>` or a UNC path `\\\\attacker\\share\\<same tail>` pass the `starts_with` check.  \n> As a result, `outpath.push` gets replaced onto a different drive/remote share, so **a single symlink is enough \u2014 no intermediate symlink chain is required**.  \n> That said, creating a symlink on Windows requires `SeCreateSymbolicLinkPrivilege` (administrator rights or Developer Mode enabled).\n> **Real-hardware verification (Windows 10 VM (19045.2604), `tests/poc_win.rs`)**:  \n> With the extraction target set to a temporary directory under `C:`, both of the following paths returned `Ok(())` from `extract()` and successfully wrote outside the extraction target.  \n> In both cases `extract()` returned no error (`Ok(())`), and it was confirmed that the contents of `pwned.txt` matched the attacker-specified value.\n\n### Relationship to CVE-2025-29787\n\nThis is **not a duplicate** of the existing [CVE-2025-29787](https://github.com/zip-rs/zip2/security/advisories/GHSA-94vh-gphv-8pm8) (2025-03); rather, **the protection introduced for that CVE was subsequently lost**.\n\n#### Timeline (git history, UTC)\n\n| commit     | Date       | Description                                                                                                      |\n|",
-      "link": "https://github.com/advisories/GHSA-hjqx-j4rw-g7xv",
-      "published": "2026-10-29T16:40:12Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115908"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-115906",
-      "title": "zip: AES Entry HMAC Authentication Bypass on Premature EOF",
-      "summary": "### Summary\n\nAn AES-encrypted (AE-x) entry's authentication code is verified only when the reader's byte counter lands exactly on zero. If the bounded entry reader reaches the archive's actual EOF before the attacker-controlled, header-declared `compressed_size`, the counter remains positive, the HMAC is never read or compared, and the truncated, unauthenticated plaintext is returned as a clean end of stream. A zero-payload entry also returns before authentication. An attacker who does not know the password can modify an archive so chosen or modified plaintext is accepted with no error.\n\n### Details\n\n[`src/aes.rs:246-292`](https://github.com/zip-rs/zip2/blob/6f09b3064ec87c3a69ea9f3413f9f9638b4aa446/src/aes.rs#L246-L292):\n\n```rust\nfn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {\n    if self.data_remaining == 0 { // @audit insufficient check\n        return Ok(0);\n    }\n\n    // get the number of bytes to read, compare as u64 to make sure we can read more than\n    // 2^32 bytes even on 32 bit systems.\n    let bytes_to_read = self.data_remaining.min(buf.len() as u64) as usize;\n    let read = self.reader.read(&mut buf[0..bytes_to_read])?;\n    self.data_remaining -= read as u64;\n\n    // Update the hmac with the encrypted data\n    self.hmac.update(&buf[0..read]);\n\n    // decrypt the data\n    self.cipher.crypt_in_place(&mut buf[0..read]);\n\n    // if there is no data left to read, check the integrity of the data\n    if self.data_remaining == 0 {\n        debug_assert!(\n            !self.finalized,\n            \"Tried to use an already finalized HMAC. This is a bug!\"\n        );\n        if self.finalized {\n            return Err(Error::new(\n                ErrorKind::InvalidData,\n                \"Tried to use an already finalized HMAC\",\n            ));\n        }\n        self.finalized = true;\n\n        // Zip uses HMAC-Sha1-80, which only uses the first half of the hash\n        // see https://www.winzip.com/win/en/aes_info.html#auth-faq\n        let mut read_auth_code = [0",
-      "link": "https://github.com/advisories/GHSA-8hxf-qr8p-62x4",
-      "published": "2026-10-29T16:40:07Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-115906"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62290",
-      "title": "cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials",
-      "summary": "## Summary\n\n`Challenge` resources under `acme.cert-manager.io` can be created directly by namespace users. On create, cert-manager performs no admission validation tying the Challenge to an `Order`, an owner reference, or an Issuer-selected solver. The ACME Challenge controller then reconciles the direct resource and uses `Challenge.spec.solver` as the DNS01 provider configuration.\n\nWhen the direct Challenge references a `ClusterIssuer`, cert-manager derives the DNS provider secret namespace and ambient-credential policy from the `ClusterIssuer` reference, but the DNS provider configuration itself is attacker-controlled through `Challenge.spec.solver`. This lets a namespace user bypass `Issuer`/`ClusterIssuer` solver selectors such as `dnsZones`, `dnsNames`, and `matchLabels`, and make the cert-manager controller use ClusterIssuer DNS credentials for attacker-selected provider settings and DNS names.\n\nIn the acme-dns case, this becomes credential disclosure because the attacker-controlled solver host receives the `X-Api-User` and `X-Api-Key` headers loaded by cert-manager from the ClusterIssuer resource namespace.\n\n## Attack preconditions\n\n- The attacker can create `challenges.acme.cert-manager.io` resources in at least one namespace.\n- The cert-manager controller is running and reconciles ACME `Challenge` resources cluster-wide.\n- A usable `ClusterIssuer` exists in the cluster.\n- The referenced `ClusterIssuer` has a DNS01 solver that uses a Secret in the cluster resource namespace, or relies on ambient credentials enabled for `ClusterIssuer`.\n- The cluster is multi-tenant or otherwise separates namespace users from platform-owned Issuer/ClusterIssuer and DNS credential administration.\n\n## Severity\n\nRationale: a tenant with namespace-level ACME Challenge create permissions, including permissions granted by cert-manager's aggregate edit role, can cause a cluster-scoped controller to use DNS credentials or ambient cloud credentials outside the Issuer's intended solver",
-      "link": "https://github.com/advisories/GHSA-8rvj-mm4h-c258",
-      "published": "2026-10-29T16:39:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62290"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-9705",
-      "title": "Keycloak: Attacker can re-enable and take over disabled clients via registration access token",
-      "summary": "### Description\nA flaw was found in Keycloak's client registration service. A remote attacker, possessing a previously issued Registration Access Token (RAT), could exploit this vulnerability to re-enable a client that an administrator had explicitly disabled. This bypasses security controls, allowing the attacker to reset the client's secret and potentially regain privileged API access. The primary impact includes unauthorized information disclosure and potential integrity compromise.",
-      "link": "https://github.com/advisories/GHSA-r7rc-c989-86g6",
-      "published": "2026-10-29T16:36:21Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-9705"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62264",
-      "title": "@sylphx/pdf-reader-mcp: HTTP transport accepts unauthenticated requests despite a configured MCP_API_KEY",
-      "summary": "### Impact\n\nWhen `@sylphx/pdf-reader-mcp` is run as an HTTP server (`MCP_TRANSPORT=http`), it reads the `MCP_API_KEY` environment variable and logs `API key authentication enabled (X-API-Key header)` at startup, but it never validated the `X-API-Key` header on incoming requests. The key was read into a variable and never enforced on the request path.\n\nAs a result, the `/mcp` endpoint accepted **unauthenticated** requests. Combined with the default bind address of `0.0.0.0` (all interfaces), any client able to reach the port could invoke every PDF tool and read the contents of any PDF the server process could open anywhere on the host. URL-based sources also enable limited SSRF (private/loopback addresses are blocked by default unless `--allow-private-ips` is set).\n\nThe misleading startup log made the exposure silent: an operator who set `MCP_API_KEY` reasonably believed the server was protected when it was not.\n\nThis affects only the opt-in HTTP transport; the default `stdio` transport is unaffected.\n\n### Patches\n\nFixed in `@sylphx/pdf-reader-mcp@3.0.1`. The fix enforces the `X-API-Key` header with a constant-time comparison (rejecting missing/mismatched keys with HTTP 401), changes the default bind host to `127.0.0.1` (loopback), and emits a startup warning when binding a non-loopback host without an API key.\n\n### Workarounds\n\nFor deployments that cannot upgrade immediately:\n\n- Bind to loopback only: `MCP_HTTP_HOST=127.0.0.1`.\n- Place a reverse proxy in front that enforces authentication.\n- Use the default `stdio` transport instead of HTTP.\n- Restrict filesystem reach with `--allow-dir` / `MCP_PDF_ALLOWED_DIRS`.\n\nReported privately by **novice-22** via responsible disclosure.",
-      "link": "https://github.com/advisories/GHSA-q344-5v34-gm84",
-      "published": "2026-10-29T16:34:35Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62264"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61438",
-      "title": "PraisonAI vulnerable to Remote Code Execution via Broken AST Sandbox",
-      "summary": "### Summary\nJobWorkflowExecutor._exec_inline_python() is designed to safely execute inline Python expressions from YAML workflow script: steps using AST validation. The function claims to block dangerous operations by (a) checking all AST nodes against an allowlist, and (b) providing a __builtins__ whitelist that omits __import__, exec, eval, and open.\n\nThe sandbox is broken. The module import allowlist (allowed_modules) explicitly includes 'os', and the AST allowlist permits ast.Import, ast.ImportFrom, ast.Call, and ast.Attribute nodes. This means the following malicious workflow script: step passes all AST validation checks and executes without error.\n\nAttack Scenario\n\nAttacker creates or contributes a YAML workflow file (type: job) with a script: step containing import os; os.system(...).\nA user or CI pipeline with PRAISONAI_ALLOW_JOB_WORKFLOWS=true executes the workflow via praisonai workflow run malicious.yaml.\nArbitrary OS commands execute with the privileges of the calling process.\n\n\nThis is particularly dangerous in multi-tenant or CI environments where YAML workflows may originate from untrusted sources (e.g., downloaded templates, shared repositories, AI-generated workflows).\n### PoC\n_Complete instructions, including specific configuration details, to reproduce the vulnerability._\n\n### Impact\n\nRoot Cause \u2014 Lines 364\u2013372:\n\npythonallowed_modules = {'os', 'datetime', 'time', 'json', 'math', 're', 'collections', 'itertools'}\nif isinstance(node, ast.Import):\n    for alias in node.names:\n        if alias.name.split('.')[0] not in allowed_modules:\n            return {\"ok\": False, \"error\": f\"Import of '{alias.name}' not allowed...\"}\n\nos is trusted because it is commonly used for path operations (os.path, os.getcwd). However, os.system(), os.popen(), os.execvp(), os.spawn*(), and os._exit() are all accessible once the module is imported, none of which are individually blocked.\n\nThe __builtins__ restriction (blocking __import__) is irrelevant because the code uses a",
-      "link": "https://github.com/advisories/GHSA-26mh-57q7-jfvr",
-      "published": "2026-10-29T16:34:26Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61438"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-61448",
-      "title": "Parse Server vulnerable to stored XSS via malformed Content-Type bypassing file upload extension blocklist",
-      "summary": "### Impact\n\nParse Server's file upload validation uses the `fileUpload.fileExtensions` option (enabled by default with a blocklist) to reject files that browsers may render as active content, mitigating stored cross-site scripting (XSS). When an uploaded file's extension is not recognized by the `mime` package, Parse Server preserves the client-supplied `Content-Type` and passes it to the storage adapter. A malformed `Content-Type` that is not a valid `type/subtype` media type \u2014 for example `image` (no subtype), `image/` (empty subtype), or `image//svg+xml` (invalid token) \u2014 bypassed the blocklist and was stored unchanged. On storage adapters that persist and serve the uploaded `Content-Type` (such as Amazon S3, Google Cloud Storage, or Azure Blob Storage), a browser cannot parse the malformed `Content-Type` and falls back to MIME-sniffing the file content; a file whose body begins with HTML markup is then rendered as HTML, executing any embedded script in the application's origin. This allows a user permitted to upload files to store content that executes as script against other users who open the file URL. The default GridFS storage adapter is not affected, as it recomputes the `Content-Type` from the filename and serves files with `X-Content-Type-Options: nosniff`.\n\n### Patches\n\nThe file upload handler now validates that the client-supplied `Content-Type` is a well-formed media type (`type/subtype` with non-empty tokens per RFC 9110 \u00a75.6.2) whenever the filename extension is not recognized by `mime`. Malformed values are rejected instead of being stored, while well-formed types \u2014 including custom or vendor types that the `mime` package does not recognize \u2014 continue to be accepted; only blocklisted subtypes are rejected.\n\n### Workarounds\n\nConfigure `fileUpload.fileExtensions` as a strict allowlist of only the extensions the application needs (for example `[\"^(png|jpe?g|gif|pdf)$\"]`). Additionally, serve uploaded files from a domain separate from the application so",
-      "link": "https://github.com/advisories/GHSA-r899-h629-j84r",
-      "published": "2026-10-29T16:33:48Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-61448"
       ],
       "is_zero_day": false,
       "is_high_severity": true

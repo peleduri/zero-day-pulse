@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">25</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">19</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-30 11:46 UTC</div>
+            <div class="generated">Updated 2026-10-30 17:21 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -185,22 +185,6 @@ The vulnerabilities are listed below -
   CVE-2026-97229 (CVSS score: 10.0) - An integer overflow or wraparound vulnerability in GitLab Community Edition and Enterprise</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/" target="_blank" rel="noopener">CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-29</span>
-  </div>
-  <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies to patch a high-severity Linux kernel privilege escalation bug that attackers are chaining with the PHP2Shell flaws in the wild. [...]</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -314,19 +298,37 @@ The vulnerabilities are listed below -
 
 </article>
 
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-qm8w-vx34-5j9j" target="_blank" rel="noopener">@nx/maven and @nx/gradle have OS command injection via nx.json plugin options</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119282</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>## Summary
+
+`@nx/maven` and `@nx/gradle` spawn their project-graph analyzers through a shell and interpolate plugin options read from `nx.json` straight into the command line. Because a shell parses the whole line, an option value containing shell syntax is executed as a command by any `nx` command that constructs the project graph. Anyone who clones a hostile repository, or who checks out a pull …</p>
+
+        </article>
+
 <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/how-secure-are-us-elections-voting-machine-risks-and-the-growing-threat-of-ai/" target="_blank" rel="noopener">How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI</a></h2>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/" target="_blank" rel="noopener">CISA says max severity GitLab flaw now exploited in the wild</a></h2>
   </div>
   <div class="card-meta">
     <span class="no-cve">No CVE</span>
     <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
+    <span>Bleeping Computer</span>
     <span class="meta-sep">·</span>
-    <span>2026-10-29</span>
+    <span>2026-10-30</span>
   </div>
-  <p class='summary'>Unpatched voting machines, unverifiable QR-coded ballots, and AI-driven influence campaigns leave US elections short of secure. The post How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI appeared first on SecurityWeek .</p>
+  <p class='summary'>Attackers have started exploiting a maximum-severity GitLab vulnerability patched earlier this month, according to the US Cybersecurity and Infrastructure Security Agency (CISA). [...]</p>
 
 </article>
 
@@ -365,6 +367,24 @@ The vulnerabilities are listed below -
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jpxq-7h8p-2q76" target="_blank" rel="noopener">joserfc: Unbounded JWE General JSON `recipients` Array Leads to CPU Exhaustion (DoS) via Repeated RSA Private-Key Decryption</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119283</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+`joserfc.jwe.decrypt_json()`, the library&#x27;s public parser for JWE General JSON Serialization, accepts an attacker-controlled `recipients` array of unbounded length and performs one full private-key decryption operation (`decrypt_cek`) for **every** recipient present in the input, with no cap on recipient count. An unauthenticated network attacker who can send a JWE General JSON docume…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html" target="_blank" rel="noopener">Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw</a></h2>
           </div>
           <div class="card-meta">
@@ -397,142 +417,6 @@ The vulnerability, tracked as CVE-2026-118539 (CVSS score: N/A), is a case of mi
   <p class='summary'>CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29) appeared first on Unit 42 .</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-hjqx-j4rw-g7xv" target="_blank" rel="noopener">zip: Arbitrary file write outside the extraction directory, because ZipArchive::extract validates symlink targets lexically. </a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115908</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-29</span>
-          </div>
-          <p class='summary'>### Summary
-
-- **Verified version:** zip `9.0.0-pre3`
-- **Affected versions:** `7.2.0` and later
-- **Precondition:** The attacker knows (or can guess) the absolute path of the extraction destination
-
-The validation applied to symlinks is purely lexical.
-As a result, an attacker can write arbitrary files outside the extraction directory through a symlink.
-Exploitation requires the attacker to know …</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8hxf-qr8p-62x4" target="_blank" rel="noopener">zip: AES Entry HMAC Authentication Bypass on Premature EOF</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-115906</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-29</span>
-          </div>
-          <p class='summary'>### Summary
-
-An AES-encrypted (AE-x) entry&#x27;s authentication code is verified only when the reader&#x27;s byte counter lands exactly on zero. If the bounded entry reader reaches the archive&#x27;s actual EOF before the attacker-controlled, header-declared `compressed_size`, the counter remains positive, the HMAC is never read or compared, and the truncated, unauthenticated plaintext is returned as a clean en…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8rvj-mm4h-c258" target="_blank" rel="noopener">cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62290</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-29</span>
-          </div>
-          <p class='summary'>## Summary
-
-`Challenge` resources under `acme.cert-manager.io` can be created directly by namespace users. On create, cert-manager performs no admission validation tying the Challenge to an `Order`, an owner reference, or an Issuer-selected solver. The ACME Challenge controller then reconciles the direct resource and uses `Challenge.spec.solver` as the DNS01 provider configuration.
-
-When the direc…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r7rc-c989-86g6" target="_blank" rel="noopener">Keycloak: Attacker can re-enable and take over disabled clients via registration access token</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-9705</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-29</span>
-          </div>
-          <p class='summary'>### Description
-A flaw was found in Keycloak&#x27;s client registration service. A remote attacker, possessing a previously issued Registration Access Token (RAT), could exploit this vulnerability to re-enable a client that an administrator had explicitly disabled. This bypasses security controls, allowing the attacker to reset the client&#x27;s secret and potentially regain privileged API access. The prima…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-q344-5v34-gm84" target="_blank" rel="noopener">@sylphx/pdf-reader-mcp: HTTP transport accepts unauthenticated requests despite a configured MCP_API_KEY</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62264</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-29</span>
-          </div>
-          <p class='summary'>### Impact
-
-When `@sylphx/pdf-reader-mcp` is run as an HTTP server (`MCP_TRANSPORT=http`), it reads the `MCP_API_KEY` environment variable and logs `API key authentication enabled (X-API-Key header)` at startup, but it never validated the `X-API-Key` header on incoming requests. The key was read into a variable and never enforced on the request path.
-
-As a result, the `/mcp` endpoint accepted **un…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-26mh-57q7-jfvr" target="_blank" rel="noopener">PraisonAI vulnerable to Remote Code Execution via Broken AST Sandbox</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61438</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-29</span>
-          </div>
-          <p class='summary'>### Summary
-JobWorkflowExecutor._exec_inline_python() is designed to safely execute inline Python expressions from YAML workflow script: steps using AST validation. The function claims to block dangerous operations by (a) checking all AST nodes against an allowlist, and (b) providing a __builtins__ whitelist that omits __import__, exec, eval, and open.
-
-The sandbox is broken. The module import all…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-r899-h629-j84r" target="_blank" rel="noopener">Parse Server vulnerable to stored XSS via malformed Content-Type bypassing file upload extension blocklist</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-61448</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-29</span>
-          </div>
-          <p class='summary'>### Impact
-
-Parse Server&#x27;s file upload validation uses the `fileUpload.fileExtensions` option (enabled by default with a blocklist) to reject files that browsers may render as active content, mitigating stored cross-site scripting (XSS). When an uploaded file&#x27;s extension is not recognized by the `mime` package, Parse Server preserves the client-supplied `Content-Type` and passes it to the storage …</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">
