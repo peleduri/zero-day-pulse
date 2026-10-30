@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-30 03:14 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 21 &nbsp;|&nbsp; 🟡 High: 13 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-30 11:46 UTC &nbsp;|&nbsp; **Total:** 25 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 12 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -13,7 +13,39 @@
 
 ---
 
-## 2. 🟠 Zero-Day — CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks
+## 2. 🟠 Zero-Day — Drupal Commerce Core Vulnerability Exploited Against Online Stores
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-30
+**Reference:** <https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/>
+
+> Drupal says a highly critical Commerce Core access bypass is exploited in the wild and urges store owners to audit their orders. The post Drupal Commerce Core Vulnerability Exploited Against Online Stores appeared first on SecurityWeek .
+
+---
+
+## 3. 🟠 Zero-Day — Drupal warns of critical Commerce Core flaw exploited in attacks
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-30
+**Reference:** <https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/>
+
+> Drupal warned admins to patch a critical access bypass vulnerability in the Commerce Core module that attackers are exploiting in the wild. [...]
+
+---
+
+## 4. 🟠 Zero-Day — CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV
+
+**CVE:** `CVE-2026-97229` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-30
+**Reference:** <https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Cisco and GitLab software to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2026-97229 (CVSS score: 10.0) - An integer overflow or wraparound vulnerability in GitLab Community Edition and Enterprise
+
+---
+
+## 5. 🟠 Zero-Day — CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/>
@@ -22,16 +54,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — [0day-rubbish] NUUO Crystal Server 3.19.0.85 unauthenticated upload.php PHP web-root write with fastcgi execution into server-side code execution as the web service account (9.8 Critical)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/56>
-
-> Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in NUUO Crystal Server 3.19.0.85, the video management and NVR server software from NUUO Inc. of Taipei (Taiwan), distributed as the Crystal virtual-machine appliance: an Ubuntu-based OVA whose web tier is a lighttpd server fronting a PHP application, with .php requests dispatched to…
-
----
-
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +63,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +72,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +81,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +90,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +99,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,14 +108,14 @@
 
 ---
 
-## 10. 🟠 Zero-Day — New Prompt Injection Techniques Cover Agent-Planning Attacks
+## 12. 🟠 Zero-Day — New Prompt Injection Techniques Cover Agent-Planning Attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Oct 29, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/>
 
 ---
 
-## 11. 🟠 Zero-Day — How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI
+## 13. 🟠 Zero-Day — How Secure Are US Elections? Voting Machine Risks and the Growing Threat of AI
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://www.securityweek.com/how-secure-are-us-elections-voting-machine-risks-and-the-growing-threat-of-ai/>
@@ -101,101 +124,7 @@
 
 ---
 
-## 12. 🟠 Zero-Day — New Cisco firewall zero-day exploited to crash SSL VPN devices
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/>
-
-> Cisco released security updates to patch a denial-of-service zero-day in Adaptive Security Appliance (ASA) and Threat Defense (FTD) software that attackers are exploiting to remotely crash vulnerable firewall devices. [...]
-
----
-
-## 13. 🟠 Zero-Day — Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls
-
-**CVE:** `CVE-2026-76418` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html>
-
-> Cisco has released patches to address a high-severity security flaw in Secure Firewall Adaptive Security Appliance (ASA) Software and Secure Firewall Threat Defense (FTD) Software that it said has been exploited in the wild.
-
-The vulnerability, tracked as CVE-2026-76418, is rated 8.6 on the CVSS scoring system. Successful exploitation could allow an unauthenticated, remote attacker to cause the
-
----
-
-## 14. 🟠 Zero-Day — Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon’s ‘Silent Train’ Network
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/>
-
-> Cisco Talos linked SD-WAN key-stealing malware to infrastructure overlapping Volt Typhoon’s Silent Train network, which Lumen detailed. The post Cisco SD-WAN Zero-Day Exploitation Tied to Volt Typhoon’s ‘Silent Train’ Network appeared first on SecurityWeek .
-
----
-
-## 15. 🟠 Zero-Day — Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/>
-
-> An exploited flaw in the Remote Access SSL VPN service lets unauthenticated attackers remotely force ASA and FTD firewalls to reload. The post Attackers Exploit Second Cisco Firewall VPN Zero-Day Since August appeared first on SecurityWeek .
-
----
-
-## 16. 🟠 Zero-Day — China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility
-
-**CVE:** `CVE-2026-41709` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a security flaw impacting Broadcom VMware ESX to its Known Exploited Vulnerabilities (KEV) catalog, after CrowdStrike revealed that it had been weaponized by a China-nexus threat actor known as Warp Panda in attacks targeting the U.S. legal sector.
-
-The vulnerability in question is CVE-2026-41709 (CVSS score:
-
----
-
-## 17. 🟠 Zero-Day — [0day-rubbish] NETGEAR RAX120 V1.2.5.18 authenticated SOAP InstallApp OS command injection to root-configured web-stack execution (6.8 Medium; conditionally 7.2 High with management exposure)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/57>
-
-> Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in NETGEAR RAX120 (Nighthawk AX12) firmware V1.2.5.18, the WiFi 6 consumer router from NETGEAR (United States), built on the Qualcomm IPQ8074 platform. The administrative web plane of this firmware generation is a lighttpd server fronting the vendor&#x27;s DNI-framework CGI handler /…
-
----
-
-## 18. 🟠 Zero-Day — [0day-rubbish] Raritan PX3 PDU G4 firmware 4.3.14 command injection in the ping and traceroute diagnostics through an inverted hostname-validation return check (8.8)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/54>
-
-> Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Raritan PX3 PDU G4, firmware version 4.3.14, the intelligent rack power distribution unit from Raritan, a Legrand company (United States). A low-privilege authenticated session converts one diagnostics request into operating-system command execution in the product&#x27;s web-s…
-
----
-
-## 19. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 scenario ping condition command injection through the auto-executing ping thread (7.2)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/55>
-
-> Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Moxa MAR-2000 series industrial 4G/LTE cellular router, firmware image FWR_MAR2000_V1.0_Build_15010909, from Moxa Inc. (Taiwan). An authenticated administrator converts one saved monitoring-condition field into recurring, product-scheduled arbitrary command execution, because …
-
----
-
-## 20. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 IPsec tunnel address command injection through the route-management shell commands (7.2)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/53>
-
-> Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Moxa MAR-2000 series industrial 4G/LTE cellular router, firmware image FWR_MAR2000_V1.0_Build_15010909, from Moxa Inc. (Taiwan). An authenticated administrator converts one stored VPN address field into arbitrary command execution as the identity of the product&#x27;s model pr…
-
----
-
-## 21. 🟠 Zero-Day — [0day-rubbish] Moxa MAR-2000 firmware FWR_MAR2000_V1.0_Build_15010909 command injection in the Executer program activation path (7.2)
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/52>
-
-> Posted by disclosure via Fulldisclosure on Oct 28 0day Rubbish Research Team is publicly disclosing a vulnerability in the Moxa MAR-2000 series industrial 4G/LTE cellular router, firmware image FWR_MAR2000_V1.0_Build_15010909, from Moxa Inc. (Taiwan). An authenticated administrator converts one stored configuration field into arbitrary command execution as the identity of the product&#x27;s model …
-
----
-
-## 22. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 14. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -204,7 +133,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 23. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 15. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -213,7 +142,20 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 24. 🟡 High Severity — Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)
+## 16. 🟡 High Severity — Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw
+
+**CVE:** `CVE-2026-118539` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-30
+**Reference:** <https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html>
+
+> Drupal has warned that threat actors are exploiting a &quot;highly critical&quot; security flaw in its Commerce Core component.
+
+The vulnerability, tracked as CVE-2026-118539 (CVSS score: N/A), is a case of missing authorization affecting Commerce Core versions from 0.0.0 to 2.41 and from 3.0.0 to 3.3.13.
+
+&quot;This module enables you to sell goods and services to customers through an included sh…
+
+---
+
+## 17. 🟡 High Severity — Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)
 
 **CVE:** `CVE-2026-109618` | `CVE-2026-109619` &nbsp;|&nbsp; **Source:** Unit 42 (Palo Alto) &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/>
@@ -222,7 +164,7 @@ The vulnerability in question is CVE-2026-41709 (CVSS score:
 
 ---
 
-## 25. 🟡 High Severity — zip: Arbitrary file write outside the extraction directory, because ZipArchive::extract validates symlink targets lexically. 
+## 18. 🟡 High Severity — zip: Arbitrary file write outside the extraction directory, because ZipArchive::extract validates symlink targets lexically. 
 
 **CVE:** `CVE-2026-115908` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://github.com/advisories/GHSA-hjqx-j4rw-g7xv>
@@ -239,7 +181,7 @@ Exploitation requires the attacker to know …
 
 ---
 
-## 26. 🟡 High Severity — zip: AES Entry HMAC Authentication Bypass on Premature EOF
+## 19. 🟡 High Severity — zip: AES Entry HMAC Authentication Bypass on Premature EOF
 
 **CVE:** `CVE-2026-115906` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://github.com/advisories/GHSA-8hxf-qr8p-62x4>
@@ -250,7 +192,7 @@ An AES-encrypted (AE-x) entry&#x27;s authentication code is verified only when t
 
 ---
 
-## 27. 🟡 High Severity — cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials
+## 20. 🟡 High Severity — cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials
 
 **CVE:** `CVE-2026-62290` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://github.com/advisories/GHSA-8rvj-mm4h-c258>
@@ -263,7 +205,7 @@ When the direc…
 
 ---
 
-## 28. 🟡 High Severity — Keycloak: Attacker can re-enable and take over disabled clients via registration access token
+## 21. 🟡 High Severity — Keycloak: Attacker can re-enable and take over disabled clients via registration access token
 
 **CVE:** `CVE-2026-9705` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://github.com/advisories/GHSA-r7rc-c989-86g6>
@@ -273,7 +215,7 @@ A flaw was found in Keycloak&#x27;s client registration service. A remote attack
 
 ---
 
-## 29. 🟡 High Severity — @sylphx/pdf-reader-mcp: HTTP transport accepts unauthenticated requests despite a configured MCP_API_KEY
+## 22. 🟡 High Severity — @sylphx/pdf-reader-mcp: HTTP transport accepts unauthenticated requests despite a configured MCP_API_KEY
 
 **CVE:** `CVE-2026-62264` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://github.com/advisories/GHSA-q344-5v34-gm84>
@@ -286,7 +228,7 @@ As a result, the `/mcp` endpoint accepted **un…
 
 ---
 
-## 30. 🟡 High Severity — PraisonAI vulnerable to Remote Code Execution via Broken AST Sandbox
+## 23. 🟡 High Severity — PraisonAI vulnerable to Remote Code Execution via Broken AST Sandbox
 
 **CVE:** `CVE-2026-61438` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://github.com/advisories/GHSA-26mh-57q7-jfvr>
@@ -298,7 +240,7 @@ The sandbox is broken. The module import all…
 
 ---
 
-## 31. 🟡 High Severity — Parse Server vulnerable to stored XSS via malformed Content-Type bypassing file upload extension blocklist
+## 24. 🟡 High Severity — Parse Server vulnerable to stored XSS via malformed Content-Type bypassing file upload extension blocklist
 
 **CVE:** `CVE-2026-61448` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-29
 **Reference:** <https://github.com/advisories/GHSA-r899-h629-j84r>
@@ -309,27 +251,7 @@ Parse Server&#x27;s file upload validation uses the `fileUpload.fileExtensions` 
 
 ---
 
-## 32. 🟡 High Severity — Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open
-
-**CVE:** `CVE-2026-97229` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html>
-
-> An attacker tried to exploit a critical GitLab vulnerability on the Alpine Linux project&#x27;s own GitLab server a week after GitLab released a fix, Alpine Linux said on 28 October.
-
-The flaw, CVE-2026-97229 (CVSS score: 10.0), can let an attacker run code on a GitLab server through a crafted regular expression in a CI configuration. Alpine found no evidence that the attack worked but
-
----
-
-## 33. 🟡 High Severity — Re: CVE-2026-109618: PHP-CGI Pointer Underflow → Remote Code Execution (CVSS 9.2)
-
-**CVE:** `CVE-2026-109618` &nbsp;|&nbsp; **Source:** Full Disclosure &nbsp;|&nbsp; **Published:** 2026-10-29
-**Reference:** <https://seclists.org/fulldisclosure/2026/Oct/51>
-
-> Posted by fulldisclosure on Oct 28 Am 21.10.26 um 07:23 schrieb jose: that is the CVE for the OOM RCE vulnerability in fpm and mod_php. Sure you got the right on? Best regards, Marius
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 25. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
