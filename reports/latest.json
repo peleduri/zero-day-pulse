@@ -1,48 +1,10 @@
 {
-  "generated": "2026-10-29T22:07:42.510541+00:00",
-  "total": 38,
-  "kev": 2,
-  "zero_day": 22,
+  "generated": "2026-10-30T03:14:55.780438+00:00",
+  "total": 34,
+  "kev": 0,
+  "zero_day": 21,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-97229",
-      "title": "CVE-2026-97229 \u2014 GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
-      "summary": "Vendor: GitLab | Product: Community Edition and Enterprise Edition. GitLab Community Edition and Enterprise Edition contain a integer overflow or wraparound vulnerability that could allow an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expression in a CI/CD configuration, due to insufficient regular expression validation. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-01)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-97229",
-      "published": "2026-10-29",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-97229"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-76418",
-      "title": "CVE-2026-76418 \u2014 Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
-      "summary": "Vendor: Cisco | Product: Secure Firewall ASA Software and Cisco Secure FTD Software. Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-01)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76418",
-      "published": "2026-10-29",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-76418"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -53,22 +15,6 @@
       "tags": [
         "cisa",
         "ics"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2026/",
-      "title": "October 2026 Patch Tuesday: 1,413 CVEs Include Three Zero-Days and 75 Critical Vulnerabilities",
-      "summary": "",
-      "link": "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2026/",
-      "published": "Oct 13, 2026 00:00:00-0500",
-      "source": "CrowdStrike Blog",
-      "tags": [
-        "cloud",
-        "threat-intel",
-        "research"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -606,24 +552,6 @@
       ],
       "cve_ids": [
         "CVE-2026-109618"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-116577",
-      "title": "Tornado: Quadratic CPU usage when parsing HTTP headers with line folding",
-      "summary": "### Summary\n\nTornado's HTTP header parser takes quadratic time (O(n\u00b2)) when a header value is continued across many \"obsolete line folding\" (obs-fold) lines. An unauthenticated attacker can send a request whose header block is mostly short continuation lines. Parsing it uses a large amount of CPU on the IOLoop thread and blocks every other connection that process is serving.\n\nThis issue is closely related to CVE-2025-67725 (GHSA-c98p-7wgm-6p64). The fix for that advisory covered repeated headers but not line-folded continuations.\n\n### Impact\n\nAll Tornado HTTP servers are affected. Header parsing runs before any application code, so no authentication or particular handler is required.\n\nHow bad it gets depends on `max_header_size`:\n\n- **Default (64 KB):** each malicious request blocks the event loop for tens of milliseconds. Repeated requests can degrade service.\n- **Raised `max_header_size`:** the cost grows with the square of the header size. A single 1 MB request can block the process for several seconds.\n\nOnly availability is affected. Confidentiality and integrity are not.\n\n### Patches\n\nFixed in Tornado 6.6 by removing support for obsolete line folding completely; header lines that begin with whitespace are now rejected.\n\n### Workarounds\n\n- Keep `max_header_size` at its default value or lower it. This limits the impact but doesn't remove it.\n- Run Tornado behind a reverse proxy that rejects or normalizes obsolete line folding before forwarding requests.\n\n### Credit\n\nReported by @manus-pi.",
-      "link": "https://github.com/advisories/GHSA-pcg2-g6cj-q92c",
-      "published": "2026-10-28T22:43:41Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-116577"
       ],
       "is_zero_day": false,
       "is_high_severity": true
