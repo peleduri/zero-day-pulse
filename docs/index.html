@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">34</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">31</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-31 02:59 UTC</div>
+            <div class="generated">Updated 2026-10-31 11:20 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -136,6 +136,27 @@
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html" target="_blank" rel="noopener">Attackers Chain Three Ivanti Connect Secure Flaws to Gain Unauthenticated Root Access</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-111357</code>
+            <span class="meta-sep">·</span>
+            <span>The Hacker News Security</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-31</span>
+          </div>
+          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Ivanti Connect Secure (ICS) to its Known Exploited Vulnerabilities (KEV) catalog, following active exploitation in the wild.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2026-111357 (CVSS score: 8.8) - A missing authentication for a critical function vulnerability that could allow a</p>
+
+        </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
             <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p96f-p2p2-2g3h" target="_blank" rel="noopener">AdminNeo SQLite: multi_query Incorrect Check of Function Return Value RCE</a></h2>
           </div>
           <div class="card-meta">
@@ -148,59 +169,6 @@
           <p class='summary'>### Summary
 
 This vulnerability is a patch bypass that exploits catastrophic backtracking in a regular expression used to filter ATTACH statements in AdminNeo&#x27;s SQLite functionality. The original vulnerability (CVE-2021-43008) allowed authenticated users to create PHP files through SQLite ATTACH statements, achieving remote code execution. The patch introduced a regex filter to block ATTACH querie…</p>
-
-        </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/" target="_blank" rel="noopener">Drupal Commerce Core Vulnerability Exploited Against Online Stores</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>SecurityWeek</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-30</span>
-  </div>
-  <p class='summary'>Drupal says a highly critical Commerce Core access bypass is exploited in the wild and urges store owners to audit their orders. The post Drupal Commerce Core Vulnerability Exploited Against Online Stores appeared first on SecurityWeek .</p>
-
-</article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/" target="_blank" rel="noopener">Drupal warns of critical Commerce Core flaw exploited in attacks</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-30</span>
-  </div>
-  <p class='summary'>Drupal warned admins to patch a critical access bypass vulnerability in the Commerce Core module that attackers are exploiting in the wild. [...]</p>
-
-</article>
-
-        <article class="card card-zeroday">
-          <div class="card-top">
-            <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html" target="_blank" rel="noopener">CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-97229</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-30</span>
-          </div>
-          <p class='summary'>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Cisco and GitLab software to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2026-97229 (CVSS score: 10.0) - An integer overflow or wraparound vulnerability in GitLab Community Edition and Enterprise</p>
 
         </article>
 
@@ -694,26 +662,6 @@ The URL validation regex `^(https?:/)?/.*` added to emissary&#x27;s `NavAction.j
           <p class='summary'>### Summary
 
 `joserfc.jwe.decrypt_json()`, the library&#x27;s public parser for JWE General JSON Serialization, accepts an attacker-controlled `recipients` array of unbounded length and performs one full private-key decryption operation (`decrypt_cek`) for **every** recipient present in the input, with no cap on recipient count. An unauthenticated network attacker who can send a JWE General JSON docume…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html" target="_blank" rel="noopener">Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-118539</code>
-            <span class="meta-sep">·</span>
-            <span>The Hacker News Security</span>
-            <span class="meta-sep">·</span>
-            <span>2026-10-30</span>
-          </div>
-          <p class='summary'>Drupal has warned that threat actors are exploiting a &quot;highly critical&quot; security flaw in its Commerce Core component.
-
-The vulnerability, tracked as CVE-2026-118539 (CVSS score: N/A), is a case of missing authorization affecting Commerce Core versions from 0.0.0 to 2.41 and from 3.0.0 to 3.3.13.
-
-&quot;This module enables you to sell goods and services to customers through an included shopping cart</p>
 
         </article>
 

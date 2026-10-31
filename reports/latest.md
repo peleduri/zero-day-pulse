@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-31 02:59 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 15 &nbsp;|&nbsp; 🟡 High: 19 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-31 11:20 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -13,7 +13,21 @@
 
 ---
 
-## 2. 🟠 Zero-Day — AdminNeo SQLite: multi_query Incorrect Check of Function Return Value RCE
+## 2. 🟠 Zero-Day — Attackers Chain Three Ivanti Connect Secure Flaws to Gain Unauthenticated Root Access
+
+**CVE:** `CVE-2026-111357` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-31
+**Reference:** <https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html>
+
+> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Ivanti Connect Secure (ICS) to its Known Exploited Vulnerabilities (KEV) catalog, following active exploitation in the wild.
+
+The vulnerabilities are listed below -
+
+
+  CVE-2026-111357 (CVSS score: 8.8) - A missing authentication for a critical function vulnerability that could allow a
+
+---
+
+## 3. 🟠 Zero-Day — AdminNeo SQLite: multi_query Incorrect Check of Function Return Value RCE
 
 **CVE:** `CVE-2026-96634` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-p96f-p2p2-2g3h>
@@ -24,39 +38,7 @@ This vulnerability is a patch bypass that exploits catastrophic backtracking in 
 
 ---
 
-## 3. 🟠 Zero-Day — Drupal Commerce Core Vulnerability Exploited Against Online Stores
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/>
-
-> Drupal says a highly critical Commerce Core access bypass is exploited in the wild and urges store owners to audit their orders. The post Drupal Commerce Core Vulnerability Exploited Against Online Stores appeared first on SecurityWeek .
-
----
-
-## 4. 🟠 Zero-Day — Drupal warns of critical Commerce Core flaw exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/>
-
-> Drupal warned admins to patch a critical access bypass vulnerability in the Commerce Core module that attackers are exploiting in the wild. [...]
-
----
-
-## 5. 🟠 Zero-Day — CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV
-
-**CVE:** `CVE-2026-97229` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html>
-
-> The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Cisco and GitLab software to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation.
-
-The vulnerabilities are listed below -
-
-
-  CVE-2026-97229 (CVSS score: 10.0) - An integer overflow or wraparound vulnerability in GitLab Community Edition and Enterprise
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -65,7 +47,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -74,7 +56,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -83,7 +65,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -92,7 +74,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -101,7 +83,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -110,14 +92,14 @@ The vulnerabilities are listed below -
 
 ---
 
-## 12. 🟠 Zero-Day — New Prompt Injection Techniques Cover Agent-Planning Attacks
+## 10. 🟠 Zero-Day — New Prompt Injection Techniques Cover Agent-Planning Attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CrowdStrike Blog &nbsp;|&nbsp; **Published:** Oct 29, 20
 **Reference:** <https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/>
 
 ---
 
-## 13. 🟠 Zero-Day — Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide
+## 11. 🟠 Zero-Day — Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html>
@@ -128,7 +110,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 14. 🟠 Zero-Day — @nx/maven and @nx/gradle have OS command injection via nx.json plugin options
+## 12. 🟠 Zero-Day — @nx/maven and @nx/gradle have OS command injection via nx.json plugin options
 
 **CVE:** `CVE-2026-119282` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-qm8w-vx34-5j9j>
@@ -139,7 +121,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 15. 🟠 Zero-Day — CISA says max severity GitLab flaw now exploited in the wild
+## 13. 🟠 Zero-Day — CISA says max severity GitLab flaw now exploited in the wild
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/>
@@ -148,7 +130,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 16. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 14. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -157,7 +139,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 17. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 15. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -166,7 +148,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 18. 🟡 High Severity — Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs
+## 16. 🟡 High Severity — Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs
 
 **CVE:** `CVE-2026-118759` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-wg5q-x4j9-qm54>
@@ -179,7 +161,7 @@ For live logs, the vulnerable handler al…
 
 ---
 
-## 19. 🟡 High Severity — Forge: Regular expression denial of service in PEM decoding (pem.decode)
+## 17. 🟡 High Severity — Forge: Regular expression denial of service in PEM decoding (pem.decode)
 
 **CVE:** `CVE-2026-118779` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-7wch-p9px-956x>
@@ -189,7 +171,7 @@ For live logs, the vulnerable handler al…
 
 ---
 
-## 20. 🟡 High Severity — Forge: AES-GCM authentication bypass via unvalidated tagLength option
+## 18. 🟡 High Severity — Forge: AES-GCM authentication bypass via unvalidated tagLength option
 
 **CVE:** `CVE-2026-119186` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-5cwg-6vw7-rj6p>
@@ -203,7 +185,7 @@ The AES-GCM mode in forge.cipher does not validate the tagLength option passed t
 
 ---
 
-## 21. 🟡 High Severity — Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count
+## 19. 🟡 High Severity — Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count
 
 **CVE:** `CVE-2026-118782` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-jc66-7q78-782g>
@@ -214,7 +196,7 @@ forge.pkcs12.pkcs12FromAsn1() accepts a PKCS#12 MAC iteration count of zero (or 
 
 ---
 
-## 22. 🟡 High Severity — Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message
+## 20. 🟡 High Severity — Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message
 
 **CVE:** `CVE-2026-119188` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-8hrf-8g6f-7xwp>
@@ -225,7 +207,7 @@ A connection created with `forge.tls.createConnection()` throws an uncaught `Typ
 
 ---
 
-## 23. 🟡 High Severity — Nuxt dev server exposes generated appSecret through Vite file serving
+## 21. 🟡 High Severity — Nuxt dev server exposes generated appSecret through Vite file serving
 
 **CVE:** `CVE-2026-119201` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-3xf4-9g3c-4h4w>
@@ -239,7 +221,7 @@ curl…
 
 ---
 
-## 24. 🟡 High Severity — Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
+## 22. 🟡 High Severity — Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
 
 **CVE:** `CVE-2026-119200` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-9v7c-q64q-vv33>
@@ -250,7 +232,7 @@ Since `4.6.0`, Nuxt resolves `.` and `..` segments in the request path, includin
 
 ---
 
-## 25. 🟡 High Severity — Nuxt dev server exposes private runtime config through the Nitro dev bundle
+## 23. 🟡 High Severity — Nuxt dev server exposes private runtime config through the Nitro dev bundle
 
 **CVE:** `CVE-2026-119199` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-648h-gw55-m2g7>
@@ -265,7 +247,7 @@ With Nitro 2 (the default server engine in Nuxt 3 and Nuxt 4), the Nitro develop
 
 ---
 
-## 26. 🟡 High Severity — follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects
+## 24. 🟡 High Severity — follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects
 
 **CVE:** `CVE-2026-116689` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-mrwp-f3q8-3g9p>
@@ -282,7 +264,7 @@ The sensitiveHeaders option was introd…
 
 ---
 
-## 27. 🟡 High Severity — russh's SSH client is susceptible to unbounded allocations via EXT_INFO packets
+## 25. 🟡 High Severity — russh's SSH client is susceptible to unbounded allocations via EXT_INFO packets
 
 **CVE:** `CVE-2026-116773` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-4p9f-7p9m-5vfg>
@@ -293,7 +275,7 @@ The sensitiveHeaders option was introd…
 
 ---
 
-## 28. 🟡 High Severity — Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
+## 26. 🟡 High Severity — Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
 
 **CVE:** `CVE-2026-119285` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-g5jq-qmqr-qrwf>
@@ -304,7 +286,7 @@ In v2.52.1 and v2.52.2 the CORS middleware matched a wildcard origin such as `ht
 
 ---
 
-## 29. 🟡 High Severity — AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)
+## 27. 🟡 High Severity — AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)
 
 **CVE:** `CVE-2026-96632` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-rx7m-wxwq-vxr9>
@@ -315,7 +297,7 @@ AdminNeo inserts the database server&#x27;s version string into a `&lt;script&gt
 
 ---
 
-## 30. 🟡 High Severity — AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery
+## 28. 🟡 High Severity — AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery
 
 **CVE:** `CVE-2026-96629` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-wm25-49w3-5qrg>
@@ -326,7 +308,7 @@ AdminNeo&#x27;s CSRF protection uses a BREACH-resistant XOR masking scheme, but 
 
 ---
 
-## 31. 🟡 High Severity — NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571
+## 29. 🟡 High Severity — NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571
 
 **CVE:** `CVE-2026-54442` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-c6q7-wqw2-h65w>
@@ -344,7 +326,7 @@ The URL validation regex `^(https?:/)?/.*` added to emissary&#x27;s `NavAction.j
 
 ---
 
-## 32. 🟡 High Severity — joserfc: Unbounded JWE General JSON `recipients` Array Leads to CPU Exhaustion (DoS) via Repeated RSA Private-Key Decryption
+## 30. 🟡 High Severity — joserfc: Unbounded JWE General JSON `recipients` Array Leads to CPU Exhaustion (DoS) via Repeated RSA Private-Key Decryption
 
 **CVE:** `CVE-2026-119283` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-jpxq-7h8p-2q76>
@@ -355,20 +337,7 @@ The URL validation regex `^(https?:/)?/.*` added to emissary&#x27;s `NavAction.j
 
 ---
 
-## 33. 🟡 High Severity — Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw
-
-**CVE:** `CVE-2026-118539` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html>
-
-> Drupal has warned that threat actors are exploiting a &quot;highly critical&quot; security flaw in its Commerce Core component.
-
-The vulnerability, tracked as CVE-2026-118539 (CVSS score: N/A), is a case of missing authorization affecting Commerce Core versions from 0.0.0 to 2.41 and from 3.0.0 to 3.3.13.
-
-&quot;This module enables you to sell goods and services to customers through an included sh…
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

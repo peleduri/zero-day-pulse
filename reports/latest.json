@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-31T02:59:17.419307+00:00",
-  "total": 34,
+  "generated": "2026-10-31T11:20:37.905074+00:00",
+  "total": 31,
   "kev": 0,
-  "zero_day": 15,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -21,6 +21,23 @@
       "is_high_severity": true
     },
     {
+      "id": "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html",
+      "title": "Attackers Chain Three Ivanti Connect Secure Flaws to Gain Unauthenticated Root Access",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Ivanti Connect Secure (ICS) to its Known Exploited Vulnerabilities (KEV) catalog, following active exploitation in the wild.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-111357 (CVSS score: 8.8) - A missing authentication for a critical function vulnerability that could allow a",
+      "link": "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html",
+      "published": "2026-10-31T08:27:43+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-111357"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
       "id": "CVE-2026-96634",
       "title": "AdminNeo SQLite: multi_query Incorrect Check of Function Return Value RCE",
       "summary": "### Summary\n\nThis vulnerability is a patch bypass that exploits catastrophic backtracking in a regular expression used to filter ATTACH statements in AdminNeo's SQLite functionality. The original vulnerability (CVE-2021-43008) allowed authenticated users to create PHP files through SQLite ATTACH statements, achieving remote code execution. The patch introduced a regex filter to block ATTACH queries, but this filter is vulnerable to catastrophic backtracking.\n\nOriginally reported by @zdi-disclosures in Adminer: https://github.com/vrana/adminer/security/advisories/GHSA-3582-q6xq-5vf7\n\n### Analysis\n\n**[Source]** sql.inc.php :: SQL import handler:47\n\n```php\n$query = get_file(\"sql_file\", true, \";\");\n```\n\n> User uploads a malicious SQL file through the import form. The file content is read into the `$query` variable without any initial sanitization.\n\n**[Transform]** sql.inc.php :: SQL import handler:87\n\n```php\n// Query parsing loop that extracts individual SQL statements\n```\n\n> The uploaded SQL content is processed in a loop that splits it into individual queries. Each query `$query` is extracted for processing.\n\n**[Context]** sql.inc.php :: SQL import handler:65\n\n```php\n$space = \"(?:\\\\s|/\\\\*[\\s\\S]*?\\\\*/|(?:#|$line_comment)[^\\n]*\\n?|--\\r?\\n)\";\n```\n\n> Definition of the `$space` regex pattern used in the ATTACH filter. The possessive quantifier `*+` combined with SQLite comment patterns (`--`) creates the catastrophic backtracking vulnerability when many comment lines are processed.\n\n**[Transform]** sql.inc.php :: SQL import handler:146\n\n```php\nif (DIALECT == \"sqlite\" && preg_match(\"~^$space*+ATTACH\\\\b~i\", $q, $match)) {\n```\n\n> The ATTACH query filter check. When the regex encounters 350,000 SQLite comment lines (`--`), it triggers catastrophic backtracking. The possessive quantifier `*+` causes exponential backtracking, eventually hitting PHP's backtracking limit and causing `preg_match()` to return `false` instead of `0` or `1`, bypassing the security filter.\n\n**[Sink]** ",
@@ -34,53 +51,6 @@
       ],
       "cve_ids": [
         "CVE-2026-96634"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/",
-      "title": "Drupal Commerce Core Vulnerability Exploited Against Online Stores",
-      "summary": "Drupal says a highly critical Commerce Core access bypass is exploited in the wild and urges store owners to audit their orders. The post Drupal Commerce Core Vulnerability Exploited Against Online Stores appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/",
-      "published": "2026-10-30T11:07:11+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/",
-      "title": "Drupal warns of critical Commerce Core flaw exploited in attacks",
-      "summary": "Drupal warned admins to patch a critical access bypass vulnerability in the Commerce Core module that attackers are exploiting in the wild. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/",
-      "published": "2026-10-30T10:16:07+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
-      "title": "CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Cisco and GitLab software to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation.\n\nThe vulnerabilities are listed below -\n\n\n  CVE-2026-97229 (CVSS score: 10.0) - An integer overflow or wraparound vulnerability in GitLab Community Edition and Enterprise",
-      "link": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
-      "published": "2026-10-30T07:27:05+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-97229"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -557,23 +527,6 @@
       ],
       "cve_ids": [
         "CVE-2026-119283"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
-      "title": "Hackers Actively Exploit Highly Critical Drupal Commerce Core Authorization Bypass Flaw",
-      "summary": "Drupal has warned that threat actors are exploiting a \"highly critical\" security flaw in its Commerce Core component.\n\nThe vulnerability, tracked as CVE-2026-118539 (CVSS score: N/A), is a case of missing authorization affecting Commerce Core versions from 0.0.0 to 2.41 and from 3.0.0 to 3.3.13.\n\n\"This module enables you to sell goods and services to customers through an included shopping cart",
-      "link": "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
-      "published": "2026-10-30T07:45:30+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-118539"
       ],
       "is_zero_day": false,
       "is_high_severity": true
