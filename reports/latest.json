@@ -1,48 +1,10 @@
 {
-  "generated": "2026-10-30T21:45:15.988967+00:00",
-  "total": 22,
-  "kev": 2,
+  "generated": "2026-10-31T02:59:17.419307+00:00",
+  "total": 34,
+  "kev": 0,
   "zero_day": 15,
   "enriched": 0,
   "findings": [
-    {
-      "id": "CVE-2026-111357",
-      "title": "CVE-2026-111357 \u2014 Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
-      "summary": "Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains a missing authentication for critical function vulnerability that could allow a local authenticated attacker to escalate their privileges. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-118527. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-02)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111357",
-      "published": "2026-10-30",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-111357"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-118527",
-      "title": "CVE-2026-118527 \u2014 Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
-      "summary": "Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains a generation of predictable numbers or identifiers vulnerability that allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-111357. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-13)",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-118527",
-      "published": "2026-10-30",
-      "source": "CISA KEV",
-      "tags": [
-        "cisa",
-        "kev",
-        "actively-exploited"
-      ],
-      "cve_ids": [
-        "CVE-2026-118527"
-      ],
-      "is_kev": true,
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -55,6 +17,24 @@
         "ics"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96634",
+      "title": "AdminNeo SQLite: multi_query Incorrect Check of Function Return Value RCE",
+      "summary": "### Summary\n\nThis vulnerability is a patch bypass that exploits catastrophic backtracking in a regular expression used to filter ATTACH statements in AdminNeo's SQLite functionality. The original vulnerability (CVE-2021-43008) allowed authenticated users to create PHP files through SQLite ATTACH statements, achieving remote code execution. The patch introduced a regex filter to block ATTACH queries, but this filter is vulnerable to catastrophic backtracking.\n\nOriginally reported by @zdi-disclosures in Adminer: https://github.com/vrana/adminer/security/advisories/GHSA-3582-q6xq-5vf7\n\n### Analysis\n\n**[Source]** sql.inc.php :: SQL import handler:47\n\n```php\n$query = get_file(\"sql_file\", true, \";\");\n```\n\n> User uploads a malicious SQL file through the import form. The file content is read into the `$query` variable without any initial sanitization.\n\n**[Transform]** sql.inc.php :: SQL import handler:87\n\n```php\n// Query parsing loop that extracts individual SQL statements\n```\n\n> The uploaded SQL content is processed in a loop that splits it into individual queries. Each query `$query` is extracted for processing.\n\n**[Context]** sql.inc.php :: SQL import handler:65\n\n```php\n$space = \"(?:\\\\s|/\\\\*[\\s\\S]*?\\\\*/|(?:#|$line_comment)[^\\n]*\\n?|--\\r?\\n)\";\n```\n\n> Definition of the `$space` regex pattern used in the ATTACH filter. The possessive quantifier `*+` combined with SQLite comment patterns (`--`) creates the catastrophic backtracking vulnerability when many comment lines are processed.\n\n**[Transform]** sql.inc.php :: SQL import handler:146\n\n```php\nif (DIALECT == \"sqlite\" && preg_match(\"~^$space*+ATTACH\\\\b~i\", $q, $match)) {\n```\n\n> The ATTACH query filter check. When the regex encounters 350,000 SQLite comment lines (`--`), it triggers catastrophic backtracking. The possessive quantifier `*+` causes exponential backtracking, eventually hitting PHP's backtracking limit and causing `preg_match()` to return `false` instead of `0` or `1`, bypassing the security filter.\n\n**[Sink]** ",
+      "link": "https://github.com/advisories/GHSA-p96f-p2p2-2g3h",
+      "published": "2026-10-30T22:53:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96634"
+      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -101,25 +81,6 @@
       ],
       "cve_ids": [
         "CVE-2026-97229"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.tenable.com/blog/php2shell-one-week-later-why-one-exploit-doesnt-work-everywhere",
-      "title": "php2shell one week later: Why one exploit doesn\u2019t work everywhere",
-      "summary": "php2shell raised fears of mass exploitation. A week of testing by our research team found that working exploits had to be fitted to each target\u2019s exact PHP setup. Systems that share one build, such as network appliances, are the exception: one tuned exploit can reach every device that runs it. Key takeaways The five vulnerable PHP sites we exposed to the internet were not compromised, and public proofs-of-concept (PoCs) that go beyond version checks do not reliably confirm whether a host is vulnerable. Exploitation has been confirmed elsewhere, on researcher honeypots and on some network appliances. In realistic environments, turning php2shell into remote code execution usually takes an exploit built for the specific target. That is hard, not impossible, and it puts php2shell in a different category from Log4Shell, even though both received near-maximum severity ratings. Where many systems share one build, such as network appliances, a single calibrated exploit can work against all of them. Patch now, starting with internet-facing management interfaces, network appliances, and end-of-life PHP branches. Tenable Nessus and Tenable One Web App Scanning have had version-based detection since October 21. Background On October 20, 2026, PHP announced two vulnerabilities , and on October 21 released fixes for flaws that can allow unauthenticated remote code execution. CVE-2026-109618 is an out-of-memory handling flaw. CVE-2026-109619 is a use-after-free flaw caused by stale state shared between requests on the same worker. Each has a CVSSv4 score of 9.2. For a full breakdown of affected versions, fixes and mitigations, see our frequently asked questions blog post . This post covers what happened after the disclosure, based on what our team observed directly. From disclosure to headline in under 48 hours php2shell got big fast. Details of the vulnerabilities leaked online before the official release. Within two days, the vulnerability had a name, a logo and coverage in main",
-      "link": "https://www.tenable.com/blog/php2shell-one-week-later-why-one-exploit-doesnt-work-everywhere",
-      "published": "2026-10-30T01:42:06+00:00",
-      "source": "Tenable Security Research",
-      "tags": [
-        "cloud",
-        "research",
-        "vuln"
-      ],
-      "cve_ids": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
       ],
       "is_zero_day": true,
       "is_high_severity": true
@@ -326,6 +287,258 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-118759",
+      "title": "Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs",
+      "summary": "## Summary\n\nThe Kubeflow Pipelines API server's `GET /apis/v1alpha1/runs/{run_id}/nodes/{node_id}/log` handler retrieves logs without authorizing the caller against the selected run. A caller who can reach the backend and knows a victim run ID and a suitable pod or node identifier can read live or archived logs using the API server's permissions.\n\nFor live logs, the vulnerable handler also accepts the supplied node ID as a pod name in the run's namespace without verifying that the pod belongs to the run. Depending on the API server's pod-log permissions, a known run ID can therefore permit reading the `main` container logs of an unrelated pod in that namespace. Logs may contain sensitive workload data or credentials.\n\nThe affected handler does not authenticate the request itself. An external authentication gate or network policy can restrict reachability; public ingress exposure and unauthenticated enumeration of run IDs are not assumed.\n\n## Remediation\n\nUpgrade the API server to **[Kubeflow Pipelines 2.18.0](https://github.com/kubeflow/pipelines/releases/tag/2.18.0)**. Versions through 2.17.3 are affected; the first affected release has not been established.\n\n[PR #13684](https://github.com/kubeflow/pipelines/pull/13684) authorizes the caller with the `readLog` verb before retrieving live or archived logs. For live logs, it also verifies that the pod's `pipeline/runid` label matches the requested run. Custom Kubernetes roles must grant `readLog` on `runs` in the `pipelines.kubeflow.org` API group; the bundled viewer and editor roles include it. Shared read access alone does not grant log access.\n\nUntil upgrading, restrict access to the backend log endpoint. Focused regression tests cover authorization denial, HTTP identity propagation, pod/run mismatch, archive retrieval, and cancellation; no new deployed-cluster end-to-end test was performed for this assessment.\n\n## Credit\n\n[bugbunny.ai](https://bugbunny.ai) discovered and reported the issue. Nayyar ([@naruto-lgtm]",
+      "link": "https://github.com/advisories/GHSA-wg5q-x4j9-qm54",
+      "published": "2026-10-30T23:13:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-118759"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-118779",
+      "title": "Forge: Regular expression denial of service in PEM decoding (pem.decode)",
+      "summary": "### Summary\n`pem.decode()`, which every node-forge API that parses PEM input uses, split messages with a regular expression that takes polynomial time on input without a matching END line, and parsed encapsulated headers with regular expressions that take quadratic time on long header lines. A remote attacker can block the Node.js event loop for seconds to minutes with a crafted input of a few tens of kilobytes. Fixed in node-forge 1.4.1.\n\n### Details\n`pem.decode()` in `lib/pem.js` found PEM messages with this regular expression:\n\n    /\\s*-----BEGIN ([A-Z0-9- ]+)-----\\r?\\n?([\\x21-\\x7e\\s]+?(?:\\r?\\n\\r?\\n))?([:A-Za-z0-9+\\/=\\s]+?)-----END \\1-----/g\n\nThe optional headers group and the body group are adjacent, lazy, and share characters (whitespace and the base64 alphabet), and the match must end with an END line whose label equals the BEGIN label (`\\1`). When no such END line follows, the engine tries every split of the text between the two groups, for every label split and at every BEGIN line in the input. The work grows polynomially with the input length (roughly cubic for repeated BEGIN/END lines with mismatched labels, quadratic for a BEGIN line followed by many newlines).\n\nThe encapsulated header parsing in the same function had two smaller quadratic cases: trimming each header line with `/\\s+$/`, and an unanchored header regex `([\\x21-\\x7e]+):...` that retries at every position of a long line without a colon. These are reachable when a message does match.\n\nAll PEM entry points call `pem.decode()`, including `pki.certificateFromPem()`, `pki.privateKeyFromPem()`, `pki.publicKeyFromPem()`, `pki.certificationRequestFromPem()`, `pki.encryptedPrivateKeyFromPem()`, `pki.decryptRsaPrivateKey()` and `pkcs7.messageFromPem()`.\n\nThe fix replaces the message regular expression with a scanner that indexes the END lines once and matches each BEGIN line in linear time, finding the same messages as before. The one difference: a label containing `-----` (`-----BEGIN A-----B-----`) w",
+      "link": "https://github.com/advisories/GHSA-7wch-p9px-956x",
+      "published": "2026-10-30T23:02:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-118779"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-119186",
+      "title": "Forge: AES-GCM authentication bypass via unvalidated tagLength option",
+      "summary": "### Summary\n\nThe AES-GCM mode in forge.cipher does not validate the tagLength option passed to start(). With a tagLength of 0 or a value that converts to 0 (such as null, false, '' or '0'), the authentication tag is empty, and decipher.finish() returns true for any ciphertext and additional data when the supplied tag is empty or missing. Fixed in node-forge 1.4.1.\n\n### Details\n\n`modes.gcm.prototype.start()` in `lib/cipherModes.js` stored the `tagLength` option without validation, and `lib/cipher.js` documented it as accepting \"0-128\". After processing the data, `afterFinish()` truncates the 16-byte tag with `truncate(16 % (tagLength / 8))`. For a `tagLength` that converts to 0, this is `16 % 0 = NaN`, and truncating by `NaN` empties the tag. On decryption, the start-time check that the supplied `tag` has `tagLength / 8` bytes passes for an empty tag, and the final tag comparison compares two empty strings, so `decipher.finish()` returns `true` for any ciphertext and additional data.\n\nNIST SP 800-38D section 5.2.1.2 allows only tag lengths of 128, 120, 112, 104 and 96 bits, plus 64 and 32 bits for certain applications.\n\nThe fix validates `tagLength` in `start()`, for both encryption and decryption. A missing, `null` or `undefined` `tagLength` uses the default of 128 bits. Any other value is converted with `Number()` and must be one of 128, 120, 112, 104, 96, 64 or 32; otherwise `start()` throws \"Invalid tag length.\". Numeric strings such as `'128'` are still accepted. With a validated `tagLength`, an empty tag no longer matches the expected tag length and is rejected.\n\n### Patches\nFixed in node-forge 1.4.1. `cipher.start()` now throws an error unless `tagLength` is one of the tag lengths allowed by NIST SP 800-38D (128, 120, 112, 104, 96, 64 or 32 bits); a `null` or `undefined` `tagLength` means the default of 128 bits.\n\n### Workarounds\nDo not derive `tagLength` from received data. Pass a fixed `tagLength` (or omit it to use the default of 128 bits), and check that t",
+      "link": "https://github.com/advisories/GHSA-5cwg-6vw7-rj6p",
+      "published": "2026-10-30T23:02:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119186"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-118782",
+      "title": "Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count",
+      "summary": "### Summary\n\nforge.pkcs12.pkcs12FromAsn1() accepts a PKCS#12 MAC iteration count of zero (or less) from the input, and the PKCS#12 key derivation function then returns a constant key that does not depend on the password or salt. An attacker who does not know the password can modify a PKCS#12/PFX file and compute a MAC that verifies with any password; PKCS#12 PBE-encrypted private keys prepared the same way decrypt with any password. Fixed in node-forge 1.4.1.\n\n### Details\n\n`p12.pkcs12FromAsn1()` in `lib/pkcs12.js` reads the MAC iteration count (`MacData.iterations`) from the input and passes it to the PKCS#12 key derivation function `pki.pbe.generatePkcs12Key()` in `lib/pbe.js` (also exposed as `forge.pkcs12.generateKey()`) without checking that it is at least 1. The key derivation function (RFC 7292 Appendix B.2) runs its hash loop `iter` times. With an iteration count of 0 (or an empty or negative INTEGER), no hashing is done and the function returns the PKCS#12 diversifier ID byte repeated, for example `0x03` repeated 20 times for an HMAC-SHA1 MAC key. The result does not depend on the password or the salt, so anyone can compute a valid MAC over arbitrary PFX contents.\n\nThe same key derivation function is used by `pki.pbe.getCipherForPKCS12PBE()` for the PKCS#12 password-based encryption schemes `pbeWithSHAAnd3-KeyTripleDES-CBC` and `pbewithSHAAnd40BitRC2-CBC`, whose `pkcs-12PbeParams` iteration count is also read from the input. With an iteration count of 0 or less, the encryption key and IV are constants (`0x01` and `0x02` repeated). This is reached from shrouded key bags and encrypted SafeContents in `pkcs12FromAsn1()`, and from `forge.pki.decryptPrivateKeyInfo()` (for example for `ENCRYPTED PRIVATE KEY` PEM input).\n\nRFC 7292 defines `MacData` with `iterations INTEGER DEFAULT 1`; an iteration count only makes sense as 1 or more (RFC 8018 uses `INTEGER (1..MAX)` for the same concept). PBES2 (PBKDF2) encrypted content is not affected.\n\nThe fix rejects iteration ",
+      "link": "https://github.com/advisories/GHSA-jc66-7q78-782g",
+      "published": "2026-10-30T23:02:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-118782"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-119188",
+      "title": "Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message",
+      "summary": "### Summary\n\nA connection created with `forge.tls.createConnection()` throws an uncaught `TypeError` from `process()` when it receives a record of another content type while waiting for the rest of a handshake message that was split across records. A peer can trigger this with 18 bytes before the handshake, without authentication, which terminates Node.js processes that use the documented socket wiring. Fixed in node-forge 1.4.1.\n\n### Details\n\nIn `lib/tls.js`, `_readRecord()` handles a record that arrives while a handshake message split across records is incomplete. If the record has any other content type (change_cipher_spec, alert, application_data or heartbeat), forge correctly reports \"Invalid fragmented record.\" through `c.error()` with a fatal `unexpected_message` alert. That fatal error closes and resets the connection, which sets `c.record` to `null`. `_readRecord()` then continues with `c.record.ready = true` and throws `TypeError: Cannot set properties of null (setting 'ready')` out of `process()`. The code is unchanged since the first release.\n\nRFC 5246 section 6.2.1 allows a handshake message to be fragmented across records, and RFC 8446 section 5.1 forbids interleaving handshake messages with other record types. Failing the connection with `unexpected_message` is the intended behavior; the bug is the crash after the error.\n\nnode-forge reports TLS protocol errors through the `error` callback, so applications do not normally wrap `process()` in `try`/`catch`. When `process()` is called from a Node.js socket `data` handler, as in the documented usage, the exception is uncaught and terminates the process.\n\nThe fix returns from `_readRecord()` right after the fatal error. The connection is failed, the alert is sent and the `error` callback is called as before, and `process()` no longer throws.\n\n### Patches\nFixed in node-forge 1.4.1. The connection still fails with a fatal `unexpected_message` alert and the `error` callback, but `process()` no longer throws.\n",
+      "link": "https://github.com/advisories/GHSA-8hrf-8g6f-7xwp",
+      "published": "2026-10-30T23:02:00Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119188"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-119201",
+      "title": "Nuxt dev server exposes generated appSecret through Vite file serving",
+      "summary": "### Impact\n\nWhen no `appSecret` is configured (via `NUXT_APP_SECRET`, `NITRO_APP_SECRET` or `runtimeConfig.appSecret`), `nuxt dev` generates a development secret and stores it in `<buildDir>/app-secret` (by default `.nuxt/app-secret`). The build directory is inside the directories that Nuxt passes to Vite's `server.fs.allow`, so the file can be fetched from the dev server:\n\n```bash\ncurl http://<dev-server>/_nuxt/@fs/<absolute-path-to-project>/.nuxt/app-secret\n```\n\nAnyone who can read it can compute every secret derived from it with `deriveSecret()`, including the default password used by `useSession`, and so can forge session cookies accepted by that dev server.\n\nExploitation requires direct HTTP access to the dev server. `nuxt dev` listens on localhost by default, so this mainly affects dev servers that are exposed to a network (for example with `--host`, a published container port or a tunnel). A malicious website cannot read the file through a developer's browser: Vite's CORS and host checks prevent pages on other origins from reading the response.\n\nProduction builds never generate an `appSecret` and are not affected. Dev servers with an explicitly configured `appSecret` do not use the generated file.\n\n### Patches\n\nFixed in `@nuxt/vite-builder` 4.6.3, which `nuxt` 4.6.3 depends on. The dev server now adds `app-secret` to Vite's `server.fs.deny`, keeping Vite's default deny list.\n\n### Workarounds\n\nSet `NUXT_APP_SECRET` in `.env` to a random value of at least 32 characters (for example the output of `openssl rand -base64 32`), or avoid exposing the dev server to untrusted networks.\n\nIf a dev server using a generated secret has been reachable by untrusted clients, delete `.nuxt/app-secret` (a new secret is generated on the next `nuxt dev`) or set `NUXT_APP_SECRET`. Either invalidates existing dev sessions.",
+      "link": "https://github.com/advisories/GHSA-3xf4-9g3c-4h4w",
+      "published": "2026-10-30T23:01:12Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119201"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-119200",
+      "title": "Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes",
+      "summary": "### Summary\n\nSince `4.6.0`, Nuxt resolves `.` and `..` segments in the request path, including percent-encoded forms such as `%2e`, before rendering a page. Nitro's routing, Nitro's route rules and `server/middleware` see the path with those segments still in place. A request for `/%2e/admin` therefore renders the page at `/admin`, while server-side checks keyed on `/admin` do not apply.\n\n### Impact\n\nAn unauthenticated attacker can bypass server-side controls that match on the request path of a page route.\n\n`server/middleware` that checks `event.path` (or `event.node.req.url`) is skipped:\n\n```ts\nexport default defineEventHandler((event) => {\n  if (event.path.startsWith('/admin') && !isAuthenticated(event)) {\n    throw createError({ statusCode: 401 })\n  }\n})\n```\n\nWith this middleware, `/admin` returns 401, but `/%2e/admin`, `/.%2e/admin` and `/x/%2e%2e/admin` reach the middleware with `event.path` set to `/./admin`, `/../admin` and `/x/../admin`, and render `app/pages/admin.vue` along with the data it fetches during server rendering.\n\nServer-side `redirect` and `headers` route rules are skipped in the same way, so `'/admin/**': { redirect: '/login' }` does not redirect `/%2e/admin/secret`, and per-route security headers such as `Content-Security-Policy` are not sent.\n\nNot affected:\n\n- API handlers in `server/api` and `server/routes`. Nitro's router does not resolve dot segments, so these requests do not reach the handler.\n- `appMiddleware` route rules and middleware declared with `definePageMeta`, which are matched against the resolved route.\n- Nuxt `3.x` and `4.0.0` to `4.5.x`, which pass the path to the page router unchanged, so these requests 404.\n\nBrowsers resolve dot segments before sending a request, so exploitation requires a client that sends the path as written.\n\n### Patches\n\nFixed in `nuxt@4.6.3` and `@nuxt/nitro-server@4.6.3`. A page request whose path contains `.` or `..` segments now receives a 404 instead of rendering the page the path resolves to, and ",
+      "link": "https://github.com/advisories/GHSA-9v7c-q64q-vv33",
+      "published": "2026-10-30T23:00:53Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119200"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-119199",
+      "title": "Nuxt dev server exposes private runtime config through the Nitro dev bundle",
+      "summary": "### Summary\n\nWith Nitro 2 (the default server engine in Nuxt 3 and Nuxt 4), the Nitro development server bundle written by `nuxt dev` can be fetched through the Vite dev server. Nitro inlines the resolved `runtimeConfig` into that bundle, so private runtime config values that were resolved at build time can be read by anyone with HTTP access to the dev server.\n\n### Impact\n\n`nuxt dev` writes the Nitro development server bundle to `<buildDir>/dev/index.mjs` (by default `.nuxt/dev/index.mjs`). The build directory is inside the directories Nuxt passes to Vite's `server.fs.allow`, so the bundle is served by the dev server:\n\n```bash\ncurl http://<dev-server>/_nuxt/@fs/<absolute-path-to-project>/.nuxt/dev/index.mjs\n```\n\nThe response contains every private (non-`public`) runtime config value that was resolved at build time. That includes values set in `nuxt.config`, such as a secret read from `.env`:\n\n```ts\nexport default defineNuxtConfig({\n  runtimeConfig: {\n    apiSecret: process.env.API_SECRET,\n  },\n})\n```\n\nFrom Nuxt 4.6.0, it also includes the generated development `appSecret`. Vite's default deny list blocks `.env` itself, but not the bundle containing values read from it.\n\nExploitation requires direct HTTP access to the dev server. `nuxt dev` listens on localhost by default, so this mainly affects dev servers that are exposed to a network (for example with `--host`, a published container port or a tunnel). As far as we can tell, a malicious website cannot read the file through a developer's browser: Vite's CORS and host checks prevent pages on other origins from reading the response.\n\nProduction builds are not affected, because the Vite dev server is not used and the server bundle is not served. Nuxt projects using Nitro 3 do not write the server bundle to disk in development and are not affected. Private runtime config values that are left empty in `nuxt.config` and supplied through `NUXT_*` environment variables are applied when the server starts, are not inlined int",
+      "link": "https://github.com/advisories/GHSA-648h-gw55-m2g7",
+      "published": "2026-10-30T23:00:43Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119199"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116689",
+      "title": "follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects",
+      "summary": "### Summary\n\nfollow-redirects 1.16.0 and 1.16.1 validate the documented sensitiveHeaders option with instanceof Array. An array created in another JavaScript realm is silently replaced with an empty list, so a caller-declared custom credential header can be forwarded to an attacker-controlled cross-origin redirect destination.\n\n### Details\n\nAffected versions\n\nThe sensitiveHeaders option was introduced in 1.16.0. Published 1.16.0 and 1.16.1 both reproduced, giving a tested affected range of 1.16.0 through 1.16.1. The source checkout was pinned at revision 46301256333c90b7faac7aa126effe72ec16d16e; the exact npm 1.16.1 artifact reproduced independently.\n\nRoot cause\n\nindex.js resets options.sensitiveHeaders when its local isArray() helper returns false. That helper uses value instanceof Array, which depends on realm identity. The same file already uses Array.isArray(options.headers), which correctly recognizes arrays across realms.\n\nSuggested remediation\n\nUse Array.isArray(value) for sensitiveHeaders, then validate and normalize each member as a header-name string. Add same-realm and node:vm cross-realm tests for cross-origin redirects, including the array-form headers representation. Verify that custom sensitive names are removed while unrelated headers remain unchanged.\n\nDuplicate review\n\nThe public advisory history contains other sensitive-header findings, including array-form headers and regular-expression handling, but focused repository searches found no report describing cross-realm validation as of 2026-10-25. A private or differently worded report may already exist.\n\n### Proof of concept\n\nStart two loopback HTTP servers. The first returns a 302 redirect to the second. Send X-API-Key and list that name in sensitiveHeaders, then compare a normal array with a genuine cross-realm array created by:\n\n```js\nconst vm = require('node:vm');\nconst sensitiveHeaders = vm.runInNewContext(`['X-API-Key']`);\n```\n\nObserved against both source and the exact npm 1.16.1 package:\n\n-",
+      "link": "https://github.com/advisories/GHSA-mrwp-f3q8-3g9p",
+      "published": "2026-10-30T22:59:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116689"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-116773",
+      "title": "russh's SSH client is susceptible to unbounded allocations via EXT_INFO packets",
+      "summary": "### Summary\n\n**All evidence, reproduction steps, and scripts in the report were verified against a real running instance. Nothing is fabricated or synthetic; every verdict is backed by captured output from an actual deployment.** Concretely, the evidence comes from executing the real russh v0.64.1 client packet parser (`Session::process_packet` handling `handle_ext_info`) in a live client session with attacker-supplied packet bodies in the pre-authentication state; the captured output below is from that real execution.\n\nrussh's client stores every extension name it parses out of an `EXT_INFO` packet into a per-session vector and never clears, caps, or deduplicates it (`russh/src/client/encrypted.rs:433`, field declared at `russh/src/session.rs:60`). The packet is accepted without limit in the pre-authentication states, so a server - which is exactly the attacker position for a client library, and remains one even after the client has verified its host key - can send an unbounded sequence of these packets and grow the client's memory for as long as the session lives: 400 packets of about 26 KB each, carrying 3000 extension names apiece, retained 49.1 MiB (about 4.8 times the wire bytes) with the vector reaching 1,200,000 entries, while an equal volume of banner packets retained nothing. Two details make this reachable in practice: russh accepts `EXT_INFO` in its pre-auth states with no budget of any kind (its automatic rekey read-limit only engages after authentication), and russh encodes `EXT_INFO` as its own private message number 7 rather than the 8308 value 82, so the check that might interoperate with a well-behaved peer is inoperative - the malicious server simply speaks number 7. The same growth pattern has been accepted by the project before for other pre-auth allocation sinks; this one is a cross-packet accumulator rather than a single-packet allocation, and none of the published advisories covers it.\n\n### Details\n\nThe handler appends every parsed extension ",
+      "link": "https://github.com/advisories/GHSA-4p9f-7p9m-5vfg",
+      "published": "2026-10-30T22:58:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-116773"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-119285",
+      "title": "Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads",
+      "summary": "### Summary\n\nIn v2.52.1 and v2.52.2 the CORS middleware matched a wildcard origin such as `https://*.example.com` by suffix only, without a dot boundary and without comparing the scheme. Any origin whose host ends with the base domain, for example `https://evil-example.com` or `http://notexample.com`, was reflected in `Access-Control-Allow-Origin`, together with `Access-Control-Allow-Credentials: true` when `AllowCredentials` is enabled.\n\nv2.52.3 replaced the matcher (#2915) and is not affected. The report was filed against v2.52.15, where the dot boundary holds; see \"Other versions\" below.\n\n### Details\n\nv2.52.1 introduced `validateDomain` in `middleware/cors/utils.go` (f0cd3b44, part of the fix for GHSA-fmg4-x8pw-hjhg). It strips scheme and port from both sides and then checks only the suffix, with `trimmedPattern = \"example.com\"`, so the character before the suffix is never checked:\n\n```go\nif strings.HasPrefix(normalizedPattern, \"*.\") {\n\ttrimmedPattern := normalizedPattern[2:]\n\tif strings.HasSuffix(normalizedDomain, trimmedPattern) {\n\t\tif normalizedDomain != trimmedPattern {\n\t\t\tif strings.TrimSuffix(normalizedDomain, trimmedPattern) != \"\" {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n}\n```\n\nv2.52.3 (1aac6f61, #2915) replaced it with a scheme-aware prefix/suffix split that keeps the leading dot in the suffix (`.example.com`).\n\n### Proof of concept\n\n```go\napp := fiber.New()\napp.Use(cors.New(cors.Config{\n\tAllowOrigins:     \"https://*.example.com\",\n\tAllowCredentials: true,\n}))\napp.Get(\"/\", func(c *fiber.Ctx) error { return c.SendString(\"secret\") })\n```\n\nRequest with `Origin: https://evil-example.com`, as a GET and as a preflight (`OPTIONS` with `Access-Control-Request-Method: GET`):\n\n| Version | `https://evil-example.com` | `http://evil-example.com` |\n|---|---|---|\n| v2.52.0 | not allowed | not allowed |\n| v2.52.1, v2.52.2 | reflected, `Access-Control-Allow-Credentials: true` | reflected, `Access-Control-Allow-Credentials: true` |\n| v2.52.3 to v2.52.16 | not allowed | not allowed |\n\n",
+      "link": "https://github.com/advisories/GHSA-g5jq-qmqr-qrwf",
+      "published": "2026-10-30T22:58:05Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-119285"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96632",
+      "title": "AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)",
+      "summary": "## Summary\n\nAdminNeo inserts the database server's version string into a `<script>` tag that carries a valid CSP nonce, without any sanitization. A rogue database server can return a crafted version string that breaks out of the JavaScript context and executes arbitrary code. Because the script tag already has a valid nonce, the browser's Content Security Policy does not block execution. No authentication is required when combined with Login CSRF.\n\nOriginally reported in Adminer: https://github.com/vrana/adminer/security/advisories/GHSA-h6jr-7pr6-grgj\n\n## Prerequisites\n\n- Target runs AdminNeo\n- Attacker controls a reachable MySQL server (a 80-line Python script)\n\n## Root Cause\n\n`admin/core/Admin.php`, lines 1285-1286:\n\n```php\necho script(\"let autocompletion;\\nwindow.addEventListener('DOMContentLoaded', () => { initSyntaxHighlighting('\" .\n    Connection::get()->getVersion() . \"', '\" . Connection::get()->getFlavor() . \"', autocompletion); });\");\n```\n\n`script()` wraps the output in `<script nonce=\"VALID_NONCE\">`. Return value of `Connection::get()->getVersion()` is not escaped.\n\n## Steps To Reproduce\n\n### 1. Build the environment\n\n**Dockerfile** (AdminNeo):\n\n```dockerfile\nFROM php:8.3-cli\nCOPY adminneo.php /var/www/adminneo.php\nWORKDIR /var/www\nEXPOSE 8081\nCMD [\"php\", \"-S\", \"0.0.0.0:8081\"]\n```\n\n**rogue_mysql.py** (fake MySQL server that accepts any login):\n\n```python\nimport socket, struct, threading\n\nPAYLOAD = \"1');alert(origin)//\"\n\n# Capability flags the client expects\nCAP_PROTOCOL_41     = 0x0200\nCAP_SECURE_CONNECTION = 0x8000\nCAP_PLUGIN_AUTH     = 0x00080000\nCAPS_LOW  = CAP_PROTOCOL_41 | CAP_SECURE_CONNECTION\nCAPS_HIGH = (CAP_PLUGIN_AUTH >> 16)\n\ndef make_packet(seq, payload):\n    length = struct.pack(\"<I\", len(payload))[:3]\n    return length + bytes([seq]) + payload\n\ndef make_greeting(version_str):\n    pkt  = b\"\\x0a\"                                  # protocol version 10\n    pkt += version_str.encode() + b\"\\x00\"            # version string\n    pkt += struct.pack(\"<I",
+      "link": "https://github.com/advisories/GHSA-rx7m-wxwq-vxr9",
+      "published": "2026-10-30T22:52:23Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96632"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-96629",
+      "title": "AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery",
+      "summary": "### Summary\n\nAdminNeo's CSRF protection uses a BREACH-resistant XOR masking scheme, but the implementation transmits both the XOR mask and the masked value in every token. This allows any observer who sees a single CSRF token (via network sniffing, log files, Referrer header, or XSS) to instantly recover the session secret and forge unlimited valid CSRF tokens. Additionally, the underlying session token has only ~20 bits of entropy (`rand(1, 1e6)`), making blind brute-force feasible even without token observation.\n\nOriginally reported by @az0mb13 in Adminer: [GHSA-q4f2-39gr-45jh](https://github.com/vrana/adminer/security/advisories/GHSA-33j4-hc95-pggg)\n\n### Details\nToken generation in `admin/include/functions.inc.php` lines 1181-1184:\n\n```php\nfunction get_token() {\n\t$rand = rand(1, 1e6);\n\treturn ($rand ^ $_SESSION[\"token\"]) . \":$rand\";\n}\n```\n\nToken verification in lines 1189-1192:\n\n```php\nfunction verify_token() {\n\tlist($token, $rand) = explode(\":\", $_POST[\"token\"]);\n\treturn ($rand ^ $_SESSION[\"token\"]) == $token;\n}\n```\n\nSession token initialized in `admin/include/auth.inc.php` lines 327 and 385:\n\n```php\n$_SESSION[\"token\"] = rand(1, 1e6);\n```\n\n**Three distinct weaknesses:**\n1. **Instant recovery:** The token format `(rand XOR secret):rand` transmits both operands. Recovery is trivial: `secret = masked_value XOR rand`.\n2. **Low entropy**: Only 1,000,000 possible session tokens (~20 bits). Blind brute-force requires at most 1M requests.\n3. **Loose comparison**: `verify_token()` uses `==` (loose comparison) instead of `===`, enabling PHP type juggling.\n\n### PoC\n\n**Validated against a live AdminNeo 5.5.0 instance (MySQL 8.0, PHP 8.2).**\n\n**Step 1: Observe a single CSRF token**\n\nLoad any authenticated AdminNeo page and extract a token from the HTML source. Tokens appear in hidden form fields:\n\n```html\n<input type='hidden' name='token' value='222277:990527'>\n```\n\nToken observation vectors: Referrer header leak, shared proxy logs, browser history, limited XSS, network snif",
+      "link": "https://github.com/advisories/GHSA-wm25-49w3-5qrg",
+      "published": "2026-10-30T22:51:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-96629"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-54442",
+      "title": "NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571",
+      "summary": "### Summary\n\nThe URL validation regex `^(https?:/)?/.*` added to emissary's `NavAction.java` allows protocol-relative URLs (`//evil.com/...`) and single-slash scheme variants (`http:/evil.com`) to bypass validation, enabling SSRF and open redirect attacks.\n\n### Affected Package\n\n- **Ecosystem:** Maven\n- **Package:** NationalSecurityAgency/emissary\n- **Affected versions:** < e2078417464b\n- **Patched versions:** >= e2078417464b\n\n### Severity\n\nMedium\n\n### CWE\n\nCWE-918 \u2014 Server-Side Request Forgery (SSRF)\n\n### Details\n\nThe fix in `NavAction.java` (line 47) introduces a `VALID_LINK` pattern:\n\n```java\nPattern.compile(\"^(https?:/)?/.*\")\n```\n\nThis regex is intended to restrict navigation links to relative paths and HTTP/HTTPS URLs. However, it has multiple bypass vectors.\n\nProtocol-relative URLs (`//evil.com/...`): The group `(https?:/)?` is optional, so the pattern reduces to `//.*` when the group is absent. This matches `//evil.com/steal?c=SESSION`, which browsers resolve to the current page's protocol plus the attacker's host.\n\nSingle-slash scheme (`http:/evil.com`): The regex group captures `http:/` as a valid match, and browsers normalize `http:/evil.com` to `http://evil.com`, creating an open redirect to the attacker's server.\n\nProtocol-relative to cloud metadata (`//169.254.169.254/...`): This enables SSRF to cloud instance metadata endpoints, which is particularly dangerous in AWS/GCP environments where IAM credentials can be retrieved.\n\nThe pre-fix code had no validation at all, accepting any URL. The fix blocks `javascript:`, `ftp:`, and `data:` URIs, but the protocol-relative and single-slash bypasses remain exploitable.\n\n### PoC\n\n```python\n\"\"\"\nCVE-2026-35571 - NationalSecurityAgency/emissary SSRF via NavAction\n\nThe fix in commit e2078417464b adds URL scheme validation using:\n    Pattern.compile(\"^(https?:/)?/.*\")\n\nThis allows protocol-relative URLs (//evil.com) and single-slash variants\n(http:/evil.com) to bypass the validation.\n\nTested against: emissary@0d4dc56",
+      "link": "https://github.com/advisories/GHSA-c6q7-wqw2-h65w",
+      "published": "2026-10-30T22:51:19Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-54442"
       ],
       "is_zero_day": false,
       "is_high_severity": true

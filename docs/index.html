@@ -109,47 +109,15 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">2</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">15</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">22</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">34</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-10-30 21:45 UTC</div>
+            <div class="generated">Updated 2026-10-31 02:59 UTC</div>
           </header>
           <main>
-            <article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-111357" target="_blank" rel="noopener">CVE-2026-111357 — Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-111357</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-30</span>
-  </div>
-  <p class='summary'>Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains a missing authentication for critical function vulnerability that could allow a local authenticated attacker to escalate their privileges. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-118527. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 2…</p>
-
-</article>
-
-<article class="card card-kev">
-  <div class="card-top">
-    <span class="badge badge-kev">🔴 CISA KEV</span>
-    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-118527" target="_blank" rel="noopener">CVE-2026-118527 — Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-118527</code>
-    <span class="meta-sep">·</span>
-    <span>CISA KEV</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-30</span>
-  </div>
-  <p class='summary'>Vendor: Ivanti | Product: Connect Secure. Ivanti Connect Secure contains a generation of predictable numbers or identifiers vulnerability that allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-111357. Required action: Apply mitigations in accordance with vendor ins…</p>
-
-</article>
-
-<article class="card card-zeroday">
+            <article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -164,6 +132,24 @@
   <p class='summary'>Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…</p>
 
 </article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p96f-p2p2-2g3h" target="_blank" rel="noopener">AdminNeo SQLite: multi_query Incorrect Check of Function Return Value RCE</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-96634</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+This vulnerability is a patch bypass that exploits catastrophic backtracking in a regular expression used to filter ATTACH statements in AdminNeo&#x27;s SQLite functionality. The original vulnerability (CVE-2021-43008) allowed authenticated users to create PHP files through SQLite ATTACH statements, achieving remote code execution. The patch introduced a regex filter to block ATTACH querie…</p>
+
+        </article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -217,22 +203,6 @@ The vulnerabilities are listed below -
   CVE-2026-97229 (CVSS score: 10.0) - An integer overflow or wraparound vulnerability in GitLab Community Edition and Enterprise</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.tenable.com/blog/php2shell-one-week-later-why-one-exploit-doesnt-work-everywhere" target="_blank" rel="noopener">php2shell one week later: Why one exploit doesn’t work everywhere</a></h2>
-  </div>
-  <div class="card-meta">
-    <code class="cve">CVE-2026-109618</code> <code class="cve">CVE-2026-109619</code>
-    <span class="meta-sep">·</span>
-    <span>Tenable Security Research</span>
-    <span class="meta-sep">·</span>
-    <span>2026-10-30</span>
-  </div>
-  <p class='summary'>php2shell raised fears of mass exploitation. A week of testing by our research team found that working exploits had to be fitted to each target’s exact PHP setup. Systems that share one build, such as network appliances, are the exception: one tuned exploit can reach every device that runs it. Key takeaways The five vulnerable PHP sites we exposed to the internet were not compromised, and public p…</p>
-
-</article>
 
 <article class="card card-zeroday">
   <div class="card-top">
@@ -429,6 +399,285 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wg5q-x4j9-qm54" target="_blank" rel="noopener">Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-118759</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>## Summary
+
+The Kubeflow Pipelines API server&#x27;s `GET /apis/v1alpha1/runs/{run_id}/nodes/{node_id}/log` handler retrieves logs without authorizing the caller against the selected run. A caller who can reach the backend and knows a victim run ID and a suitable pod or node identifier can read live or archived logs using the API server&#x27;s permissions.
+
+For live logs, the vulnerable handler also accepts…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-7wch-p9px-956x" target="_blank" rel="noopener">Forge: Regular expression denial of service in PEM decoding (pem.decode)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-118779</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+`pem.decode()`, which every node-forge API that parses PEM input uses, split messages with a regular expression that takes polynomial time on input without a matching END line, and parsed encapsulated headers with regular expressions that take quadratic time on long header lines. A remote attacker can block the Node.js event loop for seconds to minutes with a crafted input of a few ten…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5cwg-6vw7-rj6p" target="_blank" rel="noopener">Forge: AES-GCM authentication bypass via unvalidated tagLength option</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119186</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+The AES-GCM mode in forge.cipher does not validate the tagLength option passed to start(). With a tagLength of 0 or a value that converts to 0 (such as null, false, &#x27;&#x27; or &#x27;0&#x27;), the authentication tag is empty, and decipher.finish() returns true for any ciphertext and additional data when the supplied tag is empty or missing. Fixed in node-forge 1.4.1.
+
+### Details
+
+`modes.gcm.prototyp…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-jc66-7q78-782g" target="_blank" rel="noopener">Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-118782</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+forge.pkcs12.pkcs12FromAsn1() accepts a PKCS#12 MAC iteration count of zero (or less) from the input, and the PKCS#12 key derivation function then returns a constant key that does not depend on the password or salt. An attacker who does not know the password can modify a PKCS#12/PFX file and compute a MAC that verifies with any password; PKCS#12 PBE-encrypted private keys prepared the…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8hrf-8g6f-7xwp" target="_blank" rel="noopener">Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119188</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+A connection created with `forge.tls.createConnection()` throws an uncaught `TypeError` from `process()` when it receives a record of another content type while waiting for the rest of a handshake message that was split across records. A peer can trigger this with 18 bytes before the handshake, without authentication, which terminates Node.js processes that use the documented socket w…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3xf4-9g3c-4h4w" target="_blank" rel="noopener">Nuxt dev server exposes generated appSecret through Vite file serving</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119201</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Impact
+
+When no `appSecret` is configured (via `NUXT_APP_SECRET`, `NITRO_APP_SECRET` or `runtimeConfig.appSecret`), `nuxt dev` generates a development secret and stores it in `&lt;buildDir&gt;/app-secret` (by default `.nuxt/app-secret`). The build directory is inside the directories that Nuxt passes to Vite&#x27;s `server.fs.allow`, so the file can be fetched from the dev server:
+
+```bash
+curl http://&lt;de…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9v7c-q64q-vv33" target="_blank" rel="noopener">Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119200</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+Since `4.6.0`, Nuxt resolves `.` and `..` segments in the request path, including percent-encoded forms such as `%2e`, before rendering a page. Nitro&#x27;s routing, Nitro&#x27;s route rules and `server/middleware` see the path with those segments still in place. A request for `/%2e/admin` therefore renders the page at `/admin`, while server-side checks keyed on `/admin` do not apply.
+
+### Impa…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-648h-gw55-m2g7" target="_blank" rel="noopener">Nuxt dev server exposes private runtime config through the Nitro dev bundle</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119199</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+With Nitro 2 (the default server engine in Nuxt 3 and Nuxt 4), the Nitro development server bundle written by `nuxt dev` can be fetched through the Vite dev server. Nitro inlines the resolved `runtimeConfig` into that bundle, so private runtime config values that were resolved at build time can be read by anyone with HTTP access to the dev server.
+
+### Impact
+
+`nuxt dev` writes the Ni…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-mrwp-f3q8-3g9p" target="_blank" rel="noopener">follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116689</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+follow-redirects 1.16.0 and 1.16.1 validate the documented sensitiveHeaders option with instanceof Array. An array created in another JavaScript realm is silently replaced with an empty list, so a caller-declared custom credential header can be forwarded to an attacker-controlled cross-origin redirect destination.
+
+### Details
+
+Affected versions
+
+The sensitiveHeaders option was introd…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-4p9f-7p9m-5vfg" target="_blank" rel="noopener">russh&#x27;s SSH client is susceptible to unbounded allocations via EXT_INFO packets</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-116773</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+**All evidence, reproduction steps, and scripts in the report were verified against a real running instance. Nothing is fabricated or synthetic; every verdict is backed by captured output from an actual deployment.** Concretely, the evidence comes from executing the real russh v0.64.1 client packet parser (`Session::process_packet` handling `handle_ext_info`) in a live client session …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g5jq-qmqr-qrwf" target="_blank" rel="noopener">Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-119285</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+In v2.52.1 and v2.52.2 the CORS middleware matched a wildcard origin such as `https://*.example.com` by suffix only, without a dot boundary and without comparing the scheme. Any origin whose host ends with the base domain, for example `https://evil-example.com` or `http://notexample.com`, was reflected in `Access-Control-Allow-Origin`, together with `Access-Control-Allow-Credentials: …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-rx7m-wxwq-vxr9" target="_blank" rel="noopener">AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-96632</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>## Summary
+
+AdminNeo inserts the database server&#x27;s version string into a `&lt;script&gt;` tag that carries a valid CSP nonce, without any sanitization. A rogue database server can return a crafted version string that breaks out of the JavaScript context and executes arbitrary code. Because the script tag already has a valid nonce, the browser&#x27;s Content Security Policy does not block execution. No authen…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-wm25-49w3-5qrg" target="_blank" rel="noopener">AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-96629</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+AdminNeo&#x27;s CSRF protection uses a BREACH-resistant XOR masking scheme, but the implementation transmits both the XOR mask and the masked value in every token. This allows any observer who sees a single CSRF token (via network sniffing, log files, Referrer header, or XSS) to instantly recover the session secret and forge unlimited valid CSRF tokens. Additionally, the underlying session…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-c6q7-wqw2-h65w" target="_blank" rel="noopener">NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-54442</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-10-30</span>
+          </div>
+          <p class='summary'>### Summary
+
+The URL validation regex `^(https?:/)?/.*` added to emissary&#x27;s `NavAction.java` allows protocol-relative URLs (`//evil.com/...`) and single-slash scheme variants (`http:/evil.com`) to bypass validation, enabling SSRF and open redirect attacks.
+
+### Affected Package
+
+- **Ecosystem:** Maven
+- **Package:** NationalSecurityAgency/emissary
+- **Affected versions:** &lt; e2078417464b
+- **Patche…</p>
+
+        </article>
 
         <article class="card card-high">
           <div class="card-top">
