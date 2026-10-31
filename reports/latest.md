@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-31 16:26 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-31 20:44 UTC &nbsp;|&nbsp; **Total:** 28 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 11 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -108,18 +108,7 @@ This vulnerability is a patch bypass that exploits catastrophic backtracking in 
 
 ---
 
-## 12. 🟠 Zero-Day — Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html>
-
-> Chinese state-sponsored threat actors have been observed using a Go-based artificial intelligence (AI)-powered penetration testing framework called ARTEX in attacks aimed at high-value targets simultaneously.
-
-The activity has been attributed by CrowdStrike to a China-based &quot;targeted intrusion adversary&quot; it tracks under the moniker Vapor Panda (previously VexatiousTemper). First identifi…
-
----
-
-## 13. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 12. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -128,7 +117,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 14. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 13. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -137,7 +126,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 15. 🟡 High Severity — Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs
+## 14. 🟡 High Severity — Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs
 
 **CVE:** `CVE-2026-118759` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-wg5q-x4j9-qm54>
@@ -150,7 +139,7 @@ For live logs, the vulnerable handler al…
 
 ---
 
-## 16. 🟡 High Severity — Forge: Regular expression denial of service in PEM decoding (pem.decode)
+## 15. 🟡 High Severity — Forge: Regular expression denial of service in PEM decoding (pem.decode)
 
 **CVE:** `CVE-2026-118779` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-7wch-p9px-956x>
@@ -160,7 +149,7 @@ For live logs, the vulnerable handler al…
 
 ---
 
-## 17. 🟡 High Severity — Forge: AES-GCM authentication bypass via unvalidated tagLength option
+## 16. 🟡 High Severity — Forge: AES-GCM authentication bypass via unvalidated tagLength option
 
 **CVE:** `CVE-2026-119186` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-5cwg-6vw7-rj6p>
@@ -174,7 +163,7 @@ The AES-GCM mode in forge.cipher does not validate the tagLength option passed t
 
 ---
 
-## 18. 🟡 High Severity — Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count
+## 17. 🟡 High Severity — Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count
 
 **CVE:** `CVE-2026-118782` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-jc66-7q78-782g>
@@ -185,7 +174,7 @@ forge.pkcs12.pkcs12FromAsn1() accepts a PKCS#12 MAC iteration count of zero (or 
 
 ---
 
-## 19. 🟡 High Severity — Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message
+## 18. 🟡 High Severity — Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message
 
 **CVE:** `CVE-2026-119188` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-8hrf-8g6f-7xwp>
@@ -196,7 +185,7 @@ A connection created with `forge.tls.createConnection()` throws an uncaught `Typ
 
 ---
 
-## 20. 🟡 High Severity — Nuxt dev server exposes generated appSecret through Vite file serving
+## 19. 🟡 High Severity — Nuxt dev server exposes generated appSecret through Vite file serving
 
 **CVE:** `CVE-2026-119201` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-3xf4-9g3c-4h4w>
@@ -210,7 +199,7 @@ curl…
 
 ---
 
-## 21. 🟡 High Severity — Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
+## 20. 🟡 High Severity — Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
 
 **CVE:** `CVE-2026-119200` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-9v7c-q64q-vv33>
@@ -221,7 +210,7 @@ Since `4.6.0`, Nuxt resolves `.` and `..` segments in the request path, includin
 
 ---
 
-## 22. 🟡 High Severity — Nuxt dev server exposes private runtime config through the Nitro dev bundle
+## 21. 🟡 High Severity — Nuxt dev server exposes private runtime config through the Nitro dev bundle
 
 **CVE:** `CVE-2026-119199` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-648h-gw55-m2g7>
@@ -236,7 +225,7 @@ With Nitro 2 (the default server engine in Nuxt 3 and Nuxt 4), the Nitro develop
 
 ---
 
-## 23. 🟡 High Severity — follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects
+## 22. 🟡 High Severity — follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects
 
 **CVE:** `CVE-2026-116689` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-mrwp-f3q8-3g9p>
@@ -253,7 +242,7 @@ The sensitiveHeaders option was introd…
 
 ---
 
-## 24. 🟡 High Severity — russh's SSH client is susceptible to unbounded allocations via EXT_INFO packets
+## 23. 🟡 High Severity — russh's SSH client is susceptible to unbounded allocations via EXT_INFO packets
 
 **CVE:** `CVE-2026-116773` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-4p9f-7p9m-5vfg>
@@ -264,7 +253,7 @@ The sensitiveHeaders option was introd…
 
 ---
 
-## 25. 🟡 High Severity — Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
+## 24. 🟡 High Severity — Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
 
 **CVE:** `CVE-2026-119285` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-g5jq-qmqr-qrwf>
@@ -275,7 +264,7 @@ In v2.52.1 and v2.52.2 the CORS middleware matched a wildcard origin such as `ht
 
 ---
 
-## 26. 🟡 High Severity — AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)
+## 25. 🟡 High Severity — AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)
 
 **CVE:** `CVE-2026-96632` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-rx7m-wxwq-vxr9>
@@ -286,7 +275,7 @@ AdminNeo inserts the database server&#x27;s version string into a `&lt;script&gt
 
 ---
 
-## 27. 🟡 High Severity — AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery
+## 26. 🟡 High Severity — AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery
 
 **CVE:** `CVE-2026-96629` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-wm25-49w3-5qrg>
@@ -297,7 +286,7 @@ AdminNeo&#x27;s CSRF protection uses a BREACH-resistant XOR masking scheme, but 
 
 ---
 
-## 28. 🟡 High Severity — NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571
+## 27. 🟡 High Severity — NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571
 
 **CVE:** `CVE-2026-54442` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-c6q7-wqw2-h65w>
@@ -315,7 +304,7 @@ The URL validation regex `^(https?:/)?/.*` added to emissary&#x27;s `NavAction.j
 
 ---
 
-## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 28. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
