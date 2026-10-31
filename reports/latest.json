@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-31T11:20:37.905074+00:00",
-  "total": 31,
+  "generated": "2026-10-31T16:26:23.376145+00:00",
+  "total": 29,
   "kev": 0,
-  "zero_day": 13,
+  "zero_day": 12,
   "enriched": 0,
   "findings": [
     {
@@ -169,6 +169,23 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/",
+      "title": "New Android SMS of Death exploit can remotely crash unpatched phones",
+      "summary": "A security researcher has released a proof-of-concept exploit for a recently patched Android vulnerability, dubbed \"SMS of Death\" and tracked as CVE-2026-58882, that lets attackers remotely disrupt cellular service or crash phones by sending a specially crafted text message. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/",
+      "published": "2026-10-31T15:35:11+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [
+        "CVE-2026-58882"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html",
       "title": "Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide",
       "summary": "Chinese state-sponsored threat actors have been observed using a Go-based artificial intelligence (AI)-powered penetration testing framework called ARTEX in attacks aimed at high-value targets simultaneously.\n\nThe activity has been attributed by CrowdStrike to a China-based \"targeted intrusion adversary\" it tracks under the moniker Vapor Panda (previously VexatiousTemper). First identified in",
@@ -178,39 +195,6 @@
       "tags": [
         "news",
         "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "CVE-2026-119282",
-      "title": "@nx/maven and @nx/gradle have OS command injection via nx.json plugin options",
-      "summary": "## Summary\n\n`@nx/maven` and `@nx/gradle` spawn their project-graph analyzers through a shell and interpolate plugin options read from `nx.json` straight into the command line. Because a shell parses the whole line, an option value containing shell syntax is executed as a command by any `nx` command that constructs the project graph. Anyone who clones a hostile repository, or who checks out a pull request that edits `nx.json`, runs the injected command with their own privileges.\n\n## Severity\n\nA victim who runs an ordinary `nx` command in an attacker-supplied Maven or Gradle workspace gets code execution as themselves. In most such workspaces an attacker who can write `nx.json` can already run code through the repository's build files (`./mvnw`, `pom.xml`, and the Gradle equivalents), so the genuinely new exposure is narrow \u2014 for example CI building a fork's pull request where `nx.json` is writable but the build files are not. We have no evidence of exploitation in the wild.\n\n## Affected & Patched Versions\n\n| Package | Vulnerable | Patched |\n| --- | --- | --- |\n| `@nx/maven` | `>= 22.0.2, < 22.7.9`; `>= 23.0.0, < 23.1.2` | `22.7.9`, `23.1.2` |\n| `@nx/gradle` | `>= 21.0.0, < 22.7.9`; `>= 23.0.0, < 23.1.2` | `22.7.9`, `23.1.2` |\n\n> [!IMPORTANT]\n> Workspaces that register neither `@nx/maven` nor `@nx/gradle` in `nx.json` are unaffected \u2014 the vulnerable code only runs from those plugins' graph-construction paths, and no other Nx plugin shares this pattern.\n\n## Remediation\n\nUpgrade to **22.7.9** (22.x line) or **23.1.2** (23.x line) or later:\n\n```\nnx migrate 23.1.2\n```\n\nUpgrade both `nx` and the affected plugin (`@nx/maven` and/or `@nx/gradle`). The plugin's fix depends on code that ships in the `nx` package, so bumping the plugin without a matching `nx` upgrade will not resolve it.\n\nThere is no configuration to change \u2014 upgrading is the whole fix. If you cannot upgrade yet, only run `nx` commands in repositories you trust, since a malicious `nx.json` can execute code on a",
-      "link": "https://github.com/advisories/GHSA-qm8w-vx34-5j9j",
-      "published": "2026-10-30T14:42:14Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-119282"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/",
-      "title": "CISA says max severity GitLab flaw now exploited in the wild",
-      "summary": "Attackers have started exploiting a maximum-severity GitLab vulnerability patched earlier this month, according to the US Cybersecurity and Infrastructure Security Agency (CISA). [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/",
-      "published": "2026-10-30T13:00:32+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -509,24 +493,6 @@
       ],
       "cve_ids": [
         "CVE-2026-54442"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-119283",
-      "title": "joserfc: Unbounded JWE General JSON `recipients` Array Leads to CPU Exhaustion (DoS) via Repeated RSA Private-Key Decryption",
-      "summary": "### Summary\n\n`joserfc.jwe.decrypt_json()`, the library's public parser for JWE General JSON Serialization, accepts an attacker-controlled `recipients` array of unbounded length and performs one full private-key decryption operation (`decrypt_cek`) for **every** recipient present in the input, with no cap on recipient count. An unauthenticated network attacker who can send a JWE General JSON document to any endpoint that decrypts it with an RSA key (e.g. RSA-OAEP) can force the victim to perform an arbitrary, attacker-chosen number of RSA private-key decryption operations from a single, relatively small HTTP request. This gives the attacker a highly asymmetric CPU-exhaustion (Denial of Service) primitive: local reproduction shows request size growing linearly with recipient count (~396 bytes/recipient) while server-side CPU time grows in lock-step (near 1:1 ratio between recipient-count growth and decrypt-time growth), and the library's only documented mitigation knob, `verify_all_recipients=False`, does **not** reduce the CPU cost, since the decrypt loop attempts every recipient's `decrypt_cek()` unconditionally before that flag is ever consulted. This is CWE-400 (Uncontrolled Resource Consumption) with CVSS v3.1 Base Score 7.5 (High).\n\n### Details\n\n`joserfc` validates and caps several structural elements of a JWE (protected header size, encrypted key size, IV size, ciphertext size, and auth-tag size) inside `src/joserfc/_rfc7516/registry.py`, but performs **no validation whatsoever on the number of entries in the `recipients` array** of a JWE General JSON Serialization object.\n\nData flow (source \u2192 sink), verified directly against the repository source at commit `26a10275e88276184f91ae2a6409647bfac7fea5` (joserfc 1.7.4):\n\n1. `src/joserfc/jwe.py:214` \u2014 public parser entry point `decrypt_json(data, private_key, ...)`. This is a documented, unauthenticated (at the library boundary) API for parsing externally supplied JWE JSON.\n2. `src/joserfc/jwe.py:238` \u2014 if `\"recipie",
-      "link": "https://github.com/advisories/GHSA-jpxq-7h8p-2q76",
-      "published": "2026-10-30T14:54:20Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-119283"
       ],
       "is_zero_day": false,
       "is_high_severity": true

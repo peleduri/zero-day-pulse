@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-10-31 11:20 UTC &nbsp;|&nbsp; **Total:** 31 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 18 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-10-31 16:26 UTC &nbsp;|&nbsp; **Total:** 29 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 12 &nbsp;|&nbsp; 🟡 High: 17 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -99,7 +99,16 @@ This vulnerability is a patch bypass that exploits catastrophic backtracking in 
 
 ---
 
-## 11. 🟠 Zero-Day — Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide
+## 11. 🟠 Zero-Day — New Android SMS of Death exploit can remotely crash unpatched phones
+
+**CVE:** `CVE-2026-58882` &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-31
+**Reference:** <https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/>
+
+> A security researcher has released a proof-of-concept exploit for a recently patched Android vulnerability, dubbed &quot;SMS of Death&quot; and tracked as CVE-2026-58882, that lets attackers remotely disrupt cellular service or crash phones by sending a specially crafted text message. [...]
+
+---
+
+## 12. 🟠 Zero-Day — Chinese Hackers Use AI-Powered ARTEX to Target Over 200 Organizations Worldwide
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html>
@@ -110,27 +119,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 12. 🟠 Zero-Day — @nx/maven and @nx/gradle have OS command injection via nx.json plugin options
-
-**CVE:** `CVE-2026-119282` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://github.com/advisories/GHSA-qm8w-vx34-5j9j>
-
-> ## Summary
-
-`@nx/maven` and `@nx/gradle` spawn their project-graph analyzers through a shell and interpolate plugin options read from `nx.json` straight into the command line. Because a shell parses the whole line, an option value containing shell syntax is executed as a command by any `nx` command that constructs the project graph. Anyone who clones a hostile repository, or who checks out a pull …
-
----
-
-## 13. 🟠 Zero-Day — CISA says max severity GitLab flaw now exploited in the wild
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/>
-
-> Attackers have started exploiting a maximum-severity GitLab vulnerability patched earlier this month, according to the US Cybersecurity and Infrastructure Security Agency (CISA). [...]
-
----
-
-## 14. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 13. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -139,7 +128,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 15. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 14. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -148,7 +137,7 @@ The activity has been attributed by CrowdStrike to a China-based &quot;targeted 
 
 ---
 
-## 16. 🟡 High Severity — Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs
+## 15. 🟡 High Severity — Kubeflow Pipelines: Run-log endpoint permits unauthorized access to pod logs
 
 **CVE:** `CVE-2026-118759` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-wg5q-x4j9-qm54>
@@ -161,7 +150,7 @@ For live logs, the vulnerable handler al…
 
 ---
 
-## 17. 🟡 High Severity — Forge: Regular expression denial of service in PEM decoding (pem.decode)
+## 16. 🟡 High Severity — Forge: Regular expression denial of service in PEM decoding (pem.decode)
 
 **CVE:** `CVE-2026-118779` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-7wch-p9px-956x>
@@ -171,7 +160,7 @@ For live logs, the vulnerable handler al…
 
 ---
 
-## 18. 🟡 High Severity — Forge: AES-GCM authentication bypass via unvalidated tagLength option
+## 17. 🟡 High Severity — Forge: AES-GCM authentication bypass via unvalidated tagLength option
 
 **CVE:** `CVE-2026-119186` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-5cwg-6vw7-rj6p>
@@ -185,7 +174,7 @@ The AES-GCM mode in forge.cipher does not validate the tagLength option passed t
 
 ---
 
-## 19. 🟡 High Severity — Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count
+## 18. 🟡 High Severity — Forge: PKCS#12 MAC forgery and constant-key PBE via zero iteration count
 
 **CVE:** `CVE-2026-118782` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-jc66-7q78-782g>
@@ -196,7 +185,7 @@ forge.pkcs12.pkcs12FromAsn1() accepts a PKCS#12 MAC iteration count of zero (or 
 
 ---
 
-## 20. 🟡 High Severity — Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message
+## 19. 🟡 High Severity — Forge: Denial of service in TLS record processing via a record interleaved with a fragmented handshake message
 
 **CVE:** `CVE-2026-119188` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-8hrf-8g6f-7xwp>
@@ -207,7 +196,7 @@ A connection created with `forge.tls.createConnection()` throws an uncaught `Typ
 
 ---
 
-## 21. 🟡 High Severity — Nuxt dev server exposes generated appSecret through Vite file serving
+## 20. 🟡 High Severity — Nuxt dev server exposes generated appSecret through Vite file serving
 
 **CVE:** `CVE-2026-119201` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-3xf4-9g3c-4h4w>
@@ -221,7 +210,7 @@ curl…
 
 ---
 
-## 22. 🟡 High Severity — Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
+## 21. 🟡 High Severity — Nuxt: Dot segments in the request path bypass `server/middleware` path checks and server route rules on page routes
 
 **CVE:** `CVE-2026-119200` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-9v7c-q64q-vv33>
@@ -232,7 +221,7 @@ Since `4.6.0`, Nuxt resolves `.` and `..` segments in the request path, includin
 
 ---
 
-## 23. 🟡 High Severity — Nuxt dev server exposes private runtime config through the Nitro dev bundle
+## 22. 🟡 High Severity — Nuxt dev server exposes private runtime config through the Nitro dev bundle
 
 **CVE:** `CVE-2026-119199` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-648h-gw55-m2g7>
@@ -247,7 +236,7 @@ With Nitro 2 (the default server engine in Nuxt 3 and Nuxt 4), the Nitro develop
 
 ---
 
-## 24. 🟡 High Severity — follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects
+## 23. 🟡 High Severity — follow-redirects: Cross-realm sensitiveHeaders arrays are discarded and custom credentials can follow redirects
 
 **CVE:** `CVE-2026-116689` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-mrwp-f3q8-3g9p>
@@ -264,7 +253,7 @@ The sensitiveHeaders option was introd…
 
 ---
 
-## 25. 🟡 High Severity — russh's SSH client is susceptible to unbounded allocations via EXT_INFO packets
+## 24. 🟡 High Severity — russh's SSH client is susceptible to unbounded allocations via EXT_INFO packets
 
 **CVE:** `CVE-2026-116773` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-4p9f-7p9m-5vfg>
@@ -275,7 +264,7 @@ The sensitiveHeaders option was introd…
 
 ---
 
-## 26. 🟡 High Severity — Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
+## 25. 🟡 High Severity — Fiber: CORS wildcard origins matched without a dot boundary, allowing credentialed cross-origin reads
 
 **CVE:** `CVE-2026-119285` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-g5jq-qmqr-qrwf>
@@ -286,7 +275,7 @@ In v2.52.1 and v2.52.2 the CORS middleware matched a wildcard origin such as `ht
 
 ---
 
-## 27. 🟡 High Severity — AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)
+## 26. 🟡 High Severity — AdminNeo Vulnerable to XSS via Rogue MySQL Server Version String (CSP Nonce Bypass)
 
 **CVE:** `CVE-2026-96632` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-rx7m-wxwq-vxr9>
@@ -297,7 +286,7 @@ AdminNeo inserts the database server&#x27;s version string into a `&lt;script&gt
 
 ---
 
-## 28. 🟡 High Severity — AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery
+## 27. 🟡 High Severity — AdminNeo: CSRF Token Secret Recoverable from Single Observed Token, Enabling Cross-Site Request Forgery
 
 **CVE:** `CVE-2026-96629` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-wm25-49w3-5qrg>
@@ -308,7 +297,7 @@ AdminNeo&#x27;s CSRF protection uses a BREACH-resistant XOR masking scheme, but 
 
 ---
 
-## 29. 🟡 High Severity — NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571
+## 28. 🟡 High Severity — NationalSecurityAgency/emissary has an incomplete fix for CVE-2026-35571
 
 **CVE:** `CVE-2026-54442` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
 **Reference:** <https://github.com/advisories/GHSA-c6q7-wqw2-h65w>
@@ -326,18 +315,7 @@ The URL validation regex `^(https?:/)?/.*` added to emissary&#x27;s `NavAction.j
 
 ---
 
-## 30. 🟡 High Severity — joserfc: Unbounded JWE General JSON `recipients` Array Leads to CPU Exhaustion (DoS) via Repeated RSA Private-Key Decryption
-
-**CVE:** `CVE-2026-119283` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-10-30
-**Reference:** <https://github.com/advisories/GHSA-jpxq-7h8p-2q76>
-
-> ### Summary
-
-`joserfc.jwe.decrypt_json()`, the library&#x27;s public parser for JWE General JSON Serialization, accepts an attacker-controlled `recipients` array of unbounded length and performs one full private-key decryption operation (`decrypt_cek`) for **every** recipient present in the input, with no cap on recipient count. An unauthenticated network attacker who can send a JWE General JSON d…
-
----
-
-## 31. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 29. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
