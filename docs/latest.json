@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-01T12:11:00.158291+00:00",
+  "generated": "2026-11-01T21:26:27.355787+00:00",
   "total": 12,
   "kev": 0,
   "zero_day": 9,
@@ -134,19 +134,17 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/",
-      "title": "New Android SMS of Death exploit can remotely crash unpatched phones",
-      "summary": "A security researcher has released a proof-of-concept exploit for a recently patched Android vulnerability, dubbed \"SMS of Death\" and tracked as CVE-2026-58882, that lets attackers remotely disrupt cellular service or crash phones by sending a specially crafted text message. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/",
-      "published": "2026-10-31T15:35:11+00:00",
+      "id": "https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/",
+      "title": "FBI links $6.3 billion Binance crypto heist to North Korean hackers",
+      "summary": "The FBI has confirmed that North Korean state-sponsored hackers known as TraderTraitor were behind the $6.3 billion crypto-theft attack on Binance, making it the largest cryptocurrency heist on record. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/",
+      "published": "2026-11-01T19:57:53+00:00",
       "source": "Bleeping Computer",
       "tags": [
         "news",
         "malware"
       ],
-      "cve_ids": [
-        "CVE-2026-58882"
-      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
