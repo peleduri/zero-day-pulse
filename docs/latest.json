@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-03T00:07:43.375172+00:00",
-  "total": 15,
+  "generated": "2026-11-03T13:08:45.918347+00:00",
+  "total": 14,
   "kev": 0,
-  "zero_day": 11,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -17,54 +17,6 @@
         "ics"
       ],
       "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
-      "title": "Over 1,000 GitLab servers vulnerable to ongoing RCE attacks",
-      "summary": "Over 1,000 Internet-exposed GitLab servers are still unpatched against a maximum-severity flaw actively exploited in remote code execution attacks. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
-      "published": "2026-11-02T12:47:00+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
-      "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
-      "summary": "Ivanti released security updates to patch two more Connect Secure (ICS) remote access gateway flaws that have been chained in zero-day attacks since at least October 1. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
-      "published": "2026-11-02T09:33:26+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://www.securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain/",
-      "title": "Ivanti Patches Two More Zero-Days Exploited in Connect Secure Attack Chain",
-      "summary": "CISA has added CVE-2026-111357 and CVE-2026-118527 to its KEV catalog after the Ivanti VPN flaws were chained in zero-day attacks. The post Ivanti Patches Two More Zero-Days Exploited in Connect Secure Attack Chain appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain/",
-      "published": "2026-11-02T07:57:49+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-111357",
-        "CVE-2026-118527"
-      ],
       "is_zero_day": true,
       "is_high_severity": true
     },
@@ -166,18 +118,34 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/",
-      "title": "New Prompt Injection Techniques Cover Agent-Planning Attacks",
-      "summary": "",
-      "link": "https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/",
-      "published": "Oct 29, 2026 00:00:00-0500",
-      "source": "CrowdStrike Blog",
+      "id": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html",
+      "title": "Synology NAS Devices Targeted in Ransomware Attacks Exploiting Patched DSM Flaw",
+      "summary": "Synology is urging customers to update the DiskStation Manager (DSM) software powering its Network Attached Storage (NAS) devices following ransomware attacks.\n\nThe Taiwanese vendor said it observed threat actors exploiting a vulnerability patched in December 2024 to target devices running outdated versions of DSM.\n\n\"These attacks aim to encrypt data and extort ransom,\" it said in a statement",
+      "link": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html",
+      "published": "2026-11-03T07:43:07+00:00",
+      "source": "The Hacker News Security",
       "tags": [
-        "cloud",
-        "threat-intel",
-        "research"
+        "news",
+        "zeroday"
       ],
       "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/attackers-target-unpatched.html",
+      "title": "Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials",
+      "summary": "Threat actors are attempting to exploit an unpatched maximum-severity security vulnerability in the CryptoPayment Gateway WordPress plugin, according to findings from Defused Cyber.\n\nThe vulnerability in question is CVE-2026-81648, which carries a CVSS score of 10.0. Successful exploitation of the flaw could permit unauthenticated users to delete arbitrary files on the server and extract",
+      "link": "https://thehackernews.com/2026/11/attackers-target-unpatched.html",
+      "published": "2026-11-03T05:34:37+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-81648"
+      ],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -222,6 +190,23 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
+      "title": "Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors",
+      "summary": "A maximum-severity security flaw impacting Siemens SIMATIC IoT2050 Advanced devices has come under active exploitation, VulnCheck has revealed.\n\nThe vulnerability, tracked as CVE-2026-58115 (CVSS score: 10.0), is a case of missing authentication for a critical function that could be exploited by an unauthenticated remote attacker to run arbitrary code.\n\n\"SIMATIC IoT2050 Advanced devices running",
+      "link": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
+      "published": "2026-11-03T05:34:41+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-58115"
       ],
       "is_zero_day": false,
       "is_high_severity": true
