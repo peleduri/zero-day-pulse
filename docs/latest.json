@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-02T14:00:21.949823+00:00",
+  "generated": "2026-11-03T00:07:43.375172+00:00",
   "total": 15,
   "kev": 0,
-  "zero_day": 12,
+  "zero_day": 11,
   "enriched": 0,
   "findings": [
     {
@@ -182,21 +182,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/",
-      "title": "FBI links $6.3 billion Binance crypto heist to North Korean hackers",
-      "summary": "The FBI has confirmed that North Korean state-sponsored hackers known as TraderTraitor were behind the $6.3 billion crypto-theft attack on Binance, making it the largest cryptocurrency heist on record. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/",
-      "published": "2026-11-01T19:57:53+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -237,6 +222,24 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62374",
+      "title": "SD JWT JS: Tampered disclosures silently dropped instead of rejected",
+      "summary": "## Summary\n\nWhen one Disclosure in an SD-JWT presentation is tampered so its digest no longer matches the Issuer-signed `_sd` array, `@sd-jwt/decode` 0.19.0 does **not** reject the presentation. It silently drops the unmatched Disclosure and returns a **reduced claim set**, reporting success. The Issuer signature is untouched and valid.\n\nThis is a downgrade/omission primitive. A malicious or curious **holder** can present a tampered Disclosure and have the relying party receive *fewer* claims than the credential carries, with no error surfaced. Where the relying party does **not** enforce key binding, an **in-transit (on-path) attacker** can achieve the same by mangling one Disclosure's bytes; where key binding **is** enforced, on-path tampering instead breaks the holder's KB-JWT `sd_hash` binding (so it is rejected), and the downgrade is then exercisable by the key-bound holder \u2014 confirmed end-to-end with KB required.\n\nTwo distinct tampering inputs converge on the same silent-drop sink:\n\n1. **Genuinely non-decodable Disclosure** (broken base64url -> bytes that are not valid UTF-8, e.g. an injected `0xF2` lead byte). RFC 9901 \u00a77.1 step 3 / \u00a74.2.1 require rejection. `@sd-jwt/decode` instead **lossy-decodes** it: the `TextDecoder`/`Buffer` path substitutes U+FFFD (REPLACEMENT CHARACTER) for the invalid byte and recovers a syntactically valid disclosure (the `salt` gains a U+FFFD, claim `family_name` = `\"Smith\"`). The recovered Disclosure then hashes to a digest **absent** from the signed `_sd` array, so it is silently skipped.\n2. **Tampered-but-still-valid-JSON Disclosure** (digest no longer matches `_sd`): same end state \u2014 the unmatched Disclosure is silently skipped.\n\nTwo RFC 9901 MUSTs compound:\n- **\u00a77.1 step 5 (primary):** \"If any Disclosure was not referenced by digest value in the Issuer-signed JWT (directly or recursively via other Disclosures), the SD-JWT MUST be rejected.\" \u2014 instead silently dropped.\n- **\u00a77.1 step 3 / \u00a74.2.1 (secondary):** a non-base64url-JSO",
+      "link": "https://github.com/advisories/GHSA-f9j6-8p6x-r9j6",
+      "published": "2026-11-02T17:54:39Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62374"
       ],
       "is_zero_day": false,
       "is_high_severity": true

@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">12</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value zeroday">11</span><span class="stat-label">Zero-Days</span></div>
               <div class="stat"><span class="stat-value">15</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-02 14:00 UTC</div>
+            <div class="generated">Updated 2026-11-03 00:07 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -293,22 +293,6 @@
 
 </article>
 
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/" target="_blank" rel="noopener">FBI links $6.3 billion Binance crypto heist to North Korean hackers</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-01</span>
-  </div>
-  <p class='summary'>The FBI has confirmed that North Korean state-sponsored hackers known as TraderTraitor were behind the $6.3 billion crypto-theft attack on Binance, making it the largest cryptocurrency heist on record. [...]</p>
-
-</article>
-
 <article class="card card-high">
   <div class="card-top">
     <span class="badge badge-high">🟡 High</span>
@@ -340,6 +324,26 @@
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f9j6-8p6x-r9j6" target="_blank" rel="noopener">SD JWT JS: Tampered disclosures silently dropped instead of rejected</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62374</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-02</span>
+          </div>
+          <p class='summary'>## Summary
+
+When one Disclosure in an SD-JWT presentation is tampered so its digest no longer matches the Issuer-signed `_sd` array, `@sd-jwt/decode` 0.19.0 does **not** reject the presentation. It silently drops the unmatched Disclosure and returns a **reduced claim set**, reporting success. The Issuer signature is untouched and valid.
+
+This is a downgrade/omission primitive. A malicious or curio…</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">
