@@ -1,10 +1,19 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-03 13:08 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-03 22:39 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-119977 — WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability
+
+**CVE:** `CVE-2026-119977` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-03
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-119977>
+
+> Vendor: WordPress | Product: WordPress Core. WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades. Required action: Apply mitigations in accordance with vend…
+
+---
+
+## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,7 +22,7 @@
 
 ---
 
-## 2. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -22,7 +31,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -40,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -49,7 +58,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -58,7 +67,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -67,7 +76,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Synology NAS Devices Targeted in Ransomware Attacks Exploiting Patched DSM Flaw
+## 9. 🟠 Zero-Day — Synology NAS Devices Targeted in Ransomware Attacks Exploiting Patched DSM Flaw
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
 **Reference:** <https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html>
@@ -80,7 +89,7 @@ The Taiwanese vendor said it observed threat actors exploiting a vulnerability p
 
 ---
 
-## 9. 🟠 Zero-Day — Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials
+## 10. 🟠 Zero-Day — Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials
 
 **CVE:** `CVE-2026-81648` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
 **Reference:** <https://thehackernews.com/2026/11/attackers-target-unpatched.html>
@@ -91,7 +100,7 @@ The vulnerability in question is CVE-2026-81648, which carries a CVSS score of 1
 
 ---
 
-## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -100,7 +109,7 @@ The vulnerability in question is CVE-2026-81648, which carries a CVSS score of 1
 
 ---
 
-## 11. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 12. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -109,7 +118,74 @@ The vulnerability in question is CVE-2026-81648, which carries a CVSS score of 1
 
 ---
 
-## 12. 🟡 High Severity — Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors
+## 13. 🟡 High Severity — Elo Ruby backend has Remote Code Execution via unescaped `#{...}` interpolation in emitted string literals and subtype-constraint labels
+
+**CVE:** `CVE-2026-44266` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
+**Reference:** <https://github.com/advisories/GHSA-7w38-ggh5-v542>
+
+> ### Summary
+
+Elo&#x27;s Ruby backend emits attacker-controlled text into Ruby double-quoted strings without escaping the `#` character. Because `#` begins Ruby&#x27;s interpolation sequences — `#{expr}`, `#@ivar`, `#@@cvar`, `#$gvar` — and any expression wrapped in `#{...}` may use backticks for shell execution, an Elo program that contains a crafted string literal or a labelled subtype constraint…
+
+---
+
+## 14. 🟡 High Severity — Elo backends have code injection via unvalidated emission of programmatic AST fields
+
+**CVE:** `CVE-2026-44265` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
+**Reference:** <https://github.com/advisories/GHSA-x9rp-7wh3-2rj5>
+
+> ### Summary
+
+Elo&#x27;s programmatic AST API accepts arbitrary values in many node fields without runtime type or syntax validation. Each backend&#x27;s emit stage interpolates those values straight into the generated source with no escape pass. An integrator that populates the AST from JSON-deserialised input, plugin output, or any other untyped source therefore exposes a code-injection primitive…
+
+---
+
+## 15. 🟡 High Severity — praktor: Path traversal in Telegram file uploads allows writing outside the agent workspace uploads/ directory (stored instruction injection)
+
+**CVE:** `CVE-2026-62331` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
+**Reference:** <https://github.com/advisories/GHSA-48v2-6jcm-fc99>
+
+> ### Impact
+
+A remote Telegram user can write files to arbitrary paths inside an agent&#x27;s persistent workspace volume (`praktor-wk-&lt;workspace&gt;`, mounted at `/workspace/agent`), escaping the documented `uploads/` directory.
+
+The attacker controls the Telegram document filename, which was concatenated into the destination path without sanitization (`internal/telegram/bot.go`, at both upload…
+
+---
+
+## 16. 🟡 High Severity — Keycloak has authentication bypass via jwt algorithm confusion
+
+**CVE:** `CVE-2026-11800` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
+**Reference:** <https://github.com/advisories/GHSA-j97h-3f8r-mrjr>
+
+> ### Description
+A flaw was found in Keycloak. This JWT algorithm confusion vulnerability in the JWT Authorization Grant flow allows an attacker with valid client credentials to bypass signature verification. By forging an assertion, the attacker can create unauthorized access tokens. This enables the attacker to impersonate any federated user linked to the affected Identity Provider, leading to un…
+
+---
+
+## 17. 🟡 High Severity — Metalama: Unsafe deserialization over Metalama's Visual Studio inter-process named pipe enables local code execution
+
+**CVE:** `CVE-2026-62848` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
+**Reference:** <https://github.com/advisories/GHSA-h26j-4vp7-x9w2>
+
+> ## Summary
+
+Metalama uses a local named-pipe channel to communicate between its Visual Studio processes — the Visual Studio UI process (`devenv`), the out-of-process Roslyn code-analysis process, and the CodeLens process. This channel deserialized messages from the pipe **without restricting which CLR types could be instantiated**. A local process able to write to the pipe can send a crafted messa…
+
+---
+
+## 18. 🟡 High Severity — Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access
+
+**CVE:** `CVE-2026-116606` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
+**Reference:** <https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html>
+
+> Barracuda has disclosed details of two vulnerabilities affecting its products that, if chained together, could allow an attacker to bypass authorization controls and gain root access to a susceptible device.
+
+The vulnerabilities, a pre-authentication authorization bypass vulnerability and a command injection vulnerability, have been assigned the CVE identifiers CVE-2026-116606 (CVSS score: 9.3)
+
+---
+
+## 19. 🟡 High Severity — Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors
 
 **CVE:** `CVE-2026-58115` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
 **Reference:** <https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html>
@@ -122,20 +198,7 @@ The vulnerability, tracked as CVE-2026-58115 (CVSS score: 10.0), is a case of mi
 
 ---
 
-## 13. 🟡 High Severity — SD JWT JS: Tampered disclosures silently dropped instead of rejected
-
-**CVE:** `CVE-2026-62374` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-02
-**Reference:** <https://github.com/advisories/GHSA-f9j6-8p6x-r9j6>
-
-> ## Summary
-
-When one Disclosure in an SD-JWT presentation is tampered so its digest no longer matches the Issuer-signed `_sd` array, `@sd-jwt/decode` 0.19.0 does **not** reject the presentation. It silently drops the unmatched Disclosure and returns a **reduced claim set**, reporting success. The Issuer signature is untouched and valid.
-
-This is a downgrade/omission primitive. A malicious or curio…
-
----
-
-## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

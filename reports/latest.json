@@ -1,10 +1,29 @@
 {
-  "generated": "2026-11-03T13:08:45.918347+00:00",
-  "total": 14,
-  "kev": 0,
+  "generated": "2026-11-03T22:39:06.848642+00:00",
+  "total": 20,
+  "kev": 1,
   "zero_day": 9,
   "enriched": 0,
   "findings": [
+    {
+      "id": "CVE-2026-119977",
+      "title": "CVE-2026-119977 \u2014 WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+      "summary": "Vendor: WordPress | Product: WordPress Core. WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-06)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-119977",
+      "published": "2026-11-03",
+      "source": "CISA KEV",
+      "tags": [
+        "cisa",
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2026-119977"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
     {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
       "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
@@ -195,6 +214,113 @@
       "is_high_severity": true
     },
     {
+      "id": "CVE-2026-44266",
+      "title": "Elo Ruby backend has Remote Code Execution via unescaped `#{...}` interpolation in emitted string literals and subtype-constraint labels",
+      "summary": "### Summary\n\nElo's Ruby backend emits attacker-controlled text into Ruby double-quoted strings without escaping the `#` character. Because `#` begins Ruby's interpolation sequences \u2014 `#{expr}`, `#@ivar`, `#@@cvar`, `#$gvar` \u2014 and any expression wrapped in `#{...}` may use backticks for shell execution, an Elo program that contains a crafted string literal or a labelled subtype constraint compiles to Ruby that evaluates attacker-chosen Ruby, and through backticks runs attacker-chosen shell commands, at runtime.\n\nThe same Elo source compiled to JavaScript, Python, or SQL is benign, so the bug also breaks the cross-target portability guarantee the rest of the compiler honours.\n\n### Vulnerable sinks\n\nTwo sinks exist in `src/compilers/ruby.ts` at commit `749af7b`:\n\n1. **String-literal emitter \u2014 lines 180\u2013184.**\n   The emitter escapes backslash, double quote, and control characters, but not `#`. Any `#{...}` sequence in an Elo string literal flows straight into the emitted Ruby source.\n\n2. **Labelled subtype-constraint branch \u2014 lines 405\u2013412.**\n   The error message passed to `p_fail(p, \"...\")` is wrapped in a Ruby double-quoted string with no escape pass at all. Because the parser at `src/parser.ts:1339\u20131348` accepts single-quoted Elo strings as constraint labels, a label such as `'#{` `` `id` `` `}'` flows unchanged into the emitted Ruby.\n\n### Attack surfaces\n\nAll three surfaces share the same root cause (the missing `#` escape in the Ruby double-quoted-string emission path) and are addressed by the same patch:\n\n| # | Entry point | Threat model |\n|---|---|---|\n| 1 | `/try` playground on elo-lang.org (Ruby target) | 0-click server-side RCE against elo-lang.org infrastructure from a shared PoC URL |\n| 2 | `bin/eloc -t ruby -x` on a CI or DevOps host | RCE on any host that passes Elo strings through the CLI |\n| 3 | Library API \u2014 `defaultFormats.elo.parse()` with a Ruby emission step | Ruby RCE for any downstream integrator using Elo as a rule engine, configuration DSL, or f",
+      "link": "https://github.com/advisories/GHSA-7w38-ggh5-v542",
+      "published": "2026-11-03T17:51:30Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44266"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-44265",
+      "title": "Elo backends have code injection via unvalidated emission of programmatic AST fields",
+      "summary": "### Summary\n\nElo's programmatic AST API accepts arbitrary values in many node fields without runtime type or syntax validation. Each backend's emit stage interpolates those values straight into the generated source with no escape pass. An integrator that populates the AST from JSON-deserialised input, plugin output, or any other untyped source therefore exposes a code-injection primitive that flows through to the emitted JavaScript, Ruby, Python, or SQL.\n\nThe same pattern was previously addressed in **0.9.7 (2026-01-27)**, which patched the date/datetime/duration literal emitters via `JSON.stringify()` after a report by **naoyashiga**. This advisory generalises that fix to the remaining AST surface \u2014 at least 23 emission sites across six node-field categories and four backends.\n\n### Vulnerable sinks\n\nEach row is a category of sinks that share the same shape: TypeScript signature erased at runtime \u2192 AST-API consumer passes a crafted value \u2192 emit interpolates the value verbatim.\n\n| # | AST field | Affected backends | Resulting injection |\n|---|---|---|---|\n| 1 | `int_literal` / `float_literal` `.value` | JS, Ruby, Python, SQL | Arbitrary expression in the emitted numeric position (RCE on JS/Ruby/Python; SQL expression injection) |\n| 2 | `variable.name` | JS, Ruby, Python, SQL | Identifier-position injection; on SQL, raw SQL injection because undefined identifiers are intentionally emitted as column references |\n| 3 | `member_access.property` | JS, Ruby, Python, SQL | Property access escaped into expression (RCE) |\n| 4 | `object_literal` key | JS, Ruby, SQL | Computed-key / extra-property injection (RCE on JS/Ruby; SQL injection) |\n| 5 | `datapath` segment | JS, Ruby, Python, SQL | Ruby symbol-list injection allows backtick shell exec; SQL string-segment unquoted in single-quote context allows SQL injection |\n| 6 | `lambda.params[].name` | JS, Ruby, Python | Parameter-list structural injection (RCE) |\n| 7 | SQL `let` binding `name` | SQL | Identifier injection in `\u2026 AS",
+      "link": "https://github.com/advisories/GHSA-x9rp-7wh3-2rj5",
+      "published": "2026-11-03T17:48:09Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-44265"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62331",
+      "title": "praktor: Path traversal in Telegram file uploads allows writing outside the agent workspace uploads/ directory (stored instruction injection)",
+      "summary": "### Impact\n\nA remote Telegram user can write files to arbitrary paths inside an agent's persistent workspace volume (`praktor-wk-<workspace>`, mounted at `/workspace/agent`), escaping the documented `uploads/` directory.\n\nThe attacker controls the Telegram document filename, which was concatenated into the destination path without sanitization (`internal/telegram/bot.go`, at both upload sites) and resolved with `path.Join`, which collapses `../` sequences. A filename like `../../../CLAUDE.md` resolved to the root of the agent workspace volume, outside `uploads/`.\n\nBecause the agent workspace is the persistent working directory the Claude agent reads from and operates on across runs, writing outside `uploads/` lets an attacker plant or overwrite files the agent later consumes \u2014 e.g. `CLAUDE.md`, agent instruction/skill/hook files, or other config under `/workspace/agent`. This turns a file upload into a stored injection into the agent's instruction/execution surface (CWE-22 path traversal escalating to stored instruction injection).\n\n### Reachability\n\nBy default the bot has no user allowlist (`allow_from: []` means \"allow all\"), so the only precondition is that a user can message the bot. No authentication or prior privilege is required.\n\n### Affected versions\n\nThrough `v0.9.0` (and HEAD `3902d29`).\n\n### Patched versions\n\n`v0.9.1`, containing PR #228.\n\n### Workarounds\n\nRestrict `telegram.allow_from` to trusted user IDs to limit who can send uploads to the bot. Upgrading to `v0.9.1` is the recommended fix.\n\n### Fix (defense in depth)\n\n- `internal/telegram/bot.go`: apply `path.Base()` to the attacker-controlled filename at both upload sites, stripping directory components and `..`.\n- `internal/container/manager.go`: `WriteVolumeBytes` now rejects any path that escapes `/vol` after `path.Join`, protecting future callers.\n\n### Credit\n\nReported privately by [tonghuaroot](https://github.com/tonghuaroot), who provided a detailed root-cause analysis, a deployed end-to-end pr",
+      "link": "https://github.com/advisories/GHSA-48v2-6jcm-fc99",
+      "published": "2026-11-03T17:27:25Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62331"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-11800",
+      "title": "Keycloak has authentication bypass via jwt algorithm confusion",
+      "summary": "### Description\nA flaw was found in Keycloak. This JWT algorithm confusion vulnerability in the JWT Authorization Grant flow allows an attacker with valid client credentials to bypass signature verification. By forging an assertion, the attacker can create unauthorized access tokens. This enables the attacker to impersonate any federated user linked to the affected Identity Provider, leading to unauthorized access and potential privilege escalation.",
+      "link": "https://github.com/advisories/GHSA-j97h-3f8r-mrjr",
+      "published": "2026-11-03T17:24:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-11800"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-62848",
+      "title": "Metalama: Unsafe deserialization over Metalama's Visual Studio inter-process named pipe enables local code execution",
+      "summary": "## Summary\n\nMetalama uses a local named-pipe channel to communicate between its Visual Studio processes \u2014 the Visual Studio UI process (`devenv`), the out-of-process Roslyn code-analysis process, and the CodeLens process. This channel deserialized messages from the pipe **without restricting which CLR types could be instantiated**. A local process able to write to the pipe can send a crafted message that instantiates arbitrary .NET types \u2014 a deserialization primitive in the same class as `BinaryFormatter` (CWE-502), and a well-known gadget-chain code-execution vector.\n\nThe flaw is present, via two successive serializers, in **every Metalama release from the first public version (2023.0) up to and including 2026.1.18**, and is fixed in **2026.1.19**.\n\nThe pipe name is predictable: `Metalama_{role}_{processId}_{hash(PackageVersion)}`, derived from the public package version and a locally-enumerable process id. This channel is used by the Visual Studio integration only (Windows named pipes); it is not used for command-line / MSBuild builds.\n\n## Mechanisms\n\n**JSON era \u2014 Metalama 2023.0 through 2026.0.x (Newtonsoft.Json).** The pipe formatter enabled polymorphic type embedding:\n```csharp\nformatter.JsonSerializer.TypeNameHandling = TypeNameHandling.All;   // ServiceEndpoint.cs (early), later BaseEndpoint.cs\n```\nThe accompanying `SerializationBinder` (added later for multi-version assembly support) only **remapped assembly names**; its `BindToType` resolved **any** type name from the wire (`assembly.GetType(typeName)`) with **no type allow-list**. `TypeNameHandling.All` is the canonical unsafe-deserialization setting and has publicly available gadget chains (e.g. ysoserial.net), so this era is at least as exploitable as the later one. (Introduced by commit `0554368737`, first shipped in `release/2023.0.101-rc`.)\n\n**MessagePack era \u2014 Metalama 2026.1.0 through 2026.1.18.** The 2026.1 line migrated the pipe serialization to MessagePack (PR #1299, commit `117b607805`, 2026-01-",
+      "link": "https://github.com/advisories/GHSA-h26j-4vp7-x9w2",
+      "published": "2026-11-03T16:37:44Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-62848"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+      "title": "Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access",
+      "summary": "Barracuda has disclosed details of two vulnerabilities affecting its products that, if chained together, could allow an attacker to bypass authorization controls and gain root access to a susceptible device.\n\nThe vulnerabilities, a pre-authentication authorization bypass vulnerability and a command injection vulnerability, have been assigned the CVE identifiers CVE-2026-116606 (CVSS score: 9.3)",
+      "link": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+      "published": "2026-11-03T15:59:19+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-116606"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
       "id": "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html",
       "title": "Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors",
       "summary": "A maximum-severity security flaw impacting Siemens SIMATIC IoT2050 Advanced devices has come under active exploitation, VulnCheck has revealed.\n\nThe vulnerability, tracked as CVE-2026-58115 (CVSS score: 10.0), is a case of missing authentication for a critical function that could be exploited by an unauthenticated remote attacker to run arbitrary code.\n\n\"SIMATIC IoT2050 Advanced devices running",
@@ -207,24 +333,6 @@
       ],
       "cve_ids": [
         "CVE-2026-58115"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62374",
-      "title": "SD JWT JS: Tampered disclosures silently dropped instead of rejected",
-      "summary": "## Summary\n\nWhen one Disclosure in an SD-JWT presentation is tampered so its digest no longer matches the Issuer-signed `_sd` array, `@sd-jwt/decode` 0.19.0 does **not** reject the presentation. It silently drops the unmatched Disclosure and returns a **reduced claim set**, reporting success. The Issuer signature is untouched and valid.\n\nThis is a downgrade/omission primitive. A malicious or curious **holder** can present a tampered Disclosure and have the relying party receive *fewer* claims than the credential carries, with no error surfaced. Where the relying party does **not** enforce key binding, an **in-transit (on-path) attacker** can achieve the same by mangling one Disclosure's bytes; where key binding **is** enforced, on-path tampering instead breaks the holder's KB-JWT `sd_hash` binding (so it is rejected), and the downgrade is then exercisable by the key-bound holder \u2014 confirmed end-to-end with KB required.\n\nTwo distinct tampering inputs converge on the same silent-drop sink:\n\n1. **Genuinely non-decodable Disclosure** (broken base64url -> bytes that are not valid UTF-8, e.g. an injected `0xF2` lead byte). RFC 9901 \u00a77.1 step 3 / \u00a74.2.1 require rejection. `@sd-jwt/decode` instead **lossy-decodes** it: the `TextDecoder`/`Buffer` path substitutes U+FFFD (REPLACEMENT CHARACTER) for the invalid byte and recovers a syntactically valid disclosure (the `salt` gains a U+FFFD, claim `family_name` = `\"Smith\"`). The recovered Disclosure then hashes to a digest **absent** from the signed `_sd` array, so it is silently skipped.\n2. **Tampered-but-still-valid-JSON Disclosure** (digest no longer matches `_sd`): same end state \u2014 the unmatched Disclosure is silently skipped.\n\nTwo RFC 9901 MUSTs compound:\n- **\u00a77.1 step 5 (primary):** \"If any Disclosure was not referenced by digest value in the Issuer-signed JWT (directly or recursively via other Disclosures), the SD-JWT MUST be rejected.\" \u2014 instead silently dropped.\n- **\u00a77.1 step 3 / \u00a74.2.1 (secondary):** a non-base64url-JSO",
-      "link": "https://github.com/advisories/GHSA-f9j6-8p6x-r9j6",
-      "published": "2026-11-02T17:54:39Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62374"
       ],
       "is_zero_day": false,
       "is_high_severity": true
