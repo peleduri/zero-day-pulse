@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-04 03:39 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-04 13:24 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -67,31 +67,16 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Synology NAS Devices Targeted in Ransomware Attacks Exploiting Patched DSM Flaw
+## 8. 🟠 Zero-Day — CISA flags WordPress RCE flaw as actively exploited in attacks
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/>
 
-> Synology is urging customers to update the DiskStation Manager (DSM) software powering its Network Attached Storage (NAS) devices following ransomware attacks.
-
-The Taiwanese vendor said it observed threat actors exploiting a vulnerability patched in December 2024 to target devices running outdated versions of DSM.
-
-&quot;These attacks aim to encrypt data and extort ransom,&quot; it said in a stat…
+> The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers have started exploiting a recently patched high-severity WordPress vulnerability in the wild. [...]
 
 ---
 
-## 9. 🟠 Zero-Day — Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials
-
-**CVE:** `CVE-2026-81648` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://thehackernews.com/2026/11/attackers-target-unpatched.html>
-
-> Threat actors are attempting to exploit an unpatched maximum-severity security vulnerability in the CryptoPayment Gateway WordPress plugin, according to findings from Defused Cyber.
-
-The vulnerability in question is CVE-2026-81648, which carries a CVSS score of 10.0. Successful exploitation of the flaw could permit unauthenticated users to delete arbitrary files on the server and extract
-
----
-
-## 10. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 9. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -100,12 +85,25 @@ The vulnerability in question is CVE-2026-81648, which carries a CVSS score of 1
 
 ---
 
-## 11. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 10. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
 
 > Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…
+
+---
+
+## 11. 🟡 High Severity — Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction
+
+**CVE:** `CVE-2026-58868` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html>
+
+> A critical Android flaw could allow an attacker to run code on a phone without any user action remotely, Google said in its November security bulletin.
+
+The flaw, CVE-2026-58868, affects Android 14 through 17. Phones get the fix with security patch level 2026-11-01 or later, which phone makers and carriers send on their own schedules.
+
+As of November 4, Google&#x27;s bulletin did not report
 
 ---
 
@@ -176,20 +174,7 @@ The vulnerabilities, a pre-authentication authorization bypass vulnerability and
 
 ---
 
-## 18. 🟡 High Severity — Attackers Exploit Critical Siemens IoT2050 Flaw to Plant Remote Command Backdoors
-
-**CVE:** `CVE-2026-58115` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html>
-
-> A maximum-severity security flaw impacting Siemens SIMATIC IoT2050 Advanced devices has come under active exploitation, VulnCheck has revealed.
-
-The vulnerability, tracked as CVE-2026-58115 (CVSS score: 10.0), is a case of missing authentication for a critical function that could be exploited by an unauthenticated remote attacker to run arbitrary code.
-
-&quot;SIMATIC IoT2050 Advanced devices runni…
-
----
-
-## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
