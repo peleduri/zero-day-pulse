@@ -1,19 +1,28 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-04 13:24 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 8 &nbsp;|&nbsp; 🟡 High: 10 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-04 22:58 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2024-27834 — Apple Multiple Products Improper Authentication Vulnerability
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
-**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
+**CVE:** `CVE-2024-27834` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2024-27834>
 
-> Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…
+> Vendor: Apple | Product: Multiple Products. Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates…
 
 ---
 
-## 2. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 2. 🟠 Zero-Day — SonicWall warns of unpatched flaws in end-of-life GMS software
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/>
+
+> SonicWall warned customers of two security flaws affecting end-of-life Global Management System (GMS) systems that will not be patched. [...]
+
+---
+
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -22,7 +31,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -31,7 +40,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -40,7 +49,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -49,7 +58,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -58,16 +67,29 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Zyxel fixes zero-day exploited to hack nearly 1,000 network switches
 
-**CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
-**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/>
 
-> Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …
+> Zyxel has patched a zero-day vulnerability in its GS1900 series network switches that hackers exploited to compromise nearly 1,000 devices worldwide and steal configuration files and credentials. [...]
 
 ---
 
-## 8. 🟠 Zero-Day — CISA flags WordPress RCE flaw as actively exploited in attacks
+## 9. 🟠 Zero-Day — Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html>
+
+> Cybersecurity researchers have disclosed details of an OpenAI Codex jailbreak bundle that&#x27;s designed to modify an artificial intelligence (AI) agent&#x27;s trusted instructions to insert advertisements for a third-party AI gateway.
+
+The phenomenon has been codenamed prompt adware by Check Point Research.
+
+Called Haiou (meaning Seagull in Chinese), the jailbreak modifies OpenAI Codex&#x27;s co…
+
+---
+
+## 10. 🟠 Zero-Day — CISA flags WordPress RCE flaw as actively exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/>
@@ -76,25 +98,43 @@
 
 ---
 
-## 9. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 11. 🟡 High Severity — Arc: DuckDB I/O aliases bypass database RBAC after CVE-2026-47735
 
-**CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
-**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
+**CVE:** `CVE-2026-55098` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://github.com/advisories/GHSA-93cm-2v4m-c56c>
 
-> Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and s…
+> ### Summary
 
----
-
-## 10. 🟡 High Severity — #StopRansomware: SafePay Ransomware
-
-**CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
-**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
-
-> Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…
+The fix for CVE-2026-47735 (released 2026.06.1) is incomplete. It added a DuckDB sandbox (`SET GLOBAL allowed_directories=[&lt;storage root&gt;]; SET GLOBAL enable_external_access=false`) and an Arc SQL-layer denylist of the **literal** functions `read_parquet(` and `arc_partition_agg(`. The sandbox correctly blocks reads **outside** the storage root (OS files, `http://` SSRF), but it…
 
 ---
 
-## 11. 🟡 High Severity — Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction
+## 12. 🟡 High Severity — SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records
+
+**CVE:** `CVE-2026-109593` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html>
+
+> SonicWall has warned of two vulnerabilities impacting end-of-life Global Management System (GMS) systems that it said will not be patched.
+
+Details of the security flaws, which affect SonicWall GMS 9.5.2 and earlier versions, are below -
+
+
+  CVE-2026-109593 (CVSS score: 9.1) - An unauthenticated file read vulnerability that could allow an attacker with network access to read internal GMS files,
+
+---
+
+## 13. 🟡 High Severity — odf-kit: HTML injection leading to XSS in odtToHtml() and odsToHtml() via unescaped style attribute values
+
+**CVE:** `CVE-2026-113787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
+**Reference:** <https://github.com/advisories/GHSA-3cgg-c5pp-57h6>
+
+> ### Summary
+
+ODF style attribute values are interpolated into `style=&quot;...&quot;` attributes without HTML-escaping in **both** of odf-kit&#x27;s to-HTML renderers (`odtToHtml` and `odsToHtml`). A double-quote character inside an attacker-controlled style value breaks out of the attribute, allowing arbitrary HTML/attribute injection — and therefore script execution (XSS) — from a crafted `.odt`…
+
+---
+
+## 14. 🟡 High Severity — Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction
 
 **CVE:** `CVE-2026-58868` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html>
@@ -107,74 +147,7 @@ As of November 4, Google&#x27;s bulletin did not report
 
 ---
 
-## 12. 🟡 High Severity — Elo Ruby backend has Remote Code Execution via unescaped `#{...}` interpolation in emitted string literals and subtype-constraint labels
-
-**CVE:** `CVE-2026-44266` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://github.com/advisories/GHSA-7w38-ggh5-v542>
-
-> ### Summary
-
-Elo&#x27;s Ruby backend emits attacker-controlled text into Ruby double-quoted strings without escaping the `#` character. Because `#` begins Ruby&#x27;s interpolation sequences — `#{expr}`, `#@ivar`, `#@@cvar`, `#$gvar` — and any expression wrapped in `#{...}` may use backticks for shell execution, an Elo program that contains a crafted string literal or a labelled subtype constraint…
-
----
-
-## 13. 🟡 High Severity — Elo backends have code injection via unvalidated emission of programmatic AST fields
-
-**CVE:** `CVE-2026-44265` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://github.com/advisories/GHSA-x9rp-7wh3-2rj5>
-
-> ### Summary
-
-Elo&#x27;s programmatic AST API accepts arbitrary values in many node fields without runtime type or syntax validation. Each backend&#x27;s emit stage interpolates those values straight into the generated source with no escape pass. An integrator that populates the AST from JSON-deserialised input, plugin output, or any other untyped source therefore exposes a code-injection primitive…
-
----
-
-## 14. 🟡 High Severity — praktor: Path traversal in Telegram file uploads allows writing outside the agent workspace uploads/ directory (stored instruction injection)
-
-**CVE:** `CVE-2026-62331` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://github.com/advisories/GHSA-48v2-6jcm-fc99>
-
-> ### Impact
-
-A remote Telegram user can write files to arbitrary paths inside an agent&#x27;s persistent workspace volume (`praktor-wk-&lt;workspace&gt;`, mounted at `/workspace/agent`), escaping the documented `uploads/` directory.
-
-The attacker controls the Telegram document filename, which was concatenated into the destination path without sanitization (`internal/telegram/bot.go`, at both upload…
-
----
-
-## 15. 🟡 High Severity — Keycloak has authentication bypass via jwt algorithm confusion
-
-**CVE:** `CVE-2026-11800` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://github.com/advisories/GHSA-j97h-3f8r-mrjr>
-
-> ### Description
-A flaw was found in Keycloak. This JWT algorithm confusion vulnerability in the JWT Authorization Grant flow allows an attacker with valid client credentials to bypass signature verification. By forging an assertion, the attacker can create unauthorized access tokens. This enables the attacker to impersonate any federated user linked to the affected Identity Provider, leading to un…
-
----
-
-## 16. 🟡 High Severity — Metalama: Unsafe deserialization over Metalama's Visual Studio inter-process named pipe enables local code execution
-
-**CVE:** `CVE-2026-62848` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://github.com/advisories/GHSA-h26j-4vp7-x9w2>
-
-> ## Summary
-
-Metalama uses a local named-pipe channel to communicate between its Visual Studio processes — the Visual Studio UI process (`devenv`), the out-of-process Roslyn code-analysis process, and the CodeLens process. This channel deserialized messages from the pipe **without restricting which CLR types could be instantiated**. A local process able to write to the pipe can send a crafted messa…
-
----
-
-## 17. 🟡 High Severity — Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access
-
-**CVE:** `CVE-2026-116606` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-03
-**Reference:** <https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html>
-
-> Barracuda has disclosed details of two vulnerabilities affecting its products that, if chained together, could allow an attacker to bypass authorization controls and gain root access to a susceptible device.
-
-The vulnerabilities, a pre-authentication authorization bypass vulnerability and a command injection vulnerability, have been assigned the CVE identifiers CVE-2026-116606 (CVSS score: 9.3)
-
----
-
-## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>

@@ -1,20 +1,39 @@
 {
-  "generated": "2026-11-04T13:24:23.178071+00:00",
-  "total": 18,
-  "kev": 0,
-  "zero_day": 8,
+  "generated": "2026-11-04T22:58:00.999754+00:00",
+  "total": 15,
+  "kev": 1,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-      "title": "Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting",
-      "summary": "Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) builds on FBI\u2019s Russian Government Cyber Actors Targeting Networking Devices, Critical Infrastructure Public Service Announcement of the decade-plus FSB Center 16 cyber activity by providing additional tactics, techniques, and procedures (TTPs) to enable defenders to more fully understand and counter the threat. [ 1 ] This CSA is being released by the following authoring and co-sealing agencies: United States National Security Agency (NSA) United States Cybersecurity and Infrastructure Security Agency (CISA) United States Federal Bureau of Investigation (FBI) United States Department of Defense Cyber Crime Center (DC3) Australian Signals Directorate\u2019s Australian Cyber Security Centre (ASD\u2019s ACSC) Communications Security Establishment Canada\u2019s (CSE\u2019s) Canadian Centre for Cyber Security (Cyber Centre) New Zealand National Cyber Security Centre (NCSC-NZ) United Kingdom National Cyber Security Centre (NCSC-UK) Czech Republic National Cyber and Information Security Agency (N\u00daKIB) 1 Danish Defence Intelligence Service (DDIS) 2 Estonian Foreign Intelligence Service (EFIS) 3 Estonian Information System Authority (RIA) 4 Finnish Defence Intelligence (FDI) 5 Finnish Security and Intelligence Service (SUPO) 6 French National Cybersecurity Agency (ANSSI) 7 Italian External Intelligence and Security Agency (AISE) 8 Italian Internal Intelligence and Security Agency (AISI) 9 The Military Counterintelligence Service of Poland (SKW) 10 Sweden National Cyber Security Centre (NCSC-SE) 11 The authoring and co-sealing agencies strongly urge device owners and network defenders to take mitigation and ",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a",
-      "published": "Wed, 08 Jul 2026 14:43:49 EDT",
-      "source": "CISA US-CERT Alerts",
+      "id": "CVE-2024-27834",
+      "title": "CVE-2024-27834 \u2014 Apple Multiple Products Improper Authentication Vulnerability",
+      "summary": "Vendor: Apple | Product: Multiple Products. Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines. (due 2026-11-18)",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2024-27834",
+      "published": "2026-11-04",
+      "source": "CISA KEV",
       "tags": [
         "cisa",
-        "ics"
+        "kev",
+        "actively-exploited"
+      ],
+      "cve_ids": [
+        "CVE-2024-27834"
+      ],
+      "is_kev": true,
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/",
+      "title": "SonicWall warns of unpatched flaws in end-of-life GMS software",
+      "summary": "SonicWall warned customers of two security flaws affecting end-of-life Global Management System (GMS) systems that will not be patched. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/",
+      "published": "2026-11-04T14:42:25+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -101,19 +120,32 @@
       "is_high_severity": true
     },
     {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-      "title": "Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite",
-      "summary": "Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat (APT) group\u2019s activity is tracked in the cybersecurity community under several names (see Cybersecurity industry tracking ), primarily as \u201cLAUNDRY BEAR,\u201d a name initially coined by the Netherlands General Intelligence and Security Service (AIVD) and Defence Intelligence and Security Service (MIVD) [ 1 ]. LAUNDRY BEAR\u2019s targeting is almost certainly to gather sensitive information for the Russian Federation, with these actors primarily focusing on the covert acquisition of email data. Previous campaigns indicated LAUNDRY BEAR relied on unsophisticated initial access techniques\u2014including password spraying, phishing, and pass-the-cookie\u2014allowing the group to successfully run high-volume operations. The latest campaign targeting ZCS uses a novel exploit that was a zero-day vulnerability when first exploited and continues to be successfully exploited. The vulnerability, Common Vulnerabilities and Exposures (CVE) CVE-2025-66376 , was patched in November 2025. This demonstrates LAUNDRY BEAR\u2019s intent and ability to deploy increasingly sophisticated technical capabilities. Unlike traditional phishing campaigns that persuade a user into taking an action, such as clicking a link or opening a file, LAUNDRY BEAR\u2019s latest campaign leverages a view-based exploit that only requires a user to view a malicious email within a vulnerable version of the webmail service. Once viewed, the exploit attempts to exfiltrate the victim\u2019s last 90 days of email communications, the organization email directory (i.e., Global Address List [GAL]), and other sensitive information to servers controlled by LAUN",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a",
-      "published": "Tue, 21 Jul 2026 15:08:02 EDT",
-      "source": "CISA US-CERT Alerts",
+      "id": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/",
+      "title": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches",
+      "summary": "Zyxel has patched a zero-day vulnerability in its GS1900 series network switches that hackers exploited to compromise nearly 1,000 devices worldwide and steal configuration files and credentials. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/",
+      "published": "2026-11-04T20:58:19+00:00",
+      "source": "Bleeping Computer",
       "tags": [
-        "cisa",
-        "ics"
+        "news",
+        "malware"
       ],
-      "cve_ids": [
-        "CVE-2025-66376"
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html",
+      "title": "Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit",
+      "summary": "Cybersecurity researchers have disclosed details of an OpenAI Codex jailbreak bundle that's designed to modify an artificial intelligence (AI) agent's trusted instructions to insert advertisements for a third-party AI gateway.\n\nThe phenomenon has been codenamed prompt adware by Check Point Research.\n\nCalled Haiou (meaning Seagull in Chinese), the jailbreak modifies OpenAI Codex's configuration",
+      "link": "https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html",
+      "published": "2026-11-04T16:06:43+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
       ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
@@ -133,46 +165,54 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
-      "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
-      "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
-      "published": "Tue, 06 Oct 2026 12:22:53 EDT",
-      "source": "CISA US-CERT Alerts",
+      "id": "CVE-2026-55098",
+      "title": "Arc: DuckDB I/O aliases bypass database RBAC after CVE-2026-47735",
+      "summary": "### Summary\n\nThe fix for CVE-2026-47735 (released 2026.06.1) is incomplete. It added a DuckDB sandbox (`SET GLOBAL allowed_directories=[<storage root>]; SET GLOBAL enable_external_access=false`) and an Arc SQL-layer denylist of the **literal** functions `read_parquet(` and `arc_partition_agg(`. The sandbox correctly blocks reads **outside** the storage root (OS files, `http://` SSRF), but it allowlists the **entire multi-tenant storage root**, and the SQL denylist still misses the rest of the DuckDB I/O family the original advisory enumerated. As a result, any authenticated token \u2014 including one with `permissions: []` \u2014 can read or enumerate **every other database's data** within the deployment, defeating RBAC.\n\nVerified at HEAD `c08b892` (`v26.06.1-36`, includes 26.06.2). Confirmed still live; no later commit blocks these functions.\n\n### Root cause (three composing gaps)\n\n1. **Sandbox scope is the whole storage root, not the tenant.** `internal/database/sandbox.go:111` allowlists `cfg.LocalStorageRoot` (default `storage.local_path=./data/arc`). Every database lives under it \u2014 `internal/storage/util.go:33` `GetStoragePath` => `<base>/<database>/<measurement>/**/*.parquet`. Any in-root path is sandbox-permitted regardless of which database owns it.\n2. **RBAC never inspects table-valued functions.** `checkQueryPermissions` (`internal/api/query.go:1181`) extracts table refs via `extractTableReferences`, which skips any name followed by `(` as a function (`internal/api/query.go:1116`); with zero refs it returns allow (`:1213-1216`). So `parquet_scan(...)`, `glob(...)`, `parquet_metadata(...)`, `read_blob(...)`, `read_csv_auto(...)` are never authorization-checked.\n3. **The SQL denylist matches only the literal spelling.** `userSQLReadParquetPattern` (`internal/api/query.go:2087`) is `\\bread_parquet\\s*\\(`. DuckDB's documented alias **`parquet_scan(`** is not matched, and `read_csv_auto`/`read_json`/`read_text`/`read_blob`/`glob`/`parquet_metadata`/`parquet_schema` are no",
+      "link": "https://github.com/advisories/GHSA-93cm-2v4m-c56c",
+      "published": "2026-11-04T17:02:37Z",
+      "source": "GitHub Security Advisories",
       "tags": [
-        "cisa",
-        "ics"
+        "github",
+        "advisories",
+        "oss"
       ],
       "cve_ids": [
-        "CVE-2014-6278",
-        "CVE-2015-3306",
-        "CVE-2015-5477",
-        "CVE-2016-3081",
-        "CVE-2019-11510",
-        "CVE-2021-22205",
-        "CVE-2021-3199",
-        "CVE-2023-22894"
+        "CVE-2026-55098"
       ],
       "is_zero_day": false,
       "is_high_severity": true
     },
     {
-      "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
-      "title": "#StopRansomware: SafePay Ransomware",
-      "summary": "Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to networks by stealing or guessing passwords, exploiting vulnerabilities in security systems, and using phishing tactics. Once inside the network, SafePay actors establish control by creating new accounts or taking over existing ones. They then use legitimate system tools to move through the network, identify valuable files, and disable security protections to avoid detection. Next, they encrypt the victim\u2019s files, making them inaccessible, and leave a ransom note demanding payment in cryptocurrency. This advisory urges organizations to follow recommended security measures to reduce the risk and impact of SafePay ransomware attacks. Affected Products CVE-2020-3259 [ Common Weakness Enumeration (CWE)-200: Exposure of Sensitive Information to an Unauthorized Actor ] CVE-2023-20269 [ CWE-288: Authentication Bypass Using an Alternate Path or Channel ] CVE-2023-27532 [ CWE-306: Missing Authentication for Critical Function ] CVE-2024-40711 [ CWE-502: Deserialization of Untrusted Data ] CVE-2024-40766 [ CWE-284: Improper Access Control ] Key Actions Regularly patch and update systems, especially firewalls, and other edge devices. Implement Zero Trust Principle. Restrict administrative tools and privileges to necessary users only. Strengthen account security by implementing identity, credential, and access management (ICAM) policies and multifactor authentication (MFA). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-293A STIX XML (40 KB) AA26-293A STIX JSON (38 KB) Intended Audience Organizations: Government; Federal Civilian Executive Branch (FC",
-      "link": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
-      "published": "Mon, 19 Oct 2026 15:18:07 EDT",
-      "source": "CISA US-CERT Alerts",
+      "id": "https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html",
+      "title": "SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records",
+      "summary": "SonicWall has warned of two vulnerabilities impacting end-of-life Global Management System (GMS) systems that it said will not be patched.\n\nDetails of the security flaws, which affect SonicWall GMS 9.5.2 and earlier versions, are below -\n\n\n  CVE-2026-109593 (CVSS score: 9.1) - An unauthenticated file read vulnerability that could allow an attacker with network access to read internal GMS files,",
+      "link": "https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html",
+      "published": "2026-11-04T17:00:38+00:00",
+      "source": "The Hacker News Security",
       "tags": [
-        "cisa",
-        "ics"
+        "news",
+        "zeroday"
       ],
       "cve_ids": [
-        "CVE-2020-3259",
-        "CVE-2023-20269",
-        "CVE-2023-27532",
-        "CVE-2024-40711",
-        "CVE-2024-40766"
+        "CVE-2026-109593"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-113787",
+      "title": "odf-kit: HTML injection leading to XSS in odtToHtml() and odsToHtml() via unescaped style attribute values",
+      "summary": "### Summary\n\nODF style attribute values are interpolated into `style=\"...\"` attributes without HTML-escaping in **both** of odf-kit's to-HTML renderers (`odtToHtml` and `odsToHtml`). A double-quote character inside an attacker-controlled style value breaks out of the attribute, allowing arbitrary HTML/attribute injection \u2014 and therefore script execution (XSS) \u2014 from a crafted `.odt` or `.ods` file wherever the rendered output is inserted as HTML, which is the documented purpose of both functions.\n\n### Details\n\n#### ODT renderer (`src/odt/to-html/html-renderer.ts`)\n\nThe renderer has an `escapeHtml()` helper and applies it consistently to text content and to attribute values \u2014 `href`, `src`, `alt`, `id`, `data-author`, `data-date`, citation text all go through it. The inline CSS strings do not.\n\nIn `renderTextSpan` (dist/odt/to-html/html-renderer.js:195):\n\n```js\nconst css = spanStyleToCss(span.style);\nif (css)\n    html = `<span style=\"${css}\">${html}</span>`;\n```\n\nThe value of e.g. `fo:color` is copied from the document into `style.fontColor` verbatim by the parser (`extractSpanStyle`, read/parser.js:348), then concatenated raw into the attribute. A `\"` in the value terminates the attribute early.\n\nThe same unescaped `style=\"${...}\"` pattern appears at roughly ten other emission sites: paragraph and heading (`paragraphStyleToCss`), table cells and rows (`cellStyleToCss`, `rowStyleToCss`), `<col>`, and the image style attribute. The affected source attributes include `fo:color`, `fo:background-color`, `fo:text-shadow`, `fo:letter-spacing`, `fo:font-family` (via both direct and font-face resolution), `fo:margin-*`, `fo:padding-*`, `fo:line-height`, `fo:border*`, and `style:vertical-align`.\n\n#### ODS renderer (`src/ods/to-html/html-renderer.ts`) \u2014 same bug\n\n`buildInlineStyle()` assembles the CSS string from cell formatting properties \u2014 `fo:color`, `fo:font-size`, `fo:font-family`, `fo:background-color`, `fo:text-align`, etc. \u2014 with zero `escapeHtml` calls, and `renderCel",
+      "link": "https://github.com/advisories/GHSA-3cgg-c5pp-57h6",
+      "published": "2026-11-04T16:14:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-113787"
       ],
       "is_zero_day": false,
       "is_high_severity": true
@@ -190,113 +230,6 @@
       ],
       "cve_ids": [
         "CVE-2026-58868"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44266",
-      "title": "Elo Ruby backend has Remote Code Execution via unescaped `#{...}` interpolation in emitted string literals and subtype-constraint labels",
-      "summary": "### Summary\n\nElo's Ruby backend emits attacker-controlled text into Ruby double-quoted strings without escaping the `#` character. Because `#` begins Ruby's interpolation sequences \u2014 `#{expr}`, `#@ivar`, `#@@cvar`, `#$gvar` \u2014 and any expression wrapped in `#{...}` may use backticks for shell execution, an Elo program that contains a crafted string literal or a labelled subtype constraint compiles to Ruby that evaluates attacker-chosen Ruby, and through backticks runs attacker-chosen shell commands, at runtime.\n\nThe same Elo source compiled to JavaScript, Python, or SQL is benign, so the bug also breaks the cross-target portability guarantee the rest of the compiler honours.\n\n### Vulnerable sinks\n\nTwo sinks exist in `src/compilers/ruby.ts` at commit `749af7b`:\n\n1. **String-literal emitter \u2014 lines 180\u2013184.**\n   The emitter escapes backslash, double quote, and control characters, but not `#`. Any `#{...}` sequence in an Elo string literal flows straight into the emitted Ruby source.\n\n2. **Labelled subtype-constraint branch \u2014 lines 405\u2013412.**\n   The error message passed to `p_fail(p, \"...\")` is wrapped in a Ruby double-quoted string with no escape pass at all. Because the parser at `src/parser.ts:1339\u20131348` accepts single-quoted Elo strings as constraint labels, a label such as `'#{` `` `id` `` `}'` flows unchanged into the emitted Ruby.\n\n### Attack surfaces\n\nAll three surfaces share the same root cause (the missing `#` escape in the Ruby double-quoted-string emission path) and are addressed by the same patch:\n\n| # | Entry point | Threat model |\n|---|---|---|\n| 1 | `/try` playground on elo-lang.org (Ruby target) | 0-click server-side RCE against elo-lang.org infrastructure from a shared PoC URL |\n| 2 | `bin/eloc -t ruby -x` on a CI or DevOps host | RCE on any host that passes Elo strings through the CLI |\n| 3 | Library API \u2014 `defaultFormats.elo.parse()` with a Ruby emission step | Ruby RCE for any downstream integrator using Elo as a rule engine, configuration DSL, or f",
-      "link": "https://github.com/advisories/GHSA-7w38-ggh5-v542",
-      "published": "2026-11-03T17:51:30Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44266"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-44265",
-      "title": "Elo backends have code injection via unvalidated emission of programmatic AST fields",
-      "summary": "### Summary\n\nElo's programmatic AST API accepts arbitrary values in many node fields without runtime type or syntax validation. Each backend's emit stage interpolates those values straight into the generated source with no escape pass. An integrator that populates the AST from JSON-deserialised input, plugin output, or any other untyped source therefore exposes a code-injection primitive that flows through to the emitted JavaScript, Ruby, Python, or SQL.\n\nThe same pattern was previously addressed in **0.9.7 (2026-01-27)**, which patched the date/datetime/duration literal emitters via `JSON.stringify()` after a report by **naoyashiga**. This advisory generalises that fix to the remaining AST surface \u2014 at least 23 emission sites across six node-field categories and four backends.\n\n### Vulnerable sinks\n\nEach row is a category of sinks that share the same shape: TypeScript signature erased at runtime \u2192 AST-API consumer passes a crafted value \u2192 emit interpolates the value verbatim.\n\n| # | AST field | Affected backends | Resulting injection |\n|---|---|---|---|\n| 1 | `int_literal` / `float_literal` `.value` | JS, Ruby, Python, SQL | Arbitrary expression in the emitted numeric position (RCE on JS/Ruby/Python; SQL expression injection) |\n| 2 | `variable.name` | JS, Ruby, Python, SQL | Identifier-position injection; on SQL, raw SQL injection because undefined identifiers are intentionally emitted as column references |\n| 3 | `member_access.property` | JS, Ruby, Python, SQL | Property access escaped into expression (RCE) |\n| 4 | `object_literal` key | JS, Ruby, SQL | Computed-key / extra-property injection (RCE on JS/Ruby; SQL injection) |\n| 5 | `datapath` segment | JS, Ruby, Python, SQL | Ruby symbol-list injection allows backtick shell exec; SQL string-segment unquoted in single-quote context allows SQL injection |\n| 6 | `lambda.params[].name` | JS, Ruby, Python | Parameter-list structural injection (RCE) |\n| 7 | SQL `let` binding `name` | SQL | Identifier injection in `\u2026 AS",
-      "link": "https://github.com/advisories/GHSA-x9rp-7wh3-2rj5",
-      "published": "2026-11-03T17:48:09Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-44265"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62331",
-      "title": "praktor: Path traversal in Telegram file uploads allows writing outside the agent workspace uploads/ directory (stored instruction injection)",
-      "summary": "### Impact\n\nA remote Telegram user can write files to arbitrary paths inside an agent's persistent workspace volume (`praktor-wk-<workspace>`, mounted at `/workspace/agent`), escaping the documented `uploads/` directory.\n\nThe attacker controls the Telegram document filename, which was concatenated into the destination path without sanitization (`internal/telegram/bot.go`, at both upload sites) and resolved with `path.Join`, which collapses `../` sequences. A filename like `../../../CLAUDE.md` resolved to the root of the agent workspace volume, outside `uploads/`.\n\nBecause the agent workspace is the persistent working directory the Claude agent reads from and operates on across runs, writing outside `uploads/` lets an attacker plant or overwrite files the agent later consumes \u2014 e.g. `CLAUDE.md`, agent instruction/skill/hook files, or other config under `/workspace/agent`. This turns a file upload into a stored injection into the agent's instruction/execution surface (CWE-22 path traversal escalating to stored instruction injection).\n\n### Reachability\n\nBy default the bot has no user allowlist (`allow_from: []` means \"allow all\"), so the only precondition is that a user can message the bot. No authentication or prior privilege is required.\n\n### Affected versions\n\nThrough `v0.9.0` (and HEAD `3902d29`).\n\n### Patched versions\n\n`v0.9.1`, containing PR #228.\n\n### Workarounds\n\nRestrict `telegram.allow_from` to trusted user IDs to limit who can send uploads to the bot. Upgrading to `v0.9.1` is the recommended fix.\n\n### Fix (defense in depth)\n\n- `internal/telegram/bot.go`: apply `path.Base()` to the attacker-controlled filename at both upload sites, stripping directory components and `..`.\n- `internal/container/manager.go`: `WriteVolumeBytes` now rejects any path that escapes `/vol` after `path.Join`, protecting future callers.\n\n### Credit\n\nReported privately by [tonghuaroot](https://github.com/tonghuaroot), who provided a detailed root-cause analysis, a deployed end-to-end pr",
-      "link": "https://github.com/advisories/GHSA-48v2-6jcm-fc99",
-      "published": "2026-11-03T17:27:25Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62331"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-11800",
-      "title": "Keycloak has authentication bypass via jwt algorithm confusion",
-      "summary": "### Description\nA flaw was found in Keycloak. This JWT algorithm confusion vulnerability in the JWT Authorization Grant flow allows an attacker with valid client credentials to bypass signature verification. By forging an assertion, the attacker can create unauthorized access tokens. This enables the attacker to impersonate any federated user linked to the affected Identity Provider, leading to unauthorized access and potential privilege escalation.",
-      "link": "https://github.com/advisories/GHSA-j97h-3f8r-mrjr",
-      "published": "2026-11-03T17:24:27Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-11800"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "CVE-2026-62848",
-      "title": "Metalama: Unsafe deserialization over Metalama's Visual Studio inter-process named pipe enables local code execution",
-      "summary": "## Summary\n\nMetalama uses a local named-pipe channel to communicate between its Visual Studio processes \u2014 the Visual Studio UI process (`devenv`), the out-of-process Roslyn code-analysis process, and the CodeLens process. This channel deserialized messages from the pipe **without restricting which CLR types could be instantiated**. A local process able to write to the pipe can send a crafted message that instantiates arbitrary .NET types \u2014 a deserialization primitive in the same class as `BinaryFormatter` (CWE-502), and a well-known gadget-chain code-execution vector.\n\nThe flaw is present, via two successive serializers, in **every Metalama release from the first public version (2023.0) up to and including 2026.1.18**, and is fixed in **2026.1.19**.\n\nThe pipe name is predictable: `Metalama_{role}_{processId}_{hash(PackageVersion)}`, derived from the public package version and a locally-enumerable process id. This channel is used by the Visual Studio integration only (Windows named pipes); it is not used for command-line / MSBuild builds.\n\n## Mechanisms\n\n**JSON era \u2014 Metalama 2023.0 through 2026.0.x (Newtonsoft.Json).** The pipe formatter enabled polymorphic type embedding:\n```csharp\nformatter.JsonSerializer.TypeNameHandling = TypeNameHandling.All;   // ServiceEndpoint.cs (early), later BaseEndpoint.cs\n```\nThe accompanying `SerializationBinder` (added later for multi-version assembly support) only **remapped assembly names**; its `BindToType` resolved **any** type name from the wire (`assembly.GetType(typeName)`) with **no type allow-list**. `TypeNameHandling.All` is the canonical unsafe-deserialization setting and has publicly available gadget chains (e.g. ysoserial.net), so this era is at least as exploitable as the later one. (Introduced by commit `0554368737`, first shipped in `release/2023.0.101-rc`.)\n\n**MessagePack era \u2014 Metalama 2026.1.0 through 2026.1.18.** The 2026.1 line migrated the pipe serialization to MessagePack (PR #1299, commit `117b607805`, 2026-01-",
-      "link": "https://github.com/advisories/GHSA-h26j-4vp7-x9w2",
-      "published": "2026-11-03T16:37:44Z",
-      "source": "GitHub Security Advisories",
-      "tags": [
-        "github",
-        "advisories",
-        "oss"
-      ],
-      "cve_ids": [
-        "CVE-2026-62848"
-      ],
-      "is_zero_day": false,
-      "is_high_severity": true
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
-      "title": "Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access",
-      "summary": "Barracuda has disclosed details of two vulnerabilities affecting its products that, if chained together, could allow an attacker to bypass authorization controls and gain root access to a susceptible device.\n\nThe vulnerabilities, a pre-authentication authorization bypass vulnerability and a command injection vulnerability, have been assigned the CVE identifiers CVE-2026-116606 (CVSS score: 9.3)",
-      "link": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
-      "published": "2026-11-03T15:59:19+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [
-        "CVE-2026-116606"
       ],
       "is_zero_day": false,
       "is_high_severity": true
