@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-04 22:58 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-05 03:58 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2024-27834 — Apple Multiple Products Improper Authentication Vulnerability
-
-**CVE:** `CVE-2024-27834` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2024-27834>
-
-> Vendor: Apple | Product: Multiple Products. Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates…
-
----
-
-## 2. 🟠 Zero-Day — SonicWall warns of unpatched flaws in end-of-life GMS software
+## 1. 🟠 Zero-Day — SonicWall warns of unpatched flaws in end-of-life GMS software
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/>
@@ -22,7 +13,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 2. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -31,7 +22,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 3. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -40,7 +31,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 4. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -49,7 +40,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 5. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -58,7 +49,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 6. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -67,7 +58,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Zyxel fixes zero-day exploited to hack nearly 1,000 network switches
+## 7. 🟠 Zero-Day — Zyxel fixes zero-day exploited to hack nearly 1,000 network switches
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/>
@@ -76,7 +67,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit
+## 8. 🟠 Zero-Day — Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html>
@@ -89,7 +80,7 @@ Called Haiou (meaning Seagull in Chinese), the jailbreak modifies OpenAI Codex&#
 
 ---
 
-## 10. 🟠 Zero-Day — CISA flags WordPress RCE flaw as actively exploited in attacks
+## 9. 🟠 Zero-Day — CISA flags WordPress RCE flaw as actively exploited in attacks
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/>
@@ -98,7 +89,7 @@ Called Haiou (meaning Seagull in Chinese), the jailbreak modifies OpenAI Codex&#
 
 ---
 
-## 11. 🟡 High Severity — Arc: DuckDB I/O aliases bypass database RBAC after CVE-2026-47735
+## 10. 🟡 High Severity — Arc: DuckDB I/O aliases bypass database RBAC after CVE-2026-47735
 
 **CVE:** `CVE-2026-55098` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://github.com/advisories/GHSA-93cm-2v4m-c56c>
@@ -109,7 +100,7 @@ The fix for CVE-2026-47735 (released 2026.06.1) is incomplete. It added a DuckDB
 
 ---
 
-## 12. 🟡 High Severity — SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records
+## 11. 🟡 High Severity — SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records
 
 **CVE:** `CVE-2026-109593` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html>
@@ -123,7 +114,7 @@ Details of the security flaws, which affect SonicWall GMS 9.5.2 and earlier vers
 
 ---
 
-## 13. 🟡 High Severity — odf-kit: HTML injection leading to XSS in odtToHtml() and odsToHtml() via unescaped style attribute values
+## 12. 🟡 High Severity — odf-kit: HTML injection leading to XSS in odtToHtml() and odsToHtml() via unescaped style attribute values
 
 **CVE:** `CVE-2026-113787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://github.com/advisories/GHSA-3cgg-c5pp-57h6>
@@ -134,7 +125,7 @@ ODF style attribute values are interpolated into `style=&quot;...&quot;` attribu
 
 ---
 
-## 14. 🟡 High Severity — Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction
+## 13. 🟡 High Severity — Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction
 
 **CVE:** `CVE-2026-58868` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html>
@@ -147,7 +138,7 @@ As of November 4, Google&#x27;s bulletin did not report
 
 ---
 
-## 15. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
