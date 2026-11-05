@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-05 03:58 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 9 &nbsp;|&nbsp; 🟡 High: 5 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-05 13:38 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 4 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -58,7 +58,29 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Zyxel fixes zero-day exploited to hack nearly 1,000 network switches
+## 7. 🟠 Zero-Day — Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day
+
+**CVE:** `CVE-2026-107441` &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-05
+**Reference:** <https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/>
+
+> Tracked as CVE-2026-107441, the out-of-bounds write flaw could allow attackers to execute OS commands via crafted HTTP requests. The post Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day appeared first on SecurityWeek .
+
+---
+
+## 8. 🟠 Zero-Day — Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-05
+**Reference:** <https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html>
+
+> Zyxel GS1900 network switches that received the vendor&#x27;s earlier fix for an actively exploited flaw are still open to the exploit attackers used, researchers at Binarly found.
+
+The exploit lets anyone who can reach a switch&#x27;s web management interface run commands on it without logging in. Zyxel has released new firmware for 10 GS1900 models that closes the hole.
+
+The earlier fix is the 2…
+
+---
+
+## 9. 🟠 Zero-Day — Zyxel fixes zero-day exploited to hack nearly 1,000 network switches
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/>
@@ -67,7 +89,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit
+## 10. 🟠 Zero-Day — Researchers Uncover Prompt Adware Hidden in OpenAI Codex Jailbreak Toolkit
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://thehackernews.com/2026/11/researchers-uncover-prompt-adware.html>
@@ -80,16 +102,7 @@ Called Haiou (meaning Seagull in Chinese), the jailbreak modifies OpenAI Codex&#
 
 ---
 
-## 9. 🟠 Zero-Day — CISA flags WordPress RCE flaw as actively exploited in attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/>
-
-> The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers have started exploiting a recently patched high-severity WordPress vulnerability in the wild. [...]
-
----
-
-## 10. 🟡 High Severity — Arc: DuckDB I/O aliases bypass database RBAC after CVE-2026-47735
+## 11. 🟡 High Severity — Arc: DuckDB I/O aliases bypass database RBAC after CVE-2026-47735
 
 **CVE:** `CVE-2026-55098` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://github.com/advisories/GHSA-93cm-2v4m-c56c>
@@ -100,7 +113,7 @@ The fix for CVE-2026-47735 (released 2026.06.1) is incomplete. It added a DuckDB
 
 ---
 
-## 11. 🟡 High Severity — SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records
+## 12. 🟡 High Severity — SonicWall Won't Patch EoL GMS Flaws That Could Expose Files, Alter Database Records
 
 **CVE:** `CVE-2026-109593` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://thehackernews.com/2026/11/sonicwall-wont-patch-eol-gms-flaws-that.html>
@@ -114,7 +127,7 @@ Details of the security flaws, which affect SonicWall GMS 9.5.2 and earlier vers
 
 ---
 
-## 12. 🟡 High Severity — odf-kit: HTML injection leading to XSS in odtToHtml() and odsToHtml() via unescaped style attribute values
+## 13. 🟡 High Severity — odf-kit: HTML injection leading to XSS in odtToHtml() and odsToHtml() via unescaped style attribute values
 
 **CVE:** `CVE-2026-113787` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-04
 **Reference:** <https://github.com/advisories/GHSA-3cgg-c5pp-57h6>
@@ -122,19 +135,6 @@ Details of the security flaws, which affect SonicWall GMS 9.5.2 and earlier vers
 > ### Summary
 
 ODF style attribute values are interpolated into `style=&quot;...&quot;` attributes without HTML-escaping in **both** of odf-kit&#x27;s to-HTML renderers (`odtToHtml` and `odsToHtml`). A double-quote character inside an attacker-controlled style value breaks out of the attribute, allowing arbitrary HTML/attribute injection — and therefore script execution (XSS) — from a crafted `.odt`…
-
----
-
-## 13. 🟡 High Severity — Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction
-
-**CVE:** `CVE-2026-58868` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-04
-**Reference:** <https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html>
-
-> A critical Android flaw could allow an attacker to run code on a phone without any user action remotely, Google said in its November security bulletin.
-
-The flaw, CVE-2026-58868, affects Android 14 through 17. Phones get the fix with security patch level 2026-11-01 or later, which phone makers and carriers send on their own schedules.
-
-As of November 4, Google&#x27;s bulletin did not report
 
 ---
 
