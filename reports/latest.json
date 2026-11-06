@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-06T03:56:16.319903+00:00",
-  "total": 14,
+  "generated": "2026-11-06T13:21:49.151850+00:00",
+  "total": 15,
   "kev": 0,
-  "zero_day": 10,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -15,6 +15,21 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/",
+      "title": "D-Link warns of multiple zero-days in DGS-3130 Series switches",
+      "summary": "D-Link shared mitigation measures for multiple unpatched security flaws affecting DGS-3130 series managed Gigabit stackable switches. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/",
+      "published": "2026-11-06T12:37:22+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -133,38 +148,6 @@
       "is_high_severity": false
     },
     {
-      "id": "https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/",
-      "title": "Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day",
-      "summary": "Tracked as CVE-2026-107441, the out-of-bounds write flaw could allow attackers to execute OS commands via crafted HTTP requests. The post Zyxel Switch Hacks Blamed on Patched Flaw Actually Exploited a Zero-Day appeared first on SecurityWeek .",
-      "link": "https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/",
-      "published": "2026-11-05T10:56:41+00:00",
-      "source": "SecurityWeek",
-      "tags": [
-        "news",
-        "research"
-      ],
-      "cve_ids": [
-        "CVE-2026-107441"
-      ],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html",
-      "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
-      "summary": "Zyxel GS1900 network switches that received the vendor's earlier fix for an actively exploited flaw are still open to the exploit attackers used, researchers at Binarly found.\n\nThe exploit lets anyone who can reach a switch's web management interface run commands on it without logging in. Zyxel has released new firmware for 10 GS1900 models that closes the hole.\n\nThe earlier fix is the 2.90",
-      "link": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html",
-      "published": "2026-11-05T07:06:33+00:00",
-      "source": "The Hacker News Security",
-      "tags": [
-        "news",
-        "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
       "id": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a",
       "title": "Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data",
       "summary": "Advisory at a Glance Title Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data Original Publication October 8, 2026 Executive Summary Chinese government-linked cyber threat actors, enabled by the Integrity Technology Group, are combining automated scanning tools, large-scale botnets, and hands-on exploitation techniques to target and steal sensitive data from organizations worldwide, including US critical infrastructure sectors. These actors exploit vulnerabilities by using scanning tools, cross-site scripting attacks, and password spraying on Microsoft Exchange servers, while establishing persistence through VPN software and exfiltrating emails and credentials using scripts. To help mitigate against this activity, organizations should prioritize disabling unused services and ports, sanitizing web application inputs to prevent injection attacks, implementing multifactor authentication for all services, and applying timely patches to reduce risks of compromise. Affected Products CVE-2014-6278 CVE-2015-3306 CVE-2015-5477 CVE-2016-3081 CVE-2019-11510 CVE-2021-22205 CVE-2021-3199 CVE-2023-22894 Key Actions Disable unused services and ports , such as automatic configuration, remote access, or file sharing protocols. Sanitize user input in web applications to prevent possible cross-site scripting (XSS) payload injection. Implement identity, credential, and access management (ICAM) policies , and then require multifactor authentication (MFA) for services (to the extent possible). Indicators of Compromise For a downloadable copy of indicators of compromise, see: AA26-281A STIX XML AA26-281A STIX JSON Intended Audience Organizations: Government; Federal Civilian Executive Branch (FCEB); State, Local, Tribal, and Territorial (SLTT); Critical Infrastructure. Sectors: Government Services and Facilities , Critical Manufacturing , Healthcare and Public Health , and Information Technology . Roles: Defensive Cybersecuri",
@@ -205,6 +188,40 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html",
+      "title": "Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It",
+      "summary": "A fix for CVE-2026-83844, a remote code execution flaw in Windows Paint, is now in the Microsoft Store. Paint gets this fix only through a Store update, not through Windows updates.\n\nThe fixed build, 11.2609.401.0, was the newest Paint build in all ten countries The Hacker News checked today.\n\nThe flaw is an out-of-bounds read that could let an attacker run code over a network. Microsoft rates",
+      "link": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html",
+      "published": "2026-11-06T12:06:43+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-83844"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+      "title": "Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login",
+      "summary": "Two flaws in Barracuda's Email Security Gateway, an email-filtering appliance, can be chained to run commands on it as root, its highest level of access, with no login required.\n\nThe company released patches on Monday, and the security firm watchTowr detailed the attack chain on Thursday.\n\nOne flaw, CVE-2026-116606, is an authorization bypass. An unauthenticated attacker can use it to restore a",
+      "link": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+      "published": "2026-11-06T05:39:10+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [
+        "CVE-2026-116606"
       ],
       "is_zero_day": false,
       "is_high_severity": true
