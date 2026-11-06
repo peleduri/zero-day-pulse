@@ -109,15 +109,31 @@
               <h1>Zero Day Pulse</h1>
             </div>
             <div class="stats">
-              <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">15</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value kev">1</span><span class="stat-label">CISA KEV</span></div>
+              <div class="stat"><span class="stat-value zeroday">10</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">20</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-06 13:21 UTC</div>
+            <div class="generated">Updated 2026-11-06 22:28 UTC</div>
           </header>
           <main>
-            <article class="card card-zeroday">
+            <article class="card card-kev">
+  <div class="card-top">
+    <span class="badge badge-kev">🔴 CISA KEV</span>
+    <h2 class="card-title"><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-19868" target="_blank" rel="noopener">CVE-2026-19868 — SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-19868</code>
+    <span class="meta-sep">·</span>
+    <span>CISA KEV</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-06</span>
+  </div>
+  <p class='summary'>Vendor: SonicWall | Product: SonicOS SSLVPN. SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA). Required action: Apply mitigations in accordance with ve…</p>
+
+</article>
+
+<article class="card card-zeroday">
   <div class="card-top">
     <span class="badge badge-zeroday">🟠 Zero-Day</span>
     <h2 class="card-title"><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a" target="_blank" rel="noopener">Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting</a></h2>
@@ -245,23 +261,37 @@
 
 </article>
 
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://therecord.media/fbi-agent-pleads-guilty-to-stealing-from-nation-state-hackers" target="_blank" rel="noopener">FBI agent pleads guilty to stealing $2.4 million in crypto from nation-state hackers</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>The Record by Recorded Future</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-06</span>
+  </div>
+  <p class='summary'>Patrick Steven Yaroch, 37, is facing up to 20 years in prison on wire fraud and money laundering charges after admitting to using his position on an FBI investigative squad to steal more than $2.4 million in cryptocurrency to cover his debts.</p>
+
+</article>
+
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
-            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html" target="_blank" rel="noopener">Researchers Bypass ChatGPT Lockdown Mode to Exfiltrate Chats Without User Interaction</a></h2>
+            <h2 class="card-title"><a href="https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html" target="_blank" rel="noopener">Installing the Fix for an Exploited WordPress Flaw Can Expose Some Sites One Last Time</a></h2>
           </div>
           <div class="card-meta">
             <span class="no-cve">No CVE</span>
             <span class="meta-sep">·</span>
             <span>The Hacker News Security</span>
             <span class="meta-sep">·</span>
-            <span>2026-11-05</span>
+            <span>2026-11-06</span>
           </div>
-          <p class='summary'>Cybersecurity researchers have disclosed details of a now-patched vulnerability that could be exploited to bypass Lockdown Mode protections in OpenAI ChatGPT.
+          <p class='summary'>Some WordPress sites can still be attacked while they install the fix for an actively exploited flaw, according to Umut Bayram, the Picus Security researcher who found it.
 
-Lockdown Mode was introduced by the artificial intelligence (AI) company in June 2026 as an optional setting to minimize data exfiltration risks arising from prompt injections.
-
-&quot;The flaw could enable silent chat data theft, phishing,</p>
+The update that installs the fix still unpacks its files using the site&#x27;s old, unpatched code, so an attacker who strikes at the right moment can run code on the server. The researcher advises blocking web access to the</p>
 
         </article>
 
@@ -300,6 +330,79 @@ Lockdown Mode was introduced by the artificial intelligence (AI) company in June
         <article class="card card-high">
           <div class="card-top">
             <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3gq2-x4qg-p4g6" target="_blank" rel="noopener">LXD: SSRF via image import from URL allows internal network probing by authenticated users</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-28385</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-06</span>
+          </div>
+          <p class='summary'>## Summary
+The LXD image import-from-URL endpoint (`POST /1.0/images` with `source.type=url`) makes server-side HTTP requests to an attacker-supplied URL without any private-IP or loopback blocking. An authenticated user with the `can_create_images` entitlement can force the LXD daemon to connect to internal network addresses (127.0.0.1, RFC1918 ranges, cloud metadata endpoints), enabling port sca…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xgjr-7j9q-2h4r" target="_blank" rel="noopener">listmonk: SQL Injection in `/api/subscribers/export` bypasses table access control, leaking admin password hashes and SMTP credentials</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-62361</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-06</span>
+          </div>
+          <p class='summary'>### Summary
+
+A SQL injection vulnerability in `GET /api/subscribers/export` allows an authenticated user with the `subscribers:sql_query` permission to bypass the table access control that exists on the regular query endpoint (`GET /api/subscribers`) and read arbitrary tables from the database — including `users` (bcrypt password hashes) and `settings` (SMTP credentials, API keys). Both error-base…</p>
+
+        </article>
+
+       <article class="card card-high">
+         <div class="card-top">
+           <span class="badge badge-high">🟡 High</span>
+           <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5w5g-j6hw-6p8f" target="_blank" rel="noopener">OSAC operator: Kubeconfig credential-plugin execution and SSRF in console proxy</a></h2>
+         </div>
+         <div class="card-meta">
+           <code class="cve">CVE-2026-62284</code>
+           <span class="meta-sep">·</span>
+           <span>GitHub Security Advisories</span>
+           <span class="meta-sep">·</span>
+           <span>2026-11-06</span>
+         </div>
+         <p class='summary'>### Impact
+
+The console-proxy&#x27;s RemoteConfigResolver parses kubeconfig data from Kubernetes Secrets using clientcmd.RESTConfigFromKubeConfig without sanitizing the resulting rest.Config. A kubeconfig containing an exec
+ plugin stanza (under users[].user.exec) is faithfully preserved. When rest.TransportFor later builds the HTTP transport for the upstream WebSocket connection, client-go invokes t…</p>
+
+       </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-92r3-p8c2-3fpx" target="_blank" rel="noopener">Eclipse hawkBit DDI has Privilege Escalation that allows Tenant-Isolated Firmware Exfiltration</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-16454</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-06</span>
+          </div>
+          <p class='summary'>## **Description**
+A privilege escalation vulnerability has been identified in the Direct Device Integration (DDI) Controller of **Eclipse hawkBit** (versions 1.0.3 and prior).
+
+This vulnerability allows an authenticated device to escalate its permissions and bypass the strict boundaries of its assigned updates. Under normal operation, a device should be restricted **strictly to the specific firmw…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
             <h2 class="card-title"><a href="https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html" target="_blank" rel="noopener">Microsoft Paint RCE Fix Now Available, but Windows Update Won&#x27;t Deliver It</a></h2>
           </div>
           <div class="card-meta">
@@ -334,26 +437,6 @@ The flaw is an out-of-bounds read that could let an attacker run code over a net
 The company released patches on Monday, and the security firm watchTowr detailed the attack chain on Thursday.
 
 One flaw, CVE-2026-116606, is an authorization bypass. An unauthenticated attacker can use it to restore a</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5q7h-w9jf-cx97" target="_blank" rel="noopener">kaniko can send the build&#x27;s Azure (Entra ID) access token to lookalike ACR registry hosts</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-105769</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-05</span>
-          </div>
-          <p class='summary'>### Summary
-
-kaniko before v1.25.20 can send a Microsoft Entra ID (Azure AD) access token for Azure Resource Manager to a registry host an attacker controls. A Dockerfile that references an image on a lookalike host, such as `FROM x.azurecr.io.attacker.com/img`, is enough. The build needs no `RUN` instruction and never has to push.
-
-The flaw is in the Azure Container Registry (ACR) credential help…</p>
 
         </article>
 
