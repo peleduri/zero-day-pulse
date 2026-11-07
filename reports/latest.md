@@ -1,19 +1,10 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-06 22:28 UTC &nbsp;|&nbsp; **Total:** 20 &nbsp;|&nbsp; 🔴 KEV: 1 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-07 03:30 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🔴 CISA KEV — CVE-2026-19868 — SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability
-
-**CVE:** `CVE-2026-19868` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-06
-**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-19868>
-
-> Vendor: SonicWall | Product: SonicOS SSLVPN. SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA). Required action: Apply mitigations in accordance with ve…
-
----
-
-## 2. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -22,7 +13,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — D-Link warns of multiple zero-days in DGS-3130 Series switches
+## 2. 🟠 Zero-Day — D-Link warns of multiple zero-days in DGS-3130 Series switches
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/>
@@ -31,7 +22,7 @@
 
 ---
 
-## 4. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 3. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -40,7 +31,7 @@
 
 ---
 
-## 5. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 4. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -49,7 +40,7 @@
 
 ---
 
-## 6. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 5. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -58,7 +49,7 @@
 
 ---
 
-## 7. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 6. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -67,7 +58,7 @@
 
 ---
 
-## 8. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 7. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -76,7 +67,7 @@
 
 ---
 
-## 9. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 8. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -85,7 +76,7 @@
 
 ---
 
-## 10. 🟠 Zero-Day — FBI agent pleads guilty to stealing $2.4 million in crypto from nation-state hackers
+## 9. 🟠 Zero-Day — FBI agent pleads guilty to stealing $2.4 million in crypto from nation-state hackers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Record by Recorded Future &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://therecord.media/fbi-agent-pleads-guilty-to-stealing-from-nation-state-hackers>
@@ -94,7 +85,7 @@
 
 ---
 
-## 11. 🟠 Zero-Day — Installing the Fix for an Exploited WordPress Flaw Can Expose Some Sites One Last Time
+## 10. 🟠 Zero-Day — Installing the Fix for an Exploited WordPress Flaw Can Expose Some Sites One Last Time
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html>
@@ -105,7 +96,7 @@ The update that installs the fix still unpacks its files using the site&#x27;s o
 
 ---
 
-## 12. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 11. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -114,7 +105,7 @@ The update that installs the fix still unpacks its files using the site&#x27;s o
 
 ---
 
-## 13. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 12. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -123,7 +114,7 @@ The update that installs the fix still unpacks its files using the site&#x27;s o
 
 ---
 
-## 14. 🟡 High Severity — LXD: SSRF via image import from URL allows internal network probing by authenticated users
+## 13. 🟡 High Severity — LXD: SSRF via image import from URL allows internal network probing by authenticated users
 
 **CVE:** `CVE-2026-28385` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://github.com/advisories/GHSA-3gq2-x4qg-p4g6>
@@ -133,7 +124,7 @@ The LXD image import-from-URL endpoint (`POST /1.0/images` with `source.type=url
 
 ---
 
-## 15. 🟡 High Severity — listmonk: SQL Injection in `/api/subscribers/export` bypasses table access control, leaking admin password hashes and SMTP credentials
+## 14. 🟡 High Severity — listmonk: SQL Injection in `/api/subscribers/export` bypasses table access control, leaking admin password hashes and SMTP credentials
 
 **CVE:** `CVE-2026-62361` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://github.com/advisories/GHSA-xgjr-7j9q-2h4r>
@@ -144,7 +135,7 @@ A SQL injection vulnerability in `GET /api/subscribers/export` allows an authent
 
 ---
 
-## 16. 🟡 High Severity — OSAC operator: Kubeconfig credential-plugin execution and SSRF in console proxy
+## 15. 🟡 High Severity — OSAC operator: Kubeconfig credential-plugin execution and SSRF in console proxy
 
 **CVE:** `CVE-2026-62284` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://github.com/advisories/GHSA-5w5g-j6hw-6p8f>
@@ -156,7 +147,7 @@ A SQL injection vulnerability in `GET /api/subscribers/export` allows an authent
 
 ---
 
-## 17. 🟡 High Severity — Eclipse hawkBit DDI has Privilege Escalation that allows Tenant-Isolated Firmware Exfiltration
+## 16. 🟡 High Severity — Eclipse hawkBit DDI has Privilege Escalation that allows Tenant-Isolated Firmware Exfiltration
 
 **CVE:** `CVE-2026-16454` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://github.com/advisories/GHSA-92r3-p8c2-3fpx>
@@ -168,7 +159,7 @@ This vulnerability allows an authenticated device to escalate its permissions an
 
 ---
 
-## 18. 🟡 High Severity — Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It
+## 17. 🟡 High Severity — Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It
 
 **CVE:** `CVE-2026-83844` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html>
@@ -181,7 +172,7 @@ The flaw is an out-of-bounds read that could let an attacker run code over a net
 
 ---
 
-## 19. 🟡 High Severity — Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login
+## 18. 🟡 High Severity — Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login
 
 **CVE:** `CVE-2026-116606` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-06
 **Reference:** <https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html>
@@ -194,7 +185,7 @@ One flaw, CVE-2026-116606, is an authorization bypass. An unauthenticated attack
 
 ---
 
-## 20. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
