@@ -111,10 +111,10 @@
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
               <div class="stat"><span class="stat-value zeroday">7</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">14</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value">10</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-07 17:30 UTC</div>
+            <div class="generated">Updated 2026-11-07 21:10 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -260,79 +260,6 @@
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-3gq2-x4qg-p4g6" target="_blank" rel="noopener">LXD: SSRF via image import from URL allows internal network probing by authenticated users</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-28385</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-06</span>
-          </div>
-          <p class='summary'>## Summary
-The LXD image import-from-URL endpoint (`POST /1.0/images` with `source.type=url`) makes server-side HTTP requests to an attacker-supplied URL without any private-IP or loopback blocking. An authenticated user with the `can_create_images` entitlement can force the LXD daemon to connect to internal network addresses (127.0.0.1, RFC1918 ranges, cloud metadata endpoints), enabling port sca…</p>
-
-        </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-xgjr-7j9q-2h4r" target="_blank" rel="noopener">listmonk: SQL Injection in `/api/subscribers/export` bypasses table access control, leaking admin password hashes and SMTP credentials</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-62361</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-06</span>
-          </div>
-          <p class='summary'>### Summary
-
-A SQL injection vulnerability in `GET /api/subscribers/export` allows an authenticated user with the `subscribers:sql_query` permission to bypass the table access control that exists on the regular query endpoint (`GET /api/subscribers`) and read arbitrary tables from the database — including `users` (bcrypt password hashes) and `settings` (SMTP credentials, API keys). Both error-base…</p>
-
-        </article>
-
-       <article class="card card-high">
-         <div class="card-top">
-           <span class="badge badge-high">🟡 High</span>
-           <h2 class="card-title"><a href="https://github.com/advisories/GHSA-5w5g-j6hw-6p8f" target="_blank" rel="noopener">OSAC operator: Kubeconfig credential-plugin execution and SSRF in console proxy</a></h2>
-         </div>
-         <div class="card-meta">
-           <code class="cve">CVE-2026-62284</code>
-           <span class="meta-sep">·</span>
-           <span>GitHub Security Advisories</span>
-           <span class="meta-sep">·</span>
-           <span>2026-11-06</span>
-         </div>
-         <p class='summary'>### Impact
-
-The console-proxy&#x27;s RemoteConfigResolver parses kubeconfig data from Kubernetes Secrets using clientcmd.RESTConfigFromKubeConfig without sanitizing the resulting rest.Config. A kubeconfig containing an exec
- plugin stanza (under users[].user.exec) is faithfully preserved. When rest.TransportFor later builds the HTTP transport for the upstream WebSocket connection, client-go invokes t…</p>
-
-       </article>
-
-        <article class="card card-high">
-          <div class="card-top">
-            <span class="badge badge-high">🟡 High</span>
-            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-92r3-p8c2-3fpx" target="_blank" rel="noopener">Eclipse hawkBit DDI has Privilege Escalation that allows Tenant-Isolated Firmware Exfiltration</a></h2>
-          </div>
-          <div class="card-meta">
-            <code class="cve">CVE-2026-16454</code>
-            <span class="meta-sep">·</span>
-            <span>GitHub Security Advisories</span>
-            <span class="meta-sep">·</span>
-            <span>2026-11-06</span>
-          </div>
-          <p class='summary'>## **Description**
-A privilege escalation vulnerability has been identified in the Direct Device Integration (DDI) Controller of **Eclipse hawkBit** (versions 1.0.3 and prior).
-
-This vulnerability allows an authenticated device to escalate its permissions and bypass the strict boundaries of its assigned updates. Under normal operation, a device should be restricted **strictly to the specific firmw…</p>
-
-        </article>
 
 <article class="card card-high">
   <div class="card-top">

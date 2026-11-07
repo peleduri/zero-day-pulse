@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-07 17:30 UTC &nbsp;|&nbsp; **Total:** 14 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 7 &nbsp;|&nbsp; 🟡 High: 7 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-07 21:10 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 7 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -85,52 +85,7 @@
 
 ---
 
-## 10. 🟡 High Severity — LXD: SSRF via image import from URL allows internal network probing by authenticated users
-
-**CVE:** `CVE-2026-28385` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
-**Reference:** <https://github.com/advisories/GHSA-3gq2-x4qg-p4g6>
-
-> ## Summary
-The LXD image import-from-URL endpoint (`POST /1.0/images` with `source.type=url`) makes server-side HTTP requests to an attacker-supplied URL without any private-IP or loopback blocking. An authenticated user with the `can_create_images` entitlement can force the LXD daemon to connect to internal network addresses (127.0.0.1, RFC1918 ranges, cloud metadata endpoints), enabling port sca…
-
----
-
-## 11. 🟡 High Severity — listmonk: SQL Injection in `/api/subscribers/export` bypasses table access control, leaking admin password hashes and SMTP credentials
-
-**CVE:** `CVE-2026-62361` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
-**Reference:** <https://github.com/advisories/GHSA-xgjr-7j9q-2h4r>
-
-> ### Summary
-
-A SQL injection vulnerability in `GET /api/subscribers/export` allows an authenticated user with the `subscribers:sql_query` permission to bypass the table access control that exists on the regular query endpoint (`GET /api/subscribers`) and read arbitrary tables from the database — including `users` (bcrypt password hashes) and `settings` (SMTP credentials, API keys). Both error-base…
-
----
-
-## 12. 🟡 High Severity — OSAC operator: Kubeconfig credential-plugin execution and SSRF in console proxy
-
-**CVE:** `CVE-2026-62284` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
-**Reference:** <https://github.com/advisories/GHSA-5w5g-j6hw-6p8f>
-
-> ### Impact
-
- The console-proxy&#x27;s RemoteConfigResolver parses kubeconfig data from Kubernetes Secrets using clientcmd.RESTConfigFromKubeConfig without sanitizing the resulting rest.Config. A kubeconfig containing an exec
-  plugin stanza (under users[].user.exec) is faithfully preserved. When rest.TransportFor later builds the HTTP transport for the upstream WebSocket connection, client-go invo…
-
----
-
-## 13. 🟡 High Severity — Eclipse hawkBit DDI has Privilege Escalation that allows Tenant-Isolated Firmware Exfiltration
-
-**CVE:** `CVE-2026-16454` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-06
-**Reference:** <https://github.com/advisories/GHSA-92r3-p8c2-3fpx>
-
-> ## **Description**
-A privilege escalation vulnerability has been identified in the Direct Device Integration (DDI) Controller of **Eclipse hawkBit** (versions 1.0.3 and prior).
-
-This vulnerability allows an authenticated device to escalate its permissions and bypass the strict boundaries of its assigned updates. Under normal operation, a device should be restricted **strictly to the specific firmw…
-
----
-
-## 14. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 10. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
