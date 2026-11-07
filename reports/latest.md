@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-07 03:30 UTC &nbsp;|&nbsp; **Total:** 19 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 9 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-07 12:00 UTC &nbsp;|&nbsp; **Total:** 18 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 10 &nbsp;|&nbsp; 🟡 High: 8 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
@@ -172,20 +172,7 @@ The flaw is an out-of-bounds read that could let an attacker run code over a net
 
 ---
 
-## 18. 🟡 High Severity — Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login
-
-**CVE:** `CVE-2026-116606` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-06
-**Reference:** <https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html>
-
-> Two flaws in Barracuda&#x27;s Email Security Gateway, an email-filtering appliance, can be chained to run commands on it as root, its highest level of access, with no login required.
-
-The company released patches on Monday, and the security firm watchTowr detailed the attack chain on Thursday.
-
-One flaw, CVE-2026-116606, is an authorization bypass. An unauthenticated attacker can use it to restore…
-
----
-
-## 19. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 18. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
