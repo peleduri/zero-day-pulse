@@ -1,6 +1,6 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-08 02:59 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 7 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-08 12:20 UTC &nbsp;|&nbsp; **Total:** 10 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 7 &nbsp;|&nbsp; 🟡 High: 3 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
