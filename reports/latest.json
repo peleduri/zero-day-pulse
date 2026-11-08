@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-08T12:20:15.664239+00:00",
-  "total": 10,
+  "generated": "2026-11-08T21:26:06.520639+00:00",
+  "total": 11,
   "kev": 0,
-  "zero_day": 7,
+  "zero_day": 8,
   "enriched": 0,
   "findings": [
     {
@@ -114,6 +114,21 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/",
+      "title": "Iris Ohyama data cloud breach exposes info of 7.7 million customers",
+      "summary": "Japanese manufacturer\u00a0Iris Ohyama, the operator of the Iris Plaza shopping platform,\u00a0disclosed that personal information belonging to about 7.7 million people may have been exposed after unauthorized access to a third-party cloud service the company used. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/",
+      "published": "2026-11-08T15:43:08+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
