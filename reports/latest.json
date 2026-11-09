@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-09T03:21:53.901529+00:00",
-  "total": 11,
+  "generated": "2026-11-09T14:32:51.473837+00:00",
+  "total": 12,
   "kev": 0,
-  "zero_day": 8,
+  "zero_day": 9,
   "enriched": 0,
   "findings": [
     {
@@ -114,6 +114,21 @@
       "cve_ids": [
         "CVE-2025-66376"
       ],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html",
+      "title": "U.S. Agencies Warn Refrigeration Controller Attacks Could Cause Fires and Inventory Losses",
+      "summary": "U.S. government agencies have warned that threat actors are actively targeting industrial refrigeration and cold-chain monitoring systems globally with an aim to cause service disruptions, fire hazards, and loss of inventory.\n\n\"The actors may exploit vulnerabilities or weaknesses in unpatched or internet-accessible controllers to remotely alter settings and force units into continuous heating",
+      "link": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html",
+      "published": "2026-11-09T06:15:10+00:00",
+      "source": "The Hacker News Security",
+      "tags": [
+        "news",
+        "zeroday"
+      ],
+      "cve_ids": [],
       "is_zero_day": true,
       "is_high_severity": false
     },
