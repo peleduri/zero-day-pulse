@@ -1,10 +1,64 @@
 # Zero Day Pulse
 
-> **Generated:** 2026-11-10 13:53 UTC &nbsp;|&nbsp; **Total:** 34 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 18 &nbsp;|&nbsp; 🟡 High: 16 &nbsp;|&nbsp; ✨ Enriched: 0
+> **Generated:** 2026-11-10 22:37 UTC &nbsp;|&nbsp; **Total:** 48 &nbsp;|&nbsp; 🔴 KEV: 6 &nbsp;|&nbsp; 🟠 Zero-Day: 17 &nbsp;|&nbsp; 🟡 High: 25 &nbsp;|&nbsp; ✨ Enriched: 0
 
 ---
 
-## 1. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
+## 1. 🔴 CISA KEV — CVE-2026-124194 — Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability
+
+**CVE:** `CVE-2026-124194` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-124194>
+
+> Vendor: Microsoft | Product: Office. Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guida…
+
+---
+
+## 2. 🔴 CISA KEV — CVE-2026-111793 — Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability
+
+**CVE:** `CVE-2026-111793` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-111793>
+
+> Vendor: Openwave Messaging Limited | Product: Webtop Media Transcoder. Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the Webmail experience. Required action: Apply mitigations in accordance with vendor instructions, ensuring c…
+
+---
+
+## 3. 🔴 CISA KEV — CVE-2026-20320 — Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability
+
+**CVE:** `CVE-2026-20320` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-20320>
+
+> Vendor: Cisco | Product: BroadWorks. Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system. Required action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates…
+
+---
+
+## 4. 🔴 CISA KEV — CVE-2026-111560 — Barracuda Networks Multiple Products OS Command Injection Vulnerability
+
+**CVE:** `CVE-2026-111560` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-111560>
+
+> Vendor: Barracuda Networks | Product: Multiple Products. Barracuda Networks Email Security Gateway (ESG), Load Balancer, Application Delivery Controller (ADC), Message Archiver (BMA), WAF Control Center (WCC), Web Application Firewall (WAF), and Web Security Gateway (WSG) contain an OS command injection vulnerability. This vulnerability could allow an authenticated administrator to inject OS comma…
+
+---
+
+## 5. 🔴 CISA KEV — CVE-2026-116606 — Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability
+
+**CVE:** `CVE-2026-116606` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-116606>
+
+> Vendor: Barracuda Networks | Product: Barracuda Email Security Gateway (ESG). Barracuda Networks Email Security Gateway (ESG) contains an authentication bypass using an alternate path or channel that could allow an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive, resulting in unauthorized modification of the appliance’s glo…
+
+---
+
+## 6. 🔴 CISA KEV — CVE-2026-125350 — Google Chromium Use-After-Free Vulnerability
+
+**CVE:** `CVE-2026-125350` &nbsp;|&nbsp; **Source:** CISA KEV &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://nvd.nist.gov/vuln/detail/CVE-2026-125350>
+
+> Vendor: Google | Product: Chromium. Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera. Required action: Apply m…
+
+---
+
+## 7. 🟠 Zero-Day — Improve Router Hygiene to Protect Against Russian State-Sponsored Targeting
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Wed, 08 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-194a>
@@ -13,7 +67,47 @@
 
 ---
 
-## 2. 🟠 Zero-Day — N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days
+## 8. 🟠 Zero-Day — Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/>
+
+> Today is Microsoft&#x27;s November 2026 Patch Tuesday, with security updates addressing a record-breaking 1,235 flaws, including one actively exploited Microsoft Outlook zero-day vulnerability. [...]
+
+---
+
+## 9. 🟠 Zero-Day — Microsoft’s November 2026 Patch Tuesday addresses 1093 CVEs (CVE-2026-124194)
+
+**CVE:** `CVE-2026-124194` | `CVE-2026-118146` &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://www.tenable.com/blog/microsoft-november-2026-patch-tuesday-addresses-1093-cves-cve-2026-124194>
+
+> 63 Critical 1029 Important 1 Moderate 0 Low Microsoft addresses 1093 CVEs in the eleventh Patch Tuesday of 2026. Microsoft patched 1093 CVEs in its November 2026 Patch Tuesday release, with 63 rated critical, 1029 rated as important, and one rated as moderate. This month’s update includes patches for 287 products and components. The following table lists the products with the most CVEs patched thi…
+
+---
+
+## 10. 🟠 Zero-Day — Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html>
+
+> French software company Vates VMS has warned of a critical security vulnerability in Xen Orchestra that it said is being actively exploited in the wild.
+
+The authentication bypass flaw, which does not yet have a CVE identifier, is tracked as VSA-2026-062.
+
+&quot;REST cookie parsing turns authenticationToken=j:%7B%7D into {},&quot; Vates VMS said in an alert. &quot;REST authentication passes that o…
+
+---
+
+## 11. 🟠 Zero-Day — Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers
+
+**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/>
+
+> A critical authentication bypass vulnerability in Xen Orchestra is being actively exploited in attacks that could grant administrator privileges and allow takeover of XCP-ng virtualization hosts. [...]
+
+---
+
+## 12. 🟠 Zero-Day — N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/>
@@ -22,38 +116,7 @@
 
 ---
 
-## 3. 🟠 Zero-Day — GPUStack: Authentication bypass via trusted loopback source (reverse-proxy TCP peer or X-GPUStack-Real-IP header) grants unauthenticated admin
-
-**CVE:** `CVE-2026-102895` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-gj9m-f8ph-pmhr>
-
-> ### Impact
-
-In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promotes any request whose source is considered loopback to the built-in administrator account when `force_auth_localhost` is `False` (the default). The &quot;source&quot; is derived by `client_ip_getter`, which can be made to report `127.0.0.1` without any credentials in two ways:
-
-1. **Same-host reverse proxy (…
-
----
-
-## 4. 🟠 Zero-Day — U.S. urges critical infrastructure orgs to secure refrigeration systems ASAP after EU supermarket and blood bank attacks
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Tenable Security Research &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://www.tenable.com/blog/u-s-urges-critical-infrastructure-orgs-to-secure-refrigeration-systems-asap-after-eu>
-
-> Following recent cyber attacks on French blood banks and European supermarkets, U.S. federal agencies are urging critical infrastructure organizations to immediately secure industrial refrigeration systems against remote tampering and temperature manipulation. Key takeaways Cybercriminals are actively targeting unpatched flaws, misconfigurations, and weak or hard-coded passwords in commercial cold…
-
----
-
-## 5. 🟠 Zero-Day — Trusted by Default: Qubole Cross-Account Access Abused in the Wild
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Wiz Research &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://www.wiz.io/blog/qubole-cross-account-access-abused-in-the-wild>
-
-> A threat actor used IAM credentials from Qubole&#x27;s AWS account to assume integration roles in customer AWS environments. Here&#x27;s what we observed and how to hunt for it.
-
----
-
-## 6. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
+## 13. 🟠 Zero-Day — AI threats in the wild: The current state of prompt injections on the web
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-23
 **Reference:** <http://security.googleblog.com/2026/04/ai-threats-in-wild-current-state-of.html>
@@ -62,7 +125,7 @@ In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promot
 
 ---
 
-## 7. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
+## 14. 🟠 Zero-Day — Google Workspace’s continuous approach to mitigating indirect prompt injections
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-02
 **Reference:** <http://security.googleblog.com/2026/04/google-workspaces-continuous-approach.html>
@@ -71,7 +134,7 @@ In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promot
 
 ---
 
-## 8. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
+## 15. 🟠 Zero-Day — Architecting Security for Agentic Capabilities in Chrome
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-12-08
 **Reference:** <http://security.googleblog.com/2025/12/architecting-security-for-agentic.html>
@@ -80,7 +143,7 @@ In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promot
 
 ---
 
-## 9. 🟠 Zero-Day — Rust in Android: move fast and fix things
+## 16. 🟠 Zero-Day — Rust in Android: move fast and fix things
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-11-13
 **Reference:** <http://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html>
@@ -89,7 +152,7 @@ In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promot
 
 ---
 
-## 10. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
+## 17. 🟠 Zero-Day — Mitigating prompt injection attacks with a layered defense strategy
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2025-06-13
 **Reference:** <http://security.googleblog.com/2025/06/mitigating-prompt-injection-attacks.html>
@@ -98,7 +161,7 @@ In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promot
 
 ---
 
-## 11. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
+## 18. 🟠 Zero-Day — Russian State-Supported Cyber Actors Conduct Phishing Campaign Targeting Users of Zimbra Collaboration Suite
 
 **CVE:** `CVE-2025-66376` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 21 Ju
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-204a>
@@ -107,7 +170,17 @@ In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promot
 
 ---
 
-## 12. 🟠 Zero-Day — Russian Turla Hackers Use New Cereal Malware to Steal Emails From Government Exchange Servers
+## 19. 🟠 Zero-Day — AG2: Newline injection in SandboxShellTool bypasses allowed=[...] and readonly=True, enabling arbitrary command execution
+
+**CVE:** `CVE-2026-113663` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-2h4w-29cv-2cmv>
+
+> ### Summary
+SandboxShellTool&#x27;s restricted modes — allowed=[...] (explicit command allowlist) and readonly=True (implicit READONLY_COMMANDS allowlist) — can both be bypassed by embedding a newline character inside the command string. The filter only inspects a single-line set of shell metacharacters, but execution runs the raw string through `sh -c`, where a shell treats an embedded newline ex…
+
+---
+
+## 20. 🟠 Zero-Day — Russian Turla Hackers Use New Cereal Malware to Steal Emails From Government Exchange Servers
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html>
@@ -118,7 +191,7 @@ According to an ESET report shared with The Hacker News ahead of publication, th
 
 ---
 
-## 13. 🟠 Zero-Day — Google patches eighth Chrome zero-day exploited in attacks this year
+## 21. 🟠 Zero-Day — Google patches eighth Chrome zero-day exploited in attacks this year
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/>
@@ -127,7 +200,7 @@ According to an ESET report shared with The Hacker News ahead of publication, th
 
 ---
 
-## 14. 🟠 Zero-Day — Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026
+## 22. 🟠 Zero-Day — Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026
 
 **CVE:** `CVE-2026-125350` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/google-issues-chrome-security-update.html>
@@ -140,7 +213,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 15. 🟠 Zero-Day — N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits
+## 23. 🟠 Zero-Day — N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits
 
 **CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html>
@@ -151,34 +224,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 16. 🟠 Zero-Day — Chrome Update Patches Exploited XML Zero-Day, Eighth This Year
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** SecurityWeek &nbsp;|&nbsp; **Published:** 2026-11-10
-**Reference:** <https://www.securityweek.com/chrome-update-patches-exploited-xml-zero-day-eighth-this-year/>
-
-> The high-severity use-after-free in Chrome’s XML component was reported anonymously on November 6 and is already exploited in attacks. The post Chrome Update Patches Exploited XML Zero-Day, Eighth This Year appeared first on SecurityWeek .
-
----
-
-## 17. 🟠 Zero-Day — N-able takes cloud platform offline after 30+ "zero-days" published
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/>
-
-> N-able has taken its hosted N-central environments offline and urged on-premises customers to shut down their servers after a security researcher publicly disclosed more than 30 alleged zero-day vulnerabilities, including exploits that could let attackers take over vulnerable systems. [...]
-
----
-
-## 18. 🟠 Zero-Day — FBI agent stole $2.5 million in crypto from hackers under investigation
-
-**CVE:** _No CVE_ &nbsp;|&nbsp; **Source:** Bleeping Computer &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://www.bleepingcomputer.com/news/security/fbi-agent-stole-25-million-in-crypto-from-hackers-fraud-victims/>
-
-> A former FBI agent has pleaded guilty to stealing nearly $2.5 million from the wallets of fraud victims and nation-state hackers under investigation. [...]
-
----
-
-## 19. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
+## 24. 🟡 High Severity — Chinese Government-linked Cyber Threat Actors Combine Automated and Hands-on Hacking Tools to Steal Sensitive Data
 
 **CVE:** `CVE-2014-6278` | `CVE-2015-3306` | `CVE-2015-5477` | `CVE-2016-3081` | `CVE-2019-11510` | `CVE-2021-22205` | `CVE-2021-3199` | `CVE-2023-22894` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Tue, 06 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-281a>
@@ -187,7 +233,7 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 20. 🟡 High Severity — #StopRansomware: SafePay Ransomware
+## 25. 🟡 High Severity — #StopRansomware: SafePay Ransomware
 
 **CVE:** `CVE-2020-3259` | `CVE-2023-20269` | `CVE-2023-27532` | `CVE-2024-40711` | `CVE-2024-40766` &nbsp;|&nbsp; **Source:** CISA US-CERT Alerts &nbsp;|&nbsp; **Published:** Mon, 19 Oc
 **Reference:** <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a>
@@ -196,7 +242,215 @@ Use-after-free bugs typically occur when a program attempts to access a memory l
 
 ---
 
-## 21. 🟡 High Severity — CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws
+## 26. 🟡 High Severity — Active Storage: Possible arbitrary file read and remote code execution in video previews, analysis and image processing
+
+**CVE:** `CVE-2026-126186` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-v924-7rp8-4mxh>
+
+> ### Impact
+`ActiveStorage::Blob#open` writes a blob to a tempfile whose name carries the extension of the uploaded filename, and hands that path to `ffprobe` (`VideoAnalyzer`, `AudioAnalyzer`), `ffmpeg` (`VideoPreviewer`) and ImageMagick (`ImageAnalyzer`, the `:mini_magick` variant processor). These tools select a decoder from the file extension when the content does not identify its own format, s…
+
+---
+
+## 27. 🟡 High Severity — Action Pack: Possible restoration of destroyed sessions in Action Dispatch CacheStore
+
+**CVE:** `CVE-2026-126076` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-2586-8ghr-69fj>
+
+> ### Impact
+`ActionDispatch::Session::CacheStore` writes a session back to the cache at the end of each request that loaded it, without checking that the session&#x27;s cache entry still exists. When a concurrent request destroys the session, through `reset_session` on logout or by deleting its cache entry on the server, a request that loaded the session earlier and finishes later restores it under…
+
+---
+
+## 28. 🟡 High Severity — JRuby: NONET is bypassed for external DTDs and entities when the systemId uses a short-form IPv4 host
+
+**CVE:** `CVE-2026-126062` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-v995-44v6-5fqm>
+
+> ### Summary
+
+On JRuby, the `NONET` parse option did not block an external DTD or entity whose system identifier used a short-form IPv4 host, such as `http://127.1/` or `http://169.254.43518/`, or was an absolute path such as `/x.dtd` in a document parsed from a network URL. An application that parses untrusted XML with `DTDLOAD`, `DTDVALID` or `NOENT` could be made to send network requests, potent…
+
+---
+
+## 29. 🟡 High Severity — Rack: Multipart boundary ambiguity guard in Rack::Multipart::Parser can be bypassed with a quoted boundary value, allowing WAF bypass
+
+**CVE:** `CVE-2026-125108` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-p8x9-v4hv-2w4g>
+
+> ## Summary
+
+The guard added for CVE-2026-26961 (GHSA-vgpv-f759-9wx3), which rejects multipart requests with more than one `boundary` parameter, only inspects the part of the `Content-Type` header after the boundary it extracts. A `Content-Type` whose first `boundary` parameter is empty or begins with a quote, semicolon, or comma is skipped by the extraction pattern, so a second `boundary` paramete…
+
+---
+
+## 30. 🟡 High Severity — NocoBase: @nocobase/plugin-action-custom-request allows server-side request forgery through runtime URL overrides
+
+**CVE:** `CVE-2026-79914` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-wrr5-j383-f7h2>
+
+> ### Summary
+
+A Server-Side Request Forgery vulnerability exists in NocoBase v2.1.10 in the `@nocobase/plugin-action-custom-request` plugin.
+
+A low-privileged authenticated user can call the `customRequests:send` endpoint and override the stored request URL at runtime using `options.url`. This causes the NocoBase server to perform outbound HTTP requests to attacker-controlled or internal URLs.
+
+* P…
+
+---
+
+## 31. 🟡 High Severity — compose-lint: Text in a pull request can still issue CI workflow commands through compose-lint 0.31.0's output
+
+**CVE:** `CVE-2026-125121` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-r7j4-crjv-h467>
+
+> ### Impact
+
+0.31.0 fixed GHSA-6f4g-xm8v-pgv6, where text from a Compose file became GitHub Actions workflow commands in compose-lint&#x27;s output. The fix escapes the command openers in everything compose-lint prints, and the 0.31.0 changelog says the report &quot;escapes both openers (also covering Azure Pipelines)&quot;. Five paths were left open:
+
+- **Unicode whitespace before a line-leading `…
+
+---
+
+## 32. 🟡 High Severity — Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor
+
+**CVE:** `CVE-2026-105133` | `CVE-2026-105134` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html>
+
+> Cybersecurity researchers have disclosed details of an attack that exploited two now-patched vulnerabilities in AhsayCBS to deliver a Python-based implant.
+
+The activity, observed by Huntress in early October 2026, involves the exploitation of a chain comprising CVE-2026-105133 and CVE-2026-105134 to bypass authentication and execute arbitrary commands on affected systems. Patches for the two
+
+---
+
+## 33. 🟡 High Severity — Forge: Incomplete PKCS#7 padding validation in AES/DES CBC and ECB decryption
+
+**CVE:** `CVE-2026-118776` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-2vgq-wchc-25w7>
+
+> ### Summary
+`decipher.finish()` in CBC and ECB mode accepted malformed PKCS#7 padding: only the last byte was checked, against a limit of four blocks, so mismatched padding bytes, a zero count and oversized counts were accepted and up to four blocks of plaintext could be silently removed. Fixed in node-forge 1.4.1.
+
+### Details
+`modes.cbc.prototype.unpad()` and `modes.ecb.prototype.unpad()` in `li…
+
+---
+
+## 34. 🟡 High Severity — Forge: ASN.1 resource exhaustion via BIT STRING decoding in asn1.fromDer
+
+**CVE:** `CVE-2026-119191` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-rhr8-3pm8-cq29>
+
+> ### Summary
+`asn1.fromDer()` decodes the contents of BIT STRINGs as ASN.1 by default. That decode ignored the `maxDepth` recursion limit (an incomplete fix of CVE-2025-66031) and also decoded nested BIT STRINGs, keeping a full copy of the decoded contents at each level, so small crafted DER or PEM inputs (certificates, keys, PKCS structures) use excessive CPU time and memory and can abort the Node…
+
+---
+
+## 35. 🟡 High Severity — compose-lint: Incomplete fix for GHSA-jf3h-8jvx-vcrg: a run stopped at the finding limit quotes a secret from a CI-generated `.env`
+
+**CVE:** `CVE-2026-123796` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-rm8w-w798-g545>
+
+> ### Impact
+
+This is an incomplete fix for GHSA-jf3h-8jvx-vcrg. 0.32.0 made findings quote the `${NAME}` a sibling `.env` filled in, instead of its value. The same release added a stop at 20,000 findings per document, and that stop is checked before the quoting step. A run that hits it reports the findings graded so far with the resolved values still in them, in text, JSON and SARIF output. That ha…
+
+---
+
+## 36. 🟡 High Severity — GPUStack: Missing authorization on several cluster and resource endpoints allows cross-user access and cluster takeover
+
+**CVE:** `CVE-2026-103002` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-3hch-x692-6qj3>
+
+> ### Impact
+
+An authenticated non-administrative user could access a Kubernetes cluster they are not authorized to access through GPUStack&#x27;s Kubernetes API proxy.
+
+The `cluster_apiserver_proxy` handler did not perform a resource-level authorization check before forwarding requests to the selected cluster. Requests were forwarded through a worker using its Kubernetes ServiceAccount credentials.…
+
+---
+
+## 37. 🟡 High Severity — compose-lint: A `.compose-lint.yml` symlinked outside the project is read, and a parse error quotes part of the target
+
+**CVE:** `CVE-2026-123371` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-88f4-frh5-gmcr>
+
+> ### Impact
+
+compose-lint automatically reads a `.compose-lint.yml` policy file beside the Compose file. It is meant to read nothing outside the project directory, but it follows that file if it is a symlink, wherever it points.
+
+A pull request can commit `.compose-lint.yml` as a symlink to a file on the CI runner. If the target is not valid YAML, the error compose-lint reports quotes part of the l…
+
+---
+
+## 38. 🟡 High Severity — compose-lint: A pull request can make compose-lint quote a secret from a CI-generated `.env` into its findings
+
+**CVE:** `CVE-2026-123372` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-jf3h-8jvx-vcrg>
+
+> ### Impact
+
+Since 0.22.0, compose-lint fills in `${VAR}` references from the `.env` beside the Compose file, as Compose does. The documentation says values under `environment:` are never resolved from a `.env`, &quot;that is where secrets live&quot;. But `image:` values are resolved, and CL-0004 and CL-0019 quote the resolved image in their message and fix text.
+
+Some CI workflows write secrets in…
+
+---
+
+## 39. 🟡 High Severity — compose-lint: `fix --apply` can delete a line the user did not select, including a security setting
+
+**CVE:** `CVE-2026-123370` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-65v8-q222-64xx>
+
+> ### Impact
+
+`compose-lint fix --apply` converts the line numbers its fixers work with into positions in the file. The YAML parser treats a lone carriage return, U+0085, U+2028 and U+2029 as line breaks, but the conversion counted only `\n`. One of those characters inside a quoted value, which most editors and diff views don&#x27;t show, shifted every later edit down by one line.
+
+A Compose file fr…
+
+---
+
+## 40. 🟡 High Severity — compose-lint: Compose file text can issue GitHub Actions workflow commands through the compose-lint Action
+
+**CVE:** `CVE-2026-123369` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-6f4g-xm8v-pgv6>
+
+> ### Impact
+
+The GitHub Actions runner treats certain text in a step&#x27;s output as commands. The legacy form, `##[command]`, is recognized anywhere in a line. compose-lint&#x27;s text report prints service names, environment keys and lines of the Compose file, and it does not neutralize `##[`. Inside the compose-lint Action, a Compose file from a pull request can therefore:
+
+- create fake error …
+
+---
+
+## 41. 🟡 High Severity — compose-lint: .env read through a symlink outside the project can expose the CI job's environment
+
+**CVE:** `CVE-2026-123368` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-6wcv-rj3c-mhv3>
+
+> ### Impact
+
+compose-lint fills in `${VAR}` references from the `.env` file next to the Compose file. It is meant to read nothing outside the project directory, and `env_file:`, `include:` and `extends:` paths are checked for that. The `.env` read is not. If `.env` is a symlink, compose-lint follows it wherever it points.
+
+A pull request can add a `.env` symlink to any file on the CI runner and a C…
+
+---
+
+## 42. 🟡 High Severity — Dagu MCP DAG specification read bypasses path containment and workspace isolation
+
+**CVE:** `CVE-2026-102943` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-10
+**Reference:** <https://github.com/advisories/GHSA-5m6c-38r8-5w76>
+
+> ## Summary
+
+The traversal fix for CVE-2026-33344 was implemented as HTTP middleware installed only in the chi handler chain, but the MCP service calls the same API method in process, so arbitrary YAML file read is reachable again through the MCP tool surface with a viewer-role key. Read-only, limited to .yaml/.yml targets. Confirmed at HEAD f6c039f (post v2.10.7).
+
+## The defect
+
+The fix for CVE-2…
+
+---
+
+## 43. 🟡 High Severity — CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws
 
 **CVE:** `CVE-2026-123218` &nbsp;|&nbsp; **Source:** The Hacker News Security &nbsp;|&nbsp; **Published:** 2026-11-10
 **Reference:** <https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html>
@@ -210,7 +464,7 @@ The vulnerabilities are listed below -
 
 ---
 
-## 22. 🟡 High Severity — Kubeflow Pipelines: Reflected XSS in the frontend pod information and events error responses
+## 44. 🟡 High Severity — Kubeflow Pipelines: Reflected XSS in the frontend pod information and events error responses
 
 **CVE:** `CVE-2026-88986` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
 **Reference:** <https://github.com/advisories/GHSA-g3qx-frcg-j979>
@@ -223,7 +477,7 @@ Affected routes include `/pipeline/k8s/pod` and `/pipeline/k8s/pod/events` (th�
 
 ---
 
-## 23. 🟡 High Severity — Kubeflow Pipelines: RBAC bypass on shared pipelines allows any authenticated user to delete or modify global pipelines
+## 45. 🟡 High Severity — Kubeflow Pipelines: RBAC bypass on shared pipelines allows any authenticated user to delete or modify global pipelines
 
 **CVE:** `CVE-2026-88984` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
 **Reference:** <https://github.com/advisories/GHSA-ghgh-57qv-h687>
@@ -238,7 +492,7 @@ Unauthorized modification compromises the integrit…
 
 ---
 
-## 24. 🟡 High Severity — Kubeflow Pipelines — API server fetches a caller-supplied pipelineURL without host validation
+## 46. 🟡 High Severity — Kubeflow Pipelines — API server fetches a caller-supplied pipelineURL without host validation
 
 **CVE:** `CVE-2026-88983` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
 **Reference:** <https://github.com/advisories/GHSA-f7vj-6669-qvv4>
@@ -253,7 +507,7 @@ The reported evidence demonstrates blind serv…
 
 ---
 
-## 25. 🟡 High Severity — Kubeflow Pipelines: Cross-tenant execution-cache poisoning / output substitution via a namespace-blind cache key in the cache webhook (multi-user)
+## 47. 🟡 High Severity — Kubeflow Pipelines: Cross-tenant execution-cache poisoning / output substitution via a namespace-blind cache key in the cache webhook (multi-user)
 
 **CVE:** `CVE-2026-88982` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
 **Reference:** <https://github.com/advisories/GHSA-2xwh-426q-42c5>
@@ -266,99 +520,7 @@ This affects the Argo-template cache mutating webhook and its cac…
 
 ---
 
-## 26. 🟡 High Severity — FileGator: Missing authorization in GET /batchdownload allows cross-user retrieval of another user's archive
-
-**CVE:** `CVE-2026-94618` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-f74m-x83r-c4v4>
-
-> ### Summary
-`GET /batchdownload` streams a batch ZIP to any requester who supplies its `uniqid`, without checking that the current user/session created it. In deployments where users have separate home directories, a valid low-privileged user who obtains an active archive id can download another user&#x27;s batch archive, disclosing files the per-user boundary otherwise protects. Reported with exp…
-
----
-
-## 27. 🟡 High Severity — esm.sh: web.NewHandler allows arbitrary file read via encoded dot-segment path traversal
-
-**CVE:** `CVE-2026-102657` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-g3c2-rjq2-c763>
-
-> ### Summary
-
-The documented `web.NewHandler` static file server can read files outside `Config.AppDir` when the request path contains URL-encoded dot-segments such as `%2e%2e`. Go&#x27;s `ServeMux` redirects plain `/../` paths, but it passes encoded dot-segments to the handler after decoding `r.URL.Path`. The handler then calls `filepath.Join(s.config.AppDir, r.URL.Path)` without checking that the…
-
----
-
-## 28. 🟡 High Severity — fast-agent: `fast-agent serve` binds HTTP to 0.0.0.0 with no authentication by default; with --shell this is unauthenticated remote command execution
-
-**CVE:** `CVE-2026-102610` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-9vhv-g5hf-m7m7>
-
-> ## Summary
-`fast-agent serve` exposes the agent over MCP. By default it uses HTTP transport bound to `0.0.0.0` (all interfaces) on port 8000 with **no authentication** (`auth=None`) and prints no warning. Any host that can reach the port can call the exposed `agent` tool. When the server is started with `--shell` (which is `-x`, the flag used in the README quickstart `uvx fast-agent mcp@latest -x`…
-
----
-
-## 29. 🟡 High Severity — Telepresence: Traffic Manager gRPC has no auth — any pod claims arbitrary namespace and intercepts services, receiving victim environment secrets
-
-**CVE:** `CVE-2026-102340` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-j8j4-rw65-56r6>
-
-> ## Summary
-
-Telepresence&#x27;s Traffic Manager gRPC API (port 8081) requires no authentication. Any pod with cluster-network access to the Traffic Manager can register as a client in an arbitrary managed namespace and create intercepts against services in that namespace, regardless of Kubernetes RBAC. On interception the victim pod&#x27;s complete container environment (secrets, tokens, API keys)…
-
----
-
-## 30. 🟡 High Severity — tsParticles: A single anonymous MCP session can monopolize HTTP mode and deny new clients
-
-**CVE:** `CVE-2026-76893` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-h7c4-q426-7jh9>
-
-> ## Summary
-
-The HTTP mode of `@tsparticles/mcp-server` creates a single stateful `StreamableHTTPServerTransport` instance and reuses it for all clients. The first anonymous client that initializes the MCP endpoint claims the shared transport state, and later clients cannot create their own sessions.
-
-This was verified on `v4.3.0` at commit `0266d469aa2d719cb66a9c6bf09aded4186ec17c`. The same singl…
-
----
-
-## 31. 🟡 High Severity — traQ: Privilege escalation by OAuth prompt=none request
-
-**CVE:** `CVE-2026-63198` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-8cfq-jgf7-8m27>
-
-> In OAuth2 silent authorization (`prompt=none`), when the `scope` parameter was empty or omitted, all scopes registered for the OAuth client became eligible for issuance. However, the prior consent check was performed against the empty requested scope set. As a result, an attacker could obtain an access token with broader scopes than the user had previously consented to, without requiring additiona…
-
----
-
-## 32. 🟡 High Severity — isomorphic-git: Path traversal via a ".." tree-entry name writes files outside the working directory on clone/checkout
-
-**CVE:** `CVE-2026-63478` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-cw2g-2vwq-88w6>
-
-> ### Summary
-isomorphic-git&#x27;s tree parser (`src/models/GitTree.js`) validates each entry name only against the path separators `/` and `\`. It does not reject the standalone reserved name `..`, so a malicious repository can, on a single `clone`/`checkout`, **write files outside the working
-directory** (unbounded depth). Works on any host-backed `fs` provider.
-
-### Details
-The guard is:
-
-```js
-…
-
----
-
-## 33. 🟡 High Severity — fastapi-code-generator: Import-time RCE via route path -> unescaped @app.get('...') decorator
-
-**CVE:** `CVE-2026-63471` &nbsp;|&nbsp; **Source:** GitHub Security Advisories &nbsp;|&nbsp; **Published:** 2026-11-09
-**Reference:** <https://github.com/advisories/GHSA-p2mm-64f6-gmpp>
-
-> ### Summary
-
-fastapi-code-generator (koxudaxi) emits the OpenAPI path into the generated main.py route decorator as a single-quoted string literal (`@app.get(&#x27;/u/&lt;path&gt;/x&#x27;)`) without escaping the `&#x27;`. A `&#x27;` in the path closes the decorator string and, via concatenation, injects a live expression that the decorator argument evaluates when main.py is imported (the ASGI serv…
-
----
-
-## 34. 🟡 High Severity — Bringing Rust to the Pixel Baseband
+## 48. 🟡 High Severity — Bringing Rust to the Pixel Baseband
 
 **CVE:** `CVE-2024-27227` &nbsp;|&nbsp; **Source:** Google Security Blog &nbsp;|&nbsp; **Published:** 2026-04-10
 **Reference:** <http://security.googleblog.com/2026/04/bringing-rust-to-pixel-baseband.html>
