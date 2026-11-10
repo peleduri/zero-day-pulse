@@ -110,11 +110,11 @@
             </div>
             <div class="stats">
               <div class="stat"><span class="stat-value kev">0</span><span class="stat-label">CISA KEV</span></div>
-              <div class="stat"><span class="stat-value zeroday">9</span><span class="stat-label">Zero-Days</span></div>
-              <div class="stat"><span class="stat-value">12</span><span class="stat-label">Total</span></div>
+              <div class="stat"><span class="stat-value zeroday">13</span><span class="stat-label">Zero-Days</span></div>
+              <div class="stat"><span class="stat-value">28</span><span class="stat-label">Total</span></div>
               <div class="stat"><span class="stat-value enriched">0</span><span class="stat-label">Enriched</span></div>
             </div>
-            <div class="generated">Updated 2026-11-09 14:32 UTC</div>
+            <div class="generated">Updated 2026-11-10 00:56 UTC</div>
           </header>
           <main>
             <article class="card card-zeroday">
@@ -130,6 +130,58 @@
     <span>Wed, 08 Ju</span>
   </div>
   <p class='summary'>Russian Government-Sponsored Activity Targets Poorly Configured and Vulnerable Devices Across Critical Sectors Executive summary Russian Federal Security Service (FSB) Center 16 cyber actors continue to exploit poorly configured and vulnerable networking devices worldwide, opportunistically compromising multiple critical infrastructure sector networks. This joint Cybersecurity Advisory (CSA) build…</p>
+
+</article>
+
+        <article class="card card-zeroday">
+          <div class="card-top">
+            <span class="badge badge-zeroday">🟠 Zero-Day</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-gj9m-f8ph-pmhr" target="_blank" rel="noopener">GPUStack: Authentication bypass via trusted loopback source (reverse-proxy TCP peer or X-GPUStack-Real-IP header) grants unauthenticated admin</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102895</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>### Impact
+
+In GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promotes any request whose source is considered loopback to the built-in administrator account when `force_auth_localhost` is `False` (the default). The &quot;source&quot; is derived by `client_ip_getter`, which can be made to report `127.0.0.1` without any credentials in two ways:
+
+1. **Same-host reverse proxy (TCP peer).…</p>
+
+        </article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.tenable.com/blog/u-s-urges-critical-infrastructure-orgs-to-secure-refrigeration-systems-asap-after-eu" target="_blank" rel="noopener">U.S. urges critical infrastructure orgs to secure refrigeration systems ASAP after EU supermarket and blood bank attacks</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Tenable Security Research</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-09</span>
+  </div>
+  <p class='summary'>Following recent cyber attacks on French blood banks and European supermarkets, U.S. federal agencies are urging critical infrastructure organizations to immediately secure industrial refrigeration systems against remote tampering and temperature manipulation. Key takeaways Cybercriminals are actively targeting unpatched flaws, misconfigurations, and weak or hard-coded passwords in commercial cold…</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.wiz.io/blog/qubole-cross-account-access-abused-in-the-wild" target="_blank" rel="noopener">Trusted by Default: Qubole Cross-Account Access Abused in the Wild</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Wiz Research</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-09</span>
+  </div>
+  <p class='summary'>A threat actor used IAM credentials from Qubole&#x27;s AWS account to assume integration roles in customer AWS environments. Here&#x27;s what we observed and how to hunt for it.</p>
 
 </article>
 
@@ -229,6 +281,38 @@
 
 </article>
 
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/" target="_blank" rel="noopener">N-able takes cloud platform offline after 30+ &quot;zero-days&quot; published</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-09</span>
+  </div>
+  <p class='summary'>N-able has taken its hosted N-central environments offline and urged on-premises customers to shut down their servers after a security researcher publicly disclosed more than 30 alleged zero-day vulnerabilities, including exploits that could let attackers take over vulnerable systems. [...]</p>
+
+</article>
+
+<article class="card card-zeroday">
+  <div class="card-top">
+    <span class="badge badge-zeroday">🟠 Zero-Day</span>
+    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/fbi-agent-stole-25-million-in-crypto-from-hackers-fraud-victims/" target="_blank" rel="noopener">FBI agent stole $2.5 million in crypto from hackers under investigation</a></h2>
+  </div>
+  <div class="card-meta">
+    <span class="no-cve">No CVE</span>
+    <span class="meta-sep">·</span>
+    <span>Bleeping Computer</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-09</span>
+  </div>
+  <p class='summary'>A former FBI agent has pleaded guilty to stealing nearly $2.5 million from the wallets of fraud victims and nation-state hackers under investigation. [...]</p>
+
+</article>
+
         <article class="card card-zeroday">
           <div class="card-top">
             <span class="badge badge-zeroday">🟠 Zero-Day</span>
@@ -246,22 +330,6 @@
 &quot;The actors may exploit vulnerabilities or weaknesses in unpatched or internet-accessible controllers to remotely alter settings and force units into continuous heating</p>
 
         </article>
-
-<article class="card card-zeroday">
-  <div class="card-top">
-    <span class="badge badge-zeroday">🟠 Zero-Day</span>
-    <h2 class="card-title"><a href="https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/" target="_blank" rel="noopener">Iris Ohyama data cloud breach exposes info of 7.7 million customers</a></h2>
-  </div>
-  <div class="card-meta">
-    <span class="no-cve">No CVE</span>
-    <span class="meta-sep">·</span>
-    <span>Bleeping Computer</span>
-    <span class="meta-sep">·</span>
-    <span>2026-11-08</span>
-  </div>
-  <p class='summary'>Japanese manufacturer Iris Ohyama, the operator of the Iris Plaza shopping platform, disclosed that personal information belonging to about 7.7 million people may have been exposed after unauthorized access to a third-party cloud service the company used. [...]</p>
-
-</article>
 
 <article class="card card-high">
   <div class="card-top">
@@ -294,6 +362,238 @@
   <p class='summary'>Advisory at a Glance Title #StopRansomware: SafePay Ransomware Original Publication October 20, 2026 Executive Summary This advisory details recent activity by the SafePay ransomware group. SafePay actors have been highly active since August 2024, targeting businesses and critical infrastructure across North America, South America, Europe, and Australia. SafePay actors typically gain access to net…</p>
 
 </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g3qx-frcg-j979" target="_blank" rel="noopener">Kubeflow Pipelines: Reflected XSS in the frontend pod information and events error responses</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88986</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+The Kubeflow Pipelines frontend reflected untrusted pod names and namespaces into HTML error responses from the pod-information and pod-events routes. An attacker could craft a link that causes JavaScript to execute in the frontend&#x27;s origin when a user follows it and reaches an affected error response.
+
+Affected routes include `/pipeline/k8s/pod` and `/pipeline/k8s/pod/events` (the dep…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-ghgh-57qv-h687" target="_blank" rel="noopener">Kubeflow Pipelines: RBAC bypass on shared pipelines allows any authenticated user to delete or modify global pipelines</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88984</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+In multi-user mode, the Kubeflow Pipelines API server skipped authorization checks for shared/global pipelines with an empty namespace. This exception applied to write and delete operations as well as reads, allowing an authenticated user to modify or delete shared pipelines without the required Kubernetes RBAC permissions.
+
+## Impact
+
+Unauthorized modification compromises the integrit…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f7vj-6669-qvv4" target="_blank" rel="noopener">Kubeflow Pipelines — API server fetches a caller-supplied pipelineURL without host validation</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88983</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+The Kubeflow Pipelines API server fetched caller-supplied pipeline package URLs without restricting the destination. A caller authorized to create a pipeline or pipeline version could cause requests to originate from the API server&#x27;s network position, including to internal services that the caller could not otherwise reach.
+
+## Impact
+
+The reported evidence demonstrates blind server-si…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-2xwh-426q-42c5" target="_blank" rel="noopener">Kubeflow Pipelines: Cross-tenant execution-cache poisoning / output substitution via a namespace-blind cache key in the cache webhook (multi-user)</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-88982</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+The legacy Kubeflow Pipelines V1/raw-Argo execution cache does not separate cached results by Kubernetes namespace. In multi-user deployments where tenants share the cache service, a tenant can receive another tenant&#x27;s cached outputs or seed outputs that are subsequently substituted into another tenant&#x27;s step.
+
+This affects the Argo-template cache mutating webhook and its cache-server …</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-f74m-x83r-c4v4" target="_blank" rel="noopener">FileGator: Missing authorization in GET /batchdownload allows cross-user retrieval of another user&#x27;s archive</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-94618</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>### Summary
+`GET /batchdownload` streams a batch ZIP to any requester who supplies its `uniqid`, without checking that the current user/session created it. In deployments where users have separate home directories, a valid low-privileged user who obtains an active archive id can download another user&#x27;s batch archive, disclosing files the per-user boundary otherwise protects. Reported with explicit…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-g3c2-rjq2-c763" target="_blank" rel="noopener">esm.sh: web.NewHandler allows arbitrary file read via encoded dot-segment path traversal</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102657</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>### Summary
+
+The documented `web.NewHandler` static file server can read files outside `Config.AppDir` when the request path contains URL-encoded dot-segments such as `%2e%2e`. Go&#x27;s `ServeMux` redirects plain `/../` paths, but it passes encoded dot-segments to the handler after decoding `r.URL.Path`. The handler then calls `filepath.Join(s.config.AppDir, r.URL.Path)` without checking that the resu…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-9vhv-g5hf-m7m7" target="_blank" rel="noopener">fast-agent: `fast-agent serve` binds HTTP to 0.0.0.0 with no authentication by default; with --shell this is unauthenticated remote command execution</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102610</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>## Summary
+`fast-agent serve` exposes the agent over MCP. By default it uses HTTP transport bound to `0.0.0.0` (all interfaces) on port 8000 with **no authentication** (`auth=None`) and prints no warning. Any host that can reach the port can call the exposed `agent` tool. When the server is started with `--shell` (which is `-x`, the flag used in the README quickstart `uvx fast-agent mcp@latest -x`…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-j8j4-rw65-56r6" target="_blank" rel="noopener">Telepresence: Traffic Manager gRPC has no auth — any pod claims arbitrary namespace and intercepts services, receiving victim environment secrets</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-102340</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+Telepresence&#x27;s Traffic Manager gRPC API (port 8081) requires no authentication. Any pod with cluster-network access to the Traffic Manager can register as a client in an arbitrary managed namespace and create intercepts against services in that namespace, regardless of Kubernetes RBAC. On interception the victim pod&#x27;s complete container environment (secrets, tokens, API keys) is delive…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-h7c4-q426-7jh9" target="_blank" rel="noopener">tsParticles: A single anonymous MCP session can monopolize HTTP mode and deny new clients</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-76893</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>## Summary
+
+The HTTP mode of `@tsparticles/mcp-server` creates a single stateful `StreamableHTTPServerTransport` instance and reuses it for all clients. The first anonymous client that initializes the MCP endpoint claims the shared transport state, and later clients cannot create their own sessions.
+
+This was verified on `v4.3.0` at commit `0266d469aa2d719cb66a9c6bf09aded4186ec17c`. The same singl…</p>
+
+        </article>
+
+<article class="card card-high">
+  <div class="card-top">
+    <span class="badge badge-high">🟡 High</span>
+    <h2 class="card-title"><a href="https://github.com/advisories/GHSA-8cfq-jgf7-8m27" target="_blank" rel="noopener">traQ: Privilege escalation by OAuth prompt=none request</a></h2>
+  </div>
+  <div class="card-meta">
+    <code class="cve">CVE-2026-63198</code>
+    <span class="meta-sep">·</span>
+    <span>GitHub Security Advisories</span>
+    <span class="meta-sep">·</span>
+    <span>2026-11-09</span>
+  </div>
+  <p class='summary'>In OAuth2 silent authorization (`prompt=none`), when the `scope` parameter was empty or omitted, all scopes registered for the OAuth client became eligible for issuance. However, the prior consent check was performed against the empty requested scope set. As a result, an attacker could obtain an access token with broader scopes than the user had previously consented to, without requiring additiona…</p>
+
+</article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-cw2g-2vwq-88w6" target="_blank" rel="noopener">isomorphic-git: Path traversal via a &quot;..&quot; tree-entry name writes files outside the working directory on clone/checkout</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63478</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>### Summary
+isomorphic-git&#x27;s tree parser (`src/models/GitTree.js`) validates each entry name only against the path separators `/` and `\`. It does not reject the standalone reserved name `..`, so a malicious repository can, on a single `clone`/`checkout`, **write files outside the working
+directory** (unbounded depth). Works on any host-backed `fs` provider.
+
+### Details
+The guard is:
+
+```js
+// sr…</p>
+
+        </article>
+
+        <article class="card card-high">
+          <div class="card-top">
+            <span class="badge badge-high">🟡 High</span>
+            <h2 class="card-title"><a href="https://github.com/advisories/GHSA-p2mm-64f6-gmpp" target="_blank" rel="noopener">fastapi-code-generator: Import-time RCE via route path -&gt; unescaped @app.get(&#x27;...&#x27;) decorator</a></h2>
+          </div>
+          <div class="card-meta">
+            <code class="cve">CVE-2026-63471</code>
+            <span class="meta-sep">·</span>
+            <span>GitHub Security Advisories</span>
+            <span class="meta-sep">·</span>
+            <span>2026-11-09</span>
+          </div>
+          <p class='summary'>### Summary
+
+fastapi-code-generator (koxudaxi) emits the OpenAPI path into the generated main.py route decorator as a single-quoted string literal (`@app.get(&#x27;/u/&lt;path&gt;/x&#x27;)`) without escaping the `&#x27;`. A `&#x27;` in the path closes the decorator string and, via concatenation, injects a live expression that the decorator argument evaluates when main.py is imported (the ASGI server imports it at startup) …</p>
+
+        </article>
 
 <article class="card card-high">
   <div class="card-top">

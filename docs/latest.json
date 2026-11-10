@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-09T14:32:51.473837+00:00",
-  "total": 12,
+  "generated": "2026-11-10T00:56:20.559220+00:00",
+  "total": 28,
   "kev": 0,
-  "zero_day": 9,
+  "zero_day": 13,
   "enriched": 0,
   "findings": [
     {
@@ -15,6 +15,56 @@
       "tags": [
         "cisa",
         "ics"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102895",
+      "title": "GPUStack: Authentication bypass via trusted loopback source (reverse-proxy TCP peer or X-GPUStack-Real-IP header) grants unauthenticated admin",
+      "summary": "### Impact\n\nIn GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promotes any request whose source is considered loopback to the built-in administrator account when `force_auth_localhost` is `False` (the default). The \"source\" is derived by `client_ip_getter`, which can be made to report `127.0.0.1` without any credentials in two ways:\n\n1. **Same-host reverse proxy (TCP peer).** In the canonical self-hosted shape \u2014\n   GPUStack behind a same-host reverse proxy with `proxy_pass\n   http://127.0.0.1:<port>` \u2014 every remote request arrives at GPUStack with TCP\n   peer `127.0.0.1`, so the loopback auto-admin branch fires. No header or\n   credential is required. Verified end-to-end against HEAD `6bee5883`.\n2. **`X-GPUStack-Real-IP` header.** A forged `X-GPUStack-Real-IP: 127.0.0.1`\n   header can cause the request source to be treated as loopback.\n\nEither path yields **full, unauthenticated administrative access** over the network: enumerate and modify users, models, workers, and configuration; mint persistent admin API keys (scope `[\"*\"]`, valid from any source IP thereafter); read worker credentials and cloud/provider secrets. Combined with admin-only functionality such as `POST /v2/inference-backends/from yaml`, this leads to code execution on worker hosts.\n\nThis vulnerability has been observed exploited in the wild against a v2.1.1 deployment (attacker-created custom backends running reverse shells).\n\n### Root cause\n\nTrusting the network source of a request (socket peer, or a client-controllable header) as an authentication signal. When GPUStack is fronted by a same-host reverse proxy, the socket peer is always loopback, so the \"localhost is trusted\" assumption no longer holds.\n\n### Patches\n\nFixed in `gpustack` `2.2.0`: the loopback auto-admin path was removed and client-IP / forwarding-header handling was hardened. Upgrade to `2.2.0` or later.\n\n### Workarounds\n\n- Set `force_auth_localhost=true` to require authentication even for loopback\n  requests.",
+      "link": "https://github.com/advisories/GHSA-gj9m-f8ph-pmhr",
+      "published": "2026-11-09T22:15:27Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102895"
+      ],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.tenable.com/blog/u-s-urges-critical-infrastructure-orgs-to-secure-refrigeration-systems-asap-after-eu",
+      "title": "U.S. urges critical infrastructure orgs to secure refrigeration systems ASAP after EU supermarket and blood bank attacks",
+      "summary": "Following recent cyber attacks on French blood banks and European supermarkets, U.S. federal agencies are urging critical infrastructure organizations to immediately secure industrial refrigeration systems against remote tampering and temperature manipulation. Key takeaways Cybercriminals are actively targeting unpatched flaws, misconfigurations, and weak or hard-coded passwords in commercial cold-chain and refrigeration controllers globally. Attackers are gaining remote access to manipulate temperature controls and spoil essential products, such as blood and food. CISA, the FBI, and other U.S. agencies are advising organizations to isolate OT systems, secure or remove remote access, patch critical vulnerabilities, and replace end-of-life devices. Critical infrastructure organizations in the healthcare, chemicals, transportation, and food and agriculture sectors must urgently harden their industrial refrigeration and cold-chain monitoring systems to protect food, medicines, and other essential products against ongoing cyber attacks. That\u2019s the call from the U.S. Cybersecurity and Infrastructure Security Agency (CISA) and other U.S. government agencies, following a series of alarming breaches against refrigeration systems in French blood banks and European supermarkets . \u201cEvery organization that depends on refrigeration and monitoring systems should assume it could be a target,\u201d CISA Acting Executive Assistant Director for Cybersecurity Chris Butera said in a statement. Attackers are remotely targeting electronic-temperature and commercial-refrigeration controllers used in grocery stores and cold storage facilities. They\u2019re looking for unpatched vulnerabilities and other security flaws, such as misconfigurations, according to the agencies. Once attackers gain remote access to these systems, they try to tamper with these machines\u2019 temperature controls to damage their refrigerated products. The temperature changes could also trigger fire hazards. In a joint fact sheet ",
+      "link": "https://www.tenable.com/blog/u-s-urges-critical-infrastructure-orgs-to-secure-refrigeration-systems-asap-after-eu",
+      "published": "2026-11-09T22:00:00+00:00",
+      "source": "Tenable Security Research",
+      "tags": [
+        "cloud",
+        "research",
+        "vuln"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": true
+    },
+    {
+      "id": "https://www.wiz.io/blog/qubole-cross-account-access-abused-in-the-wild",
+      "title": "Trusted by Default: Qubole Cross-Account Access Abused in the Wild",
+      "summary": "A threat actor used IAM credentials from Qubole's AWS account to assume integration roles in customer AWS environments. Here's what we observed and how to hunt for it.",
+      "link": "https://www.wiz.io/blog/qubole-cross-account-access-abused-in-the-wild",
+      "published": "2026-11-09T14:56:32+00:00",
+      "source": "Wiz Research",
+      "tags": [
+        "cloud",
+        "research",
+        "misconfig"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -118,6 +168,36 @@
       "is_high_severity": false
     },
     {
+      "id": "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+      "title": "N-able takes cloud platform offline after 30+ \"zero-days\" published",
+      "summary": "N-able has taken its hosted N-central environments offline and urged on-premises customers to shut down their servers after a security researcher publicly disclosed more than 30 alleged zero-day vulnerabilities, including exploits that could let attackers take over vulnerable systems. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+      "published": "2026-11-09T21:26:25+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
+      "id": "https://www.bleepingcomputer.com/news/security/fbi-agent-stole-25-million-in-crypto-from-hackers-fraud-victims/",
+      "title": "FBI agent stole $2.5 million in crypto from hackers under investigation",
+      "summary": "A former FBI agent has pleaded guilty to stealing nearly $2.5 million from the wallets of fraud victims and nation-state hackers under investigation. [...]",
+      "link": "https://www.bleepingcomputer.com/news/security/fbi-agent-stole-25-million-in-crypto-from-hackers-fraud-victims/",
+      "published": "2026-11-09T14:34:03+00:00",
+      "source": "Bleeping Computer",
+      "tags": [
+        "news",
+        "malware"
+      ],
+      "cve_ids": [],
+      "is_zero_day": true,
+      "is_high_severity": false
+    },
+    {
       "id": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html",
       "title": "U.S. Agencies Warn Refrigeration Controller Attacks Could Cause Fires and Inventory Losses",
       "summary": "U.S. government agencies have warned that threat actors are actively targeting industrial refrigeration and cold-chain monitoring systems globally with an aim to cause service disruptions, fire hazards, and loss of inventory.\n\n\"The actors may exploit vulnerabilities or weaknesses in unpatched or internet-accessible controllers to remotely alter settings and force units into continuous heating",
@@ -127,21 +207,6 @@
       "tags": [
         "news",
         "zeroday"
-      ],
-      "cve_ids": [],
-      "is_zero_day": true,
-      "is_high_severity": false
-    },
-    {
-      "id": "https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/",
-      "title": "Iris Ohyama data cloud breach exposes info of 7.7 million customers",
-      "summary": "Japanese manufacturer\u00a0Iris Ohyama, the operator of the Iris Plaza shopping platform,\u00a0disclosed that personal information belonging to about 7.7 million people may have been exposed after unauthorized access to a third-party cloud service the company used. [...]",
-      "link": "https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/",
-      "published": "2026-11-08T15:43:08+00:00",
-      "source": "Bleeping Computer",
-      "tags": [
-        "news",
-        "malware"
       ],
       "cve_ids": [],
       "is_zero_day": true,
@@ -188,6 +253,222 @@
         "CVE-2023-27532",
         "CVE-2024-40711",
         "CVE-2024-40766"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88986",
+      "title": "Kubeflow Pipelines: Reflected XSS in the frontend pod information and events error responses",
+      "summary": "## Summary\n\nThe Kubeflow Pipelines frontend reflected untrusted pod names and namespaces into HTML error responses from the pod-information and pod-events routes. An attacker could craft a link that causes JavaScript to execute in the frontend's origin when a user follows it and reaches an affected error response.\n\nAffected routes include `/pipeline/k8s/pod` and `/pipeline/k8s/pod/events` (the deployment's configured base path may differ).\n\n## Impact and prerequisites\n\nSuccessful exploitation requires a victim to open an attacker-supplied link and reach the vulnerable response. JavaScript execution may expose information accessible to the victim's browser or perform actions in the application's origin.\n\nThe attacker does not need an account merely to construct and deliver the link. The victim must satisfy the deployment's authentication and route-access requirements. Cookie theft depends on cookie attributes and deployment protections; it is not guaranteed. The submitted evidence does not establish an availability impact or server-side code execution.\n\n## Technical details\n\nThe pod handlers pass `podname` and `podnamespace` query values to `getPod` and `listPodEvents` in `frontend/server/k8s-helper.ts`. Before remediation, failure messages incorporated those values, along with backend error details, and were returned as HTML-capable string responses.\n\nKubernetes rejecting an invalid resource name did not prevent the issue: the rejected name could still be included in the frontend's error response.\n\n[PR #12295](https://github.com/kubeflow/pipelines/pull/12295) changed the error construction to validate pod names and namespaces with `isAllowedResourceName`. Invalid values produce a constant error message instead of reflecting the supplied value, and backend error details are no longer included in these responses. The change includes invalid-resource-name tests.\n\n## Affected versions and remediation\n\nAffected product: the Kubeflow Pipelines frontend server, identified ",
+      "link": "https://github.com/advisories/GHSA-g3qx-frcg-j979",
+      "published": "2026-11-09T23:25:58Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88986"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88984",
+      "title": "Kubeflow Pipelines: RBAC bypass on shared pipelines allows any authenticated user to delete or modify global pipelines",
+      "summary": "## Summary\n\nIn multi-user mode, the Kubeflow Pipelines API server skipped authorization checks for shared/global pipelines with an empty namespace. This exception applied to write and delete operations as well as reads, allowing an authenticated user to modify or delete shared pipelines without the required Kubernetes RBAC permissions.\n\n## Impact\n\nUnauthorized modification compromises the integrity of shared pipeline definitions and versions. Unauthorized deletion can make shared pipelines unavailable.\n\nExecution of a modified pipeline can cause attacker-controlled workload behavior, but this is a conditional downstream consequence requiring the modified pipeline to be executed. Modification alone does not demonstrate immediate worker code execution.\n\nReading shared pipelines is intentionally permitted and remains permitted after the fix. Consequently, access to shared pipeline configuration does not establish an additional confidentiality impact from this write-authorization defect. The confidentiality metric is None; the integrity and availability metrics reflect unauthorized modification and deletion of shared pipelines.\n\nThe affected authorization boundary is shared pipelines in multi-user deployments. Single-user deployments intentionally bypass these multi-user authorization checks.\n\n## Patches\n\nFixed by [kubeflow/pipelines#13288](https://github.com/kubeflow/pipelines/pull/13288), with the fix included in 2.16.1.\n\nRead-only operations on shared pipelines remain allowed. For write and delete operations, the API server checks Kubernetes RBAC permissions against the KFP system namespace, because shared pipelines have no namespace of their own.\n\n## Scope of this fix\n\nThe 2.16.1 fix addresses the shared-pipeline authorization paths described above. It does not fix every shared-pipeline write path: the separate shared-pipeline upload authorization defect is tracked in [GHSA-rjr3-43j3-4q8g / CVE-2026-77596](https://github.com/kubeflow/pipelines/security/advisories/GH",
+      "link": "https://github.com/advisories/GHSA-ghgh-57qv-h687",
+      "published": "2026-11-09T22:48:03Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88984"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88983",
+      "title": "Kubeflow Pipelines \u2014 API server fetches a caller-supplied pipelineURL without host validation",
+      "summary": "## Summary\n\nThe Kubeflow Pipelines API server fetched caller-supplied pipeline package URLs without restricting the destination. A caller authorized to create a pipeline or pipeline version could cause requests to originate from the API server's network position, including to internal services that the caller could not otherwise reach.\n\n## Impact\n\nThe reported evidence demonstrates blind server-side request forgery and a limited status-code oracle. The fetched response is processed as a pipeline package; the report does not demonstrate arbitrary response-body disclosure or credential theft. A request to a cloud metadata endpoint returned HTTP 403, which does not establish access to metadata contents or tokens.\n\nThe confidentiality metric is Low to reflect the limited information obtainable through the status-code oracle. High confidentiality impact and integrity or availability impact are not established by the submitted evidence. Impact depends on the API server's network reachability and the deployment's trust boundaries.\n\n## Patches\n\nFixed by [kubeflow/pipelines#12750](https://github.com/kubeflow/pipelines/pull/12750), first released in 2.17.0. The fix validates URL schemes, ports, allowed domains, and resolved IP addresses; validates redirects; and enforces IP restrictions at connection time. The HTTP client also applies timeouts and disables environment proxy use so connections pass through the validated dialer.\n\nOperators should keep pipeline URL validation enabled and limit additional allowed domains to trusted pipeline sources.\n\n## Workarounds\n\nUntil upgrading, restrict API-server egress to required destinations through deployment-specific network controls. Account for required Kubernetes and storage connectivity when applying these restrictions.\n\n## Related reports\n\nThis is the canonical advisory for the API-server pipeline URL SSRF family. [GHSA-wg4h-pp3x-hxhv](https://github.com/kubeflow/pipelines/security/advisories/GHSA-wg4h-pp3x-hxhv) is tracked as a d",
+      "link": "https://github.com/advisories/GHSA-f7vj-6669-qvv4",
+      "published": "2026-11-09T22:44:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88983"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-88982",
+      "title": "Kubeflow Pipelines: Cross-tenant execution-cache poisoning / output substitution via a namespace-blind cache key in the cache webhook (multi-user)",
+      "summary": "## Summary\n\nThe legacy Kubeflow Pipelines V1/raw-Argo execution cache does not separate cached results by Kubernetes namespace. In multi-user deployments where tenants share the cache service, a tenant can receive another tenant's cached outputs or seed outputs that are subsequently substituted into another tenant's step.\n\nThis affects the Argo-template cache mutating webhook and its cache-server storage path. Standard KFP V2 component pods bypass this webhook cache; the separate V2 cache implementation is outside this advisory's scope.\n\n## Affected deployments and impact\n\nThe issue requires multiple tenant namespaces sharing the legacy cache service, cache-enabled V1/raw-Argo steps, and cache entries that satisfy the configured staleness policy. The standard multi-user configuration watches pods across namespaces.\n\nA tenant able to submit a step with the same cache-relevant template fields as another tenant's step can:\n\n- Read cached step outputs originally produced in another namespace.\n- Populate the shared cache before another tenant's matching step runs, causing that step to report the cached outputs instead of executing its intended containers.\n\nMatching refers to the selected template fields used by the cache key, not merely an identical container image. This is an application-level cache-key collision caused by missing tenant scope, not a cryptographic SHA-256 collision. The finding establishes cross-namespace confidentiality and integrity impact; it does not establish arbitrary code execution.\n\n## CVSS rationale\n\n**Medium \u2014 CVSS 3.1: 5.4**\n\n`CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N`\n\n- **AV:N / PR:L / UI:N:** a tenant with ordinary workload-submission privileges can exercise the shared cache through network-accessible APIs. Reading an existing cached result or poisoning a subsequent automated execution requires no additional victim interaction.\n- **AC:L:** known or shared templates can produce the same cache key deterministically. Cache-enabled executio",
+      "link": "https://github.com/advisories/GHSA-2xwh-426q-42c5",
+      "published": "2026-11-09T22:43:33Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-88982"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-94618",
+      "title": "FileGator: Missing authorization in GET /batchdownload allows cross-user retrieval of another user's archive",
+      "summary": "### Summary\n`GET /batchdownload` streams a batch ZIP to any requester who supplies its `uniqid`, without checking that the current user/session created it. In deployments where users have separate home directories, a valid low-privileged user who obtains an active archive id can download another user's batch archive, disclosing files the per-user boundary otherwise protects. Reported with explicit preconditions and bounded impact \u2014 not a universal \"any user steals any file\" issue.\n\n### Details\nThe archive id is generated with plain `uniqid()` and no ownership metadata is bound to it before streaming.\n\n- `backend/Services/Archiver/Adapters/ZipArchiver.php:44` \u2014 `createArchive()` uses plain `uniqid()`.\n- `backend/Controllers/DownloadController.php:144-145` \u2014 `batchDownloadStart()` reads the tmpfs file by the request-supplied `uniqid` after only a charset `preg_replace()`.\n- `backend/Controllers/DownloadController.php:158` \u2014 the tmpfs archive is removed only after streaming.\n- `backend/Controllers/routes.php:207-226` \u2014 both batch endpoints are exposed to normal roles with `read`, `download`, `batchdownload`.\n\nNo user id, session id, home directory, or creator check is applied before streaming. The code path is unchanged since commit `3f03a40` (2022-05-31) and is present in the latest release `v7.14.3`.\n\n### PoC\nPreconditions: a multi-user deployment with distinct per-user `homedir`s (set per-user in `users.json`, or `private_repos => true` on the WordPress/LDAP adapter). The shipped sample config (`admin`/`guest` both at `/`, `guest` with no perms) does not create this boundary on its own. Attacker is a valid user with `read`, `download`, `batchdownload`.\n\n1. User John (`homedir /john`) creates `secret.txt`, signs in, and creates a batch archive via `POST /batchdownload`. The JSON response returns the archive `uniqid`.\n2. User Jane (`homedir /jane`, with `batchdownload`) signs in normally.\n3. Jane's direct `GET /download` of `/secret.txt` returns `302` \u2014 the normal hom",
+      "link": "https://github.com/advisories/GHSA-f74m-x83r-c4v4",
+      "published": "2026-11-09T22:17:36Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-94618"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102657",
+      "title": "esm.sh: web.NewHandler allows arbitrary file read via encoded dot-segment path traversal",
+      "summary": "### Summary\n\nThe documented `web.NewHandler` static file server can read files outside `Config.AppDir` when the request path contains URL-encoded dot-segments such as `%2e%2e`. Go's `ServeMux` redirects plain `/../` paths, but it passes encoded dot-segments to the handler after decoding `r.URL.Path`. The handler then calls `filepath.Join(s.config.AppDir, r.URL.Path)` without checking that the result remains under `AppDir`, allowing unauthenticated arbitrary file reads with the server process privileges.\n\n### Details\n\n`web/README.md:34-40` documents a network-facing setup:\n\n```go\nhttp.Handle(\"GET /\", web.NewHandler(web.Config{\n  AppDir: \"/path/to/webapp\",\n  Fallback: \"/index.html\",\n  Dev: false,\n}))\nlog.Fatal(http.ListenAndServe(\":8080\", nil))\n```\n\nIn `web/handler.go:62-75`, the handler takes `r.URL.Path` and joins it directly with `s.config.AppDir`:\n\n```go\npathname := r.URL.Path\nfilename := filepath.Join(s.config.AppDir, pathname)\nfi, err := os.Lstat(filename)\n```\n\nLater the same resolved filename is opened and copied to the response in `web/handler.go:150-166` for non-HTML/static files. There is no `filepath.IsLocal`, cleaned-relative-path, absolute-root prefix, or symlink-aware containment check before opening the file.\n\nA plain `/../secret.txt` path is redirected by Go's `ServeMux`, but an encoded path such as `/%2e%2e/secret.txt` is decoded into `r.URL.Path == \"/../secret.txt\"` and reaches the handler. On Linux, `filepath.Join(\"/tmp/root/app\", \"/../secret.txt\")` resolves to `/tmp/root/secret.txt`, outside the configured app directory.\n\nSource-to-sink chain:\n\n```text\nUnauthenticated HTTP request path containing URL-encoded dot-segments\n-> net/http decodes path into r.URL.Path\n-> documented ServeMux setup passes encoded dot-segment path to web.NewHandler\n-> web/handler.go joins Config.AppDir with r.URL.Path\n-> os.Lstat/os.Open operate on the escaped path\n-> io.Copy returns file contents to the attacker\n```\n\nFalse-positive checks performed:\n- Plain dot-segment path",
+      "link": "https://github.com/advisories/GHSA-g3c2-rjq2-c763",
+      "published": "2026-11-09T22:03:29Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102657"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102610",
+      "title": "fast-agent: `fast-agent serve` binds HTTP to 0.0.0.0 with no authentication by default; with --shell this is unauthenticated remote command execution",
+      "summary": "## Summary\n`fast-agent serve` exposes the agent over MCP. By default it uses HTTP transport bound to `0.0.0.0` (all interfaces) on port 8000 with **no authentication** (`auth=None`) and prints no warning. Any host that can reach the port can call the exposed `agent` tool. When the server is started with `--shell` (which is `-x`, the flag used in the README quickstart `uvx fast-agent mcp@latest -x`), the agent has a local `execute` shell tool, so an unauthenticated remote client can drive the agent into running arbitrary OS commands \u2014 unauthenticated RCE.\n\n## Affected code\n- `cli/commands/serve.py` \u2014 transport defaults to HTTP; `--host` defaults to `0.0.0.0`; port 8000.\n- `mcp/server/agent_server.py` \u2014 `auth_provider = None` unless `FAST_AGENT_SERVE_OAUTH=huggingface`;\n  `run_async(transport=\"http\", host=host, ...)` with `host` defaulting to `0.0.0.0`.\n- `tools/local_shell_executor.py` \u2014 the shell tool runs commands via `create_subprocess_shell`.\n\n## Verified (live, faithful \u2014 published 0.7.20 in Docker python:3.13-slim, stock unauthenticated client)\n1) Unauthenticated exposure (core defect): a client with no Authorization header completed\n   `initialize` and `tools/list` (-> `['agent']`) against `http://HOST:8000/mcp`. Model-independent.\n2) Unauthenticated RCE with `--shell`, demonstrated two ways:\n   - Real production model (`gpt-4o-mini`): a single plain-language message asking the agent to run\n     a command via its shell tool -> the model autonomously called `execute` and the command output\n     (process identity showing it ran as root, the hostname, and the first lines of a sensitive\n     system file) was returned to the unauthenticated caller.\n   - Key-free deterministic (`passthrough` model): the tool-call directive invoked the shell tool\n     directly, same result.\n   The server-side permission prompt did not block this in non-interactive serve mode.\n\n## Proof of concept\nEnvironment: Docker `python:3.13-slim`, `pip install fast-agent-mcp` -> 0.7.20.\n\n```\n# s",
+      "link": "https://github.com/advisories/GHSA-9vhv-g5hf-m7m7",
+      "published": "2026-11-09T22:01:34Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102610"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-102340",
+      "title": "Telepresence: Traffic Manager gRPC has no auth \u2014 any pod claims arbitrary namespace and intercepts services, receiving victim environment secrets",
+      "summary": "## Summary\n\nTelepresence's Traffic Manager gRPC API (port 8081) requires no authentication. Any pod with cluster-network access to the Traffic Manager can register as a client in an arbitrary managed namespace and create intercepts against services in that namespace, regardless of Kubernetes RBAC. On interception the victim pod's complete container environment (secrets, tokens, API keys) is delivered to the attacker. Tested on HEAD v2.28.0, commit b2231a4.\n\n## Details\n\nThe gRPC server is started with no auth interceptor (pkg/grpc/server/server.go). The connection uses plaintext: `grpc.WithTransportCredentials(insecure.NewCredentials())`.\n\n`ArriveAsClient` stores the caller-supplied `Namespace` without verifying the caller is in that namespace. The only gate is whether the namespace is in the Traffic Manager's watchlist (`ManagesNamespace`):\n\n```go\n// cmd/traffic/cmd/manager/service.go:181-201\nfunc (s *service) ArriveAsClient(..., client *rpc.ClientInfo) (*rpc.SessionInfo, error) {\n    if !s.State().ManagesNamespace(ctx, client.Namespace) {\n        return nil, status.Error(codes.FailedPrecondition, ...)\n    }\n    // No SAR, no bearer token, no kubeconfig check\n    return &rpc.SessionInfo{SessionId: string(s.state.AddClient(client, ...))}, nil\n}\n```\n\n`CreateIntercept` calls `managedTargetNamespace()` which also only checks `ManagesNamespace(target_ns)` \u2014 never that the target equals the client's own registered namespace (service.go:929). A session registered in namespace A can intercept namespace B as long as B is also watched. On interception, the victim pod's full container environment is forwarded via `intercept.Environment = rIReq.Environment`.\n\n## Proof of Concept\n\nFrom any pod in the cluster:\n\n```go\nconn, _ := grpc.NewClient(\"traffic-manager.ambassador:8081\",\n    grpc.WithTransportCredentials(insecure.NewCredentials()))\nmgr := rpc.NewManagerClient(conn)\n\nsession, _ := mgr.ArriveAsClient(ctx, &rpc.ClientInfo{\n    Name: \"attacker@pod\", Namespace: \"payments\",\n    I",
+      "link": "https://github.com/advisories/GHSA-j8j4-rw65-56r6",
+      "published": "2026-11-09T21:59:49Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-102340"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-76893",
+      "title": "tsParticles: A single anonymous MCP session can monopolize HTTP mode and deny new clients",
+      "summary": "## Summary\n\nThe HTTP mode of `@tsparticles/mcp-server` creates a single stateful `StreamableHTTPServerTransport` instance and reuses it for all clients. The first anonymous client that initializes the MCP endpoint claims the shared transport state, and later clients cannot create their own sessions.\n\nThis was verified on `v4.3.0` at commit `0266d469aa2d719cb66a9c6bf09aded4186ec17c`. The same singleton transport pattern is still present in `v4.3.1` and current `main`.\n\n## Affected Code\n\nThe server creates one shared transport before accepting requests:\n\n    const transport = new StreamableHTTPServerTransport({\n      sessionIdGenerator: () => randomUUID(),\n    });\n\n    const httpServer = createServer(async (req, res) => {\n      ...\n      await transport.handleRequest(req, res, parsedBody);\n    });\n\nBecause the same transport object is reused across all requests, the first successful `initialize` call changes the state for all later clients.\n\n## Reproduction\n\nSend two independent `initialize` requests without a prior `mcp-session-id`.\n\nFirst request:\n\n    {\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{},\"clientInfo\":{\"name\":\"first-client\",\"version\":\"1.0.0\"}}}\n\nSecond request:\n\n    {\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{},\"clientInfo\":{\"name\":\"second-client\",\"version\":\"1.0.0\"}}}\n\nObserved result in 3 out of 3 runs:\n\n    first response: HTTP 200 with mcp-session-id\n    second response: HTTP 400\n    {\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32600,\"message\":\"Invalid Request: Server already initialized\"},\"id\":null}\n\n## Impact\n\nAn unauthenticated remote client can win the first-session race and prevent all later legitimate clients from establishing new MCP sessions until the process is restarted. The first session remains functional, but new clients are denied service.\n\n## Recommendation\n\nCreate a transport per session or maintain a bounded session-id-to-transport ",
+      "link": "https://github.com/advisories/GHSA-h7c4-q426-7jh9",
+      "published": "2026-11-09T21:14:51Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-76893"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63198",
+      "title": "traQ: Privilege escalation by OAuth prompt=none request",
+      "summary": "In OAuth2 silent authorization (`prompt=none`), when the `scope` parameter was empty or omitted, all scopes registered for the OAuth client became eligible for issuance. However, the prior consent check was performed against the empty requested scope set. As a result, an attacker could obtain an access token with broader scopes than the user had previously consented to, without requiring additional consent.\n\n## Impact\n\nIf an attacker controls an OAuth client capable of receiving authorization codes, and a user has already consented to only a subset of that client\u2019s scopes, the attacker may be able to obtain a token containing all scopes registered for that client by sending an authorization request with `prompt=none` and an empty or omitted `scope`.\n\nIf the user has not consented to the client at all, `consent_required` is returned as usual.\n\n## Patches\n\nThis issue has been fixed in v3.28.3. After the fix, the consent check for `prompt=none` verifies the scopes that will actually be issued, rather than the empty requested scope set. If the user has not consented to all scopes after expansion, `consent_required` is returned.\n\ntraQ also recommends revoking any existing OAuth tokens created before the fix if they were potentially affected.\n\n## Workarounds\n\nIf users cannot update immediately, they should apply the following mitigations:\n\n- Disable untrusted OAuth clients, minimize registered client scopes, and revoke existing tokens\n- Reject authorization requests with `prompt=none` where `scope` is empty or omitted",
+      "link": "https://github.com/advisories/GHSA-8cfq-jgf7-8m27",
+      "published": "2026-11-09T20:55:17Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63198"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63478",
+      "title": "isomorphic-git: Path traversal via a \"..\" tree-entry name writes files outside the working directory on clone/checkout",
+      "summary": "### Summary\nisomorphic-git's tree parser (`src/models/GitTree.js`) validates each entry name only against the path separators `/` and `\\`. It does not reject the standalone reserved name `..`, so a malicious repository can, on a single `clone`/`checkout`, **write files outside the working\ndirectory** (unbounded depth). Works on any host-backed `fs` provider.\n\n### Details\nThe guard is:\n\n```js\n// src/models/GitTree.js\nif (path.includes('\\\\') || path.includes('/')) {\n  throw new UnsafeFilepathError(path)\n}\n```\n\nThe standalone string `..` passes. isomorphic-git assembles the full path incrementally across tree levels, so nesting `..` trees yields `../escaped.txt`, `../../escaped.txt`, \u2026 with unbounded depth (each level is a separate tree object that passes the per-entry guard). On checkout `mkdir(workdir/..)` hits `EEXIST` (ignored) and the file is written above the working directory. Depth is chosen to reach the home dir, `/etc`, `/tmp`, etc.; overwriting a shell rc / config / startup file can escalate to code execution.\n\n#### Canonical git behavior (divergence)\ngit rejects this via `verify_path()`: `git read-tree` fails with `error: invalid path '../escaped.txt'` and `git fsck` flags `warning \u2026 hasDotdot: contains '..'`. (git's `verify_path` also rejects `.` and `.git`, the latter flagged by fsck as `hasDotgit` \u2014 see the fix note below.) GitHub runs fsck on push, so such a tree can't be hosted there; reach is limited to a self-hosted/Smart-HTTP remote or a MitM.\n\n\n### PoC\n`https://github.com/spiceoverflow/av2-dotdot-traversal` \u2014 open in a Codespace; a single `git.clone()` from the bundled server writes `escaped.txt` one directory above the clone target (`DEPTH=N` escapes N levels):\n\n```\n[AV-2] *** PATH TRAVERSAL CONFIRMED ***\n[AV-2] File written outside workdir: \u2026/escaped.txt\n```\n\n### Impact\nA path-traversal arbitrary file write outside the working directory (CWE-22), triggered by a single clone/checkout; it can escalate to code execution by overwriting shell rc, conf",
+      "link": "https://github.com/advisories/GHSA-cw2g-2vwq-88w6",
+      "published": "2026-11-09T20:13:52Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63478"
+      ],
+      "is_zero_day": false,
+      "is_high_severity": true
+    },
+    {
+      "id": "CVE-2026-63471",
+      "title": "fastapi-code-generator: Import-time RCE via route path -> unescaped @app.get('...') decorator",
+      "summary": "### Summary\n\nfastapi-code-generator (koxudaxi) emits the OpenAPI path into the generated main.py route decorator as a single-quoted string literal (`@app.get('/u/<path>/x')`) without escaping the `'`. A `'` in the path closes the decorator string and, via concatenation, injects a live expression that the decorator argument evaluates when main.py is imported (the ASGI server imports it at startup) -- code execution, no request needed. The path is a pure data field. Verified on fastapi-code-generator 0.8.0 / Python 3 / FastAPI.\n\n### Details\n\n```python\n@app.get('/u/'+(__import__(\"os\").system('\u2026') or \"\")+'/x', response_model=None)\ndef get_thing() -> None:\n pass\n```\n\nThe generator post-processes output with black/isort, so a syntax-breaking payload aborts generation (DoS); a valid-Python concat (`'+expr+'`, kept valid with `(\u2026 or \"\")`) is written and runs at import. info.description (`description='\u2026'`), tags, and parameter defaults are `'`-escaped; the path in @app.get('\u2026') is the unescaped sink. Models come from datamodel-code-generator (repr-escaped, no RCE).\n\nNot a duplicate: distinct product from OpenAPI Generator's python-fastapi backend (different codebase/template/decorator); and distinct from the operation-summary docstring sink in the same product.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`) attached: generates the app and merely imports main.py; the injected expression runs at decorator evaluation and writes a marker. Verified on 0.8.0.\n\n### Impact\n\nCode execution at import/startup in any application/CI that generates a FastAPI app with fastapi-code-generator from an attacker-controlled or attacker-influenced spec and imports/serves it. Estimated Critical, e.g. `CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N`.\n\n### Suggested fix\n\nEscape the path for the Python string literal (escape ', \\, newlines via repr) before emitting @app.get('\u2026'), and validate path characters.\n\n[maintainer-report.txt](https://github.com/user-attachments/files/29534357/ma",
+      "link": "https://github.com/advisories/GHSA-p2mm-64f6-gmpp",
+      "published": "2026-11-09T19:48:08Z",
+      "source": "GitHub Security Advisories",
+      "tags": [
+        "github",
+        "advisories",
+        "oss"
+      ],
+      "cve_ids": [
+        "CVE-2026-63471"
       ],
       "is_zero_day": false,
       "is_high_severity": true
